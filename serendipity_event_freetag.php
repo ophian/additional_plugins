@@ -393,7 +393,7 @@ class serendipity_event_freetag extends serendipity_event
             $this->set_config('use_flash', 'false');
             $this->set_config('use_rotacloud', 'false');
             $this->set_config('use_wordcloud', 'false');
-            echo '<p class="msg_error"><span class="icon-attention-circled"></span> <strong>Set option Error[1]:</strong> You may only use one cloud by time. All clouds were internally set false again. Please set and submit again here! (The form still shows what you had choosen before!)</p>';
+            echo '<p class="msg_error"><span class="icon-attention-circled"></span> <strong>Set option Error[1]:</strong> You may only use one cloud by time. All clouds were internally set false again. Please set and submit again here! (The form still shows what you had choosen before!)</p>'; // i18n?
         }
     }
 
