@@ -52,7 +52,7 @@ Umožòuje libovolné pøidávání klíèových slov k pøíspìvkùm
 </pre>
 </p>
 
-<p>
+<!--<p>
 Pomocí následujícího sql dotazu mùžete v databázi vytvoøit tagy z existujících kategorií:
 <pre>
 INSERT INTO serendipity_entrytags (entryid, tag) 
@@ -95,7 +95,7 @@ foreach($rows AS $row) {
 ?&gt;
 
 </pre>
-</p>
+</p>-->
 <p>&nbsp;</p>
 
 <h3>Option: Tags-as-list</h3>
@@ -262,6 +262,11 @@ foreach($rows AS $row) {
 + {/if}{* not taglist end *}
 +
 {if $footer_info or $footer_prev_page or $footer_next_page}
++{if $taglist}
++    {if $footer_prev_page}{assign var=&quot;footer_prev_page&quot; value=$footer_prev_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
++    {if $footer_next_page}{assign var=&quot;footer_next_page&quot; value=$footer_next_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
++{/if}
++
     &lt;nav class=&quot;serendipity_pagination block_level&quot;&gt;
         &lt;h2 class=&quot;visuallyhidden&quot;&gt;{$CONST.TWOK11_PAG_TITLE}&lt;/h2&gt;
 

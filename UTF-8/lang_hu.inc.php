@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -15,7 +15,7 @@
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Címkék: %s');
 @define('PLUGIN_EVENT_FREETAG_USING', 'Bejegyzések %s címkével');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', '%s címke kapcsolódó címkéi');
-@define('PLUGIN_EVENT_FREETAG_NO_RELATED','Nincsenek kapcsolódó címkék.');
+@define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'Nincsenek kapcsolódó címkék.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Összes címke');
 @define('PLUGIN_EVENT_FREETAG_MANAGETAGS', 'Címkék kezelése');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_ALL', 'Minden címke kezelése');
@@ -40,8 +40,8 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Kilistázza a meglévő címkéket');
 @define('PLUGIN_FREETAG_NEWLINE', 'Soremelés minden címke után?');
 @define('PLUGIN_FREETAG_XML', 'XML-ikonok megjelenítése?');
-@define('PLUGIN_FREETAG_SCALE','Címke betűméret nyújtás/zsugorítás népszerűség alapján (a Technorati-hoz és a flickr-hez hasonlóan)?');
-@define('PLUGIN_FREETAG_UPGRADE1_2','%d db címke frissítése a %d. bejegyzéshez: ');
+@define('PLUGIN_FREETAG_SCALE', 'Címke betűméret nyújtás/zsugorítás népszerűség alapján (a Technorati-hoz és a flickr-hez hasonlóan)?');
+@define('PLUGIN_FREETAG_UPGRADE1_2', '%d db címke frissítése a %d. bejegyzéshez: ');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Mennyi címkét mutassunk?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Mennyi előfordulás felett jelenjenek meg a címkék?');
 
@@ -51,8 +51,8 @@
 @define('PLUGIN_FREETAG_META_KEYWORDS', 'HTML forrásba ágyazandó meta kulcsszavak száma (0: letiltás)');
 
 @define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'Kapcsolódó bejegyzések címkék alapján:');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED','Mutassuk a címke alapján kapcsolódó bejegyzéseket?');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT','Mennyi kapcsolódó bejegyzést mutassunk?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'Mutassuk a címke alapján kapcsolódó bejegyzéseket?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'Mennyi kapcsolódó bejegyzést mutassunk?');
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER', 'Címkék mutatása a láblécben?');
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC', 'Ha engedélyezett, az egyes bejegyzéshez rendelt címkék a láblécben jelennek meg. Kikapcsolt állapotban a címkék a bejegyzés Részletesebb Törzsében jelennek meg.');
 @define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS', 'Kisbetűs címkék használata');
@@ -67,7 +67,7 @@
 
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'Automatizált kulcsszavak');
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'Minden címkéhez megadhatók kulcsszavak (vesszővel elválasztva). Amikor ezeket a kulcsszavakat használjuk a bejegyzések szövegében, a megfelelő címke hozzárendelődik a bejegyzéshez. Túl sok automatizált kulcsszó megnövelheti a bejegyzések elmentésével töltött időt!');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Megtaláltuk a következő kulcsszót: <strong>%s</strong>, a következő címkét automatikusan a bejegyzéshez rendeljük: <strong><em>%s</em></strong><br />');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Megtaláltuk a következő kulcsszót: <strong>%s</strong>, a következő címkét automatikusan a bejegyzéshez rendeljük: <strong><em>%s</em></strong>');
 
 @define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', '%d-%d bejegyzések lekérése');
 @define('PLUGIN_EVENT_FREETAG_REBUILD_TOTAL', ' (összesen %d bejegyzés)...');
@@ -77,3 +77,4 @@
 
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'Címkenév');
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'Címke előfordulások száma');
+

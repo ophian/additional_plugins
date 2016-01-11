@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -43,8 +43,8 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Показва списък на маркери към статиите');
 @define('PLUGIN_FREETAG_NEWLINE', 'Всеки маркер на нов ред?');
 @define('PLUGIN_FREETAG_XML', 'Показване на XML икони?');
-@define('PLUGIN_FREETAG_SCALE','Мащабиране на големината на шрифта в зависимост от популярността на маркера (подобно на Technorati, flickr)?');
-@define('PLUGIN_FREETAG_UPGRADE1_2','Обновяване на %d маркера за статия номер %d');
+@define('PLUGIN_FREETAG_SCALE', 'Мащабиране на големината на шрифта в зависимост от популярността на маркера (подобно на Technorati, flickr)?');
+@define('PLUGIN_FREETAG_UPGRADE1_2', 'Обновяване на %d маркера за статия номер %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Колко маркера да бъдат показвани?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Минимален брой на използване на маркер, за да бъде показван?');
 
@@ -62,8 +62,8 @@
 @define('PLUGIN_FREETAG_META_KEYWORDS', 'Брой на мета-ключовите думи, които да се вграждат в HTML (0: забранено)');
 
 @define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'Статии с еднакви маркери:');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED','Показване на статиите с еднакви маркери?');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT','Колко статии с даден маркер да бъдат показвани?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'Показване на статиите с еднакви маркери?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'Колко статии с даден маркер да бъдат показвани?');
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER', 'Показване на маркерите след статиите?');
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC', 'Ако е позволено, маркерите ще се показват след статиите. Ако е забранено, маркерите ще бъдат поставяни в тялото на статиите (в началната или допълнителната част).');
 @define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS', 'Маркерите с малки букви');
@@ -80,7 +80,7 @@
 
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'Автоматични ключови думи');
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'Можете да асоциирате ключови думи, разделени със \',\' за всеки маркер. Когато ключовите думи се използват в текста на статиите, съответните маркери се асоциират със статиите. Все пак да се има предвид, че твърде много ключови думи могат да увеличат времето за запис на статията.');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Намерена ключова дума <strong>%s</strong>, маркер <strong><em>%s</em></strong> е асоцииран автоматично.<br />');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Намерена ключова дума <strong>%s</strong>, маркер <strong><em>%s</em></strong> е асоцииран автоматично.');
 
 @define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', 'Преглед на статии от %d до %d');
 @define('PLUGIN_EVENT_FREETAG_REBUILD_TOTAL', ' (общо %d статии)...');
@@ -91,11 +91,12 @@
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'Име на маркер');
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'Брой появи');
 
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK',      'Technorati връзки');
+@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK', 'Technorati връзки');
 @define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_DESC', 'Добавя Technorati връзки след маркерите в основата на статията. Натискането на тези маркери ще покаже подобни статии в други блогове, намерени в Technorati.');
 
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG',      'Изображение за Technorati връзка');
+@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG', 'Изображение за Technorati връзка');
 
-@define('PLUGIN_EVENT_FREETAG_XMLIMAGE',    'XML изображение (относително спрямо пътя до избраната тема на блога)');
+@define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML изображение (относително спрямо пътя до избраната тема на блога)');
 
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC2', 'При избор на \'Smarty\', ще бъде създадена \'Smarty\' променлива {$entry.freetag}, която можете да сложите навсякъде в файл entries.tpl.');
+

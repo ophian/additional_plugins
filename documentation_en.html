@@ -17,7 +17,8 @@
 <h1>Documentation of the Freetag event plugin<br />
     <small>(serendipity_event_freetag)</small></h1>
 
-<p>Documentary added by Ian on 2014-09-27. Informations given in <a href="README">The most current README</a>, <a href="README.txt"> and older README.txt</a> a <a href="ChangeLog">and the most current ChangeLog file</a>.
+<p>Documentary added by Ian on 2014-09-27, changed on 2015-12-22.<br />
+Informations given in <a href="README">The most current README</a>, <a href="README.txt"> and older README.txt</a> a <a href="ChangeLog">and the most current ChangeLog file</a>.
 
 <h2>Scripting changes by options</h2>
 
@@ -47,48 +48,6 @@
     {$entry.freetag}
 {/if}
 </pre>
-
-<h3>Using this subquery you can convert existing categories to tags:</h3>
-
-<pre class="prettyprint linenums lang-sql " data-pbcklang="sql" data-pbcktabsize="4">
-INSERT INTO serendipity_entrytags (entryid, tag) 
-  SELECT serendipity_entries.id, serendipity_category.category_name 
-    FROM serendipity_entries, serendipity_category, serendipity_entrycat 
-   WHERE serendipity_entrycat.entryid = serendipity_entries.id 
-     AND serendipity_category.categoryid = serendipity_entrycat.categoryid;
-</pre>
-
-<p>[quoted from: http://pixelated-dreams.com/archives/229-Spring-Cleaning.html]</p>
-
-<h3>Or using this script you can convert existing categories to tags:</h3>
-
-<pre class="prettyprint linenums lang-php " data-pbcklang="php" data-pbcktabsize="4">
-&lt;?php
-include &#39;serendipity_config.inc.php&#39;;
-
-$rows = serendipity_db_query(&quot;SELECT e.id, e.title, c.category_name
-                                FROM {$serendipity[&#39;dbPrefix&#39;]}entries AS e
-                                JOIN {$serendipity[&#39;dbPrefix&#39;]}entrycat AS ec
-                                  ON ec.entryid = e.id
-                                JOIN {$serendipity[&#39;dbPrefix&#39;]}category AS c
-                                  ON ec.categoryid = c.categoryid&quot;);
-
-foreach($rows AS $row) {
-    serendipity_db_query(
-        sprintf(
-            &quot;REPLACE INTO {$serendipity[&#39;dbPrefix&#39;]}entrytags (entryid, tag) VALUES (%d, %s)&quot;,
-            (int)$row[&#39;id&#39;],
-            serendipity_db_escape_string($row[&#39;category_name&#39;])
-        )
-    );
-
-    printf(
-        &quot;Category &#39;%s&#39; added as Tag for Entry #%d, &#39;%s&#39;&lt;br /&gt;\n&quot;,
-        htmlspecialchars($row[&#39;category_name&#39;]),
-        (int)$row[&#39;id&#39;],
-        htmlspecialchars($row[&#39;title&#39;])
-    );
-}</pre>
 
 <p>&nbsp;</p>
 
@@ -256,6 +215,11 @@ foreach($rows AS $row) {
 + {/if}{* not taglist end *}
 +
 {if $footer_info or $footer_prev_page or $footer_next_page}
++{if $taglist}
++    {if $footer_prev_page}{assign var=&quot;footer_prev_page&quot; value=$footer_prev_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
++    {if $footer_next_page}{assign var=&quot;footer_next_page&quot; value=$footer_next_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
++{/if}
++
     &lt;nav class=&quot;serendipity_pagination block_level&quot;&gt;
         &lt;h2 class=&quot;visuallyhidden&quot;&gt;{$CONST.TWOK11_PAG_TITLE}&lt;/h2&gt;
 
