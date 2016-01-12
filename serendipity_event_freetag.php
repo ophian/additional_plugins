@@ -99,8 +99,7 @@ class serendipity_event_freetag extends serendipity_event
             'taglink',
             'extended_smarty',
             'collation',
-            'admin_show_taglist',
-            'admin_ftayt',
+            'admin_show_taglist', 'admin_delimiter', 'admin_ftayt',
 
             'separator1', 'config_cloudgrouper',
             'show_tagcloud',
@@ -282,6 +281,13 @@ class serendipity_event_freetag extends serendipity_event
                  $propbag->add('name',        PLUGIN_EVENT_FREETAG_ADMIN_FTAYT);
                  $propbag->add('description', '');
                  $propbag->add('default',     'false');
+                 break;
+
+            case 'admin_delimiter':
+                 $propbag->add('type',        'boolean');
+                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_ADMIN_DELIMITER);
+                 $propbag->add('description', '');
+                 $propbag->add('default',     'true');
                  break;
 
             case 'technorati_tag_link':
@@ -1483,10 +1489,9 @@ $(document).ready(function() {
                             } else {
                                 $upc = strtoupper(substr($tag, 0, 1));
                             }
-                            if ($upc != $lastletter) {
-                                #if ($serendipity['version'][0] < 2) { //HEY - DO NOT remove this FEATURE(!) for 2.0+!!
-                                    echo " <strong>|" . $upc . ':</strong> ';
-                                #}
+                            if (serendipity_db_bool($this->get_config('admin_delimiter', 'true')) && $upc != $lastletter) {
+                                // HEY - DO NOT remove this FEATURE(!) for 2.0+!!
+                                echo " <strong>|" . $upc . ':</strong> ';
                             }
                             if ($serendipity['version'][0] < 2) {
                                 echo "<a href=\"#tagListAnchor\" style=\"text-decoration: none\" onClick=\"addTag('$tag')\">$tag</a>, ";

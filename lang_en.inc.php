@@ -152,3 +152,5 @@
 
 @define('PLUGIN_EVENT_FREETAG_SET_OPTION_ERROR_1', '<strong>Set option Error[1]:</strong> You may only use one cloud by time. All clouds were internally set false again. Please set and submit again here! (The form still shows what you had choosen before!)</p>');
 
+@define('PLUGIN_EVENT_FREETAG_ADMIN_DELIMITER', 'Allow alphabetical index Backend-Tags List delimiter?');
+
