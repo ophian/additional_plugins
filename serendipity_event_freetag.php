@@ -112,7 +112,8 @@ class serendipity_event_freetag extends serendipity_event
             'separator2', 'config_pagegrouper',
             'lowercase_tags', 'meta_keywords',
             'show_related', 'show_related_count',
-            'taglist', 'sortlist',
+            'taglist',
+            'sortlist',
             'send_http_header',
             'technorati_tag_link', 'technorati_tag_image',
             'embed_footer')
@@ -129,20 +130,20 @@ class serendipity_event_freetag extends serendipity_event
 
             case 'config_cloudgrouper':
                 $propbag->add('type',        'content');
-                $propbag->add('name',        'Frontend Cloud Preferences');
-                $propbag->add('default',     '<h3>' . FREETAG_CONFIGGROUP_CLOUD . '</h3>');
+                $propbag->add('name',        FREETAG_CONFIGGROUP_CLOUD);
+                $propbag->add('default',     '<h3>' . FREETAG_CONFIGGROUP_CLOUD_DESC . '</h3>');
                 break;
 
             case 'config_pagegrouper':
                 $propbag->add('type',        'content');
-                $propbag->add('name',        'Frontend Entry Page Preferences');
-                $propbag->add('default',     '<h3>' . FREETAG_CONFIGGROUP_ENTRYPAGE . '</h3>');
+                $propbag->add('name',        FREETAG_CONFIGGROUP_ENTRYPAGE);
+                $propbag->add('default',     '<h3>' . FREETAG_CONFIGGROUP_ENTRYPAGE_DESC . '</h3>');
                 break;
 
             case 'config_configgrouper':
                 $propbag->add('type',        'content');
-                $propbag->add('name',        'Configuration Preferences');
-                $propbag->add('default',     '<h3>' . FREETAG_CONFIGGROUP_CONFIG . '</h3>');
+                $propbag->add('name',        FREETAG_CONFIGGROUP_CONFIG);
+                $propbag->add('default',     '<h3>' . FREETAG_CONFIGGROUP_CONFIG_DESC . '</h3>');
                 break;
 
             case 'show_tagcloud':

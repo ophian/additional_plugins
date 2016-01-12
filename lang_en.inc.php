@@ -126,9 +126,12 @@
 @define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT', 'Sort Multi-Tags entries result');
 @define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT_DESC', 'URL Multi-Tags are normally sorted by entry date. This Option sorts shown entries by taglist count, which shows the entries with the most tags in list first, in descending order.');
 
-@define('FREETAG_CONFIGGROUP_CONFIG', 'Backend and general configurations:');
-@define('FREETAG_CONFIGGROUP_CLOUD', 'Tag-Cloud related preferences:');
-@define('FREETAG_CONFIGGROUP_ENTRYPAGE', 'Frontend entry page configurations:');
+@define('FREETAG_CONFIGGROUP_CONFIG', 'Configuration Preferences');
+@define('FREETAG_CONFIGGROUP_CONFIG_DESC', 'Backend and general configurations:');
+@define('FREETAG_CONFIGGROUP_CLOUD', 'Frontend Cloud Preferences');
+@define('FREETAG_CONFIGGROUP_CLOUD_DESC', 'Tag-Cloud related configurations:');
+@define('FREETAG_CONFIGGROUP_ENTRYPAGE', 'Frontend Entry Page Preferences');
+@define('FREETAG_CONFIGGROUP_ENTRYPAGE_DESC', 'Frontend entry page configurations:');
 
 @define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGS_NONE', 'No \Leaf\' tag entries!');
 

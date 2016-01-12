@@ -64,14 +64,14 @@ class serendipity_plugin_freetag extends serendipity_plugin
 
             case 'config_pagegrouper':
                 $propbag->add('type',        'content');
-                $propbag->add('name',        'Configuration Preferences');
+                $propbag->add('name',        FREETAG_CONFIGGROUP_CONFIG);
                 $propbag->add('default',     '<h3>' . PLUGIN_FREETAG_CONFIGGROUP_CONFIG . '</h3>');
                 break;
 
             case 'config_cloudgrouper':
                 $propbag->add('type',        'content');
-                $propbag->add('name',        'Frontend Cloud Preferences');
-                $propbag->add('default',     '<h3>' . FREETAG_CONFIGGROUP_CLOUD . '</h3>');
+                $propbag->add('name',        FREETAG_CONFIGGROUP_CLOUD);
+                $propbag->add('default',     '<h3>' . FREETAG_CONFIGGROUP_CLOUD_DESC . '</h3>');
                 break;
 
             case 'title':
