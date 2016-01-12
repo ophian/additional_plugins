@@ -122,10 +122,10 @@
 @define('PLUGIN_EVENT_FREETAG_TAGSASLIST', 'Listenanzeige (ungeöffnete Artikel)');
 @define('PLUGIN_EVENT_FREETAG_TAGSASLIST_DESC', 'In der Plugin-Dokumentation ist zu lesen, wie die existierende templates entries.tpl Datei für die Listenanzeige der Taglink-Ausgabe im Code geändert werden muss.');
 
-@define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT', 'Sortiere das Ergebnis der Multitags Einträge');
-@define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT_DESC', 'URL Multitags werden für die Blogs Eintragsansicht normalerweise nach dem Eintragsdatum sortiert. Diese Einstellung sortiert Tag Listen nach Häufigkeit der Tags, in absteigender Folge.');
+@define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT', 'Absteigende Sortierung von "Multi-Tags" Einträgen');
+@define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT_DESC', 'Normalerweise werden bei der Darstellung von multiplen Tags die damit zugewiesenen Einträge nach Datum sortiert. Wenn diese Option aktiviert wird, wird die Liste nach Häufigkeit der Tags, in absteigender Folge sortiert.');
 
 @define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGS_NONE', 'Keine verwaisten Tags gefunden!');
 
-@define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS_DESC', 'Datenbank und Backend Tags werden wie eingegeben gespeichert und angezeigt. Diese Option ist nur für Frontend Tags.');
+@define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS_DESC', 'Datenbank und Backend-Tags werden wie eingegeben gespeichert und angezeigt. Diese Option ist nur für Frontend-Tags.');
 

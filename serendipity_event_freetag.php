@@ -7,12 +7,8 @@
  * - Refactor the external plugin event hook.  Its kind of cruddy. (RQ: ?)
  *
  * TODO:
- * - Add tag intersections with + on the URI (RQ: ?)
- * - Integrate into the del.icio.us plugin (RQ: ?)
- * - Integrate into the flickr plugin (RQ: ?)
  * - Refactor code out of the main event dispatch and into its own methods
- * - Remove comma-delimiting and use the 'standard' space delimiting instead (RQ: ?)
- * - - convert database structure to a truely 3rd normal form
+ * - - convert database structure to a truely 3rd normal form (RQ: ?)
  *
  * - Tag administration
  * - - Describe Tag
@@ -339,7 +335,7 @@ class serendipity_event_freetag extends serendipity_event
             case 'use_flash':
                  $propbag->add('type',        'boolean');
                  $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_FLASH);
-                 $propbag->add('description', 'Flash is dead! Don\'t contaminate the internet any more, please!');
+                 $propbag->add('description', 'Flash is deprecated, please consider using the other tagclouds!'); // i18n?
                  $propbag->add('default',     'false');
                  break;
 
@@ -393,7 +389,7 @@ class serendipity_event_freetag extends serendipity_event
             $this->set_config('use_flash', 'false');
             $this->set_config('use_rotacloud', 'false');
             $this->set_config('use_wordcloud', 'false');
-            echo '<p class="msg_error"><span class="icon-attention-circled"></span> <strong>Set option Error[1]:</strong> You may only use one cloud by time. All clouds were internally set false again. Please set and submit again here! (The form still shows what you had choosen before!)</p>'; // i18n?
+            echo '<p class="msg_error"><span class="icon-attention-circled"></span> ' . PLUGIN_EVENT_FREETAG_SET_OPTION_ERROR_1;
         }
     }
 

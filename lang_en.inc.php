@@ -123,8 +123,8 @@
 @define('PLUGIN_EVENT_FREETAG_TAGSASLIST', 'Enable "tags-as-list" (non-opened entries)');
 @define('PLUGIN_EVENT_FREETAG_TAGSASLIST_DESC', 'Please read the documentary in this plugins "Local Documentation" on how to add the smarty taglist code to your existing templates entries.tpl file.');
 
-@define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT', 'Sort multitags entries result');
-@define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT_DESC', 'URL multitags are normally sorted by entry date. This Option sorts shown entries by taglist count, which shows the entries with the most tags in list first, in descending order.');
+@define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT', 'Sort Multi-Tags entries result');
+@define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT_DESC', 'URL Multi-Tags are normally sorted by entry date. This Option sorts shown entries by taglist count, which shows the entries with the most tags in list first, in descending order.');
 
 @define('FREETAG_CONFIGGROUP_CONFIG', 'Backend and general configurations:');
 @define('FREETAG_CONFIGGROUP_CLOUD', 'Tag-Cloud related preferences:');
@@ -132,7 +132,7 @@
 
 @define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGS_NONE', 'No \Leaf\' tag entries!');
 
-@define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS_DESC', 'Storage and Backend tags live like applied. To lowercase is only for frontend shown tags.');
+@define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS_DESC', 'Storage and Backend-Tags live like applied. To lowercase applies only for shown Frontend-Tags.');
 
 @define('PLUGIN_EVENT_FREETAG_USE_CAROC', 'Use a modern Canvas rotating cloud?');
 @define('PLUGIN_EVENT_FREETAG_USE_CAROC_DESC', 'A rotating JavaScript canvas cloud in sidebars and archives! Limited in use, since it needs more or less "squared" environments.');
@@ -146,4 +146,6 @@
 @define('PLUGIN_FREETAG_CONFIGGROUP_CONFIG', 'Sidebar and general configurations:');
 
 @define('PLUGIN_FREETAG_USE_CANVAS_SCRIPTS_DESC', 'For including the canvas scripts, "show_tagcloud" needs to be enabled in event plugin too!');
+
+@define('PLUGIN_EVENT_FREETAG_SET_OPTION_ERROR_1', '<strong>Set option Error[1]:</strong> You may only use one cloud by time. All clouds were internally set false again. Please set and submit again here! (The form still shows what you had choosen before!)</p>');
 
