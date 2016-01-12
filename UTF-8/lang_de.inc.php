@@ -121,7 +121,7 @@
 @define('PLUGIN_EVENT_FREETAG_TAGSASLIST_DESC', 'In der Plugin-Dokumentation ist zu lesen, wie die existierende templates entries.tpl Datei für die Listenanzeige der Taglink-Ausgabe im Code geändert werden muss.');
 
 @define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT', 'Absteigende Sortierung von "Multi-Tags" Einträgen');
-@define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT_DESC', 'Normalerweise werden bei der Darstellung von multiplen Tags die damit zugewiesenen Einträge nach Datum sortiert. Wenn diese Option aktiviert wird, wird die Liste nach Häufigkeit der Tags, in absteigender Folge sortiert.');
+@define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT_DESC', 'Normalerweise werden bei der Darstellung von mehreren gewählten Tags die damit zugewiesenen Einträge einfach nach Datum sortiert aufgelistet. Wenn diese Option aktiviert wird, werden die Einträge nach den häufigsten Überschneidungen mit den angeforderten Tags sortiert.');
 
 @define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGS_NONE', 'Keine verwaisten Tags gefunden!');
 
