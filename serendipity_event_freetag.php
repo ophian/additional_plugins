@@ -963,7 +963,7 @@ class serendipity_event_freetag extends serendipity_event
                         ';
                     }
 
-                    $this->displayMetaKeywords($serendipity['GET']['id'],  $this->displayTag );
+                    $this->displayMetaKeywords($serendipity['GET']['id'], $this->displayTag);
                     break;
 
                 case 'frontend_display:rss-2.0:per_entry':
@@ -1160,9 +1160,8 @@ class serendipity_event_freetag extends serendipity_event
                     // Do not loose such tags. :)
                     // And do not use it with multiple entry cases, since this would always get the first of multiple IDs!!
                     if (!isset($serendipity['POST']['properties']['freetag_tagList']) && $serendipity['GET']['tagview'] != 'tagupdate' && $serendipity['GET']['tagview'] != 'cat2tag') {
-                        $serendipity['POST']['properties']['freetag_tagList'] = implode(',', $this->getTagsForEntry($eventData['id']));
+                        $serendipity['POST']['properties']['freetag_tagList'] = implode(',', $this->getTagsForEntry($eventData['id'])); // as STRING
                     }
-
                     if (!empty($serendipity['POST']['properties']['freetag_tagList'])) {
                         $tags = $this->makeTagsFromTagList($serendipity['POST']['properties']['freetag_tagList']);
                     }
@@ -1175,7 +1174,7 @@ class serendipity_event_freetag extends serendipity_event
                     if (empty($tags) && serendipity_db_bool($this->get_config('keyword2tag', 'false'))) {
                         $searchtext = strip_tags($eventData['body'] . $eventData['extended']);
                         // fetch oldtags AS ARRAY for each entry, valid to be checked for keywords
-                        $oldtags = $this->makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id'])));
+                        $oldtags = $this->makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id']))); // as ARRAY
 
                         foreach($automated AS $keyword => $ktags) {
                             $keyword = trim($keyword);
@@ -1235,7 +1234,7 @@ class serendipity_event_freetag extends serendipity_event
                     // Merge kept oldtags with automated and/or category tags into tagList - may partly be or look a little redundant, but catches every case
                     if (is_array($tags) && !empty($tags)) {
                         if (!is_array($oldtags) && empty($oldtags)) {
-                            $oldtags = $this->makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id'])));
+                            $oldtags = $this->makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id']))); // as ARRAY
                         }
                         if (!is_array($oldtags)) { $oldtags = array(); }
                         // Condition could be used with checking the given arrays before, with ' && $oldtags !== $tags',
@@ -1262,8 +1261,8 @@ class serendipity_event_freetag extends serendipity_event
                     if (isset($serendipity['POST']['properties']['freetag_kill'])) {
                         $this->deleteTagsForEntry($eventData['id']);
                     }
-                    // RQ: How and where does the magic happens, to modify the 'last_modified' field for every entry successed and written here? DO we really want this to happen?
-                    // PLEASE REMEMBER: never ever unset($eventData) here, since this can change and hit other plugins content too!!!!!
+                    // PLEASE NOTE: This modifies the 'last_modified' field for every entry successed in serendipity_updertEntry(), not really being necessary though.
+                    // REMEMBER   : Never ever unset($eventData) here, since this can change and hit other plugins content too!
                     break;
 
                 case 'css_backend':
@@ -1351,13 +1350,14 @@ $(document).ready(function() {
                     if (!empty($serendipity['POST']['properties']['freetag_tagList'])) {
                         $tagList = $serendipity['POST']['properties']['freetag_tagList'];
                     } else if (isset($eventData['id'])) {
-                        $tagList = implode(',', $this->getTagsForEntry($eventData['id']));
+                        // this is the backend entries tag list input field - the tags already assigned to an entry
+                        $tagList = implode(',', $this->getTagsForEntry($eventData['id'])); // as STRING
                     } else {
                         $tagList = '';
                     }
 
-                    // RQ: why should we do this, if already fetched by eventID or POST? Seems redundant, thats why I added the empty() check.
-                    // This was previously part of setting list tags lowercased into the input field!
+                    // Why should we do this, if already fetched by eventData ID or POST? Seems redundant, thats why I added the empty() check.
+                    //     (This was previously part of setting list tags lowercased into the input field)
                     if (empty($tagList)) {
                         $freetags = $this->makeTagsFromTagList($tagList);
                         if (!empty($freetags)) {
@@ -1725,9 +1725,6 @@ $(document).ready(function() {
                     break;
 
                 case 'entry_display':
-                    // Don't display entries if we are getting a full tag list
-                    # break; // RQ: Can anybody explain, for WHAT case we execute entry_display in freetag at all? And WHY trying to disable this fetched frontend page with all entries for the page, breaks entries...?
-
                     if (is_array($eventData)) {
                         $this->taggedEntries = count($eventData);
                         if (serendipity_db_bool($this->get_config('send_http_header', 'true'))) {
@@ -1739,11 +1736,12 @@ $(document).ready(function() {
                         }
                         $this->taggedEntries = 0;
                     }
+                    // Don't display entries if passed true by 'external_plugin'
                     if ($this->displayTag === true) {
                         $eventData['clean_page'] = true;
                         break;
                     }
-
+                    // places the entries tags in entry footer
                     $this->displayEntry($eventData, $addData);
                     break;
 
@@ -1759,7 +1757,8 @@ $(document).ready(function() {
                     break;
 
                 case 'xmlrpc_fetchEntry':
-                    $eventData['mt_keywords'] = implode(',', $this->getTagsForEntry($eventData['id']));
+                    $eventData['mt_keywords'] = implode(',', $this->getTagsForEntry($eventData['id'])); // as STRING
+
                     break;
 
                 case 'xmlrpc_deleteEntry':
@@ -1787,7 +1786,7 @@ $(document).ready(function() {
         $elements = count($eventData);
 
         // If not using extended-smarty, we want related entries only when
-        // showing only one entry. It is better to ask Smarty here than doing
+        // showing one single entry. It is better to ask Smarty here than doing
         // this manually for edge cases like overview pages
         if ($serendipity['version'][0] > 1) {
             $manyEntries = ! $serendipity['smarty']->getTemplateVars('is_single_entry');
@@ -1796,7 +1795,8 @@ $(document).ready(function() {
         }
 
         for ($entry = 0; $entry < $elements; $entry++) {
-            $tags = $this->getTagsForEntry($eventData[$entry]['id']);
+            // runs everywhere to generate a flattened array of tags
+            $tags = $this->getTagsForEntry($eventData[$entry]['id']); // as ARRAY
 
             if ($to_lower) {
                 $tags =  $this->array_imap($tags); // set to_lower for frontend entries (new)
@@ -2208,8 +2208,15 @@ $(document).ready(function() {
         return $gt;
     }
 
+    /**
+     * Fetches arrified tags by ID
+     * Why uses array pop? It turns multi-dimensional arrays into flattened arrays!
+     *
+     * @param  int   entries $eventData['id']
+     * @return array in any case for the tolower array_imap()
+     */
     function getTagsForEntry($entryId) {
-        $array = $this->getTagsForEntries(array($entryId));// RQ: array pop WHY?
+        $array = $this->getTagsForEntries(array($entryId));
         return (is_array($array) ? array_pop($array) : array());
     }
 
