@@ -49,7 +49,7 @@
  * Added more messages.
  * Fixed some constant lang messages ... <en> <de>.
  * Now uses a specialchars_mapper() method.
- * Re-allow the backends entry alphabet distinction in tag list.
+ * Re-allow the backends entry alphabet index distinction in tag list. Unset by option.
  * Re-organized the "tags to strtolower" option, to only apply to tags shown in all
    possible frontend situations at runtime. Also changed sidebar plugin to v.3.04 for this.
    Stored and backend tags are stored and shown as applied!
