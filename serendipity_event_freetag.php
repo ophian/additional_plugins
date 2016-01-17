@@ -32,8 +32,8 @@ if (file_exists($probelang)) {
 include_once dirname(__FILE__) . '/lang_en.inc.php';
 
 // Because I am using GET methods, if you change this, you also have to change the getManageUrlAsHidden
-define('FREETAG_MANAGE_URL','?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=managetags');
-define('FREETAG_EDITENTRY_URL','?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]=');
+define('FREETAG_MANAGE_URL', '?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=managetags');
+define('FREETAG_EDITENTRY_URL', '?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]=');
 
 class serendipity_event_freetag extends serendipity_event
 {
@@ -43,10 +43,6 @@ class serendipity_event_freetag extends serendipity_event
     var $taggedEntries        = null;
     var $supported_properties = array();
     var $dependencies         = array();
-
-    function specialchars_mapper($var) {
-        return (function_exists('serendipity_specialchars') ? serendipity_specialchars($var) : htmlspecialchars($var, ENT_COMPAT, LANG_CHARSET));
-    }
 
     function introspect(&$propbag)
     {
@@ -91,8 +87,10 @@ class serendipity_event_freetag extends serendipity_event
             'js_backend'                                        => true
         ));
         $propbag->add('groups', array('BACKEND_EDITOR'));
+
         $this->supported_properties = array('freetag_name', 'freetag_tagList');
         $this->dependencies = array('serendipity_plugin_freetag' => 'keep');
+
         $propbag->add('configuration', array(
             'config_configgrouper',
             'cat2tag', 'keyword2tag',
@@ -498,6 +496,16 @@ class serendipity_event_freetag extends serendipity_event
     }
 
     /**
+     * Simple redirector method
+     *
+     * @param   string   $var
+     * @return  string   escaped
+     */
+    function specialchars_mapper($var) {
+        return (function_exists('serendipity_specialchars') ? serendipity_specialchars($var) : htmlspecialchars($var, ENT_COMPAT, LANG_CHARSET));
+    }
+
+    /**
      * Simple callback method for array_map(), to avoid
      * array_map('htmlspecialchars', $array) missing the PHP 5.4+ changes
      *
@@ -510,7 +518,7 @@ class serendipity_event_freetag extends serendipity_event
     }
 
     static function makeURLTag($tag) {
-        return str_replace('.', '%FF', urlencode($tag));
+        return str_replace('.', '%FF', urlencode($tag)); // RQ: why is this here ? Isn't %ff not ÿ = %FF = %C3%BF ? And why is this file at all encoded to utf8 without BOM ?
     }
 
     function getTagHtmlFromCSV($tagString) {
@@ -982,7 +990,7 @@ class serendipity_event_freetag extends serendipity_event
 
                     $uri_parts      = explode('?', str_replace(array('&amp;', '%FF'), array('&', '.'), $eventData));
                     $taglist        = serendipity_db_bool($this->get_config('taglist', 'false'));
-                    $param          = $taglist ? explode('/', str_replace('/taglist','',$uri_parts[0])) : explode('/', $uri_parts[0]);
+                    $param          = $taglist ? explode('/', str_replace('/taglist', '', $uri_parts[0])) : explode('/', $uri_parts[0]);
                     $plugincode     = array_shift($param);
                     $tagged_as_list = false;
 
@@ -1960,7 +1968,7 @@ $(document).ready(function() {
                                                    serendipity_db_bool($this->get_config('flash_bg_trans', 'true')),
                                                    $this->get_config('flash_tag_color', 'ff6600'), $this->get_config('flash_bg_color', 'ffffff'),
                                                    $this->get_config('flash_width', 600), $this->get_config('flash_speed', 100),
-                                                   $this->get_config('taglink'), $this->get_config('template'), $this->get_config('xml_image','img/xml.gif'),
+                                                   $this->get_config('taglink'), $this->get_config('template'), $this->get_config('xml_image', 'img/xml.gif'),
                                                    $useRotCanvas, $this->get_config('rotacloud_tag_color', '3E5F81'), $this->get_config('rotacloud_tag_border_color', 'B1C1D1'), $this->get_config('rotacloud_width', '500'),
                                                    $useWordCloud);
             $tagout = ob_get_contents();
@@ -2732,7 +2740,7 @@ $(document).ready(function() {
      * The next is the actual action itself, where we do a db update/delete of some sort.
      */
     function displayTagAction() {
-        $validActions = array('rename','split','delete');
+        $validActions = array('rename', 'split', 'delete');
 
         // Sanitize user input
         $tag    = urldecode($this->eventData['GET']['tag']);
@@ -2842,7 +2850,7 @@ $(document).ready(function() {
     /* @see method call by displayTagAction */
     function displaySplitTag($tag, &$eventData) {
         if (strstr($tag, ' ')) {
-            $newtag = str_replace(' ',',',$tag);
+            $newtag = str_replace(' ', ',', $tag);
         } else {
             $newtag = '';
         }

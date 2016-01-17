@@ -53,7 +53,6 @@ class serendipity_plugin_freetag extends serendipity_plugin
         $this->dependencies = array('serendipity_event_freetag' => 'keep');
     }
 
-
     function introspect_config_item($name, &$propbag) {
         global $serendipity;
         switch($name) {
