@@ -138,13 +138,16 @@
 @define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS_DESC', 'Storage and Backend-Tags live like applied. To lowercase applies only for shown Frontend-Tags.');
 
 @define('PLUGIN_EVENT_FREETAG_USE_CAROC', 'Use a modern Canvas rotating cloud?');
-@define('PLUGIN_EVENT_FREETAG_USE_CAROC_DESC', 'A rotating JavaScript canvas cloud in sidebars and archives! Limited in use, since it needs more or less "squared" environments.');
+@define('PLUGIN_EVENT_FREETAG_USE_CAROC_DESC', 'A rotating JavaScript canvas cloud in %s! (Limited in use, since it needs more or less "squared" environments.)');
 @define('PLUGIN_EVENT_FREETAG_CAROC_TAG_COLOR', 'Rotating Canvas-Cloud tag color (rrggbb)');
 @define('PLUGIN_EVENT_FREETAG_CAROC_TAG_BORDER_COLOR', 'Rotating Canvas-Cloud tag border color (rrggbb)');
 @define('PLUGIN_EVENT_FREETAG_CAROC_BOXWIDTH', 'Rotating Canvas-Cloud width');
 
 @define('PLUGIN_EVENT_FREETAG_USE_CAWOC', 'Use a modern Canvas 2D word cloud?');
-@define('PLUGIN_EVENT_FREETAG_USE_CAWOC_DESC', 'A state-of-the-Art "wordle" like awesome 2D tagword canvas cloud in sidebars and archives!');
+@define('PLUGIN_EVENT_FREETAG_USE_CAWOC_DESC', 'A state-of-the-Art "wordle" like awesome 2D tagword canvas cloud in %s!');
+
+@define('PLUGIN_EVENT_FREETAG_USE_CANVAS_PLUGIN_SPRINT', 'sidebars and archives');
+@define('PLUGIN_EVENT_FREETAG_USE_CANVAS_EVENT_SPRINT', 'related tags');
 
 @define('PLUGIN_FREETAG_CONFIGGROUP_CONFIG', 'Sidebar and general configurations:');
 

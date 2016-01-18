@@ -1,3 +1,14 @@
+3.71: + 3.08 (sidebar):
+-----------------------
+
+
+ * Updated the "Find-tags-as-you-type" autocomplete script, which removes the need
+   for jquery-migrate. This also fixes some issues with tag autocompletion!
+ * Move inline tagLists addtag() script into backend_js with 2.0+.
+ * Add exact place of appearance by sprintf() for the CANVAS option descriptions,
+   by event vs. sidebar plugin.
+
+
 3.07 (sidebar):
 -----------------------
 

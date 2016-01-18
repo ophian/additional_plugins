@@ -31,7 +31,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.07');
+        $propbag->add('version',       '3.08');
         $propbag->add('groups',        array('FRONTEND_ENTRY_RELATED'));
         $propbag->add('configuration', array(
             'config_pagegrouper',
@@ -162,7 +162,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             case 'use_rotacloud':
                  $propbag->add('type',        'boolean');
                  $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_CAROC);
-                 $propbag->add('description', PLUGIN_EVENT_FREETAG_USE_CAROC_DESC . ' ' . PLUGIN_FREETAG_USE_CANVAS_SCRIPTS_DESC);
+                 $propbag->add('description', sprintf(PLUGIN_EVENT_FREETAG_USE_CAROC_DESC, PLUGIN_EVENT_FREETAG_USE_CANVAS_PLUGIN_SPRINT) . ' ' . PLUGIN_FREETAG_USE_CANVAS_SCRIPTS_DESC);
                  $propbag->add('default',     'false');
                  break;
 
@@ -190,7 +190,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             case 'use_wordcloud':
                  $propbag->add('type',        'boolean');
                  $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_CAWOC);
-                 $propbag->add('description', PLUGIN_EVENT_FREETAG_USE_CAWOC_DESC . ' ' . PLUGIN_FREETAG_USE_CANVAS_SCRIPTS_DESC);
+                 $propbag->add('description', sprintf(PLUGIN_EVENT_FREETAG_USE_CAWOC_DESC, PLUGIN_EVENT_FREETAG_USE_CANVAS_PLUGIN_SPRINT) . ' ' . PLUGIN_FREETAG_USE_CANVAS_SCRIPTS_DESC);
                  $propbag->add('default',     'false');
                  break;
 

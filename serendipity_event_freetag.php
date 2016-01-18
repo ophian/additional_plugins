@@ -57,7 +57,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.70');
+        $propbag->add('version',       '3.71');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -305,7 +305,7 @@ class serendipity_event_freetag extends serendipity_event
             case 'use_rotacloud':
                  $propbag->add('type',        'boolean');
                  $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_CAROC);
-                 $propbag->add('description', PLUGIN_EVENT_FREETAG_USE_CAROC_DESC);
+                 $propbag->add('description', sprintf(PLUGIN_EVENT_FREETAG_USE_CAROC_DESC, PLUGIN_EVENT_FREETAG_USE_CANVAS_EVENT_SPRINT));
                  $propbag->add('default',     'false');
                  break;
 
@@ -333,7 +333,7 @@ class serendipity_event_freetag extends serendipity_event
             case 'use_wordcloud':
                  $propbag->add('type',        'boolean');
                  $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_CAWOC);
-                 $propbag->add('description', PLUGIN_EVENT_FREETAG_USE_CAWOC_DESC);
+                 $propbag->add('description', sprintf(PLUGIN_EVENT_FREETAG_USE_CAWOC_DESC, PLUGIN_EVENT_FREETAG_USE_CANVAS_EVENT_SPRINT));
                  $propbag->add('default',     'false');
                  break;
 
@@ -1317,36 +1317,108 @@ class serendipity_event_freetag extends serendipity_event
                     break;
 
                 case 'js_backend':
+                    // show_taglist adding function
+                    if (serendipity_db_bool($this->get_config('admin_show_taglist', 'true'))) {
+
+?>
+
+function addTag(addTag) {
+    var elem = document.getElementById('properties_freetag_tagList');
+    var freetags = elem.value.split(',');
+
+    inList = false;
+    for (var freetag = 0; freetag < freetags.length; freetag++) {
+        if (freetags[freetag] && trim(freetags[freetag].toLowerCase()) == addTag.toLowerCase()) {
+            inList = true;
+        }
+    }
+
+    if (!inList) {
+        if (elem.value.lastIndexOf(',') == (elem.value.length-1)) {
+            sepChar = '';
+        } else {
+            sepChar = ',';
+        }
+
+        elem.value = elem.value + sepChar + addTag;
+        elem.focus();
+    }
+}
+
+function trim(str) {
+    if (str) return str.replace(/^\s*|\s*$/g,'');
+    else return '';
+}
+
+<?php
+
+                    }
                     // autocomplete with serendipity 2.0
                     if (serendipity_db_bool($this->get_config('admin_ftayt', 'false'))) {
-                        echo '
+
+?>
+
 function enableAutocomplete() {
-    if (typeof(tags) != "undefined") {
-        $("#properties_freetag_tagList").autocomplete(tags, {
-            minChars: 0,
-            multiple: true,
-            scrollHeight: 200,
-            matchContains: "word",
-            autoFill: false
-        });
+    if (typeof(tags) != 'undefined') {
+        function split(val) {
+            return val.split(/,\s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+        $('#properties_freetag_tagList')
+            .bind('keydown', function (event) {
+                // dont navigate away from the field on tab when selecting an item
+                if (event.keyCode === 9 && $(this).data('ui-autocomplete').menu.active) {
+                    event.preventDefault();
+                }
+            })
+            .autocomplete({
+                minLength: 0,
+                source: function (request, response) {
+                    // delegate back to autocomplete, but extract the last term
+                    response($.ui.autocomplete.filter(tags, extractLast(request.term)));
+                },
+                focus: function () {
+                    // prevent value inserted on focus
+                    return false;
+                },
+                select: function (event, ui) {
+                    var terms = split(this.value);
+                    // remove the current input
+                    terms.pop();
+                    // add the selected item
+                    terms.push(ui.item.value);
+                    // add placeholder to get the comma-and-space at the end
+                    terms.push('');
+                    this.value = terms.join(',');
+                    return false;
+                }
+            });
     }
 };
 
 addLoadEvent(enableAutocomplete);
 
-';
+<?php
+
                     }
+
                     // keep for 2.0 < 2.1 version, since they do not have this nice config grouper item
                     if ($serendipity['version'][0] == 2 && version_compare($serendipity['version'], '2.0.99', '<')) {
-                        echo '
+
+?>
+
 $(document).ready(function() {
     $(\'.configure_plugin div.configuration_group\').each(function() {
         if(!/[\S]/.test($(this).html())) {
-            $(this).replaceWith(\'<hr class="config_separator" style="visibility:hidden">\');
+            $(this).replaceWith('<hr class="config_separator" style="visibility:hidden">');
         }
     });
 });
-                        ';
+
+<?php
+
                     }
                     break;
 
@@ -1380,29 +1452,58 @@ $(document).ready(function() {
                         foreach ($tagsArray as $k => $v) {
                             $wicktags[] = '\'' . addslashes($k) . '\'';
                         }
-                        // jQuery Migrate is used due to $.browser of autocomplete plugin not being available in jquery 1.9+
                         echo '
                         ' . ($serendipity['version'][0] < 2 ? '<script type="text/javascript" src="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery-1.11.3.min.js"></script>' : '') . '
-                        <link rel="stylesheet" type="text/css" href="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.css" />
-                        <script type="text/javascript" src="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery-migrate-1.2.1.min.js"></script>
+                        <link rel="stylesheet" type="text/css" href="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.min.css" />
                         <script type="text/javascript" src="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.min.js"></script>
                         <script type="text/javascript">
                         var tags = [' . implode(',', $wicktags) . '];
                          ' . ($serendipity['version'][0] < 2 ? '
                         function enableAutocomplete() {
-                            $("#properties_freetag_tagList").autocomplete(tags, {
-                                        minChars: 0,
-                                        multiple: true,
-                                        scrollHeight: 200,
-                                        matchContains: "word",
-                                        autoFill: false
-                                    })};
-                            addLoadEvent(enableAutocomplete);
+                            if (typeof(tags) != "undefined") {
+                                function split(val) {
+                                    return val.split(/,\s*/);
+                                }
+                                function extractLast(term) {
+                                    return split(term).pop();
+                                }
+                                $("#properties_freetag_tagList")
+                                    .bind("keydown", function (event) {
+                                        // dont navigate away from the field on tab when selecting an item
+                                        if (event.keyCode === 9 && $(this).data("ui-autocomplete").menu.active) {
+                                            event.preventDefault();
+                                        }
+                                    })
+                                    .autocomplete({
+                                        minLength: 0,
+                                        source: function (request, response) {
+                                            // delegate back to autocomplete, but extract the last term
+                                            response($.ui.autocomplete.filter(tags, extractLast(request.term)));
+                                        },
+                                        focus: function () {
+                                            // prevent value inserted on focus
+                                            return false;
+                                        },
+                                        select: function (event, ui) {
+                                            var terms = split(this.value);
+                                            // remove the current input
+                                            terms.pop();
+                                            // add the selected item
+                                            terms.push(ui.item.value);
+                                            // add placeholder to get the comma-and-space at the end
+                                            terms.push("");
+                                            this.value = terms.join(",");
+                                            return false;
+                                        }
+                                    });
+                            }
+                        };
+                        addLoadEvent(enableAutocomplete);
                          ' : '') . '
                         </script>'."\n";
                     }
 
-                    if (serendipity_db_bool($this->get_config('admin_show_taglist', 'true'))) { // RQ: ToDo! MOVE SCRIPTs INTO js_backend js with 2.0+ ?
+                    if (($serendipity['version'][0] < 2) && serendipity_db_bool($this->get_config('admin_show_taglist', 'true'))) {
 ?>
 
                         <script type="text/javascript">
@@ -1516,7 +1617,6 @@ $(document).ready(function() {
 
 <?php
                     break;
-
 
                 case 'frontend_entryproperties':
                     $this->importEntryTagsIntoProperties($eventData, $addData);
