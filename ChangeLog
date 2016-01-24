@@ -1,6 +1,17 @@
-3.71: + 3.08 (sidebar):
+3.72: + 3.09 (sidebar):
 -----------------------
 
+ * Check permission if user is allowed to maintain other entries,
+   which disallows some backend administration tasks, except ALL and LEAF tags.
+ * Append backend eventData CSS to end
+ * Fix 'flash_bg_trans' default carrier to false
+ * Refactor some backend tag administration methods
+ * Removed old probelang to use newer API approach.
+   Extends minimum required Serendipity Version to 1.6.
+
+
+3.71: + 3.08 (sidebar):
+-----------------------
 
  * Updated the "Find-tags-as-you-type" autocomplete script, which removes the need
    for jquery-migrate. This also fixes some issues with tag autocompletion!
@@ -15,6 +26,7 @@
  * Add configgroup separate helpers, re-sorting options to better apply
    into config groups.
  * Precised HTML Tag cloud option text for <en> <de> langs
+
 
 3.70: + 3.06 (sidebar):
 -----------------------
@@ -143,7 +155,7 @@ Fix autocomplete of tags in 2.0
 
 3.53:
 -----
-Fixes issue #177 Freetag plugin emits “1” (mattsches)
+Fixes issue #177 Freetag plugin emits "1" (mattsches)
 Fixes wrong return values, unneeded parameters, missing checks
 
 

@@ -4,13 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_plugin_freetag extends serendipity_plugin
 {
@@ -27,11 +21,11 @@ class serendipity_plugin_freetag extends serendipity_plugin
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.08');
+        $propbag->add('version',       '3.09');
         $propbag->add('groups',        array('FRONTEND_ENTRY_RELATED'));
         $propbag->add('configuration', array(
             'config_pagegrouper',
@@ -319,7 +313,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
 
         serendipity_event_freetag::displayTags($tags, $xml, $nl, $scaling, $this->get_config('max_percent', 300), $this->get_config('min_percent', 100),
                                                serendipity_db_bool($this->get_config('use_flash')),
-                                               serendipity_db_bool($this->get_config('flash_bg_trans', true)),
+                                               serendipity_db_bool($this->get_config('flash_bg_trans', 'false')),
                                                $this->get_config('flash_tag_color', 'ff6600'), $this->get_config('flash_bg_color', 'ffffff'),
                                                $this->get_config('flash_width', 190), $this->get_config('flash_speed', 100),
                                                $this->get_config('taglink'), $this->get_config('template'), $this->get_config('xml_image','img/xml.gif'),
