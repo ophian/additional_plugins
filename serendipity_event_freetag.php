@@ -51,7 +51,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.72');
+        $propbag->add('version',       '3.73');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1002,7 +1002,7 @@ class serendipity_event_freetag extends serendipity_event
 
                 case 'external_plugin':
 
-                    $uri_parts      = explode('?', str_replace(array('&amp;', '%FF'), array('&', '.'), $eventData));
+                    $uri_parts      = explode('?', str_replace(array('&amp;', '%FF'), array('&', '.'), $eventData));// RQ: see event plugin RQ regarding %FF
                     $taglist        = serendipity_db_bool($this->get_config('taglist', 'false'));
                     $param          = $taglist ? explode('/', str_replace('/taglist', '', $uri_parts[0])) : explode('/', $uri_parts[0]);
                     $plugincode     = array_shift($param);
@@ -1128,7 +1128,7 @@ class serendipity_event_freetag extends serendipity_event
                         }
                         serendipity_gzCompression();
                         $serendipity['smarty']->display(serendipity_getTemplateFile($serendipity['smarty_file'], 'serendipityPath'));
-                        @define('NO_EXIT', true); // RQ: Why did or do we (still) need this? (see index 2.1-alpha2 change)
+                        @define('NO_EXIT', true); // RQ: Why did or do we (still) need this? (see index.php file change in 2.1-alpha2)
                     }
                     break;
 
@@ -3050,160 +3050,6 @@ $(document).ready(function() {
         } else {
             $method = 'display'.ucfirst($this->eventData['GET']['tagaction']).'Tag';
             $this->$method($tag, $this->eventData);
-        }
-    }
-
-    /**
-     * Backend Administration Method: Set hidden inputs
-     */ // RQ: Shall we remove it? Is it future or past?
-    function getManageUrlAsHidden(&$eventData)
-    {
-        return '            <input type="hidden" name="serendipity[adminModule]" value="event_display" />
-            <input type="hidden" name="serendipity[adminAction]" value="managetags" />'."\n";
-    }
-
-    // RQ: Where is this used? Shall we remove it? Is it future or past?
-    function displayRenameTag($tag, &$eventData)
-    {
-?>
-
-        <form action="" method="GET"><!-- displayRenameTag -->
-            <?php echo $this->getManageUrlAsHidden($this->eventData) ?>
-            <input type="hidden" name="serendipity[tagview]" value="<?php echo self::specialchars_mapper($this->eventData['GET']['tagview']) ?>">
-            <input type="hidden" name="serendipity[tagaction]" value="rename" />
-            <input type="hidden" name="serendipity[commit]" value="true" />
-            <input type="hidden" name="serendipity[tag]" value="<?php echo self::specialchars_mapper($tag) ?>" />
-            <?php echo self::specialchars_mapper($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtag]" /> <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>" />
-        </form>
-
-<?php
-    }
-
-    /**
-     * Execute a rename of a tag
-     * We select all the entries with the old tag name, delete all entry tags
-     * with the old tag name, and finally re insert.  The reason we do this is
-     * that we might be renaming a tag, to an already exising tag that is
-     * already associated to an entry, duplicating the primary key.
-     * If we do it via an update, the update fails, and our rename doesn't
-     * happen.  This way our update does happen, and we can silently fail
-     * when we hit a duplicate key condition.
-     * Postgres doesnt have an UPDATE IGNORE syntax, so we can't use that
-     * method.  Sux0rz.
-     */ // RQ: Where is this used? Shall we remove it? Is it future or past?
-    function getRenameTagQuery($tag, &$eventData)
-    {
-        global $serendipity;
-
-        $tag = serendipity_db_escape_string($tag);
-        $newtag = serendipity_db_escape_string(urldecode($serendipity['GET']['newtag']));
-
-        $q = "SELECT entryid FROM {$serendipity['dbPrefix']}entrytags WHERE tag = '$tag'";
-
-        $r = serendipity_db_query($q);
-        if (!is_array($r)) {
-            echo $r;
-            return false;
-        }
-
-        $q = "DELETE FROM {$serendipity['dbPrefix']}entrytags WHERE tag = '$tag'";
-        serendipity_db_query($q);
-
-        foreach ($r as $row) {
-            $q = "INSERT INTO {$serendipity['dbPrefix']}entrytags VALUES ('{$row['entryid']}','$newtag')";
-            serendipity_db_query($q);
-        }
-
-        return true;
-    }
-
-    /* @see method call by displayTagAction */ // RQ: Where is this used? Shall we remove it? Is it future or past?
-    function displayDeleteTag($tag, &$eventData)
-    {
-        $no  = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . self::specialchars_mapper($this->eventData['GET']['tagview']);
-        $yes = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . self::specialchars_mapper($this->eventData['GET']['tagview']).
-                    "&amp;serendipity[tagaction]=delete".
-                    "&amp;serendipity[tag]=".urlencode($tag)."&amp;serendipity[commit]=true";
-?>
-
-        <div class="msg_notice">
-            <h3> <?php printf(PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE, self::specialchars_mapper($tag)) ?></h3>
-            <a class="button_link state_submit" href="<?php echo $yes; ?>"><?php echo YES; ?></a> &nbsp; &nbsp; <a class="button_link state_cancel" href="<?php echo $no; ?>"><?php echo NO; ?></a>
-        </div>
-
-<?php
-    }
-
-    /* @see method call by displayTagAction */ // RQ: Where is this used? Shall we remove it? Is it future or past?
-    function getDeleteTagQuery($tag, &$eventData)
-    {
-        global $serendipity;
-
-        $tag = serendipity_db_escape_string($tag);
-
-        $q = "DELETE FROM {$serendipity['dbPrefix']}entrytags
-               WHERE tag='$tag'";
-
-        $r = serendipity_db_query($q);
-        if ($r !== true) {
-            echo $r;
-        }
-    }
-
-    /* @see method call by displayTagAction */ // RQ: Where is this used? Shall we remove it? Is it future or past?
-    function displaySplitTag($tag, &$eventData)
-    {
-        if (strstr($tag, ' ')) {
-            $newtag = str_replace(' ', ',', $tag);
-        } else {
-            $newtag = '';
-        }
-?>
-
-        <form action="" method="GET">
-            <?php echo $this->getManageUrlAsHidden($this->eventData) ?>
-            <input type="hidden" name="serendipity[tagview]" value="<?php echo self::specialchars_mapper($this->eventData['GET']['tagview']) ?>">
-            <input type="hidden" name="serendipity[tagaction]" value="split" />
-            <input type="hidden" name="serendipity[commit]" value="true" />
-            <input type="hidden" name="serendipity[tag]" value="<?php echo self::specialchars_mapper($tag) ?>" />
-            <p> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT ?> <br/>
-                foobarbaz =&gt; foo,bar,baz</p>
-            <?php echo self::specialchars_mapper($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtags]" value="<?php echo self::specialchars_mapper($newtag) ?>" />
-            <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="split" />
-        </form>
-
-<?php
-    }
-
-    /* @see method call by displayTagAction */ // RQ: Where is this used? Shall we remove it? Is it future or past?
-    function getSplitTagQuery($tag, &$eventData)
-    {
-        global $serendipity;
-
-        $newtags = $this->makeTagsFromTaglist(urldecode($this->eventData['GET']['newtags']));
-        $tag = serendipity_db_escape_string($tag);
-
-        $q = "SELECT entryid FROM {$serendipity['dbPrefix']}entrytags WHERE tag = '$tag'";
-        $entries = serendipity_db_query($q);
-
-        if (!is_array($entries)) {
-            echo $entries;
-            return false;
-        }
-
-        $q = "DELETE FROM {$serendipity['dbPrefix']}entrytags WHERE tag = '$tag'";
-        $r = serendipity_db_query($q);
-        if ($r !== true) {
-            echo $r;
-            return false;
-        }
-
-        foreach ($entries as $entryid) {
-            foreach ($newtags as $tag) {
-                $q = "INSERT INTO {$serendipity['dbPrefix']}entrytags (entryid, tag)
-                        VALUES ('{$entryid['entryid']}', '$tag')";
-                $r = serendipity_db_query($q);
-            }
         }
     }
 
