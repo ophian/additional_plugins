@@ -1,3 +1,14 @@
+3.74:
+-----
+
+ * Refactor some huge event hooks to be better readable, which were:
+   external plugin, backend_publish and backend_save,
+   frontend_fetchentries and frontend_fetchentry,
+   backend_display and some css
+ * Fix name tagListAnchor placement
+ * Fixed documentation_* example legacy code
+
+
 3.73:
 -----
 
