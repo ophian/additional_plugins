@@ -1659,35 +1659,6 @@ $(document).ready(function() {
         echo "\" />\n";
     }
 
-    function getRelatedTags($tag)
-    {
-        global $serendipity;
-
-        $q = "SELECT sub.tag AS tag, count(sub.tag) AS total
-                FROM {$serendipity['dbPrefix']}entrytags AS main
-           LEFT JOIN {$serendipity['dbPrefix']}entrytags AS sub
-                  ON main.entryid = sub.entryid
-               WHERE main.tag = '$tag'
-                 AND sub.tag != '$tag'
-            GROUP BY sub.tag
-            ORDER BY sub.tag";
-
-        $rows = serendipity_db_query($q);
-
-        if (!is_array($rows)) {
-            if (!serendipity_db_bool($rows)) {
-                echo $rows;
-            }
-            return array();
-        }
-
-        foreach($rows as $r) {
-            $tags[$r['tag']] = $r['total'];
-        }
-
-        return $tags;
-    }
-
     function getLeafTags($leafWeight=1)
     {
         global $serendipity;
