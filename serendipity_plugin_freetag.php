@@ -25,7 +25,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.09');
+        $propbag->add('version',       '3.10');
         $propbag->add('groups',        array('FRONTEND_ENTRY_RELATED'));
         $propbag->add('configuration', array(
             'config_pagegrouper',
@@ -47,7 +47,8 @@ class serendipity_plugin_freetag extends serendipity_plugin
         $this->dependencies = array('serendipity_event_freetag' => 'keep');
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
         switch($name) {
             case 'separator1':
@@ -85,21 +86,21 @@ class serendipity_plugin_freetag extends serendipity_plugin
                  $propbag->add('type',        'boolean');
                  $propbag->add('name',        PLUGIN_FREETAG_SCALE);
                  $propbag->add('description', '');
-                 $propbag->add('default',     false);
+                 $propbag->add('default',     'false');
                  break;
 
             case 'show_xml':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_FREETAG_XML);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'show_newline':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_FREETAG_NEWLINE);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'lowercase_tags':
@@ -241,7 +242,8 @@ class serendipity_plugin_freetag extends serendipity_plugin
         return true;
     }
 
-    function example() {
+    function example()
+    {
         $useRotCanvas = serendipity_db_bool($this->get_config('use_rotacloud', 'false'));
         $useWordCloud = serendipity_db_bool($this->get_config('use_wordcloud', 'false'));
         $useFlash     = serendipity_db_bool($this->get_config('use_flash', 'false'));
@@ -305,9 +307,9 @@ class serendipity_plugin_freetag extends serendipity_plugin
             asort($tags);
         }
 
-        $xml       = serendipity_db_bool($this->get_config('show_xml'));
-        $nl        = serendipity_db_bool($this->get_config('show_newline'));
-        $scaling   = serendipity_db_bool($this->get_config('scale_tag'));
+        $xml          = serendipity_db_bool($this->get_config('show_xml', 'true'));
+        $nl           = serendipity_db_bool($this->get_config('show_newline', 'true'));
+        $scaling      = serendipity_db_bool($this->get_config('scale_tag', 'false'));
         $useRotCanvas = serendipity_db_bool($this->get_config('use_rotacloud', 'false'));
         $useWordCloud = serendipity_db_bool($this->get_config('use_wordcloud', 'false'));
 
@@ -321,9 +323,11 @@ class serendipity_plugin_freetag extends serendipity_plugin
                                                $useWordCloud);
     }
 
-    function cleanup() {
+    function cleanup()
+    {
         serendipity_event_freetag::static_install();
     }
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

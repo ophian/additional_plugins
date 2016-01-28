@@ -1,3 +1,13 @@
+3.75: + 3.10 (sidebar):
+-----------------------
+
+ * Consistent use of serendipity_db_bool()
+ * Removed another 2 unused legacy methods
+   - getTagHtmlFromCSV
+   - getRelatedTags
+ * More Docblock comments
+
+
 3.74:
 -----
 
@@ -12,7 +22,14 @@
 3.73:
 -----
 
- * Removed some unused methods
+ * Removed 7 unused legacy methods
+   - getManageUrlAsHidden
+   - displayRenameTag
+   - getRenameTagQuery
+   - displayDeleteTag
+   - getDeleteTagQuery
+   - displaySplitTag
+   - getSplitTagQuery
 
 
 3.72: + 3.09 (sidebar):

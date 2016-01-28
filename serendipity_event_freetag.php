@@ -402,6 +402,12 @@ class serendipity_event_freetag extends serendipity_event
         self::static_install();
     }
 
+    /**
+     * Installer method for both plugins
+     *
+     * @static
+     * @see     cleanup()
+     */
     static function static_install()
     {
         global $serendipity;
@@ -440,6 +446,14 @@ class serendipity_event_freetag extends serendipity_event
         }
     }
 
+    /**
+     * Response table created
+     *
+     * @param   string  tablename
+     * @return  boolean
+     * @static
+     * @see     static_install()
+     */
     static function tableCreated($table = 'entrytags')
     {
         global $serendipity;
@@ -454,6 +468,13 @@ class serendipity_event_freetag extends serendipity_event
         }
     }
 
+    /**
+     * Response upgrade from version 1
+     *
+     * @return  boolean
+     * @static
+     * @see     static_install()
+     */
     static function upgradeFromVersion1()
     {
         global $serendipity;
@@ -468,6 +489,12 @@ class serendipity_event_freetag extends serendipity_event
         }
     }
 
+    /**
+     * Convert entryproperties tags
+     *
+     * @static
+     * @see     static_install()
+     */
     static function convertEntryPropertiesTags()
     {
         global $serendipity;
@@ -491,16 +518,25 @@ class serendipity_event_freetag extends serendipity_event
         $result = serendipity_db_query($q);
     }
 
+    /**
+     * Prepare url ready tag
+     *
+     * @param   string  $tag
+     * @return  string  $tag
+     * @static
+     * @see     displayTags()
+     */
     static function makeURLTag($tag)
     {
         return str_replace('.', '%FF', urlencode($tag)); // RQ: why is this here ? Isn't %ff not ÿ = %FF = %C3%BF ?
     }
 
     /**
-     * Simple redirector method
+     * Simple core redirector method
      *
      * @param   string   $var
      * @return  string   escaped
+     * @see     various self methods
      */
     function specialchars_mapper($var)
     {
@@ -520,6 +556,14 @@ class serendipity_event_freetag extends serendipity_event
         return htmlspecialchars($a, ENT_COMPAT, LANG_CHARSET);
     }
 
+    /**
+     * Creates displayEntry tag links markup
+     *
+     * @param   array   $tags
+     * @param   boolean $extended_smarty
+     * @return  mixed   $links
+     * @see     addTags()
+     */
     function getTagHtml($tags, $extended_smarty = false)
     {
         global $serendipity;
@@ -557,6 +601,14 @@ class serendipity_event_freetag extends serendipity_event
         }
     }
 
+    /**
+     * Get related entries by entry id
+     *
+     * @param   array   $tags
+     * @param   int     $eventData[$entry]['id']
+     * @return  mixed   $result
+     * @see     displayEntry()
+     */
     function getRelatedEntries($tags, $postID)
     {
         global $serendipity;
@@ -591,6 +643,13 @@ class serendipity_event_freetag extends serendipity_event
         return $result;
     }
 
+    /**
+     * Prepare related entries html markup
+     *
+     * @param   array       $entries
+     * @param   boolean     $extended_smarty
+     * @see     addRelatedEntries()
+     */
     function getRelatedEntriesHtml(&$entries, $extended_smarty = false)
     {
         global $serendipity;
@@ -633,9 +692,12 @@ class serendipity_event_freetag extends serendipity_event
     }
 
     /**
-     * This method can be called statically by sidebar plugin.
+     * Display tags for both plugins
      *  Tags should be an array with the key being the tag name, and val being
      *  the number of occurances.
+     *
+     * @static
+     * @see     generateContent()
      */
     static function displayTags($tags, $xml, $nl, $scaling, $maxSize = 200, $minSize = 100,
                                 $useFlash = false, $flashbgtrans = true, $flashtagcolor = 'ff6600', $flashbgcolor = 'ffffff', $flashwidth = 190, $flashspeed = 100,
@@ -671,9 +733,10 @@ class serendipity_event_freetag extends serendipity_event
     }
 
     /**
-     * This method can be called statically.
+     * Render the tags
      *
-     * @see displayTags()
+     * @static
+     * @see     displayTags()
      */
     static function renderTags($tags, $xml, $nl, $scaling, $maxSize, $minSize, $useFlash, $flashbgtrans, $flashtagcolor, $flashbgcolor, $flashwidth, $flashspeed, $taglink, $xml_image = 'img/xml.gif', $useRotCanvas, $rcTagColor, $rcTagOLColor, $rcTagWidth, $useWordCloud)
     {
@@ -892,6 +955,7 @@ class serendipity_event_freetag extends serendipity_event
      *
      * @param   array
      * @return  array
+     * @see     various self methods
      */
     function array_iunique($a)
     {
@@ -907,6 +971,7 @@ class serendipity_event_freetag extends serendipity_event
      *
      * @param   array
      * @return  array
+     * @see     displayEntry() and getTagCloudTags()
      */
     function array_imap($a)
     {
@@ -1008,8 +1073,8 @@ class serendipity_event_freetag extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries_event_display_managetags':
-                    $this->eventData = $eventData; // RQ: What is this about? Isnt it better to disable? Or is it needed to be used in displayTagAction() via displayManageTags()?
-                    $this->displayManageTags($eventData);
+                    $this->eventData = $eventData; // sets "global" object array eventData
+                    $this->displayManageTags();
                     break;
 
                 case 'backend_publish':
@@ -1332,17 +1397,20 @@ $(document).ready(function() {
     /**
      * Add related entries to eventData[$entry]
      *
-     * $entry: number of entry in $eventData
-     * @see displayEntry()
+     * @param   array   $entry
+     * @param   boolean $manyEntries Smarty 'is_single_entry' templateVar
+     * @param   array   $relatedEntries
+     * @param   array   $eventData as copy
+     * @return  array   $eventData
+     * @see     displayEntry()
      */
     function addRelatedEntries($entry, $manyEntries, $relatedEntries, $eventData)
     {
-
         if (is_array($relatedEntries)) {
             if (serendipity_db_bool($this->get_config('extended_smarty', 'false'))) {
                 $eventData[$entry]['freetag']['extended'] = true;
                 $eventData[$entry]['freetag']['related'] = $this->getRelatedEntriesHtml($relatedEntries, true);
-            } else if (!$manyEntries){
+            } else if (!$manyEntries) {
                 $field = $this->getField($eventData, $entry);
                 // work with getFieldReference to prevent caching-issues
                 $entryText =& $this->getFieldReference($field, $eventData[$entry]);
@@ -1355,7 +1423,10 @@ $(document).ready(function() {
     /**
      * $entry: number of entry in $eventData
      *
-     * @see displayEntry()
+     * @param   array   $entry
+     * @param   boolean $manyEntries Smarty 'is_single_entry' templateVar
+     * @param   array   $eventData as copy
+     * @see     displayEntry()
      */
     function addTags($entry, $tags, $eventData)
     {
@@ -1388,7 +1459,7 @@ $(document).ready(function() {
      *
      * @param   array   $eventData as copy
      * @param   int     entry id
-     * @see addRelatedEntries() and addTags()
+     * @see     addRelatedEntries() and addTags()
      */
     function getField($eventData, $entry)
     {
@@ -1412,8 +1483,9 @@ $(document).ready(function() {
      *
      * @param   string   tagList
      * @return  array
+     * @static
+     * @see     convertEntryPropertiesTags()
      */
-    // static
     static function makeTagsFromTaglist($tagList)
     {
         $freetags = explode(',', $tagList);
@@ -1428,11 +1500,14 @@ $(document).ready(function() {
 
     /**
      * Returns a list of all tags
+     *
      *  This performs a memoization operation, so that if we happen to be
      *  getting all tags more then one time per request, we only perform
      *  the SQL query once
+     *
+     * @static  ?? (RQ: while using $memo ?)
+     * @see     displayManageTags() case 1/5 and backend_display()
      */
-    // static
     static function getAllTags()
     {
         global $serendipity;
@@ -1464,6 +1539,11 @@ $(document).ready(function() {
         return $memo;
     }
 
+    /**
+     * event hook: entries_header executor
+     *
+     * @param   string  $tag is single url tag only $eventData['plugin_vars']['tag']
+     */
     function displayTagCloud($tag)
     {
         global $serendipity;
@@ -1502,6 +1582,11 @@ $(document).ready(function() {
 
     /**
      * descend: if true, get the related tags of the related tags of given tag
+     *
+     * @param   string  $tag
+     * @param   boolean $descend
+     * @return  array   $tags
+     * @see     displayTagCloud() and displayMetaKeywords()
      */
     function getTagCloudTags($tag, $descend = true)
     {
@@ -1534,6 +1619,13 @@ $(document).ready(function() {
         return $tags;
     }
 
+    /**
+     * Prepare tag cloud query
+     *
+     * @param   string  $sort
+     * @return  array   $tags
+     * @see     getTagCloudTags()
+     */
     function getTagCloudQuery($sort = '', $tag)
     {
         global $serendipity;
@@ -1596,12 +1688,16 @@ $(document).ready(function() {
     }
 
     /**
-     * event hook: frontend_header
+     * event hook: frontend_header meta field executor
+     *  uses global object variable tag
+     *
+     * @param   int  GET id
      */
     function displayMetaKeywords($id = null, $tag)
     {
         global $serendipity;
-        $id = (int)$id;
+
+        $id = (int)$id; // cast secure
         $max_keywords = (int)$this->get_config('meta_keywords', 0);
         if ($max_keywords < 1) {
             return;
@@ -1659,6 +1755,12 @@ $(document).ready(function() {
         echo "\" />\n";
     }
 
+    /**
+     * Prepare and fetch all leaf tags
+     *
+     * @return  array   $tags
+     * @see     displayManageTags() case 2
+     */
     function getLeafTags($leafWeight=1)
     {
         global $serendipity;
@@ -1687,6 +1789,12 @@ $(document).ready(function() {
         return $tags;
     }
 
+    /**
+     * Get tags for entries
+     *
+     * @static  ??
+     * @see     getTagsForEntry() and importEntryTagsIntoProperties()
+     */
     static function getTagsForEntries($entries)
     {
         global $serendipity;
@@ -1715,8 +1823,9 @@ $(document).ready(function() {
      * Fetches arrified tags by ID
      *  Why uses array pop? It turns multi-dimensional arrays into flattened arrays!
      *
-     * @param  int      entries $eventData['id']
-     * @return array    in any case for the tolower array_imap()
+     * @param   int      entries $eventData['id']
+     * @return  array    in any case for the tolower array_imap()
+     * @see     diverse methods like backend_fetch_tags_for_saving()
      */
     function getTagsForEntry($entryId)
     {
@@ -1728,6 +1837,7 @@ $(document).ready(function() {
      * event hook: (diverse)
      *
      * @param   int     $entryId
+     * @see     backend_fetch_tags_for_saving()
      */
     function deleteTagsForEntry($entryId)
     {
@@ -1737,7 +1847,12 @@ $(document).ready(function() {
         serendipity_db_query($q);
     }
 
-    // Static
+    /**
+     * Add tags to entry
+     *
+     * @static
+     * @see     convertEntryPropertiesTags()
+     */
     static function addTagsToEntry($entryId, $tags)
     {
         global $serendipity;
@@ -1890,7 +2005,9 @@ $(document).ready(function() {
     /**
      * event hook: frontend_display:feeds (rss/atom)
      *
-     * @param
+     * @param   string  XML element
+     * @param   array   $eventData['properties']['freetag_tags']
+     * @return  string  XML element per tag
      */
     function getFeedXmlForTags($element, $tagList)
     {
@@ -1909,7 +2026,7 @@ $(document).ready(function() {
      * event hook: external_plugin
      *
      * @param   array   GET parameters
-     * @param   boolean 
+     * @param   boolean config var
      */
     function displayExternalTaglist($param, $ctaglist=false)
     {
@@ -1925,7 +2042,7 @@ $(document).ready(function() {
             $param = array_filter($param); // filter out all left BOOL, NULL and EMPTY elements, which still are possible by removing XSS with strip_tags
 
             if (!is_object($serendipity['smarty'])) {
-                serendipity_smarty_init(); // to avoid member function assign() on a non-object error, start Smarty templating
+                serendipity_smarty_init();
             }
             if (false === serendipity_db_bool($this->get_config('show_tagcloud', 'true'))) {
                 // Since this is extra stuff, we need to regular assign the subtitle header and not use $serendipity['head_subtitle'] !
@@ -1939,9 +2056,13 @@ $(document).ready(function() {
                     $serendipity['smarty']->assign('head_subtitle', sprintf(PLUGIN_EVENT_FREETAG_USING, self::specialchars_mapper($param[0])));
                 }
             }
+
             $serendipity['smarty']->assign('taglist', true);
+
             foreach($serendipity['uriArguments'] AS $uak => $uav) {
-                if ($uav == 'taglist') unset($serendipity['uriArguments'][$uak]);
+                if ($uav == 'taglist') {
+                    unset($serendipity['uriArguments'][$uak]);
+                }
             }
             $tagged_as_list = true;
         }
@@ -2026,9 +2147,10 @@ $(document).ready(function() {
         $raw_data = ob_get_contents();
         ob_end_clean(); // the "missing" ob_start() is defined in serendipity roots index.php file
         $serendipity['smarty']->assign('raw_data', $raw_data);
+
         if (serendipity_db_bool($this->get_config('show_tagcloud', 'true'))) {
             $serendipity['smarty']->assign('istagcloud', true); // allows to remove a sidebar with a tag cloud, when using an entry cloud
-            // needs to change your template index.tpl sidebar condition(s), eg. {if !$istagcloud}
+            // @see changeLog - needs to change your template index.tpl sidebar condition(s), eg. {if !$istagcloud}
         }
         serendipity_gzCompression();
         $serendipity['smarty']->display(serendipity_getTemplateFile($serendipity['smarty_file'], 'serendipityPath'));
@@ -2037,10 +2159,9 @@ $(document).ready(function() {
 
     /**
      * event hook: backend_sidebar_entries_event_display_managetags
-     *
-     * @param   array       $eventData by reference
+     *  uses global object array eventData
      */
-    function displayManageTags(&$eventData)
+    function displayManageTags()
     {
         global $serendipity;
 
@@ -2158,6 +2279,7 @@ $(document).ready(function() {
      * Backend Administration Method (1/2): edit all/leaf tags
      *
      * @param   array   $taglist
+     * @see     displayManageTags() case 1/2
      */
     function displayEditTags($taglist)
     {
@@ -2215,6 +2337,11 @@ $(document).ready(function() {
 <?php
     }
 
+    /**
+     * Display Manage Tags case 3
+     *
+     * @see     displayManageTags()
+     */
     function displayUntaggedEntries()
     {
         global $serendipity;
@@ -2229,6 +2356,11 @@ $(document).ready(function() {
         $this->displayEditEntries($q);
     }
 
+    /**
+     * Display Manage Tags case 4
+     *
+     * @see     displayManageTags()
+     */
     function displayLeafTaggedEntries()
     {
         global $serendipity;
@@ -2290,6 +2422,7 @@ $(document).ready(function() {
      * Backend Administration Method (5): Set sub tag auto-keyword tags
      *
      * @param   array   $taglist
+     * @see     displayManageTags() case 5
      */
     function displayKeywordAssignment($taglist)
     {
@@ -2383,6 +2516,8 @@ $(document).ready(function() {
 
     /**
      * Backend Administration Method (6): Set category names to tags
+     *
+     * @see     displayManageTags() case 6
      */
     function displayCategoryToTags()
     {
@@ -2415,7 +2550,9 @@ $(document).ready(function() {
             $newtags = array();
             // Fetch all tags that should be added
             foreach ($props['categories'] AS $tag) {
-                if (empty($tag)) continue;
+                if (empty($tag)) {
+                    continue;
+                }
                 $newtags[$tag] = $tag;
             }
 
@@ -2459,6 +2596,8 @@ $(document).ready(function() {
 
     /**
      * Backend Administration Method (7): Rebuild entry auto-keyword tags
+     *
+     * @see     displayManageTags() case 7
      */
     function displayTagUpdate()
     {
@@ -2554,6 +2693,8 @@ $(document).ready(function() {
 
     /**
      * Backend Administration Method (8): Clean up entry tag assignments
+     *
+     * @see     displayManageTags() case 8
      */
     function cleanupTagAssignments()
     {
@@ -2659,7 +2800,7 @@ $(document).ready(function() {
     /**
      * event hook: 'backend_publish' and 'backend_save'
      *      old tags, automated tags, category tags
-     * 
+     *
      * CLARIFY STATEMENT:
      *      TAGS are stored to the database entrytags table like they are written by the user or being tagged already:
      *      uppercased, mixed, lowercased, capitalised, etc. To change older tags, use the backend tag administration rename button function.
@@ -2711,11 +2852,17 @@ $(document).ready(function() {
 
             foreach($automated AS $keyword => $ktags) {
                 $keyword = trim($keyword);
-                if (empty($keyword)) { continue; }
-                if (!is_array($ktags) || count($ktags) < 1) { continue; }
+                if (empty($keyword)) {
+                    continue;
+                }
+                if (!is_array($ktags) || count($ktags) < 1) {
+                    continue;
+                }
 
                 $keywordtag = array_pop(array_keys($ktags)); // get type key as string
-                if (is_array($oldtags) && in_array($keywordtag, $oldtags)) { continue; } // if automated keyword-tag already is in oldtags, do next
+                if (is_array($oldtags) && in_array($keywordtag, $oldtags)) {
+                    continue; // if automated keyword-tag already is in oldtags, do next
+                }
 
                 // only match check those, which have no keyword-tag yet
                 if (!is_array($key2tagIDs)) {
@@ -2803,9 +2950,9 @@ $(document).ready(function() {
     }
 
     /**
-     * event hook: backend_display
-     * 
-     * @param   int   $eventData['id']
+     * event hook: backend_display executor
+     *
+     * @param   int   $entryID = $eventData['id']
      */
     function backend_display($entryID)
     {
@@ -3010,6 +3157,8 @@ $(document).ready(function() {
      *  There are 2 dispatches that happen here: The first is the display/query, where
      *  we ask the user for any extra information, and/or a confirmation.
      *  The next is the actual action itself, where we do a db update/delete of some sort.
+     *
+     * @see     displayManageTags() main
      */
     function displayTagAction()
     {
@@ -3182,21 +3331,24 @@ img.serendipity_freeTag_xmlButton
 ';
     }
 
+    /**
+     * Debug message logger method
+     */
     function debugMsg($msg)
     {
         global $serendipity;
 
-        $this->debug_fp = @fopen ( $serendipity ['serendipityPath'] . 'templates_c/freetag.log', 'a' );
-        if (! $this->debug_fp) {
+        $this->debug_fp = @fopen($serendipity ['serendipityPath'] . 'templates_c/freetag.log', 'a');
+        if (!$this->debug_fp) {
             return false;
         }
 
-        if (empty ( $msg )) {
-            fwrite ( $this->debug_fp, "failure \n" );
+        if (empty($msg)) {
+            fwrite($this->debug_fp, "failure \n");
         } else {
-            fwrite ( $this->debug_fp, print_r ( $msg, true ) );
+            fwrite($this->debug_fp, print_r($msg, true));
         }
-        fclose ( $this->debug_fp );
+        fclose($this->debug_fp);
     }
 
 }
