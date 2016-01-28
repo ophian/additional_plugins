@@ -520,34 +520,6 @@ class serendipity_event_freetag extends serendipity_event
         return htmlspecialchars($a, ENT_COMPAT, LANG_CHARSET);
     }
 
-    function getTagHtmlFromCSV($tagString)
-    {
-        global $serendipity;
-        static $taglink = null;
-
-        if ($taglink == null) {
-            $taglink = $this->get_config('taglink');
-        }
-
-        $links = array();
-        if (empty($tagString)) {
-            return array();
-        }
-        $tags = explode(',', $tagString);
-        foreach($tags as $tag) {
-            $tag = trim($tag);
-            if (empty($tag)) {
-                continue;
-            }
-            $links[] = "\n".'    <a href="' . $taglink . self::makeURLTag($tag) . '"' .
-                       ' title="' . self::specialchars_mapper($tag) . '"' .
-                       ' rel="tag">' . self::specialchars_mapper($tag) . '</a>';
-
-        }
-
-        return implode(', ', $links);
-    }
-
     function getTagHtml($tags, $extended_smarty = false)
     {
         global $serendipity;
