@@ -1,3 +1,10 @@
+3.76:
+-----
+
+ * Fix admin permissions by serendipity_checkPermission('adminPlugins')
+ * Removed an non static method marked static
+
+
 3.75: + 3.10 (sidebar):
 -----------------------
 

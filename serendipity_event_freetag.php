@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.75');
+        $propbag->add('version',       '3.76');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1790,12 +1790,12 @@ $(document).ready(function() {
     }
 
     /**
-     * Get tags for entries
+     * Fetch tags for (related) entries
      *
-     * @static  ??
+     * @return  array    $entries
      * @see     getTagsForEntry() and importEntryTagsIntoProperties()
      */
-    static function getTagsForEntries($entries)
+    function getTagsForEntries($entries)
     {
         global $serendipity;
 
@@ -2169,6 +2169,9 @@ $(document).ready(function() {
             $this->install();
             $this->set_config('dbversion', 2);
         }
+
+        $full_permission = serendipity_checkPermission('adminPlugins'); // AFAIS, BY USERLEVEL permission checks are being deprecated
+
         if ($serendipity['version'][0] < 2) {
 ?>
 
@@ -2177,7 +2180,6 @@ $(document).ready(function() {
 
 <?php
         } else {
-            $full_permission = ($serendipity['serendipityUserlevel'] == USERLEVEL_ADMIN || $serendipity['serendipityUserlevel'] == USERLEVEL_CHIEF) ? true : false;
 ?>
 
             <h2><?php echo PLUGIN_EVENT_FREETAG_MANAGETAGS; ?></h2>
@@ -2191,7 +2193,7 @@ $(document).ready(function() {
 
                     <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=all" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ALL ?>">ALL</a></li>
                     <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=leaf" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_LEAF ?>">LEAF</a></li>
-<?php if ($full_permission) { ?>
+<?php if ($full_permission === true) { ?>
                     <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=entryuntagged" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED ?>">NOTAG</a></li>
                     <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=entryleaf" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED ?>">LEAFTAG</a></li>
                     <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=keywords" title="<?php echo PLUGIN_EVENT_FREETAG_KEYWORDS; ?>">KEYWORD</a></li>
@@ -2223,32 +2225,32 @@ $(document).ready(function() {
                     break;
 
                 case 'entryuntagged': // 3
-                    if ($full_permission) {
+                    if ($full_permission === true) {
                         $this->displayUntaggedEntries();
                     }
                     break;
 
                 case 'entryleaf': // 4
-                    if ($full_permission) {
+                    if ($full_permission === true) {
                         $this->displayLeafTaggedEntries();
                     }
                     break;
 
                 case 'keywords': // 5
-                    if ($full_permission) {
+                    if ($full_permission === true) {
                         $tags = (array)$this->getAllTags();
                         $this->displayKeywordAssignment($tags);
                     }
                     break;
 
                 case 'cat2tag': // 6
-                    if ($full_permission) {
+                    if ($full_permission === true) {
                         $this->displayCategoryToTags();
                     }
                     break;
 
                 case 'tagupdate': // 7
-                    if (!$full_permission) {
+                    if ($full_permission === true) {
                         break;
                     }
                     if (!serendipity_db_bool($this->get_config('keyword2tag', 'false'))) {
@@ -2259,7 +2261,7 @@ $(document).ready(function() {
                     break;
 
                 case 'cleanupmappings': // 8
-                    if (!$full_permission) {
+                    if ($full_permission === true) {
                         $this->cleanupTagAssignments();
                     }
                     break;
