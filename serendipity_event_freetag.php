@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.76');
+        $propbag->add('version',       '3.77');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1099,6 +1099,10 @@ class serendipity_event_freetag extends serendipity_event
 
 /* freetag plugin start */
 
+#backend_freetag_list a.tagzoom {
+    font-size: 0.875em;
+}
+
 .freetagMenu li {
     display: block;
     margin: 0 0 .5em;
@@ -1320,7 +1324,7 @@ $(document).ready(function() {
                 case 'xmlrpc_updertEntry':
                     if (isset($eventData['id']) && isset($eventData['mt_keywords'])) {
                         //XMLRPC call
-                        $tags = $this->makeTagsFromTagList($eventData['mt_keywords']);
+                        $tags = self::makeTagsFromTagList($eventData['mt_keywords']);
                         if (!empty($tags)) {
                             $this->deleteTagsForEntry($eventData['id']);
                             $this->addTagsToEntry($eventData['id'], $tags);
@@ -2206,7 +2210,7 @@ $(document).ready(function() {
 
 <?php
         if (isset($this->eventData['GET']['tagaction']) && !empty($this->eventData['GET']['tagaction'])) {
-            $this->displayTagAction();
+            $this->displayTagAction($full_permission);
         }
 
         // backend menu cases
@@ -2839,7 +2843,7 @@ $(document).ready(function() {
             $serendipity['POST']['properties']['freetag_tagList'] = implode(',', $this->getTagsForEntry($eventData['id'])); // as STRING
         }
         if (!empty($serendipity['POST']['properties']['freetag_tagList'])) {
-            $tags = $this->makeTagsFromTagList($serendipity['POST']['properties']['freetag_tagList']);
+            $tags = self::makeTagsFromTagList($serendipity['POST']['properties']['freetag_tagList']);
         }
 
         // check for keyword2tag empty or set cases
@@ -2850,7 +2854,7 @@ $(document).ready(function() {
         if (empty($tags) && serendipity_db_bool($this->get_config('keyword2tag', 'false'))) {
             $searchtext = strip_tags($eventData['body'] . $eventData['extended']);
             // fetch oldtags AS ARRAY for each entry, valid to be checked for keywords
-            $oldtags = $this->makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id']))); // as ARRAY
+            $oldtags = self::makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id']))); // as ARRAY
 
             foreach($automated AS $keyword => $ktags) {
                 $keyword = trim($keyword);
@@ -2920,7 +2924,7 @@ $(document).ready(function() {
         // Merge kept oldtags with automated and/or category tags into tagList - may partly be or look a little redundant, but catches every case
         if (is_array($tags) && !empty($tags)) {
             if (!is_array($oldtags) && empty($oldtags)) {
-                $oldtags = $this->makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id']))); // as ARRAY
+                $oldtags = self::makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id']))); // as ARRAY
             }
             if (!is_array($oldtags)) { $oldtags = array(); }
             // Condition could be used with checking the given arrays before, with ' && $oldtags !== $tags',
@@ -2978,7 +2982,7 @@ $(document).ready(function() {
         // Why should we do this, if already fetched by eventData ID or POST? Seems redundant, thats why I added the empty() check.
         //     (This was previously part of setting list tags lowercased into the input field)
         if (empty($tagList)) {
-            $freetags = $this->makeTagsFromTagList($tagList);
+            $freetags = self::makeTagsFromTagList($tagList);
             if (!empty($freetags)) {
                 $tagList = implode(',', $freetags);
             }
@@ -3115,16 +3119,12 @@ $(document).ready(function() {
                     <label for="properties_freetag_kill"><?php echo PLUGIN_EVENT_FREETAG_KILL; ?></label>
                 </div>
 <?php
-            if ($admin_show_taglist) {
-?>
-
-                <div id="backend_freetag_list">
-
-<?php
-            }
         }
 
         if ($admin_show_taglist) {
+            echo '                <div id="backend_freetag_list">'."\n";
+            $index = serendipity_db_bool($this->get_config('admin_delimiter', 'true'));
+            $class = $index ? 'class="tagzoom" ' : '';
             $lastletter = '';
             foreach ($tagsArray as $tag => $count) {
                 if (function_exists('mb_strtoupper')) {
@@ -3132,25 +3132,21 @@ $(document).ready(function() {
                 } else {
                     $upc = strtoupper(substr($tag, 0, 1));
                 }
-                if (serendipity_db_bool($this->get_config('admin_delimiter', 'true')) && $upc != $lastletter) {
-                    // HEY - DO NOT remove this FEATURE(!) for 2.0+!!
+                if ($index && $upc != $lastletter) {
+                    // HEY - do NOT remove this FEATURE(!) for 2.0+!! Is configurable by option!
                     echo "<strong>|" . $upc . ':</strong> ';
                 }
                 if ($serendipity['version'][0] < 2) {
-                    echo "<a href=\"#tagListAnchor\" style=\"text-decoration: none\" onClick=\"addTag('$tag')\">$tag</a>, ";
+                    echo "<a href=\"#tagListAnchor\" style=\"text-decoration: none\" onClick=\"addTag('{$tag}')\">{$tag}</a>, ";
                 } else {
-                    echo "<a href=\"#tagListAnchor\" onClick=\"addTag('$tag')\">$tag</a> ";
+                    echo "<a {$class}href=\"#tagListAnchor\" onClick=\"addTag('{$tag}')\">{$tag}</a> ";
                 }
                 $lastletter = $upc;
             }
             echo "\n                </div>\n";
         }
-?>
 
-            </fieldset>
-
-<?php
-
+        echo "            </fieldset>\n\n";
     }
 
     /**
@@ -3160,10 +3156,15 @@ $(document).ready(function() {
      *  we ask the user for any extra information, and/or a confirmation.
      *  The next is the actual action itself, where we do a db update/delete of some sort.
      *
+     * @access  private
      * @see     displayManageTags() main
      */
-    function displayTagAction()
+    private function displayTagAction($fperm=false)
     {
+        if ($fperm === false) {
+            echo '<span class="msg_notice"><span class="icon-info-circled"></span> Action: "' . $this->eventData['GET']['tagaction'] . '"' . " permission is set read-only!</span>\n"; // i18n?
+            return false;
+        }
         $validActions = array('rename', 'split', 'delete');
 
         // Sanitize user input
@@ -3181,6 +3182,177 @@ $(document).ready(function() {
         } else {
             $method = 'display'.ucfirst($this->eventData['GET']['tagaction']).'Tag';
             $this->$method($tag, $this->eventData);
+        }
+    }
+
+    /**
+     * Combined method for display/get tag buttons, called by
+     * @see displayTagAction
+     * @access  private
+     */
+    private function displayRenameTag($tag, &$eventData)
+    {
+?>
+
+        <form action="" method="GET">
+            <input type="hidden" name="serendipity[adminModule]" value="event_display" />
+            <input type="hidden" name="serendipity[adminAction]" value="managetags" />
+            <input type="hidden" name="serendipity[tagview]" value="<?php echo self::specialchars_mapper($this->eventData['GET']['tagview']) ?>">
+            <input type="hidden" name="serendipity[tagaction]" value="rename" />
+            <input type="hidden" name="serendipity[commit]" value="true" />
+            <input type="hidden" name="serendipity[tag]" value="<?php echo self::specialchars_mapper($tag) ?>" />
+            <?php echo self::specialchars_mapper($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtag]" /> <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>" />
+        </form>
+
+<?php
+    }
+
+    /**
+     * Execute a rename of a tag
+     *  We select all the entries with the old tag name, delete all entry tags
+     *  with the old tag name, and finally re insert.  The reason we do this is
+     *  that we might be renaming a tag, to an already exising tag that is
+     *  already associated to an entry, duplicating the primary key.
+     *  If we do it via an update, the update fails, and our rename doesn't
+     *  happen.  This way our update does happen, and we can silently fail
+     *  when we hit a duplicate key condition.
+     *  Postgres doesnt have an UPDATE IGNORE syntax, so we can't use that
+     *  method.  Sux0rz.
+     *
+     * Combined method for get tag button, called by
+     * @see displayTagAction
+     * @access  private
+     */
+    private function getRenameTagQuery($tag, &$eventData)
+    {
+        global $serendipity;
+
+        $tag = serendipity_db_escape_string($tag);
+        $newtag = serendipity_db_escape_string(urldecode($serendipity['GET']['newtag']));
+
+        $q = "SELECT entryid FROM {$serendipity['dbPrefix']}entrytags WHERE tag = '$tag'";
+
+        $r = serendipity_db_query($q);
+        if (!is_array($r)) {
+            echo $r;
+            return false;
+        }
+
+        $q = "DELETE FROM {$serendipity['dbPrefix']}entrytags WHERE tag = '$tag'";
+        serendipity_db_query($q);
+
+        foreach ($r as $row) {
+            $q = "INSERT INTO {$serendipity['dbPrefix']}entrytags VALUES ('{$row['entryid']}','$newtag')";
+            serendipity_db_query($q);
+        }
+
+        return true;
+    }
+
+    /**
+     * Combined method for display tag button, called by
+     * @see displayTagAction
+     * @access  private
+     */
+    private function displayDeleteTag($tag, &$eventData)
+    {
+        $no  = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . self::specialchars_mapper($this->eventData['GET']['tagview']);
+        $yes = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . self::specialchars_mapper($this->eventData['GET']['tagview']).
+                    "&amp;serendipity[tagaction]=delete".
+                    "&amp;serendipity[tag]=".urlencode($tag)."&amp;serendipity[commit]=true";
+?>
+
+        <div class="msg_notice">
+            <h3> <?php printf(PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE, self::specialchars_mapper($tag)) ?></h3>
+            <a class="button_link state_submit" href="<?php echo $yes; ?>"><?php echo YES; ?></a> &nbsp; &nbsp; <a class="button_link state_cancel" href="<?php echo $no; ?>"><?php echo NO; ?></a>
+        </div>
+
+<?php
+    }
+
+    /**
+     * Combined method for get tag button, called by
+     * @see displayTagAction
+     * @access  private
+     */
+    private function getDeleteTagQuery($tag, &$eventData)
+    {
+        global $serendipity;
+
+        $tag = serendipity_db_escape_string($tag);
+
+        $q = "DELETE FROM {$serendipity['dbPrefix']}entrytags
+               WHERE tag='$tag'";
+
+        $r = serendipity_db_query($q);
+        if ($r !== true) {
+            echo $r;
+        }
+    }
+
+    /**
+     * Combined method for display tag button, called by
+     * @see displayTagAction
+     * @access  private
+     */
+    private function displaySplitTag($tag, &$eventData)
+    {
+        if (strstr($tag, ' ')) {
+            $newtag = str_replace(' ', ',', $tag);
+        } else {
+            $newtag = '';
+        }
+?>
+
+        <form action="" method="GET">
+            <input type="hidden" name="serendipity[adminModule]" value="event_display" />
+            <input type="hidden" name="serendipity[adminAction]" value="managetags" />
+            <input type="hidden" name="serendipity[tagview]" value="<?php echo self::specialchars_mapper($this->eventData['GET']['tagview']) ?>">
+            <input type="hidden" name="serendipity[tagaction]" value="split" />
+            <input type="hidden" name="serendipity[commit]" value="true" />
+            <input type="hidden" name="serendipity[tag]" value="<?php echo self::specialchars_mapper($tag) ?>" />
+            <p> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT ?> <br/>
+                foobarbaz =&gt; foo,bar,baz</p>
+            <?php echo self::specialchars_mapper($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtags]" value="<?php echo self::specialchars_mapper($newtag) ?>" />
+            <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="split" />
+        </form>
+
+<?php
+    }
+
+    /**
+     * Combined method for get tag button, called by
+     * @see displayTagAction
+     * @access  private
+     */
+    private function getSplitTagQuery($tag, &$eventData)
+    {
+        global $serendipity;
+
+        $newtags = self::makeTagsFromTagList(urldecode($this->eventData['GET']['newtags']));
+        $tag = serendipity_db_escape_string($tag);
+
+        $q = "SELECT entryid FROM {$serendipity['dbPrefix']}entrytags WHERE tag = '$tag'";
+        $entries = serendipity_db_query($q);
+
+        if (!is_array($entries)) {
+            echo $entries;
+            return false;
+        }
+
+        $q = "DELETE FROM {$serendipity['dbPrefix']}entrytags WHERE tag = '$tag'";
+        $r = serendipity_db_query($q);
+        if ($r !== true) {
+            echo $r;
+            return false;
+        }
+
+        foreach ($entries as $entryid) {
+            foreach ($newtags as $tag) {
+                $q = "INSERT INTO {$serendipity['dbPrefix']}entrytags (entryid, tag)
+                        VALUES ('{$entryid['entryid']}', '$tag')";
+                $r = serendipity_db_query($q);
+            }
         }
     }
 

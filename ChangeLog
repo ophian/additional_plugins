@@ -1,3 +1,16 @@
+3.77:
+-----
+
+ * Improvement of alphabet index distinction
+ * Reverted 3.73 - these methods are called dynamically by name
+   - displayRenameTag
+   - getRenameTagQuery
+   - displayDeleteTag
+   - getDeleteTagQuery
+   - displaySplitTag
+   - getSplitTagQuery
+
+
 3.76:
 -----
 
@@ -29,14 +42,9 @@
 3.73:
 -----
 
- * Removed 7 unused legacy methods
+ * Removed unused legacy method(s)
    - getManageUrlAsHidden
-   - displayRenameTag
-   - getRenameTagQuery
-   - displayDeleteTag
-   - getDeleteTagQuery
-   - displaySplitTag
-   - getSplitTagQuery
+   - ...
 
 
 3.72: + 3.09 (sidebar):
