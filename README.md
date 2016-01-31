@@ -9,7 +9,7 @@ Please use with care and always keep a backup copy of your updated plugin.
 ### Documentation:
 Please read the changeLog file !
 Copy this zipped directory `serendipity_event_freetag-master` to your Serendipity `/plugins` dir and/or create/overwrite the freetag directory by removing the (`-master`) appendix.
-Or use the tagget release file, eg serendipity_event_freetag-dev-3.76.zip.
+Or use the tagget release file, eg serendipity_event_freetag-dev-3.77.zip.
 Check both configuration options for the event and sidebar plugin, to get known to the changes!
 
 - - -
