@@ -157,3 +157,5 @@
 
 @define('PLUGIN_EVENT_FREETAG_ADMIN_DELIMITER', 'Allow alphabetical index Backend-Tags List delimiter?');
 
+@define('PLUGIN_EVENT_FREETAG_SORT_DESC_FOR_TOTAL', 'With "order by count", sort descending');
+

@@ -25,7 +25,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.10');
+        $propbag->add('version',       '3.11');
         $propbag->add('groups',        array('FRONTEND_ENTRY_RELATED'));
         $propbag->add('configuration', array(
             'config_pagegrouper',
@@ -36,7 +36,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             'lowercase_tags',
             'scale_tag', 'min_percent', 'max_percent', 'show_newline',
             'treshold_tag_count', 'max_tags',
-            'order_by',
+            'order_by', 'sort_desc',
             'template',
 
             'separator2', 'config_cloudgrouper',
@@ -146,6 +146,13 @@ class serendipity_plugin_freetag extends serendipity_plugin
                 $propbag->add('description', '');
                 $propbag->add('default',     'tag');
                 break;
+
+            case 'sort_desc':
+                 $propbag->add('type',        'boolean');
+                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_SORT_DESC_FOR_TOTAL);
+                 $propbag->add('description', '');
+                 $propbag->add('default',     'false');
+                 break;
 
             case 'xml_image':
                  $propbag->add('type',        'string');
@@ -304,7 +311,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             uksort($tags, 'strnatcasecmp');
             serendipity_plugin_api::hook_event('sort', $tags);
         } else if ($this->get_config('order_by') == 'total'){
-            asort($tags);
+            serendipity_db_bool($this->get_config('sort_desc', 'false')) ? arsort($tags) : asort($tags);
         }
 
         $xml          = serendipity_db_bool($this->get_config('show_xml', 'true'));

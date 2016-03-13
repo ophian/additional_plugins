@@ -2884,7 +2884,7 @@ $(document).ready(function() {
                                 $tags = array(); // avoid having "[] operator not supported for strings" errors
                             }
                             $tags[] = $tag;
-                            printf("\n<br /> - ".PLUGIN_EVENT_FREETAG_KEYWORDS_ADD, self::specialchars_mapper($keyword), self::specialchars_mapper($tag));
+                            printf("\n - ".PLUGIN_EVENT_FREETAG_KEYWORDS_ADD."\n<br>", self::specialchars_mapper($keyword), self::specialchars_mapper($tag));
                             if (!empty($tags)) {
                                 $key2tagIDs[] = $eventData['id']; // gather ids to updertEntries
                             }
@@ -3108,7 +3108,7 @@ $(document).ready(function() {
 
         } else {
 ?>
-            <fieldset id="edit_entry_freetags" class="entryproperties_freetag">
+            <fieldset id="edit_entry_freetags" class="entryproperties_freetag" style="margin: 1em 0;">
                 <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_FREETAG_TITLE; ?></legend></span>
                 <div class="form_field">
                     <label for="properties_freetag_tagList" class="block_level"><?php echo PLUGIN_EVENT_FREETAG_ENTERDESC; ?>:</label>

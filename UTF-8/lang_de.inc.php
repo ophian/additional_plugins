@@ -127,3 +127,5 @@
 
 @define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS_DESC', 'Datenbank und Backend-Tags werden wie eingegeben gespeichert und angezeigt. Diese Option ist nur für Frontend-Tags.');
 
+@define('PLUGIN_EVENT_FREETAG_SORT_DESC_FOR_TOTAL', 'Mit "order by count", absteigender Sortierung');
+
