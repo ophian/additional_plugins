@@ -12,5 +12,6 @@ Copy this zipped directory `serendipity_event_freetag-master` to your Serendipit
 Or use the tagget release file, eg serendipity_event_freetag-dev-3.77-2.zip.
 Check both configuration options for the event and sidebar plugin, to get known to the changes!
 
+
 - - -
 
