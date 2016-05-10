@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.77');
+        $propbag->add('version',       '3.78');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -538,7 +538,7 @@ class serendipity_event_freetag extends serendipity_event
      * @return  string   escaped
      * @see     various self methods
      */
-    function specialchars_mapper($var)
+    static function specialchars_mapper($var)
     {
         return (function_exists('serendipity_specialchars') ? serendipity_specialchars($var) : htmlspecialchars($var, ENT_COMPAT, LANG_CHARSET));
     }
