@@ -2158,7 +2158,7 @@ $(document).ready(function() {
         }
         serendipity_gzCompression();
         $serendipity['smarty']->display(serendipity_getTemplateFile($serendipity['smarty_file'], 'serendipityPath'));
-        @define('NO_EXIT', true); // RQ: Why did or do we (still) need this? (see index.php file change in 2.1-alpha2)
+        @define('NO_EXIT', true); // RQ: Why did or do we (still) need this? (see index.php file change in 2.1-alpha2) - with 2.1 obsolet!
     }
 
     /**
