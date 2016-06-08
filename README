@@ -1,3 +1,4 @@
 Additional plugins for Serendipity Weblog.
 
-The plugins contained here are automatically synced to SourceForge.NETs CVS service (once a day).
+The plugins contained here are automatically synced with Spartacus (plugin), the Serendipity **[S]**erendipity **[P]**lugin **[A]**ccess **[R]**epository **[T]**ool **[A]**nd **[C]**ustomization/**[U]**nification **[S]**ystem, if set this url **"https://github.com/ophian/"** into the **"Custom location for mirror"** Spartacus plugin option.
+The XML sidebar or event plugin files in question are synced to contain new or updated submissions when required.
