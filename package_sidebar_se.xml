@@ -652,9 +652,9 @@
 <description>Allows visitors to change the frontend interface language</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.14</version>
+  <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-09</date>
   <filelist>
 <dir name="serendipity_event_multilingual">
 <file>.htaccess</file>
@@ -1565,9 +1565,9 @@
 <description>Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.39</version>
+  <version>2.40</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-08</date>
   <filelist>
 <dir name="serendipity_plugin_adduser">
 <file>ChangeLog</file>

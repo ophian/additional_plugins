@@ -77,7 +77,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_multilingual&lt;br /&gt;言語の選択&lt;/b&gt;&lt;br /&gt;訪問者がフロントエンドインターフェースの言語を変更することを可能にします。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Thu, 09 Jun 2016 08:10:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_multilingual</guid>
 </item>
 <item>
@@ -120,7 +120,7 @@
 <title>Serendipity 著者: 全著者の一覧を表示する</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_userprofiles</link>
 <category>Sidebar Plugins</category>
-<author></author>
+<author>Falk D�ring</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_userprofiles&lt;br /&gt;Serendipity 著者&lt;/b&gt;&lt;br /&gt;全著者の一覧を表示する&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_userprofiles</guid>
@@ -155,7 +155,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;ユーザー自身での登録&lt;/b&gt;&lt;br /&gt;ブログ訪問者が自分のアカウントを作成することを許可します。Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Wed, 08 Jun 2016 19:49:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_adduser</guid>
 </item>
 <item>

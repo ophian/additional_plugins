@@ -185,6 +185,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_advtypes</name>
+<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_advtypes/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Advanced configuration types</summary>
 <groups>BACKEND_TEMPLATES</groups>
@@ -196,6 +197,7 @@
   <date>2016-06-08</date>
   <filelist>
 <dir name="serendipity_event_advtypes">
+<file>ChangeLog</file>
 <file>config.inc.php</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -213,6 +215,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_advtypes/ChangeLog</file>
     <file>serendipity_event_advtypes/config.inc.php</file>
     <file>serendipity_event_advtypes/documentation_cs.html</file>
     <file>serendipity_event_advtypes/documentation_cz.html</file>
@@ -6968,9 +6971,9 @@
 <description>Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.29</version>
+  <version>2.30</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-09</date>
   <filelist>
 <dir name="serendipity_event_multilingual">
 <file>.htaccess</file>
@@ -10754,9 +10757,9 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <description>Dieses Plugin gibt an, welchen Autoren eines Mehrbenutzer-Blogs Sie genug trauen und von denen Sie keine Hackangriffe erwarten. Alle anderen Autoren dürfen kein HTML mehr verwenden!</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.6</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>0.7</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-08</date>
   <filelist>
 <dir name="serendipity_event_xsstrust">
 <file>ChangeLog</file>
