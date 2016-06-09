@@ -1,3 +1,8 @@
+0.52:
+-----
+ * Fix a missing lang utf-8 encoding for lang_bg
+
+
 0.51:
 -----
  * Append CSS to end of eventData stream
