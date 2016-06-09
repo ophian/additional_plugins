@@ -639,11 +639,11 @@
 <guid isPermaLink="false">serendipity_event_httpauth</guid>
 </item>
 <item>
-<title>����������� ���� �� ������� �������: ���� ����������� ���� ��� ������� �� ���������� ���� ������� ������� [Serendipity &gt;= 0.9]</title>
+<title>Допълнителни опции за медийния менажер: Дава допълнителни опции при вмъкване на изображения чрез медийния менажер [Serendipity &gt;= 0.9]</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_imageselectorplus</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;����������� ���� �� ������� �������&lt;/b&gt;&lt;br /&gt;���� ����������� ���� ��� ������� �� ���������� ���� ������� ������� [Serendipity &gt;= 0.9]&lt;br/&gt;For: Serendipity 1.3</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Допълнителни опции за медийния менажер&lt;/b&gt;&lt;br /&gt;Дава допълнителни опции при вмъкване на изображения чрез медийния менажер [Serendipity &gt;= 0.9]&lt;br/&gt;For: Serendipity 1.3</content:encoded>
 <pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
