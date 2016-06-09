@@ -69,4 +69,4 @@ define('PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAMBUTTON', 'Als Spam lernen');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RATING', 'Bewertung');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL', 'Papierkorb komplett leeren');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL_DESC', 'Lösche alle Kommentare im Papierkorb, nicht nur die auf der momentanen Seite.');
-?>
+

@@ -99,3 +99,4 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RATING',     'Hodnocení');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL',     'Koš: Úplné vyčištění');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL_DESC',     'Při vysypávání koše smazat všechny komentáře, nejen ty na aktuální stránce.');
+

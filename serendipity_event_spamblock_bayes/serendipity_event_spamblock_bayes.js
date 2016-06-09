@@ -15,7 +15,7 @@ $(document).ready(function() {
             if (answer){
                 window.location.href = $("#bayesDeleteDB").attr('action');
             } else {
-                
+                // void
             }
         }
     });
@@ -68,5 +68,4 @@ function colorize() {
             $(this).parent().css('background', 'rgba(165, 165, 165, 0.5)');
         }
     });
-    
 }

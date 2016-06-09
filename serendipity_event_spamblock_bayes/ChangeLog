@@ -1,3 +1,12 @@
+0.4.22:
+
+ * set plugin consistencies
+ * missing db types for mysqli cases and sqlite(+) cases
+ * use load language API - extends required Serendipity version to v.1.6
+ * remove UTF-8/lang_<en> file, since the fallback is always the ANSI
+   lang_en file in plugins root directory
+
+
 0.4.21:
     * Fix mal-written case-statemens in setupdb, blocking sqlite
 
