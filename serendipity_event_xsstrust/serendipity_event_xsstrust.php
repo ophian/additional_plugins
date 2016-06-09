@@ -4,13 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_xsstrust extends serendipity_event
 {
@@ -27,11 +21,11 @@ class serendipity_event_xsstrust extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '0.6');
+        $propbag->add('version',       '0.7');
         $propbag->add('event_hooks', array(
             'frontend_display' => true,
             'backend_media_check' => true,
@@ -44,11 +38,13 @@ class serendipity_event_xsstrust extends serendipity_event
         $this->init_trusted();
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function getAuthors() {
+    function getAuthors()
+    {
         global $serendipity;
 
         $html = '<strong>' . PLUGIN_EVENT_XSSTRUST_AUTHORS . '</strong><br />';
@@ -67,7 +63,8 @@ class serendipity_event_xsstrust extends serendipity_event
     }
 
     /* Fetches a configuration value for this plugin */
-    function get_config($name, $defaultvalue = null, $empty = true) {
+    function get_config($name, $defaultvalue = null, $empty = true)
+    {
         $_res = serendipity_get_config_var($this->instance . '/' . $name, '', $empty);
 
         if (is_null($_res)) {
@@ -84,7 +81,8 @@ class serendipity_event_xsstrust extends serendipity_event
         return $_res;
     }
 
-    function init_trusted() {
+    function init_trusted()
+    {
         $ta = (array)explode(',', $this->get_config('trusted_authors'));
         $this->trusted_authors = array();
 
@@ -93,7 +91,8 @@ class serendipity_event_xsstrust extends serendipity_event
         }
     }
 
-    function set_config($name, $value) {
+    function set_config($name, $value, $implodekey = '^')
+    {
         $fname = $this->instance . '/' . $name;
 
         if (is_array($value)) {
@@ -109,8 +108,8 @@ class serendipity_event_xsstrust extends serendipity_event
         return $set;
     }
 
-
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch ($name) {
 
             case 'trusted_authors':
@@ -127,12 +126,12 @@ class serendipity_event_xsstrust extends serendipity_event
 
             default:
                 return false;
-                break;
         }
         return true;
     }
 
-    function recursive_purify(&$element, &$purifier) {
+    function recursive_purify(&$element, &$purifier)
+    {
         if (is_array($element)) {
             foreach($element AS &$new_element) {
                 $this->recursive_purify($new_element, $purifier);
@@ -142,13 +141,16 @@ class serendipity_event_xsstrust extends serendipity_event
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'backend_entry_presave':
                     if (serendipity_db_bool($this->get_config('htmlpurifier')) && !isset($this->trusted_authors[$eventData['authorid']])) {
                         require_once dirname(__FILE__) . '/htmlpurifier-4.6.0-standalone/HTMLPurifier.standalone.php';
@@ -180,17 +182,16 @@ class serendipity_event_xsstrust extends serendipity_event
                     } else {
                         // Trusted.
                     }
-
-                    return true;
                     break;
 
                 default:
                   return false;
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
 /* vim: set sts=4 ts=4 expandtab : */
-?>
