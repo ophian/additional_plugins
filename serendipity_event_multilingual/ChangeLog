@@ -1,3 +1,9 @@
+2.30 & 1.15 (sidebar):
+---------------
+
+ * Fix Invalid argument supplied for foreach() error in case the
+   $serendipity['languages'] array is missing (ie. by emerge.sh call)
+
 2.29 & 1.14 (sidebar):
 ---------------
 

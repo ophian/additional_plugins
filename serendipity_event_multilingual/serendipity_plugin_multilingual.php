@@ -25,11 +25,45 @@ class serendipity_plugin_multilingual extends serendipity_event
         ));
 
         $conf = array('title', 'show_submit', 'size');
+        /* Available languages */
+        if (!is_array($serendipity['languages'])) {
+            $serendipity['languages'] = array('en' => 'English',
+                                  'de' => 'German',
+                                  'da' => 'Danish',
+                                  'es' => 'Spanish',
+                                  'fr' => 'French',
+                                  'fi' => 'Finnish',
+                                  'cs' => 'Czech (Win-1250)',
+                                  'cz' => 'Czech (ISO-8859-2)',
+                                  'sk' => 'Slovak',
+                                  'nl' => 'Dutch',
+                                  'is' => 'Icelandic',
+                                  'tr' => 'Turkish',
+                                  'se' => 'Swedish',
+                                  'pt' => 'Portuguese Brazilian',
+                                  'pt_PT' => 'Portuguese European',
+                                  'bg' => 'Bulgarian',
+                                  'hu' => 'Hungarian',
+                                  'no' => 'Norwegian',
+                                  'pl' => 'Polish',
+                                  'ro' => 'Romanian',
+                                  'it' => 'Italian',
+                                  'ru' => 'Russian',
+                                  'fa' => 'Persian',
+                                  'tw' => 'Traditional Chinese (Big5)',
+                                  'tn' => 'Traditional Chinese (UTF-8)',
+                                  'zh' => 'Simplified Chinese (GB2312)',
+                                  'cn' => 'Simplified Chinese (UTF-8)',
+                                  'ja' => 'Japanese',
+                                  'ko' => 'Korean',
+                                  'sa' => 'Arabic',
+                                  'ta' => 'Tamil');
+        }
         foreach($serendipity['languages'] AS $lkey => $lval) {
             $conf[] = $lkey;
         }
         $propbag->add('configuration', $conf);
-        $propbag->add('version',       '1.14');
+        $propbag->add('version',       '1.15');
         $propbag->add('groups',        array('FRONTEND_VIEWS'));
         $this->dependencies = array('serendipity_event_multilingual' => 'remove');
     }
@@ -100,4 +134,3 @@ class serendipity_plugin_multilingual extends serendipity_event
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
-?>
