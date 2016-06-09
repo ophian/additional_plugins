@@ -1,0 +1,7 @@
+0.8:
+-----
+
+ * set plugin consistencies
+ * fixed Strict Standards: Declaration error
+ * use load language API - extends required Serendipity version to v.1.6
+
