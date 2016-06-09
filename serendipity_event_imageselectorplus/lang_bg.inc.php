@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -29,3 +29,4 @@
 
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD',                     'Използване на jhead за извличане на EXIF данни');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD_DESC',                'Отмяна на поведението по подразбиране и използване на външни повиквания на jhead за получаване на EXIF данни. Изберете тази опция само, ако jhead е иснталирано и може да бъде изпълнявано.'); 
+

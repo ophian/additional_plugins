@@ -35,3 +35,4 @@
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_ASOBJECT', 'Objekt-Type ist kein Bild?');
 
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_THUMBRESIZE_DESC', 'Die Default Einstellung für beide MAX Felder ist 0 und wird als fallback für die normale Thumbnailgenerierung benutzt! Setzt man hier andere Werte, wird die $serendipity[\'thumbSize\'] Einstellung, die in der globalen Blog Einstellung, in "Konfiguration" - "Bildkonvertierung", definiert wird, überschrieben! Möchte man nur die zu erstellende Thumb Größe in der Mediendatenbank beeinflussen, sollte man entweder die globale "Bildkonvertierung" benutzen, oder, je nach gewünschter Gewichtung nach Quer- und Hochformat Verhältnissen, eine dieser beiden Max-Einstellungen verändern. Setzt man hier beide Werte gleich, hat dies denselben Effekt.');
+

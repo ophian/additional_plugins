@@ -1,3 +1,11 @@
+0.53:
+-----
+ * Use lang API - extends required Serendipity verson to 1.6
+ * Requirement and consistent changes
+ * Changes CSS inclusion to append to $eventData, not prepend
+   to the stream!
+
+
 0.52:
 -----
  * Fix a missing lang utf-8 encoding for lang_bg

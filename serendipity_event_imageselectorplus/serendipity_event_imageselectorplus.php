@@ -4,13 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_imageselectorplus extends serendipity_event
 {
@@ -26,9 +20,9 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian');
-        $propbag->add('version',       '0.52');
+        $propbag->add('version',       '0.53');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.3',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -77,7 +71,8 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('configuration', $conf_array);
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch ($name) {
@@ -127,26 +122,29 @@ class serendipity_event_imageselectorplus extends serendipity_event
                 }
                 break;
         }
-
         return true;
     }
 
     // to recash all entries after installing the plugin
-    function install() {
+    function install()
+    {
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
     // to recash all entries after uninstalling the plugin
-    function uninstall(&$propbag) {
+    function uninstall(&$propbag)
+    {
         serendipity_plugin_api::hook_event('backend_cache_purge', $this->title);
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function httpize($path) {
+    function httpize($path)
+    {
         global $serendipity;
 
         if (preg_match('@' . $serendipity['uploadPath'] . '(.+)$@imsU', $path, $match)) {
@@ -156,7 +154,8 @@ class serendipity_event_imageselectorplus extends serendipity_event
         return preg_replace('@^' . preg_quote($_SERVER['DOCUMENT_ROOT']) . '(.*)$@imsU', '\1', $path);
     }
 
-    function selected() {
+    function selected()
+    {
         global $serendipity;
 
         if ($serendipity['GET']['subpage'] == 's9yisp') {
@@ -166,7 +165,8 @@ class serendipity_event_imageselectorplus extends serendipity_event
         return false;
     }
 
-    function resizeThumb($sizes, $target) {
+    function resizeThumb($sizes, $target)
+    {
         global $serendipity;
 
         // Thumbsize: 75
@@ -242,19 +242,22 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $serendipity['imagemagick_nobang'] = false;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'backend_image_addform':
-                if ($serendipity['version'][0] < 2) {
-                    if (class_exists('ZipArchive')) {
-                        $checkedY = "";
-                        $checkedN = "";
-                        $this->get_config('unzipping') ? $checkedY = ' checked="checked"' : $checkedN = ' checked="checked"';
+                    if ($serendipity['version'][0] < 2) {
+                        if (class_exists('ZipArchive')) {
+                            $checkedY = "";
+                            $checkedN = "";
+                            $this->get_config('unzipping') ? $checkedY = ' checked="checked"' : $checkedN = ' checked="checked"';
 ?>
             <br />
             <div>
@@ -266,7 +269,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                 </div>
             </div>
 <?php
-                    }
+                        }
 ?>
             <br />
             <strong><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG; ?>:</strong><br />
@@ -328,7 +331,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                 <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_IMAGE_SIZE_DESC; ?></em>
             </div>
 <?php
-                } else {
+                    } else {
 ?>
 
         <div id="imageselectorplus">
@@ -425,8 +428,10 @@ class serendipity_event_imageselectorplus extends serendipity_event
             </div>
             <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_IMAGE_SIZE_DESC; ?></em>
         </div>
+
 <?php
-                }
+
+                    }
                     break;
 
                 case 'backend_image_add':
@@ -502,6 +507,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                             );
                         }
                     }
+                    break;
 
                 case 'backend_image_addHotlink':
                     // Re-Scale thumbnails?
@@ -569,11 +575,9 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     #$entry['moderate_comments'] = 'false'; // to take default values
                     $serendipity['POST']['properties']['fake'] = 'fake';
                     $id = serendipity_updertEntry($entry);
-
                     break;
 
                 case 'frontend_display':
-
                     // auto resizing images based on width and/or height attributes in img tag
                     if (serendipity_db_bool($this->get_config('autoresize'))) {
                         if (!empty($eventData['body'])) {
@@ -603,7 +607,6 @@ class serendipity_event_imageselectorplus extends serendipity_event
                             $eventData[$element] = $this->media_insert($eventData[$element], $eventData);
                         }
                     }
-                    return true;
                     break;
 
                 case 'backend_entry_presave':
@@ -641,7 +644,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                         } else {
                             $eventData = array('clean_page' => true);
                         }
-                   }
+                    }
                     break;
 
                 case 'entries_header':
@@ -682,8 +685,6 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     echo $link . '&lt;&lt; ' . BACK . '</a>';
 
                     echo "</div>\n</div>\n</div>\n";
-
-                    return true;
                     break;
 
                 case 'frontend_image_add_unknown':
@@ -695,12 +696,13 @@ class serendipity_event_imageselectorplus extends serendipity_event
                 case 'frontend_image_selector_imagesize':
                 case 'frontend_image_selector_hiddenfields':
                 case 'frontend_image_selector_imagelink':
-                    return true;
                     break;
 
                 case 'css_backend':
                     if ($serendipity['version'][0] > 1) {
-?>
+                        $eventData .= '
+
+/* imageselectorplus plugin backend css start */
 
 #imageselectorplus .radio_field input {
     margin: 0 0.5em;
@@ -733,7 +735,9 @@ class serendipity_event_imageselectorplus extends serendipity_event
     margin-left: 0.5em;
 }
 
-<?php
+/* imageselectorplus plugin backend css end */
+
+';
                     }
                     break;
 
@@ -741,7 +745,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     ob_start();
 ?>
 
-/*** imageselectorplus  plugin start ***/
+/* serendipity_event_imageselectorplus plugin start */
 
 .serendipity_quickblog_image,
 #content .serendipity_quickblog_image {
@@ -751,16 +755,20 @@ class serendipity_event_imageselectorplus extends serendipity_event
     border: 1px solid #C0C0C0;
     margin: 0px;
     overflow: auto;
-    padding: 0.4em;
+/*    padding: 0.333em;*/
+    width: 100%;
+}
+.serendipity_mediainsert_gallery div {
+    margin: .5em 1%;
 }
 
-/*** imageselectorplus plugin end ***/
+/* serendipity_event_imageselectorplus plugin end */
 
 <?php
                         $isp_frontpage_css = ob_get_contents();
                         ob_end_clean();
 
-                        $eventData = $eventData . $isp_frontpage_css; // append CSS
+                        $eventData .= $isp_frontpage_css; // append CSS
                     break;
 
                 case 'frontend_image_selector':
@@ -769,13 +777,13 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     } else {
                         $eventData['finishJSFunction'] = 'serendipity.serendipity_imageSelector_done(\'' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['textarea']) : htmlspecialchars($serendipity['GET']['textarea'], ENT_COMPAT, LANG_CHARSET)) . '\')';
                     }
-                    return true;
                     break;
 
-              default:
-                return false;
-            }
+                default:
+                    return false;
 
+            }
+            return true;
         } else {
             return false;
         }
@@ -790,7 +798,8 @@ class serendipity_event_imageselectorplus extends serendipity_event
      * @param   string  $body       Referenced entry body
      * @return  string  $content
      */
-    function parse_quickblog_post($path, &$body) {
+    function parse_quickblog_post($path, &$body)
+    {
         global $serendipity;
 
         preg_match('@<!--quickblog:(.+\|)+(.+)-->@imsU', $body, $target);
@@ -890,13 +899,14 @@ class serendipity_event_imageselectorplus extends serendipity_event
      * this function replaces xml-like structure in the $text @string
      * by images from media gallery
      */
-    function media_insert($text, &$eventData) {
+    function media_insert($text, &$eventData)
+    {
         global $serendipity;
         // find in text parts which are mediainsert
 
         $entry_parts = preg_split('@(<mediainsert>[\S\s]*?</mediainsert>)@', $text, -1, PREG_SPLIT_DELIM_CAPTURE);
 
-        // parse mediainserts 
+        // parse mediainserts
         // (if xml parser is present at php installation
         //         - SimpleXMLElement in PHP > 5.0, users of older version could have troubles )
         // text is splitted into parts
@@ -913,30 +923,30 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     $whole_gallery = false;
                     foreach ($xml->media as $medium) {
                         switch((string) $medium['type']) { // Get attributes as element indices
-                        case 'single':
-                            $medias[] = serendipity_db_escape_string($medium['name']);
-                            break;
+                            case 'single':
+                                $medias[] = serendipity_db_escape_string($medium['name']);
+                                break;
 
-                        case 'range':
-                            for ($j=intval($medium['start']);$j<=intval($medium['stop']);$j++) {
-                                $medias[] = serendipity_db_escape_string($medium['prefix']) . $j;
-                            }
-                            break;
+                            case 'range':
+                                for ($j=intval($medium['start']);$j<=intval($medium['stop']);$j++) {
+                                    $medias[] = serendipity_db_escape_string($medium['prefix']) . $j;
+                                }
+                                break;
 
-                        case 'gallery':
-                            $whole_gallery = true;
-                            break;
+                            case 'gallery':
+                                $whole_gallery = true;
+                                break;
 
-                        case 'hideafter':
-                            $hideafter = intval($medium['nr']);
-                            break;
+                            case 'hideafter':
+                                $hideafter = intval($medium['nr']);
+                                break;
 
-                        case 'picperrow':
-                            $picperrow = intval($medium['pr']);
-                            break;
+                            case 'picperrow':
+                                $picperrow = intval($medium['pr']);
+                                break;
 
-                        default:
-                            break;
+                            default:
+                                break;
                         }
                     }
 
@@ -945,14 +955,14 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
                     if ($whole_gallery) {
                         $q = "SELECT id,name,extension,thumbnail_name,realname,path,value as comment1,dimensions_width as width, dimensions_height as height
-                              FROM {$serendipity['dbPrefix']}images as i 
-                              LEFT JOIN {$serendipity['dbPrefix']}mediaproperties as p ON (p.mediaid = i.id AND p.property='COMMENT1') 
+                              FROM {$serendipity['dbPrefix']}images as i
+                              LEFT JOIN {$serendipity['dbPrefix']}mediaproperties as p ON (p.mediaid = i.id AND p.property='COMMENT1')
                               WHERE i.path = '" . serendipity_db_escape_string($gallery) . "' ";
                     } else {
                         $images_suggestions = "'".implode("','",$medias)."'";
                         $q = "SELECT id,name,extension,thumbnail_name,realname,path,value as comment1,dimensions_width as width, dimensions_height as height
-                              FROM {$serendipity['dbPrefix']}images as i 
-                              LEFT JOIN {$serendipity['dbPrefix']}mediaproperties as p ON (p.mediaid = i.id AND p.property='COMMENT1') 
+                              FROM {$serendipity['dbPrefix']}images as i
+                              LEFT JOIN {$serendipity['dbPrefix']}mediaproperties as p ON (p.mediaid = i.id AND p.property='COMMENT1')
                               WHERE i.path = '" . serendipity_db_escape_string($gallery) . "' AND i.name IN ($images_suggestions)";
                     }
 
@@ -1040,9 +1050,10 @@ class serendipity_event_imageselectorplus extends serendipity_event
      * @param string $html
      * @return string The HTML with the transformed images
      */
-    function substituteImages($html) {
+    function substituteImages($html)
+    {
         $imgTags = $this->getImageTags($html);
-        //We need to make sure we substitute the last images first otherwise 
+        //We need to make sure we substitute the last images first otherwise
         //our char offsets will get messed up
         $imgTags = array_reverse($imgTags);
 
@@ -1072,20 +1083,21 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
     /**
      * Gets an image ID based on the URL
-     * 
+     *
      * The URL can be in the form:
-     * 
+     *
      *     <maybe-something-here>/uploads/fireworks.jpg
      *   or
      *     <maybe-something-here>/templates_c/mediacache/cache_img1_300_300
-     * 
-     * The first example will cause the database to be queried. In the second 
+     *
+     * The first example will cause the database to be queried. In the second
      * example the image ID will be extracted directly from the URL
-     * 
+     *
      * @param string The image URL
      * @return mixed An image ID if the URL could be matched, or false if the URL could not be matched
      */
-    function getImageIdByUrl($url) {
+    function getImageIdByUrl($url)
+    {
         global $serendipity;
 
         if (preg_match('#.*templates_c/mediacache/cache_img(\d+)_(\d*)_(\d*)#i', $url, $m)) {
@@ -1113,7 +1125,8 @@ class serendipity_event_imageselectorplus extends serendipity_event
      * @param array $attrs An associative array of the image's attributes. Must conatain src, and either width or height
      * @return unknown
      */
-    function getTransformImg($attrs) {
+    function getTransformImg($attrs)
+    {
         global $serendipity;
 
         /*
@@ -1154,12 +1167,13 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
     /**
      * Parses image tags out of a chunk of HTML
-     * 
+     *
      * @author Adam Charnock (http://omniwiki.co.uk)
      * @param string $html
      * @return array An array of image tags. Each tag is an associative array of its attributes, plus _offset and _length
      */
-    function getImageTags($html) {
+    function getImageTags($html)
+    {
         //Thanks to the following blog post for the inspiration for this regex:
         //http://kev.coolcavemen.com/2007/03/ultimate-regular-expression-for-html-tag-parsing-with-php/
         preg_match_all("/<\/?(\w+)((\s+\w+(\s*=\s*(?:\".*?\"|'.*?'|[^'\">\s]+))?)+\s*|\s*)\/?>/i", $html, $m, PREG_OFFSET_CAPTURE);
@@ -1184,12 +1198,12 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
     /**
      * Parse the attribute portion of an HTML/XHTML/XML tag
-     * 
+     *
      * The $atts param should (or rather, can) look something like:
      *     width="400" height="300" border=0 alt="This is an example!"
-     * 
+     *
      * Which will produce an array as follows:
-     * 
+     *
      * <pre>
      * array(4) {
      *   ["width"]=>
@@ -1202,13 +1216,14 @@ class serendipity_event_imageselectorplus extends serendipity_event
      *   string(19) "This is an example!"
      * }
      * </pre>
-     * 
+     *
      * @author Adam Charnock (http://omniwiki.co.uk)
      * @internal It may be possible to do this with a regex
      * @param string $attrs The tag string
      * @return array An associative array of attributes
      */
-    function parseAttrs($attrs) {
+    function parseAttrs($attrs)
+    {
         $parsedAttrs = array();
         $currentAttrName = '';
         $currentAttrValue = '';
@@ -1264,3 +1279,4 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

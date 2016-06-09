@@ -35,3 +35,4 @@
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_ASOBJECT', 'Non-image object?');
 
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_THUMBRESIZE_DESC', 'Default setting to both MAX values is 0, which is used as a fallback! Changing these values will overwrite $serendipity[\'thumbSize\'], defined in the blogs global "Configuration" - "Image Conversion Settings"! If you want to influence the MediaLibrary thumb size creation, change either the global "Image Conversion Settings" or use either this "max-width" OR "max-height" setting only, for landscape/portrait ratios. Setting both to the same value here, has the same effect.');
+

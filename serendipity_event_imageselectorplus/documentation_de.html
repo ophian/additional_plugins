@@ -33,7 +33,7 @@ Another functionality of this plugin is multiple image insertion. If you write a
 
 <h3>When is it useful?</h3>
 <p>
-    When you write a blog, where you want to include many pictures in your entries. When you have fifty images and these images numbered in an ascending row, it is lengthy to insert them one by one through the images selector. With this plugin, you can insert all of them using on a single line. 
+    When you write a blog, where you want to include many pictures in your entries. When you have fifty images and these images numbered in an ascending row, it is lengthy to insert them one by one through the images selector. With this plugin, you can insert all of them using on a single line.
 </p>
 
 <h3>Examples</h3>
@@ -158,17 +158,13 @@ Another functionality of this plugin is multiple image insertion. If you write a
 &lt;img src="/uploads/myimage.jpg" width="100" height="150" /&gt;
 </pre>
 
-<p>When it finds an image tag in this form it will replace the value of 'src' attribute with the path 
-to the image resizing script, serendipity_admin_image_selector.php. The end result would be something 
-like this:</p>
+<p>When it finds an image tag in this form it will replace the value of 'src' attribute with the path to the image resizing script, serendipity_admin_image_selector.php. The end result would be something like this:</p>
 
 <pre>
 &lt;img src="http://domain.com/serendipity_admin_image_selector.php?serendipity[image]=1&serendipity[disposition]=inline&serendipity[step]=showItem&serendipity[resizeWidth]=100&serendipity[resizeHeight]=150" width="100" height="150" /&gt;
 </pre>
 
-<p>This saves you time if you need to use images at multiple resolutions, and can also reduce 
-download times for users. The performance hit is minimal as the image resize is only done once, 
-as is the parsing of img tags.</p>
+<p>This saves you time if you need to use images at multiple resolutions, and can also reduce download times for users. The performance hit is minimal as the image resize is only done once, as is the parsing of img tags.</p>
 
 <h3>Notes</h3>
 
