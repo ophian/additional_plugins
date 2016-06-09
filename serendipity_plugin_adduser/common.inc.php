@@ -1,20 +1,16 @@
-<?php # 
+<?php
 
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_common_adduser {
-    static function sendMail(&$username, &$hash, &$email, $approve_only = false, $admin_cc = true) {
+class serendipity_common_adduser
+{
+    static function sendMail(&$username, &$hash, &$email, $approve_only = false, $admin_cc = true)
+    {
         global $serendipity;
 
         if ($approve_only) {
@@ -55,7 +51,8 @@ class serendipity_common_adduser {
         return $mail;
     }
 
-    static function checkuser($usergroups = array()) {
+    static function checkuser($usergroups = array())
+    {
         global $serendipity;
         static $debug = false;
 
@@ -166,7 +163,8 @@ class serendipity_common_adduser {
         return false;
     }
 
-    static function addAuthor($username, $password, $email, $userlevel, $right_publish, $no_create) {
+    static function addAuthor($username, $password, $email, $userlevel, $right_publish, $no_create)
+    {
         global $serendipity;
 
         if (!is_array(serendipity_db_query("SELECT username FROM {$serendipity['dbPrefix']}pending_authors LIMIT 1", true, 'both', false, false, false, true))) {
@@ -201,7 +199,8 @@ class serendipity_common_adduser {
         return $hash;
     }
 
-    static function adduser(&$username, &$password, &$email, $userlevel, $usergroups = array(), $no_create = false, $right_publish = true, $straight_insert = false, $approve = false, $use_captcha = false) {
+    static function adduser(&$username, &$password, &$email, $userlevel, $usergroups = array(), $no_create = false, $right_publish = true, $straight_insert = false, $approve = false, $use_captcha = false)
+    {
         global $serendipity;
 
         if (serendipity_common_adduser::checkuser($usergroups)) {
@@ -223,7 +222,7 @@ class serendipity_common_adduser {
                     'last_modified'     => 1,
                     'timestamp'         => 1
                 );
-        
+
                 $commentInfo = array(
                     'type' => 'NORMAL',
                     'source' => 'commentform',
@@ -234,7 +233,7 @@ class serendipity_common_adduser {
                     'source2' => 'adduser'
                 );
                 serendipity_plugin_api::hook_event('frontend_saveComment', $ca, $commentInfo);
-        
+
                 if ($ca['allow_comments'] === false) {
                     echo PLUGIN_ADDUSER_ANTISPAM . '<hr />';
                     return false;
@@ -269,7 +268,8 @@ class serendipity_common_adduser {
         return false;
     }
 
-    static function loginform($url, $hidden = array(), $instructions = '', $username = '', $password = '', $email = '', $use_captcha = false) {
+    static function loginform($url, $hidden = array(), $instructions = '', $username = '', $password = '', $email = '', $use_captcha = false)
+    {
         global $serendipity;
 
         if (!is_object($serendpity['smarty'])) {
@@ -293,4 +293,5 @@ class serendipity_common_adduser {
         $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
         $serendipity['smarty']->display($tfile);
     }
+
 }

@@ -1,8 +1,9 @@
-<?php # 
+<?php
 
 include_once dirname(__FILE__) . '/common.inc.php';
 
-class serendipity_plugin_adduser extends serendipity_plugin {
+class serendipity_plugin_adduser extends serendipity_plugin
+{
     var $title = PLUGIN_ADDUSER_NAME;
     var $usergroups = array();
 
@@ -12,7 +13,7 @@ class serendipity_plugin_adduser extends serendipity_plugin {
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '2.39');
+        $propbag->add('version',       '2.40');
         $propbag->add('requirements',  array(
             'serendipity' => '0.8',
             'smarty'      => '2.6.7',
@@ -179,12 +180,12 @@ class serendipity_plugin_adduser extends serendipity_plugin {
                 break;
 
             default:
-                    return false;
+                return false;
         }
         return true;
     }
 
-    function set_config($name, $value)
+    function set_config($name, $value, $implodekey = '^')
     {
         $fname = $this->instance . '/' . $name;
 
@@ -199,7 +200,8 @@ class serendipity_plugin_adduser extends serendipity_plugin {
         return serendipity_set_config_var($fname, $dbval);
     }
 
-    function &getGroups() {
+    function &getGroups()
+    {
         global $serendipity;
 
         if (!function_exists('serendipity_getAllGroups')) {
@@ -233,7 +235,8 @@ class serendipity_plugin_adduser extends serendipity_plugin {
         return $html;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
         $title = $this->get_config('title');
 
@@ -241,7 +244,7 @@ class serendipity_plugin_adduser extends serendipity_plugin {
             // Disable sidebar; Fallback to Event-Plugin.
             return false;
         }
-        
+
         if (serendipity_userLoggedIn()) {
             return false;
         }
@@ -270,6 +273,7 @@ class serendipity_plugin_adduser extends serendipity_plugin {
 
         return true;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
