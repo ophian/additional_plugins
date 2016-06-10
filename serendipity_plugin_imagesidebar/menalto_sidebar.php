@@ -1,6 +1,7 @@
 <?php
 
-class menalto_sidebar extends subplug_sidebar {
+class menalto_sidebar extends subplug_sidebar
+{
 
     function introspect_custom()
     {
@@ -63,12 +64,12 @@ class menalto_sidebar extends subplug_sidebar {
                 break;
 
             case 'menalto_rotate_time':
-                  $propbag->add('type',        'string');
-                  $propbag->add('name',        PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_NAME);
-                  $propbag->add('description', PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_DESC);
-                  $propbag->add('default',     '60');
-            break;
-                
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_NAME);
+                $propbag->add('description', PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_DESC);
+                $propbag->add('default',     '60');
+                break;
+
             case 'menalto_gversion':
                 $propbag->add('type',        'select');
                 $propbag->add('name',        PLUGIN_GALLERYRANDOMBLOCK_VERSION);
@@ -78,7 +79,6 @@ class menalto_sidebar extends subplug_sidebar {
                                                 1  => '1.x',
                                                 2  => '2.x'
                 ));
-                
                 break;
 
             case 'g2_type':
@@ -95,7 +95,6 @@ class menalto_sidebar extends subplug_sidebar {
                     ));
                 }
                 break;
-
 
             case 'g2_maxsize':
                 if ($this->get_config('menalto_gversion',1) == 2) {
@@ -123,13 +122,15 @@ class menalto_sidebar extends subplug_sidebar {
                     $propbag->add('default',     'title, date, views, owner, heading');
                 }
                 break;
+
             default:
-                    return false;
+                return false;
         }
         return true;
     }
 
-    function generate_content_custom(&$title) {
+    function generate_content_custom(&$title)
+    {
         global $serendipity;
 
         $update = true;
@@ -186,7 +187,7 @@ class menalto_sidebar extends subplug_sidebar {
                         $file .='&g2_blocks=randomImage';
                     break;
                 }
-  
+
                 $maxsize = (int)$this->get_config('g2_maxsize','');
                 if ($maxsize > 0) {
                     $file .='&g2_maxSize=' . $maxsize;
@@ -253,7 +254,8 @@ class menalto_sidebar extends subplug_sidebar {
         echo $output_str;
     }
 
-    function calc_update_time ($rotate_time,$last_update) {
+    function calc_update_time ($rotate_time,$last_update)
+    {
         $next_time = mktime(date("H"), date("i"), 0, date("m"), date("d"), date("Y"));
         if ($last_update == '') {
             $last_update = mktime(date("H"), 0, 0, date("m"), date("d"), date("Y"));
