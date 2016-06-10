@@ -4,15 +4,10 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_plugin_nugget_multilingual extends serendipity_plugin {
+class serendipity_plugin_nugget_multilingual extends serendipity_plugin
+{
     var $title = PLUGIN_NUGGET_MULTI_NAME;
 
     function introspect(&$propbag)
@@ -22,7 +17,13 @@ class serendipity_plugin_nugget_multilingual extends serendipity_plugin {
         $propbag->add('description',   PLUGIN_NUGGET_MULTI_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Wesley Hwang-Chung');
-        $propbag->add('version',       '1.9');
+        $propbag->add('requirements',  array(
+            'serendipity' => '1.6',
+            'smarty'      => '2.6.7',
+            'php'         => '4.1.0'
+        ));
+
+        $propbag->add('version',       '1.10');
         $propbag->add('configuration', array('language', 'title', 'content', 'markup', 'show_where'));
         $propbag->add('groups',        array('FRONTEND_VIEWS'));
 
@@ -97,7 +98,7 @@ class serendipity_plugin_nugget_multilingual extends serendipity_plugin {
                 break;
 
             default:
-                break;
+                return false;
         }
         return true;
     }
@@ -124,7 +125,7 @@ class serendipity_plugin_nugget_multilingual extends serendipity_plugin {
         // apply markup?
         if (serendipity_db_bool($this->get_config('markup', 'true'))) {
             // This is the only workable solution for (sidebar?) plugins, to explicitly allow to apply nl2br plugin changes to markup (if we want to),
-            $serendipity['POST']['properties']['disable_markups'] = array(false); // since in_array() expects 2cd param to be array
+            $serendipity['POST']['properties']['disable_markups'] = array(false); // since in_array() expects 2cd param to be an array
             $entry = array('html_nugget' => $this->get_config('content'));
             serendipity_plugin_api::hook_event('frontend_display', $entry);
             echo $entry['html_nugget'];
@@ -132,6 +133,7 @@ class serendipity_plugin_nugget_multilingual extends serendipity_plugin {
             echo $this->get_config('content');
         }
     }
+
 }
 
 ?>

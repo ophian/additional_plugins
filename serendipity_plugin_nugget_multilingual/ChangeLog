@@ -1,0 +1,26 @@
+1.10:
+-----
+
+ * Set plugin consistencies
+ * Add propbag plugin requirements array
+ * Use load language API - extends required Serendipity version to v.1.6
+
+1.9:
+----
+
+ * Remove doubled edit_nugget
+
+1.8:
+----
+
+ * Fixed POST properties 'disable_markups'
+
+1.4:
+----
+
+ * Added support for three new languages in s9y 0.9
+
+1.1:
+----
+
+ * Initial Release
