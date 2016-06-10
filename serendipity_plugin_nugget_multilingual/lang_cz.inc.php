@@ -7,8 +7,8 @@
  *  @revisionDate 2009/08/26
  */
 
-@define('PLUGIN_NUGGET_MULTI_NAME',		'Jazykovì závislý HTML blok');
-@define('PLUGIN_NUGGET_MULTI_DESC',		'Pro zadaný jazyk zobrazuje v postranním sloupci HTML blok.');
-@define('PLUGIN_NUGGET_MULTI_LANG',		'Výbìr jazyka');
-@define('PLUGIN_NUGGET_MULTI_ALL',		'V¹echny jazyky');
+@define('PLUGIN_NUGGET_MULTI_NAME', 'Jazykovì závislý HTML blok');
+@define('PLUGIN_NUGGET_MULTI_DESC', 'Pro zadaný jazyk zobrazuje v postranním sloupci HTML blok.');
+@define('PLUGIN_NUGGET_MULTI_LANG', 'Výbìr jazyka');
+@define('PLUGIN_NUGGET_MULTI_ALL', 'V¹echny jazyky');
 
