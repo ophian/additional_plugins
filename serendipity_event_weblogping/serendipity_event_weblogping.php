@@ -231,8 +231,7 @@ class serendipity_event_weblogping extends serendipity_event
                                 $req = new HTTP_Request2(
                                         "http://".$service['host'].$service['path'],
                                         HTTP_Request2::METHOD_POST,
-                                        $options)
-                                    );
+                                        $options);
                                 $req->addHeader("Content-Type", "text/xml");
                                 if (strtoupper(LANG_CHARSET) != 'UTF-8') {
                                     $payload = utf8_encode($message->payload);
