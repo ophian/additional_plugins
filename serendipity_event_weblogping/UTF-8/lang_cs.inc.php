@@ -1,6 +1,7 @@
-<?php 
+<?php
 
 /**
+ *  @version $Revision: 1381 $
  *  @author Vladimír Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -15,4 +16,3 @@
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Nezdařilo se (Důvod: %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'Úspěch!');
 
-?>

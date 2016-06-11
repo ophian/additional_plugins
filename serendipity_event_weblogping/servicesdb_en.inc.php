@@ -1,7 +1,5 @@
-<?php 
+<?php
 
-##########################################################################
-# serendipity - another blogger...                                       #
 ##########################################################################
 #                                                                        #
 # (c) 2003 Jannis Hermanns <J@hacked.it>                                 #
@@ -9,7 +7,7 @@
 #                                                                        #
 ##########################################################################
 
-        $servicesdb = array(
+$servicesdb = array(
             array(
               'name'       => 'Ping-o-Matic',
               'host'       => 'rpc.pingomatic.com',
@@ -64,6 +62,7 @@
               'host' => 'blogsearch.google.com',
               'path' => '/ping/RPC2'
             ),
-                                                                  
-        );
+
+);
+
 ?>

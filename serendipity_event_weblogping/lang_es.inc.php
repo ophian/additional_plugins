@@ -1,6 +1,6 @@
-<?php 
+<?php
 /**
- *  @version $Revision$
+ *  @version
  *  @author Rodrigo Lazo Paz <rlazo.paz@gmail.com>
  *  EN-Revision: 690
  */
@@ -16,4 +16,3 @@
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Error(Razón: %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', '!!Éxito!!');
 
-?>

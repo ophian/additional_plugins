@@ -1,11 +1,6 @@
-<?php 
+<?php
 
 ##########################################################################
-# serendipity - another blogger...                                       #
-##########################################################################
-#                                                                        #
-# (c) 2003 Jannis Hermanns <J@hacked.it>                                 #
-# http://www.jannis.to/programming/serendipity.html                      #
 #                                                                        #
 # Translated by                                                          #
 # Sebastian Mordziol <argh@php-tools.net>                                #
@@ -23,5 +18,3 @@
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Le ping a échoué. (Raison: %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'Ping réussi.');
 
-/* vim: set sts=4 ts=4 expandtab : */
-?>

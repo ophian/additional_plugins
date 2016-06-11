@@ -1,8 +1,16 @@
 <?php
 
-if (IN_serendipity !== true) { die ("Don't hack!"); }
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
 
-require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+if (file_exists(S9Y_PEAR_PATH . 'HTTP/Request2.php')) {
+    require_once S9Y_PEAR_PATH . 'HTTP/Request2.php';
+    @define('SERENDIPITY_IS_REQUEST2', true);
+} else {
+    require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+}
+
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_weblogping extends serendipity_event
@@ -17,20 +25,20 @@ class serendipity_event_weblogping extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WEBLOGPING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.08.2');
+        $propbag->add('version',       '1.09');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
         $propbag->add('event_hooks',    array(
-            'backend_display' => true,
-            'frontend_display' => true,
-            'backend_insert' => true,
-            'backend_update' => true,
-            'backend_publish' => true,
-            'backend_draft' => true,
-            'external_plugin' => true
+            'backend_display'   => true,
+            'frontend_display'  => true,
+            'backend_insert'    => true,
+            'backend_update'    => true,
+            'backend_publish'   => true,
+            'backend_draft'     => true,
+            'external_plugin'   => true
         ));
         $propbag->add('groups', array('BACKEND_EDITOR'));
 
@@ -41,7 +49,6 @@ class serendipity_event_weblogping extends serendipity_event
         }
         include $servicesdb_file;
         $this->services =& $servicesdb;
-
 
         $manual_services = explode(',', $this->get_config('manual_services'));
         if (is_array($manual_services)) {
@@ -81,28 +88,33 @@ class serendipity_event_weblogping extends serendipity_event
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_WEBLOGPING_CUSTOM);
                 $propbag->add('description', PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA);
-                $propbag->add('default', '');
+                $propbag->add('default',     '');
                 break;
 
             default:
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        $name);
                 $propbag->add('description', sprintf(PLUGIN_EVENT_WEBLOGPING_PING, $name));
-                $propbag->add('default', 'false');
+                $propbag->add('default',     'false');
         }
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_EVENT_WEBLOGPING_TITLE;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
+
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'backend_display':
 ?>
                     <fieldset class="entryproperties">
@@ -113,7 +125,10 @@ class serendipity_event_weblogping extends serendipity_event
                     foreach($this->services AS $index => $service) {
                         // Detect if the current checkbox needs to be saved. We use the field chk_timestamp to see,
                         // if the form has already been submitted and individual changes shall be preserved
-                        $selected = (($serendipity['POST']['chk_timestamp'] && $serendipity['POST']['announce_entries_' . $service['name']]) || (!isset($serendipity['POST']['chk_timestamp']) && $this->get_config($service['name']) == 'true') ? 'checked="checked"' : '');
+                        $selected = (($serendipity['POST']['chk_timestamp'] && $serendipity['POST']['announce_entries_' . $service['name']])
+                                        || (!isset($serendipity['POST']['chk_timestamp']) && serendipity_db_bool($this->get_config($service['name'], 'false')))
+                                            ? 'checked="checked"'
+                                            : '');
 
                         $noneclick .= 'document.getElementById(\'serendipity[announce_entries_' . $service['name'] . ']\').checked = false; ';
                         $onclick   = '';
@@ -143,7 +158,6 @@ class serendipity_event_weblogping extends serendipity_event
                         </div>
                     </fieldset>
 <?php
-                    return true;
                     break;
 
                 case 'backend_publish':
@@ -156,13 +170,16 @@ class serendipity_event_weblogping extends serendipity_event
                         if (!empty($service['supersedes']) && isset($serendipity['POST']['announce_entries_' . $service['name']])) {
                             $supersedes = $service['supersedes'];
                             foreach($supersedes AS $sid => $servicename) {
-                                // A service has been checked that is superseded by another checked meta-service. Remove that service from the list of services to be ping'd
+                                // A service has been checked that is superseded by another checked meta-service.
+                                // Remove that service from the list of services to be ping'd
                                 unset($serendipity['POST']['announce_entries_' . $servicename]);
                             }
                         }
                     }
                     foreach ($this->services AS $index => $service) {
-                        if (isset($serendipity['POST']['announce_entries_' . $service['name']]) || (defined('SERENDIPITY_IS_XMLRPC') && serendipity_db_bool($this->get_config($service['name'])))) {
+                        if (isset($serendipity['POST']['announce_entries_' . $service['name']])
+                                || (defined('SERENDIPITY_IS_XMLRPC') && serendipity_db_bool($this->get_config($service['name'], 'false')))
+                            ) {
                             if (!defined('SERENDIPITY_IS_XMLRPC') || defined('SERENDIPITY_XMLRPC_VERBOSE')) {
                                 printf(PLUGIN_EVENT_WEBLOGPING_SENDINGPING . '...', $service['host']);
                             }
@@ -210,32 +227,67 @@ class serendipity_event_weblogping extends serendipity_event
                             serendipity_plugin_api::hook_event('backend_http_request', $options, 'weblogping');
                             serendipity_request_start();
 
-                            $req = new HTTP_Request("http://".$service['host'].$service['path'], $options);
-                            $req->setMethod(HTTP_REQUEST_METHOD_POST);
-                            $req->addHeader("Content-Type", "text/xml");
-                            if (strtoupper(LANG_CHARSET) != 'UTF-8') {
-                                $payload = utf8_encode($message->payload);
-                            } else {
-                                $payload = $message->payload;
-                            }
-                            $req->addRawPostData($payload);
-                            $http_result   = $req->sendRequest();
-                            $http_response = $req->getResponseBody();
-                            $xmlrpc_result = $message->parseResponse($http_response);
-                            if ($xmlrpc_result->faultCode()) {
-                                $out = sprintf(PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE . "<br />", (function_exists('serendipity_specialchars') ? serendipity_specialchars($xmlrpc_result->faultString()) : htmlspecialchars($xmlrpc_result->faultString(), ENT_COMPAT, LANG_CHARSET)));
-                            } else {
-                                $out = PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS . "<br />";
-                            }
-                            serendipity_request_end();
+                            if (defined('SERENDIPITY_IS_REQUEST2')) {
+                                $req = new HTTP_Request2(
+                                        "http://".$service['host'].$service['path'],
+                                        HTTP_Request2::METHOD_POST,
+                                        $options)
+                                    );
+                                $req->addHeader("Content-Type", "text/xml");
+                                if (strtoupper(LANG_CHARSET) != 'UTF-8') {
+                                    $payload = utf8_encode($message->payload);
+                                } else {
+                                    $payload = $message->payload;
+                                }
+                                $req->addRawPostData($payload);
+                                try {
+                                    $res = $req->send();
+                                    if (200 == $res->getStatus()) {
+                                        $http_response = $res->getBody();
+                                        $xmlrpc_result = $message->parseResponse($http_response);
+                                        if ($xmlrpc_result->faultCode()) {
+                                            $out = sprintf(PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE . "<br />", (function_exists('serendipity_specialchars') ? serendipity_specialchars($xmlrpc_result->faultString()) : htmlspecialchars($xmlrpc_result->faultString(), ENT_COMPAT, LANG_CHARSET)));
+                                        } else {
+                                            $out = PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS . "<br />";
+                                        }
+                                        serendipity_request_end();
 
-                            if (!defined('SERENDIPITY_IS_XMLRPC') || defined('SERENDIPITY_XMLRPC_VERBOSE')) {
-                                echo $out;
+                                        if (!defined('SERENDIPITY_IS_XMLRPC') || defined('SERENDIPITY_XMLRPC_VERBOSE')) {
+                                            echo $out;
+                                        }
+                                    } else {
+                                        return null;
+                                    }
+                                } catch (HTTP_Request2_Exception $e) {
+                                    return null;
+                                }
+                            } else {
+                                // Fallback to old solution
+                                $req = new HTTP_Request("http://".$service['host'].$service['path'], $options);
+                                $req->setMethod(HTTP_REQUEST_METHOD_POST);
+                                $req->addHeader("Content-Type", "text/xml");
+                                if (strtoupper(LANG_CHARSET) != 'UTF-8') {
+                                    $payload = utf8_encode($message->payload);
+                                } else {
+                                    $payload = $message->payload;
+                                }
+                                $req->addRawPostData($payload);
+                                $http_result   = $req->sendRequest();
+                                $http_response = $req->getResponseBody();
+                                $xmlrpc_result = $message->parseResponse($http_response);
+                                if ($xmlrpc_result->faultCode()) {
+                                    $out = sprintf(PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE . "<br />", (function_exists('serendipity_specialchars') ? serendipity_specialchars($xmlrpc_result->faultString()) : htmlspecialchars($xmlrpc_result->faultString(), ENT_COMPAT, LANG_CHARSET)));
+                                } else {
+                                    $out = PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS . "<br />";
+                                }
+                                serendipity_request_end();
+
+                                if (!defined('SERENDIPITY_IS_XMLRPC') || defined('SERENDIPITY_XMLRPC_VERBOSE')) {
+                                    echo $out;
+                                }
                             }
                         }
                     }
-
-                    return true;
                     break;
 
                 case 'external_plugin':
@@ -246,7 +298,7 @@ class serendipity_event_weblogping extends serendipity_event
                         $this->event_hook('backend_publish', $bag, $eventData);
                         echo "XMLRPC DONE\n";
                     }
-                    return true;
+                    break;
 
                 case 'frontend_display':
                 case 'backend_insert':
@@ -259,7 +311,9 @@ class serendipity_event_weblogping extends serendipity_event
         } else {
             return false;
         }
+        return true;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */

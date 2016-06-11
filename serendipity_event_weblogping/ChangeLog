@@ -1,0 +1,17 @@
+1.09:
+-----
+
+ * Set plugin consistencies
+ * register and use PEAR HTTP/Request2 if available (please test)
+
+1.08.2:
+-------
+
+ * Use load language API - extends required Serendipity version to v.1.6
+
+1.08.1:
+-------
+
+ * add hack protection to moved files, remove ID-String
+ * add serendipity_specialchars() mapper to htmlsspecialchars()
+
