@@ -5,9 +5,9 @@
  *  @translated 2009/07/07
  */
 
-@define('PLUGIN_EVENT_INCLUDEENTRY_NAME',     'Markup: Vložení pøíspìvku/šablony/bloku');
-@define('PLUGIN_EVENT_INCLUDEENTRY_DESC',     'Umožòuje pøidat do pøíspìvku tagy, které zajistí vložení èást jiného pøíspìvku. Použijte tuto znaèku: [s9y-include-entry:XXX:YYY]. Nahraïte XXX èíslem ID odkazovaného pøíspìvku a YYY nahraïte názvem pole pøíspìvku, které chcete vložit (napø. "body", "title", "extended", ...). Také mùžete využít nové funkce menu pro správu šablon a blokù, které je možno vložit mezi pøíspìvky.');
-@define('PLUGIN_EVENT_INCLUDEENTRY_BLOCKS',   'Bloky šablon');
+@define('PLUGIN_EVENT_INCLUDEENTRY_NAME', 'Markup: Vložení pøíspìvku/šablony/bloku');
+@define('PLUGIN_EVENT_INCLUDEENTRY_DESC', 'Umožòuje pøidat do pøíspìvku tagy, které zajistí vložení èást jiného pøíspìvku. Použijte tuto znaèku: [s9y-include-entry:XXX:YYY]. Nahraïte XXX èíslem ID odkazovaného pøíspìvku a YYY nahraïte názvem pole pøíspìvku, které chcete vložit (napø. "body", "title", "extended", ...). Také mùžete využít nové funkce menu pro správu šablon a blokù, které je možno vložit mezi pøíspìvky.');
+@define('PLUGIN_EVENT_INCLUDEENTRY_BLOCKS', 'Bloky šablon');
 @define('PLUGIN_EVENT_INCLUDEENTRY_DBVERSION', '1.0');
 @define('PLUGIN_EVENT_INCLUDEENTRY_FILENAME_NAME', 'Šablona (Smarty)');
 @define('PLUGIN_EVENT_INCLUDEENTRY_FILENAME_DESC', 'Zadejte jméno souboru šablony, která se má použít pro tuto stránku. Šablona smarty mùže být umístìna v adresáøi tohoto pluginu nebo v adresáøi Vaší šablony.');
@@ -28,4 +28,3 @@
 @define('STATICBLOCK_SHOW_MULTI', 'Povolit vícenásobné bloky');
 @define('STATICBLOCK_SHOW_MULTI_DESC', 'Pokud vložíte blok do pøíspìvku, má pøesto funkce náhodné vkládání blokù vkládat bloky po pøíspìvku? Pokud je nastaveno "Ne", každý pøíspìvek nebude obsahovat více než jeden náhodný blok.');
 
-?>

@@ -8,13 +8,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_includeentry extends serendipity_event
 {
@@ -38,7 +32,7 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '2.16');
+        $propbag->add('version',       '2.17');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
@@ -110,7 +104,6 @@ class serendipity_event_includeentry extends serendipity_event
                 $propbag->add('name',        STATICBLOCK_SHOW_MULTI);
                 $propbag->add('description', STATICBLOCK_SHOW_MULTI_DESC);
                 $propbag->add('default',     false);
-                return true;
                 break;
 
             case 'randomize':
@@ -118,7 +111,6 @@ class serendipity_event_includeentry extends serendipity_event
                 $propbag->add('name',        STATICBLOCK_RANDOMIZE);
                 $propbag->add('description', STATICBLOCK_RANDOMIZE_DESC);
                 $propbag->add('default',     false);
-                return true;
                 break;
 
             case 'first_show':
@@ -126,7 +118,6 @@ class serendipity_event_includeentry extends serendipity_event
                 $propbag->add('name',        STATICBLOCK_FIRST_SHOW);
                 $propbag->add('description', STATICBLOCK_FIRST_SHOW_DESC);
                 $propbag->add('default',     '1');
-                return true;
                 break;
 
             case 'show_skip':
@@ -134,13 +125,11 @@ class serendipity_event_includeentry extends serendipity_event
                 $propbag->add('name',        STATICBLOCK_SHOW_SKIP);
                 $propbag->add('description', STATICBLOCK_SHOW_SKIP_DESC);
                 $propbag->add('default',     '1');
-                return true;
                 break;
 
             case 'enabled_categories':
                 $propbag->add('type',      'content');
                 $propbag->add('default',   $this->getCategories());
-                return true;
                 break;
 
             case 'ENTRY_BODY':
@@ -151,14 +140,16 @@ class serendipity_event_includeentry extends serendipity_event
                 $propbag->add('name',        constant($name));
                 $propbag->add('description', sprintf(APPLY_MARKUP_TO, constant($name)));
                 $propbag->add('default', 'true');
-                return true;
                 break;
-        }
 
-        return false;
+            default:
+                return false;
+        }
+        return true;
     }
 
-    function introspect_item($name, &$propbag) {
+    function introspect_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch($name) {
@@ -203,11 +194,13 @@ class serendipity_event_includeentry extends serendipity_event
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function parse(&$element) {
+    function parse(&$element)
+    {
         global $serendipity;
 
         $element = preg_replace_callback(
@@ -234,7 +227,8 @@ class serendipity_event_includeentry extends serendipity_event
         return serendipity_set_config_var($fname, $dbval);
     }
 
-    function &getCategories() {
+    function &getCategories()
+    {
         global $serendipity;
 
         $html = (($serendipity['version'][0] < 2) ? '<strong>' . CATEGORIES . '</strong><br />' : '<span class="wrap_legend"><legend>' . CATEGORIES . '</legend></span>') ."\n";
@@ -267,7 +261,8 @@ class serendipity_event_includeentry extends serendipity_event
         return $html;
     }
 
-    function parseCallback($buffer) {
+    function parseCallback($buffer)
+    {
         global $serendipity;
 
         if (!isset($buffer[3]) || empty($buffer[3])) {
@@ -277,6 +272,7 @@ class serendipity_event_includeentry extends serendipity_event
         $id = (int)$buffer[2];
 
         switch($buffer[1]) {
+
             case 's9y-include-block':
                 $this->fetchStaticBlock($id);
 
@@ -298,16 +294,19 @@ class serendipity_event_includeentry extends serendipity_event
                     $newbuf = $entry[$buffer[3]];
                 }
                 break;
+
         }
 
         return $newbuf;
     }
 
-    function install() {
+    function install()
+    {
         $this->check();
     }
 
-    function check() {
+    function check()
+    {
         global $serendipity;
 
         $built = $this->get_config('db_built', null);
@@ -331,7 +330,8 @@ class serendipity_event_includeentry extends serendipity_event
         }
     }
 
-    function showForm($type = 'template') {
+    function showForm($type = 'template')
+    {
         global $serendipity;
 
         if (!function_exists('serendipity_emit_htmlarea_code')) {
@@ -345,7 +345,8 @@ class serendipity_event_includeentry extends serendipity_event
     }
 
     // This function checks the values of a staticblock entry, and maybe adjusts the right values to use.
-    function checkBlock() {
+    function checkBlock()
+    {
         global $serendipity;
 
         if (empty($this->staticblock['template'])) {
@@ -372,7 +373,8 @@ class serendipity_event_includeentry extends serendipity_event
         }
     }
 
-    function fetchStaticBlock($id, $order = '') {
+    function fetchStaticBlock($id, $order = '')
+    {
         global $serendipity;
 
         $q = "SELECT *
@@ -386,7 +388,8 @@ class serendipity_event_includeentry extends serendipity_event
         }
     }
 
-    function updateStaticBlock() {
+    function updateStaticBlock()
+    {
         global $serendipity;
 
         $this->checkBlock();
@@ -415,7 +418,8 @@ class serendipity_event_includeentry extends serendipity_event
         }
     }
 
-    function &fetchStaticBlocks($type = 'template', $order = 'title DESC', $limit = 0) {
+    function &fetchStaticBlocks($type = 'template', $order = 'title DESC', $limit = 0)
+    {
         global $serendipity;
 
         $limit_sql = '';
@@ -436,7 +440,8 @@ class serendipity_event_includeentry extends serendipity_event
         return $blocks;
     }
 
-    function showBlockForm($type) {
+    function showBlockForm($type)
+    {
         global $serendipity;
         static $form = null;
 
@@ -478,7 +483,8 @@ class serendipity_event_includeentry extends serendipity_event
         return $html;
     }
 
-    function &getPages($sel, $type = 'block') {
+    function &getPages($sel, $type = 'block')
+    {
         $blocks = (array)$this->fetchStaticBlocks($type);
         $html = '';
         foreach ($blocks AS $block) {
@@ -492,7 +498,8 @@ class serendipity_event_includeentry extends serendipity_event
         return $html;
     }
 
-    function &get_static($key, $default = null) {
+    function &get_static($key, $default = null)
+    {
         if (isset($this->staticblock[$key])) {
             return $this->staticblock[$key];
         } else {
@@ -500,7 +507,8 @@ class serendipity_event_includeentry extends serendipity_event
         }
     }
 
-    function &smartyParse($filename = '') {
+    function &smartyParse($filename = '')
+    {
         global $serendipity;
 
         if (empty($filename)) {
@@ -526,7 +534,8 @@ class serendipity_event_includeentry extends serendipity_event
         return $content;
     }
 
-    function showBackend() {
+    function showBackend()
+    {
         global $serendipity;
 
         if ($serendipity['POST']['staticblock'] != '__new') {
@@ -604,14 +613,15 @@ class serendipity_event_includeentry extends serendipity_event
         echo '</form>'."\n";
     }
 
-    function addProperties(&$properties, &$eventData) {
+    function addProperties(&$properties, &$eventData)
+    {
         global $serendipity;
         // Get existing data
         $property = serendipity_fetchEntryProperties($eventData['id']);
         $supported_properties = array('attach_block');
 
         foreach($supported_properties AS $prop_key) {
-            $prop_val = (isset($properties[$prop_key]) ? $properties[$prop_key] : null);
+            $prop_val = isset($properties[$prop_key]) ? $properties[$prop_key] : null;
             $prop_key = 'ep_' . $prop_key;
 
             if (is_array($prop_val)) {
@@ -628,10 +638,14 @@ class serendipity_event_includeentry extends serendipity_event
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         static $check = null;
         static $cache = array();
+
+        // check access if user is in admin group levels (admin/chief)
+        $access_granted = serendipity_checkPermission('adminPlugins');
 
         $hooks = &$bag->get('event_hooks');
 
@@ -640,10 +654,15 @@ class serendipity_event_includeentry extends serendipity_event
         }
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'backend_entryform':
+                    if (!$access_granted) {
+                        break;
+                    }
                     if (!isset($serendipity['GET']['staticblock'])) {
-                        return;
+                        break;
                     }
 
                     $this->fetchStaticBlock($serendipity['GET']['staticblock']);
@@ -654,8 +673,6 @@ class serendipity_event_includeentry extends serendipity_event
                     if (!empty($eventData['extended'])) {
                         $eventData['exflag'] = true;
                     }
-
-                    return true;
                     break;
 
                 case 'frontend_display:html:per_entry':
@@ -724,25 +741,32 @@ class serendipity_event_includeentry extends serendipity_event
                     }
 
                     $cache['loops']++;
-
-                    return true;
                     break;
 
                 case 'backend_sidebar_entries':
+                    if (!$access_granted) {
+                        break;
+                    }
                     $this->check();
-                    echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticblocks">' . PLUGIN_EVENT_INCLUDEENTRY_BLOCKS . '</a></li>';
-                    return true;
+                    if ($serendipity['version'][0] < 2) {
+                        echo "\n".'                        <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticblocks">' . PLUGIN_EVENT_INCLUDEENTRY_BLOCKS . '</a></li>'."\n";
+                    } else {
+                        echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticblocks">' . PLUGIN_EVENT_INCLUDEENTRY_BLOCKS . '</a></li>'."\n";
+                    }
                     break;
 
                 case 'backend_sidebar_entries_event_display_staticblocks':
+                    if (!$access_granted) {
+                        break;
+                    }
                     $this->showBackend();
-                    return true;
                     break;
 
                 case 'frontend_display':
                     if ($bag->get('scrambles_true_content') && is_array($addData) && isset($addData['no_scramble'])) {
-                        return true;
+                        break;
                     }
+                    break;
 
                 case 'frontend_display_cache':
                     foreach ($this->markup_elements as $temp) {
@@ -753,11 +777,12 @@ class serendipity_event_includeentry extends serendipity_event
                             $this->parse($eventData[$element]);
                         }
                     }
-
-                return true;
-                break;
+                    break;
 
                 case 'backend_display':
+                    if (!$access_granted) {
+                        break;
+                    }
                     if (isset($eventData['properties']['ep_attach_block'])) {
                         $attach_block = (int)$eventData['properties']['ep_attach_block'];
                     } elseif (isset($serendipity['POST']['properties']['attach_block'])) {
@@ -776,26 +801,30 @@ class serendipity_event_includeentry extends serendipity_event
                         </div>
                     </fieldset>
 <?php
-                    return true;
                     break;
 
                 case 'backend_publish':
                 case 'backend_save':
-                    if (!isset($serendipity['POST']['properties']) || !is_array($serendipity['POST']['properties']) || !isset($eventData['id'])) {
-                        return true;
+                    if (!$access_granted) {
+                        break;
                     }
-
+                    if (!isset($serendipity['POST']['properties']) || !is_array($serendipity['POST']['properties']) || !isset($eventData['id'])) {
+                        break;
+                    }
                     $this->addProperties($serendipity['POST']['properties'], $eventData);
                     break;
 
-              default:
-                return false;
-            }
+                default:
+                    return false;
 
+            }
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

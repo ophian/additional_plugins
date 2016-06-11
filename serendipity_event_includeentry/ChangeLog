@@ -1,3 +1,9 @@
+2.17:
+-----
+  - now uses load_language API - extends requirement to Serendipity 1.6+
+  - check permission in backend
+  - consistent cleanups
+
 2.16
   - fix a php dulicating method compat error
 
