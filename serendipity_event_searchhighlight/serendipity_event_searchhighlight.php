@@ -4,7 +4,11 @@
 /*  Authored by Tom Sommer, 2004  */
 /**********************************/
 
-if (IN_serendipity !== true) { die ("Don't hack!"); }
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
+
+// Load possible language files.
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_searchhighlight extends serendipity_event
@@ -19,7 +23,7 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer');
-        $propbag->add('version',       '1.8.2');
+        $propbag->add('version',       '1.8.3');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -58,11 +62,10 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('configuration', $conf_array);
     }
 
-
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
-
 
     function introspect_config_item($name, &$propbag)
     {
@@ -73,7 +76,8 @@ class serendipity_event_searchhighlight extends serendipity_event
         return true;
     }
 
-    function loadConstants() {
+    function loadConstants()
+    {
         define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NONE', 0);
         define('PLUGIN_EVENT_SEARCHHIGHLIGHT_GOOGLE', 1);
         define('PLUGIN_EVENT_SEARCHHIGHLIGHT_YAHOO', 2);
@@ -86,7 +90,8 @@ class serendipity_event_searchhighlight extends serendipity_event
         define('PLUGIN_EVENT_SEARCHHIGHLIGHT_S9Y', 9);
     }
 
-    function getSearchEngine() {
+    function getSearchEngine()
+    {
         $url = parse_url($this->uri);
 
         /* Patterns should be placed in the order in which they are most likely to occur */
@@ -114,7 +119,7 @@ class serendipity_event_searchhighlight extends serendipity_event
         if ( preg_match('@^(www\.)?bing\.@i', $url['host']) ) {
             return PLUGIN_EVENT_SEARCHHIGHLIGHT_BING;
         }
-        
+
         if (!empty($_SESSION['search_referer']) && $this->uri != $_SESSION['search_referer']) {
             $this->uri = $_SESSION['search_referer'];
             return $this->getSearchEngine();
@@ -127,7 +132,8 @@ class serendipity_event_searchhighlight extends serendipity_event
         return false;
     }
 
-    function getQuery() {
+    function getQuery()
+    {
         global $serendipity;
         if ( empty($this->uri) ) {
             return false;
@@ -136,29 +142,30 @@ class serendipity_event_searchhighlight extends serendipity_event
         $this->loadConstants();
         $url = parse_url($this->uri);
         parse_str($url['query'], $pStr);
-        
+
         $s = $this->getSearchEngine();
-        
+
         switch ( $s ) {
             case PLUGIN_EVENT_SEARCHHIGHLIGHT_S9Y:
                 $query = $pStr['serendipity']['searchTerm'];
-                
+
                 if (!empty($_REQUEST['serendipity']['searchTerm'])) {
                     $query = $_REQUEST['serendipity']['searchTerm'];
                 }
 
                 if (!empty($serendipity['GET']['searchTerm'])) {
                     $query = $serendipity['GET']['searchTerm'];
-                } 
+                }
                 /* highlight selected static page, if not having a ['GET']['searchTerm'] REQUEST, but coming from a /search/ referrer */
-                if(empty($query)) { 
+                if (empty($query)) {
                     // look out for path or query depending mod_rewrite setting
                     $urlpath = (($serendipity['rewrite'] == 'rewrite')  ? parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH)
                                                                         : parse_url($_SERVER['HTTP_REFERER'], PHP_URL_QUERY)
                                 );
-                    if ( strpos($urlpath, 'search/') ) { 
-                        $urlpath = (function_exists('serendipity_specialchars') ? serendipity_specialchars(strip_tags($urlpath)) : htmlspecialchars(strip_tags($urlpath), ENT_COMPAT, LANG_CHARSET)); // avoid spoofing
-						$path = explode('/', urldecode($urlpath)); // split and decode non ASCII
+                    if (strpos($urlpath, 'search/') ) {
+                        $urlpath = (function_exists('serendipity_specialchars') ? serendipity_specialchars(strip_tags($urlpath))
+                                                                                : htmlspecialchars(strip_tags($urlpath), ENT_COMPAT, LANG_CHARSET)); // avoid spoofing
+                        $path = explode('/', urldecode($urlpath)); // split and decode non ASCII
                         $query = $path[(array_search('search', $path)+1)];
                     }
                 }
@@ -188,7 +195,7 @@ class serendipity_event_searchhighlight extends serendipity_event
                     return false;
                 }
         }
-        
+
         /* Clean the query */
         $query = trim($query);
         if (empty($query)) return false;
@@ -203,8 +210,8 @@ class serendipity_event_searchhighlight extends serendipity_event
         return $words;
     }
 
-
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $this->uri = $_SERVER['HTTP_REFERER'];
@@ -213,9 +220,9 @@ class serendipity_event_searchhighlight extends serendipity_event
         if (!isset($hooks[$event])) {
             return false;
         }
-		
-        if ( $event == 'frontend_display' ) {
-            if ( ($queries = $this->getQuery()) === false ) {
+
+        if ($event == 'frontend_display') {
+            if (($queries = $this->getQuery()) === false) {
                 return;
             }
 
@@ -224,56 +231,64 @@ class serendipity_event_searchhighlight extends serendipity_event
 
             foreach ($this->markup_elements as $temp) {
 
-                if ( ! (serendipity_db_bool($this->get_config($temp['name'])) && isset($eventData[$temp['element']])) ) {
+                if (!(serendipity_db_bool($this->get_config($temp['name'])) && isset($eventData[$temp['element']]))) {
                     continue;
                 }
 
                 if ($eventData['properties']['ep_disable_markup_' . $this->instance] ||
-                    isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                        isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                     continue;
                 }
 
                 $element = &$eventData[$temp['element']];
 
                 //Iterate over search terms and do the highlighting.
-                foreach ( $queries as $word ) {
-                    if ( strpos($word, '*') ) { 
-                        // fuzzy search (case insensitive) all words containing term; 
+                foreach ($queries as $word) {
+                    if (strpos($word, '*')) {
+                        // fuzzy search (case insensitive) all words containing term;
                         $word = str_replace('*', '', $word);
                         /* If the data contains HTML tags, we have to be careful not to break URIs and use a more complex preg */
-                        if ( preg_match('/\<.+\>/', $element) ) {
-                            $_pattern =  '/(?!<.*?)('. preg_quote($word, '/') .')(?![^<>]*?>)/im';
+                        if (preg_match('/\<.+\>/', $element)) {
+                            $_pattern =  '/(?!<.*?)(' . preg_quote($word, '/') . ')(?![^<>]*?>)/im';
                         } else {
-                            $_pattern = '/('.preg_quote($word, '/').')/im';
+                            $_pattern = '/(' . preg_quote($word, '/') . ')/im';
                         }
-                    } else { 
+                    } else {
                         /* If the data contains HTML tags, we have to be careful not to break URIs and use a more complex preg */
-                        if ( preg_match('/\<.+\>/', $element) ) {
+                        if (preg_match('/\<.+\>/', $element)) {
                             $_pattern =  '/(?!<.*?)(\b'. preg_quote($word, '/') .'\b)(?![^<>]*?>)/im';
                         } else {
                             $_pattern = '/(\b'. preg_quote($word, '/') .'\b)/im';
                         }
-                    } 
+                    }
                     $element = preg_replace($_pattern, '<span class="serendipity_searchQuery">$1</span>', $element);
                 } // end foreach
             } // end foreach
             return;
         } // end if
 
+        if ($event == 'css') {
+            // CSS class does NOT exist by user customized template styles, include default
+            if (strpos($eventData, '.serendipity_searchQuery') === false) {
+                $eventData .= '
 
-        if ( $event == 'css' ) {
-            /* If the user hasn't added a CSS Class called serendipity_searchQuery, we add a pretty one for him */
-            if ( strstr($eventData, '.serendipity_searchQuery') === false ) {
-                $eventData .= "\n";
-                $eventData .= '.serendipity_searchQuery {' . "\n";
-                $eventData .= '    background-color: #D81F2A;' . "\n";
-                $eventData .= '    color: #FFFFFF;' . "\n";
-                $eventData .= '}' . "\n";
+/* serendipity_event_searchhighlight start */
+
+.serendipity_searchQuery {
+    background-color: #D81F2A;
+    color: #FFFFFF;
+}
+
+/* serendipity_event_searchhighlight end */
+
+';
             }
             return;
         }
 
     } // end function
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>
