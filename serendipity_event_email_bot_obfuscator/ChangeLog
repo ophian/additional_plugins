@@ -1,4 +1,12 @@
+1.04:
+-----
+
+ * set plugin consistencies
+ * use load language API - extends required Serendipity version to v.1.6
+
+
 1.03:
 -----
 
  * Fix email pattern
+

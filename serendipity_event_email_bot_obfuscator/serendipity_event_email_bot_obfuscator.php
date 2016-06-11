@@ -4,14 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_email_bot_obfuscator extends serendipity_event
 {
@@ -25,9 +18,9 @@ class serendipity_event_email_bot_obfuscator extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Stephan Manske, Ian');
-        $propbag->add('version',       '1.03');
+        $propbag->add('version',       '1.04');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -72,22 +65,26 @@ class serendipity_event_email_bot_obfuscator extends serendipity_event
 
     }
 
-    function install() {
+    function install()
+    {
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function uninstall(&$propbag) {
+    function uninstall(&$propbag)
+    {
         serendipity_plugin_api::hook_event('backend_cache_purge', $this->title);
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
     function introspect_config_item($name, &$propbag)
     {
         switch($name) {
+
             case 'type':
                 $propbag->add('type',           'select');
                 $propbag->add('name',           PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_TYPE);
@@ -103,6 +100,8 @@ class serendipity_event_email_bot_obfuscator extends serendipity_event
                 $propbag->add('name',        constant($name));
                 $propbag->add('description', sprintf(APPLY_MARKUP_TO, constant($name)));
                 $propbag->add('default',     'true');
+                break;
+
         }
         return true;
     }
@@ -117,16 +116,17 @@ class serendipity_event_email_bot_obfuscator extends serendipity_event
      *
      * have a look at LICENSE text!
      */
-    function antispambot($emailaddy, $mailto=0) {
+    function antispambot($emailaddy, $mailto=0)
+    {
         $emailNOSPAMaddy = '';
-        srand ((float) microtime() * 1000000);
+        srand((float) microtime() * 1000000);
         for ($i = 0; $i < strlen($emailaddy); $i = $i + 1) {
             $j = floor(rand(0, 1+$mailto));
-            if ($j==0) {
+            if($j==0) {
                 $emailNOSPAMaddy .= '&#'.ord(substr($emailaddy,$i,1)).';';
-            } elseif ($j==1) {
+            } elseif($j==1) {
                 $emailNOSPAMaddy .= substr($emailaddy,$i,1);
-            } elseif ($j==2) {
+            } elseif($j==2) {
                 $emailNOSPAMaddy .= '%'.zeroise(dechex(ord(substr($emailaddy, $i, 1))), 2);
             }
         }
@@ -181,13 +181,16 @@ class serendipity_event_email_bot_obfuscator extends serendipity_event
         return preg_replace_callback($pattern, array($this, $anti_callback), $text);
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'frontend_display':
                     foreach ($this->markup_elements as $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], true)) &&
@@ -203,7 +206,9 @@ class serendipity_event_email_bot_obfuscator extends serendipity_event
 
                 default:
                     return false;
+
             }
+            return true;
         } else {
             return false;
         }

@@ -1,3 +1,4 @@
+
 body {
 	font-family: Arial, sans-serif!important;
 	margin: 20;
@@ -5,7 +6,8 @@ body {
 #title {
     background: #cfcfcf;    
     margin: 0;
-}#content {
+}
+#content {
     background: #efefef;	
     margin: 0;
 }

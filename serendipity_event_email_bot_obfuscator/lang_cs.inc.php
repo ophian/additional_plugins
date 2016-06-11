@@ -11,3 +11,4 @@
 @define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_TYPE_NONE', 'žádná metoda - pouze klikatelný odkaz');
 @define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_TYPE_JS', 'Javascript');
 @define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_TYPE_HTML', 'HTML entity');
+
