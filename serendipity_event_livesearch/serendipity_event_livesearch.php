@@ -1,6 +1,9 @@
 <?php
 
-if (IN_serendipity !== true) { die ("Don't hack!"); }
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
+
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_livesearch extends serendipity_event
@@ -15,7 +18,7 @@ class serendipity_event_livesearch extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_LIVESEARCH_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Christian Stocker, Garvin Hicking');
-        $propbag->add('version',       '1.4.2');
+        $propbag->add('version',       '1.4.3');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -30,23 +33,30 @@ class serendipity_event_livesearch extends serendipity_event
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'css':
                     if (strpos($eventData, '.serendipity_livesearch_row')) {
                         // class exists in CSS, so a user has customized it and we don't need default
                         return true;
                     }
-?>
+                    $eventData .= '
+
+/* serendipity_event_livesearch start */
+
 #LSResult {
     position: absolute;
     margin-left: 4px;
@@ -69,13 +79,13 @@ class serendipity_event_livesearch extends serendipity_event
 }
 
 .serendipity_livesearch_row {
-  margin: 0px;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  text-indent: -1em;
-  line-height: 1.4em;
+    margin: 0px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    text-indent: -1em;
+    line-height: 1.4em;
 }
 
 .serendipity_livesearch_result {
@@ -85,7 +95,10 @@ class serendipity_event_livesearch extends serendipity_event
     right: 2px;
     padding: 2px;
 }
-<?php
+
+/* serendipity_event_livesearch end */
+
+';
                     break;
 
                 case 'frontend_header':
@@ -117,7 +130,7 @@ class serendipity_event_livesearch extends serendipity_event
                         }
                     }
 
-                    $parts     = explode('_', $uri_parts[0]);
+                    $parts = explode('_', $uri_parts[0]);
 
                     switch($parts[0]) {
                         case 'ls-js':
@@ -126,7 +139,7 @@ class serendipity_event_livesearch extends serendipity_event
                             break;
 
                         case 'ls':
-                            // header('X-Search: ' . htmlspecialchars($eventData) . ' leads to ' . preg_replace('@[^a-z0-9 \.\-_]@i', '', $_REQUEST['s']));
+                            // header('X-Search: ' . serendipity_specialchars($eventData) . ' leads to ' . preg_replace('@[^a-z0-9 \.\-_]@i', '', $_REQUEST['s']));
                             $res = serendipity_searchEntries($_REQUEST['s']);
 
                             echo '<?xml version="1.0" encoding="utf-8" ?>';
@@ -141,21 +154,20 @@ class serendipity_event_livesearch extends serendipity_event
                             }
 
                             echo '</div>';
-
                             break;
                     }
-
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
+
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */

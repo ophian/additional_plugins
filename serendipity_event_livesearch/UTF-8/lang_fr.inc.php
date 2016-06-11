@@ -1,11 +1,6 @@
 <?php
 
 ##########################################################################
-# serendipity - another blogger...                                       #
-##########################################################################
-#                                                                        #
-# (c) 2003 Jannis Hermanns <J@hacked.it>                                 #
-# http://www.jannis.to/programming/serendipity.html                      #
 #                                                                        #
 # Translated by                                                          #
 # Sebastian Mordziol <argh@php-tools.net>                                #
@@ -18,4 +13,3 @@
 @define('PLUGIN_EVENT_LIVESEARCH_WAIT', 'Patientez, envoi de la requête...');
 
 /* vim: set sts=4 ts=4 expandtab : */
-?>
