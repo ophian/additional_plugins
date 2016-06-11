@@ -1,4 +1,4 @@
-<?php # lang_cs.inc.php 1381.0 2009-03-08 17:14:57 VladaAjgl $
+<?php
 
 /**
  *  @version 1381.0
@@ -8,7 +8,7 @@
  *  @revisionDate 2009/03/08
  */
 
-@define('PLUGIN_EVENT_TEXTWIKI_NAME',		'Markup: Wiki');
-@define('PLUGIN_EVENT_TEXTWIKI_DESC',		'Převádí značky Text_Wiki do HTML');
-@define('PLUGIN_EVENT_TEXTWIKI_TRANSFORM',		'Použití značek <a href="http://c2.com/cgi/wiki">Wiki</a> je povoleno');
+@define('PLUGIN_EVENT_TEXTWIKI_NAME', 'Markup: Wiki');
+@define('PLUGIN_EVENT_TEXTWIKI_DESC', 'Převádí značky Text_Wiki do HTML');
+@define('PLUGIN_EVENT_TEXTWIKI_TRANSFORM', 'Použití značek <a href="http://c2.com/cgi/wiki">Wiki</a> je povoleno');
 
