@@ -9,28 +9,24 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_plugin_guestbook extends serendipity_plugin {
+class serendipity_plugin_guestbook extends serendipity_plugin
+{
     var $title = PLUGIN_GUESTSIDE_NAME;
     #var $conty = array('%serendipity_event_guestbook%/showapp', '%serendipity_event_guestbook%/automoderate');
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_GUESTSIDE_NAME);
         $propbag->add('description',   PLUGIN_GUESTSIDE_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Jaap Boerma ( j@webbict.com ), Tadashi Jokagi <elf2000@users.sourceforge.net>, Ian');
-        $propbag->add('version',       '1.25');
+        $propbag->add('version',       '1.26');
         $propbag->add('requirements', array(
-                        'serendipity' => '0.7',
+                        'serendipity' => '1.6',
                         'smarty'      => '2.6.7',
                         'php'         => '5.0.0'
                     ));
@@ -53,7 +49,8 @@ class serendipity_plugin_guestbook extends serendipity_plugin {
         #}
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'title':
                 $propbag->add('type','string');
@@ -98,13 +95,14 @@ class serendipity_plugin_guestbook extends serendipity_plugin {
                 break;
 
             default:
-                break;
+                return false;
         }
         return true;
     }
 
     /* collaps array by name, value */
-    function array_collapse($arr, $x, $y) {
+    function array_collapse($arr, $x, $y)
+    {
         $carr = array();
         while ($el = current($arr)) {
             $carr[ $el[$x] ] = $el[$y];
@@ -119,7 +117,8 @@ class serendipity_plugin_guestbook extends serendipity_plugin {
      * @param  $merge   = array(searchstrings)
      * @return db array
      */
-    function dependency_config_merge($merge) {
+    function dependency_config_merge($merge)
+    {
         global $serendipity;
         $sql = "SELECT SUBSTRING_INDEX(name,'/',-1) AS dbname, value FROM {$serendipity['dbPrefix']}config WHERE (name LIKE '" . $merge[0] . "'";
         foreach ($merge AS $key => $value) {
@@ -135,7 +134,8 @@ class serendipity_plugin_guestbook extends serendipity_plugin {
     }
 
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $title        = $this->get_config('title');
@@ -221,6 +221,7 @@ class serendipity_plugin_guestbook extends serendipity_plugin {
             echo '<div>' . PLUGIN_GUESTSIDE_NOENTRIES ."</div>\n";
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */

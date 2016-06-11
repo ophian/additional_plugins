@@ -177,3 +177,4 @@
 @define('TEXT_EMAILFOOTER', "\n\nOdesláno Serendipity pluginem Guestbook.");
 @define('ERROR_DATASTRIPPED', 'Aktivní bezpečnostní filtr vyhodnotil Váš příspěvek jako neplatný. Odešlete prosím příspěvek znovu.');
 @define('PLUGIN_GUESTBOOK_FILTER_ENTRYCHECKS_BYPASS', '(Přeskočeno pouze uživatelským oprávněním USERLEVEL_ADMIN!)');
+

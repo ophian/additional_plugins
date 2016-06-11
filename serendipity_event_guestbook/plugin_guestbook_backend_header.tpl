@@ -1,5 +1,5 @@
 {*
-    plugin_guestbook_backend_header.tpl v.3.59 2016-01-08 Ian
+    plugin_guestbook_backend_header.tpl v.3.60 2016-01-30 Ian
 *}
 
 {function name="feedback"}{* message and error feedback for approve, view, add issues *}
