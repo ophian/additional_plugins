@@ -3,6 +3,17 @@
 * 
 
 
+v.1.76:
+-------
+
+ * Set plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+ * Fix wrong template name for path replacements
+ * Some styles use CSS images ...
+   PLEASE NOTE:
+      if you provide your own template (event)cal stylesheets
+      remember to include them to your img/ directory.
+
 v.1.75:
 -------
 

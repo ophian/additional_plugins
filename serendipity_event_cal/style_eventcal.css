@@ -1,6 +1,6 @@
 
 /************************************************************************************/
-/* style_eventcal.css for serendipity_eventcal_cal.php v.1.75 2016-01-10 Ian        */
+/* style_eventcal.css for serendipity_eventcal_cal.php v.1.76 2016-01-21 Ian        */
 /************************************************************************************/
 
 /*****************************************/
@@ -266,6 +266,19 @@ table.eventcal_isday tr,
 table.eventcal_today tr,
 table.eventcal_noday tr {
     height: 1px;
+}
+/* some themes need this */
+.serendipity_entry tbody td.eventcal_isday,
+.serendipity_entry tbody td.eventcal_today,
+.serendipity_entry tbody td.eventcal_noday,
+.serendipity_entry tbody td.eventcal_helptip,
+td.eventcal_isday,
+td.eventcal_today,
+td.eventcal_noday,
+td.eventcal_helptip {
+    padding: inherit;
+    border: inherit;
+    line-height: inherit;
 }
 table.eventcal_weeknav {
     width: 100%;
@@ -765,3 +778,5 @@ a.small_eventcal_link:focus {
 #eventcal_wrapper input.bbc_s { margin: 2px 2px 0; padding: 2px; font-style: italic; font-size: 12px; }
 
 .eventcal_sidebar_month_title { margin: 0px; padding: 0; font-weight: 600; font-size: 1.17em; }
+
+/* style eventcal plugin end */

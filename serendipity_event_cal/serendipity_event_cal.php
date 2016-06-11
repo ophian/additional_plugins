@@ -6,13 +6,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-/*Probe for a language include with constants. Still include defines later on, if some constants were missing */
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 /* * Set some global vars as plugins serendipity vars * */
 
@@ -31,18 +25,21 @@ if (!isset($serendipity['eventcal']['pluginpath'])) {
 $serendipity['SERVER']['eventcal_debug']  = FALSE;
 #$serendipity['SERVER']['eventcal_debug']  = TRUE;
 
-class serendipity_event_cal extends serendipity_event {
+class serendipity_event_cal extends serendipity_event
+{
 
     var $title = PLUGIN_EVENTCAL_TITLE;
 
-    function cleanup() {
+    function cleanup()
+    {
         // Cleanup. Remove all empty configs on SAVECONF-Submit.
         serendipity_plugin_api::remove_plugin_value($this->instance, array('version', ''));
 
         return true;
     }
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',           PLUGIN_EVENTCAL_TITLE);
@@ -76,17 +73,18 @@ class serendipity_event_cal extends serendipity_event {
                                         )
                     );
         $propbag->add('author',         'Ian (Timbalu)');
-        $propbag->add('version',        '1.75');
+        $propbag->add('version',        '1.76');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
-                                            'serendipity' => '1.4',
+                                            'serendipity' => '1.6',
                                             'smarty'      => '2.6.7',
                                             'php'         => '5.1.0'
                                         )
                     );
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch ($name) {
@@ -180,9 +178,11 @@ class serendipity_event_cal extends serendipity_event {
                 break;
 
             default:
-                break;
+                return false;
+
         }
         return true;
+
     }
 
     /**
@@ -191,7 +191,8 @@ class serendipity_event_cal extends serendipity_event {
      * @param  array *|* $value
      * @return array *|* $value
      */
-    function check_newline($v) {
+    function check_newline($v)
+    {
         $v = trim($v);
         $v = preg_replace("/(<br \/>\n|<br>\n|&#13;|\r\n|\n|\r)/", "\n", $v); // cross-platform newlines change to unix style
         // don't allow out-of-control blank lines
@@ -205,7 +206,8 @@ class serendipity_event_cal extends serendipity_event {
      * @param  array *|* $_POST
      * @return array *|* $_POST
      */
-    function check_global_input_values() {
+    function check_global_input_values()
+    {
         if (is_array($_POST)) {
             reset($_POST);
             foreach($_POST as $key=>$val) {
@@ -238,7 +240,8 @@ class serendipity_event_cal extends serendipity_event {
      * @access public
      * @start function with: $val = multi_strip_array_values($row, $savearrayname=TRUE, $outputformfield=TRUE);
      */
-    function multi_strip_array_values($row, $savearrayname=TRUE, $outputformfield=TRUE) {
+    function multi_strip_array_values($row, $savearrayname=TRUE, $outputformfield=TRUE)
+    {
         if (is_array($row)) {
             reset($row);
             foreach($row as $key => $val) {
@@ -261,7 +264,8 @@ class serendipity_event_cal extends serendipity_event {
     }
 
     /* Independent email tester */
-    function is_valid_email($postmail) {
+    function is_valid_email($postmail)
+    {
         // Email needs to match this pattern to be a good email address
         if (!empty($postmail)) {
             return (preg_match(
@@ -275,7 +279,8 @@ class serendipity_event_cal extends serendipity_event {
     }
 
     /* BBCode replacements */
-    function text_pattern_bbc($text) {
+    function text_pattern_bbc($text)
+    {
         $patterns = array(
             "/\[b\](.*?)\[\/b\]/",
             "/\[u\](.*?)\[\/u\]/",
@@ -292,12 +297,14 @@ class serendipity_event_cal extends serendipity_event {
         return preg_replace($patterns,$replacements, $text);
     }
 
-    function htmlPageHeader() {
+    function htmlPageHeader()
+    {
         echo "<!-- htmlPageHeader start -->\n";
         echo "<!-- htmlPageHeader end -->\n\n";
     }
 
-    function htmlPageFooter() {
+    function htmlPageFooter()
+    {
         echo "<!-- htmlPageFooter start -->\n";
         echo "<!-- htmlPageFooter end -->\n";
     }
@@ -307,7 +314,8 @@ class serendipity_event_cal extends serendipity_event {
      * @param  var array
      * @return single-string [$debug]
      */
-    function show_debug(&$table, $name='unknown') {
+    function show_debug(&$table, $name='unknown')
+    {
         $debug = $name . '<br />';
         $debug .= '<table cellspacing="1" cellpadding="2"><tr class="error_table_main">';
         foreach ($table AS $k=>$v) {
@@ -327,7 +335,8 @@ class serendipity_event_cal extends serendipity_event {
      * @param  type string and errtxt array
      * @return smarty assigned error messages
      */
-    function smarty_assign_error($type, $errtext) {
+    function smarty_assign_error($type, $errtext)
+    {
         global $serendipity;
 
         switch($type) {
@@ -355,7 +364,8 @@ class serendipity_event_cal extends serendipity_event {
      * use permalink generally instead of subpage
      * @return permalink or subpage value
      */
-    function fetchPluginUri() {
+    function fetchPluginUri()
+    {
         global $serendipity;
         return ($serendipity['rewrite'] != 'errordocs') ? $this->get_config('permalink') : $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?serendipity[subpage]=' . $this->get_config('pagetitle');
     }
@@ -367,7 +377,8 @@ class serendipity_event_cal extends serendipity_event {
      *
      * serendipity_db_query [ sql, single(true, false), arrtype(both, assoc, num), dberror(true, false), string(array key name), string(array field name) ... ]
      */
-    function mysql_db_result_sets($type=NULL, $id=NULL, $sda=NULL, $eda=NULL, $rec=NULL, $sde=NULL, $url=NULL, $lde=NULL, $tip=0, $app=0, $aby=NULL, $tst=NULL, $whe=NULL) {
+    function mysql_db_result_sets($type=NULL, $id=NULL, $sda=NULL, $eda=NULL, $rec=NULL, $sde=NULL, $url=NULL, $lde=NULL, $tip=0, $app=0, $aby=NULL, $tst=NULL, $whe=NULL)
+    {
         global $serendipity;
 
         switch($type) {
@@ -443,7 +454,8 @@ class serendipity_event_cal extends serendipity_event {
     }
 
     /* load_unapproved_events */
-    function load_unapproved_events(&$re) {
+    function load_unapproved_events(&$re)
+    {
         global $serendipity;
 
         $result = $this->mysql_db_result_sets('SELECT-ARRAY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'approved=0 ORDER BY tstamp DESC');
@@ -452,7 +464,8 @@ class serendipity_event_cal extends serendipity_event {
     }
 
     /* depends on load_unapproved_events and backend functions */
-    function view_app_events(&$evarr, &$re) {
+    function view_app_events(&$evarr, &$re)
+    {
         global $serendipity;
 
         $days = $this->days();
@@ -499,7 +512,8 @@ class serendipity_event_cal extends serendipity_event {
      *
      * @return array for Calendar or as a monthly selection
      */
-    function load_monthly_events($year, $month, $asCalDays=true) {
+    function load_monthly_events($year, $month, $asCalDays=true)
+    {
         global $serendipity;
 
         $last     = $this->last_day($year,$month);         // set last day of current month
@@ -621,7 +635,8 @@ class serendipity_event_cal extends serendipity_event {
     /**
      * build sd week events array for weekly view only
      */
-    function load_weekly_events($cw, $y, &$sd) {
+    function load_weekly_events($cw, $y, &$sd)
+    {
         /* check if array $sd has needle 'x' and return key */
         if ($wcw = $this->recur_array_search($cw, $sd, 'cwnm')) {
             /* build new sd_week array with selected key only */
@@ -635,7 +650,8 @@ class serendipity_event_cal extends serendipity_event {
     /**
      * search 'cwnm' => $cw and return the array key for the selected calendar week number
      */
-    function recur_array_search($needle,$haystack,$searchkey) {
+    function recur_array_search($needle,$haystack,$searchkey)
+    {
         foreach($haystack as $key=>$value) {
             if ($key == $searchkey && $needle === $value || (is_array($value) && $this->recur_array_search($needle,$value,$searchkey) !== false)) {
                 return $key;
@@ -647,7 +663,8 @@ class serendipity_event_cal extends serendipity_event {
     /**
      * calculate weeks between startdate and enddate to have proper even or odd in case of bi-weekly occurrences
      */
-    function calculate_weeks($startDate, $endDate) {
+    function calculate_weeks($startDate, $endDate)
+    {
         $start_ts    = strtotime($startDate);
         $end_ts      = strtotime($endDate);
         $elapsedSecs = $end_ts - $start_ts;
@@ -675,7 +692,8 @@ class serendipity_event_cal extends serendipity_event {
     /**
      * check startday of recurring event is the same as posted startday
      */
-    function calculate_recur_validday($sy, $sm, $sd, $rd, $wd) {
+    function calculate_recur_validday($sy, $sm, $sd, $rd, $wd)
+    {
         // Any timestamp inside the month for which we want to calculate.
         $DateTS = mktime(12, 0, 0, sprintf("%02d",$sm), sprintf("%02d",$sd), $sy); #$DateTS = time();
 
@@ -710,7 +728,8 @@ class serendipity_event_cal extends serendipity_event {
      * Find the first (1), second (2), third (3), fourth (4), last (-1), second-last (-2), thirdlast (-3) weekday of a week
      * weekly (5) is out of scope and only used if tipo = 4/5 (weekly and biweekly events)
      */
-    function weekday($year, $month, $day, $which) {
+    function weekday($year, $month, $day, $which)
+    {
         $ts = mktime(12,0,0,$month+(($which>0)?0:1),($which>0)?1:0,(int)$year);
         $done = false;
         $match = 0;
@@ -725,17 +744,20 @@ class serendipity_event_cal extends serendipity_event {
         return $ts;
     }
 
-    function start_month($year, $month) {
+    function start_month($year, $month)
+    {
         $ts = mktime(12,0,0,$month,1,(int)$year);
         return strftime('%w',$ts);
     }
 
-    function last_day($year, $month) {
+    function last_day($year, $month)
+    {
         $ts = mktime(12,0,0,($month+1),0,(int)$year);
         return strftime('%d',$ts);
     }
 
-    function months() {
+    function months()
+    {
         static $months=NULL;
         // located in germany and you know about this nasty 'M?rz' Problem, if the default charset isn't utf-8 ?
         // use iconv for windows and better dpkg-reconfigure locales for linux OS
@@ -751,7 +773,8 @@ class serendipity_event_cal extends serendipity_event {
     }
 
     /* returns array of Days starting with 1 = Sunday */
-    function days() {
+    function days()
+    {
         static $days=NULL;
         for($i=1; $i<=7; ++$i) {
             $days[$i] = strftime('%A',mktime(12,0,0,4,$i,2001));
@@ -760,7 +783,8 @@ class serendipity_event_cal extends serendipity_event {
     }
 
     /* returns array of days 1-31 */
-    function optdays() {
+    function optdays()
+    {
         for($i=1; $i<=31; ++$i) {
             $days[$i] = strftime('%d',mktime(12,0,0,1,$i,2001));
         }
@@ -768,7 +792,8 @@ class serendipity_event_cal extends serendipity_event {
     }
 
     /* display calendar week number */
-    function cwno($y, $m, $d) {
+    function cwno($y, $m, $d)
+    {
         $now = mktime (12, 0, 0, $m, $d, $y);
         $weekday = date ('w', $now);
         $week = date("W", $now);
@@ -779,7 +804,8 @@ class serendipity_event_cal extends serendipity_event {
     }
 
     /* a Bjoern Schotte function - get first calendar week number */
-    function first_cw($year) {
+    function first_cw($year)
+    {
         $first = mktime(12,0,0,1,1,$year);
         $wday = date('w',$first);
         if ($wday <= 4) {
@@ -795,7 +821,8 @@ class serendipity_event_cal extends serendipity_event {
     }
 
     /* a Bjoern Schotte function - get first monday(sunday) in first week number */
-    function startday_cw($cw, $y) {
+    function startday_cw($cw, $y)
+    {
         $fm = $this->first_cw($y);
         $mm = date('m',$fm);
         $my = date('Y',$fm);
@@ -807,7 +834,8 @@ class serendipity_event_cal extends serendipity_event {
     }
 
     /* display an option list with one selected */
-    function display_options($options, $current) {
+    function display_options($options, $current)
+    {
         foreach ($options as $k => $v) {
             $opt[] = '<option value="' . $k . '"' .
                     ($k == $current ? ' selected="selected"' : '') .
@@ -821,7 +849,8 @@ class serendipity_event_cal extends serendipity_event {
     /**
      * build the $sd events array for each day of month or week
      */
-    function draw_eventdays($a, $ap, $m, $y, &$events, $cw) {
+    function draw_eventdays($a, $ap, $m, $y, &$events, $cw)
+    {
         global $serendipity;
 
         $sd = array();
@@ -910,7 +939,8 @@ class serendipity_event_cal extends serendipity_event {
 
 
     /* Various ways to creat a new, random GUID - as Microsoft format in curly brackets */
-    function create_ical_guid() {
+    function create_ical_guid()
+    {
         $ical_uid = "{" . uniqid(mt_rand(), true) . "}";
         $ical_uid = "{" . date('Ymd').'T'.date('His')."-".rand()."@".$_SERVER['HTTP_HOST']."}";
         if (function_exists('com_create_guid')){
@@ -921,7 +951,8 @@ class serendipity_event_cal extends serendipity_event {
 
 
     /* make sure there is no template output in our *.ics file */
-    function strip_ical_data($string, $start_tag, $end_tag) {
+    function strip_ical_data($string, $start_tag, $end_tag)
+    {
         $position       = stripos($string, $start_tag);
         $str            = substr($string, $position);
         $str_second     = substr($str, strlen($start_tag));
@@ -943,7 +974,8 @@ class serendipity_event_cal extends serendipity_event {
      *
      * @return array
      */
-    function str_replace_recursive($search, $replace, &$data, $skey=false) {
+    function str_replace_recursive($search, $replace, &$data, $skey=false)
+    {
         if (is_array($data)) {
             foreach($data as $key => $value) {
                 if (is_array($value) ) {
@@ -960,7 +992,8 @@ class serendipity_event_cal extends serendipity_event {
 
 
     /* method "example" creates the file upon configuration */
-    function example() {
+    function example()
+    {
         global $serendipity;
 
         // remove an old lang file
@@ -979,7 +1012,8 @@ class serendipity_event_cal extends serendipity_event {
     }
 
     /* write fetched tpl ical string to file */
-    function write_file($string_icl) {
+    function write_file($string_icl)
+    {
         global $serendipity;
 
         // write to icalendar.ics file
@@ -1008,7 +1042,8 @@ class serendipity_event_cal extends serendipity_event {
      * @param  boolean  If true function is used to send email, else just log to file
      * @return boolean  Return success of sending the mails
      */
-    function send_ical_log_email($to, $fromName, $fromEmail, $id, $monthdate, $title, $type, $smail=true) {
+    function send_ical_log_email($to, $fromName, $fromEmail, $id, $monthdate, $title, $type, $smail=true)
+    {
         global $serendipity;
 
         if (empty($fromName)) {
@@ -1070,7 +1105,8 @@ class serendipity_event_cal extends serendipity_event {
      * This should work in Outlook 2003/2007, on Exchange Server 2003 Mailboxes, Google Calendar, Google Mail, Hotmail. Tested with Thunderbird/Lightning.
      * while s9y serendipity_sendMail() function sets different headers this is a mix of origin and special eventcal needs
      */
-    function sendIcalEmail($to, $ical, $headers = NULL, $fromName = NULL) {
+    function sendIcalEmail($to, $ical, $headers = NULL, $fromName = NULL)
+    {
         global $serendipity;
 
         $from_name    = $this->title;
@@ -1175,7 +1211,8 @@ class serendipity_event_cal extends serendipity_event {
      * @param is adminpanel true/false
      * @return string ical data from tpl file
      */
-    function draw_icalendar($id, $month, $year, $adminpanel=false) {
+    function draw_icalendar($id, $month, $year, $adminpanel=false)
+    {
         global $serendipity;
 
         if (isset($id) && $id != 0) {
@@ -1291,7 +1328,8 @@ class serendipity_event_cal extends serendipity_event {
      */
     function draw_cal(  $a, $ap, $app_by, $approved, $cd, $m, $cw, $cw_prev, $cw_next, $y, $day, $eday, $emonth, $ev, $eyear,
                         $id, $ldesc, $nm, $pcm, &$re, $recur, $recur_day, $sdato, $sday, $sdesc, $smonth,
-                        $syear, $tipo, $tst, $type, $url, $which) {
+                        $syear, $tipo, $tst, $type, $url, $which)
+    {
         global $serendipity;
 
         if ($serendipity['SERVER']['eventcal_debug']) {
@@ -1470,7 +1508,8 @@ class serendipity_event_cal extends serendipity_event {
     /**
      * Draw a single event entry
      */
-    function draw_event($ev, &$re, $noadmin=TRUE) {
+    function draw_event($ev, &$re, $noadmin=TRUE)
+    {
         global $serendipity;
 
         if ($serendipity['SERVER']['eventcal_debug']) {
@@ -1574,7 +1613,8 @@ class serendipity_event_cal extends serendipity_event {
     /**
      * Draw the approve table view
      */
-    function draw_app($a, $m, $y, &$re, $events=FALSE) {
+    function draw_app($a, $m, $y, &$re, $events=FALSE)
+    {
         global $serendipity;
 
         // path settings frontend/backend
@@ -1613,7 +1653,8 @@ class serendipity_event_cal extends serendipity_event {
 
 
     /* select field - iterate between startyear and endyear like current+3 */
-    function iterate_years($sy, $ey) {
+    function iterate_years($sy, $ey)
+    {
         for( $y = $sy; $y <= $ey; ++$y ) {
             $year[$y] = $y;
         }
@@ -1625,7 +1666,8 @@ class serendipity_event_cal extends serendipity_event {
      * Draw the event form table view
      */
     function draw_add(  $a, $ap, $app_by, $approved, $cd, $day, $eday, $emonth, $ev, $eyear, $id, $ldesc,
-                        $m, $nm, &$re, $sday, $sdesc, $smonth, $syear, $tipo, $tst, $type, $url, $which, $y, $noadmin=TRUE ) {
+                        $m, $nm, &$re, $sday, $sdesc, $smonth, $syear, $tipo, $tst, $type, $url, $which, $y, $noadmin=TRUE )
+    {
         global $serendipity;
 
         if (serendipity_db_bool($this->get_config('showcaptcha'))) {
@@ -1742,7 +1784,8 @@ class serendipity_event_cal extends serendipity_event {
     /**
      * $_POST validation and db INSERT / REPLACE issues
      */
-    function cal_write_entries() {
+    function cal_write_entries()
+    {
         global $serendipity;
 
         $replace         = FALSE;
@@ -2017,7 +2060,8 @@ class serendipity_event_cal extends serendipity_event {
     /**
      * Administration issues and switch to validation function
      */
-    function cal_admin_backend() {
+    function cal_admin_backend()
+    {
         global $serendipity;
 
         /* calendar administration functions write content, but set approved = 0 if not re-edited by validated user */
@@ -2157,7 +2201,8 @@ class serendipity_event_cal extends serendipity_event {
     /**
      * necessary eventcal checks and sendto the draw calendar function
      */
-    function show() {
+    function show()
+    {
         global $serendipity;
 
         if ($this->selected()) {
@@ -2351,7 +2396,8 @@ class serendipity_event_cal extends serendipity_event {
      */
      # ALTER TABLE `s9y_eventcal` CHANGE `tstamp` `tstamp` TIMESTAMP DEFAULT 0
      # ALTER TABLE `s9y_eventcal` CHANGE `modified` `modified` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    function install() {
+    function install()
+    {
         global $serendipity;
         $q = "CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}eventcal (
                                         id {AUTOINCREMENT} {PRIMARY},
@@ -2372,7 +2418,8 @@ class serendipity_event_cal extends serendipity_event {
         serendipity_db_schema_import($q);
     }
 
-    function alter_db($db_config_version) {
+    function alter_db($db_config_version)
+    {
         global $serendipity;
         if ($db_config_version == '1.0') {
                 $q = "ALTER TABLE {$serendipity['dbPrefix']}eventcal ADD COLUMN tstamp TIMESTAMP DEFAULT 0";
@@ -2384,7 +2431,8 @@ class serendipity_event_cal extends serendipity_event {
     }
 
     // dont call it uninstall(&$propbag) this is a different method! (was wrongly placed by automated replace during 2.0 dev)
-    function droptable() {
+    function droptable()
+    {
         global $serendipity;
 
         if (isset($serendipity['eventcaldroptable']) === true) {
@@ -2397,7 +2445,8 @@ class serendipity_event_cal extends serendipity_event {
         }
     }
 
-    function selected() {
+    function selected()
+    {
         global $serendipity;
 
         if (!empty($serendipity['POST']['subpage'])) {
@@ -2412,7 +2461,8 @@ class serendipity_event_cal extends serendipity_event {
         return false;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_EVENTCAL_TITLE.' (' . $this->get_config('pagetitle') . ')';
 
         // fake sidebar plugin output with enabled serendipity_plugin_eventwrapper for eventcal
@@ -2444,7 +2494,8 @@ class serendipity_event_cal extends serendipity_event {
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -2452,6 +2503,7 @@ class serendipity_event_cal extends serendipity_event {
         $serendipity['plugin_eventcal_version'] = &$bag->get('version');
 
         if (isset ($hooks[$event])) {
+
             switch ($event) {
 
                 case 'frontend_configure':
@@ -2559,8 +2611,10 @@ class serendipity_event_cal extends serendipity_event {
 
                             default:
                                 break;
+
                         }
                         exit;
+
                     }
 
                 case 'genpage':
@@ -2608,20 +2662,19 @@ class serendipity_event_cal extends serendipity_event {
                 /* put here all you css stuff you need for the frontend of eventcal pages */
                 case 'css':
 
-                    if (stristr($eventData, '#eventcal_wrapper')) {
-                        // class exists in CSS, so a user has customized it and we don't need default
-                        return true;
-                    }
+                    // CSS class does NOT exist by user customized template styles, include default
+                    if (strpos($eventData, '#eventcal_wrapper') === false) {
 
-                    $tfile = serendipity_getTemplateFile('style_eventcal.css', 'serendipityPath');
-                    if ($tfile) echo str_replace('{TEMPLATE_PATH}', 'templates/' . $serendipity['defaultTemplate'] . '/', @file_get_contents($tfile));
+                        $tfile = serendipity_getTemplateFile('style_eventcal.css', 'serendipityPath');
+                        if ($tfile) echo str_replace('{TEMPLATE_PATH}', 'templates/' . $serendipity['template'] . '/', @file_get_contents($tfile));
 
-                    if (!$tfile || $tfile == 'style_eventcal.css') {
-                        $tfile = dirname(__FILE__) . '/style_eventcal.css';
-                        $frontend_css =  str_replace('{TEMPLATE_PATH}', $serendipity['eventcal']['pluginpath'], @file_get_contents($tfile));
-                    }
-                    if (!empty($frontend_css)) {
-                        $this->backend_eventcal_css($eventData, $frontend_css); // append to stream
+                        if (!$tfile || $tfile == 'style_eventcal.css') {
+                            $tfile = dirname(__FILE__) . '/style_eventcal.css';
+                            $frontend_css =  str_replace('{TEMPLATE_PATH}', $serendipity['eventcal']['pluginpath'], @file_get_contents($tfile));
+                        }
+                        if (!empty($frontend_css)) {
+                            $this->backend_eventcal_css($eventData, $frontend_css); // append to stream
+                        }
                     }
                     break;
 
@@ -2664,42 +2717,43 @@ class serendipity_event_cal extends serendipity_event {
                 /* put here all you css stuff you need for the backend of eventcal pages */
                 case 'css_backend':
 
-                    if (stristr($eventData, '#backend_eventcal_wrapper')) {
-                        // class exists in CSS, so a user has customized it and we don't need default
-                        return true;
-                    }
-                    $tfile = serendipity_getTemplateFile('style_eventcal_backend.css', 'serendipityPath');
-                    if ($tfile) {
-                        $tfilecontent = str_replace('{TEMPLATE_PATH}', 'templates/' . $serendipity['defaultTemplate'] . '/', @file_get_contents($tfile));
-                    }
+                    // CSS class does NOT exist by user customized template styles, include default
+                    if (strpos($eventData, '#backend_eventcal_wrapper') === false) {
 
-                    if ( (!$tfile || $tfile == 'style_eventcal_backend.css') && !$tfilecontent ) {
-                        $tfile = dirname(__FILE__) . '/style_eventcal_backend.css';
-                        $tfilecontent = str_replace('{TEMPLATE_PATH}', $serendipity['eventcal']['pluginpath'], @file_get_contents($tfile));
-                    }
+                        $tfile = serendipity_getTemplateFile('style_eventcal_backend.css', 'serendipityPath');
+                        if ($tfile) {
+                            $tfilecontent = str_replace('{TEMPLATE_PATH}', 'templates/' . $serendipity['template'] . '/', @file_get_contents($tfile));
+                        }
 
-                    if ($serendipity['version'][0] > 1) {
-                        $t2file = dirname(__FILE__) . '/backend_inherits.css';
-                        // append eventcal Serendipity 2.0+ CSS
-                        $css2 = @file_get_contents($t2file);
-                    } else $css2 = '';
+                        if ( (!$tfile || $tfile == 'style_eventcal_backend.css') && !$tfilecontent ) {
+                            $tfile = dirname(__FILE__) . '/style_eventcal_backend.css';
+                            $tfilecontent = str_replace('{TEMPLATE_PATH}', $serendipity['eventcal']['pluginpath'], @file_get_contents($tfile));
+                        }
 
-                    $tfilecontent = $tfilecontent . $css2;
+                        if ($serendipity['version'][0] > 1) {
+                            $t2file = dirname(__FILE__) . '/backend_inherits.css';
+                            // append eventcal Serendipity 2.0+ CSS
+                            $css2 = @file_get_contents($t2file);
+                        } else $css2 = '';
 
-                    // add replaced css content to the end of serendipity_admin.css
-                    if (!empty($tfilecontent)) {
-                        $this->backend_eventcal_css($eventData, $tfilecontent);
+                        $tfilecontent = $tfilecontent . $css2;
+
+                        // add replaced css content to the end of serendipity_admin.css
+                        if (!empty($tfilecontent)) {
+                            $this->backend_eventcal_css($eventData, $tfilecontent);
+                        }
                     }
                     break;
 
                 default:
-                    break;
+                    return false;
 
-            } // switch end
+            }
+            return true;
         } else {
             return false;
-        } // isset hooks end
-    } // function event hook end
+        }
+    }
 
 
     /***************************************************
@@ -2709,7 +2763,8 @@ class serendipity_event_cal extends serendipity_event {
     /**
      * add (backend) css to serendipity(_admin).css
      */
-    function backend_eventcal_css(&$eventData, &$becss) {
+    function backend_eventcal_css(&$eventData, &$becss)
+    {
         $eventData .= $becss;
     }
 
@@ -2721,7 +2776,8 @@ class serendipity_event_cal extends serendipity_event {
      * parts: view, add, approve, admin panel
      *
      */
-    function backend_eventcal_menu() {
+    function backend_eventcal_menu()
+    {
         global $serendipity;
 
         echo "\n<div id=\"backend_eventcal_wrapper\">\n\n";
@@ -2849,7 +2905,8 @@ class serendipity_event_cal extends serendipity_event {
      *
      * @param  ARRAY given - request and date array
      */
-    function backend_eventcal_view(&$reqb, $add=false) {
+    function backend_eventcal_view(&$reqb, $add=false)
+    {
         global $serendipity;
 
         if (is_array($reqb)) {
@@ -2966,7 +3023,8 @@ class serendipity_event_cal extends serendipity_event {
      *
      * @param  ARRAY given - request and date array
      */
-    function backend_eventcal_app(&$reqb) {
+    function backend_eventcal_app(&$reqb)
+    {
         global $serendipity;
 
         $showappdata = true;
@@ -3076,7 +3134,8 @@ class serendipity_event_cal extends serendipity_event {
      *
      * @param  ARRAY given - request and date array
      */
-    function backend_eventcal_add(&$reqb, $add=TRUE) {
+    function backend_eventcal_add(&$reqb, $add=TRUE)
+    {
         global $serendipity;
 
         if (is_array($reqb)) {
@@ -3120,7 +3179,8 @@ class serendipity_event_cal extends serendipity_event {
      * view the iCal export log
      *
      */
-    function backend_eventcal_log() {
+    function backend_eventcal_log()
+    {
         // void - see dbclean function
     }
 
@@ -3128,7 +3188,8 @@ class serendipity_event_cal extends serendipity_event {
     /**
      * read the sqldump backup directory - function scanDir() >= php5
      */
-    function backend_read_backup_dir($dpath, $delpath) {
+    function backend_read_backup_dir($dpath, $delpath)
+    {
         global $serendipity;
         $dir = array_slice(scanDir($dpath), 2);
         $url = $serendipity['serendipityHTTPPath'] . 'plugin/sql_export/';
@@ -3145,7 +3206,8 @@ class serendipity_event_cal extends serendipity_event {
      * function backend_eventcal_backup()
      * @return boolean backup true/false
      */
-    function backend_eventcal_backup() {
+    function backend_eventcal_backup()
+    {
         global $serendipity;
 
         set_time_limit(360);
@@ -3203,7 +3265,8 @@ class serendipity_event_cal extends serendipity_event {
      * switch into dump, insert, erase, delete, increment, ical, ilog
      *
      */
-    function backend_eventcal_dbclean($cm, $cy) {
+    function backend_eventcal_dbclean($cm, $cy)
+    {
         global $serendipity;
 
         if (isset($serendipity['eventcaldroptable']) === true) {
@@ -3410,6 +3473,7 @@ class serendipity_event_cal extends serendipity_event {
 
             }
         }
+
     }
 
 
@@ -3418,7 +3482,8 @@ class serendipity_event_cal extends serendipity_event {
      * @param string filename
      * @return string
      */
-    function backend_eventcal_highlight_num($file) {
+    function backend_eventcal_highlight_num($file)
+    {
         $lines   = implode(range(1, count(file($file))), '<br />');
         $content = highlight_file($file, true);
 
@@ -3437,7 +3502,8 @@ class serendipity_event_cal extends serendipity_event {
      *
      * @return array
      */
-    function backend_check_requests() {
+    function backend_check_requests()
+    {
         global $serendipity;
         // form the recurring event array names
         if (!isset($re) && !is_array($re)) {
@@ -3487,7 +3553,8 @@ class serendipity_event_cal extends serendipity_event {
      * @param  string addyes - the add to url string in case of YES
      * @return string
      */
-    function backend_eventcal_questionaire($text, $url, $addno, $addyes) {
+    function backend_eventcal_questionaire($text, $url, $addno, $addyes)
+    {
         global $serendipity;
 
         return $str = $this->backend_eventcal_smsg() . '<span class="msg_hint"><span class="icon-help-circled"></span> ' . $text . '</span>
@@ -3501,7 +3568,8 @@ class serendipity_event_cal extends serendipity_event {
      *
      * @return string start html
      */
-    function backend_eventcal_smsg() {
+    function backend_eventcal_smsg()
+    {
         return $str = "<div class='serendipity_center eventcal_tpl_message'>\n    <div class='eventcal_tpl_message_inner'>\n";
     }
 
@@ -3509,7 +3577,8 @@ class serendipity_event_cal extends serendipity_event {
      *
      * @return string end html
      */
-    function backend_eventcal_emsg() {
+    function backend_eventcal_emsg()
+    {
         return $str = "   </div>\n</div>\n";
     }
 
@@ -3520,7 +3589,8 @@ class serendipity_event_cal extends serendipity_event {
      *
      * @return single event data array
      */
-    function backend_eventcal_show_event($ev, &$re, $add=TRUE) {
+    function backend_eventcal_show_event($ev, &$re, $add=TRUE)
+    {
         global $serendipity;
 
         $adminpath = '?serendipity[adminModule]=event_display&serendipity[adminAction]=eventcal&serendipity[eventcalcategory]=adevview';
@@ -3557,7 +3627,8 @@ class serendipity_event_cal extends serendipity_event {
      *
      * @return boolean
      */
-    function backend_file_write($content, $ffpath, $fname, $fpath, $mode) {
+    function backend_file_write($content, $ffpath, $fname, $fpath, $mode)
+    {
 
         if (!is_writable($ffpath)) @chmod($ffpath, 0750);
 
@@ -3578,7 +3649,8 @@ class serendipity_event_cal extends serendipity_event {
      *
      * @return result array
      */
-    function backend_eventcal_paginator($c, $ap, $cat, $orderby) {
+    function backend_eventcal_paginator($c, $ap, $cat, $orderby)
+    {
         global $serendipity;
 
         if (isset($serendipity['GET']['eventcallimit'])) {
@@ -3645,7 +3717,8 @@ class serendipity_event_cal extends serendipity_event {
      * @return array []
      * @access admin only
      */
-    function backend_eventcal_free_record() {
+    function backend_eventcal_free_record()
+    {
         global $serendipity;
 
         // case free old data
@@ -3735,8 +3808,10 @@ class serendipity_event_cal extends serendipity_event {
 
         return false;
 
-    } // function free table end
+    } // free table() end
 
 
 } // class end
+
 /* vim: set sts=4 ts=4 expandtab : */
+?>

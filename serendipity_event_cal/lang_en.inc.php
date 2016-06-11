@@ -215,3 +215,4 @@
 
 @define('PLUGIN_EVENTCAL_EVENTWRAPPER', 'Allow Eventwrapper Plugin?');
 @define('PLUGIN_EVENTCAL_EVENTWRAPPER_BLAHBLAH', 'Allows to fake a sidebar Plugin output with serendipity_plugin_eventwrapper, which places the current month events as links to the sidebar. Only allow this when really in need, performancewise!');
+
