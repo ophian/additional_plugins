@@ -533,7 +533,9 @@ class serendipity_event_textwiki extends serendipity_event
         }
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'frontend_display':
                     foreach ($this->markup_elements as $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
@@ -543,19 +545,19 @@ class serendipity_event_textwiki extends serendipity_event
                             $eventData[$element] = $this->wiki->transform($eventData[$element]);
                         }
                     }
-                    return true;
                     break;
 
                 case 'frontend_comment':
                     if (serendipity_db_bool($this->get_config('COMMENT', true))) {
                         echo '<div class="serendipity_commentDirection serendipity_comment_textwiki">' . PLUGIN_EVENT_TEXTWIKI_TRANSFORM . '</div>';
                     }
-                    return true;
                     break;
 
                 default:
-                  return false;
+                    return false;
+
             }
+            return true;
         } else {
             return false;
         }
