@@ -159,8 +159,6 @@ class serendipity_event_contactform extends serendipity_event
             $fromName = ANONYMOUS;
         }
 
-        #$blogTitle = /*class_exists('serendipity_event_multilingual') ? serendipity_event_multilingual::strip_langs($serendipity['blogTitle']) : */$serendipity['blogTitle'];
-
         $title = $this->get_config('pagetitle');
 
         $subject = sprintf($this->get_config('subject'), $title);
@@ -193,9 +191,7 @@ class serendipity_event_contactform extends serendipity_event
         $subject = str_replace('&quot;', '"', $subject);
         $text    = str_replace('&quot;', '"', $text);
 
-        //return serendipity_sendMail($to, $subject, $text, $fromEmail, null, $fromName);
-        echo $to, $subject, $text, $fromEmail, null, $fromName;
-        return true;
+        return serendipity_sendMail($to, $subject, $text, $fromEmail, null, $fromName);
     }
 
     function checkSubmit()
