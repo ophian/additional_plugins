@@ -1,6 +1,9 @@
 <?php
 
-if (IN_serendipity !== true) { die ("Don't hack!"); }
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
+
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_trackexits extends serendipity_event

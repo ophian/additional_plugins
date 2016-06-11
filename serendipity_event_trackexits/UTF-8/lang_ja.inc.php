@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  *  @version $Revision$
@@ -14,4 +14,3 @@
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_S9Y', 'Serendipity 退出追跡ルーチン');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_GOOGLE', 'Google PageRank デフレクタ');
 
-?>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  *  @author Vladimír Ajgl <vlada@ajgl.cz>
@@ -13,4 +13,3 @@
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_S9Y', 'Vnitøní sledovací funkce Serendipity');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_GOOGLE', 'Google PageRank Deflector');
 
-?>

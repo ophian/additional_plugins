@@ -1,6 +1,6 @@
-<?php 
+<?php
 /**
- *  @version $Revision$
+ *  @version
  *  @author Rodrigo Lazo Paz <rlazo.paz@gmail.com>
  *  EN-Revision: 690
  */
@@ -14,4 +14,3 @@
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_S9Y', 'Rutina de Seguimiento de Salidas Serendipity');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_GOOGLE', 'Deflector del PageRank de Google');
 
-?>

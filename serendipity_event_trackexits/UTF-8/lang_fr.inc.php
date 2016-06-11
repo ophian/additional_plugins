@@ -1,7 +1,5 @@
-<?php 
+<?php
 
-##########################################################################
-# serendipity - another blogger...                                       #
 ##########################################################################
 #                                                                        #
 # (c) 2003 Jannis Hermanns <J@hacked.it>                                 #
@@ -22,4 +20,3 @@
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_GOOGLE', 'Oui, en activant le déflecteur du Google PageRank');
 
 /* vim: set sts=4 ts=4 expandtab : */
-?>
