@@ -1,11 +1,18 @@
+2.31:
+-----
+
+ * Better recognize $serendipity['dbType'] query check for all supported
+   postgres and all sqlite versions
+ * Set strip_langs() method static
+
 2.30 & 1.15 (sidebar):
----------------
+----------------------
 
  * Fix Invalid argument supplied for foreach() error in case the
    $serendipity['languages'] array is missing (ie. by emerge.sh call)
 
 2.29 & 1.14 (sidebar):
----------------
+----------------------
 
  * Fix config sidebar selected langs on save
 
