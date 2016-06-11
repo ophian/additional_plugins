@@ -4,17 +4,15 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+// Load possible language files.
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_contactform extends serendipity_event {
+class serendipity_event_contactform extends serendipity_event
+{
     var $title = PLUGIN_CONTACTFORM_TITLE;
-    function introspect(&$propbag) {
+
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $subtitle = $this->get_config('backend_title', '');
@@ -29,9 +27,9 @@ class serendipity_event_contactform extends serendipity_event {
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'backend_title', 'email', 'subject', 'counter', 'intro', 'sent', 'articleformat', 'dynamic_tpl', 'dynamic_fields', 'dynamic_fields_tpl', 'dynamic_fields_desc'));
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '1.19');
+        $propbag->add('version', '1.20');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.3',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -153,12 +151,15 @@ class serendipity_event_contactform extends serendipity_event {
         return true;
     }
 
-    function sendComment($to, $fromName, $fromEmail, $fromUrl, $comment, $dynamic = false) {
+    function sendComment($to, $fromName, $fromEmail, $fromUrl, $comment, $dynamic = false)
+    {
         global $serendipity;
 
         if (empty($fromName)) {
             $fromName = ANONYMOUS;
         }
+
+        #$blogTitle = /*class_exists('serendipity_event_multilingual') ? serendipity_event_multilingual::strip_langs($serendipity['blogTitle']) : */$serendipity['blogTitle'];
 
         $title = $this->get_config('pagetitle');
 
@@ -192,10 +193,13 @@ class serendipity_event_contactform extends serendipity_event {
         $subject = str_replace('&quot;', '"', $subject);
         $text    = str_replace('&quot;', '"', $text);
 
-        return serendipity_sendMail($to, $subject, $text, $fromEmail, null, $fromName);
+        //return serendipity_sendMail($to, $subject, $text, $fromEmail, null, $fromName);
+        echo $to, $subject, $text, $fromEmail, null, $fromName;
+        return true;
     }
 
-    function checkSubmit() {
+    function checkSubmit()
+    {
         global $serendipity;
 
         if (empty($serendipity['POST']['commentform'])) {
@@ -268,8 +272,8 @@ class serendipity_event_contactform extends serendipity_event {
         return false;
     }
 
-
-    function checkextendedSubmit($form_fields) {
+    function checkextendedSubmit($form_fields)
+    {
         global $serendipity;
 
         $empty_error = false;
@@ -364,7 +368,8 @@ class serendipity_event_contactform extends serendipity_event {
         return $defaults;
     }
 
-    function show() {
+    function show()
+    {
         global $serendipity;
 
         if ($this->selected()) {
@@ -396,13 +401,16 @@ class serendipity_event_contactform extends serendipity_event {
                                         $form_fields[$item['name']]['options'][$option['name']]['default'] = '';
                                     }
                                 }
-                            break;
+                                break;
+
                             case 'checkbox':
                                 $form_fields[$item['name']]['default'] = 'checked="checked"';
-                            break;
+                                break;
+
                             default:
                                 $form_fields[$item['name']]['default'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars(strip_tags($item['value'])) : htmlspecialchars(strip_tags($item['value']), ENT_COMPAT, LANG_CHARSET));
-                            break;
+                                break;
+
                         }
                     }
                 }
@@ -443,7 +451,8 @@ class serendipity_event_contactform extends serendipity_event {
         }
     }
 
-    function selected() {
+    function selected()
+    {
         global $serendipity;
 
         if (!empty($serendipity['POST']['subpage'])) {
@@ -458,17 +467,21 @@ class serendipity_event_contactform extends serendipity_event {
         return false;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_CONTACTFORM_TITLE.' (' . $this->get_config('pagetitle') . ')';
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'genpage':
                     $args = implode('/', serendipity_getUriArguments($eventData, true));
                     if ($serendipity['rewrite'] != 'none') {
@@ -497,38 +510,42 @@ class serendipity_event_contactform extends serendipity_event {
                             $eventData = array('clean_page' => true);
                         }
                     }
-                    return true;
                     break;
 
                 case 'entries_header':
                     $this->show();
-
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
+
             }
+            return true;
         } else {
             return false;
         }
-
     }
 
-    function parse_form_fields($dynamic_tpl) {
+    function parse_form_fields($dynamic_tpl)
+    {
         global $serendipity;
+
         $return_array = array();
+
         switch ($dynamic_tpl) {
+
             case 'small_biz':
                 $fields = 'require;'.PLUGIN_CONTACTFORM_FNAME.';text:require;'.PLUGIN_CONTACTFORM_LNAME.';text:'.'require;'.EMAIL.';text:'.'require;'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;';
-            break;
+                break;
+
             case 'detailed':
                 $fields = 'require;'.PLUGIN_CONTACTFORM_FNAME.';text:require;'.PLUGIN_CONTACTFORM_LNAME.';text:'.'require;'.EMAIL.';text:'.'require;'.PLUGIN_CONTACTFORM_ADDRESS.';textarea:'.'require;'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;';
-            break;
+                break;
+
             default:
                 $fields = $this->get_config('dynamic_fields','require;'.NAME.';text:'.'require;'.EMAIL.';text:'.'require;'.HOMEPAGE.';text:'.'require;'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;');
-            break;
+                break;
+
         }
         $fields = explode(':',$fields);
         foreach ($fields as $field) {
@@ -544,8 +561,10 @@ class serendipity_event_contactform extends serendipity_event {
                 }
                 $return_array[$field_array[0]]['name'] = $field_array[0];
                 $return_array[$field_array[0]]['id'] = strtolower(preg_replace('@[^a-z0-9]@i', '_',$field_array[0]));
+
                 //Let's figure out what kind it is...
                 switch(strtolower($field_array[1])) {
+
                     case 'checkbox';
                         $return_array[$field_array[0]]['type'] = 'checkbox';
                         //need to get options
@@ -559,7 +578,8 @@ class serendipity_event_contactform extends serendipity_event {
                                }
                             }
                         }
-                    break;
+                        break;
+
                     case 'radio':
                         $return_array[$field_array[0]]['type'] = 'radio';
                         $option_array =  explode('|',$field_array[2]);
@@ -579,7 +599,8 @@ class serendipity_event_contactform extends serendipity_event {
                         }
                         $return_array[$field_array[0]]['options'] = $options;
                         $return_array[$field_array[0]]['default'] = $field_array[3];
-                    break;
+                        break;
+
                     case 'select':
                         $return_array[$field_array[0]]['type'] = 'select';
                         $option_array =  explode('|',$field_array[2]);
@@ -599,31 +620,38 @@ class serendipity_event_contactform extends serendipity_event {
                         }
                         $return_array[$field_array[0]]['options'] = $options;
                         $return_array[$field_array[0]]['default'] = $field_array[3];
-                    break;
+                        break;
+
                     case 'hidden':
                         $return_array[$field_array[0]]['type'] = 'hidden';
                          $return_array[$field_array[0]]['default'] = $field_array[2];
-                    break;
+                        break;
+
                     case 'password':
                         $return_array[$field_array[0]]['type'] = 'password';
                         $return_array[$field_array[0]]['default'] = $field_array[2];
-                    break;
+                        break;
+
                     case 'textarea':
                         $return_array[$field_array[0]]['type'] = 'textarea';
                         $return_array[$field_array[0]]['default'] = $field_array[2];
-                    break;
+                        break;
+
                     case 'text':
                         $return_array[$field_array[0]]['type'] = 'text';
                         $return_array[$field_array[0]]['default'] = $field_array[2];
-                    break;
+                        break;
+
                     default:
                         $return_array[$field_array[0]]['type'] = $field_array[1];
                         $return_array[$field_array[0]]['default'] = $field_array[2];
-                    break;
+                        break;
                 }
             }
         }
         return $return_array;
     }
+
 }
 /* vim: set sts=4 ts=4 expandtab : */
+?>

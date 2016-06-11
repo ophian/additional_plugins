@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -67,3 +67,4 @@
 @define('PLUGIN_CONTACTFORM_ISSUECOUNTER_DESC', 'When enabled, each sent contactform gets a unique ID.');
 @define('PLUGIN_CONTACTFORM_MAIL_ISSUECOUNTER', 'Ticket: %s');
 @define('PLUGIN_CONTACTFORM_SUBJECT_DESC', 'Enter the subject of the e-mail that gets sent to your address. You can place a %s variable that will contain the title of the contact form.');
+
