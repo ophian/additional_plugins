@@ -92,3 +92,4 @@
 @define('PLUGIN_SPAMBLOCK_BEE_CACHEMINS_DESC', 'Vytváøení reportu zatì¾uje databázi, tak¾e byste ho nemìli vytváøet pøi ka¾dém naètení stránky, ale report by mìl být cachován. Zde nastavíte èas mezi jednotlivými aktualizacemi reportu.');
 @define('PLUGIN_SPAMBLOCK_BEE_TODAY', 'Dnes:');
 @define('PLUGIN_SPAMBLOCK_BEE_LAST_X_DAYS', 'Posledních %d dní:');
+

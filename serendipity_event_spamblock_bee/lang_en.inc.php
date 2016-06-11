@@ -88,3 +88,4 @@
 @define('PLUGIN_SPAMBLOCK_BEE_CACHEMINS_DESC', 'Creating the report uses the database, so you should not create it with each pagecall but let it be cached. Here you set up the wait time (in minutes) before a new statistic is created.');
 @define('PLUGIN_SPAMBLOCK_BEE_TODAY', 'Today:');
 @define('PLUGIN_SPAMBLOCK_BEE_LAST_X_DAYS', 'The last %d days:');
+

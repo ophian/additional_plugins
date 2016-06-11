@@ -86,3 +86,4 @@
 @define('PLUGIN_SPAMBLOCK_BEE_CACHEMINS_DESC', 'Das Erzeugen des Reports erzeugt Last auf der Datenbank, deshalb sollte der Report gecached werden. Hier wird eingestellt, wie viele Minuten mindestens gewartet werden soll, bevor ein neuer Report erstellt wird.');
 @define('PLUGIN_SPAMBLOCK_BEE_TODAY', 'Heute:');
 @define('PLUGIN_SPAMBLOCK_BEE_LAST_X_DAYS', 'Die letzten %d Tage:');
+
