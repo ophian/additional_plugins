@@ -1,6 +1,8 @@
 <?php
 
-if (IN_serendipity !== true) { die ("Don't hack!"); }
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -16,7 +18,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian');
-        $propbag->add('version',       '1.62');
+        $propbag->add('version',       '1.63');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -86,16 +88,19 @@ class serendipity_event_statistics extends serendipity_event
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
 
                 case 'frontend_configure':
@@ -204,11 +209,12 @@ class serendipity_event_statistics extends serendipity_event
                         // Update visitor timestamp
                         $this->updateVisitor();
                     }
-
-                break;
+                    break;
 
                 case 'css_backend':
-?>
+                    $eventData .= '
+
+/* serendipity_event_statistics BACKEND START */
 
 .serendipity_statistics table {
     background: #eaeaea;
@@ -245,7 +251,9 @@ class serendipity_event_statistics extends serendipity_event
     padding: 0px 0.5em 0.5em 0;
 }
 
-<?php
+/* serendipity_event_statistics BACKEND STOP */
+
+';
                     break;
 
                 case 'backend_sidebar_entries':
@@ -603,21 +611,21 @@ class serendipity_event_statistics extends serendipity_event
                     if ($ext_vis_stat == 'yesBot') {
                         $this->extendedVisitorStatistics($max_items);
                     }
-
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
+
             }
+            return true;
         } else {
             return false;
         }
     }
 
     //Statistics
-    function updatestats($action) {
+    function updatestats($action)
+    {
         global $serendipity;
 
         list($year, $month, $day) = explode('-', date('Y-m-d'));
@@ -626,6 +634,7 @@ class serendipity_event_statistics extends serendipity_event
         $sql_hit_update = "UPDATE {$serendipity['dbPrefix']}visitors_count SET hits = hits+1 WHERE year='$year' AND month='$month' AND day='$day'";
         $sql_day_new    = "INSERT INTO {$serendipity['dbPrefix']}visitors_count (year, month, day, visits, hits) VALUES ('$year','$month','$day',1,1)";
         $sql_day_update = "UPDATE {$serendipity['dbPrefix']}visitors_count SET visits = visits+1, hits = hits+1 WHERE year='$year' AND month='$month' AND day='$day'";
+
         switch($action) {
             case "update":
                 if($sql['result'] >= 1) {
@@ -633,18 +642,20 @@ class serendipity_event_statistics extends serendipity_event
                 } else {
                     serendipity_db_query($sql_day_new);
                 }
-            break;
+                break;
+
             case "new":
                 if($sql['result'] >= 1) {
                        serendipity_db_query($sql_day_update);
                 } else {
                     serendipity_db_query($sql_day_new);
                 }
-            break;
+                break;
         }
     }
 
-    function updateVisitor() {
+    function updateVisitor()
+    {
         global $serendipity;
 
         $this->updatestats('update');
@@ -654,7 +665,8 @@ class serendipity_event_statistics extends serendipity_event
         return serendipity_db_query("UPDATE {$serendipity['dbPrefix']}visitors SET time = '$time', day  = '$day' WHERE sessID = '" . serendipity_db_escape_string(strip_tags(session_id())) . "'");
     }
 
-    function countVisitor($useragent, $remoteaddr, $referer){
+    function countVisitor($useragent, $remoteaddr, $referer)
+    {
         global $serendipity;
 
         $thedate = date('Y-m-d');
@@ -709,7 +721,8 @@ class serendipity_event_statistics extends serendipity_event
     } //end of function countVisitor
 
     // Calculate daily stats
-    function statistics_getdailystats() {
+    function statistics_getdailystats()
+    {
         global $serendipity;
 
         list($year, $month) = explode('-', date("Y-m"));
@@ -724,7 +737,8 @@ class serendipity_event_statistics extends serendipity_event
     }
 
     // Calculate monthly stats
-    function statistics_getmonthlystats() {
+    function statistics_getmonthlystats()
+    {
         global $serendipity;
 
         $year = date("Y");
@@ -738,8 +752,8 @@ class serendipity_event_statistics extends serendipity_event
         return $container;
     }
 
-    function extendedVisitorStatistics($max_items){
-
+    function extendedVisitorStatistics($max_items)
+    {
         global $serendipity;
 
         // ---------------QUERIES for Viewing statistics ----------------------------------------------
@@ -936,7 +950,8 @@ class serendipity_event_statistics extends serendipity_event
 <?php
     } //end of function extendedVisitorStatistics()
 
-    function createTables() {
+    function createTables()
+    {
         global $serendipity;
 
         //create table xxxx_visitors
@@ -974,7 +989,8 @@ class serendipity_event_statistics extends serendipity_event
         $this->updateTables();
     } //end of function createTables()
 
-    function updateTables($dbic=0) {
+    function updateTables($dbic=0)
+    {
         global $serendipity;
 
         if ($dbic == 0) {
@@ -1007,9 +1023,8 @@ class serendipity_event_statistics extends serendipity_event
         }
     }
 
-
-    function dropTables() {
-
+    function dropTables()
+    {
         global $serendipity;
 
         // Drop tables
@@ -1022,18 +1037,17 @@ class serendipity_event_statistics extends serendipity_event
 
     } //end of function dropTables
 
-    function install(){
-
+    function install()
+    {
         $this->createTables();
-
     }
 
-    function uninstall(&$propbag){
-
+    function uninstall(&$propbag)
+    {
         $this->dropTables();
-
     }
 
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

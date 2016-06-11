@@ -1,11 +1,10 @@
-<?php #
+<?php
 
 /**
  *  @version 
  *  @author Rodrigo Lazo Paz <rlazo.paz@gmail.com>
  *  EN-Revision: 690
  */
-
 
 @define('PLUGIN_EVENT_STATISTICS_NAME', 'Estadísticas');
 @define('PLUGIN_EVENT_STATISTICS_DESC', 'Añade un enlace hacia estadísticas interesantes en tu panel de entradas, incluyendo un contador de visitas');

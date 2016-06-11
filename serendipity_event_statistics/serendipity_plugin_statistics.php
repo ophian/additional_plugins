@@ -1,6 +1,8 @@
 <?php
 
-if (IN_serendipity !== true) { die ("Don't hack!"); }
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -162,12 +164,13 @@ class serendipity_plugin_statistics extends serendipity_plugin
                 break;
 
             default:
-                    return false;
+                return false;
         }
         return true;
     }
 
-    function cleanup() {
+    function cleanup()
+    {
         global $serendipity;
         @unlink($serendipity['serendipityPath'] . 'templates_c/statistics_cache.html');
     }
@@ -269,6 +272,8 @@ class serendipity_plugin_statistics extends serendipity_plugin
 
         echo $content;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

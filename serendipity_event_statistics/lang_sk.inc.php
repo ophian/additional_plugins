@@ -1,7 +1,7 @@
-<?php #
+<?php
 
 /**
- *  @author Martin Matu¹ka <martin@matuska.org>
+ *  @author Martin Matuska <martin@matuska.org>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2008/08/17
  */

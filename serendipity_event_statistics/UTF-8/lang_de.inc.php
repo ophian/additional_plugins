@@ -1,4 +1,4 @@
-<?php #
+<?php
 
 /**
  *  @version 1.0
@@ -105,3 +105,4 @@
 @define('PLUGIN_EVENT_STATISTICS_SHOW_WEEKVISITORS', 'Besucher dieser Woche anzeigen');
 @define('PLUGIN_EVENT_STATISTICS_TEXT_DAYVISITORS', '%s Besucher heute');
 @define('PLUGIN_EVENT_STATISTICS_TEXT_WEEKVISITORS', '%s Besucher in dieser Woche');
+

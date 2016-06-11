@@ -1,3 +1,12 @@
+1.63:
+-----
+- append backend CSS to $eventData, not prepend!
+- consistence changes
+
+1.62:
+-----
+- add missing lang constant for heading
+
 1.61:
 -----
 - some css fixes for prev S9y versions
