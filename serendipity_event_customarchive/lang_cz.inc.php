@@ -13,4 +13,3 @@
 @define('PLUGIN_CUSTOMARCHIVE_ARTICLEFORMAT', 'Formátovat jako èlánek?');
 @define('PLUGIN_CUSTOMARCHIVE_ARTICLEFORMAT_BLAHBLAH', 'Pokud je nastaveno "Ano", pak je stránka formátována stejnì jako pøíspìvky (barvy, nadpisy, okraje, apod.) (Výchozí: Ano).');
 
-?>

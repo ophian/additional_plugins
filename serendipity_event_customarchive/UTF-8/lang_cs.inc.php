@@ -13,4 +13,3 @@
 @define('PLUGIN_CUSTOMARCHIVE_ARTICLEFORMAT', 'Formátovat jako článek?');
 @define('PLUGIN_CUSTOMARCHIVE_ARTICLEFORMAT_BLAHBLAH', 'Pokud je nastaveno "Ano", pak je stránka formátována stejně jako příspěvky (barvy, nadpisy, okraje, apod.) (Výchozí: Ano).');
 
-?>

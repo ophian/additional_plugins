@@ -7,26 +7,26 @@ Blog entries that have specific entryproperty plugin values. Those can
 be filtered, and you can use this smarty function to print out their
 sortings.
 
-{customArchive 
-    entryprops='Name,Lage,Groesse:m²,Personen,Preis:€,Bild,Teaser' 
-    sortfields='Name,Lage,Groesse:Größe,Personen:max. Personen,Preis:Preis ab' 
-    filter='Name' 
-    teaser='Teaser' 
-    picture='Bild' 
-    template='customarchive.tpl' 
-    limit='20' 
-    searchfields='Name+Lage+Teaser:Text:Suchwort,Groesse:Int:Größe von,Personen:Int:Personen von,Preis:Int:Preis von' 
+{customArchive
+    entryprops='Name,Lage,Groesse:m²,Personen,Preis:€,Bild,Teaser'
+    sortfields='Name,Lage,Groesse:Größe,Personen:max. Personen,Preis:Preis ab'
+    filter='Name'
+    teaser='Teaser'
+    picture='Bild'
+    template='customarchive.tpl'
+    limit='20'
+    searchfields='Name+Lage+Teaser:Text:Suchwort,Groesse:Int:Größe von,Personen:Int:Personen von,Preis:Int:Preis von'
     valuelimit='Preis:0-100'}
 
 * entryprops
 
-    Commaseparated list of all entryproperty key names (NO special characters!) as to be 
-    used in the readout of your entryproperty plugin configuration. Any key can use a ":" 
+    Commaseparated list of all entryproperty key names (NO special characters!) as to be
+    used in the readout of your entryproperty plugin configuration. Any key can use a ":"
     and then a unit that should be appended to each value, like "Price:$".
 
 * sortfields
 
-    Commaseparated list of all entrypropertiey key names and how they should be printed 
+    Commaseparated list of all entrypropertiey key names and how they should be printed
     out in the table. This is where you can alias key names with human readable fields
     by appending a ":" and then the real field name, like "custprice:Custom Price as seen on TV".
     They keys before the ":" need to be the same as in the "entryprops" configuration above.
@@ -43,10 +43,10 @@ sortings.
 * picture
 
     The default entryproperty key name that holds a picture of a blog entry
-    
+
 * template
 
-    The name of the template file that will render the table. See example customarchive.tpl file.    
+    The name of the template file that will render the table. See example customarchive.tpl file.
 
 * limit
 
@@ -56,14 +56,14 @@ sortings.
 
     Here you can specify a search form. For each search form input field you enter a block
     of variables: "fieldlist:type:display name".
-    
+
     The 'fieldlist' contains a list of entryproperty key names of which fields will be searched
     in, separated with a "+".
-    
+
     The 'type' can contain either "Text" (Fulltextsearch) or "Int" (Range from-to).
-    
+
     The 'display name' tells what is displayed next to the input field of the resulting form.
-    
+
 * valuelimit
 
     Can contain a default filtering in the format "Keyname:from-to". The keyname needs
@@ -76,17 +76,15 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+// Load possible language files.
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_customarchive extends serendipity_event {
+class serendipity_event_customarchive extends serendipity_event
+{
     var $title = PLUGIN_CUSTOMARCHIVE_TITLE;
-    function introspect(&$propbag) {
+
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name', PLUGIN_CUSTOMARCHIVE_TITLE);
@@ -94,11 +92,11 @@ class serendipity_event_customarchive extends serendipity_event {
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'articleformat'));
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '1.12.1');
+        $propbag->add('version', '1.13');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.2.0'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
@@ -109,6 +107,7 @@ class serendipity_event_customarchive extends serendipity_event {
         global $serendipity;
 
         switch($name) {
+
             case 'permalink':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_CUSTOMARCHIVE_PERMALINK);
@@ -138,7 +137,8 @@ class serendipity_event_customarchive extends serendipity_event {
         return true;
     }
 
-    function dropdown($name, $values) {
+    function dropdown($name, $values)
+    {
         global $serendipity;
 
         echo '<select name="serendipity[' . $name . ']">' . "\n";
@@ -148,7 +148,8 @@ class serendipity_event_customarchive extends serendipity_event {
         echo '</select>' . "\n";
     }
 
-    function setDefaultValue($field, &$values, $def) {
+    function setDefaultValue($field, &$values, $def)
+    {
         global $serendipity;
 
         if (isset($serendipity['GET'][$field])) {
@@ -166,7 +167,8 @@ class serendipity_event_customarchive extends serendipity_event {
         $serendipity['GET'][$field] = $val;
     }
 
-    function showEntries() {
+    function showEntries()
+    {
         global $serendipity;
 
         if ($serendipity['GET']['custom_sortyears'] == 'all') {
@@ -247,7 +249,8 @@ class serendipity_event_customarchive extends serendipity_event {
         }
     }
 
-    function show() {
+    function show()
+    {
         global $serendipity;
 
         if ($this->selected()) {
@@ -264,14 +267,14 @@ class serendipity_event_customarchive extends serendipity_event {
             $serendipity['smarty']->assign('staticpage_pagetitle', $pt);
 
 
-            if ($this->get_config('articleformat') == TRUE) {
+            if (serendipity_db_bool($this->get_config('articleformat', 'true'))) {
                 echo '<div class="serendipity_Entry_Date">
                          <h3 class="serendipity_date">' . PLUGIN_CUSTOMARCHIVE_TITLE . '</h3>';
             }
 
             echo '<h4 class="serendipity_title"><a href="#">' . $this->get_config('headline') . '</a></h4>';
 
-            if ($this->get_config('articleformat') == TRUE) {
+            if (serendipity_db_bool($this->get_config('articleformat', 'true'))) {
                 echo '<div class="serendipity_entry"><div class="serendipity_entry_body">';
             }
 
@@ -302,9 +305,11 @@ class serendipity_event_customarchive extends serendipity_event {
                       'desc'  => SORT_ORDER_DESC)
             );
 
+            $exclude_years = array('2014','2015');
             $custom_sortyears = array();
             $custom_sortyears[] = array('value' => 'all', 'desc' => COMMENTS_FILTER_ALL);
             for ($i = $first_year; $i <= date('Y'); $i++) {
+                if (in_array($i, $exclude_years)) continue;
                 $custom_sortyears[] = array('value' => $i, 'desc' => $i);
             }
 
@@ -338,13 +343,14 @@ class serendipity_event_customarchive extends serendipity_event {
 
             $this->showEntries();
 
-            if ($this->get_config('articleformat') == TRUE) {
+            if (serendipity_db_bool($this->get_config('articleformat', 'true'))) {
                 echo '</div></div></div>';
             }
         }
     }
 
-    function selected() {
+    function selected()
+    {
         global $serendipity;
 
         if ($serendipity['GET']['subpage'] == $this->get_config('pagetitle') ||
@@ -355,12 +361,14 @@ class serendipity_event_customarchive extends serendipity_event {
         return false;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_CUSTOMARCHIVE_TITLE;
     }
 
 
-    function smarty_customArchive($params, &$smarty) {
+    function smarty_customArchive($params, &$smarty)
+    {
         global $serendipity;
 
         if (isset($serendipity['GET']['filter'])) {
@@ -374,7 +382,7 @@ class serendipity_event_customarchive extends serendipity_event {
         if (isset($serendipity['GET']['mode'])) {
             $params['mode'] = $serendipity['GET']['mode'];
         }
-        
+
         if (isset($serendipity['POST']['mode'])) {
             $params['mode'] = $serendipity['POST']['mode'];
         }
@@ -425,9 +433,9 @@ class serendipity_event_customarchive extends serendipity_event {
         $search_props = array();
         foreach($props AS $prop) {
             $propparts = explode(':', trim($prop));
-            
+
             $sfields = explode('+', $propparts[0]);
-            
+
             foreach($sfields AS $sfield) {
                 $search_props[$propparts[2]]['fields']['ep_' . $sfield] = true;
             }
@@ -435,7 +443,7 @@ class serendipity_event_customarchive extends serendipity_event {
             $search_props[$propparts[2]]['type'] = strtolower($propparts[1]);
             $search_props[$propparts[2]]['key']  = md5($propparts[0]);
         }
-        
+
         $searchdata = $serendipity['POST']['search'];
         if (!is_array($searchdata)) {
             $searchdata = array();
@@ -445,7 +453,7 @@ class serendipity_event_customarchive extends serendipity_event {
         $values_props = array();
         foreach($props AS $prop) {
             $propparts = explode(':', trim($prop));
-            
+
             $sfields = explode('-', $propparts[1]);
             $values_props['ep_' . $propparts[0]]['from'] = $sfields[0];
             $values_props['ep_' . $propparts[0]]['to']   = $sfields[1];
@@ -466,7 +474,7 @@ class serendipity_event_customarchive extends serendipity_event {
         $lookup = array();
         foreach($key_props AS $idx => $prop) {
             $and = '';
-            
+
             $lookup[$prop] = 'ep' . $idx;
             if ($prop == 'ep_' . $params['filter'] && $valid_filter) {
                 $filteridx = $idx;
@@ -491,7 +499,7 @@ class serendipity_event_customarchive extends serendipity_event {
                     $sdata = trim($sdata);
                 }
                 if (empty($sdata)) continue;
-                
+
                 foreach($search_props AS $sdesc => $sdata2) {
                     if ($sdata2['key'] == $skey) {
                         if ($sdata2['type'] == 'text') {
@@ -524,7 +532,7 @@ class serendipity_event_customarchive extends serendipity_event {
         } elseif (count($values_props) > 0) {
             $sql_where_parts = array();
             foreach($values_props AS $vfieldname => $vfieldvals) {
-                $sql_where_parts[] = '(CAST(' . $lookup[$vfieldname] . '.value AS unsigned) >= ' . $vfieldvals['from'] . ' 
+                $sql_where_parts[] = '(CAST(' . $lookup[$vfieldname] . '.value AS unsigned) >= ' . $vfieldvals['from'] . '
                                        AND CAST(' . $lookup[$vfieldname] . '.value AS unsigned) <= ' . $vfieldvals['to'] . ')' . "\n";
             }
             $sql_where .= implode(" AND ", $sql_where_parts);
@@ -563,7 +571,7 @@ class serendipity_event_customarchive extends serendipity_event {
 
         $dategroup = array(0 => array('entries' => $entries, 'timestamp' => time()));
 
-        $GLOBALS['DBTEST'] = true;
+        $GLOBALS['DBTEST'] = true; // ??
         $entries = serendipity_printEntries($dategroup, true, false, 'CUSTOMARCHIVE_ENTRIES', 'return', false, false, true);
 
         if (!empty($cat)) {
@@ -576,23 +584,23 @@ class serendipity_event_customarchive extends serendipity_event {
         if (!$tfile || $tfile == $filename) {
             $tfile = dirname(__FILE__) . '/' . $filename;
         }
-        $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
-        $content = $serendipity['smarty']->fetch('file:'. $tfile);
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = $inclusion;
+        $serendipity['smarty']->assign('ENTRIES', 'xxx'); // ??
 
-        $serendipity['smarty']->assign('ENTRIES', 'xxx');
+        $content = $this->parseTemplate($tfile);
 
         return $content;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'genpage':
                     $args = implode('/', serendipity_getUriArguments($eventData, true));
                     if ($serendipity['rewrite'] != 'none') {
@@ -610,9 +618,10 @@ class serendipity_event_customarchive extends serendipity_event {
                         $serendipity['GET']['subpage'] = $nice_url;
                     }
 
-                    serendipity_smarty_init();
-                                   $serendipity['smarty']->register_function('customArchive', array($this, 'smarty_customArchive'));
-
+                    if (!is_object($serendipity['smarty'])) {
+                        serendipity_smarty_init();
+                    }
+                    $serendipity['smarty']->registerPlugin('function', 'customArchive', array($this, 'smarty_customArchive'));
                     break;
 
                 case 'entry_display':
@@ -623,27 +632,23 @@ class serendipity_event_customarchive extends serendipity_event {
                             $eventData = array('clean_page' => true);
                         }
                     }
-
-                    if (version_compare($serendipity['version'], '0.7.1', '<=')) {
-                        $this->show();
-                    }
-
-                    return true;
                     break;
 
                 case 'entries_header':
                     $this->show();
-
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
+
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
+
 /* vim: set sts=4 ts=4 expandtab : */
+?>
