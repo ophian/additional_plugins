@@ -1,7 +1,11 @@
 
+/* linktrimmer plugin start */
+
 #linktrimmer_url.input_textbox {
-  width: 71%;
+    width: 71%;
 }
 #linktrimmer_result.input_textbox {
-  width: 100%;
+    width: 100%;
 }
+
+/* linktrimmer plugin end */

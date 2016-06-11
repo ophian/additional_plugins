@@ -19,3 +19,4 @@
 
 // Next lines were translated on 2013/06/22
 @define('PLUGIN_LINKTRIMMER_FRONTPAGE_OPTION', 'Zobrazovat zkracovač adres na hlavní stránce administrační sekce?');
+

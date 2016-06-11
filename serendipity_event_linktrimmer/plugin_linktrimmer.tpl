@@ -10,7 +10,7 @@
 <!--[if lte IE 8]>
     <link rel="stylesheet" href="{serendipity_getFile file='admin/oldie.css'}">
 <![endif]-->
-    <script src="{serendipity_getFile file='admin/js/modernizr-2.8.3.min.js'}"></script>
+    <script src="{serendipity_getFile file='admin/js/modernizr.min.js'}"></script>
 
     <style>{* popup only classes *}
         .serendipity_linktrimmer_page .linktrimmer {
@@ -39,7 +39,7 @@
 {if $linktrimmer_external}
 <div class="linktrimmer">
 {else}
-<section id="dashboard_linktrimmer" class="equal_heights quick_list dashboard_widget">
+<section id="dashboard_linktrimmer" class="quick_list dashboard_widget">
     <h3>{$CONST.PLUGIN_LINKTRIMMER_NAME}</h3>
 {/if}
     <form action="" method="post">
@@ -55,14 +55,14 @@
 
             <div class="form_field">
                 <label for="linktrimmer_url">{$CONST.PLUGIN_LINKTRIMMER_ENTER}</label>
-                <input id="linktrimmer_url" class="input_textbox" type="text" value="" name="linktrimmer_url" placeholder="http://www.s9y.org">
+                <input id="linktrimmer_url" class="input_textbox" type="text" onfocus="this.blur();" value="" name="linktrimmer_url" placeholder="http://www.s9y.org">
     {if $linktrimmer_external === false}
             </div>
 
             <div class="form_field">
     {/if}
                 <label for="linktrimmer_hash">{$CONST.PLUGIN_LINKTRIMMER_HASH}</label>
-                <input id="linktrimmer_hash" class="input_textbox" type="text" value="" name="linktrimmer_hash" size="14">
+                <input id="linktrimmer_hash" class="input_textbox" type="text" onfocus="this.blur();" value="" name="linktrimmer_hash" size="14">
 
                 <input type="submit" name="submit" value="{$CONST.GO}" class="input_button">
             </div>

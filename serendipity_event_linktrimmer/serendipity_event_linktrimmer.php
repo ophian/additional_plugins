@@ -1,32 +1,28 @@
-<?php #
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include_once dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_linktrimmer extends serendipity_event {
+class serendipity_event_linktrimmer extends serendipity_event
+{
     var $debug;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_LINKTRIMMER_NAME);
         $propbag->add('description',   PLUGIN_LINKTRIMMER_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '1.3',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.3.0'
         ));
 
-        $propbag->add('version',       '1.6.3');
+        $propbag->add('version',       '1.6.4');
         $propbag->add('author',        'Garvin Hicking, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('prefix', 'frontpage', 'domain'));
@@ -46,7 +42,8 @@ class serendipity_event_linktrimmer extends serendipity_event {
         $propbag->add('groups', array('BACKEND_FEATURES'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch($name) {
@@ -77,7 +74,8 @@ class serendipity_event_linktrimmer extends serendipity_event {
         return true;
     }
 
-    function setupDB() {
+    function setupDB()
+    {
         global $serendipity;
 
         if (serendipity_db_bool($this->get_config('db_built_1', false))) {
@@ -106,11 +104,13 @@ class serendipity_event_linktrimmer extends serendipity_event {
         $this->set_config('db_built_1', 'true');
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_LINKTRIMMER_NAME;
     }
 
-    static function base62($var) {
+    static function base62($var)
+    {
         static $base_characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
         $stack = array();
@@ -124,7 +124,8 @@ class serendipity_event_linktrimmer extends serendipity_event {
         return implode('', array_reverse($stack));
     }
 
-    static function lookup($url, $custom_hash = '', $pref = '') {
+    static function lookup($url, $custom_hash = '', $pref = '')
+    {
         global $serendipity;
 
         $custom_hash = trim($custom_hash);
@@ -155,7 +156,8 @@ class serendipity_event_linktrimmer extends serendipity_event {
         return $pref . $res['hash'];
     }
 
-    static function create($url, $hash = '') {
+    static function create($url, $hash = '')
+    {
         global $serendipity;
 
         serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}linktrimmer (url) VALUES ('" . serendipity_db_escape_string($url) . "')");
@@ -174,7 +176,8 @@ class serendipity_event_linktrimmer extends serendipity_event {
         return $hash;
     }
 
-    function show($external = false) {
+    function show($external = false)
+    {
         global $serendipity;
 
         if (IN_serendipity !== true) {
@@ -217,7 +220,8 @@ class serendipity_event_linktrimmer extends serendipity_event {
         }
     }
 
-    function generate_button ($txtarea) {
+    function generate_button ($txtarea)
+    {
         global $serendipity;
         if (!isset($txtarea)) {
            $txtarea = 'body';
@@ -234,13 +238,15 @@ class serendipity_event_linktrimmer extends serendipity_event {
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         static $has_jquery = null;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             if ($has_jquery === null) {
                 $has_jquery = class_exists('serendipity_event_jquery');
                 if ($serendipity['capabilities']['jquery']) {
@@ -249,6 +255,7 @@ class serendipity_event_linktrimmer extends serendipity_event {
             }
 
             switch($event) {
+
                 case 'backend_entry_toolbar_extended':
                     if (isset($eventData['backend_entry_toolbar_extended:textarea'])) {
                         $txtarea = $serendipity['version'][0] < '2' ?  $eventData['backend_entry_toolbar_extended:textarea'] : $eventData['backend_entry_toolbar_extended:nugget'];
@@ -288,7 +295,6 @@ class serendipity_event_linktrimmer extends serendipity_event {
                         'img_path'   => 'serendipity_event_linktrimmer/serendipity_event_linktrimmer.gif',
                         'toolbar'    => 'other'
                     );//'img_path' deprecated, used by ckeditor plugin <= 4.1.0
-                    return true;
                     break;
 
                 case 'frontend_configure':
@@ -363,16 +369,22 @@ class serendipity_event_linktrimmer extends serendipity_event {
                 case 'css_backend':
                     if (!strpos($eventData, '.linktrimmer')) {
                         // class exists in CSS, so a user has customized it and we don't need default
-                        echo file_get_contents(dirname(__FILE__) . '/linktrimmer.css');
+                        $eventData .= @file_get_contents(dirname(__FILE__) . '/linktrimmer.css');
                         if ($serendipity['version'][0] < '2') echo '#linktrimmer_url.input_textbox { width: inherit; }';
                     }
                     break;
 
-            }
-        }
+                default:
+                    return false;
 
-        return true;
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

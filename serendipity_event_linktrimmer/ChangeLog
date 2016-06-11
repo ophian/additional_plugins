@@ -1,3 +1,18 @@
+1.6.4:
+------
+
+ * Set plugin consistencies
+ * Append CSS to $eventData stream, not prepend!
+ * Use load language API - extends required Serendipity version to v.1.6
+ * Remove annoying blur and equal heights from backend dashboard template
+ * Tpl use admin/js/modernizr.min.js instead of old versionized version
+   extends reqired Serendipity version to 2.0+
+
+
+1.6.3:
+----
+    * Serendipity core release 2.0.1 fix
+
 1.6.2:
 ----
     * Fix for Smarty2 template
