@@ -2,8 +2,8 @@
 -----------------------
 
  * Fix wrong template name for path replacements
- * Some styles use CSS images ...
  * Grant access to admin group only
+ * Some styles use CSS images ...
    PLEASE NOTE:
       if you provide your own template guestbook stylesheets
       remember to include them to your img/ directory.
