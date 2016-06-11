@@ -4,13 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_emoticonchooser extends serendipity_event
 {
@@ -25,11 +19,11 @@ class serendipity_event_emoticonchooser extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Jay Bertrandt, Ian');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '2.11');
+        $propbag->add('version',       '2.12');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -42,7 +36,8 @@ class serendipity_event_emoticonchooser extends serendipity_event
         $propbag->add('configuration', array('frontend', 'popup', 'button', 'popuptext'));
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_EVENT_EMOTICONCHOOSER_TITLE;
     }
 
@@ -85,7 +80,8 @@ class serendipity_event_emoticonchooser extends serendipity_event
     }
 
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         if (!class_exists('serendipity_event_emoticate')) {
@@ -93,8 +89,11 @@ class serendipity_event_emoticonchooser extends serendipity_event
         }
 
         $hooks = &$bag->get('event_hooks');
+
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'frontend_comment':
                     if (serendipity_db_bool($this->get_config('frontend', false)) === false) {
                         break;
@@ -103,13 +102,11 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     $func    = 'comment';
                     $style   = '';
                     $popcl   = '';
-
                 case 'backend_entry_toolbar_extended':
                     if (!isset($txtarea)) {
                         $txtarea = 'serendipity[extended]';
                         $func    = 'extended';
                     }
-
                 case 'backend_entry_toolbar_body':
                     if (!isset($txtarea)) {
                         if (isset($eventData['backend_entry_toolbar_body:textarea'])) {
@@ -209,8 +206,6 @@ document.onreadystatechange = function () {
                     }
                     echo '    </div>'."\n";
                     echo '</div>'."\n";
-
-                    return true;
                     break;
 
                 case 'backend_header':
@@ -218,11 +213,13 @@ document.onreadystatechange = function () {
 ?>
     <script type="text/javascript" src="<?php echo $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_emoticonchooser/emoticonchooser.js'; ?>"></script>
 <?php
-                    return true;
                     break;
 
                 case 'css_backend':
-?>
+                    $eventData .= '
+
+/* emoticonchooser plugin start */
+
 .serendipity_toggle_emoticon_bar.serendipityPrettyButton {
     display: inline-block;
     margin: 0 auto 1px;
@@ -231,17 +228,22 @@ document.onreadystatechange = function () {
     margin: 3px auto 0;
     text-align: right;
 }
-<?php
+
+/* emoticonchooser plugin end */
+
+';
                     break;
 
                 default:
                     return false;
-                    break;
+
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */

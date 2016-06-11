@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -13,4 +13,3 @@
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT', '利用可能なスマイルの表示へのリンクの題名');
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT', 'スマイル');
 
-?>

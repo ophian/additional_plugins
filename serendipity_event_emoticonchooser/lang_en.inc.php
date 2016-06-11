@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -14,4 +14,3 @@
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT', 'Smileys');
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUP_BUTTON', 'Style frontend emoticon selector as button?');
 
-?>

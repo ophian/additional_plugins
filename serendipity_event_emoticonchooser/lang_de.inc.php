@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 1.0
@@ -16,3 +16,4 @@
 
 // Next lines were translated on 2013/05/23
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUP_BUTTON', 'Zeige Smiley-Auswahl im Frontend als Button?');
+

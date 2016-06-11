@@ -17,3 +17,4 @@
 
 // Next lines were translated on 2013/06/22
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUP_BUTTON', 'Zobrazit políèko pro výbìr smajlíkù jako tlaèítko?');
+
