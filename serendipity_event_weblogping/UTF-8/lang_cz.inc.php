@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version $Revision: 1381 $
+ *  @version
  *  @author Vladimír Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  */

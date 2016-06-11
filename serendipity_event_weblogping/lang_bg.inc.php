@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version $Revision: 1381 $
+ *  @version
  *  @author Iwan Cenov <jwalker@hotmail.bg>
  */
 
