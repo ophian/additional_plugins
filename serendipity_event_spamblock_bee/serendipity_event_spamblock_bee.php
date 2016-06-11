@@ -419,7 +419,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
                 }
 
                 if ($this->captchaQuestionType != 'custom' || !$this->useRegularExpressions) {
-                    $isCorrect = ((int)$answer === (int)$correctAnswer['answer']);
+                    $isCorrect = ((int)$answer === (int)$correctAnswer['answer']); // tries to fix strange issue of not recognized answers
                 }
 
                 // Also allow numbers as words
