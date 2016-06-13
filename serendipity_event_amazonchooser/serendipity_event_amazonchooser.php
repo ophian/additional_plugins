@@ -4,18 +4,11 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 if (!function_exists("Amazon_country_code")) {
    include(dirname(__FILE__)."/Amazon_s9y_lib.php");
 }
-
 
 class serendipity_event_amazonchooser extends serendipity_event
 {
@@ -29,9 +22,9 @@ class serendipity_event_amazonchooser extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AMAZONCHOOSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthew Groeninger, Ian');
-        $propbag->add('version',       '0.75');
+        $propbag->add('version',       '0.76');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.3',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.3.0'
         ));
@@ -97,18 +90,23 @@ class serendipity_event_amazonchooser extends serendipity_event
                 $propbag->add('radio_per_row', '1');
                 $propbag->add('default', 'us');
                 break;
+
+            default:
+                return false;
         }
         return true;
-
     }
 
-
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
+
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'backend_entry_toolbar_extended':
                     if (isset($eventData['backend_entry_toolbar_extended:textarea'])) {
                         $txtarea = $serendipity['version'][0] < '2' ?  $eventData['backend_entry_toolbar_extended:textarea'] : $eventData['backend_entry_toolbar_extended:nugget'];
@@ -146,7 +144,6 @@ class serendipity_event_amazonchooser extends serendipity_event
                             $eventData[$element] = preg_replace_callback('/(?<!\\\\)\[amazon_chooser\](.*?),(.*?)\[\/amazon_chooser\]/', array(&$this,'get_amazon_item'), $eventData[$element]);
                        }
                     }
-                    return true;
                     break;
 
                 case 'backend_wysiwyg':
@@ -160,7 +157,6 @@ class serendipity_event_amazonchooser extends serendipity_event
                         'img_path'   => 'serendipity_event_amazonchooser/serendipity_event_amazonchooser.gif',
                         'toolbar'    => 'other'
                     );//'img_path' deprecated, used by ckeditor plugin <= 4.1.0
-                    return true;
                     break;
 
                 case 'css_backend':
@@ -171,20 +167,17 @@ class serendipity_event_amazonchooser extends serendipity_event
                     } else {
                         $eventData .= file_get_contents(dirname(__FILE__) . '/serendipity_event_amazonchooser.css');
                     }
-                    return true;
                     break;
 
 
                 case 'serendipity_event_amazonchooser_button':
                     $eventData['button_out'] = $this->generate_button($eventData['textbox'],true);
-                    return true;
                     break;
 
                 case 'serendipity_event_amazonchooser_devinfo':
                     $eventData['dtoken']    = trim($this->get_config('dtoken'));
                     $eventData['secretKey'] = trim($this->get_config('secretKey'));
                     $eventData['aaid']      = trim($this->get_config('aaid'));
-                    return true;
                     break;
 
                 case 'external_plugin':
@@ -216,6 +209,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                             $_REQUEST[$val[0]] = $val[1];
                         }
                     }
+
                     switch($uri_part) {
                         case 'amazonch-js':
                             header('Content-Type: text/javascript');
@@ -263,8 +257,8 @@ class serendipity_event_amazonchooser extends serendipity_event
 
                             $serendipity['smarty']->assign(
                                  array(
-                                      'plugin_amazonchooser_css'           => serendipity_rewriteURL('serendipity_admin.css'),
-                                      'plugin_amazonchooser_js'            => serendipity_rewriteURL('plugin/amazonch-js')
+                                      'plugin_amazonchooser_css' => serendipity_rewriteURL('serendipity_admin.css'),
+                                      'plugin_amazonchooser_js'  => serendipity_rewriteURL('plugin/amazonch-js')
                                  ));
 
                             switch ($_REQUEST['step']) {
@@ -280,7 +274,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                                     }
                                     $request_mode = trim((function_exists('serendipity_specialchars') ? serendipity_specialchars(rawurlencode($_REQUEST['mode'])) : htmlspecialchars(rawurlencode($_REQUEST['mode']), ENT_COMPAT, LANG_CHARSET)));
                                     if (in_array($_REQUEST['mode'],$mode)) {
-                                        $results = $this->Amazon_Call("search",$request_mode,trim((function_exists('serendipity_specialchars') ? serendipity_specialchars(rawurlencode($_REQUEST['keyword'])) : htmlspecialchars(rawurlencode($_REQUEST['keyword']), ENT_COMPAT, LANG_CHARSET))),$country_url,$page);
+                                        $results = $this->Amazon_Call("search", $request_mode, trim((function_exists('serendipity_specialchars') ? serendipity_specialchars(rawurlencode($_REQUEST['keyword'])) : htmlspecialchars(rawurlencode($_REQUEST['keyword']), ENT_COMPAT, LANG_CHARSET))), $country_url, $page);
                                     } else {
                                         $results['return_count'] = 0;
                                         $results['count'] = 0;
@@ -315,7 +309,7 @@ class serendipity_event_amazonchooser extends serendipity_event
 
                                 case '2':
                                     if (isset($_REQUEST['asin'])) {
-                                        $result = $this->Amazon_Call("lookup",trim((function_exists('serendipity_specialchars') ? serendipity_specialchars(rawurlencode($_REQUEST['mode'])) : htmlspecialchars(rawurlencode($_REQUEST['mode']), ENT_COMPAT, LANG_CHARSET))),trim((function_exists('serendipity_specialchars') ? serendipity_specialchars(rawurlencode($_REQUEST['asin'])) : htmlspecialchars(rawurlencode($_REQUEST['asin']), ENT_COMPAT, LANG_CHARSET))),$country_url,$page);
+                                        $result = $this->Amazon_Call("lookup", trim((function_exists('serendipity_specialchars') ? serendipity_specialchars(rawurlencode($_REQUEST['mode'])) : htmlspecialchars(rawurlencode($_REQUEST['mode']), ENT_COMPAT, LANG_CHARSET))), trim((function_exists('serendipity_specialchars') ? serendipity_specialchars(rawurlencode($_REQUEST['asin'])) : htmlspecialchars(rawurlencode($_REQUEST['asin']), ENT_COMPAT, LANG_CHARSET))), $country_url, $page);
                                     } else {
                                         $result['count'] = 0;
                                         $result['error_message'] = PLUGIN_EVENT_AMAZONCHOOSER_NOASIN;
@@ -366,26 +360,32 @@ class serendipity_event_amazonchooser extends serendipity_event
                                         )
                                     );
                                     break;
-                            }
+                            } // switch end
+
                             // use native API here - extends s9y version >= 1.3'
                             $content = $this->parseTemplate($tfile);
                             echo $content;
-                        };
+                            break;
+                    };
+                    break; // external_plugin end
 
                 default:
                     return false;
-                    break;
+
             }
+            return true;
         } else {
             return false;
         }
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_EVENT_AMAZONCHOOSER_TITLE;
     }
 
-    function generate_button ($txtarea,$return_output) {
+    function generate_button ($txtarea,$return_output)
+    {
         global $serendipity;
         if (!isset($txtarea)) {
             $txtarea = 'body';
@@ -410,7 +410,8 @@ class serendipity_event_amazonchooser extends serendipity_event
         }
     }
 
-    function get_amazon_item($matches) {
+    function get_amazon_item($matches)
+    {
         global $serendipity;
 
         if (!is_dir($serendipity['serendipityPath'].'templates_c/amazonchooser/')) {
@@ -432,7 +433,7 @@ class serendipity_event_amazonchooser extends serendipity_event
 
            if (isset($asin)) {
                $method = "lookup";
-               $result = $this->Amazon_Call($method,$Searchindex,$asin,$country_url,0);
+               $result = $this->Amazon_Call($method, $Searchindex, $asin, $country_url, 0);
            } else {
                $item_count = -1;
                $error_message = PLUGIN_EVENT_AMAZONCHOOSER_NOASIN;
@@ -459,7 +460,8 @@ class serendipity_event_amazonchooser extends serendipity_event
         return($content);
     }
 
-    function Amazon_Call($method,$mode,$searchstring,$country_url,$page) {
+    function Amazon_Call($method, $mode, $searchstring, $country_url, $page)
+    {
         global $serendipity;
 
         if (!is_dir($serendipity['serendipityPath'].'templates_c/amazonget/')) {
@@ -488,6 +490,8 @@ class serendipity_event_amazonchooser extends serendipity_event
         }
         return $results;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

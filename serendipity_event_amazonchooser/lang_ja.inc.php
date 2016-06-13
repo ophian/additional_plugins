@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -31,4 +31,3 @@
 @define('PLUGIN_EVENT_AMAZONCHOOSER_STARRING', '主演');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_DISTRIBUTOR', '配給');
 
-?>

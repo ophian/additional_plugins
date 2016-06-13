@@ -1,13 +1,13 @@
 <html>
     <head>
-		<meta http-equiv="content-type" content="text/html; charset=windows-1250">
+        <meta http-equiv="content-type" content="text/html; charset=windows-1250">
         <title>Dokumentace: Amazon Chooser</title>
     </head>
 
 <body>
-    
+
 <h1>Dokumentace k pluginu 'Amazon Chooser'<br />
-	<small>(serendipity_event_amazonchooser)</small></h1>
+    <small>(serendipity_event_amazonchooser)</small></h1>
 
 <p>Dokumentaci k tomuto pluginu přeložil do češtiny Vladimír Ajgl (vlada [zavinac] ajgl [tecka] cz) a naposledy zkontroloval dne 15.1.2012. Od té doby mohl být plugin pozměněn nebo mohly být rozšířené jeho funkce. Zkontrolujte pro jistotu i <a href="documentation_en.html">aktuální anglickou dokumentaci</a>.
 <p>
@@ -19,7 +19,7 @@
 <h1>Požadavky</h1>
 
 <p>Abyste mohli využít tento plugin, budete potřebovat Amazon API klíč. Dále je nezbytné, aby váš server/firewall umožňoval připojení k serverům Amazonu. Nakonec tento plugin vyžaduje verzi Serendipity 1.4.1 nebo novější, aby mohl přidávat vlastní tlačítka do editoru.</p>
-    
+
 <h2>Žádost o Amazon API klíč</h2>
 
 <p>API klíč je jedinečný řetězec znaků, který obdržíte od Amazonu, abyste se mohli identifikovat, abyste mohli identifikovat Váš blog. Tato identifikace umožňuje Amazonu sledovat odkazy, případné akce Obchodního partnera Amazon, a vytížení jednotlivých uživatelů. Nezapomeňte si přečíst Podmínky použití služby na Amazonu, abyste věděli, co je a není přípustné dělat s API klíčem.</p>
@@ -37,7 +37,7 @@
 <p>Plugin "Amazon-Chooser" lze nainstalovat běžným způsobem pomocí pluginu SPARTACUS. Případně též zkopírováním souborů do podadresáře "plugins/" a nainstalováním v administrační sekci blogu kliknutím nejdříve na odkaz "Konfigurace pluginů" a dále na "Klikněte pro nainstavoání nového pluginu UDÁLOSTÍ".</p>
 
 <p>Jakmile je plugin nainstalovaný, můžete měnit jeho nastavení po kliknutí na název pluginu v sekci "Konfigurace pluginů". Význam jednotlivých voleb nastavení je vysvětlen níže.</p>
-    
+
 <h2>Nastavení pluginu</h2>
 
 <ol>
@@ -59,7 +59,7 @@
 <p>Při psaní příspěvku na blog můžete kliknout na tlačítko "Amazon media" (a jde to ve WYSIWYG módu). Otevře se nové vyskakovací okno. V něm můžete vyhledat knihu nebo jiný produkt. Na straně s výsledky hledání vyberete položku, kterou chcete zobrazit v blogu. Jakmile to uděláte, bude položka vložena do příspěvku pomocí následující značky:</p>
 
 <p><strong>[amazon_chooser]32423434X,Books[/amazon_chooser]</strong></p>
-    
+
 <p>Při zobrazení příspěvku bude tato značka nahrazena informacemi o produktu staženými z Amazon serveru. Toto nahrazení je automatické a děje se při každém zobrazení stránky znovu, takže návštěvníci uvidí například aktuální cenu. Pokud znáte identifikátor položky (tzv. ASIN), můžete značku napsat do příspěvku ručně, bez použití tlačítka "Amazon media".</p>
 
 <p>Výsledky hledání jsou na Amazonu cachovány jednu hodinu. Přímo v pluginu jsou výsledky hledání cachovány 12 hodin. Pokud chcete vyčistit cache, jednoduše vymažte obsah adresáře templates_c/amazonchooser/ directory.</p>
@@ -77,7 +77,7 @@
 
 <li>Verze .57</li>
 <ul><li>Aktualizace pluginu, aby používal funkci serendipity_rewriteurl() pro přepis URL adres. Zjevně jsem někde opomenul přepisovat URL.</li></ul>
- 
+
 <li>Verze .56</li>
 <ul><li>Aktualizována knihovna Amazon_s9y_lib.php - odstraněny přebytečné proměnné.</li>
 <li>Aktualizovaný soubor serendipity_event_amazonchooser.css pro postranní sloupec amazon.</li></ul>
@@ -97,7 +97,7 @@
 <ul><li>Oprava cachování adresářů.</li></ul>
 
 <li>Verze .51</li>
-<ul><li>Téměř úplné přepsání pluginu, aby byl v souladu s podmínkami použití Amazon.</li>  
+<ul><li>Téměř úplné přepsání pluginu, aby byl v souladu s podmínkami použití Amazon.</li>
   <li>Plugin umožňuje podepsané požadavky Amazon, což znamená, že nyní po uživateli vyžaduje, aby měl na Amazonu registrovaný vývojářský účet.</li>
   <li>Plugin používá šablonovací systém Smarty (použitelný v různých šablonách vzhledu)</li>
   <li>Plugin používá dvě úrovně cachování, aby urychlil zpracování požadavků.</li>

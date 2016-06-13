@@ -1,3 +1,9 @@
+0.76:
+-----
+ * Set plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+ * Fix possible Smarty errors
+
 0.75:
 -----
  * Use native API method parseTemplate() (only)

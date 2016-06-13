@@ -17,7 +17,7 @@
                         {/if}
                      <div class="serendipity_amazonchr_block">
                         <div class="serendipity_amazonchr_title">{$thingy.strings.title} <span class="serendipity_amazonchr_productgroup">({$thingy.ITEMATTRIBUTES.ITEMATTRIBUTES_PRODUCTGROUP})</span></div>
-                        {if !isset($thingy.strings.mediumurl)}<div class="serendipity_amazonchr_noimage">({$CONST.PLUGIN_EVENT_AMAZONCHOOSER_NOIMAGE})</div>{/if}   
+                        {if !isset($thingy.strings.mediumurl)}<div class="serendipity_amazonchr_noimage">({$CONST.PLUGIN_EVENT_AMAZONCHOOSER_NOIMAGE})</div>{/if}
                         <div class="serendipity_amazonchr_detail"><a href="{$thingy.strings.DETAILPAGEURL}" target="_new">{$CONST.PLUGIN_EVENT_AMAZONCHOOSER_DISTINCTURL}</a></div>
                      {else}
                         {if isset($thingy.strings.mediumurl)}
@@ -27,7 +27,7 @@
                         {/if}
                      <div class="serendipity_amazonchr_block">
                          <div class="serendipity_amazonchr_title">{$thingy.strings.title} <span class="serendipity_amazonchr_productgroup">({$thingy.ITEMATTRIBUTES.ITEMATTRIBUTES_PRODUCTGROUP})</span></div>
-                         {if !isset($thingy.strings.mediumurl)}<div class="serendipity_amazonchr_noimage">({$CONST.PLUGIN_EVENT_AMAZONCHOOSER_NOIMAGE})</div>{/if}   
+                         {if !isset($thingy.strings.mediumurl)}<div class="serendipity_amazonchr_noimage">({$CONST.PLUGIN_EVENT_AMAZONCHOOSER_NOIMAGE})</div>{/if}
                          <div class="serendipity_amazonchr_detail"><a href="{$thingy.strings.DETAILPAGEURL}" target="_new">{$CONST.PLUGIN_EVENT_AMAZONCHOOSER_DISTINCTURL}</a></div>
                    {/if}
                      {if isset($thingy.strings.author)}

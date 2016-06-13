@@ -51,7 +51,7 @@
                     <input type="button" class="serendipityPrettyButton input_button"  value="{$CONST.BACK}" onclick=window.location.href="{$plugin_amazonchooser_search_url}" />
                 </div>
             {elseif $plugin_amazonchooser_page eq 'Lookup'}
-              {if ($plugin_amazonchooser_item_count == 1 and $plugin_amazonchooser_return_count == 1) }
+              {if ($plugin_amazonchooser_item_count == 1 and $plugin_amazonchooser_return_count == 1)}
                 <h3>{$CONST.PLUGIN_EVENT_AMAZONCHOOSER_CHOSE} - {$thingy.strings.title}</h3>
                 {include file=$plugin_amazonchooser_displaytemplate}
                 <form action="#" method="get" name="serendipity[selForm]">

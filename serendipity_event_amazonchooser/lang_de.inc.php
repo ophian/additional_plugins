@@ -21,3 +21,4 @@
 @define('PLUGIN_EVENT_AMAZONCHOOSER_SEARCH_DESC', 'Nach welchem Wort soll gesucht werden;');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_CLICK', 'Das gesuchte Medium anklicken:');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_CHOSE', 'Sie wählten ');
+

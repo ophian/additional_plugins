@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.2
  */
@@ -31,4 +31,3 @@
 @define('PLUGIN_EVENT_AMAZONCHOOSER_STARRING', '主演');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_DISTRIBUTOR', '配給');
 
-?>

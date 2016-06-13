@@ -1,11 +1,13 @@
-/* Amazon Chooser Plugin */
+
+/* Amazon Chooser Plugin start */
+
 div.serendipity_amazonchr_title {
   font-size:100%;
   font-weight:bold;
 }
 
 div.serendipity_amazonchr_body_list {
-  padding: 20px; 
+  padding: 20px;
  -moz-background-clip:border;
  -moz-background-inline-policy:continuous;
  -moz-background-origin:padding;
@@ -18,7 +20,7 @@ div.serendipity_amazonchr_body_list {
 }
 
 div.serendipity_amazonchr_page_buttons {
-  padding-left: 30px; 
+  padding-left: 30px;
   padding-right: 30px;
   width: 75%;
 }
@@ -42,7 +44,7 @@ span.serendipity_amazonchr_productgroup {
 div.serendipity_amazonchr_body_count {
   font-size:1.1em;
   font-weight:bold;
-  padding: 10px; 
+  padding: 10px;
 }
 
 div.serendipity_amazonchr_body {
@@ -99,3 +101,4 @@ div.amazon_sidebar img {
   border: 0px;
 }
 
+/* Amazon Chooser Plugin end */

@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Luis Sieira García <jaimito.hendrix@gmail.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -137,4 +137,4 @@
 @define('PLUGIN_EVENT_AMAZONCHOOSER_SETTINGS_PROBLEM','La causa más común de este error es una mala configuración del plugin. Por favor, consulte la documentación y compruebe la configuración del plugin.');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_PLUGINPROBLEM','Conflicto de versiones con la biblioteca Amazon.');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_PLUGINPROBLEM_DESC','El plugin Botón de Amazon Media depende de una versión más reciente del archivo "Amazon_s9y_lib.php. Por favor, comprueba para asegurarte de que todos tus plugin están actualizados.');
-?>
+
