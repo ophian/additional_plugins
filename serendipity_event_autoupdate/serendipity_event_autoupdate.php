@@ -4,42 +4,67 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_autoupdate extends serendipity_event {
+class serendipity_event_autoupdate extends serendipity_event
+{
     var $title = PLUGIN_EVENT_AUTOUPDATE_NAME;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_EVENT_AUTOUPDATE_NAME);
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.1.5');
+        $propbag->add('version',       '1.2.0');
+        $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'php'         => '5.2'
         ));
-        $propbag->add('event_hooks',   array('plugin_dashboard_updater' => true,
-                                             'backend_sidebar_entries_event_display_update' => true));
+        $propbag->add('event_hooks',   array(
+            'plugin_dashboard_updater'                      => true,
+            'backend_sidebar_entries_event_display_update'  => true
+        ));
         $propbag->add('groups', array('BACKEND_FEATURES'));
         if ($serendipity['version'][0] < 2) {
-            $this->dependencies   = array('serendipity_event_dashboard' => 'keep');
+            $this->dependencies = array('serendipity_event_dashboard' => 'keep');
         }
     }
 
-    function generate_content(&$title) {
+    function introspect_config_item($name, &$propbag)
+    {
+        switch($name) {
+            case 'download_url':
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_EVENT_AUTOUPDATE_DL_URL);
+                $propbag->add('description', PLUGIN_EVENT_AUTOUPDATE_DL_URL_DESC);
+                $propbag->add('default',     'https://github.com/s9y/Serendipity/releases/download/');
+                break;
+
+            case 'releasefile_url':
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_EVENT_AUTOUPDATE_RF_URL);
+                $propbag->add('description', PLUGIN_EVENT_AUTOUPDATE_RF_URL_DESC);
+                $propbag->add('default',     'https://github.com/s9y/Serendipity/releases/tag/');
+                break;
+
+            default:
+                return false;
+
+        }
+        return true;
+    }
+
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function install() {
+    function install()
+    {
         global $serendipity;
 
         if (!$serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN) {
@@ -47,14 +72,11 @@ class serendipity_event_autoupdate extends serendipity_event {
         }
     }
 
-    /*function introspect_config_item($name, &$propbag) {
-        
-    }*/
-
     /**
      * flush progress or error messages
      */
-    function show_message($message='', $pname='', $next='') {
+    function show_message($message='', $pname='', $next='')
+    {
 
         if (!empty($pname)) {
             // Total processes
@@ -98,19 +120,22 @@ class serendipity_event_autoupdate extends serendipity_event {
         flush();
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'plugin_dashboard_updater':
-                        $eventData = '<form action="?serendipity[adminModule]=event_display&serendipity[adminAction]=update" method="POST">
+                    $eventData = '
+                    <form action="?serendipity[adminModule]=event_display&serendipity[adminAction]=update" method="POST">
                         <input type="hidden" name="serendipity[newVersion]" value="'.$addData.'" />
                         ' . ($serendipity['version'][0] > 1 ? '<button type="submit">'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'</button>' : '<input type="submit" value="'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'" />') . '
-                        </form>';
-                    return true;
+                    </form>';
                     break;
 
                 case 'backend_sidebar_entries_event_display_update':
@@ -265,13 +290,13 @@ EOS;
                         }
                     }
                     $this->close_page(true);
-
-                    return true;
                     break;
 
                 default:
                     return false;
+
             }
+            return true;
         } else {
             return false;
         }
@@ -282,12 +307,14 @@ EOS;
      * @param string $version Version
      * @return mixed updatepath/bool
      */
-    function fetchUpdate($version) {
+    function fetchUpdate($version)
+    {
         global $serendipity;
 
-        #$url     = (string)"http://prdownloads.sourceforge.net/php-blog/serendipity-$version.zip?download";
-        $url     = (string)"https://github.com/s9y/Serendipity/releases/download/$version/serendipity-$version.zip";
-        $update  = (string)$serendipity ['serendipityPath'] . 'templates_c/' . "serendipity-$version.zip";
+        $geturl = $this->get_config('download_url', 'https://github.com/s9y/Serendipity/releases/download/');
+        #$url    = (string)"http://prdownloads.sourceforge.net/php-blog/serendipity-$version.zip?download";
+        $url    = (string)"$geturl$version/serendipity-$version.zip";
+        $update = (string)$serendipity ['serendipityPath'] . 'templates_c/' . "serendipity-$version.zip";
 
         // do we already have it and is it eventually broken?
         if (file_exists($update)) {
@@ -335,11 +362,16 @@ EOS;
      * @param   string version
      * @return  boolean
      */
-    function verifyUpdate($update, $version) {
+    function verifyUpdate($update, $version)
+    {
+        $geturl = $this->get_config('download_url', 'https://github.com/s9y/Serendipity/releases/download/');
+        $md5url = $this->get_config('releasefile_url', 'https://github.com/s9y/Serendipity/releases/tag/');
+
         #$url          = (string)"http://prdownloads.sourceforge.net/php-blog/serendipity-$version.zip?download";
-        $url          = (string)"https://github.com/s9y/Serendipity/releases/download/$version/serendipity-$version.zip";
+        $url          = (string)"$geturl$version/serendipity-$version.zip";
         #$updatePage   = (string)$this->getPage("http://www.s9y.org/12.html");
-        $updatePage   = (string)$this->getPage("https://github.com/s9y/Serendipity/releases/tag/$version");
+        $updatePage   = (string)$this->getPage("$md5url$version");
+
         #$downloadLink = substr($updatePage, strpos($updatePage, $url), 200);
         $found        = array();
         // grep the checksum
@@ -361,7 +393,8 @@ EOS;
      * @param   string url
      * @return  page content
      */
-    function getPage($url) {
+    function getPage($url)
+    {
         $page = file_get_contents($url);
         if (empty($page)) {
             //try it again with curl if fopen was forbidden
@@ -381,7 +414,8 @@ EOS;
      * @param   string version
      * @return  boolean
      */
-    function unpackUpdate($version) {
+    function unpackUpdate($version)
+    {
         global $serendipity;
 
         $update    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-$version.zip";
@@ -418,7 +452,8 @@ EOS;
      * @param   string version
      * @return  boolean
      */
-    function copyUpdate($version) {
+    function copyUpdate($version)
+    {
         global $serendipity;
 
         $update    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-$version.zip";
@@ -466,7 +501,8 @@ EOS;
      * @param   string updatePath
      * @return  boolean
      */
-    function checkWritePermissions($update) {
+    function checkWritePermissions($update)
+    {
         global $serendipity;
 
         $zip = new ZipArchive;
@@ -496,7 +532,8 @@ EOS;
      * @param   string updatePath
      * @return  error
      */
-    function showNotWriteable($update) {
+    function showNotWriteable($update)
+    {
         global $serendipity;
 
         $zip = new ZipArchive;
@@ -538,7 +575,8 @@ EOS;
      * @param   string version
      * @return  boolean
      */
-    function checkIntegrity($version) {
+    function checkIntegrity($version)
+    {
         global $serendipity;
 
         $updateDir    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-$version/";
@@ -562,7 +600,8 @@ EOS;
      * @param   string version
      * @return  error
      */
-    function showChecksumErrors($version) {
+    function showChecksumErrors($version)
+    {
         global $serendipity;
 
         $updateDir    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-$version/";
@@ -595,7 +634,8 @@ EOS;
      * close the autoupdate progress page
      * @param   bool 007 title ;-)
      */
-    function close_page($terminate = false) {
+    function close_page($terminate = false)
+    {
         echo <<<EOS
             </article>
         </div>
@@ -615,7 +655,8 @@ EOS;
      * @param   string update messages
      * @return  refresh page
      */
-    function doUpdate() {
+    function doUpdate()
+    {
         global $serendipity;
 
         $msg = "Autoupdate successfully done!\\nWe now refresh to Serendipity Installer!\\n"; // escape for js
@@ -644,7 +685,8 @@ EOS;
      * empty a directory using the Standard PHP Library (SPL) iterator
      * @param   string directory
      */
-    function empty_dir($dir) {
+    function empty_dir($dir)
+    {
         if (!is_dir($dir)) return;
         try {
             $_dir = new RecursiveDirectoryIterator($dir);
@@ -668,7 +710,8 @@ EOS;
      * @param   string version
      * @return  boolean
      */
-    function cleanTemplatesC($version, $finish) {
+    function cleanTemplatesC($version, $finish)
+    {
         global $serendipity;
         $zip    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-$version.zip";
         $zipDir = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-$version";
@@ -693,7 +736,7 @@ EOS;
             // We have to reduce this call() = all tpl files, to clear the blogs template only, to not have the following automated recompile, force the servers memory 
             // to get exhausted, when using serendipity_event_gravatar plugin, which can eat up some MB...
             if (method_exists($serendipity['smarty'], 'clearCompiledTemplate')) { // SMARTY 3
-                if ($serendipity['smarty']->clearCompiledTemplate(null, $serendipity['template'])) {
+                if ($serendipity['smarty']->clearCompiledTemplate($serendipity['template'], $serendipity['template'])) {
                     return true;
                 }
             }
@@ -709,18 +752,19 @@ EOS;
      * debug
      * @param   string msg
      */
-    function debugMsg($msg) {
+    function debugMsg($msg)
+    {
         global $serendipity;
 
-        $this->debug_fp = @fopen ( $serendipity ['serendipityPath'] . 'templates_c/autoupdate.log', 'a' );
+        $this->debug_fp = @fopen ($serendipity ['serendipityPath'] . 'templates_c/autoupdate.log', 'a');
         if (!$this->debug_fp) {
             return false;
         }
 
         if (empty($msg)) {
-            fwrite ( $this->debug_fp, "failure \n" );
+            fwrite($this->debug_fp, "failure \n");
         } else {
-            fwrite ( $this->debug_fp, print_r ( $msg, true ) );
+            fwrite($this->debug_fp, print_r( $msg, true ));
         }
         fclose ( $this->debug_fp );
     }
@@ -728,3 +772,4 @@ EOS;
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>
