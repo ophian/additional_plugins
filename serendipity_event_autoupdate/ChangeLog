@@ -2,7 +2,7 @@
 ------
 
  * Set plugin consistencies
- * use load language API - extends required Serendipity version to v.1.6
+ * Use load language API - extends required Serendipity version to v.1.6
  * Add and allow custom release and download URLs.
    PLEASE NOTE:
     This will only work in combination with a custom RELEASE file
