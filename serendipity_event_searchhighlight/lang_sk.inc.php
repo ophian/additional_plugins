@@ -1,11 +1,10 @@
 <?php
 
 /**
- *  @author Martin Matu¹ka <martin@matuska.org>
+ *  @author Martin Matuska <martin@matuska.org>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME',     'Zvıraznenie vyhµadávanıch re»azcov');
-@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC',     'Zvırazòuje re»azce hµadané v odkazujúcom vyhµadávaèi.');
+@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME', 'Zvıraznenie vyhµadávanıch re»azcov');
+@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC', 'Zvırazòuje re»azce hµadané v odkazujúcom vyhµadávaèi.');
 
-?>
