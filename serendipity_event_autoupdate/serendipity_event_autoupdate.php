@@ -213,7 +213,6 @@ class serendipity_event_autoupdate extends serendipity_event
             </div>
             <nav id="user_menu">
                 <h2 class="visuallyhidden">User menu</h2>
-
                 <ul>
                     <li><a class="icon_link" href="serendipity_admin.php" title="Startpage"><svg class="icon icon-home" title="Serendipity backend home"><use xlink:href="#icon-home" width="69.462" height="63.668" x="-34.731" y="-31.834" transform="matrix(1 0 0 -1 34.731 31.8335)" overflow="visible"></use></svg><span class="visuallyhidden"> Startpage</span></a></li>
                 </ul>
@@ -306,7 +305,7 @@ EOS;
                                     if (true === $this->cleanTemplatesC($nv, false)) {
                                         $this->show_message('<p class="msg_success"><svg class="icon icon-ok" title="success"><use xlink:href="#icon-ok"></use></svg>Cleaning up the failed unpack directory!</p>');
                                     }
-                                    $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>Please <a href="">reload</a> this page (or by F5) to have another try off upgrading your Blog successful!</p>');
+                                    $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>Please <a href="">reload</a> this page (or by F5) to have another try to upgrade your Blog successful!</p>');
                                 }
 
                             } else {
@@ -376,7 +375,7 @@ EOS;
 
                 $success = @curl_exec($ch);
                 if (!$success) {
-                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Downloading update failed! <a href="">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a></p>');
+                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Downloading update failed! <a href="">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.</p>');
                     return false;
                 }
             }
@@ -418,7 +417,7 @@ EOS;
         if ($check == $checksum) {
             return true;
         } else {
-            $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Error! Could not verify the update. <a href="">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a></p>');
+            $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Error! Could not verify the update. <a href="">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.</p>');
             return false;
         }
     }
@@ -520,7 +519,7 @@ EOS;
                     $success = @copy($updateDir . $file, $target);
                 }
                 if (!$success) {
-                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Error! Copying file to '.$target.' failed! <a href="">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a></p>');
+                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Error! Copying file to '.$target.' failed! <a href="">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.</p>');
                     return false;
                 }
             }
@@ -677,7 +676,7 @@ EOS;
     </div>
 EOS;
         if ($terminate) {
-            $this->show_message('<p id="terminator" style="font-size: smaller;"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>PLEASE NOTE:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If this page ever stops with an error message during procession, you can normally just RELOAD your browser [<em>by keyboard shortcut, eg. F5</em>] to get another run. This does not do any harm to a continued upgrade.</p>');
+            $this->show_message('<p id="terminator" style="font-size: smaller;"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>PLEASE NOTE:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If this page ever stops with an error message during procession, you can normally just RELOAD your browser [<em>by keyboard shortcut, eg. F5</em>] to get another run. This does not do any harm to a continued upgrade.</p>');
             echo <<<EOS
     </body>
 </html>
