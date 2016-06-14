@@ -1,3 +1,10 @@
+1.2.1:
+------
+
+ * Now uses SVG sprites
+ * Some message tweaks
+ * Silence a possible error
+
 1.2.0:
 ------
 
