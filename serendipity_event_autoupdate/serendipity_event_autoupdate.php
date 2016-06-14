@@ -160,6 +160,8 @@ class serendipity_event_autoupdate extends serendipity_event
                     $lang_char = LANG_CHARSET;
                     $ad_suite  = SERENDIPITY_ADMIN_SUITE;
                     $css_upd   = @file_get_contents(dirname(__FILE__) . '/upgrade.min.css');
+                    $bimgpath  = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . 's9y_banner_small.png';
+                    $s9ybanner = (file_exists($_SERVER['DOCUMENT_ROOT'].$bimgpath) ? '<img src="' . $bimgpath . '" alt="Serendipity PHP Weblog" title="' . POWERED_BY . ' Serendipity" />' : '');
                     $nv        = (function_exists('serendipity_specialchars') ? serendipity_specialchars($_REQUEST['serendipity']['newVersion']) : htmlspecialchars($_REQUEST['serendipity']['newVersion'], ENT_COMPAT, LANG_CHARSET)); // reduce to POST only?
                     $logmsg    = '';
                     echo <<<EOS
@@ -209,7 +211,7 @@ class serendipity_event_autoupdate extends serendipity_event
         <div class="clearfix">
             <div id="banner">
                 <h1>{$ad_suite}</h1>
-                <span class="block_level">{$self_info}</span>
+                <span class="block_level">{$s9ybanner}{$self_info}</span>
             </div>
             <nav id="user_menu">
                 <h2 class="visuallyhidden">User menu</h2>
