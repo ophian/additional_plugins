@@ -176,23 +176,11 @@ class serendipity_event_autoupdate extends serendipity_event
 
     <body id="serendipity_admin_page">
 
-    <header id="top">
-        <div class="clearfix">
-            <div id="banner">
-                <h1>{$ad_suite}</h1>
-                <span class="block_level">{$self_info}</span>
-            </div>
-            <nav id="user_menu">
-                <h2 class="visuallyhidden">User menu</h2>
-
-                <ul>
-                    <li><a class="icon_link" href="serendipity_admin.php" title="Startpage"><span class="icon-home"></span><span class="visuallyhidden"> Startpage</span></a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
     <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
+            <symbol id="icon-home" viewBox="-34.731 -31.834 69.462 63.668">
+                <path d="M34.73,5.319l-12.597,9.617v15.908h-9v-9.038L0,31.833l-34.73-26.513l5.461-7.155l3.741,2.856v-32.856H25.53V1.021 l3.74-2.855L34.73,5.319z M20.53-26.834H9v19H-9v-19h-11.529V4.204L0,19.88L20.53,4.204V-26.834z"></path>
+            </symbol>
             <symbol id="icon-clock" viewBox="0 0 1024 1024">
                 <title>clock</title>
                 <path class="path1" d="M658.744 749.256l-210.744-210.746v-282.51h128v229.49l173.256 173.254zM512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM512 896c-212.078 0-384-171.922-384-384s171.922-384 384-384c212.078 0 384 171.922 384 384s-171.922 384-384 384z"></path>
@@ -217,6 +205,21 @@ class serendipity_event_autoupdate extends serendipity_event
             </symbol>
         </defs>
     </svg>
+    <header id="top">
+        <div class="clearfix">
+            <div id="banner">
+                <h1>{$ad_suite}</h1>
+                <span class="block_level">{$self_info}</span>
+            </div>
+            <nav id="user_menu">
+                <h2 class="visuallyhidden">User menu</h2>
+
+                <ul>
+                    <li><a class="icon_link" href="serendipity_admin.php" title="Startpage"><svg class="icon icon-home" title="Serendipity backend home"><use xlink:href="#icon-home" width="69.462" height="63.668" x="-34.731" y="-31.834" transform="matrix(1 0 0 -1 34.731 31.8335)" overflow="visible"></use></svg><span class="visuallyhidden"> Startpage</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <div id="main" class="clearfix">
         <div id="serendipity_updater" class="clearfix">
             <header>
