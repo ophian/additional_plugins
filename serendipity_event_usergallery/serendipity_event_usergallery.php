@@ -31,7 +31,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian');
-        $propbag->add('version',       '2.66');
+        $propbag->add('version',       '2.67');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -56,6 +56,11 @@ class serendipity_event_usergallery extends serendipity_event
         global $serendipity;
 
         switch ($name) {
+            case 'separator2':
+            case 'separator1':
+                $propbag->add('type',        'separator');
+                break;
+
             case 'title':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_USERGALLERY_PRETTY_NAME);
@@ -194,7 +199,7 @@ class serendipity_event_usergallery extends serendipity_event
                 $select_type["magnific"]     = 'Magnific-Popup';
                 $propbag->add('type',          'select');
                 $propbag->add('name',          PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_NAME);
-                $propbag->add('description',   '');
+                $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_DESC);
                 $propbag->add('select_values', $select_type);
                 $propbag->add('default',       'lightbox');
                 break;
