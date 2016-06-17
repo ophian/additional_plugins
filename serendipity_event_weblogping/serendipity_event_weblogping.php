@@ -305,12 +305,11 @@ class serendipity_event_weblogping extends serendipity_event
                 case 'backend_draft':
                 default:
                     return false;
-                    break;
             }
+            return true;
         } else {
             return false;
         }
-        return true;
     }
 
 }
