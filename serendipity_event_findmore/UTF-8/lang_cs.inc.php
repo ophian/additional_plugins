@@ -51,3 +51,4 @@
 
 // Next lines were translated on 2012/01/08
 @define('PLUGIN_EVENT_FINDMORE_LAZYLOAD_TEXT_EXAMPLE', 'Falešné tlačítko. Klikněte na něj, aby se natáhlo skutečné tlačítko.');
+

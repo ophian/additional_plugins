@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -27,3 +27,4 @@
 
 @define('PLUGIN_FINDMORE_EXTENDEDONLY', 'Само в разширена статия');
 @define('PLUGIN_FINDMORE_EXTENDEDONLY_BLAHBLAH', 'Показва връзките само в при показване на цялата статия?');
+

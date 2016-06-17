@@ -32,14 +32,12 @@ function insertLazyLoadButton(button, service, path, desc) {
         toggleSwitcher($switcher, path);
         toggleButton($button, $dummy, $switcher, path);
     });
-    
+
     $switcher.click(function() {
         toggleSwitcher($switcher, path);
         toggleButton($button, $dummy, $switcher, path);
     });
 
-    
-    
     jQuery("script:last").parent().first().append($switcher);
     jQuery("script:last").parent().first().append($dummy);
 }

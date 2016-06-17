@@ -1,30 +1,24 @@
-<?php // 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_findmore extends serendipity_event
 {
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_FINDMORE_NAME);
         $propbag->add('description',   PLUGIN_FINDMORE_DESCRIPTION);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Kodewulf');
-        $propbag->add('version',       '1.22');
+        $propbag->add('version',       '1.23');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -53,12 +47,15 @@ class serendipity_event_findmore extends serendipity_event
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
     }
 
-    function generate_content(&$title) {
-        $title       = PLUGIN_FINDMORE_NAME;
+    function generate_content(&$title)
+    {
+        $title = PLUGIN_FINDMORE_NAME;
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
+
         switch ($name) {
             // Show on article summary, or only extended page?
             case 'extended_only':
@@ -74,7 +71,7 @@ class serendipity_event_findmore extends serendipity_event
                 $propbag->add('description', PLUGIN_FINDMORE_SPREADLY_DESC);
                 $propbag->add('default', 'true');
                 break;
-                
+
             case 'spreadly_emails':
                 $propbag->add('type', 'text');
                 $propbag->add('name', PLUGIN_FINDMORE_SPREADLY_EMAILS);
@@ -156,11 +153,12 @@ class serendipity_event_findmore extends serendipity_event
                                                         'after-entry' => 'After entry',
                                                         'after-findmore' => 'After Findmore links'));
                 $propbag->add('default', 'after-entry');
-        };
+        }
         return true;
     }
 
-    function &smartyParse(&$data, $filename = '') {
+    function &smartyParse(&$data, $filename = '')
+    {
         global $serendipity;
         static $disabled_services = null;
         static $lazyload = null;
@@ -173,7 +171,7 @@ class serendipity_event_findmore extends serendipity_event
             }
             $serendipity['smarty']->assign('findmore_disabled_services', $disabled_services);
         }
-        
+
         if ($lazyload == null) {
             $lazyload  = serendipity_db_bool($this->get_config('lazyload'));
             $serendipity['smarty']->assign('findmore_lazyload', $lazyload);
@@ -200,15 +198,16 @@ class serendipity_event_findmore extends serendipity_event
         return $content;
     }
 
-    function generateMicroid($firstUri, $secondUri) {
+    function generateMicroid($firstUri, $secondUri)
+    {
         $firstUriHash = sha1($firstUri);
         $secondUriHash = sha1($secondUri);
 
         return sha1($firstUriHash . $secondUriHash);
     }
 
-
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         static $path = null;
         static $diggUrl = null;
@@ -223,61 +222,63 @@ class serendipity_event_findmore extends serendipity_event
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'css':
-                    if (stristr($eventData, '.serendipity_findmore')) {
-                        // class exists in CSS, so a user has customized it and we don't need default
-                        return true;
-                    }
-?>
+                    // CSS class does NOT exist by user customized template styles, include default
+                    if (strpos($eventData, '.serendipity_findmore') === false) {
+                        $eventData .= '
 
-      .serendipity_findmore {
-        margin: 5px auto 5px auto;
-        padding: 5px;
-        text-align: center;
-      }
+/* serendipity_event_findmore start */
 
-      .serendipity_findmore img {
-        border: 0px;
-      }
+.serendipity_findmore {
+    margin: 5px auto 5px auto;
+    padding: 5px;
+    text-align: center;
+}
 
-      .serendipity_diggcount {
-          float: left;
-      }
+.serendipity_findmore img {
+    border: 0px;
+}
 
-      .findmore_like_button img, .findmore_like_button iframe {
-        cursor: pointer;
-    }
+.serendipity_diggcount {
+    float: left;
+}
 
-    .lazyload_switcher {
-        margin-right: 0.5em;
-        display: inline;
-        float: left;
-        margin-top: 4px;
-    }
+.findmore_like_button img, .findmore_like_button iframe {
+    cursor: pointer;
+}
 
-    .findmore_like_button {
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 2em;
-    }
+.lazyload_switcher {
+    margin-right: 0.5em;
+    display: inline;
+    float: left;
+    margin-top: 4px;
+}
 
-    .google_like {
-        width: 150px;
-        height: 21px;
-    }
+.findmore_like_button {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2em;
+}
 
-    .gplus_like {
-        display: inline;
-    }
+.google_like {
+    width: 150px;
+    height: 21px;
+}
 
-    .serendipity_findmore_like {
-        vertical-align: middle;
-        height: 21px;
-    }
+.gplus_like {
+    display: inline;
+}
 
-<?php
-                    return true;
+.serendipity_findmore_like {
+    vertical-align: middle;
+    height: 21px;
+}
+
+/* serendipity_event_findmore end */
+';
                     break;
 
                 case 'frontend_header':
@@ -303,7 +304,7 @@ class serendipity_event_findmore extends serendipity_event
                     if ($lazyload) {
                         echo '<script src="' .  $path .'plugin_findmore.js"></script>'."\n";
                     }
-                    
+
                     if (! ($disabled_services['plusone'] || $lazyload)) {
                         #echo '<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>'."\n";
                         echo '<script type="text/javascript">
@@ -314,10 +315,6 @@ class serendipity_event_findmore extends serendipity_event
                           })();
                         </script>' . "\n";
                     }
-
-                    
-
-                    return true;
                     break;
 
                 case 'frontend_display:html:per_entry':
@@ -355,26 +352,30 @@ class serendipity_event_findmore extends serendipity_event
                     if ($diggCountPlacement == 'after-findmore') {
                         $eventData['display_dat'] .= $diggCountData;
                     }
-
                     break;
 
                 default:
-                   return false;
-           }
+                    return false;
+            }
+            return true;
+        } else {
+            return false;
         }
     }
 
-    function getUrls($input, $strict=true) {
+    function getUrls($input, $strict=true)
+    {
         $types = array("href", "src", "url");
         while(list(,$type) = each($types)) {
             $innerT = $strict?'[a-z0-9:?=()&@/._-]+?':'.+?';
             preg_match_all("|$type\=([\"'`])(".$innerT.")\\1|i", $input, $matches);
             $ret[$type] = $matches[2];
-	}
-	return $ret;
+        }
+        return $ret;
     }
 
-    function getDiggUrls($input, $strict=true) {
+    function getDiggUrls($input, $strict=true)
+    {
         $urls = $this->getUrls($input, $strict);
         $diggs = array();
         foreach ($urls['href'] as $url) {
@@ -389,7 +390,8 @@ class serendipity_event_findmore extends serendipity_event
         return $diggs;
     }
 
-    function getDiggCounts($input) {
+    function getDiggCounts($input)
+    {
         $diggs = $this->getDiggUrls($input);
         if (empty($diggs) || count($diggs) < 1) {
             return '<!-- no digg urls in entry -->';
@@ -402,4 +404,8 @@ class serendipity_event_findmore extends serendipity_event
 	}
         return $diggCount;
     }
+
 }
+
+/* vim: set sts=4 ts=4 expandtab : */
+?>

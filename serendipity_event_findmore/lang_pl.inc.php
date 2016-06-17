@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -27,3 +27,4 @@
 
 @define('PLUGIN_FINDMORE_EXTENDEDONLY', 'Tylko przy pełnej treści wpisu');
 @define('PLUGIN_FINDMORE_EXTENDEDONLY_BLAHBLAH', 'Zakładki mają być widoczne jedynie przy pełnej treści wpisu? ');
+

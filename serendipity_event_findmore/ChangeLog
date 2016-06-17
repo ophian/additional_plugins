@@ -1,3 +1,10 @@
+1.23:
+-----
+
+ * Add plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+ * Append the CSS to $eventData stream, not prepend!
+
 1.22: Removed ma.gnolia.com
 
 1.21:

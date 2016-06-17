@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -6,7 +6,7 @@
  *  EN-Revision: 1.6
  */
 
- @define('PLUGIN_FINDMORE_NAME', 'Показва връзки към услуги като Digg, Technorati, del.icio.us и т.н. отнасящи се до статията.');
+@define('PLUGIN_FINDMORE_NAME', 'Показва връзки към услуги като Digg, Technorati, del.icio.us и т.н. отнасящи се до статията.');
 @define('PLUGIN_FINDMORE_DESCRIPTION', 'Вие можете да премахвате или добавяте други услуги чрез редактиране на файл \'plugin_findmore.tpl\'. Въщо така имайте предвид, че можете да използвате HTML/JS код в entries.tpl template вместо тази приставка.');
 
 @define('PLUGIN_FINDMORE_PATH_NAME', 'Относителен път до изомраженията на Findmore');
@@ -27,3 +27,4 @@
 
 @define('PLUGIN_FINDMORE_EXTENDEDONLY', 'Само в разширена статия');
 @define('PLUGIN_FINDMORE_EXTENDEDONLY_BLAHBLAH', 'Показва връзките само в при показване на цялата статия?');
+
