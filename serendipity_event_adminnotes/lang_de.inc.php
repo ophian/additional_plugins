@@ -12,3 +12,4 @@
 
 @define('PLUGIN_ADMINNOTES_CUTOFF', 'Nachrichten nach X Bytes kürzen?');
 @define('PLUGIN_ADMINNOTES_CUTOFF_DESC', 'Nachrichten, die größer als die Anzahl der konfigurierten Bytes sind werden abgeschnitten und durch einen Link erweiterbar gemacht.');
+

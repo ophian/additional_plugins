@@ -1,3 +1,5 @@
+/* serendipity_event_adminnotes start */
+
 .serendipity_note {
     width: 50%;
     border: 1px solid black;
@@ -8,3 +10,5 @@
 .note_new {
     background-color: #00FF00;
 }
+
+/* serendipity_event_adminnotes end */

@@ -1,3 +1,10 @@
+1.15:
+-----
+
+ * Add plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+ * Append the CSS to $eventData stream, not prepend!
+
 0.14: Fix incorrect variable
 
 0.12: prepare to hook into 2.0 core Dashboard and use other 2.0 facilities

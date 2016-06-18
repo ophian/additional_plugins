@@ -4,47 +4,42 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include_once dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_adminnotes extends serendipity_event {
-
+class serendipity_event_adminnotes extends serendipity_event
+{
     var $debug;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_ADMINNOTES_TITLE);
         $propbag->add('description',   PLUGIN_ADMINNOTES_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
 
-        $propbag->add('version',       '0.14');
+        $propbag->add('version',       '0.15');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'html', 'markup', 'cutoff'));
         $propbag->add('event_hooks',   array(
-                                            'backend_frontpage_display'                         => true,
-                                            'backend_sidebar_entries'                           => true,
-                                            'backend_sidebar_admin'                             => true,
-                                            'backend_sidebar_entries_event_display_adminnotes'  => true,
-                                            'js_backend'                                        => true,
-                                            'backend_dashboard'                                 => true,
-                                            'css_backend'                                       => true,
-                                        )
-        );
+            'backend_frontpage_display'                         => true,
+            'backend_sidebar_entries'                           => true,
+            'backend_sidebar_admin'                             => true,
+            'backend_sidebar_entries_event_display_adminnotes'  => true,
+            'js_backend'                                        => true,
+            'backend_dashboard'                                 => true,
+            'css_backend'                                       => true,
+        ));
         $propbag->add('groups', array('BACKEND_FEATURES'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'feedback':
                 $propbag->add('type',        'boolean');
@@ -98,7 +93,8 @@ class serendipity_event_adminnotes extends serendipity_event {
         return true;
     }
 
-    function setupDB() {
+    function setupDB()
+    {
         global $serendipity;
 
         if (serendipity_db_bool($this->get_config('db_built_1', false))) {
@@ -126,7 +122,8 @@ class serendipity_event_adminnotes extends serendipity_event {
         $this->set_config('db_built_1', 'true');
     }
 
-    function getMyNotes($limited = true) {
+    function getMyNotes($limited = true)
+    {
         global $serendipity;
 
         $this->setupDB();
@@ -161,11 +158,13 @@ class serendipity_event_adminnotes extends serendipity_event {
         return serendipity_db_query($sql, (is_int($limited) ? true : false), 'assoc');
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_ADMINNOTES_TITLE;
     }
 
-    function shownotes() {
+    function shownotes()
+    {
         global $serendipity;
 
         if ($serendipity['version'][0] < 2) {
@@ -393,7 +392,8 @@ class serendipity_event_adminnotes extends serendipity_event {
         }
     }
 
-    function output($string) {
+    function output($string)
+    {
         global $serendipity;
         static $allow_html = null;
         static $do_markup  = null;
@@ -409,7 +409,7 @@ class serendipity_event_adminnotes extends serendipity_event {
             } else {
                 $allow_html = serendipity_db_bool($allow_html);
             }
-            $do_markup  = serendipity_db_bool($this->get_config('markup'));
+            $do_markup  = serendipity_db_bool($this->get_config('markup', 'true'));
         }
 
         if ($allow_html) {
@@ -427,12 +427,14 @@ class serendipity_event_adminnotes extends serendipity_event {
         return $body;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'backend_sidebar_entries':
                     if ($serendipity['version'][0] < 2) {
@@ -460,6 +462,7 @@ class serendipity_event_adminnotes extends serendipity_event {
 ?>
 
 /* serendipity_event_adminnotes (quicknotes) start */
+
 function fulltext_toggle(id) {
     if ( document.getElementById(id + '_full').style.display == '' ) {
         document.getElementById(id + '_full').style.display='none';
@@ -472,6 +475,7 @@ function fulltext_toggle(id) {
     }
     return false;
 }
+
 /* serendipity_event_adminnotes (quicknotes) end */
 
 <?php
@@ -571,29 +575,36 @@ function fulltext_toggle(id) {
                     break;
 
                 case 'css_backend':
-                    if (!strpos($eventData, '.note_')) {
-                        echo "\n/* plugin adminnotes start */\n";
-                        // class exists in CSS, so a user has customized it and we don't need default
+                    // CSS class does NOT exist by user customized template styles, include default
+                    if (strpos($eventData, '.note_') === false) {
                         if ($serendipity['version'][0] < 2) {
-                            echo file_get_contents(dirname(__FILE__) . '/notes.css');
+                            $eventData .= @file_get_contents(dirname(__FILE__) . '/notes.css');
                         } else {
 ?>
+
+/* plugin adminnotes start */
 
 .note_subject { margin: 0px 0px 1em; }
 .note_subject h3 { line height: 1.6; margin: 0; }
 .note_new { border: 2px solid rgb(0, 255, 0); margin: -0.2em; padding: 0.2em; }
 
+/* plugin adminnotes end */
+
 <?php
                         }
-                        echo "/* plugin adminnotes end */\n\n";
                     }
                     break;
 
+                default:
+                    return false;
             }
+            return true;
+        } else {
+            return false;
         }
-
-        return true;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

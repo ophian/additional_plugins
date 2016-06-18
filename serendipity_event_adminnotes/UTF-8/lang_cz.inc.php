@@ -3,7 +3,8 @@
 /**
  *  @author Vladimír Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/05
- */@define('PLUGIN_ADMINNOTES_TITLE', 'Rychlé poznámky');
+ */
+@define('PLUGIN_ADMINNOTES_TITLE', 'Rychlé poznámky');
 @define('PLUGIN_ADMINNOTES_DESC', 'Zobrazuje v administrační sekci oznámení přihlášeným uživatelům');
 
 @define('PLUGIN_ADMINNOTES_FEEDBACK', 'Povolit uživatelům posílání poznámek?');
@@ -15,3 +16,4 @@
 
 @define('PLUGIN_ADMINNOTES_CUTOFF', 'Zkrátit poznámky po X znacích?');
 @define('PLUGIN_ADMINNOTES_CUTOFF_DESC', 'Poznámky delši než zde nastaveno budou ve výpisu oříznuty a jejich plné znění se zobrazí až po rozkliknutí.');
+
