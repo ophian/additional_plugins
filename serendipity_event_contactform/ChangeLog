@@ -5,7 +5,7 @@
 
 1.19:
 -----
- * reset encoded quotes for text and subject
+ * Reset encoded quotes for text and subject
 
 1.18:
 -----
@@ -23,12 +23,12 @@
 1.16:
 -----
 
-* fix XSS security vulnerability (Thanks to Stefan Schurtz!)
+* Fix XSS security vulnerability (Thanks to Stefan Schurtz!)
 
 1.15:
 -----
 
-* latest: Smarty3 forward compatibility
+* Latest: Smarty3 forward compatibility
 
 1.14:
 -----
