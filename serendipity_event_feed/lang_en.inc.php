@@ -1,6 +1,7 @@
 <?php
 
 @define('PLUGIN_DASHBOARD_FEEDME_PLUGIN_TITLE', 'Dashboard Feed Reader');
+@define('PLUGIN_DASHBOARD_FEEDME_PLUGIN_DESC', 'The Dashboard S9y Feedle');
 @define('PLUGIN_DASHBOARD_FEEDME_TITLE', 'Feedme');
 
 @define('PLUGIN_EVENT_FEED_SHOW_FEEDS', 'Show Feedme');

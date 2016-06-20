@@ -17,10 +17,10 @@ class serendipity_event_feed extends serendipity_plugin
     function introspect(&$propbag)
     {
         $propbag->add('name', PLUGIN_DASHBOARD_FEEDME_PLUGIN_TITLE);
-        $propbag->add('description',    'The Dashboard S9y Feedle');
+        $propbag->add('description',    PLUGIN_DASHBOARD_FEEDME_PLUGIN_DESC);
         $propbag->add('stackable',      false);
         $propbag->add('author',         'Ian');
-        $propbag->add('version',        '1.00');
+        $propbag->add('version',        '1.01');
         $propbag->add('requirements',   array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -143,10 +143,8 @@ class serendipity_event_feed extends serendipity_plugin
         // obtain the articles in the feeds, and construct an array of articles
         $articles = array();
 
-        // step 1: get the feed (we already have that by function get_url_contents($url))
-        #$xml = new SimpleXMLElement($content,null,true);//
+        // step 1: get the feed (we already have that by function get_url_contents($url), so param $content = $xml)
         #$xml = @new SimpleXmlElement($content);
-        #$xml = $content;
 
         // step 2: extract the channel metadata
         $channel = array();
@@ -270,7 +268,6 @@ class serendipity_event_feed extends serendipity_plugin
     private function showElementInfoFeed()
     {
         $blockFeedUrl = $this->get_config('feed',  'http://blog.s9y.org/feeds/index.rss2');
-        #$blockFeedUrl = 'http://blog.s9y.org/feeds/index.rss2';//'http://feeds.feedburner.com/s9y';
         $num = $this->get_config('show_num', 3);
 
         if (strpos($blockFeedUrl,'rss2') == false) {
@@ -328,10 +325,10 @@ class serendipity_event_feed extends serendipity_plugin
                     $content = $this->parseTemplate('feedblock.tpl');
                     // We need to set (float) this dashboard widget box to the right, since all others use float:left
                     // and -if not- would make the height-size per row like an equal-height box, which is NOT want we want to have!
-                    // We want the dashboard widgets to easily float into the 2-grid space available in height.
+                    // We want the dashboard widgets to easily float into the 2-grid (>= medium screen) space available in height.
 ?>
 
-    <section id="dashboard_feedly" class="<?php if ($eq) { ?>equal_heights <?php } ?>quick_list dashboard_widget" style="float:right">
+    <section id="dashboard_feedly" class="<?php if ($eq) { ?>equal_heights <?php } ?>quick_list dashboard_widget widget_right">
         <h3><?php echo PLUGIN_DASHBOARD_FEEDME_TITLE; ?></h3>
         <div class="feedlies">
             <?php echo $content; ?>
@@ -348,6 +345,15 @@ class serendipity_event_feed extends serendipity_plugin
 
 /* serendipity event_feed start */
 
+/* if in specific order, we need to reset the nth-child(2n) left margin for other boxes */
+#dashboard > .dashboard_widget:nth-child(2n) { margin: 0 0 1em 0; }
+
+/* MEDIUM SCREEN UP */
+@media only screen and (min-width: 768px) {
+    #dashboard > .widget_right {
+        float: right;
+    }
+}
 #dashboard_feedly .feedlies { margin: .5em 0;}
 #dashboard_feedly .feed_data { margin-top: .5em; margin-bottom: .5em; }
 #dashboard_feedly .feed_text { display: inline-table; padding: 0 .5em; border: 1px solid #DDD; background: #F9F9F9; }
@@ -360,8 +366,6 @@ class serendipity_event_feed extends serendipity_plugin
 #dashboard_feedly dl.codebox,
 #dashboard_feedly label .feed_headline { font-size: 0.95em; }
 #dashboard_feedly details.open summary .sumtitle { color: #999; }
-/* if in specific order, we need to reset the nth-child(2n) left margin for other boxes */
-#dashboard > .dashboard_widget:nth-child(2n) { margin: 0 0 1em 0; }
 
 /* serendipity event_feed end */
 
