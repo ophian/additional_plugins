@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.15
  */
@@ -12,4 +12,3 @@
 @define('PLUGIN_BABELFISH_URL_DESC', '翻訳に使用するウェブサイトへのURL');
 @define('PLUGIN_BABELFISH_PAIRS_DESC', '使用する翻訳の対を指定します。');
 
-?>

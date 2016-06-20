@@ -11,4 +11,3 @@
 @define('PLUGIN_BABELFISH_URL_DESC', 'URL na stránku použitou pro překládání');
 @define('PLUGIN_BABELFISH_PAIRS_DESC', 'Překládací páry, které se mají použít');
 
-?>
