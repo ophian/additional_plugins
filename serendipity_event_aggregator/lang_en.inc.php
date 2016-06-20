@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -49,3 +49,4 @@
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE_DESC', 'Highlight the markup plugins you want not to be applied to aggregated entries.');
 
 @define('PLUGIN_AGGREGATOR_FEEDICON', 'Feed Icon URL');
+

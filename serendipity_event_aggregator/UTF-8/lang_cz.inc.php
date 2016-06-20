@@ -51,3 +51,4 @@
 
 // Next lines were translated on 2010/12/25
 @define('PLUGIN_AGGREGATOR_FEEDICON', 'URL adresa ikony kanálu');
+

@@ -1,3 +1,16 @@
+0.40:
+-----
+    * Set plugin consistencies
+    * Use load language API - extends required Serendipity version to v.1.6
+    * Update SimplePie Lib to v. 1.4.2 - initiated with autoloader.
+      This sets $item['new_feedicon'] to a null value, since Favicon
+      handling has been removed, please use your own handling
+    * Update MagpieRSS Lib from https://github.com/kellan/magpierss
+      to 0.80a-dev plus master, since it seems MagpieRSS origin is
+      not continually developed any further.
+      Upddate to MagPieRSS extlib Snoopy class 1.0.0 to 2.0.0 - see
+      magpierss/ChangeLog and magpierss/extlib/ChangeLog
+
 0.31:
 -----
     * Adapted backend markup for 2.0 backend (yellowled)
@@ -15,7 +28,7 @@
 -----
     * Add ability to display feeds within a template (see inline
       documentation of the PHP file)
-     
+
 0.24:
 -----
     * Add SimplePie as an option for the parser. (by Oliof)
@@ -29,7 +42,7 @@
 -----
     * Fixed issue when aggregator is used and caching option of
       entryprops is enabled.
-     
+
 0.3:
 -----
     * Added MagpieRSS support [allows to parse Atom feeds] by Claus
@@ -39,7 +52,7 @@
 0.11:
 -----
     * Fixed htmlspecialchars escaping of OPML urls (garvinhicking)
-   
+
 0.10:
 -----
     * Introduced OPML feed export (garvinhicking)
