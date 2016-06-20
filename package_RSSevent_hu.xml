@@ -49,8 +49,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_adminnotes</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees</author>
-<content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;QuickNotes&lt;/b&gt;&lt;br /&gt;Displays information for authors on the administration panel&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;QuickNotes&lt;/b&gt;&lt;br /&gt;Displays information for authors on the administration panel&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 18 Jun 2016 15:01:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
@@ -67,8 +67,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_aggregator</link>
 <category>Event Plugins</category>
 <author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt</author>
-<content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Mon, 20 Jun 2016 12:54:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
@@ -76,8 +76,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_amazonchooser</link>
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon Media Button&lt;/b&gt;&lt;br /&gt;Adds a button to allow Amazon.com search which are insertable into your entry&lt;br/&gt;For: Serendipity 1.3</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon Media Button&lt;/b&gt;&lt;br /&gt;Adds a button to allow Amazon.com search which are insertable into your entry&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Mon, 13 Jun 2016 14:57:40 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -103,8 +103,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_autoupdate</link>
 <category>Event Plugins</category>
 <author>onli, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the dashboard-plugin (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the dashboard-plugin (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Tue, 14 Jun 2016 17:55:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -175,8 +175,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cal</link>
 <category>Event Plugins</category>
 <author>Ian (Timbalu)</author>
-<content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Calendar&lt;/b&gt;&lt;br /&gt;Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)&lt;br/&gt;For: Serendipity 1.4</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Calendar&lt;/b&gt;&lt;br /&gt;Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 11 Jun 2016 14:48:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
@@ -247,8 +247,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_contactform</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Contact Form&lt;/b&gt;&lt;br /&gt;Shows a email contactform on your blog as a static page. It can be accessed by either the custom permalink or by index.php?serendipity[subpage]=contactform. You can customize the look of the contact form by putting the plugin_contactform.tpl file into your template directory and modify it there. Captchas from the Spamblock plugin (if enabled) will be applied.&lt;br/&gt;For: Serendipity 1.3</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Contact Form&lt;/b&gt;&lt;br /&gt;Shows a email contactform on your blog as a static page. It can be accessed by either the custom permalink or by index.php?serendipity[subpage]=contactform. You can customize the look of the contact form by putting the plugin_contactform.tpl file into your template directory and modify it there. Captchas from the Spamblock plugin (if enabled) will be applied.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 11 Jun 2016 14:27:10 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -283,8 +283,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_customarchive</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_customarchive&lt;br /&gt;Customizable Entries Archive&lt;/b&gt;&lt;br /&gt;Shows a sortable view of all past articles for the visitor. The link to this page should be inserted into a HTML nugget.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_customarchive&lt;br /&gt;Customizable Entries Archive&lt;/b&gt;&lt;br /&gt;Shows a sortable view of all past articles for the visitor. The link to this page should be inserted into a HTML nugget.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<pubDate>Fri, 05 Feb 2016 13:21:24 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_customarchive</guid>
 </item>
 <item>
@@ -355,8 +355,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_email_bot_obfuscator</link>
 <category>Event Plugins</category>
 <author>Stephan Manske, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_email_bot_obfuscator&lt;br /&gt;Markup: clickable email adresses - but with antispam&lt;/b&gt;&lt;br /&gt;Makes email addresses clickabe, but obfuscates them to block spam harvester bots&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_email_bot_obfuscator&lt;br /&gt;Markup: clickable email adresses - but with antispam&lt;/b&gt;&lt;br /&gt;Makes email addresses clickabe, but obfuscates them to block spam harvester bots&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 11 Jun 2016 14:08:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_email_bot_obfuscator</guid>
 </item>
 <item>
@@ -364,8 +364,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_emoticonchooser</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Show Emoticon/Smiley toolbar&lt;/b&gt;&lt;br /&gt;Shows a toolbar to select emoticons to insert into your entry.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Show Emoticon/Smiley toolbar&lt;/b&gt;&lt;br /&gt;Shows a toolbar to select emoticons to insert into your entry.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 22 Jan 2016 20:15:13 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -450,6 +450,15 @@
 <guid isPermaLink="false">serendipity_event_fckeditor</guid>
 </item>
 <item>
+<title>Dashboard Feed Reader: The Dashboard S9y Feedle</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_feed</link>
+<category>Event Plugins</category>
+<author>Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_feed&lt;br /&gt;Dashboard Feed Reader&lt;/b&gt;&lt;br /&gt;The Dashboard S9y Feedle&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<pubDate>Mon, 20 Jun 2016 11:01:42 +0200</pubDate>
+<guid isPermaLink="false">serendipity_event_feed</guid>
+</item>
+<item>
 <title>Feedburner FeedFlare: Adds a FeedFlare tag to the footer of each entry.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_feedflare</link>
 <category>Event Plugins</category>
@@ -462,18 +471,18 @@
 <title>Frontend entry filtering: Allows visitors to filter/order your entries by several options</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_filter_entries</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_filter_entries&lt;br /&gt;Frontend entry filtering&lt;/b&gt;&lt;br /&gt;Allows visitors to filter/order your entries by several options&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<author>Garvin Hicking, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_filter_entries&lt;br /&gt;Frontend entry filtering&lt;/b&gt;&lt;br /&gt;Allows visitors to filter/order your entries by several options&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Thu, 09 Jun 2016 14:49:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_filter_entries</guid>
 </item>
 <item>
-<title>Show links to services like Facebook, Digg, Technorati, del.icio.us, spread.ly etc related to your entry.: You can remove/insert other custom services to link to via the &quot;plugin_findmore.tpl&quot; template file easily. Also remember that if you want to save grandma's performance pennies that you can also insert the HTML/JS snippets into your entries.tpl template file instead of using this plugin!</title>
+<title>Show social share buttons for services like Facebook and Twitter: You can remove/insert other custom services to link to via the &quot;plugin_findmore.tpl&quot; template file easily. Also remember that if you want to save grandma's performance pennies that you can also insert the HTML/JS snippets into your entries.tpl template file instead of using this plugin!</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_findmore</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Kodewulf</author>
-<content:encoded>&lt;b&gt;serendipity_event_findmore&lt;br /&gt;Show links to services like Facebook, Digg, Technorati, del.icio.us, spread.ly etc related to your entry.&lt;/b&gt;&lt;br /&gt;You can remove/insert other custom services to link to via the &quot;plugin_findmore.tpl&quot; template file easily. Also remember that if you want to save grandma's performance pennies that you can also insert the HTML/JS snippets into your entries.tpl template file instead of using this plugin!&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_findmore&lt;br /&gt;Show social share buttons for services like Facebook and Twitter&lt;/b&gt;&lt;br /&gt;You can remove/insert other custom services to link to via the &quot;plugin_findmore.tpl&quot; template file easily. Also remember that if you want to save grandma's performance pennies that you can also insert the HTML/JS snippets into your entries.tpl template file instead of using this plugin!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Mon, 20 Jun 2016 13:11:16 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_findmore</guid>
 </item>
 <item>
@@ -608,7 +617,7 @@
 <category>Event Plugins</category>
 <author>Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Guestbook&lt;/b&gt;&lt;br /&gt;Shows a guestbook inside your blog with your normal blog design.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Sat, 11 Jun 2016 13:22:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -643,8 +652,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_imageselectorplus</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Extended options for media manager&lt;/b&gt;&lt;br /&gt;Allows extended options for inserting images from the media manager [Serendipity &gt;= 0.9]&lt;br/&gt;For: Serendipity 1.3</content:encoded>
-<pubDate>Thu, 09 Jun 2016 10:26:36 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Extended options for media manager&lt;/b&gt;&lt;br /&gt;Allows extended options for inserting images from the media manager [Serendipity &gt;= 0.9]&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Thu, 09 Jun 2016 14:40:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -653,7 +662,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_includeentry&lt;br /&gt;Markup: Include entry data/templates/blocks&lt;/b&gt;&lt;br /&gt;Allows you to add HTML-style tags to your entry that includes parts of other entrys. Use this markup: [s9y-include-entry:XXX:YYY]. Replace XXX with the target entryid and YYY with the target field name (i.e. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). You can also use the new menu functions to maintain templates and blocks that can get inserted in between your entries.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Sat, 20 Feb 2016 10:12:05 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_includeentry</guid>
 </item>
 <item>
@@ -715,8 +724,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_linklist</link>
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad</author>
-<content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Links manager - Shows your favorite links in the sidebar.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Links manager - Shows your favorite links in the sidebar.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 27 Jan 2016 13:41:26 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_linklist</guid>
 </item>
 <item>
@@ -733,8 +742,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_linktrimmer</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linktrimmer&lt;/b&gt;&lt;br /&gt;Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.&lt;br/&gt;For: Serendipity 1.3</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linktrimmer&lt;/b&gt;&lt;br /&gt;Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<pubDate>Sat, 11 Jun 2016 12:44:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
@@ -752,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Christian Stocker, Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_livesearch&lt;br /&gt;Livesearch&lt;/b&gt;&lt;br /&gt;Enhances the internal search function by adding live-updates on keypress (JavaScript)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Sat, 11 Jun 2016 12:04:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_livesearch</guid>
 </item>
 <item>
@@ -860,7 +869,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilingual entries&lt;/b&gt;&lt;br /&gt;Allows to create multiple language versions of an entry&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 09 Jun 2016 08:11:27 +0200</pubDate>
+<pubDate>Sat, 11 Jun 2016 11:48:35 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -922,8 +931,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_page_nugget</link>
 <category>Event Plugins</category>
 <author>Wesley Hwang-Chung</author>
-<content:encoded>&lt;b&gt;serendipity_event_page_nugget&lt;br /&gt;HTML Nugget on Page&lt;/b&gt;&lt;br /&gt;Puts an HTML nugget on top or bottom of the page, or inside the page's HEAD tag&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_page_nugget&lt;br /&gt;HTML Nugget on Page&lt;/b&gt;&lt;br /&gt;Puts an HTML nugget on top or bottom of the page, or inside the page's HEAD tag&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 11 Jun 2016 11:29:47 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_page_nugget</guid>
 </item>
 <item>
@@ -1049,7 +1058,7 @@
 <category>Event Plugins</category>
 <author>Tom Sommer</author>
 <content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;Highlight search queries&lt;/b&gt;&lt;br /&gt;Highlights queries used in the referring search engine to locate your page&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Sat, 11 Jun 2016 11:17:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_searchhighlight</guid>
 </item>
 <item>
@@ -1105,7 +1114,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>kleinerChemiker,  Malte Paskuda, based upon b8 by Tobias Leupold</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detects Spam via an algorithmus which learns.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Thu, 09 Jun 2016 13:59:47 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
@@ -1113,8 +1122,8 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_spamblock_bee</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff</author>
-<content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Hidden Captcha)&lt;/b&gt;&lt;br /&gt;Implements simple comment antispam mechanisms, that are easy to configure but very effective.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Hidden Captcha)&lt;/b&gt;&lt;br /&gt;Implements simple comment antispam mechanisms, that are easy to configure but very effective.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 11 Jun 2016 10:37:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
@@ -1159,7 +1168,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statisztika&lt;/b&gt;&lt;br /&gt;Az admin felületen, a bejegyzések panelban, statisztika hivatkozást hoz létre, ahol különféle statisztikákat láthasz, pl. látogatószámláló&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Sat, 11 Jun 2016 10:09:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
@@ -1195,7 +1204,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Tobias Schlitt</author>
 <content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;Markup: Wiki&lt;/b&gt;&lt;br /&gt;Markup text using Text_Wiki&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Sat, 11 Jun 2016 09:43:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textwiki</guid>
 </item>
 <item>
@@ -1249,7 +1258,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackexits&lt;br /&gt;Markup: Track exits&lt;/b&gt;&lt;br /&gt;Track clicks on external URLs&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Tue, 17 May 2016 17:24:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackexits</guid>
 </item>
 <item>
@@ -1285,7 +1294,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Gallery Display&lt;/b&gt;&lt;br /&gt;Allows anonymous users to view Serendipity media gallery&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Fri, 17 Jun 2016 09:01:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>
@@ -1312,7 +1321,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Announce entries&lt;/b&gt;&lt;br /&gt;Send notification of new entries to online services&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Fri, 17 Jun 2016 07:25:50 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>

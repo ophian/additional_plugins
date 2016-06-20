@@ -49,8 +49,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_guestbook</link>
 <category>Sidebar Plugins</category>
 <author>Jaap Boerma ( j@webbict.com ), Tadashi Jokagi &lt;elf2000@users.sourceforge.net&gt;, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_guestbook&lt;br /&gt;Návštěvní kniha - postranní blok&lt;/b&gt;&lt;br /&gt;Zobrazuje nejnovější vzkazy z návštěvní knihy v bloku v postranním sloupci&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_guestbook&lt;br /&gt;Návštěvní kniha - postranní blok&lt;/b&gt;&lt;br /&gt;Zobrazuje nejnovější vzkazy z návštěvní knihy v bloku v postranním sloupci&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 11 Jun 2016 13:09:19 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_guestbook</guid>
 </item>
 <item>
@@ -58,8 +58,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_linklist</link>
 <category>Sidebar Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Správce odkazů (linků) - V bočním panelu zobrazuje vaše oblíbené odkazy.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Správce odkazů (linků) - V bočním panelu zobrazuje vaše oblíbené odkazy.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 27 Jan 2016 13:44:42 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_linklist</guid>
 </item>
 <item>
@@ -77,7 +77,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_multilingual&lt;br /&gt;Výběr jazyka&lt;/b&gt;&lt;br /&gt;Povolit návštěvníkům měnit jazyk uživatelského rozhraní blogu&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 09 Jun 2016 08:10:36 +0200</pubDate>
+<pubDate>Sat, 11 Jun 2016 11:53:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_multilingual</guid>
 </item>
 <item>
@@ -94,8 +94,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_spamblock_bee</link>
 <category>Sidebar Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_spamblock_bee&lt;br /&gt;Spam report&lt;/b&gt;&lt;br /&gt;Vypíše statistiku o komentářovém spamu, pokud plugin ukládá logy do databáze.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_spamblock_bee&lt;br /&gt;Spam report&lt;/b&gt;&lt;br /&gt;Vypíše statistiku o komentářovém spamu, pokud plugin ukládá logy do databáze.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 11 Jun 2016 10:26:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_spamblock_bee</guid>
 </item>
 <item>
@@ -113,7 +113,7 @@
 <category>Sidebar Plugins</category>
 <author>Arnan de Gans, Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_statistics&lt;br /&gt;Statistiky&lt;/b&gt;&lt;br /&gt;Statistiky&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Sat, 11 Jun 2016 09:46:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_statistics</guid>
 </item>
 <item>
@@ -290,11 +290,11 @@
 <guid isPermaLink="false">serendipity_plugin_google_last_query</guid>
 </item>
 <item>
-<title>Google Rychlé hledání: Hledání záznamu (Google)</title>
+<title>Google Rychl? hled?n?: Hled?n? z?znamu (Google)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_google_quicksearch</link>
 <category>Sidebar Plugins</category>
 <author>Wesley Hwang-Chung</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_google_quicksearch&lt;br /&gt;Google Rychlé hledání&lt;/b&gt;&lt;br /&gt;Hledání záznamu (Google)&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_google_quicksearch&lt;br /&gt;Google Rychl? hled?n?&lt;/b&gt;&lt;br /&gt;Hled?n? z?znamu (Google)&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_google_quicksearch</guid>
 </item>
@@ -317,12 +317,12 @@
 <guid isPermaLink="false">serendipity_plugin_hitmaps</guid>
 </item>
 <item>
-<title>Jednotné zobrazování obrázků v postranním sloupci: Umožňuje zobrazovat obrázky v postranním sloupci. Zdrojů těchto obrázků může být vícero. Plugin se dokáže připojit do Menalto Gallery, do databáze Coppermine galerie (pouze pokud běží na MySQL), k webové službě Zooomr (http://beta.zooomr.com/home) a samozřejmě i ke Knihovně médií Serendipity.</title>
+<title>Jednotné zobrazování obrázků v postranním sloupci: Umožňuje zobrazovat obrázky v postranním sloupci. Zdrojů těchto obrázků může být vícero. Plugin se dokáže připojit do Menalto Gallery, do databáze Coppermine galerie (pouze pokud běží na MySQL), k webové službě Zooomr (http://beta.zooomr.com/home) a samozřejmě i ke Knihovně médií Serendipity. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_imagesidebar</link>
 <category>Sidebar Plugins</category>
 <author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code)</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Jednotné zobrazování obrázků v postranním sloupci&lt;/b&gt;&lt;br /&gt;Umožňuje zobrazovat obrázky v postranním sloupci. Zdrojů těchto obrázků může být vícero. Plugin se dokáže připojit do Menalto Gallery, do databáze Coppermine galerie (pouze pokud běží na MySQL), k webové službě Zooomr (http://beta.zooomr.com/home) a samozřejmě i ke Knihovně médií Serendipity.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Jednotné zobrazování obrázků v postranním sloupci&lt;/b&gt;&lt;br /&gt;Umožňuje zobrazovat obrázky v postranním sloupci. Zdrojů těchto obrázků může být vícero. Plugin se dokáže připojit do Menalto Gallery, do databáze Coppermine galerie (pouze pokud běží na MySQL), k webové službě Zooomr (http://beta.zooomr.com/home) a samozřejmě i ke Knihovně médií Serendipity. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 10 Jun 2016 12:39:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>
@@ -357,8 +357,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_nugget_multilingual</link>
 <category>Sidebar Plugins</category>
 <author>Wesley Hwang-Chung</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_nugget_multilingual&lt;br /&gt;Jazykově závislý HTML blok&lt;/b&gt;&lt;br /&gt;Pro zadaný jazyk zobrazuje v postranním sloupci HTML blok.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_nugget_multilingual&lt;br /&gt;Jazykově závislý HTML blok&lt;/b&gt;&lt;br /&gt;Pro zadaný jazyk zobrazuje v postranním sloupci HTML blok.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 10 Jun 2016 11:39:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_nugget_multilingual</guid>
 </item>
 <item>
@@ -416,11 +416,11 @@
 <guid isPermaLink="false">serendipity_plugin_quicklink</guid>
 </item>
 <item>
-<title>Rychlé hledání: Hledání záznamu</title>
+<title>Rychl? hled?n?: Hled?n? z?znamu</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_quicksearch</link>
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_quicksearch&lt;br /&gt;Rychlé hledání&lt;/b&gt;&lt;br /&gt;Hledání záznamu&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_quicksearch&lt;br /&gt;Rychl? hled?n?&lt;/b&gt;&lt;br /&gt;Hled?n? z?znamu&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_quicksearch</guid>
 </item>
@@ -497,30 +497,21 @@
 <guid isPermaLink="false">serendipity_plugin_timezones</guid>
 </item>
 <item>
-<title>Top výstupy: Nejčastější výstupy z tohoto weblogu</title>
+<title>Top v?stupy: Nej?ast?j?? v?stupy z tohoto weblogu</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_topexits</link>
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_topexits&lt;br /&gt;Top výstupy&lt;/b&gt;&lt;br /&gt;Nejčastější výstupy z tohoto weblogu&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_topexits&lt;br /&gt;Top v?stupy&lt;/b&gt;&lt;br /&gt;Nej?ast?j?? v?stupy z tohoto weblogu&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 10 Jun 2016 11:15:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topexits</guid>
 </item>
 <item>
-<title>Top odkazovače (Top Referers): Nejčastější připojení k tomuto weblogu</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_topreferers</link>
-<category>Sidebar Plugins</category>
-<author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_topreferers&lt;br /&gt;Top odkazovače (Top Referers)&lt;/b&gt;&lt;br /&gt;Nejčastější připojení k tomuto weblogu&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
-<guid isPermaLink="false">serendipity_plugin_topreferers</guid>
-</item>
-<item>
-<title>Top odkazovače: Nejčastější připojení k tomuto weblogu</title>
+<title>Top odkazova?e: Nej?ast?j?? p?ipojen? k tomuto weblogu</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_topreferrers</link>
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_topreferrers&lt;br /&gt;Top odkazovače&lt;/b&gt;&lt;br /&gt;Nejčastější připojení k tomuto weblogu&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_topreferrers&lt;br /&gt;Top odkazova?e&lt;/b&gt;&lt;br /&gt;Nej?ast?j?? p?ipojen? k tomuto weblogu&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 10 Jun 2016 10:38:49 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topreferrers</guid>
 </item>
 <item>
