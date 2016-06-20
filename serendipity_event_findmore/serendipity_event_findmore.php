@@ -279,6 +279,7 @@ class serendipity_event_findmore extends serendipity_event
 
 /* serendipity_event_findmore end */
 ';
+                    }
                     break;
 
                 case 'frontend_header':
