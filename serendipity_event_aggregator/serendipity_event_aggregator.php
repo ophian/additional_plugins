@@ -454,7 +454,7 @@ class serendipity_event_aggregator extends serendipity_event
     {
         global $serendipity;
 
-        $a = serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}aggregator_md5 WHERE entryid  IN (" . implode(", ", $id_list) . ")");
+        $a = serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}aggregator_md5 WHERE entryid IN (" . implode(", ", $id_list) . ")");
 
         return true;
     }
