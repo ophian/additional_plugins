@@ -64,11 +64,11 @@ class serendipity_event_aggregator extends serendipity_event
         $propbag->add('name',          PLUGIN_AGGREGATOR_TITLE);
         $propbag->add('description',   PLUGIN_AGGREGATOR_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.0.0',
+            'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '0.40');
+        $propbag->add('version',       '0.41');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1706,27 +1706,16 @@ class serendipity_event_aggregator extends serendipity_event
 */
         $show = serendipity_db_query($q);
         $serendipity['smarty']->assign('feedlist_entries', $show);
-        echo $this->parse_template($opt['template']);
-        //
-        // Feed Icon parsen und in feeds speichern
-        return true;
-    }
 
-    function parse_template($filename)
-    {
-        global $serendipity;
-
-        $filename = basename($filename);
+        $filename = basename($opt['template']);
         $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
         if (!$tfile || $tfile == $filename) {
             $tfile = dirname(__FILE__) . '/' . $filename;
         }
-        $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
-        $content = $serendipity['smarty']->fetch('file:'. $tfile);
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = $inclusion;
-
-        return $content;
+        $serendipity['smarty']->display($tfile);
+        //
+        // Feed Icon parsen und in feeds speichern
+        return true;
     }
 
     function event_hook($event, &$bag, &$eventData, $addData = null)

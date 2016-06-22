@@ -1,3 +1,7 @@
+0.41:
+-----
+    * removed old Smarty2 security and display settings - extends required versions
+
 0.40:
 -----
     * Set plugin consistencies
