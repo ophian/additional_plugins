@@ -17,69 +17,69 @@
 <a rel="nofollow" href="http://www.google.com/bookmarks/mark?op=edit&amp;bkmk={$entrydata.url|escape:url}&amp;title={$entrydata.title|escape}" title="Google Bookmarks"><img src="{$entrydata.path}googlebookmark.png" title="Google Bookmarks" alt="Google Bookmarks" class="socialbkmark" /></a>
 {/if}
 
-{if NOT $findmore_disabled_services.friendfeed}
+{* if NOT $findmore_disabled_services.friendfeed}
 <a rel="nofollow" href="http://www.friendfeed.com/share?title={$entrydata.title|escape}&amp;link={$entrydata.url|escape:url}" title="FriendFeed"><img src="{$entrydata.path}friendfeed.png" title="FriendFeed" alt="FriendFeed" class="socialbkmark" /></a>
-{/if}
+{/if *}
 
 {if NOT $findmore_disabled_services.digg}
 <a rel="nofollow" href="http://digg.com/submit?phase=2&amp;url={$entrydata.url|escape:url}" title="Digg {$entrydata.title|escape} "><img src="{$entrydata.path}diggman.png" width="16" height="14" class="socialbkmark" alt="Digg {$entrydata.title|escape} "/></a>
 {/if}
 
-{if NOT $findmore_disabled_services.mixx}
+{* if NOT $findmore_disabled_services.mixx}
 <a rel="nofollow" href="http://www.mixx.com/submit?page_url={$entrydata.url|escape:url}" title="Mixx {$entrydata.title|escape} "><img src="{$entrydata.path}mixx-button4.png" width="18" height="18" class="socalbkmark" alt="Mixx {$entrydata.title|escape} "/></a>
-{/if}
+{/if *}
 
-{if NOT $findmore_disabled_services.bloglines}
+{* if NOT $findmore_disabled_services.bloglines}
 <a rel="nofollow" href="http://www.bloglines.com/citations?url={$entrydata.url|escape:url}" title="Bloglines {$entrydata.title|escape} "><img src="{$entrydata.path}bloglines.png" width="18" height="18" class="socialbkmark" alt="Bloglines {$entrydata.title|escape} "/></a>
-{/if}
+{/if *}
 
-{if NOT $findmore_disabled_services.technorati}
+{* if NOT $findmore_disabled_services.technorati}
 <a rel="nofollow" href="http://technorati.com/search/{$entrydata.url|escape:url}" title="Technorati {$entrydata.title|escape}"><img src="{$entrydata.path}technorati.png" width="18" height="18" class="socialbkmark" alt="Technorati {$entrydata.title|escape} "/></a>
-{/if}
+{/if *}
 
 {if NOT $findmore_disabled_services.fark}
 <a rel="nofollow" href="http://cgi.fark.com/cgi/fark/edit.pl?new_url={$entrydata.url|escape:url}&amp;new_comment={$entrydata.title|escape:url}&amp;new_link_other=&amp;linktype=Misc" title="Fark this: {$entrydata.title|escape} "><img width="15" height="18" src="{$entrydata.path}fark.png" class="socialbkmark" alt="Fark this: {$entrydata.title|escape} "/></a>
 {/if}
 
-{if NOT $findmore_disabled_services.yahoo}
+{* if NOT $findmore_disabled_services.yahoo}
 <a rel="nofollow" href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t={$entrydata.title|escape:url}&amp;u={$entrydata.url|escape:url}" title="Bookmark {$entrydata.title|escape}  at YahooMyWeb"><img width="18" height="18" src="{$entrydata.path}yahoomyweb.png" class="socialbkmark" alt="Bookmark {$entrydata.title|escape}  at YahooMyWeb"/></a>
-{/if}
+{/if *}
 
-{if NOT $findmore_disabled_services.furl}
+{* if NOT $findmore_disabled_services.furl}
 <a rel="nofollow" href="http://www.furl.net/storeIt.jsp?t={$entrydata.title|escape:url}&amp;u={$entrydata.url|escape:url}" title="Bookmark {$entrydata.title|escape}  at Furl.net"><img src="{$entrydata.path}furl.png" width="16" height="17" class="socialbkmark" alt="Bookmark {$entrydata.title|escape}  at Furl.net"/></a>
-{/if}
+{/if *}
 
 {if NOT $findmore_disabled_services.reddit}
 <a rel="nofollow" href="http://reddit.com/submit?url={$entrydata.url|escape:url}&amp;title={$entrydata.title|escape:url}" title="Bookmark {$entrydata.title|escape}  at reddit.com"><img src="{$entrydata.path}reddit.png" width="18" height="18" class="socialbkmark" alt="Bookmark {$entrydata.title|escape}  at reddit.com"/></a>
 {/if}
 
-{if NOT $findmore_disabled_services.blinklist}
+{* if NOT $findmore_disabled_services.blinklist}
 <a rel="nofollow" href="http://www.blinklist.com/index.php?Action=Blink/addblink.php&amp;Description=&amp;Url={$entrydata.url|escape:url}&amp;Title={$entrydata.title|escape:url}" title="Bookmark {$entrydata.title|escape}  at blinklist.com"><img width="18" height="18" src="{$entrydata.path}blinklist.png" class="socialbkmark" alt="Bookmark {$entrydata.title|escape}  at blinklist.com"/></a>
-{/if}
+{/if *}
 
-{if NOT $findmore_disabled_services.spurl}
+{* if NOT $findmore_disabled_services.spurl}
 <a rel="nofollow" href="http://www.spurl.net/spurl.php?title={$entrydata.title|escape:url}&amp;url={$entrydata.url|escape:url}" title="Bookmark {$entrydata.title|escape}  at Spurl.net"><img width="16" height="16" src="{$entrydata.path}spurl.png" class="socialbkmark" alt="Bookmark {$entrydata.title|escape}  at Spurl.net"/></a>
-{/if}
+{/if *}
 
 {if NOT $findmore_disabled_services.newsvine}
 <a rel="nofollow" href="http://www.newsvine.com/_tools/seed&amp;save?u={$entrydata.url|escape:url}&amp;h={$entrydata.title|escape:url}" title="Bookmark {$entrydata.title|escape}  at NewsVine"><img width="16" height="16" src="{$entrydata.path}newsvine.png" class="socialbkmark" alt="Bookmark {$entrydata.title|escape}  at NewsVine"/></a>
 {/if}
 
-{if NOT $findmore_disabled_services.simpy}
+{* if NOT $findmore_disabled_services.simpy}
 <a rel="nofollow" href="http://www.simpy.com/simpy/LinkAdd.do?href={$entrydata.url|escape:url}&amp;title={$entrydata.title|escape:url}" title="Bookmark {$entrydata.title|escape}  at Simpy.com"><img width="16" height="16" src="{$entrydata.path}simpy.png" class="socialbkmark" alt="Bookmark {$entrydata.title|escape}  at Simpy.com"/></a>
-{/if}
+{/if *}
 
 {if NOT $findmore_disabled_services.blogmarks}
 <a rel="nofollow" href="http://blogmarks.net/my/new.php?mini=1&amp;simple=1&amp;url={$entrydata.url|escape:url}&amp;title={$entrydata.title|escape:url}" title="Bookmark {$entrydata.title|escape}  at blogmarks"><img width="16" height="16" src="{$entrydata.path}blogmarks.png" class="socialbkmark" alt="Bookmark {$entrydata.title|escape}  at blogmarks"/></a>
 {/if}
 
-{if NOT $findmore_disabled_services.wists}
+{* if NOT $findmore_disabled_services.wists}
 <a rel="nofollow" href="http://wists.com/r.php?c=&amp;r={$entrydata.url|escape:url}&amp;title={$entrydata.title|escape:url}" title="Bookmark {$entrydata.title|escape}  with wists"><img width="16" height="16" src="{$entrydata.path}wists.png" class="socialbkmark" alt="Bookmark {$entrydata.title|escape}  with wists"/></a>
-{/if}
+{/if *}
 
-{if NOT $findmore_disabled_services.misterwong}
+{* if NOT $findmore_disabled_services.misterwong}
 <a rel="nofollow" href="http://www.mister-wong.de/index.php?action=addurl&amp;bm_url={$entrydata.url|escape:url}&amp;bm_description={$entrydata.title|escape:url}" title="wong it! {$entrydata.title|escape}"><img width="18" height="18" src="{$entrydata.path}wong18.gif" alt="wong it!" class="socialbkmark" /></a>
-{/if}
+{/if *}
 
 {if NOT $findmore_disabled_services.addthis}
 <a rel="nofollow" href="http://www.addthis.com/bookmark.php?pub=&amp;url={$entrydata.url|escape:url}&amp;title={$entrydata.title|escape:url}" title="Bookmark using any bookmark manager! {$entrydata.title|escape}"><img src="{$entrydata.path}button0-bm.gif" alt="Bookmark using any bookmark manager!" width="83" height="16" class="socialbkmark" /></a>
@@ -132,7 +132,7 @@
         </li>
     {/if}
 
-{if NOT $findmore_disabled_services.spreadly}
+{* if NOT $findmore_disabled_services.spreadly}
 <li class="spreadly_like findmore_like_button">
 {if $findmore_lazyload}
     <a href="http://spread.ly/?url={$entrydata.url|@escape:url}&amp;title={$entrydata.title|@escape:url}&amp;tags={$entrydata.properties.freetag_tagList|@escape:url}&amp;social={if $findmore_spreadly_social}1{else}0{/if}" rel="like">
@@ -147,6 +147,6 @@
     </iframe>
 {/if}
 </li>    
-{/if}
+{/if *}
 </ul>
 {/if}

@@ -44,10 +44,10 @@
 
 // Next lines were translated on 2011/06/30
 
-@define('PLUGIN_FINDMORE_SPREADLY_EMAILS', '(Spread.ly) Registrované E-Maily');
-@define('PLUGIN_FINDMORE_SPREADLY_EMAILS_DESC', 'Pokud je zapnuta volba spreadly.com, mù¾ete asociovat/podepsat vá¹ blog pomocí úètu spreadly.com. Pro toto podepsání zadejte emailovou adresu(adresy), kterou jste zaregistrovali na spreadly.com (více adres oddìlte novým øádkem, tedy ka¾dá adresa má vlastní øádek). Více informací najdete na <a href="http://spreadly.com">spreadly.com</a>!');
-@define('PLUGIN_FINDMORE_SPREADLY', '(Spread.ly) Povolit roz¹íøené, sociální funkce?');
-@define('PLUGIN_FINDMORE_SPREADLY_DESC', 'Pokud je povoleno, do blogu je vlo¾en iframe, který obsahuje a zobrazuje dodateèná data. Pokud je volba vypnuta, je zobrazeno statické tlaèítko (obrázek).');
+#@define('PLUGIN_FINDMORE_SPREADLY_EMAILS', '(Spread.ly) Registrované E-Maily');
+#@define('PLUGIN_FINDMORE_SPREADLY_EMAILS_DESC', 'Pokud je zapnuta volba spreadly.com, mù¾ete asociovat/podepsat vá¹ blog pomocí úètu spreadly.com. Pro toto podepsání zadejte emailovou adresu(adresy), kterou jste zaregistrovali na spreadly.com (více adres oddìlte novým øádkem, tedy ka¾dá adresa má vlastní øádek). Více informací najdete na <a href="http://spreadly.com">spreadly.com</a>!');
+#@define('PLUGIN_FINDMORE_SPREADLY', '(Spread.ly) Povolit roz¹íøené, sociální funkce?');
+#@define('PLUGIN_FINDMORE_SPREADLY_DESC', 'Pokud je povoleno, do blogu je vlo¾en iframe, který obsahuje a zobrazuje dodateèná data. Pokud je volba vypnuta, je zobrazeno statické tlaèítko (obrázek).');
 
 // Next lines were translated on 2012/01/08
 @define('PLUGIN_EVENT_FINDMORE_LAZYLOAD_TEXT_EXAMPLE', 'Fale¹né tlaèítko. Kliknìte na nìj, aby se natáhlo skuteèné tlaèítko.');

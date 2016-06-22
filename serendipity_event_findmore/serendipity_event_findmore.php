@@ -13,10 +13,10 @@ class serendipity_event_findmore extends serendipity_event
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_FINDMORE_NAME);
-        $propbag->add('description',   PLUGIN_FINDMORE_DESCRIPTION);
+        $propbag->add('description',   PLUGIN_FINDMORE_DEPRECATED . PLUGIN_FINDMORE_DESCRIPTION);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Kodewulf');
-        $propbag->add('version',       '1.23');
+        $propbag->add('version',       '1.24');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -40,7 +40,7 @@ class serendipity_event_findmore extends serendipity_event
             array(
                 'frontend_display:html:per_entry' => true,
                 'css' => true,
-                'frontend_header' => true,
+                'frontend_header' => true
             )
         );
 
@@ -59,100 +59,100 @@ class serendipity_event_findmore extends serendipity_event
         switch ($name) {
             // Show on article summary, or only extended page?
             case 'extended_only':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_FINDMORE_EXTENDEDONLY);
-                $propbag->add('description', PLUGIN_FINDMORE_EXTENDEDONLY_BLAHBLAH);
-                $propbag->add('default', 'false');
+                $propbag->add('type',           'boolean');
+                $propbag->add('name',           PLUGIN_FINDMORE_EXTENDEDONLY);
+                $propbag->add('description',    PLUGIN_FINDMORE_EXTENDEDONLY_BLAHBLAH);
+                $propbag->add('default',        'false');
                 break;
-
+/*
             case 'spreadly_social':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_FINDMORE_SPREADLY);
-                $propbag->add('description', PLUGIN_FINDMORE_SPREADLY_DESC);
-                $propbag->add('default', 'true');
+                $propbag->add('type',           'boolean');
+                $propbag->add('name',           PLUGIN_FINDMORE_SPREADLY);
+                $propbag->add('description',    PLUGIN_FINDMORE_SPREADLY_DESC);
+                $propbag->add('default',        'true');
                 break;
 
             case 'spreadly_emails':
-                $propbag->add('type', 'text');
-                $propbag->add('name', PLUGIN_FINDMORE_SPREADLY_EMAILS);
-                $propbag->add('description', PLUGIN_FINDMORE_SPREADLY_EMAILS_DESC);
-                $propbag->add('default', 'true');
-                break;
+                $propbag->add('type',           'text');
+                $propbag->add('name',           PLUGIN_FINDMORE_SPREADLY_EMAILS);
+                $propbag->add('description',    PLUGIN_FINDMORE_SPREADLY_EMAILS_DESC);
+                $propbag->add('default',        'true');
+                break;*/
 
             case 'lazyload':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_EVENT_FINDMORE_LAZYLOAD);
-                $propbag->add('description', PLUGIN_EVENT_FINDMORE_LAZYLOAD_DESC);
-                $propbag->add('default', 'false');
+                $propbag->add('type',           'boolean');
+                $propbag->add('name',           PLUGIN_EVENT_FINDMORE_LAZYLOAD);
+                $propbag->add('description',    PLUGIN_EVENT_FINDMORE_LAZYLOAD_DESC);
+                $propbag->add('default',        'false');
                 break;
 
             case 'disabled_services':
                 $types = array(
                         'addthis'       => 'addthis',
-                        'blinklist'     => 'blinklist',
-                        'bloglines'     => 'bloglines',
+/*                        'blinklist'     => 'blinklist',
+                        'bloglines'     => 'bloglines',*/
                         'blogmarks'     => 'blogmarks',
                         'delicious'     => 'del.icio.us',
                         'digg'          => 'digg',
                         'facebook'      => 'Facebook',
                         'fark'          => 'fark',
-                        'furl'          => 'furl',
-                        'friendfeed'    => 'friendfeed',
+/*                        'furl'          => 'furl',
+                        'friendfeed'    => 'friendfeed',*/
                         'google'        => 'Google Bookmarks',
                         'plusone'       => 'Google +1',
                         'identica'      => 'Identi.ca',
-                        'misterwong'    => 'mister-wong',
-                        'mixx'          => 'mixx',
+/*                        'misterwong'    => 'mister-wong'
+                        'mixx'          => 'mixx',*/
                         'newsvine'      => 'newsvine',
                         'printthis'     => 'print this',
                         'reddit'        => 'reddit',
-                        'simpy'         => 'simpy',
+/*                        'simpy'         => 'simpy',
                         'spurl'         => 'spurl',
-                        'spreadly'      => 'Spread.ly',
+                        'spreadly'      => 'Spread.ly',*/
                         'stumbleupon'   => 'stumbleupon',
-                        'technorati'    => 'technorati',
+/*                        'technorati'    => 'technorati',*/
                         'tellafriend'   => 'tell a friend',
                         'twitter'       => 'Twitter',
-                        'wists'         => 'wists',
-                        'yahoo'         => 'yahoo',
+/*                        'wists'         => 'wists',
+                        'yahoo'         => 'yahoo',*/
                     );
-                $propbag->add('type', 'multiselect');
-                $propbag->add('name', PLUGIN_EVENT_FINDMORE_DISABLED_SERVICES);
-                $propbag->add('description', PLUGIN_EVENT_FINDMORE_DISABLED_SERVICES_DESC);
-                $propbag->add('select_values', $types);
-                $propbag->add('select_size', 17);
-                $propbag->add('default', '');
+                $propbag->add('type',           'multiselect');
+                $propbag->add('name',           PLUGIN_EVENT_FINDMORE_DISABLED_SERVICES);
+                $propbag->add('description',    PLUGIN_EVENT_FINDMORE_DISABLED_SERVICES_DESC);
+                $propbag->add('select_values',  $types);
+                $propbag->add('select_size',    17);
+                $propbag->add('default',        '');
                 break;
 
             case 'lazyload_text':
-                $propbag->add('type',        'string');
-                $propbag->add('name',        PLUGIN_EVENT_FINDMORE_LAZYLOAD_TEXT);
-                $propbag->add('description', PLUGIN_EVENT_FINDMORE_LAZYLOAD_TEXT_DESC);
-                $propbag->add('default',     PLUGIN_EVENT_FINDMORE_LAZYLOAD_TEXT_EXAMPLE);
+                $propbag->add('type',           'string');
+                $propbag->add('name',           PLUGIN_EVENT_FINDMORE_LAZYLOAD_TEXT);
+                $propbag->add('description',    PLUGIN_EVENT_FINDMORE_LAZYLOAD_TEXT_DESC);
+                $propbag->add('default',        PLUGIN_EVENT_FINDMORE_LAZYLOAD_TEXT_EXAMPLE);
                 break;
 
             case 'path':
-                $propbag->add('type',        'string');
-                $propbag->add('name',        PLUGIN_FINDMORE_PATH_NAME);
-                $propbag->add('description', PLUGIN_FINDMORE_PATH_DESC);
-                $propbag->add('default',     $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_findmore/img/');
+                $propbag->add('type',           'string');
+                $propbag->add('name',           PLUGIN_FINDMORE_PATH_NAME);
+                $propbag->add('description',    PLUGIN_FINDMORE_PATH_DESC);
+                $propbag->add('default',        $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_findmore/img/');
                 break;
 
             case 'diggCountDisplay':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_FINDMORE_DIGGCOUNT_DISPLAY_NAME);
-                $propbag->add('description', PLUGIN_FINDMORE_DIGGCOUNT_DISPLAY_DESC);
-                $propbag->add('default', 'true');
+                $propbag->add('type',           'boolean');
+                $propbag->add('name',           PLUGIN_FINDMORE_DIGGCOUNT_DISPLAY_NAME);
+                $propbag->add('description',    PLUGIN_FINDMORE_DIGGCOUNT_DISPLAY_DESC);
+                $propbag->add('default',        'true');
                 break;
 
             case 'diggCountPlacement':
-                $propbag->add('type', 'select');
-                $propbag->add('name', PLUGIN_FINDMORE_DIGGCOUNT_PLACEMENT_NAME);
-                $propbag->add('description', PLUGIN_FINDMORE_DIGGCOUNT_PLACEMENT_DESC);
-                $propbag->add('select_values', array(   'before-entry' => 'Before entry',
+                $propbag->add('type',           'select');
+                $propbag->add('name',           PLUGIN_FINDMORE_DIGGCOUNT_PLACEMENT_NAME);
+                $propbag->add('description',    PLUGIN_FINDMORE_DIGGCOUNT_PLACEMENT_DESC);
+                $propbag->add('select_values',  array(  'before-entry' => 'Before entry',
                                                         'after-entry' => 'After entry',
                                                         'after-findmore' => 'After Findmore links'));
-                $propbag->add('default', 'after-entry');
+                $propbag->add('default',        'after-entry');
         }
         return true;
     }
@@ -173,11 +173,11 @@ class serendipity_event_findmore extends serendipity_event
         }
 
         if ($lazyload == null) {
-            $lazyload  = serendipity_db_bool($this->get_config('lazyload'));
+            $lazyload  = serendipity_db_bool($this->get_config('lazyload', 'false'));
             $serendipity['smarty']->assign('findmore_lazyload', $lazyload);
             $serendipity['smarty']->assign('findmore_lazyload_text', $this->get_config('lazyload_text'));
         }
-        $serendipity['smarty']->assign('findmore_spreadly_social', serendipity_db_bool($this->get_config('spreadly_social')));
+/*        $serendipity['smarty']->assign('findmore_spreadly_social', serendipity_db_bool($this->get_config('spreadly_social', 'true')));*/
 
         if (empty($filename)) {
             $filename = 'plugin_findmore.tpl';
@@ -188,12 +188,7 @@ class serendipity_event_findmore extends serendipity_event
         if (!$tfile || $tfile == $filename) {
             $tfile = dirname(__FILE__) . '/' . $filename;
         }
-        $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
-
-        $serendipity['smarty']->assign('entrydata', $data);
-        $content = $serendipity['smarty']->fetch('file:'. $tfile);
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = $inclusion;
+        $content = $this->parseTemplate($tfile);
 
         return $content;
     }
@@ -286,13 +281,13 @@ class serendipity_event_findmore extends serendipity_event
                     echo '<!--serendipity_event_findmore-->' . "\n";
                     $hash = $this->generateMicroid('mailto:' . $serendipity['email'], $serendipity['baseURL']);
                     echo '<meta name="microid" content="mailto+http:sha1:' . $hash . '" />'."\n";
-
+/*
                     $emails = explode("\n", str_replace(',', "\n", $this->get_config('spreadly_emails')));
                     foreach($emails AS $email) {
                         $email = trim($email);
                         $hash = $this->generateMicroid('mailto:' . $email, $serendipity['baseURL']);
                         echo '<meta name="microid" content="mailto+http:sha1:' . $hash . '" />'."\n";
-                    }
+                    }*/
 
                     $_disabled_services = explode('^', $this->get_config('disabled_services'));
                     foreach($_disabled_services AS $i => $service) {
@@ -300,10 +295,10 @@ class serendipity_event_findmore extends serendipity_event
                     }
 
                     if ($lazyload == null) {
-                        $lazyload  = serendipity_db_bool($this->get_config('lazyload'));
+                        $lazyload  = serendipity_db_bool($this->get_config('lazyload', 'false'));
                     }
                     if ($lazyload) {
-                        echo '<script src="' .  $path .'plugin_findmore.js"></script>'."\n";
+                        echo '<script src="' . $path .'plugin_findmore.js"></script>'."\n";
                     }
 
                     if (! ($disabled_services['plusone'] || $lazyload)) {
@@ -325,12 +320,12 @@ class serendipity_event_findmore extends serendipity_event
                         'path'  => $path
                     );
 
-                    if ($serendipity['view'] != 'entry' && serendipity_db_bool($this->get_config('extended_only'))) {
+                    if ($serendipity['view'] != 'entry' && serendipity_db_bool($this->get_config('extended_only', 'false'))) {
                         // We are in overview mode.
                         return true;
                     }
 
-                    $diggCountDisplay   = serendipity_db_bool($this->get_config('diggCountDisplay'));
+                    $diggCountDisplay   = serendipity_db_bool($this->get_config('diggCountDisplay', 'true'));
                     $diggCountPlacement = $this->get_config('diggCountPlacement');
 
                     $diggCountData = null;
