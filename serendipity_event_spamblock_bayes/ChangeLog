@@ -1,3 +1,8 @@
+0.4.23:
+
+ * remove old Smarty2 security settings
+ * set requirement versions
+
 0.4.22:
 
  * set plugin consistencies

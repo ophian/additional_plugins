@@ -38,7 +38,12 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $this->title = PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME;
         $propbag->add ( 'description', PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add ( 'name', $this->title);
-        $propbag->add ( 'version', '0.4.22' );
+        $propbag->add ( 'version', '0.4.23' );
+        $propbag->add('requirements',  array(
+            'serendipity' => '1.7',
+            'smarty'      => '3.0.0',
+            'php'         => '5.2.0'
+        ));
         $propbag->add ( 'event_hooks', array ('frontend_saveComment' => true,
                                              'backend_spamblock_comments_shown' => true,
                                              'external_plugin' => true,
@@ -1491,16 +1496,10 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $serendipity['smarty']->assign($data);
 
         $tfile = serendipity_getTemplateFile($template, 'serendipityPath');
-
-        if ($tfile == $template) {
-            $tfile = dirname(__FILE__) . "/$template";
+        if (!$tfile || $tfile == $filename) {
+            $tfile = dirname(__FILE__) . '/' . $filename;
         }
-        $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
-        $content = $serendipity['smarty']->fetch('file:'. $tfile);
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = $inclusion;
-
-        echo $content;
+        $serendipity['smarty']->display($tfile);
     }
 
     function showLearnMenu()
