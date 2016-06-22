@@ -1,6 +1,5 @@
 <?php
 
-
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -18,7 +17,7 @@ class serendipity_common_adduser
         } else {
             $activation_url = $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity%5Badduser_activation%5D=' . $hash . '#adduser';
         }
-        $fromName       = $serendipity['blogTitle'];
+        $fromName = $serendipity['blogTitle'];
 
         if ($approve_only) {
             $subject  = '['. $serendipity['blogTitle'] . '] ' . PLUGIN_ADDUSER_MAIL_SUBJECT_APPROVE;
@@ -199,7 +198,8 @@ class serendipity_common_adduser
         return $hash;
     }
 
-    static function adduser(&$username, &$password, &$email, $userlevel, $usergroups = array(), $no_create = false, $right_publish = true, $straight_insert = false, $approve = false, $use_captcha = false)
+    static function adduser(&$username, &$password, &$email, $userlevel, $usergroups = array(),
+                             $no_create = false, $right_publish = true, $straight_insert = false, $approve = false, $use_captcha = false)
     {
         global $serendipity;
 
@@ -289,8 +289,6 @@ class serendipity_common_adduser
         if (!$tfile || $tfile == $filename) {
             $tfile = dirname(__FILE__) . '/' . $filename;
         }
-        $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
         $serendipity['smarty']->display($tfile);
     }
 

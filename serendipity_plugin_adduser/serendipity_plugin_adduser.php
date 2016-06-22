@@ -13,11 +13,11 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '2.40');
+        $propbag->add('version',       '2.41');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.0.0',
+            'php'         => '5.2.0'
         ));
         $propbag->add('groups', array('BACKEND_USERMANAGEMENT'));
         $propbag->add('configuration', array(
@@ -123,7 +123,6 @@ class serendipity_plugin_adduser extends serendipity_plugin
                 $propbag->add('description', PLUGIN_ADDUSER_CAPTCHA_DESC);
                 $propbag->add('default',     false);
                 break;
-
 
             case 'default_label':
                 $propbag->add('type',        'content');
@@ -269,7 +268,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
             serendipity_common_adduser::loginform($url, array(), $this->get_config('instructions'), $username, $password, $email, serendipity_db_bool($this->get_config('use_captcha', false)));
         }
 
-        echo '</div>';
+        echo "</div>\n";
 
         return true;
     }

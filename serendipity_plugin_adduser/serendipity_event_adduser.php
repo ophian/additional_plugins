@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 include_once dirname(__FILE__) . '/common.inc.php';
 
@@ -12,11 +12,11 @@ class serendipity_event_adduser extends serendipity_event
         $propbag->add('description', PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking');
-        $propbag->add('version',     '2.38');
+        $propbag->add('version',     '2.41');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.0.0',
+            'php'         => '5.2.0'
         ));
         $propbag->add('groups', array('BACKEND_USERMANAGEMENT'));
         $propbag->add('event_hooks', array(
@@ -81,17 +81,19 @@ class serendipity_event_adduser extends serendipity_event
                 break;
 
             default:
-                    return false;
+                return false;
         }
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_ADDUSER_NAME;
     }
 
     // Checks whether the current author is contained in one of the gorups that need no spam checking
-    function inGroup() {
+    function inGroup()
+    {
         global $serendipity;
 
         $checkgroups = explode('^', $this->get_config('registered_only_group'));
@@ -121,7 +123,8 @@ class serendipity_event_adduser extends serendipity_event
         return false;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         static $login_url = null;
 
@@ -132,48 +135,46 @@ class serendipity_event_adduser extends serendipity_event
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'frontend_saveComment':
-                        if (!isset($serendipity['csuccess'])) {
-                            $serendipity['csuccess'] = 'true';
-                        }
+                    if (!isset($serendipity['csuccess'])) {
+                        $serendipity['csuccess'] = 'true';
+                    }
 
-                        if (serendipity_db_bool($this->get_config('registered_only')) && !serendipity_userLoggedIn() && $addData['source2'] != 'adduser') {
+                    if (serendipity_db_bool($this->get_config('registered_only')) && !serendipity_userLoggedIn() && $addData['source2'] != 'adduser') {
+                        $eventData = array('allow_comments' => false);
+                        $serendipity['messagestack']['comments'][] = PLUGIN_ADDUSER_REGISTERED_ONLY_REASON;
+                        return false;
+                    }
+
+                    if (serendipity_db_bool($this->get_config('registered_only')) && !$this->inGroup() && $addData['source2'] != 'adduser') {
+                        $eventData = array('allow_comments' => false);
+                        $serendipity['messagestack']['comments'][] = PLUGIN_ADDUSER_REGISTERED_ONLY_REASON;
+                        return false;
+                    }
+
+                    if (serendipity_db_bool($this->get_config('true_identities')) && !serendipity_userLoggedIn()) {
+                        $user = str_replace("\xc2\xa0b", '', $addData['name']);
+                        $user = serendipity_db_escape_string(preg_replace('@\s+@', ' ', trim($user)));
+                        $user = trim($user);
+                        $authors = serendipity_db_query("SELECT authorid FROM {$serendipity['dbPrefix']}authors WHERE realname = '" . $user . "'");
+                        if (is_array($authors) && isset($authors[0]['authorid'])) {
                             $eventData = array('allow_comments' => false);
-                            $serendipity['messagestack']['comments'][] = PLUGIN_ADDUSER_REGISTERED_ONLY_REASON;
-                            return false;
+                            $serendipity['messagestack']['comments'][] = sprintf(
+                                PLUGIN_ADDUSER_REGISTERED_CHECK_REASON,
+                                $login_url,
+                                'onclick="javascript:loginbox = window.open(this.href, \'loginbox\', \'width=300,height=300,locationbar=no,menubar=no,personalbar=no,statusbar=yes,status=yes,toolbar=no\'); return false;"'
+                            );
                         }
-
-                        if (serendipity_db_bool($this->get_config('registered_only')) && !$this->inGroup() && $addData['source2'] != 'adduser') {
-                            $eventData = array('allow_comments' => false);
-                            $serendipity['messagestack']['comments'][] = PLUGIN_ADDUSER_REGISTERED_ONLY_REASON;
-                            return false;
-                        }
-
-
-                        if (serendipity_db_bool($this->get_config('true_identities')) && !serendipity_userLoggedIn()) {
-                            $user = str_replace("\xc2\xa0b", '', $addData['name']);
-                            $user = serendipity_db_escape_string(preg_replace('@\s+@', ' ', trim($user)));
-                            $user = trim($user);
-                            $authors = serendipity_db_query("SELECT authorid FROM {$serendipity['dbPrefix']}authors WHERE realname = '" . $user . "'");
-                            if (is_array($authors) && isset($authors[0]['authorid'])) {
-                                $eventData = array('allow_comments' => false);
-                                $serendipity['messagestack']['comments'][] = sprintf(
-                                    PLUGIN_ADDUSER_REGISTERED_CHECK_REASON,
-
-                                    $login_url,
-                                    'onclick="javascript:loginbox = window.open(this.href, \'loginbox\', \'width=300,height=300,locationbar=no,menubar=no,personalbar=no,statusbar=yes,status=yes,toolbar=no\'); return false;"'
-                                );
-                            }
-                        }
-
+                    }
                     break;
 
                 case 'external_plugin':
                     if ($eventData != 'loginbox') {
                         return true;
                     }
-
 
                     $out = array();
                     serendipity_plugin_api::hook_event('backend_login_page', $out);
@@ -187,13 +188,12 @@ class serendipity_event_adduser extends serendipity_event
                         'is_logged_in'   => serendipity_userLoggedIn(),
                         'is_error'       => defined('LOGIN_ERROR')
                     ));
+
                     $filename = 'loginbox.tpl';
                     $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
                     if (!$tfile || $tfile == $filename) {
                         $tfile = dirname(__FILE__) . '/' . $filename;
                     }
-                    $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-                    $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
                     $serendipity['smarty']->display($tfile);
 
                     break;
@@ -237,8 +237,6 @@ class serendipity_event_adduser extends serendipity_event
                             }
                         }
                     }
-
-                    return true;
                     break;
 
                 case 'entry_display':
@@ -299,20 +297,20 @@ class serendipity_event_adduser extends serendipity_event
                         if (!serendipity_common_adduser::adduser($username, $password, $email, $pair_config['userlevel'], $pair_config['usergroups'], $pair_config['no_create'], $pair_config['right_publish'], $pair_config['straight_insert'], $pair_config['approve'], $pair_config['use_captcha'])) {
                             serendipity_common_adduser::loginform($url, $hidden, $pair_config['instructions'], $username, $password, $email, $pair_config['use_captcha']);
                         }
-
-                        echo '</div>';
+                        echo "</div>\n";
                     }
-                    return true;
                     break;
 
                 default:
                     return false;
             }
-
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

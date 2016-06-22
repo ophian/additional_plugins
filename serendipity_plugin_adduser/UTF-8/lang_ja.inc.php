@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.3
  */
@@ -40,7 +40,5 @@
 
 @define('PLUGIN_ADDUSER_REGISTERED_CHECK', 'Prevent identity faking');
 @define('PLUGIN_ADDUSER_REGISTERED_CHECK_DESC', 'If enabled, the usernames registered by authors on your blog can only be used by those logged in users.');
-@define('PLUGIN_ADDUSER_REGISTERED_CHECK_REASON', '
-The username you entered is only available to registered authors of this blog. そのユーザー名でコメントを投稿するには<a href="%s" %s>ログイン</a>してください。もし著者登録しない場合、違う名前を使用してください。');
+@define('PLUGIN_ADDUSER_REGISTERED_CHECK_REASON', 'The username you entered is only available to registered authors of this blog. そのユーザー名でコメントを投稿するには<a href="%s" %s>ログイン</a>してください。もし著者登録しない場合、違う名前を使用してください。');
 
-?>

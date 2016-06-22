@@ -61,3 +61,4 @@
 
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY_GROUP',		'Pøídavná funkce: Pouze registrovaní u¾ivatelé z této skupiny smí pøidávat komentáøe?');
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY_GROUP_DESC',		'Abyste toto mohli pou¾ít, musíte zároveò povolit volbu "Komentáøe smí posílat pouze registrovaní u¾ivatelé". Pokud je tato volba zapnutá, pak mohou posílat komentáøe pouze u¾ivatelé ze specifické skupiny u¾ivatelù a musí k tomu být pøihlá¹eni.');
+

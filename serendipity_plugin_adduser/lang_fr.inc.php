@@ -13,7 +13,7 @@
 @define('PLUGIN_ADDUSER_USERLEVEL_DENY', 'Accès refusé');
 @define('PLUGIN_SIDEBAR_LOGIN', 'Affiche le formulaire d\'enregistrement dans la barre latérale ?');
 @define('PLUGIN_SIDEBAR_LOGIN_DESC', 'Si la valeur "oui" est sélectionnée, un formulaire d\'enregistrement sera affiché dans la barre latérale. Sinon, vos utilisateurs devront s\'enregistrer dans une page spéciale définie dans le plugin d\'événement correspondant.');
-        
+
 @define('PLUGIN_ADDUSER_EXISTS', 'Désolé, le nom d\'utilisateur "%s" est déjà utilisé. Merci d\'en choisir un autre.');
 @define('PLUGIN_ADDUSER_MISSING', 'Vous devez saisir tous les champs pour créer un compte utilisateur.');
 @define('PLUGIN_ADDUSER_SENTMAIL', 'Votre compte a été créé. Vous recevrez prochainement par email toutes les informations complémentaires nécessaires à son utilisation.');
@@ -36,4 +36,3 @@
 @define('PLUGIN_ADDUSER_REGISTERED_CHECK_DESC', 'Si la valeur "oui" est sélectionnée, les noms d\'utilisateurs enregistrés ne pourront être utilisés que par ceux qui sont connectés en tant qu\'utilisateur.');
 @define('PLUGIN_ADDUSER_REGISTERED_CHECK_REASON', 'Le nom d\'utilisateur que vous essayez d\'utiliser est réservé à un utilisateur enregistré. Merci de vous <a href="%s" %s>connecter</a> pour poster un commentaire en utilisant ce nom. Si vous n\'êtes pas un utilisateur enregistré, merci d\'utiliser un nom différent.');
 
-?>

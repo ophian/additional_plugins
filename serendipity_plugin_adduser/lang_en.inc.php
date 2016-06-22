@@ -1,13 +1,13 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_ADDUSER_NAME',     'User Self-Registration');
-@define('PLUGIN_ADDUSER_DESC',     'Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.');
+@define('PLUGIN_ADDUSER_NAME', 'User Self-Registration');
+@define('PLUGIN_ADDUSER_DESC', 'Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.');
 @define('PLUGIN_ADDUSER_INSTRUCTIONS', 'Additional instructions');
 @define('PLUGIN_ADDUSER_INSTRUCTIONS_DESC', 'Add extra instructions which shall appear in the creation form');
 @define('PLUGIN_ADDUSER_INSTRUCTIONS_DEFAULT', 'Here you can register yourself as an author for this blog. Just enter your data, submit the form and receive further instructions via mail.');
@@ -58,3 +58,4 @@
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY_GROUP_DESC', 'You also need to enable the option "Only registered users may post comments" to use this. If enabled, only registered users of specific authorgroups may post comments to your entries and need to be logged in to do so.');
 
 @define('PLUGIN_ADDUSER_DEFAULTSETTINGS', 'Here you can specify settings that will be applied to created users.');
+

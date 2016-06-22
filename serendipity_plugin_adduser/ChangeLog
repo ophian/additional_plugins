@@ -1,3 +1,10 @@
+2.41:
+-----
+
+ * removed old Smarty2 security settings - extends required Serendipity version to v.1.7
+ * fixed some more  plugin consistencies
+ * Set both (event and sidebar) plugins to the same version
+
 2.40:
 -----
 
@@ -5,7 +12,7 @@
  * fixed Strict Standards: Declaration error
  * use load language API - extends required Serendipity version to v.1.6
 
-2.93:
+2.39:
 -----
 
 When admin mails are enabled, return proper function call to prevent "ERROR" message.
@@ -39,6 +46,7 @@ Allow the backend_smtp event hook to support the serendipity_event_smtp plugin.
 ----
 
 Set current language as default for new users
+
 2.31:
 -----
 
@@ -46,6 +54,7 @@ Serendipty 1.5 password compatibility
 
 2.30:
 ----
+
 Fix array check when no blog entries yet exist
 
 2.28, 2.29:
@@ -56,14 +65,17 @@ Allow registrations, even if "Only registered people may post" is enabled.
 
 2.27:
 ----
+
 Do not show sidebar plugin when a user is logged in
 
 2.26:
 ----
+
 Fix bad insertion of user memberships
 
 2.25:
 ----
+
 Added support to use Captchas
 
 2.21:
