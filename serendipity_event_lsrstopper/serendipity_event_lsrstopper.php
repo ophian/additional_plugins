@@ -293,10 +293,10 @@ class serendipity_event_lsrstopper extends serendipity_event
     protected function fetchRemoteBlacklist()
     {
         $httpDirname = (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/';
-        $options = array('follow_redirects' => true, 'max_redirects' => 3);
         if (file_exists($httpDirname . 'Request2.php')) {
             set_include_path(get_include_path() . PATH_SEPARATOR . $httpDirname . '/..');
             require_once $httpDirname . 'Request2.php';
+            $options = array('follow_redirects' => true, 'max_redirects' => 3);
             if (version_compare(PHP_VERSION, '5.6.0', '<')) {
                 // restore HTTP/Request
                 $options['ssl_verify_peer'] = false;
@@ -315,6 +315,7 @@ class serendipity_event_lsrstopper extends serendipity_event
         } else {
             // Fallback to old solution
             require_once $httpDirname . 'Request.php';
+            $options = array('allowRedirects' => true, 'maxRedirects' => 3);
             $req = new HTTP_Request($this->get_config('blacklist_url'), $options);
             if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
                 return null;
