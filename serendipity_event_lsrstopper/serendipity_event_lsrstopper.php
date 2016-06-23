@@ -298,7 +298,7 @@ class serendipity_event_lsrstopper extends serendipity_event
             require_once $httpDirname . 'Request2.php';
             $options = array('follow_redirects' => true, 'max_redirects' => 3);
             if (version_compare(PHP_VERSION, '5.6.0', '<')) {
-                // restore HTTP/Request
+                // restore old HTTP/Request behaviour
                 $options['ssl_verify_peer'] = false;
             }
             $req = new HTTP_Request2($this->get_config('blacklist_url'), HTTP_Request2::METHOD_GET, $options);
