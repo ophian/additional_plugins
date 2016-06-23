@@ -25,7 +25,7 @@ class serendipity_event_weblogping extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WEBLOGPING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.09');
+        $propbag->add('version',       '1.10');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -226,12 +226,12 @@ class serendipity_event_weblogping extends serendipity_event
                             $options = array();
                             serendipity_plugin_api::hook_event('backend_http_request', $options, 'weblogping');
                             serendipity_request_start();
-
                             if (defined('SERENDIPITY_IS_REQUEST2')) {
-                                $req = new HTTP_Request2(
-                                        "http://".$service['host'].$service['path'],
-                                        HTTP_Request2::METHOD_POST,
-                                        $options);
+                                if (version_compare(PHP_VERSION, '5.6.0', '<')) {
+                                    // restore HTTP/Request
+                                    $options['ssl_verify_peer'] = false;
+                                }
+                                $req = new HTTP_Request2("http://".$service['host'].$service['path'], HTTP_Request2::METHOD_POST, $options);
                                 $req->addHeader("Content-Type", "text/xml");
                                 if (strtoupper(LANG_CHARSET) != 'UTF-8') {
                                     $payload = utf8_encode($message->payload);

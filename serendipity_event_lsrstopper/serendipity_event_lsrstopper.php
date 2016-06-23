@@ -43,7 +43,7 @@ class serendipity_event_lsrstopper extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_LSRSTOPPER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Gutjahr');
-        $propbag->add('version',       '0.3');
+        $propbag->add('version',       '0.4');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -290,16 +290,18 @@ class serendipity_event_lsrstopper extends serendipity_event
      * @return mixed|null|string
      * @throws Exception
      */
-    protected function fetchRemoteBlacklist() {
+    protected function fetchRemoteBlacklist()
+    {
         $httpDirname = (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/';
+        $options = array('follow_redirects' => true, 'max_redirects' => 3);
         if (file_exists($httpDirname . 'Request2.php')) {
             set_include_path(get_include_path() . PATH_SEPARATOR . $httpDirname . '/..');
             require_once $httpDirname . 'Request2.php';
-            $req = new HTTP_Request2(
-                $this->get_config('blacklist_url'),
-                HTTP_Request2::METHOD_GET,
-                array('follow_redirects' => true, 'max_redirects' => 3)
-            );
+            if (version_compare(PHP_VERSION, '5.6.0', '<')) {
+                // restore HTTP/Request
+                $options['ssl_verify_peer'] = false;
+            }
+            $req = new HTTP_Request2($this->get_config('blacklist_url'), HTTP_Request2::METHOD_GET, $options);
             try {
                 $res = $req->send();
                 if (200 == $res->getStatus()) {
@@ -313,7 +315,7 @@ class serendipity_event_lsrstopper extends serendipity_event
         } else {
             // Fallback to old solution
             require_once $httpDirname . 'Request.php';
-            $req = new HTTP_Request($this->get_config('blacklist_url'), array('allowRedirects' => true, 'maxRedirects' => 3));
+            $req = new HTTP_Request($this->get_config('blacklist_url'), $options);
             if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
                 return null;
             }
@@ -321,4 +323,7 @@ class serendipity_event_lsrstopper extends serendipity_event
         }
         return $blacklist;
     }
+
 }
+
+?>
