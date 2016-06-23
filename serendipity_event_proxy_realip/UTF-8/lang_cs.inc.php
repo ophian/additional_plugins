@@ -8,3 +8,4 @@
 @define('PLUGIN_EVENT_PROXY_REALIP_DESC', 'Nastaví správnou návštěvnickou IP adresu pro čtenáře, kteří používají Proxy webserver. Měl by být prvním pluginem v seznamu pluginů.');
 @define('PLUGIN_EVENT_PROXY_REALIP_VAR', 'Proměnná s IP adresou');
 @define('PLUGIN_EVENT_PROXY_REALIP_VAR_DESC', 'Název proměnné, která obsahuje správnou IP adresu. např. $_SERVER[\'X-FORWARDED-FOR\']');
+

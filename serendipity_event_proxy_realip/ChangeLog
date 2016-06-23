@@ -1,3 +1,10 @@
+1.0.2:
+------
+
+ * Add plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+
+
 1.0.1
 ----
 # Vulnerability fixed.
