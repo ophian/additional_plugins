@@ -46,3 +46,4 @@ Pokud Váš klient neumí posílat hlášení o spamu, možná se vám bude hodit, když na
 @define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_NONE', 'Nedìlat nic');
 @define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_SPAM', 'Hlásit jako SPAM');
 @define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_HAM', 'Hlásit jako HAM');
+

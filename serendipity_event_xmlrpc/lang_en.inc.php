@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -47,3 +47,4 @@ If you client doesn\'t support the Spam signal, you may want to signal SPAM ever
 @define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_NONE', 	    'Do nothing SPAM related.');
 @define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_SPAM', 	    'Signal as SPAM.');
 @define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_HAM', 	    'Signal as HAM.');
+

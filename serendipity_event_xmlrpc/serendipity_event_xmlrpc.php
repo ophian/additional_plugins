@@ -1,17 +1,10 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+include_once dirname(__FILE__) . '/common.inc.php';
 
 class serendipity_event_xmlrpc extends serendipity_event
 {
@@ -25,9 +18,9 @@ class serendipity_event_xmlrpc extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_XMLRPC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.53');
+        $propbag->add('version',       '1.54');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -35,23 +28,25 @@ class serendipity_event_xmlrpc extends serendipity_event
             'frontend_xmlrpc'  => true,
             'frontend_header'  => true
         ));
-        $propbag->add('configuration', 
+        $propbag->add('configuration',
             array('doc_rpclink','category', 'gmt', 'uploaddir', 'htmlconvert', 'asureauthor', 'wpfakeversion', 'debuglog', 'spamevent_description', 'event_spam', 'event_approved','event_pending')
             );
         $propbag->add('groups', array('FRONTEND_FULL_MODS', 'FRONTEND_EXTERNAL_SERVICES'));
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function showXSD() {
+    function showXSD()
+    {
         global $serendipity;
 
-        echo '<?xml version="1.0" ?> 
+        echo '<?xml version="1.0" ?>
         <rsd version="1.0" xmlns="http://archipelago.phrasewise.com/rsd" >
         <service>
-            <engineName>Serendipity (s9y)</engineName> 
+            <engineName>Serendipity (s9y)</engineName>
             <engineLink>http://www.s9y.org/</engineLink>
             <homePageLink>' . $serendipity['baseURL'] . '</homePageLink>
             <apis>
@@ -64,16 +59,17 @@ class serendipity_event_xmlrpc extends serendipity_event
         </rsd>';
     }
     // <api name="WordPress"   preferred="false"  apiLink="' . $serendipity['baseURL'] . 'serendipity_xmlrpc.php" blogID="1" />
-    
+
     function introspect_config_item($name, &$propbag)
     {
         global $serendipity;
-        
+
         switch($name) {
             case 'doc_rpclink':
                 $propbag->add('type',           'content');
                 $propbag->add('default',        sprintf(PLUGIN_EVENT_XMLRPC_DOC_RPCLINK, $serendipity['baseURL'] . 'serendipity_xmlrpc.php'));
                 break;
+
             case 'debuglog':
                 $debuglevels = array(
                     'none'     => PLUGIN_EVENT_XMLRPC_DEBUGLOG_NONE,
@@ -86,12 +82,14 @@ class serendipity_event_xmlrpc extends serendipity_event
                 $propbag->add('description', PLUGIN_EVENT_XMLRPC_DEBUGLOG_DESC);
                 $propbag->add('default', 'none');
                 break;
+
             case 'gmt':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_XMLRPC_GMT);
                 $propbag->add('description', '');
                 $propbag->add('default', false);
                 break;
+
             case 'uploaddir' :
                 $propbag->add('type',          'select');
                 $propbag->add('select_values', $this->scanUploadDir());
@@ -99,12 +97,14 @@ class serendipity_event_xmlrpc extends serendipity_event
                 $propbag->add('description', PLUGIN_EVENT_XMLRPC_UPLOADDIR_DESC);
                 $propbag->add('default', '');
                 break;
+
             case 'htmlconvert':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_XMLRPC_HTMLCONVERT);
                 $propbag->add('description', PLUGIN_EVENT_XMLRPC_HTMLCONVERT_DESC);
                 $propbag->add('default', true);
                 break;
+
             case 'asureauthor':
                 $authoroptions = array(
                     'default'             => PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_DEFAULT,
@@ -117,13 +117,14 @@ class serendipity_event_xmlrpc extends serendipity_event
                 $propbag->add('description', PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_DESC);
                 $propbag->add('default', 'default');
                 break;
+
             case 'wpfakeversion' :
                 $propbag->add('type',          'string');
                 $propbag->add('name',          PLUGIN_EVENT_XMLRPC_WPFAKEVERSION);
                 $propbag->add('description',   PLUGIN_EVENT_XMLRPC_WPFAKEVERSION_DESC);
                 $propbag->add('default',       '');
                 break;
-                
+
             case 'category':
                 $cats    = serendipity_fetchCategories($serendipity['authorid']);
                 if (!is_array($cats)) {
@@ -152,10 +153,12 @@ class serendipity_event_xmlrpc extends serendipity_event
                 $propbag->add('description',   PLUGIN_EVENT_XMLRPC_DEFAULTCAT_DESC);
                 $propbag->add('default',       '');
                 break;
+
             case 'spamevent_description':
                 $propbag->add('type',           'content');
                 $propbag->add('default',        PLUGIN_EVENT_XMLRPC_EVENT_SPAM_HEADER);
                 break;
+
             case 'event_spam':
             case 'event_approved':
             case 'event_pending':
@@ -184,13 +187,13 @@ class serendipity_event_xmlrpc extends serendipity_event
                 break;
 
             default:
-                    return false;
+                return false;
         }
         return true;
     }
 
-
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity, $HTTP_RAW_POST_DATA;
 
         $hooks = &$bag->get('event_hooks');
@@ -198,7 +201,9 @@ class serendipity_event_xmlrpc extends serendipity_event
         $article_show = false;
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'frontend_header':
                     echo '<link rel="pingback" href="' . $serendipity['baseURL'] . 'serendipity_xmlrpc.php" />' . "\n";
                     echo '<link rel="EditURI" type="application/rsd+xml" title="RSD" href="' . $serendipity['baseURL'] . 'serendipity_xmlrpc.php?xsd=true" />' . "\n";
@@ -208,7 +213,7 @@ class serendipity_event_xmlrpc extends serendipity_event
                     // Those variables should not be set by other plugins!
                     header('Content-Type: text/xml');
                     $eventData = array('XML-RPC' => true);
-                    
+
                     if ($_REQUEST['xsd']) {
                         $this->showXSD();
                         return true;
@@ -221,14 +226,14 @@ class serendipity_event_xmlrpc extends serendipity_event
                     $serendipity['xmlrpc_htmlconvert']  = $this->get_config('htmlconvert',true);
                     $serendipity['xmlrpc_uploadreldir']  = $this->get_config('uploaddir','');
                     $serendipity['xmlrpc_asureauthor'] = $this->get_config('asureauthor','default');
-                    
+
                     $serendipity['xmlrpc_event_spam']  = $this->get_config('event_spam','spam');
                     $serendipity['xmlrpc_event_approved']  = $this->get_config('event_approved','ham');
                     $serendipity['xmlrpc_event_pending']  = $this->get_config('event_approved','none');
-                    
+
                     @define('SERENDIPITY_IS_XMLRPC', true);
                     $serendipity['XMLRPC_GMT'] = serendipity_db_bool($this->get_config('gmt'));
-                    
+
                     $this->setupPearPath();
                     if (!class_exists('XML_RPC_Base')) {
                         require_once PLUGIN_EVENT_XMLRPC_PEAR_PATH . 'XML/RPC.php';
@@ -239,19 +244,19 @@ class serendipity_event_xmlrpc extends serendipity_event
                     }
 
                     require_once dirname(__FILE__) . '/serendipity_xmlrpc.inc.php';
-
-                    return true;
+                    break;
 
                 default:
-                    return false;
                     break;
             }
+            return false;
         } else {
             return false;
         }
     }
-    
-    function setupPearPath() {
+
+    function setupPearPath()
+    {
         // use bundled PEAR modules instead of plugins, if found
         // The s9y bundled lib could be outdated. Upgrading it with the plugin is much more easy.
         /*
@@ -260,11 +265,12 @@ class serendipity_event_xmlrpc extends serendipity_event
             @define('PLUGIN_EVENT_XMLRPC_PEAR_PATH', S9Y_PEAR_PATH);
         }
         else { */
-            @define('PLUGIN_EVENT_XMLRPC_PEAR_PATH',dirname(__FILE__) . '/PEAR/');
+            @define('PLUGIN_EVENT_XMLRPC_PEAR_PATH', dirname(__FILE__) . '/PEAR/');
 //        }
     }
-    
-    function scanUploadDir(){
+
+    function scanUploadDir()
+    {
         global $serendipity;
 
         if (!serendipity_checkPermission('adminImagesDirectories')) {
@@ -286,6 +292,8 @@ class serendipity_event_xmlrpc extends serendipity_event
         }
         return $result;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

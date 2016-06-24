@@ -40,3 +40,4 @@ Bei einem Client ohne separatem Spam Knopf will man das Signal z.B. schicken, we
 @define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_NONE', 	    'Nichts im SPAM Zusammenhang');
 @define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_SPAM', 	    'Signalisiere als SPAM');
 @define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_HAM', 	    'Signalisiere als HAM');
+
