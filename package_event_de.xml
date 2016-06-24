@@ -10838,14 +10838,14 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <name>serendipity_event_xmlrpc</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_xmlrpc/ChangeLog</changelog>
 <license>GPL</license>
-<summary>PLUGIN_EVENT_XMLRPC_NAME</summary>
+<summary>Einträge via XML-RPC erstellen</summary>
 <groups>FRONTEND_FULL_MODS,FRONTEND_EXTERNAL_SERVICES</groups>
-<description>PLUGIN_EVENT_XMLRPC_DESC</description>
+<description>Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)</description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.54</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-22</date>
+  <date>2016-06-24</date>
   <filelist>
 <dir name="serendipity_event_xmlrpc">
 <file>.gitignore</file>

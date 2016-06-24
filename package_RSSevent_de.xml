@@ -1361,12 +1361,12 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <guid isPermaLink="false">serendipity_event_xinha</guid>
 </item>
 <item>
-<title>PLUGIN_EVENT_XMLRPC_NAME: PLUGIN_EVENT_XMLRPC_DESC</title>
+<title>Einträge via XML-RPC erstellen: Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_xmlrpc</link>
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;PLUGIN_EVENT_XMLRPC_NAME&lt;/b&gt;&lt;br /&gt;PLUGIN_EVENT_XMLRPC_DESC&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 22 Jun 2016 09:40:01 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Einträge via XML-RPC erstellen&lt;/b&gt;&lt;br /&gt;Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 24 Jun 2016 11:20:22 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
