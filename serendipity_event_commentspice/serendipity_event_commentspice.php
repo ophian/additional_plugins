@@ -1077,7 +1077,7 @@ class serendipity_event_commentspice extends serendipity_event
 
         // Hide and reveal classes by @yellowled used be the RSS chooser:
         ob_start();
-        echo "\n/* serendipity_event_comentspice start */\n";
+        echo "\n/* serendipity_event_commentspice start */\n";
 ?>
 
 .spicehidden {
@@ -1187,7 +1187,7 @@ select.commentspice_rss_input option {
 }
 <?php
         }
-        echo "\n/* serendipity_event_comentspice end */\n";
+        echo "\n/* serendipity_event_commentspice end */\n";
         $spiced = ob_get_contents();
         ob_end_clean();
         $eventData .= $spiced; // append!
