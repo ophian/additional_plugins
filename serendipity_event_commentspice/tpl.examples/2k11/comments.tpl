@@ -10,7 +10,7 @@
         {$comment.body}
     {/if}
     </div>
-    
+
     <footer>
         <time>{$comment.timestamp|@formatTime:'%H:%M'}</time>
         | <a class="comment_source_trace" href="#c{$comment.id}" title="{$CONST.TWOK11_PLINK_TITLE}" rel="nofollow">{$CONST.TWOK11_PLINK_TEXT}</a>

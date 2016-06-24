@@ -1,27 +1,34 @@
+1.07:
+-----
+ * Consistent plugin usage fixes
+ * Use load_language API available since 1.6
+ * Append CSS to $eventData, not prepend!
+ * Cleanups
+
 Version 1.06
-* Add ability to formular custom comment texts.
+ * Add ability to formular custom comment texts.
 
 Version 1.05
-* Delete old configuration entries that have moved to the spambee in order to not confuse 2k11
+ * Delete old configuration entries that have moved to the spambee in order to not confuse 2k11
 
 Version 1.04
-* Only show CommentSpice elements if in article view (not in contact form i.e.).
+ * Only show CommentSpice elements if in article view (not in contact form i.e.).
 
 Version 1.03
-* Optional allow the commentor to announce a single article only once per page.
-* "Choose article" was displayed in the language of the last user who triggered RSS fetching.
-* Announce description will be hidden, if nothing is left to announce.
-* Made it better work with 2k11 "out of the box". 
+ * Optional allow the commentor to announce a single article only once per page.
+ * "Choose article" was displayed in the language of the last user who triggered RSS fetching.
+ * Announce description will be hidden, if nothing is left to announce.
+ * Made it better work with 2k11 "out of the box".
 
 Version 1.02
-* Removed all antispam related and put it into a new plugin "Spamblock Bee".
+ * Removed all antispam related and put it into a new plugin "Spamblock Bee".
 
 Version 1.01
-* Preview of a comment is "spiced" now, too.
-* Preview comment is not loosing article promotion selection anymore.
-* The twitter input is remembered now the same way the other inputs are (was not working for preview).
-* The article selector was not hiding again on invalid URLs (only clearing options).
-* The internal styling of the article selector is optional now.
-* Removed spice from admins comment editor.
-* Added some css / templating fixes proposed by @yellowled. Thanks!
-* 2k11 commentform.tpl patchfile changed. Please update if you use it! 
+ * Preview of a comment is "spiced" now, too.
+ * Preview comment is not loosing article promotion selection anymore.
+ * The twitter input is remembered now the same way the other inputs are (was not working for preview).
+ * The article selector was not hiding again on invalid URLs (only clearing options).
+ * The internal styling of the article selector is optional now.
+ * Removed spice from admins comment editor.
+ * Added some css / templating fixes proposed by @yellowled. Thanks!
+ * 2k11 commentform.tpl patchfile changed. Please update if you use it!

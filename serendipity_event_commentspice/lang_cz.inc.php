@@ -95,3 +95,4 @@
 @define('PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS', 'Po¾adavky');
 @define('PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS_COMMENTCOUNT', '%s napsaných komentáøù');
 @define('PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS_COMMENTLEN', 'nejménì %s znakù v komentáøi');
+

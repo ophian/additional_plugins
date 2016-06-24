@@ -93,3 +93,4 @@
 @define('PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS_COMMENTLEN', 'this comment %s letters at least');
 
 @define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_CUSTOMTEXT', 'Custom comment instructions');
+
