@@ -239,9 +239,9 @@
 <description>Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator</description>
 <maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.40</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-20</date>
+  <version>0.41</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2016-06-22</date>
   <filelist>
 <dir name="serendipity_event_aggregator">
 <file>ChangeLog</file>
@@ -675,9 +675,9 @@
 <description>Translate blog entries (trash!)</description>
 <maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.8</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-20</date>
   <filelist>
 <dir name="serendipity_event_babelfish">
 <file>lang_cs.inc.php</file>
@@ -1484,8 +1484,8 @@
 <maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.07</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-24</date>
   <filelist>
 <dir name="serendipity_event_commentspice">
 <file>ChangeLog</file>
@@ -3320,12 +3320,12 @@
 <license>GPL</license>
 <summary>Show social share buttons for services like Facebook and Twitter</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>You can remove/insert other custom services to link to via the &quot;plugin_findmore.tpl&quot; template file easily. Also remember that if you want to save grandma's performance pennies that you can also insert the HTML/JS snippets into your entries.tpl template file instead of using this plugin!</description>
+<description>Plugin DEPRECATED. Move along to the new event_social plugin! You can remove/insert other custom services to link to via the &quot;plugin_findmore.tpl&quot; template file easily. Also remember that if you want to save grandma's performance pennies that you can also insert the HTML/JS snippets into your entries.tpl template file instead of using this plugin!</description>
 <maintainers><maintainer><name>Garvin Hicking, Kodewulf</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.23</version>
+  <version>1.24</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-20</date>
+  <date>2016-06-22</date>
   <filelist>
 <dir name="serendipity_event_findmore">
 <file>ChangeLog</file>
@@ -6434,9 +6434,9 @@
 <description>With this plugin you prevent links to media that support the German &quot;Leistungsschutzrecht&quot;.</description>
 <maintainers><maintainer><name>Matthias Gutjahr</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.3</version>
+  <version>0.4</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-23</date>
   <filelist>
 <dir name="serendipity_event_lsrstopper">
 <file>ChangeLog</file>
@@ -8256,11 +8256,11 @@
 <summary>Proxy Real-IP</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Sets the correct Visitors IP when useing a Proxy for your webserver. Should be the first plugin in the list.</description>
-<maintainers><maintainer><name>&lt;a href=&quot;http://blog.kleinerChemiker.net/&quot; target=&quot;_blank&quot;&gt;kleinerChemiker&lt;/a&gt;</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>kleinerChemiker</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <requirements:s9yVersion>1.6.2</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-23</date>
   <filelist>
 <dir name="serendipity_event_proxy_realip">
 <file>ChangeLog</file>
@@ -8275,7 +8275,6 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
 </dir>
 </dir>
 
@@ -8292,7 +8291,6 @@
     <file>serendipity_event_proxy_realip/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_proxy_realip/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_proxy_realip/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_proxy_realip/UTF-8/lang_en.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -8885,9 +8883,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>Detects Spam via an algorithmus which learns.</description>
 <maintainers><maintainer><name>kleinerChemiker,  Malte Paskuda, based upon b8 by Tobias Leupold</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.4.22</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-06-09</date>
+  <version>0.4.23</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2016-06-22</date>
   <filelist>
 <dir name="serendipity_event_spamblock_bayes">
 <dir name="admin">
@@ -10577,9 +10575,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>Enviar uma actualização de novas entradas aos serviços de indexação</description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.09</version>
+  <version>1.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-17</date>
+  <date>2016-06-23</date>
   <filelist>
 <dir name="serendipity_event_weblogping">
 <file>ChangeLog</file>
@@ -10845,9 +10843,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)</description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.53</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.54</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-24</date>
   <filelist>
 <dir name="serendipity_event_xmlrpc">
 <file>.gitignore</file>
@@ -10866,6 +10864,59 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <file>Server.php</file>
 </dir>
 <file>RPC.php</file>
+<dir name="RPC2">
+<dir name="Backend">
+<dir name="Php">
+<file>Client.php</file>
+<file>Request.php</file>
+<file>Response.php</file>
+<file>Server.php</file>
+<dir name="Value">
+<file>Array.php</file>
+<file>Base64.php</file>
+<file>Boolean.php</file>
+<file>Datetime.php</file>
+<file>Double.php</file>
+<file>Integer.php</file>
+<file>Integer64.php</file>
+<file>Nil.php</file>
+<file>Scalar.php</file>
+<file>String.php</file>
+<file>Struct.php</file>
+</dir>
+<file>Value.php</file>
+</dir>
+<dir name="Xmlrpcext">
+<file>Client.php</file>
+<file>Server.php</file>
+<file>Value.php</file>
+</dir>
+</dir>
+<file>Backend.php</file>
+<file>CachedClient.php</file>
+<file>CachedServer.php</file>
+<file>Client.php</file>
+<file>ClientHelper.php</file>
+<file>Exception.php</file>
+<dir name="Server">
+<dir name="CallHandler">
+<file>Class.php</file>
+<file>Instance.php</file>
+</dir>
+<file>CallHandler.php</file>
+<dir name="Input">
+<file>PhpInput.php</file>
+<file>RawPostData.php</file>
+</dir>
+<file>Input.php</file>
+<file>Method.php</file>
+</dir>
+<file>Server.php</file>
+<dir name="Util">
+<file>HTTPRequest.php</file>
+</dir>
+<file>Value.php</file>
+</dir>
 </dir>
 </dir>
 <file>serendipity_event_xmlrpc.php</file>
@@ -10891,6 +10942,41 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
     <file>serendipity_event_xmlrpc/PEAR/XML/RPC/Dump.php</file>
     <file>serendipity_event_xmlrpc/PEAR/XML/RPC/Server.php</file>
     <file>serendipity_event_xmlrpc/PEAR/XML/RPC.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Client.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Request.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Response.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Server.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Array.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Base64.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Boolean.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Datetime.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Double.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Integer.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Integer64.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Nil.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Scalar.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/String.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Struct.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Xmlrpcext/Client.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Xmlrpcext/Server.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Xmlrpcext/Value.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/CachedClient.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/CachedServer.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Client.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/ClientHelper.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Exception.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/CallHandler/Class.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/CallHandler/Instance.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/CallHandler.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/Input/PhpInput.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/Input/RawPostData.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/Input.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/Method.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Util/HTTPRequest.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Value.php</file>
     <file>serendipity_event_xmlrpc/serendipity_event_xmlrpc.php</file>
     <file>serendipity_event_xmlrpc/serendipity_xmlrpc.inc.php</file>
     <file>serendipity_event_xmlrpc/UTF-8/lang_cs.inc.php</file>
@@ -11346,9 +11432,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.38</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>2.41</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2016-06-22</date>
   <filelist>
 <dir name="serendipity_plugin_adduser">
 <file>ChangeLog</file>

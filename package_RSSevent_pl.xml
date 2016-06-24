@@ -67,8 +67,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_aggregator</link>
 <category>Event Plugins</category>
 <author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt</author>
-<content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 20 Jun 2016 12:54:30 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Wed, 22 Jun 2016 08:24:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
@@ -112,8 +112,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_babelfish</link>
 <category>Event Plugins</category>
 <author>Sebastian Nohn</author>
-<content:encoded>&lt;b&gt;serendipity_event_babelfish&lt;br /&gt;Babelfish&lt;/b&gt;&lt;br /&gt;Translate blog entries (trash!)&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_babelfish&lt;br /&gt;Babelfish&lt;/b&gt;&lt;br /&gt;Translate blog entries (trash!)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Mon, 20 Jun 2016 14:31:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_babelfish</guid>
 </item>
 <item>
@@ -229,8 +229,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_commentspice</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 24 Jun 2016 11:13:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -477,12 +477,12 @@
 <guid isPermaLink="false">serendipity_event_filter_entries</guid>
 </item>
 <item>
-<title>Pokaż linki do usług, takich jak Facebook, Digg, Technorati, del.icio.us itp. by promować twoje wpisy: Możesz dodawać lub usuwać serwisy znajdujące się w pliku &quot;plugin_findmore.tpl&quot;. Pamiętaj także, że zamiast używać tej wtyczki, możesz wstawić fragmenty kodu do pliku entries.tpl znajdującego się w folderze twojego szablonu.</title>
+<title>Pokaż linki do usług, takich jak Facebook, Digg, Technorati, del.icio.us itp. by promować twoje wpisy: Plugin DEPRECATED. Move along to the new event_social plugin! Możesz dodawać lub usuwać serwisy znajdujące się w pliku &quot;plugin_findmore.tpl&quot;. Pamiętaj także, że zamiast używać tej wtyczki, możesz wstawić fragmenty kodu do pliku entries.tpl znajdującego się w folderze twojego szablonu.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_findmore</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Kodewulf</author>
-<content:encoded>&lt;b&gt;serendipity_event_findmore&lt;br /&gt;Pokaż linki do usług, takich jak Facebook, Digg, Technorati, del.icio.us itp. by promować twoje wpisy&lt;/b&gt;&lt;br /&gt;Możesz dodawać lub usuwać serwisy znajdujące się w pliku &quot;plugin_findmore.tpl&quot;. Pamiętaj także, że zamiast używać tej wtyczki, możesz wstawić fragmenty kodu do pliku entries.tpl znajdującego się w folderze twojego szablonu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 20 Jun 2016 13:11:16 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_findmore&lt;br /&gt;Pokaż linki do usług, takich jak Facebook, Digg, Technorati, del.icio.us itp. by promować twoje wpisy&lt;/b&gt;&lt;br /&gt;Plugin DEPRECATED. Move along to the new event_social plugin! Możesz dodawać lub usuwać serwisy znajdujące się w pliku &quot;plugin_findmore.tpl&quot;. Pamiętaj także, że zamiast używać tej wtyczki, możesz wstawić fragmenty kodu do pliku entries.tpl znajdującego się w folderze twojego szablonu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 22 Jun 2016 09:11:16 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_findmore</guid>
 </item>
 <item>
@@ -788,7 +788,7 @@
 <category>Event Plugins</category>
 <author>Matthias Gutjahr</author>
 <content:encoded>&lt;b&gt;serendipity_event_lsrstopper&lt;br /&gt;D64 LSR-Stopper&lt;/b&gt;&lt;br /&gt;With this plugin you prevent links to media that support the German &quot;Leistungsschutzrecht&quot;.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Thu, 23 Jun 2016 07:35:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_lsrstopper</guid>
 </item>
 <item>
@@ -1002,9 +1002,9 @@
 <title>Proxy Real-IP: Sets the correct Visitors IP when useing a Proxy for your webserver. Should be the first plugin in the list.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_proxy_realip</link>
 <category>Event Plugins</category>
-<author>&lt;a href=&quot;http://blog.kleinerChemiker.net/&quot; target=&quot;_blank&quot;&gt;kleinerChemiker&lt;/a&gt;</author>
+<author>kleinerChemiker</author>
 <content:encoded>&lt;b&gt;serendipity_event_proxy_realip&lt;br /&gt;Proxy Real-IP&lt;/b&gt;&lt;br /&gt;Sets the correct Visitors IP when useing a Proxy for your webserver. Should be the first plugin in the list.&lt;br/&gt;For: Serendipity 1.6.2</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Thu, 23 Jun 2016 08:27:26 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_proxy_realip</guid>
 </item>
 <item>
@@ -1113,8 +1113,8 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_spamblock_bayes</link>
 <category>Event Plugins</category>
 <author>kleinerChemiker,  Malte Paskuda, based upon b8 by Tobias Leupold</author>
-<content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detects Spam via an algorithmus which learns.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 09 Jun 2016 13:59:47 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detects Spam via an algorithmus which learns.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Wed, 22 Jun 2016 08:08:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
@@ -1321,7 +1321,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Zgłoś wpisy&lt;/b&gt;&lt;br /&gt;Wyślij zgłoszenia o nowych wpisach do serwisów sieciowych&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 17 Jun 2016 07:25:50 +0200</pubDate>
+<pubDate>Thu, 23 Jun 2016 07:09:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>
@@ -1365,8 +1365,8 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_xmlrpc</link>
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 24 Jun 2016 11:20:22 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
@@ -1401,8 +1401,8 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_adduser</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Wed, 22 Jun 2016 07:52:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>

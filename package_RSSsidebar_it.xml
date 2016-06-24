@@ -156,8 +156,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_adduser</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Wed, 08 Jun 2016 19:49:33 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Wed, 22 Jun 2016 07:53:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_adduser</guid>
 </item>
 <item>
