@@ -4,7 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-include_once dirname(__FILE__) . '/common.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_xmlrpc extends serendipity_event
 {
