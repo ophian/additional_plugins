@@ -1102,7 +1102,13 @@ class serendipity_event_commentspice extends serendipity_event
         if (!(strpos($eventData, '.commentspice_booplayer'))) {
 ?>
 .commentspice_booplayer {
-margin: 0px; padding: 0px; border: none; display: block; max-width: 100%; width: 1000px; height: 145px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    display: block;
+    max-width: 100%;
+    width: 1000px;
+    height: 145px;
 }
 <?php
         }
