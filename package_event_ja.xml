@@ -197,6 +197,7 @@
   <date>2016-06-08</date>
   <filelist>
 <dir name="serendipity_event_advtypes">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>config.inc.php</file>
 <file>documentation_cs.html</file>
@@ -215,6 +216,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_advtypes/.htaccess</file>
     <file>serendipity_event_advtypes/ChangeLog</file>
     <file>serendipity_event_advtypes/config.inc.php</file>
     <file>serendipity_event_advtypes/documentation_cs.html</file>
@@ -244,6 +246,7 @@
   <date>2016-06-22</date>
   <filelist>
 <dir name="serendipity_event_aggregator">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -364,6 +367,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_aggregator/.htaccess</file>
     <file>serendipity_event_aggregator/ChangeLog</file>
     <file>serendipity_event_aggregator/documentation_cs.html</file>
     <file>serendipity_event_aggregator/documentation_cz.html</file>
@@ -463,6 +467,7 @@
   <date>2016-06-13</date>
   <filelist>
 <dir name="serendipity_event_amazonchooser">
+<file>.htaccess</file>
 <file>Amazon_s9y_lib.php</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -495,6 +500,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_amazonchooser/.htaccess</file>
     <file>serendipity_event_amazonchooser/Amazon_s9y_lib.php</file>
     <file>serendipity_event_amazonchooser/ChangeLog</file>
     <file>serendipity_event_amazonchooser/documentation_cs.html</file>
@@ -536,6 +542,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_assigncategories">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
@@ -555,6 +562,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_assigncategories/.htaccess</file>
     <file>serendipity_event_assigncategories/ChangeLog</file>
     <file>serendipity_event_assigncategories/lang_bg.inc.php</file>
     <file>serendipity_event_assigncategories/lang_cs.inc.php</file>
@@ -585,6 +593,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_autotitle">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -603,6 +612,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_autotitle/.htaccess</file>
     <file>serendipity_event_autotitle/ChangeLog</file>
     <file>serendipity_event_autotitle/documentation_cs.html</file>
     <file>serendipity_event_autotitle/documentation_cz.html</file>
@@ -632,6 +642,7 @@
   <date>2016-06-14</date>
   <filelist>
 <dir name="serendipity_event_autoupdate">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -651,6 +662,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_autoupdate/.htaccess</file>
     <file>serendipity_event_autoupdate/ChangeLog</file>
     <file>serendipity_event_autoupdate/documentation_cs.html</file>
     <file>serendipity_event_autoupdate/documentation_cz.html</file>
@@ -726,6 +738,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_backend">
+<file>.htaccess</file>
 <file>backend.html</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -746,6 +759,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_backend/.htaccess</file>
     <file>serendipity_event_backend/backend.html</file>
     <file>serendipity_event_backend/documentation_cs.html</file>
     <file>serendipity_event_backend/documentation_cz.html</file>
@@ -870,6 +884,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_blogpdf">
+<file>.htaccess</file>
 <file>credits.txt</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -945,6 +960,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_blogpdf/.htaccess</file>
     <file>serendipity_event_blogpdf/credits.txt</file>
     <file>serendipity_event_blogpdf/documentation_cs.html</file>
     <file>serendipity_event_blogpdf/documentation_cz.html</file>
@@ -1027,6 +1043,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_browserid">
+<file>.htaccess</file>
 <file>browserid_signin.png</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -1046,6 +1063,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_browserid/.htaccess</file>
     <file>serendipity_event_browserid/browserid_signin.png</file>
     <file>serendipity_event_browserid/ChangeLog</file>
     <file>serendipity_event_browserid/documentation_cs.html</file>
@@ -1118,6 +1136,7 @@
   <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_cal">
+<file>.htaccess</file>
 <file>backend_inherits.css</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -1161,6 +1180,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_cal/.htaccess</file>
     <file>serendipity_event_cal/backend_inherits.css</file>
     <file>serendipity_event_cal/ChangeLog</file>
     <file>serendipity_event_cal/documentation_cs.html</file>
@@ -1213,6 +1233,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_categorytemplates">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1234,6 +1255,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_categorytemplates/.htaccess</file>
     <file>serendipity_event_categorytemplates/ChangeLog</file>
     <file>serendipity_event_categorytemplates/documentation_cs.html</file>
     <file>serendipity_event_categorytemplates/documentation_cz.html</file>
@@ -1266,6 +1288,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_ckeditor">
+<file>.htaccess</file>
 <file>basic_toolbar1.css</file>
 <file>basic_toolbar2.css</file>
 <file>ChangeLog</file>
@@ -1299,6 +1322,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_ckeditor/.htaccess</file>
     <file>serendipity_event_ckeditor/basic_toolbar1.css</file>
     <file>serendipity_event_ckeditor/basic_toolbar2.css</file>
     <file>serendipity_event_ckeditor/ChangeLog</file>
@@ -1340,6 +1364,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_comics">
+<file>.htaccess</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
 <file>lang_cs.inc.php</file>
@@ -1357,6 +1382,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_comics/.htaccess</file>
     <file>serendipity_event_comics/documentation_cs.html</file>
     <file>serendipity_event_comics/documentation_cz.html</file>
     <file>serendipity_event_comics/lang_cs.inc.php</file>
@@ -1385,6 +1411,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_commentedit">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1406,6 +1433,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_commentedit/.htaccess</file>
     <file>serendipity_event_commentedit/ChangeLog</file>
     <file>serendipity_event_commentedit/documentation_cs.html</file>
     <file>serendipity_event_commentedit/documentation_cz.html</file>
@@ -1438,6 +1466,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_commentsearch">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1458,6 +1487,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_commentsearch/.htaccess</file>
     <file>serendipity_event_commentsearch/ChangeLog</file>
     <file>serendipity_event_commentsearch/documentation_cs.html</file>
     <file>serendipity_event_commentsearch/documentation_cz.html</file>
@@ -1489,6 +1519,7 @@
   <date>2016-06-24</date>
   <filelist>
 <dir name="serendipity_event_commentspice">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>DbSpice.class.php</file>
 <file>documentation_cs.html</file>
@@ -1526,6 +1557,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_commentspice/.htaccess</file>
     <file>serendipity_event_commentspice/ChangeLog</file>
     <file>serendipity_event_commentspice/DbSpice.class.php</file>
     <file>serendipity_event_commentspice/documentation_cs.html</file>
@@ -1566,6 +1598,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_communityrating">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>communityrating_Amazon.tpl</file>
 <file>communityrating_IMDB.tpl</file>
@@ -1597,6 +1630,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_communityrating/.htaccess</file>
     <file>serendipity_event_communityrating/ChangeLog</file>
     <file>serendipity_event_communityrating/communityrating_Amazon.tpl</file>
     <file>serendipity_event_communityrating/communityrating_IMDB.tpl</file>
@@ -1637,6 +1671,7 @@
   <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_contactform">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1670,6 +1705,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_contactform/.htaccess</file>
     <file>serendipity_event_contactform/ChangeLog</file>
     <file>serendipity_event_contactform/documentation_cs.html</file>
     <file>serendipity_event_contactform/documentation_cz.html</file>
@@ -1792,6 +1828,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_cpgselector">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>cpgselector.inc.php</file>
 <file>documentation_cs.html</file>
@@ -1811,6 +1848,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_cpgselector/.htaccess</file>
     <file>serendipity_event_cpgselector/ChangeLog</file>
     <file>serendipity_event_cpgselector/cpgselector.inc.php</file>
     <file>serendipity_event_cpgselector/documentation_cs.html</file>
@@ -1841,6 +1879,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_cronjob">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1856,6 +1895,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_cronjob/.htaccess</file>
     <file>serendipity_event_cronjob/ChangeLog</file>
     <file>serendipity_event_cronjob/documentation_cs.html</file>
     <file>serendipity_event_cronjob/documentation_cz.html</file>
@@ -1882,6 +1922,7 @@
   <date>2016-02-05</date>
   <filelist>
 <dir name="serendipity_event_customarchive">
+<file>.htaccess</file>
 <file>asc.gif</file>
 <file>ChangeLog</file>
 <file>customarchive.tpl</file>
@@ -1902,6 +1943,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_customarchive/.htaccess</file>
     <file>serendipity_event_customarchive/asc.gif</file>
     <file>serendipity_event_customarchive/ChangeLog</file>
     <file>serendipity_event_customarchive/customarchive.tpl</file>
@@ -1978,6 +2020,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_dbclean">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1996,6 +2039,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_dbclean/.htaccess</file>
     <file>serendipity_event_dbclean/ChangeLog</file>
     <file>serendipity_event_dbclean/documentation_cs.html</file>
     <file>serendipity_event_dbclean/documentation_cz.html</file>
@@ -2113,6 +2157,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_disqus">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -2128,6 +2173,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_disqus/.htaccess</file>
     <file>serendipity_event_disqus/ChangeLog</file>
     <file>serendipity_event_disqus/documentation_cs.html</file>
     <file>serendipity_event_disqus/documentation_cz.html</file>
@@ -2155,6 +2201,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_downloadmanager">
+<file>.htaccess</file>
 <file>AUTHORS</file>
 <file>backend.dlm.filepage.tpl</file>
 <file>backend.dlm.index.tpl</file>
@@ -2306,6 +2353,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_downloadmanager/.htaccess</file>
     <file>serendipity_event_downloadmanager/AUTHORS</file>
     <file>serendipity_event_downloadmanager/backend.dlm.filepage.tpl</file>
     <file>serendipity_event_downloadmanager/backend.dlm.index.tpl</file>
@@ -2660,6 +2708,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-01-22</date>
   <filelist>
 <dir name="serendipity_event_emoticonchooser">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -2682,6 +2731,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_emoticonchooser/.htaccess</file>
     <file>serendipity_event_emoticonchooser/ChangeLog</file>
     <file>serendipity_event_emoticonchooser/documentation_cs.html</file>
     <file>serendipity_event_emoticonchooser/documentation_cz.html</file>
@@ -2918,6 +2968,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_externalauth">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -2938,6 +2989,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_externalauth/.htaccess</file>
     <file>serendipity_event_externalauth/ChangeLog</file>
     <file>serendipity_event_externalauth/documentation_cs.html</file>
     <file>serendipity_event_externalauth/documentation_cz.html</file>
@@ -3014,6 +3066,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_facebook">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3029,6 +3082,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_facebook/.htaccess</file>
     <file>serendipity_event_facebook/ChangeLog</file>
     <file>serendipity_event_facebook/documentation_cs.html</file>
     <file>serendipity_event_facebook/documentation_cz.html</file>
@@ -3055,6 +3109,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_faq">
+<file>.htaccess</file>
 <dir name="alternatives">
 <file>plugin_faq_categories.tpl</file>
 <file>plugin_faq_category_faq.tpl</file>
@@ -3109,6 +3164,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_faq/.htaccess</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_categories.tpl</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_category_faq.tpl</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_category_faqs.tpl</file>
@@ -3281,6 +3337,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-06-09</date>
   <filelist>
 <dir name="serendipity_event_filter_entries">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3300,6 +3357,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_filter_entries/.htaccess</file>
     <file>serendipity_event_filter_entries/ChangeLog</file>
     <file>serendipity_event_filter_entries/documentation_cs.html</file>
     <file>serendipity_event_filter_entries/documentation_cz.html</file>
@@ -3330,6 +3388,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-06-22</date>
   <filelist>
 <dir name="serendipity_event_findmore">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3384,6 +3443,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_findmore/.htaccess</file>
     <file>serendipity_event_findmore/ChangeLog</file>
     <file>serendipity_event_findmore/documentation_cs.html</file>
     <file>serendipity_event_findmore/documentation_cz.html</file>
@@ -3447,6 +3507,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_flattr">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3464,6 +3525,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_flattr/.htaccess</file>
     <file>serendipity_event_flattr/ChangeLog</file>
     <file>serendipity_event_flattr/documentation_cs.html</file>
     <file>serendipity_event_flattr/documentation_cz.html</file>
@@ -3492,6 +3554,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_flickr">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3514,6 +3577,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_flickr/.htaccess</file>
     <file>serendipity_event_flickr/ChangeLog</file>
     <file>serendipity_event_flickr/documentation_cs.html</file>
     <file>serendipity_event_flickr/documentation_cz.html</file>
@@ -3545,6 +3609,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_forgotpassword">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3566,6 +3631,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_forgotpassword/.htaccess</file>
     <file>serendipity_event_forgotpassword/ChangeLog</file>
     <file>serendipity_event_forgotpassword/documentation_cs.html</file>
     <file>serendipity_event_forgotpassword/documentation_cz.html</file>
@@ -3598,6 +3664,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_forum">
+<file>.htaccess</file>
 <file>AUTHORS</file>
 <file>ChangeLog</file>
 <file>COPYING</file>
@@ -3737,6 +3804,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_forum/.htaccess</file>
     <file>serendipity_event_forum/AUTHORS</file>
     <file>serendipity_event_forum/ChangeLog</file>
     <file>serendipity_event_forum/COPYING</file>
@@ -4026,6 +4094,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_geotag">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -4049,6 +4118,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_geotag/.htaccess</file>
     <file>serendipity_event_geotag/ChangeLog</file>
     <file>serendipity_event_geotag/documentation_cs.html</file>
     <file>serendipity_event_geotag/documentation_cz.html</file>
@@ -4083,6 +4153,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_geourl">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -4102,6 +4173,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_geourl/.htaccess</file>
     <file>serendipity_event_geourl/ChangeLog</file>
     <file>serendipity_event_geourl/documentation_cs.html</file>
     <file>serendipity_event_geourl/documentation_cz.html</file>
@@ -4132,6 +4204,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_geshi">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -4273,6 +4346,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_geshi/.htaccess</file>
     <file>serendipity_event_geshi/ChangeLog</file>
     <file>serendipity_event_geshi/documentation_cs.html</file>
     <file>serendipity_event_geshi/documentation_cz.html</file>
@@ -4423,6 +4497,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_getid3">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -4442,6 +4517,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_getid3/.htaccess</file>
     <file>serendipity_event_getid3/ChangeLog</file>
     <file>serendipity_event_getid3/documentation_cs.html</file>
     <file>serendipity_event_getid3/documentation_cz.html</file>
@@ -4516,6 +4592,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_google_analytics">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <dir name="CVSROOT">
 <file>checkoutlist</file>
@@ -4546,6 +4623,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_google_analytics/.htaccess</file>
     <file>serendipity_event_google_analytics/ChangeLog</file>
     <file>serendipity_event_google_analytics/CVSROOT/checkoutlist</file>
     <file>serendipity_event_google_analytics/CVSROOT/commitinfo</file>
@@ -4585,6 +4663,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_google_sitemap">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -4608,6 +4687,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_google_sitemap/.htaccess</file>
     <file>serendipity_event_google_sitemap/ChangeLog</file>
     <file>serendipity_event_google_sitemap/documentation_cs.html</file>
     <file>serendipity_event_google_sitemap/documentation_cz.html</file>
@@ -4639,9 +4719,10 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>1.59</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-25</date>
   <filelist>
 <dir name="serendipity_event_gravatar">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <dir name="documentation">
 <file>documentation.css</file>
@@ -4818,6 +4899,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_gravatar/.htaccess</file>
     <file>serendipity_event_gravatar/ChangeLog</file>
     <file>serendipity_event_gravatar/documentation/documentation.css</file>
     <file>serendipity_event_gravatar/documentation/identicons.jpg</file>
@@ -5325,6 +5407,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-02-20</date>
   <filelist>
 <dir name="serendipity_event_includeentry">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -5347,6 +5430,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_includeentry/.htaccess</file>
     <file>serendipity_event_includeentry/ChangeLog</file>
     <file>serendipity_event_includeentry/documentation_cs.html</file>
     <file>serendipity_event_includeentry/documentation_cz.html</file>
@@ -5380,6 +5464,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_karma">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -5440,6 +5525,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_karma/.htaccess</file>
     <file>serendipity_event_karma/ChangeLog</file>
     <file>serendipity_event_karma/documentation_cs.html</file>
     <file>serendipity_event_karma/documentation_cz.html</file>
@@ -5984,6 +6070,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-01-27</date>
   <filelist>
 <dir name="serendipity_event_linklist">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6026,6 +6113,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_linklist/.htaccess</file>
     <file>serendipity_event_linklist/ChangeLog</file>
     <file>serendipity_event_linklist/documentation_cs.html</file>
     <file>serendipity_event_linklist/documentation_cz.html</file>
@@ -6077,6 +6165,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_linktoolbar">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6096,6 +6185,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_linktoolbar/.htaccess</file>
     <file>serendipity_event_linktoolbar/ChangeLog</file>
     <file>serendipity_event_linktoolbar/documentation_cs.html</file>
     <file>serendipity_event_linktoolbar/documentation_cz.html</file>
@@ -6126,6 +6216,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_linktrimmer">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6146,6 +6237,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_linktrimmer/.htaccess</file>
     <file>serendipity_event_linktrimmer/ChangeLog</file>
     <file>serendipity_event_linktrimmer/documentation_cs.html</file>
     <file>serendipity_event_linktrimmer/documentation_cz.html</file>
@@ -6177,6 +6269,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_livecomment">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>commentMarkup.fieldselection.js</file>
 <file>commentMarkup.fieldselection.js-def</file>
@@ -6217,6 +6310,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_livecomment/.htaccess</file>
     <file>serendipity_event_livecomment/ChangeLog</file>
     <file>serendipity_event_livecomment/commentMarkup.fieldselection.js</file>
     <file>serendipity_event_livecomment/commentMarkup.fieldselection.js-def</file>
@@ -6441,6 +6535,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-06-23</date>
   <filelist>
 <dir name="serendipity_event_lsrstopper">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6473,6 +6568,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_lsrstopper/.htaccess</file>
     <file>serendipity_event_lsrstopper/ChangeLog</file>
     <file>serendipity_event_lsrstopper/documentation_cs.html</file>
     <file>serendipity_event_lsrstopper/documentation_cz.html</file>
@@ -6570,6 +6666,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_markdown">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6612,6 +6709,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_markdown/.htaccess</file>
     <file>serendipity_event_markdown/ChangeLog</file>
     <file>serendipity_event_markdown/documentation_cs.html</file>
     <file>serendipity_event_markdown/documentation_cz.html</file>
@@ -6699,6 +6797,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_metadesc">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6720,6 +6819,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_metadesc/.htaccess</file>
     <file>serendipity_event_metadesc/ChangeLog</file>
     <file>serendipity_event_metadesc/documentation_cs.html</file>
     <file>serendipity_event_metadesc/documentation_cz.html</file>
@@ -6752,6 +6852,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_microformats">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6787,6 +6888,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_microformats/.htaccess</file>
     <file>serendipity_event_microformats/ChangeLog</file>
     <file>serendipity_event_microformats/documentation_cs.html</file>
     <file>serendipity_event_microformats/documentation_cz.html</file>
@@ -6882,6 +6984,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_mobile_output">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6977,6 +7080,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_mobile_output/.htaccess</file>
     <file>serendipity_event_mobile_output/ChangeLog</file>
     <file>serendipity_event_mobile_output/documentation_cs.html</file>
     <file>serendipity_event_mobile_output/documentation_cz.html</file>
@@ -7065,6 +7169,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_motm">
+<file>.htaccess</file>
 <dir name="amazon">
 <file>AmazonProduct.class.php</file>
 <file>amazonsearch.php</file>
@@ -7092,6 +7197,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_motm/.htaccess</file>
     <file>serendipity_event_motm/amazon/AmazonProduct.class.php</file>
     <file>serendipity_event_motm/amazon/amazonsearch.php</file>
     <file>serendipity_event_motm/amazon/AmazonSearchEngine.class.php</file>
@@ -7201,6 +7307,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_mycalendar">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -7223,6 +7330,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_mycalendar/.htaccess</file>
     <file>serendipity_event_mycalendar/ChangeLog</file>
     <file>serendipity_event_mycalendar/documentation_cs.html</file>
     <file>serendipity_event_mycalendar/documentation_cz.html</file>
@@ -7256,6 +7364,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_mymood">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -7272,6 +7381,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_mymood/.htaccess</file>
     <file>serendipity_event_mymood/ChangeLog</file>
     <file>serendipity_event_mymood/documentation_cs.html</file>
     <file>serendipity_event_mymood/documentation_cz.html</file>
@@ -7335,6 +7445,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_oembed">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>CurlFetcher.php</file>
 <file>documentation_cs.html</file>
@@ -7376,6 +7487,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_oembed/.htaccess</file>
     <file>serendipity_event_oembed/ChangeLog</file>
     <file>serendipity_event_oembed/CurlFetcher.php</file>
     <file>serendipity_event_oembed/documentation_cs.html</file>
@@ -7424,6 +7536,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_openid">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>common.inc.php</file>
 <file>documentation_cs.html</file>
@@ -7514,6 +7627,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_openid/.htaccess</file>
     <file>serendipity_event_openid/ChangeLog</file>
     <file>serendipity_event_openid/common.inc.php</file>
     <file>serendipity_event_openid/documentation_cs.html</file>
@@ -7646,6 +7760,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_page_nugget">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -7668,6 +7783,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_page_nugget/.htaccess</file>
     <file>serendipity_event_page_nugget/ChangeLog</file>
     <file>serendipity_event_page_nugget/documentation_cs.html</file>
     <file>serendipity_event_page_nugget/documentation_cz.html</file>
@@ -7898,6 +8014,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_podcast">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -8013,6 +8130,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_podcast/.htaccess</file>
     <file>serendipity_event_podcast/ChangeLog</file>
     <file>serendipity_event_podcast/documentation_cs.html</file>
     <file>serendipity_event_podcast/documentation_cz.html</file>
@@ -8129,6 +8247,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_popfetcher">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>cingular.php</file>
 <file>class.mimedecode.php</file>
@@ -8159,6 +8278,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_popfetcher/.htaccess</file>
     <file>serendipity_event_popfetcher/ChangeLog</file>
     <file>serendipity_event_popfetcher/cingular.php</file>
     <file>serendipity_event_popfetcher/class.mimedecode.php</file>
@@ -8265,6 +8385,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-06-23</date>
   <filelist>
 <dir name="serendipity_event_proxy_realip">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -8282,6 +8403,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_proxy_realip/.htaccess</file>
     <file>serendipity_event_proxy_realip/ChangeLog</file>
     <file>serendipity_event_proxy_realip/documentation_cs.html</file>
     <file>serendipity_event_proxy_realip/documentation_cz.html</file>
@@ -8390,6 +8512,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_recaptcha">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -8412,6 +8535,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_recaptcha/.htaccess</file>
     <file>serendipity_event_recaptcha/ChangeLog</file>
     <file>serendipity_event_recaptcha/documentation_cs.html</file>
     <file>serendipity_event_recaptcha/documentation_cz.html</file>
@@ -8559,6 +8683,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_searchhighlight">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -8596,6 +8721,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_searchhighlight/.htaccess</file>
     <file>serendipity_event_searchhighlight/ChangeLog</file>
     <file>serendipity_event_searchhighlight/documentation_cs.html</file>
     <file>serendipity_event_searchhighlight/documentation_cz.html</file>
@@ -8809,6 +8935,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_snapshotlinks">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -8827,6 +8954,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_snapshotlinks/.htaccess</file>
     <file>serendipity_event_snapshotlinks/ChangeLog</file>
     <file>serendipity_event_snapshotlinks/documentation_cs.html</file>
     <file>serendipity_event_snapshotlinks/documentation_cz.html</file>
@@ -8890,6 +9018,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <date>2016-06-22</date>
   <filelist>
 <dir name="serendipity_event_spamblock_bayes">
+<file>.htaccess</file>
 <dir name="admin">
 <file>bayesAnalysis.tpl</file>
 <file>bayesAnalysismenu.tpl</file>
@@ -8932,6 +9061,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_spamblock_bayes/.htaccess</file>
     <file>serendipity_event_spamblock_bayes/admin/bayesAnalysis.tpl</file>
     <file>serendipity_event_spamblock_bayes/admin/bayesAnalysismenu.tpl</file>
     <file>serendipity_event_spamblock_bayes/admin/bayesDBmenu.tpl</file>
@@ -9308,6 +9438,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_statistics">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -9355,6 +9486,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_statistics/.htaccess</file>
     <file>serendipity_event_statistics/ChangeLog</file>
     <file>serendipity_event_statistics/documentation_cs.html</file>
     <file>serendipity_event_statistics/documentation_cz.html</file>
@@ -9413,6 +9545,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_suggest">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -9434,6 +9567,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_suggest/.htaccess</file>
     <file>serendipity_event_suggest/ChangeLog</file>
     <file>serendipity_event_suggest/documentation_cs.html</file>
     <file>serendipity_event_suggest/documentation_cz.html</file>
@@ -9466,6 +9600,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_template_editor">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <dir name="codemirror">
 <file>codemirror.js</file>
@@ -9514,6 +9649,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_template_editor/.htaccess</file>
     <file>serendipity_event_template_editor/ChangeLog</file>
     <file>serendipity_event_template_editor/codemirror/codemirror.js</file>
     <file>serendipity_event_template_editor/codemirror/csscolors.css</file>
@@ -9819,6 +9955,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_todolist">
+<file>.htaccess</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
 <dir name="fonts">
@@ -9898,6 +10035,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_todolist/.htaccess</file>
     <file>serendipity_event_todolist/documentation_cs.html</file>
     <file>serendipity_event_todolist/documentation_cz.html</file>
     <file>serendipity_event_todolist/fonts/almonte.ttf</file>
@@ -10048,6 +10186,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_trackback">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -10071,6 +10210,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_trackback/.htaccess</file>
     <file>serendipity_event_trackback/ChangeLog</file>
     <file>serendipity_event_trackback/documentation_cs.html</file>
     <file>serendipity_event_trackback/documentation_cz.html</file>
@@ -10851,6 +10991,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <filelist>
 <dir name="serendipity_event_xmlrpc">
 <file>.gitignore</file>
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -10933,6 +11074,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_xmlrpc/.gitignore</file>
+    <file>serendipity_event_xmlrpc/.htaccess</file>
     <file>serendipity_event_xmlrpc/ChangeLog</file>
     <file>serendipity_event_xmlrpc/documentation_cs.html</file>
     <file>serendipity_event_xmlrpc/documentation_cz.html</file>

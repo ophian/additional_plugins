@@ -16,6 +16,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_communityrating">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>communityrating_Amazon.tpl</file>
 <file>communityrating_IMDB.tpl</file>
@@ -47,6 +48,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_communityrating/.htaccess</file>
     <file>serendipity_event_communityrating/ChangeLog</file>
     <file>serendipity_event_communityrating/communityrating_Amazon.tpl</file>
     <file>serendipity_event_communityrating/communityrating_IMDB.tpl</file>
@@ -87,6 +89,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_faq">
+<file>.htaccess</file>
 <dir name="alternatives">
 <file>plugin_faq_categories.tpl</file>
 <file>plugin_faq_category_faq.tpl</file>
@@ -141,6 +144,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_faq/.htaccess</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_categories.tpl</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_category_faq.tpl</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_category_faqs.tpl</file>
@@ -311,6 +315,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_geotag">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -334,6 +339,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_geotag/.htaccess</file>
     <file>serendipity_event_geotag/ChangeLog</file>
     <file>serendipity_event_geotag/documentation_cs.html</file>
     <file>serendipity_event_geotag/documentation_cz.html</file>
@@ -485,6 +491,7 @@
   <date>2016-01-27</date>
   <filelist>
 <dir name="serendipity_event_linklist">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -527,6 +534,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_linklist/.htaccess</file>
     <file>serendipity_event_linklist/ChangeLog</file>
     <file>serendipity_event_linklist/documentation_cs.html</file>
     <file>serendipity_event_linklist/documentation_cz.html</file>
@@ -578,6 +586,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_microformats">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -613,6 +622,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_microformats/.htaccess</file>
     <file>serendipity_event_microformats/ChangeLog</file>
     <file>serendipity_event_microformats/documentation_cs.html</file>
     <file>serendipity_event_microformats/documentation_cz.html</file>
@@ -730,6 +740,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_mycalendar">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -752,6 +763,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_mycalendar/.htaccess</file>
     <file>serendipity_event_mycalendar/ChangeLog</file>
     <file>serendipity_event_mycalendar/documentation_cs.html</file>
     <file>serendipity_event_mycalendar/documentation_cz.html</file>
@@ -981,6 +993,7 @@
   <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_statistics">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1028,6 +1041,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_statistics/.htaccess</file>
     <file>serendipity_event_statistics/ChangeLog</file>
     <file>serendipity_event_statistics/documentation_cs.html</file>
     <file>serendipity_event_statistics/documentation_cz.html</file>
