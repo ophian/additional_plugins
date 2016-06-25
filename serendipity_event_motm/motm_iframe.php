@@ -1,7 +1,9 @@
 <?php
+
 $contents = getSong();
 $secsnow = $contents[1];
 $secstotal = $contents[2];
+
 ?>
 <html>
 <head>
@@ -117,4 +119,5 @@ function getSong()
     
     return $content;
 }
+
 ?>

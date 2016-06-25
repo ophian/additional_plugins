@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -20,4 +20,3 @@
 @define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR', 'Baðlantý ayýrma karakteri');
 @define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR_DESC', 'Yazýnýzdaki URL adreslerini ve açýklamalarý ayýracak bir harf karakteri ekleyin. Bu karakterin URL ya da baþlýkta mevcut olmadýðýna emin olun, bunun gibi bir karakterle ayrým yapýn: "|".');
 
-?>

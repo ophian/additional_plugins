@@ -1,4 +1,5 @@
 <?php
+
 define('PLUGIN_AUDIOSCROBBLER_TITLE', 'Audioscrobbler');
 define('PLUGIN_AUDIOSCROBBLER_TITLE_BLAHBLAH', 'Shows last played songs in your blog');
 define('PLUGIN_AUDIOSCROBBLER_NUMBER', 'Anzahl der Einträge');
@@ -29,4 +30,4 @@ define('PLUGIN_AUDIOSCROBBLER_SPACER_BLAHBLAH', 'Was soll als Trennzeichen zwisc
 define('PLUGIN_AUDIOSCROBBLER_COULD_NOT_WRITE', 'Cache konnnte nicht geschrieben werden');
 define('PLUGIN_AUDIOSCROBBLER_COULD_NOT_READ', 'Cache konnnte nicht ausgewertet werden');
 define('PLUGIN_AUDIOSCROBBLER_FEED_OFFLINE', 'Audioscrobbler Songlist offline');
-?>
+

@@ -1,4 +1,4 @@
-<?php  # 
+<?php
 
 /**
  *  @version 
@@ -13,4 +13,3 @@
 @define('PLUGIN_PHOTOBLOG_SHOWPICSONLY',    'Sadece Resimler mi gösterilsin?');
 @define('PLUGIN_PHOTOBLOG_SHOWPICSONLY_BLAHBLAH', 'Beraberindeki açıklayıcı yazıyla gösterilmesi seçeneği haricinde, sadece fotoğrafların gösterimi.');
 
-?>

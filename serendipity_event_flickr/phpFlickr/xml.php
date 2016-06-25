@@ -1,4 +1,5 @@
 <?php
+
 class xml  {
    /** Written by Aaron Colflesh **/
 
@@ -158,6 +159,7 @@ class xml  {
     
     return $newArray;
   }
+
 }
 
 ?>

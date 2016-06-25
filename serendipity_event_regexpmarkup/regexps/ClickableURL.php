@@ -1,4 +1,4 @@
-<?php # 
+<?php
 // ClickableURL preg replace markup
 // turns urls into clickable links
 //
@@ -17,5 +17,6 @@ $regexpArray = array(
 		'\\1<a href="http://\\2\\4" target="_blank">\\2\\4</a>', 
 		'<a href="http://\\1\\3" target="_blank">\\1\\3</a>' 
     )
-); 
+);
+
 ?>

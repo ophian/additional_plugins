@@ -390,5 +390,7 @@ class serendipity_event_motm extends serendipity_event {
         $this->set_config('streams',serialize($streams));
         echo '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />' . sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%T')) . '<br><br>\n</div>';
     }
+
 }
+
 ?>

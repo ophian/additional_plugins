@@ -1,4 +1,5 @@
 <?php
+
 /*
 Plugin Name: Wavatars
 Plugin URI: http://www.shamusyoung.com/twentysidedtale/?p=1462

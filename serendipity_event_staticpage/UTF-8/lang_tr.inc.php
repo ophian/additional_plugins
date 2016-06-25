@@ -1,4 +1,4 @@
-<?php #  
+<?php
 
 /**
  *  @author Ahmet Usal <ahmetusal@gmail.com>
@@ -137,4 +137,3 @@
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC',       'Eğer bu seçenek etkin olursa sadece üst-ebeveyn sayfalar gösterilir. Etkinleştirilmezse üst sayfalara bağlı altsayfalarda gösterilir.');
 @define('PLUGIN_STATICPAGELIST_IMG_NAME',               'Ağaç Yapısında grafik gösterim etkin');
 
-?>

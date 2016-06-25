@@ -416,4 +416,5 @@ function MakeFont($fontfile, $afmfile, $enc='cp1252', $patch=array(), $type='Tru
 	SaveToFile($basename.'.php',$s,'t');
 	echo 'Font definition file generated ('.$basename.'.php'.')<br>';
 }
+
 ?>

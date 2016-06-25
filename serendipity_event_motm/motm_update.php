@@ -1,4 +1,5 @@
 <?php
+
 // subtract -N to accomidate lag hitting server if your is slow, where N is a measure of slowness
 $filetime = time();
 
@@ -162,4 +163,5 @@ function hasImage($URL_in) {
 	else
 		return $image[1];
 }
+
 ?>

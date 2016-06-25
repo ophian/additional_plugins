@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -20,4 +20,3 @@
 @define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR', 'Bağlantı ayırma karakteri');
 @define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR_DESC', 'Yazınızdaki URL adreslerini ve açıklamaları ayıracak bir harf karakteri ekleyin. Bu karakterin URL ya da başlıkta mevcut olmadığına emin olun, bunun gibi bir karakterle ayrım yapın: "|".');
 
-?>

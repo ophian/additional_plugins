@@ -8,11 +8,11 @@
 
 @define('PLUGIN_WIKIPEDIAFINDER_TITLE',                     "Recherche Wikipedia");
 @define('PLUGIN_WIKIPEDIAFINDER_DESC',                      "Surlignez une phrase et cliquez l'icône pour lancer une recherche sur Wikipedia.");
-@define('PLUGIN_WIKIPEDIAFINDER_PROMPT',                    "Entrez la phrase �  chercher sur Wikipedia.");        
+@define('PLUGIN_WIKIPEDIAFINDER_PROMPT',                    "Entrez la phrase à chercher sur Wikipedia.");        
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_TITLE',                "Titre");
-@define('PLUGIN_WIKIPEDIAFINDER_PROP_TITLE_DESC',           "Titre de la zone �  afficher en barre latérale");
+@define('PLUGIN_WIKIPEDIAFINDER_PROP_TITLE_DESC',           "Titre de la zone à afficher en barre latérale");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_SITE',                 "Site Wikipedia");
-@define('PLUGIN_WIKIPEDIAFINDER_PROP_SITE_DESC' ,           "Adresse URL du site Wikipedia �  utiliser");
+@define('PLUGIN_WIKIPEDIAFINDER_PROP_SITE_DESC' ,           "Adresse URL du site Wikipedia à utiliser");
 @define('PLUGIN_WIKIPEDIAFINDER_SITE' ,                     "http://fr.wikipedia.org");        
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_COLOR',                "Couleur d'arrière-plan");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_COLOR_DESC' ,          "La couleur d'arrière-plan du theme est-elle claire ou foncée ?  Ceci est nécessaire pour sélectionner correctement l'affichage de Wikipedia.");
@@ -27,4 +27,3 @@
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_WIDTH',       "Fenêtre java : Largeur");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_WIDTH_DESC',  "Largeur de la fenêtre cible. Fonctionne seulement avec \"" . PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW . "\" activé.");
 
-?>

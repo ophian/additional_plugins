@@ -1,4 +1,5 @@
 <?php
+
 /* phpFlickr Class 1.4.3
  * Written by Dan Coulter (dan@dancoulter.com)
  * Sourceforge Project Page: http://www.sourceforge.net/projects/phpflickr/
@@ -1276,7 +1277,7 @@ class phpFlickr {
         $this->parse_response();
         return $this->parsed_response['rsp']["user"];
     }
-}
 
+}
 
 ?>

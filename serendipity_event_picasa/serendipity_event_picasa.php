@@ -879,5 +879,7 @@ class serendipity_event_picasa extends serendipity_event {
         $s .= "</ol>\n";
         return $s;
     }
+
 }
+
 ?>

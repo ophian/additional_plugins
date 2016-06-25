@@ -46,4 +46,3 @@
 @define('PLUGIN_KARMA_STATISTICS_VOTES_NO', 'رای');
 @define('PLUGIN_KARMA_STATISTICS_POINTS_NO', 'امتیاز');
 
-?>

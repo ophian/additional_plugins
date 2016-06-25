@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -19,4 +19,3 @@
 @define('PLUGIN_EVENT_BLOGPDF_VIEW_MONTH', 'Ce mois-ci');
 @define('PLUGIN_EVENT_BLOGPDF_MISSING', 'Invalid plugin operator %s');
 
-?>

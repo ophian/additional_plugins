@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -27,4 +27,3 @@
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_WIDTH',       "Fenêtre java : Largeur");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_WIDTH_DESC',  "Largeur de la fenêtre cible. Fonctionne seulement avec \"" . PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW . "\" activé.");
 
-?>
