@@ -101,7 +101,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '5.3.0'
+            'php'         => '5.2.0'
         ));
 
         $propbag->add('version',       PLUGIN_SPAMBLOCK_BEE_VERSION); // setup via version.inc.php
