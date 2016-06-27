@@ -20,7 +20,7 @@ class serendipity_event_feed extends serendipity_plugin
         $propbag->add('description',    PLUGIN_DASHBOARD_FEEDME_PLUGIN_DESC);
         $propbag->add('stackable',      false);
         $propbag->add('author',         'Ian');
-        $propbag->add('version',        '1.01');
+        $propbag->add('version',        '1.02');
         $propbag->add('requirements',   array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -247,16 +247,24 @@ class serendipity_event_feed extends serendipity_plugin
      */
     private static function get_url_contents($url)
     {
-        $crl = curl_init();
-        $timeout = 5;
-        $useragent = "Googlebot/2.1 ( http://www.googlebot.com/bot.html)";
-        curl_setopt ($crl, CURLOPT_USERAGENT, $useragent);
-        curl_setopt ($crl, CURLOPT_URL,$url);
-        curl_setopt ($crl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt ($crl, CURLOPT_CONNECTTIMEOUT, $timeout);
-        $ret = curl_exec($crl);
-        curl_close($crl);
-        return $ret;
+        $feed = file_get_contents($url);
+        if (empty($feed)) {
+            // try it again with curl if fopen was forbidden
+            if (function_exists('curl_init')) {
+                echo "curl_init exists";
+                $ch = curl_init($url);
+                $timeout = 5;
+                $useragent = "Googlebot/2.1 ( http://www.googlebot.com/bot.html)";
+                curl_setopt ($ch, CURLOPT_USERAGENT, $useragent);
+                curl_setopt ($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+                #curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+                $feed = curl_exec($ch);
+                curl_close($ch);
+            }
+        }
+        return $feed;
     }
 
     /**
