@@ -251,7 +251,6 @@ class serendipity_event_feed extends serendipity_plugin
         if (empty($feed)) {
             // try it again with curl if fopen was forbidden
             if (function_exists('curl_init')) {
-                echo "curl_init exists";
                 $ch = curl_init($url);
                 $timeout = 5;
                 $useragent = "Googlebot/2.1 ( http://www.googlebot.com/bot.html)";
