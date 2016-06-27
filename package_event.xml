@@ -149,9 +149,9 @@
 <description>Displays information for authors on the administration panel</description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.14</version>
-  <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>0.15</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-18</date>
   <filelist>
 <dir name="serendipity_event_adminnotes">
 <file>ChangeLog</file>
@@ -185,17 +185,20 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_advtypes</name>
+<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_advtypes/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Advanced configuration types</summary>
 <groups>BACKEND_TEMPLATES</groups>
 <description>Provides advanced plugin and theme configuration options for Serendipity versions before 1.2.2 (currently supporting 'sequence' widget)</description>
 <maintainers><maintainer><name>Judebert (&lt;a href=&quot;http://judebert.com/&quot;&gt;http://judebert.com/&lt;/a&gt;)</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.7</version>
-  <requirements:s9yVersion>1.1</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>0.8</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-08</date>
   <filelist>
 <dir name="serendipity_event_advtypes">
+<file>.htaccess</file>
+<file>ChangeLog</file>
 <file>config.inc.php</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -213,6 +216,8 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_advtypes/.htaccess</file>
+    <file>serendipity_event_advtypes/ChangeLog</file>
     <file>serendipity_event_advtypes/config.inc.php</file>
     <file>serendipity_event_advtypes/documentation_cs.html</file>
     <file>serendipity_event_advtypes/documentation_cz.html</file>
@@ -230,21 +235,21 @@
 <package version="1.0">
 <name>serendipity_event_aggregator</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_aggregator/ChangeLog</changelog>
-<license>GPL</license>
+<license>GPL (MagpieRSS) or BSD (Onyx) or BSD-3 (SimplePie)</license>
 <summary>RSS Aggregator</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator</description>
 <maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.31.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>0.41</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2016-06-22</date>
   <filelist>
 <dir name="serendipity_event_aggregator">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
-<file>entries.tpl.orig</file>
 <file>feedlist.tpl</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -253,27 +258,103 @@
 <file>lang_ja.inc.php</file>
 <dir name="magpierss">
 <file>AUTHORS</file>
+<file>ChangeLog</file>
+<file>CHANGES</file>
+<file>cookbook</file>
 <dir name="extlib">
-<file>Snoopy.class.inc</file>
-</dir>
+<file>AUTHORS</file>
+<file>ChangeLog</file>
+<file>COPYING.lib</file>
+<file>FAQ</file>
+<file>INSTALL</file>
+<file>NEWS</file>
 <file>README</file>
+<file>Snoopy.class.php</file>
+<file>TODO</file>
+</dir>
+<file>INSTALL</file>
+<file>NEWS</file>
+<file>README.markdown</file>
 <file>rss_cache.inc</file>
 <file>rss_fetch.inc</file>
 <file>rss_parse.inc</file>
 <file>rss_utils.inc</file>
+<file>TROUBLESHOOTING</file>
 </dir>
 <file>runplanet</file>
 <file>serendipity_event_aggregator.php</file>
 <dir name="simplepie">
+<file>.travis.yml</file>
+<file>autoloader.php</file>
+<file>composer.json</file>
+<file>db.sql</file>
 <dir name="idn">
 <file>idna_convert.class.php</file>
 <file>LICENCE</file>
 <file>npdata.ser</file>
 <file>ReadMe.txt</file>
 </dir>
+<dir name="library">
+<dir name="SimplePie">
+<file>Author.php</file>
+<dir name="Cache">
+<file>Base.php</file>
+<file>DB.php</file>
+<file>File.php</file>
+<file>Memcache.php</file>
+<file>Memcached.php</file>
+<file>MySQL.php</file>
+<file>Redis.php</file>
+</dir>
+<file>Cache.php</file>
+<file>Caption.php</file>
+<file>Category.php</file>
+<dir name="Content">
+<dir name="Type">
+<file>Sniffer.php</file>
+</dir>
+</dir>
+<file>Copyright.php</file>
+<file>Core.php</file>
+<file>Credit.php</file>
+<dir name="Decode">
+<dir name="HTML">
+<file>Entities.php</file>
+</dir>
+</dir>
+<file>Enclosure.php</file>
+<file>Exception.php</file>
+<file>File.php</file>
+<file>gzdecode.php</file>
+<dir name="HTTP">
+<file>Parser.php</file>
+</dir>
+<file>IRI.php</file>
+<file>Item.php</file>
+<file>Locator.php</file>
+<file>Misc.php</file>
+<dir name="Net">
+<file>IPv6.php</file>
+</dir>
+<dir name="Parse">
+<file>Date.php</file>
+</dir>
+<file>Parser.php</file>
+<file>Rating.php</file>
+<file>Registry.php</file>
+<file>Restriction.php</file>
+<file>Sanitize.php</file>
+<file>Source.php</file>
+<dir name="XML">
+<dir name="Declaration">
+<file>Parser.php</file>
+</dir>
+</dir>
+</dir>
+<file>SimplePie.php</file>
+</dir>
 <file>LICENSE.txt</file>
-<file>README.txt</file>
-<file>simplepie.inc</file>
+<file>README.markdown</file>
 </dir>
 <file>theme-patch.diff</file>
 <dir name="UTF-8">
@@ -286,10 +367,10 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_aggregator/.htaccess</file>
     <file>serendipity_event_aggregator/ChangeLog</file>
     <file>serendipity_event_aggregator/documentation_cs.html</file>
     <file>serendipity_event_aggregator/documentation_cz.html</file>
-    <file>serendipity_event_aggregator/entries.tpl.orig</file>
     <file>serendipity_event_aggregator/feedlist.tpl</file>
     <file>serendipity_event_aggregator/lang_cs.inc.php</file>
     <file>serendipity_event_aggregator/lang_cz.inc.php</file>
@@ -297,21 +378,73 @@
     <file>serendipity_event_aggregator/lang_en.inc.php</file>
     <file>serendipity_event_aggregator/lang_ja.inc.php</file>
     <file>serendipity_event_aggregator/magpierss/AUTHORS</file>
-    <file>serendipity_event_aggregator/magpierss/extlib/Snoopy.class.inc</file>
-    <file>serendipity_event_aggregator/magpierss/README</file>
+    <file>serendipity_event_aggregator/magpierss/ChangeLog</file>
+    <file>serendipity_event_aggregator/magpierss/CHANGES</file>
+    <file>serendipity_event_aggregator/magpierss/cookbook</file>
+    <file>serendipity_event_aggregator/magpierss/extlib/AUTHORS</file>
+    <file>serendipity_event_aggregator/magpierss/extlib/ChangeLog</file>
+    <file>serendipity_event_aggregator/magpierss/extlib/COPYING.lib</file>
+    <file>serendipity_event_aggregator/magpierss/extlib/FAQ</file>
+    <file>serendipity_event_aggregator/magpierss/extlib/INSTALL</file>
+    <file>serendipity_event_aggregator/magpierss/extlib/NEWS</file>
+    <file>serendipity_event_aggregator/magpierss/extlib/README</file>
+    <file>serendipity_event_aggregator/magpierss/extlib/Snoopy.class.php</file>
+    <file>serendipity_event_aggregator/magpierss/extlib/TODO</file>
+    <file>serendipity_event_aggregator/magpierss/INSTALL</file>
+    <file>serendipity_event_aggregator/magpierss/NEWS</file>
+    <file>serendipity_event_aggregator/magpierss/README.markdown</file>
     <file>serendipity_event_aggregator/magpierss/rss_cache.inc</file>
     <file>serendipity_event_aggregator/magpierss/rss_fetch.inc</file>
     <file>serendipity_event_aggregator/magpierss/rss_parse.inc</file>
     <file>serendipity_event_aggregator/magpierss/rss_utils.inc</file>
+    <file>serendipity_event_aggregator/magpierss/TROUBLESHOOTING</file>
     <file>serendipity_event_aggregator/runplanet</file>
     <file>serendipity_event_aggregator/serendipity_event_aggregator.php</file>
+    <file>serendipity_event_aggregator/simplepie/.travis.yml</file>
+    <file>serendipity_event_aggregator/simplepie/autoloader.php</file>
+    <file>serendipity_event_aggregator/simplepie/composer.json</file>
+    <file>serendipity_event_aggregator/simplepie/db.sql</file>
     <file>serendipity_event_aggregator/simplepie/idn/idna_convert.class.php</file>
     <file>serendipity_event_aggregator/simplepie/idn/LICENCE</file>
     <file>serendipity_event_aggregator/simplepie/idn/npdata.ser</file>
     <file>serendipity_event_aggregator/simplepie/idn/ReadMe.txt</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Author.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Cache/Base.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Cache/DB.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Cache/File.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Cache/Memcache.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Cache/Memcached.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Cache/MySQL.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Cache/Redis.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Cache.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Caption.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Category.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Content/Type/Sniffer.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Copyright.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Core.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Credit.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Decode/HTML/Entities.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Enclosure.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Exception.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/File.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/gzdecode.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/HTTP/Parser.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/IRI.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Item.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Locator.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Misc.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Net/IPv6.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Parse/Date.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Parser.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Rating.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Registry.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Restriction.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Sanitize.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/Source.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie/XML/Declaration/Parser.php</file>
+    <file>serendipity_event_aggregator/simplepie/library/SimplePie.php</file>
     <file>serendipity_event_aggregator/simplepie/LICENSE.txt</file>
-    <file>serendipity_event_aggregator/simplepie/README.txt</file>
-    <file>serendipity_event_aggregator/simplepie/simplepie.inc</file>
+    <file>serendipity_event_aggregator/simplepie/README.markdown</file>
     <file>serendipity_event_aggregator/theme-patch.diff</file>
     <file>serendipity_event_aggregator/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_aggregator/UTF-8/lang_cz.inc.php</file>
@@ -329,11 +462,12 @@
 <description>Adds a button to allow Amazon.com search which are insertable into your entry</description>
 <maintainers><maintainer><name>Matthew Groeninger, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.75</version>
-  <requirements:s9yVersion>1.3</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>0.76</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-13</date>
   <filelist>
 <dir name="serendipity_event_amazonchooser">
+<file>.htaccess</file>
 <file>Amazon_s9y_lib.php</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -366,6 +500,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_amazonchooser/.htaccess</file>
     <file>serendipity_event_amazonchooser/Amazon_s9y_lib.php</file>
     <file>serendipity_event_amazonchooser/ChangeLog</file>
     <file>serendipity_event_amazonchooser/documentation_cs.html</file>
@@ -407,6 +542,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_assigncategories">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
@@ -426,6 +562,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_assigncategories/.htaccess</file>
     <file>serendipity_event_assigncategories/ChangeLog</file>
     <file>serendipity_event_assigncategories/lang_bg.inc.php</file>
     <file>serendipity_event_assigncategories/lang_cs.inc.php</file>
@@ -456,6 +593,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_autotitle">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -474,6 +612,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_autotitle/.htaccess</file>
     <file>serendipity_event_autotitle/ChangeLog</file>
     <file>serendipity_event_autotitle/documentation_cs.html</file>
     <file>serendipity_event_autotitle/documentation_cz.html</file>
@@ -498,11 +637,12 @@
 <description>When the dashboard-plugin (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea.</description>
 <maintainers><maintainer><name>onli, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.1.5</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.2.1</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-14</date>
   <filelist>
 <dir name="serendipity_event_autoupdate">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -512,16 +652,17 @@
 <file>lang_en.inc.php</file>
 <file>serendipity_event_autoupdate.php</file>
 <file>upgrade.min.css</file>
+<file>upgrade.simple.css</file>
 <dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
 </dir>
 </dir>
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_autoupdate/.htaccess</file>
     <file>serendipity_event_autoupdate/ChangeLog</file>
     <file>serendipity_event_autoupdate/documentation_cs.html</file>
     <file>serendipity_event_autoupdate/documentation_cz.html</file>
@@ -531,10 +672,10 @@
     <file>serendipity_event_autoupdate/lang_en.inc.php</file>
     <file>serendipity_event_autoupdate/serendipity_event_autoupdate.php</file>
     <file>serendipity_event_autoupdate/upgrade.min.css</file>
+    <file>serendipity_event_autoupdate/upgrade.simple.css</file>
     <file>serendipity_event_autoupdate/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_autoupdate/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_autoupdate/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_autoupdate/UTF-8/lang_en.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -546,9 +687,9 @@
 <description>Translate blog entries (trash!)</description>
 <maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.8</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-20</date>
   <filelist>
 <dir name="serendipity_event_babelfish">
 <file>lang_cs.inc.php</file>
@@ -597,6 +738,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_backend">
+<file>.htaccess</file>
 <file>backend.html</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -617,6 +759,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_backend/.htaccess</file>
     <file>serendipity_event_backend/backend.html</file>
     <file>serendipity_event_backend/documentation_cs.html</file>
     <file>serendipity_event_backend/documentation_cz.html</file>
@@ -740,6 +883,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_blogpdf">
+<file>.htaccess</file>
 <file>credits.txt</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -815,6 +959,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_blogpdf/.htaccess</file>
     <file>serendipity_event_blogpdf/credits.txt</file>
     <file>serendipity_event_blogpdf/documentation_cs.html</file>
     <file>serendipity_event_blogpdf/documentation_cz.html</file>
@@ -897,6 +1042,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_browserid">
+<file>.htaccess</file>
 <file>browserid_signin.png</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -907,7 +1053,6 @@
 <file>lang_en.inc.php</file>
 <file>serendipity_event_browserid.js</file>
 <file>serendipity_event_browserid.php</file>
-<file>Thumbs.db</file>
 <dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -917,6 +1062,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_browserid/.htaccess</file>
     <file>serendipity_event_browserid/browserid_signin.png</file>
     <file>serendipity_event_browserid/ChangeLog</file>
     <file>serendipity_event_browserid/documentation_cs.html</file>
@@ -927,7 +1073,6 @@
     <file>serendipity_event_browserid/lang_en.inc.php</file>
     <file>serendipity_event_browserid/serendipity_event_browserid.js</file>
     <file>serendipity_event_browserid/serendipity_event_browserid.php</file>
-    <file>serendipity_event_browserid/Thumbs.db</file>
     <file>serendipity_event_browserid/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_browserid/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_browserid/UTF-8/lang_de.inc.php</file>
@@ -985,11 +1130,12 @@
 <description>Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)</description>
 <maintainers><maintainer><name>Ian (Timbalu)</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.75</version>
-  <requirements:s9yVersion>1.4</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.76</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_cal">
+<file>.htaccess</file>
 <file>backend_inherits.css</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -1033,6 +1179,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_cal/.htaccess</file>
     <file>serendipity_event_cal/backend_inherits.css</file>
     <file>serendipity_event_cal/ChangeLog</file>
     <file>serendipity_event_cal/documentation_cs.html</file>
@@ -1085,6 +1232,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_categorytemplates">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1106,6 +1254,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_categorytemplates/.htaccess</file>
     <file>serendipity_event_categorytemplates/ChangeLog</file>
     <file>serendipity_event_categorytemplates/documentation_cs.html</file>
     <file>serendipity_event_categorytemplates/documentation_cz.html</file>
@@ -1138,6 +1287,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_ckeditor">
+<file>.htaccess</file>
 <file>basic_toolbar1.css</file>
 <file>basic_toolbar2.css</file>
 <file>ChangeLog</file>
@@ -1171,6 +1321,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_ckeditor/.htaccess</file>
     <file>serendipity_event_ckeditor/basic_toolbar1.css</file>
     <file>serendipity_event_ckeditor/basic_toolbar2.css</file>
     <file>serendipity_event_ckeditor/ChangeLog</file>
@@ -1212,6 +1363,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_comics">
+<file>.htaccess</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
 <file>lang_cs.inc.php</file>
@@ -1229,6 +1381,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_comics/.htaccess</file>
     <file>serendipity_event_comics/documentation_cs.html</file>
     <file>serendipity_event_comics/documentation_cz.html</file>
     <file>serendipity_event_comics/lang_cs.inc.php</file>
@@ -1257,6 +1410,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_commentedit">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1278,6 +1432,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_commentedit/.htaccess</file>
     <file>serendipity_event_commentedit/ChangeLog</file>
     <file>serendipity_event_commentedit/documentation_cs.html</file>
     <file>serendipity_event_commentedit/documentation_cz.html</file>
@@ -1310,6 +1465,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_commentsearch">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1330,6 +1486,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_commentsearch/.htaccess</file>
     <file>serendipity_event_commentsearch/ChangeLog</file>
     <file>serendipity_event_commentsearch/documentation_cs.html</file>
     <file>serendipity_event_commentsearch/documentation_cz.html</file>
@@ -1357,10 +1514,11 @@
 <maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.07</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-24</date>
   <filelist>
 <dir name="serendipity_event_commentspice">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>DbSpice.class.php</file>
 <file>documentation_cs.html</file>
@@ -1398,6 +1556,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_commentspice/.htaccess</file>
     <file>serendipity_event_commentspice/ChangeLog</file>
     <file>serendipity_event_commentspice/DbSpice.class.php</file>
     <file>serendipity_event_commentspice/documentation_cs.html</file>
@@ -1438,6 +1597,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_communityrating">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>communityrating_Amazon.tpl</file>
 <file>communityrating_IMDB.tpl</file>
@@ -1469,6 +1629,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_communityrating/.htaccess</file>
     <file>serendipity_event_communityrating/ChangeLog</file>
     <file>serendipity_event_communityrating/communityrating_Amazon.tpl</file>
     <file>serendipity_event_communityrating/communityrating_IMDB.tpl</file>
@@ -1504,11 +1665,12 @@
 <description>Shows a email contactform on your blog as a static page. It can be accessed by either the custom permalink or by index.php?serendipity[subpage]=contactform. You can customize the look of the contact form by putting the plugin_contactform.tpl file into your template directory and modify it there. Captchas from the Spamblock plugin (if enabled) will be applied.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.19</version>
-  <requirements:s9yVersion>1.3</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.20</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_contactform">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1542,6 +1704,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_contactform/.htaccess</file>
     <file>serendipity_event_contactform/ChangeLog</file>
     <file>serendipity_event_contactform/documentation_cs.html</file>
     <file>serendipity_event_contactform/documentation_cz.html</file>
@@ -1664,6 +1827,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_cpgselector">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>cpgselector.inc.php</file>
 <file>documentation_cs.html</file>
@@ -1683,6 +1847,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_cpgselector/.htaccess</file>
     <file>serendipity_event_cpgselector/ChangeLog</file>
     <file>serendipity_event_cpgselector/cpgselector.inc.php</file>
     <file>serendipity_event_cpgselector/documentation_cs.html</file>
@@ -1713,6 +1878,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_cronjob">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1728,6 +1894,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_cronjob/.htaccess</file>
     <file>serendipity_event_cronjob/ChangeLog</file>
     <file>serendipity_event_cronjob/documentation_cs.html</file>
     <file>serendipity_event_cronjob/documentation_cz.html</file>
@@ -1749,11 +1916,12 @@
 <description>Shows a sortable view of all past articles for the visitor. The link to this page should be inserted into a HTML nugget.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.12.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.13</version>
+  <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
+  <date>2016-02-05</date>
   <filelist>
 <dir name="serendipity_event_customarchive">
+<file>.htaccess</file>
 <file>asc.gif</file>
 <file>ChangeLog</file>
 <file>customarchive.tpl</file>
@@ -1765,7 +1933,6 @@
 <file>lang_de.inc.php</file>
 <file>lang_en.inc.php</file>
 <file>serendipity_event_customarchive.php</file>
-<file>Thumbs.db</file>
 <dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -1775,6 +1942,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_customarchive/.htaccess</file>
     <file>serendipity_event_customarchive/asc.gif</file>
     <file>serendipity_event_customarchive/ChangeLog</file>
     <file>serendipity_event_customarchive/customarchive.tpl</file>
@@ -1786,7 +1954,6 @@
     <file>serendipity_event_customarchive/lang_de.inc.php</file>
     <file>serendipity_event_customarchive/lang_en.inc.php</file>
     <file>serendipity_event_customarchive/serendipity_event_customarchive.php</file>
-    <file>serendipity_event_customarchive/Thumbs.db</file>
     <file>serendipity_event_customarchive/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_customarchive/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_customarchive/UTF-8/lang_de.inc.php</file>
@@ -1852,6 +2019,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_dbclean">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1870,6 +2038,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_dbclean/.htaccess</file>
     <file>serendipity_event_dbclean/ChangeLog</file>
     <file>serendipity_event_dbclean/documentation_cs.html</file>
     <file>serendipity_event_dbclean/documentation_cz.html</file>
@@ -1987,6 +2156,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_disqus">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -2002,6 +2172,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_disqus/.htaccess</file>
     <file>serendipity_event_disqus/ChangeLog</file>
     <file>serendipity_event_disqus/documentation_cs.html</file>
     <file>serendipity_event_disqus/documentation_cz.html</file>
@@ -2028,6 +2199,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_downloadmanager">
+<file>.htaccess</file>
 <file>AUTHORS</file>
 <file>backend.dlm.filepage.tpl</file>
 <file>backend.dlm.index.tpl</file>
@@ -2179,6 +2351,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_downloadmanager/.htaccess</file>
     <file>serendipity_event_downloadmanager/AUTHORS</file>
     <file>serendipity_event_downloadmanager/backend.dlm.filepage.tpl</file>
     <file>serendipity_event_downloadmanager/backend.dlm.index.tpl</file>
@@ -2473,9 +2646,9 @@
 <description>Makes email addresses clickabe, but obfuscates them to block spam harvester bots</description>
 <maintainers><maintainer><name>Stephan Manske, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.03</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.04</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_email_bot_obfuscator">
 <file>.htaccess</file>
@@ -2528,11 +2701,12 @@
 <description>Shows a toolbar to select emoticons to insert into your entry.</description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.11</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>2.12</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-01-22</date>
   <filelist>
 <dir name="serendipity_event_emoticonchooser">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -2555,6 +2729,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_emoticonchooser/.htaccess</file>
     <file>serendipity_event_emoticonchooser/ChangeLog</file>
     <file>serendipity_event_emoticonchooser/documentation_cs.html</file>
     <file>serendipity_event_emoticonchooser/documentation_cz.html</file>
@@ -2791,6 +2966,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_externalauth">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -2811,6 +2987,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_externalauth/.htaccess</file>
     <file>serendipity_event_externalauth/ChangeLog</file>
     <file>serendipity_event_externalauth/documentation_cs.html</file>
     <file>serendipity_event_externalauth/documentation_cz.html</file>
@@ -2887,6 +3064,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_facebook">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -2902,6 +3080,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_facebook/.htaccess</file>
     <file>serendipity_event_facebook/ChangeLog</file>
     <file>serendipity_event_facebook/documentation_cs.html</file>
     <file>serendipity_event_facebook/documentation_cz.html</file>
@@ -2928,6 +3107,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_faq">
+<file>.htaccess</file>
 <dir name="alternatives">
 <file>plugin_faq_categories.tpl</file>
 <file>plugin_faq_category_faq.tpl</file>
@@ -2982,6 +3162,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_faq/.htaccess</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_categories.tpl</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_category_faq.tpl</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_category_faqs.tpl</file>
@@ -3075,6 +3256,38 @@
 </release>
 </package>
 <package version="1.0">
+<name>serendipity_event_feed</name>
+<license>GPL</license>
+<summary>Dashboard Feed Reader</summary>
+<groups>BACKEND</groups>
+<description>The Dashboard S9y Feedle</description>
+<maintainers><maintainer><name>Ian</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.02</version>
+  <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
+  <date>2016-06-27</date>
+  <filelist>
+<dir name="serendipity_event_feed">
+<file>feedblock.tpl</file>
+<file>lang_de.inc.php</file>
+<file>lang_en.inc.php</file>
+<file>serendipity_event_feed.php</file>
+<dir name="UTF-8">
+<file>lang_de.inc.php</file>
+</dir>
+</dir>
+
+  </filelist>
+  <serendipityFilelist>
+    <file>serendipity_event_feed/feedblock.tpl</file>
+    <file>serendipity_event_feed/lang_de.inc.php</file>
+    <file>serendipity_event_feed/lang_en.inc.php</file>
+    <file>serendipity_event_feed/serendipity_event_feed.php</file>
+    <file>serendipity_event_feed/UTF-8/lang_de.inc.php</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
 <name>serendipity_event_feedflare</name>
 <license>Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License</license>
 <summary>Feedburner FeedFlare</summary>
@@ -3115,13 +3328,14 @@
 <summary>Frontend entry filtering</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Allows visitors to filter/order your entries by several options</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.7.2</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-09</date>
   <filelist>
 <dir name="serendipity_event_filter_entries">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3141,6 +3355,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_filter_entries/.htaccess</file>
     <file>serendipity_event_filter_entries/ChangeLog</file>
     <file>serendipity_event_filter_entries/documentation_cs.html</file>
     <file>serendipity_event_filter_entries/documentation_cz.html</file>
@@ -3161,16 +3376,17 @@
 <name>serendipity_event_findmore</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_findmore/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Show links to services like Facebook, Digg, Technorati, del.icio.us, spread.ly etc related to your entry.</summary>
+<summary>Show social share buttons for services like Facebook and Twitter</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>You can remove/insert other custom services to link to via the &quot;plugin_findmore.tpl&quot; template file easily. Also remember that if you want to save grandma's performance pennies that you can also insert the HTML/JS snippets into your entries.tpl template file instead of using this plugin!</description>
+<description>Plugin DEPRECATED. Move along to the new event_social plugin! You can remove/insert other custom services to link to via the &quot;plugin_findmore.tpl&quot; template file easily. Also remember that if you want to save grandma's performance pennies that you can also insert the HTML/JS snippets into your entries.tpl template file instead of using this plugin!</description>
 <maintainers><maintainer><name>Garvin Hicking, Kodewulf</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.22</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.24</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-22</date>
   <filelist>
 <dir name="serendipity_event_findmore">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3225,6 +3441,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_findmore/.htaccess</file>
     <file>serendipity_event_findmore/ChangeLog</file>
     <file>serendipity_event_findmore/documentation_cs.html</file>
     <file>serendipity_event_findmore/documentation_cz.html</file>
@@ -3288,6 +3505,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_flattr">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3305,6 +3523,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_flattr/.htaccess</file>
     <file>serendipity_event_flattr/ChangeLog</file>
     <file>serendipity_event_flattr/documentation_cs.html</file>
     <file>serendipity_event_flattr/documentation_cz.html</file>
@@ -3333,6 +3552,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_flickr">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3355,6 +3575,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_flickr/.htaccess</file>
     <file>serendipity_event_flickr/ChangeLog</file>
     <file>serendipity_event_flickr/documentation_cs.html</file>
     <file>serendipity_event_flickr/documentation_cz.html</file>
@@ -3386,6 +3607,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_forgotpassword">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3407,6 +3629,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_forgotpassword/.htaccess</file>
     <file>serendipity_event_forgotpassword/ChangeLog</file>
     <file>serendipity_event_forgotpassword/documentation_cs.html</file>
     <file>serendipity_event_forgotpassword/documentation_cz.html</file>
@@ -3439,6 +3662,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_forum">
+<file>.htaccess</file>
 <file>AUTHORS</file>
 <file>ChangeLog</file>
 <file>COPYING</file>
@@ -3578,6 +3802,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_forum/.htaccess</file>
     <file>serendipity_event_forum/AUTHORS</file>
     <file>serendipity_event_forum/ChangeLog</file>
     <file>serendipity_event_forum/COPYING</file>
@@ -3867,6 +4092,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_geotag">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3890,6 +4116,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_geotag/.htaccess</file>
     <file>serendipity_event_geotag/ChangeLog</file>
     <file>serendipity_event_geotag/documentation_cs.html</file>
     <file>serendipity_event_geotag/documentation_cz.html</file>
@@ -3924,6 +4151,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_geourl">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3943,6 +4171,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_geourl/.htaccess</file>
     <file>serendipity_event_geourl/ChangeLog</file>
     <file>serendipity_event_geourl/documentation_cs.html</file>
     <file>serendipity_event_geourl/documentation_cz.html</file>
@@ -3973,6 +4202,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_geshi">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -4114,6 +4344,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_geshi/.htaccess</file>
     <file>serendipity_event_geshi/ChangeLog</file>
     <file>serendipity_event_geshi/documentation_cs.html</file>
     <file>serendipity_event_geshi/documentation_cz.html</file>
@@ -4264,6 +4495,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_getid3">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -4283,6 +4515,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_getid3/.htaccess</file>
     <file>serendipity_event_getid3/ChangeLog</file>
     <file>serendipity_event_getid3/documentation_cs.html</file>
     <file>serendipity_event_getid3/documentation_cz.html</file>
@@ -4357,6 +4590,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_google_analytics">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <dir name="CVSROOT">
 <file>checkoutlist</file>
@@ -4387,6 +4621,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_google_analytics/.htaccess</file>
     <file>serendipity_event_google_analytics/ChangeLog</file>
     <file>serendipity_event_google_analytics/CVSROOT/checkoutlist</file>
     <file>serendipity_event_google_analytics/CVSROOT/commitinfo</file>
@@ -4426,6 +4661,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_google_sitemap">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -4449,6 +4685,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_google_sitemap/.htaccess</file>
     <file>serendipity_event_google_sitemap/ChangeLog</file>
     <file>serendipity_event_google_sitemap/documentation_cs.html</file>
     <file>serendipity_event_google_sitemap/documentation_cz.html</file>
@@ -4480,9 +4717,10 @@
 <release>
   <version>1.59</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-25</date>
   <filelist>
 <dir name="serendipity_event_gravatar">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <dir name="documentation">
 <file>documentation.css</file>
@@ -4659,6 +4897,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_gravatar/.htaccess</file>
     <file>serendipity_event_gravatar/ChangeLog</file>
     <file>serendipity_event_gravatar/documentation/documentation.css</file>
     <file>serendipity_event_gravatar/documentation/identicons.jpg</file>
@@ -4829,9 +5068,9 @@
 <description>Shows a guestbook inside your blog with your normal blog design.</description>
 <maintainers><maintainer><name>Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.59</version>
+  <version>3.60</version>
   <requirements:s9yVersion>1.7.0</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_guestbook">
 <file>.htaccess</file>
@@ -5098,9 +5337,9 @@
 <description>Allows extended options for inserting images from the media manager [Serendipity &gt;= 0.9]</description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.51</version>
-  <requirements:s9yVersion>1.3</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>0.53</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-09</date>
   <filelist>
 <dir name="serendipity_event_imageselectorplus">
 <file>.htaccess</file>
@@ -5161,11 +5400,12 @@
 <description>Allows you to add HTML-style tags to your entry that includes parts of other entrys. Use this markup: [s9y-include-entry:XXX:YYY]. Replace XXX with the target entryid and YYY with the target field name (i.e. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). You can also use the new menu functions to maintain templates and blocks that can get inserted in between your entries.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.16</version>
+  <version>2.17</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-02-20</date>
   <filelist>
 <dir name="serendipity_event_includeentry">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -5188,6 +5428,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_includeentry/.htaccess</file>
     <file>serendipity_event_includeentry/ChangeLog</file>
     <file>serendipity_event_includeentry/documentation_cs.html</file>
     <file>serendipity_event_includeentry/documentation_cz.html</file>
@@ -5221,6 +5462,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_karma">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -5281,6 +5523,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_karma/.htaccess</file>
     <file>serendipity_event_karma/ChangeLog</file>
     <file>serendipity_event_karma/documentation_cs.html</file>
     <file>serendipity_event_karma/documentation_cz.html</file>
@@ -5630,7 +5873,6 @@
 <file>default_thumbnail.gif</file>
 <file>loader.gif</file>
 <file>sprite.png</file>
-<file>Thumbs.db</file>
 </dir>
 <dir name="default">
 <file>default_thumb.png</file>
@@ -5665,7 +5907,6 @@
 <file>default_thumbnail.gif</file>
 <file>loader.gif</file>
 <file>sprite.png</file>
-<file>Thumbs.db</file>
 </dir>
 </dir>
 </dir>
@@ -5776,7 +6017,6 @@
     <file>serendipity_event_lightbox/prettyphoto/images/prettyPhoto/dark_square/default_thumbnail.gif</file>
     <file>serendipity_event_lightbox/prettyphoto/images/prettyPhoto/dark_square/loader.gif</file>
     <file>serendipity_event_lightbox/prettyphoto/images/prettyPhoto/dark_square/sprite.png</file>
-    <file>serendipity_event_lightbox/prettyphoto/images/prettyPhoto/dark_square/Thumbs.db</file>
     <file>serendipity_event_lightbox/prettyphoto/images/prettyPhoto/default/default_thumb.png</file>
     <file>serendipity_event_lightbox/prettyphoto/images/prettyPhoto/default/loader.gif</file>
     <file>serendipity_event_lightbox/prettyphoto/images/prettyPhoto/default/sprite.png</file>
@@ -5803,7 +6043,6 @@
     <file>serendipity_event_lightbox/prettyphoto/images/prettyPhoto/light_square/default_thumbnail.gif</file>
     <file>serendipity_event_lightbox/prettyphoto/images/prettyPhoto/light_square/loader.gif</file>
     <file>serendipity_event_lightbox/prettyphoto/images/prettyPhoto/light_square/sprite.png</file>
-    <file>serendipity_event_lightbox/prettyphoto/images/prettyPhoto/light_square/Thumbs.db</file>
     <file>serendipity_event_lightbox/prettyphoto/js/jquery.prettyPhoto.js</file>
     <file>serendipity_event_lightbox/prettyphoto/js/jquery.prettyPhoto.min.js</file>
     <file>serendipity_event_lightbox/prettyphoto/README</file>
@@ -5824,11 +6063,12 @@
 <description>Links manager - Shows your favorite links in the sidebar.</description>
 <maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.02</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>2.03</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-01-27</date>
   <filelist>
 <dir name="serendipity_event_linklist">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -5871,6 +6111,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_linklist/.htaccess</file>
     <file>serendipity_event_linklist/ChangeLog</file>
     <file>serendipity_event_linklist/documentation_cs.html</file>
     <file>serendipity_event_linklist/documentation_cz.html</file>
@@ -5922,6 +6163,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_linktoolbar">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -5941,6 +6183,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_linktoolbar/.htaccess</file>
     <file>serendipity_event_linktoolbar/ChangeLog</file>
     <file>serendipity_event_linktoolbar/documentation_cs.html</file>
     <file>serendipity_event_linktoolbar/documentation_cz.html</file>
@@ -5966,11 +6209,12 @@
 <description>Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6.3</version>
-  <requirements:s9yVersion>1.3</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.6.4</version>
+  <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
+  <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_linktrimmer">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -5991,6 +6235,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_linktrimmer/.htaccess</file>
     <file>serendipity_event_linktrimmer/ChangeLog</file>
     <file>serendipity_event_linktrimmer/documentation_cs.html</file>
     <file>serendipity_event_linktrimmer/documentation_cz.html</file>
@@ -6022,6 +6267,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_livecomment">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>commentMarkup.fieldselection.js</file>
 <file>commentMarkup.fieldselection.js-def</file>
@@ -6062,6 +6308,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_livecomment/.htaccess</file>
     <file>serendipity_event_livecomment/ChangeLog</file>
     <file>serendipity_event_livecomment/commentMarkup.fieldselection.js</file>
     <file>serendipity_event_livecomment/commentMarkup.fieldselection.js-def</file>
@@ -6105,9 +6352,9 @@
 <description>Enhances the internal search function by adding live-updates on keypress (JavaScript)</description>
 <maintainers><maintainer><name>Christian Stocker, Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.2</version>
+  <version>1.4.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_livesearch">
 <file>lang_bg.inc.php</file>
@@ -6194,9 +6441,9 @@
 <description>Uses XMLRPC to post to your Livejournal/MySpace/Serendipity</description>
 <maintainers><maintainer><name>Kaustubh Srikanth, Ivan Makhonin</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.13.2</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.14</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-27</date>
   <filelist>
 <dir name="serendipity_event_ljupdate">
 <file>ChangeLog</file>
@@ -6281,11 +6528,12 @@
 <description>With this plugin you prevent links to media that support the German &quot;Leistungsschutzrecht&quot;.</description>
 <maintainers><maintainer><name>Matthias Gutjahr</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.3</version>
+  <version>0.4</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-23</date>
   <filelist>
 <dir name="serendipity_event_lsrstopper">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6318,6 +6566,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_lsrstopper/.htaccess</file>
     <file>serendipity_event_lsrstopper/ChangeLog</file>
     <file>serendipity_event_lsrstopper/documentation_cs.html</file>
     <file>serendipity_event_lsrstopper/documentation_cz.html</file>
@@ -6415,6 +6664,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_markdown">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6457,6 +6707,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_markdown/.htaccess</file>
     <file>serendipity_event_markdown/ChangeLog</file>
     <file>serendipity_event_markdown/documentation_cs.html</file>
     <file>serendipity_event_markdown/documentation_cz.html</file>
@@ -6544,6 +6795,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_metadesc">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6565,6 +6817,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_metadesc/.htaccess</file>
     <file>serendipity_event_metadesc/ChangeLog</file>
     <file>serendipity_event_metadesc/documentation_cs.html</file>
     <file>serendipity_event_metadesc/documentation_cz.html</file>
@@ -6597,6 +6850,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_microformats">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6632,6 +6886,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_microformats/.htaccess</file>
     <file>serendipity_event_microformats/ChangeLog</file>
     <file>serendipity_event_microformats/documentation_cs.html</file>
     <file>serendipity_event_microformats/documentation_cz.html</file>
@@ -6727,6 +6982,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_mobile_output">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -6822,6 +7078,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_mobile_output/.htaccess</file>
     <file>serendipity_event_mobile_output/ChangeLog</file>
     <file>serendipity_event_mobile_output/documentation_cs.html</file>
     <file>serendipity_event_mobile_output/documentation_cz.html</file>
@@ -6907,9 +7164,10 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-25</date>
   <filelist>
 <dir name="serendipity_event_motm">
+<file>.htaccess</file>
 <dir name="amazon">
 <file>AmazonProduct.class.php</file>
 <file>amazonsearch.php</file>
@@ -6937,6 +7195,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_motm/.htaccess</file>
     <file>serendipity_event_motm/amazon/AmazonProduct.class.php</file>
     <file>serendipity_event_motm/amazon/amazonsearch.php</file>
     <file>serendipity_event_motm/amazon/AmazonSearchEngine.class.php</file>
@@ -6968,9 +7227,9 @@
 <description>Allows to create multiple language versions of an entry</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.29</version>
+  <version>2.31</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_multilingual">
 <file>.htaccess</file>
@@ -7046,6 +7305,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_mycalendar">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -7068,6 +7328,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_mycalendar/.htaccess</file>
     <file>serendipity_event_mycalendar/ChangeLog</file>
     <file>serendipity_event_mycalendar/documentation_cs.html</file>
     <file>serendipity_event_mycalendar/documentation_cz.html</file>
@@ -7101,6 +7362,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_mymood">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -7117,6 +7379,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_mymood/.htaccess</file>
     <file>serendipity_event_mymood/ChangeLog</file>
     <file>serendipity_event_mymood/documentation_cs.html</file>
     <file>serendipity_event_mymood/documentation_cz.html</file>
@@ -7180,6 +7443,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_oembed">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>CurlFetcher.php</file>
 <file>documentation_cs.html</file>
@@ -7221,6 +7485,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_oembed/.htaccess</file>
     <file>serendipity_event_oembed/ChangeLog</file>
     <file>serendipity_event_oembed/CurlFetcher.php</file>
     <file>serendipity_event_oembed/documentation_cs.html</file>
@@ -7269,6 +7534,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_openid">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>common.inc.php</file>
 <file>documentation_cs.html</file>
@@ -7359,6 +7625,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_openid/.htaccess</file>
     <file>serendipity_event_openid/ChangeLog</file>
     <file>serendipity_event_openid/common.inc.php</file>
     <file>serendipity_event_openid/documentation_cs.html</file>
@@ -7486,11 +7753,12 @@
 <description>Puts an HTML nugget on top or bottom of the page, or inside the page's HEAD tag</description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.13</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.14</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_page_nugget">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -7513,6 +7781,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_page_nugget/.htaccess</file>
     <file>serendipity_event_page_nugget/ChangeLog</file>
     <file>serendipity_event_page_nugget/documentation_cs.html</file>
     <file>serendipity_event_page_nugget/documentation_cz.html</file>
@@ -7681,7 +7950,7 @@
 <release>
   <version>1.14.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-25</date>
   <filelist>
 <dir name="serendipity_event_picasa">
 <file>ChangeLog</file>
@@ -7743,6 +8012,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_podcast">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -7858,6 +8128,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_podcast/.htaccess</file>
     <file>serendipity_event_podcast/ChangeLog</file>
     <file>serendipity_event_podcast/documentation_cs.html</file>
     <file>serendipity_event_podcast/documentation_cz.html</file>
@@ -7974,6 +8245,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_popfetcher">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>cingular.php</file>
 <file>class.mimedecode.php</file>
@@ -8004,6 +8276,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_popfetcher/.htaccess</file>
     <file>serendipity_event_popfetcher/ChangeLog</file>
     <file>serendipity_event_popfetcher/cingular.php</file>
     <file>serendipity_event_popfetcher/class.mimedecode.php</file>
@@ -8103,13 +8376,14 @@
 <summary>Proxy Real-IP</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Sets the correct Visitors IP when useing a Proxy for your webserver. Should be the first plugin in the list.</description>
-<maintainers><maintainer><name>&lt;a href=&quot;http://blog.kleinerChemiker.net/&quot; target=&quot;_blank&quot;&gt;kleinerChemiker&lt;/a&gt;</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>kleinerChemiker</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <requirements:s9yVersion>1.6.2</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-23</date>
   <filelist>
 <dir name="serendipity_event_proxy_realip">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -8122,12 +8396,12 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
 </dir>
 </dir>
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_proxy_realip/.htaccess</file>
     <file>serendipity_event_proxy_realip/ChangeLog</file>
     <file>serendipity_event_proxy_realip/documentation_cs.html</file>
     <file>serendipity_event_proxy_realip/documentation_cz.html</file>
@@ -8139,7 +8413,6 @@
     <file>serendipity_event_proxy_realip/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_proxy_realip/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_proxy_realip/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_proxy_realip/UTF-8/lang_en.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -8237,6 +8510,7 @@
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_recaptcha">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -8259,6 +8533,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_recaptcha/.htaccess</file>
     <file>serendipity_event_recaptcha/ChangeLog</file>
     <file>serendipity_event_recaptcha/documentation_cs.html</file>
     <file>serendipity_event_recaptcha/documentation_cz.html</file>
@@ -8401,11 +8676,12 @@
 <description>Highlights queries used in the referring search engine to locate your page</description>
 <maintainers><maintainer><name>Tom Sommer</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8.2</version>
+  <version>1.8.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_searchhighlight">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -8443,6 +8719,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_searchhighlight/.htaccess</file>
     <file>serendipity_event_searchhighlight/ChangeLog</file>
     <file>serendipity_event_searchhighlight/documentation_cs.html</file>
     <file>serendipity_event_searchhighlight/documentation_cz.html</file>
@@ -8656,6 +8933,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_snapshotlinks">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -8674,6 +8952,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_snapshotlinks/.htaccess</file>
     <file>serendipity_event_snapshotlinks/ChangeLog</file>
     <file>serendipity_event_snapshotlinks/documentation_cs.html</file>
     <file>serendipity_event_snapshotlinks/documentation_cz.html</file>
@@ -8732,11 +9011,12 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>Detects Spam via an algorithmus which learns.</description>
 <maintainers><maintainer><name>kleinerChemiker,  Malte Paskuda, based upon b8 by Tobias Leupold</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.4.21</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>0.4.23</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2016-06-22</date>
   <filelist>
 <dir name="serendipity_event_spamblock_bayes">
+<file>.htaccess</file>
 <dir name="admin">
 <file>bayesAnalysis.tpl</file>
 <file>bayesAnalysismenu.tpl</file>
@@ -8774,12 +9054,12 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
 </dir>
 </dir>
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_spamblock_bayes/.htaccess</file>
     <file>serendipity_event_spamblock_bayes/admin/bayesAnalysis.tpl</file>
     <file>serendipity_event_spamblock_bayes/admin/bayesAnalysismenu.tpl</file>
     <file>serendipity_event_spamblock_bayes/admin/bayesDBmenu.tpl</file>
@@ -8812,7 +9092,6 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
     <file>serendipity_event_spamblock_bayes/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_spamblock_bayes/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_spamblock_bayes/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_spamblock_bayes/UTF-8/lang_en.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -8825,9 +9104,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>Implements simple comment antispam mechanisms, that are easy to configure but very effective.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Janek Bevendorff</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.2.9</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.3.1</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-26</date>
   <filelist>
 <dir name="serendipity_event_spamblock_bee">
 <file>ChangeLog</file>
@@ -9152,11 +9431,12 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>Adds a link to interesting statistics in your entries panel, including a visitors counter</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.62</version>
+  <version>1.63</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_statistics">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -9204,6 +9484,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_statistics/.htaccess</file>
     <file>serendipity_event_statistics/ChangeLog</file>
     <file>serendipity_event_statistics/documentation_cs.html</file>
     <file>serendipity_event_statistics/documentation_cz.html</file>
@@ -9262,6 +9543,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_suggest">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -9283,6 +9565,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_suggest/.htaccess</file>
     <file>serendipity_event_suggest/ChangeLog</file>
     <file>serendipity_event_suggest/documentation_cs.html</file>
     <file>serendipity_event_suggest/documentation_cz.html</file>
@@ -9315,6 +9598,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_template_editor">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <dir name="codemirror">
 <file>codemirror.js</file>
@@ -9363,6 +9647,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_template_editor/.htaccess</file>
     <file>serendipity_event_template_editor/ChangeLog</file>
     <file>serendipity_event_template_editor/codemirror/codemirror.js</file>
     <file>serendipity_event_template_editor/codemirror/csscolors.css</file>
@@ -9467,9 +9752,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>Markup text using Text_Wiki</description>
 <maintainers><maintainer><name>Tobias Schlitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
+  <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-11</date>
   <filelist>
 <dir name="serendipity_event_textwiki">
 <file>lang_bg.inc.php</file>
@@ -9668,6 +9953,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_todolist">
+<file>.htaccess</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
 <dir name="fonts">
@@ -9747,6 +10033,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_todolist/.htaccess</file>
     <file>serendipity_event_todolist/documentation_cs.html</file>
     <file>serendipity_event_todolist/documentation_cz.html</file>
     <file>serendipity_event_todolist/fonts/almonte.ttf</file>
@@ -9897,6 +10184,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   <date>2016-05-20</date>
   <filelist>
 <dir name="serendipity_event_trackback">
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -9920,6 +10208,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_trackback/.htaccess</file>
     <file>serendipity_event_trackback/ChangeLog</file>
     <file>serendipity_event_trackback/documentation_cs.html</file>
     <file>serendipity_event_trackback/documentation_cz.html</file>
@@ -9950,7 +10239,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.9.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-05-17</date>
   <filelist>
 <dir name="serendipity_event_trackexits">
 <file>lang_cn.inc.php</file>
@@ -10213,9 +10502,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>Allows anonymous users to view Serendipity media gallery</description>
 <maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.65</version>
+  <version>2.67</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-17</date>
   <filelist>
 <dir name="serendipity_event_usergallery">
 <file>ChangeLog</file>
@@ -10419,17 +10708,19 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 </package>
 <package version="1.0">
 <name>serendipity_event_weblogping</name>
+<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_weblogping/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Announce entries</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Send notification of new entries to online services</description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.08.2</version>
+  <version>1.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-06-23</date>
   <filelist>
 <dir name="serendipity_event_weblogping">
+<file>ChangeLog</file>
 <file>lang_bg.inc.php</file>
 <file>lang_cn.inc.php</file>
 <file>lang_cs.inc.php</file>
@@ -10468,6 +10759,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_weblogping/ChangeLog</file>
     <file>serendipity_event_weblogping/lang_bg.inc.php</file>
     <file>serendipity_event_weblogping/lang_cn.inc.php</file>
     <file>serendipity_event_weblogping/lang_cs.inc.php</file>
@@ -10691,12 +10983,13 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)</description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.53</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.54</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-24</date>
   <filelist>
 <dir name="serendipity_event_xmlrpc">
 <file>.gitignore</file>
+<file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -10712,6 +11005,59 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <file>Server.php</file>
 </dir>
 <file>RPC.php</file>
+<dir name="RPC2">
+<dir name="Backend">
+<dir name="Php">
+<file>Client.php</file>
+<file>Request.php</file>
+<file>Response.php</file>
+<file>Server.php</file>
+<dir name="Value">
+<file>Array.php</file>
+<file>Base64.php</file>
+<file>Boolean.php</file>
+<file>Datetime.php</file>
+<file>Double.php</file>
+<file>Integer.php</file>
+<file>Integer64.php</file>
+<file>Nil.php</file>
+<file>Scalar.php</file>
+<file>String.php</file>
+<file>Struct.php</file>
+</dir>
+<file>Value.php</file>
+</dir>
+<dir name="Xmlrpcext">
+<file>Client.php</file>
+<file>Server.php</file>
+<file>Value.php</file>
+</dir>
+</dir>
+<file>Backend.php</file>
+<file>CachedClient.php</file>
+<file>CachedServer.php</file>
+<file>Client.php</file>
+<file>ClientHelper.php</file>
+<file>Exception.php</file>
+<dir name="Server">
+<dir name="CallHandler">
+<file>Class.php</file>
+<file>Instance.php</file>
+</dir>
+<file>CallHandler.php</file>
+<dir name="Input">
+<file>PhpInput.php</file>
+<file>RawPostData.php</file>
+</dir>
+<file>Input.php</file>
+<file>Method.php</file>
+</dir>
+<file>Server.php</file>
+<dir name="Util">
+<file>HTTPRequest.php</file>
+</dir>
+<file>Value.php</file>
+</dir>
 </dir>
 </dir>
 <file>serendipity_event_xmlrpc.php</file>
@@ -10726,6 +11072,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_xmlrpc/.gitignore</file>
+    <file>serendipity_event_xmlrpc/.htaccess</file>
     <file>serendipity_event_xmlrpc/ChangeLog</file>
     <file>serendipity_event_xmlrpc/documentation_cs.html</file>
     <file>serendipity_event_xmlrpc/documentation_cz.html</file>
@@ -10737,6 +11084,41 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
     <file>serendipity_event_xmlrpc/PEAR/XML/RPC/Dump.php</file>
     <file>serendipity_event_xmlrpc/PEAR/XML/RPC/Server.php</file>
     <file>serendipity_event_xmlrpc/PEAR/XML/RPC.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Client.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Request.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Response.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Server.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Array.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Base64.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Boolean.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Datetime.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Double.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Integer.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Integer64.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Nil.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Scalar.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/String.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Struct.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Xmlrpcext/Client.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Xmlrpcext/Server.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Xmlrpcext/Value.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/CachedClient.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/CachedServer.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Client.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/ClientHelper.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Exception.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/CallHandler/Class.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/CallHandler/Instance.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/CallHandler.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/Input/PhpInput.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/Input/RawPostData.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/Input.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/Method.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Util/HTTPRequest.php</file>
+    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Value.php</file>
     <file>serendipity_event_xmlrpc/serendipity_event_xmlrpc.php</file>
     <file>serendipity_event_xmlrpc/serendipity_xmlrpc.inc.php</file>
     <file>serendipity_event_xmlrpc/UTF-8/lang_cs.inc.php</file>
@@ -10754,9 +11136,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>This plugin can specify, which authors on a multi-user blog you have enough trust in and do not expect hacking attempts. All other users are treated as possibly evil and cannot create HTML entries.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.6</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>0.7</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-06-08</date>
   <filelist>
 <dir name="serendipity_event_xsstrust">
 <file>ChangeLog</file>
@@ -11192,9 +11574,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.38</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>2.41</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2016-06-22</date>
   <filelist>
 <dir name="serendipity_plugin_adduser">
 <file>ChangeLog</file>
