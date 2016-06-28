@@ -6,13 +6,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 include dirname(__FILE__) . '/plugin_version.inc.php';
 
@@ -31,7 +25,8 @@ require_once dirname(__FILE__) . '/classes/twitter_entry_defs.include.php';
 @define('PLUGIN_TWITTER_OAUTH_TWITTER_CONSUMERKEY', 'ScXsM6UiDU1nDl8u6tacrw');
 @define('PLUGIN_TWITTER_OAUTH_TWITTER_CONSUMERSECRET', '8zR0TKHKNN6gTq8iGP12zRz5P39OPB1nLbLTkHY');
 
-class serendipity_event_twitter extends serendipity_plugin {
+class serendipity_event_twitter extends serendipity_plugin
+{
 
     var $supported_services = array(
             'raw'         => "uncompressed",
@@ -57,7 +52,7 @@ class serendipity_event_twitter extends serendipity_plugin {
         $propbag->add('author',        'Grischa Brockhaus, Peter Heimann');
         //$propbag->add('website',       'http://board.s9y.org');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '5.1.0'
         ));
@@ -177,7 +172,8 @@ class serendipity_event_twitter extends serendipity_plugin {
 
     }
 
-    function handleConfig($name, &$propbag, $idx = '') {
+    function handleConfig($name, &$propbag, $idx = '')
+    {
         global $serendipity;
         switch($name) {
             case 'twitteroa_consumer_secret':
@@ -741,7 +737,8 @@ class serendipity_event_twitter extends serendipity_plugin {
         return true;
     }
 
-    function get_default_announceformat() {
+    function get_default_announceformat()
+    {
         // Compatiblity to old versions:
         $default_prefix = $this->get_config('anounce_prefix'); //'blog update: ';
         if (!empty($default_prefix)) {
@@ -759,7 +756,8 @@ class serendipity_event_twitter extends serendipity_plugin {
         return $format;
     }
 
-    function get_urlshortener() {
+    function get_urlshortener()
+    {
         $urlshortener = new UrlShortener();
         $bitlylogin = $this->get_config('announce_bitly_login');
         $bitlyapikey = $this->get_config('announce_bitly_apikey');
@@ -774,11 +772,13 @@ class serendipity_event_twitter extends serendipity_plugin {
         return $urlshortener;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_EVENT_TWITTER_NAME;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         static $cache = null;
         static $method = null;
@@ -793,12 +793,11 @@ class serendipity_event_twitter extends serendipity_plugin {
                         return true;
                     }
                     $this->addToCSS($eventData);
-                    return true;
                     break;
 
                 case 'backend_header':
                     $this->add_backend_header_parts();
-                    return true;
+                    break;
 
                 case 'backend_publish':
                     // If signaled, we don't want to announce, don't do it!
@@ -811,7 +810,6 @@ class serendipity_event_twitter extends serendipity_plugin {
 
                 case 'backend_delete_entry':
                     $this->entry_deleted((int)$eventData);
-                    return true;
                     break;
 
                 case 'external_plugin':
@@ -996,13 +994,13 @@ class serendipity_event_twitter extends serendipity_plugin {
 
                 case 'entry_display':
                     $this->display_entry($eventData, $addData);
-                    return true;
+                    break;
 
                 case 'backend_frontpage_display':
                     if ($this->get_config('tweeter_show', 'disable') == 'frontpage') {
                         $this->display_twitter_client(false);
                     }
-                    return true;
+                    break;
 
                 case 'backend_sidebar_entries':
                     if ($serendipity['version'][0] == '1') {
@@ -1013,7 +1011,7 @@ class serendipity_event_twitter extends serendipity_plugin {
                         } else {
                         }
                     }
-                    return true;
+                    break;
 
                 case 'backend_sidebar_admin_appearance':
                     if ($serendipity['version'][0] == '1') {
@@ -1024,20 +1022,20 @@ class serendipity_event_twitter extends serendipity_plugin {
 <?php
                         }
                     }
-                    return true;
+                    break;
 
                 case 'backend_sidebar_entries_event_display_tweeter':
                     echo '<h2>' . PLUGIN_EVENT_TWITTER_TWEETER_SIDEBARTITLE . '</h2>';
                     $this->display_twitter_client(true);
-                    return true;
+                    break;
 
                 case 'frontend_footer':
                     $this->display_frontend_footer();
-                    return true;
+                    break;
 
                 case 'frontend_saveComment':
                     $this->hook_saveComment($eventData, $addData);
-                    return true;
+                    break;
 
                 case 'backend_display':
                     if (!serendipity_db_bool($this->get_config('announce_articles'))) {
@@ -1090,13 +1088,19 @@ class serendipity_event_twitter extends serendipity_plugin {
                         </fieldset>
 <?php
                     }
-                    return true;
-            }
-        }
+                    break;
 
+                default:
+                    return false;
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    static function twitteroalog($cmd) {
+    static function twitteroalog($cmd)
+    {
         static $debug = false;
         global $serendipity;
 
@@ -1111,7 +1115,8 @@ class serendipity_event_twitter extends serendipity_plugin {
         return true;
     }
 
-    function cleanup() {
+    function cleanup()
+    {
         global $serendipity;
 
         TwitterPluginDbAccess::install($this);
@@ -1134,32 +1139,40 @@ class serendipity_event_twitter extends serendipity_plugin {
         $this->check_tweetbacks_global(true);
     }
 
-    function install() {
+    function install()
+    {
         TwitterPluginDbAccess::install($this);
     }
 
-    function addToCSS(&$eventData) {
+    function addToCSS(&$eventData)
+    {
         $eventData .= '
+
 /* plugin twitter */
+
 #twitter_update_list {
     list-style: none;
     padding-left: 0;
 }
+
 a.twitter_update_time {
     display: block;
     padding-bottom: 5px;
 }
+
 ';
     }
 
-    function add_backend_header_parts() {
+    function add_backend_header_parts()
+    {
         $cssfilename = TwitterPluginFileAccess::get_file_from_template('tweeter/serendipity_event_twitter_tweeter.css', $this->get_config('plugin_rel_url'));
         echo '<link rel="stylesheet" type="text/css" href="' . $cssfilename.  '" />' . "\n";
         $jsfilename =  $this->get_config('plugin_rel_url') . '/tweeter/serendipity_event_twitter_tweeter.js';
         echo '<script type="text/javascript" src="' . $jsfilename . '"></script>' . "\n";
     }
 
-    function display_frontend_footer() {
+    function display_frontend_footer()
+    {
         global $serendipity;
 
         if (!serendipity_db_bool($this->get_config('do_tweetbacks',false))) return false;
@@ -1174,11 +1187,13 @@ a.twitter_update_time {
     /**
      * Entry deleted event fetched. Delete all data, not needed anymore.
      */
-    function entry_deleted($entryId) {
+    function entry_deleted($entryId)
+    {
         TwitterPluginDbAccess::entry_deleted($entryId);
     }
 
-    function check_tweetbacks_save_comment($article_id, $entry, $comment_type, $strip_tags = false) {
+    function check_tweetbacks_save_comment($article_id, $entry, $comment_type, $strip_tags = false)
+    {
         $commentInfo = array();
         $commentInfo['title']   = $entry[TWITTER_SEARCHRESULT_REALNAME] . " via Twitter";
         $commentInfo['name']    = $entry[TWITTER_SEARCHRESULT_REALNAME];
@@ -1215,7 +1230,8 @@ a.twitter_update_time {
         }
     }
 
-    function hook_saveComment(&$ca, &$commentInfo) {
+    function hook_saveComment(&$ca, &$commentInfo)
+    {
         // is this our comment to be saved?
         if (empty($commentInfo) || $commentInfo['source']!='tweetback') return;
 
@@ -1235,7 +1251,8 @@ a.twitter_update_time {
         $this->log("hook_saveComment end");
     }
 
-    function check_tweetbacks_global($complete = false) {
+    function check_tweetbacks_global($complete = false)
+    {
         global $serendipity;
 
         $this->log("Check global");
@@ -1386,7 +1403,8 @@ a.twitter_update_time {
         return $lastcheck + $check_freq;
     }
 
-    function search($article_url, $old_since_id) {
+    function search($article_url, $old_since_id)
+    {
         if ($this->get_config('twitter_api', 'api10') == 'api10') {
             $entries = Twitter::search_multiple($article_url, $old_since_id);
         }
@@ -1400,7 +1418,8 @@ a.twitter_update_time {
         return array_reverse  ( $entries, true );
     }
 
-    function comment_url($entry) {
+    function comment_url($entry)
+    {
         $use_url_kind = $this->get_config('tweetback_url','status');
 
         switch ($use_url_kind) {
@@ -1424,7 +1443,8 @@ a.twitter_update_time {
         return $comment_url;
     }
 
-    function create_update_from_entry($entry, $announce_format, $checkUrlLen = false) {
+    function create_update_from_entry($entry, $announce_format, $checkUrlLen = false)
+    {
         global $serendipity;
 
         $entryurl = $this->generate_article_url($entry);
@@ -1515,7 +1535,8 @@ a.twitter_update_time {
         return $update;
     }
 
-    function twitter_check_config() {
+    function twitter_check_config()
+    {
         $last_config_check = $this->get_config("twitter_last_config_check", 0);
         $now = time();
         $daybefore = $now - (24 * 60 * 60); // One day in seconds
@@ -1532,7 +1553,8 @@ a.twitter_update_time {
         }
     }
 
-    function twitter_published_entry( $entry ) {
+    function twitter_published_entry( $entry )
+    {
         global $serendipity;
 
         if (!serendipity_db_bool($this->get_config('announce_articles'))) return false;
@@ -1573,7 +1595,8 @@ a.twitter_update_time {
         return true;
     }
 
-    function twitteroa_connect($idx = '') {
+    function twitteroa_connect($idx = '')
+    {
         require_once(dirname(__FILE__).'/twitteroauth/twitteroauth.php');
 
         $u  = $this->get_config('twittername' . $idx);
@@ -1587,7 +1610,8 @@ a.twitter_update_time {
         return $connection;
     }
 
-    function twitter_published_entry_to_account($account_index, $account_name, $account_pwd, $account_type, $update, $geo_lat = NULL, $geo_long = NULL ) {
+    function twitter_published_entry_to_account($account_index, $account_name, $account_pwd, $account_type, $update, $geo_lat = NULL, $geo_long = NULL )
+    {
         if ($account_type == "identica"){
             $api = new Twitter($account_type=='identica');
             $status = $api->update($account_name, $account_pwd, $update, $geo_lat, $geo_long);
@@ -1609,7 +1633,8 @@ a.twitter_update_time {
 
     }
 
-    function twitteroa_global_consumersettings() {
+    function twitteroa_global_consumersettings()
+    {
         // Return local client setup with fallback to the s9y client
         $result = array();
         $result['key']    =$this->get_config('general_oa_consumerkey', PLUGIN_TWITTER_OAUTH_TWITTER_CONSUMERKEY);
@@ -1617,7 +1642,8 @@ a.twitter_update_time {
         return $result;
     }
 
-    function default_shorturl( $url ) {
+    function default_shorturl( $url )
+    {
         $default = $this->get_config('anounce_url_service','7ax.de');
         $shorturls = TwitterPluginDbAccess::load_short_urls( $url, array($default) );
         if (!empty($shorturls[$default])) return $shorturls[$default];
@@ -1637,7 +1663,8 @@ a.twitter_update_time {
     /**
      * adds tweetthis, dentthis and "check tweetbacks" (if logged in) to footer
      */
-    function display_entry(&$eventData, $addData) {
+    function display_entry(&$eventData, $addData)
+    {
         global $serendipity;
 
         if ($addData['preview']) return false;
@@ -1727,7 +1754,8 @@ a.twitter_update_time {
 
     }
 
-    function generate_article_url( $entry ) {
+    function generate_article_url( $entry )
+    {
         global $serendipity;
         $urlparts = @parse_url($serendipity['baseURL']);
         $server = $urlparts['scheme'] . '://' . $urlparts['host'];
@@ -1738,7 +1766,8 @@ a.twitter_update_time {
         return $server . $relurl;
     }
 
-    function generate_domain_url($addScheme = true) {
+    function generate_domain_url($addScheme = true)
+    {
         global $serendipity;
         $urlparts = @parse_url($serendipity['baseURL']);
         $server = ($addScheme?$urlparts['scheme'] . '://':"") . $urlparts['host'];
@@ -1746,7 +1775,8 @@ a.twitter_update_time {
         return $server;
     }
 
-    function create_short_urls( $article_url ) {
+    function create_short_urls( $article_url )
+    {
 
         $selected_services = array('raw');
 
@@ -1769,7 +1799,8 @@ a.twitter_update_time {
     /**
      * Return binary response for an image
      */
-    function show_img($filename, $nextcheck=null, $mime_type='image/png') {
+    function show_img($filename, $nextcheck=null, $mime_type='image/png')
+    {
 
         if (empty($nextcheck)) $nextcheck = time() + (30*60); // try again in 30min, if nothing was specified.
 
@@ -1802,13 +1833,15 @@ a.twitter_update_time {
     /**
      * Returns a URL encoded and signed variable.
      */
-    function urlencode($url) {
+    function urlencode($url)
+    {
         $hash = md5($this->instance_id . $url);
         # return $hash . str_replace ('_', '%5F', urlencode($url));
         return $hash . base64_encode($url);//changed by Ruben
     }
 
-    function urldecode($url) {
+    function urldecode($url)
+    {
         $hash     = substr($url, 0, 32);
         # $real_url = urldecode(substr($url, 32));
         $real_url = base64_decode(substr($url, 32));//changed by Ruben
@@ -1822,7 +1855,8 @@ a.twitter_update_time {
         }
     }
 
-    function debug_entries($entries, $article_url, $shorturls) {
+    function debug_entries($entries, $article_url, $shorturls)
+    {
         // Newst first
         $entries = array_reverse( $entries );
 
@@ -1857,7 +1891,8 @@ a.twitter_update_time {
         echo "</ul>";
     }
 
-    function updateTwitterTimelineCache($parts){
+    function updateTwitterTimelineCache($parts)
+    {
         global $serendipity;
         require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
 
@@ -1944,11 +1979,13 @@ a.twitter_update_time {
         return $nextcheck;
     }
 
-    function curPageURL() {
+    function curPageURL()
+    {
         return $_SERVER["REQUEST_URI"];
     }
 
-    function log($message){
+    function log($message)
+    {
         if (!PLUGIN_TWITTER_DEBUG) return;
         $fp = fopen(TwitterPluginFileAccess::get_cache_prefix() . '.log','a');
         fwrite($fp, date('Y.m.d H:i:s') . " - " . $message . "\n");
@@ -1956,7 +1993,8 @@ a.twitter_update_time {
         fclose($fp);
     }
 
-    function load_timeline() {
+    function load_timeline()
+    {
         $status_timeline = array(
             "public_timeline",
             "home_timeline",
@@ -1969,7 +2007,8 @@ a.twitter_update_time {
         return $status_timeline;
     }
 
-    function load_identities() {
+    function load_identities()
+    {
         $idcount = $this->get_config('id_count',1);
         if (!is_numeric($idcount)) $idcount = 1;
         $identities = array();
@@ -1981,7 +2020,8 @@ a.twitter_update_time {
         return $identities;
     }
 
-    function display_twitter_client($tweeter_in_sidbar = false) {
+    function display_twitter_client($tweeter_in_sidbar = false)
+    {
         $identities             = $this->load_identities();
         $status_timeline     = $this->load_timeline();
         $tweeter_has_timeline = ($this->get_config('tweeter_history', false) === true);
@@ -2166,11 +2206,13 @@ a.twitter_update_time {
 
     // We generate a secret only known by the blog admit.
     // We use the directory of this plugin md5'd
-    static function pluginSecret() {
+    static function pluginSecret()
+    {
         return md5(dirname(__FILE__));
     }
 
-    static function getTwitterOauths() {
+    static function getTwitterOauths()
+    {
         $idcount = serendipity_event_twitter::get_config_event('id_count');
         if (empty($idcount)) {
             return array();
@@ -2201,4 +2243,7 @@ a.twitter_update_time {
         }
 
     }
+
 }
+
+?>

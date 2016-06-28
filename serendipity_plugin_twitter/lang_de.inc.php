@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 @define('PLUGIN_TWITTER_TITLE',                         'Twitter Timeline');
 @define('PLUGIN_TWITTER_DESC',                          'Zeigt die aktuellsten Twitter-Einträge an');
 @define('PLUGIN_TWITTER_NUMBER',                        'Anzahl der Einträge');
@@ -39,7 +40,7 @@
 
 @define('PLUGIN_TWITTER_PROBLEM_TWITTER_ACCESS',        'Es kann gerade nicht auf Twitter zugegriffen werden.<br/>Bitte später noch einmal laden.');
 
-// Twitter Event Plugin 
+// Twitter Event Plugin
 @define('PLUGIN_EVENT_TWITTER_NAME',                    'Microblogging (Twitter,Identica)');
 @define('PLUGIN_EVENT_TWITTER_DESC',                    'Fügt einen Twitter/Identica Client zum Administrator Interface hinzu, sucht nach Tweetbacks und kündigt neue Artikel über Twitter/Identica Accounts an.');
 
@@ -217,3 +218,4 @@ Du must aktuell bei Twitter entweder ausgeloggt oder mit dem <b>richtigen Twitte
 @define('PLUGIN_EVENT_TWITTER_API_TYPE_DESC',           'Die Twitter API 1.0 ist "auslaufend" und wird 2013 eingestellt. Also solltest Du die API 1.1 benutzen. Allerdings muss dafür bereits (bei Benutzerkonten) eine OAuth Verbindung zu Twitter hergestellt und hier eingestellt worden sein.');
 @define('PLUGIN_EVENT_TWITTER_API_10',                  'API 1.0 [auslaufend]');
 @define('PLUGIN_EVENT_TWITTER_API_11',                  'API 1.1 OAuth');
+

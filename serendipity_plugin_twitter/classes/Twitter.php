@@ -1,22 +1,23 @@
-<?php 
+<?php
 
 /*
  * Contributed by Grischa Brockhaus <s9ycoder@brockha.us>
  *
  * Implements access to the twitter api
- * 
+ *
  */
 
 include dirname(__FILE__) . '/json.php4.include.php';
 include dirname(__FILE__) . '/twitter_entry_defs.include.php';
 
-class Twitter {
+class Twitter
+{
 
     var $use_identica = false;
-    
+
     var $last_error = 200; // success
     var $error_response = '';
-    
+
     var $twitter_errors = array(
         200 => "OK",
         304 => "Not Modified",
@@ -29,20 +30,22 @@ class Twitter {
         502 => "Bad Gateway: Twitter is down or being upgraded",
         503 => "Service Unavailable"
     );
-    
+
     /**
      * The constructor of this class.
      * @param boolean use_identi_ca default=false (use twitter mode)
      */
-    function Twitter($use_identi_ca = false) {
+    function __construct($use_identi_ca = false)
+    {
         $this->use_identica = $use_identi_ca;
     }
-    
+
     /**
      * Base URL of service
      * @access   private
      */
-    function get_base_url() {
+    function get_base_url()
+    {
         if ($this->use_identica) {
             return "http://identi.ca/";
         }
@@ -50,12 +53,13 @@ class Twitter {
             return "https://twitter.com/";
         }
     }
-    
+
     /**
      * API URL of service
      * @access   private
      */
-    function get_api_url() {
+    function get_api_url()
+    {
         if ($this->use_identica) {
             return "http://identi.ca/api/";
         }
@@ -64,12 +68,12 @@ class Twitter {
             return "https://twitter.com/";
         }
     }
-    
+
     /**
      * API URL for searches of service
      * @access   private
      */
-    function get_search_url() 
+    function get_search_url()
     {
         if ($this->use_identica) {
             return "http://identi.ca/api/search";
@@ -79,38 +83,39 @@ class Twitter {
             return "https://search.twitter.com/search";
         }
     }
-    
+
     var $search_rss_encoding = 'UTF-8';
-    
+
     /**
-     * searches twitter. 
-     * 
+     * searches twitter.
+     *
      * Returns an array of entry arrays (id=> entry).
-     * 
-     * entries have the following fields set: 
+     *
+     * entries have the following fields set:
      * id, login, realname, email, tweet, pubdate, retweet
      * url_autor, url_img, url_tweet
-     * 
+     *
      * @param string search urldecoded query
      * @param entry[] a prior search result. Search result will be added, if not null or empty
      * @return entry[] results as array of entry arrays or false, if an error occured
      */
-    function search($search, $entries=null, $fetchall=true) {
+    function search($search, $entries=null, $fetchall=true)
+    {
         require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-        
+
         $search_uri = $this->get_search_url() . '.json?q=' . $search;
 
-        // Special Twitter search params 
+        // Special Twitter search params
         if (!$this->use_identica) {
             $search_uri .= "&rpp=100&include_entities=1";
         }
-        
-        //echo "Searching: $search_uri <br/>"; 
+
+        //echo "Searching: $search_uri <br/>";
 
         $paging = true;
-        
+
         while ($paging) {
-        
+
             if (function_exists('serendipity_request_start')) serendipity_request_start();
             $req = new HTTP_Request($search_uri, array('timeout' => 20, 'readTimeout' => array(5,0)));
             $req->sendRequest();
@@ -123,40 +128,41 @@ class Twitter {
             }
             $response = trim($req->getResponseBody());
             if (function_exists('serendipity_request_start')) serendipity_request_end();
-            
+
             $json = @json_decode($response);
-            
+
             if (!is_array($entries) || empty($entries)) $entries = array();
             foreach ($json->results as $item) {
                 $entry = $this->parse_entry_json( $item );
-                
+
                 // Debug: remember the search executed
                 $entry[TWITTER_SEARCHRESULT_URL_QUERY] = $search;
-                
+
                 // Watch out: If $item->id is interpreted as int, high values produce problems
                 // So I force strings as array keys here.
                 $entries[$entry[TWITTER_SEARCHRESULT_ID]] = $entry; // overwrite old entry, if already have one
             }
-            
+
             $paging = !empty($json->next_page);
             if ($fetchall && $paging) {
-                $search_uri = $this->get_search_url() . '.json' . $json->next_page; 
+                $search_uri = $this->get_search_url() . '.json' . $json->next_page;
             }
         }
-        
-        return $entries;   
+
+        return $entries;
     }
-    
+
     /**
      * Searches for multiple keywords
      * @param array keywords The keywords to search for
-     * @param string since_id Limit results to entries starting after since_id 
+     * @param string since_id Limit results to entries starting after since_id
      * @param boolean search_or search using OR or AND
      */
-    static function search_multiple($keyword, $since_id = null, $search_or = true) {
+    static function search_multiple($keyword, $since_id = null, $search_or = true)
+    {
         $entries = array();
-        
-        // Filter: tweeds containing links only. 
+
+        // Filter: tweeds containing links only.
         // This Filter doesn't work at the moment, will produce an empty result!
         // It is not neccessary for us, only a hint for twitter.
         // rpp: results per page
@@ -164,13 +170,13 @@ class Twitter {
         if (!empty($since_id)) {
             $filter .= "&since_id=$since_id";
         }
-        
+
         $query = $keyword; //urlencode($keyword);
-        
+
         // Filter will be added to the query, so substract it.
         $max_query_len = 139 - strlen($filter);
-        
-        // Now execute the queries        
+
+        // Now execute the queries
         $api = new Twitter();
         $newentries = $api->search($query . $filter, $entries);
         if ($newentries===false) { // Error occured, mostly resultet in an twitter overload!
@@ -189,23 +195,24 @@ class Twitter {
         $entries = $newentries;
         return $entries;
     }
-    
+
     /**
      * Loads the actual twitter configuration
 {
-	"short_url_length_https":21,
-	"max_media_per_upload":1,
-	"characters_reserved_per_media":21,
-	"photo_sizes":{"thumb":{"resize":"crop","h":150,"w":150},
-	"small":{"resize":"fit","h":480,"w":340},
-	"large":{"resize":"fit","h":2048,"w":1024},
-	"medium":{"resize":"fit","h":1200,"w":600}},
-	"non_username_paths"["about", ... , "media_signup"],
-	"photo_size_limit":3145728,
-	"short_url_length":20
+    "short_url_length_https":21,
+    "max_media_per_upload":1,
+    "characters_reserved_per_media":21,
+    "photo_sizes":{"thumb":{"resize":"crop","h":150,"w":150},
+    "small":{"resize":"fit","h":480,"w":340},
+    "large":{"resize":"fit","h":2048,"w":1024},
+    "medium":{"resize":"fit","h":1200,"w":600}},
+    "non_username_paths"["about", ... , "media_signup"],
+    "photo_size_limit":3145728,
+    "short_url_length":20
 }
      */
-    function get_twitter_config() {
+    function get_twitter_config()
+    {
         require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
         $config_url = "https://api.twitter.com/1/help/configuration.json";
 
@@ -222,13 +229,14 @@ class Twitter {
         }
         $response = trim($req->getResponseBody());
         if (function_exists('serendipity_request_start')) serendipity_request_end();
-        
+
         return @json_decode($response);
     }
-    
-    function parse_entry_json( $item ) {
+
+    function parse_entry_json( $item )
+    {
         $entry = array();
-        
+
         if (preg_match('/href="([^"]*)"/',html_entity_decode($item->source, ENT_COMPAT, LANG_CHARSET),$matches)) {
             $source_link = $matches[1][0];
         }
@@ -236,13 +244,13 @@ class Twitter {
         $entry[TWITTER_SEARCHRESULT_LOGIN] = $item->from_user;
         $entry[TWITTER_SEARCHRESULT_REALNAME] = $item->from_user;
         if( !function_exists('htmlspecialchars_decode') ) {
-            $entry[TWITTER_SEARCHRESULT_TWEET] = $item->text; // PHP4 Version w/o html_specialcar decoding. 
+            $entry[TWITTER_SEARCHRESULT_TWEET] = $item->text; // PHP4 Version w/o html_specialcar decoding.
         }
         else {
             $entry[TWITTER_SEARCHRESULT_TWEET] = htmlspecialchars_decode($item->text);
         }
 
-        $uniq = (isset($item->id_str) ? $item->id_str : sprintf('%0.0f', $item->id));        
+        $uniq = (isset($item->id_str) ? $item->id_str : sprintf('%0.0f', $item->id));
         $entry[TWITTER_SEARCHRESULT_ID] = $uniq;
 
         $entry[TWITTER_SEARCHRESULT_URL_AUTOR] = $this->get_base_url() . $item->from_user;
@@ -256,7 +264,7 @@ class Twitter {
         if (!empty($source_link)) $entry[TWITTER_SEARCHRESULT_URL_SRC] = $source_link;
         $entry[TWITTER_SEARCHRESULT_PUBDATE] = $item->created_at;
         $entry[TWITTER_SEARCHRESULT_RETWEET] = preg_match('/^(rt|retweet|retweeting)[ :].*/i',$item->text);
-        
+
         // get expanded urls
         if (!empty($item->entities)) {
             if (!empty($item->entities->urls)) {
@@ -273,14 +281,15 @@ class Twitter {
         }
         return $entry;
     }
-    
-    function update( $login, $pass, $update, $geo_lat = NULL, $geo_long = NULL ) {
+
+    function update( $login, $pass, $update, $geo_lat = NULL, $geo_long = NULL )
+    {
         require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-        
+
         if (empty($login) || empty($pass) || empty($update)) return;
-        
+
         $status_url = $this->get_api_url() . 'statuses/update.json';
-        
+
         require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
         if (function_exists('serendipity_request_start')) serendipity_request_start();
         $par['user'] = $login;
@@ -290,7 +299,7 @@ class Twitter {
         $par['readTimeout'] = array(5,0);
 
         $req = new HTTP_Request($status_url, $par);
-        
+
         $update = urlencode($update);
 
         $req->addPostData('status',$update, true);
@@ -304,7 +313,7 @@ class Twitter {
         $response = $req->getResponseBody();
         $errorcode = $req->getResponseCode();
         if (function_exists('serendipity_request_start')) serendipity_request_end();
-        
+
         if ($errorcode == 200) {
             $json = @json_decode($response);
             if (isset($json->error)) {
@@ -320,13 +329,14 @@ class Twitter {
     }
 
     // http://apiwiki.twitter.com/Twitter-REST-API-Method%3A-statuses-friends_timeline
-    function timeline( $login, $pass, $count=10, $withfriends=true) {
+    function timeline( $login, $pass, $count=10, $withfriends=true)
+    {
         if (empty($login) || empty($pass)) return;
 
         $timeline_url = $this->get_api_url() . 'statuses/friends_timeline.json?';
-        
+
         $timeline_url .= "count=$count";
-        
+
         require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
         if (function_exists('serendipity_request_start')) serendipity_request_start();
         $par['user'] = $login;
@@ -340,20 +350,21 @@ class Twitter {
         $req->sendRequest();
         $response = trim($req->getResponseBody());
         if (function_exists('serendipity_request_start')) serendipity_request_end();
-        
+
         return @json_decode($response);
-        
+
     }
-    
+
     // http://apiwiki.twitter.com/Twitter-REST-API-Method%3A-users%C2%A0show
-    function userinfo($screenname) {
+    function userinfo($screenname)
+    {
         if (empty($screenname)) {
             echo "screenname empty";
             return;
         }
-        
+
         require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-        
+
         $requrl = $this->get_api_url() . 'users/show.json?screen_name=' . $screenname;
 
         if (function_exists('serendipity_request_start')) serendipity_request_start();
@@ -361,14 +372,14 @@ class Twitter {
         $req = new HTTP_Request($requrl);
         $req->sendRequest();
         $response = trim($req->getResponseBody());
-        
+
         if (function_exists('serendipity_request_start')) serendipity_request_end();
-        
+
         return @json_decode($response);
     }
-    
-    function replace_links_in_status( $status, $linktext_replace = '$1', $class_links = '', $class_user_links = '' ) {
-        
+
+    function replace_links_in_status( $status, $linktext_replace = '$1', $class_links = '', $class_user_links = '' )
+    {
         // Regular expression for smart detecting URLs inside of an Text.
         // Found at http://immike.net/blog/2007/04/06/5-regular-expressions-every-web-programmer-should-know/
         $pattern = '{(
@@ -413,15 +424,16 @@ class Twitter {
             $status = preg_replace('{#([\w_]*)}','#<a href="' . $this->get_base_url() . 'tag/$1" ' . $class . '>$1</a>', $status);
             $status = preg_replace('{!([\w_]*)}','!<a href="' . $this->get_base_url() . 'group/$1" ' . $class . '>$1</a>', $status);
         }
-    
+
         $class = '';
         if (!empty($class_user_links)) $class =   'class="' . $class_user_links . '"';
         $status = preg_replace('{@([\w_]*)}','@<a href="' . $this->get_base_url() . '$1" ' . $class . '>$1</a>', $status);
-        
+
         return $status;
     }
-    
-    static function create_status_ago_string($twitter_time_string){
+
+    static function create_status_ago_string($twitter_time_string)
+    {
 
         // Some strtotime versions are not able to handle the long date string. So shorten it!
         $datepart = explode(" ", $twitter_time_string);
@@ -429,7 +441,7 @@ class Twitter {
 
         //$time = (int)time() - @strtotime($twitter_time_string);
         $time = (int)time() - @strtotime($shortdate);
-        
+
         if((int)$time === 0){
             $out = 'a wink';
         }
@@ -467,9 +479,12 @@ class Twitter {
 
         return $out . ' ago';
     }
-    
-    function get_status_url( $account, $status_id ) {
-        return $this->get_base_url() . ($this->use_identica?'notice/': $account . '/status/') . $status_id;  
+
+    function get_status_url( $account, $status_id )
+    {
+        return $this->get_base_url() . ($this->use_identica?'notice/': $account . '/status/') . $status_id;
     }
-    
+
 }
+
+?>

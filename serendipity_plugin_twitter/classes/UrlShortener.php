@@ -8,37 +8,43 @@
 
 include dirname(__FILE__) . '/json.php4.include.php';
 
-class UrlShortener {
+class UrlShortener
+{
 
-    // This login is a generic that fails in most cases because of exceeded ratio limits. 
+    // This login is a generic that fails in most cases because of exceeded ratio limits.
     var $bitly_login = 'bitlyapidemo';
     var $bitly_apikey = 'R_0da49e0a9118ff35f52f629d2d71bf07';
-    
+
     var $piratly_apikey = "0"; // This is the generic API token representing anonymous user
-    
+
     var $yourls_url = 'http://www.yourls.org';
     var $yourls_apikey = 'signature';
-    
-    function setBitlyLogin($login, $apikey) {
+
+    function setBitlyLogin($login, $apikey)
+    {
         if (empty($login) || empty($apikey)) return;
         $this->bitly_login = $login;
         $this->bitly_apikey = $apikey;
     }
-    
-    function setYourlsLogin($yourl, $apikey) {
+
+    function setYourlsLogin($yourl, $apikey)
+    {
         if (empty($yourl) || empty($apikey)) return;
         $this->yourls_url = $yourl;
         $this->yourls_apikey = $apikey;
     }
-    
-    function setPiratlyToken($apitoken) {
+
+    function setPiratlyToken($apitoken)
+    {
         if (empty($apitoken)) return;
         $this->piratly_apikey = $apitoken;
     }
+
     /**
-     * Fills up the shorturls hash with shorturls identified by service name. 
+     * Fills up the shorturls hash with shorturls identified by service name.
      */
-    function put_shorturl($service, $url, &$shorturls) {
+    function put_shorturl($service, $url, &$shorturls)
+    {
         global $serendipity;
 
         switch ($service) {
@@ -93,14 +99,14 @@ class UrlShortener {
                 UrlShortener::shorten_via_piratly( $url, $shorturls );
                 break;
             // old removed service
-            case 'snipr': 
+            case 'snipr':
             case 'tr.im':
             case 'cli.gs':
                 UrlShortener::shorten_via_7ax( $url, $shorturls );
                 break;
         }
     }
-    
+
     /**
      * Shorten an URL via a simple HTTP Get returning the short url only
      * @param array shorturls List of processed short urls, where the new short url is added into
@@ -108,12 +114,13 @@ class UrlShortener {
      * @param string servicecall complete service URL to be called returning the short URL only
      * @access   private
      */
-    function shorten_via_simple( &$shorturls, $servicename, $servicecall ) {
+    function shorten_via_simple( &$shorturls, $servicename, $servicecall )
+    {
         require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-        
+
         // if we already evaluated the shorturl, stop here
         if (!empty($shorturls[$servicename])) return;
-        
+
         serendipity_request_start();
         $req = new HTTP_Request($servicecall, array('timeout' => 20, 'readTimeout' => array(5,0)));
         $req->sendRequest();
@@ -127,37 +134,41 @@ class UrlShortener {
         }
     }
     // Working!
-    function shorten_via_tinyurl( $url, &$shorturls ) {
+    function shorten_via_tinyurl( $url, &$shorturls )
+    {
         $url = urlencode($url);
         UrlShortener::shorten_via_simple($shorturls, 'tinyurl', "http://tinyurl.com/api-create.php?url=$url");
     }
-    
-    function shorten_via_7ax( $url, &$shorturls ) {
+
+    function shorten_via_7ax( $url, &$shorturls )
+    {
         $url = urlencode($url);
         UrlShortener::shorten_via_simple($shorturls, '7ax.de', "http://7ax.de/api.php?url=$url");
     }
-    
+
     function shorten_via_piratly( $url, &$shorturls ) {
         $url = urlencode($url);
         UrlShortener::shorten_via_simple($shorturls, 'piratly', "http://pirat.ly/shortener/api/createplain/{$this->piratly_apikey}/?$url");
     }
-    
+
     // is.gd returns different short urls for same URL! How to handle this?!
     // works *sometimes*
-    function shorten_via_isgd( $url, &$shorturls ) {
+    function shorten_via_isgd( $url, &$shorturls )
+    {
         $url = urlencode($url);
         UrlShortener::shorten_via_simple($shorturls, 'isgd', "http://is.gd/api.php?longurl=$url");
     }
-    
+
     // twurl.nl returns different short urls for same URL! How to handle this?!
     // works *sometimes*
     // tinyburner.com
-    function shorten_via_twurl( $url, &$shorturls ) {
+    function shorten_via_twurl( $url, &$shorturls )
+    {
         require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-        
+
         // if we already evaluated the shorturl, stop here
         if (!empty($shorturls['twurl'])) return;
-        
+
         serendipity_request_start();
         $req_url = "http://tweetburner.com/links";
         $req = new HTTP_Request($req_url, array('method' => HTTP_REQUEST_METHOD_POST, 'timeout' => 20, 'readTimeout' => array(5,0)));
@@ -170,7 +181,8 @@ class UrlShortener {
         }
     }
 
-    function shorten_via_bitly( $url, &$shorturls ) {
+    function shorten_via_bitly( $url, &$shorturls )
+    {
         // if we already evaluated the shorturl, stop here
         if (!empty($shorturls['bitly'])) return;
 
@@ -179,17 +191,18 @@ class UrlShortener {
             $shorturls['bitly'] = $short_url;
         }
     }
-    
-    function shorten_via_yourls( $url, &$shorturls ) {
+
+    function shorten_via_yourls( $url, &$shorturls )
+    {
         if (!empty($shorturls['yourls'])) return;
-        
+
         $url = urlencode($url);
         UrlShortener::shorten_via_simple($shorturls, 'yourls', "http://{$this->yourls_url}/yourls-api.php?signature={$this->yourls_apikey}&action=shorturl&format=simple&url=$url");
-        
     }
-    
 
-    function shorten_via_jmp( $url, &$shorturls ) {
+
+    function shorten_via_jmp( $url, &$shorturls )
+    {
         // if we already evaluated the shorturl, stop here
         if (!empty($shorturls['jmp'])) return;
 
@@ -198,15 +211,15 @@ class UrlShortener {
             $shorturls['jmp'] = $short_url;
         }
     }
-    
+
     /* bit.ly called via api */
     function _make_bitly_api_url($url,$format = 'xml',$domain='bit.ly')
     {
         require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-        
+
         //create the API Call URL
         $bitly = 'http://api.bit.ly/v3/shorten?longUrl='.urlencode($url).'&login='.$this->bitly_login.'&apiKey='.$this->bitly_apikey.'&format='.$format.'&domain='.$domain;
-        
+
         //get the url
         serendipity_request_start();
         $req = new HTTP_Request($bitly, array('timeout' => 20, 'readTimeout' => array(5,0)));
@@ -219,7 +232,7 @@ class UrlShortener {
         if (strlen($response) < 1) {
             return false;
         }
-        
+
         //parse depending on desired format
         if(strtolower($format) == 'json')
         {
@@ -241,42 +254,45 @@ class UrlShortener {
     /*
      * Doesn't work realy and is ultra slow..
      */
-    function shorten_via_delivr( $url, &$shorturls ) {
+    function shorten_via_delivr( $url, &$shorturls )
+    {
         require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
 
         // if we already evaluated the shorturl, stop here
         if (!empty($shorturls['delivr'])) return;
-        
+
         $login  = 'public';
         $apikey = '8bbce762-971e-45d6-a0e1-cbf5730252ea';
-        
+
         $url = urlencode($url);
         $req_url = "http://api.delivr.com/shorten?username=$login&apiKey=$apikey&format=xml&url=" . $url;
-        
+
         serendipity_request_start();
         $req = new HTTP_Request($req_url, array('timeout' => 20, 'readTimeout' => array(5,0)));
         $req->sendRequest();
         $xml = $req->getResponseBody();
         serendipity_request_end();
-        
+
         if ($req->getResponseCode()==200) {
             $vals = array();
             $index = array();
             $parser = xml_parser_create();
             xml_parse_into_struct($parser, $xml, $vals, $index);
             xml_parser_free($parser);
-            
+
             $short_url = 'http://delivr.com/' . $vals[$index['DELIVRID'][0]][value];
             $shorturls['delivr'] = trim($short_url);
         }
     }
-    
+
     // Fills in "special" services, if one service produces more than one result.
-    function fillup_extra_services( &$services ) {
+    function fillup_extra_services( &$services )
+    {
         if (array_search('bitly',$services)) {
             $services[] = 'bitly_json';
         }
     }
 
 }
+
 ?>

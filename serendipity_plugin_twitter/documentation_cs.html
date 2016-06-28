@@ -1,8 +1,8 @@
-<html>    
-	<head>        
+<html>
+	<head>
 		<meta http-equiv="content-type" content="text/html; charset=windows-1250">
 		<link rel="stylesheet" type="text/css" href="documentation/documentation.css"/>
-		<title>Dokumentace: Twitter</title>        
+		<title>Dokumentace: Twitter</title>
 		<style>
 <!--
         	pre {
@@ -10,13 +10,13 @@
 				padding: 5px;
 				border: solid 1px #333333;
 				background-color: #cccccc;
-			}         
+			}
 		.Stil1 {
 			color: #EE0000;
 			font-weight: bold;
 		}
 -->
-		</style>    
+		</style>
 	</head>
 	<body>
 	<div id="title">
@@ -24,7 +24,7 @@
 	<h1>Dokumentace k pluginu 'Twitter'<br />
 	<small>(serendipity_plugin_twitter)</small></h1>
 	</div>
-		<p>Dokumentaci k tomuto pluginu přeložil do češtiny Vladimír Ajgl (vlada [zavinac] ajgl [tecka] cz) dne 5.5.2013. Od té doby mohl být plugin pozměněn nebo mohly být rozšířené jeho funkce. Zkontroluj pro jistotu i <a href="documentation_de.html">aktuální německou dokumentaci</a>, <a href="documentation_en.html">anglickou dokumentaci</a> a <a href="ChangeLog">ChangeLog</a>. 
+		<p>Dokumentaci k tomuto pluginu přeložil do češtiny Vladimír Ajgl (vlada [zavinac] ajgl [tecka] cz) dne 5.5.2013. Od té doby mohl být plugin pozměněn nebo mohly být rozšířené jeho funkce. Zkontroluj pro jistotu i <a href="documentation_de.html">aktuální německou dokumentaci</a>, <a href="documentation_en.html">anglickou dokumentaci</a> a <a href="ChangeLog">ChangeLog</a>.
 		</p>
 		
 		<h2>Popis pluginu</h2>
@@ -62,7 +62,7 @@
 <h2>Mikroblogovací klient</h2>
 
 <p>Plugin obsahuje klienta pro Twitter, resp. pro službu Identica, který zobrazuje časovou osu (Timeline) nastaveného uživatele a umí zadávat její aktualizace. Tento klient může být vložen buď na Startovací stránce v Administrační sekci, nebo jako položka "Tweeter" v menu v levém sloupci Administrační sekce.</p>
-   
+
 <p><a href="#top">nahoru</a></p>
 
 <a name="announce_twitter"></a>
@@ -132,7 +132,7 @@ Z toho vytvořený tweet bude vypadat následovně:
 1.47 (brockhaus)
 --------------------------
     * Added API token functionality for announcing articles via pirat.ly.
-    
+
 1.46 (brockhaus)
 --------------------------
     * Check tweetbacks (search) converted to API 1.1 (optional). You need to choose an OAuth acc handling the search.
@@ -143,7 +143,7 @@ Z toho vytvořený tweet bude vypadat následovně:
 
 1.43 (brockhaus)
 --------------------------
-    * Announce article: check for real URL lenght, as twitter makes it longer sometimes. 
+    * Announce article: check for real URL lenght, as twitter makes it longer sometimes.
     * Tweeter: Count chars directly after a short URL was added. Counts URLs as twitter URL length always.
     * Article announcement with "uncompressed" urls did not work very well.
 
@@ -196,25 +196,25 @@ Z toho vytvořený tweet bude vypadat následovně:
 1.32
 --------------------------
     * Added German translation for the new option for default setting of "Announce article"
-    
+
 1.31
 --------------------------
     * Added new option for default setting of "Announce article"
-    
+
 1.30
 --------------------------
 
     * Fix bad Twitter link to a tweet in PHP mode
     * Improve XHTML
-    
+
 1.28
 -------------------------
     * When twitter username contains a "_" properly update
       cache reference for Tweet display (only when using "PHP" format)
-      
+
 1.27 (brockhaus)
 -------------------------
-    * Tweeter was showing invalid status links in twitter mode. 
+    * Tweeter was showing invalid status links in twitter mode.
 
 1.26 (Garvinhicking)
 -------------------------
@@ -241,7 +241,7 @@ Z toho vytvořený tweet bude vypadat následovně:
 1.20
 ----------------------
     * Only show option to suppress announces when configured.
-    
+
 1.18 (brockhaus)
 ----------------------
     * FIX: Tweet This buttons always requestet short urls again
@@ -251,17 +251,17 @@ Z toho vytvořený tweet bude vypadat následovně:
 1.17 (brockhaus)
 ----------------------
     * FIX: In some s9y installations the plugin continiously
-      saved the same tweetbacks again and again.    
-    * removed snipr service as it doesn't support creating 
-      shorturls w/o an account anymore. 
+      saved the same tweetbacks again and again.
+    * removed snipr service as it doesn't support creating
+      shorturls w/o an account anymore.
 
 1.16 (brockhaus)
 ----------------------
-    * Finaly found the problem producing the white page / 500 
+    * Finaly found the problem producing the white page / 500
       error. Thanks to a sandbox installation given to me by
       Silvio Kunze. THANKS!
     * Updated the sidebar plugins default css a little to make
-      it look nicer. 
+      it look nicer.
 
 1.15 (garvin)
 ----------------------
@@ -271,7 +271,7 @@ Z toho vytvořený tweet bude vypadat následovně:
 ----------------------
     * Overworked the tweetback moderation again. Now it should
       work as intended.
-    * FIX: Reported warnings while saving, if backtweet was used 
+    * FIX: Reported warnings while saving, if backtweet was used
       straiht from the beginning. (cmscritic reported this)
     * FIX: Backtweet search didn't save the last highest ID.
       For luck this was only a little performance problem.
@@ -290,14 +290,14 @@ Z toho vytvořený tweet bude vypadat následovně:
 1.12 (brockhaus)
 ----------------------
     * Added backtweets.com support! Now the search for tweetbacks
-      is a lot more efficient and even produces more search 
+      is a lot more efficient and even produces more search
       results by supporting user short urls.
     * One global search for tweetbacks using backtweets instead of
       one for each article. Huge performance win and *all* articles
       will be checked.
     * The event plugin now emits CSS for the sidebar plugin to
       look good. The sidebar plugin can't do it itself.
-    * Sidebar plugins cachefile deleted after saving 
+    * Sidebar plugins cachefile deleted after saving
       configuration in order to reflect new settings.
     * Tweetbacks will be loaded oldest first, so they are in
       correct order if more than one is found.
@@ -307,15 +307,15 @@ Z toho vytvořený tweet bude vypadat následovně:
 
 1.11 (brockhaus)
 ----------------------
-    * FIX: Tweet backup didn't work anymore because of int 
+    * FIX: Tweet backup didn't work anymore because of int
       overflow in the database. :-(
     * FIX: Sidebar was not realy stackable with different accs.
       (only one cachefile was defined)
     * FIX: First time loading of sidebar with installed event
       plugin reported wrong "Twitter not accessable".
-    * Optional: Sidebar plugin displays only tweets/dents to 
+    * Optional: Sidebar plugin displays only tweets/dents to
       all (only for PHP version available)
-    * Disable backup, if in identica mode (this was never 
+    * Disable backup, if in identica mode (this was never
       implemented)
     * Password inputs are now displayed as such with newest s9y
       version from CVS.
@@ -324,9 +324,9 @@ Z toho vytvořený tweet bude vypadat následovně:
 ----------------------
     * Extended Article Attributes: special tags, announce yes/no
     * Doesn't announce future entries anymore.
-    * If an article is deleted, the tweetback history is 
+    * If an article is deleted, the tweetback history is
       deleted, too.
-    * default announce format now doesn't change after 
+    * default announce format now doesn't change after
       upgrading (sorry yellowled ;))
     * Exchanged "identi.ca this" buttons with "IDENT THIS".
       Looks nicer near the "TWEET THIS" button.
@@ -349,7 +349,7 @@ Z toho vytvořený tweet bude vypadat následovně:
     * !Group linking for identi.ca timeline (PHP version only)
     * Announcing of articles may now freely formated with more
       infos like autor and stuff
-    * TweetThis / IdenticaThis button below articles. 
+    * TweetThis / IdenticaThis button below articles.
       There is a new configuration tab for this!
 
 1.06 (brockhaus)
@@ -359,7 +359,7 @@ Z toho vytvořený tweet bude vypadat následovně:
     * Warning inside of the sidebar plugins configuration if the
       event plugin was not installed yet. Too many people were
       confused about "missing options".
-    * Removed debug output on static pages. Thanks yellowled for 
+    * Removed debug output on static pages. Thanks yellowled for
       reporting.
     * "check tweetback" link now apears on entries without footer,
       too. (thanks RobLen for reporting the problem).
@@ -391,9 +391,9 @@ Z toho vytvořený tweet bude vypadat následovně:
     * Article announcement now possible using twitter and/or identica
     * added cli.gs as URL shortener
     * Fix: Tweetbacks containing "&" where saved with "&amp;"
-    * Fix: "ignore my tweeds" while tweetback adding didn't work, 
+    * Fix: "ignore my tweeds" while tweetback adding didn't work,
       if the acc was written in wrong case.
-    * Fix: Tweetback fetching PNG produced problems on *some* static 
+    * Fix: Tweetback fetching PNG produced problems on *some* static
       page installations.
     * Doesn't save or load corrupted short urls anymore. "Error" short
       urls will be deleted when saving configuration.
@@ -411,7 +411,7 @@ Z toho vytvořený tweet bude vypadat následovně:
       (announcement and twittertweeter were involved)
     * Some PHP installations had a strtotime function not able
       to evaluate twitter time strings. Now they are "reparsed"
-      to something working. (tweeter showing "42 years ago" for 
+      to something working. (tweeter showing "42 years ago" for
       tweets.)
     * Completed German translation (I hope ;))
 
@@ -443,9 +443,9 @@ Z toho vytvořený tweet bude vypadat následovně:
     * added 7ax.de. It has the same benefits like tinyurl.com
       but it's URLs are shorter.
     * added tr.im.
-    
+
     Sidebar
-    * PHP version didn't work if the event plugin was not 
+    * PHP version didn't work if the event plugin was not
       installed, too. It always (false) reported, that twitter
       is not accessible at the moment.
 
@@ -465,7 +465,7 @@ Z toho vytvořený tweet bude vypadat následovně:
     * PHP Version: Replaced written links with an html link
     * PHP Version: Added links to the userprofile where @name
       is found.
-    * Replaced simplexml with json code in order to make it 
+    * Replaced simplexml with json code in order to make it
       PHP4 compatible
     * Caching Dateformat was dependend on the visitors country
       who triggered the caching! Japanese Dates shown up at my
@@ -476,7 +476,7 @@ Z toho vytvořený tweet bude vypadat následovně:
 
     Event:
     * Tweetback check functionality.
-    * Announce articles on twitter. 
+    * Announce articles on twitter.
     * Implemented db cache for shorturls
     * Merged TwitterTweeter plugin into the event plugin,
       cleaned it up and enhanced it a little.
@@ -508,6 +508,6 @@ Use utf8-decoding, when charset is not UTF-8
 				<li></li>	
 			</ul>
 			-->
-		</ul>  
+		</ul>
 	</body>
 </html>

@@ -1,4 +1,5 @@
 <?php
+
 @define('PLUGIN_TWITTER_TITLE',                         'Twitter Timeline');
 @define('PLUGIN_TWITTER_DESC',                          'Show your current Twitter entries');
 @define('PLUGIN_TWITTER_NUMBER',                        'Number of entries');
@@ -217,5 +218,4 @@ You have to be logged out or logged in with the <b>matching twitter account</b> 
 @define('PLUGIN_EVENT_TWITTER_API_TYPE_DESC',            'Twitter API 1.0 is depreciated and will be closed 2013. So you should switch to API 1.1. But this requires to configure at least one OAuth connection (in the identities settings).');
 @define('PLUGIN_EVENT_TWITTER_API_10',                   'API 1.0 [depreciated]');
 @define('PLUGIN_EVENT_TWITTER_API_11',                   'API 1.1 OAuth');
-
 

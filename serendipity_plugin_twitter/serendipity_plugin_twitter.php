@@ -1,13 +1,11 @@
-<?php 
+<?php
 // Contributed by Damian Luszczymak <info@daim-city.de>
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
 }
 
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 include dirname(__FILE__) . '/plugin_version.inc.php';
 
@@ -15,11 +13,13 @@ require_once dirname(__FILE__) . '/classes/Twitter.php';
 
 include dirname(__FILE__) . '/classes/json.php4.include.php';
 
-class serendipity_plugin_twitter extends serendipity_plugin {
+class serendipity_plugin_twitter extends serendipity_plugin
+{
     var $title = PLUGIN_TWITTER_TITLE;
     var $debug = false;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $this->title = $this->get_config('title', $this->title);
 
         $propbag->add('name',          PLUGIN_TWITTER_TITLE);
@@ -29,32 +29,33 @@ class serendipity_plugin_twitter extends serendipity_plugin {
         //$propbag->add('website',       'http://board.s9y.org');
         $propbag->add('version',       PLUGIN_TWITTER_VERSION);
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '5.1.0'
         ));
-        
-        $configuration =  
-            array('title', 'number', 'service', 'username', 'showformat', 
-            'toall_only', 'filter_all_user', 'filter_rt', 
-            'use_time_ago', 'dateformat', 'linktext',  
+
+        $configuration =
+            array('title', 'number', 'service', 'username', 'showformat',
+            'toall_only', 'filter_all_user', 'filter_rt',
+            'use_time_ago', 'dateformat', 'linktext',
             'followme_link', 'followme_widget', 'followme_widget_counter','followme_widget_dark',
             'cachetime', 'backup'
             );
         // Twitter API 1.1 is supported only via the event plugin
         if (class_exists('serendipity_event_twitter')) {
            $configuration = array_merge($configuration, array('twitter_api' , 'twitter_oauth'));
-        } 
+        }
 
         if (!class_exists('serendipity_event_twitter')) {
             $configuration = array_merge($configuration, array('event_not_installed'));
         }
 
-        $propbag->add('configuration', $configuration); 
+        $propbag->add('configuration', $configuration);
         $propbag->add('groups', array('FRONTEND_VIEWS'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch($name) {
@@ -81,7 +82,7 @@ class serendipity_plugin_twitter extends serendipity_plugin {
                     ));
                 $propbag->add('default', 'twitter.com');
                 break;
-            
+
             case 'twitter_api':
                 $propbag->add('type', 'radio');
                 $propbag->add('name',         PLUGIN_TWITTER_API11);
@@ -103,7 +104,7 @@ class serendipity_plugin_twitter extends serendipity_plugin {
             case 'username':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_TWITTER_USERNAME);
-                $propbag->add('description', PLUGIN_TWITTER_USERNAME_DESC); 
+                $propbag->add('description', PLUGIN_TWITTER_USERNAME_DESC);
                 $propbag->add('default', 'username');
                 break;
 
@@ -113,51 +114,56 @@ class serendipity_plugin_twitter extends serendipity_plugin {
                 $propbag->add('description', PLUGIN_TWITTER_NUMBER_DESC);
                 $propbag->add('default', 10);
                 break;
-            
+
             case 'toall_only': // filter only tweets starting with @
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_TWITTER_TOALL_ONLY);
                 $propbag->add('description', PLUGIN_TWITTER_TOALL_ONLY_DESC);
                 $propbag->add('default', false);
                 break;
-            
+
             case 'filter_all_user': // filter tweets containing @
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_TWITTER_FILTER_ALL);
                 $propbag->add('description', PLUGIN_TWITTER_FILTER_ALL_DESC);
                 $propbag->add('default', false);
                 break;
+
             case 'filter_rt': // filter native retweets
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_TWITTER_FILTER_RT);
                 $propbag->add('description', PLUGIN_TWITTER_FILTER_RT_DESC);
                 $propbag->add('default', true);
                 break;
+
             case 'followme_link':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_TWITTER_FOLLOWME_LINK);
                 $propbag->add('description', PLUGIN_TWITTER_FOLLOWME_LINK_DESC);
                 $propbag->add('default', false);
                 break;
+
             case 'followme_widget':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_TWITTER_FOLLOWME_WIDGET);
                 $propbag->add('description', PLUGIN_TWITTER_FOLLOWME_WIDGET_DESC);
                 $propbag->add('default', false);
                 break;
+
             case 'followme_widget_counter':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_TWITTER_FOLLOWME_WIDGET_COUNT);
                 $propbag->add('description', PLUGIN_TWITTER_FOLLOWME_WIDGET_COUNT_DESC);
                 $propbag->add('default', true);
                 break;
+
             case 'followme_widget_dark':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_TWITTER_FOLLOWME_WIDGET_DARK);
                 $propbag->add('description', PLUGIN_TWITTER_FOLLOWME_WIDGET_DARK_DESC);
                 $propbag->add('default', false);
                 break;
-            
+
             case 'use_time_ago':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_TWITTER_USE_TIME_AGO);
@@ -171,14 +177,14 @@ class serendipity_plugin_twitter extends serendipity_plugin {
                 $propbag->add('description', sprintf(GENERAL_PLUGIN_DATEFORMAT_BLAHBLAH, '%A, %B %e %Y'));
                 $propbag->add('default', '%A, %B %e %Y');
                 break;
-            
+
             case 'linktext':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_TWITTER_LINKTEXT);
                 $propbag->add('description', PLUGIN_TWITTER_LINKTEXT_DESC);
                 $propbag->add('default', 'link');
                 break;
-            
+
             case 'cachetime':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_TWITTER_CACHETIME);
@@ -195,7 +201,7 @@ class serendipity_plugin_twitter extends serendipity_plugin {
                     'desc'  => array(PLUGIN_TWITTER_SHOWFORMAT_RADIO_JAVASCRIPT, PLUGIN_TWITTER_SHOWFORMAT_RADIO_PHP)
                     ));
                 $propbag->add('default', 'javascript');
-                break;            
+                break;
 
             case 'backup':
                 $propbag->add('type', 'boolean');
@@ -210,7 +216,8 @@ class serendipity_plugin_twitter extends serendipity_plugin {
         return true;
     }
 
-    function cleanup() {
+    function cleanup()
+    {
         global $serendipity;
 
         $service        = $this->get_config('service', 'twitter.com');
@@ -225,15 +232,16 @@ class serendipity_plugin_twitter extends serendipity_plugin {
 
         // Remove Cachefile
         @unlink($cachefile);
-        
+
         // Recreate cache
         serendipity_request_start();
         $title = "#caching#";
         $this->generate_content($title);
         serendipity_request_end();
     }
-    
-    function output($out) {
+
+    function output($out)
+    {
         if (LANG_CHARSET == 'UTF-8') {
             echo $out;
         } else {
@@ -241,11 +249,12 @@ class serendipity_plugin_twitter extends serendipity_plugin {
         }
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
-        
-        $hideDisplay = "#caching#" == $title; 
-        
+
+        $hideDisplay = "#caching#" == $title;
+
         $number         = $this->get_config('number');
         $service        = $this->get_config('service', 'twitter.com');
         $username       = $this->get_config('username');
@@ -253,11 +262,11 @@ class serendipity_plugin_twitter extends serendipity_plugin {
         $title          = $this->get_config('title', $this->title);
         $showformat     = $this->get_config('showformat');
         $cachetime      = (int)$this->get_config('cachetime', 300);
-        
+
         if (!is_numeric($number)) {
             $number = 10;
         }
-        
+
         if ($service == 'identi.ca')
         {
             $followme_url = 'http://identi.ca/' . $username;
@@ -286,7 +295,7 @@ class serendipity_plugin_twitter extends serendipity_plugin {
 
             $cache_user = md5($service) . md5($username);
             $cachefile = $serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . "/twitterresult.$cache_user.json";
-            
+
             // If the Event Plugin is not installed, we have to fill the cachefile on our own..
             // To immidiately display a result, the file_exists check is added.
             if (!class_exists('serendipity_event_twitter') || !file_exists($cachefile)) {
@@ -295,14 +304,14 @@ class serendipity_plugin_twitter extends serendipity_plugin {
                     $this->updateTwitterTimelineCache($cachefile);
                 }
             }
-            
+
             // Get xml from cache:
             if (file_exists($cachefile)) {
                 $xml = json_decode(unserialize(file_get_contents($cachefile)));
             }
 
             $str_output = array();
-            
+
             // now process it:
             $str_output[] = '<ul id="twitter_update_list">';
             $odd_css = 'odd';
@@ -320,7 +329,7 @@ class serendipity_plugin_twitter extends serendipity_plugin {
                     $counter = 0;
                     $toall_only = serendipity_db_bool($this->get_config('toall_only', false));
                     $filter_all_user = serendipity_db_bool($this->get_config('filter_all_user', false));
-                    
+
                     foreach ($xml as $key => $status) {
                         // Change encoding of update to Visitors language
                         if (LANG_CHARSET!='UTF-8' && function_exists("mb_convert_encoding")) {
@@ -345,17 +354,17 @@ class serendipity_plugin_twitter extends serendipity_plugin {
                 $output = implode('', $str_output);
                 $this->output($output);
             }
-            
+
         } else {
             if (!$hideDisplay) {
-                echo '<ul id="twitter_update_list"><li style="display: none"></li></ul>' . "\n";            
+                echo '<ul id="twitter_update_list"><li style="display: none"></li></ul>' . "\n";
                 echo '<script type="text/javascript" src="https://twitter.com/javascripts/blogger.js"></script>' . "\n";
                 echo '<script type="text/javascript" src="' . $timelineurl . '"></script>';
             }
-        } 
+        }
         if (!$hideDisplay) {
             if (serendipity_db_bool($this->get_config('followme_link', false))) {
-                echo '<p id="twitter_follow_me"><a href="' . $followme_url . '" class="twitter_follow_me">' . PLUGIN_TWITTER_FOLLOWME_LINK_TEXT . '</a></p>' . "\n";            
+                echo '<p id="twitter_follow_me"><a href="' . $followme_url . '" class="twitter_follow_me">' . PLUGIN_TWITTER_FOLLOWME_LINK_TEXT . '</a></p>' . "\n";
             }
             if ($service == 'twitter.com' && serendipity_db_bool($this->get_config('followme_widget', false))) {
                 $extra_style = '';
@@ -367,14 +376,14 @@ class serendipity_plugin_twitter extends serendipity_plugin {
                 }
                 echo '<a href="https://twitter.com/'.$username.'" class="twitter-follow-button"'.$extra_style.'>Follow @'.$username.'</a><script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>';
             }
-            
+
         }
         if ($showformat == 'PHP') {
             // If the twitter event plugin is installed, too, save cache file in background.
             // When twitter is blocking, the blog isn't when using this background caching.
-            // Background caching is done by a external plugin call, that is executed by the event plugin            
+            // Background caching is done by a external plugin call, that is executed by the event plugin
             if (class_exists('serendipity_event_twitter')) {
-                // add png that reloads the cache:            
+                // add png that reloads the cache:
                 $pluginurl = $serendipity['baseURL'] . $serendipity['indexFile'] . '?/' . $this->getPermaPluginPath();
                 $png_url = $pluginurl . '/cacheplugintwitter' .$this->cache_img_link_pars();
                 echo '<img src="' . $png_url . '" width="1" height="1" alt="" class="twitter_plugin_cache_png" style="float:right;"/>';
@@ -391,8 +400,9 @@ class serendipity_plugin_twitter extends serendipity_plugin {
             $this->makeBackup($username, $last_backup);
         }
     }
-    
-    function cache_img_link_pars() {
+
+    function cache_img_link_pars()
+    {
         $service        = $this->get_config('service');
         $username       = str_replace("_","!",  $this->get_config('username'));
         $number         = $this->get_config('number');
@@ -411,25 +421,26 @@ class serendipity_plugin_twitter extends serendipity_plugin {
                 $suffix = "{$suffix}_r";
             }
         }
-        
+
         return $suffix;
     }
-    
-    function updateTwitterTimelineCache($cachefile){
+
+    function updateTwitterTimelineCache($cachefile)
+    {
         global $serendipity;
-        
+
         $cachetime      = (int)$this->get_config('cachetime', 300);
 
         if (!file_exists($cachefile) || filemtime($cachefile) < (time()-$cachetime)) {
             require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-    
+
             $service        = $this->get_config('service');
             $username       = $this->get_config('username');
             $number         = $this->get_config('number');
             if (serendipity_db_bool($this->get_config('toall_only', false))) {
                 $number = 50; // Fetch many in the hope, that there are enough globals with it.
             }
-    
+
             if ($service == 'identi.ca')
             {
                 $service_url = 'http://identi.ca/api';
@@ -457,14 +468,15 @@ class serendipity_plugin_twitter extends serendipity_plugin {
             }
         }
     }
-    
+
     /**
      * Return binary response for an image
      */
-    function show_img($filename, $mime_type='image/png') {
+    function show_img($filename, $mime_type='image/png')
+    {
         header("Content-type: $mime_type");
         header("Date: " . date("D, d M Y H:i:s T"));
-        
+
         $fp   = @fopen($filename, "rb");
         if ($fp) {
             header('X-TwitterPluginPng: Found');
@@ -482,10 +494,10 @@ class serendipity_plugin_twitter extends serendipity_plugin {
         return true;
     }
 
-    function checkTable() {
+    function checkTable()
+    {
         global $serendipity;
 
-        
         $q = "CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}tweets (
             id bigint(11) {PRIMARY},
             tweetdate int(11),
@@ -494,41 +506,39 @@ class serendipity_plugin_twitter extends serendipity_plugin {
             reply_to_status int(11),
             reply_to_user int(11),
             source varchar(255)
-            
         );";
-        
+
         serendipity_db_schema_import($q);
-        
+
         $db_version = $this->get_config("db_version");
-        
+
         // Convert tweet id to bigint!
         if (empty($db_version)) {
             $q = "ALTER TABLE {$serendipity['dbPrefix']}tweets CHANGE id id bigint(11)";
             serendipity_db_schema_import($q);
         }
         $this->set_config("db_version",1);
-
-        
-        
     }
-    
-    function debugOut($string) {
+
+    function debugOut($string)
+    {
         global $serendipity;
         $fp = fopen($serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/twitter.log', 'a');
         fwrite($fp, date('Y-m-d H:i') . ' ' . $string . "\n");
         fclose($fp);
-        
+
         echo $string . "<br />\n";
     }
 
-    function twitterGet($url) {
+    function twitterGet($url)
+    {
         global $serendipity;
 
         $page         = 1; // Twitter starts with page 1!
         $has_more     = true;
         $last_tweetid = 0;
         $failsafe     = 50; // Maximum of pages. I don't think it should ever get this high.
-        
+
         while ($has_more) {
             if ($this->debug) $this->debugOut("Getting {$url}{$page}.");
 
@@ -562,7 +572,7 @@ class serendipity_plugin_twitter extends serendipity_plugin {
                         $last_tweetid = $twitter_obj->id;
                     }
                     $db_result = serendipity_db_insert('tweets', $twitter_db);
-                    
+
                     if ($this->debug) $this->debugOut("Got #$current_count: " . substr($twitter_obj->text, 0, 15) . " dbresult:$db_result");
                 }
             }
@@ -572,14 +582,15 @@ class serendipity_plugin_twitter extends serendipity_plugin {
                 $has_more = false;
             }
         }
-        
+
         if ($this->debug) $this->debugOut("Storing last tweet: {$last_tweetid}");
         if ($last_tweetid > 0) {
             $this->set_config('last_tweetid', $last_tweetid);
         }
     }
 
-    function makeBackup($username, $last_backup) {
+    function makeBackup($username, $last_backup)
+    {
         global $serendipity;
 
         $this->set_config('last_backup', time());
@@ -592,14 +603,15 @@ class serendipity_plugin_twitter extends serendipity_plugin {
         }
     }
 
-    function makeDate($created_at,$dateformat) {
+    function makeDate($created_at,$dateformat)
+    {
         if (serendipity_db_bool($this->get_config('use_time_ago'))) {
             return Twitter::create_status_ago_string($created_at);
         }
-        
+
         $old_date = explode(" ", $created_at);
         $old_time = explode(":", $old_date[3]);
-        
+
         switch($old_date[1]) {
             case 'Jan': $old_date[1]=1; break;
             case 'Feb': $old_date[1]=2; break;
@@ -616,7 +628,7 @@ class serendipity_plugin_twitter extends serendipity_plugin {
         }
 
         $timestamp = mktime($old_time[0],$old_time[1],$old_time[2],$old_date[1],$old_date[2],$old_date[5]);
-        
+
         if (LANG_CHARSET == 'UTF-8') {
             return serendipity_strftime($dateformat, $timestamp);
         } else {
@@ -624,21 +636,24 @@ class serendipity_plugin_twitter extends serendipity_plugin {
         }
     }
 
-    function getPermaPluginPath() {
+    function getPermaPluginPath()
+    {
         global $serendipity;
 
-        // Get configured plugin path:         
+        // Get configured plugin path:
         $pluginPath = 'plugin';
         if (isset($serendipity['permalinkPluginPath'])){
             $pluginPath = $serendipity['permalinkPluginPath'];
         }
-        
+
         return $pluginPath;
-        
     }
-    
-    function pluginSecret() {
+
+    function pluginSecret()
+    {
         return serendipity_event_twitter::pluginSecret();
-    } 
+    }
 
 }
+
+?>

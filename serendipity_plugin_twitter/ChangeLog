@@ -9,6 +9,14 @@ TODO:
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
 
+1.67:
+-----
+
+ * Set Plugin consistencies
+ * Fix constructors to PHP5
+ * Use lang API - extends required version
+
+
 1.63
 --------------------------
     * Fix emitting the backend nav link twice (yellowled)

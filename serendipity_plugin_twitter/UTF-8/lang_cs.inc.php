@@ -48,7 +48,7 @@
 
 @define('PLUGIN_TWITTER_PROBLEM_TWITTER_ACCESS',        'Problém při přístupu na Twitter. <br />Počkejte chvilku a obnovte stránku...');
 
-// Twitter Event Plugin 
+// Twitter Event Plugin
 
 @define('PLUGIN_EVENT_TWITTER_NAME',                    'Mikroblogování (Twitter, Identica)');
 @define('PLUGIN_EVENT_TWITTER_DESC',                    'Přidává klienta Twitter/Identica do administrační sekce a stahuje nové tweety a oznámuje nové články na účtu mikroblogu.');
@@ -244,3 +244,4 @@ Musíte se přihlásit nebo odhlásit s <b>odpovídajícím účtem Twitteru</b>
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_YOURLSDESC',      '<h3>Yourls doména a API klíč</h3>Zkracovač adres <b>yourls</b> vlastní nastavení a API klíč. Pokud žádné nemáte, nebudete toto nastavení potřebovat.<br/>Výchozí klíč není funkční<br/><a href="http://yourls.org/" target="_blank">Přečtěte si o zkracovači URL adres yourls</a>. Nepoužívejte prosím bez <a href="https://bitbucket.org/laceous/yourls-concurrency-fix" target="_blank">opravy konfliktů</a> pluginu YOURIS.');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_YOURLSURL',       'Vaše Yourls doména');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_YOURLSAPIKEY',    'Yourls API klíč');
+
