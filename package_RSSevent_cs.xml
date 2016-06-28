@@ -1428,8 +1428,8 @@ aplikovány další typografické úpravy.&lt;br/&gt;For: Serendipity 0.8</conte
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_twitter</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Peter Heimann</author>
-<content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Mikroblogování (Twitter, Identica)&lt;/b&gt;&lt;br /&gt;Přidává klienta Twitter/Identica do administrační sekce a stahuje nové tweety a oznámuje nové články na účtu mikroblogu.&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Mikroblogování (Twitter, Identica)&lt;/b&gt;&lt;br /&gt;Přidává klienta Twitter/Identica do administrační sekce a stahuje nové tweety a oznámuje nové články na účtu mikroblogu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Tue, 28 Jun 2016 08:07:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>
