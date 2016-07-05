@@ -180,8 +180,10 @@ class serendipity_event_motm extends serendipity_event
 
                     if (strpos($eventData, '#serendipity_motm_track') === false) {
                         $eventData .= '#serendipity_motm_track { '.$this->get_config('css_track')."}\n";
+                    }
                     if (strpos($eventData, '#serendipity_motm_slider') === false) {
                         $eventData .= '#serendipity_motm_slider { '.$this->get_config('css_slider')."}\n";
+                    }
                     break;
 
                 case 'external_plugin':
