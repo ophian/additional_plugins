@@ -1,3 +1,9 @@
+1.2:
+----
+ * Set Plugin consistencies
+ * Use lang API
+ * Add hack protection
+
 Version 1.1 (brockhaus)
 ---------------------------------
 * Removed depedencies to OpenID (was working only if OpenID was installed, too)

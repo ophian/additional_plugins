@@ -1,11 +1,10 @@
-<?php # 
+<?php
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
 }
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_browserid extends serendipity_event
 {
@@ -17,7 +16,7 @@ class serendipity_event_browserid extends serendipity_event
         $propbag->add('description', PLUGIN_BROWSERID_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Grischa Brockhaus');
-        $propbag->add('version',     '1.1');
+        $propbag->add('version',     '1.2');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -49,11 +48,13 @@ class serendipity_event_browserid extends serendipity_event
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_BROWSERID_NAME;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         static $login_url = null;
 
@@ -64,6 +65,7 @@ class serendipity_event_browserid extends serendipity_event
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'external_plugin':
                     if ($eventData=="serendipity_event_browserid.js") {
@@ -90,21 +92,24 @@ class serendipity_event_browserid extends serendipity_event
                     if ($_SESSION['serendipityAuthedUser'] == true) {
                         $eventData = $this->reauth();
                     }
-                    
                     return;
+
                 case 'backend_header':
                     $this->print_backend_header();
-                    return true;
-                    
+                    break;
+
                 default:
                     return false;
+
             }
+            return true;
         } else {
             return false;
         }
     }
     
-    function verify() {
+    function verify()
+    {
         global $serendipity;
         
         $url = 'https://browserid.org/verify';
@@ -112,14 +117,14 @@ class serendipity_event_browserid extends serendipity_event
         $params = 'assertion='.$assert.'&audience=' .
                  urlencode($serendipity['baseURL']);
         $ch = curl_init();
-        curl_setopt($ch,CURLOPT_URL,$url);
+        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch,CURLOPT_POST,2);
-        curl_setopt($ch,CURLOPT_POSTFIELDS, $params);
+        curl_setopt($ch, CURLOPT_POST, 2);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
         $result = curl_exec($ch);
         curl_close($ch);
         $response = json_decode($result);
-        if (isset($response) && $response->status=='okay') {
+        if (isset($response) && $response->status == 'okay') {
             $email = $response->email;
             $audience = $response->audience;
             if ($audience!=$serendipity['baseURL']) { // The login has the wrong host!
@@ -156,15 +161,14 @@ class serendipity_event_browserid extends serendipity_event
                     $_SESSION['serendipityAuthedUser'] = false;
                     @session_destroy();
                 }
-                       
-                
             }
             $result = json_encode($response);
         }
         echo $result;
     }
     
-    function reauth() {
+    function reauth()
+    {
          global $serendipity;
          // Reauth only, if valid session
          if (isset($_SESSION['serendipityBrowserID']) && $_SESSION['serendipityBrowserID']===$this->get_install_token()) {
@@ -184,7 +188,8 @@ class serendipity_event_browserid extends serendipity_event
     /**
      * Produces or loads a token unique to this installation.
      */
-    function get_install_token() {
+    function get_install_token()
+    {
         $token = $this->get_config("installationtoken");
         if (empty($token)) {
             $token = md5(time());
@@ -193,13 +198,15 @@ class serendipity_event_browserid extends serendipity_event
         return $token;
     }
     
-    function print_backend_header() {
+    function print_backend_header()
+    {
         echo '
 <script src="https://browserid.org/include.js" type="text/javascript"></script>
 ';
     }
     
-    function print_loginpage(&$eventData) {
+    function print_loginpage(&$eventData)
+    {
         global $serendipity;
         
         $hidden = array('action'=>'admin');
@@ -220,7 +227,8 @@ class serendipity_event_browserid extends serendipity_event
 
     }
     
-    function print_backend_footer() {
+    function print_backend_footer()
+    {
         global $serendipity;
         $local_js = $serendipity['baseURL'] . 'index.php?/plugin/serendipity_event_browserid.js';
         echo '
@@ -229,6 +237,8 @@ class serendipity_event_browserid extends serendipity_event
 <!-- browserid end -->
 ';        
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>
