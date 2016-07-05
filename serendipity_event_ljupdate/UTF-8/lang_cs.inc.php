@@ -30,4 +30,3 @@
 @define('PLUGIN_LJUPDATE_CATEGORY', 'ID identifikátor cizí kategorie');
 @define('PLUGIN_LJUPDATE_CATEGORY_DESC', 'Zadejte ID kategorie, do které chcete posílat příspěvky (tato volba se použije při posílání do blogů Serendipity)');
 
-?>

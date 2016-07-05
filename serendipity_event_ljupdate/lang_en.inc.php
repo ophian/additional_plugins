@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -31,4 +31,3 @@
 @define('PLUGIN_LJUPDATE_CATEGORY', 'Foreign category ID');
 @define('PLUGIN_LJUPDATE_CATEGORY_DESC', 'Enter the Category ID you want to send your posting in (applies for Serendipity Blogs)');
 
-?>

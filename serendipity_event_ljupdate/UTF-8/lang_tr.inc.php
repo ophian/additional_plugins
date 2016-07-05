@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -31,4 +31,3 @@
 @define('PLUGIN_LJUPDATE_CATEGORY', 'Yabancı Konubaşlığı ID Numarası');
 @define('PLUGIN_LJUPDATE_CATEGORY_DESC', 'Bir konu başlığının ID numarasını yazın(Serendipity içinde yayınlanacaksa');
 
-?>

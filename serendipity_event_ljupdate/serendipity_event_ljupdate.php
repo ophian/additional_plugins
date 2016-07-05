@@ -4,13 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_ljupdate extends serendipity_event
 {
@@ -21,19 +15,19 @@ class serendipity_event_ljupdate extends serendipity_event
         $propbag->add('name', PLUGIN_LJUPDATE_TITLE);
         $propbag->add('description', PLUGIN_LJUPDATE_DESCRIPTION);
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
         $propbag->add('author', 'Kaustubh Srikanth, Ivan Makhonin');
-        $propbag->add('version', '1.13.2');
+        $propbag->add('version', '1.14');
 
 
         $propbag->add('event_hooks',    array(
-                            'backend_display' => true,
-                            'backend_save' => true,
-                            'backend_publish' => true,
-                            'backend_delete_entry' => true
+            'backend_display'      => true,
+            'backend_save'         => true,
+            'backend_publish'      => true,
+            'backend_delete_entry' => true
         ));
 
         $propbag->add('stackable', true);
@@ -60,52 +54,53 @@ class serendipity_event_ljupdate extends serendipity_event
                 break;
 
             case 'ljserver':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_LJUPDATE_SERVER);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_LJUPDATE_SERVER);
                 $propbag->add('description', PLUGIN_LJUPDATE_SERVER_DESC);
                 break;
 
             case 'target':
-                $propbag->add('type', 'select');
-                $propbag->add('name', 'LiveUpdate/MySpace/Serendipity?');
+                $propbag->add('type',        'select');
+                $propbag->add('name',        'LiveUpdate/MySpace/Serendipity?');
                 $propbag->add('description', '');
                 $propbag->add('select_values', array('lj' => 'LiveJournal', 'myspace' => 'MySpace', 's9y' => 'Serendipity'));
-                $propbag->add('default', 'lj');
+                $propbag->add('default',     'lj');
                 break;
 
             case 'ljusername':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_LJUPDATE_USERNAME);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_LJUPDATE_USERNAME);
                 $propbag->add('description', PLUGIN_LJUPDATE_USERNAME_DESC);
                 break;
 
             case 'ljpass':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_LJUPDATE_PASSWORD);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_LJUPDATE_PASSWORD);
                 $propbag->add('description', PLUGIN_LJUPDATE_PASSWORD_DESC);
                 break;
 
             case 'ljcuttext':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_LJUPDATE_CUT);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_LJUPDATE_CUT);
                 $propbag->add('description', PLUGIN_LJUPDATE_CUT_DESC);
                 break;
 
             case 'def_nocomments':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_LJUPDATE_COMMENTS);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_LJUPDATE_COMMENTS);
                 $propbag->add('description', PLUGIN_LJUPDATE_COMMENTS);
                 break;
         }
         return true;
-
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_LJUPDATE_TITLE;
     }
 
-    function check_lj_entries() {
+    function check_lj_entries()
+    {
         global $serendipity;
 
         if (!is_array(serendipity_db_query("SELECT id FROM {$serendipity['dbPrefix']}lj_entries LIMIT 1", true, 'both', false, false, false, true))) {
@@ -121,7 +116,8 @@ class serendipity_event_ljupdate extends serendipity_event
         }
     }
 
-    function lj_update($eventData, $delete = '') {
+    function lj_update($eventData, $delete = '')
+    {
         global $serendipity;
 
         $this->check_lj_entries();
@@ -142,27 +138,27 @@ class serendipity_event_ljupdate extends serendipity_event
             serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}lj_entries where entry_id=" . (int)$eventData['id']);
         } else
         if ($rec_exists) {
-            serendipity_db_update('lj_entries', 
+            serendipity_db_update('lj_entries',
                 array('entry_id' => round($eventData['id'])),
                 array(
-                    'itemid' => $itemid,
-                    'current_mood' => $serendipity['POST']['ljmood'],
-                    'current_music' => $serendipity['POST']['ljmusic'],
+                    'itemid'          => $itemid,
+                    'current_mood'    => $serendipity['POST']['ljmood'],
+                    'current_music'   => $serendipity['POST']['ljmusic'],
                     'picture_keyword' => $serendipity['POST']['ljuserpic'],
-                    'security' => $serendipity['POST']['ljsecurity'],
-                    'opt_nocomments' => $serendipity['POST']['ljcomment']
+                    'security'        => $serendipity['POST']['ljsecurity'],
+                    'opt_nocomments'  => $serendipity['POST']['ljcomment']
                 )
             );
         } else {
             serendipity_db_insert('lj_entries',
                 array(
-                    'entry_id' => (int)$eventData['id'],
-                    'itemid' => $itemid,
-                    'current_mood' => $serendipity['POST']['ljmood'],
-                    'current_music' => $serendipity['POST']['ljmusic'],
+                    'entry_id'        => (int)$eventData['id'],
+                    'itemid'          => $itemid,
+                    'current_mood'    => $serendipity['POST']['ljmood'],
+                    'current_music'   => $serendipity['POST']['ljmusic'],
                     'picture_keyword' => $serendipity['POST']['ljuserpic'],
-                    'security' => $serendipity['POST']['ljsecurity'],
-                    'opt_nocomments' => $serendipity['POST']['ljcomment']
+                    'security'        => $serendipity['POST']['ljsecurity'],
+                    'opt_nocomments'  => $serendipity['POST']['ljcomment']
                 )
             );
         }
@@ -190,40 +186,39 @@ class serendipity_event_ljupdate extends serendipity_event
 
         $t = serendipity_serverOffsetHour($eventData['timestamp']);
 
-        $params['username']       = new XML_RPC_Value($this->get_config('ljusername'), 'string');
-        $params['hpassword']      = new XML_RPC_Value(md5($this->get_config('ljpass')), 'string');
-
+        $params['username']    = new XML_RPC_Value($this->get_config('ljusername'), 'string');
+        $params['hpassword']   = new XML_RPC_Value(md5($this->get_config('ljpass')), 'string');
         if ($itemid != 0) {
-            $params['itemid']     = new XML_RPC_Value($itemid, 'string');
+            $params['itemid']  = new XML_RPC_Value($itemid, 'string');
         }
 
         if ($delete == 'delete') {
-            $params['event']      = new XML_RPC_Value('', 'string');
-            $params['subject']    = new XML_RPC_Value('', 'string');
-            $params['year']       = new XML_RPC_Value('', 'string');
-            $params['mon']        = new XML_RPC_Value('', 'string');
-            $params['day']        = new XML_RPC_Value('', 'string');
-            $params['hour']       = new XML_RPC_Value('', 'string');
-            $params['min']        = new XML_RPC_Value('', 'string');
+            $params['event']   = new XML_RPC_Value('', 'string');
+            $params['subject'] = new XML_RPC_Value('', 'string');
+            $params['year']    = new XML_RPC_Value('', 'string');
+            $params['mon']     = new XML_RPC_Value('', 'string');
+            $params['day']     = new XML_RPC_Value('', 'string');
+            $params['hour']    = new XML_RPC_Value('', 'string');
+            $params['min']     = new XML_RPC_Value('', 'string');
         } else {
-            $params['event']          = new XML_RPC_Value($event, 'string');
-            $params['subject']        = new XML_RPC_Value($eventData['title'], 'string');
-            $params['year']           = new XML_RPC_Value(date('Y', $t), 'string');
-            $params['mon']            = new XML_RPC_Value(date('m', $t), 'string');
-            $params['day']            = new XML_RPC_Value(date('d', $t), 'string');
-            $params['hour']           = new XML_RPC_Value(date('H', $t), 'string');
-            $params['min']            = new XML_RPC_Value(date('i', $t), 'string');
-            $params['security']       = new XML_RPC_Value($serendipity['POST']['ljsecurity'],'string');
+            $params['event']         = new XML_RPC_Value($event, 'string');
+            $params['subject']       = new XML_RPC_Value($eventData['title'], 'string');
+            $params['year']          = new XML_RPC_Value(date('Y', $t), 'string');
+            $params['mon']           = new XML_RPC_Value(date('m', $t), 'string');
+            $params['day']           = new XML_RPC_Value(date('d', $t), 'string');
+            $params['hour']          = new XML_RPC_Value(date('H', $t), 'string');
+            $params['min']           = new XML_RPC_Value(date('i', $t), 'string');
+            $params['security']      = new XML_RPC_Value($serendipity['POST']['ljsecurity'],'string');
             if ($serendipity['POST']['ljsecurity'] == 'usemask') {
-                $params['allowmask']  = new XML_RPC_Value(1,'string');
+                $params['allowmask'] = new XML_RPC_Value(1,'string');
             }
-            $props['current_mood']    = new XML_RPC_Value($serendipity['POST']['ljmood'], 'string');
-            $props['current_music']   = new XML_RPC_Value($serendipity['POST']['ljmusic'], 'string');
+            $props['current_mood']   = new XML_RPC_Value($serendipity['POST']['ljmood'], 'string');
+            $props['current_music']  = new XML_RPC_Value($serendipity['POST']['ljmusic'], 'string');
             if ($serendipity['POST']['ljuserpic']) {
                 $props['picture_keyword'] = new XML_RPC_Value($serendipity['POST']['ljuserpic'], 'string');
             }
-            $props['opt_nocomments']  = new XML_RPC_Value($serendipity['POST']['ljcomment'], 'string');
-            $params['props']          = new XML_RPC_Value($props,'struct');
+            $props['opt_nocomments'] = new XML_RPC_Value($serendipity['POST']['ljcomment'], 'string');
+            $params['props']         = new XML_RPC_Value($props,'struct');
         }
 
 
@@ -249,7 +244,7 @@ class serendipity_event_ljupdate extends serendipity_event
         }
 
         if ($itemid != $newitemid && $newitemid != 0) {
-            serendipity_db_update('lj_entries', 
+            serendipity_db_update('lj_entries',
                 array('entry_id' => round($eventData['id'])),
                 array('itemid' => $newitemid)
             );
@@ -258,7 +253,8 @@ class serendipity_event_ljupdate extends serendipity_event
         echo "Updating finished.<br />\n";
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -294,7 +290,7 @@ class serendipity_event_ljupdate extends serendipity_event
                         }
 
                         //Make LJ Entries not doublespaced
-                        $event                    = str_replace("\n", "", $event);
+                        $event = str_replace("\n", "", $event);
                         //Replace relative with absolute URLs
                         $event = preg_replace('@(href|src)=("|\')(' . preg_quote($serendipity['serendipityHTTPPath']) . ')(.*)("|\')(.*)>@imsU', '\1=\2' . $serendipity['baseURL'] . '\4\2\6>', $event);
                     }
@@ -352,14 +348,14 @@ class serendipity_event_ljupdate extends serendipity_event
 
                         $content = $event . '<br /><span class="myspace_note">Clone of <a href="' . $real_blog_url . '">Serendipity blog</a></span>';
                         $content = urlencode($content);
-                        $year = date('Y', time());
-                        $month = date('m', time());
-                        $day = date('d', time());
-                        $hour = date('H', time());
-                        $minute = date('i', time());
-                        $marker = date('A', time());
+                        $year    = date('Y', time());
+                        $month   = date('m', time());
+                        $day     = date('d', time());
+                        $hour    = date('H', time());
+                        $minute  = date('i', time());
+                        $marker  = date('A', time());
 
-                        $login_url = 'http://blog.myspace.com/index.cfm?fuseaction=login.process';
+                        $login_url = '//blog.myspace.com/index.cfm?fuseaction=login.process';
                         $login_params = "email=$ms_userid&password=$ms_passwd&Remember=0";
                         echo "Opening URL $login_url with data " . (function_exists('serendipity_specialchars') ? serendipity_specialchars($login_params) : htmlspecialchars($login_params, ENT_COMPAT, LANG_CHARSET)) . "<br />\n";
 
@@ -372,13 +368,13 @@ class serendipity_event_ljupdate extends serendipity_event
                         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
                         curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
                         curl_setopt($ch, CURLOPT_COOKIEJAR, $tmp_cookie_file);
-                        $result=curl_exec ($ch);
+                        $result = curl_exec ($ch);
                         curl_close ($ch);
 
                         echo "URL open finished. Output:<br /><br /><hr />\n\n";
                         echo htmlentities($result, ENT_COMPAT, LANG_CHARSET) . "\n\n<hr /><br />\n\n";
 
-                        $post_url = 'http://blog.myspace.com/index.cfm?fuseaction=blog.processCreate';
+                        $post_url = '//blog.myspace.com/index.cfm?fuseaction=blog.processCreate';
                         $post_params = "postMonth=$month&postDay=$day&postYear=$year&postHour=$hour&postMinute=$minute&postTimeMarker=$marker&subject=$subject&body=$content";
 
                         echo "Opening URL $post_url with data " . (function_exists('serendipity_specialchars') ? serendipity_specialchars($post_params) : htmlspecialchars($post_params, ENT_COMPAT, LANG_CHARSET)) . "<br />\n";
@@ -392,7 +388,7 @@ class serendipity_event_ljupdate extends serendipity_event
                         curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
                         curl_setopt($ch, CURLOPT_COOKIEFILE, $tmp_cookie_file);
                         curl_setopt($ch, CURLOPT_HEADER, 1);
-                        $result=curl_exec ($ch);
+                        $result = curl_exec ($ch);
                         curl_close ($ch);
                         echo "URL open finished. Output:<br /><br /><hr />\n\n";
                         echo htmlentities($result, ENT_COMPAT, LANG_CHARSET) . "\n\n<hr /><br />\n\n";
@@ -401,8 +397,6 @@ class serendipity_event_ljupdate extends serendipity_event
 
                         echo "MySpace posting finished.<br />\n";
                     }
-
-                    return true;
                     break;
 
                 case 'backend_save':
@@ -428,8 +422,6 @@ class serendipity_event_ljupdate extends serendipity_event
                     if ($target == 'lj') {
                         $this->lj_update($eventData);
                     }
-
-                    return true;
                     break;
 
                 case 'backend_delete_entry':
@@ -451,8 +443,6 @@ class serendipity_event_ljupdate extends serendipity_event
                     if ($target == 'lj') {
                         $this->lj_update(array('id' => $eventData), 'delete');
                     }
-
-                    return true;
                     break;
 
                 case 'backend_display':
@@ -558,13 +548,17 @@ class serendipity_event_ljupdate extends serendipity_event
 ?>
                     </table>
                 <?php
+                    break;
 
                 default:
                     return false;
-                    break;
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
+
+?>

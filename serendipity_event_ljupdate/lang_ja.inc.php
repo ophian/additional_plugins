@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -28,4 +28,3 @@
 @define('PLUGIN_LJUPDATE_READCOMMENTS', 'コメントを読む/投稿する');
 @define('PLUGIN_LJUPDATE_COMMENTS', 'LJ コメントを無効にする');
 
-?>

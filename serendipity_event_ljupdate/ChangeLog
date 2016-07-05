@@ -1,3 +1,10 @@
+1.14:
+-----
+
+ * Set plugin consistence
+ * Use lang API - extends required version
+ * Allow stateless //url for https
+
 Version 1.13.2: (blackwarthog)
 ------------------------------------------------------------------------
  * Fix XML-RPC results reading bug
