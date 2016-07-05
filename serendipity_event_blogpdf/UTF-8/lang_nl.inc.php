@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Wilco Wietsma <wilco@line-movies.net>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -19,4 +19,3 @@
 @define('PLUGIN_EVENT_BLOGPDF_VIEW_MONTH', 'Deze Maand');
 @define('PLUGIN_EVENT_BLOGPDF_MISSING', 'Invalid plugin operator %s');
 
-?>

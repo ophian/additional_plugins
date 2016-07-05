@@ -1,9 +1,8 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
-
 
 /* TODO:
 - Use Links inside entries
@@ -13,13 +12,7 @@ if (IN_serendipity !== true) {
 - Parse attributes like STRONG, BOLD, ...
 */
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_blogpdf extends serendipity_event
 {
@@ -35,11 +28,11 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier PLATHEY, Steven Wittens');
         $propbag->add('license',       'GPL (Uses LGPL FPDF, HTML2PDF, UFPDF');
-        $propbag->add('version',       '1.82.1');
+        $propbag->add('version',       '1.83');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',    array(
             'external_plugin'  => true,
@@ -57,32 +50,36 @@ class serendipity_event_blogpdf extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        'HTML2PDF support');
                 $propbag->add('description', '');
-                $propbag->add('default',     false);
-                return true;
+                $propbag->add('default',     'false');
                 break;
+
             case 'updf':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        'UPDF / Unicode support');
                 $propbag->add('description', '');
-                $propbag->add('default',     false);
-                return true;
+                $propbag->add('default',     'false');
                 break;
+
 			case 'fallback':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        'Fallback to iso8559');
                 $propbag->add('description', 'Should be used when your Blog is in UTF-8 and you use a latin charset, but the UFPDF library doesn\'t work');
-                $propbag->add('default',     false);
-                return true;
+                $propbag->add('default',     'false');
                 break;
+
+            default:
+                return false;
         }
-        return false;
+        return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -90,12 +87,14 @@ class serendipity_event_blogpdf extends serendipity_event
         $article_show = false;
 
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'frontend_display':
                     if (isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
                         $article_show = true;
                         $year         = date('Y', serendipity_serverOffsetHour($eventData['timestamp']));
                         $month        = date('m', serendipity_serverOffsetHour($eventData['timestamp']));
+                        // no break
                     } else {
                         break;
                     }
@@ -134,15 +133,12 @@ class serendipity_event_blogpdf extends serendipity_event
                     } else {
                         echo '<div class="serendipity_blogpdf">' . PLUGIN_EVENT_BLOGPDF_VIEW . implode(' | ' , $links) . '</div>';
                     }
-
-
-                    return true;
                     break;
 
                 case 'external_plugin':
-                    if (serendipity_db_bool($this->get_config('html2pdf'))) {
+                    if (serendipity_db_bool($this->get_config('html2pdf', 'false'))) {
                         include_once dirname(__FILE__) . '/html2fpdf.php';
-                    } elseif (serendipity_db_bool($this->get_config('updf'))) {
+                    } elseif (serendipity_db_bool($this->get_config('updf', 'false'))) {
                         include_once dirname(__FILE__) . '/serendipity_blogupdf.inc.php';
                     } else {
                         include_once dirname(__FILE__) . '/serendipity_blogpdf.inc.php';
@@ -163,7 +159,7 @@ class serendipity_event_blogpdf extends serendipity_event
                         return;
                     }
 
-                    if (serendipity_db_bool($this->get_config('html2pdf'))) {
+                    if (serendipity_db_bool($this->get_config('html2pdf', 'false'))) {
                         $this->pdf = new HTML2FPDF();
                     } else {
                         $this->pdf = new PDF();
@@ -212,20 +208,20 @@ class serendipity_event_blogpdf extends serendipity_event
                     }
 
                     $this->pdf->Output();
-
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
+
             }
+            return true;
         } else {
             return false;
         }
     }
 
-    function process($feedcache, &$entries) {
+    function process($feedcache, &$entries)
+    {
         if (!file_exists($feedcache) || filesize($feedcache) == 0 || filemtime($feedcache) < (time() - $cachetime)) {
             if ($this->single) {
                 $this->print_entry(0, $entries, $this->prep_out(serendipity_formatTime(DATE_FORMAT_ENTRY, $entries['timestamp'])));
@@ -244,7 +240,8 @@ class serendipity_event_blogpdf extends serendipity_event
         return true;
     }
 
-    function print_entry($x, &$entry, $header = false) {
+    function print_entry($x, &$entry, $header = false)
+    {
         if ($header) {
             $this->pdf->AddPage();
             $this->pdf->SetFont('Courier','',12);
@@ -275,7 +272,7 @@ class serendipity_event_blogpdf extends serendipity_event
 
         $this->pdf->SetFont('Arial', '', 10);
         $html = $this->prep_out($entry['body'] . $entry['extended']) . "\n";
-        if (serendipity_db_bool($this->get_config('html2pdf'))) {
+        if (serendipity_db_bool($this->get_config('html2pdf', 'false'))) {
             $this->pdf->WriteHTML($html);
         } else {
             $this->pdf->Write(4, $html);
@@ -292,7 +289,8 @@ class serendipity_event_blogpdf extends serendipity_event
 
     }
 
-    function printComments($comments) {
+    function printComments($comments)
+    {
         if (!is_array($comments) || count($comments) < 1) {
             return;
         }
@@ -315,7 +313,7 @@ class serendipity_event_blogpdf extends serendipity_event
               ' ' . ON . ' ' . serendipity_mb('ucfirst', $this->prep_out(serendipity_strftime('%b %e %Y, %H:%M', $comment['timestamp'])))
             ) . "\n";
 
-            if (serendipity_db_bool($this->get_config('html2pdf'))) {
+            if (serendipity_db_bool($this->get_config('html2pdf', 'false'))) {
                 $this->pdf->WriteHTML($html);
             } else {
                 $this->pdf->Write(3, $html);
@@ -325,10 +323,11 @@ class serendipity_event_blogpdf extends serendipity_event
         }
     }
 
-    function prep_out($string) {
-        if (serendipity_db_bool($this->get_config('html2pdf'))) {
+    function prep_out($string)
+    {
+        if (serendipity_db_bool($this->get_config('html2pdf', 'false'))) {
             return $string;
-        } elseif (serendipity_db_bool($this->get_config('fallback'))) {
+        } elseif (serendipity_db_bool($this->get_config('fallback', 'false'))) {
 			return strip_tags(html_entity_decode(utf8_decode($string), ENT_COMPAT, LANG_CHARSET));
 		} else {
 			return strip_tags(html_entity_decode($string, ENT_COMPAT, LANG_CHARSET));
@@ -336,7 +335,8 @@ class serendipity_event_blogpdf extends serendipity_event
 
     }
 
-    function print_entries(&$entries) {
+    function print_entries(&$entries)
+    {
         $extended = true;
         $preview  = false;
 
@@ -367,3 +367,4 @@ class serendipity_event_blogpdf extends serendipity_event
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

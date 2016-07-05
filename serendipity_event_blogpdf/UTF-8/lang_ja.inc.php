@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.6
  */
@@ -19,4 +19,3 @@
 @define('PLUGIN_EVENT_BLOGPDF_VIEW_MONTH', '今月');
 @define('PLUGIN_EVENT_BLOGPDF_MISSING', '無効なプラグイン操作 %s です。');
 
-?>

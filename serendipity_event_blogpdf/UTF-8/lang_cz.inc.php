@@ -18,4 +18,3 @@
 @define('PLUGIN_EVENT_BLOGPDF_VIEW_MONTH', 'Tento měsíc');
 @define('PLUGIN_EVENT_BLOGPDF_MISSING', 'Nesprávný parametr pluginu %s');
 
-?>

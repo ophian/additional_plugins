@@ -1,6 +1,6 @@
-		      *********
-		      *CREDITS*
-__________	      *********
+*********
+*CREDITS*
+*********
 Thanks to:
 ¯¯¯¯¯¯¯¯¯¯
 -Olivier Plathey for the fpdf.php class [http://www.fpdf.org]

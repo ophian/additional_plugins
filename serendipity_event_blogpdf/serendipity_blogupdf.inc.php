@@ -1,12 +1,16 @@
 <?php
 
 define('FPDF_FONTPATH', dirname(__FILE__) . '/font/');
+
 include_once dirname(__FILE__) . '/fpdf.php';
 include_once dirname(__FILE__) . '/ufpdf.php';
-class PDF extends UFPDF {
+
+class PDF extends UFPDF
+{
     var $TOC = array();
 
-    function Header() {
+    function Header()
+    {
         global $serendipity;
 
         $this->SetFont('Arial', 'B', 15);
@@ -14,7 +18,8 @@ class PDF extends UFPDF {
         $this->Ln(20);
     }
 
-    function Footer() {
+    function Footer()
+    {
         global $serendipity;
 
         $this->SetY(-15);
@@ -22,7 +27,8 @@ class PDF extends UFPDF {
         $this->Cell(0, 10, PLUGIN_EVENT_BLOGPDF_PAGE . ' ' . $this->PageNo() . ' / {nb}', 0, 0, 'C');
     }
 
-    function TOC_Add($header) {
+    function TOC_Add($header)
+    {
         $this->TOC[] = array(
           'header' => $header,
           'page'   => $this->PageNo(),
@@ -30,7 +36,8 @@ class PDF extends UFPDF {
         );
     }
 
-    function TOC_Build() {
+    function TOC_Build()
+    {
         $cnt = count($this->TOC);
         if ($cnt < 1) {
             return;
@@ -72,16 +79,21 @@ class PDF extends UFPDF {
         $this->_out('endobj');
     }
 
-    function _putresources() {
+    function _putresources()
+    {
         parent::_putresources();
         $this->TOC_Build();
     }
 
-    function _putcatalog() {
+    function _putcatalog()
+    {
         parent::_putcatalog();
         if(count($this->TOC) > 0) {
             $this->_out('/Outlines '. $this->OutlineRoot . ' 0 R');
             $this->_out('/PageMode /UseOutlines');
         }
     }
+
 }
+
+?>

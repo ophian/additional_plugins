@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -19,4 +19,3 @@
 @define('PLUGIN_EVENT_BLOGPDF_VIEW_MONTH', 'This month');
 @define('PLUGIN_EVENT_BLOGPDF_MISSING', 'Invalid plugin operator %s');
 
-?>
