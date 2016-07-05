@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -26,4 +26,3 @@
 @define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'Using article format, you can choose which text to display where the blog DATE shows up for an article.');
 @define('PLUGIN_POLL_SELECT', 'Select a voting to edit or create.');
 
-?>

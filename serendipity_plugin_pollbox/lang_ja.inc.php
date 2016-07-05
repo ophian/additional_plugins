@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.1
  */
@@ -26,4 +26,3 @@
 @define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'Using article format, you can choose which text to display where the blog DATE shows up for an article.');
 @define('PLUGIN_POLL_SELECT', '編集する投票か作成を選択します。');
 
-?>

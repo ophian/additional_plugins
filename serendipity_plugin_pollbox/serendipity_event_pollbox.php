@@ -2,10 +2,12 @@
 
 include_once dirname(__FILE__) . '/common.inc.php';
 
-class serendipity_event_pollbox extends serendipity_event {
+class serendipity_event_pollbox extends serendipity_event
+{
     var $poll = array();
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name', PLUGIN_POLL_TITLE);
@@ -20,9 +22,9 @@ class serendipity_event_pollbox extends serendipity_event {
         $propbag->add('configuration', array('permalink', "articleformat", "pagetitle", "articleformattitle"));
         $propbag->add('author', 'Garvin Hicking, Matthias Mees');
         $propbag->add('groups', array('STATISTICS'));
-        $propbag->add('version', '2.15');
+        $propbag->add('version', '2.16');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -71,9 +73,9 @@ class serendipity_event_pollbox extends serendipity_event {
         return true;
     }
 
-    function setupDB() {
+    function setupDB()
+    {
         global $serendipity;
-
 
         $built = $this->get_config('db_built', null);
         if (empty($built) && !defined('PLUGIN_POLL_UPGRADE_DONE')) {
@@ -98,7 +100,8 @@ class serendipity_event_pollbox extends serendipity_event {
         }
     }
 
-    function &get_polldata($key, $default = null) {
+    function &get_polldata($key, $default = null)
+    {
         if (isset($this->poll[$key])) {
             return $this->poll[$key];
         } else {
@@ -106,7 +109,8 @@ class serendipity_event_pollbox extends serendipity_event {
         }
     }
 
-    function show() {
+    function show()
+    {
         global $serendipity;
 
         if ($this->selected()) {
@@ -157,7 +161,8 @@ class serendipity_event_pollbox extends serendipity_event {
         }
     }
 
-    function selected() {
+    function selected()
+    {
         global $serendipity;
 
         if ($serendipity['GET']['subpage'] == 'votearchive' || $serendipity['GET']['subpage'] == $this->get_config('permalink') || $serendipity['GET']['subpage'] == $this->get_config('pagetitle')) {
@@ -168,13 +173,15 @@ class serendipity_event_pollbox extends serendipity_event {
     }
 
 
-    function fetchPolls() {
+    function fetchPolls()
+    {
         global $serendipity;
 
         return serendipity_db_query("SELECT title, active, timestamp, id FROM {$serendipity['dbPrefix']}polls ORDER BY timestamp DESC");
     }
 
-    function insertPoll() {
+    function insertPoll()
+    {
         global $serendipity;
 
         $now = time();
@@ -189,7 +196,8 @@ class serendipity_event_pollbox extends serendipity_event {
         }
     }
 
-    function updatePoll($id) {
+    function updatePoll($id)
+    {
         global $serendipity;
 
         $q = serendipity_db_query("UPDATE {$serendipity['dbPrefix']}polls
@@ -198,7 +206,8 @@ class serendipity_event_pollbox extends serendipity_event {
         return $q;
     }
 
-    function addOption($pollid, $data) {
+    function addOption($pollid, $data)
+    {
         global $serendipity;
 
         $q = serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}polls_options (
@@ -210,13 +219,15 @@ class serendipity_event_pollbox extends serendipity_event {
         return $q;
     }
 
-    function deleteOption($optid) {
+    function deleteOption($optid)
+    {
         global $serendipity;
 
         return serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}polls_options WHERE id = " . (int)$optid);
     }
 
-    function updateOptions($pollid, $data) {
+    function updateOptions($pollid, $data)
+    {
         global $serendipity;
 
         foreach($data AS $optid => $values) {
@@ -230,7 +241,8 @@ class serendipity_event_pollbox extends serendipity_event {
         }
     }
 
-    function showBackend() {
+    function showBackend()
+    {
         global $serendipity;
 
         if ($serendipity['POST']['pollSave'] || $serendipity['POST']['pollOptionAdd'] || is_array($serendipity['POST']['pollOptionRemove'])) {
@@ -260,14 +272,14 @@ class serendipity_event_pollbox extends serendipity_event {
             $this->poll = serendipity_common_pollbox::fetchPoll($serendipity['POST']['poll']);
         }
 
-        if ($serendipity['version'][0] == '2') {
+        if ($serendipity['version'][0] > 1) {
             echo '<h2>' . PLUGIN_POLL_SELECT . '</h2>';
         }
 
         if (!empty($serendipity['POST']['pollDelete']) && $serendipity['POST']['poll'] != '__new') {
             serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}polls WHERE id = " . (int)$serendipity['POST']['poll']);
             serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}polls_options WHERE pollid = " . (int)$serendipity['POST']['poll']);
-            if ($serendipity['version'][0] == '1') {
+            if ($serendipity['version'][0] < 2) {
 ?>
     <div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="<?php echo serendipity_getTemplateFile('admin/img/admin_msg_success.png'); ?>" alt="" /><?php echo DONE .': '. sprintf(RIP_ENTRY, (int)$serendipity['POST']['poll']); ?></div>
 <?php
@@ -288,12 +300,12 @@ class serendipity_event_pollbox extends serendipity_event {
         echo '  <input type="hidden" name="serendipity[adminModule]" value="event_display" />';
         echo '  <input type="hidden" name="serendipity[adminAction]" value="poll" />';
         echo '</div>';
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo '<div>';
         } else {
             echo '<div class="form_select">';
         }
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo '<strong>' . PLUGIN_POLL_SELECT . '</strong><br /><br />';
         }
         echo '<select name="serendipity[poll]">';
@@ -306,7 +318,7 @@ class serendipity_event_pollbox extends serendipity_event {
                 echo ($poll['active'] == 1 ? '*' : '') . (function_exists('serendipity_specialchars') ? serendipity_specialchars($poll['title']) : htmlspecialchars($poll['title'], ENT_COMPAT, LANG_CHARSET)) . ' (' . serendipity_strftime('%d.%m.%Y', $poll['timestamp']) . ')</option>';
             }
         }
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo '</select> <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[pollSubmit]" value="' . GO . '" />';
             echo ' <strong>-' . WORD_OR . '-</strong> <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[pollDelete]" value="' . DELETE . '" />';
             echo ' <strong>-' . WORD_OR . '-</strong> <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[pollActivate]" value="' . PLUGIN_POLL_ACTIVATE . '" />';
@@ -319,7 +331,7 @@ class serendipity_event_pollbox extends serendipity_event {
         echo '</div>';
 
         if ($serendipity['POST']['pollSubmit']) {
-            if ($serendipity['version'][0] == '1') {
+            if ($serendipity['version'][0] < 2) {
                 echo '<div>';
             } else {
                 echo '<div class="clearfix">';
@@ -331,10 +343,11 @@ class serendipity_event_pollbox extends serendipity_event {
         echo '</form>';
     }
 
-    function showForm() {
+    function showForm()
+    {
         global $serendipity;
 
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo '<br /><hr /><br />';
             echo TITLE . ' <input class="input_textbox" type="text" name="serendipity[currentPoll][title]" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($this->poll['title']) : htmlspecialchars($this->poll['title'], ENT_COMPAT, LANG_CHARSET)) . '" />';
         } else {
@@ -344,7 +357,7 @@ class serendipity_event_pollbox extends serendipity_event {
             echo '</div>';
         }
 
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo '<br /><br /><table>';
             echo '<tr><th>' . TITLE . '</th>';
             echo '<th>&nbsp;</th>';
@@ -383,7 +396,7 @@ class serendipity_event_pollbox extends serendipity_event {
             echo '</ol>';
         }
 
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo ' <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[pollSave]" value="' . SAVE . '" />';
         } else {
             echo '<div class="form_buttons">';
@@ -392,20 +405,24 @@ class serendipity_event_pollbox extends serendipity_event {
         }
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_POLL_TITLE;
     }
 
-    function install() {
+    function install()
+    {
         $this->setupDB();
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'genpage':
                     $args = implode('/', serendipity_getUriArguments($eventData, true));
@@ -428,39 +445,37 @@ class serendipity_event_pollbox extends serendipity_event {
                             $eventData = array('clean_page' => true);
                         }
                     }
-
-                    return true;
                     break;
 
                 case 'backend_sidebar_entries':
                     if ($serendipity['serendipityUserlevel'] >= USERLEVEL_CHIEF) {
-                        if ($serendipity['version'][0] == '1') {
+                        if ($serendipity['version'][0] < 2) {
                             echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=poll">' . PLUGIN_POLL_TITLE . '</a></li>';
                         } else {
                             echo '<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=poll">' . PLUGIN_POLL_TITLE . '</a></li>';
                         }
                     }
-                    return true;
                     break;
 
                 case 'backend_sidebar_entries_event_display_poll':
                     $this->showBackend();
-                    return true;
                     break;
 
                 case 'entries_header':
                     $this->show();
-
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
+
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
+
 /* vim: set sts=4 ts=4 expandtab : */
+?>

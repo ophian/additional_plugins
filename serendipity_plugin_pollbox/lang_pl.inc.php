@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Kostas CoSTa Brzezinski <costa@kofeina.net>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -26,4 +26,3 @@
 @define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'U¿ywaj±c trybu "Formatowaæ jak wpis" mo¿esz tu zdefiniowaæ tytu³ strony, jaki poka¿e siê w miejscu, w którym normalnie wy¶wietlana jest data zamieszczenia wpisu.');
 @define('PLUGIN_POLL_SELECT', 'Wybierz g³osowanie lub stwórz nowe');
 
-?>

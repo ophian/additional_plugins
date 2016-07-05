@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -26,4 +26,3 @@
 @define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'Używając trybu "Formatować jak wpis" możesz tu zdefiniować tytuł strony, jaki pokaże się w miejscu, w którym normalnie wyświetlana jest data zamieszczenia wpisu.');
 @define('PLUGIN_POLL_SELECT', 'Wybierz głosowanie lub stwórz nowe');
 
-?>

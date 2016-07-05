@@ -1,10 +1,11 @@
-<?php # 
+<?php
 
 include_once dirname(__FILE__) . '/common.inc.php';
 
-class serendipity_plugin_pollbox extends serendipity_plugin {
+class serendipity_plugin_pollbox extends serendipity_plugin
+{
     var $title = PLUGIN_POLL_TITLE;
-    
+
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -14,7 +15,7 @@ class serendipity_plugin_pollbox extends serendipity_plugin {
         $propbag->add('configuration', array('title'));
         $propbag->add('author', 'Garvin Hicking, Evan Nemerson');
         $propbag->add('stackable', false);
-        $propbag->add('version', '2.15');
+        $propbag->add('version', '2.16');
         $propbag->add('groups', array('STATISTICS'));
         $this->dependencies = array('serendipity_event_pollbox' => 'keep');
     }
@@ -33,13 +34,15 @@ class serendipity_plugin_pollbox extends serendipity_plugin {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $title = $this->get_config('title');
         serendipity_common_pollbox::poll();
         echo '<br /><a class="votearchive" href="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[subpage]=votearchive">' . ARCHIVES . '</a>';
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */

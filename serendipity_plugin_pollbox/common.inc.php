@@ -1,27 +1,24 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_common_pollbox {
+class serendipity_common_pollbox
+{
     var $poll = array();
 
-    static function poll($pollid = null) {
+    static function poll($pollid = null)
+    {
         $poll  = new serendipity_common_pollbox;
         $poll->setPoll($poll->fetchPoll($pollid));
         $poll->showPoll($pollid);
     }
 
-    function setCookie($name, $value) {
+    function setCookie($name, $value)
+    {
         echo '<script type="text/javascript">
         function SetPollCookie(name, value) {
             var today  = new Date();
@@ -34,7 +31,8 @@ class serendipity_common_pollbox {
         </script>' . "\n";
     }
 
-    function showPoll($pollid = null) {
+    function showPoll($pollid = null)
+    {
         global $serendipity;
 
         echo '<strong class="polltitle">' . $this->poll['title'] . '</strong>';
@@ -53,14 +51,16 @@ class serendipity_common_pollbox {
         echo '</form>';
     }
 
-    function addVote($pollid, $optid) {
+    function addVote($pollid, $optid)
+    {
         global $serendipity;
 
         serendipity_db_query("UPDATE {$serendipity['dbPrefix']}polls_options SET votes=votes+1 WHERE pollid = " . (int)$pollid . " AND id = " . (int)$optid);
         serendipity_db_query("UPDATE {$serendipity['dbPrefix']}polls         SET votes=votes+1 WHERE id     = " . (int)$pollid);
     }
 
-    function showOptions() {
+    function showOptions()
+    {
         if (is_array($this->poll['options'])) {
             foreach($this->poll['options'] AS $optid => $option) {
                 if (empty($option['title'])) {
@@ -72,7 +72,8 @@ class serendipity_common_pollbox {
         echo '<input class="pollsubmit" type="submit" name="serendipity[goVote]" value="' . GO . '" />';
     }
 
-    function showResults() {
+    function showResults()
+    {
         $sorted = array();
         foreach((array)$this->poll['options'] AS $option) {
             $sorted[$option['title']] = $option['votes'];
@@ -92,11 +93,13 @@ class serendipity_common_pollbox {
         printf('<div class="polltotal">' . PLUGIN_POLLBOX_TOTALVOTES . '</div>', $this->poll['votes']);
     }
 
-    function setPoll($poll) {
+    function setPoll($poll)
+    {
         $this->poll = $poll;
     }
 
-    static function fetchPoll($cid = null) {
+    static function fetchPoll($cid = null)
+    {
         global $serendipity;
 
         $result = array();
@@ -139,4 +142,3 @@ class serendipity_common_pollbox {
     }
 
 }
-
