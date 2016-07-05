@@ -1003,7 +1003,7 @@ class serendipity_event_twitter extends serendipity_plugin
                     break;
 
                 case 'backend_sidebar_entries':
-                    if ($serendipity['version'][0] == '1') {
+                    if ($serendipity['version'][0] < 2) {
                         if ($this->get_config('tweeter_show', 'disable') == 'sidebar') {
 ?>
                             <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=tweeter"><?php echo PLUGIN_EVENT_TWITTER_TWEETER_SIDEBARTITLE; ?></a></li>
@@ -1014,7 +1014,7 @@ class serendipity_event_twitter extends serendipity_plugin
                     break;
 
                 case 'backend_sidebar_admin_appearance':
-                    if ($serendipity['version'][0] == '1') {
+                    if ($serendipity['version'][0] < 2) {
                     } else {
                         if ($this->get_config('tweeter_show', 'disable') == 'sidebar') {
 ?>
@@ -1056,7 +1056,7 @@ class serendipity_event_twitter extends serendipity_plugin
                     if (serendipity_db_bool($this->get_config('announce_articles_default_no'))) {
                         $checked_dontannounce = "checked='checked'";
                     }
-                    if ($serendipity['version'][0] == '1') {
+                    if ($serendipity['version'][0] < 2) {
 ?>
                         <fieldset style="margin: 5px">
                             <a name="microbloggingAnchor"></a>
