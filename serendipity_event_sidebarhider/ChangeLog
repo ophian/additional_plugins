@@ -3,6 +3,7 @@
 
  * Set Plugin consistencies
  * Use lang API - extends required version
+ * Append CSS, not prepend
 
 1.25: Move to the correct nav section for 2.0 backend (yellowled)
 

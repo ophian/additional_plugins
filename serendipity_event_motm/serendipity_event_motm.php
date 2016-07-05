@@ -28,8 +28,8 @@ class serendipity_event_motm extends serendipity_event
             'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',    array(
-            'external_plugin'    => true,
-            'css'                => true,
+            'external_plugin'           => true,
+            'css'                       => true,
             'backend_sidebar_entries'   => true,
             'backend_sidebar_admin'     => true,
             'backend_sidebar_entries_event_display_motm'    => true
@@ -154,32 +154,34 @@ class serendipity_event_motm extends serendipity_event
                     break;
 
                 case 'css':
-                    if (!strpos($eventData,'.clearfix'))
-                    {
-                        ob_start();
-                        ?>
-                            .clearfix:after {
-                                content: ".";
-                                display: block;
-                                height: 0;
-                                clear: both;
-                                visibility: hidden;
-                            }
-                            .clearfix {display: inline-table;}
-                            /* Hides from IE-mac \*/
-                            * html .clearfix {height: 1%;}
-                            .clearfix {display: block;}
-                            /* End hide from IE-mac */
-                        <?php
-                        $csscontents = ob_get_contents();
-                        ob_end_clean();
-                        echo $csscontents;
+                    if (strpos($eventData, '.clearfix') === false) {
+                    // append!
+                    $eventData .= '
+
+/* serendipity_event_motm start */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {display: inline-table;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+/* serendipity_event_motm end */
+
+';
                     }
 
-                    if (!strpos($eventData, '#serendipity_motm_track'))
-                        echo '#serendipity_motm_track { '.$this->get_config('css_track')."}\n";
-                    if (!strpos($eventData, '#serendipity_motm_slider'))
-                        echo '#serendipity_motm_slider { '.$this->get_config('css_slider')."}\n";
+                    if (strpos($eventData, '#serendipity_motm_track') === false) {
+                        $eventData .= '#serendipity_motm_track { '.$this->get_config('css_track')."}\n";
+                    if (strpos($eventData, '#serendipity_motm_slider') === false) {
+                        $eventData .= '#serendipity_motm_slider { '.$this->get_config('css_slider')."}\n";
                     break;
 
                 case 'external_plugin':

@@ -3,7 +3,8 @@
 
  * Set Plugin consistencies
  * Use lang API - extends required version
- * add more sqlite db type checks
+ * Add more sqlite db type checks
+ * Append CSS, not prepend
 
 0.2.8:
     Add cronjob support through cronjob plugin

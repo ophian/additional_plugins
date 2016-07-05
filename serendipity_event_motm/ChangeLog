@@ -3,6 +3,7 @@
 
  * Set Plugin consistencies
  * Use lang API - extends required version
+ * Append CSS, not prepend
 
 1.5:
 ----

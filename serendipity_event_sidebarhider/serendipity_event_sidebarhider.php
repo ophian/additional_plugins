@@ -200,28 +200,35 @@ class serendipity_event_sidebarhider extends serendipity_event
 
                 case 'css':
                     if (!$enabled) {
-                        return true;
+                        break;
                     }
 
-                    if (!strpos($eventData,'.clearfix')) {
-?>
-                            .clearfix:after {
-                                content: ".";
-                                display: block;
-                                height: 0;
-                                clear: both;
-                                visibility: hidden;
-                            }
-                            .clearfix {display: inline-table;}
-                            /* Hides from IE-mac \*/
-                            * html .clearfix {height: 1%;}
-                            .clearfix {display: block;}
-                            /* End hide from IE-mac */
-<?php
+                    if (strpos($eventData, '.clearfix') === false) {
+                    // append!
+                    $eventData .= '
+
+/* serendipity_event_sidebarhider start */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {display: inline-table;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+/* serendipity_event_sidebarhider end */
+
+';
                     }
 
-                    if (!strpos($eventData, '.serendipitySideBarLink')) {
-                        echo ".serendipitySideBarLink { " . $this->get_config('style_link') . "}\n";
+                    if (strpos($eventData, '.serendipitySideBarLink') === false) {
+                        $eventData .= '.serendipitySideBarLink { ' . $this->get_config('style_link') . "}\n";
                     }
                     break;
 

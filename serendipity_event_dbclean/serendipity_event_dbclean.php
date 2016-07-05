@@ -142,7 +142,7 @@ class serendipity_event_dbclean extends serendipity_event
                     // append!
                     $eventData .= '
 
-/* serendipity event_dbclean start */
+/* serendipity_event_dbclean start */
 
 #dbcleanTable {
     border: 1px solid #aaa;
@@ -163,7 +163,7 @@ class serendipity_event_dbclean extends serendipity_event
     padding: .125em .25em;
 }
 
-/* serendipity event_dbclean end */
+/* serendipity_event_dbclean end */
 
 ';
                     }
