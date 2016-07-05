@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -57,4 +57,3 @@
 @define("PLUGIN_BACKUP_SQL_BACKUP", "SQL Backup");
 @define("PLUGIN_BACKUP_HTML_BACKUP", "HTML Backup");
 
-?>

@@ -56,4 +56,3 @@
 @define('PLUGIN_BACKUP_SQL_BACKUP', 'Záloha SQL databáze');
 @define('PLUGIN_BACKUP_HTML_BACKUP', 'Záloha HTML souborů');
 
-?>

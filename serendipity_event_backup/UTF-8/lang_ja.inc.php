@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.4
  */
@@ -57,4 +57,3 @@
 @define("PLUGIN_BACKUP_SQL_BACKUP", "SQL バックアップ");
 @define("PLUGIN_BACKUP_HTML_BACKUP", "HTML バックアップ");
 
-?>
