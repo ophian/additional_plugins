@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /** We reuse most of that code and language constants, so include this before we
     do anything else */
@@ -10,12 +10,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_backendrss extends serendipity_event
 {
@@ -27,9 +22,9 @@ class serendipity_event_backendrss extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_BACKENDRSS_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Sebastian Nohn');
-        $propbag->add('version',       '1.4');
+        $propbag->add('version',       '1.5');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'php'         => '4.1.0'
         ));
         $propbag->add('event_hooks',    array(
@@ -41,7 +36,8 @@ class serendipity_event_backendrss extends serendipity_event
         $this->dependencies = array();
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'charset':
                 $propbag->add('type', 'radio');
@@ -117,89 +113,94 @@ class serendipity_event_backendrss extends serendipity_event
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'backend_frontpage_display':
 
-		    $number       = $this->get_config('number');
-		    $title        = $this->get_config('title');
-		    $rssuri       = $this->get_config('rssuri');
-		    $target       = $this->get_config('target');
-		    $cachetime    = $this->get_config('cachetime');
+                    $number       = $this->get_config('number');
+                    $title        = $this->get_config('title');
+                    $rssuri       = $this->get_config('rssuri');
+                    $target       = $this->get_config('target');
+                    $cachetime    = $this->get_config('cachetime');
 
-		    echo '<h3>'.$title.'</h3>';
+                    echo '<h3>'.$title.'</h3>';
 
-		    if (!$number || !is_numeric($number) || $number < 1) {
-		       $showAll = true;
-		    } else {
-		       $showAll = false;
-		    }
+                    if (!$number || !is_numeric($number) || $number < 1) {
+                        $showAll = true;
+                    } else {
+                        $showAll = false;
+                    }
 
-		    if (!$target || strlen($target) < 1) {
-		       $target = '_blank';
-		    }
+                    if (!$target || strlen($target) < 1) {
+                        $target = '_blank';
+                    }
 
-		    if (!$cachetime || !is_numeric($cachetime)) {
-		       $cachetime = 10800; // 3 hours in seconds
-		    }
+                    if (!$cachetime || !is_numeric($cachetime)) {
+                        $cachetime = 10800; // 3 hours in seconds
+                    }
 
-		    if (trim($rssuri)) {
-		       $feedcache = $serendipity['serendipityPath'] . 'archives/remoterss_cache_' . preg_replace('@[^a-z0-9]*@i', '', $rssuri) . '.dat';
-		    if (!file_exists($feedcache) || filesize($feedcache) == 0 || filemtime($feedcache) < (time() - $cachetime)) {
+                    if (trim($rssuri)) {
+                        $feedcache = $serendipity['serendipityPath'] . 'archives/remoterss_cache_' . preg_replace('@[^a-z0-9]*@i', '', $rssuri) . '.dat';
+                        if (!file_exists($feedcache) || filesize($feedcache) == 0 || filemtime($feedcache) < (time() - $cachetime)) {
 
-		       require_once 'bundled-libs/Onyx/RSS.php';
-		       $c = new Onyx_RSS();
-		       $c->parse($rssuri);
+                            require_once 'bundled-libs/Onyx/RSS.php';
+                            $c = new Onyx_RSS();
+                            $c->parse($rssuri);
 
-		       $i = 0;
-		       $content = '<ul>';
-		       while (($showAll || ($i < $number)) && ($item = $c->getNextItem())) {
-		          if (empty($item['title'])) {
-                             continue;
-                          }
-			  $content .= '<li><a href="' . $this->decode($item['link']) . '" target="'.$target.'">';
-			  $content .= $this->decode($item['title']) . '</a></li>';
-                          ++$i;
-		       }
-		       $content .= '</ul>';
+                            $i = 0;
+                            $content = '<ul>';
+                            while (($showAll || ($i < $number)) && ($item = $c->getNextItem())) {
+                                if (empty($item['title'])) {
+                                    continue;
+                                }
+                                $content .= '<li><a href="' . $this->decode($item['link']) . '" target="'.$target.'">';
+                                $content .= $this->decode($item['title']) . '</a></li>';
+                                ++$i;
+                            }
+                            $content .= '</ul>';
 
-		       $fp = @fopen($feedcache, 'w');
-		       if ($fp) {
-                          fwrite($fp, $content);
-                          fclose($fp);
-                       } else {
-                          echo '<!-- Cache failed to ' . $feedcache . ' in ' . getcwd() . ' -->';
-                       }
+                            $fp = @fopen($feedcache, 'w');
+                            if ($fp) {
+                                fwrite($fp, $content);
+                                fclose($fp);
+                            } else {
+                                echo '<!-- Cache failed to ' . $feedcache . ' in ' . getcwd() . ' -->';
+                            }
 
-		    } else {
-		       $content = file_get_contents($feedcache);
-		    }
+                        } else {
+                            $content = file_get_contents($feedcache);
+                        }
 
-		    echo $content;
-		 } else {
-		    echo PLUGIN_REMOTERSS_NOURI;
-		 }
+                        echo $content;
+                    } else {
+                        echo PLUGIN_REMOTERSS_NOURI;
+                    }
                     break;
 
                 default:
                     return false;
-                    break;
+
             }
+            return true;
         } else {
             return false;
         }
     }
 
-    function decode($string) {
+    function decode($string)
+    {
         switch($this->get_config('charset', 'native')) {
             case 'native':
                 return $string;
@@ -218,7 +219,6 @@ class serendipity_event_backendrss extends serendipity_event
                 return utf8_decode($string);
         }
     }
-
 
 }
 
