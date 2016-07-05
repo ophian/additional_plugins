@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -16,7 +16,7 @@
 @define('PLUGIN_SIDEBAR_HIDER_STYLE_LINK_DESC', 'Style tags to apply to the Hider Link.');
 @define('PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE', 'Visible Link HTML');
 @define('PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE_DESC', 'HTML of the Sidebar Hidder Link when the Sidebar is visible. (ie image)');
-@define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN', 'Hidden Link HTML');        
+@define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN', 'Hidden Link HTML');   
 @define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN_DESC', 'HTML of the Sidebar Hidder Link when the Sidebar is hidden. (ie image)');
 @define('PLUGIN_SIDEBAR_HIDER_ADMINLINK', 'Manage Sidebar Visibility');
 @define('PLUGIN_SIDEBAR_HIDER_CONF', 'Sidebar Hider Configuration');
@@ -29,4 +29,3 @@
 @define('PLUGIN_SIDEBAR_HIDER_FRONTPAGE_DESC', '<Front Page>');
 @define('PLUGIN_SIDEBAR_HIDER_FRONTPAGE_ID', '0');
 
-?>

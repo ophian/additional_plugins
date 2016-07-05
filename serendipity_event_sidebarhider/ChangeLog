@@ -1,3 +1,9 @@
+1.26:
+----
+
+ * Set Plugin consistencies
+ * Use lang API - extends required version
+
 1.25: Move to the correct nav section for 2.0 backend (yellowled)
 
 1.24: Properly parse "sidebars" template option

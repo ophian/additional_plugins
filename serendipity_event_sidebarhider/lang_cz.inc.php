@@ -15,7 +15,7 @@
 @define('PLUGIN_SIDEBAR_HIDER_STYLE_LINK_DESC', 'Tag stylu, který se pou¾ije na odkaz "Schovat".');
 @define('PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE', 'HTML odkazu pøi viditelném sloupci');
 @define('PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE_DESC', 'HTML kód odkazu "Schovat", pokud je postranní sloupec vidìt (napø. obrázek)');
-@define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN', 'HTML odkazu pøi skrytém sloupci');        
+@define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN', 'HTML odkazu pøi skrytém sloupci');
 @define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN_DESC', 'HTML kód odkazu "Schovat", pokud je postranní sloupec schovaný (napø. obrázek)');
 @define('PLUGIN_SIDEBAR_HIDER_ADMINLINK', 'Správce viditelnosti postranního sloupce');
 @define('PLUGIN_SIDEBAR_HIDER_CONF', 'Nastavení skrývání postranního sloupce');
@@ -28,4 +28,3 @@
 @define('PLUGIN_SIDEBAR_HIDER_FRONTPAGE_DESC', '<Úvodní stránka>');
 @define('PLUGIN_SIDEBAR_HIDER_FRONTPAGE_ID', '0');
 
-?>

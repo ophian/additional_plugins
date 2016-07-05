@@ -1,4 +1,4 @@
-<?php #
+<?php
 
 // serendipity_event_sidebarhide
 
@@ -6,18 +6,12 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_sidebarhider extends serendipity_event
 {
     var $title = PLUGIN_SIDEBAR_HIDER_NAME;
+
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -26,15 +20,15 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking');
-        $propbag->add('version',       '1.25.1');
+        $propbag->add('version',       '1.26');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9',
-            'php'         => '4.1.0'
+            'serendipity' => '1.6',
+            'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',    array(
-            'external_plugin'    => true,
-            'frontend_header'    => true,
-            'css'                => true,
+            'external_plugin'           => true,
+            'frontend_header'           => true,
+            'css'                       => true,
             'backend_sidebar_entries'   => true,
             'backend_sidebar_admin'     => true,
             'backend_sidebar_entries_event_display_sidebarhider'    => true,
@@ -106,6 +100,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $enabled = serendipity_db_bool($this->get_config('enable'));
 
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'frontend_generate_plugins': // This is the event that actually displays the plugins on your blog
                     $plugins =& $eventData;
@@ -181,20 +176,16 @@ class serendipity_event_sidebarhider extends serendipity_event
                             }
                         }
                     }
-
-                    return true;
                     break;
 
                 case 'backend_sidebar_entries':
-                    if ($serendipity['version'][0] == '1') {
+                    if ($serendipity['version'][0] < 2) {
                         echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=sidebarhider">'.PLUGIN_SIDEBAR_HIDER_ADMINLINK.'</a></li>';
                     }
-                    return true;
                     break;
 
                 case 'backend_sidebar_admin':
                     echo '<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=sidebarhider">'.PLUGIN_SIDEBAR_HIDER_ADMINLINK.'</a></li>';
-                    return true;
                     break;
 
                 case 'backend_sidebar_entries_event_display_sidebarhider':
@@ -204,7 +195,6 @@ class serendipity_event_sidebarhider extends serendipity_event
                         $this->admin_save();
                         $this->admin_display();
                     }
-                    return true;
                     break;
 
 
@@ -311,19 +301,20 @@ class serendipity_event_sidebarhider extends serendipity_event
                             include dirname(__FILE__) . '/sidebarhider.js';
                             break;
                     }
-                    return true;
                     break;
 
                 default:
-                    return true;
-                    break;
+                    return false;
+
             }
+            return true;
         } else {
             return false;
         }
     }
 
-    function admin_display() {
+    function admin_display()
+    {
         global $serendipity;
         global $template_vars;
         $plugin_list = unserialize($this->get_config('plugin_list'));
@@ -387,9 +378,11 @@ class serendipity_event_sidebarhider extends serendipity_event
             </tr>
             </table>
             </form>
-        <?php }
+<?php
+    }
 
-    function admin_print_sidebar(&$sidebar, $side, $plugin_list) {
+    function admin_print_sidebar(&$sidebar, $side, $plugin_list)
+    {
         global $serendipity;
 
         $i = 0;
@@ -503,7 +496,8 @@ class serendipity_event_sidebarhider extends serendipity_event
         }
     }
 
-    function admin_save() {
+    function admin_save()
+    {
         global $serendipity;
         global $template_vars;
 
@@ -573,4 +567,7 @@ class serendipity_event_sidebarhider extends serendipity_event
 
         echo '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />' . sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%T')) . "<br /><br />\n</div>";
     }
+
 }
+
+?>

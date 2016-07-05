@@ -54,16 +54,16 @@ function addSideBarHiders(sideBars)
 {
     for (i = 0; i < sideBars.length; i++)
     {
-		if (!sideBars[i]) {
-			continue;
-		}
-		
+        if (!sideBars[i]) {
+            continue;
+        }
+        
         var sideBar = sideBars[i];
         for (j = 0; j < sideBar.length; j++)
         {
             var title = sideBar[j][1];
             if (!title) {
-	            continue;
+                continue;
             }
             var item = title.parentNode;
             
@@ -120,12 +120,12 @@ function sideBarHideRun()
     _sideBars = new Array();
     var sideBarA = document.getElementById('serendipityLeftSideBar');
     if (sideBarA) {
-    	_sideBars[0] = getSideBars(sideBarA);
+        _sideBars[0] = getSideBars(sideBarA);
     }
     
     var sideBarB = document.getElementById('serendipityRightSideBar');
-	if (sideBarB) {
-	    _sideBars[1] = getSideBars(sideBarB);
+    if (sideBarB) {
+        _sideBars[1] = getSideBars(sideBarB);
     }
     addSideBarHiders(_sideBars);
 }
