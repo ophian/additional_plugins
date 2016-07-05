@@ -68,7 +68,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '3.0.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '0.41');
+        $propbag->add('version',       '0.42');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -666,20 +666,20 @@ class serendipity_event_aggregator extends serendipity_event
             'last_update'       => time()
         );
 
-        if ($serendipity['version'][0] == '2') {
+        if ($serendipity['version'][0] > 1) {
             echo '<span class="msg_notice"><span class="icon-info-circled"></span> ';
         }
             echo PLUGIN_AGGREGATOR_DESC;
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo '<br /><br />';
         } else {
             echo '</span>';
         }
-        if ($serendipity['version'][0] == '2') {
+        if ($serendipity['version'][0] > 1) {
             echo '<span class="msg_hint"><span class="icon-help-circled"></span> ';
         }
             echo PLUGIN_AGGREGATOR_FEEDLIST;
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo '<br /><br />';
         } else {
             echo '</span>';
@@ -691,7 +691,7 @@ class serendipity_event_aggregator extends serendipity_event
                 <input type="hidden" name="serendipity[adminModule]" value="event_display" />
                 <input type="hidden" name="serendipity[adminAction]" value="aggregator" />
             </div>';
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo '<table align="center" width="100%" cellpadding="5" cellspacing="0" border=0>';
         } else {
             echo '<table>';
@@ -753,7 +753,7 @@ class serendipity_event_aggregator extends serendipity_event
                 <input type="hidden" name="serendipity[adminAction]" value="aggregator" />
             </div>';
 
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
         echo '
             <div>
                 <hr /><strong>
@@ -779,7 +779,7 @@ class serendipity_event_aggregator extends serendipity_event
             </div>';
         }
 
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
         echo'
             <div>
                 <hr /><strong>
@@ -1731,7 +1731,7 @@ class serendipity_event_aggregator extends serendipity_event
 
                 case 'backend_sidebar_entries':
                     if ($serendipity['serendipityUserlevel'] >= USERLEVEL_CHIEF) {
-                        if ($serendipity['version'][0] == '1') {
+                        if ($serendipity['version'][0] < 2) {
 ?>
                         <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=aggregator"><?php echo PLUGIN_AGGREGATOR_TITLE; ?></a></li>
 <?php

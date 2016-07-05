@@ -1,3 +1,7 @@
+0.42:
+-----
+    * better S9y version compat check
+
 0.41:
 -----
     * removed old Smarty2 security and display settings - extends required versions
