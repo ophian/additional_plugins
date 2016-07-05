@@ -8,16 +8,10 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_motm extends serendipity_event {
+class serendipity_event_motm extends serendipity_event
+{
     var $title = PLUGIN_SIDEBAR_MOTM_NAME;
 
     function introspect(&$propbag)
@@ -28,10 +22,10 @@ class serendipity_event_motm extends serendipity_event {
         $propbag->add('description',   PLUGIN_SIDEBAR_MOTM_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza');
-        $propbag->add('version',       '1.5');
+        $propbag->add('version',       '1.6');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',    array(
             'external_plugin'    => true,
@@ -143,7 +137,7 @@ class serendipity_event_motm extends serendipity_event {
             switch($event)
             {
                 case 'backend_sidebar_entries':
-                    if ($serendipity['version'][0] == '1') {
+                    if ($serendipity['version'][0] < 2) {
                         echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=motm">'.PLUGIN_SIDEBAR_MOTM_ADMIN_LINK.'</a></li>';
                     }
                     return true;
@@ -227,13 +221,13 @@ class serendipity_event_motm extends serendipity_event {
                             return true;
                             break;
                     }
-                    return true;
                     break;
 
                 default:
-                    return true;
-                    break;
+                    return false;
+
             }
+            return true;
         } else {
             return false;
         }
@@ -286,6 +280,7 @@ class serendipity_event_motm extends serendipity_event {
                 $this->admin_display(); break;
         }
     }
+
     function admin_display()
     {
         echo "<div>\n";

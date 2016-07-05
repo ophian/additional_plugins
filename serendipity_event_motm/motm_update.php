@@ -154,6 +154,7 @@ function parse_Amazon_XML($xml)
 	$xml_parsed["url"]=node_content($calcX->xpath_eval("//ProductInfo/Details/attribute::url",$calcX),"value");
 	return $xml_parsed;
 }
+
 function hasImage($URL_in) {
 	$image = getimagesize($URL_in);
 	if ($image[1] == 1)

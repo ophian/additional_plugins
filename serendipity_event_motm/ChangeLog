@@ -1,1 +1,9 @@
-1.5: Move to the correct nav section for 2.0 backend (yellowled)
+1.6:
+----
+
+ * Set Plugin consistencies
+ * Use lang API - extends required version
+
+1.5:
+----
+ * Move to the correct nav section for 2.0 backend (yellowled)

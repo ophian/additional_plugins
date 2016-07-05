@@ -6,7 +6,8 @@
 */
 
 // Currently only handles 'lite' queries on 'books'
-class AmazonSearchEngine {
+class AmazonSearchEngine
+{
     var $server = 'xml.amazon.com';
     var $search;
     var $dev_token;
@@ -17,7 +18,9 @@ class AmazonSearchEngine {
     var $_currentResult;
     var $_grabtags; // Tags to grab the contents of
     var $_currentTagContents;
-    function AmazonSearchEngine($dev_token, $associates_id = 'none') {
+
+    function AmazonSearchEngine($dev_token, $associates_id = 'none')
+    {
         $this->dev_token = $dev_token;
         $this->associates_id = $associates_id;
         $this->_parser = xml_parser_create();
@@ -33,7 +36,8 @@ class AmazonSearchEngine {
             'UsedPrice', 'Author', 'Artist'
         );
     }
-    function doSearch($url) {
+    function doSearch($url)
+    {
         $req = new HTTP_Request($url);
         $req->sendRequest();
         $contents = $req->getResponseBody();
@@ -44,20 +48,24 @@ class AmazonSearchEngine {
         }
         xml_parser_free($this->_parser);
     }
-    function searchTerm($term, $mode = 'music') {
+    function searchTerm($term, $mode = 'music')
+    {
         $url = "http://{$this->server}/onca/xml3?t={$this->associates_id}&KeywordSearch=$term&mode=$mode";
         $url .= "&f=xml&type={$this->type}&dev-t={$this->dev_token}";
         $this->doSearch($url);
     }
-    function searchISBN($isbn) {
+    function searchISBN($isbn)
+    {
         $url = "http://{$this->server}/onca/xml?v=1.0&t={$this->associates_id}&dev-t={$this->dev_token}&AsinSearch=$isbn&type={$this->type}&f=xml";
         $this->doSearch($url);
     }
-    function searchAuthor($author) {
+    function searchAuthor($author)
+    {
         $url = "http://{$this->server}/onca/xml?v=1.0&t={$this->associates_id}&dev-t={$this->dev_token}&AuthorSearch=$author&mode=books&type={$this->type}&f=xml";
         $this->doSearch($url);
     }
-    function searchRelated($asin) {
+    function searchRelated($asin)
+    {
         $url = "http://{$this->server}/onca/xml?v=1.0&t={$this->associates_id}&dev-t={$this->dev_token}&SimilaritySearch=$asin&type={$this->type}&f=xml";
         $this->doSearch($url);
     }
@@ -99,5 +107,7 @@ class AmazonSearchEngine {
                 }
         }
     }
+
 }
+
 ?>

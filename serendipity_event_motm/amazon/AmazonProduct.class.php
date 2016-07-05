@@ -1,6 +1,8 @@
 <?php
+
 /* This class does not handle shopping basket details */
-class AmazonProduct {
+class AmazonProduct
+{
     var $url;
     var $Asin;
     var $ProductName;
@@ -17,11 +19,15 @@ class AmazonProduct {
     var $ListPrice;
     var $OurPrice;
     var $UsedPrice;
-    function AmazonProduct() {
+
+    function AmazonProduct()
+    {
         // Does nothing for the moment
         return;
     }
-    function getSaving() {
+
+    function getSaving()
+    {
         // Returns Amazon saving, if any
         $difference = (float)substr($this->ListPrice, 1) - (float)substr($this->OurPrice, 1);
         if ($difference > 0) {
@@ -31,5 +37,7 @@ class AmazonProduct {
         }
         return $save;
     }
+
 }
+
 ?>

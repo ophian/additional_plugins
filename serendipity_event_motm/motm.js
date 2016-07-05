@@ -15,7 +15,7 @@ function refresh()
 function do_refresh()
 {
     var container = document.getElementById('motm_container');
-    
+
     // if we go over, refresh to remove progress bar
     if (secsnow > secstotal && poll_count == 0)
     {
@@ -48,7 +48,7 @@ function slide(secsnow,secstotal) {
     trackw = track.style.width;
     trackw = trackw.replace(/px/g,"");
     trackw = trackw - 2;
-    
+
     // running slip total, averaged
     //  accomidate for setTimeout lag, keeps everything more accurate, big problem on large tracks
     //  usually accruate within 1 second vs 30+ seconds on a 10 minute track
@@ -58,8 +58,8 @@ function slide(secsnow,secstotal) {
         slidetime_slip = 0;
     slidetime2 = slidetime;
     slidetime = new_slidetime;
-    
-    
+
+
     if (secsnow > secstotal && (secsnow - secstotal) <= 4)
     {
         // refresh in 5 seconds
@@ -72,7 +72,7 @@ function slide(secsnow,secstotal) {
         slider.innerHTML = "(" + (5 - (secsnow - secstotal)) + ")";
         refresh();
     }
-    else 
+    else
     {
         // refresh every seconds
         pctcomplete = secsnow / secstotal;
@@ -88,5 +88,5 @@ function stime(secs) {
     smin = secs >= 60 ? Math.floor(secs / 60) : 0;
     ssec = secs - 60 * smin;
     ssec = ssec < 10 ? '0'+ssec : ssec;
-    return smin+':'+ssec;   
+    return smin+':'+ssec;
 }

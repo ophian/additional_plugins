@@ -1,4 +1,5 @@
 <?php
+
 function amazon_search($term,$associate_id,$dev_key)
 {
     require_once('AmazonProduct.class.php');
@@ -23,4 +24,5 @@ function amazon_search($term,$associate_id,$dev_key)
     else
         return false;
 }
+
 ?>

@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -43,7 +43,7 @@
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_ADD_URL',"Stream URL");
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_ADD_WS_NAME',"Stream website name (optional)");
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_ADD_WS_URL',"Stream website url (optional)");
-@define('PLUGIN_SIDEBAR_MOTM_ADMIN_ADD_SUBMIT',"Add");  
+@define('PLUGIN_SIDEBAR_MOTM_ADMIN_ADD_SUBMIT',"Add");
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_DISPLAY',"Manage streams:");
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_DISPLAY_STREAM',"Stream");
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_DISPLAY_ACTION',"Action");
@@ -53,4 +53,3 @@
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_CANCEL',"Cancel");
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_DELETE',"Are you sure you want to delete");
 
-?>

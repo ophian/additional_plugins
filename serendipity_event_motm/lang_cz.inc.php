@@ -42,7 +42,7 @@
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_ADD_URL','Stream URL');
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_ADD_WS_NAME','Název webu streamu (nepovinné)');
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_ADD_WS_URL','URL adresa webu streamu (volitelné)');
-@define('PLUGIN_SIDEBAR_MOTM_ADMIN_ADD_SUBMIT','Pøidat');  
+@define('PLUGIN_SIDEBAR_MOTM_ADMIN_ADD_SUBMIT','Pøidat');
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_DISPLAY','Správa streamù');
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_DISPLAY_STREAM','Stream');
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_DISPLAY_ACTION','Akce');
@@ -52,4 +52,3 @@
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_CANCEL','Zru¹it');
 @define('PLUGIN_SIDEBAR_MOTM_ADMIN_DELETE','Opravdu smazat');
 
-?>
