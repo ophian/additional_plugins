@@ -1,3 +1,10 @@
+0.2.9:
+----
+
+ * Set Plugin consistencies
+ * Use lang API - extends required version
+ * add more sqlite db type checks
+
 0.2.8:
     Add cronjob support through cronjob plugin
     Add support to empty cronjoblog db table

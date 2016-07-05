@@ -4,16 +4,10 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_dbclean extends serendipity_event {
+class serendipity_event_dbclean extends serendipity_event
+{
     var $title = PLUGIN_EVENT_DBCLEAN_NAME;
 
     function introspect(&$propbag)
@@ -24,9 +18,9 @@ class serendipity_event_dbclean extends serendipity_event {
         $propbag->add('description',   PLUGIN_EVENT_DBCLEAN_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda, Matthias Mees');
-        $propbag->add('version',       '0.2.8');
+        $propbag->add('version',       '0.2.9');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8'
+            'serendipity' => '1.6'
         ));
         $propbag->add('event_hooks',   array(
                                     'backend_sidebar_admin'  => true,
@@ -40,12 +34,13 @@ class serendipity_event_dbclean extends serendipity_event {
         $propbag->add('configuration', array('cronjob', 'days'));
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'cronjob':
                 if (class_exists('serendipity_event_cronjob')) {
@@ -70,11 +65,14 @@ class serendipity_event_dbclean extends serendipity_event {
         return true;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
+
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'cronjob':
                     if ($this->get_config('cronjob') == $eventData) {
@@ -90,11 +88,9 @@ class serendipity_event_dbclean extends serendipity_event {
                             $this->cleanDB('exits', $days);
                         }
                     }
-                    return true;
                     break;
 
                 case 'external_plugin':
-
                     switch ($eventData) {
                         case 'dbclean':
                             if (! (serendipity_checkPermission('siteConfiguration') || serendipity_checkPermission('blogConfiguration'))) {
@@ -126,28 +122,27 @@ class serendipity_event_dbclean extends serendipity_event {
                             return true;
                             break;
                         }
-                        return true;
                         break;
 
                 case 'backend_sidebar_admin':
-                    if ($serendipity['version'][0] == '1') {
+                    if ($serendipity['version'][0] < 2) {
                         echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=dbclean">' .PLUGIN_EVENT_DBCLEAN_NAME .'</a></li>';
                     } else {
                         echo '<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=dbclean">' .PLUGIN_EVENT_DBCLEAN_NAME .'</a></li>';
                     }
-                    return true;
                     break;
 
 
                 case 'backend_sidebar_entries_event_display_dbclean':
                     $this->displayMenu();
-
-                    return true;
                     break;
 
                 case 'css_backend':
                     if ($serendipity['version'][0] > 1) {
-?>
+                    // append!
+                    $eventData .= '
+
+/* serendipity event_dbclean start */
 
 #dbcleanTable {
     border: 1px solid #aaa;
@@ -168,48 +163,53 @@ class serendipity_event_dbclean extends serendipity_event {
     padding: .125em .25em;
 }
 
-<?php
-                    }
+/* serendipity event_dbclean end */
 
-                    return true;
+';
+                    }
                     break;
 
                 default:
                     return false;
+
             }
+            return true;
         } else {
             return false;
         }
     }
 
-    function cleanDB($table, $days) {
+    function cleanDB($table, $days)
+    {
         global $serendipity;
         set_time_limit(0);
-        if($table=='visitors') {
+        if($table == 'visitors') {
             $sql = "DELETE
-                FROM {$serendipity['dbPrefix']}visitors
-                WHERE unix_timestamp(concat(day,' ',time)) <" . (time() - ($days*24*60*60));
+                      FROM {$serendipity['dbPrefix']}visitors
+                     WHERE unix_timestamp(concat(day,' ',time)) <" . (time() - ($days*24*60*60));
             serendipity_db_query($sql);
         } else if ($table =='referrers') {
              $sql = "DELETE
-                    FROM {$serendipity['dbPrefix']}$table
-                    WHERE day <" . (time() - ($days*24*60*60));
+                       FROM {$serendipity['dbPrefix']}$table
+                      WHERE day <" . (time() - ($days*24*60*60));
             serendipity_db_query($sql);
-        } else if ($table =='exits') {
+        } else if ($table == 'exits') {
              $sql = "DELETE
-                    FROM {$serendipity['dbPrefix']}$table
-                    WHERE day < '" . date( 'Y-m-d', (time() - ($days*24*60*60))) ."'";
+                       FROM {$serendipity['dbPrefix']}$table
+                      WHERE day < '" . date( 'Y-m-d', (time() - ($days*24*60*60))) ."'";
             serendipity_db_query($sql);
         } else {
             $sql = "DELETE
-                    FROM {$serendipity['dbPrefix']}$table
-                    WHERE timestamp < " . (time() - ($days*24*60*60));
+                      FROM {$serendipity['dbPrefix']}$table
+                     WHERE timestamp < " . (time() - ($days*24*60*60));
             serendipity_db_query($sql);
         }
 
         switch($serendipity['dbType']) {
             case 'sqlite':
             case 'sqlite3':
+            case 'sqlite3oo':
+            case 'pdo-sqlite':
                 $sql = "VACUUM";
                 serendipity_db_query($sql);
                 break;
@@ -227,19 +227,19 @@ class serendipity_event_dbclean extends serendipity_event {
                 serendipity_db_query($sql);
                 break;
         }
-
     }
 
-    function displayMenu() {
+    function displayMenu()
+    {
         global $serendipity;
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo '<style>#dbcleanTable { width: 100%; text-align: center; } #dbcleanTable th { text-align: center; }</style>';
         }
 
         echo '<h2>' . PLUGIN_EVENT_DBCLEAN_NAME_MENU . '</h2>';
 
         echo '<form action="'.$serendipity ['baseURL'] . 'index.php?/plugin/dbclean' .'" method="post">';
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo PLUGIN_EVENT_DBCLEAN_MENU_KEEP . ' <input type="text" name="days" value="' . $this->get_config('days') . '" size="3" maxlength="3" /> ' . DAYS;
         } else {
             echo '<div class="form_field">';
@@ -288,7 +288,7 @@ class serendipity_event_dbclean extends serendipity_event {
         echo '<td>' . $this->countElements('cronjoblog') . '</td>';
         echo '</tr>';
         echo '</table>';
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo '<input type="submit" value="' . GO . '" tabindex="2" />';
         } else {
             echo '<div class="form_buttons"><input class="state_cancel" type="submit" value="' . DELETE . '"></div>';
@@ -296,7 +296,8 @@ class serendipity_event_dbclean extends serendipity_event {
         echo '</form>';
     }
 
-    function countElements($table, $timespan=false) {
+    function countElements($table, $timespan=false)
+    {
         global $serendipity;
         if (! $timespan) {
             $sql = "SELECT COUNT(*)
@@ -325,21 +326,22 @@ class serendipity_event_dbclean extends serendipity_event {
         return 0;
     }
 
-    function debugMsg($msg) {
-		global $serendipity;
+    function debugMsg($msg)
+    {
+        global $serendipity;
 
-		$this->debug_fp = @fopen ( $serendipity ['serendipityPath'] . 'templates_c/dbclean.log', 'a' );
-		if (! $this->debug_fp) {
-			return false;
-		}
+        $this->debug_fp = @fopen ( $serendipity ['serendipityPath'] . 'templates_c/dbclean.log', 'a' );
+        if (! $this->debug_fp) {
+            return false;
+        }
 
-		if (empty ( $msg )) {
-			fwrite ( $this->debug_fp, "failure \n" );
-		} else {
-			fwrite ( $this->debug_fp, print_r ( $msg, true ) );
-		}
-		fclose ( $this->debug_fp );
-	}
+        if (empty ( $msg )) {
+            fwrite ( $this->debug_fp, "failure \n" );
+        } else {
+            fwrite ( $this->debug_fp, print_r ( $msg, true ) );
+        }
+        fclose ( $this->debug_fp );
+    }
 
 }
 

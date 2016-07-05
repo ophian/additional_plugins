@@ -10,3 +10,4 @@
 @define('PLUGIN_EVENT_DBCLEAN_NAME_MENU', 'Smazat stará data');
 @define('PLUGIN_EVENT_DBCLEAN_MENU_KEEP', 'Zachovat data od poslední(ho)');
 @define('PLUGIN_EVENT_DBCLEAN_TABLE', 'Tabulka');
+

@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -12,4 +12,4 @@
 @define('PLUGIN_EVENT_DBCLEAN_MENU_KEEP', 'Keep data from the last');
 @define('PLUGIN_EVENT_DBCLEAN_TABLE', 'Table');
 @define('PLUGIN_EVENT_DBCLEAN_CRONJOB', 'Execute cronjob when?');
-?>
+
