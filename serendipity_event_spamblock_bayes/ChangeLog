@@ -1,3 +1,7 @@
+0.4.24:
+-------
+ * better S9y version compat check
+
 0.4.23:
 
  * remove old Smarty2 security settings
