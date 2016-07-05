@@ -130,8 +130,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backendrss</link>
 <category>Event Plugins</category>
 <author>Sebastian Nohn</author>
-<content:encoded>&lt;b&gt;serendipity_event_backendrss&lt;br /&gt;Display RSS-Feed in Backend Overview&lt;/b&gt;&lt;br /&gt;Displays a RSS feed on the overview page (right after login) to the administration interface&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_backendrss&lt;br /&gt;Display RSS-Feed in Backend Overview&lt;/b&gt;&lt;br /&gt;Displays a RSS feed on the overview page (right after login) to the administration interface&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Tue, 05 Jul 2016 18:07:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backendrss</guid>
 </item>
 <item>
@@ -148,8 +148,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_blogpdf</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Olivier PLATHEY, Steven Wittens</author>
-<content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;Exporter votre blog en PDF&lt;/b&gt;&lt;br /&gt;Permet aux visiteurs de télécharger tout votre blog ou certains articles au format PDF&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;Exporter votre blog en PDF&lt;/b&gt;&lt;br /&gt;Permet aux visiteurs de télécharger tout votre blog ou certains articles au format PDF&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Tue, 05 Jul 2016 18:16:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
@@ -158,7 +158,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
 <content:encoded>&lt;b&gt;serendipity_event_browserid&lt;br /&gt;BrowserID Authentification&lt;/b&gt;&lt;br /&gt;Allows authors to authenticate using the BrowserID service.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<pubDate>Tue, 05 Jul 2016 18:41:10 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_browserid</guid>
 </item>
 <item>

@@ -785,9 +785,9 @@
 <description>Displays a RSS feed on the overview page (right after login) to the administration interface</description>
 <maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.5</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-07-05</date>
   <filelist>
 <dir name="serendipity_event_backendrss">
 <file>lang_bg.inc.php</file>
@@ -878,9 +878,9 @@
 <description> Exportar el blog completo como archivo pdf </description>
 <maintainers><maintainer><name>Garvin Hicking, Olivier PLATHEY, Steven Wittens</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.82.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.83</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-07-05</date>
   <filelist>
 <dir name="serendipity_event_blogpdf">
 <file>.htaccess</file>
@@ -1037,9 +1037,9 @@
 <description>Allows authors to authenticate using the BrowserID service.</description>
 <maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.1</version>
+  <version>1.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-05</date>
   <filelist>
 <dir name="serendipity_event_browserid">
 <file>.htaccess</file>
