@@ -9,3 +9,4 @@
 
 @define('PLUGIN_ASSIGNCATEGORIES_NAME',		'Pøiøazení více kategorií');
 @define('PLUGIN_ASSIGNCATEGORIES_DESC',		'Umo¾òuje pøiøadit pøíspìvku více kategorií');
+

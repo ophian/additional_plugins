@@ -9,3 +9,4 @@
 
 @define('PLUGIN_ASSIGNCATEGORIES_NAME',		'Přiřazení více kategorií');
 @define('PLUGIN_ASSIGNCATEGORIES_DESC',		'Umožňuje přiřadit příspěvku více kategorií');
+

@@ -1,1 +1,10 @@
-1.4: Added additional backend markup for 2.0 backend (yellowled)
+1.5:
+----
+
+ * Set Plugin consistencies
+ * Use lang API - extends required version
+
+1.4:
+----
+
+ * Added additional backend markup for 2.0 backend (yellowled)

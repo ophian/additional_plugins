@@ -1,16 +1,10 @@
-<?php #
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_assigncategories extends serendipity_event
 {
@@ -23,10 +17,10 @@ class serendipity_event_assigncategories extends serendipity_event
         $propbag->add('description',   PLUGIN_ASSIGNCATEGORIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Matthias Mees');
-        $propbag->add('version',       '1.4.1');
+        $propbag->add('version',       '1.5');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'php'         => '4.1.0'
+            'serendipity' => '1.6',
+            'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',    array(
             'backend_sidebar_entries'   => true,
@@ -46,30 +40,30 @@ class serendipity_event_assigncategories extends serendipity_event
             switch($event) {
                 case 'backend_sidebar_entries':
                     if ($this->check()) {
-                        if ($serendipity['version'][0] == '1') {
+                        if ($serendipity['version'][0] < 2) {
                             echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=assigncategories">' . PLUGIN_ASSIGNCATEGORIES_NAME . '</a></li>';
                         } else {
                             echo '<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=assigncategories">' . PLUGIN_ASSIGNCATEGORIES_NAME . '</a></li>';
                         }
                     }
-                    return true;
                     break;
 
                 case 'backend_sidebar_entries_event_display_assigncategories':
                     $this->showAssignment();
-                    return true;
                     break;
 
                 default:
-                    return true;
-                    break;
+                    return false;
+
             }
+            return true;
         } else {
             return false;
         }
     }
 
-    function &getAllEntries() {
+    function &getAllEntries()
+    {
         global $serendipity;
 
         $rows = serendipity_db_query("SELECT e.id, e.title, c.categoryid
@@ -90,7 +84,8 @@ class serendipity_event_assigncategories extends serendipity_event
         return $entries;
     }
 
-    function check() {
+    function check()
+    {
         global $serendipity;
 
         if (function_exists('serendipity_checkPermission')) {
@@ -102,7 +97,8 @@ class serendipity_event_assigncategories extends serendipity_event
         }
     }
 
-    function updateCategories(&$entries) {
+    function updateCategories(&$entries)
+    {
         global $serendipity;
 
         foreach($entries AS $entryid => $entry) {
@@ -117,21 +113,22 @@ class serendipity_event_assigncategories extends serendipity_event
             }
         }
 
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />'. CATEGORY_SAVED .'</div>';
         } else {
             echo '<span class="msg_success"><span class="icon-ok-circled"></span> '. CATEGORY_SAVED .'</span>';
         }
     }
 
-    function showAssignment() {
+    function showAssignment()
+    {
         global $serendipity;
 
         if (!$this->check()) {
             return false;
         }
 
-        if ($serendipity['version'][0] == '2') {
+        if ($serendipity['version'][0] > 1) {
             echo '<h2>' . PLUGIN_ASSIGNCATEGORIES_NAME . '</h2>';
         }
 
@@ -147,7 +144,7 @@ class serendipity_event_assigncategories extends serendipity_event
 
         $cats = serendipity_fetchCategories('all');
 
-        if ($serendipity['version'][0] == '1') {
+        if ($serendipity['version'][0] < 2) {
             echo '<table>';
             foreach ($cats as $cat_data) {
                 echo '<tr>' . "\n";
@@ -182,5 +179,7 @@ class serendipity_event_assigncategories extends serendipity_event
         }
         echo '</form>';
     }
+
 }
+
 ?>
