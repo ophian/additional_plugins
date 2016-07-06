@@ -1,4 +1,4 @@
-<?php # lang_de.inc.php 1.0 2011-11-22 10:20:54 VladaAjgl $
+<?php
 
 /**
  *  @version 1.0
@@ -123,6 +123,7 @@
 @define('PLUGIN_DOWNLOADMANAGER_NO_TRASH', 'Kein Müll im ftp/trash Verzeichnis');
 @define('PLUGIN_DOWNLOADMANAGER_EDIT_FILE_RENAME', 'Datei umbenennen in');
 /* HELPTIP_CF = category folder; HELPTIP_IF = incoming folder; HELPTIP_FF = file folder; HELPTIP_MF = s9y media library folder; */
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_CF_START', 'Start: Erstellen Sie eine Kategorie, um Dateien hochzuladen.');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_CF_CHANGE', 'Kategorie Name im Feld selbst ändern / <em>Enter</em>');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_VIEW', 'Um das ftp/trash Verzeichnis zu sehen, wählen sie einen Subordner von root.');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_MULTI', 'Alle Dateien im ftp/trash Verzeichnis werden sofort gelöscht!');
@@ -137,9 +138,9 @@
 /*
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_VIEW', '');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_VIEW', '');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_VIEW', '');
 */
 
 // Next lines were translated on 2011/11/22
 @define('PLUGIN_DOWNLOADMANAGER_BACK_ROOT', 'Wurzel-Kategorie');
 @define('PLUGIN_DOWNLOADMANAGER_BACK_CURRENT', 'Aktuelle Kategorie');
+

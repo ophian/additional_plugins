@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 # (c) 2005 by Alexander 'dma147' Mieland, http://blog.linux-stats.org, <dma147@linux-stats.org>
 # Contact me on IRC in #linux-stats, #archlinux, #archlinux.de, #s9y on irc.freenode.net
@@ -89,5 +89,3 @@
 @define("PLUGIN_DOWNLOADMANAGER_UNHIDE_TREE", "Visualizza questa categoria e tutte le sotto-categorie contenute...");
 @define("PLUGIN_DOWNLOADMANAGER_OPEN_CAT", "Clicca per aprire questa categoria per caricare e modificare i file...");
 
-
-?>

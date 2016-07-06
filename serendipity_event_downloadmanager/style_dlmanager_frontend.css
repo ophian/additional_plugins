@@ -1,4 +1,5 @@
 /** style_dlmanager_frontend.css last modified 2010-08-25 **/
+
 #downloadmanager table {
     background: #ddd;
     border: 1px solid #aaa;
@@ -32,3 +33,5 @@
 
 #downloadmanager .dlm_info,
 #downloadmanager .dlm_intro { display: block; margin: 10px 0; padding: 4px 2px; border: 1px solid #aaa; width: 94.4%; }
+
+/** style_dlmanager_frontend.css end **/

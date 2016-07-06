@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 @define('PLUGIN_DOWNLOADMANAGER_TITLE', 'Downloadmanager');
 @define('PLUGIN_DOWNLOADMANAGER_DESC', 'Provides full downloadmanager capabilities to your s9y. When uninstalling, all related tables will be dropped!');
@@ -110,7 +110,7 @@
 @define('PLUGIN_DOWNLOADMANAGER_ROOTLEVEL_TITLE', 'files at root level (hidden in frontend!)');
 @define('PLUGIN_DOWNLOADMANAGER_ERRORS_UPGRADE_NOTCOPIED', 'We are sorry! An error occured. The files of<br /><em>%s</em><br />could not be moved to<br /><em>%s</em>.<br /><br />Please move them manually and press <a class="backend_error_link" href="%s">this link</a>, to inform this plugin about it!<br />Additionally remove the old directories manually too.<br />');
 @define('PLUGIN_DOWNLOADMANAGER_ALLFILES_COPIED_NEWDIR', 'Since you upgraded your downloadmanager plugin to v.0.24, all you files were copied to the new \'/.dlm/files\' and \'/.dlm/ftpin\' directories in serendipities \'/archives\' folder to avoid oldpath conflicts.<br /><br />The config settings were set to hold the new path strings and are not alterable any more in future.<br />Please remove the old directories manually.<br />');
-@define('PLUGIN_DOWNLOADMANAGER_ALLFILES_COPY_NEWDIR_REMEMBER', 'You have successfull changed this plugin to accept the new path settings only.<br /><br />Please remember, to move your files manually to the new \'archives/.dlm/files\' and \'archives/.dlm/ftpin\' directories!<br />Additionally remove the old directories manually too.<br />');
+@define('PLUGIN_DOWNLOADMANAGER_ALLFILES_COPY_NEWDIR_REMEMBER', 'You have successfully changed this plugin to accept the new path settings only.<br /><br />Please remember, to move your files manually to the new \'archives/.dlm/files\' and \'archives/.dlm/ftpin\' directories!<br />Additionally remove the old directories manually too.<br />');
 @define('PLUGIN_DOWNLOADMANAGER_BUTTON_MARK', 'mark all / unmark');
 @define('PLUGIN_DOWNLOADMANAGER_BUTTON_MARK_TITLE', 'erase all marked');
 @define('PLUGIN_DOWNLOADMANAGER_BUTTON_MOVE_TITLE', 'move all marked to category');
@@ -120,6 +120,7 @@
 @define('PLUGIN_DOWNLOADMANAGER_BACK_ROOT', 'Root category');
 @define('PLUGIN_DOWNLOADMANAGER_BACK_CURRENT', 'Current category');
 /* HELPTIP_CF = category folder; HELPTIP_IF = incoming folder; HELPTIP_FF = file folder; HELPTIP_MF = s9y media library folder; */
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_CF_START', 'Start: Create a category to upload files.');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_CF_CHANGE', 'Change category name in cat field directly / <em>Enter</em>');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_VIEW', 'To view and handle ftp/trash folder, choose subcategory of root.');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_MULTI', 'All file erasing in ftp/trash folder will happen immediately!');
@@ -136,3 +137,4 @@
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_VIEW', '');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_VIEW', '');
 */
+

@@ -1,4 +1,4 @@
-{* backend.dlm.rootpage.tpl last modified 2010-09-21 *}
+{* backend.dlm.rootpage.tpl last modified 2016-07-06 *}
 {if $dlmgbl.thispage == 1 && $dlmact.addcat === true}
 {* Add category to selectfield cat *}
 <p id="dlm_addcat_header" class="dlm_backend_option"><a href="#" onclick="showConfig('dlm1'); return false" title="{$CONST.TOGGLE_OPTION}"><img src="{serendipity_getFile file="img/plus.png"}" id="optiondlm1" alt="+/-" /> {$CONST.PLUGIN_DOWNLOADMANAGER_ADD_CAT}</a></p>
@@ -9,13 +9,13 @@
         <input type="hidden" name="serendipity[adminModule]" value="event_display" />
         <input type="hidden" name="serendipity[adminAction]" value="downloadmanager" />
     </div>
-    
+
     <div id="addcat">
         <div class="addcat_field">
             <label for="addcat_catname">{$CONST.PLUGIN_DOWNLOADMANAGER_CATNAME}</label>
             <input id="addcat_catname" type="text" name="serendipity[catname]" value="" />
         </div>
-        
+
         <div class="addcat_field">
             <label for="addcat_childof">{$CONST.PLUGIN_DOWNLOADMANAGER_SUBCAT_OF}</label>
             <select id="addcat_childof" name="serendipity[childof]">
@@ -24,9 +24,9 @@
             {/foreach}
             </select>
         </div>
-        
+
         <input id="addcat_submit" class="serendipityPrettyButton input_button" type="submit" name="serendipity[dlmanAction]" value="{$CONST.GO}">
-    </div>    
+    </div>
     </form>
 </div>
 <script type="text/javascript" language="JavaScript">document.getElementById('dlm1').style.display = 'none';</script>
@@ -108,7 +108,7 @@
     <tbody>
     {section name="cat" loop=$dlmhcs.catlist}
     {* exclude cat[payload] = root being generated here! *}
-    {if $dlmhcs.catlist[cat].cat.payload != 'root'}        
+    {if $dlmhcs.catlist[cat].cat.payload != 'root'}
         <tr>
             <td>
             {if $dlmhcs.catlist[cat].cat.subcats <= 0}
@@ -122,7 +122,7 @@
                 <a href=./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;hidecat=1&amp;hide=0&amp;catid={$dlmhcs.catlist[cat].cat.node_id}><img src="{$dlmgbl.httppath}img/unhide2.png" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_UNHIDE_TREE}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_UNHIDE_TREE}" /></a>
             {/if}
             {foreach from=$dlmhcs.catlist[cat].imgname item="s"}<img src="{$dlmgbl.httppath}img/{$s}.gif" alt="tree" /> {/foreach}
-            {if $dlmhcs.catlist[cat].cat.hidden != 1}   
+            {if $dlmhcs.catlist[cat].cat.hidden != 1}
                 <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmhcs.catlist[cat].cat.node_id}"><img src="{$dlmgbl.httppath}{if $dlmhcs.catlist[cat].cat.node_id == $dlmhcs.cn}img/fex.png{else}img/f.png{/if}"  alt="{$CONST.PLUGIN_DOWNLOADMANAGER_OPEN_CAT}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_OPEN_CAT}" /></a>
             {else}
                 <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmhcs.catlist[cat].cat.node_id}"><img src="{$dlmgbl.httppath}{if $dlmhcs.catlist[cat].cat.node_id == $dlmhcs.cn}img/hfex2.png{else}img/hf.png{/if}"  alt="{$CONST.PLUGIN_DOWNLOADMANAGER_OPEN_CAT}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_OPEN_CAT}" /></a>

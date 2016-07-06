@@ -1,5 +1,5 @@
 /**********************************************************************************************/
-/* style_dlmanager_backend.css in serendipity_event_downloadmanager.php v.0.25 2010-09-23 ian */
+/* style_dlmanager_backend.css in serendipity_event_downloadmanager.php v.0.31 2016-05-09 ian */
 /**********************************************************************************************/
 
 /*********************************************/
@@ -44,17 +44,12 @@
 #dlm_toggle_optionall,
 #back_to_rootpage,
 #back_to_catpage {
-    display:inline;
-    float:right;
+    display: inline;
+    float: right;
 }
 
 #backend_downloadmanager h3 {
-    background-color: #f0f0f0;
-    border: 1px solid #777;
-    font-size: 1em;
-    margin: 0 0 16px;
-    padding: 10px 0 10px 20px;
-    background: -moz-linear-gradient(left 20deg, #BC8F8F, #F0F0F0);
+    margin-top: 1.5em;
 }
 
 .dlm_page_header {
@@ -202,8 +197,8 @@ input#dlm_file_rename { border: 1px solid #888; background-color: rgb(221, 230, 
     font-weight: bold;
     text-align: center;
 }
-/* some little voodoo magic to make the tree/input pair appear as squeezed as possible */
-#catlist td img { margin: 0; width: 1.56em; vertical-align: bottom; }
+/* some little voodoo magic to make the tree/input pair appear as squeezed as possible width: 1.56em;*/
+#catlist td img { margin: 0; padding: .5em; vertical-align: bottom; }
 #catlist tbody tr { line-height: 1.4; }
 #catlist tbody td { padding: 0; background: none repeat scroll 0 0 #f8f8ff; }
 
@@ -217,7 +212,7 @@ input#dlm_file_rename { border: 1px solid #888; background-color: rgb(221, 230, 
 .catlist_catname_input:hover { background: none repeat scroll 0 0 #FFFF99; /* light yellow */ }
 .catlist_catname_input:focus:hover { background: none repeat scroll 0 0 #99FF99; /* light green */ }
 
-#catname_submit { margin-bottom: 2px; }
+#catname_submit { margin: .25em 0; }
 
 .catlist_numoffiles {
     font-size: 1em;
@@ -351,3 +346,11 @@ input#dlm_file_rename { border: 1px solid #888; background-color: rgb(221, 230, 
 #backend_downloadmanager .dlm_backend_file_box img,
 #backend_downloadmanager .dlm_backend_ftp_box img,
 #backend_downloadmanager .dlm_backend_s9ml_box img { vertical-align: text-bottom; /* this is important */ }
+
+#backend_downloadmanager input[type="image"] {
+    vertical-align: middle;
+}
+
+#backend_downloadmanager .dlm_backend_file_box thead img,
+#backend_downloadmanager .dlm_backend_cats thead img,
+#ftpfiles thead img { height: 1em; }

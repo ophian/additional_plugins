@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 # (c) 2005 by Alexander 'dma147' Mieland, http://blog.linux-stats.org, <dma147@linux-stats.org>
 # Contact me on IRC in #linux-stats, #archlinux, #archlinux.de, #s9y on irc.freenode.net
@@ -97,4 +97,3 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 @define("PLUGIN_DOWNLOADMANAGER_UNHIDE_TREE", "Unhide this and the complete subtree below this category...");
 @define("PLUGIN_DOWNLOADMANAGER_OPEN_CAT", "ファイルのアップロードか修正するこのカテゴリを開くためにクリックしてください...");
 
-?>

@@ -1,6 +1,13 @@
 ChangeLog:
 """"""""""
 
+[Version 0.31 2016/05/09] by Ian
+ * Replaced the old method for generating random strings, which was broken with current PHP versions
+ * Some Serendipity 2.0x optimizing - changed requirement version
+ * Set Plugin consistencies
+ * Use lang API - extends required version
+ * Append CSS, not prepend
+
 Propagate $smarty.env.staticpage_pagetitle (and the others) so that it can be used in entries.tpl
 latest: Smarty3 forward compatibility
 

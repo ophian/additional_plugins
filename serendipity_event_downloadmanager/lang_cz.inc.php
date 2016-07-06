@@ -137,3 +137,4 @@
 @define('PLUGIN_DOWNLOADMANAGER_BACK_CURRENT', 'Aktuální kategorie');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_CHANGE', 'Zmìnit jméno souboru pod soubor-odkaz editovat-podstránka.');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_LFTP', 'Nahrát soubory pomocí ftp do adresáøe /serendipity/archives/.dlm/ftpin folder.');
+
