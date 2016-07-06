@@ -87,10 +87,10 @@ class serendipity_event_typoquote extends serendipity_event
                 break;
 
             case 'SMARTYPANTS_INSTEAD':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_EVENT_QUOTES_SMARTYPANTS_NAME);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_QUOTES_SMARTYPANTS_NAME);
                 $propbag->add('description', PLUGIN_EVENT_QUOTES_SMARTYPANTS_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default',     'false');
                 break;
 
             default:
@@ -108,51 +108,51 @@ class serendipity_event_typoquote extends serendipity_event
         if (isset($hooks[$event])) {
 
             switch($event) {
-              case 'frontend_display':
+                case 'frontend_display':
 
-                if($this->get_config('SMARTYPANTS_INSTEAD', false)) {
-                    include_once  dirname(__FILE__) . '/smartypants.php';
-                    foreach ($this->markup_elements as $temp) {
-                        if (serendipity_db_bool($this->get_config($temp['name'], true)) && !empty($eventData[$temp['element']]) &&
-                            !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
-                            $element = $temp['element'];
-                            $eventData[$element] = SmartyPants($eventData[$element]);
-                        }
-                    }
-                } else {
-                    foreach ($this->markup_elements as $temp) {
-                        if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
+                    if (serendipity_db_bool($this->get_config('SMARTYPANTS_INSTEAD', 'false'))) {
+                        include_once  dirname(__FILE__) . '/smartypants.php';
+                        foreach ($this->markup_elements as $temp) {
+                            if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']]) &&
                                 !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                                 !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
-                            $element = $temp['element'];
-
-                            # First find all the tags... We want to keep straight quotes in them.
-                            # So we remember all the tags, and replace them temporarily
-                            preg_match_all("/<[^>]*>/", $eventData[$element], $matches);
-                            $count = count($matches[0]);
-                            for($i = 0; $i < $count; $i++) {
-                                $temp = $matches[0][$i];
-                                $new  = "<!-- tag number $i -->";
-                                $eventData[$element] = str_replace($temp, $new, $eventData[$element]);
+                                $element = $temp['element'];
+                                $eventData[$element] = SmartyPants($eventData[$element]);
                             }
+                        }
+                    } else {
+                        foreach ($this->markup_elements as $temp) {
+                            if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
+                                    !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
+                                    !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                                $element = $temp['element'];
 
-                            # Now we perform our replacements...  All sets of quotes turned smart, then single quotes are dealt with...
-                            $eventData[$element] = preg_replace("/\"(.*?)\"/",         "&#8220;\\1&#8221;", $eventData[$element]);
-                            $eventData[$element] = preg_replace("/&quot;(.*?)&quot;/", "&#8220;\\1&#8221;", $eventData[$element]);
-                            $eventData[$element] = preg_replace("/(?<! )' /",          "&#8217; ",          $eventData[$element]);
-                            $eventData[$element] = preg_replace("/(?<! )'(?! )/",      "&#8217;",           $eventData[$element]);
-                            $eventData[$element] = preg_replace("/ '(?! )/",           " &#8216;",          $eventData[$element]);
+                                # First find all the tags... We want to keep straight quotes in them.
+                                # So we remember all the tags, and replace them temporarily
+                                preg_match_all("/<[^>]*>/", $eventData[$element], $matches);
+                                $count = count($matches[0]);
+                                for($i = 0; $i < $count; $i++) {
+                                    $temp = $matches[0][$i];
+                                    $new  = "<!-- tag number $i -->";
+                                    $eventData[$element] = str_replace($temp, $new, $eventData[$element]);
+                                }
 
-                            #Finally we add the tags back into the body of our entry.
-                            for($i = 0; $i < $count; $i++) {
-                                $tag_body = $matches[0][$i];
-                                $old      = "<!-- tag number $i -->";
-                                $eventData[$element] = str_replace($old, $tag_body, $eventData[$element]);
+                                # Now we perform our replacements...  All sets of quotes turned smart, then single quotes are dealt with...
+                                $eventData[$element] = preg_replace("/\"(.*?)\"/",         "&#8220;\\1&#8221;", $eventData[$element]);
+                                $eventData[$element] = preg_replace("/&quot;(.*?)&quot;/", "&#8220;\\1&#8221;", $eventData[$element]);
+                                $eventData[$element] = preg_replace("/(?<! )' /",          "&#8217; ",          $eventData[$element]);
+                                $eventData[$element] = preg_replace("/(?<! )'(?! )/",      "&#8217;",           $eventData[$element]);
+                                $eventData[$element] = preg_replace("/ '(?! )/",           " &#8216;",          $eventData[$element]);
+
+                                #Finally we add the tags back into the body of our entry.
+                                for($i = 0; $i < $count; $i++) {
+                                    $tag_body = $matches[0][$i];
+                                    $old      = "<!-- tag number $i -->";
+                                    $eventData[$element] = str_replace($old, $tag_body, $eventData[$element]);
+                                }
                             }
                         }
                     }
-                }
                     break;
 
                 default:
