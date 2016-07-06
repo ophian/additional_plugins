@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Ian (Timbalu)</author>
 <content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Terminkalender&lt;/b&gt;&lt;br /&gt;Zeigt einen Terminkalender innerhalb des Blogs mit dem Blog-Design und allen Formatierungen an. Unterstützt Backend/Frontend Administration, vielfache Termine und iCal Export. (Nur MySQL)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 11 Jun 2016 14:48:05 +0200</pubDate>
+<pubDate>Wed, 06 Jul 2016 19:35:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
@@ -184,8 +184,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_categorytemplates</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert</author>
-<content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Eigenschaften/Templates von Kategorien&lt;/b&gt;&lt;br /&gt;Dieses Plugin ermöglicht erweitete Eigenschaften für Kategorien und deren Einträge festzulegen: speziell angepassete Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus dem RSS-Feed.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Eigenschaften/Templates von Kategorien&lt;/b&gt;&lt;br /&gt;Dieses Plugin ermöglicht erweitete Eigenschaften für Kategorien und deren Einträge festzulegen: speziell angepassete Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus dem RSS-Feed.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 06 Jul 2016 19:44:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>

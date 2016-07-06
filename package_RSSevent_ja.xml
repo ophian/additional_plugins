@@ -178,7 +178,7 @@
 <category>Event Plugins</category>
 <author>Ian (Timbalu)</author>
 <content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Calendar&lt;/b&gt;&lt;br /&gt;Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 11 Jun 2016 14:48:05 +0200</pubDate>
+<pubDate>Wed, 06 Jul 2016 19:35:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
@@ -186,8 +186,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_categorytemplates</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert</author>
-<content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;カテゴリのプロパティとテンプレート&lt;/b&gt;&lt;br /&gt;このプラグインは、選択されたカテゴリに依存するテンプレートと他のいくつかのプロパティを変更することを可能にします。&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;カテゴリのプロパティとテンプレート&lt;/b&gt;&lt;br /&gt;このプラグインは、選択されたカテゴリに依存するテンプレートと他のいくつかのプロパティを変更することを可能にします。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 06 Jul 2016 19:44:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>

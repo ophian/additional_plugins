@@ -1130,9 +1130,9 @@
 <description>Zobrazuje kalendář akcí jako samostatnou stránku v blogu. Design stránky zůstává stejný jako u zbytku blogu. (MySQL only)</description>
 <maintainers><maintainer><name>Ian (Timbalu)</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.76</version>
+  <version>1.77</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-11</date>
+  <date>2016-07-06</date>
   <filelist>
 <dir name="serendipity_event_cal">
 <file>.htaccess</file>
@@ -1227,9 +1227,9 @@
 <description>Tento plugin poskytuje přídavné vlastnosti pro kategorie a v nich obsažené příspěvky, včetně volitené šablony vzhledu, pořadí řazení, počet zobrazených příspěvků, ochranu heslem a schovávání RSS kanálu.</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.35.1</version>
-  <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>0.36</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-07-06</date>
   <filelist>
 <dir name="serendipity_event_categorytemplates">
 <file>.htaccess</file>
