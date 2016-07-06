@@ -55,7 +55,7 @@ function SmartyPants($text, $attr = NULL, $ctx = NULL) {
 	# 1 : set all
 	# 2 : set all, using old school en- and em- dash shortcuts
 	# 3 : set all, using inverted old school en and em- dash shortcuts
-	# 
+	#
 	# q : quotes
 	# b : backtick quotes (``double'' only)
 	# B : backtick quotes (``double'' and `single')
@@ -116,7 +116,7 @@ function SmartyPants($text, $attr = NULL, $ctx = NULL) {
 	$in_pre = 0;  # Keep track of when we're inside <pre> or <code> tags.
 
 	$prev_token_last_char = "";     # This is a cheat, used to get some context
-									# for one-character tokens that consist of 
+									# for one-character tokens that consist of
 									# just a quote char. What we do is remember
 									# the last character of the previous text
 									# token, to use as context to curl single-
@@ -225,7 +225,7 @@ function SmartQuotes($text, $attr = NULL, $ctx = NULL) {
 	$in_pre = 0;  # Keep track of when we're inside <pre> or <code> tags
 
 	$prev_token_last_char = "";     # This is a cheat, used to get some context
-									# for one-character tokens that consist of 
+									# for one-character tokens that consist of
 									# just a quote char. What we do is remember
 									# the last character of the previous text
 									# token, to use as context to curl single-
@@ -300,11 +300,11 @@ function SmartDashes($text, $attr = NULL, $ctx = NULL) {
 	}
 	else if ($attr == 2) {
 		# use old smart dash shortcuts, "--" for en, "---" for em
-		$dash_sub_ref = 'EducateDashesOldSchool'; 
+		$dash_sub_ref = 'EducateDashesOldSchool';
 	}
 	else if ($attr == 3) {
 		# inverse of 2, "--" for em, "---" for en
-		$dash_sub_ref = 'EducateDashesOldSchoolInverted'; 
+		$dash_sub_ref = 'EducateDashesOldSchoolInverted';
 	}
 
 	$tokens;
@@ -622,7 +622,7 @@ function _TokenizeHTML($str) {
 #               the second is the actual value.
 #
 #
-#   Regular expression derived from the _tokenize() subroutine in 
+#   Regular expression derived from the _tokenize() subroutine in
 #   Brad Choate's MTRegex plugin.
 #   <http://www.bradchoate.com/past/mtregex.php>
 #
@@ -632,12 +632,12 @@ function _TokenizeHTML($str) {
 	$match = '(?s:<!(?:--.*?--\s*)+>)|'.	# comment
 			 '(?s:<\?.*?\?>)|'.				# processing instruction
 			 								# regular tags
-			 '(?:<[/!$]?[-a-zA-Z0-9:]+\b(?>[^"\'>]+|"[^"]*"|\'[^\']*\')*>)'; 
+			 '(?:<[/!$]?[-a-zA-Z0-9:]+\b(?>[^"\'>]+|"[^"]*"|\'[^\']*\')*>)';
 
 	$parts = preg_split("{($match)}", $str, -1, PREG_SPLIT_DELIM_CAPTURE);
 
 	foreach ($parts as $part) {
-		if (++$index % 2 && $part != '') 
+		if (++$index % 2 && $part != '')
 			$tokens[] = array('text', $part);
 		else
 			$tokens[] = array('tag', $part);
@@ -663,14 +663,14 @@ punctuation characters into "smart" typographic punctuation HTML
 entities. SmartyPants can perform the following transformations:
 
 *	Straight quotes (`"` and `'`) into "curly" quote HTML entities
-*	Backticks-style quotes (` ``like this'' `) into "curly" quote HTML 
+*	Backticks-style quotes (` ``like this'' `) into "curly" quote HTML
 	entities
 *	Dashes (`--` and `---`) into en- and em-dash entities
 *	Three consecutive dots (`...`) into an ellipsis entity
 
-SmartyPants does not modify characters within `<pre>`, `<code>`, `<kbd>`, 
-`<script>`, or `<math>` tag blocks. Typically, these tags are used to 
-display text where smart quotes and other "smart punctuation" would not 
+SmartyPants does not modify characters within `<pre>`, `<code>`, `<kbd>`,
+`<script>`, or `<math>` tag blocks. Typically, these tags are used to
+display text where smart quotes and other "smart punctuation" would not
 be appropriate, such as source code or example markup.
 
 
@@ -725,7 +725,7 @@ Version History
 
 1.5.1e (9 Dec 2005)
 
-*	Corrected a bug that prevented special characters from being 
+*	Corrected a bug that prevented special characters from being
     escaped.
 
 
@@ -746,7 +746,7 @@ Version History
 *	Corrected a problem with quotes immediately following a dash
 	with no space between: `Text--"quoted text"--text.`
 	
-*	PHP SmartyPants can now be used as a modifier by the Smarty 
+*	PHP SmartyPants can now be used as a modifier by the Smarty
 	template engine. Rename the file to "modifier.smartypants.php"
 	and put it in your smarty plugins folder.
 
@@ -755,7 +755,7 @@ Version History
 
 1.5.1a (30 Jun 2004)
 
-*	PHP Markdown and PHP Smartypants now share the same `_TokenizeHTML` 
+*	PHP Markdown and PHP Smartypants now share the same `_TokenizeHTML`
 	function when loaded simultanously.
 
 *	Changed the internals of `_TokenizeHTML` to lower the PHP version
@@ -764,7 +764,7 @@ Version History
 
 1.5.1 (6 Jun 2004)
 
-*	Initial release of PHP SmartyPants, based on version 1.5.1 of the 
+*	Initial release of PHP SmartyPants, based on version 1.5.1 of the
 	original SmartyPants written in Perl.
 
 
@@ -792,11 +792,11 @@ Jeremy Hedley (<http://antipixel.com/>) and Charles Wiltgen
 Copyright and License
 ---------------------
 
-Copyright (c) 2003 John Gruber  
-<http://daringfireball.net/>  
+Copyright (c) 2003 John Gruber
+<http://daringfireball.net/>
 All rights reserved.
 
-Copyright (c) 2004-2005 Michel Fortin  
+Copyright (c) 2004-2005 Michel Fortin
 <http://www.michelf.com>
 
 Redistribution and use in source and binary forms, with or without
@@ -814,14 +814,14 @@ modification, are permitted provided that the following conditions are met:
 	without specific prior written permission.
 
 This software is provided by the copyright holders and contributors "as is"
-and any express or implied warranties, including, but not limited to, the 
-implied warranties of merchantability and fitness for a particular purpose 
-are disclaimed. In no event shall the copyright owner or contributors be 
-liable for any direct, indirect, incidental, special, exemplary, or 
-consequential damages (including, but not limited to, procurement of 
-substitute goods or services; loss of use, data, or profits; or business 
-interruption) however caused and on any theory of liability, whether in 
-contract, strict liability, or tort (including negligence or otherwise) 
+and any express or implied warranties, including, but not limited to, the
+implied warranties of merchantability and fitness for a particular purpose
+are disclaimed. In no event shall the copyright owner or contributors be
+liable for any direct, indirect, incidental, special, exemplary, or
+consequential damages (including, but not limited to, procurement of
+substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in
+contract, strict liability, or tort (including negligence or otherwise)
 arising in any way out of the use of this software, even if advised of the
 possibility of such damage.
 

@@ -1,16 +1,10 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_typoquote extends serendipity_event
 {
@@ -26,9 +20,9 @@ class serendipity_event_typoquote extends serendipity_event
         $propbag->add('author',        'Jonathan Spalink and Matthew Groeninger');
         $propbag->add('version',       '1.5');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('groups', array('MARKUP'));
@@ -63,50 +57,56 @@ class serendipity_event_typoquote extends serendipity_event
         $propbag->add('configuration', $conf_array);
     }
 
-    function install() {
+    function install()
+    {
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function uninstall(&$propbag) {
+    function uninstall(&$propbag)
+    {
         serendipity_plugin_api::hook_event('backend_cache_purge', $this->title);
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
     function introspect_config_item($name, &$propbag)
     {
         switch($name) {
-        case 'ENTRY_BODY':
-        case 'EXTENDED_BODY':
-        case 'COMMENT':
-        case 'HTML_NUGGET':
-            $propbag->add('type',        'boolean');
-            $propbag->add('name',        constant($name));
-            $propbag->add('description', sprintf(APPLY_MARKUP_TO, constant($name)));
-            $propbag->add('default', 'true');
-            return true;
-            break;
+            case 'ENTRY_BODY':
+            case 'EXTENDED_BODY':
+            case 'COMMENT':
+            case 'HTML_NUGGET':
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        constant($name));
+                $propbag->add('description', sprintf(APPLY_MARKUP_TO, constant($name)));
+                $propbag->add('default', 'true');
+                break;
 
-        case 'SMARTYPANTS_INSTEAD':
-            $propbag->add('type', 'boolean');
-            $propbag->add('name', PLUGIN_EVENT_QUOTES_SMARTYPANTS_NAME);
-            $propbag->add('description', PLUGIN_EVENT_QUOTES_SMARTYPANTS_DESC);
-            $propbag->add('default', false);
-            return true;
-            break;
+            case 'SMARTYPANTS_INSTEAD':
+                $propbag->add('type', 'boolean');
+                $propbag->add('name', PLUGIN_EVENT_QUOTES_SMARTYPANTS_NAME);
+                $propbag->add('description', PLUGIN_EVENT_QUOTES_SMARTYPANTS_DESC);
+                $propbag->add('default', false);
+                break;
+
+            default:
+                return false;
         }
         return true;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
               case 'frontend_display':
 
@@ -126,7 +126,7 @@ class serendipity_event_typoquote extends serendipity_event
                                 !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                                 !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = $temp['element'];
-     
+
                             # First find all the tags... We want to keep straight quotes in them.
                             # So we remember all the tags, and replace them temporarily
                             preg_match_all("/<[^>]*>/", $eventData[$element], $matches);
@@ -136,7 +136,7 @@ class serendipity_event_typoquote extends serendipity_event
                                 $new  = "<!-- tag number $i -->";
                                 $eventData[$element] = str_replace($temp, $new, $eventData[$element]);
                             }
-   
+
                             # Now we perform our replacements...  All sets of quotes turned smart, then single quotes are dealt with...
                             $eventData[$element] = preg_replace("/\"(.*?)\"/",         "&#8220;\\1&#8221;", $eventData[$element]);
                             $eventData[$element] = preg_replace("/&quot;(.*?)&quot;/", "&#8220;\\1&#8221;", $eventData[$element]);
@@ -153,17 +153,18 @@ class serendipity_event_typoquote extends serendipity_event
                         }
                     }
                 }
-                return true;
-                break;
+                    break;
 
-              default:
-                return false;
+                default:
+                    return false;
+
             }
-
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
