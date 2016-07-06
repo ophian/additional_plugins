@@ -73,7 +73,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian (Timbalu)');
-        $propbag->add('version',        '1.76');
+        $propbag->add('version',        '1.77');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '1.6',
@@ -99,24 +99,24 @@ class serendipity_event_cal extends serendipity_event
                 break;
 
             case 'pagetitle':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_EVENTCAL_PAGETITLE);
+                $propbag->add('type',       'string');
+                $propbag->add('name',       PLUGIN_EVENTCAL_PAGETITLE);
                 $propbag->add('description', PLUGIN_EVENTCAL_PAGETITLE_BLAHBLAH);
-                $propbag->add('default', 'eventcal');
+                $propbag->add('default',    'eventcal');
                 break;
 
             case 'articleformat':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_EVENTCAL_ARTICLEFORMAT);
+                $propbag->add('type',       'boolean');
+                $propbag->add('name',       PLUGIN_EVENTCAL_ARTICLEFORMAT);
                 $propbag->add('description', PLUGIN_EVENTCAL_ARTICLEFORMAT_BLAHBLAH);
-                $propbag->add('default', '1');
+                $propbag->add('default',    'true');
                 break;
 
             case 'headline':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_EVENTCAL_HEADLINE);
+                $propbag->add('type',       'string');
+                $propbag->add('name',       PLUGIN_EVENTCAL_HEADLINE);
                 $propbag->add('description', PLUGIN_EVENTCAL_HEADLINE_BLAHBLAH);
-                $propbag->add('default', '');
+                $propbag->add('default',    '');
                 break;
 
             case 'showintro':
@@ -128,24 +128,24 @@ class serendipity_event_cal extends serendipity_event
                 break;
 
             case 'eventwrapper':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_EVENTCAL_EVENTWRAPPER);
+                $propbag->add('type',       'boolean');
+                $propbag->add('name',       PLUGIN_EVENTCAL_EVENTWRAPPER);
                 $propbag->add('description', PLUGIN_EVENTCAL_EVENTWRAPPER_BLAHBLAH);
-                $propbag->add('default', 'false');
+                $propbag->add('default',    'false');
                 break;
 
             case 'showcaptcha':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_EVENTCAL_SHOWCAPTCHA);
+                $propbag->add('type',       'boolean');
+                $propbag->add('name',       PLUGIN_EVENTCAL_SHOWCAPTCHA);
                 $propbag->add('description', PLUGIN_EVENTCAL_SHOWCAPTCHA_BLAHBLAH);
-                $propbag->add('default', 'false');
+                $propbag->add('default',    'false');
                 break;
 
             case 'showical':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_EVENTCAL_SHOWICAL);
+                $propbag->add('type',       'boolean');
+                $propbag->add('name',       PLUGIN_EVENTCAL_SHOWICAL);
                 $propbag->add('description', PLUGIN_EVENTCAL_SHOWICAL_BLAHBLAH);
-                $propbag->add('default', 'false');
+                $propbag->add('default',    'false');
                 break;
 
             case 'ical_icsurl':
@@ -156,25 +156,25 @@ class serendipity_event_cal extends serendipity_event
                     'ml'  => PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_MAIL . ' ' . PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_INTERN,
                     'ud'  => PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_USER
                     );
-                $propbag->add('type', 'select');
-                $propbag->add('name', PLUGIN_EVENTCAL_ICAL_ICSURL);
+                $propbag->add('type',       'select');
+                $propbag->add('name',       PLUGIN_EVENTCAL_ICAL_ICSURL);
                 $propbag->add('description', PLUGIN_EVENTCAL_ICAL_ICSURL_BLAH . ' ' . PLUGIN_EVENTCAL_ICAL_ICSURL_BLAHBLAH . ' (Webcal-Push usage is still experimental!)');
-                $propbag->add('default', 'no');
+                $propbag->add('default',    'no');
                 $propbag->add('select_values', $listdl_types);
                 break;
 
             case 'log_ical':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_EVENTCAL_ICAL_LOG);
+                $propbag->add('type',       'boolean');
+                $propbag->add('name',       PLUGIN_EVENTCAL_ICAL_LOG);
                 $propbag->add('description', PLUGIN_EVENTCAL_ICAL_LOG_BLAHBLAH);
-                $propbag->add('default', 'false');
+                $propbag->add('default',    'false');
                 break;
 
             case 'log_email':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_EVENTCAL_ICAL_LOG_EMAIL);
+                $propbag->add('type',       'string');
+                $propbag->add('name',       PLUGIN_EVENTCAL_ICAL_LOG_EMAIL);
                 $propbag->add('description', PLUGIN_EVENTCAL_ICAL_LOG_EMAIL_BLAHBLAH);
-                $propbag->add('default', '');
+                $propbag->add('default',    '');
                 break;
 
             default:
@@ -1670,7 +1670,7 @@ class serendipity_event_cal extends serendipity_event
     {
         global $serendipity;
 
-        if (serendipity_db_bool($this->get_config('showcaptcha'))) {
+        if (serendipity_db_bool($this->get_config('showcaptcha', 'false'))) {
             $serendipity['smarty']->assign('is_show_captcha', true);
         }
 
@@ -1941,7 +1941,7 @@ class serendipity_event_cal extends serendipity_event
                     }
                 }
                 // Captcha checking - if set to FALSE in plugin_eventcal config and spamblock plugin catchas is set to no, follow db insert procedure
-                if (!serendipity_db_bool($this->get_config('showcaptcha'))) {
+                if (!serendipity_db_bool($this->get_config('showcaptcha', 'false'))) {
                     if (!isset($_SESSION['spamblock']['captcha']) || !isset($serendipity['POST']['captcha']) || strtolower($serendipity['POST']['captcha']) != strtolower($_SESSION['spamblock']['captcha'])) {
                         $validcaptcha = true;
                     }
@@ -2264,7 +2264,7 @@ class serendipity_event_cal extends serendipity_event
             $serendipity['smarty']->assign('staticpage_pagetitle', $pt);
             $_ENV['staticpage_pagetitle'] = $pt; */
 
-            if ($this->get_config('articleformat') == true) {
+            if (serendipity_db_bool($this->get_config('articleformat', 'true'))) {
                 $serendipity['smarty']->assign('is_eventcal_articleformat', true);
             }
 
@@ -2556,7 +2556,7 @@ class serendipity_event_cal extends serendipity_event
                         /* write the ical string to ics file if not requested as download */
                         if ($evc['export'][4] != 'dl') $wcal = $this->write_file( $icl );
 
-                        if (serendipity_db_bool($this->get_config('log_ical'))) {
+                        if (serendipity_db_bool($this->get_config('log_ical', 'false'))) {
                             $ym = $evc['export'][3] . '-' . sprintf("%02d", $evc['export'][2]);
                         }
 
@@ -2571,7 +2571,7 @@ class serendipity_event_cal extends serendipity_event
                                     header("Content-Disposition: inline; filename=icalendar.ics");
 
                                     // Send mail to the admin if he has set log iCal requests in config to receive these mails
-                                    if (serendipity_db_bool($this->get_config('log_ical'))) {
+                                    if (serendipity_db_bool($this->get_config('log_ical', 'false'))) {
                                         $this->send_ical_log_email($this->get_config('log_email'), '', $evc['export'][5], $evc['export'][1], $ym, 'as ics download', $evc['export'][4], $sendmail);
                                     }
                                 break;
@@ -2581,7 +2581,7 @@ class serendipity_event_cal extends serendipity_event
                                 if (serendipity_isResponseClean($url) && $wcal === true) {
 
                                     // Send mail to the admin if he has set log iCal requests in config to receive these mails
-                                    if (serendipity_db_bool($this->get_config('log_ical'))) {
+                                    if (serendipity_db_bool($this->get_config('log_ical', 'false'))) {
                                         $this->send_ical_log_email($this->get_config('log_email'), '', $evc['export'][5], $evc['export'][1], $ym, 'via webcal', $evc['export'][4], $sendmail);
                                     }
                                     header('Status: 302 Found');
@@ -2600,7 +2600,7 @@ class serendipity_event_cal extends serendipity_event
                                     $result = $this->sendIcalEmail($to, $icl); //returns true or false
 
                                     // Send mail to the admin if he has set log iCal requests in config to receive these mails
-                                    if (serendipity_db_bool($this->get_config('log_ical'))) {
+                                    if (serendipity_db_bool($this->get_config('log_ical', 'false'))) {
                                         $this->send_ical_log_email($this->get_config('log_email'), '', $evc['export'][5], $evc['export'][1], $ym, 'as email', $evc['export'][4], $sendmail);
                                     }
                                 }
@@ -3809,7 +3809,6 @@ class serendipity_event_cal extends serendipity_event
         return false;
 
     } // free table() end
-
 
 } // class end
 

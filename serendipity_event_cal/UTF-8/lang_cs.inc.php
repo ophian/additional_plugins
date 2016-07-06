@@ -34,13 +34,13 @@
 @define('PLUGIN_EVENTCAL_TEXT_EACH', 'Každý');
 @define('PLUGIN_EVENTCAL_TEXT_TO', 'pro');
 @define('PLUGIN_EVENTCAL_TEXT_CW', 'CW-');
-    
+
 @define('PLUGIN_EVENTCAL_HALLO_ADMIN', 'Dobrý den uživateli: %s ( %s )<br />');
 @define('PLUGIN_EVENTCAL_INSERT_DONE_BLAHBLAH', 'Díky za Váš příspěvek číslo ID = %d.');
 @define('PLUGIN_EVENTCAL_INSERT_DONE_EVALUATE', 'Předtím než Váš příspěvek schválí administrátor, naleznete jej v části: "Neschválené akce".');
 @define('PLUGIN_EVENTCAL_REJECT_DONE_BLAHBLAH', 'Úpěšně jste vymazali příspěvek číslo ID = %s z databáze.');
 @define('PLUGIN_EVENTCAL_APPROVE_DONE_BLAHBLAH', 'Příspěvek číslo ID = %d byl úspěšně schválen.');
-    
+
 @define('CAL_EVENT_PLEASECORRECT', 'Opravte prosím.');
 @define('CAL_EVENT_SHORTTITLE', 'Vložte prosím krátký název pro tuto akci!');
 @define('CAL_EVENT_EVENTDESC', 'Zadejte prosím plný popis akce!');
@@ -54,7 +54,7 @@
 @define('CAL_EVENT_IDENTICAL_DATE', 'Akce má stejné datum začátku a konce!');
 @define('CAL_EVENT_ORDER_DATE', 'Zadaná sekvence akce není platná!');
 @define('CAL_EVENT_WEEKLY_DATE', 'Správná hodnota má být: "Týdně" a vybraný "Den v týdnu".');
-    
+
 @define('CAL_EVENT_FORM_DAY_FIRST', 'První');
 @define('CAL_EVENT_FORM_DAY_SECOND', 'Druhý');
 @define('CAL_EVENT_FORM_DAY_THIRD', 'Třetí');
@@ -63,7 +63,7 @@
 @define('CAL_EVENT_FORM_DAY_SECONDLAST', 'Předposlední');
 @define('CAL_EVENT_FORM_DAY_THIRDLAST', 'Před-předposlední');
 @define('CAL_EVENT_FORM_DAY_EACH', 'Týdně');
-    
+
 @define('CAL_EVENT_FORM_RIGHT_SHORTMAX', 'max. 16 znaků!');
 @define('CAL_EVENT_FORM_RIGHT_URLDESC', 'Buď ');
 @define('CAL_EVENT_FORM_RIGHT_URL', 'http://www.domena.cz');
@@ -89,7 +89,7 @@
 @define('CAL_EVENT_FORM_BUTTON_EDIT_SED', 'Změnit příspěvek schválené akce');
 @define('CAL_EVENT_FORM_BUTTON_SUBMIT', '&raquo; Poslat příspěvek &laquo;');
 @define('CAL_EVENT_FORM_BUTTON_TOAPPROVE', 'akce/akcí');
-    
+
 @define('CAL_EVENT_FORM_TITLE_DATE', 'datum');
 @define('CAL_EVENT_FORM_TITLE_TITLE', 'nadpis');
 @define('CAL_EVENT_FORM_TITLE_DESC', 'popis');
@@ -97,7 +97,7 @@
 @define('CAL_EVENT_FORM_TITLE_OK', 'ok');
 @define('CAL_EVENT_FORM_TITLE_EDIT', 'upravit');
 @define('CAL_EVENT_FORM_TITLE_DEL', 'smazat');
-    
+
 @define('CAL_EVENT_FORM_LEFT_AUTHOR', '<u>Autor</u>');
 @define('CAL_EVENT_FORM_LEFT_TITLE', '<u>Krátký</u> nadpis');
 @define('CAL_EVENT_FORM_LEFT_LINK', 'Webová stránka nebo email');

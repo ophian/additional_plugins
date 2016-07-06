@@ -23,8 +23,8 @@ table.ec_export {
 /*********************************************/
 
 #backend_eventcal_wrapper table, #backend_eventcal_wrapper tbody, #backend_eventcal_wrapper tr, #backend_eventcal_wrapper th, #backend_eventcal_wrapper td,
-#backend_eventcal_wrapper div, #backend_eventcal_wrapper span, #backend_eventcal_wrapper font { 
-    font: 500 11px/16px Verdana,Arial,Helvetica,sans-serif; 
+#backend_eventcal_wrapper div, #backend_eventcal_wrapper span, #backend_eventcal_wrapper font {
+    font: 500 11px/16px Verdana,Arial,Helvetica,sans-serif;
 }
 #backend_eventcal_wrapper #eventcal_wrapper { border: 0 none; background: 0 none; } /* get rid of intro and messages background-(today-#D5BFC0)-color */
 #backend_eventcal_wrapper code { vertical-align:top; white-space: nowrap; }
@@ -62,7 +62,7 @@ img.backend_attention { width:22px; height:22px; border:0px none; padding-right:
 
 #eventcal_error_surrounder {
     padding: 4px;
-    background-color:#999; 
+    background-color:#999;
     border: 1px solid #333;
 }
 .error_brand {
@@ -70,7 +70,7 @@ img.backend_attention { width:22px; height:22px; border:0px none; padding-right:
     color: #FF3000;
     font-weight: 800;
 }
-.error_table_main th { 
+.error_table_main th {
     color: #f0f0f0;
 }
 .error_value {
@@ -158,47 +158,47 @@ table.innereventborder td.eventcal_weekly_eventtext { width:98%; padding: 4px; }
 table.innereventborder td.eventcal_weekly_eventtext div.eventcal_weekly_eventurl { float:right;padding:1px 3px;border:1px dashed #333;background-color:#FF7400; }
 
 /* colors of day in monthview */
-table.eventcal_today { 
+table.eventcal_today {
     width: 100%;
     background: #D5BFC0;
     border-collapse: collapse;
     border-spacing: 0;
 }
-td.eventcal_today { 
+td.eventcal_today {
     background: #D5BFC0 !important; /* make sure the full cell has the same color */
 }
-table.eventcal_isday { 
+table.eventcal_isday {
     width: 100%;
     background: #f0f0f0;
     border-collapse: collapse;
     border-spacing: 0;
 }
-table.eventcal_noday { 
+table.eventcal_noday {
     width: 100%;
     background: #d0d0d0 !important;
     border-collapse: collapse;
     border-spacing: 0;
 }
-td.eventcal_noday { 
+td.eventcal_noday {
     background: #d0d0d0 !important; /* make sure the full cell has the same color */
 }
-table.eventcal_isday tr, 
-table.eventcal_today tr, 
+table.eventcal_isday tr,
+table.eventcal_today tr,
 table.eventcal_noday tr {
     height: 1px;
 }
-table.eventcal_weeknav { 
+table.eventcal_weeknav {
     width: 100%;
     border: 1px solid #333;
 }
-table.eventcal_weeknav_top { 
+table.eventcal_weeknav_top {
     border-bottom: 0;
 }
 /* be sure to have Weekday headers be near width 100% */
-th.eventcal_weekhead { 
-    font: 500 11px/16px Verdana,Arial,Helvetica,sans-serif; 
+th.eventcal_weekhead {
+    font: 500 11px/16px Verdana,Arial,Helvetica,sans-serif;
     width: 14.2% !important;
-} 
+}
 tr.d0 {
     background-color: #d0d0d0;
 }
@@ -276,7 +276,7 @@ td.eventformdesc {
 td.eventformdesc input {
     background-color: #fff;
 }
-td.eventformlink { 
+td.eventformlink {
     white-space:nowrap;
 }
 td.formfield  {
@@ -314,7 +314,7 @@ td.eventcal_appform_validation .eventcal_appdate {
 td.eventcal_appform_validation .eventcal_appldesc {
     width:57%;
 }
-input.eventcal_appform_move, img.eventcal_appform_move { 
+input.eventcal_appform_move, img.eventcal_appform_move {
     margin-right:10px;float:right;
 }
 
@@ -351,11 +351,11 @@ input.eventcal_appform_move, img.eventcal_appform_move {
     border: 1px solid #333;
     background: #bababa;
 }
-.eventcal_button { 
+.eventcal_button {
     background-color: #d0d0d0;
     border: 1px solid #bbb;
 }
-.eventcal_button  img { 
+.eventcal_button  img {
     vertical-align: middle;
 }
 .eventcal_entrytop {
@@ -384,7 +384,7 @@ input.eventcal_appform_move, img.eventcal_appform_move {
     text-align: center;
     background-color: #f0f0f0;/*#d0d0d0;*/
 }
-.eventcal_week_cw { 
+.eventcal_week_cw {
     margin: 0;
     padding: 0;
     text-align: center;
@@ -401,7 +401,7 @@ input.eventcal_appform_move, img.eventcal_appform_move {
     font-weight: 800;
     text-align: center;
 }
-.eventcal_weekly_daytitel { 
+.eventcal_weekly_daytitel {
     text-align: left;
     font-weight: 700;
     color: #800060;
@@ -444,16 +444,16 @@ input.eventcal_appform_move, img.eventcal_appform_move {
     border: 0 none;
 }
 /* the calendar event color buttons */
-.mono { 
+.mono {
     background-color: #FFFFC0;
 }
-.multi { 
+.multi {
     background-color: #C8E4C8;/*#C0FFC0;*/
 }
-.recm { 
+.recm {
     background-color: #F3DBF3;
 }
-.recw { 
+.recw {
     background-color: #C0C0FF;
 }
 span.eventtype {
@@ -462,19 +462,19 @@ span.eventtype {
     border: 1px solid #808080;border-width: 0 0 1px 0;
 }
 /* the help color buttons at bottom */
-span.mono { 
+span.mono {
     display:block;float:left;width:100%;white-space:nowrap;
 }
-span.multi { 
+span.multi {
     display:block;float:left;width:100%;white-space:nowrap;
 }
-span.recm { 
+span.recm {
     display:block;float:left;width:100%;white-space:nowrap;
 }
-span.recw { 
+span.recw {
     display:block;float:left;width:100%;white-space:nowrap;
 }
-span.tip { 
+span.tip {
     font: xx-small arial, helvetica, sans-serif;
     text-align:center;
     border:1px solid #000080;

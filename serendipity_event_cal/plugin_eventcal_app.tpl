@@ -1,5 +1,5 @@
 {* file: plugin_eventcal_app.tpl - 2015-12-04, Ian *}
- 
+
 <!-- plugin_eventcal_app.tpl start -->
 
 <tr>

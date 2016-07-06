@@ -1,5 +1,5 @@
 {* file: plugin_eventcal_add.tpl - 2015-12-04, Ian *}
- 
+
 <!-- plugin_eventcal_add.tpl start -->
 
 <tr>
@@ -9,7 +9,7 @@
             <div class="error_brand">&nbsp;&nbsp;function: {$is_eventcal_add_debug_fda} </div>
         </div>
         {/if}
-        
+
         {literal}
         <script type="text/javascript">
             /* <![CDATA[ */
@@ -45,7 +45,7 @@
             <input type="hidden" name="calendar[cm]" value="{$plugin_eventcal_add_cm}" />
             <input type="hidden" name="calendar[cy]" value="{$plugin_eventcal_add_cy}" />
             <input type="hidden" name="calendar[ts]" value="{$plugin_eventcal_add_ts}" />
-            
+
             <table class="eventcal_form">
                 <tbody>
                 <tr class="e0">
@@ -146,9 +146,9 @@
                     {/if}
                     </td>
                 </tr>
-                
+
                 {if !$is_logged_in && $is_show_captcha == true}
-                
+
                 <tr class="e0">
                     <th class="eventformtitle">{$CONST.CAL_EVENT_FORM_LEFT_SPAM}</th>
                     <td align="left" colspan="2" class="eventformdesc">
@@ -156,7 +156,7 @@
                         {serendipity_hookPlugin hook="frontend_comment" data="$plugin_eventcal_cal_entry"}
                     </td>
                 </tr>
-                
+
                 {/if}
                 </tbody>
             </table>

@@ -13,7 +13,7 @@
 {/if}
 
 <div {if $plugin_eventcal_admin_add_path}class="ec_backend_table"{else}id="eventcal_wrapper"{/if}>
-      
+
 <!-- plugin_eventcal_cal.tpl start -->
 
 {if $plugin_eventcal_cal_preface}
@@ -169,30 +169,30 @@
                 <tr>
                     <th class="a0"></th>
                     <!--build weekdaynames start -->
-            
+
                 {foreach from=$plugin_eventcal_cal_sed item="r"}
                     <th class="a0 eventcal_weekhead">{$r.head}</th>
                 {/foreach}
-        
+
                     <!--build weekdaynames end -->
                 </tr>
                 </thead>
-        
+
                 <tbody>
                 {foreach from=$plugin_eventcal_cal_sed item="week"}
                     {if $week.days}
 
                 <!-- eventcal table row start -->
                 <tr>
-        
+
                     <!-- build calendar week number {$week.cwnm} start -->
                     <td class="eventcal_week_cw rec0" align="left">
                         <a href="{$plugin_eventcal_cal_path}{$eventcal_permalink_add}calendar[cm]={$plugin_eventcal_cal_m}&amp;calendar[cy]={$plugin_eventcal_cal_y}&amp;calendar[cw]={$week.cwnm}">{$week.cwnm}</a>
                     </td>
                     <!-- build calendar week number {$week.cwnm} end -->
-            
+
                     {foreach from=$week.days item="day"}
-            
+
                     <td class="eventcal_day eventcal_{$day.bcol} eventcal_lft{cycle values=" rec1, rec2, rec3, rec4, rec5, rec6, rec7"}">
                         <table class="eventcal_{$day.col}">
                             <tbody>
@@ -208,7 +208,7 @@
                                         <a class="small_eventcal_link" href="{$plugin_eventcal_cal_path}{$eventcal_permalink_add}calendar[a]={$r.a}&amp;calendar[ap]={$r.ap}&amp;calendar[cm]={$r.m}&amp;calendar[cy]={$r.y}&amp;calendar[ev]={$r.id}" title="open event entry {$r.sdesc}"><b class="eventcal_tab">{$r.sdesc}</b></a><br />
                                     </span>
                                 {/foreach}
-                        
+
                                 </td>
                             </tr>
                             </tbody>
@@ -225,27 +225,27 @@
             </table>
             <!-- TABLE eventcal END -->
     {/if}{* sed end *}
-    
+
     {* now we include the weekly event table if there is - plugin_eventcal_calweek.tpl *}
-        
+
     {if $plugin_eventcal_cal_buildweektable}
         {$plugin_eventcal_cal_buildweektable}
     {/if}
-    
+
         </td>
     </tr>
 {/if}{* admin clear end *}
-    
+
     {*    now we include the separate build single event day entry - plugin_eventcal_entry.tpl *}
-    
+
     {if $plugin_eventcal_cal_buildsetable}
         {$plugin_eventcal_cal_buildsetable}
     {/if}
-        
+
     {*    now we include the the open/close form button and the open/close lookout for unapproved events table *}
-    
+
     {if $is_eventcal_cal_buildbuttons == true}
-    
+
     {if $is_eventcal_cal_buildbuttonadd == true}
     {if $is_eventcal_cal_admin_clear != true}
 
@@ -260,7 +260,7 @@
     {/if}{* admin clear end *}
 
     {*    now we include the open form table - plugin_eventcal_add.tpl *}
-    
+
     {if $plugin_eventcal_cal_buildaddtable}
         {$plugin_eventcal_cal_buildaddtable}
     {/if}
@@ -310,7 +310,7 @@
                     <td class="eventcal_ical"><a href="{$serendipityHTTPPath}plugin/ics_export/0/{$plugin_eventcal_cal_m}/{$plugin_eventcal_cal_y}/{$plugin_eventcal_icsdl}" target="_{if $plugin_eventcal_icsdl == 'wc'}blank{else}self{/if}"><img src="{$plugin_eventcal_cal_imgpath}img/icalm.png" alt="ical month feed" title="{$CONST.CAL_EVENT_FORM_BUTTON_HELP_ICALM}" /></a></td>
                     {/if}
                     {/if}
-                    
+
                 </tr>
                 </tbody>
             </table>

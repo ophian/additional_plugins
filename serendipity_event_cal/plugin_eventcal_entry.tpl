@@ -1,5 +1,5 @@
 {* file: plugin_eventcal_entry.tpl - 2015-12-05, Ian *}
- 
+
 <!-- plugin_eventcal_entry.tpl start -->
 
 {if $is_eventcal_entry_debug_fdw}
