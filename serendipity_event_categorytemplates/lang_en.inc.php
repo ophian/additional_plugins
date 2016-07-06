@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -19,3 +19,4 @@
 @define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'When an entry is assigned to multiple categories, this list determines the category whose custom template is applied.  The category on top is considered first.');
 @define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'No categories have customized templates yet.');
 @define('PLUGIN_CATEGORYTEMPLATES_HIDERSS', 'Should entries in this category be hidden from RSS feeds?');
+

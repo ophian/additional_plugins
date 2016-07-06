@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.1
  */
@@ -14,4 +14,3 @@
 @define('PLUGIN_CATEGORYTEMPLATES_PASS_DESC', 'カテゴリのパスワード保護の許可をするべきですか? The drawbacks are that another database lookup needs to be made, and that entries in password-protected categories are NOT shown on the frontpage for users until they go to the protected category\'s view.');
 @define('PLUGIN_CATEGORYTEMPLATES_PASS_USER', 'Serendipity カテゴリのパスワード保護');
 
-?>

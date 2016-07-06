@@ -1,5 +1,10 @@
 0.35:
 ----
+ * Set Plugin consistencies
+ * Use lang API - extends required version
+
+0.35:
+----
 
 Fix bad ORDER BY
 

@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 @define('PLUGIN_CATEGORYTEMPLATES_NAME', 'Eigenschaften/Templates von Kategorien');
 @define('PLUGIN_CATEGORYTEMPLATES_DESC', 'Dieses Plugin ermöglicht erweitete Eigenschaften für Kategorien und deren Einträge festzulegen: speziell angepassete Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus dem RSS-Feed.');
@@ -13,3 +13,4 @@
 @define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Wenn einem Artikel mehreren Kategorien zugewiesen ist, wird anhand dieser Liste entschieden, welches speziell angepasste Template (Formatvorlage) angewandt wird. Das oberste Template wird als erstes angewandt.');
 @define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'Bisher haben keine Kategorien speziell angepasste Templates.');
 @define('PLUGIN_CATEGORYTEMPLATES_HIDERSS', 'Sollen Einträge in dieser Kategorie von RSS-Feeds ausgeschlossen werden?');
+

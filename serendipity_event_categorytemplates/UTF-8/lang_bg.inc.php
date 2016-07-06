@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -19,3 +19,4 @@
 @define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Когато дадена статия е асоциирана с повече от една категории, този списък определя категорията, чийто шаблон ще се използва при визуализация на статията. Най-горната категория се взема предвид първа.');
 @define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'Все още няма категории със собствени шаблони.');
 @define('PLUGIN_CATEGORYTEMPLATES_HIDERSS', 'Трябва ли статиите от тази категория да бъдат скрити от RSS емисиите?');
+

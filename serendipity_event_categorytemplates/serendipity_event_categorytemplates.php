@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 // TODO:
 // Use parent category template for a child category, but allow child categories to override template of parent category.
@@ -8,13 +8,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 @define('CATEGORYTEMPLATE_DB_VERSION', 4);
 
@@ -29,10 +23,10 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert');
-        $propbag->add('version',       '0.35.1');
+        $propbag->add('version',       '0.36');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9',
-            'php'         => '4.1.0'
+            'serendipity' => '1.6',
+            'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',    array(
             'genpage'                   => true,
@@ -89,12 +83,12 @@ class serendipity_event_categorytemplates extends serendipity_event
                     foreach($tcats AS $cat) {
                         $values[$cat['categoryid']] = array('display' => $cat['category_name']);
                     }
-                } else { 
-                    $values = array(PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES); 
+                } else {
+                    $values = array(PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES);
                 }
                 $propbag->add('values',      $values);
 
-                // People who already had custom categories, but don't have 
+                // People who already had custom categories, but don't have
                 // the sequence widget, will not save this value.  So entries
                 // won't ever use custom templates.  To duplicate the original
                 // without-sequence-widget behavior, we'll have to do some
@@ -111,7 +105,8 @@ class serendipity_event_categorytemplates extends serendipity_event
      * Retrieves a list of IDs of all categories that have some customization enabled.
      * @return array A list of category IDs, or false if no categories are customized.
      */
-    function getTemplatizedCats() {
+    function getTemplatizedCats()
+    {
         global $serendipity;
         // Find all the categories that have custom templates
         $query = "SELECT
@@ -127,7 +122,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         if (!is_array($dbcids)) {
             // It's the value "1", for "success", or something
             $dbcids = false;
-        } 
+        }
         return $dbcids;
         //--TODO: Maybe find all the ones with custom sort orders and other display alterations, too
     }
@@ -137,7 +132,8 @@ class serendipity_event_categorytemplates extends serendipity_event
      * @param The current version number of the database (could be empty)
      * @return true
      */
-    function checkScheme($ver) {
+    function checkScheme($ver)
+    {
         global $serendipity;
 
         if ($ver == 3) {
@@ -186,13 +182,14 @@ class serendipity_event_categorytemplates extends serendipity_event
     }
 
     /**
-     * Returns the most appropriate category ID for the current entry.  
+     * Returns the most appropriate category ID for the current entry.
      * Only called from genpage hook.
      * @global array $serendipity Determines the current entry from HTTP variables
      * @return int|string Category ID if custom template defined or category
      *    view, otherwise 'default'
      */
-    function getID() {
+    function getID()
+    {
     	global $serendipity;
 
         // If category view, just return the current category ID
@@ -236,7 +233,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     return $candidate;
                 }
             }// End if we know of any customized categories
-            
+
             // If set to force, ALWAYS set the category to a forced category.
             if ((string)$this->get_config('fixcat') === 'hard') {
                 return $entrycids[0];
@@ -246,14 +243,15 @@ class serendipity_event_categorytemplates extends serendipity_event
         return 'default';
     }
 
-    /** 
+    /**
      * Wrapper for fetchProp() returning name of custom template for the
      * given category ID, if defined, with default.
-     * @param int cid The category ID to lookup 
+     * @param int cid The category ID to lookup
      * @param string fallback The default template name
      * @return string The name of the template to be used
      */
-    function fetchTemplate($cid, $fallback) {
+    function fetchTemplate($cid, $fallback)
+    {
         $this->usesDefaultTemplate = true;
 
         if ($cid === false || $cid == 'default') {
@@ -276,7 +274,8 @@ class serendipity_event_categorytemplates extends serendipity_event
      * @param int fallback The default number of entries to fetch
      * @return int The max number of entries to be fetched
      */
-    function fetchLimit($cid, $fallback) {
+    function fetchLimit($cid, $fallback)
+    {
         if ($cid == false || $cid == 'default' || $cid == 0) {
             return $fallback;
         } else {
@@ -296,7 +295,8 @@ class serendipity_event_categorytemplates extends serendipity_event
      * @param string fallback The default language to use
      * @return string The language to be used
      */
-    function fetchLang($cid, $fallback) {
+    function fetchLang($cid, $fallback)
+    {
         if ($cid === false || $cid == 'default') {
             return $fallback;
         } else {
@@ -316,7 +316,8 @@ class serendipity_event_categorytemplates extends serendipity_event
      * @param bool fallback The default whether to display entries from the future
      * @return bool Whether to display entries from the future
      */
-    function fetchFuture($cid, $fallback) {
+    function fetchFuture($cid, $fallback)
+    {
         if ($cid === false || $cid == 'default' || $cid == 0) {
             return $fallback;
         } else {
@@ -338,7 +339,8 @@ class serendipity_event_categorytemplates extends serendipity_event
      * @param string fallback The default database ordering string
      * @return string The database ordering string to use (i.e, 'date ASC')
      */
-    function fetchSortOrder($cid, $fallback) {
+    function fetchSortOrder($cid, $fallback)
+    {
         if ($cid === false || $cid == 'default' || $cid == 0) {
             return $fallback;
         } else {
@@ -362,7 +364,8 @@ class serendipity_event_categorytemplates extends serendipity_event
      * @param string key optional The property to be fetched (default 'template')
      * @return mixed The value of the requested property
      */
-    function fetchProp($cid, $key = 'template') {
+    function fetchProp($cid, $key = 'template')
+    {
         global $serendipity;
 
         static $cache = array();
@@ -388,7 +391,8 @@ class serendipity_event_categorytemplates extends serendipity_event
      * @param bool deleteOnly optional Whether to skip inserting new values (default false)
      * @return true
      */
-    function setProps($cid, $val = false, $deleteOnly = false) {
+    function setProps($cid, $val = false, $deleteOnly = false)
+    {
         global $serendipity;
 
         serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}categorytemplates
@@ -402,39 +406,40 @@ class serendipity_event_categorytemplates extends serendipity_event
         return true;
     }
 
-    function template_options($template, $catid) {
+    function template_options($template, $catid)
+    {
         global $serendipity, $template_config;
         if (!serendipity_checkPermission('adminTemplates')) {
             return;
         }
-        
+
         $template = str_replace('.', '', urldecode($template));
         $catid    = (int)$catid;
         $tpl_path = $serendipity['serendipityPath'] . $serendipity['templatePath'] . $template;
-        
+
         if (!is_dir($tpl_path)) {
             return false;
         }
 
         $serendipity['GET']['adminModule'] == 'templates';
         $serendipity['smarty_vars']['template_option'] = $template . '_' . $catid;
-        
+
         echo '<h3>' . STYLE_OPTIONS . '</h3>';
         if (file_exists($tpl_path . '/config.inc.php')) {
             serendipity_smarty_init();
             include_once $tpl_path . '/config.inc.php';
         }
-        
+
         if (is_array($template_config)) {
             serendipity_plugin_api::hook_event('backend_templates_configuration_top', $template_config);
-        
+
             if ($serendipity['POST']['adminSubAction'] == 'configure') {
                 foreach($serendipity['POST']['template'] AS $option => $value) {
                     categorytemplate_option::set_config($option, $value, $serendipity['smarty_vars']['template_option']);
                 }
                 echo '<div class="serendipityAdminMsgSuccess"><img style="height: 22px; width: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />' . DONE .': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . '</div>';
             }
-        
+
             echo '<form method="post" action="serendipity_admin.php">';
             echo '<input type="hidden" name="serendipity[adminModule]" value="templates" />';
             echo '<input type="hidden" name="serendipity[adminSubAction]" value="configure" />';
@@ -442,14 +447,14 @@ class serendipity_event_categorytemplates extends serendipity_event
             echo '<input type="hidden" name="serendipity[adminModule]" value="event_display" />';
             echo '<input type="hidden" name="serendipity[catid]" value="' . $catid . '" />';
             echo '<input type="hidden" name="serendipity[cat_template]" value="' . urlencode($template) . '" />';
-        
+
             include S9Y_INCLUDE_PATH . 'include/functions_plugins_admin.inc.php';
             $template_vars =& serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option']);
-        
+
             $template_options = new categorytemplate_option();
             $template_options->import($template_config);
             $template_options->values =& $template_vars;
-        
+
             serendipity_plugin_config(
                 $template_options,
                 $template_vars,
@@ -471,7 +476,7 @@ class serendipity_event_categorytemplates extends serendipity_event
     }
 
     /**
-     * The meat of the plugin, called for each registered hook.  
+     * The meat of the plugin, called for each registered hook.
      * @param string event The name of the hook being called
      * @param mixed bag An array of configuration options for this plugin
      * @param mixed eventData An array containing parameters for the hook
@@ -492,7 +497,7 @@ class serendipity_event_categorytemplates extends serendipity_event
             }
 
             switch($event) {
-                // When changing category options, display the new extended 
+                // When changing category options, display the new extended
                 // options, such as template, future entries, limit, and order
                 case 'backend_category_showForm':
                     // The $eventData is the category ID
@@ -520,7 +525,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     }
 ?>
             </select>
-            
+
             <?php if (!empty($template)) { ?>
             <br /><br /><a class="serendipityPrettyButton" href="serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=cattemplate&amp;serendipity[catid]=<?php echo $eventData; ?>&amp;serendipity[cat_template]=<?php echo urlencode($template);?>"><?php echo STYLE_OPTIONS; ?></a>
             <?php } ?>
@@ -561,7 +566,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         <td><label for="sort_order"><?php echo SORT_ORDER; ?></label></td>
         <td><input class="input_textbox" id="sort_order" type="text" name="serendipity[cat][sort_order]" value="<?php echo $this->fetchSortOrder($eventData, $this->get_config('sort_order')); ?>" /></td>
     </tr>
-    
+
     <tr>
         <td><label for="hide_rss"><?php echo PLUGIN_CATEGORYTEMPLATES_HIDERSS; ?></label></td>
         <td>
@@ -607,15 +612,15 @@ class serendipity_event_categorytemplates extends serendipity_event
                 case 'backend_category_update':
                 case 'backend_category_addNew':
                     $orig_tpl = $this->fetchTemplate($eventData, '');
-                    $text_tpl = $serendipity['POST']['cat']['template']; 
+                    $text_tpl = $serendipity['POST']['cat']['template'];
                     $drop_tpl = $serendipity['POST']['cat']['drop_template'];
                     // Default no change to template
                     $set_tpl = $orig_tpl;
-                    // If text template changed, it takes precedence 
+                    // If text template changed, it takes precedence
                     if ($text_tpl != $orig_tpl) {
                         // (even when invalid; no checking)
                         $set_tpl = $text_tpl;
-                    } 
+                    }
                     // If it hasn't changed, drop-down template can override
                     else if ($drop_tpl != $orig_tpl) {
                         $set_tpl = $drop_tpl;
@@ -639,14 +644,14 @@ class serendipity_event_categorytemplates extends serendipity_event
                     // manually change templatized categories precedence
                     if ($cidstr !== false) {
                         if ($cidstr) {
-                            // If $cidstr is empty, this returns an array 
+                            // If $cidstr is empty, this returns an array
                             // with an empty string
                             $cids = explode(',', $cidstr);
                         } else {
                             // For instance, set but empty
                             $cids = array();
                         }
-                        // If it had a custom template just added, append it 
+                        // If it had a custom template just added, append it
                         // to the list (user can change precedence later)
                         if (!in_array($eventData, $cids) && !empty($set_tpl)) {
                             $cids[] = $eventData;
@@ -702,7 +707,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         $eventData['orderby'] = $this->sort_order . (!empty($eventData['orderby']) ? ',' : '') . $eventData['orderby'] . '/*categorytemplate*/';
                     }
 
-                    // Password not required on search or calendar, and we 
+                    // Password not required on search or calendar, and we
                     // don't do rss for them, either
                     if (!isset($addData['source']) ||
                             ($addData['source'] == 'search' || $addData['source'] == 'calendar')) {
@@ -745,7 +750,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                             $conds[] = $hide_sql;
                         }
                         */
-                        
+
                         /*
                         $addkeys[] = "SUM(ctpass.hide_rss) as cat_hide_rss, ";
                         // Reuse password join if possible
@@ -797,8 +802,6 @@ class serendipity_event_categorytemplates extends serendipity_event
                             $eventData['having'] .= " AND $cond ";
                         }
                     }
-
-                    return true;
                     break;
 
                 // Experimental code: fetch language for entry
@@ -806,7 +809,6 @@ class serendipity_event_categorytemplates extends serendipity_event
                     // TODO: This does not work. The ID is not present! :-()
                     // $cid = $this->getID(true);
                     // $serendipity['lang']              = $this->fetchLang($cid, $serendipity['lang']);
-                    return true;
                     break;
 
                 // When the HTML is generated, apply properties
@@ -852,7 +854,6 @@ class serendipity_event_categorytemplates extends serendipity_event
 
                     // Set the template stylesheet
                     $serendipity['smarty_vars']['head_link_stylesheet'] = serendipity_rewriteURL('plugin/categorytemplate_' . $cid, 'baseURL', true);
-                    return true;
                     break;
 
                 // When the back end is displayed, use the custom template, too
@@ -869,35 +870,40 @@ class serendipity_event_categorytemplates extends serendipity_event
                     $serendipity['GET']['adminModule'] = 'templates';
                     $this->template_options($serendipity['GET']['cat_template'], $serendipity['GET']['catid']);
                     $serendipity['GET']['adminModule'] = $old;
-                    return true;
                     break;
 
                 default:
-                    return true;
-                    break;
+                    return false;
+
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
-class categorytemplate_option {
+class categorytemplate_option
+{
     var $config = null;
     var $values = null;
     var $keys   = null;
 
-    function introspect_config_item($item, &$bag) {
+    function introspect_config_item($item, &$bag)
+    {
         foreach($this->config[$item] AS $key => $val) {
             $bag->add($key, $val);
         }
     }
 
-    function get_config($item) {
+    function get_config($item)
+    {
         return $this->values[$item];
     }
 
-    function set_config($item, $value, $okey = '') {
+    function set_config($item, $value, $okey = '')
+    {
         global $serendipity;
         serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}options
                                WHERE okey = 't_" . serendipity_db_escape_string($okey) . "'
@@ -907,11 +913,13 @@ class categorytemplate_option {
         return true;
     }
 
-    function import(&$config) {
+    function import(&$config)
+    {
         foreach($config AS $key => $item) {
             $this->config[$item['var']] = $item;
             $this->keys[$item['var']]   = $item['var'];
         }
     }
+
 }
 /* vim: set ts=4 sts=4 sw=4 expandtab: */

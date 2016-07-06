@@ -18,3 +18,4 @@
 @define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Pokud je pøíspìvek pøiøazen do více kategorií, tento seznam urèuje, která šablona bude použita. Šablona pro kategorii, která je nejvýše, bude použita.');
 @define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'Žádné kategorie ještì nemají vlastní šablonu.');
 @define('PLUGIN_CATEGORYTEMPLATES_HIDERSS', 'Pøíspìvky v této kategorii se nebudou zobrazovat v RSS kanálu');
+
