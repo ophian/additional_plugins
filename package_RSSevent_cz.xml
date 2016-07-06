@@ -336,9 +336,9 @@
 <title>Downloadmanager: Zajišťuje Serendipity všechny funkce download managera. Při odinstalování jsou odstraněny všechny tabulky z databáze (ztráta všech dat)!!!</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_downloadmanager</link>
 <category>Event Plugins</category>
-<author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian (Timbalu)</author>
-<content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Zajišťuje Serendipity všechny funkce download managera. Při odinstalování jsou odstraněny všechny tabulky z databáze (ztráta všech dat)!!!&lt;br/&gt;For: Serendipity 1.3</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Zajišťuje Serendipity všechny funkce download managera. Při odinstalování jsou odstraněny všechny tabulky z databáze (ztráta všech dat)!!!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 06 Jul 2016 18:26:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
@@ -1269,14 +1269,12 @@
 <guid isPermaLink="false">serendipity_event_typesetbuttons</guid>
 </item>
 <item>
-<title>Markup: Typografické uvozovky: Převádí rovné uvozovky na kulaté. Také můžete použít PHP knihovnu SmartyPants (od Michela Fortina, který vyšel ze SmartyPants od Johna Grubera), pak budou v příspěvcích 
-aplikovány další typografické úpravy.</title>
+<title>Markup: Typografické uvozovky: Převádí rovné uvozovky na kulaté. Také můžete použít PHP knihovnu SmartyPants (od Michela Fortina, který vyšel ze SmartyPants od Johna Grubera), pak budou v příspěvcích aplikovány další typografické úpravy.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_typoquote</link>
 <category>Event Plugins</category>
 <author>Jonathan Spalink and Matthew Groeninger</author>
-<content:encoded>&lt;b&gt;serendipity_event_typoquote&lt;br /&gt;Markup: Typografické uvozovky&lt;/b&gt;&lt;br /&gt;Převádí rovné uvozovky na kulaté. Také můžete použít PHP knihovnu SmartyPants (od Michela Fortina, který vyšel ze SmartyPants od Johna Grubera), pak budou v příspěvcích 
-aplikovány další typografické úpravy.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_typoquote&lt;br /&gt;Markup: Typografické uvozovky&lt;/b&gt;&lt;br /&gt;Převádí rovné uvozovky na kulaté. Také můžete použít PHP knihovnu SmartyPants (od Michela Fortina, který vyšel ze SmartyPants od Johna Grubera), pak budou v příspěvcích aplikovány další typografické úpravy.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 06 Jul 2016 18:46:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_typoquote</guid>
 </item>
 <item>
