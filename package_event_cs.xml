@@ -1087,9 +1087,9 @@
 <description>[EXPERIMENTÁLNÍ] Umožňuje cachování (ve smyslu předgenerování) stránek. Pozor: Absolutně zruší veškeré vymoženosti dynamicky vytvářeného obsahu, nepracuje dobře s pluginy, které takový obsah vytvářejí. Ale tato funkce zvyšuje rychlost blogu, pokud nepotřebujete dynamické funkce. (Tento plugin by měl být umístěn co nejdříve v seznamu pluginů. Pouze nutné pluginy generující dynamický obsah, jako např. karma, by měly být umístěny před tímto pluginem.)</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.2.2</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.2.3</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-07-06</date>
   <filelist>
 <dir name="serendipity_event_cachesimple">
 <file>lang_bg.inc.php</file>

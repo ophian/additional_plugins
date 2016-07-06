@@ -166,8 +166,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cachesimple</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_cachesimple&lt;br /&gt;Jednoduché cachování / předgenerování stránek&lt;/b&gt;&lt;br /&gt;[EXPERIMENTÁLNÍ] Umožňuje cachování (ve smyslu předgenerování) stránek. Pozor: Absolutně zruší veškeré vymoženosti dynamicky vytvářeného obsahu, nepracuje dobře s pluginy, které takový obsah vytvářejí. Ale tato funkce zvyšuje rychlost blogu, pokud nepotřebujete dynamické funkce. (Tento plugin by měl být umístěn co nejdříve v seznamu pluginů. Pouze nutné pluginy generující dynamický obsah, jako např. karma, by měly být umístěny před tímto pluginem.)&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 20 May 2016 23:37:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_cachesimple&lt;br /&gt;Jednoduché cachování / předgenerování stránek&lt;/b&gt;&lt;br /&gt;[EXPERIMENTÁLNÍ] Umožňuje cachování (ve smyslu předgenerování) stránek. Pozor: Absolutně zruší veškeré vymoženosti dynamicky vytvářeného obsahu, nepracuje dobře s pluginy, které takový obsah vytvářejí. Ale tato funkce zvyšuje rychlost blogu, pokud nepotřebujete dynamické funkce. (Tento plugin by měl být umístěn co nejdříve v seznamu pluginů. Pouze nutné pluginy generující dynamický obsah, jako např. karma, by měly být umístěny před tímto pluginem.)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 06 Jul 2016 19:25:49 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cachesimple</guid>
 </item>
 <item>
@@ -1274,7 +1274,7 @@
 <category>Event Plugins</category>
 <author>Jonathan Spalink and Matthew Groeninger</author>
 <content:encoded>&lt;b&gt;serendipity_event_typoquote&lt;br /&gt;Markup: Typografické uvozovky&lt;/b&gt;&lt;br /&gt;Převádí rovné uvozovky na kulaté. Také můžete použít PHP knihovnu SmartyPants (od Michela Fortina, který vyšel ze SmartyPants od Johna Grubera), pak budou v příspěvcích aplikovány další typografické úpravy.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 06 Jul 2016 18:46:33 +0200</pubDate>
+<pubDate>Wed, 06 Jul 2016 19:15:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_typoquote</guid>
 </item>
 <item>

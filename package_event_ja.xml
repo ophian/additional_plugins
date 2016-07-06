@@ -1088,9 +1088,9 @@
 <description>[EXPERIMENTAL] Allows to cache/pregenerate pages. Note: Destroys dynamic capabilites and may not interoperate well with dynamic plugins. But it's faster, if you don't depend on realtime dynamics.  (This plugin should be placed as early as possible in the event queue list. Only dynamic plugins like the karmavoting should be positioned before this plugin.)</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.2.2</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.2.3</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-07-06</date>
   <filelist>
 <dir name="serendipity_event_cachesimple">
 <file>lang_bg.inc.php</file>

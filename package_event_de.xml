@@ -1087,9 +1087,9 @@
 <description>[EXPERIMENTELL] Ermöglicht es, vollständige Seiten zu cachen. Hinweis: Zerstört so ziemlich alle dynamischen Optionen des Frontends und arbeitet höchstvermutlich nicht gut mit dynamischen Plugins zusammen. Dafür ist es schnell, wenn man nicht auf Echtzeit-Dynamik angewiesen ist. (Dieses Plugin sollte also so früh wie möglich in der Event-Plugin-Liste positioniert werden. Nur Dynamische Plugins wie Karmavoting sollten vor diesem Plugin ausgeführt werden.)</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.2.2</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>1.2.3</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-07-06</date>
   <filelist>
 <dir name="serendipity_event_cachesimple">
 <file>lang_bg.inc.php</file>
