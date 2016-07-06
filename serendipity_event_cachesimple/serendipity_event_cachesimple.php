@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /*
  * EXPERIMANTEL CACHING PLUGIN
@@ -28,14 +28,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_cachesimple extends serendipity_event
 {
@@ -75,11 +68,11 @@ class serendipity_event_cachesimple extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_CACHESIMPLE_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking');
-        $propbag->add('version',     '1.2.2');
+        $propbag->add('version',     '1.2.3');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks', array(
             'frontend_configure'    => true,
@@ -95,20 +88,21 @@ class serendipity_event_cachesimple extends serendipity_event
         $propbag->add('configuration', array('browser','keep_fresh'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'browser':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_CACHESIMPLE_BROWSER);
                 $propbag->add('description', '');
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'keep_fresh':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_CACHESIMPLE_KEEPFRESH);
                 $propbag->add('description', PLUGIN_EVENT_CACHESIMPLE_KEEPFRESH_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             default:
@@ -117,11 +111,13 @@ class serendipity_event_cachesimple extends serendipity_event
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function cacheHeaders($lm = null) {
+    function cacheHeaders($lm = null)
+    {
         global $serendipity;
 
         if ($lm === null || empty($lm)) {
@@ -154,7 +150,8 @@ class serendipity_event_cachesimple extends serendipity_event
         return false;
     }
 
-    function debugMsg($msg) {
+    function debugMsg($msg)
+    {
         global $serendipity;
 
         if (!$this->debug) {
@@ -174,7 +171,8 @@ class serendipity_event_cachesimple extends serendipity_event
         fclose($this->debug_fp);
     }
 
-    function cacheAllowed() {
+    function cacheAllowed()
+    {
         global $serendipity;
 
         if (in_array(basename($_SERVER['PHP_SELF']), $this->disallowed_files)) {
@@ -203,7 +201,8 @@ class serendipity_event_cachesimple extends serendipity_event
         return true;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = array();
@@ -297,7 +296,7 @@ document.getElementById('serendipity_commentform_url').value   = getCommentCooki
                     unset($cache_options['COOKIE']['url']);
                     unset($cache_options['COOKIE']['email']);
 
-                    if (serendipity_db_bool($this->get_config('browser'))) {
+                    if (serendipity_db_bool($this->get_config('browser', 'false'))) {
                         if (stristr($_SERVER['HTTP_USER_AGENT'], 'MSIE')
                             && !stristr($_SERVER['HTTP_USER_AGENT'], 'Opera')
                             && !stristr($_SERVER['HTTP_USER_AGENT'], 'Mac_PowerPC')
@@ -315,7 +314,7 @@ document.getElementById('serendipity_commentform_url').value   = getCommentCooki
                     $this->cache->_setFileName($this->cache_key, $this->cache_group);
 
 
-                    if (serendipity_db_bool($this->get_config('keep_fresh',false))) {
+                    if (serendipity_db_bool($this->get_config('keep_fresh', 'false'))) {
                         serendipity_header('Pragma:');
                         serendipity_header('Cache-Control:  max-age=3');
                     } else {
@@ -367,8 +366,6 @@ document.getElementById('serendipity_commentform_url').value   = getCommentCooki
 
                     // "What comes around, goes around, you'll see." ;)
                     register_shutdown_function(array(&$this, 'shutdown'));
-
-                    return true;
                     break;
 
                 case 'xmlrpc_updertEntry':
@@ -376,7 +373,6 @@ document.getElementById('serendipity_commentform_url').value   = getCommentCooki
                 case 'backend_save':
                 case 'backend_publish':
                     $this->purgeCache();
-                    return true;
                     break;
 
                 case 'frontend_saveComment':
@@ -385,20 +381,19 @@ document.getElementById('serendipity_commentform_url').value   = getCommentCooki
                         // unter spam/referrer attack.
                         $this->purgeCache();
                     }
-                    return true;
                     break;
-
 
                 default:
                     return false;
             }
-
+            return true;
         } else {
             return false;
         }
     }
 
-    function &storeCache($buffer) {
+    function &storeCache($buffer)
+    {
         $this->cached = true;
 
         if (isset($GLOBALS['css_mode']) || preg_match(PAT_FEEDS, $_SERVER['REQUEST_URI'])) {
@@ -413,12 +408,14 @@ document.getElementById('serendipity_commentform_url').value   = getCommentCooki
         return $buffer;
     }
 
-    function purgeCache() {
+    function purgeCache()
+    {
         $this->debugMsg('CACHE PURGED');
         $this->cache->clean($this->cache_group);
     }
 
-    function uninstall(&$propbag) {
+    function uninstall(&$propbag)
+    {
         global $serendipity;
 
         @include_once 'Cache/Lite.php';
@@ -432,12 +429,14 @@ document.getElementById('serendipity_commentform_url').value   = getCommentCooki
         $this->cache->clean();
     }
 
-    function shutdown() {
+    function shutdown()
+    {
         if ($this->cached === false) {
             $this->debugMsg('Shutdown function: Got Attention.');
             $this->storeCache(ob_get_contents());
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
