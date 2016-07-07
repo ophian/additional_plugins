@@ -3952,7 +3952,6 @@
 <file>documentation_en.html</file>
 <dir name="img">
 <file>technorati.jpg</file>
-<file>Thumbs.db</file>
 </dir>
 <file>jquery-1.11.3.min.js</file>
 <file>jquery.autocomplete.js</file>
@@ -4004,7 +4003,6 @@
     <file>serendipity_event_freetag/documentation_cz.html</file>
     <file>serendipity_event_freetag/documentation_en.html</file>
     <file>serendipity_event_freetag/img/technorati.jpg</file>
-    <file>serendipity_event_freetag/img/Thumbs.db</file>
     <file>serendipity_event_freetag/jquery-1.11.3.min.js</file>
     <file>serendipity_event_freetag/jquery.autocomplete.js</file>
     <file>serendipity_event_freetag/jquery.autocomplete.min.css</file>
