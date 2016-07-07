@@ -12,7 +12,7 @@
 <release>
   <version>0.10</version>
   <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="alpha">
 <file>bogo.php</file>
@@ -50,7 +50,7 @@
 <release>
   <version>1.01</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="alpha">
 <file>bogo.php</file>
@@ -88,7 +88,7 @@
 <release>
   <version>1.01</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="alpha">
 <file>bogo.php</file>
@@ -126,7 +126,7 @@
 <release>
   <version>1.01</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="stalkerbuster">
 <file>lang_en.inc.php</file>
@@ -151,7 +151,7 @@
 <release>
   <version>0.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-18</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_adminnotes">
 <file>ChangeLog</file>
@@ -194,7 +194,7 @@
 <release>
   <version>0.8</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-08</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_advtypes">
 <file>.htaccess</file>
@@ -243,7 +243,7 @@
 <release>
   <version>0.42</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-07-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_aggregator">
 <file>.htaccess</file>
@@ -464,7 +464,7 @@
 <release>
   <version>0.76</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-13</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_amazonchooser">
 <file>.htaccess</file>
@@ -539,7 +539,7 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_assigncategories">
 <file>.htaccess</file>
@@ -590,7 +590,7 @@
 <release>
   <version>0.1.12</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_autotitle">
 <file>.htaccess</file>
@@ -639,7 +639,7 @@
 <release>
   <version>1.2.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-14</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_autoupdate">
 <file>.htaccess</file>
@@ -689,7 +689,7 @@
 <release>
   <version>1.8</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_babelfish">
 <file>lang_cs.inc.php</file>
@@ -735,7 +735,7 @@
 <release>
   <version>0.6.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_backend">
 <file>.htaccess</file>
@@ -787,7 +787,7 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_backendrss">
 <file>lang_bg.inc.php</file>
@@ -828,7 +828,7 @@
 <release>
   <version>0.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_backup">
 <file>backup.sh</file>
@@ -880,7 +880,7 @@
 <release>
   <version>1.83</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_blogpdf">
 <file>.htaccess</file>
@@ -1039,7 +1039,7 @@
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_browserid">
 <file>.htaccess</file>
@@ -1089,7 +1089,7 @@
 <release>
   <version>1.2.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-06</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_cachesimple">
 <file>lang_bg.inc.php</file>
@@ -1132,7 +1132,7 @@
 <release>
   <version>1.77</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-06</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_cal">
 <file>.htaccess</file>
@@ -1229,7 +1229,7 @@
 <release>
   <version>0.36</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-06</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_categorytemplates">
 <file>.htaccess</file>
@@ -1284,7 +1284,7 @@
 <release>
   <version>4.5.9.0</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_ckeditor">
 <file>.htaccess</file>
@@ -1360,7 +1360,7 @@
 <release>
   <version>1.4.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_comics">
 <file>.htaccess</file>
@@ -1407,7 +1407,7 @@
 <release>
   <version>0.2.3</version>
   <requirements:s9yVersion>1.5</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_commentedit">
 <file>.htaccess</file>
@@ -1462,7 +1462,7 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_commentsearch">
 <file>.htaccess</file>
@@ -1515,7 +1515,7 @@
 <release>
   <version>1.07</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-24</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_commentspice">
 <file>.htaccess</file>
@@ -1594,7 +1594,7 @@
 <release>
   <version>1.11.1</version>
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_communityrating">
 <file>.htaccess</file>
@@ -1667,7 +1667,7 @@
 <release>
   <version>1.20</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-11</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_contactform">
 <file>.htaccess</file>
@@ -1745,7 +1745,7 @@
 <release>
   <version>1.4.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_contentrewrite">
 <file>lang_bg.inc.php</file>
@@ -1824,7 +1824,7 @@
 <release>
   <version>2.08.2</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_cpgselector">
 <file>.htaccess</file>
@@ -1875,7 +1875,7 @@
 <release>
   <version>0.9.2</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_cronjob">
 <file>.htaccess</file>
@@ -1918,7 +1918,7 @@
 <release>
   <version>1.13</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2016-02-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_customarchive">
 <file>.htaccess</file>
@@ -1971,7 +1971,7 @@
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_custom_permalinks">
 <file>ChangeLog</file>
@@ -2016,7 +2016,7 @@
 <release>
   <version>0.2.9</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_dbclean">
 <file>.htaccess</file>
@@ -2064,7 +2064,7 @@
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_dejure">
 <file>lang_cs.inc.php</file>
@@ -2102,7 +2102,7 @@
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_deletelink">
 <file>lang_bg.inc.php</file>
@@ -2153,7 +2153,7 @@
 <release>
   <version>0.3</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_disqus">
 <file>.htaccess</file>
@@ -2196,7 +2196,7 @@
 <release>
   <version>0.31</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-06</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_downloadmanager">
 <file>.htaccess</file>
@@ -2507,7 +2507,7 @@
 <release>
   <version>3.0.83</version>
   <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_dpsyntaxhighlighter">
 <file>.htaccess</file>
@@ -2648,7 +2648,7 @@
 <release>
   <version>1.04</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-11</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_email_bot_obfuscator">
 <file>.htaccess</file>
@@ -2703,7 +2703,7 @@
 <release>
   <version>2.12</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-01-22</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_emoticonchooser">
 <file>.htaccess</file>
@@ -2759,7 +2759,7 @@
 <release>
   <version>1.16</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_entrycheck">
 <file>lang_bg.inc.php</file>
@@ -2809,7 +2809,7 @@
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_entrylastmodified">
 <file>lang_bg.inc.php</file>
@@ -2856,7 +2856,7 @@
 <release>
   <version>1.40</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_entrypaging">
 <file>ChangeLog</file>
@@ -2912,7 +2912,7 @@
 <release>
   <version>1.5.6</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_entrysplit">
 <file>lang_bg.inc.php</file>
@@ -2963,7 +2963,7 @@
 <release>
   <version>1.23</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_externalauth">
 <file>.htaccess</file>
@@ -3016,7 +3016,7 @@
 <release>
   <version>1.4</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_externalphp">
 <file>ChangeLog</file>
@@ -3061,7 +3061,7 @@
 <release>
   <version>0.5.1</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_facebook">
 <file>.htaccess</file>
@@ -3104,7 +3104,7 @@
 <release>
   <version>1.12.1</version>
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_faq">
 <file>.htaccess</file>
@@ -3221,7 +3221,7 @@
 <release>
   <version>0.9.1</version>
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_fckeditor">
 <file>.htaccess</file>
@@ -3265,7 +3265,7 @@
 <release>
   <version>1.02</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2016-06-27</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_feed">
 <file>feedblock.tpl</file>
@@ -3297,7 +3297,7 @@
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_feedflare">
 <file>lang_cs.inc.php</file>
@@ -3332,7 +3332,7 @@
 <release>
   <version>1.7.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-09</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_filter_entries">
 <file>.htaccess</file>
@@ -3383,7 +3383,7 @@
 <release>
   <version>1.24</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-22</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_findmore">
 <file>.htaccess</file>
@@ -3502,7 +3502,7 @@
 <release>
   <version>1.13</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_flattr">
 <file>.htaccess</file>
@@ -3549,7 +3549,7 @@
 <release>
   <version>0.5.1</version>
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_flickr">
 <file>.htaccess</file>
@@ -3604,7 +3604,7 @@
 <release>
   <version>0.12.1</version>
   <requirements:s9yVersion>0.9.1</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_forgotpassword">
 <file>.htaccess</file>
@@ -3659,7 +3659,7 @@
 <release>
   <version>0.38.2</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_forum">
 <file>.htaccess</file>
@@ -3940,9 +3940,9 @@
 <description>Позволява свободно маркиране на статиите</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.67</version>
-  <requirements:s9yVersion>1.3</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <version>3.80</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_freetag">
 <file>.htaccess</file>
@@ -3952,11 +3952,14 @@
 <file>documentation_en.html</file>
 <dir name="img">
 <file>technorati.jpg</file>
+<file>Thumbs.db</file>
 </dir>
-<file>jquery-1.11.1.min.js</file>
-<file>jquery-migrate-1.2.1.min.js</file>
-<file>jquery.autocomplete.css</file>
+<file>jquery-1.11.3.min.js</file>
+<file>jquery.autocomplete.js</file>
+<file>jquery.autocomplete.min.css</file>
 <file>jquery.autocomplete.min.js</file>
+<file>jquery.awesomeCloud-0.2.js</file>
+<file>jquery.tagcanvas.min.js</file>
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -4001,10 +4004,13 @@
     <file>serendipity_event_freetag/documentation_cz.html</file>
     <file>serendipity_event_freetag/documentation_en.html</file>
     <file>serendipity_event_freetag/img/technorati.jpg</file>
-    <file>serendipity_event_freetag/jquery-1.11.1.min.js</file>
-    <file>serendipity_event_freetag/jquery-migrate-1.2.1.min.js</file>
-    <file>serendipity_event_freetag/jquery.autocomplete.css</file>
+    <file>serendipity_event_freetag/img/Thumbs.db</file>
+    <file>serendipity_event_freetag/jquery-1.11.3.min.js</file>
+    <file>serendipity_event_freetag/jquery.autocomplete.js</file>
+    <file>serendipity_event_freetag/jquery.autocomplete.min.css</file>
     <file>serendipity_event_freetag/jquery.autocomplete.min.js</file>
+    <file>serendipity_event_freetag/jquery.awesomeCloud-0.2.js</file>
+    <file>serendipity_event_freetag/jquery.tagcanvas.min.js</file>
     <file>serendipity_event_freetag/lang_bg.inc.php</file>
     <file>serendipity_event_freetag/lang_cs.inc.php</file>
     <file>serendipity_event_freetag/lang_cz.inc.php</file>
@@ -4050,7 +4056,7 @@
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_galleryimage">
 <file>lang_cs.inc.php</file>
@@ -4089,7 +4095,7 @@
 <release>
   <version>1.33.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_geotag">
 <file>.htaccess</file>
@@ -4148,7 +4154,7 @@
 <release>
   <version>1.4.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_geourl">
 <file>.htaccess</file>
@@ -4199,7 +4205,7 @@
 <release>
   <version>0.9</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_geshi">
 <file>.htaccess</file>
@@ -4492,7 +4498,7 @@
 <release>
   <version>1.4</version>
   <requirements:s9yVersion>1.1</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_getid3">
 <file>.htaccess</file>
@@ -4542,7 +4548,7 @@
 <release>
   <version>1.7.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_glossary">
 <file>lang_bg.inc.php</file>
@@ -4587,7 +4593,7 @@
 <release>
   <version>1.4.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_google_analytics">
 <file>.htaccess</file>
@@ -4658,7 +4664,7 @@
 <release>
   <version>0.58.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_google_sitemap">
 <file>.htaccess</file>
@@ -4717,7 +4723,7 @@
 <release>
   <version>1.59</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-06-25</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_gravatar">
 <file>.htaccess</file>
@@ -5070,7 +5076,7 @@
 <release>
   <version>3.60</version>
   <requirements:s9yVersion>1.7.0</requirements:s9yVersion>
-  <date>2016-06-11</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_guestbook">
 <file>.htaccess</file>
@@ -5186,7 +5192,7 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_head_nugget">
 <file>lang_bg.inc.php</file>
@@ -5232,7 +5238,7 @@
 <release>
   <version>1.4</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_htmlvalidator">
 <file>lang_bg.inc.php</file>
@@ -5304,7 +5310,7 @@
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_httpauth">
 <file>lang_cs.inc.php</file>
@@ -5339,7 +5345,7 @@
 <release>
   <version>0.53</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-09</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_imageselectorplus">
 <file>.htaccess</file>
@@ -5402,7 +5408,7 @@
 <release>
   <version>2.17</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-02-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_includeentry">
 <file>.htaccess</file>
@@ -5459,7 +5465,7 @@
 <release>
   <version>2.12</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_karma">
 <file>.htaccess</file>
@@ -5589,7 +5595,7 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_kubrickheader">
 <file>lang_cs.inc.php</file>
@@ -5627,7 +5633,7 @@
 <release>
   <version>1.1</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_layout_linkmarkup">
 <file>lang_bg.inc.php</file>
@@ -5671,7 +5677,7 @@
 <release>
   <version>1.1</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_layout_printerfriendly">
 <file>lang_bg.inc.php</file>
@@ -5717,7 +5723,7 @@
 <release>
   <version>1.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_layout_quotemarkup">
 <file>lang_cs.inc.php</file>
@@ -5756,7 +5762,7 @@
 <release>
   <version>2.5.0</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_lightbox">
 <file>.htaccess</file>
@@ -6065,7 +6071,7 @@
 <release>
   <version>2.03</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-01-27</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_linklist">
 <file>.htaccess</file>
@@ -6160,7 +6166,7 @@
 <release>
   <version>1.5.1</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_linktoolbar">
 <file>.htaccess</file>
@@ -6211,7 +6217,7 @@
 <release>
   <version>1.6.4</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2016-06-11</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_linktrimmer">
 <file>.htaccess</file>
@@ -6264,7 +6270,7 @@
 <release>
   <version>2.5.5</version>
   <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_livecomment">
 <file>.htaccess</file>
@@ -6354,7 +6360,7 @@
 <release>
   <version>1.4.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-11</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_livesearch">
 <file>lang_bg.inc.php</file>
@@ -6443,7 +6449,7 @@
 <release>
   <version>1.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-27</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_ljupdate">
 <file>ChangeLog</file>
@@ -6491,7 +6497,7 @@
 <release>
   <version>1.04</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_loginform">
 <file>lang_cs.inc.php</file>
@@ -6530,7 +6536,7 @@
 <release>
   <version>0.4</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-23</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_lsrstopper">
 <file>.htaccess</file>
@@ -6598,7 +6604,7 @@
 <release>
   <version>1.23</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_mailentry">
 <file>lang_bg.inc.php</file>
@@ -6661,7 +6667,7 @@
 <release>
   <version>1.22</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_markdown">
 <file>.htaccess</file>
@@ -6753,7 +6759,7 @@
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_markread">
 <file>lang_bg.inc.php</file>
@@ -6792,7 +6798,7 @@
 <release>
   <version>0.15.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_metadesc">
 <file>.htaccess</file>
@@ -6847,7 +6853,7 @@
 <release>
   <version>0.46.1</version>
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_microformats">
 <file>.htaccess</file>
@@ -6927,7 +6933,7 @@
 <release>
   <version>1.4</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_mimetex">
 <dir name="images">
@@ -6979,7 +6985,7 @@
 <release>
   <version>1.04.1</version>
   <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_mobile_output">
 <file>.htaccess</file>
@@ -7164,7 +7170,7 @@
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-07-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_motm">
 <file>.htaccess</file>
@@ -7229,7 +7235,7 @@
 <release>
   <version>2.31</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-11</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_multilingual">
 <file>.htaccess</file>
@@ -7302,7 +7308,7 @@
 <release>
   <version>0.16.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_mycalendar">
 <file>.htaccess</file>
@@ -7359,7 +7365,7 @@
 <release>
   <version>0.11.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_mymood">
 <file>.htaccess</file>
@@ -7403,7 +7409,7 @@
 <release>
   <version>0.6</version>
   <requirements:s9yVersion>1.0-alpha1</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_newsbox">
 <file>lang_cs.inc.php</file>
@@ -7440,7 +7446,7 @@
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_oembed">
 <file>.htaccess</file>
@@ -7531,7 +7537,7 @@
 <release>
   <version>1.2.2</version>
   <requirements:s9yVersion>1.2</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_openid">
 <file>.htaccess</file>
@@ -7710,7 +7716,7 @@
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_outdate_entries">
 <file>ChangeLog</file>
@@ -7755,7 +7761,7 @@
 <release>
   <version>1.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-11</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_page_nugget">
 <file>.htaccess</file>
@@ -7811,7 +7817,7 @@
 <release>
   <version>0.9</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_phoneblogz">
 <file>CHANGELOG.txt</file>
@@ -7856,7 +7862,7 @@
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_photoblog">
 <file>ChangeLog</file>
@@ -7905,7 +7911,7 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_phpopentracker">
 <file>ChangeLog</file>
@@ -7950,7 +7956,7 @@
 <release>
   <version>1.14.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-06-25</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_picasa">
 <file>ChangeLog</file>
@@ -8009,7 +8015,7 @@
 <release>
   <version>1.37.1</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_podcast">
 <file>.htaccess</file>
@@ -8242,7 +8248,7 @@
 <release>
   <version>1.46</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_popfetcher">
 <file>.htaccess</file>
@@ -8313,7 +8319,7 @@
 <release>
   <version>1.6.2</version>
   <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_prettify">
 <file>ChangeLog</file>
@@ -8380,7 +8386,7 @@
 <release>
   <version>1.0.2</version>
   <requirements:s9yVersion>1.6.2</requirements:s9yVersion>
-  <date>2016-06-23</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_proxy_realip">
 <file>.htaccess</file>
@@ -8426,7 +8432,7 @@
 <release>
   <version>0.6</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_randomblogdescription">
 <file>lang_cs.inc.php</file>
@@ -8464,7 +8470,7 @@
 <release>
   <version>0.1.3</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_realtimecomments">
 <file>lang_cs.inc.php</file>
@@ -8507,7 +8513,7 @@
 <release>
   <version>0.11</version>
   <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_recaptcha">
 <file>.htaccess</file>
@@ -8562,7 +8568,7 @@
 <release>
   <version>0.9</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_regexpmarkup">
 <file>ChangeLog</file>
@@ -8619,7 +8625,7 @@
 <release>
   <version>1.8.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_relatedlinks">
 <file>ChangeLog</file>
@@ -8678,7 +8684,7 @@
 <release>
   <version>1.8.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-11</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_searchhighlight">
 <file>.htaccess</file>
@@ -8765,7 +8771,7 @@
 <release>
   <version>1.26</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_sidebarhider">
 <file>ChangeLog</file>
@@ -8814,7 +8820,7 @@
 <release>
   <version>1.14</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_smartymarkup">
 <file>.htaccess</file>
@@ -8860,7 +8866,7 @@
 <release>
   <version>0.11</version>
   <requirements:s9yVersion>1.3</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_smtpmail">
 <file>lang_cs.inc.php</file>
@@ -8930,7 +8936,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.03</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_snapshotlinks">
 <file>.htaccess</file>
@@ -8978,7 +8984,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_sort">
 <file>lang_cs.inc.php</file>
@@ -9013,7 +9019,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.4.24</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-07-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_spamblock_bayes">
 <file>.htaccess</file>
@@ -9106,7 +9112,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.3.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-26</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_spamblock_bee">
 <file>ChangeLog</file>
@@ -9161,7 +9167,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.4</version>
   <requirements:s9yVersion>1.2</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_spamblock_rbl">
 <file>ChangeLog</file>
@@ -9207,7 +9213,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_spamblock_surbl">
 <file>lang_cs.inc.php</file>
@@ -9250,7 +9256,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.10</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_startcat">
 <file>ChangeLog</file>
@@ -9292,7 +9298,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>4.09</version>
   <requirements:s9yVersion>1.3</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_staticpage">
 <file>.htaccess</file>
@@ -9433,7 +9439,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.63</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-11</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_statistics">
 <file>.htaccess</file>
@@ -9540,7 +9546,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.11.1</version>
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_suggest">
 <file>.htaccess</file>
@@ -9595,7 +9601,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.7.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_template_editor">
 <file>.htaccess</file>
@@ -9702,7 +9708,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.12.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_textlinkads">
 <file>ChangeLog</file>
@@ -9754,7 +9760,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-11</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_textwiki">
 <file>lang_bg.inc.php</file>
@@ -9833,7 +9839,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.4.1</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_thumbnails">
 <file>ChangeLog</file>
@@ -9882,7 +9888,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.13</version>
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_tinymce">
 <file>.htaccess</file>
@@ -9950,7 +9956,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.24.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_todolist">
 <file>.htaccess</file>
@@ -10114,7 +10120,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_tooltips">
 <file>lang_cs.inc.php</file>
@@ -10181,7 +10187,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.19</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_trackback">
 <file>.htaccess</file>
@@ -10239,7 +10245,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.9.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-05-17</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_trackexits">
 <file>lang_cn.inc.php</file>
@@ -10317,7 +10323,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.22.1</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_typesetbuttons">
 <dir name="buttons">
@@ -10419,7 +10425,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-06</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_typoquote">
 <file>lang_bg.inc.php</file>
@@ -10465,7 +10471,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.03.1</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_unstrip_tags">
 <file>lang_cs.inc.php</file>
@@ -10504,7 +10510,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>2.67</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-17</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_usergallery">
 <file>ChangeLog</file>
@@ -10613,7 +10619,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.29</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_userprofiles">
 <file>ChangeLog</file>
@@ -10672,7 +10678,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.11.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_versioning">
 <file>ChangeLog</file>
@@ -10717,7 +10723,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-23</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_weblogping">
 <file>ChangeLog</file>
@@ -10806,7 +10812,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.25.1</version>
   <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_wikilinks">
 <file>.htaccess</file>
@@ -10860,7 +10866,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.04</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_wordwrap">
 <file>lang_cs.inc.php</file>
@@ -10903,7 +10909,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.10.1</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_wrapurl">
 <file>ChangeLog</file>
@@ -10940,7 +10946,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.10</version>
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_xinha">
 <file>.htaccess</file>
@@ -10985,7 +10991,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.54</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-24</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_xmlrpc">
 <file>.gitignore</file>
@@ -11005,59 +11011,6 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <file>Server.php</file>
 </dir>
 <file>RPC.php</file>
-<dir name="RPC2">
-<dir name="Backend">
-<dir name="Php">
-<file>Client.php</file>
-<file>Request.php</file>
-<file>Response.php</file>
-<file>Server.php</file>
-<dir name="Value">
-<file>Array.php</file>
-<file>Base64.php</file>
-<file>Boolean.php</file>
-<file>Datetime.php</file>
-<file>Double.php</file>
-<file>Integer.php</file>
-<file>Integer64.php</file>
-<file>Nil.php</file>
-<file>Scalar.php</file>
-<file>String.php</file>
-<file>Struct.php</file>
-</dir>
-<file>Value.php</file>
-</dir>
-<dir name="Xmlrpcext">
-<file>Client.php</file>
-<file>Server.php</file>
-<file>Value.php</file>
-</dir>
-</dir>
-<file>Backend.php</file>
-<file>CachedClient.php</file>
-<file>CachedServer.php</file>
-<file>Client.php</file>
-<file>ClientHelper.php</file>
-<file>Exception.php</file>
-<dir name="Server">
-<dir name="CallHandler">
-<file>Class.php</file>
-<file>Instance.php</file>
-</dir>
-<file>CallHandler.php</file>
-<dir name="Input">
-<file>PhpInput.php</file>
-<file>RawPostData.php</file>
-</dir>
-<file>Input.php</file>
-<file>Method.php</file>
-</dir>
-<file>Server.php</file>
-<dir name="Util">
-<file>HTTPRequest.php</file>
-</dir>
-<file>Value.php</file>
-</dir>
 </dir>
 </dir>
 <file>serendipity_event_xmlrpc.php</file>
@@ -11084,41 +11037,6 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
     <file>serendipity_event_xmlrpc/PEAR/XML/RPC/Dump.php</file>
     <file>serendipity_event_xmlrpc/PEAR/XML/RPC/Server.php</file>
     <file>serendipity_event_xmlrpc/PEAR/XML/RPC.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Client.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Request.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Response.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Server.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Array.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Base64.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Boolean.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Datetime.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Double.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Integer.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Integer64.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Nil.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Scalar.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/String.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value/Struct.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Php/Value.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Xmlrpcext/Client.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Xmlrpcext/Server.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend/Xmlrpcext/Value.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Backend.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/CachedClient.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/CachedServer.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Client.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/ClientHelper.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Exception.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/CallHandler/Class.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/CallHandler/Instance.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/CallHandler.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/Input/PhpInput.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/Input/RawPostData.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/Input.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server/Method.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Server.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Util/HTTPRequest.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC2/Value.php</file>
     <file>serendipity_event_xmlrpc/serendipity_event_xmlrpc.php</file>
     <file>serendipity_event_xmlrpc/serendipity_xmlrpc.inc.php</file>
     <file>serendipity_event_xmlrpc/UTF-8/lang_cs.inc.php</file>
@@ -11138,7 +11056,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-06-08</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_xsstrust">
 <file>ChangeLog</file>
@@ -11501,7 +11419,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_youtube">
 <file>ChangeLog</file>
@@ -11537,7 +11455,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_event_yq">
 <file>lang_cs.inc.php</file>
@@ -11576,7 +11494,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>2.41</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-06-22</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_plugin_adduser">
 <file>ChangeLog</file>
@@ -11637,7 +11555,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.05</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-05-20</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_plugin_flickr">
 <file>ChangeLog</file>
@@ -11732,7 +11650,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>2.16</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_plugin_pollbox">
 <file>ChangeLog</file>
@@ -11785,7 +11703,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>1.67</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-05</date>
+  <date>2016-07-07</date>
   <filelist>
 <dir name="serendipity_plugin_twitter">
 <file>.cvsignore</file>
