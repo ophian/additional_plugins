@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -62,8 +62,8 @@
 @define('PLUGIN_FREETAG_META_KEYWORDS', 'HTML ソースに埋め込む meta keywords の数 (0: 無効)');
 
 @define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'タグに関連するエントリー一覧:');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED','タグによる関連エントリーを表示しますか?');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT','関連エントリーをいくつ表示しますか?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'タグによる関連エントリーを表示しますか?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', '関連エントリーをいくつ表示しますか?');
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER', 'フッターでタグを表示しますか?');
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC', 'If enabled, the tags will be shown in the footer of an entry. If disabled, the tags will be put inside the body/extended part of your entries.');
 @define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS', '半角英字は小英字(ABC ではなく abc)に');
@@ -78,27 +78,28 @@
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY', 'エントリー #%d のカテゴリーを変換しました(%s): %s.');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', 'すべてのカテゴリーをタグに変換します。');
 
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'Automatted keywords');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'You can assign keywords (separated by ",") for each tag. Whenever you use those keywords in the text of your entries, the corresponding tag is assigned to your entry. Note that many automatted keywords may increase the time taken for saving an entry.');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'キーワード <strong>%s</strong> を見つけました。自動的にタグ <strong><em>%s</em></strong> に割り当てました。<br />');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'Automated keywords');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'You can assign keywords (separated by ",") for each tag. Whenever you use those keywords in the text of your entries, the corresponding tag is assigned to your entry. Note that many automated keywords may increase the time taken for saving an entry.');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'キーワード <strong>%s</strong> を見つけました。自動的にタグ <strong><em>%s</em></strong> に割り当てました。');
 
 @define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', '%d から %d のエントリーの取得中');
 @define('PLUGIN_EVENT_FREETAG_REBUILD_TOTAL', ' (合計 %d 個のエントリー)...');
 @define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNEXT', 'エントリーの次のバッチの取得中...');
-@define('PLUGIN_EVENT_FREETAG_REBUILD', 'Reparse all automatted keywords');
+@define('PLUGIN_EVENT_FREETAG_REBUILD', 'Reparse all automated keywords');
 @define('PLUGIN_EVENT_FREETAG_REBUILD_DESC', 'Warning: This function will fetch and re-save every single one of your entries. This will take some time, and it might even damage existing articles. It is suggested you first backup your database! Click on "CANCEL" to abort this action.');
 
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'タグ名');
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'タグ数');
 
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK',      'Technorati のタグ リンク');
+@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK', 'Technorati のタグ リンク');
 @define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_DESC', 'Adds technorati tag links behind the tags in the entry footer. Clicking them will show similair articles in other blogs found on technorati.');
 
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG',      'Technorati のタグ画像');
+@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG', 'Technorati のタグ画像');
 
-@define('PLUGIN_EVENT_FREETAG_XMLIMAGE',    'XML 画像の画像に関するテンプレートのパス');
+@define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML 画像の画像に関するテンプレートのパス');
 
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC2', 'If set to "Smarty", then a smarty variable {$entry.freetag} will be created that you can place anywhere in your entries.tpl template file.');
 
 @define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY', 'Extended Smarty');
 @define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC', 'Emit seperate Smarty-variables for later use in a template. This will override the other settings. An example for later use can be found in the Readme.');
+
