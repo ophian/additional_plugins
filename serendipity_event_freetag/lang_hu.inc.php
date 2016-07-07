@@ -1,4 +1,4 @@
-<?php
+<?php # 
 
 /**
  *  @version 
@@ -67,7 +67,7 @@
 
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'Automatizált kulcsszavak');
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'Minden címkéhez megadhatók kulcsszavak (vesszõvel elválasztva). Amikor ezeket a kulcsszavakat használjuk a bejegyzések szövegében, a megfelelõ címke hozzárendelõdik a bejegyzéshez. Túl sok automatizált kulcsszó megnövelheti a bejegyzések elmentésével töltött idõt!');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Megtaláltuk a következõ kulcsszót: <strong>%s</strong>, a következõ címkét automatikusan a bejegyzéshez rendeljük: <strong><em>%s</em></strong>');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Megtaláltuk a következõ kulcsszót: <strong>%s</strong>, a következõ címkét automatikusan a bejegyzéshez rendeljük: <strong><em>%s</em></strong><br />');
 
 @define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', '%d-%d bejegyzések lekérése');
 @define('PLUGIN_EVENT_FREETAG_REBUILD_TOTAL', ' (összesen %d bejegyzés)...');
@@ -77,4 +77,3 @@
 
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'Címkenév');
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'Címke elõfordulások száma');
-

@@ -43,8 +43,8 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Visar en lista med existerande etiketter på artiklar');
 @define('PLUGIN_FREETAG_NEWLINE', 'Radmatning efter varje etikett?');
 @define('PLUGIN_FREETAG_XML', 'Visa XML-ikoner?');
-@define('PLUGIN_FREETAG_SCALE', 'Skala storleken på etiketter efter popularitet (som Technorati, flickr)?');
-@define('PLUGIN_FREETAG_UPGRADE1_2', 'Uppgraderar %d etiketter för artikel nummer: %d');
+@define('PLUGIN_FREETAG_SCALE','Skala storleken på etiketter efter popularitet (som Technorati, flickr)?');
+@define('PLUGIN_FREETAG_UPGRADE1_2','Uppgraderar %d etiketter för artikel nummer: %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Hur många etiketter skall visas?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Hur många förekomster måste en etikett ha för att visas?');
 
@@ -54,8 +54,8 @@
 @define('PLUGIN_FREETAG_META_KEYWORDS', 'Antal meta-nyckelord att bädda in i HTML-källkoden (0: deaktiverad)');
 
 @define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'Artiklar med relaterade etiketter:');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'Visa artiklar med relaterade etiketter?');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'Hur många relaterade artiklar skall visas?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED','Visa artiklar med relaterade etiketter?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT','Hur många relaterade artiklar skall visas?');
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER', 'Visa etiketter i artikelfoten?');
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC', 'Om ja, kommer etiketterna att visas i artikelns sidfot. Om nej, kommer etiketterna att visas i innehållet/det utökade innehållet i dina artiklar.');
 @define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS', 'Gemena etiketter');
@@ -70,7 +70,7 @@
 
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'Automatiserade nyckelord');
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'Du kan tilldela nyckelord (separerade med ",") till varje etikett. Varje gång du använder dessa nyckelord i texten i dina artiklar kommer den motsvarande etiketten att tilldelas din artikel. Notera att många automatiserade nyckelord kan öka tiden det tar att spara en artikel.');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Hittade nyckelord <strong>%s</strong>, etikett <strong><em>%s</em></strong> automatiskt tilldelad.');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Hittade nyckelord <strong>%s</strong>, etikett <strong><em>%s</em></strong> automatiskt tilldelad.<br />');
 
 @define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', 'Hämtar artiklarna %d till %d');
 @define('PLUGIN_EVENT_FREETAG_REBUILD_TOTAL', ' (totalt %d artiklar)...');
@@ -81,10 +81,9 @@
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'Etikettnamn');
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'Etikettantal');
 
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK', 'Technorati-etikettlänkar');
+@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK',      'Technorati-etikettlänkar');
 @define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_DESC', 'Adderar technorati-etikettlänkar efter etiketterna i artikeln. Genom att klicka på dem visas liknande artiklar i andra bloggar funna via technorati.');
 
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG', 'Technorati-etikettbild');
+@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG',      'Technorati-etikettbild');
 
-@define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML-bild relativt till mallsökvägen');
-
+@define('PLUGIN_EVENT_FREETAG_XMLIMAGE',    'XML-bild relativt till mallsökvägen');

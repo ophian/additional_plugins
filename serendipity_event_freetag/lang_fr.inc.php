@@ -1,4 +1,4 @@
-<?php
+<?php # 
 
 /**
  *  @version 
@@ -67,11 +67,10 @@
 
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'Mots-clef automatisés');
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'Vous pouvez assigner des mots-clef (séparatés par ",") à chaque tag. Dès que vous utilisez ces mots-clef dans le texte de vos billets, le tag correspondant est à votre billet. Notez que ceci allonge le temps de sauvegarde de votre billet.');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Mot-clef trouvé <strong>%s</strong>, tag <strong><em>%s</em></strong> assigné automatiquement.');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Mot-clef trouvé <strong>%s</strong>, tag <strong><em>%s</em></strong> assigné automatiquement.<br />');
 
 @define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', 'Recherche des billets %d à %d');
 @define('PLUGIN_EVENT_FREETAG_REBUILD_TOTAL', ' (totalisant %d billets)...');
 @define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNEXT', 'Recherche du prochain groupe de billets...');
 @define('PLUGIN_EVENT_FREETAG_REBUILD', 'Analyse des mots-clef automatiques');
 @define('PLUGIN_EVENT_FREETAG_REBUILD_DESC', 'Attention : Cette fonction va rechercher et re-sauvegarder chacun de vos billets. Cela va prendre du temps, et risque d\'endommager certains de vos billets. Il est conseillé de faire auparavant une sauvegarde de votre base de données ! Cliquez sur "ANNULER" pour arrêter.');
-
