@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.80');
+        $propbag->add('version',       '3.81');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1098,6 +1098,49 @@ class serendipity_event_freetag extends serendipity_event
                         $eventData .= '
 
 /* freetag plugin start */
+
+.freetagMenu [class^="icon-"]:before, .freetagMenu [class*=" icon-"]:before {
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.freetagMenu .icon {
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+}
+.freetagMenu .icon-tags:before { content: \'\e805\'; }
+.freetagMenu .icon-tag:before { content: \'\e804\'; }
+.freetagMenu .icon-notag:before { content: \'\f0f6\'; }
+.freetagMenu .icon-leaftag:before { content: \'\f15c\'; }
+.freetagMenu .icon-keytag:before { content: \'\e803\'; }
+.freetagMenu .icon-ctag:before { content: \'\e807\'; }
+.freetagMenu .icon-autotag:before { content: \'\e802\'; }
+.freetagMenu .icon-cleantag:before { content: \'\e806\'; }
+
+.freetagMenu .icon-notag,
+.freetagMenu .icon-leaftag,
+.freetagMenu .icon-ctag,
+.freetagMenu .icon-autotag,
+.freetagMenu .icon-cleantag {
+    vertical-align: baseline;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
 
 #backend_freetag_list a.tagzoom {
     font-size: 0.875em;
@@ -2189,21 +2232,57 @@ $(document).ready(function() {
             <h2><?php echo PLUGIN_EVENT_FREETAG_MANAGETAGS; ?></h2>
 
             <div class="freetagMenu">
+                <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <symbol id="icon-tags" viewBox="0 0 1024 1024">
+                            <title>tags</title>
+                            <path glyph-name="tags" unicode="&#xe805;" d="M250 600q0 30-21 51t-50 20-51-20-21-51 21-50 51-21 50 21 21 50z m595-321q0-30-20-51l-274-274q-22-21-51-21-30 0-50 21l-399 399q-21 21-36 57t-15 65v232q0 29 21 50t50 22h233q29 0 65-15t57-36l399-399q20-21 20-50z m215 0q0-30-21-51l-274-274q-22-21-51-21-20 0-33 8t-29 25l262 262q21 21 21 51 0 29-21 50l-399 399q-21 21-57 36t-65 15h125q29 0 65-15t57-36l399-399q21-21 21-50z" horiz-adv-x="1071.4" />
+                        </symbol>
+                        <symbol id="icon-tag" viewBox="0 0 1024 1024">
+                            <title>tag</title>
+                            <path glyph-name="tag" unicode="&#xe804;" d="M250 600q0 30-21 51t-50 20-51-20-21-51 21-50 51-21 50 21 21 50z m595-321q0-30-20-51l-274-274q-22-21-51-21-30 0-50 21l-399 399q-21 21-36 57t-15 65v232q0 29 21 50t50 22h233q29 0 65-15t57-36l399-399q20-21 20-50z" horiz-adv-x="857.1" />
+                        </symbol>
+                        <symbol id="icon-notag" viewBox="0 0 1024 1024">
+                            <title>entries-notag</title>
+                            <path glyph-name="notag" unicode="&#xf0f6;" d="M819 638q16-16 27-42t11-50v-642q0-23-15-38t-38-16h-750q-23 0-38 16t-16 38v892q0 23 16 38t38 16h500q22 0 49-11t42-27z m-248 136v-210h210q-5 16-12 23l-175 175q-6 7-23 12z m215-853v572h-232q-23 0-38 15t-16 38v233h-429v-858h715z m-572 483q0 7 5 12t13 5h393q8 0 13-5t5-12v-36q0-8-5-13t-13-5h-393q-8 0-13 5t-5 13v36z m411-125q8 0 13-5t5-13v-36q0-8-5-13t-13-5h-393q-8 0-13 5t-5 13v36q0 8 5 13t13 5h393z m0-143q8 0 13-5t5-13v-36q0-8-5-13t-13-5h-393q-8 0-13 5t-5 13v36q0 8 5 13t13 5h393z" horiz-adv-x="857.1" />
+                        </symbol>
+                        <symbol id="icon-leaftag" viewBox="0 0 1024 1024">
+                            <title>entries-leaftag</title>
+                            <path glyph-name="leaftag" unicode="&#xf15c;" d="M819 584q8-7 16-20h-264v264q13-8 21-16z m-265-91h303v-589q0-23-15-38t-38-16h-750q-23 0-38 16t-16 38v892q0 23 16 38t38 16h446v-304q0-22 16-38t38-15z m89-411v36q0 8-5 13t-13 5h-393q-8 0-13-5t-5-13v-36q0-8 5-13t13-5h393q8 0 13 5t5 13z m0 143v36q0 8-5 13t-13 5h-393q-8 0-13-5t-5-13v-36q0-8 5-13t13-5h393q8 0 13 5t5 13z m0 143v36q0 7-5 12t-13 5h-393q-8 0-13-5t-5-12v-36q0-8 5-13t13-5h393q8 0 13 5t5 13z" horiz-adv-x="857.1" />
+                        </symbol>
+                        <symbol id="icon-keytag" viewBox="0 0 1024 1024">
+                            <title>key-to-tag</title>
+                            <path glyph-name="keytag" unicode="&#xe803;" d="M464 564q0 45-31 76t-76 31-76-31-31-76q0-23 11-46-23 11-47 11-44 0-76-32t-31-76 31-75 76-32 76 32 31 75q0 24-10 47 23-11 46-11 45 0 76 31t31 76z m475-393q0-9-27-36t-37-28q-5 0-16 9t-20 19-22 22-13 14l-54-53 123-123q15-16 15-38 0-23-21-45t-46-22q-22 0-38 16l-374 374q-98-73-204-73-91 0-148 57t-57 149q0 89 53 174t138 139 175 53q91 0 148-58t57-148q0-105-73-203l198-199 54 54q-2 2-15 14t-22 21-18 21-9 15q0 10 27 37t37 28q7 0 13-6 3-3 26-25t45-44 49-48 40-44 16-23z" horiz-adv-x="1000" />
+                        </symbol>
+                        <symbol id="icon-ctag" viewBox="0 0 1024 1024">
+                            <title>category-tags</title>
+                            <path glyph-name="ctag" unicode="&#xe807;" d="M429 493q0 59-42 101t-101 42-101-42-42-101 42-101 101-42 101 42 42 101z m142 0q0-61-18-100l-203-432q-9-18-27-29t-37-11-38 11-26 29l-204 432q-18 39-18 100 0 118 84 202t202 84 202-84 83-202z" horiz-adv-x="571.4" />
+                        </symbol>
+                        <symbol id="icon-autotag" viewBox="0 0 1024 1024">
+                            <title>automatic-key-tags</title>
+                            <path glyph-name="autotag" unicode="&#xe802;" d="M620 294v2l-13 179q-1 7-7 13t-12 5h-104q-7 0-13-5t-6-13l-14-179v-2q0-6 5-11t12-4h136q7 0 12 4t4 11z m424-260q0-41-26-41h-393q7 0 12 5t5 13l-11 143q-1 7-7 12t-12 5h-152q-7 0-13-5t-6-12l-11-143q-1-8 4-13t12-5h-392q-26 0-26 41 0 30 14 64l233 583q5 11 15 18t21 8h189q-7 0-13-5t-6-13l-8-107q-1-8 4-13t12-5h93q7 0 12 5t5 13l-9 107q0 8-6 13t-13 5h190q11 0 21-8t14-18l233-583q15-34 15-64z" horiz-adv-x="1071.4" />
+                        </symbol>
+                        <symbol id="icon-cleantag" viewBox="0 0 1024 1024">
+                            <title>clean-unused-tags</title>
+                            <path glyph-name="cleantag" unicode="&#xe806;" d="M286 439v-321q0-8-5-13t-13-5h-36q-8 0-13 5t-5 13v321q0 8 5 13t13 5h36q8 0 13-5t5-13z m143 0v-321q0-8-5-13t-13-5h-36q-8 0-13 5t-5 13v321q0 8 5 13t13 5h36q8 0 13-5t5-13z m142 0v-321q0-8-5-13t-12-5h-36q-8 0-13 5t-5 13v321q0 8 5 13t13 5h36q7 0 12-5t5-13z m72-404v529h-500v-529q0-12 4-22t8-15 6-5h464q2 0 6 5t8 15 4 22z m-375 601h250l-27 65q-4 5-9 6h-177q-6-1-10-6z m518-18v-36q0-8-5-13t-13-5h-54v-529q0-46-26-80t-63-34h-464q-37 0-63 33t-27 79v531h-53q-8 0-13 5t-5 13v36q0 8 5 13t13 5h172l39 93q9 21 31 35t44 15h178q22 0 44-15t30-35l39-93h173q8 0 13-5t5-13z" horiz-adv-x="785.7" />
+                        </symbol>
+                    </defs>
+                </svg>
                 <ul class="plainList clearfix">
 
 <?php
         }
 ?>
 
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=all" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ALL ?>">ALL</a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=leaf" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_LEAF ?>">LEAF</a></li>
+                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=all" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ALL ?>"><svg class="icon icon-tags" title="tags"><use xlink:href="#icon-tags"></use></svg></a></li>
+                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=leaf" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_LEAF ?>"><svg class="icon icon-tag" title="tag"><use xlink:href="#icon-tag"></use></svg></a></li>
 <?php if ($full_permission === true) { ?>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=entryuntagged" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED ?>">NOTAG</a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=entryleaf" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED ?>">LEAFTAG</a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=keywords" title="<?php echo PLUGIN_EVENT_FREETAG_KEYWORDS; ?>">KEYWORD</a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=cat2tag" title="<?php echo PLUGIN_EVENT_FREETAG_GLOBALLINKS; ?>">CAT2TAG</a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=tagupdate" onclick="return confirm('<?php echo htmlspecialchars(PLUGIN_EVENT_FREETAG_REBUILD_DESC, ENT_COMPAT, LANG_CHARSET); ?>');" title="<?php echo PLUGIN_EVENT_FREETAG_REBUILD; ?>">AUTOTAG</a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=cleanupmappings" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP; ?>">CLEAN</a></li>
+                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=entryuntagged" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED ?>"><svg class="icon icon-notag" title="no-tags"><use xlink:href="#icon-notag"></use></svg></a></li>
+                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=entryleaf" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED ?>"><svg class="icon icon-leaftag" title="leaf-tag"><use xlink:href="#icon-leaftag"></use></svg></a></li>
+                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=keywords" title="<?php echo PLUGIN_EVENT_FREETAG_KEYWORDS; ?>"><svg class="icon icon-keytag" title="key-to-tag"><use xlink:href="#icon-keytag"></use></svg></a></li>
+                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=cat2tag" title="<?php echo PLUGIN_EVENT_FREETAG_GLOBALLINKS; ?>"><svg class="icon icon-ctag" title="category-tags"><use xlink:href="#icon-ctag"></use></svg></a></li>
+                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=tagupdate" onclick="return confirm('<?php echo htmlspecialchars(PLUGIN_EVENT_FREETAG_REBUILD_DESC, ENT_COMPAT, LANG_CHARSET); ?>');" title="<?php echo PLUGIN_EVENT_FREETAG_REBUILD; ?>"><svg class="icon icon-autotag" title="autotag"><use xlink:href="#icon-autotag"></use></svg></a></li>
+                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=cleanupmappings" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP; ?>"><svg class="icon icon-cleantag" title="clean-tag"><use xlink:href="#icon-cleantag"></use></svg></a></li>
 <?php } ?>
                 </ul>
             </div>
