@@ -103,7 +103,7 @@ class serendipity_event_advtypes extends serendipity_event
                         $media_js = serendipity_getTemplateFile('media_input.js');
                         if ($serendipity['version'][0] < 2) {
                         print <<<EOS
-<script type="text/javascript" language="JavaScript" src="serendipity_editor.js"></script>
+<script type="text/javascript" src="serendipity_editor.js"></script>
 EOS;
                         }
                         print <<<EOS
