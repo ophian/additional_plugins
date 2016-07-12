@@ -1,11 +1,12 @@
-1.54:
------
- * Cleanup
- * Plugin consistent usage
- * Load lang with lang API - extends required version to 1.6
- * Clone wp.getPages to wp.getPage for newer APP calls (needs some testing though)
- * Better $HTTP_RAW_POST_DATA check
+Version 1.55:
+    * Added wp.getPosts API function
 
+Version 1.54:
+    * Cleanup
+    * Plugin consistent usage
+    * Load lang with lang API - extends required version to 1.6
+    * Clone wp.getPages to wp.getPage for newer APP calls (needs some testing though)
+    * Better $HTTP_RAW_POST_DATA check
 
 Version 1.53:
     * Implement a kind of DOS protection, courtesy to a Drupal/WordPress commit:
