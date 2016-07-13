@@ -1,3 +1,6 @@
+Version 1.56:
+    * Added wp.getPosts to supported methods
+
 Version 1.55:
     * Added wp.getPosts API function
 

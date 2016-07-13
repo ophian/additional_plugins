@@ -18,7 +18,7 @@ class serendipity_event_xmlrpc extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_XMLRPC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.55');
+        $propbag->add('version',       '1.56');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',

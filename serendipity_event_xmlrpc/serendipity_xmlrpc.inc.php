@@ -1664,6 +1664,7 @@ function mt_supportedMethods($message) {
             new XML_RPC_Value('wp.editComment', 'string'),
             new XML_RPC_Value('wp.newComment', 'string'),
             new XML_RPC_Value('wp.getTags', 'string'),
+            new XML_RPC_Value('wp.getPosts', 'string'),
             new XML_RPC_Value('wp.getOptions', 'string'),
             new XML_RPC_Value('wp.getPage', 'string'),
             new XML_RPC_Value('wp.getPages', 'string'),
