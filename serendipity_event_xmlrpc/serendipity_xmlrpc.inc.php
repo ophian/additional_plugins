@@ -84,25 +84,26 @@ if ($xml_in != '') {
 
 $dispatches = array(
     /* WordPress API */
-    'wp.getUsersBlogs'      => array('function' => 'wp_getUsersBlogs'),
-    'wp.getCategories'      => array('function' => 'wp_getCategories'),
-    'wp.uploadFile'         => array('function' => 'wp_uploadFile'),
-    'wp.newCategory'        => array('function' => 'wp_newCategory'),
-    'wp.getPostFormats'     => array('function' => 'wp_getPostFormats'),
-    'wp.getComment'         => array('function' => 'wp_getComment'),
-    'wp.getComments'        => array('function' => 'wp_getComments'),
-    'wp.deleteComment'      => array('function' => 'wp_deleteComment'),
-    'wp.editComment'        => array('function' => 'wp_editComment'),
-    'wp.newComment'         => array('function' => 'wp_newComment'),
-    'wp.getTags'            => array('function' => 'wp_getTags'),
-    'wp.getPosts'           => array('function' => 'wp_getPosts'),
-    'wp.getOptions'         => array('function' => 'wp_getOptions'),
-    'wp.getPostStatusList'  => array('function' => 'wp_getPostStatusList'),
-    'wp.getPageTemplates'   => array('function' => 'wp_getPageTemplates'),
-    'wp.getPageStatusList'  => array('function' => 'wp_getPageStatusList'),
-    'wp.getPage'            => array('function' => 'wp_getPage'),
-    'wp.getPages'           => array('function' => 'wp_getPages'),
-    'wp.getPageList'        => array('function' => 'wp_getPageList'),
+    'wp.getUsersBlogs'          => array('function' => 'wp_getUsersBlogs'),
+    'wp.getCategories'          => array('function' => 'wp_getCategories'),
+    'wp.uploadFile'             => array('function' => 'wp_uploadFile'),
+    'wp.newCategory'            => array('function' => 'wp_newCategory'),
+    'wp.getPostFormats'         => array('function' => 'wp_getPostFormats'),
+    'wp.getComment'             => array('function' => 'wp_getComment'),
+    'wp.getComments'            => array('function' => 'wp_getComments'),
+    'wp.deleteComment'          => array('function' => 'wp_deleteComment'),
+    'wp.editComment'            => array('function' => 'wp_editComment'),
+    'wp.newComment'             => array('function' => 'wp_newComment'),
+    'wp.getTags'                => array('function' => 'wp_getTags'),
+    'wp.getPosts'               => array('function' => 'wp_getPosts'),
+    'wp.getCommentStatusList'   => array('function' => 'wp_getCommentStatusList'),
+    'wp.getOptions'             => array('function' => 'wp_getOptions'),
+    'wp.getPostStatusList'      => array('function' => 'wp_getPostStatusList'),
+    'wp.getPageTemplates'       => array('function' => 'wp_getPageTemplates'),
+    'wp.getPageStatusList'      => array('function' => 'wp_getPageStatusList'),
+    'wp.getPage'                => array('function' => 'wp_getPage'),
+    'wp.getPages'               => array('function' => 'wp_getPages'),
+    'wp.getPageList'            => array('function' => 'wp_getPageList'),
 
     /* BLOGGER API */
     'blogger.getUsersBlogs'     => array('function' => 'blogger_getUsersBlogs'),
@@ -302,6 +303,26 @@ function wp_getPageStatusList($message) {
 //          'draft' => new XML_RPC_Value("Draft", 'string'),
 //          'private' => new XML_RPC_Value("Private", 'string'),
 //            'publish' => new XML_RPC_Value("Published", 'string'),
+        ),'struct'
+    );
+    return new XML_RPC_Response($values);
+}
+
+function wp_getCommentStatusList($message) {
+    global $serendipity;
+
+    $val = $message->params[1];
+    $username = $val->getval();
+    $val = $message->params[2];
+    $password = $val->getval();
+    if (!serendipity_authenticate_author($username, $password)) {
+        return new XML_RPC_Response('', XMLRPC_ERR_CODE_AUTHFAILED, XMLRPC_ERR_NAME_AUTHFAILED);
+    }
+
+    $values = new XML_RPC_Value(
+        array(
+         'approved' => new XML_RPC_Value("Approved", 'string'),
+         'pending'  => new XML_RPC_Value("Pending", 'string')
         ),'struct'
     );
     return new XML_RPC_Response($values);
