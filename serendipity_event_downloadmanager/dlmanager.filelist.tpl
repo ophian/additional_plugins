@@ -1,4 +1,4 @@
-{* dlmanager.filelist.tpl last modified 2016-07-06 *}
+{* dlmanager.filelist.tpl last modified 2016-07-14 *}
 <div id="downloadmanager" class="serendipity_Entry_Date">
 <!-- dlmanager.filelist.tpl start -->
     <h3 class="serendipity_date">{$pagetitle}</h3>
@@ -63,7 +63,7 @@
 
             <tr class="dlm_file {cycle name="cycle2" values="odd,even"}">
                 <td class="dlm_filename">
-                    <a href="{$fltable[file].info.iconurl}" class="dlm_fileicon"><img src="{$fltable[file].info.iconfile}" width="{$fltable[file].info.iconwidth}" height="{$fltable[file].info.iconheight}" alt="{$fltable[file].info.icontype}" title="{$fltable[file].info.icontype}" /></a>{if $fltable[file].is.showfilename} <a href="{$fltable[file].info.nameurl}" class="dlm_filename">{$fltable[file].file.realfilename}</a>{/if}{if $fltable[file].is.showdesc_inlist && $fltable[file].info.file_desc} <span class="dlm_filedesc">{$fltable[file].info.file_desc}{/if}
+                    <a href="{$fltable[file].info.iconurl}" class="dlm_fileicon"><img src="{$fltable[file].info.iconfile}" width="{$fltable[file].info.iconwidth}" height="{$fltable[file].info.iconheight}" alt="{$fltable[file].info.icontype}" title="{$fltable[file].info.icontype}" /></a>{if $fltable[file].is.showfilename} <a href="{$fltable[file].info.nameurl}" class="dlm_filename" title="{$fltable[file].file.realfilename}">{$fltable[file].file.realfilename}</a>{/if}{if $fltable[file].is.showdesc_inlist && $fltable[file].info.file_desc} <span class="dlm_filedesc">{$fltable[file].info.file_desc}{/if}
 
                 </td>
                 {if $fltable[file].is.showdownloads}

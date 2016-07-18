@@ -13,12 +13,12 @@ if (!isset($serendipity['dlm']['pluginpath'])) {
     $serendipity['dlm']['pluginpath'] = basename(rtrim($pluginpath['dirname'], '/')) . '/serendipity_event_downloadmanager/';
 }
 
-
 class serendipity_event_downloadmanager extends serendipity_event
 {
     var $debug;
     var $MIME;
     var $globs = array();
+    var $isWIN = null;
 
     /**
      * introspect API
@@ -37,7 +37,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '5.3.0'
         ));
 
-        $propbag->add('version',       '0.31');
+        $propbag->add('version',       '0.32');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -47,7 +47,6 @@ class serendipity_event_downloadmanager extends serendipity_event
                                             'css'                     => true,
                                             'css_backend'             => true,
                                             'backend_sidebar_entries' => true,
-                                            'backend_dlm_filecopy'    => true,
                                             'backend_sidebar_admin_appearance' => true,
                                             'backend_sidebar_entries_event_display_downloadmanager' => true
                                         )
@@ -58,6 +57,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                                             'intro',
                                             'pageurl',
                                             'permalink',
+                                            'separator',
                                             'absincomingpath',
                                             'absdownloadspath',
                                             'httppath',
@@ -123,29 +123,26 @@ class serendipity_event_downloadmanager extends serendipity_event
             case 'permalink':
                 $propbag->add('type',       'string');
                 $propbag->add('name',       PLUGIN_DOWNLOADMANAGER_PERMALINK);
-                $propbag->add('description',PLUGIN_DOWNLOADMANAGER_PERMALINK_BLAHBLAH);
+                $propbag->add('description',sprintf(PLUGIN_DOWNLOADMANAGER_PERMALINK_BLAHBLAH, $serendipity['serendipityHTTPPath'] . 'downloads.html'));
                 $propbag->add('default',    $serendipity['rewrite'] != 'none'
                                             ? $serendipity['serendipityHTTPPath'] . 'downloads.html'
                                             : $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/downloads.html');
                 break;
 
-            case 'separator2':
             case 'separator':
                 $propbag->add('type',           'separator');
                 break;
 
+            // Remember, the chg2archivespath variable was here to indicate the upgrade to DLM Version 0.24+ had run through
+            // and files got merged to the new location, which should not be configurable any more, so be a 'content' information!
             case 'absincomingpath':
-                $propbag->add('type',       (serendipity_db_bool($this->get_config('chg2archivespath')) ? 'hidden' : 'string'));
-                $propbag->add('name',       PLUGIN_DOWNLOADMANAGER_ABSINCOMINGPATH);
-                $propbag->add('description',PLUGIN_DOWNLOADMANAGER_ABSINCOMINGPATH_BLAHBLAH);
-                $propbag->add('default',    $serendipity['serendipityPath'] . 'archives/.dlm/ftpin');
+                $propbag->add('type',       'content');
+                $propbag->add('default',    '<strong>'.PLUGIN_DOWNLOADMANAGER_ABSINCOMINGPATH . '</strong>: <em>' . $serendipity['serendipityPath'] . 'archives/.dlm/ftpin' . '</em><br>' . PLUGIN_DOWNLOADMANAGER_ABSINCOMINGPATH_BLAHBLAH);
                 break;
 
             case 'absdownloadspath':
-                $propbag->add('type',       (serendipity_db_bool($this->get_config('chg2archivespath')) ? 'hidden' : 'string'));
-                $propbag->add('name',       PLUGIN_DOWNLOADMANAGER_ABSDOWNLOADPATH);
-                $propbag->add('description',PLUGIN_DOWNLOADMANAGER_ABSDOWNLOADPATH_BLAHBLAH);
-                $propbag->add('default',    $serendipity['serendipityPath'] . 'archives/.dlm/files');
+                $propbag->add('type',       'content');
+                $propbag->add('default',    '<strong>'.PLUGIN_DOWNLOADMANAGER_ABSDOWNLOADPATH . '</strong>: <em>' . $serendipity['serendipityPath'] . 'archives/.dlm/files' . '</em><br>' . PLUGIN_DOWNLOADMANAGER_ABSDOWNLOADPATH_BLAHBLAH);
                 break;
 
             case 'httppath':
@@ -309,11 +306,15 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * selected API
+     * This method is a plugin API standard starter
      */
     function selected()
     {
         global $serendipity;
+
+        if (!empty($serendipity['POST']['subpage'])) {
+            $serendipity['GET']['subpage'] = $serendipity['POST']['subpage'];
+        }
 
         if ($serendipity['GET']['subpage'] == $this->get_config('pageurl') ||
             preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage'])) {
@@ -482,14 +483,16 @@ class serendipity_event_downloadmanager extends serendipity_event
         global $serendipity;
 
         $this->globs = array(
-            'dateformat'    => ((!$dateformat || strlen($dateformat) < 1) ? 'Y/m/d, h:ia' : $this->get_config('dateformat')),
+            'dateformat'    => $this->get_config('dateformat', 'Y-m-d H:i'),
             'ftppath'       => (!$this->get_config('absincomingpath')
                                         ? $serendipity['serendipityPath'] . 'archives/.dlm/ftpin'
                                         : $this->get_config('absincomingpath')),
             'dlmpath'       => (!$this->get_config('absdownloadspath')
                                         ? $serendipity['serendipityPath'] . 'archives/.dlm/files'
                                         : $this->get_config('absdownloadspath')),
-            'attention'     => '<img class="dlm_backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" />'
+            'attention'     => (($serendipity['version'][0] < 2)
+                                        ? '<img class="dlm_backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" />'
+                                        : '<span class="msg_error"><span class="icon-attention-circled"></span> ')
         );
     }
 
@@ -501,9 +504,10 @@ class serendipity_event_downloadmanager extends serendipity_event
         global $serendipity;
         $c_path = dirname(__FILE__);
         $b_path = $serendipity['serendipityPath'];
-        if ($b_path[(strlen($b_path)-1)] == "/")
+        if ($b_path[(strlen($b_path)-1)] == '/') {
             $b_path = substr($b_path, 0, strlen($b_path)-1);
-        $r_path = ".".str_replace($b_path, "", $c_path);
+        }
+        $r_path = '.' . str_replace($b_path, '', $c_path);
         return $r_path;
     }
 
@@ -517,7 +521,9 @@ class serendipity_event_downloadmanager extends serendipity_event
         if (!is_object($serendipity['smarty'])) {
             serendipity_smarty_init();
         }
-
+        if ($serendipity['version'][0] < 2) {
+            $serendipity['smarty']->assign(array('div' => 'div', 'tag' => 'p'));
+        }
         if ($type == 'error') {
             // assign files of category to smarty
             $serendipity['smarty']->assign('dlmerr', array('thiserror' => true, 'errormsg' => $msg));
@@ -787,7 +793,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         } else {
             $MIMETYPE['ICON'] = $this->get_config('httppath')."img/dlicons/unknown_small.png";
         }
-        if (!empty($mimetypes[$EXTENSION]) && trim($mimetypes[$EXTENSION]) != "") {
+        if (!empty($mimetypes[$EXTENSION]) && trim($mimetypes[$EXTENSION]) != '') {
             $MIMETYPE['TYPE'] = $mimetypes[$EXTENSION];
         } else {
             $MIMETYPE['TYPE'] = "application/octet-stream";
@@ -802,9 +808,10 @@ class serendipity_event_downloadmanager extends serendipity_event
     {
         global $serendipity;
 
-        if (!headers_sent())
+        if (!headers_sent()) {
             header('HTTP/1.0 200');
             header('Status: 200 OK');
+        }
 
         if (!is_object($serendipity['smarty'])) {
             serendipity_smarty_init();
@@ -882,7 +889,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                     $file['filesize']       = $this->calcFilesize($file['filesize']);
                     $file['filedate']       = date($this->globs['dateformat'], $file['timestamp']);
                     $file['description']    = $temp_array['comment'];
-                    $file['dlurl']          = $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "") . "plugin/dlfile_".$id;
+                    $file['dlurl']          = $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . '?/' : '') . 'plugin/dlfile_'.$id;
 
                     $serendipity['smarty']->assign('thisfile', $file);
                 }
@@ -911,11 +918,11 @@ class serendipity_event_downloadmanager extends serendipity_event
 
                 $serendipity['smarty']->assign(
                     array(
-                        'catname'       =>    $cat['payload'],
-                        'numsubcats'    =>    $cat['subcats'],
-                        'pageurl'       =>    $this->get_config('pageurl'),
-                        'numdls'        =>    intval($num_dls),
-                        'basepage'      =>    $serendipity['serendipityHTTPPath'] . $serendipity['indexFile']
+                        'catname'    => $cat['payload'],
+                        'numsubcats' => $cat['subcats'],
+                        'pageurl'    => $this->get_config('pageurl'),
+                        'numdls'     => intval($num_dls),
+                        'basepage'   => $serendipity['serendipityHTTPPath'] . $serendipity['indexFile']
                     )
                 );
 
@@ -982,7 +989,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                     foreach($files as $file) {
 
                         $infourl = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . "?serendipity[subpage]=".$this->get_config('pageurl')."&amp;thiscat=".$id."&amp;file=".$file['id'];
-                        $dlurl   = $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "") . "plugin/dlfile_" . $file['id'];
+                        $dlurl   = $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/dlfile_' . $file['id'];
                         $mime    = $this->getMime($file['realfilename']);
 
                         $fileinfo = array('file_desc'  => str_replace(array("\r\n","\n","\r"),array("<br />","<br />","<br />"), $file['description']),
@@ -1081,7 +1088,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             return $min + $rnd;
         };
 
-        $token = "";
+        $token = '';
         $max   = strlen( $pool );
         for ( $i = 0; $i < $length; $i++ ) {
             $token .= $pool[$crypto_rand_secure( 0, $max )];
@@ -1095,11 +1102,12 @@ class serendipity_event_downloadmanager extends serendipity_event
     function addCat($node_id, $catname)
     {
         global $serendipity;
-        $sql = "SELECT root_id, lft, rgt FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories WHERE node_id = $node_id";
-        $node = serendipity_db_query($sql);
-        $root_id     = $node[0]['root_id'];
-        $lft         = $node[0]['lft'];
-        $rgt         = $node[0]['rgt'];
+
+        $sql     = "SELECT root_id, lft, rgt FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories WHERE node_id = $node_id";
+        $node    = serendipity_db_query($sql);
+        $root_id = $node[0]['root_id'];
+        $lft     = $node[0]['lft'];
+        $rgt     = $node[0]['rgt'];
 
         @serendipity_db_query("LOCK TABLES {$serendipity['dbPrefix']}dma_downloadmanager_categories WRITE");
         serendipity_db_query("UPDATE {$serendipity['dbPrefix']}dma_downloadmanager_categories
@@ -1197,7 +1205,7 @@ class serendipity_event_downloadmanager extends serendipity_event
 
         $path = ($_GET['serendipity']['adminAction'] == 'downloadmanager')
               ? ''
-              : $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . "?serendipity[subpage]=".$this->get_config('pageurl')."&amp;level=".$cat['level']."&amp;thiscat=".$cat['node_id'];
+              : $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?serendipity[subpage]='.$this->get_config('pageurl').'&amp;level='.$cat['level'].'&amp;thiscat='.$cat['node_id'];
 
         // construct the smarty template array (no need of catname, while sending full cat array, used here, as long as defined in other function)
         $cl = array( 'cat'     => $cat,
@@ -1274,13 +1282,13 @@ class serendipity_event_downloadmanager extends serendipity_event
     {
         global $serendipity;
 
-        $sql = "        SELECT
-                                node1.root_id,
-                                node1.lft,
-                                node1.rgt,
-                                round((node1.rgt-node1.lft-1)/2,0) AS subcats
-                        FROM     {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node1
-                        WHERE     node_id = $catid";
+        $sql = "SELECT
+                    node1.root_id,
+                    node1.lft,
+                    node1.rgt,
+                    round((node1.rgt-node1.lft-1)/2,0) AS subcats
+                  FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node1
+                 WHERE node_id = $catid";
         $node = serendipity_db_query($sql);
         if (is_array($node)) {
             @serendipity_db_query("LOCK TABLES {$serendipity['dbPrefix']}dma_downloadmanager_categories WRITE");
@@ -1314,13 +1322,37 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
+     * delete possible empty ftp directories
+     */
+    function delEmptyDir()
+    {
+        $_dir = $this->globs['ftppath'];
+        try {
+            $_ftpDirs = new RecursiveDirectoryIterator($_dir);
+            // NOTE: UnexpectedValueException thrown for PHP >= 5.3
+        }
+        catch (Exception $e) {
+            return 0;
+        }
+        $_files = new RecursiveIteratorIterator($_ftpDirs, RecursiveIteratorIterator::CHILD_FIRST);
+        foreach ($_files as $_file) {
+            if ($_file->isDir()) {
+                if (!$_files->isDot()) {
+                    // delete folder if empty, non-empty are skipped
+                    @rmdir($_file->getPathname());
+                }
+            }
+        }
+    }
+
+    /**
      * delete file
      */
     function delFile($file_id)
     {
         global $serendipity;
 
-        $id = intval($file_id);
+        $id  = intval($file_id);
         $ret = serendipity_db_query("SELECT systemfilename FROM {$serendipity['dbPrefix']}dma_downloadmanager_files WHERE id = ".$id);
         if (file_exists($this->globs['dlmpath']."/".$ret[0]['systemfilename']) && !@unlink($this->globs['dlmpath']."/".$ret[0]['systemfilename'])) {
             $this->ERRMSG(PLUGIN_DOWNLOADMANAGER_DELETE_IN_DOWNLOADDIR_NOT_ALLOWED);
@@ -1335,7 +1367,8 @@ class serendipity_event_downloadmanager extends serendipity_event
      */
     function delIncomingFile($file)
     {
-        if (file_exists($this->globs['ftppath']."/".$file) && !@unlink($this->globs['ftppath']."/".$file)) {
+        //  removed $this->globs['ftppath']."/".$file to $file, since new iterator fetch is using fullpath already, put to delinfile
+        if (file_exists($file) && !@unlink($file)) {
             $this->ERRMSG(PLUGIN_DOWNLOADMANAGER_DELETE_IN_INCOMING_NOT_ALLOWED);
         } else {
             return true;
@@ -1343,34 +1376,72 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
+     * WIN OS filename encodings for read, handle, write in case of LANG_CHARSET == UTF-8
+     * - decodes to ISO-8859-1 for file properties stats reading checks
+     * - converts to UTF-8 in case of POSTing arrays, sending single filenames via GET and storing to the database tables
+     *
+     * @param   string
+     * @return  string
+     */
+    function encodeToUTF($name, $reverse=false)
+    {
+        if ($this->isWIN === null) {
+            // Windows does not have UTF-8 locales.
+            $this->isWIN = (LANG_CHARSET == 'UTF-8' && (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' ? true : false));
+        }
+        if ($this->debug) echo "<b>NAME</b> ".basename($name)." is: <b>".mb_detect_encoding($name, 'UTF-8, ISO-8859-1', true)."</b><br>\n";
+        // if WIN decode for stats
+        if ($this->isWIN) {
+            if (!$reverse) {
+                $name = utf8_decode($name);
+                if ($this->debug) echo '<b>NAME</b> return for file props internally UTF-8 <b>de</b>coded: <em>'.basename($name)."</em><br>\n";
+                if ($this->debug) echo "<b>NAME</b> detected as: <b>".mb_detect_encoding($name, 'UTF-8, ISO-8859-1', true)."</b><br><br>\n";
+            } else {
+                // ASCII filenames only!
+                if (!function_exists('mb_convert_encoding')) {
+                    $this->ERRMSG(PLUGIN_DOWNLOADMANAGER_PHPMB_ERROR, 'status');
+                }
+                if (mb_detect_encoding($name, 'UTF-8', false)) {
+                    if ($this->debug) echo "<b>NAME</b> return mb_convert_encoding back to UTF-8 for file prop stats reading: ";
+                    $name = mb_convert_encoding($name, 'UTF-8', 'ISO-8859-1');
+                    if ($this->debug) echo "<b>".mb_detect_encoding($name, 'UTF-8, ISO-8859-1', true)."</b><br><br>\n";
+                }
+            }
+        }
+        return $name;
+    }
+
+    /**
      * import file
      */
-    function importFile($file, $catid)
+    function importFile($filedir, $catid)
     {
         global $serendipity;
 
         $catid = intval($catid);
-        $file = basename($file);
+        $filedir = $this->encodeToUTF($filedir); // OK for copy
+        // Avoid cut Umlaut UTF-8 Chars like on 1st char, eg Ärgerlich.pdf uploaded as rgerlich.pdf
+        // this may be some kind of PHP bug or is local aware, anyway we just check if inside a dir with a DS
+        $file    = (false === (strpos($filedir, '/'))) ? $filedir : basename($filedir);
+        $file    = $this->encodeToUTF($file, true); // to UTF-8 while searched in DB where we have utf8
 
         // Check if file is already existing in category:
         $file_update = false;
-        if ($this->get_config('add_existing_file','insert')=='update') {
-            $sql = "SELECT systemfilename FROM  {$serendipity['dbPrefix']}dma_downloadmanager_files WHERE realfilename = '".serendipity_db_escape_string($file)."' AND catid = '".$catid."' ORDER BY timestamp DESC";
-            $dbfilelist = serendipity_db_query($sql);
+        if ($this->get_config('add_existing_file', 'insert') == 'update') {
+            $sql = "SELECT systemfilename FROM  {$serendipity['dbPrefix']}dma_downloadmanager_files
+                     WHERE realfilename = '".serendipity_db_escape_string($file)."'
+                       AND catid = '".$catid."'
+                  ORDER BY timestamp DESC";
+            $dbfilelist  = serendipity_db_query($sql);
             $file_update = is_array($dbfilelist);
         }
 
-        if ($file_update) {
-            $sysfilename = $dbfilelist[0]['systemfilename'];
-        }
-        else {
-            $sysfilename = $this->random_text('alnum', 32);
-        }
+        $sysfilename = $file_update ? $dbfilelist[0]['systemfilename'] : $this->random_text('alnum', 32);
 
-        if (@copy($this->globs['ftppath']."/".$file, $this->globs['dlmpath']."/".$sysfilename)) {
+        if (@copy($this->globs['ftppath']."/".$filedir, $this->globs['dlmpath']."/".$sysfilename)) {
 
-            $timestamp = filemtime($this->globs['dlmpath']."/".$sysfilename);
-            $filesize  = filesize($this->globs['dlmpath']."/".$sysfilename);
+            $timestamp = @filemtime($this->globs['dlmpath']."/".$sysfilename);
+            $filesize  = @filesize($this->globs['dlmpath']."/".$sysfilename);
 
             if ($file_update) {
                 serendipity_db_query("UPDATE {$serendipity['dbPrefix']}dma_downloadmanager_files
@@ -1397,9 +1468,11 @@ class serendipity_event_downloadmanager extends serendipity_event
                                 )");
             }
             @chmod($this->globs['dlmpath']."/".$sysfilename, 0666);
-            if (file_exists($this->globs['ftppath']."/".$file) && !@unlink($this->globs['ftppath']."/".$file)) {
+
+            if (file_exists($this->globs['ftppath']."/".$filedir) && !@unlink($this->globs['ftppath']."/".$filedir)) {
                 $this->ERRMSG(PLUGIN_DOWNLOADMANAGER_DELETE_IN_INCOMING_NOT_ALLOWED);
             }
+
         } else {
             $this->ERRMSG(PLUGIN_DOWNLOADMANAGER_COPY_NOT_ALLOWED);
         }
@@ -1415,14 +1488,14 @@ class serendipity_event_downloadmanager extends serendipity_event
         $catid = intval($catid);
         $sysfilename = $this->random_text('alnum', 32);
 
-        if (isset($path) && trim($path) != "" && !preg_match("@\.\./@", $path)) {
+        if (isset($path) && trim($path) != '' && !preg_match("@\.\./@", $path)) {
             $extrapath = trim($path);
         } else {
-            $extrapath = "";
+            $extrapath = '';
         }
 
         $uploadPath = $serendipity['serendipityPath'].$serendipity['uploadPath'];
-        if ($uploadPath[(strlen($uploadPath)-1)] == "/") {
+        if ($uploadPath[(strlen($uploadPath)-1)] == '/') {
             $uploadPath = substr($uploadPath, 0, (strlen($uploadPath)-1));
         }
         $uploadPath .= $extrapath;
@@ -1494,7 +1567,7 @@ class serendipity_event_downloadmanager extends serendipity_event
 
                         // Check, if file already exists in database
                         $file_update = false;
-                        if ($this->get_config('add_existing_file','insert')=='update') {
+                        if ($this->get_config('add_existing_file', 'insert') == 'update') {
                             $sql = "SELECT systemfilename FROM  {$serendipity['dbPrefix']}dma_downloadmanager_files WHERE realfilename = '".$fname."' AND catid = '".$catid."' ORDER BY timestamp DESC";
                             $dbfilelist = serendipity_db_query($sql);
                             $file_update = is_array($dbfilelist);
@@ -1514,7 +1587,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                                 serendipity_db_query("UPDATE {$serendipity['dbPrefix']}dma_downloadmanager_files
                                                     SET timestamp = '".time()."',
                                                         filesize = '$FILESIZE' ".
-                                                        (!empty($fdesc)? ",description='$fdesc'":'').
+                                                        (!empty($fdesc) ? ",description='$fdesc'" : '').
                                                     " WHERE
                                                         catid = '$catid' AND
                                                         realfilename = '".$fname."'");
@@ -1567,16 +1640,6 @@ class serendipity_event_downloadmanager extends serendipity_event
         }
         $ddiv = false;
 
-        // return GET value of 0.24 upgrade hook
-        if (isset($_GET['cpdone'])) {
-            if (intval($_GET['cpdone']) == 1) {
-                $this->ERRMSG($this->globs['attention'] . ' ' . PLUGIN_DOWNLOADMANAGER_ALLFILES_COPIED_NEWDIR);
-            }
-            if (intval($_GET['cpdone']) == 0) {
-                $this->ERRMSG($this->globs['attention'] . ' ' . PLUGIN_DOWNLOADMANAGER_ALLFILES_COPY_NEWDIR_REMEMBER);
-            }
-        }
-
         if (!is_dir($this->globs['ftppath'])) {
             @mkdir($this->globs['ftppath'], 0777, true);
         }
@@ -1611,11 +1674,13 @@ class serendipity_event_downloadmanager extends serendipity_event
             $this->delFile(intval($_GET['delfile']));
         }
 
-        if (!empty($_GET['delifile']) && trim($_GET['delifile']) != "") {
-            $this->delIncomingFile($_GET['delifile']);
+        if (!empty($_GET['delinfile']) && trim($_GET['delinfile']) != '') {
+            if ($this->delIncomingFile($this->globs['ftppath']."/".$_GET['delinfile'])) {
+                $this->delEmptyDir();
+            }
         }
 
-        if (!empty($_GET['importfile']) && trim($_GET['importfile']) != "") {
+        if (!empty($_GET['importfile']) && trim($_GET['importfile']) != '') {
             $this->importFile($_GET['importfile'], intval($_GET['thiscat']));
         }
 
@@ -1686,7 +1751,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                             $ERRMSG = PLUGIN_DOWNLOADMANAGER_ERRORS_OCCOURED."<br />";
                             if (count($this->UPLOAD_TOOBIG) >= 1) {
                                 $ERRMSG .= "<br />".PLUGIN_DOWNLOADMANAGER_ERRORS_TOOBIG."<br />";
-                                for ($a=0;$a<count($this->UPLOAD_TOOBIG);++$a) {
+                                for ($a=0; $a<count($this->UPLOAD_TOOBIG); ++$a) {
                                     $ERRMSG .= $this->UPLOAD_TOOBIG[$a]."<br />";
                                 }
                             }
@@ -1708,10 +1773,8 @@ class serendipity_event_downloadmanager extends serendipity_event
                         // generate file table content here - DIV 1 @ PAGE 2
                         $this->backend_dlm_build_filetable($files, (($ct) ? false : $ddiv), $this->globs['ftppath'], $this->globs['dlmpath'], $this->globs['dateformat'], $num_dls, intval($_GET['thiscat']), 1, 2);
 
-
                         // generate ftp/trash folder table content here - DIV 2 @ PAGE 2
                         $this->backend_dlm_build_ftptable($ct, $this->globs['ftppath'], intval($_GET['thiscat']), 2, 2);
-
 
                         // generate media library folder table content here - DIV 3 @ PAGE 2
                         $this->backend_dlm_build_s9ml_table($this->globs['dateformat'], $serendipity['serendipityPath'] . $serendipity['uploadPath'], 3, 2);
@@ -1804,13 +1867,16 @@ class serendipity_event_downloadmanager extends serendipity_event
         $serendipity['plugin_dlm_version'] = &$bag->get('version');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'entry_display' :
                     if ($this->selected()) {
+                        // This is important to not display an entry list!
                         if (is_array($eventData)) {
                             $eventData['clean_page'] = true;
                         } else {
-                            $eventData = array ('clean_page' => true);
+                            $eventData = array('clean_page' => true);
                         }
                     }
                     break;
@@ -1837,51 +1903,13 @@ class serendipity_event_downloadmanager extends serendipity_event
                     }
                     break;
 
-                case 'backend_dlm_filecopy':
-
-                    if ( !serendipity_db_bool($this->get_config('chg2archivespath')) ) {
-
-                        $oldfilepath = ($this->get_config('absdownloadspath') ? $this->get_config('absdownloadspath') : $serendipity['serendipityPath'] . 'templates_c/.dlmanager/files');
-                        $newfilepath = $serendipity['serendipityPath'] . 'archives/.dlm/files';
-
-                        // upgrade the old encoded files to new dir
-                        $updown = $this->backend_dlm_upgrade($oldfilepath, $newfilepath, 'absdownloadspath');
-
-                        $oldinpath = ($this->get_config('absincomingpath') ? $this->get_config('absincomingpath') : $serendipity['serendipityPath'] . $serendipity['uploadPath'] . '.dlmanager/incoming');
-                        $newinpath = $serendipity['serendipityPath'] . 'archives/.dlm/ftpin';
-
-                        // upgrade the old incoming ftp/trash files to new dir
-                        $upin = $this->backend_dlm_upgrade($oldinpath, $newinpath, 'absincomingpath');
-
-                        if (true === ($updown || $upin)) {
-                            $this->set_config('chg2archivespath', true);
-                            $url = $_SERVER['PHP_SELF'] . '?serendipity[adminModule]=event_display&serendipity[adminAction]=downloadmanager&cpdone=1';
-                            $this->backend_dlm_refresh($url);
-                        }
-                    }
-                    break;
-
                 case 'backend_sidebar_entries_event_display_downloadmanager':
-
-                    $serendipity['dlm']['stopadminprocess'] = false;
 
                     if (!is_object($serendipity['smarty'])) {
                         serendipity_smarty_init();
                     }
 
-                    // load the 0.24 upgrade hook
-                    if (version_compare($serendipity['plugin_dlm_version'], '0.24', '<=')) {
-                        serendipity_plugin_api::hook_event('backend_dlm_filecopy', $addData);
-                    } else {
-                        if (!serendipity_db_bool($this->get_config('chg2archivespath'))) $this->set_config('chg2archivespath', true);
-                    }
-                    if (intval($_GET['cpdone']) == 0) $this->set_config('chg2archivespath', true);
-
-                    if ( intval(isset($_GET['cpdone'])) || $serendipity['dlm']['stopadminprocess'] === false ) {
-
-                        $this->ADMIN_showDownloads();
-
-                    }
+                    $this->ADMIN_showDownloads();
                     break;
 
                 case 'external_plugin':
@@ -1898,12 +1926,11 @@ class serendipity_event_downloadmanager extends serendipity_event
                         }
                     }
 
-
                     $parts     = explode('_', $uri_parts[0]);
                     if (!empty($parts[1])) {
-                        $param     = (int) $parts[1];
+                        $param = (int) $parts[1];
                     } else {
-                        $param     = null;
+                        $param = null;
                     }
 
                     switch($parts[0]) {
@@ -1917,7 +1944,6 @@ class serendipity_event_downloadmanager extends serendipity_event
                             $file = serendipity_db_query($sql);
                             $mime = $this->getMime($file[0]['realfilename']);
                             $contenttype = $mime['TYPE'];
-
 
                             $filename = $file[0]['realfilename'];
                             $filename = str_replace(' ', '_', $filename);
@@ -2022,7 +2048,16 @@ class serendipity_event_downloadmanager extends serendipity_event
                         $tfile = dirname(__FILE__) . '/style_dlmanager_backend.css';
                         $tfilecontent = @file_get_contents($tfile);
                     }
+                    if (!empty($tfilecontent) && $serendipity['version'][0] < 2) {
+                        $tfilecontent .= '
+#dlm_messages {
+    margin: 16px 0;
+    padding: 4px;
+    text-align: center;
+}
 
+';
+                    }
                     // add replaced css content to the end of serendipity_admin.css
                     if (!empty($tfilecontent)) $this->backend_dlm_css($eventData, $tfilecontent);
                     break;
@@ -2107,81 +2142,49 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * upgrade files with v.0,24 to /archives/.dlm/files and /archives/.dlm/ftpin folder
-     *
-     * @param   string oldpath
-     * @param   string newpath
-     * @param   string config name set
-     *
-     * @return  true or false
-     */
-    function backend_dlm_upgrade($old, $new, $coname)
-    {
-        global $serendipity;
-
-        if (!is_dir($new)) {
-            @mkdir($new, 0777, true);
-        }
-
-        // fetch the files (encoded or normal) of old path as an array
-        $files = $this->backend_dlm_fetch_pathfiles($old);
-
-        if (is_array($files['f_arr']) && !empty($files['f_arr']) ) {
-
-            foreach($files['f_arr'] as $k => $v) {
-                // This does not rename the files, as you might assume, instead, it moves them physically!
-                if (!@rename ($old.'/'.$v, $new.'/'.$v)) {
-                    // void
-                } else {
-                    $result[] = array($v => true);
-                }
-            }
-
-            if ( is_array($result) && !empty($result) ){
-                unset($files);
-                unset($result);
-                $this->set_config($coname, $new);
-                return true;
-            } else {
-                if ($coname == 'absincomingpath') echo '<hr />';
-                $url = $_SERVER['PHP_SELF'] . '?serendipity[adminModule]=event_display&serendipity[adminAction]=downloadmanager&cpdone=0';
-                $this->ERRMSG($this->globs['attention'] . ' ' . sprintf(PLUGIN_DOWNLOADMANAGER_ERRORS_UPGRADE_NOTCOPIED, $old, $new, $url));
-                $serendipity['dlm']['stopadminprocess'] = true;
-                return false;
-            }
-        } else {
-            // nada in old path -  set config and return true to continue
-            $this->set_config($coname, $new);
-            return true;
-        }
-    }
-
-    /**
      * fetch dlm backend pathfiles table content
      *
-     * @param   string  The path to the s9y media library
+     * @param   string  The path to iterate
+     * @param   boolean If path is Serendipity MediaLibrary (default false)
      *
      * @return  array
      */
-    function backend_dlm_fetch_pathfiles($path)
+    function backend_dlm_fetch_pathfiles($path, $ml=false)
     {
-        $fa['d_arr'] = array(); $d = 0;
-        $fa['f_arr'] = array(); $f = 0;
+        $fa = array();
+        $fa['d_arr'] = array();
+        $fa['f_arr'] = array();
+        $d = 0;
+        $f = 0;
 
-        if (is_dir($path)) {
-            if ($handle = opendir($path)) {
-                while(false !== ($file = readdir($handle))) {
-                    if ($file != "." && $file != ".." && $file[0] != ".") {
-                        if (is_dir($path . "/" . $file))
-                            $fa['d_arr'][++$d] = $file;
-                        else
-                            $fa['f_arr'][++$f] = $file;
-                    }
+        if (!is_dir($path)) return;
+        try {
+            $_dir = new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS);
+            // NOTE: UnexpectedValueException thrown for PHP >= 5.3
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();#return;
+        }
+        if ($ml) {
+            $iterator = new RecursiveIteratorIterator($_dir, RecursiveIteratorIterator::SELF_FIRST);
+        } else {
+            $iterator = new RecursiveIteratorIterator($_dir, RecursiveIteratorIterator::CHILD_FIRST);
+        }
+
+        foreach ($iterator as $file) {
+            $_bfname = basename($file);
+            $_mdepth = $ml ? $iterator->getDepth() : 0; // allows to avoid recursive file iteration in ML since we have the dir structure to navigate
+            if ($file->isFile() && $_mdepth == 0 && $_bfname != '.empty' && (false === (strpos($_bfname, '.serendipityThumb')))) {
+                $filename = $this->encodeToUTF($file->getPathname(), true); // OK
+                $fa['f_arr'][++$f] = str_replace("\\", "/", $filename);
+            } else {
+                // do we need to do this encoding stuff for dir path too?
+                if ($file->isDir()) {
+                    $fa['d_arr'][++$d] = str_replace("\\", "/", $file->__toString());
                 }
             }
         }
-        if (is_dir($path)) closedir($handle);
-
+        #echo '<pre>';debug_print_backtrace();echo '</pre>';
+        #echo '<pre>' . print_r($fa, true) . '</pre>';
         return $fa;
     }
 
@@ -2229,7 +2232,8 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * generate backend appendix trash & helptip
+     * generate and assign backend appendix trash & helptip
+     *
      * @param   string  The configs absincomepath
      * @param   int     The category id number
      * @param   int     The div number (standard=3)
@@ -2244,7 +2248,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         $attention = $this->globs['attention'];
 
         // fetch all physically files in incoming ftp or trash table
-        $ifiles = $this->backend_dlm_fetch_pathfiles($absinth);
+        $ifiles = $this->backend_dlm_fetch_pathfiles($absinth); // is 3rd and last run in workflow
         $ifn    = count($ifiles['f_arr']);
         unset($ifiles);
 
@@ -2364,8 +2368,9 @@ class serendipity_event_downloadmanager extends serendipity_event
                 foreach ($_POST['dlm']['files'] AS $k => $v) {
                     foreach($files as $file) {
                         if ($file['id'] == $v) {
-                            // build the correct path from($this->globs['dlmpath']) -> where($this->globs['ftppath']) by new array
-                            $dfile[] = array(    'id' => $file['id'],
+                            $file['realfilename'] = $this->encodeToUTF($file['realfilename']); // OK
+                            // build the correct path from($this->globs['dlmpath']) -> to($this->globs['ftppath']) by new array
+                            $dfile[] = array(   'id'  => $file['id'],
                                                 'cat' => $file['catid'],
                                                 'sfn' => $absdoth.'/'.$file['systemfilename'],
                                                 'rfn' => $absinth.'/'.$file['realfilename']
@@ -2419,7 +2424,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 'catfiles'       => true,
                 'ddiv'           => $ddiv,
                 'filelist'       => $files,
-                'downloadpath'   => $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "") . "plugin/dlfile_"
+                'downloadpath'   => $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/dlfile_'
             )
         );
         return;
@@ -2444,17 +2449,14 @@ class serendipity_event_downloadmanager extends serendipity_event
         } else {
             $extrapath = '';
         }
-
-        if ($path[(strlen($path)-1)] == "/")
+        if ($path[(strlen($path)-1)] == "/") {
             $path = substr($path, 0, (strlen($path)-1));
-        $path .= $extrapath;
+        }
+        $path .= str_replace("\\", "/", $extrapath);
 
-        // fetch all physically files in current category
-        $files = $this->backend_dlm_fetch_pathfiles($path);
-
-        // sort by name descending
-        asort( $files['d_arr'] ); reset( $files['d_arr'] );
-        asort( $files['f_arr'] ); reset( $files['f_arr'] );
+        $files = array();
+        // fetch all allowed physically files and dirs in current category
+        $files = $this->backend_dlm_fetch_pathfiles($path, true); // only fetch files by directory - is 2cd in workflow
 
         if (count($files['d_arr']) <= 0 && count($files['f_arr']) <= 0) {
             $sml_arr = false;
@@ -2462,36 +2464,33 @@ class serendipity_event_downloadmanager extends serendipity_event
             $sml_arr = true;
 
             if (!empty($extrapath)) {
-                $backpath = preg_replace("`\/[^\/]*$`i", "", $extrapath);
+                $backpath = preg_replace("`\/[^\/]*$`i", '', $extrapath);
             }
 
             foreach($files['d_arr'] as $key => $val) {
 
                 $smldirs[] = array(
-                                'filename' => $val,
+                                'filename' => str_replace($serendipity['serendipityPath'] . $serendipity['uploadPath'], '', $val),
                                 'expath'   => $extrapath
                                 );
             }
 
             foreach($files['f_arr'] as $key => $val) {
-                if ( ($files['f_arr'] != '.' && $files['f_arr'] != '..') && (false === (strpos($val, 'serendipityThumb'))) ) {
-                    $mime = $this->getMime($val);
+                $mime = $this->getMime($val);
 
-                    $filedate = date($dateformat, filemtime($path."/".$val));
-                    $filesize = filesize($path."/".$val);
-                    $filesize = $this->calcFilesize($filesize);
+                $filedate = date($dateformat, filemtime($val));
+                $filesize = filesize($val);
+                $filesize = $this->calcFilesize($filesize);
 
-                    $smlfiles[] = array(
-                                'filename' => $val,
-                                'filesize' => $filesize,
-                                'filedate' => $filedate,
-                                'filemime' => $mime,
-                                'expath'   => $extrapath
-                                );
-                }
+                $smlfiles[] = array(
+                            'filename' => str_replace($serendipity['serendipityPath'] . $serendipity['uploadPath'], '', $val),
+                            'filesize' => $filesize,
+                            'filedate' => $filedate,
+                            'filemime' => $mime,
+                            'expath'   => $extrapath
+                );
             }
         }
-
         // assign as array('sml') the S9y media library files to smarty tpl page 2 'thissml' section
         $serendipity['smarty']->assign('dlmtsl',
             array(
@@ -2524,7 +2523,8 @@ class serendipity_event_downloadmanager extends serendipity_event
         global $serendipity;
 
         // fetch all physically files in incoming ftp or trash table
-        $files = $this->backend_dlm_fetch_pathfiles($absinth);
+        $files = $this->backend_dlm_fetch_pathfiles($absinth); // is first run in workflow
+
         $fn = count($files['f_arr']);
         $ct = ($fn >= 1) ? true : false;
 
@@ -2532,10 +2532,10 @@ class serendipity_event_downloadmanager extends serendipity_event
         if ($ct && (intval($_GET['cleantrash']) == 1 && intval($_POST['dlm']['cleartrash']) == 1)
                && !(isset($_POST['Move_Selected']) || isset($_POST['Move_Selected_x']) || isset($_POST['Move_Selected_y'])) ) {
             foreach($files['f_arr'] as $file) {
-                $this->delIncomingFile($file);
-                $deinfi = true;
+                $ctfile = $this->delIncomingFile($file); // already as fullpath
+                #$ctfile = true;
             }
-            if ($deinfi === true) {
+            if ($ctfile === true) {
                 if (is_array($_POST)) unset($_POST);
                 if (is_array($files)) unset($files);
                 $url = $_SERVER['PHP_SELF'] . '?serendipity[adminModule]=event_display&serendipity[adminAction]=downloadmanager&thiscat=' . $catid;
@@ -2543,42 +2543,39 @@ class serendipity_event_downloadmanager extends serendipity_event
             }
         }
 
-        if (is_array($files)) unset($files);
+        if ($ctfile === true && is_array($files)) unset($files); // when does this ever happen?
 
         /* move multiple files being marked to move to a new directory */
         if ( isset($_POST['Move_Selected']) || isset($_POST['Move_Selected_x']) || isset($_POST['Move_Selected_y']) ) {
-            if (is_array($_POST['dlm']['ifiles'])) {
+
+            if (is_array($_POST['dlm']['ifiles']) && !empty($_POST['dlm']['ifiles'])) {
                 foreach ($_POST['dlm']['ifiles'] AS $ifile) {
                     $this->importFile($ifile, $catid);
                 }
+                // remove possible empty directories
+                $this->delEmptyDir();
             }
             if (is_array($_POST)) unset($_POST);
             $url = $_SERVER['PHP_SELF'] . '?serendipity[adminModule]=event_display&serendipity[adminAction]=downloadmanager&thiscat=' . $catid;
             $this->backend_dlm_refresh($url);
         }
 
-        $fp = opendir($absinth);
-        $cf = 0;
-        while ($file = readdir($fp)) {
-            if ($file != "." && $file != "..") {
-
-                $mime = $this->getMime($file);
-
-                $filedate = date($this->globs['dateformat'], filemtime($absinth."/".$file));
-                $filesize = filesize($absinth."/".$file);
-                $filesize = $this->calcFilesize($filesize);
-
-                $files[] = array(
-                                'filename' => $file,
-                                'filesize' => $filesize,
-                                'filedate' => $filedate,
-                                'filemime' => $mime
-                                );
-
-                ++$cf;
-            }
+        foreach($files['f_arr'] as $key => $val) {
+            $mime = $this->getMime($val);
+            $_val = $this->encodeToUTF($val); // OK win decode for stats
+            // otherwise thrown Warning: filemtime(): and filesize(): stat failed warning on LINUX
+            // are thrown for the lowered permissions - which is actually want we want in ftpdir
+            $filedate = date($this->globs['dateformat'], @filemtime($_val));
+            $filesize = @filesize($_val);
+            $filesize = $this->calcFilesize($filesize);
+            #$val = serendipity_specialchars($val);
+            $files[] = array(
+                            'filename' => str_replace($absinth.'/', '', $val),
+                            'filesize' => $filesize,
+                            'filedate' => $filedate,
+                            'filemime' => $mime
+            );
         }
-        closedir($fp);
 
         // assign the backend ftp/trash vars to smarty template page section 'thisftp'
         $serendipity['smarty']->assign('dlmtfp',
