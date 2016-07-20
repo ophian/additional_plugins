@@ -37,7 +37,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '5.3.0'
         ));
 
-        $propbag->add('version',       '0.32');
+        $propbag->add('version',       '0.33');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -354,7 +354,9 @@ class serendipity_event_downloadmanager extends serendipity_event
             $sql = serendipity_db_schema_import($q);
 
 
-            $sql = "SELECT * FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories WHERE payload = 'root'";
+            $sql = "SELECT *
+                      FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories
+                     WHERE payload = 'root'";
             $root = serendipity_db_query($sql);
             if (intval($root[0]['node_id']) != 1) {
                 serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}dma_downloadmanager_categories (payload, lft, rgt )
@@ -497,6 +499,17 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
+     * Avoids "bug" on 64-bit PHP systems cutting off utf8 encoded first chars
+     * @see https://bugs.php.net/bug.php?id=62119
+     * @see https://evertpot.com/271/
+     * Thanks to: http://php.net/manual/de/function.basename.php#85369
+     */
+    function mb_basename($file)
+    {
+        return end(explode('/',$file));
+    }
+
+    /**
      * get relative path
      */
     function getRelPath()
@@ -546,22 +559,22 @@ class serendipity_event_downloadmanager extends serendipity_event
     {
         global $serendipity;
         $sql = "
-            SELECT  node1.node_id AS node_id,
-                    node1.root_id AS root_id,
-                    node1.payload AS payload,
-                    node1.lft AS lft,
-                    node1.rgt AS rgt,
-                    node1.hidden AS hidden,
-                    round((node1.rgt-node1.lft-1)/2,0) AS subcats,
-                    ((min(node2.rgt)-node1.rgt-(node1.lft>1))/2) > 0 AS lower,
-                    (( (node1.lft-max(node2.lft)>1) )) AS upper,
-                    COUNT(*) AS level
-               FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node1,
-                    {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node2
-              WHERE node1.lft BETWEEN node2.lft AND node2.rgt
-                AND (node2.root_id = node1.root_id)
-                AND (node2.node_id != node1.node_id OR node1.lft = 1)
-                AND (node2.root_id = 1)";
+            SELECT node1.node_id AS node_id,
+                   node1.root_id AS root_id,
+                   node1.payload AS payload,
+                   node1.lft AS lft,
+                   node1.rgt AS rgt,
+                   node1.hidden AS hidden,
+                   round((node1.rgt-node1.lft-1)/2,0) AS subcats,
+                   ((min(node2.rgt)-node1.rgt-(node1.lft>1))/2) > 0 AS lower,
+                   (( (node1.lft-max(node2.lft)>1) )) AS upper,
+                   COUNT(*) AS level
+              FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node1,
+                   {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node2
+             WHERE node1.lft BETWEEN node2.lft AND node2.rgt
+               AND (node2.root_id = node1.root_id)
+               AND (node2.node_id != node1.node_id OR node1.lft = 1)
+               AND (node2.root_id = 1)";
         $sql .= ($bec === false) ? ((serendipity_db_bool($this->get_config('showhidden_registered', 'false')) && serendipity_userLoggedIn()) ? '' : " AND (node1.hidden != 1) AND (node2.hidden != 1) ") : '';
         $sql .= " GROUP BY node1.lft, node1.rgt, node1.node_id, node1.root_id, node1.payload";
 
@@ -591,8 +604,8 @@ class serendipity_event_downloadmanager extends serendipity_event
                         round((node1.rgt-node1.lft-1)/2,0) AS subcats,
                         COUNT(*) AS level
                    FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node1,
-                           {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node2,
-                           {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node3
+                        {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node2,
+                        {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node3
                   WHERE node1.lft BETWEEN node2.lft AND node2.rgt
                     AND node1.lft BETWEEN node3.lft AND node3.rgt
                     AND node2.root_id = 1
@@ -784,7 +797,7 @@ class serendipity_event_downloadmanager extends serendipity_event
 
         $MIMETYPE = array();
 
-        $filename = basename($filename);
+        $filename = $this->mb_basename($filename);
         $fileparts = explode(".", $filename);
         $EXTENSION = $fileparts[(count($fileparts) - 1)];
 
@@ -820,7 +833,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         if (!serendipity_db_bool($this->get_config('unhideroot'))) {
             // with DLM version 0.25 we set payload.root to be unhidden.0, to get the expected results in frontend
             $result = $this->dlm_sql_db('DLM_UPDATE', "hidden = '0' WHERE payload = 'root' AND node_id = '1'");
-            if ($result) $this->set_config('unhideroot', true);
+            if ($result) $this->set_config('unhideroot', 'true');
         }
 
         // assign to smarty and all 3 frontend pages
@@ -1103,7 +1116,9 @@ class serendipity_event_downloadmanager extends serendipity_event
     {
         global $serendipity;
 
-        $sql     = "SELECT root_id, lft, rgt FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories WHERE node_id = $node_id";
+        $sql     = "SELECT root_id, lft, rgt
+                      FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories
+                     WHERE node_id = $node_id";
         $node    = serendipity_db_query($sql);
         $root_id = $node[0]['root_id'];
         $lft     = $node[0]['lft'];
@@ -1111,17 +1126,17 @@ class serendipity_event_downloadmanager extends serendipity_event
 
         @serendipity_db_query("LOCK TABLES {$serendipity['dbPrefix']}dma_downloadmanager_categories WRITE");
         serendipity_db_query("UPDATE {$serendipity['dbPrefix']}dma_downloadmanager_categories
-                                   SET lft      =  lft + 2
-                                 WHERE root_id  =  $root_id
-                                   AND lft      >  $rgt
-                                   AND rgt      >= $rgt");
+                                 SET lft      =  lft + 2
+                               WHERE root_id  =  $root_id
+                                 AND lft      >  $rgt
+                                 AND rgt      >= $rgt");
         serendipity_db_query("UPDATE {$serendipity['dbPrefix']}dma_downloadmanager_categories
-                                   SET rgt      =  rgt + 2
-                                 WHERE root_id  =  $root_id
-                                   AND rgt      >= $rgt");
+                                 SET rgt      =  rgt + 2
+                               WHERE root_id  =  $root_id
+                                 AND rgt      >= $rgt");
         serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}dma_downloadmanager_categories
                                         ( root_id, payload, lft, rgt )
-                                VALUES
+                                   VALUES
                                         ( $root_id, '".serendipity_db_escape_string($catname)."', $rgt, $rgt + 1 )");
         @serendipity_db_query("UNLOCK TABLES");
         return true;
@@ -1226,13 +1241,10 @@ class serendipity_event_downloadmanager extends serendipity_event
         global $serendipity;
 
         $id = intval($node_id);
-        $sql = "        SELECT
-                                node1.root_id,
-                                node1.lft,
-                                node1.rgt,
-                                round((node1.rgt-node1.lft-1)/2,0) AS subcats
-                        FROM     {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node1
-                        WHERE     node_id = $id";
+        $sql = "SELECT node1.root_id, node1.lft, node1.rgt,
+                       round((node1.rgt-node1.lft-1)/2,0) AS subcats
+                  FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node1
+                 WHERE node_id = $id";
         $node = serendipity_db_query($sql);
         if (is_array($node)) {
 
@@ -1240,7 +1252,9 @@ class serendipity_event_downloadmanager extends serendipity_event
                 $this->ERRMSG(PLUGIN_DOWNLOADMANAGER_DELETE_NOT_ALLOWED);
             } else {
                 $files_deleted = 0;
-                $sql = "SELECT systemfilename FROM {$serendipity['dbPrefix']}dma_downloadmanager_files WHERE catid = ".$id;
+                $sql = "SELECT systemfilename
+                          FROM {$serendipity['dbPrefix']}dma_downloadmanager_files
+                         WHERE catid = $id";
                 $files = serendipity_db_query($sql);
 
                 if (is_array($files)) {
@@ -1257,17 +1271,16 @@ class serendipity_event_downloadmanager extends serendipity_event
 
                 if ($files_deleted == 1) {
                     @serendipity_db_query("LOCK TABLES {$serendipity['dbPrefix']}dma_downloadmanager_categories WRITE");
-                    serendipity_db_query("UPDATE     {$serendipity['dbPrefix']}dma_downloadmanager_categories
-                                            SET      lft=lft-2
-                                            WHERE    lft > ".$node[0]['lft']."
-                                            AND      root_id = ".$node[0]['root_id']);
-                    serendipity_db_query("UPDATE     {$serendipity['dbPrefix']}dma_downloadmanager_categories
-                                            SET      rgt=rgt-2
-                                            WHERE    rgt > ".$node[0]['rgt']."
-                                            AND      root_id = ".$node[0]['root_id']);
-                    serendipity_db_query("DELETE
-                                            FROM      {$serendipity['dbPrefix']}dma_downloadmanager_categories
-                                            WHERE     node_id = ".$id);
+                    serendipity_db_query("UPDATE {$serendipity['dbPrefix']}dma_downloadmanager_categories
+                                             SET lft=lft-2
+                                           WHERE lft > ".$node[0]['lft']."
+                                             AND root_id = ".$node[0]['root_id']);
+                    serendipity_db_query("UPDATE {$serendipity['dbPrefix']}dma_downloadmanager_categories
+                                             SET rgt=rgt-2
+                                           WHERE rgt > ".$node[0]['rgt']."
+                                             AND root_id = ".$node[0]['root_id']);
+                    serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories
+                                           WHERE node_id = ".$id);
                     @serendipity_db_query("UNLOCK TABLES");
                 }
             }
@@ -1282,22 +1295,19 @@ class serendipity_event_downloadmanager extends serendipity_event
     {
         global $serendipity;
 
-        $sql = "SELECT
-                    node1.root_id,
-                    node1.lft,
-                    node1.rgt,
-                    round((node1.rgt-node1.lft-1)/2,0) AS subcats
+        $sql = "SELECT node1.root_id, node1.lft, node1.rgt,
+                       round((node1.rgt-node1.lft-1)/2,0) AS subcats
                   FROM {$serendipity['dbPrefix']}dma_downloadmanager_categories AS node1
                  WHERE node_id = $catid";
         $node = serendipity_db_query($sql);
         if (is_array($node)) {
             @serendipity_db_query("LOCK TABLES {$serendipity['dbPrefix']}dma_downloadmanager_categories WRITE");
             serendipity_db_query("UPDATE     {$serendipity['dbPrefix']}dma_downloadmanager_categories
-                                    SET      hidden = ".intval($hide)."
-                                    WHERE    node_id = ".$catid);
+                                     SET     hidden = ".$hide."
+                                   WHERE     node_id = ".$catid);
             serendipity_db_query("UPDATE     {$serendipity['dbPrefix']}dma_downloadmanager_categories
-                                    SET      hidden = ".intval($hide)."
-                                    WHERE    lft BETWEEN ".$node[0]['lft']." AND ".$node[0]['rgt']);
+                                     SET     hidden = ".$hide."
+                                   WHERE     lft BETWEEN ".$node[0]['lft']." AND ".$node[0]['rgt']);
             @serendipity_db_query("UNLOCK TABLES");
         }
     }
@@ -1315,8 +1325,8 @@ class serendipity_event_downloadmanager extends serendipity_event
         @serendipity_db_query("LOCK TABLES {$serendipity['dbPrefix']}dma_downloadmanager_categories WRITE");
         foreach ($catnames AS $id => $name) {
             serendipity_db_query("UPDATE     {$serendipity['dbPrefix']}dma_downloadmanager_categories
-                                    SET      payload = '".serendipity_db_escape_string($name)."'
-                                    WHERE    node_id = ".intval($id));
+                                     SET     payload = '".serendipity_db_escape_string($name)."'
+                                   WHERE     node_id = ".intval($id));
         }
         @serendipity_db_query("UNLOCK TABLES");
     }
@@ -1353,7 +1363,9 @@ class serendipity_event_downloadmanager extends serendipity_event
         global $serendipity;
 
         $id  = intval($file_id);
-        $ret = serendipity_db_query("SELECT systemfilename FROM {$serendipity['dbPrefix']}dma_downloadmanager_files WHERE id = ".$id);
+        $ret = serendipity_db_query("SELECT systemfilename
+                                       FROM {$serendipity['dbPrefix']}dma_downloadmanager_files
+                                      WHERE id = $id");
         if (file_exists($this->globs['dlmpath']."/".$ret[0]['systemfilename']) && !@unlink($this->globs['dlmpath']."/".$ret[0]['systemfilename'])) {
             $this->ERRMSG(PLUGIN_DOWNLOADMANAGER_DELETE_IN_DOWNLOADDIR_NOT_ALLOWED);
         } else {
@@ -1389,12 +1401,12 @@ class serendipity_event_downloadmanager extends serendipity_event
             // Windows does not have UTF-8 locales.
             $this->isWIN = (LANG_CHARSET == 'UTF-8' && (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' ? true : false));
         }
-        if ($this->debug) echo "<b>NAME</b> ".basename($name)." is: <b>".mb_detect_encoding($name, 'UTF-8, ISO-8859-1', true)."</b><br>\n";
+        if ($this->debug) echo "<b>NAME</b> ".$this->mb_basename($name)." is: <b>".mb_detect_encoding($name, 'UTF-8, ISO-8859-1', true)."</b><br>\n";
         // if WIN decode for stats
         if ($this->isWIN) {
             if (!$reverse) {
                 $name = utf8_decode($name);
-                if ($this->debug) echo '<b>NAME</b> return for file props internally UTF-8 <b>de</b>coded: <em>'.basename($name)."</em><br>\n";
+                if ($this->debug) echo '<b>NAME</b> return for file props internally UTF-8 <b>de</b>coded: <em>'.$this->mb_basename($name)."</em><br>\n";
                 if ($this->debug) echo "<b>NAME</b> detected as: <b>".mb_detect_encoding($name, 'UTF-8, ISO-8859-1', true)."</b><br><br>\n";
             } else {
                 // ASCII filenames only!
@@ -1418,19 +1430,21 @@ class serendipity_event_downloadmanager extends serendipity_event
     {
         global $serendipity;
 
-        $catid = intval($catid);
+        $catid   = intval($catid);
         $filedir = $this->encodeToUTF($filedir); // OK for copy
-        // Avoid cut Umlaut UTF-8 Chars like on 1st char, eg Ärgerlich.pdf uploaded as rgerlich.pdf
-        // this may be some kind of PHP bug or is local aware, anyway we just check if inside a dir with a DS
-        $file    = (false === (strpos($filedir, '/'))) ? $filedir : basename($filedir);
+        // Avoid basename cutting Umlaut UTF-8 Chars on 1st char, eg Ärgerlich.pdf uploaded as rgerlich.pdf
+        // this may be some kind of PHP bug (https://bugs.php.net/bug.php?id=62119) or is locale-aware, or be, while encoded chars start with a slash;
+        // Anyway we just check if we are inside a dir with a DS, which avoids this - (false === (strpos($filedir, '/'))) ? $filedir : basename($filedir);
+        $file    = $this->mb_basename($filedir); // end(explode...) is doing the same... though
         $file    = $this->encodeToUTF($file, true); // to UTF-8 while searched in DB where we have utf8
 
         // Check if file is already existing in category:
         $file_update = false;
         if ($this->get_config('add_existing_file', 'insert') == 'update') {
-            $sql = "SELECT systemfilename FROM  {$serendipity['dbPrefix']}dma_downloadmanager_files
+            $sql = "SELECT systemfilename
+                      FROM {$serendipity['dbPrefix']}dma_downloadmanager_files
                      WHERE realfilename = '".serendipity_db_escape_string($file)."'
-                       AND catid = '".$catid."'
+                       AND catid = $catid
                   ORDER BY timestamp DESC";
             $dbfilelist  = serendipity_db_query($sql);
             $file_update = is_array($dbfilelist);
@@ -1445,11 +1459,11 @@ class serendipity_event_downloadmanager extends serendipity_event
 
             if ($file_update) {
                 serendipity_db_query("UPDATE {$serendipity['dbPrefix']}dma_downloadmanager_files
-                                       SET timestamp = '$timestamp',
-                                           filesize = '$filesize'
+                                         SET timestamp = '$timestamp',
+                                             filesize = '$filesize'
                                        WHERE
-                                            catid = '$catid' AND
-                                            realfilename = '".serendipity_db_escape_string($file)."'");
+                                             catid = '$catid' AND
+                                             realfilename = '".serendipity_db_escape_string($file)."'");
 
             } else {
                 serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}dma_downloadmanager_files
@@ -1568,7 +1582,11 @@ class serendipity_event_downloadmanager extends serendipity_event
                         // Check, if file already exists in database
                         $file_update = false;
                         if ($this->get_config('add_existing_file', 'insert') == 'update') {
-                            $sql = "SELECT systemfilename FROM  {$serendipity['dbPrefix']}dma_downloadmanager_files WHERE realfilename = '".$fname."' AND catid = '".$catid."' ORDER BY timestamp DESC";
+                            $sql = "SELECT systemfilename
+                                      FROM {$serendipity['dbPrefix']}dma_downloadmanager_files
+                                     WHERE realfilename = $fname
+                                       AND catid = $catid
+                                  ORDER BY timestamp DESC";
                             $dbfilelist = serendipity_db_query($sql);
                             $file_update = is_array($dbfilelist);
                         }
@@ -1926,7 +1944,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                         }
                     }
 
-                    $parts     = explode('_', $uri_parts[0]);
+                    $parts = explode('_', $uri_parts[0]);
                     if (!empty($parts[1])) {
                         $param = (int) $parts[1];
                     } else {
@@ -1938,9 +1956,14 @@ class serendipity_event_downloadmanager extends serendipity_event
 
                             $fileid = intval($parts[1]);
 
-                            serendipity_db_query("UPDATE {$serendipity['dbPrefix']}dma_downloadmanager_files SET dlcount = dlcount+1 WHERE id = " . $fileid);
+                            $q = "UPDATE {$serendipity['dbPrefix']}dma_downloadmanager_files
+                                     SET dlcount = dlcount+1
+                                   WHERE id = $fileid";
+                            serendipity_db_query($q);
 
-                            $sql  = "SELECT * FROM {$serendipity['dbPrefix']}dma_downloadmanager_files WHERE id = ".$fileid;
+                            $sql  = "SELECT *
+                                       FROM {$serendipity['dbPrefix']}dma_downloadmanager_files
+                                      WHERE id = $fileid";
                             $file = serendipity_db_query($sql);
                             $mime = $this->getMime($file[0]['realfilename']);
                             $contenttype = $mime['TYPE'];
@@ -2171,7 +2194,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         }
 
         foreach ($iterator as $file) {
-            $_bfname = basename($file);
+            $_bfname = $this->mb_basename($file);
             $_mdepth = $ml ? $iterator->getDepth() : 0; // allows to avoid recursive file iteration in ML since we have the dir structure to navigate
             if ($file->isFile() && $_mdepth == 0 && $_bfname != '.empty' && (false === (strpos($_bfname, '.serendipityThumb')))) {
                 $filename = $this->encodeToUTF($file->getPathname(), true); // OK
@@ -2245,8 +2268,6 @@ class serendipity_event_downloadmanager extends serendipity_event
     {
         global $serendipity;
 
-        $attention = $this->globs['attention'];
-
         // fetch all physically files in incoming ftp or trash table
         $ifiles = $this->backend_dlm_fetch_pathfiles($absinth); // is 3rd and last run in workflow
         $ifn    = count($ifiles['f_arr']);
@@ -2262,9 +2283,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         );
 
         // view all smarty template vars
-        #echo '<pre>';
-        #print_r( $serendipity['smarty']->get_template_vars() );
-        #echo '</pre>';
+        #echo '<pre>' . print_r( $serendipity['smarty']->get_template_vars(), true ) . '</pre>';
 
         return;
     }

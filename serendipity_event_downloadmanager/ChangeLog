@@ -1,9 +1,13 @@
 ChangeLog:
 """"""""""
 
+[Version 0.33 2016/07/20] by Ian
+--------------------------------
+ * Set basename() to md_basename() because of locale-aware PHP bug
+
 [Version 0.32 2016/07/18] by Ian
 --------------------------------
- * Improved filedir read iteration with PHP SPL Iterator, because of errors.
+ * Improved filedir read iteration to PHP SPL Iterator, because of errors.
  * In ISO-8859-1 to UTF-8 (recommended) environments we now support encoded filenames.
  * Some more fixes related to these changes and other false or unconsistent usage.
  * Some more minor 2.0 enhancements.
