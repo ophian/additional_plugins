@@ -376,7 +376,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateTableZip()
     {
-        $this->temporaryDowngrade('4.5.10.0', '4.5.9.0'); // temporary
+        $this->temporaryDowngrade('4.5.10.1', '4.5.10.0'); // temporary
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -390,7 +390,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        $this->temporaryDowngrade('4.5.10.0', '4.5.9.0'); // temporary
+        $this->temporaryDowngrade('4.5.10.1', '4.5.10.0'); // temporary
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
