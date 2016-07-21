@@ -1,3 +1,7 @@
+4.5.10.2:
+---------
+    * Unset serendipity_event_plugup cookies if plugup class exists
+
 4.5.10.1:
 ---------
     * Update lang constants and really force a halt for the upgrade config fallback!

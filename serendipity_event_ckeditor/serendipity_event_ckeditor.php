@@ -181,7 +181,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.5.10.1'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .1
+        $propbag->add('version',       '4.5.10.2'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .2
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
@@ -376,7 +376,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateTableZip()
     {
-        $this->temporaryDowngrade('4.5.10.1', '4.5.10.0'); // temporary
+        $this->temporaryDowngrade('4.5.10.2', '4.5.10.1'); // temporary
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -390,7 +390,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        $this->temporaryDowngrade('4.5.10.1', '4.5.10.0'); // temporary
+        $this->temporaryDowngrade('4.5.10.2', '4.5.10.1'); // temporary
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
@@ -616,6 +616,9 @@ ol.linenums li {
 
                 case 'external_plugin':
                     if ($eventData == 'triggerckeinstall') {
+                        if (class_exists('serendipity_event_plugup')) {
+                            serendipity_event_plugup::purge_plugupCookies();
+                        }
                         if ($this->install()) {
                             header('Location: ' . $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=plugins&serendipity[plugin_to_conf]='.urlencode($this->instance));
                         } else {
