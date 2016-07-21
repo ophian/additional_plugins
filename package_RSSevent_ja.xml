@@ -1350,9 +1350,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <title>WrapURL: : Wraps another page in an IFRAME to be displayed in the body</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_wrapurl</link>
 <category>Event Plugins</category>
-<author>Rob Antonishen, Ian (Timbalu)</author>
-<content:encoded>&lt;b&gt;serendipity_event_wrapurl&lt;br /&gt;WrapURL: &lt;/b&gt;&lt;br /&gt;Wraps another page in an IFRAME to be displayed in the body&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<author>Rob Antonishen, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_wrapurl&lt;br /&gt;WrapURL: &lt;/b&gt;&lt;br /&gt;Wraps another page in an IFRAME to be displayed in the body&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Thu, 21 Jul 2016 14:35:19 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_wrapurl</guid>
 </item>
 <item>

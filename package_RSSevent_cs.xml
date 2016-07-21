@@ -1344,9 +1344,9 @@
 <title>Vložení cizí stránky: : Do těla blogu vloží IFRAME, který zobrazuje jinou cizí stránku</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_wrapurl</link>
 <category>Event Plugins</category>
-<author>Rob Antonishen, Ian (Timbalu)</author>
-<content:encoded>&lt;b&gt;serendipity_event_wrapurl&lt;br /&gt;Vložení cizí stránky: &lt;/b&gt;&lt;br /&gt;Do těla blogu vloží IFRAME, který zobrazuje jinou cizí stránku&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<author>Rob Antonishen, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_wrapurl&lt;br /&gt;Vložení cizí stránky: &lt;/b&gt;&lt;br /&gt;Do těla blogu vloží IFRAME, který zobrazuje jinou cizí stránku&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Thu, 21 Jul 2016 14:35:19 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_wrapurl</guid>
 </item>
 <item>
