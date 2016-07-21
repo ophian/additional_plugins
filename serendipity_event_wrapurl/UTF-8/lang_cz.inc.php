@@ -24,3 +24,4 @@
 
 // Next lines were translated on 2010/12/25
 @define('WRAPURL_PAGETITLE_BLAHBLAH', 'Je použito pro individuálné podstránky a pojmenování CSS. Jedno jediné slovo je vyžadováno!');
+

@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -22,4 +22,3 @@
 @define('WRAPURL_URL_APPEND_BLAHBLAH', 'Should all GET-parameters be appended to the target URL? If set to yes, all extra parameters like "&data1=X&data2=X" that were used to call this wrapurl page will be appended to the target URL inside the iframe. If disabled, only the configured URL will be passed on.');
 @define('WRAPURL_HIDE_SIDEBAR', 'Hide sidebars?');
 
-?>

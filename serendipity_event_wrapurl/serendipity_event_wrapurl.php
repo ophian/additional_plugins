@@ -1,7 +1,7 @@
 <?php
 
 # (c) by Rob Antonishen
-# serendipity_event_wrapURL.php, v0.1 2005/05/04
+# serendipity_event_wrapurl.php, v0.1 2005/05/04
 # Very much copied from the static page event plugin by Marco Rinck, Garvin Hicking, David Rolston
 #
 
@@ -10,28 +10,25 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+// Load possible language files.
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include_once dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_wrapURL extends serendipity_event {
-    function introspect(&$propbag) {
+class serendipity_event_wrapurl extends serendipity_event
+{
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name', WRAPURL_TITLE . ': ' . $this->get_config('pagetitle', ''));
         $propbag->add('description', WRAPURL_TITLE_BLAHBLAH);
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true, 'frontend_generate_plugins' => true, 'css' => true));
         $propbag->add('configuration', array('headline', 'permalink', 'pagetitle', 'wrapurl', 'height', 'wrapurl_append', 'hide_sidebar'));
-        $propbag->add('author', 'Rob Antonishen, Ian (Timbalu)');
-        $propbag->add('version', '0.10.1');
+        $propbag->add('author', 'Rob Antonishen, Ian');
+        $propbag->add('version', '0.11');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
         $propbag->add('stackable', true);
@@ -102,7 +99,8 @@ class serendipity_event_wrapURL extends serendipity_event {
         return true;
     }
 
-    function show() {
+    function show()
+    {
         global $serendipity;
 
         if ($this->selected()) {
@@ -129,7 +127,7 @@ class serendipity_event_wrapURL extends serendipity_event {
                     $url .= (function_exists('serendipity_specialchars') ? serendipity_specialchars($key) : htmlspecialchars($key, ENT_COMPAT, LANG_CHARSET)) . '=' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($value) : htmlspecialchars($value, ENT_COMPAT, LANG_CHARSET)) . '&amp;';
                 }
             }
-            
+
             $_ENV['staticpage_pagetitle'] = preg_replace('@[^a-z0-9]@i', '_',$this->get_config('pagetitle'));
             $serendipity['smarty']->assign('staticpage_pagetitle', $_ENV['staticpage_pagetitle']);
             echo '<h4 class="serendipity_title"><a href="#">' . $this->get_config('headline') . '</a></h4>';
@@ -140,29 +138,33 @@ class serendipity_event_wrapURL extends serendipity_event {
         }
     }
 
-    function selected() {
+    function selected()
+    {
         global $serendipity;
         if ($serendipity['GET']['subpage'] == $this->get_config('pagetitle') ||
             preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage'])) {
             return true;
         }
-
         return false;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = WRAPURL_TITLE.' ('.$this->get_config('pagetitle').')';
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
-        
+
         $serendipity['wrapurl']['id_name'] = $this->get_config('pagetitle') ? $this->get_config('pagetitle') : 'none';
-        
+
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'frontend_generate_plugins':
                     if ($this->selected() && serendipity_db_bool($this->get_config('hide_sidebar'))) {
                         $serendipity['smarty']->assign('leftSidebarElements', 0);
@@ -192,41 +194,45 @@ class serendipity_event_wrapURL extends serendipity_event {
                             $eventData = array('clean_page' => true);
                         }
                     }
-
-                    if (version_compare($serendipity['version'], '0.7.1', '<=')) {
-                        $this->show();
-                    }
-
-                    return true;
                     break;
 
                 case 'entries_header':
                     $this->show();
-
-                    return true;
                     break;
 
                 /* put here all your css stuff you need for the wrapurl plugin frontend output */
                 case 'css':
-                    
-                    if (stristr($eventData, '#plugin_wrapurl')) { 
+
+                    if (stristr($eventData, '#plugin_wrapurl')) {
                         // class exists in CSS, so a user has customized it and we don't need default
                         return true;
                     }
+                    $eventData .= '
 
-echo '
-#plugin_wrapurl_'.$serendipity['wrapurl']['id_name'].' { width: 100%; border: 0 none; border-collapse: collapse; border-spacing: 0; height:' . $this->get_config('height') . 'px; }
+/* serendipity_event_wrapurl start */
+
+#plugin_wrapurl_'.$serendipity['wrapurl']['id_name'].' {
+    width: 100%;
+    border: 0 none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    height:' . $this->get_config('height') . 'px;
+}
+
+/* serendipity_event_wrapurl end */
+
 ';
-
-                    return true;
                     break;
-                    
+
                 default:
                     return false;
-                    break;
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
+
+?>
