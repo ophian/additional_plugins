@@ -1,3 +1,7 @@
+4.5.10.1:
+---------
+    * Update lang constants and really force a halt for the upgrade config fallback!
+
 4.5.10.0:
 ---------
     * Upgrade to CKEDITOR 4.5. Series, update 10 (http://ckeditor.com/whatsnew).

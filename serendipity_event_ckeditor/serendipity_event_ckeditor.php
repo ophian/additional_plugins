@@ -9,7 +9,7 @@ if (IN_serendipity !== true) {
 /**
  * Class member instance attribute values
  * Members must be initialized with a constant expression (like a string constant, numeric literal, etc), not a dynamic expression!
- **/
+ */
 if (!defined('CKEDITOR_DIRNAME_PLUGIN_PATH')) define('CKEDITOR_DIRNAME_PLUGIN_PATH', dirname(__FILE__));
 if (!defined('CKEDITOR_DIRNAME_CKEDITOR_PATH')) define('CKEDITOR_DIRNAME_CKEDITOR_PATH', dirname(__FILE__) . '/ckeditor');
 
@@ -181,7 +181,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.5.10.0'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .0
+        $propbag->add('version',       '4.5.10.1'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .1
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
@@ -629,11 +629,11 @@ ol.linenums li {
                     // This needs a *real* new HTTP request! Using plugin_to_conf:instance (see above) would not do here!!
                     // A request to ...&serendipity[install_plugin]=serendipity_event_ckeditor would force a deflate, but would install another plugin instance!
                     header('Location: ' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/triggerckeinstall');
+                    die(); // forces to really halt into config redirector!
                     break;
 
                 case 'backend_media_path_exclude_directories':
                     $eventData[".thumbs"] = true;
-
                     break;
 
                 case 'backend_wysiwyg':

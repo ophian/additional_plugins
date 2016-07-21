@@ -1,8 +1,8 @@
 <?php
 
 /**
- *  @file lang_en.inc.php 1.4.14 2016-05-11 Ian
- *  @version 1.4.14
+ *  @file lang_en.inc.php 1.4.15 2016-07-21 Ian
+ *  @version 1.4.15
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -27,7 +27,7 @@
 
     <h3>Upgrading</h3>
     <p>This Plugin will provide Updates via Spartacus close to new CKEDITOR releases.</p>
-    <p>Please do not use any automatic plugin bulk update, if already available with your S9y version. Upgrade the CKEditor plugin singulary in list, to allow the internal routines to immediately fall back into this configuration, to run and deflate the ZIP-installer operations.</p>
+    <p><strong>PLEASE NOTE</strong>: Do not use the Spartacus automatic plugin "update all" button, if already available with your S9y version. Upgrade the CKEditor plugin singulary in list, to allow the internal routines to immediately fall back into this configuration, to run and deflate the ZIP-installer operations. Else you will have to force the deflation yourself after each CKEditor upgrade by the plugins "Force install process (in emergencies)" option.</p>
     <p>It is generally not advised to use or install any "customized" CKEDITOR releases, since this will lead to undesirable side effects with this Plugins configuration.</p>
 </div>');
 @define('PLUGIN_EVENT_CKEDITOR_CONFIG', '');
