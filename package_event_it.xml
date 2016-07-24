@@ -1282,7 +1282,7 @@
 <description>Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.5.10.2.7</version>
+  <version>4.5.10.2.8</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <date>2016-07-24</date>
   <filelist>
