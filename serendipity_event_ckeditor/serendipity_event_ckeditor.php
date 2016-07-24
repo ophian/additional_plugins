@@ -184,7 +184,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.5.10.2.8'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .2
+        $propbag->add('version',       '4.5.10.2.9'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .2
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
@@ -627,7 +627,6 @@ ol.linenums li {
                             header('Location: ' . $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=plugins&serendipity[plugin_to_conf]='.urlencode($this->instance));
                         } else {
                             header('Location: ' . $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=plugins');
-                            echo '<span class="msg_success"><span class="icon-ok-circled"></span> '. PLUGIN_EVENT_SPARTACUS_FETCHED_DONE .'</span>' . "\n";
                         }
                     }
                     break;
@@ -642,6 +641,7 @@ ol.linenums li {
                     // This is not what we want here! So we nuke the blog-servers xml file to continue with pending plugin updates.
                     // Spartacus must already be prepared to set this global var (Styx with Spartacus v. 2.44). All other users probably have to wait up to 12h+.
                     @unlink($serendipity['spartacus_localxmlfile']);
+                    echo '<span class="msg_success"><span class="icon-ok-circled"></span> '. PLUGIN_EVENT_SPARTACUS_FETCHED_DONE .'</span>' . "\n";
                     die(); // now exit the runtime UPGRADE task, which forces to really halt into this install check redirector!
                     break;
 
