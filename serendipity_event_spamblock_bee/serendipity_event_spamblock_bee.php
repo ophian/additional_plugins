@@ -314,7 +314,9 @@ class serendipity_event_spamblock_bee extends serendipity_event
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
+
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'external_plugin':
                     switch($eventData) {
