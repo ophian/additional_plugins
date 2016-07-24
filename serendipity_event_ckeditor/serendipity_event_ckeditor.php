@@ -184,7 +184,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.5.10.2.4'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .2
+        $propbag->add('version',       '4.5.10.2.5'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .2
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
@@ -636,13 +636,12 @@ ol.linenums li {
                     // This needs a *REAL* new HTTP request! Using plugin_to_conf:instance (see above) would not do here!!
                     // A request to ...&serendipity[install_plugin]=serendipity_event_ckeditor would force a deflate, but would install another plugin instance!
                     header('Location: ' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/triggerckeinstall');
-                            // here we probably have to tell the xml cache (reader) to touch the filemtime back 12h+ or even purge the files...
-                            // or somehow use setPluginInfo() or reset the foreignPlugins pluginstack(?) - or ?? (this is fucking complicated think through!)
-                            // else this will reset all other plugins waiting to UPGRADE back to their current version in table pluginlist
-                            // After this the updater has to wait for a new read of the xml files and to pending plugins setPluginInfo versions again, which is not what we want here!
-                            // As of now, we try to nuke the xml files, which currently seems the cleanest solution for it ... hopefully.
+                    // This runtime breakage will reset all other plugins waiting to UPGRADE back to their current version in table pluginlist.
+                    // After this, the updater has to wait for a new read of the xml file(s) and to set pending plugins with setPluginInfo() method for versions and timestamp again.
+                    // This is not what we want here! So we nuke the blog-servers xml file to continue with pending plugin updates.
+                    // Spartacus must already be prepared to set this global var (Styx with Spartacus v. 2.44). All other users probably have to wait up to 12h+.
                     @unlink($serendipity['spartacus_localxmlfile']);
-                    die(); // now die() the runtime UPGRADE task which forces to really halt into install redirector!
+                    die(); // now exit the runtime UPGRADE task, which forces to really halt into this install check redirector!
                     break;
 
                 case 'backend_media_path_exclude_directories':
