@@ -49,14 +49,15 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.5.10.0-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.5.10.1-plus.zip';
 
     /**
      * Access property checkUpdateVersion
+     * Is zip file version and is independent from plugin version string
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.5.10.0');
+    protected $checkUpdateVersion = array('ckeditor:4.5.10.1');
 
     /**
      * Access property revisionPackage
@@ -86,6 +87,7 @@ class serendipity_event_ckeditor extends serendipity_event
             // this is running while getting a new Plugin version
             if ($this->checkUpdate()) {
                 $this->set_config('installer', '4-'.date('Ymd-H:i:s')); // this is a faked debug notice, since falldown is extract true with case 0, 1 or 2
+                // continue
             } else {
                 $this->set_config('installer', '3-'.date('Ymd-H:i:s')); // this will happen, if no further extract is necessary in case of an update - follow install or upgrade routines
                 return false;
@@ -103,9 +105,9 @@ class serendipity_event_ckeditor extends serendipity_event
                 $zip->extractTo($this->cke_path);
                 $zip->close();
                 $this->set_config('installer', '2-'.date('Ymd-H:i:s')); // returned by string[0], which is better than substr in this case
-                // Check to remove every old ckeditor_(*)-plus.zip files
+                // Check to remove every old ckeditor_(*)-plus.zip files - ckecked by "-plus"
                 foreach (glob($this->cke_path . '/*.zip') as $filename) {
-                    if($this->cke_path . '/' . $this->cke_zipfile != $filename) {
+                    if ($this->cke_path . '/' . $this->cke_zipfile != $filename && (false !== strpos($filename, '-plus')) ) {
                         @unlink($filename);
                         $is_update = true;
                     }
@@ -155,6 +157,7 @@ class serendipity_event_ckeditor extends serendipity_event
                     unset($_COOKIE['KCFINDER_orderDesc']);
                     unset($_COOKIE['KCFINDER_view']);
                 }
+                // extracted, continue to set this version into config
             } else {
                 $this->set_config('installer', '1-'.date('Ymd-H:i:s'));
                 return false;
@@ -163,8 +166,8 @@ class serendipity_event_ckeditor extends serendipity_event
             $this->set_config('installer', '0-'.date('Ymd-H:i:s')); // do it again, Sam
             return false;
         }
-        // make sure the new versions are set to last_ckeditor_version
-        $this->updateTableZip();
+        // make sure the new version is set to last_ckeditor_version
+        $this->updateConfig();
         return true;
     }
 
@@ -181,7 +184,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.5.10.2.1'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .2
+        $propbag->add('version',       '4.5.10.2.2'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .2
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
@@ -303,7 +306,7 @@ class serendipity_event_ckeditor extends serendipity_event
             $this->forceZipInstall = false;
             $this->set_config('force_install', 'false');
             // forceZipInstall forces to surround the checkUpdate function, thus we set config database table to keep track
-            $this->updateTableZip();
+            $this->updateConfig();
             $s .= '<p class="msg_success"><span class="icon-ok"></span><strong>Force deflate done:</strong> Please reload this page <a href="'.$serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=plugins&serendipity[plugin_to_conf]='.urlencode($this->instance).'" target="_self">here</a>!</p>';
         }
 
@@ -347,7 +350,7 @@ class serendipity_event_ckeditor extends serendipity_event
     /**
      * Downgrade of version to keep plugin version track with CKE versioning for upcoming next major upgrades!
      * This method is temporary only!
-     * @see updateTableZip()
+     * @see updateConfig()
      * @see checkUpdate()
      */
     private function temporaryDowngrade($newVersion, $oldVersion)
@@ -376,7 +379,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * Set config database table to keep track to zip updates
      * @access    private
      */
-    private function updateTableZip()
+    private function updateConfig()
     {
         #$this->temporaryDowngrade('4.5.10.2', '4.5.10.1'); // temporary
         foreach(array_values($this->checkUpdateVersion) AS $package) {
