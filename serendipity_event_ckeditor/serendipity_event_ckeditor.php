@@ -49,7 +49,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.5.10.1-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.5.10.2-plus.zip';
 
     /**
      * Access property checkUpdateVersion
@@ -57,7 +57,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.5.10.1');
+    protected $checkUpdateVersion = array('ckeditor:4.5.10.2');
 
     /**
      * Access property revisionPackage
@@ -105,7 +105,7 @@ class serendipity_event_ckeditor extends serendipity_event
                 $zip->extractTo($this->cke_path);
                 $zip->close();
                 $this->set_config('installer', '2-'.date('Ymd-H:i:s')); // returned by string[0], which is better than substr in this case
-                // Check to remove every old ckeditor_(*)-plus.zip files - ckecked by "-plus"
+                // Check to remove every old ckeditor_(*)-plus.zip files - checked by partial string "-plus"
                 foreach (glob($this->cke_path . '/*.zip') as $filename) {
                     if ($this->cke_path . '/' . $this->cke_zipfile != $filename && (false !== strpos($filename, '-plus')) ) {
                         @unlink($filename);
@@ -166,7 +166,7 @@ class serendipity_event_ckeditor extends serendipity_event
             $this->set_config('installer', '0-'.date('Ymd-H:i:s')); // do it again, Sam
             return false;
         }
-        // make sure the new version is set to last_ckeditor_version
+        // Extraction found true, add the new version string to configs last_ckeditor_version
         $this->updateConfig();
         return true;
     }
@@ -184,7 +184,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.5.10.2.2'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .2
+        $propbag->add('version',       '4.5.10.2.3'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .2
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
@@ -426,7 +426,6 @@ class serendipity_event_ckeditor extends serendipity_event
                 return;
             }
         $iterator = new RecursiveIteratorIterator($_dir, RecursiveIteratorIterator::CHILD_FIRST);
-        //$iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir), RecursiveIteratorIterator::CHILD_FIRST);
         foreach ($iterator as $file) {
             if ($file->isFile()) {
                 @unlink($file->__toString());
@@ -626,7 +625,13 @@ ol.linenums li {
                         }
                         if ($this->install()) {
                             header('Location: ' . $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=plugins&serendipity[plugin_to_conf]='.urlencode($this->instance));
-                            break; // or die()* // forces to really halt into config redirector!
+                            // here we probably have to tell the xml cache (reader) to touch the filemtime back 12h+ or even purge the files...
+                            // or somehow use setPluginInfo() or reset the foreignPlugins pluginstack(?) - or ?? (this is fucking complicated think through!)
+                            // else this will reset all other plugins waiting to UPGRADE back to their current version in table pluginlist
+                            // After this the updater has to wait for a new read of the xml files and to pending plugins setPluginInfo versions again, which is not what we want here!
+                            // As of now, we try to nuke the xml files, which currently seems the cleanest solution for it ... hopefully.
+                            @unlink($serendipity['spartacus_localxmlfile']);
+                            die(); // now die the runtime UPGRADE task! break does not work! // forces to really halt into config redirector!
                         }/* else {
                             header('Location: ' . $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=plugins&serendipity[adminAction]=addnew&serendipity[only_group]=UPGRADE&serendipity[type]=event');
                         }*/
