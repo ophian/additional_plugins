@@ -49,7 +49,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.5.10.2-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.5.10.3-plus.zip';
 
     /**
      * Access property checkUpdateVersion
@@ -57,7 +57,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.5.10.2');
+    protected $checkUpdateVersion = array('ckeditor:4.5.10.3');
 
     /**
      * Access property revisionPackage
@@ -184,7 +184,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.5.10.2.3'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .2
+        $propbag->add('version',       '4.5.10.2.4'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .2
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
@@ -625,13 +625,6 @@ ol.linenums li {
                         }
                         if ($this->install()) {
                             header('Location: ' . $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=plugins&serendipity[plugin_to_conf]='.urlencode($this->instance));
-                            // here we probably have to tell the xml cache (reader) to touch the filemtime back 12h+ or even purge the files...
-                            // or somehow use setPluginInfo() or reset the foreignPlugins pluginstack(?) - or ?? (this is fucking complicated think through!)
-                            // else this will reset all other plugins waiting to UPGRADE back to their current version in table pluginlist
-                            // After this the updater has to wait for a new read of the xml files and to pending plugins setPluginInfo versions again, which is not what we want here!
-                            // As of now, we try to nuke the xml files, which currently seems the cleanest solution for it ... hopefully.
-                            @unlink($serendipity['spartacus_localxmlfile']);
-                            die(); // now die the runtime UPGRADE task! break does not work! // forces to really halt into config redirector!
                         }/* else {
                             header('Location: ' . $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=plugins&serendipity[adminAction]=addnew&serendipity[only_group]=UPGRADE&serendipity[type]=event');
                         }*/
@@ -643,6 +636,13 @@ ol.linenums li {
                     // This needs a *REAL* new HTTP request! Using plugin_to_conf:instance (see above) would not do here!!
                     // A request to ...&serendipity[install_plugin]=serendipity_event_ckeditor would force a deflate, but would install another plugin instance!
                     header('Location: ' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/triggerckeinstall');
+                            // here we probably have to tell the xml cache (reader) to touch the filemtime back 12h+ or even purge the files...
+                            // or somehow use setPluginInfo() or reset the foreignPlugins pluginstack(?) - or ?? (this is fucking complicated think through!)
+                            // else this will reset all other plugins waiting to UPGRADE back to their current version in table pluginlist
+                            // After this the updater has to wait for a new read of the xml files and to pending plugins setPluginInfo versions again, which is not what we want here!
+                            // As of now, we try to nuke the xml files, which currently seems the cleanest solution for it ... hopefully.
+                    @unlink($serendipity['spartacus_localxmlfile']);
+                    die(); // now die() the runtime UPGRADE task which forces to really halt into install redirector!
                     break;
 
                 case 'backend_media_path_exclude_directories':
