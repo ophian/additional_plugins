@@ -184,7 +184,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.5.10.2.13'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .2
+        $propbag->add('version',       '4.5.10.3'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .3
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
@@ -360,6 +360,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $thisclass = serendipity_db_escape_string('serendipity_event_ckeditor');
         $row = serendipity_db_query("SELECT version FROM {$serendipity['dbPrefix']}pluginlist
                                       WHERE plugin_class = '" . $thisclass . "'
+                                        AND pluginlocation = 'local'
                                       LIMIT 1", true, 'assoc');
 
         $versions = array($oldVersion, $newVersion); // keep prior and current versions false check
@@ -369,19 +370,21 @@ class serendipity_event_ckeditor extends serendipity_event
 
         serendipity_db_query("UPDATE {$serendipity['dbPrefix']}pluginlist
                                  SET version      = '" . serendipity_db_escape_string($oldVersion) . "'
-                               WHERE plugin_class = '" . $thisclass . "'");
+                               WHERE plugin_class = '" . $thisclass . "'
+                                 AND pluginlocation = 'local'");
         serendipity_db_query("UPDATE {$serendipity['dbPrefix']}pluginlist
                                  SET upgrade_version = '" . serendipity_db_escape_string($newVersion) . "'
-                               WHERE plugin_class    = '" . $thisclass . "'");
+                               WHERE plugin_class    = '" . $thisclass . "'
+                                 AND pluginlocation = 'local'");
     }
 
     /**
-     * Set config database table to keep track to zip updates
+     * Set config database table to keep track to zip update versions
      * @access    private
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.5.10.2', '4.5.10.1'); // temporary
+        #$this->temporaryDowngrade('4.5.10.3', '4.5.10.2'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -395,7 +398,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.5.10.2', '4.5.10.1'); // temporary
+        #$this->temporaryDowngrade('4.5.10.3', '4.5.10.2'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
@@ -403,9 +406,8 @@ class serendipity_event_ckeditor extends serendipity_event
             if ($this->get_config('last_'.$match[0].'_version') == $match[1]) {
                 $doupdate = false;
             } else {
-                #$this->set_config('last_'.$match[0].'_version', $match[1]); // redundant, since now done for both in updateTableZip, but leave here until new is proofed
                 $doupdate = true;
-                break; // this is possibly needed to force install upgrade routines
+                break; // this is probably needed to force install upgrade routines
             }
         }
         return $doupdate;
@@ -627,23 +629,23 @@ ol.linenums li {
                             header('Location: ' . $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=plugins&serendipity[plugin_to_conf]='.urlencode($this->instance));
                         } else {
                             header('Location: ' . $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=plugins&serendipity[plugin_to_conf]='.urlencode($this->instance));
-                            #header('Location: ' . $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=plugins&serendipity[adminAction]=addnew&serendipity[only_group]=UPGRADE&serendipity[type]=event');
                         }
                     }
                     break;
 
                 case 'backend_plugins_update':
-                    if ($eventData == 'serendipity_event_ckeditor') {
-                        // Make sure a Spartacus update really falls down into this plugins config when in need to deflate the zip.
+                    if ($eventData == 'serendipity_event_ckeditor' && !$serendipity['ajax']) {
+                        // Make sure a Spartacus update really falls down into this plugins config.
+                        // In case of using the UPDATE ALL 1-click ajax-upgrader, this redirection is disabled and you have to force the extraction yourself in the config.
                         // This needs a *REAL* new HTTP request! Using plugin_to_conf:instance (see above) would not do here!!
                         // A request to ...&serendipity[install_plugin]=serendipity_event_ckeditor would force a deflate, but would install another plugin instance!
                         header('Location: ' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/triggerckeinstall');
                         // This runtime breakage will reset all other plugins waiting to UPGRADE back to their current version in table pluginlist.
                         // After this, the updater has to wait for a new read of the xml file(s) and to set pending plugins with setPluginInfo() method for versions and timestamp again.
-                        // This is not what we want here! So we nuke the blog-servers xml file to continue with pending plugin updates.
-                        // Spartacus must already be prepared to set this global var (Styx with Spartacus v. 2.44 is ready). All other users probably have to wait up to 12h+.
-                        @unlink($serendipity['spartacus_localxmlfile']);
-                        die(); // now exit the runtime UPGRADE task, which forces to really halt into this install check redirector!
+                        // This is not what we want here! So we nuke the blog-servers xml file in templates_c to later on continue with pending plugin updates.
+                        // Spartacus has to be prepared to set this global var (Styx with Spartacus v. 2.44 is ready). All other users probably have to wait up to 12h+.
+                        @unlink($serendipity['spartacus_cachedXMLfile']);
+                        die(); // now exit the runtime UPGRADE task executor, which forces to really halt into this->install() check redirector!
                     }
                     break;
 

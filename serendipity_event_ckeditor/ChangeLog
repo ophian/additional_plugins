@@ -1,3 +1,15 @@
+4.5.10.3:
+---------
+    * Fixed UPGRADE fallback issue. To simplify this approach, we now
+      force the script to redirect directly into the config on each
+      CKEditor upgrade request.
+      In case of using the Serendipity UPDATE ALL 1-click ajax-upgrader,
+      this redirection is disabled and you have to force the extraction
+      yourself in the config.
+    * Disabled the temporary runtime solution to downgrade version for
+      the harmonization of plugin and lib versions, which came in March
+      2016 with this plugins "old" 5.7.0.x version (see below).
+
 4.5.10.2:
 ---------
     * Unset serendipity_event_plugup cookies if plugup class exists
