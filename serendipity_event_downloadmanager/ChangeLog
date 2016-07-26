@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+[Version 0.34 2016/07/26] by Ian
+--------------------------------
+ * Add genpage hook for nice url rewriting
+
 [Version 0.33 2016/07/20] by Ian
 --------------------------------
  * Set basename() to md_basename() because of locale-aware PHP bug

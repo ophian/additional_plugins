@@ -37,12 +37,13 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '5.3.0'
         ));
 
-        $propbag->add('version',       '0.33');
+        $propbag->add('version',       '0.34');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
                                             'entries_header'          => true,
                                             'entry_display'           => true,
+                                            'genpage'                 => true,
                                             'external_plugin'         => true,
                                             'css'                     => true,
                                             'css_backend'             => true,
@@ -1887,6 +1888,26 @@ class serendipity_event_downloadmanager extends serendipity_event
         if (isset($hooks[$event])) {
 
             switch($event) {
+
+                case 'genpage':
+                    $args = implode('/', serendipity_getUriArguments($eventData, true));
+                    if ($serendipity['rewrite'] != 'none') {
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $args;
+                    } else {
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $args;
+                    }
+                    $oldsubpage = $serendipity['GET']['subpage'];
+                    if (empty($serendipity['GET']['subpage'])) {
+                        $serendipity['GET']['subpage'] = $nice_url;
+                    }
+                    if ($this->selected()) {
+                        $serendipity['head_title']    = $this->get_config('pagetitle');
+                        $serendipity['head_subtitle'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['blogTitle']) : htmlspecialchars($serendipity['blogTitle'], ENT_COMPAT, LANG_CHARSET));
+                    } else {
+                        // Put subpage back so staticpage plugin will work
+                        $serendipity['GET']['subpage'] = $oldsubpage;
+                    }
+                    break;
 
                 case 'entry_display' :
                     if ($this->selected()) {
