@@ -1,3 +1,12 @@
+Version 0.5:
+
+    * Bump version
+
+Version 0.4:
+
+    * Add PEAR Request2 fallback for possible cert verifications
+      troubles with older PHP versions < 5.6
+
 Version 0.3:
 
     * Added simple unit test (with support for local blacklist files)
