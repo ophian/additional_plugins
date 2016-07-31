@@ -184,7 +184,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.5.10.3'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .3
+        $propbag->add('version',       '4.5.10.4'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .4
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
@@ -491,6 +491,24 @@ if ($headcss) {
 
                 case 'backend_header':
                     if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg'] && isset($eventData) && !isset($_GET['serendipity']['iframe_mode'])) {
+                        // Check, if Styx-Serendipity 2.1 changed WYSIWYG_LANG constant already is defined,
+                        // which changed 2-letter or "**-utf" marked langs eg. "en" to "en_US", using the POSIX underscore standard,
+                        // else workaround using DATE_LOCALES.
+                        if (defined('DATE_LOCALES') && (false !== strpos('_', WYSIWYG_LANG))) {
+                            // scayt available langs are ('en_US', 'en_GB', 'pt_BR', 'da_DK', 'nl_NL', 'en_CA', 'fi_FI', 'fr_FR', 'fr_CA', 'de_DE', 'el_GR', 'it_IT', 'la_VA', 'nb_NO', 'pt_PT', 'es_ES', 'sv_SE');
+                            $locale  = explode(',', DATE_LOCALES); // get the current defined locales as array
+                            $special = array('Arabic', 'bulgarian', 'pl.UTF-8', 'tw'); // special lang exceptions which have them at last position
+                            if (in_array($locale[0], $special)) {
+                                $slocale = @strtok(end($locale), "."); // strtok dot fixes 'ar_SA.windows-1256'
+                                @reset($locale);
+                            }
+                            $_locale = trim(isset($slocale) ? $slocale : $locale[0]); // set the current lang locale as string
+                            if (!empty($_locale)) {
+                                $flocale = explode('.', $_locale); // $flocale array is the first defined 4-letter lang locale, eg "de_DE".
+                                if ($flocale[0] == 'nl_BE') $flocale[0] = 'nl_NL'; // case locale Nederlands / België set back to Dutch (Netherlands)
+                                if ($flocale[0] == 'sv_SV') $flocale[0] = 'sv_SE'; // case Swedish set back to Swedish (Sweden)
+                            }
+                        }
                         $relpath = function_exists('serendipity_specialchars') ? serendipity_specialchars($this->get_config('path')) : htmlspecialchars($this->get_config('path'), ENT_COMPAT, LANG_CHARSET);
                         $plgpath = function_exists('serendipity_specialchars') ? serendipity_specialchars($this->get_config('plugpath')) : htmlspecialchars($this->get_config('plugpath'), ENT_COMPAT, LANG_CHARSET);
                         $acf_off = serendipity_db_bool($this->get_config('acf_off', 'false')) ? 'true' : 'false';    // need this, to be passed correctly as boolean true/false to custom cke_config.js
@@ -498,6 +516,9 @@ if ($headcss) {
                         $uats_on = $serendipity['use_autosave'] ? 'true' : 'false';                                  // dito
                         $toolbar = $this->get_config('toolbar', 'Standard');
                         $time    = $this->get_config('timestamp', time());
+                        $slang   = (isset($flocale) && !empty($flocale[0]) ? $flocale[0] : WYSIWYG_LANG); // set scayt locales 4-letter POSIX lang or fall back
+                        $lang    = $slang ? $slang : 'en_US'; // use new WYSIWYG_LANG, or the workaround locale, or fall back to default
+                        $lang    = str_replace('_', '-', $lang); // change to IETF standard unicode language tag, using a dash
                         /*
                             Define some global CKEDITOR plugin startup vars
                             Include the ckeditor
@@ -512,12 +533,12 @@ if ($headcss) {
         S9Y_VERSION_NEW         = <?php echo $serendipity['version'][0] < 2 ? 'false' : 'true'; ?>;
         CKECONFIG_ACF_OFF       = <?php echo $acf_off; ?>;
         CKECONFIG_CODE_ON       = <?php echo $code_on; ?>;
-        CKECONFIG_LANG          = '<?php echo WYSIWYG_LANG; ?>';
+        CKECONFIG_LANG          = '<?php echo $lang; ?>'; // as IETF
+        CKECONFIG_SLANG         = '<?php echo $slang; ?>'; // as POSIX
         CKECONFIG_TOOLBAR       = '<?php echo $toolbar; ?>';
         CKECONFIG_TOOLBAR_BREAK = <?php echo serendipity_db_bool($this->get_config('toolbar_break', 'false')) ? "'/'" : "''"; ?>;
         CKECONFIG_FORCE_LOAD    = <?php echo $time; ?>;
         CKECONFIG_USEAUTOSAVE   = <?php echo $uats_on; ?>;
-
     </script>
     <script type="text/javascript" src="<?php echo $serendipity['serendipityHTTPPath'] . $relpath; ?>ckeditor.js"></script>
     <script type="text/javascript" src="<?php echo $plgpath . 'serendipity_event_ckeditor/'; ?>cke_plugin.js"></script>
