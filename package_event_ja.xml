@@ -1283,9 +1283,9 @@
 <description>Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.5.10.3</version>
+  <version>4.5.10.4</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-07-25</date>
+  <date>2016-07-31</date>
   <filelist>
 <dir name="serendipity_event_ckeditor">
 <file>.htaccess</file>
@@ -6534,9 +6534,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>With this plugin you prevent links to media that support the German &quot;Leistungsschutzrecht&quot;.</description>
 <maintainers><maintainer><name>Matthias Gutjahr</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.4</version>
+  <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-07-30</date>
   <filelist>
 <dir name="serendipity_event_lsrstopper">
 <file>.htaccess</file>

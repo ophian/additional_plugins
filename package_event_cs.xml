@@ -1282,9 +1282,9 @@
 <description>Používá CKEditor jako výchozí WYSIWYG editor. Tento editor je aktuálním state-of-art. Použití: Doporučeno! Po instalaci přejděte na stránku s nastavením tohoto pluginu a čtěte další instrukce.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.5.10.3</version>
+  <version>4.5.10.4</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-07-25</date>
+  <date>2016-07-31</date>
   <filelist>
 <dir name="serendipity_event_ckeditor">
 <file>.htaccess</file>
@@ -6532,9 +6532,9 @@
 <description>Pomocí tohoto pluginu zablokujete odkazy na média, která si nárokují autorská práva podle německého &quot;Leistungsschutzrecht&quot; (Ochrana duševního vlastnictví).</description>
 <maintainers><maintainer><name>Matthias Gutjahr</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.4</version>
+  <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-07-30</date>
   <filelist>
 <dir name="serendipity_event_lsrstopper">
 <file>.htaccess</file>
