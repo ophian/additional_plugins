@@ -1,3 +1,9 @@
+3.84:
+-----
+
+ * Use dir trick with 3.83 for all langs with a reverse LANG_DIRECTION
+
+
 3.83:
 -----
 
