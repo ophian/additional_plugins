@@ -344,6 +344,7 @@ class serendipity_event_ckeditor extends serendipity_event
         #echo $installer[0] . ' - ' . $this->instance; // this debug message on the other hand will do well, if all went through w/o install() returning false
         $s .= PLUGIN_EVENT_CKEDITOR_INSTALL;
         $s .= PLUGIN_EVENT_CKEDITOR_CONFIG;
+        $s .= PLUGIN_EVENT_CKEDITOR_SCAYT;
         return $s;
     }
 

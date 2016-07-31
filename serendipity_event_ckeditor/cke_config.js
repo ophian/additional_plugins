@@ -167,7 +167,8 @@ CKEDITOR.editorConfig = function( config ) {
     // button. The value must contain a "1" (enabled) or "0" (disabled) number for
     // each of the following entries, in this precise order, separated by a
     // comma (","): "Options", "Languages" and "Dictionary".
-    // As long as not purchased, the "languages"-options wont work. You may only use the online spell checker from the Scayt-button last select option. Which isn't really fun to use.
+    // As long as not purchased a license, the "languages"-options wont work. You may only use the online spell checker from the Scayt-button last select option. Which isn't really fun to use.
+    // Visit http://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:hostedscayt for more
     config.scayt_uiTabs = '1,0,1'; // we disable the language tab option, since it does not work in this context, getting a list of languages and this breaking the popup-layer!
 
 

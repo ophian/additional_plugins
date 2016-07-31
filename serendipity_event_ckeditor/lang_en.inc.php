@@ -1,8 +1,8 @@
 <?php
 
 /**
- *  @file lang_en.inc.php 1.4.15 2016-07-21 Ian
- *  @version 1.4.15
+ *  @file lang_en.inc.php 1.4.16 2016-07-31 Ian
+ *  @version 1.4.16
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -49,4 +49,9 @@
 
 @define('PLUGIN_EVENT_CKEDITOR_CKEIBN_OPTION', 'Disable toolbars default image button?');
 @define('PLUGIN_EVENT_CKEDITOR_CKEIBN_OPTION_DESC', 'The toolbar built-in image button follows its own rules for stylings and markup! Since we recommend to use the Serendipity Media Library Button only, this is disabled by default. Allow with "No" here and use at own risk.');
+
+@define('PLUGIN_EVENT_CKEDITOR_SCAYT', '<h2>Scayt/wsc</h2>
+<p class="msg_notice">
+    <span class="icon-attention"></span> As long as not purchased a license, you may only use [ABC]-Button "SpellCheckAsYouType" (SCAYT-plugin) over the free online service "Check Spelling" dialog option, or define a custom dictionary, which first is stored to a cookie, later to the browsers localStorage and start from scratch.
+</p>');
 
