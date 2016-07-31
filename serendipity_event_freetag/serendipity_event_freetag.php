@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.82');
+        $propbag->add('version',       '3.83');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -3160,8 +3160,7 @@ $(document).ready(function() {
                     if (str) return str.replace(/^\s*|\s*$/g,"");
                      else return '';
                 }
-                </script>
-
+            </script>
 <?php
         }
 ?>
@@ -3175,7 +3174,7 @@ $(document).ready(function() {
             <fieldset style="margin: 5px">
                 <legend><?php echo PLUGIN_EVENT_FREETAG_TITLE; ?></legend>
                 <label for="serendipity[properties][freetag_tagList]" title="<?php echo PLUGIN_EVENT_FREETAG_TITLE; ?>"><?php echo PLUGIN_EVENT_FREETAG_ENTERDESC; ?>:</label><br/>
-                <input type="text" name="serendipity[properties][freetag_tagList]" id="properties_freetag_tagList" class="wickEnabled input_textbox" value="<?php echo self::specialchars_mapper($tagList) ?>" style="width: 100%" />
+                <input type="text" name="serendipity[properties][freetag_tagList]" id="properties_freetag_tagList" class="wickEnabled input_textbox" dir="rtl" value="<?php echo self::specialchars_mapper($tagList) ?>" style="width: 100%" />
 
                 <input id="properties_freetag_kill" name="serendipity[properties][freetag_kill]" class="input_checkbox" type="checkbox" value="true" />
                 <label for="serendipity[properties][freetag_kill]" title="<?php echo PLUGIN_EVENT_FREETAG_KILL; ?>"><?php echo PLUGIN_EVENT_FREETAG_KILL; ?></label><br/>
@@ -3195,7 +3194,7 @@ $(document).ready(function() {
                 <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_FREETAG_TITLE; ?></legend></span>
                 <div class="form_field">
                     <label for="properties_freetag_tagList" class="block_level"><?php echo PLUGIN_EVENT_FREETAG_ENTERDESC; ?>:</label>
-                    <input id="properties_freetag_tagList" type="text" name="serendipity[properties][freetag_tagList]" class="wickEnabled" value="<?php echo self::specialchars_mapper($tagList) ?>">
+                    <input id="properties_freetag_tagList" dir="rtl" type="text" name="serendipity[properties][freetag_tagList]" class="wickEnabled" value="<?php echo self::specialchars_mapper($tagList) ?>">
                 </div>
                 <div class="form_check">
                     <input id="properties_freetag_kill" name="serendipity[properties][freetag_kill]" type="checkbox" value="true">

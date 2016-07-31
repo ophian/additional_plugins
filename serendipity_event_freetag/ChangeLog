@@ -1,3 +1,9 @@
+3.83:
+-----
+
+ * Trick freetag input field content overflow with dir="rtl"
+
+
 3.82:
 -----
 
