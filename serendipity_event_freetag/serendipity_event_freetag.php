@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.81');
+        $propbag->add('version',       '3.82');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1144,6 +1144,10 @@ class serendipity_event_freetag extends serendipity_event
 
 #backend_freetag_list a.tagzoom {
     font-size: 0.875em;
+}
+
+#edit_entry_freetags .freetag_entry_submit {
+    top: 0;
 }
 
 .freetagMenu li {
@@ -3196,6 +3200,9 @@ $(document).ready(function() {
                 <div class="form_check">
                     <input id="properties_freetag_kill" name="serendipity[properties][freetag_kill]" type="checkbox" value="true">
                     <label for="properties_freetag_kill"><?php echo PLUGIN_EVENT_FREETAG_KILL; ?></label>
+                </div>
+                <div id="edit_entry_submit" class="freetag_entry_submit">
+                    <input type="submit" value="<?php echo SAVE; ?>">
                 </div>
 <?php
         }
