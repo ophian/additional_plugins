@@ -3940,7 +3940,7 @@
 <description>Címkék megadását teszi lehetővé tetszőleges kombinációban</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.83</version>
+  <version>3.84</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-07-31</date>
   <filelist>
