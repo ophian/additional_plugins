@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.84');
+        $propbag->add('version',       '3.85');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1148,6 +1148,10 @@ class serendipity_event_freetag extends serendipity_event
 
 #edit_entry_freetags .freetag_entry_submit {
     top: 0;
+}
+#edit_entry_freetags .black-up-pointing-triangle:before {
+    content: "\25B2"; /* U+25B8 BLACK UP-POINTING TRIANGLE */
+    color: #000;
 }
 
 .freetagMenu li {
@@ -3202,7 +3206,7 @@ $(document).ready(function() {
                     <label for="properties_freetag_kill"><?php echo PLUGIN_EVENT_FREETAG_KILL; ?></label>
                 </div>
                 <div id="edit_entry_submit" class="freetag_entry_submit">
-                    <input type="submit" value="<?php echo SAVE; ?>">
+                    <a href="#top" class="button_link" title="<?php echo UP; ?>"><span class="black-up-pointing-triangle"></span></a>
                 </div>
 <?php
         }
