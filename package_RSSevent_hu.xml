@@ -527,7 +527,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Bejegyzések címkézése&lt;/b&gt;&lt;br /&gt;Címkék megadását teszi lehetővé tetszőleges kombinációban&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 02 Aug 2016 16:24:09 +0200</pubDate>
+<pubDate>Thu, 04 Aug 2016 19:55:57 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -1249,7 +1249,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Trackback-Control&lt;/b&gt;&lt;br /&gt;Allows granular control over how trackbacks are sent when creating entries&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Thu, 04 Aug 2016 20:06:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>
