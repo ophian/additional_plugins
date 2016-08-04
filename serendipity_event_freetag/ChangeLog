@@ -1,6 +1,12 @@
 3.85:
 -----
 
+ * Remove helper class for up icon, since now in core
+
+
+3.85:
+-----
+
  * Rewrite quick entry save button from 3.82 to better use a #top anchor
 
 

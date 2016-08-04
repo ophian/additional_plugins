@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.85');
+        $propbag->add('version',       '3.86');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1148,10 +1148,6 @@ class serendipity_event_freetag extends serendipity_event
 
 #edit_entry_freetags .freetag_entry_submit {
     top: 0;
-}
-#edit_entry_freetags .black-up-pointing-triangle:before {
-    content: "\25B2"; /* U+25B8 BLACK UP-POINTING TRIANGLE */
-    color: #000;
 }
 
 .freetagMenu li {
