@@ -294,11 +294,11 @@
 <guid isPermaLink="false">serendipity_plugin_google_last_query</guid>
 </item>
 <item>
-<title>Google ??? ????: ???? ?? ?? ?????? (Google)</title>
+<title>Google بحث سريع: ابحث عن أي معطيات (Google)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_google_quicksearch</link>
 <category>Sidebar Plugins</category>
 <author>Wesley Hwang-Chung</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_google_quicksearch&lt;br /&gt;Google ??? ????&lt;/b&gt;&lt;br /&gt;???? ?? ?? ?????? (Google)&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_google_quicksearch&lt;br /&gt;Google بحث سريع&lt;/b&gt;&lt;br /&gt;ابحث عن أي معطيات (Google)&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_google_quicksearch</guid>
 </item>
@@ -420,11 +420,11 @@
 <guid isPermaLink="false">serendipity_plugin_quicklink</guid>
 </item>
 <item>
-<title>??? ????: ???? ?? ?? ??????</title>
+<title>بحث سريع: ابحث عن أي معطيات</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_quicksearch</link>
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_quicksearch&lt;br /&gt;??? ????&lt;/b&gt;&lt;br /&gt;???? ?? ?? ??????&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_quicksearch&lt;br /&gt;بحث سريع&lt;/b&gt;&lt;br /&gt;ابحث عن أي معطيات&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_quicksearch</guid>
 </item>
@@ -501,20 +501,20 @@
 <guid isPermaLink="false">serendipity_plugin_timezones</guid>
 </item>
 <item>
-<title>???? ?????????: ???? ???? ??????? ?? ?????? ?? ?????? ????</title>
+<title>اعلى المشاركات: أعرض اعلى الروابط يم الخروج من مدونتك إليه</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_topexits</link>
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_topexits&lt;br /&gt;???? ?????????&lt;/b&gt;&lt;br /&gt;???? ???? ??????? ?? ?????? ?? ?????? ????&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_topexits&lt;br /&gt;اعلى المشاركات&lt;/b&gt;&lt;br /&gt;أعرض اعلى الروابط يم الخروج من مدونتك إليه&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topexits</guid>
 </item>
 <item>
-<title>???? ???????? ??:: ???? ???? ??????? ???????? ???????</title>
+<title>أكثر الزيارات من:: أعرض افضل المواقع المرتبطة بمدونتك</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_topreferrers</link>
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_topreferrers&lt;br /&gt;???? ???????? ??:&lt;/b&gt;&lt;br /&gt;???? ???? ??????? ???????? ???????&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_topreferrers&lt;br /&gt;أكثر الزيارات من:&lt;/b&gt;&lt;br /&gt;أعرض افضل المواقع المرتبطة بمدونتك&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topreferrers</guid>
 </item>
