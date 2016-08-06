@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+[Version 0.35 2016/08/06] by Ian
+--------------------------------
+ * Fix category purge and hide showing up
+
 [Version 0.34 2016/07/26] by Ian
 --------------------------------
  * Add genpage hook for nice url rewriting
