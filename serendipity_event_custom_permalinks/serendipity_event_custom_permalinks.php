@@ -27,7 +27,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
                                         'backend_display'                   => true));
 
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '1.15');
+        $propbag->add('version', '1.16');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -175,7 +175,7 @@ meta_properties_permalink {
                     }
                     if ($serendipity['version'][0] > 1) {
 ?>
-                    <fieldset id="edit_entry_custompermalinks" class="entryproperties_custompermalinks" style="margin: 1em 0">
+                    <fieldset id="edit_entry_custompermalinks" class="entryproperties_custompermalinks">
                         <span class="wrap_legend">
                             <legend>
                                 <?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL; ?>
