@@ -1,6 +1,6 @@
 4.5.10.4:
 ---------
-    * Fix an add lang of Scayt and wsc (web spell checker) option,
+    * Fix and add lang of Scayt and wsc (web spell checker) option,
       since the old Serendipity lang WYSIWYG_LANG defines did not work here.
 
 4.5.10.3:
