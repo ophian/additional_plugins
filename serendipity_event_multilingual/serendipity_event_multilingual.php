@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '4.1.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.31');
+        $propbag->add('version',        '2.32');
         $propbag->add('configuration',  array('copytext', 'placement', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -642,7 +642,7 @@ class serendipity_event_multilingual extends serendipity_event
 <?php
                     } else {
 ?>
-                    <fieldset id="edit_entry_multilingual" class="entryproperties_multilingual" style="margin: 1em 0">
+                    <fieldset id="edit_entry_multilingual" class="entryproperties_multilingual">
                         <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_MULTILINGUAL_TITLE; ?></legend></span>
                         <div class="form_field">
 <?php
