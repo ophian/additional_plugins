@@ -1,4 +1,12 @@
-3.85:
+3.87:
+-----
+
+ * Remove S9y 2+ fieldset inline style, making trouble with modal layer
+ * Unset UP button classes when using the modal dialog layer
+ * Changed unicode character style class name (uses Styxs!)
+
+
+3.86:
 -----
 
  * Remove helper class for up icon, since now in core

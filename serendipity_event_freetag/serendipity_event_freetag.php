@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.86');
+        $propbag->add('version',       '3.87');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1148,6 +1148,19 @@ class serendipity_event_freetag extends serendipity_event
 
 #edit_entry_freetags .freetag_entry_submit {
     top: 0;
+}
+/* unset up button block for .mfp-content layer */
+.mfp-content #edit_entry_freetags .freetag_entry_submit {
+    top: unset;
+}
+.mfp-content #edit_entry_freetags div {
+    position: unset;
+    right: unset;
+    margin-right: unset;
+}
+.mfp-content #edit_entry_submit {
+    display: none;
+    visibility: hidden;
 }
 
 .freetagMenu li {
@@ -3191,7 +3204,7 @@ $(document).ready(function() {
 
         } else {
 ?>
-            <fieldset id="edit_entry_freetags" class="entryproperties_freetag" style="margin: 1em 0;">
+            <fieldset id="edit_entry_freetags" class="entryproperties_freetag">
                 <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_FREETAG_TITLE; ?></legend></span>
                 <div class="form_field">
                     <label for="properties_freetag_tagList" class="block_level"><?php echo PLUGIN_EVENT_FREETAG_ENTERDESC; ?>:</label>
@@ -3202,7 +3215,7 @@ $(document).ready(function() {
                     <label for="properties_freetag_kill"><?php echo PLUGIN_EVENT_FREETAG_KILL; ?></label>
                 </div>
                 <div id="edit_entry_submit" class="freetag_entry_submit">
-                    <a href="#top" class="button_link" title="<?php echo UP; ?>"><span class="black-up-pointing-triangle"></span></a>
+                    <a href="#top" class="button_link" title="<?php echo UP; ?>"><span class="ucc-up-pointing-triangle"></span></a>
                 </div>
 <?php
         }
