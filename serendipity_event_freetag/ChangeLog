@@ -1,9 +1,14 @@
+3.88:
+-----
+
+ * Added fallback UP icon class declaration if not in Styx
+
 3.87:
 -----
 
  * Remove S9y 2+ fieldset inline style, making trouble with modal layer
  * Unset UP button classes when using the modal dialog layer
- * Changed unicode character style class name (uses Styxs!)
+ * Changed unicode character style class name
 
 
 3.86:

@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.87');
+        $propbag->add('version',       '3.88');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1095,6 +1095,14 @@ class serendipity_event_freetag extends serendipity_event
 
                 case 'css_backend':
                     if ($serendipity['version'][0] > 1) {
+                        if (false === strpos($eventData, '.ucc-up-pointing-triangle')) {
+                            $eventData .= '
+.ucc-up-pointing-triangle:before {
+    content: "\25B2"; /* U+25B2 BLACK UP-POINTING TRIANGLE */
+    color: #222;
+}
+';
+                        }
                         $eventData .= '
 
 /* freetag plugin start */
