@@ -103,7 +103,6 @@ $dispatches = array(
     'wp.getPageStatusList'      => array('function' => 'wp_getPageStatusList'),
     'wp.getPage'                => array('function' => 'wp_getPage'),
     'wp.getPages'               => array('function' => 'wp_getPages'),
-    'wp.editPage'               => array('function' => 'wp_editPage'),
     'wp.getPageList'            => array('function' => 'wp_getPageList'),
 
     /* BLOGGER API */
@@ -445,13 +444,6 @@ function wp_getPages($message) {
 
     $xml_entries = new XML_RPC_Value($xml_entries_vals, 'array');
     return new XML_RPC_Response($xml_entries);
-}
-
-function wp_editPage($message) {
-    global $serendipity;
-    // TODO: stub
-    $return = true;
-    return new XML_RPC_Value($return, 'boolean');
 }
 
 // Get an array of all the pages on a blog. Just the minimum details, lighter than wp.getPages.
