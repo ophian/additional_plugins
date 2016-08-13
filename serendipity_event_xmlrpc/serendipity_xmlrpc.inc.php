@@ -106,6 +106,37 @@ $dispatches = array(
     'wp.editPage'               => array('function' => 'wp_editPage'),
     'wp.getPageList'            => array('function' => 'wp_getPageList'),
 
+    'wp.newPost'                => array('function' => 'wp_apiBool'),
+    'wp.editPost'               => array('function' => 'wp_apiBool'),
+    'wp.deletePost'             => array('function' => 'wp_apiBool'),
+    'wp.getPost'                => array('function' => 'wp_apiBool'),
+    'wp.newTerm'                => array('function' => 'wp_apiBool'),
+    'wp.editTerm'               => array('function' => 'wp_apiBool'),
+    'wp.deleteTerm'             => array('function' => 'wp_apiBool'),
+    'wp.getTerm'                => array('function' => 'wp_apiBool'),
+    'wp.getTerms'               => array('function' => 'wp_apiBool'),
+    'wp.getTaxonomy'            => array('function' => 'wp_apiBool'),
+    'wp.getTaxonomies'          => array('function' => 'wp_apiBool'),
+    'wp.getUser'                => array('function' => 'wp_apiBool'),
+    'wp.getUsers'               => array('function' => 'wp_apiBool'),
+    'wp.getProfile'             => array('function' => 'wp_apiBool'),
+    'wp.editProfile'            => array('function' => 'wp_apiBool'),
+    'wp.deletePage'             => array('function' => 'wp_apiBool'),
+    'wp.deleteCategory'         => array('function' => 'wp_apiBool'),
+    'wp.getPostType'            => array('function' => 'wp_apiBool'),
+    'wp.getPostTypes'           => array('function' => 'wp_apiBool'),
+    'wp.getRevisions'           => array('function' => 'wp_apiBool'),
+    'wp.restoreRevision'        => array('function' => 'wp_apiBool'),
+
+    'wp.newPage'                => array('function' => 'wp_apiInt'),
+
+    'wp.getAuthors'             => array('function' => 'wp_apiArray'),
+    'wp.suggestCategories'      => array('function' => 'wp_apiArray'),
+    'wp.getCommentCount'        => array('function' => 'wp_apiArray'),
+    'wp.setOptions'             => array('function' => 'wp_apiArray'),
+    'wp.getMediaItem'           => array('function' => 'wp_apiArray'),
+    'wp.getMediaLibrary'        => array('function' => 'wp_apiArray'),
+
     /* BLOGGER API */
     'blogger.getUsersBlogs'     => array('function' => 'blogger_getUsersBlogs'),
     'blogger.getUserInfo'       => array('function' => 'blogger_getUserInfo'),
@@ -452,6 +483,24 @@ function wp_editPage($message) {
     // TODO: stub
     $return = true;
     return new XML_RPC_Value($return, 'boolean');
+}
+
+function wp_apiBool($message) {
+    // Dummy API bool
+    $return = true;
+    return new XML_RPC_Value($return, 'boolean');
+}
+
+function wp_apiInt($message) {
+    // Dummy API int
+    $return = 0;
+    return new XML_RPC_Value($return, 'int');
+}
+
+function wp_apiArray($message) {
+    // Dummy API array
+    $return = array();
+    return new XML_RPC_Value($return, 'array');
 }
 
 // Get an array of all the pages on a blog. Just the minimum details, lighter than wp.getPages.
