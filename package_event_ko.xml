@@ -9756,9 +9756,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>텍스트_위키 마크업을 글에 사용함 Markup text using Text_Wiki</description>
 <maintainers><maintainer><name>Tobias Schlitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7</version>
+  <version>1.8</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-08-13</date>
   <filelist>
 <dir name="serendipity_event_textwiki">
 <file>lang_bg.inc.php</file>
@@ -9776,6 +9776,207 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <file>lang_tn.inc.php</file>
 <file>lang_zh.inc.php</file>
 <file>serendipity_event_textwiki.php</file>
+<dir name="Text">
+<file>BUNDLE_NOTICE</file>
+<dir name="Wiki">
+<dir name="Parse">
+<dir name="Default">
+<file>Anchor.php</file>
+<file>Blockquote.php</file>
+<file>Bold.php</file>
+<file>Break.php</file>
+<file>Center.php</file>
+<file>Code.php</file>
+<file>Colortext.php</file>
+<file>Deflist.php</file>
+<file>Delimiter.php</file>
+<file>Embed.php</file>
+<file>Emphasis.php</file>
+<file>Freelink.php</file>
+<file>Function.php</file>
+<file>Heading.php</file>
+<file>Horiz.php</file>
+<file>Html.php</file>
+<file>Image.php</file>
+<file>Include.php</file>
+<file>Interwiki.php</file>
+<file>Italic.php</file>
+<file>List.php</file>
+<file>Newline.php</file>
+<file>Paragraph.php</file>
+<file>Phplookup.php</file>
+<file>Prefilter.php</file>
+<file>Raw.php</file>
+<file>Revise.php</file>
+<file>Strong.php</file>
+<file>Superscript.php</file>
+<file>Table.php</file>
+<file>Tighten.php</file>
+<file>Toc.php</file>
+<file>Tt.php</file>
+<file>Url.php</file>
+<file>Wikilink.php</file>
+</dir>
+</dir>
+<file>Parse.php</file>
+<dir name="Render">
+<dir name="Latex">
+<file>Anchor.php</file>
+<file>Blockquote.php</file>
+<file>Bold.php</file>
+<file>Break.php</file>
+<file>Center.php</file>
+<file>Code.php</file>
+<file>Colortext.php</file>
+<file>Deflist.php</file>
+<file>Delimiter.php</file>
+<file>Embed.php</file>
+<file>Emphasis.php</file>
+<file>Freelink.php</file>
+<file>Function.php</file>
+<file>Heading.php</file>
+<file>Horiz.php</file>
+<file>Html.php</file>
+<file>Image.php</file>
+<file>Include.php</file>
+<file>Interwiki.php</file>
+<file>Italic.php</file>
+<file>List.php</file>
+<file>Newline.php</file>
+<file>Paragraph.php</file>
+<file>Phplookup.php</file>
+<file>Prefilter.php</file>
+<file>Raw.php</file>
+<file>Revise.php</file>
+<file>Strong.php</file>
+<file>Superscript.php</file>
+<file>Table.php</file>
+<file>Tighten.php</file>
+<file>Toc.php</file>
+<file>Tt.php</file>
+<file>Url.php</file>
+<file>Wikilink.php</file>
+</dir>
+<file>Latex.php</file>
+<dir name="Plain">
+<file>Anchor.php</file>
+<file>Blockquote.php</file>
+<file>Bold.php</file>
+<file>Break.php</file>
+<file>Center.php</file>
+<file>Code.php</file>
+<file>Colortext.php</file>
+<file>Deflist.php</file>
+<file>Delimiter.php</file>
+<file>Embed.php</file>
+<file>Emphasis.php</file>
+<file>Freelink.php</file>
+<file>Function.php</file>
+<file>Heading.php</file>
+<file>Horiz.php</file>
+<file>Html.php</file>
+<file>Image.php</file>
+<file>Include.php</file>
+<file>Interwiki.php</file>
+<file>Italic.php</file>
+<file>List.php</file>
+<file>Newline.php</file>
+<file>Paragraph.php</file>
+<file>Phplookup.php</file>
+<file>Prefilter.php</file>
+<file>Raw.php</file>
+<file>Revise.php</file>
+<file>Strong.php</file>
+<file>Superscript.php</file>
+<file>Table.php</file>
+<file>Tighten.php</file>
+<file>Toc.php</file>
+<file>Tt.php</file>
+<file>Url.php</file>
+<file>Wikilink.php</file>
+</dir>
+<file>Plain.php</file>
+<dir name="Xhtml">
+<file>Anchor.php</file>
+<file>Blockquote.php</file>
+<file>Bold.php</file>
+<file>Break.php</file>
+<file>Center.php</file>
+<file>Code.php</file>
+<file>Colortext.php</file>
+<file>Deflist.php</file>
+<file>Delimiter.php</file>
+<file>Embed.php</file>
+<file>Emphasis.php</file>
+<file>Freelink.php</file>
+<file>Function.php</file>
+<file>Heading.php</file>
+<file>Horiz.php</file>
+<file>Html.php</file>
+<file>Image.php</file>
+<file>Include.php</file>
+<file>Interwiki.php</file>
+<file>Italic.php</file>
+<file>List.php</file>
+<file>Newline.php</file>
+<file>Paragraph.php</file>
+<file>Phplookup.php</file>
+<file>Prefilter.php</file>
+<file>Raw.php</file>
+<file>Revise.php</file>
+<file>Strong.php</file>
+<file>Superscript.php</file>
+<file>Table.php</file>
+<file>Tighten.php</file>
+<file>Toc.php</file>
+<file>Tt.php</file>
+<file>Url.php</file>
+<file>Wikilink.php</file>
+</dir>
+<file>Xhtml.php</file>
+</dir>
+<file>Render.php</file>
+<dir name="Rule">
+<file>blockquote.php</file>
+<file>bold.php</file>
+<file>break.php</file>
+<file>center.php</file>
+<file>code.php</file>
+<file>colortext.php</file>
+<file>deflist.php</file>
+<file>delimiter.php</file>
+<file>embed.php</file>
+<file>emphasis.php</file>
+<file>entities.php</file>
+<file>freelink.php</file>
+<file>heading.php</file>
+<file>horiz.php</file>
+<file>html.php</file>
+<file>image.php</file>
+<file>include.php</file>
+<file>interwiki.php</file>
+<file>italic.php</file>
+<file>list.php</file>
+<file>newline.php</file>
+<file>paragraph.php</file>
+<file>phpcode.php</file>
+<file>phplookup.php</file>
+<file>prefilter.php</file>
+<file>raw.php</file>
+<file>revise.php</file>
+<file>strong.php</file>
+<file>superscript.php</file>
+<file>table.php</file>
+<file>tighten.php</file>
+<file>toc.php</file>
+<file>tt.php</file>
+<file>url.php</file>
+<file>wikilink.php</file>
+</dir>
+<file>Rule.php</file>
+</dir>
+<file>Wiki.php</file>
+</dir>
 <dir name="UTF-8">
 <file>lang_bg.inc.php</file>
 <file>lang_cn.inc.php</file>
@@ -9810,6 +10011,189 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
     <file>serendipity_event_textwiki/lang_tn.inc.php</file>
     <file>serendipity_event_textwiki/lang_zh.inc.php</file>
     <file>serendipity_event_textwiki/serendipity_event_textwiki.php</file>
+    <file>serendipity_event_textwiki/Text/BUNDLE_NOTICE</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Anchor.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Blockquote.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Bold.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Break.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Center.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Code.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Colortext.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Deflist.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Delimiter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Embed.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Emphasis.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Freelink.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Function.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Heading.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Horiz.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Html.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Image.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Include.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Interwiki.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Italic.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/List.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Newline.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Paragraph.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Phplookup.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Prefilter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Raw.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Revise.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Strong.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Superscript.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Table.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Tighten.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Toc.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Tt.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Url.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Wikilink.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Anchor.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Blockquote.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Bold.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Break.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Center.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Code.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Colortext.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Deflist.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Delimiter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Embed.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Emphasis.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Freelink.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Function.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Heading.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Horiz.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Html.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Image.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Include.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Interwiki.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Italic.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/List.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Newline.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Paragraph.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Phplookup.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Prefilter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Raw.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Revise.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Strong.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Superscript.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Table.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Tighten.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Toc.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Tt.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Url.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Wikilink.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Anchor.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Blockquote.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Bold.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Break.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Center.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Code.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Colortext.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Deflist.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Delimiter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Embed.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Emphasis.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Freelink.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Function.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Heading.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Horiz.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Html.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Image.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Include.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Interwiki.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Italic.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/List.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Newline.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Paragraph.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Phplookup.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Prefilter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Raw.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Revise.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Strong.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Superscript.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Table.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Tighten.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Toc.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Tt.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Url.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Wikilink.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Anchor.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Blockquote.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Bold.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Break.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Center.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Code.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Colortext.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Deflist.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Delimiter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Embed.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Emphasis.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Freelink.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Function.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Heading.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Horiz.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Html.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Image.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Include.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Interwiki.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Italic.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/List.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Newline.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Paragraph.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Phplookup.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Prefilter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Raw.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Revise.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Strong.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Superscript.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Table.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Tighten.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Toc.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Tt.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Url.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Wikilink.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/blockquote.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/bold.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/break.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/center.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/code.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/colortext.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/deflist.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/delimiter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/embed.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/emphasis.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/entities.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/freelink.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/heading.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/horiz.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/html.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/image.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/include.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/interwiki.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/italic.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/list.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/newline.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/paragraph.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/phpcode.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/phplookup.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/prefilter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/raw.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/revise.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/strong.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/superscript.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/table.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/tighten.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/toc.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/tt.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/url.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule/wikilink.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Rule.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki.php</file>
     <file>serendipity_event_textwiki/UTF-8/lang_bg.inc.php</file>
     <file>serendipity_event_textwiki/UTF-8/lang_cn.inc.php</file>
     <file>serendipity_event_textwiki/UTF-8/lang_cs.inc.php</file>
