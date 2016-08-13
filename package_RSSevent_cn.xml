@@ -1204,7 +1204,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Tobias Schlitt</author>
 <content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;标记语言：Wiki&lt;/b&gt;&lt;br /&gt;使用Text_Wiki标记相关文字内容&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 13 Aug 2016 13:34:25 +0200</pubDate>
+<pubDate>Sat, 13 Aug 2016 13:39:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textwiki</guid>
 </item>
 <item>
@@ -1366,7 +1366,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 10 Aug 2016 17:27:48 +0200</pubDate>
+<pubDate>Sat, 13 Aug 2016 15:29:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
