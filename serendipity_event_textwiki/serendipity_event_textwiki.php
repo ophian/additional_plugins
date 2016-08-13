@@ -584,7 +584,8 @@ class serendipity_event_textwiki extends serendipity_event
         return true;
     }
 
-    function _remove_wiki_rule(&$bag, $name) {
+    function _remove_wiki_rule(&$bag, $name)
+    {
         $this->wiki->disableRule($name);
     }
 
