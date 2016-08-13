@@ -406,7 +406,7 @@ class serendipity_event_textwiki extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TEXTWIKI_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tobias Schlitt');
-        $propbag->add('version',       '1.7');
+        $propbag->add('version',       '1.8');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -565,7 +565,7 @@ class serendipity_event_textwiki extends serendipity_event
 
     function _init_wiki(&$bag)
     {
-        include_once S9Y_PEAR_PATH . 'Text/Wiki.php';
+        include_once dirname(__FILE__) . '/Text/Wiki.php';
 
         if (class_exists('Text_Wiki')) {
             $this->wiki = new Text_Wiki;
