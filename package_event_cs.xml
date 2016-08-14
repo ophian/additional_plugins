@@ -10219,7 +10219,7 @@
 <license>GPL</license>
 <summary>TinyMCE jako WYSIWYG editor</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Použije TiniMCE WYSIWYG editor pro psaní příspěvků. Vyžaduje Serendipity 0.9 nebo novější. Po instalaci si přečtěte instalačního průvodce v nastavení tohoto pluginu.</description>
+<description>Použije TiniMCE WYSIWYG editor pro psaní příspěvků. Vyžaduje Serendipity 1.6 nebo novější. Po instalaci si přečtěte instalačního průvodce v nastavení tohoto pluginu.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.14</version>

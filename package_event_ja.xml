@@ -10222,7 +10222,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <license>GPL</license>
 <summary>Uses TinyMCE as WYSIWYG editor</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Utilizes the TinyMCE WYSIWYG editor. Requires Serendipity 0.9 or later. After installation, read the installation guide in the configuration screen for this plugin.</description>
+<description>Utilizes the TinyMCE WYSIWYG editor. Requires Serendipity 1.6 or later. After installation, read the installation guide in the configuration screen for this plugin.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.14</version>
