@@ -441,15 +441,6 @@
 <guid isPermaLink="false">serendipity_event_faq</guid>
 </item>
 <item>
-<title>Uses FCKeditor as WYSIWYG editor: Utilizes the FCKeditor WYSIWYG editor. Note: This is the old, but still developed version, of the famous new CKEditor package. This plugin does not support other Serendipity Plugin &quot;hook-in buttons&quot;! After installation, read the installation guide in the configuration screen for this plugin.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_fckeditor</link>
-<category>Event Plugins</category>
-<author>Ziyad Saeed, Garvin Hicking, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_fckeditor&lt;br /&gt;Uses FCKeditor as WYSIWYG editor&lt;/b&gt;&lt;br /&gt;Utilizes the FCKeditor WYSIWYG editor. Note: This is the old, but still developed version, of the famous new CKEditor package. This plugin does not support other Serendipity Plugin &quot;hook-in buttons&quot;! After installation, read the installation guide in the configuration screen for this plugin.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_fckeditor</guid>
-</item>
-<item>
 <title>Dashboard Feed Reader: The Dashboard S9y Feedle</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_feed</link>
 <category>Event Plugins</category>
@@ -1221,8 +1212,8 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_tinymce</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_tinymce&lt;br /&gt;Uses TinyMCE as WYSIWYG editor&lt;/b&gt;&lt;br /&gt;Utilizes the TinyMCE WYSIWYG editor. Requires Serendipity 0.9 or later. After installation, read the installation guide in the configuration screen for this plugin.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_tinymce&lt;br /&gt;Uses TinyMCE as WYSIWYG editor&lt;/b&gt;&lt;br /&gt;Utilizes the TinyMCE WYSIWYG editor. Requires Serendipity 0.9 or later. After installation, read the installation guide in the configuration screen for this plugin.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 14 Aug 2016 14:24:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_tinymce</guid>
 </item>
 <item>
@@ -1350,15 +1341,6 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <content:encoded>&lt;b&gt;serendipity_event_wrapurl&lt;br /&gt;WrapURL: &lt;/b&gt;&lt;br /&gt;Wraps another page in an IFRAME to be displayed in the body&lt;br/&gt;For: Serendipity 1.6</content:encoded>
 <pubDate>Thu, 21 Jul 2016 14:35:19 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_wrapurl</guid>
-</item>
-<item>
-<title>Uses XINHA as WYSIWYG editor: Warning! Xinha is experimental. Utilizes the XINHA WYSIWYG editor. Requires Serendipity 0.9. After installation, read the installation guide in the configuration screen for this plugin.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_xinha</link>
-<category>Event Plugins</category>
-<author>Ziyad Saeed, Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_xinha&lt;br /&gt;Uses XINHA as WYSIWYG editor&lt;/b&gt;&lt;br /&gt;Warning! Xinha is experimental. Utilizes the XINHA WYSIWYG editor. Requires Serendipity 0.9. After installation, read the installation guide in the configuration screen for this plugin.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_xinha</guid>
 </item>
 <item>
 <title>Post via XML-RPC: Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)</title>

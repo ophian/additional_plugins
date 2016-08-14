@@ -3211,51 +3211,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_fckeditor</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_fckeditor/ChangeLog</changelog>
-<license>GPL</license>
-<summary>Uses FCKeditor as WYSIWYG editor</summary>
-<groups>BACKEND_EDITOR</groups>
-<description>Utilizes the FCKeditor WYSIWYG editor. Note: This is the old, but still developed version, of the famous new CKEditor package. This plugin does not support other Serendipity Plugin &quot;hook-in buttons&quot;! After installation, read the installation guide in the configuration screen for this plugin.</description>
-<maintainers><maintainer><name>Ziyad Saeed, Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>0.9.1</version>
-  <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_fckeditor">
-<file>.htaccess</file>
-<file>ChangeLog</file>
-<file>documentation_cs.html</file>
-<file>documentation_cz.html</file>
-<file>fckconfig.js</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>serendipity_event_fckeditor.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_fckeditor/.htaccess</file>
-    <file>serendipity_event_fckeditor/ChangeLog</file>
-    <file>serendipity_event_fckeditor/documentation_cs.html</file>
-    <file>serendipity_event_fckeditor/documentation_cz.html</file>
-    <file>serendipity_event_fckeditor/fckconfig.js</file>
-    <file>serendipity_event_fckeditor/lang_cs.inc.php</file>
-    <file>serendipity_event_fckeditor/lang_cz.inc.php</file>
-    <file>serendipity_event_fckeditor/lang_en.inc.php</file>
-    <file>serendipity_event_fckeditor/serendipity_event_fckeditor.php</file>
-    <file>serendipity_event_fckeditor/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_fckeditor/UTF-8/lang_cz.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_feed</name>
 <license>GPL</license>
 <summary>Dashboard Feed Reader</summary>
@@ -10268,9 +10223,9 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <description>Es wird Serendipity ab Version 0.9 benötigt. Bitte lesen Sie nach der Installation die weitere Installationsbeschreibung in der Plugin Konfiguration.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.13</version>
-  <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.14</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-08-14</date>
   <filelist>
 <dir name="serendipity_event_tinymce">
 <file>.htaccess</file>
@@ -11314,51 +11269,6 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
     <file>serendipity_event_wrapurl/serendipity_event_wrapurl.php</file>
     <file>serendipity_event_wrapurl/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_wrapurl/UTF-8/lang_cz.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_xinha</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_xinha/ChangeLog</changelog>
-<license>GPL</license>
-<summary>Benutze XINHA als WYSIWYG editor </summary>
-<groups>BACKEND_EDITOR</groups>
-<description>Warung: XINGHA ist experimentell! Es wird mindestens Serendipity Version 0.9 benätigt. Nach der Installation sollte die Installationsanleitung im Konfigurationsfenster dieses Plugins gelesen werden. Ab Version 1.4 ist XINHA standardmäßig in S9Y enthalten. Dieses Plugin wird dafür nicht mehr benötigt.</description>
-<maintainers><maintainer><name>Ziyad Saeed, Garvin Hicking</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>0.10</version>
-  <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_xinha">
-<file>.htaccess</file>
-<file>ChangeLog</file>
-<file>ed_s9yimage.gif</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>serendipity_event_xinha.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_xinha/.htaccess</file>
-    <file>serendipity_event_xinha/ChangeLog</file>
-    <file>serendipity_event_xinha/ed_s9yimage.gif</file>
-    <file>serendipity_event_xinha/lang_cs.inc.php</file>
-    <file>serendipity_event_xinha/lang_cz.inc.php</file>
-    <file>serendipity_event_xinha/lang_de.inc.php</file>
-    <file>serendipity_event_xinha/lang_en.inc.php</file>
-    <file>serendipity_event_xinha/serendipity_event_xinha.php</file>
-    <file>serendipity_event_xinha/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_xinha/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_xinha/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
