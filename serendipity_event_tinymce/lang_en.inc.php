@@ -7,7 +7,7 @@
  */
 
 @define('PLUGIN_EVENT_TINYMCE_NAME',            'Uses TinyMCE as WYSIWYG editor');
-@define('PLUGIN_EVENT_TINYMCE_DESC',            'Utilizes the TinyMCE WYSIWYG editor. Requires Serendipity 0.9 or later. After installation, read the installation guide in the configuration screen for this plugin.');
+@define('PLUGIN_EVENT_TINYMCE_DESC',            'Utilizes the TinyMCE WYSIWYG editor. Requires Serendipity 1.6 or later. After installation, read the installation guide in the configuration screen for this plugin.');
 @define('PLUGIN_EVENT_TINYMCE_ARTICLE_ONLY',    'Use in articles only');
 @define('PLUGIN_EVENT_TINYMCE_ARTICLE_ONLY_DESC','If switched on, TinyMCE will only inserted as article editor, not as editor in plugins.');
 @define('PLUGIN_EVENT_TINYMCE_IMANAGER',        'Enable use of the iManager tool?');

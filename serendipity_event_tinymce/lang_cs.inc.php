@@ -6,7 +6,7 @@
  */
 
 @define('PLUGIN_EVENT_TINYMCE_NAME',            'TinyMCE jako WYSIWYG editor');
-@define('PLUGIN_EVENT_TINYMCE_DESC',            'Použije TiniMCE WYSIWYG editor pro psaní pøíspìvkù. Vyžaduje Serendipity 0.9 nebo novìjší. Po instalaci si pøeètìte instalaèního prùvodce v nastavení tohoto pluginu.');
+@define('PLUGIN_EVENT_TINYMCE_DESC',            'Použije TiniMCE WYSIWYG editor pro psaní pøíspìvkù. Vyžaduje Serendipity 1.6 nebo novìjší. Po instalaci si pøeètìte instalaèního prùvodce v nastavení tohoto pluginu.');
 @define('PLUGIN_EVENT_TINYMCE_ARTICLE_ONLY',    'Použít pouze v pøíspìvcích');
 @define('PLUGIN_EVENT_TINYMCE_ARTICLE_ONLY_DESC','Pokud je zapnuto, TinyMCE bude použito pouze k úpravám pøíspìvku, nebude použito v ostatních pluginech.');
 @define('PLUGIN_EVENT_TINYMCE_IMANAGER',        'Zapnout použití nástroje iManager?');

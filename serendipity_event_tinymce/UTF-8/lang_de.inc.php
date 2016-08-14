@@ -7,7 +7,7 @@
  */
 
 @define('PLUGIN_EVENT_TINYMCE_NAME',            'TinyMCE als WYSIWYG Editor benutzen');
-@define('PLUGIN_EVENT_TINYMCE_DESC',            'Es wird Serendipity ab Version 0.9 benötigt. Bitte lesen Sie nach der Installation die weitere Installationsbeschreibung in der Plugin Konfiguration.');
+@define('PLUGIN_EVENT_TINYMCE_DESC',            'Es wird Serendipity ab Version 1.6 benötigt. Bitte lesen Sie nach der Installation die weitere Installationsbeschreibung in der Plugin Konfiguration.');
 @define('PLUGIN_EVENT_TINYMCE_ARTICLE_ONLY',    'Nur in Artikeln');
 @define('PLUGIN_EVENT_TINYMCE_ARTICLE_ONLY_DESC','Wenn angeschaltet, dann wrd TinyMCE nur in Artikeln als Editor verwendet, nicht z.B. in Plugins.');
 @define('PLUGIN_EVENT_TINYMCE_IMANAGER',        'iManager Tool benutzen?');
