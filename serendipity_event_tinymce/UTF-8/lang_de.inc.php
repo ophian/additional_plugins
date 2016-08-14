@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  DE-Revision: Revision of lang_de.inc.php
  */
@@ -53,4 +53,3 @@
 <li>Stellen Sie sicher, dass in Ihren persönlichen Einstellungen das Benutzen des WYSIWYG Editors eingeschaltet ist.</li>
 </ul>');
 
-?>

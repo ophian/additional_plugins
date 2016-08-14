@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -47,4 +47,3 @@
 <li>Make sure that inside your Serendipity Personal Preferences you have enabled WYSIWYG.</li>
 </ul>');
 
-?>

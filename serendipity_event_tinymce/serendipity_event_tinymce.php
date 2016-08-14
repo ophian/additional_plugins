@@ -1,17 +1,10 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_tinymce extends serendipity_event
 {
@@ -30,9 +23,9 @@ class serendipity_event_tinymce extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TINYMCE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus');
-        $propbag->add('version',       '1.13');
+        $propbag->add('version',       '1.14');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -42,17 +35,18 @@ class serendipity_event_tinymce extends serendipity_event
             'backend_wysiwyg'           => true,
             'backend_wysiwyg_finish'    => true
         ));
-        $propbag->add('configuration', array( 'article_only'
-            , 'imanager'
-            , 'tinymce_plugins'
-            , 'theme_advanced_buttons1'
-            , 'theme_advanced_buttons2'
-            , 'theme_advanced_buttons3'
-            , 'relativeurls'
-            , 'verifyhtml'
-            , 'cleanup'
-            , 'geckospellcheck'
-            , 'plugin_http_path'
+        $propbag->add('configuration', array(
+            'article_only',
+            'imanager',
+            'tinymce_plugins',
+            'theme_advanced_buttons1',
+            'theme_advanced_buttons2',
+            'theme_advanced_buttons3',
+            'relativeurls',
+            'verifyhtml',
+            'cleanup',
+            'geckospellcheck',
+            'plugin_http_path'
             ));
         $propbag->add('groups', array('BACKEND_EDITOR'));
     }
@@ -140,16 +134,18 @@ class serendipity_event_tinymce extends serendipity_event
                 break;
 
             default:
-                    return false;
+                return false;
         }
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -159,6 +155,7 @@ class serendipity_event_tinymce extends serendipity_event
                 case 'frontend_header':
                     echo '<script type="text/javascript">var serenditpityBaseUrl = "' . $serendipity['baseURL'] . '";</script>' . "\n";
                     break;
+
                 case 'backend_wysiwyg':
                     $eventData['skip'] = true;
                     if (preg_match('@^nugget@i', $eventData['item'])) {
@@ -275,6 +272,7 @@ window.tinymce_inited = 1;
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */

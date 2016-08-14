@@ -46,4 +46,3 @@
 <li>Ujistìte se, ¾e jste v Osobním nastavení Serendipity povolili pou¾ití WYSIWYG editoru.</li>
 </ul>');
 
-?>
