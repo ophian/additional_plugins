@@ -9,7 +9,7 @@
  *  @revisionDate 2013/10/26
  */
 
-@define('PLUGIN_EVENT_CKEDITOR_NAME', 'CKEditor');
+@define('PLUGIN_EVENT_CKEDITOR_NAME', 'CKEditor Plus');
 @define('PLUGIN_EVENT_CKEDITOR_DESC', 'Používá CKEditor jako výchozí WYSIWYG editor. Tento editor je aktuálním state-of-art. Použití: Doporučeno! Po instalaci přejděte na stránku s nastavením tohoto pluginu a čtěte další instrukce.');
 /*@define('PLUGIN_EVENT_CKEDITOR_INSTALL', '<h2>Instalace</h2>
 <ol style="line-height: 1.6">

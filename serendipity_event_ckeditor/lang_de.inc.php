@@ -1,13 +1,13 @@
 <?php
 
 /**
- *  @file lang_de.inc.php 1.4.15 2016-07-21 Ian
- *  @version 1.4.15
+ *  @file lang_de.inc.php 1.4.17 2016-08-15 Ian
+ *  @version 1.4.17
  *  @author Translator Name <yourmail@example.com>
  *  DE-Revision: Revision of lang_de.inc.php
  */
 
-@define('PLUGIN_EVENT_CKEDITOR_NAME', 'CKEditor');
+@define('PLUGIN_EVENT_CKEDITOR_NAME', 'CKEditor Plus');
 @define('PLUGIN_EVENT_CKEDITOR_DESC', 'Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lies die Plugin Konfigurations Seite für weitere Informationen.');
 @define('PLUGIN_EVENT_CKEDITOR_REVISION_TITLE', '<h3>Das Plugin enthält:</h3>');
 @define('PLUGIN_EVENT_CKEDITOR_INSTALL', '<h2>Installation</h2>
