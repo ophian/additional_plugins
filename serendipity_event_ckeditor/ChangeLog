@@ -1,3 +1,8 @@
+4.5.10.5:
+---------
+    * Fix encoding issue in cheatsheet help plugin
+    * Rename plugin title to CKEditor Plus
+
 4.5.10.4:
 ---------
     * Fix and add lang of Scayt and wsc (web spell checker) option,
