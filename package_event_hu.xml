@@ -1277,14 +1277,14 @@
 <name>serendipity_event_ckeditor</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_ckeditor/ChangeLog</changelog>
 <license>GPL</license>
-<summary>CKEditor</summary>
+<summary>CKEditor Plus</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.5.10.4</version>
+  <version>4.5.10.5</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-07-31</date>
+  <date>2016-08-15</date>
   <filelist>
 <dir name="serendipity_event_ckeditor">
 <file>.htaccess</file>
