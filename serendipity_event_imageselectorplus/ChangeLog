@@ -1,3 +1,7 @@
+0.54:
+-----
+ * Check for existing versions regarding ckeditor path
+
 0.53:
 -----
  * Use lang API - extends required Serendipity verson to 1.6

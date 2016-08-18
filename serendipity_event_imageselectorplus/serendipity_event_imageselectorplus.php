@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian');
-        $propbag->add('version',       '0.53');
+        $propbag->add('version',       '0.54');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -370,11 +370,17 @@ class serendipity_event_imageselectorplus extends serendipity_event
 ?>
                     <input name="serendipity[properties][disable_markups][]" type="hidden" value="<?php echo $plugins[0]['name']; ?>">
 <?php
-                    if (!class_exists('serendipity_event_ckeditor')) {
+                    if (!class_exists('serendipity_event_ckeditor') && $serendipity['version'][0] > 1) {
+                        // Styx changed path
+                        if (version_compare($serendipity['version'], '2.0.99', '>')) {
+?>
+                    <script src="<?php echo $serendipity['serendipityHTTPPath']; ?>htmlarea/ckeditor/ckeditor.js"></script>
+<?php
+                        } else {
 ?>
                     <script src="<?php echo $serendipity['serendipityHTTPPath']; ?>htmlarea/ckeditor/ckeditor/ckeditor.js"></script>
 <?php
-                    } // just add a simple basic toolbar, since we cannot use embedded plugins here
+                        } // now just add a simple basic toolbar, since we cannot use embedded plugins here
 ?>
                     <script>
                         CKEDITOR.replace( 'nuggets2',
@@ -384,6 +390,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                         });
                     </script>
 <?php
+                    }
                 }
 ?>
                 </div>
