@@ -5,4 +5,4 @@ The XML sidebar or event plugin files in question are synced to contain new or u
 
 This will work with Styx only, which has some bugs fixed in core.
 
-XML and RSS synchronizing make files (*.sh and .*.php) are heavently tweaked to run with my local environment needs. Make your own (these files here are just the origin clones)!
+XML and RSS synchronizing make files (*.sh and .*.php) are heftily tweaked to run with my local environment needs. Make your own (these files here are just the origin clones)!
