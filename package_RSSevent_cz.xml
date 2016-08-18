@@ -644,7 +644,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Rozšířené volby pro práci s médii&lt;/b&gt;&lt;br /&gt;Rozšiřuje možnosti vkládání obrázků z knihovny médií - quickblog a hromadné vkládání obrázků (více v dokumentaci v adresáři plugins/serendipity_evnets_imageselectorplus) [verze Serendipity &gt;= 0.9].&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Thu, 18 Aug 2016 10:12:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
