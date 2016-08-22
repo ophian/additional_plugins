@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+[Version 0.36 2016/08/22] by Ian
+--------------------------------
+ * Fix some frontend styles mainly for 2k11
+
 [Version 0.35 2016/08/06] by Ian
 --------------------------------
  * Fix category purge and hide showing up

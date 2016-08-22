@@ -1,11 +1,21 @@
-/** style_dlmanager_frontend.css last modified 2016-07-16 **/
+/** style_dlmanager_frontend.css last modified 2016-08-22 **/
 
 #downloadmanager {
     width: 100%;
     display: inline-table;
 }
+/* 2k11 */
+.plain-images #downloadmanager {
+    margin-left: 1em;
+}
+@media only screen and (min-width:1024px) {
+    /* 2k11 */
+    .plain-images #downloadmanager {
+        margin-left: 2em;
+    }
+}
 /* for the case the template does not have this class itself */
-#downloadmanager.serendipity_Entry_Date {
+#downloadmanager .serendipity_Entry_Date {
     margin: .5em 1em;
 }
 
