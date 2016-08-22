@@ -880,7 +880,7 @@
 <release>
   <version>1.83</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-08-19</date>
   <filelist>
 <dir name="serendipity_event_blogpdf">
 <file>.htaccess</file>
@@ -2194,9 +2194,9 @@
 <description>Zajišťuje Serendipity všechny funkce download managera. Při odinstalování jsou odstraněny všechny tabulky z databáze (ztráta všech dat)!!!</description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.35</version>
+  <version>0.36</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-06</date>
+  <date>2016-08-22</date>
   <filelist>
 <dir name="serendipity_event_downloadmanager">
 <file>.htaccess</file>
