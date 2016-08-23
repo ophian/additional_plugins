@@ -6168,9 +6168,9 @@
 <description>Umožňuje zkrátit odkaz na Váš blog, podobně jako třeba tr.im, tinyurl.com apod.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6.4</version>
+  <version>1.6.5</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-08-23</date>
   <filelist>
 <dir name="serendipity_event_linktrimmer">
 <file>.htaccess</file>
