@@ -1,3 +1,10 @@
+0.77:
+-----
+ * Touched Amazon_s9y_lib functions for:
+   - idents
+   - PEAR HTTP/Request2 supports
+   - fixed $country_url for exiting languages
+
 0.76:
 -----
  * Set plugin consistencies
