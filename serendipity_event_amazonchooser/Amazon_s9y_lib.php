@@ -80,6 +80,7 @@ function Amazon_country_code($country)  {
             $country_url = "http://webservices.amazon.co.jp/onca/xml";
             $mode = array (
                 'Apparel',
+                'Appliances',
                 'Automotive',
                 'Baby',
                 'Beauty',
@@ -125,6 +126,7 @@ function Amazon_country_code($country)  {
                 'Electronics',
                 'ForeignBooks',
                 'HealthPersonalCare',
+                'HomeImprovement',
                 'Jewelry',
                 'Kitchen',
                 'Lighting',
@@ -259,6 +261,7 @@ function Amazon_country_code($country)  {
                 'Blended',
                 'Books',
                 'Classical',
+                'Collectibles',
                 'DigitalMusic',
                 'DVD',
                 'Electronics',
@@ -270,6 +273,7 @@ function Amazon_country_code($country)  {
                 'Jewelry',
                 'KindleStore',
                 'Kitchen',
+                'LawnAndGarden',
                 'Magazines',
                 'Marketplace',
                 'Miscellaneous',
