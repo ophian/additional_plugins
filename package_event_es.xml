@@ -462,9 +462,9 @@
 <description>Incluye un botón para permitir la búsqueda en Amazon.com y la inclusión de los resultados en tus entradas</description>
 <maintainers><maintainer><name>Matthew Groeninger, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.76</version>
+  <version>0.77</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-08-24</date>
   <filelist>
 <dir name="serendipity_event_amazonchooser">
 <file>.htaccess</file>
