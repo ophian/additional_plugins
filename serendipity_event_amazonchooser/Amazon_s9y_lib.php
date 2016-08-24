@@ -2,6 +2,8 @@
 /*
 https://docs.aws.amazon.com/AWSECommerceService/latest/DG/AnatomyOfaRESTRequest.html
 
+ToDo: Add these languages country codes
+
 BR
 http://webservices.amazon.com.br/onca/xml
 

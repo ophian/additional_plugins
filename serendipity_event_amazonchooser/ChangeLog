@@ -4,6 +4,8 @@
    - idents
    - PEAR HTTP/Request2 supports
    - fixed $country_url for exiting languages
+   - Add some new searchIndex values documented in history:
+     http://docs.aws.amazon.com/AWSECommerceService/latest/DG/CHAP_WhatsNew.html
 
 0.76:
 -----
