@@ -6,7 +6,7 @@
  * Some styles use CSS images ...
    PLEASE NOTE:
       if you provide your own template guestbook stylesheets
-      remember to include them to your img/ directory.
+      remember to include the images to your img/ directory.
  * Requirement and consitence changes
  * Now uses lang API - extends required Serendipity version to 1.6
 
