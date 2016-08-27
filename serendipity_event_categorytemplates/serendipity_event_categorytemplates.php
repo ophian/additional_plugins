@@ -740,7 +740,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         $q = serendipity_db_query("SELECT categoryid FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide_rss = 1");
                         if (is_array($q)) {
                             $hidecats = array();
-                            foreach($q as $hidden) {
+                            foreach($q AS $hidden) {
                                 $hidecats[] = $hidden['categoryid'];
                             }
                             $hidecats = implode(';', $hidecats);
@@ -752,7 +752,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         */
 
                         /*
-                        $addkeys[] = "SUM(ctpass.hide_rss) as cat_hide_rss, ";
+                        $addkeys[] = "SUM(ctpass.hide_rss) AS cat_hide_rss, ";
                         // Reuse password join if possible
                         if (count($joins) == 0) {
                             $joins[] = "LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates AS ctpass

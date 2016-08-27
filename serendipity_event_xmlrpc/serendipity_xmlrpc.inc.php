@@ -207,7 +207,7 @@ function wp_getCategories($message) {
     }
     $cats = serendipity_fetchCategories($serendipity['authorid']);
     $xml_entries_vals = array();
-    foreach ((array) $cats as $cat ) {
+    foreach ((array) $cats AS $cat ) {
         if ($cat['categoryid']) {
             $values = array(
               'categoryId'    => new XML_RPC_Value($cat['categoryid'], 'string'),
@@ -629,7 +629,7 @@ function wp_getComments($message) {
 
     $entries = serendipity_fetchComments($comment_filter['post_id'], $limit, $order, $showAll, $type);
     $xml_entries_vals = array();
-    foreach ((array)$entries as $entry) {
+    foreach ((array)$entries AS $entry) {
         if ($entry['commentid']) {
             $xml_entries_vals[] = _wp_createSingleCommentResult($entry);
         }
@@ -718,7 +718,7 @@ function wp_editComment($message) {
             $asureEntryId = " AND entry_id=" .$rpccomment['post_id'];
         }
         // We need the entryid, so fetch it:
-        $commentInfo = serendipity_db_query("SELECT c.entry_id as entry_id, c.body as content, c.email as author_email, c.author as comment_author, c.status as comment_status, c.url as author_url, e.authorid AS entry_authorid
+        $commentInfo = serendipity_db_query("SELECT c.entry_id AS entry_id, c.body AS content, c.email AS author_email, c.author AS comment_author, c.status AS comment_status, c.url AS author_url, e.authorid AS entry_authorid
             FROM {$serendipity['dbPrefix']}comments c
             LEFT JOIN {$serendipity['dbPrefix']}entries e ON (e.id = c.entry_id)
             WHERE c.id = $comment_id"// .  $asureEntryId
@@ -833,7 +833,7 @@ function wp_getPosts($message) {
     }
     $entries = serendipity_fetchEntries('', true, $limit, true);
     $xml_entries_vals = array();
-    foreach ((array) $entries as $entry ) {
+    foreach ((array) $entries AS $entry ) {
         if ($entry['id']) {
             $categories = array();
             foreach($entry['categories'] AS $_category_id => $_category) {
@@ -942,7 +942,7 @@ function blogger_getRecentPosts($message) {
     }
     $entries = serendipity_fetchEntries('', false, $numposts, true);
     $xml_entries_vals = array();
-    foreach ((array) $entries as $entry ) {
+    foreach ((array) $entries AS $entry ) {
         if ($entry['id']) {
             $xml_entries_vals[] = new XML_RPC_Value(
             array(
@@ -993,7 +993,7 @@ function metaWeblog_getCategories($message) {
     }
     $cats = serendipity_fetchCategories($serendipity['authorid']);
     $xml_entries_vals = array();
-    foreach ((array) $cats as $cat ) {
+    foreach ((array) $cats AS $cat ) {
         if ($cat['categoryid']) $xml_entries_vals[] = new XML_RPC_Value(
             array(
               'categoryName'   => new XML_RPC_Value($cat['category_name'], 'string'),
@@ -1020,7 +1020,7 @@ function mt_getCategoryList($message) {
     }
     $cats = serendipity_fetchCategories($serendipity['authorid']);
     $xml_entries_vals = array();
-    foreach ((array) $cats as $cat ) {
+    foreach ((array) $cats AS $cat ) {
         if ($cat['categoryid']) $xml_entries_vals[] = new XML_RPC_Value(
             array(
               'categoryId'   => new XML_RPC_Value($cat['categoryid'], 'string'),
@@ -1050,7 +1050,7 @@ function metaWeblog_getRecentPosts($message) {
     $entries = serendipity_fetchEntries('', false, $numposts, true);
     $xml_entries_vals = array();
 
-    foreach ((array)$entries as $tentry) {
+    foreach ((array)$entries AS $tentry) {
         $entry = serendipity_fetchEntry('id', $tentry['id'], true, 'true');
         serendipity_plugin_api::hook_event('xmlrpc_fetchEntry', $entry);
         if ($entry['id']) {
@@ -1079,7 +1079,7 @@ function mt_getRecentPostTitles($message) {
     }
     $entries = serendipity_fetchEntries('', false, $numposts, true);
     $xml_entries_vals = array();
-    foreach ((array)$entries as $entry) {
+    foreach ((array)$entries AS $entry) {
         if ($entry['id']) {
             $xml_entries_vals[] = new XML_RPC_Value(
             array(
@@ -1323,7 +1323,7 @@ function metaWeblog_newPost($message) {
         if (isset($post_array['custom_fields'])) {
             $custom_fields = $post_array['custom_fields'];
             if (is_array($custom_fields)) {
-                foreach($custom_fields as $custom_field) {
+                foreach($custom_fields AS $custom_field) {
                     if (isset($custom_field['key'])) {
                         if ('geo_latitude' == $custom_field['key'])  $entry['geo_lat'] = $custom_field['value'];
                         else if ('geo_longitude' == $custom_field['key'])  $entry['geo_long'] = $custom_field['value'];
@@ -1466,7 +1466,7 @@ function metaWeblog_editPost($message) {
         if (isset($post_array['custom_fields'])) {
             $custom_fields = $post_array['custom_fields'];
             if (is_array($custom_fields)) {
-                foreach($custom_fields as $custom_field) {
+                foreach($custom_fields AS $custom_field) {
                     if (isset($custom_field['key'])) {
                         if ('geo_latitude' == $custom_field['key'])  $entry['geo_lat'] = $custom_field['value'];
                         else if ('geo_longitude' == $custom_field['key'])  $entry['geo_long'] = $custom_field['value'];
@@ -1537,7 +1537,7 @@ function metaWeblog_createPostRpcValue($entry) {
     // Add Categories. metaWeblog supports names only.
     if (isset($entry['categories'])) {
         $rpc_categories = array();
-        foreach ($entry['categories'] as $category)  {
+        foreach ($entry['categories'] AS $category)  {
             $rpc_categories[] = new XML_RPC_Value($category['category_name'], 'string');
         }
         $values['categories'] = new XML_RPC_Value($rpc_categories, 'array');

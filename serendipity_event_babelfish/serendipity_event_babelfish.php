@@ -119,7 +119,7 @@ class serendipity_event_babelfish extends serendipity_event
                     $pairs = explode(',', $this->get_config('TranslationPairs'));
                     $msg = '';
 
-                    foreach($pairs as $pair) {
+                    foreach($pairs AS $pair) {
                         list($src_lang, $dst_lang) = explode('->', $pair);
 
                         if ($src_lang == $serendipity['lang']) {

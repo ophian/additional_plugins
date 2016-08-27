@@ -48,7 +48,7 @@ class serendipity_event_typoquote extends serendipity_event
         );
 
         $conf_array = array();
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
 
@@ -112,7 +112,7 @@ class serendipity_event_typoquote extends serendipity_event
 
                     if (serendipity_db_bool($this->get_config('SMARTYPANTS_INSTEAD', 'false'))) {
                         include_once  dirname(__FILE__) . '/smartypants.php';
-                        foreach ($this->markup_elements as $temp) {
+                        foreach ($this->markup_elements AS $temp) {
                             if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']]) &&
                                 !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                                 !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
@@ -121,7 +121,7 @@ class serendipity_event_typoquote extends serendipity_event
                             }
                         }
                     } else {
-                        foreach ($this->markup_elements as $temp) {
+                        foreach ($this->markup_elements AS $temp) {
                             if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
                                     !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                                     !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {

@@ -374,7 +374,7 @@ class serendipity_event_findmore extends serendipity_event
     {
         $urls = $this->getUrls($input, $strict);
         $diggs = array();
-        foreach ($urls['href'] as $url) {
+        foreach ($urls['href'] AS $url) {
             $pos = strpos($url, 'digg.com');
             if ($pos === false) {
             } else {
@@ -395,7 +395,7 @@ class serendipity_event_findmore extends serendipity_event
         $diggCountDiv = "<div class=\"serendipity_diggcount\">\n<script>digg_url = '%s';</script>\n<script src=\"http://digg.com/api/diggthis.js\"></script>\n</div>\n\n";
         $diggCount = null;
 
-        foreach ($diggs as $url) {
+        foreach ($diggs AS $url) {
             $diggCount .= sprintf($diggCountDiv, $url);
 	}
         return $diggCount;

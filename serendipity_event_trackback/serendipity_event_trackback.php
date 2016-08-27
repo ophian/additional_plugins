@@ -144,7 +144,7 @@ class serendipity_event_trackback extends serendipity_event
 
                         // Shall URLs be removed that point to your own blog?
                         if (!serendipity_db_bool($this->get_config('trackown', 'true'))) {
-                            foreach($eventData as $idx => $url) {
+                            foreach($eventData AS $idx => $url) {
                                 if (preg_match('@' . preg_quote($serendipity['baseURL'], '@') . '@i', $url)) {
                                     unset($eventData[$idx]);
                                 }
@@ -282,7 +282,7 @@ class serendipity_event_trackback extends serendipity_event
         $entries = serendipity_db_query($sql);
 
         if (is_array($entries) && !empty($entries)) {
-            foreach ($entries as $entry) {
+            foreach ($entries AS $entry) {
                 if ($entry['timestamp'] <= serendipity_serverOffsetHour()) {
                     include_once S9Y_INCLUDE_PATH . 'include/functions_trackbacks.inc.php';
 

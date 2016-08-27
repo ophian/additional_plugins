@@ -118,7 +118,7 @@ class serendipity_plugin_multilingual extends serendipity_event
         echo '<form id="language_chooser" action="' . $url . '" method="post"><div>';
         echo '<select style="font-size: ' . $this->get_config('size', '9') . 'px" name="user_language" onchange="document.getElementById(\'language_chooser\').submit();">';
 //        echo '<option value=""> </option>'."\n";
-        foreach ($serendipity['languages'] as $lang_key => $language) {
+        foreach ($serendipity['languages'] AS $lang_key => $language) {
             if (serendipity_db_bool($this->get_config($lang_key, 'false'))) {
                 echo '<option value="' . $lang_key . '" ' . ($serendipity['lang'] == $lang_key ? 'selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($language) : htmlspecialchars($language, ENT_COMPAT, LANG_CHARSET)) . '</option>';
             }

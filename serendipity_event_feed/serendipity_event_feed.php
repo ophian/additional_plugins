@@ -158,7 +158,7 @@ class serendipity_event_feed extends serendipity_plugin
 
         // step 3: extract the articles
         $i = 1;
-        foreach ($xml->channel->item as $item)
+        foreach ($xml->channel->item AS $item)
         {
             $article = array();
             $article['channel'] = $blog;
@@ -178,7 +178,7 @@ class serendipity_event_feed extends serendipity_plugin
             $slash   = $item->children($ns['slash']);
 
             $article['creator'] = (string) $dc->creator;
-            foreach ($dc->subject as $subject)
+            foreach ($dc->subject AS $subject)
                 $article['subject'][] = (string)$subject;
 
             $article['content'] = (string)trim($content->encoded);
@@ -214,7 +214,7 @@ class serendipity_event_feed extends serendipity_plugin
     {
         $a = array();
         $i = 1;
-        foreach ($xml->entry as $item) {
+        foreach ($xml->entry AS $item) {
             $author = (string) $item->author->name;
             $updated = (string) strtotime($item->updated);
             $published = (string) strtotime($item->published);

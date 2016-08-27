@@ -445,7 +445,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
                 $required_fields = $this->get_config('required_fields', '');
                 if (!empty($required_fields)) {
                     $required_field_list = explode(',', $required_fields);
-                    foreach($required_field_list as $required_field) {
+                    foreach($required_field_list AS $required_field) {
                         $required_field = trim($required_field);
                         if (empty($addData[$required_field])) {
                             $this->reject($eventData, $addData, sprintf(PLUGIN_EVENT_SPAMBLOCK_BEE_REASON_REQUIRED_FIELD, $required_field));
@@ -670,7 +670,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
 
                 $jsVars       = array();
                 $existingKeys = array($spamBeeVar);
-                foreach($jsProperties as $property => $value) {
+                foreach($jsProperties AS $property => $value) {
                     $varName          = $this->generateUniqueVarName($existingKeys);
                     $jsVars[$varName] = $property;
                     $existingKeys[]   = $varName;
@@ -685,7 +685,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
                     echo 'var ' . $varName . " = unescape('" . $encVal . "');";
                 }
 
-                foreach ($jsVars as $var => $value) {
+                foreach ($jsVars AS $var => $value) {
                     echo $spamBeeVar . "['" . $value . "'] = " . $var . ';';
                 }
 

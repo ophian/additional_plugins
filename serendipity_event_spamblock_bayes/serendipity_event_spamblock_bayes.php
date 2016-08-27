@@ -204,7 +204,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                 LIMIT 100;";
         $ham_comments = serendipity_db_query ( $sql );
         if (is_array($ham_comments[0])) {
-            foreach ($ham_comments as $comment) {
+            foreach ($ham_comments AS $comment) {
                 $this->startLearn($comment, 'ham');
             }
         }
@@ -222,7 +222,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $spam_comments = serendipity_db_query ( $sql );
 
         if (is_array($spam_comments[0])) {
-            foreach ($spam_comments as $comment) {
+            foreach ($spam_comments AS $comment) {
                 $this->startLearn($comment, 'spam');
             }
         }
@@ -237,7 +237,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $divider = 0;
         $ratings = array();
         $types = array_keys($this->type);
-        foreach($types as $type) {
+        foreach($types AS $type) {
             $rating = $this->classify($comment[$this->type[$type]], $this->type[$type]);
             if (is_numeric($rating)) {
                 $ratings[] = $rating;
@@ -261,7 +261,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         # its spam with valid content to fool the spamfilter.
         $max_ratings = array();
         $min_ratings = array();
-        foreach ($ratings as $rating) {
+        foreach ($ratings AS $rating) {
             if ($rating >= $spamBarrier) {
                 $max_ratings[] = $rating;
             }
@@ -282,7 +282,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     function startLearn($comment, $category)
     {
         $types = array_keys($this->type);
-        foreach ($types as $type) {
+        foreach ($types AS $type) {
             $this->learn($comment[$this->type[$type]], $category, $this->type[$type]);
         }
     }
@@ -326,7 +326,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $sql = 'SELECT token, ham, spam FROM ' . $serendipity ['dbPrefix'] . 'spamblock_bayes WHERE ' . serendipity_db_in_sql ( 'token', $temp ) .' AND type = \''. $type .'\'';
         unset ($temp);
         $stored_tokens = serendipity_db_query ( $sql, FALSE, 'assoc', FALSE, 'token' );
-        foreach($tokens as $word => $count) {
+        foreach($tokens AS $word => $count) {
             $word_count[$word] = $count;
             if (!isset($stored_tokens[$word])) {
                 $rating = 1;
@@ -354,7 +354,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $n = 0;
         $probability = 0;
 
-        foreach($tokens as $word => $count) {
+        foreach($tokens AS $word => $count) {
             if ($importance[$word] > 0.2) {
                 $n++;
                 $probability += $ratings[$word];
@@ -404,7 +404,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $stored_values = serendipity_db_query ( $sql, FALSE, 'assoc', FALSE, 'token', $group );
 
         # Save new amount of all tokens
-        foreach ($tokens as $token => $value) {
+        foreach ($tokens AS $token => $value) {
             if (isset ($stored_values [$token])) {
                 $new_value [$token] = $stored_values [$token] + $value;
                 if ($serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli') {
@@ -466,7 +466,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         #preg_match_all('/[\w]+/u', "aaa´bbb", $words);
 
         $temp = array ();
-        foreach ( $tokens as $token ) {
+        foreach ( $tokens AS $token ) {
             if (isset ( $temp ["$token"] )) {
                 $temp ["$token"] ++;
             } else {
@@ -491,7 +491,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $ratings = serendipity_db_query($sql);
         $amount = 0;
         if (is_array($ratings)) {
-            foreach($ratings as $rating) {
+            foreach($ratings AS $rating) {
                 $amount += $rating[0];
             }
         }
@@ -536,7 +536,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
             default:
                 $sql = "CREATE TABLE IF NOT EXISTS
                     {$serendipity['dbPrefix']}spamblock_bayes_recycler
-                    as SELECT * FROM
+                    AS SELECT * FROM
                     {$serendipity['dbPrefix']}comments ORDER BY id LIMIT 1 WITH NO DATA";
         }
 
@@ -599,7 +599,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                             SELECT
                                 orig.token, orig.ham, orig.spam, orig.type
                             FROM
-                                {$serendipity['dbPrefix']}spamblock_bayes as orig
+                                {$serendipity['dbPrefix']}spamblock_bayes AS orig
                         ON DUPLICATE KEY UPDATE
                             ham = {$serendipity['dbPrefix']}spamblock_bayes_temp.ham + VALUES(ham),
                             spam = {$serendipity['dbPrefix']}spamblock_bayes_temp.spam + VALUES(spam);";
@@ -613,7 +613,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
             $results = serendipity_db_query($sql);
 
             if (is_array($results)) {
-                foreach ($results as $result) {
+                foreach ($results AS $result) {
                     $token = $result['token'];
                     $ham = $result['ham'];
                     $spam = $result['spam'];
@@ -679,7 +679,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $sql = "DROP TABLE
                 {$serendipity['dbPrefix']}spamblock_bayes";
         serendipity_db_query($sql);
-        foreach($this->type as $type) {
+        foreach($this->type AS $type) {
             $this->set_config("{$type}_ham", 0);
             $this->set_config("{$type}_spam", 0);
         }
@@ -731,7 +731,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                             $category = $_REQUEST ['category'];
                             $ids = $_REQUEST ['id'];
                             $ids = explode(';', $ids);
-                            foreach($ids as $id) {
+                            foreach($ids AS $id) {
                                 $comment = $this->getComment($id);
                                 if (is_array ($comment)) {
                                     $comment = $comment['0'];
@@ -804,7 +804,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                             // we get the comments in wrong order
                             $comments = array_reverse($this->getComment($ids));
                             $i = 0;
-                            foreach ($comments as $comment) {
+                            foreach ($comments AS $comment) {
                                 $ratings .= preg_replace('/\..*/', '', $this->startClassify($comment) * 100) .'%;'. $ids[$i] . ';';
                                 $i++;
 
@@ -890,7 +890,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                                     $ids = array_keys($_REQUEST['serendipity']['selected']);
                                     # When restoring a comment we can be pretty sure it's a valid one
                                     $comments = $this->getRecyclerComment($ids);
-                                    foreach ($comments as $comment) {
+                                    foreach ($comments AS $comment) {
                                         $this->startLearn($comment, 'ham');
                                     }
 
@@ -920,7 +920,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                                     } else {
                                         $comments = $this->getRecyclerComment($ids);
                                     }
-                                    foreach ($comments as $comment) {
+                                    foreach ($comments AS $comment) {
                                         $this->startLearn($comment, 'spam');
                                     }
                                 }
@@ -961,7 +961,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                             $url .= '&amp;serendipity[adminAction]=spamblock_bayes';
                             $url .= '&amp;serendipity[subpage]=4';
                             if (isset($_REQUEST['comments'])) {
-                                foreach ($comment_ids as $comment) {
+                                foreach ($comment_ids AS $comment) {
                                     $url .= '&amp;serendipity[comments]['.$comment.']';
                                 }
                             }
@@ -1536,7 +1536,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         }
         $data['curpage'] = $commentpage;
 
-        foreach($this->type as $type) {
+        foreach($this->type AS $type) {
             $data[$type.'_ham'] = $this->get_config("{$type}_ham", 0);
             $data[$type.'_spam'] = $this->get_config("{$type}_spam", 0);
         }
@@ -1620,7 +1620,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
             $types = array_keys($this->type);
             $ratings = array();
 
-            foreach($types as $type) {
+            foreach($types AS $type) {
                 $rating = $this->classify($comment[$this->type[$type]], $this->type[$type]);
 
                 if (is_numeric($rating)) {
@@ -1898,7 +1898,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                     unset($database[$i][$j]);
                 }
             }
-            foreach ($database as $fields) {
+            foreach ($database AS $fields) {
                 fputcsv($fp, $fields);
             }
             $runs++;
@@ -1959,7 +1959,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         if ($this->get_config('dbversion', 2) == 3
                 && ($serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli')) {
                 # now there is a primary key we can use
-            foreach ($importDatabase as $importToken) {
+            foreach ($importDatabase AS $importToken) {
                 $token = $importToken[0];
                 $ham = $importToken[1];
                 $spam = $importToken[2];
@@ -1988,7 +1988,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                 }
             }
         } elseif ($serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'sqlite3oo' || $serendipity['dbType'] == 'pdo-sqlite') {
-            foreach ($importDatabase as $importToken) {
+            foreach ($importDatabase AS $importToken) {
                 $token = $importToken[0];
                 $ham = $importToken[1];
                 $spam = $importToken[2];
@@ -2014,7 +2014,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                 }
             }
         } else {
-            foreach ($importDatabase as $importToken) {
+            foreach ($importDatabase AS $importToken) {
                 $token = $importToken[0];
                 $ham = $importToken[1];
                 $spam = $importToken[2];

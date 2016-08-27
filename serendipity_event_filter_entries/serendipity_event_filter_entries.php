@@ -103,7 +103,7 @@ class serendipity_event_filter_entries extends serendipity_event
 <?php
                     $categories = serendipity_fetchCategories();
                     $categories = serendipity_walkRecursive($categories, 'categoryid', 'parentid', VIEWMODE_THREADED);
-                    foreach ( $categories as $cat ) {
+                    foreach ( $categories AS $cat ) {
                         echo '<option value="'. $cat['categoryid'] .'"'. ($_SESSION['filter']['category'] == $cat['categoryid'] ? ' selected="selected"' : '') .'>'. str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
                     }
 ?>              </select>
@@ -119,7 +119,7 @@ class serendipity_event_filter_entries extends serendipity_event
             <td>
                 <select name="sort[order]">
 <?php
-    foreach($sort_order as $so_key => $so_val) {
+    foreach($sort_order AS $so_key => $so_val) {
         echo '<option value="' . $so_key . '" ' . (isset($_SESSION['sort']['order']) && $_SESSION['sort']['order'] == $so_key ? 'selected="selected"': '') . '>' . $so_val . '</option>' . "\n";
     }
 ?>              </select>
@@ -200,7 +200,7 @@ class serendipity_event_filter_entries extends serendipity_event
                     }
 
                     /* Attempt to locate hidden variables within the URI */
-                    foreach ($serendipity['uriArguments'] as $k => $v){
+                    foreach ($serendipity['uriArguments'] AS $k => $v){
                         if ($v[0] == 'P') { /* Page */
                             $page = substr($v, 1);
                             if (is_numeric($page)) {

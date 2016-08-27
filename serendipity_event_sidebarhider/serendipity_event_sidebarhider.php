@@ -123,7 +123,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                         $mygroups = serendipity_getGroups($serendipity['authorid']);
                     }
 
-                    foreach ($plugins as $idx => $plugin_data) {
+                    foreach ($plugins AS $idx => $plugin_data) {
                         // First eliminate plugins that don't fit the member restrictions
                         if ($view_list[$plugin_data['name']] == 'member' && !$_SESSION['serendipityAuthedUser']) {
                             unset($plugins[$idx]);
@@ -251,7 +251,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                             $pa = "[";
                         }
 
-                        foreach ($plugin_list as $key=>$side) {
+                        foreach ($plugin_list AS $key=>$side) {
                             $pa .= "[";
                             $pa .= implode(",", $side);
                             if ($key) {
@@ -399,7 +399,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $mygroups            = serendipity_getGroups($serendipity['authorid']);
 
         $enabled = serendipity_db_bool($this->get_config('enable'));
-        foreach ($sidebar as $plugin_data) {
+        foreach ($sidebar AS $plugin_data) {
             $plugin =& serendipity_plugin_api::load_plugin($plugin_data['name'], $plugin_data['authorid'], $plugin_data['path']);
             if (is_object($plugin)) {
                 $checked        = "";
@@ -486,7 +486,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                 $cats = serendipity_fetchCategories();
                 if (is_array($cats)) {
                     $cats = serendipity_walkRecursive($cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
-                    foreach($cats as $cat) {
+                    foreach($cats AS $cat) {
                         echo '<option value="' . $cat['categoryid'] . '" ' . (in_array($cat['categoryid'], $selected) ? 'selected="selected"' : '') . '>' . str_repeat('&nbsp;', $cat['depth']) . (function_exists('serendipity_specialchars') ? serendipity_specialchars($cat['category_name']) : htmlspecialchars($cat['category_name'], ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
                     }
                 }
@@ -535,7 +535,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                     $pside = $sidebar;
                 }
 
-                foreach ($plugins as $plugin) {
+                foreach ($plugins AS $plugin) {
                     if (isset($_REQUEST['plugin_' . $pside . '_'.$i])) {
                         $plugin_list[$pside][$i] = 0;
                     } else {

@@ -291,9 +291,9 @@ class serendipity_event_statistics extends serendipity_event
                         $total_count    = serendipity_db_query("SELECT count(id) FROM {$serendipity['dbPrefix']}entries", true);
                         $draft_count    = serendipity_db_query("SELECT count(id) FROM {$serendipity['dbPrefix']}entries WHERE isdraft = 'true'", true);
                         $publish_count  = serendipity_db_query("SELECT count(id) FROM {$serendipity['dbPrefix']}entries WHERE isdraft = 'false'", true);
-                        $author_rows    = serendipity_db_query("SELECT author, count(author) as entries FROM {$serendipity['dbPrefix']}entries GROUP BY author ORDER BY author");
+                        $author_rows    = serendipity_db_query("SELECT author, count(author) AS entries FROM {$serendipity['dbPrefix']}entries GROUP BY author ORDER BY author");
                         $category_count = serendipity_db_query("SELECT count(categoryid) FROM {$serendipity['dbPrefix']}category", true);
-                        $cat_sql        = "SELECT c.category_name, count(e.id) as postings
+                        $cat_sql        = "SELECT c.category_name, count(e.id) AS postings
                                                         FROM {$serendipity['dbPrefix']}entrycat ec,
                                                              {$serendipity['dbPrefix']}category c,
                                                              {$serendipity['dbPrefix']}entries e
@@ -306,7 +306,7 @@ class serendipity_event_statistics extends serendipity_event
                         $image_rows  = serendipity_db_query("SELECT extension, count(id) AS images FROM {$serendipity['dbPrefix']}images GROUP BY extension ORDER BY images DESC");
 
                         $subscriber_count = count(serendipity_db_query("SELECT count(id) FROM {$serendipity['dbPrefix']}comments WHERE type = 'NORMAL' AND subscribed = 'true' GROUP BY email"));
-                        $subscriber_rows  = serendipity_db_query("SELECT e.timestamp, e.id, e.title, count(c.id) as postings
+                        $subscriber_rows  = serendipity_db_query("SELECT e.timestamp, e.id, e.title, count(c.id) AS postings
                                                         FROM {$serendipity['dbPrefix']}comments c,
                                                              {$serendipity['dbPrefix']}entries e
                                                         WHERE e.id = c.entry_id AND type = 'NORMAL' AND subscribed = 'true'
@@ -315,7 +315,7 @@ class serendipity_event_statistics extends serendipity_event
                                                         LIMIT $max_items");
 
                         $comment_count = serendipity_db_query("SELECT count(id) FROM {$serendipity['dbPrefix']}comments WHERE type = 'NORMAL'", true);
-                        $comment_rows  = serendipity_db_query("SELECT e.timestamp, e.id, e.title, count(c.id) as postings
+                        $comment_rows  = serendipity_db_query("SELECT e.timestamp, e.id, e.title, count(c.id) AS postings
                                                         FROM {$serendipity['dbPrefix']}comments c,
                                                              {$serendipity['dbPrefix']}entries e
                                                         WHERE e.id = c.entry_id AND type = 'NORMAL'
@@ -323,7 +323,7 @@ class serendipity_event_statistics extends serendipity_event
                                                         ORDER BY postings DESC
                                                         LIMIT $max_items");
 
-                        $commentor_rows = serendipity_db_query("SELECT author, max(email) as email, max(url) as url, count(id) as postings
+                        $commentor_rows = serendipity_db_query("SELECT author, max(email) AS email, max(url) AS url, count(id) AS postings
                                                         FROM {$serendipity['dbPrefix']}comments c
                                                         WHERE type = 'NORMAL'
                                                         GROUP BY author
@@ -331,7 +331,7 @@ class serendipity_event_statistics extends serendipity_event
                                                         LIMIT $max_items");
 
                         $tb_count = serendipity_db_query("SELECT count(id) FROM {$serendipity['dbPrefix']}comments WHERE type = 'TRACKBACK'", true);
-                        $tb_rows  = serendipity_db_query("SELECT e.timestamp, e.id, e.title, count(c.id) as postings
+                        $tb_rows  = serendipity_db_query("SELECT e.timestamp, e.id, e.title, count(c.id) AS postings
                                                         FROM {$serendipity['dbPrefix']}comments c,
                                                              {$serendipity['dbPrefix']}entries e
                                                         WHERE e.id = c.entry_id AND type = 'TRACKBACK'
@@ -339,7 +339,7 @@ class serendipity_event_statistics extends serendipity_event
                                                         ORDER BY postings DESC
                                                         LIMIT $max_items");
 
-                        $tbr_rows = serendipity_db_query("SELECT author, max(email) as email, max(url) as url, count(id) as postings
+                        $tbr_rows = serendipity_db_query("SELECT author, max(email) AS email, max(url) AS url, count(id) AS postings
                                                         FROM {$serendipity['dbPrefix']}comments c
                                                         WHERE type = 'TRACKBACK'
                                                         GROUP BY author
@@ -347,7 +347,7 @@ class serendipity_event_statistics extends serendipity_event
                                                         LIMIT $max_items");
 
                         $length      = serendipity_db_query("SELECT SUM(LENGTH(body) + LENGTH(extended)) FROM {$serendipity['dbPrefix']}entries", true);
-                        $length_rows = serendipity_db_query("SELECT id, title, (LENGTH(body) + LENGTH(extended)) as full_length FROM {$serendipity['dbPrefix']}entries ORDER BY full_length DESC LIMIT $max_items");
+                        $length_rows = serendipity_db_query("SELECT id, title, (LENGTH(body) + LENGTH(extended)) AS full_length FROM {$serendipity['dbPrefix']}entries ORDER BY full_length DESC LIMIT $max_items");
 ?>
     <h2><?php echo PLUGIN_EVENT_STATISTICS_OUT_STATISTICS; ?></h2>
 

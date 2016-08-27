@@ -373,7 +373,7 @@ class serendipity_event_backup extends serendipity_event
                         unset($val);
                         $insert_text1 = '';
                         $insert_text2 = '';
-                        foreach ($THIS as $key => $val) {
+                        foreach ($THIS AS $key => $val) {
                             if (!intval($key) AND $key != "0") {
                                 $insert_text1 .= "".$key.",";
                                 $insert_text2 .= "'".addslashes($val)."',";
@@ -413,7 +413,7 @@ class serendipity_event_backup extends serendipity_event
             @chmod($BACKUPDIR, 0777);
         }
         $retconf = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}dma_htmlbackup");
-        foreach ($retconf[0] as $key => $val) {
+        foreach ($retconf[0] AS $key => $val) {
             $backupconfig[$key] = stripslashes(trim($val));
         }
         $backupdata_array = explode("|^|", $backupconfig['data_backup']);
@@ -477,7 +477,7 @@ class serendipity_event_backup extends serendipity_event
             @chmod($BACKUPDIR."/tmp/last_backup", 0777);
         }
         $retconf = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}dma_sqlbackup");
-        foreach ($retconf[0] as $key => $val) {
+        foreach ($retconf[0] AS $key => $val) {
             $backupconfig[$key] = stripslashes(trim($val));
         }
         $backupdata_array = explode("|^|", $backupconfig['data_backup']);
@@ -560,7 +560,7 @@ class serendipity_event_backup extends serendipity_event
             @chmod($BACKUPDIR, 0777);
         }
         $retconf = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}dma_htmlbackup");
-        foreach ($retconf[0] as $key => $val) {
+        foreach ($retconf[0] AS $key => $val) {
             $backupconfig[$key] = stripslashes(trim($val));
         }
         $backupdata_array = explode("|^|", $backupconfig['data_backup']);
@@ -605,7 +605,7 @@ class serendipity_event_backup extends serendipity_event
             @chmod($BACKUPDIR."/tmp/last_backup", 0777);
         }
         $retconf = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}dma_sqlbackup");
-        foreach ($retconf[0] as $key => $val) {
+        foreach ($retconf[0] AS $key => $val) {
             $backupconfig[$key] = stripslashes(trim($val));
         }
         $backupdata_array = explode("|^|", $backupconfig['data_backup']);
@@ -651,7 +651,7 @@ class serendipity_event_backup extends serendipity_event
             @chmod($BACKUPDIR."/tmp/last_backup", 0777);
         }
         $retconf = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}dma_sqlbackup");
-        foreach ($retconf[0] as $key => $val) {
+        foreach ($retconf[0] AS $key => $val) {
             $backupconfig[$key] = stripslashes(trim($val));
         }
         $backupdata_array = explode("|^|", $backupconfig['data_backup']);
@@ -939,7 +939,7 @@ class serendipity_event_backup extends serendipity_event
         }
 
         $retconfs = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}dma_sqlbackup");
-        foreach ($retconfs[0] as $key => $val) {
+        foreach ($retconfs[0] AS $key => $val) {
             $backupconfig[$key] = stripslashes(trim($val));
         }
         $backupdatas_array = explode("|^|", $backupconfig['data_backup']);
@@ -1085,7 +1085,7 @@ class serendipity_event_backup extends serendipity_event
         unset($BACKUPS);
 
         $retconfh = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}dma_htmlbackup");
-        foreach ($retconfh[0] as $key => $val) {
+        foreach ($retconfh[0] AS $key => $val) {
             $htmlbackupconfig[$key] = stripslashes(trim($val));
         }
         $backupdatah_array = explode("|^|", $htmlbackupconfig['data_backup']);

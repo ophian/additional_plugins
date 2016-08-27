@@ -437,7 +437,7 @@ class serendipity_event_textwiki extends serendipity_event
 
         $conf_array = array();
         // Add markup elements config
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
         // Save non wiki-rule configuration
@@ -451,7 +451,7 @@ class serendipity_event_textwiki extends serendipity_event
 
     function _introspect_rule_config(&$conf_array)
     {
-        foreach($this->wikiRules as $name => $rule) {
+        foreach($this->wikiRules AS $name => $rule) {
             // If sub configurations exist
             if (isset($rule['s9yc']) && is_array($rule['s9yc'])) {
                 if ($conf_array[(count($conf_array) - 1)] != 'internal_seperator') {
@@ -459,7 +459,7 @@ class serendipity_event_textwiki extends serendipity_event
                 }
                 // Add wiki-rule config itself
                 $conf_array[] = $name;
-                foreach ($rule['s9yc'] as $confname => $conf) {
+                foreach ($rule['s9yc'] AS $confname => $conf) {
                     $conf_array[] = $name . '_' . $confname;
                 }
                 $conf_array[] = "internal_seperator";
@@ -537,7 +537,7 @@ class serendipity_event_textwiki extends serendipity_event
             switch($event) {
 
                 case 'frontend_display':
-                    foreach ($this->markup_elements as $temp) {
+                    foreach ($this->markup_elements AS $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
                             !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                             !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
@@ -574,7 +574,7 @@ class serendipity_event_textwiki extends serendipity_event
         } else {
             return false;
         }
-        foreach ($this->wikiRules as $name => $rule) {
+        foreach ($this->wikiRules AS $name => $rule) {
             if (serendipity_db_bool($this->get_config($name, $rule['flag']))) {
                 $this->_add_wiki_rule($bag, $name, $rule);
             } else {
@@ -594,7 +594,7 @@ class serendipity_event_textwiki extends serendipity_event
         $rule_info = $rule;
         $rule_info['flag'] = true;
         if (isset($rule['s9yc']) && is_array($rule['s9yc'])) {
-            foreach ($rule['s9yc'] as $confName => $confVals) {
+            foreach ($rule['s9yc'] AS $confName => $confVals) {
                 if ($confName === 'pages') {
                     $rule_info['conf']['pages'] = $this->_get_link_pages($bag, $name);
                 } else {

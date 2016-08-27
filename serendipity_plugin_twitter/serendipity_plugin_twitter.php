@@ -330,7 +330,7 @@ class serendipity_plugin_twitter extends serendipity_plugin
                     $toall_only = serendipity_db_bool($this->get_config('toall_only', false));
                     $filter_all_user = serendipity_db_bool($this->get_config('filter_all_user', false));
 
-                    foreach ($xml as $key => $status) {
+                    foreach ($xml AS $key => $status) {
                         // Change encoding of update to Visitors language
                         if (LANG_CHARSET!='UTF-8' && function_exists("mb_convert_encoding")) {
                             $status->text = mb_convert_encoding($status->text, LANG_CHARSET, 'auto');

@@ -292,7 +292,7 @@ class serendipity_event_twitter extends serendipity_plugin
                 $querypar = "plugintab";
                 $htmltabline = PLUGIN_EVENT_TWITTER_CFGTAB ;
 
-                foreach ($config_tabs as $tabkey => $tabvalue) {
+                foreach ($config_tabs AS $tabkey => $tabvalue) {
                     $tablink = $actConfigUrl;
                     if (strpos($actConfigUrl, "&$querypar=") === FALSE) {
                         $tablink = $actConfigUrl . "&$querypar=$tabkey";
@@ -1312,12 +1312,12 @@ a.twitter_update_time {
             $redirCheck = new RedirectCheck();
 
             $validated_entries = array();
-            foreach ($entries as $entry) {
+            foreach ($entries AS $entry) {
                 $writer = $entry[TWITTER_SEARCHRESULT_LOGIN];
 
                 // First check if the tweets autor should be ignored:
                 $ignore = false;
-                foreach( $ignore_names as $ignore_name) {
+                foreach( $ignore_names AS $ignore_name) {
                     $ignore = strtoupper(trim($ignore_name)) == strtoupper($writer);
                     if ($ignore) break;
                 }
@@ -1328,7 +1328,7 @@ a.twitter_update_time {
 
                 // Check all expanded urls:
                 if (!empty($entry[TWITTER_SEARCHRESULT_URL_ARRAY])) {
-                    foreach ($entry[TWITTER_SEARCHRESULT_URL_ARRAY] as $url) {
+                    foreach ($entry[TWITTER_SEARCHRESULT_URL_ARRAY] AS $url) {
                         $url = $redirCheck->get_final_url($url);
                         $tweetmatches = preg_match($permalinkRegex, $url, $matches);
                         if ($tweetmatches) break; // Found it!
@@ -1351,7 +1351,7 @@ a.twitter_update_time {
         // Save all comments and evaluate highest ids:
         $highest_ids = array();
         if (is_array($validated_entries) && !empty($validated_entries) ) {
-            foreach ($validated_entries as $valid) {
+            foreach ($validated_entries AS $valid) {
                 $comment_saved = false;
                 $article_id = $valid['id'];
                 $entry = $valid['entry'];
@@ -1383,7 +1383,7 @@ a.twitter_update_time {
         if (empty($global_highest_id)) $global_highest_id = '0';
         if (is_array($highest_ids) && !empty($highest_ids) ) {
             // Save highest ids:
-            foreach( $highest_ids as $article_id => $highest_id_array ) {
+            foreach( $highest_ids AS $article_id => $highest_id_array ) {
                 // remember globaly
                 if (!empty($highest_id_array['high_id']) && $highest_id_array['high_id'] > $global_highest_id) {
                     $global_highest_id = $highest_id_array['high_id'];
@@ -1491,7 +1491,7 @@ a.twitter_update_time {
             }
             if (!empty($taglist)) {
                 $tags = explode(',',$taglist);
-                foreach ($tags as $tag) {
+                foreach ($tags AS $tag) {
                     $tag = trim($tag);
                     $tag = str_replace(" ","_",$tag); // make tags more twitter alike
                     $test = str_replace('#title#',$title,$announce_format_notags);
@@ -1512,7 +1512,7 @@ a.twitter_update_time {
         // Fill up with not used tags
         if (strstr($announce_format,$tags_marker)) {
             $added = false;
-            foreach ($tagsnotused as $tag) {
+            foreach ($tagsnotused AS $tag) {
                 $test = str_replace($tags_marker,'#' . $tag . ' ' . $tags_marker,$update);
                 if (strlen($test) <142 + strlen($tags_marker)) {
                     $update = $test;
@@ -1569,7 +1569,7 @@ a.twitter_update_time {
 
         $updates = array();
         echo "<ul>";
-        foreach ($announce_account_list as $announce_account) {
+        foreach ($announce_account_list AS $announce_account) {
             $suffix = empty($announce_account)?'':(int)$announce_account+1;
             $account_name = $this->get_config('twittername'.$suffix,'');
             $account_pwd = $this->get_config('twitterpwd'.$suffix,'');
@@ -1692,7 +1692,7 @@ a.twitter_update_time {
         }
 
         $event_index = 0;
-        foreach ($eventData as $entry) {
+        foreach ($eventData AS $entry) {
 
             // Test for nonsense data (or static pages)
             if (!isset($entry['id']) || !is_numeric($entry['id']) || (int)$entry['id']<1) {
@@ -1787,7 +1787,7 @@ a.twitter_update_time {
         $loaded_shorturls = $shorturls;
         $shorter = $this->get_urlshortener();
 
-        foreach ($selected_services as $service) {
+        foreach ($selected_services AS $service) {
             $shorter->put_shorturl($service, $article_url, $shorturls);
         }
 
@@ -1864,7 +1864,7 @@ a.twitter_update_time {
         echo "URL: $article_url<br>";
         echo "<h2>Short URLs searched</h2>";
         echo "<ul>";
-        foreach ($shorturls as $short_url) {
+        foreach ($shorturls AS $short_url) {
             echo "<li>$short_url</li>";
         }
         echo "</ul>";
@@ -1872,7 +1872,7 @@ a.twitter_update_time {
         echo "<h2>Tweets found</h2>";
         echo "Found " . count($entries) . " tweets.<br>";
         echo "<ul>";
-        foreach($entries as $entry) {
+        foreach($entries AS $entry) {
             $comment_url = $this->comment_url($entry);
             echo "<li>";
             //echo "<b>twitter search</b>: " . $entry[TWITTER_SEARCHRESULT_URL_QUERY] . "<br/>";
@@ -2162,7 +2162,7 @@ a.twitter_update_time {
                     }
                 }
 
-                foreach($statuses as $status){
+                foreach($statuses AS $status){
                     // Setup links inside of the text
                     $status->text = $api->replace_links_in_status($status->text);
 

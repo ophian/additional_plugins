@@ -346,7 +346,7 @@ class serendipity_event_aggregator extends serendipity_event
         // prepare array
         $ret = array();
         if (is_array($feeds)) {
-            foreach ($feeds as $feed) {
+            foreach ($feeds AS $feed) {
                 $category = $feed['categoryid'];
                 if (!isset($ret[$feed['feedid']])) {
                     unset($feed['categoryid']);
@@ -600,7 +600,7 @@ class serendipity_event_aggregator extends serendipity_event
             return true;
         }
 
-        foreach ($categories as $categoryid) {
+        foreach ($categories AS $categoryid) {
             $r = serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}aggregator_feedcat
                                                    (feedid, categoryid)
                                             VALUES ('" . $idx . "',
@@ -631,7 +631,7 @@ class serendipity_event_aggregator extends serendipity_event
         $cat_list .= '    <option value="0"' . (empty($selected) ? ' selected="selected"' : '') . '>[' . NO_CATEGORY . ']</option>' . $n;
         if (is_array($cats = serendipity_fetchCategories())) {
             $cats = serendipity_walkRecursive($cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
-            foreach ($cats as $cat) {
+            foreach ($cats AS $cat) {
                 $cat_list .= '<option value="'. $cat['categoryid'] .'"'. (in_array($cat['categoryid'], $selected) ? ' selected="selected"' : '') .'>'. str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
             }
         }
@@ -1271,7 +1271,7 @@ class serendipity_event_aggregator extends serendipity_event
                 # test multiple likely charsets
                 $charsets = array( $feed['charset'], "ISO-8859-1", "utf-8");
                 $retry = false;
-                foreach ($charsets as $ch) {
+                foreach ($charsets AS $ch) {
                     if ($retry) printf("DEBUG: Retry with charset %s instead of %s\n", $ch, $feed['charset']);
                     $retry = true;
                     $c = new Onyx_RSS($ch);
@@ -1313,7 +1313,7 @@ class serendipity_event_aggregator extends serendipity_event
                 // ----------------------------------------------------------
 
                 $rss = fetch_rss($feed['feedurl']);
-                foreach ($rss->items as $item) {
+                foreach ($rss->items AS $item) {
                     $fake_timestamp = false;
                     $date = $item['pubdate'];
                     if ($this->debug) printf("DEBUG: pubdate = %s\n", $item['pubdate'], $date);
@@ -1413,7 +1413,7 @@ class serendipity_event_aggregator extends serendipity_event
                 }
 
                 if ($success) {
-                    foreach($simplefeed->get_items() as $simpleitem) {
+                    foreach($simplefeed->get_items() AS $simpleitem) {
 
                         // map SimplePie items to s9y items
                         $item['title']       = $simpleitem->get_title();
@@ -1526,7 +1526,7 @@ class serendipity_event_aggregator extends serendipity_event
                     $expressions = explode("~", $feed['match_expression']);
 
                     $match = 0;
-                    foreach ($expressions as $expression) {
+                    foreach ($expressions AS $expression) {
                         $expression = ltrim(rtrim($expression));
                         if (preg_match("~$expression~imsU", $entry['title'] . $entry['body'])) {
                             $match = 1;
@@ -1616,7 +1616,7 @@ class serendipity_event_aggregator extends serendipity_event
             $parentid = 0;
         }
 
-        foreach ($ary as $data) {
+        foreach ($ary AS $data) {
             if ($parentid === VIEWMODE_LINEAR || !isset($data[$parent_name]) || $data[$parent_name] == $parentid) {
                 echo '<outline title="' . serendipity_utf8_encode($data['category_name']) . '">' . "\n";
 

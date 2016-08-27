@@ -66,7 +66,7 @@ class serendipity_event_lsrstopper extends serendipity_event
             'use_blacklist',
             'blacklist_url',
         );
-        foreach($this->markupElements as $element) {
+        foreach($this->markupElements AS $element) {
             $confArray[] = $element['name'];
         }
         $propbag->add('configuration', $confArray);
@@ -128,7 +128,7 @@ class serendipity_event_lsrstopper extends serendipity_event
             switch($event) {
                 case 'frontend_display':
                     $blacklist = $this->getBlacklist();
-                    foreach ($this->markupElements as $temp) {
+                    foreach ($this->markupElements AS $temp) {
                         $element = $temp['element'];
                         if ($blacklist === null) {
                             $eventData[$element] = $this->getDnsBlacklisted($eventData[$element]);
@@ -177,7 +177,7 @@ class serendipity_event_lsrstopper extends serendipity_event
     protected function getDnsBlacklisted($string)
     {
         $dom = str_get_html($string);
-        foreach ($dom->find('a') as $element) {
+        foreach ($dom->find('a') AS $element) {
             if (filter_var($element->href, FILTER_VALIDATE_URL) == false || substr($element->href, 0, 4) != 'http') {
                 continue;
             }
@@ -256,21 +256,21 @@ class serendipity_event_lsrstopper extends serendipity_event
         $blacklist = new stdClass();
         $blacklist->sites = array_filter(array_map('trim', explode(",", $list)));
         $blacklist->sites = array_filter(array_map('trim', $blacklist->sites));
-    	if (!is_array($blacklist->sites) || count($blacklist->sites) == 0) {
+        if (!is_array($blacklist->sites) || count($blacklist->sites) == 0) {
             return $string;
         }
-    	$dom = str_get_html($string);
-    	$regex = "^(" . implode( "|", $blacklist->sites ) . ")^";
-    	foreach ($dom->find('a') as $element) {
-    		if (filter_var($element->href, FILTER_VALIDATE_URL) == false || substr($element->href, 0, 4) != 'http') {
-    			continue;
+        $dom = str_get_html($string);
+        $regex = "^(" . implode( "|", $blacklist->sites ) . ")^";
+        foreach ($dom->find('a') AS $element) {
+            if (filter_var($element->href, FILTER_VALIDATE_URL) == false || substr($element->href, 0, 4) != 'http') {
+                continue;
             }
-    		$parts = parse_url($element->href);
-    		if (preg_match( $regex, strtolower($parts["host"]))) {
-    			$element->href = self::PREPEND_URL . base64_encode($element->href);
+            $parts = parse_url($element->href);
+            if (preg_match( $regex, strtolower($parts["host"]))) {
+                $element->href = self::PREPEND_URL . base64_encode($element->href);
             }
         }
-    	return $dom->save();
+        return $dom->save();
     }
 
     /**
@@ -281,7 +281,7 @@ class serendipity_event_lsrstopper extends serendipity_event
      */
     protected function isUrl($url)
     {
-    	return filter_var($url, FILTER_VALIDATE_URL);
+        return filter_var($url, FILTER_VALIDATE_URL);
     }
 
     /**

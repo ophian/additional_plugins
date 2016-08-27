@@ -210,9 +210,9 @@ class serendipity_event_cal extends serendipity_event
     {
         if (is_array($_POST)) {
             reset($_POST);
-            foreach($_POST as $key=>$val) {
+            foreach($_POST AS $key=>$val) {
                 if (is_array($val)) {
-                    foreach($val as $akey=>$aval) {
+                    foreach($val AS $akey=>$aval) {
                         $aval = $this->check_newline($aval);
                         $aval = ini_get('magic_quotes_gpc') ? serendipity_db_escape_string(stripslashes($aval)) : serendipity_db_escape_string($aval);
                         // be strict and do not allow any code
@@ -244,9 +244,9 @@ class serendipity_event_cal extends serendipity_event
     {
         if (is_array($row)) {
             reset($row);
-            foreach($row as $key => $val) {
+            foreach($row AS $key => $val) {
                 if (is_array($val)) {
-                    foreach($val as $akey => $aval) {
+                    foreach($val AS $akey => $aval) {
                         if ($savearrayname == true)
                             $row[$key][$akey] = ($outputformfield == true) ? stripslashes((function_exists('serendipity_specialchars') ? serendipity_specialchars($aval) : htmlspecialchars($aval, ENT_COMPAT, LANG_CHARSET))) : stripslashes($aval); // array e.g. $row['name']
                         else
@@ -470,7 +470,7 @@ class serendipity_event_cal extends serendipity_event
 
         $days = $this->days();
         if (is_array($evarr)) {
-            foreach($evarr as $row) {
+            foreach($evarr AS $row) {
                 switch($row['tipo']) {
                     // single
                     case 1:
@@ -541,7 +541,7 @@ class serendipity_event_cal extends serendipity_event
             for($i=1; $i<32; ++$i) { $events[$i][] = $i; } // this is for undefinied offsets in all non db result days
             $last = $this->last_day($year,$month);         // set last day of current month
 
-            foreach($result as $row) {
+            foreach($result AS $row) {
                switch($row['tipo']) {
 
                     case 1: // case single events
@@ -652,7 +652,7 @@ class serendipity_event_cal extends serendipity_event
      */
     function recur_array_search($needle,$haystack,$searchkey)
     {
-        foreach($haystack as $key=>$value) {
+        foreach($haystack AS $key=>$value) {
             if ($key == $searchkey && $needle === $value || (is_array($value) && $this->recur_array_search($needle,$value,$searchkey) !== false)) {
                 return $key;
             }
@@ -836,7 +836,7 @@ class serendipity_event_cal extends serendipity_event
     /* display an option list with one selected */
     function display_options($options, $current)
     {
-        foreach ($options as $k => $v) {
+        foreach ($options AS $k => $v) {
             $opt[] = '<option value="' . $k . '"' .
                     ($k == $current ? ' selected="selected"' : '') .
                     '>' . htmlentities($v, ENT_QUOTES, 'UTF-8') . "</option>
@@ -893,7 +893,7 @@ class serendipity_event_cal extends serendipity_event
                         $sd[$j]['days'][$i]['bcol']  = $sd[$j]['days'][$i]['col'];                   // no days bgcolor
 
                         if (is_array($events[$day]) && !empty($events[$day])) {
-                            foreach($events[$day] as $row) {
+                            foreach($events[$day] AS $row) {
                                 if ((int)$row['id']) {
                                     if (isset($cw) && $cw != NULL) {                        // set CW weeks array fullview for specified month
                                         $sd[$j]['days'][$i]['arrdata'][] = array(
@@ -977,7 +977,7 @@ class serendipity_event_cal extends serendipity_event
     function str_replace_recursive($search, $replace, &$data, $skey=false)
     {
         if (is_array($data)) {
-            foreach($data as $key => $value) {
+            foreach($data AS $key => $value) {
                 if (is_array($value) ) {
                     $this->str_replace_recursive($search, $replace, $data[$key], $skey);
                 } else {
@@ -1809,7 +1809,7 @@ class serendipity_event_cal extends serendipity_event
          * @param  array *|* $_POST
          * @return array *|* $$key
          */
-        foreach($_POST['calendar'] as $k => $v) {
+        foreach($_POST['calendar'] AS $k => $v) {
             $$k = trim($v); // do we need some more security here ????
         }
 
@@ -2099,7 +2099,7 @@ class serendipity_event_cal extends serendipity_event
                 if (isset($_POST['Approve_Selected']) || isset($_POST['Approve_Selected_x']) || isset($_POST['Approve_Selected_y'])) {
                     if (is_array($_POST['calendar']['entries'])) {
                         $apid  = array();
-                        foreach($_POST['calendar']['entries'] as $entry=>$val) {
+                        foreach($_POST['calendar']['entries'] AS $entry=>$val) {
                             $result = $this->mysql_db_result_sets('UPDATE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "approved=1 WHERE id=$val");
                             $apid[] = $val;
                             $n_id  .= $val . ' ';
@@ -2116,7 +2116,7 @@ class serendipity_event_cal extends serendipity_event
                 if (isset($_POST['Reject_Selected']) || isset($_POST['Reject_Selected_x']) || isset($_POST['Reject_Selected_y'])) {
                     if (is_array($_POST['calendar']['entries'])) {
                         $idel  = array();
-                        foreach($_POST['calendar']['entries'] as $entry => $val) {
+                        foreach($_POST['calendar']['entries'] AS $entry => $val) {
                             $result = $this->mysql_db_result_sets('DELETE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "id=$val");
                             $idel[] =  $val;
                             $n_id  .= $val . ' ';
@@ -2139,7 +2139,7 @@ class serendipity_event_cal extends serendipity_event
                     if (is_array($_POST['calendar']['entries'])) {
                         $countentries = count($_POST['calendar']['entries']);
                         if ($countentries == 1) {
-                            foreach($_POST['calendar']['entries'] as $entry=>$val) {
+                            foreach($_POST['calendar']['entries'] AS $entry=>$val) {
                                 $event = $this->mysql_db_result_sets('SELECT-KEY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "id=$val"); // else return db error
                             }
                             if (!is_array($event)) $adminpost['a'] = 0; // if db error close new event date form
@@ -2337,7 +2337,7 @@ class serendipity_event_cal extends serendipity_event
 
                 if (is_array($serendipity['eventcal']['adminpost'])) {
                     /* there is a returning admin event insert or replace error - give back the form vars of db select event array */
-                    foreach($serendipity['eventcal']['adminpost'] as $k => $v) {
+                    foreach($serendipity['eventcal']['adminpost'] AS $k => $v) {
                         $$k = trim(stripslashes($v)); // old version without stripslashes worked with debian lenny, but not with Win/Php 5.3 - why?
                     }
                     unset($serendipity['eventcal']['adminpost']);
@@ -2345,7 +2345,7 @@ class serendipity_event_cal extends serendipity_event
 
                 if (is_array($serendipity['eventcal']) && $serendipity['eventcal']['setopen'] === true) {
                     /* there is a returning admin/public event validation error - give back the form vars - backforming $type to $tipo is done in draw_app() function */
-                    foreach($_POST['calendar'] as $calk => $calv) {
+                    foreach($_POST['calendar'] AS $calk => $calv) {
                         $$calk = trim(stripslashes($calv));
                     }
                     if (!isset($which)) $which = $_POST['calendar']['recur'];     // recur needs to be handled as list($which, ...) to return to form safely
@@ -2910,7 +2910,7 @@ class serendipity_event_cal extends serendipity_event
         global $serendipity;
 
         if (is_array($reqb)) {
-            foreach($reqb as $k => $v) {
+            foreach($reqb AS $k => $v) {
                 if (!empty($v)) $$k = $v;
             }
         }
@@ -2921,7 +2921,7 @@ class serendipity_event_cal extends serendipity_event
 
         if (isset($serendipity['eventcal']['adminpost']) && is_array($serendipity['eventcal']['adminpost'])) {
             /* there is a returning admin event insert or replace error - give back the form vars of db select event array */
-            foreach($serendipity['eventcal']['adminpost'] as $ak => $av) {
+            foreach($serendipity['eventcal']['adminpost'] AS $ak => $av) {
                 $$ak = trim(stripslashes($av));
             }
             unset($serendipity['eventcal']['adminpost']);
@@ -2929,7 +2929,7 @@ class serendipity_event_cal extends serendipity_event
 
         if (is_array($serendipity['eventcal']) && $serendipity['eventcal']['setopen'] === true) {
             /* there is a returning admin/public event validation error - give back the form vars - backforming $type to $tipo is done in draw_add() function */
-            foreach($_POST['calendar'] as $ck => $cv) {
+            foreach($_POST['calendar'] AS $ck => $cv) {
                 $$ck = trim(stripslashes($cv));
             }
             if (!isset($which)) $which = $_POST['calendar']['recur'];     // recur needs to be handled as list($which, ...) to return to form safely
@@ -3030,7 +3030,7 @@ class serendipity_event_cal extends serendipity_event
         $showappdata = true;
 
         if (is_array($reqb)) {
-            foreach($reqb as $k => $v) {
+            foreach($reqb AS $k => $v) {
                 if (!empty($v)) $$k = $v;
             }
         }
@@ -3041,7 +3041,7 @@ class serendipity_event_cal extends serendipity_event
 
         if (isset($serendipity['eventcal']['adminpost']) && is_array($serendipity['eventcal']['adminpost'])) {
             /* there is a returning admin event insert or replace error - give back the form vars of db select event array */
-            foreach($serendipity['eventcal']['adminpost'] as $ak => $av) {
+            foreach($serendipity['eventcal']['adminpost'] AS $ak => $av) {
                 $$ak = trim(stripslashes($av));
             }
             unset($serendipity['eventcal']['adminpost']);
@@ -3049,7 +3049,7 @@ class serendipity_event_cal extends serendipity_event
 
         if (is_array($serendipity['eventcal']) && $serendipity['eventcal']['setopen'] === true) {
             /* there is a returning admin/public event validation error - give back the form vars - backforming $type to $tipo is done in draw_add() function */
-            foreach($_POST['calendar'] as $ck => $cv) {
+            foreach($_POST['calendar'] AS $ck => $cv) {
                 $$ck = trim(stripslashes($cv));
             }
             if (!isset($which)) $which = $_POST['calendar']['recur'];     // recur needs to be handled as list($which, ...) to return to form safely
@@ -3139,7 +3139,7 @@ class serendipity_event_cal extends serendipity_event
         global $serendipity;
 
         if (is_array($reqb)) {
-            foreach($reqb as $k=>$v) {
+            foreach($reqb AS $k=>$v) {
                 if (!empty($v)) $$k = $v;
             }
         }
@@ -3194,7 +3194,7 @@ class serendipity_event_cal extends serendipity_event
         $dir = array_slice(scanDir($dpath), 2);
         $url = $serendipity['serendipityHTTPPath'] . 'plugin/sql_export/';
         echo '<table class="ec_export">';
-        foreach ($dir as $e) {
+        foreach ($dir AS $e) {
             echo '<tr><td align="left"><a href="'.$url.$e.'">';//class="button_link state_cancel icon_link" ??
             echo $e.'</a></td> <td align="right"><a href="'.$delpath.$e.'"><input type="button" class="serendipityPrettyButton button_link state_cancel icon_link" name="erase file" value=" ' . DELETE . ' " /></a></td></tr>'."\n";
         }

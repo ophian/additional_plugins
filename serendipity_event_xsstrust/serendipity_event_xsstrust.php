@@ -53,7 +53,7 @@ class serendipity_event_xsstrust extends serendipity_event
         $valid =& $this->trusted_authors;
 
         $html .= '<select name="serendipity[plugin][trusted_authors][]" multiple="true">';
-        foreach($users as $user) {
+        foreach($users AS $user) {
             $html .= '<option value="' . $user['authorid'] . '" ' . (isset($valid[$user['authorid']]) ? 'selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($user['realname']) : htmlspecialchars($user['realname'], ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
         }
 

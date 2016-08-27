@@ -146,7 +146,7 @@ class serendipity_event_assigncategories extends serendipity_event
 
         if ($serendipity['version'][0] < 2) {
             echo '<table>';
-            foreach ($cats as $cat_data) {
+            foreach ($cats AS $cat_data) {
                 echo '<tr>' . "\n";
                 echo '<td valign="top"><strong>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($cat_data['category_name']) : htmlspecialchars($cat_data['category_name'], ENT_COMPAT, LANG_CHARSET)) . '</strong></td>' . "\n";
                 echo '<td><select size="5" name="serendipity[assigncat][' . $cat_data['categoryid'] . '][]" multiple="true">' . "\n";
@@ -163,7 +163,7 @@ class serendipity_event_assigncategories extends serendipity_event
 
             echo '<input class="serendipityPrettyButton input_button" type="submit" name="serendipity[submit]" value="' . GO . '" />';
         } else {
-            foreach ($cats as $cat_data) {
+            foreach ($cats AS $cat_data) {
                 echo '<div class="form_multiselect">';
                 echo '<label for="serendipity_assigncat_'  . $cat_data['categoryid'] . '" class="block_level">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($cat_data['category_name']) : htmlspecialchars($cat_data['category_name'], ENT_COMPAT, LANG_CHARSET)) . '</label>';
                 echo '<select id="serendipity_assigncat_'  . $cat_data['categoryid'] . '" size="5" name="serendipity[assigncat][' . $cat_data['categoryid'] . '][]" multiple="true">';

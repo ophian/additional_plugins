@@ -208,7 +208,7 @@ EOS;
                     // to another array (appropriately named $order).
                     if (is_array($items)) {
                         // Allow simple value for any sequence item
-                        foreach ($items as $key => $item) {
+                        foreach ($items AS $key => $item) {
                             if (!is_array($item)) {
                                 // Replace this item with an empty array
                                 unset($items[$key]);
@@ -220,7 +220,7 @@ EOS;
                         // go on the end (new items could have been added in
                         // introspect_config_items, but not been configured).
                         // Also fill out thumbnails and display names
-                        foreach ($items as $id => $junk) {
+                        foreach ($items AS $id => $junk) {
                             if ($order == null) {
                                 $order = array($id);
                             } else if (!in_array($id, $order)) {
@@ -236,7 +236,7 @@ EOS;
                         // Make sure all the items to be ordered exist!  Otherwise
                         // we could try to sequence nothing.
                         $filtered = array();
-                        foreach ($order as $id) {
+                        foreach ($order AS $id) {
                             if (array_key_exists($id, $items)) {
                                 $filtered[] = $id;
                             }
@@ -274,7 +274,7 @@ EOS;
 EOS;
                     $sort_idx == 0;
                     $last = count($order) - 1;
-                    foreach ($order as $id) {
+                    foreach ($order AS $id) {
                         // Create the variables required to print this item
                         if ($sort_idx > 0) {
                             $swapping = $order;

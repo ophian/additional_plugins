@@ -258,7 +258,7 @@ class serendipity_event_blogpdf extends serendipity_event
         if (is_array($entry['categories']) && sizeof($entry['categories']) > 0) {
             $posted_by .= ' ' . IN . ' ';
             $cats = array();
-            foreach ($entry['categories'] as $cat) {
+            foreach ($entry['categories'] AS $cat) {
                 $cats[] = $cat['category_name'];
             }
             $posted_by .= implode(', ', $cats);
@@ -295,7 +295,7 @@ class serendipity_event_blogpdf extends serendipity_event
             return;
         }
 
-        foreach ($comments as $i => $comment) {
+        foreach ($comments AS $i => $comment) {
             $comment['comment'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars(strip_tags($comment['body'])) : htmlspecialchars(strip_tags($comment['body']), ENT_COMPAT, LANG_CHARSET));
             if (!empty($comment['url']) && substr($comment['url'], 0, 7) != 'http://' && substr($comment['url'], 0, 8) != 'https://') {
                 $comment['url'] = 'http://' . $comment['url'];
@@ -355,9 +355,9 @@ class serendipity_event_blogpdf extends serendipity_event
             $bydate[$d][] = $entries[$x];
         }
 
-        foreach ($bydate as $date => $ents) {
+        foreach ($bydate AS $date => $ents) {
             $header = $date;
-            foreach ($ents as $x => $entry) {
+            foreach ($ents AS $x => $entry) {
                 $this->print_entry($x, $entry, $header);
                 $header = false;
             } // end for-loop (entries)

@@ -65,7 +65,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
         $conf_array = array('thumb_max_width', 'thumb_max_height','unzipping', 'autoresize', 'force_jhead');
 
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
         $propbag->add('configuration', $conf_array);
@@ -292,7 +292,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     <?php
                     if (is_array($cats = serendipity_fetchCategories())) {
                         $cats = serendipity_walkRecursive($cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
-                        foreach ($cats as $cat) {
+                        foreach ($cats AS $cat) {
                             echo '<option value="'. $cat['categoryid'] .'">'. str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
                         }
                     }
@@ -402,7 +402,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     <?php
                     if (is_array($cats = serendipity_fetchCategories())) {
                         $cats = serendipity_walkRecursive($cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
-                        foreach ($cats as $cat) {
+                        foreach ($cats AS $cat) {
                             echo '<option value="'. $cat['categoryid'] .'">'. str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
                         }
                     }
@@ -481,7 +481,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                         }
 
                         // now proceed all unzipped images
-                        foreach ($extracted_images as $target) {
+                        foreach ($extracted_images AS $target) {
                             preg_match('@(^.*/)+(.*)\.+(\w*)@',$target,$matches);
                             $real_dir   = $matches[1];
                             $basename   = $matches[2];
@@ -497,7 +497,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                             ));
                             serendipity_plugin_api::hook_event('backend_media_makethumb', $thumbs);
 
-                            foreach($thumbs as $thumb) {
+                            foreach($thumbs AS $thumb) {
                                 // Create thumbnail
                                 if ( $created_thumbnail = serendipity_makeThumbnail($tfile, $image_directory, $thumb['thumbSize'], $thumb['thumb']) ) {
                                     echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE . " - " . THUMB_CREATED_DONE . '<br />';
@@ -606,7 +606,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     }
 
                     // displaying galleries introduced by markup
-                    foreach ($this->markup_elements as $temp) {
+                    foreach ($this->markup_elements AS $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
                             !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                             !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
@@ -928,7 +928,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
                     $medias        = array();
                     $whole_gallery = false;
-                    foreach ($xml->media as $medium) {
+                    foreach ($xml->media AS $medium) {
                         switch((string) $medium['type']) { // Get attributes as element indices
                             case 'single':
                                 $medias[] = serendipity_db_escape_string($medium['name']);
@@ -961,15 +961,15 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     // now read available ones from database
 
                     if ($whole_gallery) {
-                        $q = "SELECT id,name,extension,thumbnail_name,realname,path,value as comment1,dimensions_width as width, dimensions_height as height
-                              FROM {$serendipity['dbPrefix']}images as i
-                              LEFT JOIN {$serendipity['dbPrefix']}mediaproperties as p ON (p.mediaid = i.id AND p.property='COMMENT1')
+                        $q = "SELECT id,name,extension,thumbnail_name,realname,path,value AS comment1,dimensions_width AS width, dimensions_height AS height
+                              FROM {$serendipity['dbPrefix']}images AS i
+                              LEFT JOIN {$serendipity['dbPrefix']}mediaproperties AS p ON (p.mediaid = i.id AND p.property='COMMENT1')
                               WHERE i.path = '" . serendipity_db_escape_string($gallery) . "' ";
                     } else {
                         $images_suggestions = "'".implode("','",$medias)."'";
-                        $q = "SELECT id,name,extension,thumbnail_name,realname,path,value as comment1,dimensions_width as width, dimensions_height as height
-                              FROM {$serendipity['dbPrefix']}images as i
-                              LEFT JOIN {$serendipity['dbPrefix']}mediaproperties as p ON (p.mediaid = i.id AND p.property='COMMENT1')
+                        $q = "SELECT id,name,extension,thumbnail_name,realname,path,value AS comment1,dimensions_width AS width, dimensions_height AS height
+                              FROM {$serendipity['dbPrefix']}images AS i
+                              LEFT JOIN {$serendipity['dbPrefix']}mediaproperties AS p ON (p.mediaid = i.id AND p.property='COMMENT1')
                               WHERE i.path = '" . serendipity_db_escape_string($gallery) . "' AND i.name IN ($images_suggestions)";
                     }
 
@@ -1064,10 +1064,10 @@ class serendipity_event_imageselectorplus extends serendipity_event
         //our char offsets will get messed up
         $imgTags = array_reverse($imgTags);
 
-        foreach ($imgTags as $attrs) {
+        foreach ($imgTags AS $attrs) {
             $newTag = '<img';
             $attrPairs = array();
-            foreach ($attrs as $k => $v) {
+            foreach ($attrs AS $k => $v) {
                 if (strpos($k, '_') !== 0) {
                     if ($k == 'src') {
                         $v = $this->getTransformImg($attrs);
@@ -1240,7 +1240,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
         $state = 'read-name';
         $quote = '';
-        foreach ($chars as $c) {
+        foreach ($chars AS $c) {
             switch ($state){
                 case 'read-name':
                     if ($c == ' ' && !$currentAttrName){

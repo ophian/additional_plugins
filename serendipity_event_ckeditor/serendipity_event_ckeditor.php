@@ -106,7 +106,7 @@ class serendipity_event_ckeditor extends serendipity_event
                 $zip->close();
                 $this->set_config('installer', '2-'.date('Ymd-H:i:s')); // returned by string[0], which is better than substr in this case
                 // Check to remove every old ckeditor_(*)-plus.zip files - checked by partial string "-plus"
-                foreach (glob($this->cke_path . '/*.zip') as $filename) {
+                foreach (glob($this->cke_path . '/*.zip') AS $filename) {
                     if ($this->cke_path . '/' . $this->cke_zipfile != $filename && (false !== strpos($filename, '-plus')) ) {
                         @unlink($filename);
                         $is_update = true;
@@ -429,7 +429,7 @@ class serendipity_event_ckeditor extends serendipity_event
                 return;
             }
         $iterator = new RecursiveIteratorIterator($_dir, RecursiveIteratorIterator::CHILD_FIRST);
-        foreach ($iterator as $file) {
+        foreach ($iterator AS $file) {
             if ($file->isFile()) {
                 @unlink($file->__toString());
             } else {

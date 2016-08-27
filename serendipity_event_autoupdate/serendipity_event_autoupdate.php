@@ -509,7 +509,7 @@ EOS;
             }
             $zip->close();
             // 2. copy them over
-            foreach ($files as $file) {
+            foreach ($files AS $file) {
                 $target = $serendipity['serendipityPath'] . substr($file, 12);
                 if (is_dir($updateDir .$file)) {
                     if (!file_exists($target)) {
@@ -553,7 +553,7 @@ EOS;
                 $i+=1;
             }
             $zip->close();
-            foreach ($files as $file) {
+            foreach ($files AS $file) {
                 $target = $serendipity['serendipityPath'] . substr($file, 12);
                 if ((!is_writable($target)) && file_exists($target)) {
                     return false;
@@ -587,7 +587,7 @@ EOS;
 
             $notWritable = array();
 
-            foreach ($files as $file) {
+            foreach ($files AS $file) {
                 $target = $serendipity['serendipityPath'] . substr($file, 12);
                 if ((!is_writable($target)) && file_exists($target)) {
                     $notWriteable[] = $target;
@@ -597,7 +597,7 @@ EOS;
         ob_start();
         echo '<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Unpacking the update zip file failed, while the following files were not writeable:</p>';
         echo "<ul>";
-        foreach  ($notWriteable as $file) {
+        foreach  ($notWriteable AS $file) {
             echo "<li>$file</li>";
         }
         echo "</ul>";
@@ -622,7 +622,7 @@ EOS;
 
         $checksums = $serendipity['checksums_' . $version];
 
-        foreach ($checksums as $file => $checksum) {
+        foreach ($checksums AS $file => $checksum) {
             $check = serendipity_FTPChecksum($updateDir . "serendipity/" . $file);
             if ($checksum != $check) {
                 return false;
@@ -648,7 +648,7 @@ EOS;
         $checksums = $serendipity['checksums_' . $version];
         $errors    = array();
 
-        foreach ($checksums as $file => $checksum) {
+        foreach ($checksums AS $file => $checksum) {
             $check = serendipity_FTPChecksum($updateDir . "serendipity/" . $file);
             if ($checksum != $check) {
                 $errors[] = $updateDir . "serendipity/" . $file;
@@ -657,7 +657,7 @@ EOS;
         ob_start();
         echo '<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Updating failed, while the integrity-test for the following files failed:</p>';
         echo "<ul>";
-        foreach ($errors as $file) {
+        foreach ($errors AS $file) {
             echo "<li>$file</li>";
         }
         echo "</ul>";
@@ -733,7 +733,7 @@ EOS;
             }
         $iterator = new RecursiveIteratorIterator($_dir, RecursiveIteratorIterator::CHILD_FIRST);
         //$iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir), RecursiveIteratorIterator::CHILD_FIRST);
-        foreach ($iterator as $file) {
+        foreach ($iterator AS $file) {
             if ($file->isFile()) {
                 unlink($file->__toString());
             } else {

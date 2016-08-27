@@ -105,7 +105,7 @@ class serendipity_common_pollbox
         $result = array();
 
         $polls = serendipity_db_query("SELECT p.id, p.title, p.content, p.timestamp, p.votes AS allvotes,
-                                              po.title as optiontitle, po.votes, po.id AS optionid
+                                              po.title AS optiontitle, po.votes, po.id AS optionid
                                         FROM {$serendipity['dbPrefix']}polls AS p
                              LEFT OUTER JOIN {$serendipity['dbPrefix']}polls_options AS po
                                           ON p.id = po.pollid

@@ -946,7 +946,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 if (is_array($subcats) && count($subcats) >= 2) {
 
                     $serendipity['smarty']->assign('has_subcats', true);
-                    foreach($subcats as $subcat) {
+                    foreach($subcats AS $subcat) {
                         if ($level == 1) { $sublvl = 2; } else { $sublvl = 2; }
                         if ($subcat['level'] == ($level + $sublvl)) {
 
@@ -1000,7 +1000,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                     if (serendipity_db_bool($this->get_config('showdesc_inlist', 'false'))) {
                         $nis['showdesc_inlist'] = true;
                     }
-                    foreach($files as $file) {
+                    foreach($files AS $file) {
 
                         $infourl = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . "?serendipity[subpage]=".$this->get_config('pageurl')."&amp;thiscat=".$id."&amp;file=".$file['id'];
                         $dlurl   = $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/dlfile_' . $file['id'];
@@ -1155,7 +1155,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         $cats = array();
         $cats = $this->GetAllCats($admin);
 
-        foreach($cats as $cat) {
+        foreach($cats AS $cat) {
             if (($cat['level'] == 1)) {
                 $parent = array();
             }
@@ -1259,7 +1259,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 $files = serendipity_db_query($sql);
 
                 if (is_array($files)) {
-                    foreach($files as $file) {
+                    foreach($files AS $file) {
 
                         if (file_exists($this->globs['dlmpath']."/".$file['systemfilename']) && !@unlink($this->globs['dlmpath']."/".$file['systemfilename'])) {
                             $this->ERRMSG(PLUGIN_DOWNLOADMANAGER_DELETE_IN_DOWNLOADDIR_NOT_ALLOWED);
@@ -1346,7 +1346,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             return 0;
         }
         $_files = new RecursiveIteratorIterator($_ftpDirs, RecursiveIteratorIterator::CHILD_FIRST);
-        foreach ($_files as $_file) {
+        foreach ($_files AS $_file) {
             if ($_file->isDir()) {
                 if (!$_files->isDot()) {
                     // delete folder if empty, non-empty are skipped
@@ -2214,7 +2214,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             $iterator = new RecursiveIteratorIterator($_dir, RecursiveIteratorIterator::CHILD_FIRST);
         }
 
-        foreach ($iterator as $file) {
+        foreach ($iterator AS $file) {
             $_bfname = $this->mb_basename($file);
             $_mdepth = $ml ? $iterator->getDepth() : 0; // allows to avoid recursive file iteration in ML since we have the dir structure to navigate
             if ($file->isFile() && $_mdepth == 0 && $_bfname != '.empty' && (false === (strpos($_bfname, '.serendipityThumb')))) {
@@ -2245,7 +2245,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     function backend_str_replace_recursive(&$data, $p=false, $skey=false, $nkey=false)
     {
         if (is_array($data)) {
-            foreach($data as $key => $value) {
+            foreach($data AS $key => $value) {
                 if (is_array($value) ) {
                     $this->backend_str_replace_recursive($data[$key], $p, $skey, $nkey);
                 } else {
@@ -2264,7 +2264,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     function backend_str_replace_recursive_cat(&$data, $p=false, $skey=false, $nkey=false)
     {
         if (is_array($data)) {
-            foreach($data as $key => $value) {
+            foreach($data AS $key => $value) {
                 if (is_array($value) ) {
                     $this->backend_str_replace_recursive_cat($data[$key], $p, $skey, $nkey);
                 } else {
@@ -2406,7 +2406,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 // build new array - fetch file names by id
                 $dfile  = array();
                 foreach ($_POST['dlm']['files'] AS $k => $v) {
-                    foreach($files as $file) {
+                    foreach($files AS $file) {
                         if ($file['id'] == $v) {
                             $file['realfilename'] = $this->encodeToUTF($file['realfilename']); // OK
                             // build the correct path from($this->globs['dlmpath']) -> to($this->globs['ftppath']) by new array
@@ -2422,7 +2422,7 @@ class serendipity_event_downloadmanager extends serendipity_event
 
                     $realcatid = $dfile[0]['cat'];
 
-                    foreach($dfile as $movit) {
+                    foreach($dfile AS $movit) {
                         // This does not rename the file, as you might assume, instead, it moves the file physically!
                         if (!@rename ($movit['sfn'], $movit['rfn'])) {
                             $this->ERRMSG(PLUGIN_DOWNLOADMANAGER_DELETE_IN_DOWNLOADDIR_NOT_ALLOWED);
@@ -2507,7 +2507,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 $backpath = preg_replace("`\/[^\/]*$`i", '', $extrapath);
             }
 
-            foreach($files['d_arr'] as $key => $val) {
+            foreach($files['d_arr'] AS $key => $val) {
 
                 $smldirs[] = array(
                                 'filename' => str_replace($serendipity['serendipityPath'] . $serendipity['uploadPath'], '', $val),
@@ -2515,7 +2515,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                                 );
             }
 
-            foreach($files['f_arr'] as $key => $val) {
+            foreach($files['f_arr'] AS $key => $val) {
                 $mime = $this->getMime($val);
 
                 $filedate = date($dateformat, filemtime($val));
@@ -2571,7 +2571,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         /* clean trash = incoming folder by blue trash box */
         if ($ct && (intval($_GET['cleantrash']) == 1 && intval($_POST['dlm']['cleartrash']) == 1)
                && !(isset($_POST['Move_Selected']) || isset($_POST['Move_Selected_x']) || isset($_POST['Move_Selected_y'])) ) {
-            foreach($files['f_arr'] as $file) {
+            foreach($files['f_arr'] AS $file) {
                 $ctfile = $this->delIncomingFile($file); // already as fullpath
                 #$ctfile = true;
             }
@@ -2600,7 +2600,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             $this->backend_dlm_refresh($url);
         }
 
-        foreach($files['f_arr'] as $key => $val) {
+        foreach($files['f_arr'] AS $key => $val) {
             $mime = $this->getMime($val);
             $_val = $this->encodeToUTF($val); // OK win decode for stats
             // otherwise thrown Warning: filemtime(): and filesize(): stat failed warning on LINUX

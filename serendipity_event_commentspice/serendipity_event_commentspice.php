@@ -448,7 +448,7 @@ class serendipity_event_commentspice extends serendipity_event
 
         // Asure numeric inputs for rule settings
         $config_rules = array('rule_extras_commentcount','rule_extras_commentlength', 'rule_dofollow_commentcount', 'rule_dofollow_commentlength');
-        foreach($config_rules as $config_rule) {
+        foreach($config_rules AS $config_rule) {
             $check = $this->get_config($config_rule,0);
             if (!is_numeric($check)) {
                 $this->set_config($check,0);
@@ -696,13 +696,13 @@ class serendipity_event_commentspice extends serendipity_event
             $entrySpices = DbSpice::loadCommentSpiceByEntry($entryId);
             if (is_array($entrySpices)) {
                 $urlHash = array();
-                foreach($entrySpices as $entrySpice) {
+                foreach($entrySpices AS $entrySpice) {
                     $urlHash[$entrySpice['promo_url']] = "used";
                 }
                 // Now that we have all urls of this article, remove matching urls from rss.
                 if (count($urlHash)>0) {
                     $newArticles = array();
-                    foreach ($result['articles'] as $article) {
+                    foreach ($result['articles'] AS $article) {
                         if (empty($urlHash[$article['nohashUrl']])) {
                             $newArticles[] = $article;
                         }
@@ -754,7 +754,7 @@ class serendipity_event_commentspice extends serendipity_event
         # test multiple likely charsets
         $charsets = array( "UTF-8", "ISO-8859-1");
         $retry = false;
-        foreach ($charsets as $ch) {
+        foreach ($charsets AS $ch) {
             if ($retry) $this->log("Retrying charset $ch");
             $retry = true;
             $rss = new Onyx_RSS($ch);
@@ -926,7 +926,7 @@ class serendipity_event_commentspice extends serendipity_event
 
         if (isset($eventData) && is_array($eventData)) {
             // Get the first entry an add stuff
-            foreach($eventData as $event) {
+            foreach($eventData AS $event) {
                 $smarty_spice = array();
                 if ($patched_input_twitter) {
                     if (isset($serendipity['COOKIE']['twitter'])) $twittername = $serendipity['COOKIE']['twitter'];

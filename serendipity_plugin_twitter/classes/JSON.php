@@ -379,7 +379,7 @@ class Services_JSON
                                             array_keys($var),
                                             array_values($var));
 
-                    foreach($properties as $property) {
+                    foreach($properties AS $property) {
                         if(Services_JSON::isError($property)) {
                             return $property;
                         }
@@ -391,7 +391,7 @@ class Services_JSON
                 // treat it like a regular array
                 $elements = array_map(array($this, 'encode'), $var);
 
-                foreach($elements as $element) {
+                foreach($elements AS $element) {
                     if(Services_JSON::isError($element)) {
                         return $element;
                     }
@@ -406,7 +406,7 @@ class Services_JSON
                                         array_keys($vars),
                                         array_values($vars));
 
-                foreach($properties as $property) {
+                foreach($properties AS $property) {
                     if(Services_JSON::isError($property)) {
                         return $property;
                     }

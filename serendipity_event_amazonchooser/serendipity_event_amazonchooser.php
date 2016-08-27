@@ -136,7 +136,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                     break;
 
                 case 'frontend_display':
-                    foreach ($this->markup_elements as $temp) {
+                    foreach ($this->markup_elements AS $temp) {
                        if (isset($eventData[$temp['element']]) &&
                            !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
@@ -188,7 +188,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                     $parts = array_pop($parts);
 
                     if (count($parts) > 1) {
-                       foreach($parts as $key => $value) {
+                       foreach($parts AS $key => $value) {
                             $val = explode('=', $value);
                             $_REQUEST[$val[0]] = $val[1];
                        }
@@ -200,7 +200,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                     if (!isset($_REQUEST['txtarea'])) {
                         $parts = explode('&', $uri_parts[1]);
                         if (count($parts) > 1) {
-                            foreach($parts as $key => $value) {
+                            foreach($parts AS $key => $value) {
                                  $val = explode('=', $value);
                                  $_REQUEST[$val[0]] = $val[1];
                             }
@@ -339,7 +339,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                                 default:
                                     $defaultmode = rawurlencode($_REQUEST['mode']);
                                     $link = serendipity_rewriteURL('plugin/amazonch') . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;');
-                                    foreach($mode as $type) {
+                                    foreach($mode AS $type) {
                                       $mode_out[$type]=$mode_names[$type];
                                     }
                                     if (isset($_REQUEST['simple']) && ($_REQUEST['simple'])) {

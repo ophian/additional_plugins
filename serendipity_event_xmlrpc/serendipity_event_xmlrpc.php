@@ -140,7 +140,7 @@ class serendipity_event_xmlrpc extends serendipity_event
 
                 $select_cats = array();
                 $select_cats[''] = '';
-                foreach($tmp_select_cats as $cidx => $tmp_select_cat) {
+                foreach($tmp_select_cats AS $cidx => $tmp_select_cat) {
                     $select_cat = explode('|||', $tmp_select_cat);
                     if (!empty($select_cat[0]) && !empty($select_cat[1])) {
                         $select_cats[$select_cat[0]] = $select_cat[1];
@@ -287,7 +287,7 @@ class serendipity_event_xmlrpc extends serendipity_event
         );
         usort($folders, 'serendipity_sortPath');
         $result = array('' => PARENT_DIRECTORY);
-        foreach ($folders as $dirmeta) {
+        foreach ($folders AS $dirmeta) {
             $result[$dirmeta['relpath']] = $dirmeta['relpath'];
         }
         return $result;

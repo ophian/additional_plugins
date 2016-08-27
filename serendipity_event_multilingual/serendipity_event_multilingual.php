@@ -605,7 +605,7 @@ class serendipity_event_multilingual extends serendipity_event
                     $this->tag_title();
 
                     if (serendipity_db_bool($this->get_config('tagged_entries', 'true'))) {
-                        foreach ($eventData as $key => $entry) {
+                        foreach ($eventData AS $key => $entry) {
                             if (isset($eventData[$key]['title'])) {
                                 $eventData[$key]['title'] = $this->strip_langs($eventData[$key]['title']);
                                 $eventData[$key]['body'] = $this->strip_langs($eventData[$key]['body']);
@@ -702,7 +702,7 @@ class serendipity_event_multilingual extends serendipity_event
                         }
                     }
                     if (serendipity_db_bool($this->get_config('tagged_entries', 'true'))) {
-                        foreach ($eventData as $key => $entry) {
+                        foreach ($eventData AS $key => $entry) {
                             $eventData[$key]['title'] = $this->strip_langs($eventData[$key]['title']);
                             $eventData[$key]['body'] = $this->strip_langs($eventData[$key]['body']);
                         }
@@ -784,7 +784,7 @@ class serendipity_event_multilingual extends serendipity_event
 
                 case 'frontend_sidebar_plugins':
                     if (serendipity_db_bool($this->get_config('tagged_sidebar', 'true'))) {
-                        foreach ($eventData as $key => $entry) {
+                        foreach ($eventData AS $key => $entry) {
                             $eventData[$key]['title'] = $this->strip_langs($eventData[$key]['title']);
                             $eventData[$key]['content'] = $this->strip_langs($eventData[$key]['content']);
                         }
