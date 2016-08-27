@@ -668,7 +668,7 @@
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-08-27</date>
   <filelist>
 <dir name="serendipity_event_multilingual">
 <file>.htaccess</file>
@@ -3489,7 +3489,7 @@
 <release>
   <version>1.67</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-08-27</date>
   <filelist>
 <dir name="serendipity_plugin_twitter">
 <file>.cvsignore</file>

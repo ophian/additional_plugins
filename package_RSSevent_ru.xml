@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>Judebert (&lt;a href=&quot;http://judebert.com/&quot;&gt;http://judebert.com/&lt;/a&gt;)</author>
 <content:encoded>&lt;b&gt;serendipity_event_advtypes&lt;br /&gt;Advanced configuration types&lt;/b&gt;&lt;br /&gt;Provides advanced plugin and theme configuration options for Serendipity versions before 1.2.2 (currently supporting 'sequence' widget)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 10 Jul 2016 11:10:25 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:26:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_advtypes</guid>
 </item>
 <item>
@@ -68,7 +68,7 @@
 <category>Event Plugins</category>
 <author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt</author>
 <content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:17:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
@@ -77,7 +77,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon Media Button&lt;/b&gt;&lt;br /&gt;Adds a button to allow Amazon.com search which are insertable into your entry&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 24 Aug 2016 19:14:15 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 14:40:15 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -86,7 +86,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees</author>
 <content:encoded>&lt;b&gt;serendipity_event_assigncategories&lt;br /&gt;Category Assignment&lt;/b&gt;&lt;br /&gt;Lets you assign multiple categories to entries&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:03:40 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_assigncategories</guid>
 </item>
 <item>
@@ -104,7 +104,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the dashboard-plugin (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:17:57 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -113,7 +113,7 @@
 <category>Event Plugins</category>
 <author>Sebastian Nohn</author>
 <content:encoded>&lt;b&gt;serendipity_event_babelfish&lt;br /&gt;Babelfish&lt;/b&gt;&lt;br /&gt;Автоматический перевод записей блога на другие языки&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:15:15 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_babelfish</guid>
 </item>
 <item>
@@ -140,7 +140,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, http://blog.linux-stats.org, dma147@linux-stats.org</author>
 <content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Backup Interface&lt;/b&gt;&lt;br /&gt;Provides the ability to automatically make backups from your s9y, the database-tables, the whole database and the files. Only MySQL(i) databases are currently supported. WARNING: This plugin does not work well with large databases or directories.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:03:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
@@ -149,7 +149,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Olivier PLATHEY, Steven Wittens</author>
 <content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;Export blog as PDF&lt;/b&gt;&lt;br /&gt;Allows visitors to download your blog in the PDF format&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 19 Aug 2016 16:38:55 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:02:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Ian (Timbalu)</author>
 <content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Calendar&lt;/b&gt;&lt;br /&gt;Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:00:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
@@ -185,7 +185,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Properties/Templates of categories&lt;/b&gt;&lt;br /&gt;This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, and RSS hiding.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 14:58:26 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -194,7 +194,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Mon, 15 Aug 2016 14:46:55 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 14:55:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:10:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -338,7 +338,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Provides full downloadmanager capabilities to your s9y. When uninstalling, all related tables will be dropped!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 22 Aug 2016 20:13:32 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:02:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
@@ -446,7 +446,7 @@
 <category>Event Plugins</category>
 <author>Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_feed&lt;br /&gt;Dashboard Feed Reader&lt;/b&gt;&lt;br /&gt;The Dashboard S9y Feedle&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:06:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_feed</guid>
 </item>
 <item>
@@ -464,7 +464,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_filter_entries&lt;br /&gt;Frontend entry filtering&lt;/b&gt;&lt;br /&gt;Allows visitors to filter/order your entries by several options&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:21:40 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_filter_entries</guid>
 </item>
 <item>
@@ -473,7 +473,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Kodewulf</author>
 <content:encoded>&lt;b&gt;serendipity_event_findmore&lt;br /&gt;Show social share buttons for services like Facebook and Twitter&lt;/b&gt;&lt;br /&gt;Plugin DEPRECATED. Move along to the new event_social plugin! You can remove/insert other custom services to link to via the &quot;plugin_findmore.tpl&quot; template file easily. Also remember that if you want to save grandma's performance pennies that you can also insert the HTML/JS snippets into your entries.tpl template file instead of using this plugin!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:17:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_findmore</guid>
 </item>
 <item>
@@ -518,7 +518,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Tagging of entries&lt;/b&gt;&lt;br /&gt;Allows freestyle tagging of entries&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 09 Aug 2016 11:19:47 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 14:50:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -644,7 +644,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Extended options for media manager&lt;/b&gt;&lt;br /&gt;Allows extended options for inserting images from the media manager [Serendipity &gt;= 0.9]&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 18 Aug 2016 10:12:20 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:25:35 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -779,7 +779,7 @@
 <category>Event Plugins</category>
 <author>Matthias Gutjahr</author>
 <content:encoded>&lt;b&gt;serendipity_event_lsrstopper&lt;br /&gt;D64 LSR-Stopper&lt;/b&gt;&lt;br /&gt;With this plugin you prevent links to media that support the German &quot;Leistungsschutzrecht&quot;.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 30 Jul 2016 12:10:57 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 18:11:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_lsrstopper</guid>
 </item>
 <item>
@@ -860,7 +860,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilingual entries&lt;/b&gt;&lt;br /&gt;Allows to create multiple language versions of an entry&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 08 Aug 2016 17:22:49 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:25:53 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -1058,7 +1058,7 @@
 <category>Event Plugins</category>
 <author>Tys von Gaza, Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_sidebarhider&lt;br /&gt;Toggle Sidebar state (collapsed/uncollapsed)&lt;/b&gt;&lt;br /&gt;Shrinks Sidebars to just their titles.  Extra configuration in Entries -&gt; Manage Sidebars in the Admin Suite.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:03:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_sidebarhider</guid>
 </item>
 <item>
@@ -1105,7 +1105,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>kleinerChemiker,  Malte Paskuda, based upon b8 by Tobias Leupold</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detects Spam via an algorithmus which learns.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:24:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
@@ -1114,7 +1114,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Hidden Captcha)&lt;/b&gt;&lt;br /&gt;Implements simple comment antispam mechanisms, that are easy to configure but very effective.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 24 Jul 2016 09:56:16 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 18:09:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
@@ -1159,7 +1159,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistics&lt;/b&gt;&lt;br /&gt;Adds a link to interesting statistics in your entries panel, including a visitors counter&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:19:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
@@ -1195,7 +1195,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Tobias Schlitt</author>
 <content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;Markup: Wiki&lt;/b&gt;&lt;br /&gt;Markup text using Text_Wiki&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 13 Aug 2016 13:39:45 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 14:44:15 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textwiki</guid>
 </item>
 <item>
@@ -1240,7 +1240,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Trackback-Control&lt;/b&gt;&lt;br /&gt;Allows granular control over how trackbacks are sent when creating entries&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 04 Aug 2016 20:06:30 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 14:48:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>
@@ -1267,7 +1267,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Jonathan Spalink and Matthew Groeninger</author>
 <content:encoded>&lt;b&gt;serendipity_event_typoquote&lt;br /&gt;Markup: Typographic Smart Quotes&lt;/b&gt;&lt;br /&gt;Convert straight quotes to smart quotes.  Also can use SmartyPants PHP library (by Michel Fortin, based on SmartyPants by John Gruber) to provide further typographic replacement.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:02:16 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_typoquote</guid>
 </item>
 <item>
@@ -1348,7 +1348,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 13 Aug 2016 15:29:09 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:12:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
@@ -1357,7 +1357,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_xsstrust&lt;br /&gt;Options for trustworthy editing on multi-user blogs / HTMLPurifier&lt;/b&gt;&lt;br /&gt;This plugin can specify, which authors on a multi-user blog you have enough trust in and do not expect hacking attempts. All other users are treated as possibly evil and cannot create HTML entries.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:26:16 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xsstrust</guid>
 </item>
 <item>
@@ -1411,7 +1411,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Peter Heimann</author>
 <content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Microblogging (Twitter,Identica)&lt;/b&gt;&lt;br /&gt;Adds a twitter/identica client to the admininistration interface, searches for tweetbacks and announces new articles to a microblogging account.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2016 15:06:42 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>
