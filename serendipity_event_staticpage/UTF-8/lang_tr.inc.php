@@ -1,4 +1,4 @@
-<?php
+<?php #
 
 /**
  *  @author Ahmet Usal <ahmetusal@gmail.com>
@@ -131,7 +131,7 @@
 @define('PLUGIN_LINKS_IMGDIR_BLAHBLAH',                 'Resimlere ulaşılabilmesi için URL adresi yolunu belirtin. "img" altdizini bu tanımlanacak üst dizine ihtiyaç duyar ve bu eklentiyle anılan dizini kullanabilir.');
 @define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME',         'İkonlar ya da düz metin');
 @define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC',         'Dizinlerin ağaç yapısını grafik ikonlarla ya da düz metin olarak gösterir.');
-@define('PLUGIN_STATICPAGELIST_ICON',                   'Ağaç Yapısı');
+@define('PLUGIN_STATICPAGELIST_ICON',                   'JS Ağaç Yapısı');
 @define('PLUGIN_STATICPAGELIST_TEXT',                   'Düz Metin');
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY',            'Sadece üst-ebeveyn sayfalar gösterilsin mi?');
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC',       'Eğer bu seçenek etkin olursa sadece üst-ebeveyn sayfalar gösterilir. Etkinleştirilmezse üst sayfalara bağlı altsayfalarda gösterilir.');

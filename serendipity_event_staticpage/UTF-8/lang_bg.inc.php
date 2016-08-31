@@ -135,7 +135,7 @@
 @define('PLUGIN_LINKS_IMGDIR_BLAHBLAH',                 'Пълен URL до картинките, формиращи дървовидната структура. Директория \'img\' трябва да се намира в тази директория (тя е част от тази приставка).');
 @define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME',         'Графика или само текст');
 @define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC',         'Връзките да се показват в дървовидна структура или само като текст.');
-@define('PLUGIN_STATICPAGELIST_ICON',                   'Дърво');
+@define('PLUGIN_STATICPAGELIST_ICON',                   'JS Дърво');
 @define('PLUGIN_STATICPAGELIST_TEXT',                   'Текст');
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY',            'Само родителски страници ?');
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC',       'При избор \'Да\' само родителските страници се показват. При избор \'Не\' се виждат всички страници.');
@@ -153,7 +153,6 @@
 @define('STATICPAGE_NEW_HEADLINES','Най-нови статии:');
 
 @define('STATICPAGE_TEMPLATE','Шаблон за редактиране');
-@define('STATICPAGE_TEMPLATE_INTERNAL','Всички полета');
 @define('STATICPAGE_TEMPLATE_EXTERNAL', 'Кратък шаблон');
 
 @define('STATICPAGE_SECTION_META', 'Мета-данни');

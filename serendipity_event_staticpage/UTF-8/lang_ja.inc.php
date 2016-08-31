@@ -138,7 +138,7 @@
 @define('PLUGIN_LINKS_IMGDIR_BLAHBLAH',                 'Tell the URL path to use for accessing the tree structure images. The "img" subfolder needs to be in this directory, and is delivered with this plugin.');
 @define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME',         'アイコンかただのテキスト');
 @define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC',         'ツリー構造かただのテキストメニューを表示します．');
-@define('PLUGIN_STATICPAGELIST_ICON',                   'ツリー');
+@define('PLUGIN_STATICPAGELIST_ICON',                   'JS ツリー');
 @define('PLUGIN_STATICPAGELIST_TEXT',                   'ただのテキスト');
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY',            '親ページのみ表示しますか?');
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC',       '有効の場合、親ページのみ表示します。無効の場合、子ページも表示するでしょう。');

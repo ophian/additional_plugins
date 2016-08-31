@@ -91,7 +91,7 @@
 @define('PLUGIN_LINKS_IMGDIR_BLAHBLAH',            '트리 구조 그림을 불러들이는데 쓸 경로를 지정합니다. 이 디렉토리에 "img"라는 하위 디렉토리가 있어야 합니다. 기본적으로 이 플러그인에 포함되어 있습니다.');
 @define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME',    '아이콘 모양 또는 일반 텍스트');
 @define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC',    '트리 구조로 보여줄지 일반 텍스트 형식의 메뉴로 보여줄지 결정합니다.');
-@define('PLUGIN_STATICPAGELIST_ICON',              '트리');
+@define('PLUGIN_STATICPAGELIST_ICON',              'JS 트리');
 @define('PLUGIN_STATICPAGELIST_TEXT',              '텍스트');
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY',       '상위 페이지만 보여주기');
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC',  '사용할 경우, 상위 페이지만 나타나게 됩니다. 사용하지 않으면 하위 페이지도 보입니다.');
