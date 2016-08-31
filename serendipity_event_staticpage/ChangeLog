@@ -155,7 +155,7 @@
 
     Apart from UI changes, other small bugfixes, code review, refactoring and code cleanup, this mainly is:
 
-    - A smart rework for 2.0+
+    - A smart rework for 2.1+
     - Smartified the Backend
     - New backend-form-templates. [Check your theme! See note above.]
     - Precise staticpage database SELECT queries for the frontend, the sidebar and the backend

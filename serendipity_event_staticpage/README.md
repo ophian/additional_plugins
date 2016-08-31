@@ -14,7 +14,7 @@
 - - -
 
 ### Already done: :arrow_up:
-- [x] Set Serendipiy 2.0.99+ requirement and removed old stuff
+- [x] Set Serendipity 2.1.0+ requirement and removed old stuff
 - [x] Remove old TODO and style_staticpage_backend.css files
 - [x] Added undocumented feature since 3.50 to the Readme
 - [x] Consistent cleanups - stringify booleans in config options, set and fix fallbacks and review sidebar plugin
