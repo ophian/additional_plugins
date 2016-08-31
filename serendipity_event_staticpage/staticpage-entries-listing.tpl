@@ -4,8 +4,8 @@
 {$CONST.STATICPAGE_NEW_HEADLINES}
 
 <ul>
-{foreach from=$entries item="dategroup"}
-    {foreach from=$dategroup.entries item="entry"}
+{foreach $entries AS $dategroup}
+    {foreach $dategroup.entries AS $entry}
     <li class="static-entries">
         ({$dategroup.date|date_format:"%d.%m.%Y"}) <a href="{$entry.link}">{$entry.title|default:$entry.id}</a>
     </li>

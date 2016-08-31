@@ -13,7 +13,7 @@
         <a class="spp_title" href="{$frontpage_path}">{$CONST.PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME}</a>
 {/if}
 {if is_array($staticpage_listContent) and !empty($staticpage_listContent)}
-    {foreach name="pageList" from=$staticpage_listContent item="pageList"}
+    {foreach $staticpage_listContent AS $pageList}
         {if !empty($pageList.permalink)}
         <a class="spp_title" href="{$pageList.permalink}" title="{$pageList.pagetitle|escape}" style="padding-left: {$pageList.depth}px;">{$pageList.headline|truncate:32:"&hellip;"}</a>
         {else}

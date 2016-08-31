@@ -3,7 +3,7 @@
 
     {if $staticpage_results}
     <ul class="staticpage_result">
-    {foreach from=$staticpage_results item="result"}
+    {foreach $staticpage_results AS $result}
         <li><strong><a href="{$result.permalink|escape}" title="{$result.pagetitle|escape}">{if !empty($result.headline)}{$result.headline}{else}{$result.pagetitle|escape}{/if}</a></strong> ({$result.realname|escape})<br />
         {$result.content|strip_tags|strip|truncate:200:"&hellip;"}</li>
     {/foreach}
