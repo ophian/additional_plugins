@@ -849,16 +849,21 @@
 <summary>Статични страници - списък</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Тази приставка показва конфигурируем списък от статични страници.</description>
-<maintainers><maintainer><name>Rob Antonishen, Falk Doering, Ian (Timbalu)</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Rob Antonishen, Falk Doering, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.19.1</version>
-  <requirements:s9yVersion>1.3</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.28</version>
+  <requirements:s9yVersion>2.0.99</requirements:s9yVersion>
+  <date>2016-08-31</date>
   <filelist>
 <dir name="serendipity_event_staticpage">
 <file>.htaccess</file>
+<file>backend_inspectConfig.php</file>
+<file>backend_staticpage.tpl</file>
 <dir name="backend_templates">
+<file>custom_template.tpl</file>
 <file>default_staticpage_backend.tpl</file>
+<file>responsive_template.tpl</file>
+<file>typeform_staticpage_backend.tpl</file>
 </dir>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -880,9 +885,11 @@
 <file>nolines_minus.gif</file>
 <file>nolines_plus.gif</file>
 <file>page.gif</file>
+<file>page.png</file>
 <file>plus.gif</file>
 <file>plusbottom.gif</file>
 </dir>
+<file>jquery.simplePagination.js</file>
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -896,17 +903,21 @@
 <file>lang_tr.inc.php</file>
 <file>plugin_staticpage.tpl</file>
 <file>plugin_staticpage_aboutpage.tpl</file>
+<file>plugin_staticpage_includeentry.tpl</file>
 <file>plugin_staticpage_related_category.tpl</file>
 <file>plugin_staticpage_searchresults.tpl</file>
 <file>plugin_staticpage_sidebar.tpl</file>
+<file>README.md</file>
+<file>README_FOR_CUSTOM_FIELDS.txt</file>
 <file>README_FOR_RELATED_CATEGORIES.txt</file>
 <file>serendipity_event_staticpage.php</file>
 <file>serendipity_plugin_staticpage.php</file>
 <file>smarty.inc.php</file>
 <file>Smarty_and_CSS_Tags</file>
 <file>staticpage-entries-listing.tpl</file>
-<file>style_staticpage_backend.css</file>
-<file>TODO</file>
+<file>staticpage_backend.css</file>
+<file>staticpage_backend.js</file>
+<file>svg_iconizr.tpl</file>
 <dir name="UTF-8">
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
@@ -924,7 +935,12 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_staticpage/.htaccess</file>
+    <file>serendipity_event_staticpage/backend_inspectConfig.php</file>
+    <file>serendipity_event_staticpage/backend_staticpage.tpl</file>
+    <file>serendipity_event_staticpage/backend_templates/custom_template.tpl</file>
     <file>serendipity_event_staticpage/backend_templates/default_staticpage_backend.tpl</file>
+    <file>serendipity_event_staticpage/backend_templates/responsive_template.tpl</file>
+    <file>serendipity_event_staticpage/backend_templates/typeform_staticpage_backend.tpl</file>
     <file>serendipity_event_staticpage/ChangeLog</file>
     <file>serendipity_event_staticpage/documentation_cs.html</file>
     <file>serendipity_event_staticpage/documentation_cz.html</file>
@@ -944,8 +960,10 @@
     <file>serendipity_event_staticpage/img/nolines_minus.gif</file>
     <file>serendipity_event_staticpage/img/nolines_plus.gif</file>
     <file>serendipity_event_staticpage/img/page.gif</file>
+    <file>serendipity_event_staticpage/img/page.png</file>
     <file>serendipity_event_staticpage/img/plus.gif</file>
     <file>serendipity_event_staticpage/img/plusbottom.gif</file>
+    <file>serendipity_event_staticpage/jquery.simplePagination.js</file>
     <file>serendipity_event_staticpage/lang_bg.inc.php</file>
     <file>serendipity_event_staticpage/lang_cs.inc.php</file>
     <file>serendipity_event_staticpage/lang_cz.inc.php</file>
@@ -959,17 +977,21 @@
     <file>serendipity_event_staticpage/lang_tr.inc.php</file>
     <file>serendipity_event_staticpage/plugin_staticpage.tpl</file>
     <file>serendipity_event_staticpage/plugin_staticpage_aboutpage.tpl</file>
+    <file>serendipity_event_staticpage/plugin_staticpage_includeentry.tpl</file>
     <file>serendipity_event_staticpage/plugin_staticpage_related_category.tpl</file>
     <file>serendipity_event_staticpage/plugin_staticpage_searchresults.tpl</file>
     <file>serendipity_event_staticpage/plugin_staticpage_sidebar.tpl</file>
+    <file>serendipity_event_staticpage/README.md</file>
+    <file>serendipity_event_staticpage/README_FOR_CUSTOM_FIELDS.txt</file>
     <file>serendipity_event_staticpage/README_FOR_RELATED_CATEGORIES.txt</file>
     <file>serendipity_event_staticpage/serendipity_event_staticpage.php</file>
     <file>serendipity_event_staticpage/serendipity_plugin_staticpage.php</file>
     <file>serendipity_event_staticpage/smarty.inc.php</file>
     <file>serendipity_event_staticpage/Smarty_and_CSS_Tags</file>
     <file>serendipity_event_staticpage/staticpage-entries-listing.tpl</file>
-    <file>serendipity_event_staticpage/style_staticpage_backend.css</file>
-    <file>serendipity_event_staticpage/TODO</file>
+    <file>serendipity_event_staticpage/staticpage_backend.css</file>
+    <file>serendipity_event_staticpage/staticpage_backend.js</file>
+    <file>serendipity_event_staticpage/svg_iconizr.tpl</file>
     <file>serendipity_event_staticpage/UTF-8/lang_bg.inc.php</file>
     <file>serendipity_event_staticpage/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_staticpage/UTF-8/lang_cz.inc.php</file>
