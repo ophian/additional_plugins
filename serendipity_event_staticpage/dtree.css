@@ -33,3 +33,11 @@
 .dtree .clip {
 	overflow: hidden;
 }
+.dtree .dTreeNode a:first-of-type:link,
+.dtree .dTreeNode a:first-of-type:visited,
+.dtree .dTreeNode a:first-of-type:hover {
+    background: transparent none;
+}
+
+/* staticpage dtree.css end*/
+

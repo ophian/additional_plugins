@@ -1,15 +1,172 @@
-4.09 S9y 2.0 serendipity_editor.js reference file fixes
+5.00:
+----
+(read downwards to latest changes)
+ *  4.06 Bump version since merged entry list pull request by (ogerlach)
+ *  Fixed (4.06) markup and sets (4.06 listentries) to be optional (selectbox default),
+    due to errors
+ *  Rebuild the stylesheets
+ *  Fixed various minor markup and logical code errors
+ *  Fixed backend_templates/default_staticpage_backend.tpl smarty markup
+    (escape, label break and cke-wysiwyg)
+ *  Changed template names to 'Default Template' (previously named 'Simple Template',
+    which was not correct)
+ *  Changed 'No Template' (previously named 'All Fields', which was not correct,
+    since just the very old hardcoded form)
+ *  Added 'publishstatus' and removed 'pass','is_startpage','is_404_page' in plugins
+    config options,
+    - since the latter were unused too specific to be set global in plugin config.
+    - Now 'publishstatus' will respect a global show as option rule (Draft is default)
+ *  Outsourced some heavy hardcoded markup functions
+ *  Smartified the backend as much as possible (get ready to run smarty-only in future?)
+ *  Extend required Serendipity version to 1.6, since heavy smarty usage
+ *  Rebuild the plugin stylesheets to work well with upcoming Serendipity 2.0
+ *  Fixes for Custom-Fields functionality
+ *  Added a new responsive (mobile) template (build to work with upcoming Serendipity 2.0)
+    - this also changed collapsible box name constants
+ *  Applied some plain button changes for 2.0 previously bumped as 4.06
+ *  Added last_modified or created_on date option for frontend footer in plugin_staticpage.tpl
+    - NOTE: this needs to change templates with already supplied files!
+ *  Merged 4.07 Propagate $smarty.env.staticpage_pagetitle (and the others) so that it can
+    be used in entries.tpl
+ *  Merged 4.06 Serendipity 2.0 compatibility fix for the editorbuttons (wysiwyg and default)
+ *  Moved listentries _new page submit footer to also show up on empty list
+ *  Added confirm dialog on select change page events. Avoids saving into wrong page by accident.
+    - adds new constant STATICPAGE_CONFIRM_SELECTDIALOG
+ *  Extend required Serendipity version to 1.7 and Smarty 3.1, since the old_backend_staticpage.tpl
+    would need too much old Smarty2 and CSS fixes
+ *  Removed old hardcoded markup - mark as fully smartified (except inspectConfig generation,
+    which is some sort of template too and some minor markups that get hooked)
+ *  Changed method name getSystersID() to getSisterID()
+ *  Added compat fallback to defaultform_template
+    - in case of cookie stored 'all fields/non-template' (old hardcoded) form
+ *  Added for 2.0:
+    - form submit wysiwyg-toolbar-save-button is now disabled when using the CKEDITOR full-package
+ *  Added a new simpler pageorder table fetcher
+ *  Added for 2.0:
+    - collapsible boxes icon change and use a universal setLocalStorage() and another for retrieve
+ *  Added for 2.0:
+    - experimental entrylistings (entrylisting and pageorder sequencer) respect parent/child
+      staticpages treeview listing in a simple way
+    - adds new constant STATICPAGE_TREE_CHILD
+ *  Merge 4.07.1: sqlite-fix on searchpage
+ *  Added some missing PHPDocs
+ *  Add new constant STATICPAGE_TOGGLEANDSAVE and removed old non-template
+    STATICPAGE_TEMPLATE_INTERNAL constant
+ *  Main backend CSS file was renamed to staticpage_backend.css and
+    now includes separately into backends page header
+ *  Added for 2.0:
+    - include new staticpage_backend.js to templates page footer - no need to use 2.0 js hook
+ *  Hide/Show the top tab bar menu per JS hideaway, since not used very often
+ *  Added for 2.0:
+    - navigate with larger amount of entrylist pages per newly added simplePagination.js,
+      fits nice beyond 8 to some deci- pages
+ *  Changed for 2.0: default config value for show entrylist is now true
+ *  Fix and correct entrypaging, breadcrumb and childpage navigations,
+    - touches frontend templates (in this plugin dir) for HTML5, inline styles, Navigations, etc.
+    - Needs you to update template copies in your template/theme!
+ *  Added more backend title attribute information for pageorder and entrylisting titles
+ *  Fixed 2.0 Markup in category hook, the example markup in related category Readme, set some more
+    form info and minor association with related category id and the corresonding table on delete.
+ *  Removed old and unused sequencer pageorder methods to use with javascript drag & drop only
+ *  Removed old and unused getSistersID method
+ *  Removed commented $related_category_entries code, since being unneeded for the solution with
+    serendipity_fetchPrintEntries and unworth to keep, since not really working.
+ *  Associated 1:1 relation for staticpage related categories.
+    Touches staticpages and staticpage_categorypage tables to support the latter 1:1 relations only, as of now.
+    Old entries don't get touched by this, until they will be updated.
+ *  Fixed example breadcrumb in README_FOR_RELATED_CATEGORIES.txt, to not fire on blogs entrypaging archives.
+ *  Added new custom template, which now holds existing examples for custom properties, based on responsive template.
+    This remmoves the custom examples in responsive template.
+ *  Added new README_FOR_CUSTOM_FIELDS.txt
+ *  Fixed htmlspecialchars() for PHP >=5.4 with native, non-utf-8 language installs,
+    which natively changed from ISO-8859-1 to UTF-8
+ *  Added check for new SQLite3 OO database layer with PHP 5.4+
+ *  Fixed (html)specialchars double_encode to false for native ISO-8859-1 charsets
+      for certain form input/testarea fields in backend and some Smarty output variables
+      in backend/frontend (which updates plugin_staticpage_***.tpl files again)
+ *  Added - automark an entry as written by Wysiwyg-Editor via custom fields, to disable nl2br markup formating
+ *  Fixed PHP 5.5+ compat
+ *  New - Iconized entrylist/entryform tabbar for 2.0
+ *  Fixed preview button for existing pages with 2.0
+ *  Fixed 2.0 backend template form chaining (4.08) and merge form names uniquely
+ *  Fixed default selected fallback backend form when unset or expired cookie
+ *  Removed an old and wrong used registration, since 'in_array' already is an allowed $php_function, since S9y-1.7
+ *  Fixed cookie issue with backend form template. Set responsive_template.tpl as "default" fallback on S9y >= 2.0
+ *  Fixed missing dtree.css includement, in case of having selected this option
+ *  Fixed dtree.js being included more than once, by making the called script name unique
+ *  Add separators to streamed CSS
+ *  Add new config option to list entries pagination by N entries
+ *  Add configuration grouper
+ *  Fixed styles now added to the END of eventData stream, while checking for existing styles (dtree)
+ *  Changed dtree usage page links world image to something more smart
+ *  Fixed JS spconfig_listPerPage and JS pagination function to happen on listentries pages only
+ *  Removed icon font usage and added SVG sprites with 2.0 instead
+ *  Update jquery.simplePagination.js
+ *  Fix icon-info image notifier not displayed embedded, when sidebar plugin is not installed
+ *  Fix missing trim($str) and an empty output of the JS Tree via smarty template, while the empty(array) was not true
+    Sets the sidebar plugin to v.1.26
+ *  Fix two commits for database changes with
+    v.3.98 commit 36fd48b Changed meta fields, no longer custom properties and
+    v.3.97 commit 43e0f86 Breadcrumb navigation as an independent option
+    which did not apply in every case.
+    Added db-build case 21 for these certain silent db error in the past (ALTER permissions).
+    Now an error is shown in the backend only without spoiling the serendipity_editor.js.
+ *  Fix showlist db-boolean sets/gets
+ *  Fix sidebar plugin dependency config value check to append dtree.css into stream.
+    Removed wrong used check for sidebar CSS.
+    Updated plugin_staticpage_sidebar.tpl.
+ *  Fixed password protected pages not showing up
+ *  Added language field info
+ *  Staticpages now use the simple directory fallback (theme->plugin), if supported by Serendipity core
+ *  Fixed MediaLibrary item path replacements on MOVE with Serendipity 2.1 DEV
+ *  Update simplePagination Lib
+ *  Fixed $eventData being changed by backend_media_rename hook
+ *  Fixed $eventData[0]['type'] 'dir' replacements
+ *  Fixed POST preview check
+ *  Append all CSS to eventData (includes earlier fix for frontend CSS)
+ *  Added S9y 2.0.0 - 2.0.99 backend configgroup placeholder ability by script
+ *  Fix access permissions in backend
+ *  Now uses load_language API - extends sidebar plugin to v.1.27
+ *  Consistent use of serendipity_db_bool() config default values
+ *  Added a "default fallback" frontend "plugin_staticpage_includeentry.tpl file",
+    for the case it was previously set in a template OR included by an entry, when
+    switching to a new theme without having this file.
+ *  Changed requirement to min PHP 5.3, which removes deprecated sortByOrder() method
+ *  Changed SVG since SVG title attributes were not read
+ *  Workaround SQLite install bug, while not being able to ALTER and fully support other table changes
+ *  Fix $nav array exception gathering values for an entry without any navigational options set
+ *  Consistent cleanups - stringify booleans in config options, set and fix fallbacks and review sidebar plugin
+ *  Added undocumented feature since 3.50 to the Readme
+ *  Remove old TODO and style_staticpage_backend.css files
 
-4.08 Fix 2.0 backend template chaining
 
-4.07.2 Fix htmlspecialchars for PHP >= 5.4
+    TL;DR - MAJOR CHANGES - PLEASE NOTE:
+    Some of these commits will change behaviour or appearance for older staticpage entries.
+    Please double check all your pages to show up correct, or at least check the major ones in difference.
 
-4.07.1 Fix search with pdo-sqlite
-       Remove doubled fetchentries-event 
+    Also check for template staticpage files in need for an update. This may effect all kind of
+    yourTheme/plugin_staticpage_***.tpl files and probably all backend-form-files in yourTheme/backend_templates/*.
+    Theme templates in [2k11, Next, Bulletproof] delivered by core have already been changed when Staticpages DEV moves into Spartacus.
 
-4.07 Propagate $smarty.env.staticpage_pagetitle (and the others) so that it can be used in entries.tpl
+    Temporary disable (by directory name change) previous used theme based staticpage-backend-forms
+    in /templates/yourTheme/backend_templates/*. Remove, if these were not specifically theme based, or contact your themes author.
 
-4.06 Serendipity 2.0 compatibility fix for the editorbuttons (wysiwyg and default)
+    Check the Plugin configurations (event and sidebar)!
+
+    Apart from UI changes, other small bugfixes, code review, refactoring and code cleanup, this mainly is:
+
+    - A smart rework for 2.0+
+    - Smartified the Backend
+    - New backend-form-templates. [Check your theme! See note above.]
+    - Precise staticpage database SELECT queries for the frontend, the sidebar and the backend
+    - Backend listentries enhancements
+    - Fixed navigation issues. Touches staticpage frontend related template files for markup navigation changes,
+      regarding entry navigation, breadcrumb navigation and child navigation.
+      [Check your theme to not work with old and unchanged copies!]
+    - Associated strict 1:1 relation for staticpage related categories
+
+
+-----
 
 4.05 Bump version to propagate changed plugin_staticpage_related_category.tpl
 
@@ -188,7 +345,7 @@ Changes by Stephan Manske:
 
 3.32:
 ==============================
-Changes by Falk Dï¿½ring:
+Changes by Falk Döring:
 
 * Update formatting
 * Fix pageorder setting
@@ -207,7 +364,7 @@ Change by Garvin Hicking:
 
 3.24:
 ==============================
-Changes by Falk Dï¿½ring:
+Changes by Falk Döring:
 
 * Change: Pagetype 'Aboutpage' renamed to 'Overview'
 * Update: german and english language file
@@ -219,19 +376,19 @@ Changes by Falk Dï¿½ring:
 
 3.22:
 ==============================
-Changes by Falk Dï¿½ring:
+Changes by Falk Döring:
 
 * Fix: disable templates if a plugin is called
 
 3.21:
 ==============================
-Changes by Falk Dï¿½ring:
+Changes by Falk Döring:
 
 * Fix: FAQ-Event now without mod_rewrite support
 
 3.20:
 ==============================
-Changes by Falk Doering:
+Changes by Falk Döring:
 
 * New: add FAQ-Event to sidebar
 * FIX: some wrong action messages
@@ -245,19 +402,19 @@ Changes by JWalker:
 
 3.18:
 ==============================
-Changes by Falk DÃ¶ring:
+Changes by Falk Döring:
 
 * Fix: integrating contactform per subpage correct if mod_rewrite is disabled
 
 3.17:
 ==============================
-Changes by Falk Dï¿½ring:
+Changes by Falk Döring:
 
 * New: a list of plugins they can be included in the sidebar and their status
 
 3.16:
 ==============================
-Changes by Falk Dï¿½ring:
+Changes by Falk Döring:
 
 * Fix multilingual selection. Now you can chose a page for all languages
 * Fix unused defines
@@ -272,7 +429,7 @@ Changes by Falk Dï¿½ring:
 
 3.14:
 ==============================
-Changes by Falk DÃ¶ring:
+Changes by Falk Döring:
 
 * New: Multilanguage support
 
@@ -309,7 +466,7 @@ Changes by Garvin Hicking:
 
 3.08:
 ==============================
-Changes by Falk DÃ¶ring:
+Changes by Falk Döring:
 
 * Fix DB updates, blame Garvin
 * New: show headline or next/prev in childpage-naviagtion
@@ -324,7 +481,7 @@ Changes by Garvin Hicking:
 
 3.06:
 ==============================
-Changes by Falk DÃ¶ring:
+Changes by Falk Döring:
 
 * New: Include other plugins in sidebar
 
@@ -342,7 +499,7 @@ Changes by Garvin Hicking:
 
 3.03:
 ==============================
-Changes by Falk DÃ¶ring:
+Changes by Falk Döring:
 
 * New Options:
  * show on navigation
@@ -364,7 +521,7 @@ Changes by Garvin Hicking:
 
 3.0:
 ==============================
-Changes by Falk DÃ¶ring:
+Changes by Falk Döring:
 
 * New: Pagecategorys
  * Default: Article and Aboutpage
@@ -375,7 +532,7 @@ Changes by Falk DÃ¶ring:
 
 2.12:
 ==============================
-Changes by Falk DÃ¶ring:
+Changes by Falk Döring:
 
 * Support display of last change and page back/next navigation
 * Support display of "Edit this page" link

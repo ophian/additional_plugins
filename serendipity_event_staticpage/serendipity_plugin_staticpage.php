@@ -1,30 +1,22 @@
-<?php # 
-
-# serendipity_plugin_staticpage.php, v1.0 2005/06/01 (c) by Rob Antonishen
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_plugin_staticpage extends serendipity_plugin {
-
+class serendipity_plugin_staticpage extends serendipity_plugin
+{
     var $staticpage_config = array();
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $propbag->add('name',        PLUGIN_STATICPAGELIST_NAME);
         $propbag->add('description', PLUGIN_STATICPAGELIST_NAME_DESC);
-        $propbag->add('author',      "Rob Antonishen, Falk Doering, Ian (Timbalu)");
+        $propbag->add('author',      "Rob Antonishen, Falk Doering, Ian");
         $propbag->add('stackable',   true);
-        $propbag->add('version',     '1.19.1');
+        $propbag->add('version',     '1.28');
         $propbag->add('configuration', array(
                 'title',
                 'limit',
@@ -35,21 +27,22 @@ class serendipity_plugin_staticpage extends serendipity_plugin {
                 'useIcons',
                 'imgdir'
         ));
-        $propbag->add('requirements',  array(
-            'serendipity' => '1.3',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+        $propbag->add('requirements', array(
+            'serendipity' => '2.0.99',
+            'smarty'      => '3.1.0',
+            'php'         => '5.3.0'
         ));
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $this->dependencies = array(
             'serendipity_event_staticpage' => 'keep',
             'serendipity_plugin_multilingual' => 'keep'
         );
-
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
+
         switch($name) {
             case 'title':
                 $propbag->add('type',        'string');
@@ -117,50 +110,55 @@ class serendipity_plugin_staticpage extends serendipity_plugin {
         return true;
     }
 
-    function generate_content(&$title) { 
-        $title = $this->get_config('title');//STATICPAGE_TITLE;
+    function generate_content(&$title)
+    {
+        $title = $this->get_config('title');
         // do not load the tpl in backend
-        if(!defined('IN_serendipity_admin')) {
+        if (!defined('IN_serendipity_admin')) {
             $this->show_content();
         }
     }
 
-    function show_content() {
+    function show_content()
+    {
         global $serendipity;
         static $smartify = null;
 
         if ($smartify === null) {
-            $smartify = serendipity_db_bool($this->get_config('smartify'));
+            $smartify = serendipity_db_bool($this->get_config('smartify', 'false'));
         }        
 
         $title      = $this->get_config('title');
-        $frontpage  = serendipity_db_bool($this->get_config('frontpage', true));
+        $frontpage  = serendipity_db_bool($this->get_config('frontpage', 'true'));
+        $parentonly = serendipity_db_bool($this->get_config('parentsonly', 'false'));
         $plugin_dir = basename(dirname(__FILE__));
         $smartcar   = array();
-        $str        = '';
+        $str        = "\n";
 
-        if (!serendipity_db_bool($this->get_config('showIcons'))) {
+        if (!serendipity_db_bool($this->get_config('showIcons', false))) {
             if ($frontpage) {
                 if ($smartify) {
                     $serendipity['smarty']->assign('frontpage_path', $serendipity['serendipityHTTPPath'] . $serendipity['indexFile']);
                 } else {
-                    $str .= '<a href="' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'].'">'.PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME . '</a><br />';
+                    $str .= '<a class="spp_title" title="' . PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME . '" href="' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'].'">' . PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME . '</a>'."\n";
                 }
             }
             if ($smartify) {
-                $smartcar = $this->displayPageList($this->get_config('limit'), serendipity_db_bool($this->get_config('parentsonly')), $smartify);
+                $smartcar = $this->displayPageList((int)$this->get_config('limit'), $parentonly, $smartify);
             } else {
-                $str .= $this->displayPageList($this->get_config('limit'), serendipity_db_bool($this->get_config('parentsonly')));
+                $str .= $this->displayPageList((int)$this->get_config('limit'), $parentonly);
             }
         } else {
-            if (!isset($serendipity['staticpageplugin']['JS_init'])) {
-                $str .= '<script src="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/dtree.js" type="text/javascript"></script>';
-                $serendipity['staticpageplugin']['JS_init'] = true;
-            }
+            $str .= '<script src="' . $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/spdtree.js" type="text/javascript"></script>'."\n";
+
+            $serendipity['staticpageplugin']['JS_init'] = true; // RQ: probably only available within templates config later on... or so. NO, this happens after event plugin processing, but will later on not be available. Why is that?
 
             $imgdir = $this->get_config('imgdir');
-            if ($imgdir === "true") {
+            if ($imgdir == 'true' || $imgdir == 'yes') {
                 $imgdir = $serendipity['baseURL'] . 'plugins/' . $plugin_dir;
+            }
+            if ($imgdir == 'false' || $imgdir == 'no') {
+                $imgdir = $serendipity['baseURL'] . $serendipity['templatePath'] . 'default';
             }
             $fdid = str_replace(':', '_', $this->instance);
 
@@ -169,7 +167,7 @@ class serendipity_plugin_staticpage extends serendipity_plugin {
             fd_' . $fdid . ' = new dTree("fd_' . $fdid . '","' . $imgdir . '");'."\n";
 
             /* configuration section*/
-            if (!serendipity_db_bool($this->get_config('useIcons'))) {
+            if (!serendipity_db_bool($this->get_config('useIcons', 'true')) || $imgdir == '') {
                 $str .= "fd_$fdid.config.useIcons  = false;\n";
             }
             $str .= "fd_$fdid.config.useSelection  = false;\n";
@@ -181,15 +179,15 @@ class serendipity_plugin_staticpage extends serendipity_plugin {
 
             $str .= 'fd_' . $fdid . '.add(0,-1,"' . PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME . '","' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '");'."\n";
 
-            if ($struct = $this->getPageList(serendipity_db_bool($this->get_config('parentsonly')))) {
+            if ($struct = $this->getPageList($parentonly)) {
                 $this->addJSTags($struct);
-                foreach ($struct as $value) {
+                foreach ($struct AS $value) {
                     $str .= 'fd_' . $fdid . '.add('
                             . $value['id'] . ','
                             . $value['parent_id'] . ','
-                            . '"' . (function_exists('serendipity_specialchars') ? serendipity_specialchars((empty($value['headline']) ? $value['pagetitle'] : $value['headline'])) : htmlspecialchars((empty($value['headline']) ? $value['pagetitle'] : $value['headline']), ENT_COMPAT, LANG_CHARSET)) . '",'
-                            . '"' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($value['permalink']) : htmlspecialchars($value['permalink'], ENT_COMPAT, LANG_CHARSET)) . '",'
-                            . '"' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($value['pagetitle']) : htmlspecialchars($value['pagetitle'], ENT_COMPAT, LANG_CHARSET)) .'",'
+                            . '"' . serendipity_event_staticpage::fixUTFEntity(serendipity_event_staticpage::html_specialchars((empty($value['headline']) ? $value['pagetitle'] : $value['headline']))) . '",'
+                            . '"' . serendipity_event_staticpage::html_specialchars($value['permalink']) . '",'
+                            . '"' . serendipity_event_staticpage::html_specialchars($value['pagetitle']) .'",'
                             . '"",'
                             . '"",'
                             . '"",'
@@ -201,15 +199,15 @@ class serendipity_plugin_staticpage extends serendipity_plugin {
             $str .= 'document.write(fd_' . $fdid . ');
             //-->
             </script>';
+            $str .= "\n";
         }
 
         if ($smartify) {
             $serendipity['smarty']->assign(array(
-                'staticpage_jsStr'       => $str,
+                'staticpage_jsStr'       => trim($str),
                 'staticpage_listContent' => $smartcar
             ));
             $filename = 'plugin_staticpage_sidebar.tpl';
-            // use nativ API here - extends s9y version >= 1.3'
             $content = $this->parseTemplate($filename);
             echo $content;
         } else {
@@ -217,30 +215,32 @@ class serendipity_plugin_staticpage extends serendipity_plugin {
         }
     }
 
-    function getPageList($parentsonly = false) {
+    function getPageList($parentsonly = false)
+    {
         global $serendipity;
 
-        $q = 'SELECT id, headline, parent_id, permalink, pagetitle, is_startpage
-                FROM '.$serendipity['dbPrefix'].'staticpages
+        $q = "SELECT id, headline, parent_id, permalink, pagetitle, is_startpage
+                FROM {$serendipity['dbPrefix']}staticpages
                WHERE showonnavi = 1
                  AND publishstatus = 1
-                 AND (language = \''.$serendipity['lang'].'\'
-                  OR  language = \'\'
-                  OR  language = \'all\')';
-        if($parentsonly) {
-            $q .= ' AND parent_id = 0';
+                 AND (language = '{$serendipity['lang']}'
+                  OR  language = ''
+                  OR  language = 'all')";
+        if ($parentsonly) {
+            $q .= " AND parent_id = 0";
         }
-        $q .= ' ORDER BY parent_id, pageorder';
+        $q .= " ORDER BY parent_id, pageorder";
         $pagelist = serendipity_db_query($q, false, 'assoc');
         if (is_array($pagelist)) {
-            serendipity_plugin_staticpage::iteratePageList($pagelist);
+            self::iteratePageList($pagelist);
             $pagelist = serendipity_walkRecursive($pagelist, 'id', 'parent_id', VIEWMODE_THREADED);
             return $pagelist;
         }
         return false;
     }
 
-    function addJSTags(&$pagelist) {
+    function addJSTags(&$pagelist)
+    {
         global $serendipity;
 
         $pc_count = count($pagelist);
@@ -253,7 +253,8 @@ class serendipity_plugin_staticpage extends serendipity_plugin {
         }
     }
 
-    function iteratePageList(&$pagelist) {
+    function iteratePageList(&$pagelist)
+    {
         global $serendipity;
 
         if (is_array($pagelist)) {
@@ -263,61 +264,63 @@ class serendipity_plugin_staticpage extends serendipity_plugin {
                 }
             }
         }
-        
         return true;
     }
 
-    function displayPageList($limit, $parentsonly, $tpl=false) {
+    function displayPageList($limit, $parentsonly, $tpl=false)
+    {
         global $serendipity;
 
-        $q = 'SELECT id, headline, parent_id, permalink, pagetitle, is_startpage
-                FROM '.$serendipity['dbPrefix'].'staticpages
+        $q = "SELECT id, headline, parent_id, permalink, pagetitle, is_startpage
+                FROM {$serendipity['dbPrefix']}staticpages
                WHERE showonnavi = 1
                  AND publishstatus = 1
-                 AND (language = \''.$serendipity['lang'].'\'
-                  OR  language = \'\'
-                  OR  language = \'all\')';
-        if($parentsonly) {
-            $q .= ' AND parent_id = 0';
+                 AND (language = '{$serendipity['lang']}'
+                  OR  language = ''
+                  OR  language = 'all')";
+        if ($parentsonly) {
+            $q .= " AND parent_id = 0";
         }
-        $q .= ' ORDER BY parent_id, pageorder';
-        if($limit) {
-            $q .= ' LIMIT '.$limit;
+        $q .= " ORDER BY parent_id, pageorder";
+        if ($limit) {
+            $q .= " LIMIT $limit";
         }
         $pagelist = serendipity_db_query($q, false, 'assoc');
-        if(is_array($pagelist)) {
-            serendipity_plugin_staticpage::iteratePageList($pagelist);
-            $pagelist = serendipity_walkRecursive($pagelist, 'id', 'parent_id', VIEWMODE_THREADED);
-            $content = ($tpl ? array() : (string)'');
+        if (is_array($pagelist)) {
+            self::iteratePageList($pagelist);
+            $pagelist = serendipity_walkRecursive($pagelist, 'id', 'parent_id', VIEWMODE_THREADED); // childs follow parent
+            $content  = $tpl ? array() : (string)'';
 
-            foreach($pagelist as $page) {
-                if(is_array($content)) { 
+            foreach($pagelist AS $page) {
+                if (is_array($content)) {
                     /* smartify the staticpage sidebar plugin */
                     $content[] = array(
                         'id'           => $page['id'],
-                        'headline'     => (!empty($page['headline']) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($page['headline']) : htmlspecialchars($page['headline'], ENT_COMPAT, LANG_CHARSET)) : (function_exists('serendipity_specialchars') ? serendipity_specialchars($page['pagetitle']) : htmlspecialchars($page['pagetitle'], ENT_COMPAT, LANG_CHARSET))),
+                        'headline'     => serendipity_event_staticpage::fixUTFEntity(!empty($page['headline']) ? serendipity_event_staticpage::html_specialchars($page['headline']) : serendipity_event_staticpage::html_specialchars($page['pagetitle'])),
                         'parent_id'    => $page['parent_id'],
-                        'permalink'    => (!empty($page['permalink']) ? $page['permalink'] : NULL),
-                        'pagetitle'    => (!empty($page['permalink']) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($page['pagetitle']) : htmlspecialchars($page['pagetitle'], ENT_COMPAT, LANG_CHARSET)) : NULL),
+                        'permalink'    => !empty($page['permalink']) ? $page['permalink'] : NULL,
+                        'pagetitle'    => !empty($page['permalink']) ? serendipity_event_staticpage::html_specialchars($page['pagetitle']) : NULL,
                         'is_startpage' => $page['is_startpage'],
                         'depth'        => $page['depth']*10
                     );
-                } elseif(is_string($content)) { 
+                } elseif (is_string($content)) {
                     $content .= (!empty($page['permalink'])
                         ? sprintf(
-                            "<a href=\"%s\" title=\"%s\" style=\"padding-left: %dpx;\">%s</a><br />\n",
+                            "<a href=\"%s\" title=\"%s\" class=\"spp_title\" style=\"padding-left: %dpx;\">%s</a>\n",
                             $page['permalink'],
-                            (function_exists('serendipity_specialchars') ? serendipity_specialchars($page['pagetitle']) : htmlspecialchars($page['pagetitle'], ENT_COMPAT, LANG_CHARSET)),
+                            serendipity_event_staticpage::html_specialchars($page['pagetitle']),
                             $page['depth']*10,
-                            (!empty($page['headline']) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($page['headline']) : htmlspecialchars($page['headline'], ENT_COMPAT, LANG_CHARSET)) : (function_exists('serendipity_specialchars') ? serendipity_specialchars($page['pagetitle']) : htmlspecialchars($page['pagetitle'], ENT_COMPAT, LANG_CHARSET))))
+                            serendipity_event_staticpage::fixUTFEntity(!empty($page['headline']) ? serendipity_event_staticpage::html_specialchars($page['headline']) : serendipity_event_staticpage::html_specialchars($page['pagetitle'])))
                         : sprintf(
                             "<div style=\"padding-left: %dpx;\">%s</div>",
                             $page['depth']*10,
-                            (!empty($page['headline']) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($page['headline']) : htmlspecialchars($page['headline'], ENT_COMPAT, LANG_CHARSET)) : (function_exists('serendipity_specialchars') ? serendipity_specialchars($page['pagetitle']) : htmlspecialchars($page['pagetitle'], ENT_COMPAT, LANG_CHARSET)))));
+                            serendipity_event_staticpage::fixUTFEntity(!empty($page['headline']) ? serendipity_event_staticpage::html_specialchars($page['headline']) : serendipity_event_staticpage::html_specialchars($page['pagetitle']))));
                 }
             }
         } 
-        
         return $content;
     }
+
 }
+
+?>

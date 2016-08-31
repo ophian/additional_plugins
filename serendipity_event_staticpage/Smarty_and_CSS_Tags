@@ -56,3 +56,70 @@ Frontend:
 .staticpage_metainfo_editlink
 #staticpage_related_category_entry_list
 #static-entries
+
+
+new staticpage_backend.tpl:
+=====================================
+via moduled inc/backend_show.php
+
++++++ head +++++
+{$s9y_get_cat}
+{$s9y_post_cat}
+
++++++ switch +++++
+{$switch_spcat}
+
++++++ pageorder +++++
+{array $sp_pageorder_pages}
+
++++++ pagetype +++++
+{bool $sp_pagetype_saveconf}
+{bool $sp_pagetype_purged}
+     {$sp_pagetype_ripped}
+{bool $sp_pagetype_update}
+     {$sp_pagetype_mixedresult}
+{bool $sp_pagetype}
+     {$sp_pagetype_types}
+{bool $sp_pagetype_submit}
+{bool $sp_pagetype_isshowform}
+     {multiline string $sp_pagetype_showform}
+{bool $sp_pagetype_showform_isnuggets}
+     {array $sp_pagetype_showform_htmlnuggets}
+
++++++ pageadd +++++
+{array $sp_pageadd_plugins}
+{array $sp_pageadd_insplugins}
+{array $sp_pageadd_plugstats}
+
++++++ pagwedit/pages/default +++++
+{bool $sp_staticsubmit}
+     {$sp_defpages_upd_result}
+{bool $sp_staticdelete}
+     {$sp_defpages_rip_success}
+
+{bool $sp_defpages_showlist}
+     {string $sp_defpages_jsCookie}
+     {array $sp_defpages_top}
+     {array $sp_defpages_pop}
+     {int $sp_selected_id}
+     [string $sp_selected_name}
+     {bool $sp_defpages_sbplav}
+     {string $sp_defpages_link}
+     {string $sp_defpages_pagetitle}
+     {bool $sp_defpages_staticsave}
+     {$sp_defpages_showform}
+
+     {string $sp_listentries_authors}
+     {array $sp_listentries_entries}
+     {string $sp_listpp}
+
+switch pcat if      pageorder
+            elseif  pagetype
+            elseif  pageadd
+            else    pageedit/pages/default
+                    if submit results
+                    if rip results
+                    if      sp_defpages_showlist false === select(able)
+                    elseif  sp_defpages_showlist true  === entries(list)
+                    else    no entries to print
+
