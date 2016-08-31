@@ -1,0 +1,670 @@
+
+.sp_listnav {
+    float: right;
+    list-style: none;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 2px 0 0 0;
+}
+.sp_tabnav {}
+.splist {
+    border: 1px solid #BBB;
+    padding: 0;
+    margin: 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    background: #efefef; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#efefef 100%); /* IE10+ */
+    background: linear-gradient(top, #ffffff 0%,#efefef 100%); /* W3C */
+    display: inline-block;
+}
+#active.splist {
+    background: #666 none repeat scroll 0% 0%;
+    border-color: #444;
+    box-shadow: 0px 1px 0px #FFF, 0px 0px 2px rgba(0, 0, 0, 0.3) inset;
+    cursor: default;
+}
+
+.spmsg .icon,
+.spnav .icon {
+    display: inline-block;
+    /*
+    This works below also with 32px etc, since "width" & "height" were set using em units. Usually.
+    To have best results overall, do not enable width here!
+    width: 1em;
+    */
+    height: 1em;
+    fill: currentColor;
+    vertical-align: text-bottom;
+}
+.sp_info .icon-info {
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+    margin-top: 0.25em;
+    margin-left: .75em;
+}
+#splistorder .icon-ok, .spmsg .icon-ok, .spmsg .icon-info, .spmsg .icon-error, .spmsg .icon-attention { font-size: 20px; width: 32px; }
+.spmod .icon-clock { width: 1em; color: #444; }
+.spmsg .icon-attention, .spmsg .icon-error { color: red; }
+.spmsg .icon-ok { color: green; }
+.icon-info { color: #C09853; }
+.icon-pagelist, .icon-pageorder, .icon-pagetype, .icon-otherplugins { width: 2em; }
+.icon-pagelist { color: #3E5F81; }
+#active.splist .icon-pagelist { color: #fff; }
+.icon-pageorder { color: #3E5F81;/*#6fbc6d;*/ }
+.icon-pagetype { color: #f46899; }
+.icon-otherplugins { color: #5fa9dd; }
+.sp_entries_pane .spform a { padding: 2px 9px }
+
+#sp_navigator {
+    margin-top: 1.5em;
+}
+#serendipityStaticpagesNav ul {
+    padding: 3px 0 1px;
+    margin-left: 0;
+    background: #ddd;
+    background-image: -webkit-linear-gradient(#fff, #ddd);
+    background-image: linear-gradient(#fff, #ddd);
+    display: block;
+    border-style: solid;
+    border-color: #BBB #DEDEDE;
+    border-width: 1px;
+}
+#serendipityStaticpagesNav ul li {
+    list-style: none;
+    margin: 0;
+    display: inline-flex;
+}
+#serendipityStaticpagesNav ul {
+    padding: 5px 0\9; /* IE 9 hack */
+}
+#serendipityStaticpagesNav ul li {
+    display: inline-block\9; /* IE 9 hack for inline-flex */
+}
+#serendipityStaticpagesNav ul li a {
+    padding: 3px 0.5em;
+    margin-left: 5px;
+}
+
+#serendipityStaticpagesNav ul li#active a {
+    background: #dedede;
+    background-image: -webkit-linear-gradient(#fff, #dedede);
+    background-image: linear-gradient(#fff, #dedede);
+    background-clip: padding-box;
+    border: 1px solid #CACACA;
+    /* rounded corners */
+    -webkit-border-radius: 0.1em;
+    -moz-border-radius: 0.1em;
+    -o-border-radius: 0.1em;
+    border-radius: 0.1em; /* html5 standard */
+    /* shadow settings */
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* html5 standard */
+}
+
+/* Set a content max-width for 1.7 backend Series */
+.serendipityAdminContent * { max-width: 1002px; }
+
+/* Set a line height for some section in 1.7 backend Series */
+.serendipityAdminContent #staticpage_pagetype *,
+.serendipityAdminContent #sequence *,
+.serendipityAdminContent .sp_add * { line-height: 1.6; }
+
+/* overrule .serendipityAdminContent span, as long as also used with old backend - need to keep here and not in old.css */
+.serendipityAdminContent span.sp_ptype_desc {
+    color: #5E7A94 !important;
+    font-size: 8pt;
+}
+.serendipityAdminContent .sp_tred,
+.sp_tred {
+    color: #c00000 !important;
+}
+.serendipityAdminContent .sp_yellow,
+.sp_tyellow {
+    color: #eac131 !important;
+}
+.serendipityAdminContent .sp_tgreen,
+.sp_tgreen {
+    color: #188d1d !important;
+}
+
+.sp_thead {
+    background-color: #c0c0c0;
+}
+.sp_teven {
+    background-color: #dfdfdf;
+}
+.sp_todd {
+    background-color: #f0f0f0;
+}
+.sp_label {
+    page-break-after: always;
+    display: block;
+    clear: both;
+}
+.sp_button {
+    display: inline-block;
+}
+.sp_button ~ button,
+.sp_button ~ .toggle_info,
+.sp_button ~ .toggle_info:visited,
+.sp_button ~ .toggle_info:hover,
+.sp_button ~ .toggle_info:focus,
+.sp_button ~ .toggle_info:active {
+    margin: 1% 0 1% 0.4em;
+}
+.sp_templateselector {
+    float: right;
+    margin: 5px;
+}
+.sp_pageselector {
+    background-color: #EEE;
+    padding: 5px;
+    border: 1px solid #DDD;
+}
+.sp_listfooter {
+    background-color: #DFDFDF;
+}
+.sp_listfooter form {
+    padding: 5px;
+}
+.default_staticpage {
+    margin-top: 1.2em;
+    clear: both;
+}
+.default_staticpage .sp_label {
+    font-weight: bold;
+}
+.default_staticpage .sp_sect {
+    margin-bottom: 5px;
+}
+.default_staticpage fieldset {
+    margin: 5px;
+    border: 1px solid #F0F0F0;
+}
+.default_staticpage .input_textbox {
+    width: 100%;
+    margin: 0px auto .125em;
+}
+
+/* staticpage smartified backend_staticpage.tpl */
+.sp_msg_success:not(:empty) {
+    display: block;
+    margin: 1.5em 0;
+    padding: 10px;
+}
+.sp_msg_success:not(:empty) {
+    background: #dff0d8;
+    border: 1px solid #c1e2b3;
+    color: #468847;
+}
+.sp_entries_pane .spmod {
+    margin-top: -1.25em;
+}
+.sp_entries_pane .spmod,
+.sp_entries_pane .spform {
+    float: right;
+}
+.sp_entries_pane .spform a,
+.sp_entries_pane .spform form {
+    display: inline-table;
+    margin-right: auto;
+    zoom: 1;
+}
+.serendipityAdminContent span.five {
+    font-weight: 500;
+    color: rgb(0, 0, 0) !important;
+}
+.sp_ptree { font-weight: 500; }
+.sp_ctree { color: rgba(117, 131, 156, 1); }
+.sp_tree_child,
+.sp_status_draft { margin: 0px 0.2em 0px 0px; }
+.sp_tree_child {}
+
+.sp_bold { font-weight: 700; }
+.sp_top { margin-top: 0; }
+
+#backend_sp_simple .sp_toggle,
+#backend_sp_respond .sp_toggle {
+    margin: 0 auto;
+    padding: .2em 0;
+}
+/* force overwrite 2.0 backend active toggle ln 799 */
+#backend_sp_respond .sp_toggle.active {
+    background: #ddd;
+    background-image: -webkit-linear-gradient(#fff, #ddd);
+    background-image: -moz-linear-gradient(#fff, #ddd);
+    background-image: linear-gradient(#fff, #ddd);
+    border-color: #ddd #bbb #999;
+    color: #222;
+    text-shadow: #fff 0 1px 1px;
+}
+
+.sp_defaultform_right {
+    width: 29%;
+    float: right;
+}
+.sp_defaultform_left {
+    width: 69%;
+    float: left;
+}
+.sp_defaultform_submit {
+    text-align: center;
+    margin: 1em auto 0;
+}
+.sp_responsform_submit {
+    margin: 2em auto 1em;
+    text-align: center;
+}
+.sp_input_finish {
+    clear: both;
+    padding-top: 1em;
+}
+.sp_legend_submit {
+    display: block;
+    float: right;
+    background-color: #EEE;
+    padding: 0.25em;
+    margin: -2.75em auto auto;
+    border: 1px solid #72878A;
+}
+.sp_add table { border: 1px solid rgb(187, 187, 187); }
+#sp_entries_list li { margin: 0.2em; }
+#sp_entries_list li:last-of-type { margin-top: 0.5em; }
+#sp_entries_list h3 {
+    font-size: inherit;
+    margin: 0px;
+}
+.sp_right {
+    cursor: pointer;
+    float: right;
+}
+
+#sp_navigator .sp_info { font-size: 125%; }
+.sp_ptype .input_textbox { width: inherit; }
+
+.sp_dim { opacity: .33; }
+.sp_lang { padding: 0 0.1em; color: #800080; } 
+
+/**** 2.0 only with very few tweaks for old backend ****/
+
+.sp_pageselector button[type="submit"].entry_preview {
+    background: #ddd;
+    background-image: -webkit-linear-gradient(#fff, #ddd);
+    background-image: linear-gradient(#fff, #ddd);
+    border-color: #ddd #bbb #999;
+    color: #222;
+    text-shadow: #fff 0 1px 1px;
+}
+
+#staticpage_pagetype fieldset,
+#staticpage_pageadd .sp_add {
+    border: 1px solid #c0c0c0;
+    margin: 1em 0 0 0;
+    padding: 0.35em 0.625em 0.75em;
+}
+.sp_sequence,
+#backend_sp_simple fieldset {
+    border: 1px solid #DDD;
+    padding: .75em 0.25em;
+    margin: 0 0 1em 0;
+}
+#backend_sp_simple fieldset.config_optiongroup {
+    border: 0px none;
+    padding: 0;
+    margin: 0;
+}
+.sp_sequence legend,
+#staticpage_pageadd form,
+#staticpage_pageadd .sp_add legend {
+    border: 1px solid #72878A;
+    padding: 2px 5px;
+}
+.sp_entries_pane,
+#staticpage_pagetype .grouped {
+    border-width: 1px 1px 0px;
+    border-style: solid solid none;
+    border-color: #CCC;
+}
+/* defaultform */
+#backend_sp_simple {
+    font-size: .875em;
+}
+#backend_sp_simple legend {
+    border: 1px solid #72878A;
+    padding: 2px 5px;
+    background-color: #DFDFDF;
+}
+#backend_sp_simple .sp_input_radio { line-height: 2; }
+
+#backend_sp_respond #sp_main_data,
+#backend_sp_respond #sp_metafield_data,
+#backend_sp_respond #sp_structure_data,
+#backend_sp_respond #sp_option_data,
+#backend_sp_respond #sp_custom_data {
+    border: 1px solid #DDD;
+    padding: 0.75em;
+    margin: 0px 0px 1em;
+}
+#staticpage_pageadd .sp_add legend,
+#staticpage_pagetype fieldset legend,
+#sp_sequencer fieldset legend,
+#backend_sp_respond fieldset legend {
+    background: #eee;
+    font-weight: bold;
+}
+#backend_sp_respond .form_field select,
+#backend_sp_respond .form_radio {
+    display: block;
+}
+#sp_option_data > div,
+#sp_structure_data > div {
+    padding-bottom: 100%; /* cheat browser for equal-height part 1 */
+}
+#backend_sp_respond select {
+    min-width: 48%;
+}
+#backend_sp_respond #entry_main_data > div,
+#backend_sp_respond #sp_structure_data > div,
+#backend_sp_respond #sp_option_data > div,
+#backend_sp_respond #sp_custom_data > div {
+    position: relative;
+    float: left;
+    margin-right: 2%;
+    width: 48%;
+    background: #eee;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    padding: 0 .4em;
+    min-height: 3.6em; /* avoid breaks having less height blocks */
+    padding-bottom: -100%; /* cheat browser for equal-height part 2 */
+}
+#backend_sp_respond .form_field_long {
+    background: #eee;
+    border: 1px solid #aaa;
+}
+#backend_sp_respond .form_field_long label,
+#backend_sp_respond .form_field_long input {
+    margin: 0px .4em .125em;;
+    width: 98.6%;
+}
+#backend_sp_respond input.sp_long[type="text"] {
+    min-width: 100%;
+}
+
+#staticpage_pagetype fieldset legend,
+#backend_sp_respond #sp_main_data legend,
+#backend_sp_respond #sp_structure_data legend,
+#backend_sp_respond #sp_option_data legend,
+#backend_sp_respond #sp_custom_data legend {
+    border: 1px solid #72878A;
+    padding: 2px 5px;
+}
+#backend_sp_respond #sp_structure_data > div.form_area {
+    margin-right: inherit;
+    padding: 0px;
+    background: transparent;
+    border: 0 none;
+}
+#backend_sp_respond #entry_main_headline,
+#backend_sp_respond #entry_main_aftitle,
+#backend_sp_respond #entry_main_content,
+#backend_sp_respond #sp_metafield_data > div.sp_sect,
+#backend_sp_respond #sp_structure_data > div.form_area {
+    width: 98%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#backend_sp_respond #entry_meta_urltitle > input,
+#backend_sp_respond #entry_struc_date > input,
+#backend_sp_respond #entry_struc_password > input,
+#backend_sp_respond #entry_custom_class > input {
+    max-width: 16em;
+}
+#backend_sp_respond #sp_custom_data #el5,
+#backend_sp_respond #sp_custom_data #entry_custom_info {
+    width: 98%;
+}
+#backend_sp_respond #custom_info {
+    width: 100%;
+}
+#backend_sp_respond #custom_info pre {
+    white-space: pre-wrap;
+}
+#backend_sp_respond #sp_custom_data #el5 {
+    margin-bottom: 1em
+}
+
+/* for both form templates - id.class is strict! Keep .default_staticpage to restrict this to staticpages only! */
+.default_staticpage #meta_urltitle_info.field_info,
+.default_staticpage #urltitle_info.field_info,
+.default_staticpage #meta_permalink_info.field_info,
+.default_staticpage #permalink_info.field_info,
+.default_staticpage #entry_relcat_info.field_info,
+.default_staticpage #entry_language_info.field_info,
+.default_staticpage #related_category_info.field_info,
+.default_staticpage #sp_language_info.field_info { width: 100%; }
+
+/* listentries */
+.spform a,.spform form {
+    margin-right: .275em;
+}
+#sp_entries_list { margin: 0 0 0 0; padding: .4em 0; }
+.sp_entries_pane.odd { background: #eee; }
+.sp_entries_pane.even { background: #fff; }
+.sp_entries_pane.sp_close {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1em;
+}
+#sp_entries_list button[type="submit"], #sp_entries_list button[type="submit"]:hover,
+#sp_entries_list input[type="submit"], #sp_entries_list input[type="submit"]:hover,
+#sp_entries_list .button_link:hover,
+#sp_entries_list button:hover {
+    background: #ddd !important;
+    background: -webkit-linear-gradient(#fff, #ddd) !important;
+    background: linear-gradient(#fff, #ddd) !important;
+    text-shadow: inherit !important;
+    border-color: #ddd #bbb #999 !important;
+}
+.sp-btn {
+    color: #222 !important;
+    text-shadow: #fff 0 1px 1px;
+}
+#sp_entries_list input[type="submit"] {
+    font-family: "fontello"; /* yes, use serendipity default here! ;-) */
+}
+.sp-btn-edit:before { content:attr(value) '\e803'; }
+.sp-btn-purge:before { content: attr(value) '\e80d'); }
+
+/* pagetype */
+#staticpage_pagetype .sp_ptype_desc { width: 100% ;}
+#staticpage_pagetype .grouped:last-of-type { border-bottom: 1px solid #ccc;}
+#staticpage_pagetype .grouped.odd { background: #eee; }
+#staticpage_pagetype .grouped.even { background: #fff; }
+#staticpage_pagetype .sp_label {
+    padding-left: .3em;
+    width: 47% !important;
+}
+#staticpage_pagetype input {
+    min-width: 330px;
+    margin: auto 0.3em;
+}
+
+/* SMALL SCREEN */
+@media only screen and (max-width: 372px) {
+    #staticpage_pagetype input {
+        min-width: 282px;
+    }
+}
+@media only screen and (max-width: 531px) {
+    .sp_listnav {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+    }
+    #sp_entries_list h3 {
+        margin: 0px 0px 1.16667em;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #staticpage_pagetype.configuration_group .form_field input {
+        width: inherit;
+    }
+    #backend_sp_respond .form_field_long label,
+    #backend_sp_respond .form_field_long input {
+        width: 96.6%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .spshow {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+
+/* pageadd */
+#staticpage_pageadd .input_button {
+    margin-top: .5em;
+}
+
+/* pageorder */
+#sp_sequencer #sequence.pluginmanager_container {
+    width: 29em;
+}
+#sp_sequencer .sp_sequence {
+    margin: .5em;
+}
+#sp_sequencer .sequence_grablet {
+    width: 15% !important;
+}
+#sp_sequencer .sp_sequence .sp_nojs {
+    float: right;
+    margin-left: 1em;
+}
+#sp_sequencer #sequence .pluginmanager_item_even { background: #fff; }
+#sp_sequencer #sequence .pluginmanager_item_odd { background: #eee; }
+#sp_sequencer #sequence .sequence_item_old {
+    margin: .1em;
+}
+#sp_sequencer #sequence .sequence_item_old > span,
+#sp_sequencer #sequence .sequence_item_old > div {
+    text-align: right;
+}
+#sp_sequencer #sequence .sequence_item {
+    border: 1px dashed #ccc;
+}
+#sp_sequencer #sequence .sp_grablet_title {
+    text-overflow: ellipsis;
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+/**
+* CSS themes for simplePagination.js
+* Author: Flavius Matis - http://flaviusmatis.github.com/
+* URL: https://github.com/flaviusmatis/simplePagination.js
+*/
+
+ul.simple-pagination {
+    list-style: none;
+}
+
+.simple-pagination {
+    display: block;
+    overflow: hidden;
+    padding: 0 5px 5px 0;
+    margin: 0;
+}
+
+.simple-pagination ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.simple-pagination li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+span.ellipse.clickable {
+    cursor: pointer;
+}
+
+.ellipse input {
+    width: 3em;
+}
+
+/* added for 2.0 */
+.simple-pagination li.active { 
+    background-image: inherit;
+    -webkit-box-shadow: inherit;
+    -moz-box-shadow: inherit;
+    -o-box-shadow: inherit;
+    box-shadow: inherit;
+    border-color: inherit;
+}
+
+/*------------------------------------*\
+    Light Theme Styles
+\*------------------------------------*/
+
+.light-theme a, .light-theme span {
+    float: left;
+    color: #666;
+    font-size:14px;
+    line-height:24px;
+    font-weight: normal;
+    text-align: center;
+    border: 1px solid #BBB;
+    min-width: 14px;
+    padding: 0 7px;
+    margin: 0 5px 0 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    background: #efefef; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#efefef 100%); /* IE10+ */
+    background: linear-gradient(top, #ffffff 0%,#efefef 100%); /* W3C */
+}
+
+.light-theme a:hover {
+    text-decoration: none;
+    background: #FCFCFC;
+}
+
+.light-theme .current {
+    background: #666;
+    color: #FFF;
+    border-color: #444;
+    box-shadow: 0 1px 0 rgba(255,255,255,1), 0 0 2px rgba(0, 0, 0, 0.3) inset;
+    cursor: default;
+}
+
+.light-theme .ellipse {
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-weight: bold;
+    cursor: default;
+}
+
