@@ -6,8 +6,8 @@ if (IN_serendipity !== true) {
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-if (!function_exists("Amazon_country_code")) {
-   include(dirname(__FILE__)."/Amazon_s9y_lib.php");
+if (!function_exists('Amazon_country_code')) {
+   include(dirname(__FILE__) . '/Amazon_s9y_lib.php');
 }
 
 class serendipity_event_amazonchooser extends serendipity_event
@@ -331,7 +331,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                                             'plugin_amazonchooser_error_message'    => $result['error_message'],
                                             'plugin_amazonchooser_cache_time'       => $result['return_date'],
                                             'plugin_amazonchooser_error_result'     => $result['error_result'],
-                                            'thingy'          => $result['items'][0]
+                                            'thingy'                                => $result['items'][0]
                                         )
                                     );
                                     break;
