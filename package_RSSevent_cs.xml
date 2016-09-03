@@ -77,7 +77,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Tlačítko médií Amazon&lt;/b&gt;&lt;br /&gt;Přidává tlačítko, které umožňuje vkládat do příspěvků výsledky hledání na Amazon.com&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 14:40:15 +0200</pubDate>
+<pubDate>Thu, 01 Sep 2016 09:33:13 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -104,7 +104,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Automatické aktualizace (experimentální)&lt;/b&gt;&lt;br /&gt;Experimentální. Když plugin &quot;tabule&quot; detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 15:17:57 +0200</pubDate>
+<pubDate>Sat, 03 Sep 2016 12:35:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -1089,6 +1089,15 @@
 <guid isPermaLink="false">serendipity_event_snapshotlinks</guid>
 </item>
 <item>
+<title>Share Buttons: Show social share buttons for services like Facebook and Twitter using shariff.</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_social</link>
+<category>Event Plugins</category>
+<author>onli, Matthias Mees</author>
+<content:encoded>&lt;b&gt;serendipity_event_social&lt;br /&gt;Share Buttons&lt;/b&gt;&lt;br /&gt;Show social share buttons for services like Facebook and Twitter using shariff.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Thu, 01 Sep 2016 13:39:17 +0200</pubDate>
+<guid isPermaLink="false">serendipity_event_social</guid>
+</item>
+<item>
 <title>UTF-8 řazení: Plugin nabízí speciální abecední třídění podle UTF-8 jako rozšíření pro specifické pluginy typu Freetag. Umožňuje řadit podle libovolné abecedy s jinými než anglickými písmeny, např. v azbuce, čínštině a jiných. Pomoc s vytvářením dalších abeced je vítaná (viz fórum serendipity).</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_sort</link>
 <category>Event Plugins</category>
@@ -1103,7 +1112,7 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker,  Malte Paskuda, based upon b8 by Tobias Leupold</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detekce spamu pomocí adaptivního algoritmu, který se dokáže sám učit.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sat, 27 Aug 2016 15:24:12 +0200</pubDate>
+<pubDate>Sat, 03 Sep 2016 09:16:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
