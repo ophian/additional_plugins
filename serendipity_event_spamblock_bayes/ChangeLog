@@ -1,3 +1,7 @@
+0.4.25:
+-------
+ * Add "IF NOT EXISTS" to sqlite-upgrade function, preventing a php error
+
 0.4.24:
 -------
  * better S9y version compat check

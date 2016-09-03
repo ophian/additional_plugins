@@ -38,7 +38,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $this->title = PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME;
         $propbag->add ( 'description', PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add ( 'name', $this->title);
-        $propbag->add ( 'version', '0.4.24' );
+        $propbag->add ( 'version', '0.4.25' );
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -532,6 +532,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                     $sql = $sql[0][0];
                 }
                 $sql = str_replace("{$serendipity['dbPrefix']}comments", "{$serendipity['dbPrefix']}spamblock_bayes_recycler", $sql);
+                if (strpos($sql, 'NOT EXISTS') === false) {
+                    $sql = str_replace("CREATE TABLE", "CREATE TABLE IF NOT EXISTS", $sql);
+                }
                 break;
             default:
                 $sql = "CREATE TABLE IF NOT EXISTS
