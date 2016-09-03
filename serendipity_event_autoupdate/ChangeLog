@@ -1,3 +1,8 @@
+1.2.2:
+------
+
+ * Allow beta updates without throwing an Exception in checkIntegrity() method
+
 1.2.1:
 ------
 
