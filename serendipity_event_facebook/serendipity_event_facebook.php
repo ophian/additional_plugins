@@ -10,7 +10,7 @@ class serendipity_event_facebook extends serendipity_event
 {
     var $title = PLUGIN_EVENT_FACEBOOK_NAME;
     var $debug = false;
-    
+
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -33,7 +33,7 @@ class serendipity_event_facebook extends serendipity_event
             'frontend_header'   => true
 
         ));
-        
+
         $propbag->add('configuration', array('facebook_users', 'facebook_moderate', 'limit', 'via', 'cronjob'));
     }
 
@@ -72,9 +72,9 @@ class serendipity_event_facebook extends serendipity_event
     function introspect_config_item($name, &$propbag)
     {
         global $serendipity;
-        
+
         switch($name) {
-            
+
             case 'facebook_users':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_FACEBOOK_USERS);
@@ -124,12 +124,12 @@ class serendipity_event_facebook extends serendipity_event
     {
         $title = PLUGIN_EVENT_FACEBOOK_NAME;
     }
-    
+
     function example()
     {
         return "\n".'<p class="msg_notice"> ' . PLUGIN_EVENT_FACEBOOK_HOWTO . "</p>\n\n";
     }
-    
+
     function addcomment($entry_id, $user, $post_id, &$comment)
     {
         global $serendipity;
@@ -140,7 +140,7 @@ class serendipity_event_facebook extends serendipity_event
         // Circumvent captchas here so that comments can be saved.
         $_SESSION['spamblock']['captcha'] = $serendipity['POST']['captcha'] = 'abc';
         $serendipity['POST']['token'] = md5(session_id());
-        
+
         $commentInfo = array();
         $commentInfo['name']  = $comment->from->name . $this->get_config('via');
         $commentInfo['url']   = 'http://www.facebook.com/' . $user . '?v=wall&story_fbid=' . $post_id;
@@ -154,17 +154,17 @@ class serendipity_event_facebook extends serendipity_event
         $commentInfo['time']    = strtotime($comment->created_time);
         $commentInfo['source']  = 'facebook';
         $commentInfo['title']   = 'facebook_' . $comment->id;
-        
+
         if (serendipity_db_bool($this->get_config('facebook_moderate'))) {
             $status = 'pending';
         } else {
             $status = 'approved';
         }
-        
+
         foreach($commentInfo AS $key => $val) {
             $commentInfo[$key] = $this->decode($val);
         }
-        
+
         serendipity_saveComment($entry_id, $commentInfo, 'NORMAL', 'facebook');
         $_SESSION['HTTP_REFERER'] = $oldses;
     }
@@ -173,20 +173,20 @@ class serendipity_event_facebook extends serendipity_event
     {
         global $serendipity;
         static $my_base = null;
-        
+
         $b = $serendipity['baseURL'];
-        
+
         // We strip out the http:// part, to allow easier https/http matching
         if ($my_base === null) {
             $my_base = preg_replace('@(https?://|www.)@i', '', $b);
         }
-        
+
         $my_link = preg_replace('@(https?://|www)@i', '', $link);
-        
+
         // Check if our link is contained inside the foreign link
         if (stristr($my_link, $my_base)) {
             if ($this->debug) $my_link . " is contained in " . $my_base . "\n";
-            
+
             $check_link = str_replace($my_base, $serendipity['serendipityHTTPPath'], $my_link);
 
             if ($this->debug) echo "Permalinkcheck for: $check_link\n";
@@ -197,10 +197,10 @@ class serendipity_event_facebook extends serendipity_event
         }
 
         if ($this->debug) echo $my_link . " is NOT contained in " . $my_base . "\n";
-        
+
         return false;
     }
-    
+
     function &decode($string)
     {
         if (LANG_CHARSET == 'ISO-8859-1') {
@@ -214,17 +214,17 @@ class serendipity_event_facebook extends serendipity_event
     {
         global $serendipity;
         $this->install();
-        
+
         if ($this->debug) {
             $fp = fopen('/tmp/facebook.log', 'a');
             fwrite($fp, date('d.m.Y  H:i') . 'Facebook run');
             fclose($fp);
         }
-        
+
         header('Content-Type: text/plain; charset=' . LANG_CHARSET);
-        
+
         require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-        
+
         $users = explode(',', $this->get_config('facebook_users'));
         foreach($users AS $user) {
             $user = trim($user);
@@ -244,10 +244,10 @@ class serendipity_event_facebook extends serendipity_event
                 serendipity_request_end();
                 $fb   = json_decode($data);
                 #print_r($fb);
-                
+
                 foreach($fb->data AS $idx => $fb_item) {
                     #if ($fb_item->
-                    
+
                     // Check each Graph API item. If it's an empty link or the link points to facebook,
                     // we cannot read it. Also, the URL might not directly point to our own blog postings
                     // to match up, so we need to follow the HTTP request to see if Location: redirects
@@ -255,10 +255,10 @@ class serendipity_event_facebook extends serendipity_event
                     if ($fb_item->type != 'link' || empty($fb_item->link) || preg_match('@/www.facebook.com/@i', $fb_item->link)) {
                         continue;
                     }
-                    
+
                     // Skip some links that we can be sure are not to be requested
                     if (preg_match('@/(www\.)?(facebook.com|foursquare.com)/@i', $fb_item->link)) continue;
-                    
+
                     if ($this->debug) echo "\nRequesting Link " . $fb_item->link . "\n";
 
                     // Check if we already have metadata about this link.
@@ -269,7 +269,7 @@ class serendipity_event_facebook extends serendipity_event
                         if ($this->debug) echo "(Metadata exists)\n";
                         // Check if stored link is no blog entry of ours.
                         if ((int)$meta[0]['entryid'] == 0) continue;
-                        
+
                         $entry_id = $meta[0]['entryid'];
 
                         if ($this->debug) echo "(Resolved to: $entry_id)\n";
@@ -281,24 +281,24 @@ class serendipity_event_facebook extends serendipity_event
                         $subreq = new HTTP_Request($fb_item->link, array('allowRedirects' => true, 'maxRedirects' => 3));
                         $ret = $subreq->sendRequest();
                         serendipity_request_end();
-                        
+
                         $check_url = $subreq->_url->url;
-                        
+
                         $entry_id = $this->linkmatch($check_url);
-                        
+
                         if ($this->debug) echo "(Resolved to: $entry_id)\n";
-                        
-                        serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}facebook 
+
+                        serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}facebook
                           (entryid, base_url, resolved_url)
-                        VALUES 
+                        VALUES
                           (" . (int)$entry_id . ", '" . serendipity_db_escape_string($fb_item->link) . "', '" . serendipity_db_escape_string($check_url) . "')");
-                    
+
                         // Check if stored link is no blog entry of ours
                         if (empty($entry_id)) continue;
                     }
 
                     list($user_id, $post_id) = explode('_', $fb_item->id);
-                    
+
                     // The comments inside the main API graph may not contain everything, so fetch each comment uniquely.
                     $curl = 'http://graph.facebook.com/' . $fb_item->id . '/comments';
                     if ($this->debug) echo $curl . "\n";
@@ -316,14 +316,14 @@ class serendipity_event_facebook extends serendipity_event
                     foreach($cfb->data AS $dataidx => $comment) {
                         // Check if comment is already saved.
                         $c = serendipity_db_query("SELECT id
-                                                     FROM {$serendipity['dbPrefix']}comments 
-                                                    WHERE entry_id = " . (int)$entry_id . " 
+                                                     FROM {$serendipity['dbPrefix']}comments
+                                                    WHERE entry_id = " . (int)$entry_id . "
                                                       AND title    = 'facebook_" . $comment->id . "'");
                         if ($c[0]['id'] > 0) {
                             if ($this->debug) echo "Comment already fetched.\n";
                             continue;
                         }
-                        
+
                         $this->addComment($entry_id, $user, $post_id, $comment);
                         if ($this->debug) echo "comment added.\n";
                     }
@@ -335,12 +335,12 @@ class serendipity_event_facebook extends serendipity_event
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
         global $serendipity;
-        
+
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
             switch($event) {
-                
+
                 case 'cronjob':
                     if ($this->get_config('cronjob') == $eventData) {
                         serendipity_event_cronjob::log('Facebook', 'plugin');
@@ -350,7 +350,7 @@ class serendipity_event_facebook extends serendipity_event
 
                 case 'external_plugin':
                     $parts = explode('_', $eventData);
-                    
+
                     if ($parts[0] == 'facebookcomments') {
                         $this->fetchFacebook();
                     }
@@ -371,7 +371,7 @@ class serendipity_event_facebook extends serendipity_event
                         echo '    <meta property="og:site_name" content="' . $serendipity['blogTitle'] . '" />' . "\n";
 
                         echo '    <meta property="og:url" content="http' . ($_SERVER['HTTPS'] ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . (function_exists('serendipity_specialchars') ? serendipity_specialchars($_SERVER['REQUEST_URI']) : htmlspecialchars($_SERVER['REQUEST_URI'], ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
-                    
+
                         if (preg_match('@<img.*src=["\'](.+)["\']@imsU', $entry['body'] . $entry['extended'], $im)) {
                             if (preg_match('/^http/i', $im[1])) {
                             echo '    <meta property="og:image" content="' . $im[1] . '" />' . "\n";
@@ -382,10 +382,10 @@ class serendipity_event_facebook extends serendipity_event
                     }
                     break;
 
-                // Print out image html for the user avatar into the frontend_display 
-                case 'frontend_display':        
+                // Print out image html for the user avatar into the frontend_display
+                case 'frontend_display':
                     if (!isset($eventData['comment'])) {
-                        return true;                            
+                        return true;
                     }
 
                     // Add facebook avatar to $eventData['comment']
