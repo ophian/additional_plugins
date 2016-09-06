@@ -1,0 +1,41 @@
+0.11:
+    * Re-use description set in the metadesc-plugin
+
+0.10:
+    * Strip newlines from description
+    * Fix unfilled language variable TWITTERVIA_DESC
+    * Work with and without @ in the twittervia username
+
+0.9:
+    * Add option to set  a fallback image for
+      twitter and facebook tags
+
+0.8:
+    * set twitter card type to summary
+    * Fix: Headertags were not emitted
+
+0.7:
+    * Add option to set shariff backend, to get a share
+      counter for some buttons (FB, G+, ...)
+
+0.6:
+    * Set Facebook og-tags if button is active
+    * Provide language selector
+    * Add option to set a username for a twitter mention
+
+0.5:
+    * Add latin1 lang files (de/en)
+    * Add ChangeLog
+
+0.4:
+    * Always have the info button at the end
+
+0.3:
+    * Add option + support for color themes
+
+0.2:
+    * Set default mailto for data-mail-url
+    * Fix flexbox bug in Safari + iOS
+
+0.1:
+    * Initial version
