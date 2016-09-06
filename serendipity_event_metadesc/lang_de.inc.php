@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @author Matthias Mees <matthiasmees@googlemail.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -27,3 +27,4 @@ werden die standardmäßigen Meta-Schlüsselwörter für Seiten mit nicht nur einem E
 @define('PLUGIN_METADESC_DEFAULT_KEYWORDS_DESC', 'Hier eine durch Kommata getrennte Liste der Schlüsselwörter eingeben, die auf Seitem mit nicht nur einem Eintrag verwendet werden sollen.');
 @define('PLUGIN_METADESC_ESCAPE', 'HTML-Sonderzeichen escapen');
 @define('PLUGIN_METADESC_ESCAPE_DESC', 'In Meta-Beschreibung oder -Schlüsselwörtern enthaltene HTML-Sonderzeichen mittels htmlspecialchars() durch deren entsprechende HTML-Entities ersetzen.');
+

@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @author Kostas CoSTa Brzezinski <costa@kofeina.net>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -23,3 +23,4 @@
 @define('PLUGIN_METADESC_DEFAULT_DESCRIPTION_DESC', 'Enter the default meta description used on non-single entry pages.');
 @define('PLUGIN_METADESC_DEFAULT_KEYWORDS', 'HTML default meta keywords');
 @define('PLUGIN_METADESC_DEFAULT_KEYWORDS_DESC', 'Enter a comma-separated list of keywords to be used on non-single entry pages.');
+

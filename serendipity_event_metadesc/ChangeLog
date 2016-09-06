@@ -1,3 +1,13 @@
+0.17:
+-----
+ * Fix access to entry[body] for content truncation, since using
+   globals was shut off either in early Serendipity 1.6 versions
+   or with implementing Smarty 3 OOP with Serendipity 1.7 and up.
+ * Now use htmlspecialchars with third parameter false
+ * Uses API for lang includement, touches required version
+ * Added dependency note for markup plugin
+
+
 Made event_hook() declaration the same as in s9y core
 
 0.13:

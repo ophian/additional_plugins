@@ -1,55 +1,52 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_metadesc extends serendipity_event {
+class serendipity_event_metadesc extends serendipity_event
+{
     var $title = PLUGIN_METADESC_NAME;
     var $save_title = '';
     var $save_subtitle = '';
     var $meta_title = '';
-    function introspect(&$propbag) {
+
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_METADESC_NAME);
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers');
-        $propbag->add('version',       '0.15.1');
+        $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian');
+        $propbag->add('version',       '0.17');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'php'         => '5.1.0'
         ));
 
         $propbag->add('event_hooks', array(
-            'genpage'                                           => true,
-            'frontend_header'                                   => true,
-            'backend_publish'                                   => true,
-            'backend_save'                                      => true,
-            'backend_display'                                   => true,
-            'backend_delete_entry'                              => true,
-            'frontend_entryproperties'                          => true,
-            'frontend_fetchentry'                               => true,
-            'xmlrpc_updertEntry'                                => true,
-            'xmlrpc_fetchEntry'                                 => true,
-            'xmlrpc_deleteEntry'                                => true,
+            'genpage'                   => true,
+            'frontend_header'           => true,
+            'backend_publish'           => true,
+            'backend_save'              => true,
+            'backend_display'           => true,
+            'backend_delete_entry'      => true,
+            'frontend_entryproperties'  => true,
+            'frontend_fetchentry'       => true,
+            'xmlrpc_updertEntry'        => true,
+            'xmlrpc_fetchEntry'         => true,
+            'xmlrpc_deleteEntry'        => true,
         ));
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED', 'BACKEND_METAINFORMATION'));
         $propbag->add('configuration', array('tag_names', 'default_description', 'default_keywords', 'escape'));
         $this->supported_properties = array('meta_description', 'meta_keywords', 'meta_head_title');
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'tag_names':
                 $propbag->add('type',        'string');
@@ -57,12 +54,14 @@ class serendipity_event_metadesc extends serendipity_event {
                 $propbag->add('description', PLUGIN_METADESC_TAGNAMES_DESC);
                 $propbag->add('default',     'b,strong');
                 break;
+
             case 'default_description':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_METADESC_DEFAULT_DESCRIPTION);
                 $propbag->add('description', PLUGIN_METADESC_DEFAULT_DESCRIPTION_DESC);
                 $propbag->add('default',     '');
                 break;
+
             case 'default_keywords':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_METADESC_DEFAULT_KEYWORDS);
@@ -83,11 +82,18 @@ class serendipity_event_metadesc extends serendipity_event {
         return true;
     }
 
-    function generate_content(&$title) {
+    function example()
+    {
+        return "\n".'<p class="msg_notice"><span class="icon-attention"></span> ' . PLUGIN_METADESC_MARKDOWN_DEPENDENCY . "</p>\n\n";
+    }
+
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function extract_description($text) {
+    function extract_description($text)
+    {
         $x = strpos($text, '<p>');
         if ($x === false) {
             return substr(strip_tags($text), 0, 120);
@@ -103,7 +109,8 @@ class serendipity_event_metadesc extends serendipity_event {
         return $title;
     }
 
-    function extract_keywords($text) {
+    function extract_keywords($text)
+    {
         $tag_names = $this->get_config('tag_names');
         $tags = explode(",", $tag_names);
         $tags_count = count($tags);
@@ -116,12 +123,14 @@ class serendipity_event_metadesc extends serendipity_event {
         return $results;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'genpage':
                     // The 'genpage' hook is our last chance to modify Smarty
@@ -136,7 +145,9 @@ class serendipity_event_metadesc extends serendipity_event {
                         // generate the entry; by the time that hook is
                         // called, the <title> tag has already been emitted.
                         // We need those properties now!
-                        $property = serendipity_fetchEntryProperties($myid);
+                        if (is_numeric($myid)) {
+                            $property = serendipity_fetchEntryProperties($myid);
+                        }
                         // Set a title, if one was defined for this entry
                         if (!empty($property['meta_head_title'])) {
                             // Make the variable name a little less unwieldy
@@ -148,14 +159,16 @@ class serendipity_event_metadesc extends serendipity_event {
                             $serendipity['head_subtitle'] = '';
                         }
                     }
-                    return true;
                     break;
+
                 case 'frontend_header':
                     $default_description = $this->get_config('default_description');
                     $default_keywords = $this->get_config('default_keywords');
 
                     // Only emit in Single Entry Mode
-                    if ($serendipity['GET']['id'] && isset($GLOBALS['entry'][0]['body'])) {
+                    if ($serendipity['GET']['id'] && $serendipity['view'] == 'entry') {
+                        // we fetch the internal smarty object to get the current entry body
+                        $entry = (array)$eventData['smarty']->tpl_vars['entry']->value;
 
                         // If we modified the <title>...
                         if (!empty($this->meta_title)) {
@@ -169,20 +182,19 @@ class serendipity_event_metadesc extends serendipity_event {
                             );
                         }
 
-                        $meta_description = $GLOBALS['entry'][0]['properties']['meta_description'];
+                        $meta_description = $entry['properties']['meta_description'];
                         if (empty($meta_description)) {
-                            $description_body = $GLOBALS['entry'][0]['body'];
+                            $description_body = $entry['body'];
                             if (isset($GLOBALS['entry'][0]['plaintext_body'])) {
                                 $description_body = trim($GLOBALS['entry'][0]['plaintext_body']);
                             }
                             $meta_description = $this->extract_description($description_body);
                         }
 
-                        $meta_keywords = $GLOBALS['entry'][0]['properties']['meta_keywords'];
+                        $meta_keywords = $entry['properties']['meta_keywords'];
                         if (empty($meta_keywords)) {
-                            $meta_keywords = (array)$this->extract_keywords($GLOBALS['entry'][0]['body']);
-                            if (!empty($meta_keywords))
-                            {
+                            $meta_keywords = (array)$this->extract_keywords($entry['body']);
+                            if (!empty($meta_keywords)) {
                                 $meta_keywords = implode(',', $meta_keywords);
                             } else {
                                 // no entry specific keywords for this entry and extract_keywords was returned empty
@@ -192,35 +204,33 @@ class serendipity_event_metadesc extends serendipity_event {
 
 
                         if (serendipity_db_bool($this->get_config('escape'))) {
-                            $md = (function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_description) : htmlspecialchars($meta_description, ENT_COMPAT, LANG_CHARSET));
-                            $mk = (function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_keywords) : htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET));
+                            $md = htmlspecialchars($meta_description, ENT_COMPAT, LANG_CHARSET, false);
+                            $mk = htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET, false);
                         } else {
                             $md = $meta_description;
                             $mk = $meta_keywords;
                         }
-                        echo '<meta name="description" content="' . $md . '" />' . "\n";
-                        if (!empty($meta_keywords))
-                        {
-                            echo '        <meta name="keywords" content="' . $mk . '" />' . "\n";
+                        echo "\n";
+                        echo '    <meta name="description" content="' . $md . '" />' . "\n";
+                        if (!empty($meta_keywords)) {
+                            echo '    <meta name="keywords" content="' . $mk . '" />' . "\n";
                         }
                     } else {
                         // emit default meta description and meta keyword, if not blank, for pages other than single entry
 
                         if (serendipity_db_bool($this->get_config('escape'))) {
-                            $md = (function_exists('serendipity_specialchars') ? serendipity_specialchars($default_description) : htmlspecialchars($default_description, ENT_COMPAT, LANG_CHARSET));
-                            $mk = (function_exists('serendipity_specialchars') ? serendipity_specialchars($default_keywords) : htmlspecialchars($default_keywords, ENT_COMPAT, LANG_CHARSET));
+                            $md = htmlspecialchars($default_description, ENT_COMPAT, LANG_CHARSET, false);
+                            $mk = htmlspecialchars($default_keywords, ENT_COMPAT, LANG_CHARSET, false);
                         } else {
                             $md = $default_description;
                             $mk = $default_keywords;
                         }
 
-                        if (!empty($default_description))
-                        {
-                            echo '<meta name="description" content="' . $md . '" />' . "\n";
+                        if (!empty($default_description)) {
+                            echo '    <meta name="description" content="' . $md . '" />' . "\n";
                         }
-                        if (!empty($default_keywords))
-                        {
-                            echo '        <meta name="keywords" content="' . $mk . '" />' . "\n";
+                        if (!empty($default_keywords)) {
+                            echo '    <meta name="keywords" content="' . $mk . '" />' . "\n";
                         }
                     }
                     break;
@@ -228,7 +238,7 @@ class serendipity_event_metadesc extends serendipity_event {
                 case 'backend_publish':
                 case 'backend_save':
                     if (!isset($serendipity['POST']['properties']) || !is_array($serendipity['POST']['properties']) || !isset($eventData['id'])) {
-                        return true;
+                        return;
                     }
 
                     // Get existing data
@@ -246,8 +256,6 @@ class serendipity_event_metadesc extends serendipity_event {
 
                         serendipity_db_query($q);
                     }
-
-                    return true;
                     break;
 
                 case 'backend_display':
@@ -274,7 +282,6 @@ class serendipity_event_metadesc extends serendipity_event {
                     } else {
                         $meta_head_title = '';
                     }
-                    
 ?>
                     <fieldset style="margin: 5px">
                         <legend><?php echo PLUGIN_METADESC_NAME; ?></legend>
@@ -298,30 +305,27 @@ class serendipity_event_metadesc extends serendipity_event {
                         <p class="meta_stringlength_disclaimer"><em><?php echo '<sup>*</sup> ' . PLUGIN_METADESC_STRINGLENGTH_DISCLAIMER; ?></em></p>
                     </fieldset>
 <?php
-                    return true;
                     break;
 
                 case 'xmlrpc_deleteEntry':
                 case 'backend_delete_entry':
-                            $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id'] . " AND property LIKE '%meta_%'";
-                            serendipity_db_query($q);
-                    return true;
+                    $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id'] . " AND property LIKE '%meta_%'";
+                    serendipity_db_query($q);
                     break;
 
                 case 'frontend_entryproperties':
                     if (class_exists('serendipity_event_entryproperties') || !is_array($addData)) {
                         // Fetching of properties is already done there, so this is just for poor users who don't have the entryproperties plugin enabled
-                        return true;
+                        return;
                     }
                     $q = "SELECT entryid, property, value FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid IN (" . implode(', ', array_keys($addData)) . ") AND property LIKE '%meta_%'";
                     $properties = serendipity_db_query($q);
                     if (!is_array($properties)) {
-                        return true;
+                        return;
                     }
                     foreach($properties AS $idx => $row) {
                         $eventData[$addData[$row['entryid']]]['properties'][$row['property']] = $row['value'];
                     }
-                    return true;
                     break;
 
 /* MAYBE FOR FUTURE
@@ -343,8 +347,6 @@ class serendipity_event_metadesc extends serendipity_event {
                     } else {
                         $eventData['joins'] .= $cond;
                     }
-
-                    return true;
                     break;
 */
 
@@ -364,34 +366,33 @@ class serendipity_event_metadesc extends serendipity_event {
                             serendipity_db_query($q);
                        }
                     }
-                    return true;
                     break;
 
                 case 'xmlrpc_fetchEntry':
                     if (isset($eventData['id'])) {
-                        //XMLRPC call
+                        // XMLRPC call
                         $q = "SELECT entryid, property, value FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid IN (" . $eventData['id'] . ") AND property LIKE '%meta_keywords%'";
                         $properties = serendipity_db_query($q);
                         if (!is_array($properties)) {
                             return true;
                         }
-                        //wow, this is hack... is there a better way?
+                        // wow, this is hack... is there a better way?
                         $properties = $properties[0];
-                        $eventData['mt_keywords']=$properties['value'];
+                        $eventData['mt_keywords'] = $properties['value'];
                     }
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
-            }
 
+            }
             return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

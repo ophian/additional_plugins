@@ -33,3 +33,4 @@
 
 // Next lines were translated on 2011/01/20
 @define('PLUGIN_METADESC_ESCAPE_DESC', 'Nahradit øídící znaky jazyka HTML v popisu meta-description nebo v klíèových slovech pomocí odpovídajících HTML entit. K nahrazení se pou¾ívá funkce htmlspecialchars().');
+
