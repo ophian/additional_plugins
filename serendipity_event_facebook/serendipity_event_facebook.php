@@ -271,7 +271,7 @@ class serendipity_event_facebook extends serendipity_event
                 serendipity_request_end();
                 continue;
             } else {
-                $data = $req->getResponseBody();
+                $data = $PR2 ? $response->getBody() : $req->getResponseBody();
                 serendipity_request_end();
                 $fb   = json_decode($data);
                 #print_r($fb);
