@@ -205,8 +205,9 @@ class serendipity_event_xmlrpc extends serendipity_event
             switch($event) {
 
                 case 'frontend_header':
-                    echo '<link rel="pingback" href="' . $serendipity['baseURL'] . 'serendipity_xmlrpc.php" />' . "\n";
-                    echo '<link rel="EditURI" type="application/rsd+xml" title="RSD" href="' . $serendipity['baseURL'] . 'serendipity_xmlrpc.php?xsd=true" />' . "\n";
+                    echo "\n";
+                    echo '    <link rel="pingback" href="' . $serendipity['baseURL'] . 'serendipity_xmlrpc.php" />' . "\n";
+                    echo '    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="' . $serendipity['baseURL'] . 'serendipity_xmlrpc.php?xsd=true" />' . "\n";
                     break;
 
                 case 'frontend_xmlrpc':
