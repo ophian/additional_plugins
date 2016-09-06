@@ -1,4 +1,4 @@
-<?php #
+<?php
 
 @define('PLUGIN_EVENT_SOCIAL_NAME', 'Share Buttons');
 @define('PLUGIN_EVENT_SOCIAL_DESC', 'Show social share buttons for services like Facebook and Twitter using shariff.');
@@ -18,3 +18,4 @@
 @define('PLUGIN_EVENT_SOCIAL_BACKEND_DESC', 'URL to a shariff backend, that provides some buttons (like Facebook) with a share counter. Set to "none" to deacivate. Default: "https://onli.columba.uberspace.de/s9y_shariff"');
 @define('PLUGIN_EVENT_SOCIAL_IMAGE', 'Fallback Image');
 @define('PLUGIN_EVENT_SOCIAL_IMAGE_DESC', 'Image shown on Twitter and Facebok if the entry contains no own image. Set to "none" to deacivate.');
+
