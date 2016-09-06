@@ -292,12 +292,31 @@ class serendipity_event_geotag extends serendipity_event
         }
         // Cleanup of GeoURL plugin: ping the geourl service:
         if($this->get_config('hdr_default_lat') && $this->get_config('hdr_default_long')) {
-            echo '<div class="serendipityAdminMsgSuccess">';
             // Try to get the URL
-            include_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+            if (function_exists('serendipity_request_object')) {
+                $PR2 = true;
+            } else {
+                require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+            }
+            echo '<div class="serendipityAdminMsgSuccess">';
             $geourl = "http://geourl.org/ping/?p=" . $serendipity['baseURL'];
-            $req = new HTTP_Request($geourl);
-            if (PEAR::isError($req->sendRequest($geourl))) {
+            if ($PR2) {
+                $req = serendipity_request_object($geourl);
+            } else {
+                $req = new HTTP_Request($geourl);
+            }
+
+            if ($PR2) {
+                if (PEAR::isError($req->send())) {
+                    $iserr = true;
+                }
+            } else {
+                if (PEAR::isError($req->sendRequest($geourl))) {
+                    $iserr = true;
+                }
+            }
+
+            if ($iserr) {
                 printf(REMOTE_FILE_NOT_FOUND, $geourl);
             } else {
                 echo PLUGIN_EVENT_GEOTAG_GEOURL_PINGED;
@@ -724,6 +743,7 @@ class serendipity_event_geotag extends serendipity_event
         fflush($fp);
         fclose($fp);
     }
+
     function fetchCacheMap($lat, $long, $isArticle)
     {
         $this->log("lat: $lat long: $long a: $isArticle");
@@ -743,7 +763,11 @@ class serendipity_event_geotag extends serendipity_event
      */
     function saveAndResponseMap($url, $lat, $long, $isArticle)
     {
-        require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+        if (function_exists('serendipity_request_object')) {
+            $PR2 = true;
+        } else {
+            require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+        }
         global $serendipity;
         $fContent   = null;
 
@@ -751,19 +775,40 @@ class serendipity_event_geotag extends serendipity_event
             serendipity_request_start();
         }
 
-        $request_pars['allowRedirects'] = TRUE;
-        $req = new HTTP_Request($url, $request_pars);
-
-        // if the request leads to an error we don't want to have it: return false
-        if (PEAR::isError($req->sendRequest()) || ($req->getResponseCode() != '200')) {
-            $fContent = null;
+        if ($PR2) {
+            $req = serendipity_request_object($url, 'get', array('follow_redirects' => true, 'max_redirects' => 5));
+        } else {
+            $request_pars['allowRedirects'] = TRUE;
+            $req = new HTTP_Request($url, $request_pars);
         }
-        else {
-            // Allow only images!
-            $mime = $req->getResponseHeader("content-type");
-            $mimeparts = explode('/',$mime);
-            if (count($mimeparts)==2 && $mimeparts[0]=='image') {
-                $fContent = $req->getResponseBody();
+
+        if ($PR2) {
+            try {
+                $response = $req->send();
+                if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
+                    throw new HTTP_Request2_Exception('Status code not 200, URL not fetched');
+                }
+                // Allow only images as Avatar!
+                $mime = $response->getHeader("content-type");
+                $mimeparts = explode('/',$mime);
+                if (count($mimeparts)==2 && $mimeparts[0]=='image') {
+                    $fContent = $response->getBody();
+                }
+
+            } catch (HTTP_Request2_Exception $e) {
+                $fContent = null;
+            }
+        } else {
+            // if the request leads to an error we don't want to have it: return false
+            if (PEAR::isError($req->sendRequest()) || ($req->getResponseCode() != '200')) {
+                $fContent = null;
+            } else {
+                // Allow only images!
+                $mime = $req->getResponseHeader("content-type");
+                $mimeparts = explode('/',$mime);
+                if (count($mimeparts)==2 && $mimeparts[0]=='image') {
+                    $fContent = $req->getResponseBody();
+                }
             }
         }
 

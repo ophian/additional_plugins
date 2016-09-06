@@ -4,6 +4,7 @@
    either in early Serendipity 1.6 versions or by implementing
    Smarty 3 OOP with Serendipity 1.7 and up.
  * Uses API for lang includement, touches required version
+ * Check REQUEST object
 
 1.33 (mattsches)
 ----------------------------------
