@@ -38,7 +38,7 @@ class serendipity_plugin_twitter extends serendipity_plugin
             array('title', 'number', 'service', 'username', 'showformat',
             'toall_only', 'filter_all_user', 'filter_rt',
             'use_time_ago', 'dateformat', 'linktext',
-            'followme_link', 'followme_widget', 'followme_widget_counter','followme_widget_dark',
+            'followme_link', 'followme_widget', 'followme_widget_counter', 'followme_widget_dark',
             'cachetime', 'backup'
             );
         // Twitter API 1.1 is supported only via the event plugin
@@ -73,7 +73,7 @@ class serendipity_plugin_twitter extends serendipity_plugin
                 break;
 
             case 'service':
-                $propbag->add('type', 'radio');
+                $propbag->add('type',         'radio');
                 $propbag->add('name',         PLUGIN_TWITTER_SERVICE);
                 $propbag->add('description',  PLUGIN_TWITTER_SERVICE_DESC);
                 $propbag->add('radio',        array(
@@ -84,7 +84,7 @@ class serendipity_plugin_twitter extends serendipity_plugin
                 break;
 
             case 'twitter_api':
-                $propbag->add('type', 'radio');
+                $propbag->add('type',         'radio');
                 $propbag->add('name',         PLUGIN_TWITTER_API11);
                 $propbag->add('description',  PLUGIN_TWITTER_API11_DESC);
                 $propbag->add('radio',        array(
@@ -93,6 +93,7 @@ class serendipity_plugin_twitter extends serendipity_plugin
                     ));
                 $propbag->add('default', '1.0');
                 break;
+
             case 'twitter_oauth':
                 $propbag->add('name',         PLUGIN_TWITTER_OAUTHACC);
                 $propbag->add('description',  PLUGIN_TWITTER_OAUTHACC_DESC);
@@ -102,112 +103,112 @@ class serendipity_plugin_twitter extends serendipity_plugin
                 break;
 
             case 'username':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_TWITTER_USERNAME);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_TWITTER_USERNAME);
                 $propbag->add('description', PLUGIN_TWITTER_USERNAME_DESC);
-                $propbag->add('default', 'username');
+                $propbag->add('default',     'username');
                 break;
 
             case 'number':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_TWITTER_NUMBER);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_TWITTER_NUMBER);
                 $propbag->add('description', PLUGIN_TWITTER_NUMBER_DESC);
-                $propbag->add('default', 10);
+                $propbag->add('default',     10);
                 break;
 
             case 'toall_only': // filter only tweets starting with @
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_TWITTER_TOALL_ONLY);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_TWITTER_TOALL_ONLY);
                 $propbag->add('description', PLUGIN_TWITTER_TOALL_ONLY_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'filter_all_user': // filter tweets containing @
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_TWITTER_FILTER_ALL);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_TWITTER_FILTER_ALL);
                 $propbag->add('description', PLUGIN_TWITTER_FILTER_ALL_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'filter_rt': // filter native retweets
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_TWITTER_FILTER_RT);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_TWITTER_FILTER_RT);
                 $propbag->add('description', PLUGIN_TWITTER_FILTER_RT_DESC);
-                $propbag->add('default', true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'followme_link':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_TWITTER_FOLLOWME_LINK);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_TWITTER_FOLLOWME_LINK);
                 $propbag->add('description', PLUGIN_TWITTER_FOLLOWME_LINK_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'followme_widget':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_TWITTER_FOLLOWME_WIDGET);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_TWITTER_FOLLOWME_WIDGET);
                 $propbag->add('description', PLUGIN_TWITTER_FOLLOWME_WIDGET_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'followme_widget_counter':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_TWITTER_FOLLOWME_WIDGET_COUNT);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_TWITTER_FOLLOWME_WIDGET_COUNT);
                 $propbag->add('description', PLUGIN_TWITTER_FOLLOWME_WIDGET_COUNT_DESC);
-                $propbag->add('default', true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'followme_widget_dark':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_TWITTER_FOLLOWME_WIDGET_DARK);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_TWITTER_FOLLOWME_WIDGET_DARK);
                 $propbag->add('description', PLUGIN_TWITTER_FOLLOWME_WIDGET_DARK_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'use_time_ago':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_TWITTER_USE_TIME_AGO);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_TWITTER_USE_TIME_AGO);
                 $propbag->add('description', PLUGIN_TWITTER_USE_TIME_AGO_DESC);
-                $propbag->add('default', 'false');
+                $propbag->add('default',     'false');
                 break;
 
             case 'dateformat':
-                $propbag->add('type', 'string');
-                $propbag->add('name', GENERAL_PLUGIN_DATEFORMAT);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        GENERAL_PLUGIN_DATEFORMAT);
                 $propbag->add('description', sprintf(GENERAL_PLUGIN_DATEFORMAT_BLAHBLAH, '%A, %B %e %Y'));
-                $propbag->add('default', '%A, %B %e %Y');
+                $propbag->add('default',     '%A, %B %e %Y');
                 break;
 
             case 'linktext':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_TWITTER_LINKTEXT);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_TWITTER_LINKTEXT);
                 $propbag->add('description', PLUGIN_TWITTER_LINKTEXT_DESC);
-                $propbag->add('default', 'link');
+                $propbag->add('default',     'link');
                 break;
 
             case 'cachetime':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_TWITTER_CACHETIME);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_TWITTER_CACHETIME);
                 $propbag->add('description', PLUGIN_TWITTER_CACHETIME_DESC);
-                $propbag->add('default', '300');
+                $propbag->add('default',     '300');
                 break;
 
             case 'showformat':
-                $propbag->add('type', 'radio');
-                $propbag->add('name', PLUGIN_TWITTER_SHOWFORMAT);
+                $propbag->add('type',        'radio');
+                $propbag->add('name',        PLUGIN_TWITTER_SHOWFORMAT);
                 $propbag->add('description', PLUGIN_TWITTER_SHOWFORMAT_DESC);
                 $propbag->add('radio',  array(
                     'value' => array('javascript', 'PHP'),
                     'desc'  => array(PLUGIN_TWITTER_SHOWFORMAT_RADIO_JAVASCRIPT, PLUGIN_TWITTER_SHOWFORMAT_RADIO_PHP)
                     ));
-                $propbag->add('default', 'javascript');
+                $propbag->add('default',     'javascript');
                 break;
 
             case 'backup':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_TWITTER_BACKUP);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_TWITTER_BACKUP);
                 $propbag->add('description', PLUGIN_TWITTER_BACKUP_DESC);
-                $propbag->add('default', 'false');
+                $propbag->add('default',     'false');
                 break;
 
             default:
@@ -220,12 +221,12 @@ class serendipity_plugin_twitter extends serendipity_plugin
     {
         global $serendipity;
 
-        $service        = $this->get_config('service', 'twitter.com');
-        $username       = $this->get_config('username');
+        $service  = $this->get_config('service', 'twitter.com');
+        $username = $this->get_config('username');
 
         // If followme widget is set, disable linḱ
-        if ($service=='twitter.com' && serendipity_db_bool($this->get_config('followme_widget'))) {
-            $this->set_config('followme_link', FALSE);
+        if ($service == 'twitter.com' && serendipity_db_bool($this->get_config('followme_widget', 'false'))) {
+            $this->set_config('followme_link', 'false');
         }
         $cache_user = md5($service) . md5($username);
         $cachefile = $serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . "/twitterresult.$cache_user.json";
@@ -328,7 +329,7 @@ class serendipity_plugin_twitter extends serendipity_plugin
                 if ($number>0) {
                     $counter = 0;
                     $toall_only = serendipity_db_bool($this->get_config('toall_only', false));
-                    $filter_all_user = serendipity_db_bool($this->get_config('filter_all_user', false));
+                    $filter_all_user = serendipity_db_bool($this->get_config('filter_all_user', 'false'));
 
                     foreach ($xml AS $key => $status) {
                         // Change encoding of update to Visitors language
@@ -363,15 +364,15 @@ class serendipity_plugin_twitter extends serendipity_plugin
             }
         }
         if (!$hideDisplay) {
-            if (serendipity_db_bool($this->get_config('followme_link', false))) {
+            if (serendipity_db_bool($this->get_config('followme_link', 'false'))) {
                 echo '<p id="twitter_follow_me"><a href="' . $followme_url . '" class="twitter_follow_me">' . PLUGIN_TWITTER_FOLLOWME_LINK_TEXT . '</a></p>' . "\n";
             }
-            if ($service == 'twitter.com' && serendipity_db_bool($this->get_config('followme_widget', false))) {
+            if ($service == 'twitter.com' && serendipity_db_bool($this->get_config('followme_widget', 'false'))) {
                 $extra_style = '';
-                if (serendipity_db_bool($this->get_config('followme_widget_dark', false))) {
+                if (serendipity_db_bool($this->get_config('followme_widget_dark', 'false'))) {
                     $extra_style .= ' data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF"';
                 }
-                if (!serendipity_db_bool($this->get_config('followme_widget_counter', true))) {
+                if (!serendipity_db_bool($this->get_config('followme_widget_counter', 'true'))) {
                     $extra_style .= '  data-show-count="false"';
                 }
                 echo '<a href="https://twitter.com/'.$username.'" class="twitter-follow-button"'.$extra_style.'>Follow @'.$username.'</a><script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>';
@@ -417,7 +418,7 @@ class serendipity_plugin_twitter extends serendipity_plugin
                 $suffix = "{$suffix}_{$idx}_" . md5($this->pluginSecret() . "_{$idx}");
             }
             // This is relevant only for API 1.1
-            if (!serendipity_db_bool($this->get_config('filter_rt', true))) {
+            if (!serendipity_db_bool($this->get_config('filter_rt', 'true'))) {
                 $suffix = "{$suffix}_r";
             }
         }
@@ -432,12 +433,16 @@ class serendipity_plugin_twitter extends serendipity_plugin
         $cachetime      = (int)$this->get_config('cachetime', 300);
 
         if (!file_exists($cachefile) || filemtime($cachefile) < (time()-$cachetime)) {
-            require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+            if (function_exists('serendipity_request_object')) {
+                $PR2 = true;
+            } else {
+                require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+            }
 
             $service        = $this->get_config('service');
             $username       = $this->get_config('username');
             $number         = $this->get_config('number');
-            if (serendipity_db_bool($this->get_config('toall_only', false))) {
+            if (serendipity_db_bool($this->get_config('toall_only', 'false'))) {
                 $number = 50; // Fetch many in the hope, that there are enough globals with it.
             }
 
@@ -454,13 +459,20 @@ class serendipity_plugin_twitter extends serendipity_plugin
             }
 
             serendipity_request_start();
-            $req = new HTTP_Request($search_twitter_uri);
-            $req->sendRequest();
-            $response = trim($req->getResponseBody());
-            $error = $req->getResponseCode();
+            if ($PR2) {
+                $req = serendipity_request_object($search_twitter_uri);
+                $response = $req->send();
+                $response = $response->getBody();
+                $error = $response->getStatus();
+            } else {
+                $req = new HTTP_Request($search_twitter_uri);
+                $req->sendRequest();
+                $response = trim($req->getResponseBody());
+                $error = $req->getResponseCode();
+            }
             serendipity_request_end();
 
-            if ($error==200 &&!empty($response)) {
+            if ($error == 200 &&!empty($response)) {
                 $fp = fopen($cachefile, 'w');
                 fwrite($fp, serialize($response));
                 fflush($fp);

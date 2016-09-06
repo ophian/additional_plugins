@@ -1894,7 +1894,11 @@ a.twitter_update_time {
     function updateTwitterTimelineCache($parts)
     {
         global $serendipity;
-        require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+        if (function_exists('serendipity_request_object')) {
+            $PR2 = true;
+        } else {
+            require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+        }
 
         if (count($parts)<5) return time() + (60 * 60); // params corrupted next try allowed one minute later
 
@@ -1958,15 +1962,22 @@ a.twitter_update_time {
                 }
 
                 serendipity_request_start();
-                $req = new HTTP_Request($search_twitter_uri);
-                $req->sendRequest();
-                $response = trim($req->getResponseBody());
-                $error = $req->getResponseCode();
+                if ($PR2) {
+                    $req = serendipity_request_object($search_twitter_uri);
+                    $response = $req->send();
+                    $response = $response->getBody();
+                    $error = $response->getStatus();
+                } else {
+                    $req = new HTTP_Request($search_twitter_uri);
+                    $req->sendRequest();
+                    $response = trim($req->getResponseBody());
+                    $error = $req->getResponseCode();
+                }
                 serendipity_request_end();
             }
 
             $this->log("error: {$error}");
-            if ($error==200 && !empty($response)) {
+            if ($error == 200 && !empty($response)) {
                 $this->log("Writing response into cache.");
                 $fp = fopen($cachefile, 'w');
                 fwrite($fp, serialize($response));
