@@ -185,18 +185,24 @@ class serendipity_event_facebook extends serendipity_event
 
         // Check if our link is contained inside the foreign link
         if (stristr($my_link, $my_base)) {
-            if ($this->debug) $my_link . " is contained in " . $my_base . "\n";
+            if ($this->debug) {
+                $my_link . " is contained in " . $my_base . "\n";
+            }
 
             $check_link = str_replace($my_base, $serendipity['serendipityHTTPPath'], $my_link);
 
-            if ($this->debug) echo "Permalinkcheck for: $check_link\n";
+            if ($this->debug) {
+                echo "Permalinkcheck for: $check_link\n";
+            }
             preg_match(PAT_PERMALINK, $check_link, $matches);
             $id = serendipity_searchPermalink($serendipity['permalinkStructure'], $check_link, (!empty($matches[2]) ? $matches[2] : $matches[1]), 'entry');
 
             return $id;
         }
 
-        if ($this->debug) echo $my_link . " is NOT contained in " . $my_base . "\n";
+        if ($this->debug) {
+            echo $my_link . " is NOT contained in " . $my_base . "\n";
+        }
 
         return false;
     }
@@ -223,7 +229,11 @@ class serendipity_event_facebook extends serendipity_event
 
         header('Content-Type: text/plain; charset=' . LANG_CHARSET);
 
-        require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+        if (function_exists('serendipity_request_object')) {
+            $PR2 = true;
+        } else {
+            require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+        }
 
         $users = explode(',', $this->get_config('facebook_users'));
         foreach($users AS $user) {
@@ -233,10 +243,31 @@ class serendipity_event_facebook extends serendipity_event
             $url = 'http://graph.facebook.com/' . $user . '/posts?limit=' . $this->get_config('limit');
 
             serendipity_request_start();
-            $req = new HTTP_Request($url, array('allowRedirects' => true, 'maxRedirects' => 3));
-            // code 200: OK, code 30x: REDIRECTION
-            if (PEAR::isError($req->sendRequest()) || !preg_match('/200/', $req->getResponseCode())) {
-                if ($this->debug) echo "Request failed. (" . $req->getResponseCode() . ")";
+            if ($PR2) {
+                $req = serendipity_request_object($url, 'get', array('follow_redirects' => true, 'max_redirects' => 3));
+            } else {
+                $req = new HTTP_Request($url, array('allowRedirects' => true, 'maxRedirects' => 3));
+            }
+
+            if ($PR2) {
+                $response = $req->send();
+                if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
+                    if ($this->debug) {
+                        echo "Request failed. (" . $response->getStatus() . ")";
+                    }
+                    $failed = true;
+                }
+            } else {
+                // code 200: OK, code 30x: REDIRECTION
+                if (PEAR::isError($req->sendRequest()) || !preg_match('/200/', $req->getResponseCode())) {
+                    if ($this->debug) {
+                        echo "Request failed. (" . $req->getResponseCode() . ")";
+                    }
+                    $failed = true;
+                }
+            }
+
+            if ($failed) {
                 serendipity_request_end();
                 continue;
             } else {
@@ -259,39 +290,54 @@ class serendipity_event_facebook extends serendipity_event
                     // Skip some links that we can be sure are not to be requested
                     if (preg_match('@/(www\.)?(facebook.com|foursquare.com)/@i', $fb_item->link)) continue;
 
-                    if ($this->debug) echo "\nRequesting Link " . $fb_item->link . "\n";
+                    if ($this->debug) {
+                        echo "\nRequesting Link " . $fb_item->link . "\n";
+                    }
 
                     // Check if we already have metadata about this link.
                     $meta = serendipity_db_query("SELECT entryid, resolved_url FROM {$serendipity['dbPrefix']}facebook WHERE base_url = '" . serendipity_db_escape_string($fb_item->link) . "'");
                     if ($meta[0]['resolved_url'] != '') {
                         // YES, link is stored.
 
-                        if ($this->debug) echo "(Metadata exists)\n";
+                        if ($this->debug) {
+                            echo "(Metadata exists)\n";
+                        }
                         // Check if stored link is no blog entry of ours.
                         if ((int)$meta[0]['entryid'] == 0) continue;
 
                         $entry_id = $meta[0]['entryid'];
 
-                        if ($this->debug) echo "(Resolved to: $entry_id)\n";
+                        if ($this->debug) {
+                            echo "(Resolved to: $entry_id)\n";
+                        }
                     } else {
                         // NO, link not yet stored. Request final location.
-                        if ($this->debug) echo "(No metadata yet)\n";
+                        if ($this->debug) {
+                            echo "(No metadata yet)\n";
+                        }
 
                         serendipity_request_start();
-                        $subreq = new HTTP_Request($fb_item->link, array('allowRedirects' => true, 'maxRedirects' => 3));
-                        $ret = $subreq->sendRequest();
+                        if ($PR2) {
+                            $subreq = serendipity_request_object($fb_item->link, 'get', array('follow_redirects' => true, 'max_redirects' => 3));
+                            $ret = $subreq->send();
+                        } else {
+                            $subreq = new HTTP_Request($fb_item->link, array('allowRedirects' => true, 'maxRedirects' => 3));
+                            $ret = $subreq->sendRequest();
+                        }
                         serendipity_request_end();
 
                         $check_url = $subreq->_url->url;
 
                         $entry_id = $this->linkmatch($check_url);
 
-                        if ($this->debug) echo "(Resolved to: $entry_id)\n";
+                        if ($this->debug) {
+                            echo "(Resolved to: $entry_id)\n";
+                        }
 
                         serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}facebook
-                          (entryid, base_url, resolved_url)
-                        VALUES
-                          (" . (int)$entry_id . ", '" . serendipity_db_escape_string($fb_item->link) . "', '" . serendipity_db_escape_string($check_url) . "')");
+                                                (entryid, base_url, resolved_url)
+                                                   VALUES
+                                                (" . (int)$entry_id . ", '" . serendipity_db_escape_string($fb_item->link) . "', '" . serendipity_db_escape_string($check_url) . "')");
 
                         // Check if stored link is no blog entry of ours
                         if (empty($entry_id)) continue;
@@ -301,12 +347,21 @@ class serendipity_event_facebook extends serendipity_event
 
                     // The comments inside the main API graph may not contain everything, so fetch each comment uniquely.
                     $curl = 'http://graph.facebook.com/' . $fb_item->id . '/comments';
-                    if ($this->debug) echo $curl . "\n";
+                    if ($this->debug) {
+                        echo $curl . "\n";
+                    }
 
                     serendipity_request_start();
-                    $subreq = new HTTP_Request($curl, array('allowRedirects' => true, 'maxRedirects' => 3));
-                    $ret    = $subreq->sendRequest();
-                    $cdata  = $subreq->getResponseBody();
+                    if ($PR2) {
+                        $subreq = serendipity_request_object($curl, 'get', array('follow_redirects' => true, 'max_redirects' => 3));
+                        $ret    = $subreq->send();
+                        $cdata  = $subreq->getBody();
+                    } else {
+                        $subreq = new HTTP_Request($curl, array('allowRedirects' => true, 'maxRedirects' => 3));
+                        $ret    = $subreq->sendRequest();
+                        $cdata  = $subreq->getResponseBody();
+                    }
+
                     serendipity_request_end();
 
                     $cfb   = json_decode($cdata);
@@ -320,12 +375,16 @@ class serendipity_event_facebook extends serendipity_event
                                                     WHERE entry_id = " . (int)$entry_id . "
                                                       AND title    = 'facebook_" . $comment->id . "'");
                         if ($c[0]['id'] > 0) {
-                            if ($this->debug) echo "Comment already fetched.\n";
+                            if ($this->debug) {
+                                echo "Comment already fetched.\n";
+                            }
                             continue;
                         }
 
                         $this->addComment($entry_id, $user, $post_id, $comment);
-                        if ($this->debug) echo "comment added.\n";
+                        if ($this->debug) {
+                            echo "comment added.\n";
+                        }
                     }
                 }
             }
