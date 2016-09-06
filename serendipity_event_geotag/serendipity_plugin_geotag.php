@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 // 20050923 Zoran Kovacevic (http://www.kovacevic.nl/blog).
 // The plugin is a shameless copy from Rob Antonishen (http://ffaat.pointclark.net/).
@@ -14,18 +14,15 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include_once dirname(__FILE__) . '/lang_en.inc.php';
 include dirname(__FILE__) . '/plugin_version.inc.php';
 
-class serendipity_plugin_geotag extends serendipity_plugin {
+class serendipity_plugin_geotag extends serendipity_plugin
+{
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $propbag->add('name',        PLUGIN_GEOTAG_GMAP_NAME);
         $propbag->add('description', PLUGIN_GEOTAG_GMAP_NAME_DESC);
         $propbag->add('author',      PLUGIN_EVENT_GEOTAG_AUTHOR);
@@ -33,14 +30,15 @@ class serendipity_plugin_geotag extends serendipity_plugin {
         $propbag->add('version',     PLUGIN_EVENT_GEOTAG_VERSION);
         $propbag->add('configuration', array('title','service','key','width','height','latitude','longitude','zoom','type','rss_url','geodata_source','category'));
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('groups',      array('FRONTEND_EXTERNAL_SERVICES'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
       global $serendipity;
         switch($name) {
             case 'title':
@@ -58,7 +56,7 @@ class serendipity_plugin_geotag extends serendipity_plugin {
                 ));
                 $propbag->add('name',        PLUGIN_GEOTAG_SERVICE);
                 $propbag->add('description', PLUGIN_GEOTAG_SERVICE_DESC);
-                $propbag->add('default', 'google');
+                $propbag->add('default',     'google');
 
                 break;
 
@@ -105,7 +103,7 @@ class serendipity_plugin_geotag extends serendipity_plugin {
                 break;
 
             case 'type':
-                $propbag->add('type', 		'select');
+                $propbag->add('type',         'select');
                 $propbag->add('name', PLUGIN_GEOTAG_GMAP_TYPE);
                 $propbag->add('description', PLUGIN_GEOTAG_GMAP_TYPE_DESC);
                 $propbag->add('default', 'G_HYBRID_MAP');
@@ -156,7 +154,8 @@ class serendipity_plugin_geotag extends serendipity_plugin {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         //get config vars
@@ -220,12 +219,13 @@ class serendipity_plugin_geotag extends serendipity_plugin {
             }
         }
 
-        ?>
+?>
         <div id="serendipity_geotag_map" style="width: <?php echo $width ?>px; height: <?php echo $height ?>px"></div>
-    <?php
+<?php
 
 
-if ($geodata_source != 'database') { ?>
+if ($geodata_source != 'database') {
+?>
 <script type="text/javascript ">
 (function () {
     getMarkerOptions = function (item) {
@@ -269,9 +269,10 @@ if ($geodata_source != 'database') { ?>
  * GOOGLE MAPS *
  **************/
 
-if ($service === 'google') { ?>
+if ($service === 'google') {
+?>
 
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=<?php echo $key;?>&sensor=false"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=<?php echo $key; ?>&sensor=false"></script>
 <script type="text/javascript">
 //<![CDATA[
 (function () {
@@ -310,7 +311,9 @@ if ($service === 'google') { ?>
 
 <?php
     if ($geodata_source == 'database') {
-        foreach ($tt as $t) { ?>
+        foreach ($tt as $t) {
+?>
+
 setMarker({
     lat: <?php echo $t['lat']; ?>,
     lng: <?php echo $t['lng']; ?>,
@@ -319,7 +322,8 @@ setMarker({
 });
 
 <?php   }
-    } else { ?>
+    } else {
+?>
 
 var rss_url = "<?php echo $rss_url; ?>";
 if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -343,19 +347,22 @@ xmlhttp.onreadystatechange = function () {
 };
 xmlhttp.open('GET', rss_url, true);
 xmlhttp.send(null);
+
 <?php
 }
 ?>
+
 //]]>
 </script>
-        <?php
+<?php
 
 /*****************
  * OPENSTREETMAP *
  ****************/
 
         } elseif ($service === 'osm') {
-            ?>
+?>
+
 <script src="http://openlayers.org/api/OpenLayers.js"></script>
 <script type="text/javascript">
 (function () {
@@ -417,10 +424,12 @@ var attribution = document.getElementsByClassName('olControlAttribution'),
 attr.setAttribute('style', 'position: absolute; z-index: 1004; bottom: 0;');
 map.addLayer(markerCollection);
 map.setCenter(lonLat, zoom);
+
 <?php
     if ($geodata_source === 'database') {
         $counter = 0;
-        foreach ($tt as $t) { ?>
+        foreach ($tt as $t) {
+?>
 
 titles.push('<?php echo addslashes($t['title']); ?>');
 urls.push('<?php echo $t['permalink']; ?>');
@@ -433,10 +442,12 @@ setMarkerOsm(
     },
     null
 );
+
 <?php
             $counter++;
         }
-    } else { ?>
+    } else {
+?>
 
 var rss_url = "<?php echo $rss_url; ?>",
     popup,
@@ -463,11 +474,17 @@ xmlhttp.onreadystatechange = function() {
 };
 xmlhttp.open('GET', rss_url, true);
 xmlhttp.send(null);
-    <?php
+
+<?php
     } // END database || RSS
-            ?>
+?>
+
 </script>
-    <?php
+
+<?php
         }
     }
+
 }
+
+?>

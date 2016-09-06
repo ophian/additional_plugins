@@ -1,9 +1,10 @@
 <?php
-class GeoTagDb {
-    
-    static function delete($entryId, $supported_properties) {
+class GeoTagDb
+{
+    static function delete($entryId, $supported_properties)
+    {
         global $serendipity;
-        
+
         if (empty($entryId)) return;
         foreach($supported_properties AS $prop_key) {
             $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$entryId . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
@@ -11,7 +12,8 @@ class GeoTagDb {
         }
     }
 
-    static function addEntryProperties($entryId, $supported_properties, &$properties, $deleteMissing = true) {
+    static function addEntryProperties($entryId, $supported_properties, &$properties, $deleteMissing = true)
+    {
         global $serendipity;
         // Get existing data
         $property = serendipity_fetchEntryProperties($entryId);
@@ -33,7 +35,7 @@ class GeoTagDb {
                 }
             } elseif (empty($property[$prop_key])){
                 $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$entryId . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
-            }            
+            }
             if (!empty($q)) serendipity_db_query($q);
         }
     }
