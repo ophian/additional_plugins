@@ -1,65 +1,59 @@
-<?php # 
-
-/*
-TODO:
-    - fake cronjob integration?
-*/
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_facebook extends serendipity_event {
+class serendipity_event_facebook extends serendipity_event
+{
     var $title = PLUGIN_EVENT_FACEBOOK_NAME;
     var $debug = false;
     
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_EVENT_FACEBOOK_NAME);
         $propbag->add('description',   PLUGIN_EVENT_FACEBOOK_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking');
+        $propbag->add('author',        'Garvin Hicking, Ian');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
+            'serendipity' => '1.7',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
-        $propbag->add('version',       '0.5.1');
+        $propbag->add('version',       '0.6');
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $propbag->add('event_hooks', array(
-            'frontend_display' => true,
-            'external_plugin'  => true,
-            'cronjob' => true,
-            'frontend_header' => true
+            'frontend_display'  => true,
+            'external_plugin'   => true,
+            'cronjob'           => true,
+            'frontend_header'   => true
 
         ));
         
         $propbag->add('configuration', array('facebook_users', 'facebook_moderate', 'limit', 'via', 'cronjob'));
     }
 
-    function tableCreated($table = 'facebook')  {
+    function tableCreated($table = 'facebook')
+    {
         global $serendipity;
 
-        $q = "select count(*) from {$serendipity['dbPrefix']}" . $table;
+        $q = "SELECT COUNT(*) FROM {$serendipity['dbPrefix']}" . $table;
         $row = serendipity_db_query($q, true, 'num');
 
-        if (!is_numeric($row[0])) {        // if the response we got back was an SQL error.. :P
+        // if the response we got back was an SQL error.. :P
+        if (!is_numeric($row[0])) {
             return false;
         } else {
             return true;
         }
     }
 
-    function install() {
+    function install()
+    {
         global $serendipity;
 
         if (!$this->tableCreated('facebook')) {
@@ -75,7 +69,8 @@ class serendipity_event_facebook extends serendipity_event {
         }
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
         
         switch($name) {
@@ -125,15 +120,18 @@ class serendipity_event_facebook extends serendipity_event {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_EVENT_FACEBOOK_NAME;
     }
     
-    function example() {
-        return '<br />' . PLUGIN_EVENT_FACEBOOK_HOWTO;
+    function example()
+    {
+        return "\n".'<p class="msg_notice"> ' . PLUGIN_EVENT_FACEBOOK_HOWTO . "</p>\n\n";
     }
     
-    function addcomment($entry_id, $user, $post_id, &$comment) {
+    function addcomment($entry_id, $user, $post_id, &$comment)
+    {
         global $serendipity;
 
         $oldses = $_SESSION['HTTP_REFERER'];
@@ -144,9 +142,9 @@ class serendipity_event_facebook extends serendipity_event {
         $serendipity['POST']['token'] = md5(session_id());
         
         $commentInfo = array();
-        $commentInfo['name']    = $comment->from->name . $this->get_config('via');
-        $commentInfo['url']     = 'http://www.facebook.com/' . $user . '?v=wall&story_fbid=' . $post_id;
-        $commentInfo['email']   = $comment->from->id . '@example.com';
+        $commentInfo['name']  = $comment->from->name . $this->get_config('via');
+        $commentInfo['url']   = 'http://www.facebook.com/' . $user . '?v=wall&story_fbid=' . $post_id;
+        $commentInfo['email'] = $comment->from->id . '@example.com';
         $tcomment = $comment->message;
         if ($strip_tags) {
             $tcomment = strip_tags($tcomment);
@@ -171,7 +169,8 @@ class serendipity_event_facebook extends serendipity_event {
         $_SESSION['HTTP_REFERER'] = $oldses;
     }
 
-    function linkmatch($link) {
+    function linkmatch($link)
+    {
         global $serendipity;
         static $my_base = null;
         
@@ -202,7 +201,8 @@ class serendipity_event_facebook extends serendipity_event {
         return false;
     }
     
-    function &decode($string) {
+    function &decode($string)
+    {
         if (LANG_CHARSET == 'ISO-8859-1') {
             return utf8_decode($string);
         }
@@ -210,7 +210,8 @@ class serendipity_event_facebook extends serendipity_event {
         return $string;
     }
 
-    function fetchFacebook() {
+    function fetchFacebook()
+    {
         global $serendipity;
         $this->install();
         
@@ -331,7 +332,8 @@ class serendipity_event_facebook extends serendipity_event {
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         
         $hooks = &$bag->get('event_hooks');
@@ -344,41 +346,40 @@ class serendipity_event_facebook extends serendipity_event {
                         serendipity_event_cronjob::log('Facebook', 'plugin');
                         $this->fetchFacebook();
                     }
-                    return true;
                     break;
 
                 case 'external_plugin':
-                    $parts      = explode('_', $eventData);
+                    $parts = explode('_', $eventData);
                     
                     if ($parts[0] == 'facebookcomments') {
                         $this->fetchFacebook();
                     }
-
-                    return true;
                     break;
 
                 case 'frontend_header':
-                    if (!isset($GLOBALS['entry'][0])) return true;
+                    // Only emit in Single Entry Mode
+                    if ($serendipity['GET']['id'] && $serendipity['view'] == 'entry') {
+                        // we fetch the internal smarty object to get the current entry body
+                        $entry = (array)$eventData['smarty']->tpl_vars['entry']->value;
 
-                    // Taken from: http://developers.facebook.com/docs/opengraph/
-                    echo '<!--serendipity_event_facebook-->' . "\n";
-                    echo '<meta property="og:title" content="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($GLOBALS['entry'][0]['title']) : htmlspecialchars($GLOBALS['entry'][0]['title'], ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
-                    echo '<meta property="og:description" content="' . substr(strip_tags($GLOBALS['entry'][0]['body']), 0, 200) . '..." />' . "\n";
+                        // Taken from: http://developers.facebook.com/docs/opengraph/
+                        echo '    <!--serendipity_event_facebook-->' . "\n";
+                        echo '    <meta property="og:title" content="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['title']) : htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
+                        echo '    <meta property="og:description" content="' . substr(strip_tags($entry['body']), 0, 200) . '..." />' . "\n";
 
-                    echo '<meta property="og:type" content="article" />' . "\n";
-                    echo '<meta property="og:site_name" content="' . $serendipity['blogTitle'] . '" />' . "\n";
+                        echo '    <meta property="og:type" content="article" />' . "\n";
+                        echo '    <meta property="og:site_name" content="' . $serendipity['blogTitle'] . '" />' . "\n";
 
-                    echo '<meta property="og:url" content="http' . ($_SERVER['HTTPS'] ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . (function_exists('serendipity_specialchars') ? serendipity_specialchars($_SERVER['REQUEST_URI']) : htmlspecialchars($_SERVER['REQUEST_URI'], ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
+                        echo '    <meta property="og:url" content="http' . ($_SERVER['HTTPS'] ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . (function_exists('serendipity_specialchars') ? serendipity_specialchars($_SERVER['REQUEST_URI']) : htmlspecialchars($_SERVER['REQUEST_URI'], ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
                     
-                    if (preg_match('@<img.*src=["\'](.+)["\']@imsU', $GLOBALS['entry'][0]['body'] . $GLOBALS['entry'][0]['extended'], $im)) {
-                        if (preg_match('/^http/i', $im[1])) {
-                          echo '<meta property="og:image" content="' . $im[1] . '" />' . "\n";
-                        } else {
-                          echo '<meta property="og:image" content="http' . ($_SERVER['HTTPS'] ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . $im[1] . '" />' . "\n";
-                       }
+                        if (preg_match('@<img.*src=["\'](.+)["\']@imsU', $entry['body'] . $entry['extended'], $im)) {
+                            if (preg_match('/^http/i', $im[1])) {
+                            echo '    <meta property="og:image" content="' . $im[1] . '" />' . "\n";
+                            } else {
+                            echo '    <meta property="og:image" content="http' . ($_SERVER['HTTPS'] ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . $im[1] . '" />' . "\n";
+                            }
+                        }
                     }
-
-                    return true;
                     break;
 
                 // Print out image html for the user avatar into the frontend_display 
@@ -395,16 +396,19 @@ class serendipity_event_facebook extends serendipity_event {
                         </div><div class="facebook_comment">' . $eventData['comment'] . '</div>';
                         $eventData['comment_class'] .= ' facebook_avatar ';
                     }
-
-                    return true;
                     break;
-                
-              default:
-                return false;
+
+                default:
+                    return false;
+
             }
+            return true;
         } else {
             return false;
         }
     }
-    
+
 }
+
+/* vim: set sts=4 ts=4 expandtab : */
+?>
