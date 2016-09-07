@@ -239,11 +239,11 @@
 <summary>RSS アグリゲータ</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator</description>
-<maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.42</version>
+  <version>0.43</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-08-27</date>
+  <date>2016-09-07</date>
   <filelist>
 <dir name="serendipity_event_aggregator">
 <file>.htaccess</file>
@@ -1514,9 +1514,9 @@
 <description>Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.</description>
 <maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.07</version>
+  <version>1.08</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
+  <date>2016-09-07</date>
   <filelist>
 <dir name="serendipity_event_commentspice">
 <file>.htaccess</file>

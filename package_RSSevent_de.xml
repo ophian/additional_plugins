@@ -66,9 +66,9 @@
 <title>RSS Aggregator: Aggregiert Einträge von mehreren RSS Feeds (&quot;Planet&quot;). WICHTIGER HINWEIS: Die Aktualisierung des Aggregators muss derzeit noch manuell via Crontab aufgerufen werden. Rufen Sie im gewünschten Abstand per cronjob o.ä. folgende URL auf: index.php?/plugin/aggregator</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_aggregator</link>
 <category>Event Plugins</category>
-<author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt</author>
+<author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Aggregiert Einträge von mehreren RSS Feeds (&quot;Planet&quot;). WICHTIGER HINWEIS: Die Aktualisierung des Aggregators muss derzeit noch manuell via Crontab aufgerufen werden. Rufen Sie im gewünschten Abstand per cronjob o.ä. folgende URL auf: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sat, 27 Aug 2016 15:17:18 +0200</pubDate>
+<pubDate>Wed, 07 Sep 2016 09:42:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 15:10:27 +0200</pubDate>
+<pubDate>Wed, 07 Sep 2016 09:12:42 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -428,7 +428,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook&lt;/b&gt;&lt;br /&gt;Imports comments made on facebook postings (like through RSS Graffiti) back into the blog. Also embeds Facebook OpenGraph Meta-Tags into the blog. Note that adding &quot;like&quot;-Buttons to blog entries is achieved via the serendipity_event_findmore plugin! &lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Tue, 06 Sep 2016 16:35:24 +0200</pubDate>
+<pubDate>Tue, 06 Sep 2016 17:38:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>
