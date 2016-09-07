@@ -18,7 +18,7 @@
 @define('PLUGIN_AUDIOSCROBBLER_FORMATSTRING', 'Formátování řádků');
 @define('PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLAHBLAH', 'Použijte proměnnou %ARTIST% pro umístění jména interpreta, %SONG% pro název skladby, %ALBUM% pro název alba a %DATE% pro datum.');
 @define('PLUGIN_AUDIOSCROBBLER_UTCDIFFERENCE', 'Posun času vůči GMT (Greenwichský čas)');
-@define('PLUGIN_AUDIOSCROBBLER_UTCDIFFERENCE_BLAHBLAH', 'Posun vůči Greenwichskému času (např. EST, tj. Boston a New York v USA = -5)');   
+@define('PLUGIN_AUDIOSCROBBLER_UTCDIFFERENCE_BLAHBLAH', 'Posun vůči Greenwichskému času (např. EST, tj. Boston a New York v USA = -5)');
 @define('PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLOCK', 'Formát postranního bloku Audioscrobbler');
 @define('PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLOCK_BLAHBLAH', 'Použijte proměnnou %ENTRIES% pro seznam skladeb, %PROFILE% pro zobrazení odkazu na Váš profil na Audioscrobbleru a %LASTUPDATE% pro datum, kdy byl naposledy obnoven obsah cache s RSS kanálem.');
 @define('PLUGIN_AUDIOSCROBBLER_PROFILETITLE', 'Text odkazu na profil');
@@ -41,3 +41,4 @@
 @define('PLUGIN_AUDIOSCROBBLER_NUMBER_BLAHBLAH', 'Kolik posledních skladeb se má zobrazovat? (musí být větší nebo rovna 1; obvyklá hodnota: 1)');
 @define('PLUGIN_AUDIOSCROBBLER_FORCE_ENCODING', 'Vynutit kódování:');
 @define('PLUGIN_AUDIOSCROBBLER_FORCE_ENCODING_BLAHBLAH', 'Serendipity předpokládá, že data z Audioscrobbleru přichází v kódování UTF-8. Pokud se některé speciální znaky nezobrazují správně, protože Váš blog nemá nastavenou znakovou sadu na UTF-8, zadejte zde odpovídající kódování.');
+

@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Alexey Noskov <alexey.noskov@gmail.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -19,7 +19,7 @@
 @define('PLUGIN_AUDIOSCROBBLER_FORMATSTRING', 'Форматирование записи');
 @define('PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLAHBLAH', 'Используйте %ARTIST% для имени исполнитея, %SONG% для имени композиции, %ALBUM% для имени альбома and %DATE% для даты.');
 @define('PLUGIN_AUDIOSCROBBLER_UTCDIFFERENCE', 'Stunden Unterschied zur UTC Zeit');
-@define('PLUGIN_AUDIOSCROBBLER_UTCDIFFERENCE_BLAHBLAH', 'Смещение времени от GMT (Пример: Москва (Россия) = 3)');   
+@define('PLUGIN_AUDIOSCROBBLER_UTCDIFFERENCE_BLAHBLAH', 'Смещение времени от GMT (Пример: Москва (Россия) = 3)');
 @define('PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLOCK', 'Форматирование всего блока');
 @define('PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLOCK_BLAHBLAH', 'Используйте %ENTRIES% для списка композицийt, %PROFILE% для ссылки на профиль, и %LASTUPDATE% для времени последнего кэширования.');
 @define('PLUGIN_AUDIOSCROBBLER_PROFILETITLE', 'Заголовок для ссылки на профиль');

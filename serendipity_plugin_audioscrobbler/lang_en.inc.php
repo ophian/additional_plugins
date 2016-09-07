@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Noel <kriana_raktara@comcast.net>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -19,7 +19,7 @@
 @define('PLUGIN_AUDIOSCROBBLER_FORMATSTRING', 'Entry Formatting');
 @define('PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLAHBLAH', 'Use %ARTIST% for the Artist, %SONG% for the Song, %ALBUM% for the Album and %DATE% for the Date.');
 @define('PLUGIN_AUDIOSCROBBLER_UTCDIFFERENCE', 'Stunden Unterschied zur UTC Zeit');
-@define('PLUGIN_AUDIOSCROBBLER_UTCDIFFERENCE_BLAHBLAH', 'Time offset from GMT (example: EST (Boston, New York (USA)) = -5)');   
+@define('PLUGIN_AUDIOSCROBBLER_UTCDIFFERENCE_BLAHBLAH', 'Time offset from GMT (example: EST (Boston, New York (USA)) = -5)');
 @define('PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLOCK', 'Formatting for the whole block');
 @define('PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLOCK_BLAHBLAH', 'Use %ENTRIES% for the songlist, %PROFILE% for a link to your Audioscrobbler Profile, and %LASTUPDATE% for the date and time the feed was last cached.');
 @define('PLUGIN_AUDIOSCROBBLER_PROFILETITLE', 'Title for the Profile Link');

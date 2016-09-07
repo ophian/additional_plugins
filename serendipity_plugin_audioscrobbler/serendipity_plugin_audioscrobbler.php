@@ -2,49 +2,61 @@
 
 // By Alphalogic (aka Flo Solcher) alpha@alphalogic.org
 
-
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include_once dirname(__FILE__) . '/lang_en.inc.php';
-
-class s9y_audioscrobbler_XMLParser {
-    function parseXML($xml_content, $forced_encoding = null) {
+class s9y_audioscrobbler_XMLParser
+{
+    function parseXML($xml_content, $forced_encoding = null)
+    {
         $xml_parser = xml_parser_create();
         xml_parser_set_option ($xml_parser, XML_OPTION_TARGET_ENCODING, 'UTF-8');
         xml_parser_set_option ($xml_parser, XML_OPTION_CASE_FOLDING, 1);
         xml_parser_set_option ($xml_parser, XML_OPTION_SKIP_WHITE, 0);
-	$utf8_content = serendipity_utf8_encode($xml_content);
+        $utf8_content = serendipity_utf8_encode($xml_content);
         xml_parse_into_struct($xml_parser, $utf8_content, $xml_array);
         xml_parser_free($xml_parser);
         return $xml_array;
     }
-    function getXMLArray($file, $forced_encoding = null) {
-        require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
-        $req = new HTTP_Request($file);
-        if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
-            if ( ini_get( "allow_url_fopen")) {
-                $data = file_get_contents($file);
+
+    function getXMLArray($file, $forced_encoding = null)
+    {
+        if (function_exists('serendipity_request_object')) {
+            $req = serendipity_request_object($file);
+            $response = $req->send();
+            if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
+                if (ini_get("allow_url_fopen")) {
+                    $data = file_get_contents($file);
+                } else {
+                    $data = "";
+                }
             } else {
-                $data = "";
+                $data = $response->getBody();
             }
         } else {
-            $data = $req->getResponseBody();
+            require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
+            $req = new HTTP_Request($file);
+            if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
+                if (ini_get("allow_url_fopen")) {
+                    $data = file_get_contents($file);
+                } else {
+                    $data = "";
+                }
+            } else {
+                $data = $req->getResponseBody();
+            }
         }
-        if (trim($data)== '') return false;
+        if (trim($data) == '') return false;
         return $this->parseXML($data, $forced_encoding);
     }
+
 }
 
-class serendipity_plugin_audioscrobbler extends serendipity_plugin {
-
+class serendipity_plugin_audioscrobbler extends serendipity_plugin
+{
     var $title              = PLUGIN_AUDIOSCROBBLER_TITLE;
     var $scrobbler_error    = array();
     var $songs              = array();
@@ -56,16 +68,17 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin {
     var $read_scrobbler_feed = false;
     var $scrobblerlastupdate;
 
-   function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $this->title = $this->get_config('sidebartitle', $this->title);
 
         $propbag->add('name',          PLUGIN_AUDIOSCROBBLER_TITLE);
         $propbag->add('description',   PLUGIN_AUDIOSCROBBLER_TITLE_BLAHBLAH);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Flo Solcher');
-        $propbag->add('version',       '1.25.1');
+        $propbag->add('version',       '1.26');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -89,51 +102,53 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin {
                                             ));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
 
-            case 'lastupdate': case 'forced':
+            case 'lastupdate':
+            case 'forced':
                 $propbag->add('type', 'hidden');
                 $propbag->add('default', 0);
                 break;
 
             case 'number':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_AUDIOSCROBBLER_NUMBER);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_NUMBER);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_NUMBER_BLAHBLAH);
-                $propbag->add('default', '0');
+                $propbag->add('default',     '0');
                 break;
 
             case 'sidebartitle':
-                $propbag->add('type', 'string');
-                $propbag->add('name', TITLE);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        TITLE);
                 $propbag->add('description', TITLE_FOR_NUGGET);
-                $propbag->add('default', '');
+                $propbag->add('default',     '');
                 break;
 
             case 'username':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_AUDIOSCROBBLER_USERNAME);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_USERNAME);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_USERNAME_BLAHBLAH);
-                $propbag->add('default', '');
+                $propbag->add('default',     '');
                 break;
 
             case 'stack':
-                 $propbag->add('type', 'boolean');
+                $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_STACK);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_STACK_BLAHBLAH);
-                $propbag->add('default', true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'songlink':
-                 $propbag->add('type', 'boolean');
+                 $propbag->add('type',       'boolean');
                 $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_SONGLINK);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_SONGLINK_BLAHBLAH);
-                $propbag->add('default', '1');
+                $propbag->add('default',     'true');
                 break;
 
             case 'artistlink':
-                 $propbag->add('type', 'select');
+                 $propbag->add('type',       'select');
                 $propbag->add('select_values', array('0'     => PLUGIN_AUDIOSCROBBLER_ARTISTLINK_NONE,
                                                      '1'     => PLUGIN_AUDIOSCROBBLER_ARTISTLINK_SCROBBLER,
                                                      '2'     => PLUGIN_AUDIOSCROBBLER_ARTISTLINK_MUSICBRAINZ_ELSE_NONE,
@@ -141,64 +156,64 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin {
                                                      ));
                 $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_ARTISTLINK);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_ARTISTLINK_BLAHBLAH);
-                $propbag->add('default', '4');
+                $propbag->add('default',     '4');
                 break;
 
 
             case 'newwindow':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_AUDIOSCROBBLER_NEWWINDOW);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_NEWWINDOW);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_NEWWINDOW_BLAHBLAH);
-                $propbag->add('default', false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'cachetime':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_AUDIOSCROBBLER_CACHETIME);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_CACHETIME);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_CACHETIME_BLAHBLAH);
-                $propbag->add('default', 30);
+                $propbag->add('default',     30);
                 break;
 
             case 'dateformat':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_AUDIOSCROBBLER_DATEFORMAT);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_DATEFORMAT);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_DATEFORMAT_BLAHBLAH);
-                $propbag->add('default', "%e. %B %Y, %H:%M");
+                $propbag->add('default',     "%e. %B %Y, %H:%M");
                 break;
 
             case 'utcdifference':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_AUDIOSCROBBLER_UTCDIFFERENCE);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_UTCDIFFERENCE);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_UTCDIFFERENCE_BLAHBLAH);
-                $propbag->add('default', "0");
+                $propbag->add('default',     "0");
                 break;
 
              case 'spacer':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_AUDIOSCROBBLER_SPACER);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_SPACER);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_SPACER_BLAHBLAH);
-                $propbag->add('default', '<br />');
+                $propbag->add('default',     '<br />');
                 break;
 
             case 'profiletitle':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_AUDIOSCROBBLER_PROFILETITLE);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_PROFILETITLE);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_PROFILETITLE_BLAHBLAH);
-                $propbag->add('default', '%USER%');
+                $propbag->add('default',     '%USER%');
                 break;
 
              case 'formatstring':
-                $propbag->add('type', 'text');
-                $propbag->add('name', PLUGIN_AUDIOSCROBBLER_FORMATSTRING);
+                $propbag->add('type',        'text');
+                $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_FORMATSTRING);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLAHBLAH);
-                $propbag->add('default', 'Song: %SONG%<br />Artist: %ARTIST%<br /><div class="serendipitySideBarDate">%DATE%</div>');
+                $propbag->add('default',     'Song: %SONG%<br />Artist: %ARTIST%<br /><div class="serendipitySideBarDate">%DATE%</div>');
                 break;
 
               case 'formatstring_block':
-                $propbag->add('type', 'text');
-                $propbag->add('name', PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLOCK);
+                $propbag->add('type',        'text');
+                $propbag->add('name',        PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLOCK);
                 $propbag->add('description', PLUGIN_AUDIOSCROBBLER_FORMATSTRING_BLOCK_BLAHBLAH);
-                $propbag->add('default', '<div style="text-align: center;">%PROFILE%</div><br />%ENTRIES%<br /><div style="text-align: center;">%LASTUPDATE%</div>');
+                $propbag->add('default',     '<div style="text-align: center;">%PROFILE%</div><br />%ENTRIES%<br /><div style="text-align: center;">%LASTUPDATE%</div>');
                 break;
 
             default:
@@ -208,20 +223,23 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin {
     }
 
     //renders the date for output
-    function renderScrobblerDate($date) {
-        $stamp          = $date + intval($this->utcdifference) * 60 * 60;
+    function renderScrobblerDate($date)
+    {
+        $stamp = $date + intval($this->utcdifference) * 60 * 60;
         return (function_exists('serendipity_specialchars') ? serendipity_specialchars(serendipity_formatTime($this->get_config('dateformat'), $stamp, true)) : htmlspecialchars(serendipity_formatTime($this->get_config('dateformat'), $stamp, true), ENT_COMPAT, LANG_CHARSET));
     }
 
     //sets the timestamp of the last update try
-    function setLastUpdateTry() {
+    function setLastUpdateTry()
+    {
         $stamp = time();
         $this->set_config('lastupdate', $stamp);
         $this->scrobblerlastupdate = $stamp;
     }
 
     //reads the songs from the audioscrobbler rdf feed
-    function getSongsFromScrobbler($force = false) {
+    function getSongsFromScrobbler($force = false)
+    {
        if (!file_exists($this->scrobblercache) || filesize($this->scrobblercache) == 0 || $this->scrobblerlastupdate < (time() - $this->cachetime) || $force) {
             $this->read_scrobbler_feed = true;
             if ($this->get_config('forced') == 1 && $force) {
@@ -301,7 +319,7 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin {
                     $this->writeScrobblerCache($songs);
                     return true;
                 } elseif ($force) {
-                   return false;
+                    return false;
                 } elseif (!file_exists($this->scrobblercache)) {
                     $this->scrobbler_error[] = PLUGIN_AUDIOSCROBBLER_FEED_OFFLINE;
                     return false;
@@ -311,22 +329,25 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin {
     }
 
     // Reencodes UTF-8 to blog encoding
-    function reencode($string) {
+    function reencode($string)
+    {
         if (LANG_CHARSET != 'UTF-8') {
-	    return utf8_decode($string);
-	}
-	return $string;
+            return utf8_decode($string);
+        }
+        return $string;
     }
 
     //destacks the songs so that always the $this->number songs are in the songarray
-    function deStackerScrobbler($songs) {
+    function deStackerScrobbler($songs)
+    {
         while (count($songs) != $this->number) array_pop($songs);
         return $songs;
     }
 
     //stacks the songs so that always the $this->number songs are in the songarray
-    function stackerScrobbler($songs) {
-        if (!serendipity_db_bool($this->get_config('stack'))) {
+    function stackerScrobbler($songs)
+    {
+        if (!serendipity_db_bool($this->get_config('stack', 'true'))) {
             return $songs;
         }
 
@@ -358,7 +379,8 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin {
     }
 
     //encodes a scrobbler song array
-    function encodeScrobblerArray($song_array) {
+    function encodeScrobblerArray($song_array)
+    {
         if (function_exists('gzcompress')) {
             return gzcompress(serialize($song_array));
         } else {
@@ -367,7 +389,8 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin {
     }
 
     //decodes a scrobbler song array
-    function decodeScrobblerArray($encoded_songs) {
+    function decodeScrobblerArray($encoded_songs)
+    {
         if (function_exists('gzcompress')) {
             return unserialize(gzuncompress($encoded_songs));
         } else {
@@ -376,7 +399,8 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin {
     }
 
     //writes the s9y cache sets $this->scrobbler_error on failure
-    function writeScrobblerCache($songs) {
+    function writeScrobblerCache($songs)
+    {
         //check if the $this->songs and $songs are equal
         if (is_array ($this->songs)) {
             $equal = true;
@@ -403,7 +427,8 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin {
     }
 
     //reads from the s9y cache sets $this->songs on success , $this->scrobbler_error on failure
-    function readScrobblerCache($no_error = false) {
+    function readScrobblerCache($no_error = false)
+    {
         //don't do things twice ;)
         if (is_array($this->songs) && @count($this->songs) > 0) {
             return $this->songs;
@@ -447,17 +472,19 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin {
     }
 
     //renders the output
-    function renderScrobblerOutput() {
+    function renderScrobblerOutput()
+    {
         $formatstring       =   $this->get_config('formatstring');
         $formatstring_block =   $this->get_config('formatstring_block');
         $artistlink         =   $this->get_config('artistlink');
-        $songlink           =   $this->get_config('songlink');
+        $songlink           =   serendipity_db_bool($this->get_config('songlink', 'true'));
         $spacer             =   $this->get_config('spacer');
         $profiletitle       =   $this->get_config('profiletitle');
-        $this              -> getSongsFromScrobbler();
-        $this              -> readScrobblerCache();
 
-        if ($this->get_config('newwindow')) {
+        $this -> getSongsFromScrobbler();
+        $this -> readScrobblerCache();
+
+        if (serendipity_db_bool($this->get_config('newwindow', 'false'))) {
             $onlick = ' onclick="window.open(this.href);"';
         }
 
@@ -475,73 +502,116 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin {
             if ($songlink) {
                 if (is_string(strstr($value['link'], '&mode'))) {
                     //fix ampersand entity
-                       $song    = '<a href="'.str_replace('&mode', '&amp;mode', $value['link']). '"'.$onclick.'>'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($value['songtitle'], ENT_QUOTES) : htmlspecialchars($value['songtitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)).'</a>'."\n";
+                    $song    = '<a href="'.str_replace('&mode', '&amp;mode', $value['link']). '"'.$onclick.'>' .
+                                    (function_exists('serendipity_specialchars')
+                                        ? serendipity_specialchars($value['songtitle'], ENT_QUOTES)
+                                        : htmlspecialchars($value['songtitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)
+                                    ) . '</a>'."\n";
                 } elseif (is_string(strstr($value['link'], '&amp;mode'))) {
                     //link is ok
-                    $song   = '<a href="'.$value['link']. '"'.$onclick.'>'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($value['songtitle'], ENT_QUOTES) : htmlspecialchars($value['songtitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)).'</a>'."\n";
+                    $song   = '<a href="'.$value['link']. '"'.$onclick.'>' .
+                                    (function_exists('serendipity_specialchars')
+                                        ? serendipity_specialchars($value['songtitle'], ENT_QUOTES)
+                                        : htmlspecialchars($value['songtitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)
+                                    ) . '</a>'."\n";
                 } else {
                     //encode it
-                    $song   = '<a href="http://www.audioscrobbler.com/music/'.urlencode(utf8_encode($value['artisttitle'])). '/_/'.urlencode(utf8_encode($value['songtitle'])).'"'.$onclick.'>'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($value['songtitle'], ENT_QUOTES) : htmlspecialchars($value['songtitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)).'</a>'."\n";
+                    $song   = '<a href="http://www.audioscrobbler.com/music/' . urlencode(utf8_encode($value['artisttitle'])) . '/_/' . urlencode(utf8_encode($value['songtitle'])) . '"'.$onclick.'>' .
+                                    (function_exists('serendipity_specialchars')
+                                        ? serendipity_specialchars($value['songtitle'], ENT_QUOTES)
+                                        : htmlspecialchars($value['songtitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)
+                                    ) . '</a>'."\n";
                 }
             } else {
-                $song = (function_exists('serendipity_specialchars') ? serendipity_specialchars($value['songtitle'], ENT_QUOTES) : htmlspecialchars($value['songtitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET));
+                $song = (function_exists('serendipity_specialchars')
+                            ? serendipity_specialchars($value['songtitle'], ENT_QUOTES)
+                            : htmlspecialchars($value['songtitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)
+                        );
             }
             if ($artistlink == 0) {
-                $artist = (function_exists('serendipity_specialchars') ? serendipity_specialchars($value['artisttitle'], ENT_QUOTES) : htmlspecialchars($value['artisttitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET));
+                $artist =   (function_exists('serendipity_specialchars')
+                                ? serendipity_specialchars($value['artisttitle'], ENT_QUOTES)
+                                : htmlspecialchars($value['artisttitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)
+                            );
             } elseif ($artistlink == 1) {
-                $artist = '<a href="http://www.audioscrobbler.com/music/'.urlencode(utf8_encode($value['artisttitle'])).'"'.$onclick.'>'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($value['artisttitle'], ENT_QUOTES) : htmlspecialchars($value['artisttitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)).'</a>'."\n";
+                $artist = '<a href="http://www.audioscrobbler.com/music/' . urlencode(utf8_encode($value['artisttitle'])) . '"'.$onclick.'>' .
+                            (function_exists('serendipity_specialchars')
+                                ? serendipity_specialchars($value['artisttitle'], ENT_QUOTES)
+                                : htmlspecialchars($value['artisttitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)
+                            ) . '</a>'."\n";
             } elseif ($artistlink == 2) {
                 if ($value['artisttitle'] != '' || $value['artistlink'] != 'http://mm.musicbrainz.org/artist/') {
-                    $artist = '<a href="' . $value['artistlink'] . '"'.$onclick.'>'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($value['artisttitle'], ENT_QUOTES) : htmlspecialchars($value['artisttitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)).'</a>'."\n";
+                    $artist = '<a href="' . $value['artistlink'] . '"' . $onclick . '>' .
+                        (function_exists('serendipity_specialchars')
+                            ? serendipity_specialchars($value['artisttitle'], ENT_QUOTES)
+                            : htmlspecialchars($value['artisttitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)
+                        ) . '</a>'."\n";
                 } else {
-                    $artist = (function_exists('serendipity_specialchars') ? serendipity_specialchars($value['artisttitle'], ENT_QUOTES) : htmlspecialchars($value['artisttitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET));
+                    $artist =   (function_exists('serendipity_specialchars')
+                                    ? serendipity_specialchars($value['artisttitle'], ENT_QUOTES)
+                                    : htmlspecialchars($value['artisttitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)
+                                );
                 }
             } else {
                 if (trim($value['artistlink']) != 'http://mm.musicbrainz.org/artist/' && trim($value['artistlink']) != '') {
-                    $artist = '<a href="' . $value['artistlink'] . '"'.$onclick.'>'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($value['artisttitle'], ENT_QUOTES) : htmlspecialchars($value['artisttitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)).'</a>'."\n";
+                    $artist = '<a href="' . $value['artistlink'] . '"' . $onclick . '>' .
+                        (function_exists('serendipity_specialchars')
+                            ? serendipity_specialchars($value['artisttitle'], ENT_QUOTES)
+                            : htmlspecialchars($value['artisttitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)
+                        ) . '</a>'."\n";
                 } else {
-                    $artist = '<a href="http://www.audioscrobbler.com/music/'.urlencode(utf8_encode($value['artisttitle'])).'"'.$onclick.'>'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($value['artisttitle'], ENT_QUOTES) : htmlspecialchars($value['artisttitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)).'</a>'."\n";
+                    $artist = '<a href="http://www.audioscrobbler.com/music/' . urlencode(utf8_encode($value['artisttitle'])) . '"' . $onclick . '>' .
+                        (function_exists('serendipity_specialchars')
+                            ? serendipity_specialchars($value['artisttitle'], ENT_QUOTES)
+                            : htmlspecialchars($value['artisttitle'], ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)
+                        ) . '</a>'."\n";
                 }
             }
-            $replacements   = array('%ARTIST%' => $artist, '%SONG%' => $song, '%DATE%' => $this->renderScrobblerDate($value['date'], $dateformat));
-            $add            = str_replace(array_keys($replacements), array_values($replacements), $formatstring);
-            $content[]      = $add;
+            $replacements = array('%ARTIST%' => $artist, '%SONG%' => $song, '%DATE%' => $this->renderScrobblerDate($value['date'], $dateformat));
+            $add          = str_replace(array_keys($replacements), array_values($replacements), $formatstring);
+            $content[]    = $add;
             $i++;
             if ($i == $this->number) {
                 break;
             }
         }
-        $entries        = join($spacer, $content);
-        $output         = str_replace('%ENTRIES%', $entries,  $formatstring_block);
-        $profiletitle   = str_replace('%USER%', $this->username, $profiletitle);
-        $output         = str_replace('%PROFILE%', '<a href="http://www.audioscrobbler.com/user/'.urlencode(utf8_encode($this->username)).'"'.$onclick.'>'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($profiletitle, ENT_QUOTES) : htmlspecialchars($profiletitle, ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)).'</a>',  $output);
-        $lstime         = serendipity_formatTime($this->get_config('dateformat'), filemtime($this->scrobblercache), true);
-        $output         = str_replace('%LASTUPDATE%', 
-          (function_exists('serendipity_specialchars') 
-           ? serendipity_specialchars($lstime)
-           : htmlspecialchars($lstime, ENT_COMPAT, LANG_CHARSET)
-          ), 
-          $output
-        );
+        $entries      = join($spacer, $content);
+        $output       = str_replace('%ENTRIES%', $entries,  $formatstring_block);
+        $profiletitle = str_replace('%USER%', $this->username, $profiletitle);
+        $output       = str_replace('%PROFILE%', '<a href="http://www.audioscrobbler.com/user/'.urlencode(utf8_encode($this->username)).'"'.$onclick.'>' .
+                            (function_exists('serendipity_specialchars')
+                                ? serendipity_specialchars($profiletitle, ENT_QUOTES)
+                                : htmlspecialchars($profiletitle, ENT_QUOTES| ENT_COMPAT, LANG_CHARSET)
+                            ).'</a>',  $output);
+        $lstime       = serendipity_formatTime($this->get_config('dateformat'), filemtime($this->scrobblercache), true);
+        $output       = str_replace('%LASTUPDATE%',
+                            (function_exists('serendipity_specialchars')
+                                ? serendipity_specialchars($lstime)
+                                : htmlspecialchars($lstime, ENT_COMPAT, LANG_CHARSET)
+                            ), $output);
         $output = str_replace('audioscrobbler.com', 'last.fm', $output);
         return $output;
     }
 
     //checks and formats the settings
-    function doConfig() {
+    function doConfig()
+    {
         global $serendipity;
-        $this->number                   = (intval($this->get_config('number')) == 0) ? 1 : intval($this->get_config('number'));
-        $this->username                 = trim($this->get_config('username'));
-        $this->cachetime                = (intval($this->get_config('cachetime')) == 0) ? 300 : ($this->get_config('cachetime') * 60);
-        $this->scrobblercache           = $serendipity['serendipityPath'] . 'templates_c/audioscrobbler_cache_' . preg_replace('@[^a-z0-9]*@i', '', $this->username) . '.dat';
-        $this->utcdifference            = intval($this->get_config('utcdifference'));
-        $this->scrobblerlastupdate      = intval($this->get_config('lastupdate'));
+        $this->number              = (intval($this->get_config('number')) == 0) ? 1 : intval($this->get_config('number'));
+        $this->username            = trim($this->get_config('username'));
+        $this->cachetime           = (intval($this->get_config('cachetime')) == 0) ? 300 : ($this->get_config('cachetime') * 60);
+        $this->scrobblercache      = $serendipity['serendipityPath'] . 'templates_c/audioscrobbler_cache_' . preg_replace('@[^a-z0-9]*@i', '', $this->username) . '.dat';
+        $this->utcdifference       = intval($this->get_config('utcdifference'));
+        $this->scrobblerlastupdate = intval($this->get_config('lastupdate'));
     }
 
-    function generate_content(&$title) {
-        $sidebartitle           =   $title = $this->get_config('sidebartitle', $this->title);
+    function generate_content(&$title)
+    {
+        $sidebartitle =   $title = $this->get_config('sidebartitle', $this->title);
         $this->doConfig();
         echo "\n".$this->renderScrobblerOutput()."\n";
     }
+
 }
+
 ?>
