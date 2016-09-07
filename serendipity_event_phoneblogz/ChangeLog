@@ -1,3 +1,27 @@
+0.10:
+-----
+ * Check REQUEST object
+ * Set plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+ * fix a remaining and unconverted htmlspecialchars
+
+
+0.9:
+----
+
+ * Added parameters to html_entity_decode() and htmlentities().
+
+0.8:
+----
+
+ * Compatibility fixes
+
+
+0.5 -> 0.7:
+-----------
+ * ???
+
+
 Version 0.2 - released Jan 26 2006
 ----------------------------------
 

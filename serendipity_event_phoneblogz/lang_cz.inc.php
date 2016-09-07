@@ -20,4 +20,4 @@
 @define('PLUGIN_EVENT_PHONEBLOGZ_SEEBELOW', 'Ní¾e jsou vypsané Va¹e poslední pøíspìvky PhoneBlogz');
 
 @define('PLUGIN_EVENT_PHONEBLOGZ_USERS_HEADING', 'Ní¾e je seznam u¾ivatelù PhoneBlogz<br >a u¾ivatelé Serendipity, kteøí jim odpovídají');
-?>
+

@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -21,4 +21,4 @@
 @define('PLUGIN_EVENT_PHONEBLOGZ_SEEBELOW', 'Your recent phoneBlogz are posted below:');
 
 @define('PLUGIN_EVENT_PHONEBLOGZ_USERS_HEADING', 'Below is a list of PhoneBlogz users<br/>and the Serendipity user each maps to');
-?>
+

@@ -1,33 +1,28 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-@include dirname(__FILE__) . '/lang_en.inc.php';
 include 'phoneblogz-api.php';
 
 class serendipity_event_phoneblogz extends serendipity_event
 {
     var $title = PLUGIN_EVENT_PHONEBLOGZ_NAME;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',        PLUGIN_EVENT_PHONEBLOGZ_NAME);
         $propbag->add('description', PLUGIN_EVENT_PHONEBLOGZ_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking, phoneblogz.com');
-        $propbag->add('version',     '0.9');
+        $propbag->add('version',     '0.10');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -45,7 +40,8 @@ class serendipity_event_phoneblogz extends serendipity_event
                       'phoneblogz_subject', 'phoneblogz_text', 'phoneblogz_notifyurl'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'phoneblogz_notifyurl':
                 $propbag->add('type',        'string');
@@ -96,86 +92,88 @@ class serendipity_event_phoneblogz extends serendipity_event
                 $propbag->add('select_values', $select);
                 break;
 
-
             default:
                 return false;
         }
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function phoneblogz_flash($url) {
-          $flashhtml = '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="141" height="15" id="player" align="middle">';
-          $flashhtml .= '<param name="allowScriptAccess" value="sameDomain" />';
-          $flashhtml .= '<param name="FlashVars" value="pb=' . urlencode($url) . '" />';
-          $flashhtml .= '<param name="movie" value="http://www.phoneblogz.com/playerlocal2.swf?pb=' . urlencode($url) . '" />' .
-                        '<param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />';
-          $flashhtml .= '<embed src="http://www.phoneblogz.com/playerlocal2.swf" flashvars="pb=' . urlencode($url) . '" ' .
-                        'quality="high" bgcolor="#ffffff" width="141" height="15" name="player" align="middle" ' .
-                        'allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
-          $flashhtml .= '</object>';
+    function phoneblogz_flash($url)
+    {
+        $flashhtml = '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="141" height="15" id="player" align="middle">';
+        $flashhtml .= '<param name="allowScriptAccess" value="sameDomain" />';
+        $flashhtml .= '<param name="FlashVars" value="pb=' . urlencode($url) . '" />';
+        $flashhtml .= '<param name="movie" value="http://www.phoneblogz.com/playerlocal2.swf?pb=' . urlencode($url) . '" />' .
+                      '<param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />';
+        $flashhtml .= '<embed src="http://www.phoneblogz.com/playerlocal2.swf" flashvars="pb=' . urlencode($url) . '" ' .
+                      'quality="high" bgcolor="#ffffff" width="141" height="15" name="player" align="middle" ' .
+                      'allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+        $flashhtml .= '</object>';
 
-          return $flashhtml;
+        return $flashhtml;
     }
 
-    function phoneblogz_post($postid, $pbuserno) {
-
+    function phoneblogz_post($postid, $pbuserno)
+    {
         // Firstly try and download the file
         $url = "http://www.phoneblogz.com/listen.php?user=" . $this->get_config("phoneblogz_accesscode") . "&id=$postid";
         $upload = $this->phoneblogz_upload_fromurl("pbpost.mp3", "", $url);
 
         if (!isset($upload["error"])) {
 
-          // Deal with the local username
-          $localuserid = $this->get_config("phoneblogz_usermap_$pbuserno");
-          if ($localuserid === FALSE || $localuserid < 1)
-            $localuserid = 1;  // Default to the admin user
+            // Deal with the local username
+            $localuserid = $this->get_config("phoneblogz_usermap_$pbuserno");
+            if ($localuserid === FALSE || $localuserid < 1)
+                $localuserid = 1;  // Default to the admin user
 
-          // Get the local username for this user
-          $localuser = serendipity_fetchUsers($localuserid);
-          $localusername = $localuser[0]["realname"];
+            // Get the local username for this user
+            $localuser = serendipity_fetchUsers($localuserid);
+            $localusername = $localuser[0]["realname"];
 
-          // Attempt to create a new post
-          $post_content = $this->get_config("phoneblogz_text");
-          $post_content = str_replace("[FLASH]", $this->phoneblogz_flash($upload["url"]), $post_content);
-          $post_content = str_replace("[USER]", $localusername, $post_content);
+            // Attempt to create a new post
+            $post_content = $this->get_config("phoneblogz_text");
+            $post_content = str_replace("[FLASH]", $this->phoneblogz_flash($upload["url"]), $post_content);
+            $post_content = str_replace("[USER]", $localusername, $post_content);
 
-          $first = strpos($post_content, "[");
-          $second = strpos($post_content, "]");
-          if ($first !== FALSE && $second !== FALSE && $second > $first) {
-            $link = "<a href=\"" . $upload["url"] . "\">";
-            $link .= substr($post_content, $first+1, ($second-$first-1));
-            $link .= "</a>";
-            $post_content = substr($post_content, 0, $first). $link . substr($post_content, $second+1);
-          }
+            $first = strpos($post_content, "[");
+            $second = strpos($post_content, "]");
+            if ($first !== FALSE && $second !== FALSE && $second > $first) {
+                $link = "<a href=\"" . $upload["url"] . "\">";
+                $link .= substr($post_content, $first+1, ($second-$first-1));
+                $link .= "</a>";
+                $post_content = substr($post_content, 0, $first). $link . substr($post_content, $second+1);
+            }
 
-          $oldsess = $_SESSION['serendipityRightPublish'];
+            $oldsess = $_SESSION['serendipityRightPublish'];
 
-          $_SESSION['serendipityRightPublish'] = true;
-          $entry = array(
-              'body'           => $post_content, //serendipity_db_escape_string($post_content),
-              'title'          => str_replace("[USER]", $localusername, $this->get_config('phoneblogz_subject')),
-              'timestamp'      => time(),
-              'isdraft'        => 'false',
-              'allow_comments' => true,
-              'authorid'       => $localuserid,
-              'categories'     => array($this->get_config('categoryid'))
-          );
-          $GLOBALS['serendipity']['POST']['properties'] = array('fake' => 'fake');
-          $post_ID = serendipity_updertEntry($entry);
-          $_SESSION['serendipityRightPublish'] = $oldsess;
+            $_SESSION['serendipityRightPublish'] = true;
+            $entry = array(
+                'body'           => $post_content, //serendipity_db_escape_string($post_content),
+                'title'          => str_replace("[USER]", $localusername, $this->get_config('phoneblogz_subject')),
+                'timestamp'      => time(),
+                'isdraft'        => 'false',
+                'allow_comments' => true,
+                'authorid'       => $localuserid,
+                'categories'     => array($this->get_config('categoryid'))
+            );
+            $GLOBALS['serendipity']['POST']['properties'] = array('fake' => 'fake');
+            $post_ID = serendipity_updertEntry($entry);
+            $_SESSION['serendipityRightPublish'] = $oldsess;
 
-          $this->set_config("phoneblogz_status_$postid", $post_ID);
-          return array("postid" => $post_ID);
-      } else {
-          return array("error" => "Failed to upload the file.  Exact error: " . $upload["error"]);
-      }
+            $this->set_config("phoneblogz_status_$postid", $post_ID);
+            return array("postid" => $post_ID);
+        } else {
+            return array("error" => "Failed to upload the file.  Exact error: " . $upload["error"]);
+        }
     }
 
-    function phoneblogz_upload_fromurl($name, $type, $url) {
+    function phoneblogz_upload_fromurl($name, $type, $url)
+    {
         global $serendipity;
 
         if (empty($name)) {
@@ -206,18 +204,36 @@ class serendipity_event_phoneblogz extends serendipity_event
             return array('error' => "Could not write file $new_file.");
         }
 
-        require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-        $req = new HTTP_Request($url);
-
-        if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
-            return array('error' => "Could not download file " . htmlspecialchars($url));
+        if (function_exists('serendipity_request_object')) {
+            $req = serendipity_request_object($url);
+            $response = $req->send();
+            if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
+                return array('error' => "Could not download file " .
+                    (function_exists('serendipity_specialchars')
+                        ? serendipity_specialchars($url)
+                        : htmlspecialchars($url, ENT_COMPAT, LANG_CHARSET))
+                    );
+            } else {
+                $fc = $response->getBody();
+            }
+        } else {
+            require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
+            $req = new HTTP_Request($url);
+            if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
+                return array('error' => "Could not download file " .
+                    (function_exists('serendipity_specialchars')
+                        ? serendipity_specialchars($url)
+                        : htmlspecialchars($url, ENT_COMPAT, LANG_CHARSET))
+                    );
+            } else {
+                $fc = $req->getResponseBody();
+            }
         }
 
-        $fc = $req->getResponseBody();
         $success = @fwrite($ifp, $fc);
         fclose($ifp);
         // Set correct file permissions
-        $stat = @ stat(dirname($new_file));
+        $stat = @stat(dirname($new_file));
         $perms = $stat['mode'] & 0000777;
         @chmod($new_file, $perms);
 
@@ -227,56 +243,57 @@ class serendipity_event_phoneblogz extends serendipity_event
         return array('file' => $new_file, 'url' => $url);
     }
 
-    function showUsersInterface() {
-      global $serendipity;
+    function showUsersInterface()
+    {
+        global $serendipity;
 
-      if (isset($_POST[submitusersedit])) {
-        foreach ($_POST as $key => $val) {
-          // Pick out the "userchoose-" values
-          if (strpos($key, "userchoose-") !== FALSE) {
-            $pbuserid = substr($key, 11);
-            $this->set_config("phoneblogz_usermap_$pbuserid", $val);
-          }
-        }
-      }
-
-      $arr = getUsersForAccount($this->get_config('phoneblogz_accesscode'), $this->get_config('phoneblogz_password'));
-      if ( !empty($arr["error"]) ) {
-        echo "ERROR: " . $arr["error"];
-      } else {
-
-        echo "<center>";
-        echo '<h3 style="text-align:center;">' . PLUGIN_EVENT_PHONEBLOGZ_USERS_HEADING . '</h3>';
-        echo "<form name='users' method='post' action=''>";
-        echo "<table border='1'><tr><th>PhoneBlogz Name</th><th>PIN code</th><th>WordPress User</th></tr>";
-
-        $users = serendipity_fetchUsers();
-        $vals  = array();
-        $vals['empty'] = MF_MYSELF;
-
-        for ($i = 0; $i < count($arr); ++$i) {
-          echo "<tr><td>" . $arr[$i]["name"] . "</td><td>" . $arr[$i]["pin"] . "</td>";
-          echo "<td><select name='userchoose-" . $arr[$i]["id"] . "'>";
-          echo "<option value='-1'>Please choose...</option>";
-
-          foreach($users AS $user) {
-            $selected = ($this->get_config("phoneblogz_usermap_" . $arr[$i]["id"]) == $user['authorid']) ? " SELECTED " : "";
-            echo "<option $selected value='" . $user['authorid'] . "'>" . $user['realname'] . " (" . $user['realname'] . ")</option>";
-          }
-
-          echo "</select></td>";
-          echo "</tr>";
+        if (isset($_POST[submitusersedit])) {
+            foreach ($_POST as $key => $val) {
+                // Pick out the "userchoose-" values
+                if (strpos($key, "userchoose-") !== FALSE) {
+                    $pbuserid = substr($key, 11);
+                    $this->set_config("phoneblogz_usermap_$pbuserid", $val);
+                }
+            }
         }
 
-        echo "</table>";
-        echo "<br/>";
-        echo "<input class='serendipityPrettyButton input_button' type='submit' name='submitusersedit' value='Update Users' />";
-        echo "</form>";
-        echo "</center>";
-      }
+        $arr = getUsersForAccount($this->get_config('phoneblogz_accesscode'), $this->get_config('phoneblogz_password'));
+        if ( !empty($arr["error"]) ) {
+            echo "ERROR: " . $arr["error"];
+        } else {
+            echo "<center>";
+            echo '<h3 style="text-align:center;">' . PLUGIN_EVENT_PHONEBLOGZ_USERS_HEADING . '</h3>';
+            echo "<form name='users' method='post' action=''>";
+            echo "<table border='1'><tr><th>PhoneBlogz Name</th><th>PIN code</th><th>WordPress User</th></tr>";
+
+            $users = serendipity_fetchUsers();
+            $vals  = array();
+            $vals['empty'] = MF_MYSELF;
+
+            for ($i = 0; $i < count($arr); ++$i) {
+                echo "<tr><td>" . $arr[$i]["name"] . "</td><td>" . $arr[$i]["pin"] . "</td>";
+                echo "<td><select name='userchoose-" . $arr[$i]["id"] . "'>";
+                echo "<option value='-1'>Please choose...</option>";
+
+                foreach($users AS $user) {
+                    $selected = ($this->get_config("phoneblogz_usermap_" . $arr[$i]["id"]) == $user['authorid']) ? " SELECTED " : "";
+                    echo "<option $selected value='" . $user['authorid'] . "'>" . $user['realname'] . " (" . $user['realname'] . ")</option>";
+                }
+
+                echo "</select></td>";
+                echo "</tr>";
+            }
+
+            echo "</table>";
+            echo "<br/>";
+            echo "<input class='serendipityPrettyButton input_button' type='submit' name='submitusersedit' value='Update Users' />";
+            echo "</form>";
+            echo "</center>";
+        }
     }
 
-    function showInterface() {
+    function showInterface()
+    {
         global $serendipity;
 
         if (isset($_POST['submitdopost'])) {
@@ -290,7 +307,7 @@ class serendipity_event_phoneblogz extends serendipity_event
 
         $arr = getPostsForAccount($this->get_config("phoneblogz_accesscode"), $this->get_config("phoneblogz_password"));
         if ( !empty($arr["error"]) ) {
-          echo "ERROR: " . $arr["error"];
+            echo "ERROR: " . $arr["error"];
         } else {
 
             echo '<h3 style="text-align:center;">' . PLUGIN_EVENT_PHONEBLOGZ_SEEBELOW . '</h3>';
@@ -347,15 +364,17 @@ class serendipity_event_phoneblogz extends serendipity_event
         }
     }
 
-    function cleanup() {
-      if ($this->get_config('phoneblogz_accesscode') != "" && $this->get_config('phoneblogz_password') != "" && $this->get_config('phoneblogz_notifyurl') != "") {
-        $arrRes = updateSerendipityOptions($this->get_config('phoneblogz_accesscode'), $this->get_config('phoneblogz_password'), $this->get_config('phoneblogz_notifyurl'));
-        if ($arrRes != "SUCCESS")
-          echo "Failed to save changes: " . $arrRes["error"];
-      }
+    function cleanup()
+    {
+        if ($this->get_config('phoneblogz_accesscode') != "" && $this->get_config('phoneblogz_password') != "" && $this->get_config('phoneblogz_notifyurl') != "") {
+            $arrRes = updateSerendipityOptions($this->get_config('phoneblogz_accesscode'), $this->get_config('phoneblogz_password'), $this->get_config('phoneblogz_notifyurl'));
+            if ($arrRes != "SUCCESS")
+                echo "Failed to save changes: " . $arrRes["error"];
+        }
     }
 
-    function publicInterface() {
+    function publicInterface()
+    {
         $arr = getPostsForAccount($this->get_config("phoneblogz_accesscode"), $this->get_config("phoneblogz_password"));
         if ( !empty($arr["error"]) ) {
             echo "Error: " . $arr["empty"];
@@ -379,7 +398,8 @@ class serendipity_event_phoneblogz extends serendipity_event
         return true;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -423,6 +443,8 @@ class serendipity_event_phoneblogz extends serendipity_event
                 return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

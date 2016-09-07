@@ -1,7 +1,7 @@
 <?php					// -*-c++-*-
 // by Edd Dumbill (C) 1999-2002
 // <edd@usefulinc.com>
-// 
+//
 
 
 // Copyright (c) 1999,2000,2002 Edd Dumbill.
@@ -692,7 +692,7 @@
 		// we also checked for proper nesting at start of elements...
 		$_xh[$parser]['sp']--;
 		$curr_elem = $_xh[$parser]['stack'][$_xh[$parser]['sp']];
-		unset($_xh[$parser]['stack'][$_xh[$parser]['sp']]); 
+		unset($_xh[$parser]['stack'][$_xh[$parser]['sp']]);
 		switch($name)
 		{
 			case 'STRUCT':

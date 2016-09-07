@@ -54,7 +54,7 @@ If messages aren't appearing on your blog, check the following things:
 1) On phoneblogz.com, make sure your message appears in the "Recent Blogz" page.
    If the message isn't there, contact us as something has gone wrong!
 
-2) Go to the PhoneBlogz entries page.  You should see your message in a list.  
+2) Go to the PhoneBlogz entries page.  You should see your message in a list.
    If it's not there check the access and PIN codes.
 
 3) In a browser, go to the URL you entered in the Notification URL area.

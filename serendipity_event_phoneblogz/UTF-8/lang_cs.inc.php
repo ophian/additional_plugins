@@ -20,4 +20,4 @@
 @define('PLUGIN_EVENT_PHONEBLOGZ_SEEBELOW', 'Níže jsou vypsané Vaše poslední příspěvky PhoneBlogz');
 
 @define('PLUGIN_EVENT_PHONEBLOGZ_USERS_HEADING', 'Níže je seznam uživatelů PhoneBlogz<br >a uživatelé Serendipity, kteří jim odpovídají');
-?>
+
