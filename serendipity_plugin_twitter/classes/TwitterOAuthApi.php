@@ -121,7 +121,7 @@ class TwitterOAuthApi
         $entry[TWITTER_SEARCHRESULT_REALNAME] = $user->name;
 
         if( !function_exists('htmlspecialchars_decode') ) {
-            $entry[TWITTER_SEARCHRESULT_TWEET] = $item->text; // PHP4 Version w/o html_specialcar decoding.
+            $entry[TWITTER_SEARCHRESULT_TWEET] = $item->text; // PHP4 Version w/o html_specialchar decoding.
         }
         else {
             $entry[TWITTER_SEARCHRESULT_TWEET] = htmlspecialchars_decode($item->text);

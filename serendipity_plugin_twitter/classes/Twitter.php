@@ -244,7 +244,7 @@ class Twitter
         $entry[TWITTER_SEARCHRESULT_LOGIN] = $item->from_user;
         $entry[TWITTER_SEARCHRESULT_REALNAME] = $item->from_user;
         if( !function_exists('htmlspecialchars_decode') ) {
-            $entry[TWITTER_SEARCHRESULT_TWEET] = $item->text; // PHP4 Version w/o html_specialcar decoding.
+            $entry[TWITTER_SEARCHRESULT_TWEET] = $item->text; // PHP4 Version w/o html_specialchar decoding.
         }
         else {
             $entry[TWITTER_SEARCHRESULT_TWEET] = htmlspecialchars_decode($item->text);

@@ -204,8 +204,8 @@ class serendipity_event_metadesc extends serendipity_event
 
 
                         if (serendipity_db_bool($this->get_config('escape'))) {
-                            $md = htmlspecialchars($meta_description, ENT_COMPAT, LANG_CHARSET, false);
-                            $mk = htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET, false);
+                            $md = function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_description, null, LANG_CHARSET, false) : htmlspecialchars($meta_description, ENT_COMPAT, LANG_CHARSET, false);
+                            $mk = function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_keywords, null, LANG_CHARSET, false) : htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET, false);
                         } else {
                             $md = $meta_description;
                             $mk = $meta_keywords;
@@ -219,8 +219,8 @@ class serendipity_event_metadesc extends serendipity_event
                         // emit default meta description and meta keyword, if not blank, for pages other than single entry
 
                         if (serendipity_db_bool($this->get_config('escape'))) {
-                            $md = htmlspecialchars($default_description, ENT_COMPAT, LANG_CHARSET, false);
-                            $mk = htmlspecialchars($default_keywords, ENT_COMPAT, LANG_CHARSET, false);
+                            $md = function_exists('serendipity_specialchars') ? serendipity_specialchars($default_description, null, LANG_CHARSET, false) : htmlspecialchars($default_description, ENT_COMPAT, LANG_CHARSET, false);
+                            $mk = function_exists('serendipity_specialchars') ? serendipity_specialchars($default_keywords, null, LANG_CHARSET, false) : htmlspecialchars($default_keywords, ENT_COMPAT, LANG_CHARSET, false);
                         } else {
                             $md = $default_description;
                             $mk = $default_keywords;
