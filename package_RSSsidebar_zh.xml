@@ -172,8 +172,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_audioscrobbler</link>
 <category>Sidebar Plugins</category>
 <author>Flo Solcher</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_audioscrobbler&lt;br /&gt;Audioscrobbler&lt;/b&gt;&lt;br /&gt;Shows last played songs in your blog&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_audioscrobbler&lt;br /&gt;Audioscrobbler&lt;/b&gt;&lt;br /&gt;Shows last played songs in your blog&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 07 Sep 2016 15:51:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_audioscrobbler</guid>
 </item>
 <item>
@@ -271,8 +271,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_ggopis</link>
 <category>Sidebar Plugins</category>
 <author>Piotr Borys</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_ggopis&lt;br /&gt;Gadu-Gadu IM status description&lt;/b&gt;&lt;br /&gt;Gets and displays a status description of Gadu-Gadu IM&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_ggopis&lt;br /&gt;Gadu-Gadu IM status description&lt;/b&gt;&lt;br /&gt;Gets and displays a status description of Gadu-Gadu IM&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 07 Sep 2016 11:10:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_ggopis</guid>
 </item>
 <item>
@@ -370,8 +370,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_pagerank</link>
 <category>Sidebar Plugins</category>
 <author>Christian Lescuyer</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_pagerank&lt;br /&gt;Google PageRank&lt;/b&gt;&lt;br /&gt;Dynamic display of Google PageRank&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_pagerank&lt;br /&gt;Google PageRank&lt;/b&gt;&lt;br /&gt;Dynamic display of Google PageRank&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 07 Sep 2016 10:34:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_pagerank</guid>
 </item>
 <item>
@@ -537,12 +537,12 @@
 <guid isPermaLink="false">serendipity_plugin_wikipedia_finder</guid>
 </item>
 <item>
-<title>PLUGIN_ZOOOMR_NAME: Display the most recent pictures of any Zooomr Feed</title>
+<title>Zooomr Plugin: Display the most recent pictures of any Zooomr Feed</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_zooomr</link>
 <category>Sidebar Plugins</category>
 <author>Stefan Lange-Hegermann</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_zooomr&lt;br /&gt;PLUGIN_ZOOOMR_NAME&lt;/b&gt;&lt;br /&gt;Display the most recent pictures of any Zooomr Feed&lt;br/&gt;For: Serendipity 1.0</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_zooomr&lt;br /&gt;Zooomr Plugin&lt;/b&gt;&lt;br /&gt;Display the most recent pictures of any Zooomr Feed&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 07 Sep 2016 10:23:03 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_zooomr</guid>
 </item>
 </channel>

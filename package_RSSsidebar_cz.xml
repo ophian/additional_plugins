@@ -168,8 +168,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_audioscrobbler</link>
 <category>Sidebar Plugins</category>
 <author>Flo Solcher</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_audioscrobbler&lt;br /&gt;Audioscrobbler&lt;/b&gt;&lt;br /&gt;Ze služby audioscrobbler.net (neblo last.fm) Zobrazuje naposledy přehrávané skladby&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_audioscrobbler&lt;br /&gt;Audioscrobbler&lt;/b&gt;&lt;br /&gt;Ze služby audioscrobbler.net (neblo last.fm) Zobrazuje naposledy přehrávané skladby&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 07 Sep 2016 15:51:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_audioscrobbler</guid>
 </item>
 <item>
@@ -267,8 +267,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_ggopis</link>
 <category>Sidebar Plugins</category>
 <author>Piotr Borys</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_ggopis&lt;br /&gt;Status z Gadu-Gadu&lt;/b&gt;&lt;br /&gt;Zobrazuje popis stavu z Gadu-Gadu IM (Instant Messenger = protokol pro posílání zpráv, alternativa ICQ, Jabberu apod.)&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_ggopis&lt;br /&gt;Status z Gadu-Gadu&lt;/b&gt;&lt;br /&gt;Zobrazuje popis stavu z Gadu-Gadu IM (Instant Messenger = protokol pro posílání zpráv, alternativa ICQ, Jabberu apod.)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 07 Sep 2016 11:10:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_ggopis</guid>
 </item>
 <item>
@@ -366,8 +366,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_pagerank</link>
 <category>Sidebar Plugins</category>
 <author>Christian Lescuyer</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_pagerank&lt;br /&gt;Google PageRank&lt;/b&gt;&lt;br /&gt;Dynamické zobrazení Google PageRanku&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_pagerank&lt;br /&gt;Google PageRank&lt;/b&gt;&lt;br /&gt;Dynamické zobrazení Google PageRanku&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 07 Sep 2016 10:34:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_pagerank</guid>
 </item>
 <item>
@@ -537,8 +537,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_zooomr</link>
 <category>Sidebar Plugins</category>
 <author>Stefan Lange-Hegermann</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_zooomr&lt;br /&gt;Zooomr&lt;/b&gt;&lt;br /&gt;Zobrazuje nejnovější obrázky ze Zooomr feedu&lt;br/&gt;For: Serendipity 1.0</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_zooomr&lt;br /&gt;Zooomr&lt;/b&gt;&lt;br /&gt;Zobrazuje nejnovější obrázky ze Zooomr feedu&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 07 Sep 2016 10:23:03 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_zooomr</guid>
 </item>
 </channel>
