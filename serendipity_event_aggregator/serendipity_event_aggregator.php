@@ -68,8 +68,8 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '3.0.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '0.42');
-        $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt');
+        $propbag->add('version',       '0.43');
+        $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
             'external_plugin'           => true,
@@ -920,19 +920,31 @@ class serendipity_event_aggregator extends serendipity_event
         global $serendipity;
 
         $file = $serendipity['POST']['aggregatorOPML'];
-        require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
         if (function_exists('serendipity_request_start')) {
             serendipity_request_start();
         }
-        $req = new HTTP_Request($file);
 
-        if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
-            $data = file_get_contents($file);
-            if (empty($data)) {
-                return false;
+        if (function_exists('serendipity_request_object')) {
+            $req = serendipity_request_object($file);
+            $response = $req->send();
+            if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
+                $data = file_get_contents($file);
+                if (empty($data)) {
+                    return false;
+                }
             }
+            # Fetch html content:
+            $data = $response->getBody();
         } else {
-            // Fetch file
+            require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
+            $req = new HTTP_Request($file);
+            if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
+                $data = file_get_contents($file);
+                if (empty($data)) {
+                    return false;
+                }
+            }
+            # Fetch html content:
             $data = $req->getResponseBody();
         }
 
@@ -1148,17 +1160,31 @@ class serendipity_event_aggregator extends serendipity_event
     function checkCharset(&$feed)
     {
         global $serendipity;
-        require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
-        $req = new HTTP_Request($feed['feedurl']);
-        if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
-            $data = file_get_contents($feed['feedurl']);
-            if (empty($data)) {
-                return false;
+
+        if (function_exists('serendipity_request_object')) {
+            $req = serendipity_request_object($feed['feedurl']);
+            $response = $req->send();
+            if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
+                $data = file_get_contents($feed['feedurl']);
+                if (empty($data)) {
+                    return false;
+                }
             }
+            # Fetch html content:
+            $data = $response->getBody();
         } else {
-            # Fetch file
+            require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
+            $req = new HTTP_Request($feed['feedurl']);
+            if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
+                $data = file_get_contents($feed['feedurl']);
+                if (empty($data)) {
+                    return false;
+                }
+            }
+            # Fetch html content:
             $data = $req->getResponseBody();
         }
+
         #XML functions
         $xml_string = '<' . '?xml version="1.0" encoding="UTF-8"?' . '>';
         if (preg_match('@(\<\?xml.+\?\>)@imsU', $data, $xml_head)) {

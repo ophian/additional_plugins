@@ -1,3 +1,7 @@
+0.43:
+-----
+    * Check REQUEST object
+
 0.42:
 -----
     * better S9y version compat check
