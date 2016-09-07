@@ -1,49 +1,42 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
 include_once dirname(__FILE__) . '/podcast_player.php';
 
-@define("SERENDIPITY_EVENT_PODCAST_VERSION", "1.37.1");
+@define("SERENDIPITY_EVENT_PODCAST_VERSION", "1.38");
 
-class serendipity_event_podcast extends serendipity_event {
 /**
-The Serendipity Podcasting Plugin
+ * The Serendipity Podcasting Plugin
 
-@author Hannes Gassert <hannes@mediagonal.ch>
-@package serendipity
-@version 
-class serendipity_event_podcast extends serendipity_event{
-**/
+ * @author Hannes Gassert <hannes@mediagonal.ch>
+ * @package serendipity
+ * @version
+ */
+class serendipity_event_podcast extends serendipity_event
+{
     var $title = PLUGIN_PODCAST_NAME;
 
     // Array of extensions => shorttype  filled by configuration
     var $supportedFiletypes = null;
     // Array of shorttype => player filled by configuration
     var $supportedPlayers   = null;
-    
+
     // Array of fileurls replaced with player code
     var $playerUrlsAdded = array();
-    
+
     // Enable debug messages?
     var $debug = false;
-        
+
     /**
-    @access public
-    */
+     * @access public
+     */
     function introspect(&$propbag)
     {
-
         $events =  array(
             'frontend_display:rss-1.0:per_entry' => true,
             'frontend_display:rss-2.0:per_entry' => true,
@@ -62,64 +55,66 @@ class serendipity_event_podcast extends serendipity_event{
         $propbag->add('cachable_events', $events);
         $propbag->add('event_hooks', $events);
         $propbag->add('configuration', array(
-            'info', 
-            
-            'easy', 
-            'use_player', 
-            'automatic_size', 
-            'width', 
-            'height', 
-            'align', 
-            'firstmedia_only', 
+            'info',
+
+            'easy',
+            'use_player',
+            'automatic_size',
+            'width',
+            'height',
+            'align',
+            'firstmedia_only',
             'nopodcasting_class',
-            'epheader', 
-            'extendet_enclosure_attributes', 
-            'extendet_enclosure_position', 
-            'ep_automatic_size', 
-            'ep_align', 
-            'ep_asure_enc', 
-            
+            'epheader',
+            'extendet_enclosure_attributes',
+            'extendet_enclosure_position',
+            'ep_automatic_size',
+            'ep_align',
+            'ep_asure_enc',
+
+            'separator',
+
             'mergemulti',
             'downloadlink',
-            
-            'expert', 
-            
+
+            'expert',
+
             'itunes_meta',
-            
+
             /* players */
-            'extflow', 
-            'extflow_player', 
+            'extflow',
+            'extflow_player',
 
-            'extquicktime', 
-            'extquicktime_player', 
+            'extquicktime',
+            'extquicktime_player',
 
-            'extwinmedia', 
-            'extwinmedia_player', 
+            'extwinmedia',
+            'extwinmedia_player',
 
-            'extflash', 
-            'extflash_player', 
+            'extflash',
+            'extflash_player',
 
-            'extxspf', 
-            'extxspf_player', 
+            'extxspf',
+            'extxspf_player',
 
-            'extaudio', 
-            'extaudio_player', 
+            'extaudio',
+            'extaudio_player',
 
-            'exthtml5_audio', 
-            'exthtml5_audio_player', 
-            
-            'exthtml5_video', 
-            'exthtml5_video_player', 
+            'exthtml5_audio',
+            'exthtml5_audio_player',
+
+            'exthtml5_video',
+            'exthtml5_video_player',
 
             /* exotic options */
-            'use_cache', 
+            'use_cache',
             'plugin_http_path'
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking');
         $propbag->add('version', SERENDIPITY_EVENT_PODCAST_VERSION);
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -127,10 +122,12 @@ class serendipity_event_podcast extends serendipity_event{
     }
 
     /**
-    @access public
-    */
-    function introspect_config_item($name, &$propbag)    {
+     * @access public
+     */
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
+
         switch($name) {
             case 'info':
                 $propbag->add('type',           'content');
@@ -152,8 +149,8 @@ class serendipity_event_podcast extends serendipity_event{
                 $propbag->add('default',        nl2br(PLUGIN_PODCAST_EXTATTRSETTINGS));
                 break;
 
-            case 'seperator':
-                $propbag->add('type',           'seperator');
+            case 'separator':
+                $propbag->add('type',           'separator');
                 break;
 
             case 'use_player':
@@ -204,7 +201,7 @@ class serendipity_event_podcast extends serendipity_event{
                 $propbag->add('description',    PLUGIN_PODCAST_HEIGHT_DESC);
                 $propbag->add('default',        '200');
                 break;
-                
+
             case 'align':
                 $propbag->add('type',           'select');
                 $propbag->add('name',           PLUGIN_PODCAST_ALIGN);
@@ -212,13 +209,14 @@ class serendipity_event_podcast extends serendipity_event{
                 $propbag->add('select_values',  $this->GetAlignOptionsArray());
                 $propbag->add('default',        'left');
                 break;
+
             case 'nopodcasting_class':
                 $propbag->add('type',           'string');
                 $propbag->add('name',           PLUGIN_PODCAST_NOPODCASTING_CLASS);
                 $propbag->add('description',    PLUGIN_PODCAST_NOPODCASTING_CLASS_DESC);
                 $propbag->add('default',        'nopodcast');
                 break;
-                
+
             case 'firstmedia_only':
                 $propbag->add('type',           'boolean');
                 $propbag->add('name',           PLUGIN_PODCAST_FIRSTMEDIAONLY);
@@ -320,8 +318,6 @@ class serendipity_event_podcast extends serendipity_event{
                 $propbag->add('default',        PLUGIN_PODCAST_AUEXT_DEFAULT);
                 break;
 
-
-
             case 'extflow_player':
                 $propbag->add('type',           'text');
                 $propbag->add('name',           PLUGIN_PODCAST_FLOWEXT_HTML);
@@ -340,7 +336,7 @@ class serendipity_event_podcast extends serendipity_event{
                 $propbag->add('type',           'text');
                 $propbag->add('name',           PLUGIN_PODCAST_HTML5_VIDEO_HTML);
                 $propbag->add('description',    '');
-                $propbag->add('default',       PLUGIN_PODCAST_HTML5_VIDEOPLAYER);
+                $propbag->add('default',        PLUGIN_PODCAST_HTML5_VIDEOPLAYER);
                 break;
 
             case 'extquicktime_player':
@@ -378,7 +374,6 @@ class serendipity_event_podcast extends serendipity_event{
                 $propbag->add('default',        PLUGIN_PODCAST_MP3PLAYER);
                 break;
 
-
             /* exotic */
             case 'use_cache':
                 $propbag->add('type',           'boolean');
@@ -391,47 +386,50 @@ class serendipity_event_podcast extends serendipity_event{
                 $propbag->add('type',           'text');
                 $propbag->add('name',           PLUGIN_PODCAST_ITUNES);
                 $propbag->add('description',    PLUGIN_PODCAST_ITUNES_DESC);
-                $propbag->add('default',        " 
+                $propbag->add('default',        "
 
 <itunes:subtitle>" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['blogTitle']) : htmlspecialchars($serendipity['blogTitle'], ENT_COMPAT, LANG_CHARSET)) . "</itunes:subtitle>
 <itunes:author>" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['blogTitle']) : htmlspecialchars($serendipity['blogTitle'], ENT_COMPAT, LANG_CHARSET)) . "</itunes:author>
 <itunes:summary>" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['blogDescription']) : htmlspecialchars($serendipity['blogDescription'], ENT_COMPAT, LANG_CHARSET)) . "</itunes:summary>
 <itunes:image href=\"" . $serendipity['baseURL'] . "itunes.jpg\" />
-<itunes:category text=\"Technology\" />                
+<itunes:category text=\"Technology\" />
                 ");
                 break;
 
             case 'plugin_http_path':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_PODCAST_HTTPREL);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_PODCAST_HTTPREL);
                 $propbag->add('description', PLUGIN_PODCAST_HTTPREL_DESC);
-                $propbag->add('default', $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_podcast');
+                $propbag->add('default',     $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_podcast');
                 break;
 
+            default:
+                return false;
         }
-
         return true;
     }
-    
-    function iTunify(&$eventData) {
+
+    function iTunify(&$eventData)
+    {
         $eventData['per_entry_display_dat'] .= '<itunes:author>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($eventData['author']) : htmlspecialchars($eventData['author'], ENT_COMPAT, LANG_CHARSET)) . '</itunes:author>' . "\n";
         $eventData['per_entry_display_dat'] .= '<itunes:subtitle>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($eventData['title']) : htmlspecialchars($eventData['title'], ENT_COMPAT, LANG_CHARSET)) . '</itunes:subtitle>' . "\n";
         $eventData['per_entry_display_dat'] .= '<itunes:summary>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(strip_tags($eventData['feed_body'])) : htmlspecialchars(strip_tags($eventData['feed_body']), ENT_COMPAT, LANG_CHARSET)) . '</itunes:summary>' . "\n";
     }
 
     /**
-    @access public
-    */
-    function event_hook($event, &$bag, &$eventData, $addData = null){
+     * @access public
+     */
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         static $use_player = null;
         static $firstmedia_only = null;
         static $patterns = null;
-        
+
         $this->log("EventHook: " . $event);
-        
+
         $this->InitializeSupportedFiletypes();
-        
+
         if ($patterns == null) {
             //yes indeed, we wont find links like "download.php?file=rock.mp3&foo=bar"
             $patterns = array(
@@ -445,7 +443,7 @@ class serendipity_event_podcast extends serendipity_event{
                 'podcastLinkPattern'    => '@\[podcast:\s*(href\s*=\s*)?((&quot;|\'|")(.+)(&quot;|\'|"))(\s+mediaType\s*=\s*(.+))?\]@Usi'
             );
         }
-        
+
         if ($use_player === null) {
             $use_player = serendipity_db_bool($this->get_config('use_player', 'true'));
         }
@@ -459,29 +457,28 @@ class serendipity_event_podcast extends serendipity_event{
             case 'backend_header':
                 echo '<script type="text/javascript" src="' . $this->GetPluginHttpPath() . '/player/flowplayer/example/flowplayer-3.2.6.min.js"></script>' . "\n";
                 $this->log("Init\n--------------------------------------------------------------------------------------\n");
-            break; 
+                break;
 
             //////////////////////// RSS Entries ////////////////////////
             case 'frontend_display:rss-2.0:per_entry':
             case 'frontend_display:rss-1.0:per_entry':
-            case 'frontend_display:atom-1.0:per_entry': 
-                
+            case 'frontend_display:atom-1.0:per_entry':
                 $this->log("Feed creation");
                 $addedEnclosures[] = "enclosures";
-                
+
                 // Search for all embedded objects and make the RSS enclosured.
                 // RSS only displays body always. In fullview, body contains body + extended here.
-                // In "small" view only embed the media beeing part of the small view. 
+                // In "small" view only embed the media beeing part of the small view.
                 // In short: body only always!
                 $matchSource = $eventData['body'];
-                
+
                 // Remove our own players first, they are matched using $eventData['podcastUrlsRewrittenByPlayerCode']
                 $this->log("Removing podcast players");
                 $eventData['feed_body'] = preg_replace(
                         '@<!-- podcastplayerstart -->.*?<!-- podcastplayerend -->@si',
                         '',
                         $eventData['feed_body']);
-                
+
                 // urls rewritten by player code
                 $this->log("Matching URLs set by extended attributes. Isset=" . isset($eventData['podcastUrlsRewrittenByPlayerCode']));
                 if (isset($eventData['podcastUrlsRewrittenByPlayerCode']) && is_array($eventData['podcastUrlsRewrittenByPlayerCode'])) {
@@ -491,7 +488,7 @@ class serendipity_event_podcast extends serendipity_event{
                         $fileInfo   = $this->GetFileInfo($url);
                         $type       = $fileInfo['mime'];
                         $enclosure = $this->GetEnclosure($event, $url, $type, $fileInfo['length'], $fileInfo['md5']);
-                        
+
                         if (!empty($enclosure)) {
                             $this->iTunify($eventData, $enclosure);
                             if (empty($addedEnclosures[$enclosure])) {
@@ -522,7 +519,7 @@ class serendipity_event_podcast extends serendipity_event{
                         }
                     }
                 }
-                
+
                 // Match the old style [podcast] syntax as well
                 $this->log("Matching podcastLinkPattern");
                 if (preg_match_all($patterns['podcastLinkPattern'], $matchSource, $matches)) {
@@ -546,14 +543,14 @@ class serendipity_event_podcast extends serendipity_event{
                         }
                     }
                 }
-                
+
                 // Last, also match the '<a href>' style, if "use_player" is disabled and thus no <embed> might exist.
                 $this->log("Matching playerRewritePattern");
                 $nopodcasting_class = $this->get_config('nopodcasting_class','nopodcast');
                 if (!empty($nopodcasting_class)) {
                     $classPattern = '@class\s*=\s*(\'|")\s*' . $nopodcasting_class . '\s*(\'|")+@si';
                 }
-                
+
                 if (!$use_player && preg_match_all($patterns['playerRewritePattern'], $matchSource, $matches)) {
                     for ($i = 0, $maxi = count($matches[1]); $i < $maxi; $i++){
                         $complete   = $matches[0];
@@ -579,12 +576,11 @@ class serendipity_event_podcast extends serendipity_event{
                         }
                     }
                 }
-                
-                
+
                 // Check, if podcasts are added via the extended article attribute and make it enclosured if not already embedded, too:
                 if (serendipity_db_bool($this->get_config('ep_asure_enc', 'true'))) {
                     $extended_attributes = explode(',',$this->get_config('extendet_enclosure_attributes','Podcast,Video'));
-                    
+
                     foreach ($extended_attributes as $eattr) {
                         $this->log("EP: " . trim($eattr));
                         $eattr = "ep_" . trim($eattr);
@@ -593,7 +589,7 @@ class serendipity_event_podcast extends serendipity_event{
                             $type       = $fileInfo['mime'];
                             $fileUrl = str_replace(' ','%20',$eventData['properties'][$eattr]);
                             $enclosure = $this->GetEnclosure($event, $this->GetHostUrl() . (function_exists('serendipity_specialchars') ? serendipity_specialchars($fileUrl) : htmlspecialchars($fileUrl, ENT_COMPAT, LANG_CHARSET)), $type, $fileInfo['length'], $fileInfo['md5']);
-                            
+
                             if (!empty($enclosure)) {
                                 $this->iTunify($eventData, $enclosure);
                                 if (empty($addedEnclosures[$enclosure])) {
@@ -605,48 +601,46 @@ class serendipity_event_podcast extends serendipity_event{
                         }
                     }
                 }
-                
+
                 // A RSS feet doesn't need the object tags (they are embedded now). So remove them:
                 $eventData['feed_body'] = preg_replace(
                         '@<object .*?</object>@si',
                         '',
                         $eventData['feed_body']);
-                
+
                 // Purely embedded objects are RSS enclosured now too, so we can remove them if still there:
                 $eventData['feed_body'] = preg_replace(
                         '@<embed .*?</embed>@si',
                         '',
                         $eventData['feed_body']);
-                 
+
                 return true;
-                
+
             case 'css':
                 if (!strpos($eventData, '.podcastplayer')) {
-                    echo '.podcastplayer { display: block; }' . "\n";
-                    echo '.podcastdownload { display: block; }' . "\n";
+                    $eventData .= '
+
+.podcastplayer { display: block; }
+.podcastdownload { display: block; }
+
+';
                 }
-                return true;
-            
-            
+                break;
 
             //////////////////////// RSS 1 NS /////////////////////////////
             case 'frontend_display:rss-1.0:namespace':
-
                 $eventData['display_dat'] .= "   xmlns:enc='http://purl.oclc.org/net/rss_2.0/enc#'\n";
                 $eventData['display_dat'] .= "   xmlns:podcast='http://ipodder.sourceforge.net/docs/podcast.html'\n";
                 $eventData['display_dat'] .= "   xmlns:atom=\"http://www.w3.org/2005/Atom\"\n";
                 $eventData['display_dat'] .= "   xmlns:sc=\"http://podlove.org/simple-chapters\"\n";
-
                 return true;
 
             //////////////////////// RSS 2 NS///// ////////////////////////
             case 'frontend_display:rss-2.0:namespace':
-
                 $eventData['display_dat'] .= "   xmlns:itunes=\"http://www.itunes.com/dtds/podcast-1.0.dtd\"\n";
                 $eventData['display_dat'] .= "   xmlns:atom=\"http://www.w3.org/2005/Atom\"\n";
                 $eventData['display_dat'] .= "   xmlns:sc=\"http://podlove.org/simple-chapters\"\n";
 
-                
                 if (version_compare(preg_replace('@[^0-9\.]@', '', $serendipity['version']), '1.6', '<')) {
                 } else {
                   $eventData['channel_dat'] .= $this->get_config('itunes_meta');
@@ -656,22 +650,19 @@ class serendipity_event_podcast extends serendipity_event{
 
             //////////////////////// HTML Entry /////////////////////////
             case 'frontend_display':
-                
                 if (!isset($eventData['body']) && !isset($eventData['extended'])) {
                     // Do not use player HTML for user comments, html nuggets, static pages etc.
-                    return false;
                     break;
                 }
-                
+
                 if (isset($eventData['properties']['ep_disable_markup'. $this->instance]) || isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                     // Do not use player HTML, when the extended properties plugin disables this markup plugin.
-                    return false;
                     break;
                 }
-                
+
                 // Reset URL list replaced by players
                 $this->playerUrlsAdded = array();
-                
+
                 // First replace old style [podcast] syntax always, even without player replacement
                 if (is_array($eventData)) {
                     if (preg_match($patterns['podcastLinkPattern'],$eventData['body'])) {
@@ -687,8 +678,8 @@ class serendipity_event_podcast extends serendipity_event{
                         '<a href="\4">\4</a>',
                         $eventData['extended']);
                 }
-                
-                // Now replace all links to mediafiles with the configured players: 
+
+                // Now replace all links to mediafiles with the configured players:
                 if ($use_player && is_array($eventData)) {
                     $eventData['body'] = preg_replace_callback(
                         $patterns['playerRewritePattern'],
@@ -700,11 +691,10 @@ class serendipity_event_podcast extends serendipity_event{
                         array( $this, "playerRewriteCallBack"),
                         $eventData['extended']);
                 }
-                
 
                 // Check, if podcasts are added via the extended article attribute and add them to the article, if configured:
-                if ($this->get_config('extendet_enclosure_position','never')!='never') {
-                    $extended_attributes = explode(',',$this->get_config('extendet_enclosure_attributes','Podcast,Video'));
+                if ($this->get_config('extendet_enclosure_position', 'never') != 'never') {
+                    $extended_attributes = explode(',',$this->get_config('extendet_enclosure_attributes', 'Podcast,Video'));
                     $extra_links = '';
                     foreach ($extended_attributes as $eattr) {
                         $eattr = "ep_" . trim($eattr);
@@ -714,13 +704,13 @@ class serendipity_event_podcast extends serendipity_event{
 
                             $this->log("found input in $eattr: {$eventData['properties'][$eattr]}");
                             $this->log("fileurl in $eattr: $fileUrl");
-                            
+
                             $fileInfo = $this->GetFileInfo($eventData['properties'][$eattr]);
 
                             $this->log("filinfo: " . print_r($fileInfo, true));
 
                             // Produce player code
-                            if ($use_player) { 
+                            if ($use_player) {
                                 if (serendipity_db_bool($this->get_config('ep_automatic_size', 'false'))) {
                                     $player = $this->GetPlayerByExt($fileInfo['extension'], $fileUrl, $fileInfo['width'],$fileInfo['height'], $ep_align, $fileInfo['mime']);
                                 } else {
@@ -728,8 +718,8 @@ class serendipity_event_podcast extends serendipity_event{
                                 }
                             } else {
                                 $player = '<a href="' . $fileUrl . '">' . basename($eventData['properties'][$eattr]) . '</a>';
-                            } 
-                            
+                            }
+
                             $extra_links .= $player;
                         }
                     }
@@ -747,7 +737,6 @@ class serendipity_event_podcast extends serendipity_event{
                             case 'ext_botton':
                                 $eventData['extended'] = $eventData['extended'] . $extra_links;
                                 break;
-                            
                         }
                     }
                 }
@@ -756,25 +745,26 @@ class serendipity_event_podcast extends serendipity_event{
                 if (count($this->playerUrlsAdded)>0) {
                     $eventData['podcastUrlsRewrittenByPlayerCode'] = $this->playerUrlsAdded;
                 }
-                
+
                 $this->cleanup_html5($eventData['body']);
                 $this->cleanup_html5($eventData['extended']);
-                
                 break;
 
             default:
-                return true;
+                return false;
         }
+        return true;
     }
-    
-    function cleanup_html5(&$input) {
+
+    function cleanup_html5(&$input)
+    {
         global $serendipity;
         static $mergemulti = null;
-        
+
         if ($mergemulti === null) {
-            $mergemulti = serendipity_db_bool($this->get_config('mergemulti'));
+            $mergemulti = serendipity_db_bool($this->get_config('mergemulti', 'true'));
         }
-        
+
         if ($mergemulti) {
             $pat = '@(<audio[^>]*>)(.+)(</audio>)@imsU';
             $aparts = array();
@@ -787,7 +777,7 @@ class serendipity_event_podcast extends serendipity_event{
                     }
                     $is_first = false;
                 }
-                $input = preg_replace($pat, '\1 ' . implode("\n", $aparts) . ' \3', $input); 
+                $input = preg_replace($pat, '\1 ' . implode("\n", $aparts) . ' \3', $input);
             }
 
             $pat = '@(<video[^>]*>)(.+)(</video>)@imsU';
@@ -801,22 +791,23 @@ class serendipity_event_podcast extends serendipity_event{
                     }
                     $is_first = false;
                 }
-                $input = preg_replace($pat, '\1 ' . implode("\n", $aparts) . ' \3', $input); 
+                $input = preg_replace($pat, '\1 ' . implode("\n", $aparts) . ' \3', $input);
             }
         }
     }
-    
-    function playerRewriteCallBack($treffer) {
+
+    function playerRewriteCallBack($treffer)
+    {
         global $serendipity;
         $this->log('playerRewriteCallBack: treffer=' . print_r($treffer,true));
-        
+
         // Check for nopodcasting class
         $nopodcasting_class = $this->get_config('nopodcasting_class','nopodcast');
         if (!empty($nopodcasting_class)) {
             $classPattern = '@class\s*=\s*(\'|")\s*' . $nopodcasting_class . '\s*(\'|")+@si';
             if (preg_match($classPattern , $treffer[0])) return $treffer[0];
         }
-        
+
         $fileUrl = $serendipity['baseURL']  . $treffer[2];
         if (serendipity_db_bool($this->get_config('automatic_size', 'false'))) {
             $fileInfo = $this->GetFileInfo($treffer[2]);
@@ -826,11 +817,12 @@ class serendipity_event_podcast extends serendipity_event{
             return $this->GetPlayerByExt(strtolower($treffer[3]),$treffer[2], null, null, null, $fileInfo['mime']);
         }
     }
-    
+
     /**
      * Produces an array for the podcast aligning configuration
      */
-    function GetAlignOptionsArray() {
+    function GetAlignOptionsArray()
+    {
         return array(
             'left'      => PLUGIN_PODCAST_ALIGN_LEFT,
             'right'     => PLUGIN_PODCAST_ALIGN_RIGHT,
@@ -843,18 +835,21 @@ class serendipity_event_podcast extends serendipity_event{
     /**
      * Returns the Host including http(s)://
      */
-    function GetHostUrl() {
+    function GetHostUrl()
+    {
         return (strtolower($_SERVER['HTTPS']) == 'on' ? 'https://' : 'http://') .  $_SERVER['HTTP_HOST'];
     }
-    
+
     /**
      * Returns HTTP path of the podcast plugin
      */
-    function GetPluginHttpPath() {
+    function GetPluginHttpPath()
+    {
         return $this->get_config('plugin_http_path');
     }
-    
-    function getFileMime($ext, $fallback = '') {
+
+    function getFileMime($ext, $fallback = '')
+    {
         $this->log("getFileMime: $ext, $fallback");
 
         switch(strtolower($ext)) {
@@ -867,21 +862,22 @@ class serendipity_event_podcast extends serendipity_event{
             case 'ogv':
                 return 'video/ogg';
         }
-        
+
         // fallback
         if (!empty($fallback)) return $fallback;
-        
+
         return 'audio/' . $ext;
     }
-    
+
     /**
      * Calculates infos on the given file and returns an array containing these infos
      */
-    function GetFileInfo($url) {
+    function GetFileInfo($url)
+    {
         global $serendipity;
 
         $this->log("GetFileInfo for $url");
-        
+
         $fileInfo = array();
 
         //caching metadata
@@ -910,16 +906,23 @@ class serendipity_event_podcast extends serendipity_event{
         //cache miss! -> get data, store it in cache and return.
 
         // translate pontential relative url to absolute url
-        if (preg_match('@https?://@', $url)) $absolute_url = $url;
-        else $absolute_url = $this->GetHostUrl() . $url;
-        
-        if ($this->debug) $fileInfo['absolute_url'] = $absolute_url;
-        
+        if (preg_match('@https?://@', $url)) {
+            $absolute_url = $url;
+        } else {
+            $absolute_url = $this->GetHostUrl() . $url;
+        }
+
+        if ($this->debug) {
+            $fileInfo['absolute_url'] = $absolute_url;
+        }
+
         // Now remove configured base URL
         $rel_path = str_replace($serendipity['baseURL'], "", $absolute_url);
 
-        if ($this->debug) $fileInfo['rel_path'] = $rel_path;
-        
+        if ($this->debug) {
+            $fileInfo['rel_path'] = $rel_path;
+        }
+
         // do we have a local file here?
         //$localMediaFile = $serendipity['serendipityPath'] . $urlParts['path'];
         $localMediaFile = $serendipity['serendipityPath'] . $rel_path;
@@ -927,10 +930,10 @@ class serendipity_event_podcast extends serendipity_event{
         $fileInfo['localMediaFile'] = $localMediaFile;
 
         $this->log("Absolute_url: $absolute_url - Relative: $localMediaFile");
-        
+
         // Remember extension of file
         list($sName, $fileInfo['extension']) = serendipity_parseFileName($localMediaFile);
-        
+
         if (file_exists($localMediaFile)) {
             $this->log("GetFileInfo: Local file exists");
             $fileInfo['length'] = filesize($localMediaFile);
@@ -939,7 +942,7 @@ class serendipity_event_podcast extends serendipity_event{
             $this->log(print_r($fileInfo,true));
             // Set default
             $fileInfo['mime'] = $this->getFileMime($fileInfo['extension'], $fileInfo['mime']);
-        } 
+        }
 
         /*
         If not local: we have a problem :)
@@ -951,20 +954,30 @@ class serendipity_event_podcast extends serendipity_event{
         request and get the size that way (and MD5, if possible). Let's see if this works:
         */
         elseif (preg_match('@https?://@', $url)){
-            include_once(S9Y_PEAR_PATH . 'HTTP/Request.php');
             if (function_exists('serendipity_request_start')) {
                 serendipity_request_start();
             }
 
-            $this->Log("Execute HTTP_Request for $url");
-            $http = new HTTP_Request($url);
-            $http->setMethod(HTTP_REQUEST_METHOD_HEAD);
-
-            if (!PEAR::isError($http->sendRequest(false))){
-                $fileInfo['length'] = intval($http->getResponseHeader('content-length'));
-                $fileInfo['md5']    = $http->getResponseHeader('content-md5'); //will return false if not present
-                $fileInfo['mime']   =$http->getResponseHeader('content-type');
-                $this->Log("Filling MIME with HTTP Header: " . print_r($fileInfo, true));
+            if (function_exists('serendipity_request_object')) {
+                $http = serendipity_request_object($url, 'head');
+                $response = $http->send();
+                if (!PEAR::isError($http->send(false)) || $response->getStatus() == '200') {
+                    $fileInfo['length'] = intval($response->getHeader('content-length'));
+                    $fileInfo['md5']    = $response->getHeader('content-md5'); //will return false if not present
+                    $fileInfo['mime']   = $response->getHeader("content-type");
+                    $this->Log("Filling MIME with HTTP Header: " . print_r($fileInfo, true));
+                }
+            } else {
+                require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
+                $this->Log("Execute HTTP_Request for $url");
+                $http = new HTTP_Request($url);
+                $http->setMethod(HTTP_REQUEST_METHOD_HEAD);
+                if (!PEAR::isError($http->sendRequest(false)) || $http->getResponseCode() == '200') {
+                    $fileInfo['length'] = intval($http->getResponseHeader('content-length'));
+                    $fileInfo['md5']    = $http->getResponseHeader('content-md5'); //will return false if not present
+                    $fileInfo['mime']   = $http->getResponseHeader('content-type');
+                    $this->Log("Filling MIME with HTTP Header: " . print_r($fileInfo, true));
+                }
             }
 
             if (function_exists('serendipity_request_end')) {
@@ -973,7 +986,7 @@ class serendipity_event_podcast extends serendipity_event{
         } else { // Not found locally and no URL
             $fileInfo['notfound'] = true;
         }
-        
+
         if (serendipity_db_bool($this->get_config('use_cache', 'true'))) {
             $cache->save($fileInfo , $cacheId);
         }
@@ -981,7 +994,8 @@ class serendipity_event_podcast extends serendipity_event{
         return $fileInfo;
     }
 
-    function absolve($url) {
+    function absolve($url)
+    {
         global $serendipity;
 
         if (!preg_match('@^https*://@', $url)) {
@@ -991,19 +1005,20 @@ class serendipity_event_podcast extends serendipity_event{
                 $url = $this->getHostUrl() . $serendipity['serendipityHTTPPath'] . $url;
             }
         }
-        
+
         return $url;
     }
 
     /**
-     * Creates an enclosure tag for different feed types 
+     * Creates an enclosure tag for different feed types
      */
-    function GetEnclosure($event, $url, $type, $length = null, $md5 = null) {
+    function GetEnclosure($event, $url, $type, $length = null, $md5 = null)
+    {
         $url = str_replace(array('&',' '),array('&amp;','%20'),$url);
         $url = $this->absolve($url);
-        
+
         preg_match('@^.*\.([^\.]+)$@imsU', $url, $ext);
-        
+
         if (isset($_REQUEST['podcast_format'])) {
             $allowed = explode(',', $_REQUEST['podcast_format']);
             $is_allowed = false;
@@ -1012,13 +1027,14 @@ class serendipity_event_podcast extends serendipity_event{
                     $is_allowed = true;
                 }
             }
-            
+
             if (!$is_allowed) {
                 return false;
             }
         }
 
-        switch($event) {
+        switch($event)
+        {
             case 'frontend_display:rss-2.0:per_entry':
                 $enclosureAttrs = 'url="' . $url . '" type="' . $type . '" ';
 
@@ -1051,7 +1067,8 @@ class serendipity_event_podcast extends serendipity_event{
     /**
      * Determines the Mimetype using the getid3 functionality
      */
-    function GetID3Infos($filename, &$fileInfoArray) {
+    function GetID3Infos($filename, &$fileInfoArray)
+    {
         // Set default fileinformation:
         $fileInfoArray['mime'] = serendipity_guessMime($fileInfoArray['extension']);
 
@@ -1082,7 +1099,7 @@ class serendipity_event_podcast extends serendipity_event{
             $id3 =$getID3->analyze($filename);
             getid3_lib::CopyTagsToComments($id3);
             if (isset($id3['error'])) {
-                $fileInfoArray['id3error'] = $id3['error']; 
+                $fileInfoArray['id3error'] = $id3['error'];
             } else {
                 $this->log("ID3: " . print_r($id3,true));
                 $mimeType                   = $id3['mime_type'];
@@ -1096,32 +1113,33 @@ class serendipity_event_podcast extends serendipity_event{
                     $fileInfoArray['height']    = $id3['meta']['onMetaData']['height'];
                 }
             }
-            
+
         } else {
             $fileInfoArray['mime'] 		= 'error/filenotfound';
             $this->log("File $filename not found");
-        } 
+        }
     }
-    
+
     /**
      * Evaluates a player by an extension. Returns the complete HTML code
-     * 
+     *
      */
-    function GetPlayerByExt($ext, $filename, $valwidth = null, $valheight = null, $valalign = null, $mime = null){
+    function GetPlayerByExt($ext, $filename, $valwidth = null, $valheight = null, $valalign = null, $mime = null)
+    {
         static $downloadlink = null;
-        
+
         if ($downloadlink === null) {
-            $downloadlink = serendipity_db_bool($this->get_config('downloadlink'));
+            $downloadlink = serendipity_db_bool($this->get_config('downloadlink', 'true'));
         }
-        
+
         $this->playerUrlsAdded[] = $filename;
-        
+
         $this->InitializeSupportedPlayers();
         if(!isset($this->supportedFiletypes[$ext])){
             return "\n<!-- unknown fileext: $ext ". count($this->supportedFiletypes) ." -->";
         }
         $short = $this->supportedFiletypes[$ext];
-        
+
         if (!isset($this->supportedPlayers[$short])){
             return "<!-- no player for: " . $short. " -->";
         }
@@ -1147,57 +1165,58 @@ class serendipity_event_podcast extends serendipity_event{
         } else {
             $align = '';
         }
-        
+
         $filename = str_replace(array(' '),array('%20'),$filename);
         $filename = $this->absolve($filename);
         $filename_noext = preg_replace('@\.'. $ext .'$@is','',$filename);
-        
+
         if ($mime == null) {
             $mime = $this->getFileMime($ext);
         }
-        
+
         $result = str_replace(
             array(
-                '#url#', 
-                '#url_noext#', 
-                '#filename#', 
+                '#url#',
+                '#url_noext#',
+                '#filename#',
                 '#htmlid#',
-                '#width#', 
-                '#height#', 
-                '#intwidth#', 
-                '#intheight#', 
+                '#width#',
+                '#height#',
+                '#intwidth#',
+                '#intheight#',
                 '#align#',
                 '#plugin#',
                 '#mime#'
-            ), 
-            
+            ),
+
             array(
-                $filename, 
-                $filename_noext, 
-                basename($filename), 
+                $filename,
+                $filename_noext,
+                basename($filename),
                 md5($filename),
-                $width, 
-                $height, 
-                $intwidth, 
-                $intheight, 
-                $align, 
+                $width,
+                $height,
+                $intwidth,
+                $intheight,
+                $align,
                 $this->GetPluginHttpPath(),
                 $mime
-            ), 
+            ),
             $player
              );
 
         if ($downloadlink) {
             $result .= "\n<a href=\"" . $filename . "\" class=\"podcastdownload\">" . basename($filename) . "</a>\n";
         }
-        
+
         return '<!-- podcastplayerstart -->' . $result . '<!-- podcastplayerend -->';
     }
 
     /**
      * Initializes the array holding extension -> playertype
      */
-    function InitializeSupportedFiletypes() {
+    function InitializeSupportedFiletypes()
+    {
 
         if (!isset($this->supportedFiletypes)) {
             $this->supportedFiletypes = array();
@@ -1211,37 +1230,38 @@ class serendipity_event_podcast extends serendipity_event{
             $v5exts     = explode(',', $this->get_config('exthtml5_video',PLUGIN_PODCAST_HTML5_VIDEO_DEFAULT));
 
             foreach($qtexts as $ext){
-                $this->supportedFiletypes[trim($ext)] = 'q'; 
+                $this->supportedFiletypes[trim($ext)] = 'q';
             }
             foreach($wmexts as $ext){
-                $this->supportedFiletypes[trim($ext)] = 'w'; 
+                $this->supportedFiletypes[trim($ext)] = 'w';
             }
             foreach($flexts as $ext){
-                $this->supportedFiletypes[trim($ext)] = 'f'; 
+                $this->supportedFiletypes[trim($ext)] = 'f';
             }
             foreach($mp3exts as $ext){
-                $this->supportedFiletypes[trim($ext)] = 'm'; 
+                $this->supportedFiletypes[trim($ext)] = 'm';
             }
             foreach($xspfexts as $ext){
-                $this->supportedFiletypes[trim($ext)] = 'x'; 
+                $this->supportedFiletypes[trim($ext)] = 'x';
             }
             foreach($flvexts as $ext){
-                $this->supportedFiletypes[trim($ext)] = 'v'; 
+                $this->supportedFiletypes[trim($ext)] = 'v';
             }
             foreach($a5exts as $ext){
-                $this->supportedFiletypes[trim($ext)] = 'a5'; 
+                $this->supportedFiletypes[trim($ext)] = 'a5';
             }
             foreach($v5exts as $ext){
-                $this->supportedFiletypes[trim($ext)] = 'v5'; 
+                $this->supportedFiletypes[trim($ext)] = 'v5';
             }
 
         }
     }
-    
+
     /**
      * Initializes the array holding playertype -> player HTML code
      */
-    function InitializeSupportedPlayers(){
+    function InitializeSupportedPlayers()
+    {
 
         if (!isset($this->supportedPlayers)){
             $this->supportedPlayers = array(
@@ -1256,13 +1276,17 @@ class serendipity_event_podcast extends serendipity_event{
             );
         }
     }
-    function log($message){
+
+    function log($message)
+    {
         global $serendipity;
-        
+
         if (!$this->debug) return;
         $fp = fopen($serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/serendipity_event_podcast' . '.log','a');
         fwrite($fp, date("d.m.Y H:i") . " - " . $_SERVER['REQUEST_URI'] . " - " . $_SERVER['REMOTE_ADDR'] . " - " . $message . "\n");
         fclose($fp);
     }
-    
+
 }
+
+?>

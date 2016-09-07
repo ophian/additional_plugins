@@ -1,22 +1,21 @@
 <?php
 
-/*
+/**
  * This file contains all players used by the Easy Podcast Plugin and default extensions
- * 
  */
 
-@DEFINE('PLUGIN_PODCAST_QTEXT_DEFAULT'      ,'3gp,mov,mp4,mqv,qt');
-@DEFINE('PLUGIN_PODCAST_WMEXT_DEFAULT'      ,'avi,mpg,mpeg,wmv');
-@DEFINE('PLUGIN_PODCAST_MFEXT_DEFAULT'      ,'swf');
-@DEFINE('PLUGIN_PODCAST_AUEXT_DEFAULT'      ,'ogg,m3u,pls,m4b');
-@DEFINE('PLUGIN_PODCAST_XSPFEXT_DEFAULT'    ,'mp3,xspf');
-@DEFINE('PLUGIN_PODCAST_FLOWEXT_DEFAULT'    ,'flv');
+@DEFINE('PLUGIN_PODCAST_QTEXT_DEFAULT',     '3gp,mov,mp4,mqv,qt');
+@DEFINE('PLUGIN_PODCAST_WMEXT_DEFAULT',     'avi,mpg,mpeg,wmv');
+@DEFINE('PLUGIN_PODCAST_MFEXT_DEFAULT',     'swf');
+@DEFINE('PLUGIN_PODCAST_AUEXT_DEFAULT',     'ogg,m3u,pls,m4b');
+@DEFINE('PLUGIN_PODCAST_XSPFEXT_DEFAULT',   'mp3,xspf');
+@DEFINE('PLUGIN_PODCAST_FLOWEXT_DEFAULT',   'flv');
 @DEFINE('PLUGIN_PODCAST_HTML5_AUDIO_DEFAULT','');
 @DEFINE('PLUGIN_PODCAST_HTML5_VIDEO_DEFAULT','');
 
 
 // Quicktime Player
-@DEFINE('PLUGIN_PODCAST_QUICKTIMEPLAYER'    ,'
+@DEFINE('PLUGIN_PODCAST_QUICKTIMEPLAYER','
 <!--[if !IE]> -->
 <object type="video/quicktime"
     class="qtplayer"
@@ -38,7 +37,7 @@
 ');
 
 // Windows Media Player
-@DEFINE('PLUGIN_PODCAST_WMPLAYER'           ,'
+@DEFINE('PLUGIN_PODCAST_WMPLAYER','
 <!--[if !IE]> -->
 <object type="application/x-mplayer2"
     class="wmplayer"
@@ -59,12 +58,12 @@
     <param name="showControls" value="1" />
     <param name="showstatusbar" value="0" />
     <param name="showtracker" value="1" />
-    <param name="loop" value="0" /> 
+    <param name="loop" value="0" />
 </object>
 <!-- <![endif]-->
 ');
 
-@DEFINE('PLUGIN_PODCAST_FLASHPLAYER'        ,'
+@DEFINE('PLUGIN_PODCAST_FLASHPLAYER','
 <!--[if !IE]> -->
 <object type="application/x-shockwave-flash"
     data="#url#"
@@ -72,7 +71,7 @@
     #height# #width# #align#>
 <!-- <![endif]-->
 <!--[if IE]>
-<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
     codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
     class="flashplayer"
     #height# #width# #align#>
@@ -87,7 +86,7 @@
 <!-- <![endif]-->
 ');
 
-@DEFINE('PLUGIN_PODCAST_MP3PLAYER'          ,'
+@DEFINE('PLUGIN_PODCAST_MP3PLAYER','
 <!--[if !IE]> -->
 <object type="video/quicktime"
     data="#url#"
@@ -95,7 +94,7 @@
     width="50" height="15" #align#>
 <!-- <![endif]-->
 <!--[if IE]>
-<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
+<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
     codebase="http://www.apple.com/qtactivex/qtplugin.cab"
     class="qtsmallplayer"
     width="50" height="15" #align#>
@@ -108,7 +107,7 @@
 <!-- <![endif]-->
 ');
 
-@DEFINE('PLUGIN_PODCAST_XSPFPLAYER'          ,'
+@DEFINE('PLUGIN_PODCAST_XSPFPLAYER','
 <!--[if !IE]> -->
 <object type="application/x-shockwave-flash"
     data="#plugin#/player/xspf/xspf_player_slim.swf?song_url=#url#&amp;song_title=#filename#"
@@ -116,7 +115,7 @@
     height="15" width="200" #align#>
 <!-- <![endif]-->
 <!--[if IE]>
-<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
     codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
     class="xspfplayer"
     height="15" width="200" #align#>
@@ -133,7 +132,7 @@
 <!-- <![endif]-->
 ');
 
-@DEFINE('PLUGIN_PODCAST_FLVPLAYER'          ,'
+@DEFINE('PLUGIN_PODCAST_FLVPLAYER','
 <p class="podcasting" id="podcast_#htmlid#"><a href="http://www.macromedia.com/go/getflashplayer">Get the Flash Player</a> to see this player. JavaScript is also needed to see this player.</p>
 <script type="text/javascript">
     var s1 = new SWFObject("#plugin#/player/flvplayer.swf","single","#intwidth#","#intheight#","7");
@@ -144,7 +143,7 @@
 </script>
 ');
 
-@DEFINE('PLUGIN_PODCAST_FLOWPLAYER', '
+@DEFINE('PLUGIN_PODCAST_FLOWPLAYER','
 <a href="#url#" class="podcastplayer" id="podcast_#htmlid#"></a>
 <script type="text/javascript">
 flowplayer("podcast_#htmlid#", "#plugin#/player/flowplayer/flowplayer-3.2.7.swf", {
@@ -159,14 +158,14 @@ clip: {
 </script>
 ');
 
-@DEFINE('PLUGIN_PODCAST_HTML5_AUDIOPLAYER', '
+@DEFINE('PLUGIN_PODCAST_HTML5_AUDIOPLAYER','
 <audio controls=1 preload="none">
     <source src="#url#" type="#mime#" />
     ' . PLUGIN_PODCAST_FLOWPLAYER . '
 </audio>
 ');
 
-@DEFINE('PLUGIN_PODCAST_HTML5_VIDEOPLAYER', '
+@DEFINE('PLUGIN_PODCAST_HTML5_VIDEOPLAYER','
 <video controls=1 preload="none">
     <source src="#url#" type="#mime#" />
     ' . PLUGIN_PODCAST_FLOWPLAYER . '
