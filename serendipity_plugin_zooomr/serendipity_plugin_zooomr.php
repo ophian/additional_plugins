@@ -96,15 +96,17 @@ class serendipity_plugin_zooomr extends serendipity_plugin
             $response = $req->send();
             if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
                 $store = file_get_contents($url);
+            } else {
+                $store = $response->getBody();
             }
-            $store = $response->getBody();
         } else {
             require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
             $req = new HTTP_Request($url);
             if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
                 $store = file_get_contents($url);
+            } else {
+                $store = $req->getResponseBody();
             }
-            $store = $req->getResponseBody();
         }
 
 		return $store;
