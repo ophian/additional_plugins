@@ -1,3 +1,7 @@
+1.08:
+-----
+ * Check REQUEST object for RSS
+
 1.07:
 -----
  * Consistent plugin usage fixes
