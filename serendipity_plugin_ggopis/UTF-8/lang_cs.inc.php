@@ -23,3 +23,4 @@
 @define('PLUGIN_GGOPIS_MSG_INCORRPASSWD',		'Nesprávné heslo');
 @define('PLUGIN_GGOPIS_MSG_SENDCONTACTSERROR',		'Chyba při posílání seznamu kontaktů');
 @define('PLUGIN_GGOPIS_MSG_NOSTATUSDESC',		'Žádný popis statutu');
+

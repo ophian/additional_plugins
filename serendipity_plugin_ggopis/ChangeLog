@@ -1,0 +1,7 @@
+1.4:
+----
+
+ * Check REQUEST object
+ * Set some plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+
