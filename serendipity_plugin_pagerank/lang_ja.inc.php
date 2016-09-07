@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.2
  */
@@ -19,4 +19,3 @@
 @define('PLUGIN_PAGERANK_THIS_PAGE_NO', 'いいえ');
 @define('PLUGIN_PAGERANK_THIS_PAGE_CAPTION', 'このページ');
 
-?>

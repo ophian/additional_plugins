@@ -13,13 +13,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_plugin_pagerank extends serendipity_plugin
 {
@@ -33,9 +27,9 @@ class serendipity_plugin_pagerank extends serendipity_plugin
         $propbag->add('description',   PLUGIN_PAGERANK_DETAIL);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Christian Lescuyer');
-        $propbag->add('version',       '0.32');
+        $propbag->add('version',       '0.33');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -112,7 +106,7 @@ class serendipity_plugin_pagerank extends serendipity_plugin
         print '</ul>';
     }
 
-/*
+/**
  * Algorithm lifted from "Google Checksum Algorithm 2.0.114 (PHP Source)"
  * written and contributed by Alex Stapleton, Andy Doctorow, Tarakan,
  *                            Bill Zeller, Vijay "Cyberax" Bhatter, traB
@@ -194,37 +188,45 @@ class serendipity_plugin_pagerank extends serendipity_plugin
     //converts a string into an array of integers containing the numeric value of the char
     function strord($string)
     {
-      for($i=0;$i<strlen($string);$i++) {
-        $result[$i] = ord($string{$i});
-      }
+        for($i=0;$i<strlen($string);$i++) {
+            $result[$i] = ord($string{$i});
+        }
 
-      return $result;
+        return $result;
     }
 
-   /*
+   /**
     * Query returns "Rank_1:1:4" (for example) as a string
     */
     function getrank($url)
     {
-      $url = 'info:'.$url;
-      $ch = $this->GoogleCH($this->strord($url));
-      $url = "http://www.google.com/search?client=navclient-auto&ch=6$ch&features=Rank&q=" . urlencode($url);
+        $url = 'info:'.$url;
+        $ch = $this->GoogleCH($this->strord($url));
+        $url = "http://www.google.com/search?client=navclient-auto&ch=6$ch&features=Rank&q=" . urlencode($url);
 
-      if (ini_get('allow_url_fopen')) {
-          $data = file_get_contents($url, 128);
-      } else {
-          require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-          $req = new HTTP_Request($url);
-          if (!PEAR::isError($req->sendRequest())) {
-              $data = $req->getResponseBody();
-           }
-      }
+        if (ini_get('allow_url_fopen')) {
+            $data = file_get_contents($url, 128);
+        } else {
+            if (function_exists('serendipity_request_object')) {
+                $req = serendipity_request_object($url);
+                $response = $req->send();
+                if (!PEAR::isError($req->send()) || $response->getStatus() == '200') {
+                    $data = $response->getBody();
+                }
+            } else {
+                require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
+                $req = new HTTP_Request($url);
+                if (!PEAR::isError($req->sendRequest()) || $req->getResponseCode() == '200') {
+                    $data = $req->getResponseBody();
+                }
+            }
+        }
+        $rankarray = explode (':', $data);
 
-      $rankarray = explode (':', $data);
-
-      return $rankarray[2];
+        return $rankarray[2];
     }
 
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

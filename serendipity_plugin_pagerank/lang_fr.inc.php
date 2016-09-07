@@ -1,4 +1,5 @@
 <?php
+
 @define('PLUGIN_PAGERANK_NAME', 'Google PageRank');
 @define('PLUGIN_PAGERANK_DETAIL', 'Affichage dynamique du PageRank Google');
 @define('PLUGIN_PAGERANK_PAGE_COUNT', 'Nombre de pages à afficher');
@@ -11,4 +12,4 @@
 @define('PLUGIN_PAGERANK_THIS_PAGE_YES', 'Oui');
 @define('PLUGIN_PAGERANK_THIS_PAGE_NO', 'Non');
 @define('PLUGIN_PAGERANK_THIS_PAGE_CAPTION', 'Cette page');
-?>
+

@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -19,4 +19,3 @@
 @define('PLUGIN_PAGERANK_THIS_PAGE_NO', 'No');
 @define('PLUGIN_PAGERANK_THIS_PAGE_CAPTION', 'This page');
 
-?>
