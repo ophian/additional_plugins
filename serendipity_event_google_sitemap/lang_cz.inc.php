@@ -63,3 +63,4 @@
 // Next lines were translated on 2011/01/08
 @define('PLUGIN_EVENT_SITEMAP_NEWS_SINGLE', 'Slouèit mapu stránek GoogleNews (Novinky Google) s normální mapou stránek?');
 @define('PLUGIN_EVENT_SITEMAP_NEWS_SINGLE_DESC', 'Toto nastavení se uplatní pouze pokud jste povolili obsah novinek Google (GoogleNews). Pokud je zapnuto, normální soubor sitemap.xml bude obsahovat znaèky z GoogleNews. Pokud je vypnuto, pak bude data formátovaná podle GoogleNews obsahovat pouze soubor news_sitemap.xml. Pokud máte více ne¾ podporovaných 1000 èlánkù na blogu, musíte tuto volbu vypnout, abyste nemátli GoogleSpiders va¹í normální mapou stránek.');
+

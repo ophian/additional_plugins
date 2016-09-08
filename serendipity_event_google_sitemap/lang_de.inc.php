@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Boris
  *  EN-Revision: 1.7
  */
@@ -57,3 +57,4 @@
 @define('PLUGIN_EVENT_SITEMAP_GENRES', 'GoogleNews: Kategorien');
 @define('PLUGIN_EVENT_SITEMAP_GENRES_DESC', 'Die hier gewählten Kategorien gelten für alle Blog-Einträge. Sie sollten daher eine Kategorie wählen, die auf alle Einträge passt. Um die Option auf Eintrags-Ebene festzulegen, müssen Sie ein CustomProperty-Feld namens "gnews_genre" anlegen, in diesem Feld können Sie eine kommagetrennte Liste von Kategorien eintragen.');
 @define('PLUGIN_EVENT_SITEMAP_NONE', 'Keine Kategorie');
+

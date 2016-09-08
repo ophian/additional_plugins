@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Demin Yin <damon@deminy.net>
  *  EN-Revision: 1.2
  */

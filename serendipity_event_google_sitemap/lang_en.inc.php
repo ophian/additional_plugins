@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -58,3 +58,4 @@
 
 @define('PLUGIN_EVENT_SITEMAP_NEWS_SINGLE', 'Merge GoogleNews sitemap with normal sitemap?');
 @define('PLUGIN_EVENT_SITEMAP_NEWS_SINGLE_DESC', 'This option only applies if you have enabled GoogleNews content. If enabled, the normal sitemap.xml file will contain GoogleNews markup. When disabled, only the news_sitemap.xml file will contain GoogleNews formatted data. If you have more than then allowed 1000 blog articles, you must disable this option to not confuse the GoogleSpiders with your "normal" sitemap.');
+
