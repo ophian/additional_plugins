@@ -1,3 +1,9 @@
+0.13:
+-----
+ * Ignore smileys graphics for og:image
+ * Use entry picture from the timeline theme if set
+ * Use entry picture from the photo theme if set
+
 0.12:
 -----
  * Fix access to entry[body] for content truncation, since using
