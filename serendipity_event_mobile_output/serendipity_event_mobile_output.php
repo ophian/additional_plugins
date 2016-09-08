@@ -662,18 +662,17 @@ class serendipity_event_mobile_output extends serendipity_event
 
         // fetch all entries from the db (tested with: mysql, sqlite, postgres)
         $entries = serendipity_db_query(
-                           'SELECT
-                                entries.id AS id,
-                                entries.title AS title,
-                                '.$sqlnullfunction.'(entries.last_modified,0) AS timestamp_1,
-                                '.$sqlnullfunction.'(MAX(comments.timestamp),0) AS timestamp_2
-                            FROM {$serendipity['dbPrefix']}entries entries
-                            LEFT JOIN {$serendipity['dbPrefix']}comments comments
-                            ON entries.id = comments.entry_id
-                            WHERE entries.isdraft = \'false\'
-                            GROUP BY entries.id, entries.title, entries.last_modified
-                            ORDER BY entries.id',
-                        false, 'assoc');
+                           "SELECT entries.id AS id,
+                                   entries.title AS title,
+                                   {$sqlnullfunction}(entries.last_modified,0) AS timestamp_1,
+                                   {$sqlnullfunction}(MAX(comments.timestamp),0) AS timestamp_2
+                              FROM {$serendipity['dbPrefix']}entries entries
+                         LEFT JOIN {$serendipity['dbPrefix']}comments comments
+                                ON entries.id = comments.entry_id
+                             WHERE entries.isdraft = 'false'
+                          GROUP BY entries.id, entries.title, entries.last_modified
+                          ORDER BY entries.id",
+                            false, 'assoc');
 
 
 
@@ -690,9 +689,9 @@ class serendipity_event_mobile_output extends serendipity_event
         $permlink = serendipity_db_query(
                             "SELECT entryid, timestamp, value
                                FROM {$serendipity['dbPrefix']}entryproperties AS entryproperties,
-                                   {$serendipity['dbPrefix']}entries AS entries
+                                    {$serendipity['dbPrefix']}entries AS entries
                               WHERE entryproperties.property = 'permalink'
-                                AND entries.id=entryproperties.entryid",
+                                AND entries.id = entryproperties.entryid",
                             false, 'assoc');
 
         if (is_array($permlink)) {
@@ -720,18 +719,18 @@ class serendipity_event_mobile_output extends serendipity_event
         }
 
         // fetch categories and their last entry date (tested with: mysql, sqlite, postgres)
-        $q = "SELECT    category.categoryid AS id,
-                        category_name,
-                        category_description,
+        $q = "SELECT category.categoryid AS id,
+                     category_name,
+                     category_description,
                  MAX(entries.last_modified) AS last_mod
-                FROM    {$serendipity['dbPrefix']}category category,
-                        {$serendipity['dbPrefix']}entrycat entrycat,
-                        {$serendipity['dbPrefix']}entries entries
-               WHERE    category.categoryid = entrycat.categoryid
-                 AND    entrycat.entryid = entries.id
-            GROUP BY    category.categoryid,
-                        category.category_name,
-                        category.category_description
+                FROM {$serendipity['dbPrefix']}category category,
+                     {$serendipity['dbPrefix']}entrycat entrycat,
+                     {$serendipity['dbPrefix']}entries entries
+               WHERE category.categoryid = entrycat.categoryid
+                 AND entrycat.entryid = entries.id
+            GROUP BY category.categoryid,
+                     category.category_name,
+                     category.category_description
             ORDER BY category.categoryid";
         $categories = serendipity_db_query($q, false, 'assoc');
 
