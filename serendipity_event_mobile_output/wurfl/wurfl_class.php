@@ -24,8 +24,8 @@
  * ***** END LICENSE BLOCK ***** */
 
 /*
- * 
- *  v2.1 beta2 (Apr, 16 2005)
+ * $Id$
+ * $RCSfile: wurfl_class.php,v $ v2.1 beta3 (Feb, 28 2006)
  * Author: Andrea Trasatti ( atrasatti AT users DOT sourceforge DOT net )
  * Multicache implementation: Herouth Maoz ( herouth AT spamcop DOT net )
  *
@@ -62,6 +62,7 @@ if ( defined('WURFL_PARSER_FILE') )
 	require_once(WURFL_PARSER_FILE);
 else
 	require_once("./wurfl_parser.php");
+
 
 /**
  *
@@ -238,7 +239,8 @@ class wurfl_class {
 				}
 				if ( $i>=3 ) {
 					$this->_toLog('_GetDeviceCapabilitiesFromId', "CACHE CORRUPTED! ".MULTICACHE_TOUCH." on my way", LOG_WARNING);
-					die("Updating cache stuck");
+					error_log("WURFL: Updating cache stuck");
+					return;
 				}
 				$fname = MULTICACHE_DIR . "/" . urlencode( $_id ) . MULTICACHE_SUFFIX;
 				$genericfname = MULTICACHE_DIR . "/generic" . MULTICACHE_SUFFIX;
@@ -247,7 +249,8 @@ class wurfl_class {
 					$fname = $genericfname;
 				} else if ( !is_file($fname) && !is_file($genericfname) ) {
 					$this->_toLog('_GetDeviceCapabilitiesFromId', "the id $_id is not present in Multicache files, nor the generic: CACHE CORRUPTED!", LOG_ERR);
-					die("the id $_id is not present in Multicache");
+					error_log("WURFL: the id $_id is not present in Multicache");
+					return;
 				}
 				@include( $fname );
 				$this->_wurfl['devices'][$_id] = $_cached_devices[$_id];
@@ -255,7 +258,8 @@ class wurfl_class {
 			return $this->_wurfl['devices'][$_id];
 		}
 		$this->_toLog('_GetDeviceCapabilitiesFromId', "the id $_id is not present in wurfl_agents", LOG_ERR);
-		die("the id $_id is not present in wurfl_agents");
+		error_log("WURFL: the id $_id is not present in wurfl_agents");
+		return;
 		// I should never get here!!
 		return false;
 	}
@@ -284,6 +288,8 @@ class wurfl_class {
 
 		// removing the possible Openwave MAG tag
 		$_user_agent = trim(ereg_replace("UP.Link.*", "", $_user_agent));
+		/* This is being remove because too many devices use Mozilla, MSIE and so on as strings in the UA
+			Use the web_browser_patch.xml if you want to catch web browsers
 		if (	( stristr($_user_agent, 'Opera') && stristr($_user_agent, 'Windows') )
 			|| ( stristr($_user_agent, 'Opera') && stristr($_user_agent, 'Linux') )
 			|| stristr($_user_agent, 'Gecko')
@@ -298,6 +304,9 @@ class wurfl_class {
 			$this->capabilities['product_info']['device_claims_web_support'] = true;
 			return true;
 		} else if ( $_check_accept == true ) {
+		*/
+
+		if ( $_check_accept == true ) {
 			if (
 			     !eregi('wml', $_SERVER['HTTP_ACCEPT'])
 			     && !eregi('wap', $_SERVER['HTTP_ACCEPT'])
@@ -358,7 +367,26 @@ class wurfl_class {
 		$_wurfl_user_agents = array_keys($this->_wurfl_agents);
 		// Searching in wurfl_agents
 		// The user_agent should not become shorter than 4 characters
-		$this->_toLog('GetDeviceCapabilitiesFromAgent', 'Searching in the agent database', LOG_INFO);
+		$this->_toLog('GetDeviceCapabilitiesFromAgent', 'Searching in the agent database for '.$_ua, LOG_INFO);
+		// Search for an exact match first
+		if ( in_array($_ua, $_wurfl_user_agents) ) {
+			$this->user_agent = $_ua;
+			$this->wurfl_agent = $_ua;
+			$this->id = $this->_wurfl_agents[$_ua];
+			// calling FullCapabilities to define $this->capabilities
+			$this->_GetFullCapabilities($this->id);
+			$this->browser_is_wap = $this->capabilities['product_info']['is_wireless_device'];
+			$this->brand = $this->capabilities['product_info']['brand_name'];
+			$this->model = $this->capabilities['product_info']['model_name'];
+			reset($this->_wurfl_agents);
+			reset($_wurfl_user_agents);
+			if ( WURFL_USE_CACHE ) {
+				$this->_WriteFastAgentToId();
+			}
+			$this->_toLog('GetDeviceCapabilitiesFromAgent', 'I found an exact match for '.$_ua.' with id '.$this->id, LOG_INFO);
+			return true;
+		}
+
 		// I request to set a short list of UA's among which I should search an unknown user agent
 		$_short_ua_len = 4;
 		$_set_short_wurfl_ua = true;
@@ -380,7 +408,7 @@ class wurfl_class {
 					$this->id = $this->_wurfl_agents[$_x];
 					// calling FullCapabilities to define $this->capabilities
 					$this->_GetFullCapabilities($this->id);
-					$this->browser_is_wap = true;
+					$this->browser_is_wap = $this->capabilities['product_info']['is_wireless_device'];
 					$this->brand = $this->capabilities['product_info']['brand_name'];
 					$this->model = $this->capabilities['product_info']['model_name'];
 					reset($this->_wurfl_agents);
@@ -432,7 +460,7 @@ class wurfl_class {
 			$this->user_agent = $_user_agent;
 			$this->wurfl_agent = 'uptext_generic';
 			$this->id = 'uptext_generic';
-		} else if ( eregi('wml', $_SERVER['HTTP_ACCEPT']) || eregi('wap', $_SERVER['HTTP_ACCEPT']) ) {
+		} else if ( isset( $_SERVER['HTTP_ACCEPT'] ) && (eregi('wml', $_SERVER['HTTP_ACCEPT']) || eregi('wap', $_SERVER['HTTP_ACCEPT'])) ) {
 			$this->browser_is_wap = true;
 			$this->user_agent = $_user_agent;
 			$this->wurfl_agent = 'generic';
@@ -545,10 +573,25 @@ class wurfl_class {
 		fwrite($fp_cache, "?>");
 		fclose($fp_cache);
 		$rv = @rename($filename,WURFL_AGENT2ID_FILE);
+		/*
 		if( !$rv ){
 			$this->_toLog('_WriteFastAgentToId', 'Unable to rename '.$filename.' to '. WURFL_AGENT2ID_FILE, LOG_WARNING);
 			return;
 		}
+		*/
+		if( !$rv ){
+			$this->_toLog('_WriteFastAgentToId', 'Unable to rename '.$filename.' to '. WURFL_AGENT2ID_FILE, LOG_WARNING);
+			$unl = @unlink(WURFL_AGENT2ID_FILE);
+
+			if (!$unl)
+				$this->_toLog('_WriteFastAgentToId', 'Unable to delete '.  WURFL_AGENT2ID_FILE, LOG_WARNING);
+
+			$rv = @rename($filename,WURFL_AGENT2ID_FILE);
+			if ( !$rv )
+				$this->_toLog('_WriteFastAgentToId', 'Still unable to rename '.$filename.' to '. WURFL_AGENT2ID_FILE, LOG_WARNING);
+			return;
+		}
+
 		$this->_toLog('_WriteFastAgentToId', 'Done caching user_agent to wurfl_id', LOG_INFO);
 		return;
 	}
@@ -570,7 +613,7 @@ class wurfl_class {
 		if ( is_file(WURFL_AGENT2ID_FILE) || is_link(WURFL_AGENT2ID_FILE) ) {
 			include(WURFL_AGENT2ID_FILE);
 			// unserialization
-			//$a = rawurldecode(unserialize($cache_agents));
+			//$a = unserialize(rawurldecode($cache_agents));
 		} else {
 			return false;
 		}

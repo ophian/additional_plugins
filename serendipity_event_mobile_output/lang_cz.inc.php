@@ -66,10 +66,11 @@
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_UNKNOWN_HOST', 'Cíl oznámení o aktualizaci nenalezen.');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_ERROR', 'Nepodaøilo se ohlásit aktualizaci na %s: %s<br/>');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_OK', 'Aktualizovaná mapa stránek odeslána na %s.<br/>');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_MANUAL','Pokud se nepodaøilo zapsat mapu stránek na %s, udìlejte to teï náv¹tìvou <a href="%s">tohoto odkazu</a>.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_MANUAL', 'Pokud se nepodaøilo zapsat mapu stránek na %s, udìlejte to teï náv¹tìvou <a href="%s">tohoto odkazu</a>.');
 
 // Next lines were translated on 2010/12/25
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_NAME', '©ablona pro Androidy');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_DESC', 'Název ¹ablony pro telefony Android. Výchozí je "android,app", která je souèástí pluginu.');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_NAME', 'Malé ochutnávky');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_DESC', 'Pokud je zapnuto, bude v pøehledu pøíspìvkù zobrazen pouze první odstavec pøíspìvku. Opaènì je zobrazeno celé tìlo bez roz¹íøené textové èásti jako obvykle.');
+

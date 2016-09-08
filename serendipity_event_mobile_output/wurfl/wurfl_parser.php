@@ -24,8 +24,8 @@
  * ***** END LICENSE BLOCK ***** */
 
 /*
- * 
- *  v2.1 beta2 (Apr, 16 2005)
+ * $Id$
+ * $RCSfile: wurfl_parser.php,v $ v2.1 beta3 (Feb, 28 2006)
  * Author: Andrea Trasatti ( atrasatti AT users DOT sourceforge DOT net )
  * Multicache implementation: Herouth Maoz ( herouth AT spamcop DOT net )
  *
@@ -193,10 +193,35 @@ function startElement($parser, $name, $attr) {
 				die("No user agent and I am not generic!! id=".$attr["id"]." HELP");
 			}
 			if ( sizeof($attr) > 0 ) {
+				$patch_values = '';
+				if ( !isset($wurfl["devices"][$attr["id"]])  ) {
+					$new_device = true;
+				}
 				while ($t = each($attr)) {
+					if ( $check_patch_params && defined('WURFL_PATCH_DEBUG') && WURFL_PATCH_DEBUG === true ) {
+						if ( !isset($wurfl["devices"][$attr["id"]][$t[0]])  ) {
+							if ( $new_device !== true ) {
+								$patch_values .= 'adding ';
+							}
+							$patch_values .= $t[0].'='.$t[1].', ';
+						} else if ( $wurfl["devices"][$attr["id"]][$t[0]] != $t[1] ) {
+							$patch_values .= $t[0].', '.$wurfl["devices"][$attr["id"]][$t[0]].'=>'.$t[1].', ';
+						}
+					}
 					// example: $wurfl["devices"]["ericsson_generic"]["fall_back"]="generic";
 					$wurfl["devices"][$attr["id"]][$t[0]]=$t[1];
 				}
+			}
+			if ( $check_patch_params && defined('WURFL_PATCH_DEBUG') && WURFL_PATCH_DEBUG === true ) {
+				if ( $new_device === true ) {
+					$log_string = 'Adding device '.$attr["id"].' ';
+					$new_device = false;
+				} else {
+					$log_string = 'Updating device '.$attr["id"].' ';
+				}
+				if ( strlen($patch_values) > 0 )
+					$log_string .= ': '.$patch_values;
+				wurfl_log('parse', $log_string);
 			}
 			$curr_device=$attr["id"];
 			break;
@@ -217,7 +242,18 @@ function startElement($parser, $name, $attr) {
 					$value = $intval;
 				}
 			}
-			$wurfl["devices"][$curr_device][$curr_group][$attr["name"]]=$value;
+			if ( $curr_device != 'generic' && !isset($wurfl["devices"]['generic'][$curr_group][$attr["name"]]) ) {
+				wurfl_log('parse', 'Capability '.$attr["name"].' in group '.$curr_group.' is not defined in the generic device, can\'t set it for '.$curr_device.'.');
+			} else {
+				if ( $check_patch_params && defined('WURFL_PATCH_DEBUG') && WURFL_PATCH_DEBUG === true ) {
+					if ( isset($wurfl["devices"][$curr_device][$curr_group][$attr["name"]]) ) {
+						wurfl_log('parse', $curr_device.': updating '.$attr["name"].', '.$wurfl["devices"][$curr_device][$curr_group][$attr["name"]].'=>'.$value);
+					} else {
+						wurfl_log('parse', $curr_device.': setting '.$attr["name"].'='.$value);
+					}
+				}
+				$wurfl["devices"][$curr_device][$curr_group][$attr["name"]]=$value;
+			}
 			break;
 		case "devices":
 			// This might look useless but it's good when you want to parse only the devices and skip the rest
@@ -329,6 +365,7 @@ function parse() {
 		if (!($fp = fopen(WURFL_PATCH_FILE, "r"))) {
 			wurfl_log('parse', "could not open XML patch file: ".WURFL_PATCH_FILE);
 		}
+		wurfl_log('parse', "Loaded, now parsing");
 		while ($data = fread($fp, 4096)) {
 		    if (!xml_parse($xml_parser, $data, feof($fp))) {
 			die(sprintf("XML error: %s at line %d",
@@ -417,7 +454,10 @@ function parse() {
 		$fp_cache= fopen(CACHE_FILE, "w");
 		fwrite($fp_cache, "<?php\n");
 		// it seems until PHP 4.3.2 var_export had a problem with apostrophes in array keys
-		if ( ($php_main_version == 4 && $php_subversion > 2 && $php_subsubversion > 2) || $php_main_version > 4 ) {
+		if ( $php_main_version > 4 
+				|| ($php_main_version == 4 && $php_subversion > 3)
+				|| ($php_main_version == 4 && $php_subversion == 3 && $php_subsubversion > 2) ) {
+
 			if ( !WURFL_USE_MULTICACHE ) {
 				$wurfl_to_file = var_export($wurfl, true);
 			}
@@ -449,7 +489,7 @@ function parse() {
 			// Return the capabilities to the wurfl structure
 			$wurfl['devices'] = &$wurfl_temp_devices;
 			// Write multicache files
-			if ( FORCED_UPDATE === true )
+			if ( @FORCED_UPDATE === true )
 				$path = MULTICACHE_TMP_DIR;
 			else
 				$path = MULTICACHE_DIR;

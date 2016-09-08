@@ -1,6 +1,14 @@
-# 
+#
+1.05:
+-----
+ * Check REQUEST object
+ * Set plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+ * Update wurfl lib to latest 2.1 (https://github.com/Br3nda/wurfl_php)
 
-1.04: Properly use the example() API method by returning, not echo'ing. Unimportant update.    
+
+1.04.1: Use serendipity_specialchars()
+1.04: Properly use the example() API method by return, not echo. Unimportant update.
 
 1.03:
 -----
@@ -14,7 +22,7 @@ Version 1.01 (brockhaus):
       will be installed into the template folder, if not already installed.
     * Added config option for an Android device template. Android devices
       should now be detected and the matching template be choosen.
-    * Created an Android template. It looks good in the standard browser 
+    * Created an Android template. It looks good in the standard browser
       with text=normal on my HTC Desire. Needs more device testing..
     * Slightly updated the mobile and the iphone template.
     * Removed / Changed the incorrect http://c.seo-mobile.de link. Now

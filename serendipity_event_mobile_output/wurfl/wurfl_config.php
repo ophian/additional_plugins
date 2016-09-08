@@ -24,8 +24,8 @@
  * ***** END LICENSE BLOCK ***** */
 
 /*
- * 
- *  v2.1 beta2 (Apr, 16 2005)
+ * $Id: wurfl_config.php,v 1.2 2006/02/28 13:25:02 atrasatti Exp $
+ * $RCSfile: wurfl_config.php,v $ v2.1 beta3 (Feb, 28 2006)
  * Author: Andrea Trasatti ( atrasatti AT users DOT sourceforge DOT net )
  * Multicache implementation: Herouth Maoz ( herouth AT spamcop DOT net )
  *
@@ -96,6 +96,17 @@ define("WURFL_PARSER_FILE", dirname(__FILE__).'/wurfl_parser.php');
 // Path and filename of wurfl_class.php
 define("WURFL_CLASS_FILE", dirname(__FILE__).'/wurfl_class.php');
 
+// Path and name of the wurfl
+define ("WURFL_FILE", DATADIR."wurfl.xml");
+
+// Path and name of the log file
+define ("WURFL_LOG_FILE", DATADIR."wurfl.log");
+
+// suggested log level for normal use (default PHP logging constants)
+//define ("LOG_LEVEL", LOG_ERROR );
+// suggested log level for debug use
+define ("LOG_LEVEL", LOG_INFO);
+
 // Set this true if you want to use cache. Strongly suggested
 define ("WURFL_USE_CACHE", true);
 
@@ -125,19 +136,13 @@ define ("MULTICACHE_TOUCH", DATADIR."multicache.lockfile");
 define ("MULTICACHE_SUFFIX",".php");
 
 // Autoload set to false, I will load it when needed
-define ("WURFL_AUTOLOAD", true);
+define ("WURFL_AUTOLOAD", false);
 
 // This parameter tells the class to automatically update cache files when a
 // new XML is found.
 // Using the multicache is not suggested to automatically update it. Use the
 // external scripts.
 define ("WURFL_CACHE_AUTOUPDATE", false);
-
-// Path and name of the wurfl
-define ("WURFL_FILE", DATADIR."wurfl.xml");
-
-// Path and name of the log file
-define ("WURFL_LOG_FILE", DATADIR."wurfl.log");
 
 // Path and name of the file to store user_agent->id relation
 // (ignored if caching is disabled)
@@ -146,9 +151,8 @@ define ("WURFL_AGENT2ID_FILE", DATADIR."agent2id.php4");
 // Set the maximum number of user_agents to cache
 define ("MAX_UA_CACHE", 30);
 
-// suggested log level for normal use (default PHP logging constants)
-//define ("LOG_LEVEL", LOG_ERROR );
-// suggested log level for debug use
-define ("LOG_LEVEL", 0);
-
+// Configure a patch file
+//define("WURFL_PATCH_FILE", DATADIR.'wurfl_patch.xml');
+// Enable patch debug, NOT SUGGESTED for production environments
+define("WURFL_PATCH_DEBUG", false);
 ?>

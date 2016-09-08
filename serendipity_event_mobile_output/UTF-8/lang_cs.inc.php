@@ -66,10 +66,11 @@
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_UNKNOWN_HOST', 'Cíl oznámení o aktualizaci nenalezen.');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_ERROR', 'Nepodařilo se ohlásit aktualizaci na %s: %s<br/>');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_OK', 'Aktualizovaná mapa stránek odeslána na %s.<br/>');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_MANUAL','Pokud se nepodařilo zapsat mapu stránek na %s, udělejte to teď návštěvou <a href="%s">tohoto odkazu</a>.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_MANUAL', 'Pokud se nepodařilo zapsat mapu stránek na %s, udělejte to teď návštěvou <a href="%s">tohoto odkazu</a>.');
 
 // Next lines were translated on 2010/12/25
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_NAME', 'Šablona pro Androidy');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_DESC', 'Název šablony pro telefony Android. Výchozí je "android,app", která je součástí pluginu.');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_NAME', 'Malé ochutnávky');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_DESC', 'Pokud je zapnuto, bude v přehledu příspěvků zobrazen pouze první odstavec příspěvku. Opačně je zobrazeno celé tělo bez rozšířené textové části jako obvykle.');
+

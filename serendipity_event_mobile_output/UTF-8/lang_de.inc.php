@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Pelle Boese <p.boese@gmail.com>
  *  EN-Revision: Revision of lang_de.inc.php
  */
@@ -66,9 +66,10 @@
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_UNKNOWN_HOST', 'Pingback-Host nicht gefunden.');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_ERROR', 'Konnte Update nicht an %s melden: %s');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_OK', 'Sitemap Update an %s gemeldet.<br/>');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_MANUAL','Wenn die Sitemap noch nicht an %s gemeldet wurde, dann kann es mit <a href="%s">diesem Link</a> getan werden');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_MANUAL', 'Wenn die Sitemap noch nicht an %s gemeldet wurde, dann kann es mit <a href="%s">diesem Link</a> getan werden');
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_NAME','Android Template');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_DESC','Das Template, das für die Android Ausgabe genutzt wird. Das mitgelieferte Standard-Template ist "android.app".');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_NAME','Kleine Teaser');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_DESC','Wenn angeschaltet, wird nur der erste Absatz eines Artikels in der Übersicht angezeigt. Ansonsten der Artikel ohne den erweiterten Teil (wie gewohnt).');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_NAME', 'Android Template');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_DESC', 'Das Template, das für die Android Ausgabe genutzt wird. Das mitgelieferte Standard-Template ist "android.app".');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_NAME', 'Kleine Teaser');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_DESC', 'Wenn angeschaltet, wird nur der erste Absatz eines Artikels in der Übersicht angezeigt. Ansonsten der Artikel ohne den erweiterten Teil (wie gewohnt).');
+

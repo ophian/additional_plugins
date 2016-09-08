@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Pelle Boese <p.boese@gmail.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -65,9 +65,10 @@
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_UNKNOWN_HOST', 'Pingback-Host not found.');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_ERROR', 'Could not report update to %s: %s<br/>');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_OK', 'Sent sitemap update to %s.<br/>');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_MANUAL','If you have not submited your sitemap to %s, do it now with visiting <a href="%s">this link</a>.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_MANUAL', 'If you have not submited your sitemap to %s, do it now with visiting <a href="%s">this link</a>.');
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_NAME','Android template');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_DESC','The name of the template for Android phones. Default is "android,app" which comes with the plugin.');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_NAME','Small teasers');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_DESC','If switched on only the first paragraph of an article will be shown in the article overview, else the the body wthout extended body (as normal).');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_NAME', 'Android template');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_DESC', 'The name of the template for Android phones. Default is "android,app" which comes with the plugin.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_NAME', 'Small teasers');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_DESC', 'If switched on only the first paragraph of an article will be shown in the article overview, else the the body wthout extended body (as normal).');
+

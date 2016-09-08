@@ -22,8 +22,8 @@
  * ***** END LICENSE BLOCK ***** */
 
 /*
- * 
- *  v2.1 beta2 (Apr, 16 2005)
+ * $Id: update_cache.php,v 1.5 2006/09/13 12:52:12 atrasatti Exp $
+ * $RCSfile: update_cache.php,v $ v2.1 beta2 (Apr, 16 2005)
  *
  * Author: Andrea Trasatti ( atrasatti AT users DOT sourceforge DOT net )
  * Multicache implementation: Herouth Maoz ( herouth AT spamcop DOT net )
@@ -33,17 +33,19 @@
 /*
  *
  * This script should be called manually (CLI is suggested) to update the
- * multicache files when a new XML is availabled.
+ * multicache files when a new XML is available, e.g.:
+ * andrea@wurfl$ php update_cache.php
+ *
  * This script should be used when you have configured WURFL_CACHE_AUTOUPDATE
  * to false.
  *
  * KNOWN BUG: cache.php will be updated automatically, a race condition might
  * happen while generating the new files in the temporary directory and before
- * it's moved to the default path. A temporary cache file should be used along
- * contributions are welcome.
+ * it's moved to the default path. Using a temporary cache file would fix this
+ * issue. Your contributions/fixes are welcome ;-)
  *
  * More info can be found here in the PHP section:
- * http://wurfl.sourceforge.net/
+ * http://wurfl.sourceforge.net/php/
  *
  * Questions or comments can be sent to
  * "Andrea Trasatti" <atrasatti AT users DOT sourceforge DOT net>
@@ -82,7 +84,7 @@ if (WURFL_USE_CACHE === true) {
 	}
 	wurfl_log('update_cache', "Done updating cache");
 } else {
-	wurfl_log('update_cache', "Why update cache if WURFL_URE_CACHE is not set to true?");
+	wurfl_log('update_cache', "Why update cache if WURFL_USE_CACHE is not set to true?");
 }
 
 list($usec, $sec) = explode(" ", microtime());
@@ -90,6 +92,6 @@ $parse = ((float)$usec + (float)$sec);
 
 echo "Parser load time:".($load_parser-$start)."<br>\n";
 echo "Parsing time:".($parse-$load_parser)."<br>\n";
-echo "Total:".($end-$start)."<br>\n";
+echo "Total:".($parse-$start)."<br>\n";
 
 ?>
