@@ -1,0 +1,8 @@
+<?php
+$_cached_devices['sie_m75_ver1']=array (
+  'id' => 'sie_m75_ver1',
+  'user_agent' => 'SIE-M75',
+  'fall_back' => 'sie_platform75_generic',
+  'actual_device_root' => 'true',
+);
+?>

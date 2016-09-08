@@ -1,0 +1,7 @@
+<?php
+$_cached_devices['philips_v21wap_ver1_sub4']=array (
+  'id' => 'philips_v21wap_ver1_sub4',
+  'user_agent' => 'PHILIPS-V21WAP UP/4',
+  'fall_back' => 'philips_v21wap_ver1',
+);
+?>

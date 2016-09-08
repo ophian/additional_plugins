@@ -1,0 +1,29 @@
+<?php
+$_cached_devices['fly_sl600_ver1']=array (
+  'id' => 'fly_sl600_ver1',
+  'user_agent' => 'FLY-SL600',
+  'fall_back' => 'generic',
+  'actual_device_root' => 'true',
+  'display' => 
+  array (
+    'columns' => 12,
+    'max_image_height' => 200,
+    'max_image_width' => 176,
+    'resolution_height' => 220,
+    'resolution_width' => 176,
+    'rows' => 7,
+  ),
+  'image_format' => 
+  array (
+    'bmp' => true,
+    'colors' => 65536,
+    'gif' => true,
+    'jpg' => true,
+    'wbmp' => true,
+  ),
+  'storage' => 
+  array (
+    'max_deck_size' => 65536,
+  ),
+);
+?>

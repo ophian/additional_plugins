@@ -1,0 +1,21 @@
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][constructor] Class Initiated
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][GetDeviceCapabilitiesFromAgent] searching for MOT-c350
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][GetDeviceCapabilitiesFromAgent] cache enabled, WURFL is not loaded, now loading
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][GetDeviceCapabilitiesFromAgent] loading WURFL from cache
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][GetDeviceCapabilitiesFromAgent] Searching in the agent database for MOT-c350
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][_GetFullCapabilities] searching for mot_c350_ver1
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][_GetDeviceCapabilitiesFromId] reading id:mot_c350_ver1
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][_GetDeviceCapabilitiesFromId] I have it in wurfl_agents cache, done
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][_GetFullCapabilities] parent device:mot_mib20_generic now going to read its capabilities
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][_GetDeviceCapabilitiesFromId] reading id:mot_mib20_generic
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][_GetDeviceCapabilitiesFromId] I have it in wurfl_agents cache, done
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][_GetFullCapabilities] reading capabilities of 'generic' device
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][_GetDeviceCapabilitiesFromId] reading id:generic
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][_GetDeviceCapabilitiesFromId] I have it in wurfl_agents cache, done
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][_WriteFastAgentToId] Created temp file C:\Users\7c64\Downloads\GIT\ophian\additional_plugins\serendipity_event_mobile_output\wurfl/data/agent2id.php457d16ee3389353.27101793 
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][_WriteFastAgentToId] Done caching user_agent to wurfl_id
+Thu, 08 Sep 2016 16:00:03 +0200 [KAFKA 872][GetDeviceCapabilitiesFromAgent] I found an exact match for MOT-c350 with id mot_c350_ver1
+Thu, 08 Sep 2016 16:11:43 +0200 [KAFKA 3560][update_cache] Forced cache update started
+Thu, 08 Sep 2016 16:11:43 +0200 [KAFKA 3560][parse] No XML patch file defined
+Thu, 08 Sep 2016 16:11:45 +0200 [KAFKA 3560][update_cache] Updating multicache dir
+Thu, 08 Sep 2016 16:11:45 +0200 [KAFKA 3560][update_cache] Done updating cache

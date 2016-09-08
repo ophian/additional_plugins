@@ -1,0 +1,7 @@
+<?php
+$_cached_devices['sie_sg75_ver1_sub10']=array (
+  'id' => 'sie_sg75_ver1_sub10',
+  'user_agent' => 'SIE-SG75/10 UP.Browser/7.1.0.e.7(GUI) MMP/2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1',
+  'fall_back' => 'sie_sg75_ver1',
+);
+?>
