@@ -287,7 +287,7 @@ class wurfl_class {
 		$this->capabilities = array();
 
 		// removing the possible Openwave MAG tag
-		$_user_agent = trim(ereg_replace("UP.Link.*", "", $_user_agent));
+		$_user_agent = trim(str_replace("UP.Link.*", "", $_user_agent));
 		/* This is being remove because too many devices use Mozilla, MSIE and so on as strings in the UA
 			Use the web_browser_patch.xml if you want to catch web browsers
 		if (	( stristr($_user_agent, 'Opera') && stristr($_user_agent, 'Windows') )
@@ -522,7 +522,7 @@ class wurfl_class {
 			$this->_toLog('_WriteFastAgentToId', 'Unable to create file in '.dirname(WURFL_AGENT2ID_FILE), LOG_ERR);
 			return;
 		}
-		$_ua = trim(ereg_replace("UP.Link.*", "", $_ua));
+		$_ua = trim(str_replace("UP.Link.*", "", $_ua));
 		if ( !is_readable(WURFL_AGENT2ID_FILE) ) {
 			if ( is_file(WURFL_AGENT2ID_FILE) ) {
 				$this->_toLog('_WriteFastAgentToId', 'Unable to read '.WURFL_AGENT2ID_FILE, LOG_WARNING);
