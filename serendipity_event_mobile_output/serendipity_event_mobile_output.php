@@ -607,7 +607,7 @@ class serendipity_event_mobile_output extends serendipity_event
                 // restore HTTP/Request
                 $options['ssl_verify_peer'] = false;
             }
-            $req = new HTTP_Request2($url, HTTP_Request2::METHOD_GET, $options);
+            $req = new HTTP_Request2($loc, HTTP_Request2::METHOD_GET, $options);
             $response = $req->send();
             if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
                 print_r($req);
