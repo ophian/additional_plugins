@@ -544,8 +544,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geourl</link>
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_event_geourl&lt;br /&gt;GeoURL&lt;/b&gt;&lt;br /&gt;GeoURL vkládá informace o zeměpisné poloze URL blogu. Více informací na http://geourl.org/&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_geourl&lt;br /&gt;GeoURL&lt;/b&gt;&lt;br /&gt;GeoURL vkládá informace o zeměpisné poloze URL blogu. Více informací na http://geourl.org/&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Thu, 08 Sep 2016 19:26:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geourl</guid>
 </item>
 <item>
@@ -589,8 +589,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_google_sitemap</link>
 <category>Event Plugins</category>
 <author>Boris</author>
-<content:encoded>&lt;b&gt;serendipity_event_google_sitemap&lt;br /&gt;Generátor mapy stránek pro vyhledávače&lt;/b&gt;&lt;br /&gt;Vytváří soubor sitemap.xml.gz, který používají nejrůznější webové vyhledávače (Google, MSN, Yahoo nebo Ask)&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_google_sitemap&lt;br /&gt;Generátor mapy stránek pro vyhledávače&lt;/b&gt;&lt;br /&gt;Vytváří soubor sitemap.xml.gz, který používají nejrůznější webové vyhledávače (Google, MSN, Yahoo nebo Ask)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Thu, 08 Sep 2016 19:11:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_google_sitemap</guid>
 </item>
 <item>
@@ -837,12 +837,12 @@
 <guid isPermaLink="false">serendipity_event_mimetex</guid>
 </item>
 <item>
-<title>Markup: V�stup na mobil: Tento plugin se star� o vytvo�en� k�du optimalizovan�ho pro mobiln� telefony (tzv. XHTML MP), pokud zjist�, �e str�nku prohl�� prohl�e� pro mobily. Plugin je speci�ln� optimalizov�n pro iPhone a iPod Touch. Plugin tak� m�n� velikost obr�zk�, aby se p�izp�sobily velikosti displeje.</title>
+<title>Markup: Výstup na mobil: Tento plugin se stará o vytvoření kódu optimalizovaného pro mobilní telefony (tzv. XHTML MP), pokud zjistí, že stránku prohlíží prohlížeč pro mobily. Plugin je speciálně optimalizován pro iPhone a iPod Touch. Plugin také mění velikost obrázků, aby se přizpůsobily velikosti displeje.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mobile_output</link>
 <category>Event Plugins</category>
 <author>Pelle Boese, Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_mobile_output&lt;br /&gt;Markup: V�stup na mobil&lt;/b&gt;&lt;br /&gt;Tento plugin se star� o vytvo�en� k�du optimalizovan�ho pro mobiln� telefony (tzv. XHTML MP), pokud zjist�, �e str�nku prohl�� prohl�e� pro mobily. Plugin je speci�ln� optimalizov�n pro iPhone a iPod Touch. Plugin tak� m�n� velikost obr�zk�, aby se p�izp�sobily velikosti displeje.&lt;br/&gt;For: Serendipity 1.0</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_mobile_output&lt;br /&gt;Markup: Výstup na mobil&lt;/b&gt;&lt;br /&gt;Tento plugin se stará o vytvoření kódu optimalizovaného pro mobilní telefony (tzv. XHTML MP), pokud zjistí, že stránku prohlíží prohlížeč pro mobily. Plugin je speciálně optimalizován pro iPhone a iPod Touch. Plugin také mění velikost obrázků, aby se přizpůsobily velikosti displeje.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Thu, 08 Sep 2016 19:34:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mobile_output</guid>
 </item>
 <item>
@@ -1319,7 +1319,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Oznamování příspěvků&lt;/b&gt;&lt;br /&gt;Posílá oznámení o nových příspěvcích na on-line internetové služby.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Thu, 08 Sep 2016 16:47:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>
