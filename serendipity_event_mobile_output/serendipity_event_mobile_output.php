@@ -603,7 +603,11 @@ class serendipity_event_mobile_output extends serendipity_event
     {
         global $serendipity;
         if (function_exists('serendipity_request_object')) {
-            $req = serendipity_request_object($loc);
+            if (version_compare(PHP_VERSION, '5.6.0', '<')) {
+                // restore HTTP/Request
+                $options['ssl_verify_peer'] = false;
+            }
+            $req = new HTTP_Request2($url, HTTP_Request2::METHOD_GET, $options);
             $response = $req->send();
             if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
                 print_r($req);
@@ -612,7 +616,6 @@ class serendipity_event_mobile_output extends serendipity_event
                 return true;
             }
         } else {
-            require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
             $req = new HTTP_Request($loc);
             if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
                 print_r($req);
@@ -633,6 +636,9 @@ class serendipity_event_mobile_output extends serendipity_event
                 $sqlnullfunction = 'COALESCE';
                 break;
             case 'sqlite':
+            case 'sqlite3':
+            case 'pdo-sqlite':
+            case 'pdo-sqliteoo':
             case 'mysql':
             case 'mysqli':
                 $sqlnullfunction = 'IFNULL';
@@ -779,6 +785,12 @@ class serendipity_event_mobile_output extends serendipity_event
         fputs($outfile, $sitemap_xml);
         flock($outfile, LOCK_UN);
         fclose($outfile);
+
+        if (function_exists('serendipity_request_object')) {
+            require_once S9Y_PEAR_PATH . 'HTTP/Request2.php';
+        } else {
+            require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
+        }
 
         // Walk through the list of pingback-URLs
         foreach(explode(';', $pingback_url) as $cur_pingback_url) {
