@@ -4,13 +4,6 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-if (file_exists(S9Y_PEAR_PATH . 'HTTP/Request2.php')) {
-    require_once S9Y_PEAR_PATH . 'HTTP/Request2.php';
-    @define('SERENDIPITY_IS_REQUEST2', true);
-} else {
-    require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-}
-
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_weblogping extends serendipity_event
@@ -25,7 +18,7 @@ class serendipity_event_weblogping extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WEBLOGPING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.10');
+        $propbag->add('version',       '1.11');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -164,6 +157,11 @@ class serendipity_event_weblogping extends serendipity_event
                     if (!class_exists('XML_RPC_Base')) {
                         include_once(S9Y_PEAR_PATH . "XML/RPC.php");
                     }
+                    if (function_exists('serendipity_request_object')) {
+                        require_once S9Y_PEAR_PATH . 'HTTP/Request2.php';
+                    } else {
+                        require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
+                    }
 
                     // First cycle through list of services to remove superseding services which may have been checked
                     foreach ($this->services AS $index => $service) {
@@ -223,15 +221,16 @@ class serendipity_event_weblogping extends serendipity_event
 
                             # 15 second timeout may not be long enough for weblogs.com
                             $message->createPayload();
+                            $url     = "http://".$service['host'].$service['path'];
                             $options = array();
                             serendipity_plugin_api::hook_event('backend_http_request', $options, 'weblogping');
                             serendipity_request_start();
-                            if (defined('SERENDIPITY_IS_REQUEST2')) {
+                            if (function_exists('serendipity_request_object')) {
                                 if (version_compare(PHP_VERSION, '5.6.0', '<')) {
                                     // restore HTTP/Request
                                     $options['ssl_verify_peer'] = false;
                                 }
-                                $req = new HTTP_Request2("http://".$service['host'].$service['path'], HTTP_Request2::METHOD_POST, $options);
+                                $req = new HTTP_Request2($url, HTTP_Request2::METHOD_POST, $options);
                                 $req->addHeader("Content-Type", "text/xml");
                                 if (strtoupper(LANG_CHARSET) != 'UTF-8') {
                                     $payload = utf8_encode($message->payload);
@@ -262,7 +261,7 @@ class serendipity_event_weblogping extends serendipity_event
                                 }
                             } else {
                                 // Fallback to old solution
-                                $req = new HTTP_Request("http://".$service['host'].$service['path'], $options);
+                                $req = new HTTP_Request($url, $options);
                                 $req->setMethod(HTTP_REQUEST_METHOD_POST);
                                 $req->addHeader("Content-Type", "text/xml");
                                 if (strtoupper(LANG_CHARSET) != 'UTF-8') {

@@ -1,8 +1,14 @@
-1.09:
+1.11:
+-----
+
+ * Check REQUEST object
+
+1.10:
 -----
 
  * Set plugin consistencies
  * register and use PEAR HTTP/Request2 if available (please test)
+
 
 1.08.2:
 -------
