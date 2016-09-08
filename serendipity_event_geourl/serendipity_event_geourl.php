@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 // GeoURL Plugin for Serendipity
 //
@@ -15,28 +15,28 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
+class serendipity_event_geourl extends serendipity_event
+{
 
-class serendipity_event_geourl extends serendipity_event {
-
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_EVENT_GEOURL_NAME);
         $propbag->add('event_hooks',   array('frontend_header' => true));
         $propbag->add('configuration', array('lat', 'long'));
         $propbag->add('description',   PLUGIN_EVENT_GEOURL_DESC);
-        $propbag->add('version',       '1.4.1');
+        $propbag->add('version',       '1.5');
+        $propbag->add('requirements',  array(
+            'serendipity' => '1.6'
+        ));
         $propbag->add('groups', array('BACKEND_METAINFORMATION'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'lat':
                 $propbag->add('type',        'string');
@@ -44,6 +44,7 @@ class serendipity_event_geourl extends serendipity_event {
                 $propbag->add('description', PLUGIN_EVENT_GEOURL_LAT_DESC);
                 $propbag->add('default',     '');
                 break;
+
             case 'long':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_GEOURL_LONG);
@@ -55,12 +56,14 @@ class serendipity_event_geourl extends serendipity_event {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_EVENT_GEOURL_NAME;
     }
 
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         $hooks = &$bag->get('event_hooks');
 
@@ -69,33 +72,43 @@ class serendipity_event_geourl extends serendipity_event {
                 case 'frontend_header':
                     $lat  = $this->get_config('lat');
                     $long = $this->get_config('long');
-                    print "\n" . '    <meta name="ICBM" content="' . $lat . ', ' . $long . '" />' . "\n";
+                    print "\n";
+                    print '    <meta name="ICBM" content="' . $lat . ', ' . $long . '" />' . "\n";
                     print '    <meta name="geo.position" content="' . $lat . ';' . $long . '" />' . "\n";
                     print '    <meta name="DC.title" content="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['blogTitle']) : htmlspecialchars($serendipity['blogTitle'], ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
-                    return true;
                     break;
 
-              default:
-                return false;
+                default:
+                    return false;
             }
         } else {
             return false;
         }
     }
 
-    function cleanup() {
+    function cleanup()
+    {
         global $serendipity;
         echo '<div class="serendipity_msg_notice">';
-        if($this->get_config('lat') && $this->get_config('long')) {
+        if ($this->get_config('lat') && $this->get_config('long')) {
             // Try to get the URL
-            include_once S9Y_PEAR_PATH . 'HTTP/Request.php';
             $geourl = "http://geourl.org/ping/?p=" . $serendipity['baseURL'];
-            $req = new HTTP_Request($geourl);
-
-            if (PEAR::isError($req->sendRequest($geourl))) {
-                printf(REMOTE_FILE_NOT_FOUND, $geourl);
+            if (function_exists('serendipity_request_object')) {
+                $req = serendipity_request_object($geourl);
+                $response = $req->send();
+                if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
+                    printf(REMOTE_FILE_NOT_FOUND, $geourl);
+                } else {
+                    echo PLUGIN_EVENT_GEOURL_PINGED;
+                }
             } else {
-                echo PLUGIN_EVENT_GEOURL_PINGED;
+                require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
+                $req = new HTTP_Request($geourl);
+                if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
+                    printf(REMOTE_FILE_NOT_FOUND, $geourl);
+                } else {
+                    echo PLUGIN_EVENT_GEOURL_PINGED;
+                }
             }
         } else {
             echo PLUGIN_EVENT_GEOURL_NOLATLONG;
@@ -104,3 +117,5 @@ class serendipity_event_geourl extends serendipity_event {
     }
 
 }
+
+?>
