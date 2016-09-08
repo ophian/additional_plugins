@@ -4,5 +4,14 @@ $_cached_devices['sec_e600c_ver1']=array (
   'user_agent' => 'SEC-SGHE600C',
   'fall_back' => 'sec_e600_ver1',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 'SGH-E600C',
+    'uaprof' => 'http://wap.samsungmobile.com/uaprof/e600c.xml',
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

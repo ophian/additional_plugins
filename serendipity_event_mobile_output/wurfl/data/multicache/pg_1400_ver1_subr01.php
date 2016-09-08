@@ -7,5 +7,9 @@ $_cached_devices['pg_1400_ver1_subr01']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

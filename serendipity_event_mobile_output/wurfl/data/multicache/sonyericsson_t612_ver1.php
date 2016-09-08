@@ -4,5 +4,13 @@ $_cached_devices['sonyericsson_t612_ver1']=array (
   'user_agent' => 'SonyEricssonT612',
   'fall_back' => 'sonyericsson_t610_ver1',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 'T612',
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

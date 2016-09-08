@@ -7,5 +7,11 @@ $_cached_devices['nokia_3110c_ver1_sub0550']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+    'xhtml_send_mms_string' => 'none',
+    'xhtml_send_sms_string' => 'none',
+  ),
 );
 ?>

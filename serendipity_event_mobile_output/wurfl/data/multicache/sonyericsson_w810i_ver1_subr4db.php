@@ -7,5 +7,9 @@ $_cached_devices['sonyericsson_w810i_ver1_subr4db']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

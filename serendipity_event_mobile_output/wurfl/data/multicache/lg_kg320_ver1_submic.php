@@ -7,5 +7,9 @@ $_cached_devices['lg_kg320_ver1_submic']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

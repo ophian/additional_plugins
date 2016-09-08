@@ -7,5 +7,9 @@ $_cached_devices['sonyericsson_j220i_ver1_subr5c']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'markup' => 
+  array (
+    'preferred_markup' => 'wml_1_3',
+  ),
 );
 ?>

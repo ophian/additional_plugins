@@ -7,5 +7,14 @@ $_cached_devices['mot_v3_ver1_sub0e403er']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'mobile_browser' => 'Motorola Internet Browser',
+    'mobile_browser_version' => '2.2',
+  ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

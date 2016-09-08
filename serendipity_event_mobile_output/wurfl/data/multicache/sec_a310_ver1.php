@@ -4,5 +4,14 @@ $_cached_devices['sec_a310_ver1']=array (
   'user_agent' => 'SEC-scha310',
   'fall_back' => 'uptext_generic',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 'SCH-A310',
+    'brand_name' => 'Samsung',
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

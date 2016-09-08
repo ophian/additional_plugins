@@ -5,8 +5,12 @@ $_cached_devices['nokia_n95_ver1_sub3_sub112009']=array (
   'fall_back' => 'nokia_n95_ver1_sub3',
   'bearer' => 
   array (
-    'max_data_rate' => 1800,
     'wifi' => true,
+    'max_data_rate' => 1800,
+  ),
+  'css' => 
+  array (
+    'css_supports_width_as_percentage' => true,
   ),
 );
 ?>

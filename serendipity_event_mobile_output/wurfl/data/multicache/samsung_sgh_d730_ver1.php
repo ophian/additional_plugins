@@ -7,5 +7,9 @@ $_cached_devices['samsung_sgh_d730_ver1']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'display' => 
+  array (
+    'max_image_width' => 168,
+  ),
 );
 ?>

@@ -8,5 +8,13 @@ $_cached_devices['nokia_mobile_browser_ver4']=array (
     'gif' => true,
     'gif_animated' => true,
   ),
+  'markup' => 
+  array (
+    'html_wi_w3_xhtmlbasic' => true,
+  ),
+  'xhtml_ui' => 
+  array (
+    'xhtml_table_support' => true,
+  ),
 );
 ?>

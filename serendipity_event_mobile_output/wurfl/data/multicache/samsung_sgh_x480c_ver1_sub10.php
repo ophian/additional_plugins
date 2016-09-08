@@ -7,5 +7,9 @@ $_cached_devices['samsung_sgh_x480c_ver1_sub10']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'uaprof' => 'http://wap.samsungmobile.com/uaprof/SGH-X480C.xml',
+  ),
 );
 ?>

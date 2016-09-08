@@ -7,5 +7,9 @@ $_cached_devices['lg_f2400_ver1sub20']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

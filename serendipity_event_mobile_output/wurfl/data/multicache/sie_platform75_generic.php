@@ -5,9 +5,9 @@ $_cached_devices['sie_platform75_generic']=array (
   'fall_back' => 'sie_platform65_generic',
   'display' => 
   array (
-    'resolution_width' => 132,
-    'resolution_height' => 176,
     'max_image_width' => 132,
+    'resolution_height' => 176,
+    'resolution_width' => 132,
     'max_image_height' => 156,
   ),
 );

@@ -7,5 +7,9 @@ $_cached_devices['sonyericsson_w800i_subr1s']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'j2me' => 
+  array (
+    'j2me_max_jar_size' => -1,
+  ),
 );
 ?>

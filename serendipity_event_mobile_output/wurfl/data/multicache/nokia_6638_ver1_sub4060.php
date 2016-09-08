@@ -7,5 +7,9 @@ $_cached_devices['nokia_6638_ver1_sub4060']=array (
   array (
     'max_data_rate' => 9,
   ),
+  'product_info' => 
+  array (
+    'nokia_feature_pack' => 2,
+  ),
 );
 ?>

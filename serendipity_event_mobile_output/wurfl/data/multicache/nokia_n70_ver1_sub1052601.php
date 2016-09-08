@@ -7,5 +7,13 @@ $_cached_devices['nokia_n70_ver1_sub1052601']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
+  'product_info' => 
+  array (
+    'nokia_feature_pack' => 3,
+  ),
 );
 ?>

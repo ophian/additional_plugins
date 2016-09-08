@@ -7,5 +7,9 @@ $_cached_devices['nokia_5500d_ver1_sub0314']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

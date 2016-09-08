@@ -7,5 +7,9 @@ $_cached_devices['samsung_p730_ver1_sub10']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'object_download' => 
+  array (
+    'directdownload_support' => true,
+  ),
 );
 ?>

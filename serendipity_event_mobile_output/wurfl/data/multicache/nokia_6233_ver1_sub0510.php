@@ -7,5 +7,9 @@ $_cached_devices['nokia_6233_ver1_sub0510']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

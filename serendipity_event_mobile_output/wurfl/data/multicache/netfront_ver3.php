@@ -1,21 +1,18 @@
 <?php
 $_cached_devices['netfront_ver3']=array (
   'id' => 'netfront_ver3',
-  'user_agent' => 'Mozilla/4.0 NetFront/3',
-  'fall_back' => 'generic_xhtml',
+  'user_agent' => 'DO_NOT_MATCH_REMOVE_NETFRONT_3',
+  'fall_back' => 'generic_netfront_ver3',
   'display' => 
   array (
-    'resolution_width' => 120,
-    'resolution_height' => 100,
+    'max_image_width' => 120,
+    'resolution_width' => 640,
+    'resolution_height' => 480,
   ),
-  'image_format' => 
+  'product_info' => 
   array (
-    'wbmp' => true,
-    'colors' => 256,
-  ),
-  'ajax' => 
-  array (
-    'ajax_support_javascript' => true,
+    'model_name' => 'HTML Web browser',
+    'brand_name' => 'Desktop',
   ),
 );
 ?>

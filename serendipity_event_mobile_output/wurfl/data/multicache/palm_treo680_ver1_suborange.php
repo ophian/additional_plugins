@@ -5,7 +5,7 @@ $_cached_devices['palm_treo680_ver1_suborange']=array (
   'fall_back' => 'palm_treo680_ver1',
   'bearer' => 
   array (
-    'max_data_rate' => 9,
+    'max_data_rate' => 40,
   ),
 );
 ?>

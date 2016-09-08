@@ -7,5 +7,9 @@ $_cached_devices['mot_v3xx_sub968053r']=array (
   array (
     'max_data_rate' => 9,
   ),
+  'streaming' => 
+  array (
+    'streaming_3gpp' => true,
+  ),
 );
 ?>

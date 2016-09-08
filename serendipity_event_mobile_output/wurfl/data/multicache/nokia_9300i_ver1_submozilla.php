@@ -5,8 +5,8 @@ $_cached_devices['nokia_9300i_ver1_submozilla']=array (
   'fall_back' => 'nokia_9300i_ver1',
   'bearer' => 
   array (
-    'max_data_rate' => 200,
     'wifi' => true,
+    'max_data_rate' => 200,
   ),
 );
 ?>

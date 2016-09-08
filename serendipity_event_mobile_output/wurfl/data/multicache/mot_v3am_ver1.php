@@ -7,5 +7,15 @@ $_cached_devices['mot_v3am_ver1']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
+  'product_info' => 
+  array (
+    'mobile_browser' => 'Openwave Mobile Browser',
+    'mobile_browser_version' => '6.2',
+    'model_name' => 'RAZR V3AM',
+  ),
 );
 ?>

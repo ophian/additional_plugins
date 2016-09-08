@@ -11,5 +11,9 @@ $_cached_devices['sonyericsson_k530i_subr6ba']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

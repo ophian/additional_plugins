@@ -7,5 +7,9 @@ $_cached_devices['nokia_n76_ver1_subua']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'css' => 
+  array (
+    'css_supports_width_as_percentage' => true,
+  ),
 );
 ?>

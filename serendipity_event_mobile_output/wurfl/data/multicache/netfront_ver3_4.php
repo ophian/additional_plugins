@@ -1,20 +1,11 @@
 <?php
 $_cached_devices['netfront_ver3_4']=array (
   'id' => 'netfront_ver3_4',
-  'user_agent' => 'NetFront/3.4',
-  'fall_back' => 'netfront_ver3_3',
-  'storage' => 
+  'user_agent' => 'DO_NOT_MATCH_REMOVE_NETFRONT_3_4',
+  'fall_back' => 'generic_netfront_ver3_4',
+  'display' => 
   array (
-    'max_deck_size' => 200000,
-  ),
-  'ajax' => 
-  array (
-    'ajax_support_javascript' => true,
-    'ajax_manipulate_css' => true,
-    'ajax_support_getelementbyid' => true,
-    'ajax_support_inner_html' => true,
-    'ajax_xhr_type' => 'standard',
-    'ajax_support_full_dom' => true,
+    'max_image_width' => 120,
   ),
 );
 ?>

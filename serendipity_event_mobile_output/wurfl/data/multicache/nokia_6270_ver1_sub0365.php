@@ -7,5 +7,9 @@ $_cached_devices['nokia_6270_ver1_sub0365']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

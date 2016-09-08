@@ -3,6 +3,10 @@ $_cached_devices['samsung_z240_ver1_sub10shpvppr5']=array (
   'id' => 'samsung_z240_ver1_sub10shpvppr5',
   'user_agent' => 'SAMSUNG-SGH-Z240/1.0 SHP/VPP/R5 NetFront/3.3 SMM-MMS/1.2.0 profile/MIDP-2.0 configuration/CLDC-1.1',
   'fall_back' => 'samsung_z240_ver1',
+  'product_info' => 
+  array (
+    'uaprof' => 'http://wap.samsungmobile.com/uaprof/Z240UAProf.rdf',
+  ),
   'bearer' => 
   array (
     'max_data_rate' => 384,

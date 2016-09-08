@@ -7,5 +7,9 @@ $_cached_devices['sec_p910_ver1_sub1']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'streaming' => 
+  array (
+    'streaming_acodec_amr' => 'nb',
+  ),
 );
 ?>

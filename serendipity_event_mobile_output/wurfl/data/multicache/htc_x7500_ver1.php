@@ -1,28 +1,33 @@
 <?php
 $_cached_devices['htc_x7500_ver1']=array (
   'id' => 'htc_x7500_ver1',
-  'user_agent' => 'HTC_X7500 ',
-  'fall_back' => 'ms_mobile_browser_ver1',
+  'user_agent' => 'HTC_X7500 Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; IEMobile 6.12)',
+  'fall_back' => 'htc_athena_advantage_ver1',
   'actual_device_root' => 'true',
+  'bearer' => 
+  array (
+    'max_data_rate' => 40,
+  ),
+  'product_info' => 
+  array (
+    'model_name' => 'X7500',
+  ),
   'display' => 
   array (
-    'columns' => 16,
-    'resolution_height' => 480,
-    'resolution_width' => 640,
-    'rows' => 36,
+    'physical_screen_height' => 76,
+    'physical_screen_width' => 102,
   ),
-  'image_format' => 
+  'playback' => 
   array (
-    'bmp' => true,
-    'colors' => 65536,
-    'gif' => true,
-    'jpg' => true,
-    'png' => true,
-    'wbmp' => true,
+    'playback_mp4' => true,
+    'playback_3gpp' => true,
+    'playback_acodec_amr' => 'nb',
+    'playback_wmv' => 7,
+    'playback_3g2' => true,
   ),
-  'storage' => 
+  'streaming' => 
   array (
-    'max_deck_size' => 3000,
+    'streaming_real_media' => 'none',
   ),
 );
 ?>

@@ -7,5 +7,9 @@ $_cached_devices['sonyericsson_s710a_ver1_subr1a']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'markup' => 
+  array (
+    'xhtml_support_level' => 0,
+  ),
 );
 ?>

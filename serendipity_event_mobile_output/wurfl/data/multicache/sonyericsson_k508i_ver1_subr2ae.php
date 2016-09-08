@@ -7,5 +7,9 @@ $_cached_devices['sonyericsson_k508i_ver1_subr2ae']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

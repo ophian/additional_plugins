@@ -7,5 +7,13 @@ $_cached_devices['nokia_e50_ver1_sub130062710']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
+  'rss' => 
+  array (
+    'rss_support' => true,
+  ),
 );
 ?>

@@ -7,5 +7,10 @@ $_cached_devices['mot_a780_ver1_submozr52g0d50a7p']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'device_os' => 'Linux Smartphone OS',
+    'mobile_browser_version' => '7.5',
+  ),
 );
 ?>

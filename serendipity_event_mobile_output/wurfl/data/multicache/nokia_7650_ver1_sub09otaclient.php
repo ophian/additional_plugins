@@ -7,5 +7,9 @@ $_cached_devices['nokia_7650_ver1_sub09otaclient']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'nokia_edition' => 0,
+  ),
 );
 ?>

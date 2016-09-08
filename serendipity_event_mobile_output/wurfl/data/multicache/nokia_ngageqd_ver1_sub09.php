@@ -7,5 +7,9 @@ $_cached_devices['nokia_ngageqd_ver1_sub09']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'nokia_edition' => 0,
+  ),
 );
 ?>

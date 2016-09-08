@@ -7,5 +7,9 @@ $_cached_devices['blackberry8703e_ver1_sub410']=array (
   array (
     'max_data_rate' => 9,
   ),
+  'object_download' => 
+  array (
+    'directdownload_support' => true,
+  ),
 );
 ?>

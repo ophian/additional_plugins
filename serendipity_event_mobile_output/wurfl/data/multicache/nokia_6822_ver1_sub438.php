@@ -7,5 +7,9 @@ $_cached_devices['nokia_6822_ver1_sub438']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

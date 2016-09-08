@@ -7,5 +7,9 @@ $_cached_devices['sonyericsson_k700c_ver1_subr2a']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

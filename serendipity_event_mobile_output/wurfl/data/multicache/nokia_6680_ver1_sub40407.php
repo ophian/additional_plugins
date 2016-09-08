@@ -7,5 +7,9 @@ $_cached_devices['nokia_6680_ver1_sub40407']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'streaming' => 
+  array (
+    'streaming_3gpp' => true,
+  ),
 );
 ?>

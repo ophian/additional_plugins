@@ -7,5 +7,9 @@ $_cached_devices['sagem_3xxx_ver1_sub4116rxxxx']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'mobile_browser_version' => '4.1',
+  ),
 );
 ?>

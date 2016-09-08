@@ -7,5 +7,9 @@ $_cached_devices['nokia_9300_ver1_sub522']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

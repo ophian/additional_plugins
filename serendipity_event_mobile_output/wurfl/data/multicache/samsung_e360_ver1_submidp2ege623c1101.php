@@ -7,5 +7,9 @@ $_cached_devices['samsung_e360_ver1_submidp2ege623c1101']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'j2me' => 
+  array (
+    'j2me_max_jar_size' => 180000,
+  ),
 );
 ?>

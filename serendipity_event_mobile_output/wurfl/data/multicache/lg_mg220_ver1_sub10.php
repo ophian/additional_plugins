@@ -7,5 +7,9 @@ $_cached_devices['lg_mg220_ver1_sub10']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'object_download' => 
+  array (
+    'oma_support' => false,
+  ),
 );
 ?>

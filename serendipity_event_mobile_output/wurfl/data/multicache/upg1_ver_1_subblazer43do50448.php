@@ -7,5 +7,10 @@ $_cached_devices['upg1_ver_1_subblazer43do50448']=array (
   array (
     'max_data_rate' => 9,
   ),
+  'display' => 
+  array (
+    'resolution_height' => 480,
+    'max_image_height' => 460,
+  ),
 );
 ?>

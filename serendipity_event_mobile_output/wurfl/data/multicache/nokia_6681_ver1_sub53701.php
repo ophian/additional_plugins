@@ -7,5 +7,13 @@ $_cached_devices['nokia_6681_ver1_sub53701']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'product_info' => 
+  array (
+    'nokia_feature_pack' => 2,
+  ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

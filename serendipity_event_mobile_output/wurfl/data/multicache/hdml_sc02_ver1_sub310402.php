@@ -6,9 +6,19 @@ $_cached_devices['hdml_sc02_ver1_sub310402']=array (
   'actual_device_root' => 'true',
   'display' => 
   array (
-    'resolution_height' => 50,
     'columns' => 15,
     'rows' => 5,
+    'resolution_height' => 50,
+  ),
+  'product_info' => 
+  array (
+    'mobile_browser_version' => '3.1',
+    'model_name' => 'SCH-8500',
+    'brand_name' => 'Samsung',
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
   ),
 );
 ?>

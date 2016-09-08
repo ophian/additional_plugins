@@ -7,5 +7,9 @@ $_cached_devices['nokia_3109c_ver1_sub0530']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

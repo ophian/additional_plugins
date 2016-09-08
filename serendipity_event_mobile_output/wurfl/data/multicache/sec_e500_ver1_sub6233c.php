@@ -7,5 +7,9 @@ $_cached_devices['sec_e500_ver1_sub6233c']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'j2me' => 
+  array (
+    'j2me_max_jar_size' => 1000000,
+  ),
 );
 ?>

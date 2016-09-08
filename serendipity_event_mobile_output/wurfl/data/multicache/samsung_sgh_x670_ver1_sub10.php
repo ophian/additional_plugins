@@ -7,5 +7,9 @@ $_cached_devices['samsung_sgh_x670_ver1_sub10']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'playback' => 
+  array (
+    'playback_vcodec_mpeg4_sp' => 0,
+  ),
 );
 ?>

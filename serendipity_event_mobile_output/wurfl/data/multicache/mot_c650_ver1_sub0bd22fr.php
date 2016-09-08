@@ -7,5 +7,9 @@ $_cached_devices['mot_c650_ver1_sub0bd22fr']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

@@ -7,5 +7,13 @@ $_cached_devices['nokia_3120_ver1_sub05300']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'object_download' => 
+  array (
+    'oma_support' => true,
+  ),
+  'drm' => 
+  array (
+    'oma_v_1_0_separate_delivery' => true,
+  ),
 );
 ?>

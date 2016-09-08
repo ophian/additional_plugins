@@ -1,28 +1,33 @@
 <?php
 $_cached_devices['htc_p3600_ver1']=array (
   'id' => 'htc_p3600_ver1',
-  'user_agent' => 'HTCP3600',
-  'fall_back' => 'ms_mobile_browser_ver1_sub240320',
+  'user_agent' => 'Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; IEMobile 6.8) PPC; 240x320; HTC_P3600/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1',
+  'fall_back' => 'htc_trinity_ver1',
   'actual_device_root' => 'true',
-  'display' => 
-  array (
-    'max_image_height' => 300,
-    'rows' => 36,
-    'columns' => 16,
-  ),
-  'image_format' => 
-  array (
-    'bmp' => true,
-    'png' => true,
-    'colors' => 65536,
-  ),
   'bearer' => 
   array (
-    'max_data_rate' => 40,
+    'max_data_rate' => 1800,
   ),
-  'storage' => 
+  'product_info' => 
   array (
-    'max_deck_size' => 3000,
+    'mobile_browser_version' => '6.8',
+    'model_name' => 'P3600',
+  ),
+  'playback' => 
+  array (
+    'playback_mp4' => true,
+    'playback_3gpp' => true,
+    'playback_acodec_amr' => 'nb',
+    'playback_wmv' => 7,
+    'playback_3g2' => true,
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
+  'css' => 
+  array (
+    'css_spriting' => true,
   ),
 );
 ?>

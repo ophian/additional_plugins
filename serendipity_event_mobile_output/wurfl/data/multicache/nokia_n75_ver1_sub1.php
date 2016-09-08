@@ -7,5 +7,10 @@ $_cached_devices['nokia_n75_ver1_sub1']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'product_info' => 
+  array (
+    'model_name' => 'N75',
+    'model_extra_info' => 'North America',
+  ),
 );
 ?>

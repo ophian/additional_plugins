@@ -7,5 +7,9 @@ $_cached_devices['lg_ke970_ver1_sub1114']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

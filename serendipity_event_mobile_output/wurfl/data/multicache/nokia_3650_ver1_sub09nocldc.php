@@ -7,5 +7,9 @@ $_cached_devices['nokia_3650_ver1_sub09nocldc']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'nokia_edition' => 0,
+  ),
 );
 ?>

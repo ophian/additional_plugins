@@ -2,6 +2,6 @@
 $_cached_devices['annyway_ver1']=array (
   'id' => 'annyway_ver1',
   'user_agent' => 'AnnyWay',
-  'fall_back' => 'generic',
+  'fall_back' => 'generic_mobile',
 );
 ?>

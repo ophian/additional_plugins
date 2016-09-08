@@ -7,5 +7,9 @@ $_cached_devices['panasonic_x410_ver1_subrp1']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'mobile_browser_version' => '3.0',
+  ),
 );
 ?>

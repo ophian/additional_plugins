@@ -4,5 +4,13 @@ $_cached_devices['fake_sanyo_vi2300_ver1']=array (
   'user_agent' => 'FAKE_USER_AGENT Sanyo VI-2300',
   'fall_back' => 'sanyo_vi2300_ver1',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 'VI-2300',
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

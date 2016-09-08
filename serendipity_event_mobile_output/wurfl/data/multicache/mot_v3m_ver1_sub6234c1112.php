@@ -7,5 +7,17 @@ $_cached_devices['mot_v3m_ver1_sub6234c1112']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'streaming' => 
+  array (
+    'streaming_vcodec_h264_bp' => '1.1',
+  ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
+  'playback' => 
+  array (
+    'playback_vcodec_h264_bp' => '1.1',
+  ),
 );
 ?>

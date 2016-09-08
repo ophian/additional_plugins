@@ -7,5 +7,14 @@ $_cached_devices['sec_c230_ver1_sub10']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'mobile_browser' => 'Nokia',
+    'mobile_browser_version' => '3.0',
+  ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

@@ -9,11 +9,11 @@ $_cached_devices['blackberry8100_mozilla_ver1']=array (
   ),
   'ajax' => 
   array (
-    'ajax_support_javascript' => true,
-    'ajax_manipulate_css' => false,
-    'ajax_support_getelementbyid' => true,
-    'ajax_support_inner_html' => false,
     'ajax_xhr_type' => 'none',
+    'ajax_support_getelementbyid' => true,
+    'ajax_support_javascript' => true,
+    'ajax_support_inner_html' => false,
+    'ajax_manipulate_css' => false,
   ),
 );
 ?>

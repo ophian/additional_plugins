@@ -7,5 +7,9 @@ $_cached_devices['samsung_zv10_ver1_subshpnf32']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

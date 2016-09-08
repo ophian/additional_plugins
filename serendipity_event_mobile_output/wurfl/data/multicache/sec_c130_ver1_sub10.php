@@ -7,5 +7,14 @@ $_cached_devices['sec_c130_ver1_sub10']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'mobile_browser' => 'Nokia',
+    'mobile_browser_version' => '3.0.1',
+  ),
+  'j2me' => 
+  array (
+    'j2me_max_jar_size' => 100000,
+  ),
 );
 ?>

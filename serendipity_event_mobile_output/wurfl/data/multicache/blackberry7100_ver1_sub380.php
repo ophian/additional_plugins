@@ -7,5 +7,9 @@ $_cached_devices['blackberry7100_ver1_sub380']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'mobile_browser_version' => '3.8',
+  ),
 );
 ?>

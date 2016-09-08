@@ -5,7 +5,7 @@ $_cached_devices['sonyericsson_k500i_ver1_subr2l']=array (
   'fall_back' => 'sonyericsson_k500i_ver1',
   'storage' => 
   array (
-    'max_deck_size' => 300000,
+    'max_deck_size' => 16384,
   ),
   'bearer' => 
   array (

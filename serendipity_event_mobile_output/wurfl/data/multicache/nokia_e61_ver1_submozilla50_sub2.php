@@ -5,8 +5,12 @@ $_cached_devices['nokia_e61_ver1_submozilla50_sub2']=array (
   'fall_back' => 'nokia_e61_ver1',
   'bearer' => 
   array (
-    'max_data_rate' => 384,
     'wifi' => true,
+    'max_data_rate' => 384,
+  ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
   ),
 );
 ?>

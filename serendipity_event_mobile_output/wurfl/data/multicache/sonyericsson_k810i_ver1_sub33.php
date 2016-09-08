@@ -7,5 +7,13 @@ $_cached_devices['sonyericsson_k810i_ver1_sub33']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
+  'j2me' => 
+  array (
+    'j2me_max_jar_size' => -1,
+  ),
 );
 ?>

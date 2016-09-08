@@ -7,5 +7,9 @@ $_cached_devices['lg_l3100_ver1_sub10']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'display' => 
+  array (
+    'max_image_width' => 108,
+  ),
 );
 ?>

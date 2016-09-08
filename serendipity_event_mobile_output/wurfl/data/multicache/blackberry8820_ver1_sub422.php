@@ -5,8 +5,8 @@ $_cached_devices['blackberry8820_ver1_sub422']=array (
   'fall_back' => 'blackberry8820_ver1',
   'bearer' => 
   array (
-    'max_data_rate' => 200,
     'wifi' => true,
+    'max_data_rate' => 200,
   ),
 );
 ?>

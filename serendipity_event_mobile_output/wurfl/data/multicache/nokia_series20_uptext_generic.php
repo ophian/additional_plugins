@@ -5,12 +5,12 @@ $_cached_devices['nokia_series20_uptext_generic']=array (
   'fall_back' => 'nokia_uptext_generic',
   'display' => 
   array (
-    'resolution_width' => 84,
-    'resolution_height' => 48,
-    'max_image_width' => 84,
-    'max_image_height' => 30,
     'columns' => 10,
     'rows' => 3,
+    'max_image_width' => 84,
+    'resolution_height' => 48,
+    'resolution_width' => 84,
+    'max_image_height' => 30,
   ),
   'image_format' => 
   array (
@@ -18,15 +18,24 @@ $_cached_devices['nokia_series20_uptext_generic']=array (
   ),
   'storage' => 
   array (
+    'max_length_of_username' => 32,
+    'max_url_length_bookmark' => 255,
+    'max_no_of_bookmarks' => 15,
     'max_deck_size' => 2868,
+    'max_url_length_cached_page' => 128,
+    'max_length_of_password' => 20,
+    'max_no_of_connection_settings' => 5,
     'max_url_length_in_requests' => 538,
     'max_url_length_homepage' => 100,
-    'max_url_length_bookmark' => 255,
-    'max_url_length_cached_page' => 128,
-    'max_no_of_connection_settings' => 5,
-    'max_no_of_bookmarks' => 15,
-    'max_length_of_username' => 32,
-    'max_length_of_password' => 20,
+  ),
+  'wta' => 
+  array (
+    'nokia_voice_call' => true,
+    'wta_phonebook' => true,
+  ),
+  'sound_format' => 
+  array (
+    'nokia_ringtone' => true,
   ),
 );
 ?>

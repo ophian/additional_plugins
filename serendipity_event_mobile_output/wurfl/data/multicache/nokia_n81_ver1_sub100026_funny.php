@@ -5,8 +5,8 @@ $_cached_devices['nokia_n81_ver1_sub100026_funny']=array (
   'fall_back' => 'nokia_n81_ver1_sub100026',
   'bearer' => 
   array (
-    'max_data_rate' => 384,
     'wifi' => true,
+    'max_data_rate' => 384,
   ),
 );
 ?>

@@ -7,5 +7,9 @@ $_cached_devices['mot_l6_ver1_sub0a531ar']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

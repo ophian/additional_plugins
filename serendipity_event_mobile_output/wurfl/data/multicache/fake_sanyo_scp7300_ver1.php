@@ -4,5 +4,13 @@ $_cached_devices['fake_sanyo_scp7300_ver1']=array (
   'user_agent' => 'FAKE_USER_AGENT Sanyo RL-7300',
   'fall_back' => 'sanyo_scp7300_ver1',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 'RL-7300',
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

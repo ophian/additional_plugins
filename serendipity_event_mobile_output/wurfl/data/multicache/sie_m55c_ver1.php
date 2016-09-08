@@ -4,5 +4,13 @@ $_cached_devices['sie_m55c_ver1']=array (
   'user_agent' => 'SIE-M55C',
   'fall_back' => 'sie_m55_ver1',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 'M55C',
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

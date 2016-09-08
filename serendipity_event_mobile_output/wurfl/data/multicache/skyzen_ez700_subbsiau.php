@@ -7,5 +7,9 @@ $_cached_devices['skyzen_ez700_subbsiau']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'display' => 
+  array (
+    'max_image_width' => 89,
+  ),
 );
 ?>

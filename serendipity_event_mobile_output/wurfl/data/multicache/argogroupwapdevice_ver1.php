@@ -2,6 +2,6 @@
 $_cached_devices['argogroupwapdevice_ver1']=array (
   'id' => 'argogroupwapdevice_ver1',
   'user_agent' => 'ArgogroupWAPDevice',
-  'fall_back' => 'generic',
+  'fall_back' => 'generic_mobile',
 );
 ?>

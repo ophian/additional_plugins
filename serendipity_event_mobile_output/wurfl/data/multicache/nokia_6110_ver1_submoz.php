@@ -7,5 +7,18 @@ $_cached_devices['nokia_6110_ver1_submoz']=array (
   array (
     'max_data_rate' => 1800,
   ),
+  'product_info' => 
+  array (
+    'nokia_feature_pack' => 1,
+    'mobile_browser_version' => '4.13',
+  ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
+  'css' => 
+  array (
+    'css_supports_width_as_percentage' => true,
+  ),
 );
 ?>

@@ -7,5 +7,9 @@ $_cached_devices['sagem_my400x_ver1_sub6233g2107']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'object_download' => 
+  array (
+    'oma_support' => false,
+  ),
 );
 ?>

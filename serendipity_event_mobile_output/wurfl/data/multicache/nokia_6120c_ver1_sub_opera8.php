@@ -5,7 +5,12 @@ $_cached_devices['nokia_6120c_ver1_sub_opera8']=array (
   'fall_back' => 'nokia_6120c_ver1',
   'bearer' => 
   array (
-    'max_data_rate' => 200,
+    'max_data_rate' => 384,
+  ),
+  'product_info' => 
+  array (
+    'mobile_browser' => 'Opera',
+    'mobile_browser_version' => '8.65',
   ),
 );
 ?>

@@ -7,5 +7,9 @@ $_cached_devices['nokia_6681_ver1_sub2300']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'product_info' => 
+  array (
+    'nokia_feature_pack' => 2,
+  ),
 );
 ?>

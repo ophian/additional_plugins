@@ -7,5 +7,10 @@ $_cached_devices['mot_a1200i_ver1_subr532l4g11400fr']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'mobile_browser' => 'Opera',
+    'mobile_browser_version' => 8,
+  ),
 );
 ?>

@@ -1,34 +1,52 @@
 <?php
 $_cached_devices['htc_prophet_ver1']=array (
   'id' => 'htc_prophet_ver1',
-  'user_agent' => 'Mozilla/4.0 (compatible; MSIE 4.01; Windows CE; i-mate JAMin PPC; 240x320; PPC; 240x320)',
-  'fall_back' => 'ms_mobile_browser_ver1_sub40240320',
+  'user_agent' => 'Mozilla/4.0 (compatible; MSIE 4.01; Windows CE; PPC;prophet/2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1)',
+  'fall_back' => 'generic_ms_winmo5',
   'actual_device_root' => 'true',
-  'display' => 
+  'j2me' => 
   array (
-    'columns' => 16,
-    'max_image_height' => 300,
-    'max_image_width' => 240,
-    'resolution_height' => 320,
-    'resolution_width' => 240,
-    'rows' => 36,
-  ),
-  'image_format' => 
-  array (
-    'bmp' => true,
-    'colors' => 65536,
-    'gif' => true,
-    'jpg' => true,
-    'png' => true,
-    'wbmp' => true,
-  ),
-  'storage' => 
-  array (
-    'max_deck_size' => 3000,
+    'j2me_midp_2_0' => true,
+    'j2me_cldc_1_0' => true,
+    'j2me_cldc_1_1' => true,
+    'j2me_midp_1_0' => true,
   ),
   'bearer' => 
   array (
-    'max_data_rate' => 40,
+    'wifi' => true,
+    'max_data_rate' => 200,
+  ),
+  'product_info' => 
+  array (
+    'mobile_browser_version' => '4.0',
+    'model_name' => 'Prophet',
+    'brand_name' => 'HTC',
+  ),
+  'playback' => 
+  array (
+    'playback_mp4' => true,
+    'playback_3gpp' => true,
+    'playback_acodec_amr' => 'nb',
+    'playback_wmv' => 7,
+    'playback_3g2' => true,
+    'playback_vcodec_h263_0' => 10,
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
+  'pdf' => 
+  array (
+    'pdf_support' => true,
+  ),
+  'display' => 
+  array (
+    'physical_screen_height' => 57,
+    'physical_screen_width' => 43,
+  ),
+  'xhtml_ui' => 
+  array (
+    'xhtml_file_upload' => 'supported',
   ),
 );
 ?>

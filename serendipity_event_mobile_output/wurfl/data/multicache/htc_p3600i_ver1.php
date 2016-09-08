@@ -5,7 +5,11 @@ $_cached_devices['htc_p3600i_ver1']=array (
   'fall_back' => 'htc_p3600_ver1',
   'bearer' => 
   array (
-    'max_data_rate' => 40,
+    'max_data_rate' => 3600,
+  ),
+  'product_info' => 
+  array (
+    'mobile_browser_version' => '6.12',
   ),
 );
 ?>

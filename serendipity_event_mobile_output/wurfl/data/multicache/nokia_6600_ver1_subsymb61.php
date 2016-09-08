@@ -7,5 +7,10 @@ $_cached_devices['nokia_6600_ver1_subsymb61']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'nokia_edition' => 1,
+    'device_os_version' => '6.1',
+  ),
 );
 ?>

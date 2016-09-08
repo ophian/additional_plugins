@@ -7,5 +7,9 @@ $_cached_devices['sonyericsson_t610_ver1_subr201a']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'object_download' => 
+  array (
+    'oma_support' => true,
+  ),
 );
 ?>

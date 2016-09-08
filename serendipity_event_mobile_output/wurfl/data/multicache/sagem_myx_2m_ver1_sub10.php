@@ -7,5 +7,12 @@ $_cached_devices['sagem_myx_2m_ver1_sub10']=array (
   array (
     'max_deck_size' => 102400,
   ),
+  'object_download' => 
+  array (
+    'ringtone_voices' => 8,
+    'ringtone_amr' => true,
+    'ringtone_imelody' => true,
+    'ringtone_wav' => true,
+  ),
 );
 ?>

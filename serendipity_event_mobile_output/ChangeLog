@@ -5,7 +5,8 @@
  * Set plugin consistencies
  * Use load language API - extends required Serendipity version to v.1.6
  * Update wurfl lib to latest 2.1 (https://github.com/Br3nda/wurfl_php)
-
+ * run multicache with new file from https://github.com/digitalronin/wurfl.xml
+   in version 2.3 Nov 17th, 2011
 
 1.04.1: Use serendipity_specialchars()
 1.04: Properly use the example() API method by return, not echo. Unimportant update.

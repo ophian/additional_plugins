@@ -4,5 +4,13 @@ $_cached_devices['samsung_e800c_ver1']=array (
   'user_agent' => 'SAMSUNG-SGH-E800C',
   'fall_back' => 'samsung_e800_ver1',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 'SGH-E800C',
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

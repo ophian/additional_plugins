@@ -7,5 +7,9 @@ $_cached_devices['sonyeric_w300i_verr9a']=array (
   array (
     'fl_browser' => true,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

@@ -7,5 +7,9 @@ $_cached_devices['mot_k1_ver1_subk1v']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'model_name' => 'KRZR K1v',
+  ),
 );
 ?>

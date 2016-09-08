@@ -7,5 +7,9 @@ $_cached_devices['panasonic_x701_ver1_sub10']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'nokia_edition' => 2,
+  ),
 );
 ?>

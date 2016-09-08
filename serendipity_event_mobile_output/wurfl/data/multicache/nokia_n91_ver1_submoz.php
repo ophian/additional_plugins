@@ -5,8 +5,13 @@ $_cached_devices['nokia_n91_ver1_submoz']=array (
   'fall_back' => 'nokia_n91_ver1',
   'bearer' => 
   array (
-    'max_data_rate' => 384,
     'wifi' => true,
+    'max_data_rate' => 384,
+  ),
+  'product_info' => 
+  array (
+    'mobile_browser' => 'Safari',
+    'mobile_browser_version' => '4.13',
   ),
 );
 ?>

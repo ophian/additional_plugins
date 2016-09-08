@@ -7,5 +7,9 @@ $_cached_devices['sonyericsson_f500i_ver1_subr1a']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'product_info' => 
+  array (
+    'mobile_browser' => 'Semc',
+  ),
 );
 ?>

@@ -8,5 +8,13 @@ $_cached_devices['nokia_3350_ver1']=array (
   array (
     'max_image_height' => 51,
   ),
+  'product_info' => 
+  array (
+    'model_name' => 3350,
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

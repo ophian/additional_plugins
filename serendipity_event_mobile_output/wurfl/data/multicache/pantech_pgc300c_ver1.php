@@ -7,5 +7,9 @@ $_cached_devices['pantech_pgc300c_ver1']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'xhtml_file_upload' => 'supported',
+  ),
 );
 ?>

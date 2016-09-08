@@ -7,5 +7,10 @@ $_cached_devices['spv_ver1_subbfp']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'display' => 
+  array (
+    'physical_screen_height' => 39,
+    'physical_screen_width' => 31,
+  ),
 );
 ?>

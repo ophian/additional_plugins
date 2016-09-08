@@ -7,5 +7,13 @@ $_cached_devices['nokia_3230_ver1_sub104500']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'nokia_feature_pack' => 1,
+  ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

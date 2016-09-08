@@ -7,5 +7,11 @@ $_cached_devices['blackberry7290_ver1_sub3805033']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'mobile_browser' => 'Openwave Mobile Browser',
+    'mobile_browser_version' => '5.0',
+    'device_os_version' => '3.8',
+  ),
 );
 ?>

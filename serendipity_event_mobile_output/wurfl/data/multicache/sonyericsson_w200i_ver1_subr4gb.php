@@ -7,5 +7,9 @@ $_cached_devices['sonyericsson_w200i_ver1_subr4gb']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

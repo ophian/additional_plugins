@@ -7,5 +7,9 @@ $_cached_devices['lg_kg220_ver1_subv09a']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

@@ -7,5 +7,9 @@ $_cached_devices['panasonic_x400p_ver1_subrp1']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

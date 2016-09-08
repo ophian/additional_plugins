@@ -7,5 +7,9 @@ $_cached_devices['samsung_sgh_l600_ver1_sub1']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'j2me' => 
+  array (
+    'j2me_max_jar_size' => 200000,
+  ),
 );
 ?>

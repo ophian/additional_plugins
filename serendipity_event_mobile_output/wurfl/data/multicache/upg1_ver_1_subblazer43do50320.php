@@ -5,8 +5,9 @@ $_cached_devices['upg1_ver_1_subblazer43do50320']=array (
   'fall_back' => 'upg1_ver_1_subblazer43do50',
   'display' => 
   array (
-    'resolution_height' => 320,
-    'max_image_height' => 320,
+    'max_image_width' => 300,
+    'resolution_height' => 480,
+    'max_image_height' => 460,
   ),
   'bearer' => 
   array (

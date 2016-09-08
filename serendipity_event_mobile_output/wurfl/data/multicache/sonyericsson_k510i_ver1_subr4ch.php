@@ -7,5 +7,13 @@ $_cached_devices['sonyericsson_k510i_ver1_subr4ch']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
+  'product_info' => 
+  array (
+    'mobile_browser_version' => '3.3',
+  ),
 );
 ?>

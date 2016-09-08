@@ -5,6 +5,7 @@ $_cached_devices['sie_sx66_ver1_sub01']=array (
   'fall_back' => 'sie_sx66_ver1',
   'bearer' => 
   array (
+    'wifi' => true,
     'max_data_rate' => 9,
   ),
 );

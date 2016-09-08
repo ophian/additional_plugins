@@ -7,5 +7,17 @@ $_cached_devices['nokia_6280_ver1_sub0311']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'ajax' => 
+  array (
+    'ajax_support_getelementbyid' => true,
+    'ajax_support_javascript' => true,
+    'ajax_manipulate_dom' => true,
+    'ajax_support_inner_html' => true,
+    'ajax_manipulate_css' => true,
+  ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

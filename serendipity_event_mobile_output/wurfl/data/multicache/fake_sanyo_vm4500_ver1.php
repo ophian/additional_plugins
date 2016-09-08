@@ -4,5 +4,13 @@ $_cached_devices['fake_sanyo_vm4500_ver1']=array (
   'user_agent' => 'FAKE_USER_AGENT Sanyo VM-4500',
   'fall_back' => 'sanyo_scp5500_ver1',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 'VM-4500',
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

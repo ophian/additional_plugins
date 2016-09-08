@@ -4,5 +4,13 @@ $_cached_devices['sagem_929_ver1']=array (
   'user_agent' => 'SAGEM-929',
   'fall_back' => 'sagem_9xx_ver1',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 929,
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

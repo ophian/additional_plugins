@@ -4,5 +4,13 @@ $_cached_devices['lg_c2100_ver1']=array (
   'user_agent' => 'LG-C2100',
   'fall_back' => 'lg_generic',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 'C2100',
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

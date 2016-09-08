@@ -7,5 +7,9 @@ $_cached_devices['samsung_spha900_ver1_suba900p']=array (
   array (
     'max_data_rate' => 9,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

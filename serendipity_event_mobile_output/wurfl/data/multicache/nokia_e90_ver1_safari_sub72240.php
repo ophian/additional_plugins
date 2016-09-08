@@ -5,8 +5,12 @@ $_cached_devices['nokia_e90_ver1_safari_sub72240']=array (
   'fall_back' => 'nokia_e90_ver1',
   'bearer' => 
   array (
-    'max_data_rate' => 1800,
     'wifi' => true,
+    'max_data_rate' => 1800,
+  ),
+  'css' => 
+  array (
+    'css_supports_width_as_percentage' => true,
   ),
 );
 ?>

@@ -7,5 +7,9 @@ $_cached_devices['mot_v360v_ver1_sub08b713r']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'j2me' => 
+  array (
+    'j2me_max_jar_size' => 100000,
+  ),
 );
 ?>

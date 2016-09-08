@@ -7,5 +7,15 @@ $_cached_devices['sec_e530_ver1_subtss25']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'object_download' => 
+  array (
+    'wallpaper_jpg' => true,
+    'wallpaper_preferred_width' => 173,
+    'wallpaper_preferred_height' => 174,
+  ),
+  'j2me' => 
+  array (
+    'j2me_max_jar_size' => 300000,
+  ),
 );
 ?>

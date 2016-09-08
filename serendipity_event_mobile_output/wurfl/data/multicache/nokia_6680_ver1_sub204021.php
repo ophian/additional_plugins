@@ -7,5 +7,9 @@ $_cached_devices['nokia_6680_ver1_sub204021']=array (
   array (
     'max_data_rate' => 200,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

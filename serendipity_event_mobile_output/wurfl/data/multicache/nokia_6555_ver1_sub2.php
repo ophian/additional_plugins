@@ -7,5 +7,13 @@ $_cached_devices['nokia_6555_ver1_sub2']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'product_info' => 
+  array (
+    'model_name' => '6555b',
+  ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

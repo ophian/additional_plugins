@@ -5,7 +5,7 @@ $_cached_devices['samsung_d900orange_ver1_sub6233c1101']=array (
   'fall_back' => 'samsung_d900orange_ver1',
   'display' => 
   array (
-    'max_image_width' => 234,
+    'max_image_width' => 226,
   ),
   'bearer' => 
   array (

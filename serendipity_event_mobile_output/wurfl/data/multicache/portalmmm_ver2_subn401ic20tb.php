@@ -5,7 +5,7 @@ $_cached_devices['portalmmm_ver2_subn401ic20tb']=array (
   'fall_back' => 'portalmmm_ver2_subn401i',
   'storage' => 
   array (
-    'max_deck_size' => 20480,
+    'max_deck_size' => 20000,
   ),
 );
 ?>

@@ -7,5 +7,22 @@ $_cached_devices['nokia_6234_ver1_sub0543']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
+  'object_download' => 
+  array (
+    'video' => true,
+  ),
+  'playback' => 
+  array (
+    'playback_acodec_aac' => 'lc',
+    'playback_mp4' => true,
+    'playback_3gpp' => true,
+    'playback_acodec_amr' => 'nb',
+    'playback_vcodec_mpeg4_sp' => 3,
+    'playback_vcodec_h263_0' => 50,
+  ),
 );
 ?>

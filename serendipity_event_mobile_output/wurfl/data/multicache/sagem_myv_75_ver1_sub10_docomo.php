@@ -7,5 +7,9 @@ $_cached_devices['sagem_myv_75_ver1_sub10_docomo']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'model_name' => 'DoCoMo myV-75',
+  ),
 );
 ?>

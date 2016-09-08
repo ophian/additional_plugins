@@ -7,5 +7,18 @@ $_cached_devices['nokia_3100b_ver1_sub0303']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'object_download' => 
+  array (
+    'oma_support' => true,
+  ),
+  'sound_format' => 
+  array (
+    'aac' => true,
+    'mp3' => true,
+  ),
+  'drm' => 
+  array (
+    'oma_v_1_0_separate_delivery' => true,
+  ),
 );
 ?>

@@ -7,5 +7,9 @@ $_cached_devices['nokia_6060_ver1_subk361']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

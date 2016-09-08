@@ -7,5 +7,9 @@ $_cached_devices['benq_s82_ver1_subv10006']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'mobile_browser_version' => '6.3',
+  ),
 );
 ?>

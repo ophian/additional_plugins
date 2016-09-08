@@ -7,5 +7,14 @@ $_cached_devices['nokia_6030b_ver1_subm335']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'streaming' => 
+  array (
+    'streaming_3gpp' => false,
+    'streaming_video' => false,
+  ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

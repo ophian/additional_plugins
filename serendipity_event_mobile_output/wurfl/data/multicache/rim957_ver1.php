@@ -4,14 +4,22 @@ $_cached_devices['rim957_ver1']=array (
   'user_agent' => 'RIM957',
   'fall_back' => 'blackberry_generic_ver2',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 'BlackBerry 957',
+  ),
   'display' => 
   array (
-    'resolution_width' => 160,
-    'resolution_height' => 160,
     'columns' => 25,
+    'max_image_width' => 120,
     'rows' => 12,
-    'max_image_width' => 160,
+    'resolution_height' => 160,
+    'resolution_width' => 160,
     'max_image_height' => 160,
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
   ),
 );
 ?>

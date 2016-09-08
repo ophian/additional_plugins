@@ -4,5 +4,18 @@ $_cached_devices['nokia_7190_ver1']=array (
   'user_agent' => 'Nokia7190',
   'fall_back' => 'nokia_generic',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 7190,
+  ),
+  'markup' => 
+  array (
+    'xhtml_support_level' => -1,
+    'preferred_markup' => 'wml_1_1',
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

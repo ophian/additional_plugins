@@ -7,5 +7,13 @@ $_cached_devices['samsung_u700_ver1_subvoda']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
+  'j2me' => 
+  array (
+    'j2me_max_jar_size' => 700000,
+  ),
 );
 ?>

@@ -7,5 +7,9 @@ $_cached_devices['lg_ku990_ver1_subua']=array (
   array (
     'max_data_rate' => 1800,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

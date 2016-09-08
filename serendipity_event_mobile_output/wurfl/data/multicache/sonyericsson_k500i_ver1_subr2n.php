@@ -7,5 +7,9 @@ $_cached_devices['sonyericsson_k500i_ver1_subr2n']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'product_info' => 
+  array (
+    'mobile_browser_version' => '4.0',
+  ),
 );
 ?>

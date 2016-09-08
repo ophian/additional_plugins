@@ -5,8 +5,13 @@ $_cached_devices['jbrowser_ver1_submio8380msie401']=array (
   'fall_back' => 'jbrowser_ver1',
   'display' => 
   array (
-    'resolution_width' => 176,
     'resolution_height' => 220,
+    'resolution_width' => 176,
+  ),
+  'product_info' => 
+  array (
+    'model_name' => 8380,
+    'brand_name' => 'Mio',
   ),
 );
 ?>

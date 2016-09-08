@@ -7,5 +7,9 @@ $_cached_devices['sec_x200_ver1_sub10']=array (
   array (
     'max_data_rate' => 9,
   ),
+  'xhtml_ui' => 
+  array (
+    'accept_third_party_cookie' => false,
+  ),
 );
 ?>

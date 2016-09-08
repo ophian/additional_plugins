@@ -5,12 +5,17 @@ $_cached_devices['wapuniverse_ver1_sub193']=array (
   'fall_back' => 'wapuniverse_ver1',
   'display' => 
   array (
-    'resolution_width' => 157,
-    'resolution_height' => 133,
-    'max_image_width' => 157,
-    'max_image_height' => 113,
-    'rows' => 32,
     'columns' => 16,
+    'rows' => 32,
+    'max_image_width' => 157,
+    'resolution_height' => 133,
+    'resolution_width' => 157,
+    'max_image_height' => 113,
+  ),
+  'wta' => 
+  array (
+    'nokia_voice_call' => true,
+    'wta_phonebook' => true,
   ),
   'storage' => 
   array (

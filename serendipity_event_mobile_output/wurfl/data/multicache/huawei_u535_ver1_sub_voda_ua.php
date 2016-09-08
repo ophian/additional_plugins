@@ -7,5 +7,9 @@ $_cached_devices['huawei_u535_ver1_sub_voda_ua']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'display' => 
+  array (
+    'max_image_width' => 170,
+  ),
 );
 ?>

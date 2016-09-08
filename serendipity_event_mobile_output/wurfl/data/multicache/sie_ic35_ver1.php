@@ -4,5 +4,14 @@ $_cached_devices['sie_ic35_ver1']=array (
   'user_agent' => 'SIE-IC35',
   'fall_back' => 'uptext_generic',
   'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'model_name' => 'IC35',
+    'brand_name' => 'Siemens',
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
+  ),
 );
 ?>

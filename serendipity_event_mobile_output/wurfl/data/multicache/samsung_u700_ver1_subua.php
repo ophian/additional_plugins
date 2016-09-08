@@ -7,5 +7,9 @@ $_cached_devices['samsung_u700_ver1_subua']=array (
   array (
     'max_data_rate' => 384,
   ),
+  'j2me' => 
+  array (
+    'j2me_max_jar_size' => 700000,
+  ),
 );
 ?>

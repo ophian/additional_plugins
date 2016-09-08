@@ -7,5 +7,9 @@ $_cached_devices['samsung_sgh_d820_ver1_sub20']=array (
   array (
     'max_data_rate' => 40,
   ),
+  'j2me' => 
+  array (
+    'j2me_max_jar_size' => 500000,
+  ),
 );
 ?>

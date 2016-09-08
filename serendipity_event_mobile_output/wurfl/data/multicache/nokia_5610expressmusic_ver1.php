@@ -3,32 +3,90 @@ $_cached_devices['nokia_5610expressmusic_ver1']=array (
   'id' => 'nokia_5610expressmusic_ver1',
   'user_agent' => 'Nokia5610 XpressMusic/2.0 (04.80) Profile/MIDP-2.1 Configuration/CLDC-1.1',
   'fall_back' => 'nokia_5610d_ver1',
-  'actual_device_root' => 'true',
+  'product_info' => 
+  array (
+    'uaprof' => 'http://nds1.nds.nokia.com/uaprof/N5610r100.xml',
+    'model_name' => 5610,
+    'brand_name' => 'Nokia',
+    'marketing_name' => 'XpressMusic',
+  ),
+  'wml_ui' => 
+  array (
+    'softkey_support' => true,
+    'table_support' => true,
+  ),
   'display' => 
   array (
+    'physical_screen_height' => 45,
     'columns' => 33,
-    'resolution_height' => 320,
-    'resolution_width' => 240,
+    'physical_screen_width' => 34,
+    'max_image_width' => 232,
     'rows' => 17,
-    'max_image_width' => 226,
+    'resolution_width' => 240,
+    'resolution_height' => 320,
     'max_image_height' => 300,
   ),
   'image_format' => 
   array (
-    'bmp' => true,
-    'colors' => 262144,
-    'gif' => true,
     'jpg' => true,
-    'png' => true,
+    'gif' => true,
+    'bmp' => true,
     'wbmp' => true,
+    'png' => true,
+    'colors' => 262144,
+  ),
+  'wta' => 
+  array (
+    'nokia_voice_call' => true,
+    'wta_phonebook' => true,
   ),
   'storage' => 
   array (
     'max_deck_size' => 131072,
   ),
+  'wap_push' => 
+  array (
+    'wap_push_support' => true,
+  ),
+  'mms' => 
+  array (
+    'mms_png' => true,
+    'mms_max_size' => 307200,
+    'mms_max_width' => 640,
+    'mms_spmidi' => true,
+    'mms_max_height' => 480,
+    'mms_gif_static' => true,
+    'mms_vcard' => true,
+    'mms_midi_monophonic' => true,
+    'mms_nokia_wallpaper' => true,
+    'mms_bmp' => true,
+    'mms_wbmp' => true,
+    'mms_amr' => true,
+    'mms_jpeg_baseline' => true,
+  ),
+  'sound_format' => 
+  array (
+    'wav' => true,
+    'nokia_ringtone' => true,
+    'sp_midi' => true,
+    'amr' => true,
+    'midi_monophonic' => true,
+  ),
   'bearer' => 
   array (
     'max_data_rate' => 384,
+  ),
+  'playback' => 
+  array (
+    'playback_mp4' => true,
+    'playback_3gpp' => true,
+    'playback_3g2' => true,
+    'playback_vcodec_h263_0' => 10,
+    'playback_vcodec_h264_bp' => 1,
+  ),
+  'streaming' => 
+  array (
+    'streaming_real_media' => 'none',
   ),
 );
 ?>
