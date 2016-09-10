@@ -2,7 +2,7 @@
     <p class="comment_result_header">{$CONST.COMMENT_SEARCHRESULTS|sprintf:$comment_searchresults}</p>
 
     <ul class="comment_result plainList">
-    {foreach $comment_results AS $result"}
+    {foreach $comment_results AS $result}
         <li>{$result.ctimestamp|formatTime:DATE_FORMAT_ENTRY}:
         {if $result.type == 'TRACKBACK'}
             <a href="{$result.url|escape}">{$result.author|escape}</a> - <a href="{$result.permalink|escape}">{$result.title|escape}</a>

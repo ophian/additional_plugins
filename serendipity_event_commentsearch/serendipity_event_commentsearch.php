@@ -25,8 +25,8 @@ class serendipity_event_commentsearch extends serendipity_event
         $propbag->add('version', '1.6');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'smarty'      => '3.1.0',
+            'php'         => '5.1.0'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups',    array('FRONTEND_FEATURES'));
