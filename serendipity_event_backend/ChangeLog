@@ -1,0 +1,9 @@
+0.7:
+----
+ * Set plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+ * Fixed possible scalar value error
+ * Fixed SQL added query string for case category
+ * Fixed browser throwing unbalanced trees errors.
+   See https://developer.mozilla.org/en-US/docs/Web/HTML/Optimizing_your_pages_for_speculative_parsing
+

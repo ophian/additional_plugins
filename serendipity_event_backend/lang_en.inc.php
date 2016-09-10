@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -11,4 +11,3 @@
 @define('PLUGIN_BACKEND_BACKENDURL', 'Backend URL');
 @define('PLUGIN_BACKEND_BACKENDURL_BLAHBLAH', 'The URL to the backend when called from an extern website (http://your.blog.com/' . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "") . 'plugin/[BACKEND_URL]).');
 
-?>

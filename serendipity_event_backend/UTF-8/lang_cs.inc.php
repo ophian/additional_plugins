@@ -10,4 +10,3 @@
 @define('PLUGIN_BACKEND_BACKENDURL', 'Backend URL');
 @define('PLUGIN_BACKEND_BACKENDURL_BLAHBLAH', 'Url adresa backendu, která bude volána z cizích stránek (http://vas.blog.cz/' . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "") . 'plugin/[BACKEND_URL]).');
 
-?>

@@ -59,6 +59,6 @@ Examples:
 The following will show up to 30 headlines, with date and time and the point "*" and only from category "s9y"
 	<script src="http://blog.linux-stats.org/plugin/backend?category=s9y&num=30&order=DESC&date=1&dateformat=d.m.Y&time=1&timeformat=H:i&point=*"></script>
 	
-The following will show the whole entries as they are shown on the blogs mainpage. 
+The following will show the whole entries as they are shown on the blogs mainpage.
 	<script src="http://blog.linux-stats.org/plugin/backend?details=1&category=s9y&num=30&order=DESC&date=1&dateformat=d.m.Y&time=1&timeformat=H:i"></script>
 
