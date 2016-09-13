@@ -1411,7 +1411,7 @@ END_IMG_CSS;
 
                                 /*
                                    print("<h3>--DEBUG: Karma block code:</h3>\n<pre>\n");
-                                   print_r(htmlspecialchars($karma_block));
+                                   print_r(htmlspecialchars($karma_block, ENT_COMPAT, LANG_CHARSET));
                                    print("\n</pre>\n");
                                  */
 
