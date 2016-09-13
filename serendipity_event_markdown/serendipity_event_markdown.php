@@ -187,12 +187,13 @@ class serendipity_event_markdown extends serendipity_event
                     if (serendipity_db_bool($this->get_config('COMMENT', true))) {
                         echo '<div class="serendipity_commentDirection serendipity_comment_markdown">' . PLUGIN_EVENT_MARKDOWN_TRANSFORM . '</div>';
                     }
-                    return true;
                     break;
 
                 default:
                     return false;
+
             }
+            return true;
         } else {
             return false;
         }
