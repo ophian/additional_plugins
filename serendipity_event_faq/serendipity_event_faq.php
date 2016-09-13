@@ -1,17 +1,10 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include($probelang);
-}
-
-include(dirname(__FILE__)).'/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 define('D_FAQ_MOVEUP', 0);
 define('D_FAQ_MOVEDOWN', 1);
@@ -28,7 +21,6 @@ class serendipity_event_faq extends serendipity_event
      * @see getFaq
      * @see updateFAQ
      */
-
     var $faq = array();
 
     /**
@@ -38,7 +30,6 @@ class serendipity_event_faq extends serendipity_event
      * @var array
      * @see
      */
-
     var $category = array();
 
     /**
@@ -46,7 +37,6 @@ class serendipity_event_faq extends serendipity_event
      * Configuration array for faqs
      *
      */
-
     var $config_faq = array(
         'faqorder',
         'question',
@@ -60,7 +50,6 @@ class serendipity_event_faq extends serendipity_event
      * Configuration array for categories
      *
      */
-
     var $config_category = array(
         'id',
         'catorder',
@@ -80,21 +69,20 @@ class serendipity_event_faq extends serendipity_event
      * @param  object  A property bag object you can manipulate
      * @return true
      */
-
     function introspect(&$propbag)
     {
         global $serendipity;
 
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
-        $propbag->add('author',       'Falk Doering');
-        $propbag->add('version',      '1.12.1');
+        $propbag->add('author',       'Falk Doering, Ian');
+        $propbag->add('version',      '1.13');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
-            'serendipity'   => '0.9',
-            'smarty'        => '2.6.7',
-            'php'           => '4.1.0'
+            'serendipity'   => '1.7',
+            'smarty'        => '3.1.0',
+            'php'           => '5.1.0'
         ));
         $propbag->add('groups',                 array('FRONTEND_FEATURES'));
         $propbag->add('configuration_faq',      $this->config_faq);
@@ -309,7 +297,7 @@ class serendipity_event_faq extends serendipity_event
         global $serendipity;
 
         $q = "SELECT id, parent_id, category, catorder, language
-                FROM ".$serendipity['dbPrefix']."faq_categorys
+                FROM {$serendipity['dbPrefix']}faq_categorys
                WHERE language = '$lang'
             ORDER BY catorder";
         return serendipity_db_query($q, false, 'assoc');
@@ -323,15 +311,15 @@ class serendipity_event_faq extends serendipity_event
         $db = $this->get_config('db_built', 0);
         switch ($db) {
             case 0:
-                $q = 'CREATE TABLE '.$serendipity['dbPrefix'].'faqs (
+                $q = "CREATE TABLE {$serendipity['dbPrefix']}faqs (
                         id {AUTOINCREMENT} {PRIMARY},
                         cid int(11) default 0,
                         faqorder int(11) default 0,
                         question text,
                         answer text
-                ) {UTF_8}';
+                ) {UTF_8}";
                 serendipity_db_schema_import($q);
-                $q = "CREATE TABLE ".$serendipity['dbPrefix']."faq_categorys (
+                $q = "CREATE TABLE {$serendipity['dbPrefix']}faq_categorys (
                         id {AUTOINCREMENT} {PRIMARY},
                         parent_id int(11) not null default 0,
                         catorder int(11) default 0,
@@ -340,15 +328,15 @@ class serendipity_event_faq extends serendipity_event
                 ) {UTF_8}";
                 serendipity_db_schema_import($q);
             case 1:
-                $q = 'ALTER TABLE '.$serendipity['dbPrefix'].'faqs ADD COLUMN changedate int(11) default 0';
+                $q = "ALTER TABLE {$serendipity['dbPrefix']}faqs ADD COLUMN changedate int(11) default 0";
                 serendipity_db_schema_import($q);
-                $q = 'ALTER TABLE '.$serendipity['dbPrefix'].'faqs ADD COLUMN changetype varchar(10)';
+                $q = "ALTER TABLE {$serendipity['dbPrefix']}faqs ADD COLUMN changetype varchar(10)";
                 serendipity_db_schema_import($q);
             case 2:
-                $q = 'CREATE {FULLTEXT_MYSQL} INDEX faqentry_idx on '.$serendipity['dbPrefix'].'faqs (question, answer)';
+                $q = "CREATE {FULLTEXT_MYSQL} INDEX faqentry_idx ON {$serendipity['dbPrefix']}faqs (question, answer)";
                 serendipity_db_schema_import($q);
             case 3:
-                $q = 'ALTER TABLE '.$serendipity['dbPrefix'].'faq_categorys ADD COLUMN language varchar(2)';
+                $q = "ALTER TABLE {$serendipity['dbPrefix']}faq_categorys ADD COLUMN language varchar(2)";
                 serendipity_db_schema_import($q);
                 serendipity_db_update('faq_categorys', array(), array('language' => $serendipity['language']));
                 $this->set_config('db_built', 4);
@@ -384,9 +372,9 @@ class serendipity_event_faq extends serendipity_event
         if (!is_numeric($this->faq['id'])) {
             $this->faq['changedate'] = time();
             $this->faq['changetype'] = 'new';
-            $q = 'SELECT COUNT(id) AS counter
-                    FROM '.$serendipity['dbPrefix'].'faqs
-                   WHERE cid = '.$this->faq['cid'];
+            $q = "SELECT COUNT(id) AS counter
+                    FROM {$serendipity['dbPrefix']}faqs
+                   WHERE cid = ".$this->faq['cid'];
             $res = serendipity_db_query($q, true, 'assoc');
             $this->faq['faqorder'] = ($res['counter'] + 1);
             $this->postgreFaqPrepare();
@@ -404,17 +392,17 @@ class serendipity_event_faq extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT cid, faqorder
-                FROM '.$serendipity['dbPrefix'].'faqs
-               WHERE id = '.$id;
+        $q = "SELECT cid, faqorder
+                FROM {$serendipity['dbPrefix']}faqs
+               WHERE id = $id";
         $res = serendipity_db_query($q, true, 'assoc');
-        $q = 'DELETE FROM '.$serendipity['dbPrefix'].'faqs
-               WHERE id = '.$id;
+        $q = "DELETE FROM {$serendipity['dbPrefix']}faqs
+               WHERE id = $id";
         if (serendipity_db_query($q)) {
-            $q = 'UPDATE '.$serendipity['dbPrefix'].'faqs
+            $q = "UPDATE {$serendipity['dbPrefix']}faqs
                      SET faqorder = faqorder - 1
-                   WHERE cid = '.$res['cid'].'
-                     AND faqorder > '.$res['faqorder'];
+                   WHERE cid = {$res['cid']}
+                     AND faqorder > {$res['faqorder']}";
             return serendipity_db_query($q);
         }
         return false;
@@ -424,9 +412,9 @@ class serendipity_event_faq extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT *
-                FROM '.$serendipity['dbPrefix'].'faqs
-               WHERE id = '.$id;
+        $q = "SELECT *
+                FROM {$serendipity['dbPrefix']}faqs
+               WHERE id = $id";
         $faq = serendipity_db_query($q, true, 'assoc');
         if (is_array($faq)) {
             $this->faq =& $faq;
@@ -439,10 +427,10 @@ class serendipity_event_faq extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT id, question
-                FROM '.$serendipity['dbPrefix'].'faqs
-               WHERE cid = '.$cid.'
-            ORDER BY faqorder';
+        $q = "SELECT id, question
+                FROM {$serendipity['dbPrefix']}faqs
+               WHERE cid = $cid
+            ORDER BY faqorder";
         return serendipity_db_query($q, false, 'assoc');
     }
 
@@ -450,9 +438,9 @@ class serendipity_event_faq extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT *
-                FROM '.$serendipity['dbPrefix'].'faq_categorys
-               WHERE id = '.$id;
+        $q = "SELECT *
+                FROM {$serendipity['dbPrefix']}faq_categorys
+               WHERE id = $id";
         $cat = serendipity_db_query($q, true, 'assoc');
         if (is_array($cat)) {
             $this->category = &$cat;
@@ -469,7 +457,6 @@ class serendipity_event_faq extends serendipity_event
         if (empty($this->category['catorder'])) {
             $this->category['catorder'] = '1';
         }
-
     }
 
     function &updateCategory()
@@ -477,9 +464,9 @@ class serendipity_event_faq extends serendipity_event
         global $serendipity;
 
         if (!is_numeric($this->category['id'])) {
-            $q = 'SELECT COUNT(id) AS counter
-                    FROM '.$serendipity['dbPrefix'].'faq_categorys
-                   WHERE parent_id = '.$this->category['parent_id'];
+            $q = "SELECT COUNT(id) AS counter
+                    FROM {$serendipity['dbPrefix']}faq_categorys
+                   WHERE parent_id = ".$this->category['parent_id'];
             $res = serendipity_db_query($q, true, 'assoc');
             $this->category['catorder'] = ($res['counter'] + 1);
             $this->postgreCategoryPrepare();
@@ -495,21 +482,21 @@ class serendipity_event_faq extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT catorder, parent_id
-                FROM '.$serendipity['dbPrefix'].'faq_categorys
-               WHERE id = '.$id;
+        $q = "SELECT catorder, parent_id
+                FROM {$serendipity['dbPrefix']}faq_categorys
+               WHERE id = $id";
         $res = serendipity_db_query($q, true, 'assoc');
-        $q = 'DELETE FROM '.$serendipity['dbPrefix'].'faq_categorys
-               WHERE id = '.$id;
+        $q = "DELETE FROM {$serendipity['dbPrefix']}faq_categorys
+               WHERE id = $id";
         if (serendipity_db_query($q)) {
-            $q = 'UPDATE '.$serendipity['dbPrefix'].'faq_categorys
+            $q = "UPDATE {$serendipity['dbPrefix']}faq_categorys
                      SET catorder = catorder - 1
-                   WHERE parent_id = '.$res['parent_id'].'
-                     AND catorder > '.$res['catorder'];
+                   WHERE parent_id = {$res['parent_id']}
+                     AND catorder > {$res['catorder']}";
             serendipity_db_query($q);
-            $q = 'UPDATE '.$serendipity['dbPrefix'].'faq_categorys
+            $q = "UPDATE {$serendipity['dbPrefix']}faq_categorys
                      SET parent_id = 0
-                   WHERE parent_id = '.$id;
+                   WHERE parent_id = $id";
             serendipity_db_query($q);
             return true;
         }
@@ -527,9 +514,9 @@ class serendipity_event_faq extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT COUNT(id) AS counter
-                FROM '.$serendipity['dbPrefix'].'faqs
-               WHERE cid = '.$cid;
+        $q = "SELECT COUNT(id) AS counter
+                FROM {$serendipity['dbPrefix']}faqs
+               WHERE cid = $cid";
         $res =  serendipity_db_query($q, true, 'assoc');
         return $res['counter'];
     }
@@ -558,9 +545,9 @@ class serendipity_event_faq extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT catorder, parent_id
-                FROM '.$serendipity['dbPrefix'].'faq_categorys
-               WHERE id = '.$id;
+        $q = "SELECT catorder, parent_id
+                FROM {$serendipity['dbPrefix']}faq_categorys
+               WHERE id = $id";
         $old = serendipity_db_query($q, true, 'assoc');
 
         switch ($moveto) {
@@ -583,10 +570,10 @@ class serendipity_event_faq extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT faqorder
-                FROM '.$serendipity['dbPrefix'].'faqs
-               WHERE id = '.$id.'
-                 AND cid = '.$cid;
+        $q = "SELECT faqorder
+                FROM {$serendipity['dbPrefix']}faqs
+               WHERE id = $id
+                 AND cid = $cid";
         $old = serendipity_db_query($q, true, 'assoc');
         switch ($moveto) {
             case D_FAQ_MOVEUP:
@@ -615,7 +602,6 @@ class serendipity_event_faq extends serendipity_event
 
         switch ($serendipity['GET']['action']) {
             case 'faqs':
-
                 if (($serendipity['POST']['typeSave'] == "true") && (!empty($serendipity['POST']['SAVECONF']))) {
                     $serendipity['POST']['typeSubmit'] = true;
                     $bag = new serendipity_property_bag();
@@ -664,12 +650,9 @@ class serendipity_event_faq extends serendipity_event
 
                 echo '</div>';
                 echo '</form>';
-
-
                 break;
 
             case 'categories':
-
                 echo '<p><a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=faq">'.FAQ_CATEGORIES.'</a></p>';
                 if (!empty($serendipity['GET']['id'])) {
                     $serendipity['POST']['id'] = &$serendipity['GET']['id'];
@@ -711,11 +694,9 @@ class serendipity_event_faq extends serendipity_event
                 $this->showCategoryForm();
                 echo '</div>';
                 echo '</form>';
-
                 break;
 
             case 'show_faqs':
-
                 echo '<p><a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=faq">'.FAQ_CATEGORIES.'</a> '.FAQS.'</p>';
 
                 if ((!empty($serendipity['POST']['faqDelete'])) && (is_numeric($serendipity['POST']['id']))) {
@@ -788,7 +769,6 @@ class serendipity_event_faq extends serendipity_event
                 break;
 
             default:
-
                 if (isset($serendipity['GET']['cat_lang'])) {
                     $this_cat_lang = &$serendipity['GET']['cat_lang'];
                 } else {
@@ -860,7 +840,6 @@ class serendipity_event_faq extends serendipity_event
                 echo '</tr>';
                 echo '</table>';
                 break;
-
         }
     }
 
@@ -881,12 +860,11 @@ class serendipity_event_faq extends serendipity_event
             $faq_faqid      = $serendipity['uriArguments'][3];
         }
         if (is_numeric($faq_categoryid)) {
-
             $res['parent_id'] = $faq_categoryid;
             do {
-                $q = 'SELECT id, category, parent_id
-                        FROM '.$serendipity['dbPrefix'].'faq_categorys
-                       WHERE id = '.$res['parent_id'];
+                $q = "SELECT id, category, parent_id
+                        FROM {$serendipity['dbPrefix']}faq_categorys
+                       WHERE id = {$res['parent_id']}";
                 $res = serendipity_db_query($q, true, 'assoc');
                 $cat_tree[] = $res;
             } while ($res['parent_id'] != 0);
@@ -896,59 +874,60 @@ class serendipity_event_faq extends serendipity_event
 
             if (is_numeric($faq_faqid)) {
 
-                $q = 'SELECT question, answer, category, faqorder, catorder, parent_id
-                        FROM '.$serendipity['dbPrefix'].'faqs, '.$serendipity['dbPrefix'].'faq_categorys
-                       WHERE '.$serendipity['dbPrefix'].'faqs.id = '.$faq_faqid.'
-                         AND '.$serendipity['dbPrefix'].'faqs.cid = '.$serendipity['dbPrefix'].'faq_categorys.id
-                    ORDER BY faqorder';
+                $q = "SELECT question, answer, category, faqorder, catorder, parent_id
+                        FROM {$serendipity['dbPrefix']}faqs, {$serendipity['dbPrefix']}faq_categorys
+                       WHERE {$serendipity['dbPrefix']}faqs.id = $faq_faqid
+                         AND {$serendipity['dbPrefix']}faqs.cid = {$serendipity['dbPrefix']}faq_categorys.id
+                    ORDER BY faqorder";
                 $faq = serendipity_db_query($q, true, 'assoc');
 
-                if (is_array($faq)) {
-
-                    $q = 'SELECT '.$serendipity['dbPrefix'].'faqs.id, question, cid, category
-                            FROM '.$serendipity['dbPrefix'].'faqs, '.$serendipity['dbPrefix'].'faq_categorys
-                           WHERE '.$serendipity['dbPrefix'].'faqs.cid = '.$faq_categoryid.'
-                             AND '.$serendipity['dbPrefix'].'faqs.faqorder = '.($faq['faqorder'] + 1).'
-                             AND '.$serendipity['dbPrefix'].'faqs.cid = '.$serendipity['dbPrefix'].'faq_categorys.id';
+                if (is_array($faq) && !empty($faq)) {
+                    $faqorder = ($faq['faqorder'] + 1);
+                    $q = "SELECT {$serendipity['dbPrefix']}faqs.id, question, cid, category
+                            FROM {$serendipity['dbPrefix']}faqs, {$serendipity['dbPrefix']}faq_categorys
+                           WHERE {$serendipity['dbPrefix']}faqs.cid = $faq_categoryid
+                             AND {$serendipity['dbPrefix']}faqs.faqorder = $faqorder
+                             AND {$serendipity['dbPrefix']}faqs.cid = {$serendipity['dbPrefix']}faq_categorys.id";
                     $nfaq = serendipity_db_query($q, true, 'assoc');
 
                     if (!is_array($nfaq)) {
-                        $q = 'SELECT '.$serendipity['dbPrefix'].'faqs.id, question, cid, category
-                                FROM '.$serendipity['dbPrefix'].'faqs, '.$serendipity['dbPrefix'].'faq_categorys
-                               WHERE '.$serendipity['dbPrefix'].'faq_categorys.catorder = '.($faq['catorder'] + 1).'
-                                 AND '.$serendipity['dbPrefix'].'faq_categorys.parent_id = '.$faq['parent_id'].'
-                                 AND '.$serendipity['dbPrefix'].'faqs.faqorder = 1
-                                 AND '.$serendipity['dbPrefix'].'faqs.cid = '.$serendipity['dbPrefix'].'faq_categorys.id';
+                        $catorder = ($faq['catorder'] + 1);
+                        $q = "SELECT {$serendipity['dbPrefix']}faqs.id, question, cid, category
+                                FROM {$serendipity['dbPrefix']}faqs, {$serendipity['dbPrefix']}faq_categorys
+                               WHERE {$serendipity['dbPrefix']}faq_categorys.catorder = $catorder
+                                 AND {$serendipity['dbPrefix']}faq_categorys.parent_id = {$faq['parent_id']}
+                                 AND {$serendipity['dbPrefix']}faqs.faqorder = 1
+                                 AND {$serendipity['dbPrefix']}faqs.cid = {$serendipity['dbPrefix']}faq_categorys.id";
                         $nfaq = serendipity_db_query($q, true, 'assoc');
-
                     }
 
-                    $q = 'SELECT '.$serendipity['dbPrefix'].'faqs.id, question, cid, category
-                            FROM '.$serendipity['dbPrefix'].'faqs, '.$serendipity['dbPrefix'].'faq_categorys
-                           WHERE '.$serendipity['dbPrefix'].'faqs.cid = '.$faq_categoryid.'
-                             AND '.$serendipity['dbPrefix'].'faqs.faqorder = '.($faq['faqorder'] - 1).'
-                             AND '.$serendipity['dbPrefix'].'faqs.cid = '.$serendipity['dbPrefix'].'faq_categorys.id';
+                    $faqorder = ($faq['faqorder'] - 1);
+                    $q = "SELECT {$serendipity['dbPrefix']}faqs.id, question, cid, category
+                            FROM {$serendipity['dbPrefix']}faqs, {$serendipity['dbPrefix']}faq_categorys
+                           WHERE {$serendipity['dbPrefix']}faqs.cid = $faq_categoryid
+                             AND {$serendipity['dbPrefix']}faqs.faqorder = $faqorder
+                             AND {$serendipity['dbPrefix']}faqs.cid = {$serendipity['dbPrefix']}faq_categorys.id";
                     $pfaq = serendipity_db_query($q, true, 'assoc');
 
                     if (!is_array($pfaq)) {
-                        $q = 'SELECT MAX(faqorder) AS fmax
-                                FROM '.$serendipity['dbPrefix'].'faqs, '.$serendipity['dbPrefix'].'faq_categorys
-                               WHERE '.$serendipity['dbPrefix'].'faq_categorys.catorder = '.($faq['catorder'] - 1).'
-                                 AND '.$serendipity['dbPrefix'].'faq_categorys.parent_id = '.$faq['parent_id'].'
-                                 AND '.$serendipity['dbPrefix'].'faqs.cid = '.$serendipity['dbPrefix'].'faq_categorys.id';
+                        $catorder = ($faq['catorder'] - 1);
+                        $q = "SELECT MAX(faqorder) AS fmax
+                                FROM {$serendipity['dbPrefix']}faqs, {$serendipity['dbPrefix']}faq_categorys
+                               WHERE {$serendipity['dbPrefix']}faq_categorys.catorder = $catorder
+                                 AND {$serendipity['dbPrefix']}faq_categorys.parent_id = {$faq['parent_id']}
+                                 AND {$serendipity['dbPrefix']}faqs.cid = {$serendipity['dbPrefix']}faq_categorys.id";
                         $max = serendipity_db_query($q, true, 'assoc');
 
-                        $q = 'SELECT '.$serendipity['dbPrefix'].'faqs.id, question, cid, category
-                                FROM '.$serendipity['dbPrefix'].'faqs, '.$serendipity['dbPrefix'].'faq_categorys
-                               WHERE '.$serendipity['dbPrefix'].'faq_categorys.catorder = '.($faq['catorder'] - 1).'
-                                 AND '.$serendipity['dbPrefix'].'faqs.faqorder = '.($max['fmax'] ? $max['fmax'] : 0).'
-                                 AND '.$serendipity['dbPrefix'].'faqs.cid = '.$serendipity['dbPrefix'].'faq_categorys.id';
+                        $q = "SELECT {$serendipity['dbPrefix']}faqs.id, question, cid, category
+                                FROM {$serendipity['dbPrefix']}faqs, {$serendipity['dbPrefix']}faq_categorys
+                               WHERE {$serendipity['dbPrefix']}faq_categorys.catorder = $catorder
+                                 AND {$serendipity['dbPrefix']}faqs.faqorder = ".($max['fmax'] ? $max['fmax'] : 0)."
+                                 AND {$serendipity['dbPrefix']}faqs.cid = {$serendipity['dbPrefix']}faq_categorys.id";
                         $pfaq = serendipity_db_query($q, true, 'assoc');
                     }
-
                 }
 
-                if(serendipity_db_bool($this->get_config('markup', true))) {
+                if (serendipity_db_bool($this->get_config('markup', 'true'))) {
                     $entry['body'] = &$faq['question'];
                     serendipity_plugin_api::hook_event('frontend_display', $entry);
                     $entry['body'] = &$faq['answer'];
@@ -980,10 +959,10 @@ class serendipity_event_faq extends serendipity_event
                 ));
 
             } else {
-                $q = 'SELECT id, cid, question, changedate, changetype
-                        FROM '.$serendipity['dbPrefix'].'faqs
-                       WHERE cid = '.$faq_categoryid.'
-                    ORDER BY faqorder';
+                $q = "SELECT id, cid, question, changedate, changetype
+                        FROM {$serendipity['dbPrefix']}faqs
+                       WHERE cid = $faq_categoryid
+                    ORDER BY faqorder";
                 $faqs = serendipity_db_query($q, false, 'assoc');
                 if (is_array($faqs)) {
                     $now = time();
@@ -1011,18 +990,21 @@ class serendipity_event_faq extends serendipity_event
                         }
                     }
                 }
-                $q = 'SELECT id, category
-                        FROM '.$serendipity['dbPrefix'].'faq_categorys
-                       WHERE parent_id = '.$faq_categoryid.'
-                    ORDER BY catorder';
+
+                $q = "SELECT id, category
+                        FROM {$serendipity['dbPrefix']}faq_categorys
+                       WHERE parent_id = $faq_categoryid
+                    ORDER BY catorder";
                 $scat = serendipity_db_query($q, false, 'assoc');
-                $q = 'SELECT category, introduction
-                        FROM '.$serendipity['dbPrefix'].'faq_categorys
-                       WHERE id = '.$faq_categoryid;
+
+                $q = "SELECT category, introduction
+                        FROM {$serendipity['dbPrefix']}faq_categorys
+                       WHERE id = $faq_categoryid";
                 $cat = serendipity_db_query($q, true, 'assoc');
+
                 $filename = 'plugin_faq_category_faqs.tpl';
 
-                if(serendipity_db_bool($this->get_config('markup', true))) {
+                if (serendipity_db_bool($this->get_config('markup', 'true'))) {
                     $entry['body'] = &$cat['introduction'];
                     serendipity_plugin_api::hook_event('frontend_display', $entry);
                 }
@@ -1043,7 +1025,7 @@ class serendipity_event_faq extends serendipity_event
             $cats = serendipity_db_query($q, false, 'assoc');
             if (is_array($cats)) {
                 $cats = serendipity_walkRecursive($cats);
-                if(serendipity_db_bool($this->get_config('markup', true))) {
+                if (serendipity_db_bool($this->get_config('markup', 'true'))) {
                     for ($i = 0, $ii = count($cats); $i < $ii; $i++) {
                         $entry['body'] = &$cats[$i]['introduction'];
                         serendipity_plugin_api::hook_event('frontend_display', $entry);
@@ -1054,7 +1036,6 @@ class serendipity_event_faq extends serendipity_event
                 ));
             }
             $filename = 'plugin_faq_categories.tpl';
-
         }
 
         if ($serendipity['rewrite'] == 'none') {
@@ -1063,21 +1044,15 @@ class serendipity_event_faq extends serendipity_event
             $pluginpath = $serendipity['permalinkPluginPath'].'/'.$this->get_config('faqurl', 'faqs');
         }
 
-        $serendipity['smarty']->append('faq_plugin', array(
-            'plugin_url' => trim($pluginpath)
-        ), true);
+        $serendipity['smarty']->append('faq_plugin',
+            array(
+                'plugin_url' => trim($pluginpath)
+            ), true);
 
-        $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
-        if (!$tfile || $tfile == $filename) {
-            $tfile = dirname(__FILE__) . '/' . $filename;
-        }
-        $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
-        $content = $serendipity['smarty']->fetch('file:'. $tfile);
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = $inclusion;
+        $content = $this->parseTemplate($filename);
         $serendipity['smarty']->assign('CONTENT', $content);
+        // redirect out via index.tpl
         $serendipity['smarty']->display(serendipity_getTemplateFile($serendipity['smarty_file'], 'serendipityPath'));
-
     }
 
     function showSearch()
@@ -1089,12 +1064,12 @@ class serendipity_event_faq extends serendipity_event
             $group     = '';
             $distinct  = 'DISTINCT';
             $find_part = "(question ILIKE '%$term%' OR answer ILIKE '%$term%')";
-        } elseif ($serendipity['dbType'] == 'sqlite') {
+        } elseif (stristr($serendipity['dbType'], 'sqlite') !== FALSE) {
             $group     = 'GROUP BY id';
             $distinct  = '';
             $term      = serendipity_mb('strtolower', $term);
             $find_part = "(lower(question) LIKE '%$term%' OR lower(answer) LIKE '%$term%')";
-        } else {
+        } else { // MYSQL
             $group     = 'GROUP BY id';
             $distinct  = '';
             $term      = str_replace('&quot;', '"', $term);
@@ -1133,16 +1108,8 @@ class serendipity_event_faq extends serendipity_event
         );
 
         $filename = 'plugin_faq_searchresults.tpl';
-        $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
-        if (!$tfile) {
-            $tfile = dirname(__FILE__) . '/' . $filename;
-        }
-        $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
-        $content = $serendipity['smarty']->fetch('file:'. $tfile);
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = $inclusion;
+        $content = $this->parseTemplate($filename);
         echo $content;
-
     }
 
     function showFAQForm()
@@ -1418,7 +1385,8 @@ class serendipity_event_faq extends serendipity_event
 <?php
     }
 
-    function showCategoryForm() {
+    function showCategoryForm()
+    {
         global $serendipity;
 
         $serendipity['EditorBrowsers'] = '@(IE|Mozilla|Safari)@i';
@@ -1430,44 +1398,44 @@ class serendipity_event_faq extends serendipity_event
 ?>
     <table border="0" cellspacing="0" cellpadding="3" width="100%">
 <?php
-    $elcount = 0;
-    $htmlnugget = array();
-    foreach ($this->config_category as $config_item) {
-        $elcount++;
-        $config_value = $this->category[$config_item];
-        $cbag = new serendipity_property_bag();
-        $this->introspect_category_item($config_item, $cbag);
+        $elcount = 0;
+        $htmlnugget = array();
+        foreach ($this->config_category as $config_item) {
+            $elcount++;
+            $config_value = $this->category[$config_item];
+            $cbag = new serendipity_property_bag();
+            $this->introspect_category_item($config_item, $cbag);
 
-        $cname = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('name')) : htmlspecialchars($cbag->get('name'), ENT_COMPAT, LANG_CHARSET));
-        $cdesc = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('description')) : htmlspecialchars($cbag->get('description'), ENT_COMPAT, LANG_CHARSET));
-        $value = $this->getCategory($config_item, 'unset');
-        $lang_direction = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('lang_direction')) : htmlspecialchars($cbag->get('lang_direction'), ENT_COMPAT, LANG_CHARSET));
+            $cname = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('name')) : htmlspecialchars($cbag->get('name'), ENT_COMPAT, LANG_CHARSET));
+            $cdesc = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('description')) : htmlspecialchars($cbag->get('description'), ENT_COMPAT, LANG_CHARSET));
+            $value = $this->getCategory($config_item, 'unset');
+            $lang_direction = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('lang_direction')) : htmlspecialchars($cbag->get('lang_direction'), ENT_COMPAT, LANG_CHARSET));
 
-        if (empty($lang_direction)) {
-            $lang_direction = LANG_DIRECTION;
-        }
+            if (empty($lang_direction)) {
+                $lang_direction = LANG_DIRECTION;
+            }
 
-        if ($value === 'unset') {
-            $value = $cbag->get('default');
-        }
+            if ($value === 'unset') {
+                $value = $cbag->get('default');
+            }
 
-        $hvalue   = (!isset($serendipity['POST']['categorySubmit']) && isset($serendipity['POST']['plugin'][$config_item]) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['POST']['plugin'][$config_item]) : htmlspecialchars($serendipity['POST']['plugin'][$config_item], ENT_COMPAT, LANG_CHARSET)) : (function_exists('serendipity_specialchars') ? serendipity_specialchars($value) : htmlspecialchars($value, ENT_COMPAT, LANG_CHARSET)));
-        $radio    = array();
-        $select   = array();
-        $per_row  = null;
+            $hvalue   = (!isset($serendipity['POST']['categorySubmit']) && isset($serendipity['POST']['plugin'][$config_item]) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['POST']['plugin'][$config_item]) : htmlspecialchars($serendipity['POST']['plugin'][$config_item], ENT_COMPAT, LANG_CHARSET)) : (function_exists('serendipity_specialchars') ? serendipity_specialchars($value) : htmlspecialchars($value, ENT_COMPAT, LANG_CHARSET)));
+            $radio    = array();
+            $select   = array();
+            $per_row  = null;
 
-        switch ($cbag->get('type')) {
-            case 'seperator':
-                echo '<tr><td colspan="2"><hr noshade="noshade" size="1" /></td></tr>';
-                break;
+            switch ($cbag->get('type')) {
+                case 'seperator':
+                    echo '<tr><td colspan="2"><hr noshade="noshade" size="1" /></td></tr>';
+                    break;
 
-            case 'select':
-                $select = $cbag->get('select_values');
+                case 'select':
+                    $select = $cbag->get('select_values');
 ?>
         <tr>
             <td style="border-bottom: 1px solid #000000; vertical-align: top"><strong><?php echo $cname; ?></strong>
 <?php
-    if ($cdesc != '') {
+                    if ($cdesc != '') {
 ?>
                 <br><span  style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span>
 <?php } ?>
@@ -1476,10 +1444,10 @@ class serendipity_event_faq extends serendipity_event
                 <div>
                     <select class="direction_<?php echo $lang_direction; ?>" name="serendipity[plugin][<?php echo $config_item; ?>]">
 <?php
-                foreach($select AS $select_value => $select_desc) {
-                    $id = (function_exists('serendipity_specialchars') ? serendipity_specialchars($config_item . $select_value) : htmlspecialchars($config_item . $select_value, ENT_COMPAT, LANG_CHARSET));
-                    echo '<option value="'.$select_value.'" '.($select_value == $hvalue ? 'selected="selected"' : '').' title="'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($select_desc) : htmlspecialchars($select_desc, ENT_COMPAT, LANG_CHARSET)).'" />'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($select_desc) : htmlspecialchars($select_desc, ENT_COMPAT, LANG_CHARSET)).'</option>';
-                }
+                    foreach($select AS $select_value => $select_desc) {
+                        $id = (function_exists('serendipity_specialchars') ? serendipity_specialchars($config_item . $select_value) : htmlspecialchars($config_item . $select_value, ENT_COMPAT, LANG_CHARSET));
+                        echo '<option value="'.$select_value.'" '.($select_value == $hvalue ? 'selected="selected"' : '').' title="'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($select_desc) : htmlspecialchars($select_desc, ENT_COMPAT, LANG_CHARSET)).'" />'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($select_desc) : htmlspecialchars($select_desc, ENT_COMPAT, LANG_CHARSET)).'</option>';
+                    }
 ?>
                     </select>
                 </div>
@@ -1488,79 +1456,79 @@ class serendipity_event_faq extends serendipity_event
 <?php
                 break;
 
-            case 'tristate':
-                $per_row = 3;
-                $radio['value'][] = 'default';
-                $radio['desc'][]  = USE_DEFAULT;
+                case 'tristate':
+                    $per_row = 3;
+                    $radio['value'][] = 'default';
+                    $radio['desc'][]  = USE_DEFAULT;
 
-            case 'boolean':
-                $radio['value'][] = 'true';
-                $radio['desc'][]  = YES;
+                case 'boolean':
+                    $radio['value'][] = 'true';
+                    $radio['desc'][]  = YES;
 
-                $radio['value'][] = 'false';
-                $radio['desc'][]  = NO;
+                    $radio['value'][] = 'false';
+                    $radio['desc'][]  = NO;
 
-           case 'radio':
-                if (!count($radio) > 0) {
-                    $radio = $cbag->get('radio');
-                }
-
-                if (empty($per_row)) {
-                    $per_row = $cbag->get('radio_per_row');
-                    if (empty($per_row)) {
-                        $per_row = 2;
+                case 'radio':
+                    if (!count($radio) > 0) {
+                        $radio = $cbag->get('radio');
                     }
-                }
+
+                    if (empty($per_row)) {
+                        $per_row = $cbag->get('radio_per_row');
+                        if (empty($per_row)) {
+                            $per_row = 2;
+                        }
+                    }
 ?>
         <tr>
             <td style="border-bottom: 1px solid #000000; vertical-align: top"><strong><?php echo $cname; ?></strong>
 <?php
-                if ($cdesc != '') {
+                    if ($cdesc != '') {
 ?>
                 <br /><span  style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span>
 <?php
-                }
+                    }
 ?>
             </td>
             <td style="border-bottom: 1px solid #000000; vertical-align: middle;" width="250">
 <?php
-                $counter = 0;
-                foreach($radio['value'] AS $radio_index => $radio_value) {
-                    $id = (function_exists('serendipity_specialchars') ? serendipity_specialchars($config_item . $radio_value) : htmlspecialchars($config_item . $radio_value, ENT_COMPAT, LANG_CHARSET));
-                    $counter++;
-                    $checked = "";
+                    $counter = 0;
+                    foreach($radio['value'] AS $radio_index => $radio_value) {
+                        $id = (function_exists('serendipity_specialchars') ? serendipity_specialchars($config_item . $radio_value) : htmlspecialchars($config_item . $radio_value, ENT_COMPAT, LANG_CHARSET));
+                        $counter++;
+                        $checked = "";
 
-                    if ($radio_value == 'true' && ($hvalue === '1' || $hvalue === 'true')) {
-                        $checked = " checked";
-                    } elseif ($radio_value == 'false' && ($hvalue === '' || $hvalue ==='0' || $hvalue === 'false')) {
-                        $checked = " checked";
-                    } elseif ($radio_value == $hvalue) {
-                        $checked = " checked";
-                    }
+                        if ($radio_value == 'true' && ($hvalue === '1' || $hvalue === 'true')) {
+                            $checked = " checked";
+                        } elseif ($radio_value == 'false' && ($hvalue === '' || $hvalue ==='0' || $hvalue === 'false')) {
+                            $checked = " checked";
+                        } elseif ($radio_value == $hvalue) {
+                            $checked = " checked";
+                        }
 
-                    if ($counter == 1) {
+                        if ($counter == 1) {
 ?>
                 <div>
 <?php
-                    }
+                        }
 ?>
                     <input class="direction_<?php echo $lang_direction; ?> input_radio" type="radio" id="serendipity_plugin_<?php echo $id; ?>" name="serendipity[plugin][<?php echo $config_item; ?>]" value="<?php echo $radio_value; ?>" <?php echo $checked ?> title="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($radio['desc'][$radio_index]) : htmlspecialchars($radio['desc'][$radio_index], ENT_COMPAT, LANG_CHARSET)); ?>" />
                         <label for="serendipity_plugin_<?php echo $id; ?>"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($radio['desc'][$radio_index]) : htmlspecialchars($radio['desc'][$radio_index], ENT_COMPAT, LANG_CHARSET)); ?></label>
 <?php
-                    if ($counter == $per_row) {
-                        $counter = 0;
+                        if ($counter == $per_row) {
+                            $counter = 0;
 ?>
                 </div>
 <?php
+                        }
                     }
-                }
 ?>
             </td>
         </tr>
 <?php
-                break;
+                    break;
 
-            case 'string':
+                case 'string':
 ?>
         <tr>
             <td style="border-bottom: 1px solid #000000">
@@ -1574,22 +1542,22 @@ class serendipity_event_faq extends serendipity_event
             </td>
         </tr>
 <?php
-                break;
+                    break;
 
-            case 'html':
-            case 'text':
+                case 'html':
+                case 'text':
 ?>
 
             <tr>
 <?php
-    if (!$serendipity['wysiwyg']) {
+                    if (!$serendipity['wysiwyg']) {
 ?>
                 <td><strong><?php echo $cname; ?></strong>
                 &nbsp;<span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span></td>
                 <td align="right">
 <?php
         /* Since the user has WYSIWYG editor disabled, we want to check if we should use the "better" non-WYSIWYG editor */
-        if (!$serendipity['wysiwyg'] && preg_match($serendipity['EditorBrowsers'], $_SERVER['HTTP_USER_AGENT']) ) {
+                        if (!$serendipity['wysiwyg'] && preg_match($serendipity['EditorBrowsers'], $_SERVER['HTTP_USER_AGENT']) ) {
 ?><nobr>
                   <script type="text/javascript" language="JavaScript">
                         document.write('<input type="button" class="serendipityPrettyButton input_button" name="insI" value="I" accesskey="i" style="font-style: italic" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'],\'<i>\',\'</i>\')" />');
@@ -1601,8 +1569,8 @@ class serendipity_event_faq extends serendipity_event
                         document.write('<input type="button" class="serendipityPrettyButton input_button" name="insU" value="URL" accesskey="l" style="color: blue; text-decoration: underline;" onclick="wrapSelectionWithLink(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'])" />');
                   </script></nobr>
 <?php
-        /* Do the "old" non-WYSIWYG editor */
-        } elseif (!$serendipity['wysiwyg']) { ?><nobr>
+                        /* Do the "old" non-WYSIWYG editor */
+                        } elseif (!$serendipity['wysiwyg']) { ?><nobr>
                   <script type="text/javascript" language="JavaScript">
                         document.write('<input type="button" class="serendipityPrettyButton input_button" value=" B " onclick="serendipity_insBasic(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'], \'b\')">');
                         document.write('<input type="button" class="serendipityPrettyButton input_button" value=" U " onclick="serendipity_insBasic(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'], \'u\')">');
@@ -1611,16 +1579,18 @@ class serendipity_event_faq extends serendipity_event
                         document.write('<input type="button" class="serendipityPrettyButton input_button" value="<?php echo MEDIA; ?>" onclick="window.open(\'serendipity_admin_image_selector.php?serendipity[filename_only]=<?php echo $config_item ?>\', \'ImageSel\', \'width=800,height=600,toolbar=no\');">');
                         document.write('<input type="button" class="serendipityPrettyButton input_button" value="Link" onclick="serendipity_insLink(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'])">');
                 </script></nobr>
-<?php   }
+<?php                   }
 
-        serendipity_plugin_api::hook_event('backend_entry_toolbar_body', $entry);
-    } else {
+                        serendipity_plugin_api::hook_event('backend_entry_toolbar_body', $entry);
+                    } else {
 ?>
             <td colspan="2"><strong><?php echo $cname; ?></strong>
                 &nbsp;<span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span></td>
             <td><?php serendipity_plugin_api::hook_event('backend_entry_toolbar_body', $entry); ?>
 
-<?php } ?>
+<?php
+                    }
+?>
                 </td>
             </tr>
 
@@ -1632,31 +1602,35 @@ class serendipity_event_faq extends serendipity_event
             </td>
         </tr>
 <?php
-                if ($cbag->get('type') == 'html') {
-                    $htmlnugget[] = $elcount;
-                    if (version_compare(preg_replace('@[^0-9\.]@', '', $serendipity['version']), '0.9', '<')) {
-                        serendipity_emit_htmlarea_code('nuggets' . $elcount, 'nuggets' . $elcount);
-                    } else {
-                        serendipity_emit_htmlarea_code('nuggets', 'nuggets', true);
+                    if ($cbag->get('type') == 'html') {
+                        $htmlnugget[] = $elcount;
+                        if (version_compare(preg_replace('@[^0-9\.]@', '', $serendipity['version']), '0.9', '<')) {
+                            serendipity_emit_htmlarea_code('nuggets' . $elcount, 'nuggets' . $elcount);
+                        } else {
+                            serendipity_emit_htmlarea_code('nuggets', 'nuggets', true);
+                        }
                     }
-                }
-                break;
+                    break;
 
-            case 'content':
-                ?><tr><td colspan="2"><?php echo $cbag->get('default'); ?></td></tr><?php
-                break;
+                case 'content':
+?>
+        <tr><td colspan="2"><?php echo $cbag->get('default'); ?></td></tr>
+<?php
+                    break;
 
-            case 'hidden':
-                ?><tr><td colspan="2"><input class="direction_<?php echo $lang_direction; ?>" type="hidden" name="serendipity[plugin][<?php echo $config_item; ?>]" value="<?php echo $cbag->get('value'); ?>" /></td></tr><?php
-                break;
+                case 'hidden':
+?>
+        <tr><td colspan="2"><input class="direction_<?php echo $lang_direction; ?>" type="hidden" name="serendipity[plugin][<?php echo $config_item; ?>]" value="<?php echo $cbag->get('value'); ?>" /></td></tr>
+<?php
+                    break;
+            }
         }
-    }
 
-    if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg'] && count($htmlnugget) > 0) {
-        $ev = array('nuggets' => $htmlnugget, 'skip_nuggets' => false);
-        serendipity_plugin_api::hook_event('backend_wysiwyg_nuggets', $ev);
+        if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg'] && count($htmlnugget) > 0) {
+            $ev = array('nuggets' => $htmlnugget, 'skip_nuggets' => false);
+            serendipity_plugin_api::hook_event('backend_wysiwyg_nuggets', $ev);
 
-        if ($ev['skip_nuggets'] === false) {
+            if ($ev['skip_nuggets'] === false) {
 ?>
     <script type="text/javascript">
     function Spawnnugget() {
@@ -1670,8 +1644,8 @@ class serendipity_event_faq extends serendipity_event
     }
     </script>
 <?php
+            }
         }
-    }
 ?>
     </table>
 <br />
@@ -1730,13 +1704,13 @@ class serendipity_event_faq extends serendipity_event
 
                 case 'css_backend':
                     if (!strpos($eventData, '#serendipityFAQNav')) {
-                        echo file_get_contents(dirname(__FILE__).'/style_faq_backend.css');
+                        $eventData .= file_get_contents(dirname(__FILE__).'/style_faq_backend.css');
                     }
                     break;
 
                 case 'css':
                     if (!strpos($eventData, '#serendipityFAQNav')) {
-                        echo file_get_contents(dirname(__FILE__).'/style_faq_frontend.css');
+                        $eventData .= file_get_contents(dirname(__FILE__).'/style_faq_frontend.css');
                     }
                     break;
 
@@ -1753,6 +1727,8 @@ class serendipity_event_faq extends serendipity_event
         }
         return false;
     }
+
 }
+
 /* vim: set sts=4 ts=4 expandtab : */
 ?>

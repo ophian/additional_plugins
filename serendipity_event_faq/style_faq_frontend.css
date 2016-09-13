@@ -1,13 +1,21 @@
-#serendipityFAQNav {
-    border-bottom:1px solid #000000;
-    margin:auto auto 10px auto;
+.faq-categoryfaqs, .faq-categories, .faq-category, .faq-searchresults {}
+
+#serendipity_faq_plugin ul {
+    margin: 0 1.5em;
+}
+.faq-nav {
+    border-bottom: 1px solid #222;
+    margin: auto auto 1em auto;
 }
 
-#serendipityFAQNav a {
-    text-decoration:none;
+.faq-nav a {
+    text-decoration: none;
 }
 
-#serendipityFAQNav p {
-    margin:0px 0px 0px 0px;
-    padding:2px 2px 2px 2px;
+.faq-nav p {
+    margin: 0;
+    padding: .2em;
+}
+.faq-results {
+    text-align: left;
 }
