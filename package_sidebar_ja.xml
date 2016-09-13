@@ -84,9 +84,9 @@
 <description>ブログに表示するカテゴリを選びます。</description>
 <maintainers><maintainer><name>Falk Doering</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.2</version>
-  <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.3</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-09-10</date>
   <filelist>
 <dir name="serendipity_event_faq">
 <file>.htaccess</file>
@@ -137,7 +137,6 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
 <file>lang_ja.inc.php</file>
 </dir>
 </dir>
@@ -187,7 +186,6 @@
     <file>serendipity_event_faq/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_faq/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_faq/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_faq/UTF-8/lang_en.inc.php</file>
     <file>serendipity_event_faq/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>

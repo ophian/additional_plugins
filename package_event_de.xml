@@ -585,12 +585,12 @@
 <license>GPL</license>
 <summary>Markup: Auto-Titel</summary>
 <groups>MARKUP</groups>
-<description>Fügt automatischen den Titel der verlinkten Seite als als &quot;title&quot;-Tag zum Link hinzu.</description>
+<description>Fügt automatisch den Titel der verlinkten Seite als als &quot;title&quot;-Tag zum Link hinzu.</description>
 <maintainers><maintainer><name>Malte Paskuda</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.1.12</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.2</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-09-10</date>
   <filelist>
 <dir name="serendipity_event_autotitle">
 <file>.htaccess</file>
@@ -606,7 +606,6 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
 </dir>
 </dir>
 
@@ -624,7 +623,6 @@
     <file>serendipity_event_autotitle/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_autotitle/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_autotitle/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_autotitle/UTF-8/lang_en.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -727,19 +725,21 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_backend</name>
+<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_backend/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Zeige Einträge mittels JavaScript</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Stellt JavaScript Ausgabe der letzten Einträge zum Einbinden in andere, externe Webseiten bereit. (Siehe README im Plugin Verzeichnis!)</description>
-<maintainers><maintainer><name>Alexander 'dma147' Mieland, http://blog.linux-stats.org, dma147@linux-stats.org</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Alexander Mieland, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.6.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.7</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-09-10</date>
   <filelist>
 <dir name="serendipity_event_backend">
 <file>.htaccess</file>
 <file>backend.html</file>
+<file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
 <file>lang_bg.inc.php</file>
@@ -761,6 +761,7 @@
   <serendipityFilelist>
     <file>serendipity_event_backend/.htaccess</file>
     <file>serendipity_event_backend/backend.html</file>
+    <file>serendipity_event_backend/ChangeLog</file>
     <file>serendipity_event_backend/documentation_cs.html</file>
     <file>serendipity_event_backend/documentation_cz.html</file>
     <file>serendipity_event_backend/lang_bg.inc.php</file>
@@ -1460,9 +1461,9 @@
 <description>Wenn dieses Plugin installiert ist, durchsucht die Schnellsuche Ihres Blogs auch die Kommentare.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.6</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2016-09-10</date>
   <filelist>
 <dir name="serendipity_event_commentsearch">
 <file>.htaccess</file>
@@ -3100,11 +3101,11 @@
 <summary>FAQs</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Liste von Fragen und Antworten werden übersichtlich aufbereitet dargestellt.</description>
-<maintainers><maintainer><name>Falk Doering</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Falk Doering, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.12.1</version>
-  <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.13</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2016-09-10</date>
   <filelist>
 <dir name="serendipity_event_faq">
 <file>.htaccess</file>
@@ -3155,7 +3156,6 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
 <file>lang_ja.inc.php</file>
 </dir>
 </dir>
@@ -3205,7 +3205,6 @@
     <file>serendipity_event_faq/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_faq/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_faq/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_faq/UTF-8/lang_en.inc.php</file>
     <file>serendipity_event_faq/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
@@ -6620,7 +6619,7 @@
 <release>
   <version>1.22</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-09-10</date>
   <filelist>
 <dir name="serendipity_event_markdown">
 <file>.htaccess</file>

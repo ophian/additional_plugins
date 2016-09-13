@@ -94,8 +94,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_autotitle</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
-<content:encoded>&lt;b&gt;serendipity_event_autotitle&lt;br /&gt;Markup: Autotitle&lt;/b&gt;&lt;br /&gt;Set the title-tag into the links of the entry.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_autotitle&lt;br /&gt;Markup: Autotitle&lt;/b&gt;&lt;br /&gt;Set the title-tag into the links of the entry.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 10 Sep 2016 10:43:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autotitle</guid>
 </item>
 <item>
@@ -120,9 +120,9 @@
 <title>Show entries via JavaScript: Provides javascript output of recent entries for inclusion on other, extern websites. (see the README in the plugins directory!)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backend</link>
 <category>Event Plugins</category>
-<author>Alexander 'dma147' Mieland, http://blog.linux-stats.org, dma147@linux-stats.org</author>
-<content:encoded>&lt;b&gt;serendipity_event_backend&lt;br /&gt;Show entries via JavaScript&lt;/b&gt;&lt;br /&gt;Provides javascript output of recent entries for inclusion on other, extern websites. (see the README in the plugins directory!)&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Alexander Mieland, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_backend&lt;br /&gt;Show entries via JavaScript&lt;/b&gt;&lt;br /&gt;Provides javascript output of recent entries for inclusion on other, extern websites. (see the README in the plugins directory!)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 10 Sep 2016 12:40:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backend</guid>
 </item>
 <item>
@@ -222,8 +222,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_commentsearch</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_commentsearch&lt;br /&gt;Searches comments on quicksearch&lt;/b&gt;&lt;br /&gt;If this plugin is installed, the quicksearch on your blog will also search through comments on your blog&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_commentsearch&lt;br /&gt;Searches comments on quicksearch&lt;/b&gt;&lt;br /&gt;If this plugin is installed, the quicksearch on your blog will also search through comments on your blog&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Sat, 10 Sep 2016 14:51:35 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentsearch</guid>
 </item>
 <item>
@@ -439,9 +439,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>よくある質問と回答(Frequently Asked Questions): よくある質問と回答(Frequently Asked Question)の編集です。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_faq</link>
 <category>Event Plugins</category>
-<author>Falk Doering</author>
-<content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;よくある質問と回答(Frequently Asked Questions)&lt;/b&gt;&lt;br /&gt;よくある質問と回答(Frequently Asked Question)の編集です。&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Falk Doering, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;よくある質問と回答(Frequently Asked Questions)&lt;/b&gt;&lt;br /&gt;よくある質問と回答(Frequently Asked Question)の編集です。&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Sat, 10 Sep 2016 18:21:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_faq</guid>
 </item>
 <item>
@@ -801,7 +801,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;マークアップ: Markdown&lt;/b&gt;&lt;br /&gt;エントリテキストに Markdown マークアップを適用します。&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 10 Sep 2016 10:50:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>

@@ -90,12 +90,12 @@
 <guid isPermaLink="false">serendipity_event_assigncategories</guid>
 </item>
 <item>
-<title>Markup: Auto-Titel: Fügt automatischen den Titel der verlinkten Seite als als &quot;title&quot;-Tag zum Link hinzu.</title>
+<title>Markup: Auto-Titel: Fügt automatisch den Titel der verlinkten Seite als als &quot;title&quot;-Tag zum Link hinzu.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_autotitle</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
-<content:encoded>&lt;b&gt;serendipity_event_autotitle&lt;br /&gt;Markup: Auto-Titel&lt;/b&gt;&lt;br /&gt;Fügt automatischen den Titel der verlinkten Seite als als &quot;title&quot;-Tag zum Link hinzu.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_autotitle&lt;br /&gt;Markup: Auto-Titel&lt;/b&gt;&lt;br /&gt;Fügt automatisch den Titel der verlinkten Seite als als &quot;title&quot;-Tag zum Link hinzu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 10 Sep 2016 10:43:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autotitle</guid>
 </item>
 <item>
@@ -120,9 +120,9 @@
 <title>Zeige Einträge mittels JavaScript: Stellt JavaScript Ausgabe der letzten Einträge zum Einbinden in andere, externe Webseiten bereit. (Siehe README im Plugin Verzeichnis!)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backend</link>
 <category>Event Plugins</category>
-<author>Alexander 'dma147' Mieland, http://blog.linux-stats.org, dma147@linux-stats.org</author>
-<content:encoded>&lt;b&gt;serendipity_event_backend&lt;br /&gt;Zeige Einträge mittels JavaScript&lt;/b&gt;&lt;br /&gt;Stellt JavaScript Ausgabe der letzten Einträge zum Einbinden in andere, externe Webseiten bereit. (Siehe README im Plugin Verzeichnis!)&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Alexander Mieland, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_backend&lt;br /&gt;Zeige Einträge mittels JavaScript&lt;/b&gt;&lt;br /&gt;Stellt JavaScript Ausgabe der letzten Einträge zum Einbinden in andere, externe Webseiten bereit. (Siehe README im Plugin Verzeichnis!)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 10 Sep 2016 12:40:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backend</guid>
 </item>
 <item>
@@ -220,8 +220,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_commentsearch</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_commentsearch&lt;br /&gt;Durchsuche Kommentare mit der Schnellsuche&lt;/b&gt;&lt;br /&gt;Wenn dieses Plugin installiert ist, durchsucht die Schnellsuche Ihres Blogs auch die Kommentare.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_commentsearch&lt;br /&gt;Durchsuche Kommentare mit der Schnellsuche&lt;/b&gt;&lt;br /&gt;Wenn dieses Plugin installiert ist, durchsucht die Schnellsuche Ihres Blogs auch die Kommentare.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Sat, 10 Sep 2016 14:51:35 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentsearch</guid>
 </item>
 <item>
@@ -435,9 +435,9 @@
 <title>FAQs: Liste von Fragen und Antworten werden übersichtlich aufbereitet dargestellt.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_faq</link>
 <category>Event Plugins</category>
-<author>Falk Doering</author>
-<content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;FAQs&lt;/b&gt;&lt;br /&gt;Liste von Fragen und Antworten werden übersichtlich aufbereitet dargestellt.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Falk Doering, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;FAQs&lt;/b&gt;&lt;br /&gt;Liste von Fragen und Antworten werden übersichtlich aufbereitet dargestellt.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Sat, 10 Sep 2016 18:21:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_faq</guid>
 </item>
 <item>
@@ -797,7 +797,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Textformatierung: Markdown&lt;/b&gt;&lt;br /&gt;Markdown Textformatierung durchführen&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sat, 10 Sep 2016 10:50:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
