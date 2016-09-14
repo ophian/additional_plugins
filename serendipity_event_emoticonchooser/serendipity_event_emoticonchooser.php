@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '2.12');
+        $propbag->add('version',       '2.13');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -48,24 +48,21 @@ class serendipity_event_emoticonchooser extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_EMOTICONCHOOSER_FRONTEND);
                 $propbag->add('description', '');
-                $propbag->add('default',     false);
-                return true;
+                $propbag->add('default',     'false');
                 break;
 
             case 'popup':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_EMOTICONCHOOSER_POPUP);
                 $propbag->add('description', '');
-                $propbag->add('default',     false);
-                return true;
+                $propbag->add('default',     'false');
                 break;
 
             case 'button':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_EMOTICONCHOOSER_POPUP_BUTTON);
                 $propbag->add('description', 'default: as link');
-                $propbag->add('default',     false);
-                return true;
+                $propbag->add('default',     'false');
                 break;
 
             case 'popuptext':
@@ -73,7 +70,6 @@ class serendipity_event_emoticonchooser extends serendipity_event
                 $propbag->add('name',        PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT);
                 $propbag->add('description', '');
                 $propbag->add('default',     PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT);
-                return true;
                 break;
         }
         return false;
@@ -95,18 +91,20 @@ class serendipity_event_emoticonchooser extends serendipity_event
             switch($event) {
 
                 case 'frontend_comment':
-                    if (serendipity_db_bool($this->get_config('frontend', false)) === false) {
+                    if (serendipity_db_bool($this->get_config('frontend', 'false')) === false) {
                         break;
                     }
                     $txtarea = 'serendipity_commentform_comment';
                     $func    = 'comment';
                     $style   = '';
                     $popcl   = '';
+                    // no break
                 case 'backend_entry_toolbar_extended':
                     if (!isset($txtarea)) {
                         $txtarea = 'serendipity[extended]';
                         $func    = 'extended';
                     }
+                    // no break
                 case 'backend_entry_toolbar_body':
                     if (!isset($txtarea)) {
                         if (isset($eventData['backend_entry_toolbar_body:textarea'])) {
@@ -141,10 +139,10 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
                     $popupstyle = '';
                     $popuplink  = '';
-                    if (serendipity_db_bool($this->get_config('popup', false))) {
+                    if (serendipity_db_bool($this->get_config('popup', 'false'))) {
                         $popupstyle = '; display: none';
-                        $popuplink  = serendipity_db_bool($this->get_config('button', false)) 
-                                    ? '<input type="button" onclick="toggle_emoticon_bar_' . $func . '(); return false" href="#" class="serendipity_toggle_emoticon_bar' . $popcl . '" value="' . $this->get_config('popuptext') . '">' 
+                        $popuplink  = serendipity_db_bool($this->get_config('button', 'false'))
+                                    ? '<input type="button" onclick="toggle_emoticon_bar_' . $func . '(); return false" href="#" class="serendipity_toggle_emoticon_bar' . $popcl . '" value="' . $this->get_config('popuptext') . '">'
                                     : '<a class="serendipity_toggle_emoticon_bar' . $popcl . '" href="#" onclick="toggle_emoticon_bar_' . $func . '(); return false">' . $this->get_config('popuptext') . '</a>';
                     }
 
@@ -177,6 +175,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     // script include has to stick to to backend_header, while using inline onclick (see above)
                     if (IN_serendipity_admin === true) {
 ?>
+
 <div class="serendipity_emoticon_bar">
     <script type="text/javascript">
         emoticonchooser('<?php echo $func; ?>', '<?php echo $txtarea; ?>', '<?php echo $cke_txtarea; ?>');
@@ -185,18 +184,19 @@ class serendipity_event_emoticonchooser extends serendipity_event
 <?php
                     } else { // in frontend footer
 ?>
+
 <div class="serendipity_emoticon_bar">
     <script type="text/javascript">
-document.onreadystatechange = function () {
-	if (document.readyState == "interactive") {
-        emoticonchooser('<?php echo $func; ?>', '<?php echo $txtarea; ?>', '<?php echo $cke_txtarea; ?>');
-	}
-}
+        document.onreadystatechange = function () {
+            if (document.readyState == "interactive") {
+                emoticonchooser('<?php echo $func; ?>', '<?php echo $txtarea; ?>', '<?php echo $cke_txtarea; ?>');
+            }
+        }
     </script>
 
 <?php
                     }
-                    echo $popuplink."\n";
+                    echo "    $popuplink\n";
                     echo '    <div id="serendipity_emoticonchooser_' . $func . '" style="' . $style . $popupstyle . '">'."\n";
                     foreach($unique as $value => $key) {
                         echo '        <a href="javascript:use_emoticon_' . $func . '(\'' . addslashes($key) . '\')" title="' . $key . '"><img src="'. $value .'" style="border: 0px" alt="' . $key . '" /></a>&nbsp;'."\n";
@@ -204,8 +204,8 @@ document.onreadystatechange = function () {
                             echo "        <br />\n";
                         }
                     }
-                    echo '    </div>'."\n";
-                    echo '</div>'."\n";
+                    echo "    </div>\n\n";
+                    echo "</div><!-- emoticon_bar end -->\n\n";
                     break;
 
                 case 'backend_header':

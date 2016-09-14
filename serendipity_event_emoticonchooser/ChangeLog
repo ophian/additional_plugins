@@ -1,6 +1,12 @@
 2.12:
 -----
 
+ * Some minor consistent changes
+ * Minor markup changes for the source
+
+2.12:
+-----
+
  * requirement and consistent changes
  * append CSS to $eventData stream , not prepend!
 
