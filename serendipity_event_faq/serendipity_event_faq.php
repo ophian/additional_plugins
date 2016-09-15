@@ -92,12 +92,12 @@ class serendipity_event_faq extends serendipity_event
             'backend_sidebar_entries_event_display_faq' => true,
             'backend_sidebar_entries'                   => true,
             'backend_sidebar_admin_appearance'          => true,
+            'entries_footer'                            => true,
             'external_plugin'                           => true,
             'entry_display'                             => true,
             'genpage'                                   => true,
             'css_backend'                               => true,
-            'css'                                       => true,
-            'entries_footer'                            => true
+            'css'                                       => true
         ));
 
         return true;
@@ -905,6 +905,7 @@ class serendipity_event_faq extends serendipity_event
             $faq_categoryid = $serendipity['uriArguments'][2];
             $faq_faqid      = $serendipity['uriArguments'][3];
         }
+
         if (is_numeric($faq_categoryid)) {
             $res['parent_id'] = $faq_categoryid;
             do {
@@ -1108,6 +1109,7 @@ class serendipity_event_faq extends serendipity_event
         global $serendipity;
 
         $term = serendipity_db_escape_string($serendipity['GET']['searchTerm']);
+
         if ($serendipity['dbType'] == 'postgres') {
             $group     = '';
             $distinct  = 'DISTINCT';
@@ -1134,6 +1136,7 @@ class serendipity_event_faq extends serendipity_event
                                $group
                       ORDER BY changedate DESC";
         $results = serendipity_db_query($querystring);
+
         if (!is_array($results)) {
             if ($results !== 1 && $results !== true) {
                 echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($results) : htmlspecialchars($results, ENT_COMPAT, LANG_CHARSET));
