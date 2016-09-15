@@ -24,9 +24,9 @@
     {/if}
 
     {if is_array($faq_plugin.faqs)}
-        <ul>
+        <ul class="faq-faqs">
         {foreach $faq_plugin.faqs AS $faq}
-            <li><a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}/{$faq.cid}/{$faq.id}">{$faq.question}</a> {$faq.status}</li>
+            <li><icon class="faq_question-icon"></icon> <a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}/{$faq.cid}/{$faq.id}">{$faq.question}</a> <em class="faq-status{if $faq.status == $CONST.FAQ_NEW} faq-new{/if}">{$faq.status}</em></li>
         {/foreach}
         </ul>
     {/if}

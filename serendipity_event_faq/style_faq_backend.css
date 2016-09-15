@@ -14,7 +14,7 @@
     width: 100%;
 }
 #faqBackendPage ul li {
-    list-style: none;
+    list-style: none outside none;
     display: inline;
     width: auto;
     margin: 0 0 0 1em;

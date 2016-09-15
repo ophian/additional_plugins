@@ -16,6 +16,31 @@
     margin: 0;
     padding: .2em;
 }
+
 .faq-results {
     text-align: left;
+}
+
+.faq_question-icon {
+    display: inline-block;
+    text-indent: -9999px;
+    width: 24px;
+    height: 24px;
+    background: url(plugins/serendipity_event_faq/img/question.svg);
+    background-size: 24px 24px;
+    vertical-align: middle;
+    margin-right: .5em;
+}
+.faq-faqs {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.faq-status {
+    font-size: 0.875em;
+    color: #FF851B;
+    margin-left: .5em;
+}
+.faq-new {
+    color: #2ECC40;
 }

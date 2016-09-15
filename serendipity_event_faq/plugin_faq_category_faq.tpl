@@ -16,8 +16,8 @@
     <p><b>{$CONST.FAQ_QUESTION}:</b> {$faq_plugin.this_faq.question}</p>
     <p><b>{$CONST.FAQ_ANSWER}:</b> {$faq_plugin.this_faq.answer}</p>
 
-    <p>{$CONST.FAQ_PREVOUS} <a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}/{$faq_plugin.prev_faq.categoryid}/{$faq_plugin.prev_faq.faqid}">{$faq_plugin.prev_faq.question|truncate:30:'...'}</a></p>
-    <p>{$CONST.FAQ_NEXT} <a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}/{$faq_plugin.next_faq.categoryid}/{$faq_plugin.next_faq.faqid}">{$faq_plugin.next_faq.question|truncate:30:'...'}</a></p>
+    <p><icon class="faq_question-icon"></icon> {$CONST.FAQ_PREVOUS} <a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}/{$faq_plugin.prev_faq.categoryid}/{$faq_plugin.prev_faq.faqid}">{$faq_plugin.prev_faq.question|truncate:30:'...'}</a></p>
+    <p><icon class="faq_question-icon"></icon> {$CONST.FAQ_NEXT} <a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}/{$faq_plugin.next_faq.categoryid}/{$faq_plugin.next_faq.faqid}">{$faq_plugin.next_faq.question|truncate:30:'...'}</a></p>
 </div>
 
 <!-- plugin_faq_category_faq.tpl end -->
