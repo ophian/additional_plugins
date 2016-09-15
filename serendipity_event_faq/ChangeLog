@@ -1,3 +1,15 @@
+1.21:
+-----
+
+ * Fix some more markup and stylings
+ * Touched templates in the 'alternatives' directory for Smarty3,
+   but not for the other new changes to the default used template files.
+   Make your own in comparisson. Recommended default copies for custom
+   themes are found in the root of this plugin.
+ * Remove bash file
+ * Added S9y 1.7 plain editor js file forgotten in v.1.20
+ * Changed to Serendipity CONST Smarty wrapper usage
+
 1.20:
 -----
 
