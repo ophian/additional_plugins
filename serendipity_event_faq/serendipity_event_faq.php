@@ -1275,7 +1275,7 @@ class serendipity_event_faq extends serendipity_event
         } else {
 ?>
 
-        <div>
+        <div class="clear form_field submit_set">
             <input class="state_submit" type="submit" name="serendipity[SAVECONF]" value="<?php echo SAVE; ?>">
         </div>
 
@@ -1391,7 +1391,7 @@ class serendipity_event_faq extends serendipity_event
 <?php
         } else {
 ?>
-        <div>
+        <div class="clear form_field submit_set">
             <input class="state_submit" type="submit" name="serendipity[SAVECONF]" value="<?php echo SAVE; ?>">
         </div>
 
