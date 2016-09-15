@@ -147,7 +147,7 @@ class serendipity_event_faq extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        FAQ_MARKUP);
                 $propbag->add('description', FAQ_MARKUP_DESC);
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             default:
@@ -254,7 +254,7 @@ class serendipity_event_faq extends serendipity_event
 
             case 'language':
                 $propbag->add('type',           'hidden');
-                $propbag->add('value',        $serendipity['GET']['cat_lang']);
+                $propbag->add('value',          $serendipity['GET']['cat_lang']);
                 break;
 
             default:
@@ -318,7 +318,7 @@ class serendipity_event_faq extends serendipity_event
      *
      * Get categories data
      *
-     * Select all categories stroed in the faq categories table.
+     * Select all categories stored in the faq categories table.
      * If the parameter is true only parent categories will be
      * returned.
      *
@@ -326,7 +326,6 @@ class serendipity_event_faq extends serendipity_event
      * @param  boolean
      * @return array
      */
-
     function getCategories($lang)
     {
         global $serendipity;
@@ -335,7 +334,7 @@ class serendipity_event_faq extends serendipity_event
         $cats = $this->fetchCategories($lang);
         if (is_array($cats)) {
             $cats = serendipity_walkRecursive($cats);
-            foreach ($cats as $cat) {
+            foreach ($cats AS $cat) {
                 if (($this->category['id'] != $cat['id']) && ($this->category['id'] != $cat['parent_id'])) {
                     $c[$cat['id']] = $cat['category'];
                 }
@@ -354,7 +353,6 @@ class serendipity_event_faq extends serendipity_event
             ORDER BY catorder";
         return serendipity_db_query($q, false, 'assoc');
     }
-
 
     function &getFaq($key, $default = null)
     {
@@ -407,6 +405,7 @@ class serendipity_event_faq extends serendipity_event
                 FROM {$serendipity['dbPrefix']}faqs
                WHERE id = $id";
         $res = serendipity_db_query($q, true, 'assoc');
+
         $q = "DELETE FROM {$serendipity['dbPrefix']}faqs
                WHERE id = $id";
         if (serendipity_db_query($q)) {
@@ -479,6 +478,7 @@ class serendipity_event_faq extends serendipity_event
                     FROM {$serendipity['dbPrefix']}faq_categorys
                    WHERE parent_id = ".$this->category['parent_id'];
             $res = serendipity_db_query($q, true, 'assoc');
+
             $this->category['catorder'] = ($res['counter'] + 1);
             $this->postgreCategoryPrepare();
             $result = serendipity_db_insert('faq_categorys', $this->category);
@@ -497,6 +497,7 @@ class serendipity_event_faq extends serendipity_event
                 FROM {$serendipity['dbPrefix']}faq_categorys
                WHERE id = $id";
         $res = serendipity_db_query($q, true, 'assoc');
+
         $q = "DELETE FROM {$serendipity['dbPrefix']}faq_categorys
                WHERE id = $id";
         if (serendipity_db_query($q)) {
@@ -566,10 +567,12 @@ class serendipity_event_faq extends serendipity_event
                 serendipity_db_update('faq_categorys', array('parent_id' => $old['parent_id'], 'catorder' => ($old['catorder'] - 1)), array('catorder' => $old['catorder']));
                 serendipity_db_update('faq_categorys', array('id' => $id), array('catorder' => ($old['catorder'] - 1)));
                 break;
+
             case D_FAQ_MOVEDOWN:
                 serendipity_db_update('faq_categorys', array('parent_id' => $old['parent_id'], 'catorder' => ($old['catorder'] + 1)), array('catorder' => $old['catorder']));
                 serendipity_db_update('faq_categorys', array('id' => $id), array('catorder' => ($old['catorder'] + 1)));
                 break;
+
             default:
                 return false;
         }
@@ -621,7 +624,7 @@ class serendipity_event_faq extends serendipity_event
                     $desc = (function_exists('serendipity_specialchars') ? serendipity_specialchars($bag->get('description')) : htmlspecialchars($bag->get('description'), ENT_COMPAT, LANG_CHARSET));
                     $config_faq = $bag->get('configuration_faq');
 
-                    foreach ($config_faq as $config_item) {
+                    foreach ($config_faq AS $config_item) {
                         $cbag = new serendipity_property_bag();
                         if ($this->introspect_faq_item($config_item, $cbag)) {
                             $this->faq[$config_item] = serendipity_get_bool($serendipity['POST']['plugin'][$config_item]);
@@ -679,7 +682,7 @@ class serendipity_event_faq extends serendipity_event
                     $name = (function_exists('serendipity_specialchars') ? serendipity_specialchars($bag->get('name')) : htmlspecialchars($bag->get('name'), ENT_COMPAT, LANG_CHARSET));
                     $desc = (function_exists('serendipity_specialchars') ? serendipity_specialchars($bag->get('description')) : htmlspecialchars($bag->get('description'), ENT_COMPAT, LANG_CHARSET));
                     $config_faq = $bag->get('configuration_category');
-                    foreach ($config_faq as $config_item) {
+                    foreach ($config_faq AS $config_item) {
                         $cbag = new serendipity_property_bag();
                         if ($this->introspect_category_item($config_item, $cbag)) {
                             $this->category[$config_item] = serendipity_get_bool($serendipity['POST']['plugin'][$config_item]);
@@ -734,7 +737,7 @@ class serendipity_event_faq extends serendipity_event
 
                 echo '<table cellspacing="0" cellpadding="3" width="100%" border="0">';
                 if (is_array($faqs)) {
-                    foreach ($faqs as $faq) {
+                    foreach ($faqs AS $faq) {
                         echo '<tr>';
                         echo '<td width="16"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=faqs&amp;serendipity[cid]='.$serendipity['GET']['cid'].'&amp;serendipity[id]='.$faq['id'].'"><img src="'.serendipity_getTemplateFile('admin/img/edit.png').'" width="16" height="16" title="'.EDIT.'" /></a></td>';
                         echo '<td width="16"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=deleteFAQ&amp;serendipity[cid]='.$serendipity['GET']['cid'].'&amp;serendipity[id]='.$faq['id'].'"><img src="'.serendipity_getTemplateFile('admin/img/delete.png').'" width="16" height="16" title="'.DELETE.'" /></a></td>';
@@ -798,7 +801,7 @@ class serendipity_event_faq extends serendipity_event
 
                     $faqs = $this->fetchFaqByCid($serendipity['POST']['id']);
                     if (is_array($faqs)) {
-                        foreach ($faqs as $faq) {
+                        foreach ($faqs AS $faq) {
                             $this->deleteFAQ($faq['id']);
                         }
                     }
@@ -814,7 +817,7 @@ class serendipity_event_faq extends serendipity_event
                 echo '<table cellspacing="0" cellpadding="3" width="100%" border="0">';
                 echo '<tr><td colspan="7">';
                 $lang_links = '';
-                foreach ($serendipity['languages'] as $lang_key => $lang_value) {
+                foreach ($serendipity['languages'] AS $lang_key => $lang_value) {
                     if (strlen($lang_links)) {
                         $lang_links .= '&nbsp;';
                     }
@@ -834,7 +837,7 @@ class serendipity_event_faq extends serendipity_event
                 if (is_array($fcats)) {
                     $fcats = serendipity_walkRecursive($fcats);
                     $fcats = $this->prepareMove($fcats);
-                    foreach ($fcats as $category) {
+                    foreach ($fcats AS $category) {
                         echo '<tr>';
                         echo '<td width="16"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=categories&amp;serendipity[id]='.$category['id'].'&amp;serendipity[cat_lang]='.$this_cat_lang.'"><img src="'.serendipity_getTemplateFile('admin/img/edit.png').'" width="16" height="16" title="'.EDIT.'" /></a></td>';
                         echo '<td width="16"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=deleteCategory&amp;serendipity[id]='.$category['id'].'"><img src="'.serendipity_getTemplateFile('admin/img/delete.png').'" width="16" height="16" title="'.DELETE.'" /></a></td>';
@@ -1139,7 +1142,7 @@ class serendipity_event_faq extends serendipity_event
 <?php
     $elcount = 0;
     $htmlnugget = array();
-    foreach ($this->config_faq as $config_item) {
+    foreach ($this->config_faq AS $config_item) {
         $elcount++;
         $config_value = $this->faq[$config_item];
         $cbag = new serendipity_property_bag();
@@ -1411,7 +1414,7 @@ class serendipity_event_faq extends serendipity_event
 <?php
         $elcount = 0;
         $htmlnugget = array();
-        foreach ($this->config_category as $config_item) {
+        foreach ($this->config_category AS $config_item) {
             $elcount++;
             $config_value = $this->category[$config_item];
             $cbag = new serendipity_property_bag();
