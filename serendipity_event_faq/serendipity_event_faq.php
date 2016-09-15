@@ -1065,6 +1065,7 @@ class serendipity_event_faq extends serendipity_event
                    WHERE language = '$faq_language'
                 ORDER BY catorder";
             $cats = serendipity_db_query($q, false, 'assoc');
+
             if (is_array($cats)) {
                 $cats = serendipity_walkRecursive($cats);
                 if (serendipity_db_bool($this->get_config('markup', 'true'))) {
@@ -1073,6 +1074,7 @@ class serendipity_event_faq extends serendipity_event
                         serendipity_plugin_api::hook_event('frontend_display', $entry);
                     }
                 }
+
                 $serendipity['smarty']->assign('faq_plugin', array(
                     'categories' => $cats
                 ));
