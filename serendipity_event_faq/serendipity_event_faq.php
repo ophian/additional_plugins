@@ -1427,7 +1427,12 @@ class serendipity_event_faq extends serendipity_event
             }
 
             if ($value === 'unset') {
-                $value = $cbag->get('default');
+                $value = $cbag->get('default'); // check prop type default for alles cases, except case hidden language and id!
+            }
+            // check the special cases
+            if (($config_item == 'language' || $config_item == 'id')
+                    && $type == 'hidden' && trim($value) == '') {
+                $inspectConfig['value'] = $value = $cbag->get('value'); // case 'language' prop type hidden 'default' = 'value'!
             }
 
             $hvalue   = (!isset($serendipity['POST']['categorySubmit']) && isset($serendipity['POST']['plugin'][$config_item]) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['POST']['plugin'][$config_item]) : htmlspecialchars($serendipity['POST']['plugin'][$config_item], ENT_COMPAT, LANG_CHARSET)) : (function_exists('serendipity_specialchars') ? serendipity_specialchars($value) : htmlspecialchars($value, ENT_COMPAT, LANG_CHARSET)));
