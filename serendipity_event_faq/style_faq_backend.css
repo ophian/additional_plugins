@@ -1,19 +1,41 @@
 /* Set a content max-width for 1.7 backend Series */
 .serendipityAdminContent * { max-width: 1002px; }
+/* Set the content width responsive for 1.7 backend Series */
+.serendipityAdminContent #faqBackendPage { width: 100%; }
 /* Set box sizing for 1.7 backend Series */
 .serendipityAdminContent .boxsizingBorder {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
 }
+
+#faqBackendPage .plainList {
+    display: table;
+    width: 100%;
+}
 #faqBackendPage ul li {
     list-style: none;
-    margin: 0;
     display: inline;
+    width: auto;
+    margin: 0 0 0 1em;
+    padding-left: 0;
+}
+#faqBackendPage ul li:first-of-type {
     margin-left: 1.5em;
-    padding-left: 0px;
+}
+#faqBackendPage li.fixed {
+    display: inline-table;
+    width: 30%;
+}
+#faqBackendPage li.col {
+    width: 60%;
+}
+#faqBackendPage li.empty {
+    display: inline-table;
+    width: 1rem;
 }
 #faqBackendPage ul li img {
+    width: auto;
     vertical-align: middle;
 }
 #serendipityFAQNav ul li a {
@@ -21,7 +43,6 @@
     margin-left: 5px;
     border: 1px solid #222;
 }
-
 #serendipityFAQNav ul li a#active {
     border-bottom: 1px solid #FFF;
 }
@@ -57,9 +78,21 @@
     background: #efefef;
     padding: .1em .2em;
 }
+.faq_lang_navigation {
+    border: 1px solid #DDD;
+    padding: .5em;
+    display: table;
+}
 .faq_navigator {
     background: #EEE;
     border: 1px solid #CCC;
     margin: 1em 0;
     padding: .5em;
+}
+
+/* LARGER SCREENS */
+@media only screen and (min-width: 1200px) {
+    #faqBackendPage .action_field {
+        margin-right: 20%;
+    }
 }
