@@ -1,3 +1,11 @@
+1.20:
+-----
+
+ * Set some more plugin consistencies
+ * Fix bug with hidden config items default fallback
+ * Refactor inspectConfig item preparation
+ * Serendipity 2.0+ ready markup changes
+
 1.13:
 -----
 
