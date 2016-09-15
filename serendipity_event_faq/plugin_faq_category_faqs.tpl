@@ -3,17 +3,17 @@
 
 <div id="serendipity_faq_plugin" class="clearfix serendipity_entry faq-categoryfaqs">
     <div id="serendipityFAQNav" class="faq-nav">
-        <p>
+        <div>
             <a href="{$serendipityBaseURL}">{$CONST.ADMIN_FRONTPAGE}</a> &gt; <a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}">{$CONST.FAQ_CATEGORIES}</a>
 
         {foreach $cat_tree AS $cat}
             &gt; {if $cat.id != $faq_plugin.catid}<a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}/{$cat.id}">{/if}{$cat.category}{if $cat.id != $faq_plugin.catid}</a>{/if}
         {/foreach}
-        </p>
+        </div>
     </div>
 
     <h3>{$faq_plugin.category}</h3>
-    {if $faq_plugin.introduction}<p>{$faq_plugin.introduction}</p>{/if}
+    {if $faq_plugin.introduction}<div>{$faq_plugin.introduction}</div>{/if}
 
     {if is_array($faq_plugin.subcategories)}
         <ul>
