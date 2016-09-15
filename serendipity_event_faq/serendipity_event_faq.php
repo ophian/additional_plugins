@@ -381,6 +381,10 @@ class serendipity_event_faq extends serendipity_event
         if (!is_numeric($this->faq['id'])) {
             $this->faq['changedate'] = time();
             $this->faq['changetype'] = 'new';
+            if (!is_numeric($this->faq['cid']) {
+                trigger_error("The {$this->faq['cid']} (cid) parameter must contain a valid 'category id' key", E_USER_ERROR);
+                exit;
+            }
             $q = "SELECT COUNT(id) AS counter
                     FROM {$serendipity['dbPrefix']}faqs
                    WHERE cid = ".$this->faq['cid'];
@@ -1195,11 +1199,17 @@ class serendipity_event_faq extends serendipity_event
             $inspectConfig['value'] = $value = $this->getFaq($config_item, 'unset'); // case hidden
             $inspectConfig['lang_direction'] = $lang_direction = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('lang_direction')) : htmlspecialchars($cbag->get('lang_direction'), ENT_COMPAT, LANG_CHARSET));
 
+            $type = $cbag->get('type');
             if (empty($lang_direction)) {
                 $inspectConfig['lang_direction'] = LANG_DIRECTION;
             }
             if ($value === 'unset') {
-                $inspectConfig['value'] = $value = $cbag->get('default'); // case hidden
+                $inspectConfig['value'] = $value = $cbag->get('default'); // check prop type default for alles cases, except case hidden language and id and cid!
+            }
+            // check the special cases
+            if (($config_item == 'language' || $config_item == 'id' || $config_item == 'cid')
+                    && $type == 'hidden' && trim($value) == '') {
+                $inspectConfig['value'] = $value = $cbag->get('value'); // case 'language' prop type hidden 'default' = 'value'!
             }
 
             $hvalue =   (!isset($serendipity['POST']['faqSubmit']) && isset($serendipity['POST']['plugin'][$config_item])
@@ -1218,7 +1228,7 @@ class serendipity_event_faq extends serendipity_event
             $inspectConfig['radio']         = $radio    = array();
             $inspectConfig['select']        = $select   = array();
             $inspectConfig['per_row']       = $per_row  = null;
-            $inspectConfig['type']          = $type     = $cbag->get('type'); //  we don't use special case type 'language' or 'id' prop fallback here, see showFAQForm() method
+            $inspectConfig['type']          = $type;
             $inspectConfig['default']       = $default  = $cbag->get('default'); // case default
             $inspectConfig['radio']         = $radio    = $cbag->get('radio'); // case radio
             $inspectConfig['per_row']       = $per_row  = $cbag->get('radio_per_row'); // case radio
@@ -1311,10 +1321,10 @@ class serendipity_event_faq extends serendipity_event
                 $inspectConfig['lang_direction'] = LANG_DIRECTION;
             }
             if ($value === 'unset') {
-                $inspectConfig['value'] = $value = $cbag->get('default'); // check prop type default for alles cases, except case hidden language and id!
+                $inspectConfig['value'] = $value = $cbag->get('default'); // check prop type default for alles cases, except case hidden language and id and cid!
             }
             // check the special cases
-            if (($config_item == 'language' || $config_item == 'id')
+            if (($config_item == 'language' || $config_item == 'id' || $config_item == 'cid')
                     && $type == 'hidden' && trim($value) == '') {
                 $inspectConfig['value'] = $value = $cbag->get('value'); // case 'language' prop type hidden 'default' = 'value'!
             }
