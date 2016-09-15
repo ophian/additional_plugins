@@ -91,6 +91,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('event_hooks',            array(
             'backend_sidebar_entries_event_display_faq' => true,
             'backend_sidebar_entries'                   => true,
+            'backend_sidebar_admin_appearance'          => true,
             'external_plugin'                           => true,
             'entry_display'                             => true,
             'genpage'                                   => true,
@@ -1688,8 +1689,25 @@ class serendipity_event_faq extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries':
-                    $this->setupDB();
-                    echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq">' . FAQ_NAME . '</a></li>';
+                    // forbid entry if not admin
+                    #if (!serendipity_userLoggedIn() && $_SESSION['serendipityAuthedUser'] !== true && $_SESSION['serendipityUserlevel'] != '255') {
+                    #    break;
+                    #}
+                    if ($serendipity['version'][0] < 2) {
+                        $this->setupDB();
+                        echo "\n".'                        <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq">' . FAQ_NAME . '</a></li>';
+                    }
+                    break;
+
+                case 'backend_sidebar_admin_appearance':
+                    // forbid entry if not admin
+                    #if (!serendipity_userLoggedIn() && $_SESSION['serendipityAuthedUser'] !== true && $_SESSION['serendipityUserlevel'] != '255') {
+                    #    break;
+                    #}
+                    if ($serendipity['version'][0] > 1) {
+                        $this->setupDB();
+                        echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq">' . FAQ_NAME . '</a></li>'."\n";
+                    }
                     break;
 
                 case 'backend_sidebar_entries_event_display_faq':
