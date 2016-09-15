@@ -96,11 +96,13 @@
 <file>plugin_faq_category_faqs.tpl</file>
 </dir>
 <file>ChangeLog</file>
+<file>class_inspectConfig.php</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
 <dir name="img">
 <file>.htaccess</file>
 <file>base.gif</file>
+<file>category.png</file>
 <file>empty.gif</file>
 <file>folder.gif</file>
 <file>folderopen.gif</file>
@@ -109,11 +111,14 @@
 <file>line.gif</file>
 <file>minus.gif</file>
 <file>minusbottom.gif</file>
+<file>move_down.png</file>
+<file>move_up.png</file>
 <file>nolines_minus.gif</file>
 <file>nolines_plus.gif</file>
 <file>page.gif</file>
 <file>plus.gif</file>
 <file>plusbottom.gif</file>
+<file>question.svg.png</file>
 </dir>
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
@@ -148,10 +153,12 @@
     <file>serendipity_event_faq/alternatives/plugin_faq_category_faq.tpl</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_category_faqs.tpl</file>
     <file>serendipity_event_faq/ChangeLog</file>
+    <file>serendipity_event_faq/class_inspectConfig.php</file>
     <file>serendipity_event_faq/documentation_cs.html</file>
     <file>serendipity_event_faq/documentation_cz.html</file>
     <file>serendipity_event_faq/img/.htaccess</file>
     <file>serendipity_event_faq/img/base.gif</file>
+    <file>serendipity_event_faq/img/category.png</file>
     <file>serendipity_event_faq/img/empty.gif</file>
     <file>serendipity_event_faq/img/folder.gif</file>
     <file>serendipity_event_faq/img/folderopen.gif</file>
@@ -160,11 +167,14 @@
     <file>serendipity_event_faq/img/line.gif</file>
     <file>serendipity_event_faq/img/minus.gif</file>
     <file>serendipity_event_faq/img/minusbottom.gif</file>
+    <file>serendipity_event_faq/img/move_down.png</file>
+    <file>serendipity_event_faq/img/move_up.png</file>
     <file>serendipity_event_faq/img/nolines_minus.gif</file>
     <file>serendipity_event_faq/img/nolines_plus.gif</file>
     <file>serendipity_event_faq/img/page.gif</file>
     <file>serendipity_event_faq/img/plus.gif</file>
     <file>serendipity_event_faq/img/plusbottom.gif</file>
+    <file>serendipity_event_faq/img/question.svg.png</file>
     <file>serendipity_event_faq/lang_bg.inc.php</file>
     <file>serendipity_event_faq/lang_cs.inc.php</file>
     <file>serendipity_event_faq/lang_cz.inc.php</file>
