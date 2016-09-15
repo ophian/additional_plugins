@@ -10,7 +10,7 @@
 }
 
 #faqBackendPage .plainList {
-    display: table;
+    display: inline-table;
     width: 100%;
 }
 #faqBackendPage ul li {
@@ -27,16 +27,33 @@
     display: inline-table;
     width: 30%;
 }
-#faqBackendPage li.col {
+#faqBackendPage li.fixed * {
+    display: inline;
+}
+#content #faqBackendPage li.fixed {
+    /* 2.0 only fixes - while 2.0 font.size is bigger */
+    width: 28%;
+}
+#faqBackendPage li.col,
+#content #faqBackendPage li.col {
     width: 60%;
 }
 #faqBackendPage li.empty {
     display: inline-table;
     width: 1rem;
 }
+#content #faqBackendPage li.empty {
+    /* 2.0 only fixes - while 2.0 font.size is bigger */
+    width: 1.45rem; /* 24px */
+}
 #faqBackendPage ul li img {
     width: auto;
     vertical-align: middle;
+}
+#content #faqBackendPage ul li img {
+    /* 2.0 only fixes - unset auto */
+    width: 24px;
+    height: 24px;
 }
 #serendipityFAQNav ul li a {
     padding: 3px 0.5em;
@@ -60,6 +77,16 @@
 #faqBackendPage .clear,
 #backend_faq_formpage .clear {
     clear: right;
+}
+#content #faqBackendPage .clear,
+#content #backend_faq_formpage .clear {
+    /* 2.0 only fixes - unset styles */
+    margin: 0 auto; /* form_field */
+    line-height: 0; /* body */
+}
+#content #backend_faq_formpage .submit_set {
+    /* 2.0 only style - needs the #content though */
+    margin: 1.5em auto;
 }
 #faqBackendPage .action_field,
 #backend_faq_formpage .action_field,

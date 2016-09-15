@@ -1,5 +1,13 @@
-.faq-categoryfaqs, .faq-categories, .faq-category, .faq-searchresults {}
-
+.faq-categoryfaqs,
+.faq-categories,
+.faq-category,
+.faq-searchresults {
+    display: table;
+}
+#serendipityFAQPagination p {
+    margin: inherit;
+    display: inline-block;
+}
 #serendipity_faq_plugin ul {
     margin: 0 1.5em;
 }
@@ -12,7 +20,7 @@
     text-decoration: none;
 }
 
-.faq-nav p {
+.faq-nav div {
     margin: 0;
     padding: .2em;
 }
@@ -36,6 +44,12 @@
     margin: 0;
     padding: 0;
 }
+.faq-faqs li {
+    display: block;
+}
+.faq-faqs li *{
+    display: inline-block;
+}
 .faq-status {
     font-size: 0.875em;
     color: #FF851B;
@@ -43,4 +57,10 @@
 }
 .faq-new {
     color: #2ECC40;
+}
+.faq-footer {
+    display: block;
+}
+.faq-footer > div {
+    margin: .5em auto;
 }
