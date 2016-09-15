@@ -381,9 +381,9 @@ class serendipity_event_faq extends serendipity_event
         if (!is_numeric($this->faq['id'])) {
             $this->faq['changedate'] = time();
             $this->faq['changetype'] = 'new';
-            if (!is_numeric($this->faq['cid']) {
+            if (!is_numeric($this->faq['cid'])) {
                 trigger_error("The {$this->faq['cid']} (cid) parameter must contain a valid 'category id' key", E_USER_ERROR);
-                exit;
+                return;
             }
             $q = "SELECT COUNT(id) AS counter
                     FROM {$serendipity['dbPrefix']}faqs
