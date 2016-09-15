@@ -262,47 +262,15 @@ class serendipity_event_faq extends serendipity_event
         return true;
     }
 
-    /**
-     *
-     * Get categories data
-     *
-     * Select all categories stroed in the faq categories table.
-     * If the parameter is true only parent categories will be
-     * returned.
-     *
-     * @access public
-     * @param  boolean
-     * @return array
-     */
-
-    function getCategories($lang)
+    function generate_content(&$title)
     {
-        global $serendipity;
-        $c = array('0' => FAQ_PARENT);
-
-        $cats = $this->fetchCategories($lang);
-        if (is_array($cats)) {
-            $cats = serendipity_walkRecursive($cats);
-            foreach ($cats as $cat) {
-                if (($this->category['id'] != $cat['id']) && ($this->category['id'] != $cat['parent_id'])) {
-                    $c[$cat['id']] = $cat['category'];
-                }
-            }
-        }
-        return $c;
+        $title = FAQ_NAME;
     }
 
-    function fetchCategories($lang)
+    function install()
     {
-        global $serendipity;
-
-        $q = "SELECT id, parent_id, category, catorder, language
-                FROM {$serendipity['dbPrefix']}faq_categorys
-               WHERE language = '$lang'
-            ORDER BY catorder";
-        return serendipity_db_query($q, false, 'assoc');
+        $this->setupDB();
     }
-
 
     function setupDB()
     {
@@ -344,6 +312,48 @@ class serendipity_event_faq extends serendipity_event
         }
 
     }
+
+    /**
+     *
+     * Get categories data
+     *
+     * Select all categories stroed in the faq categories table.
+     * If the parameter is true only parent categories will be
+     * returned.
+     *
+     * @access public
+     * @param  boolean
+     * @return array
+     */
+
+    function getCategories($lang)
+    {
+        global $serendipity;
+        $c = array('0' => FAQ_PARENT);
+
+        $cats = $this->fetchCategories($lang);
+        if (is_array($cats)) {
+            $cats = serendipity_walkRecursive($cats);
+            foreach ($cats as $cat) {
+                if (($this->category['id'] != $cat['id']) && ($this->category['id'] != $cat['parent_id'])) {
+                    $c[$cat['id']] = $cat['category'];
+                }
+            }
+        }
+        return $c;
+    }
+
+    function fetchCategories($lang)
+    {
+        global $serendipity;
+
+        $q = "SELECT id, parent_id, category, catorder, language
+                FROM {$serendipity['dbPrefix']}faq_categorys
+               WHERE language = '$lang'
+            ORDER BY catorder";
+        return serendipity_db_query($q, false, 'assoc');
+    }
+
 
     function &getFaq($key, $default = null)
     {
@@ -1655,16 +1665,6 @@ class serendipity_event_faq extends serendipity_event
 <?php
     }
 
-
-    function generate_content(&$title)
-    {
-        $title = FAQ_NAME;
-    }
-
-    function install()
-    {
-        $this->setupDB();
-    }
 
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
