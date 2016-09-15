@@ -3,10 +3,10 @@
 
 <div id="serendipity_faq_plugin" class="clearfix serendipity_entry faq-categories">
     <div id="serendipityFAQNav" class="faq-nav">
-        <p><a href="{$serendipityBaseURL}">{$smarty.const.ADMIN_FRONTPAGE}</a> &gt; {$smarty.const.FAQ_CATEGORIES}</p>
+        <p><a href="{$serendipityBaseURL}">{$CONST.ADMIN_FRONTPAGE}</a> &gt; {$CONST.FAQ_CATEGORIES}</p>
     </div>
     <div class="serendipity_Entry_Date">
-        <h3 class="serendipity_date">{$smarty.const.FAQ_CATEGORIES}</h3>
+        <h3 class="serendipity_date">{$CONST.FAQ_CATEGORIES}</h3>
     </div>
 
 {if is_array($faq_plugin.categories)}
