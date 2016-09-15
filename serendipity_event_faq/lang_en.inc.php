@@ -1,5 +1,8 @@
 <?php
 
+@define('MOVE_UP', 'Move up'); // CORE CONSTANTS - Don't copy / translate!
+@define('MOVE_DOWN', 'Move down'); // These two are just copies for the Serendipity 1.7 Series
+
 @define('FAQS', 'FAQs');
 @define('FAQ_NEW_ENTRY', 'New FAQ');
 @define('FAQ_NAME', 'Frequently Asked Questions');
