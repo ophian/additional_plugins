@@ -1158,522 +1158,76 @@ class serendipity_event_faq extends serendipity_event
 
     function showFAQForm()
     {
-        global $serendipity;
-
-        $serendipity['EditorBrowsers'] = '@(IE|Mozilla|Safari)@i';
+        global $serendipity, $inspectConfig;
 
         if (file_exists(S9Y_INCLUDE_PATH.'include/functions_entries_admin.inc.php')) {
             include_once(S9Y_INCLUDE_PATH.'include/functions_entries_admin.inc.php');
         }
 
-?>
-<br /><hr />
-    <table border="0" cellspacing="0" cellpadding="3" width="100%">
-<?php
-    $elcount = 0;
-    $htmlnugget = array();
-    foreach ($this->config_faq AS $config_item) {
-        $elcount++;
-        $config_value = $this->faq[$config_item];
-        $cbag = new serendipity_property_bag();
-        $this->introspect_faq_item($config_item, $cbag);
-
-        $cname = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('name')) : htmlspecialchars($cbag->get('name'), ENT_COMPAT, LANG_CHARSET));
-        $cdesc = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('description')) : htmlspecialchars($cbag->get('description'), ENT_COMPAT, LANG_CHARSET));
-        $value = $this->getFaq($config_item, 'unset');
-        $lang_direction = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('lang_direction')) : htmlspecialchars($cbag->get('lang_direction'), ENT_COMPAT, LANG_CHARSET));
-
-        if (empty($lang_direction)) {
-            $lang_direction = LANG_DIRECTION;
+        // call moduled abstract class
+        if (!is_callable('inspectConfig')) {
+            require_once dirname(__FILE__).'/class_inspectConfig.php';
         }
-
-        if ($value === 'unset') {
-            $value = $cbag->get('default');
-        }
-
-        $hvalue   = (!isset($serendipity['POST']['faqSubmit']) && isset($serendipity['POST']['plugin'][$config_item]) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['POST']['plugin'][$config_item]) : htmlspecialchars($serendipity['POST']['plugin'][$config_item], ENT_COMPAT, LANG_CHARSET)) : (function_exists('serendipity_specialchars') ? serendipity_specialchars($value) : htmlspecialchars($value, ENT_COMPAT, LANG_CHARSET)));
-        $radio    = array();
-        $select   = array();
-        $per_row  = null;
-
-        switch ($cbag->get('type')) {
-            case 'seperator':
-?>
-        <tr>
-            <td colspan="2"><hr noshade="noshade" size="1" /></td>
-        </tr>
-<?php
-                break;
-
-            case 'select':
-                $select = $cbag->get('select_values');
-?>
-        <tr>
-            <td style="border-bottom: 1px solid #000000; vertical-align: top"><strong><?php echo $cname; ?></strong>
-<?php
-    if ($cdesc != '') {
-?>
-                <br><span  style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span>
-<?php } ?>
-            </td>
-            <td style="border-bottom: 1px solid #000000; vertical-align: middle" width="250">
-                <div>
-                    <select class="direction_<?php echo $lang_direction; ?>" name="serendipity[plugin][<?php echo $config_item; ?>]">
-<?php
-                foreach($select AS $select_value => $select_desc) {
-                    $id = (function_exists('serendipity_specialchars') ? serendipity_specialchars($config_item . $select_value) : htmlspecialchars($config_item . $select_value, ENT_COMPAT, LANG_CHARSET));
-?>
-                        <option value="<?php echo $select_value; ?>" <?php echo ($select_value == $hvalue ? 'selected="selected"' : ''); ?> title="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($select_desc) : htmlspecialchars($select_desc, ENT_COMPAT, LANG_CHARSET)); ?>" />
-                            <?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($select_desc) : htmlspecialchars($select_desc, ENT_COMPAT, LANG_CHARSET)); ?>
-                        </option>
-<?php
-                }
-?>
-                    </select>
-                </div>
-            </td>
-        </tr>
-<?php
-                break;
-
-            case 'tristate':
-                $per_row = 3;
-                $radio['value'][] = 'default';
-                $radio['desc'][]  = USE_DEFAULT;
-
-            case 'boolean':
-                $radio['value'][] = 'true';
-                $radio['desc'][]  = YES;
-
-                $radio['value'][] = 'false';
-                $radio['desc'][]  = NO;
-
-           case 'radio':
-                if (!count($radio) > 0) {
-                    $radio = $cbag->get('radio');
-                }
-
-                if (empty($per_row)) {
-                    $per_row = $cbag->get('radio_per_row');
-                    if (empty($per_row)) {
-                        $per_row = 2;
-                    }
-                }
-?>
-        <tr>
-            <td style="border-bottom: 1px solid #000000; vertical-align: top"><strong><?php echo $cname; ?></strong>
-<?php
-                if ($cdesc != '') {
-?>
-                <br /><span  style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span>
-<?php
-                }
-?>
-            </td>
-            <td style="border-bottom: 1px solid #000000; vertical-align: middle;" width="250">
-<?php
-                $counter = 0;
-                foreach($radio['value'] AS $radio_index => $radio_value) {
-                    $id = (function_exists('serendipity_specialchars') ? serendipity_specialchars($config_item . $radio_value) : htmlspecialchars($config_item . $radio_value, ENT_COMPAT, LANG_CHARSET));
-                    $counter++;
-                    $checked = "";
-
-                    if ($radio_value == 'true' && ($hvalue === '1' || $hvalue === 'true')) {
-                        $checked = " checked";
-                    } elseif ($radio_value == 'false' && ($hvalue === '' || $hvalue ==='0' || $hvalue === 'false')) {
-                        $checked = " checked";
-                    } elseif ($radio_value == $hvalue) {
-                        $checked = " checked";
-                    }
-
-                    if ($counter == 1) {
-?>
-                <div>
-<?php
-                    }
-?>
-                    <input class="direction_<?php echo $lang_direction; ?> input_radio" type="radio" id="serendipity_plugin_<?php echo $id; ?>" name="serendipity[plugin][<?php echo $config_item; ?>]" value="<?php echo $radio_value; ?>" <?php echo $checked ?> title="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($radio['desc'][$radio_index]) : htmlspecialchars($radio['desc'][$radio_index], ENT_COMPAT, LANG_CHARSET)); ?>" />
-                        <label for="serendipity_plugin_<?php echo $id; ?>"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($radio['desc'][$radio_index]) : htmlspecialchars($radio['desc'][$radio_index], ENT_COMPAT, LANG_CHARSET)); ?></label>
-<?php
-                    if ($counter == $per_row) {
-                        $counter = 0;
-?>
-                </div>
-<?php
-                    }
-                }
-?>
-            </td>
-        </tr>
-<?php
-                break;
-
-            case 'string':
-?>
-        <tr>
-            <td style="border-bottom: 1px solid #000000">
-                    <strong><?php echo $cname; ?></strong>
-                    <br><span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span>
-            </td>
-            <td style="border-bottom: 1px solid #000000" width="250">
-                <div>
-                    <input class="direction_<?php echo $lang_direction; ?> input_radio" type="text" name="serendipity[plugin][<?php echo $config_item; ?>]" value="<?php echo $hvalue; ?>" size="30" />
-                </div>
-            </td>
-        </tr>
-<?php
-                break;
-
-            case 'html':
-            case 'text':
-?>
-
-            <tr>
-<?php
-    if (!$serendipity['wysiwyg']) {
-?>
-                <td><strong><?php echo $cname; ?></strong>
-                &nbsp;<span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span></td>
-                <td align="right">
-<?php
-        /* Since the user has WYSIWYG editor disabled, we want to check if we should use the "better" non-WYSIWYG editor */
-        if (!$serendipity['wysiwyg'] && preg_match($serendipity['EditorBrowsers'], $_SERVER['HTTP_USER_AGENT']) ) {
-?><nobr>
-                  <script type="text/javascript" language="JavaScript">
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insI" value="I" accesskey="i" style="font-style: italic" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'],\'<i>\',\'</i>\')" />');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insB" value="B" accesskey="b" style="font-weight: bold" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'],\'<b>\',\'</b>\')" />');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insU" value="U" accesskey="u" style="text-decoration: underline;" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'],\'<u>\',\'</u>\')" />');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insQ" value="<?php echo QUOTE ?>" accesskey="q" style="font-style: italic" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'],\'<blockquote>\',\'</blockquote>\')" />');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insJ" value="img" accesskey="j" onclick="wrapInsImage(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'])" />');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insImage" value="<?php echo MEDIA; ?>" style="" onclick="window.open(\'serendipity_admin_image_selector.php?serendipity[textarea]=<?php echo urlencode('serendipity[plugin]['.$config_item.']'); ?>\', \'ImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\');" />');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insU" value="URL" accesskey="l" style="color: blue; text-decoration: underline;" onclick="wrapSelectionWithLink(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'])" />');
-                  </script></nobr>
-<?php
-        /* Do the "old" non-WYSIWYG editor */
-        } elseif (!$serendipity['wysiwyg']) { ?><nobr>
-                  <script type="text/javascript" language="JavaScript">
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" value=" B " onclick="serendipity_insBasic(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'], \'b\')">');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" value=" U " onclick="serendipity_insBasic(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'], \'u\')">');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" value=" I " onclick="serendipity_insBasic(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'], \'i\')">');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" value="<img>" onclick="serendipity_insImage(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'])">');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" value="<?php echo MEDIA; ?>" onclick="window.open(\'serendipity_admin_image_selector.php?serendipity[filename_only]=<?php echo $config_item ?>\', \'ImageSel\', \'width=800,height=600,toolbar=no\');">');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" value="Link" onclick="serendipity_insLink(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'])">');
-                </script></nobr>
-<?php   }
-
-        serendipity_plugin_api::hook_event('backend_entry_toolbar_body', $entry);
-    } else {
-?>
-            <td colspan="2"><strong><?php echo $cname; ?></strong>
-                &nbsp;<span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span></td>
-            <td><?php serendipity_plugin_api::hook_event('backend_entry_toolbar_body', $entry); ?>
-
-<?php } ?>
-                </td>
-            </tr>
-
-        <tr>
-            <td colspan="2">
-                <div>
-                    <textarea class="direction_<?php echo $lang_direction; ?>" style="width: 100%" id="nuggets<?php echo $elcount; ?>" name="serendipity[plugin][<?php echo $config_item; ?>]" rows="20" cols="80"><?php echo $hvalue; ?></textarea>
-                </div>
-            </td>
-        </tr>
-<?php
-                if ($cbag->get('type') == 'html') {
-                    $htmlnugget[] = $elcount;
-                    if (version_compare(preg_replace('@[^0-9\.]@', '', $serendipity['version']), '0.9', '<')) {
-                        serendipity_emit_htmlarea_code('nuggets' . $elcount, 'nuggets' . $elcount);
-                    } else {
-                        serendipity_emit_htmlarea_code('nuggets', 'nuggets', true);
-                    }
-                }
-                break;
-
-            case 'content':
-                ?><tr><td colspan="2"><?php echo $cbag->get('default'); ?></td></tr><?php
-                break;
-
-            case 'hidden':
-                ?><tr><td colspan="2"><input class="direction_<?php echo $lang_direction; ?>" type="hidden" name="serendipity[plugin][<?php echo $config_item; ?>]" value="<?php echo $cbag->get('value'); ?>" /></td></tr><?php
-                break;
-        }
-    }
-
-    if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg'] && count($htmlnugget) > 0) {
-        $ev = array('nuggets' => $htmlnugget, 'skip_nuggets' => false);
-        serendipity_plugin_api::hook_event('backend_wysiwyg_nuggets', $ev);
-
-        if ($ev['skip_nuggets'] === false) {
-?>
-    <script type="text/javascript">
-    function Spawnnugget() {
-        <?php foreach($htmlnugget AS $htmlnuggetid) {
-                if (version_compare(preg_replace('@[^0-9\.]@', '', $serendipity['version']), '0.9', '<')) { ?>
-        Spawnnuggets<?php echo $htmlnuggetid; ?>();
-                    <?php } else { ?>
-        Spawnnuggets('<?php echo $htmlnuggetid; ?>');
-                    <?php } ?>
-        <?php } ?>
-    }
-    </script>
-<?php
-        }
-    }
-?>
-    </table>
-<br />
-    <div style="padding-left: 20px">
-        <input type="submit" name="serendipity[SAVECONF]" value="<?php echo SAVE; ?>" class="serendipityPrettyButton input_button" />
-    </div>
-<?php
-    }
-
-    function showCategoryForm()
-    {
-        global $serendipity;
-
-        $serendipity['EditorBrowsers'] = '@(IE|Mozilla|Safari)@i';
-
-        if(file_exists(S9Y_INCLUDE_PATH.'include/functions_entries_admin.inc.php')){
-            include_once(S9Y_INCLUDE_PATH.'include/functions_entries_admin.inc.php');
-        }
-
-?>
-    <table border="0" cellspacing="0" cellpadding="3" width="100%">
-<?php
         $elcount = 0;
         $htmlnugget = array();
-        foreach ($this->config_category AS $config_item) {
-            $elcount++;
-            $config_value = $this->category[$config_item];
-            $cbag = new serendipity_property_bag();
-            $this->introspect_category_item($config_item, $cbag);
+        $inspectConfig = array();
+        // add some $serendipity items to check for
+        $inspectConfig['s9y']['wysiwyg'] = $serendipity['wysiwyg'];
+        $inspectConfig['s9y']['version'] = $serendipity['version'][0];
+        $inspectConfig['s9y']['nl2br']['iso2br'] = $serendipity['nl2br']['iso2br'];
+        $inspectConfig['s9y']['plugin_path'] = $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/';
 
-            $cname = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('name')) : htmlspecialchars($cbag->get('name'), ENT_COMPAT, LANG_CHARSET));
-            $cdesc = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('description')) : htmlspecialchars($cbag->get('description'), ENT_COMPAT, LANG_CHARSET));
-            $value = $this->getCategory($config_item, 'unset');
-            $lang_direction = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('lang_direction')) : htmlspecialchars($cbag->get('lang_direction'), ENT_COMPAT, LANG_CHARSET));
+        foreach ($this->config_faq AS $config_item) {
+            $elcount++;
+            #$inspectConfig['config_value'] = $config_value = $this->faq[$config_item]; // no use, why was it set?
+            $cbag = new serendipity_property_bag();
+            $this->introspect_faq_item($config_item, $cbag);
+
+            $inspectConfig['cname'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('name')) : htmlspecialchars($cbag->get('name'), ENT_COMPAT, LANG_CHARSET));
+            $inspectConfig['cdesc'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('description')) : htmlspecialchars($cbag->get('description'), ENT_COMPAT, LANG_CHARSET));
+            $inspectConfig['value'] = $value = $this->getFaq($config_item, 'unset'); // case hidden
+            $inspectConfig['lang_direction'] = $lang_direction = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('lang_direction')) : htmlspecialchars($cbag->get('lang_direction'), ENT_COMPAT, LANG_CHARSET));
 
             if (empty($lang_direction)) {
-                $lang_direction = LANG_DIRECTION;
+                $inspectConfig['lang_direction'] = LANG_DIRECTION;
             }
-
             if ($value === 'unset') {
-                $value = $cbag->get('default'); // check prop type default for alles cases, except case hidden language and id!
-            }
-            // check the special cases
-            if (($config_item == 'language' || $config_item == 'id')
-                    && $type == 'hidden' && trim($value) == '') {
-                $inspectConfig['value'] = $value = $cbag->get('value'); // case 'language' prop type hidden 'default' = 'value'!
+                $inspectConfig['value'] = $value = $cbag->get('default'); // case hidden
             }
 
-            $hvalue   = (!isset($serendipity['POST']['categorySubmit']) && isset($serendipity['POST']['plugin'][$config_item]) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['POST']['plugin'][$config_item]) : htmlspecialchars($serendipity['POST']['plugin'][$config_item], ENT_COMPAT, LANG_CHARSET)) : (function_exists('serendipity_specialchars') ? serendipity_specialchars($value) : htmlspecialchars($value, ENT_COMPAT, LANG_CHARSET)));
-            $radio    = array();
-            $select   = array();
-            $per_row  = null;
+            $hvalue =   (!isset($serendipity['POST']['faqSubmit']) && isset($serendipity['POST']['plugin'][$config_item])
+                            ? (function_exists('serendipity_specialchars')
+                                    ? serendipity_specialchars($serendipity['POST']['plugin'][$config_item])
+                                    : htmlspecialchars($serendipity['POST']['plugin'][$config_item], ENT_COMPAT, LANG_CHARSET)
+                               )
+                            : (function_exists('serendipity_specialchars')
+                                ? serendipity_specialchars($value)
+                                : htmlspecialchars($value, ENT_COMPAT, LANG_CHARSET))
+                        );
 
-            switch ($cbag->get('type')) {
-                case 'seperator':
-                    echo '<tr><td colspan="2"><hr noshade="noshade" size="1" /></td></tr>';
-                    break;
+            $inspectConfig['config_item']   = $config_item;
+            $inspectConfig['elcount']       = $elcount;
+            $inspectConfig['hvalue']        = $hvalue;
+            $inspectConfig['radio']         = $radio    = array();
+            $inspectConfig['select']        = $select   = array();
+            $inspectConfig['per_row']       = $per_row  = null;
+            $inspectConfig['type']          = $type     = $cbag->get('type'); //  we don't use special case type 'language' or 'id' prop fallback here, see showFAQForm() method
+            $inspectConfig['default']       = $default  = $cbag->get('default'); // case default
+            $inspectConfig['radio']         = $radio    = $cbag->get('radio'); // case radio
+            $inspectConfig['per_row']       = $per_row  = $cbag->get('radio_per_row'); // case radio
+            $inspectConfig['select_values'] = $select_values   = $cbag->get('select_values'); // case select
 
-                case 'select':
-                    $select = $cbag->get('select_values');
-?>
-        <tr>
-            <td style="border-bottom: 1px solid #000000; vertical-align: top"><strong><?php echo $cname; ?></strong>
-<?php
-                    if ($cdesc != '') {
-?>
-                <br><span  style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span>
-<?php } ?>
-            </td>
-            <td style="border-bottom: 1px solid #000000; vertical-align: middle" width="250">
-                <div>
-                    <select class="direction_<?php echo $lang_direction; ?>" name="serendipity[plugin][<?php echo $config_item; ?>]">
-<?php
-                    foreach($select AS $select_value => $select_desc) {
-                        $id = (function_exists('serendipity_specialchars') ? serendipity_specialchars($config_item . $select_value) : htmlspecialchars($config_item . $select_value, ENT_COMPAT, LANG_CHARSET));
-                        echo '<option value="'.$select_value.'" '.($select_value == $hvalue ? 'selected="selected"' : '').' title="'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($select_desc) : htmlspecialchars($select_desc, ENT_COMPAT, LANG_CHARSET)).'" />'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($select_desc) : htmlspecialchars($select_desc, ENT_COMPAT, LANG_CHARSET)).'</option>';
-                    }
-?>
-                    </select>
-                </div>
-            </td>
-        </tr>
-<?php
-                break;
-
-                case 'tristate':
-                    $per_row = 3;
-                    $radio['value'][] = 'default';
-                    $radio['desc'][]  = USE_DEFAULT;
-
-                case 'boolean':
-                    $radio['value'][] = 'true';
-                    $radio['desc'][]  = YES;
-
-                    $radio['value'][] = 'false';
-                    $radio['desc'][]  = NO;
-
-                case 'radio':
-                    if (!count($radio) > 0) {
-                        $radio = $cbag->get('radio');
-                    }
-
-                    if (empty($per_row)) {
-                        $per_row = $cbag->get('radio_per_row');
-                        if (empty($per_row)) {
-                            $per_row = 2;
-                        }
-                    }
-?>
-        <tr>
-            <td style="border-bottom: 1px solid #000000; vertical-align: top"><strong><?php echo $cname; ?></strong>
-<?php
-                    if ($cdesc != '') {
-?>
-                <br /><span  style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span>
-<?php
-                    }
-?>
-            </td>
-            <td style="border-bottom: 1px solid #000000; vertical-align: middle;" width="250">
-<?php
-                    $counter = 0;
-                    foreach($radio['value'] AS $radio_index => $radio_value) {
-                        $id = (function_exists('serendipity_specialchars') ? serendipity_specialchars($config_item . $radio_value) : htmlspecialchars($config_item . $radio_value, ENT_COMPAT, LANG_CHARSET));
-                        $counter++;
-                        $checked = "";
-
-                        if ($radio_value == 'true' && ($hvalue === '1' || $hvalue === 'true')) {
-                            $checked = " checked";
-                        } elseif ($radio_value == 'false' && ($hvalue === '' || $hvalue ==='0' || $hvalue === 'false')) {
-                            $checked = " checked";
-                        } elseif ($radio_value == $hvalue) {
-                            $checked = " checked";
-                        }
-
-                        if ($counter == 1) {
-?>
-                <div>
-<?php
-                        }
-?>
-                    <input class="direction_<?php echo $lang_direction; ?> input_radio" type="radio" id="serendipity_plugin_<?php echo $id; ?>" name="serendipity[plugin][<?php echo $config_item; ?>]" value="<?php echo $radio_value; ?>" <?php echo $checked ?> title="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($radio['desc'][$radio_index]) : htmlspecialchars($radio['desc'][$radio_index], ENT_COMPAT, LANG_CHARSET)); ?>" />
-                        <label for="serendipity_plugin_<?php echo $id; ?>"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($radio['desc'][$radio_index]) : htmlspecialchars($radio['desc'][$radio_index], ENT_COMPAT, LANG_CHARSET)); ?></label>
-<?php
-                        if ($counter == $per_row) {
-                            $counter = 0;
-?>
-                </div>
-<?php
-                        }
-                    }
-?>
-            </td>
-        </tr>
-<?php
-                    break;
-
-                case 'string':
-?>
-        <tr>
-            <td style="border-bottom: 1px solid #000000">
-                    <strong><?php echo $cname; ?></strong>
-                    <br><span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span>
-            </td>
-            <td style="border-bottom: 1px solid #000000" width="250">
-                <div>
-                    <input class="direction_<?php echo $lang_direction; ?> input_textbox" type="text" name="serendipity[plugin][<?php echo $config_item; ?>]" value="<?php echo $hvalue; ?>" size="30" />
-                </div>
-            </td>
-        </tr>
-<?php
-                    break;
-
-                case 'html':
-                case 'text':
-?>
-
-            <tr>
-<?php
-                    if (!$serendipity['wysiwyg']) {
-?>
-                <td><strong><?php echo $cname; ?></strong>
-                &nbsp;<span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span></td>
-                <td align="right">
-<?php
-        /* Since the user has WYSIWYG editor disabled, we want to check if we should use the "better" non-WYSIWYG editor */
-                        if (!$serendipity['wysiwyg'] && preg_match($serendipity['EditorBrowsers'], $_SERVER['HTTP_USER_AGENT']) ) {
-?><nobr>
-                  <script type="text/javascript" language="JavaScript">
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insI" value="I" accesskey="i" style="font-style: italic" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'],\'<i>\',\'</i>\')" />');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insB" value="B" accesskey="b" style="font-weight: bold" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'],\'<b>\',\'</b>\')" />');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insU" value="U" accesskey="u" style="text-decoration: underline;" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'],\'<u>\',\'</u>\')" />');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insQ" value="<?php echo QUOTE ?>" accesskey="q" style="font-style: italic" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'],\'<blockquote>\',\'</blockquote>\')" />');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insJ" value="img" accesskey="j" onclick="wrapInsImage(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'])" />');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insImage" value="<?php echo MEDIA; ?>" style="" onclick="window.open(\'serendipity_admin_image_selector.php?serendipity[textarea]=<?php echo urlencode('serendipity[plugin]['.$config_item.']'); ?>\', \'ImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\');" />');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" name="insU" value="URL" accesskey="l" style="color: blue; text-decoration: underline;" onclick="wrapSelectionWithLink(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'])" />');
-                  </script></nobr>
-<?php
-                        /* Do the "old" non-WYSIWYG editor */
-                        } elseif (!$serendipity['wysiwyg']) { ?><nobr>
-                  <script type="text/javascript" language="JavaScript">
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" value=" B " onclick="serendipity_insBasic(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'], \'b\')">');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" value=" U " onclick="serendipity_insBasic(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'], \'u\')">');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" value=" I " onclick="serendipity_insBasic(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'], \'i\')">');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" value="<img>" onclick="serendipity_insImage(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'])">');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" value="<?php echo MEDIA; ?>" onclick="window.open(\'serendipity_admin_image_selector.php?serendipity[filename_only]=<?php echo $config_item ?>\', \'ImageSel\', \'width=800,height=600,toolbar=no\');">');
-                        document.write('<input type="button" class="serendipityPrettyButton input_button" value="Link" onclick="serendipity_insLink(document.forms[\'serendipityEntry\'][\'serendipity[plugin][<?php echo $config_item ?>]\'])">');
-                </script></nobr>
-<?php                   }
-
-                        serendipity_plugin_api::hook_event('backend_entry_toolbar_body', $entry);
-                    } else {
-?>
-            <td colspan="2"><strong><?php echo $cname; ?></strong>
-                &nbsp;<span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $cdesc; ?></span></td>
-            <td><?php serendipity_plugin_api::hook_event('backend_entry_toolbar_body', $entry); ?>
-
-<?php
-                    }
-?>
-                </td>
-            </tr>
-
-        <tr>
-            <td colspan="2">
-                <div>
-                    <textarea class="direction_<?php echo $lang_direction; ?>" style="width: 100%" id="nuggets<?php echo $elcount; ?>" name="serendipity[plugin][<?php echo $config_item; ?>]" rows="20" cols="80"><?php echo $hvalue; ?></textarea>
-                </div>
-            </td>
-        </tr>
-<?php
-                    if ($cbag->get('type') == 'html') {
-                        $htmlnugget[] = $elcount;
-                        if (version_compare(preg_replace('@[^0-9\.]@', '', $serendipity['version']), '0.9', '<')) {
-                            serendipity_emit_htmlarea_code('nuggets' . $elcount, 'nuggets' . $elcount);
-                        } else {
-                            serendipity_emit_htmlarea_code('nuggets', 'nuggets', true);
-                        }
-                    }
-                    break;
-
-                case 'content':
-?>
-        <tr><td colspan="2"><?php echo $cbag->get('default'); ?></td></tr>
-<?php
-                    break;
-
-                case 'hidden':
-?>
-        <tr><td colspan="2"><input class="direction_<?php echo $lang_direction; ?>" type="hidden" name="serendipity[plugin][<?php echo $config_item; ?>]" value="<?php echo $cbag->get('value'); ?>" /></td></tr>
-<?php
-                    break;
+            if ($type) {
+                echo "<!-- modul-type::$type - class_inspectConfig.php -->\n"; // tag dynamic form items
+                $ctype = 'ic'.ucfirst($type);
+                ${$ctype} = new $ctype();
+                if ($type == 'text' && $serendipity['wysiwyg']) {
+                    $htmlnugget[] = $elcount;
+                    serendipity_emit_htmlarea_code('nuggets', 'nuggets', true);
+                }
             }
-        }
+
+        } //foreach config_faq AS config_item end
 
         if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg'] && count($htmlnugget) > 0) {
             $ev = array('nuggets' => $htmlnugget, 'skip_nuggets' => false);
@@ -1681,29 +1235,152 @@ class serendipity_event_faq extends serendipity_event
 
             if ($ev['skip_nuggets'] === false) {
 ?>
-    <script type="text/javascript">
-    function Spawnnugget() {
-        <?php foreach($htmlnugget AS $htmlnuggetid) {
-                if (version_compare(preg_replace('@[^0-9\.]@', '', $serendipity['version']), '0.9', '<')) { ?>
-        Spawnnuggets<?php echo $htmlnuggetid; ?>();
-                    <?php } else { ?>
-        Spawnnuggets('<?php echo $htmlnuggetid; ?>');
-                    <?php } ?>
+        <script type="text/javascript">
+        function Spawnnugget() {
+        <?php foreach($htmlnugget AS $htmlnuggetid) { ?>
+            Spawnnuggets('<?php echo $htmlnuggetid; ?>');
         <?php } ?>
-    }
-    </script>
+        }
+        </script>
+
 <?php
             }
         }
-?>
-    </table>
-<br />
-    <div style="padding-left: 20px">
-        <input type="submit" name="serendipity[SAVECONF]" value="<?php echo SAVE; ?>" class="serendipityPrettyButton input_button" />
-    </div>
-<?php
-    }
 
+        if ($serendipity['version'][0] < 2) {
+?>
+
+        <div style="margin-top: 1em; padding-left: 20px">
+            <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[SAVECONF]" value="<?php echo SAVE; ?>" />
+        </div>
+
+<?php
+        } else {
+?>
+
+        <div>
+            <input class="state_submit" type="submit" name="serendipity[SAVECONF]" value="<?php echo SAVE; ?>">
+        </div>
+
+<?php
+        }
+    } // showFAQForm() end
+
+    function showCategoryForm()
+    {
+        global $serendipity, $inspectConfig;
+
+        if (file_exists(S9Y_INCLUDE_PATH.'include/functions_entries_admin.inc.php')){
+            include_once(S9Y_INCLUDE_PATH.'include/functions_entries_admin.inc.php');
+        }
+
+        // call moduled abstract class
+        if (!is_callable('inspectConfig')) {
+            require_once dirname(__FILE__).'/class_inspectConfig.php';
+        }
+
+        $elcount = 0;
+        $htmlnugget = array();
+        $inspectConfig = array();
+        // add some $serendipity items to check for
+        $inspectConfig['s9y']['wysiwyg'] = $serendipity['wysiwyg'];
+        $inspectConfig['s9y']['version'] = $serendipity['version'][0];
+        $inspectConfig['s9y']['nl2br']['iso2br'] = $serendipity['nl2br']['iso2br'];
+        $inspectConfig['s9y']['plugin_path'] = $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/';
+
+        foreach ($this->config_category AS $config_item) {
+            $elcount++;
+            #$inspectConfig['config_value'] = $config_value = $this->category[$config_item]; // no use, why was it set?
+            $cbag = new serendipity_property_bag();
+            $this->introspect_category_item($config_item, $cbag);
+
+            $inspectConfig['cname'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('name')) : htmlspecialchars($cbag->get('name'), ENT_COMPAT, LANG_CHARSET));
+            $inspectConfig['cdesc'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('description')) : htmlspecialchars($cbag->get('description'), ENT_COMPAT, LANG_CHARSET));
+            $inspectConfig['value'] = $value = $this->getCategory($config_item, 'unset'); // case hidden
+            $inspectConfig['lang_direction'] = $lang_direction = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('lang_direction')) : htmlspecialchars($cbag->get('lang_direction'), ENT_COMPAT, LANG_CHARSET));
+
+            $type = $cbag->get('type');
+            if (empty($lang_direction)) {
+                $inspectConfig['lang_direction'] = LANG_DIRECTION;
+            }
+            if ($value === 'unset') {
+                $inspectConfig['value'] = $value = $cbag->get('default'); // check prop type default for alles cases, except case hidden language and id!
+            }
+            // check the special cases
+            if (($config_item == 'language' || $config_item == 'id')
+                    && $type == 'hidden' && trim($value) == '') {
+                $inspectConfig['value'] = $value = $cbag->get('value'); // case 'language' prop type hidden 'default' = 'value'!
+            }
+
+            $hvalue =   (!isset($serendipity['POST']['categorySubmit']) && isset($serendipity['POST']['plugin'][$config_item])
+                            ? (function_exists('serendipity_specialchars')
+                                    ? serendipity_specialchars($serendipity['POST']['plugin'][$config_item])
+                                    : htmlspecialchars($serendipity['POST']['plugin'][$config_item], ENT_COMPAT, LANG_CHARSET)
+                               )
+                            : (function_exists('serendipity_specialchars')
+                                ? serendipity_specialchars($value)
+                                : htmlspecialchars($value, ENT_COMPAT, LANG_CHARSET))
+                        );
+
+            $inspectConfig['config_item']   = $config_item;
+            $inspectConfig['elcount']       = $elcount;
+            $inspectConfig['hvalue']        = $hvalue;
+            $inspectConfig['radio']         = $radio    = array();
+            $inspectConfig['select']        = $select   = array();
+            $inspectConfig['per_row']       = $per_row  = null;
+            $inspectConfig['type']          = $type;
+            $inspectConfig['default']       = $default  = $cbag->get('default'); // case default
+            $inspectConfig['radio']         = $radio    = $cbag->get('radio'); // case radio
+            $inspectConfig['per_row']       = $per_row  = $cbag->get('radio_per_row'); // case radio
+            $inspectConfig['select_values'] = $select_values   = $cbag->get('select_values'); // case select
+
+            if ($type) {
+                echo "<!-- modul-type::$type - class_inspectConfig.php -->\n"; // tag dynamic form items
+                $ctype = 'ic'.ucfirst($type);
+                ${$ctype} = new $ctype();
+                if ($type == 'text' && $serendipity['wysiwyg']) {
+                    $htmlnugget[] = $elcount;
+                    serendipity_emit_htmlarea_code('nuggets', 'nuggets', true);
+                }
+            }
+
+        } //foreach config_category AS config_item end
+
+        if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg'] && count($htmlnugget) > 0) {
+            $ev = array('nuggets' => $htmlnugget, 'skip_nuggets' => false);
+            serendipity_plugin_api::hook_event('backend_wysiwyg_nuggets', $ev);
+
+            if ($ev['skip_nuggets'] === false) {
+?>
+        <script type="text/javascript">
+        function Spawnnugget() {
+        <?php foreach($htmlnugget AS $htmlnuggetid) { ?>
+            Spawnnuggets('<?php echo $htmlnuggetid; ?>');
+        <?php } ?>
+        }
+        </script>
+
+<?php
+            }
+        }
+
+        if ($serendipity['version'][0] < 2) {
+?>
+
+        <div style="margin-top: 1em; padding-left: 20px">
+            <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[SAVECONF]" value="<?php echo SAVE; ?>" />
+        </div>
+
+<?php
+        } else {
+?>
+        <div>
+            <input class="state_submit" type="submit" name="serendipity[SAVECONF]" value="<?php echo SAVE; ?>">
+        </div>
+
+<?php
+        }
+    } // showCategoryForm() end
 
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
