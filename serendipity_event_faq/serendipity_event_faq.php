@@ -82,7 +82,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('requirements', array(
             'serendipity'   => '1.7',
             'smarty'        => '3.1.0',
-            'php'           => '5.1.0'
+            'php'           => '5.2.0'
         ));
         $propbag->add('groups',                 array('FRONTEND_FEATURES'));
         $propbag->add('configuration_faq',      $this->config_faq);
