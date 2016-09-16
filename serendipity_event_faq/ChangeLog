@@ -5,7 +5,9 @@
    since the category id 'cid' was not cached properly and so
    every new Q/A wasn't set right by faqorder.
  * Fixes some more 2.0 issues with CSS and or missing CSS classes.
- * Convert frontend templates p tag uage to div
+ * Convert frontend templates p tag usage to div
+ * Allow custom CSS file copies in themes - by copy to the themes
+   root, or included to the style or user.css files as before.
 
 1.21:
 -----

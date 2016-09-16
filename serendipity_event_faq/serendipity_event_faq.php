@@ -1453,14 +1453,24 @@ class serendipity_event_faq extends serendipity_event
                     break;
 
                 case 'css_backend':
-                    if (!strpos($eventData, '#serendipityFAQNav')) {
-                        $eventData .= file_get_contents(dirname(__FILE__).'/style_faq_backend.css');
+                    if (strpos($eventData, '#serendipityFAQNav') === false) {
+                        $filename = 'style_faq_backend.css';
+                        $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
+                        if (!$tfile || $tfile == $filename) {
+                            $tfile = dirname(__FILE__) . '/' . $filename;
+                        }
+                        $eventData .= file_get_contents($tfile);
                     }
                     break;
 
                 case 'css':
-                    if (!strpos($eventData, '#serendipityFAQNav')) {
-                        $eventData .= file_get_contents(dirname(__FILE__).'/style_faq_frontend.css');
+                    if (strpos($eventData, '#serendipityFAQNav') === false) {
+                        $filename = 'style_faq_frontend.css';
+                        $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
+                        if (!$tfile || $tfile == $filename) {
+                            $tfile = dirname(__FILE__) . '/' . $filename;
+                        }
+                        $eventData .= file_get_contents($tfile);
                     }
                     break;
 
