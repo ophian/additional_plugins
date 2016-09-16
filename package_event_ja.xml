@@ -3105,9 +3105,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>よくある質問と回答(Frequently Asked Question)の編集です。</description>
 <maintainers><maintainer><name>Falk Doering, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.21</version>
+  <version>1.22</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-09-15</date>
+  <date>2016-09-16</date>
   <filelist>
 <dir name="serendipity_event_faq">
 <file>.htaccess</file>
