@@ -13,6 +13,11 @@
     display: inline-table;
     width: 100%;
 }
+#content #faqBackendPage ul.plainList {
+    /* 2.0 only fixes - unset ul margins */
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
 #faqBackendPage ul li {
     list-style: none outside none;
     display: inline;
