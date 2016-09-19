@@ -187,7 +187,7 @@ class serendipity_event_metadesc extends serendipity_event
                         if (empty($meta_description)) {
                             $description_body = $entry['body'];
                             if (isset($GLOBALS['entry'][0]['plaintext_body'])) {
-                                $description_body = trim($GLOBALS['entry'][0]['plaintext_body']);
+                                $description_body = trim($GLOBALS['entry'][0]['plaintext_body']); // markdown plugin
                             }
                             $meta_description = $this->extract_description($description_body);
                         }
