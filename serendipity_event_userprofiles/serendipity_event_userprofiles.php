@@ -774,7 +774,7 @@ class serendipity_event_userprofiles extends serendipity_event
         fwrite($fp, $vcard->fetch());
         fclose($fp);
 
-        $filename = serendipity_makeFilename($serendipity['POST']['profilerealname'])
+        $filename = serendipity_makeFilename($serendipity['POST']['profilerealname']);
         $q = "SELECT id
                 FROM {$serendipity['dbPrefix']}images
                WHERE name = '$filename'
