@@ -21,7 +21,7 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian');
-        $propbag->add('version',       '0.18');
+        $propbag->add('version',       '0.19');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'php'         => '5.1.0'
@@ -237,17 +237,20 @@ class serendipity_event_metadesc extends serendipity_event
                     break;
 
                 case 'css_backend':
-                    if ($serendipity['version'][0] < 2) {
+                    if ($serendipity['version'][0] > 1) {
                         $eventData .= '
 
 #edit_entry_metadesc legend {
     margin-top: 1em;
     margin-bottom: 1em;
 }
-.meta_string_length {
+#edit_entry_metadesc .meta_string_length {
     font-size: .875em;
     color: orange;
     font-style: italic;
+}
+#edit_entry_metadesc .msg_notice {
+    margin: 0;
 }
 
 ';
