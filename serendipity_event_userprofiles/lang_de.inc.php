@@ -72,3 +72,4 @@
 @define('PLUGIN_USERPROFILES_GRAVATAR_SIZE_DESC', 'Bestimmt die Bildgröße des Gravatars (quadratische Größe, maximal 80).');
 @define('PLUGIN_USERPROFILES_SHOWAUTHORS', 'Liste der Benutzerprofile anzeigen?');
 @define('PLUGIN_USERPROFILES_SHOWGROUPS', 'Link zu Benutzergruppen anzeigen?');
+

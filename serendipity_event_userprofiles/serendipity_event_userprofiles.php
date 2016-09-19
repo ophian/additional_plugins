@@ -1,19 +1,13 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_userprofiles extends serendipity_event {
+class serendipity_event_userprofiles extends serendipity_event
+{
 
     var $title = PLUGIN_EVENT_USERPROFILES_TITLE;
 
@@ -80,7 +74,8 @@ class serendipity_event_userprofiles extends serendipity_event {
 
     var $found_images = array();
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',        PLUGIN_EVENT_USERPROFILES_TITLE);
@@ -97,9 +92,9 @@ class serendipity_event_userprofiles extends serendipity_event {
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering');
-        $propbag->add('version', '0.29');
+        $propbag->add('version', '0.30');
         $propbag->add('requirements', array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -169,12 +164,13 @@ class serendipity_event_userprofiles extends serendipity_event {
                 break;
 
             default:
-                    return false;
+                return false;
         }
         return true;
     }
 
-    function &getLocalProperties() {
+    function &getLocalProperties()
+    {
         return array(
             'realname' => array('desc' => USERCONF_REALNAME,
                                 'type' => 'string'),
@@ -185,7 +181,8 @@ class serendipity_event_userprofiles extends serendipity_event {
         );
     }
 
-    function getShow($type, $user) {
+    function getShow($type, $user)
+    {
         global $serendipity;
 
         $q = "SELECT value FROM {$serendipity['dbPrefix']}profiles WHERE authorid = '{$user}' AND property = '{$type}'";
@@ -193,13 +190,15 @@ class serendipity_event_userprofiles extends serendipity_event {
         return (is_array($sql)) ? $sql[0]['value'] : "false";
     }
 
-    function checkUser(&$user) {
+    function checkUser(&$user)
+    {
         global $serendipity;
 
         return ($user['userlevel'] < $serendipity['serendipityUserlevel'] || $user['authorid'] == $serendipity['authorid'] || $serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN);
     }
 
-    function showUsers() {
+    function showUsers()
+    {
         global $serendipity;
 
         if(!empty($serendipity['POST']['submitProfile'])) {
@@ -262,7 +261,8 @@ class serendipity_event_userprofiles extends serendipity_event {
         echo "</form>\n\n";
     }
 
-    function show() {
+    function show()
+    {
         global $serendipity;
 
         if ($this->selected()) {
@@ -300,7 +300,7 @@ class serendipity_event_userprofiles extends serendipity_event {
                 'selected_group_data'  => $group,
                 'selected_members'     => $members
             ));
-            
+
             $tfile = serendipity_getTemplateFile('plugin_groupmembers.tpl', 'serendipityPath');
             if (!$tfile) {
                 $tfile = dirname(__FILE__) . '/plugin_groupmembers.tpl';
@@ -314,7 +314,8 @@ class serendipity_event_userprofiles extends serendipity_event {
         }
     }
 
-    function selected() {
+    function selected()
+    {
         global $serendipity;
 
         if ($serendipity['GET']['subpage'] == 'userprofiles') {
@@ -325,16 +326,16 @@ class serendipity_event_userprofiles extends serendipity_event {
     }
 
     /**
-    *
-    * View local properties from user
-    *
-    * @access private
-    *
-    * @param array $user  The Userproperties to show
-    *
-    */
-
-    function showUser(&$user) {
+     *
+     * View local properties from user
+     *
+     * @access private
+     *
+     * @param array $user  The Userproperties to show
+     *
+     */
+    function showUser(&$user)
+    {
         global $serendipity;
 
         echo '<table border="0" cellspacing="0" cellpadding="3" width="100%">'."\n";
@@ -345,7 +346,8 @@ class serendipity_event_userprofiles extends serendipity_event {
         echo "</table>\n";
     }
 
-    function showCol($property, &$info, &$user) {
+    function showCol($property, &$info, &$user)
+    {
         echo "<tr>\n";
         echo '  <td>' . $info['desc'] . "</td>\n";
         echo "  <td>\n";
@@ -378,16 +380,16 @@ class serendipity_event_userprofiles extends serendipity_event {
     }
 
     /**
-    *
-    * edit properties from user
-    *
-    * @access private
-    *
-    * @param array $user  The Userproperties to edit
-    *
-    */
-
-    function editUser(&$user) {
+     *
+     * edit properties from user
+     *
+     * @access private
+     *
+     * @param array $user  The Userproperties to edit
+     *
+     */
+    function editUser(&$user)
+    {
         global $serendipity;
 
         if (isset($serendipity['POST']['submitProfile']) && isset($serendipity['POST']['profilebirthday_day']) && isset($serendipity['POST']['profilebirthday_month']) && isset($serendipity['POST']['profilebirthday_year'])) {
@@ -428,7 +430,8 @@ class serendipity_event_userprofiles extends serendipity_event {
 
     }
 
-    function editOptions(&$user) {
+    function editOptions(&$user)
+    {
         global $serendipity;
 
         echo '<table border="0" cellspacing="0" cellpadding="3" width="100%">'."\n";
@@ -450,7 +453,8 @@ class serendipity_event_userprofiles extends serendipity_event {
 
     }
 
-    function &getConfigVars($authorid) {
+    function &getConfigVars($authorid)
+    {
         global $serendipity;
 
         $rows = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}profiles WHERE authorid = " . (int)$authorid);
@@ -467,7 +471,8 @@ class serendipity_event_userprofiles extends serendipity_event {
         return $profile;
     }
 
-    function updateConfigVar($property, &$profile, $newvalue, $authorid) {
+    function updateConfigVar($property, &$profile, $newvalue, $authorid)
+    {
         global $serendipity;
 
         if (!isset($profile[$property])) {
@@ -477,7 +482,8 @@ class serendipity_event_userprofiles extends serendipity_event {
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -489,7 +495,10 @@ class serendipity_event_userprofiles extends serendipity_event {
                         // class exists in CSS, so a user has customized it and we don't need default
                         return true;
                     }
-?>
+                    $eventData .= '
+
+/* serendipity_event userprofiles start */
+
 .serendipityAuthorProfile {
     border: 1px solid #909090;
     width: 300px;
@@ -518,22 +527,26 @@ class serendipity_event_userprofiles extends serendipity_event {
 .serendipity_commentcount {
     float: right;
 }
-<?php
-                    return true;
+
+/* serendipity_event userprofiles end */
+
+';
                     break;
 
 
                 case 'css_backend': // do use in 2.0+ versions
                     if ($serendipity['version'][0] > 1 ) {
-?>
+                        $eventData .= '
 
-/* userprofiles plugin ------------- */
+/* serendipity_event userprofiles start */
+
 .userprofileform { margin-top: 1.5em; }
 
-<?php
+/* serendipity_event userprofiles end */
+
+';
                     }
                     break;
-
 
                 case 'entries_header':
                     if (!empty($serendipity['GET']['viewAuthor'])) {
@@ -568,26 +581,22 @@ class serendipity_event_userprofiles extends serendipity_event {
                     }
 
                     $this->show();
-
                     break;
 
                 case 'backend_sidebar_entries_event_display_profiles':
                     $this->checkSchema();
                     $this->showUsers();
-                    return true;
                     break;
 
                 case 'backend_sidebar_admin':
                     echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuUserManagement"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=profiles">' . PLUGIN_EVENT_USERPROFILES_TITLE . '</a></li>';
-                    return true;
                     break;
 
                 case 'genpage':
-                    $args = implode('/', serendipity_getUriArguments($eventData, true));
                     if ($serendipity['rewrite'] != 'none') {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
                     } else {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $addData['uriargs'];
                     }
 
                     if (empty($serendipity['GET']['subpage'])) {
@@ -607,13 +616,11 @@ class serendipity_event_userprofiles extends serendipity_event {
                     if (version_compare($serendipity['version'], '0.7.1', '<=')) {
                         $this->show();
                     }
-
-                    return true;
                     break;
 
                 case 'frontend_display':
                     if ($bag->get('scrambles_true_content') && is_array($addData) && isset($addData['no_scramble'])) {
-                        return true;
+                        break;
                     }
 
                 case 'frontend_display_cache':
@@ -654,23 +661,22 @@ class serendipity_event_userprofiles extends serendipity_event {
                          // No image found, do not try again in next article.
                         $this->found_images[$author] = '';
                     }
-                    
+
                     // Assign smarty variable {$entry.authorpic}
                     $eventData['authorpic'] = $this->found_images[$author];
-
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
             }
+            return true;
         } else {
             return false;
         }
     }
 
-    function showCommentcount(&$eventData) {
+    function showCommentcount(&$eventData)
+    {
         global $serendipity;
         static $commentcount = null;
         static $db_commentcount = null;
@@ -717,18 +723,18 @@ class serendipity_event_userprofiles extends serendipity_event {
     }
 
     /**
-    *
-    * Create a vcard from user
-    *
-    * @access private
-    *
-    * @param int $authorid  The UserID to build the vcard
-    *
-    * @return bool
-    *
-    */
-
-    function createVCard($authorid) {
+     *
+     * Create a vcard from user
+     *
+     * @access private
+     *
+     * @param int $authorid  The UserID to build the vcard
+     *
+     * @return bool
+     *
+     */
+    function createVCard($authorid)
+    {
         global $serendipity;
 
         include 'Contact_Vcard_Build.php';
@@ -765,13 +771,14 @@ class serendipity_event_userprofiles extends serendipity_event {
         if(!$fp = @fopen($card,"w")) {
             return false;
         }
-
         fwrite($fp, $vcard->fetch());
         fclose($fp);
-        $q = 'SELECT id
-                FROM '.$serendipity['dbPrefix'].'images
-               WHERE name = \''.serendipity_makeFilename($serendipity['POST']['profilerealname']).'\'
-                 AND extension = \'vcf\'';
+
+        $filename = serendipity_makeFilename($serendipity['POST']['profilerealname'])
+        $q = "SELECT id
+                FROM {$serendipity['dbPrefix']}images
+               WHERE name = '$filename'
+                 AND extension = 'vcf'";
         $res = serendipity_db_query($q, true, 'assoc');
         if (!is_array($res)) {
             serendipity_insertImageInDatabase(basename($card),'');
@@ -781,7 +788,8 @@ class serendipity_event_userprofiles extends serendipity_event {
 
     }
 
-    function checkSchema() {
+    function checkSchema()
+    {
         global $serendipity;
 
         switch($this->get_config('dbversion')){
@@ -804,11 +812,14 @@ class serendipity_event_userprofiles extends serendipity_event {
 
     }
 
-    function install() {
+    function install()
+    {
         global $serendipity;
 
         $this->checkSchema();
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

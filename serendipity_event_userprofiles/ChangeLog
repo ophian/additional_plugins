@@ -1,3 +1,11 @@
+0.30 && 1.2.2:
+------------
+
+ * Optimize URI args load
+ * Set Plugin consistencies
+ * Use lang API - extends required version
+ * append CSS data
+
 0.29:
 -----
  * Fix user personal form - adds some line breaks, missing form tag and styles.

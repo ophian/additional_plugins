@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 # (c) by Falk Döring
 
@@ -7,25 +7,21 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
+class serendipity_plugin_userprofiles extends serendipity_plugin
+{
 
-class serendipity_plugin_userprofiles extends serendipity_plugin {
-
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $propbag->add('name',        PLUGIN_USERPROFILES_NAME);
         $propbag->add('description', PLUGIN_USERPROFILES_NAME_DESC);
         $propbag->add('author',      "Falk Döring");
         $propbag->add('stackable',   false);
-        $propbag->add('version',     '1.2.1');
+        $propbag->add('version',     '1.2.2');
         $propbag->add('configuration', array('title', 'show_groups', 'show_users'));
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -33,7 +29,8 @@ class serendipity_plugin_userprofiles extends serendipity_plugin {
         $this->dependencies = array('serendipity_event_userprofiles' => 'keep');
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'title':
                 $propbag->add('type',        'string');
@@ -62,7 +59,8 @@ class serendipity_plugin_userprofiles extends serendipity_plugin {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $title = $this->get_config('title');
@@ -77,7 +75,8 @@ class serendipity_plugin_userprofiles extends serendipity_plugin {
         }
     }
 
-    function displayUserList() {
+    function displayUserList()
+    {
         global $serendipity;
 
         $userlist = serendipity_fetchUsers();
@@ -88,15 +87,15 @@ class serendipity_plugin_userprofiles extends serendipity_plugin {
                 $entryLink = serendipity_authorURL($user);
             } else {
             	$entryLink = serendipity_rewriteURL(
-                               PATH_AUTHORS . '/' .
-                               serendipity_makePermalink(
-                                 PERM_AUTHORS,
-                                 array(
-                                   'id'    => $user['authorid'],
-                                   'title' => $user['realname']
-                                 )
-                               )
-                             );
+                                PATH_AUTHORS . '/' .
+                                serendipity_makePermalink(
+                                    PERM_AUTHORS,
+                                    array(
+                                        'id'    => $user['authorid'],
+                                        'title' => $user['realname']
+                                    )
+                                )
+                            );
             }
 
             $content .= sprintf("<a href=\"%s\" title=\"%s\">%s</a><br />\n",
@@ -107,5 +106,7 @@ class serendipity_plugin_userprofiles extends serendipity_plugin {
 
         return $content;
     }
+
 }
+
 ?>

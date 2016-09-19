@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.10
  */
@@ -65,10 +65,10 @@
 @define('PLUGIN_USERPROFILES_TITLE_DEFAULT', "著者");
 
 @define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT', 'コメント数を表示しますか?');
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_BLAHBLAH', 'Do you want to show the number of comments a visitor made? It can either be disabled, or you can append/prepend the comment count to the comment body, or you can place the commentcount anyplace you like by editing your comments.tpl template and placing {$comment.plugin_commentcount} at the place you want. You can customize the look of the container via the .serendipity_commentcount CSS class.');        
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_BLAHBLAH', 'Do you want to show the number of comments a visitor made? It can either be disabled, or you can append/prepend the comment count to the comment body, or you can place the commentcount anyplace you like by editing your comments.tpl template and placing {$comment.plugin_commentcount} at the place you want. You can customize the look of the container via the .serendipity_commentcount CSS class.');
 @define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_APPEND', 'コメント本文の後に追加する');
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_PREPEND', 'コメント本文の前に追加する');        
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_SMARTY', '手動で Smarty テンプレートを編集');        
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_PREPEND', 'コメント本文の前に追加する');
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_SMARTY', '手動で Smarty テンプレートを編集');
 
 @define('PLUGIN_USERPROFILES_GRAVATAR', 'ローカルの画像ではなく Gravatar を使用しますか?');
 @define('PLUGIN_USERPROFILES_GRAVATAR_DESC', 'Uses Gravatar image associated with your email address.  Register at www.gravatar.com');
@@ -90,3 +90,4 @@
 @define('PLUGIN_USERPROFILES_BIRTHDAYNUMBERS', 'Limit display of people having birthday to this number');
 @define('PLUGIN_USERPROFILES_SHOWAUTHORS', 'ユーザー一覧を表示しますか?');
 @define('PLUGIN_USERPROFILES_SHOWGROUPS', 'グループの詳細へのリンクを表示しますか?');
+

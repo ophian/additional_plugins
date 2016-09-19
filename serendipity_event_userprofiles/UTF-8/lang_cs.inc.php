@@ -95,3 +95,4 @@
 @define('PLUGIN_USERPROFILES_BIRTHDAYNUMBERS',		'Omez při zobrazení počet lidí, kteří mají narozeniny, na toto číslo');
 @define('PLUGIN_USERPROFILES_SHOWAUTHORS',		'Zobrazovat seznam uživatelů?');
 @define('PLUGIN_USERPROFILES_SHOWGROUPS',		'Zobrazovat odkaz na podrobnosti o skupinách?');
+

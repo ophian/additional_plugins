@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -90,3 +90,4 @@
 @define('PLUGIN_USERPROFILES_BIRTHDAYNUMBERS', 'Limit display of people having birthday to this number');
 @define('PLUGIN_USERPROFILES_SHOWAUTHORS', 'Show userlist?');
 @define('PLUGIN_USERPROFILES_SHOWGROUPS', 'Show link to detailed groups?');
+

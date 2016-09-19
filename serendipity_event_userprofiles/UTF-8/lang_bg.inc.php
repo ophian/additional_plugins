@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.8
  */
@@ -67,8 +67,8 @@
 @define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT', 'Показване на броя на коментарите ?');
 @define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_BLAHBLAH', 'Можете да показвате броя на коментарите, които е направил посетителят, автор на текущия коментар. Това може да бъде забранено или числото да бъде добавено преди/след тялото на коментара. Можете също така да го поставите, където желаете вътре в коментара като редактирате вашия шаблон comments.tpl и поставите в него {$comment.plugin_commentcount} на място, което искате. Накрая, освен това можете да промените начина на извеждане чрез редактиране на CSS клас .serendipity_commentcount.');
 @define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_APPEND', 'След тялото на коментара');
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_PREPEND', 'Преди тялото на коментара');        
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_SMARTY', '{$comment.plugin_commentcount}');        
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_PREPEND', 'Преди тялото на коментара');
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_SMARTY', '{$comment.plugin_commentcount}');
 
 @define('PLUGIN_USERPROFILES_GRAVATAR', 'Използване на Gravatar вместо локално изображение (avatar) ?');
 @define('PLUGIN_USERPROFILES_GRAVATAR_DESC', 'Използва Gravatar (глобален avatar), асоцииран с вашия e-mail адрес. Трябва предварително да се регистрирате в http://www.gravatar.com');
@@ -86,3 +86,4 @@
 
 @define('PLUGIN_USERPROFILES_BIRTHDAYIN', 'Рожден ден след %d дни');
 @define('PLUGIN_USERPROFILES_BIRTHDAYTODAY', 'Рожден ден днес');
+

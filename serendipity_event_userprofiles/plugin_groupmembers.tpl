@@ -21,7 +21,7 @@
             <th>{$CONST.USERCONF_REALNAME}</th>
             <th>E-Mail</th>
         </tr>
-        
+
         {foreach from=$selected_members item="member}
         <tr>
             <td>{$member.username}</td>

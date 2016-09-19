@@ -93,3 +93,4 @@
 @define('PLUGIN_USERPROFILES_BIRTHDAYNUMBERS',		'Omez pøi zobrazení poèet lidí, kteøí mají narozeniny, na toto èíslo');
 @define('PLUGIN_USERPROFILES_SHOWAUTHORS',		'Zobrazovat seznam uživatelù?');
 @define('PLUGIN_USERPROFILES_SHOWGROUPS',		'Zobrazovat odkaz na podrobnosti o skupinách?');
+
