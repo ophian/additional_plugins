@@ -1,6 +1,11 @@
 ChangeLog: serendipity_event_wrapurl Plugin
 """"""""""
 
+0.12:
+----
+
+ * Optimize URI args load
+
 [Version 0.11 2016/07/21] by Ian
 
     - Plugin consistent changes

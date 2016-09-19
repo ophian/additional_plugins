@@ -27,7 +27,7 @@ class serendipity_event_contactform extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'backend_title', 'email', 'subject', 'counter', 'intro', 'sent', 'articleformat', 'dynamic_tpl', 'dynamic_fields', 'dynamic_fields_tpl', 'dynamic_fields_desc'));
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '1.20');
+        $propbag->add('version', '1.21');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -479,11 +479,10 @@ class serendipity_event_contactform extends serendipity_event
             switch($event) {
 
                 case 'genpage':
-                    $args = implode('/', serendipity_getUriArguments($eventData, true));
                     if ($serendipity['rewrite'] != 'none') {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
                     } else {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $addData['uriargs'];
                     }
                     $oldsubpage = $serendipity['GET']['subpage'];
                     if (empty($serendipity['GET']['subpage'])) {

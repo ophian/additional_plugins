@@ -73,7 +73,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian (Timbalu)');
-        $propbag->add('version',        '1.77');
+        $propbag->add('version',        '1.78');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '1.6',
@@ -2619,11 +2619,10 @@ class serendipity_event_cal extends serendipity_event
 
                 case 'genpage':
 
-                    $args = implode('/', serendipity_getUriArguments($eventData, true));
-                    if ($serendipity['rewrite'] == 'rewrite') {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $args;
+                    if ($serendipity['rewrite'] != 'none') {
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
                     } else {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $addData['uriargs'];
                     }
 
                     if (empty($serendipity['GET']['subpage'])) {

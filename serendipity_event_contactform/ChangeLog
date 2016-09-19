@@ -1,3 +1,8 @@
+1.21:
+----
+
+ * Optimize URI args load
+
 1.20:
 -----
  * Now uses load_language API - extends requirement to Serendipity 1.6+

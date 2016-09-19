@@ -1,7 +1,7 @@
 <?php
 
 /**
- * serendipity_event_guestbook.php, v.3.60 - 2016-01-29
+ * serendipity_event_guestbook.php, v.3.61 - 2016-09-19
  */
 
 //error_reporting(E_ALL);
@@ -61,7 +61,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian');
-        $propbag->add('version',      '3.60');
+        $propbag->add('version',      '3.61');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -1338,12 +1338,10 @@ class serendipity_event_guestbook extends serendipity_event
                     break;
 
                 case 'genpage':
-                    $args = implode('/', serendipity_getUriArguments($eventData, true));
-
                     if ($serendipity['rewrite'] != 'none') {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
                     } else {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $addData['uriargs'];
                     }
 
                     if (empty($serendipity['GET']['subpage'])) {

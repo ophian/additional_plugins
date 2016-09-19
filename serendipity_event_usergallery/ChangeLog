@@ -1,3 +1,8 @@
+2.68:
+----
+
+ * Optimize URI args load
+
 2.67:
 -----
  * Add an option description for lightbox type

@@ -31,7 +31,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian');
-        $propbag->add('version',       '2.67');
+        $propbag->add('version',       '2.68');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -762,18 +762,16 @@ class serendipity_event_usergallery extends serendipity_event
                     break;
 
                 case 'genpage':
-                    $args = implode('/', serendipity_getUriArguments($eventData, true));
-
-                    if ((empty($args) || trim($args) == $serendipity['indexFile']) && empty($serendipity['GET']['subpage'])) {
+                    if ((empty($addData['uriargs']) || trim($addData['uriargs']) == $serendipity['indexFile']) && empty($serendipity['GET']['subpage'])) {
                         if ($this->get_config('frontpage','no') == 'yes') {
                             $serendipity['GET']['subpage'] = $this->get_config('subpage');
                         }
                     }
 
                     if ($serendipity['rewrite'] != 'none') {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
                     } else {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $addData['uriargs'];
                     }
                     if (empty($serendipity['GET']['subpage'])) {
                         $serendipity['GET']['subpage'] = $nice_url;

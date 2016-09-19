@@ -24,7 +24,7 @@ class serendipity_event_wrapurl extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true, 'frontend_generate_plugins' => true, 'css' => true));
         $propbag->add('configuration', array('headline', 'permalink', 'pagetitle', 'wrapurl', 'height', 'wrapurl_append', 'hide_sidebar'));
         $propbag->add('author', 'Rob Antonishen, Ian');
-        $propbag->add('version', '0.11');
+        $propbag->add('version', '0.12');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -174,11 +174,10 @@ class serendipity_event_wrapurl extends serendipity_event
                     break;
 
                 case 'genpage':
-                    $args = implode('/', serendipity_getUriArguments($eventData, true));
                     if ($serendipity['rewrite'] != 'none') {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
                     } else {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $addData['uriargs'];
                     }
 
                     if (empty($serendipity['GET']['subpage'])) {

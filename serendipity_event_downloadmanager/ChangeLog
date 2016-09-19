@@ -1,6 +1,11 @@
 ChangeLog:
 """"""""""
 
+0.37:
+----
+
+ * Optimize URI args load
+
 [Version 0.36 2016/08/22] by Ian
 --------------------------------
  * Fix some frontend styles mainly for 2k11
