@@ -6760,9 +6760,9 @@
 <description>Zadejte HTML meta tagy pro klíčová slova nebo popis blogu. Také můžete zadávat různý titulek pro jednotlivé stránky blogu a výchozí hodnotu pro klíčová slova/popis pro stránky se zobrazenm více příspěvků (výchozí stránka, přehledy kategorií).</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Don Chambers, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.17</version>
+  <version>0.19</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-09-07</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_metadesc">
 <file>.htaccess</file>

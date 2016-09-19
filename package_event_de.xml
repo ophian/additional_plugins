@@ -6760,9 +6760,9 @@
 <description>Setzt Tags für HTML Meta-Schlüsselwörter/-Beschreibungen und das title-Element für Seiten mit nur einem einzelnen Eintrag bzw. allgemeine Meta-Schlüsselwörter/-Beschreibungen für Seite mit mehr als einem Eintrag.</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Don Chambers, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.17</version>
+  <version>0.19</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-09-07</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_metadesc">
 <file>.htaccess</file>
