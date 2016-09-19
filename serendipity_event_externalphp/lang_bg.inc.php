@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @Author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.1
  */
@@ -15,3 +15,4 @@
 @define('PLUGIN_EXTERNALPHP_INCLUDE_DESC', 'Абсолютен път до PHP файла, подлежащ на включване');
 @define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT', 'Форматиране като статия');
 @define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT_BLAHBLAH', 'При избор \'Да\' изходът от файла автоматично се форматира като статия (цветове, шрифтове и т.н.).');
+

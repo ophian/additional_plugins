@@ -1,21 +1,17 @@
 <?php
 
-
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_externalphp extends serendipity_event {
+class serendipity_event_externalphp extends serendipity_event
+{
     var $title = PLUGIN_EXTERNALPHP_TITLE;
-    function introspect(&$propbag) {
+
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name', PLUGIN_EXTERNALPHP_TITLE);
@@ -23,9 +19,9 @@ class serendipity_event_externalphp extends serendipity_event {
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'include', 'articleformat'));
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '1.4');
+        $propbag->add('version', '1.5');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -79,7 +75,8 @@ class serendipity_event_externalphp extends serendipity_event {
         return true;
     }
 
-    function show() {
+    function show()
+    {
         global $serendipity;
 
         if ($this->selected()) {
@@ -126,7 +123,8 @@ class serendipity_event_externalphp extends serendipity_event {
         }
     }
 
-    function selected() {
+    function selected()
+    {
         global $serendipity;
 
         if ($serendipity['GET']['subpage'] == $this->get_config('pagetitle') ||
@@ -137,11 +135,13 @@ class serendipity_event_externalphp extends serendipity_event {
         return false;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_EXTERNALPHP_TITLE.' (' . $this->get_config('pagetitle') . ')';
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -149,11 +149,10 @@ class serendipity_event_externalphp extends serendipity_event {
         if (isset($hooks[$event])) {
             switch($event) {
                 case 'genpage':
-                    $args = implode('/', serendipity_getUriArguments($eventData, true));
                     if ($serendipity['rewrite'] != 'none') {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
                     } else {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $addData['uriargs'];
                     }
 
                     if (empty($serendipity['GET']['subpage'])) {
@@ -173,23 +172,22 @@ class serendipity_event_externalphp extends serendipity_event {
                     if (version_compare($serendipity['version'], '0.7.1', '<=')) {
                         $this->show();
                     }
-
-                    return true;
                     break;
 
                 case 'entries_header':
                     $this->show();
-
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
+
 /* vim: set sts=4 ts=4 expandtab : */
+?>

@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -16,4 +16,3 @@
 @define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT', 'Format as article?');
 @define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT_BLAHBLAH', 'if yes the output is automatically formatted as an article (colors, borders, etc.) (default: yes)');
 
-?>

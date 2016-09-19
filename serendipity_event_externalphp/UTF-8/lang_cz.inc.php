@@ -15,4 +15,3 @@
 @define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT', 'Formátovat jako příspěvek?');
 @define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT_BLAHBLAH', 'Pokud je "Ano", výstup je automaticky formátován jako příspěvek/článek (barvy, rámečky apod.) (výchozí: Ano)');
 
-?>

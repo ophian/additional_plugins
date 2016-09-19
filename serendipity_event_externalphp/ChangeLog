@@ -1,1 +1,10 @@
+1.5:
+----
+
+ * Optimize URI args load
+ * Set Plugin consistencies
+ * Use lang API - extends required version
+
+
+
 Propagate $smarty.env.staticpage_pagetitle (and the others) so that it can be used in entries.tpl
