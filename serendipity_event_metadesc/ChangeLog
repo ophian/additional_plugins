@@ -1,3 +1,7 @@
+0.18:
+-----
+ * Fix and enhance 2.0 entryproperties hooked markup
+
 0.17:
 -----
  * Fix access to entry[body] for content truncation, since using
