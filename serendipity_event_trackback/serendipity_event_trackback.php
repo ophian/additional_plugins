@@ -19,7 +19,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian');
-        $propbag->add('version',       '1.20');
+        $propbag->add('version',       '1.21');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -219,12 +219,14 @@ class serendipity_event_trackback extends serendipity_event
                 case 'css_backend':
                     if ($serendipity['version'][0] < 2) {
                         $eventData .= '
+
 #edit_entry_trackbacks.entryproperties_trackbacks {
     margin: 5px;
 }
 #edit_entry_trackbacks .wrap_legend {
     font-weight: bold;
 }
+
 ';
                     }
                     $eventData .= '
@@ -238,6 +240,7 @@ class serendipity_event_trackback extends serendipity_event
 /* serendipity_event_trackback end */
 
 ';
+                    break;
 
                 case 'genpage':
                     #don't check on every page
@@ -277,8 +280,7 @@ class serendipity_event_trackback extends serendipity_event
         $this->upgradeCheck();
 
         $sql = "SELECT id, timestamp
-                FROM
-                    {$serendipity['dbPrefix']}delayed_trackbacks";
+                FROM {$serendipity['dbPrefix']}delayed_trackbacks";
         $entries = serendipity_db_query($sql);
 
         if (is_array($entries) && !empty($entries)) {
