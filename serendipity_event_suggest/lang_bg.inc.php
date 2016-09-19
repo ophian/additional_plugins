@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 @define('PLUGIN_SUGGEST_TITLE',          'Предложения за статии');
 @define('PLUGIN_SUGGEST_DESC',           'Дава възможност на нерегистрирани автори да предлагат статии за публикуване.');
@@ -26,3 +26,4 @@
 @define('PLUGIN_SUGGEST_INFORM', 'Авторът беше информиран за публикуването.');
 @define('PLUGIN_SUGGEST_INTERNAL', 'Тази статия беше създадена в къщи.');
 @define('PLUGIN_SUGGEST_INTERNAL', 'Статия, създадена от %s на %s от IP %s. e-mail: %s');
+

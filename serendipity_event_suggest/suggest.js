@@ -8,7 +8,7 @@ function wrapSelection(txtarea, lft, rgt) {
 
 function getIESelection(txtarea) {
     return document.selection.createRange().text;
-} 
+}
 
 function wrapSelectionWithLink(txtarea) {
     var my_link = prompt("Geben Sie den Link ein:","http://");

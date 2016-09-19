@@ -1,22 +1,17 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_suggest extends serendipity_event {
+class serendipity_event_suggest extends serendipity_event
+{
     var $title = PLUGIN_SUGGEST_TITLE;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',            PLUGIN_SUGGEST_TITLE);
@@ -31,10 +26,10 @@ class serendipity_event_suggest extends serendipity_event {
                                          ));
         $propbag->add('configuration',   array('permalink', 'pagetitle', 'authorid', 'email'));
         $propbag->add('author',          'Garvin Hicking');
-        $propbag->add('version',         '0.11.1');
+        $propbag->add('version',         '0.12');
         $propbag->add('groups',          array('FRONTEND_FEATURES'));
         $propbag->add('requirements',    array(
-                                            'serendipity' => '0.9',
+                                            'serendipity' => '1.6',
                                             'smarty'      => '2.6.7',
                                             'php'         => '4.1.0'
                                          ));
@@ -42,7 +37,8 @@ class serendipity_event_suggest extends serendipity_event {
         $propbag->add('license',         'Commercial');
     }
 
-     function install() {
+    function install()
+    {
       global $serendipity;
 
       serendipity_db_schema_import("CREATE TABLE {$serendipity['dbPrefix']}suggestmails (
@@ -59,7 +55,8 @@ class serendipity_event_suggest extends serendipity_event {
             );");
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch($name) {
@@ -105,14 +102,15 @@ class serendipity_event_suggest extends serendipity_event {
         return true;
     }
 
-    function sendComment($to, $title, $fromName, $fromEmail, $fromUrl, $comment) {
+    function sendComment($to, $title, $fromName, $fromEmail, $fromUrl, $comment)
+    {
         global $serendipity;
 
         if (empty($fromName)) {
             $fromName = ANONYMOUS;
         }
 
-        $key     = md5(uniqid(rand(), true));
+        $key = md5(uniqid(rand(), true));
 
         //  CUSTOMIZE
         $subject = PLUGIN_SUGGEST_TITLE;
@@ -135,7 +133,8 @@ class serendipity_event_suggest extends serendipity_event {
         return serendipity_sendMail($to, $subject, $text, $serendipity['blogMail'], null, $serendipity['blogTitle']);
     }
 
-    function checkSubmit() {
+    function checkSubmit()
+    {
         global $serendipity;
 
         if (empty($serendipity['POST']['suggestform'])) {
@@ -149,7 +148,6 @@ class serendipity_event_suggest extends serendipity_event {
                     'plugin_suggest_error' => PLUGIN_SUGGEST_ERROR_DATA
                 )
             );
-
             return false;
         }
 
@@ -189,12 +187,12 @@ class serendipity_event_suggest extends serendipity_event {
         // End of fake call.
 
         if ($this->sendComment(
-                $serendipity['POST']['email'],
-                $serendipity['POST']['entry_title'],
-                $serendipity['POST']['name'],
-                $serendipity['POST']['email'],
-                $serendipity['POST']['url'],
-                $serendipity['POST']['comment'])) {
+            $serendipity['POST']['email'],
+            $serendipity['POST']['entry_title'],
+            $serendipity['POST']['name'],
+            $serendipity['POST']['email'],
+            $serendipity['POST']['url'],
+            $serendipity['POST']['comment'])) {
 
             $serendipity['smarty']->assign('is_suggest_sent', true);
             return true;
@@ -211,7 +209,8 @@ class serendipity_event_suggest extends serendipity_event {
         return false;
     }
 
-    function show() {
+    function show()
+    {
         global $serendipity;
 
         if ($this->selected()) {
@@ -301,7 +300,8 @@ class serendipity_event_suggest extends serendipity_event {
         }
     }
 
-    function selected() {
+    function selected()
+    {
         global $serendipity;
 
         if (!empty($_REQUEST['suggestkey'])) {
@@ -320,11 +320,13 @@ class serendipity_event_suggest extends serendipity_event {
         return false;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_SUGGEST_TITLE.' (' . $this->get_config('pagetitle') . ')';
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -339,11 +341,10 @@ class serendipity_event_suggest extends serendipity_event {
                     break;
 
                 case 'genpage':
-                    $args = implode('/', serendipity_getUriArguments($eventData, true));
                     if ($serendipity['rewrite'] != 'none') {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
                     } else {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $args;
+                        $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $addData['uriargs'];
                     }
 
                     if (empty($serendipity['GET']['subpage'])) {
@@ -359,14 +360,10 @@ class serendipity_event_suggest extends serendipity_event {
                             $eventData = array('clean_page' => true);
                         }
                     }
-
-                    return true;
                     break;
 
                 case 'entries_header':
                     $this->show();
-
-                    return true;
                     break;
 
                 case 'backend_publish':
@@ -411,18 +408,19 @@ class serendipity_event_suggest extends serendipity_event {
                         </div>
                     </fieldset>
 <?php
-                }
-                    return true;
+                    }
                     break;
 
                 default:
                     return false;
-                    break;
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

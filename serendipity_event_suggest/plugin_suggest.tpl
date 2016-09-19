@@ -2,9 +2,9 @@
 
 <div class="serendipity_Entry_Date">
     <h3 class="serendipity_date">{$plugin_suggest_name}</h3>
-    
+
     <h4 class="serendipity_title"><a href="#">{$plugin_suggest_name}</a></h4>
-                
+
     <div class="serendipity_entry">
         <div class="serendipity_entry_body">
 
@@ -30,7 +30,7 @@
     	        {$plugin_suggest_error}
             </div>
             <br /><br />
-            
+
             <!-- Needed for Captchas -->
             {foreach from=$comments_messagestack item="message"}
             <div class="serendipity_center serendipity_msg_important">
@@ -51,23 +51,23 @@
                     	<input type="hidden" name="serendipity[subpage]" value="{$suggest_sname}" />
                 		<input type="hidden" name="serendipity[suggestform]" value="true" />
                 	</div>
-        
+
                     <table border="0" width="100%" cellpadding="3">
                         <tr>
                             <td class="serendipity_commentsLabel"><label for="serendipity_suggest_name">{$CONST.NAME}</label></td>
                             <td class="serendipity_commentsValue"><input type="text" id="serendipity_suggest_name" name="serendipity[name]" value="{$suggest_name}" size="30" /></td>
                         </tr>
-                
+
                         <tr>
                             <td class="serendipity_commentsLabel"><label for="serendipity_suggest_email">{$CONST.EMAIL}</label></td>
                             <td class="serendipity_commentsValue"><input type="text" id="serendipity_suggest_email" name="serendipity[email]" value="{$suggest_email}" /></td>
                         </tr>
-                
+
                         <tr>
                             <td class="serendipity_commentsLabel"><label for="serendipity_suggest_title">{$CONST.TITLE}</label></td>
                             <td class="serendipity_commentsValue"><input type="text" id="serendipity_suggest_title" name="serendipity[entry_title]" value="{$suggest_entry_title}" /></td>
                         </tr>
-                
+
                         <tr>
                             <td class="serendipity_commentsLabel"><label for="serendipity_suggest_comment">{$CONST.ENTRY_BODY}</label></td>
                             <td class="serendipity_commentsValue">
@@ -83,7 +83,7 @@
                                 {serendipity_hookPlugin hook="frontend_comment" data=$suggest_entry}
                             </td>
                         </tr>
-                
+
                         <tr>
                             <td>&#160;</td>
                             <td>

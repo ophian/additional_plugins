@@ -32,3 +32,4 @@
 @define('PLUGIN_SUGGEST_INTERNAL', 'Èlánek napsal %s v %s z IP adresy %s. Email: %s');
 @define('PLUGIN_SUGGEST_INTERNAL', 'Èlánek napsal %s v %s z IP adresy %s. Email: %s');
 @define('PLUGIN_SUGGEST_META', 'Tento pøíspìvek ("%s") byl potvrzen dne %s z IP adresy %s u¾ivatelem %s.');
+

@@ -1,4 +1,4 @@
-<?php # lang_de.inc.php 1.0 2009-08-20 10:13:05 VladaAjgl $
+<?php
 
 /**
  *  @version 1.0
@@ -34,3 +34,4 @@
 
 // Next lines were translated on 2009/08/20
 @define('PLUGIN_SUGGEST_META',           'Dieser Eintrag ("%s") wurde am %s über IP %s von %s übermittelt.');
+
