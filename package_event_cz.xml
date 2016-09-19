@@ -1131,9 +1131,9 @@
 <description>Zobrazuje kalendář akcí jako samostatnou stránku v blogu. Design stránky zůstává stejný jako u zbytku blogu. (MySQL only)</description>
 <maintainers><maintainer><name>Ian (Timbalu)</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.77</version>
+  <version>1.78</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_cal">
 <file>.htaccess</file>
@@ -1666,9 +1666,9 @@
 <description>Zobrazuje kontaktní formulář k poslání e-mailu jako statickou stránku. Přístup k fromuláři buď pomocí stálého odkazu (permalinku) nebo na adrese index.php?serendipity[subpage]=contactform. Vzhled fromuláře si můžete upravit podle svého vložením souboru plugin_contactform.tpl do adresáře s Vaší šablonou. Kryptogramy z pluginu SpamBlock budou použity, pokud je SpamBlock nainstalován.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.20</version>
+  <version>1.21</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_contactform">
 <file>.htaccess</file>
@@ -1917,9 +1917,9 @@
 <description>Zobrazuje návštěvníkovi blogu všechny dosud vydané články s možností třídění. Odkaz na tuto stránku by měl být vložen do HTML nugetu (bloku).</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.13</version>
+  <version>1.14</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_customarchive">
 <file>.htaccess</file>
@@ -1970,9 +1970,9 @@
 <description>Můžete definovat stálé odkazy k jednotlivým příspěvkům. Lze použít pouze URL vzory, které JEŠTĚ NEJSOU používané - používání stálých odkazů ve tvaru /archives/odkaz není tedy možné. Ale používání jakéhokoliv jiného (virtuálního) adresáře možné je.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.16</version>
+  <version>1.17</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-08</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_custom_permalinks">
 <file>ChangeLog</file>
@@ -2195,9 +2195,9 @@
 <description>Zajišťuje Serendipity všechny funkce download managera. Při odinstalování jsou odstraněny všechny tabulky z databáze (ztráta všech dat)!!!</description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.36</version>
+  <version>0.37</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_downloadmanager">
 <file>.htaccess</file>
@@ -3015,9 +3015,9 @@
 <description>Zobrazuje výstup externí PHP aplikace uvnitř blogu, v designu a formátování blogu. POUŽÍVAT S ROZVAHOU, TENTO PLUGIN S SEBOU NESE BEZPEČNOSTNÍ RIZIKA, PROTOŽE UMOŽŇUJE VLOŽIT LIBOVOLNÝ PHP KÓD! TENTO PLUGIN MŮŽE POUŽÍVAT POUZE ADMINISTRÁTOR!</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.5</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_externalphp">
 <file>ChangeLog</file>
@@ -3103,9 +3103,9 @@
 <description>Správa FAQ - často kladených otázek</description>
 <maintainers><maintainer><name>Falk Doering, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.22</version>
+  <version>1.23</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-09-16</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_faq">
 <file>.htaccess</file>
@@ -5038,9 +5038,9 @@
 <description>Zobrazuje návštěvní knihu jako stránku blogu. Vzhled je totožný s ostatními stránkami.</description>
 <maintainers><maintainer><name>Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.60</version>
+  <version>3.61</version>
   <requirements:s9yVersion>1.7.0</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_guestbook">
 <file>.htaccess</file>
@@ -9301,9 +9301,9 @@
 <description>Zobrazuje v blogu statické stránky se stejným designem jako mají běžné přspěvky. Přidá nové menu do adminstrátorského rozhraní.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>5.00</version>
+  <version>5.01</version>
   <requirements:s9yVersion>2.0.99</requirements:s9yVersion>
-  <date>2016-08-31</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_staticpage">
 <file>.htaccess</file>
@@ -9571,9 +9571,9 @@
 <description>Umožňuje neregistrovaným návštěvníkům navrhovat články, které by se měly vydat.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.11.1</version>
-  <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.12</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_suggest">
 <file>.htaccess</file>
@@ -10596,9 +10596,9 @@
 <description>Umožňuje podrobnou kontrolu chování odezev, jak jsou posílány při vytváření příspěvků</description>
 <maintainers><maintainer><name>Garvin Hicking, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.20</version>
+  <version>1.21</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_trackback">
 <file>.htaccess</file>
@@ -10919,9 +10919,9 @@
 <description>Umožňuje nepřihlášeným uživatelům prohlížet Serendipity knihovnu médií</description>
 <maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.67</version>
+  <version>2.68</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_usergallery">
 <file>ChangeLog</file>
@@ -11028,9 +11028,9 @@
 <description>Zobrazuje jednoduché profily uživatelů a dovoluje přiložit jejich fotku.</description>
 <maintainers><maintainer><name>Garvin Hicking, Falk Doering</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.29</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.30</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_userprofiles">
 <file>ChangeLog</file>
@@ -11318,9 +11318,9 @@
 <description>Do těla blogu vloží IFRAME, který zobrazuje jinou cizí stránku</description>
 <maintainers><maintainer><name>Rob Antonishen, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.11</version>
+  <version>0.12</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-21</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_event_wrapurl">
 <file>ChangeLog</file>
@@ -12014,9 +12014,9 @@
 <description>Správa anket</description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.16</version>
+  <version>2.17</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-09-19</date>
   <filelist>
 <dir name="serendipity_plugin_pollbox">
 <file>ChangeLog</file>
