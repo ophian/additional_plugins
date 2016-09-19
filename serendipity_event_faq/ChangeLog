@@ -1,3 +1,8 @@
+1.23:
+-----
+
+ * Fix pagination to not show other category entries
+
 1.22:
 -----
 

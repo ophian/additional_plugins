@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian');
-        $propbag->add('version',      '1.22');
+        $propbag->add('version',      '1.23');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -893,6 +893,9 @@ class serendipity_event_faq extends serendipity_event
         }
     }
 
+    /**
+     * This method is the external_plugin wrapper
+     */
     function showFrontend()
     {
         global $serendipity;
@@ -911,11 +914,11 @@ class serendipity_event_faq extends serendipity_event
         }
 
         if (is_numeric($faq_categoryid)) {
-            $res['parent_id'] = $faq_categoryid;
+            $res['parent_id'] = (int)$faq_categoryid;
             do {
                 $q = "SELECT id, category, parent_id
                         FROM {$serendipity['dbPrefix']}faq_categorys
-                       WHERE id = {$res['parent_id']}";
+                       WHERE id = " . $res['parent_id'];
                 $res = serendipity_db_query($q, true, 'assoc');
                 $cat_tree[] = $res;
             } while ($res['parent_id'] != 0);
@@ -924,7 +927,6 @@ class serendipity_event_faq extends serendipity_event
             $serendipity['smarty']->assign('cat_tree', $cat_tree);
 
             if (is_numeric($faq_faqid)) {
-
                 $q = "SELECT question, answer, category, faqorder, catorder, parent_id
                         FROM {$serendipity['dbPrefix']}faqs, {$serendipity['dbPrefix']}faq_categorys
                        WHERE {$serendipity['dbPrefix']}faqs.id = $faq_faqid
@@ -1015,6 +1017,7 @@ class serendipity_event_faq extends serendipity_event
                        WHERE cid = $faq_categoryid
                     ORDER BY faqorder";
                 $faqs = serendipity_db_query($q, false, 'assoc');
+
                 if (is_array($faqs)) {
                     $now = time();
                     $days_new = ($this->get_config('daysnew') * 86400);
@@ -1028,6 +1031,7 @@ class serendipity_event_faq extends serendipity_event
                                     $faqs[$i]['status'] = '';
                                 }
                                 break;
+
                             case 'update':
                                 if (($now - $faqs[$i]['changedate']) <= $days_upd) {
                                     $faqs[$i]['status'] = FAQ_UPDATE;
@@ -1035,6 +1039,7 @@ class serendipity_event_faq extends serendipity_event
                                     $faqs[$i]['status'] = '';
                                 }
                                 break;
+
                             default:
                                 $faqs[$i]['status'] = '';
                                 break;
@@ -1050,7 +1055,7 @@ class serendipity_event_faq extends serendipity_event
 
                 $q = "SELECT category, introduction
                         FROM {$serendipity['dbPrefix']}faq_categorys
-                       WHERE id = $faq_categoryid";
+                       WHERE id = " . $faq_categoryid;
                 $cat = serendipity_db_query($q, true, 'assoc');
 
                 $filename = 'plugin_faq_category_faqs.tpl';

@@ -14,7 +14,7 @@
     <h3>{$faq_plugin.this_faq.category}</h3>
 
     <div class="faq_q">
-        <b>{$CONST.FAQ_QUESTION}:</b>
+        <icon class="faq_question-icon"></icon> <b>{$CONST.FAQ_QUESTION}:</b>
         {$faq_plugin.this_faq.question}
     </div>
 
@@ -24,14 +24,18 @@
     </div>
 
     <div id="serendipityFAQPagination" class="faq-footer">
+        {if isset($faq_plugin.prev_faq.question) && $cat.id == $faq_plugin.prev_faq.categoryid}
         <div>
             <icon class="faq_question-icon"></icon> {$CONST.FAQ_PREVOUS}
             <a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}/{$faq_plugin.prev_faq.categoryid}/{$faq_plugin.prev_faq.faqid}" title="{$faq_plugin.prev_faq.question|strip_tags:false}">{$faq_plugin.prev_faq.question|strip_tags:false|truncate:30:'...'}</a>
         </div>
+        {/if}
+        {if isset($faq_plugin.next_faq.question) && $cat.id == $faq_plugin.next_faq.categoryid}
         <div>
             <icon class="faq_question-icon"></icon> {$CONST.FAQ_NEXT}
             <a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}/{$faq_plugin.next_faq.categoryid}/{$faq_plugin.next_faq.faqid}" title="{$faq_plugin.next_faq.question|strip_tags:false}">{$faq_plugin.next_faq.question|strip_tags:false|truncate:30:'...'}</a>
         </div>
+        {/if}
     </div>
 </div>
 
