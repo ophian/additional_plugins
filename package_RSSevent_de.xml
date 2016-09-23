@@ -54,15 +54,6 @@
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
-<title>Advanced configuration types: Provides advanced plugin and theme configuration options for Serendipity versions before 1.2.2 (currently supporting 'sequence' widget)</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_advtypes</link>
-<category>Event Plugins</category>
-<author>Judebert (&lt;a href=&quot;http://judebert.com/&quot;&gt;http://judebert.com/&lt;/a&gt;)</author>
-<content:encoded>&lt;b&gt;serendipity_event_advtypes&lt;br /&gt;Advanced configuration types&lt;/b&gt;&lt;br /&gt;Provides advanced plugin and theme configuration options for Serendipity versions before 1.2.2 (currently supporting 'sequence' widget)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 15:26:24 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_advtypes</guid>
-</item>
-<item>
 <title>RSS Aggregator: Aggregiert Einträge von mehreren RSS Feeds (&quot;Planet&quot;). WICHTIGER HINWEIS: Die Aktualisierung des Aggregators muss derzeit noch manuell via Crontab aufgerufen werden. Rufen Sie im gewünschten Abstand per cronjob o.ä. folgende URL auf: index.php?/plugin/aggregator</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_aggregator</link>
 <category>Event Plugins</category>
@@ -237,9 +228,9 @@
 <title>Community Rating: You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_communityrating</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Lewe Zipfel</author>
-<content:encoded>&lt;b&gt;serendipity_event_communityrating&lt;br /&gt;Community Rating&lt;/b&gt;&lt;br /&gt;You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Garvin Hicking, Lewe Zipfel, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_communityrating&lt;br /&gt;Community Rating&lt;/b&gt;&lt;br /&gt;You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Fri, 23 Sep 2016 15:54:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_communityrating</guid>
 </item>
 <item>
@@ -824,7 +815,7 @@
 <category>Event Plugins</category>
 <author>Matthias Gutjahr</author>
 <content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Microformats&lt;/b&gt;&lt;br /&gt;Dieses Plugin ermöglicht es, auf einfache Weise Rezensionen zu veröffentlichen und Veranstaltungen anzukündigen: Es unterstützt die jeweiligen Mikroformate.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Fri, 23 Sep 2016 18:20:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_microformats</guid>
 </item>
 <item>

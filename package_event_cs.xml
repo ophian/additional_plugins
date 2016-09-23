@@ -184,55 +184,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_advtypes</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_advtypes/ChangeLog</changelog>
-<license>GPL</license>
-<summary>Rozšířené typy konfigurace</summary>
-<groups>BACKEND_TEMPLATES</groups>
-<description>Poskytuje rozšířené volby pro nastavení pluginů a šablon vzhledu pro verze Serendipity nižší než 1.2.2 (současné verze podporují widget 'sequence')</description>
-<maintainers><maintainer><name>Judebert (&lt;a href=&quot;http://judebert.com/&quot;&gt;http://judebert.com/&lt;/a&gt;)</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>0.8</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
-  <filelist>
-<dir name="serendipity_event_advtypes">
-<file>.htaccess</file>
-<file>ChangeLog</file>
-<file>config.inc.php</file>
-<file>documentation_cs.html</file>
-<file>documentation_cz.html</file>
-<file>index.tpl</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>README</file>
-<file>serendipity_event_advtypes.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_advtypes/.htaccess</file>
-    <file>serendipity_event_advtypes/ChangeLog</file>
-    <file>serendipity_event_advtypes/config.inc.php</file>
-    <file>serendipity_event_advtypes/documentation_cs.html</file>
-    <file>serendipity_event_advtypes/documentation_cz.html</file>
-    <file>serendipity_event_advtypes/index.tpl</file>
-    <file>serendipity_event_advtypes/lang_cs.inc.php</file>
-    <file>serendipity_event_advtypes/lang_cz.inc.php</file>
-    <file>serendipity_event_advtypes/lang_en.inc.php</file>
-    <file>serendipity_event_advtypes/README</file>
-    <file>serendipity_event_advtypes/serendipity_event_advtypes.php</file>
-    <file>serendipity_event_advtypes/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_advtypes/UTF-8/lang_cz.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_aggregator</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_aggregator/ChangeLog</changelog>
 <license>GPL (MagpieRSS) or BSD (Onyx) or BSD-3 (SimplePie)</license>
@@ -1591,11 +1542,11 @@
 <summary>Hodnocení</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Můžete hodnotit výrobky, filmy nebo cokoliv jiného a zobrazovat jejich hodnocení v příslušných příspěvcích. Také umožňuje sdíle hodnocení s ostatními uživateli tohoto pluginu. Tento plugin vyžaduje zásah do šablon, přečtěte si prosím soubor README.</description>
-<maintainers><maintainer><name>Garvin Hicking, Lewe Zipfel</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Lewe Zipfel, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.11.1</version>
-  <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.13</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2016-09-23</date>
   <filelist>
 <dir name="serendipity_event_communityrating">
 <file>.htaccess</file>
@@ -6817,7 +6768,7 @@
 <release>
   <version>0.46.1</version>
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-09-23</date>
   <filelist>
 <dir name="serendipity_event_microformats">
 <file>.htaccess</file>

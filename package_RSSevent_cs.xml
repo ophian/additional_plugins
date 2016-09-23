@@ -54,15 +54,6 @@
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
-<title>Rozšířené typy konfigurace: Poskytuje rozšířené volby pro nastavení pluginů a šablon vzhledu pro verze Serendipity nižší než 1.2.2 (současné verze podporují widget 'sequence')</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_advtypes</link>
-<category>Event Plugins</category>
-<author>Judebert (&lt;a href=&quot;http://judebert.com/&quot;&gt;http://judebert.com/&lt;/a&gt;)</author>
-<content:encoded>&lt;b&gt;serendipity_event_advtypes&lt;br /&gt;Rozšířené typy konfigurace&lt;/b&gt;&lt;br /&gt;Poskytuje rozšířené volby pro nastavení pluginů a šablon vzhledu pro verze Serendipity nižší než 1.2.2 (současné verze podporují widget 'sequence')&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 15:26:24 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_advtypes</guid>
-</item>
-<item>
 <title>RSS agregátor: Zobrazuje zprávy z mnoha RSS kanálů. DŮLEŽITÁ POZNÁMKA: Aktualizace a &quot;krmení&quot; agregátoru je v současnosti nutno dělat ručně pomocí Cronjobs nebo podobně. Volejte následující adresu v libovolných časových intervalech: index.php?/plugin/aggregator</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_aggregator</link>
 <category>Event Plugins</category>
@@ -237,9 +228,9 @@
 <title>Hodnocení: Můžete hodnotit výrobky, filmy nebo cokoliv jiného a zobrazovat jejich hodnocení v příslušných příspěvcích. Také umožňuje sdíle hodnocení s ostatními uživateli tohoto pluginu. Tento plugin vyžaduje zásah do šablon, přečtěte si prosím soubor README.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_communityrating</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Lewe Zipfel</author>
-<content:encoded>&lt;b&gt;serendipity_event_communityrating&lt;br /&gt;Hodnocení&lt;/b&gt;&lt;br /&gt;Můžete hodnotit výrobky, filmy nebo cokoliv jiného a zobrazovat jejich hodnocení v příslušných příspěvcích. Také umožňuje sdíle hodnocení s ostatními uživateli tohoto pluginu. Tento plugin vyžaduje zásah do šablon, přečtěte si prosím soubor README.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Garvin Hicking, Lewe Zipfel, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_communityrating&lt;br /&gt;Hodnocení&lt;/b&gt;&lt;br /&gt;Můžete hodnotit výrobky, filmy nebo cokoliv jiného a zobrazovat jejich hodnocení v příslušných příspěvcích. Také umožňuje sdíle hodnocení s ostatními uživateli tohoto pluginu. Tento plugin vyžaduje zásah do šablon, přečtěte si prosím soubor README.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Fri, 23 Sep 2016 15:54:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_communityrating</guid>
 </item>
 <item>
@@ -824,7 +815,7 @@
 <category>Event Plugins</category>
 <author>Matthias Gutjahr</author>
 <content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Mikroformáty&lt;/b&gt;&lt;br /&gt;Tento plugin poskytuje jednoduché publikování přehledů (nebo událostí); podporuje příslušné mikroformáty.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Fri, 23 Sep 2016 18:20:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_microformats</guid>
 </item>
 <item>
