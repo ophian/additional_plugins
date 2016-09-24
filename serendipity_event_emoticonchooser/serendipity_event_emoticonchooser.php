@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '2.14');
+        $propbag->add('version',       '2.15');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -71,10 +71,15 @@ class serendipity_event_emoticonchooser extends serendipity_event
                 $propbag->add('description', '');
                 $propbag->add('default',     PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT);
                 break;
+
             default:
                 return false;
         }
         return true;
+    }
+
+    function example() {
+        return '<span class="msg_notice"><span class="icon-info-circled"></span> ' . PLUGIN_EVENT_EMOTICONCHOOSER_TOOLBAR_DESC . '</span>';
     }
 
     function event_hook($event, &$bag, &$eventData, $addData = null)
@@ -226,9 +231,18 @@ class serendipity_event_emoticonchooser extends serendipity_event
     margin: 0 auto 1px;
 }
 .serendipity_emoticon_bar {
-    margin: 3px auto 0;
     text-align: right;
 }
+';
+                    if ($serendipity['version'][0] < 2) {
+                        $eventData .= '
+.serendipity_emoticon_bar {
+    margin: 3px auto 0;
+}
+';
+
+                    }
+                    $eventData .= '
 
 /* emoticonchooser plugin end */
 

@@ -14,3 +14,5 @@
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT', 'Smileys');
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUP_BUTTON', 'Style frontend emoticon selector as button?');
 
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_TOOLBAR_DESC', 'Since this is more than a simple button, place this plugin in your plugin list after all other hooked toolbar buttons (like linktrimmer, amazonchooser), to not break the PLAIN Editor toolbar styling!');
+
