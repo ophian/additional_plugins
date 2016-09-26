@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.3.0');
+        $propbag->add('version',       '1.3.1');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -163,6 +163,7 @@ class serendipity_event_autoupdate extends serendipity_event
                     $bimgpath  = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . 's9y_banner_small.png';
                     $s9ybanner = (file_exists($_SERVER['DOCUMENT_ROOT'].$bimgpath) ? '<img src="' . $bimgpath . '" alt="Serendipity PHP Weblog" title="' . POWERED_BY . ' Serendipity" />' : '');
                     $nv        = (function_exists('serendipity_specialchars') ? serendipity_specialchars($_REQUEST['serendipity']['newVersion']) : htmlspecialchars($_REQUEST['serendipity']['newVersion'], ENT_COMPAT, LANG_CHARSET)); // reduce to POST only?
+                    if (trim($nv) == '') return;
                     $logmsg    = '';
                     echo <<<EOS
 <!DOCTYPE html>
@@ -359,7 +360,7 @@ EOS;
                 $done = @copy($url, $update) ? true : false;
                 sleep(1);
             }
-            $zip->close();
+            @$zip->close();
         } else {
             $done = @copy($url, $update) ? true : false;
             sleep(1);
@@ -419,7 +420,7 @@ EOS;
         if ($check == $checksum) {
             return true;
         } else {
-            $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Error! Could not verify the update. <a href="">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.</p>');
+            $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Error! Could not verify the update. <a href="?serendipity[newVersion]='.$version.'">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.</p>');
             return false;
         }
     }
