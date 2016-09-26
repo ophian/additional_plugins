@@ -27,10 +27,10 @@ class media_sidebar extends subplug_sidebar {
 
         switch($name) {
             case 'media_base_directory':
-                if ($this->get_config('media_hotlinks_only','no') == 'no') {
+                if ($this->get_config('media_hotlinks_only', 'no') == 'no') {
                     $select['gallery'] = ALL_DIRECTORIES; 
                     $paths = serendipity_traversePath($serendipity['serendipityPath'] . $serendipity['uploadPath']);
-                    foreach ( $paths as $folder ) {
+                    foreach ( $paths AS $folder ) {
                         $select[$folder['relpath']] = str_repeat('-', $folder['depth']) . ' '. $folder['name'];
                     } 
                     $propbag->add('type', 'select');
@@ -41,7 +41,7 @@ class media_sidebar extends subplug_sidebar {
                 break;
 
             case 'media_image_strict':
-                if ($this->get_config('media_hotlinks_only','no') == 'no') {
+                if ($this->get_config('media_hotlinks_only', 'no') == 'no') {
                     $propbag->add('type', 'radio');
                     $propbag->add('name', PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_NAME);
                     $propbag->add('description', PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_DESC);
@@ -70,12 +70,13 @@ class media_sidebar extends subplug_sidebar {
 
             case 'media_linkbehavior':
                 $select["inpage"] = PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_INPAGE;
-                $select["popup"] = PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_POPUP;
-                $select["url"] = PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_URL;
-                $select["entry"] = PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_ENTRY;
+                $select["popup"]  = PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_POPUP;
+                $select["url"]    = PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_URL;
+                $select["entry"]  = PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_ENTRY;
                 if (class_exists('serendipity_event_usergallery')){
                     $select["gallery"] = PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_GALLERY;
                 }
+                $select["none"]   = 'none';
                 $propbag->add('type',          'select');
                 $propbag->add('name',          PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_NAME);
                 $propbag->add('description',   PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_DESC);
@@ -106,7 +107,6 @@ class media_sidebar extends subplug_sidebar {
                 } else $propbag->add('type', 'suboption');
                 break;
 
-
             case 'media_gal_permalink':
                 if ($this->get_config('media_linkbehavior') == 'gallery') {
                     $propbag->add('type',        'string');
@@ -119,10 +119,10 @@ class media_sidebar extends subplug_sidebar {
                 break;
 
             case 'media_intro':
-                $propbag->add('type',        'html');
-                $propbag->add('name',        PLUGIN_SIDEBAR_MEDIASIDEBAR_INTRO);
-                $propbag->add('description', '');
-                $propbag->add('default',     '');
+                $propbag->add('type',           'html');
+                $propbag->add('name',           PLUGIN_SIDEBAR_MEDIASIDEBAR_INTRO);
+                $propbag->add('description',    '');
+                $propbag->add('default',        '');
                 break;
 
             case 'media_summery':
@@ -150,7 +150,7 @@ class media_sidebar extends subplug_sidebar {
                     $propbag->add('name',        PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_NAME);
                     $propbag->add('description', PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_DESC);
                     $propbag->add('default',     '');
-                } else $propbag->add('type', 'suboption');
+                } else $propbag->add('type',     'suboption');
                 break;
 
             default:
@@ -159,18 +159,28 @@ class media_sidebar extends subplug_sidebar {
         return true;
     }
 
-    function generate_content_custom(&$title) {
+    function generate_content_custom(&$title)
+    {
         global $serendipity;
         $update = true;
         $rotate_time = $this->get_config('media_rotate_time');
         $next_update = $this->get_config('media_next_update','');
 
-        if (@include_once("Cache/Lite.php")) {
-            $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/','automaticSerialization' => true));
+        if (@require_once S9Y_PEAR_PATH . 'Cache/Lite.php') {
+
+        $options = array(
+            'cacheDir' => $serendipity['serendipityPath'].'templates_c/',
+            'lifeTime' => 7200,
+            'automaticSerialization' => true,
+            'pearErrorMode' => CACHE_LITE_ERROR_DIE
+        );
+
+        $cache_obj = new Cache_Lite($options);
             $cache_output = $cache_obj->get('mediasidebar_cache');
         } else {
             $cache_output = $this->get_config('media_cache_output','');
         }
+
         if ($rotate_time !=0 ) {
             if ($next_update > time()) {
                $update = false;
@@ -179,7 +189,9 @@ class media_sidebar extends subplug_sidebar {
                $this->set_config('media_next_update',$next_update);
             }
         }
+
         $title = $this->get_config('title', $this->title);
+
         if ($update || $cache_output == '') {
             $output_str = '';
             if ($this->get_config('media_image_strict') == 'yes') {
@@ -188,8 +200,7 @@ class media_sidebar extends subplug_sidebar {
                 $strict = false;
             }
 
-
-            if ($this->get_config('media_hotlinks_only','no')== 'yes') {
+            if ($this->get_config('media_hotlinks_only','no') == 'yes') {
                 $dir_extension = $this->get_config('media_hotlink_base','');
                 if ($dir_extension != '' ) {
                     $dir_extension = $dir_extension . '%';                    
@@ -200,20 +211,21 @@ class media_sidebar extends subplug_sidebar {
                 $directory = $this->get_config('media_base_directory');
             }
 
-            if (version_compare((float)$serendipity['version'],'1.1','>=')) {
-                if ($directory == 'gallery') {$directory = '';}
-                $images_all = serendipity_fetchImagesFromDatabase(0, 0, $total, false, false, $directory, '', '', array(), $strict);
-            } else {
-                $images_all = $this->mediasidebar_getimage($directory,$strict);
+            if ($directory == 'gallery') {
+                $directory = '';
             }
-            $number = $this->get_config('media_number_images');
+
+            $images_all  = serendipity_fetchImagesFromDatabase(0, 0, $total, false, false, $directory, '', '', array(), $strict);
+            $number      = $this->get_config('media_number_images');
             $total_count = count($images_all);
+
             if ($total_count < $number) {
                 $number = $total_count;
             }
 
-            $images = array();
+            $images       = array();
             $random_check = array();
+
             for ( $counter = 0; $counter < $number; $counter += 1) {
                 $checkit = rand(0, $total_count-1);
                 while (in_array($checkit,$random_check)) {
@@ -227,10 +239,20 @@ class media_sidebar extends subplug_sidebar {
             if ($width_test > 0) {
                 $width_str = 'width:'.$width_test.'px;';
             }
+?>
+<style>
+#mediasidebar .mediasidebar_link {
+    display: inline-table;
+    text-decoration: none transparent;
+    color: transparent;
+    border: 0 none;
+}
+</style>
+<?php
 
             if (is_array($images)) {
                 $output_str .= $this->get_config('media_intro');
-                foreach ($images as $image) {
+                foreach ($images AS $image) {
                     if (isset($image['name'])) {
                         if ($image['hotlink'] == 1) {
                             $thumb_path = $image_path = $image['path'];
@@ -243,7 +265,7 @@ class media_sidebar extends subplug_sidebar {
                             }
                         }
 
-                        $output_str .= '<div style="padding-top: 5px;">';
+                        $output_str .= '<div id="mediasidebar">';
 
                         switch ($this->get_config("media_linkbehavior")) {
 
@@ -276,9 +298,14 @@ class media_sidebar extends subplug_sidebar {
                                 break;
 
                             case 'inpage':
-                            default:
-                                $output_str .= '<a ' . $this->get_config('media_lightbox', '') . ' href="'.$image_path.'"><img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" /></a>';
+                                $output_str .= '<a class="mediasidebar_link" ' . $this->get_config('media_lightbox', '') . ' href="'.$image_path.'"><img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" /></a>';
                                 break;
+
+                            default:
+                            case 'none':
+                                $output_str .= '<img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" />';
+                                break;
+
                         }
 
                         $output_str .= '</div>';
@@ -301,7 +328,9 @@ class media_sidebar extends subplug_sidebar {
 
     }
 
-    function mediasidebar_getimage($directory,$strict = false) {
+    /* removed, was for S9y versions < 1.1
+    function mediasidebar_getimage($directory,$strict = false)
+    {
         global $serendipity;
 
         if ($directory == 'gallery') {$directory = '';}
@@ -320,13 +349,15 @@ class media_sidebar extends subplug_sidebar {
         if (!is_array($rs)) return false;
 
         return $rs;
-    }
+    }*/
 
-    function cleanup_custom()  {
+    function cleanup_custom()
+    {
         $this->set_config('media_next_update','');
     }
 
-    function calc_update_time ($rotate_time,$last_update) {
+    function calc_update_time ($rotate_time,$last_update)
+    {
         $next_time = mktime(date("H"), date("i"), 0, date("m"), date("d"), date("Y"));
         if ($last_update == '') {
             $last_update = mktime(date("H"), 0, 0, date("m"), date("d"), date("Y"));
@@ -348,7 +379,8 @@ class media_sidebar extends subplug_sidebar {
     }
 
     // Fetches a list of referenced entries
-    function fetchLinkedEntries($id, $big, $thumb, $single = false) {
+    function fetchLinkedEntries($id, $big, $thumb, $single = false)
+    {
         global $serendipity;
 
         if (strtolower($serendipity['dbType']) != 'mysql' && strtolower($serendipity['dbType']) != 'mysqli') {
@@ -383,6 +415,8 @@ class media_sidebar extends subplug_sidebar {
 
         return $e;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

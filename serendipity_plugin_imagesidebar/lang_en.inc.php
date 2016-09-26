@@ -85,7 +85,7 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_NAME', 'Output images strictly');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_DESC', 'If set to "yes" the plugin will only display pictures in the current directory. If set to "no" the plugin will output all pictures in all subdirecteries.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_NAME', 'Behavior of image link');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_DESC', '"In Page" links to the image. "Pop Up" will open the image in a new, sized window. "Url" allows you to define a specific, static url as the destination. "Gallery" will link the image to the permalink view of the usergallery plugin (if installed).');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_DESC', '"In Page" links to the image. "Pop Up" will open the image in a new, sized window. "Url" allows you to define a specific, static url as the destination. "Gallery" will link the image to the permalink view of the usergallery plugin (if installed). "None" will be just the image.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_INPAGE', 'In Page');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_POPUP', 'Pop Up');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_URL', 'Url');

@@ -1,3 +1,9 @@
+1.10:
+
+ * Fix errors
+ * Removed inline styles where possible
+ * Added mediasidebar image omlx "none" option
+
 0.99:
 -----
  * Set plugin consistencies

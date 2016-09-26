@@ -16,7 +16,7 @@ class subplug_sidebar
     function subplug_sidebar($setting_array = NULL)
     {
        if (is_array($setting_array)) {
-           foreach ($setting_array as $name => $value) {
+           foreach ($setting_array AS $name => $value) {
                $this->value_array[$name] = $value;
            }
        }
@@ -50,7 +50,7 @@ class subplug_sidebar
     function update_conf()
     {
         if (is_array($this->changed)) {
-            foreach ($this->changed as $name) {
+            foreach ($this->changed AS $name) {
                 $setting_array[$name] = $this->value_array[$name];
             }
             return $setting_array;
@@ -73,8 +73,8 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
         $propbag->add('name',          PLUGIN_SIDEBAR_IMAGESIDEBAR_NAME);
         $propbag->add('description',   PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC . ' PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.');
         $propbag->add('stackable',     true);
-        $propbag->add('author',        'Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code)');
-        $propbag->add('version',       '0.99');
+        $propbag->add('author',        'Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian');
+        $propbag->add('version',       '1.10');
         $propbag->add('license',       'BSD');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -99,11 +99,10 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
     //this function merges the configuration with the sub_plugin's configuration.
     function set_configuration_array ($object_extend = NULL)
     {
-
         $configuration_array = array('title','display_source');
 
         if (is_object($object_extend)) {
-                $configuration_array = array_merge($configuration_array,$object_extend->introspect_custom());
+            $configuration_array = array_merge($configuration_array, $object_extend->introspect_custom());
         }
         return $configuration_array;
     }
@@ -121,11 +120,11 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
                 break;
 
             case 'display_source':
-                $select["none"] = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NONE;
-                $select["menalto"] = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MENALTO;
+                $select["none"]       = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NONE;
+                $select["menalto"]    = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MENALTO;
                 $select["coppermine"] = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_COPPERMINE;
-                $select["medialib"] = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MEDIALIB;
-                $select["zooomr"] = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_ZOOOMR;
+                $select["medialib"]   = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MEDIALIB;
+                $select["zooomr"]     = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_ZOOOMR;
                 $propbag->add('type', 'select');
                 $propbag->add('name', PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NAME);
                 $propbag->add('description', PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_DESC);
@@ -137,7 +136,7 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
                 break;
         }
 
-        //normal until here... here we add the sub_plugins config array to the main plugin.
+        // normal until here... here we add the sub_plugins config array to the main plugin.
         if (is_object($this->object_extend)) {
             $this->object_extend->introspect_config_item_custom($name, $propbag);
         }
@@ -155,35 +154,35 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
         }
 
         if (is_object($object_extend)) {
-           $settings = $this->set_configuration_array ($object_extend);
-           foreach ($settings as $name) {
+           $settings = $this->set_configuration_array($object_extend);
+           foreach ($settings AS $name) {
               $setting_array[$name] = $this->get_config($name);
            }
         }
 
-        switch ($this->get_config('display_source','none')) {
-            case'menalto':
+        switch ($this->get_config('display_source', 'none')) {
+            case 'menalto':
                 if (file_exists(dirname(__FILE__) . '/menalto_sidebar.php')) {
                     include_once dirname(__FILE__) . '/menalto_sidebar.php';
                 }
                 $showit = new menalto_sidebar($setting_array);
                 break;
 
-            case'coppermine':
+            case 'coppermine':
                 if (file_exists(dirname(__FILE__) . '/coppermine_sidebar.php')) {
                     include_once dirname(__FILE__) . '/coppermine_sidebar.php';
                 }
                 $showit = new coppermine_sidebar($setting_array);
                 break;
 
-            case'medialib':
+            case 'medialib':
                 if (file_exists(dirname(__FILE__) . '/media_sidebar.php')) {
                     include_once dirname(__FILE__) . '/media_sidebar.php';
                 }
                 $showit = new media_sidebar ($setting_array);
                 break;
 
-            case'zooomr':
+            case 'zooomr':
                 if (file_exists(dirname(__FILE__) . '/zooomr_sidebar.php')) {
                     include_once dirname(__FILE__) . '/zooomr_sidebar.php';
                 }
@@ -203,7 +202,11 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
 
         if (!is_object($this->object_extend)) {
             $this->object_extend = $this->create_sub_class(true);
-            $this->object_extend->generate_content_custom($title);
+            if (method_exists($this->object_extend, 'generate_content_custom')) {
+                $this->object_extend->generate_content_custom($title);
+            } else {
+                $this->object_extend = $this->get_config('title', $this->title); // the display_source none selection is useless and this here only to avoid errors, since class and methods don't exist
+            }
             $this->save_subconfig();
         }
     }
@@ -214,15 +217,17 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
             $this->object_extend->cleanup_custom();
         }
         $this->save_subconfig();
-        $this->object_extend = $this->create_sub_class(true,$this->object_extend);
+        $this->object_extend = $this->create_sub_class(true, $this->object_extend);
     }
 
     function save_subconfig()
     {
-        $settings = $this->object_extend->update_conf();
+        if (is_object($this->object_extend)) {
+            $settings = $this->object_extend->update_conf();
+        }
         if (is_array($settings)) {
-            foreach ($settings as $name => $value) {
-                $this->set_config($name,$value);
+            foreach ($settings AS $name => $value) {
+                $this->set_config($name, $value);
             }
         }
     }
@@ -230,5 +235,4 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
-
 ?>
