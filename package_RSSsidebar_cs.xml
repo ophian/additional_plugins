@@ -66,9 +66,9 @@
 <title>Nadcházející události: Zobrazit nejbližší a doporučené události v postranním sloupci a použít na ně mikroformat hCalendar.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_microformats</link>
 <category>Sidebar Plugins</category>
-<author>Matthias Gutjahr</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_microformats&lt;br /&gt;Nadcházející události&lt;/b&gt;&lt;br /&gt;Zobrazit nejbližší a doporučené události v postranním sloupci a použít na ně mikroformat hCalendar.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Matthias Gutjahr, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_microformats&lt;br /&gt;Nadcházející události&lt;/b&gt;&lt;br /&gt;Zobrazit nejbližší a doporučené události v postranním sloupci a použít na ně mikroformat hCalendar.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 24 Sep 2016 11:14:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_microformats</guid>
 </item>
 <item>
@@ -320,9 +320,9 @@
 <title>Jednotné zobrazování obrázků v postranním sloupci: Umožňuje zobrazovat obrázky v postranním sloupci. Zdrojů těchto obrázků může být vícero. Plugin se dokáže připojit do Menalto Gallery, do databáze Coppermine galerie (pouze pokud běží na MySQL), k webové službě Zooomr (http://beta.zooomr.com/home) a samozřejmě i ke Knihovně médií Serendipity. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_imagesidebar</link>
 <category>Sidebar Plugins</category>
-<author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code)</author>
+<author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Jednotné zobrazování obrázků v postranním sloupci&lt;/b&gt;&lt;br /&gt;Umožňuje zobrazovat obrázky v postranním sloupci. Zdrojů těchto obrázků může být vícero. Plugin se dokáže připojit do Menalto Gallery, do databáze Coppermine galerie (pouze pokud běží na MySQL), k webové službě Zooomr (http://beta.zooomr.com/home) a samozřejmě i ke Knihovně médií Serendipity. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Mon, 26 Sep 2016 18:57:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>

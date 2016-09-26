@@ -95,7 +95,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the dashboard-plugin (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 03 Sep 2016 13:06:18 +0200</pubDate>
+<pubDate>Mon, 26 Sep 2016 16:40:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -333,7 +333,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;ダウンロードマネージャー&lt;/b&gt;&lt;br /&gt;
 s9yに十分なダウンロードマネージャーの能力を提供します。インストール解除する時、関連するテーブルがすべて破棄されるでしょう!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 19 Sep 2016 12:57:04 +0200</pubDate>
+<pubDate>Mon, 26 Sep 2016 19:06:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
@@ -360,7 +360,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;表情アイコンツールバーの表示&lt;/b&gt;&lt;br /&gt;エントリに挿入する表情アイコンとスマイルを選択するツールバーを表示します。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 21 Sep 2016 19:24:16 +0200</pubDate>
+<pubDate>Sat, 24 Sep 2016 09:43:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -817,9 +817,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>Microformats: This plugin provides an easy way to publish reviews (or events); it supports the respective microformats.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_microformats</link>
 <category>Event Plugins</category>
-<author>Matthias Gutjahr</author>
-<content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Microformats&lt;/b&gt;&lt;br /&gt;This plugin provides an easy way to publish reviews (or events); it supports the respective microformats.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Fri, 23 Sep 2016 18:20:34 +0200</pubDate>
+<author>Matthias Gutjahr, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Microformats&lt;/b&gt;&lt;br /&gt;This plugin provides an easy way to publish reviews (or events); it supports the respective microformats.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 24 Sep 2016 11:14:49 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_microformats</guid>
 </item>
 <item>
@@ -1051,9 +1051,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>サイドバーの状態切り替え (折り畳み/展開): Shrinks Sidebars to just their titles.  Extra configuration in Entries -&gt; Manage Sidebars in the Admin Suite.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_sidebarhider</link>
 <category>Event Plugins</category>
-<author>Tys von Gaza, Garvin Hicking</author>
+<author>Tys von Gaza, Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_sidebarhider&lt;br /&gt;サイドバーの状態切り替え (折り畳み/展開)&lt;/b&gt;&lt;br /&gt;Shrinks Sidebars to just their titles.  Extra configuration in Entries -&gt; Manage Sidebars in the Admin Suite.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 15:03:17 +0200</pubDate>
+<pubDate>Mon, 26 Sep 2016 19:03:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_sidebarhider</guid>
 </item>
 <item>

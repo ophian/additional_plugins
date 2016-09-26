@@ -66,9 +66,9 @@
 <title>Upcoming Events: Display upcoming and recommended events in the sidebar and apply the hCalendar microformat to them.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_microformats</link>
 <category>Sidebar Plugins</category>
-<author>Matthias Gutjahr</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_microformats&lt;br /&gt;Upcoming Events&lt;/b&gt;&lt;br /&gt;Display upcoming and recommended events in the sidebar and apply the hCalendar microformat to them.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Matthias Gutjahr, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_microformats&lt;br /&gt;Upcoming Events&lt;/b&gt;&lt;br /&gt;Display upcoming and recommended events in the sidebar and apply the hCalendar microformat to them.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 24 Sep 2016 11:14:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_microformats</guid>
 </item>
 <item>
@@ -326,9 +326,9 @@
 <title>Unified Sidebar Image Display: Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to connect to a Menalto Gallery installs &quot;random&quot; url, access a Coppermine database directory (MySql only), connect to the web service Zooomr (http://beta.zooomr.com/home) or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_imagesidebar</link>
 <category>Sidebar Plugins</category>
-<author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code)</author>
+<author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Unified Sidebar Image Display&lt;/b&gt;&lt;br /&gt;Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to connect to a Menalto Gallery installs &quot;random&quot; url, access a Coppermine database directory (MySql only), connect to the web service Zooomr (http://beta.zooomr.com/home) or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Mon, 26 Sep 2016 18:57:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>

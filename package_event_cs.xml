@@ -586,9 +586,9 @@
 <description>Experimentální. Když plugin &quot;tabule&quot; detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci.</description>
 <maintainers><maintainer><name>onli, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.3.0</version>
+  <version>1.3.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-03</date>
+  <date>2016-09-26</date>
   <filelist>
 <dir name="serendipity_event_autoupdate">
 <file>.htaccess</file>
@@ -2148,7 +2148,7 @@
 <release>
   <version>0.37</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-19</date>
+  <date>2016-09-26</date>
   <filelist>
 <dir name="serendipity_event_downloadmanager">
 <file>.htaccess</file>
@@ -2653,9 +2653,9 @@
 <description>Zobrazí lištu se smajlíky, které je možné vložit do textu příspěvku nebo komentáře.</description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.14</version>
+  <version>2.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-21</date>
+  <date>2016-09-24</date>
   <filelist>
 <dir name="serendipity_event_emoticonchooser">
 <file>.htaccess</file>
@@ -6764,11 +6764,11 @@
 <summary>Mikroformáty</summary>
 <groups>BACKEND_EDITOR,BACKEND_TEMPLATES</groups>
 <description>Tento plugin poskytuje jednoduché publikování přehledů (nebo událostí); podporuje příslušné mikroformáty.</description>
-<maintainers><maintainer><name>Matthias Gutjahr</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Matthias Gutjahr, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.46.1</version>
-  <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-09-23</date>
+  <version>0.47</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-09-24</date>
   <filelist>
 <dir name="serendipity_event_microformats">
 <file>.htaccess</file>
@@ -8687,11 +8687,11 @@
 <summary>Přepínání stavu postranního sloupce (sbalený/rozbalený)</summary>
 <groups>BACKEND_TEMPLATES</groups>
 <description>Smrští postranní sloupce pouze na jejich nadpisy. Přidává nastavení do psaní příspěvků a také položku &quot;Správa postranních sloupců&quot; do administrační sekce.</description>
-<maintainers><maintainer><name>Tys von Gaza, Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Tys von Gaza, Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.26</version>
+  <version>1.27</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
+  <date>2016-09-26</date>
   <filelist>
 <dir name="serendipity_event_sidebarhider">
 <file>ChangeLog</file>

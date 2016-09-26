@@ -593,11 +593,11 @@
 <summary>Kommende Termine</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Anzeige kommender Termine in der Sidebar, ausgezeichnet mit dem hCalendar-Microformat</description>
-<maintainers><maintainer><name>Matthias Gutjahr</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Matthias Gutjahr, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.24</version>
-  <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.25</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-09-24</date>
   <filelist>
 <dir name="serendipity_event_microformats">
 <file>.htaccess</file>
@@ -2561,11 +2561,11 @@
 <summary>Unified Sidebar Image Display</summary>
 <groups>IMAGES</groups>
 <description>Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to connect to a Menalto Gallery installs &quot;random&quot; url, access a Coppermine database directory (MySql only), connect to the web service Zooomr (http://beta.zooomr.com/home) or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.</description>
-<maintainers><maintainer><name>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code)</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.99</version>
+  <version>1.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-09-26</date>
   <filelist>
 <dir name="serendipity_plugin_imagesidebar">
 <file>ChangeLog</file>
