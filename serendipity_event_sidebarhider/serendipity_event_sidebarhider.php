@@ -19,8 +19,8 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('name',          PLUGIN_SIDEBAR_HIDER_NAME);
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Tys von Gaza, Garvin Hicking');
-        $propbag->add('version',       '1.26');
+        $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian');
+        $propbag->add('version',       '1.27');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'php'         => '5.1.0'
@@ -327,7 +327,11 @@ class serendipity_event_sidebarhider extends serendipity_event
         $plugin_list = unserialize($this->get_config('plugin_list'));
         serendipity_smarty_init();
 
-        $template_option = $serendipity['smarty']->get_template_vars('template_option');
+        if ( !defined('Smarty::SMARTY_VERSION') ) {
+            $template_option = $serendipity['smarty']->get_template_vars('template_option');
+        } else {
+            $template_option = $smarty->getTemplateVars('template_option');
+        }
 
         if (isset($template_vars['sidebars'])) {
             $sidebars = explode(',', $template_vars['sidebars']);

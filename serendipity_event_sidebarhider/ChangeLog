@@ -1,3 +1,8 @@
+1.27:
+----
+
+ * Use Smarty 3.1 API when possible
+
 1.26:
 ----
 
