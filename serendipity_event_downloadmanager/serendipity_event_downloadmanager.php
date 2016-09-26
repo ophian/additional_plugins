@@ -2303,7 +2303,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         );
 
         // view all smarty template vars
-        #echo '<pre>' . print_r( $serendipity['smarty']->get_template_vars(), true ) . '</pre>';
+        #echo '<pre>' . print_r( $serendipity['smarty']->getTemplateVars(), true ) . '</pre>';
 
         return;
     }
