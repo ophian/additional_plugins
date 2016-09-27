@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.10, 2015-12-19
+ * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.11, 2016-09-27
  */
 
 // define array for hooked s9y plugins
@@ -82,7 +82,7 @@ function Spawnnuggets(item, addEP, jsED) {
     // procurator and cheatsheet are S9y only plugins
     var name_extraPlugins = (addEP !== null) ? addEP : $this;
     var jsEventData       = (jsED  !== null) ? jsED  : window.jsEventData; // global set by 'backend_wysiwyg_finish' hook
-    var extraPluginACF    = (CKECONFIG_ACF_OFF === true) ? name_extraPlugins+',mediaembed,cheatsheet' : name_extraPlugins+',mediaembed,procurator,cheatsheet'; // no spaces allowed!
+    var extraPluginACF    = (CKECONFIG_ACF_OFF === true) ? name_extraPlugins+',mediaembed,cheatsheet,autogrow' : name_extraPlugins+',mediaembed,procurator,cheatsheet,autogrow'; // no spaces allowed!
     var extraPluginList   = (CKECONFIG_CODE_ON === true) ? extraPluginACF+',codesnippet' : extraPluginACF; // no spaces allowed!
     var customConfigPath  = CKEDITOR_PLUGPATH+'serendipity_event_ckeditor/cke_config.js?v='+CKECONFIG_FORCE_LOAD;
     var useAutoSave       = (CKECONFIG_USEAUTOSAVE === true && Modernizr.indexeddb === true) ? 'on' : null;

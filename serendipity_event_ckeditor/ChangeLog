@@ -1,3 +1,9 @@
+4.5.11.0:
+---------
+    * Upgrade to CKEDITOR 4.5. Series, update 11 (http://ckeditor.com/whatsnew).
+    * Add very helpful autogrow plugin, to autogrow textareas by a from - to range.
+      This helps a lot within new or very short entry textareas.
+
 4.5.10.5:
 ---------
     * Fix encoding issue in cheatsheet help plugin

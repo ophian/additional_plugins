@@ -50,6 +50,7 @@
 @define('PLUGIN_EVENT_CKEDITOR_CKEIBN_OPTION', 'Disable toolbars default image button?');
 @define('PLUGIN_EVENT_CKEDITOR_CKEIBN_OPTION_DESC', 'The toolbar built-in image button follows its own rules for stylings and markup! Since we recommend to use the Serendipity Media Library Button only, this is disabled by default. Allow with "No" here and use at own risk.');
 
+@define('PLUGIN_EVENT_CKEDITOR_SCAYTLANG_OPTION', 'Set lang for Scayt and online web spell checker');
 @define('PLUGIN_EVENT_CKEDITOR_SCAYT', '<h2>Scayt/wsc</h2>
 <p class="msg_notice">
     <span class="icon-attention"></span> As long as not purchased a license, you may only use the "SpellCheckAsYouType" (SCAYT-plugin) [ABC]-Button over the free online service "Check Spelling" dialog option, or define a custom dictionary, which first is stored to a cookie, later to the browsers localStorage and start from scratch.

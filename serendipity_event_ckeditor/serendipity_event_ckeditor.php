@@ -49,7 +49,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.5.10.3-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.5.11.0-plus.zip';
 
     /**
      * Access property checkUpdateVersion
@@ -57,20 +57,20 @@ class serendipity_event_ckeditor extends serendipity_event
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.5.10.3');
+    protected $checkUpdateVersion = array('ckeditor:4.5.11.0');
 
     /**
      * Access property revisionPackage
      * Note revisions of ckeditor and plugin additions to lang files
      * @var array
      */
-    protected $revisionPackage = array('CKEditor 4.5.10 (revision b47abaf, full package, 2016-07-13)',
+    protected $revisionPackage = array('CKEditor 4.5.11 (revision 3876e73, full package, 2016-09-07)',
                                        'CKEditor-Plugin: mediaembed, v. 0.6+ (https://github.com/frozeman/MediaEmbed, 2014-03-13)',
-                                       'CKEditor-Plugin: manually added codesnippet, fakeobjects, lineutils and widget plugins, 2016-07-20)',
+                                       'CKEditor-Plugin: manually added codesnippet, fakeobjects, lineutils, autogrow and widget plugins, 2016-09-27)',
                                        'CKEditor-Plugin: procurator, v. 1.6 (Serendipity placeholder Plugin, 2016-01-01)',
                                        'CKEditor-Plugin: cheatsheet, v. 1.2 (Serendipity CKE-Cheatsheet Plugin, 2016-08-15)',
-                                       'CKEditor-S9yCustomConfig, cke_config.js, v. 2.5, 2016-01-01',
-                                       'CKEditor-S9yCustomPlugins, cke_plugin.js, v. 1.10, 2015-12-19',
+                                       'CKEditor-S9yCustomConfig, cke_config.js, v. 2.7, 2016-09-27',
+                                       'CKEditor-S9yCustomPlugins, cke_plugin.js, v. 1.11, 2016-09-27',
                                        'CKEditor-S9yAddOn, fresh highlight.pack.js file v. 9.5.0 and github styles in highlight.css, (https://highlightjs.org/) 2016-06-28',
                                        'Prettify: JS & CSS files, v. "current", (http://code.google.com/p/google-code-prettify/, 2013-03-04)');
 
@@ -184,7 +184,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.5.10.5'); // is CKEDITOR Series 4.5.10 - and appended plugin revision .5
+        $propbag->add('version',       '4.5.11.0'); // is CKEDITOR Series 4.5.11 - and appended plugin revision .0
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',

@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.6, 2016-07-31
+ * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.7, 2016-09-27
  */
 
 /**
@@ -200,6 +200,13 @@ CKEDITOR.editorConfig = function( config ) {
 
     // Default theme of CKEDITOR codesnippet plugin - else use 'default' or 'monokai_sublime' or any of those described at https://highlightjs.org/static/test.html
     config.codeSnippet_theme = 'GitHub';
+
+    // Plugin: Autogrow textareas configuration
+    config.autoGrow_minHeight = 120;
+    config.autoGrow_maxHeight = 420;
+    config.autoGrow_bottomSpace = 50;
+    config.autoGrow_onStartup = true;
+
     /**
      PLEASE NOTE:
         Its default toolbar group changed away from 'insert' to new 'snippet' group name.

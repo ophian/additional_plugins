@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @file UTF-8/lang_de.inc.php 1.4.17 2016-08-15 Ian
+ *  @file UTF-8/lang_de.inc.php 1.4.17 2016-08-28 Ian
  *  @version 1.4.17
  *  @author Translator Name <yourmail@example.com>
  *  DE-Revision: Revision of UTF-8/lang_de.inc.php
@@ -12,7 +12,7 @@
 @define('PLUGIN_EVENT_CKEDITOR_REVISION_TITLE', '<h3>Das Plugin enthält:</h3>');
 @define('PLUGIN_EVENT_CKEDITOR_INSTALL', '<h2>Installation</h2>
 <p class="msg_notice">
-    <span class="icon-attention"></span> <strong>Abhängigkeiten:</strong> Deaktiviere body, extended und nugget parsing global im <strong>NL2BR</strong> Plugin, <strong>oder</strong> per entry über das entryproperties event plugin <strong>und/oder</strong> für statische Seiten über die Entry "Textformatierungs" Option! Seit Serendipity 2.0-rc1 sollte entryproperties den CKEditor diesbezüglich automatisch erkennen.
+    <span class="icon-attention"></span> <strong>Abhängigkeiten:</strong> Deaktiviere body, extended und nugget parsing global im <strong>NL2BR</strong> Plugin, <strong>oder</strong> per entry über das entryproperties event plugin <strong>und/oder</strong> für statische Seiten über die Entry "Textformatierungs" Option!<br><strong>Seit Serendipity 2.0</strong> kann entryproperties den CKEditor diesbezüglich aber automatisch erkennen.
 </p>
 <ol style="line-height: 1.6">
     <li>Um anderen Plugins Zugriff auf das Plugin oder dessen Hook zu gewähren, plaziere das (CKEditor) Plugin nahe dem Ende deiner Pluginliste.</li>
@@ -27,7 +27,7 @@
 
     <h3>Upgrading</h3>
     <p>Dieses Plugin wird zeitnah selber Updates via Spartacus bereitstellen.</p>
-    <p><strong>Achtung</strong>: Bitte nutzen Sie nicht den automatisierten Spartacus Updater Button für alle Plugins, sofern in ihrer S9y Version schon vorhanden, sondern führen Sie das Upgrade des CKEditors einzeln durch, um für die internen ZIP-Installer Operationen in diese Konfiguration weiter geleitet zu werden. Ansonsten müssen Sie nach jedem CKEditor Upgrade selber die "Entpacke Zip Datei (im Notfall)" Option ausführen.</p>
+    <p><strong>Achtung</strong>: Bitte nutzen Sie <strong>nicht</strong> den automatisierten Spartacus Updater "Update All" Button für alle Plugins, sofern in ihrer S9y Version schon vorhanden, sondern führen Sie das Upgrade des CKEditors einzeln durch, um für die internen ZIP-Installer Operationen in diese Konfiguration weiter geleitet zu werden. Ansonsten müssen Sie nach jedem CKEditor (library) Upgrade selber die "Entpacke Zip Datei (im Notfall)" Option ausführen.</p>
     <p>Es ist generell abzuraten, ein eigenes "customized" CKEDITOR release zu erstellen und herunterzuladen, da dies zu unerwünschten Nebenwirkungen in der Einbindung führt.</p>
 </div>');
 @define('PLUGIN_EVENT_CKEDITOR_CONFIG', '');
@@ -49,4 +49,6 @@
 
 @define('PLUGIN_EVENT_CKEDITOR_CKEIBN_OPTION', 'Stelle den eingebauen Bildbutton ab?');
 @define('PLUGIN_EVENT_CKEDITOR_CKEIBN_OPTION_DESC', 'Dieser CKE eigene Toolbar Button folgt seinen eigenen Regeln für Stylings und Markup! Wir empfehlen daher nur den Serendipity Medien Datenbank Button zu nutzen, da dieser spezialisiert auf die Nöte dieses Blogsystem eingeht. Erlaube mit "Nein" und nutze auf eigenes Risiko.');
+
+@define('PLUGIN_EVENT_CKEDITOR_SCAYTLANG_OPTION', 'Setze Sprache der Scayt Rechtschreibprüfung');
 
