@@ -26,7 +26,7 @@ class serendipity_event_contactform extends serendipity_event
         $propbag->add('description', $desc);
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'backend_title', 'email', 'subject', 'counter', 'intro', 'sent', 'articleformat', 'dynamic_tpl', 'dynamic_fields', 'dynamic_fields_tpl', 'dynamic_fields_desc'));
-        $propbag->add('author', 'Garvin Hicking');
+        $propbag->add('author', 'Garvin Hicking, Ian');
         $propbag->add('version', '1.21');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

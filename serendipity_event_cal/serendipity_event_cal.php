@@ -72,7 +72,7 @@ class serendipity_event_cal extends serendipity_event
                                             'log_email'
                                         )
                     );
-        $propbag->add('author',         'Ian (Timbalu)');
+        $propbag->add('author',         'Ian');
         $propbag->add('version',        '1.78');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
