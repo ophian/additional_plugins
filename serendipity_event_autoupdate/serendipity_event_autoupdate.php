@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.3.1');
+        $propbag->add('version',       '1.3.2');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -308,7 +308,7 @@ EOS;
                                     if (true === $this->cleanTemplatesC($nv, false)) {
                                         $this->show_message('<p class="msg_success"><svg class="icon icon-ok" title="success"><use xlink:href="#icon-ok"></use></svg>Cleaning up the failed unpack directory!</p>');
                                     }
-                                    $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>Please <a href="">reload</a> this page (or by F5) to have another try to upgrade your Blog successful!</p>');
+                                    $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>Please <a href="?serendipity[newVersion]='.$version.'">reload</a> this page (or by F5) to have another try to upgrade your Blog successful!</p>');
                                 }
 
                             } else {
@@ -378,9 +378,12 @@ EOS;
 
                 $success = @curl_exec($ch);
                 if (!$success) {
-                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Downloading update failed! <a href="">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.</p>');
+                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Downloading update failed (curl installed, but failed)! Does it  '. $url .' exist? <a href="?serendipity[newVersion]='.$version.'">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.</p>');
                     return false;
                 }
+            } else {
+                $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Downloading update failed (copy failed, curl not available)! Does it  '. $url .' exist? <a href="?serendipity[newVersion]='.$version.'">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.</p>');
+                return false;
             }
         }
 
@@ -522,7 +525,7 @@ EOS;
                     $success = @copy($updateDir . $file, $target);
                 }
                 if (!$success) {
-                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Error! Copying file to '.$target.' failed! <a href="">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.</p>');
+                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Error! Copying file to '.$target.' failed! <a href="?serendipity[newVersion]='.$version.'">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.</p>');
                     return false;
                 }
             }
