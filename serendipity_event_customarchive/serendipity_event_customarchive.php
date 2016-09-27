@@ -90,9 +90,9 @@ class serendipity_event_customarchive extends serendipity_event
         $propbag->add('name', PLUGIN_CUSTOMARCHIVE_TITLE);
         $propbag->add('description', PLUGIN_CUSTOMARCHIVE_TITLE_BLAHBLAH);
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
-        $propbag->add('configuration', array('permalink', 'pagetitle', 'articleformat'));
-        $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '1.14');
+        $propbag->add('configuration', array('permalink', 'pagetitle', 'articleformat', 'exclude_emptyyears'));
+        $propbag->add('author', 'Garvin Hicking, Ian');
+        $propbag->add('version', '1.15');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -129,6 +129,13 @@ class serendipity_event_customarchive extends serendipity_event
                 $propbag->add('name',        PLUGIN_CUSTOMARCHIVE_ARTICLEFORMAT);
                 $propbag->add('description', PLUGIN_CUSTOMARCHIVE_ARTICLEFORMAT_BLAHBLAH);
                 $propbag->add('default',     'true');
+                break;
+
+            case 'exclude_emptyyears':
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_CUSTOMARCHIVE_EXCY);
+                $propbag->add('description', PLUGIN_CUSTOMARCHIVE_EXCY_DESC);
+                $propbag->add('default',     '');
                 break;
 
             default:
@@ -305,7 +312,8 @@ class serendipity_event_customarchive extends serendipity_event
                       'desc'  => SORT_ORDER_DESC)
             );
 
-            $exclude_years = array('2014','2015');
+            $exclude_years = @array($this->get_config('exclude_emptyyears', ''));
+            try { is_array($exclude_years); } catch (Exception $e) { $exclude_years = array(); }
             $custom_sortyears = array();
             $custom_sortyears[] = array('value' => 'all', 'desc' => COMMENTS_FILTER_ALL);
             for ($i = $first_year; $i <= date('Y'); $i++) {
@@ -344,7 +352,7 @@ class serendipity_event_customarchive extends serendipity_event
             $this->showEntries();
 
             if (serendipity_db_bool($this->get_config('articleformat', 'true'))) {
-                echo '</div></div></div>';
+                echo "</div>\n</div>\n</div>\n";
             }
         }
     }
@@ -367,7 +375,7 @@ class serendipity_event_customarchive extends serendipity_event
     }
 
 
-    function smarty_customArchive($params, &$smarty)
+    function smarty_customArchive($params, $smarty)
     {
         global $serendipity;
 
@@ -459,17 +467,21 @@ class serendipity_event_customarchive extends serendipity_event
             $values_props['ep_' . $propparts[0]]['to']   = $sfields[1];
         }
 
-        $serendipity['smarty']->assign('customarchive_props', $name_props);
-        $serendipity['smarty']->assign('customarchive_keyprops', $key_props);
-        $serendipity['smarty']->assign('customarchive_infoprops', $add_props);
-        $serendipity['smarty']->assign('customarchive_filter', $params['filter']);
-        $serendipity['smarty']->assign('customarchive_teaser', 'ep_' . $params['teaser']);
-        $serendipity['smarty']->assign('customarchive_subpage', $serendipity['GET']['subpage']);
-        $serendipity['smarty']->assign('customarchive_picture', 'ep_' . $params['picture']);
-        $serendipity['smarty']->assign('customarchive_nextmode', strtolower($params['mode']) == 'desc' ? 'asc' : 'desc');
-        $serendipity['smarty']->assign('customarchive_mode', strtolower($params['mode']));
-        $serendipity['smarty']->assign('customarchive_search', $search_props);
-        $serendipity['smarty']->assign('customarchive_searchdata', $searchdata);
+        $serendipity['smarty']->assign(
+            array(
+                'customarchive_props'       => $name_props,
+                'customarchive_keyprops'    => $key_props,
+                'customarchive_infoprops'   => $add_props,
+                'customarchive_filter'      => $params['filter'],
+                'customarchive_teaser'      => 'ep_' . $params['teaser'],
+                'customarchive_subpage'     => $serendipity['GET']['subpage'],
+                'customarchive_picture'     => 'ep_' . $params['picture'],
+                'customarchive_nextmode'    => strtolower($params['mode']) == 'desc' ? 'asc' : 'desc',
+                'customarchive_mode'        => strtolower($params['mode']),
+                'customarchive_search'      => $search_props,
+                'customarchive_searchdata'  => $searchdata
+            )
+        );
 
         $lookup = array();
         foreach($key_props AS $idx => $prop) {
@@ -538,9 +550,12 @@ class serendipity_event_customarchive extends serendipity_event
             $sql_where .= implode(" AND ", $sql_where_parts);
         }
 
-        $serendipity['smarty']->assign('customarchive_searchdata_from', $searchdata_from);
-        $serendipity['smarty']->assign('customarchive_searchdata_to', $searchdata_to);
-
+        $serendipity['smarty']->assign(
+            array(
+                'customarchive_searchdata_from' => $searchdata_from,
+                'customarchive_searchdata_to'   => $searchdata_to
+            )
+        );
 
         if (empty($filteridx)) {
             $filteridx = 0;
@@ -549,8 +564,6 @@ class serendipity_event_customarchive extends serendipity_event
         $cat = $serendipity['GET']['category'];
         unset($serendipity['GET']['category']);
 
-
-        #if ($sql_where != '') $GLOBALS['Dbdie'] = true;
         $entries = serendipity_fetchEntries(
             null,
             true,
@@ -569,10 +582,11 @@ class serendipity_event_customarchive extends serendipity_event
             $params['joinown']
         );
 
-        $dategroup = array(0 => array('entries' => $entries, 'timestamp' => time()));
+        if (is_array($entries) && !empty($entries)) {
+            $dategroup = array(0 => array('entries' => $entries, 'timestamp' => time()));
 
-        $GLOBALS['DBTEST'] = true; // ??
-        $entries = serendipity_printEntries($dategroup, true, false, 'CUSTOMARCHIVE_ENTRIES', 'return', false, false, true);
+            $entries = serendipity_printEntries($dategroup, true, false, 'CUSTOMARCHIVE_ENTRIES', 'return', false, false, true);
+        } else $entries = array();
 
         if (!empty($cat)) {
             $serendipity['GET']['category'] = $cat;
@@ -584,7 +598,7 @@ class serendipity_event_customarchive extends serendipity_event
         if (!$tfile || $tfile == $filename) {
             $tfile = dirname(__FILE__) . '/' . $filename;
         }
-        $serendipity['smarty']->assign('ENTRIES', 'xxx'); // ??
+        $serendipity['smarty']->assign('ENTRIES', ''); // better assign ENTRIES BLOCK empty, since we don't know where called
 
         $content = $this->parseTemplate($tfile);
 
@@ -618,7 +632,8 @@ class serendipity_event_customarchive extends serendipity_event
                     }
 
                     if (!is_object($serendipity['smarty'])) {
-                        serendipity_smarty_init();
+                        // never init in genpage without adding previously set $vars, which is $view etc!
+                        serendipity_smarty_init($serendipity['plugindata']['smartyvars']);
                     }
                     $serendipity['smarty']->registerPlugin('function', 'customArchive', array($this, 'smarty_customArchive'));
                     break;

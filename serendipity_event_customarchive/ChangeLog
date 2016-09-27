@@ -1,3 +1,12 @@
+1.15:
+----
+
+ * Adds option for empty archive years excludement
+ * Fix customarchive template for Smarty3 and to check {pickKey..} first,
+   if not deliver a default fallback.
+ * Fixes genpage Smarty initiation
+ * Removes some leftovers
+
 1.14:
 ----
 
