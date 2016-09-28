@@ -2871,8 +2871,8 @@ class serendipity_event_staticpage extends serendipity_event
         // Call moduled class constructors by type
         if ($type) {
             if ($type == 'seperator') $type = 'separator'; // due to long run misspelled usage
-            if ($type == 'html') $type = 'text'; // since type class redirector errors. We only needs a simple type text box creator class for both
-            if ($type == 'boolean' || $type == 'tristate') $type = 'radio'; // We only needs a simple type radio creator class
+            if ($type == 'html') $type = 'text'; // since a type class redirector errors and we only need a simple type text box creator class object for both
+            if ($type == 'boolean' || $type == 'tristate') $type = 'radio'; // we only need a simple type radio creator class object
             echo "<!-- modul-type::$type - class_inspectConfig.php -->\n"; // tag dynamic form items
             $ctype = 'ic'.ucfirst($type);
             ${$ctype} = new $ctype();
