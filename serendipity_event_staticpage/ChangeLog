@@ -1,3 +1,11 @@
+5.10:
+----
+
+ * Optimize inspectConfig load for backend form generations by an
+   abstract class, instead of a multiple loaded "template" file.
+ * Some more optimizing for the staticpage backend CSS, which also
+   removes some more leftovers for the 1.7 Series.
+
 5.01:
 ----
 

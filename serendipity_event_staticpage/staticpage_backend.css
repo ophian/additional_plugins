@@ -110,32 +110,6 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* html5 standard */
 }
 
-/* Set a content max-width for 1.7 backend Series */
-.serendipityAdminContent * { max-width: 1002px; }
-
-/* Set a line height for some section in 1.7 backend Series */
-.serendipityAdminContent #staticpage_pagetype *,
-.serendipityAdminContent #sequence *,
-.serendipityAdminContent .sp_add * { line-height: 1.6; }
-
-/* overrule .serendipityAdminContent span, as long as also used with old backend - need to keep here and not in old.css */
-.serendipityAdminContent span.sp_ptype_desc {
-    color: #5E7A94 !important;
-    font-size: 8pt;
-}
-.serendipityAdminContent .sp_tred,
-.sp_tred {
-    color: #c00000 !important;
-}
-.serendipityAdminContent .sp_yellow,
-.sp_tyellow {
-    color: #eac131 !important;
-}
-.serendipityAdminContent .sp_tgreen,
-.sp_tgreen {
-    color: #188d1d !important;
-}
-
 .sp_thead {
     background-color: #c0c0c0;
 }
@@ -294,8 +268,6 @@
 .sp_dim { opacity: .33; }
 .sp_lang { padding: 0 0.1em; color: #800080; } 
 
-/**** 2.0 only with very few tweaks for old backend ****/
-
 .sp_pageselector button[type="submit"].entry_preview {
     background: #ddd;
     background-image: -webkit-linear-gradient(#fff, #ddd);
@@ -303,6 +275,17 @@
     border-color: #ddd #bbb #999;
     color: #222;
     text-shadow: #fff 0 1px 1px;
+}
+
+#backend_sp_simple .hook_buttons,
+#entry_main_content .hook_buttons,
+#entry_struc_precon .hook_buttons {
+    display: inline;
+    font-size: .875em;
+}
+#tools_content.editor_toolbar button {
+    min-width: auto;
+    font-size: .875em;
 }
 
 #staticpage_pagetype fieldset,
@@ -530,6 +513,16 @@
     .spshow {
         display: none;
         visibility: hidden;
+    }
+}
+/* size Plain Editor Buttons */
+@media all and (max-width: 980px) and (min-width: 1023px), (min-width: 1250px) {
+
+    #backend_sp_simple .hook_buttons,
+    #entry_main_content .hook_buttons,
+    #entry_struc_precon .hook_buttons,
+    #tools_content.editor_toolbar button {
+        font-size: 1em;
     }
 }
 

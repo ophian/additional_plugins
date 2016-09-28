@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.01');
+        $propbag->add('version', '5.10');
         $propbag->add('requirements', array(
             'serendipity' => '2.0.99',
             'smarty'      => '3.1.0',
@@ -2812,24 +2812,77 @@ class serendipity_event_staticpage extends serendipity_event
      * @param   array     select
      * @param   int       per row
      * @param   int       cache per row
+     * @param   int       Serendipity configuration parameters (wysiwyg, iso2br)
      * @access  private
      * @return  mixed bool/string The configuration type form HTML
      */
-    function inspectConfig($what, $elcount, $config_item, $config_value, $type, $cname, $cdesc, $value, $default, $lang_direction, $hvalue, $radio, $radio2, $select, $per_row, $per_row2)
+    function inspectConfig($what, $elcount, $config_item, $config_value, $type, $cname, $cdesc, $value, $default, $lang_direction, $hvalue, $radio, $radio2, $select, $per_row, $per_row2, $conf)
     {
-        global $serendipity;
+        global $inspectConfig;
 
         if ($what == 'desc') {
             echo $cdesc;
+            unset($inspectConfig);
             return true;
         }
 
         if ($what == 'name') {
             echo $cname;
+            unset($inspectConfig);
             return true;
         }
-        // else call moduled, since being a "PHP Template" - needs to load multiple times! Dont use *_once!
-        include 'backend_inspectConfig.php';
+
+        $inspectConfig = array();
+
+        // add some $serendipity items to check for
+        $inspectConfig = $conf;
+
+        // create global inspectConfig vars for class
+        $inspectConfig['config_item']    = $config_item;
+        $inspectConfig['config_value']   = $config_value;
+        $inspectConfig['lang_direction'] = $lang_direction;
+        $inspectConfig['type']     = $type;
+        $inspectConfig['cname']    = $cname;
+        $inspectConfig['cdesc']    = $cdesc;
+        $inspectConfig['value']    = $value;
+        $inspectConfig['elcount']  = $elcount;
+        $inspectConfig['default']  = $default;
+        $inspectConfig['hvalue']   = $hvalue;
+        $inspectConfig['radio']    = $radio;
+        $inspectConfig['radio2']   = $radio2;
+        $inspectConfig['select']   = $select;
+        $inspectConfig['per_row']  = $per_row;
+        $inspectConfig['per_row2'] = $per_row2;
+
+        // to make the fallback case to radio easily work, we just run these two types in here
+        if ($type == 'tristate') {
+            $inspectConfig['per_row'] = 3;
+            $inspectConfig['radio']['value'][] = 'default';
+            $inspectConfig['radio']['desc'][]  = USE_DEFAULT;
+        }
+        if ($type == 'boolean') {
+            $inspectConfig['radio']['value'][] = 'true';
+            $inspectConfig['radio']['desc'][]  = YES;
+
+            $inspectConfig['radio']['value'][] = 'false';
+            $inspectConfig['radio']['desc'][]  = NO;
+        }
+
+        // Call moduled class constructors by type
+        if ($type) {
+            if ($type == 'seperator') $type = 'separator'; // due to long run misspelled usage
+            if ($type == 'html') $type = 'text'; // since type class redirector errors. We only needs a simple type text box creator class for both
+            if ($type == 'boolean' || $type == 'tristate') $type = 'radio'; // We only needs a simple type radio creator class
+            echo "<!-- modul-type::$type - class_inspectConfig.php -->\n"; // tag dynamic form items
+            $ctype = 'ic'.ucfirst($type);
+            ${$ctype} = new $ctype();
+            if ($type == 'text' && $conf['s9y']['wysiwyg']) {
+                $this->htmlnugget[] = $elcount;
+                serendipity_emit_htmlarea_code('nuggets', 'nuggets', true);
+            }
+            // Destroy the object - freeing memory
+            unset(${$ctype});
+        }
     }
 
     /**
@@ -2840,7 +2893,7 @@ class serendipity_event_staticpage extends serendipity_event
      * @access  public
      * @return  template string
      */
-    public function SmartyInspectConfig($params, &$smarty)
+    public function SmartyInspectConfig($params, $smarty)
     {
         static $elcount = 0;
         global $serendipity;
@@ -2890,9 +2943,11 @@ class serendipity_event_staticpage extends serendipity_event
             // Try and set the default value for the config item
             $value = $cbag->get('default');
         }
+
         $hvalue   = ((!isset($serendipity['POST']['staticSubmit']) || is_array($serendipity['GET']['pre'])) && isset($serendipity['POST']['plugin'][$config_item])
                     ? self::html_specialchars($serendipity['POST']['plugin'][$config_item], null, LANG_CHARSET, $double)
                     : self::html_specialchars($value, null, LANG_CHARSET, $double));
+
         $radio    = array();
         $select   = array();
         $per_row  = null;
@@ -2903,8 +2958,12 @@ class serendipity_event_staticpage extends serendipity_event
         $per_row2 = $cbag->get('radio_per_row');
         $default  = $cbag->get('default');
 
+        // add some $serendipity items to check for
+        $conf['s9y']['wysiwyg'] = $serendipity['wysiwyg'];
+        $conf['s9y']['nl2br']['iso2br'] = $serendipity['nl2br']['iso2br'];
+
         ob_start();
-          $this->inspectConfig($what, $elcount, $config_item, $config_value, $type, $cname, $cdesc, $value, $default, $lang_direction, $hvalue, $radio, $radio2, $select, $per_row, $per_row2);
+          $this->inspectConfig($what, $elcount, $config_item, $config_value, $type, $cname, $cdesc, $value, $default, $lang_direction, $hvalue, $radio, $radio2, $select, $per_row, $per_row2, $conf);
           $out = ob_get_contents();
         ob_end_clean();
 
@@ -2919,7 +2978,7 @@ class serendipity_event_staticpage extends serendipity_event
      * @access  public
      * @return  template string
      */
-    public function SmartyInspectConfigFinish($params, &$smarty)
+    public function SmartyInspectConfigFinish($params, $smarty)
     {
         global $serendipity;
 
@@ -2962,8 +3021,13 @@ class serendipity_event_staticpage extends serendipity_event
         $this->htmlnugget = array();
         $GLOBALS['staticpage_htmlnugget'] = &$this->htmlnugget;
 
-        if (file_exists(S9Y_INCLUDE_PATH . 'include/functions_entries_admin.inc.php')) {
-            include_once(S9Y_INCLUDE_PATH . 'include/functions_entries_admin.inc.php');
+        if (!function_exists('serendipity_emit_htmlarea_code')) {
+            include_once S9Y_INCLUDE_PATH . 'include/functions_entries_admin.inc.php';
+        }
+
+        // call moduled abstract class for form items
+        if (!is_callable('inspectConfig')) {
+            require_once dirname(__FILE__) . '/class_inspectConfig.php';
         }
 
         // get global set show publishstatus for new forms

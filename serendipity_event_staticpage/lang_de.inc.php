@@ -65,7 +65,7 @@
 @define('STATICPAGE_PRECONTENT_DESC', 'Diese Einleitung wird vor den Kindseiten angezeigt.');
 @define('STATICPAGE_CANNOTDELETE_MSG', 'Diese Seite kann nicht gelöscht werden. Es sind noch Kindseiten in der Datenbank. Diese müssen erst gelöscht werden.');
 @define('STATICPAGE_IS_STARTPAGE', 'Diese Seite als Startseite definieren');
-@define('STATICPAGE_IS_STARTPAGE_DESC', 'Anstatt der standardmäßigen Serendipity Startseite wird diese statische Seite angezeigt. Nur eine Seite als Startseite definieren! Wenn du zur ursprünglischen Startseite verlinken möchtest, muss nach "index.php?frontpage" verlinkt werden.');
+@define('STATICPAGE_IS_STARTPAGE_DESC', 'Anstatt der standardmäßigen Serendipity Startseite wird diese statische Seite angezeigt. Nur eine Seite als Startseite definieren! Wenn Sie zur ursprünglichen Startseite verlinken möchten, muss nach "index.php?frontpage" verlinkt werden.');
 @define('STATICPAGE_IS_404_PAGE', 'Diese Seite als 404-Fehler-Seite definieren');
 @define('STATICPAGE_IS_404_PAGE_DESC', 'Mit dieser Option kann diese statische Seite als 404-Fehler-Seite verwendet werden. Dies darf jedoch nur für eine Seite definiert werden! Der Webserver muss zudem so konfiguriert sein, dass er diese Seite verwendet!');
 @define('STATICPAGE_TOP', 'Hoch');
