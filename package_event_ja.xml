@@ -9255,13 +9255,12 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>デザインとすべての書式化されたブログとウェブログ内部に静的ページを表示します。管理インターフェースに新しいメニューを追加します。</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>5.01</version>
+  <version>5.10</version>
   <requirements:s9yVersion>2.0.99</requirements:s9yVersion>
-  <date>2016-09-19</date>
+  <date>2016-09-28</date>
   <filelist>
 <dir name="serendipity_event_staticpage">
 <file>.htaccess</file>
-<file>backend_inspectConfig.php</file>
 <file>backend_staticpage.tpl</file>
 <dir name="backend_templates">
 <file>custom_template.tpl</file>
@@ -9270,6 +9269,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <file>typeform_staticpage_backend.tpl</file>
 </dir>
 <file>ChangeLog</file>
+<file>class_inspectConfig.php</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
 <file>documentation_en.html</file>
@@ -9339,13 +9339,13 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_staticpage/.htaccess</file>
-    <file>serendipity_event_staticpage/backend_inspectConfig.php</file>
     <file>serendipity_event_staticpage/backend_staticpage.tpl</file>
     <file>serendipity_event_staticpage/backend_templates/custom_template.tpl</file>
     <file>serendipity_event_staticpage/backend_templates/default_staticpage_backend.tpl</file>
     <file>serendipity_event_staticpage/backend_templates/responsive_template.tpl</file>
     <file>serendipity_event_staticpage/backend_templates/typeform_staticpage_backend.tpl</file>
     <file>serendipity_event_staticpage/ChangeLog</file>
+    <file>serendipity_event_staticpage/class_inspectConfig.php</file>
     <file>serendipity_event_staticpage/documentation_cs.html</file>
     <file>serendipity_event_staticpage/documentation_cz.html</file>
     <file>serendipity_event_staticpage/documentation_en.html</file>
