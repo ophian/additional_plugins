@@ -2516,8 +2516,8 @@ class serendipity_event_staticpage extends serendipity_event
                     $serendipity['POST']['typeSubmit'] = true;
                     $bag = new serendipity_property_bag();
                     $this->introspect($bag);
-                    $name = self::html_specialchars($bag->get('name')); // RQ: Where? Why? This is constant data...
-                    $desc = self::html_specialchars($bag->get('description')); // RQ: Where? Why? This is constant data...
+                    $name = self::html_specialchars($bag->get('name')); // Normally constant data ...
+                    $desc = self::html_specialchars($bag->get('description')); // ... but now it is POST data!
                     $config_t = $bag->get('type_configuration');
 
                     foreach($config_t AS $config_item) {
@@ -2542,7 +2542,6 @@ class serendipity_event_staticpage extends serendipity_event
                 if (empty($this->pagetype) && $serendipity['POST']['pagetype'] == '__new') {
                     unset($serendipity['POST']['typeSave']);
                     unset($serendipity['POST']['plugin']);
-                    $serendipity['POST']['plugin']['custom'] = '';
                 }
 
                 $types = $this->fetchPageTypes();
@@ -2553,12 +2552,11 @@ class serendipity_event_staticpage extends serendipity_event
 
                 if (isset($serendipity['POST']['typeSubmit'])) {
                     $serendipity['POST']['staticSubmit'] = true; // RQ: Is this a need?
-                    $serendipity['POST']['plugin']['custom'] = $this->staticpage['custom']; // RQ: what for at here?
                     $serendipity['POST']['backend_template'] = 'typeform_staticpage_backend.tpl';
                     $bag = new serendipity_property_bag();
                     $this->introspect($bag);
-                    $name = self::html_specialchars($bag->get('name')); // RQ: Where? Why? This is constant data...
-                    $desc = self::html_specialchars($bag->get('description')); // RQ: Where? Why? This is constant data...
+                    $name = self::html_specialchars($bag->get('name')); // Normally constant data ...
+                    $desc = self::html_specialchars($bag->get('description')); // ... but now it is POST data!
                     $config_t = $bag->get('type_configuration');
 
                     foreach($config_t AS $config_item) {
@@ -2634,8 +2632,8 @@ class serendipity_event_staticpage extends serendipity_event
                     $serendipity['smarty']->assign('sp_staticsubmit', true);
                     $bag  = new serendipity_property_bag;
                     $this->introspect($bag);
-                    $name = self::html_specialchars($bag->get('name')); // RQ: Where? Why? This is constant data...
-                    $desc = self::html_specialchars($bag->get('description')); // RQ: Where? Why? This is constant data...
+                    $name = self::html_specialchars($bag->get('name')); // Normally constant data ...
+                    $desc = self::html_specialchars($bag->get('description')); // ... but now it is POST data!
                     $config_names = $bag->get('page_configuration');
 
                     foreach ($config_names AS $config_item) {
