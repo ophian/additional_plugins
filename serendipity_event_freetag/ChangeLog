@@ -1,3 +1,8 @@
+3.90:
+-----
+
+ * Fix config grouper item helper snippet for versions in 2.0 to 2.1-Alphas
+
 3.89:
 -----
 

@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.89');
+        $propbag->add('version',       '3.90');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1306,7 +1306,7 @@ addLoadEvent(enableAutocomplete);
 ?>
 
 $(document).ready(function() {
-    $(\'.configure_plugin div.configuration_group\').each(function() {
+    $('.configure_plugin div.configuration_group').each(function() {
         if(!/[\S]/.test($(this).html())) {
             $(this).replaceWith('<hr class="config_separator" style="visibility:hidden">');
         }
