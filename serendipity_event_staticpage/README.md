@@ -14,6 +14,7 @@
 - - -
 
 ### Already done: :arrow_up:
+- [x] Optimize serendipity_property_bag load actions
 - [x] Cleanup - no custom sub-array in pagetype cases
 - [x] Fix an issue switching from existing pagetype to a new form on submit did not change values
 - [x] Some more optimizing for the staticpage backend CSS, which also removes some more leftovers for the 1.7 Series.

@@ -3,6 +3,7 @@
 
  * Fix an issue switching from existing pagetype to a new form on submit
    did not change values.
+ * Optimize serendipity_property_bag load actions
 
 5.10:
 ----

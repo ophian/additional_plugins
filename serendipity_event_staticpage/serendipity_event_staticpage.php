@@ -2516,8 +2516,9 @@ class serendipity_event_staticpage extends serendipity_event
                     $serendipity['POST']['typeSubmit'] = true;
                     $bag = new serendipity_property_bag();
                     $this->introspect($bag);
-                    $name = self::html_specialchars($bag->get('name')); // Normally constant data ...
-                    $desc = self::html_specialchars($bag->get('description')); // ... but now it is POST data!
+                    // actually no need, since unused in staticpage pageforms
+                    #$name = self::html_specialchars($bag->get('name')); // Normally constant data ...
+                    #$desc = self::html_specialchars($bag->get('description')); // ... but now it is POST data!
                     $config_t = $bag->get('type_configuration');
 
                     foreach($config_t AS $config_item) {
@@ -2555,8 +2556,9 @@ class serendipity_event_staticpage extends serendipity_event
                     $serendipity['POST']['backend_template'] = 'typeform_staticpage_backend.tpl';
                     $bag = new serendipity_property_bag();
                     $this->introspect($bag);
-                    $name = self::html_specialchars($bag->get('name')); // Normally constant data ...
-                    $desc = self::html_specialchars($bag->get('description')); // ... but now it is POST data!
+                    // actually no need, since unused in staticpage pageforms
+                    #$name = self::html_specialchars($bag->get('name')); // Normally constant data ...
+                    #$desc = self::html_specialchars($bag->get('description')); // ... but now it is POST data!
                     $config_t = $bag->get('type_configuration');
 
                     foreach($config_t AS $config_item) {
@@ -2632,8 +2634,9 @@ class serendipity_event_staticpage extends serendipity_event
                     $serendipity['smarty']->assign('sp_staticsubmit', true);
                     $bag  = new serendipity_property_bag;
                     $this->introspect($bag);
-                    $name = self::html_specialchars($bag->get('name')); // Normally constant data ...
-                    $desc = self::html_specialchars($bag->get('description')); // ... but now it is POST data!
+                    // actually no need, since unused in staticpage pageforms
+                    #$name = self::html_specialchars($bag->get('name')); // Normally constant data ...
+                    #$desc = self::html_specialchars($bag->get('description')); // ... but now it is POST data!
                     $config_names = $bag->get('page_configuration');
 
                     foreach ($config_names AS $config_item) {
