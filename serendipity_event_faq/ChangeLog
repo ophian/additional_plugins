@@ -2,6 +2,8 @@
 -----
 
  * Give a bottom margin for longer category faq enties
+ * Do not wide the faqs table to full 100% width to prevent
+   sidebar issues with some themes.
 
 1.23:
 -----
