@@ -4,6 +4,9 @@
 .faq-searchresults {
     display: table;
 }
+.faq-category {
+    margin-bottom: 1.5em;
+}
 #serendipityFAQPagination p {
     margin: inherit;
     display: inline-block;
