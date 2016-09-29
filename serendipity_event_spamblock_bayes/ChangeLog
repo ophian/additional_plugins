@@ -1,3 +1,7 @@
+0.4.26:
+-------
+ * Fix template fetch with wrong variable
+
 0.4.25:
 -------
  * Add "IF NOT EXISTS" to sqlite-upgrade function, preventing a php error
