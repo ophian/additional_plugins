@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.10');
+        $propbag->add('version', '5.11');
         $propbag->add('requirements', array(
             'serendipity' => '2.0.99',
             'smarty'      => '3.1.0',
@@ -2538,6 +2538,13 @@ class serendipity_event_staticpage extends serendipity_event
                     ));
                 }
 
+                // case switching from existing pagetype to a new form on submit
+                if (empty($this->pagetype) && $serendipity['POST']['pagetype'] == '__new') {
+                    unset($serendipity['POST']['typeSave']);
+                    unset($serendipity['POST']['plugin']);
+                    $serendipity['POST']['plugin']['custom'] = '';
+                }
+
                 $types = $this->fetchPageTypes();
                 $serendipity['smarty']->assign( array (
                              'sp_pagetype' => true,
@@ -2904,7 +2911,7 @@ class serendipity_event_staticpage extends serendipity_event
         if (empty($what)) {
             $what = 'input';
         }
-        // set double_escape entities for htnmlspecialchars (default true)
+        // set double_escape entities check for htmlspecialchars (default true)
         $double = true;
         // allow single encode only for the ISO-8859-1 native charset
         if (LANG_CHARSET === 'ISO-8859-1') {

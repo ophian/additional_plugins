@@ -1,3 +1,9 @@
+5.11:
+----
+
+ * Fix an issue switching from existing pagetype to a new form on submit
+   did not change values.
+
 5.10:
 ----
 
