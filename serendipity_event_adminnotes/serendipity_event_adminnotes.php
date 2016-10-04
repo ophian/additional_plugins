@@ -22,8 +22,8 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '4.1.0'
         ));
 
-        $propbag->add('version',       '0.15');
-        $propbag->add('author',        'Garvin Hicking, Matthias Mees');
+        $propbag->add('version',       '0.16');
+        $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'html', 'markup', 'cutoff'));
         $propbag->add('event_hooks',   array(
@@ -437,6 +437,10 @@ class serendipity_event_adminnotes extends serendipity_event
 
             switch($event) {
                 case 'backend_sidebar_entries':
+                    if ($serendipity['serendipityUserlevel'] < USERLEVEL_CHIEF) {
+                        break;
+                    }
+
                     if ($serendipity['version'][0] < 2) {
 ?>
                         <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes"><?php echo PLUGIN_ADMINNOTES_TITLE; ?></a></li>
@@ -447,6 +451,10 @@ class serendipity_event_adminnotes extends serendipity_event
                     break;
 
                 case 'backend_sidebar_admin':
+                    if ($serendipity['serendipityUserlevel'] < USERLEVEL_CHIEF) {
+                        break;
+                    }
+
                     if ($serendipity['version'][0] > 1) {
 ?>
                         <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes"><?php echo PLUGIN_ADMINNOTES_TITLE; ?></a></li>
