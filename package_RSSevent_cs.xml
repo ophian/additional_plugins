@@ -48,9 +48,9 @@
 <title>Rychlé poznámky: Zobrazuje v administrační sekci oznámení přihlášeným uživatelům</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_adminnotes</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Matthias Mees</author>
+<author>Garvin Hicking, Matthias Mees, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;Rychlé poznámky&lt;/b&gt;&lt;br /&gt;Zobrazuje v administrační sekci oznámení přihlášeným uživatelům&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Tue, 04 Oct 2016 11:08:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
@@ -86,7 +86,7 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
 <content:encoded>&lt;b&gt;serendipity_event_autotitle&lt;br /&gt;Markup: Automatický titulek&lt;/b&gt;&lt;br /&gt;Nastaví automaticky parametr title=&quot;...&quot; v odkazech - &amp;lt;a href=&quot;...&quot; title=&quot;...&quot;&amp;gt;.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 10 Sep 2016 10:43:59 +0200</pubDate>
+<pubDate>Mon, 03 Oct 2016 17:35:51 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autotitle</guid>
 </item>
 <item>
@@ -95,7 +95,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Automatické aktualizace (experimentální)&lt;/b&gt;&lt;br /&gt;Experimentální. Když plugin &quot;tabule&quot; detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 27 Sep 2016 15:04:26 +0200</pubDate>
+<pubDate>Tue, 04 Oct 2016 11:00:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -815,7 +815,7 @@
 <category>Event Plugins</category>
 <author>Matthias Gutjahr, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Mikroformáty&lt;/b&gt;&lt;br /&gt;Tento plugin poskytuje jednoduché publikování přehledů (nebo událostí); podporuje příslušné mikroformáty.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 24 Sep 2016 11:14:49 +0200</pubDate>
+<pubDate>Mon, 03 Oct 2016 17:36:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_microformats</guid>
 </item>
 <item>
@@ -851,7 +851,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Vízejazyčné záznamy&lt;/b&gt;&lt;br /&gt;Umožňuje vytvořit příspěvek (záznam) ve více jazykových variantách. Obsahuje též fromulář pro výběr základního jazyka blogu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 15:25:53 +0200</pubDate>
+<pubDate>Mon, 03 Oct 2016 17:34:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -1049,7 +1049,7 @@
 <category>Event Plugins</category>
 <author>Tys von Gaza, Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_sidebarhider&lt;br /&gt;Přepínání stavu postranního sloupce (sbalený/rozbalený)&lt;/b&gt;&lt;br /&gt;Smrští postranní sloupce pouze na jejich nadpisy. Přidává nastavení do psaní příspěvků a také položku &quot;Správa postranních sloupců&quot; do administrační sekce.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 26 Sep 2016 19:03:58 +0200</pubDate>
+<pubDate>Mon, 03 Oct 2016 17:34:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_sidebarhider</guid>
 </item>
 <item>

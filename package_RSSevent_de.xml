@@ -48,9 +48,9 @@
 <title>QuickNotes: Zeigt Hinweise für angemeldete Autoren in der Admin-Oberfläche an.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_adminnotes</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Matthias Mees</author>
+<author>Garvin Hicking, Matthias Mees, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;QuickNotes&lt;/b&gt;&lt;br /&gt;Zeigt Hinweise für angemeldete Autoren in der Admin-Oberfläche an.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Tue, 04 Oct 2016 11:08:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
@@ -86,7 +86,7 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
 <content:encoded>&lt;b&gt;serendipity_event_autotitle&lt;br /&gt;Markup: Auto-Titel&lt;/b&gt;&lt;br /&gt;Fügt automatisch den Titel der verlinkten Seite als als &quot;title&quot;-Tag zum Link hinzu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 10 Sep 2016 10:43:59 +0200</pubDate>
+<pubDate>Mon, 03 Oct 2016 17:35:51 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autotitle</guid>
 </item>
 <item>
@@ -95,7 +95,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;Sobald das Dashboard Plugin (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in das Dashboard des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 27 Sep 2016 15:04:26 +0200</pubDate>
+<pubDate>Tue, 04 Oct 2016 11:00:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -815,7 +815,7 @@
 <category>Event Plugins</category>
 <author>Matthias Gutjahr, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Microformats&lt;/b&gt;&lt;br /&gt;Dieses Plugin ermöglicht es, auf einfache Weise Rezensionen zu veröffentlichen und Veranstaltungen anzukündigen: Es unterstützt die jeweiligen Mikroformate.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 24 Sep 2016 11:14:49 +0200</pubDate>
+<pubDate>Mon, 03 Oct 2016 17:36:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_microformats</guid>
 </item>
 <item>
@@ -851,7 +851,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilinguale Einträge&lt;/b&gt;&lt;br /&gt;Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 15:25:53 +0200</pubDate>
+<pubDate>Mon, 03 Oct 2016 17:34:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -1049,7 +1049,7 @@
 <category>Event Plugins</category>
 <author>Tys von Gaza, Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_sidebarhider&lt;br /&gt;Seitenleisten ein/ausklappbar machen&lt;/b&gt;&lt;br /&gt;Verkleinert Seitenleisten-Elemente auf ihren Titel und ermöglicht das individuelle Ausklappen. Zusätzliche Konfiguration siehe Einträge -&gt; Seitenleisten verwalten in der Administrationsoberfläche.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 26 Sep 2016 19:03:58 +0200</pubDate>
+<pubDate>Mon, 03 Oct 2016 17:34:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_sidebarhider</guid>
 </item>
 <item>
