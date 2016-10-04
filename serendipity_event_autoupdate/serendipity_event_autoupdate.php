@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.3.2');
+        $propbag->add('version',       '1.3.3');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -514,7 +514,7 @@ EOS;
             $zip->close();
             // 2. copy them over
             foreach ($files AS $file) {
-                $target = $serendipity['serendipityPath'] . substr($file, 12);
+                $target = $serendipity['serendipityPath'] . preg_replace('/[^\/]*/', '', $file, 1); // we always remove the first directory 'serendipity/' path part, though this additionally allows source (beta versioned) zips. Zip Releases, beta or not, should always be personally maintained and touched by the release script!
                 if (is_dir($updateDir .$file)) {
                     if (!file_exists($target)) {
                         $success = mkdir($target);
@@ -525,7 +525,7 @@ EOS;
                     $success = @copy($updateDir . $file, $target);
                 }
                 if (!$success) {
-                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Error! Copying file to '.$target.' failed! <a href="?serendipity[newVersion]='.$version.'">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.</p>');
+                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Error! Copying file '. $updateDir . $file .' to '. $target .' failed! <a href="?serendipity[newVersion]='.$version.'">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.</p>');
                     return false;
                 }
             }
@@ -622,7 +622,8 @@ EOS;
         $updateDir    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-$version/";
         $checksumFile = (string)$updateDir . "serendipity/checksums.inc.php";
 
-        if (strpos($version, 'beta') !== FALSE) {
+        // Styx beta version prior 2.1-beta2 did not have checksums
+        if (strpos($version, '2.1-beta1') !== FALSE) {
             return true;
         }
         include_once $checksumFile;
