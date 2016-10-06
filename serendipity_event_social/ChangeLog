@@ -1,3 +1,8 @@
+0.14:
+-----
+
+  * Fix entry fetch in special case
+
 0.13:
 -----
  * Ignore smileys graphics for og:image

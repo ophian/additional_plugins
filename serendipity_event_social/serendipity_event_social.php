@@ -17,8 +17,8 @@ class serendipity_event_social extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_SOCIAL_NAME);
         $propbag->add('description',   PLUGIN_EVENT_SOCIAL_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'onli, Matthias Mees, Thomas Hochstein');
-        $propbag->add('version',       '0.13');
+        $propbag->add('author',        'onli, Matthias Mees, Thomas Hochstein, Ian');
+        $propbag->add('version',       '0.14');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
         ));
@@ -157,7 +157,11 @@ class serendipity_event_social extends serendipity_event
                     if (strpos($this->get_config('services'), 'facebook') !== false || strpos($this->get_config('services'), 'twitter') !== false) {
 
                         // we fetch the internal smarty object to get the current entry body
-                        $entry = (array)$eventData['smarty']->tpl_vars['entry']->value;
+                        if ($serendipity['template'] != 'default-php' && is_object($eventData['smarty'])) {
+                            $entry = (array)$eventData['smarty']->tpl_vars['entry']->value;
+                        } else {
+                            $entry = serendipity_fetchEntry('id', (int)$serendipity['GET']['id']);
+                        }
 
                         $blogURL = 'http' . ($_SERVER['HTTPS'] ? 's' : '') . '://' . $_SERVER['HTTP_HOST'];
 
