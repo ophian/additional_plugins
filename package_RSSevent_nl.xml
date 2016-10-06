@@ -419,7 +419,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook&lt;/b&gt;&lt;br /&gt;Imports comments made on facebook postings (like through RSS Graffiti) back into the blog. Also embeds Facebook OpenGraph Meta-Tags into the blog. Note that adding &quot;like&quot;-Buttons to blog entries is achieved via the serendipity_event_findmore plugin! &lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Tue, 06 Sep 2016 17:38:07 +0200</pubDate>
+<pubDate>Thu, 06 Oct 2016 16:46:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>
@@ -527,7 +527,7 @@
 <category>Event Plugins</category>
 <author>Zoran Kovacevic, Grischa Brockhaus, Matthias Gutjahr</author>
 <content:encoded>&lt;b&gt;serendipity_event_geotag&lt;br /&gt;Geotag&lt;/b&gt;&lt;br /&gt;Allows entries to be geotagged with coordinates&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 06 Sep 2016 15:33:55 +0200</pubDate>
+<pubDate>Thu, 06 Oct 2016 16:45:15 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geotag</guid>
 </item>
 <item>
@@ -806,7 +806,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Don Chambers, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_metadesc&lt;br /&gt;HTML META-Tags&lt;/b&gt;&lt;br /&gt;Sets HTML meta keywords/description tags and title element for single entry pages and default meta keywords/description tags for non-single entry pages.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 21 Sep 2016 11:01:40 +0200</pubDate>
+<pubDate>Thu, 06 Oct 2016 16:42:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_metadesc</guid>
 </item>
 <item>
@@ -1085,9 +1085,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <title>Share Buttons: Show social share buttons for services like Facebook and Twitter using shariff.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_social</link>
 <category>Event Plugins</category>
-<author>onli, Matthias Mees, Thomas Hochstein</author>
+<author>onli, Matthias Mees, Thomas Hochstein, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_social&lt;br /&gt;Share Buttons&lt;/b&gt;&lt;br /&gt;Show social share buttons for services like Facebook and Twitter using shariff.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 08 Sep 2016 07:22:26 +0200</pubDate>
+<pubDate>Thu, 06 Oct 2016 16:44:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_social</guid>
 </item>
 <item>
