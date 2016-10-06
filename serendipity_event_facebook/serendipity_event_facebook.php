@@ -24,7 +24,7 @@ class serendipity_event_facebook extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.1.0'
         ));
-        $propbag->add('version',       '0.6');
+        $propbag->add('version',       '0.7');
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $propbag->add('event_hooks', array(
             'frontend_display'  => true,
@@ -419,7 +419,11 @@ class serendipity_event_facebook extends serendipity_event
                     // Only emit in Single Entry Mode
                     if ($serendipity['GET']['id'] && $serendipity['view'] == 'entry') {
                         // we fetch the internal smarty object to get the current entry body
-                        $entry = (array)$eventData['smarty']->tpl_vars['entry']->value;
+                        if ($serendipity['template'] != 'default-php' && is_object($eventData['smarty'])) {
+                            $entry = (array)$eventData['smarty']->tpl_vars['entry']->value;
+                        } else {
+                            $entry = serendipity_fetchEntry('id', (int)$serendipity['GET']['id']);
+                        }
 
                         // Taken from: http://developers.facebook.com/docs/opengraph/
                         echo '    <!--serendipity_event_facebook-->' . "\n";
