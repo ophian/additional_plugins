@@ -21,7 +21,7 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian');
-        $propbag->add('version',       '0.20');
+        $propbag->add('version',       '0.21');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'php'         => '5.1.0'
@@ -169,7 +169,11 @@ class serendipity_event_metadesc extends serendipity_event
                     // Only emit in Single Entry Mode
                     if ($serendipity['GET']['id'] && $serendipity['view'] == 'entry') {
                         // we fetch the internal smarty object to get the current entry body
-                        $entry = (array)$eventData['smarty']->tpl_vars['entry']->value;
+                        if ($serendipity['template'] != 'default-php' && is_object($eventData['smarty'])) {
+                            $entry = (array)$eventData['smarty']->tpl_vars['entry']->value;
+                        } else {
+                            $entry = serendipity_fetchEntry('id', (int)$serendipity['GET']['id']);
+                        }
 
                         // If we modified the <title>...
                         if (!empty($this->meta_title)) {
