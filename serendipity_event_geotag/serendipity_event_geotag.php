@@ -598,7 +598,11 @@ class serendipity_event_geotag extends serendipity_event
                         return;
                     }
                     // we fetch the internal smarty object to get the current entry body
-                    $entry = (array)$eventData['smarty']->tpl_vars['entry']->value;
+                    if ($serendipity['template'] != 'default-php' && is_object($eventData['smarty'])) {
+                        $entry = (array)$eventData['smarty']->tpl_vars['entry']->value;
+                    } else {
+                        $entry = serendipity_fetchEntry('id', (int)$serendipity['GET']['id']);
+                    }
                     $props = $entry['properties'];
                     $geotagged = true;
                     foreach($this->supported_properties AS $prop_key) {

@@ -1,3 +1,7 @@
+1.35:
+-----
+ * Fix entry ftch in special case
+
 1.34:
 ----------------------------------
  * Fix access to entry[body], since using GLOBALS was shut off
