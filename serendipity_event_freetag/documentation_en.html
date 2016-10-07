@@ -17,12 +17,12 @@
 <h1>Documentation of the Freetag event plugin<br />
     <small>(serendipity_event_freetag)</small></h1>
 
-<p>Documentary added by Ian on 2014-09-27, changed on 2016-01-28.<br />
+<p>Documentary added by Ian on 2014-09-27, changed on 2016-10-07.<br />
 Informations given in <a href="README">The most current README</a>, <a href="README.txt"> and older README.txt</a> a <a href="ChangeLog">and the most current ChangeLog file</a>.
 
 <h2>Scripting changes by options</h2>
 
-<h3>Option: Extendet Smarty</h3>
+<h3>Option: Extended Smarty</h3>
 
 <p>When using extended smarty output, the following code illustrates how the smarty-variables could be used when dropped into the entries.tpl:
 
@@ -30,15 +30,15 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
 {if isset($entry.freetag.extended) &amp;&amp; $entry.freetag.extended == 1}
     {if $entry.freetag.tags.tags}
         &lt;div class=&quot;serendipity_freeTag&quot;&gt;{$entry.freetag.tags.description}
-            {foreach from=$entry.freetag.tags.tags item=&quot;tag&quot;}
+            {foreach $entry.freetag.tags.tags AS $tag}
                 {$tag}
             {/foreach}
         &lt;/div&gt;
 
-        {if $is_single_entry or $is_preview}
+        {if $is_single_entry OR $is_preview}
             {$entry.freetag.related.description}
             &lt;ul class=&quot;serendipity_freeTag_related&quot;&gt;
-            {foreach from=$entry.freetag.related.entries item=&quot;link&quot;}
+            {foreach $entry.freetag.related.entries AS $link}
                 &lt;li&gt;{$link}&lt;/li&gt;
             {/foreach}
             &lt;/ul&gt;
@@ -61,8 +61,8 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
 +     &lt;article id=&quot;taglistentries&quot; class=&quot;clearfix serendipity_entry&quot;&gt;
 +         &lt;div class=&quot;clearfix content serendipity_entry_body&quot;&gt;
 +             &lt;h2&gt;{$head_subtitle}&lt;/h2&gt;
-+     {foreach from=$entries item=&quot;dategroup&quot;}
-+         {foreach from=$dategroup.entries item=&quot;entry&quot;}
++     {foreach $entries AS $dategroup}
++         {foreach $dategroup.entries AS $entry}
 +
 +             &lt;div class=&quot;static-entries-list&quot;&gt;
 +                 ({$dategroup.date|date_format:&quot;%d.%m.%Y&quot;}) &lt;a href=&quot;{$entry.link}&quot;&gt;{$entry.title|default:$entry.id}&lt;/a&gt;
@@ -76,22 +76,22 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
 +
 + {else}
 +
-{foreach from=$entries item=&quot;dategroup&quot;}
-    {foreach from=$dategroup.entries item=&quot;entry&quot;}
-    {assign var=&quot;entry&quot; value=$entry scope=&quot;parent&quot;}
+{foreach $entries AS $dategroup}
+    {foreach $dategroup.entries AS $entry}
+    {assign var=&quot;entry&quot; value=$entry scope=&quot;root&quot;}
     &lt;article id=&quot;post_{$entry.id}&quot; class=&quot;clearfix serendipity_entry{if $dategroup.is_sticky} sticky{/if}&quot;&gt;
         &lt;header class=&quot;clearfix&quot;&gt;
 
             &lt;h2&gt;&lt;a href=&quot;{$entry.link}&quot;&gt;{$entry.title}&lt;/a&gt;&lt;/h2&gt;
 
-            &lt;span class=&quot;serendipity_byline block_level&quot;&gt;&lt;span class=&quot;single_user&quot;&gt;{$CONST.POSTED_BY} &lt;a href=&quot;{$entry.link_author}&quot;&gt;{$entry.author}&lt;/a&gt; {$CONST.ON} &lt;/span&gt;&lt;time datetime=&quot;{$entry.timestamp|@serendipity_html5time}&quot;&gt;{$entry.timestamp|@formatTime:$template_option.date_format}&lt;/time&gt;{if $entry.is_entry_owner and not $is_preview} | &lt;a href=&quot;{$entry.link_edit}&quot;&gt;{$CONST.EDIT_ENTRY}&lt;/a&gt;{/if}&lt;/span&gt;
+            &lt;span class=&quot;serendipity_byline block_level&quot;&gt;&lt;span class=&quot;single_user&quot;&gt;{$CONST.POSTED_BY} &lt;a href=&quot;{$entry.link_author}&quot;&gt;{$entry.author}&lt;/a&gt; {$CONST.ON} &lt;/span&gt;&lt;time datetime=&quot;{$entry.timestamp|serendipity_html5time}&quot;&gt;{$entry.timestamp|formatTime:$template_option.date_format}&lt;/time&gt;{if $entry.is_entry_owner AND NOT $is_preview} | &lt;a href=&quot;{$entry.link_edit}&quot;&gt;{$CONST.EDIT_ENTRY}&lt;/a&gt;{/if}&lt;/span&gt;
         &lt;/header&gt;
 
         &lt;div class=&quot;clearfix content serendipity_entry_body&quot;&gt;
-        {if $entry.categories}{foreach from=$entry.categories item=&quot;entry_category&quot;}{if $entry_category.category_icon}&lt;a href=&quot;{$entry_category.category_link}&quot;&gt;&lt;img class=&quot;serendipity_entryIcon&quot; title=&quot;{$entry_category.category_name|@escape}{$entry_category.category_description|@emptyPrefix}&quot; alt=&quot;{$entry_category.category_name|@escape}&quot; src=&quot;{$entry_category.category_icon}&quot;&gt;&lt;/a&gt;{/if}{/foreach}{/if}
+        {if $entry.categories}{foreach $entry.categories AS $entry_category}{if $entry_category.category_icon}&lt;a href=&quot;{$entry_category.category_link}&quot;&gt;&lt;img class=&quot;serendipity_entryIcon&quot; title=&quot;{$entry_category.category_name|escape}{$entry_category.category_description|emptyPrefix}&quot; alt=&quot;{$entry_category.category_name|escape}&quot; src=&quot;{$entry_category.category_icon}&quot;&gt;&lt;/a&gt;{/if}{/foreach}{/if}
         {$entry.body}
-        {if $entry.has_extended and not $is_single_entry and not $entry.is_extended}
-        &lt;a class=&quot;read_more block_level&quot; href=&quot;{$entry.link}#extended&quot;&gt;{$CONST.VIEW_EXTENDED_ENTRY|@sprintf:$entry.title}&lt;/a&gt;
+        {if $entry.has_extended AND NOT $is_single_entry AND NOT $entry.is_extended}
+        &lt;a class=&quot;read_more block_level&quot; href=&quot;{$entry.link}#extended&quot;&gt;{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}&lt;/a&gt;
         {/if}
         &lt;/div&gt;
         {if $entry.is_extended}
@@ -105,10 +105,10 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
 
         &lt;footer class=&quot;clearfix&quot;&gt;
         {if $entry.categories}
-            &lt;span class=&quot;visuallyhidden&quot;&gt;{$CONST.CATEGORIES}: &lt;/span&gt;{foreach from=$entry.categories item=&quot;entry_category&quot; name=&quot;categories&quot;}&lt;a href=&quot;{$entry_category.category_link}&quot;&gt;{$entry_category.category_name|@escape}&lt;/a&gt;{if not $smarty.foreach.categories.last}, {/if}{/foreach}
+            &lt;span class=&quot;visuallyhidden&quot;&gt;{$CONST.CATEGORIES}: &lt;/span&gt;{foreach $entry.categories AS $entry_category}&lt;a href=&quot;{$entry_category.category_link}&quot;&gt;{$entry_category.category_name|escape}&lt;/a&gt;{if NOT $categories@last}, {/if}{/foreach}
         {/if}
-        {if $entry.categories and ($entry.has_comments or $entry.has_disqus)} | {/if}
-        {if ($entry.has_comments or $entry.has_disqus)}
+        {if $entry.categories AND ($entry.has_comments OR $entry.has_disqus)} | {/if}
+        {if ($entry.has_comments OR $entry.has_disqus)}
         {if $entry.has_disqus}
             {$entry.comments}{if $entry.has_trackbacks}, &lt;a href=&quot;{$entry.link}#trackbacks&quot;&gt;{$entry.trackbacks} {$entry.label_trackbacks}&lt;/a&gt;{/if}
         {else}
@@ -134,32 +134,32 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
         &lt;rdf:Description
                  rdf:about=&quot;{$entry.link_rdf}&quot;
                  trackback:ping=&quot;{$entry.link_trackback}&quot;
-                 dc:title=&quot;{$entry.title_rdf|@default:$entry.title}&quot;
+                 dc:title=&quot;{$entry.title_rdf|default:$entry.title}&quot;
                  dc:identifier=&quot;{$entry.rdf_ident}&quot; /&gt;
         &lt;/rdf:RDF&gt;
         --&gt;
 
-    {if $is_single_entry and not $is_preview}
+    {if $is_single_entry AND NOT $is_preview}
         {if $CONST.DATA_UNSUBSCRIBED}
-        &lt;p class=&quot;serendipity_msg_notice&quot;&gt;{$CONST.DATA_UNSUBSCRIBED|@sprintf:$CONST.UNSUBSCRIBE_OK}&lt;/p&gt;
+        &lt;p class=&quot;serendipity_msg_notice&quot;&gt;{$CONST.DATA_UNSUBSCRIBED|sprintf:$CONST.UNSUBSCRIBE_OK}&lt;/p&gt;
         {/if}
         {if $CONST.DATA_TRACKBACK_DELETED}
-        &lt;p class=&quot;serendipity_msg_notice&quot;&gt;{$CONST.DATA_TRACKBACK_DELETED|@sprintf:$CONST.TRACKBACK_DELETED}&lt;/p&gt;
+        &lt;p class=&quot;serendipity_msg_notice&quot;&gt;{$CONST.DATA_TRACKBACK_DELETED|sprintf:$CONST.TRACKBACK_DELETED}&lt;/p&gt;
         {/if}
         {if $CONST.DATA_TRACKBACK_APPROVED}
-        &lt;p class=&quot;serendipity_msg_notice&quot;&gt;{$CONST.DATA_TRACKBACK_APPROVED|@sprintf:$CONST.TRACKBACK_APPROVED}&lt;/p&gt;
+        &lt;p class=&quot;serendipity_msg_notice&quot;&gt;{$CONST.DATA_TRACKBACK_APPROVED|sprintf:$CONST.TRACKBACK_APPROVED}&lt;/p&gt;
         {/if}
         {if $CONST.DATA_COMMENT_DELETED}
-        &lt;p class=&quot;serendipity_msg_notice&quot;&gt;{$CONST.DATA_COMMENT_DELETED|@sprintf:$CONST.COMMENT_DELETED}&lt;/p&gt;
+        &lt;p class=&quot;serendipity_msg_notice&quot;&gt;{$CONST.DATA_COMMENT_DELETED|sprintf:$CONST.COMMENT_DELETED}&lt;/p&gt;
         {/if}
         {if $CONST.DATA_COMMENT_APPROVED}
-        &lt;p class=&quot;serendipity_msg_notice&quot;&gt;{$CONST.DATA_COMMENT_APPROVED|@sprintf:$CONST.COMMENT_APPROVED}&lt;/p&gt;
+        &lt;p class=&quot;serendipity_msg_notice&quot;&gt;{$CONST.DATA_COMMENT_APPROVED|sprintf:$CONST.COMMENT_APPROVED}&lt;/p&gt;
         {/if}
 
         &lt;section id=&quot;trackbacks&quot; class=&quot;serendipity_comments serendipity_section_trackbacks&quot;&gt;
             &lt;h3&gt;{$CONST.TRACKBACKS}&lt;/h3&gt;
 
-            &lt;div id=&quot;trackback_url&quot; class=&quot;block_level&quot;&gt;&lt;a rel=&quot;nofollow&quot; href=&quot;{$entry.link_trackback}&quot; title=&quot;{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|@escape}&quot;&gt;{$CONST.TRACKBACK_SPECIFIC}&lt;/a&gt;&lt;/div&gt;
+            &lt;div id=&quot;trackback_url&quot; class=&quot;block_level&quot;&gt;&lt;a rel=&quot;nofollow&quot; href=&quot;{$entry.link_trackback}&quot; title=&quot;{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}&quot;&gt;{$CONST.TRACKBACK_SPECIFIC}&lt;/a&gt;&lt;/div&gt;
 
             {serendipity_printTrackbacks entry=$entry.id}
         &lt;/section&gt;
@@ -187,14 +187,14 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
         {/if}
         &lt;/section&gt;
             &lt;a id=&quot;feedback&quot;&gt;&lt;/a&gt;
-        {foreach from=$comments_messagestack item=&quot;message&quot;}
+        {foreach $comments_messagestack AS $message}
             &lt;p class=&quot;serendipity_msg_important&quot;&gt;{$message}&lt;/p&gt;
         {/foreach}
         {if $is_comment_added}
             &lt;p class=&quot;serendipity_msg_notice&quot;&gt;{$CONST.COMMENT_ADDED}&lt;/p&gt;
         {elseif $is_comment_moderate}
             &lt;p class=&quot;serendipity_msg_notice&quot;&gt;{$CONST.COMMENT_ADDED}: {$CONST.THIS_COMMENT_NEEDS_REVIEW}&lt;/p&gt;
-        {elseif not $entry.allow_comments}
+        {elseif NOT $entry.allow_comments}
             &lt;p class=&quot;serendipity_msg_important&quot;&gt;{$CONST.COMMENTS_CLOSED}&lt;/p&gt;
         {/if}
         &lt;section id=&quot;respond&quot; class=&quot;serendipity_section_commentform&quot;&gt;
@@ -207,14 +207,14 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
     &lt;/article&gt;
     {/foreach}
 {foreachelse}
-    {if not $plugin_clean_page}
+    {if NOT $plugin_clean_page}
     &lt;p class=&quot;nocontent&quot;&gt;{$CONST.NO_ENTRIES_TO_PRINT}&lt;/p&gt;
     {/if}
 {/foreach}
 +
-+ {/if}{* not taglist end *}
++ {/if}{* NOT taglist end *}
 +
-{if $footer_info or $footer_prev_page or $footer_next_page}
+{if $footer_info OR $footer_prev_page OR $footer_next_page}
 +{if $taglist}
 +    {if $footer_prev_page}{assign var=&quot;footer_prev_page&quot; value=$footer_prev_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
 +    {if $footer_next_page}{assign var=&quot;footer_next_page&quot; value=$footer_next_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
