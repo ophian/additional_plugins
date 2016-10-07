@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian');
-        $propbag->add('version',      '1.24');
+        $propbag->add('version',      '1.25');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -872,10 +872,11 @@ class serendipity_event_faq extends serendipity_event
                     $fcats = serendipity_walkRecursive($fcats);
                     $fcats = $this->prepareMove($fcats);
                     foreach ($fcats AS $category) {
+                        $caticon = $category['depth'] > 0 ? '<img alt="category" title="category depth" src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/img/category.png" data-file-width="128" data-file-height="128" height="24" width="24">&nbsp;' : '';
                         echo '        <ul class="plainList">'."\n";
                         echo '            <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=categories&amp;serendipity[id]='.$category['id'].'&amp;serendipity[cat_lang]='.$this_cat_lang.'" title="' . EDIT . '">'.$editimg.'</a></li>'."\n";
                         echo '            <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=deleteCategory&amp;serendipity[id]='.$category['id'].'" title="' . DELETE . '">'.$trashimg.'</a></li>'."\n";
-                        echo '            <li class="fixed" style="padding-left:'.(1.5 * $category['depth']).'em"><img alt="category" title="category depth" src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/img/category.png" data-file-width="128" data-file-height="128" height="24" width="24">&nbsp;<a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=show_faqs&amp;serendipity[cid]='.$category['id'].'">'.$category['category'].'</a></li>'."\n";
+                        echo '            <li class="fixed" style="padding-left:'.(1.5 * $category['depth']).'em">' . $caticon . '<a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=show_faqs&amp;serendipity[cid]='.$category['id'].'">'.$category['category'].'</a></li>'."\n";
                         echo '            <li class="fixed">'.$this->countFAQbyCid($category['id']).' '.FAQ_NAME.'</li>'."\n";
                         echo '            <li'.(($category['up'] == true) ? ('><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=category_moveup&amp;serendipity[id]='.$category['id'].'" title="'.MOVE_UP.'">'.$moveupimg.'</a>') : ' class="empty">&nbsp;').'</li>'."\n";
                         echo '            <li'.(($category['down'] == true) ? ('><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=category_movedown&amp;serendipity[id]='.$category['id'].'" title="'.MOVE_DOWN.'">'.$movedownimg.'</a>') : ' class="empty">&nbsp;').'</li>'."\n";
