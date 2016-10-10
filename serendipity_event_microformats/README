@@ -3,7 +3,7 @@ serendipity_event_microformats - A Microformats Plugin for S9Y
 
 Installation Instructions:
 - extract the folder 'serendipity_event_microformats' to your S9Y plugins folder
-- edit your templates' entries.tpl, add the following two lines where you want 
+- edit your templates' entries.tpl, add the following two lines where you want
   the microformats block to appear (I added them after {$entry.body}):
   {microformats_show data=$entry.properties type="hReview"}
   {microformats_show data=$entry.properties type="hCalendar"}

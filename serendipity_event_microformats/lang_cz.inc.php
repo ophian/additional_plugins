@@ -54,3 +54,4 @@
 @define('PLUGIN_EVENT_MICROFORMATS_PATH_D', 'Zadejte plnou HTTP cestu (v¹echno po doménovém jménu), která vede do adresáøe tohoto pluginu (napø. /serendipity/plugins/serendipity_event_microformats).');
 
 @define('PLUGIN_MICROFORMATS_EVENTLIST_XML_EXPLAIN', 'V souladu s definicí mikroformátu hCalendar (28.01.2007), tìlo pøíspìvku je definováno následovnì: <p><code>&lt;events&gt;<br/>&lt;event summary="Mistrovství svìta ve fotbale 2010" location="Jihoafrická republika" url="http://www.fifa.com/de/worldcup/index/0,3360,WF2010,00.html?comp=WF&year=2010" dtstart="20100611T1930" dtend="20100711T2000" description="Africká výzva" /&gt;<br/>&lt;/events&gt;</code></p><p>Podívejte se také na <a href="http://blog.sperr-objekt.de/pages/microformats.html">dokumentaci</a>, která by u¾ mìla být napsána.</p>');
+

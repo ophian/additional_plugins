@@ -3,11 +3,11 @@
     Microformats Sidebar Display
 */
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
 }
+
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_plugin_microformats extends serendipity_plugin
 {
@@ -55,10 +55,10 @@ class serendipity_plugin_microformats extends serendipity_plugin
         $propbag->add('name',          $this->title);
         $propbag->add('description',   PLUGIN_MICROFORMATS_TITLE_D);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Matthias Gutjahr');
-        $propbag->add('version',       '0.24');
+        $propbag->add('author',        'Matthias Gutjahr, Ian');
+        $propbag->add('version',       '0.25');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -205,4 +205,7 @@ class serendipity_plugin_microformats extends serendipity_plugin
             echo '<div style="text-align:right;"><a href="http://microformats.org/wiki/hcalendar" title="hCalendar microformat enabled"><img src="' . $serendipity['baseURL'] . 'plugins/' . $plugin_dir . '/img/icon-hcalendar.png" width=29" height="18" alt="hCalendar" style="border:none;" /></a></div>';
         }
     }
+
 }
+
+?>

@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -55,3 +55,4 @@
 @define('PLUGIN_EVENT_MICROFORMATS_PATH_D', 'Enter the full HTTP path (everything after your domain name) that leads to this plugin\'s directory (example: /serendipity/plugins/serendipity_event_microformats).');
 
 @define('PLUGIN_MICROFORMATS_EVENTLIST_XML_EXPLAIN', 'According to the definition of the hCalendar microformat (28.01.2007) a event entry is defined as follows: <p><code>&lt;events&gt;<br/>&lt;event summary="Football Worldcup 2010" location="South Africa" url="http://www.fifa.com/de/worldcup/index/0,3360,WF2010,00.html?comp=WF&year=2010" dtstart="20100611T1930" dtend="20100711T2000" description="Africa\'s Calling" /&gt;<br/>&lt;/events&gt;</code></p><p>You can also take a look at the <a href="http://blog.sperr-objekt.de/pages/microformats.html">documentation</a> that is currently in the process of being written.</p>');
+

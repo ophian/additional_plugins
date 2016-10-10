@@ -1,4 +1,4 @@
-<?php # lang_de.inc.php 1.2 2011-11-22 17:22:01 VladaAjgl $
+<?php
 
 /**
  *  @version 1.2
@@ -58,3 +58,4 @@
 // Next lines were translated on 2011/11/22
 @define('PLUGIN_EVENT_MICROFORMATS_PATH_N', 'Pfad zu den Scipts');
 @define('PLUGIN_EVENT_MICROFORMATS_PATH_D', 'Geben Sie den vollen HTTP-Pfad an (alles nach dem Doman-Namen), der zu diesem Plugin-Verzeichnis führt (Beispiel: /serendipity/plugins/serendipity_event_microformats).');
+

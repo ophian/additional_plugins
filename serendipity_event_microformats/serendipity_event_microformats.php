@@ -7,13 +7,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_microformats extends serendipity_event
 {
@@ -58,10 +52,10 @@ class serendipity_event_microformats extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_MICROFORMATS_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_MICROFORMATS_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Matthias Gutjahr');
-        $propbag->add('version',       '0.46.1');
+        $propbag->add('author',        'Matthias Gutjahr, Ian');
+        $propbag->add('version',       '0.47');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -83,6 +77,8 @@ class serendipity_event_microformats extends serendipity_event
 
     function introspect_config_item($name, &$propbag)
     {
+        global $serendipity;
+
         switch($name) {
             case 'subnode':
                 $propbag->add('type', 'boolean');
@@ -117,20 +113,21 @@ class serendipity_event_microformats extends serendipity_event
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_EVENT_MICROFORMATS_PATH_N);
                 $propbag->add('description', PLUGIN_EVENT_MICROFORMATS_PATH_D);
-                $propbag->add('default', str_replace('//', '/', $serendipity['serendipityHTTPPath'] . preg_replace('@^.*(/plugins.*)@', '$1', dirname(__FILE__))));
+                $propbag->add('default', $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_microformats');
                 break;
-
 
             default:
         }
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function &getSupportedProperties($mf_type) {
+    function &getSupportedProperties($mf_type)
+    {
         static $supported_properties = null;
 
         if ($supported_properties === null) {
@@ -159,7 +156,8 @@ class serendipity_event_microformats extends serendipity_event
         return $supported_properties;
     }
 
-    function addProperties(&$properties, &$eventData) {
+    function addProperties(&$properties, &$eventData)
+    {
         global $serendipity;
 
         $supported_formats = array('hReview', 'hCalendar');
@@ -188,32 +186,67 @@ class serendipity_event_microformats extends serendipity_event
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
+        $serendipity['mf_previews'] = 1;
+
         $hooks = &$bag->get('event_hooks');
+
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'css_backend':
-                    echo 'div.tabbertab div.field label {float:left;text-align:right;width:15em;margin-right:.3em}'."\n";
-                    echo 'div.tabbertab div.field input {float:left;width:30em}'."\n";
-                    echo 'div.tabbertab div.field select {float:left}'."\n";
-                    echo 'div.tabbertab div.field textarea {width:100%}'."\n";
-                    echo 'div.tabbertab div.field br    {margin-bottom:.5em}'."\n";
-                    echo 'div.tabbertab fieldset        {margin:5px}'."\n";
-                    include_once(dirname(__FILE__) . '/tabber.css');
-                    return true;
+                    $eventData .= '
+
+/* serendipity_event_microformats start */
+
+div.tabbertab div.field label {
+    float: left;
+    text-align: right;
+    width: 15em;
+    margin-right: .3em;
+}
+div.tabbertab div.field input {
+    float: left;
+    width: 30em;
+}
+div.tabbertab div.field select {float:left}
+div.tabbertab div.field textarea {
+    width: 100%;
+}
+div.tabbertab div.field br {
+    margin-bottom:.5em;
+}
+div.tabbertab fieldset {
+    margin: 5px;
+}
+.entryproperties_microformats #hReview_use,
+.entryproperties_microformats #hCalendar_use {
+    margin-left: .5em;
+}
+#microformats_tab_info {
+    float: unset;
+    width: 98%;
+    display: inline-block;
+}
+
+';
+                    $eventData .= file_get_contents(dirname(__FILE__) . '/tabber.css');
+                    $eventData .= '
+
+/* serendipity_event_microformats end */
+
+';
                     break;
 
                 case 'genpage':
-                    if (!isset($serendipity['smarty'])) {
-                        serendipity_smarty_init($addData);
+                    if (!is_object($serendipity['smarty'])) {
+                        // never init in genpage without adding previously set $vars, which is $view etc!
+                        serendipity_smarty_init($serendipity['plugindata']['smartyvars']);
                     }
                     include_once(dirname(__FILE__).'/smarty.inc.php');
-                    $serendipity['smarty']->assign('subnode', $this->get_config('subnode') ? 1 : 0);
-                    $serendipity['smarty']->assign('best', $this->get_config('best', 5.0));
-                    $serendipity['smarty']->assign('step', $this->get_config('step', 1.0));
-                    $serendipity['smarty']->assign('timezone', $this->get_config('timezone'));
                     if( !defined('Smarty::SMARTY_VERSION') ) {
                         // For Smarty 2
                         if (!isset($serendipity['smarty']->_plugins['function']['microformats_show'])) {
@@ -232,12 +265,10 @@ class serendipity_event_microformats extends serendipity_event
                     if ($pluginDir === false) {
                         $plugin_dir = str_replace('//', '/', $serendipity['serendipityHTTPPath'] . preg_replace('@^.*(/plugins.*)@', '$1', dirname(__FILE__)));
                     }
-                    echo '<link rel="stylesheet" type="text/css" href="' . $pluginDir . '/tabber.css"/>';
+                    echo '<link rel="stylesheet" type="text/css" href="' . $pluginDir . '/tabber.css"/>'."\n";
                     break;
 
-
                 case 'backend_preview':
-                    // preview works, but content is displayed twice!!
                     if (is_array($serendipity['POST']['properties']) && count($serendipity['POST']['properties']) > 0){
                         $parr = array();
                         $supported_formats = array('hReview', 'hCalendar');
@@ -247,10 +278,10 @@ class serendipity_event_microformats extends serendipity_event
                                 $eventData['properties']['mf_' . $prop_key] = $serendipity['POST']['properties'][$prop_key];
                         }
                     }
-                    include_once(dirname(__FILE__).'/smarty.inc.php');
                     if (!isset($serendipity['smarty'])) {
                         serendipity_smarty_init();
                     }
+                    include_once(dirname(__FILE__).'/smarty.inc.php');
                     $serendipity['smarty']->assign('subnode', ($this->get_config('subnode') ? 1 : 0));
                     if( !defined('Smarty::SMARTY_VERSION') ) {
                         // For Smarty 2
@@ -266,6 +297,7 @@ class serendipity_event_microformats extends serendipity_event
                     break;
 
                 case 'backend_display':
+
                     if (is_array($serendipity['POST']['properties']) && count($serendipity['POST']['properties']) > 0 && isset($serendipity['POST']['properties']['mf_type'])){
                         $supported_properties =& $this->getSupportedProperties($serendipity['POST']['properties']['mf_type']);
                         foreach($supported_properties AS $prop_key => $prop_val) {
@@ -286,9 +318,11 @@ class serendipity_event_microformats extends serendipity_event
                     $itemtypes  = array('hReview' => array('product', 'business', 'event', 'person', 'place', 'website', 'url'));
                     $ratings    = array('hReview' => range(1.0, $this->get_config('best'), $this->get_config('step')));
 
-                    include_once('microformatsBackend.inc.php');
+                    $clock = ($serendipity['version'] > 1)
+                        ? ' <span class="icon-clock"></span><span class="visuallyhidden"> ' . RESET_DATE . '</span>'
+                        : ' <img src="'.serendipity_getTemplateFile('admin/img/clock.png').'" style="border:none;vertical-align:text-top" alt="' . RESET_DATE . '" />'."\n";
 
-                    return true;
+                    include_once('microformatsBackend.inc.php');
                     break;
 
                 case 'backend_publish':
@@ -298,12 +332,10 @@ class serendipity_event_microformats extends serendipity_event
                     }
 
                     $this->addProperties($serendipity['POST']['properties'], $eventData);
-
-                    return true;
                     break;
 
                 case 'entry_display':
-                    if (is_array($serendipity['POST']['properties']) && count($serendipity['POST']['properties']) > 0){
+                    if (!$serendipity['GET']['preview'] && is_array($serendipity['POST']['properties']) && count($serendipity['POST']['properties']) > 0){
                         $parr = array();
                         $supported_formats = array('hReview', 'hCalendar');
                         $supported_properties =& $this->getSupportedProperties($supported_formats);
@@ -316,10 +348,13 @@ class serendipity_event_microformats extends serendipity_event
 
                 default:
                     return false;
-                    break;
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
+
+?>

@@ -1,1 +1,13 @@
+0.47 & 0.25 (sidebar):
+----------------------
+
+ * Uses API for lang includement, touches required version
+ * Some fixes and enhancements for 2.0x
+ * Fix for doubled or tripled entries
+ * Set plugin consistencies
+ * Fix idents, this & that
+
+ (Strike: Known issue: tabber javascript removes title of tabbed divs.)
+
+
 latest: Smarty3 forward compatibility
