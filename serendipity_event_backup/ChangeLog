@@ -1,6 +1,13 @@
 0.14:
 ----
 
+ * A new backend for serendipity_event_backup
+   Extends required version to 2.0.
+ * Restrict to admin usage
+
+0.14:
+----
+
  * Set Plugin consistencies
  * Use lang API - extends required version
 
