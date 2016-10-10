@@ -1322,7 +1322,7 @@ class serendipity_event_backup extends serendipity_event
                     break;
 
                 case 'frontend_footer':
-                    echo "<img src=\"".$serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "") . "plugin/checkautobackup\" width=\"1\" height=\"1\" style=\"border: 0px\" alt=\"\" />";
+                    echo '    <img src="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . '?/' : '') . 'plugin/checkautobackup" width="1" height="1" style="border: 0px" alt="" />'."\n";
                     break;
 
                 case 'external_plugin':
