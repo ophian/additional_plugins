@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.3
  */
@@ -26,7 +26,7 @@
 @define('PLUGIN_MYCALENDAR_SIDE_ITEMS',         'Брой на събитията');
 @define('PLUGIN_MYCALENDAR_SIDE_ITEMS_DESC',    'Колко събития да се показват на страничната приставка ?');
 @define('PLUGIN_MYCALENDAR_SIDE_SHOWTIME',      'Време на активност');
-@define('PLUGIN_MYCALENDAR_SIDE_SHOWTIME_DESC', 'Колко време след датата събитията да се показват на страничната приставка ?'); 
+@define('PLUGIN_MYCALENDAR_SIDE_SHOWTIME_DESC', 'Колко време след датата събитията да се показват на страничната приставка ?');
 @define('PLUGIN_MYCALENDAR_SIDE_PRUNE',         'Автоматично изтриване');
 @define('PLUGIN_MYCALENDAR_SIDE_PRUNE_DESC',    'Изтриване на събитията след като те се случат ?');
 @define('PLUGIN_MYCALENDAR_SIDE_COUNTDOWN',         'Обратен брояч');
@@ -35,3 +35,4 @@
 
 @define('PLUGIN_MYCALENDAR_EVENTDATE2', 'Крайна дата за събитието');
 @define('PLUGIN_MYCALENDAR_RSS', 'Показване на връзка за емисия RSS 2.0');
+

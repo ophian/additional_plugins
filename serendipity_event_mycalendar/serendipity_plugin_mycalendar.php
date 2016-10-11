@@ -1,28 +1,22 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_plugin_mycalendar extends serendipity_plugin {
+class serendipity_plugin_mycalendar extends serendipity_plugin
+{
     function introspect(&$propbag)
     {
         $propbag->add('name',          PLUGIN_MYCALENDAR_SIDE_NAME);
         $propbag->add('description',   PLUGIN_MYCALENDAR_SIDE_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Markus Gerstel');
-        $propbag->add('version',       '0.13.1');
+        $propbag->add('author',        'Garvin Hicking, Markus Gerstel, Ian');
+        $propbag->add('version',       '0.14');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -35,7 +29,8 @@ class serendipity_plugin_mycalendar extends serendipity_plugin {
         $this->dependencies = array('serendipity_event_mycalendar' => 'remove');
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch($name) {
@@ -85,21 +80,21 @@ class serendipity_plugin_mycalendar extends serendipity_plugin {
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_MYCALENDAR_SIDE_PRUNE);
                 $propbag->add('description', PLUGIN_MYCALENDAR_SIDE_PRUNE_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'countdown':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_MYCALENDAR_SIDE_COUNTDOWN);
                 $propbag->add('description', PLUGIN_MYCALENDAR_SIDE_COUNTDOWN_DESC);
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'skipfirst':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_MYCALENDAR_SIDE_SKIPFIRSTFUTURE);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             default:
@@ -108,14 +103,15 @@ class serendipity_plugin_mycalendar extends serendipity_plugin {
         return true;
     }
 
-    function generate_content(&$title, $returnRaw = false) {
+    function generate_content(&$title, $returnRaw = false)
+    {
         global $serendipity;
 
         $title     = $this->get_config('title', $title);
-        $autoprune = serendipity_db_bool($this->get_config('autoprune', false));
-        $countdown = serendipity_db_bool($this->get_config('countdown', false));
+        $autoprune = serendipity_db_bool($this->get_config('autoprune', 'false'));
+        $countdown = serendipity_db_bool($this->get_config('countdown', 'false'));
         $showtime  = 1 + (int)$this->get_config('showtime', 2);
-        $skipfirst = serendipity_db_bool($this->get_config('skipfirst', true));
+        $skipfirst = serendipity_db_bool($this->get_config('skipfirst', 'true'));
         $datefm    = $this->get_config('datefm');
         $datefm2   = $this->get_config('datefm2');
 
@@ -199,13 +195,15 @@ class serendipity_plugin_mycalendar extends serendipity_plugin {
             return $returnRawItems;
         }
 
-        if (serendipity_db_bool($this->get_config('rss'))) {
+        if (serendipity_db_bool($this->get_config('rss', 'true'))) {
             $url = $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/mycalendar.rss';
             echo '<a class="serendipity_xml_icon rsslink" href="' . $url . '" title="RSS"><img src="' . serendipity_getTemplateFile('img/xml.gif') . '" alt="XML" style="border: 0px" /></a>';
         }
 
         return true;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

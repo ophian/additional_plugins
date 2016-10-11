@@ -1,4 +1,9 @@
-# 
+0.18:
+
+ * Rewrite backend markup for Serendipity 2.0x+
+ * Add backend CSS styles
+ * Use lang API includement - extends required version to 1.6
+ * Set some plugin sonsistencies
 
 0.16
 -----
@@ -8,7 +13,7 @@ Use htmlspecialchars() in the RSS output to prevent XML parsing errors
 sidebar 0.13
 --------------
     * Filer by event enddate, not starttime
-    
+
 Version 0.15 (brockhaus)
 ------------------------------------------------------------------------
 
