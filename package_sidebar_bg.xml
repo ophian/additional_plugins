@@ -747,11 +747,11 @@
 <summary>Моят календар</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Показва Вашият персонален календар с X бъдещи събития</description>
-<maintainers><maintainer><name>Garvin Hicking, Markus Gerstel</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Markus Gerstel, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.13.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.14</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-10-11</date>
   <filelist>
 <dir name="serendipity_event_mycalendar">
 <file>.htaccess</file>

@@ -84,9 +84,9 @@
 <title>Моят календар: Показва Вашият персонален календар с X бъдещи събития</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mycalendar</link>
 <category>Sidebar Plugins</category>
-<author>Garvin Hicking, Markus Gerstel</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_mycalendar&lt;br /&gt;Моят календар&lt;/b&gt;&lt;br /&gt;Показва Вашият персонален календар с X бъдещи събития&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Garvin Hicking, Markus Gerstel, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_mycalendar&lt;br /&gt;Моят календар&lt;/b&gt;&lt;br /&gt;Показва Вашият персонален календар с X бъдещи събития&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Tue, 11 Oct 2016 15:21:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_mycalendar</guid>
 </item>
 <item>
