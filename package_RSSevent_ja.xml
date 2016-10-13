@@ -223,7 +223,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 07 Sep 2016 09:12:42 +0200</pubDate>
+<pubDate>Thu, 13 Oct 2016 12:34:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -1224,9 +1224,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <title>ToDo/プロジェクト一覧: Maintain a list of projects and their percentage completion.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_todolist</link>
 <category>Event Plugins</category>
-<author>Steven Tonnesen</author>
-<content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;ToDo/プロジェクト一覧&lt;/b&gt;&lt;br /&gt;Maintain a list of projects and their percentage completion.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<author>Steven Tonnesen, Matthias Mees, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;ToDo/プロジェクト一覧&lt;/b&gt;&lt;br /&gt;Maintain a list of projects and their percentage completion.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Thu, 13 Oct 2016 20:25:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_todolist</guid>
 </item>
 <item>
