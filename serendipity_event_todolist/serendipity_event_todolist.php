@@ -267,7 +267,7 @@ class serendipity_event_todolist extends serendipity_event
 
             switch($event) {
                 case 'backend_sidebar_entries_event_display_percentagedone':
-                    if ($this->get_config('category') == 'custom' && $this->get_config('catbd')!= 'done') {
+                    if ($this->get_config('category') == 'custom' && $this->get_config('catbd') != 'done') {
                         echo '<a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;submit=create_custom">' . PLUGIN_EVENT_TODOLIST_CATDB_WARNING . '</a>';
                     }
 
@@ -381,7 +381,7 @@ class serendipity_event_todolist extends serendipity_event
                     break;
 
                 case 'css_backend':
-                    $eventData .= '
+                    $eventData .= "
 
 /* serendipity_event_todolist start */
 
@@ -448,7 +448,7 @@ class serendipity_event_todolist extends serendipity_event
 
 /* serendipity_event_todolist end */
 
-                    ';
+                    ";
                     break;
 
                 case 'external_plugin':
