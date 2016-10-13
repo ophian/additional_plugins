@@ -3,7 +3,7 @@
  * Rewrite backend markup for Serendipity 2.0x+
  * Add backend CSS styles
  * Use lang API includement - extends required version to 1.6
- * Set some plugin sonsistencies
+ * Set some plugin consistencies
 
 0.16
 -----
