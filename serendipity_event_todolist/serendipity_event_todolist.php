@@ -1,4 +1,4 @@
-<?php #  #
+<?php
 
 //
 // Credit to Matthew Groeninger, whose linklist plugin was the basis for this
@@ -15,36 +15,31 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 @define('PLUGIN_EVENT_TODOLIST_DBVERSION', '1.12');
 
-class serendipity_event_todolist extends serendipity_event {
-
+class serendipity_event_todolist extends serendipity_event
+{
     var $title = PLUGIN_EVENT_TODOLIST_TITLE;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',        PLUGIN_EVENT_TODOLIST_TITLE);
         $propbag->add('description', PLUGIN_EVENT_TODOLIST_DESC);
         $propbag->add('event_hooks',  array('backend_sidebar_entries_event_display_percentagedone'  => true,
+                                            'css_backend'                                           => true,
                                             'external_plugin'                                       => true,
                                             'backend_sidebar_entries'                               => true
                                             ));
-        $propbag->add('author', 'Steven Tonnesen');
-        $propbag->add('version', '1.24.1');
+        $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian');
+        $propbag->add('version', '1.26');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.2.0'
         ));
         $propbag->add('configuration', array('note','title','display','category','cache','colorid','barlength','categorybarlength','barheight', 'font', 'fontsize','whitetextborder','outsidetext','backgroundcolor','cacheimages','numentries'));
         $propbag->add('stackable',     true);
@@ -54,6 +49,7 @@ class serendipity_event_todolist extends serendipity_event {
     function introspect_config_item($name, &$propbag)
     {
         global $serendipity;
+
         switch ($name) {
             case 'note':
                 $propbag->add('type',   'content');
@@ -90,7 +86,7 @@ class serendipity_event_todolist extends serendipity_event {
                     ORDER BY color_name ASC";
                 $colors = serendipity_db_query($q);
 
-                foreach($colors as $color) {
+                foreach($colors AS $color) {
                     $select[$color['colorid']] = $color['color_name'];
                 }
                 $propbag->add('type',          'select');
@@ -203,7 +199,8 @@ class serendipity_event_todolist extends serendipity_event {
         return true;
     }
 
-    function pushFiles(&$select, $dir = '', $pattern = '') {
+    function pushFiles(&$select, $dir = '', $pattern = '')
+    {
         if (!is_dir($dir)) {
             return;
         }
@@ -223,7 +220,8 @@ class serendipity_event_todolist extends serendipity_event {
         return true;
     }
 
-    function purgeCache() {
+    function purgeCache()
+    {
         global $serendipity;
 
         // Delete old cached images if more than 60 images are cached.
@@ -251,7 +249,8 @@ class serendipity_event_todolist extends serendipity_event {
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -274,16 +273,16 @@ class serendipity_event_todolist extends serendipity_event {
 
                     if (isset($_POST['REMOVE'])) {
                         if (isset($_POST['serendipity']['project_to_remove'])) {
-                            foreach ($_POST['serendipity']['project_to_remove'] as $key) {
+                            foreach ($_POST['serendipity']['project_to_remove'] AS $key) {
                                 $this->del_project($key);
                             }
 
                         } elseif (isset($_POST['serendipity']['category_to_remove'])) {
-                            foreach ($_POST['serendipity']['category_to_remove'] as $key) {
+                            foreach ($_POST['serendipity']['category_to_remove'] AS $key) {
                                 $this->del_category($key);
                             }
                         } elseif (isset($_POST['serendipity']['color_to_remove'])) {
-                            foreach ($_POST['serendipity']['color_to_remove'] as $key) {
+                            foreach ($_POST['serendipity']['color_to_remove'] AS $key) {
                                 $this->del_color($key);
                             }
                         }
@@ -373,12 +372,83 @@ class serendipity_event_todolist extends serendipity_event {
                         $this->output_add_edit_projectadmin(FALSE);
                         $this->output_projectadmin();
                     }
-                    return true;
                     break;
 
                 case 'backend_sidebar_entries':
-                    echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone">' . PLUGIN_EVENT_TODOLIST_ADMINPROJECT . '</a></li>';
-                    return true;
+?>
+                    <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone"><?php echo PLUGIN_EVENT_TODOLIST_ADMINPROJECT ?></a></li>
+<?php
+                    break;
+
+                case 'css_backend':
+                    $eventData .= '
+
+/* serendipity_event_todolist start */
+
+.serendipity_todolist_wrap {
+    min-height: .01%;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.serendipity_todolist_wrap table {
+    border: 1px solid #aaa;
+    border-bottom: 0;
+    margin-top: 0;
+    width: 100%;
+}
+
+.serendipity_todolist_wrap tr {
+    border-bottom: 1px solid #aaa;
+}
+
+.serendipity_todolist_wrap th,
+.serendipity_todolist_wrap td {
+    padding: .25em;
+    white-space: nowrap;
+}
+
+.serendipity_todolist_wrap thead tr,
+.serendipity_todolist_wrap tbody tr:nth-child(even) {
+    background-color: #eee;
+}
+
+.serendipity_todolist_wrap input[type='text'],
+.serendipity_todolist_wrap select {
+    width: 100%;
+}
+
+.serendipity_todolist_form label {
+    display: block;
+}
+
+.serendipity_todolist_form input[type='text'],
+.serendipity_todolist_form select {
+    max-width: 20em;
+    min-width: 15em;
+}
+
+@media screen and (min-width: 768px) {
+    .serendipity_todolist_wrap {
+        overflow-y: auto;
+    }
+
+    .serendipity_todolist_wrap th,
+    .serendipity_todolist_wrap td {
+        white-space: normal;
+    }
+
+    .serendipity_todolist_form input[type='text'],
+    .serendipity_todolist_form select {
+        max-width: 30em;
+        min-width: 20em;
+    }
+}
+
+/* serendipity_event_todolist end */
+
+                    ';
                     break;
 
                 case 'external_plugin':
@@ -617,8 +687,7 @@ class serendipity_event_todolist extends serendipity_event {
                             imagettftext($image, $fontsize, 0, $xcoord, $ycoord, $black, $font, $param."%");
                         }
 
-
-                        if (serendipity_db_bool($this->get_config('cacheimages')) and !$nocache) {
+                        if (serendipity_db_bool($this->get_config('cacheimages', 'true')) and !$nocache) {
                             $this->purgeCache();
                             // Save a copy of this image in the cache
 
@@ -642,19 +711,20 @@ class serendipity_event_todolist extends serendipity_event {
                             echo file_get_contents($cap);
                         }
                     }
-                    return true;
                     break;
 
                 default:
                     return false;
                     break;
             }
+            return true;
         } else {
             return false;
         }
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $this->checkSchema();
         if ($this->get_config('cache') == 'yes') {
             $output = $this->get_config('cached_output');
@@ -668,7 +738,8 @@ class serendipity_event_todolist extends serendipity_event {
         }
     }
 
-    function generate_output() {
+    function generate_output()
+    {
         global $serendipity;
 
         $t = $this->get_config('title');
@@ -703,14 +774,14 @@ class serendipity_event_todolist extends serendipity_event {
 
             if ($sql && is_array($sql)) {
                 $barlength       = $this->get_config('barlength');
-                $whitetextborder = serendipity_db_bool($this->get_config('whitetextborder'));
+                $whitetextborder = serendipity_db_bool($this->get_config('whitetextborder', 'false'));
                 $fontsize        = $this->get_config('fontsize');
                 $font            = $this->get_config('font');
                 $font            = preg_replace('/_/','----',$font);
                 $backgroundcolor = $this->get_config('backgroundcolor');
                 $backgroundcolor = preg_replace('/[^0-9a-fA-F]/','',$backgroundcolor);
                 $height          = $this->get_config('barheight');
-                $outsidetext     = $this->get_config('outsidetext');
+                $outsidetext     = serendipity_db_bool($this->get_config('outsidetext', 'false'));
 
                 foreach($sql AS $key => $row) {
                     $entry     = $row['entry'];
@@ -724,7 +795,7 @@ class serendipity_event_todolist extends serendipity_event {
                         $entries = serendipity_db_query($entries_query);
 
                         if (isset($entries) && is_array($entries)) {
-                            foreach ($entries as $k => $entry) {
+                            foreach ($entries AS $k => $entry) {
                                 $entryLink = serendipity_archiveURL(
                                                $entry['id'],
                                                $entry['title'],
@@ -779,7 +850,8 @@ class serendipity_event_todolist extends serendipity_event {
         return $output;
     }
 
-    function getColorById($colorid,$catid) {
+    function getColorById($colorid,$catid)
+    {
         global $serendipity;
 
         $startcolor = '';
@@ -864,22 +936,22 @@ class serendipity_event_todolist extends serendipity_event {
                 break;
         }
 
-        $barlength=$this->get_config('categorybarlength');
-        $height=$this->get_config('barheight');
-        $fontsize=$this->get_config('fontsize');
-        $font=$this->get_config('font');
-        $font = preg_replace('/_/','----',$font);
+        $barlength       = $this->get_config('categorybarlength');
+        $height          = $this->get_config('barheight');
+        $fontsize        = $this->get_config('fontsize');
+        $font            = $this->get_config('font');
+        $font            = preg_replace('/_/','----',$font);
         $backgroundcolor = $this->get_config('backgroundcolor');
         $backgroundcolor = preg_replace('/[^0-9a-fA-F]/','',$backgroundcolor);
-        $outsidetext=$this->get_config('outsidetext');
-        $whitetextborder = serendipity_db_bool($this->get_config('whitetextborder'));
-        if ($this->check_gd()==false) {
+        $outsidetext     = serendipity_db_bool($this->get_config('outsidetext', 'false'));
+        $whitetextborder = serendipity_db_bool($this->get_config('whitetextborder', 'false'));
+        if ($this->check_gd() == false) {
             $barlength=100;
             $imgsrc=$serendipity['baseURL'].($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/percentage__percentagecomplete__'.$barlength.'_'.$height.'__startcolor___endcolor__'.$whitetextborder.'_'.$fontsize.'_'.$font.'_0_'.$outsidetext.'_'.$backgroundcolor;
         } else {
-            $imgsrc=$serendipity['baseURL'].($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/percentage__percentagecomplete__'.$barlength.'_'.$height.'__startcolor___endcolor__'.$whitetextborder.'_'.$fontsize.'_'.$font.'_0_'.$outsidetext.'_'.$backgroundcolor;
-            $capimgsrc=$serendipity['serendipityPath'].PATH_SMARTY_COMPILE.'/'. 'cache_todolist_progressimage-_percentagecomplete__'.$barlength.'_'.$height.'__startcolor___endcolor__'.$whitetextborder.'_'.$fontsize.'_'.$font.'_'.$outsidetext.'_'.$backgroundcolor.'.png';
-            $cacheimgsrc=$serendipity['baseURL'].PATH_SMARTY_COMPILE.'/'. 'cache_todolist_progressimage-_percentagecomplete__'.$barlength.'_'.$height.'__startcolor___endcolor__'.$whitetextborder.'_'.$fontsize.'_'.$font.'_'.$outsidetext.'_'.$backgroundcolor.'.png';
+            $imgsrc = $serendipity['baseURL'].($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/percentage__percentagecomplete__'.$barlength.'_'.$height.'__startcolor___endcolor__'.$whitetextborder.'_'.$fontsize.'_'.$font.'_0_'.$outsidetext.'_'.$backgroundcolor;
+            $capimgsrc = $serendipity['serendipityPath'].PATH_SMARTY_COMPILE.'/'. 'cache_todolist_progressimage-_percentagecomplete__'.$barlength.'_'.$height.'__startcolor___endcolor__'.$whitetextborder.'_'.$fontsize.'_'.$font.'_'.$outsidetext.'_'.$backgroundcolor.'.png';
+            $cacheimgsrc = $serendipity['baseURL'].PATH_SMARTY_COMPILE.'/'. 'cache_todolist_progressimage-_percentagecomplete__'.$barlength.'_'.$height.'__startcolor___endcolor__'.$whitetextborder.'_'.$fontsize.'_'.$font.'_'.$outsidetext.'_'.$backgroundcolor.'.png';
         }
 
         if ($level == 0) {
@@ -1013,7 +1085,8 @@ class serendipity_event_todolist extends serendipity_event {
         return $output;
     }
 
-    function cleanup() {
+    function cleanup()
+    {
         if ($this->get_config('cache') == 'yes') {
             $output = $this->generate_output();
             $this->set_config('cached_output',$output);
@@ -1021,7 +1094,8 @@ class serendipity_event_todolist extends serendipity_event {
         return true;
     }
 
-    function checkSchema() {
+    function checkSchema()
+    {
         global $serendipity;
 
         $version = $this->get_config('dbversion');
@@ -1062,7 +1136,7 @@ class serendipity_event_todolist extends serendipity_event {
 
                 $q = "select id,colorid,startcolor,endcolor from {$serendipity['dbPrefix']}percentagedone";
                 $colors = serendipity_db_query($q);
-                foreach($colors as $color) {
+                foreach($colors AS $color) {
                     if (!empty($color['startcolor']) || !empty($color['endcolor'])) {
                         $q2 = "select colorid from {$serendipity['dbPrefix']}project_colors where color1='{$color['startcolor']}' and color2='{$color['endcolor']}'";
                         $sql = serendipity_db_query($q2);
@@ -1143,7 +1217,8 @@ class serendipity_event_todolist extends serendipity_event {
         }
     }
 
-    function install() {
+    function install()
+    {
         global $serendipity;
         // Create table
         $q   = "CREATE TABLE ".$serendipity['dbPrefix']."percentagedone (
@@ -1180,8 +1255,8 @@ class serendipity_event_todolist extends serendipity_event {
         $this->create_colortable();
     }
 
-    function create_colortable() {
-
+    function create_colortable()
+    {
         global $serendipity;
         $q   = "CREATE TABLE ".$serendipity['dbPrefix']."project_colors (
                             colorid {AUTOINCREMENT} {PRIMARY},
@@ -1201,8 +1276,9 @@ class serendipity_event_todolist extends serendipity_event {
         $this->add_color('Silver', 'eeeeee', '999999');
 
     }
-    function create_cattable() {
 
+    function create_cattable()
+    {
         global $serendipity;
         $q   = "CREATE TABLE ".$serendipity['dbPrefix']."project_category (
                     categoryid {AUTOINCREMENT} {PRIMARY},
@@ -1214,7 +1290,8 @@ class serendipity_event_todolist extends serendipity_event {
         $this->set_config('catbd','done');
     }
 
-    function uninstall(&$propbag) {
+    function uninstall(&$propbag)
+    {
         global $serendipity;
         // Don't Drop table to avoid losing data.
         // $q   = "DROP TABLE ".$serendipity['dbPrefix']."percentagedone";
@@ -1225,9 +1302,9 @@ class serendipity_event_todolist extends serendipity_event {
         // $sql = serendipity_db_schema_import($q);
     }
 
-    function add_project($project, $percentagecomplete, $desc, $catid = 0, $entry, $colorid) {
+    function add_project($project, $percentagecomplete, $desc, $catid = 0, $entry, $colorid)
+    {
         global $serendipity;
-
 
         $q   = "SELECT count(id) FROM {$serendipity['dbPrefix']}percentagedone";
         $sql = serendipity_db_query($q);
@@ -1244,8 +1321,8 @@ class serendipity_event_todolist extends serendipity_event {
         serendipity_db_insert('percentagedone', $values);
     }
 
-
-    function add_cat($name, $parent, $colorid) {
+    function add_cat($name, $parent, $colorid)
+    {
         global $serendipity;
 
         $values['category_name'] = $name;
@@ -1254,7 +1331,8 @@ class serendipity_event_todolist extends serendipity_event {
         serendipity_db_insert('project_category', $values);
     }
 
-    function add_color($name, $color1, $color2) {
+    function add_color($name, $color1, $color2)
+    {
         global $serendipity;
 
         $values['color_name'] = $name;
@@ -1269,25 +1347,24 @@ class serendipity_event_todolist extends serendipity_event {
         }
     }
 
-    function getEntrytext($default = null) {
+    function getEntrytext($default = null)
+    {
         global $serendipity;
 
         $limit = $this->get_config('numentries');
         if ($limit < 3) {
             $limit = 3;
         }
-        $entries_query = "SELECT id,
-                                        title,
-                                        timestamp
-                                   FROM {$serendipity['dbPrefix']}entries
-                                  WHERE isdraft = 'false' AND timestamp <= " . time() . "
-                               ORDER BY timestamp DESC
-                                  LIMIT $limit";
+        $entries_query = "SELECT id, title, timestamp
+                            FROM {$serendipity['dbPrefix']}entries
+                           WHERE isdraft = 'false' AND timestamp <= " . time() . "
+                        ORDER BY timestamp DESC
+                           LIMIT $limit";
         $entries = serendipity_db_query($entries_query);
 
         $entrytext='<option value="0"></option>' . "\n";
         if (isset($entries) && is_array($entries)) {
-            foreach ($entries as $k => $entry) {
+            foreach ($entries AS $k => $entry) {
                 $entryLink = serendipity_archiveURL(
                                $entry['id'],
                                $entry['title'],
@@ -1312,7 +1389,8 @@ class serendipity_event_todolist extends serendipity_event {
         return $entrytext;
     }
 
-    function update_project($id, $project, $percentagecomplete, $desc, $catid, $entry, $colorid) {
+    function update_project($id, $project, $percentagecomplete, $desc, $catid, $entry, $colorid)
+    {
         global $serendipity;
 
         $values['project']            = $project;
@@ -1320,12 +1398,13 @@ class serendipity_event_todolist extends serendipity_event {
         $values['percentagecomplete'] = $percentagecomplete;
         $values['descrip']            = $desc;
         $values['category']           = $catid;
-        $values['colorid']              = $colorid;
+        $values['colorid']            = $colorid;
         $key['id'] = $id;
         serendipity_db_update('percentagedone', $key, $values);
     }
 
-    function del_project($id) {
+    function del_project($id)
+    {
         global $serendipity;
 
         $q   = 'SELECT order_num FROM '.$serendipity['dbPrefix'].'percentagedone where id='.$id;
@@ -1342,8 +1421,8 @@ class serendipity_event_todolist extends serendipity_event {
         }
     }
 
-
-    function del_color($id) {
+    function del_color($id)
+    {
         global $serendipity;
         $q   = 'DELETE FROM '.$serendipity['dbPrefix'].'project_colors where colorid='.$id;
         $sql = serendipity_db_query($q);
@@ -1353,7 +1432,8 @@ class serendipity_event_todolist extends serendipity_event {
         serendipity_db_update('percentagedone', $key, $values);
     }
 
-    function del_category($id) {
+    function del_category($id)
+    {
         global $serendipity;
         $q   = 'DELETE FROM '.$serendipity['dbPrefix'].'project_category where categoryid='.$id;
         $sql = serendipity_db_query($q);
@@ -1363,84 +1443,96 @@ class serendipity_event_todolist extends serendipity_event {
         serendipity_db_update('percentagedone', $key, $values);
     }
 
-    function update_cat($id,$cat) {
+    function update_cat($id,$cat)
+    {
         global $serendipity;
 
         $q   = 'UPDATE '.$serendipity['dbPrefix'].'percentagedone SET category = '.$cat.' where id = '.$id;
         $sql = serendipity_db_query($q);
     }
 
-    function update_color($id,$color) {
+    function update_color($id,$color)
+    {
         global $serendipity;
 
         $q   = 'UPDATE '.$serendipity['dbPrefix'].'percentagedone SET colorid = '.$color.' where id = '.$id;
         $sql = serendipity_db_query($q);
     }
 
-    function update_category_color($id,$color) {
+    function update_category_color($id,$color)
+    {
         global $serendipity;
 
         $q   = 'UPDATE '.$serendipity['dbPrefix'].'project_category SET colorid = '.$color.' where categoryid = '.$id;
         $sql = serendipity_db_query($q);
     }
 
-    function update_colorname($id,$colorname) {
+    function update_colorname($id,$colorname)
+    {
         global $serendipity;
 
         $q   = 'UPDATE '.$serendipity['dbPrefix'].'project_colors SET color_name = "'.$colorname.'" where colorid = '.$id;
         $sql = serendipity_db_query($q);
     }
 
-    function update_color1($id,$color) {
+    function update_color1($id,$color)
+    {
         global $serendipity;
 
         $q   = 'UPDATE '.$serendipity['dbPrefix'].'project_colors SET color1 = "'.$color.'" where colorid = '.$id;
         $sql = serendipity_db_query($q);
     }
 
-    function update_color2($id,$color) {
+    function update_color2($id,$color)
+    {
         global $serendipity;
 
         $q   = 'UPDATE '.$serendipity['dbPrefix'].'project_colors SET color2 = "'.$color.'" where colorid = '.$id;
         $sql = serendipity_db_query($q);
     }
 
-    function update_percent($id,$percent) {
+    function update_percent($id,$percent)
+    {
         global $serendipity;
 
         $q   = 'UPDATE '.$serendipity['dbPrefix'].'percentagedone SET percentagecomplete='.$percent.' where id = '.$id;
         $sql = serendipity_db_query($q);
     }
 
-    function update_startcolor($id,$startcolor) {
+    function update_startcolor($id,$startcolor)
+    {
         global $serendipity;
 
         $q   = 'UPDATE '.$serendipity['dbPrefix'].'percentagedone SET startcolor="'.$startcolor.'" where id = '.$id;
         $sql = serendipity_db_query($q);
     }
 
-    function update_endcolor($id,$endcolor) {
+    function update_endcolor($id,$endcolor)
+    {
         global $serendipity;
 
         $q   = 'UPDATE '.$serendipity['dbPrefix'].'percentagedone SET endcolor="'.$endcolor.'" where id = '.$id;
         $sql = serendipity_db_query($q);
     }
 
-    function update_hidden($id,$hidden) {
+    function update_hidden($id,$hidden)
+    {
         global $serendipity;
 
         $q   = 'UPDATE '.$serendipity['dbPrefix'].'percentagedone SET hidden='.$hidden.' where id = '.$id;
         $sql = serendipity_db_query($q);
     }
 
-    function update_entry($id,$entry) {
+    function update_entry($id,$entry)
+    {
         global $serendipity;
 
         $q   = 'UPDATE '.$serendipity['dbPrefix'].'percentagedone SET entry='.$entry.' where id = '.$id;
         $sql = serendipity_db_query($q);
     }
 
-    function move_up($id) {
+    function move_up($id)
+    {
         global $serendipity;
         $q   = 'SELECT order_num FROM '.$serendipity['dbPrefix'].'percentagedone where id='.$id;
         $sql = serendipity_db_query($q);
@@ -1458,7 +1550,8 @@ class serendipity_event_todolist extends serendipity_event {
         }
     }
 
-    function move_down($id) {
+    function move_down($id)
+    {
         global $serendipity;
 
         $q   = 'SELECT count(id) AS countit FROM '.$serendipity['dbPrefix'].'percentagedone';
@@ -1487,7 +1580,8 @@ class serendipity_event_todolist extends serendipity_event {
         }
     }
 
-    function output_projectadmin() {
+    function output_projectadmin()
+    {
         global $serendipity;
         $display = $this->get_config('display');
         $q = $this->set_query($display);
@@ -1496,17 +1590,21 @@ class serendipity_event_todolist extends serendipity_event {
         echo '<h3>'.PLUGIN_EVENT_TODOLIST_ADMINPROJECT.'</h3>';
 ?>
         <form action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone" method="post">
-        <table border="0" cellpadding="5" cellspacing="0" width="100%">
-            <tr>
-                <td>&nbsp;</td>
-                <td><strong><?php echo PLUGIN_EVENT_TODOLIST_PROJECT; ?></strong></td>
-                <td><strong><?php echo PLUGIN_EVENT_TODOLIST_PERCENTDONE; ?></strong></td>
-                <td><strong><?php echo PLUGIN_EVENT_TODOLIST_HIDDEN; ?></strong></td>
-                <td><strong><?php echo CATEGORY; ?></strong></td>
-                <td><strong><?php echo PLUGIN_EVENT_TODOLIST_BLOGENTRY; ?></strong></td>
-                <td><strong><?php echo PLUGIN_EVENT_TODOLIST_COLOR; ?></strong></td>
-                <?php echo $this->tdoutput; ?>
-            </tr>
+            <div class="serendipity_todolist_wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th><?php echo PLUGIN_EVENT_TODOLIST_PROJECT; ?></th>
+                            <th id="todo_done"><?php echo PLUGIN_EVENT_TODOLIST_PERCENTDONE; ?></th>
+                            <th id="todo_hide"><?php echo PLUGIN_EVENT_TODOLIST_HIDDEN; ?></th>
+                            <th><?php echo CATEGORY; ?></th>
+                            <th id="todo_assign"><?php echo PLUGIN_EVENT_TODOLIST_BLOGENTRY; ?></th>
+                            <th id="todo_color"><?php echo PLUGIN_EVENT_TODOLIST_COLOR; ?></th>
+                            <?php echo $this->tdoutput; ?>
+                        </tr>
+                    </thead>
+                    <tbody>
 <?php
         $sql = serendipity_db_query($q);
         if ($sql && is_array($sql)) {
@@ -1522,14 +1620,14 @@ class serendipity_event_todolist extends serendipity_event {
                 $id                 = $row['id'];
                 if ($display == 'order_num') {
                     if ($sort_idx == 0) {
-                        $moveup   = '<td style="border-bottom: 1px solid #000000">&nbsp;</td>';
+                        $moveup   = "<td>&nbsp;</td>\n";
                     } else {
-                        $moveup   = '<td style="border-bottom: 1px solid #000000"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;submit=move+up&amp;serendipity[project_to_move]=' . $id . '" style="border: 0"><img src="' . serendipity_getTemplateFile('admin/img/uparrow.png') .'" border="0" alt="' . UP . '" /></a></td>';
+                        $moveup   = '<td><a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;submit=move+up&amp;serendipity[project_to_move]=' . $id . '"><span class="icon-up-dir"></span><span class="visuallyhidden">' . UP . "</span></a></td>\n";
                     }
                     if ($sort_idx == (count($sql)-1)) {
-                        $movedown = '<td style="border-bottom: 1px solid #000000">&nbsp;</td>';
+                        $movedown = "<td>&nbsp;</td>\n";
                     } else {
-                        $movedown = '<td style="border-bottom: 1px solid #000000">'.($moveup != '' ? '&nbsp;' : '') . '<a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;submit=move+down&serendipity[project_to_move]=' . $id . '" style="border: 0"><img src="' . serendipity_getTemplateFile('admin/img/downarrow.png') . '" alt="'. DOWN .'" border="0" /></a></td>';
+                        $movedown = '<td><a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;submit=move+down&serendipity[project_to_move]=' . $id . '"><span class="icon-down-dir"></span><span class="visuallyhidden">'. DOWN ."</span></a></td>\n";
                     }
                 }
 
@@ -1541,7 +1639,7 @@ class serendipity_event_todolist extends serendipity_event {
                 $colors = serendipity_db_query($q);
 
                 $colortext = '<option value="0">' . USE_DEFAULT . "</option>\n";
-                foreach ($colors as $color) {
+                foreach ($colors AS $color) {
                     if ($color['colorid'] == $colorid) {
                         $colortext.= '<option value="' . $color['colorid'] . '" selected="selected">' . $color['color_name'] . "</option>\n";
                     } else {
@@ -1557,63 +1655,56 @@ class serendipity_event_todolist extends serendipity_event {
                     $showchecked   = 'checked="checked"';
                 }
 ?>
-                <tr>
-                    <td style="border-bottom: 1px solid #000000" align="right">
-                        <div>
-                           <input class="input_checkbox" type="checkbox" name="serendipity[project_to_remove][]" value="<?php echo $id; ?>" />
-                         </div>
-                    </td>
-                    <td style="border-bottom: 1px solid #000000"><strong><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[edit_project]=<?php echo $id; ?>"><?php echo $project; ?></a></strong></td>
-                    <td style="border-bottom: 1px solid #000000" nowrap="nowrap" align="center">
-                        <div><input class="input_textbox" name="serendipity[project_to_repercent][<?php echo $id?>]" value="<?php echo $percentagecomplete?>" size="3" />%</div>
-                    </td>
-                    <td style="border-bottom: 1px solid #000000" align="center">
-                       <input class="input_checkbox" type="checkbox" name="serendipity[project_to_hide][<?php echo $id?>]" value="1" <?php echo $hiddenchecked?> />
-                    </td>
-                    <td style="border-bottom: 1px solid #000000">
-                        <?php echo $this->category_box($id, $categories, $current_category); ?>
-                    </td>
-                    <td style="border-bottom: 1px solid #000000">
-                        <select name="serendipity[project_to_reassign][<?php echo $id?>]"><?php echo $entrytext?></select>
-                    </td>
-                    <td style="border-bottom: 1px solid #000000">
-                        <select name="serendipity[project_to_recolor][<?php echo $id?>]"><?php echo $colortext?></select>
-                    </td>
-                    <?php echo $moveup ?>
-                    <?php echo $movedown ?>
-                </tr>
+                        <tr>
+                            <td class="form_check"><input type="checkbox" name="serendipity[project_to_remove][]" value="<?php echo $id; ?>"></td>
+                            <td><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[edit_project]=<?php echo $id; ?>"><?php echo $project; ?></a></td>
+                            <td class="form_field"><input type="text" aria-labelledby="todoproj_done" name="serendipity[project_to_repercent][<?php echo $id?>]" value="<?php echo $percentagecomplete?>" size="3"></td>
+                            <td class="form_check"><input aria-labelledby="todo_hide" type="checkbox" name="serendipity[project_to_hide][<?php echo $id?>]" value="1" <?php echo $hiddenchecked?>></td>
+                            <td class="form_select"><?php echo $this->category_box($id, $categories, $current_category); ?></td>
+                            <td class="form_select"><select aria-labelledby="todo_assign" name="serendipity[project_to_reassign][<?php echo $id?>]"><?php echo $entrytext?></select></td>
+                            <td class="form_select"><select aria-labelledby="todo_color" name="serendipity[project_to_recolor][<?php echo $id?>]"><?php echo $colortext?></select></td>
+                            <?php echo $moveup ?>
+                            <?php echo $movedown ?>
+                        </tr>
 <?php
                 $sort_idx++;
             }
-
-            echo '<br />';
-            if ($this->get_config('category') == 'custom') {
-                $catproject = '<a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_category]=1">'.PLUGIN_EVENT_TODOLIST_ADD_CAT.'</a>';
-            }
-            $colorproject = '<a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_colors]=1">'.PLUGIN_EVENT_TODOLIST_MANAGE_COLORS.'</a>';
-            echo "<tr><td colspan=4>&nbsp;</td><td>$catproject</td><td>&nbsp;</td><td>$colorproject</td></tr>";
-            echo '</table>';
-            echo '<div>';
-            echo '<input type="submit" name="SAVE"   title="' . SAVE . '"    value="' . SAVE . '"   class="serendipityPrettyButton input_button" />';
-            echo '&nbsp;';
-            echo '<input type="submit" name="REMOVE" title="' . REMOVE . '"  value="' . DELETE . '" class="serendipityPrettyButton input_button" />';
-            echo '</div>';
-            echo '</form>';
         }
+?>
+                    </tbody>
+                </table>
+            </div>
+<?php
+
+        echo '<div class="form_buttons">'."\n";
+        echo '    <input type="submit" name="SAVE" title="' . SAVE . '" value="' . SAVE . '">' . "\n";
+        echo '    <input class="state_cancel" type="submit" name="REMOVE" title="' . REMOVE . '"  value="' . DELETE . '">'."\n";
+        if ($this->get_config('category') == 'custom') {
+            echo '<a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_category]=1">'.PLUGIN_EVENT_TODOLIST_ADD_CAT.'</a>'."\n";
+        }
+        echo '<a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_colors]=1">'.PLUGIN_EVENT_TODOLIST_MANAGE_COLORS.'</a>'."\n";
+?>
+        </div>
+    </form>
+<?php
     }
 
-    function category_box($id,$categories,$current_category = 0) {
-        $x = "\n<select name=\"serendipity[project_to_recat][".$id."]\">\n";
-        foreach ($categories as $k => $v) {
+    function category_box($id,$categories,$current_category = 0)
+    {
+        $x = "\n<select id=\"serendipity_project_to_recat\" name=\"serendipity[project_to_recat][".$id."]\">\n";
+        foreach ($categories AS $k => $v) {
             $x .= "    <option value=\"$k\"" . ($k == $current_category ? ' selected="selected"' : '') . ">$v</option>\n";
         }
         return $x . "</select>\n";
     }
 
-    function output_add_edit_projectadmin($edit = FALSE, $id = -1) {
+    function output_add_edit_projectadmin($edit = FALSE, $id = -1)
+    {
         global $serendipity;
+
         $display = $this->get_config('display');
         $categories = $this->build_categories();
+
         if ($edit) {
             $maintitle = PLUGIN_EVENT_TODOLIST_EDITPROJECT;
             $q = 'SELECT * FROM '.$serendipity['dbPrefix'].'percentagedone WHERE id = '.$id;
@@ -1627,28 +1718,28 @@ class serendipity_event_todolist extends serendipity_event {
                 $cat                = $res['category'];
                 $projectentry       = $res['entry'];
                 $desc               = $res['descrip'];
-                $colorid               = $res['colorid'];
+                $colorid            = $res['colorid'];
                 $entry              = $res['entry'];
                 $hidden             = $res['hidden'];
             }
-            $button = '<input type="submit" name="EDIT" title="' . EDIT . '"  value="' . EDIT . '" class="serendipityPrettyButton input_button" />';
+            $button = '<input type="submit" name="EDIT" title="' . EDIT . '"  value="' . EDIT . '">'."\n";
         } else {
             $maintitle = PLUGIN_EVENT_TODOLIST_ADDPROJECT;
-            $button = '<input type="submit" name="ADD" title="' . GO . '"  value="' . GO . '" class="serendipityPrettyButton input_button" />';
+            $button = '<input type="submit" name="ADD" title="' . GO . '"  value="' . GO . '">'."\n";
         }
 
         if ($this->get_config('category') == 'custom') {
-            $catproject = '(<a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_category]=1">'.PLUGIN_EVENT_TODOLIST_ADD_CAT.'</a>)';
+            $catproject = '<a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_category]=1">'.PLUGIN_EVENT_TODOLIST_ADD_CAT.'</a>'."\n";
         }
-        $colorproject = '(<a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_colors]=1">'.PLUGIN_EVENT_TODOLIST_MANAGE_COLORS.'</a>)';
-        echo '<h3>' . $maintitle . '</h3>';
+        $colorproject = '<a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_colors]=1">'.PLUGIN_EVENT_TODOLIST_MANAGE_COLORS.'</a>'."\n";
+        echo '<h2>' . $maintitle . '</h2>'."\n";
 
         $entrytext = $this->getEntrytext($projectentry);
 
         if ($this->check_gd()) {
             $nogdwarning = '';
         } else {
-            $nogdwarning = "<br />" . PLUGIN_EVENT_TODOLIST_NOGDLIB;
+            $nogdwarning = ' ' . PLUGIN_EVENT_TODOLIST_NOGDLIB;
         }
 
         $q = "SELECT *
@@ -1658,7 +1749,7 @@ class serendipity_event_todolist extends serendipity_event {
         $colors = serendipity_db_query($q);
 
         $colortext = '<option value="0" selected="selected">' . USE_DEFAULT . "</option>\n";
-        foreach ($colors as $color) {
+        foreach ($colors AS $color) {
             if ($color['colorid'] == $colorid) {
                 $colortext .= '<option value="'.$color['colorid'].'" selected="selected">'.$color['color_name']."</option>\n";
             } else {
@@ -1666,85 +1757,99 @@ class serendipity_event_todolist extends serendipity_event {
             }
         }
 ?>
-        <form action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone" method="post">
-        <input type="hidden" name="serendipity[add_project][id]" value="<?php echo $id; ?>" />
-        <table border="0" cellpadding="5" cellspacing="0" width="100%">
-            <tr>
-                <td><?php echo PLUGIN_EVENT_TODOLIST_PROJECT; ?></td>
-                <td><input class="input_textbox" type="text" name="serendipity[add_project][project]" value="<?php echo $project; ?>" size="30" /></td>
-            </tr>
+        <form class="serendipity_todolist_form" action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone" method="post">
+            <input type="hidden" name="serendipity[add_project][id]" value="<?php echo $id; ?>">
 
-            <tr>
-                <td><?php echo CATEGORY; ?> <?php echo $catproject;?></td>
-                <td><?php echo $this->category_box('cat',$categories,$cat); ?></td>
-            </tr>
+            <div class="form_field">
+                <label for="serendipity_addproject_project"><?php echo PLUGIN_EVENT_TODOLIST_PROJECT; ?></label>
+                <input id="serendipity_addproject_project" type="text" name="serendipity[add_project][project]" value="<?php echo $project; ?>" size="30">
+            </div>
 
-            <tr>
-                <td><?php echo PLUGIN_EVENT_TODOLIST_COLOR; ?> <?php echo $colorproject;?></td>
-                <td><select name="serendipity[add_project][colorid]"><?php echo $colortext?></select></td>
-            </tr>
+            <div class="form_select">
+                <label for="serendipity_project_to_recat"><?php echo CATEGORY; ?></label>
+                <?php echo $this->category_box('cat',$categories,$cat); ?>
+                <?php echo $catproject;?>
+            </div>
 
-            <tr>
-                <td><?php echo PLUGIN_EVENT_TODOLIST_PERCENTAGECOMPLETE; ?></td>
-                <td><input class="input_textbox" type="text" name="serendipity[add_project][percentagecomplete]" value="<?php echo $percentagecomplete; ?>" size="5" />%<?php echo $nogdwarning; ?></td>
-            </tr>
+            <div class="form_select">
+                <label for="serendipity_addproject_colorid"><?php echo PLUGIN_EVENT_TODOLIST_COLOR; ?></label>
+                <select id="serendipity_addproject_colorid" name="serendipity[add_project][colorid]">
+                    <?php echo $colortext?>
+                </select>
+                <?php echo $colorproject;?>
+            </div>
 
-            <tr>
-                <td><?php echo PLUGIN_EVENT_TODOLIST_BLOGENTRY; ?></td>
-                <td><select name="serendipity[add_project][entry]"><?php echo $entrytext?></select></td>
-            </tr>
+            <div class="form_field">
+                <label for="serendipity_addproject_percentagecomplete"><?php echo PLUGIN_EVENT_TODOLIST_PERCENTAGECOMPLETE; ?></label>
+                <input id="serendipity_addproject_percentagecomplete" type="text" name="serendipity[add_project][percentagecomplete]" value="<?php echo $percentagecomplete; ?>" size="3"><?php echo $nogdwarning; ?>
+            </div>
 
-            <tr>
-                <td><?php echo PLUGIN_EVENT_TODOLIST_PROJECTDESC; ?></td>
-                <td><textarea style="width: 100%" name="serendipity[add_project][desc]" id="serendipity[add_project][desc]" cols="80" rows="3"><?php echo $desc; ?></textarea></td>
-            </tr>
-        </table>
-        <div><?php echo $button; ?></div>
+            <div class="form_select">
+                <label for="serendipity_addproject_entry"><?php echo PLUGIN_EVENT_TODOLIST_BLOGENTRY; ?></label>
+                <select id="serendipity_addproject_entry" name="serendipity[add_project][entry]">
+                    <?php echo $entrytext?>
+                </select>
+            </div>
+
+            <div class="form_area">
+                <label for="serendipity[add_project][desc]"><?php echo PLUGIN_EVENT_TODOLIST_PROJECTDESC; ?></label>
+                <textarea  name="serendipity[add_project][desc]" id="serendipity[add_project][desc]"  rows="3"><?php echo $desc; ?></textarea>
+            </div>
+
+            <div class="form_buttons">
+                <?php echo $button; ?>
+            </div>
         </form>
 <?php
     }
 
-    function output_colorsadmin()  {
+    function output_colorsadmin()
+    {
         global $serendipity;
-        $display = $this->get_config('display');
+
+        $display    = $this->get_config('display');
         $categories = $this->build_categories();
-        $maintitle = PLUGIN_EVENT_TODOLIST_ADD_COLOR;
-        $button = '<input type="submit" name="ADD" title="' . GO . '"  value="' . GO . '" class="serendipityPrettyButton input_button" />';
-        echo '<h3>'.$maintitle.'</h3>';
 ?>
-        <form action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_colors]=1" method="post">
-        <input type="hidden" name="serendipity[add_project][id]" value="<?php echo $id; ?>" />
-        <table border="0" cellpadding="5" cellspacing="0" width="100%">
-            <tr>
-                <td><?php echo PLUGIN_EVENT_TODOLIST_ADDCOLOR_NAME; ?></td>
-                <td><input class="input_textbox" type="text" name="serendipity[add_color][title]" size="16" /></td>
-            </tr>
+        <h2><?php echo PLUGIN_EVENT_TODOLIST_ADD_COLOR ?></h2>
+        <form class="serendipity_todolist_form" action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_colors]=1" method="post">
+            <input type="hidden" name="serendipity[add_project][id]" value="<?php echo $id; ?>">
 
-            <tr>
-                <td><?php echo PLUGIN_EVENT_TODOLIST_ADDCOLOR_COLOR1; ?></td>
-                <td><input class="input_textbox" type="text" name="serendipity[add_color][color1]" size="8" /></td>
-            </tr>
+            <div class="form_field">
+                <label for="serendipity_addcolor_title"><?php echo PLUGIN_EVENT_TODOLIST_ADDCOLOR_NAME; ?></label>
+                <input id="serendipity_addcolor_title" type="text" name="serendipity[add_color][title]" size="10">
+            </div>
 
-            <tr>
-                <td><?php echo PLUGIN_EVENT_TODOLIST_ADDCOLOR_COLOR2; ?></font></td>
-                <td><input class="input_textbox" type="text" name="serendipity[add_color][color2]" size="8" /></td>
-            </tr>
-        </table>
-        <div><?php echo $button; ?></div>
+            <div class="form_field">
+                <label for="serendipity_addcolor_color1"><?php echo PLUGIN_EVENT_TODOLIST_ADDCOLOR_COLOR1; ?></label>
+                <input id="serendipity_addcolor_color1" type="text" name="serendipity[add_color][color1]" size="7">
+            </div>
+
+            <div class="form_field">
+                <label for="serendipity_addcolor_color2"><?php echo PLUGIN_EVENT_TODOLIST_ADDCOLOR_COLOR2; ?></label>
+                <input id="serendipity_addcolor_color2" type="text" name="serendipity[add_color][color2]" size="7">
+            </div>
+
+            <div class="form_buttons">
+                <input type="submit" name="ADD" title="<?php echo GO ?>"  value="<?php echo GO ?>">
+            </div>
         </form>
 <?php
-        echo '<h3>'.PLUGIN_EVENT_TODOLIST_MANAGE_COLORS.'</h3>';
-        echo "<a href=# onclick=\"F1 = window.open('index.php?/plugin/colorwheel','Zoom','height=600,width=950,top=0,left=0,toolbar=no,menubar=no,location=no,resize=1,resizable=1,statusbar=0');\">".PLUGIN_EVENT_TODOLIST_COLORWHEEL.'</a>';
+        echo '<h3>'.PLUGIN_EVENT_TODOLIST_MANAGE_COLORS.'</h3>'."\n";
+        echo "<a class=\"button_link\" href=# onclick=\"F1 = window.open('index.php?/plugin/colorwheel','Zoom','height=600,width=950,top=0,left=0,toolbar=no,menubar=no,location=no,resize=1,resizable=1,statusbar=0');\">".PLUGIN_EVENT_TODOLIST_COLORWHEEL.'</a>'."\n";
 ?>
         <form action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_colors]=1" method="post">
-        <table border="2" cellpadding="1" cellspacing="0" width="100%">
-            <tr>
-                <td></td>
-                <td align="center"><strong><?php echo PLUGIN_EVENT_TODOLIST_COLOR; ?></strong></td>
-                <td colspan="2" align="center"><strong><?php echo PLUGIN_EVENT_TODOLIST_COLOR1; ?></strong></td>
-                <td colspan="2" align="center"><strong><?php echo PLUGIN_EVENT_TODOLIST_COLOR2; ?></strong></td>
-                <td align="center"><strong><?php echo PLUGIN_EVENT_TODOLIST_SAMPLE; ?></strong></td>
-            </tr>
+            <div class="serendipity_todolist_wrap">
+                <table>
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th><?php echo PLUGIN_EVENT_TODOLIST_COLOR; ?></th>
+                        <th colspan="2"><?php echo PLUGIN_EVENT_TODOLIST_COLOR1; ?></th>
+                        <th colspan="2"><?php echo PLUGIN_EVENT_TODOLIST_COLOR2; ?></th>
+                        <th><?php echo PLUGIN_EVENT_TODOLIST_SAMPLE; ?></th>
+                    </tr>
+                </thead>
+                <tbody>
 <?php
         $q = "SELECT *
                 FROM {$serendipity['dbPrefix']}project_colors
@@ -1763,10 +1868,10 @@ class serendipity_event_todolist extends serendipity_event {
         $font            = preg_replace('/_/', '----', $font);
         $backgroundcolor = $this->get_config('backgroundcolor');
         $backgroundcolor = preg_replace('/[^0-9a-fA-F]/','',$backgroundcolor);
-        $outsidetext     = $this->get_config('outsidetext');
-        $whitetextborder = serendipity_db_bool($this->get_config('whitetextborder'));
+        $outsidetext     = serendipity_db_bool($this->get_config('outsidetext', 'false'));
+        $whitetextborder = serendipity_db_bool($this->get_config('whitetextborder', 'false'));
 
-        foreach ($colors as $color) {
+        foreach ($colors AS $color) {
             $colorid    = $color['colorid'];
             $startcolor = $color['color1'];
             $startcolor = preg_replace('/[^0-9a-fA-F]/', '', $startcolor);
@@ -1781,39 +1886,37 @@ class serendipity_event_todolist extends serendipity_event {
             $color1 = preg_replace('/[^0-9a-fA-F]/', '', $color1);
             $color2 = preg_replace('/[^0-9a-fA-F]/', '', $color2);
 ?>
-            <tr>
-                <td width="16">
-                    <input class="input_checkbox" type="checkbox" name="serendipity[color_to_remove][]" value="<?php echo $color['colorid']; ?>" />
-                </td>
+                    <tr>
+                        <td class="form_check"><input type="checkbox" name="serendipity[color_to_remove][]" value="<?php echo $color['colorid']; ?>"></td>
                 <!--
                 <td style="border-bottom: 1px solid #000000" nowrap="nowrap" align="center">
-                    <div><input name="serendipity[project_to_repercent][<?php echo $id?>]" value="<?php echo $percentagecomplete?>" size="3" />%</div>
+                    <div><input type="text" name="serendipity[project_to_repercent][<?php echo $id?>]" value="<?php echo $percentagecomplete?>" size="3" />%</div>
                 </td>
                 -->
 
-                <td width="30" align="center"><div><input class="input_textbox" name="serendipity[color_to_rename][<?php echo $colorid?>]" value="<?php echo $color['color_name'] ?>" size="16" /></td>
-                <td width="10" bgcolor="#<?php echo $color1 ?>"> </td>
-                <td width="30" align="center"><div><input class="input_textbox" name="serendipity[color_to_recolor1][<?php echo $colorid?>]" value="<?php echo $color['color1'] ?>" size="8" /></td>
-                <td width="10" bgcolor="#<?php echo $color2 ?>"> </td>
-                <td width="30" align="center"><div><input class="input_textbox" name="serendipity[color_to_recolor2][<?php echo $colorid?>]" value="<?php echo $color['color2'] ?>" size="8" /></td>
-                <td width="120" align="center"><img src="<?php echo $imgsrc ?>" height="<?php echo $height?>" width="<?php echo $barlength?>" alt=""/></td>
-            </tr>
+                        <td class="form_field"><input type="text" name="serendipity[color_to_rename][<?php echo $colorid ?>]" value="<?php echo $color['color_name'] ?>" size="16"></td>
+                        <td width="10" bgcolor="#<?php echo $color1 ?>"> </td>
+                        <td class="form_field"><input type="text" name="serendipity[color_to_recolor1][<?php echo $colorid ?>]" value="<?php echo $color['color1'] ?>" size="7"></td>
+                        <td width="10" bgcolor="#<?php echo $color2 ?>"> </td>
+                        <td class="form_field"><input type="text" name="serendipity[color_to_recolor2][<?php echo $colorid ?>]" value="<?php echo $color['color2'] ?>" size="7"></td>
+                        <td><img src="<?php echo $imgsrc ?>" height="<?php echo $height ?>" width="<?php echo $barlength ?>" alt=""></td>
+                    </tr>
 <?php
         }
 ?>
-        </table>
-        <div>
-<?php
-        echo '<input type="submit" name="SAVE"   title="'.SAVE.'"    value="'.SAVE.'" class="serendipityPrettyButton input_button" />';
-        echo '&nbsp;';
-        echo '<input type="submit" name="REMOVE" title="'.REMOVE.'"  value="'.DELETE.'" class="serendipityPrettyButton input_button" />';
-?>
-        </div>
+                </table>
+            </div>
+
+            <div class="form_buttons">
+                <input type="submit" name="SAVE" title="<?php echo SAVE ?>" value="<?php echo SAVE ?>">
+                <input class="state_cancel" type="submit" name="REMOVE" title="<?php echo REMOVE ?>"  value="<?php echo DELETE ?>">
+            </div>
         </form>
 <?php
     }
 
-    function output_categoryadmin()  {
+    function output_categoryadmin()
+    {
         global $serendipity;
         $display    = $this->get_config('display');
         $categories = $this->build_categories();
@@ -1824,54 +1927,59 @@ class serendipity_event_todolist extends serendipity_event {
         $colors = serendipity_db_query($q);
 
         $colortext = '<option value="0" selected="selected">' . USE_DEFAULT . "</option>\n";
-        foreach ( $colors as $color ) {
+        foreach ( $colors AS $color ) {
             $colortext .= '<option value="'.$color['colorid'].'">'.$color['color_name']."</option>\n";
         }
-        $maintitle = PLUGIN_EVENT_TODOLIST_ADD_CAT;
-        $button = '<input type="submit" name="ADD" title="'.GO.'"  value="'.GO.'" class="serendipityPrettyButton input_button" />';
-        echo '<h3>'.$maintitle.'</h3>';
 ?>
-        <form action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_category]=1" method="post">
-        <input type="hidden" name="serendipity[add_project][id]" value="<?php echo $id; ?>">
-        <table border="0" cellpadding="5" cellspacing="0" width="100%">
-            <tr>
-                <td><?php echo PLUGIN_EVENT_TODOLIST_CAT_NAME; ?></td>
-                <td><input class="input_textbox" type="text" name="serendipity[add_category][title]" size="30" /></td>
-            </tr>
+        <h2><?php echo PLUGIN_EVENT_TODOLIST_ADD_CAT ?></h2>
+        <form class="serendipity_todolist_form" action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_category]=1" method="post">
+            <input type="hidden" name="serendipity[add_project][id]" value="<?php echo $id; ?>">
 
-            <tr>
-                <td><?php echo PLUGIN_EVENT_TODOLIST_PARENT_CATEGORY; ?></td>
-                <td><?php echo $this->category_box('cat',$categories,$cat); ?></td>
-            </tr>
+            <div class="form_field">
+                <label for="serendipity_addcategory_title"><?php echo PLUGIN_EVENT_TODOLIST_CAT_NAME; ?></label>
+                <input id="serendipity_addcategory_title" type="text" name="serendipity[add_category][title]" size="30">
+            </div>
 
-            <tr>
-                <td><?php echo PLUGIN_EVENT_TODOLIST_COLOR; ?></td>
-                <td><select name="serendipity[add_category][colorid]"><?php echo $colortext?></select></td>
-            </tr>
-        </table>
-        <div><?php echo $button; ?></div>
+            <div class="form_select">
+                <label for="serendipity_project_to_recat"><?php echo PLUGIN_EVENT_TODOLIST_PARENT_CATEGORY; ?></label>
+                <?php echo $this->category_box('cat',$categories,$cat); ?>
+            </div>
+
+            <div class="form_select">
+                <label for="serendipity_addcategory_colorid"><?php echo PLUGIN_EVENT_TODOLIST_COLOR; ?></label>
+                <select id="serendipity_addcategory_colorid" name="serendipity[add_category][colorid]"><?php echo $colortext?></select>
+            </div>
+
+            <div class="form_buttons">
+                <input type="submit" name="ADD" title="<?php echo GO ?>"  value="<?php echo GO ?>">
+            </div>
         </form>
-<?php
-        echo '<h3>'.PLUGIN_EVENT_TODOLIST_ADMINCAT.'</h3>';
-?>
+
+        <h3><?php echo PLUGIN_EVENT_TODOLIST_ADMINCAT ?></h3>
+
         <form action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_category]=1" method="post">
-        <table border="0" cellpadding="1" cellspacing="0" width="100%">
-            <tr>
-                <td></td>
-                <td><strong><?php echo CATEGORY; ?></strong></td>
-                <td><strong><?php echo PLUGIN_EVENT_TODOLIST_COLOR; ?></strong></td>
-            </tr>
+            <div class="serendipity_todolist_wrap">
+                <table>
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th><?php echo CATEGORY; ?></th>
+                        <th><span id="todolist_category_label"><?php echo PLUGIN_EVENT_TODOLIST_COLOR; ?></span></th>
+                    </tr>
+                </thead>
+                <tbody>
 <?php
+
         $q = "SELECT *
                 FROM {$serendipity['dbPrefix']}project_category
             ORDER BY category_name DESC";
-
         $categories = serendipity_db_query($q);
+
         $categories = @serendipity_walkRecursive($categories, 'categoryid', 'parentid', VIEWMODE_THREADED);
 
-        foreach ($categories as $category) {
+        foreach ($categories AS $category) {
             $colortext = '<option value="0" selected="selected">' . USE_DEFAULT . "</option>\n";
-            foreach ($colors as $color) {
+            foreach ($colors AS $color) {
                 if ($color['colorid'] == $category['colorid']) {
                     $colortext .= '<option value="'.$color['colorid'].'" selected="selected">'.$color['color_name']."</option>\n";
                 } else {
@@ -1879,134 +1987,129 @@ class serendipity_event_todolist extends serendipity_event {
                 }
             }
 ?>
-            <tr>
-                <td width="16">
-                    <input class="input_checkbox" type="checkbox" name="serendipity[category_to_remove][]" value="<?php echo $category['categoryid']; ?>" />
-                </td>
-
-                <td width="300" style="padding-left: <?php echo ($category['depth']*15)+20 ?>px"><img src="<?php echo serendipity_getTemplateFile('admin/img/folder.png') ?>" style="vertical-align: bottom;" alt=""> <?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($category['category_name']) : htmlspecialchars($category['category_name'], ENT_COMPAT, LANG_CHARSET)) ?></td>
-
-                <td>
-                    <select name="serendipity[category_to_recolor][<?php echo $category['categoryid']?>]"><?php echo $colortext?></select>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="form_check"><input type="checkbox" name="serendipity[category_to_remove][]" value="<?php echo $category['categoryid']; ?>"></td>
+                        <td class="category_level_<?php echo $category['depth'] ?>"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($category['category_name']) : htmlspecialchars($category['category_name'], ENT_COMPAT, LANG_CHARSET)) ?></td>
+                        <td class="form_select"><select aria-labelledby="todolist_category_label" name="serendipity[category_to_recolor][<?php echo $category['categoryid'] ?>]"><?php echo $colortext ?></select></td>
+                    </tr>
 <?php
         }
 ?>
-        </table>
-        <div>
-<?php
-        echo '<input type="submit" name="SAVE" title="'.SAVE.'"  value="'.SAVE.'" class="serendipityPrettyButton input_button" />';
-        echo '&nbsp;';
-        echo '<input type="submit" name="REMOVE" title="'.REMOVE.'"  value="'.DELETE.'" class="serendipityPrettyButton input_button" />';
-?>
-        </div>
+                </tbody>
+                </table>
+            </div>
+            <div class="form_buttons">
+                <input type="submit" name="SAVE" title="<?php echo SAVE ?>" value="<?php echo SAVE ?>">
+                <input type="submit" name="REMOVE" title="<?php echo REMOVE ?>" value="<?php echo DELETE ?>">
+            </div>
         </form>
 <?php
     }
 
-    function set_query($display) {
+    function set_query($display)
+    {
         global $serendipity;
 
         switch($display) {
             case 'js_category':
             case 'category':
-                $q = 'SELECT    s.project           AS project,
-                                s.title             AS name,
+                $q = "SELECT    s.project            AS project,
+                                s.title              AS name,
                                 s.percentagecomplete AS percentagecomplete,
-                                s.category          AS cat_id,
-                                s.id                AS id,
-                                s.entry             AS entry,
-                                s.hidden            AS hidden,
-                                s.colorid           AS colorid
-                                FROM    '.$serendipity['dbPrefix'].'percentagedone AS s
-                                ORDER BY    s.category';
+                                s.category           AS cat_id,
+                                s.id                 AS id,
+                                s.entry              AS entry,
+                                s.hidden             AS hidden,
+                                s.colorid            AS colorid
+                        FROM    {$serendipity['dbPrefix']}percentagedone AS s
+                    ORDER BY    s.category";
                 break;
 
             case 'order_num':
-                $q = 'SELECT    s.project           AS project,
-                                s.title             AS name,
+                $q = "SELECT    s.project            AS project,
+                                s.title              AS name,
                                 s.percentagecomplete AS percentagecomplete,
-                                s.category          AS cat_id,
-                                s.id                AS id,
-                                s.entry             AS entry,
-                                s.hidden            AS hidden,
-                                s.colorid           AS colorid,
-                                s.order_num         AS order_num
-                                FROM    '.$serendipity['dbPrefix'].'percentagedone AS s
-                                ORDER BY    s.order_num ASC';
-                $this->tdoutput = '<td colspan="2">&nbsp;</td>';
+                                s.category           AS cat_id,
+                                s.id                 AS id,
+                                s.entry              AS entry,
+                                s.hidden             AS hidden,
+                                s.colorid            AS colorid,
+                                s.order_num          AS order_num
+                        FROM    {$serendipity['dbPrefix']}percentagedone AS s
+                    ORDER BY    s.order_num ASC";
+                $this->tdoutput = '<th colspan="2">&nbsp;</th>';
                 break;
 
             case 'dateacs':
-                $q = 'SELECT    s.project           AS project,
-                                s.title             AS name,
+                $q = "SELECT    s.project            AS project,
+                                s.title              AS name,
                                 s.percentagecomplete AS percentagecomplete,
-                                s.category          AS cat_id,
-                                s.id                AS id,
-                                s.entry             AS entry,
-                                s.hidden            AS hidden,
-                                s.colorid           AS colorid
-                                FROM    '.$serendipity['dbPrefix'].'percentagedone AS s
-                                ORDER BY date_added ASC';
+                                s.category           AS cat_id,
+                                s.id                 AS id,
+                                s.entry              AS entry,
+                                s.hidden             AS hidden,
+                                s.colorid            AS colorid
+                        FROM    {$serendipity['dbPrefix']}percentagedone AS s
+                    ORDER BY    date_added ASC";
                 break;
 
             case 'progress':
-                $q = 'SELECT    s.project              AS project,
-                                s.title             AS name,
+                $q = "SELECT    s.project            AS project,
+                                s.title              AS name,
                                 s.percentagecomplete AS percentagecomplete,
-                                s.category          AS cat_id,
-                                s.id                AS id,
-                                s.entry             AS entry,
-                                s.hidden            AS hidden,
-                                s.colorid           AS colorid
-                                FROM    '.$serendipity['dbPrefix'].'percentagedone AS s
-                                ORDER BY percentagecomplete ASC, project ASC';
+                                s.category           AS cat_id,
+                                s.id                 AS id,
+                                s.entry              AS entry,
+                                s.hidden             AS hidden,
+                                s.colorid            AS colorid
+                        FROM    {$serendipity['dbPrefix']}percentagedone AS s
+                    ORDER BY    percentagecomplete ASC, project ASC";
                 break;
 
             case 'progressdesc':
-                $q = 'SELECT    s.project              AS project,
-                                s.title             AS name,
+                $q = "SELECT    s.project            AS project,
+                                s.title              AS name,
                                 s.percentagecomplete AS percentagecomplete,
-                                s.category          AS cat_id,
-                                s.id                AS id,
-                                s.entry             AS entry,
-                                s.hidden            AS hidden,
-                                s.colorid           AS colorid
-                                FROM    '.$serendipity['dbPrefix'].'percentagedone AS s
-                                ORDER BY percentagecomplete DESC, project ASC';
+                                s.category           AS cat_id,
+                                s.id                 AS id,
+                                s.entry              AS entry,
+                                s.hidden             AS hidden,
+                                s.colorid            AS colorid
+                        FROM    {$serendipity['dbPrefix']}percentagedone AS s
+                    ORDER BY    percentagecomplete DESC, project ASC";
                 break;
 
             case 'datedesc':
-                $q = 'SELECT    s.project              AS project,
-                                s.title             AS name,
+                $q = "SELECT    s.project            AS project,
+                                s.title              AS name,
                                 s.percentagecomplete AS percentagecomplete,
-                                s.category          AS cat_id,
-                                s.id                AS id,
-                                s.entry             AS entry,
-                                s.hidden            AS hidden,
-                                s.colorid           AS colorid
-                                FROM    '.$serendipity['dbPrefix'].'percentagedone AS s
-                                ORDER BY date_added DESC';
+                                s.category           AS cat_id,
+                                s.id                 AS id,
+                                s.entry              AS entry,
+                                s.hidden             AS hidden,
+                                s.colorid            AS colorid
+                        FROM    {$serendipity['dbPrefix']}percentagedone AS s
+                    ORDER BY    date_added DESC";
                 break;
 
             default:
-                $q = 'SELECT    s.project              AS project,
-                                s.title             AS name,
+                $q = "SELECT    s.project            AS project,
+                                s.title              AS name,
                                 s.percentagecomplete AS percentagecomplete,
-                                s.category          AS cat_id,
-                                s.id                AS id,
-                                s.entry             AS entry,
-                                s.hidden            AS hidden,
-                                s.colorid           AS colorid
-                                FROM    '.$serendipity['dbPrefix'].'percentagedone AS s
-                                ORDER BY    s.project ASC';
+                                s.category           AS cat_id,
+                                s.id                 AS id,
+                                s.entry              AS entry,
+                                s.hidden             AS hidden,
+                                s.colorid            AS colorid
+                        FROM    {$serendipity['dbPrefix']}percentagedone AS s
+                    ORDER BY    s.project ASC";
                 break;
         }
         return $q;
     }
 
-    function check_gd() {
+    function check_gd()
+    {
         if (function_exists('imagettftext') && function_exists('imagepng')) {
             return true;
         } else {
@@ -2014,7 +2117,8 @@ class serendipity_event_todolist extends serendipity_event {
         }
     }
 
-    function build_categories() {
+    function build_categories()
+    {
          global $serendipity;
          if ($this->get_config('category') == 'custom') {
              $table = $serendipity['dbPrefix'].'project_category';

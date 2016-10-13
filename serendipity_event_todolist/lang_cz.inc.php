@@ -79,4 +79,3 @@
 @define('PLUGIN_EVENT_TODOLIST_COLORWHEEL', 'Barevné kolo');
 @define('PLUGIN_EVENT_TODOLIST_COLORWHEEL_INSTRUCTIONS', 'Pohybujte se s my¹í nad barevným kolem nebo ètvercem sytosti pro zobrazení náhledu barvy. Kliknutím vyberete barvu. Kopírujte (Ctrl-C) a vlo¾te (Ctrl-V) ¹estimístný kód barvy do políèka pro barvu.');
 
-?>

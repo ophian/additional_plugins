@@ -1,0 +1,10 @@
+1.26:
+
+ * Rewrite backend markup for Serendipity 2.0x+
+   - extends required version to 2.0
+ * Add backend CSS styles
+ * Use lang API includement
+ * Set some plugin consistencies
+ * Use serendipity_db_bool() method
+ * Fix <en>, <de> add category constant
+

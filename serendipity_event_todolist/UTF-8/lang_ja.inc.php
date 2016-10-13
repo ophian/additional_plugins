@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.2
  */
@@ -82,4 +82,3 @@
 @define('PLUGIN_EVENT_TODOLIST_COLORWHEEL', '色ホイール');
 @define('PLUGIN_EVENT_TODOLIST_COLORWHEEL_INSTRUCTIONS', 'Hover over the color wheel or hue square to view colors.  Click to choose a color.  Copy and Paste six digit color codes into color manager fields.');
 
-?>
