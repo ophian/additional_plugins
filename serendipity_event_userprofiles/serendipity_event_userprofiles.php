@@ -429,6 +429,7 @@ class serendipity_event_userprofiles extends serendipity_event
             $this->showCol($property, $info, $user);
         }
 
+        echo "</table>\n";
         echo "</div>\n";
         echo '<input type="submit" name="serendipity[submitProfile]" value="' . SAVE . '">' . "\n";
     }
@@ -452,6 +453,7 @@ class serendipity_event_userprofiles extends serendipity_event
 
             $this->showCol($property, $info, $user);
         }
+        echo "</table>\n";
         echo "</div>\n";
         echo '<input type="submit" name="serendipity[submitProfileOptions]" value="' . SAVE . '">' . "\n";
     }
