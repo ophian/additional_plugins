@@ -14,9 +14,6 @@
 //
 //  for serendipity_event_userprofiles.php
 //
-@define('PLUGIN_EVENT_USERPROFILES_DBVERSION',		'0.1');
-@define('PLUGIN_EVENT_USERPROFILES_ILINK',		'<input class="direction_ltr" id="serendipity_event_userprofiles%s" type="radio" %s name="serendipity[profile%s]" value="%s" title="%s" />');
-@define('PLUGIN_EVENT_USERPROFILES_LABEL',		'<label for="serendipity_event_userprofiles%s">%s</label>');
 
 @define('PLUGIN_EVENT_USERPROFILES_CITY',		'Město');
 @define('PLUGIN_EVENT_USERPROFILES_COUNTRY',		'Země');

@@ -9,7 +9,7 @@
 {/if}
 {if $userProfile.birthday and $userProfile.show_birthday == "true"}
     <dt>{$userProfileProperties.birthday.desc}</dt>
-    <dd>{$userProfile.birthday|@formatTime:DATE_FORMAT_ENTRY}</dd>
+    <dd>{$userProfile.birthday|formatTime:DATE_FORMAT_ENTRY}</dd>
 {/if}
 {if $userProfile.url and $userProfile.show_url == "true"}
     <dt>{$userProfileProperties.url.desc}</dt>

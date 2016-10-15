@@ -4,8 +4,8 @@
 <form action="?" method="get">
     <input type="hidden" name="serendipity[subpage]" value="userprofiles" />
     <select name="serendipity[groupid]">
-    {foreach from=$userprofile_groups item="group"}
-    <option value="{$group.id}" {if $selected_group == $group.id}selected="selected"{/if}>{$group.name|@escape}</option>
+    {foreach $userprofile_groups AS $group}
+    <option value="{$group.id}" {if $selected_group == $group.id}selected="selected"{/if}>{$group.name|escape}</option>
     {/foreach}
     </select> <input type="submit" name="submit" value="{$CONST.GO}" />
 </form>
@@ -13,7 +13,7 @@
 
 {if $selected_group > 0}
 <div>
-    <h4>{$selected_group_data.name|@escape}</h4>
+    <h4>{$selected_group_data.name|escape}</h4>
     <table>
         <tr>
             <th>{$CONST.USERNAME}</th>
@@ -22,7 +22,7 @@
             <th>E-Mail</th>
         </tr>
 
-        {foreach from=$selected_members item="member}
+        {foreach $selected_members AS $member}
         <tr>
             <td>{$member.username}</td>
             <td>{$member.posts}</td>
