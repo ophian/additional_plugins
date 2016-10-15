@@ -10974,11 +10974,11 @@
 <summary>Profily uživatelů</summary>
 <groups>BACKEND_USERMANAGEMENT,BACKEND_TEMPLATES</groups>
 <description>Zobrazuje jednoduché profily uživatelů a dovoluje přiložit jejich fotku.</description>
-<maintainers><maintainer><name>Garvin Hicking, Falk Doering</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Falk Doering, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.30</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-19</date>
+  <version>0.31</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2016-10-15</date>
   <filelist>
 <dir name="serendipity_event_userprofiles">
 <file>ChangeLog</file>
