@@ -71,6 +71,9 @@
 
 @define('PLUGIN_FREETAG_META_KEYWORDS', 'Number of meta keywords to embed in HTML source (0: disabled)');
 
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Sidebar template');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'If set, the template is used to render the tag sidebar. In the template there is a variable <tags> available, which contains the list of tags in the format <tagName> => array(href => <tagLink>, count => <tagCount>)');
+
 @define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'Related entries by tags:');
 @define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'Display related entries by tags?');
 @define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'How many related entries should be dislayed?');
@@ -84,8 +87,6 @@
 @define('PLUGIN_EVENT_FREETAG_CAT2TAG_DESC', 'If enabled, all categories that an entry is assigned to will be added as tags to your entry. You can set all category associations of all your existing entries within the "Manage Tags" menu of your Administration Suite.');
 @define('PLUGIN_EVENT_FREETAG_KEYWORD2TAG', 'Create tags from automated keywords?');
 @define('PLUGIN_EVENT_FREETAG_KEYWORD2TAG_DESC', 'If enabled, the entry will be checked if it contains any of the automated keywords and the corresponding tags will be added. You can set the keywords within the "Manage Tags" menu of your Administration Suite.');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Sidebar template');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'If set, the template is used to render the tag sidebar. In the template there is a variable <tags> available, which contains the list of tags in the format <tagName> => array(href => <tagLink>, count => <tagCount>)');
 @define('PLUGIN_EVENT_FREETAG_GLOBALLINKS', 'Convert all assigned categories of existing entries to tags');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY', 'Converted categories of entry #%d (%s): %s.');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', 'All categories converted to tags.');
@@ -118,7 +119,7 @@
 @define('PLUGIN_EVENT_FREETAG_COLLATION', '(MySQL) Database collation for the entrytags.tag column (auto-detected)');
 @define('PLUGIN_EVENT_FREETAG_KILL', 'When checked, all assigned tags to this entry will be removed.');
 
-@define('PLUGIN_EVENT_FREETAG_TAGLINK_DESC', 'A possible change in your taglink, is to write "plugin/taglist/" instead of "plugin/tag/". This will make your tag(s) appear as as clickable list, instead of already opened entries. You can also add this manually to certain taglinks in the frontend or append a "/taglist" tag to an already existing path (eg "/plugin/tag/your/tags/append/taglist"). In both cases "taglist" is a reserved word from now on and can not be used as a normal tag elsewhere anymore. If you want to use this, please enable next option and add some code manually, described in the documentary for the "tag-as-list" option.');
+@define('PLUGIN_EVENT_FREETAG_TAGLINK_DESC', 'A possible change in your taglink, is to write "plugin/taglist/" instead of "plugin/tag/". This will make your tag(s) appear as as clickable list, instead of already opened entries. You can also add this manually to certain taglinks in the frontend or append a "/taglist" tag to an already existing path (eg "/plugin/tag/your/tags/append/taglist"). In both cases "taglist" is a reserved word from now on and can not be used as a normal tag elsewhere anymore. If you want to use this, please enable the "tags-as-list (non-opened entries)" option and add some code manually, described in the documentary for the "tag-as-list" option.');
 
 @define('PLUGIN_EVENT_FREETAG_TAGSASLIST', 'Enable "tags-as-list" (non-opened entries)');
 @define('PLUGIN_EVENT_FREETAG_TAGSASLIST_DESC', 'Please read the documentary in this plugins "Local Documentation" on how to add the smarty taglist code to your existing templates entries.tpl file.');

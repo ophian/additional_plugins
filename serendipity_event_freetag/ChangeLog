@@ -2,6 +2,7 @@
 -----
 
  * Modification "routing" fix for Serendipity 2.1
+ * Optimize tag-as-list constant text
 
 3.91:
 -----

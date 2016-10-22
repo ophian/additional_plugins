@@ -72,6 +72,9 @@
 
 @define('PLUGIN_FREETAG_META_KEYWORDS', 'Anzahl der Stichwörter, die in die Meta-Angaben des HTML-Codes eingesetzt werden sollen (0: abgeschaltet)');
 
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Template für Seitenleiste');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Wenn ein Template angegeben ist, wird es benutzt um die Seitenleiste anzuzeigen. Im Template wird eine Variable <tags> zu Verfügung gestellt, die ein Liste von Einträgen im folgenden Format enthält: <tagName> => array(href = <tagLink>, count => <tagCount>)');
+
 @define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'Artikel mit ähnlichen Themen:');
 @define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'Zeige Artikel mit ähnlichen Themen an?');
 @define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'Wieviele Artikel mit ähnlichen Themen sollen angezeigt werden?');
@@ -82,7 +85,7 @@
 @define('PLUGIN_EVENT_FREETAG_RELATED_TAGS', 'Verwandte Tags');
 @define('PLUGIN_EVENT_FREETAG_TAGLINK', 'Taglink');
 @define('PLUGIN_EVENT_FREETAG_CAT2TAG', 'Erstelle Tags für zugewiesene Kategorien?');
-@define('PLUGIN_EVENT_FREETAG_CAT2TAG_DESC', 'Falls aktiviert werden alle Kategorien eines Eintrags als Tags zugewiesen. Alle bestehende Kategoriezuweisungen können über die Tag-Verwaltung in Tags konvertiert werden.');
+@define('PLUGIN_EVENT_FREETAG_CAT2TAG_DESC', 'Falls aktiviert, werden alle Kategorien eines Eintrags als Tags zugewiesen. Alle bestehende Kategoriezuweisungen können über die Tag-Verwaltung in Tags konvertiert werden.');
 @define('PLUGIN_EVENT_FREETAG_KEYWORD2TAG', 'Erstelle Tags durch automatische Schlüsselwörter?');
 @define('PLUGIN_EVENT_FREETAG_KEYWORD2TAG_DESC', 'Falls aktiviert, wird der Eintrag daraufhin geprüft, ob darin automatische Schlüsselwörter enthalten sind. Gegebenenfalls werden die entsprechenden Tags zugewiesen. Die Schlüsselwörter können über die Tag-Verwaltung festgelegt werden.');
 @define('PLUGIN_EVENT_FREETAG_GLOBALLINKS', 'Alle zugewiesenen Kategorien bestehender Artikel zu Tags konvertieren');
@@ -113,9 +116,9 @@
 
 @define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY', 'Erweiteres Smarty');
 @define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC', 'Nutze statt der HTML-Ausgabe, ob nun direkt oder per Smarty, verschiedene Smarty Variablen, die im Template zusammengefügt werden können. Dies überschreibt alle anderen diesbezüglichen Einstellungen. Ein Beispiel für die Nutzung findet sich im Readme.');
-@define('PLUGIN_EVENT_FREETAG_KILL', 'Wenn aktiviert werden alle zugeh&ouml;rigen Tags gel&ouml;scht.');
+@define('PLUGIN_EVENT_FREETAG_KILL', 'Wenn aktiviert werden alle zugehörigen Tags gelöscht.');
 
-@define('PLUGIN_EVENT_FREETAG_TAGLINK_DESC', 'Eine mögliche Änderung des Taglinks wäre "plugin/taglist/" anstelle von "plugin/tag/" zu schreiben. Dies wäre das Kommando, um jeden Taglink als Liste, anstelle von bereits geöffneten Artikeln, auszugeben. Man kann aber ebenso manuell für bestimmte Taglinks den "/taglist" tag an einen bereits existierenden Taglink (zB. "/plugin/tag/deine/tags/taglist") anhängen. In beiden Fällen ist "taglist" fortan ein reserviertes Kommando und kann nicht mehr als normales Tagwort verwendet werden. Für beide Möglichkeiten ist eine eigenhändig eingebaute Code-Änderung nötig, so wie in der Dokumentation für die "Listenanzeige" Option beschrieben wird.');
+@define('PLUGIN_EVENT_FREETAG_TAGLINK_DESC', 'Eine mögliche Änderung des Taglinks wäre "plugin/taglist/" anstelle von "plugin/tag/" zu schreiben. Dies wäre das Kommando, um jeden Taglink als Liste, anstelle von bereits geöffneten Artikeln, auszugeben. Man kann aber ebenso manuell für bestimmte Taglinks den "/taglist" tag an einen bereits existierenden Taglink (zB. "/plugin/tag/deine/tags/taglist") anhängen. In beiden Fällen ist "taglist" fortan ein reserviertes Kommando und kann nicht mehr als normales Tagwort verwendet werden. Für beide Möglichkeiten ist eine eigenhändig eingebaute Code-Änderung nötig, wie in der Dokumentation für die "Listenanzeige" Option beschrieben. Benötigt Option: "Listenanzeige (ungeöffnete Artikel)".');
 
 @define('PLUGIN_EVENT_FREETAG_TAGSASLIST', 'Listenanzeige (ungeöffnete Artikel)');
 @define('PLUGIN_EVENT_FREETAG_TAGSASLIST_DESC', 'In der Plugin-Dokumentation ist zu lesen, wie die existierende templates entries.tpl Datei für die Listenanzeige der Taglink-Ausgabe im Code geändert werden muss.');
