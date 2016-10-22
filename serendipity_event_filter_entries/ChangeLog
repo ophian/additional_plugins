@@ -1,3 +1,13 @@
+1.8.0:
+------
+
+ * Fixed filtered entries being shown underneath entries list
+ * Fixed entries not shown on S9y 2.1
+ * Note entry body missing in Serendipity 2.0.x versions not appliable since being a core bug.
+ * Fixed filtered entries pagination
+ * Support entry filter match for all Serendipity supported databases
+
+
 1.7.2:
 ------
 

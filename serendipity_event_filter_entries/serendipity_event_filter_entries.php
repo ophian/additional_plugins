@@ -19,7 +19,7 @@ class serendipity_event_filter_entries extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FILTER_ENTRIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian');
-        $propbag->add('version',       '1.7.2');
+        $propbag->add('version',       '1.8.0');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -243,10 +243,23 @@ class serendipity_event_filter_entries extends serendipity_event
                             }
 
                             if (!empty($_SESSION['filter']['body'])) {
-                                if ($serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli') {
-                                    $filter[] = "MATCH (title,body,extended) AGAINST ('" . serendipity_db_escape_string($_SESSION['filter']['body']) . "')";
-                                    $full     = true;
+                                $term = serendipity_db_escape_string($_SESSION['filter']['body']);
+                                $full = true;
+                            }
+                            if ($full && $serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
+                                $filter[] = "(title ILIKE '%$term%' OR body ILIKE '%$term%' OR extended ILIKE '%$term%')";
+                            } elseif ($full && $serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'pdo-sqlite' || $serendipity['dbType'] == 'sqlite3oo') {
+                                $term = str_replace('*', '%', $term);
+                                $term = serendipity_mb('strtolower', $term);
+                                $filter[] = "(lower(title) LIKE '%$term%' OR lower(body) LIKE '%$term%' OR lower(extended) LIKE '%$term%')";
+                            } elseif ($full && $serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli') {
+                                if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
+                                    $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "' IN BOOLEAN MODE)";
+                                } else {
+                                    $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "')";
                                 }
+                            } else {
+                                $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "')";
                             }
 
                             $filter_sql = implode(' AND ', $filter);
@@ -266,10 +279,21 @@ class serendipity_event_filter_entries extends serendipity_event
                                        );
 
                             $serendipity['smarty_raw_mode'] = true;
-                            include_once(S9Y_INCLUDE_PATH . 'include/genpage.inc.php');
-                            serendipity_printEntries($entries);
-                            $raw_data = ob_get_contents();
-                            ob_end_clean();
+                            $serendipity['GET']['action'] = 'empty'; // allows the correct pagination and outputs searched only entries, else you get em all and the filtered ones appended
+                            include_once(S9Y_INCLUDE_PATH . 'include/genpage.inc.php'); // sets index, sidebars
+
+                            // check if ob_start() was set, which is not in Serendipity 2.1
+                            if (ob_get_level() == 1) {
+                                $raw_data = serendipity_printEntries($entries); // sets the content (entries) part
+                            } elseif(ob_get_level() == 2) { // 2.0.x and below
+                                if ($serendipity['version'][0] > 1) {
+                                    echo serendipity_printEntries($entries);
+                                } else {
+                                    serendipity_printEntries($entries);
+                                }
+                                $raw_data = ob_get_contents();
+                                ob_end_clean(); // the "missing" ob_start() is defined in serendipity roots index.php file until Serendipity 2.1
+                            }
                             $serendipity['smarty']->assign('CONTENT', $raw_data);
                             $serendipity['smarty']->assign('is_raw_mode', false);
                             serendipity_gzCompression();
