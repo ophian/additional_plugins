@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.91');
+        $propbag->add('version',       '3.92');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2203,6 +2203,8 @@ $(document).ready(function() {
         if ($tagged_as_list) {
             $serendipity['fetchLimit'] = 99; // do not use frontend entries pagination if count < 100 entries
         }
+        // check if ob_start() was set, which is not in Serendipity 2.1
+        if (ob_get_level() == 1) { ob_start(); }
         include_once(S9Y_INCLUDE_PATH . 'include/genpage.inc.php');
 
         if ($emit_404 && $this->taggedEntries !== null && $this->taggedEntries < 1) {
@@ -2217,7 +2219,7 @@ $(document).ready(function() {
             }
         }
         $raw_data = ob_get_contents();
-        ob_end_clean(); // the "missing" ob_start() is defined in serendipity roots index.php file
+        ob_end_clean(); // the "missing" ob_start() is defined in serendipity roots index.php file until Serendipity 2.1
         $serendipity['smarty']->assign('raw_data', $raw_data);
 
         if (serendipity_db_bool($this->get_config('show_tagcloud', 'true'))) {
