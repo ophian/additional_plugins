@@ -1,17 +1,11 @@
-<?php # $Id $
+<?php
 /* Contributed by Adam Krause (http://www.pigslipstick.com/), Oliver Gerlach (http://www.stumblingpilgrim.net/) */
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_plugin_sidebarlogo extends serendipity_plugin
 {
@@ -25,8 +19,8 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
             $propbag->add('description',   PLUGIN_SIDEBARLOGO_DESC);
             $propbag->add('stackable',     true);
             $propbag->add('author',        PLUGIN_SIDEBARLOGO_AUTH);
-            $propbag->add('version',       '0.4');
-            $propbag->add('requirements',  array('serendipity' => '0.9',
+            $propbag->add('version',       '0.5');
+            $propbag->add('requirements',  array('serendipity' => '1.6',
                                                  'smarty'      => '2.6.7',
                                                  'php'         => '4.1.0'
                                                  ));
@@ -49,7 +43,7 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
                                                  'copyrightstyle',
                                                  'sequence',
                                                  ));
-	    // sselect the appropriate groups in spartacus that match this plugin                                                 
+            // select the appropriate groups in spartacus that match this plugin
             $propbag->add('groups',        array('FRONTEND_FEATURES'));
             // group config options. All options not in this list remain ungrouped and are visible always
             $propbag->add('config_groups', array(
@@ -75,7 +69,6 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
     {
         switch($name)
         {
-
             case 'title':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_SIDEBARLOGO_TITLE);
@@ -240,7 +233,7 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
         $copyrightstyle     = $this->get_config('copyrightstyle');
         $copyrightstyle     = $this->get_config('delimiterstyle');
         $sequence           = $this->get_config('sequence');
-        
+
         // prepare for output
         $sequence           = explode(",", $sequence);
 
@@ -248,12 +241,12 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
         {
             $iwidth = "width='".$imagewidth."'";
         }
-        
+
         if ($imageheight != "")
         {
             $iheight = "height='".$imageheight."'";
         }
-        
+
         $imagestyle = $this->generate_style_attribute($imagestyle);
         $descriptionstyle = $this->generate_style_attribute($descriptionstyle);
         $sitenamestyle = $this->generate_style_attribute($sitenamestyle);
@@ -261,12 +254,10 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
         $contactstyle = $this->generate_style_attribute($contactstyle);
         $copyrightstyle = $this->generate_style_attribute($copyrightstyle);
         $delimiterstyle = $this->generate_style_attribute($delimiterstyle);
-        
+
         // output
-        foreach( $sequence as $val )
-        {
-            switch( $val )
-            {
+        foreach( $sequence AS $val ) {
+            switch( $val ) {
                 case 'image':
                     if ($image != "")
                         echo "<img ".$iwidth." ".$iheight." src='".$image."' alt='".$imagetext."' ".$imagestyle."/>";
@@ -275,9 +266,9 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
                 case 'description':
                     if ( $descriptionstyle != "" )
                         echo "<div ".$descriptionstyle.">\n";
-            
+
                     echo $description."\n";
-        
+
                     if ( $descriptionstyle != "" )
                         echo "</div>\n";
                     break;
@@ -287,56 +278,55 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
                     break;
 
                 case 'sitename':
-                    echo "<div ".$sitenamestyle.">\n";         
+                    echo "<div ".$sitenamestyle.">\n";
                     echo $sitename."\n";
                     echo "</div>\n";
                     break;
 
                 case 'sitetag':
-                    echo "<div ".$sitetagstyle.">\n";         
+                    echo "<div ".$sitetagstyle.">\n";
                     echo $sitetag."\n";
                     echo "</div>\n";
                     break;
 
                 case 'contact':
-                    echo "<div ".$contactstyle.">\n";         
+                    echo "<div ".$contactstyle.">\n";
                     echo $contact."\n";
                     echo "</div>\n";
                     break;
 
                 case 'copyright':
-                    echo "<div ".$copyrightstyle.">\n";         
+                    echo "<div ".$copyrightstyle.">\n";
                     echo $copyright."\n";
                     echo "</div>\n";
                     break;
             }
-	}
+        }
     }
 
     /**
-    * @brief create a full HTML attribute from style information
-    * @param stylestring input string to parse for style information
-    * @return attribute containing the resulting attribute
-    *
-    * Depending on the input string this method either creates a style attribute, a class attribute or an id attribute.
-    * The choice is made on the first character of the input string.
-    * A leading '#' denotes an id while a leading '.' denotes a class and everything else is taken as inline CSS.
-    */
+     * @brief create a full HTML attribute from style information
+     * @param stylestring input string to parse for style information
+     * @return attribute containing the resulting attribute
+     *
+     * Depending on the input string this method either creates a style attribute, a class attribute or an id attribute.
+     * The choice is made on the first character of the input string.
+     * A leading '#' denotes an id while a leading '.' denotes a class and everything else is taken as inline CSS.
+     */
     function generate_style_attribute(&$stylestring)
     {
-       if ( $stylestring != "" )
-       {
-           if ( $stylestring[0] == "." )
-	       return "class='".substr($stylestring,1)."'";
-	   else if ( $stylestring[0] == "#" )
-	       return "id='".substr($stylestring,1)."'";
-	   else
-	       return "style='".$stylestring."'";
-	  return "";
-       }
-       else
-           return "";
+        if ( $stylestring != "" ) {
+            if ( $stylestring[0] == "." )
+                return "class='".substr($stylestring,1)."'";
+            else if ( $stylestring[0] == "#" )
+                return "id='".substr($stylestring,1)."'";
+            else
+                return "style='".$stylestring."'";
+            return "";
+        }
+        return "";
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */

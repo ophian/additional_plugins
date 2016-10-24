@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 0.4
@@ -51,4 +51,4 @@
 @define('PLUGIN_SIDEBARLOGO_DELIMITERSTYLE_DESC', 'Stil für den Trenner. Der Trenner ist ein Element zur Textflusskontrolle. Es zwingt den Rest der Box bzw. der Seite, unter dem Bild weiterzugehen. Normalerweise muss dieser Stil nicht angepasst werden. Das ist nur nötig, wenn entsprechende Änderung am Bidlstil vorgenommen wurden.');
 @define('PLUGIN_SIDEBARLOGO_SEQUENCE', 'Sequenz');
 @define('PLUGIN_SIDEBARLOGO_SEQUENCE_DESC', 'Lege die Sequenz der Elemente von SideBar Logo fest und aktiviere bzw. deaktiviere sie (Standard ist: Bild, Beschreibung, Trenner).');
-?>
+

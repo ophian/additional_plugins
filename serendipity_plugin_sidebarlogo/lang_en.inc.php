@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 0.4
@@ -50,4 +50,4 @@
 @define('PLUGIN_SIDEBARLOGO_DELIMITERSTYLE_DESC', 'Styling for the delimiter. The delimiter is a text flow control elment. It forces the rest of the box or the page to continue below the logo. Normally you do not need to change this style. Only do if you change your image style as well.');
 @define('PLUGIN_SIDEBARLOGO_SEQUENCE', 'Sequence');
 @define('PLUGIN_SIDEBARLOGO_SEQUENCE_DESC', 'Define the sequence of your SideBar Logo elements and enable or disable them (Default is logo, description, delimiter).');
-?>
+
