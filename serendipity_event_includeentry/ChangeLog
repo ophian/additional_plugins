@@ -1,3 +1,8 @@
+2.18:
+-----
+ - fix some variable typos
+ - Some more 2.x backend markup
+
 2.17:
 -----
   - now uses load_language API - extends requirement to Serendipity 1.6+
