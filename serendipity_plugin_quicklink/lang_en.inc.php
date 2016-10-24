@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 0.1
@@ -24,4 +24,3 @@
 @define('PLUGIN_QUICKLINK_ALERT', 'Are you sure?');
 @define('PLUGIN_QUICKLINK_LABEL', 'Label');
 
-?>

@@ -1,19 +1,12 @@
-<?php # $Id $
+<?php
 
 /* Contributed by Omid Mottaghi Rad (http://oxygenws.com/) */
-
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_plugin_quicklink extends serendipity_plugin
 {
@@ -27,9 +20,9 @@ class serendipity_plugin_quicklink extends serendipity_plugin
         $propbag->add('description',   PLUGIN_QUICKLINK_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Omid Mottaghi Rad');
-        $propbag->add('version',       '0.7.1');
+        $propbag->add('version',       '0.8');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -112,8 +105,8 @@ class serendipity_plugin_quicklink extends serendipity_plugin
         $del_str     = $this->get_config('delete');
         $submit_str  = $this->get_config('submit');
         $timestamp   = $this->get_config('timestamp');
-        $show_tip    = serendipity_db_bool($this->get_config('show_tip'));
-        $is_public   = serendipity_db_bool($this->get_config('is_public'));
+        $show_tip    = serendipity_db_bool($this->get_config('show_tip', 'true'));
+        $is_public   = serendipity_db_bool($this->get_config('is_public', 'false'));
 
         // Create table, if not yet existant
         if ($this->get_config('version') != '0.3') {
@@ -188,7 +181,7 @@ class serendipity_plugin_quicklink extends serendipity_plugin
         $sql = serendipity_db_query($q);
 
         // disable next link if needed
-        if($next >= $sql[0]['count']){
+        if ($next >= $sql[0]['count']){
         	$next = false;
         }
 
@@ -267,10 +260,10 @@ initToolTips();
                     $row['link'] = 'http://' . $row['link'];
                 }
                 $row['link'] = str_replace('javascript:', '', $row['link']);
-                
+
             	// create tool tip string
             	$tip = '';
-            	if($show_tip == 'true'){
+            	if ($show_tip == 'true'){
             		$tip = (function_exists('serendipity_specialchars') ? serendipity_specialchars(serendipity_strftime($timestamp, $row['stamp'])) : htmlspecialchars(serendipity_strftime($timestamp, $row['stamp']), ENT_COMPAT, LANG_CHARSET));
             		if( trim($row['description']) != ''){
             			$tip .= '<br />' . nl2br((function_exists('serendipity_specialchars') ? serendipity_specialchars($row['description']) : htmlspecialchars($row['description'], ENT_COMPAT, LANG_CHARSET)));
@@ -281,7 +274,7 @@ initToolTips();
             	// create label of link
             	if(trim($row['label']) == '' || $row['label'] == PLUGIN_QUICKLINK_LABEL){
             		$label = $row['link'];
-            	}else{
+            	} else {
             		$label = $row['label'];
             	}
 
@@ -299,23 +292,23 @@ initToolTips();
                 serendipity_plugin_api::hook_event('frontend_display', $entry);
 
                 echo $entry['link']
-                     . $deleteLink
-                     . '<br />' . "\n\n";
+                    . $deleteLink
+                    . '<br />' . "\n\n";
             }
         }
 
-        if($prev !== false || $next !== false){
-        	if($prev !== false){
+        if ($prev !== false || $next !== false){
+        	if ($prev !== false){
 	        	echo '<br /><div align="center"><a href="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[start]='
 	                                  . $prev . '">' . PREVIOUS . '</a> | ';
-	        }else{
+	        } else {
 	        	echo '<br /><div align="center">' . PREVIOUS . ' | ';
 	        }
 
-	        if($next !== false){
+	        if ($next !== false){
 	        	echo '<a href="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[start]='
 	                                  . $next . '">' . NEXT . '</a></div><br />' . "\n";
-	        }else{
+	        } else {
 	        	echo NEXT . '</div><br />' . "\n";
 	        }
         }
@@ -323,6 +316,8 @@ initToolTips();
 </div>
 <?php
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>
