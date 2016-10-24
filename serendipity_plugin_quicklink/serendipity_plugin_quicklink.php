@@ -28,12 +28,12 @@ class serendipity_plugin_quicklink extends serendipity_plugin
         ));
 
         $propbag->add('configuration', array('max_entries',
-        									 'title',
-        									 'delete',
-        									 'submit',
-        									 'timestamp',
-        									 'show_tip',
-        									 'is_public'));
+                                             'title',
+                                             'delete',
+                                             'submit',
+                                             'timestamp',
+                                             'show_tip',
+                                             'is_public'));
         $propbag->add('groups', array('FRONTEND_FEATURES'));
     }
 
@@ -162,9 +162,9 @@ class serendipity_plugin_quicklink extends serendipity_plugin
 
         // if start is set
         if (!empty($serendipity['GET']['start'])) {
-        	$start = (int) $serendipity['GET']['start'];
+            $start = (int) $serendipity['GET']['start'];
         } else {
-        	$start = 0;
+            $start = 0;
         }
 
         $next = $start+$max_entries;
@@ -172,17 +172,16 @@ class serendipity_plugin_quicklink extends serendipity_plugin
 
         // disable previous link if needed
         if($prev < 0){
-        	$prev = false;
+            $prev = false;
         }
 
-        $q = 'SELECT    count(*) AS count
-                FROM    '.$serendipity['dbPrefix'].'quicklink';
-
+        $q = "SELECT count(*) AS count
+                FROM {$serendipity['dbPrefix']}quicklink";
         $sql = serendipity_db_query($q);
 
         // disable next link if needed
         if ($next >= $sql[0]['count']){
-        	$next = false;
+            $next = false;
         }
 
         if ($_SESSION['serendipityAuthedUser'] === true || $is_public === true) {
@@ -215,7 +214,7 @@ function toolTip(msg, bg)
 {
   if(toolTip.arguments.length < 1) //hide
   {
-	toolTipSTYLE.display = "none";
+    toolTipSTYLE.display = "none";
   }
   else // show
   {
@@ -242,9 +241,9 @@ initToolTips();
 //--></script>
 <div style="margin: 0px; padding: 0px; text-align: left;">
 <?php
-		$q = 'SELECT    s.description       AS description,
-						s.link              AS link,
-						s.label             AS label,
+        $q = 'SELECT    s.description       AS description,
+                        s.link              AS link,
+                        s.label             AS label,
                         s.timestamp         AS stamp,
                         s.id                AS link_id
               FROM    '.$serendipity['dbPrefix'].'quicklink AS s
@@ -261,27 +260,27 @@ initToolTips();
                 }
                 $row['link'] = str_replace('javascript:', '', $row['link']);
 
-            	// create tool tip string
-            	$tip = '';
-            	if ($show_tip == 'true'){
-            		$tip = (function_exists('serendipity_specialchars') ? serendipity_specialchars(serendipity_strftime($timestamp, $row['stamp'])) : htmlspecialchars(serendipity_strftime($timestamp, $row['stamp']), ENT_COMPAT, LANG_CHARSET));
-            		if( trim($row['description']) != ''){
-            			$tip .= '<br />' . nl2br((function_exists('serendipity_specialchars') ? serendipity_specialchars($row['description']) : htmlspecialchars($row['description'], ENT_COMPAT, LANG_CHARSET)));
-            		}
-            		$tip = ' onMouseOver="toolTip(\'' . $tip . '\')" onMouseOut="toolTip()"';
-            	}
+                // create tool tip string
+                $tip = '';
+                if ($show_tip){
+                    $tip = (function_exists('serendipity_specialchars') ? serendipity_specialchars(serendipity_strftime($timestamp, $row['stamp'])) : htmlspecialchars(serendipity_strftime($timestamp, $row['stamp']), ENT_COMPAT, LANG_CHARSET));
+                    if( trim($row['description']) != ''){
+                        $tip .= '<br />' . nl2br((function_exists('serendipity_specialchars') ? serendipity_specialchars($row['description']) : htmlspecialchars($row['description'], ENT_COMPAT, LANG_CHARSET)));
+                    }
+                    $tip = ' onMouseOver="toolTip(\'' . $tip . '\')" onMouseOut="toolTip()"';
+                }
 
-            	// create label of link
-            	if(trim($row['label']) == '' || $row['label'] == PLUGIN_QUICKLINK_LABEL){
-            		$label = $row['link'];
-            	} else {
-            		$label = $row['label'];
-            	}
+                // create label of link
+                if(trim($row['label']) == '' || $row['label'] == PLUGIN_QUICKLINK_LABEL){
+                    $label = $row['link'];
+                } else {
+                    $label = $row['label'];
+                }
 
-            	// create link string
+                // create link string
                 $link = '<a href="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($row['link']) : htmlspecialchars($row['link'], ENT_COMPAT, LANG_CHARSET)) . '"' . $tip . ' target="_blank">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($label) : htmlspecialchars($label, ENT_COMPAT, LANG_CHARSET)) . '</a>';
 
-                // create telete link string
+                // create delete link string
                 $deleteLink = '';
                 if ($_SESSION['serendipityAuthedUser'] === true && $serendipity['serendipityUserlevel'] >= USERLEVEL_CHIEF) {
                     $deleteLink =  ' | <a href="' . $serendipity['baseURL'] . $serendipity['indexFile']
@@ -298,19 +297,19 @@ initToolTips();
         }
 
         if ($prev !== false || $next !== false){
-        	if ($prev !== false){
-	        	echo '<br /><div align="center"><a href="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[start]='
-	                                  . $prev . '">' . PREVIOUS . '</a> | ';
-	        } else {
-	        	echo '<br /><div align="center">' . PREVIOUS . ' | ';
-	        }
+            if ($prev !== false){
+                echo '<br /><div align="center"><a href="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[start]='
+                                      . $prev . '">' . PREVIOUS . '</a> | ';
+            } else {
+                echo '<br /><div align="center">' . PREVIOUS . ' | ';
+            }
 
-	        if ($next !== false){
-	        	echo '<a href="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[start]='
-	                                  . $next . '">' . NEXT . '</a></div><br />' . "\n";
-	        } else {
-	        	echo NEXT . '</div><br />' . "\n";
-	        }
+            if ($next !== false){
+                echo '<a href="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[start]='
+                                      . $next . '">' . NEXT . '</a></div><br />' . "\n";
+            } else {
+                echo NEXT . '</div><br />' . "\n";
+            }
         }
 ?>
 </div>
