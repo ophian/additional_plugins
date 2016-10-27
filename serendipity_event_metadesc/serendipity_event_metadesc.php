@@ -21,7 +21,7 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian');
-        $propbag->add('version',       '0.21');
+        $propbag->add('version',       '0.22');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'php'         => '5.1.0'
@@ -85,7 +85,7 @@ class serendipity_event_metadesc extends serendipity_event
 
     function example()
     {
-        return "\n".'<p class="msg_notice"><span class="icon-attention"></span> ' . PLUGIN_METADESC_MARKDOWN_DEPENDENCY . "</p>\n\n";
+        return "\n".'<p class="msg_notice"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_METADESC_MARKDOWN_DEPENDENCY . "</p>\n\n";
     }
 
     function generate_content(&$title)
@@ -336,7 +336,7 @@ class serendipity_event_metadesc extends serendipity_event
 ?>
                     <fieldset id="edit_entry_metadesc" class="entryproperties_metadesc">
                         <span class="wrap_legend"><legend><?php echo PLUGIN_METADESC_NAME; ?></legend></span>
-                        <span class="msg_notice"><span class="icon-info-circled"></span> <em><?php echo PLUGIN_METADESC_FORM; ?></em></span>
+                        <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <em><?php echo PLUGIN_METADESC_FORM; ?></em></span>
 
                         <div class="form_field">
                             <label for="serendipity[properties][meta_description]"><?php echo PLUGIN_METADESC_DESCRIPTION; ?></label> <span class="meta_string_length">(<?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_description) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_description) . ' ' . PLUGIN_METADESC_CHARACTERS; ?>)</span>
@@ -346,7 +346,7 @@ class serendipity_event_metadesc extends serendipity_event
                             <input id="properties_meta_keywords" class="input_textbox" style="width: 100%" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_keywords) : htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET)); ?>" name="serendipity[properties][meta_keywords]" type="text">
                         </div>
 
-                        <span class="msg_notice"><span class="icon-info-circled"></span> <em><?php echo PLUGIN_METADESC_HEADTITLE_DESC; ?></em></span>
+                        <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <em><?php echo PLUGIN_METADESC_HEADTITLE_DESC; ?></em></span>
 
                         <div class="form_field">
                             <label for="serendipity[properties][meta_head_title]"><?php echo PLUGIN_METADESC_HEADTITLE; ?></label> <span class="meta_string_length">(<?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_head_title) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_head_title) . ' ' . PLUGIN_METADESC_CHARACTERS; ?>)</span>
