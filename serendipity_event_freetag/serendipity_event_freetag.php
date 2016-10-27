@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.92');
+        $propbag->add('version',       '3.93');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -383,7 +383,7 @@ class serendipity_event_freetag extends serendipity_event
             $this->set_config('use_flash', 'false');
             $this->set_config('use_rotacloud', 'false');
             $this->set_config('use_wordcloud', 'false');
-            echo '<p class="msg_error"><span class="icon-attention-circled"></span> ' . PLUGIN_EVENT_FREETAG_SET_OPTION_ERROR_1;
+            echo '<p class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_SET_OPTION_ERROR_1;
         }
     }
 
@@ -442,7 +442,7 @@ class serendipity_event_freetag extends serendipity_event
         if (self::upgradeFromVersion1()) {
             self::convertEntryPropertiesTags();
         } else {
-            echo '<span class="msg_notice"><span class="icon-info-circled"></span> NOT UPGRADING!</span>'."\n";
+            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> NOT UPGRADING!</span>'."\n";
         }
     }
 
@@ -1856,7 +1856,7 @@ $(document).ready(function() {
             }
         }
         if (empty($tags)) {
-            echo '<span class="msg_notice"><span class="icon-info-circled"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGS_NONE . "</span>\n";
+            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGS_NONE . "</span>\n";
         }
         return $tags;
     }
@@ -2364,7 +2364,7 @@ $(document).ready(function() {
                         break;
                     }
                     if (!serendipity_db_bool($this->get_config('keyword2tag', 'false'))) {
-                        echo '<span class="msg_notice"><span class="icon-info-circled"></span>The option "' . PLUGIN_EVENT_FREETAG_KEYWORDS . '" is not set!</span>'."\n"; // i18n?
+                        echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>The option "' . PLUGIN_EVENT_FREETAG_KEYWORDS . '" is not set!</span>'."\n"; // i18n?
                         break;
                     }
                     $this->displayTagUpdate();
@@ -2378,7 +2378,7 @@ $(document).ready(function() {
 
                 default:
                     if (!empty($this->eventData['GET']['tagview'])) {
-                        echo '<span class="msg_notice"><span class="icon-info-circled"></span> ' . "Can't execute tagview</span>\n";
+                        echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . "Can't execute tagview</span>\n";
                     }
                     break;
             }
@@ -2430,9 +2430,9 @@ $(document).ready(function() {
                     } else {
 ?>
 
-                        <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=rename&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-edit"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?></span></a>
-                        <a class="button_link" title="<?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=split&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-resize-full"></span><span class="visuallyhidden"> <?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?></span></a>
-                        <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=delete&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-trash"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?></span></a>
+                        <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=rename&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?></span></a>
+                        <a class="button_link" title="<?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=split&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-resize-full" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?></span></a>
+                        <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=delete&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-trash" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?></span></a>
 <?php
                     }
 ?>
@@ -2503,7 +2503,7 @@ $(document).ready(function() {
             if ($serendipity['version'][0] < 2) {
                 echo PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE;
             } else {
-                echo '<span class="msg_notice"><span class="icon-info-circled"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE . "</span>\n";
+                echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE . "</span>\n";
             }
         } else if (!is_array($r)) {
             echo $r;
@@ -2519,7 +2519,7 @@ $(document).ready(function() {
                         </p>';
                 } else {
                     echo '    <li>
-                            <a class="button_link" href="' . FREETAG_EDITENTRY_URL . $row['id'] . '"><span class="icon-edit"></span><span class="visuallyhidden"> ' . EDIT . '</span></a>
+                            <a class="button_link" href="' . FREETAG_EDITENTRY_URL . $row['id'] . '"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> ' . EDIT . '</span></a>
                             ' . $row['title'] . (!empty($row['tag']) ? ' ( <strong>Single-Tag:</strong> <em>' . $row['tag'] . '</em> )' : '') . '
                         </li>'."\n"; // i18n?
                 }
@@ -2557,7 +2557,7 @@ $(document).ready(function() {
         if ($serendipity['version'][0] < 2) {
             echo '<br />' . PLUGIN_EVENT_FREETAG_KEYWORDS_DESC . '<br /><br />';
         } else {
-            echo '<span class="msg_notice"><span class="icon-info-circled"></span>' . PLUGIN_EVENT_FREETAG_KEYWORDS_DESC . "</span>\n";
+            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_EVENT_FREETAG_KEYWORDS_DESC . "</span>\n";
         }
 ?>
         <form action="<?php echo $url; ?>" method="post">
@@ -2609,7 +2609,7 @@ $(document).ready(function() {
 <?php
                     } else {
 ?>
-                        <a class="button_link" title="<?php echo EDIT ?>" href="<?php echo $url ?>&amp;serendipity%5Btag%5D=<?php echo urlencode($tag)?>#edit"><span class="icon-edit"></span><span class="visuallyhidden"> <?php echo EDIT ?></span></a>
+                        <a class="button_link" title="<?php echo EDIT ?>" href="<?php echo $url ?>&amp;serendipity%5Btag%5D=<?php echo urlencode($tag)?>#edit"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo EDIT ?></span></a>
 <?php
                     }
             }
@@ -2702,7 +2702,7 @@ $(document).ready(function() {
         if ($serendipity['version'][0] < 2) {
             echo PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG . '<br />';
         } else {
-            echo '<span class="msg_notice"><span class="icon-info-circled"></span>' . PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG . "</span>\n";
+            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG . "</span>\n";
         }
     }
 
@@ -2798,7 +2798,7 @@ $(document).ready(function() {
             if ($serendipity['version'][0] < 2) {
                 echo '<div class="serendipity_msg_notice">' . DONE . '</div>';
             } else {
-                echo '<span class="msg_notice"><span class="icon-info-circled"></span>' . DONE . "</span>\n";
+                echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . DONE . "</span>\n";
             }
         }
     }
@@ -2845,14 +2845,14 @@ $(document).ready(function() {
                     if ($serendipity['version'][0] < 2) {
                         echo "<b>".PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_SUCCESSFUL."</b>";
                     } else {
-                        echo '<span class="msg_success"><span class="icon-ok-circled"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_SUCCESSFUL . "</span>\n";
+                        echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_SUCCESSFUL . "</span>\n";
                     }
                 }
                 else {
                     if ($serendipity['version'][0] < 2) {
                         echo "<b>".PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_FAILED."</b><br><br><b>DB-Error:</b>".$cleanup;
                     } else {
-                        echo '<div class="msg_error"><p><span class="icon-attention-circled"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_FAILED . '</p><strong>DB-Error:</strong> ' . $cleanup . "</div>\n";
+                        echo '<div class="msg_error"><p><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_FAILED . '</p><strong>DB-Error:</strong> ' . $cleanup . "</div>\n";
                     }
                 }
             }
@@ -2865,7 +2865,7 @@ $(document).ready(function() {
                 if ($serendipity['version'][0] < 2) {
                     echo PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_INFO."<br><br>";
                 } else {
-                    echo '<span class="msg_notice"><span class="icon-info-circled"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_INFO . "</span>\n";
+                    echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_INFO . "</span>\n";
                 }
 
                 // Display list of found inconsistencies
@@ -2896,7 +2896,7 @@ $(document).ready(function() {
             if ($serendipity['version'][0] < 2) {
                 echo "<b>".PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING."</b>";
             } else {
-                echo '<span class="msg_notice"><span class="icon-info-circled"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING . "</span>\n";
+                echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING . "</span>\n";
             }
         }
         else {
@@ -2904,7 +2904,7 @@ $(document).ready(function() {
             if ($serendipity['version'][0] < 2) {
                 echo "<b>".PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_LOOKUP_ERROR."</b><br><br><b>DB-Error:</b>".$mappings;
             } else {
-                echo '<div class="msg_error"><p><span class="icon-attention-circled"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_LOOKUP_ERROR . '</p><strong>DB-Error:</strong> ' . $mappings . "</div>\n";
+                echo '<div class="msg_error"><p><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_LOOKUP_ERROR . '</p><strong>DB-Error:</strong> ' . $mappings . "</div>\n";
             }
         }
     }
@@ -3271,7 +3271,7 @@ $(document).ready(function() {
     private function displayTagAction($fperm=false)
     {
         if ($fperm === false) {
-            echo '<span class="msg_notice"><span class="icon-info-circled"></span> Action: "' . $this->eventData['GET']['tagaction'] . '"' . " permission is set read-only!</span>\n"; // i18n?
+            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> Action: "' . $this->eventData['GET']['tagaction'] . '"' . " permission is set read-only!</span>\n"; // i18n?
             return false;
         }
         $validActions = array('rename', 'split', 'delete');
@@ -3287,7 +3287,7 @@ $(document).ready(function() {
         if ($this->eventData['GET']['commit'] == 'true') {
             $method = 'get'.ucfirst($this->eventData['GET']['tagaction']).'TagQuery';
             $q = $this->$method($tag, $this->eventData);
-            echo '<span class="msg_success"><span class="icon-ok-circled"></span> ' . $this->eventData['GET']['tagaction'] . " Completed</span>\n"; // i18n?
+            echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . $this->eventData['GET']['tagaction'] . " Completed</span>\n"; // i18n?
         } else {
             $method = 'display'.ucfirst($this->eventData['GET']['tagaction']).'Tag';
             $this->$method($tag, $this->eventData);

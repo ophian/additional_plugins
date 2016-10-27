@@ -259,7 +259,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             $this->set_config('use_flash', 'false');
             $this->set_config('use_rotacloud', 'false');
             $this->set_config('use_wordcloud', 'false');
-            echo '<p class="msg_error"><span class="icon-attention-circled"></span> ' . PLUGIN_EVENT_FREETAG_SET_OPTION_ERROR_1;
+            echo '<p class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_SET_OPTION_ERROR_1;
         }
     }
 
