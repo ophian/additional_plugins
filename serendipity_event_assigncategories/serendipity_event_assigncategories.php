@@ -16,8 +16,8 @@ class serendipity_event_assigncategories extends serendipity_event
         $propbag->add('name',          PLUGIN_ASSIGNCATEGORIES_NAME);
         $propbag->add('description',   PLUGIN_ASSIGNCATEGORIES_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Matthias Mees');
-        $propbag->add('version',       '1.5');
+        $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian');
+        $propbag->add('version',       '1.6');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'php'         => '5.1.0'
@@ -116,7 +116,7 @@ class serendipity_event_assigncategories extends serendipity_event
         if ($serendipity['version'][0] < 2) {
             echo '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />'. CATEGORY_SAVED .'</div>';
         } else {
-            echo '<span class="msg_success"><span class="icon-ok-circled"></span> '. CATEGORY_SAVED .'</span>';
+            echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> '. CATEGORY_SAVED .'</span>';
         }
     }
 

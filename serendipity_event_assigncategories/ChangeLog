@@ -1,6 +1,11 @@
 1.5:
 ----
 
+ * Iconfont accessibility fixes
+
+1.5:
+----
+
  * Set Plugin consistencies
  * Use lang API - extends required version
 
