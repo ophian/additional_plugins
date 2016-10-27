@@ -73,7 +73,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian');
-        $propbag->add('version',        '1.78');
+        $propbag->add('version',        '1.79');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '1.6',
@@ -344,7 +344,7 @@ class serendipity_event_cal extends serendipity_event
                 return $serendipity['smarty']->assign(
                     array(
                         'is_eventcal_error'     => true,
-                        'plugin_eventcal_error' => '<span class="icon-attention-circled"></span> ' . $errtext
+                        'plugin_eventcal_error' => '<span class="icon-attention-circled" aria-hidden="true"></span> ' . $errtext
                     )
                 );
                 break;
@@ -353,7 +353,7 @@ class serendipity_event_cal extends serendipity_event
                 return $serendipity['smarty']->assign(
                     array(
                         'is_eventcal_message'     => true,
-                        'plugin_eventcal_message' => '<span class="icon-info-circled"></span> ' . $errtext
+                        'plugin_eventcal_message' => '<span class="icon-info-circled" aria-hidden="true"></span> ' . $errtext
                     )
                 );
                 break;
@@ -2796,7 +2796,7 @@ class serendipity_event_cal extends serendipity_event
             '."\n";
         }
 
-        $attention = ($serendipity['version'][0] < 2) ? '<img class="backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" /> ' : '<span class="icon icon-attention-circled"></span> ';
+        $attention = ($serendipity['version'][0] < 2) ? '<img class="backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" /> ' : '<span class="icon icon-attention-circled" aria-hidden="true"></span> ';
         $evcat      = !empty($serendipity['GET']['eventcalcategory']) ? $serendipity['GET']['eventcalcategory'] : $serendipity['POST']['eventcalcategory'];
 
         /* check for REQUEST and DATE vars, validating data issues */
@@ -2951,7 +2951,7 @@ class serendipity_event_cal extends serendipity_event
         }
 
         $adminpath = '?serendipity[adminModule]=event_display&serendipity[adminAction]=eventcal&serendipity[eventcalcategory]=adevview';
-        $attention = ($serendipity['version'][0] < 2) ? '<img class="backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" /> ' : '<span class="icon icon-attention-circled"></span> ';
+        $attention = ($serendipity['version'][0] < 2) ? '<img class="backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" /> ' : '<span class="icon icon-attention-circled" aria-hidden="true"></span> ';
 
         /* assign app and add form and main tpl array entries to smarty */
         if (is_array($result)) {
@@ -3071,7 +3071,7 @@ class serendipity_event_cal extends serendipity_event
         }
 
         $adminpath  = '?serendipity[adminModule]=event_display&serendipity[adminAction]=eventcal&serendipity[eventcalcategory]=adevapp';
-        $attention = ($serendipity['version'][0] < 2) ? '<img class="backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" /> ' : '<span class="icon icon-attention-circled"></span> ';
+        $attention = ($serendipity['version'][0] < 2) ? '<img class="backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" /> ' : '<span class="icon icon-attention-circled" aria-hidden="true"></span> ';
 
         /* assign app and add form and main tpl array entries to smarty */
         if (is_array($result)) {
@@ -3273,7 +3273,7 @@ class serendipity_event_cal extends serendipity_event
         }
         $adminpath = $_SERVER['PHP_SELF'] . '?serendipity[adminModule]=event_display&serendipity[adminAction]=eventcal&serendipity[eventcalcategory]=adevplad';
         $dbclean   = !empty($serendipity['GET']['eventcaldbclean']) ? $serendipity['GET']['eventcaldbclean'] : 'start';
-        $attention = ($serendipity['version'][0] < 2) ? '<img class="backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" /> ' : '<span class="icon icon-attention-circled"></span> ';
+        $attention = ($serendipity['version'][0] < 2) ? '<img class="backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" /> ' : '<span class="icon icon-attention-circled" aria-hidden="true"></span> ';
 
         echo '<div class="clearfix backend_eventcal_dbclean_title"><h4 class="backend_eventcal_inline">' . PLUGIN_EVENTCAL_ADMIN_DBC_TITLE . '</h4> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">' . PLUGIN_EVENTCAL_ADMIN_DBC_TITLE_DESC . '</b> ]</span></div>'."\n";
         echo '<div class="backend_eventcal_dbclean_menu">'."\n";
@@ -3330,7 +3330,7 @@ class serendipity_event_cal extends serendipity_event
 
                 case 'dbinsert':
                     echo '<div class="backend_eventcal_dbclean_innercat ec_inner_title"><h3>' . strtoupper(PLUGIN_EVENTCAL_ADMIN_DBC_INSERT_TITLE) . '</h3></div>'."\n";
-                    echo $this->backend_eventcal_smsg() . '<span class="msg_hint"><span class="icon-help-circled"></span> ' . PLUGIN_EVENTCAL_ADMIN_DBC_INSERT_MSG . '</span>' . $this->backend_eventcal_emsg();
+                    echo $this->backend_eventcal_smsg() . '<span class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> ' . PLUGIN_EVENTCAL_ADMIN_DBC_INSERT_MSG . '</span>' . $this->backend_eventcal_emsg();
 
                     break;
 
@@ -3420,7 +3420,7 @@ class serendipity_event_cal extends serendipity_event
                         } else {
                             $url = $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/ics_export/0/0/0/dl/none/all';
                             echo $this->backend_eventcal_smsg();
-                            echo '<p class="msg_hint"><span class="icon-help-circled"></span> ' . PLUGIN_EVENTCAL_ADMIN_ICAL_DOWNLINK . "</p>\n";
+                            echo '<p class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> ' . PLUGIN_EVENTCAL_ADMIN_ICAL_DOWNLINK . "</p>\n";
                             echo '<form name="checkform" method="post" action="'.$this->fetchPluginUri().'">';
                             echo '<input type="hidden" name="calendar[icseptarget]" value="'.$url.'" />';
                             echo '<input type="submit" class="serendipityPrettyButton input_button" name="ical download" value=" ' . CAL_EVENT_FORM_BUTTON_SUBMIT . ' " />';
@@ -3556,7 +3556,7 @@ class serendipity_event_cal extends serendipity_event
     {
         global $serendipity;
 
-        return $str = $this->backend_eventcal_smsg() . '<span class="msg_hint"><span class="icon-help-circled"></span> ' . $text . '</span>
+        return $str = $this->backend_eventcal_smsg() . '<span class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> ' . $text . '</span>
         <div class="form_buttons">
             <a href="'.$url.$addno.'" class="serendipityPrettyButton button_link state_cancel icon_link">' . NOT_REALLY . '</a>
             <a href="'.$url.$addyes.'" class="serendipityPrettyButton button_link state_submit icon_link">' . DUMP_IT . '</a>
