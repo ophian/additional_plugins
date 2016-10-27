@@ -1,9 +1,14 @@
-1.16:
+0.17:
+-----
+
+ * Iconfont accessibility fixes
+
+0.16:
 -----
 
  * Do not show management if not at least userlevel CHIEF
 
-1.15:
+0.15:
 -----
 
  * Add plugin consistencies
