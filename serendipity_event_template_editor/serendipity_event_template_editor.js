@@ -38,7 +38,7 @@ function activateHighlightWithDelay($file) {
         },
         2000);
 }
- 
+
 function deactivateHighlightTimer($file) {
     if (this.templateTimer) {
         clearTimeout(this.templateTimer);

@@ -1,7 +1,18 @@
+0.9:
+----
+ * Iconfont accessibility fixes
+
+0.8:
+----
+ * Plugin consistencies and cleanup
+ * Load lang by API
+
 0.7:
-* Fetch jQuery without protocol
+----
+ * Fetch jQuery without protocol
 
 0.6:
+----
  * Fetch jquery via https
 
 0.3:

@@ -4,20 +4,15 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_template_editor extends serendipity_event {
+class serendipity_event_template_editor extends serendipity_event
+{
     var $title = PLUGIN_EVENT_TEMPLATE_EDITOR_NAME;
     var $pluginPath;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_EVENT_TEMPLATE_EDITOR_NAME);
@@ -25,7 +20,7 @@ class serendipity_event_template_editor extends serendipity_event {
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda');
         $propbag->add('license',       'GPL');
-        $propbag->add('version',       '0.8.0');
+        $propbag->add('version',       '0.9');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0'
         ));
@@ -37,12 +32,13 @@ class serendipity_event_template_editor extends serendipity_event {
         $propbag->add('groups', array('BACKEND_FEATURES'));
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch($name) {
@@ -51,22 +47,22 @@ class serendipity_event_template_editor extends serendipity_event {
                 $propbag->add('name', PLUGIN_EVENT_TEMPLATE_EDITOR_PATH);
                 $propbag->add('description', PLUGIN_EVENT_TEMPLATE_EDITOR_PATH_DESC);
                 $propbag->add('default', $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_template_editor/');
-                return true;
                 break;
+
             case 'highlight':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_TEMPLATE_EDITOR_HIGHLIGHT);
-                $propbag->add('default', true);
-                return true;
+                $propbag->add('default', 'true');
                 break;
+
              default:
-            	return false;
-			}
-		return true;
+                return false;
+        }
+        return true;
     }
 
-
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -107,6 +103,7 @@ class serendipity_event_template_editor extends serendipity_event {
                             //the user probably wants to edit more of this file
                             echo '<meta http-equiv="REFRESH" content="0;url=serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=template_editor&serendipity[template_editor_path]='.$path.'">';
                             break;
+
                           case 'template_editor_create':
                             if (! (serendipity_checkPermission('siteConfiguration') )) {
                                 return;
@@ -116,6 +113,7 @@ class serendipity_event_template_editor extends serendipity_event {
                             file_put_contents($path.$file, '');
                             echo '<meta http-equiv="REFRESH" content="0;url=serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=template_editor&serendipity[template_editor_path]='.$path.$file.'">';
                             break;
+
                         case 'template_editor_delete':
                             if (! (serendipity_checkPermission('siteConfiguration'))) {
                                 return;
@@ -125,8 +123,9 @@ class serendipity_event_template_editor extends serendipity_event {
                             $path = dirname($path).'/';
                             echo '<meta http-equiv="REFRESH" content="0;url=serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=template_editor&serendipity[template_editor_path]='.$path.'">';
                             break;
+
                         case 'template_editor_rename':
-                            if (! (serendipity_checkPermission('siteConfiguration'))) {
+                            if (! serendipity_checkPermission('siteConfiguration')) {
                                 return;
                             }
                             $old_name = $_REQUEST['file'];
@@ -136,8 +135,9 @@ class serendipity_event_template_editor extends serendipity_event {
                                     $serendipity['serendipityPath'] . $path . $new_name);
                             echo $new_name;
                             break;
+
                         case 'template_editor_upload':
-                            if (! (serendipity_checkPermission('siteConfiguration'))) {
+                            if (! serendipity_checkPermission('siteConfiguration')) {
                                 return;
                             }
                             $name = $_FILES['userfile']['name'];
@@ -145,54 +145,60 @@ class serendipity_event_template_editor extends serendipity_event {
                             move_uploaded_file($_FILES['userfile']['tmp_name'], $path.$name);
                             echo '<meta http-equiv="REFRESH" content="0;url=serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=template_editor&serendipity[template_editor_path]='.$path.'">';
                             break;
+
                         case 'serendipity_event_template_editor.js':
                             header('Content-Type: text/javascript');
                             echo file_get_contents(dirname(__FILE__). '/serendipity_event_template_editor.js');
                             break;
+
                         case 'serendipity_event_template_editor.css':
                             header('Content-Type: text/css');
                             echo file_get_contents(dirname(__FILE__). '/serendipity_event_template_editor.css');
                             break;
+
                         case 'codemirror/codemirror.js':
                             header('Content-Type: text/javascript');
                             echo file_get_contents(dirname(__FILE__). '/codemirror/codemirror.js');
                             break;
+
                         case 'codemirror/csscolors.css':
                             header('Content-Type: text/css');
                             echo file_get_contents(dirname(__FILE__). '/codemirror/csscolors.css');
                             break;
+
                         case 'codemirror/parsecss.js':
                             header('Content-Type: text/javascript');
                             echo file_get_contents(dirname(__FILE__). '/codemirror/parsecss.js');
                             break;
+
                         case 'jquery.jeditable.js':
                             header('Content-Type: text/javascript');
                             echo file_get_contents(dirname(__FILE__). '/jquery.jeditable.js');
                             break;
                     }
-                    return true;
                     break;
+
                 case 'backend_templates_configuration_bottom':
                 case 'backend_templates_configuration_none':
                     if (! (serendipity_checkPermission('siteConfiguration'))) {
                         return;
                     }
                     echo '<a class="button_link template_editor_start" href="?&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=template_editor">'. PLUGIN_EVENT_TEMPLATE_EDITOR_START .'</a>';
-                    return true;
                     break;
+
                 case 'backend_sidebar_entries_event_display_template_editor':
                     if (! (serendipity_checkPermission('siteConfiguration'))) {
                         return;
                     }
 
                     if (isset($serendipity['GET']['message'])) {
-                        echo '<span class="msg_notice"><span class="icon-info-circled"></span>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['message']) : htmlspecialchars($serendipity['GET']['message'], ENT_COMPAT, LANG_CHARSET)) . '</span>';
+                        echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['message']) : htmlspecialchars($serendipity['GET']['message'], ENT_COMPAT, LANG_CHARSET)) . '</span>';
                     }
                     if (isset($serendipity['GET']['success'])) {
-                        echo '<span class="msg_success"><span class="icon-ok-circled"></span> ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['success']) : htmlspecialchars($serendipity['GET']['success'], ENT_COMPAT, LANG_CHARSET)) . '</span>';
+                        echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['success']) : htmlspecialchars($serendipity['GET']['success'], ENT_COMPAT, LANG_CHARSET)) . '</span>';
                     }
                     if (isset($serendipity['GET']['error'])) {
-                        echo '<span class="msg_error"><span class="icon-attention-circled"></span> ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['error']) : htmlspecialchars($serendipity['GET']['error'], ENT_COMPAT, LANG_CHARSET)) . '</span>';
+                        echo '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['error']) : htmlspecialchars($serendipity['GET']['error'], ENT_COMPAT, LANG_CHARSET)) . '</span>';
                     }
 
                     #only necessary for delivering the javascript and css
@@ -201,16 +207,15 @@ class serendipity_event_template_editor extends serendipity_event {
                         $pluginPath = $this->pluginPath = $serendipity['baseURL'] . 'index.php?/plugin/';
                     }
 
-					if (!$serendipity['capabilities']['jquery']) {
-	                    echo '<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>';
-					}
+                    if (!$serendipity['capabilities']['jquery']) {
+                        echo '<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>';
+                    }
                     echo '<script src="'.$pluginPath.'jquery.jeditable.js" type="text/javascript"></script>
                     <script src="'.$pluginPath.'serendipity_event_template_editor.js" type="text/javascript"></script>
                     <link rel="stylesheet" type="text/css" href="'.$pluginPath.'serendipity_event_template_editor.css" />
                     <script type="text/javascript">pluginPath = "'.$pluginPath.'";</script>';
 
-
-                    if (empty($serendipity['GET']['template_editor_path'])||is_dir($serendipity['serendipityPath'] . $serendipity['GET']['template_editor_path'])) {
+                    if (empty($serendipity['GET']['template_editor_path']) || is_dir($serendipity['serendipityPath'] . $serendipity['GET']['template_editor_path'])) {
                         #The path is our basic argument for selecting a file or a folder
                         $path = false;
                         if (!empty($serendipity['GET']['template_editor_path'])) {
@@ -228,7 +233,7 @@ class serendipity_event_template_editor extends serendipity_event {
                         }
 
                     } else {
-                        if ($this->get_config('highlight', true)) {
+                        if (serendipity_db_bool($this->get_config('highlight', 'true'))) {
                             echo '<script src="'.$pluginPath.'codemirror/codemirror.js" type="text/javascript"></script>';
                         }
                         if (isset($serendipity['GET']['template_editor_use_temp'])) {
@@ -238,6 +243,7 @@ class serendipity_event_template_editor extends serendipity_event {
                         }
                     }
                     break;
+
                 default:
                     return false;
             }
@@ -246,7 +252,8 @@ class serendipity_event_template_editor extends serendipity_event {
         }
     }
 
-    function showUploader($path, $form) {
+    function showUploader($path, $form)
+    {
         global $serendipity;
         $template_path = $serendipity['templatePath'];
         $cur_template =  $serendipity['template'];
@@ -271,10 +278,10 @@ class serendipity_event_template_editor extends serendipity_event {
                       <input type="submit" id="startEditorUpload" value="' . PLUGIN_EVENT_TEMPLATE_EDITOR_UPLOAD . '">
                   </form>';
         }
-
     }
 
-    function showCreator($path) {
+    function showCreator($path)
+    {
         global $serendipity;
         $template_path = $serendipity['templatePath'];
         $cur_template =  $serendipity['template'];
@@ -291,7 +298,8 @@ class serendipity_event_template_editor extends serendipity_event {
               </form>';
     }
 
-    function showEditor($path , $temp=false) {
+    function showEditor($path , $temp=false)
+    {
         global $serendipity;
 
         $file = basename($path);
@@ -318,10 +326,10 @@ class serendipity_event_template_editor extends serendipity_event {
                 <input type="submit" value="' . SAVE . '">
             </div>
         </form>';
-
     }
 
-    function showFiles($path=false) {
+    function showFiles($path=false)
+    {
         global $serendipity;
         $template_path = $serendipity['templatePath'];
         $cur_template =  $serendipity['template'];
@@ -329,7 +337,6 @@ class serendipity_event_template_editor extends serendipity_event {
             $path = $template_path . $cur_template . '/';
         }
         $files = $this->getFiles($path);
-
 
         $heading = $this->linkify("?&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=template_editor&serendipity[template_editor_path]=", $path, $cur_template);
 
@@ -366,7 +373,8 @@ class serendipity_event_template_editor extends serendipity_event {
         echo '</ul>';
     }
 
-    function showDirectories($path=false) {
+    function showDirectories($path=false)
+    {
         global $serendipity;
         $template_path = $serendipity['templatePath'];
         $cur_template =  $serendipity['template'];
@@ -388,8 +396,11 @@ class serendipity_event_template_editor extends serendipity_event {
 
     }
 
-    #make the heading clickable for better subfolder-navigation
-    function linkify($base, $path, $start) {
+    /**
+     * make the heading clickable for better subfolder-navigation
+     */
+    function linkify($base, $path, $start)
+    {
         $unlinked_path = substr($path, 0, strpos($path, "/$start/")+1);
         $path = substr($path, strlen($unlinked_path));
 
@@ -411,7 +422,8 @@ class serendipity_event_template_editor extends serendipity_event {
         return $unlinked_path . $linked_path;
     }
 
-    function getFiles($path) {
+    function getFiles($path)
+    {
         global $serendipity;
         $path = $serendipity['serendipityPath'] . $path;
         if ($handle = opendir($path)) {
@@ -425,7 +437,8 @@ class serendipity_event_template_editor extends serendipity_event {
         return $files;
     }
 
-    function getDirectories($path) {
+    function getDirectories($path)
+    {
         global $serendipity;
         $path = $serendipity['serendipityPath'] . $path;
         if ($handle = opendir($path)) {
@@ -439,11 +452,11 @@ class serendipity_event_template_editor extends serendipity_event {
         return $files;
     }
 
-    function forkTemplate() {
+    function forkTemplate()
+    {
         global $serendipity;
         $template_path = $serendipity['serendipity_path'] . $serendipity['templatePath'];
         $cur_template =  $serendipity['template'];
-
 
         //fork only if not already forked
         $info_txt = file_get_contents($template_path . $cur_template . '/info.txt');
@@ -478,9 +491,12 @@ class serendipity_event_template_editor extends serendipity_event {
         return true;
     }
 
-    //Check code from $param1 for php-errors
-    //return: true if no error found, false otherwise
-    function checkSyntax($code) {
+    /**
+     * Check code from $param1 for php-errors
+     * return: true if no error found, false otherwise
+     */
+    function checkSyntax($code)
+    {
         global $serendipity;
         $tempFile = $serendipity['serendipityPath'] . 'templates_c/template_editor_temp.php';
         file_put_contents($tempFile, $code);
@@ -492,9 +508,9 @@ class serendipity_event_template_editor extends serendipity_event {
         }
     }
 
-    /*
+    /**
      * http://codestips.com/php-copy-directory-from-source-to-destination/
-     * */
+     */
     function copy_directory($source, $destination ) {
         if ( is_dir( $source ) ) {
             @mkdir( $destination );
@@ -517,21 +533,22 @@ class serendipity_event_template_editor extends serendipity_event {
         }
     }
 
-    function debugMsg($msg) {
-		global $serendipity;
+    function debugMsg($msg)
+    {
+        global $serendipity;
 
-		$this->debug_fp = @fopen ( $serendipity ['serendipityPath'] . 'templates_c/template_editor.log', 'a' );
-		if (! $this->debug_fp) {
-			return false;
-		}
+        $this->debug_fp = @fopen ( $serendipity ['serendipityPath'] . 'templates_c/template_editor.log', 'a' );
+        if (! $this->debug_fp) {
+            return false;
+        }
 
-		if (empty ( $msg )) {
-			fwrite ( $this->debug_fp, "failure \n" );
-		} else {
-			fwrite ( $this->debug_fp, print_r ( $msg, true ) );
-		}
-		fclose ( $this->debug_fp );
-	}
+        if (empty ( $msg )) {
+            fwrite ( $this->debug_fp, "failure \n" );
+        } else {
+            fwrite ( $this->debug_fp, print_r ( $msg, true ) );
+        }
+        fclose ( $this->debug_fp );
+    }
 
 }
 

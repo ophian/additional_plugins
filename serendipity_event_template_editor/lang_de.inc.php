@@ -9,5 +9,3 @@
 @define('PLUGIN_EVENT_TEMPLATE_EDITOR_HIGHLIGHT', 'Syntaxhighlighting');
 @define('PLUGIN_EVENT_TEMPLATE_EDITOR_UPLOAD', 'Hochladen');
 
-?>
-

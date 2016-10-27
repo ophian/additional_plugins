@@ -12,3 +12,4 @@
 @define('PLUGIN_EVENT_TEMPLATE_EDITOR_START', 'Upravit soubory šablon');
 @define('PLUGIN_EVENT_TEMPLATE_EDITOR_HIGHLIGHT', 'Zvýrazňování syntaxe');
 @define('PLUGIN_EVENT_TEMPLATE_EDITOR_UPLOAD', 'Nahrát');
+
