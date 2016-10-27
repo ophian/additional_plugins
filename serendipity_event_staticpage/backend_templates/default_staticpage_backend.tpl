@@ -25,7 +25,7 @@
 
             {if $showmeta}
             <div class="sp_sect configuration_group">
-                <h3 class="toggle_headline"><button id="optionel1" class="toggle_info show_config_option sp_toggle" type="button" data-href="#el1" title="{$CONST.STATICPAGE_TOGGLEANDSAVE|sprintf:$CONST.TOGGLE_OPTION}"><span class="icon-right-dir"></span> {$CONST.STATICPAGES_CUSTOM_META_SHOW}</button></h3>
+                <h3 class="toggle_headline"><button id="optionel1" class="toggle_info show_config_option sp_toggle" type="button" data-href="#el1" title="{$CONST.STATICPAGE_TOGGLEANDSAVE|sprintf:$CONST.TOGGLE_OPTION}"><span class="icon-right-dir" aria-hidden="true"></span> {$CONST.STATICPAGES_CUSTOM_META_SHOW}</button></h3>
             </div>
 
             <fieldset id="el1" class="config_optiongroup additional_info">
@@ -52,7 +52,7 @@
             <legend>{$CONST.STATICPAGE_SECTION_STRUCT}</legend>
             {if !$is_wysiwyg}
             <div class="sp_sect configuration_group">
-                <h3 class="toggle_headline"><button id="optionel2" class="toggle_info show_config_option sp_toggle" type="button" data-href="#el2" title="{$CONST.STATICPAGE_TOGGLEANDSAVE|sprintf:$CONST.TOGGLE_OPTION}"><span class="icon-right-dir"></span> {$CONST.STATICPAGES_CUSTOM_STRUCTURE_SHOW}</button></h3>
+                <h3 class="toggle_headline"><button id="optionel2" class="toggle_info show_config_option sp_toggle" type="button" data-href="#el2" title="{$CONST.STATICPAGE_TOGGLEANDSAVE|sprintf:$CONST.TOGGLE_OPTION}"><span class="icon-right-dir" aria-hidden="true"></span> {$CONST.STATICPAGES_CUSTOM_STRUCTURE_SHOW}</button></h3>
             </div>
             {/if}
 
@@ -70,7 +70,7 @@
 
                 <div class="sp_sect">
                     <label class="sp_label" title="{staticpage_input item="language" what="desc"}">{staticpage_input item="language" what="name"}
-                    <button class="toggle_info button_link" type="button" data-href="#entry_language_info"><span class="icon-info-circled"></span><b>i</b><span class="visuallyhidden"> {$CONST.MORE}</span></button></label>
+                    <button class="toggle_info button_link" type="button" data-href="#entry_language_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> {$CONST.MORE}</span></button></label>
                         {staticpage_input item="language"}
                     <div id="entry_language_info" class="clearfix field_info additional_info">
                         <span id="sp_language_info" class="field_info">
@@ -81,7 +81,7 @@
 
                 <div class="sp_sect">
                     <label class="sp_label" title="{staticpage_input item="related_category_id" what="desc"}">{staticpage_input item="related_category_id" what="name"}
-                    <button class="toggle_info button_link" type="button" data-href="#entry_relcat_info"><span class="icon-info-circled"></span><b>i</b><span class="visuallyhidden"> {$CONST.MORE}</span></button></label>
+                    <button class="toggle_info button_link" type="button" data-href="#entry_relcat_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> {$CONST.MORE}</span></button></label>
                         {staticpage_input item="related_category_id"}
                     <div id="entry_relcat_info" class="clearfix field_info additional_info">
                         <span id="related_category_info" class="field_info">
@@ -125,7 +125,7 @@
             <legend>{$CONST.STATICPAGE_SECTION_META}</legend>
             <div class="sp_sect">{capture name="pagetitle"}{staticpage_input item="pagetitle" what="name"}{/capture}
                 <label class="sp_label sp_button" title="{$smarty.capture.pagetitle}">{$smarty.capture.pagetitle|truncate:30}</label>
-                <button class="toggle_info button_link" type="button" data-href="#meta_urltitle_info"><span class="icon-info-circled"></span><b>i</b><span class="visuallyhidden"> {$CONST.MORE}</span></button>
+                <button class="toggle_info button_link" type="button" data-href="#meta_urltitle_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> {$CONST.MORE}</span></button>
                     {staticpage_input item="pagetitle"}
                 <div id="meta_urltitle_info" class="clearfix field_info additional_info">
                     <span id="urltitle_info" class="field_info">
@@ -136,7 +136,7 @@
 
             <div class="sp_sect">
                 <label class="sp_label sp_button" title="{staticpage_input item="permalink" what="desc"}">{staticpage_input item="permalink" what="name"}</label>
-                <button class="toggle_info button_link" type="button" data-href="#meta_permalink_info"><span class="icon-info-circled"></span><b>i</b><span class="visuallyhidden"> {$CONST.MORE}</span></button>
+                <button class="toggle_info button_link" type="button" data-href="#meta_permalink_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> {$CONST.MORE}</span></button>
                     {staticpage_input item="permalink"}
                 <div id="meta_permalink_info" class="clearfix field_info additional_info">
                     <span id="permalink_info" class="field_info">

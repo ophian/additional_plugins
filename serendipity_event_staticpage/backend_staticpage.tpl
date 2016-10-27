@@ -31,9 +31,9 @@
             <li id="{$entryorder['id']}" class="sequence_item pluginmanager_item_{cycle values="odd,even"}">{*  in normal situations id=$entryorder['pagetitle'], but we need id for js sequence mode *}
                 <input type="hidden" name="serendipity[plugin][sequence][id]" id="sid{$sp_element['id']}" value="{$entryorder['id']}">
                 <div id="sg{$entryorder['id']}" class="pluginmanager_grablet sequence_grablet">
-                    <button class="icon_link" type="button" title="{$CONST.MOVE}"><span class="icon-move"></span><span class="visuallyhidden"> {$CONST.MOVE}</span></button>
+                    <button class="icon_link" type="button" title="{$CONST.MOVE}"><span class="icon-move" aria-hidden="true"></span><span class="visuallyhidden"> {$CONST.MOVE}</span></button>
                 </div>
-                {if $entryorder['parent_id'] > 0}<span class="entry_status sp_ptree">#{$entryorder['parent_id']}</span><span class="icon-right-dir sp_ctree"></span>{/if}<span title="#{$entryorder['id']} {if !empty($entryorder['headline'])}{$entryorder['headline']}{else}{$entryorder['pagetitle']|escape}{/if}" class="sp_grablet_title">{$entryorder['pagetitle']|escape|truncate:50}</span>
+                {if $entryorder['parent_id'] > 0}<span class="entry_status sp_ptree">#{$entryorder['parent_id']}</span><span class="icon-right-dir sp_ctree" aria-hidden="true"></span>{/if}<span title="#{$entryorder['id']} {if !empty($entryorder['headline'])}{$entryorder['headline']}{else}{$entryorder['pagetitle']|escape}{/if}" class="sp_grablet_title">{$entryorder['pagetitle']|escape|truncate:50}</span>
             </li>
         {/foreach}
         </ol>
@@ -259,10 +259,10 @@
 <h2>{$CONST.STATICPAGE_LIST_EXISTING_PAGES}</h2>
 
 <ul class="sp_listnav">
-    <li{if $s9y_get_cat == 'pageedit'} id="active"{/if} class="spnav splist"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pageedit"><span title="{$CONST.STATICPAGE_CATEGORY_PAGES}"><svg role="img" class="icon icon-pagelist"><title>{$CONST.STATICPAGE_CATEGORY_PAGES}</title><use xlink:href="#icon-pagelist"></use></svg></span></a></li>
-    <li class="spnav splist"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pageorder"><span title="{$CONST.STATICPAGE_CATEGORY_PAGEORDER}"><svg role="img" class="icon icon-pageorder"><<title>{$CONST.STATICPAGE_CATEGORY_PAGEORDER}</title><use xlink:href="#icon-pageorder"></use></svg></span></a></li>
-    <li class="spnav splist"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pagetype"><span title="{$CONST.STATICPAGE_CATEGORY_PAGETYPES}"><svg role="img" class="icon icon-pagetype"><title>{$CONST.STATICPAGE_CATEGORY_PAGETYPES}</title><use xlink:href="#icon-pagetype"></use></svg></span></a></li>
-    <li class="spnav splist"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pageadd"><span title="{$CONST.STATICPAGE_CATEGORY_PAGEADD}"><svg role="img" class="icon icon-otherplugins"><title>{$CONST.STATICPAGE_CATEGORY_PAGEADD}</title>><use xlink:href="#icon-otherplugins"></use></svg></span></a></li>
+    <li{if $s9y_get_cat == 'pageedit'} id="active"{/if} class="spnav splist"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pageedit"><span title="{$CONST.STATICPAGE_CATEGORY_PAGES}"><svg aria-hidden="true" role="img" class="icon icon-pagelist"><title>{$CONST.STATICPAGE_CATEGORY_PAGES}</title><use xlink:href="#icon-pagelist"></use></svg></span></a></li>
+    <li class="spnav splist"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pageorder"><span title="{$CONST.STATICPAGE_CATEGORY_PAGEORDER}"><svg aria-hidden="true" role="img" class="icon icon-pageorder"><<title>{$CONST.STATICPAGE_CATEGORY_PAGEORDER}</title><use xlink:href="#icon-pageorder"></use></svg></span></a></li>
+    <li class="spnav splist"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pagetype"><span title="{$CONST.STATICPAGE_CATEGORY_PAGETYPES}"><svg aria-hidden="true" role="img" class="icon icon-pagetype"><title>{$CONST.STATICPAGE_CATEGORY_PAGETYPES}</title><use xlink:href="#icon-pagetype"></use></svg></span></a></li>
+    <li class="spnav splist"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pageadd"><span title="{$CONST.STATICPAGE_CATEGORY_PAGEADD}"><svg aria-hidden="true" role="img" class="icon icon-otherplugins"><title>{$CONST.STATICPAGE_CATEGORY_PAGEADD}</title>><use xlink:href="#icon-otherplugins"></use></svg></span></a></li>
 </ul>
 
 <div id="sp_entry_pagination"></div>
@@ -274,7 +274,7 @@
     <div class="sp_entries_pane {cycle values="odd,even"}{if $entry@last} sp_close{/if}">
         <ul id="sp_entries_list" class="plainList{if $entry['parent_id'] > 0} sp_isChild{/if}">
             <li id="sple{$entry['id']}" class="clearfix">
-                <h3>{if $entry['parent_id'] > 0}<span class="entry_status sp_ptree" title="parent static page ID">#{$entry['parent_id']}</span><span class="icon-right-dir sp_ctree"></span>{/if}{if empty($entry['headline'])}<span class="five">{$CONST.STATICPAGE_PAGETITLE}: </span>{/if}<a href="?serendipity[action]=admin&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pages&amp;serendipity[staticid]={$entry['id']}" title="#{$entry['id']} {$entry['pagetitle']|escape}">{if !empty($entry['headline'])}{$entry['headline']|truncate:50}{else}{$entry['pagetitle']|escape}{/if}</a></h3>
+                <h3>{if $entry['parent_id'] > 0}<span class="entry_status sp_ptree" title="parent static page ID">#{$entry['parent_id']}</span><span class="icon-right-dir sp_ctree" aria-hidden="true"></span>{/if}{if empty($entry['headline'])}<span class="five">{$CONST.STATICPAGE_PAGETITLE}: </span>{/if}<a href="?serendipity[action]=admin&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pages&amp;serendipity[staticid]={$entry['id']}" title="#{$entry['id']} {$entry['pagetitle']|escape}">{if !empty($entry['headline'])}{$entry['headline']|truncate:50}{else}{$entry['pagetitle']|escape}{/if}</a></h3>
                 <div class="clearfix spnav spmod" title="{$CONST.LAST_UPDATED}: {$entry['last_modified']|formatTime:'%Y-%m-%d'}">{$entry['timestamp']|formatTime:'%Y-%m-%d'} {if $entry['timestamp'] <= ($entry['last_modified'] - 1800)}<svg aria-hidden="true" class="icon icon-clock"><use xlink:href="#icon-clock"></use></svg>{/if}</div>
             </li>
             <li class="clearfix">
@@ -283,7 +283,7 @@
                     {if $entry['publishstatus'] == false}<span class="entry_status sp_status_draft">{$CONST.DRAFT}</span>{/if}
                     {if $entry['parent_id'] > 0}<span class="entry_status sp_tree_child">{$CONST.STATICPAGE_TREE_CHILD} #{$entry['parent_id']}</span>{/if}
 
-                    <a target="_blank" class="button_link" href="{$serendipityHTTPPath}{$serendipityIndexFile}?serendipity[staticid]={$entry['id']}&amp;serendipity[staticPreview]=1" title="{$CONST.VIEW} #{$entry['id']} ({$entry['pagetitle']|escape})"><span class="icon-search"></span><span class="visuallyhidden"> {$CONST.VIEW} #{$entry['pagetitle']|escape}</span></a>
+                    <a target="_blank" class="button_link" href="{$serendipityHTTPPath}{$serendipityIndexFile}?serendipity[staticid]={$entry['id']}&amp;serendipity[staticPreview]=1" title="{$CONST.VIEW} #{$entry['id']} ({$entry['pagetitle']|escape})"><span class="icon-search" aria-hidden="true"></span><span class="visuallyhidden"> {$CONST.VIEW} #{$entry['pagetitle']|escape}</span></a>
                     <form action="serendipity_admin.php" method="post" name="sp_listentry_{$entry['id']}">
                     <div>
                         <input type="hidden" name="serendipity[adminModule]" value="event_display">

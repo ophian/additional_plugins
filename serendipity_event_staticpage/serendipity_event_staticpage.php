@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.11');
+        $propbag->add('version', '5.12');
         $propbag->add('requirements', array(
             'serendipity' => '2.0.99',
             'smarty'      => '3.1.0',
@@ -1214,7 +1214,7 @@ class serendipity_event_staticpage extends serendipity_event
                     $altererror = $this->check_error($r);
                 }
                 if ($altererror === true) {
-                    echo '<span class="msg_error"><span class="icon-attention-circled"></span> <strong>Error:</strong> '.$r.'. Please check your privileges to this table; triggered in serendipity_event_staticpages, db_build() method, case 21 checks.</span>'; // ALTER command denied
+                    echo '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> <strong>Error:</strong> '.$r.'. Please check your privileges to this table; triggered in serendipity_event_staticpages, db_build() method, case 21 checks.</span>'; // ALTER command denied
                 } else // strictly secure this by IN_serendipity_admin backend, else $altererror will be false
                 if ($altererror === false && defined('IN_serendipity_admin')) {
                     $this->set_config('db_built', 22);
@@ -3401,7 +3401,7 @@ class serendipity_event_staticpage extends serendipity_event
                             echo "<br>\n";
                         }
                         // note this to user
-                        echo '<div class="msg_notice spmsg"><span class="icon-error"></span> ' . IMPORT_NOTES . ': ' . sprintf(RELATED_CATEGORY_CHANGE_DEL_MSG, $pcp) . '</div>';
+                        echo '<div class="msg_notice spmsg"><span class="icon-error" aria-hidden="true"></span> ' . IMPORT_NOTES . ': ' . sprintf(RELATED_CATEGORY_CHANGE_DEL_MSG, $pcp) . '</div>';
                     }
                     break;
 
@@ -3449,7 +3449,7 @@ class serendipity_event_staticpage extends serendipity_event
 
                     if ($pid > 0 && $pcp != $pid) {
                         // note this to user in case we had updated real data
-                        echo '<div class="msg_notice spmsg"><span class="icon-error"></span> ' . IMPORT_NOTES . ': ' . sprintf(RELATED_CATEGORY_CHANGE_MSG, $pcp, $pid) . '</div>';
+                        echo '<div class="msg_notice spmsg"><span class="icon-error" aria-hidden="true"></span> ' . IMPORT_NOTES . ': ' . sprintf(RELATED_CATEGORY_CHANGE_MSG, $pcp, $pid) . '</div>';
                     }
                     break;
 
@@ -3579,7 +3579,7 @@ class serendipity_event_staticpage extends serendipity_event
                     }
                     // Only MySQL supported, since I don't know how to use REGEXPs differently. // RQ: this is an old dev note. What shall we do about it, to enable this for other db layers?
                     if ($serendipity['dbType'] != 'mysql' && $serendipity['dbType'] != 'mysqli') {
-                        echo '<span class="msg_notice"><span class="icon-info-circled"></span> ' . STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY . "</span>\n";
+                        echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY . "</span>\n";
                         break;
                     }
 
@@ -3627,7 +3627,7 @@ class serendipity_event_staticpage extends serendipity_event
                         }
 
                         $spimgmovedtodir = sprintf(STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRIES, count($dirs));
-                        printf('<span class="msg_notice"><span class="icon-info-circled"></span> ' . $spimgmovedtodir . "</span>\n");
+                        printf('<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . $spimgmovedtodir . "</span>\n");
                     }
                     break;
 
