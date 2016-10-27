@@ -1,4 +1,10 @@
+1.27:
+-----
+
+ * Iconfont accessibility fixes
+
 1.26:
+-----
 
  * Rewrite backend markup for Serendipity 2.0x+
    - extends required version to 2.0

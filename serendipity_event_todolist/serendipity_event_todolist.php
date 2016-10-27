@@ -35,7 +35,7 @@ class serendipity_event_todolist extends serendipity_event
                                             'backend_sidebar_entries'                               => true
                                             ));
         $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian');
-        $propbag->add('version', '1.26');
+        $propbag->add('version', '1.27');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -1622,12 +1622,12 @@ class serendipity_event_todolist extends serendipity_event
                     if ($sort_idx == 0) {
                         $moveup   = "<td>&nbsp;</td>\n";
                     } else {
-                        $moveup   = '<td><a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;submit=move+up&amp;serendipity[project_to_move]=' . $id . '"><span class="icon-up-dir"></span><span class="visuallyhidden">' . UP . "</span></a></td>\n";
+                        $moveup   = '<td><a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;submit=move+up&amp;serendipity[project_to_move]=' . $id . '"><span class="icon-up-dir" aria-hidden="true"></span><span class="visuallyhidden">' . UP . "</span></a></td>\n";
                     }
                     if ($sort_idx == (count($sql)-1)) {
                         $movedown = "<td>&nbsp;</td>\n";
                     } else {
-                        $movedown = '<td><a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;submit=move+down&serendipity[project_to_move]=' . $id . '"><span class="icon-down-dir"></span><span class="visuallyhidden">'. DOWN ."</span></a></td>\n";
+                        $movedown = '<td><a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;submit=move+down&serendipity[project_to_move]=' . $id . '"><span class="icon-down-dir" aria-hidden="true"></span><span class="visuallyhidden">'. DOWN ."</span></a></td>\n";
                     }
                 }
 
