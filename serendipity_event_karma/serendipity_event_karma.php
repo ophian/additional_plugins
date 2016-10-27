@@ -44,7 +44,7 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian');
-        $propbag->add('version',       '2.12');
+        $propbag->add('version',       '2.13');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -1680,12 +1680,12 @@ END_IMG_CSS;
 
                     // Variables for display
                     if ($linkPrevious) {
-                        $linkPrevious = '<a class="button_link" href="' . $linkPrevious . '" title="'. PREVIOUS .'"><span class="icon-left-dir"></span><span class="visuallyhidden"> '. PREVIOUS .'</span></a>';
+                        $linkPrevious = '<a class="button_link" href="' . $linkPrevious . '" title="'. PREVIOUS .'"><span class="icon-left-dir" aria-hidden="true"></span><span class="visuallyhidden"> '. PREVIOUS .'</span></a>';
                     } else {
                         $linkPrevious = '<span class="visuallyhidden">'. NO_ENTRIES_TO_PRINT .'</span>';
                     }
                     if ($linkNext) {
-                        $linkNext = '<a class="button_link" href="' . $linkNext . '" title="'. NEXT .'"><span class="visuallyhidden">'. NEXT .' </span><span class="icon-right-dir"></span></a>';
+                        $linkNext = '<a class="button_link" href="' . $linkNext . '" title="'. NEXT .'"><span class="visuallyhidden">'. NEXT .' </span><span class="icon-right-dir" aria-hidden="true"></span></a>';
                     } else {
                         $linkNext = '<span class="visuallyhidden">'. NO_ENTRIES_TO_PRINT .'</span>';
                     }
