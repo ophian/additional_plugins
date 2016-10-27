@@ -31,8 +31,8 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_INCLUDEENTRY_NAME);
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '2.18');
+        $propbag->add('author',        'Garvin Hicking, Ian');
+        $propbag->add('version',       '2.19');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
@@ -402,7 +402,7 @@ class serendipity_event_includeentry extends serendipity_event
                 if ($serendipity['version'][0] < 2) {
                     echo '<div class="serendipityAdminMsgError"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png') . '" alt="" />ERROR: ' . $result . '</div>'."\n";
                 } else {
-                    echo '<span class="msg_error"><span class="icon-attention-circled"></span> ERROR: ' . $result . '</span>'."\n";
+                    echo '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ERROR: ' . $result . '</span>'."\n";
                 }
             }
             $serendipity["POST"]["staticblock"] = serendipity_db_insert_id("staticblocks", 'id');
@@ -412,7 +412,7 @@ class serendipity_event_includeentry extends serendipity_event
                 if ($serendipity['version'][0] < 2) {
                     echo '<div class="serendipityAdminMsgError"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png') . '" alt="" />ERROR: ' . $result . '</div>'."\n";
                 } else {
-                    echo '<span class="msg_error"><span class="icon-attention-circled"></span> ERROR: ' . $result . '</span>'."\n";
+                    echo '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ERROR: ' . $result . '</span>'."\n";
                 }
             }
         }
@@ -567,7 +567,7 @@ class serendipity_event_includeentry extends serendipity_event
             if ($serendipity['version'][0] < 2) {
                 echo '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />'. DONE . ': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')). '</div>'."\n";
             } else {
-                echo '<span class="msg_success"><span class="icon-ok-circled"></span> '. DONE . ': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')). "</span>\n";
+                echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> '. DONE . ': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')). "</span>\n";
             }
             $this->updateStaticBlock();
         }
@@ -577,7 +577,7 @@ class serendipity_event_includeentry extends serendipity_event
             if ($serendipity['version'][0] < 2) {
                 echo '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />'. DONE .': '. sprintf(RIP_ENTRY, $this->staticblock['title']) . '</div>'."\n";
             } else {
-                echo '<span class="msg_success"><span class="icon-ok-circled"></span> '. DONE .': '. sprintf(RIP_ENTRY, $this->staticblock['title']) . "</span>\n";
+                echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> '. DONE .': '. sprintf(RIP_ENTRY, $this->staticblock['title']) . "</span>\n";
             }
         }
 
