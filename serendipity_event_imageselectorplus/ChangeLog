@@ -1,3 +1,7 @@
+0.55:
+-----
+ * Iconfont accessibility fixes
+
 0.54:
 -----
  * Check for existing versions regarding ckeditor path
