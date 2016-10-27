@@ -32,7 +32,7 @@
                     <input id="hReview_use" type="checkbox" name="serendipity[properties][mf_type][]" value="hReview" onchange="check_mf();"<?php echo ($mf_exist['hReview'] == true)?' checked="checked"':' ';?>/>
                     <label for="hCalendar_use">hCalendar</label>
                     <input id="hCalendar_use" type="checkbox" name="serendipity[properties][mf_type][]" value="hCalendar" onchange="check_mf();"<?php echo ($mf_exist['hCalendar'])?' checked="checked"':' ';?>/>
-                    <button class="toggle_info button_link" type="button" data-href="#microformats_tab_info"><span class="icon-info-circled"></span><b>i</b><span class="visuallyhidden"> <?php echo MORE ?></span></button>
+                    <button class="toggle_info button_link" type="button" data-href="#microformats_tab_info"><span class="icon-info-circled" aria-hidden="true"></span> <b>i</b><span class="visuallyhidden"> <?php echo MORE ?></span></button>
                     <div id="microformats_tab_info" class="clearfix field_info additional_info">
                         <span id="mf_tab_info" class="field_info">
                             Select one or more (unchecking deletes mf after submit!)

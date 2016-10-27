@@ -53,7 +53,7 @@ class serendipity_event_microformats extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MICROFORMATS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Gutjahr, Ian');
-        $propbag->add('version',       '0.47');
+        $propbag->add('version',       '0.48');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -319,7 +319,7 @@ div.tabbertab fieldset {
                     $ratings    = array('hReview' => range(1.0, $this->get_config('best'), $this->get_config('step')));
 
                     $clock = ($serendipity['version'] > 1)
-                        ? ' <span class="icon-clock"></span><span class="visuallyhidden"> ' . RESET_DATE . '</span>'
+                        ? ' <span class="icon-clock" aria-hidden="true"></span><span class="visuallyhidden"> ' . RESET_DATE . '</span>'
                         : ' <img src="'.serendipity_getTemplateFile('admin/img/clock.png').'" style="border:none;vertical-align:text-top" alt="' . RESET_DATE . '" />'."\n";
 
                     include_once('microformatsBackend.inc.php');
