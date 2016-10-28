@@ -1,3 +1,7 @@
+1.36:
+-----
+ * Use protocol-relative URL
+
 1.35:
 -----
  * Fix entry fetch in special case
