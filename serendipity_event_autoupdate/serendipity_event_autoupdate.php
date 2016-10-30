@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.3.3');
+        $propbag->add('version',       '1.3.4');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -134,7 +134,7 @@ class serendipity_event_autoupdate extends serendipity_event
                     $eventData = '
                     <form action="?serendipity[adminModule]=event_display&serendipity[adminAction]=update" method="POST">
                         <input type="hidden" name="serendipity[newVersion]" value="'.$addData.'" />
-                        ' . ($serendipity['version'][0] > 1 ? '<button type="submit">'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'</button>' : '<input type="submit" value="'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'" />') . '
+                        <div id="autobut">' . ($serendipity['version'][0] > 1 ? '<button type="submit">'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'</button>' : '<input type="submit" value="'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'" />') . '</div>
                     </form>';
                     break;
 
