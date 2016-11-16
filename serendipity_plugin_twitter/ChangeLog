@@ -81,7 +81,7 @@ TODO:
 
 1.43 (brockhaus)
 --------------------------
-    * Announce article: check for real URL lenght, as twitter makes it longer sometimes.
+    * Announce article: check for real URL length, as twitter makes it longer sometimes.
     * Tweeter: Count chars directly after a short URL was added. Counts URLs as twitter URL length always.
     * Article announcement with "uncompressed" urls did not work very well.
 

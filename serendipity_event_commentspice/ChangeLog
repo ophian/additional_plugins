@@ -1,3 +1,7 @@
+1.10:
+-----
+    * Fix spelling issue
+
 1.09:
 -----
     * Fix Adress for Twitter JS-Script to avoid broken security chain when using https.

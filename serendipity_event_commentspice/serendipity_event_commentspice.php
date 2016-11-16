@@ -28,7 +28,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',        '1.09');
+        $propbag->add('version',        '1.10');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -545,9 +545,9 @@ class serendipity_event_commentspice extends serendipity_event
         if ('rules' == $rule_announce || 'rules' == $rule_twitter) {
             // Check for comment length
             if ($checkCommentLength) {
-                $rule_commentlenght = (int)$this->get_config('rule_extras_commentlength',0);
+                $rule_commentlength = (int)$this->get_config('rule_extras_commentlength',0);
                 $commentlen = empty($comment) ? 0 : strlen($comment);
-                $comment_enough = $commentlen>= $rule_commentlenght;
+                $comment_enough = $commentlen>= $rule_commentlength;
                 if ('rules' == $rule_twitter) $result['allow_twitter'] = $result['allow_twitter'] &&  $comment_enough;
                 if ('rules' == $rule_announce) $result['allow_announce'] = $result['allow_announce'] &&  $comment_enough;
             }
@@ -565,10 +565,10 @@ class serendipity_event_commentspice extends serendipity_event
         if ($checknofollow && ('rules' == $rule_announce_nofollow || 'rules' == $rule_twitter_nofollow)) {
             // Check for comment length
             if ($checkCommentLength) {
-                $rule_commentlenght = (int)$this->get_config('rule_dofollow_commentlength',0);
+                $rule_commentlength = (int)$this->get_config('rule_dofollow_commentlength',0);
                 $commentlen = empty($comment) ? 0 : strlen($comment);
-                $comment_enough = $commentlen>= $rule_commentlenght;
-                $this->log("checkCommentLenght. len:$commentlen, rulen:$rule_commentlenght - enough:$comment_enough");
+                $comment_enough = $commentlen>= $rule_commentlength;
+                $this->log("checkCommentLength. len:$commentlen, rulen:$rule_commentlength - enough:$comment_enough");
                 if ('rules' == $rule_twitter_nofollow) $result['nofollow_twitter'] = $result['nofollow_twitter'] ||  !$comment_enough;
                 if ('rules' == $rule_announce_nofollow) $result['nofollow_announce'] = $result['nofollow_announce'] || !$comment_enough;
             }
@@ -1066,17 +1066,17 @@ class serendipity_event_commentspice extends serendipity_event
     {
         $requirements = '';
         if ('rules'==$rule_config_value) {
-            $rule_commentlenght = (int)$this->get_config('rule_extras_commentlength',0);
+            $rule_commentlength = (int)$this->get_config('rule_extras_commentlength',0);
             $rule_commentcount = (int)$this->get_config('rule_extras_commentcount',0);
             $requirements = "<em>(" .PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS . ": ";
             if ($rule_commentcount) {
                 $requirements .= sprintf(PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS_COMMENTCOUNT,$rule_commentcount);
             }
-            if ($rule_commentlenght && $rule_commentcount) {
+            if ($rule_commentlength && $rule_commentcount) {
                 $requirements .= ", ";
             }
-            if ($rule_commentlenght) {
-                $requirements .= sprintf(PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS_COMMENTLEN,$rule_commentlenght);
+            if ($rule_commentlength) {
+                $requirements .= sprintf(PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS_COMMENTLEN,$rule_commentlength);
             }
             $requirements .= ")</em>";
         }
