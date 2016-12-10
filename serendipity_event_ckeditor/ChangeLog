@@ -1,6 +1,10 @@
+4.6.1.0:
+---------
+    * Upgrade to CKEDITOR 4.6. Series, update 1 (http://ckeditor.com/release-notes).
+
 4.5.11.1:
 ---------
-    * Iconfont accessibility fixex
+    * Iconfont accessibility fixes
 
 4.5.11.0:
 ---------

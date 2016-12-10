@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.7, 2016-09-27
+ * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.8, 2016-12-10
  */
 
 /**
@@ -132,9 +132,10 @@ CKEDITOR.editorConfig = function( config ) {
     config.uiColor = '#FF8040'; // mango
     config.uiColor = '#FF2400'; // scarlet red
     config.uiColor = '#14B8C4'; // light turquoise
-    */
-    config.skin    = 'moono'; // this is default
+
+    config.skin    = 'moono-lisa'; // this is default
     config.height  = 400; // dito
+    */
 
     /**
      The previously used PBCKCODE CODE Editor was replaced by the codesnippet plugin , which was developed and enhanced during the development of the CKEDITOR 4 Series.
