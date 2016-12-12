@@ -90,4 +90,5 @@ class serendipity_plugin_flickrbadge_flickr
 			throw new Exception($response['message'], $response['code']);
 		return $response;
 	}
+
 }
