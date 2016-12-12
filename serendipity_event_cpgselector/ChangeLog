@@ -1,3 +1,11 @@
+2.09:
+-----
+ * Now uses lang API - extends required Serendipity version to 1.6
+ * No uses PHP's mysqli Extension, which replaces the old and deprecated
+   mysql API. This extends the required PHP version to 5.0.0.
+ * Editors Update Note: untested if usable under Serendipity 2.0+.
+
+
 2.08.2
 ------
  * S9y 2.0 serendipity_define.js reference file fix

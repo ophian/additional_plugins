@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.2
  */
@@ -40,3 +40,4 @@
 @define('PLUGIN_CPG_MAXHEIGHT_DESC',	'Максималната височина за истински (голям) размер. Стойност 0 премахва ограничението.');
 
 @define('PLUGIN_CPG_TITLE',			'Изберете картинка от галерията');
+

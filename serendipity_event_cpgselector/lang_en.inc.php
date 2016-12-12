@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -41,4 +41,3 @@
 
 @define('PLUGIN_CPG_TITLE',			'Select gallery image');
 
-?>

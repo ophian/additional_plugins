@@ -40,4 +40,3 @@
 
 @define('PLUGIN_CPG_TITLE',			'Vyberte hlavní obrázek galerie');
 
-?>
