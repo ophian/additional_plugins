@@ -1,3 +1,8 @@
+0.20:
+-----
+ * Cleanup
+ * Now uses lang API - extends required Serendipity version to 1.6
 
 0.10:
-update bundled version
+-----
+ * update bundled version

@@ -1,17 +1,10 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 require_once dirname(__FILE__) . '/recaptcha/recaptchalib.php';
 
@@ -21,12 +14,11 @@ $GLOBALS['recaptcha_verify_server'] = 'api-verify.recaptcha.net';
 
 class serendipity_event_recaptcha extends serendipity_event
 {
-var $error=null;
+    var $error=null;
 
     function introspect(&$propbag)
     {
         global $serendipity;
-
 
         $this->title = PLUGIN_EVENT_RECAPTCHA_TITLE;
 
@@ -35,11 +27,11 @@ var $error=null;
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn)');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.0',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '0.11');
+        $propbag->add('version',       '0.20');
         $propbag->add('event_hooks',    array(
             'frontend_configure'   => true,
             'frontend_saveComment' => true,
@@ -57,7 +49,6 @@ var $error=null;
             'logtype',
             'logfile'));
         $propbag->add('groups', array('ANTISPAM'));
-
     }
 
     function introspect_config_item($name, &$propbag)
@@ -107,11 +98,9 @@ var $error=null;
                     'all'  => ALL_AUTHORS,
                     'none' => NONE
                 );
-
                 foreach($_groups AS $group) {
                     $groups[$group['confkey']] = $group['confvalue'];
                 }
-
                 $propbag->add('type', 'multiselect');
                 $propbag->add('name', PLUGIN_EVENT_RECAPTCHA_HIDE);
                 $propbag->add('description', PLUGIN_EVENT_RECAPTCHA_HIDE_DESC);
@@ -137,7 +126,6 @@ var $error=null;
                     'desc'  => array(PLUGIN_EVENT_RECAPTCHA_LOGTYPE_FILE, PLUGIN_EVENT_RECAPTCHA_LOGTYPE_DB, PLUGIN_EVENT_RECAPTCHA_LOGTYPE_NONE)
                 ));
                 $propbag->add('radio_per_row', '1');
-
                 break;
 
             case 'captchas_ttl':
@@ -146,7 +134,7 @@ var $error=null;
                 $propbag->add('description', PLUGIN_EVENT_RECAPTCHA_CAPTCHAS_TTL_DESC);
                 $propbag->add('default', '7');
                 break;
-            
+
             case 'info':
                 $suche='!http(?:s)?:\/\/(?:(?:[^.]*)\.)?([^.\/]*)!';
                 $result=preg_match($suche,$serendipity['baseURL'],$domain);
@@ -155,23 +143,24 @@ var $error=null;
                 break;
 
             case 'sep':
-                $propbag->add('type', 'seperator');
+                $propbag->add('type', 'separator');
                 break;
 
             default:
-                    return false;
+                return false;
         }
-
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
     // Checks whether the current author is contained in one of the groups that
     // need no spam checking
-    function inGroup() {
+    function inGroup()
+    {
         global $serendipity;
 
         $checkgroups = explode('^', $this->get_config('hide_for_authors'));
@@ -192,11 +181,11 @@ var $error=null;
                 return true;
             }
         }
-
         return false;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -218,8 +207,6 @@ var $error=null;
                     if ($_recaptcha) {
                         $serendipity['plugins']['disable_internal_captcha'] = true;
                     }
-
-                    return true;
                     break;
 
                 case 'frontend_saveComment':
@@ -236,7 +223,7 @@ var $error=null;
                         // Captcha checking
                         if ($show_captcha && $addData['type'] == 'NORMAL') {
                             $privatekey = $this->get_config('recaptcha_priv');
-                            
+
                             if ($_POST["recaptcha_response_field"] != 1) {
                                     $resp = recaptcha_check_answer($privatekey,
                                                                     $_SERVER["REMOTE_ADDR"],
@@ -256,8 +243,6 @@ var $error=null;
                             }
                         }
                     }
-
-                    return true;
                     break;
 
                 case 'frontend_comment':
@@ -274,7 +259,7 @@ var $error=null;
                             //$captchas  = true;
                             printf('<div class="serendipity_center serendipity_msg_important">%s</div>',PLUGIN_EVENT_RECAPTCHA_ERROR_RECAPTCHA);
                          }
-                            
+
                         // The response from recaptcha.net
                         $resp    = null;
                         $theme   = $this->get_config('recaptcha_style', 'red');
@@ -285,22 +270,20 @@ var $error=null;
                         }
                         echo recaptcha_get_html($pubkey, $this->error, $use_ssl);
                     }
-
-                    return true;
                     break;
 
 
                 default:
                     return false;
-                    break;
             }
+            return true;
         } else {
             return false;
         }
     }
 
-
-    function log($logfile, $id, $switch, $reason, $comment) {
+    function log($logfile, $id, $switch, $reason, $comment)
+    {
         global $serendipity;
 
         $method = $this->get_config('logtype');
@@ -360,6 +343,8 @@ var $error=null;
                 break;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

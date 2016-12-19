@@ -44,3 +44,4 @@
 
 @define('PLUGIN_EVENT_RECAPTCHA_INFO1', 'Recaptcha je zvlá¹tní druh <a href="http://en.wikipedia.com/wiki/Captcha">kryptogramu</a>. U¾ivatel musí rozpoznat dvì slova. První systémem výzva-odpovìï (ochrana pøed spamem), a druhé, které pomáhá pøi digitalizaci knih. Navíc zrakovì posti¾ení lidé mohou pou¾ít audio-kryptogram. Pro více informací se podívejte na stránku <a href="http://www.recaptcha.net">www.recaptcha.net</a>.<br/>Pamatujte, ¾e abyste mohli pou¾ívat tento plugin, musíte se registrovat na zmínìné webové stránce.O klíè mù¾ete po¾ádat  <a href="http://www.recaptcha.net/api/getkey?app=serendipity&domain=');
 @define('PLUGIN_EVENT_RECAPTCHA_INFO2', '">tady</a>. <br/> Pamatujte také prosím, ¾e tento plugin se bude pøi ka¾dém komentáøi dotazovat serveru recaptcha, a mù¾e proto zpomalit naèítání stránek. Pokud bude server recaptcha vypnutý, pak nebudou pou¾ity ¾ádné kryptogramy.');
+

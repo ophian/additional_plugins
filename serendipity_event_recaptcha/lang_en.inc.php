@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -43,3 +43,4 @@
 
 @define('PLUGIN_EVENT_RECAPTCHA_INFO1', 'A Recaptcha is a special <a href="http://en.wikipedia.com/wiki/Captcha">captcha</a>. The user will have to recognize 2 words, one as a challenge-response to prevent spam, and a second one to help digitizing books. Additionally visually impaired people may switch to an acoustic captcha. For more info, you might want to look at the website <a href="http://www.recaptcha.net">www.recaptcha.net</a>.<br/>Please note, that in order to use this plugin you\'ll have to register at this website. You can apply for a key <a href="http://www.recaptcha.net/api/getkey?app=serendipity&domain=');
 @define('PLUGIN_EVENT_RECAPTCHA_INFO2', '">here</a>. <br/> Please also note, that this plugin in will query the recaptcha.net server every time and might therefore slow down the loading of the articles and in case of a timeout, no captcha will be displayed.');
+
