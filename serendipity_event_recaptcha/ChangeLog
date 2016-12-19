@@ -1,3 +1,7 @@
+0.30:
+-----
+ * new experimental support for google recaptcha v2
+
 0.20:
 -----
  * Cleanup
