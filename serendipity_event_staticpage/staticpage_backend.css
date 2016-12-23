@@ -119,6 +119,15 @@
 .sp_todd {
     background-color: #f0f0f0;
 }
+.sp_tgreen {
+    color: green;
+}
+.sp_tred {
+    color: #ff4136;
+}
+.sp_tyellow {
+    background-color: #ffdc00;
+}
 .sp_label {
     page-break-after: always;
     display: block;
