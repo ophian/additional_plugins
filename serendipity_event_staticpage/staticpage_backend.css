@@ -274,8 +274,8 @@
 #sp_navigator .sp_info { font-size: 125%; }
 .sp_ptype .input_textbox { width: inherit; }
 
-.sp_dim { opacity: .33; }
-.sp_lang { padding: 0 0.1em; color: #800080; } 
+.sp_dim { color: #AAA; font-size: small; }
+.sp_lang { padding: 0 0.1em; font-style: italic;}
 
 .sp_pageselector button[type="submit"].entry_preview {
     background: #ddd;
@@ -613,7 +613,7 @@ span.ellipse.clickable {
 }
 
 /* added for 2.0 */
-.simple-pagination li.active { 
+.simple-pagination li.active {
     background-image: inherit;
     -webkit-box-shadow: inherit;
     -moz-box-shadow: inherit;
