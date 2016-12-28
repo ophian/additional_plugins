@@ -63,6 +63,7 @@ h5,h6 {font-size:1em}
 #user_menu li {margin:0 1em 0 0}
 #serendipity_updater {background:#eee;border:1px solid #aaa;margin:1em 1.2em;padding:0 1em}
 #information span {font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;font-style:italic;color:#ff3600}
+#autobut {margin-bottom: .5em;}
 @media only screen and (min-width:768px) {body {font-size:1em}
 h1 {font-size:2em;line-height:1.5em;margin:.75em 0 0}
 h2 {font-size:1.5em;line-height:1em;margin:1em 0}
