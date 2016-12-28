@@ -149,9 +149,9 @@
 <description>Zeigt Hinweise für angemeldete Autoren in der Admin-Oberfläche an.</description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.16</version>
+  <version>0.17</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-04</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_adminnotes">
 <file>ChangeLog</file>
@@ -192,9 +192,9 @@
 <description>Aggregiert Einträge von mehreren RSS Feeds (&quot;Planet&quot;). WICHTIGER HINWEIS: Die Aktualisierung des Aggregators muss derzeit noch manuell via Crontab aufgerufen werden. Rufen Sie im gewünschten Abstand per cronjob o.ä. folgende URL auf: index.php?/plugin/aggregator</description>
 <maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.43</version>
+  <version>0.44</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-09-07</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_aggregator">
 <file>.htaccess</file>
@@ -486,11 +486,11 @@
 <summary>Kategorien zuweisen</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Ermöglicht mehrere Kategorien zu bestehenden Einträgen zuzuweisen, bzw. die Zuweisungen schnell für alle Artikel zu ändern.</description>
-<maintainers><maintainer><name>Garvin Hicking, Matthias Mees</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
+  <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_assigncategories">
 <file>.htaccess</file>
@@ -586,9 +586,9 @@
 <description>Sobald das Dashboard Plugin (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in das Dashboard des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten.</description>
 <maintainers><maintainer><name>onli, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.3.3</version>
+  <version>1.3.4</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-04</date>
+  <date>2016-10-30</date>
   <filelist>
 <dir name="serendipity_event_autoupdate">
 <file>.htaccess</file>
@@ -778,9 +778,9 @@
 <description>Provides the ability to automatically make backups from your s9y, the database-tables, the whole database and the files. Only MySQL(i) databases are currently supported. WARNING: This plugin does not work well with large databases or directories.</description>
 <maintainers><maintainer><name>Alexander Mieland, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.15</version>
+  <version>0.16</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2016-10-10</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_backup">
 <file>backup.sh</file>
@@ -1076,9 +1076,9 @@
 <description>Zeigt einen Terminkalender innerhalb des Blogs mit dem Blog-Design und allen Formatierungen an. Unterstützt Backend/Frontend Administration, vielfache Termine und iCal Export. (Nur MySQL)</description>
 <maintainers><maintainer><name>Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.78</version>
+  <version>1.79</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-27</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_cal">
 <file>.htaccess</file>
@@ -1228,16 +1228,16 @@
 <description>Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lies die Plugin Konfigurations Seite für weitere Informationen.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.5.11.0</version>
+  <version>4.6.1.0</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-09-27</date>
+  <date>2016-12-10</date>
   <filelist>
 <dir name="serendipity_event_ckeditor">
 <file>.htaccess</file>
 <file>basic_toolbar1.css</file>
 <file>basic_toolbar2.css</file>
 <file>ChangeLog</file>
-<file>ckeditor_4.5.11.0-plus.zip</file>
+<file>ckeditor_4.6.1.0-plus.zip</file>
 <file>cke_backend.css</file>
 <file>cke_config.js</file>
 <file>cke_ibn.css</file>
@@ -1271,7 +1271,7 @@
     <file>serendipity_event_ckeditor/basic_toolbar1.css</file>
     <file>serendipity_event_ckeditor/basic_toolbar2.css</file>
     <file>serendipity_event_ckeditor/ChangeLog</file>
-    <file>serendipity_event_ckeditor/ckeditor_4.5.11.0-plus.zip</file>
+    <file>serendipity_event_ckeditor/ckeditor_4.6.1.0-plus.zip</file>
     <file>serendipity_event_ckeditor/cke_backend.css</file>
     <file>serendipity_event_ckeditor/cke_config.js</file>
     <file>serendipity_event_ckeditor/cke_ibn.css</file>
@@ -1459,9 +1459,9 @@
 <description>Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.</description>
 <maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.09</version>
+  <version>1.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-13</date>
+  <date>2016-11-16</date>
   <filelist>
 <dir name="serendipity_event_commentspice">
 <file>.htaccess</file>
@@ -1768,9 +1768,9 @@
 <description>Select images from a Coppermine gallery in new entries</description>
 <maintainers><maintainer><name>Matthew Maude (modified by Jim Davies)</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.08.2</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>2.09</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-12-12</date>
   <filelist>
 <dir name="serendipity_event_cpgselector">
 <file>.htaccess</file>
@@ -1913,11 +1913,11 @@
 <summary>Frei-definierbare Permalinks zu Einträgen</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Ermöglicht die Eingabe eines individuellen Permalinks (dauerhafter Link) um spezifische Artikel aufzurufen. Es können nur URL-Muster verwendet werden, die nicht bereits intern verwendet werden - eigene Permalinks innerhalb der /archives/ Struktur sind daher nicht möglich. Aber andere, auch nicht existierende, Verzeichnisse können verwendet werden.</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.17</version>
+  <version>1.18</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-19</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_custom_permalinks">
 <file>ChangeLog</file>
@@ -2140,9 +2140,9 @@
 <description>Stellt einen kompletten Downloadmanager zur Verfügung. Bei Deinstallation werden alle zugehörigen Tabellen gelöscht!</description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.37</version>
+  <version>0.38</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-26</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_downloadmanager">
 <file>.htaccess</file>
@@ -2647,9 +2647,9 @@
 <description>Zeigt eine Auswahlleiste bei der Erstellung eines Eintrags um Smileys einzufügen.</description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.15</version>
+  <version>2.16</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-24</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_emoticonchooser">
 <file>.htaccess</file>
@@ -3048,9 +3048,9 @@
 <description>Liste von Fragen und Antworten werden übersichtlich aufbereitet dargestellt.</description>
 <maintainers><maintainer><name>Falk Doering, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.25</version>
+  <version>1.26</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-10-07</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_faq">
 <file>.htaccess</file>
@@ -3241,9 +3241,9 @@
 <description>Ermöglich Besuchern die Einträge im Blog nach Kriterien zu durchsuchen/sortieren</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7.2</version>
+  <version>1.8.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
+  <date>2016-10-28</date>
   <filelist>
 <dir name="serendipity_event_filter_entries">
 <file>.htaccess</file>
@@ -3851,9 +3851,9 @@
 <description>Erlaubt das freie Tagging von Artikeln</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.91</version>
+  <version>3.93</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-07</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_freetag">
 <file>.htaccess</file>
@@ -4002,7 +4002,7 @@
 <description>Erlaubt Einträge mit Geokoordinaten zu versehen</description>
 <maintainers><maintainer><name>Zoran Kovacevic, Grischa Brockhaus, Matthias Gutjahr</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.35</version>
+  <version>1.36</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-10-06</date>
   <filelist>
@@ -4983,9 +4983,9 @@
 <description>Zeigt ein Gästebuch innerhalb des Blogs mit dem gewählten Design und allen Formatierungen an.</description>
 <maintainers><maintainer><name>Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.61</version>
+  <version>3.62</version>
   <requirements:s9yVersion>1.7.0</requirements:s9yVersion>
-  <date>2016-09-19</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_guestbook">
 <file>.htaccess</file>
@@ -5252,9 +5252,9 @@
 <description>Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediendatenbank.</description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.54</version>
+  <version>0.55</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_imageselectorplus">
 <file>.htaccess</file>
@@ -5313,11 +5313,11 @@
 <summary>Textformatierung: Eintragsdaten einfügen</summary>
 <groups>MARKUP</groups>
 <description>Ermöglicht das Hinzufügen von HTML-ähnlichen Tags um Teile von anderen Einträgen einzubinden. Benutzen Sie folgende Formatierung: [s9y-include-entry:XXX:YYY]. Ersetzen Sie XXX mit der Ziel-ID des Eintrags und YYY mit dem Zielfeldnamen der Datenbank (z.B. &quot;body&quot;, &quot;extended&quot;, &quot;title&quot; usw.).</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.17</version>
+  <version>2.19</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_includeentry">
 <file>.htaccess</file>
@@ -5372,9 +5372,9 @@
 <description>Abstimmung über die Einträge</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.12</version>
+  <version>2.13</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-07</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_karma">
 <file>.htaccess</file>
@@ -6124,9 +6124,9 @@
 <description>Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6.6</version>
+  <version>1.6.7</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-09-14</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_linktrimmer">
 <file>.htaccess</file>
@@ -6705,9 +6705,9 @@
 <description>Setzt Tags für HTML Meta-Schlüsselwörter/-Beschreibungen und das title-Element für Seiten mit nur einem einzelnen Eintrag bzw. allgemeine Meta-Schlüsselwörter/-Beschreibungen für Seite mit mehr als einem Eintrag.</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Don Chambers, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.21</version>
+  <version>0.22</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-10-06</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_metadesc">
 <file>.htaccess</file>
@@ -6760,9 +6760,9 @@
 <description>Dieses Plugin ermöglicht es, auf einfache Weise Rezensionen zu veröffentlichen und Veranstaltungen anzukündigen: Es unterstützt die jeweiligen Mikroformate.</description>
 <maintainers><maintainer><name>Matthias Gutjahr, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.47</version>
+  <version>0.48</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-10</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_microformats">
 <file>.htaccess</file>
@@ -7146,9 +7146,9 @@
 <description>Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.32</version>
+  <version>2.33</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-03</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_multilingual">
 <file>.htaccess</file>
@@ -7219,9 +7219,9 @@
 <description>Pflegt einen persönlichen Kalender</description>
 <maintainers><maintainer><name>Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.18</version>
+  <version>0.19</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-11</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_mycalendar">
 <file>.htaccess</file>
@@ -8423,11 +8423,11 @@
 <summary>Recaptcha</summary>
 <groups>ANTISPAM</groups>
 <description>Recaptcha für die Kommentar-Funktion von Artikeln aktivieren (Sie müssen einen Schlüssel anfordern)</description>
-<maintainers><maintainer><name>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn)</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.11</version>
-  <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.30</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-12-19</date>
   <filelist>
 <dir name="serendipity_event_recaptcha">
 <file>.htaccess</file>
@@ -8732,9 +8732,9 @@
 <description>Parst Smarty-Anweisungen im Artikeltext. Dies ist nicht nutzbar in Kombination mit Syntax Code-Highlightern oder Multilingual tags in Textfeldern!</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.14</version>
+  <version>1.15</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_smartymarkup">
 <file>.htaccess</file>
@@ -8968,9 +8968,9 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <description>Filtert Kommentare mittels eines lernenden Algorithmus.</description>
 <maintainers><maintainer><name>kleinerChemiker,  Malte Paskuda, based upon b8 by Tobias Leupold</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.4.26</version>
+  <version>0.4.27</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-09-29</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_spamblock_bayes">
 <file>.htaccess</file>
@@ -9061,9 +9061,9 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <description>Implementiert Kommentar AntiSpam Maßnahmen, die einfach zu konfigurieren aber sehr effektiv sind.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Janek Bevendorff</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.3.1</version>
+  <version>1.3.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
+  <date>2016-12-28</date>
   <filelist>
 <dir name="serendipity_event_spamblock_bee">
 <file>ChangeLog</file>
@@ -9247,9 +9247,9 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <description>Verwaltet beliebige statische Seiten innerhalb des Blogs mit dem Blog-Design und allen Formatierungen. Fügt einen neuen Menüpunkt in der Admin-Oberfläche hinzu!</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>5.11</version>
+  <version>5.13</version>
   <requirements:s9yVersion>2.0.99</requirements:s9yVersion>
-  <date>2016-09-29</date>
+  <date>2016-12-23</date>
   <filelist>
 <dir name="serendipity_event_staticpage">
 <file>.htaccess</file>
@@ -9410,9 +9410,9 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <description>Zeigt einen Link zu informativen Statistiken (inkl. Besucherzähler) in der Administrationsoberfläche an.</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.63</version>
+  <version>1.64</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_statistics">
 <file>.htaccess</file>
@@ -9572,9 +9572,9 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <description>Bearbeite die Dateien des derzeit genutzen Templates direkt im Adminbereich.</description>
 <maintainers><maintainer><name>Malte Paskuda</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.7.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.9</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_template_editor">
 <file>.htaccess</file>
@@ -9620,7 +9620,6 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
 </dir>
 </dir>
 
@@ -9666,7 +9665,6 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
     <file>serendipity_event_template_editor/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_template_editor/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_template_editor/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_template_editor/UTF-8/lang_en.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -10312,9 +10310,9 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <description>Verwaltet eine Liste von Projekten und deren aktuellem Status</description>
 <maintainers><maintainer><name>Steven Tonnesen, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.26</version>
+  <version>1.27</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2016-10-13</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_todolist">
 <file>.htaccess</file>
@@ -10977,9 +10975,9 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <description>Zeigt einfache Benutzerprofile</description>
 <maintainers><maintainer><name>Garvin Hicking, Falk Doering, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.31</version>
+  <version>0.32</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2016-10-15</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_event_userprofiles">
 <file>ChangeLog</file>
@@ -11963,9 +11961,9 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <description>Verwaltet beliebige Umfragen!</description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.17</version>
+  <version>2.18</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-19</date>
+  <date>2016-10-27</date>
   <filelist>
 <dir name="serendipity_plugin_pollbox">
 <file>ChangeLog</file>
