@@ -69,7 +69,7 @@ class serendipity_event_staticpage extends serendipity_event
 
         $propbag->add('name', STATICPAGE_TITLE);
         $propbag->add('description', STATICPAGE_TITLE_BLAHBLAH);
-        $propbag->add('website', 'http://board.s9y.org');
+        #$propbag->add('website', 'http://board.s9y.org'); // what for? - ie. see documentation link for upgrade cases based on this
 
         $propbag->add('event_hooks', array(
             'backend_category_addNew'                           => true,
@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.13');
+        $propbag->add('version', '5.14');
         $propbag->add('requirements', array(
             'serendipity' => '2.0.99',
             'smarty'      => '3.1.0',
