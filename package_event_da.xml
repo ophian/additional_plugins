@@ -9239,7 +9239,6 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 </package>
 <package version="1.0">
 <name>serendipity_event_staticpage</name>
-<website>http://board.s9y.org</website>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_staticpage/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Static Pages</summary>
@@ -9247,9 +9246,9 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <description>Shows static pages inside your blog with your blogs design and all formattings. Adds a new menu item to the admin interface.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>5.13</version>
+  <version>5.14</version>
   <requirements:s9yVersion>2.0.99</requirements:s9yVersion>
-  <date>2016-12-23</date>
+  <date>2016-12-28</date>
   <filelist>
 <dir name="serendipity_event_staticpage">
 <file>.htaccess</file>
