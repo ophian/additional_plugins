@@ -424,7 +424,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
                     if (is_numeric($answer)) {
                         $isCorrect = ((int)$answer === (int)$correctAnswer['answer']); // tries to fix a strange issue of not recognized answers
                     } else {
-                        $isCorrect = (($answer == $correctAnswer['answer']);
+                        $isCorrect = ($answer == $correctAnswer['answer']);
                     }
                 }
 
