@@ -15,7 +15,7 @@
                 </div>
             {if $show_feedcontent}
                 <details class="feed_data odd close">
-                    <summary class="summary" role="button"><span class="sumtitle">{$feed.content|strip_tags|truncate:55:"&hellip;"}</span></summary>
+                    <summary class="summary" role="button"><span class="sumtitle">{$feed.content|strip_tags|truncate:55:"&hellip;"}</span> <span class="icon-right-dir"></span></summary>
 
                     <div id="ft_{$feed@iteration}" class="feed_text comment_info clearfix">
                         <span class="fulltxt category_desc">{$feed.content}</span>

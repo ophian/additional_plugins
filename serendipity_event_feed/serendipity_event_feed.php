@@ -20,7 +20,7 @@ class serendipity_event_feed extends serendipity_plugin
         $propbag->add('description',    PLUGIN_DASHBOARD_FEEDME_PLUGIN_DESC);
         $propbag->add('stackable',      false);
         $propbag->add('author',         'Ian');
-        $propbag->add('version',        '1.02');
+        $propbag->add('version',        '1.03');
         $propbag->add('requirements',   array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -363,7 +363,7 @@ class serendipity_event_feed extends serendipity_plugin
 }
 #dashboard_feedly .feedlies { margin: .5em 0;}
 #dashboard_feedly .feed_data { margin-top: .5em; margin-bottom: .5em; }
-#dashboard_feedly .feed_text { display: inline-table; padding: 0 .5em; border: 1px solid #DDD; background: #F9F9F9; }
+#dashboard_feedly .feed_text { display: inline-table; padding: 0 .5em; border: 1px solid #DDD; background: #F9F9F9; width: 96%; font-size: smaller; line-height: 1.7; }
 #dashboard_feedly .feed_fields { margin-top: 0px; margin-bottom: 1.5em; }
 #dashboard_feedly dl, #dashboard_feedly dl.codebox, #dashboard_feedly code { margin: 0px; }
 #dashboard_feedly dl.codebox { background: #fff; padding: .2em; }
