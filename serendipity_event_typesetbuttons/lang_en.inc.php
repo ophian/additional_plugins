@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -93,3 +93,4 @@
 
 @define('PLUGIN_EVENT_TYPESETBUTTONS_CUSTOM', 'Custom HTML-Tags');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_CUSTOM_DESC', 'Here you can enter a list of custom HTML tags that you want to add to your button bar. The format is: Label@<opening tag>@<closing tag>. Multiple tags are seperated with the | (pipe) character, like this: MyQuote@<div class="myQuote">@</div>|Alert@<script type="text/javascript">alert(\'@\');</script>. If you do not need a closing tag, just leave it empty like: MyButton@<img src="bla.gif">@');
+

@@ -38,4 +38,4 @@ interface ButtonInterface
      * @return string
      */
     public function render();
-} 
+}

@@ -93,3 +93,4 @@
 
 @define('PLUGIN_EVENT_TYPESETBUTTONS_CUSTOM',                   'Volitelné HTML tagy');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_CUSTOM_DESC',              'Tady mù¾ete zadat seznam libovolných HTML tagù, které chcete pøidat do li¹ty se speciálními tlaèítky. Formát je: Nadpis@<otevírací tag>@<uzavírací tag>. Rùzné tagy jsou oddìleny znakem | (roura - pipe). Pøíklad: MojeCitace@<div class="MojeCitace">@</div>|Vystraha@<script type="text/javascript">alert(\'@\');</script>. Pokud nepotøebujete uzavírací tag, nechte jeho místo jednodu¹e nevyplnìné. Pøíklad: MùjObrázek@<img src="blabla.gif">@');
+

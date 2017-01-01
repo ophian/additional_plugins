@@ -26,3 +26,4 @@
 @define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_STRIKE_BUTTON', 'Strike-through Button aktivieren');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_CENTER_BUTTON', 'Center');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_CENTER_BUTTON', 'Center Button aktivieren');
+
