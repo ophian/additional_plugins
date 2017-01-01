@@ -30,3 +30,4 @@
 @define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED',		'Zakázat prázdnou rozšíøenou textovou èást');
 @define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_DESC',		'Pokud je nastaveno "ano", pak musí pøíspìvek mít nìco napsáno v rozšíøené textové èásti.');
 @define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_WARNING',		'Není dovoleno publikovat pøíspìvky bez textu v rozšíøené textové èásti. Pøidejte prosím text do rozšíøené textové èásti a znovu ho uložte!');
+

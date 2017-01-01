@@ -30,3 +30,4 @@
 @define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED',		'Zakázat prázdnou rozšířenou textovou část');
 @define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_DESC',		'Pokud je nastaveno "ano", pak musí příspěvek mít něco napsáno v rozšířené textové části.');
 @define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_WARNING',		'Není dovoleno publikovat příspěvky bez textu v rozšířené textové části. Přidejte prosím text do rozšířené textové části a znovu ho uložte!');
+

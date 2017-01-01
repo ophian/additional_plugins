@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.5
  */
@@ -21,3 +21,4 @@
 @define('PLUGIN_EVENT_ENTRYCHECK_UNLOCK', 'Отключване на статията');
 @define('PLUGIN_EVENT_ENTRYCHECK_LOCK_WARNING', 'Тази статия е заключена и може да бъде записвана само от собственика на ключа, ако не я отключите.');
 @define('PLUGIN_EVENT_ENTRYCHECK_LOCKING', 'Разрешаване на заключването на статии ?');
+

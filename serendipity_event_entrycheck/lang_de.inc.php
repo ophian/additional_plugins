@@ -21,3 +21,4 @@
 @define('PLUGIN_EVENT_ENTRYCHECK_UNLOCK', 'Artikel entsperren');
 @define('PLUGIN_EVENT_ENTRYCHECK_LOCK_WARNING', 'Dieser Artikel ist gesperrt und kann nur von dem sperrenden Autoren bearbeitet werden, oder Sie entfernen die Sperre.');
 @define('PLUGIN_EVENT_ENTRYCHECK_LOCKING', 'Artikel-Sperren aktivieren?');
+

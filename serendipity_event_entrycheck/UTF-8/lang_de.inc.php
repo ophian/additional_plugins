@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 @define('PLUGIN_EVENT_ENTRYCHECK_TITLE', 'Regeln für Veröffentlichungen');
 @define('PLUGIN_EVENT_ENTRYCHECK_DESC', 'Führt einige Prüfungen vor der Veröffentlichung eines Artikels durch. Arbeitet nicht mit eingesetztem WYSIWYG-CKEDITOR!');
@@ -21,3 +21,4 @@
 @define('PLUGIN_EVENT_ENTRYCHECK_UNLOCK', 'Artikel entsperren');
 @define('PLUGIN_EVENT_ENTRYCHECK_LOCK_WARNING', 'Dieser Artikel ist gesperrt und kann nur von dem sperrenden Autoren bearbeitet werden, oder Sie entfernen die Sperre.');
 @define('PLUGIN_EVENT_ENTRYCHECK_LOCKING', 'Artikel-Sperren aktivieren?');
+

@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 @define('PLUGIN_EVENT_ENTRYCHECK_TITLE', 'Règles de publication');
 @define('PLUGIN_EVENT_ENTRYCHECK_DESC', 'Faire quelques vérifications avant qu\'un billet soit publié. Does not work with WYSIWYG-CKEDITOR!');
@@ -16,3 +16,4 @@
 @define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_WARNING', 'Il n\'est pas autorisé de publier un billet dont le corps du billet est vide. Merci de saisir un corps du billet pour ce billet et de l\'enregistrer à nouveau !');
 @define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT', 'Définir une catégorie par défaut');
 @define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT_DESC', 'Vous pouvez sélectionner ici la catégorie qui sera affectée par défaut aux billets si l\'auteur n\'en spécifie pas.');
+

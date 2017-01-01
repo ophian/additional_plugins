@@ -1,17 +1,10 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_entrycheck extends serendipity_event
 {
@@ -25,11 +18,11 @@ class serendipity_event_entrycheck extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_ENTRYCHECK_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Gregor Voeltz');
-        $propbag->add('version',       '1.16');
+        $propbag->add('version',       '1.17');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',    array(
             'backend_entry_updertEntry' => true,
@@ -48,35 +41,35 @@ class serendipity_event_entrycheck extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_ENTRYCHECK_LOCKING);
                 $propbag->add('description', '');
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'emptyCategories':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES);
                 $propbag->add('description', PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'emptyTitle':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE);
                 $propbag->add('description', PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'emptyBody':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY);
                 $propbag->add('description', PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'emptyExtended':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED);
                 $propbag->add('description', PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'defaultCat':
@@ -94,7 +87,7 @@ class serendipity_event_entrycheck extends serendipity_event
 
                 $select_cats = array();
                 $select_cats['none'] = NONE;
-                foreach($tmp_select_cats as $cidx => $tmp_select_cat) {
+                foreach($tmp_select_cats AS $cidx => $tmp_select_cat) {
                     $select_cat = explode('|||', $tmp_select_cat);
                     if (!empty($select_cat[0]) && !empty($select_cat[1])) {
                         $select_cats[$select_cat[0]] = $select_cat[1];
@@ -111,11 +104,13 @@ class serendipity_event_entrycheck extends serendipity_event
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function checkLock(&$state, $id) {
+    function checkLock(&$state, $id)
+    {
         global $serendipity;
 
         $locked = serendipity_db_query("SELECT property, value FROM {$serendipity['dbPrefix']}entryproperties WHERE (property = 'locked' or property = 'lock_owner')AND entryid = " . (int)$id, false, 'assoc', false, 'property', 'value');
@@ -137,17 +132,27 @@ class serendipity_event_entrycheck extends serendipity_event
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         static $state, $locked;
 
         $hooks = &$bag->get('event_hooks');
+
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'css_backend':
-                    echo ".entrylock { margin: 15px auto 15px auto; width: auto; text-align: center; padding: 5px; border: 1px solid yellow; }
-                          .entrylock a.serendipityPrettyButton { margin: 15px} \n";
-                    return true;
+                    $eventData .= '
+
+/* entrycheck plugin start */
+
+.entrylock { margin: 1.5em auto; width: auto; text-align: center; padding: 5px; border: 1px solid yellow; }
+.entrylock a.serendipityPrettyButton { margin: 1.5em; }
+
+/* entrycheck plugin end */
+
+';
                     break;
 
                 case 'backend_entryform':
@@ -157,7 +162,7 @@ class serendipity_event_entrycheck extends serendipity_event
 
                     $time   = time();
                     $state  = 'unlocked';
-                    if (serendipity_db_bool($this->get_config('locking'))) {
+                    if (serendipity_db_bool($this->get_config('locking', 'false'))) {
                         $this->checkLock($state, $eventData['id']);
 
                         if ($state == 'unlocked') {
@@ -171,35 +176,31 @@ class serendipity_event_entrycheck extends serendipity_event
                         $link = '<a href="serendipity_admin.php?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]=' . (int)$eventData['id'] . '&amp;serendipity[unlock]=true" class="serendipityPrettyButton">' . PLUGIN_EVENT_ENTRYCHECK_UNLOCK . '</a>';
                         printf('<div class="entrylock">' . PLUGIN_EVENT_ENTRYCHECK_LOCKED . ' ' . $link . '</div>', $owner[0]['realname'], serendipity_strftime(DATE_FORMAT_SHORT, $locked['locked']));
                     }
-
-                    return true;
                     break;
 
                 case 'backend_entry_updertEntry':
-                    if (serendipity_db_bool($this->get_config('emptyCategories') == true) && count($addData['categories']) < 1 || $addData['categories'][0] == '0') {
-                        $eventData[] = PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_WARNING;
+                    if (serendipity_db_bool($this->get_config('emptyCategories', 'false') == true) && count($addData['categories']) < 1 || $addData['categories'][0] == '0') {
+                        $eventData[] = PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_WARNING.'<br>';
                     }
 
-                    if (serendipity_db_bool($this->get_config('emptyTitle') == true) && strlen($addData['title']) < 1) {
-                        $eventData[] = PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_WARNING;
+                    if (serendipity_db_bool($this->get_config('emptyTitle', 'false') == true) && strlen($addData['title']) < 1) {
+                        $eventData[] = PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_WARNING.'<br>';
                     }
 
-                    if (serendipity_db_bool($this->get_config('emptyBody') == true) && strlen($addData['body']) < 1) {
-                        $eventData[] = PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY_WARNING;
+                    if (serendipity_db_bool($this->get_config('emptyBody', 'false') == true) && strlen($addData['body']) < 1) {
+                        $eventData[] = PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY_WARNING.'<br>';
                     }
 
-                    if (serendipity_db_bool($this->get_config('emptyExtended') == true) && strlen($addData['extended']) < 1) {
-                        $eventData[] = PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_WARNING;
+                    if (serendipity_db_bool($this->get_config('emptyExtended', 'false') == true) && strlen($addData['extended']) < 1) {
+                        $eventData[] = PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_WARNING.'<br>';
                     }
 
-                    if ($addData['id'] > 0 && serendipity_db_bool($this->get_config('locking'))) {
+                    if ($addData['id'] > 0 && serendipity_db_bool($this->get_config('locking', 'false'))) {
                         $state = 'unlocked';
                         if (!$this->checkLock($state, $addData['id'])) {
-                            $eventData[] = PLUGIN_EVENT_ENTRYCHECK_LOCK_WARNING;
+                            $eventData[] = PLUGIN_EVENT_ENTRYCHECK_LOCK_WARNING.'<br>';
                         }
                     }
-
-                    return true;
                     break;
 
                 case 'backend_entry_checkSave':
@@ -237,7 +238,7 @@ class serendipity_event_entrycheck extends serendipity_event
                                     }
                                 }
 
-<?php if (serendipity_db_bool($this->get_config('emptyCategories'))) { ?>
+<?php if (serendipity_db_bool($this->get_config('emptyCategories', 'false'))) { ?>
                                 if (showerror) {
                                     alert('<?php echo str_replace("'", "\\'", PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_WARNING); ?>');
                                     error = true;
@@ -245,14 +246,14 @@ class serendipity_event_entrycheck extends serendipity_event
 <?php } ?>
                             }
 
-                            <?php if (serendipity_db_bool($this->get_config('emptyTitle')) == true) { ?>
+                            <?php if (serendipity_db_bool($this->get_config('emptyTitle', 'false')) == true) { ?>
                             if (document.getElementById('entryTitle').value.length < 1) {
                                 alert('<?php echo str_replace("'", "\\'", PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_WARNING); ?>');
                                 error = true;
                             }
                             <?php } ?>
 
-                            <?php if (serendipity_db_bool($this->get_config('emptyBody')) == true) { ?>
+                            <?php if (serendipity_db_bool($this->get_config('emptyBody', 'false')) == true) { ?>
                             if (typeof(editorbody) != "undefined") {
                                 editorbody.setMode('textmode');
                                 var serendipitybody = document.getElementById('serendipity[body]').value.replace(/(<([^>]+)>)/ig,"");
@@ -268,7 +269,7 @@ class serendipity_event_entrycheck extends serendipity_event
                             }
                             <?php } ?>
 
-                            <?php if (serendipity_db_bool($this->get_config('emptyExtended')) == true) { ?>
+                            <?php if (serendipity_db_bool($this->get_config('emptyExtended', 'false')) == true) { ?>
                             if (typeof(editorextended) != "undefined") {
                                 editorextended.setMode('textmode');
                                 var serendipityextended = document.getElementById('serendipity[extended]').value.replace(/(<([^>]+)>)/ig,"");
@@ -289,13 +290,14 @@ class serendipity_event_entrycheck extends serendipity_event
                             }
                         }
 <?php
-                    return true;
                     break;
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
