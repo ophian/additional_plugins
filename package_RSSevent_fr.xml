@@ -360,12 +360,12 @@
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
-<title>Règles de publication: Faire quelques vérifications avant qu'un billet soit publié. Does not work with WYSIWYG-CKEDITOR!</title>
+<title>Règles de publication: Faire quelques vérifications avant qu'un billet soit publié.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrycheck</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Gregor Voeltz</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrycheck&lt;br /&gt;Règles de publication&lt;/b&gt;&lt;br /&gt;Faire quelques vérifications avant qu'un billet soit publié. Does not work with WYSIWYG-CKEDITOR!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 01 Jan 2017 16:34:05 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_entrycheck&lt;br /&gt;Règles de publication&lt;/b&gt;&lt;br /&gt;Faire quelques vérifications avant qu'un billet soit publié.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Tue, 03 Jan 2017 16:17:55 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_entrycheck</guid>
 </item>
 <item>

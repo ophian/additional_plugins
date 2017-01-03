@@ -2700,12 +2700,12 @@
 <license>GPL</license>
 <summary>Правила за публикуване на статии</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Прилага няколко проверки на статията преди тя да бъде публикувана. Does not work with WYSIWYG-CKEDITOR!</description>
+<description>Прилага няколко проверки на статията преди тя да бъде публикувана.</description>
 <maintainers><maintainer><name>Garvin Hicking, Gregor Voeltz</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.17</version>
+  <version>1.18</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-01-01</date>
+  <date>2017-01-03</date>
   <filelist>
 <dir name="serendipity_event_entrycheck">
 <file>lang_bg.inc.php</file>

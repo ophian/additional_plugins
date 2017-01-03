@@ -2700,12 +2700,12 @@
 <license>GPL</license>
 <summary>Regeln für Veröffentlichungen</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Führt einige Prüfungen vor der Veröffentlichung eines Artikels durch. Arbeitet nicht mit eingesetztem WYSIWYG-CKEDITOR!</description>
+<description>Führt einige Prüfungen vor der Veröffentlichung eines Artikels durch.</description>
 <maintainers><maintainer><name>Garvin Hicking, Gregor Voeltz</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.17</version>
+  <version>1.18</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-01-01</date>
+  <date>2017-01-03</date>
   <filelist>
 <dir name="serendipity_event_entrycheck">
 <file>lang_bg.inc.php</file>
