@@ -53,22 +53,22 @@ class serendipity_plugin_amazon extends serendipity_plugin
                 break;
 
             case 'button':
-                $propbag->add('type', 'content');
-                $data['textbox']='[plugin][asin]';
+                $propbag->add('type',           'content');
+                $data['textbox'] =  '[plugin][asin]';
                 serendipity_plugin_api::hook_event('serendipity_event_amazonchooser_button', $data);
-                $propbag->add('default', $data['button_out']);
+                $propbag->add('default',        $data['button_out']);
                 break;
 
              case 'server':
-                $propbag->add('type',          'radio');
-                $propbag->add('name', PLUGIN_AMAZON_SERVER);
-                $propbag->add('description', PLUGIN_AMAZON_SERVER_DESC);
-                $propbag->add('radio',         array(
+                $propbag->add('type',           'radio');
+                $propbag->add('name',           PLUGIN_AMAZON_SERVER);
+                $propbag->add('description',    PLUGIN_AMAZON_SERVER_DESC);
+                $propbag->add('radio',          array(
                     'value' => array('ca','de','fr', 'jp', 'uk', 'us'),
                     'desc'  => array(PLUGIN_AMAZON_CA,PLUGIN_AMAZON_GERMANY,PLUGIN_AMAZON_FR,PLUGIN_AMAZON_JAPAN,PLUGIN_AMAZON_UK,PLUGIN_AMAZON_US)
                 ));
-                $propbag->add('radio_per_row', '1');
-                $propbag->add('default', 'us');
+                $propbag->add('radio_per_row',  '1');
+                $propbag->add('default',        'us');
                 break;
 
             case 'asin':
@@ -79,29 +79,29 @@ class serendipity_plugin_amazon extends serendipity_plugin
                 break;
 
             case 'newwindows':
-                $propbag->add('type',        'boolean');
-                $propbag->add('name',        PLUGIN_AMAZON_NEW_WINDOW);
-                $propbag->add('description', '');
-                $propbag->add('default',     'true');
+                $propbag->add('type',           'boolean');
+                $propbag->add('name',           PLUGIN_AMAZON_NEW_WINDOW);
+                $propbag->add('description',    '');
+                $propbag->add('default',        'true');
                 break;
 
             case 'small_medium_large':
-                $propbag->add('type',          'radio');
-                $propbag->add('name', PLUGIN_AMAZON_SMALL_MED);
-                $propbag->add('description', '');
-                $propbag->add('radio',         array(
+                $propbag->add('type',           'radio');
+                $propbag->add('name',           PLUGIN_AMAZON_SMALL_MED);
+                $propbag->add('description',    '');
+                $propbag->add('radio',          array(
                     'value' => array('smallurl','mediumurl','largeurl'),
                     'desc'  => array(PLUGIN_AMAZON_SMALL,PLUGIN_AMAZON_MEDIUM,PLUGIN_AMAZON_LARGE)
                 ));
-                $propbag->add('radio_per_row', '1');
-                $propbag->add('default', 'small');
+                $propbag->add('radio_per_row',  '1');
+                $propbag->add('default',        'small');
                 break;
 
             case 'tracking':
-                $propbag->add('type',        'boolean');
-                $propbag->add('name',        PLUGIN_AMAZON_TRACK_GOOGLE);
-                $propbag->add('description', DESC_PLUGIN_AMAZON_TRACK_GOOGLE);
-                $propbag->add('default',     'false');
+                $propbag->add('type',           'boolean');
+                $propbag->add('name',           PLUGIN_AMAZON_TRACK_GOOGLE);
+                $propbag->add('description',    DESC_PLUGIN_AMAZON_TRACK_GOOGLE);
+                $propbag->add('default',        'false');
                 break;
 
             default:
@@ -118,8 +118,8 @@ class serendipity_plugin_amazon extends serendipity_plugin
            echo PLUGIN_AMAZON_DEPENDS_ON;
            return;
         }
-        $title          = $this->get_config('title');
-        $cache          = $this->get_config('cache','60');
+        $title = $this->get_config('title');
+        $cache = $this->get_config('cache','60');
 
         if ($cache > 0) {
             if (@include_once("Cache/Lite.php")) {
@@ -128,7 +128,7 @@ class serendipity_plugin_amazon extends serendipity_plugin
             }
         }
         if (!$content) {
-            $cnt    = $this->get_config('cnt','1');
+            $cnt = $this->get_config('cnt','1');
             $config_asin  = $this->get_config('asin','blah');
             $config_asins = explode(",", $config_asin);
             $arraylen = count($config_asins);
@@ -145,7 +145,7 @@ class serendipity_plugin_amazon extends serendipity_plugin
                 }
             } else {
                 $content_out = '';
-                foreach ($asins as $asinnum) {
+                foreach ($asins AS $asinnum) {
                     $content = $this->generate_amazon_content($config_asins[$asinnum]);
                     $content_out .= $content['string'];
                     if ($content['cache']) {
