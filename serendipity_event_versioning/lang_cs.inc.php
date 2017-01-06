@@ -21,3 +21,4 @@
 @define('VERSIONING_DATE_FORMAT', 'Formát data');
 @define('VERSIONING_DATE_LONG', 'dlouhý');
 @define('VERSIONING_DATE_SHORT', 'krátký');
+

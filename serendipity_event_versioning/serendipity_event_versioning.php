@@ -1,23 +1,18 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_versioning extends serendipity_event {
+class serendipity_event_versioning extends serendipity_event
+{
     var $title = VERSIONING_TITLE;
     var $cache = array();
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name', VERSIONING_TITLE);
@@ -34,18 +29,19 @@ class serendipity_event_versioning extends serendipity_event {
         ));
 
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '0.11.1');
+        $propbag->add('version', '0.12');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('BACKEND_EDITOR', 'BACKEND_FEATURES'));
         $propbag->add('configuration', array('public','version_date'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch ($name) {
@@ -53,16 +49,16 @@ class serendipity_event_versioning extends serendipity_event {
                 $propbag->add('type',           'boolean');
                 $propbag->add('name',           VERSIONING_PUBLIC);
                 $propbag->add('description',    '');
-                $propbag->add('default',        false);
+                $propbag->add('default',        'false');
                 break;
-				
-			case 'version_date':
+
+            case 'version_date':
                 $propbag->add('type',           'radio');
                 $propbag->add('name',           VERSIONING_DATE_FORMAT);
-                $propbag->add('var',    		'version_date_format');
-                $propbag->add('radio_per_row',	2);
-				$propbag->add('radio',			array('value' => array('long','short'),
-														'desc' => array(VERSIONING_DATE_LONG,VERSIONING_DATE_SHORT)));
+                $propbag->add('var',            'version_date_format');
+                $propbag->add('radio_per_row',  2);
+                $propbag->add('radio',          array('value' => array('long','short'),
+                                                      'desc'  => array(VERSIONING_DATE_LONG,VERSIONING_DATE_SHORT)));
                 break;
 
             default:
@@ -71,7 +67,8 @@ class serendipity_event_versioning extends serendipity_event {
         return true;
     }
 
-    function setupDB() {
+    function setupDB()
+    {
         global $serendipity;
 
         $built = $this->get_config('db_built', null);
@@ -92,15 +89,18 @@ class serendipity_event_versioning extends serendipity_event {
         }
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = VERSIONING_TITLE;
     }
 
-    function install() {
+    function install()
+    {
         $this->setupDB();
     }
 
-    function &getVersions($entry = null, $selected = null) {
+    function &getVersions($entry = null, $selected = null)
+    {
         global $serendipity;
 
         $versions = array();
@@ -120,7 +120,8 @@ class serendipity_event_versioning extends serendipity_event {
         return $versions;
     }
 
-    function &getCurrent($entry) {
+    function &getCurrent($entry)
+    {
         global $serendipity;
 
         $q       = "SELECT max(v.version) AS maxVer,
@@ -140,7 +141,8 @@ class serendipity_event_versioning extends serendipity_event {
         return $maxVer;
     }
 
-    function &getVersion($entry, $version = null, $version_col = 'v.version') {
+    function &getVersion($entry, $version = null, $version_col = 'v.version')
+    {
         global $serendipity;
 
         if ($version == null) {
@@ -148,25 +150,26 @@ class serendipity_event_versioning extends serendipity_event {
             $version = $maxVer['maxVer'];
         }
 
-        $q     = "SELECT v.id,
-                                              v.body,
-                                              v.extended,
-                                              v.version,
-                                              v.entry_id,
-                                              a.realname,
-                                              v.version_date
-                                         FROM {$serendipity['dbPrefix']}versioning AS v
-                              LEFT OUTER JOIN {$serendipity['dbPrefix']}authors AS a
-                                           ON a.authorid = v.version_author
-                                        WHERE v.entry_id = " . (int)$entry . "
-                                          AND $version_col  = " . (int)$version . "
-                                        LIMIT 1";
+        $q     = "SELECT  v.id,
+                          v.body,
+                          v.extended,
+                          v.version,
+                          v.entry_id,
+                          a.realname,
+                          v.version_date
+                     FROM {$serendipity['dbPrefix']}versioning AS v
+          LEFT OUTER JOIN {$serendipity['dbPrefix']}authors AS a
+                       ON a.authorid = v.version_author
+                    WHERE v.entry_id = " . (int)$entry . "
+                      AND $version_col  = " . (int)$version . "
+                    LIMIT 1";
 
         $entry = serendipity_db_query($q, true, 'assoc');
         return $entry;
     }
 
-    function storeVersion(&$entry, &$newEntry, $cache = array()) {
+    function storeVersion(&$entry, &$newEntry, $cache = array())
+    {
         global $serendipity;
 
         if (!isset($cache['body'])) {
@@ -185,7 +188,8 @@ class serendipity_event_versioning extends serendipity_event {
                                             " . (int)$serendipity['authorid'] . ")");
     }
 
-    function recoverVersion(&$entry, $version) {
+    function recoverVersion(&$entry, $version)
+    {
         global $serendipity;
 
         $recovery = $this->getVersion($entry['id'], $version, 'v.id');
@@ -196,24 +200,25 @@ class serendipity_event_versioning extends serendipity_event {
         return true;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
-			switch($this->get_config('version_date')) {
-				case 'long':
-					$date_time_format = DATE_FORMAT_ENTRY;
-					break;
-				case 'short':
-					$date_time_format = DATE_FORMAT_SHORT;
-					break;
-				default:
-					$date_time_format = DATE_FORMAT_SHORT;
-					break;
-			}
-			
+            switch($this->get_config('version_date')) {
+                case 'long':
+                    $date_time_format = DATE_FORMAT_ENTRY;
+                    break;
+                case 'short':
+                    $date_time_format = DATE_FORMAT_SHORT;
+                    break;
+                default:
+                    $date_time_format = DATE_FORMAT_SHORT;
+                    break;
+            }
+
             switch ($event) {
                 case 'backend_entry_updertEntry':
                     $this->cache['body']     = $addData['body'];
@@ -222,7 +227,6 @@ class serendipity_event_versioning extends serendipity_event {
                     if ($serendipity['POST']['versioning'] > 0 && !empty($serendipity['POST']['versioning_change']) && !empty($addData['id'])) {
                         $eventData[] = sprintf(VERSIONING_REVISION_CONTROL, (int)$serendipity['POST']['versioning']);
                     }
-
                     break;
 
                 case 'backend_entry_iframe':
@@ -240,7 +244,6 @@ class serendipity_event_versioning extends serendipity_event {
                     if ($serendipity['POST']['versioning'] > 0 && !empty($serendipity['POST']['versioning_change']) && !empty($eventData['id'])) {
                         $this->recoverVersion($eventData, $serendipity['POST']['versioning']);
                     }
-
                     break;
 
                 case 'entry_display':
@@ -248,7 +251,7 @@ class serendipity_event_versioning extends serendipity_event {
                         return false;
                     }
 
-                    if (serendipity_db_bool($this->get_config('public')) && $addData['extended']) {
+                    if (serendipity_db_bool($this->get_config('public', 'false')) && $addData['extended']) {
                         if ($serendipity['GET']['version_selected'] > 0) {
                             $this->recoverVersion($eventData[0], (int)$serendipity['GET']['version_selected']);
                         }
@@ -269,7 +272,6 @@ class serendipity_event_versioning extends serendipity_event {
                         unset($eventData[0]['properties']['ep_cache_body']);
                         unset($eventData[0]['properties']['ep_cache_extended']);
                     }
-                    return true;
                     break;
 
                 case 'backend_save':
@@ -287,7 +289,6 @@ class serendipity_event_versioning extends serendipity_event {
 
                         $this->storeVersion($entry, $eventData, $this->cache);
                     }
-
                     break;
 
                 case 'backend_display':
@@ -295,27 +296,33 @@ class serendipity_event_versioning extends serendipity_event {
                     if (count($versions) < 1) {
                         return true;
                     }
+                    if (is_array($versions) && !empty($versions)) {
 ?>
                     <fieldset style="margin: 5px">
                         <legend><?php echo VERSIONING_TITLE; ?></legend>
                         <div>
                             <select name="serendipity[versioning]">
 <?php
-                    foreach($versions AS $version) {
-                        $text = htmlspecialchars(sprintf(VERSIONING_REVISION,
-                                    $version['version'],
-                                    serendipity_strftime($date_time_format, $version['version_date'], true),
-                                    $version['realname']));
+                        foreach($versions AS $version) {
+                            $text = (function_exists('serendipity_specialchars') ? serendipity_specialchars(sprintf(VERSIONING_REVISION,
+                                        $version['version'],
+                                        serendipity_strftime($date_time_format, $version['version_date'], true),
+                                        $version['realname'])) : htmlspecialchars(sprintf(VERSIONING_REVISION,
+                                        $version['version'],
+                                        serendipity_strftime($date_time_format, $version['version_date'], true),
+                                        $version['realname']), ENT_COMPAT, LANG_CHARSET));
 
-                        echo '<option value="' . $version['id'] . '" ' . ($serendipity['POST']['versioning'] == $version['id'] ? 'selected="selected"' : '') . '>' . $text . '</option>' . "\n";
-                    }
+                            echo '<option value="' . $version['id'] . '" ' . ($serendipity['POST']['versioning'] == $version['id'] ? 'selected="selected"' : '') . '>' . $text . '</option>' . "\n";
+                        }
 ?>
                             </select>
-                            <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[versioning_change]" value="<?php echo VERSIONING_CHANGE; ?>" onclick="return confirm('<?php echo str_replace("'", "\'", (function_exists('serendipity_specialchars') ? serendipity_specialchars(VERSIONING_CHANGE_WARNING) : htmlspecialchars(VERSIONING_CHANGE_WARNING, ENT_COMPAT, LANG_CHARSET)));
-                             ?>');" />
+                            <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[versioning_change]" value="<?php echo VERSIONING_CHANGE; ?>" onclick="return confirm('<?php echo str_replace("'", "\'", (function_exists('serendipity_specialchars') ? serendipity_specialchars(VERSIONING_CHANGE_WARNING) : htmlspecialchars(VERSIONING_CHANGE_WARNING, ENT_COMPAT, LANG_CHARSET))); ?>');" />
                         </div>
                     </fieldset>
 <?php
+                    }
+                    break;
+
                 default:
                     return false;
             }
@@ -323,6 +330,8 @@ class serendipity_event_versioning extends serendipity_event {
         }
         return false;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

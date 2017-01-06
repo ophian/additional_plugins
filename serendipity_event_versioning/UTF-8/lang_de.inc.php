@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  DE-Revision: Revision of lang_de.inc.php
  */
@@ -17,4 +17,3 @@
 @define('VERSIONING_DATE_LONG', 'lang');
 @define('VERSIONING_DATE_SHORT', 'kurz');
 
-/* vim: set sts=4 ts=4 expandtab : */

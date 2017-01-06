@@ -1,9 +1,19 @@
+0.12:
+-----
+
+ * Fix to another serendipity_specialchars and array check for empty drafts
+
+0.11.1:
+-----
+
+ * Use serendipity_specialchars
+
 0.11:
 -----
 
-Fixed UTF-8 encoding of german language
+ * Fixed UTF-8 encoding of german language
 
 0.10:
 -----
 
-Patch by Michael Vilz, support configuring date format
+ * Patch by Michael Vilz, support configuring date format
