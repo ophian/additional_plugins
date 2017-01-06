@@ -12,7 +12,7 @@ ChangeLog: serendipity_event_wrapurl Plugin
     - load LANG with lang API, extends required Serendipity version
     - Append CSS, not prepend
     - Change class name to lowercase
-    
+
 
 [Version 0.10.1 2014/11/25] by Onli
 

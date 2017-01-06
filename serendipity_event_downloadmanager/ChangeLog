@@ -68,7 +68,7 @@ latest: Smarty3 forward compatibility
     - changed 0.25 beta version of all new backend templates and their stylesheet, to contain a contemporary new look & feel under the hood (based and designed by YellowLed, thank you!)
     - changed header part on backends subpages, which now has a point back to root and to previous level, if any
     - changed root level db setting to be unhidden by now - this does not change the behaviour of showing cats without root level, but makes access to it more easy
-    - added   new s9y media library import icon 
+    - added   new s9y media library import icon
     - fixed   some possible bugs and/or inconvenient behaviour, which may have been in 0.24 too
     - added   smarty backend array names to be unique in global blog context - read list in backend.dlm.index.tpl
     - added   a complete smarty template to backend, which caused multiple changes in plugins code
@@ -80,10 +80,10 @@ latest: Smarty3 forward compatibility
     - added   ics mime icon
     - changed frontend templates, frontend.css and download mime icons to show up refreshed in a new contemporary look (designed by YellowLed, thank you!)
     - changed downloadmanagers file path again to '/serendipty/archives/.dlm/files' and '/serendipty/archives/.dlm/ftpin' which seems to be
-              the best place, dealing with files to come in and go out. The /uploads directory threw a problem with the media library and the 
-              /templates_c directory is cleaned up directly by users in some cases. After contacting Garvin about this issues, he came up with 
-              the /archives folder. I tried to automate the process of switching all files to the new folders and 0.24s new config settings. 
-              If you encounter any problems with it, please move your files manually. If you get a link to inform the plugin, please follow. 
+              the best place, dealing with files to come in and go out. The /uploads directory threw a problem with the media library and the
+              /templates_c directory is cleaned up directly by users in some cases. After contacting Garvin about this issues, he came up with
+              the /archives folder. I tried to automate the process of switching all files to the new folders and 0.24s new config settings.
+              If you encounter any problems with it, please move your files manually. If you get a link to inform the plugin, please follow.
               A next reload will set configs 'chg2archivespath' to true.
               From now on these directories are not customizable any more and hidden in the downloadmanagers config settings.
     - changed some more plugin cleanup, code optimizing, function sallying, general refactoring
@@ -112,7 +112,7 @@ latest: Smarty3 forward compatibility
     - changed dlm file work behaviour to support root level files too (please report, if you experience some unusual behaviour)
     - added download file button to backend
     - changed 'dlmanager/incoming' folder path to '.dlmanager/incoming', (effects new installations only!)
-            so it does not appear when the plugin presents the media gallery values 
+            so it does not appear when the plugin presents the media gallery values
             (if have, erase uploads/'dlmanager' folder yourself, next time you upload the new one will be created)
     - fixed download of files with spaces in filename to have replaced spaces (_)
     - added the missing style_dlmanager_frontend.css to CVS
@@ -132,7 +132,7 @@ latest: Smarty3 forward compatibility
     - fixed is_dir($handle) bug and warning (onli)
     - added the ability to have a very own plugin stylesheet with some very minor values to start with
     - changed the frontend tpls to support these changes
-    
+
 [Version 0.21 2009/08/25]
     - PHP 5.3 compatibility, split() is deprecated
 

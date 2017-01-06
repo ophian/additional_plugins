@@ -14,7 +14,7 @@
    You will find limitations and old legacy code with at least
    the Menalto Gallery (dead project)
    and modern PHP using old MySQL extension code API calls.
-  
+
 0.98:
 -----
  * add lightbox option for media_sidebar "In Page" only

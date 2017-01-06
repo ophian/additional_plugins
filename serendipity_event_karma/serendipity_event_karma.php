@@ -1152,13 +1152,13 @@ END_IMG_CSS;
                         $track_clicks  = serendipity_db_bool($this->get_config('visits_active', true)) && $this->track_clicks_allowed_by_user();
                         if ($track_clicks && $_SERVER['REQUEST_METHOD'] == 'GET') {
                             $sql = serendipity_db_query(
-                                "UPDATE {$serendipity['dbPrefix']}karma 
-                                    SET visits = visits + 1 
-                                  WHERE entryid = $entryid", 
+                                "UPDATE {$serendipity['dbPrefix']}karma
+                                    SET visits = visits + 1
+                                  WHERE entryid = $entryid",
                                   true);
                             if (serendipity_db_affected_rows() < 1) {
                                 serendipity_db_query(
-                                        "INSERT INTO {$serendipity['dbPrefix']}karma (entryid, points, votes, lastvote, visits) 
+                                        "INSERT INTO {$serendipity['dbPrefix']}karma (entryid, points, votes, lastvote, visits)
                                               VALUES ('$entryid', 0, 0, 0, 1)"
                                         );
                             }
@@ -1777,7 +1777,7 @@ END_IMG_CSS;
                         if (is_array($sql)) {
                             print("
 <div class='form_buttons'>
-<input class='invert_selection' name='toggle' type='button' value='".INVERT_SELECTIONS."'> 
+<input class='invert_selection' name='toggle' type='button' value='".INVERT_SELECTIONS."'>
 <input class='state_cancel' name='serendipity[delete_button]' type='submit' title='" . PLUGIN_KARMA_DELETE_VOTES . "' value='" . DELETE . "'>
 </div>
 </form>
@@ -1897,10 +1897,10 @@ END_IMG_CSS;
             if ($fname == $cursel) {
                 $checked = 'checked="checked" ';
             }
-            $bar_html = 
+            $bar_html =
 "<td align='center' id='serendipity_karmaVote_select_$css_class'>
     <input type='radio' name='serendipity[plugin][base_image]' value='$fname' $checked/>
-    <span style='font-size: 8pt;'>$fname</span><br />\n" . 
+    <span style='font-size: 8pt;'>$fname</span><br />\n" .
                 $this->createRatingBar('', -1, 2, $css_class) .
 "</td>\n";
             $bar_html = sprintf($bar_html, '', '2.5 of 5', '1');
@@ -1910,7 +1910,7 @@ END_IMG_CSS;
             // use the $css_class while it's still here.
             $this->select_css .= "
 /* Overrides for $css_class */
-.$css_class 
+.$css_class
 {
   width: ${width}px;
   height: ${height}px;
@@ -1940,10 +1940,10 @@ END_IMG_CSS;
         }
 
         // End the table, with a config-item bottom-border separator
-        $this->select_html .= 
+        $this->select_html .=
 "</tr>\n</table>\n";
         if ($serendipity['version'][0] < 2) {
-            $this->select_html .= 
+            $this->select_html .=
 "<tr><td colspan='2' style='border-bottom: 1px solid #000000; vertical-align: top'>&nbsp;<td></tr>\n";
         }
         // The config item and row are closed by the core code
@@ -2083,11 +2083,11 @@ END_IMG_CSS;
 ";
             }
         }
-        
+
         if (empty($karma_display)) {
             $karma_display = "[" . $karma . "]";
         }
-        
+
         return $karma_display;
     }
 
@@ -2132,7 +2132,7 @@ END_IMG_CSS;
      * @param int points The total karma points
      * @param int votes The total number of votes
      *
-     * @return string A string indicating the number of points "of 5", 
+     * @return string A string indicating the number of points "of 5",
      *     or PLUGIN_KARMA_IMAGE_NONE_RATING if no votes have been recorded.
      */
     function imageRating($points, $votes) {
@@ -2158,7 +2158,7 @@ END_IMG_CSS;
      * @param mixed points The total karma points
      * @param mixed votes The total number of votes
      *
-     * @return string A word corresponding to the article rating, 
+     * @return string A word corresponding to the article rating,
      *     or PLUGIN_KARMA_IMAGE_NONE_RATING if no votes have been recorded.
      */
     function wordRating($points, $votes) {

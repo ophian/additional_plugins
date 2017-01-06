@@ -151,7 +151,7 @@
             </div>
 
         </fieldset>
-        
+
         <fieldset class="sect_opt">
             <legend>{$CONST.STATICPAGE_SECTION_OPT}</legend>
             <div class="sp_sect">
@@ -192,7 +192,7 @@
         </fieldset>
 
         {* EXAMPLE FOR CUSTOM STATICPAGE PROPERTIES
-        
+
         <fieldset class="sect_custom">
             <legend>Custom</legend>
 

@@ -28,11 +28,11 @@ class media_sidebar extends subplug_sidebar {
         switch($name) {
             case 'media_base_directory':
                 if ($this->get_config('media_hotlinks_only', 'no') == 'no') {
-                    $select['gallery'] = ALL_DIRECTORIES; 
+                    $select['gallery'] = ALL_DIRECTORIES;
                     $paths = serendipity_traversePath($serendipity['serendipityPath'] . $serendipity['uploadPath']);
                     foreach ( $paths AS $folder ) {
                         $select[$folder['relpath']] = str_repeat('-', $folder['depth']) . ' '. $folder['name'];
-                    } 
+                    }
                     $propbag->add('type', 'select');
                     $propbag->add('name', PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_NAME);
                     $propbag->add('description', PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_DESC);
@@ -112,7 +112,7 @@ class media_sidebar extends subplug_sidebar {
                     $propbag->add('type',        'string');
                     $propbag->add('name',        PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_NAME);
                     $propbag->add('description', PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_DESC);
-                    $propbag->add('default',     $serendipity['rewrite'] != 'none' 
+                    $propbag->add('default',     $serendipity['rewrite'] != 'none'
                                                 ? $serendipity['serendipityHTTPPath'] . 'pages/gallery.html'
                                                 : $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?serendipity[subpage]=gallery');
                 } else $propbag->add('type', 'suboption');
@@ -203,7 +203,7 @@ class media_sidebar extends subplug_sidebar {
             if ($this->get_config('media_hotlinks_only','no') == 'yes') {
                 $dir_extension = $this->get_config('media_hotlink_base','');
                 if ($dir_extension != '' ) {
-                    $dir_extension = $dir_extension . '%';                    
+                    $dir_extension = $dir_extension . '%';
                 }
                 $directory = "http://%" . $dir_extension;
                 $strict = false;

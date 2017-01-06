@@ -216,13 +216,13 @@
 
 4.00 rewrote document.write replacement (81e9911) to be more html standard conform
 
-3.99  fixed disabling collapsible structure box in case of wysiwyg-editor use 
+3.99  fixed disabling collapsible structure box in case of wysiwyg-editor use
 
-3.98  Changed custom <title>, meta description, and meta keywords to be regular fields, 
-      not custom properties. 
+3.98  Changed custom <title>, meta description, and meta keywords to be regular fields,
+      not custom properties.
 
 3.97: Changed breadcrumb navigation so it is an independent option.  Templates that use custom
-      static page templates (plugin_staticpage.tpl, plugin_staticpage_aboutpage.tpl, 
+      static page templates (plugin_staticpage.tpl, plugin_staticpage_aboutpage.tpl,
       plugin_staticpage_related.tpl) must be modified to include the condition
       {if $staticpage_show_breadcrumb}...{/if}.  See included plugin_staticpage.tpl
       for example.
@@ -231,7 +231,7 @@
       Workaround the use of document.write() for javascript enabled browsers
       Added the need of templates index.tpl change note into forms meta block
 
-3.95: Fixed bad XHTML in <option> tag (Timbalu), 
+3.95: Fixed bad XHTML in <option> tag (Timbalu),
       added ability to preview staticpages, restrict viewing draft staticpages to logged in authors
       added option to set META input fields, set structure and meta field box to javascript hidden content (Timbalu)
 
@@ -323,38 +323,38 @@ Major new functionalities:
 
     1. Allow to create custom smarty templates used for editing a
        staticpage.
-       
+
        When editing a staticpage in the backend, you now have a dropdown
        where you can choose a template. The default file is placed
        in the plugin's subdirectory "backend_templates". You can
        add files there on your own, which are then shown in the
        dropdown as well.
-       
+
        You can override the content of those files within your
        template directory, by placing a file named exactly the same way,
-       in the "backend_templates" sub-directory of your template. 
+       in the "backend_templates" sub-directory of your template.
        Thus, you can put an empty file inside your plugin
        directory to initialize the ability to use a template-preference.
-       
+
        The default template file has several smarty functions to query
        the current value and input fields. You can place all input
        fields the way you like, using Smarty/HTML layouts.
-       
+
        You can also still switch to the "old way" through the dropdown.
-       
+
 
     2. Introduce "custom properties" for staticpages.
-    
+
         You need to add those custom properties to your custom smarty
         template, by accessing an input field "serendipity[plugin][custom][xxx]".
         The default backend template has a commented section for an
         example on how to use this.
-        
+
         In your final smarty templates (either the staticpage_*.tpl files, or your
         usual smarty template files) you can access those custom properties through
-        
+
         {$staticpage_custom.XXX}
-        
+
         to place them anywhere you want.
 
 To properly see the new layout, you might need to flush your browser's
@@ -364,7 +364,7 @@ CSS cache, as changes have been made to the plugin's CSS file.
 3.61:
 -----------------------------
 Speed up call for getting staticpage list and cache it. Otherwise, the
-plugin was unusable for thousands of staticpages, because the 
+plugin was unusable for thousands of staticpages, because the
 walkrecursive() function is VERY expensive.
 
 3.57:

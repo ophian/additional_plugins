@@ -92,13 +92,13 @@ class serendipity_event_smartymarkup extends serendipity_event
     {
         global $serendipity;
 
-        // return the template content via referenced argument 
+        // return the template content via referenced argument
         $tpl_source = $serendipity['plugindata']['smartymarkupplugin'];
 
         // test
-        #$tpl_source = '{assign var="foo" value="bar"}{$foo|escape:"html"}'; 
+        #$tpl_source = '{assign var="foo" value="bar"}{$foo|escape:"html"}';
 
-        // return success state 
+        // return success state
         return true;
     }
 

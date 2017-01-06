@@ -41,7 +41,7 @@
 1.13:
 -----
     * Issue SQL statement compatible with pgsql, thanks to ads
-   
+
 1.12:
 -----
     * Added delayed trackbacks, generating those of entries published

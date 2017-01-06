@@ -54,7 +54,7 @@ class serendipity_event_tinymce extends serendipity_event
     function introspect_config_item($name, &$propbag)
     {
         global $serendipity;
-        
+
         switch($name) {
             case 'article_only':
                 $propbag->add('type', 'boolean');
@@ -165,7 +165,7 @@ class serendipity_event_tinymce extends serendipity_event
 
                 case 'backend_wysiwyg_finish':
                     $path = $this->get_config('plugin_http_path','plugins/serendipity_event_tinymce') . '/tinymce/';
-                    
+
                     $imanager           = serendipity_db_bool($this->get_config('imanager'));
                     $geckospellcheck    = serendipity_db_bool($this->get_config('geckospellcheck'));
                     $relativeurls       = serendipity_db_bool($this->get_config('relativeurls'));
@@ -173,7 +173,7 @@ class serendipity_event_tinymce extends serendipity_event
                     $cleanup            = serendipity_db_bool($this->get_config('cleanup'));
                     $article_only       = serendipity_db_bool($this->get_config('article_only'));
                     $tinymce_plugins = $this->get_config('tinymce_plugins');
-                    
+
                     $theme_advanced_buttons1 = $this->get_config('theme_advanced_buttons1');
                     $theme_advanced_buttons2 = $this->get_config('theme_advanced_buttons2');
                     $theme_advanced_buttons3 = $this->get_config('theme_advanced_buttons3');
@@ -193,7 +193,7 @@ if (!window.tinymce_inited) {
 <script type="text/javascript">
 if (!window.tinymce_inited) {
     tinyMCE_GZ.init({
-        plugins 
+        plugins
             : "<?php echo $imanager ? 'imanager,' : ''; echo $tinymce_plugins ; ?>",
         theme
             : "advanced",
@@ -212,7 +212,7 @@ if (!window.tinymce_inited) {
 	tinyMCE.init({
         mode
             : "exact",
-        elements 
+        elements
             : "serendipity[body],serendipity[extended]<?php echo $article_only ? '' : ',serendipity[plugin][content],serendipity[plugin][pre_content]'; ?>",
         language
             : "<?php echo substr(WYSIWYG_LANG, 0, 2); ?>",
@@ -234,13 +234,13 @@ if (!window.tinymce_inited) {
             : "bottom",
         gecko_spellcheck
             : <?php echo $geckospellcheck?"true":"false"; ?>,
-        verify_html 
+        verify_html
             : <?php echo $verifyhtml?"true":"false"; ?>,
-        cleanup 
+        cleanup
             : <?php echo $cleanup?"true":"false"; ?>,
-        invalid_elements 
+        invalid_elements
             : "",
-        extended_valid_elements 
+        extended_valid_elements
             : "object[classid|codebase|width|height|align],param[name|value],embed[quality|type|pluginspage|width|height|src|align|wmode]",
         forced_root_block : "p",
         relative_urls

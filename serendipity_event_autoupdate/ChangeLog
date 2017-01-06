@@ -77,7 +77,7 @@
 1.1:
 ----
 
- * Translated and faked message unicode-icons to Chrome Browser, since this 
+ * Translated and faked message unicode-icons to Chrome Browser, since this
    does not work with all native unicodes (like clock and triangled <!>).
 
 1.0:
@@ -131,11 +131,11 @@
  * Fixed: Choked on new files of the new version which didn't exist
           in the old version
  * Clean cachefiles in templates_c just before the upgrade to prevent
-   display-errors 
+   display-errors
 
 0.1.2:
 ------
 
  * Fixed call-by-reference-warning in php 5.3
  * Added checksum-test prior to unpacking to kind of authenticate the update
- * Added checksum-test after unpacking to check the integrity 
+ * Added checksum-test after unpacking to check the integrity

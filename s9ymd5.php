@@ -16,4 +16,4 @@ Use this for copy&paste to s9y.org download pages
 
  * ((http://prdownloads.sourceforge.net/php-blog/serendipity-<?= $ver; ?>-lite.tar.gz?download)(Serendipity <?= $ver; ?> LITE tar.gz))<br>(MD5: <?= msum(`md5sum serendipity-$ver-lite.tar.gz`) ?>)
  * ((http://prdownloads.sourceforge.net/php-blog/serendipity-<?= $ver; ?>-lite.zip?download)(Serendipity <?= $ver; ?> LITE ZIP)) <br>(MD5: <?= msum(`md5sum serendipity-$ver-lite.tar.gz`) ?>)
-  
+

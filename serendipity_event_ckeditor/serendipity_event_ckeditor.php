@@ -697,7 +697,7 @@ ol.linenums li {
     if (typeof s9ypluginbuttons !== 'undefined') s9ypluginbuttons.push("<?php echo $addB; ?>");
     if (window.Spawnnuggets) Spawnnuggets('<?php echo $eventData['item']; ?>', 'entryforms<?php echo $eventData['jsname']; ?>', <?php echo $jebtnarr; ?>);
 </script>
-<?php 
+<?php
                         }
                     }
                     break;
@@ -713,7 +713,7 @@ ol.linenums li {
     <script type="text/javascript">
         jsEventData = <?php echo json_encode($eventData['buttons']); ?>;
     </script>
-<?php 
+<?php
                         }
                     }
                     break;

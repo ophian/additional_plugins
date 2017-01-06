@@ -1,6 +1,6 @@
 <div id="bayesContent">
     {if $s9ybackend == 1}<p>{else}<span class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> {/if}{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_IMPORT_EXPLANATION}{if $s9ybackend == 1}</p>{else}</span>{/if}
-        
+
     <form enctype="multipart/form-data" action="{$serendipityBaseURL}index.php?/plugin/spamblock_bayes_import" method="post">
     {if $s9ybackend != 1}
         <div class="form_field">
@@ -11,7 +11,7 @@
         </div>
     {/if}
     </form>
-    
+
     <h3>{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA}</h3>
 
     {if $s9ybackend == 1}<p>{else}<span class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> {/if}{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_EXPLANATION}{if $s9ybackend == 1}</p>{else}</span>{/if}

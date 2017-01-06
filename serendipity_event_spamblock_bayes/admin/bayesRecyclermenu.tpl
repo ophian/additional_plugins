@@ -66,7 +66,7 @@
                     <dt>{$CONST.Article}</dt>
                     <dd><a href="{$comment.article_link}" target="_blank">{$comment.article_title}</a></dd>
                     </dl>
-                   
+
                 </details>
                 {else}
                 <li id="comment_{$comment.id}" class="clearfix {cycle values="odd,even"}">

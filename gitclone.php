@@ -6,7 +6,7 @@ $out = explode("\n", `cvs -n -q update`);
 foreach($out AS $file) {
 	$file = trim($file);
 	if (empty($file)) continue;
-  
+
 	if (preg_match('@^\? @', $file)) {
 		$file = str_replace('? ', '', $file);
 		echo "CVS ADD $file\n";

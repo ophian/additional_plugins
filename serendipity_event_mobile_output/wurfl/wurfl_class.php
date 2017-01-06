@@ -70,7 +70,7 @@ else
  *
  * Example:
  * $myDevice = new wurfl_class($wurfl, $wurfl_agents);	// $wurfl is the parsed
- *			// XML, $wurfl_agents is the list of agents and id's. When you first 
+ *			// XML, $wurfl_agents is the list of agents and id's. When you first
  *			// start the class simply pass them as empty variables and will be filled.
  *			// Pass the variables with all the values if you already have them.
  * $myDevice->GetDeviceCapabilitiesFromAgent('SIE-S45');
@@ -138,9 +138,9 @@ class wurfl_class {
 
 	/**
 	 * associative array with all the device's capabilities.
-	 * 
+	 *
 	 * Example :
-	 * $this->capabilities['downloadfun']['downloadfun_support'] 
+	 * $this->capabilities['downloadfun']['downloadfun_support']
 	 *	true if downloadfun is supported, otherwise false
 	 *
 	 * @var associative array
@@ -418,7 +418,7 @@ class wurfl_class {
 					}
 					return true;
 				}
-			} 
+			}
 			// If the list of user agents that match the first 4 chars of the current user
 			//  agent is empty I can quit searching
 			if ( $_short_ua_len == 4 && count($_short_wurfl_ua) == 0 ) {
@@ -430,7 +430,7 @@ class wurfl_class {
 				// DEBUG fast search echo "restoring last_good_short_ua";
 				// I won't continue building a new short user agent list (longer
 				//  than this)
-				$_set_short_wurfl_ua = false; 
+				$_set_short_wurfl_ua = false;
 			} else {
 				// This is the last list of user agents that matched the first part of
 				//  the agent
@@ -688,5 +688,5 @@ class wurfl_class {
 		return;
 	}
 
-} 
+}
 ?>

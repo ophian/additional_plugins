@@ -268,7 +268,7 @@ class TwitterOAuth
         serendipity_event_twitter::twitteroalog($url . " - " . $postfields . " (Code: " . $this->http_code . ")\n" . $response);
 
         serendipity_request_end();
- 
+
     }
     return $response;
   }

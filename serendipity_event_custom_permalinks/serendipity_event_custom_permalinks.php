@@ -53,7 +53,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
 
         $_GET['serendipity']['action'] = 'read';
         $_GET['serendipity']['id']     = $id;
-        
+
         $serendipity['plugindata']['smartyvars']['view'] = $serendipity['view'] = 'entry';
 
         $title = serendipity_db_query("SELECT title FROM {$serendipity['dbPrefix']}entries WHERE id=$id", true);

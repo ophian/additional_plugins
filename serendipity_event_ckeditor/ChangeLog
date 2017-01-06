@@ -219,13 +219,13 @@
     * "Fixed" MediaLibrary img tag code implementation in case of responsive templates
       (see http://board.s9y.org/viewtopic.php?f=11&t=19738)
     * Fixed ACF still touching img code parts; when OFF
-    * Fixed procurator placeholder plugin, since CKE core 4.3.2 
+    * Fixed procurator placeholder plugin, since CKE core 4.3.2
       broke prior behaviour with mediainsert code parts
 
 3.2.0:
 -----
     * Upgrade to CKEDITOR 4.3 Series, update 2
-    * Added new cheatsheet plugin 
+    * Added new cheatsheet plugin
     * Fixed MediaLibrary insert code to be left untouched by ACF
     * Better workflow between nuggets and entry textareas
     * Reverted internal audio procurator protection
@@ -249,22 +249,22 @@
 -----
     * Some tweaks to en, de lang files.
     * Fixed force_install to set new values to database config table.
-    * Fixed Spartacus upgrade 'plugin_to_conf' again, by using 'external_plugin' hook, 
+    * Fixed Spartacus upgrade 'plugin_to_conf' again, by using 'external_plugin' hook,
       which now forces a real HTTP request and falls down to plugins instance config.
       The previous (2.3.2) 'install_plugin' did do, but created another plugin instance.
       If you were hit by this, please just purge other ckeditor instances in your plugin list.
       To push to "all" upgraders, the zip version num was bumped to force a deflate.
 
-      [PLEASE NOTE: For Upgraders coming from 2.3.1 and earlier, the upgrade zip effect 
+      [PLEASE NOTE: For Upgraders coming from 2.3.1 and earlier, the upgrade zip effect
        may possibly happen on next future upgrade only, thus force the zip upgrade by the
        new 'force_install' emergency option, if not happen automatically.]
 
 2.3.2:
 -----
-    * Added config option to force zip install on demand, 
+    * Added config option to force zip install on demand,
       which is easier than purge/install routines on zip upgrade failures
     * Fix and prepare installer fallback on upgrades
-    * Added HTML5 AUDIO tag protected source rule and be catched by 
+    * Added HTML5 AUDIO tag protected source rule and be catched by
       procurator placeholder, to exclude from being touched by ACF
 
 2.3.1:
@@ -278,10 +278,10 @@
     * Removed most of the inline code into 2 new files, which are:
          cke_config.js - the custom config.js file, which now substitutes every config option to CKE
          cke_plugin.js - the render and add button/plugin file, which loads the custom config file and now renders all backend textareas.
-    * To take care about placed javascript, smarty tags and other protected source tags (like 'mediainsert' by imageselectorplus galleries), 
-         the new 'procurator' CKEDITOR Plugin (s9y-specific) was added, which acts like a hidden event plugin 
+    * To take care about placed javascript, smarty tags and other protected source tags (like 'mediainsert' by imageselectorplus galleries),
+         the new 'procurator' CKEDITOR Plugin (s9y-specific) was added, which acts like a hidden event plugin
          and takes care for the placeholder wysiwyg-mode replacements.
-    * In order to be able to place prettified code snippets into entries, the 
+    * In order to be able to place prettified code snippets into entries, the
          'pbckcode' CKEDITOR Plugin was added (v 1.1.0, https://github.com/prbaron/PBCKCode).
          Including local prettify (js/css) by (current version, http://code.google.com/p/google-code-prettify/)
     * Updated 'mediaembed' CKEDITOR Plugin, which removed a useless loop, issue #6

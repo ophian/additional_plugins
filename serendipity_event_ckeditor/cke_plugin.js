@@ -52,9 +52,9 @@ function ecfit(str) {
 /*
  * This was previously a nugget only area, spawned by head! (textareas of staticpage nuggets, html nugget plugins, etc.)
  * called via Spawnnugget(), set by real plugins like staticpages and cores functions_plugins_admin.inc in case of $ev['skip_nuggets'] === false
- * 
+ *
  * NOW it is used by all textareas!
- * 
+ *
  * @param string        $eventData['item']
  * @param string        $eventData['jsname']
  * @param array/object  jsEventData/json_encode($eventData['buttons'])
@@ -238,7 +238,7 @@ function Spawnnuggets(item, addEP, jsED) {
 }
 
 /*
- * Clone a serendipity_editor.js function, to avoid a 
+ * Clone a serendipity_editor.js function, to avoid a
  * TypeError: parent.self.opener.serendipity_imageSelector_addToBody is not a function
  * in case of serendipity_html_nugget_plugin textarea (nuggets3) usage in S9y 1.7 Series
  */

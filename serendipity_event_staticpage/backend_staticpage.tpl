@@ -183,7 +183,7 @@
 
     {if isset($sp_cookie_value)}
     <script type="text/javascript">
-        if (window.jQuery) { jQuery(function ($) { serendipity.SetCookie("backend_template", unescape("{$sp_cookie_value}")); }); } else { serendipity.SetCookie("backend_template", unescape("{$sp_cookie_value}")); } 
+        if (window.jQuery) { jQuery(function ($) { serendipity.SetCookie("backend_template", unescape("{$sp_cookie_value}")); }); } else { serendipity.SetCookie("backend_template", unescape("{$sp_cookie_value}")); }
     </script>
     {/if}
 
@@ -211,7 +211,7 @@
         {if isset($smarty.post.serendipity['staticpagecategory']) || isset($smarty.get.serendipity['staticid'])}
             <script>var dropdown_dialog = "{$CONST.STATICPAGE_CONFIRM_SELECTDIALOG}";</script>
         {/if}
-            <input class="input_button state_submit" type="submit" name="serendipity[staticSubmit]" value="{$CONST.GO}"> - 
+            <input class="input_button state_submit" type="submit" name="serendipity[staticSubmit]" value="{$CONST.GO}"> -
             <input class="input_button state_cancel" type="submit" name="serendipity[staticDelete]" onclick="return confirm('{$CONST.DELETE_SURE|sprintf:"{$sp_selected_id} ({$sp_selected_name|truncate:30})"}');" value="{$CONST.DELETE}">
             {if (int)$smarty.request.serendipity.staticid || (int)$smarty.post.serendipity.staticpage}
             - <button type="submit" name="serendipity[staticPreview]" value="1" title="{$CONST.PREVIEW}" class="button_link entry_preview icon-search"><span class="visuallyhidden">{$CONST.PREVIEW}</span></button>

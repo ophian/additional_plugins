@@ -31,13 +31,13 @@ while (($file = readdir($dh)) !== false) {
     if (!is_dir($file . '/UTF-8/')) {
         continue;
     }
-    
+
     $langdh = opendir($file);
     while (($langfile = readdir($langdh)) !== false) {
         if (!preg_match('@lang_(.+)\.inc\.php$@i', $langfile, $extmatch)) {
             continue;
         }
-        
+
         $target = $file . '/UTF-8/' . $langfile;
         $source = $file . '/' . $langfile;
         copy($source, $target);
