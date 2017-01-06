@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 use \Michelf\Markdown, \Michelf\MarkdownExtra, \Michelf\SmartyPants, \Michelf\SmartyPantsTypographer;
 
@@ -6,13 +6,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_markdown extends serendipity_event
 {
@@ -27,11 +21,11 @@ class serendipity_event_markdown extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team and Jan Lehnardt');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '1.22');
+        $propbag->add('version',       '1.23');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array('frontend_display' => true, 'frontend_comment' => true));
         $propbag->add('groups', array('MARKUP'));
@@ -66,19 +60,21 @@ class serendipity_event_markdown extends serendipity_event
         $propbag->add('configuration', $conf_array);
     }
 
-    function install() {
+    function install()
+    {
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function uninstall(&$propbag) {
+    function uninstall(&$propbag)
+    {
         serendipity_plugin_api::hook_event('backend_cache_purge', $this->title);
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
-
 
     function introspect_config_item($name, &$propbag)
     {
@@ -90,16 +86,14 @@ class serendipity_event_markdown extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        constant($name));
                 $propbag->add('description', sprintf(APPLY_MARKUP_TO, constant($name)));
-                $propbag->add('default', 'true');
-                return true;
+                $propbag->add('default',     'true');
                 break;
 
             case 'MARKDOWN_EXTRA':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_MARKDOWN_EXTRA_NAME);
                 $propbag->add('description', PLUGIN_EVENT_MARKDOWN_EXTRA_DESC);
-                $propbag->add('default',     false);
-                return true;
+                $propbag->add('default',     'false');
                 break;
 
             case 'MARKDOWN_SMARTYPANTS':
@@ -111,7 +105,6 @@ class serendipity_event_markdown extends serendipity_event
                                                 'desc'  => array(YES, PLUGIN_EVENT_MARKDOWN_SMARTYPANTS_EXTENDED, PLUGIN_EVENT_MARKDOWN_SMARTYPANTS_NEVER)
                                              ));
                 $propbag->add('default',     0);
-                return true;
                 break;
 
             case 'MARKDOWN_VERSION':
@@ -123,13 +116,16 @@ class serendipity_event_markdown extends serendipity_event
                                                 'desc'  => array('classic', 'lib'),
                                              ));
                 $propbag->add('default',     2);
-                return true;
                 break;
+
+            default:
+                return false;
         }
+        return true;
     }
 
-
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $mdsp = $this->get_config('MARKDOWN_SMARTYPANTS');
@@ -137,7 +133,7 @@ class serendipity_event_markdown extends serendipity_event
 
         switch($mdv) {
             case 2:
-                if ($this->get_config('MARKDOWN_EXTRA', false)) {
+                if (serendipity_db_bool($this->get_config('MARKDOWN_EXTRA', 'false'))) {
                     require_once dirname(__FILE__) . '/lib/Michelf/MarkdownExtra.inc.php';
                 } else {
                     require_once dirname(__FILE__) . '/lib/Michelf/Markdown.inc.php';
@@ -151,7 +147,7 @@ class serendipity_event_markdown extends serendipity_event
                 break;
 
             case 1:
-                if (serendipity_db_bool($this->get_config('MARKDOWN_EXTRA', false))) {
+                if (serendipity_db_bool($this->get_config('MARKDOWN_EXTRA', 'false'))) {
                     include_once  dirname(__FILE__) . '/markdown_extra.php';
                 } else {
                     include_once  dirname(__FILE__) . '/markdown.php';
@@ -180,7 +176,6 @@ class serendipity_event_markdown extends serendipity_event
                         }
                     }
                     $this->setPlaintextBody($eventData, $mdv, $mdsp);
-                    return true;
                     break;
 
                 case 'frontend_comment':
@@ -223,6 +218,7 @@ class serendipity_event_markdown extends serendipity_event
         return Markdown($text);
     }
     */
+
 }
 
 /* vim: set sts=4 ts=4 expandtab :
@@ -232,4 +228,5 @@ class serendipity_event_markdown extends serendipity_event
  * indent-tabs-mode: nil
  * End:
 */
+
 ?>

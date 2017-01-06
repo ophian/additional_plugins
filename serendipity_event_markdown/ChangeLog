@@ -1,3 +1,14 @@
+1.23:
+-----
+ * Markdown library update to 1.7.0
+ * SmartyPants library update to 1.8.1
+ * Use with lang API - extends required version to 1.6
+ * Cleanup
+
+1.22:
+-----
+ * Fix for modern PHP versions
+
 Version 1.21:
 =============
 
