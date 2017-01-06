@@ -1,20 +1,17 @@
-<?php /*  */
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_plugin_externalphp extends serendipity_plugin {
+class serendipity_plugin_externalphp extends serendipity_plugin
+{
     var $title = PLUGIN_EXTERNALPHP_TITLE;
-    function introspect(&$propbag) {
+
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $title = $this->get_config('title');
@@ -29,9 +26,9 @@ class serendipity_plugin_externalphp extends serendipity_plugin {
         $propbag->add('description', PLUGIN_EXTERNALPHP_TITLE_BLAHBLAH);
         $propbag->add('configuration', array('title', 'include', 'markup'));
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '1.1');
+        $propbag->add('version', '1.2');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -50,7 +47,7 @@ class serendipity_plugin_externalphp extends serendipity_plugin {
                 $propbag->add('description', TITLE_FOR_NUGGET);
                 $propbag->add('default',     PLUGIN_EXTERNALPHP_TITLE);
                 break;
-                                                                                                        
+
             case 'include':
                 // THIS IS AN EVIL EVIL PLUGIN.
                 if ($serendipity['serendipityUserlevel'] < USERLEVEL_ADMIN) {
@@ -76,7 +73,8 @@ class serendipity_plugin_externalphp extends serendipity_plugin {
         return true;
     }
 
-    function show() {
+    function show()
+    {
         global $serendipity;
 
             $include_file = realpath($this->get_config('include'));
@@ -94,9 +92,12 @@ class serendipity_plugin_externalphp extends serendipity_plugin {
             }
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->get_config('title', $this->title);
         $this->show();
     }
+
 }
 /* vim: set sts=4 ts=4 expandtab : */
+?>
