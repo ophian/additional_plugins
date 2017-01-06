@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -31,4 +31,4 @@
 @define('PLUGIN_AMAZON_CA', 'Canada');
 @define('PLUGIN_AMAZON_FR', 'France');
 @define('PLUGIN_AMAZON_DEPENDS_ON', 'This plugin now depends on the <a href="http://spartacus.s9y.org/index.php?mode=bygroups_event_en#group_BACKEND_EDITOR" >Amazon Media Button</a> event plugin.  Please install the plugin and configure it to connect to Amazon.');
-?>
+

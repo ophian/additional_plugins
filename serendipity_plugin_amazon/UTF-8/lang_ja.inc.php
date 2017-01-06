@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.2
  */
@@ -17,4 +17,3 @@
 @define('PLUGIN_AMAZON_ASIN',               "ASIN 一覧");
 @define('PLUGIN_AMAZON_ASIN_DESC',          "推薦する ASIN のカンマで区切った一覧");
 
-?>

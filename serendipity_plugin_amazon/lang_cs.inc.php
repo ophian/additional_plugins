@@ -41,3 +41,4 @@
 // Next lines were translated on 2011/08/04
 @define('PLUGIN_AMAZON_TRACK_GOOGLE',       'Sledování klikù pomocí Google Analytics');
 @define('DESC_PLUGIN_AMAZON_TRACK_GOOGLE',  'Vyžaduje nainstalovaný plugin Google Analytics.');
+
