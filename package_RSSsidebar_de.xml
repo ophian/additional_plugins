@@ -163,8 +163,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_amazon</link>
 <category>Sidebar Plugins</category>
 <author>Matthew Groeninger, (original plugin by Thomas Nesges)</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_amazon&lt;br /&gt;Amazon Empfehlungen&lt;/b&gt;&lt;br /&gt;Empfehlungsblock für Produkte innerhalb des Amazon-Partnerprogramms&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_amazon&lt;br /&gt;Amazon Empfehlungen&lt;/b&gt;&lt;br /&gt;Empfehlungsblock für Produkte innerhalb des Amazon-Partnerprogramms&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 06 Jan 2017 15:21:46 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_amazon</guid>
 </item>
 <item>
@@ -217,8 +217,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_externalphp</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_externalphp&lt;br /&gt;Externe PHP-Anwendung&lt;/b&gt;&lt;br /&gt;Bettet eine externe PHP Anwendung in Ihrem Blog ein, dass im gewohnten Design präsentiert wird. MIT VORSICHT BENUTZEN, DA DIESES PLUGIN GROSSE SICHERHEITSLÜCKEN ERMÖGLICHEN KANN WENN EINE BELIEBIGE PHP-DATEI EINGEBUNDEN WIRD! Dieses Plugin kann daher nur als Administrator konfiguriert werden.&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_externalphp&lt;br /&gt;Externe PHP-Anwendung&lt;/b&gt;&lt;br /&gt;Bettet eine externe PHP Anwendung in Ihrem Blog ein, dass im gewohnten Design präsentiert wird. MIT VORSICHT BENUTZEN, DA DIESES PLUGIN GROSSE SICHERHEITSLÜCKEN ERMÖGLICHEN KANN WENN EINE BELIEBIGE PHP-DATEI EINGEBUNDEN WIRD! Dieses Plugin kann daher nur als Administrator konfiguriert werden.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 06 Jan 2017 15:24:59 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_externalphp</guid>
 </item>
 <item>
@@ -258,21 +258,12 @@
 <guid isPermaLink="false">serendipity_plugin_frappr</guid>
 </item>
 <item>
-<title>Zufälliges Bild aus einer Menalto-Gallery: Fügt den Zufallscode der Menalto-Gallery in die Seitenleiste ein (siehe http://gallery.menalto.com). HINWEIS: Dieses Plugin kann nur mit Administratorrechten konfiguriert werden da es potentiell jedes PHP-Script einbinden könnte!</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_gallery_menalto_random</link>
-<category>Sidebar Plugins</category>
-<author>Andrew Brown, Tadashi Jokagi</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_gallery_menalto_random&lt;br /&gt;Zufälliges Bild aus einer Menalto-Gallery&lt;/b&gt;&lt;br /&gt;Fügt den Zufallscode der Menalto-Gallery in die Seitenleiste ein (siehe http://gallery.menalto.com). HINWEIS: Dieses Plugin kann nur mit Administratorrechten konfiguriert werden da es potentiell jedes PHP-Script einbinden könnte!&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
-<guid isPermaLink="false">serendipity_plugin_gallery_menalto_random</guid>
-</item>
-<item>
 <title>Gadu-Gadu IM status description: Gets and displays a status description of Gadu-Gadu IM</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_ggopis</link>
 <category>Sidebar Plugins</category>
 <author>Piotr Borys</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_ggopis&lt;br /&gt;Gadu-Gadu IM status description&lt;/b&gt;&lt;br /&gt;Gets and displays a status description of Gadu-Gadu IM&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 07 Sep 2016 11:10:07 +0200</pubDate>
+<pubDate>Fri, 06 Jan 2017 17:57:46 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_ggopis</guid>
 </item>
 <item>

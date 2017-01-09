@@ -1674,9 +1674,9 @@
 <description>Doporučené produkty z Amazon v rámci partnerského programu Amazon</description>
 <maintainers><maintainer><name>Matthew Groeninger, (original plugin by Thomas Nesges)</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.22</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.23</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="serendipity_plugin_amazon">
 <file>ChangeLog</file>
@@ -1948,9 +1948,9 @@
 <description>Zobrazuje výstup externí PHP aplikace uvnitř blogu, v designu a formátování blogu. POUŽÍVAT S ROZVAHOU, TENTO PLUGIN S SEBOU NESE BEZPEČNOSTNÍ RIZIKA, PROTOŽE UMOŽŇUJE VLOŽIT LIBOVOLNÝ PHP KÓD! TENTO PLUGIN MŮŽE POUŽÍVAT POUZE ADMINISTRÁTOR!</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.1</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.2</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="serendipity_plugin_externalphp">
 <file>lang_bg.inc.php</file>
@@ -2194,48 +2194,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_plugin_gallery_menalto_random</name>
-<license>GPL</license>
-<summary>Menalto galerie - Gallery Random Block</summary>
-<groups>IMAGES</groups>
-<description>Vkládá odkaz na skript Gallery Random Block (podrobnosti o skriptu viz. http://gallery.menalto.com)</description>
-<maintainers><maintainer><name>Andrew Brown, Tadashi Jokagi</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.8</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_plugin_gallery_menalto_random">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>lang_ja.inc.php</file>
-<file>serendipity_plugin_gallery_menalto_random.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_ja.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_plugin_gallery_menalto_random/lang_cs.inc.php</file>
-    <file>serendipity_plugin_gallery_menalto_random/lang_cz.inc.php</file>
-    <file>serendipity_plugin_gallery_menalto_random/lang_de.inc.php</file>
-    <file>serendipity_plugin_gallery_menalto_random/lang_en.inc.php</file>
-    <file>serendipity_plugin_gallery_menalto_random/lang_ja.inc.php</file>
-    <file>serendipity_plugin_gallery_menalto_random/serendipity_plugin_gallery_menalto_random.php</file>
-    <file>serendipity_plugin_gallery_menalto_random/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_plugin_gallery_menalto_random/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_gallery_menalto_random/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_gallery_menalto_random/UTF-8/lang_ja.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_plugin_ggopis</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_ggopis/ChangeLog</changelog>
 <license>GPL</license>
@@ -2246,7 +2204,7 @@
 <release>
   <version>1.4</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-07</date>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="serendipity_plugin_ggopis">
 <file>ChangeLog</file>

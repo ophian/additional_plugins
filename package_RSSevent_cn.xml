@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_smfmarkup&lt;br /&gt;SMF Markup&lt;/b&gt;&lt;br /&gt;SMF Markup&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Fri, 06 Jan 2017 11:41:57 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_smfmarkup</guid>
 </item>
 <item>
@@ -185,7 +185,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sat, 10 Dec 2016 11:56:47 +0100</pubDate>
+<pubDate>Fri, 06 Jan 2017 13:00:41 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -284,7 +284,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_custom_permalinks&lt;br /&gt;Custom Permalinks for Entries&lt;/b&gt;&lt;br /&gt;Defines custom permalinks that can be used to access a specific entry. It can only use URL patterns which are NOT YET in use - using custom permalinks within the /archives/ structure is thus not possible. But any (virtual) other directory is.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 27 Oct 2016 14:59:27 +0200</pubDate>
+<pubDate>Fri, 06 Jan 2017 13:04:59 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_custom_permalinks</guid>
 </item>
 <item>
@@ -653,7 +653,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_karma&lt;br /&gt;文章打分&lt;/b&gt;&lt;br /&gt;允许访客通过打分的方式评价你的文章质量&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 27 Oct 2016 11:06:34 +0200</pubDate>
+<pubDate>Fri, 06 Jan 2017 11:07:03 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_karma</guid>
 </item>
 <item>
@@ -786,9 +786,9 @@
 <title>Markup: Markdown: Apply Markdown markup to entry text</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_markdown</link>
 <category>Event Plugins</category>
-<author>Serendipity Team and Jan Lehnardt</author>
-<content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Markup: Markdown&lt;/b&gt;&lt;br /&gt;Apply Markdown markup to entry text&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Sat, 10 Sep 2016 10:50:27 +0200</pubDate>
+<author>Serendipity Team and Jan Lehnardt, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Markup: Markdown&lt;/b&gt;&lt;br /&gt;Apply Markdown markup to entry text&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 06 Jan 2017 16:15:08 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -967,8 +967,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_popfetcher</link>
 <category>Event Plugins</category>
 <author>Jason Levitt</author>
-<content:encoded>&lt;b&gt;serendipity_event_popfetcher&lt;br /&gt;POPfetcher&lt;/b&gt;&lt;br /&gt;Fetches and publishes email and attachments from a POP3 email account (with special cell phone support)&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_popfetcher&lt;br /&gt;POPfetcher&lt;/b&gt;&lt;br /&gt;Fetches and publishes email and attachments from a POP3 email account (with special cell phone support)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 06 Jan 2017 12:05:31 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_popfetcher</guid>
 </item>
 <item>
@@ -1058,7 +1058,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_smartymarkup&lt;br /&gt;Markup: Smarty Parsing&lt;/b&gt;&lt;br /&gt;Parses Smarty instructions inside the article text. This is not usable in combination with syntax code-highlighters or multilingual tags in entry context fields!&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 27 Oct 2016 14:38:49 +0200</pubDate>
+<pubDate>Fri, 06 Jan 2017 13:19:24 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_smartymarkup</guid>
 </item>
 <item>
@@ -1150,7 +1150,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Static Pages&lt;/b&gt;&lt;br /&gt;Shows static pages inside your blog with your blogs design and all formattings. Adds a new menu item to the admin interface.&lt;br/&gt;For: Serendipity 2.0.99</content:encoded>
-<pubDate>Wed, 28 Dec 2016 11:45:19 +0100</pubDate>
+<pubDate>Fri, 06 Jan 2017 13:09:17 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1213,7 +1213,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus</author>
 <content:encoded>&lt;b&gt;serendipity_event_tinymce&lt;br /&gt;Uses TinyMCE as WYSIWYG editor&lt;/b&gt;&lt;br /&gt;Utilizes the TinyMCE WYSIWYG editor. Requires Serendipity 1.6 or later. After installation, read the installation guide in the configuration screen for this plugin.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 14 Aug 2016 14:24:27 +0200</pubDate>
+<pubDate>Fri, 06 Jan 2017 13:06:44 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_tinymce</guid>
 </item>
 <item>
@@ -1302,8 +1302,8 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_versioning</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_versioning&lt;br /&gt;Versioning of entries&lt;/b&gt;&lt;br /&gt;Can store and retrieve older versions of an entry&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_versioning&lt;br /&gt;Versioning of entries&lt;/b&gt;&lt;br /&gt;Can store and retrieve older versions of an entry&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 06 Jan 2017 12:06:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_versioning</guid>
 </item>
 <item>

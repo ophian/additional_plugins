@@ -159,8 +159,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_amazon</link>
 <category>Sidebar Plugins</category>
 <author>Matthew Groeninger, (original plugin by Thomas Nesges)</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_amazon&lt;br /&gt;Doporučení Amazon&lt;/b&gt;&lt;br /&gt;Doporučené produkty z Amazon v rámci partnerského programu Amazon&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_amazon&lt;br /&gt;Doporučení Amazon&lt;/b&gt;&lt;br /&gt;Doporučené produkty z Amazon v rámci partnerského programu Amazon&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 06 Jan 2017 15:21:46 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_amazon</guid>
 </item>
 <item>
@@ -213,8 +213,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_externalphp</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_externalphp&lt;br /&gt;Externí PHP aplikace&lt;/b&gt;&lt;br /&gt;Zobrazuje výstup externí PHP aplikace uvnitř blogu, v designu a formátování blogu. POUŽÍVAT S ROZVAHOU, TENTO PLUGIN S SEBOU NESE BEZPEČNOSTNÍ RIZIKA, PROTOŽE UMOŽŇUJE VLOŽIT LIBOVOLNÝ PHP KÓD! TENTO PLUGIN MŮŽE POUŽÍVAT POUZE ADMINISTRÁTOR!&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_externalphp&lt;br /&gt;Externí PHP aplikace&lt;/b&gt;&lt;br /&gt;Zobrazuje výstup externí PHP aplikace uvnitř blogu, v designu a formátování blogu. POUŽÍVAT S ROZVAHOU, TENTO PLUGIN S SEBOU NESE BEZPEČNOSTNÍ RIZIKA, PROTOŽE UMOŽŇUJE VLOŽIT LIBOVOLNÝ PHP KÓD! TENTO PLUGIN MŮŽE POUŽÍVAT POUZE ADMINISTRÁTOR!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 06 Jan 2017 15:24:59 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_externalphp</guid>
 </item>
 <item>
@@ -254,21 +254,12 @@
 <guid isPermaLink="false">serendipity_plugin_frappr</guid>
 </item>
 <item>
-<title>Menalto galerie - Gallery Random Block: Vkládá odkaz na skript Gallery Random Block (podrobnosti o skriptu viz. http://gallery.menalto.com)</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_gallery_menalto_random</link>
-<category>Sidebar Plugins</category>
-<author>Andrew Brown, Tadashi Jokagi</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_gallery_menalto_random&lt;br /&gt;Menalto galerie - Gallery Random Block&lt;/b&gt;&lt;br /&gt;Vkládá odkaz na skript Gallery Random Block (podrobnosti o skriptu viz. http://gallery.menalto.com)&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
-<guid isPermaLink="false">serendipity_plugin_gallery_menalto_random</guid>
-</item>
-<item>
 <title>Status z Gadu-Gadu: Zobrazuje popis stavu z Gadu-Gadu IM (Instant Messenger = protokol pro posílání zpráv, alternativa ICQ, Jabberu apod.)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_ggopis</link>
 <category>Sidebar Plugins</category>
 <author>Piotr Borys</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_ggopis&lt;br /&gt;Status z Gadu-Gadu&lt;/b&gt;&lt;br /&gt;Zobrazuje popis stavu z Gadu-Gadu IM (Instant Messenger = protokol pro posílání zpráv, alternativa ICQ, Jabberu apod.)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 07 Sep 2016 11:10:07 +0200</pubDate>
+<pubDate>Fri, 06 Jan 2017 17:57:46 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_ggopis</guid>
 </item>
 <item>

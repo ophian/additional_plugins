@@ -88,7 +88,7 @@
 <release>
   <version>1.01</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="alpha">
 <file>bogo.php</file>
@@ -1230,7 +1230,7 @@
 <release>
   <version>4.6.1.0</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-12-10</date>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="serendipity_event_ckeditor">
 <file>.htaccess</file>
@@ -1917,7 +1917,7 @@
 <release>
   <version>1.18</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="serendipity_event_custom_permalinks">
 <file>ChangeLog</file>
@@ -5374,7 +5374,7 @@
 <release>
   <version>2.13</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="serendipity_event_karma">
 <file>.htaccess</file>
@@ -6572,11 +6572,11 @@
 <summary>Markup: Markdown</summary>
 <groups>MARKUP</groups>
 <description>Převádí značky Markdown na HTML v textu příspěvku</description>
-<maintainers><maintainer><name>Serendipity Team and Jan Lehnardt</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.22</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-09-10</date>
+  <version>1.23</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="serendipity_event_markdown">
 <file>.htaccess</file>
@@ -6599,7 +6599,9 @@
 <file>MarkdownExtra.php</file>
 <file>MarkdownInterface.inc.php</file>
 <file>MarkdownInterface.php</file>
+<file>SmartyPants.inc.php</file>
 <file>SmartyPants.php</file>
+<file>SmartyPantsTypographer.inc.php</file>
 <file>SmartyPantsTypographer.php</file>
 </dir>
 <file>Readme.md</file>
@@ -6640,7 +6642,9 @@
     <file>serendipity_event_markdown/lib/Michelf/MarkdownExtra.php</file>
     <file>serendipity_event_markdown/lib/Michelf/MarkdownInterface.inc.php</file>
     <file>serendipity_event_markdown/lib/Michelf/MarkdownInterface.php</file>
+    <file>serendipity_event_markdown/lib/Michelf/SmartyPants.inc.php</file>
     <file>serendipity_event_markdown/lib/Michelf/SmartyPants.php</file>
+    <file>serendipity_event_markdown/lib/Michelf/SmartyPantsTypographer.inc.php</file>
     <file>serendipity_event_markdown/lib/Michelf/SmartyPantsTypographer.php</file>
     <file>serendipity_event_markdown/lib/Readme.md</file>
     <file>serendipity_event_markdown/lib/Readme.php</file>
@@ -8160,9 +8164,9 @@
 <description>Stahuje zprávy z emailu a zobrazí je včetně příloh v bloku v postranním sloupci (speciální podpora pro mobilní telefony)</description>
 <maintainers><maintainer><name>Jason Levitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.46</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.47</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="serendipity_event_popfetcher">
 <file>.htaccess</file>
@@ -8734,7 +8738,7 @@
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="serendipity_event_smartymarkup">
 <file>.htaccess</file>
@@ -9247,7 +9251,7 @@
 <release>
   <version>5.14</version>
   <requirements:s9yVersion>2.0.99</requirements:s9yVersion>
-  <date>2016-12-28</date>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="serendipity_event_staticpage">
 <file>.htaccess</file>
@@ -10241,7 +10245,7 @@
 <release>
   <version>1.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-14</date>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="serendipity_event_tinymce">
 <file>.htaccess</file>
@@ -11032,9 +11036,9 @@
 <description>Umožňuje ukládat starší verze příspěvků a obnovovat je</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.11.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.12</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-01-06</date>
   <filelist>
 <dir name="serendipity_event_versioning">
 <file>ChangeLog</file>

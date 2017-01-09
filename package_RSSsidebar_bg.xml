@@ -163,8 +163,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_amazon</link>
 <category>Sidebar Plugins</category>
 <author>Matthew Groeninger, (original plugin by Thomas Nesges)</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_amazon&lt;br /&gt;Amazon Recommendations&lt;/b&gt;&lt;br /&gt;Recommend Products at Amazon within the Amazon-Partnerprogram&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_amazon&lt;br /&gt;Amazon Recommendations&lt;/b&gt;&lt;br /&gt;Recommend Products at Amazon within the Amazon-Partnerprogram&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 06 Jan 2017 15:21:46 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_amazon</guid>
 </item>
 <item>
@@ -217,8 +217,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_externalphp</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_externalphp&lt;br /&gt;Външно PHP приложение&lt;/b&gt;&lt;br /&gt;Показва външно PHP приложение в блога, интегрирано в неговия дизайн и форматиране. ИЗПОЛЗВАЙТЕ ТАЗИ ПРИСТАВКА С ВНИМАНИЕ, ЗАЩОТО МОЖЕТЕ ДА ЗАСТРАШИТЕ СИГУРНОСТТА НА БЛОГА С НЕЯ (ТЯ МОЖЕ ДА ИЗПЪЛНЯВА ВСЯКАКЪВ PHP ФАЙЛ). МОЖЕТЕ ДА ИЗПОЛЗВАТЕ ПРИСТАВКАТА САМО КАТО АДМИНИСТРАТОР!&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_externalphp&lt;br /&gt;Външно PHP приложение&lt;/b&gt;&lt;br /&gt;Показва външно PHP приложение в блога, интегрирано в неговия дизайн и форматиране. ИЗПОЛЗВАЙТЕ ТАЗИ ПРИСТАВКА С ВНИМАНИЕ, ЗАЩОТО МОЖЕТЕ ДА ЗАСТРАШИТЕ СИГУРНОСТТА НА БЛОГА С НЕЯ (ТЯ МОЖЕ ДА ИЗПЪЛНЯВА ВСЯКАКЪВ PHP ФАЙЛ). МОЖЕТЕ ДА ИЗПОЛЗВАТЕ ПРИСТАВКАТА САМО КАТО АДМИНИСТРАТОР!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 06 Jan 2017 15:24:59 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_externalphp</guid>
 </item>
 <item>
@@ -258,21 +258,12 @@
 <guid isPermaLink="false">serendipity_plugin_frappr</guid>
 </item>
 <item>
-<title>Gallery Random Photo Block: Adds a reference to a Gallery Random Block script (see http://gallery.menalto.com for details on this script)</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_gallery_menalto_random</link>
-<category>Sidebar Plugins</category>
-<author>Andrew Brown, Tadashi Jokagi</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_gallery_menalto_random&lt;br /&gt;Gallery Random Photo Block&lt;/b&gt;&lt;br /&gt;Adds a reference to a Gallery Random Block script (see http://gallery.menalto.com for details on this script)&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
-<guid isPermaLink="false">serendipity_plugin_gallery_menalto_random</guid>
-</item>
-<item>
 <title>Gadu-Gadu IM status description: Gets and displays a status description of Gadu-Gadu IM</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_ggopis</link>
 <category>Sidebar Plugins</category>
 <author>Piotr Borys</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_ggopis&lt;br /&gt;Gadu-Gadu IM status description&lt;/b&gt;&lt;br /&gt;Gets and displays a status description of Gadu-Gadu IM&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 07 Sep 2016 11:10:07 +0200</pubDate>
+<pubDate>Fri, 06 Jan 2017 17:57:46 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_ggopis</guid>
 </item>
 <item>
