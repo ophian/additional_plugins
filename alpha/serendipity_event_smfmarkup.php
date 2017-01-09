@@ -1,4 +1,4 @@
-<?php # 
+<?php #
 
 
 if (IN_serendipity !== true) {
@@ -88,15 +88,15 @@ class serendipity_event_smfmarkup extends serendipity_event
 
     function callback($matches) {
         $alt = $align = '';
-        
+
         if (preg_match('@align=(right|left)@imsU', $matches[1], $m)) {
             $align = $m[1];
         }
-        
+
         if (preg_match('@alt=(.)@imsU', $matches[1], $m)) {
             $alt = $alt;
         }
-        
+
         return '<img style="padding: 5px" src="' . $matches[2] . '" alt="' . htmlspecialchars($alt) . '" align="' . $align . '" />';
 
     }

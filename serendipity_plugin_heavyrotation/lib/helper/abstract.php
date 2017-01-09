@@ -22,4 +22,5 @@ abstract class serendipity_plugin_heavyrotation_helper_abstract
         $request->sendRequest();
         return $request->getResponseBody();
     }
+
 }

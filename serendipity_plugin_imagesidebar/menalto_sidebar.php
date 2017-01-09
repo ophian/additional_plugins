@@ -5,7 +5,8 @@ class menalto_sidebar extends subplug_sidebar
 
     function introspect_custom()
     {
-        return array('menalto_path', 'menalto_file', 'menalto_repeat', 'menalto_rotate_time', 'menalto_gversion','g2_type','itemId','g2_maxsize','g2_linkTarget','g2_show','menalto_next_update','menalto_cache_output');
+        return array('menalto_path', 'menalto_file', 'menalto_repeat', 'menalto_rotate_time', 'menalto_gversion',
+                     'g2_type', 'itemId', 'g2_maxsize', 'g2_linkTarget', 'g2_show', 'menalto_next_update', 'menalto_cache_output');
     }
 
     function introspect_config_item_custom($name, &$propbag)
@@ -277,4 +278,5 @@ class menalto_sidebar extends subplug_sidebar
     }
 
 }
+
 ?>

@@ -174,12 +174,12 @@ class serendipity_plugin_ggopis extends serendipity_plugin
                 case '¿': $wynik .= 'Å¼'; break;
                 case '¥': $wynik .= 'Ä„'; break;
                 case 'Æ': $wynik .= 'Ä†'; break;
-                case 'Ê': $wynik .= 'Ä˜';  break;
-                case '£': $wynik .= 'Å';  break;
+                case 'Ê': $wynik .= 'Ä˜'; break;
+                case '£': $wynik .= 'Å'; break;
                 case 'Ñ': $wynik .= 'Åƒ'; break;
                 case 'Ó': $wynik .= 'Ã“'; break;
                 case 'Œ': $wynik .= 'Åš'; break;
-                case '':  $wynik .= 'Å¹'; break;
+                case '': $wynik .= 'Å¹'; break;
                 case '¯': $wynik .= 'Å»'; break;
                 default: $wynik .= $tekst[$i];
             }
