@@ -8431,7 +8431,7 @@
 <release>
   <version>0.30</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-12-19</date>
+  <date>2017-01-14</date>
   <filelist>
 <dir name="serendipity_event_recaptcha">
 <file>.htaccess</file>
@@ -9519,9 +9519,9 @@
 <description>Umožňuje neregistrovaným návštěvníkům navrhovat články, které by se měly vydat.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.12</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-19</date>
+  <version>0.13</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2017-01-15</date>
   <filelist>
 <dir name="serendipity_event_suggest">
 <file>.htaccess</file>
