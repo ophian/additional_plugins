@@ -1,5 +1,9 @@
 <?php
 
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
+
 include_once dirname(__FILE__) . '/common.inc.php';
 
 class serendipity_event_adduser extends serendipity_event
@@ -12,7 +16,7 @@ class serendipity_event_adduser extends serendipity_event
         $propbag->add('description', PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking');
-        $propbag->add('version',     '2.41');
+        $propbag->add('version',     '2.42');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -55,7 +59,7 @@ class serendipity_event_adduser extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_ADDUSER_REGISTERED_ONLY);
                 $propbag->add('description', PLUGIN_ADDUSER_REGISTERED_ONLY_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'registered_only_group':
@@ -77,7 +81,7 @@ class serendipity_event_adduser extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_ADDUSER_REGISTERED_CHECK);
                 $propbag->add('description', PLUGIN_ADDUSER_REGISTERED_CHECK_DESC);
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             default:
@@ -143,19 +147,19 @@ class serendipity_event_adduser extends serendipity_event
                         $serendipity['csuccess'] = 'true';
                     }
 
-                    if (serendipity_db_bool($this->get_config('registered_only')) && !serendipity_userLoggedIn() && $addData['source2'] != 'adduser') {
+                    if (serendipity_db_bool($this->get_config('registered_only', 'false')) && !serendipity_userLoggedIn() && $addData['source2'] != 'adduser') {
                         $eventData = array('allow_comments' => false);
                         $serendipity['messagestack']['comments'][] = PLUGIN_ADDUSER_REGISTERED_ONLY_REASON;
                         return false;
                     }
 
-                    if (serendipity_db_bool($this->get_config('registered_only')) && !$this->inGroup() && $addData['source2'] != 'adduser') {
+                    if (serendipity_db_bool($this->get_config('registered_only', 'false')) && !$this->inGroup() && $addData['source2'] != 'adduser') {
                         $eventData = array('allow_comments' => false);
                         $serendipity['messagestack']['comments'][] = PLUGIN_ADDUSER_REGISTERED_ONLY_REASON;
                         return false;
                     }
 
-                    if (serendipity_db_bool($this->get_config('true_identities')) && !serendipity_userLoggedIn()) {
+                    if (serendipity_db_bool($this->get_config('true_identities', 'true')) && !serendipity_userLoggedIn()) {
                         $user = str_replace("\xc2\xa0b", '', $addData['name']);
                         $user = serendipity_db_escape_string(preg_replace('@\s+@', ' ', trim($user)));
                         $user = trim($user);
@@ -199,7 +203,7 @@ class serendipity_event_adduser extends serendipity_event
                     break;
 
                 case 'frontend_display':
-                    if (serendipity_db_bool($this->get_config('registered_only')) && !serendipity_userLoggedIn()) {
+                    if (serendipity_db_bool($this->get_config('registered_only', 'false')) && !serendipity_userLoggedIn()) {
                         $serendipity['messagestack']['comments'][] = sprintf(
                             PLUGIN_ADDUSER_REGISTERED_ONLY_REASON,
                             $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[subpage]=adduser',
@@ -225,7 +229,7 @@ class serendipity_event_adduser extends serendipity_event
                         }
                     }
 
-                    if ((serendipity_db_bool($this->get_config('registered_only')) || serendipity_db_bool($this->get_config('true_identities'))) && $_SESSION['serendipityAuthedUser']) {
+                    if ((serendipity_db_bool($this->get_config('registered_only', 'false')) || serendipity_db_bool($this->get_config('true_identities', 'true'))) && $_SESSION['serendipityAuthedUser']) {
                         if (defined('IN_serendipity_admin') && $serendipity['GET']['adminAction'] == 'doEdit') {
                             // void
                         } else {
@@ -293,8 +297,8 @@ class serendipity_event_adduser extends serendipity_event
                                 }
                             }
                         }
-
                         if (!serendipity_common_adduser::adduser($username, $password, $email, $pair_config['userlevel'], $pair_config['usergroups'], $pair_config['no_create'], $pair_config['right_publish'], $pair_config['straight_insert'], $pair_config['approve'], $pair_config['use_captcha'])) {
+                            $serendipity['GET']['subpage'] = 'adduser';
                             serendipity_common_adduser::loginform($url, $hidden, $pair_config['instructions'], $username, $password, $email, $pair_config['use_captcha']);
                         }
                         echo "</div>\n";

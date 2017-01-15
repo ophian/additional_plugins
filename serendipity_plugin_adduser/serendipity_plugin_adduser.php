@@ -1,5 +1,9 @@
 <?php
 
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
+
 include_once dirname(__FILE__) . '/common.inc.php';
 
 class serendipity_plugin_adduser extends serendipity_plugin
@@ -13,7 +17,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '2.41');
+        $propbag->add('version',       '2.42');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -65,35 +69,34 @@ class serendipity_plugin_adduser extends serendipity_plugin
             case 'usergroups':
                 $propbag->add('type',      'content');
                 $propbag->add('default',   $this->getGroups());
-                return true;
                 break;
 
             case 'no_create':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        USERCONF_CREATE);
                 $propbag->add('description', USERCONF_CREATE_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'right_publish':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        USERCONF_ALLOWPUBLISH);
                 $propbag->add('description', USERCONF_ALLOWPUBLISH_DESC);
-                $propbag->add('default',     1);
+                $propbag->add('default',     'true');
                 break;
 
             case 'straight_insert':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_ADDUSER_STRAIGHT);
                 $propbag->add('description', PLUGIN_ADDUSER_STRAIGHT_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'approve':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_ADDUSER_ADMINAPPROVE);
                 $propbag->add('description', PLUGIN_ADDUSER_ADMINAPPROVE_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'instructions':
@@ -114,14 +117,14 @@ class serendipity_plugin_adduser extends serendipity_plugin
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_SIDEBAR_LOGIN);
                 $propbag->add('description', PLUGIN_SIDEBAR_LOGIN_DESC);
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'use_captcha':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_ADDUSER_CAPTCHA);
                 $propbag->add('description', PLUGIN_ADDUSER_CAPTCHA_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'default_label':
@@ -133,49 +136,49 @@ class serendipity_plugin_adduser extends serendipity_plugin
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        INSTALL_WYSIWYG);
                 $propbag->add('description', INSTALL_WYSIWYG_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'simpleFilters':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        SIMPLE_FILTERS);
                 $propbag->add('description', SIMPLE_FILTERS_DESC);
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'enableBackendPopup':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        INSTALL_BACKENDPOPUP);
                 $propbag->add('description', INSTALL_BACKENDPOPUP_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'moderateCommentsDefault':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        COMMENTS_MODERATE);
                 $propbag->add('description', '');
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'allowCommentsDefault':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        COMMENTS_ENABLE);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'showMediaToolbar':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        SHOW_MEDIA_TOOLBAR);
                 $propbag->add('description', '');
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'use_autosave':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        CONF_USE_AUTOSAVE);
                 $propbag->add('description', CONF_USE_AUTOSAVE_DESC);
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             default:
@@ -239,7 +242,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
         global $serendipity;
         $title = $this->get_config('title');
 
-        if (!serendipity_db_bool($this->get_config('sidebar_login', true))) {
+        if (!serendipity_db_bool($this->get_config('sidebar_login', 'true'))) {
             // Disable sidebar; Fallback to Event-Plugin.
             return false;
         }
@@ -264,8 +267,9 @@ class serendipity_plugin_adduser extends serendipity_plugin
 
         echo '<div style="padding-left: 4px; padding-right: 10px"><a id="adduser"></a>';
 
-        if (!serendipity_common_adduser::adduser($username, $password, $email, $this->get_config('userlevel', USERLEVEL_EDITOR), $this->usergroups, serendipity_db_bool($this->get_config('no_create', false)), serendipity_db_bool($this->get_config('right_publish', true)), serendipity_db_bool($this->get_config('straight_insert', false)), serendipity_db_bool($this->get_config('approve', false)), serendipity_db_bool($this->get_config('use_captcha', false)))) {
-            serendipity_common_adduser::loginform($url, array(), $this->get_config('instructions'), $username, $password, $email, serendipity_db_bool($this->get_config('use_captcha', false)));
+        if (!serendipity_common_adduser::adduser($username, $password, $email, $this->get_config('userlevel', USERLEVEL_EDITOR), $this->usergroups, serendipity_db_bool($this->get_config('no_create', 'false')), serendipity_db_bool($this->get_config('right_publish', 'true')), serendipity_db_bool($this->get_config('straight_insert', 'false')), serendipity_db_bool($this->get_config('approve', 'false')), serendipity_db_bool($this->get_config('use_captcha', 'false')))) {
+            $serendipity['GET']['subpage'] = 'adduser';
+            serendipity_common_adduser::loginform($url, array(), $this->get_config('instructions'), $username, $password, $email, serendipity_db_bool($this->get_config('use_captcha', 'false')));
         }
 
         echo "</div>\n";
@@ -276,3 +280,4 @@ class serendipity_plugin_adduser extends serendipity_plugin
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

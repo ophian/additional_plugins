@@ -220,7 +220,7 @@ class serendipity_common_adduser
                     'allow_comments'    => 'true',
                     'moderate_comments' => false,
                     'last_modified'     => 1,
-                    'timestamp'         => 1
+                    'timestamp'         => 10 // make those entries old so that captcha_ttl will be enbaled.
                 );
 
                 $commentInfo = array(
@@ -286,6 +286,7 @@ class serendipity_common_adduser
         ));
         $filename = 'registerbox.tpl';
         $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
+
         if (!$tfile || $tfile == $filename) {
             $tfile = dirname(__FILE__) . '/' . $filename;
         }
