@@ -147,6 +147,7 @@ class serendipity_common_adduser
             if (is_array($newauthor) && $newauthor['authorid'] > 0) {
                 echo PLUGIN_ADDUSER_SUCCEED . '<hr />';
                 serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}pending_authors WHERE hash = '" . serendipity_db_escape_string($string) . "'");
+                unset($serendipity['POST']); // clear input fields and post data
                 return true;
             } else {
                 if ($debug) {
@@ -252,11 +253,13 @@ class serendipity_common_adduser
             if ($approve) {
                 serendipity_common_adduser::sendMail($username, $hash, $email, true);
                 echo PLUGIN_ADDUSER_SENTMAIL_APPROVE;
+                unset($serendipity['POST']); // clear input fields and post data
             } elseif ($straight_insert) {
                 $serendipity['GET']['adduser_activation'] = $hash;
                 serendipity_common_adduser::checkuser($usergroups);
             } elseif (serendipity_common_adduser::sendMail($username, $hash, $email)) {
                 echo PLUGIN_ADDUSER_SENTMAIL;
+                unset($serendipity['POST']); // clear input fields and post data
             } else {
                 echo ERROR;
             }

@@ -3,6 +3,8 @@
  * Fix very old Bug not generating the captcha
    Needs the Styx 2.1 delivered spamblock plugin v.1.89
  * Some more plugin consistencies changes
+ * Clear input fields and post data on success
+
 
 2.41:
 -----
