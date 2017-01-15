@@ -323,7 +323,6 @@ class serendipity_event_recaptcha extends serendipity_event
                     }
                     break;
 
-
                 default:
                     return false;
             }
