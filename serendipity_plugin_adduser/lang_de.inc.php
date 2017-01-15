@@ -25,8 +25,11 @@
 @define('PLUGIN_ADDUSER_FAILED', 'Der Account konnte nicht freigeschaltet werden. Vielleicht haben Sie die URL aus ihrer Aktivierungs-E-Mail nicht korrekt kopiert?');
 
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY', 'Nur registrierte Nutzer dürfen Kommentare schicken?');
-@define('PLUGIN_ADDUSER_REGISTERED_ONLY_DESC', 'Wenn diese Option aktiviert ist, dürfen nur registrierte Nutzer die Einträge kommentieren und müssen dazu eingelogged sein.');
+@define('PLUGIN_ADDUSER_REGISTERED_ONLY_DESC', 'Wenn diese Option aktiviert ist, dürfen nur registrierte Nutzer die Einträge kommentieren und müssen dazu angemeldet sein.');
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY_REASON', 'Nur registrierte Benutzer dürfen Einträge kommentieren. Erstellen Sie sich einen eigenen Account <a href="%s">hier</a> und <a href="%s">loggen Sie sich danach ein</a>. Ihr Browser muss Cookies unterstützen.');
+
+@define('PLUGIN_ADDUSER_STRAIGHT', 'Direkter Eintrag?');
+@define('PLUGIN_ADDUSER_STRAIGHT_DESC', 'Wenn diese Option aktiviert ist, wird der neue User unverzüglich als valider Co-Autor eingetragen. Dies ist nur in Setups zu empfehlen, die keinen Mailserver zur Verfügung haben; ansonsten kann diese Option als Einfallstor von Spammern ausgenutzt werden. Nur genehmigen, wenn Sie genau wissen was sie tun!');
 
 @define('PLUGIN_ADDUSER_REGISTERED_CHECK', 'Autoren-Identitäten schützen');
 @define('PLUGIN_ADDUSER_REGISTERED_CHECK_DESC', 'Wenn aktiviert, können die Namen der registrierten Autoren nicht von Gästen benutzt werden.');
@@ -38,6 +41,14 @@
 @define('PLUGIN_ADDUSER_SENTMAIL_APPROVE_ADMIN', 'Der Account wurde akzeptiert, der entsprechende Redakteur wird nun seine E-Mail mit Zugangsdaten erhalten.');
 @define('PLUGIN_ADDUSER_MAIL_SUBJECT_APPROVE', '[Bewilligung notwendig] Ein neuer Autor hat sich registriert');
 @define('PLUGIN_ADDUSER_MAIL_BODY_APPROVE', "Für den Autoren %s wurde für das Blog %s ein Account eingerichtet. Um dem Redakteur den Login zu erlauben, bitte auf diesen Link klicken:\n\n%s\n\nErst nach diesem Vorgang wird der Redakteur seine Zugangsdaten per E-Mail erhalten.");
+
+@define('PLUGIN_ADDUSER_CAPTCHA', 'Benutze Captchas?');
+@define('PLUGIN_ADDUSER_CAPTCHA_DESC', 'Benötigt installiertes spamblock event Plugin.');
+
+@define('PLUGIN_ADDUSER_ANTISPAM', 'Sie haben die Anti-Spam-Tests nicht bestanden. Bitte überprüfen Sie, ob Sie den CAPTCHA korrekt eingegeben haben.');
+
+@define('PLUGIN_ADDUSER_REGISTERED_ONLY_GROUP', 'Zusätzlich: Nur registrierte Benutzer in diesen Autorengruppen können Kommentare schreiben?');
+@define('PLUGIN_ADDUSER_REGISTERED_ONLY_GROUP_DESC', 'Sie müssen auch die Option "Nur registrierte Nutzer dürfen Kommentare schicken" benutzen, um dies zu aktivieren. Wenn diese Option aktiviert ist, können nur registrierte Benutzer bestimmter Autorengruppen Kommentare zu Ihren Einträgen posten und müssen dazu angemeldet sein.');
 
 @define('PLUGIN_ADDUSER_DEFAULTSETTINGS', 'Hier können Standard-Einstellungen für den neuen Autoren festgelegt werden.');
 
