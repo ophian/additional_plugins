@@ -26,12 +26,12 @@ class serendipity_event_suggest extends serendipity_event
                                          ));
         $propbag->add('configuration',   array('permalink', 'pagetitle', 'authorid', 'email'));
         $propbag->add('author',          'Garvin Hicking');
-        $propbag->add('version',         '0.12');
+        $propbag->add('version',         '0.13');
         $propbag->add('groups',          array('FRONTEND_FEATURES'));
         $propbag->add('requirements',    array(
-                                            'serendipity' => '1.6',
-                                            'smarty'      => '2.6.7',
-                                            'php'         => '4.1.0'
+                                            'serendipity' => '1.7',
+                                            'smarty'      => '3.0.0',
+                                            'php'         => '5.1.0'
                                          ));
         $propbag->add('stackable',       true);
         $propbag->add('license',         'Commercial');
@@ -39,9 +39,9 @@ class serendipity_event_suggest extends serendipity_event
 
     function install()
     {
-      global $serendipity;
+        global $serendipity;
 
-      serendipity_db_schema_import("CREATE TABLE {$serendipity['dbPrefix']}suggestmails (
+        serendipity_db_schema_import("CREATE TABLE {$serendipity['dbPrefix']}suggestmails (
             id {AUTOINCREMENT} {PRIMARY},
             email varchar(255) NOT NULL,
             entry_id int(10) {UNSIGNED} not null default '0',
@@ -288,13 +288,10 @@ class serendipity_event_suggest extends serendipity_event
             );
 
             $tfile = serendipity_getTemplateFile('plugin_suggest.tpl', 'serendipityPath');
-            if (!$tfile) {
+            if (!$tfile || $tfile == 'plugin_suggest.tpl') {
                 $tfile = dirname(__FILE__) . '/plugin_suggest.tpl';
             }
-            $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-            $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
             $content = $serendipity['smarty']->fetch('file:'. $tfile);
-            $serendipity['smarty']->security_settings[INCLUDE_ANY] = $inclusion;
 
             echo $content;
         }
@@ -387,7 +384,9 @@ class serendipity_event_suggest extends serendipity_event
                     break;
 
                 case 'backend_display':
-                    if (!$eventData['id']) return false;
+                    if (!$eventData['id']) {
+                        return false;
+                    }
                     $res = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}suggestmails WHERE entry_id = " . (int)$eventData['id'], true, 'assoc');
                     if (!is_array($res)) {
                         $res = array();
