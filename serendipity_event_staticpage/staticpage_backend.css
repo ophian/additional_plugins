@@ -357,10 +357,6 @@
 #backend_sp_respond .form_radio {
     display: block;
 }
-#sp_option_data > div,
-#sp_structure_data > div {
-    padding-bottom: 100%; /* cheat browser for equal-height part 1 */
-}
 #backend_sp_respond select {
     min-width: 48%;
 }
@@ -372,18 +368,17 @@
     float: left;
     margin-right: 2%;
     width: 48%;
-    background: #eee;
+    background: transparent;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border: 1px solid #aaa;
+    border: 1px solid transparent;
     padding: 0 .4em;
     min-height: 3.6em; /* avoid breaks having less height blocks */
-    padding-bottom: -100%; /* cheat browser for equal-height part 2 */
 }
 #backend_sp_respond .form_field_long {
-    background: #eee;
-    border: 1px solid #aaa;
+    background: transparent;
+    border: 1px solid transparent;
 }
 #backend_sp_respond .form_field_long label,
 #backend_sp_respond .form_field_long input {
