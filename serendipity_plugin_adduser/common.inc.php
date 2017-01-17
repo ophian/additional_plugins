@@ -221,7 +221,7 @@ class serendipity_common_adduser
                     'allow_comments'    => 'true',
                     'moderate_comments' => false,
                     'last_modified'     => 1,
-                    'timestamp'         => 10 // make those entries old so that captcha_ttl will be enbaled.
+                    'timestamp'         => 10 // make those entries old so that captcha_ttl will be enabled.
                 );
 
                 $commentInfo = array(

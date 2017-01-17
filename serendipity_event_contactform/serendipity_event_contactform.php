@@ -219,7 +219,7 @@ class serendipity_event_contactform extends serendipity_event
             'allow_comments'    => 'true',
             'moderate_comments' => false,
             'last_modified'     => time(),
-            'timestamp'         => 10 // make those entries old so that captcha_ttl will be enbaled.
+            'timestamp'         => 10 // make those entries old so that captcha_ttl will be enabled.
         );
 
         $commentInfo = array(
@@ -315,7 +315,7 @@ class serendipity_event_contactform extends serendipity_event
             'allow_comments'    => 'true',
             'moderate_comments' => false,
             'last_modified'     => time(),
-            'timestamp'         => 10 // make those entries old so that captcha_ttl will be enbaled.
+            'timestamp'         => 10 // make those entries old so that captcha_ttl will be enabled.
         );
 
         $commentInfo = array(
