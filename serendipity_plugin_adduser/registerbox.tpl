@@ -38,7 +38,7 @@ I agree to the <a href="#">Terms of Use</a>.
         {if $registerbox_captcha == true}
         <div>
             <!-- This is where the spamblock/Captcha plugin is called -->
-            {serendipity_hookPlugin hook="frontend_comment" data=$registerbox}
+            {serendipity_hookPlugin hook="frontend_comment" data=$registerbox_url}
         </div>
         {/if}
 

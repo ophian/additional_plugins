@@ -1,3 +1,7 @@
+2.43:
+-----
+ * Fix misspelled variable
+
 2.42:
 -----
  * Fix very old Bug not generating the captcha
