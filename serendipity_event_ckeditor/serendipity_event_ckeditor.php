@@ -64,7 +64,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * Note revisions of ckeditor and plugin additions to lang files
      * @var array
      */
-    protected $revisionPackage = array('CKEditor 4.6.2 (revision 580bcaf, full package, 2017-01-12)',
+    protected $revisionPackage = array('CKEditor 4.6.2 (revision 20af917, full package, 2017-01-12)',
                                        'CKEditor-Plugin: mediaembed, v. 0.6+ (https://github.com/frozeman/MediaEmbed, 2016-07-24)',
                                        'CKEditor-Plugin: manually added codesnippet, fakeobjects, lineutils, autogrow, widget and widgetselection plugins, 2017-01-12)',
                                        'CKEditor-Plugin: procurator, v. 1.6 (Serendipity placeholder Plugin, 2016-01-01)',
