@@ -2,7 +2,7 @@
 
 @define('PLUGIN_SIDEBAR_HIDER_NAME', 'Seitenleisten ein/ausklappbar machen');
 @define('PLUGIN_SIDEBAR_HIDER_DESC', 'Verkleinert Seitenleisten-Elemente auf ihren Titel und ermöglicht das individuelle Ausklappen. Zusätzliche Konfiguration siehe Einträge -> Seitenleisten verwalten in der Administrationsoberfläche.');
-@define('PLUGIN_SIDEBAR_HIDER_STYLE_SIDEBAR', 'CSS-Style der versteckten Seitenleite');
+@define('PLUGIN_SIDEBAR_HIDER_STYLE_SIDEBAR', 'CSS-Style der versteckten Seitenleiste');
 @define('PLUGIN_SIDEBAR_HIDER_STYLE_SIDEBAR_DESC', 'CSS-Code der auf jedes Seitenleisten-Element angewendet wird, wenn die Seitenleiste versteckt wird (z.B. padding-bottom entfernen).');
 @define('PLUGIN_SIDEBAR_HIDER_STYLE_TITLE', 'CSS-Style des Titels einer versteckten Seitenleiste');
 @define('PLUGIN_SIDEBAR_HIDER_STYLE_TITLE_DESC', 'CSS-Code der auf jedes Seitenleisten-Titel-Element angewendet wird, wenn die Seitenleiste versteckt wird (z.B. border-bottom entfernen).');
