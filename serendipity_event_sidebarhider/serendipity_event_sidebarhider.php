@@ -1,7 +1,5 @@
 <?php
 
-// serendipity_event_sidebarhide
-
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -20,10 +18,10 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian');
-        $propbag->add('version',       '1.27');
+        $propbag->add('version',       '1.30');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'php'         => '5.1.0'
+            'serendipity' => '2.0',
+            'php'         => '5.2.0'
         ));
         $propbag->add('event_hooks',    array(
             'external_plugin'           => true,
@@ -46,8 +44,8 @@ class serendipity_event_sidebarhider extends serendipity_event
             case 'enable':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_SIDEBAR_HIDER_NAME);
-                $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('description', PLUGIN_SIDEBAR_HIDER_DESC . ' ' . PLUGIN_SIDEBAR_HIDER_DESC2);
+                $propbag->add('default',     'true');
                 break;
 
             case 'style_sidebar_hidden':
@@ -68,21 +66,21 @@ class serendipity_event_sidebarhider extends serendipity_event
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_SIDEBAR_HIDER_STYLE_LINK);
                 $propbag->add('description', PLUGIN_SIDEBAR_HIDER_STYLE_LINK_DESC);
-                $propbag->add('default','text-decoration:none;float:right;margin-right:3px;');
+                $propbag->add('default',     'text-decoration:none;float:right;margin-right:3px;');
                 break;
 
             case 'html_link_visible':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE);
                 $propbag->add('description', PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE_DESC);
-                $propbag->add('default','-');
+                $propbag->add('default',     '-');
                 break;
 
             case 'html_link_hidden':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN);
                 $propbag->add('description', PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN_DESC);
-                $propbag->add('default','+');
+                $propbag->add('default',     '+');
                 break;
 
             default:
@@ -97,7 +95,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
-        $enabled = serendipity_db_bool($this->get_config('enable'));
+        $enabled = serendipity_db_bool($this->get_config('enable', 'true'));
 
         if (isset($hooks[$event])) {
 
@@ -202,12 +200,11 @@ class serendipity_event_sidebarhider extends serendipity_event
                     if (!$enabled) {
                         break;
                     }
-
-                    if (strpos($eventData, '.clearfix') === false) {
+                    if (false === strpos($eventData, '.clearfix')) {
                     // append!
                     $eventData .= '
 
-/* serendipity_event_sidebarhider start */
+ serendipity_event_sidebarhider start
 
 .clearfix:after {
     content: ".";
@@ -216,13 +213,9 @@ class serendipity_event_sidebarhider extends serendipity_event
     clear: both;
     visibility: hidden;
 }
-.clearfix {display: inline-table;}
-/* Hides from IE-mac \*/
-* html .clearfix {height: 1%;}
-.clearfix {display: block;}
-/* End hide from IE-mac */
+.clearfix { display: inline-table; }
 
-/* serendipity_event_sidebarhider end */
+/* serendipity_event_sidebarhider end
 
 ';
                     }
@@ -325,12 +318,14 @@ class serendipity_event_sidebarhider extends serendipity_event
         global $serendipity;
         global $template_vars;
         $plugin_list = unserialize($this->get_config('plugin_list'));
-        serendipity_smarty_init();
+        if (!isset($serendipity['smarty'])) {
+            serendipity_smarty_init();
+        }
 
         if ( !defined('Smarty::SMARTY_VERSION') ) {
             $template_option = $serendipity['smarty']->get_template_vars('template_option');
         } else {
-            $template_option = $smarty->getTemplateVars('template_option');
+            $template_option = $serendipity['smarty']->getTemplateVars('template_option');
         }
 
         if (isset($template_vars['sidebars'])) {
@@ -345,17 +340,17 @@ class serendipity_event_sidebarhider extends serendipity_event
 
         $opts = array();
 ?>
+    <div class="sidebarhider_tabs" id="sidebarhider_pluginlist_tabs">
+        <section id="sidebarhider_pluginlist_sidebar" class="panel">
             <form action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=sidebarhider" method="post">
-            <input type="hidden" name="sbh_action" value="save">
-            <link rel="stylesheet" type="text/css" href="<?php echo serendipity_rewriteURL('serendipity.css');?>" />
-            <link rel="stylesheet" type="text/css" href="<?php echo serendipity_rewriteURL('serendipity_admin.css');?>" />
-            <h3><?php echo PLUGIN_SIDEBAR_HIDER_CONF;?></h3>
-            <div><?php echo PLUGIN_SIDEBAR_HIDER_CONF_DESC;?></div>
-            <br />
-            <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="<?php echo SAVE_CHANGES_TO_LAYOUT;?>" /><br /><br />
+                <input type="hidden" name="sbh_action" value="save">
+                <h3><?php echo PLUGIN_SIDEBAR_HIDER_CONF;?></h3>
+                <div><?php echo PLUGIN_SIDEBAR_HIDER_CONF_DESC;?></div>
+                <br />
+                <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="<?php echo SAVE_CHANGES_TO_LAYOUT;?>" /><br /><br />
 
-            <table id="mainpane">
-                <tr>
+                <div class="pluginmanager">
+
 <?php
         foreach($sidebars AS $sidebar) {
             $plugins = serendipity_plugin_api::enum_plugins($sidebar);
@@ -379,16 +374,19 @@ class serendipity_event_sidebarhider extends serendipity_event
                 $pside = $sidebar;
             }
 
-            echo '<td valign="top"><strong>' . $opts[$sidebar] . '</strong><br />';
             if (is_array($plugins)) {
+             echo '    <ul class="pluginmanager_side pluginmanager_sidebar plainList">
+                        <h4 align="center">' . $opts[$sidebar] . '</h4>
+                        <ol id="'.$sidebar.'_col" data-placement="'.$sidebar.'" class="pluginmanager_container plainList equal_heights">';
                 $this->admin_print_sidebar($plugins, $pside, $plugin_list);
             }
-            echo '</td>' . "\n";
+            echo '</ol></ul>' . "\n";
         }
 ?>
-            </tr>
-            </table>
+                </div>
             </form>
+        </section>
+    </div>
 <?php
     }
 
@@ -402,7 +400,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $usergroups_viewlist = unserialize($this->get_config('usergroups_view_list'));
         $mygroups            = serendipity_getGroups($serendipity['authorid']);
 
-        $enabled = serendipity_db_bool($this->get_config('enable'));
+        $enabled = serendipity_db_bool($this->get_config('enable', 'true'));
         foreach ($sidebar AS $plugin_data) {
             $plugin =& serendipity_plugin_api::load_plugin($plugin_data['name'], $plugin_data['authorid'], $plugin_data['path']);
             if (is_object($plugin)) {
@@ -436,8 +434,8 @@ class serendipity_event_sidebarhider extends serendipity_event
                 if (empty($title)) {
                     $title = $plugin->get_config('backend_title');
                 }
-
-                echo "<div class='serendipitySideBarItem' style='margin-top:10px;margin-bottom:20px;'>\n";
+                $zebra = $i % 2 ? 'pluginmanager_item_odd' : 'pluginmanager_item_even';
+                echo "<li class=\"$zebra\"><div class='serendipitySideBarItem' style='margin-top:10px;margin-bottom:20px;'>\n";
                 echo "<h3 class='serendipitySideBarTitle'>$title</h3>\n";
                 echo "<div class='serendipitySideBarContent'><table>";
                 if ($enabled) {
@@ -499,7 +497,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                 echo "</tr>";
 
                 echo "</table></div>\n";
-                echo "</div>\n";
+                echo "</div>\n<li>\n";
             } else {
                 echo ERROR . ': ' . $plugin_data['name'] . '<br />';
             }
@@ -512,7 +510,9 @@ class serendipity_event_sidebarhider extends serendipity_event
         global $serendipity;
         global $template_vars;
 
-        serendipity_smarty_init();
+        if (!isset($serendipity['smarty'])) {
+            serendipity_smarty_init();
+        }
 
         if (isset($template_vars['sidebars'])) {
             $sidebars = explode(',', $template_vars['sidebars']);
@@ -576,7 +576,7 @@ class serendipity_event_sidebarhider extends serendipity_event
 
         $this->set_config('usergroups_view_list', serialize($usergroups_view_list));
 
-        echo '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />' . sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%T')) . "<br /><br />\n</div>";
+        echo '<div class="msg_success"><span class="icon-ok-circled"></span> ' . sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . "\n</div>";
     }
 
 }

@@ -8,6 +8,7 @@
 
 @define('PLUGIN_SIDEBAR_HIDER_NAME', 'Toggle Sidebar state (collapsed/uncollapsed)');
 @define('PLUGIN_SIDEBAR_HIDER_DESC', 'Shrinks Sidebars to just their titles.  Extra configuration in Entries -> Manage Sidebars in the Admin Suite.');
+@define('PLUGIN_SIDEBAR_HIDER_DESC2', 'PLEASE NOTE: Either use this option OR the extended configuration for show/hide!');
 @define('PLUGIN_SIDEBAR_HIDER_STYLE_SIDEBAR', 'Hidden Sidebar Style');
 @define('PLUGIN_SIDEBAR_HIDER_STYLE_SIDEBAR_DESC', 'Extra style tags to apply to the Sidebar Item when the Sidebar is hidden (ie removing bottom padding).');
 @define('PLUGIN_SIDEBAR_HIDER_STYLE_TITLE', 'Hidden Title Style');

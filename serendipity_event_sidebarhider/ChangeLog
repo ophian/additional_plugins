@@ -1,3 +1,10 @@
+1.30:
+----
+
+ * Make this work with Serendipity 2.0+
+ * Fix Smarty error
+ * Untested with the included to_integrate.zip
+
 1.27:
 ----
 
