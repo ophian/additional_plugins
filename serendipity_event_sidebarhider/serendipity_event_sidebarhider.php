@@ -204,7 +204,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                     // append!
                     $eventData .= '
 
- serendipity_event_sidebarhider start
+/*  serendipity_event_sidebarhider start */
 
 .clearfix:after {
     content: ".";
@@ -215,7 +215,12 @@ class serendipity_event_sidebarhider extends serendipity_event
 }
 .clearfix { display: inline-table; }
 
-/* serendipity_event_sidebarhider end
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+/* serendipity_event_sidebarhider end */
 
 ';
                     }
