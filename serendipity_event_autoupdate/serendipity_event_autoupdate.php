@@ -18,13 +18,14 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.3.5');
+        $propbag->add('version',       '1.3.6');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'php'         => '5.2'
         ));
         $propbag->add('event_hooks',   array(
+            'css_backend'                                   => true,
             'plugin_dashboard_updater'                      => true,
             'backend_sidebar_entries_event_display_update'  => true
         ));
@@ -130,11 +131,19 @@ class serendipity_event_autoupdate extends serendipity_event
 
             switch($event) {
 
+                case 'css_backend':
+                    $eventData .= '
+
+.button_action { margin-bottom: .5em }
+
+';
+                    break;
+
                 case 'plugin_dashboard_updater':
                     $eventData = '
                     <form action="?serendipity[adminModule]=event_display&serendipity[adminAction]=update" method="POST">
                         <input type="hidden" name="serendipity[newVersion]" value="'.$addData.'" />
-                        <div id="autobut">' . ($serendipity['version'][0] > 1 ? '<button type="submit">'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'</button>' : '<input type="submit" value="'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'" />') . '</div>
+                        <div id="autobut" class="button_action">' . ($serendipity['version'][0] > 1 ? '<button type="submit">'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'</button>' : '<input type="submit" value="'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'" />') . '</div>
                     </form>';
                     break;
 
