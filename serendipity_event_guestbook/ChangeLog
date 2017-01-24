@@ -236,7 +236,7 @@
 ----
 
  * This edition adds backend administration and now supports admin moderation to guestbook entries.
- * Therefor it adds a new database table field 'approve' and a new config variable 'showapp' to true or false (default is false).
+ * Therefore it adds a new database table field 'approve' and a new config variable 'showapp' to true or false (default is false).
  * Changes will affect old entries to be set as approved.
  * Updated Serendipity guestbook sidebar plugin to select these entries only to v.1.12.
  * Changed and added lang constants. The lang files <en>, <de> and <de-utf8> are now up to date.
