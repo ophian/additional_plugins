@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.3.6');
+        $propbag->add('version',       '1.3.7');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -29,7 +29,7 @@ class serendipity_event_autoupdate extends serendipity_event
             'plugin_dashboard_updater'                      => true,
             'backend_sidebar_entries_event_display_update'  => true
         ));
-        $propbag->add('groups', array('BACKEND_FEATURES'));
+        $propbag->add('groups', array('BACKEND', 'DASHBOARD', 'BACKEND_FEATURES'));
         if ($serendipity['version'][0] < 2) {
             $this->dependencies = array('serendipity_event_dashboard' => 'keep');
         }
