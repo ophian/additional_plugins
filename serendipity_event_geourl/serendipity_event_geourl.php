@@ -7,7 +7,7 @@
 //            http://blog.thomasnesges.de
 //
 // You can find your Latitude/Longitude coordinates via maporama
-// (http://www.maporama.com/) or one of the other ressources mentioned
+// (http://www.maporama.com/) or one of the other resources mentioned
 // on http://geourl.org/resources.html
 
 

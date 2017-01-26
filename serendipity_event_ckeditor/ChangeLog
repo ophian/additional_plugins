@@ -161,7 +161,7 @@
         - dependency plugins widget and lineutils
         - codesnippet, which replaces the previously used pbckcode plugin
           This new code plugin has by default more code types, does not
-          need any CDN, and uses less ressources being better integrated.
+          need any CDN, and uses less resources being better integrated.
           But it uses a different highlighter js file (hightlight.pack.js).
     * Changed option prettify to be a compat mode only option for ugraders
       having used pbckcode code previously for entries.

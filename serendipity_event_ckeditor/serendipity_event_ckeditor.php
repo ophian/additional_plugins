@@ -703,7 +703,7 @@ ol.linenums li {
                     break;
 
                 case 'backend_wysiwyg_finish':
-                    // Run once only, save ressources
+                    // Run once only, save resources
                     // This should better move into a future(!) 'backend_footer' hook, to not happen for every of any multiple textareas!
                     // but there $eventData['item'] isn't available yet...
                     if (isset($eventData['item']) && !empty($eventData['item'])) {

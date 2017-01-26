@@ -139,7 +139,7 @@ CKEDITOR.editorConfig = function( config ) {
 
     /**
      The previously used PBCKCODE CODE Editor was replaced by the codesnippet plugin , which was developed and enhanced during the development of the CKEDITOR 4 Series.
-     It supports by default more code types, does not need any CDN, and uses less ressources being better integrated. But it uses a different highlighter js file (highlighter.pack.js).
+     It supports by default more code types, does not need any CDN, and uses less resources being better integrated. But it uses a different highlighter js file (highlighter.pack.js).
      PLEASE NOTE: If having used the prettify output already in your entries, your need to set the new compat mode option to allow both.
     */
 
