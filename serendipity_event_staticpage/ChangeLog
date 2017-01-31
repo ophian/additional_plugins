@@ -1,3 +1,8 @@
+5.16:
+----
+
+ * Fix Warning: Illegal string offset 'categoryid'
+
 5.15:
 ----
 
