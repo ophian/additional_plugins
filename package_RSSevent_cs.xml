@@ -1148,7 +1148,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statické stránky&lt;/b&gt;&lt;br /&gt;Zobrazuje v blogu statické stránky se stejným designem jako mají běžné přspěvky. Přidá nové menu do adminstrátorského rozhraní.&lt;br/&gt;For: Serendipity 2.0.99</content:encoded>
-<pubDate>Tue, 31 Jan 2017 15:14:49 +0100</pubDate>
+<pubDate>Wed, 01 Feb 2017 10:18:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
