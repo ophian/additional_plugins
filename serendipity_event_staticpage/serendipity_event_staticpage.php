@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.16');
+        $propbag->add('version', '5.17');
         $propbag->add('requirements', array(
             'serendipity' => '2.0.99',
             'smarty'      => '3.1.0',
@@ -3460,6 +3460,7 @@ class serendipity_event_staticpage extends serendipity_event
 
                 case 'genpage':
                     $this->setupDB();
+
                     if ($serendipity['rewrite'] != 'none') {
                         $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
                     } else {
@@ -3495,7 +3496,7 @@ class serendipity_event_staticpage extends serendipity_event
                     }
 
                     // Set static page with is_startpage flag set as startpage
-                    if ((empty($args) || preg_match('@' . $serendipity['indexFile'] . '\??$@', trim($args))) && empty($serendipity['GET']['subpage'])) {
+                    if ((empty($addData['uriargs']) || preg_match('@' . $serendipity['indexFile'] . '\??$@', trim($addData['uriargs']))) && empty($serendipity['GET']['subpage'])) {
                         $serendipity['GET']['subpage'] = $this->getStartpage();
                     }
 
