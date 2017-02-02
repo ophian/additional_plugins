@@ -88,7 +88,7 @@
 <release>
   <version>1.01</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2017-01-06</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="alpha">
 <file>bogo.php</file>
@@ -541,7 +541,7 @@
 <release>
   <version>0.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-03</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_autotitle">
 <file>.htaccess</file>
@@ -1405,11 +1405,11 @@
 <summary>Searches comments on quicksearch</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>If this plugin is installed, the quicksearch on your blog will also search through comments on your blog</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
+  <version>1.7</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-09-10</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_commentsearch">
 <file>.htaccess</file>
@@ -1614,7 +1614,7 @@
 <release>
   <version>1.21</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-01-17</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_contactform">
 <file>.htaccess</file>
@@ -2651,7 +2651,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>2.16</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_emoticonchooser">
 <file>.htaccess</file>
@@ -3462,7 +3462,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>0.5.1</version>
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_flickr">
 <file>.htaccess</file>
@@ -4006,7 +4006,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>1.36</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-06</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_geotag">
 <file>.htaccess</file>
@@ -4987,7 +4987,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>3.62</version>
   <requirements:s9yVersion>1.7.0</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_guestbook">
 <file>.htaccess</file>
@@ -5319,7 +5319,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>2.19</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_includeentry">
 <file>.htaccess</file>
@@ -5376,7 +5376,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>2.13</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-01-06</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_karma">
 <file>.htaccess</file>
@@ -6128,7 +6128,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>1.6.7</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_linktrimmer">
 <file>.htaccess</file>
@@ -6768,7 +6768,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>0.48</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_microformats">
 <file>.htaccess</file>
@@ -6900,7 +6900,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>1.05</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-08</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_mobile_output">
 <file>.htaccess</file>
@@ -7227,7 +7227,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>0.19</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_mycalendar">
 <file>.htaccess</file>
@@ -7737,7 +7737,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>0.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-07</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_phoneblogz">
 <file>ChangeLog</file>
@@ -7935,7 +7935,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>1.38</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-07</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_podcast">
 <file>.htaccess</file>
@@ -8168,7 +8168,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>1.47</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-01-06</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_popfetcher">
 <file>.htaccess</file>
@@ -8740,7 +8740,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-01-06</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_smartymarkup">
 <file>.htaccess</file>
@@ -8905,7 +8905,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.14</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2016-10-06</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_social">
 <file>ChangeLog</file>
@@ -9579,7 +9579,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>0.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_template_editor">
 <file>.htaccess</file>
@@ -10873,7 +10873,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <release>
   <version>2.68</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-19</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_usergallery">
 <file>ChangeLog</file>

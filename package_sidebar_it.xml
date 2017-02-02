@@ -86,7 +86,7 @@
 <release>
   <version>0.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-10</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_faq">
 <file>.htaccess</file>
@@ -213,7 +213,7 @@
 <release>
   <version>3.11</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_freetag">
 <file>.htaccess</file>
@@ -326,7 +326,7 @@
 <release>
   <version>1.36</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-28</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_geotag">
 <file>.htaccess</file>
@@ -597,7 +597,7 @@
 <release>
   <version>0.25</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-24</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_event_microformats">
 <file>.htaccess</file>
@@ -1730,7 +1730,7 @@
 <release>
   <version>1.26</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-07</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_plugin_audioscrobbler">
 <file>ChangeLog</file>
@@ -2863,7 +2863,7 @@
 <release>
   <version>0.4.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2017-02-02</date>
   <filelist>
 <dir name="serendipity_plugin_piwik">
 <file>ChangeLog</file>
