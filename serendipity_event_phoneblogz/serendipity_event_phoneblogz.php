@@ -82,7 +82,7 @@ class serendipity_event_phoneblogz extends serendipity_event
                 $base_cats = serendipity_fetchCategories();
                 $base_cats = serendipity_walkRecursive($base_cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
                 $select['none'] = NONE;
-                foreach ( $base_cats as $cat ) {
+                foreach ($base_cats AS $cat) {
                     $select[$cat['categoryid']] = str_repeat('-', $cat['depth']) . ' '. $cat['category_name'];
                 }
 
@@ -248,7 +248,7 @@ class serendipity_event_phoneblogz extends serendipity_event
         global $serendipity;
 
         if (isset($_POST[submitusersedit])) {
-            foreach ($_POST as $key => $val) {
+            foreach($_POST AS $key => $val) {
                 // Pick out the "userchoose-" values
                 if (strpos($key, "userchoose-") !== FALSE) {
                     $pbuserid = substr($key, 11);

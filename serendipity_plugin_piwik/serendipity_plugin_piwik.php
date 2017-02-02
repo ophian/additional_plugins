@@ -177,7 +177,7 @@ class serendipity_plugin_piwik extends serendipity_plugin
 
             if ($live_title <> '') {echo "\n<h4>".$live_title."</h4>\n";}
             echo '<ul class="plainList" >';
-            foreach ($piwik_array_live as $row) {
+            foreach($piwik_array_live AS $row) {
                 $piwik_live_visits = htmlspecialchars(
                     html_entity_decode(urldecode($row['visits']), ENT_QUOTES),
                     ENT_QUOTES
@@ -255,7 +255,7 @@ class serendipity_plugin_piwik extends serendipity_plugin
 
             if ($entries_title <> '') {echo "\n<h4>".$entries_title."</h4>\n";}
             echo "\n<ol>\n";
-            foreach ($piwik_array_pagesurls as $row) {
+            foreach($piwik_array_pagesurls AS $row) {
                 $piwik_content_pageurl = htmlspecialchars(
                     html_entity_decode(urldecode($row['url']), ENT_QUOTES),
                     ENT_QUOTES

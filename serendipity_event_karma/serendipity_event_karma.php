@@ -1277,11 +1277,11 @@ END_IMG_CSS;
                                 $q_parts = array();
                                 // I don't know why this URL has been HTML encoded.  Oh well.
                                 $pairs = explode('&amp;', $url_parts['query']);
-                                foreach($pairs as $pair) {
+                                foreach($pairs AS $pair) {
                                     $parts = explode('=', $pair);
                                     $q_parts[$parts[0]] = $parts[1];
                                 }
-                                foreach($q_parts as $key => $value) {
+                                foreach($q_parts AS $key => $value) {
                                     if (in_array($key, $exclude)) {
                                         $rm = preg_quote("$key=$value");
                                         $url = preg_replace("@(&amp;|&)?$rm@", '', $url);
@@ -1302,7 +1302,7 @@ END_IMG_CSS;
                                 $entries[0] = (int)($eventData[0]['id']);
                             } elseif (!serendipity_db_bool($this->get_config('extended_only', false))) {
                                 // We're in overview mode, and we want rating bars for all the entry IDs
-                                foreach(array_keys($eventData) as $key) {
+                                foreach(array_keys($eventData) AS $key) {
                                     if (isset($eventData[$key]['id'])) {
                                         $entries[$key] = (int)$eventData[$key]['id'];
                                     }
@@ -1333,7 +1333,7 @@ END_IMG_CSS;
                             //
                             // The entries array was populated, above, so its keys match the eventData array,
                             // and overview entries are skipped if "extended only" is enabled
-                            foreach (array_keys($entries) as $i) {
+                            foreach(array_keys($entries) AS $i) {
                                 // Get the statistics
                                 $entryid = $eventData[$i]['id'];
                                 $votes   = (!empty($rows[$entryid]['votes']) ? $rows[$entryid]['votes'] : 0);
@@ -1440,13 +1440,13 @@ END_IMG_CSS;
                 //case 'external_plugin':
                 case 'backend_sidebar_entries_event_display_karmalog':
                     // Print any stored messages
-                    //foreach ($serendipity['karma_messages'] as $msg) {
+                    //foreach($serendipity['karma_messages'] AS $msg) {
                     //    print("<div class='serendipityAdminInfo'>$msg</div>\n");
                     //}
                     // Was I asked to process any votes?
                     if (($serendipity['POST']['delete_button'] || $serendipity['POST']['approve_button'])
                         && sizeof($serendipity['POST']['delete']) != 0 && serendipity_checkFormToken()) {
-                        foreach($serendipity['POST']['delete'] as $d => $i) {
+                        foreach($serendipity['POST']['delete'] AS $d => $i) {
                             $kdata = $serendipity['POST']['karmalog'.$i];
                             // validate posted variables
                             // posted points
@@ -1630,7 +1630,7 @@ END_IMG_CSS;
                 <label for='serendipity_sort_order'>".SORT_BY."</label>
                 <select id='serendipity_sort_order' name='serendipity[sort][order]'>
 ");
-                    foreach($sort_order as $order => $val) {
+                    foreach($sort_order AS $order => $val) {
                         print("
   <option value='$order'".($curr_order == $order?" selected='selected'":'').">$val</option>
 ");
@@ -1709,7 +1709,7 @@ END_IMG_CSS;
 ");
                         // Print each vote
                         $i = 0;
-                        foreach ($sql as $vote) {
+                        foreach($sql AS $vote) {
                             $i++;
                             // entryid, title, points, ip, user_agent, votetime
                             if (strlen($vote['title']) > 40) {
@@ -1867,7 +1867,7 @@ END_IMG_CSS;
         $files = $this->getImageFiles();
         // Add an <ol> for each rating bar, and add its CSS overrides
         $n = 0;
-        foreach ($files as $fdata) {
+        foreach($files AS $fdata) {
             // Columnize
             if (($n % 3) == 0) {
                 // Time to start a new row

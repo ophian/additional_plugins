@@ -131,19 +131,19 @@ class serendipity_event_microformats extends serendipity_event
         static $supported_properties = null;
 
         if ($supported_properties === null) {
-            foreach ($mf_type as $v) {
+            foreach($mf_type AS $v) {
                 switch (strtoupper($v)) {
                     case 'HREVIEW':
                         $supported_properties['hReview'] = 'hReview';
                         $hReview_fields = array('name', 'type', 'url', 'image', 'rating', 'summary', 'desc', 'date', 'timezone', 'reviewer');
-                        foreach ($hReview_fields as $field) {
+                        foreach($hReview_fields AS $field) {
                             $supported_properties['hReview_'.$field] = '';
                         }
                         break;
                     case 'HCALENDAR':
                         $supported_properties['hCalendar'] = 'hCalendar';
                         $hCalendar_fields = array('summary', 'location', 'url', 'startdate', 'enddate', 'timezone', 'desc');
-                        foreach ($hCalendar_fields as $field) {
+                        foreach($hCalendar_fields AS $field) {
                             $supported_properties['hCalendar_'.$field] = '';
                         }
                         break;
@@ -310,7 +310,7 @@ div.tabbertab fieldset {
                     }
                     $mf_exist = array();
                     if ($eventData['properties']) {
-                        foreach ($eventData['properties'] as $k => $v) {
+                        foreach($eventData['properties'] AS $k => $v) {
                             if (strpos($k, 'mf_hReview') !== false) $mf_exist['hReview'] = true;
                             if (strpos($k, 'mf_hCalendar') !== false) $mf_exist['hCalendar'] = true;
                         }

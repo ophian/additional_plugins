@@ -279,7 +279,7 @@ class serendipity_event_contactform extends serendipity_event
             return false;
         }
 
-        foreach ($form_fields as $field) {
+        foreach($form_fields AS $field) {
             if ($field['type'] == 'radio' || $field['type'] == 'checkbox' || $field['type'] == 'select') {
                 if (!empty($_POST[$field['id']])) {
                     $defaults[$field['id']]['name'] = $field['name'];
@@ -387,10 +387,10 @@ class serendipity_event_contactform extends serendipity_event
                 $defaults = $this->checkextendedSubmit($form_fields);
 
                 if (is_array($defaults)) {
-                    foreach ($defaults as $item) {
+                    foreach($defaults AS $item) {
                         switch ($form_fields[$item['name']]['type']) {
                             case  'radio':
-                                foreach ($form_fields[$item['name']]['options'] as $option) {
+                                foreach($form_fields[$item['name']]['options'] AS $option) {
                                     if ($option['id'] == $item['value']) {
                                         $form_fields[$item['name']]['options'][$option['name']]['default'] = 'checked="checked"';
                                     } else {
@@ -543,7 +543,7 @@ class serendipity_event_contactform extends serendipity_event
 
         }
         $fields = explode(':',$fields);
-        foreach ($fields as $field) {
+        foreach($fields AS $field) {
             $field_array =  explode(';',$field);
             $field_count = count($field_array);
             if ($field_count > 1) {
@@ -565,7 +565,7 @@ class serendipity_event_contactform extends serendipity_event
                         //need to get options
                         $option_array =  explode(',',$field_array[2]);
                         if (is_array($option_array)) {
-                            foreach ($option_array as $option) {
+                            foreach($option_array AS $option) {
                                if (strtolower($option) == 'checked') {
                                   $return_array[$field_array[0]]['default'] = 'checked="checked"';
                                } else {
@@ -579,7 +579,7 @@ class serendipity_event_contactform extends serendipity_event
                         $return_array[$field_array[0]]['type'] = 'radio';
                         $option_array =  explode('|',$field_array[2]);
                         if (is_array($option_array)) {
-                            foreach ($option_array as $option) {
+                            foreach($option_array AS $option) {
                                $option_details =  explode(',',$option);
                                $options[$option_details[0]]['name'] = $option_details[0];
                                $options[$option_details[0]]['id'] = strtolower(preg_replace('@[^a-z0-9]@i', '_',$option_details[0]));
@@ -600,7 +600,7 @@ class serendipity_event_contactform extends serendipity_event
                         $return_array[$field_array[0]]['type'] = 'select';
                         $option_array =  explode('|',$field_array[2]);
                         if (is_array($option_array)) {
-                            foreach ($option_array as $option) {
+                            foreach($option_array AS $option) {
                                $option_details =  explode(',',$option);
                                $options[$option_details[0]]['name'] = $option_details[0];
                                $options[$option_details[0]]['id'] = strtolower(preg_replace('@[^a-z0-9]@i', '_',$option_details[0]));

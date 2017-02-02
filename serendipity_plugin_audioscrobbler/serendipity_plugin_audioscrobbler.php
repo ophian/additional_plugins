@@ -258,7 +258,7 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin
                 $counter        = 0;
                 //$start          = false;
                 $start = true;
-                foreach ($array as $xml) {
+                foreach($array AS $xml) {
                     if ($xml['tag'] == 'TRACK' && $xml['type'] == 'close') {
                         $counter++;
                     } elseif ($xml['tag'] == 'RECENTTRACKS' && $xml['type'] == 'close') {
@@ -355,9 +355,9 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin
         if ($oldsongs = $this->songs) {
             $diff       = $this->number - count($songs);
             $lastsongs  = array();
-             foreach ($oldsongs as $oldsong) {
+             foreach($oldsongs AS $oldsong) {
                 $addsong = true;
-                foreach ($songs as $song) {
+                foreach($songs AS $song) {
                     if ($song['date'] == $oldsong['date']) {
                         $addsong = false;
                     }
@@ -365,7 +365,7 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin
                 if ($addsong) $lastsongs[] = $song;
             }
             $i = 0;
-            foreach(array_reverse($lastsongs) as $lastsong) {
+            foreach(array_reverse($lastsongs) AS $lastsong) {
                 $songs[] = $lastsong;
                 $i++;
                 if (($diff - $i) == 0) {
@@ -405,8 +405,8 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin
         if (is_array ($this->songs)) {
             $equal = true;
             if (is_array($this->songs))
-            foreach ($songs as $key => $song) {
-                foreach ($song as $tag => $value) {
+            foreach($songs AS $key => $song) {
+                foreach($song AS $tag => $value) {
                     if ($this->songs[$key][$tag] != $value) $equal = false;
                 }
             }
@@ -494,7 +494,7 @@ class serendipity_plugin_audioscrobbler extends serendipity_plugin
         }
         $content    = array();
         $i          = 0;
-        foreach ($this->songs as $key => $value) {
+        foreach($this->songs AS $key => $value) {
             $value['songtitle']     = utf8_decode($value['songtitle']);
             $value['artisttitle']   = utf8_decode($value['artisttitle']);
             $value['songtitle']     = utf8_decode($value['songtitle']);

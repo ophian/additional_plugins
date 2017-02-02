@@ -347,7 +347,7 @@ class serendipity_event_template_editor extends serendipity_event
         echo '<ul id="templateEditorFileList" class="plainList zebra_list templateEditorList">';
         $filecount = 0;
 
-        foreach ($files as $file) {
+        foreach($files AS $file) {
             if (getimagesize("{$path}{$file}")) {
                 #images shouldn't end in the textarea
                 echo "<li class=\"clearfix " . (++$filecount%2 ? "odd" : "even") . "\">
@@ -389,7 +389,7 @@ class serendipity_event_template_editor extends serendipity_event
 
         echo '<ul id="templateEditorFolderList" class="plainList zebra_list templateEditorList">';
         $dircount = 0;
-        foreach ($dirs as $dir) {
+        foreach($dirs AS $dir) {
             echo "<li class=\"" . (++$dircount%2 ? "odd" : "even") . "\"><span class=\"icon-folder-open\"></span> <a class=\"templateEditorListItem\" href=\"?&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=template_editor&serendipity[template_editor_path]={$path}{$dir}/\">$dir</a></li>";
         }
         echo '</ul>';

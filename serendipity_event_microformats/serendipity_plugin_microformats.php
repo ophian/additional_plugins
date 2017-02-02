@@ -139,7 +139,7 @@ class serendipity_plugin_microformats extends serendipity_plugin
             xml_parser_free($xml);
 
             $i = 0;
-            foreach ($struct as $k => $v) {
+            foreach($struct AS $k => $v) {
                 if (is_array($v['attributes'])
                 && isset($v['attributes']['SUMMARY'])
                 && isset($v['attributes']['DTSTART'])) {
@@ -157,34 +157,34 @@ class serendipity_plugin_microformats extends serendipity_plugin
                 $result = serendipity_db_query($query, false, 'assoc');
                 $counter = count($event)-1;
                 if (is_array($result)) {
-                    foreach ($result as $k => $v) {
+                    foreach($result AS $k => $v) {
                         if ($v['property'] == 'mf_hCalendar_startdate' || $v['property'] == 'mf_hCalendar_enddate') {
                             $ev[$v['entryid']][$mapping[$v['property']]] = date('Ymd\THm', $v['value']);
                         } else {
                             $ev[$v['entryid']][$mapping[$v['property']]] = utf8_decode($v['value']);
                         }
                     }
-                    foreach ($ev as $k => $v) {
+                    foreach($ev AS $k => $v) {
                         $event[] = $ev[$k];
                     }
                 }
             }
 
             if ($this->get_config('purge') > 0 && is_array($event)) {
-                foreach ($event as $k => $v) {
+                foreach($event AS $k => $v) {
                     if (strtotime($v['DTSTART'] . $this->get_config('timezone')) < (time() - 86400 * intval($this->get_config('purge')))) {
                         unset($event[$k]);
                     }
                 }
             }
             if ($this->get_config('sort') !== false && is_array($event) && count($event) > 1) {
-                foreach ($event as $k => $v) {
+                foreach($event AS $k => $v) {
                     $dtstart_sort[$k]  = $v['DTSTART'];
                 }
                 array_multisort($dtstart_sort, SORT_ASC, $event);
             }
             if (is_array($event)) {
-                foreach ($event as $v) {
+                foreach($event AS $v) {
                     // das muss noch ausgearbeitet werden:
                     //$dtstart = explode('+', $v['DTSTART']);
                     $dtstart = str_replace('T', ' ', $v['DTSTART']);

@@ -57,7 +57,7 @@ class serendipity_event_smartymarkup extends serendipity_event
         );
 
         $conf_array = array();
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
         $propbag->add('configuration', $conf_array);
@@ -165,7 +165,7 @@ class serendipity_event_smartymarkup extends serendipity_event
                         return;
                     }
 
-                    foreach ($this->markup_elements as $temp) {
+                    foreach($this->markup_elements AS $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
                             !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                             !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance]))

@@ -111,7 +111,7 @@ class serendipity_event_usergallery extends serendipity_event
                 if ($this->get_config('style') == "thumbpage") {
                     $select['gallery'] = ALL_DIRECTORIES;
                     $paths = serendipity_traversePath($serendipity['serendipityPath'] . $serendipity['uploadPath']);
-                    foreach ( $paths as $folder ) {
+                    foreach($paths AS $folder) {
                         $select[$folder['relpath']] = str_repeat('-', $folder['depth']) . ' '. $folder['name'];
                     }
                     $propbag->add('type', 'select');
@@ -406,7 +406,7 @@ class serendipity_event_usergallery extends serendipity_event
             $uri_parts = explode('?', str_replace('&amp;', '&', $serendipity['GET']['subpage']));
             $parts     = explode('&', $uri_parts[1]);
             if (count($parts) > 1) {
-                foreach($parts as $key => $value) {
+                foreach($parts AS $key => $value) {
                     $val = explode('=', $value);
                     $val0 = str_replace('serendipity[','',$val[0]);
                     if ($val[0] == $val0) {
@@ -780,9 +780,9 @@ class serendipity_event_usergallery extends serendipity_event
                     if ($this->selected()) {
                         if ($this->get_config('base_directory') == 'gallery') {
                             // this is to avoid having the word "gallery" as blog title
-                            $serendipity['head_title'] = preg_replace('@[^a-z0-9]@i', ' ',$this->get_config('title'));
+                            $serendipity['head_title'] = preg_replace('@[^a-z0-9]@i', ' ', $this->get_config('title'));
                         } else {
-                            $serendipity['head_title'] = preg_replace('@[^a-z0-9]@i', ' ',$this->get_config('base_directory'));
+                            $serendipity['head_title'] = preg_replace('@[^a-z0-9]@i', ' ', $this->get_config('base_directory'));
                         }
                         $serendipity['head_subtitle'] = $serendipity['blogTitle'];
                     }
@@ -880,14 +880,14 @@ class serendipity_event_usergallery extends serendipity_event
                                             41994 => 'Sharpness',
                                             37121 => 'Components Config');
 
-                    foreach ($exif_arr_num_1 as $num1 => $value1) {
+                    foreach($exif_arr_num_1 AS $num1 => $value1) {
                         if ($num1 != 34665) {
                             if (isset($exif[0][$num1]['Text Value'])) {
                                 if ($exif[0][$num1]['Text Value'] == '') { $exif_data[$value1] = 'Unknown'; }
                                 else { $exif_data[$value1] = $exif[0][$num1]['Text Value']; }
                             }
                         } else {
-                            foreach ($exif_arr_num_2 as $num2 => $value2)    {
+                            foreach($exif_arr_num_2 AS $num2 => $value2)    {
                                 if (isset($exif[0][$num1]['Data'][0][$num2]['Text Value'])) {
                                     if ($exif[0][$num1]['Data'][0][$num2]['Text Value'] == '') { $exif_data[$value2] = 'Unknown'; }
                                     else { $exif_data[$value2] = $exif[0][$num1]['Data'][0][$num2]['Text Value']; }
@@ -941,7 +941,7 @@ class serendipity_event_usergallery extends serendipity_event
         if (is_array($serendipity['POST']['plugin']['exifdata'])) {
             //create new array
             $exif_array = array();
-            foreach($serendipity['POST']['plugin']['exifdata'] as $key => $value) {
+            foreach($serendipity['POST']['plugin']['exifdata'] AS $key => $value) {
                 $exif_array[$key] = $key.'-'.$value;
             }
 
@@ -949,7 +949,7 @@ class serendipity_event_usergallery extends serendipity_event
             $newexifstring = implode(',', array_values($exif_array));
             $this->set_config('exif_data', $newexifstring);
             //break down the array and rebuild for immediate recycling on the page
-            foreach($exif_array as $key => $value) {
+            foreach($exif_array AS $key => $value) {
                 list($newkey, $newvalue) = explode('-', $value);
                 $res1_exif_array[] = $newkey;
                 $res2_exif_array[] = $newvalue;
@@ -969,7 +969,7 @@ class serendipity_event_usergallery extends serendipity_event
                 //split the string into options
                 $exifstring = explode(',', $exifsettings);
                 //split the options into name and value
-                foreach($exifstring as $key => $value) {
+                foreach($exifstring AS $key => $value) {
                     $display = explode('-', $exifstring[$key]);
                     $exif_array[$display[0]] = $display[1];
                 }
@@ -977,7 +977,7 @@ class serendipity_event_usergallery extends serendipity_event
         }
 
         //output options
-        foreach($exif_array as $key => $value) {
+        foreach($exif_array AS $key => $value) {
             $selector .= '<tr><td style="vertical-align: top">'.$key.'</td>';
             $selector .= '<td><input name="serendipity[plugin][exifdata]['.$key.']" type="radio" value="yes"';
             if ($value == "yes") {
@@ -1060,7 +1060,7 @@ class serendipity_event_usergallery extends serendipity_event
                 $exifsettings_one = $this->get_config('exif_data', $this->makeExifSelector());
                 // Create array of exif display settings for main information table.
                 $exif_arr = explode(',', $exifsettings_one);
-                foreach ($exif_arr as $key => $value) {
+                foreach($exif_arr AS $key => $value) {
                     $display = explode('-', $exif_arr[$key]);
                     $exif_display_one[$display[0]] = $display[1];
                 }
@@ -1068,7 +1068,7 @@ class serendipity_event_usergallery extends serendipity_event
                 $data_written = false;
                 $exif_output .= '<div class="all_img_info">';
                 $exif_output .= '<div class="exif_info_row"><div class="exif_info_head"><strong>'.PLUGIN_EVENT_USERGALLERY_EXIFDATA_ADDITIONALDATA.'</strong></div></div>';
-                foreach ($exif_data as $tag => $value) {
+                foreach($exif_data AS $tag => $value) {
                     if ($value != 'Unknown' && $exif_display_one[$tag] == 'yes') {
                         $data_written = true;
                         $exif_output .= '<div class="exif_info_row"><span class="exif_info_tag">'.$tag.'</span><span class="exif_info">'.$value.'</span></div>';
@@ -1090,9 +1090,9 @@ class serendipity_event_usergallery extends serendipity_event
                 }
                 $extended_data_out = array();
                 $extended_output = explode(';',$this->get_config('media_properties','COPYRIGHT:Copyright;TITLE:Title;COMMENT2:Comment'));
-                foreach ($extended_output as $option) {
+                foreach($extended_output AS $option) {
                     $option = explode(':',$option);
-                    foreach ($extended_data as $ex_name => $ex_data) {
+                    foreach($extended_data AS $ex_name => $ex_data) {
                         if (($ex_name == $option[0]) && isset($option[1]) && $ex_data != '') {
                             $extended_data_out[] = array('name' => $option[1], 'value' => $ex_data);
                             if (($ex_name == 'TITLE') && $ex_data != '') {

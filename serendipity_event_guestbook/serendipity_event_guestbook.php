@@ -1633,10 +1633,10 @@ class serendipity_event_guestbook extends serendipity_event
                 } else {
                     // fallback to new ENTRY FORM, since there was an error - no need to escape
                    if ($serendipity['guestbook_message_header'] === false ) {
-                        foreach($serendipity['POST'] as $sk => $sv) {
+                        foreach($serendipity['POST'] AS $sk => $sv) {
                             $entry[$sk] = $sv;
                         }
-                        foreach($_POST['guestbook'] as $gk => $gv) {
+                        foreach($_POST['guestbook'] AS $gk => $gv) {
                             $entry[$gk] = $gv;
                         }
                         $entry['body'] = $entry['comment'];
@@ -1910,7 +1910,7 @@ class serendipity_event_guestbook extends serendipity_event
         $url = $serendipity['serendipityHTTPPath'] . 'plugin/guestbookdlsql/';
         if (is_array($dir) && !empty($dir)) {
             $str = '<table width="100%">';
-            foreach ($dir as $e) {
+            foreach($dir AS $e) {
                 $str .= '<tr><td align="left"><a href="'.$url.$e.'">';
                 $str .= $e.'</a></td> <td align="right" class="gb_button"><a href="'.$delpath.$e.'"><input type="submit" class="input_button state_cancel" name="erase file" value=" ' . TEXT_DELETE . ' "></a></td></tr>'."\n";
             }

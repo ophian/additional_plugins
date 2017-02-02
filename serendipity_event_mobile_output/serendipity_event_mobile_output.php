@@ -91,7 +91,7 @@ class serendipity_event_mobile_output extends serendipity_event
             // delete all files in the upload directory
             $files = glob($upload_dir.'*');
             if ( is_array($files) && !empty($files) ) {
-                foreach($files as $file) {
+                foreach($files AS $file) {
                     @unlink($file);
                 }
             }
@@ -678,7 +678,7 @@ class serendipity_event_mobile_output extends serendipity_event
 
         if (is_array($entries)) {
             // add entries
-            foreach($entries as $entry) {
+            foreach($entries AS $entry) {
                 $max = max($entry['timestamp_1']+0, $entry['timestamp_2']+0);
                 $url = serendipity_archiveURL($entry['id'], $entry['title']);
                 $this->addtoxml($sitemap_xml, $url, $max, 0.7);
@@ -695,7 +695,7 @@ class serendipity_event_mobile_output extends serendipity_event
                             false, 'assoc');
 
         if (is_array($permlink)) {
-            foreach($permlink as $cur) {
+            foreach($permlink AS $cur) {
                 $path_quoted = preg_quote($serendipity['serendipityHTTPPath'], '#');
                 $url = $serendipity['baseURL'] . preg_replace("#$path_quoted#", '', $cur['value'],1);
                 $cur_time = ($cur['timestamp']==0)? null : (int)$cur['timestamp'];
@@ -736,7 +736,7 @@ class serendipity_event_mobile_output extends serendipity_event
 
         // add categories
         if (is_array($categories)) {
-            foreach($categories as $category) {
+            foreach($categories AS $category) {
                 $max = 0+$category['last_mod'];
                 /* v0.9 */
                 if (version_compare((float)$serendipity['version'], '0.9', '>=')) {
@@ -792,7 +792,7 @@ class serendipity_event_mobile_output extends serendipity_event
         }
 
         // Walk through the list of pingback-URLs
-        foreach(explode(';', $pingback_url) as $cur_pingback_url) {
+        foreach(explode(';', $pingback_url) AS $cur_pingback_url) {
             $pingback_name = PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_UNKNOWN_HOST;
             $cur_url = sprintf($cur_pingback_url, rawurlencode($serendipity['baseURL'].$filename));
 

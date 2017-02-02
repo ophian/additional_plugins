@@ -137,7 +137,7 @@ class serendipity_plugin_geotag extends serendipity_plugin
                 $cat_array = array();
                 $cat_array[0] = ALL_CATEGORIES;
                 if (is_array($cat)) {
-                    foreach ($cat as $c) {
+                    foreach($cat AS $c) {
                         $cat_array[$c['categoryid']] = $c['category_name'];
                     }
                 }
@@ -204,12 +204,12 @@ class serendipity_plugin_geotag extends serendipity_plugin
                 $cat_join = "";
             } else {
                 $cat_query = "AND categoryid = $category";
-                $cat_join = "LEFT JOIN {$serendipity['dbPrefix']}entrycat as c ON (c.entryid = id)";
+                $cat_join = "LEFT JOIN {$serendipity['dbPrefix']}entrycat AS c ON (c.entryid = id)";
             }
-            $q = "SELECT id, title, e1.value as lng, e2.value as lat, permalink
+            $q = "SELECT id, title, e1.value AS lng, e2.value AS lat, permalink
                 FROM {$serendipity['dbPrefix']}entries
-                LEFT JOIN {$serendipity['dbPrefix']}entryproperties as e1 ON (e1.entryid = id AND e1.property='geo_long')
-                LEFT JOIN {$serendipity['dbPrefix']}entryproperties as e2 ON (e2.entryid = id AND e2.property='geo_lat')
+                LEFT JOIN {$serendipity['dbPrefix']}entryproperties AS e1 ON (e1.entryid = id AND e1.property='geo_long')
+                LEFT JOIN {$serendipity['dbPrefix']}entryproperties AS e2 ON (e2.entryid = id AND e2.property='geo_lat')
                 LEFT JOIN {$serendipity['dbPrefix']}permalinks ON (entry_id = id AND type='entry')
                 $cat_join
                 WHERE e1.property='geo_long' AND e2.property='geo_lat' $cat_query";
@@ -311,7 +311,7 @@ if ($service === 'google') {
 
 <?php
     if ($geodata_source == 'database') {
-        foreach ($tt as $t) {
+        foreach($tt AS $t) {
 ?>
 
 setMarker({
@@ -428,7 +428,7 @@ map.setCenter(lonLat, zoom);
 <?php
     if ($geodata_source === 'database') {
         $counter = 0;
-        foreach ($tt as $t) {
+        foreach($tt AS $t) {
 ?>
 
 titles.push('<?php echo addslashes($t['title']); ?>');

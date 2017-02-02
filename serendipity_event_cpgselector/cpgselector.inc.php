@@ -9,7 +9,7 @@ function cpg_init() {
 
     $params = array('album','page','textarea','step','sortorder','image','adminModule','htmltarget','filename_only');
 
-    foreach ($params as $p) {
+    foreach($params AS $p) {
 
         if (isset($CPG['post'][$p])) $CPG[$p] = $CPG['post'][$p];
         elseif (isset($CPG['get'][$p])) $CPG[$p] = $CPG['get'][$p];
@@ -117,7 +117,7 @@ function cpg_displayImageList($page = 0, $lineBreak = NULL, $manage = false, $ur
         serendipity_uploadSecure($CPG['only_path'], true);
     }
 
-    foreach ( (array)$CPG['sortorder'] as $k => $v ) {
+    foreach( (array)$CPG['sortorder'] AS $k => $v ) {
         $extraParams .= 'sortorder['. $k .']='. $v .'&amp;';
     }
 
@@ -207,7 +207,7 @@ function cpg_displayImageList($page = 0, $lineBreak = NULL, $manage = false, $ur
                     <option value="-1">All Albums</option>
 
 <?php
-foreach ($albums as $alb) {
+foreach($albums AS $alb) {
     echo '<option value="' . $alb['aid'] . '"';
     if ($alb['aid'] == $album) echo " selected";
     echo '>' . $alb['title'] . '</option>';
@@ -263,7 +263,7 @@ foreach ($albums as $alb) {
 <?php
 
         $x = 0;
-        foreach ($images as $image) {
+        foreach($images AS $image) {
 
             ++$x;
 

@@ -52,7 +52,7 @@ class serendipity_event_autotitle extends serendipity_event
         );
 
         $conf_array = array('fetchlimit');
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
         $propbag->add('configuration', $conf_array);
@@ -102,7 +102,7 @@ class serendipity_event_autotitle extends serendipity_event
         if (isset($hooks[$event])) {
             switch($event) {
                 case 'frontend_display':
-                    foreach ($this->markup_elements as $temp) {
+                    foreach($this->markup_elements AS $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
                                 !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                                 !in_array($this->instance, (array)$serendipity['POST']['properties']['disable_markups'])) {

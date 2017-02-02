@@ -63,7 +63,7 @@ class serendipity_template_meta
         if (empty($metavalue)) return false;
         $supporting = explode(',',$metavalue);
         $what = strtoupper(trim($what));
-        foreach ($supporting as $supp) {
+        foreach($supporting AS $supp) {
             $supp = strtoupper(trim($supp));
             if ($supp == $what) return true;
         }

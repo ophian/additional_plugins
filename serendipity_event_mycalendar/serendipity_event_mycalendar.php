@@ -117,7 +117,7 @@ class serendipity_event_mycalendar extends serendipity_event
         $items = serendipity_db_query($sql);
 
         if (is_array($items)) {
-            foreach($items as $event) {
+            foreach($items AS $event) {
                 $day = date('j', $event['eventdate']);
                 $day2 = date('j', $event['eventdate2']);
 
@@ -391,7 +391,7 @@ class serendipity_event_mycalendar extends serendipity_event
                             return;
                         }
 
-                        foreach ($plugins as $plugin_data) {
+                        foreach($plugins AS $plugin_data) {
                             $plugin =& serendipity_plugin_api::load_plugin($plugin_data['name'], $plugin_data['authorid'], $plugin_data['path']);
                         }
 

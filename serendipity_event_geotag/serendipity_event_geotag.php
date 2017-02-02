@@ -568,7 +568,7 @@ class serendipity_event_geotag extends serendipity_event
                     // used for looping (seems unnecessary, since we use the foreach ...)
                     if (isset($eventData) && is_array($eventData)) {
                         $i = 0;
-                        foreach($eventData as $event) {
+                        foreach($eventData AS $event) {
                             // Check if geo_lat and geo_long are both set
                             $props = $eventData[$i]['properties'];
                             $geotagged = true;

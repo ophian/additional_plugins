@@ -132,7 +132,7 @@ function microformats_serendipity_show($params, $smarty)
             echo '<br />Best: '.$serendipity['smarty']->tpl_vars['best']->value.' ('.$smarty->getTemplateVars('best').')';
             echo '<br />Name: '.$serendipity['smarty']->tpl_vars['hreview_name']->value.' ('.$smarty->getTemplateVars('hreview_name').')';
             $loop = range(1.0, floatval($params['rating']), floatval($smarty->getTemplateVars('step')));
-            foreach ($loop as $v) {
+            foreach($loop AS $v) {
                 $hreview_rating_symbols .= '&hearts;';
             }
             $serendipity['smarty']->assign(array('hreview_rating_symbols' => $hreview_rating_symbols));

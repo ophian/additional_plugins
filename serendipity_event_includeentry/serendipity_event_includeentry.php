@@ -79,7 +79,7 @@ class serendipity_event_includeentry extends serendipity_event
         $conf_array[] = 'show_skip';
         $conf_array[] = 'show_multi';
 
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
         $propbag->add('configuration', $conf_array);
@@ -251,7 +251,7 @@ class serendipity_event_includeentry extends serendipity_event
         $html .= '    <option value="-front-" ' . ($all_valid || isset($valid['-front-']) ? "selected='selected'" : '') . '>[' . NO_CATEGORY . ']</option>'."\n";
         if (is_array($cats = serendipity_fetchCategories())) {
             $cats = serendipity_walkRecursive($cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
-            foreach ( $cats as $cat ) {
+            foreach($cats AS $cat) {
                 $html .= '    <option value="'. $cat['categoryid'] .'"'. ($all_valid || isset($valid[$cat['categoryid']]) ? ' selected="selected"' : '') .'>'. str_repeat(' ', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
             }
         }
@@ -557,7 +557,7 @@ class serendipity_event_includeentry extends serendipity_event
             $desc = (function_exists('serendipity_specialchars') ? serendipity_specialchars($bag->get('description')) : htmlspecialchars($bag->get('description'), ENT_COMPAT, LANG_CHARSET));
             $config_names = $bag->get('page_configuration');
 
-            foreach ($config_names as $config_item) {
+            foreach($config_names AS $config_item) {
                 $cbag = new serendipity_property_bag;
                 if ($this->introspect_item($config_item, $cbag)) {
                     $this->staticblock[$config_item] = serendipity_get_bool($_POST['serendipity']['plugin'][$config_item]);
@@ -789,7 +789,7 @@ class serendipity_event_includeentry extends serendipity_event
                     break;
 
                 case 'frontend_display_cache':
-                    foreach ($this->markup_elements as $temp) {
+                    foreach($this->markup_elements AS $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
                             !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                             !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {

@@ -193,7 +193,7 @@ class serendipity_event_social extends serendipity_event
                             // This is searching for the first image in an entry to use as facebook article image.
                             // A better approach would be to register in the entry editor when an image was added
                             if (preg_match_all('@<img.*src=["\'](.+)["\']@imsU', $entry['body'] . $entry['extended'], $images)) {
-                                foreach ($images[1] as $im) {
+                                foreach($images[1] AS $im) {
                                     if (strpos($im, '/emoticons/') === false) {
                                         $social_image = $im;
                                         break;

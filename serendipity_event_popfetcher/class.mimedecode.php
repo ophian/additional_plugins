@@ -62,65 +62,65 @@ class mimeDecode
 {
 
     /**
-    * The raw email to decode
-    * @var    string
-    */
+     * The raw email to decode
+     * @var    string
+     */
     var $_input;
 
     /**
-    * The header part of the input
-    * @var    string
-    */
+     * The header part of the input
+     * @var    string
+     */
     var $_header;
 
     /**
-    * The body part of the input
-    * @var    string
-    */
+     * The body part of the input
+     * @var    string
+     */
     var $_body;
 
     /**
-    * If an error occurs, this is used to store the message
-    * @var    string
-    */
+     * If an error occurs, this is used to store the message
+     * @var    string
+     */
     var $_error;
 
     /**
-    * Flag to determine whether to include bodies in the
-    * returned object.
-    * @var    boolean
-    */
+     * Flag to determine whether to include bodies in the
+     * returned object.
+     * @var    boolean
+     */
     var $_include_bodies;
 
     /**
-    * Flag to determine whether to decode bodies
-    * @var    boolean
-    */
+     * Flag to determine whether to decode bodies
+     * @var    boolean
+     */
     var $_decode_bodies;
 
     /**
-    * Flag to determine whether to decode headers
-    * @var    boolean
-    */
+     * Flag to determine whether to decode headers
+     * @var    boolean
+     */
     var $_decode_headers;
 
     /**
-    * If invoked from a class, $this will be set. This has problematic
-    * connotations for calling decode() statically. Hence this variable
-    * is used to determine if we are indeed being called statically or
-    * via an object.
-    */
+     * If invoked from a class, $this will be set. This has problematic
+     * connotations for calling decode() statically. Hence this variable
+     * is used to determine if we are indeed being called statically or
+     * via an object.
+     */
     var $mailMimeDecode;
 
     /**
-    * Constructor.
-    *
-    * Sets up the object, initialise the variables, and splits and
-    * stores the header and body of the input.
-    *
-    * @param string The input to decode
-    * @access public
-    */
+     * Constructor.
+     *
+     * Sets up the object, initialise the variables, and splits and
+     * stores the header and body of the input.
+     *
+     * @param string The input to decode
+     * @access public
+     */
     function mimeDecode($input)
     {
         list($header, $body)   = $this->_splitBodyHeader($input);
@@ -139,25 +139,24 @@ class mimeDecode
     }
 
     /**
-    * Begins the decoding process. If called statically
-    * it will create an object and call the decode() method
-    * of it.
-    *
-    * @param array An array of various parameters that determine
-    *              various things:
-    *              include_bodies - Whether to include the body in the returned
-    *                               object.
-    *              decode_bodies  - Whether to decode the bodies
-    *                               of the parts. (Transfer encoding)
-    *              decode_headers - Whether to decode headers
-    *              input          - If called statically, this will be treated
-    *                               as the input
-    * @return object Decoded results
-    * @access public
-    */
+     * Begins the decoding process. If called statically
+     * it will create an object and call the decode() method
+     * of it.
+     *
+     * @param array An array of various parameters that determine
+     *              various things:
+     *              include_bodies - Whether to include the body in the returned
+     *                               object.
+     *              decode_bodies  - Whether to decode the bodies
+     *                               of the parts. (Transfer encoding)
+     *              decode_headers - Whether to decode headers
+     *              input          - If called statically, this will be treated
+     *                               as the input
+     * @return object Decoded results
+     * @access public
+     */
     function decode($params = null)
     {
-
         // Have we been called statically? If so, create an object and pass details to that.
         if (!isset($this->mailMimeDecode) AND isset($params['input'])) {
 
@@ -184,21 +183,21 @@ class mimeDecode
     }
 
     /**
-    * Performs the decoding. Decodes the body string passed to it
-    * If it finds certain content-types it will call itself in a
-    * recursive fashion
-    *
-    * @param string Header section
-    * @param string Body section
-    * @return object Results of decoding process
-    * @access private
-    */
+     * Performs the decoding. Decodes the body string passed to it
+     * If it finds certain content-types it will call itself in a
+     * recursive fashion
+     *
+     * @param string Header section
+     * @param string Body section
+     * @return object Results of decoding process
+     * @access private
+     */
     function _decode($headers, $body, $default_ctype = 'text/plain')
     {
         $return = new stdClass;
         $headers = $this->_parseHeaders($headers);
 
-        foreach ($headers as $value) {
+        foreach($headers AS $value) {
             if (isset($return->headers[strtolower($value['name'])]) AND !is_array($return->headers[strtolower($value['name'])])) {
                 $return->headers[strtolower($value['name'])]   = array($return->headers[strtolower($value['name'])]);
                 $return->headers[strtolower($value['name'])][] = $value['value'];
@@ -307,13 +306,13 @@ class mimeDecode
     }
 
     /**
-    * Given the output of the above function, this will return an
-    * array of references to the parts, indexed by mime number.
-    *
-    * @param  object $structure   The structure to go through
-    * @param  string $mime_number Internal use only.
-    * @return array               Mime numbers
-    */
+     * Given the output of the above function, this will return an
+     * array of references to the parts, indexed by mime number.
+     *
+     * @param  object $structure   The structure to go through
+     * @param  string $mime_number Internal use only.
+     * @return array               Mime numbers
+     */
     function &getMimeNumbers(&$structure, $no_refs = false, $mime_number = '', $prepend = '')
     {
         $return = array();
@@ -333,7 +332,7 @@ class mimeDecode
                 }
 
                 $arr = &mimeDecode::getMimeNumbers($structure->parts[$i], $no_refs, $_mime_number, $prepend);
-                foreach ($arr as $key => $val) {
+                foreach($arr AS $key => $val) {
                     $no_refs ? $return[$key] = '' : $return[$key] = &$arr[$key];
                 }
             }
@@ -349,14 +348,14 @@ class mimeDecode
     }
 
     /**
-    * Given a string containing a header and body
-    * section, this function will split them (at the first
-    * blank line) and return them.
-    *
-    * @param string Input to split apart
-    * @return array Contains header and body section
-    * @access private
-    */
+     * Given a string containing a header and body
+     * section, this function will split them (at the first
+     * blank line) and return them.
+     *
+     * @param string Input to split apart
+     * @return array Contains header and body section
+     * @access private
+     */
     function _splitBodyHeader($input)
     {
         if (preg_match("/^(.*?)\r?\n\r?\n(.*)/s", $input, $match)) {
@@ -367,23 +366,22 @@ class mimeDecode
     }
 
     /**
-    * Parse headers given in $input and return
-    * as assoc array.
-    *
-    * @param string Headers to parse
-    * @return array Contains parsed headers
-    * @access private
-    */
+     * Parse headers given in $input and return
+     * as assoc array.
+     *
+     * @param string Headers to parse
+     * @return array Contains parsed headers
+     * @access private
+     */
     function _parseHeaders($input)
     {
-
         if ($input !== '') {
             // Unfold the input
             $input   = preg_replace("/\r?\n/", "\r\n", $input);
             $input   = preg_replace("/\r\n(\t| )+/", ' ', $input);
             $headers = explode("\r\n", trim($input));
 
-            foreach ($headers as $value) {
+            foreach($headers AS $value) {
                 $hdr_name = substr($value, 0, $pos = strpos($value, ':'));
                 $hdr_value = substr($value, $pos+1);
                 if($hdr_value[0] == ' ')
@@ -402,19 +400,18 @@ class mimeDecode
     }
 
     /**
-    * Function to parse a header value,
-    * extract first part, and any secondary
-    * parts (after ;) This function is not as
-    * robust as it could be. Eg. header comments
-    * in the wrong place will probably break it.
-    *
-    * @param string Header value to parse
-    * @return array Contains parsed result
-    * @access private
-    */
+     * Function to parse a header value,
+     * extract first part, and any secondary
+     * parts (after ;) This function is not as
+     * robust as it could be. Eg. header comments
+     * in the wrong place will probably break it.
+     *
+     * @param string Header value to parse
+     * @return array Contains parsed result
+     * @access private
+     */
     function _parseHeaderValue($input)
     {
-
         if (($pos = strpos($input, ';')) !== false) {
 
             $return['value'] = trim(substr($input, 0, $pos));
@@ -445,13 +442,13 @@ class mimeDecode
     }
 
     /**
-    * This function splits the input based
-    * on the given boundary
-    *
-    * @param string Input to parse
-    * @return array Contains array of resulting mime parts
-    * @access private
-    */
+     * This function splits the input based
+     * on the given boundary
+     *
+     * @param string Input to parse
+     * @return array Contains array of resulting mime parts
+     * @access private
+     */
     function _boundarySplit($input, $boundary)
     {
         $tmp = explode('--'.$boundary, $input);
@@ -464,15 +461,15 @@ class mimeDecode
     }
 
     /**
-    * Given a header, this function will decode it
-    * according to RFC2047. Probably not *exactly*
-    * conformant, but it does pass all the given
-    * examples (in RFC2047).
-    *
-    * @param string Input header value to decode
-    * @return string Decoded header value
-    * @access private
-    */
+     * Given a header, this function will decode it
+     * according to RFC2047. Probably not *exactly*
+     * conformant, but it does pass all the given
+     * examples (in RFC2047).
+     *
+     * @param string Input header value to decode
+     * @return string Decoded header value
+     * @access private
+     */
     function _decodeHeader($input)
     {
         // Remove white space between encoded-words
@@ -488,15 +485,15 @@ class mimeDecode
 
             switch (strtolower($encoding)) {
                 case 'b':
-                $text = base64_decode($text);
-                break;
+                    $text = base64_decode($text);
+                    break;
 
                 case 'q':
-                $text = str_replace('_', ' ', $text);
-                preg_match_all('/=([a-f0-9]{2})/i', $text, $matches);
-                foreach($matches[1] as $value)
-                $text = str_replace('='.$value, chr(hexdec($value)), $text);
-                break;
+                    $text = str_replace('_', ' ', $text);
+                    preg_match_all('/=([a-f0-9]{2})/i', $text, $matches);
+                    foreach($matches[1] AS $value)
+                        $text = str_replace('='.$value, chr(hexdec($value)), $text);
+                    break;
             }
 
             $input = str_replace($encoded, $text, $input);
@@ -506,14 +503,14 @@ class mimeDecode
     }
 
     /**
-    * Given a body string and an encoding type,
-    * this function will decode and return it.
-    *
-    * @param  string Input body to decode
-    * @param  string Encoding type to use.
-    * @return string Decoded body
-    * @access private
-    */
+     * Given a body string and an encoding type,
+     * this function will decode and return it.
+     *
+     * @param  string Input body to decode
+     * @param  string Encoding type to use.
+     * @return string Decoded body
+     * @access private
+     */
     function _decodeBody($input, $encoding = '7bit', $return = null)
     {
         if (is_object($return) && is_array($return->ctype_parameters) && $return->ctype_parameters['delsp'] == 'yes') {
@@ -542,13 +539,13 @@ class mimeDecode
     }
 
     /**
-    * Given a quoted-printable string, this
-    * function will decode and return it.
-    *
-    * @param  string Input body to decode
-    * @return string Decoded body
-    * @access private
-    */
+     * Given a quoted-printable string, this
+     * function will decode and return it.
+     *
+     * @param  string Input body to decode
+     * @return string Decoded body
+     * @access private
+     */
     function _quotedPrintableDecode($input)
     {
         // Remove soft line breaks
@@ -561,20 +558,20 @@ class mimeDecode
     }
 
     /**
-    * Checks the input for uuencoded files and returns
-    * an array of them. Can be called statically, eg:
-    *
-    * $files =& mimeDecode::uudecode($some_text);
-    *
-    * It will check for the begin 666 ... end syntax
-    * however and won't just blindly decode whatever you
-    * pass it.
-    *
-    * @param  string Input body to look for attahcments in
-    * @return array  Decoded bodies, filenames and permissions
-    * @access public
-    * @author Unknown
-    */
+     * Checks the input for uuencoded files and returns
+     * an array of them. Can be called statically, eg:
+     *
+     * $files =& mimeDecode::uudecode($some_text);
+     *
+     * It will check for the begin 666 ... end syntax
+     * however and won't just blindly decode whatever you
+     * pass it.
+     *
+     * @param  string Input body to look for attahcments in
+     * @return array  Decoded bodies, filenames and permissions
+     * @access public
+     * @author Unknown
+     */
     function &uudecode($input)
     {
         // Find all uuencoded sections
@@ -636,24 +633,24 @@ class mimeDecode
     }
 
     /**
-    * getSendArray() returns the arguments required for Mail::send()
-    * used to build the arguments for a mail::send() call
-    *
-    * Usage:
-    * $mailtext = Full email (for example generated by a template)
-    * $decoder = new mimeDecode($mailtext);
-    * $parts =  $decoder->getSendArray();
-    * if (!PEAR::isError($parts) {
-    *     list($recipents,$headers,$body) = $parts;
-    *     $mail = Mail::factory('smtp');
-    *     $mail->send($recipents,$headers,$body);
-    * } else {
-    *     echo $parts->message;
-    * }
-    * @return mixed   array of recipeint, headers,body or Pear_Error
-    * @access public
-    * @author Alan Knowles <alan@akbkhome.com>
-    */
+     * getSendArray() returns the arguments required for Mail::send()
+     * used to build the arguments for a mail::send() call
+     *
+     * Usage:
+     * $mailtext = Full email (for example generated by a template)
+     * $decoder = new mimeDecode($mailtext);
+     * $parts =  $decoder->getSendArray();
+     * if (!PEAR::isError($parts) {
+     *     list($recipents,$headers,$body) = $parts;
+     *     $mail = Mail::factory('smtp');
+     *     $mail->send($recipents,$headers,$body);
+     * } else {
+     *     echo $parts->message;
+     * }
+     * @return mixed   array of recipeint, headers,body or Pear_Error
+     * @access public
+     * @author Alan Knowles <alan@akbkhome.com>
+     */
     function getSendArray()
     {
         // prevent warning if this is not set
@@ -663,7 +660,7 @@ class mimeDecode
         if (!$headerlist) {
             return $this->raiseError("Message did not contain headers");
         }
-        foreach($headerlist as $item) {
+        foreach($headerlist AS $item) {
             $header[$item['name']] = $item['value'];
             switch (strtolower($item['name'])) {
                 case "to":
@@ -681,31 +678,23 @@ class mimeDecode
         return array($to,$header,$this->_body);
     }
 
-
-
-
-
-
-
-
-
     /**
-    * Returns a xml copy of the output of
-    * mimeDecode::decode. Pass the output in as the
-    * argument. This function can be called statically. Eg:
-    *
-    * $output = $obj->decode();
-    * $xml    = mimeDecode::getXML($output);
-    *
-    * The DTD used for this should have been in the package. Or
-    * alternatively you can get it from cvs, or here:
-    * http://www.phpguru.org/xmail/xmail.dtd.
-    *
-    * @param  object Input to convert to xml. This should be the
-    *                output of the mimeDecode::decode function
-    * @return string XML version of input
-    * @access public
-    */
+     * Returns a xml copy of the output of
+     * mimeDecode::decode. Pass the output in as the
+     * argument. This function can be called statically. Eg:
+     *
+     * $output = $obj->decode();
+     * $xml    = mimeDecode::getXML($output);
+     *
+     * The DTD used for this should have been in the package. Or
+     * alternatively you can get it from cvs, or here:
+     * http://www.phpguru.org/xmail/xmail.dtd.
+     *
+     * @param  object Input to convert to xml. This should be the
+     *                output of the mimeDecode::decode function
+     * @return string XML version of input
+     * @access public
+     */
     function getXML($input)
     {
         $crlf    =  "\r\n";
@@ -719,15 +708,15 @@ class mimeDecode
     }
 
     /**
-    * Function that does the actual conversion to xml. Does a single
-    * mimepart at a time.
-    *
-    * @param  object  Input to convert to xml. This is a mimepart object.
-    *                 It may or may not contain subparts.
-    * @param  integer Number of tabs to indent
-    * @return string  XML version of input
-    * @access private
-    */
+     * Function that does the actual conversion to xml. Does a single
+     * mimepart at a time.
+     *
+     * @param  object  Input to convert to xml. This is a mimepart object.
+     *                 It may or may not contain subparts.
+     * @param  integer Number of tabs to indent
+     * @return string  XML version of input
+     * @access private
+     */
     function _getXML($input, $indent = 1)
     {
         $htab    =  "\t";
@@ -735,7 +724,7 @@ class mimeDecode
         $output  =  '';
         $headers = @(array)$input->headers;
 
-        foreach ($headers as $hdr_name => $hdr_value) {
+        foreach($headers AS $hdr_name => $hdr_value) {
 
             // Multiple headers with this name
             if (is_array($headers[$hdr_name])) {
@@ -764,14 +753,14 @@ class mimeDecode
     }
 
     /**
-    * Helper function to _getXML(). Returns xml of a header.
-    *
-    * @param  string  Name of header
-    * @param  string  Value of header
-    * @param  integer Number of tabs to indent
-    * @return string  XML version of input
-    * @access private
-    */
+     * Helper function to _getXML(). Returns xml of a header.
+     *
+     * @param  string  Name of header
+     * @param  string  Value of header
+     * @param  integer Number of tabs to indent
+     * @return string  XML version of input
+     * @access private
+     */
     function _getXML_helper($hdr_name, $hdr_value, $indent)
     {
         $htab   = "\t";
@@ -783,7 +772,7 @@ class mimeDecode
 
         // Sort out any parameters
         if (!empty($new_hdr_value['other'])) {
-            foreach ($new_hdr_value['other'] as $paramname => $paramvalue) {
+            foreach($new_hdr_value['other'] AS $paramname => $paramvalue) {
                 $params[] = str_repeat($htab, $indent) . $htab . '<parameter>' . $crlf .
                 str_repeat($htab, $indent) . $htab . $htab . '<paramname>' . htmlspecialchars($paramname) . '</paramname>' . $crlf .
                 str_repeat($htab, $indent) . $htab . $htab . '<paramvalue>' . htmlspecialchars($paramvalue) . '</paramvalue>' . $crlf .
@@ -805,4 +794,5 @@ class mimeDecode
     }
 
 } // End of class
+
 ?>

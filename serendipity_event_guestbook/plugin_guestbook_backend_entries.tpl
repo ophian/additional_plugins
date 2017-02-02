@@ -56,7 +56,7 @@
 
     <div class="entries_pane">
         <ul id="entries_list" class="plainList zebra_list">
-    {foreach $guestbook_entries as $entry}
+    {foreach $guestbook_entries AS $entry}
             <li id="entry_{$entry.id}" class="clearfix {cycle values="odd,even"}">
                 <form name="checkform" method="post" action="{$plugin_guestbook_backend_path}">
                 <div>

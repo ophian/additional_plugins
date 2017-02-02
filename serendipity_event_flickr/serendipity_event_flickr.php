@@ -161,7 +161,7 @@ class serendipity_event_flickr extends serendipity_event
                                 (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['POST']['flickr_keywords']) : htmlspecialchars($serendipity['POST']['flickr_keywords'], ENT_COMPAT, LANG_CHARSET)) : '');
 
                             // display possible options for sort order
-                            foreach($flickr_goodSortOrders as $value => $description) {
+                            foreach($flickr_goodSortOrders AS $value => $description) {
                                 echo '<option value="'.$value.'"';
                                 if($sortOrder == $value) echo(' selected="true"');
                                 echo '>'.$description.'</option>';
@@ -230,7 +230,7 @@ class serendipity_event_flickr extends serendipity_event
                             }
 
                             // Loop through the photos and output the html
-                            foreach ($photos['photo'] as $photo) {
+                            foreach($photos['photo'] AS $photo) {
                                 echo '<a title="Add to library" href="javascript:flickr_doImport(\''.$f->buildPhotoURL($photo, 'Original').'\');" ';
                                 echo 'onclick="return confirm(\'Import this photo into the media library ?\');">';
                                 echo '<img border="0" alt="'.$photo['title'].'" src=' . $f->buildPhotoURL($photo, 'Square') . ' />';

@@ -172,7 +172,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
                     $emoticons = $emoticate_plugin->getEmoticons();
                     $unique = array();
-                    foreach($emoticons as $key => $value) {
+                    foreach($emoticons AS $key => $value) {
                         if (is_callable(array($emoticate_plugin, 'humanReadableEmoticon'))) {
                             $key = $emoticate_plugin->humanReadableEmoticon($key);
                         }
@@ -204,7 +204,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     }
                     echo "    $popuplink\n";
                     echo '    <div id="serendipity_emoticonchooser_' . $func . '" style="' . $style . $popupstyle . '">'."\n";
-                    foreach($unique as $value => $key) {
+                    foreach($unique AS $value => $key) {
                         echo '        <a href="javascript:use_emoticon_' . $func . '(\'' . addslashes($key) . '\')" title="' . $key . '"><img src="'. $value .'" style="border: 0px" alt="' . $key . '" /></a>&nbsp;'."\n";
                         if ($i++ % 10 == 0) {
                             echo "        <br />\n";

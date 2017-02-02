@@ -75,7 +75,7 @@ class serendipity_plugin_faq extends serendipity_plugin
             $faqurl = $res['value'];
 
             $links = '';
-            foreach ($categoryids as $id) {
+            foreach($categoryids AS $id) {
                 if (strlen($links)) {
                     $links .= "<br />\n";
                 }
@@ -104,7 +104,7 @@ class serendipity_plugin_faq extends serendipity_plugin
         }
         $res = serendipity_db_query($q, false, 'assoc');
         if (is_array($res)) {
-            foreach ($res as $value) {
+            foreach($res AS $value) {
                 $erg[$value['id']] = $value['category'];
             }
         }

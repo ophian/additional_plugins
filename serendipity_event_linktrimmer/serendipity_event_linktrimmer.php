@@ -341,7 +341,7 @@ class serendipity_event_linktrimmer extends serendipity_event
                     $parts = array_pop($parts);
 
                     if (count($parts) > 1) {
-                       foreach($parts as $key => $value) {
+                       foreach($parts AS $key => $value) {
                             $val = explode('=', $value);
                             $_REQUEST[$val[0]] = $val[1];
                        }
@@ -353,7 +353,7 @@ class serendipity_event_linktrimmer extends serendipity_event
                     if (!isset($_REQUEST['txtarea'])) {
                         $parts = explode('&', $uri_parts[1]);
                         if (count($parts) > 1) {
-                            foreach($parts as $key => $value) {
+                            foreach($parts AS $key => $value) {
                                  $val = explode('=', $value);
                                  $_REQUEST[$val[0]] = $val[1];
                             }

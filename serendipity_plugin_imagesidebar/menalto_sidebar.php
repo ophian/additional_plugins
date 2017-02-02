@@ -202,7 +202,7 @@ class menalto_sidebar extends subplug_sidebar
                 $show_detail = $this->get_config('g2_show','');
                 if ($show_detail != '') {
                     $details = explode(',',$show_detail);
-                    foreach ($details as $detail) {
+                    foreach($details AS $detail) {
                         $details_string = $details_string . trim($detail) . '|';
                     }
                     $details_string = substr($details_string,0,strlen($details_string)-1);

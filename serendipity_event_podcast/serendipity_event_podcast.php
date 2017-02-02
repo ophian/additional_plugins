@@ -484,7 +484,7 @@ class serendipity_event_podcast extends serendipity_event
                 if (isset($eventData['podcastUrlsRewrittenByPlayerCode']) && is_array($eventData['podcastUrlsRewrittenByPlayerCode'])) {
                     $this->log("Matching URLs set by extended attributes: FOUND");
                     $urlsRewwrittenByPlayerCode = $eventData['podcastUrlsRewrittenByPlayerCode'];
-                    foreach ($urlsRewwrittenByPlayerCode as $url) {
+                    foreach($urlsRewwrittenByPlayerCode AS $url) {
                         $fileInfo   = $this->GetFileInfo($url);
                         $type       = $fileInfo['mime'];
                         $enclosure = $this->GetEnclosure($event, $url, $type, $fileInfo['length'], $fileInfo['md5']);
@@ -581,7 +581,7 @@ class serendipity_event_podcast extends serendipity_event
                 if (serendipity_db_bool($this->get_config('ep_asure_enc', 'true'))) {
                     $extended_attributes = explode(',',$this->get_config('extendet_enclosure_attributes','Podcast,Video'));
 
-                    foreach ($extended_attributes as $eattr) {
+                    foreach($extended_attributes AS $eattr) {
                         $this->log("EP: " . trim($eattr));
                         $eattr = "ep_" . trim($eattr);
                         if (!empty($eattr) && !empty($eventData['properties'][$eattr])) {
@@ -696,7 +696,7 @@ class serendipity_event_podcast extends serendipity_event
                 if ($this->get_config('extendet_enclosure_position', 'never') != 'never') {
                     $extended_attributes = explode(',',$this->get_config('extendet_enclosure_attributes', 'Podcast,Video'));
                     $extra_links = '';
-                    foreach ($extended_attributes as $eattr) {
+                    foreach($extended_attributes AS $eattr) {
                         $eattr = "ep_" . trim($eattr);
                         $ep_align= $this->get_config('ep_align','center');
                         if (!empty($eattr) && !empty($eventData['properties'][$eattr])) {
@@ -1229,28 +1229,28 @@ class serendipity_event_podcast extends serendipity_event
             $a5exts     = explode(',', $this->get_config('exthtml5_audio',PLUGIN_PODCAST_HTML5_AUDIO_DEFAULT));
             $v5exts     = explode(',', $this->get_config('exthtml5_video',PLUGIN_PODCAST_HTML5_VIDEO_DEFAULT));
 
-            foreach($qtexts as $ext){
+            foreach($qtexts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'q';
             }
-            foreach($wmexts as $ext){
+            foreach($wmexts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'w';
             }
-            foreach($flexts as $ext){
+            foreach($flexts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'f';
             }
-            foreach($mp3exts as $ext){
+            foreach($mp3exts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'm';
             }
-            foreach($xspfexts as $ext){
+            foreach($xspfexts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'x';
             }
-            foreach($flvexts as $ext){
+            foreach($flvexts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'v';
             }
-            foreach($a5exts as $ext){
+            foreach($a5exts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'a5';
             }
-            foreach($v5exts as $ext){
+            foreach($v5exts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'v5';
             }
 
