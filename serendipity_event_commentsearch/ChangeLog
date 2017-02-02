@@ -1,6 +1,11 @@
 1.6:
 ----
 
+ * Sanitize $result.comment
+
+1.6:
+----
+
  * Set plugin consistencies
  * Use load language API - extends required Serendipity version to v.1.6
  * Removed old Smarty2 security settings - extends required Serendipity version to v.1.7
