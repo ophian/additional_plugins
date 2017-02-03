@@ -1,3 +1,7 @@
+4.6.2.1:
+---------
+    * Fix CKEditor default content styles loading
+
 4.6.2.0:
 ---------
     * Upgrade to CKEDITOR 4.6. Series, update 2 (http://ckeditor.com/release-notes).

@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.8, 2016-12-10
+ * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.9, 2017-02-03
  */
 
 /**
@@ -147,8 +147,9 @@ CKEDITOR.editorConfig = function( config ) {
     /** SECTION: Custom Config Content Styles
         We can not use templates/xxx/admin/ as a path here, since we would need template and userTemplate path parts as dynamic vars
     */
-    // Add custom Serendipity styles to ckeditor wysiwyg-mode, to repect S9y css image floats
-    config.contentsCss = CKEDITOR_PLUGPATH + 'serendipity_event_ckeditor/wysiwyg-style.css';
+    // Add custom Serendipity styles to ckeditor content wysiwyg-mode, to respect S9y CSS image floats.
+    // If set here, we have to include the default styles, and this even since CKE 4.4. Else it isn't loaded!
+    config.contentsCss = [ CKEDITOR_PLUGPATH + 'serendipity_event_ckeditor/ckeditor/contents.css', CKEDITOR_PLUGPATH + 'serendipity_event_ckeditor/wysiwyg-style.css' ];
 
 
     /** SECTION: Web-Spellchecker (wsc) and SCAYT plug-in for CKEditor
