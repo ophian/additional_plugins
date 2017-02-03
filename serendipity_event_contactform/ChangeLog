@@ -1,3 +1,9 @@
+1.22:
+----
+
+ * Introduce new specific class selectors, to be able to
+   disallow hooked form messages.
+
 1.21:
 ----
 

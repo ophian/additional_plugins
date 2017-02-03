@@ -6,7 +6,7 @@
 <h4 class="serendipity_title"><a href="#">{$plugin_contactform_pagetitle}</a></h4>
 
 {if $plugin_contactform_articleformat}
-<div class="serendipity_entry"><div class="serendipity_entry_body">
+<div class="serendipity_entry serendipity_staticpage staticpage_plugin_contactform"><div class="serendipity_entry_body">
 {/if}
 
 <div>
