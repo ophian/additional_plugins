@@ -241,7 +241,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;お問合せフォーム&lt;/b&gt;&lt;br /&gt;静的ページとしてブログに電子メールお問合せフォームを表示します。It can be accessed by either the custom permalink or by index.php?serendipity[subpage]=contactform. You can customize the look of the contact form by putting the plugin_contactform.tpl file into your template directory and modify it there. spam ブロックプラグインの Captcha が(もし有効なら)適用されるでしょう。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 02 Feb 2017 14:29:23 +0100</pubDate>
+<pubDate>Fri, 03 Feb 2017 16:45:55 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
