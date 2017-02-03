@@ -1228,9 +1228,9 @@
 <description>Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.6.2.0</version>
+  <version>4.6.2.1</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-01-26</date>
+  <date>2017-02-03</date>
   <filelist>
 <dir name="serendipity_event_ckeditor">
 <file>.htaccess</file>
