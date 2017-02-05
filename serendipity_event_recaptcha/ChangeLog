@@ -1,3 +1,8 @@
+0.31:
+-----
+ * Replace documented dead recaptcha.net URLs with their
+   google reCAPTCHA replacement location
+
 0.30:
 -----
  * New experimental support for google recaptcha v2

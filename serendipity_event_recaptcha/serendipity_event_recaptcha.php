@@ -8,10 +8,6 @@ if (IN_serendipity !== true) {
 
 require_once dirname(__FILE__) . '/recaptcha/recaptchalib.php';
 
-$GLOBALS['recaptcha_api_server'] = 'http://api.recaptcha.net';
-$GLOBALS['recaptcha_api_secure_server'] = 'https://api-secure.recaptcha.net';
-$GLOBALS['recaptcha_verify_server'] = 'api-verify.recaptcha.net';
-
 class serendipity_event_recaptcha extends serendipity_event
 {
     var $error=null;
@@ -31,7 +27,7 @@ class serendipity_event_recaptcha extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '0.30');
+        $propbag->add('version',       '0.31');
         $propbag->add('event_hooks',    array(
             'frontend_configure'   => true,
             'frontend_saveComment' => true,
@@ -306,7 +302,7 @@ class serendipity_event_recaptcha extends serendipity_event
                             printf('<div class="serendipity_center serendipity_msg_important">%s</div>',PLUGIN_EVENT_RECAPTCHA_ERROR_RECAPTCHA);
                          }
 
-                        // The response from recaptcha.net
+                        // The response from the reCAPTCHA Server
                         if ($_recaptcha === 'yes2') {
                             echo "<script src='https://www.google.com/recaptcha/api.js'></script>";
                             echo '<div class="g-recaptcha" data-sitekey="' . $pubkey . '"></div>';
