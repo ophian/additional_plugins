@@ -13,7 +13,7 @@ class serendipity_event_dashboard extends serendipity_event {
     function introspect(&$propbag) {
         global $serendipity;
 
-        $propbag->add('name',          PLUGIN_DASHBOARD_TITLE  . '<br/>ATTENTION: VALID only for Serendipity 1.x versions! DO NOT USE with 2.0 and up!');
+        $propbag->add('name',          PLUGIN_DASHBOARD_TITLE  . ' ATTENTION: VALID only for Serendipity 1.x versions! DO NOT USE with 2.0 and up!');
         $propbag->add('description',   PLUGIN_DASHBOARD_DESC);
         $propbag->add('requirements',  array(
             'serendipity' => '1.3',
