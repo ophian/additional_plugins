@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.93');
+        $propbag->add('version',       '3.94');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1107,7 +1107,7 @@ class serendipity_event_freetag extends serendipity_event
 
 /* freetag plugin start */
 
-.freetagMenu [class^="icon-"]:before, .freetagMenu [class*=" icon-"]:before {
+.freetagMenu svg[class^="icon-"]:before, .freetagMenu svg[class*=" icon-"]:before {
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -1123,25 +1123,25 @@ class serendipity_event_freetag extends serendipity_event
   -moz-osx-font-smoothing: grayscale;
 }
 
-.freetagMenu .icon {
+.freetagMenu svg.icon {
     width: 1rem;
     height: 1rem;
     vertical-align: middle;
 }
-.freetagMenu .icon-tags:before { content: \'\e805\'; }
-.freetagMenu .icon-tag:before { content: \'\e804\'; }
-.freetagMenu .icon-notag:before { content: \'\f0f6\'; }
-.freetagMenu .icon-leaftag:before { content: \'\f15c\'; }
-.freetagMenu .icon-keytag:before { content: \'\e803\'; }
-.freetagMenu .icon-ctag:before { content: \'\e807\'; }
-.freetagMenu .icon-autotag:before { content: \'\e802\'; }
-.freetagMenu .icon-cleantag:before { content: \'\e806\'; }
+.freetagMenu svg.icon-tags:before { content: \'\e805\'; }
+.freetagMenu svg.icon-tag:before { content: \'\e804\'; }
+.freetagMenu svg.icon-notag:before { content: \'\f0f6\'; }
+.freetagMenu svg.icon-leaftag:before { content: \'\f15c\'; }
+.freetagMenu svg.icon-keytag:before { content: \'\e803\'; }
+.freetagMenu svg.icon-ctag:before { content: \'\e807\'; }
+.freetagMenu svg.icon-autotag:before { content: \'\e802\'; }
+.freetagMenu svg.icon-cleantag:before { content: \'\e806\'; }
 
-.freetagMenu .icon-notag,
-.freetagMenu .icon-leaftag,
-.freetagMenu .icon-ctag,
-.freetagMenu .icon-autotag,
-.freetagMenu .icon-cleantag {
+.freetagMenu svg.icon-notag,
+.freetagMenu svg.icon-leaftag,
+.freetagMenu svg.icon-ctag,
+.freetagMenu svg.icon-autotag,
+.freetagMenu svg.icon-cleantag {
     vertical-align: baseline;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
