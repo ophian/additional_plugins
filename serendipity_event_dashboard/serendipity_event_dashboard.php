@@ -13,15 +13,15 @@ class serendipity_event_dashboard extends serendipity_event {
     function introspect(&$propbag) {
         global $serendipity;
 
-        $propbag->add('name',          PLUGIN_DASHBOARD_TITLE  . ' ATTENTION: VALID only for Serendipity 1.x versions! DO NOT USE with 2.0 and up!');
+        $propbag->add('name',          PLUGIN_DASHBOARD_TITLE  . ' ATTENTION: VALID only for Serendipity 1.6/1.7 versions! DO NOT USE with 2.0 and up!');
         $propbag->add('description',   PLUGIN_DASHBOARD_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '1.3',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
 
-        $propbag->add('version',       '0.6.9.1');
+        $propbag->add('version',       '0.6.9.2');
         $propbag->add('author',        'Garvin Hicking');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('read_only', 'limit_draft', 'limit_comments', 'limit_comments_pending', 'limit_future', 'sequence', 'update'));
@@ -106,7 +106,7 @@ class serendipity_event_dashboard extends serendipity_event {
 
     function generate_content(&$title)
     {
-        $title = PLUGIN_DASHBOARD_TITLE  . '<br/>ATTENTION: VALID only for Serendipity 1.x versions! DO NOT USE with 2.0 and up!';
+        $title = PLUGIN_DASHBOARD_TITLE  . '<br/>ATTENTION: VALID only for Serendipity 1.6/1.7 versions! DO NOT USE with 2.0 and up!';
     }
 
     function showElementCommentlist($where, $limit)
