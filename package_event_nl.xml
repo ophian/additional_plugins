@@ -1952,49 +1952,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_dashboard</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_dashboard/ChangeLog</changelog>
-<license>GPL</license>
-<summary>Dashboard ATTENTION: VALID only for Serendipity 1.6/1.7 versions! DO NOT USE with 2.0 and up!</summary>
-<groups>BACKEND_FEATURES</groups>
-<description>Shows some summary information on the backend frontpage</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>0.6.9.2</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-02-09</date>
-  <filelist>
-<dir name="serendipity_event_dashboard">
-<file>ChangeLog</file>
-<file>dashboard.css</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>serendipity_event_dashboard.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_dashboard/ChangeLog</file>
-    <file>serendipity_event_dashboard/dashboard.css</file>
-    <file>serendipity_event_dashboard/lang_cs.inc.php</file>
-    <file>serendipity_event_dashboard/lang_cz.inc.php</file>
-    <file>serendipity_event_dashboard/lang_de.inc.php</file>
-    <file>serendipity_event_dashboard/lang_en.inc.php</file>
-    <file>serendipity_event_dashboard/serendipity_event_dashboard.php</file>
-    <file>serendipity_event_dashboard/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_dashboard/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_dashboard/UTF-8/lang_de.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_dbclean</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_dbclean/ChangeLog</changelog>
 <license>GPL</license>
@@ -3894,9 +3851,9 @@
 <description>Maakt het mogelijk om bijdragen van tags te voorzien</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.93</version>
+  <version>3.94</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-02-09</date>
   <filelist>
 <dir name="serendipity_event_freetag">
 <file>.htaccess</file>
