@@ -20,13 +20,13 @@ class serendipity_event_feed extends serendipity_plugin
         $propbag->add('description',    PLUGIN_DASHBOARD_FEEDME_PLUGIN_DESC);
         $propbag->add('stackable',      false);
         $propbag->add('author',         'Ian');
-        $propbag->add('version',        '1.03');
+        $propbag->add('version',        '1.04');
         $propbag->add('requirements',   array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('groups', array('BACKEND'));
+        $propbag->add('groups', array('BACKEND_ADMIN', 'BACKEND_DASHBOARD', 'BACKEND_FEATURES'));
         $propbag->add('event_hooks',    array(
             'backend_dashboard'         => true,
             'css_backend'               => true
