@@ -151,7 +151,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;Samoregistrace nových uživatelů&lt;/b&gt;&lt;br /&gt;Umožňuje návštěvníkům webu vytvořit si vlastní uživatelský účet. Dohromady s pluginem událostí (index.php?serendipity[subpage]=adduser) můžete určit, jestli komentáře mohou posílat pouze registrovaní uživatelé.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 15 Jan 2017 18:18:08 +0100</pubDate>
+<pubDate>Fri, 10 Feb 2017 19:10:31 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_adduser</guid>
 </item>
 <item>
