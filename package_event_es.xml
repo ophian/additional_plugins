@@ -3,144 +3,6 @@
 
 <packages>
 <package version="1.0">
-<name>serendipity_event_challengeresponse</name>
-<license>GPL</license>
-<summary>Spam: Challenge/Response</summary>
-<groups>ANTISPAM</groups>
-<description></description>
-<maintainers><maintainer><name>Nobody</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>0.10</version>
-  <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="alpha">
-<file>bogo.php</file>
-<file>serendipity_event_challengeresponse.php</file>
-<file>serendipity_event_mailcc.php</file>
-<file>serendipity_event_smfmarkup.php</file>
-<file>serendipity_plugin_sidebarlogo.zip</file>
-<dir name="stalkerbuster">
-<file>lang_en.inc.php</file>
-<file>serendipity_event_stalkerbuster.php</file>
-</dir>
-<file>testing.php</file>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>alpha/bogo.php</file>
-    <file>alpha/serendipity_event_challengeresponse.php</file>
-    <file>alpha/serendipity_event_mailcc.php</file>
-    <file>alpha/serendipity_event_smfmarkup.php</file>
-    <file>alpha/serendipity_plugin_sidebarlogo.zip</file>
-    <file>alpha/stalkerbuster/lang_en.inc.php</file>
-    <file>alpha/stalkerbuster/serendipity_event_stalkerbuster.php</file>
-    <file>alpha/testing.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_mailcc</name>
-<license>GPL</license>
-<summary>Adds CC to all sent emails</summary>
-<groups>BACKEND_FEATURES</groups>
-<description>(Notice: Make sure that the all of your authors have the option to receiv comment notification emails activated, or else no mails will be created that can be CCed</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.01</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="alpha">
-<file>bogo.php</file>
-<file>serendipity_event_challengeresponse.php</file>
-<file>serendipity_event_mailcc.php</file>
-<file>serendipity_event_smfmarkup.php</file>
-<file>serendipity_plugin_sidebarlogo.zip</file>
-<dir name="stalkerbuster">
-<file>lang_en.inc.php</file>
-<file>serendipity_event_stalkerbuster.php</file>
-</dir>
-<file>testing.php</file>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>alpha/bogo.php</file>
-    <file>alpha/serendipity_event_challengeresponse.php</file>
-    <file>alpha/serendipity_event_mailcc.php</file>
-    <file>alpha/serendipity_event_smfmarkup.php</file>
-    <file>alpha/serendipity_plugin_sidebarlogo.zip</file>
-    <file>alpha/stalkerbuster/lang_en.inc.php</file>
-    <file>alpha/stalkerbuster/serendipity_event_stalkerbuster.php</file>
-    <file>alpha/testing.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_smfmarkup</name>
-<license>GPL</license>
-<summary>SMF Markup</summary>
-<groups>MARKUP</groups>
-<description>SMF Markup</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.01</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2017-02-02</date>
-  <filelist>
-<dir name="alpha">
-<file>bogo.php</file>
-<file>serendipity_event_challengeresponse.php</file>
-<file>serendipity_event_mailcc.php</file>
-<file>serendipity_event_smfmarkup.php</file>
-<file>serendipity_plugin_sidebarlogo.zip</file>
-<dir name="stalkerbuster">
-<file>lang_en.inc.php</file>
-<file>serendipity_event_stalkerbuster.php</file>
-</dir>
-<file>testing.php</file>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>alpha/bogo.php</file>
-    <file>alpha/serendipity_event_challengeresponse.php</file>
-    <file>alpha/serendipity_event_mailcc.php</file>
-    <file>alpha/serendipity_event_smfmarkup.php</file>
-    <file>alpha/serendipity_plugin_sidebarlogo.zip</file>
-    <file>alpha/stalkerbuster/lang_en.inc.php</file>
-    <file>alpha/stalkerbuster/serendipity_event_stalkerbuster.php</file>
-    <file>alpha/testing.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_stalkerbuster</name>
-<license>GPL</license>
-<summary>StalkerBuster (TM,C,R)</summary>
-<groups></groups>
-<description>Denies access to baddies. Write line-separated list of blocked cookies to a stalkerbuster.php file in your root.</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.01</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="stalkerbuster">
-<file>lang_en.inc.php</file>
-<file>serendipity_event_stalkerbuster.php</file>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>alpha/stalkerbuster/lang_en.inc.php</file>
-    <file>alpha/stalkerbuster/serendipity_event_stalkerbuster.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_adminnotes</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_adminnotes/ChangeLog</changelog>
 <license>GPL</license>
@@ -1216,6 +1078,28 @@
     <file>serendipity_event_categorytemplates/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_categorytemplates/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_categorytemplates/UTF-8/lang_ja.inc.php</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_event_challengeresponse</name>
+<license>GPL</license>
+<summary>Spam: Challenge/Response</summary>
+<groups>ANTISPAM</groups>
+<description></description>
+<maintainers><maintainer><name>Nobody</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>0.11</version>
+  <requirements:s9yVersion>1.0</requirements:s9yVersion>
+  <date>2017-02-10</date>
+  <filelist>
+<dir name="serendipity_event_challengeresponse">
+<file>serendipity_event_challengeresponse.php</file>
+</dir>
+
+  </filelist>
+  <serendipityFilelist>
+    <file>serendipity_event_challengeresponse/serendipity_event_challengeresponse.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6504,6 +6388,28 @@
 </release>
 </package>
 <package version="1.0">
+<name>serendipity_event_mailcc</name>
+<license>GPL</license>
+<summary>Adds CC to all sent emails</summary>
+<groups>BACKEND_FEATURES</groups>
+<description>(Notice: Make sure that the all of your authors have the option to receive comment notification emails activated, or else no mails will be created that can be CCed</description>
+<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.02</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2017-02-10</date>
+  <filelist>
+<dir name="serendipity_event_mailcc">
+<file>serendipity_event_mailcc.php</file>
+</dir>
+
+  </filelist>
+  <serendipityFilelist>
+    <file>serendipity_event_mailcc/serendipity_event_mailcc.php</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
 <name>serendipity_event_mailentry</name>
 <license>GPL</license>
 <summary>Enviar por correo</summary>
@@ -9199,6 +9105,30 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
     <file>serendipity_event_spamblock_surbl/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_spamblock_surbl/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_spamblock_surbl/UTF-8/lang_ja.inc.php</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_event_stalkerbuster</name>
+<license>GPL</license>
+<summary>StalkerBuster (TM,C,R)</summary>
+<groups>BACKEND_ADMIN</groups>
+<description>Denies access to baddies. Write line-separated list of blocked cookies to a stalkerbuster.php file in your root.</description>
+<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.02</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-02-10</date>
+  <filelist>
+<dir name="serendipity_event_stalkerbuster">
+<file>lang_en.inc.php</file>
+<file>serendipity_event_stalkerbuster.php</file>
+</dir>
+
+  </filelist>
+  <serendipityFilelist>
+    <file>serendipity_event_stalkerbuster/lang_en.inc.php</file>
+    <file>serendipity_event_stalkerbuster/serendipity_event_stalkerbuster.php</file>
   </serendipityFilelist>
 </release>
 </package>

@@ -9,42 +9,6 @@
 <dc:language>en</dc:language>
 <generator>Serendipity SPARTACUS</generator>
 <item>
-<title>Spam: Challenge/Response: </title>
-<link>https://github.com/ophian/additional_plugins/tree/master/alpha</link>
-<category>Event Plugins</category>
-<author>Nobody</author>
-<content:encoded>&lt;b&gt;serendipity_event_challengeresponse&lt;br /&gt;Spam: Challenge/Response&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 1.0</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_challengeresponse</guid>
-</item>
-<item>
-<title>Adds CC to all sent emails: (Notice: Make sure that the all of your authors have the option to receiv comment notification emails activated, or else no mails will be created that can be CCed</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/alpha</link>
-<category>Event Plugins</category>
-<author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_mailcc&lt;br /&gt;Adds CC to all sent emails&lt;/b&gt;&lt;br /&gt;(Notice: Make sure that the all of your authors have the option to receiv comment notification emails activated, or else no mails will be created that can be CCed&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_mailcc</guid>
-</item>
-<item>
-<title>SMF Markup: SMF Markup</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/alpha</link>
-<category>Event Plugins</category>
-<author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_smfmarkup&lt;br /&gt;SMF Markup&lt;/b&gt;&lt;br /&gt;SMF Markup&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 02 Feb 2017 14:36:57 +0100</pubDate>
-<guid isPermaLink="false">serendipity_event_smfmarkup</guid>
-</item>
-<item>
-<title>StalkerBuster (TM,C,R): Denies access to baddies. Write line-separated list of blocked cookies to a stalkerbuster.php file in your root.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/alpha/stalkerbuster</link>
-<category>Event Plugins</category>
-<author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_stalkerbuster&lt;br /&gt;StalkerBuster (TM,C,R)&lt;/b&gt;&lt;br /&gt;Denies access to baddies. Write line-separated list of blocked cookies to a stalkerbuster.php file in your root.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_stalkerbuster</guid>
-</item>
-<item>
 <title>QuickNotes: Zeigt Hinweise für angemeldete Autoren in der Admin-Oberfläche an.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_adminnotes</link>
 <category>Event Plugins</category>
@@ -178,6 +142,15 @@
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Eigenschaften/Templates von Kategorien&lt;/b&gt;&lt;br /&gt;Dieses Plugin ermöglicht erweitete Eigenschaften für Kategorien und deren Einträge festzulegen: speziell angepassete Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus dem RSS-Feed.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
 <pubDate>Sat, 27 Aug 2016 14:58:26 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
+</item>
+<item>
+<title>Spam: Challenge/Response: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_challengeresponse</link>
+<category>Event Plugins</category>
+<author>Nobody</author>
+<content:encoded>&lt;b&gt;serendipity_event_challengeresponse&lt;br /&gt;Spam: Challenge/Response&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 1.0</content:encoded>
+<pubDate>Fri, 10 Feb 2017 14:18:50 +0100</pubDate>
+<guid isPermaLink="false">serendipity_event_challengeresponse</guid>
 </item>
 <item>
 <title>CKEditor Plus: Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lies die Plugin Konfigurations Seite für weitere Informationen.</title>
@@ -774,6 +747,15 @@
 <guid isPermaLink="false">serendipity_event_lsrstopper</guid>
 </item>
 <item>
+<title>Adds CC to all sent emails: (Notice: Make sure that the all of your authors have the option to receive comment notification emails activated, or else no mails will be created that can be CCed</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mailcc</link>
+<category>Event Plugins</category>
+<author>Garvin Hicking</author>
+<content:encoded>&lt;b&gt;serendipity_event_mailcc&lt;br /&gt;Adds CC to all sent emails&lt;/b&gt;&lt;br /&gt;(Notice: Make sure that the all of your authors have the option to receive comment notification emails activated, or else no mails will be created that can be CCed&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 10 Feb 2017 15:26:23 +0100</pubDate>
+<guid isPermaLink="false">serendipity_event_mailcc</guid>
+</item>
+<item>
 <title>Eintrag per E-Mail verschicken: Erlaubt es Besuchern einen Eintrag per E-Mail an einen Freund zu verschicken</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mailentry</link>
 <category>Event Plugins</category>
@@ -1134,6 +1116,15 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_surbl&lt;br /&gt;Spamschutz (SURBL)&lt;/b&gt;&lt;br /&gt;URL abweisen die als SPAM geblacklistet sind.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_surbl</guid>
+</item>
+<item>
+<title>StalkerBuster (TM,C,R): Denies access to baddies. Write line-separated list of blocked cookies to a stalkerbuster.php file in your root.</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_stalkerbuster</link>
+<category>Event Plugins</category>
+<author>Garvin Hicking</author>
+<content:encoded>&lt;b&gt;serendipity_event_stalkerbuster&lt;br /&gt;StalkerBuster (TM,C,R)&lt;/b&gt;&lt;br /&gt;Denies access to baddies. Write line-separated list of blocked cookies to a stalkerbuster.php file in your root.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 10 Feb 2017 14:47:28 +0100</pubDate>
+<guid isPermaLink="false">serendipity_event_stalkerbuster</guid>
 </item>
 <item>
 <title>Kategorie als Startseite: Ermöglicht, die Artikel einer speziellen Kategorie anstelle der Übersicht aller Artikel auf der Startseite anzuzeigen.</title>
