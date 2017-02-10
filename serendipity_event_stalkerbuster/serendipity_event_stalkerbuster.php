@@ -1,22 +1,18 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+// Load possible language files.
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_stalkerbuster extends serendipity_event {
+class serendipity_event_stalkerbuster extends serendipity_event
+{
     var $title = PLUGIN_STALKERBUSTER;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $this->title = $this->get_config('title', $this->title);
@@ -24,24 +20,25 @@ class serendipity_event_stalkerbuster extends serendipity_event {
         $propbag->add('description',   PLUGIN_STALKERBUSTER_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.01');
+        $propbag->add('version',       '1.02');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('configuration', array(
             'mail',
             'cname'
         ));
+        $propbag->add('groups', array('BACKEND_ADMIN'));
         $propbag->add('event_hooks',    array(
             'frontend_configure' => true,
             'backend_sendmail' => true
         ));
-
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch($name) {
@@ -61,7 +58,8 @@ class serendipity_event_stalkerbuster extends serendipity_event {
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -69,7 +67,7 @@ class serendipity_event_stalkerbuster extends serendipity_event {
             switch($event) {
                 case 'backend_sendmail':
                     $eventData['message'] .= "\n" . 'StalkerBuster:' . $_COOKIE['serendipity'][$this->get_config('cname')] . "\n";
-                    return true;
+                    break;
 
                 case 'frontend_configure':
                     if (!isset($_COOKIE['serendipity'][$this->get_config('cname')])) {
@@ -84,12 +82,18 @@ class serendipity_event_stalkerbuster extends serendipity_event {
                         echo 'HTTP/1.0 404 Not found';
                         exit;
                     }
-                    return true;
                     break;
+
+                default:
+                    return false;
+
             }
+            return true;
+        } else {
+            return false;
         }
     }
+
 }
 
-/* vim: set sts=4 ts=4 expandtab : */
 ?>
