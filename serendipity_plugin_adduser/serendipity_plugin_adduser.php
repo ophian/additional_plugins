@@ -17,7 +17,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian');
-        $propbag->add('version',       '2.42');
+        $propbag->add('version',       '2.43');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -260,10 +260,18 @@ class serendipity_plugin_adduser extends serendipity_plugin
             $this->usergroups[$cid] = $cid;
         }
 
+        // Cast and check POST login values to strings to get the desired error or login
+        if (isset($serendipity['POST']['adduser_user']) || isset($serendipity['POST']['adduser_pass']) || isset($serendipity['POST']['adduser_email'])) {
+            if (!is_string($serendipity['POST']['adduser_user']) || !is_string($serendipity['POST']['adduser_pass']) || !is_string($serendipity['POST']['adduser_email'])) {
+                echo '<div class="serendipity_msg_important">Error: Please use the real form field!</div>'."\n";
+                return;
+            }
+        }
+
         $url = serendipity_currentURL();
-        $username = substr($serendipity['POST']['adduser_user'], 0, 40);
-        $password = substr($serendipity['POST']['adduser_pass'], 0, 32);
-        $email    = $serendipity['POST']['adduser_email'];
+        $username = substr((string)$serendipity['POST']['adduser_user'], 0, 40);
+        $password = substr((string)$serendipity['POST']['adduser_pass'], 0, 32);
+        $email    = (string)$serendipity['POST']['adduser_email'];
 
         echo '<div style="padding-left: 4px; padding-right: 10px"><a id="adduser"></a>';
 
