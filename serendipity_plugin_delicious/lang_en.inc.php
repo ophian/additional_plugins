@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -20,4 +20,4 @@
 @define('PLUGIN_DELICIOUS_MORELINK_T', 'Text value for "more" link');
 @define('PLUGIN_DELICIOUS_MORELINK_D', 'Display link to selected del.icio.us-profile');
 @define('PLUGIN_DELICIOUS_MORELINK', 'More');
-?>
+

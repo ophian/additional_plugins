@@ -23,3 +23,4 @@
 
 // Next lines were translated on 2010/12/25
 @define('PLUGIN_DELICIOUS_MORELINK_T', 'Text odkazu "více" ("more")');
+

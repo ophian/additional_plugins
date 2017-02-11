@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -19,4 +19,4 @@
 @define('PLUGIN_DELICIOUS_MORELINK_N', '「もっと」リンクを表示する');
 @define('PLUGIN_DELICIOUS_MORELINK_D', '選択された del.icio.us プロフィールへのリンクを表示する');
 @define('PLUGIN_DELICIOUS_MORELINK', 'もっと');
-?>
+

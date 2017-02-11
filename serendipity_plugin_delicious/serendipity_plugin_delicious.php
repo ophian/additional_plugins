@@ -12,7 +12,9 @@
     Fixed:
      Fixed some error sniffing logic [v0.2.2]
      Removed Onyx Cacheing [v0.2.1]
-     Better caching system [v0.2]     Added tag & tag intersection support [v0.2]     Handles feed errors in an elegant manner (not perfeect) [v0.2]
+     Better caching system [v0.2]
+     Added tag & tag intersection support [v0.2]
+     Handles feed errors in an elegant manner (not perfect) [v0.2]
      Some little stuff too [v0.2]
 
     Known Issues:
@@ -43,11 +45,12 @@ include dirname(__FILE__) . '/lang_en.inc.php';
 
 class serendipity_plugin_delicious extends serendipity_plugin {
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $propbag->add('name', PLUGIN_DELICIOUS_N);
         $propbag->add('description', PLUGIN_DELICIOUS_D);
         $propbag->add('author', 'Riscky');
-        $propbag->add('version', '0.8.1');
+        $propbag->add('version', '0.8.2');
         $propbag->add('requirements',  array(
             'serendipity' => '0.8',
             'smarty'      => '2.6.7',
@@ -65,7 +68,8 @@ class serendipity_plugin_delicious extends serendipity_plugin {
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'sidebarTitle':
                 $propbag->add('type', 'string');
@@ -115,12 +119,12 @@ class serendipity_plugin_delicious extends serendipity_plugin {
         return true;
     }
 
-    function generate_content(&$title) {
-
+    function generate_content(&$title)
+    {
         global $serendipity;
         $title = $this->get_config('sidebarTitle');
         $deliciousID = $this->get_config('deliciousID');
-        $moreLink = $this->get_config('moreLink');
+        $moreLink = serendipity_db_bool($this->get_config('moreLink', 'true'));
 
         if (empty($deliciousID)) {
             return false;
@@ -145,19 +149,31 @@ class serendipity_plugin_delicious extends serendipity_plugin {
 
         $parsedCache = $gDeliciousCacheLoc . md5($deliciousID) . '.cache';
 
-        if(!is_file($parsedCache) || ((mktime() - filectime($parsedCache)) > $cacheTime)) {
+        if (!is_file($parsedCache) || ((mktime() - filectime($parsedCache)) > $cacheTime)) {
             if (!is_dir($gDeliciousCacheLoc) && !mkdir($gDeliciousCacheLoc, 0775)) {
                 print 'Try to chmod go+rwx - permissions are wrong.';
             }
 
-            require_once 'Onyx/RSS.php';
-            $deliciousFeed = new Onyx_RSS();
-            //$deliciousFeed->setCachePath($gDeliciousCacheLoc);
-            //$deliciousFeed->setExpiryTime($cacheTime);
-            //$deliciousFeed->parse($gDeliciousURL .'rss/' . $deliciousID, md5($deliciousID) . '.dat');
-            $deliciousFeed->parse($gDeliciousURL . 'rss/' . $deliciousID);
+            // Now fetch the RSS feed:
+            require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'Onyx/RSS.php';
 
-            if( $deliciousFeed->numItems() >= 1 ) {
+            # test multiple likely charsets
+            $charsets = array( "UTF-8", "ISO-8859-1");
+            $retry = false;
+            foreach ($charsets AS $ch) {
+                if ($retry) $this->log("Retrying charset $ch");
+                $retry = true;
+                $deliciousFeed = new Onyx_RSS($ch);
+                # does it parse? if so, all is fine...
+                if ($deliciousFeed->parse($gDeliciousURL . 'rss/' . $deliciousID))
+                break;
+            }
+            ##$deliciousFeed->setCachePath($gDeliciousCacheLoc);
+            ##$deliciousFeed->setExpiryTime($cacheTime);
+            ##$deliciousFeed->parse($gDeliciousURL .'rss/' . $deliciousID, md5($deliciousID) . '.dat');
+            #$deliciousFeed->parse($gDeliciousURL . 'rss/' . $deliciousID);
+
+            if ($deliciousFeed->numItems() >= 1) {
                 $fileHandle = @fopen($parsedCache, 'w');
                 if ($fileHandle) {
 
@@ -185,13 +201,15 @@ class serendipity_plugin_delicious extends serendipity_plugin {
             print file_get_contents($parsedCache);
         }
 
-        if (serendipity_db_bool($moreLink)) {
+        if ($moreLink) {
             print '<p><a href="' . $gDeliciousURL . $deliciousID . '/">' . $this->get_config('morelink_text') . '</a></p>';
         }
     }
+
 }
 
 function delicious_clean_htmlspecialchars($given, $quote_style = ENT_QUOTES) {
     return htmlspecialchars(html_entity_decode($given, $quote_style, LANG_CHARSET), $quote_style, LANG_CHARSET);
 }
+
 ?>

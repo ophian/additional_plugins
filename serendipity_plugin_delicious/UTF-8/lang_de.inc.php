@@ -12,3 +12,4 @@
 @define('PLUGIN_DELICIOUS_MORELINK_N', 'Zeig "mehr"-Verknüpfung');
 @define('PLUGIN_DELICIOUS_MORELINK_D', 'Zeige Verknüpfung zum ausgewählten del.icio.us-Profil');
 @define('PLUGIN_DELICIOUS_MORELINK', 'Mehr');
+
