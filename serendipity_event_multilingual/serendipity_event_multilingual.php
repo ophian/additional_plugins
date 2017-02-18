@@ -731,8 +731,8 @@ class serendipity_event_multilingual extends serendipity_event
 
                     if (!$entrieslist) {
                         $cond  = "multilingual_body.value AS multilingual_body,\n";
-                        $cond .= "multilingual_extended.value AS multilingual_extended,\n";
-                        $cond .= "multilingual_title.value AS multilingual_title,\n";
+                        $cond .= "                    multilingual_extended.value AS multilingual_extended,\n";
+                        $cond .= "                    multilingual_title.value AS multilingual_title,\n";
                     } else {
                         $cond = "ep_lang.value AS multilingual_lang,\n";
                     }
