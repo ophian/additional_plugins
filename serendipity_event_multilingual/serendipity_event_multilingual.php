@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '4.1.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.33');
+        $propbag->add('version',        '2.34');
         $propbag->add('configuration',  array('copytext', 'placement', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -711,8 +711,13 @@ class serendipity_event_multilingual extends serendipity_event
 
                 case 'frontend_fetchentries':
                 case 'frontend_fetchentry':
+                    $entrieslist = false;
                     if (!empty($this->lang_display)) {
                         $this->showlang = $this->lang_display;
+                    }
+
+                    if (IN_serendipity_admin && serendipity_checkPermission('adminEntries') && $serendipity['GET']['adminAction'] == 'editSelect') {
+                        $entrieslist = true;
                     }
 
                     if ($addData['source'] == 'search' && empty($this->showlang) && !empty($_SESSION['last_lang'])) {
@@ -720,23 +725,35 @@ class serendipity_event_multilingual extends serendipity_event
                         $this->showlang = $_SESSION['last_lang'];
                     }
 
-                    if (empty($this->showlang)) {
+                    if (empty($this->showlang) && !$entrieslist) {
                         return;
                     }
-                    $cond  = "multilingual_body.value AS multilingual_body,\n";
-                    $cond .= "multilingual_extended.value AS multilingual_extended,\n";
-                    $cond .= "multilingual_title.value AS multilingual_title,\n";
+
+                    if (!$entrieslist) {
+                        $cond  = "multilingual_body.value AS multilingual_body,\n";
+                        $cond .= "multilingual_extended.value AS multilingual_extended,\n";
+                        $cond .= "multilingual_title.value AS multilingual_title,\n";
+                    } else {
+                        $cond = "ep_lang.value AS multilingual_lang,\n";
+                    }
+
                     if (empty($eventData['addkey'])) {
                         $eventData['addkey'] = $cond;
                     } else {
                         $eventData['addkey'] .= $cond;
                     }
-                    $cond  = "\nLEFT OUTER JOIN {$serendipity['dbPrefix']}entryproperties multilingual_body
-                                                 ON (e.id = multilingual_body.entryid AND multilingual_body.property = 'multilingual_body_" . $this->showlang . "')";
-                    $cond .= "\nLEFT OUTER JOIN {$serendipity['dbPrefix']}entryproperties multilingual_extended
-                                                 ON (e.id = multilingual_extended.entryid AND multilingual_extended.property = 'multilingual_extended_" . $this->showlang . "')";
-                    $cond .= "\nLEFT OUTER JOIN {$serendipity['dbPrefix']}entryproperties multilingual_title
-                                                 ON (e.id = multilingual_title.entryid AND multilingual_title.property = 'multilingual_title_" . $this->showlang . "')";
+
+                    if (!$entrieslist) {
+                        $cond  = "\n                    LEFT OUTER JOIN {$serendipity['dbPrefix']}entryproperties multilingual_body
+                           ON (e.id = multilingual_body.entryid AND multilingual_body.property = 'multilingual_body_" . $this->showlang . "')";
+                        $cond .= "\n                    LEFT OUTER JOIN {$serendipity['dbPrefix']}entryproperties multilingual_extended
+                           ON (e.id = multilingual_extended.entryid AND multilingual_extended.property = 'multilingual_extended_" . $this->showlang . "')";
+                        $cond .= "\n                    LEFT OUTER JOIN {$serendipity['dbPrefix']}entryproperties multilingual_title
+                           ON (e.id = multilingual_title.entryid AND multilingual_title.property = 'multilingual_title_" . $this->showlang . "')";
+                    } else {
+                        $cond = "\n                    LEFT JOIN {$serendipity['dbPrefix']}entryproperties AS ep_lang
+                           ON (e.id = ep_lang.entryid AND ep_lang.property = 'lang_selected')\n                   ";
+                    }
 
                     if (!empty($this->lang_display)) {
                         // If lang_display is set - we want ONLY the entries which have translation
