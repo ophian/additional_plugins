@@ -3,6 +3,8 @@
 
  * Removed a requirement note
  * Added some margin and padding to backend sidebar list items
+ * Removed the to_integrate.zip with the
+   serendipity_event_sidebaritemcollapse plugin
 
 1.30:
 ----
