@@ -20,7 +20,7 @@
 @define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN_DESC', 'HTML of the Sidebar Hidder Link when the Sidebar is hidden. (例えば画像)');
 @define('PLUGIN_SIDEBAR_HIDER_ADMINLINK', 'サイドバーの可視状態管理');
 @define('PLUGIN_SIDEBAR_HIDER_CONF', 'サイドバー隠蔽設定');
-@define('PLUGIN_SIDEBAR_HIDER_CONF_DESC', 'Note: This plugin hides based on location and changes made to plugin order and placement will not be reflected here. Also the viewing permission system only works with Serendipity 0.9 and above.');
+@define('PLUGIN_SIDEBAR_HIDER_CONF_DESC', 'Note: This plugin hides based on location and changes made to plugin order and placement will not be reflected here.');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_HIDDEN', '隠す:');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_MEMBERS', 'メンバーのみ:');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_MYSELF', '自分のみ:');

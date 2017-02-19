@@ -21,7 +21,7 @@
 @define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN_DESC', 'HTML of the Sidebar Hidder Link when the Sidebar is hidden. (ie image)');
 @define('PLUGIN_SIDEBAR_HIDER_ADMINLINK', 'Manage Sidebar Visibility');
 @define('PLUGIN_SIDEBAR_HIDER_CONF', 'Sidebar Hider Configuration');
-@define('PLUGIN_SIDEBAR_HIDER_CONF_DESC', 'Note: This plugin hides based on location and changes made to plugin order and placement will not be reflected here. Also the viewing permission system only works with Serendipity 0.9 and above.');
+@define('PLUGIN_SIDEBAR_HIDER_CONF_DESC', 'Note: This plugin hides based on location and changes made to plugin order and placement will not be reflected here.');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_HIDDEN', 'Hidden:');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_EVERYONE', 'Any user:');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_MEMBERS', 'Members only:');

@@ -19,7 +19,7 @@
 @define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN_DESC', 'HTML kód odkazu "Schovat", pokud je postranní sloupec schovaný (napø. obrázek)');
 @define('PLUGIN_SIDEBAR_HIDER_ADMINLINK', 'Správce viditelnosti postranního sloupce');
 @define('PLUGIN_SIDEBAR_HIDER_CONF', 'Nastavení skrývání postranního sloupce');
-@define('PLUGIN_SIDEBAR_HIDER_CONF_DESC', 'Poznámka: Tento plugin schovává sloupce podle jejich umístìní. Zmìna poøadí pluginù nebude mít vliv. Pøístupová práva k prohlí¾ení sloupcù fungují pouze se Serendipity 0.9 a vy¹¹í.');
+@define('PLUGIN_SIDEBAR_HIDER_CONF_DESC', 'Poznámka: Tento plugin schovává sloupce podle jejich umístìní. Zmìna poøadí pluginù nebude mít vliv.');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_HIDDEN', 'Skrytý:');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_EVERYONE', 'Jakýkoliv u¾ivatel:');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_MEMBERS', 'Pouze pøihlá¹ení:');
