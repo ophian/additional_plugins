@@ -8610,7 +8610,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <file>lang_ja.inc.php</file>
 <file>serendipity_event_sidebarhider.php</file>
 <file>sidebarhider.js</file>
-<file>to_integrate.zip</file>
 <dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -8629,7 +8628,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_sidebarhider/lang_ja.inc.php</file>
     <file>serendipity_event_sidebarhider/serendipity_event_sidebarhider.php</file>
     <file>serendipity_event_sidebarhider/sidebarhider.js</file>
-    <file>serendipity_event_sidebarhider/to_integrate.zip</file>
     <file>serendipity_event_sidebarhider/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_sidebarhider/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_sidebarhider/UTF-8/lang_de.inc.php</file>
