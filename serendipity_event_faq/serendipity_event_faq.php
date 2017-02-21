@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian');
-        $propbag->add('version',      '1.26');
+        $propbag->add('version',      '1.27');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -1133,10 +1133,15 @@ class serendipity_event_faq extends serendipity_event
             $group     = 'GROUP BY id';
             $distinct  = '';
             $term      = str_replace('&quot;', '"', $term);
-            if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
-                $find_part = "MATCH(question,answer) AGAINST('$term' IN BOOLEAN MODE)";
+            if (@mb_detect_encoding($term, 'UTF-8', true)) {
+                $_term = str_replace('*', '', $term);
+                $find_part = "(question LIKE '%$_term%' OR answer LIKE '%$_term%')";
             } else {
-                $find_part = "MATCH(question,answer) AGAINST('$term')";
+                if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
+                    $find_part = "MATCH(question,answer) AGAINST('$term' IN BOOLEAN MODE)";
+                } else {
+                    $find_part = "MATCH(question,answer) AGAINST('$term')";
+                }
             }
         }
 
