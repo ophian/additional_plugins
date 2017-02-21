@@ -185,7 +185,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentsearch&lt;br /&gt;Durchsuche Kommentare mit der Schnellsuche&lt;/b&gt;&lt;br /&gt;Wenn dieses Plugin installiert ist, durchsucht die Schnellsuche Ihres Blogs auch die Kommentare.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 02 Feb 2017 19:09:28 +0100</pubDate>
+<pubDate>Tue, 21 Feb 2017 19:58:48 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_commentsearch</guid>
 </item>
 <item>
@@ -401,7 +401,7 @@
 <category>Event Plugins</category>
 <author>Falk Doering, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;FAQs&lt;/b&gt;&lt;br /&gt;Liste von Fragen und Antworten werden übersichtlich aufbereitet dargestellt.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 27 Oct 2016 14:55:22 +0200</pubDate>
+<pubDate>Tue, 21 Feb 2017 19:58:28 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_faq</guid>
 </item>
 <item>
@@ -428,7 +428,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_filter_entries&lt;br /&gt;Filtern von Einträgen im Frontend&lt;/b&gt;&lt;br /&gt;Ermöglich Besuchern die Einträge im Blog nach Kriterien zu durchsuchen/sortieren&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 28 Oct 2016 12:20:57 +0200</pubDate>
+<pubDate>Tue, 21 Feb 2017 20:05:12 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_filter_entries</guid>
 </item>
 <item>
@@ -833,7 +833,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilinguale Einträge&lt;/b&gt;&lt;br /&gt;Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 18 Feb 2017 15:01:41 +0100</pubDate>
+<pubDate>Tue, 21 Feb 2017 20:13:31 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -1141,7 +1141,7 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statische Seiten&lt;/b&gt;&lt;br /&gt;Verwaltet beliebige statische Seiten innerhalb des Blogs mit dem Blog-Design und allen Formatierungen. Fügt einen neuen Menüpunkt in der Admin-Oberfläche hinzu!&lt;br/&gt;For: Serendipity 2.0.99</content:encoded>
-<pubDate>Wed, 01 Feb 2017 10:18:09 +0100</pubDate>
+<pubDate>Tue, 21 Feb 2017 20:00:50 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>

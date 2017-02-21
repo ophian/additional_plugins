@@ -1290,9 +1290,9 @@
 <description>Wenn dieses Plugin installiert ist, durchsucht die Schnellsuche Ihres Blogs auch die Kommentare.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7</version>
+  <version>1.8</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-02-02</date>
+  <date>2017-02-21</date>
   <filelist>
 <dir name="serendipity_event_commentsearch">
 <file>.htaccess</file>
@@ -2932,9 +2932,9 @@
 <description>Liste von Fragen und Antworten werden übersichtlich aufbereitet dargestellt.</description>
 <maintainers><maintainer><name>Falk Doering, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.26</version>
+  <version>1.27</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-02-21</date>
   <filelist>
 <dir name="serendipity_event_faq">
 <file>.htaccess</file>
@@ -3125,9 +3125,9 @@
 <description>Ermöglich Besuchern die Einträge im Blog nach Kriterien zu durchsuchen/sortieren</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8.1</version>
+  <version>1.9</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-28</date>
+  <date>2017-02-21</date>
   <filelist>
 <dir name="serendipity_event_filter_entries">
 <file>.htaccess</file>
@@ -7056,9 +7056,9 @@
 <description>Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.34</version>
+  <version>2.35</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-02-18</date>
+  <date>2017-02-21</date>
   <filelist>
 <dir name="serendipity_event_multilingual">
 <file>.htaccess</file>
@@ -9180,9 +9180,9 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <description>Verwaltet beliebige statische Seiten innerhalb des Blogs mit dem Blog-Design und allen Formatierungen. Fügt einen neuen Menüpunkt in der Admin-Oberfläche hinzu!</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>5.17</version>
+  <version>5.18</version>
   <requirements:s9yVersion>2.0.99</requirements:s9yVersion>
-  <date>2017-02-01</date>
+  <date>2017-02-21</date>
   <filelist>
 <dir name="serendipity_event_staticpage">
 <file>.htaccess</file>
