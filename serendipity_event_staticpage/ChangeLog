@@ -1,3 +1,11 @@
+5.18:
+----
+
+ * Allow unicode searches for Chinese / Japanese like languages, see:
+        https://board.s9y.org/viewtopic.php?f=4&t=15112
+    This also helps when using the full unicode approach described
+    in the Serendipity Styx 2.1-beta1 NEWS changelog file.
+
 5.17:
 ----
 

@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.17');
+        $propbag->add('version', '5.18');
         $propbag->add('requirements', array(
             'serendipity' => '2.0.99',
             'smarty'      => '3.1.0',
@@ -3124,10 +3124,15 @@ class serendipity_event_staticpage extends serendipity_event
             $group     = 'GROUP BY id';
             $distinct  = '';
             $term      = str_replace('&quot;', '"', $term);
-            if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
-                $find_part = "MATCH(headline,content) AGAINST('{$term}' IN BOOLEAN MODE)";
+            if (@mb_detect_encoding($term, 'UTF-8', true)) {
+                $_term = str_replace('*', '', $term);
+                $find_part = "(headline LIKE '%$_term%' OR content LIKE '%$_term%')";
             } else {
-                $find_part = "MATCH(headline,content) AGAINST('{$term}')";
+                if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
+                    $find_part = "MATCH(headline,content) AGAINST('{$term}' IN BOOLEAN MODE)";
+                } else {
+                    $find_part = "MATCH(headline,content) AGAINST('{$term}')";
+                }
             }
         }
 
