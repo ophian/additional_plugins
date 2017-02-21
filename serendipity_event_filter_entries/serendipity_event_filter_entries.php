@@ -19,7 +19,7 @@ class serendipity_event_filter_entries extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FILTER_ENTRIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian');
-        $propbag->add('version',       '1.8.1');
+        $propbag->add('version',       '1.9');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -256,10 +256,15 @@ class serendipity_event_filter_entries extends serendipity_event
                                 $term = serendipity_mb('strtolower', $term);
                                 $filter[] = "(lower(title) LIKE '%$term%' OR lower(body) LIKE '%$term%' OR lower(extended) LIKE '%$term%')";
                             } elseif ($full && $serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli') {
-                                if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
-                                    $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "' IN BOOLEAN MODE)";
+                                if (@mb_detect_encoding($term, 'UTF-8', true)) {
+                                    $_term = str_replace('*', '', $term);
+                                    $filter[] = "(title LIKE '%$_term%' OR body LIKE '%$_term%' OR extended LIKE '%$_term%')";
                                 } else {
-                                    $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "')";
+                                    if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
+                                        $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "' IN BOOLEAN MODE)";
+                                    } else {
+                                        $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "')";
+                                    }
                                 }
                             } else {
                                 $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "')";
