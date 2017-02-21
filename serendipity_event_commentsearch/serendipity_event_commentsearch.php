@@ -22,7 +22,7 @@ class serendipity_event_commentsearch extends serendipity_event
         ));
 
         $propbag->add('author', 'Garvin Hicking, Ian');
-        $propbag->add('version', '1.7');
+        $propbag->add('version', '1.8');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -64,10 +64,15 @@ class serendipity_event_commentsearch extends serendipity_event
             $group     = 'GROUP BY id';
             $distinct  = '';
             $term      = str_replace('&quot;', '"', $term);
-            if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
-                $find_part = "MATCH(c.title,c.body) AGAINST('$term' IN BOOLEAN MODE)";
+            if (@mb_detect_encoding($term, 'UTF-8', true)) {
+                $_term = str_replace('*', '', $term);
+                $find_part = "(c.title LIKE '%$_term%' OR c.body LIKE '%$_term%')";
             } else {
-                $find_part = "MATCH(c.title,c.body) AGAINST('$term')";
+                if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
+                    $find_part = "MATCH(c.title,c.body) AGAINST('$term' IN BOOLEAN MODE)";
+                } else {
+                    $find_part = "MATCH(c.title,c.body) AGAINST('$term')";
+                }
             }
         }
 
