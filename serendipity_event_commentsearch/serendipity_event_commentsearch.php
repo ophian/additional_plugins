@@ -64,7 +64,7 @@ class serendipity_event_commentsearch extends serendipity_event
             $group     = 'GROUP BY id';
             $distinct  = '';
             $term      = str_replace('&quot;', '"', $term);
-            if (@mb_detect_encoding($term, 'UTF-8', true)) {
+            if (@mb_detect_encoding($term, 'UTF-8', true) && @mb_strlen($term, 'utf-8') < strlen($term)) {
                 $_term = str_replace('*', '', $term);
                 $find_part = "(c.title LIKE '%$_term%' OR c.body LIKE '%$_term%')";
             } else {

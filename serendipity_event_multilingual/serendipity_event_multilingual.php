@@ -775,7 +775,7 @@ class serendipity_event_multilingual extends serendipity_event
                             $term = serendipity_mb('strtolower', $term);
                             $cond['find_part'] .= " OR (lower(multilingual_body.value) LIKE '%$term%' OR lower(multilingual_extended.value) LIKE '%$term%' OR lower(multilingual_title.value) LIKE '%$term%')";
                         } else {
-                            if (@mb_detect_encoding($term, 'UTF-8', true)) {
+                            if (@mb_detect_encoding($term, 'UTF-8', true) && @mb_strlen($term, 'utf-8') < strlen($term)) {
                                 $_term = str_replace('*', '', $term);
                                 $cond['find_part'] = " OR (multilingual_body.value LIKE '%$_term%' OR multilingual_extended.value LIKE '%$_term%' OR multilingual_title.value LIKE '%$_term%')";
                             } else {

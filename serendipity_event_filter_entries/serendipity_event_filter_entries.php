@@ -256,7 +256,7 @@ class serendipity_event_filter_entries extends serendipity_event
                                 $term = serendipity_mb('strtolower', $term);
                                 $filter[] = "(lower(title) LIKE '%$term%' OR lower(body) LIKE '%$term%' OR lower(extended) LIKE '%$term%')";
                             } elseif ($full && $serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli') {
-                                if (@mb_detect_encoding($term, 'UTF-8', true)) {
+                                if (@mb_detect_encoding($term, 'UTF-8', true) && @mb_strlen($term, 'utf-8') < strlen($term)) {
                                     $_term = str_replace('*', '', $term);
                                     $filter[] = "(title LIKE '%$_term%' OR body LIKE '%$_term%' OR extended LIKE '%$_term%')";
                                 } else {
