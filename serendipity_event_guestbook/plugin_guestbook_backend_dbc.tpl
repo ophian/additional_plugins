@@ -1,5 +1,5 @@
 {*
- plugin_guestbook_backend_dbc.tpl v.3.62 2016-10-27 Ian
+ plugin_guestbook_backend_dbc.tpl v.3.63 2017-02-27 Ian
  *}
 
 <!-- plugin_guestbook_backend_dbc start -->
@@ -63,7 +63,7 @@
     {/if}
     {if $is_guestbook_admin_insfile_msg || $is_guestbook_admin_delfile_msg}
         <div class="msg_success"><span class="icon-ok"></span> {$plugin_gb_dbc_message}!</div>
-    {/if} aria-hidden="true"
+    {/if}
     {if $is_guestbook_admin_dbempty}
         <h3>{$CONST.PLUGIN_GUESTBOOK_ADMIN_DBC_NIXDA_TITLE|upper}</h3>
         <div class="msg_error"><span class="icon-attention" aria-hidden="true"></span> {$CONST.PLUGIN_GUESTBOOK_ADMIN_DBC_NIXDA_DESC}!</div>
