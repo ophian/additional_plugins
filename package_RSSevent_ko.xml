@@ -185,7 +185,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentsearch&lt;br /&gt;Searches comments on quicksearch&lt;/b&gt;&lt;br /&gt;If this plugin is installed, the quicksearch on your blog will also search through comments on your blog&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Tue, 21 Feb 2017 19:58:48 +0100</pubDate>
+<pubDate>Wed, 22 Feb 2017 10:13:34 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_commentsearch</guid>
 </item>
 <item>
@@ -401,7 +401,7 @@
 <category>Event Plugins</category>
 <author>Falk Doering, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;Frequently Asked Questions&lt;/b&gt;&lt;br /&gt;Edit the Frequently Asked Question.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Tue, 21 Feb 2017 19:58:28 +0100</pubDate>
+<pubDate>Wed, 22 Feb 2017 10:13:34 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_faq</guid>
 </item>
 <item>
@@ -428,7 +428,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_filter_entries&lt;br /&gt;Frontend entry filtering&lt;/b&gt;&lt;br /&gt;Allows visitors to filter/order your entries by several options&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 21 Feb 2017 20:05:12 +0100</pubDate>
+<pubDate>Wed, 22 Feb 2017 10:13:34 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_filter_entries</guid>
 </item>
 <item>
@@ -572,7 +572,7 @@
 <category>Event Plugins</category>
 <author>Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Guestbook&lt;/b&gt;&lt;br /&gt;Shows a guestbook inside your blog with your normal blog design.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Thu, 02 Feb 2017 14:26:13 +0100</pubDate>
+<pubDate>Mon, 27 Feb 2017 09:40:40 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -833,7 +833,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;다중 언어로 글 작성&lt;/b&gt;&lt;br /&gt;여러 언어 버전으로 된 글을 작성할 수 있습니다&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 21 Feb 2017 20:13:31 +0100</pubDate>
+<pubDate>Wed, 22 Feb 2017 10:13:34 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -1141,7 +1141,7 @@ Snap.com is a free service, but be aware that snap.com *might* be able to collec
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;고정 페이지&lt;/b&gt;&lt;br /&gt;블로그의 디자인을 그대로 따르는 고정 페이지를 블로그 속에 보여줍니다. 관리 메뉴에 새 메뉴 아이템을 생성합니다.&lt;br/&gt;For: Serendipity 2.0.99</content:encoded>
-<pubDate>Tue, 21 Feb 2017 20:00:50 +0100</pubDate>
+<pubDate>Wed, 22 Feb 2017 10:13:34 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
