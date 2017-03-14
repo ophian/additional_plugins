@@ -12,7 +12,7 @@ require_once('tmobile.php');
 require_once('o2.php');
 
 // Default values
-define('POPFETCHER_VERSION',  '1.46');       // This version of Popfetcher
+define('POPFETCHER_VERSION',  '1.48');       // This version of Popfetcher
 define('DEFAULT_ADMINMENU',   'true');       // True if run as sidebar plugin. False if external plugin.
 define('DEFAULT_HIDENAME',    'popfetcher'); // User should set this to something unguessable
 define('DEFAULT_MAILSERVER',  '');
@@ -32,29 +32,23 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-require_once(dirname(__FILE__). '/lang_en.inc.php');
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_popfetcher extends serendipity_event
 {
 
     var $title = PLUGIN_MF_NAME;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $propbag->add('name',         PLUGIN_MF);
         $propbag->add('description',  PLUGIN_MF_DESC);
         $propbag->add('stackable',    false);
         $propbag->add('author',       'Jason Levitt');
         $propbag->add('version',      POPFETCHER_VERSION);
         $propbag->add('requirements', array(
-            'serendipity' => '0.8',
-            'php' => '4.1.0'
+            'serendipity' => '1.6',
+            'php' => '5.1.0'
         ));
 
         $propbag->add('event_hooks',   array(
@@ -64,33 +58,63 @@ class serendipity_event_popfetcher extends serendipity_event
             'cronjob'                                          => true
         ));
         $propbag->add('groups', array('BACKEND_FEATURES'));
-        $propbag->add('configuration', array('cronjob', 'adminmenu', 'hidename', 'author', 'mailserver', 'mailuser', 'mailpass', 'onlyfrom', 'category', 'maildir', 'subfolder', 'blogflag', 'plaintext_is_body', 'plaintext_use_extended', 'textpref', 'adflag', 'striptext', 'striptagsflag', 'splittext', 'usetext', 'publishflag', 'default_moderate', 'default_comments', 'thumbnail_view',
-        'usedate', 
-        'deleteflag', 'apopflag', 'mailport', 'timeout', 'debug', 'debug_mail'));
+        $propbag->add('configuration', array(
+            'cronjob',
+            'adminmenu',
+            'hidename',
+            'author',
+            'mailserver',
+            'mailuser',
+            'mailpass',
+            'onlyfrom',
+            'category',
+            'maildir',
+            'subfolder',
+            'blogflag',
+            'plaintext_is_body',
+            'plaintext_use_extended',
+            'textpref',
+            'adflag',
+            'striptext',
+            'striptagsflag',
+            'splittext',
+            'usetext',
+            'publishflag',
+            'default_moderate',
+            'default_comments',
+            'thumbnail_view',
+            'usedate',
+            'deleteflag',
+            'apopflag',
+            'mailport',
+            'timeout',
+            'debug',
+            'debug_mail'
+        ));
     }
-    
-    function introspect_config_item($name, &$propbag) {
 
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'usedate':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_MF_USEDATE);
                 $propbag->add('description', '');
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'subfolder':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_MF_SUBFOLDER);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'debug':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_MF_DEBUG);
                 $propbag->add('description', '');
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'debug_mail':
@@ -132,14 +156,14 @@ class serendipity_event_popfetcher extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        MF_TEXTBODY);
                 $propbag->add('description', MF_TEXTBODY_DESC);
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'plaintext_use_extended':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        MF_TEXTBODY_FIRST);
                 $propbag->add('description', MF_TEXTBODY_FIRST_DESC);
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'onlyfrom':
@@ -291,27 +315,28 @@ class serendipity_event_popfetcher extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_MF_ADDFLAG);
                 $propbag->add('description', PLUGIN_MF_ADDFLAG_DESC);
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'default_comments':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        COMMENTS_ENABLE);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'default_moderate':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        COMMENTS_MODERATE);
                 $propbag->add('description', '');
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
+
             case 'thumbnail_view':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        THUMBNAIL_VIEW);
                 $propbag->add('description', THUMBNAIL_VIEW_DESC);
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             default:
@@ -320,38 +345,41 @@ class serendipity_event_popfetcher extends serendipity_event
         return true;
     }
 
-    function out($msg, $skip_out = false) {
+    function out($msg, $skip_out = false)
+    {
         global $serendipity;
         static $debug = null;
-        
+
         if ($debug === null) {
-            $debug = serendipity_db_bool($this->get_config('debug'));
+            $debug = serendipity_db_bool($this->get_config('debug', 'false'));
         }
-        
+
         if ($debug) {
             $fp = @fopen($serendipity['serendipityPath'] . '/uploads/popfetcher-' . date('Y-m') . '.log', 'a');
         }
-        
+
         if ($fp) {
             fwrite($fp, date('Y-m-d H:i') . ': ' . $msg . "\n");
             fclose($fp);
         }
-        
+
         if ($debug || $skip_out === false) {
             echo $msg;
-        }    
+        }
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_MF_NAME;
     }
 
-    function workComment($id, $commentInfo, $type = 'NORMAL', $source = 'internal') {
+    function workComment($id, $commentInfo, $type = 'NORMAL', $source = 'internal')
+    {
         global $serendipity;
 
         $query = "SELECT id, allow_comments, moderate_comments, last_modified, timestamp, title FROM {$serendipity['dbPrefix']}entries WHERE id = '". (int)$id ."'";
         $ca    = serendipity_db_query($query, true);
-    
+
         $commentInfo['type'] = $type;
         $commentInfo['source'] = $source;
         // serendipity_plugin_api::hook_event('frontend_saveComment', $ca, $commentInfo);
@@ -367,42 +395,42 @@ class serendipity_event_popfetcher extends serendipity_event
             $status        = serendipity_db_escape_string(isset($commentInfo['status']) ? $commentInfo['status'] : (serendipity_db_bool($ca['moderate_comments']) ? 'pending' : 'approved'));
             $t             = serendipity_db_escape_string(isset($commentInfo['time']) ? $commentInfo['time'] : time());
             $referer       = substr((isset($_SESSION['HTTP_REFERER']) ? serendipity_db_escape_string($_SESSION['HTTP_REFERER']) : ''), 0, 200);
-    
+
             $query = "SELECT a.email, e.title, a.mail_comments, a.mail_trackbacks
-                     FROM {$serendipity['dbPrefix']}entries e, {$serendipity['dbPrefix']}authors a
-                     WHERE e.id  = '". (int)$id ."'
-                       AND e.isdraft = 'false'
-                       AND e.authorid = a.authorid";
+                        FROM {$serendipity['dbPrefix']}entries e, {$serendipity['dbPrefix']}authors a
+                       WHERE e.id  = '". (int)$id ."'
+                         AND e.isdraft = 'false'
+                         AND e.authorid = a.authorid";
             if (!serendipity_db_bool($serendipity['showFutureEntries'])) {
                 $query .= " AND e.timestamp <= " . serendipity_db_time();
-    
+
             }
-    
+
             $row = serendipity_db_query($query, true); // Get info on author/entry
             if (!is_array($row) || empty($id)) {
                 // No associated entry found.
                 return false;
             }
-    
+
             if (isset($commentInfo['subscribe'])) {
                 $subscribe = 'true';
             } else {
                 $subscribe = 'false';
             }
-    
+
             $query  = "INSERT INTO {$serendipity['dbPrefix']}comments (entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer)";
             $query .= " VALUES ('". (int)$id ."', '$parentid', '$ip', '$name', '$email', '$url', '$commentsFixed', '$type', '$t', '$title', '$subscribe', '$status', '$referer')";
-    
+
             serendipity_db_query($query);
             $cid = serendipity_db_insert_id('comments', 'id');
-    
+
             // Send mail to the author if he chose to receive these mails, or if the comment is awaiting moderation
             if (serendipity_db_bool($ca['moderate_comments'])
                 || ($type == 'NORMAL' && serendipity_db_bool($row['mail_comments']))
                 || ($type == 'TRACKBACK' && serendipity_db_bool($row['mail_trackbacks']))) {
                 serendipity_sendComment($cid, $row['email'], $name, $email, $url, $id, $row['title'], $comments, $type, serendipity_db_bool($ca['moderate_comments']));
             }
-    
+
             serendipity_approveComment($cid, $id, true);
 
             serendipity_purgeEntry($id, $t);
@@ -412,20 +440,23 @@ class serendipity_event_popfetcher extends serendipity_event
         }
     }
 
-    function nl2br_callback($matches) {
+    function nl2br_callback($matches)
+    {
         return str_replace(array("\n", "\r"), array(" ", " "), $matches[0]);
     }
 
-    function stripsubject($subject) {
+    function stripsubject($subject)
+    {
         $s = preg_replace('@((Re|Aw|Wg)\^*[0-9]*\s*:\s*)+@imsU', '', $subject);
         $s = trim($s);
         return $s;
     }
 
-    function workEntry($subject, &$msgbody, $authorid, &$postex, &$cid, &$s) {
+    function workEntry($subject, &$msgbody, $authorid, &$postex, &$cid, &$s)
+    {
         global $serendipity;
-        
-        $striptagsflag = serendipity_db_bool($this->get_config('striptagsflag'));
+
+        $striptagsflag = serendipity_db_bool($this->get_config('striptagsflag', 'false'));
         $publishflag   = serendipity_db_bool($this->get_config('publishflag'));
         $splittext     = $this->get_config('splittext', '');
         $usetext       = $this->get_config('usetext', '');
@@ -453,9 +484,9 @@ class serendipity_event_popfetcher extends serendipity_event
 
         $entry['title']    = $subject;
         $entry['body']     = $msgbody;
-        
+
         #echo "Entry: <pre>" . $entry['body'] . "</pre>";
-        
+
         if ($striptagsflag) {
             $entry['body'] = strip_tags($entry['body']);
         }
@@ -474,8 +505,8 @@ class serendipity_event_popfetcher extends serendipity_event
             }
         }
 
-        $entry['allow_comments']    = serendipity_db_bool($this->get_config('default_comments', true));
-        $entry['moderate_comments'] = serendipity_db_bool($this->get_config('default_moderate', false));;
+        $entry['allow_comments']    = serendipity_db_bool($this->get_config('default_comments', 'true'));
+        $entry['moderate_comments'] = serendipity_db_bool($this->get_config('default_moderate', 'false'));
 
         if (!empty($usetext)) {
             // Only match the text we specified.
@@ -494,15 +525,15 @@ class serendipity_event_popfetcher extends serendipity_event
 
         $this->stripText($entry['body']);
         $this->stripText($entry['extended']);
-        
-        if (serendipity_db_bool($this->get_config('usedate'))) {
+
+        if (serendipity_db_bool($this->get_config('usedate', 'false'))) {
             $entry['timestamp'] = strtotime($s->headers['date']);
         }
-        
+
         // Fix up Spaces in between HTML tags so that nl2br does not catch them.
         $entry['body']     = preg_replace_callback('@<(([^>]*)[\n\r]([^>]*))>@imsU', array($this, 'nl2br_callback'), $entry['body']);
         $entry['extended'] = preg_replace_callback('@<(([^>]*)[\n\r]([^>]*))>@imsU', array($this, 'nl2br_callback'), $entry['extended']);
-        
+
         $entry['body']     = preg_replace_callback('@<(embed|object)[^>]*>(.*)</(embed|object)>@imsU', array($this, 'nl2br_callback'), $entry['body']);
         $entry['extended'] = preg_replace_callback('@<(embed|object)[^>]*>(.*)</(embed|object)>@imsU', array($this, 'nl2br_callback'), $entry['extended']);
 
@@ -513,7 +544,7 @@ class serendipity_event_popfetcher extends serendipity_event
             $users   = serendipity_fetchUsers($authorid);
             $user    = $users[0];
             $comment['comment']   = $entry['body'] . $entry['extended'];
-            
+
             // Comments do not support HTML. Try to replace as much as possible to BBCode syntax.
             $comment['comment'] = str_replace(
                 array(
@@ -537,9 +568,9 @@ class serendipity_event_popfetcher extends serendipity_event
                     '<<',
                     '=>',
                     '<='
-                    
+
                 ),
-                
+
                 array(
                     '[b]',
                     '[b]',
@@ -550,11 +581,11 @@ class serendipity_event_popfetcher extends serendipity_event
                     '[/b]',
                     '[/i]',
                     '[/i]',
-                    
+
                     '',
                     '',
                     '',
-                    
+
                     '-&gt;',
                     '&lt;-',
                     '&gt;&gt;',
@@ -562,18 +593,18 @@ class serendipity_event_popfetcher extends serendipity_event
                     '=&gt;',
                     '&lt;='
                 ),
-                
+
                 $comment['comment']
             );
             $comment['comment'] = preg_replace('@<img[^>]+src=["\'](.+)["\'][^>]*>@imsU', '[img]\1[/img]', $comment['comment']);
             $comment['comment'] = preg_replace('@<a[^>]+href=["\'](.+)["\'][^>]*>(.+)</a>@imsU', '[url=\1]\2[/url]', $comment['comment']);
             $comment['comment'] = preg_replace('@<([^>]+)>@imsU', '(\1)', $comment['comment']);
-                                    
+
             $comment['name']      = $user['realname'];
             $entrysubject = $this->stripsubject($subjmatch[2]);
-            
-            $entry = serendipity_db_query("SELECT * 
-                                             FROM {$serendipity['dbPrefix']}entries 
+
+            $entry = serendipity_db_query("SELECT *
+                                             FROM {$serendipity['dbPrefix']}entries
                                             WHERE title LIKE '%" . serendipity_db_escape_string($entrysubject) . "%'
                                          ORDER BY timestamp DESC");
             $this->out('<br />' . PLUGIN_MF_REPLY . ' (' . $entrysubject . ', #' . $entry[0]['id'] . ')');
@@ -585,7 +616,7 @@ class serendipity_event_popfetcher extends serendipity_event
             } else {
                 $this->out('<br />' . PLUGIN_MF_REPLY_ERROR2 . "<br />\n" . var_dump($scret));
             }
-            
+
         } else {
             $id = serendipity_updertEntry($entry);
             $this->out('<br />' . MF_MSG15 . ': ' . $id);
@@ -594,7 +625,8 @@ class serendipity_event_popfetcher extends serendipity_event
         return $entry;
     }
 
-    function captureText($delim, &$text) {
+    function captureText($delim, &$text)
+    {
         $delim = trim($delim);
         if (empty($delim)) {
             return true;
@@ -606,7 +638,8 @@ class serendipity_event_popfetcher extends serendipity_event
         return true;
     }
 
-    function stripText(&$text) {
+    function stripText(&$text)
+    {
         static $stext = null;
 
         if ($stext === null) {
@@ -620,20 +653,21 @@ class serendipity_event_popfetcher extends serendipity_event
                 $text = $parts[0];
             }
         }
-        
+
         // preg_replace('@<
         // preg_replace('@<(object|embed|img|param)[^>]*>(.*)
 
         return true;
     }
 
-    function decode($string, $charset, $debug = false) {
+    function decode($string, $charset, $debug = false)
+    {
         if ($debug) {
             $this->out("STRING: " . $string . "<br />\n", true);
             $this->out("CHARSET: " . $charset . "<br />\n", true);
             $this->out("LOCAL CHARSET: " . LANG_CHARSET . "<br />\n", true);
         }
-        
+
         if ($charset == 'us-ascii') {
             $charset = 'iso-8859-1';
         }
@@ -647,7 +681,7 @@ class serendipity_event_popfetcher extends serendipity_event
         if (function_exists('iconv')) {
             return iconv($charset, LANG_CHARSET . '//IGNORE', $string);
         }
-        
+
         // RECODE recoding
         if (function_exists('recode_string')) {
             return recode_string($charset . '..' . LANG_CHARSET, $string);
@@ -667,21 +701,16 @@ class serendipity_event_popfetcher extends serendipity_event
 
     }
 
-    function cleanEmail($email) {
+    function cleanEmail($email)
+    {
         return preg_replace('/^[^<]*<([^>]*)>.*$/','$1',$email);
     }
-    
-    function handleImage($p, &$debug, &$debug_file, &$tmobileflag, &$adflag, &$dirpath, &$list_virus, &$list_ignore, &$plaintext_is_body_flag,
-        &$firsttext,
-        &$plaintext_use_extended_flag,
-        &$postex,
-        &$postbody,
-        &$dupcount,
-        &$maildir,
-        &$authorid,
-        &$list_imagetype,
-        &$list_imageext,
-        &$subject) {
+
+    function handleImage($p, &$debug, &$debug_file, &$tmobileflag, &$adflag,
+                        &$dirpath, &$list_virus, &$list_ignore, &$plaintext_is_body_flag,
+                        &$firsttext, &$plaintext_use_extended_flag, &$postex, &$postbody, &$dupcount,
+                        &$maildir, &$authorid, &$list_imagetype, &$list_imageext, &$subject)
+    {
         global $serendipity;
 
         if ($debug_file !== null || $debug) {
@@ -790,10 +819,10 @@ class serendipity_event_popfetcher extends serendipity_event
         // Make sure images are displayed
         // $this->out( "Now we have to put the image into the Text <br />\n");
         // Do we want to have a thumbnail or full picture? thumbnail_view
-        
+
         if (in_array($ltype, $list_imagetype) OR in_array($ext, $list_imageext)) {
             // We have an image here!
-            if (!serendipity_db_bool($this->get_config('thumbnail_view', true))) {
+            if (!serendipity_db_bool($this->get_config('thumbnail_view', 'true'))) {
                 $displayed_file = $filename;
                 $displayed_class = "full_popfetcherimage";
             } else {
@@ -802,7 +831,7 @@ class serendipity_event_popfetcher extends serendipity_event
             }
             $attfile = $serendipity['serendipityHTTPPath'].$serendipity['uploadHTTPPath'].$maildir.$filename;
             $attlink = '<a class="'. $displayed_class .'" href="' . $attfile . '" target="_blank"><img src="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$displayed_file.'" alt="'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($this->stripsubject($subject)) : htmlspecialchars($this->stripsubject($subject), ENT_COMPAT, LANG_CHARSET)).'" /></a>';
-            
+
             if ($this->inline_picture($p->headers['content-id'], $postbody, $postex, $attfile, $attlink)) {
                 return true;
             }
@@ -842,16 +871,16 @@ class serendipity_event_popfetcher extends serendipity_event
         $this->out( '<br />'.MF_MSG13.$filename . '<br />');
 
     }
-    
 
-    function inline_picture($cid, &$postbody, &$postex, $local_cid, $local_cid_link = '') {
+    function inline_picture($cid, &$postbody, &$postex, $local_cid, $local_cid_link = '')
+    {
         global $serendipity;
         static $inline_count = 0;
-        
+
         $inline_count++;
-        
+
         $cid = str_replace(array('<', '>'), array('', ''), $cid);
-        
+
         if ($this->debug) {
         	$this->out('<br />Scanning for inlinepic: ' . $cid . ' (and [attach:' . $inline_count . '])<br />');
         }
@@ -872,7 +901,7 @@ class serendipity_event_popfetcher extends serendipity_event
                 $postbody[$idx] = str_replace('[attach:' . $inline_count . ']', $local_cid_link, $pb);
             }
         }
-            
+
         foreach($postex AS $idx => $pb) {
             if (stristr($pb, 'cid:' . $cid)) {
 				if ($this->debug) {
@@ -892,15 +921,16 @@ class serendipity_event_popfetcher extends serendipity_event
         if ($this->debug) {
           $this->out('Inlinepic result: ' . ($has_match ? 'true' : 'false') . '<br />');
         }
-	return $has_match;
+        return $has_match;
     }
 
-    function workPopfetcher(&$eventData) {
+    function workPopfetcher(&$eventData)
+    {
         global $serendipity;
         static $debug = null;
-        
+
         if ($debug === null) {
-            $debug = $this->debug = serendipity_db_bool($this->get_config('debug'));
+            $debug = $this->debug = serendipity_db_bool($this->get_config('debug', 'false'));
         }
 
         // updertEntry() will not function unless this is set:
@@ -929,18 +959,18 @@ class serendipity_event_popfetcher extends serendipity_event
         $mailuser      = trim($this->get_config('mailuser'));
         $mailpass      = trim($this->get_config('mailpass'));
         $timeout       = $this->get_config('timeout');
-        $deleteflag    = serendipity_db_bool($this->get_config('deleteflag'));
-        $apopflag      = serendipity_db_bool($this->get_config('apopflag'));
-        $blogflag      = serendipity_db_bool($this->get_config('blogflag'));
-        $striptagsflag = serendipity_db_bool($this->get_config('striptagsflag'));
+        $deleteflag    = serendipity_db_bool($this->get_config('deleteflag', 'true'));
+        $apopflag      = serendipity_db_bool($this->get_config('apopflag', 'false'));
+        $blogflag      = serendipity_db_bool($this->get_config('blogflag', 'true'));
+        $striptagsflag = serendipity_db_bool($this->get_config('striptagsflag', 'false'));
         $publishflag   = serendipity_db_bool($this->get_config('publishflag'));
         $onlyfrom      = $this->get_config('onlyfrom', '');
         $maildir       = trim($this->get_config('maildir'));
         $category      = trim($this->get_config('category'));
-        $adflag        = serendipity_db_bool($this->get_config('adflag'));
+        $adflag        = serendipity_db_bool($this->get_config('adflag', 'true'));
 
-        $plaintext_is_body_flag      = serendipity_db_bool($this->get_config('plaintext_is_body'));
-        $plaintext_use_extended_flag = serendipity_db_bool($this->get_config('plaintext_use_extended'));
+        $plaintext_is_body_flag      = serendipity_db_bool($this->get_config('plaintext_is_body', 'true'));
+        $plaintext_use_extended_flag = serendipity_db_bool($this->get_config('plaintext_use_extended', 'true'));
 
         $list_virus     = array('.pif', '.vbs', '.scr', '.bat', '.com', '.exe');
         $list_imagetype = array('jpg', 'jpeg', 'gif', 'png', 'x-png', 'pjpeg');
@@ -949,7 +979,7 @@ class serendipity_event_popfetcher extends serendipity_event
 
         $output  = '';
         $dirpath = $serendipity['serendipityPath'] . $serendipity['uploadPath'] . $maildir;
-        
+
         $dupcount = 0;
 
         // Upload directory must end with a slash character
@@ -965,18 +995,18 @@ class serendipity_event_popfetcher extends serendipity_event
             $this->out('<br />'.$output.'<br />');
             return true;
         }
-        
-        if (serendipity_db_bool($this->get_config('subfolder'))) {
+
+        if (serendipity_db_bool($this->get_config('subfolder', 'true'))) {
             $dirpath = $dirpath . '/' . date('Y');
             if (!is_dir($dirpath)) {
                 mkdir($dirpath);
             }
-    
+
             $dirpath = $dirpath . '/' . date('m') . '/';
             if (!is_dir($dirpath)) {
                 mkdir($dirpath);
             }
-            
+
             $maildir .= date('Y') . '/' . date('m') . '/';
         }
         $maildir = str_replace('//', '/', $maildir);
@@ -1095,13 +1125,13 @@ class serendipity_event_popfetcher extends serendipity_event
         $params['decode_headers'] = true;
 
         // Process each email msg
-        foreach ($Message as $M) {
+        foreach($Message AS $M) {
 
             $decode = new mimeDecode($M);
             #$this->out(print_r($M, true));
-            
+
             $s = $decode->decode($params);
-            
+
             #$this->out(print_r($s, true));
 
             if ($debug_file !== null) {
@@ -1122,7 +1152,7 @@ class serendipity_event_popfetcher extends serendipity_event
                 $this->out('<br />'.sprintf(MF_ERROR_ONLYFROM, '"' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($from) : htmlspecialchars($from, ENT_COMPAT, LANG_CHARSET)) . '"', '"' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($onlyfrom) : htmlspecialchars($onlyfrom, ENT_COMPAT, LANG_CHARSET)) . '"'));
                 continue;
             }
-            
+
             if (empty($s->ctype_parameters['charset'])) {
                 $s->ctype_parameters['charset'] = 'UTF-8';
             }
@@ -1145,7 +1175,7 @@ class serendipity_event_popfetcher extends serendipity_event
                 // We don't have tons of authors .. like two so this isn't a problem
                 // If I wanted this to be "production" quality, I would have to add
                 // a new s9y function that let you retrieve an author given an email address
-                // I suppose I could go with a convention that the base name of the 
+                // I suppose I could go with a convention that the base name of the
                 // email address had to be the author's name too.  Lookup by name is
                 // supported by s9y.
                 $auths = serendipity_fetchUsers();
@@ -1165,7 +1195,7 @@ class serendipity_event_popfetcher extends serendipity_event
             } else {
                 $useAuthor = $authorid;
             }
-            
+
             $postattach       = array();
             $postbody         = array();
             $postex           = array();
@@ -1178,7 +1208,7 @@ class serendipity_event_popfetcher extends serendipity_event
             // A mail message with attachments is a series of "parts"
             if ((isset($s->parts)) and (is_array($s->parts))) {
                 if ($debug_file !== null || $debug) $this->out( '<pre>' . print_r($s->parts, true) . '</pre>');
-                
+
                 $textpref = $this->get_config('textpref');
                 if ($textpref != 'both') {
                     $has_html = false;
@@ -1203,7 +1233,7 @@ class serendipity_event_popfetcher extends serendipity_event
                             $parts_text[] = $idx;
                         }
                     }
-                    
+
                     if ($debug_file !== null || $debug) {
                         $this->out( "Preference is: $textpref.<br />\n");
                     }
@@ -1235,7 +1265,7 @@ class serendipity_event_popfetcher extends serendipity_event
                     }
                 }
 
-                foreach($s->parts as $p) {
+                foreach($s->parts AS $p) {
 
                     if ($debug_file !== null || $debug) {
                         $this->out( "Analyzing mail:<br />
@@ -1254,17 +1284,10 @@ class serendipity_event_popfetcher extends serendipity_event
                           OR
                         ( !empty($p->body) AND $p->ctype_primary == 'image') ) {
 
-                        $this->handleImage($p, $debug, $debug_file, $tmobileflag, $adflag, $dirpath, $list_virus, $list_ignore, $plaintext_is_body_flag,
-        $firsttext,
-        $plaintext_use_extended_flag,
-        $postex,
-        $postbody,
-        $dupcount,
-        $maildir,
-        $authorid,
-        $list_imagetype,
-        $list_imageext,
-        $subject);
+                        $this->handleImage( $p, $debug, $debug_file, $tmobileflag,
+                                            $adflag, $dirpath, $list_virus, $list_ignore, $plaintext_is_body_flag,
+                                            $firsttext, $plaintext_use_extended_flag, $postex, $postbody, $dupcount,
+                                            $maildir, $authorid, $list_imagetype, $list_imageext, $subject);
                     } elseif ((strtolower($p->ctype_primary) == 'text') and (isset($p->body))) {
 
                         if ($debug_file !== null || $debug) {
@@ -1311,7 +1334,7 @@ class serendipity_event_popfetcher extends serendipity_event
                                 return true;
                             }
                         }
-                        
+
                         // Because text and HTML attachments get inlined
                         // sometimes (notably Hotmail),
                         // we want to collect them all and attach them to the
@@ -1320,13 +1343,13 @@ class serendipity_event_popfetcher extends serendipity_event
                         if (empty($bodytext)) {
                             continue;
                         }
-                        
+
                         // Strip evil HTML
                         if (preg_match('@<body[^>]*>(.+)</body>@imsU', $bodytext, $m)) {
                             if ($debug_file !== null || $debug) {
                                 $this->out( "Reduced HTML text.<br />\n");
                             }
-                           
+
                             $bodytext = $m[1];
                         }
 
@@ -1354,7 +1377,7 @@ class serendipity_event_popfetcher extends serendipity_event
                             $has_text = false;
                             $parts_html = array();
                             $parts_text = array();
-        
+
                             foreach($p->parts AS $idx => $subp) {
                                 if ($subp->ctype_primary == 'text' && $subp->ctype_secondary == 'html') {
                                     $has_html = true;
@@ -1364,7 +1387,7 @@ class serendipity_event_popfetcher extends serendipity_event
                                     $parts_text[] = $idx;
                                 }
                             }
-                            
+
                             if ($textpref == 'text' && $has_html) {
                                 foreach($parts_html AS $pidx) {
                                     if ($debug_file !== null || $debug) {
@@ -1373,7 +1396,7 @@ class serendipity_event_popfetcher extends serendipity_event
                                     unset($p->parts[$pidx]);
                                 }
                             }
-        
+
                             if ($textpref == 'html' && $has_text) {
                                 foreach($parts_text AS $pidx) {
                                     if ($debug_file !== null || $debug) {
@@ -1404,7 +1427,7 @@ class serendipity_event_popfetcher extends serendipity_event
                                     if ($debug_file !== null || $debug) {
                                         $this->out( "Reduced HTML text.<br />\n");
                                     }
-                                   
+
                                     $bodytext = $m[1];
                                 }
 
@@ -1525,7 +1548,7 @@ class serendipity_event_popfetcher extends serendipity_event
                         $stamp   = ($time == -1) ?  date("l, F j, Y, g:ia") : date("l, F j, Y, g:ia", $time);
                         $subject = MF_MSG23.$stamp;
                     }
-                    
+
                     $msgbody = implode("<br />\n",  $postbody);
                     $msgbody .= implode("<br />\n", $postattach);
 
@@ -1553,7 +1576,8 @@ class serendipity_event_popfetcher extends serendipity_event
         echo '<br /><hr />';
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -1561,7 +1585,7 @@ class serendipity_event_popfetcher extends serendipity_event
         if (isset($hooks[$event])) {
 
             // Find out if we run this plugin externally or from the admin menu
-            $adminmenu = $this->get_config('adminmenu');
+            $adminmenu = serendipity_db_bool($this->get_config('adminmenu', 'true'));
 
             switch($event) {
                 case 'backend_sidebar_entries':
@@ -1595,7 +1619,8 @@ class serendipity_event_popfetcher extends serendipity_event
         } else {
             return false;
         }
-
     }
+
 }
+
 ?>

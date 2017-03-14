@@ -1,3 +1,14 @@
+1.48:
+-----
+
+* Fix PHP7 incompatibility
+
+1.47:
+-----
+
+* Set some Plugin consistencies
+* Use API for lang includement - extend required Serendipity version
+
 1.46:
 -----
 * Updated translation (german), fixed some english descriptions
