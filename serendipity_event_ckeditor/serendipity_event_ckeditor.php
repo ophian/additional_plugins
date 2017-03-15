@@ -69,7 +69,7 @@ class serendipity_event_ckeditor extends serendipity_event
                                        'CKEditor-Plugin: manually added codesnippet, fakeobjects, lineutils, autogrow, widget and widgetselection plugins, 2017-01-12)',
                                        'CKEditor-Plugin: procurator, v. 1.6 (Serendipity placeholder Plugin, 2016-01-01)',
                                        'CKEditor-Plugin: cheatsheet, v. 1.2 (Serendipity CKE-Cheatsheet Plugin, 2016-08-15)',
-                                       'CKEditor-S9yCustomConfig, cke_config.js, v. 2.9, 2017-02-03',
+                                       'CKEditor-S9yCustomConfig, cke_config.js, v. 2.10, 2017-03-15',
                                        'CKEditor-S9yCustomPlugins, cke_plugin.js, v. 1.11, 2016-09-27',
                                        'CKEditor-S9yAddOn, fresh highlight.pack.js file v. 9.8.0 and github styles in highlight.css, (https://highlightjs.org/) 2016-11-01',
                                        'Prettify: JS & CSS files, v. "current", (http://code.google.com/p/google-code-prettify/, 2013-03-04)');
@@ -184,7 +184,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.6.2.1'); // is CKEDITOR Series 4.6.2 - and appended plugin revision .1
+        $propbag->add('version',       '4.6.2.2'); // is CKEDITOR Series 4.6.2 - and appended plugin revision .2
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
