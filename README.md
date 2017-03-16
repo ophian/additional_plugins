@@ -1,6 +1,6 @@
 ## Additional plugins for Serendipity Styx Edition.
 
-The plugins contained here are automatically synced via XML with your Spartacus (plugin): __S.P.A.R.T.A.C.U.S__ :: __S__erendipity __P__lugin __A__ccess __R__epository __T__ool __A__nd __C__ustomization / __U__nification __S__ystem.
+The plugins contained here are automatically synced via XML with your Spartacus (plugin): __S P A R T A C U S__ :: **S**erendipity **P**lugin **A**ccess **R**epository **T**ool **A**nd **C**ustomization / **U**nification **S**ystem.
 The XML sidebar or event plugin files in question are synced to contain new or updated submissions when required.
 
 This will fully work with **Styx** only, which has some bugs fixed in core.
