@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.3.8');
+        $propbag->add('version',       '1.4.0');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -42,14 +42,14 @@ class serendipity_event_autoupdate extends serendipity_event
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_AUTOUPDATE_DL_URL);
                 $propbag->add('description', PLUGIN_EVENT_AUTOUPDATE_DL_URL_DESC);
-                $propbag->add('default',     'https://github.com/s9y/Serendipity/releases/download/');
+                $propbag->add('default',     'https://github.com/ophian/styx/releases/download/');
                 break;
 
             case 'releasefile_url':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_AUTOUPDATE_RF_URL);
                 $propbag->add('description', PLUGIN_EVENT_AUTOUPDATE_RF_URL_DESC);
-                $propbag->add('default',     'https://github.com/s9y/Serendipity/releases/tag/');
+                $propbag->add('default',     'https://github.com/ophian/styx/releases/tag/');
                 break;
 
             default:
@@ -351,10 +351,10 @@ EOS;
     {
         global $serendipity;
 
-        $geturl = $this->get_config('download_url', 'https://github.com/s9y/Serendipity/releases/download/');
+        $geturl = $this->get_config('download_url', 'https://github.com/ophian/styx/releases/download/');
         #$url    = (string)"http://prdownloads.sourceforge.net/php-blog/serendipity-$version.zip?download";
         $url    = (string)"$geturl$version/serendipity-$version.zip";
-        $update = (string)$serendipity ['serendipityPath'] . 'templates_c/' . "serendipity-$version.zip";
+        $update = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-$version.zip";
 
         // do we already have it and is it eventually broken?
         if (file_exists($update)) {
@@ -412,8 +412,8 @@ EOS;
      */
     function verifyUpdate($update, $version)
     {
-        $geturl = $this->get_config('download_url', 'https://github.com/s9y/Serendipity/releases/download/');
-        $md5url = $this->get_config('releasefile_url', 'https://github.com/s9y/Serendipity/releases/tag/');
+        $geturl = $this->get_config('download_url', 'https://github.com/ophian/styx/releases/download/');
+        $md5url = $this->get_config('releasefile_url', 'https://github.com/ophian/styx/releases/tag/');
 
         #$url          = (string)"http://prdownloads.sourceforge.net/php-blog/serendipity-$version.zip?download";
         $url          = (string)"$geturl$version/serendipity-$version.zip";
@@ -471,7 +471,7 @@ EOS;
         $updateDir = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-$version/";
 
         // do we already have it?
-        if (is_dir($updateDir) && is_file($updateDir . '/serendipity/README.markdown') && is_file($updateDir . '/serendipity/checksums.inc.php')) {
+        if (is_dir($updateDir) && is_file($updateDir . '/serendipity/README.markdown') && (is_file($updateDir . '/serendipity/checksums.inc.php') && filesize($updateDir . '/serendipity/checksums.inc.php'))) {
             return true;
         }
         $zip = new ZipArchive;
@@ -631,8 +631,9 @@ EOS;
         $updateDir    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-$version/";
         $checksumFile = (string)$updateDir . "serendipity/checksums.inc.php";
 
-        // Styx beta version prior 2.1-beta2 did not have checksums
-        if (strpos($version, '2.1-beta1') !== FALSE) {
+        // Serendipity BETA version release files prior Styx 2.1-beta2 did not have checksums
+        // version_compare(new_version, existing_version, operator)
+        if (FALSE !== strpos($version, 'beta') && version_compare($version, '2.1-beta2', '<')) {
             return true;
         }
         include_once $checksumFile;
@@ -767,6 +768,7 @@ EOS;
     function cleanTemplatesC($version, $finish)
     {
         global $serendipity;
+
         $zip    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-$version.zip";
         $zipDir = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-$version";
 
@@ -810,7 +812,7 @@ EOS;
     {
         global $serendipity;
 
-        $this->debug_fp = @fopen ($serendipity ['serendipityPath'] . 'templates_c/autoupdate.log', 'a');
+        $this->debug_fp = @fopen ($serendipity['serendipityPath'] . 'templates_c/autoupdate.log', 'a');
         if (!$this->debug_fp) {
             return false;
         }
