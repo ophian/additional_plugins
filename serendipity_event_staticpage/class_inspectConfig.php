@@ -7,15 +7,15 @@
  */
 abstract class inspectConfig extends serendipity_event_staticpage
 {
-    public function inspectConfig(){}
+    public function __construct(){}
 
-    protected function __destruct(){}
+    public function __destruct(){}
 
 }
 
 class icSeparator extends inspectConfig
 {
-    protected function icSeparator()
+    public function __construct()
     {
         return;//void
     }
@@ -24,7 +24,7 @@ class icSeparator extends inspectConfig
 
 class icSelect extends inspectConfig
 {
-    protected function icSelect()
+    public function __construct()
     {
         global $inspectConfig;
         #echo '<pre>' . print_r($inspectConfig, true) . '</pre>';
@@ -48,7 +48,7 @@ class icRadio extends inspectConfig
     /**
      * Radio form field generator. May have pre set dependencies in tristate and boolean.
      */
-    protected function icRadio()
+    public function __construct()
     {
         global $inspectConfig;
 
@@ -99,7 +99,7 @@ class icRadio extends inspectConfig
 
 class icString extends inspectConfig
 {
-    protected function icString()
+    public function __construct()
     {
         global $inspectConfig;
 
@@ -112,7 +112,7 @@ class icString extends inspectConfig
 
 class icText extends inspectConfig
 {
-    protected function icText()
+    public function __construct()
     {
         global $inspectConfig;
 
@@ -176,7 +176,7 @@ class icText extends inspectConfig
 
 class icContent extends inspectConfig
 {
-    protected function icContent()
+    public function __construct()
     {
         global $inspectConfig;
 
@@ -187,7 +187,7 @@ class icContent extends inspectConfig
 
 class icHidden extends inspectConfig
 {
-    protected function icHidden()
+    public function __construct()
     {
         global $inspectConfig;
 
@@ -200,7 +200,7 @@ class icHidden extends inspectConfig
 
 class icTimestamp extends inspectConfig
 {
-    protected function icTimestamp()
+    public function __construct()
     {
         global $inspectConfig;
 
