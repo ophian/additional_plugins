@@ -1,6 +1,12 @@
 <?php
 
-require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+$httpDirname = (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/';
+
+if (file_exists($httpDirname . 'Request2.php')) {
+    require_once $httpDirname . 'Request2.php';
+} else {
+    require_once $httpDirname . 'Request.php';
+}
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -31,7 +37,7 @@ class serendipity_plugin_piwik extends serendipity_plugin
         $propbag->add('description',   PLUGIN_SIDEBAR_PIWIK_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Bernd Distler');
-        $propbag->add('version',       '0.4.1');
+        $propbag->add('version',       '0.5');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
