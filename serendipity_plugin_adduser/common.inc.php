@@ -62,8 +62,8 @@ class serendipity_common_adduser
                 echo "[debug] QUERY: $q<br />\n";
             }
             $author = serendipity_db_query($q, true);
-
-            serendipity_common_adduser::sendMail($author['username'], (function_exists('serendipity_specialchars') ? serendipity_specialchars($string) : htmlspecialchars($string, ENT_COMPAT, LANG_CHARSET)), $author['email'], false, false);
+            // PHP 7.1.x Only variables can be passed by reference - $author is an array
+            serendipity_common_adduser::sendMail((string)$author['username'], (function_exists('serendipity_specialchars') ? serendipity_specialchars($string) : htmlspecialchars($string, ENT_COMPAT, LANG_CHARSET)), (string)$author['email'], false, false);
 
             echo PLUGIN_ADDUSER_SENTMAIL_APPROVE_ADMIN;
             return true;

@@ -1,3 +1,8 @@
+2.44:
+-----
+ * Cast passed array vars to sendMail() as strings.
+   Fixes 7.1.x ++ error "Only variables can be passed by reference"
+
 2.43:
 -----
  * Catch possible manipulated form fields
