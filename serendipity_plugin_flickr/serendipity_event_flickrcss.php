@@ -1,12 +1,10 @@
 <?php
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-	include $probelang;
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
 }
 
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_flickrcss extends serendipity_event
 {
@@ -18,11 +16,11 @@ class serendipity_event_flickrcss extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_FLICKRCSS_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Michael Kaiser');
-        $propbag->add('version',     '1.05');
+        $propbag->add('version',     '1.06');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.9',
-            'php'         => '4.3.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
         $propbag->add('event_hooks', array(
@@ -37,84 +35,95 @@ class serendipity_event_flickrcss extends serendipity_event
     }
 
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_EVENT_FLICKRCSS;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
-		global $serendipity;
-		
-		$hooks = &$bag->get('event_hooks');
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
+        global $serendipity;
+        
+        $hooks = &$bag->get('event_hooks');
 
-		if (isset($hooks[$event])) {
-		switch($event) {
-            case 'css':
-            if (strpos($eventData, 'serendipity_plugin_flickr') !== false) {
-                // class exists in CSS, so a user has customized it and we don't need default
-                return true;
+        if (isset($hooks[$event])) {
+            switch($event) {
+                case 'css':
+                    if (strpos($eventData, 'serendipity_plugin_flickr') !== FALSE) {
+                        // class exists in CSS, so a user has customized it and we don't need default
+                        return true;
+                    }
+                    $this->addToCSS($eventData);
+                    return true;
+                    break;
+
+                default:
+                    return false;
             }
-			$this->addToCSS($eventData);
-            return true;
-            break;
+        }
+        else {return false;}
+    }
+    
+    function addToCSS(&$eventData)
+    {
+        $eventData .= '
 
-            default:
-            return false;
-			}
-		}
-		else {return false;}
-	}
-	
-	function addToCSS(&$eventData) {
-    	$eventData .= '
+/* serendipity_event_flickrcss start*/
+
 dl.serendipity_plugin_flickr  {
-	text-align:center; font-size:9px;
-	}
+    text-align:center; font-size:9px;
+    }
 dl.serendipity_plugin_flickr img {
-	border: none;
-	}
+    border: none;
+    }
 .serendipity_plugin_flickr dd {
-	margin: 0; padding: 0;
-	margin-bottom: 5px;
-	margin-right: 5px;
-	float:left;
-	}
+    margin: 0; padding: 0;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    float:left;
+    }
 .serendipity_plugin_flickr dt {
-	margin: 0; padding: 0;
-	float:left;
-	color: #444;
-	background-color: #fff;
-	font-weight: bold;
-	overflow: hidden;
-	visibility: hidden;
-	filter: alpha(opacity=70); /* internet explorer */
-	-khtml-opacity: 0.7;      /* khtml, old safari */
-	-moz-opacity: 0.7;       /* mozilla, netscape */
-	opacity: 0.7;           /* fx, safari, opera */
-	}
+    margin: 0; padding: 0;
+    float:left;
+    color: #444;
+    background-color: #fff;
+    font-weight: bold;
+    overflow: hidden;
+    visibility: hidden;
+    filter: alpha(opacity=70); /* internet explorer */
+    -khtml-opacity: 0.7;      /* khtml, old safari */
+    -moz-opacity: 0.7;       /* mozilla, netscape */
+    opacity: 0.7;           /* fx, safari, opera */
+    }
 .serendipity_plugin_flickr dt:hover, .serendipity_plugin_flickr dd:hover+dt {
-	visibility: visible;
-	border-top: 1px solid #aaa;
-	border-bottom: 1px solid #444;
-	}
+    visibility: visible;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #444;
+    }
 .serendipity_plugin_flickr_date {
-	display: block;
-	font-weight: normal;
-	color: #444;
+    display: block;
+    font-weight: normal;
+    color: #444;
 }
 .serendipity_plugin_flickr_title {
-	display: block;
-	font-weight: bold;
-	color: #000;
+    display: block;
+    font-weight: bold;
+    color: #000;
 }
 .serendipity_plugin_flickr_links {
-	clear: both;
+    clear: both;
 }
 .serendipity_plugin_flickr_errors {
-	color: #fff;
-	background-color: #600;
+    color: #fff;
+    background-color: #600;
 }
+
+/* serendipity_event_flickrcss start*/
+
 ';
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

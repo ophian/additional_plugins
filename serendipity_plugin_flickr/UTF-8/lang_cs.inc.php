@@ -64,3 +64,4 @@
 // Next lines were translated on 2011/08/21
 @define('PLUGIN_SIDEBAR_FLICKR_NUMBEROFCHOICES', 'Počet vybraných obrázků');
 @define('PLUGIN_SIDEBAR_FLICKR_USECHOICES', 'Náhodně zamíchat vybrané obrázky?');
+

@@ -54,4 +54,4 @@
 /* Errors */
 @define('PLUGIN_SIDEBAR_FLICKR_ERROR_WRONGUSER', 'Der flickr-Account existiert nicht oder der API-Key ist falsch.');
 @define('PLUGIN_SIDEBAR_FLICKR_ERROR_NOIMG', 'Es sind keine Bilder vorhanden.');
-?>
+
