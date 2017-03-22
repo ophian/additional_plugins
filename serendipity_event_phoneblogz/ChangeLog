@@ -1,3 +1,7 @@
+0.11:
+-----
+ * Make xmlrpc class use __construct(), since old method is set deprecated
+
 0.10:
 -----
  * Check REQUEST object
