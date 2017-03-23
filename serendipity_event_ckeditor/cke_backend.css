@@ -21,11 +21,11 @@
 
 /* New 4.6.x flat design needs some background tweaking, to better distinguish between fieldsets, form_fields, blocks, textareas, body texts, etc. in staticpages v.5.x */
 #backend_sp_respond #sp_main_data, #backend_sp_respond #sp_metafield_data, #backend_sp_respond #sp_structure_data, #backend_sp_respond #sp_option_data, #backend_sp_respond #sp_custom_data {
-    background-color: #FCFCFC;
-    background-image: -webkit-linear-gradient(to bottom,transparent,#C8C8C8);
-    background-image: -moz-linear-gradient(to bottom,transparent,#C8C8C8);
-    background-image: -o-linear-gradient(to bottom,transparent,#C8C8C8);
-    background-image: linear-gradient(to bottom,transparent,#C8C8C8);
+    background-color: #F8F8F8;
+    background: -webkit-linear-gradient(to bottom,#F8F8F8,#EDEDED);
+    background: -moz-linear-gradient(to bottom,#F8F8F8,#EDEDED);
+    background: -o-linear-gradient(to bottom,#F8F8F8,#EDEDED);
+    background: linear-gradient(to bottom,#F8F8F8,#EDEDED);
 }
 /* New 4.6.x flat design needs us to set a better border in staticpages v.5.x - forced, while being directly loaded in ckeditor/skins/moona-lisa/editor(_gecko).css */
 #backend_sp_respond .cke_chrome {

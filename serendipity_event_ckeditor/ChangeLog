@@ -1,3 +1,7 @@
+4.6.2.3:
+---------
+    * New 4.6.x flat design needs some background gradient tweaking again
+
 4.6.2.2:
 ---------
     * Added js config <ul> tag to Extra Allowed Content protection against ACF
