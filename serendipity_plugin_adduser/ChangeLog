@@ -1,4 +1,9 @@
-2.44:
+2.45: /event), 2.44: (plugin)
+----------------------------
+ * In WYSIWYG case, remove obvious title and description field in the "content" field
+ * Remove some old requirement code
+
+2.44: (event)
 -----
  * Remove reference in serendipity_plugin_adduser::sendMail()
    Fixes 7.1.x ++ error "Only variables can be passed by reference"

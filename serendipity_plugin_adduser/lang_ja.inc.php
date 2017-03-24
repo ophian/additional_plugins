@@ -34,7 +34,6 @@
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY_DESC', 'If enabled, only registered users may post comments to your entrie and need to be logged in to do so.');
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY_REASON', 'Only registered users may post comments here. Get your own account <a href="%s">here</a> and then <a href="%s">log into this blog</a>. ブラウザーはクッキーをサポートしてなければなりません。');
 
-@define('PLUGIN_ADDUSER_SERENDIPITY09', 'Serendipity 0.9 はこのオプションを要求します。');
 @define('PLUGIN_ADDUSER_STRAIGHT', 'Straight insert?');
 @define('PLUGIN_ADDUSER_STRAIGHT_DESC', 'If enabled, a user will immediately be recorded as valid co-author. This is only recommended in setups where no mailserver is available. This feature can easily be abused by spammers. Only turn it on if you know what you are doing!');
 

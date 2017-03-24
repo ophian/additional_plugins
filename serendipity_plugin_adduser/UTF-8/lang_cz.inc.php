@@ -37,7 +37,6 @@
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY_DESC',		'Pokud je povoleno, komentáře k příspěvkům mohou posílat pouze registrovaní a přihlášení uživatelé.');
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY_REASON',		'Komentáře mohou posílat pouze registrovaní uživatelé. <a href="%s">Založte si účet</a> a pak se <a href="%s">přihlašte do blogu</a>. Váš prohlížeč musí podporovat cookies.');
 
-@define('PLUGIN_ADDUSER_SERENDIPITY09',		'Tato volba vyžaduje Serendipity 0.9 nebo vyšší.');
 @define('PLUGIN_ADDUSER_STRAIGHT',		'Okamžité vložení?');
 @define('PLUGIN_ADDUSER_STRAIGHT_DESC',		'Pokud je povoleno, uživatel bude okamžitě po registraci vložen jako aktivovaný autor. Tato volba je doporučena pouze na serverech, kde není přítomen mailserver. Toto nastavení může být lehce zneužito spamery. Zapněte jen pokud dobře víte, co děláte!');
 

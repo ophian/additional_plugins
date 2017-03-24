@@ -17,7 +17,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian');
-        $propbag->add('version',       '2.43');
+        $propbag->add('version',       '2.44');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -52,6 +52,8 @@ class serendipity_plugin_adduser extends serendipity_plugin
 
     function introspect_config_item($name, &$propbag)
     {
+        global $serendipity;
+
         switch($name) {
             case 'userlevel':
                 $propbag->add('type',        'select');
@@ -101,8 +103,8 @@ class serendipity_plugin_adduser extends serendipity_plugin
 
             case 'instructions':
                 $propbag->add('type',        'html');
-                $propbag->add('name',        PLUGIN_ADDUSER_INSTRUCTIONS);
-                $propbag->add('description', PLUGIN_ADDUSER_INSTRUCTIONS_DESC);
+                $propbag->add('name',        ($serendipity['wysiwyg'] ? '' : PLUGIN_ADDUSER_INSTRUCTIONS));
+                $propbag->add('description', ($serendipity['wysiwyg'] ? '' : PLUGIN_ADDUSER_INSTRUCTIONS_DESC));
                 $propbag->add('default',     PLUGIN_ADDUSER_INSTRUCTIONS_DEFAULT);
                 break;
 
@@ -205,11 +207,6 @@ class serendipity_plugin_adduser extends serendipity_plugin
     function &getGroups()
     {
         global $serendipity;
-
-        if (!function_exists('serendipity_getAllGroups')) {
-            $str = PLUGIN_ADDUSER_SERENDIPITY09;
-            return $str;
-        }
 
         $groups = serendipity_getAllGroups();
 

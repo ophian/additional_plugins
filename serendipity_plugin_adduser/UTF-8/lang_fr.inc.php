@@ -28,7 +28,6 @@
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY_DESC', 'Si la valeur "oui" est sélectionnée, seuls les utilisateurs enregistrés et connectés pourront poster des commentaires aux billets de ce blog.');
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY_REASON', 'Seuls les utilisateurs enregistrés peuvent poster des commentaires sur ce blog. Créez votre compte <a href="%s">ici</a>, puis <a href="%s">connectez-vous</a>. Votre navigateur doit accepter les cookies.');
 
-@define('PLUGIN_ADDUSER_SERENDIPITY09', 'Serendipity 0.9 est obligatoire pour cette option.');
 @define('PLUGIN_ADDUSER_STRAIGHT', 'Insertion immédiate ?');
 @define('PLUGIN_ADDUSER_STRAIGHT_DESC', 'Si la valeur "oui" est sélectionnée, un utilisateur sera immédiatement enregistré comme valide. Il est recommandé de n\'utiliser cette option que si aucun serveur d\'email n\'est disponible. Des spammeurs peuvent se servir de cette option. Ne l\'utilisez que si vous savez ce que vous faites !');
 
