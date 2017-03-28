@@ -1,3 +1,6 @@
+0.6
+   * Use correct required Request lib
+
 0.5
    * Check against correct required Request lib
 
