@@ -289,7 +289,7 @@ class serendipity_plugin_piwik extends serendipity_plugin
         if (function_exists('serendipity_request_url')) {
             $piwik_fetched = serendipity_request_url($api_url);
             if ($piwik_fetched === false || !isset($serendipity['last_http_request']) || $serendipity['last_http_request']['responseCode'] != '200') {
-                $piwik_fetched = @file_get_contents($api_url) = '';
+                $piwik_fetched = @file_get_contents($api_url);
             }
         } else {
             serendipity_request_start();
