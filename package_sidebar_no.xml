@@ -2858,11 +2858,11 @@
 <summary>Piwik</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>show statistics of Piwik in sidebar</description>
-<maintainers><maintainer><name>Bernd Distler</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Bernd Distler, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.5</version>
+  <version>0.5.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-03-22</date>
+  <date>2017-03-28</date>
   <filelist>
 <dir name="serendipity_plugin_piwik">
 <file>ChangeLog</file>
