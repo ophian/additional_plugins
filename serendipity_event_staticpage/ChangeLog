@@ -1,3 +1,9 @@
+5.20:
+----
+
+ * Add some styles for older sidebar templates not using ul li lists,
+   and the serendipity_plugin_staticpage non-smartified option.
+
 5.19:
 ----
 

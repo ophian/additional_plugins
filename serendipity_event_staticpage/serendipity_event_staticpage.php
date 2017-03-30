@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.19');
+        $propbag->add('version', '5.20');
         $propbag->add('requirements', array(
             'serendipity' => '2.0.99',
             'smarty'      => '3.1.0',
@@ -1503,7 +1503,7 @@ class serendipity_event_staticpage extends serendipity_event
                     }
                 }
                 // gather downwards from $thispage
-                foreach($childs As $child) {
+                foreach($childs AS $child) {
                     $pkey = $this->getPagesKey($pages, $child);
                     $pages[$pkey]['name'] = $pages[$pkey]['pagetitle'];
                     $pages[$pkey]['link'] = $pages[$pkey]['permalink'];
@@ -3726,6 +3726,12 @@ class serendipity_event_staticpage extends serendipity_event
 
 .staticpage_metainfo {
     margin-top: 1em;
+}
+
+/* for older sidebar templates not using ul li lists and the plugin_staticpage non-smartified option */
+.serendipity_plugin_staticpage .spp_title {
+    display: list-item;
+    list-style: none;
 }
 
 <?php // break after anchor - see serendipity_plugin_staticpage.php non-smarty usage not using list markup change ?>
