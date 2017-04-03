@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.21');
+        $propbag->add('version', '5.22');
         $propbag->add('requirements', array(
             'serendipity' => '2.0.99',
             'smarty'      => '3.1.0',
@@ -2386,9 +2386,9 @@ class serendipity_event_staticpage extends serendipity_event
         global $serendipity;
 
         if ($simple) {
-            $q = 'SELECT id, parent_id, pagetitle, headline ';
+            $q = 'SELECT id, parent_id, pagetitle, headline, language AS lang ';
         } else {
-            $q = 'SELECT id, parent_id, pagetitle, headline, timestamp, last_modified, publishstatus ';
+            $q = 'SELECT id, parent_id, pagetitle, headline, timestamp, last_modified, publishstatus, language AS lang ';
         }
         $q .= 'FROM '.$serendipity['dbPrefix'].'staticpages ORDER BY pageorder';
 

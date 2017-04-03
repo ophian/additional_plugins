@@ -571,7 +571,11 @@
     width: auto;
     white-space: nowrap;
     overflow: hidden;
-    vertical-align: top;
+    vertical-align: baseline;
+}
+#sp_sequencer #sequence .sp_orderlang {
+    float: right;
+    margin: auto .25em;
 }
 
 /**

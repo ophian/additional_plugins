@@ -1,4 +1,4 @@
-{* backend_staticpage template file v. 1.26, 2016-06-15 *}
+{* backend_staticpage template file v. 1.27, 2017-04-03 *}
 
 <!-- backend_staticpage.tpl START -->
 
@@ -33,7 +33,7 @@
                 <div id="sg{$entryorder['id']}" class="pluginmanager_grablet sequence_grablet">
                     <button class="icon_link" type="button" title="{$CONST.MOVE}"><span class="icon-move" aria-hidden="true"></span><span class="visuallyhidden"> {$CONST.MOVE}</span></button>
                 </div>
-                {if $entryorder['parent_id'] > 0}<span class="entry_status sp_ptree">#{$entryorder['parent_id']}</span><span class="icon-right-dir sp_ctree" aria-hidden="true"></span>{/if}<span title="#{$entryorder['id']} {if !empty($entryorder['headline'])}{$entryorder['headline']}{else}{$entryorder['pagetitle']|escape}{/if}" class="sp_grablet_title">{$entryorder['pagetitle']|escape|truncate:50}</span>
+                {if $entryorder['parent_id'] > 0}<span class="entry_status sp_ptree">#{$entryorder['parent_id']}</span><span class="icon-right-dir sp_ctree" aria-hidden="true"></span>{/if}<span title="#{$entryorder['id']} {if !empty($entryorder['headline'])}{$entryorder['headline']}{else}{$entryorder['pagetitle']|escape}{/if}" class="sp_grablet_title">{$entryorder['pagetitle']|escape|truncate:50}</span>{if !empty($entryorder['lang'])} <span class="clearfix sp_orderlang"><span class="sp_dim">[<em class="sp_lang">{$entryorder['lang']}</em>]</span></span>{/if}
             </li>
         {/foreach}
         </ol>

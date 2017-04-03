@@ -1,3 +1,9 @@
+5.22:
+----
+
+ * Backend: Add language identifier to the pageorder list, to better
+            and easy identify the correct sort order for the sidebar.
+
 5.21:
 ----
 
@@ -7,12 +13,12 @@
 ----
 
  * Sidebar: Add some styles for older sidebar templates not using ul li lists,
-   and the serendipity_plugin_staticpage non-smartified option.
+            and the serendipity_plugin_staticpage non-smartified option.
 
 5.19:
 ----
 
- * Backend: Make abstract class PHP 7.1.x ++ ready
+ * Backend: Make the abstract class PHP 7.1.x ++ ready
 
 5.18:
 ----
