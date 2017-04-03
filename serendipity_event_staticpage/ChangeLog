@@ -1,13 +1,18 @@
+5.21:
+----
+
+ * Backend: Overwrite Styx 2.2.0 entryproperties #sequence(r) style float
+
 5.20:
 ----
 
- * Add some styles for older sidebar templates not using ul li lists,
+ * Sidebar: Add some styles for older sidebar templates not using ul li lists,
    and the serendipity_plugin_staticpage non-smartified option.
 
 5.19:
 ----
 
- * Make abstract class PHP 7.1.x ++ ready
+ * Backend: Make abstract class PHP 7.1.x ++ ready
 
 5.18:
 ----
@@ -30,7 +35,7 @@
 5.15:
 ----
 
- * Optimize form box stylings, unbox. Requires CKEditor Plus 4.6.2.0.
+ * Backend: Optimize form box stylings, unbox. Requires CKEditor Plus 4.6.2.0.
 
 5.14:
 ----
@@ -41,7 +46,7 @@
 5.13:
 ----
 
- * Re-add status color for sidebar plugins
+ * Backend: Re-add status color for available "static page like" plugins
 
 5.12:
 ----

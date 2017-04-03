@@ -537,6 +537,10 @@
 }
 
 /* pageorder */
+#sp_sequencer #sequence {
+    float: left; /* overwrite ep sequencer */
+    margin-right: initial;
+}
 #sp_sequencer #sequence.pluginmanager_container {
     width: 29em;
 }
