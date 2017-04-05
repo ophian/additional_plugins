@@ -1,3 +1,8 @@
+5.23:
+----
+
+ * Backend: Correct db-build 21 ALTER error case for fresh installs
+
 5.22:
 ----
 

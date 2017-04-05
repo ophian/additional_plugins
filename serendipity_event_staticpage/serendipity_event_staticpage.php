@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.22');
+        $propbag->add('version', '5.23');
         $propbag->add('requirements', array(
             'serendipity' => '2.0.99',
             'smarty'      => '3.1.0',
@@ -984,7 +984,8 @@ class serendipity_event_staticpage extends serendipity_event
             serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}config  WHERE name LIKE 'serendipity_event_staticpage:%'");
             serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}plugins WHERE name LIKE 'serendipity_event_staticpage:%' AND name NOT LIKE '" . serendipity_db_escape_string($this->instance) . "'");
 
-            $this->set_config('db_built', '7');
+            $this->set_config('db_built', 7);
+            $build = 7;
             $fresh = true;
             @define('STATICPAGE_UPGRADE_DONE', true); // No further static pages may be called!
         }
@@ -1202,7 +1203,7 @@ class serendipity_event_staticpage extends serendipity_event
                 */
                 // correct case 20 for upgraders, which did not use them in fresh before ( since v.4.09 )
                 $has_metafields = serendipity_db_query("SELECT title_element, meta_description, meta_keywords FROM {$serendipity['dbPrefix']}staticpages LIMIT 1", false, 'assoc');
-                if (!is_array($has_metafields) && !empty($has_metafields)) {
+                if (!is_array($has_metafields) && !empty($has_metafields) && $has_metafields != 1) {
                     $q = "ALTER TABLE {$serendipity['dbPrefix']}staticpages ADD COLUMN title_element varchar(255) not null default ''";
                     $r = serendipity_db_schema_import($q);
                     $altererror = $this->check_error($r);
