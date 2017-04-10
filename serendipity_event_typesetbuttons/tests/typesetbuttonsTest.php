@@ -30,7 +30,7 @@ class serendipity_event_typesetbuttonsTest extends PluginTest
     {
         parent::setUp();
         $this->object = new serendipity_event_typesetbuttons('test');
-        $this->propBag = new serendipity_property_bag();
+        $this->propBag = new serendipity_property_bag;
         $this->getEventData();
     }
 
