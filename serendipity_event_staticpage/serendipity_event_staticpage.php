@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.23');
+        $propbag->add('version', '5.24');
         $propbag->add('requirements', array(
             'serendipity' => '2.0.99',
             'smarty'      => '3.1.0',
@@ -2515,7 +2515,7 @@ class serendipity_event_staticpage extends serendipity_event
 
                 if ($serendipity['POST']['typeSave'] == 'true' && !empty($serendipity['POST']['SAVECONF'])) {
                     $serendipity['POST']['typeSubmit'] = true;
-                    $bag = new serendipity_property_bag();
+                    $bag = new serendipity_property_bag;
                     $this->introspect($bag);
                     // actually no need, since unused in staticpage pageforms
                     #$name = self::html_specialchars($bag->get('name')); // Normally constant data ...
@@ -2523,7 +2523,7 @@ class serendipity_event_staticpage extends serendipity_event
                     $config_t = $bag->get('type_configuration');
 
                     foreach($config_t AS $config_item) {
-                        $cbag = new serendipity_property_bag();
+                        $cbag = new serendipity_property_bag;
                         if ($this->introspect_item_type($config_item, $cbag)) {
                             $this->pagetype[$config_item] = serendipity_get_bool($serendipity['POST']['plugin'][$config_item]);
                         }
@@ -2555,7 +2555,7 @@ class serendipity_event_staticpage extends serendipity_event
                 if (isset($serendipity['POST']['typeSubmit'])) {
                     $serendipity['POST']['staticSubmit'] = true; // RQ: Is this a need?
                     $serendipity['POST']['backend_template'] = 'typeform_staticpage_backend.tpl';
-                    $bag = new serendipity_property_bag();
+                    $bag = new serendipity_property_bag;
                     $this->introspect($bag);
                     // actually no need, since unused in staticpage pageforms
                     #$name = self::html_specialchars($bag->get('name')); // Normally constant data ...
@@ -2563,7 +2563,7 @@ class serendipity_event_staticpage extends serendipity_event
                     $config_t = $bag->get('type_configuration');
 
                     foreach($config_t AS $config_item) {
-                        $cbag = new serendipity_property_bag();
+                        $cbag = new serendipity_property_bag;
                         if ($this->introspect_item_type($config_item, $cbag)) {
                             $this->pagetype[$config_item] = serendipity_get_bool($serendipity['POST']['plugin'][$config_item]);
                         }

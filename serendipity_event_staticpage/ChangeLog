@@ -1,3 +1,8 @@
+5.24:
+----
+
+ * In absence of constructor parameters - remove parentheses for consistency
+
 5.23:
 ----
 
