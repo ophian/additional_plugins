@@ -37,7 +37,7 @@ class serendipity_event_lsrstopperTest extends PluginTest
     {
         parent::setUp();
         $this->object = new serendipity_event_lsrstopper('test');
-        $this->propBag = new serendipity_property_bag();
+        $this->propBag = new serendipity_property_bag;
         $this->getEventData();
     }
 
