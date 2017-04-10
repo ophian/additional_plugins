@@ -1,7 +1,8 @@
 <?php
 require_once dirname(__FILE__) . '/../CurlFetcher.php';
 
-class OEmbedProvider extends EmbedProvider{
+class OEmbedProvider extends EmbedProvider
+{
     private $urlRegExp;
     private $jsonEndpoint;
     private $xmlEndpoint;
@@ -9,7 +10,8 @@ class OEmbedProvider extends EmbedProvider{
 
     private $onlyJson = false;
 
-    public function __construct($url,$endpoint, $onlyJson=false, $maxwidth=null, $maxheight=null, $dimensionsSupported=true){
+    public function __construct($url,$endpoint, $onlyJson=false, $maxwidth=null, $maxheight=null, $dimensionsSupported=true)
+    {
         parent::__construct($url,$endpoint,$maxwidth,$maxheight);
         $this->onlyJson = $onlyJson;
         $this->dimensionsSupported = $dimensionsSupported;
@@ -24,7 +26,7 @@ class OEmbedProvider extends EmbedProvider{
             if (strpos($endpoint, '?') === FALSE) {
                 $this->jsonEndpoint=$endpoint."?url={url}&format=json";
                 $this->xmlEndpoint=$endpoint."?url={url}&format=xml";
-            } 
+            }
             else {
                 $this->jsonEndpoint=$endpoint."&url={url}&format=json";
                 $this->xmlEndpoint=$endpoint."&url={url}&format=xml";
@@ -42,21 +44,39 @@ class OEmbedProvider extends EmbedProvider{
         }
     }
 
-    public function getUrlRegExp(){   return $this->urlRegExp; }
-    public function getJsonEndpoint(){ return $this->jsonEndpoint; }
-    public function getXmlEndpoint(){ return $this->xmlEndpoint; }
+    public function getUrlRegExp()
+    {
+        return $this->urlRegExp;
+    }
 
-    public function match($url){
+    public function getJsonEndpoint()
+    {
+        return $this->jsonEndpoint;
+    }
+
+    public function getXmlEndpoint()
+    {
+        return $this->xmlEndpoint;
+    }
+
+    public function match($url)
+    {
         return preg_match($this->urlRegExp,$url);
     }
-    private function file_get_contents($fileurl) {
+
+    private function file_get_contents($fileurl)
+    {
         $allow_curl = defined('OEMBED_USE_CURL') && OEMBED_USE_CURL && defined('CURLOPT_URL');
         return CurlFetcher::file_get_contents($fileurl, $allow_curl);
     }
-    private function provideXML($url){
+
+    private function provideXML($url)
+    {
         return $this->file_get_contents(preg_replace("/\{url\}/",urlencode($url),$this->xmlEndpoint));
     }
-    private function getTypeObj($type){
+
+    private function getTypeObj($type)
+    {
         switch($type){
             case "image":
             case "photo":
@@ -75,7 +95,9 @@ class OEmbedProvider extends EmbedProvider{
                 return new OEmbed();
         }
     }
-    private function provideObject($url){
+
+    private function provideObject($url)
+    {
         $xml = null;
         if (!$this->onlyJson) {
             try {
@@ -93,18 +115,22 @@ class OEmbedProvider extends EmbedProvider{
             if (!empty($data)) $xml = json_decode($data);
         }
         if (empty($xml)) return null;
-        
+
         //TODO $xml->type alapjan assigner
         $obj = $this->getTypeObj((string)$xml->type);
         $obj->cloneObj($xml);
         $obj->resource_url=$url;
         return $obj;
     }
-    private function provideSerialized($url){
+
+    private function provideSerialized($url)
+    {
         $serialized=serialize($this->provideObject($url));
         return $serialized;
     }
-    public function provide($url,$format="json"){
+
+    public function provide($url,$format="json")
+    {
         if($format=="xml"){
             return $this->provideXML($url);
         } else if ($format=="object"){
@@ -115,6 +141,7 @@ class OEmbedProvider extends EmbedProvider{
             return $this->file_get_contents(preg_replace("/\{url\}/",urlencode($url),$this->jsonEndpoint));
         }
     }
-    public function register(){}
-}
 
+    public function register(){}
+
+}

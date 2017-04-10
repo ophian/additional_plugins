@@ -42,3 +42,4 @@
 @define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_STANDARD', 'standardní');
 @define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_FULLFEATURED', 'plná výbava (vy¾aduje JavaScript)');
 @define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_WORDPRESS', 'pøehrávaè wordpress.com (vy¾aduje Flash)');
+

@@ -1,12 +1,16 @@
 <?php
-class ProviderManager{
+
+class ProviderManager
+{
     private $providers;
     private static $_instance;
     private $config;
-    private function __construct($maxwidth=null, $maxheight=null, $config = array()){
+
+    private function __construct($maxwidth=null, $maxheight=null, $config = array())
+    {
         $this->providers=array();
         $this->config = $config;
-        $xml = simplexml_load_file(PLUGIN_OEMBED_PROVIDER_XML_FILE);// PROVIDER_XML comes from config.php
+        $xml = simplexml_load_string(file_get_contents(PLUGIN_OEMBED_PROVIDER_XML_FILE));// PROVIDER_XML comes from config.php
         foreach($xml->provider as $provider){
             if(!isset($provider->class) && isset($provider->endpoint)){
                 $onlyJson = isset($provider->jsononly);
@@ -19,17 +23,23 @@ class ProviderManager{
             }
         }
     }
-    static function getInstance($maxwidth=null, $maxheight=null, $config = array()){
+
+    static function getInstance($maxwidth=null, $maxheight=null, $config = array())
+    {
         if(!isset($_instance) || $_instance==null){
             $_instance = new ProviderManager($maxwidth, $maxheight, $config);
         }
         return $_instance;
     }
-    public function register($provider){
+
+    public function register($provider)
+    {
         if (!empty($this->config)) $provider->set_config($this->config);
         $this->providers[]=$provider;
     }
-    public function provide($url,$format){
+
+    public function provide($url,$format)
+    {
         foreach ($this->providers as $provider){
             if ($provider->match($url)){
                 return $provider->provide($url,$format);
@@ -37,4 +47,5 @@ class ProviderManager{
         }
         return null;
     }
+
 }

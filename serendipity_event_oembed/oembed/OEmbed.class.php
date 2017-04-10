@@ -1,5 +1,7 @@
 <?php
-class OEmbed{
+
+class OEmbed
+{
     public $type;
     public $version;
     public $title;
@@ -14,10 +16,11 @@ class OEmbed{
     public $thumbnail_width;
     public $thumbnail_height;
 
-    public function cloneObj($object){
+    public function cloneObj($object)
+    {
         foreach($object as $key=>$value){
             $this->$key=(string)$value;
         }
     }
-}
 
+}

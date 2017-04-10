@@ -1,10 +1,12 @@
 <?php
+
 @define('PLUGIN_OEMBED_DATABASEVERSION_CONFIG', "oembed_version");
 @define('PLUGIN_OEMBED_DATABASEVNAME', "oembeds");
 
-class OEmbedDatabase {
-
-    static function save_oembed($url, $oembed) {
+class OEmbedDatabase
+{
+    static function save_oembed($url, $oembed)
+    {
         if (empty($url) || !isset($oembed)) return false;
         if (isset($oembed->html)) {
             $oembed->html = OEmbedDatabase::cleanup_html($oembed->html);
@@ -17,14 +19,15 @@ class OEmbedDatabase {
         serendipity_db_insert( PLUGIN_OEMBED_DATABASEVNAME, $save );
         return $oembed;
     }
-    
-    static function load_oembed($url) {
+
+    static function load_oembed($url)
+    {
         global $serendipity;
         if (empty($url)) return null;
-        
+
         $urlmd5 = md5($url);
-        $query = "select oeobj from {$serendipity['dbPrefix']}" . PLUGIN_OEMBED_DATABASEVNAME . " where urlmd5='$urlmd5'";
-        
+        $query  = "select oeobj from {$serendipity['dbPrefix']}" . PLUGIN_OEMBED_DATABASEVNAME . " where urlmd5='$urlmd5'";
+
         $rows = serendipity_db_query($query);
         if (!is_array($rows)) { // fresh search
             return null;
@@ -38,18 +41,21 @@ class OEmbedDatabase {
             if (!empty($oeobj)) {
                 return unserialize($oeobj);
             }
-            
+
         }
         return null;
     }
-    
-    static function clear_cache() {
+
+    static function clear_cache()
+    {
         global $serendipity;
+
         $q = "delete from {$serendipity['dbPrefix']}" . PLUGIN_OEMBED_DATABASEVNAME;
         serendipity_db_schema_import($q);
     }
-    
-    static function install(&$obj) {
+
+    static function install(&$obj)
+    {
         global $serendipity;
 
         if (!OEmbedDatabase::table_created(PLUGIN_OEMBED_DATABASEVNAME)) {
@@ -70,12 +76,12 @@ class OEmbedDatabase {
             }
         }
     }
-    
-    
-    static function table_created($table = PLUGIN_OEMBED_DATABASEVNAME)  {
+
+    static function table_created($table = PLUGIN_OEMBED_DATABASEVNAME)
+    {
         global $serendipity;
 
-        $q = "select count(*) from {$serendipity['dbPrefix']}" . $table;
+        $q   = "select count(*) from {$serendipity['dbPrefix']}" . $table;
         $row = serendipity_db_query($q, true, 'num');
 
         if (!is_numeric($row[0])) {        // if the response we got back was an SQL error.. :P
@@ -84,17 +90,18 @@ class OEmbedDatabase {
             return true;
         }
     }
-    
-    static function cleanup_html( $str ) {
+
+    static function cleanup_html( $str )
+    {
         $str = trim($str);
-        // Clear unicode stuff 
-        $str=str_ireplace("\u003C","<",$str);
-        $str=str_ireplace("\u003E",">",$str);
+        // Clear unicode stuff
+        $str = str_ireplace("\u003C","<",$str);
+        $str = str_ireplace("\u003E",">",$str);
         // Clear CDATA Trash.
         $str = preg_replace("@^<!\[CDATA\[(.*)\]\]>$@", '$1', $str);
         $str = preg_replace("@^<!\[CDATA\[(.*)@", '$1', $str);
         $str = preg_replace("@(.*)\]\]>$@", '$1', $str);
         return $str;
     }
-    
+
 }

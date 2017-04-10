@@ -39,7 +39,7 @@
     <url>http://dotsub.com/view//*</url>
     <endpoint>http://dotsub.com/services/oembed/</endpoint>
   </provider>
-  
+
   <provider>
     <name>Official.fm (tracks and playlist)</name>
     <url>http://official.fm/(playlists|tracks)/*</url>
@@ -58,7 +58,7 @@
     <url>http://qik.com/video/*</url>
     <endpoint>http://qik.com/api/oembed.{format}</endpoint>
   </provider>
-  
+
   <provider>
     <name>My Opera</name>
     <nodimensionsupport/>
@@ -136,7 +136,7 @@
   </provider>
 
   <!-- noembed providers =========================================== -->
-  
+
   <provider>
     <name>Twitpic (via noembed.com)</name>
     <jsononly/>

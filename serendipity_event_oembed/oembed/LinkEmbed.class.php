@@ -1,4 +1,6 @@
 <?php
-class LinkEmbed extends OEmbed{
+
+class LinkEmbed extends OEmbed
+{
 
 }

@@ -1,7 +1,8 @@
 <?php
-class CurlFetcher {
-
-    static public function file_get_contents($fileurl, $allow_curl =TRUE) {
+class CurlFetcher
+{
+    static public function file_get_contents($fileurl, $allow_curl =TRUE)
+    {
         $max_redirects = 5;
         if (defined('OEMBED_USE_CURL') && OEMBED_USE_CURL && defined('CURLOPT_URL')) {
             $ch = curl_init();
@@ -23,7 +24,7 @@ class CurlFetcher {
         }
         return $file_content;
     }
-    
+
     /**
      * Handling redirections with curl if safe_mode or open_basedir is enabled. The function working transparent, no problem with header and returntransfer options. You can handle the max redirection with the optional second argument (the function is set the variable to zero if max redirection exceeded).
      * Second parameter values:
@@ -32,7 +33,8 @@ class CurlFetcher {
      * - maxredirect is less or equal zero: no follow redirections
      * (see: http://php.net/manual/en/function.curl-setopt.php)
      */
-    static private function curl_exec_follow(/*resource*/ $ch, /*int*/ &$maxredirect = null) {
+    static private function curl_exec_follow(/*resource*/ $ch, /*int*/ &$maxredirect = null)
+    {
         $mr = $maxredirect === null ? 5 : intval($maxredirect);
         if (ini_get('open_basedir') == '' && ini_get('safe_mode' == 'Off')) {
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, $mr > 0);
@@ -76,4 +78,5 @@ class CurlFetcher {
         }
         return curl_exec($ch);
     }
+
 }

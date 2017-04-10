@@ -1,4 +1,5 @@
 <?php
+
 if (!defined("PLUGIN_OEMBED_PROVIDER_XML_FILE")) {
     @define("PLUGIN_OEMBED_PROVIDER_XML_FILE",    dirname(__FILE__) . '/' . "providers.xml");
 }

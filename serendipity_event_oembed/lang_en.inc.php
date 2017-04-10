@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -41,3 +41,4 @@
 @define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_STANDARD',     'standard player');
 @define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_FULLFEATURED', 'full-featured (requires JavaScript)');
 @define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_WORDPRESS',    'wordpress.com player (requires Flash)');
+

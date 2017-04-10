@@ -1,5 +1,7 @@
 <?php
-class VideoEmbed extends OEmbed {
+
+class VideoEmbed extends OEmbed
+{
     public $html;
     public $width;
     public $height;

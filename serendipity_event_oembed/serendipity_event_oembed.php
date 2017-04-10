@@ -4,13 +4,8 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
 require_once dirname(__FILE__) . '/oembed/config.php';    // autoload oembed classes and config
 require_once dirname(__FILE__) . '/OEmbedDatabase.php';
 require_once dirname(__FILE__) . '/OEmbedTemplater.php';
@@ -30,9 +25,9 @@ class serendipity_event_oembed extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_OEMBED_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Grischa Brockhaus');
-        $propbag->add('version',       '1.11');
+        $propbag->add('version',       '1.13');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '5.1.0'
         ));
@@ -103,18 +98,19 @@ class serendipity_event_oembed extends serendipity_event
         return true;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) { 
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
-        
+
         static $simplePatterns = null;
-        
+
         if ($simplePatterns==null) {
             $simplePatterns = array(
                 //'simpleTweet' => '@\(tweet\s+(\S*)\)@Usi',
                 'simpleTweet' => '@\[(?:e|embed)\s+(.*)\]@Usi',
             );
         }
-        
+
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
@@ -125,13 +121,17 @@ class serendipity_event_oembed extends serendipity_event
                         $this->update_entry($eventData, $simplePatterns, 'extended');
                     }
                     return true;
+
                 case 'css':
                     if (strpos($eventData, '.serendipity_oembed')) {
                         // class exists in CSS, so a user has customized it and we don't need default
                         // (doesn't work with templates like BP or 2k11 as the user css is loaded from a seperate file)
                         return true;
                     }
-?>
+                    $eventData .= '
+
+/* serendipity_event oembed start */
+
 .serendipity_oembed_video {
     position: relative;
     padding-top: 25px;
@@ -149,16 +149,20 @@ class serendipity_event_oembed extends serendipity_event
     width: 100%;
     height: 100%;
 }
-<?php
-                    return true;
+
+/* serendipity_event oembed end */
+
+';
+                return true;
             }
         }
-        
+
         return true;
-        
+
     }
 
-    function update_entry(&$eventData, &$patterns, $dateType) {
+    function update_entry(&$eventData, &$patterns, $dateType)
+    {
         if (!empty($eventData[$dateType])) {
             $eventData[$dateType] = preg_replace_callback(
                 $patterns['simpleTweet'],
@@ -166,15 +170,16 @@ class serendipity_event_oembed extends serendipity_event
                 $eventData[$dateType]);
         }
     }
-    
-    function oembedRewriteCallback($match) {
+
+    function oembedRewriteCallback($match)
+    {
         $url = $match[1];
         $maxwidth = $this->get_config('maxwidth','');
         $maxheight = $this->get_config('maxheight','');
         $obj = $this->expand($url, $maxwidth, $maxheight);
         return OEmbedTemplater::fetchTemplate('oembed.tpl',$obj, $url);
     }
-    
+
     /**
      * This method can be used by other plugins. It will expand an URL to an oembed object (or null if not supported).
      * @param string $url The url to be expanded
@@ -182,7 +187,8 @@ class serendipity_event_oembed extends serendipity_event
      * @param string $maxheight Maximum height of returned object (if service supports this). May be left empty
      * @return OEmbed or null
      */
-    function expand($url, $maxwidth=null, $maxheight=null) {
+    function expand($url, $maxwidth=null, $maxheight=null)
+    {
         $obj = OEmbedDatabase::load_oembed($url);
         if (empty($obj)) {
             $config = array('audioboo_tpl' => $this->get_config('audioboo_player', 'wordpress'));
@@ -190,12 +196,12 @@ class serendipity_event_oembed extends serendipity_event
             try {
                 $obj=$manager->provide($url,"object");
                 if (isset($obj)) {
-                    if (!empty($obj->error)) $obj=null; 
+                    if (!empty($obj->error)) $obj=null;
                 }
                 if (!isset($obj)) {
                     $obj = $this->expand_by_general_provider($url,$maxwidth,$maxheight);
                     if (isset($obj)) {
-                        if (!empty($obj->error)) $obj=null; 
+                        if (!empty($obj->error)) $obj=null;
                     }
                 }
                 if (isset($obj)) {
@@ -210,8 +216,9 @@ class serendipity_event_oembed extends serendipity_event
         }
         return $obj;
     }
-    
-    function expand_by_general_provider($url, $maxwidth=null, $maxheight=null) {
+
+    function expand_by_general_provider($url, $maxwidth=null, $maxheight=null)
+    {
         $provider = $this->get_config('generic_service', 'none');
         $manager = null;
         if ('oohembed' == $provider) {
@@ -223,14 +230,14 @@ class serendipity_event_oembed extends serendipity_event
             if (!empty($apikey)) {
                 require_once dirname(__FILE__) . '/oembed/EmbedlyProvider.class.php';
                 $manager = new EmbedlyProvider($url, $apikey, $maxwidth, $maxheight);
-            } 
+            }
         }
-        
+
         if (isset($manager)) {
             try {
                 $obj = $manager->provide($url,'object');
                 if (isset($obj)) {
-                    if (!empty($obj->error)) $obj=null; 
+                    if (!empty($obj->error)) $obj=null;
                 }
                 return $obj;
             } catch (Exception $e) {
@@ -241,9 +248,10 @@ class serendipity_event_oembed extends serendipity_event
             return null;
         }
     }
-    
-    function cleanup_html( $str ) {
-        // Clear unicode stuff 
+
+    function cleanup_html( $str )
+    {
+        // Clear unicode stuff
         $str=str_ireplace("\u003C","<",$str);
         $str=str_ireplace("\u003E",">",$str);
         // Clear CDATA Trash.
@@ -252,13 +260,17 @@ class serendipity_event_oembed extends serendipity_event
         $str = preg_replace("@(.*)]]>$@", '$1', $str);
         return $str;
     }
-    function cleanup() {
+    function cleanup()
+    {
         OEmbedDatabase::install($this);
         OEmbedDatabase::clear_cache();
         echo '<div class="serendipityAdminMsgSuccess">Cleared oembed cache.</div>';
     }
-    function install() {
+    function install()
+    {
         OEmbedDatabase::install($this);
     }
-    
+
 }
+
+?>

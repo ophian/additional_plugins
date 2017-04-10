@@ -1,3 +1,5 @@
 <?php
-class Exception404 extends Exception{
+
+class Exception404 extends Exception
+{
 }
