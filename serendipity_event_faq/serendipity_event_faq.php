@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian');
-        $propbag->add('version',      '1.28');
+        $propbag->add('version',      '1.29');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -632,14 +632,14 @@ class serendipity_event_faq extends serendipity_event
             case 'faqs':
                 if (($serendipity['POST']['typeSave'] == "true") && (!empty($serendipity['POST']['SAVECONF']))) {
                     $serendipity['POST']['typeSubmit'] = true;
-                    $bag = new serendipity_property_bag();
+                    $bag = new serendipity_property_bag;
                     $this->introspect($bag);
                     $name = (function_exists('serendipity_specialchars') ? serendipity_specialchars($bag->get('name')) : htmlspecialchars($bag->get('name'), ENT_COMPAT, LANG_CHARSET));
                     $desc = (function_exists('serendipity_specialchars') ? serendipity_specialchars($bag->get('description')) : htmlspecialchars($bag->get('description'), ENT_COMPAT, LANG_CHARSET));
                     $config_faq = $bag->get('configuration_faq');
 
                     foreach ($config_faq AS $config_item) {
-                        $cbag = new serendipity_property_bag();
+                        $cbag = new serendipity_property_bag;
                         if ($this->introspect_faq_item($config_item, $cbag)) {
                             $this->faq[$config_item] = serendipity_get_bool($serendipity['POST']['plugin'][$config_item]);
                         }
@@ -698,13 +698,13 @@ class serendipity_event_faq extends serendipity_event
 
                 if (($serendipity['POST']['categorySave'] == "true") && (!empty($serendipity['POST']['SAVECONF']))) {
                     $serendipity['POST']['categorySubmit'] = true;
-                    $bag = new serendipity_property_bag();
+                    $bag = new serendipity_property_bag;
                     $this->introspect($bag);
                     $name = (function_exists('serendipity_specialchars') ? serendipity_specialchars($bag->get('name')) : htmlspecialchars($bag->get('name'), ENT_COMPAT, LANG_CHARSET));
                     $desc = (function_exists('serendipity_specialchars') ? serendipity_specialchars($bag->get('description')) : htmlspecialchars($bag->get('description'), ENT_COMPAT, LANG_CHARSET));
                     $config_faq = $bag->get('configuration_category');
                     foreach ($config_faq AS $config_item) {
-                        $cbag = new serendipity_property_bag();
+                        $cbag = new serendipity_property_bag;
                         if ($this->introspect_category_item($config_item, $cbag)) {
                             $this->category[$config_item] = serendipity_get_bool($serendipity['POST']['plugin'][$config_item]);
                         }
@@ -1202,7 +1202,7 @@ class serendipity_event_faq extends serendipity_event
         foreach ($this->config_faq AS $config_item) {
             $elcount++;
             #$inspectConfig['config_value'] = $config_value = $this->faq[$config_item]; // no use, why was it set?
-            $cbag = new serendipity_property_bag();
+            $cbag = new serendipity_property_bag;
             $this->introspect_faq_item($config_item, $cbag);
 
             $inspectConfig['cname'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('name')) : htmlspecialchars($cbag->get('name'), ENT_COMPAT, LANG_CHARSET));
@@ -1319,7 +1319,7 @@ class serendipity_event_faq extends serendipity_event
         foreach ($this->config_category AS $config_item) {
             $elcount++;
             #$inspectConfig['config_value'] = $config_value = $this->category[$config_item]; // no use, why was it set?
-            $cbag = new serendipity_property_bag();
+            $cbag = new serendipity_property_bag;
             $this->introspect_category_item($config_item, $cbag);
 
             $inspectConfig['cname'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('name')) : htmlspecialchars($cbag->get('name'), ENT_COMPAT, LANG_CHARSET));
