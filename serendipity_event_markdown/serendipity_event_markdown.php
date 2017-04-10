@@ -25,7 +25,7 @@ class serendipity_event_markdown extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '1.23');
+        $propbag->add('version',       '1.24');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array('frontend_display' => true, 'frontend_comment' => true));
         $propbag->add('groups', array('MARKUP'));
@@ -175,7 +175,9 @@ class serendipity_event_markdown extends serendipity_event
                             }
                         }
                     }
-                    $this->setPlaintextBody($eventData, $mdv, $mdsp);
+                    if (is_array($eventData)) {
+                        $this->setPlaintextBody($eventData, $mdv, $mdsp);
+                    }
                     break;
 
                 case 'frontend_comment':
