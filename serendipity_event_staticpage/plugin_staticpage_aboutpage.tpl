@@ -1,4 +1,4 @@
-{* origin plugin - frontend plugin_staticpage_aboutpage.tpl (overview) file v. 1.06, 2016-08-31 *}
+{* origin plugin - frontend plugin_staticpage_aboutpage.tpl (overview) file v. 1.07, 2017-04-13 *}
 <article id="staticpage_{$staticpage_pagetitle|makeFilename}" class="clearfix serendipity_staticpage{if $staticpage_articleformat} serendipity_entry{/if}">
     <header>
         <h2>{if $staticpage_articleformat}{if $staticpage_articleformattitle}{$staticpage_articleformattitle}{else}{$staticpage_pagetitle|escape}{/if}{else}{if $staticpage_headline}{$staticpage_headline}{else}{$staticpage_pagetitle|escape}{/if}{/if}</h2>
@@ -13,9 +13,9 @@
         {/if}
         {if $staticpage_show_breadcrumb}
             <div class="staticpage_navigation_breadcrumb">
-                <a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE}</a> &#187;
+                <a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE}</a>{if !empty($staticpage_navigation.crumbs)} &#187; {/if}
             {foreach $staticpage_navigation.crumbs AS $crumb}
-                {if !$crumb@first}&#187;{/if}{if $crumb.id != $staticpage_pid}<a href="{$crumb.link}">{$crumb.name|escape}</a>{else}{$crumb.name|escape}{/if}
+                {if !$crumb@first}&#187; {/if}{if $crumb.id != $staticpage_pid}<a href="{$crumb.link}">{$crumb.name|escape}</a>{else}{$crumb.name|escape}{/if}
             {/foreach}
             </div>
         {/if}

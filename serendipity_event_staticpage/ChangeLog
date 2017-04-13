@@ -1,3 +1,15 @@
+5.30:
+----
+
+ * Refactor navigation PREV/NEXT array methods, since PHP 7++ changed
+   the way arrays iterate their pointer.
+ * Better navigation array manipulations for the cache serialization
+ * Minor changes to staticpage breadcrumb regarding separator spaces
+ * KEEP IN MIND:
+       The staticpage PREV/NEXT navigation option allows very special
+       cases, in special for sub pages, which would normally just fall
+       out of that stream.
+
 5.24:
 ----
 

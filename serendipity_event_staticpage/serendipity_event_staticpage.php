@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.24');
+        $propbag->add('version', '5.30');
         $propbag->add('requirements', array(
             'serendipity' => '2.0.99',
             'smarty'      => '3.1.0',
@@ -1315,46 +1315,72 @@ class serendipity_event_staticpage extends serendipity_event
     }
 
     /**
-     * Rewind and set internal pointer for next and prev frontend navigation returns
-     * since $expages may have excluded/removed keys, without setting a new index, for comparison checks with $pages
-     * that is why the previous coded loops $i+1/$i-1 in $nav for prev and next did not help
+     * Find and set key itemID for next and prev frontend navigation returns
      *
-     * @param   array     $pages
-     * @param   int       for $index
+     * @param   array     $nav
+     * @param   int       current key
      * @param   boolean   next or prev
      * @param   string    key name
      * @access  private
      * @return  mixed     string/bool
      */
-    function get_nav($array, $index, $prev, $s='')
+    function get_nav($nav, $currentKey, $prev, $s='')
     {
-        if (!is_array($array)) {
+        static $debug = false;
+
+        if (!is_array($nav)) {
             return null;
         }
-        // handle case end of array
-        end($array);         // move the internal pointer to the end of the array
-        $key = key($array);  // fetches the key of the element pointed to by the internal pointer
-        if (!$prev && ($key == $index)) {
+
+        if ($debug) {
+            $f = $prev ? 'PREV' : 'NEXT';
+            $p = $prev ? 'true' : 'false';
+            if (key($nav) === null) {
+                echo "FOR BOTH: You are in the end of the array.<br>\n";
+            } else {
+                echo "FOR BOTH: Current key of thispage element = $currentKey<br>\n";
+            }
+            #echo '<pre>'.print_r($nav, true).'</pre>'; // OK
+        }
+
+        if ($prev === true) {
+            // Create the PREV Nav
+            foreach ($nav AS $pkey => $pitem) {
+                if ($pitem[0] == $currentKey) {
+                    if ($debug) {
+                        echo "FOR $f ITER:<br>foreach pkey = $pkey prev=$p && ({$pitem[0]} == $currentKey) [=".($pitem[0] == $currentKey ? 'true':'false')."] && Current element ID = $currentKey<br>\n<br>\n";
+                    }
+                    $prevkey = ($pkey-1);
+                    if (isset($nav[$prevkey]) && array_key_exists($prevkey, $nav)) {
+                        if ($debug) {
+                            echo "FOR $f ITER:<br>Current element ID <u>for prev()</u> = " . $nav[$prevkey][0]."<br>\n<br>\n";
+                        }
+                        return $nav[$prevkey][$s];
+                    }
+                }
+            }
+        } else if ($prev === false) {
+            // Create the NEXT Nav
+            if ($debug) {
+                echo "<hr><br>\n";
+            }
+            foreach ($nav AS $nkey => $nitem) {
+                if ($nitem[0] == $currentKey) {
+                    if ($debug) {
+                        echo "FOR $f ITER:<br>foreach nkey = $nkey => itemID = ".$nitem[0]." && itemPageName = ".$nitem[1]." && Current element ID = " . $nav[$nkey][0]." && prev = (bool)$p<br>\n<br>\n";
+                    }
+                    $nextkey = ($nkey+1);
+                    if (isset($nav[$nextkey]) && array_key_exists($nextkey, $nav)) {
+                        if ($debug) {
+                            echo "FOR $f ITER:<br>Current element ID <u>for next()</u> = " . $nav[$nextkey][0]."<br>\n<br>\n";
+                        }
+                        return $nav[$nextkey][$s];
+                    }
+                }
+            }
+        } else {
             return false;
         }
-        if ( $prev && ($key == $index)) {
-            prev($array);
-            return $array[key($array)][$s];
-        }
-        // rewind and iterate through for normal case navigations
-        unset($key);
-        reset($array);
-        foreach ($array AS $key => $item) {
-            if ($key == $index) {
-                if (!$prev) {
-                    return $array[key($array)][$s]; // is next() index key already
-                }
-                prev($array); // set pointer to current key, see above
-                prev($array); // set pointer to real prev() key
-                return $array[key($array)][$s];
-            }
-        }
-        return false;
     }
 
     /**
@@ -1393,45 +1419,78 @@ class serendipity_event_staticpage extends serendipity_event
     function getNavigationData()
     {
         global $serendipity;
+        static $debug = false;
 
         $target  = $this->cachefile;
         $timeout = 86400; // One day
-        if (file_exists($target) && filemtime($target) > time()-$timeout) {
+        if (!$debug && file_exists($target) && filemtime($target) > time()-$timeout) {
             $pages = unserialize(file_get_contents($target));
+            #echo "DEBUG: pages array fetched by dat file<br>\n";
         } else {
             $pages = $this->fetchPublishedStaticPages();
-            $pages = (is_array($pages) ? serendipity_walkRecursive($pages) : array()); // builds depth flag
+            if ($debug) { // Once again: USE with {} to not influence next line !!!
+                #echo 'FETCH:<pre>'.print_r($pages, true).'</pre>';
+            }
+            $pages = (is_array($pages) ? serendipity_walkRecursive($pages) : array()); // builds the depth flag, but w/o numeric key
+            if ($debug) {
+                #echo 'WALK:<pre>'.print_r($pages, true).'</pre>';
+            }
 
-            // builds an exclude flag, referenced, in case of a level 0 top page with no navis set at all
+            // Manipulate the pages array by reference
             foreach ($pages AS $lkey => &$lval) {
+                // for the later serialization we need to add a proper num key to depth - in the correct order: key[num], key[name]
+                if (isset($lval['depth'])) {
+                    $d = $lval['depth']; // keep depth value
+                    unset($lval['depth']); // remove key/value
+                    $lval['depth'] = $lval[] = $d; // add both and the missing num key [6] for depth in correct order
+                }
+                // builds an exclude flag, in case of a level 0 top page with no navigations set at all
                 if ($lval['depth'] == 0 && $lval['shownavi'] == 0 && $lval['show_breadcrumb'] == 0) {
-                    $lval['excludenav'] = true;
+                    $lval['excludenav'] = $lval[] = true; // and add the missing num key [7] in correct order
                 }
             }
+
             // add to all recursive childs of a level 0 top parent with set flag
             foreach ($pages AS $addkey => $addvalue) {
-                if ($addvalue['excludenav']) {
+                if (isset($addvalue['excludenav'])) {
                     $rtree = $this->recursive_tree($pages, $addvalue['id']);
                     foreach ($rtree AS $tkey => $tval) {
-                        // referenced
+                        // again referenced
                         foreach ($pages AS $rkey => &$rval) {
-                            if ($rval['id'] == $tval['id'] && $rval['shownavi'] == 0) $rval['excludenav'] = true;
+                            if ($rval['id'] == $tval['id'] && $rval['shownavi'] == 0) $rval['excludenav'] = $rval[] = true; // and add the missing num key [7] in correct order
                         }
                     }
                 }
             }
 
-            $fp = fopen($target, 'w');
-            fwrite($fp, serialize($pages));
-            fclose($fp);
+            if (!$debug) {
+                $fp = fopen($target, 'w');
+                fwrite($fp, serialize($pages));
+                fclose($fp);
+            }
         }
 
-        $thispage = (int)$this->getPageID();
-        $navname  = serendipity_db_bool($this->get_config('showtextorheadline', 'false'));
+        #$debug = true; // 2cd half debug only
 
-        // clone pages array for shownavi navigation, but remove flagged item keys
+        $thispage = $this->getPageID();
+        if ($debug) {
+            echo "thispage = $thispage<br>\n";
+        }
+        if (!is_numeric($thispage)) return false;
+
+        $navname = serendipity_db_bool($this->get_config('showtextorheadline', 'false'));
+
+        // clone the pages array for shownavi navigation, which is depth == 0 only, but also removes possible flagged item keys
         foreach ($pages AS $k => $v) {
-            if (!$v['excludenav']) { $expages[$k] = $v; } // keep index key for strict comparison with pages array!
+            if ($debug) echo "NAME: [{$v[1]}] && DEPTH: [{$v['depth']}] && SHOWNAVI: [{$v['shownavi']}] to keep in navigation array ";
+            // check to exclude no navigations at all by flag, OR continue in other cases.
+            // What we want here are normal root level pages with navigation set true AND some specal cased subpages with shownavi set true only
+            if (isset($v['excludenav']) || (($v['depth'] != 0 && $v['shownavi'] == 0) || ($v['depth'] == 0 && $v['shownavi'] == 0)) || $v['depth'] === null ) {
+                if ($debug) echo "[=false]<br>\n";
+                continue;
+            }
+            if ($debug) echo "[=true]<br>\n";
+            $expages[] = $v; // set new index keys!
         }
 
         for ($i = 0, $maxcount = count($pages); $i < $maxcount; $i++) {
@@ -1441,31 +1500,37 @@ class serendipity_event_staticpage extends serendipity_event
                 $top['id']        = $pages[$i]['id'];
             }
             if ($pages[$i]['id'] == $thispage) {
-                $previstop = ($top['id'] == $i) ? true : false; // case when top_parents id equals previous_key id
+                if ($debug) {
+                    #echo 'PAGES:<pre>'.print_r($pages, true).' thispage['.$thispage.'] maxcount['.$maxcount.']</pre>';
+                    echo "<p>if pages ID ({$pages[$i]['id']}) == ($thispage) thispage, generate nav array [{$pages[$i]['pagetitle']}]</p>\n";
+                    #echo 'EXPAGES:<pre>'.print_r($expages, true).'</pre>';
+                }
+                $previstop = ($top['id'] == $i) ? true : false; // case, when top_parents ID equals previous_key ID
                 $childcase = ($pages[$i]['depth'] > 1) ? true : false;
+
                 // Keep im mind, the 'top' in $nav['top'] is just a synonym for 'current page', or 'top parent', or 'exit'
                 $nav = array(
                     'prev' => array(
-                        'name' => $navname ? PREVIOUS : $this->get_nav($expages, $i, true, 'pagetitle'),
-                        'link' => $this->get_nav($expages, $i, true, 'permalink')
-                    ),
+                        'name' => ($navname ? PREVIOUS : $this->get_nav($expages, $thispage, true, 'pagetitle')),
+                        'link' => $this->get_nav($expages, $thispage, true, 'permalink')
+                        ),
                     'next' => array(
-                        'name' => $navname ? NEXT : $this->get_nav($expages, $i, false, 'pagetitle'),
-                        'link' => $this->get_nav($expages, $i, false, 'permalink')
-                    ),
+                        'name' => ($navname ? NEXT : $this->get_nav($expages, $thispage, false, 'pagetitle')),
+                        'link' => $this->get_nav($expages, $thispage, false, 'permalink')
+                        ),
                     'top' => array(
-                        'topp_name' => $childcase ? ($navname ? STATICPAGE_TOP : $top['name']) : '',
-                        'topp_link' => $childcase ? $top['permalink'] : '',
+                        'topp_name' => ($childcase ? ($navname ? STATICPAGE_TOP : $top['name']) : ''),
+                        'topp_link' => ($childcase ? $top['permalink'] : ''),
                         'curr_name' => $pages[$i]['pagetitle'],
                         'curr_link' => $pages[$i]['permalink'],
-                        'exit_name' => $previstop ? HOMEPAGE : '',
-                        'exit_link' => $previstop ? $serendipity['serendipityHTTPPath'] : '',
+                        'exit_name' => ($previstop ? HOMEPAGE : ''),
+                        'exit_link' => ($previstop ? $serendipity['serendipityHTTPPath'] : ''),
                         'new'       => true,
-                        // this is old compat view, reduced to a plain link of current page. Disabled top_parent here, while too expensive!
+                        // this is the old compat view, reduced to a plain link of current page. Disabled top_parent here, while too expensive!
                         'name' => $pages[$i]['pagetitle'],
                         'link' => $pages[$i]['permalink'],
-                    )
-                );
+                        )
+                    );
 
                 if (empty($nav['prev']['link'])){
                     $nav['prev']['name'] = '';
@@ -1521,7 +1586,6 @@ class serendipity_event_staticpage extends serendipity_event
 
                 return $nav;
             }
-
         }
         return false;
     }
