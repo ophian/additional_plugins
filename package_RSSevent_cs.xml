@@ -401,7 +401,7 @@
 <category>Event Plugins</category>
 <author>Falk Doering, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;FAQ - Často kladené otázky&lt;/b&gt;&lt;br /&gt;Správa FAQ - často kladených otázek&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 22 Mar 2017 15:45:20 +0100</pubDate>
+<pubDate>Mon, 10 Apr 2017 09:56:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_faq</guid>
 </item>
 <item>
@@ -770,7 +770,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Markup: Markdown&lt;/b&gt;&lt;br /&gt;Převádí značky Markdown na HTML v textu příspěvku&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Jan 2017 16:15:08 +0100</pubDate>
+<pubDate>Mon, 10 Apr 2017 10:18:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -868,8 +868,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_oembed</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_oembed&lt;br /&gt;oEmbed&lt;/b&gt;&lt;br /&gt;oEmbed je formát, který umožňuje vkládat do blogu jiné stránky z internetu. Umožňuje zobrazovat v příspěvcích vložený obsah (jako tweety, fotky nebo videa), když autor příspěvku napíše odkaz na zdroj obsahu, aniž by bylo potřeba přímo parsovat cílovou stránku.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_oembed&lt;br /&gt;oEmbed&lt;/b&gt;&lt;br /&gt;oEmbed je formát, který umožňuje vkládat do blogu jiné stránky z internetu. Umožňuje zobrazovat v příspěvcích vložený obsah (jako tweety, fotky nebo videa), když autor příspěvku napíše odkaz na zdroj obsahu, aniž by bylo potřeba přímo parsovat cílovou stránku.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Mon, 10 Apr 2017 12:56:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_oembed</guid>
 </item>
 <item>
@@ -1139,7 +1139,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statické stránky&lt;/b&gt;&lt;br /&gt;Zobrazuje v blogu statické stránky se stejným designem jako mají běžné přspěvky. Přidá nové menu do adminstrátorského rozhraní.&lt;br/&gt;For: Serendipity 2.0.99</content:encoded>
-<pubDate>Thu, 30 Mar 2017 11:22:58 +0200</pubDate>
+<pubDate>Thu, 13 Apr 2017 08:56:43 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1247,7 +1247,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Malte Diers, Matthias Gutjahr</author>
 <content:encoded>&lt;b&gt;serendipity_event_typesetbuttons&lt;br /&gt;Rozšířená tlačítka pro ne-WYSIWYG editor&lt;/b&gt;&lt;br /&gt;Přidá tlačítka pro vložení kódů různých html entit (čárky, tečky, uvozovky) + další akce.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 01 Jan 2017 10:15:51 +0100</pubDate>
+<pubDate>Mon, 10 Apr 2017 10:04:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_typesetbuttons</guid>
 </item>
 <item>

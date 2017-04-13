@@ -2932,9 +2932,9 @@
 <description>Správa FAQ - často kladených otázek</description>
 <maintainers><maintainer><name>Falk Doering, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.28</version>
+  <version>1.29</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-03-22</date>
+  <date>2017-04-10</date>
   <filelist>
 <dir name="serendipity_event_faq">
 <file>.htaccess</file>
@@ -6480,9 +6480,9 @@
 <description>Převádí značky Markdown na HTML v textu příspěvku</description>
 <maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.23</version>
+  <version>1.24</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-01-06</date>
+  <date>2017-04-10</date>
   <filelist>
 <dir name="serendipity_event_markdown">
 <file>.htaccess</file>
@@ -7267,9 +7267,9 @@
 <description>oEmbed je formát, který umožňuje vkládat do blogu jiné stránky z internetu. Umožňuje zobrazovat v příspěvcích vložený obsah (jako tweety, fotky nebo videa), když autor příspěvku napíše odkaz na zdroj obsahu, aniž by bylo potřeba přímo parsovat cílovou stránku.</description>
 <maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.11</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.13</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-04-10</date>
   <filelist>
 <dir name="serendipity_event_oembed">
 <file>.htaccess</file>
@@ -9179,9 +9179,9 @@
 <description>Zobrazuje v blogu statické stránky se stejným designem jako mají běžné přspěvky. Přidá nové menu do adminstrátorského rozhraní.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>5.20</version>
+  <version>5.30</version>
   <requirements:s9yVersion>2.0.99</requirements:s9yVersion>
-  <date>2017-03-30</date>
+  <date>2017-04-13</date>
   <filelist>
 <dir name="serendipity_event_staticpage">
 <file>.htaccess</file>
@@ -10611,9 +10611,9 @@
 <description>Přidá tlačítka pro vložení kódů různých html entit (čárky, tečky, uvozovky) + další akce.</description>
 <maintainers><maintainer><name>Matthew Groeninger, Malte Diers, Matthias Gutjahr</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.23</version>
+  <version>0.24</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-01-01</date>
+  <date>2017-04-10</date>
   <filelist>
 <dir name="serendipity_event_typesetbuttons">
 <dir name="buttons">
