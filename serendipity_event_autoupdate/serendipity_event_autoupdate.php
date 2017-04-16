@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.4.0');
+        $propbag->add('version',       '1.4.1');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -170,7 +170,7 @@ class serendipity_event_autoupdate extends serendipity_event
                     $ad_suite  = SERENDIPITY_ADMIN_SUITE;
                     $css_upd   = @file_get_contents(dirname(__FILE__) . '/upgrade.min.css');
                     $bimgpath  = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . 's9y_banner_small.png';
-                    $s9ybanner = (file_exists($_SERVER['DOCUMENT_ROOT'].$bimgpath) ? '<img src="' . $bimgpath . '" alt="Serendipity PHP Weblog" title="' . POWERED_BY . ' Serendipity" />' : '');
+                    $s9ybanner = (file_exists($_SERVER['DOCUMENT_ROOT'].$bimgpath) ? '<img src="' . $bimgpath . '" alt="Serendipity PHP Weblog" title="' . POWERED_BY . ' Serendipity" /> ' : ' ');
                     $nv        = (function_exists('serendipity_specialchars') ? serendipity_specialchars($_REQUEST['serendipity']['newVersion']) : htmlspecialchars($_REQUEST['serendipity']['newVersion'], ENT_COMPAT, LANG_CHARSET)); // reduce to POST only?
                     if (trim($nv) == '') return;
                     $logmsg    = '';
