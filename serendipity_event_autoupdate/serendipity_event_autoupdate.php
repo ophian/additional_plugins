@@ -301,16 +301,16 @@ EOS;
                                             sleep(2);
                                             $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg><a href="'.$serendipity['serendipityHTTPPath'].'">click to start Serendipity Installer here</a>!</p>');
                                             sleep(1);
-                                           $this->doUpdate();//$logmsg
+                                            $this->doUpdate();//$logmsg
                                         } else {
                                              $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Copying the files for the update failed!</p>');
                                         }
                                      } else {
                                         $this->showChecksumErrors($nv);
                                         echo '<form action="?serendipity[adminModule]=event_display&serendipity[adminAction]=update" method="POST">
-                                             <input type="hidden" name="serendipity[newVersion]" value="'.$nv.'" />
-                                             <input type="submit" value="'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'" />
-                                             </form>';
+                                            <input type="hidden" name="serendipity[newVersion]" value="'.$nv.'" />
+                                            <input type="submit" value="'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'" />
+                                            </form>';
                                     }
                                 } else {
                                     $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Unpacking the update zop file failed!</p>');
@@ -321,8 +321,8 @@ EOS;
                                 }
 
                             } else {
-                               $this->showNotWriteable($update);
-                               echo '<form action="?serendipity[adminModule]=event_display&serendipity[adminAction]=update" method="POST">
+                                $this->showNotWriteable($update);
+                                echo '<form action="?serendipity[adminModule]=event_display&serendipity[adminAction]=update" method="POST">
                                     <input type="hidden" name="serendipity[newVersion]" value="'.$nv.'" />
                                     <input type="submit" value="'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'" />
                                     </form>';
