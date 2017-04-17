@@ -313,7 +313,7 @@ EOS;
                                             </form>';
                                     }
                                 } else {
-                                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Unpacking the update zop file failed!</p>');
+                                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>Unpacking the update zip file failed!</p>');
                                     if (true === $this->cleanTemplatesC($nv, false)) {
                                         $this->show_message('<p class="msg_success"><svg class="icon icon-ok" title="success"><use xlink:href="#icon-ok"></use></svg>Cleaning up the failed unpack directory!</p>');
                                     }
