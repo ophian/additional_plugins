@@ -1,17 +1,10 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_communityrating extends serendipity_event
 {
@@ -25,12 +18,12 @@ class serendipity_event_communityrating extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_COMMUNITYRATING_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_COMMUNITYRATING_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Lewe Zipfel');
-        $propbag->add('version',       '1.11.1');
+        $propbag->add('author',        'Garvin Hicking, Lewe Zipfel, Ian');
+        $propbag->add('version',       '1.13');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',    array(
             'backend_publish'                                   => true,
@@ -59,12 +52,13 @@ class serendipity_event_communityrating extends serendipity_event
         return true;
     }
 
-    function smarty_init() {
+    function smarty_init()
+    {
         global $serendipity;
         if (!isset($this->smarty_init)) {
             include_once dirname(__FILE__) . '/smarty.inc.php';
             if (isset($serendipity['smarty'])) {
-                $serendipity['smarty']->register_function('communityrating_show', 'communityrating_serendipity_show');
+                $serendipity['smarty']->registerPlugin('function', 'communityrating_show', 'communityrating_serendipity_show');
                 $this->smarty_init = true;
             }
         }
@@ -73,7 +67,8 @@ class serendipity_event_communityrating extends serendipity_event
         $title = $this->title;
     }
 
-    function &getSupportedProperties() {
+    function &getSupportedProperties()
+    {
         static $supported_properties = null;
 
         if ($supported_properties === null) {
@@ -90,7 +85,8 @@ class serendipity_event_communityrating extends serendipity_event
         return $supported_properties;
     }
 
-    function addProperties(&$properties, &$eventData) {
+    function addProperties(&$properties, &$eventData)
+    {
         global $serendipity;
         // Get existing data
         $property = serendipity_fetchEntryProperties($eventData['id']);
@@ -117,7 +113,8 @@ class serendipity_event_communityrating extends serendipity_event
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -156,7 +153,6 @@ class serendipity_event_communityrating extends serendipity_event
 ?>
                     </fieldset>
 <?php
-                    return true;
                     break;
 
                 case 'backend_publish':
@@ -166,8 +162,6 @@ class serendipity_event_communityrating extends serendipity_event
                     }
 
                     $this->addProperties($serendipity['POST']['properties'], $eventData);
-
-                    return true;
                     break;
 
 
@@ -256,15 +250,18 @@ class serendipity_event_communityrating extends serendipity_event
                         }
                         echo '</communityratings>' . "\n";
                     }
+                    break;
 
                 default:
                     return false;
-                    break;
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

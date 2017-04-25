@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -20,4 +20,3 @@
 @define('PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_TIMESPAN', 'Timespan of movies');
 @define('PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_TIMESPAN_DESC', 'Enter the number of days the average will be calculated');
 
-?>

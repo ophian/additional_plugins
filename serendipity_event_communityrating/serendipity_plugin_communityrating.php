@@ -1,15 +1,10 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_plugin_communityrating extends serendipity_plugin
 {
@@ -25,11 +20,11 @@ class serendipity_plugin_communityrating extends serendipity_plugin
         $propbag->add('description',   PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Lewe Zipfel, Garvin Hicking');
-        $propbag->add('version',       '1.2.1');
+        $propbag->add('version',       '1.2.2');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.1.0'
         ));
         $propbag->add('groups', array('STATISTICS'));
         $propbag->add('configuration', array('title',
@@ -47,23 +42,24 @@ class serendipity_plugin_communityrating extends serendipity_plugin
                 $propbag->add('name', TITLE);
                 $propbag->add('description', '');
                 $propbag->add('default', $this->title);
-            break;
+                break;
+
             case 'timespan':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_TIMESPAN);
                 $propbag->add('description', PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_TIMESPAN_DESC);
                 $propbag->add('default', 30);
-            break;
+                break;
 
             case 'type':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_EVENT_COMMUNITYRATING_TYPES);
                 $propbag->add('description', '');
                 $propbag->add('default', 'IMDB');
-            break;
+                break;
 
             default:
-                    return false;
+                return false;
         }
         return true;
     }
@@ -71,39 +67,40 @@ class serendipity_plugin_communityrating extends serendipity_plugin
     function generate_content(&$title)
     {
         global $serendipity;
-        $title       = $this->get_config('title', $this->title);
-        $timespan    = $this->get_config('timespan', 30);
-        $type        = $this->get_config('type', 'IMDB');
 
-		$q = "SELECT ep.entryid AS id, e.title, e.timestamp, ep.value as rating
+        $title    = $this->get_config('title', $this->title);
+        $timespan = $this->get_config('timespan', 30);
+        $type     = $this->get_config('type', 'IMDB');
 
-				  FROM {$serendipity['dbPrefix']}entryproperties AS ep
-				  JOIN {$serendipity['dbPrefix']}entries AS e
-				    ON e.id = ep.entryid
+        $q = "SELECT ep.entryid AS id, e.title, e.timestamp, ep.value as rating
+                FROM {$serendipity['dbPrefix']}entryproperties AS ep
+                JOIN {$serendipity['dbPrefix']}entries AS e
+                  ON e.id = ep.entryid
+               WHERE ep.property = 'cr_{$type}_rating'
+                 AND e.timestamp > " . (time() - (86700 * (int)$timespan)) . "
+            ORDER BY ep.value DESC
+               LIMIT 5";
 
-				 WHERE ep.property = 'cr_{$type}_rating'
-				   AND e.timestamp > " . (time() - (86700 * (int)$timespan)) . "
-				 ORDER BY ep.value DESC
-				 LIMIT 5";
-
-		$rows = serendipity_db_query($q);
-		if (!is_array($rows)) {
-		    echo "No movies during the last $timespan days! Maybe I dropped dead.";
-		}
+        $rows = serendipity_db_query($q);
+        if (!is_array($rows)) {
+            echo "No movies during the last $timespan days! Maybe I dropped dead.";
+        }
 
         echo '<ol class="movie {$type}">';
 
-		foreach($rows AS $row) {
+        foreach($rows AS $row) {
             $url = serendipity_archiveURL($row['id'],
                                           $row['title'],
                                           'serendipityHTTPPath',
                                           true,
                                           array('timestamp' => $row['timestamp']));
             echo '<li><a href="'. $url . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($row['title']) : htmlspecialchars($row['title'], ENT_COMPAT, LANG_CHARSET)) . '</a> (' . ($row['rating']) . ')</li>';
-		}
-	    echo '</ol>';
+        }
+        echo '</ol>';
 
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

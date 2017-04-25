@@ -20,3 +20,4 @@
 
 @define('PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_TIMESPAN', 'Èasový rozsah filmù');
 @define('PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_TIMESPAN_DESC', 'Zadejte poèet dní, ze kterých bude poèítán prùmìr');
+

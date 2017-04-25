@@ -131,4 +131,3 @@ function communityrating_serendipity_show($params, &$smarty) {
         echo $content;
 	}
 }
-
