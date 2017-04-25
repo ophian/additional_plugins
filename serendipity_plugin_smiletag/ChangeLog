@@ -1,1 +1,0 @@
-Properly use the example() API method by returning, not echo'ing. Unimportant update.    
