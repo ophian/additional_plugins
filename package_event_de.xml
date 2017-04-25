@@ -9591,11 +9591,11 @@
 <summary>TinyMCE als WYSIWYG Editor benutzen</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Es wird Serendipity ab Version 1.6 benötigt. Bitte lesen Sie nach der Installation die weitere Installationsbeschreibung in der Plugin Konfiguration.</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.14</version>
+  <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-01-06</date>
+  <date>2017-04-25</date>
   <filelist>
 <dir name="serendipity_event_tinymce">
 <file>.htaccess</file>
