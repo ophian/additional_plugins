@@ -63,15 +63,6 @@
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
-<title>Babelfish: Překlad příspěvků blogu pomocí služby Babelfish</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_babelfish</link>
-<category>Event Plugins</category>
-<author>Sebastian Nohn</author>
-<content:encoded>&lt;b&gt;serendipity_event_babelfish&lt;br /&gt;Babelfish&lt;/b&gt;&lt;br /&gt;Překlad příspěvků blogu pomocí služby Babelfish&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 15:15:15 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_babelfish</guid>
-</item>
-<item>
 <title>Zobrazování příspěvků pomocí JavaScriptu: Poskytuje Javascriptový výstup nejnovějších článků pro jejich vložení do cizích, externích stránek. (Přečtěte si soubor README v adresáři pluginu!)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backend</link>
 <category>Event Plugins</category>
@@ -115,15 +106,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_browserid&lt;br /&gt;BrowserID přihlašování&lt;/b&gt;&lt;br /&gt;Umožňuje autorům přihlašovat se do blogu pomocí služby BrowserID&lt;br/&gt;For: Serendipity 1.6</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_browserid</guid>
-</item>
-<item>
-<title>Jednoduché cachování / předgenerování stránek: [EXPERIMENTÁLNÍ] Umožňuje cachování (ve smyslu předgenerování) stránek. Pozor: Absolutně zruší veškeré vymoženosti dynamicky vytvářeného obsahu, nepracuje dobře s pluginy, které takový obsah vytvářejí. Ale tato funkce zvyšuje rychlost blogu, pokud nepotřebujete dynamické funkce. (Tento plugin by měl být umístěn co nejdříve v seznamu pluginů. Pouze nutné pluginy generující dynamický obsah, jako např. karma, by měly být umístěny před tímto pluginem.)</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cachesimple</link>
-<category>Event Plugins</category>
-<author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_cachesimple&lt;br /&gt;Jednoduché cachování / předgenerování stránek&lt;/b&gt;&lt;br /&gt;[EXPERIMENTÁLNÍ] Umožňuje cachování (ve smyslu předgenerování) stránek. Pozor: Absolutně zruší veškeré vymoženosti dynamicky vytvářeného obsahu, nepracuje dobře s pluginy, které takový obsah vytvářejí. Ale tato funkce zvyšuje rychlost blogu, pokud nepotřebujete dynamické funkce. (Tento plugin by měl být umístěn co nejdříve v seznamu pluginů. Pouze nutné pluginy generující dynamický obsah, jako např. karma, by měly být umístěny před tímto pluginem.)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_cachesimple</guid>
 </item>
 <item>
 <title>Kalendář akcí: Zobrazuje kalendář akcí jako samostatnou stránku v blogu. Design stránky zůstává stejný jako u zbytku blogu. (MySQL only)</title>
@@ -279,15 +261,6 @@
 <guid isPermaLink="false">serendipity_event_dejure</guid>
 </item>
 <item>
-<title>Mazací odkaz: Přidá odkaz na smazání příspěvku do patičky každého příspěvku.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_deletelink</link>
-<category>Event Plugins</category>
-<author>Cameron MacFarland, Brett Profitt</author>
-<content:encoded>&lt;b&gt;serendipity_event_deletelink&lt;br /&gt;Mazací odkaz&lt;/b&gt;&lt;br /&gt;Přidá odkaz na smazání příspěvku do patičky každého příspěvku.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_deletelink</guid>
-</item>
-<item>
 <title>Komentáře Disqus: Disqus.com je webová služba pro správu komentářů. Ukládá a spravuje komentáře vně instalace serendipity a je do blogu vkládána pomocí JavaScriptu. Pro více informací přejděte na www.disqus.com.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_disqus</link>
 <category>Event Plugins</category>
@@ -412,15 +385,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_feed&lt;br /&gt;Dashboard Feed Reader&lt;/b&gt;&lt;br /&gt;The Dashboard S9y Feedle&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
 <pubDate>Fri, 10 Feb 2017 12:51:23 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_feed</guid>
-</item>
-<item>
-<title>Feedburner FeedFlare: Do patičky každého příspěvku přidává tag FeedFlare.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_feedflare</link>
-<category>Event Plugins</category>
-<author>Jim Davies</author>
-<content:encoded>&lt;b&gt;serendipity_event_feedflare&lt;br /&gt;Feedburner FeedFlare&lt;/b&gt;&lt;br /&gt;Do patičky každého příspěvku přidává tag FeedFlare.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_feedflare</guid>
 </item>
 <item>
 <title>Filtrování příspěvků: Umožňuje návštěvníkům blogu filtrovat/řadit příspěvky podle různých pravidel</title>
@@ -585,15 +549,6 @@
 <guid isPermaLink="false">serendipity_event_head_nugget</guid>
 </item>
 <item>
-<title> HTML validátor: Kontroluje při ukládání kompatibilitu příspěvků s XML standardem</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_htmlvalidator</link>
-<category>Event Plugins</category>
-<author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_htmlvalidator&lt;br /&gt; HTML validátor&lt;/b&gt;&lt;br /&gt;Kontroluje při ukládání kompatibilitu příspěvků s XML standardem&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_htmlvalidator</guid>
-</item>
-<item>
 <title>HTTP autentifikace: Ověřuje uživatele pomocí HTTP auth s použitím jejich serendipity přihlašovacích dat.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_httpauth</link>
 <category>Event Plugins</category>
@@ -639,15 +594,6 @@
 <guid isPermaLink="false">serendipity_event_kubrickheader</guid>
 </item>
 <item>
-<title>Layout-Plugin: Link-Markup: Umožňuje použít jiné označení odkazů v těle příspěvku</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_layout_linkmarkup</link>
-<category>Event Plugins</category>
-<author>Sebastian Nohn</author>
-<content:encoded>&lt;b&gt;serendipity_event_layout_linkmarkup&lt;br /&gt;Layout-Plugin: Link-Markup&lt;/b&gt;&lt;br /&gt;Umožňuje použít jiné označení odkazů v těle příspěvku&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_layout_linkmarkup</guid>
-</item>
-<item>
 <title>Layout plugin: verze pro tisk: Při použití funkce &quot;vytisknout stránku&quot; v prohlížeči uvidíte výstup, který bude na tiskárně lépe vypadat.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_layout_printerfriendly</link>
 <category>Event Plugins</category>
@@ -655,15 +601,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_layout_printerfriendly&lt;br /&gt;Layout plugin: verze pro tisk&lt;/b&gt;&lt;br /&gt;Při použití funkce &quot;vytisknout stránku&quot; v prohlížeči uvidíte výstup, který bude na tiskárně lépe vypadat.&lt;br/&gt;For: Serendipity 0.7</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_layout_printerfriendly</guid>
-</item>
-<item>
-<title>Layout-Plugin: Citace: Umožňuje změnit vzhled citací v těle příspěvku</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_layout_quotemarkup</link>
-<category>Event Plugins</category>
-<author>Sebastian Nohn</author>
-<content:encoded>&lt;b&gt;serendipity_event_layout_quotemarkup&lt;br /&gt;Layout-Plugin: Citace&lt;/b&gt;&lt;br /&gt;Umožňuje změnit vzhled citací v těle příspěvku&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_layout_quotemarkup</guid>
 </item>
 <item>
 <title>Lightbox for entry images: Lightbox JS is a simple, unobtrusive script used to overlay images on the current page. It's a snap to setup and works with all modern browsers. All lightboxes pop-up images. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the internal display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version. To display also hidden set images by display:none, use lightbox2. These lightbox scripts are all jQuery based. They do not only support image types, they may also add support for ajax, videos, flash, YouTube, iFrame, inline, or modal boxes. This Plugin uses them for image lightboxes only, but you can easily add other content types manually to your entries and start the chosen lightbox as described in their online documentaries.</title>
@@ -819,15 +756,6 @@
 <guid isPermaLink="false">serendipity_event_mobile_output</guid>
 </item>
 <item>
-<title>Hudba, kterou právě poslouchám: Okamžitý stav hudby z iTunes s pomocí iTunesBloggeru: http://www.ituneshacking.com/wiki/wakka.php?wakka=iTunesBloggerHomePage</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_motm</link>
-<category>Event Plugins</category>
-<author>Tys von Gaza</author>
-<content:encoded>&lt;b&gt;serendipity_event_motm&lt;br /&gt;Hudba, kterou právě poslouchám&lt;/b&gt;&lt;br /&gt;Okamžitý stav hudby z iTunes s pomocí iTunesBloggeru: http://www.ituneshacking.com/wiki/wakka.php?wakka=iTunesBloggerHomePage&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 19 Jan 2017 15:44:54 +0100</pubDate>
-<guid isPermaLink="false">serendipity_event_motm</guid>
-</item>
-<item>
 <title>Vízejazyčné záznamy: Umožňuje vytvořit příspěvek (záznam) ve více jazykových variantách. Obsahuje též fromulář pro výběr základního jazyka blogu.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_multilingual</link>
 <category>Event Plugins</category>
@@ -916,24 +844,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_photoblog&lt;br /&gt;Fotoblog&lt;/b&gt;&lt;br /&gt;Přidá do příspěvku jednu fotku&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_photoblog</guid>
-</item>
-<item>
-<title>PHPOpenTracker: Zaznamenává přístup na blog do logu pomocí aplikace PHPOpenTracker. Vyžaduje nainstalovanou aplikace PHPOpenTrakcer. Čtěte prosím soubor readme.txt pro další informace.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_phpopentracker</link>
-<category>Event Plugins</category>
-<author>Rene Schmidt</author>
-<content:encoded>&lt;b&gt;serendipity_event_phpopentracker&lt;br /&gt;PHPOpenTracker&lt;/b&gt;&lt;br /&gt;Zaznamenává přístup na blog do logu pomocí aplikace PHPOpenTracker. Vyžaduje nainstalovanou aplikace PHPOpenTrakcer. Čtěte prosím soubor readme.txt pro další informace.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_phpopentracker</guid>
-</item>
-<item>
-<title>Picasa: Zobrazuje fotoalba z Picasy exportovaná do XML formátu</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_picasa</link>
-<category>Event Plugins</category>
-<author>Thomas Nesges, Greg Greenway</author>
-<content:encoded>&lt;b&gt;serendipity_event_picasa&lt;br /&gt;Picasa&lt;/b&gt;&lt;br /&gt;Zobrazuje fotoalba z Picasy exportovaná do XML formátu&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_picasa</guid>
 </item>
 <item>
 <title>Podcasting plugin: Přidává &quot;podcastovací&quot; možnosti (RSS zapouzdření, přehrávač videa a/nebo hudby)</title>
@@ -1053,15 +963,6 @@
 <guid isPermaLink="false">serendipity_event_smtpmail</guid>
 </item>
 <item>
-<title>Odkazy s náhledy pomocí služby www.snap.com: Tento plugin zobrazuje náhledy odkazů v příspěvcích, když na ně návštěvník najede myší. Náhledy jsou generovány službou SnapShot (www.snap.com). \nSnap.com je zadarmo, ale měli byste vědět, že *může* shromažďovat informace o odkazech na Vašich stránkách, ačkoliv ve svých obchodních podmínkách slibují, že to dělat nebudou.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_snapshotlinks</link>
-<category>Event Plugins</category>
-<author>Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_snapshotlinks&lt;br /&gt;Odkazy s náhledy pomocí služby www.snap.com&lt;/b&gt;&lt;br /&gt;Tento plugin zobrazuje náhledy odkazů v příspěvcích, když na ně návštěvník najede myší. Náhledy jsou generovány službou SnapShot (www.snap.com). \nSnap.com je zadarmo, ale měli byste vědět, že *může* shromažďovat informace o odkazech na Vašich stránkách, ačkoliv ve svých obchodních podmínkách slibují, že to dělat nebudou.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_snapshotlinks</guid>
-</item>
-<item>
 <title>Share Buttons: Show social share buttons for services like Facebook and Twitter using shariff.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_social</link>
 <category>Event Plugins</category>
@@ -1069,15 +970,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_social&lt;br /&gt;Share Buttons&lt;/b&gt;&lt;br /&gt;Show social share buttons for services like Facebook and Twitter using shariff.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
 <pubDate>Thu, 02 Feb 2017 14:54:23 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_social</guid>
-</item>
-<item>
-<title>UTF-8 řazení: Plugin nabízí speciální abecední třídění podle UTF-8 jako rozšíření pro specifické pluginy typu Freetag. Umožňuje řadit podle libovolné abecedy s jinými než anglickými písmeny, např. v azbuce, čínštině a jiných. Pomoc s vytvářením dalších abeced je vítaná (viz fórum serendipity).</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_sort</link>
-<category>Event Plugins</category>
-<author>LazyBadger, Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_sort&lt;br /&gt;UTF-8 řazení&lt;/b&gt;&lt;br /&gt;Plugin nabízí speciální abecední třídění podle UTF-8 jako rozšíření pro specifické pluginy typu Freetag. Umožňuje řadit podle libovolné abecedy s jinými než anglickými písmeny, např. v azbuce, čínštině a jiných. Pomoc s vytvářením dalších abeced je vítaná (viz fórum serendipity).&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_sort</guid>
 </item>
 <item>
 <title>Spamblock (Bayes): Detekce spamu pomocí adaptivního algoritmu, který se dokáže sám učit.</title>
@@ -1323,15 +1215,6 @@
 <guid isPermaLink="false">serendipity_event_wordwrap</guid>
 </item>
 <item>
-<title>Vložení cizí stránky: : Do těla blogu vloží IFRAME, který zobrazuje jinou cizí stránku</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_wrapurl</link>
-<category>Event Plugins</category>
-<author>Rob Antonishen, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_wrapurl&lt;br /&gt;Vložení cizí stránky: &lt;/b&gt;&lt;br /&gt;Do těla blogu vloží IFRAME, který zobrazuje jinou cizí stránku&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 19 Sep 2016 12:57:52 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_wrapurl</guid>
-</item>
-<item>
 <title>Posílání příspěvků pomocí XML-RPC: Umožňuje posílat/editovat příspěvky pomocí XML-RPC API (MT, Blogger, WordPress Endpoints)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_xmlrpc</link>
 <category>Event Plugins</category>
@@ -1357,15 +1240,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_youtube&lt;br /&gt;Rozšířená tlačítka editoru: Youtube apod.&lt;/b&gt;&lt;br /&gt;Přidává tlačítka do editačního formuláře pro lehčí vkládání HTML/JS akriptů jako např. Youtube apod.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_youtube</guid>
-</item>
-<item>
-<title>Y!Q hledání podobných stránek: Nalezne podobné stránky pomocí Yahoo kontextové prohledávací technologie</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_yq</link>
-<category>Event Plugins</category>
-<author>Rasmus Lerdorf</author>
-<content:encoded>&lt;b&gt;serendipity_event_yq&lt;br /&gt;Y!Q hledání podobných stránek&lt;/b&gt;&lt;br /&gt;Nalezne podobné stránky pomocí Yahoo kontextové prohledávací technologie&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_yq</guid>
 </item>
 <item>
 <title>Samoregistrace nových uživatelů: Umožňuje návštěvníkům webu vytvořit si vlastní uživatelský účet. Dohromady s pluginem událostí (index.php?serendipity[subpage]=adduser) můžete určit, jestli komentáře mohou posílat pouze registrovaní uživatelé.</title>

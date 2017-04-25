@@ -491,52 +491,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_babelfish</name>
-<license>GPL</license>
-<summary>Babelfish</summary>
-<groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Překlad příspěvků blogu pomocí služby Babelfish</description>
-<maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.8</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
-  <filelist>
-<dir name="serendipity_event_babelfish">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>lang_ja.inc.php</file>
-<file>lang_ru.inc.php</file>
-<file>serendipity_event_babelfish.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_ja.inc.php</file>
-<file>lang_ru.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_babelfish/lang_cs.inc.php</file>
-    <file>serendipity_event_babelfish/lang_cz.inc.php</file>
-    <file>serendipity_event_babelfish/lang_de.inc.php</file>
-    <file>serendipity_event_babelfish/lang_en.inc.php</file>
-    <file>serendipity_event_babelfish/lang_ja.inc.php</file>
-    <file>serendipity_event_babelfish/lang_ru.inc.php</file>
-    <file>serendipity_event_babelfish/serendipity_event_babelfish.php</file>
-    <file>serendipity_event_babelfish/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_babelfish/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_babelfish/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_babelfish/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_babelfish/UTF-8/lang_ru.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_backend</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_backend/ChangeLog</changelog>
 <license>GPL</license>
@@ -884,48 +838,6 @@
     <file>serendipity_event_browserid/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_browserid/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_browserid/UTF-8/lang_de.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_cachesimple</name>
-<license>GPL</license>
-<summary>Jednoduché cachování / předgenerování stránek</summary>
-<groups>BACKEND_FEATURES</groups>
-<description>[EXPERIMENTÁLNÍ] Umožňuje cachování (ve smyslu předgenerování) stránek. Pozor: Absolutně zruší veškeré vymoženosti dynamicky vytvářeného obsahu, nepracuje dobře s pluginy, které takový obsah vytvářejí. Ale tato funkce zvyšuje rychlost blogu, pokud nepotřebujete dynamické funkce. (Tento plugin by měl být umístěn co nejdříve v seznamu pluginů. Pouze nutné pluginy generující dynamický obsah, jako např. karma, by měly být umístěny před tímto pluginem.)</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.2.3</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_cachesimple">
-<file>lang_bg.inc.php</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>serendipity_event_cachesimple.php</file>
-<dir name="UTF-8">
-<file>lang_bg.inc.php</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_cachesimple/lang_bg.inc.php</file>
-    <file>serendipity_event_cachesimple/lang_cs.inc.php</file>
-    <file>serendipity_event_cachesimple/lang_cz.inc.php</file>
-    <file>serendipity_event_cachesimple/lang_de.inc.php</file>
-    <file>serendipity_event_cachesimple/lang_en.inc.php</file>
-    <file>serendipity_event_cachesimple/serendipity_event_cachesimple.php</file>
-    <file>serendipity_event_cachesimple/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_cachesimple/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_cachesimple/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_cachesimple/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1919,56 +1831,6 @@
     <file>serendipity_event_dejure/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_dejure/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_dejure/UTF-8/lang_de.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_deletelink</name>
-<license>GPL</license>
-<summary>Mazací odkaz</summary>
-<groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Přidá odkaz na smazání příspěvku do patičky každého příspěvku.</description>
-<maintainers><maintainer><name>Cameron MacFarland, Brett Profitt</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.6</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_deletelink">
-<file>lang_bg.inc.php</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>lang_ja.inc.php</file>
-<file>lang_tn.inc.php</file>
-<file>serendipity_event_deletelink.php</file>
-<dir name="UTF-8">
-<file>lang_bg.inc.php</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_ja.inc.php</file>
-<file>lang_tn.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_deletelink/lang_bg.inc.php</file>
-    <file>serendipity_event_deletelink/lang_cs.inc.php</file>
-    <file>serendipity_event_deletelink/lang_cz.inc.php</file>
-    <file>serendipity_event_deletelink/lang_de.inc.php</file>
-    <file>serendipity_event_deletelink/lang_en.inc.php</file>
-    <file>serendipity_event_deletelink/lang_ja.inc.php</file>
-    <file>serendipity_event_deletelink/lang_tn.inc.php</file>
-    <file>serendipity_event_deletelink/serendipity_event_deletelink.php</file>
-    <file>serendipity_event_deletelink/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_deletelink/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_deletelink/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_deletelink/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_deletelink/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_deletelink/UTF-8/lang_tn.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -3079,40 +2941,6 @@
     <file>serendipity_event_feed/lang_en.inc.php</file>
     <file>serendipity_event_feed/serendipity_event_feed.php</file>
     <file>serendipity_event_feed/UTF-8/lang_de.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_feedflare</name>
-<license>Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License</license>
-<summary>Feedburner FeedFlare</summary>
-<groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Do patičky každého příspěvku přidává tag FeedFlare.</description>
-<maintainers><maintainer><name>Jim Davies</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.3</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_feedflare">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>serendipity_event_feedflare.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_feedflare/lang_cs.inc.php</file>
-    <file>serendipity_event_feedflare/lang_cz.inc.php</file>
-    <file>serendipity_event_feedflare/lang_en.inc.php</file>
-    <file>serendipity_event_feedflare/serendipity_event_feedflare.php</file>
-    <file>serendipity_event_feedflare/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_feedflare/UTF-8/lang_cz.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -5022,78 +4850,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_htmlvalidator</name>
-<license>GPL</license>
-<summary> HTML validátor</summary>
-<groups>BACKEND_EDITOR</groups>
-<description>Kontroluje při ukládání kompatibilitu příspěvků s XML standardem</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.4</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_htmlvalidator">
-<file>lang_bg.inc.php</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>lang_es.inc.php</file>
-<file>lang_fr.inc.php</file>
-<file>lang_ja.inc.php</file>
-<file>lang_ko.inc.php</file>
-<file>lang_pt_PT.inc.php</file>
-<file>lang_tn.inc.php</file>
-<file>lang_tr.inc.php</file>
-<file>serendipity_event_htmlvalidator.php</file>
-<dir name="UTF-8">
-<file>lang_bg.inc.php</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>lang_es.inc.php</file>
-<file>lang_fr.inc.php</file>
-<file>lang_ja.inc.php</file>
-<file>lang_ko.inc.php</file>
-<file>lang_pt_PT.inc.php</file>
-<file>lang_tn.inc.php</file>
-<file>lang_tr.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_htmlvalidator/lang_bg.inc.php</file>
-    <file>serendipity_event_htmlvalidator/lang_cs.inc.php</file>
-    <file>serendipity_event_htmlvalidator/lang_cz.inc.php</file>
-    <file>serendipity_event_htmlvalidator/lang_de.inc.php</file>
-    <file>serendipity_event_htmlvalidator/lang_en.inc.php</file>
-    <file>serendipity_event_htmlvalidator/lang_es.inc.php</file>
-    <file>serendipity_event_htmlvalidator/lang_fr.inc.php</file>
-    <file>serendipity_event_htmlvalidator/lang_ja.inc.php</file>
-    <file>serendipity_event_htmlvalidator/lang_ko.inc.php</file>
-    <file>serendipity_event_htmlvalidator/lang_pt_PT.inc.php</file>
-    <file>serendipity_event_htmlvalidator/lang_tn.inc.php</file>
-    <file>serendipity_event_htmlvalidator/lang_tr.inc.php</file>
-    <file>serendipity_event_htmlvalidator/serendipity_event_htmlvalidator.php</file>
-    <file>serendipity_event_htmlvalidator/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_htmlvalidator/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_htmlvalidator/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_htmlvalidator/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_htmlvalidator/UTF-8/lang_en.inc.php</file>
-    <file>serendipity_event_htmlvalidator/UTF-8/lang_es.inc.php</file>
-    <file>serendipity_event_htmlvalidator/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_event_htmlvalidator/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_htmlvalidator/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_htmlvalidator/UTF-8/lang_pt_PT.inc.php</file>
-    <file>serendipity_event_htmlvalidator/UTF-8/lang_tn.inc.php</file>
-    <file>serendipity_event_htmlvalidator/UTF-8/lang_tr.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_httpauth</name>
 <license>GPL</license>
 <summary>HTTP autentifikace</summary>
@@ -5417,50 +5173,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_layout_linkmarkup</name>
-<license>GPL</license>
-<summary>Layout-Plugin: Link-Markup</summary>
-<groups>BACKEND_TEMPLATES</groups>
-<description>Umožňuje použít jiné označení odkazů v těle příspěvku</description>
-<maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.1</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_layout_linkmarkup">
-<file>lang_bg.inc.php</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>serendipity_event_layout_linkmarkup.php</file>
-<dir name="UTF-8">
-<file>lang_bg.inc.php</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-</dir>
-<file>visited.png</file>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_layout_linkmarkup/lang_bg.inc.php</file>
-    <file>serendipity_event_layout_linkmarkup/lang_cs.inc.php</file>
-    <file>serendipity_event_layout_linkmarkup/lang_cz.inc.php</file>
-    <file>serendipity_event_layout_linkmarkup/lang_de.inc.php</file>
-    <file>serendipity_event_layout_linkmarkup/lang_en.inc.php</file>
-    <file>serendipity_event_layout_linkmarkup/serendipity_event_layout_linkmarkup.php</file>
-    <file>serendipity_event_layout_linkmarkup/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_layout_linkmarkup/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_layout_linkmarkup/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_layout_linkmarkup/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_layout_linkmarkup/visited.png</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_layout_printerfriendly</name>
 <license>GPL</license>
 <summary>Layout plugin: verze pro tisk</summary>
@@ -5503,44 +5215,6 @@
     <file>serendipity_event_layout_printerfriendly/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_layout_printerfriendly/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_layout_printerfriendly/UTF-8/lang_tr.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_layout_quotemarkup</name>
-<license>GPL</license>
-<summary>Layout-Plugin: Citace</summary>
-<groups>BACKEND_TEMPLATES</groups>
-<description>Umožňuje změnit vzhled citací v těle příspěvku</description>
-<maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_layout_quotemarkup">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>serendipity_event_layout_quotemarkup.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_layout_quotemarkup/lang_cs.inc.php</file>
-    <file>serendipity_event_layout_quotemarkup/lang_cz.inc.php</file>
-    <file>serendipity_event_layout_quotemarkup/lang_de.inc.php</file>
-    <file>serendipity_event_layout_quotemarkup/lang_en.inc.php</file>
-    <file>serendipity_event_layout_quotemarkup/serendipity_event_layout_quotemarkup.php</file>
-    <file>serendipity_event_layout_quotemarkup/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_layout_quotemarkup/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_layout_quotemarkup/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6983,71 +6657,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_motm</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_motm/ChangeLog</changelog>
-<license>GPL</license>
-<summary>Hudba, kterou právě poslouchám</summary>
-<groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Okamžitý stav hudby z iTunes s pomocí iTunesBloggeru: http://www.ituneshacking.com/wiki/wakka.php?wakka=iTunesBloggerHomePage</description>
-<maintainers><maintainer><name>Tys von Gaza</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.6</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-01-19</date>
-  <filelist>
-<dir name="serendipity_event_motm">
-<file>.htaccess</file>
-<dir name="amazon">
-<file>AmazonProduct.class.php</file>
-<file>amazonsearch.php</file>
-<file>AmazonSearchEngine.class.php</file>
-<file>README</file>
-</dir>
-<file>ChangeLog</file>
-<file>documentation_cs.html</file>
-<file>documentation_cz.html</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>motm.js</file>
-<file>motm_iframe.php</file>
-<file>motm_update.php</file>
-<file>README</file>
-<file>serendipity_event_motm.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_motm/.htaccess</file>
-    <file>serendipity_event_motm/amazon/AmazonProduct.class.php</file>
-    <file>serendipity_event_motm/amazon/amazonsearch.php</file>
-    <file>serendipity_event_motm/amazon/AmazonSearchEngine.class.php</file>
-    <file>serendipity_event_motm/amazon/README</file>
-    <file>serendipity_event_motm/ChangeLog</file>
-    <file>serendipity_event_motm/documentation_cs.html</file>
-    <file>serendipity_event_motm/documentation_cz.html</file>
-    <file>serendipity_event_motm/lang_cs.inc.php</file>
-    <file>serendipity_event_motm/lang_cz.inc.php</file>
-    <file>serendipity_event_motm/lang_de.inc.php</file>
-    <file>serendipity_event_motm/lang_en.inc.php</file>
-    <file>serendipity_event_motm/motm.js</file>
-    <file>serendipity_event_motm/motm_iframe.php</file>
-    <file>serendipity_event_motm/motm_update.php</file>
-    <file>serendipity_event_motm/README</file>
-    <file>serendipity_event_motm/serendipity_event_motm.php</file>
-    <file>serendipity_event_motm/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_motm/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_motm/UTF-8/lang_de.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_multilingual</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_multilingual/ChangeLog</changelog>
 <license>GPL</license>
@@ -7725,110 +7334,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_phpopentracker</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_phpopentracker/ChangeLog</changelog>
-<license>GPL</license>
-<summary>PHPOpenTracker</summary>
-<groups>STATISTICS</groups>
-<description>Zaznamenává přístup na blog do logu pomocí aplikace PHPOpenTracker. Vyžaduje nainstalovanou aplikace PHPOpenTrakcer. Čtěte prosím soubor readme.txt pro další informace.</description>
-<maintainers><maintainer><name>Rene Schmidt</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.7</version>
-  <requirements:s9yVersion>0.9</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_phpopentracker">
-<file>ChangeLog</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>phpopentracker_webbug.js.tpl</file>
-<file>readme.txt</file>
-<file>serendipity_event_phpopentracker.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_phpopentracker/ChangeLog</file>
-    <file>serendipity_event_phpopentracker/lang_cs.inc.php</file>
-    <file>serendipity_event_phpopentracker/lang_cz.inc.php</file>
-    <file>serendipity_event_phpopentracker/lang_de.inc.php</file>
-    <file>serendipity_event_phpopentracker/lang_en.inc.php</file>
-    <file>serendipity_event_phpopentracker/phpopentracker_webbug.js.tpl</file>
-    <file>serendipity_event_phpopentracker/readme.txt</file>
-    <file>serendipity_event_phpopentracker/serendipity_event_phpopentracker.php</file>
-    <file>serendipity_event_phpopentracker/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_phpopentracker/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_phpopentracker/UTF-8/lang_de.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_picasa</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_picasa/ChangeLog</changelog>
-<license>GPL</license>
-<summary>Picasa</summary>
-<groups>IMAGES</groups>
-<description>Zobrazuje fotoalba z Picasy exportovaná do XML formátu</description>
-<maintainers><maintainer><name>Thomas Nesges, Greg Greenway</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.14.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_picasa">
-<file>ChangeLog</file>
-<file>lang_bg.inc.php</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>s9yButton.pbz</file>
-<file>serendipity_event_picasa.php</file>
-<file>tnt_fiveinarow.tpl</file>
-<file>tnt_gallery.tpl</file>
-<file>tnt_noalbumtitle.tpl</file>
-<file>tnt_randomimage.tpl</file>
-<file>tnt_standard.tpl</file>
-<file>tnt_vertical.tpl</file>
-<dir name="UTF-8">
-<file>lang_bg.inc.php</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_picasa/ChangeLog</file>
-    <file>serendipity_event_picasa/lang_bg.inc.php</file>
-    <file>serendipity_event_picasa/lang_cs.inc.php</file>
-    <file>serendipity_event_picasa/lang_cz.inc.php</file>
-    <file>serendipity_event_picasa/lang_de.inc.php</file>
-    <file>serendipity_event_picasa/lang_en.inc.php</file>
-    <file>serendipity_event_picasa/s9yButton.pbz</file>
-    <file>serendipity_event_picasa/serendipity_event_picasa.php</file>
-    <file>serendipity_event_picasa/tnt_fiveinarow.tpl</file>
-    <file>serendipity_event_picasa/tnt_gallery.tpl</file>
-    <file>serendipity_event_picasa/tnt_noalbumtitle.tpl</file>
-    <file>serendipity_event_picasa/tnt_randomimage.tpl</file>
-    <file>serendipity_event_picasa/tnt_standard.tpl</file>
-    <file>serendipity_event_picasa/tnt_vertical.tpl</file>
-    <file>serendipity_event_picasa/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_picasa/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_picasa/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_picasa/UTF-8/lang_de.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_podcast</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_podcast/ChangeLog</changelog>
 <license>GPL</license>
@@ -8349,7 +7854,6 @@
 <file>lang_de.inc.php</file>
 <file>lang_en.inc.php</file>
 <dir name="recaptcha">
-<file>._-recaptchalib.php</file>
 <file>LICENSE</file>
 <file>README</file>
 <file>recaptchalib.php</file>
@@ -8372,7 +7876,6 @@
     <file>serendipity_event_recaptcha/lang_cz.inc.php</file>
     <file>serendipity_event_recaptcha/lang_de.inc.php</file>
     <file>serendipity_event_recaptcha/lang_en.inc.php</file>
-    <file>serendipity_event_recaptcha/recaptcha/._-recaptchalib.php</file>
     <file>serendipity_event_recaptcha/recaptcha/LICENSE</file>
     <file>serendipity_event_recaptcha/recaptcha/README</file>
     <file>serendipity_event_recaptcha/recaptcha/recaptchalib.php</file>
@@ -8749,55 +8252,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_snapshotlinks</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_snapshotlinks/ChangeLog</changelog>
-<license>GPL</license>
-<summary>Odkazy s náhledy pomocí služby www.snap.com</summary>
-<groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Tento plugin zobrazuje náhledy odkazů v příspěvcích, když na ně návštěvník najede myší. Náhledy jsou generovány službou SnapShot (www.snap.com). \nSnap.com je zadarmo, ale měli byste vědět, že *může* shromažďovat informace o odkazech na Vašich stránkách, ačkoliv ve svých obchodních podmínkách slibují, že to dělat nebudou.</description>
-<maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.03</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_snapshotlinks">
-<file>.htaccess</file>
-<file>ChangeLog</file>
-<file>documentation_cs.html</file>
-<file>documentation_cz.html</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>serendipity_event_snapshotlinks.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_snapshotlinks/.htaccess</file>
-    <file>serendipity_event_snapshotlinks/ChangeLog</file>
-    <file>serendipity_event_snapshotlinks/documentation_cs.html</file>
-    <file>serendipity_event_snapshotlinks/documentation_cz.html</file>
-    <file>serendipity_event_snapshotlinks/lang_cs.inc.php</file>
-    <file>serendipity_event_snapshotlinks/lang_cz.inc.php</file>
-    <file>serendipity_event_snapshotlinks/lang_de.inc.php</file>
-    <file>serendipity_event_snapshotlinks/lang_en.inc.php</file>
-    <file>serendipity_event_snapshotlinks/serendipity_event_snapshotlinks.php</file>
-    <file>serendipity_event_snapshotlinks/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_snapshotlinks/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_snapshotlinks/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_snapshotlinks/UTF-8/lang_en.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_social</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_social/ChangeLog</changelog>
 <license>GPL</license>
@@ -8831,40 +8285,6 @@
     <file>serendipity_event_social/shariff.complete.css</file>
     <file>serendipity_event_social/shariff.min.js</file>
     <file>serendipity_event_social/UTF-8/lang_de.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_sort</name>
-<license>GPL</license>
-<summary>UTF-8 řazení</summary>
-<groups>FRONTEND_FEATURES</groups>
-<description>Plugin nabízí speciální abecední třídění podle UTF-8 jako rozšíření pro specifické pluginy typu Freetag. Umožňuje řadit podle libovolné abecedy s jinými než anglickými písmeny, např. v azbuce, čínštině a jiných. Pomoc s vytvářením dalších abeced je vítaná (viz fórum serendipity).</description>
-<maintainers><maintainer><name>LazyBadger, Garvin Hicking</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>0.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_sort">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>serendipity_event_sort.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_sort/lang_cs.inc.php</file>
-    <file>serendipity_event_sort/lang_cz.inc.php</file>
-    <file>serendipity_event_sort/lang_en.inc.php</file>
-    <file>serendipity_event_sort/serendipity_event_sort.php</file>
-    <file>serendipity_event_sort/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_sort/UTF-8/lang_cz.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -11189,43 +10609,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_wrapurl</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_wrapurl/ChangeLog</changelog>
-<license>GPL</license>
-<summary>Vložení cizí stránky: </summary>
-<groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Do těla blogu vloží IFRAME, který zobrazuje jinou cizí stránku</description>
-<maintainers><maintainer><name>Rob Antonishen, Ian</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>0.12</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-19</date>
-  <filelist>
-<dir name="serendipity_event_wrapurl">
-<file>ChangeLog</file>
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>serendipity_event_wrapurl.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_wrapurl/ChangeLog</file>
-    <file>serendipity_event_wrapurl/lang_cs.inc.php</file>
-    <file>serendipity_event_wrapurl/lang_cz.inc.php</file>
-    <file>serendipity_event_wrapurl/lang_en.inc.php</file>
-    <file>serendipity_event_wrapurl/serendipity_event_wrapurl.php</file>
-    <file>serendipity_event_wrapurl/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_wrapurl/UTF-8/lang_cz.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_xmlrpc</name>
 <changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_xmlrpc/ChangeLog</changelog>
 <license>GPL</license>
@@ -11687,44 +11070,6 @@
     <file>serendipity_event_youtube/serendipity_event_youtube.php</file>
     <file>serendipity_event_youtube/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_youtube/UTF-8/lang_cz.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_yq</name>
-<license>GPL</license>
-<summary>Y!Q hledání podobných stránek</summary>
-<groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Nalezne podobné stránky pomocí Yahoo kontextové prohledávací technologie</description>
-<maintainers><maintainer><name>Rasmus Lerdorf</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.3</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
-  <filelist>
-<dir name="serendipity_event_yq">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>serendipity_event_yq.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_yq/lang_cs.inc.php</file>
-    <file>serendipity_event_yq/lang_cz.inc.php</file>
-    <file>serendipity_event_yq/lang_de.inc.php</file>
-    <file>serendipity_event_yq/lang_en.inc.php</file>
-    <file>serendipity_event_yq/serendipity_event_yq.php</file>
-    <file>serendipity_event_yq/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_yq/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_yq/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>

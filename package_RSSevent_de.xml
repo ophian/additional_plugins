@@ -63,15 +63,6 @@
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
-<title>Babelfisch: Übersetzt Blog-Einträge</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_babelfish</link>
-<category>Event Plugins</category>
-<author>Sebastian Nohn</author>
-<content:encoded>&lt;b&gt;serendipity_event_babelfish&lt;br /&gt;Babelfisch&lt;/b&gt;&lt;br /&gt;Übersetzt Blog-Einträge&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 15:15:15 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_babelfish</guid>
-</item>
-<item>
 <title>Zeige Einträge mittels JavaScript: Stellt JavaScript Ausgabe der letzten Einträge zum Einbinden in andere, externe Webseiten bereit. (Siehe README im Plugin Verzeichnis!)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backend</link>
 <category>Event Plugins</category>
@@ -115,15 +106,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_browserid&lt;br /&gt;BrowserID Authentifizierung&lt;/b&gt;&lt;br /&gt;Ermöglicht Autoren, sich mittels de BrowserID Services einzuloggen.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_browserid</guid>
-</item>
-<item>
-<title>Einfache Cached/Pregenerated Seiten: [EXPERIMENTELL] Ermöglicht es, vollständige Seiten zu cachen. Hinweis: Zerstört so ziemlich alle dynamischen Optionen des Frontends und arbeitet höchstvermutlich nicht gut mit dynamischen Plugins zusammen. Dafür ist es schnell, wenn man nicht auf Echtzeit-Dynamik angewiesen ist. (Dieses Plugin sollte also so früh wie möglich in der Event-Plugin-Liste positioniert werden. Nur Dynamische Plugins wie Karmavoting sollten vor diesem Plugin ausgeführt werden.)</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cachesimple</link>
-<category>Event Plugins</category>
-<author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_cachesimple&lt;br /&gt;Einfache Cached/Pregenerated Seiten&lt;/b&gt;&lt;br /&gt;[EXPERIMENTELL] Ermöglicht es, vollständige Seiten zu cachen. Hinweis: Zerstört so ziemlich alle dynamischen Optionen des Frontends und arbeitet höchstvermutlich nicht gut mit dynamischen Plugins zusammen. Dafür ist es schnell, wenn man nicht auf Echtzeit-Dynamik angewiesen ist. (Dieses Plugin sollte also so früh wie möglich in der Event-Plugin-Liste positioniert werden. Nur Dynamische Plugins wie Karmavoting sollten vor diesem Plugin ausgeführt werden.)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_cachesimple</guid>
 </item>
 <item>
 <title>Event-Terminkalender: Zeigt einen Terminkalender innerhalb des Blogs mit dem Blog-Design und allen Formatierungen an. Unterstützt Backend/Frontend Administration, vielfache Termine und iCal Export. (Nur MySQL)</title>
@@ -279,15 +261,6 @@
 <guid isPermaLink="false">serendipity_event_dejure</guid>
 </item>
 <item>
-<title>Link zum Löschen eines Frontend-Eintrags: Fügt einen Link zum Löschen eines Eintrages in der Frontend-Ansicht im Footer jedes Eintrages ein.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_deletelink</link>
-<category>Event Plugins</category>
-<author>Cameron MacFarland, Brett Profitt</author>
-<content:encoded>&lt;b&gt;serendipity_event_deletelink&lt;br /&gt;Link zum Löschen eines Frontend-Eintrags&lt;/b&gt;&lt;br /&gt;Fügt einen Link zum Löschen eines Eintrages in der Frontend-Ansicht im Footer jedes Eintrages ein.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_deletelink</guid>
-</item>
-<item>
 <title>Disqus comments: Disqus.com is a webservice that allows you to manage comments, with central logins. It stores and manages comments outside of your Serendipity installation, and is embedded using JavaScript. For more information see disqus.com.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_disqus</link>
 <category>Event Plugins</category>
@@ -412,15 +385,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_feed&lt;br /&gt;Dashboard Feed Reader&lt;/b&gt;&lt;br /&gt;Das Dashboard S9y Feedle&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
 <pubDate>Fri, 10 Feb 2017 12:51:23 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_feed</guid>
-</item>
-<item>
-<title>Feedburner FeedFlare: Adds a FeedFlare tag to the footer of each entry.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_feedflare</link>
-<category>Event Plugins</category>
-<author>Jim Davies</author>
-<content:encoded>&lt;b&gt;serendipity_event_feedflare&lt;br /&gt;Feedburner FeedFlare&lt;/b&gt;&lt;br /&gt;Adds a FeedFlare tag to the footer of each entry.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_feedflare</guid>
 </item>
 <item>
 <title>Filtern von Einträgen im Frontend: Ermöglich Besuchern die Einträge im Blog nach Kriterien zu durchsuchen/sortieren</title>
@@ -585,15 +549,6 @@
 <guid isPermaLink="false">serendipity_event_head_nugget</guid>
 </item>
 <item>
-<title>HTML Validator: Überprüft, ob ein Artikel XML-konform ist</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_htmlvalidator</link>
-<category>Event Plugins</category>
-<author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_htmlvalidator&lt;br /&gt;HTML Validator&lt;/b&gt;&lt;br /&gt;Überprüft, ob ein Artikel XML-konform ist&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_htmlvalidator</guid>
-</item>
-<item>
 <title>HTTP-Authentication: Authenticates users via HTTP auth using their s9y user login data.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_httpauth</link>
 <category>Event Plugins</category>
@@ -639,15 +594,6 @@
 <guid isPermaLink="false">serendipity_event_kubrickheader</guid>
 </item>
 <item>
-<title>Layout-Plugin: Link-Formatierung: Erlaubt die Veränderung des (CSS)Aussehens von HTML-Links, die innerhab des Eintrages gemacht werden</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_layout_linkmarkup</link>
-<category>Event Plugins</category>
-<author>Sebastian Nohn</author>
-<content:encoded>&lt;b&gt;serendipity_event_layout_linkmarkup&lt;br /&gt;Layout-Plugin: Link-Formatierung&lt;/b&gt;&lt;br /&gt;Erlaubt die Veränderung des (CSS)Aussehens von HTML-Links, die innerhab des Eintrages gemacht werden&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_layout_linkmarkup</guid>
-</item>
-<item>
 <title>Layout-Plugin: Druckfreundliche Version: Ermöglicht den besseren Ausdruck eines Eintrages im Browser</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_layout_printerfriendly</link>
 <category>Event Plugins</category>
@@ -655,15 +601,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_layout_printerfriendly&lt;br /&gt;Layout-Plugin: Druckfreundliche Version&lt;/b&gt;&lt;br /&gt;Ermöglicht den besseren Ausdruck eines Eintrages im Browser&lt;br/&gt;For: Serendipity 0.7</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_layout_printerfriendly</guid>
-</item>
-<item>
-<title>Layout-Plugin: Quote-Formatierung: Ermöglicht das Layout von Quotes im Eintragstext zu verändern</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_layout_quotemarkup</link>
-<category>Event Plugins</category>
-<author>Sebastian Nohn</author>
-<content:encoded>&lt;b&gt;serendipity_event_layout_quotemarkup&lt;br /&gt;Layout-Plugin: Quote-Formatierung&lt;/b&gt;&lt;br /&gt;Ermöglicht das Layout von Quotes im Eintragstext zu verändern&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_layout_quotemarkup</guid>
 </item>
 <item>
 <title>Lightbox für Blog Einträge mit Bildern: Das Lightbox Plugin ist eine einfaches unauffälliges Skript, das Bilder auf der Seite überlagern kann, wenn die große Version angeklickt wurde. Es fügt sich selbstständig in die Seite ein und funktioniert mit jedem modernen Browser. Alle Leuchtkästen verschönern Bilder-Popups. Dieses Plugin durchsucht ihre Einträge und ersetzt jeden auf ein Bild verweisenden 'a href=&quot;XXX&quot;' Link so, dass die interne Darstellung benutzt wird. Wenn Sie also ein Thumbnail Bild mit einem Popup der großen Version haben wollen, so fügen Sie das Thumbnail in ihren Eintrag ein und verlinken dieses mit der großen Version. Um auch versteckte Bilder mit display:none anzuzeigen, nutzen Sie das Lightbox2 Script. Diese Leuchtkasten Scripte sind alle jQuery basiert. Sie unterstützen nicht allein nur Bildtypen, sondern überwiegend auch anderes, wie Ajax, Videos, Flash, YouTube, iFrame, Inline oder modale Felder. Dieses Plugin nutzt sie nur für Fotografie Leuchtkästen, aber Sie können leicht andere Typen ihren Blog-Einträgen manuell hinzufügen und eine lightbox entsprechend für diesen Zweck initiieren, so wie es den jeweiligen Online-Dokumentationen beschrieben wird.</title>
@@ -819,15 +756,6 @@
 <guid isPermaLink="false">serendipity_event_mobile_output</guid>
 </item>
 <item>
-<title>Musik des Augenblicks: Live-Darstellung der von ihnen aktuell abgespielten Musik mittels iTunes und iTunesBlogger: http://www.ituneshacking.com/wiki/wakka.php?wakka=iTunesBloggerHomePage</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_motm</link>
-<category>Event Plugins</category>
-<author>Tys von Gaza</author>
-<content:encoded>&lt;b&gt;serendipity_event_motm&lt;br /&gt;Musik des Augenblicks&lt;/b&gt;&lt;br /&gt;Live-Darstellung der von ihnen aktuell abgespielten Musik mittels iTunes und iTunesBlogger: http://www.ituneshacking.com/wiki/wakka.php?wakka=iTunesBloggerHomePage&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 19 Jan 2017 15:44:54 +0100</pubDate>
-<guid isPermaLink="false">serendipity_event_motm</guid>
-</item>
-<item>
 <title>Multilinguale Einträge: Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_multilingual</link>
 <category>Event Plugins</category>
@@ -916,24 +844,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_photoblog&lt;br /&gt;Photoblog Einträge/Bilder&lt;/b&gt;&lt;br /&gt;Ein Bild zu einem Eintrag hinzufügen&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_photoblog</guid>
-</item>
-<item>
-<title>PHPOpenTracker: Erfasst Zugriffe mittels PHPOpenTracker. Setzt installiertes phpOpenTracker voraus, siehe mitgelieferte readme.txt.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_phpopentracker</link>
-<category>Event Plugins</category>
-<author>Rene Schmidt</author>
-<content:encoded>&lt;b&gt;serendipity_event_phpopentracker&lt;br /&gt;PHPOpenTracker&lt;/b&gt;&lt;br /&gt;Erfasst Zugriffe mittels PHPOpenTracker. Setzt installiertes phpOpenTracker voraus, siehe mitgelieferte readme.txt.&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_phpopentracker</guid>
-</item>
-<item>
-<title>Picasa: Zeigt Picasa Alben, die als XML exportiert wurden, an</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_picasa</link>
-<category>Event Plugins</category>
-<author>Thomas Nesges, Greg Greenway</author>
-<content:encoded>&lt;b&gt;serendipity_event_picasa&lt;br /&gt;Picasa&lt;/b&gt;&lt;br /&gt;Zeigt Picasa Alben, die als XML exportiert wurden, an&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_picasa</guid>
 </item>
 <item>
 <title>Easy Podcasting Plugin: Fügt &quot;Podcasting&quot; Faehigkeiten hinzu (RSS enclosure, Video/Sound-Player)</title>
@@ -1053,17 +963,6 @@
 <guid isPermaLink="false">serendipity_event_smtpmail</guid>
 </item>
 <item>
-<title>Link Vorschau mit snap.com: Dieses Plugin zeigt eine Vorschau auf eine verlinkte Seite, wenn die Maus über dem Link schwebt. Dafür wird der SnapShot Service www.snap.com benutzt.
-Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com möglich wäre, Datenprofile über Benutzer IPs, die einen Link auf dieser Seite anschauen, zu erstellen. Snap.com verspricht jedoch, dies nicht zu tun.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_snapshotlinks</link>
-<category>Event Plugins</category>
-<author>Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_snapshotlinks&lt;br /&gt;Link Vorschau mit snap.com&lt;/b&gt;&lt;br /&gt;Dieses Plugin zeigt eine Vorschau auf eine verlinkte Seite, wenn die Maus über dem Link schwebt. Dafür wird der SnapShot Service www.snap.com benutzt.
-Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com möglich wäre, Datenprofile über Benutzer IPs, die einen Link auf dieser Seite anschauen, zu erstellen. Snap.com verspricht jedoch, dies nicht zu tun.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_snapshotlinks</guid>
-</item>
-<item>
 <title>Sharebuttons: Zeige Sharebuttons für Netzwerke wie Facebook und Twitter (nutzt shariff)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_social</link>
 <category>Event Plugins</category>
@@ -1071,15 +970,6 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <content:encoded>&lt;b&gt;serendipity_event_social&lt;br /&gt;Sharebuttons&lt;/b&gt;&lt;br /&gt;Zeige Sharebuttons für Netzwerke wie Facebook und Twitter (nutzt shariff)&lt;br/&gt;For: Serendipity 2.0</content:encoded>
 <pubDate>Thu, 02 Feb 2017 14:54:23 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_social</guid>
-</item>
-<item>
-<title>UTF-8 aware sorting: This plugin offers special UTF-8 alphabetic sorting as an extension so specific plugins like Freetag. It allows to sort by kyrillic and other foreign characters with a custom alphabet. Alphabet contributions are welcome (on the s9y forums).</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_sort</link>
-<category>Event Plugins</category>
-<author>LazyBadger, Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_sort&lt;br /&gt;UTF-8 aware sorting&lt;/b&gt;&lt;br /&gt;This plugin offers special UTF-8 alphabetic sorting as an extension so specific plugins like Freetag. It allows to sort by kyrillic and other foreign characters with a custom alphabet. Alphabet contributions are welcome (on the s9y forums).&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_sort</guid>
 </item>
 <item>
 <title>Spamschutz (Bayes): Filtert Kommentare mittels eines lernenden Algorithmus.</title>
@@ -1325,15 +1215,6 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <guid isPermaLink="false">serendipity_event_wordwrap</guid>
 </item>
 <item>
-<title>WrapURL: : Wraps another page in an IFRAME to be displayed in the body</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_wrapurl</link>
-<category>Event Plugins</category>
-<author>Rob Antonishen, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_wrapurl&lt;br /&gt;WrapURL: &lt;/b&gt;&lt;br /&gt;Wraps another page in an IFRAME to be displayed in the body&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 19 Sep 2016 12:57:52 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_wrapurl</guid>
-</item>
-<item>
 <title>Einträge via XML-RPC erstellen: Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_xmlrpc</link>
 <category>Event Plugins</category>
@@ -1359,15 +1240,6 @@ Snap.com ist ein kostenloser Service, aber beachten Sie, dass es snap.com mögli
 <content:encoded>&lt;b&gt;serendipity_event_youtube&lt;br /&gt;Extended Editor Buttons: Youtube etc.&lt;/b&gt;&lt;br /&gt;Offers more buttons to the editing screen to implement easy access to HTML/JS snippets like Youtube etc.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_youtube</guid>
-</item>
-<item>
-<title>Y!Q / Verwandte Suche: Stellt verwandte Seiten zu der eigenen mittels der Yahoo kontextsensitiven Suche dar.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_yq</link>
-<category>Event Plugins</category>
-<author>Rasmus Lerdorf</author>
-<content:encoded>&lt;b&gt;serendipity_event_yq&lt;br /&gt;Y!Q / Verwandte Suche&lt;/b&gt;&lt;br /&gt;Stellt verwandte Seiten zu der eigenen mittels der Yahoo kontextsensitiven Suche dar.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_yq</guid>
 </item>
 <item>
 <title>Registrierung neuer User: Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin (index.php?serendipity[subpage]=adduser) kann eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.</title>
