@@ -22,8 +22,8 @@ class serendipity_event_tinymce extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_TINYMCE_NAME);
         $propbag->add('description',   PLUGIN_EVENT_TINYMCE_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus');
-        $propbag->add('version',       '1.14');
+        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian');
+        $propbag->add('version',       '1.15');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -60,14 +60,14 @@ class serendipity_event_tinymce extends serendipity_event
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_TINYMCE_ARTICLE_ONLY);
                 $propbag->add('description', PLUGIN_EVENT_TINYMCE_ARTICLE_ONLY_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default', 'false');
                 break;
 
             case 'imanager':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_TINYMCE_IMANAGER);
                 $propbag->add('description', PLUGIN_EVENT_TINYMCE_IMANAGER_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default', 'false');
                 break;
 
             case 'tinymce_plugins':
@@ -102,28 +102,28 @@ class serendipity_event_tinymce extends serendipity_event
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_TINYMCE_SPELLING);
                 $propbag->add('description', PLUGIN_EVENT_TINYMCE_SPELLING_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default', 'false');
                 break;
 
             case 'relativeurls':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_TINYMCE_RELURLS);
                 $propbag->add('description', PLUGIN_EVENT_TINYMCE_RELURLS_DESC);
-                $propbag->add('default', true);
+                $propbag->add('default', 'true');
                 break;
 
             case 'verifyhtml':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_TINYMCE_VFYHTML);
                 $propbag->add('description', PLUGIN_EVENT_TINYMCE_VFYHTML_DESC);
-                $propbag->add('default', true);
+                $propbag->add('default', 'true');
                 break;
 
             case 'cleanup':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_TINYMCE_CLEANUP);
                 $propbag->add('description', PLUGIN_EVENT_TINYMCE_CLEANUP_DESC);
-                $propbag->add('default', true);
+                $propbag->add('default', 'true');
                 break;
 
             case 'plugin_http_path':
@@ -153,7 +153,7 @@ class serendipity_event_tinymce extends serendipity_event
         if (isset($hooks[$event])) {
             switch($event) {
                 case 'frontend_header':
-                    echo '<script type="text/javascript">var serenditpityBaseUrl = "' . $serendipity['baseURL'] . '";</script>' . "\n";
+                    echo '<script type="text/javascript">var serendipityBaseUrl = "' . $serendipity['baseURL'] . '";</script>' . "\n";
                     break;
 
                 case 'backend_wysiwyg':
@@ -166,19 +166,19 @@ class serendipity_event_tinymce extends serendipity_event
                 case 'backend_wysiwyg_finish':
                     $path = $this->get_config('plugin_http_path','plugins/serendipity_event_tinymce') . '/tinymce/';
 
-                    $imanager           = serendipity_db_bool($this->get_config('imanager'));
-                    $geckospellcheck    = serendipity_db_bool($this->get_config('geckospellcheck'));
-                    $relativeurls       = serendipity_db_bool($this->get_config('relativeurls'));
-                    $verifyhtml         = serendipity_db_bool($this->get_config('verifyhtml'));
-                    $cleanup            = serendipity_db_bool($this->get_config('cleanup'));
-                    $article_only       = serendipity_db_bool($this->get_config('article_only'));
+                    $imanager           = serendipity_db_bool($this->get_config('imanager', 'false'));
+                    $geckospellcheck    = serendipity_db_bool($this->get_config('geckospellcheck', 'false'));
+                    $relativeurls       = serendipity_db_bool($this->get_config('relativeurls', 'true'));
+                    $verifyhtml         = serendipity_db_bool($this->get_config('verifyhtml', 'true'));
+                    $cleanup            = serendipity_db_bool($this->get_config('cleanup', 'true'));
+                    $article_only       = serendipity_db_bool($this->get_config('article_only', 'false'));
                     $tinymce_plugins = $this->get_config('tinymce_plugins');
 
                     $theme_advanced_buttons1 = $this->get_config('theme_advanced_buttons1');
                     $theme_advanced_buttons2 = $this->get_config('theme_advanced_buttons2');
                     $theme_advanced_buttons3 = $this->get_config('theme_advanced_buttons3');
 ?>
-<script type="text/javascript">var serenditpityBaseUrl = "<?php echo   $serendipity['baseURL']; ?>"</script>
+<script type="text/javascript">var serendipityBaseUrl = "<?php echo $serendipity['baseURL']; ?>"</script>
 <script type="text/javascript" src="<?php echo $path; ?>jscripts/tiny_mce/tiny_mce_gzip.php?js=1"></script>
 <script type="text/javascript">
 if (!window.tinymce_inited) {

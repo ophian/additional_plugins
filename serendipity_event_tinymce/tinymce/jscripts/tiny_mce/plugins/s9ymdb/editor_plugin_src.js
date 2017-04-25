@@ -47,7 +47,7 @@ var TinyMCE_S9Y_MediaDB_Plugin = {
 					textarea = 'extended';
 				if (user_interface) {
 					var template = new Array(); 
-					template['file']	= serenditpityBaseUrl + '/serendipity_admin_image_selector.php?serendipity[textarea]=' + textarea; // Relative to theme 
+					template['file']	= serendipityBaseUrl + '/serendipity_admin_image_selector.php?serendipity[textarea]=' + textarea; // Relative to theme 
 					template['width']  = 800; 
 					template['height'] = 600; 
 					var plain_text = ""; 
