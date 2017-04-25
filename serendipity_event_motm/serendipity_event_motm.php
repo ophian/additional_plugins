@@ -342,6 +342,7 @@ class serendipity_event_motm extends serendipity_event
         $streams[$i] = array('motm_match' => $_REQUEST['motm_match'], 'motm_name' => $_REQUEST['motm_name'], 'motm_url' => $_REQUEST['motm_url'], 'motm_web_name' => $_REQUEST['motm_web_name'], 'motm_web_url' => $_REQUEST['motm_web_url']);
         $this->set_config('streams',serialize($streams));
         echo '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />' . sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%T')) . '<br><br>\n</div>';
+        echo '<div class="msg_success"><span class="icon-ok-circled"></span> ' . sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . "\n</div>";
     }
 
     function admin_edit()
@@ -370,6 +371,7 @@ class serendipity_event_motm extends serendipity_event
         $streams[$id] = array('motm_match' => $_REQUEST['motm_match'], 'motm_name' => $_REQUEST['motm_name'], 'motm_url' => $_REQUEST['motm_url'], 'motm_web_name' => $_REQUEST['motm_web_name'], 'motm_web_url' => $_REQUEST['motm_web_url']);
         $this->set_config('streams',serialize($streams));
         echo '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />' . sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%T')) . '<br><br>\n</div>';
+        echo '<div class="msg_success"><span class="icon-ok-circled"></span> ' . sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . "\n</div>";
     }
 
     function admin_delete()
@@ -388,6 +390,7 @@ class serendipity_event_motm extends serendipity_event
         array_splice($streams, $id, 1);
         $this->set_config('streams',serialize($streams));
         echo '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />' . sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%T')) . '<br><br>\n</div>';
+        echo '<div class="msg_success"><span class="icon-ok-circled"></span> ' . sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . "\n</div>";
     }
 
 }
