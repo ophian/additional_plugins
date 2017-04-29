@@ -1,3 +1,7 @@
+4.6.2.4:
+---------
+    * Allowed <p> tag custom classes in js config to Extra Allowed Content protection against ACF
+
 4.6.2.3:
 ---------
     * New 4.6.x flat design needs some background gradient tweaking again
