@@ -1806,7 +1806,7 @@
 <description>Automatically links quoted statues and judicature (references and source of information) with contents of dejure.org.</description>
 <maintainers><maintainer><name>Garvin Hicking, Bjoern Urban, dejure.org, Thomas Hochstein, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8</version>
+  <version>1.9</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-06-03</date>
   <filelist>

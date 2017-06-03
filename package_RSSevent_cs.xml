@@ -257,7 +257,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Bjoern Urban, dejure.org, Thomas Hochstein, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_dejure&lt;br /&gt;Automatické odkazy Dejure.org&lt;/b&gt;&lt;br /&gt;Automaticky vytváří odkazy na citace a judikaturu (odkazy a zdroje informací) pomocí služby dejure.org.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 03 Jun 2017 14:26:27 +0200</pubDate>
+<pubDate>Sat, 03 Jun 2017 19:03:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dejure</guid>
 </item>
 <item>
