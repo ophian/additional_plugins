@@ -7,7 +7,7 @@ if (IN_serendipity !== true) {
 // Load possible language files.
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-define('DJO_VERSION', '1.8');
+define('DJO_VERSION', '1.9');
 define('CACHE_VORHALT', 4); # (Tage) Wann ein vernetzter Text aus dem Cache entfernt und neu vernetzt werden soll
 
 class serendipity_event_dejure extends serendipity_event
@@ -158,7 +158,7 @@ class serendipity_event_dejure extends serendipity_event
         $this->setupDB();
     }
 
-    function uninstall()
+    function uninstall(&$propbag)
     {
         $this->dropDB();
     }

@@ -1,3 +1,8 @@
+1.9:
+----
+ * Fix PHP warning for API declaration method should be
+   compatible with serendipity_plugin core method.
+
 1.8:
 ----
  * Use core language API, sets requirement to S9y 1.6+
