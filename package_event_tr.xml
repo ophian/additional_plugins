@@ -1798,17 +1798,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_dejure</name>
+<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_dejure/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Dejure.org automatic linking</summary>
+<summary>dejure.org automatic linking</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Automatically links quoted statues and judicature (references and source of information) with contents of dejure.org.</description>
-<maintainers><maintainer><name>Garvin Hicking, dejure.org</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Bjoern Urban, dejure.org, Thomas Hochstein, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.2</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.8</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-06-03</date>
   <filelist>
 <dir name="serendipity_event_dejure">
+<file>ChangeLog</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
@@ -1823,6 +1825,7 @@
 
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_dejure/ChangeLog</file>
     <file>serendipity_event_dejure/lang_cs.inc.php</file>
     <file>serendipity_event_dejure/lang_cz.inc.php</file>
     <file>serendipity_event_dejure/lang_de.inc.php</file>
@@ -8262,7 +8265,7 @@
 <release>
   <version>0.14</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2017-02-02</date>
+  <date>2017-06-03</date>
   <filelist>
 <dir name="serendipity_event_social">
 <file>ChangeLog</file>
