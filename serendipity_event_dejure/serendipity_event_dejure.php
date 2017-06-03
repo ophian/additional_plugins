@@ -1,26 +1,25 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+// Load possible language files.
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
+define('DJO_VERSION', '1.8');
+define('CACHE_VORHALT', 4); # (Tage) Wann ein vernetzter Text aus dem Cache entfernt und neu vernetzt werden soll
 
 class serendipity_event_dejure extends serendipity_event
 {
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',        DEJURE_TITLE);
         $propbag->add('description', DEJURE_DESCRIPTION);
-        $propbag->add('author',      'Garvin Hicking, dejure.org');
-        $propbag->add('version',     '1.2');
+        $propbag->add('author',      'Garvin Hicking, Bjoern Urban, dejure.org, Thomas Hochstein, Ian');
+        $propbag->add('version',     DJO_VERSION);
         $propbag->add('stackable',   false);
         $propbag->add('groups',      array('FRONTEND_EXTERNAL_SERVICES'));
 
@@ -34,7 +33,7 @@ class serendipity_event_dejure extends serendipity_event
 
         $propbag->add('requirements',
             array(
-                'serendipity' => '0.8',
+                'serendipity' => '1.6',
                 'smarty'      => '2.6.7',
                 'php'         => '4.1.0'
             )
@@ -46,12 +45,16 @@ class serendipity_event_dejure extends serendipity_event
                 'newsletter',
                 'target',
                 'css',
-                'linkstyle'
+                'linkstyle',
+                'noheadings',
+                'buzer',
+                'cache'
             )
         );
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch ($name) {
@@ -95,6 +98,27 @@ class serendipity_event_dejure extends serendipity_event
                 $propbag->add('radio_per_row',  1);
                 break;
 
+            case 'noheadings':
+                $propbag->add('type',           'boolean');
+                $propbag->add('name',           DEJURE_NOHEADINGS);
+                $propbag->add('description',    DEJURE_NOHEADINGS_DESC);
+                $propbag->add('default',        false);
+                break;
+
+            case 'buzer':
+                $propbag->add('type',           'boolean');
+                $propbag->add('name',           DEJURE_BUZER);
+                $propbag->add('description',    DEJURE_BUZER_DESC);
+                $propbag->add('default',        true);
+                break;
+
+            case 'cache':
+                $propbag->add('type',           'boolean');
+                $propbag->add('name',           DEJURE_CACHE);
+                $propbag->add('description',    DEJURE_CACHE_DESC);
+                $propbag->add('default',        false);
+                break;
+
             default:
                 return false;
         }
@@ -102,169 +126,216 @@ class serendipity_event_dejure extends serendipity_event
         return true;
     }
 
-    function setupDB() {
+    function setupDB()
+    {
         global $serendipity;
 
         $built = $this->get_config('db_built', null);
         if (empty($built)) {
-            serendipity_db_schema_import("CREATE TABLE {$serendipity['dbPrefix']}dejure (
+            serendipity_db_schema_import("CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}dejure (
                     ckey varchar(32),
                     cache text,
                     last_update int(10) {UNSIGNED}
-                    )");
+                    ) {UTF_8}");
             serendipity_db_schema_import('CREATE UNIQUE INDEX dejure_cacheidx ON {PREFIX}dejure (ckey)');
         }
     }
 
-    function generate_content(&$title) {
+    function dropDB()
+    {
+        global $serendipity;
+
+        serendipity_db_schema_import("DROP TABLE {$serendipity['dbPrefix']}dejure");
+    }
+
+    function generate_content(&$title)
+    {
         $title = DEJURE_TITLE;
     }
 
-    function install() {
+    function install()
+    {
         $this->setupDB();
     }
 
-    function cleanup() {
+    function uninstall()
+    {
+        $this->dropDB();
+    }
+
+    function cleanup()
+    {
         global $serendipity;
 
-        // Purge DB cache
+        // Purge the whole DB cache
         serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}dejure");
     }
 
-    function cache_cleanup() {
+    function cache_cleanup()
+    {
         global $serendipity;
 
-        // Purge DB cache
-        serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}dejure WHERE last_update < " . (time()-86400*4));
+        // Purge old DB cache
+        serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}dejure
+                              WHERE last_update < " . (time()-86400*CACHE_VORHALT));
     }
 
+    function djo_vernetzen_ueber_dejure_org($ausgangstext, $parameter = array())
+    {
+        // Mögliche Parameter: Anbieterkennung / Dokumentkennung / target / class / AktenzeichenIgnorieren / zeitlimit_in_sekunden
 
-    function djo_vernetzen_ueber_dejure_org($ausgangstext, $parameter = array()) {
-    	// Mögliche Parameter: Anbieterkennung / Dokumentkennung / target / class / AktenzeichenIgnorieren / zeitlimit_in_sekunden
+        $uebergabe = 'Originaltext='.urlencode($ausgangstext);
+        foreach ($parameter as $option => $wert) {
+            if ($option == 'zeitlimit_in_sekunden') {
+                $zeitlimit_in_sekunden = $wert;
+            } else {
+                $uebergabe .= '&' . urlencode($option) . '=' . urlencode($wert);
+            }
+        }
 
-    	$uebergabe = "Originaltext=".urlencode($ausgangstext);
-    	foreach ($parameter as $option => $wert) {
-    		if ($option == "zeitlimit_in_sekunden") {
-    			$zeitlimit_in_sekunden = $wert;
-    		} else {
-    			$uebergabe .= "&" . urlencode($option) . "=" . urlencode($wert);
-    		}
-    	}
+        if (!isset($zeitlimit_in_sekunden)) {
+            $zeitlimit_in_sekunden = 2;
+        }
 
-    	if (!isset($zeitlimit_in_sekunden)) {
-    		$zeitlimit_in_sekunden = 2;
-    	}
+        if (preg_match("/<!-- zeitlimitDJO:([0-9]+) -->/", $ausgangstext, $wert_ARR)) {
+            $zeitlimit_in_sekunden = $wert_ARR[1];
+        }
 
-    	$header = "POST http://rechtsnetz.dejure.org/dienste/vernetzung/vernetzen HTTP/1.0\r\n";
-    	$header .= "Content-type: application/x-www-form-urlencoded\r\n";
-    	$header .= "Content-length: " . strlen($uebergabe) . "\r\n\r\n";
+        $header  = "POST /dienste/vernetzung/vernetzen HTTP/1.0\r\n";
+        $header .= 'User-Agent: '.$_SERVER['SERVER_NAME'] . ' (Serendipity-Vernetzung ' . DJO_VERSION . ')' . "\r\n";
+        $header .= "Content-type: application/x-www-form-urlencoded\r\n";
+        $header .= "Content-length: " . strlen($uebergabe) . "\r\n";
+        $header .= 'Host: rechtsnetz.dejure.org'."\r\n";
+        $header .= 'Connection: close'."\r\n";
+        $header .= "\r\n";
 
-    	$fp = fsockopen("rechtsnetz.dejure.org", 80, $errno, $errstr, 12);
+        $fp = @fsockopen('ssl://rechtsnetz.dejure.org', 443, $errno, $errstr, $zeitlimit_in_sekunden);
 
-    	if ($fp === false) { // Verbindung gescheitert
-    		return false;
-    	} else {
-    		socket_set_timeout($fp, $zeitlimit_in_sekunden, 0); // Socket nach $zeitlimit_in_sekunden Sekunden auf jeden Fall wieder frei geben
-    		socket_set_blocking($fp, true);
-    		fputs($fp, $header.$uebergabe);
-    		$timeOutSock = false;
-    		$eofSock = false;
-    		$rueckgabe="";
-    		while (!$eofSock && !$timeOutSock) {
-    			$rueckgabe.= fgets($fp, 1024); //
-    			$stSock = socket_get_status($fp);
-    			$eofSock = $stSock["eof"];
-    			$timeOutSock = $stSock["timed_out"];
-    		}
-    		fclose($fp);
-    		if (!preg_match("/^(.*?)\r?\n\r?\n\r?\n?(.*)/s",$rueckgabe, $rueckgabeARR)) {
-    			return false; // Zeitüberschreitung oder Verbindungsproblem
-    		} else if (strpos($rueckgabeARR[1],"200 OK")===false) {
-    			return false; // sonstiges Serverproblem
-    		} else {
-    			$rueckgabe = $rueckgabeARR[2];
-    			if (strlen($rueckgabe) < strlen($ausgangstext)) {
-    				return false;
-    			}
+        if ($fp === false) { // Verbindung gescheitert
+            return false;
+        } else {
+            stream_set_timeout($fp, $zeitlimit_in_sekunden, 0); // Verbindung nach $zeitlimit_in_sekunden Sekunden abbrechen
+            stream_set_blocking($fp, true);
+            fputs($fp, $header.$uebergabe);
+            $timeOutSock = false;
+            $eofSock = false;
+            $rueckgabe = '';
+            while (!$eofSock && !$timeOutSock) {
+                $rueckgabe.= fgets($fp, 1024); //
+                $stSock = socket_get_status($fp);
+                $eofSock = $stSock["eof"];
+                $timeOutSock = $stSock["timed_out"];
+            }
+            fclose($fp);
+            if (!preg_match("/^(.*?)\r?\n\r?\n\r?\n?(.*)/s",$rueckgabe, $rueckgabeARR)) {
+                return false; // Zeitüberschreitung oder Verbindungsproblem
+            } else if (strpos($rueckgabeARR[1],"200 OK") === false) {
+                return false; // sonstiges Serverproblem
+            } else {
+                $rueckgabe = $rueckgabeARR[2];
+                if (strlen($rueckgabe) < strlen($ausgangstext)) {
+                    return false;
+                }
 
-    			return $rueckgabe;
-    		}
-    	}
+                return $rueckgabe;
+            }
+        }
     }
 
-    function djo_zwischenspeicherung() {
+    function djo_zwischenspeicherung()
+    {
+        global $serendipity;
+        # Cache auf alte Eintraege pruefen vor dem Eintrag
+        $this->cache_cleanup();
+
+        if (is_array($this->djo_vernetzung_in_cache_schreiben)) {
+            foreach ($this->djo_vernetzung_in_cache_schreiben as $vernetzung) {
+                $schluessel = md5($vernetzung[0]);
+            if ($vernetzung[0] == $vernetzung[1]) {
+                $text = "<!-- idem -->";
+            } else {
+                $text = $vernetzung[1];
+            }
+                serendipity_db_Query("DELETE FROM {$serendipity['dbPrefix']}dejure WHERE ckey = '" . $schluessel . "'");
+                serendipity_db_Query("INSERT INTO {$serendipity['dbPrefix']}dejure
+                                     (ckey, cache, last_update)
+                                     VALUES ('".$schluessel."', '".serendipity_db_escape_string($text)."', " . time() . ")");
+            }
+        }
+    }
+
+    function djo_vernetzen_ueber_cache(&$ausgangstext)
+    {
         global $serendipity;
 
-    	if (is_array($this->djo_vernetzung_in_cache_schreiben)) {
-    		foreach ($this->djo_vernetzung_in_cache_schreiben as $vernetzung) {
-    			$schluessel = md5($vernetzung[0]);
-			if ($vernetzung[0] == $vernetzung[1]) {
-				$text = "<!-- idem -->";
-			} else {
-				$text = $vernetzung[1];
-			}
-    			serendipity_db_Query("DELETE FROM {$serendipity['dbPrefix']}dejure WHERE ckey = '" . $schluessel . "'");
-    			serendipity_db_Query("INSERT INTO {$serendipity['dbPrefix']}dejure (ckey, cache, last_update) VALUES ('" . $schluessel . "', '" . serendipity_db_escape_string($text) . "', " . time() . ")");
-    		}
-    	}
+        $schluessel = md5($ausgangstext);
+        $rueckgabe = serendipity_db_query("SELECT cache FROM {$serendipity['dbPrefix']}dejure
+                                           WHERE ckey = '".$schluessel."' AND last_update > " . (time()-86400*CACHE_VORHALT), true, 'assoc');
+        if (!empty($rueckgabe['cache']) && $rueckgabe['cache'] == "<!-- idem -->") {
+            return $ausgangstext;
+        } else {
+            return $rueckgabe['cache'];
+        }
+
     }
 
-    function djo_vernetzen_ueber_cache(&$ausgangstext) {
+    function djo_vernetzen(&$text)
+    {
         global $serendipity;
 
-    	$schluessel = md5($ausgangstext);
-    	$rueckgabe = serendipity_db_query("SELECT cache FROM {$serendipity['dbPrefix']}dejure WHERE ckey = '" . $schluessel . "'", true, 'assoc');
-    	if (!empty($rueckgabe['cache']) && $rueckgabe['cache'] == "<!-- idem -->") {
-		return $ausgangstext;
-    	} else {
-        	return $rueckgabe['cache'];
-    	}
+        # Cache leeren wenn Option gesetzt
+        if ($this->get_config('cache') === true) {
+            $this->cleanup;
+            $this->set_config('cache', false);
+        }
 
-    }
+        if (!preg_match("/§|&sect;|Art\.|\/[0-9][0-9](?![0-9\/])|[0-9][0-9], /", $text) || preg_match("/<!--ohnedjo-->/", $text)) {
+            return false;
+        }
 
-    function djo_vernetzen(&$text) {
-    	global $serendipity;
+        $ergebnis = $this->djo_vernetzen_ueber_cache($text);
+        if (empty($ergebnis)) {
+            $ergebnis = $this->djo_vernetzen_ueber_dejure_org(
+                $text,
+                array(
+                    'Anbieterkennung' => urlencode($this->get_config('mail') . '|' . $serendipity['blogTitle']),
+                    'format'          => $this->get_config('linkstyle'),
+                    'buzer'           => $this->get_config('buzer'),
+                    'ohnehtags'       => $this->get_config('noheadings'),
+                    'target'          => $this->get_config('target'),
+                    'class'           => $this->get_config('css'),
+                    'newsletter'      => serendipity_db_bool($this->get_config('newsletter')) ? 'ja' : 'nein',
+                    'Schema'          => 'https'
+                )
+            );
 
-    	if (!preg_match("/§|&sect;|Art\.|\/[0-9][0-9](?![0-9\/])|[0-9][0-9], /", $text) || preg_match("/<!--ohnedjo-->/", $text)) {
-    		return false;
-    	}
-
-    	$ergebnis = $this->djo_vernetzen_ueber_cache($text);
-    	if (empty($ergebnis)) {
-    		$ergebnis = $this->djo_vernetzen_ueber_dejure_org(
-    		    $text,
-    		    array(
-    		        'Anbieterkennung' => urlencode($this->get_config('mail') . '|' . $serendipity['blogTitle']),
-    		        'format'          => $this->get_config('linkstyle'),
-    		        'target'          => $this->get_config('target'),
-    		        'class'           => $this->get_config('css'),
-    		        'newsletter'      => serendipity_db_bool($this->get_config('newsletter')) ? 'ja' : 'nein'
-    		    )
-    		);
-
-            $ergebnis = $this->integritaetskontrolle($text, $ergebnis);
+            if ($ergebnis !== false) {
+                $ergebnis = $this->integritaetskontrolle($text, $ergebnis);
+            }
 
             if ($ergebnis) {
-    		    $this->djo_vernetzung_in_cache_schreiben[] = array($text, $ergebnis);
-    		}
-    	}
+                $this->djo_vernetzung_in_cache_schreiben[] = array($text, $ergebnis);
+            }
+        }
 
         if ($ergebnis !== false) {
-    	    $text = $ergebnis;
-    	}
+            $text = $ergebnis;
+        }
 
-    	return true;
+        return true;
     }
 
-	function integritaetskontrolle($ausgangstext, $neuertext) {
-		if (preg_replace("/<a href=\"http:\/\/dejure.org\/[^>]*>([^<]*)<\/a>/i", "\\1", $ausgangstext) == preg_replace("/<a href=\"http:\/\/dejure.org\/[^>]*>([^<]*)<\/a>/i", "\\1", $neuertext)) {
-			return $neuertext;
-		} else {
-			return $ausgangstext;
-		}
-	}
+    function integritaetskontrolle($ausgangstext, $neuertext)
+    {
+        if (preg_replace("/<a href=\"https?:\/\/dejure.org\/[^>]*>([^<]*)<\/a>/i", "\\1", $ausgangstext) == preg_replace("/<a href=\"https?:\/\/dejure.org\/[^>]*>([^<]*)<\/a>/i", "\\1", $neuertext)) {
+            return $neuertext;
+        } else {
+            return $ausgangstext;
+        }
+    }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -275,7 +346,6 @@ class serendipity_event_dejure extends serendipity_event
                     if (date("G") < 6 && rand(0,50) < 1) {
                         $this->cache_cleanup();
                     }
-
                     break;
 
                 case 'frontend_display':
@@ -285,7 +355,6 @@ class serendipity_event_dejure extends serendipity_event
                     } elseif ($eventData['comment'] != '') {
                         $this->djo_vernetzen($eventData['comment']);
                     }
-
                     break;
 
                 case 'frontend_footer':
@@ -300,4 +369,7 @@ class serendipity_event_dejure extends serendipity_event
         }
         return false;
     }
+
 }
+
+?>
