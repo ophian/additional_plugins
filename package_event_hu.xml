@@ -445,12 +445,12 @@
 <license>GPL</license>
 <summary>Serendipity Autoupdate</summary>
 <groups>BACKEND_ADMIN,BACKEND_DASHBOARD,BACKEND_FEATURES</groups>
-<description>When the dashboard-plugin (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea.</description>
+<description>When the dashboard (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea.</description>
 <maintainers><maintainer><name>onli, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.1</version>
+  <version>1.4.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-04-16</date>
+  <date>2017-06-04</date>
   <filelist>
 <dir name="serendipity_event_autoupdate">
 <file>.htaccess</file>
