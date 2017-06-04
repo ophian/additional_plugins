@@ -1,3 +1,9 @@
+1.4.3:
+------
+
+ * Add recommendation hint, to use in combination with the modemaintain
+   (maintenance-) event plugin within Serendipity Styx 2.1+.
+
 1.4.2:
 ------
 

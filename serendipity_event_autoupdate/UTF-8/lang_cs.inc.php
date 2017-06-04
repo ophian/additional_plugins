@@ -5,6 +5,6 @@
  *  @translated 2011/01/20
  */
 @define('PLUGIN_EVENT_AUTOUPDATE_NAME', 'Automatické aktualizace (experimentální)');
-@define('PLUGIN_EVENT_AUTOUPDATE_DESC', 'Když "tabule" detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci.');
+@define('PLUGIN_EVENT_AUTOUPDATE_DESC', 'Když "tabule" detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin.');
 @define('PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON', 'Automaticky aktualizovat');
 

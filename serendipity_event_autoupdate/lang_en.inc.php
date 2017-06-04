@@ -1,7 +1,7 @@
 <?php
 
 @define('PLUGIN_EVENT_AUTOUPDATE_NAME', 'Serendipity Autoupdate');
-@define('PLUGIN_EVENT_AUTOUPDATE_DESC', 'When the dashboard (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea.');
+@define('PLUGIN_EVENT_AUTOUPDATE_DESC', 'When the dashboard (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin.');
 @define('PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON', 'Start automatic upgrade');
 
 @define('PLUGIN_EVENT_AUTOUPDATE_DL_URL', 'Custom (GitHub?) download url');
