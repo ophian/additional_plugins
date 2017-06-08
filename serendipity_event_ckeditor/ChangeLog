@@ -1,3 +1,7 @@
+4.7.0.0:
+---------
+    * Upgrade to CKEDITOR 4.7. Series, update 0 (http://ckeditor.com/release-notes).
+
 4.6.2.4:
 ---------
     * Allowed <p> tag custom classes in js config to Extra Allowed Content protection against ACF
