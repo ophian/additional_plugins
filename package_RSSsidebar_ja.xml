@@ -195,15 +195,6 @@
 <guid isPermaLink="false">serendipity_plugin_currently</guid>
 </item>
 <item>
-<title>del.icio.us プラグイン: A clone of the &quot;Remaindered Links&quot; &amp; &quot;Blogmarks&quot; systems, and uses the trendy del.icio.us for its back-end support.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_delicious</link>
-<category>Sidebar Plugins</category>
-<author>Riscky</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_delicious&lt;br /&gt;del.icio.us プラグイン&lt;/b&gt;&lt;br /&gt;A clone of the &quot;Remaindered Links&quot; &amp; &quot;Blogmarks&quot; systems, and uses the trendy del.icio.us for its back-end support.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Sat, 11 Feb 2017 13:44:44 +0100</pubDate>
-<guid isPermaLink="false">serendipity_plugin_delicious</guid>
-</item>
-<item>
 <title>External PHP Application: Shows an external PHP application inside your blog with your blogs design and all formattings. USE WITH CARE, THIS PLUGIN HAS SECURITY IMPLICATIONS AS IT INCLUDES ANY GENERIC PHP FILE! YOU CAN ONLY USE THIS PLUGIN AS ADMIN!</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_externalphp</link>
 <category>Sidebar Plugins</category>

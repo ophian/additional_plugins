@@ -191,15 +191,6 @@
 <guid isPermaLink="false">serendipity_plugin_currently</guid>
 </item>
 <item>
-<title>Plugin del.icio.us: Podobný systém jako je &quot;Remaindered Links&quot; (zapamatované odkazy) nebo &quot;Blogmarks&quot; (blogovací značky). Používá módní systém del.icio.us jako backend.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_delicious</link>
-<category>Sidebar Plugins</category>
-<author>Riscky</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_delicious&lt;br /&gt;Plugin del.icio.us&lt;/b&gt;&lt;br /&gt;Podobný systém jako je &quot;Remaindered Links&quot; (zapamatované odkazy) nebo &quot;Blogmarks&quot; (blogovací značky). Používá módní systém del.icio.us jako backend.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Sat, 11 Feb 2017 13:44:44 +0100</pubDate>
-<guid isPermaLink="false">serendipity_plugin_delicious</guid>
-</item>
-<item>
 <title>Externí PHP aplikace: Zobrazuje výstup externí PHP aplikace uvnitř blogu, v designu a formátování blogu. POUŽÍVAT S ROZVAHOU, TENTO PLUGIN S SEBOU NESE BEZPEČNOSTNÍ RIZIKA, PROTOŽE UMOŽŇUJE VLOŽIT LIBOVOLNÝ PHP KÓD! TENTO PLUGIN MŮŽE POUŽÍVAT POUZE ADMINISTRÁTOR!</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_externalphp</link>
 <category>Sidebar Plugins</category>

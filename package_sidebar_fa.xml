@@ -1856,48 +1856,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_plugin_delicious</name>
-<license>GPL</license>
-<summary>A del.icio.us plug-in</summary>
-<groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>A clone of the &quot;Remaindered Links&quot; &amp; &quot;Blogmarks&quot; systems, and uses the trendy del.icio.us for its back-end support.</description>
-<maintainers><maintainer><name>Riscky</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>0.8.2</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2017-02-11</date>
-  <filelist>
-<dir name="serendipity_plugin_delicious">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_en.inc.php</file>
-<file>lang_ja.inc.php</file>
-<file>serendipity_plugin_delicious.php</file>
-<dir name="UTF-8">
-<file>lang_cs.inc.php</file>
-<file>lang_cz.inc.php</file>
-<file>lang_de.inc.php</file>
-<file>lang_ja.inc.php</file>
-</dir>
-</dir>
-
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_plugin_delicious/lang_cs.inc.php</file>
-    <file>serendipity_plugin_delicious/lang_cz.inc.php</file>
-    <file>serendipity_plugin_delicious/lang_de.inc.php</file>
-    <file>serendipity_plugin_delicious/lang_en.inc.php</file>
-    <file>serendipity_plugin_delicious/lang_ja.inc.php</file>
-    <file>serendipity_plugin_delicious/serendipity_plugin_delicious.php</file>
-    <file>serendipity_plugin_delicious/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_plugin_delicious/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_delicious/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_delicious/UTF-8/lang_ja.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_plugin_externalphp</name>
 <license>GPL</license>
 <summary>External PHP Application</summary>
