@@ -73,7 +73,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian');
-        $propbag->add('version',        '1.79');
+        $propbag->add('version',        '1.80');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '1.6',
@@ -1947,7 +1947,7 @@ class serendipity_event_cal extends serendipity_event
                     }
                 }
 
-                if (serendipity_userLoggedIn() && $_SESSION['serendipityAuthedUser'] === true) {
+                if (serendipity_userLoggedIn()) {
                     $validcaptcha = true;
                 }
             }
@@ -2680,7 +2680,7 @@ class serendipity_event_cal extends serendipity_event
                 case 'backend_sidebar_entries':
 
                     // forbid entry if not admin
-                    if (serendipity_userLoggedIn() && $_SESSION['serendipityAuthedUser'] === true && $_SESSION['serendipityUserlevel'] == '255') {
+                    if (serendipity_userLoggedIn() && $_SESSION['serendipityUserlevel'] == '255') {
                         if ($serendipity['version'][0] < 2) {
                             echo "\n".'                        <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks">
                                     <a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=eventcal">
@@ -2693,7 +2693,7 @@ class serendipity_event_cal extends serendipity_event
 
                 case 'backend_sidebar_admin_appearance':
                     // forbid sidebar link if user is not in admin
-                    if (serendipity_userLoggedIn() && $_SESSION['serendipityAuthedUser'] === true && $_SESSION['serendipityUserlevel'] == '255') {
+                    if (serendipity_userLoggedIn() && $_SESSION['serendipityUserlevel'] == '255') {
                         if ($serendipity['version'][0] > 1) {
                             echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal">' . PLUGIN_EVENTCAL_ADMIN_NAME . '</a></li>'."\n";
                         }
@@ -2703,7 +2703,7 @@ class serendipity_event_cal extends serendipity_event
                 case 'backend_sidebar_entries_event_display_eventcal':
 
                     // forbid entry if not admin
-                    if (serendipity_userLoggedIn() && $_SESSION['serendipityAuthedUser'] === true && $_SESSION['serendipityUserlevel'] == '255') {
+                    if (serendipity_userLoggedIn() && $_SESSION['serendipityUserlevel'] == '255') {
                         if (!is_object($serendipity['smarty'])) {
                             serendipity_smarty_init(); // if not set to avoid member function assign() on a non-object error, start Smarty templating
                         }
