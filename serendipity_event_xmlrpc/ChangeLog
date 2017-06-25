@@ -1,3 +1,6 @@
+Version 1.71:
+    * Fix deprecation messages with PHP7 and use modern constructors in RPC
+
 Version 1.70:
     * Added dummy API functions for bool, int, array returns
       based on API list by
