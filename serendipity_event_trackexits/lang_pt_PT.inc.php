@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ##########################################################################
 # serendipity - another blogger...                                       #
@@ -20,5 +20,3 @@
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_S9Y', 'Sim');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_GOOGLE', 'Sim, activando o deflector de Google PageRank');
 
-/* vim: set sts=4 ts=4 expandtab : */
-?>

@@ -19,7 +19,7 @@ class serendipity_event_trackexits extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TRACKBACK_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.9.2');
+        $propbag->add('version',       '1.9.3');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -57,16 +57,19 @@ class serendipity_event_trackexits extends serendipity_event
         $propbag->add('configuration', $conf_array);
     }
 
-    function install() {
+    function install()
+    {
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function uninstall(&$propbag) {
+    function uninstall(&$propbag)
+    {
         serendipity_plugin_api::hook_event('backend_cache_purge', $this->title);
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
@@ -93,7 +96,8 @@ class serendipity_event_trackexits extends serendipity_event
         return true;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -158,14 +162,12 @@ class serendipity_event_trackexits extends serendipity_event
                             }
                         }
                     }
-
-                    return true;
                     break;
 
                 default:
                     return false;
             }
-
+            return true;
         } else {
             return false;
         }
@@ -176,12 +178,13 @@ class serendipity_event_trackexits extends serendipity_event
     * Transforms '<a href="http://url/">' into
     * '<a href="exit.php?url=encurl" ...>'.
     */
-    function _encodeExitsCallback($buffer, $url_only = false) {
+    function _encodeExitsCallback($buffer, $url_only = false)
+    {
         global $serendipity;
         static $redir = null;
-        
+
         if ($redir === null) {
-            $redir    = $this->get_config('commentredirection');
+            $redir = $this->get_config('commentredirection');
         }
 
         $entry_id = $serendipity['encodeExitsCallback_entry_id'];
@@ -209,7 +212,6 @@ class serendipity_event_trackexits extends serendipity_event
         if ($redir == 'bmi') {
             return sprintf(
                 '<a%shref="%s" ' . (!$is_title ? 'title="%s" ' : '%s') . (!$is_over ? ' onmouseover="window.status=\'%s\';return true;" ' : '%s') . (!$is_out ? 'onmouseout="window.status=\'\';return true;"' : '') . '%s>',
-                
                 $buffer[1],
                 'http://bmi.pifo.biz/?' . $url,
                 (!$is_title ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($url) : htmlspecialchars($url, ENT_COMPAT, LANG_CHARSET)) : ''),
@@ -243,6 +245,7 @@ class serendipity_event_trackexits extends serendipity_event
             );
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */

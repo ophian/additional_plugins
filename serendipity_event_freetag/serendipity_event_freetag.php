@@ -1892,8 +1892,8 @@ $(document).ready(function() {
     }
 
     /**
-     * Fetches arrified tags by ID
-     *  Why uses array pop? It turns multi-dimensional arrays into flattened arrays!
+     * Fetches arrayed tags by ID
+     *  Why does it use array pop? It turns multi-dimensional arrays into flattened arrays!
      *
      * @param   int      entries $eventData['id']
      * @return  array    in any case for the tolower array_imap()
