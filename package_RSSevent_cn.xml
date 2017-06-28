@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the dashboard (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 04 Jun 2017 14:20:51 +0200</pubDate>
+<pubDate>Wed, 28 Jun 2017 12:52:57 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -1120,8 +1120,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_trackback</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Trackback-Control&lt;/b&gt;&lt;br /&gt;Allows granular control over how trackbacks are sent when creating entries&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 15 Mar 2017 11:40:57 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Trackback-Control&lt;/b&gt;&lt;br /&gt;Allows granular control over how trackbacks are sent when creating entries&lt;br/&gt;For: Serendipity 2.1</content:encoded>
+<pubDate>Tue, 27 Jun 2017 18:55:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>
