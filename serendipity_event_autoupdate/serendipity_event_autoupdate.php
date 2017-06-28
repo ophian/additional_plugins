@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.4.3');
+        $propbag->add('version',       '1.4.4');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -140,8 +140,13 @@ class serendipity_event_autoupdate extends serendipity_event
                     break;
 
                 case 'plugin_dashboard_updater':
+                    if (!(serendipity_checkPermission('siteConfiguration') || serendipity_checkPermission('blogConfiguration'))) {
+                        return;
+                    }
+                    $momacheck = (isset($serendipity['edition']) && $serendipity['edition'] == 'Styx' && $serendipity['maintenance'] == false) ? true : false;
+                    $askit = ($momacheck && version_compare($serendipity['version'], '2.1.0', '>=')) ? " onclick=\"return confirm('".PLUGIN_EVENT_AUTOUPDATE_CHECK."')\"" : '';
                     $eventData = '
-                    <form action="?serendipity[adminModule]=event_display&serendipity[adminAction]=update" method="POST">
+                    <form'.$askit.' action="?serendipity[adminModule]=event_display&serendipity[adminAction]=update" method="POST">
                         <input type="hidden" name="serendipity[newVersion]" value="'.$addData.'" />
                         <div id="autobut" class="button_action">' . ($serendipity['version'][0] > 1 ? '<button type="submit">'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'</button>' : '<input type="submit" value="'.PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON.'" />') . '</div>
                     </form>';
@@ -161,7 +166,7 @@ class serendipity_event_autoupdate extends serendipity_event
                        As long scripts are not running within safe_mode they are free to change the memory_limit to whatever value they want.
                        Suhosin changes this fact and disallows setting the memory_limit to a value greater than the one the script started with,
                        when this option is left at 0. A value greater than 0 means that Suhosin will disallows scripts setting the memory_limit
-                       to a value above this configured hard limit. This is for example usefull if you want to run the script normaly with a limit
+                       to a value above this configured hard limit. This is for example usefull if you want to run the script normally with a limit
                        of 16M but image processing scripts may raise it to 20M.
                        Edit /etc/php5/conf.d/suhosin.ini and add e.g. suhosin.memory_limit = 512M ...
                     */

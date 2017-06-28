@@ -9,3 +9,5 @@
 @define('PLUGIN_EVENT_AUTOUPDATE_RF_URL', 'Benutzerdefinierte (GitHub?) release tag URL');
 @define('PLUGIN_EVENT_AUTOUPDATE_RF_URL_DESC', 'Definieren Sie hier eine URL wie diese: "https://github.com/s9y/Serendipity/releases/tag/". Ihr benutzerdefinierter Dateiname muss "$version" heißen (ersetzen Sie $version mit dem Versionnummern String aus ihrer benutzerdefinierten RELEASE-Datei, zB. "2.1.5"). Sie können die URL zu Letzterer in der Backend Konfiguration, unter dem Optionsblock "Generelle Einstellungen" hinterlegen. Lassen Sie ansonsten die angegebene Default-URL hier unverändert stehen!');
 
+@define('PLUGIN_EVENT_AUTOUPDATE_CHECK', 'SICHERHEITSHINWEIS:\n\nHaben Sie bereits auf Plugin UPGRADES geprüft?\nHaben Sie wirklich das MODEMAINTAIN Plugin installiert und den Wartungsmodus für dieses Update angestellt?\n\nDrücken Sie OK, um mit dem AUTOUPDATE fortzufahren.');
+

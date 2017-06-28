@@ -1,3 +1,9 @@
+1.4.4:
+------
+
+ * If on Styx 2.1+, ask for checked plugin updates and enabled modemaintain
+   on upgrade.
+
 1.4.3:
 ------
 

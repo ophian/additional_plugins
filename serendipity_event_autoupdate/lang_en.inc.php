@@ -9,3 +9,5 @@
 @define('PLUGIN_EVENT_AUTOUPDATE_RF_URL', 'Custom (GitHub?) release tag url');
 @define('PLUGIN_EVENT_AUTOUPDATE_RF_URL_DESC', 'Please set an URL like this: "https://github.com/s9y/Serendipity/releases/tag/". Your custom location page name must be named "$version" (replace $version with the version string provided in your custom RELEASE-file, eg. "2.1.5"). You can set the latter in the backend configuration - general setting option block. Else leave this default-URL untouched!');
 
+@define('PLUGIN_EVENT_AUTOUPDATE_CHECK', 'SECURITY ADVICE:\n\nDid you already check for plugin UPGRADES?\nDo you really have the MODEMAINTAIN plugin installed and is the Maintenance-Mode enabled and ON for the current upgrade?\n\nPress OK to continue with the AUTOUPDATE.');
+
