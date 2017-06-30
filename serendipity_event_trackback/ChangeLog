@@ -1,3 +1,8 @@
+1.23:
+-----
+   * Since PEAR/Request2 uses a new password variable we had to raise up the
+     requirement for this plugin to Serendipity 2.1+.
+
 1.22:
 -----
    * Add some styling label space

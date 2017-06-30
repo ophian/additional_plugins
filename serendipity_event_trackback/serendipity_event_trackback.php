@@ -19,11 +19,11 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian');
-        $propbag->add('version',       '1.22');
+        $propbag->add('version',       '1.23');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.1',
+            'smarty'      => '3.1.0',
+            'php'         => '5.3.0'
         ));
         $propbag->add('event_hooks',    array(
             'backend_display'           => true,
@@ -116,7 +116,7 @@ class serendipity_event_trackback extends serendipity_event
                         $eventData['proxy_host'] = $host;
                         $eventData['proxy_port'] = $this->get_config('port');
                         $eventData['proxy_user'] = $this->get_config('user');
-                        $eventData['proxy_pass'] = $this->get_config('password');
+                        $eventData['proxy_password'] = $this->get_config('password');
                     }
                     break;
 
