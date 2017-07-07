@@ -16,7 +16,7 @@ class serendipity_plugin_staticpage extends serendipity_plugin
         $propbag->add('description', PLUGIN_STATICPAGELIST_NAME_DESC);
         $propbag->add('author',      "Rob Antonishen, Falk Doering, Ian");
         $propbag->add('stackable',   true);
-        $propbag->add('version',     '1.28');
+        $propbag->add('version',     '1.29');
         $propbag->add('configuration', array(
                 'title',
                 'limit',
@@ -135,7 +135,7 @@ class serendipity_plugin_staticpage extends serendipity_plugin
         $smartcar   = array();
         $str        = "\n";
 
-        if (!serendipity_db_bool($this->get_config('showIcons', false))) {
+        if (!serendipity_db_bool($this->get_config('showIcons', 'false'))) {
             if ($frontpage) {
                 if ($smartify) {
                     $serendipity['smarty']->assign('frontpage_path', $serendipity['serendipityHTTPPath'] . $serendipity['indexFile']);
@@ -177,7 +177,11 @@ class serendipity_plugin_staticpage extends serendipity_plugin
             $str .= "fd_$fdid.config.closeSameLevel= true;\n";
             $str .= "fd_$fdid.config.target        = '_self'\n";
 
-            $str .= 'fd_' . $fdid . '.add(0,-1,"' . PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME . '","' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '");'."\n";
+            if ($frontpage) {
+                $str .= 'fd_' . $fdid . '.add(0,-1,"' . PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME . '","' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '");'."\n";
+            } else {
+                $str .= 'fd_' . $fdid . '.add(0,-1,"","");'."\n";
+            }
 
             if ($struct = $this->getPageList($parentonly)) {
                 $this->addJSTags($struct);
@@ -223,9 +227,9 @@ class serendipity_plugin_staticpage extends serendipity_plugin
                 FROM {$serendipity['dbPrefix']}staticpages
                WHERE showonnavi = 1
                  AND publishstatus = 1
-                 AND (language = '{$serendipity['lang']}'
-                  OR  language = ''
-                  OR  language = 'all')";
+                 AND language = '{$serendipity['lang']}'
+                  OR language = ''
+                  OR language = 'all'";
         if ($parentsonly) {
             $q .= " AND parent_id = 0";
         }
@@ -275,9 +279,9 @@ class serendipity_plugin_staticpage extends serendipity_plugin
                 FROM {$serendipity['dbPrefix']}staticpages
                WHERE showonnavi = 1
                  AND publishstatus = 1
-                 AND (language = '{$serendipity['lang']}'
-                  OR  language = ''
-                  OR  language = 'all')";
+                 AND language = '{$serendipity['lang']}'
+                  OR language = ''
+                  OR language = 'all'";
         if ($parentsonly) {
             $q .= " AND parent_id = 0";
         }

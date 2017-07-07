@@ -1,3 +1,14 @@
+5.31 & 1.29:
+------------
+
+ * Fix bug with language selection, since it is NOT an EITHER/OR selection,
+   than fetching all items which are set to the defined language and set
+   to 'ALL'. (Even database undefined languages should be in, which is
+   a fallback bugfix behaviour for older staticpage constellations.)
+ * Fix frontpage false option for JS based sidebar lists, which was always
+   shown. Since being a little complicated, it for now is just an empty list
+   entry and still used for the lists level building.
+
 5.30:
 ----
 
