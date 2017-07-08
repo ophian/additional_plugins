@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.31');
+        $propbag->add('version', '5.32');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -3178,7 +3178,7 @@ class serendipity_event_staticpage extends serendipity_event
         global $serendipity;
 
         $term = serendipity_db_escape_string($serendipity['GET']['searchTerm']);
-        if ($serendipity['dbType'] == 'postgres') {
+        if ($serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
             $group     = '';
             $distinct  = 'DISTINCT';
             $find_part = "(headline ILIKE '%$term%' OR content ILIKE '%$term%')";
