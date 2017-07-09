@@ -1,9 +1,5 @@
-<?php # 
+<?php
 
-// nearly completly rewritten on Sept 2005 by Alexander 'dma147' Mieland, http://blog.linux-stats.org, <dma147@linux-stats.org>
-// Contact me on IRC in #linux-stats, #archlinux, #archlinux.de, #s9y on irc.freenode.net
-// to reflect gallery2 album images.
-//
 // Code based on the WP-Gallery plugin by Geoff Hutchison http://geoffhutchison.net/blog/categories/computers/web/wp-plugins/
 //
 // Basic usage is:
@@ -12,52 +8,17 @@
 //             [GImage size=sized|full|thumb; link=image|image_sized|album|page|none; align=left|center|right|none; caption=text string; style=link|fancy|image][album/]image.ext[/GImage]
 //
 //
-// Changes from Scott Walsh (zone3.net.nz): v1.5 07 Jun 2007:
-// Changed parsing to allow for
-//     1) albums within albums (i.e. subalbums)
-//     2) images that are not in an albums
-//
-// Changes from dma147: v1.4 26 Sept 2005:
-// fixed some minor bugs
-//
-// Changes from dma147: v1.3-r3 25 Sept 2005:
-// fixed the problems with the rss/atom feeds
-//
-// Changes from dma147: v1.3-r2 25 Sept 2005:
-// made the img-link and img-src absolute
-//
-// Changes from dma147: v1.3-r1 25 Sept 2005:
-// corrected the configuration dialog
-//
-// Changes from dma147: v1.3 24 Sept 2005:
-// gallery2-images can now also be linked to the album or the image-page as for gallery1 too (dma147)
-//
-// Changes from dma147: v1.2 24 Sept 2005:
-// Added support for gallery2, images can only be linked to the images directly (dma147)
-//
-// Changes: v1.1 20 Sept 2005:
-// 1) added a target=default|new|popup|none for links that will open when clecked in the default location(default)
-//    a new window or a java popup window.
-// 2) removed markups in comment section
-// 3) added link=image_sized to target the sized image rather than the full size image for direct links or popups
-// 4) removed 'info' conf item that was causing errors
-//
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_galleryimage extends serendipity_event
 {
     var $title = PLUGIN_EVENT_GALLERYIMAGE_NAME;
+
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -66,16 +27,16 @@ class serendipity_event_galleryimage extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_GALLERYIMAGE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rob Antonishen, Alexander Mieland');
-        $propbag->add('version',       '1.11');
+        $propbag->add('version',       '1.12');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
-                                                'frontend_display' => true,
-                                                'external_plugin' => true
+                'frontend_display' => true,
+                'external_plugin'  => true
         ));
 
         $this->markup_elements = array(
@@ -108,7 +69,8 @@ class serendipity_event_galleryimage extends serendipity_event
         $propbag->add('groups', array('MARKUP', 'IMAGES'));
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
@@ -174,24 +136,26 @@ class serendipity_event_galleryimage extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        constant($name));
                 $propbag->add('description', sprintf(APPLY_MARKUP_TO, constant($name)));
-                $propbag->add('default', 'true');
+                $propbag->add('default',     'true');
                 break;
 
         }
         return true;
     }
 
-    function install() {
+    function install()
+    {
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function uninstall(&$propbag) {
+    function uninstall(&$propbag)
+    {
         serendipity_plugin_api::hook_event('backend_cache_purge', $this->title);
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-
-    function g2_imagesize($width, $height, $maxsize) {
+    function g2_imagesize($width, $height, $maxsize)
+    {
         $maxwidth = $maxsize;
         $maxheight= $maxsize;
         if ($width > $maxwidth || $height > $maxheight) {
@@ -239,7 +203,8 @@ class serendipity_event_galleryimage extends serendipity_event
         return $newsize;
     }
 
-    function g2image_scale($album, $photo, $extension, $method = 'thumb') {
+    function g2image_scale($album, $photo, $extension, $method = 'thumb')
+    {
         global $serendipity;
 
         $gallery_base = $this->get_config('gallery_base');
@@ -257,7 +222,6 @@ class serendipity_event_galleryimage extends serendipity_event
             $size = $this->get_config('popup_max');
         }
 
-
         $fdim    = @serendipity_getimagesize($infile, '', $extension);
         if (isset($fdim['noimage'])) {
             $r = array(0, 0);
@@ -273,9 +237,7 @@ class serendipity_event_galleryimage extends serendipity_event
                    $cmd     = escapeshellcmd($serendipity['convert']) . ' -antialias -scale '. serendipity_escapeshellarg($newSize) .' '. serendipity_escapeshellarg($infile) .' '. serendipity_escapeshellarg($outfile);
                 }
 
-
                 exec($cmd, $output, $result);
-
 
                 if ( $result != 0 ) {
                     echo '<div class="serendipityAdminMsgError"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png') . '" alt="" />'. sprintf(IMAGICK_EXEC_ERROR, $cmd, $output[0], $result) .'</div>';
@@ -288,7 +250,8 @@ class serendipity_event_galleryimage extends serendipity_event
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -298,16 +261,14 @@ class serendipity_event_galleryimage extends serendipity_event
                 case 'frontend_display':
 
                     foreach ($this->markup_elements as $temp) {
-                        if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                            !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                        if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && isset($eventData[$temp['element']]) &&
+                                !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
+                                !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = $temp['element'];
                             $eventData[$element] = $this->gimage_markup($eventData[$element]);
                         }
                     }
-                    return true;
                     break;
-
 
                 case 'external_plugin':
 
@@ -328,49 +289,48 @@ class serendipity_event_galleryimage extends serendipity_event
                     switch($req) {
                         case 'g2wrapper':
 
-
-                               if (isset($_REQUEST['album']) && !empty($_REQUEST['album'])) {
-                                   $album = trim(urldecode($_REQUEST['album']));
+                            if (isset($_REQUEST['album']) && !empty($_REQUEST['album'])) {
+                                $album = trim(urldecode($_REQUEST['album']));
                             } else {
                                 $album = '';
                             }
 
-                               if (isset($_REQUEST['image']) && !empty($_REQUEST['image'])) {
-                                   $image = trim(urldecode($_REQUEST['image']));
+                            if (isset($_REQUEST['image']) && !empty($_REQUEST['image'])) {
+                                $image = trim(urldecode($_REQUEST['image']));
                             } else {
                                 $image = '';
-                               }
+                            }
 
-                               if (isset($_REQUEST['ext']) && !empty($_REQUEST['ext'])) {
-                                   $ext = trim(urldecode($_REQUEST['ext']));
+                            if (isset($_REQUEST['ext']) && !empty($_REQUEST['ext'])) {
+                                $ext = trim(urldecode($_REQUEST['ext']));
                             } else {
                                 $ext = '';
-                               }
+                            }
 
-                               if (isset($_REQUEST['size']) && !empty($_REQUEST['size'])) {
-                                   $size = trim(urldecode($_REQUEST['size']));
+                            if (isset($_REQUEST['size']) && !empty($_REQUEST['size'])) {
+                                $size = trim(urldecode($_REQUEST['size']));
                             } else {
                                 $size = '';
                                }
-                               if ($size != 'thumb' && $size != 'sized') {
-                                   $size = '';
+                            if ($size != 'thumb' && $size != 'sized') {
+                                $size = '';
                             }
 
-                               $album = str_replace("..", "", $album);
-                               #$album = str_replace("/", "", $album);
-                               $album = str_replace("\\", "", $album);
+                            $album = str_replace("..", "", $album);
+                            #$album = str_replace("/", "", $album);
+                            $album = str_replace("\\", "", $album);
 
-                               $image = str_replace("..", "", $image);
-                               $image = str_replace("/", "", $image);
-                               $image = str_replace("\\", "", $image);
+                            $image = str_replace("..", "", $image);
+                            $image = str_replace("/", "", $image);
+                            $image = str_replace("\\", "", $image);
 
-                               $ext = str_replace(".", "", $ext);
-                               $ext = str_replace("/", "", $ext);
-                               $ext = str_replace("\\", "", $ext);
+                            $ext = str_replace(".", "", $ext);
+                            $ext = str_replace("/", "", $ext);
+                            $ext = str_replace("\\", "", $ext);
 
-                               $size = str_replace(".", "", $size);
-                               $size = str_replace("/", "", $size);
-                               $size = str_replace("\\", "", $size);
+                            $size = str_replace(".", "", $size);
+                            $size = str_replace("/", "", $size);
+                            $size = str_replace("\\", "", $size);
 
                             $gallery_base = $this->get_config('gallery_base');
                             $album_base = $this->get_config('album_base')."/albums";
@@ -387,62 +347,60 @@ class serendipity_event_galleryimage extends serendipity_event
                                 $content_type = "image/png";
                             }
 
-
                             if ($size == 'thumb') {
                                 $target = $album_abs."/tmp/".$image.".thumb.".$photo_ext;
                                 $this->g2image_scale($album, $image, $photo_ext, $size);
                             } elseif ($size == 'sized') {
                                 $target = $album_abs."/tmp/".$image.".sized.".$photo_ext;
                                 $this->g2image_scale($album, $image, $photo_ext, $size);
-                               } else {
+                            } else {
                                 $target = $album_abs."/albums/".$album."/".$image.".".$photo_ext;
-                               }
+                            }
 
-
-                               header("Content-Type: $content_type");
-                               $fp = fopen($target, "rb");
-                               $image = fread($fp, filesize($target));
-                               fclose($fp);
-                               echo $image;
+                            header("Content-Type: $content_type");
+                            $fp = fopen($target, "rb");
+                            $image = fread($fp, filesize($target));
+                            fclose($fp);
+                            echo $image;
 
                             break;
 
-
                     }
-                    return true;
                     break;
 
 
                 default:
                   return false;
             }
+            return true;
         } else {
             return false;
         }
     }
 
-    function gimage_markup ($text, $case_sensitive=false) {
-        $preg_flags = ($case_sensitive) ? 'e' : 'ei';
-        $output = preg_replace("'\[GImage\s*([^\]]*)]([^[]*)\[/GImage]'$preg_flags", "\$this->gimage_thumb('\\2', trim('\\1'))", $text);
+    function gimage_markup ($text, $case_sensitive=false)
+    {
+        $preg_flags = $case_sensitive ? '' : 'i';
+        $output = preg_replace_callback("'\[GImage\s*([^\]]*)]([^[]*)\[/GImage]'$preg_flags", function($matches){ return $this->gimage_thumb($matches[2], trim($matches[1])); }, $text);         
 
         return $output;
     }
 
-    function gimage_thumb($photo_path, $params) {
+    function gimage_thumb($photo_path, $params)
+    {
         global $serendipity;
 
         $path_parts = pathinfo($photo_path);
         //The pathinfo funtion returns 'filename' from PHP 5.2 upwards, but until that has wide support, the below returns it too...
-        if(strlen($path_parts["extension"]) > 0) {
-               $path_parts['filename'] = substr($path_parts["basename"],0,strlen($path_parts["basename"]) - (strlen($path_parts["extension"]) + 1) );
+        if (strlen($path_parts["extension"]) > 0) {
+            $path_parts['filename'] = substr($path_parts["basename"],0,strlen($path_parts["basename"]) - (strlen($path_parts["extension"]) + 1) );
         } else {
-               $path_parts['filename'] = $path_parts["basename"];
+            $path_parts['filename'] = $path_parts["basename"];
         }
-        
+
         $album = $path_parts['dirname'];
         $photo = $path_parts['filename'];
         $extension = $path_parts['extension'];
-
 
         $gallery_base = $this->get_config('gallery_base');
         $album_base = $this->get_config('album_base');
@@ -453,11 +411,10 @@ class serendipity_event_galleryimage extends serendipity_event
             $album_base = $this->get_config('album_base')."/albums";
         }
 
-
         // get popup max image size, default if not good.
         $popup_max = $this->get_config('popup_max');
         if ($popup_max < 100) {
-           $popup_max = 640;
+            $popup_max = 640;
         }
 
         $paramlist = explode(";", $params);
@@ -465,10 +422,9 @@ class serendipity_event_galleryimage extends serendipity_event
         //split up the parameters
         $param_array = array();
         foreach($paramlist as $parameter) {
-          $temp = explode("=",$parameter);
-          $param_array[trim(strtolower($temp[0]))] = trim($temp[1]);
+            $temp = explode("=",$parameter);
+            $param_array[trim(strtolower($temp[0]))] = trim($temp[1]);
         }
-
 
         if ($this->get_config('gversion') == 2) {
             $image = $album_abs.'/albums/'.$album.'/'.$photo.'.'.$photo_ext;
@@ -512,9 +468,7 @@ class serendipity_event_galleryimage extends serendipity_event
         }
 
         // link = image, page, album, none?
-           if ($this->get_config('gversion') == 2) {
-
-
+        if ($this->get_config('gversion') == 2) {
 
             switch(strtolower($param_array['link'])) {
                 case 'image':
@@ -547,7 +501,7 @@ class serendipity_event_galleryimage extends serendipity_event
                     }
 
                     $ret_aid = GalleryCoreApi::fetchItemIdByPath($album);
-                    $album_id         = (is_array($ret_aid)&&intval($ret_aid[1])>=1?intval($ret_aid[1]):0);
+                    $album_id = (is_array($ret_aid)&&intval($ret_aid[1])>=1?intval($ret_aid[1]):0);
 
                     $image_link = $gallery_base.'/main.php?g2_view=core.ShowItem&amp;g2_itemId='.$album_id;
                     break;
@@ -555,9 +509,9 @@ class serendipity_event_galleryimage extends serendipity_event
                 case 'page':
                 default:
                     include_once($this->get_config('gallery_abs')."/embed.php");
-                                        if (!class_exists('GalleryEmbed')) {
-                                            break;
-                                        }
+                    if (!class_exists('GalleryEmbed')) {
+                        break;
+                    }
 
                     $ret = GalleryEmbed::init(array('fullInit' => true, 'activeUserId' => ''));
                     if (is_object($ret) && $ret->isError()) {
@@ -566,7 +520,7 @@ class serendipity_event_galleryimage extends serendipity_event
                     }
 
                     $ret_iid = GalleryCoreApi::fetchItemIdByPath($album."/".$photo.".".$photo_ext);
-                    $fullsize_id     = (is_array($ret_iid)&&intval($ret_iid[1])>=1?intval($ret_iid[1]):0);
+                    $fullsize_id = (is_array($ret_iid)&&intval($ret_iid[1])>=1?intval($ret_iid[1]):0);
 
                     $image_link = $gallery_base.'/main.php?g2_view=core.ShowItem&amp;g2_itemId='.$fullsize_id;
                     break;
@@ -642,24 +596,23 @@ class serendipity_event_galleryimage extends serendipity_event
                         $link_target = '<a href="'.$image_link.'">';
                     }
                 } else {
-                       $link_target = '<a href="'.$image_link.'">';
+                    $link_target = '<a href="'.$image_link.'">';
                 }
                 break;
 
             case 'new':
-                   $link_target = '<a href="'.$image_link.'" target="_blank">';
+                $link_target = '<a href="'.$image_link.'" target="_blank">';
                 break;
 
             case 'none':
-                   $link_target = '';
+                $link_target = '';
                 break;
 
             case 'default':
             default:
-                   $link_target = '<a href="'.$image_link.'">';
+                $link_target = '<a href="'.$image_link.'">';
                 break;
         }
-
 
         // align = left, center, right? default center
         switch(strtolower($param_array['align'])) {
@@ -737,3 +690,5 @@ class serendipity_event_galleryimage extends serendipity_event
     }
 
 }
+
+?>
