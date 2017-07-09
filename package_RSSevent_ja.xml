@@ -458,8 +458,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_galleryimage</link>
 <category>Event Plugins</category>
 <author>Rob Antonishen, Alexander Mieland</author>
-<content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;マークアップ: Gallery 画像&lt;/b&gt;&lt;br /&gt;Gallery アルバムか画像を用いたマークアップテキストの挿入です。&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;マークアップ: Gallery 画像&lt;/b&gt;&lt;br /&gt;Gallery アルバムか画像を用いたマークアップテキストの挿入です。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 09 Jul 2017 10:47:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_galleryimage</guid>
 </item>
 <item>
