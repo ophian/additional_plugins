@@ -1805,12 +1805,13 @@
 <description>Verlinkt automatisch zitierte Gesetze und Rechtsprechung (Aktenzeichen und Fundstellen) mit den Inhalten von dejure.org.</description>
 <maintainers><maintainer><name>Garvin Hicking, Bjoern Urban, dejure.org, Thomas Hochstein, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.9</version>
+  <version>1.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-06-03</date>
+  <date>2017-07-09</date>
   <filelist>
 <dir name="serendipity_event_dejure">
 <file>ChangeLog</file>
+<file>documentation_de.html</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
@@ -1826,6 +1827,7 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_dejure/ChangeLog</file>
+    <file>serendipity_event_dejure/documentation_de.html</file>
     <file>serendipity_event_dejure/lang_cs.inc.php</file>
     <file>serendipity_event_dejure/lang_cz.inc.php</file>
     <file>serendipity_event_dejure/lang_de.inc.php</file>
