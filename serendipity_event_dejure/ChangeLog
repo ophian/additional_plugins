@@ -1,3 +1,7 @@
+1.10:
+-----
+ * Add local documentation (German language only).
+
 1.9:
 ----
  * Fix PHP warning for API declaration method should be

@@ -7,7 +7,7 @@ if (IN_serendipity !== true) {
 // Load possible language files.
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-define('DJO_VERSION', '1.9');
+define('DJO_VERSION', '1.10');
 define('CACHE_VORHALT', 4); # (Tage) Wann ein vernetzter Text aus dem Cache entfernt und neu vernetzt werden soll
 
 class serendipity_event_dejure extends serendipity_event
@@ -69,7 +69,7 @@ class serendipity_event_dejure extends serendipity_event
                 $propbag->add('type',           'boolean');
                 $propbag->add('name',           DEJURE_NEWSLETTER);
                 $propbag->add('description',    DEJURE_NEWSLETTER_DESC);
-                $propbag->add('default',        true);
+                $propbag->add('default',        'true');
                 break;
 
             case 'target':
@@ -102,21 +102,21 @@ class serendipity_event_dejure extends serendipity_event
                 $propbag->add('type',           'boolean');
                 $propbag->add('name',           DEJURE_NOHEADINGS);
                 $propbag->add('description',    DEJURE_NOHEADINGS_DESC);
-                $propbag->add('default',        false);
+                $propbag->add('default',        'false');
                 break;
 
             case 'buzer':
                 $propbag->add('type',           'boolean');
                 $propbag->add('name',           DEJURE_BUZER);
                 $propbag->add('description',    DEJURE_BUZER_DESC);
-                $propbag->add('default',        true);
+                $propbag->add('default',        'true');
                 break;
 
             case 'cache':
                 $propbag->add('type',           'boolean');
                 $propbag->add('name',           DEJURE_CACHE);
                 $propbag->add('description',    DEJURE_CACHE_DESC);
-                $propbag->add('default',        false);
+                $propbag->add('default',        'false');
                 break;
 
             default:
@@ -284,9 +284,9 @@ class serendipity_event_dejure extends serendipity_event
         global $serendipity;
 
         # Cache leeren wenn Option gesetzt
-        if ($this->get_config('cache') === true) {
+        if (serendipity_db_bool($this->get_config('cache', 'false')) === true) {
             $this->cleanup;
-            $this->set_config('cache', false);
+            $this->set_config('cache', 'false');
         }
 
         if (!preg_match("/§|&sect;|Art\.|\/[0-9][0-9](?![0-9\/])|[0-9][0-9], /", $text) || preg_match("/<!--ohnedjo-->/", $text)) {
@@ -300,11 +300,11 @@ class serendipity_event_dejure extends serendipity_event
                 array(
                     'Anbieterkennung' => urlencode($this->get_config('mail') . '|' . $serendipity['blogTitle']),
                     'format'          => $this->get_config('linkstyle'),
-                    'buzer'           => $this->get_config('buzer'),
-                    'ohnehtags'       => $this->get_config('noheadings'),
+                    'buzer'           => $this->get_config('buzer', 'true'),
+                    'ohnehtags'       => $this->get_config('noheadings', 'false'),
                     'target'          => $this->get_config('target'),
                     'class'           => $this->get_config('css'),
-                    'newsletter'      => serendipity_db_bool($this->get_config('newsletter')) ? 'ja' : 'nein',
+                    'newsletter'      => serendipity_db_bool($this->get_config('newsletter', 'true')) ? 'ja' : 'nein',
                     'Schema'          => 'https'
                 )
             );
