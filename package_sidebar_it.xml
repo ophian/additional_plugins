@@ -16,35 +16,35 @@
   <date>2017-04-25</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
-  <file>.htaccess</file>
-  <file>ChangeLog</file>
-  <file>communityrating_Amazon.tpl</file>
-  <file>communityrating_IMDB.tpl</file>
-  <file>communityrating_IMDB_garvin.tpl</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>helper_compare.php</file>
-  <file>helper_imdb.php</file>
-<dir name="img">
-  <file>star_Amazon_full.png</file>
-  <file>star_Amazon_half.png</file>
-  <file>star_Amazon_zero.png</file>
-  <file>star_IMDB_full.png</file>
-  <file>star_IMDB_half.png</file>
-  <file>star_IMDB_zero.png</file>
-  </dir>
-    <file>lang_cs.inc.php</file>
-    <file>lang_cz.inc.php</file>
-    <file>lang_en.inc.php</file>
-    <file>README</file>
-    <file>serendipity_event_communityrating.php</file>
-    <file>serendipity_plugin_communityrating.php</file>
-    <file>smarty.inc.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  </dir>
-        </dir>
+      <file>.htaccess</file>
+      <file>ChangeLog</file>
+      <file>communityrating_Amazon.tpl</file>
+      <file>communityrating_IMDB.tpl</file>
+      <file>communityrating_IMDB_garvin.tpl</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>helper_compare.php</file>
+      <file>helper_imdb.php</file>
+      <dir name="img">
+        <file>star_Amazon_full.png</file>
+        <file>star_Amazon_half.png</file>
+        <file>star_Amazon_zero.png</file>
+        <file>star_IMDB_full.png</file>
+        <file>star_IMDB_half.png</file>
+        <file>star_IMDB_zero.png</file>
+      </dir>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_en.inc.php</file>
+        <file>README</file>
+        <file>serendipity_event_communityrating.php</file>
+        <file>serendipity_plugin_communityrating.php</file>
+        <file>smarty.inc.php</file>
+      <dir name="UTF-8">
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -89,37 +89,37 @@
   <date>2017-02-02</date>
   <filelist>
     <dir name="serendipity_event_faq">
-  <file>.htaccess</file>
-<dir name="alternatives">
-  <file>plugin_faq_categories.tpl</file>
-  <file>plugin_faq_category_faq.tpl</file>
-  <file>plugin_faq_category_faqs.tpl</file>
-  </dir>
-    <file>ChangeLog</file>
-    <file>class_inspectConfig.php</file>
-    <file>documentation_cs.html</file>
-    <file>documentation_cz.html</file>
-<dir name="img">
-  <file>base.gif</file>
-  <file>category.png</file>
-  <file>empty.gif</file>
-  <file>folder.gif</file>
-  <file>folderopen.gif</file>
-  <file>join.gif</file>
-  <file>joinbottom.gif</file>
-  <file>line.gif</file>
-  <file>minus.gif</file>
-  <file>minusbottom.gif</file>
-  <file>move_down.png</file>
-  <file>move_up.png</file>
-  <file>nolines_minus.gif</file>
-  <file>nolines_plus.gif</file>
-  <file>page.gif</file>
-  <file>plus.gif</file>
-  <file>plusbottom.gif</file>
-  <file>question.svg</file>
-  <file>question.svg.png</file>
-  </dir>
+      <file>.htaccess</file>
+      <dir name="alternatives">
+        <file>plugin_faq_categories.tpl</file>
+        <file>plugin_faq_category_faq.tpl</file>
+        <file>plugin_faq_category_faqs.tpl</file>
+      </dir>
+        <file>ChangeLog</file>
+        <file>class_inspectConfig.php</file>
+        <file>documentation_cs.html</file>
+        <file>documentation_cz.html</file>
+      <dir name="img">
+          <file>base.gif</file>
+          <file>category.png</file>
+          <file>empty.gif</file>
+          <file>folder.gif</file>
+          <file>folderopen.gif</file>
+          <file>join.gif</file>
+          <file>joinbottom.gif</file>
+          <file>line.gif</file>
+          <file>minus.gif</file>
+          <file>minusbottom.gif</file>
+          <file>move_down.png</file>
+          <file>move_up.png</file>
+          <file>nolines_minus.gif</file>
+          <file>nolines_plus.gif</file>
+          <file>page.gif</file>
+          <file>plus.gif</file>
+          <file>plusbottom.gif</file>
+          <file>question.svg</file>
+          <file>question.svg.png</file>
+      </dir>
         <file>jquery.serendipity_old_plain_editor.js</file>
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
@@ -137,14 +137,14 @@
         <file>style_faq_backend.css</file>
         <file>style_faq_frontend.css</file>
         <file>TODO</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  </dir>
-                </dir>
+        <dir name="UTF-8">
+          <file>lang_bg.inc.php</file>
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_de.inc.php</file>
+          <file>lang_ja.inc.php</file>
+        </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -214,55 +214,55 @@
   <date>2017-02-02</date>
   <filelist>
     <dir name="serendipity_event_freetag">
-  <file>.htaccess</file>
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>documentation_en.html</file>
-<dir name="img">
-  <file>technorati.jpg</file>
-  </dir>
-    <file>jquery-1.11.3.min.js</file>
-    <file>jquery.autocomplete.js</file>
-    <file>jquery.autocomplete.min.css</file>
-    <file>jquery.autocomplete.min.js</file>
-    <file>jquery.awesomeCloud-0.2.js</file>
-    <file>jquery.tagcanvas.min.js</file>
-    <file>lang_bg.inc.php</file>
-    <file>lang_cs.inc.php</file>
-    <file>lang_cz.inc.php</file>
-    <file>lang_de.inc.php</file>
-    <file>lang_en.inc.php</file>
-    <file>lang_fr.inc.php</file>
-    <file>lang_hu.inc.php</file>
-    <file>lang_it.inc.php</file>
-    <file>lang_ja.inc.php</file>
-    <file>lang_ko.inc.php</file>
-    <file>lang_nl.inc.php</file>
-    <file>lang_pl.inc.php</file>
-    <file>lang_se.inc.php</file>
-    <file>plugin_freetag.tpl</file>
-    <file>README</file>
-    <file>README.txt</file>
-    <file>serendipity_event_freetag.php</file>
-    <file>serendipity_plugin_freetag.php</file>
-    <file>swfobject.js</file>
-    <file>tagcloud.swf</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_hu.inc.php</file>
-  <file>lang_it.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  <file>lang_nl.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  <file>lang_se.inc.php</file>
-  </dir>
-        </dir>
+      <file>.htaccess</file>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>documentation_en.html</file>
+      <dir name="img">
+        <file>technorati.jpg</file>
+      </dir>
+        <file>jquery-1.11.3.min.js</file>
+        <file>jquery.autocomplete.js</file>
+        <file>jquery.autocomplete.min.css</file>
+        <file>jquery.autocomplete.min.js</file>
+        <file>jquery.awesomeCloud-0.2.js</file>
+        <file>jquery.tagcanvas.min.js</file>
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_en.inc.php</file>
+        <file>lang_fr.inc.php</file>
+        <file>lang_hu.inc.php</file>
+        <file>lang_it.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_ko.inc.php</file>
+        <file>lang_nl.inc.php</file>
+        <file>lang_pl.inc.php</file>
+        <file>lang_se.inc.php</file>
+        <file>plugin_freetag.tpl</file>
+        <file>README</file>
+        <file>README.txt</file>
+        <file>serendipity_event_freetag.php</file>
+        <file>serendipity_plugin_freetag.php</file>
+        <file>swfobject.js</file>
+        <file>tagcloud.swf</file>
+      <dir name="UTF-8">
+          <file>lang_bg.inc.php</file>
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_de.inc.php</file>
+          <file>lang_fr.inc.php</file>
+          <file>lang_hu.inc.php</file>
+          <file>lang_it.inc.php</file>
+          <file>lang_ja.inc.php</file>
+          <file>lang_ko.inc.php</file>
+          <file>lang_nl.inc.php</file>
+          <file>lang_pl.inc.php</file>
+          <file>lang_se.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -327,27 +327,27 @@
   <date>2017-02-02</date>
   <filelist>
     <dir name="serendipity_event_geotag">
-  <file>.htaccess</file>
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>GeoTagDb.class.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_nl.inc.php</file>
-  <file>marker_r.png</file>
-  <file>marker_s.png</file>
-  <file>plugin_version.inc.php</file>
-  <file>serendipity_event_geotag.php</file>
-  <file>serendipity_plugin_geotag.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  </dir>
-    </dir>
+      <file>.htaccess</file>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>GeoTagDb.class.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_nl.inc.php</file>
+      <file>marker_r.png</file>
+      <file>marker_s.png</file>
+      <file>plugin_version.inc.php</file>
+      <file>serendipity_event_geotag.php</file>
+      <file>serendipity_plugin_geotag.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -386,57 +386,57 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
-  <file>.htaccess</file>
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>documentation_en.html</file>
-<dir name="img">
-  <file>blank.gif</file>
-  <file>button_background.png</file>
-  <file>delete.png</file>
-  <file>info.gif</file>
-  <file>notes-approve.gif</file>
-  <file>notes-change.gif</file>
-  <file>notes-checkmark.gif</file>
-  <file>notes-delete.gif</file>
-  <file>quote-end.gif</file>
-  <file>quote-start.gif</file>
-  <file>shorttime.gif</file>
-  </dir>
-    <file>lang_bg.inc.php</file>
-    <file>lang_cs.inc.php</file>
-    <file>lang_cz.inc.php</file>
-    <file>lang_de.inc.php</file>
-    <file>lang_en.inc.php</file>
-    <file>lang_ja.inc.php</file>
-    <file>lang_ko.inc.php</file>
-    <file>lang_nl.inc.php</file>
-    <file>lang_pl.inc.php</file>
-    <file>lang_se.inc.php</file>
-    <file>plugin_guestbook_backend_dbc.tpl</file>
-    <file>plugin_guestbook_backend_entries.tpl</file>
-    <file>plugin_guestbook_backend_form.tpl</file>
-    <file>plugin_guestbook_backend_header.tpl</file>
-    <file>plugin_guestbook_entries.tpl</file>
-    <file>plugin_guestbook_form.tpl</file>
-    <file>README</file>
-    <file>serendipity_event_guestbook.php</file>
-    <file>serendipity_plugin_guestbook.php</file>
-    <file>style_guestbook_backend.css</file>
-    <file>style_guestbook_frontend.css</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  <file>lang_nl.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  <file>lang_se.inc.php</file>
-  </dir>
-        </dir>
+      <file>.htaccess</file>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>documentation_en.html</file>
+      <dir name="img">
+        <file>blank.gif</file>
+        <file>button_background.png</file>
+        <file>delete.png</file>
+        <file>info.gif</file>
+        <file>notes-approve.gif</file>
+        <file>notes-change.gif</file>
+        <file>notes-checkmark.gif</file>
+        <file>notes-delete.gif</file>
+        <file>quote-end.gif</file>
+        <file>quote-start.gif</file>
+        <file>shorttime.gif</file>
+      </dir>
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_en.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_ko.inc.php</file>
+        <file>lang_nl.inc.php</file>
+        <file>lang_pl.inc.php</file>
+        <file>lang_se.inc.php</file>
+        <file>plugin_guestbook_backend_dbc.tpl</file>
+        <file>plugin_guestbook_backend_entries.tpl</file>
+        <file>plugin_guestbook_backend_form.tpl</file>
+        <file>plugin_guestbook_backend_header.tpl</file>
+        <file>plugin_guestbook_entries.tpl</file>
+        <file>plugin_guestbook_form.tpl</file>
+        <file>README</file>
+        <file>serendipity_event_guestbook.php</file>
+        <file>serendipity_plugin_guestbook.php</file>
+        <file>style_guestbook_backend.css</file>
+        <file>style_guestbook_frontend.css</file>
+      <dir name="UTF-8">
+          <file>lang_bg.inc.php</file>
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_de.inc.php</file>
+          <file>lang_ja.inc.php</file>
+          <file>lang_ko.inc.php</file>
+          <file>lang_nl.inc.php</file>
+          <file>lang_pl.inc.php</file>
+          <file>lang_se.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -503,46 +503,46 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_linklist">
-  <file>.htaccess</file>
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>dtree.js</file>
-<dir name="img">
-  <file>base.gif</file>
-  <file>empty.gif</file>
-  <file>folder.gif</file>
-  <file>folderopen.gif</file>
-  <file>join.gif</file>
-  <file>joinbottom.gif</file>
-  <file>line.gif</file>
-  <file>minus.gif</file>
-  <file>minusbottom.gif</file>
-  <file>nolines_minus.gif</file>
-  <file>nolines_plus.gif</file>
-  <file>page.gif</file>
-  <file>plus.gif</file>
-  <file>plusbottom.gif</file>
-  </dir>
-    <file>lang_bg.inc.php</file>
-    <file>lang_cs.inc.php</file>
-    <file>lang_cz.inc.php</file>
-    <file>lang_en.inc.php</file>
-    <file>lang_ja.inc.php</file>
-    <file>lang_pl.inc.php</file>
-    <file>linklist.js</file>
-    <file>serendipity_event_dtree.css</file>
-    <file>serendipity_event_linklist.css</file>
-    <file>serendipity_event_linklist.php</file>
-    <file>serendipity_plugin_linklist.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  </dir>
-        </dir>
+      <file>.htaccess</file>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>dtree.js</file>
+      <dir name="img">
+        <file>base.gif</file>
+        <file>empty.gif</file>
+        <file>folder.gif</file>
+        <file>folderopen.gif</file>
+        <file>join.gif</file>
+        <file>joinbottom.gif</file>
+        <file>line.gif</file>
+        <file>minus.gif</file>
+        <file>minusbottom.gif</file>
+        <file>nolines_minus.gif</file>
+        <file>nolines_plus.gif</file>
+        <file>page.gif</file>
+        <file>plus.gif</file>
+        <file>plusbottom.gif</file>
+      </dir>
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_en.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_pl.inc.php</file>
+        <file>linklist.js</file>
+        <file>serendipity_event_dtree.css</file>
+        <file>serendipity_event_linklist.css</file>
+        <file>serendipity_event_linklist.php</file>
+        <file>serendipity_plugin_linklist.php</file>
+      <dir name="UTF-8">
+          <file>lang_bg.inc.php</file>
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_ja.inc.php</file>
+          <file>lang_pl.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -598,39 +598,39 @@
   <date>2017-02-02</date>
   <filelist>
     <dir name="serendipity_event_microformats">
-  <file>.htaccess</file>
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>hCalendar.tpl</file>
-  <file>hReview.tpl</file>
-<dir name="img">
-  <file>blank.png</file>
-  <file>clock_12.png</file>
-  <file>hcal.png</file>
-  <file>house_12.png</file>
-  <file>hreview.png</file>
-  <file>icon-hcalendar.png</file>
-  <file>mformats.png</file>
-  </dir>
-    <file>lang_cs.inc.php</file>
-    <file>lang_cz.inc.php</file>
-    <file>lang_de.inc.php</file>
-    <file>lang_en.inc.php</file>
-    <file>microformatsBackend.inc.php</file>
-    <file>README</file>
-    <file>serendipity_event_microformats.php</file>
-    <file>serendipity_plugin_microformats.php</file>
-    <file>smarty.inc.php</file>
-    <file>tabber-minimized.js</file>
-    <file>tabber.css</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  </dir>
-        </dir>
+      <file>.htaccess</file>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>hCalendar.tpl</file>
+      <file>hReview.tpl</file>
+      <dir name="img">
+        <file>blank.png</file>
+        <file>clock_12.png</file>
+        <file>hcal.png</file>
+        <file>house_12.png</file>
+        <file>hreview.png</file>
+        <file>icon-hcalendar.png</file>
+        <file>mformats.png</file>
+      </dir>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_en.inc.php</file>
+        <file>microformatsBackend.inc.php</file>
+        <file>README</file>
+        <file>serendipity_event_microformats.php</file>
+        <file>serendipity_plugin_microformats.php</file>
+        <file>smarty.inc.php</file>
+        <file>tabber-minimized.js</file>
+        <file>tabber.css</file>
+      <dir name="UTF-8">
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_de.inc.php</file>
+          <file>lang_en.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -679,34 +679,34 @@
   <date>2016-08-27</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
-  <file>.htaccess</file>
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>documentation_de.html</file>
-  <file>documentation_en.html</file>
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  <file>lang_tr.inc.php</file>
-  <file>serendipity_event_multilingual.php</file>
-  <file>serendipity_plugin_multilingual.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  <file>lang_tr.inc.php</file>
-  </dir>
-    </dir>
+      <file>.htaccess</file>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>documentation_de.html</file>
+      <file>documentation_en.html</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>lang_tr.inc.php</file>
+      <file>serendipity_event_multilingual.php</file>
+      <file>serendipity_plugin_multilingual.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_fr.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_ko.inc.php</file>
+        <file>lang_tr.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -752,26 +752,26 @@
   <date>2016-10-11</date>
   <filelist>
     <dir name="serendipity_event_mycalendar">
-  <file>.htaccess</file>
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>serendipity_event_mycalendar.php</file>
-  <file>serendipity_plugin_mycalendar.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  </dir>
-    </dir>
+      <file>.htaccess</file>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>serendipity_event_mycalendar.php</file>
+      <file>serendipity_plugin_mycalendar.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ja.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -809,26 +809,26 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bee">
-  <file>ChangeLog</file>
-<dir name="json">
-  <file>JSON.php</file>
-  <file>json.php4.include.php</file>
-  </dir>
-    <file>lang_cs.inc.php</file>
-    <file>lang_cz.inc.php</file>
-    <file>lang_de.inc.php</file>
-    <file>lang_en.inc.php</file>
-    <file>serendipity_event_spamblock_bee.js</file>
-    <file>serendipity_event_spamblock_bee.php</file>
-    <file>serendipity_plugin_spamblock_bee.php</file>
-    <file>spamblockbee.png</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  </dir>
+      <file>ChangeLog</file>
+      <dir name="json">
+        <file>JSON.php</file>
+        <file>json.php4.include.php</file>
+      </dir>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_en.inc.php</file>
+        <file>serendipity_event_spamblock_bee.js</file>
+        <file>serendipity_event_spamblock_bee.php</file>
+        <file>serendipity_plugin_spamblock_bee.php</file>
+        <file>spamblockbee.png</file>
+      <dir name="UTF-8">
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_de.inc.php</file>
+      </dir>
         <file>version.inc.php</file>
-        </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -864,38 +864,38 @@
   <date>2017-07-07</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
-  <file>.htaccess</file>
-  <file>backend_staticpage.tpl</file>
-<dir name="backend_templates">
-  <file>custom_template.tpl</file>
-  <file>default_staticpage_backend.tpl</file>
-  <file>responsive_template.tpl</file>
-  <file>typeform_staticpage_backend.tpl</file>
-  </dir>
-    <file>ChangeLog</file>
-    <file>class_inspectConfig.php</file>
-    <file>documentation_cs.html</file>
-    <file>documentation_cz.html</file>
-    <file>documentation_en.html</file>
-    <file>dtree.css</file>
-    <file>dtree.js</file>
-<dir name="img">
-  <file>base.gif</file>
-  <file>empty.gif</file>
-  <file>folder.gif</file>
-  <file>folderopen.gif</file>
-  <file>join.gif</file>
-  <file>joinbottom.gif</file>
-  <file>line.gif</file>
-  <file>minus.gif</file>
-  <file>minusbottom.gif</file>
-  <file>nolines_minus.gif</file>
-  <file>nolines_plus.gif</file>
-  <file>page.gif</file>
-  <file>page.png</file>
-  <file>plus.gif</file>
-  <file>plusbottom.gif</file>
-  </dir>
+      <file>.htaccess</file>
+      <file>backend_staticpage.tpl</file>
+      <dir name="backend_templates">
+        <file>custom_template.tpl</file>
+        <file>default_staticpage_backend.tpl</file>
+        <file>responsive_template.tpl</file>
+        <file>typeform_staticpage_backend.tpl</file>
+      </dir>
+        <file>ChangeLog</file>
+        <file>class_inspectConfig.php</file>
+        <file>documentation_cs.html</file>
+        <file>documentation_cz.html</file>
+        <file>documentation_en.html</file>
+        <file>dtree.css</file>
+        <file>dtree.js</file>
+      <dir name="img">
+          <file>base.gif</file>
+          <file>empty.gif</file>
+          <file>folder.gif</file>
+          <file>folderopen.gif</file>
+          <file>join.gif</file>
+          <file>joinbottom.gif</file>
+          <file>line.gif</file>
+          <file>minus.gif</file>
+          <file>minusbottom.gif</file>
+          <file>nolines_minus.gif</file>
+          <file>nolines_plus.gif</file>
+          <file>page.gif</file>
+          <file>page.png</file>
+          <file>plus.gif</file>
+          <file>plusbottom.gif</file>
+      </dir>
         <file>jquery.simplePagination.js</file>
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
@@ -925,19 +925,19 @@
         <file>staticpage_backend.css</file>
         <file>staticpage_backend.js</file>
         <file>svg_iconizr.tpl</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_it.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  <file>lang_se.inc.php</file>
-  <file>lang_tr.inc.php</file>
-  </dir>
-                </dir>
+        <dir name="UTF-8">
+          <file>lang_bg.inc.php</file>
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_de.inc.php</file>
+          <file>lang_it.inc.php</file>
+          <file>lang_ja.inc.php</file>
+          <file>lang_ko.inc.php</file>
+          <file>lang_pl.inc.php</file>
+          <file>lang_se.inc.php</file>
+          <file>lang_tr.inc.php</file>
+        </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -1025,51 +1025,51 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_statistics">
-  <file>.htaccess</file>
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>green.png</file>
-  <file>lang_bg.inc.php</file>
-  <file>lang_cn.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_es.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_hu.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  <file>lang_nl.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  <file>lang_pt_PT.inc.php</file>
-  <file>lang_sk.inc.php</file>
-  <file>lang_tn.inc.php</file>
-  <file>lang_zh.inc.php</file>
-  <file>red.png</file>
-  <file>serendipity_event_statistics.php</file>
-  <file>serendipity_plugin_statistics.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cn.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_es.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_hu.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  <file>lang_nl.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  <file>lang_pt_PT.inc.php</file>
-  <file>lang_sk.inc.php</file>
-  <file>lang_tn.inc.php</file>
-  <file>lang_zh.inc.php</file>
-  </dir>
-    <file>yellow.png</file>
-    </dir>
+      <file>.htaccess</file>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>green.png</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cn.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_es.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_hu.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>lang_nl.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>lang_pt_PT.inc.php</file>
+      <file>lang_sk.inc.php</file>
+      <file>lang_tn.inc.php</file>
+      <file>lang_zh.inc.php</file>
+      <file>red.png</file>
+      <file>serendipity_event_statistics.php</file>
+      <file>serendipity_plugin_statistics.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cn.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_es.inc.php</file>
+        <file>lang_fr.inc.php</file>
+        <file>lang_hu.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_ko.inc.php</file>
+        <file>lang_nl.inc.php</file>
+        <file>lang_pl.inc.php</file>
+        <file>lang_pt_PT.inc.php</file>
+        <file>lang_sk.inc.php</file>
+        <file>lang_tn.inc.php</file>
+        <file>lang_zh.inc.php</file>
+      </dir>
+        <file>yellow.png</file>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -1132,27 +1132,27 @@
   <date>2016-09-19</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
-  <file>ChangeLog</file>
-  <file>Contact_Vcard_Build.php</file>
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>plugin_groupmembers.tpl</file>
-  <file>plugin_userprofile.tpl</file>
-  <file>serendipity_event_userprofiles.php</file>
-  <file>serendipity_plugin_userprofiles.php</file>
-  <file>serendipity_plugin_userprofiles_birthdays.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  </dir>
-    </dir>
+      <file>ChangeLog</file>
+      <file>Contact_Vcard_Build.php</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>plugin_groupmembers.tpl</file>
+      <file>plugin_userprofile.tpl</file>
+      <file>serendipity_event_userprofiles.php</file>
+      <file>serendipity_plugin_userprofiles.php</file>
+      <file>serendipity_plugin_userprofiles_birthdays.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ja.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -1191,27 +1191,27 @@
   <date>2016-09-19</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
-  <file>ChangeLog</file>
-  <file>Contact_Vcard_Build.php</file>
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>plugin_groupmembers.tpl</file>
-  <file>plugin_userprofile.tpl</file>
-  <file>serendipity_event_userprofiles.php</file>
-  <file>serendipity_plugin_userprofiles.php</file>
-  <file>serendipity_plugin_userprofiles_birthdays.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  </dir>
-    </dir>
+      <file>ChangeLog</file>
+      <file>Contact_Vcard_Build.php</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>plugin_groupmembers.tpl</file>
+      <file>plugin_userprofile.tpl</file>
+      <file>serendipity_event_userprofiles.php</file>
+      <file>serendipity_plugin_userprofiles.php</file>
+      <file>serendipity_plugin_userprofiles_birthdays.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ja.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -1254,193 +1254,193 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_xsstrust">
-  <file>ChangeLog</file>
-<dir name="htmlpurifier-4.6.0-standalone">
-  <file>HTMLPurifier.standalone.php</file>
-<dir name="standalone">
-<dir name="HTMLPurifier">
-<dir name="ConfigSchema">
-<dir name="Builder">
-  <file>ConfigSchema.php</file>
-  <file>Xml.php</file>
-  </dir>
-    <file>Exception.php</file>
-<dir name="Interchange">
-  <file>Directive.php</file>
-  <file>Id.php</file>
-  </dir>
-        <file>Interchange.php</file>
-        <file>InterchangeBuilder.php</file>
-<dir name="schema">
-  <file>Attr.AllowedClasses.txt</file>
-  <file>Attr.AllowedFrameTargets.txt</file>
-  <file>Attr.AllowedRel.txt</file>
-  <file>Attr.AllowedRev.txt</file>
-  <file>Attr.ClassUseCDATA.txt</file>
-  <file>Attr.DefaultImageAlt.txt</file>
-  <file>Attr.DefaultInvalidImage.txt</file>
-  <file>Attr.DefaultInvalidImageAlt.txt</file>
-  <file>Attr.DefaultTextDir.txt</file>
-  <file>Attr.EnableID.txt</file>
-  <file>Attr.ForbiddenClasses.txt</file>
-  <file>Attr.IDBlacklist.txt</file>
-  <file>Attr.IDBlacklistRegexp.txt</file>
-  <file>Attr.IDPrefix.txt</file>
-  <file>Attr.IDPrefixLocal.txt</file>
-  <file>AutoFormat.AutoParagraph.txt</file>
-  <file>AutoFormat.Custom.txt</file>
-  <file>AutoFormat.DisplayLinkURI.txt</file>
-  <file>AutoFormat.Linkify.txt</file>
-  <file>AutoFormat.PurifierLinkify.DocURL.txt</file>
-  <file>AutoFormat.PurifierLinkify.txt</file>
-  <file>AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt</file>
-  <file>AutoFormat.RemoveEmpty.RemoveNbsp.txt</file>
-  <file>AutoFormat.RemoveEmpty.txt</file>
-  <file>AutoFormat.RemoveSpansWithoutAttributes.txt</file>
-  <file>Cache.DefinitionImpl.txt</file>
-  <file>Cache.SerializerPath.txt</file>
-  <file>Cache.SerializerPermissions.txt</file>
-  <file>Core.AggressivelyFixLt.txt</file>
-  <file>Core.AllowHostnameUnderscore.txt</file>
-  <file>Core.CollectErrors.txt</file>
-  <file>Core.ColorKeywords.txt</file>
-  <file>Core.ConvertDocumentToFragment.txt</file>
-  <file>Core.DirectLexLineNumberSyncInterval.txt</file>
-  <file>Core.DisableExcludes.txt</file>
-  <file>Core.EnableIDNA.txt</file>
-  <file>Core.Encoding.txt</file>
-  <file>Core.EscapeInvalidChildren.txt</file>
-  <file>Core.EscapeInvalidTags.txt</file>
-  <file>Core.EscapeNonASCIICharacters.txt</file>
-  <file>Core.HiddenElements.txt</file>
-  <file>Core.Language.txt</file>
-  <file>Core.LexerImpl.txt</file>
-  <file>Core.MaintainLineNumbers.txt</file>
-  <file>Core.NormalizeNewlines.txt</file>
-  <file>Core.RemoveInvalidImg.txt</file>
-  <file>Core.RemoveProcessingInstructions.txt</file>
-  <file>Core.RemoveScriptContents.txt</file>
-  <file>CSS.AllowedFonts.txt</file>
-  <file>CSS.AllowedProperties.txt</file>
-  <file>CSS.AllowImportant.txt</file>
-  <file>CSS.AllowTricky.txt</file>
-  <file>CSS.DefinitionRev.txt</file>
-  <file>CSS.ForbiddenProperties.txt</file>
-  <file>CSS.MaxImgLength.txt</file>
-  <file>CSS.Proprietary.txt</file>
-  <file>CSS.Trusted.txt</file>
-  <file>Filter.Custom.txt</file>
-  <file>Filter.ExtractStyleBlocks.Escaping.txt</file>
-  <file>Filter.ExtractStyleBlocks.Scope.txt</file>
-  <file>Filter.ExtractStyleBlocks.TidyImpl.txt</file>
-  <file>Filter.ExtractStyleBlocks.txt</file>
-  <file>Filter.YouTube.txt</file>
-  <file>HTML.Allowed.txt</file>
-  <file>HTML.AllowedAttributes.txt</file>
-  <file>HTML.AllowedComments.txt</file>
-  <file>HTML.AllowedCommentsRegexp.txt</file>
-  <file>HTML.AllowedElements.txt</file>
-  <file>HTML.AllowedModules.txt</file>
-  <file>HTML.Attr.Name.UseCDATA.txt</file>
-  <file>HTML.BlockWrapper.txt</file>
-  <file>HTML.CoreModules.txt</file>
-  <file>HTML.CustomDoctype.txt</file>
-  <file>HTML.DefinitionID.txt</file>
-  <file>HTML.DefinitionRev.txt</file>
-  <file>HTML.Doctype.txt</file>
-  <file>HTML.FlashAllowFullScreen.txt</file>
-  <file>HTML.ForbiddenAttributes.txt</file>
-  <file>HTML.ForbiddenElements.txt</file>
-  <file>HTML.MaxImgLength.txt</file>
-  <file>HTML.Nofollow.txt</file>
-  <file>HTML.Parent.txt</file>
-  <file>HTML.Proprietary.txt</file>
-  <file>HTML.SafeEmbed.txt</file>
-  <file>HTML.SafeIframe.txt</file>
-  <file>HTML.SafeObject.txt</file>
-  <file>HTML.SafeScripting.txt</file>
-  <file>HTML.Strict.txt</file>
-  <file>HTML.TargetBlank.txt</file>
-  <file>HTML.TidyAdd.txt</file>
-  <file>HTML.TidyLevel.txt</file>
-  <file>HTML.TidyRemove.txt</file>
-  <file>HTML.Trusted.txt</file>
-  <file>HTML.XHTML.txt</file>
-  <file>info.ini</file>
-  <file>Output.CommentScriptContents.txt</file>
-  <file>Output.FixInnerHTML.txt</file>
-  <file>Output.FlashCompat.txt</file>
-  <file>Output.Newline.txt</file>
-  <file>Output.SortAttr.txt</file>
-  <file>Output.TidyFormat.txt</file>
-  <file>Test.ForceNoIconv.txt</file>
-  <file>URI.AllowedSchemes.txt</file>
-  <file>URI.Base.txt</file>
-  <file>URI.DefaultScheme.txt</file>
-  <file>URI.DefinitionID.txt</file>
-  <file>URI.DefinitionRev.txt</file>
-  <file>URI.Disable.txt</file>
-  <file>URI.DisableExternal.txt</file>
-  <file>URI.DisableExternalResources.txt</file>
-  <file>URI.DisableResources.txt</file>
-  <file>URI.Host.txt</file>
-  <file>URI.HostBlacklist.txt</file>
-  <file>URI.MakeAbsolute.txt</file>
-  <file>URI.Munge.txt</file>
-  <file>URI.MungeResources.txt</file>
-  <file>URI.MungeSecretKey.txt</file>
-  <file>URI.OverrideAllowedSchemes.txt</file>
-  <file>URI.SafeIframeRegexp.txt</file>
-  </dir>
-                <file>schema.ser</file>
-                <file>Validator.php</file>
-                <file>ValidatorAtom.php</file>
+      <file>ChangeLog</file>
+      <dir name="htmlpurifier-4.6.0-standalone">
+        <file>HTMLPurifier.standalone.php</file>
+      <dir name="standalone">
+        <dir name="HTMLPurifier">
+          <dir name="ConfigSchema">
+            <dir name="Builder">
+          <file>ConfigSchema.php</file>
+          <file>Xml.php</file>
+            </dir>
+          <file>Exception.php</file>
+              <dir name="Interchange">
+            <file>Directive.php</file>
+            <file>Id.php</file>
+              </dir>
+          <file>Interchange.php</file>
+          <file>InterchangeBuilder.php</file>
+                <dir name="schema">
+            <file>Attr.AllowedClasses.txt</file>
+            <file>Attr.AllowedFrameTargets.txt</file>
+            <file>Attr.AllowedRel.txt</file>
+            <file>Attr.AllowedRev.txt</file>
+            <file>Attr.ClassUseCDATA.txt</file>
+            <file>Attr.DefaultImageAlt.txt</file>
+            <file>Attr.DefaultInvalidImage.txt</file>
+            <file>Attr.DefaultInvalidImageAlt.txt</file>
+            <file>Attr.DefaultTextDir.txt</file>
+            <file>Attr.EnableID.txt</file>
+            <file>Attr.ForbiddenClasses.txt</file>
+            <file>Attr.IDBlacklist.txt</file>
+            <file>Attr.IDBlacklistRegexp.txt</file>
+            <file>Attr.IDPrefix.txt</file>
+            <file>Attr.IDPrefixLocal.txt</file>
+            <file>AutoFormat.AutoParagraph.txt</file>
+            <file>AutoFormat.Custom.txt</file>
+            <file>AutoFormat.DisplayLinkURI.txt</file>
+            <file>AutoFormat.Linkify.txt</file>
+            <file>AutoFormat.PurifierLinkify.DocURL.txt</file>
+            <file>AutoFormat.PurifierLinkify.txt</file>
+            <file>AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt</file>
+            <file>AutoFormat.RemoveEmpty.RemoveNbsp.txt</file>
+            <file>AutoFormat.RemoveEmpty.txt</file>
+            <file>AutoFormat.RemoveSpansWithoutAttributes.txt</file>
+            <file>Cache.DefinitionImpl.txt</file>
+            <file>Cache.SerializerPath.txt</file>
+            <file>Cache.SerializerPermissions.txt</file>
+            <file>Core.AggressivelyFixLt.txt</file>
+            <file>Core.AllowHostnameUnderscore.txt</file>
+            <file>Core.CollectErrors.txt</file>
+            <file>Core.ColorKeywords.txt</file>
+            <file>Core.ConvertDocumentToFragment.txt</file>
+            <file>Core.DirectLexLineNumberSyncInterval.txt</file>
+            <file>Core.DisableExcludes.txt</file>
+            <file>Core.EnableIDNA.txt</file>
+            <file>Core.Encoding.txt</file>
+            <file>Core.EscapeInvalidChildren.txt</file>
+            <file>Core.EscapeInvalidTags.txt</file>
+            <file>Core.EscapeNonASCIICharacters.txt</file>
+            <file>Core.HiddenElements.txt</file>
+            <file>Core.Language.txt</file>
+            <file>Core.LexerImpl.txt</file>
+            <file>Core.MaintainLineNumbers.txt</file>
+            <file>Core.NormalizeNewlines.txt</file>
+            <file>Core.RemoveInvalidImg.txt</file>
+            <file>Core.RemoveProcessingInstructions.txt</file>
+            <file>Core.RemoveScriptContents.txt</file>
+            <file>CSS.AllowedFonts.txt</file>
+            <file>CSS.AllowedProperties.txt</file>
+            <file>CSS.AllowImportant.txt</file>
+            <file>CSS.AllowTricky.txt</file>
+            <file>CSS.DefinitionRev.txt</file>
+            <file>CSS.ForbiddenProperties.txt</file>
+            <file>CSS.MaxImgLength.txt</file>
+            <file>CSS.Proprietary.txt</file>
+            <file>CSS.Trusted.txt</file>
+            <file>Filter.Custom.txt</file>
+            <file>Filter.ExtractStyleBlocks.Escaping.txt</file>
+            <file>Filter.ExtractStyleBlocks.Scope.txt</file>
+            <file>Filter.ExtractStyleBlocks.TidyImpl.txt</file>
+            <file>Filter.ExtractStyleBlocks.txt</file>
+            <file>Filter.YouTube.txt</file>
+            <file>HTML.Allowed.txt</file>
+            <file>HTML.AllowedAttributes.txt</file>
+            <file>HTML.AllowedComments.txt</file>
+            <file>HTML.AllowedCommentsRegexp.txt</file>
+            <file>HTML.AllowedElements.txt</file>
+            <file>HTML.AllowedModules.txt</file>
+            <file>HTML.Attr.Name.UseCDATA.txt</file>
+            <file>HTML.BlockWrapper.txt</file>
+            <file>HTML.CoreModules.txt</file>
+            <file>HTML.CustomDoctype.txt</file>
+            <file>HTML.DefinitionID.txt</file>
+            <file>HTML.DefinitionRev.txt</file>
+            <file>HTML.Doctype.txt</file>
+            <file>HTML.FlashAllowFullScreen.txt</file>
+            <file>HTML.ForbiddenAttributes.txt</file>
+            <file>HTML.ForbiddenElements.txt</file>
+            <file>HTML.MaxImgLength.txt</file>
+            <file>HTML.Nofollow.txt</file>
+            <file>HTML.Parent.txt</file>
+            <file>HTML.Proprietary.txt</file>
+            <file>HTML.SafeEmbed.txt</file>
+            <file>HTML.SafeIframe.txt</file>
+            <file>HTML.SafeObject.txt</file>
+            <file>HTML.SafeScripting.txt</file>
+            <file>HTML.Strict.txt</file>
+            <file>HTML.TargetBlank.txt</file>
+            <file>HTML.TidyAdd.txt</file>
+            <file>HTML.TidyLevel.txt</file>
+            <file>HTML.TidyRemove.txt</file>
+            <file>HTML.Trusted.txt</file>
+            <file>HTML.XHTML.txt</file>
+            <file>info.ini</file>
+            <file>Output.CommentScriptContents.txt</file>
+            <file>Output.FixInnerHTML.txt</file>
+            <file>Output.FlashCompat.txt</file>
+            <file>Output.Newline.txt</file>
+            <file>Output.SortAttr.txt</file>
+            <file>Output.TidyFormat.txt</file>
+            <file>Test.ForceNoIconv.txt</file>
+            <file>URI.AllowedSchemes.txt</file>
+            <file>URI.Base.txt</file>
+            <file>URI.DefaultScheme.txt</file>
+            <file>URI.DefinitionID.txt</file>
+            <file>URI.DefinitionRev.txt</file>
+            <file>URI.Disable.txt</file>
+            <file>URI.DisableExternal.txt</file>
+            <file>URI.DisableExternalResources.txt</file>
+            <file>URI.DisableResources.txt</file>
+            <file>URI.Host.txt</file>
+            <file>URI.HostBlacklist.txt</file>
+            <file>URI.MakeAbsolute.txt</file>
+            <file>URI.Munge.txt</file>
+            <file>URI.MungeResources.txt</file>
+            <file>URI.MungeSecretKey.txt</file>
+            <file>URI.OverrideAllowedSchemes.txt</file>
+            <file>URI.SafeIframeRegexp.txt</file>
                 </dir>
-<dir name="EntityLookup">
-  <file>entities.ser</file>
-  </dir>
-<dir name="Filter">
-  <file>ExtractStyleBlocks.php</file>
-  <file>YouTube.php</file>
-  </dir>
-<dir name="Language">
-<dir name="classes">
-  <file>en-x-test.php</file>
-  </dir>
-<dir name="messages">
-  <file>en-x-test.php</file>
-  <file>en-x-testmini.php</file>
-  <file>en.php</file>
-  </dir>
+          <file>schema.ser</file>
+          <file>Validator.php</file>
+          <file>ValidatorAtom.php</file>
+          </dir>
+            <dir name="EntityLookup">
+          <file>entities.ser</file>
+            </dir>
+              <dir name="Filter">
+          <file>ExtractStyleBlocks.php</file>
+          <file>YouTube.php</file>
+              </dir>
+                <dir name="Language">
+                  <dir name="classes">
+          <file>en-x-test.php</file>
+                  </dir>
+                    <dir name="messages">
+          <file>en-x-test.php</file>
+          <file>en-x-testmini.php</file>
+          <file>en.php</file>
+                    </dir>
+                </dir>
+                  <dir name="Lexer">
+          <file>PH5P.php</file>
+                  </dir>
+                    <dir name="Printer">
+          <file>ConfigForm.css</file>
+          <file>ConfigForm.js</file>
+          <file>ConfigForm.php</file>
+          <file>CSSDefinition.php</file>
+          <file>HTMLDefinition.php</file>
+                    </dir>
+          <file>Printer.php</file>
         </dir>
-<dir name="Lexer">
-  <file>PH5P.php</file>
-  </dir>
-<dir name="Printer">
-  <file>ConfigForm.css</file>
-  <file>ConfigForm.js</file>
-  <file>ConfigForm.php</file>
-  <file>CSSDefinition.php</file>
-  <file>HTMLDefinition.php</file>
-  </dir>
-                                                                                                                                <file>Printer.php</file>
-                                                                                                                                </dir>
-    </dir>
-    </dir>
-    <file>lang_cs.inc.php</file>
-    <file>lang_cz.inc.php</file>
-    <file>lang_de.inc.php</file>
-    <file>lang_en.inc.php</file>
-    <file>lang_it.inc.php</file>
-    <file>serendipity_event_xsstrust.php</file>
-    <file>serendipity_plugin_xsstrust.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_it.inc.php</file>
-  </dir>
-        </dir>
+      </dir>
+      </dir>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_en.inc.php</file>
+        <file>lang_it.inc.php</file>
+        <file>serendipity_event_xsstrust.php</file>
+        <file>serendipity_plugin_xsstrust.php</file>
+      <dir name="UTF-8">
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_de.inc.php</file>
+          <file>lang_it.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -1617,28 +1617,28 @@
   <date>2017-03-24</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
-  <file>ChangeLog</file>
-  <file>common.inc.php</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>loginbox.tpl</file>
-  <file>registerbox.tpl</file>
-  <file>serendipity_event_adduser.php</file>
-  <file>serendipity_plugin_adduser.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  </dir>
-    </dir>
+      <file>ChangeLog</file>
+      <file>common.inc.php</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>loginbox.tpl</file>
+      <file>registerbox.tpl</file>
+      <file>serendipity_event_adduser.php</file>
+      <file>serendipity_plugin_adduser.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_fr.inc.php</file>
+        <file>lang_ja.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -1678,23 +1678,23 @@
   <date>2017-03-22</date>
   <filelist>
     <dir name="serendipity_plugin_amazon">
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>documentation_en.html</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>serendipity_plugin_amazon.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  </dir>
-    </dir>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>documentation_en.html</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>serendipity_plugin_amazon.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ja.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -1728,19 +1728,19 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_category_dhtml_menu">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>serendipity_plugin_category_dhtml_menu.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  </dir>
-    </dir>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>serendipity_plugin_category_dhtml_menu.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_ja.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -1770,18 +1770,18 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_coppermine">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>none.jpg</file>
-  <file>README</file>
-  <file>serendipity_plugin_coppermine.php</file>
-  <file>styles.css</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  </dir>
-    </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>none.jpg</file>
+      <file>README</file>
+      <file>serendipity_plugin_coppermine.php</file>
+      <file>styles.css</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -1811,25 +1811,25 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_currently">
-  <file>ChangeLog</file>
-  <file>curl.inc</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>serendipity_plugin_currently.php</file>
-  <file>soap.inc</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  </dir>
-    <file>xml.inc</file>
-    </dir>
+      <file>ChangeLog</file>
+      <file>curl.inc</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>serendipity_plugin_currently.php</file>
+      <file>soap.inc</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ja.inc.php</file>
+      </dir>
+        <file>xml.inc</file>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -1865,19 +1865,19 @@
   <date>2017-01-06</date>
   <filelist>
     <dir name="serendipity_plugin_externalphp">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>serendipity_plugin_externalphp.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  </dir>
-    </dir>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_plugin_externalphp.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -1907,15 +1907,15 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_feedburnersidebar">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>serendipity_plugin_feedburnersidebar.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  </dir>
-    </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_plugin_feedburnersidebar.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -1942,51 +1942,51 @@
   <date>2017-03-22</date>
   <filelist>
     <dir name="serendipity_plugin_flickr">
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-<dir name="phpFlickr">
-  <file>auth.php</file>
-  <file>ChangeLog.txt</file>
-  <file>example.php</file>
-  <file>getToken.php</file>
-  <file>LICENSE</file>
-<dir name="PEAR">
-<dir name="DB">
-  <file>common.php</file>
-  <file>mysql.php</file>
-  <file>pgsql.php</file>
-  <file>storage.php</file>
-  </dir>
-    <file>DB.php</file>
-<dir name="HTTP">
-<dir name="Request">
-  <file>Listener.php</file>
-  </dir>
-    <file>Request.php</file>
-    </dir>
-<dir name="Net">
-  <file>Socket.php</file>
-  <file>URL.php</file>
-  </dir>
-                <file>PEAR.php</file>
-                </dir>
-    <file>phpFlickr.php</file>
-    <file>README.md</file>
-    </dir>
-    <file>README.txt</file>
-    <file>serendipity_event_flickrcss.php</file>
-    <file>serendipity_plugin_flickr.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  </dir>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <dir name="phpFlickr">
+        <file>auth.php</file>
+        <file>ChangeLog.txt</file>
+        <file>example.php</file>
+        <file>getToken.php</file>
+        <file>LICENSE</file>
+      <dir name="PEAR">
+        <dir name="DB">
+          <file>common.php</file>
+          <file>mysql.php</file>
+          <file>pgsql.php</file>
+          <file>storage.php</file>
         </dir>
+          <file>DB.php</file>
+          <dir name="HTTP">
+            <dir name="Request">
+            <file>Listener.php</file>
+            </dir>
+            <file>Request.php</file>
+          </dir>
+            <dir name="Net">
+            <file>Socket.php</file>
+            <file>URL.php</file>
+            </dir>
+          <file>PEAR.php</file>
+      </dir>
+        <file>phpFlickr.php</file>
+        <file>README.md</file>
+      </dir>
+        <file>README.txt</file>
+        <file>serendipity_event_flickrcss.php</file>
+        <file>serendipity_plugin_flickr.php</file>
+      <dir name="UTF-8">
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_de.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2036,24 +2036,24 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_flickrbadge">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_en.inc.php</file>
-<dir name="lib">
-<dir name="flickr">
-  <file>abstract.php</file>
-  <file>filecache.php</file>
-  </dir>
-    <file>flickr.php</file>
-    </dir>
-    <file>plugin.inc.php</file>
-    <file>serendipity_plugin_flickrbadge.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  </dir>
-        </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <dir name="lib">
+      <dir name="flickr">
+        <file>abstract.php</file>
+        <file>filecache.php</file>
+      </dir>
+        <file>flickr.php</file>
+      </dir>
+        <file>plugin.inc.php</file>
+        <file>serendipity_plugin_flickrbadge.php</file>
+      <dir name="UTF-8">
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_de.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2085,26 +2085,26 @@
   <date>2017-01-06</date>
   <filelist>
     <dir name="serendipity_plugin_ggopis">
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-<dir name="img">
-  <file>gg11.png</file>
-  <file>gg12.png</file>
-  <file>gg13.png</file>
-  </dir>
-    <file>lang_cs.inc.php</file>
-    <file>lang_cz.inc.php</file>
-    <file>lang_en.inc.php</file>
-    <file>lang_pl.inc.php</file>
-    <file>README</file>
-    <file>serendipity_plugin_ggopis.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  </dir>
-        </dir>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <dir name="img">
+        <file>gg11.png</file>
+        <file>gg12.png</file>
+        <file>gg13.png</file>
+      </dir>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_en.inc.php</file>
+        <file>lang_pl.inc.php</file>
+        <file>README</file>
+        <file>serendipity_plugin_ggopis.php</file>
+      <dir name="UTF-8">
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_pl.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2140,22 +2140,22 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_google_adsense">
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>serendipity_plugin_google_adsense.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  </dir>
-    </dir>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_plugin_google_adsense.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2189,34 +2189,34 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_google_last_query">
-  <file>ChangeLog</file>
-  <file>engines_config.inc.php</file>
-<dir name="icons">
-  <file>1und1.png</file>
-  <file>bing.png</file>
-  <file>freenet.png</file>
-  <file>google.png</file>
-  <file>ixquick.png</file>
-  <file>metager2.png</file>
-  <file>myspace.png</file>
-  <file>scroogle.png</file>
-  <file>t-online.png</file>
-  <file>web.de.png</file>
-  <file>yahoo.png</file>
-  </dir>
-    <file>lang_cs.inc.php</file>
-    <file>lang_cz.inc.php</file>
-    <file>lang_de.inc.php</file>
-    <file>lang_en.inc.php</file>
-    <file>lang_is.inc.php</file>
-    <file>serendipity_plugin_google_last_query.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_is.inc.php</file>
-  </dir>
-        </dir>
+      <file>ChangeLog</file>
+      <file>engines_config.inc.php</file>
+      <dir name="icons">
+        <file>1und1.png</file>
+        <file>bing.png</file>
+        <file>freenet.png</file>
+        <file>google.png</file>
+        <file>ixquick.png</file>
+        <file>metager2.png</file>
+        <file>myspace.png</file>
+        <file>scroogle.png</file>
+        <file>t-online.png</file>
+        <file>web.de.png</file>
+        <file>yahoo.png</file>
+      </dir>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_en.inc.php</file>
+        <file>lang_is.inc.php</file>
+        <file>serendipity_plugin_google_last_query.php</file>
+      <dir name="UTF-8">
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_de.inc.php</file>
+          <file>lang_is.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2259,20 +2259,20 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_google_quicksearch">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  <file>README</file>
-  <file>serendipity_plugin_google_quicksearch.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  </dir>
-    </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>README</file>
+      <file>serendipity_plugin_google_quicksearch.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_ko.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2303,31 +2303,31 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_heavyrotation">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_en.inc.php</file>
-<dir name="lib">
-  <file>album.php</file>
-<dir name="albumhandler">
-  <file>chickeneggproblem.php</file>
-  <file>readerror.php</file>
-  </dir>
-    <file>albumhandler.php</file>
-    <file>coverfetcher.php</file>
-<dir name="helper">
-  <file>abstract.php</file>
-  <file>audioscrobbler.php</file>
-  <file>aws_signed_request.php</file>
-  </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <dir name="lib">
+        <file>album.php</file>
+      <dir name="albumhandler">
+          <file>chickeneggproblem.php</file>
+          <file>readerror.php</file>
+      </dir>
+        <file>albumhandler.php</file>
+        <file>coverfetcher.php</file>
+        <dir name="helper">
+          <file>abstract.php</file>
+          <file>audioscrobbler.php</file>
+          <file>aws_signed_request.php</file>
         </dir>
-    <file>plugin.inc.php</file>
-    <file>serendipity_plugin_heavyrotation.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  </dir>
-        </dir>
+      </dir>
+        <file>plugin.inc.php</file>
+        <file>serendipity_plugin_heavyrotation.php</file>
+      <dir name="UTF-8">
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_de.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2364,27 +2364,27 @@
   <date>2017-03-22</date>
   <filelist>
     <dir name="serendipity_plugin_imagesidebar">
-  <file>ChangeLog</file>
-  <file>coppermine_none.jpg</file>
-  <file>coppermine_README</file>
-  <file>coppermine_sidebar.php</file>
-  <file>coppermine_styles.css</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>media_sidebar.php</file>
-  <file>menalto_sidebar.php</file>
-  <file>serendipity_plugin_imagesidebar.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  </dir>
-    <file>zooomr_sidebar.php</file>
-    </dir>
+      <file>ChangeLog</file>
+      <file>coppermine_none.jpg</file>
+      <file>coppermine_README</file>
+      <file>coppermine_sidebar.php</file>
+      <file>coppermine_styles.css</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>media_sidebar.php</file>
+      <file>menalto_sidebar.php</file>
+      <file>serendipity_plugin_imagesidebar.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+      </dir>
+        <file>zooomr_sidebar.php</file>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2422,17 +2422,17 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_karmaranking">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>serendipity_plugin_karmaranking.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  </dir>
-    </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_plugin_karmaranking.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2461,25 +2461,25 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_loginform">
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>serendipity_plugin_loginform.php</file>
-<dir name="UTF-8">
-  <file>lang_bc.inc.php</file>
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  </dir>
-    </dir>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>serendipity_plugin_loginform.php</file>
+      <dir name="UTF-8">
+        <file>lang_bc.inc.php</file>
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ja.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2516,23 +2516,23 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_nugget_multilingual">
-  <file>ChangeLog</file>
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  <file>README</file>
-  <file>serendipity_plugin_nugget_multilingual.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  </dir>
-    </dir>
+      <file>ChangeLog</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>README</file>
+      <file>serendipity_plugin_nugget_multilingual.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ko.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2567,20 +2567,20 @@
   <date>2016-09-07</date>
   <filelist>
     <dir name="serendipity_plugin_pagerank">
-  <file>ChangeLog</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>serendipity_plugin_pagerank.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  </dir>
-    </dir>
+      <file>ChangeLog</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>serendipity_plugin_pagerank.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_fr.inc.php</file>
+        <file>lang_ja.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2611,21 +2611,21 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_photoblog">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_tr.inc.php</file>
-  <file>serendipity_plugin_photoblog.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_tr.inc.php</file>
-  </dir>
-    </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_tr.inc.php</file>
+      <file>serendipity_plugin_photoblog.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_tr.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2658,15 +2658,15 @@
   <date>2017-03-28</date>
   <filelist>
     <dir name="serendipity_plugin_piwik">
-  <file>ChangeLog</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>README.markdown</file>
-  <file>serendipity_plugin_piwik.php</file>
-<dir name="UTF-8">
-  <file>lang_de.inc.php</file>
-  </dir>
-    </dir>
+      <file>ChangeLog</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>README.markdown</file>
+      <file>serendipity_plugin_piwik.php</file>
+      <dir name="UTF-8">
+        <file>lang_de.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2693,24 +2693,24 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_pollbox">
-  <file>ChangeLog</file>
-  <file>common.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  <file>serendipity_event_pollbox.php</file>
-  <file>serendipity_plugin_pollbox.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  </dir>
-    </dir>
+      <file>ChangeLog</file>
+      <file>common.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>serendipity_event_pollbox.php</file>
+      <file>serendipity_plugin_pollbox.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_pl.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2746,26 +2746,26 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_popularentries">
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  <file>serendipity_plugin_popularentries.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  </dir>
-    </dir>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>serendipity_plugin_popularentries.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_pl.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2802,15 +2802,15 @@
   <date>2016-10-24</date>
   <filelist>
     <dir name="serendipity_plugin_quicklink">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>serendipity_plugin_quicklink.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  </dir>
-    </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_plugin_quicklink.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2836,8 +2836,8 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_quicksearch">
-  <file>serendipity_plugin_quicksearch.php</file>
-  </dir>
+      <file>serendipity_plugin_quicksearch.php</file>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2858,19 +2858,19 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_randomquotes">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  <file>serendipity_plugin_randomquotes.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  </dir>
-    </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>serendipity_plugin_randomquotes.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_pl.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2900,35 +2900,35 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_shoutbox">
-  <file>lang_cn.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_es.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  <file>lang_pt_PT.inc.php</file>
-  <file>lang_tn.inc.php</file>
-  <file>lang_zh.inc.php</file>
-  <file>serendipity_plugin_shoutbox.php</file>
-<dir name="UTF-8">
-  <file>lang_cn.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_es.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>lang_ko.inc.php</file>
-  <file>lang_pl.inc.php</file>
-  <file>lang_pt_PT.inc.php</file>
-  <file>lang_tn.inc.php</file>
-  <file>lang_zh.inc.php</file>
-  </dir>
-    </dir>
+      <file>lang_cn.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_es.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>lang_pt_PT.inc.php</file>
+      <file>lang_tn.inc.php</file>
+      <file>lang_zh.inc.php</file>
+      <file>serendipity_plugin_shoutbox.php</file>
+      <dir name="UTF-8">
+        <file>lang_cn.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_es.inc.php</file>
+        <file>lang_fr.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_ko.inc.php</file>
+        <file>lang_pl.inc.php</file>
+        <file>lang_pt_PT.inc.php</file>
+        <file>lang_tn.inc.php</file>
+        <file>lang_zh.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -2974,20 +2974,20 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_shoutcast">
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>readme.txt</file>
-  <file>serendipity_plugin_shoutcast.php</file>
-  <file>shoutcast_plugin_inaction.jpg</file>
-  <file>shoutcast_plugin_setup.jpg</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  </dir>
-    </dir>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>readme.txt</file>
+      <file>serendipity_plugin_shoutcast.php</file>
+      <file>shoutcast_plugin_inaction.jpg</file>
+      <file>shoutcast_plugin_setup.jpg</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -3019,23 +3019,23 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_showentries">
-  <file>ChangeLog</file>
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  <file>plugin_showentries.tpl</file>
-  <file>serendipity_plugin_showentries.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_ja.inc.php</file>
-  </dir>
-    </dir>
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>plugin_showentries.tpl</file>
+      <file>serendipity_plugin_showentries.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_ja.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -3069,16 +3069,16 @@
   <date>2016-10-24</date>
   <filelist>
     <dir name="serendipity_plugin_sidebarlogo">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>serendipity_plugin_sidebarlogo.php</file>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  </dir>
-    </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_plugin_sidebarlogo.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -3105,26 +3105,26 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_socialbookmarks">
-  <file>documentation_cs.html</file>
-  <file>documentation_cz.html</file>
-  <file>INSTALL</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>serendipity_plugin_socialbookmarks.php</file>
-<dir name="simplepie">
-  <file>LICENSE.txt</file>
-  <file>README.markdown</file>
-  <file>simplepie.inc</file>
-  </dir>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  </dir>
-        </dir>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>INSTALL</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_plugin_socialbookmarks.php</file>
+      <dir name="simplepie">
+        <file>LICENSE.txt</file>
+        <file>README.markdown</file>
+        <file>simplepie.inc</file>
+      </dir>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_en.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -3159,17 +3159,17 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_timezones">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>serendipity_plugin_timezones.php</file>
-<dir name="UTF-8">
-  <file>lang_bg.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  </dir>
-    </dir>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_plugin_timezones.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+      </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -3197,8 +3197,8 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_topexits">
-  <file>serendipity_plugin_topexits.php</file>
-  </dir>
+      <file>serendipity_plugin_topexits.php</file>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -3219,8 +3219,8 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_topreferrers">
-  <file>serendipity_plugin_topreferrers.php</file>
-  </dir>
+      <file>serendipity_plugin_topreferrers.php</file>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -3242,58 +3242,58 @@
   <date>2016-09-06</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
-  <file>.cvsignore</file>
-  <file>.htaccess</file>
-  <file>ChangeLog</file>
-<dir name="classes">
-  <file>JSON.php</file>
-  <file>json.php4.include.php</file>
-  <file>RedirectCheck.php</file>
-  <file>Twitter.php</file>
-  <file>TwitterOAuthApi.php</file>
-  <file>TwitterPluginDbAccess.php</file>
-  <file>TwitterPluginFileAccess.php</file>
-  <file>twitter_entry_defs.include.php</file>
-  <file>UrlShortener.php</file>
-  </dir>
-<dir name="documentation">
-  <file>documentation.css</file>
-  </dir>
+      <file>.cvsignore</file>
+      <file>.htaccess</file>
+      <file>ChangeLog</file>
+      <dir name="classes">
+        <file>JSON.php</file>
+        <file>json.php4.include.php</file>
+        <file>RedirectCheck.php</file>
+        <file>Twitter.php</file>
+        <file>TwitterOAuthApi.php</file>
+        <file>TwitterPluginDbAccess.php</file>
+        <file>TwitterPluginFileAccess.php</file>
+        <file>twitter_entry_defs.include.php</file>
+        <file>UrlShortener.php</file>
+      </dir>
+      <dir name="documentation">
+        <file>documentation.css</file>
+      </dir>
         <file>documentation_cs.html</file>
         <file>documentation_cz.html</file>
         <file>documentation_de.html</file>
         <file>documentation_en.html</file>
-<dir name="img">
-  <file>it-micro-black.png</file>
-  <file>it-micro-white.png</file>
-  <file>pixel.png</file>
-  <file>signin.png</file>
-  <file>tt-micro-black.png</file>
-  <file>tt-micro-white.png</file>
-  </dir>
-                <file>lang_cs.inc.php</file>
-                <file>lang_cz.inc.php</file>
-                <file>lang_de.inc.php</file>
-                <file>lang_en.inc.php</file>
-                <file>plugin_version.inc.php</file>
-                <file>serendipity_event_twitter.php</file>
-                <file>serendipity_plugin_twitter.php</file>
-<dir name="tweeter">
-  <file>serendipity_event_twitter_tweeter.css</file>
-  <file>serendipity_event_twitter_tweeter.js</file>
-  <file>tweeter_client.inc.php</file>
-  <file>tweeter_history.inc.php</file>
-  </dir>
-<dir name="twitteroauth">
-  <file>OAuth.php</file>
-  <file>twitteroauth.php</file>
-  </dir>
-<dir name="UTF-8">
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  </dir>
-                                                                                                                                </dir>
+        <dir name="img">
+          <file>it-micro-black.png</file>
+          <file>it-micro-white.png</file>
+          <file>pixel.png</file>
+          <file>signin.png</file>
+          <file>tt-micro-black.png</file>
+          <file>tt-micro-white.png</file>
+        </dir>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_en.inc.php</file>
+        <file>plugin_version.inc.php</file>
+        <file>serendipity_event_twitter.php</file>
+        <file>serendipity_plugin_twitter.php</file>
+          <dir name="tweeter">
+          <file>serendipity_event_twitter_tweeter.css</file>
+          <file>serendipity_event_twitter_tweeter.js</file>
+          <file>tweeter_client.inc.php</file>
+          <file>tweeter_history.inc.php</file>
+          </dir>
+            <dir name="twitteroauth">
+          <file>OAuth.php</file>
+          <file>twitteroauth.php</file>
+            </dir>
+              <dir name="UTF-8">
+          <file>lang_cs.inc.php</file>
+          <file>lang_cz.inc.php</file>
+          <file>lang_de.inc.php</file>
+              </dir>
+</dir>
 
   </filelist>
   <serendipityFilelist>
@@ -3352,28 +3352,28 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_wikipedia_finder">
-  <file>lang_cn.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_en.inc.php</file>
-  <file>lang_es.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_zh.inc.php</file>
-  <file>serendipity_plugin_wikipedia_finder.php</file>
-<dir name="UTF-8">
-  <file>lang_cn.inc.php</file>
-  <file>lang_cs.inc.php</file>
-  <file>lang_cz.inc.php</file>
-  <file>lang_de.inc.php</file>
-  <file>lang_es.inc.php</file>
-  <file>lang_fr.inc.php</file>
-  <file>lang_zh.inc.php</file>
-  </dir>
-    <file>wikipedia.png</file>
-    <file>wikipedia_black.gif</file>
-    <file>wikipedia_white.gif</file>
-    </dir>
+      <file>lang_cn.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_es.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_zh.inc.php</file>
+      <file>serendipity_plugin_wikipedia_finder.php</file>
+      <dir name="UTF-8">
+        <file>lang_cn.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_es.inc.php</file>
+        <file>lang_fr.inc.php</file>
+        <file>lang_zh.inc.php</file>
+      </dir>
+        <file>wikipedia.png</file>
+        <file>wikipedia_black.gif</file>
+        <file>wikipedia_white.gif</file>
+</dir>
 
   </filelist>
   <serendipityFilelist>
