@@ -4,7 +4,7 @@
 <packages>
 <package version="1.0">
 <name>serendipity_plugin_communityrating</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_communityrating/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_communityrating/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Average Rating</summary>
 <groups>STATISTICS</groups>
@@ -15,7 +15,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <date>2017-04-25</date>
   <filelist>
-<dir name="serendipity_event_communityrating">
+    <dir name="serendipity_event_communityrating">
 <file>.htaccess</file>
 <file>ChangeLog</file>
 <file>communityrating_Amazon.tpl</file>
@@ -32,8 +32,7 @@
 <file>star_IMDB_full.png</file>
 <file>star_IMDB_half.png</file>
 <file>star_IMDB_zero.png</file>
-</dir>
-<file>lang_cs.inc.php</file>
+</dir><file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_en.inc.php</file>
 <file>README</file>
@@ -43,9 +42,7 @@
 <dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_communityrating/.htaccess</file>
@@ -77,7 +74,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_faq</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_faq/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_faq/ChangeLog</changelog>
 <license>GPL</license>
 <summary>FAQs Category Chooser</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -88,19 +85,17 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-02-02</date>
   <filelist>
-<dir name="serendipity_event_faq">
+    <dir name="serendipity_event_faq">
 <file>.htaccess</file>
 <dir name="alternatives">
 <file>plugin_faq_categories.tpl</file>
 <file>plugin_faq_category_faq.tpl</file>
 <file>plugin_faq_category_faqs.tpl</file>
-</dir>
-<file>ChangeLog</file>
+</dir><file>ChangeLog</file>
 <file>class_inspectConfig.php</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
 <dir name="img">
-<file>.htaccess</file>
 <file>base.gif</file>
 <file>category.png</file>
 <file>empty.gif</file>
@@ -120,8 +115,7 @@
 <file>plusbottom.gif</file>
 <file>question.svg</file>
 <file>question.svg.png</file>
-</dir>
-<file>jquery.serendipity_old_plain_editor.js</file>
+</dir><file>jquery.serendipity_old_plain_editor.js</file>
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -144,9 +138,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_ja.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_faq/.htaccess</file>
@@ -157,7 +149,6 @@
     <file>serendipity_event_faq/class_inspectConfig.php</file>
     <file>serendipity_event_faq/documentation_cs.html</file>
     <file>serendipity_event_faq/documentation_cz.html</file>
-    <file>serendipity_event_faq/img/.htaccess</file>
     <file>serendipity_event_faq/img/base.gif</file>
     <file>serendipity_event_faq/img/category.png</file>
     <file>serendipity_event_faq/img/empty.gif</file>
@@ -204,7 +195,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_freetag</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_freetag/ChangeLog</changelog>
 <license>GPL</license>
 <summary>태그 달린 글 보여주기</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -215,7 +206,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-02-02</date>
   <filelist>
-<dir name="serendipity_event_freetag">
+    <dir name="serendipity_event_freetag">
 <file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -223,8 +214,7 @@
 <file>documentation_en.html</file>
 <dir name="img">
 <file>technorati.jpg</file>
-</dir>
-<file>jquery-1.11.3.min.js</file>
+</dir><file>jquery-1.11.3.min.js</file>
 <file>jquery.autocomplete.js</file>
 <file>jquery.autocomplete.min.css</file>
 <file>jquery.autocomplete.min.js</file>
@@ -263,9 +253,7 @@
 <file>lang_nl.inc.php</file>
 <file>lang_pl.inc.php</file>
 <file>lang_se.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_freetag/.htaccess</file>
@@ -317,7 +305,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_geotag</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_geotag/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_geotag/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Geotag Google/OSM Map</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -328,7 +316,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-02-02</date>
   <filelist>
-<dir name="serendipity_event_geotag">
+    <dir name="serendipity_event_geotag">
 <file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -348,9 +336,7 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_geotag/.htaccess</file>
@@ -376,7 +362,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_guestbook</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_guestbook/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_guestbook/ChangeLog</changelog>
 <license>GPL</license>
 <summary>옆줄 방명록</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -387,7 +373,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_event_guestbook">
+    <dir name="serendipity_event_guestbook">
 <file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -405,8 +391,7 @@
 <file>quote-end.gif</file>
 <file>quote-start.gif</file>
 <file>shorttime.gif</file>
-</dir>
-<file>lang_bg.inc.php</file>
+</dir><file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
@@ -437,9 +422,7 @@
 <file>lang_nl.inc.php</file>
 <file>lang_pl.inc.php</file>
 <file>lang_se.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_guestbook/.htaccess</file>
@@ -493,7 +476,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_linklist</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_linklist/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_linklist/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Link List</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -504,7 +487,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_event_linklist">
+    <dir name="serendipity_event_linklist">
 <file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -525,8 +508,7 @@
 <file>page.gif</file>
 <file>plus.gif</file>
 <file>plusbottom.gif</file>
-</dir>
-<file>lang_bg.inc.php</file>
+</dir><file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -543,9 +525,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_ja.inc.php</file>
 <file>lang_pl.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_linklist/.htaccess</file>
@@ -588,7 +568,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_microformats</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_microformats/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_microformats/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Upcoming Events</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -599,7 +579,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-02-02</date>
   <filelist>
-<dir name="serendipity_event_microformats">
+    <dir name="serendipity_event_microformats">
 <file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -614,8 +594,7 @@
 <file>hreview.png</file>
 <file>icon-hcalendar.png</file>
 <file>mformats.png</file>
-</dir>
-<file>lang_cs.inc.php</file>
+</dir><file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -631,9 +610,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_en.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_microformats/.htaccess</file>
@@ -669,7 +646,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_multilingual</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_multilingual/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_multilingual/ChangeLog</changelog>
 <license>GPL</license>
 <summary>언어 선택</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -680,7 +657,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-08-27</date>
   <filelist>
-<dir name="serendipity_event_multilingual">
+    <dir name="serendipity_event_multilingual">
 <file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -707,9 +684,7 @@
 <file>lang_ja.inc.php</file>
 <file>lang_ko.inc.php</file>
 <file>lang_tr.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_multilingual/.htaccess</file>
@@ -742,7 +717,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_mycalendar</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_mycalendar/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mycalendar/ChangeLog</changelog>
 <license>GPL</license>
 <summary>My Calendar</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -753,7 +728,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-10-11</date>
   <filelist>
-<dir name="serendipity_event_mycalendar">
+    <dir name="serendipity_event_mycalendar">
 <file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -772,9 +747,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_ja.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_mycalendar/.htaccess</file>
@@ -799,7 +772,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_spamblock_bee</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_spamblock_bee/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_spamblock_bee/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Spam Report</summary>
 <groups>STATISTICS</groups>
@@ -810,13 +783,12 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_event_spamblock_bee">
+    <dir name="serendipity_event_spamblock_bee">
 <file>ChangeLog</file>
 <dir name="json">
 <file>JSON.php</file>
 <file>json.php4.include.php</file>
-</dir>
-<file>lang_cs.inc.php</file>
+</dir><file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -828,10 +800,8 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
+</dir><file>version.inc.php</file>
 </dir>
-<file>version.inc.php</file>
-</dir>
-
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_spamblock_bee/ChangeLog</file>
@@ -854,7 +824,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_staticpage</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_staticpage/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_staticpage/ChangeLog</changelog>
 <license>GPL</license>
 <summary>고정 페이지 목록</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -865,7 +835,7 @@
   <requirements:s9yVersion>2.0.99</requirements:s9yVersion>
   <date>2017-07-07</date>
   <filelist>
-<dir name="serendipity_event_staticpage">
+    <dir name="serendipity_event_staticpage">
 <file>.htaccess</file>
 <file>backend_staticpage.tpl</file>
 <dir name="backend_templates">
@@ -873,8 +843,7 @@
 <file>default_staticpage_backend.tpl</file>
 <file>responsive_template.tpl</file>
 <file>typeform_staticpage_backend.tpl</file>
-</dir>
-<file>ChangeLog</file>
+</dir><file>ChangeLog</file>
 <file>class_inspectConfig.php</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -882,7 +851,6 @@
 <file>dtree.css</file>
 <file>dtree.js</file>
 <dir name="img">
-<file>.htaccess</file>
 <file>base.gif</file>
 <file>empty.gif</file>
 <file>folder.gif</file>
@@ -898,8 +866,7 @@
 <file>page.png</file>
 <file>plus.gif</file>
 <file>plusbottom.gif</file>
-</dir>
-<file>jquery.simplePagination.js</file>
+</dir><file>jquery.simplePagination.js</file>
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -939,9 +906,7 @@
 <file>lang_pl.inc.php</file>
 <file>lang_se.inc.php</file>
 <file>lang_tr.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_staticpage/.htaccess</file>
@@ -957,7 +922,6 @@
     <file>serendipity_event_staticpage/documentation_en.html</file>
     <file>serendipity_event_staticpage/dtree.css</file>
     <file>serendipity_event_staticpage/dtree.js</file>
-    <file>serendipity_event_staticpage/img/.htaccess</file>
     <file>serendipity_event_staticpage/img/base.gif</file>
     <file>serendipity_event_staticpage/img/empty.gif</file>
     <file>serendipity_event_staticpage/img/folder.gif</file>
@@ -1017,7 +981,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_statistics</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_statistics/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_statistics/ChangeLog</changelog>
 <license>GPL</license>
 <summary>통계</summary>
 <groups>STATISTICS</groups>
@@ -1028,7 +992,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_event_statistics">
+    <dir name="serendipity_event_statistics">
 <file>.htaccess</file>
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
@@ -1071,10 +1035,8 @@
 <file>lang_sk.inc.php</file>
 <file>lang_tn.inc.php</file>
 <file>lang_zh.inc.php</file>
+</dir><file>yellow.png</file>
 </dir>
-<file>yellow.png</file>
-</dir>
-
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_statistics/.htaccess</file>
@@ -1124,7 +1086,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_userprofiles</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_userprofiles/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_userprofiles/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Serendipity Authors</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -1135,7 +1097,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-09-19</date>
   <filelist>
-<dir name="serendipity_event_userprofiles">
+    <dir name="serendipity_event_userprofiles">
 <file>ChangeLog</file>
 <file>Contact_Vcard_Build.php</file>
 <file>lang_bg.inc.php</file>
@@ -1155,9 +1117,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_ja.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_userprofiles/ChangeLog</file>
@@ -1183,7 +1143,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_userprofiles_birthdays</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_userprofiles/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_userprofiles/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Birthdays of users</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -1194,7 +1154,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-09-19</date>
   <filelist>
-<dir name="serendipity_event_userprofiles">
+    <dir name="serendipity_event_userprofiles">
 <file>ChangeLog</file>
 <file>Contact_Vcard_Build.php</file>
 <file>lang_bg.inc.php</file>
@@ -1214,9 +1174,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_ja.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_userprofiles/ChangeLog</file>
@@ -1242,7 +1200,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_xsstrust</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_event_xsstrust/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_xsstrust/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Show trusted users</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -1256,7 +1214,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_event_xsstrust">
+    <dir name="serendipity_event_xsstrust">
 <file>ChangeLog</file>
 <dir name="htmlpurifier-4.6.0-standalone">
 <file>HTMLPurifier.standalone.php</file>
@@ -1266,13 +1224,11 @@
 <dir name="Builder">
 <file>ConfigSchema.php</file>
 <file>Xml.php</file>
-</dir>
-<file>Exception.php</file>
+</dir><file>Exception.php</file>
 <dir name="Interchange">
 <file>Directive.php</file>
 <file>Id.php</file>
-</dir>
-<file>Interchange.php</file>
+</dir><file>Interchange.php</file>
 <file>InterchangeBuilder.php</file>
 <dir name="schema">
 <file>Attr.AllowedClasses.txt</file>
@@ -1394,43 +1350,31 @@
 <file>URI.MungeSecretKey.txt</file>
 <file>URI.OverrideAllowedSchemes.txt</file>
 <file>URI.SafeIframeRegexp.txt</file>
-</dir>
-<file>schema.ser</file>
+</dir><file>schema.ser</file>
 <file>Validator.php</file>
 <file>ValidatorAtom.php</file>
-</dir>
-<dir name="EntityLookup">
+</dir><dir name="EntityLookup">
 <file>entities.ser</file>
-</dir>
-<dir name="Filter">
+</dir><dir name="Filter">
 <file>ExtractStyleBlocks.php</file>
 <file>YouTube.php</file>
-</dir>
-<dir name="Language">
+</dir><dir name="Language">
 <dir name="classes">
 <file>en-x-test.php</file>
-</dir>
-<dir name="messages">
+</dir><dir name="messages">
 <file>en-x-test.php</file>
 <file>en-x-testmini.php</file>
 <file>en.php</file>
-</dir>
-</dir>
-<dir name="Lexer">
+</dir></dir><dir name="Lexer">
 <file>PH5P.php</file>
-</dir>
-<dir name="Printer">
+</dir><dir name="Printer">
 <file>ConfigForm.css</file>
 <file>ConfigForm.js</file>
 <file>ConfigForm.php</file>
 <file>CSSDefinition.php</file>
 <file>HTMLDefinition.php</file>
-</dir>
-<file>Printer.php</file>
-</dir>
-</dir>
-</dir>
-<file>lang_cs.inc.php</file>
+</dir><file>Printer.php</file>
+</dir></dir></dir><file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -1442,9 +1386,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_it.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_xsstrust/ChangeLog</file>
@@ -1608,7 +1550,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_adduser</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_adduser/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_adduser/ChangeLog</changelog>
 <license>GPL</license>
 <summary>User Self-Registration</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
@@ -1619,7 +1561,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <date>2017-03-24</date>
   <filelist>
-<dir name="serendipity_plugin_adduser">
+    <dir name="serendipity_plugin_adduser">
 <file>ChangeLog</file>
 <file>common.inc.php</file>
 <file>documentation_cs.html</file>
@@ -1640,9 +1582,7 @@
 <file>lang_de.inc.php</file>
 <file>lang_fr.inc.php</file>
 <file>lang_ja.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_adduser/ChangeLog</file>
@@ -1669,7 +1609,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_amazon</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_amazon/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_amazon/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Amazon Recommendations</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -1680,7 +1620,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-03-22</date>
   <filelist>
-<dir name="serendipity_plugin_amazon">
+    <dir name="serendipity_plugin_amazon">
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1696,9 +1636,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_ja.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_amazon/ChangeLog</file>
@@ -1730,7 +1668,7 @@
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_category_dhtml_menu">
+    <dir name="serendipity_plugin_category_dhtml_menu">
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -1742,9 +1680,7 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_ja.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_category_dhtml_menu/lang_bg.inc.php</file>
@@ -1772,7 +1708,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_coppermine">
+    <dir name="serendipity_plugin_coppermine">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -1783,9 +1719,7 @@
 <dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_coppermine/lang_cs.inc.php</file>
@@ -1802,7 +1736,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_currently</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_currently/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_currently/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Currently...</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -1813,7 +1747,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_currently">
+    <dir name="serendipity_plugin_currently">
 <file>ChangeLog</file>
 <file>curl.inc</file>
 <file>documentation_cs.html</file>
@@ -1830,10 +1764,8 @@
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_ja.inc.php</file>
+</dir><file>xml.inc</file>
 </dir>
-<file>xml.inc</file>
-</dir>
-
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_currently/ChangeLog</file>
@@ -1867,7 +1799,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-01-06</date>
   <filelist>
-<dir name="serendipity_plugin_externalphp">
+    <dir name="serendipity_plugin_externalphp">
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -1879,9 +1811,7 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_externalphp/lang_bg.inc.php</file>
@@ -1909,7 +1839,7 @@
   <requirements:s9yVersion>1.2.1</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_feedburnersidebar">
+    <dir name="serendipity_plugin_feedburnersidebar">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -1917,9 +1847,7 @@
 <dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_feedburnersidebar/lang_cs.inc.php</file>
@@ -1933,7 +1861,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_flickr</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_flickr/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_flickr/ChangeLog</changelog>
 <license>GPL</license>
 <summary>flickr Photostream</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES,IMAGES</groups>
@@ -1944,7 +1872,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-03-22</date>
   <filelist>
-<dir name="serendipity_plugin_flickr">
+    <dir name="serendipity_plugin_flickr">
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -1964,33 +1892,25 @@
 <file>mysql.php</file>
 <file>pgsql.php</file>
 <file>storage.php</file>
-</dir>
-<file>DB.php</file>
+</dir><file>DB.php</file>
 <dir name="HTTP">
 <dir name="Request">
 <file>Listener.php</file>
-</dir>
-<file>Request.php</file>
-</dir>
-<dir name="Net">
+</dir><file>Request.php</file>
+</dir><dir name="Net">
 <file>Socket.php</file>
 <file>URL.php</file>
-</dir>
-<file>PEAR.php</file>
-</dir>
-<file>phpFlickr.php</file>
+</dir><file>PEAR.php</file>
+</dir><file>phpFlickr.php</file>
 <file>README.md</file>
-</dir>
-<file>README.txt</file>
+</dir><file>README.txt</file>
 <file>serendipity_event_flickrcss.php</file>
 <file>serendipity_plugin_flickr.php</file>
 <dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_flickr/ChangeLog</file>
@@ -2038,7 +1958,7 @@
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_flickrbadge">
+    <dir name="serendipity_plugin_flickrbadge">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -2046,18 +1966,14 @@
 <dir name="flickr">
 <file>abstract.php</file>
 <file>filecache.php</file>
-</dir>
-<file>flickr.php</file>
-</dir>
-<file>plugin.inc.php</file>
+</dir><file>flickr.php</file>
+</dir><file>plugin.inc.php</file>
 <file>serendipity_plugin_flickrbadge.php</file>
 <dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_flickrbadge/lang_cs.inc.php</file>
@@ -2076,7 +1992,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_ggopis</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_ggopis/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_ggopis/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Gadu-Gadu IM status description</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -2087,7 +2003,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-01-06</date>
   <filelist>
-<dir name="serendipity_plugin_ggopis">
+    <dir name="serendipity_plugin_ggopis">
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -2095,8 +2011,7 @@
 <file>gg11.png</file>
 <file>gg12.png</file>
 <file>gg13.png</file>
-</dir>
-<file>lang_cs.inc.php</file>
+</dir><file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_en.inc.php</file>
 <file>lang_pl.inc.php</file>
@@ -2106,9 +2021,7 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_pl.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_ggopis/ChangeLog</file>
@@ -2131,7 +2044,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_google_adsense</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_google_adsense/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_google_adsense/ChangeLog</changelog>
 <license>GPL</license>
 <summary>AdSense</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -2142,7 +2055,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_google_adsense">
+    <dir name="serendipity_plugin_google_adsense">
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -2157,9 +2070,7 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_google_adsense/ChangeLog</file>
@@ -2180,7 +2091,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_google_last_query</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_google_last_query/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_google_last_query/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Last Search (Google, Yahoo, Bing, Scroogle)</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -2191,7 +2102,7 @@
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_google_last_query">
+    <dir name="serendipity_plugin_google_last_query">
 <file>ChangeLog</file>
 <file>engines_config.inc.php</file>
 <dir name="icons">
@@ -2206,8 +2117,7 @@
 <file>t-online.png</file>
 <file>web.de.png</file>
 <file>yahoo.png</file>
-</dir>
-<file>lang_cs.inc.php</file>
+</dir><file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -2218,9 +2128,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_is.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_google_last_query/ChangeLog</file>
@@ -2261,7 +2169,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_google_quicksearch">
+    <dir name="serendipity_plugin_google_quicksearch">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -2274,9 +2182,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_ja.inc.php</file>
 <file>lang_ko.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_google_quicksearch/lang_cs.inc.php</file>
@@ -2305,7 +2211,7 @@
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_heavyrotation">
+    <dir name="serendipity_plugin_heavyrotation">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -2314,24 +2220,19 @@
 <dir name="albumhandler">
 <file>chickeneggproblem.php</file>
 <file>readerror.php</file>
-</dir>
-<file>albumhandler.php</file>
+</dir><file>albumhandler.php</file>
 <file>coverfetcher.php</file>
 <dir name="helper">
 <file>abstract.php</file>
 <file>audioscrobbler.php</file>
 <file>aws_signed_request.php</file>
-</dir>
-</dir>
-<file>plugin.inc.php</file>
+</dir></dir><file>plugin.inc.php</file>
 <file>serendipity_plugin_heavyrotation.php</file>
 <dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_heavyrotation/lang_cs.inc.php</file>
@@ -2355,7 +2256,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_imagesidebar</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_imagesidebar/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_imagesidebar/ChangeLog</changelog>
 <license>BSD</license>
 <summary>Unified Sidebar Image Display</summary>
 <groups>IMAGES</groups>
@@ -2366,7 +2267,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-03-22</date>
   <filelist>
-<dir name="serendipity_plugin_imagesidebar">
+    <dir name="serendipity_plugin_imagesidebar">
 <file>ChangeLog</file>
 <file>coppermine_none.jpg</file>
 <file>coppermine_README</file>
@@ -2385,10 +2286,8 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
+</dir><file>zooomr_sidebar.php</file>
 </dir>
-<file>zooomr_sidebar.php</file>
-</dir>
-
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_imagesidebar/ChangeLog</file>
@@ -2424,7 +2323,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_karmaranking">
+    <dir name="serendipity_plugin_karmaranking">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
@@ -2434,9 +2333,7 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_karmaranking/lang_cs.inc.php</file>
@@ -2452,7 +2349,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_loginform</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_loginform/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_loginform/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Authors login</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -2463,7 +2360,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_loginform">
+    <dir name="serendipity_plugin_loginform">
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -2481,9 +2378,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_ja.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_loginform/ChangeLog</file>
@@ -2507,7 +2402,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_nugget_multilingual</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_nugget_multilingual/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_nugget_multilingual/ChangeLog</changelog>
 <license>GPL</license>
 <summary>특정 언어용 HTML 덩어리</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -2518,7 +2413,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_nugget_multilingual">
+    <dir name="serendipity_plugin_nugget_multilingual">
 <file>ChangeLog</file>
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
@@ -2534,9 +2429,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_ko.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_nugget_multilingual/ChangeLog</file>
@@ -2558,7 +2451,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_pagerank</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_pagerank/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_pagerank/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Google PageRank</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -2569,7 +2462,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-09-07</date>
   <filelist>
-<dir name="serendipity_plugin_pagerank">
+    <dir name="serendipity_plugin_pagerank">
 <file>ChangeLog</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -2582,9 +2475,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_fr.inc.php</file>
 <file>lang_ja.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_pagerank/ChangeLog</file>
@@ -2613,7 +2504,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_photoblog">
+    <dir name="serendipity_plugin_photoblog">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
@@ -2627,9 +2518,7 @@
 <file>lang_de.inc.php</file>
 <file>lang_ja.inc.php</file>
 <file>lang_tr.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_photoblog/lang_cs.inc.php</file>
@@ -2649,7 +2538,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_piwik</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_piwik/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_piwik/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Piwik</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -2660,7 +2549,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-03-28</date>
   <filelist>
-<dir name="serendipity_plugin_piwik">
+    <dir name="serendipity_plugin_piwik">
 <file>ChangeLog</file>
 <file>lang_de.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -2668,9 +2557,7 @@
 <file>serendipity_plugin_piwik.php</file>
 <dir name="UTF-8">
 <file>lang_de.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_piwik/ChangeLog</file>
@@ -2684,7 +2571,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_pollbox</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_pollbox/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_pollbox/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Polls</summary>
 <groups>STATISTICS</groups>
@@ -2695,7 +2582,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_pollbox">
+    <dir name="serendipity_plugin_pollbox">
 <file>ChangeLog</file>
 <file>common.inc.php</file>
 <file>lang_cs.inc.php</file>
@@ -2712,9 +2599,7 @@
 <file>lang_de.inc.php</file>
 <file>lang_ja.inc.php</file>
 <file>lang_pl.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_pollbox/ChangeLog</file>
@@ -2737,7 +2622,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_popularentries</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_popularentries/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_popularentries/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Popular Entries</summary>
 <groups>STATISTICS</groups>
@@ -2748,7 +2633,7 @@
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_popularentries">
+    <dir name="serendipity_plugin_popularentries">
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -2767,9 +2652,7 @@
 <file>lang_de.inc.php</file>
 <file>lang_ja.inc.php</file>
 <file>lang_pl.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_popularentries/ChangeLog</file>
@@ -2804,7 +2687,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-10-24</date>
   <filelist>
-<dir name="serendipity_plugin_quicklink">
+    <dir name="serendipity_plugin_quicklink">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -2812,9 +2695,7 @@
 <dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_quicklink/lang_cs.inc.php</file>
@@ -2838,10 +2719,9 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_quicksearch">
+    <dir name="serendipity_plugin_quicksearch">
 <file>serendipity_plugin_quicksearch.php</file>
 </dir>
-
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_quicksearch/serendipity_plugin_quicksearch.php</file>
@@ -2860,7 +2740,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_randomquotes">
+    <dir name="serendipity_plugin_randomquotes">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
@@ -2872,9 +2752,7 @@
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_pl.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_randomquotes/lang_cs.inc.php</file>
@@ -2902,7 +2780,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_shoutbox">
+    <dir name="serendipity_plugin_shoutbox">
 <file>lang_cn.inc.php</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -2930,9 +2808,7 @@
 <file>lang_pt_PT.inc.php</file>
 <file>lang_tn.inc.php</file>
 <file>lang_zh.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_shoutbox/lang_cn.inc.php</file>
@@ -2976,7 +2852,7 @@
   <requirements:s9yVersion>0.8.4</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_shoutcast">
+    <dir name="serendipity_plugin_shoutcast">
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
 <file>lang_cs.inc.php</file>
@@ -2989,9 +2865,7 @@
 <dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_shoutcast/documentation_cs.html</file>
@@ -3010,7 +2884,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_showentries</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_showentries/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_showentries/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Show Entries in sidebar</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -3021,7 +2895,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_showentries">
+    <dir name="serendipity_plugin_showentries">
 <file>ChangeLog</file>
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
@@ -3037,9 +2911,7 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_ja.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_showentries/ChangeLog</file>
@@ -3071,7 +2943,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-10-24</date>
   <filelist>
-<dir name="serendipity_plugin_sidebarlogo">
+    <dir name="serendipity_plugin_sidebarlogo">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -3080,9 +2952,7 @@
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_sidebarlogo/lang_cs.inc.php</file>
@@ -3107,7 +2977,7 @@
   <requirements:s9yVersion>0.9alpha5</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_socialbookmarks">
+    <dir name="serendipity_plugin_socialbookmarks">
 <file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
 <file>INSTALL</file>
@@ -3120,15 +2990,12 @@
 <file>LICENSE.txt</file>
 <file>README.markdown</file>
 <file>simplepie.inc</file>
-</dir>
-<dir name="UTF-8">
+</dir><dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_en.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_socialbookmarks/documentation_cs.html</file>
@@ -3161,7 +3028,7 @@
   <requirements:s9yVersion>0.9</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_timezones">
+    <dir name="serendipity_plugin_timezones">
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -3171,9 +3038,7 @@
 <file>lang_bg.inc.php</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_timezones/lang_bg.inc.php</file>
@@ -3199,10 +3064,9 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_topexits">
+    <dir name="serendipity_plugin_topexits">
 <file>serendipity_plugin_topexits.php</file>
 </dir>
-
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_topexits/serendipity_plugin_topexits.php</file>
@@ -3221,10 +3085,9 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_topreferrers">
+    <dir name="serendipity_plugin_topreferrers">
 <file>serendipity_plugin_topreferrers.php</file>
 </dir>
-
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_topreferrers/serendipity_plugin_topreferrers.php</file>
@@ -3233,7 +3096,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_twitter</name>
-<changelog>https://github.com/ophian/additional_plugins/blob/master/serendipity_plugin_twitter/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_twitter/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Twitter Timeline</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -3244,7 +3107,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2016-09-06</date>
   <filelist>
-<dir name="serendipity_plugin_twitter">
+    <dir name="serendipity_plugin_twitter">
 <file>.cvsignore</file>
 <file>.htaccess</file>
 <file>ChangeLog</file>
@@ -3258,11 +3121,9 @@
 <file>TwitterPluginFileAccess.php</file>
 <file>twitter_entry_defs.include.php</file>
 <file>UrlShortener.php</file>
-</dir>
-<dir name="documentation">
+</dir><dir name="documentation">
 <file>documentation.css</file>
-</dir>
-<file>documentation_cs.html</file>
+</dir><file>documentation_cs.html</file>
 <file>documentation_cz.html</file>
 <file>documentation_de.html</file>
 <file>documentation_en.html</file>
@@ -3273,8 +3134,7 @@
 <file>signin.png</file>
 <file>tt-micro-black.png</file>
 <file>tt-micro-white.png</file>
-</dir>
-<file>lang_cs.inc.php</file>
+</dir><file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
 <file>lang_en.inc.php</file>
@@ -3286,18 +3146,14 @@
 <file>serendipity_event_twitter_tweeter.js</file>
 <file>tweeter_client.inc.php</file>
 <file>tweeter_history.inc.php</file>
-</dir>
-<dir name="twitteroauth">
+</dir><dir name="twitteroauth">
 <file>OAuth.php</file>
 <file>twitteroauth.php</file>
-</dir>
-<dir name="UTF-8">
+</dir><dir name="UTF-8">
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
 <file>lang_de.inc.php</file>
-</dir>
-</dir>
-
+</dir></dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_twitter/.cvsignore</file>
@@ -3354,7 +3210,7 @@
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
   <date>2016-07-07</date>
   <filelist>
-<dir name="serendipity_plugin_wikipedia_finder">
+    <dir name="serendipity_plugin_wikipedia_finder">
 <file>lang_cn.inc.php</file>
 <file>lang_cs.inc.php</file>
 <file>lang_cz.inc.php</file>
@@ -3372,12 +3228,10 @@
 <file>lang_es.inc.php</file>
 <file>lang_fr.inc.php</file>
 <file>lang_zh.inc.php</file>
-</dir>
-<file>wikipedia.png</file>
+</dir><file>wikipedia.png</file>
 <file>wikipedia_black.gif</file>
 <file>wikipedia_white.gif</file>
 </dir>
-
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_wikipedia_finder/lang_cn.inc.php</file>
