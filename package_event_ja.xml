@@ -28,8 +28,7 @@
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_adminnotes/ChangeLog</file>
@@ -74,7 +73,7 @@
         <file>ChangeLog</file>
         <file>CHANGES</file>
         <file>cookbook</file>
-      <dir name="extlib">
+        <dir name="extlib">
           <file>AUTHORS</file>
           <file>ChangeLog</file>
           <file>COPYING.lib</file>
@@ -84,7 +83,7 @@
           <file>README</file>
           <file>Snoopy.class.php</file>
           <file>TODO</file>
-      </dir>
+        </dir>
         <file>INSTALL</file>
         <file>NEWS</file>
         <file>README.markdown</file>
@@ -94,23 +93,23 @@
         <file>rss_utils.inc</file>
         <file>TROUBLESHOOTING</file>
       </dir>
-        <file>runplanet</file>
-        <file>serendipity_event_aggregator.php</file>
+      <file>runplanet</file>
+      <file>serendipity_event_aggregator.php</file>
       <dir name="simplepie">
-          <file>.travis.yml</file>
-          <file>autoloader.php</file>
-          <file>composer.json</file>
-          <file>db.sql</file>
+        <file>.travis.yml</file>
+        <file>autoloader.php</file>
+        <file>composer.json</file>
+        <file>db.sql</file>
         <dir name="idn">
-            <file>idna_convert.class.php</file>
-            <file>LICENCE</file>
-            <file>npdata.ser</file>
-            <file>ReadMe.txt</file>
+          <file>idna_convert.class.php</file>
+          <file>LICENCE</file>
+          <file>npdata.ser</file>
+          <file>ReadMe.txt</file>
         </dir>
-          <dir name="library">
-            <dir name="SimplePie">
+        <dir name="library">
+          <dir name="SimplePie">
             <file>Author.php</file>
-              <dir name="Cache">
+            <dir name="Cache">
               <file>Base.php</file>
               <file>DB.php</file>
               <file>File.php</file>
@@ -118,66 +117,65 @@
               <file>Memcached.php</file>
               <file>MySQL.php</file>
               <file>Redis.php</file>
-              </dir>
+            </dir>
             <file>Cache.php</file>
             <file>Caption.php</file>
             <file>Category.php</file>
-                <dir name="Content">
-                  <dir name="Type">
-              <file>Sniffer.php</file>
-                  </dir>
-                </dir>
+            <dir name="Content">
+              <dir name="Type">
+                <file>Sniffer.php</file>
+              </dir>
+            </dir>
             <file>Copyright.php</file>
             <file>Core.php</file>
             <file>Credit.php</file>
-                  <dir name="Decode">
-                    <dir name="HTML">
-              <file>Entities.php</file>
-                    </dir>
-                  </dir>
+            <dir name="Decode">
+              <dir name="HTML">
+                <file>Entities.php</file>
+              </dir>
+            </dir>
             <file>Enclosure.php</file>
             <file>Exception.php</file>
             <file>File.php</file>
             <file>gzdecode.php</file>
-                    <dir name="HTTP">
+            <dir name="HTTP">
               <file>Parser.php</file>
-                    </dir>
+            </dir>
             <file>IRI.php</file>
             <file>Item.php</file>
             <file>Locator.php</file>
             <file>Misc.php</file>
-                      <dir name="Net">
+            <dir name="Net">
               <file>IPv6.php</file>
-                      </dir>
-                        <dir name="Parse">
+            </dir>
+            <dir name="Parse">
               <file>Date.php</file>
-                        </dir>
+            </dir>
             <file>Parser.php</file>
             <file>Rating.php</file>
             <file>Registry.php</file>
             <file>Restriction.php</file>
             <file>Sanitize.php</file>
             <file>Source.php</file>
-                          <dir name="XML">
-                            <dir name="Declaration">
-              <file>Parser.php</file>
-                            </dir>
-                          </dir>
+            <dir name="XML">
+              <dir name="Declaration">
+                <file>Parser.php</file>
+              </dir>
             </dir>
-            <file>SimplePie.php</file>
           </dir>
-          <file>LICENSE.txt</file>
-          <file>README.markdown</file>
-      </dir>
-        <file>theme-patch.diff</file>
-        <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_ja.inc.php</file>
+          <file>SimplePie.php</file>
         </dir>
-</dir>
-
+        <file>LICENSE.txt</file>
+        <file>README.markdown</file>
+      </dir>
+      <file>theme-patch.diff</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ja.inc.php</file>
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_aggregator/.htaccess</file>
@@ -309,8 +307,7 @@
         <file>lang_es.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_amazonchooser/.htaccess</file>
@@ -371,8 +368,7 @@
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_assigncategories/.htaccess</file>
@@ -420,8 +416,7 @@
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_autotitle/.htaccess</file>
@@ -469,8 +464,7 @@
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_autoupdate/.htaccess</file>
@@ -522,8 +516,7 @@
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_backend/.htaccess</file>
@@ -569,8 +562,7 @@
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_backendrss/lang_bg.inc.php</file>
@@ -604,19 +596,18 @@
       <dir name="bundled-libs">
         <file>Tar.php</file>
       </dir>
-        <file>ChangeLog</file>
+      <file>ChangeLog</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>serendipity_event_backup.php</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_ja.inc.php</file>
-        <file>serendipity_event_backup.php</file>
-      <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_backup/backup.sh</file>
@@ -656,7 +647,7 @@
         <file>helveticab.php</file>
         <file>helveticabi.php</file>
         <file>helveticai.php</file>
-      <dir name="makefont">
+        <dir name="makefont">
           <file>cp1250.map</file>
           <file>cp1251.map</file>
           <file>cp1252.map</file>
@@ -678,7 +669,7 @@
           <file>koi8-r.map</file>
           <file>koi8-u.map</file>
           <file>makefont.php</file>
-      </dir>
+        </dir>
         <file>symbol.php</file>
         <file>times.php</file>
         <file>timesb.php</file>
@@ -686,40 +677,39 @@
         <file>timesi.php</file>
         <file>zapfdingbats.php</file>
       </dir>
-        <file>fpdf.php</file>
-        <file>gif.php</file>
-        <file>html2fpdf.php</file>
-        <file>html2pdf_fpdf.php</file>
-        <file>htmltoolkit.php</file>
+      <file>fpdf.php</file>
+      <file>gif.php</file>
+      <file>html2fpdf.php</file>
+      <file>html2pdf_fpdf.php</file>
+      <file>htmltoolkit.php</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_es.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>lang_nl.inc.php</file>
+      <file>license.txt</file>
+      <file>no_img.gif</file>
+      <file>serendipity_blogpdf.inc.php</file>
+      <file>serendipity_blogupdf.inc.php</file>
+      <file>serendipity_event_blogpdf.php</file>
+      <file>ufpdf.php</file>
+      <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_es.inc.php</file>
         <file>lang_fr.inc.php</file>
         <file>lang_ja.inc.php</file>
         <file>lang_ko.inc.php</file>
         <file>lang_nl.inc.php</file>
-        <file>license.txt</file>
-        <file>no_img.gif</file>
-        <file>serendipity_blogpdf.inc.php</file>
-        <file>serendipity_blogupdf.inc.php</file>
-        <file>serendipity_event_blogpdf.php</file>
-        <file>ufpdf.php</file>
-      <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_es.inc.php</file>
-          <file>lang_fr.inc.php</file>
-          <file>lang_ja.inc.php</file>
-          <file>lang_ko.inc.php</file>
-          <file>lang_nl.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_blogpdf/.htaccess</file>
@@ -821,8 +811,7 @@
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_browserid/.htaccess</file>
@@ -876,28 +865,27 @@
         <file>notes-delete.gif</file>
         <file>notes-reject.gif</file>
       </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>modifier.close_tags.php</file>
+      <file>plugin_eventcal_add.tpl</file>
+      <file>plugin_eventcal_app.tpl</file>
+      <file>plugin_eventcal_cal.tpl</file>
+      <file>plugin_eventcal_calweek.tpl</file>
+      <file>plugin_eventcal_entry.tpl</file>
+      <file>plugin_eventcal_ical.tpl</file>
+      <file>README</file>
+      <file>serendipity_event_cal.php</file>
+      <file>style_eventcal.css</file>
+      <file>style_eventcal_backend.css</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>modifier.close_tags.php</file>
-        <file>plugin_eventcal_add.tpl</file>
-        <file>plugin_eventcal_app.tpl</file>
-        <file>plugin_eventcal_cal.tpl</file>
-        <file>plugin_eventcal_calweek.tpl</file>
-        <file>plugin_eventcal_entry.tpl</file>
-        <file>plugin_eventcal_ical.tpl</file>
-        <file>README</file>
-        <file>serendipity_event_cal.php</file>
-        <file>style_eventcal.css</file>
-        <file>style_eventcal_backend.css</file>
-      <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_cal/.htaccess</file>
@@ -971,8 +959,7 @@
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_categorytemplates/.htaccess</file>
@@ -1009,7 +996,6 @@
     <dir name="serendipity_event_challengeresponse">
       <file>serendipity_event_challengeresponse.php</file>
 </dir>
-
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_challengeresponse/serendipity_event_challengeresponse.php</file>
@@ -1047,21 +1033,20 @@
       <dir name="img">
         <file>mls9y.png</file>
       </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>prettify.css</file>
+      <file>prettify.js</file>
+      <file>serendipity_event_ckeditor.php</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>prettify.css</file>
-        <file>prettify.js</file>
-        <file>serendipity_event_ckeditor.php</file>
-      <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
       </dir>
-        <file>wysiwyg-style.css</file>
-</dir>
-
+      <file>wysiwyg-style.css</file>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_ckeditor/.htaccess</file>
@@ -1120,8 +1105,7 @@
         <file>lang_cz.inc.php</file>
         <file>lang_ko.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_comics/.htaccess</file>
@@ -1171,8 +1155,7 @@
         <file>lang_de.inc.php</file>
         <file>lang_en.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_commentedit/.htaccess</file>
@@ -1225,8 +1208,7 @@
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_commentsearch/.htaccess</file>
@@ -1279,24 +1261,23 @@
         <file>JSON.php</file>
         <file>json.php4.include.php</file>
       </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_event_commentspice.php</file>
+      <dir name="tpl.examples">
+        <dir name="2k11">
+          <file>commentform.tpl</file>
+          <file>comments.tpl</file>
+        </dir>
+      </dir>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>serendipity_event_commentspice.php</file>
-        <dir name="tpl.examples">
-          <dir name="2k11">
-          <file>commentform.tpl</file>
-          <file>comments.tpl</file>
-          </dir>
-        </dir>
-          <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          </dir>
-</dir>
-
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_commentspice/.htaccess</file>
@@ -1357,19 +1338,18 @@
         <file>star_IMDB_half.png</file>
         <file>star_IMDB_zero.png</file>
       </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>README</file>
+      <file>serendipity_event_communityrating.php</file>
+      <file>serendipity_plugin_communityrating.php</file>
+      <file>smarty.inc.php</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>README</file>
-        <file>serendipity_event_communityrating.php</file>
-        <file>serendipity_plugin_communityrating.php</file>
-        <file>smarty.inc.php</file>
-      <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_communityrating/.htaccess</file>
@@ -1443,8 +1423,7 @@
         <file>lang_pl.inc.php</file>
         <file>lang_tr.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_contactform/.htaccess</file>
@@ -1521,8 +1500,7 @@
         <file>lang_tn.inc.php</file>
         <file>lang_zh.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_contentrewrite/lang_bg.inc.php</file>
@@ -1586,8 +1564,7 @@
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_cpgselector/.htaccess</file>
@@ -1633,8 +1610,7 @@
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_cronjob/.htaccess</file>
@@ -1681,8 +1657,7 @@
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_customarchive/.htaccess</file>
@@ -1730,8 +1705,7 @@
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_custom_permalinks/ChangeLog</file>
@@ -1777,8 +1751,7 @@
         <file>lang_de.inc.php</file>
         <file>lang_en.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_dbclean/.htaccess</file>
@@ -1823,8 +1796,7 @@
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_dejure/ChangeLog</file>
@@ -1866,8 +1838,7 @@
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_disqus/.htaccess</file>
@@ -1920,7 +1891,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>delch.gif</file>
         <file>delch.png</file>
         <file>dl.png</file>
-      <dir name="dlicons">
+        <dir name="dlicons">
           <file>3ds.png</file>
           <file>ac3.png</file>
           <file>ace.png</file>
@@ -2001,7 +1972,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
           <file>xls.png</file>
           <file>xpm.png</file>
           <file>zip.png</file>
-      </dir>
+        </dir>
         <file>download.png</file>
         <file>e.gif</file>
         <file>f.gif</file>
@@ -2029,25 +2000,24 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>unhide2.png</file>
         <file>up.gif</file>
       </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_it.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>serendipity_event_downloadmanager.php</file>
+      <file>style_dlmanager_backend.css</file>
+      <file>style_dlmanager_frontend.css</file>
+      <file>TODO</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_it.inc.php</file>
         <file>lang_ja.inc.php</file>
-        <file>serendipity_event_downloadmanager.php</file>
-        <file>style_dlmanager_backend.css</file>
-        <file>style_dlmanager_frontend.css</file>
-        <file>TODO</file>
-      <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_it.inc.php</file>
-          <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_downloadmanager/.htaccess</file>
@@ -2218,64 +2188,63 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_en.inc.php</file>
       <file>serendipity_event_dpsyntaxhighlighter.php</file>
       <dir name="sh">
-      <dir name="3.0.83">
-        <dir name="scripts">
-        <file>shAutoloader.js</file>
-        <file>shBrushAppleScript.js</file>
-        <file>shBrushAS3.js</file>
-        <file>shBrushBash.js</file>
-        <file>shBrushColdFusion.js</file>
-        <file>shBrushCpp.js</file>
-        <file>shBrushCSharp.js</file>
-        <file>shBrushCss.js</file>
-        <file>shBrushDelphi.js</file>
-        <file>shBrushDiff.js</file>
-        <file>shBrushErlang.js</file>
-        <file>shBrushGroovy.js</file>
-        <file>shBrushJava.js</file>
-        <file>shBrushJavaFX.js</file>
-        <file>shBrushJScript.js</file>
-        <file>shBrushPerl.js</file>
-        <file>shBrushPhp.js</file>
-        <file>shBrushPlain.js</file>
-        <file>shBrushPowerShell.js</file>
-        <file>shBrushPython.js</file>
-        <file>shBrushRuby.js</file>
-        <file>shBrushSass.js</file>
-        <file>shBrushScala.js</file>
-        <file>shBrushSql.js</file>
-        <file>shBrushVb.js</file>
-        <file>shBrushXml.js</file>
-        <file>shCore.js</file>
-        <file>shLegacy.js</file>
-        </dir>
-          <dir name="styles">
-        <file>shCore.css</file>
-        <file>shCoreDefault.css</file>
-        <file>shCoreDjango.css</file>
-        <file>shCoreEclipse.css</file>
-        <file>shCoreEmacs.css</file>
-        <file>shCoreFadeToGrey.css</file>
-        <file>shCoreMDUltra.css</file>
-        <file>shCoreMidnight.css</file>
-        <file>shCoreRDark.css</file>
-        <file>shThemeDefault.css</file>
-        <file>shThemeDjango.css</file>
-        <file>shThemeEclipse.css</file>
-        <file>shThemeEmacs.css</file>
-        <file>shThemeFadeToGrey.css</file>
-        <file>shThemeMDUltra.css</file>
-        <file>shThemeMidnight.css</file>
-        <file>shThemeRDark.css</file>
+        <dir name="3.0.83">
+          <dir name="scripts">
+            <file>shAutoloader.js</file>
+            <file>shBrushAppleScript.js</file>
+            <file>shBrushAS3.js</file>
+            <file>shBrushBash.js</file>
+            <file>shBrushColdFusion.js</file>
+            <file>shBrushCpp.js</file>
+            <file>shBrushCSharp.js</file>
+            <file>shBrushCss.js</file>
+            <file>shBrushDelphi.js</file>
+            <file>shBrushDiff.js</file>
+            <file>shBrushErlang.js</file>
+            <file>shBrushGroovy.js</file>
+            <file>shBrushJava.js</file>
+            <file>shBrushJavaFX.js</file>
+            <file>shBrushJScript.js</file>
+            <file>shBrushPerl.js</file>
+            <file>shBrushPhp.js</file>
+            <file>shBrushPlain.js</file>
+            <file>shBrushPowerShell.js</file>
+            <file>shBrushPython.js</file>
+            <file>shBrushRuby.js</file>
+            <file>shBrushSass.js</file>
+            <file>shBrushScala.js</file>
+            <file>shBrushSql.js</file>
+            <file>shBrushVb.js</file>
+            <file>shBrushXml.js</file>
+            <file>shCore.js</file>
+            <file>shLegacy.js</file>
           </dir>
-      </dir>
+          <dir name="styles">
+            <file>shCore.css</file>
+            <file>shCoreDefault.css</file>
+            <file>shCoreDjango.css</file>
+            <file>shCoreEclipse.css</file>
+            <file>shCoreEmacs.css</file>
+            <file>shCoreFadeToGrey.css</file>
+            <file>shCoreMDUltra.css</file>
+            <file>shCoreMidnight.css</file>
+            <file>shCoreRDark.css</file>
+            <file>shThemeDefault.css</file>
+            <file>shThemeDjango.css</file>
+            <file>shThemeEclipse.css</file>
+            <file>shThemeEmacs.css</file>
+            <file>shThemeFadeToGrey.css</file>
+            <file>shThemeMDUltra.css</file>
+            <file>shThemeMidnight.css</file>
+            <file>shThemeRDark.css</file>
+          </dir>
+        </dir>
       </dir>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_dpsyntaxhighlighter/.htaccess</file>
@@ -2368,8 +2337,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_email_bot_obfuscator/.htaccess</file>
@@ -2424,8 +2392,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_emoticonchooser/.htaccess</file>
@@ -2477,8 +2444,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_fr.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_entrycheck/lang_bg.inc.php</file>
@@ -2525,8 +2491,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_entrylastmodified/lang_bg.inc.php</file>
@@ -2577,8 +2542,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_ko.inc.php</file>
         <file>lang_pl.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_entrypaging/ChangeLog</file>
@@ -2630,8 +2594,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_ja.inc.php</file>
         <file>lang_tr.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_entrysplit/lang_bg.inc.php</file>
@@ -2682,8 +2645,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_externalauth/.htaccess</file>
@@ -2731,8 +2693,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_externalphp/ChangeLog</file>
@@ -2775,8 +2736,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_facebook/.htaccess</file>
@@ -2812,57 +2772,56 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>plugin_faq_category_faq.tpl</file>
         <file>plugin_faq_category_faqs.tpl</file>
       </dir>
-        <file>ChangeLog</file>
-        <file>class_inspectConfig.php</file>
-        <file>documentation_cs.html</file>
-        <file>documentation_cz.html</file>
+      <file>ChangeLog</file>
+      <file>class_inspectConfig.php</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
       <dir name="img">
-          <file>base.gif</file>
-          <file>category.png</file>
-          <file>empty.gif</file>
-          <file>folder.gif</file>
-          <file>folderopen.gif</file>
-          <file>join.gif</file>
-          <file>joinbottom.gif</file>
-          <file>line.gif</file>
-          <file>minus.gif</file>
-          <file>minusbottom.gif</file>
-          <file>move_down.png</file>
-          <file>move_up.png</file>
-          <file>nolines_minus.gif</file>
-          <file>nolines_plus.gif</file>
-          <file>page.gif</file>
-          <file>plus.gif</file>
-          <file>plusbottom.gif</file>
-          <file>question.svg</file>
-          <file>question.svg.png</file>
+        <file>base.gif</file>
+        <file>category.png</file>
+        <file>empty.gif</file>
+        <file>folder.gif</file>
+        <file>folderopen.gif</file>
+        <file>join.gif</file>
+        <file>joinbottom.gif</file>
+        <file>line.gif</file>
+        <file>minus.gif</file>
+        <file>minusbottom.gif</file>
+        <file>move_down.png</file>
+        <file>move_up.png</file>
+        <file>nolines_minus.gif</file>
+        <file>nolines_plus.gif</file>
+        <file>page.gif</file>
+        <file>plus.gif</file>
+        <file>plusbottom.gif</file>
+        <file>question.svg</file>
+        <file>question.svg.png</file>
       </dir>
-        <file>jquery.serendipity_old_plain_editor.js</file>
+      <file>jquery.serendipity_old_plain_editor.js</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>plugin_faq_categories.tpl</file>
+      <file>plugin_faq_category_faq.tpl</file>
+      <file>plugin_faq_category_faqs.tpl</file>
+      <file>plugin_faq_searchresults.tpl</file>
+      <file>serendipity_event_faq.php</file>
+      <file>serendipity_plugin_faq.php</file>
+      <file>smartytags.txt</file>
+      <file>style_faq_backend.css</file>
+      <file>style_faq_frontend.css</file>
+      <file>TODO</file>
+      <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_ja.inc.php</file>
-        <file>plugin_faq_categories.tpl</file>
-        <file>plugin_faq_category_faq.tpl</file>
-        <file>plugin_faq_category_faqs.tpl</file>
-        <file>plugin_faq_searchresults.tpl</file>
-        <file>serendipity_event_faq.php</file>
-        <file>serendipity_plugin_faq.php</file>
-        <file>smartytags.txt</file>
-        <file>style_faq_backend.css</file>
-        <file>style_faq_frontend.css</file>
-        <file>TODO</file>
-        <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_ja.inc.php</file>
-        </dir>
-</dir>
-
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_faq/.htaccess</file>
@@ -2937,8 +2896,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <dir name="UTF-8">
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_feed/feedblock.tpl</file>
@@ -2979,8 +2937,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_filter_entries/.htaccess</file>
@@ -3052,21 +3009,20 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>wong18.gif</file>
         <file>yahoomyweb.png</file>
       </dir>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>plugin_findmore.tpl</file>
+      <file>serendipity_event_findmore.php</file>
+      <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_pl.inc.php</file>
-        <file>plugin_findmore.tpl</file>
-        <file>serendipity_event_findmore.php</file>
-      <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_pl.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_findmore/.htaccess</file>
@@ -3147,8 +3103,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_flattr/.htaccess</file>
@@ -3192,15 +3147,14 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>phpFlickr.php</file>
         <file>xml.php</file>
       </dir>
-        <file>Readme.txt</file>
-        <file>serendipity_event_flickr.php</file>
+      <file>Readme.txt</file>
+      <file>serendipity_event_flickr.php</file>
       <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_fr.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_fr.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_flickr/.htaccess</file>
@@ -3253,8 +3207,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_forgotpassword/.htaccess</file>
@@ -3301,7 +3254,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>buttons.xcf</file>
         <file>close.png</file>
         <file>delete.png</file>
-      <dir name="dlicons">
+        <dir name="dlicons">
           <file>3ds.png</file>
           <file>ac3.png</file>
           <file>ace.png</file>
@@ -3379,7 +3332,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
           <file>xls.png</file>
           <file>xpm.png</file>
           <file>zip.png</file>
-      </dir>
+        </dir>
         <file>edit.png</file>
         <file>icon_latest_reply.gif</file>
         <file>move.png</file>
@@ -3402,31 +3355,30 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>ColorPicker2.js</file>
         <file>functions.inc.php</file>
       </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>serendipity_event_forum.php</file>
+      <dir name="templates">
+        <file>boardlist.tpl</file>
+        <file>deleteform.tpl</file>
+        <file>editform.tpl</file>
+        <file>newthread.tpl</file>
+        <file>postlist.tpl</file>
+        <file>replyform.tpl</file>
+        <file>threadlist.tpl</file>
+      </dir>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_fr.inc.php</file>
         <file>lang_ja.inc.php</file>
-        <file>serendipity_event_forum.php</file>
-        <dir name="templates">
-          <file>boardlist.tpl</file>
-          <file>deleteform.tpl</file>
-          <file>editform.tpl</file>
-          <file>newthread.tpl</file>
-          <file>postlist.tpl</file>
-          <file>replyform.tpl</file>
-          <file>threadlist.tpl</file>
-        </dir>
-          <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_fr.inc.php</file>
-          <file>lang_ja.inc.php</file>
-          </dir>
-</dir>
-
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_forum/.htaccess</file>
@@ -3579,17 +3531,37 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <dir name="img">
         <file>technorati.jpg</file>
       </dir>
-        <file>jquery-1.11.3.min.js</file>
-        <file>jquery.autocomplete.js</file>
-        <file>jquery.autocomplete.min.css</file>
-        <file>jquery.autocomplete.min.js</file>
-        <file>jquery.awesomeCloud-0.2.js</file>
-        <file>jquery.tagcanvas.min.js</file>
+      <file>jquery-1.11.3.min.js</file>
+      <file>jquery.autocomplete.js</file>
+      <file>jquery.autocomplete.min.css</file>
+      <file>jquery.autocomplete.min.js</file>
+      <file>jquery.awesomeCloud-0.2.js</file>
+      <file>jquery.tagcanvas.min.js</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_hu.inc.php</file>
+      <file>lang_it.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>lang_nl.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>lang_se.inc.php</file>
+      <file>plugin_freetag.tpl</file>
+      <file>README</file>
+      <file>README.txt</file>
+      <file>serendipity_event_freetag.php</file>
+      <file>serendipity_plugin_freetag.php</file>
+      <file>swfobject.js</file>
+      <file>tagcloud.swf</file>
+      <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_fr.inc.php</file>
         <file>lang_hu.inc.php</file>
         <file>lang_it.inc.php</file>
@@ -3598,29 +3570,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_nl.inc.php</file>
         <file>lang_pl.inc.php</file>
         <file>lang_se.inc.php</file>
-        <file>plugin_freetag.tpl</file>
-        <file>README</file>
-        <file>README.txt</file>
-        <file>serendipity_event_freetag.php</file>
-        <file>serendipity_plugin_freetag.php</file>
-        <file>swfobject.js</file>
-        <file>tagcloud.swf</file>
-      <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_fr.inc.php</file>
-          <file>lang_hu.inc.php</file>
-          <file>lang_it.inc.php</file>
-          <file>lang_ja.inc.php</file>
-          <file>lang_ko.inc.php</file>
-          <file>lang_nl.inc.php</file>
-          <file>lang_pl.inc.php</file>
-          <file>lang_se.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_freetag/.htaccess</file>
@@ -3695,8 +3646,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_galleryimage/ChangeLog</file>
@@ -3745,8 +3695,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_geotag/.htaccess</file>
@@ -3800,8 +3749,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_geourl/.htaccess</file>
@@ -3959,22 +3907,21 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>xpp.php</file>
         <file>z80.php</file>
       </dir>
-        <file>geshi.php</file>
+      <file>geshi.php</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>readme.txt</file>
+      <file>serendipity_event_geshi.php</file>
+      <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>readme.txt</file>
-        <file>serendipity_event_geshi.php</file>
-      <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_geshi/.htaccess</file>
@@ -4144,8 +4091,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_getid3/.htaccess</file>
@@ -4191,8 +4137,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_glossary/lang_bg.inc.php</file>
@@ -4238,20 +4183,19 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>taginfo</file>
         <file>verifymsg</file>
       </dir>
-        <file>documentation_cs.html</file>
-        <file>documentation_cz.html</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_event_google_analytics.php</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>serendipity_event_google_analytics.php</file>
-      <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_google_analytics/.htaccess</file>
@@ -4314,8 +4258,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_pl.inc.php</file>
         <file>lang_zh.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_google_sitemap/.htaccess</file>
@@ -4361,87 +4304,87 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>monsterid.png</file>
         <file>wavatars.jpg</file>
       </dir>
-        <file>documentation_cs.html</file>
-        <file>documentation_cz.html</file>
-        <file>documentation_de.html</file>
-        <file>documentation_en.html</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>documentation_de.html</file>
+      <file>documentation_en.html</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <dir name="monsterid">
+        <file>monsterid.php</file>
+        <dir name="parts">
+          <file>arms_1.png</file>
+          <file>arms_2.png</file>
+          <file>arms_3.png</file>
+          <file>arms_4.png</file>
+          <file>arms_5.png</file>
+          <file>body_1.png</file>
+          <file>body_10.png</file>
+          <file>body_11.png</file>
+          <file>body_12.png</file>
+          <file>body_13.png</file>
+          <file>body_14.png</file>
+          <file>body_15.png</file>
+          <file>body_2.png</file>
+          <file>body_3.png</file>
+          <file>body_4.png</file>
+          <file>body_5.png</file>
+          <file>body_6.png</file>
+          <file>body_7.png</file>
+          <file>body_8.png</file>
+          <file>body_9.png</file>
+          <file>eyes_1.png</file>
+          <file>eyes_10.png</file>
+          <file>eyes_11.png</file>
+          <file>eyes_12.png</file>
+          <file>eyes_13.png</file>
+          <file>eyes_14.png</file>
+          <file>eyes_15.png</file>
+          <file>eyes_2.png</file>
+          <file>eyes_3.png</file>
+          <file>eyes_4.png</file>
+          <file>eyes_5.png</file>
+          <file>eyes_6.png</file>
+          <file>eyes_7.png</file>
+          <file>eyes_8.png</file>
+          <file>eyes_9.png</file>
+          <file>hair_1.png</file>
+          <file>hair_2.png</file>
+          <file>hair_3.png</file>
+          <file>hair_4.png</file>
+          <file>hair_5.png</file>
+          <file>image.info</file>
+          <file>legs_1.png</file>
+          <file>legs_2.png</file>
+          <file>legs_3.png</file>
+          <file>legs_4.png</file>
+          <file>legs_5.png</file>
+          <file>monsterparts.xcf</file>
+          <file>mouth_1.png</file>
+          <file>mouth_10.png</file>
+          <file>mouth_2.png</file>
+          <file>mouth_3.png</file>
+          <file>mouth_4.png</file>
+          <file>mouth_5.png</file>
+          <file>mouth_6.png</file>
+          <file>mouth_7.png</file>
+          <file>mouth_8.png</file>
+          <file>mouth_9.png</file>
+        </dir>
+        <file>README</file>
+      </dir>
+      <file>serendipity_event_gravatar.php</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_pl.inc.php</file>
-      <dir name="monsterid">
-          <file>monsterid.php</file>
-        <dir name="parts">
-            <file>arms_1.png</file>
-            <file>arms_2.png</file>
-            <file>arms_3.png</file>
-            <file>arms_4.png</file>
-            <file>arms_5.png</file>
-            <file>body_1.png</file>
-            <file>body_10.png</file>
-            <file>body_11.png</file>
-            <file>body_12.png</file>
-            <file>body_13.png</file>
-            <file>body_14.png</file>
-            <file>body_15.png</file>
-            <file>body_2.png</file>
-            <file>body_3.png</file>
-            <file>body_4.png</file>
-            <file>body_5.png</file>
-            <file>body_6.png</file>
-            <file>body_7.png</file>
-            <file>body_8.png</file>
-            <file>body_9.png</file>
-            <file>eyes_1.png</file>
-            <file>eyes_10.png</file>
-            <file>eyes_11.png</file>
-            <file>eyes_12.png</file>
-            <file>eyes_13.png</file>
-            <file>eyes_14.png</file>
-            <file>eyes_15.png</file>
-            <file>eyes_2.png</file>
-            <file>eyes_3.png</file>
-            <file>eyes_4.png</file>
-            <file>eyes_5.png</file>
-            <file>eyes_6.png</file>
-            <file>eyes_7.png</file>
-            <file>eyes_8.png</file>
-            <file>eyes_9.png</file>
-            <file>hair_1.png</file>
-            <file>hair_2.png</file>
-            <file>hair_3.png</file>
-            <file>hair_4.png</file>
-            <file>hair_5.png</file>
-            <file>image.info</file>
-            <file>legs_1.png</file>
-            <file>legs_2.png</file>
-            <file>legs_3.png</file>
-            <file>legs_4.png</file>
-            <file>legs_5.png</file>
-            <file>monsterparts.xcf</file>
-            <file>mouth_1.png</file>
-            <file>mouth_10.png</file>
-            <file>mouth_2.png</file>
-            <file>mouth_3.png</file>
-            <file>mouth_4.png</file>
-            <file>mouth_5.png</file>
-            <file>mouth_6.png</file>
-            <file>mouth_7.png</file>
-            <file>mouth_8.png</file>
-            <file>mouth_9.png</file>
-        </dir>
-          <file>README</file>
       </dir>
-        <file>serendipity_event_gravatar.php</file>
-        <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_pl.inc.php</file>
-        </dir>
-          <dir name="wavatars">
-            <dir name="parts">
+      <dir name="wavatars">
+        <dir name="parts">
           <file>brow1.png</file>
           <file>brow2.png</file>
           <file>brow3.png</file>
@@ -4519,15 +4462,14 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
           <file>shine7.png</file>
           <file>shine8.png</file>
           <file>shine9.png</file>
-            </dir>
-          <file>wavatars.php</file>
-          </dir>
-            <dir name="ycon">
-          <file>ycon.image.php</file>
-          <file>ycon.php</file>
-            </dir>
-</dir>
-
+        </dir>
+        <file>wavatars.php</file>
+      </dir>
+      <dir name="ycon">
+        <file>ycon.image.php</file>
+        <file>ycon.php</file>
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_gravatar/.htaccess</file>
@@ -4724,40 +4666,39 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>quote-start.gif</file>
         <file>shorttime.gif</file>
       </dir>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>lang_nl.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>lang_se.inc.php</file>
+      <file>plugin_guestbook_backend_dbc.tpl</file>
+      <file>plugin_guestbook_backend_entries.tpl</file>
+      <file>plugin_guestbook_backend_form.tpl</file>
+      <file>plugin_guestbook_backend_header.tpl</file>
+      <file>plugin_guestbook_entries.tpl</file>
+      <file>plugin_guestbook_form.tpl</file>
+      <file>README</file>
+      <file>serendipity_event_guestbook.php</file>
+      <file>serendipity_plugin_guestbook.php</file>
+      <file>style_guestbook_backend.css</file>
+      <file>style_guestbook_frontend.css</file>
+      <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_ja.inc.php</file>
         <file>lang_ko.inc.php</file>
         <file>lang_nl.inc.php</file>
         <file>lang_pl.inc.php</file>
         <file>lang_se.inc.php</file>
-        <file>plugin_guestbook_backend_dbc.tpl</file>
-        <file>plugin_guestbook_backend_entries.tpl</file>
-        <file>plugin_guestbook_backend_form.tpl</file>
-        <file>plugin_guestbook_backend_header.tpl</file>
-        <file>plugin_guestbook_entries.tpl</file>
-        <file>plugin_guestbook_form.tpl</file>
-        <file>README</file>
-        <file>serendipity_event_guestbook.php</file>
-        <file>serendipity_plugin_guestbook.php</file>
-        <file>style_guestbook_backend.css</file>
-        <file>style_guestbook_frontend.css</file>
-      <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_ja.inc.php</file>
-          <file>lang_ko.inc.php</file>
-          <file>lang_nl.inc.php</file>
-          <file>lang_pl.inc.php</file>
-          <file>lang_se.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_guestbook/.htaccess</file>
@@ -4836,8 +4777,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_pl.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_head_nugget/lang_bg.inc.php</file>
@@ -4876,8 +4816,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_httpauth/lang_cs.inc.php</file>
@@ -4925,8 +4864,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_imageselectorplus/.htaccess</file>
@@ -4985,8 +4923,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_includeentry/.htaccess</file>
@@ -5045,14 +4982,31 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>stars-def-yellow-red-md.png</file>
         <file>stars-def-yellow-red-sm.png</file>
       </dir>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cn.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_es.inc.php</file>
+      <file>lang_fa.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>lang_pt_PT.inc.php</file>
+      <file>lang_ru.inc.php</file>
+      <file>lang_sk.inc.php</file>
+      <file>lang_tn.inc.php</file>
+      <file>lang_zh.inc.php</file>
+      <file>serendipity_event_karma.php</file>
+      <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cn.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_es.inc.php</file>
-        <file>lang_fa.inc.php</file>
         <file>lang_fr.inc.php</file>
         <file>lang_ja.inc.php</file>
         <file>lang_ko.inc.php</file>
@@ -5062,26 +5016,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_sk.inc.php</file>
         <file>lang_tn.inc.php</file>
         <file>lang_zh.inc.php</file>
-        <file>serendipity_event_karma.php</file>
-      <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cn.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_es.inc.php</file>
-          <file>lang_fr.inc.php</file>
-          <file>lang_ja.inc.php</file>
-          <file>lang_ko.inc.php</file>
-          <file>lang_pl.inc.php</file>
-          <file>lang_pt_PT.inc.php</file>
-          <file>lang_ru.inc.php</file>
-          <file>lang_sk.inc.php</file>
-          <file>lang_tn.inc.php</file>
-          <file>lang_zh.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_karma/.htaccess</file>
@@ -5163,8 +5099,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_kubrickheader/lang_cs.inc.php</file>
@@ -5205,8 +5140,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_tr.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_layout_printerfriendly/lang_bg.inc.php</file>
@@ -5243,7 +5177,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <dir name="colorbox">
         <file>colorbox.css</file>
         <file>colorboxScreens.css</file>
-      <dir name="i18n">
+        <dir name="i18n">
           <file>jquery.colorbox-ar.js</file>
           <file>jquery.colorbox-bg.js</file>
           <file>jquery.colorbox-bn.js</file>
@@ -5282,7 +5216,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
           <file>jquery.colorbox-uk.js</file>
           <file>jquery.colorbox-zh-CN.js</file>
           <file>jquery.colorbox-zh-TW.js</file>
-      </dir>
+        </dir>
         <dir name="images">
           <file>border.png</file>
           <file>controls.png</file>
@@ -5295,115 +5229,114 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>jquery.colorbox.js</file>
         <file>README.md</file>
       </dir>
-        <file>documentation_cs.html</file>
-        <file>documentation_cz.html</file>
-        <file>jquery-1.11.3.min.js</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>lang_pl.inc.php</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>jquery-1.11.3.min.js</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_pl.inc.php</file>
       <dir name="lightbox2-jquery">
         <dir name="css">
           <file>lightbox.css</file>
         </dir>
-          <dir name="images">
+        <dir name="images">
           <file>close.png</file>
           <file>loading.gif</file>
           <file>next.png</file>
           <file>prev.png</file>
-          </dir>
-            <dir name="js">
+        </dir>
+        <dir name="js">
           <file>lightbox-plus-jquery.js</file>
           <file>lightbox-plus-jquery.min.js</file>
           <file>lightbox-plus-jquery.min.map</file>
           <file>lightbox.js</file>
           <file>lightbox.min.js</file>
           <file>lightbox.min.map</file>
-            </dir>
-          <file>README.md</file>
-      </dir>
-        <dir name="magnific-popup">
-          <file>jquery.magnific-popup.init.js</file>
-          <file>jquery.magnific-popup.js</file>
-          <file>jquery.magnific-popup.min.js</file>
-          <file>magnific-popup.css</file>
-          <file>README.md</file>
         </dir>
-          <dir name="prettyphoto">
-            <dir name="css">
+        <file>README.md</file>
+      </dir>
+      <dir name="magnific-popup">
+        <file>jquery.magnific-popup.init.js</file>
+        <file>jquery.magnific-popup.js</file>
+        <file>jquery.magnific-popup.min.js</file>
+        <file>magnific-popup.css</file>
+        <file>README.md</file>
+      </dir>
+      <dir name="prettyphoto">
+        <dir name="css">
           <file>prettyPhoto.css</file>
           <file>prettyPhotoScreens.css</file>
+        </dir>
+        <dir name="images">
+          <dir name="prettyPhoto">
+            <dir name="dark_rounded">
+              <file>btnNext.png</file>
+              <file>btnPrevious.png</file>
+              <file>contentPattern.png</file>
+              <file>default_thumbnail.gif</file>
+              <file>loader.gif</file>
+              <file>sprite.png</file>
             </dir>
-              <dir name="images">
-                <dir name="prettyPhoto">
-                  <dir name="dark_rounded">
-          <file>btnNext.png</file>
-          <file>btnPrevious.png</file>
-          <file>contentPattern.png</file>
-          <file>default_thumbnail.gif</file>
-          <file>loader.gif</file>
-          <file>sprite.png</file>
-                  </dir>
-                    <dir name="dark_square">
-          <file>btnNext.png</file>
-          <file>btnPrevious.png</file>
-          <file>contentPattern.png</file>
-          <file>default_thumbnail.gif</file>
-          <file>loader.gif</file>
-          <file>sprite.png</file>
-                    </dir>
-                      <dir name="default">
-          <file>default_thumb.png</file>
-          <file>loader.gif</file>
-          <file>sprite.png</file>
-          <file>sprite_next.png</file>
-          <file>sprite_prev.png</file>
-          <file>sprite_x.png</file>
-          <file>sprite_y.png</file>
-                      </dir>
-                        <dir name="facebook">
-          <file>btnNext.png</file>
-          <file>btnPrevious.png</file>
-          <file>contentPatternBottom.png</file>
-          <file>contentPatternLeft.png</file>
-          <file>contentPatternRight.png</file>
-          <file>contentPatternTop.png</file>
-          <file>default_thumbnail.gif</file>
-          <file>loader.gif</file>
-          <file>sprite.png</file>
-                        </dir>
-                          <dir name="light_rounded">
-          <file>btnNext.png</file>
-          <file>btnPrevious.png</file>
-          <file>default_thumbnail.gif</file>
-          <file>loader.gif</file>
-          <file>sprite.png</file>
-                          </dir>
-                            <dir name="light_square">
-          <file>btnNext.png</file>
-          <file>btnPrevious.png</file>
-          <file>default_thumbnail.gif</file>
-          <file>loader.gif</file>
-          <file>sprite.png</file>
-                            </dir>
-                </dir>
-              </dir>
-                <dir name="js">
+            <dir name="dark_square">
+              <file>btnNext.png</file>
+              <file>btnPrevious.png</file>
+              <file>contentPattern.png</file>
+              <file>default_thumbnail.gif</file>
+              <file>loader.gif</file>
+              <file>sprite.png</file>
+            </dir>
+            <dir name="default">
+              <file>default_thumb.png</file>
+              <file>loader.gif</file>
+              <file>sprite.png</file>
+              <file>sprite_next.png</file>
+              <file>sprite_prev.png</file>
+              <file>sprite_x.png</file>
+              <file>sprite_y.png</file>
+            </dir>
+            <dir name="facebook">
+              <file>btnNext.png</file>
+              <file>btnPrevious.png</file>
+              <file>contentPatternBottom.png</file>
+              <file>contentPatternLeft.png</file>
+              <file>contentPatternRight.png</file>
+              <file>contentPatternTop.png</file>
+              <file>default_thumbnail.gif</file>
+              <file>loader.gif</file>
+              <file>sprite.png</file>
+            </dir>
+            <dir name="light_rounded">
+              <file>btnNext.png</file>
+              <file>btnPrevious.png</file>
+              <file>default_thumbnail.gif</file>
+              <file>loader.gif</file>
+              <file>sprite.png</file>
+            </dir>
+            <dir name="light_square">
+              <file>btnNext.png</file>
+              <file>btnPrevious.png</file>
+              <file>default_thumbnail.gif</file>
+              <file>loader.gif</file>
+              <file>sprite.png</file>
+            </dir>
+          </dir>
+        </dir>
+        <dir name="js">
           <file>jquery.prettyPhoto.js</file>
           <file>jquery.prettyPhoto.min.js</file>
-                </dir>
-          <file>README</file>
-          </dir>
-        <file>serendipity_event_lightbox.php</file>
-            <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_pl.inc.php</file>
-            </dir>
-</dir>
-
+        </dir>
+        <file>README</file>
+      </dir>
+      <file>serendipity_event_lightbox.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_pl.inc.php</file>
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_lightbox/.htaccess</file>
@@ -5568,26 +5501,25 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>plus.gif</file>
         <file>plusbottom.gif</file>
       </dir>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>linklist.js</file>
+      <file>serendipity_event_dtree.css</file>
+      <file>serendipity_event_linklist.css</file>
+      <file>serendipity_event_linklist.php</file>
+      <file>serendipity_plugin_linklist.php</file>
+      <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_ja.inc.php</file>
         <file>lang_pl.inc.php</file>
-        <file>linklist.js</file>
-        <file>serendipity_event_dtree.css</file>
-        <file>serendipity_event_linklist.css</file>
-        <file>serendipity_event_linklist.php</file>
-        <file>serendipity_plugin_linklist.php</file>
-      <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_ja.inc.php</file>
-          <file>lang_pl.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_linklist/.htaccess</file>
@@ -5658,8 +5590,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_linktoolbar/.htaccess</file>
@@ -5710,8 +5641,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_linktrimmer/.htaccess</file>
@@ -5763,28 +5693,27 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>underline.png</file>
         <file>world.png</file>
       </dir>
-        <file>jquery.elastic.js</file>
-        <file>jquery.elastic.js-def</file>
-        <file>jquery.elastic.js-min</file>
-        <file>jquery.js</file>
+      <file>jquery.elastic.js</file>
+      <file>jquery.elastic.js-def</file>
+      <file>jquery.elastic.js-min</file>
+      <file>jquery.js</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>requestMarkups.js</file>
+      <file>serendipity_event_livecomment.js</file>
+      <file>serendipity_event_livecomment.js-def</file>
+      <file>serendipity_event_livecomment.php</file>
+      <file>serendipity_event_reallivecomment.js</file>
+      <file>serendipity_event_reallivecomment.js-def</file>
+      <file>serendipity_event_reallivecomment.js-min</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>requestMarkups.js</file>
-        <file>serendipity_event_livecomment.js</file>
-        <file>serendipity_event_livecomment.js-def</file>
-        <file>serendipity_event_livecomment.php</file>
-        <file>serendipity_event_reallivecomment.js</file>
-        <file>serendipity_event_reallivecomment.js-def</file>
-        <file>serendipity_event_reallivecomment.js-min</file>
-      <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_livecomment/.htaccess</file>
@@ -5871,8 +5800,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_tn.inc.php</file>
         <file>lang_zh.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_livesearch/lang_bg.inc.php</file>
@@ -5940,8 +5868,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_ja.inc.php</file>
         <file>lang_tr.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_ljupdate/ChangeLog</file>
@@ -5983,8 +5910,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_loginform/lang_cs.inc.php</file>
@@ -6024,25 +5950,24 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <dir name="libs">
         <file>simple_html_dom.php</file>
       </dir>
-        <file>LICENSE</file>
-        <file>README.md</file>
-        <file>serendipity_event_lsrstopper.php</file>
+      <file>LICENSE</file>
+      <file>README.md</file>
+      <file>serendipity_event_lsrstopper.php</file>
       <dir name="tests">
         <dir name="data">
           <file>.empty</file>
         </dir>
-          <dir name="fixtures">
+        <dir name="fixtures">
           <file>blacklist.txt</file>
-          </dir>
-          <file>lsrstopperTest.php</file>
-      </dir>
-        <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
         </dir>
-</dir>
-
+        <file>lsrstopperTest.php</file>
+      </dir>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_lsrstopper/.htaccess</file>
@@ -6082,7 +6007,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <dir name="serendipity_event_mailcc">
       <file>serendipity_event_mailcc.php</file>
 </dir>
-
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_mailcc/serendipity_event_mailcc.php</file>
@@ -6124,8 +6048,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_tr.inc.php</file>
         <file>lang_zh.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_mailentry/lang_bg.inc.php</file>
@@ -6178,7 +6101,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <dir name="lib">
         <file>composer.json</file>
         <file>License.md</file>
-      <dir name="Michelf">
+        <dir name="Michelf">
           <file>Markdown.inc.php</file>
           <file>Markdown.php</file>
           <file>MarkdownExtra.inc.php</file>
@@ -6189,25 +6112,24 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
           <file>SmartyPants.php</file>
           <file>SmartyPantsTypographer.inc.php</file>
           <file>SmartyPantsTypographer.php</file>
-      </dir>
+        </dir>
         <file>Readme.md</file>
         <file>Readme.php</file>
       </dir>
-        <file>License.text</file>
-        <file>markdown.php</file>
-        <file>markdown_extra.php</file>
-        <file>PHP_Markdown_Extra_Readme.txt</file>
-        <file>PHP_Markdown_Readme.txt</file>
-        <file>serendipity_event_markdown.php</file>
+      <file>License.text</file>
+      <file>markdown.php</file>
+      <file>markdown_extra.php</file>
+      <file>PHP_Markdown_Extra_Readme.txt</file>
+      <file>PHP_Markdown_Readme.txt</file>
+      <file>serendipity_event_markdown.php</file>
       <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_ja.inc.php</file>
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_markdown/.htaccess</file>
@@ -6271,8 +6193,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_markread/lang_bg.inc.php</file>
@@ -6318,8 +6239,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_pl.inc.php</file>
         <file>lang_ru.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_metadesc/.htaccess</file>
@@ -6370,25 +6290,24 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>icon-hcalendar.png</file>
         <file>mformats.png</file>
       </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>microformatsBackend.inc.php</file>
+      <file>README</file>
+      <file>serendipity_event_microformats.php</file>
+      <file>serendipity_plugin_microformats.php</file>
+      <file>smarty.inc.php</file>
+      <file>tabber-minimized.js</file>
+      <file>tabber.css</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_en.inc.php</file>
-        <file>microformatsBackend.inc.php</file>
-        <file>README</file>
-        <file>serendipity_event_microformats.php</file>
-        <file>serendipity_plugin_microformats.php</file>
-        <file>smarty.inc.php</file>
-        <file>tabber-minimized.js</file>
-        <file>tabber.css</file>
-      <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_en.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_microformats/.htaccess</file>
@@ -6439,22 +6358,21 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>error.gif</file>
         <file>error.png</file>
       </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <dir name="latexrender">
+        <file>class.latexrender.php</file>
+      </dir>
+      <file>serendipity_event_mimetex.js</file>
+      <file>serendipity_event_mimetex.php</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-      <dir name="latexrender">
-          <file>class.latexrender.php</file>
       </dir>
-        <file>serendipity_event_mimetex.js</file>
-        <file>serendipity_event_mimetex.php</file>
-        <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-        </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_mimetex/images/error.gif</file>
@@ -6500,89 +6418,88 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>serendipity_event_mobile_output.php</file>
       <file>template.class.php</file>
       <dir name="templates">
-      <dir name="android.app">
-        <file>commentform.tpl</file>
-        <file>comments.tpl</file>
-        <file>config.inc.php</file>
-        <file>content.tpl</file>
-        <file>entries.tpl</file>
-        <dir name="img">
-          <file>arrow.gif</file>
-          <file>arrow_prev.gif</file>
-          <file>bg_aheader.png</file>
-          <file>bg_header.png</file>
-          <file>comment_bubbles.png</file>
-          <file>spacer.gif</file>
-        </dir>
-        <file>index.tpl</file>
-        <file>info.txt</file>
-        <file>preview.png</file>
-        <file>preview_fullsize.jpg</file>
-        <file>style.css</file>
-      </dir>
-        <dir name="iphone.app">
-        <file>comments.tpl</file>
-        <file>config.inc.php</file>
-        <file>content.tpl</file>
-        <file>entries.tpl</file>
+        <dir name="android.app">
+          <file>commentform.tpl</file>
+          <file>comments.tpl</file>
+          <file>config.inc.php</file>
+          <file>content.tpl</file>
+          <file>entries.tpl</file>
           <dir name="img">
-          <file>backButton.png</file>
-          <file>blueButton.png</file>
-          <file>cancel.png</file>
-          <file>grayButton.png</file>
-          <file>listArrow.png</file>
-          <file>listArrowSel.png</file>
-          <file>listGroup.png</file>
-          <file>loading.gif</file>
-          <file>pinstripes.png</file>
-          <file>s9y_banner.png</file>
-          <file>selection.png</file>
-          <file>thumb.png</file>
-          <file>toggle.png</file>
-          <file>toggleOn.png</file>
-          <file>toolbar.png</file>
-          <file>toolButton.png</file>
-          <file>whiteButton.png</file>
+            <file>arrow.gif</file>
+            <file>arrow_prev.gif</file>
+            <file>bg_aheader.png</file>
+            <file>bg_header.png</file>
+            <file>comment_bubbles.png</file>
+            <file>spacer.gif</file>
           </dir>
-        <file>index.tpl</file>
-        <file>info.txt</file>
-        <file>iui.js</file>
-        <file>preview.png</file>
-        <file>preview_fullsize.jpg</file>
-        <file>style.css</file>
+          <file>index.tpl</file>
+          <file>info.txt</file>
+          <file>preview.png</file>
+          <file>preview_fullsize.jpg</file>
+          <file>style.css</file>
         </dir>
-          <dir name="xhtml_mp">
-        <file>comments.tpl</file>
-        <file>config.inc.php</file>
-        <file>content.tpl</file>
-        <file>entries.tpl</file>
-            <dir name="img">
-          <file>border.gif</file>
-            </dir>
-        <file>index.tpl</file>
-        <file>info.txt</file>
-        <file>style.css</file>
+        <dir name="iphone.app">
+          <file>comments.tpl</file>
+          <file>config.inc.php</file>
+          <file>content.tpl</file>
+          <file>entries.tpl</file>
+          <dir name="img">
+            <file>backButton.png</file>
+            <file>blueButton.png</file>
+            <file>cancel.png</file>
+            <file>grayButton.png</file>
+            <file>listArrow.png</file>
+            <file>listArrowSel.png</file>
+            <file>listGroup.png</file>
+            <file>loading.gif</file>
+            <file>pinstripes.png</file>
+            <file>s9y_banner.png</file>
+            <file>selection.png</file>
+            <file>thumb.png</file>
+            <file>toggle.png</file>
+            <file>toggleOn.png</file>
+            <file>toolbar.png</file>
+            <file>toolButton.png</file>
+            <file>whiteButton.png</file>
           </dir>
+          <file>index.tpl</file>
+          <file>info.txt</file>
+          <file>iui.js</file>
+          <file>preview.png</file>
+          <file>preview_fullsize.jpg</file>
+          <file>style.css</file>
+        </dir>
+        <dir name="xhtml_mp">
+          <file>comments.tpl</file>
+          <file>config.inc.php</file>
+          <file>content.tpl</file>
+          <file>entries.tpl</file>
+          <dir name="img">
+            <file>border.gif</file>
+          </dir>
+          <file>index.tpl</file>
+          <file>info.txt</file>
+          <file>style.css</file>
+        </dir>
       </dir>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-        <dir name="wurfl">
+      <dir name="wurfl">
         <file>check_wurfl.php</file>
-          <dir name="data">
+        <dir name="data">
           <file>cache.php</file>
           <file>wurfl.xml</file>
-          </dir>
+        </dir>
         <file>readme.txt</file>
         <file>update_cache.php</file>
         <file>wurfl_class.php</file>
         <file>wurfl_config.php</file>
         <file>wurfl_parser.php</file>
-        </dir>
-</dir>
-
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_mobile_output/.htaccess</file>
@@ -6703,8 +6620,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_ko.inc.php</file>
         <file>lang_tr.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_multilingual/.htaccess</file>
@@ -6768,8 +6684,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_mycalendar/.htaccess</file>
@@ -6819,8 +6734,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_mymood/.htaccess</file>
@@ -6859,8 +6773,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_newsbox/lang_cs.inc.php</file>
@@ -6898,11 +6811,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_en.inc.php</file>
       <dir name="oembed">
         <file>config.php</file>
-      <dir name="customs">
+        <dir name="customs">
           <file>AudioBooProvider.class.php</file>
           <file>PodomaticProvider.class.php</file>
           <file>PostlyProvider.class.php</file>
-      </dir>
+        </dir>
         <file>EmbedlyProvider.class.php</file>
         <file>EmbedProvider.class.php</file>
         <file>Exception404.class.php</file>
@@ -6917,16 +6830,15 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>RichEmbed.class.php</file>
         <file>VideoEmbed.class.php</file>
       </dir>
-        <file>oembed.tpl</file>
-        <file>OEmbedDatabase.php</file>
-        <file>OEmbedTemplater.php</file>
-        <file>serendipity_event_oembed.php</file>
+      <file>oembed.tpl</file>
+      <file>OEmbedDatabase.php</file>
+      <file>OEmbedTemplater.php</file>
+      <file>serendipity_event_oembed.php</file>
       <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_oembed/.htaccess</file>
@@ -6992,46 +6904,46 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>yahoo.png</file>
         <file>yahoo_small.png</file>
       </dir>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>openind.endpoints.txt</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>openind.endpoints.txt</file>
       <dir name="PHP-openid">
         <dir name="Auth">
           <dir name="OpenID">
-          <file>Association.php</file>
-          <file>AX.php</file>
-          <file>BigMath.php</file>
-          <file>Consumer.php</file>
-          <file>CryptUtil.php</file>
-          <file>DatabaseConnection.php</file>
-          <file>DiffieHellman.php</file>
-          <file>Discover.php</file>
-          <file>DumbStore.php</file>
-          <file>Extension.php</file>
-          <file>FileStore.php</file>
-          <file>HMAC.php</file>
-          <file>Interface.php</file>
-          <file>KVForm.php</file>
-          <file>MDB2Store.php</file>
-          <file>MemcachedStore.php</file>
-          <file>Message.php</file>
-          <file>MySQLStore.php</file>
-          <file>Nonce.php</file>
-          <file>PAPE.php</file>
-          <file>Parse.php</file>
-          <file>PostgreSQLStore.php</file>
-          <file>Server.php</file>
-          <file>ServerRequest.php</file>
-          <file>SQLiteStore.php</file>
-          <file>SQLStore.php</file>
-          <file>SReg.php</file>
-          <file>TrustRoot.php</file>
-          <file>URINorm.php</file>
+            <file>Association.php</file>
+            <file>AX.php</file>
+            <file>BigMath.php</file>
+            <file>Consumer.php</file>
+            <file>CryptUtil.php</file>
+            <file>DatabaseConnection.php</file>
+            <file>DiffieHellman.php</file>
+            <file>Discover.php</file>
+            <file>DumbStore.php</file>
+            <file>Extension.php</file>
+            <file>FileStore.php</file>
+            <file>HMAC.php</file>
+            <file>Interface.php</file>
+            <file>KVForm.php</file>
+            <file>MDB2Store.php</file>
+            <file>MemcachedStore.php</file>
+            <file>Message.php</file>
+            <file>MySQLStore.php</file>
+            <file>Nonce.php</file>
+            <file>PAPE.php</file>
+            <file>Parse.php</file>
+            <file>PostgreSQLStore.php</file>
+            <file>Server.php</file>
+            <file>ServerRequest.php</file>
+            <file>SQLiteStore.php</file>
+            <file>SQLStore.php</file>
+            <file>SReg.php</file>
+            <file>TrustRoot.php</file>
+            <file>URINorm.php</file>
           </dir>
           <file>OpenID.php</file>
-            <dir name="Yadis">
+          <dir name="Yadis">
             <file>HTTPFetcher.php</file>
             <file>Manager.php</file>
             <file>Misc.php</file>
@@ -7043,30 +6955,29 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
             <file>XRI.php</file>
             <file>XRIRes.php</file>
             <file>Yadis.php</file>
-            </dir>
-        </dir>
-          <file>CHANGES-2.1.0</file>
-          <file>COPYING</file>
-          <file>NEWS</file>
-          <file>README</file>
-          <file>README.Debian</file>
-          <file>README.git</file>
-          <file>README.SERENDIPITY</file>
-          <dir name="Services">
-            <file>.empty</file>
-            <dir name="Yadis">
-              <file>.empty</file>
-            </dir>
           </dir>
-      </dir>
-        <file>serendipity_event_openid.php</file>
-        <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
         </dir>
-</dir>
-
+        <file>CHANGES-2.1.0</file>
+        <file>COPYING</file>
+        <file>NEWS</file>
+        <file>README</file>
+        <file>README.Debian</file>
+        <file>README.git</file>
+        <file>README.SERENDIPITY</file>
+        <dir name="Services">
+          <file>.empty</file>
+          <dir name="Yadis">
+            <file>.empty</file>
+          </dir>
+        </dir>
+      </dir>
+      <file>serendipity_event_openid.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_openid/.htaccess</file>
@@ -7170,8 +7081,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_outdate_entries/ChangeLog</file>
@@ -7221,8 +7131,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_ko.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_page_nugget/.htaccess</file>
@@ -7271,9 +7180,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-        <file>xmlrpc.inc</file>
-</dir>
-
+      <file>xmlrpc.inc</file>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_phoneblogz/ChangeLog</file>
@@ -7319,8 +7227,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_ja.inc.php</file>
         <file>lang_tr.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_photoblog/ChangeLog</file>
@@ -7363,110 +7270,109 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_en.inc.php</file>
       <file>lang_fr.inc.php</file>
       <dir name="player">
-      <dir name="flowplayer">
-        <dir name="example">
-        <file>flowplayer-3.2.6.min.js</file>
-        <file>index.html</file>
-        <file>style.css</file>
-        </dir>
-        <file>flowplayer-3.2.7.swf</file>
-        <file>flowplayer.controls-3.2.5.swf</file>
-        <file>LICENSE.txt</file>
-        <file>README.txt</file>
-      </dir>
-        <dir name="getid3">
-        <file>dependencies.txt</file>
-        <file>extension.cache.dbm.php</file>
-        <file>extension.cache.mysql.php</file>
-        <file>getid3.lib.php</file>
-        <file>getid3.php</file>
-        <file>license.commercial.txt</file>
-        <file>license.txt</file>
-        <file>module.archive.gzip.php</file>
-        <file>module.archive.rar.php</file>
-        <file>module.archive.szip.php</file>
-        <file>module.archive.tar.php</file>
-        <file>module.archive.zip.php</file>
-        <file>module.audio-video.asf.php</file>
-        <file>module.audio-video.bink.php</file>
-        <file>module.audio-video.flv.php</file>
-        <file>module.audio-video.matroska.php</file>
-        <file>module.audio-video.mpeg.php</file>
-        <file>module.audio-video.nsv.php</file>
-        <file>module.audio-video.quicktime.php</file>
-        <file>module.audio-video.real.php</file>
-        <file>module.audio-video.riff.php</file>
-        <file>module.audio-video.swf.php</file>
-        <file>module.audio.aa.php</file>
-        <file>module.audio.aac.php</file>
-        <file>module.audio.ac3.php</file>
-        <file>module.audio.au.php</file>
-        <file>module.audio.avr.php</file>
-        <file>module.audio.bonk.php</file>
-        <file>module.audio.dss.php</file>
-        <file>module.audio.dts.php</file>
-        <file>module.audio.flac.php</file>
-        <file>module.audio.la.php</file>
-        <file>module.audio.lpac.php</file>
-        <file>module.audio.midi.php</file>
-        <file>module.audio.mod.php</file>
-        <file>module.audio.monkey.php</file>
-        <file>module.audio.mp3.php</file>
-        <file>module.audio.mpc.php</file>
-        <file>module.audio.ogg.php</file>
-        <file>module.audio.optimfrog.php</file>
-        <file>module.audio.rkau.php</file>
-        <file>module.audio.shorten.php</file>
-        <file>module.audio.tta.php</file>
-        <file>module.audio.voc.php</file>
-        <file>module.audio.vqf.php</file>
-        <file>module.audio.wavpack.php</file>
-        <file>module.graphic.bmp.php</file>
-        <file>module.graphic.gif.php</file>
-        <file>module.graphic.jpg.php</file>
-        <file>module.graphic.pcd.php</file>
-        <file>module.graphic.png.php</file>
-        <file>module.graphic.svg.php</file>
-        <file>module.graphic.tiff.php</file>
-        <file>module.misc.cue.php</file>
-        <file>module.misc.doc.php</file>
-        <file>module.misc.exe.php</file>
-        <file>module.misc.iso.php</file>
-        <file>module.misc.msoffice.php</file>
-        <file>module.misc.par2.php</file>
-        <file>module.misc.pdf.php</file>
-        <file>module.tag.apetag.php</file>
-        <file>module.tag.id3v1.php</file>
-        <file>module.tag.id3v2.php</file>
-        <file>module.tag.lyrics3.php</file>
-        <file>module.tag.xmp.php</file>
-        <file>readme.txt</file>
-        <file>write.apetag.php</file>
-        <file>write.id3v1.php</file>
-        <file>write.id3v2.php</file>
-        <file>write.lyrics3.php</file>
-        <file>write.metaflac.php</file>
-        <file>write.php</file>
-        <file>write.real.php</file>
-        <file>write.vorbiscomment.php</file>
-        </dir>
-          <dir name="xspf">
-        <file>license.txt</file>
-        <file>xspf_player_slim.as</file>
-        <file>xspf_player_slim.fla</file>
-        <file>xspf_player_slim.swf</file>
+        <dir name="flowplayer">
+          <dir name="example">
+            <file>flowplayer-3.2.6.min.js</file>
+            <file>index.html</file>
+            <file>style.css</file>
           </dir>
+          <file>flowplayer-3.2.7.swf</file>
+          <file>flowplayer.controls-3.2.5.swf</file>
+          <file>LICENSE.txt</file>
+          <file>README.txt</file>
+        </dir>
+        <dir name="getid3">
+          <file>dependencies.txt</file>
+          <file>extension.cache.dbm.php</file>
+          <file>extension.cache.mysql.php</file>
+          <file>getid3.lib.php</file>
+          <file>getid3.php</file>
+          <file>license.commercial.txt</file>
+          <file>license.txt</file>
+          <file>module.archive.gzip.php</file>
+          <file>module.archive.rar.php</file>
+          <file>module.archive.szip.php</file>
+          <file>module.archive.tar.php</file>
+          <file>module.archive.zip.php</file>
+          <file>module.audio-video.asf.php</file>
+          <file>module.audio-video.bink.php</file>
+          <file>module.audio-video.flv.php</file>
+          <file>module.audio-video.matroska.php</file>
+          <file>module.audio-video.mpeg.php</file>
+          <file>module.audio-video.nsv.php</file>
+          <file>module.audio-video.quicktime.php</file>
+          <file>module.audio-video.real.php</file>
+          <file>module.audio-video.riff.php</file>
+          <file>module.audio-video.swf.php</file>
+          <file>module.audio.aa.php</file>
+          <file>module.audio.aac.php</file>
+          <file>module.audio.ac3.php</file>
+          <file>module.audio.au.php</file>
+          <file>module.audio.avr.php</file>
+          <file>module.audio.bonk.php</file>
+          <file>module.audio.dss.php</file>
+          <file>module.audio.dts.php</file>
+          <file>module.audio.flac.php</file>
+          <file>module.audio.la.php</file>
+          <file>module.audio.lpac.php</file>
+          <file>module.audio.midi.php</file>
+          <file>module.audio.mod.php</file>
+          <file>module.audio.monkey.php</file>
+          <file>module.audio.mp3.php</file>
+          <file>module.audio.mpc.php</file>
+          <file>module.audio.ogg.php</file>
+          <file>module.audio.optimfrog.php</file>
+          <file>module.audio.rkau.php</file>
+          <file>module.audio.shorten.php</file>
+          <file>module.audio.tta.php</file>
+          <file>module.audio.voc.php</file>
+          <file>module.audio.vqf.php</file>
+          <file>module.audio.wavpack.php</file>
+          <file>module.graphic.bmp.php</file>
+          <file>module.graphic.gif.php</file>
+          <file>module.graphic.jpg.php</file>
+          <file>module.graphic.pcd.php</file>
+          <file>module.graphic.png.php</file>
+          <file>module.graphic.svg.php</file>
+          <file>module.graphic.tiff.php</file>
+          <file>module.misc.cue.php</file>
+          <file>module.misc.doc.php</file>
+          <file>module.misc.exe.php</file>
+          <file>module.misc.iso.php</file>
+          <file>module.misc.msoffice.php</file>
+          <file>module.misc.par2.php</file>
+          <file>module.misc.pdf.php</file>
+          <file>module.tag.apetag.php</file>
+          <file>module.tag.id3v1.php</file>
+          <file>module.tag.id3v2.php</file>
+          <file>module.tag.lyrics3.php</file>
+          <file>module.tag.xmp.php</file>
+          <file>readme.txt</file>
+          <file>write.apetag.php</file>
+          <file>write.id3v1.php</file>
+          <file>write.id3v2.php</file>
+          <file>write.lyrics3.php</file>
+          <file>write.metaflac.php</file>
+          <file>write.php</file>
+          <file>write.real.php</file>
+          <file>write.vorbiscomment.php</file>
+        </dir>
+        <dir name="xspf">
+          <file>license.txt</file>
+          <file>xspf_player_slim.as</file>
+          <file>xspf_player_slim.fla</file>
+          <file>xspf_player_slim.swf</file>
+        </dir>
       </dir>
-        <file>podcast_player.php</file>
-        <file>serendipity_event_podcast.php</file>
+      <file>podcast_player.php</file>
+      <file>serendipity_event_podcast.php</file>
       <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_fr.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_fr.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_podcast/.htaccess</file>
@@ -7605,16 +7511,15 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>mail_germany_mmstt.txt</file>
         <file>mail_germany_o2.txt</file>
       </dir>
-        <file>tmobile.php</file>
+      <file>tmobile.php</file>
       <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_en.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_en.inc.php</file>
       </dir>
-        <file>verizon.php</file>
-</dir>
-
+      <file>verizon.php</file>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_popfetcher/.htaccess</file>
@@ -7676,14 +7581,13 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>prettify.js</file>
         <file>pre_bg.gif</file>
       </dir>
-        <file>serendipity_event_prettify.php</file>
+      <file>serendipity_event_prettify.php</file>
       <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_prettify/ChangeLog</file>
@@ -7738,8 +7642,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_proxy_realip/.htaccess</file>
@@ -7780,8 +7683,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_randomblogdescription/lang_cs.inc.php</file>
@@ -7820,8 +7722,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_en.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_realtimecomments/lang_cs.inc.php</file>
@@ -7864,14 +7765,13 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>README</file>
         <file>recaptchalib.php</file>
       </dir>
-        <file>serendipity_event_recaptcha.php</file>
+      <file>serendipity_event_recaptcha.php</file>
       <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_recaptcha/.htaccess</file>
@@ -7919,15 +7819,14 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>Twitter.php</file>
         <file>Wikipedia.php</file>
       </dir>
-        <file>serendipity_event_regexpmarkup.php</file>
+      <file>serendipity_event_regexpmarkup.php</file>
       <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_regexpmarkup/ChangeLog</file>
@@ -7983,8 +7882,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_pl.inc.php</file>
         <file>lang_tr.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_relatedlinks/ChangeLog</file>
@@ -8056,8 +7954,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_tn.inc.php</file>
         <file>lang_zh.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_searchhighlight/.htaccess</file>
@@ -8123,8 +8020,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_sidebarhider/ChangeLog</file>
@@ -8170,8 +8066,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_smartymarkup/.htaccess</file>
@@ -8222,15 +8117,14 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>LICENSE</file>
         <file>README</file>
       </dir>
-        <file>serendipity_event_smtpmail.php</file>
-        <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_en.inc.php</file>
-        </dir>
-</dir>
-
+      <file>serendipity_event_smtpmail.php</file>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_en.inc.php</file>
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_smtpmail/lang_cs.inc.php</file>
@@ -8280,8 +8174,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <dir name="UTF-8">
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_social/ChangeLog</file>
@@ -8319,36 +8212,35 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>bayesRecyclermenu.tpl</file>
         <file>serendipity_event_spamblock_bayes.css</file>
       </dir>
-        <file>bayes_commentlist.js</file>
-        <file>ChangeLog</file>
-        <file>credit.txt</file>
-        <file>details.polyfill.min.js</file>
-        <file>documentation_cs.html</file>
-        <file>documentation_cz.html</file>
-        <file>documentation_de.html</file>
+      <file>bayes_commentlist.js</file>
+      <file>ChangeLog</file>
+      <file>credit.txt</file>
+      <file>details.polyfill.min.js</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>documentation_de.html</file>
       <dir name="img">
-          <file>spamblock_bayes.load.gif</file>
-          <file>spamblock_bayes.spam.png</file>
+        <file>spamblock_bayes.load.gif</file>
+        <file>spamblock_bayes.spam.png</file>
       </dir>
-        <file>jquery.excerpt.js</file>
-        <file>jquery.heatcolor.js</file>
-        <file>jquery.tablesorter.js</file>
+      <file>jquery.excerpt.js</file>
+      <file>jquery.heatcolor.js</file>
+      <file>jquery.tablesorter.js</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>load.gif</file>
+      <file>publicTrojaKey.pem</file>
+      <file>serendipity_event_spamblock_bayes.css</file>
+      <file>serendipity_event_spamblock_bayes.js</file>
+      <file>serendipity_event_spamblock_bayes.php</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>load.gif</file>
-        <file>publicTrojaKey.pem</file>
-        <file>serendipity_event_spamblock_bayes.css</file>
-        <file>serendipity_event_spamblock_bayes.js</file>
-        <file>serendipity_event_spamblock_bayes.php</file>
-        <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-        </dir>
-</dir>
-
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_spamblock_bayes/.htaccess</file>
@@ -8406,22 +8298,21 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>JSON.php</file>
         <file>json.php4.include.php</file>
       </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_event_spamblock_bee.js</file>
+      <file>serendipity_event_spamblock_bee.php</file>
+      <file>serendipity_plugin_spamblock_bee.php</file>
+      <file>spamblockbee.png</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>serendipity_event_spamblock_bee.js</file>
-        <file>serendipity_event_spamblock_bee.php</file>
-        <file>serendipity_plugin_spamblock_bee.php</file>
-        <file>spamblockbee.png</file>
-      <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
       </dir>
-        <file>version.inc.php</file>
-</dir>
-
+      <file>version.inc.php</file>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_spamblock_bee/ChangeLog</file>
@@ -8470,8 +8361,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_spamblock_rbl/ChangeLog</file>
@@ -8514,8 +8404,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_spamblock_surbl/lang_cs.inc.php</file>
@@ -8547,7 +8436,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_en.inc.php</file>
       <file>serendipity_event_stalkerbuster.php</file>
 </dir>
-
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_stalkerbuster/lang_en.inc.php</file>
@@ -8580,8 +8468,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_startcat/ChangeLog</file>
@@ -8618,73 +8505,72 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>responsive_template.tpl</file>
         <file>typeform_staticpage_backend.tpl</file>
       </dir>
-        <file>ChangeLog</file>
-        <file>class_inspectConfig.php</file>
-        <file>documentation_cs.html</file>
-        <file>documentation_cz.html</file>
-        <file>documentation_en.html</file>
-        <file>dtree.css</file>
-        <file>dtree.js</file>
+      <file>ChangeLog</file>
+      <file>class_inspectConfig.php</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>documentation_en.html</file>
+      <file>dtree.css</file>
+      <file>dtree.js</file>
       <dir name="img">
-          <file>base.gif</file>
-          <file>empty.gif</file>
-          <file>folder.gif</file>
-          <file>folderopen.gif</file>
-          <file>join.gif</file>
-          <file>joinbottom.gif</file>
-          <file>line.gif</file>
-          <file>minus.gif</file>
-          <file>minusbottom.gif</file>
-          <file>nolines_minus.gif</file>
-          <file>nolines_plus.gif</file>
-          <file>page.gif</file>
-          <file>page.png</file>
-          <file>plus.gif</file>
-          <file>plusbottom.gif</file>
+        <file>base.gif</file>
+        <file>empty.gif</file>
+        <file>folder.gif</file>
+        <file>folderopen.gif</file>
+        <file>join.gif</file>
+        <file>joinbottom.gif</file>
+        <file>line.gif</file>
+        <file>minus.gif</file>
+        <file>minusbottom.gif</file>
+        <file>nolines_minus.gif</file>
+        <file>nolines_plus.gif</file>
+        <file>page.gif</file>
+        <file>page.png</file>
+        <file>plus.gif</file>
+        <file>plusbottom.gif</file>
       </dir>
-        <file>jquery.simplePagination.js</file>
+      <file>jquery.simplePagination.js</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_it.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>lang_se.inc.php</file>
+      <file>lang_tr.inc.php</file>
+      <file>plugin_staticpage.tpl</file>
+      <file>plugin_staticpage_aboutpage.tpl</file>
+      <file>plugin_staticpage_includeentry.tpl</file>
+      <file>plugin_staticpage_related_category.tpl</file>
+      <file>plugin_staticpage_searchresults.tpl</file>
+      <file>plugin_staticpage_sidebar.tpl</file>
+      <file>README.md</file>
+      <file>README_FOR_CUSTOM_FIELDS.txt</file>
+      <file>README_FOR_RELATED_CATEGORIES.txt</file>
+      <file>serendipity_event_staticpage.php</file>
+      <file>serendipity_plugin_staticpage.php</file>
+      <file>smarty.inc.php</file>
+      <file>Smarty_and_CSS_Tags</file>
+      <file>staticpage-entries-listing.tpl</file>
+      <file>staticpage_backend.css</file>
+      <file>staticpage_backend.js</file>
+      <file>svg_iconizr.tpl</file>
+      <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_it.inc.php</file>
         <file>lang_ja.inc.php</file>
         <file>lang_ko.inc.php</file>
         <file>lang_pl.inc.php</file>
         <file>lang_se.inc.php</file>
         <file>lang_tr.inc.php</file>
-        <file>plugin_staticpage.tpl</file>
-        <file>plugin_staticpage_aboutpage.tpl</file>
-        <file>plugin_staticpage_includeentry.tpl</file>
-        <file>plugin_staticpage_related_category.tpl</file>
-        <file>plugin_staticpage_searchresults.tpl</file>
-        <file>plugin_staticpage_sidebar.tpl</file>
-        <file>README.md</file>
-        <file>README_FOR_CUSTOM_FIELDS.txt</file>
-        <file>README_FOR_RELATED_CATEGORIES.txt</file>
-        <file>serendipity_event_staticpage.php</file>
-        <file>serendipity_plugin_staticpage.php</file>
-        <file>smarty.inc.php</file>
-        <file>Smarty_and_CSS_Tags</file>
-        <file>staticpage-entries-listing.tpl</file>
-        <file>staticpage_backend.css</file>
-        <file>staticpage_backend.js</file>
-        <file>svg_iconizr.tpl</file>
-        <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_it.inc.php</file>
-          <file>lang_ja.inc.php</file>
-          <file>lang_ko.inc.php</file>
-          <file>lang_pl.inc.php</file>
-          <file>lang_se.inc.php</file>
-          <file>lang_tr.inc.php</file>
-        </dir>
-</dir>
-
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_staticpage/.htaccess</file>
@@ -8814,9 +8700,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_tn.inc.php</file>
         <file>lang_zh.inc.php</file>
       </dir>
-        <file>yellow.png</file>
-</dir>
-
+      <file>yellow.png</file>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_statistics/.htaccess</file>
@@ -8896,8 +8781,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_suggest/.htaccess</file>
@@ -8963,22 +8847,21 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>util.js</file>
         <file>xmlcolors.css</file>
       </dir>
-        <file>documentation_en.html</file>
-        <file>jquery.jeditable.js</file>
+      <file>documentation_en.html</file>
+      <file>jquery.jeditable.js</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_event_template_editor.css</file>
+      <file>serendipity_event_template_editor.js</file>
+      <file>serendipity_event_template_editor.php</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>serendipity_event_template_editor.css</file>
-        <file>serendipity_event_template_editor.js</file>
-        <file>serendipity_event_template_editor.php</file>
-      <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_template_editor/.htaccess</file>
@@ -9047,18 +8930,17 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>1.html</file>
         <file>2.html</file>
       </dir>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_event_textlinkads.php</file>
+      <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>serendipity_event_textlinkads.php</file>
-        <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-        </dir>
-</dir>
-
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_textlinkads/ChangeLog</file>
@@ -9107,87 +8989,87 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>serendipity_event_textwiki.php</file>
       <dir name="Text">
         <file>BUNDLE_NOTICE</file>
-      <dir name="Wiki">
-        <dir name="Parse">
-          <dir name="Default">
-          <file>Anchor.php</file>
-          <file>Blockquote.php</file>
-          <file>Bold.php</file>
-          <file>Break.php</file>
-          <file>Center.php</file>
-          <file>Code.php</file>
-          <file>Colortext.php</file>
-          <file>Deflist.php</file>
-          <file>Delimiter.php</file>
-          <file>Embed.php</file>
-          <file>Emphasis.php</file>
-          <file>Freelink.php</file>
-          <file>Function.php</file>
-          <file>Heading.php</file>
-          <file>Horiz.php</file>
-          <file>Html.php</file>
-          <file>Image.php</file>
-          <file>Include.php</file>
-          <file>Interwiki.php</file>
-          <file>Italic.php</file>
-          <file>List.php</file>
-          <file>Newline.php</file>
-          <file>Paragraph.php</file>
-          <file>Phplookup.php</file>
-          <file>Prefilter.php</file>
-          <file>Raw.php</file>
-          <file>Revise.php</file>
-          <file>Strong.php</file>
-          <file>Superscript.php</file>
-          <file>Table.php</file>
-          <file>Tighten.php</file>
-          <file>Toc.php</file>
-          <file>Tt.php</file>
-          <file>Url.php</file>
-          <file>Wikilink.php</file>
+        <dir name="Wiki">
+          <dir name="Parse">
+            <dir name="Default">
+              <file>Anchor.php</file>
+              <file>Blockquote.php</file>
+              <file>Bold.php</file>
+              <file>Break.php</file>
+              <file>Center.php</file>
+              <file>Code.php</file>
+              <file>Colortext.php</file>
+              <file>Deflist.php</file>
+              <file>Delimiter.php</file>
+              <file>Embed.php</file>
+              <file>Emphasis.php</file>
+              <file>Freelink.php</file>
+              <file>Function.php</file>
+              <file>Heading.php</file>
+              <file>Horiz.php</file>
+              <file>Html.php</file>
+              <file>Image.php</file>
+              <file>Include.php</file>
+              <file>Interwiki.php</file>
+              <file>Italic.php</file>
+              <file>List.php</file>
+              <file>Newline.php</file>
+              <file>Paragraph.php</file>
+              <file>Phplookup.php</file>
+              <file>Prefilter.php</file>
+              <file>Raw.php</file>
+              <file>Revise.php</file>
+              <file>Strong.php</file>
+              <file>Superscript.php</file>
+              <file>Table.php</file>
+              <file>Tighten.php</file>
+              <file>Toc.php</file>
+              <file>Tt.php</file>
+              <file>Url.php</file>
+              <file>Wikilink.php</file>
+            </dir>
           </dir>
-        </dir>
           <file>Parse.php</file>
           <dir name="Render">
             <dir name="Latex">
-            <file>Anchor.php</file>
-            <file>Blockquote.php</file>
-            <file>Bold.php</file>
-            <file>Break.php</file>
-            <file>Center.php</file>
-            <file>Code.php</file>
-            <file>Colortext.php</file>
-            <file>Deflist.php</file>
-            <file>Delimiter.php</file>
-            <file>Embed.php</file>
-            <file>Emphasis.php</file>
-            <file>Freelink.php</file>
-            <file>Function.php</file>
-            <file>Heading.php</file>
-            <file>Horiz.php</file>
-            <file>Html.php</file>
-            <file>Image.php</file>
-            <file>Include.php</file>
-            <file>Interwiki.php</file>
-            <file>Italic.php</file>
-            <file>List.php</file>
-            <file>Newline.php</file>
-            <file>Paragraph.php</file>
-            <file>Phplookup.php</file>
-            <file>Prefilter.php</file>
-            <file>Raw.php</file>
-            <file>Revise.php</file>
-            <file>Strong.php</file>
-            <file>Superscript.php</file>
-            <file>Table.php</file>
-            <file>Tighten.php</file>
-            <file>Toc.php</file>
-            <file>Tt.php</file>
-            <file>Url.php</file>
-            <file>Wikilink.php</file>
+              <file>Anchor.php</file>
+              <file>Blockquote.php</file>
+              <file>Bold.php</file>
+              <file>Break.php</file>
+              <file>Center.php</file>
+              <file>Code.php</file>
+              <file>Colortext.php</file>
+              <file>Deflist.php</file>
+              <file>Delimiter.php</file>
+              <file>Embed.php</file>
+              <file>Emphasis.php</file>
+              <file>Freelink.php</file>
+              <file>Function.php</file>
+              <file>Heading.php</file>
+              <file>Horiz.php</file>
+              <file>Html.php</file>
+              <file>Image.php</file>
+              <file>Include.php</file>
+              <file>Interwiki.php</file>
+              <file>Italic.php</file>
+              <file>List.php</file>
+              <file>Newline.php</file>
+              <file>Paragraph.php</file>
+              <file>Phplookup.php</file>
+              <file>Prefilter.php</file>
+              <file>Raw.php</file>
+              <file>Revise.php</file>
+              <file>Strong.php</file>
+              <file>Superscript.php</file>
+              <file>Table.php</file>
+              <file>Tighten.php</file>
+              <file>Toc.php</file>
+              <file>Tt.php</file>
+              <file>Url.php</file>
+              <file>Wikilink.php</file>
             </dir>
             <file>Latex.php</file>
-              <dir name="Plain">
+            <dir name="Plain">
               <file>Anchor.php</file>
               <file>Blockquote.php</file>
               <file>Bold.php</file>
@@ -9223,9 +9105,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
               <file>Tt.php</file>
               <file>Url.php</file>
               <file>Wikilink.php</file>
-              </dir>
+            </dir>
             <file>Plain.php</file>
-                <dir name="Xhtml">
+            <dir name="Xhtml">
               <file>Anchor.php</file>
               <file>Blockquote.php</file>
               <file>Bold.php</file>
@@ -9261,11 +9143,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
               <file>Tt.php</file>
               <file>Url.php</file>
               <file>Wikilink.php</file>
-                </dir>
+            </dir>
             <file>Xhtml.php</file>
           </dir>
           <file>Render.php</file>
-            <dir name="Rule">
+          <dir name="Rule">
             <file>blockquote.php</file>
             <file>bold.php</file>
             <file>break.php</file>
@@ -9301,9 +9183,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
             <file>tt.php</file>
             <file>url.php</file>
             <file>wikilink.php</file>
-            </dir>
+          </dir>
           <file>Rule.php</file>
-      </dir>
+        </dir>
         <file>Wiki.php</file>
       </dir>
       <dir name="UTF-8">
@@ -9321,8 +9203,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_tn.inc.php</file>
         <file>lang_zh.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_textwiki/lang_bg.inc.php</file>
@@ -9568,8 +9449,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_ja.inc.php</file>
         <file>lang_tr.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_thumbnails/ChangeLog</file>
@@ -9610,32 +9490,31 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_en.inc.php</file>
       <file>serendipity_event_tinymce.php</file>
       <dir name="tinymce">
-      <dir name="jscripts">
-        <dir name="tiny_mce">
-          <dir name="plugins">
-            <dir name="s9ymdb">
-        <file>.cvsignore</file>
-        <file>editor_plugin.js</file>
-        <file>editor_plugin_src.js</file>
-              <dir name="images">
-          <file>s9ymdb.gif</file>
-              </dir>
-                <dir name="langs">
-          <file>de.js</file>
-          <file>en.js</file>
+        <dir name="jscripts">
+          <dir name="tiny_mce">
+            <dir name="plugins">
+              <dir name="s9ymdb">
+                <file>.cvsignore</file>
+                <file>editor_plugin.js</file>
+                <file>editor_plugin_src.js</file>
+                <dir name="images">
+                  <file>s9ymdb.gif</file>
                 </dir>
+                <dir name="langs">
+                  <file>de.js</file>
+                  <file>en.js</file>
+                </dir>
+              </dir>
             </dir>
           </dir>
         </dir>
-      </dir>
       </dir>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_tinymce/.htaccess</file>
@@ -9729,27 +9608,26 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>progress-95-small.png</file>
         <file>progress-95.png</file>
       </dir>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>serendipity_event_todolist.php</file>
+      <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_ja.inc.php</file>
-        <file>serendipity_event_todolist.php</file>
-        <dir name="UTF-8">
-          <file>lang_bg.inc.php</file>
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_ja.inc.php</file>
-        </dir>
-        <file>VeraSe.ttf</file>
-          <dir name="wheel">
-          <file>hsvwheel.png</file>
-          <file>wheel.html</file>
-          </dir>
-</dir>
-
+      </dir>
+      <file>VeraSe.ttf</file>
+      <dir name="wheel">
+        <file>hsvwheel.png</file>
+        <file>wheel.html</file>
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_todolist/.htaccess</file>
@@ -9855,15 +9733,14 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>overlib_setonoff.js</file>
         <file>overlib_shadow.js</file>
       </dir>
-        <file>serendipity_event_tooltips.php</file>
+      <file>serendipity_event_tooltips.php</file>
       <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_ja.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_tooltips/lang_cs.inc.php</file>
@@ -9924,8 +9801,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_ja.inc.php</file>
         <file>lang_pl.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_trackback/.htaccess</file>
@@ -9992,8 +9868,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_tn.inc.php</file>
         <file>lang_zh.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_trackexits/lang_cn.inc.php</file>
@@ -10057,11 +9932,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>SquotesButton.php</file>
         <file>StrikeButton.php</file>
       </dir>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>serendipity_event_typesetbuttons.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_event_typesetbuttons.php</file>
       <dir name="tests">
         <dir name="buttons">
           <file>AccentButtonTest.php</file>
@@ -10078,15 +9953,14 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
           <file>SquotesButtonTest.php</file>
           <file>StrikeButtonTest.php</file>
         </dir>
-          <file>typesetbuttonsTest.php</file>
+        <file>typesetbuttonsTest.php</file>
       </dir>
-        <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-        </dir>
-</dir>
-
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_typesetbuttons/buttons/AccentButton.php</file>
@@ -10156,8 +10030,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_typoquote/lang_bg.inc.php</file>
@@ -10198,8 +10071,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_unstrip_tags/lang_cs.inc.php</file>
@@ -10235,7 +10107,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>EXIF_Tags.php</file>
         <file>IPTC.php</file>
         <file>JPEG.php</file>
-      <dir name="Makernotes">
+        <dir name="Makernotes">
           <file>agfa.php</file>
           <file>canon.php</file>
           <file>casio.php</file>
@@ -10249,7 +10121,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
           <file>Pentax.php</file>
           <file>ricoh.php</file>
           <file>sony.php</file>
-      </dir>
+        </dir>
         <file>Photoshop_IRB.php</file>
         <file>PIM.php</file>
         <file>pjmt_utils.php</file>
@@ -10257,25 +10129,24 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>XML.php</file>
         <file>XMP.php</file>
       </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_tr.inc.php</file>
+      <file>plugin_usergallery.tpl</file>
+      <file>plugin_usergallery_imagedisplay.tpl</file>
+      <file>serendipity_event_usergallery.css</file>
+      <file>serendipity_event_usergallery.php</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_ja.inc.php</file>
         <file>lang_tr.inc.php</file>
-        <file>plugin_usergallery.tpl</file>
-        <file>plugin_usergallery_imagedisplay.tpl</file>
-        <file>serendipity_event_usergallery.css</file>
-        <file>serendipity_event_usergallery.php</file>
-      <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_ja.inc.php</file>
-          <file>lang_tr.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_usergallery/ChangeLog</file>
@@ -10356,8 +10227,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_userprofiles/ChangeLog</file>
@@ -10408,8 +10278,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_versioning/ChangeLog</file>
@@ -10475,8 +10344,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_tn.inc.php</file>
         <file>lang_zh.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_weblogping/ChangeLog</file>
@@ -10547,8 +10415,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_wikilinks/.htaccess</file>
@@ -10595,8 +10462,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_de.inc.php</file>
         <file>lang_pl.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_wordwrap/lang_cs.inc.php</file>
@@ -10636,24 +10502,23 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <dir name="PEAR">
-      <dir name="XML">
-        <file>BUNDLE_NOTICE</file>
-        <dir name="RPC">
-          <file>Dump.php</file>
-          <file>Server.php</file>
+        <dir name="XML">
+          <file>BUNDLE_NOTICE</file>
+          <dir name="RPC">
+            <file>Dump.php</file>
+            <file>Server.php</file>
+          </dir>
+          <file>RPC.php</file>
         </dir>
-        <file>RPC.php</file>
       </dir>
-      </dir>
-        <file>serendipity_event_xmlrpc.php</file>
-        <file>serendipity_xmlrpc.inc.php</file>
+      <file>serendipity_event_xmlrpc.php</file>
+      <file>serendipity_xmlrpc.inc.php</file>
       <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_xmlrpc/.gitignore</file>
@@ -10694,191 +10559,190 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>ChangeLog</file>
       <dir name="htmlpurifier-4.6.0-standalone">
         <file>HTMLPurifier.standalone.php</file>
-      <dir name="standalone">
-        <dir name="HTMLPurifier">
-          <dir name="ConfigSchema">
-            <dir name="Builder">
-          <file>ConfigSchema.php</file>
-          <file>Xml.php</file>
-            </dir>
-          <file>Exception.php</file>
+        <dir name="standalone">
+          <dir name="HTMLPurifier">
+            <dir name="ConfigSchema">
+              <dir name="Builder">
+                <file>ConfigSchema.php</file>
+                <file>Xml.php</file>
+              </dir>
+              <file>Exception.php</file>
               <dir name="Interchange">
-            <file>Directive.php</file>
-            <file>Id.php</file>
+                <file>Directive.php</file>
+                <file>Id.php</file>
               </dir>
-          <file>Interchange.php</file>
-          <file>InterchangeBuilder.php</file>
-                <dir name="schema">
-            <file>Attr.AllowedClasses.txt</file>
-            <file>Attr.AllowedFrameTargets.txt</file>
-            <file>Attr.AllowedRel.txt</file>
-            <file>Attr.AllowedRev.txt</file>
-            <file>Attr.ClassUseCDATA.txt</file>
-            <file>Attr.DefaultImageAlt.txt</file>
-            <file>Attr.DefaultInvalidImage.txt</file>
-            <file>Attr.DefaultInvalidImageAlt.txt</file>
-            <file>Attr.DefaultTextDir.txt</file>
-            <file>Attr.EnableID.txt</file>
-            <file>Attr.ForbiddenClasses.txt</file>
-            <file>Attr.IDBlacklist.txt</file>
-            <file>Attr.IDBlacklistRegexp.txt</file>
-            <file>Attr.IDPrefix.txt</file>
-            <file>Attr.IDPrefixLocal.txt</file>
-            <file>AutoFormat.AutoParagraph.txt</file>
-            <file>AutoFormat.Custom.txt</file>
-            <file>AutoFormat.DisplayLinkURI.txt</file>
-            <file>AutoFormat.Linkify.txt</file>
-            <file>AutoFormat.PurifierLinkify.DocURL.txt</file>
-            <file>AutoFormat.PurifierLinkify.txt</file>
-            <file>AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt</file>
-            <file>AutoFormat.RemoveEmpty.RemoveNbsp.txt</file>
-            <file>AutoFormat.RemoveEmpty.txt</file>
-            <file>AutoFormat.RemoveSpansWithoutAttributes.txt</file>
-            <file>Cache.DefinitionImpl.txt</file>
-            <file>Cache.SerializerPath.txt</file>
-            <file>Cache.SerializerPermissions.txt</file>
-            <file>Core.AggressivelyFixLt.txt</file>
-            <file>Core.AllowHostnameUnderscore.txt</file>
-            <file>Core.CollectErrors.txt</file>
-            <file>Core.ColorKeywords.txt</file>
-            <file>Core.ConvertDocumentToFragment.txt</file>
-            <file>Core.DirectLexLineNumberSyncInterval.txt</file>
-            <file>Core.DisableExcludes.txt</file>
-            <file>Core.EnableIDNA.txt</file>
-            <file>Core.Encoding.txt</file>
-            <file>Core.EscapeInvalidChildren.txt</file>
-            <file>Core.EscapeInvalidTags.txt</file>
-            <file>Core.EscapeNonASCIICharacters.txt</file>
-            <file>Core.HiddenElements.txt</file>
-            <file>Core.Language.txt</file>
-            <file>Core.LexerImpl.txt</file>
-            <file>Core.MaintainLineNumbers.txt</file>
-            <file>Core.NormalizeNewlines.txt</file>
-            <file>Core.RemoveInvalidImg.txt</file>
-            <file>Core.RemoveProcessingInstructions.txt</file>
-            <file>Core.RemoveScriptContents.txt</file>
-            <file>CSS.AllowedFonts.txt</file>
-            <file>CSS.AllowedProperties.txt</file>
-            <file>CSS.AllowImportant.txt</file>
-            <file>CSS.AllowTricky.txt</file>
-            <file>CSS.DefinitionRev.txt</file>
-            <file>CSS.ForbiddenProperties.txt</file>
-            <file>CSS.MaxImgLength.txt</file>
-            <file>CSS.Proprietary.txt</file>
-            <file>CSS.Trusted.txt</file>
-            <file>Filter.Custom.txt</file>
-            <file>Filter.ExtractStyleBlocks.Escaping.txt</file>
-            <file>Filter.ExtractStyleBlocks.Scope.txt</file>
-            <file>Filter.ExtractStyleBlocks.TidyImpl.txt</file>
-            <file>Filter.ExtractStyleBlocks.txt</file>
-            <file>Filter.YouTube.txt</file>
-            <file>HTML.Allowed.txt</file>
-            <file>HTML.AllowedAttributes.txt</file>
-            <file>HTML.AllowedComments.txt</file>
-            <file>HTML.AllowedCommentsRegexp.txt</file>
-            <file>HTML.AllowedElements.txt</file>
-            <file>HTML.AllowedModules.txt</file>
-            <file>HTML.Attr.Name.UseCDATA.txt</file>
-            <file>HTML.BlockWrapper.txt</file>
-            <file>HTML.CoreModules.txt</file>
-            <file>HTML.CustomDoctype.txt</file>
-            <file>HTML.DefinitionID.txt</file>
-            <file>HTML.DefinitionRev.txt</file>
-            <file>HTML.Doctype.txt</file>
-            <file>HTML.FlashAllowFullScreen.txt</file>
-            <file>HTML.ForbiddenAttributes.txt</file>
-            <file>HTML.ForbiddenElements.txt</file>
-            <file>HTML.MaxImgLength.txt</file>
-            <file>HTML.Nofollow.txt</file>
-            <file>HTML.Parent.txt</file>
-            <file>HTML.Proprietary.txt</file>
-            <file>HTML.SafeEmbed.txt</file>
-            <file>HTML.SafeIframe.txt</file>
-            <file>HTML.SafeObject.txt</file>
-            <file>HTML.SafeScripting.txt</file>
-            <file>HTML.Strict.txt</file>
-            <file>HTML.TargetBlank.txt</file>
-            <file>HTML.TidyAdd.txt</file>
-            <file>HTML.TidyLevel.txt</file>
-            <file>HTML.TidyRemove.txt</file>
-            <file>HTML.Trusted.txt</file>
-            <file>HTML.XHTML.txt</file>
-            <file>info.ini</file>
-            <file>Output.CommentScriptContents.txt</file>
-            <file>Output.FixInnerHTML.txt</file>
-            <file>Output.FlashCompat.txt</file>
-            <file>Output.Newline.txt</file>
-            <file>Output.SortAttr.txt</file>
-            <file>Output.TidyFormat.txt</file>
-            <file>Test.ForceNoIconv.txt</file>
-            <file>URI.AllowedSchemes.txt</file>
-            <file>URI.Base.txt</file>
-            <file>URI.DefaultScheme.txt</file>
-            <file>URI.DefinitionID.txt</file>
-            <file>URI.DefinitionRev.txt</file>
-            <file>URI.Disable.txt</file>
-            <file>URI.DisableExternal.txt</file>
-            <file>URI.DisableExternalResources.txt</file>
-            <file>URI.DisableResources.txt</file>
-            <file>URI.Host.txt</file>
-            <file>URI.HostBlacklist.txt</file>
-            <file>URI.MakeAbsolute.txt</file>
-            <file>URI.Munge.txt</file>
-            <file>URI.MungeResources.txt</file>
-            <file>URI.MungeSecretKey.txt</file>
-            <file>URI.OverrideAllowedSchemes.txt</file>
-            <file>URI.SafeIframeRegexp.txt</file>
-                </dir>
-          <file>schema.ser</file>
-          <file>Validator.php</file>
-          <file>ValidatorAtom.php</file>
-          </dir>
-            <dir name="EntityLookup">
-          <file>entities.ser</file>
+              <file>Interchange.php</file>
+              <file>InterchangeBuilder.php</file>
+              <dir name="schema">
+                <file>Attr.AllowedClasses.txt</file>
+                <file>Attr.AllowedFrameTargets.txt</file>
+                <file>Attr.AllowedRel.txt</file>
+                <file>Attr.AllowedRev.txt</file>
+                <file>Attr.ClassUseCDATA.txt</file>
+                <file>Attr.DefaultImageAlt.txt</file>
+                <file>Attr.DefaultInvalidImage.txt</file>
+                <file>Attr.DefaultInvalidImageAlt.txt</file>
+                <file>Attr.DefaultTextDir.txt</file>
+                <file>Attr.EnableID.txt</file>
+                <file>Attr.ForbiddenClasses.txt</file>
+                <file>Attr.IDBlacklist.txt</file>
+                <file>Attr.IDBlacklistRegexp.txt</file>
+                <file>Attr.IDPrefix.txt</file>
+                <file>Attr.IDPrefixLocal.txt</file>
+                <file>AutoFormat.AutoParagraph.txt</file>
+                <file>AutoFormat.Custom.txt</file>
+                <file>AutoFormat.DisplayLinkURI.txt</file>
+                <file>AutoFormat.Linkify.txt</file>
+                <file>AutoFormat.PurifierLinkify.DocURL.txt</file>
+                <file>AutoFormat.PurifierLinkify.txt</file>
+                <file>AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt</file>
+                <file>AutoFormat.RemoveEmpty.RemoveNbsp.txt</file>
+                <file>AutoFormat.RemoveEmpty.txt</file>
+                <file>AutoFormat.RemoveSpansWithoutAttributes.txt</file>
+                <file>Cache.DefinitionImpl.txt</file>
+                <file>Cache.SerializerPath.txt</file>
+                <file>Cache.SerializerPermissions.txt</file>
+                <file>Core.AggressivelyFixLt.txt</file>
+                <file>Core.AllowHostnameUnderscore.txt</file>
+                <file>Core.CollectErrors.txt</file>
+                <file>Core.ColorKeywords.txt</file>
+                <file>Core.ConvertDocumentToFragment.txt</file>
+                <file>Core.DirectLexLineNumberSyncInterval.txt</file>
+                <file>Core.DisableExcludes.txt</file>
+                <file>Core.EnableIDNA.txt</file>
+                <file>Core.Encoding.txt</file>
+                <file>Core.EscapeInvalidChildren.txt</file>
+                <file>Core.EscapeInvalidTags.txt</file>
+                <file>Core.EscapeNonASCIICharacters.txt</file>
+                <file>Core.HiddenElements.txt</file>
+                <file>Core.Language.txt</file>
+                <file>Core.LexerImpl.txt</file>
+                <file>Core.MaintainLineNumbers.txt</file>
+                <file>Core.NormalizeNewlines.txt</file>
+                <file>Core.RemoveInvalidImg.txt</file>
+                <file>Core.RemoveProcessingInstructions.txt</file>
+                <file>Core.RemoveScriptContents.txt</file>
+                <file>CSS.AllowedFonts.txt</file>
+                <file>CSS.AllowedProperties.txt</file>
+                <file>CSS.AllowImportant.txt</file>
+                <file>CSS.AllowTricky.txt</file>
+                <file>CSS.DefinitionRev.txt</file>
+                <file>CSS.ForbiddenProperties.txt</file>
+                <file>CSS.MaxImgLength.txt</file>
+                <file>CSS.Proprietary.txt</file>
+                <file>CSS.Trusted.txt</file>
+                <file>Filter.Custom.txt</file>
+                <file>Filter.ExtractStyleBlocks.Escaping.txt</file>
+                <file>Filter.ExtractStyleBlocks.Scope.txt</file>
+                <file>Filter.ExtractStyleBlocks.TidyImpl.txt</file>
+                <file>Filter.ExtractStyleBlocks.txt</file>
+                <file>Filter.YouTube.txt</file>
+                <file>HTML.Allowed.txt</file>
+                <file>HTML.AllowedAttributes.txt</file>
+                <file>HTML.AllowedComments.txt</file>
+                <file>HTML.AllowedCommentsRegexp.txt</file>
+                <file>HTML.AllowedElements.txt</file>
+                <file>HTML.AllowedModules.txt</file>
+                <file>HTML.Attr.Name.UseCDATA.txt</file>
+                <file>HTML.BlockWrapper.txt</file>
+                <file>HTML.CoreModules.txt</file>
+                <file>HTML.CustomDoctype.txt</file>
+                <file>HTML.DefinitionID.txt</file>
+                <file>HTML.DefinitionRev.txt</file>
+                <file>HTML.Doctype.txt</file>
+                <file>HTML.FlashAllowFullScreen.txt</file>
+                <file>HTML.ForbiddenAttributes.txt</file>
+                <file>HTML.ForbiddenElements.txt</file>
+                <file>HTML.MaxImgLength.txt</file>
+                <file>HTML.Nofollow.txt</file>
+                <file>HTML.Parent.txt</file>
+                <file>HTML.Proprietary.txt</file>
+                <file>HTML.SafeEmbed.txt</file>
+                <file>HTML.SafeIframe.txt</file>
+                <file>HTML.SafeObject.txt</file>
+                <file>HTML.SafeScripting.txt</file>
+                <file>HTML.Strict.txt</file>
+                <file>HTML.TargetBlank.txt</file>
+                <file>HTML.TidyAdd.txt</file>
+                <file>HTML.TidyLevel.txt</file>
+                <file>HTML.TidyRemove.txt</file>
+                <file>HTML.Trusted.txt</file>
+                <file>HTML.XHTML.txt</file>
+                <file>info.ini</file>
+                <file>Output.CommentScriptContents.txt</file>
+                <file>Output.FixInnerHTML.txt</file>
+                <file>Output.FlashCompat.txt</file>
+                <file>Output.Newline.txt</file>
+                <file>Output.SortAttr.txt</file>
+                <file>Output.TidyFormat.txt</file>
+                <file>Test.ForceNoIconv.txt</file>
+                <file>URI.AllowedSchemes.txt</file>
+                <file>URI.Base.txt</file>
+                <file>URI.DefaultScheme.txt</file>
+                <file>URI.DefinitionID.txt</file>
+                <file>URI.DefinitionRev.txt</file>
+                <file>URI.Disable.txt</file>
+                <file>URI.DisableExternal.txt</file>
+                <file>URI.DisableExternalResources.txt</file>
+                <file>URI.DisableResources.txt</file>
+                <file>URI.Host.txt</file>
+                <file>URI.HostBlacklist.txt</file>
+                <file>URI.MakeAbsolute.txt</file>
+                <file>URI.Munge.txt</file>
+                <file>URI.MungeResources.txt</file>
+                <file>URI.MungeSecretKey.txt</file>
+                <file>URI.OverrideAllowedSchemes.txt</file>
+                <file>URI.SafeIframeRegexp.txt</file>
+              </dir>
+              <file>schema.ser</file>
+              <file>Validator.php</file>
+              <file>ValidatorAtom.php</file>
             </dir>
-              <dir name="Filter">
-          <file>ExtractStyleBlocks.php</file>
-          <file>YouTube.php</file>
+            <dir name="EntityLookup">
+              <file>entities.ser</file>
+            </dir>
+            <dir name="Filter">
+              <file>ExtractStyleBlocks.php</file>
+              <file>YouTube.php</file>
+            </dir>
+            <dir name="Language">
+              <dir name="classes">
+                <file>en-x-test.php</file>
               </dir>
-                <dir name="Language">
-                  <dir name="classes">
-          <file>en-x-test.php</file>
-                  </dir>
-                    <dir name="messages">
-          <file>en-x-test.php</file>
-          <file>en-x-testmini.php</file>
-          <file>en.php</file>
-                    </dir>
-                </dir>
-                  <dir name="Lexer">
-          <file>PH5P.php</file>
-                  </dir>
-                    <dir name="Printer">
-          <file>ConfigForm.css</file>
-          <file>ConfigForm.js</file>
-          <file>ConfigForm.php</file>
-          <file>CSSDefinition.php</file>
-          <file>HTMLDefinition.php</file>
-                    </dir>
-          <file>Printer.php</file>
+              <dir name="messages">
+                <file>en-x-test.php</file>
+                <file>en-x-testmini.php</file>
+                <file>en.php</file>
+              </dir>
+            </dir>
+            <dir name="Lexer">
+              <file>PH5P.php</file>
+            </dir>
+            <dir name="Printer">
+              <file>ConfigForm.css</file>
+              <file>ConfigForm.js</file>
+              <file>ConfigForm.php</file>
+              <file>CSSDefinition.php</file>
+              <file>HTMLDefinition.php</file>
+            </dir>
+            <file>Printer.php</file>
+          </dir>
         </dir>
       </dir>
-      </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_it.inc.php</file>
+      <file>serendipity_event_xsstrust.php</file>
+      <file>serendipity_plugin_xsstrust.php</file>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
         <file>lang_it.inc.php</file>
-        <file>serendipity_event_xsstrust.php</file>
-        <file>serendipity_plugin_xsstrust.php</file>
-      <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-          <file>lang_it.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_xsstrust/ChangeLog</file>
@@ -11063,8 +10927,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_youtube/ChangeLog</file>
@@ -11112,8 +10975,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_fr.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_adduser/ChangeLog</file>
@@ -11165,39 +11027,38 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>example.php</file>
         <file>getToken.php</file>
         <file>LICENSE</file>
-      <dir name="PEAR">
-        <dir name="DB">
-          <file>common.php</file>
-          <file>mysql.php</file>
-          <file>pgsql.php</file>
-          <file>storage.php</file>
-        </dir>
+        <dir name="PEAR">
+          <dir name="DB">
+            <file>common.php</file>
+            <file>mysql.php</file>
+            <file>pgsql.php</file>
+            <file>storage.php</file>
+          </dir>
           <file>DB.php</file>
           <dir name="HTTP">
             <dir name="Request">
-            <file>Listener.php</file>
+              <file>Listener.php</file>
             </dir>
             <file>Request.php</file>
           </dir>
-            <dir name="Net">
+          <dir name="Net">
             <file>Socket.php</file>
             <file>URL.php</file>
-            </dir>
+          </dir>
           <file>PEAR.php</file>
-      </dir>
+        </dir>
         <file>phpFlickr.php</file>
         <file>README.md</file>
       </dir>
-        <file>README.txt</file>
-        <file>serendipity_event_flickrcss.php</file>
-        <file>serendipity_plugin_flickr.php</file>
+      <file>README.txt</file>
+      <file>serendipity_event_flickrcss.php</file>
+      <file>serendipity_plugin_flickr.php</file>
       <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_flickr/ChangeLog</file>
@@ -11264,8 +11125,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>lang_ja.inc.php</file>
         <file>lang_pl.inc.php</file>
       </dir>
-</dir>
-
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_pollbox/ChangeLog</file>
@@ -11317,42 +11177,41 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <dir name="documentation">
         <file>documentation.css</file>
       </dir>
-        <file>documentation_cs.html</file>
-        <file>documentation_cz.html</file>
-        <file>documentation_de.html</file>
-        <file>documentation_en.html</file>
-        <dir name="img">
-          <file>it-micro-black.png</file>
-          <file>it-micro-white.png</file>
-          <file>pixel.png</file>
-          <file>signin.png</file>
-          <file>tt-micro-black.png</file>
-          <file>tt-micro-white.png</file>
-        </dir>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>documentation_de.html</file>
+      <file>documentation_en.html</file>
+      <dir name="img">
+        <file>it-micro-black.png</file>
+        <file>it-micro-white.png</file>
+        <file>pixel.png</file>
+        <file>signin.png</file>
+        <file>tt-micro-black.png</file>
+        <file>tt-micro-white.png</file>
+      </dir>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>plugin_version.inc.php</file>
+      <file>serendipity_event_twitter.php</file>
+      <file>serendipity_plugin_twitter.php</file>
+      <dir name="tweeter">
+        <file>serendipity_event_twitter_tweeter.css</file>
+        <file>serendipity_event_twitter_tweeter.js</file>
+        <file>tweeter_client.inc.php</file>
+        <file>tweeter_history.inc.php</file>
+      </dir>
+      <dir name="twitteroauth">
+        <file>OAuth.php</file>
+        <file>twitteroauth.php</file>
+      </dir>
+      <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-        <file>plugin_version.inc.php</file>
-        <file>serendipity_event_twitter.php</file>
-        <file>serendipity_plugin_twitter.php</file>
-          <dir name="tweeter">
-          <file>serendipity_event_twitter_tweeter.css</file>
-          <file>serendipity_event_twitter_tweeter.js</file>
-          <file>tweeter_client.inc.php</file>
-          <file>tweeter_history.inc.php</file>
-          </dir>
-            <dir name="twitteroauth">
-          <file>OAuth.php</file>
-          <file>twitteroauth.php</file>
-            </dir>
-              <dir name="UTF-8">
-          <file>lang_cs.inc.php</file>
-          <file>lang_cz.inc.php</file>
-          <file>lang_de.inc.php</file>
-              </dir>
-</dir>
-
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_twitter/.cvsignore</file>
