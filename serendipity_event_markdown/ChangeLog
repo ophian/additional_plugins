@@ -1,3 +1,10 @@
+1.25:
+-----
+
+Changes by Thomas Hochstein <thh@inter.net>
+
+ * Add CSS for footnotes via addToCSS().
+
 1.24:
 -----
 
