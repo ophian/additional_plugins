@@ -19,11 +19,11 @@ class serendipity_event_trackexits extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TRACKBACK_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.9.3');
+        $propbag->add('version',       '1.12');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array('frontend_display' => true, 'frontend_display_cache' => true));
@@ -84,14 +84,14 @@ class serendipity_event_trackexits extends serendipity_event
                                                      'google'   => PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_GOOGLE));
                 $propbag->add('name',        PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION);
                 $propbag->add('description', PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_BLAHBLA);
-                $propbag->add('default', 'none');
+                $propbag->add('default',     'none');
                 break;
 
             default:
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        constant($name));
                 $propbag->add('description', sprintf(APPLY_MARKUP_TO, constant($name)));
-                $propbag->add('default', 'true');
+                $propbag->add('default',     'true');
         }
         return true;
     }
