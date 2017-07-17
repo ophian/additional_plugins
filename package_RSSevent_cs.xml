@@ -707,7 +707,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Markup: Markdown&lt;/b&gt;&lt;br /&gt;Převádí značky Markdown na HTML v textu příspěvku&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 10 Apr 2017 10:18:06 +0200</pubDate>
+<pubDate>Mon, 17 Jul 2017 09:27:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -725,7 +725,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Don Chambers, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_metadesc&lt;br /&gt;HTML META tagy&lt;/b&gt;&lt;br /&gt;Zadejte HTML meta tagy pro klíčová slova nebo popis blogu. Také můžete zadávat různý titulek pro jednotlivé stránky blogu a výchozí hodnotu pro klíčová slova/popis pro stránky se zobrazenm více příspěvků (výchozí stránka, přehledy kategorií).&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 27 Oct 2016 11:17:19 +0200</pubDate>
+<pubDate>Mon, 17 Jul 2017 15:47:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_metadesc</guid>
 </item>
 <item>
@@ -1130,7 +1130,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackexits&lt;br /&gt;Markup: Sledování odchodů&lt;/b&gt;&lt;br /&gt;Sleduje kliknutí na URL adresy mimo blog&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 22 Jun 2017 11:54:15 +0200</pubDate>
+<pubDate>Sun, 16 Jul 2017 10:22:49 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackexits</guid>
 </item>
 <item>
