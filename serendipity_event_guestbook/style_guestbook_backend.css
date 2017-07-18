@@ -1,7 +1,7 @@
 
 /*
     ******** Begin Guestbook Styles *********
-    style_guestbook_backend.css - for v.3.53 2014-12-29 Ian
+    style_guestbook_backend.css - for v.3.64 2017-07-18 Ian
 */
 
 #wrapGB .icon-ok:before{content:'\2714'}
@@ -131,6 +131,10 @@
     color: #ccdde7;
     text-shadow: 1px 1px 1px rgba(0,0,0,.8);
     padding: 0.2em 0.4em;
+}
+#wrapGB .gb_entryhead.approve {
+    background: #666;
+    background-image: #666;
 }
 #wrapGB .dbcnav ul li a,
 #wrapGB .gb_entryhead a {

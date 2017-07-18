@@ -1,5 +1,5 @@
 {*
-     plugin_guestbook_backend_entries.tpl for v.3.62 - 2016-10-27 Ian
+     plugin_guestbook_backend_entries.tpl for v.3.64 - 2017-07-18 Ian
 *}
 
 <!-- plugin_guestbook_backend_entries start -->
@@ -66,7 +66,7 @@
 
                 </div>
 
-                <div class="gb_entryhead">
+                <div class="gb_entryhead{if $gb_app} approve{/if}">
                     <span>
                         <a href="mailto:{$entry.email}">{$entry.name}</a>
                         {$CONST.PLUGIN_GUESTBOOK_USERSDATE_OF_ENTRY} <span class="icon-clock" aria-hidden="true" title="{$CONST.TEXT_IMG_LASTMODIFIED}: {$entry.timestamp}"></span>
