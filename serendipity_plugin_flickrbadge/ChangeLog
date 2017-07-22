@@ -1,0 +1,8 @@
+0.12:
+-----
+
+ * Use load language API - extends required Serendipity version to v.1.6
+ * Check missing REQUEST url (Request2) switch for lib/flickr.php fnc
+   sendRequest().
+
+....
