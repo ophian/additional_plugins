@@ -4,7 +4,7 @@ function communityrating_serendipity_show_image($file, $alt = '*') {
 	return '<img alt="' . $alt . '" src="' . $file . '" />';
 }
 
-function communityrating_serendipity_show($params, &$smarty) {
+function communityrating_serendipity_show($params, $smarty) {
     static $images = array();
     global $serendipity;
 
@@ -32,11 +32,22 @@ function communityrating_serendipity_show($params, &$smarty) {
                 fwrite($fp, date('d.m.Y H:i'));
                 fclose($fp);
             }
-            require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-            $req = new HTTP_Request($url);
+            if (function_exists('serendipity_request_url')) {
+                $response = serendipity_request_url($url, 'GET');
+                if ($response === false) $isError = true;
+                $resCode  = $serendipity['last_http_request']['responseCode'];
+            } else {
+                require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+                serendipity_request_start();
+                $req = new HTTP_Request($url);
+                $isError  = PEAR::isError($req->sendRequest());
+                $resCode  = $req->getResponseCode();
+                $response = $req->getResponseBody();
+                serendipity_request_end();
+            }
 
-            if (!PEAR::isError($req->sendRequest()) || $req->getResponseCode() == '200') {
-                $data = $req->getResponseBody();
+            if (!$isError) || $resCode == '200') {
+                $data = $response;
 
                 $id = '';
                 if (preg_match('@<rating>(.+)</rating>@imsU', $data, $match)) {
@@ -111,8 +122,7 @@ function communityrating_serendipity_show($params, &$smarty) {
     if (!$tfile || $tfile == $filename) {
         $tfile = dirname(__FILE__) . '/' . $filename;
     }
-    $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-    $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
+
     $serendipity['smarty']->assign(
         array(
             'communityrating_images'        => $out,
@@ -123,7 +133,6 @@ function communityrating_serendipity_show($params, &$smarty) {
         )
     );
     $content = $serendipity['smarty']->fetch('file:'. $tfile);
-    $serendipity['smarty']->security_settings[INCLUDE_ANY] = $inclusion;
 
 	if (!empty($params['escaped'])) {
         echo serendipity_utf8_encode((function_exists('serendipity_specialchars') ? serendipity_specialchars($content) : htmlspecialchars($content, ENT_COMPAT, LANG_CHARSET)));
