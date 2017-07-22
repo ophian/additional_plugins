@@ -321,16 +321,16 @@ class Twitter
         $update     = urlencode($update);
 
         if (function_exists('serendipity_request_url')) {
-            $par['user'] = $login;
-            $par['pass'] = $pass;
-            $addData[] = array('status', $update, true);
-            $addData[] = array('source', 's9y', true);
+            $auth['user'] = $login;
+            $auth['pass'] = $pass;
+            $data[] = array('status', $update);
+            $data[] = array('source', 's9y');
             if (!empty($geo_lat) && !empty($geo_long)) {
-                $addData[] = array('lat', $geo_lat, true);
-                $addData[] = array('long', $geo_long, true);
+                $data[] = array('lat', $geo_lat);
+                $data[] = array('long', $geo_long);
             }
-            $options    = array('timeout' => 20, 'readTimeout' => array(5,0));
-            $response = serendipity_request_url($status_url, 'POST', null, null, $options, $addData, $par);
+            $options   = array('timeout' => 20, 'readTimeout' => array(5,0));
+            $response  = serendipity_request_url($status_url, 'POST', null, $data, $options, null, $auth);
             $errorcode = $serendipity['last_http_request']['responseCode'];
         } else {
             require_once S9Y_PEAR_PATH . 'HTTP/Request.php';

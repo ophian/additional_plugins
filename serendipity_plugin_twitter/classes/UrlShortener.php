@@ -189,7 +189,7 @@ class UrlShortener
         if (function_exists('serendipity_request_url')) {
             $options = array('timeout' => 20, 'readTimeout' => array(5,0));
             $data = array('link[url]', $url, true);
-            $short_url = serendipity_request_url($req_url, 'POST', null, null, $options, $data);
+            $short_url = serendipity_request_url($req_url, 'POST', null, $data, $options);
             if ($serendipity['last_http_request']['responseCode']) == 200) {
                 $shorturls['twurl'] = $short_url;
             }

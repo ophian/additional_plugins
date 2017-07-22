@@ -248,11 +248,11 @@ class TwitterOAuth
                 if (!empty($postfields)) {
                     $fields = explode('&', $postfields);
                     foreach($fields AS $field) {
-                        $data = explode('=', $field);
-                        $addData[] = array($data[0], $data[1], true);
+                        $fdata = explode('=', $field);
+                        $data[] = array($fdata[0], $fdata[1], true);
                     }
                 }
-                $response = serendipity_request_url($url, 'POST', null, null, null, $addData);
+                $response = serendipity_request_url($url, 'POST', null, $data);
                 break;
               case 'DELETE':
                 $response = serendipity_request_object($url, 'delete');
