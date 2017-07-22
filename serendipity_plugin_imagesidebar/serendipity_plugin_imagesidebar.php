@@ -74,7 +74,7 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
         $propbag->add('description',   PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC . ' PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.');
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian');
-        $propbag->add('version',       '1.11');
+        $propbag->add('version',       '1.12');
         $propbag->add('license',       'BSD');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

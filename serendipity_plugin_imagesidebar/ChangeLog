@@ -1,3 +1,10 @@
+1.12:
+-----
+
+ * Check missing REQUEST url (Request2) switch for zooomer getURL()
+   and menalto generate_content_custom(), thought the latter is being
+   set deprecated at all.
+
 1.11:
 -----
 

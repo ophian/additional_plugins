@@ -223,26 +223,38 @@ class menalto_sidebar extends subplug_sidebar
 
             $output_str = '';
             for ($i=1; $i <= $repeat; $i++) {
-                 $options = array();
-                 require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-                 if (function_exists('serendipity_request_start')) {
-                     serendipity_request_start();
-                 }
-                 $req = new HTTP_Request($path.$file,$options);
-                 $req_result = $req->sendRequest();
-                 if ( PEAR::isError( $req_result)) {
-                     $output_str = $output_str. PLUGIN_GALLERYRANDOMBLOCK_ERROR_CONNECT . "<br />\n";
-                 } else {
-                     $res_code = $req->getResponseCode();
-                     if ($res_code != "200") {
-                         $output_str = $output_str. sprintf( PLUGIN_GALLERYRANDOMBLOCK_ERROR_HTTP . "<br />\n", $res_code);
-                     } else {
-                         $output_str = $output_str. $req->getResponseBody();
-                     }
-                 }
-                 if ($i < $repeat) {
-                     $output_str = $output_str. '<hr />';
-                 }
+                $options = array();
+                if (function_exists('serendipity_request_url')) {
+                    $response = serendipity_request_url($path.$file, 'GET', null, null, $options);
+                    if ($response === false) {
+                        $output_str = $output_str. PLUGIN_GALLERYRANDOMBLOCK_ERROR_CONNECT . "<br />\n";
+                    } else {
+                        $res_code = $serendipity['last_http_request']['responseCode'];
+                        if ($res_code != "200") {
+                            $output_str = $output_str. sprintf( PLUGIN_GALLERYRANDOMBLOCK_ERROR_HTTP . "<br />\n", $res_code);
+                        } else {
+                            $output_str = $output_str. $response;
+                        }
+                    }
+                } else {
+                    require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+                    serendipity_request_start();
+                    $req_result = new HTTP_Request($path.$file, $options);
+                    if ( PEAR::isError( $req_result)) {
+                        $output_str = $output_str. PLUGIN_GALLERYRANDOMBLOCK_ERROR_CONNECT . "<br />\n";
+                    } else {
+                        $res_code = $req->getResponseCode();
+                        if ($res_code != "200") {
+                            $output_str = $output_str. sprintf( PLUGIN_GALLERYRANDOMBLOCK_ERROR_HTTP . "<br />\n", $res_code);
+                        } else {
+                            $output_str = $output_str. $req->getResponseBody();
+                        }
+                    }
+                    serendipity_request_end();
+                }
+                if ($i < $repeat) {
+                    $output_str = $output_str. '<hr />';
+                }
             }
             if (class_exists('Cache_Lite') && is_object($cache_obj)) {
                 $cache_obj->save($output_str,'menaltosidebar_cache');
