@@ -203,6 +203,8 @@ class TwitterOAuth
    */
   function http($url, $method, $postfields = NULL)
   {
+    global $serendipity;
+
     $this->http_info = array();
 
     if (function_exists('curl_init')) {
@@ -237,40 +239,68 @@ class TwitterOAuth
         $this->http_info = array_merge($this->http_info, curl_getinfo($ci));
         $this->url = $url;
         curl_close ($ci);
-    } else {
-        require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-        serendipity_request_start();
-        $req = new HTTP_Request($url);
 
-        switch ($method) {
-          case 'POST':
-            $req->setMethod(HTTP_REQUEST_METHOD_POST);
-            if (!empty($postfields)) {
-                $fields = explode('&', $postfields);
-                foreach($fields AS $field) {
-                    $data = explode('=', $field);
-                    $req->addPostData($data[0], $data[1], true);
+    } else {
+
+        if (function_exists('serendipity_request_url')) {
+            switch ($method) {
+              case 'POST':
+                if (!empty($postfields)) {
+                    $fields = explode('&', $postfields);
+                    foreach($fields AS $field) {
+                        $data = explode('=', $field);
+                        $addData[] = array($data[0], $data[1], true);
+                    }
+                }
+                $response = serendipity_request_url($url, 'POST', null, null, null, $addData);
+                break;
+              case 'DELETE':
+                $response = serendipity_request_object($url, 'delete');
+                if (!empty($postfields)) {
+                  $url = "{$url}?{$postfields}";
                 }
             }
-            break;
-          case 'DELETE':
-            $req->setMethod(HTTP_REQUEST_METHOD_DELETE);
-            if (!empty($postfields)) {
-              $url = "{$url}?{$postfields}";
-            }
-        }
+            $response = trim($response);
+            $this->url = $url;
+            $this->http_code = $serendipity['last_http_request']['responseCode'];
 
-        $req->sendRequest();
-        $response = trim($req->getResponseBody());
-        $this->url = $url;
-        $this->http_code = $req->getResponseCode();
+        } else {
+
+            serendipity_request_start();
+
+            require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+            $req = new HTTP_Request($url);
+
+            switch ($method) {
+              case 'POST':
+                $req->setMethod(HTTP_REQUEST_METHOD_POST);
+                if (!empty($postfields)) {
+                    $fields = explode('&', $postfields);
+                    foreach($fields AS $field) {
+                        $data = explode('=', $field);
+                        $req->addPostData($data[0], $data[1], true);
+                    }
+                }
+                break;
+              case 'DELETE':
+                $req->setMethod(HTTP_REQUEST_METHOD_DELETE);
+                if (!empty($postfields)) {
+                  $url = "{$url}?{$postfields}";
+                }
+            }
+
+            $req->sendRequest();
+            $response = trim($req->getResponseBody());
+            $this->url = $url;
+            $this->http_code = $req->getResponseCode();
+
+            serendipity_request_end();
+        }
 
         serendipity_event_twitter::twitteroalog($url . " - " . $postfields . " (Code: " . $this->http_code . ")\n" . $response);
 
-        serendipity_request_end();
-
+        return $response;
     }
-    return $response;
   }
 
   /**

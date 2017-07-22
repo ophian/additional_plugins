@@ -2,12 +2,23 @@ TODO:
 
 
 * Collect all tweets of a day/week/whatever of the blog owner
-  into one article and publish it dayly/weekly/whatever
+  into one article and publish it daily/weekly/whatever
 * "check tweetback" link should add new tweetbacks immediately
 * Link twitter accs with s9y accs. Only s9y autors linked to a
   twitter acc should be able to create tweets with that acc.
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
+
+1.70:
+-----
+
+ * Check missing REQUEST url (Request2) switch for
+        twitteroauth/twitteroauth,
+        classes/UrlShortener.php,
+        classes/Twitter.php
+    and convert to use *_request_url for *_request_object too
+    in main plugin files.
+
 
 1.69:
 -----

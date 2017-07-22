@@ -101,9 +101,11 @@ class Twitter
      */
     function search($search, $entries=null, $fetchall=true)
     {
-        require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+        global $serendipity;
 
         $search_uri = $this->get_search_url() . '.json?q=' . $search;
+        $paging     = true;
+        $options    = array('timeout' => 20, 'readTimeout' => array(5,0));
 
         // Special Twitter search params
         if (!$this->use_identica) {
@@ -112,22 +114,35 @@ class Twitter
 
         //echo "Searching: $search_uri <br/>";
 
-        $paging = true;
+        if (!function_exists('serendipity_request_url')) {
+            require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+        }
 
         while ($paging) {
 
-            if (function_exists('serendipity_request_start')) serendipity_request_start();
-            $req = new HTTP_Request($search_uri, array('timeout' => 20, 'readTimeout' => array(5,0)));
-            $req->sendRequest();
-            $this->last_error = $req->getResponseCode();
-            if ($req->getResponseCode() != 200) {
+            if (function_exists('serendipity_request_url')) {
+                $response = serendipity_request_url($search_uri, 'GET', null, null, $options);
+                $this->last_error = $serendipity['last_http_request']['responseCode'];
+                if ($serendipity['last_http_request']['responseCode']) != 200) {
+                    $this->last_error = $serendipity['last_http_request']['responseCode'];
+                    $this->error_response = trim($response);
+                    return false;
+                }
+                $response = trim($response);
+            } else {
+                serendipity_request_start();
+                $req = new HTTP_Request($search_uri, $options);
+                $req->sendRequest();
                 $this->last_error = $req->getResponseCode();
-                $this->error_response = trim($req->getResponseBody());
-                if (function_exists('serendipity_request_start')) serendipity_request_end();
-                return false;
+                if ($req->getResponseCode() != 200) {
+                    $this->last_error = $req->getResponseCode();
+                    $this->error_response = trim($req->getResponseBody());
+                    serendipity_request_end();
+                    return false;
+                }
+                $response = trim($req->getResponseBody());
+                serendipity_request_end();
             }
-            $response = trim($req->getResponseBody());
-            if (function_exists('serendipity_request_start')) serendipity_request_end();
 
             $json = @json_decode($response);
 
@@ -213,22 +228,36 @@ class Twitter
      */
     function get_twitter_config()
     {
-        require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-        $config_url = "https://api.twitter.com/1/help/configuration.json";
+        global $serendipity;
 
-        if (function_exists('serendipity_request_start')) serendipity_request_start();
-        $req = new HTTP_Request($config_url, array('timeout' => 20, 'readTimeout' => array(5,0)));
-        $req->sendRequest();
-        // We are static
-        //$this->last_error = $req->getResponseCode();
-        if ($req->getResponseCode() != 200) {
-            $this->last_error = $req->getResponseCode();
-            $this->error_response = trim($req->getResponseBody());
-            if (function_exists('serendipity_request_start')) serendipity_request_end();
-            return false;
+        $config_url = "https://api.twitter.com/1/help/configuration.json";
+        $options    = array('timeout' => 20, 'readTimeout' => array(5,0));
+
+        if (function_exists('serendipity_request_url')) {
+            $response = serendipity_request_url($config_url, 'GET', null, null, $options);
+            if ($serendipity['last_http_request']['responseCode']) != 200) {
+                $this->last_error = $serendipity['last_http_request']['responseCode'];
+                $this->error_response = trim($response);
+                return false;
+            }
+            $response = trim($response);
+        } else {
+            require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+
+            serendipity_request_start();
+            $req = new HTTP_Request($config_url, $options);
+            $req->sendRequest();
+            // We are static
+            //$this->last_error = $req->getResponseCode();
+            if ($req->getResponseCode() != 200) {
+                $this->last_error = $req->getResponseCode();
+                $this->error_response = trim($req->getResponseBody());
+                serendipity_request_end();
+                return false;
+            }
+            $response = trim($req->getResponseBody());
+            serendipity_request_end();
         }
-        $response = trim($req->getResponseBody());
-        if (function_exists('serendipity_request_start')) serendipity_request_end();
 
         return @json_decode($response);
     }
@@ -284,35 +313,49 @@ class Twitter
 
     function update( $login, $pass, $update, $geo_lat = NULL, $geo_long = NULL )
     {
-        require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
+        global $serendipity;
 
         if (empty($login) || empty($pass) || empty($update)) return;
 
         $status_url = $this->get_api_url() . 'statuses/update.json';
+        $update     = urlencode($update);
 
-        require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-        if (function_exists('serendipity_request_start')) serendipity_request_start();
-        $par['user'] = $login;
-        $par['pass'] = $pass;
-        $par['method'] = HTTP_REQUEST_METHOD_POST;
-        $par['timeout'] = 20;
-        $par['readTimeout'] = array(5,0);
+        if (function_exists('serendipity_request_url')) {
+            $par['user'] = $login;
+            $par['pass'] = $pass;
+            $addData[] = array('status', $update, true);
+            $addData[] = array('source', 's9y', true);
+            if (!empty($geo_lat) && !empty($geo_long)) {
+                $addData[] = array('lat', $geo_lat, true);
+                $addData[] = array('long', $geo_long, true);
+            }
+            $options    = array('timeout' => 20, 'readTimeout' => array(5,0));
+            $response = serendipity_request_url($status_url, 'POST', null, null, $options, $addData, $par);
+            $errorcode = $serendipity['last_http_request']['responseCode'];
+        } else {
+            require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
 
-        $req = new HTTP_Request($status_url, $par);
+            serendipity_request_start();
+            $par['user'] = $login;
+            $par['pass'] = $pass;
+            $par['method'] = HTTP_REQUEST_METHOD_POST;
+            $par['timeout'] = 20;
+            $par['readTimeout'] = array(5,0);
 
-        $update = urlencode($update);
+            $req = new HTTP_Request($status_url, $par);
 
-        $req->addPostData('status',$update, true);
-        $req->addPostData('source','s9y', true);
-        if (!empty($geo_lat) && !empty($geo_long)) {
-            $req->addPostData('lat',$geo_lat, true);
-            $req->addPostData('long',$geo_long, true);
+            $req->addPostData('status', $update, true);
+            $req->addPostData('source', 's9y', true);
+            if (!empty($geo_lat) && !empty($geo_long)) {
+                $req->addPostData('lat', $geo_lat, true);
+                $req->addPostData('long', $geo_long, true);
+            }
+
+            $req->sendRequest();
+            $response = $req->getResponseBody();
+            $errorcode = $req->getResponseCode();
+            serendipity_request_end();
         }
-
-        $req->sendRequest();
-        $response = $req->getResponseBody();
-        $errorcode = $req->getResponseCode();
-        if (function_exists('serendipity_request_start')) serendipity_request_end();
 
         if ($errorcode == 200) {
             $json = @json_decode($response);
@@ -331,25 +374,36 @@ class Twitter
     // http://apiwiki.twitter.com/Twitter-REST-API-Method%3A-statuses-friends_timeline
     function timeline( $login, $pass, $count=10, $withfriends=true)
     {
+        global $serendipity;
+
         if (empty($login) || empty($pass)) return;
 
         $timeline_url = $this->get_api_url() . 'statuses/friends_timeline.json?';
 
         $timeline_url .= "count=$count";
 
-        require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-        if (function_exists('serendipity_request_start')) serendipity_request_start();
-        $par['user'] = $login;
-        $par['pass'] = $pass;
-        $par['method'] = HTTP_REQUEST_METHOD_GET;
-        $par['timeout'] = 20;
-        $par['readTimeout'] = array(5,0);
+        if (function_exists('serendipity_request_url')) {
+            $options = array('timeout' => 20, 'readTimeout' => array(5,0));
+            $par['user'] = $login;
+            $par['pass'] = $pass;
+            $response = serendipity_request_url($timeline_url, 'GET', null, null, $options, null, $par);
+            $response = trim($response);
+        } else {
+            require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
 
-        $req = new HTTP_Request($timeline_url, $par);
+            serendipity_request_start();
+            $par['user'] = $login;
+            $par['pass'] = $pass;
+            $par['method'] = HTTP_REQUEST_METHOD_GET;
+            $par['timeout'] = 20;
+            $par['readTimeout'] = array(5,0);
 
-        $req->sendRequest();
-        $response = trim($req->getResponseBody());
-        if (function_exists('serendipity_request_start')) serendipity_request_end();
+            $req = new HTTP_Request($timeline_url, $par);
+
+            $req->sendRequest();
+            $response = trim($req->getResponseBody());
+            serendipity_request_end();
+        }
 
         return @json_decode($response);
 
@@ -358,22 +412,29 @@ class Twitter
     // http://apiwiki.twitter.com/Twitter-REST-API-Method%3A-users%C2%A0show
     function userinfo($screenname)
     {
+        global $serendipity;
+
         if (empty($screenname)) {
             echo "screenname empty";
             return;
         }
 
-        require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
-
         $requrl = $this->get_api_url() . 'users/show.json?screen_name=' . $screenname;
 
-        if (function_exists('serendipity_request_start')) serendipity_request_start();
+        if (function_exists('serendipity_request_url')) {
+            $response = serendipity_request_url($requrl, 'GET');
+            $response = trim($response);
+        } else {
+            require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
 
-        $req = new HTTP_Request($requrl);
-        $req->sendRequest();
-        $response = trim($req->getResponseBody());
+            serendipity_request_start();
 
-        if (function_exists('serendipity_request_start')) serendipity_request_end();
+            $req = new HTTP_Request($requrl);
+            $req->sendRequest();
+            $response = trim($req->getResponseBody());
+
+            serendipity_request_end();
+        }
 
         return @json_decode($response);
     }

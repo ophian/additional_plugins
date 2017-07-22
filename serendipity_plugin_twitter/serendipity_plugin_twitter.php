@@ -433,9 +433,7 @@ class serendipity_plugin_twitter extends serendipity_plugin
         $cachetime      = (int)$this->get_config('cachetime', 300);
 
         if (!file_exists($cachefile) || filemtime($cachefile) < (time()-$cachetime)) {
-            if (function_exists('serendipity_request_object')) {
-                $PR2 = true;
-            } else {
+            if (!function_exists('serendipity_request_object')) {
                 require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
             }
 
@@ -458,19 +456,17 @@ class serendipity_plugin_twitter extends serendipity_plugin
                 $search_twitter_uri = 'https://api.twitter.com/1/statuses/user_timeline.json?screen_name=' . $username . '&count=' . $number;
             }
 
-            serendipity_request_start();
-            if ($PR2) {
-                $req = serendipity_request_object($search_twitter_uri);
-                $response = $req->send();
-                $response = $response->getBody();
-                $error = $response->getStatus();
+            if (function_exists('serendipity_request_object')) {
+                $response = serendipity_request_url($search_twitter_uri, 'GET');
+                $error    = $serendipity['last_http_request']['responseCode'];
             } else {
+                serendipity_request_start();
                 $req = new HTTP_Request($search_twitter_uri);
                 $req->sendRequest();
                 $response = trim($req->getResponseBody());
                 $error = $req->getResponseCode();
+                serendipity_request_end();
             }
-            serendipity_request_end();
 
             if ($error == 200 &&!empty($response)) {
                 $fp = fopen($cachefile, 'w');
