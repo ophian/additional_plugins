@@ -1,17 +1,10 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_flickr extends serendipity_event
 {
@@ -31,11 +24,11 @@ class serendipity_event_flickr extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('license',       'GPL');
         $propbag->add('author',        'Jay Bertrand');
-        $propbag->add('version',       '0.5.1');
+        $propbag->add('version',       '0.6');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',    array(
             'backend_sidebar_entries_images' => true,
@@ -257,14 +250,13 @@ class serendipity_event_flickr extends serendipity_event
 
                         } // end if
                     } // end if
-
-                    return true;
                     break;
 
-               default:
+                default:
                     return false;
                     break;
             }
+            return true;
         } else {
             return false;
         }
@@ -273,3 +265,4 @@ class serendipity_event_flickr extends serendipity_event
 } // end of class
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

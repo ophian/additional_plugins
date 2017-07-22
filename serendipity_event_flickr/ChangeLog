@@ -1,1 +1,10 @@
-Properly use the example() API method by returning, not echo'ing. Unimportant update.    
+0.6:
+----
+ * Use load language API - extends required Serendipity version to v.1.6
+ * Check missing REQUEST url (Request2) switch for phpFlickr/phpFlickr.php
+   fnc phpFlickr() which is unsolved, since being a weird request without url.
+   This might break when removing the old HTTP Request class in core.
+
+0.5.1:
+------
+ * Properly use the example() API method by returning, not echo'ing. Unimportant update.
