@@ -235,7 +235,7 @@ class Twitter
 
         if (function_exists('serendipity_request_url')) {
             $response = serendipity_request_url($config_url, 'GET', null, null, $options);
-            if ($serendipity['last_http_request']['responseCode']) != 200) {
+            if ($serendipity['last_http_request']['responseCode'] != 200) {
                 $this->last_error = $serendipity['last_http_request']['responseCode'];
                 $this->error_response = trim($response);
                 return false;

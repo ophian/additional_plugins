@@ -125,7 +125,7 @@ class UrlShortener
 
         if (function_exists('serendipity_request_url')) {
             $short_url = serendipity_request_url($servicecall, 'GET', null, null, $options);
-            if ($serendipity['last_http_request']['responseCode']) == 200) {
+            if ($serendipity['last_http_request']['responseCode'] == 200) {
                 $short_url = trim($short_url);
                 if (strlen($short_url)<255) { // Should be an URL at least
                     $shorturls[$servicename] = trim($short_url);
@@ -190,7 +190,7 @@ class UrlShortener
             $options = array('timeout' => 20, 'readTimeout' => array(5,0));
             $data = array('link[url]', $url);
             $short_url = serendipity_request_url($req_url, 'POST', null, $data, $options);
-            if ($serendipity['last_http_request']['responseCode']) == 200) {
+            if ($serendipity['last_http_request']['responseCode'] == 200) {
                 $shorturls['twurl'] = $short_url;
             }
         } else {
@@ -250,7 +250,7 @@ class UrlShortener
 
         if (function_exists('serendipity_request_url')) {
             $response = serendipity_request_url($bitly, 'POST', null, null, $options);
-            if ($serendipity['last_http_request']['responseCode']) == 200) {
+            if ($serendipity['last_http_request']['responseCode'] == 200) {
                 return false;
             }
             if (strlen($response) < 1) {
@@ -308,7 +308,7 @@ class UrlShortener
 
         if (function_exists('serendipity_request_url')) {
             $xml = serendipity_request_url($req_url, 'GET', null, null, $options);
-            if ($serendipity['last_http_request']['responseCode']) == 200) {
+            if ($serendipity['last_http_request']['responseCode'] == 200) {
                 $vals = array();
                 $index = array();
                 $parser = xml_parser_create();
