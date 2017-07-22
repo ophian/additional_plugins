@@ -314,9 +314,9 @@ class UrlShortener
                 $parser = xml_parser_create();
                 xml_parse_into_struct($parser, $xml, $vals, $index);
                 xml_parser_free($parser);
-
                 $short_url = 'http://delivr.com/' . $vals[$index['DELIVRID'][0]][value];
                 $shorturls['delivr'] = trim($short_url);
+
             }
         } else {
             require_once S9Y_PEAR_PATH . 'HTTP/Request.php';
@@ -325,17 +325,18 @@ class UrlShortener
             $req = new HTTP_Request($req_url, $options);
             $req->sendRequest();
             $xml = $req->getResponseBody();
+
+            if ($req->getResponseCode() == 200) {
+                $vals = array();
+                $index = array();
+                $parser = xml_parser_create();
+                xml_parse_into_struct($parser, $xml, $vals, $index);
+                xml_parser_free($parser);
+                $short_url = 'http://delivr.com/' . $vals[$index['DELIVRID'][0]][value];
+                $shorturls['delivr'] = trim($short_url);
+            }
             serendipity_request_end();
 
-        if ($req->getResponseCode()==200) {
-            $vals = array();
-            $index = array();
-            $parser = xml_parser_create();
-            xml_parse_into_struct($parser, $xml, $vals, $index);
-            xml_parser_free($parser);
-
-            $short_url = 'http://delivr.com/' . $vals[$index['DELIVRID'][0]][value];
-            $shorturls['delivr'] = trim($short_url);
         }
     }
 
