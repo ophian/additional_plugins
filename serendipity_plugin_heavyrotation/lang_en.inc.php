@@ -1,4 +1,5 @@
 <?php
+
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_TITLE', 'On »Heavy Rotation«');
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_DESCRIPTION', 'This plugin displays an album cover from last.fm which was on Heavy Rotation (top album) in the last week');
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_SIDEBARTITLE_TITLE', 'Sidebar title');
@@ -13,3 +14,4 @@
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_HEIGHT_DESCRIPTION', 'Height of the cover image when displaying in px');
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_WIDTH_TITLE', 'Cover image width');
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_WIDTH_DESCRIPTION', 'Width of the cover image when displaying in px');
+

@@ -1,0 +1,8 @@
+0.10:
+-----
+
+ * Use load language API - extends required Serendipity version to v.1.6
+ * Check missing REQUEST url (Request2) switch for lib/helper/abstract.php
+   _fetch().
+
+....

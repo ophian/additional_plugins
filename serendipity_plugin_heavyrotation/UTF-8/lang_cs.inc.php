@@ -22,3 +22,4 @@
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_HEIGHT_DESCRIPTION',		'Výška obrázku obálky alba v pixelech');
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_WIDTH_TITLE',		'Šířka obrázku obálky');
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_WIDTH_DESCRIPTION',		'Šířka obrázku obálky alba v pixelech');
+
