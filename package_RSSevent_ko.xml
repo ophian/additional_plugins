@@ -23,7 +23,7 @@
 <category>Event Plugins</category>
 <author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 27 Oct 2016 12:43:57 +0200</pubDate>
+<pubDate>Sat, 22 Jul 2017 13:34:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 16 Nov 2016 13:12:35 +0100</pubDate>
+<pubDate>Sat, 22 Jul 2017 13:30:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -185,7 +185,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Lewe Zipfel, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_communityrating&lt;br /&gt;Community Rating&lt;/b&gt;&lt;br /&gt;You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 23 Sep 2016 15:54:17 +0200</pubDate>
+<pubDate>Sat, 22 Jul 2017 13:49:35 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_communityrating</guid>
 </item>
 <item>
@@ -418,8 +418,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_flickr</link>
 <category>Event Plugins</category>
 <author>Jay Bertrand</author>
-<content:encoded>&lt;b&gt;serendipity_event_flickr&lt;br /&gt;Import from Flickr&lt;/b&gt;&lt;br /&gt;Import images from flickr.com into the media library&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 02 Feb 2017 14:24:58 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_flickr&lt;br /&gt;Import from Flickr&lt;/b&gt;&lt;br /&gt;Import images from flickr.com into the media library&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 22 Jul 2017 14:48:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flickr</guid>
 </item>
 <item>
@@ -473,7 +473,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_geourl&lt;br /&gt;GeoURL&lt;/b&gt;&lt;br /&gt;GeoURL allocates URLs to locations. More Information at http://geourl.org/&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 26 Jan 2017 09:37:49 +0100</pubDate>
+<pubDate>Sat, 22 Jul 2017 13:30:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geourl</guid>
 </item>
 <item>
@@ -518,7 +518,7 @@
 <category>Event Plugins</category>
 <author>Boris</author>
 <content:encoded>&lt;b&gt;serendipity_event_google_sitemap&lt;br /&gt;Sitemap Generator (for Crawlers)&lt;/b&gt;&lt;br /&gt;Creates a sitemap.xml.gz, which can be used by miscellaneous Web-Crawlers. (Google, MSN, Yahoo and Ask)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 08 Sep 2016 19:11:20 +0200</pubDate>
+<pubDate>Sat, 22 Jul 2017 13:31:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_google_sitemap</guid>
 </item>
 <item>
@@ -752,7 +752,7 @@
 <category>Event Plugins</category>
 <author>Pelle Boese, Grischa Brockhaus</author>
 <content:encoded>&lt;b&gt;serendipity_event_mobile_output&lt;br /&gt;Markup: Mobile Output&lt;/b&gt;&lt;br /&gt;This plugin handles mobile devices and outputs optimized XHTML MP markup if it detects a mobile browser and a specially optimized site for iPhone and iPod Touch. It also scales images to fit the display size.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 02 Feb 2017 14:52:31 +0100</pubDate>
+<pubDate>Sat, 22 Jul 2017 13:32:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mobile_output</guid>
 </item>
 <item>
@@ -833,7 +833,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, phoneblogz.com</author>
 <content:encoded>&lt;b&gt;serendipity_event_phoneblogz&lt;br /&gt;Phoneblogz&lt;/b&gt;&lt;br /&gt;This plugin allows to fetch messages from Phoneblogz.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 22 Mar 2017 16:17:29 +0100</pubDate>
+<pubDate>Sat, 22 Jul 2017 13:32:19 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_phoneblogz</guid>
 </item>
 <item>
@@ -851,7 +851,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Hannes Gassert, Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_podcast&lt;br /&gt;Easy Podcasting Plugin&lt;/b&gt;&lt;br /&gt;Adds &quot;podcasting&quot; capabilities hinzu (RSS enclosure, Video/Sound-Player)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 02 Feb 2017 14:51:03 +0100</pubDate>
+<pubDate>Sat, 22 Jul 2017 13:32:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_podcast</guid>
 </item>
 <item>
@@ -1193,7 +1193,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;글 발표&lt;/b&gt;&lt;br /&gt;온라인 서비스에 새로운 글이 올라왔음을 알림&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 08 Sep 2016 16:47:27 +0200</pubDate>
+<pubDate>Sat, 22 Jul 2017 13:32:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>
@@ -1274,7 +1274,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Peter Heimann</author>
 <content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Microblogging (Twitter,Identica)&lt;/b&gt;&lt;br /&gt;Adds a twitter/identica client to the admininistration interface, searches for tweetbacks and announces new articles to a microblogging account.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 06 Sep 2016 16:38:22 +0200</pubDate>
+<pubDate>Sat, 22 Jul 2017 12:42:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>

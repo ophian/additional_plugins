@@ -226,8 +226,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_flickrbadge</link>
 <category>Sidebar Plugins</category>
 <author>Lars Strojny</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_flickrbadge&lt;br /&gt;Flickr badge&lt;/b&gt;&lt;br /&gt;Shows your last photos on Flickr.com&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_flickrbadge&lt;br /&gt;Flickr badge&lt;/b&gt;&lt;br /&gt;Shows your last photos on Flickr.com&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 22 Jul 2017 14:56:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_flickrbadge</guid>
 </item>
 <item>
@@ -236,7 +236,7 @@
 <category>Sidebar Plugins</category>
 <author>Piotr Borys</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_ggopis&lt;br /&gt;Gadu-Gadu IM status description&lt;/b&gt;&lt;br /&gt;Gets and displays a status description of Gadu-Gadu IM&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Jan 2017 17:57:46 +0100</pubDate>
+<pubDate>Sat, 22 Jul 2017 13:32:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_ggopis</guid>
 </item>
 <item>
@@ -271,8 +271,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_heavyrotation</link>
 <category>Sidebar Plugins</category>
 <author>Lars Strojny</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_heavyrotation&lt;br /&gt;On »Heavy Rotation«&lt;/b&gt;&lt;br /&gt;This plugin displays an album cover from last.fm which was on Heavy Rotation (top album) in the last week&lt;br/&gt;For: Serendipity 0.9</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_heavyrotation&lt;br /&gt;On »Heavy Rotation«&lt;/b&gt;&lt;br /&gt;This plugin displays an album cover from last.fm which was on Heavy Rotation (top album) in the last week&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 22 Jul 2017 14:35:13 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_heavyrotation</guid>
 </item>
 <item>
@@ -281,7 +281,7 @@
 <category>Sidebar Plugins</category>
 <author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Unified Sidebar Image Display&lt;/b&gt;&lt;br /&gt;Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to connect to a Menalto Gallery installs &quot;random&quot; url, access a Coppermine database directory (MySql only), connect to the web service Zooomr (http://beta.zooomr.com/home) or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 22 Mar 2017 17:26:20 +0100</pubDate>
+<pubDate>Sat, 22 Jul 2017 14:25:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>
@@ -317,7 +317,7 @@
 <category>Sidebar Plugins</category>
 <author>Christian Lescuyer</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_pagerank&lt;br /&gt;Google ページランク&lt;/b&gt;&lt;br /&gt;Google ページランクを動的に表示します。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 07 Sep 2016 10:34:46 +0200</pubDate>
+<pubDate>Sat, 22 Jul 2017 13:32:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_pagerank</guid>
 </item>
 <item>
@@ -461,7 +461,7 @@
 <category>Sidebar Plugins</category>
 <author>Grischa Brockhaus, Damian Luszczymak, Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_twitter&lt;br /&gt;Twitter Timeline&lt;/b&gt;&lt;br /&gt;Show your current Twitter entries&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 06 Sep 2016 16:54:40 +0200</pubDate>
+<pubDate>Sat, 22 Jul 2017 12:43:15 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_twitter</guid>
 </item>
 <item>
