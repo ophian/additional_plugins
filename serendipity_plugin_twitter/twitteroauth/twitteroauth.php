@@ -249,7 +249,7 @@ class TwitterOAuth
                     $fields = explode('&', $postfields);
                     foreach($fields AS $field) {
                         $fdata = explode('=', $field);
-                        $data[] = array($fdata[0], $fdata[1], true);
+                        $data[] = array($fdata[0], $fdata[1]);
                     }
                 }
                 $response = serendipity_request_url($url, 'POST', null, $data);
