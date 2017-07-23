@@ -77,9 +77,9 @@ $serendipity['smarty']->registerPlugin('function', 'show_tags', 'smarty_show_tag
         {/if}
         {if $staticpage_show_breadcrumb}
             <div class="staticpage_navigation_breadcrumb">
-                <a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE}</a> &#187;
+                <a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE}</a>{if !empty($staticpage_navigation.crumbs)} &#187; {/if}
             {foreach name="crumbs" from=$staticpage_navigation.crumbs item="crumb"}
-                {if !$smarty.foreach.crumbs.first}&#187;{/if}{if $crumb.id != $staticpage_pid}<a href="{$crumb.link}">{$crumb.name|escape}</a>{else}{$crumb.name|escape}{/if}
+                {if !$smarty.foreach.crumbs.first}&#187; {/if}{if $crumb.id != $staticpage_pid} <a href="{$crumb.link}">{$crumb.name|escape}</a> {else} {$crumb.name|escape} {/if}
             {/foreach}
             </div>
         {/if}
