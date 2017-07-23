@@ -221,5 +221,5 @@
 @define('STATICPAGE_CONFIGGROUP_FRONTEND', 'Default Frontend Appearance:');
 @define('STATICPAGE_CONFIGGROUP_BACKEND', 'Default Backend Appearance:');
 
-@define('STATICPAGE_LANGUAGE_INFO', 'The Language field is meant in use for multilingual blogs (with the languagechooser "multilingual" sidebar plugin, or simply when authors are logged in that have a different language set in their personal configuration). Using the field, staticpage entries can be created that each have a specific translation and will show up only in the currently active language.');
+@define('STATICPAGE_LANGUAGE_INFO', 'The Language field is meant in use for multilingual blogs (with the languagechooser "multilingual" sidebar plugin, or simply when authors are logged in that have a different language set in their personal configuration). Using the field, staticpage entries can be created that each have a specific translation and will show up only in the currently active language. "All languages" means "in any case".');
 

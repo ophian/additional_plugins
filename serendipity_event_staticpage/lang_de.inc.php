@@ -169,3 +169,5 @@
 @define('STATICPAGE_CONFIGGROUP_FRONTEND', 'Allgemeine Frontend Anzeigen:');
 @define('STATICPAGE_CONFIGGROUP_BACKEND', 'Allgemeine Backend Anzeigen:');
 
+@define('STATICPAGE_LANGUAGE_INFO', 'Dieses Sprach-Auswahl-Feld ist für die Nutzung als Multi-Sprachen-Blog ausgelegt (zB. in Kombination mit dem "Multilingual" Seitenleistenplugin, oder einfach, wenn Autoren mit einer eigenen Spracheinstellung in den Eigenen Einstellungen eingeloggt sind). Durch die Nutzung dieses Feldes können spezifische Statische Seiten nach Sprache erstellt werden, die auch nur dann angezeigt werden, wenn das Frontend diese Sprache aktiv nutzt. "Alle Sprachen" meint "in jedem Fall".');
+
