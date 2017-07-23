@@ -1,7 +1,8 @@
 5.34:
 ----
 
- * [de] translation for the language info field
+ * Added [de] translation for the language info and related category fields
+   and the custom template custom section description.
 
 5.33:
 ----
