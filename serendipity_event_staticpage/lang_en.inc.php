@@ -213,7 +213,7 @@
                     Once entered, the data will be automatically saved inside the serendipity_staticpage_custom database table, and will be available through &#123;$staticpage_custom.XXX&#125;
                     when later being displayed in the frontend. This way, you can easily add new custom fields for a staticpage, ie. to specify a custom header image for each staticpage. Sky\'s the limit!</p>
                     <p>These optional examples enable to use either a custom CSS-BODY-ID to render the page. Or you can specify, which sidebar you want to see when this staticpage is rendered.
-                    Another nice example included here, is to define some related tags for this staticpage, to show a specific amount of entries including these tags.<br>
+                    Another nice example included here, is to define some related tags for this staticpage, to show a specific amount of entries including these tags, like the freetag plugin allows for normal blog entries.<br>
                     <span><strong>Please read:</strong> </span><a href="%s" target="_blank" style="color:#7fdbff">the readme for custom fields</a> examples.</p>
                     <p>The "Disable nl2br markup parser" radio option is already used internally to automark staticpage entries on wysiwyg usage by submit, to not pass through the nl2br markup parser on show.</p>');
 
@@ -221,5 +221,8 @@
 @define('STATICPAGE_CONFIGGROUP_FRONTEND', 'Default Frontend Appearance:');
 @define('STATICPAGE_CONFIGGROUP_BACKEND', 'Default Backend Appearance:');
 
-@define('STATICPAGE_LANGUAGE_INFO', 'The Language field is meant in use for multilingual blogs (with the languagechooser "multilingual" sidebar plugin, or simply when authors are logged in that have a different language set in their personal configuration). Using the field, staticpage entries can be created that each have a specific translation and will show up only in the currently active language. "All languages" means "in any case".');
+@define('STATICPAGE_LANGUAGE_INFO', 'The Language field is meant in use for multilingual blogs (with the languagechooser "multilingual" sidebar plugin,
+                    or simply when authors are logged in that have a different language set in their personal configuration).
+                    Using the field, staticpage entries can be created that each have a specific translation and will show up only in the currently active language.
+                    "All languages" means "in any case".');
 

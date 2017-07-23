@@ -169,5 +169,24 @@
 @define('STATICPAGE_CONFIGGROUP_FRONTEND', 'Allgemeine Frontend Anzeigen:');
 @define('STATICPAGE_CONFIGGROUP_BACKEND', 'Allgemeine Backend Anzeigen:');
 
-@define('STATICPAGE_LANGUAGE_INFO', 'Dieses Sprach-Auswahl-Feld ist für die Nutzung als Multi-Sprachen-Blog ausgelegt (zB. in Kombination mit dem "Multilingual" Seitenleistenplugin, oder einfach, wenn Autoren mit einer eigenen Spracheinstellung in den Eigenen Einstellungen eingeloggt sind). Durch die Nutzung dieses Feldes können spezifische Statische Seiten nach Sprache erstellt werden, die auch nur dann angezeigt werden, wenn das Frontend diese Sprache aktiv nutzt. "Alle Sprachen" meint "in jedem Fall".');
+@define('STATICPAGE_LANGUAGE_INFO', 'Dieses Sprach-Auswahl-Feld ist für die Nutzung als Multi-Sprachen-Blog ausgelegt (zB. in Kombination mit dem "Multilingual" Seitenleistenplugin,
+                    oder einfach, wenn Autoren mit einer eigenen Spracheinstellung in den Eigenen Einstellungen eingeloggt sind).
+                    Durch die Nutzung dieses Feldes können spezifische Statische Seiten nach Sprache erstellt werden, die auch nur dann angezeigt werden,
+                    wenn das Frontend diese Sprache aktiv nutzt. "Alle Sprachen" meint "in jedem Fall".');
+
+@define('STATICPAGE_RELCAT_INFO', 'Dies funktioniert <b>nur</b> in Kombination mit dem entries.tpl-Patch, der in der "README FOR RELATED CATEGORIES.txt" <a href="%s" target="_blank" style="color:#7fdbff">Datei</a> beschrieben ist.<br>
+                    Für eine Frontend-Kategorien-Seite, mit einer Anzahl<span style="font-size:10px"><sup> (1)</sup></span> der letzten Eintrags-Links als Teaser, ist die beste Verwendung mit dem Artikeltyp: "<em>Staticpage with related category</em>" Feld in diesem Formular.
+                    Bitte beachten Sie, dass nur einheitliche 1:1-Beziehungen zwischen Statischen Seiten und Kategorien erlaubt sind.<br><br>
+                    <span style="font-size:10px"><sup>(1)</sup></span> Das Ändern der Menge der dargestellten Teaser-Eintragsverknüpfungen erfolgt in der Datei "plugin staticpage related category.tpl" durch den konfigurierbaren Aufruf-Hook. Standard sind 5 Einträge.');
+@define('STATICPAGE_CUSTOMFIELDS_INFO', '<p>Dieser benutzerdefinierte Abschnitt verbessert die CMS-Fähigkeiten von Serendipity erheblich und zeigt einige Beispiele für das Speichern von benutzerdefinierten Feldern für Statische Seiten.
+                    Alle benutzerdefinierten Felder müssen durch übliche HTML-Formularelemente implementiert werden und müssen ihre Werte in einem "serendipity[plugin][custom][XXX]" Feldnamen speichern.
+                    Einmal eingegeben, werden die Daten automatisch in der "serendipity_staticpage_custom" Datenbanktabelle gespeichert und stehen als "&#123;$staticpage_custom.XXX&#125;" Smarty-Variable zur Verfügung,
+                    wenn sie später im Frontend angezeigt werden. Auf diese Weise können Sie ganz einfach neue benutzerdefinierte Felder für eine Statische Seite hinzufügen, zB. um für jede
+                    Statische Seite ein benutzerdefiniertes Header-Image anzugeben. Die Verwendungsmöglichkeiten sind nahezu unbegrenzt!</p>
+                    <p>Mit diesen optionalen Beispielen können Sie entweder eine benutzerdefinierte CSS-BODY-ID verwenden, um die Seite zu rendern.
+                    Oder Sie können angeben, welche Seitenleiste Sie sehen möchten, wenn diese Statische Seite gerendert wird.
+                    Ein weiteres schönes Beispiel hierin ist es, einige verwandte Tags für diese Statische Seite zu definieren, um eine bestimmte Anzahl von Einträgen mit diesen Tags anzuzeigen,
+                    so wie es das Freetag-Plugin für Blog Einträge erlaubt.<br>
+                    <span><strong>Bitte lesen Sie:</strong> </span> <a href="%s" target="_blank" style="color:#7fdbff">the readme for custom fields</a>-Beispiele.</p>
+                    <p>Die "Disable nl2br markup parser" Radio-Option wird bereits intern verwendet, um automatisch WYSIWYG-Einträge von Statischen Seiten für die Speicherung zu markieren, auf dass sie folgend nicht durch das nl2br Markup-Parser Plugin bei der Anzeige verändert werden.</p>');
 
