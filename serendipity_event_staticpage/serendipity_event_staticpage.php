@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.34');
+        $propbag->add('version', '5.35');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -2218,14 +2218,12 @@ class serendipity_event_staticpage extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT pagetitle
-                FROM '.$serendipity['dbPrefix'].'staticpages
+        $q = "SELECT pagetitle
+                FROM {$serendipity['dbPrefix']}staticpages
                WHERE is_startpage = 1
-                 AND language = \'' . $serendipity['lang'] . '\'
-                  OR language = \'all\'
-                  OR language = \'\'
+                 AND language IN ('{$serendipity['lang']}', 'all', '')
             ORDER BY id DESC
-               LIMIT 1';
+               LIMIT 1";
 
         $page = serendipity_db_query($q, true, 'assoc');
 
@@ -2242,14 +2240,12 @@ class serendipity_event_staticpage extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT pagetitle
-                FROM '.$serendipity['dbPrefix'].'staticpages
+        $q = "SELECT pagetitle
+                FROM {$serendipity['dbPrefix']}staticpages
                WHERE is_404_page = 1
-                 AND language = \'' . $serendipity['lang'] . '\'
-                  OR language = \'all\'
-                  OR language = \'\'
+                 AND language IN ('{$serendipity['lang']}', 'all', '')
             ORDER BY last_modified DESC
-               LIMIT 1';
+               LIMIT 1";
 
         $page = serendipity_db_query($q, true, 'assoc');
 
@@ -2477,9 +2473,7 @@ class serendipity_event_staticpage extends serendipity_event
                  AND articletype != 0
                  AND is_404_page = 0
                  AND (shownavi = 1 OR show_breadcrumb = 1 OR (parent_id = 0 AND shownavi = 0 AND show_breadcrumb = 0))
-                 AND language = '{$serendipity['lang']}'
-                 OR language = ''
-                 OR language = 'all'
+                 AND language IN ('{$serendipity['lang']}', 'all', '')
                ORDER BY parent_id, pageorder";
         $pub = serendipity_db_query($q);
 
