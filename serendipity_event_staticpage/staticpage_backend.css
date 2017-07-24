@@ -60,7 +60,7 @@
 .icon-pageorder { color: #3E5F81;/*#6fbc6d;*/ }
 .icon-pagetype { color: #f46899; }
 .icon-otherplugins { color: #5fa9dd; }
-.sp_entries_pane .spform a { vertical-align: bottom; }
+.sp_entries_pane .spform a { vertical-align: bottom; line-height: 1.20em; }
 
 #sp_navigator {
     margin-top: 1.5em;
