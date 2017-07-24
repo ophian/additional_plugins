@@ -529,6 +529,11 @@
         font-size: 1em;
     }
 }
+@media only screen and (min-width: 1600px) {
+    .sp_entries_pane .spform a {
+        line-height: 1.16em;
+    }
+}
 
 
 /* pageadd */
