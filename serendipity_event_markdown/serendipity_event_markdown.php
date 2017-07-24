@@ -25,7 +25,7 @@ class serendipity_event_markdown extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '1.26');
+        $propbag->add('version',       '1.27');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
             'frontend_display' => true,
@@ -134,10 +134,11 @@ class serendipity_event_markdown extends serendipity_event
 
         $mdsp = $this->get_config('MARKDOWN_SMARTYPANTS');
         $mdv  = $this->get_config('MARKDOWN_VERSION');
+        $mdex = serendipity_db_bool($this->get_config('MARKDOWN_EXTRA', 'false'));
 
         switch($mdv) {
             case 2:
-                if (serendipity_db_bool($this->get_config('MARKDOWN_EXTRA', 'false'))) {
+                if ($mdex) {
                     require_once dirname(__FILE__) . '/lib/Michelf/MarkdownExtra.inc.php';
                 } else {
                     require_once dirname(__FILE__) . '/lib/Michelf/Markdown.inc.php';
@@ -151,7 +152,7 @@ class serendipity_event_markdown extends serendipity_event
                 break;
 
             case 1:
-                if (serendipity_db_bool($this->get_config('MARKDOWN_EXTRA', 'false'))) {
+                if ($mdex) {
                     include_once  dirname(__FILE__) . '/markdown_extra.php';
                 } else {
                     include_once  dirname(__FILE__) . '/markdown.php';
@@ -171,7 +172,11 @@ class serendipity_event_markdown extends serendipity_event
                             !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = $temp['element'];
                             if ($mdv == 2) {
-                                $eventData[$element] = str_replace('javascript:', '', Markdown::defaultTransform($eventData[$element]));
+                                if ($mdex) {
+                                    $eventData[$element] = str_replace('javascript:', '', MarkdownExtra::defaultTransform($eventData[$element]));
+                                } else {
+                                    $eventData[$element] = str_replace('javascript:', '', Markdown::defaultTransform($eventData[$element]));
+                                }
                                 if ($mdsp == 1) $eventData[$element] = SmartyPants::defaultTransform($eventData[$element]);
                                 if ($mdsp == 2) $eventData[$element] = SmartyPantsTypographer::defaultTransform($eventData[$element]);
                             } else {
@@ -180,7 +185,7 @@ class serendipity_event_markdown extends serendipity_event
                         }
                     }
                     if (is_array($eventData)) {
-                        $this->setPlaintextBody($eventData, $mdv, $mdsp);
+                        $this->setPlaintextBody($eventData, $mdex, $mdv, $mdsp);
                     }
                     break;
 
@@ -251,17 +256,26 @@ a.footnote-ref:after {
      * @see http://board.s9y.org/viewtopic.php?f=11&t=18351 Discussion of this feature in the S9y forum.
      *
      * @param array $eventData
+     * @param bool  $extra      Markdown Extra           default false
      * @param int   $version    Markdown Classic or Lib  default 2
      * @param int   $pants      SmartyPants option       default 0
+     * @return      $GLOBALS['entry'][0]['plaintext_body']
      */
-    function setPlaintextBody(array $eventData, $version=2, $pants=0)
+    function setPlaintextBody(array $eventData, $extra=false, $version=2, $pants=0)
     {
         if (isset($GLOBALS['entry'][0]['plaintext_body'])) {
-            $html =  ($version == 2) ? Markdown::defaultTransform($GLOBALS['entry'][0]['plaintext_body']) : Markdown($GLOBALS['entry'][0]['plaintext_body']);
+            $plaintext_body = $GLOBALS['entry'][0]['plaintext_body'];
         } else {
-            $html =  ($version == 2) ? Markdown::defaultTransform(html_entity_decode($eventData['body'], ENT_COMPAT, LANG_CHARSET)) : Markdown(html_entity_decode($eventData['body'], ENT_COMPAT, LANG_CHARSET));
+            $plaintext_body = html_entity_decode($eventData['body'], ENT_COMPAT, LANG_CHARSET);
         }
-        if ($pants > 0) $html =  ($pants == 2) ? SmartyPantsTypographer::defaultTransform($html) : SmartyPants::defaultTransform($html);
+
+        if ($extra) {
+            $html = ($version == 2) ? MarkdownExtra::defaultTransform($plaintext_body) : Markdown($plaintext_body);
+        } else {
+            $html = ($version == 2) ? Markdown::defaultTransform($plaintext_body) : Markdown($plaintext_body);
+        }
+
+        if ($pants > 0) $html = ($pants == 2) ? SmartyPantsTypographer::defaultTransform($html) : SmartyPants::defaultTransform($html);
         $GLOBALS['entry'][0]['plaintext_body'] = trim(strip_tags(str_replace('javascript:', '', $html)));
     }
 
@@ -272,13 +286,5 @@ a.footnote-ref:after {
     */
 
 }
-
-/* vim: set sts=4 ts=4 expandtab :
- * Local variables:
- * tab-width: 4
- * c-basic-offset: 4
- * indent-tabs-mode: nil
- * End:
-*/
 
 ?>
