@@ -1,4 +1,4 @@
-5.35:
+5.35 & 1.30:
 ----
 
  * Fix regression SQL query bug with language selection bugfix in 5.31,

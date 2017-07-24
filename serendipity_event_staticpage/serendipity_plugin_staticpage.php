@@ -16,7 +16,7 @@ class serendipity_plugin_staticpage extends serendipity_plugin
         $propbag->add('description', PLUGIN_STATICPAGELIST_NAME_DESC);
         $propbag->add('author',      "Rob Antonishen, Falk Doering, Ian");
         $propbag->add('stackable',   true);
-        $propbag->add('version',     '1.29');
+        $propbag->add('version',     '1.30');
         $propbag->add('configuration', array(
                 'title',
                 'limit',
@@ -28,7 +28,7 @@ class serendipity_plugin_staticpage extends serendipity_plugin
                 'imgdir'
         ));
         $propbag->add('requirements', array(
-            'serendipity' => '2.0.99',
+            'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
@@ -223,17 +223,14 @@ class serendipity_plugin_staticpage extends serendipity_plugin
     {
         global $serendipity;
 
+        $PID = $parentsonly ? ' AND parent_id = 0' : '';
         $q = "SELECT id, headline, parent_id, permalink, pagetitle, is_startpage
                 FROM {$serendipity['dbPrefix']}staticpages
                WHERE showonnavi = 1
                  AND publishstatus = 1
-                 AND language = '{$serendipity['lang']}'
-                  OR language = ''
-                  OR language = 'all'";
-        if ($parentsonly) {
-            $q .= " AND parent_id = 0";
-        }
-        $q .= " ORDER BY parent_id, pageorder";
+                 AND language IN ('{$serendipity['lang']}', 'all', '')
+                 $PID
+            ORDER BY parent_id, pageorder";
         $pagelist = serendipity_db_query($q, false, 'assoc');
         if (is_array($pagelist)) {
             self::iteratePageList($pagelist);
@@ -275,17 +272,14 @@ class serendipity_plugin_staticpage extends serendipity_plugin
     {
         global $serendipity;
 
+        $PID = $parentsonly ? ' AND parent_id = 0' : '';
         $q = "SELECT id, headline, parent_id, permalink, pagetitle, is_startpage
                 FROM {$serendipity['dbPrefix']}staticpages
                WHERE showonnavi = 1
                  AND publishstatus = 1
-                 AND language = '{$serendipity['lang']}'
-                  OR language = ''
-                  OR language = 'all'";
-        if ($parentsonly) {
-            $q .= " AND parent_id = 0";
-        }
-        $q .= " ORDER BY parent_id, pageorder";
+                 AND language IN ('{$serendipity['lang']}', 'all', '')
+                 $PID
+            ORDER BY parent_id, pageorder";
         if ($limit) {
             $q .= " LIMIT $limit";
         }
