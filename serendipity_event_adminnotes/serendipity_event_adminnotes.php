@@ -22,7 +22,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '4.1.0'
         ));
 
-        $propbag->add('version',       '0.17');
+        $propbag->add('version',       '0.18');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'html', 'markup', 'cutoff'));
@@ -300,6 +300,20 @@ class serendipity_event_adminnotes extends serendipity_event
                     echo '<label for="note_body" class="block_level">' . ENTRY_BODY . '</label>';
                 }
                     echo '<textarea id="note_body" rows=10 cols=80 name="note_body">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['body']) : htmlspecialchars($entry['body'], ENT_COMPAT, LANG_CHARSET)) . '</textarea>';
+                if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) {
+?>
+                    <script>
+                        CKEDITOR.replace( 'note_body',
+                        {
+                            toolbar : [['Format'],['Bold','Italic','Underline','Strike','Superscript','TextColor','-','NumberedList','BulletedList','Outdent','Blockquote'],['JustifyBlock','JustifyCenter'],['SpecialChar'],['Maximize'],['Source']],
+                            toolbarGroups: null,
+                            entities: false,
+                            htmlEncodeOutput: false,
+                            extraAllowedContent: 'div(*);p(*);ul(*);code{*}(*)'
+                        });
+                    </script>
+<?php
+                }
                 if ($serendipity['version'][0] < 2) {
                     echo '<br /><br />';
                     echo '<input type="submit" name="submit" value="' . SAVE . '" class="serendipityPrettyButton input_button" />';
