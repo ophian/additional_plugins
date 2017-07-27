@@ -177,6 +177,8 @@ class serendipity_event_adminnotes extends serendipity_event
             return false;
         }
 
+        $allow_html = $this->get_config('html');
+
         switch($_REQUEST['action']) {
             case 'edit':
                 $entry = $this->getMyNotes((int)$_REQUEST['note']);
