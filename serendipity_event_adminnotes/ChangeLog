@@ -1,3 +1,8 @@
+0.19:
+-----
+
+ * Restrict WYSIWYG-Editor to Admin group and load via emit_htmlarea
+
 0.18:
 -----
 
