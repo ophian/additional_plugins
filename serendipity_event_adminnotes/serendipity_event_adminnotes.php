@@ -22,7 +22,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '4.1.0'
         ));
 
-        $propbag->add('version',       '0.19');
+        $propbag->add('version',       '0.20');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'html', 'markup', 'cutoff'));
@@ -523,10 +523,10 @@ function fulltext_toggle(id) {
                             echo '<div class="serendipity_note note_' . $this->output($note['notetype']) . ' note_owner_' . $note['authorid'] . ($serendipity['COOKIE']['lastnote'] < $note['noteid'] ? ' note_new' : '') . '">' . "\n";
                             echo '    <div class="note_subject"><strong>' . $this->output($note['subject']) . '</strong> ' . POSTED_BY . ' ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($note['realname']) : htmlspecialchars($note['realname'], ENT_COMPAT, LANG_CHARSET)) . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, $note['notetime']) . '</div>' . "\n";
 
-                            if (strlen($note['body']) > $cutoff) {
+                            if (strlen(strip_tags($note['body'])) > $cutoff) {
                                 $output = $this->output($note['body']);
                                 echo '    <div id="' . $id . '_full" style="display: none" class="note_body">' .  $output . '</div>' . "\n";
-                                echo '    <div id="' . $id . '_summary" class="note_body">' .  serendipity_mb('substr', $output, 0, $cutoff) . '...</div>' . "\n";
+                                echo '    <div id="' . $id . '_summary" class="note_body">' .  serendipity_mb('substr', strip_tags($output), 0, $cutoff) . '...</div>' . "\n";
                                 echo '    <div class="note_summarylink"><a href="#' . $id . '_full" onclick="fulltext_toggle(' . $id . '); return false;" title="' . VIEW . '" class="serendipityIconLink"><img src="' . $zoom . '" alt="' . TOGGLE_ALL . '" /><span id="' . $id . '_text">' . TOGGLE_ALL  . '</span></a></div>';
                             } else {
                                 echo '    <div class="note_body">' . $this->output($note['body']) . '</div>' . "\n";
@@ -555,14 +555,14 @@ function fulltext_toggle(id) {
                         <?php echo POSTED_BY . ' ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($note['realname']) : htmlspecialchars($note['realname'], ENT_COMPAT, LANG_CHARSET)) . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, $note['notetime'])."\n"; ?>
                     </div>
 <?php
-                    if (strlen($note['body']) > $cutoff) {
+                    if (strlen(strip_tags($note['body'])) > $cutoff) {
                         $output = $this->output($note['body']);
 ?>
                     <div id="<?php echo $id ?>_full" style="display: none" class="note_body">
                         <?php echo $output . "\n"; ?>
                     </div>
                     <div id="<?php echo $id ?>_summary" class="note_body">
-                        <?php echo serendipity_mb('substr', $output, 0, $cutoff) . "&hellip;\n"; ?>
+                        <?php echo serendipity_mb('substr', strip_tags($output), 0, $cutoff) . "&hellip;\n"; ?>
                     </div>
                     <div class="note_summarylink">
                         <button class="button_link toggle_comment_full" type="button" onclick="fulltext_toggle(<?php echo $id ?>); return false;" data-href="#qn<?php echo $id ?>_full" title="<?php echo TOGGLE_ALL ?>"><span class="icon-right-dir" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo TOGGLE_ALL ?></span></button>
