@@ -11,9 +11,9 @@
 <description>Zobrazuje v administrační sekci oznámení přihlášeným uživatelům</description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.17</version>
+  <version>0.18</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-07-27</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
       <file>ChangeLog</file>
