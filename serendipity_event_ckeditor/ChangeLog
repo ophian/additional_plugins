@@ -1,3 +1,26 @@
+4.7.1.1:
+---------
+    * Enable CKEditor WYSIWYG-mode new "serendipity_image_block" gallery helper class for upcoming Styx 2.3.
+    * Fix CKEditor WYSIWYG-mode styles regarding serendipity image comments and remove some redundant 2k11 styles.
+    * Add a helper "instagram_preload" class, to prevent the removal of generic div inline style="background: url(data:image/png;base64,iVB...)"
+      base64 encoded data, when inserting instagram image markup and switching mode. This class needs to be added manually to the inner div
+      container, replacing the inline styles.
+      A simplified Example:
+
+<blockquote>
+    <div style="padding:8px">
+        <div style="background:#f8f8f8; line-height:0; margin-top:0; padding:50% 0; text-align:center; width:100%">
+            <div class="instagram_preload">&nbsp;</div>
+        </div>
+
+        <p style="margin-left:8px; margin-right:8px">
+            <a href="https://www.instagram.com/p/xyz123Raw1/" target="_blank">Really Nothing.</a>
+        </p>
+        <p style="text-align:center">A post shared by John Doe (@example) on Jul 29, 2017 at 12:21pm GMT</p>
+    </div>
+</blockquote>
+
+
 4.7.1.0:
 ---------
     * Upgrade to CKEDITOR 4.7. Series, update 1 (http://ckeditor.com/release-notes).
