@@ -53,7 +53,7 @@ class serendipity_event_microformats extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MICROFORMATS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Gutjahr, Ian');
-        $propbag->add('version',       '0.48');
+        $propbag->add('version',       '0.49');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -226,12 +226,14 @@ div.tabbertab fieldset {
 .entryproperties_microformats #hCalendar_use {
     margin-left: .5em;
 }
-#microformats_tab_info {
-    float: unset;
-    width: 98%;
-    display: inline-block;
+@media only screen and (min-width: 768px) {
+    #microformats_tab_info {
+        float: unset;
+        width: 100%;
+    }
 }
 
+/* serendipity_event_microformats end */
 ';
                     $eventData .= file_get_contents(dirname(__FILE__) . '/tabber.css');
                     $eventData .= '
