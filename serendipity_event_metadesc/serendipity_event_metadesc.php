@@ -21,7 +21,7 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian');
-        $propbag->add('version',       '0.23');
+        $propbag->add('version',       '0.24');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'php'         => '5.1.0'
@@ -262,8 +262,15 @@ class serendipity_event_metadesc extends serendipity_event
 #edit_entry_metadesc .toggle_info.button_link {
     margin-bottom: .25em;
 }
-#metadesc_tab_info,
-#metaheadtitle_tab_info { float: right; }
+
+.meta_stringlength_disclaimer em { font-size: .875em; }
+
+@media only screen and (min-width: 768px) {
+    #metadesc_tab_info,
+    #metaheadtitle_tab_info {
+        width: 100%;
+    }
+}
 
 /* serendipity_event_metadesk end */
 ';
@@ -338,7 +345,7 @@ class serendipity_event_metadesc extends serendipity_event
                         <input class="input_textbox" type="text" style="width: 100%" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_head_title) : htmlspecialchars($meta_head_title, ENT_COMPAT, LANG_CHARSET)); ?>" name="serendipity[properties][meta_head_title]" id="properties_headtitle" />
                         <span class="meta_string_length"><?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_head_title) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_head_title) . ' ' . PLUGIN_METADESC_CHARACTERS; ?></span>
 
-                        <p class="meta_stringlength_disclaimer"><em><?php echo '<sup>*</sup> ' . PLUGIN_METADESC_STRINGLENGTH_DISCLAIMER; ?></em></p>
+                        <p class="meta_stringlength_disclaimer"><em><?php echo '<sup>(*)</sup> ' . PLUGIN_METADESC_STRINGLENGTH_DISCLAIMER; ?></em></p>
                     </fieldset>
 <?php
                     } else {
@@ -367,7 +374,7 @@ class serendipity_event_metadesc extends serendipity_event
                             <input id="properties_headtitle" class="input_textbox" style="width: 100%" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_head_title) : htmlspecialchars($meta_head_title, ENT_COMPAT, LANG_CHARSET)); ?>" name="serendipity[properties][meta_head_title]" type="text">
                         </div>
 
-                        <span class="meta_stringlength_disclaimer"><sup>*</sup> <em><?php echo PLUGIN_METADESC_STRINGLENGTH_DISCLAIMER; ?></em></span>
+                        <span class="meta_stringlength_disclaimer"><sup>(*)</sup> <em><?php echo PLUGIN_METADESC_STRINGLENGTH_DISCLAIMER; ?></em></span>
                     </fieldset>
 <?php
                     }
