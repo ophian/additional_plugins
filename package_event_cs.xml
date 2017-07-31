@@ -6216,9 +6216,9 @@
 <description>Zadejte HTML meta tagy pro klíčová slova nebo popis blogu. Také můžete zadávat různý titulek pro jednotlivé stránky blogu a výchozí hodnotu pro klíčová slova/popis pro stránky se zobrazenm více příspěvků (výchozí stránka, přehledy kategorií).</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Don Chambers, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.23</version>
+  <version>0.24</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-07-17</date>
+  <date>2017-07-30</date>
   <filelist>
     <dir name="serendipity_event_metadesc">
       <file>.htaccess</file>
@@ -6270,9 +6270,9 @@
 <description>Tento plugin poskytuje jednoduché publikování přehledů (nebo událostí); podporuje příslušné mikroformáty.</description>
 <maintainers><maintainer><name>Matthias Gutjahr, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.48</version>
+  <version>0.49</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-02-02</date>
+  <date>2017-07-30</date>
   <filelist>
     <dir name="serendipity_event_microformats">
       <file>.htaccess</file>

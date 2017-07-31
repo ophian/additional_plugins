@@ -725,7 +725,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Don Chambers, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_metadesc&lt;br /&gt;HTML META tagy&lt;/b&gt;&lt;br /&gt;Zadejte HTML meta tagy pro klíčová slova nebo popis blogu. Také můžete zadávat různý titulek pro jednotlivé stránky blogu a výchozí hodnotu pro klíčová slova/popis pro stránky se zobrazenm více příspěvků (výchozí stránka, přehledy kategorií).&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Mon, 17 Jul 2017 15:47:41 +0200</pubDate>
+<pubDate>Sun, 30 Jul 2017 10:51:22 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_metadesc</guid>
 </item>
 <item>
@@ -734,7 +734,7 @@
 <category>Event Plugins</category>
 <author>Matthias Gutjahr, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Mikroformáty&lt;/b&gt;&lt;br /&gt;Tento plugin poskytuje jednoduché publikování přehledů (nebo událostí); podporuje příslušné mikroformáty.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 02 Feb 2017 14:31:24 +0100</pubDate>
+<pubDate>Sun, 30 Jul 2017 10:55:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_microformats</guid>
 </item>
 <item>
