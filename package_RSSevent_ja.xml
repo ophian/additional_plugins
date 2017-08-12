@@ -566,8 +566,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_imageselectorplus</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;メディアマネージャーの拡張されたオプション&lt;/b&gt;&lt;br /&gt;Allows extended options for inserting images from the media manager [Serendipity &gt;= 0.9]&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 27 Oct 2016 12:32:57 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;メディアマネージャーの拡張されたオプション&lt;/b&gt;&lt;br /&gt;Allows extended options for inserting images from the media manager [Serendipity &gt;= 0.9]&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<pubDate>Sat, 12 Aug 2017 11:22:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>

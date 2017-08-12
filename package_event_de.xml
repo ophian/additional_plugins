@@ -4835,9 +4835,9 @@
 <description>Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediendatenbank.</description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.55</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <version>1.00</version>
+  <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
+  <date>2017-08-12</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>.htaccess</file>
