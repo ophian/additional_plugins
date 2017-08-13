@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian');
-        $propbag->add('version',       '1.00');
+        $propbag->add('version',       '1.01');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -188,51 +188,19 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
         $fdim = @serendipity_getimagesize($target, '', '');
 
-        if (!isset($serendipity['thumbConstraint'])) {
-            // Original code, for older versions of s9y
-            $s9ysizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], $serendipity['thumbSize']);
-            if ($fdim[0] >= $fdim[1]) {
-                $orientation = 'Landscape';
-            } else {
-                $orientation = 'Portrait';
-            }
-
-            if ($sizes['width'] == 0) {
-                if ($orientation == 'Landscape') {
-                    $_newsizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], null, $sizes['height']);
-                } else {
-                    $_newsizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], $sizes['height'], null);
-                }
-                $newsizes  = array('width' => $_newsizes[0], 'height' => $_newsizes[1]);
-            } elseif ($sizes['height'] == 0) {
-                if ($orientation == 'Landscape') {
-                    $_newsizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], $sizes['width'], null);
-                } else {
-                    $_newsizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], null, $sizes['width']);
-                }
-                $newsizes  = array('width' => $_newsizes[0], 'height' => $_newsizes[1]);
-            } else {
-                $newsizes = array(
-                    0 => $sizes['width'],
-                    1 => $sizes['height']
-                );
-            }
+        $s9ysizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], $serendipity['thumbSize'], $serendipity['thumbConstraint']);
+        $orientation = 'size';
+        if ($sizes['width'] == 0) {
+            $_newsizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], $sizes['height'], 'height');
+        } elseif ($sizes['height'] == 0) {
+            $_newsizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], $sizes['width'], 'width');
         } else {
-            // Newer s9y version that understands how to constrain images properly
-            $s9ysizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], $serendipity['thumbSize'], $serendipity['thumbConstraint']);
-            $orientation = 'size';
-            if ($sizes['width'] == 0) {
-                $_newsizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], $sizes['height'], 'height');
-            } elseif ($sizes['height'] == 0) {
-                $_newsizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], $sizes['width'], 'width');
-            } else {
-                $_newsizes = array(
-                    0 => $sizes['width'],
-                    1 => $sizes['height']
-                );
-            }
-            $newsizes  = array('width' => $_newsizes[0], 'height' => $_newsizes[1]);
+            $_newsizes = array(
+                0 => $sizes['width'],
+                1 => $sizes['height']
+            );
         }
+        $newsizes  = array('width' => $_newsizes[0], 'height' => $_newsizes[1]);
 
         echo '<span class="msg_notice"><span class="icon-attention-circled" aria-hidden="true"></span> Resizing thumb of ' . $orientation . ' ' . $fdim[0] . 'x' . $fdim[1] . ' to ' . $_newsizes[0] . 'x' . $_newsizes[1] . ' instead of ' . $s9ysizes[0] . 'x' . $s9ysizes[1] . "...</span>\n";
         $dirname = dirname($target) . '/';
@@ -433,7 +401,8 @@ class serendipity_event_imageselectorplus extends serendipity_event
                             );
                         }
                     }
-                    break;
+                    // here we need to add normal upload quickblog posts! Thus:
+                    // no break [PSR-2] - extends 'backend_image_addHotlink', which is bit irritating, but we need to fall through or use a method for both
 
                 case 'backend_image_addHotlink':
                     // Re-Scale thumbnails?

@@ -1,3 +1,8 @@
+1.01:
+-----
+ * Fix broken quickblog entries added by v.0.53
+ * Removed some more Series 1 code
+
 1.00:
 -----
  * Fix (v.0.35) added simple wysiwyg editor to quickblog textarea,
