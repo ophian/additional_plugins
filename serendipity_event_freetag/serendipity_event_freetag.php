@@ -43,12 +43,13 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.94');
+        $propbag->add('version',       '4.00');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
             'frontend_display:rss-2.0:per_entry'                => true,
             'frontend_header'                                   => true,
+            'frontend_footer'                                   => true,
 //            'frontend_display:rss-0.92:per_entry'             => true,
             'frontend_display:rss-1.0:per_entry'                => true,
 //            'frontend_display:rss-0.91:per_entry'             => true,
@@ -86,7 +87,7 @@ class serendipity_event_freetag extends serendipity_event
             'admin_show_taglist', 'admin_delimiter', 'admin_ftayt',
 
             'separator1', 'config_cloudgrouper',
-            'show_tagcloud',
+            'show_tagcloud', 'show_ft_jquery',
             'min_percent', 'max_percent', 'max_tags',
             'use_wordcloud',
             'use_rotacloud', 'rotacloud_tag_color', 'rotacloud_tag_border_color', 'rotacloud_width',
@@ -134,6 +135,13 @@ class serendipity_event_freetag extends serendipity_event
             case 'show_tagcloud':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_SHOW_TAGCLOUD);
+                $propbag->add('description', '');
+                $propbag->add('default',     'true');
+                break;
+
+            case 'show_ft_jquery':
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_ALLOW_JQUERYLIB);
                 $propbag->add('description', '');
                 $propbag->add('default',     'true');
                 break;
@@ -906,7 +914,7 @@ class serendipity_event_freetag extends serendipity_event
                     </ul>
                 </div>
                 <script type="text/javascript">
-                    jQuery(document).ready(function() {
+                    window.onload = function() {
                         if (!jQuery.isFunction(jQuery.fn.tagcanvas) ) { return false; }
                         if(!jQuery("#tagCanvas' . $key . '").tagcanvas({
                                 textColour: "#'.$rcTagColor.'",
@@ -918,7 +926,7 @@ class serendipity_event_freetag extends serendipity_event
                             // something went wrong, hide the canvas container
                             jQuery("#freeTagCanvas' . $key . '").hide();
                         }
-                    });
+                    };
                 </script>
                 ';
         } elseif ($useWordCloud) {
@@ -928,7 +936,7 @@ class serendipity_event_freetag extends serendipity_event
             echo '
                 </div>
                 <script type="text/javascript">
-                    jQuery(document).ready(function() {
+                    window.onload = function() {
                         if (!jQuery.isFunction(jQuery.fn.awesomeCloud) ) { return false; }
                         jQuery("#freetag_wordcloud' . $key . '").awesomeCloud({
                             "size" : {
@@ -942,7 +950,7 @@ class serendipity_event_freetag extends serendipity_event
                             "font" : "\'Times New Roman\', Times, serif",
                             "shape" : "circle"
                         });
-                    });
+                    };
                 </script>
                 ';
         } else {
@@ -1006,6 +1014,13 @@ class serendipity_event_freetag extends serendipity_event
             switch($event) {
 
                 case 'frontend_header':
+                    if ($serendipity['version'][0] > 1) {
+                        break;
+                    }
+                case 'frontend_footer':
+                    if ($serendipity['version'][0] < 2) {
+                        break;
+                    }
                     if (serendipity_db_bool($this->get_config('use_flash', 'false'))) {
                         echo '<script type="text/javascript" src="';
                         echo $serendipity['serendipityHTTPPath'];
@@ -1018,15 +1033,15 @@ class serendipity_event_freetag extends serendipity_event
                     // we load both in either case, as long as the option show_tagcloud is enabled,
                     // since it could be that someone wants to use two different clouds (plain, wordcanvas, rotacanvas, flash), differed by event/sidebar plugin!
                     if (serendipity_db_bool($this->get_config('show_tagcloud', 'true'))) {
-                        if (!class_exists('serendipity_event_jquery') && !$serendipity['capabilities']['jquery']) {
+                        if (!class_exists('serendipity_event_jquery') && !$serendipity['capabilities']['jquery'] && serendipity_db_bool($this->get_config('show_ft_jquery', 'true'))) {
                         echo '
     <script type="text/javascript" src="'.$serendipity['serendipityHTTPPath'].'plugins/serendipity_event_freetag/jquery-1.11.3.min.js"></script>
-                            ';
+';
                         }
                         echo '
     <script type="text/javascript" src="'.$serendipity['serendipityHTTPPath'].'plugins/serendipity_event_freetag/jquery.tagcanvas.min.js"></script>
     <script type="text/javascript" src="'.$serendipity['serendipityHTTPPath'].'plugins/serendipity_event_freetag/jquery.awesomeCloud-0.2.js"></script>
-                        ';
+';
                     }
 
                     $this->displayMetaKeywords($serendipity['GET']['id'], $this->displayTag);
@@ -1760,7 +1775,7 @@ $(document).ready(function() {
     }
 
     /**
-     * event hook: frontend_header meta field executor
+     * event hook: frontend_header/frontend_footer meta field executor
      *  uses global object variable tag
      *
      * @param   int  GET id
@@ -2254,9 +2269,12 @@ $(document).ready(function() {
 
 <?php
         } else {
+            $tagview = array('all', 'entryleaf', 'leaf', 'entryuntagged', 'keywords', 'cat2tag', 'tagupdate', 'cleanupmappings');// strange issue occurs, when first comes 'leaf', then 'entryleaf' is not replaced correct, so we need to check the latter first!
+            $tagviewtitle = array(PLUGIN_EVENT_FREETAG_MANAGE_ALL, PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED, PLUGIN_EVENT_FREETAG_MANAGE_LEAF, PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED, PLUGIN_EVENT_FREETAG_KEYWORDS, PLUGIN_EVENT_FREETAG_GLOBALLINKS, PLUGIN_EVENT_FREETAG_REBUILD, PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP);
+            $freetag_section = str_replace($tagview, $tagviewtitle, $serendipity['GET']['tagview']);
 ?>
 
-            <h2><?php echo PLUGIN_EVENT_FREETAG_MANAGETAGS; ?></h2>
+            <h2 id="freetag_adminer_title"><?php echo (empty($freetag_section) ? PLUGIN_EVENT_FREETAG_MANAGETAGS : $freetag_section); ?></h2>
 
             <div class="freetagMenu">
                 <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -2301,11 +2319,11 @@ $(document).ready(function() {
         }
 ?>
 
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=all" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ALL ?>"><svg class="icon icon-tags" title="tags"><use xlink:href="#icon-tags"></use></svg></a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=leaf" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_LEAF ?>"><svg class="icon icon-tag" title="tag"><use xlink:href="#icon-tag"></use></svg></a></li>
+                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=all" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ALL; ?>"><svg class="icon icon-tags" title="tags"><use xlink:href="#icon-tags"></use></svg></a></li>
+                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=leaf" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_LEAF; ?>"><svg class="icon icon-tag" title="tag"><use xlink:href="#icon-tag"></use></svg></a></li>
 <?php if ($full_permission === true) { ?>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=entryuntagged" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED ?>"><svg class="icon icon-notag" title="no-tags"><use xlink:href="#icon-notag"></use></svg></a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=entryleaf" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED ?>"><svg class="icon icon-leaftag" title="leaf-tag"><use xlink:href="#icon-leaftag"></use></svg></a></li>
+                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=entryuntagged" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED; ?>"><svg class="icon icon-notag" title="no-tags"><use xlink:href="#icon-notag"></use></svg></a></li>
+                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=entryleaf" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED; ?>"><svg class="icon icon-leaftag" title="leaf-tag"><use xlink:href="#icon-leaftag"></use></svg></a></li>
                     <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=keywords" title="<?php echo PLUGIN_EVENT_FREETAG_KEYWORDS; ?>"><svg class="icon icon-keytag" title="key-to-tag"><use xlink:href="#icon-keytag"></use></svg></a></li>
                     <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=cat2tag" title="<?php echo PLUGIN_EVENT_FREETAG_GLOBALLINKS; ?>"><svg class="icon icon-ctag" title="category-tags"><use xlink:href="#icon-ctag"></use></svg></a></li>
                     <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=tagupdate" onclick="return confirm('<?php echo htmlspecialchars(PLUGIN_EVENT_FREETAG_REBUILD_DESC, ENT_COMPAT, LANG_CHARSET); ?>');" title="<?php echo PLUGIN_EVENT_FREETAG_REBUILD; ?>"><svg class="icon icon-autotag" title="autotag"><use xlink:href="#icon-autotag"></use></svg></a></li>
@@ -2313,6 +2331,15 @@ $(document).ready(function() {
 <?php } ?>
                 </ul>
             </div>
+            <script type="text/javascript">
+                var deftitle = "<?php echo PLUGIN_EVENT_FREETAG_MANAGETAGS ?>";
+                $('.freetagMenu .button_link').mouseover( function() {
+                  $('#freetag_adminer_title').empty().append( '<span>' + this.title + '</span>' );
+                });
+                $('.freetagMenu .button_link').mouseout( function() {
+                  $('#freetag_adminer_title').empty().append( '<span>' + deftitle + '</span>' );
+                });
+            </script>
 
 <?php
         if (isset($this->eventData['GET']['tagaction']) && !empty($this->eventData['GET']['tagaction'])) {

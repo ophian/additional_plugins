@@ -11,17 +11,17 @@
 //
 @define('PLUGIN_EVENT_FREETAG_TITLE', 'Tagging of entries');
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Allows freestyle tagging of entries');
-@define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Enter any tags that apply. Seperate multiple tags with a comma (,)');
+@define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Enter any tags that apply. Separate multiple tags with a comma (,)');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Defined tags for this entry: %s');
 @define('PLUGIN_EVENT_FREETAG_USING', 'Entries tagged as: %s');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Tags related to tag: %s');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'No related tags.');
-@define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'All defined Tags');
-@define('PLUGIN_EVENT_FREETAG_MANAGETAGS', 'Manage Tags');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_ALL', 'Manage All Tags');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAF', 'Manage \'Leaf\' Tags');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED', 'List Untagged Entries');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED', 'List \'Leaf\' Tagged Entries');
+@define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'All defined tags');
+@define('PLUGIN_EVENT_FREETAG_MANAGETAGS', 'Manage tags');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_ALL', 'Manage all tags');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAF', 'Manage \'leaf\' tags');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED', 'List untagged entries');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED', 'List \'leaf\' tagged entries');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP', 'Cleanup entry-to-tag mappings');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_INFO', 'The following list contains tags non-existent entries are assigned to. Please click on &quot;Cleanup&quot; to remove these unnecessary assignments.');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING', 'No Tags assigned to non-existent entries could be found. Therefor there is nothing to clean up.');
@@ -156,7 +156,9 @@
 
 @define('PLUGIN_EVENT_FREETAG_SET_OPTION_ERROR_1', '<strong>Set option Error[1]:</strong> You may only use one cloud by time. All clouds were internally set false again. Please set and submit again here! (The form still shows what you had choosen before!)</p>');
 
-@define('PLUGIN_EVENT_FREETAG_ADMIN_DELIMITER', 'Allow alphabetical index Backend-Tags List delimiter?');
+@define('PLUGIN_EVENT_FREETAG_ADMIN_DELIMITER', 'Allow alphabetical index tag-list delimiter?');
 
 @define('PLUGIN_EVENT_FREETAG_SORT_DESC_FOR_TOTAL', 'With "order by count", sort descending');
+
+@define('PLUGIN_EVENT_FREETAG_ALLOW_JQUERYLIB', 'Allow freetag added jQuery lib in frontend, when "$serendipity[\'capabilities\'][\'jquery\'] = false"?');
 

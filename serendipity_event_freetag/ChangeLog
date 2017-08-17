@@ -1,3 +1,13 @@
+4.00:
+-----
+
+ * Fix some lang spelling
+ * Add new option to explicitly disallow adding freetag jQuery lib,
+   when having set "$serendipity['capabilities']['jquery'] = false".
+ * Up from S9y 2.0 append freetag cloud scripts to frontend_footer.
+   This changed some init scripts.
+ * Spend some (hover/click) love to FREETAG_MANAGE button (info) title behaviour
+
 3.94:
 -----
 

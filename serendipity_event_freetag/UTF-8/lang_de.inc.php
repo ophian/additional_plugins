@@ -130,5 +130,9 @@
 
 @define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS_DESC', 'Datenbank und Backend-Tags werden wie eingegeben gespeichert und angezeigt. Diese Option ist nur für Frontend-Tags.');
 
+@define('PLUGIN_EVENT_FREETAG_ADMIN_DELIMITER', 'Erlaube alphabetische Sortierung und Unterteilung der Tag-Liste per Index?');
+
 @define('PLUGIN_EVENT_FREETAG_SORT_DESC_FOR_TOTAL', 'Mit "order by count", absteigender Sortierung');
+
+@define('PLUGIN_EVENT_FREETAG_ALLOW_JQUERYLIB', 'Erlaube Freetag inkludierte jQuery lib im Frontend, wenn "$serendipity[\'capabilities\'][\'jquery\'] = false"?');
 
