@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.00');
+        $propbag->add('version',       '4.01');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2332,7 +2332,7 @@ $(document).ready(function() {
                 </ul>
             </div>
             <script type="text/javascript">
-                var deftitle = "<?php echo PLUGIN_EVENT_FREETAG_MANAGETAGS ?>";
+                var deftitle = "<?php echo (empty($freetag_section) ? PLUGIN_EVENT_FREETAG_MANAGETAGS : $freetag_section); ?>";
                 $('.freetagMenu .button_link').mouseover( function() {
                   $('#freetag_adminer_title').empty().append( '<span>' + this.title + '</span>' );
                 });
