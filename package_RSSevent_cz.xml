@@ -126,12 +126,12 @@
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
-<title>Spam: Challenge/Response: </title>
+<title>Spam: Challenge/Response: A simple example for custom Spam verification.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_challengeresponse</link>
 <category>Event Plugins</category>
 <author>Nobody</author>
-<content:encoded>&lt;b&gt;serendipity_event_challengeresponse&lt;br /&gt;Spam: Challenge/Response&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 1.0</content:encoded>
-<pubDate>Fri, 10 Feb 2017 14:18:50 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_challengeresponse&lt;br /&gt;Spam: Challenge/Response&lt;/b&gt;&lt;br /&gt;A simple example for custom Spam verification.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
+<pubDate>Fri, 18 Aug 2017 10:41:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_challengeresponse</guid>
 </item>
 <item>
