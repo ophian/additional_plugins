@@ -55,14 +55,14 @@
 
             <div class="form_field">
                 <label for="linktrimmer_url">{$CONST.PLUGIN_LINKTRIMMER_ENTER}</label>
-                <input id="linktrimmer_url" class="input_textbox" type="text" onfocus="this.blur();" value="" name="linktrimmer_url" placeholder="http://www.s9y.org">
+                <input id="linktrimmer_url" class="input_textbox" type="text" value="" name="linktrimmer_url" placeholder="http://www.s9y.org">
     {if $linktrimmer_external === false}
             </div>
 
             <div class="form_field">
     {/if}
                 <label for="linktrimmer_hash">{$CONST.PLUGIN_LINKTRIMMER_HASH}</label>
-                <input id="linktrimmer_hash" class="input_textbox" type="text" onfocus="this.blur();" value="" name="linktrimmer_hash" size="14">
+                <input id="linktrimmer_hash" class="input_textbox" type="text" value="" name="linktrimmer_hash" size="14">
 
                 <input type="submit" name="submit" value="{$CONST.GO}" class="input_button">
             </div>

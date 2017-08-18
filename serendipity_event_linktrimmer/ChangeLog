@@ -1,3 +1,9 @@
+1.6.8:
+------
+
+ * Remove input fields 'onfocus="this.blur();"' since that blocks field access
+   with certain browsers or magnific popup versions.
+
 1.6.7:
 ------
 
