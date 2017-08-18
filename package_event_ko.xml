@@ -5617,9 +5617,9 @@
 <description>Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6.7</version>
+  <version>1.6.8</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-02-02</date>
+  <date>2017-08-18</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>.htaccess</file>
