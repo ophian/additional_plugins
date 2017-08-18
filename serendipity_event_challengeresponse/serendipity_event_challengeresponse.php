@@ -12,15 +12,15 @@ class serendipity_event_challengeresponse extends serendipity_event
         $this->title = 'Spam: Challenge/Response';
 
         $propbag->add('name',          $this->title);
-        $propbag->add('description',   '');
+        $propbag->add('description',   'A simple example for custom Spam verification.');
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Nobody');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.0',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.1.0',
+            'smarty'      => '3.1.31',
+            'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '0.11');
+        $propbag->add('version',       '0.12');
         $propbag->add('event_hooks',    array(
             'frontend_saveComment' => true,
             'frontend_comment'     => true
@@ -48,7 +48,7 @@ class serendipity_event_challengeresponse extends serendipity_event
                 $propbag->add('type', 'text');
                 $propbag->add('name', 'Response');
                 $propbag->add('description', '');
-                $propbag->add('default', 'Serendipity');
+                $propbag->add('default', 'Serendipity Styx');
                 break;
 
             case 'error':
@@ -59,7 +59,7 @@ class serendipity_event_challengeresponse extends serendipity_event
                 break;
 
             default:
-                    return false;
+                return false;
         }
 
         return true;
@@ -89,9 +89,10 @@ class serendipity_event_challengeresponse extends serendipity_event
                     break;
 
                 case 'frontend_comment':
-                    echo '<div class="serendipity_challengeresponse">' . $this->get_config('challenge') . '<br />
-                        <input type="text" name="response" value="" />
-                        </div>';
+                    echo '
+                    <div class="serendipity_challengeresponse"><label for="serendipity_challengeresponse_response">' . $this->get_config('challenge') . '</label>
+                        <input type="text" id="serendipity_challengeresponse_response" name="response" value="" />
+                    </div>';
                     break;
 
                 default:
