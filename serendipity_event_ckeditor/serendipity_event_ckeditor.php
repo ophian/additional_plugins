@@ -125,9 +125,9 @@ class serendipity_event_ckeditor extends serendipity_event
                     @unlink($this->cke_path . '/ckeditor/plugins/codesnippet/icons/hidpi/Thumbs.db');
                     @unlink($this->cke_path . '/ckeditor/plugins/procurator/images/Thumbs.db');
                     // purge replaced by basic_toolbar.css, or removed files, since now requires 2.0+ only
-                    @unlink($this->cke_path . '/basic_toolbar1.css';
-                    @unlink($this->cke_path . '/basic_toolbar2.css';
-                    @unlink($this->cke_path . '/cke_olds9y.css';
+                    @unlink($this->cke_path . '/basic_toolbar1.css');
+                    @unlink($this->cke_path . '/basic_toolbar2.css');
+                    @unlink($this->cke_path . '/cke_olds9y.css');
                 }
                 // remove widget/dev samples directory
                 if (is_file(dirname(__FILE__) . '/ckeditor/plugins/widget/dev/console.js')) {
