@@ -8491,9 +8491,9 @@
 <description>Shows static pages inside your blog with your blogs design and all formattings. Adds a new menu item to the admin interface.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>5.35</version>
+  <version>5.36</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2017-07-24</date>
+  <date>2017-08-19</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>.htaccess</file>
