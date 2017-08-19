@@ -49,7 +49,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.7.1.0-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.7.2.0-plus.zip';
 
     /**
      * Access property checkUpdateVersion
@@ -57,21 +57,22 @@ class serendipity_event_ckeditor extends serendipity_event
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.7.1.0');
+    protected $checkUpdateVersion = array('ckeditor:4.7.2.0');
 
     /**
      * Access property revisionPackage
      * Note revisions of ckeditor and plugin additions to lang files
      * @var array
      */
-    protected $revisionPackage = array('CKEditor 4.7.1 (revision 08ffd39, full package, 2017-06-28)',
+    protected $revisionPackage = array('CKEditor 4.7.2 (revision c9b79c9, full package, 2017-08-18)',
+                                       'The main ckeditor.js file was slightly modified to prevent an odd IE 11 error with the gallery selection',
                                        'CKEditor-Plugin: mediaembed, v. 0.6+ (https://github.com/frozeman/MediaEmbed, 2016-07-24)',
-                                       'CKEditor-Plugin: manually added codesnippet, fakeobjects, lineutils, autogrow, widget and widgetselection plugins, 2017-06-28)',
+                                       'CKEditor-Plugin: manually added autogrow, clipboard, codesnippet, embedbase, embed, embedsemantic, fakeobjects, lineutils, notification, notificationaggregator, widget and widgetselection plugins, 2017-08-18)',
                                        'CKEditor-Plugin: procurator, v. 1.6 (Serendipity placeholder Plugin, 2016-01-01)',
                                        'CKEditor-Plugin: cheatsheet, v. 1.2 (Serendipity CKE-Cheatsheet Plugin, 2016-08-15)',
-                                       'CKEditor-S9yCustomConfig, cke_config.js, v. 2.11, 2017-04-29',
-                                       'CKEditor-S9yCustomPlugins, cke_plugin.js, v. 1.11, 2016-09-27',
-                                       'CKEditor-S9yAddOn, fresh highlight.pack.js file v. 9.12.0 and github styles in highlight.css, (https://highlightjs.org/) 2017-05-30',
+                                       'CKEditor-S9yCustomConfig, cke_config.js, v. 2.13, 2017-08-19',
+                                       'CKEditor-S9yCustomPlugins, cke_plugin.js, v. 1.12, 2017-07-29',
+                                       'CKEditor-S9yAddOn, fresh highlight.pack.js file v. 9.12.0 and github styles in highlight.css, standard + go + rust (https://highlightjs.org/) 2017-08-18',
                                        'Prettify: JS & CSS files, v. "current", (http://code.google.com/p/google-code-prettify/, 2013-03-04)');
 
 
@@ -123,6 +124,10 @@ class serendipity_event_ckeditor extends serendipity_event
                     // purge accidently added Thumbs.db file with 4.5.8.0/1 throwing errors on unzip
                     @unlink($this->cke_path . '/ckeditor/plugins/codesnippet/icons/hidpi/Thumbs.db');
                     @unlink($this->cke_path . '/ckeditor/plugins/procurator/images/Thumbs.db');
+                    // purge replaced by basic_toolbar.css, or removed files, since now requires 2.0+ only
+                    @unlink($this->cke_path . '/basic_toolbar1.css';
+                    @unlink($this->cke_path . '/basic_toolbar2.css';
+                    @unlink($this->cke_path . '/cke_olds9y.css';
                 }
                 // remove widget/dev samples directory
                 if (is_file(dirname(__FILE__) . '/ckeditor/plugins/widget/dev/console.js')) {
@@ -184,10 +189,10 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.7.1.1'); // is CKEDITOR Series 4.7.1 - and appended plugin revision .1
+        $propbag->add('version',       '4.7.2.0'); // is CKEDITOR Series 4.7.2 - and appended plugin revision .0
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
+            'serendipity' => '2.0.0',
             'smarty'      => '3.1.13',
             'php'         => '5.2.6'
         ));
@@ -204,7 +209,7 @@ class serendipity_event_ckeditor extends serendipity_event
             'backend_wysiwyg'                        => true,
             'backend_wysiwyg_finish'                 => true
         ));
-        $propbag->add('configuration', array('path', 'plugpath', 'codebutton', 'prettify', 'acf_off', 'toolbar', 'ibn_off', 'toolbar_break', 'force_install', 'timestamp'));
+        $propbag->add('configuration', array('path', 'plugpath', 'codebutton', 'prettify', 'oembed', 'oembed_type', 'acf_off', 'toolbar', 'ibn_off', 'toolbar_break', 'force_install', 'timestamp'));
         $propbag->add('groups', array('BACKEND_EDITOR'));
     }
 
@@ -239,6 +244,24 @@ class serendipity_event_ckeditor extends serendipity_event
                 $propbag->add('name', PLUGIN_EVENT_CKEDITOR_PRETTIFY_OPTION);
                 $propbag->add('description', PLUGIN_EVENT_CKEDITOR_PRETTIFY_OPTION_DESC);
                 $propbag->add('default', 'false');
+                break;
+
+            case 'oembed':
+                $propbag->add('type', 'boolean');
+                $propbag->add('name', PLUGIN_EVENT_CKEDITOR_OEMBED_OPTION);
+                $propbag->add('description', PLUGIN_EVENT_CKEDITOR_OEMBED_OPTION_DESC);
+                $propbag->add('default', 'false');
+                break;
+
+            case 'oembed_type':
+                $propbag->add('type', 'radio');
+                $propbag->add('name', PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_OPTION);
+                $propbag->add('description', PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_OPTION_DESC);
+                $propbag->add('radio',  array(
+                                            'value' => array('markup', 'semantic'),
+                                            'desc'  => array(PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_MARKUP_OPTION, PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_SEMANTIC_OPTION)
+                                        ));
+                $propbag->add('default', 'markup');
                 break;
 
             case 'acf_off':
@@ -385,7 +408,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.7.1.1', '4.7.1.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.7.2.0', '4.7.1.1'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -399,7 +422,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.7.1.1', '4.7.1.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.7.2.0', '4.7.1.1'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
@@ -455,37 +478,37 @@ class serendipity_event_ckeditor extends serendipity_event
                     // set prettify.css and prettify.js in frontend footer by plugin option (too much overhead to split this into head css and food js!)
                     if (serendipity_db_bool($this->get_config('codebutton', false))) {
                         $plugingpath = function_exists('serendipity_specialchars') ? serendipity_specialchars($this->get_config('plugpath')) : htmlspecialchars($this->get_config('plugpath'), ENT_COMPAT, LANG_CHARSET);
-if ($headcss) {
+                        if ($headcss) {
 ?>
     <link rel="stylesheet" href="<?php echo $plugingpath . 'serendipity_event_ckeditor/highlight.css'; ?>" />
 <?php
-} else {
+                        } else {
 ?>
     <script src="<?php echo $plugingpath . 'serendipity_event_ckeditor/highlight.pack.js'; ?>"></script>
     <script>
-    jQuery(function($){
+    jQuery(function($) {
         // launch the codesnippet highlight
         hljs.initHighlightingOnLoad();
     });
     </script>
 <?php
-}
+                        }
                         if (serendipity_db_bool($this->get_config('prettify', false))) {
-if ($headcss) {
+                            if ($headcss) {
 ?>
     <link rel="stylesheet" type="text/css" href="<?php echo $plugingpath . 'serendipity_event_ckeditor/prettify.css'; ?>" />
 <?php
-} else {
+                            } else {
 ?>
     <script type="text/javascript" src="<?php echo $plugingpath . 'serendipity_event_ckeditor/prettify.js'; ?>"></script>
     <script>
-    jQuery(function($){
+    jQuery(function($) {
         // launch the prettify code
         prettyPrint();
     });
     </script>
 <?php
-}
+                            }
                         }
                     }
                     break;
@@ -514,6 +537,10 @@ if ($headcss) {
                         $plgpath = function_exists('serendipity_specialchars') ? serendipity_specialchars($this->get_config('plugpath')) : htmlspecialchars($this->get_config('plugpath'), ENT_COMPAT, LANG_CHARSET);
                         $acf_off = serendipity_db_bool($this->get_config('acf_off', 'false')) ? 'true' : 'false';    // need this, to be passed correctly as boolean true/false to custom cke_config.js
                         $code_on = serendipity_db_bool($this->get_config('codebutton', 'false')) ? 'true' : 'false'; // same here for cke_plugins.js
+                        $oembed  = serendipity_db_bool($this->get_config('oembed', 'false'));
+                        $oetype  = $this->get_config('oembed_type', 'semantic');
+                        $oembed1 = ($oembed && $oetype == 'markup') ? 'true' : 'false';
+                        $oembed2 = ($oembed && $oetype == 'semantic') ? 'true' : 'false';
                         $uats_on = $serendipity['use_autosave'] ? 'true' : 'false';                                  // dito
                         $toolbar = $this->get_config('toolbar', 'Standard');
                         $time    = $this->get_config('timestamp', time());
@@ -531,9 +558,10 @@ if ($headcss) {
     <script type="text/javascript">
         CKEDITOR_BASEPATH       = '<?php echo $relpath; ?>';
         CKEDITOR_PLUGPATH       = '<?php echo $plgpath; ?>';
-        S9Y_VERSION_NEW         = <?php echo $serendipity['version'][0] < 2 ? 'false' : 'true'; ?>;
         CKECONFIG_ACF_OFF       = <?php echo $acf_off; ?>;
         CKECONFIG_CODE_ON       = <?php echo $code_on; ?>;
+        CKECONFIG_OEMBED_ON     = <?php echo $oembed1; ?>;
+        CKECONFIG_OEMBED_SMT_ON = <?php echo $oembed2; ?>;
         CKECONFIG_LANG          = '<?php echo $lang; ?>'; // as IETF
         CKECONFIG_SLANG         = '<?php echo $slang; ?>'; // as POSIX
         CKECONFIG_TOOLBAR       = '<?php echo $toolbar; ?>';
@@ -546,15 +574,9 @@ if ($headcss) {
 <?php
                         // sadly this can't be pushed into streamed css, since that is cached to lazyload.
                         if ($toolbar == 'Basic') {
-                            if ($serendipity['version'][0] < 2) {
 ?>
-    <link rel="stylesheet" href="<?php echo $plgpath . 'serendipity_event_ckeditor/'; ?>basic_toolbar1.css" />
+    <link rel="stylesheet" href="<?php echo $plgpath . 'serendipity_event_ckeditor/'; ?>basic_toolbar.css" />
 <?php
-                            } else {
-?>
-    <link rel="stylesheet" href="<?php echo $plgpath . 'serendipity_event_ckeditor/'; ?>basic_toolbar2.css" />
-<?php
-                            }
                         } else { // case other toolbars
                             if (false === serendipity_db_bool($this->get_config('ibn_off', 'true')) ) {
 ?>
@@ -633,10 +655,6 @@ ol.linenums li {
 
                 case 'css_backend':
 
-                    // do not use in 2.0 versions
-                    if ($serendipity['version'][0] < 2) {
-                        $eventData .= @file_get_contents(dirname(__FILE__) . '/cke_olds9y.css');
-                    }
                     if (strpos($eventData, '.cke_config_block') === false) {
                         $eventData .= @file_get_contents(dirname(__FILE__) . '/cke_backend.css');
                     }
@@ -693,6 +711,7 @@ ol.linenums li {
                         if (isset($eventData['item']) && !empty($eventData['item'])) {
                             $jebtnarr = (isset($eventData['buttons']) && (is_array($eventData['buttons']) && !empty($eventData['buttons']))) ? json_encode($eventData['buttons']) : 'null';
 ?>
+
 <script type="text/javascript">
     if (typeof s9ypluginbuttons !== 'undefined') s9ypluginbuttons.push("<?php echo $addB; ?>");
     if (window.Spawnnuggets) Spawnnuggets('<?php echo $eventData['item']; ?>', 'entryforms<?php echo $eventData['jsname']; ?>', <?php echo $jebtnarr; ?>);

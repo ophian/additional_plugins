@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.11, 2016-09-27
+ * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.12, 2017-08-09
  */
 
 // define array for hooked s9y plugins
@@ -72,18 +72,26 @@ function Spawnnuggets(item, addEP, jsED) {
 
     // global defines
     s9ymediabuttons.push('s9yML'+area);
+    s9ymediabuttons.push('styxMLG'+area);
 
     // Init CKEDITOR added plugins
     // Seperate by comma, no whitespace allowed, and keep last comma, since later on concatenated with Serendipity hooked plugins, eg MediaLibrary!
-    // codesnippet is an official CKEDITOR plugin.
-    //    Plugin Dependencies: codesnippet Add-on Dependencies: widget
-    //    Plugin Dependencies: widget      Add-on Dependencies: Line Utilities and Clipboard
+    // 'codesnippet' is an official CKEDITOR plugin.
+    //    Plugin Dependencies: codesnippet Add-on Dependencies: 'widget'
+    //    Plugin Dependencies: widget      Add-on Dependencies: 'Line Utilities' and 'Clipboard'
+    // 'embed' and 'embedsemantic' are official CKEDITOR plugins.
+    //    Plugin Dependencies: Add-on Dependencies: 'embedbase'
     // mediaembed is a fast and simple YouTube code CKEditor-Plugin: v. 0.5+ (https://github.com/frozeman/MediaEmbed, 2013-09-12) to avoid ACF restrictions
+    //
+    // Enable embed and embedsemantic plugins with their dependency embedbase plugin by option.
+    // Though we should not allow autoembed and autolink, like notification,autolink,notificationaggregator,autoembed, since we don't what to paste and convert directly.
     // procurator and cheatsheet are S9y only plugins
     var name_extraPlugins = (addEP !== null) ? addEP : $this;
     var jsEventData       = (jsED  !== null) ? jsED  : window.jsEventData; // global set by 'backend_wysiwyg_finish' hook
     var extraPluginACF    = (CKECONFIG_ACF_OFF === true) ? name_extraPlugins+',mediaembed,cheatsheet,autogrow' : name_extraPlugins+',mediaembed,procurator,cheatsheet,autogrow'; // no spaces allowed!
     var extraPluginList   = (CKECONFIG_CODE_ON === true) ? extraPluginACF+',codesnippet' : extraPluginACF; // no spaces allowed!
+        extraPluginList   = (CKECONFIG_OEMBED_ON === true) ? extraPluginList+',embedbase,embed' : extraPluginList; // no spaces allowed!
+        extraPluginList   = (CKECONFIG_OEMBED_SMT_ON === true) ? extraPluginList+',embedbase,embedsemantic' : extraPluginList; // no spaces allowed!
     var customConfigPath  = CKEDITOR_PLUGPATH+'serendipity_event_ckeditor/cke_config.js?v='+CKECONFIG_FORCE_LOAD;
     var useAutoSave       = (CKECONFIG_USEAUTOSAVE === true && Modernizr.indexeddb === true) ? 'on' : null;
 
@@ -218,11 +226,7 @@ function Spawnnuggets(item, addEP, jsED) {
                 }
                 editor.addCommand( 's9yML'+area, {
                     exec : function( editor ) {
-                        if (false === S9Y_VERSION_NEW) {
-                            window.open('serendipity_admin_image_selector.php', 'ImageSel', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');
-                        } else {
-                            serendipity.openPopup('serendipity_admin.php?serendipity[adminModule]=media&serendipity[noBanner]=true&serendipity[noSidebar]=true&serendipity[noFooter]=true&serendipity[showMediaToolbar]=false&serendipity[showUpload]=true&serendipity[textarea]='+$this);
-                        }
+                        serendipity.openPopup('serendipity_admin.php?serendipity[adminModule]=media&serendipity[noBanner]=true&serendipity[noSidebar]=true&serendipity[noFooter]=true&serendipity[showMediaToolbar]=false&serendipity[showUpload]=true&serendipity[textarea]='+$this);
                     }
                 });
                 editor.ui.addButton('s9yML'+area, {
@@ -231,6 +235,18 @@ function Spawnnuggets(item, addEP, jsED) {
                     icon:     CKEDITOR_PLUGPATH+'serendipity_event_ckeditor/img/mls9y.png',
                     iconName: 's9yML'+area+'_icon',
                     command:  's9yML'+area
+                });
+                editor.addCommand( 'styxMLG'+area, {
+                    exec : function( editor ) {
+                        serendipity.openPopup('serendipity_admin.php?serendipity[adminModule]=media&serendipity[noBanner]=true&serendipity[noSidebar]=true&serendipity[noFooter]=true&serendipity[showMediaToolbar]=false&serendipity[showGallery]=true&serendipity[textarea]='+$this);
+                    }
+                });
+                editor.ui.addButton('styxMLG'+area, {
+                    label:    'StyxMediaGallery',
+                    title:    'Styx Media Gallery',
+                    icon:     CKEDITOR_PLUGPATH+'serendipity_event_ckeditor/img/mlgallery.png',
+                    iconName: 'styxMLG'+area+'_icon',
+                    command:  'styxMLG'+area
                 });
             }
         });

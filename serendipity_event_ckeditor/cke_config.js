@@ -3,10 +3,10 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.11, 2017-04-29
+ * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.13, 2017-08-19
  */
 
-/**
+ /**
  * Substitute every config option to CKE in here
  */
 CKEDITOR.editorConfig = function( config ) {
@@ -80,10 +80,11 @@ CKEDITOR.editorConfig = function( config ) {
               - Allowed <p> custom classes - to easier style certain paragraphs!
               - Allowed <ul> listing for styles & classes, full <audio> and <video> and <source> attributes, <i> attributes & classes for font-awesome icons and full <span> to make life a bit easier!
               - Reset <img[height,width]> Media Library image inserts to avoid ACF OFF removement of height attributes. (Dependency in cke_plugin.js)
-              - Allow <pre[*attributes](*classes)> for custom attributes/classes in codesnippet code blocks
+              - Allow <pre[*attributes](*classes)> and <code(*classes)> for custom attributes/classes in codesnippet code blocks
+              - Allow <oembed> tag using Semantic Media Embed
         */
         // protect tags
-        config.extraAllowedContent = 'mediainsert[*]{*}(*);gallery[*]{*}(*);media[*]{*}(*);script[*]{*}(*);audio[*]{*}(*);video[*];source[*];div[*]{*}(*);p(*);ul{*}(*);span[*]{*}(*);img[height,width];pre[*](*);i[*](*);';
+        config.extraAllowedContent = 'mediainsert[*]{*}(*);gallery[*]{*}(*);media[*]{*}(*);script[*]{*}(*);audio[*]{*}(*);video[*];source[*];div[*]{*}(*);p(*);ul{*}(*);span[*]{*}(*);img[height,width];pre[*](*);code(*);i[*](*);oembed;';
 
         // do not use auto paragraphs added to these allowed tags.
         config.autoParagraph = false;
@@ -176,6 +177,64 @@ CKEDITOR.editorConfig = function( config ) {
     config.scayt_uiTabs = '1,0,1'; // we disable the language tab option, since it does not work in this context, getting a list of languages and this breaking the popup-layer!
 
 
+    /** SECTION: Embed Media [oEmbed] semantically or via URL
+    // This description is a copy from http://docs.ckeditor.com/#!/guide/dev_media_embed-section-embedding-media-demo
+    //
+    // Both widgets allow to embed resources (videos, images, tweets, etc.) hosted by other services (called the "content providers") in the editor.
+    // In order to use the widget, you need to set up the content provider in your editor configuration first. We recommend to use the Iframely proxy
+    // service which supports over 1800 content providers such as YouTube, Vimeo, Twitter, Instagram, Imgur, GitHub, or Google Maps.
+    //
+    // Media Embed vs Semantic Media Embed
+    // The difference between Media Embed and Semantic Media Embed is that the first will include the entire HTML needed to display the resource in the data,
+    // while the latter will only include an <oembed> tag with the URL to the resource. See the following examples:
+    // Media Embed:
+    //
+    // <div data-oembed-url="https://twitter.com/reinmarpl/status/573118615274315776">
+    //     <blockquote class="twitter-tweet">
+    //         <p>Coding session with <a href="https://twitter.com/fredck">@fredck</a>, <a href="https://twitter.com/anowodzinski">@anowodzinski</a> and Mr Carrot. <a href="http://t.co/FLV5UXpfaT">pic.twitter.com/FLV5UXpfaT</a></p>
+    //         &mdash; Piotrek Koszulinski (@reinmarpl) <a href="https://twitter.com/reinmarpl/status/573118615274315776">March 4, 2015</a>
+    //     </blockquote>
+    //     <script async="" charset="utf-8" src="//platform.twitter.com/widgets.js"></script>
+    // </div>
+    //
+    // Semantic Media Embed:
+    // <oembed>https://twitter.com/reinmarpl/status/573118615274315776</oembed>
+    //
+    // This difference makes the Media Embed plugin perfect for systems where the embedding feature should work out of the box.
+    // The Semantic Media Embed plugin is useful for rich content managment systems that store only pure, semantic content ready for further processing.
+    // For instance, a CMS may display a different result in desktop browsers, different in mobile ones and different for the print version of a website.
+    //
+    // Configuring the Content Provider
+    //
+    // Since CKEditor 4.7 the content provider URL is set to empty by default. The former default URL (1) is still available, although it is recommended
+    // to set up an account on the Iframely service for better control over embedded content.
+    //
+    // The default CKEditor configuration up till version 4.7 was using an anonymized endpoint provided by Iframely, however,
+    // it did not include several features such as Google Maps. It is still possible to use it by setting the CKEDITOR.config.embed_provider in the following way: (1)
+    //
+    // However, for better control of API usage it is recommended to set up an account at Iframely. The free "Developer" tier does not have this restriction.
+    // Some examples for different personal endpoints are:
+    //      Iframely  - //ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}&api_key=MYAPITOKEN
+    //      Noembed   - //noembed.com/embed?url={url}&callback={callback}
+    //      embed.ly  - //api.embed.ly/1/oembed?url={url}&callback={callback}&key=MYAPITOKEN
+    // There are a lot more, see "http://oembed.com/#section7.1".
+    //
+    // Iframely can also be configured to be hosted on your server — you can read more about it in the "Self-host Iframely APIs" article.
+    //
+    // At the same time both widgets can be easily configured to use another oEmbed provider or custom services.
+    //
+    // PLEASE NOTE: There is another CKEditor AddOn plugin available, so called: Automatic Embedding on Paste.
+    //              It allows pasting the resource URL directly into the editing area and will result in embedding its content.
+    //              THIS IS NOT want we want to have!
+    //
+    // Note: Plugin names are always lower case, while widget names are not, so widget names do not have to equal plugin names.
+    //       For example, there is the embedsemantic plugin and the embedSemantic widget.
+
+    */
+    if (CKECONFIG_OEMBED_ON === true || CKECONFIG_OEMBED_SMT_ON === true) {
+        config.embed_provider = '//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}'; // (1)
+    }
+
     /** SECTION: Custom Plugin and Button behaviour configurations
     // [CRTL + right mouse click] gives access to Browsers contextmenu, else you need to disable and set these
     // The general idea is that you would need to remove all plugins that depend on the "contextmenu" one for removing the "contextmenu" one itself to work. But this has other sideeffects!
@@ -202,8 +261,44 @@ CKEDITOR.editorConfig = function( config ) {
     config.removePlugins = 'flash,iframe,forms'; // possible strict suggestions: 'flash,iframe,elementspath,save,font,showblocks,div,liststyle,pagebreak,smiley,specialchar,horizontalrule,indentblock,justify,pastefromword,newpage,preview,print,stylescombo'
     config.removeButtons = 'Preview,Styles,JustifyLeft'; // these buttons are useless or preset in Serendipity and therefore not set. Without even the toolbar Groups break better on screens.
 
-    // Default theme of CKEDITOR codesnippet plugin - else use 'default' or 'monokai_sublime' or any of those described at https://highlightjs.org/static/test.html
+    /**
+     * Customizing CodeSnippet AddOn
+     * Changes the theme
+     * Add extra languages for CodeSnippet default and added ['Go'] and ['Rust']
+     */
+
+    // Default theme of CKEDITOR codesnippet plugin - else use 'default' or 'monokai_sublime' or 'pojoaque' or any of those described at https://highlightjs.org/static/test.html
     config.codeSnippet_theme = 'GitHub';
+    // Extend or remove the default selection
+    config.codeSnippet_languages = {
+                        apache: 'Apache',
+                        bash: 'Bash',
+                        coffeescript: 'CoffeeScript',
+                        cpp: 'C++',
+                        cs: 'C#',
+                        css: 'CSS',
+                        diff: 'Diff',
+                        go: 'Go',
+                        html: 'HTML',
+                        http: 'HTTP',
+                        ini: 'INI',
+                        java: 'Java',
+                        javascript: 'JavaScript',
+                        json: 'JSON',
+                        makefile: 'Makefile',
+                        markdown: 'Markdown',
+                        nginx: 'Nginx',
+                        objectivec: 'Objective-C',
+                        perl: 'Perl',
+                        php: 'PHP',
+                        python: 'Python',
+                        ruby: 'Ruby',
+                        rust: 'Rust',
+                        sql: 'SQL',
+                        vbscript: 'VBScript',
+                        xhtml: 'XHTML',
+                        xml: 'XML'
+    };
 
     // Plugin: Autogrow textareas configuration
     config.autoGrow_minHeight = 120;
@@ -216,7 +311,6 @@ CKEDITOR.editorConfig = function( config ) {
         Its default toolbar group changed away from 'insert' to new 'snippet' group name.
         The preset github.css theme was copied to this plugins serendipity_event_ckeditor directory and named highlighter.css for frontend binding.
     */
-
 
     /** SECTION: Certain Plugin Buttons
         We cheat ckeditor instances by adding all available button names (in s9ypluginbuttons) to "both" toolbar instances, in case of having two textareas.
@@ -248,7 +342,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'insert',      items : [ 'Image' ] },
         { name: 'links',       items : [ 'Link','Unlink' ] },
         { name: 'snippet',     items : [ 'CodeSnippet' ] },
-        { name: 'mediaembed',  items : [ 'MediaEmbed' ] },
+        { name: 'oembed',      items : [ 'MediaEmbed', 'Embed', 'EmbedSemantic' ] },
         { name: 'others',      items : s9ypluginbuttons },
         { name: 'document',    items : [ 'Source' ] }
     ];
@@ -275,7 +369,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'forms',       items : [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
         CKECONFIG_TOOLBAR_BREAK,
         { name: 'snippet', groups : [ 'snippet' ], items : [ 'CodeSnippet' ] },
-        { name: 'mediaembed',  items : [ 'MediaEmbed' ] },
+        { name: 'oembed', groups : [ 'oembed' ], items : [ 'MediaEmbed', 'Embed', 'EmbedSemantic' ] },
         { name: 'others',      items : s9ypluginbuttons },
         { name: 'document', groups : [ 'mode', 'document', 'doctools' ], items : [ 'Source' ] },
         { name: 'tools',       items : [ 'Maximize', 'ShowBlocks','-','About' ] },
@@ -293,11 +387,11 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'blocks',      items : [ 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
         { name: 'bidi',        items : [ 'BidiLtr','BidiRtl' ] },
         { name: 'links',       items : [ 'Link','Unlink','Anchor' ] },
-        { name: 's9yml', items : s9ymediabuttons },
+        { name: 's9yml',       items : s9ymediabuttons },
         { name: 'insert',      items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak' ] },
         { name: 'colors',      items : [ 'TextColor','BGColor' ] },
         { name: 'snippet', groups : [ 'snippet' ], items : [ 'CodeSnippet' ] },
-        { name: 'mediaembed',  items : [ 'MediaEmbed' ] },
+        { name: 'oembed', groups : [ 'oembed' ], items : [ 'MediaEmbed', 'Embed', 'EmbedSemantic' ] },
         { name: 'others',      items : s9ypluginbuttons },
         { name: 'tools',       items : [ 'Maximize', 'ShowBlocks','-','About' ] },
         { name: 'document', groups : [ 'mode', 'document', 'doctools' ], items : [ 'Source' ] },
@@ -318,7 +412,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'clipboard',   items : [ 'Cut', 'Copy', 'Paste', 'PasteText', '-', 'Undo', 'Redo'] },
         { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Scayt' ] },
         { name: 'snippet',     items : [ 'CodeSnippet' ] },
-        { name: 'mediaembed',  items : [ 'MediaEmbed' ] },
+        { name: 'oembed', groups : [ 'oembed' ], items : [ 'MediaEmbed', 'Embed', 'EmbedSemantic' ] },
         { name: 'others',      items : s9ypluginbuttons },
         { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source' ] },
         { name: 'about',       items : [ 'About', ] },
@@ -335,7 +429,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.toolbarGroups = [
         { name: 'styles' },
         { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-//    	{ name: 'forms' },
+//        { name: 'forms' },
         { name: 'colors' },
         { name: 'paragraph', groups: [ 'list', /*'indent', */'blocks', 'align', 'bidi' ] },
         { name: 'links' },
@@ -348,7 +442,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ] },
 
         { name: 'snippet', groups: [ 'codesnippet', 'snippet' ] },
-        { name: 'mediaembed' },
+        { name: 'oembed' },
         { name: 'others' },
         { name: 'tools' },
         { name: 'about' },

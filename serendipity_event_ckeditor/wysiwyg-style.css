@@ -87,13 +87,88 @@ img, video { height: auto; }
     margin: 0 0 1em 2em;
 }
 
-/* This is used to clasp "poor man's" galleries using serendipity_image_left or right floated images */
+/* Gallery-Container: This is used to enclose a gallery, using serendipity_image_left or _right floated images */
 .serendipity_image_block {
     clear: both;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
-.serendipity_image_block .serendipity_image_link {
-    margin: .5em .5em .5em 0;
+
+/* Gallery-Size: This sizes the origin single-line image gallery to be used as a real multi-item image container */
+.serendipity_image_block  {
+    flex: auto;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-items: flex-start; /* the default is stretch, internally used by Chrome when flexing direct child images */
+    /*justify-content: space-around;  IE10+ CSS fallback, since -evenly not supported */
+    /*justify-content: space-evenly;*/
+    justify-content: space-between; /* In the editor we need something different then space-evently or -arround when using the gallery insert */
+    margin-bottom: 1em;
+}
+/* The inline containers or items min/max size to scale gallery images to a effordable size */
+.serendipity_image_block .serendipity_imageComment_left,
+.serendipity_image_block .serendipity_imageComment_right,
+.serendipity_image_block .serendipity_image_link,
+.serendipity_image_block > .serendipity_image_left,
+.serendipity_image_block > .serendipity_image_right {
+    min-width: 100px;
+    max-width: 260px;
+}
+/* direct item styles forced */
+.serendipity_image_block > .serendipity_image_left,
+.serendipity_image_block > .serendipity_image_right {
+    max-width: 260px !important; /* since having to force the inline style */
+}
+/* Workaround styles for older Chrome. Direct images manually wrapped inside a simple unstyled container - generic div preferred */
+.serendipity_image_block > div:not([id]):not([class]):not([style]),
+.serendipity_image_block > span:not([class]):not([style]) {
+    min-width: 100px;
+    max-width: 260px;
+}
+/* Gallery-Size: end */
+
+/* Gallery-Margins: the default margins for all default level 1 gallery items (direct containers or direct items) */
+.serendipity_image_block > .serendipity_imageComment_left,
+.serendipity_image_block > .serendipity_imageComment_right,
+.serendipity_image_block > .serendipity_image_link,
+.serendipity_image_block > .serendipity_image_left,
+.serendipity_image_block > .serendipity_image_right {
+    display: inline-block; /* the former inline does as well but this is better I assume */
+    margin: .5em 0 0 0;
+}
+/* same for manually helper containers */
+.serendipity_image_block > div,
+.serendipity_image_block > span,
+.serendipity_image_block > div .serendipity_image_left,
+.serendipity_image_block > div .serendipity_image_right,
+.serendipity_image_block > span .serendipity_image_left,
+.serendipity_image_block > span .serendipity_image_right {
+    display: inline-block; /* the former inline does as well but this is better I assume */
+    margin: .5em 0 0 0;
+}
+.serendipity_image_block > .serendipity_image_left,
+.serendipity_image_block > .serendipity_image_right,
+.serendipity_image_block  .serendipity_image_link {
+    margin: .5em 0 0 0; /* no display here! */
+}
+/* webkit (all) hack */
+.serendipity_image_block > .serendipity_imageComment_left .serendipity_image_link:not(*:root) {
+    display: table-row; /* A Chrome fix to automatically size the link (level 2) container without any additionally thrown space around the inner scaled image */
+}
+/* Gallery-Margins: end */
+
+/*div[class="serendipity_image_block"][contentEditable=true]:before {
+    flex: inherit;
+}*/
+div[class="serendipity_image_block"][contentEditable=true]:after {
+    content: attr(data-text);
+    float: left;
+    margin-top: -.75em;
+    margin-left: 0;
+    color: #b3b3b3;
+    /* flex: auto; unset all the spacing and sizing stuff for this helper */
 }
 
 .instagram_preload  {

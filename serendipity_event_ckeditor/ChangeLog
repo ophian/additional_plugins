@@ -1,3 +1,14 @@
+4.7.2.0:
+---------
+    * Upgrade to CKEDITOR 4.7. Series, update 2 (http://ckeditor.com/release-notes).
+      Without further notice, all manually added CKEditor AddOns are updated too.
+    * Additionally added 'embedbase', 'embed', 'embedsemantic', 'notification', 'notificationaggregator' CKEditor AddOns
+    * This plugin upgrade raises up requirement to 2.0+, while having removed old code
+    * Newly added the Serendipity Styx MediaLibrary Gallery AddOn, to simply add gallery-blocks to your entries.
+      This needs at least Serendipity Styx 2.3-beta1 to be supported!
+    * The main ckeditor.js file was slightly modified, to prevent an odd Internet Explorer(11) error with the gallery selection
+    * The codeSnippet AddOn now supports 'Go' and 'Rust' code-languages, see "cke_config.js" for custom configuration, as well as the added "highlight.pack.js" file.
+
 4.7.1.1:
 ---------
     * Enable CKEditor WYSIWYG-mode new "serendipity_image_block" gallery helper class for upcoming Styx 2.3.

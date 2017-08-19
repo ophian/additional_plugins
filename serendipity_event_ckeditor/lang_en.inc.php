@@ -1,8 +1,8 @@
 <?php
 
 /**
- *  @file lang_en.inc.php 1.4.19 2016-10-27 Ian
- *  @version 1.4.19
+ *  @file lang_en.inc.php 1.4.20 2017-08-18 Ian
+ *  @version 1.4.20
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -35,7 +35,7 @@
 @define('PLUGIN_EVENT_CKEDITOR_CKEACF_OPTION', 'Disable Advanced-Content-Filter (ACF)?');
 @define('PLUGIN_EVENT_CKEDITOR_TOOLBAR_OPTION', 'Use CKE-default toolbar-group linebreak?');
 
-@define('PLUGIN_EVENT_CKEDITOR_CODEBUTTON_OPTION', 'Allow code toolbar button?');
+@define('PLUGIN_EVENT_CKEDITOR_CODEBUTTON_OPTION', 'Allow "codesnippet" toolbar-button?');
 @define('PLUGIN_EVENT_CKEDITOR_PRETTIFY_OPTION', 'Allow additional prettify css/js in frontend?');
 @define('PLUGIN_EVENT_CKEDITOR_PRETTIFY_OPTION_DESC', 'For upgraders only! Keeps backward compatibility for old entries with code-blocks.');
 @define('PLUGIN_EVENT_CKEDITOR_OPTION_DESC', 'Usually: ');
@@ -47,12 +47,28 @@
 
 @define('PLUGIN_EVENT_CKEDITOR_SETTOOLBAR_OPTION', 'Choose preset toolbars');
 
-@define('PLUGIN_EVENT_CKEDITOR_CKEIBN_OPTION', 'Disable toolbars default image button?');
-@define('PLUGIN_EVENT_CKEDITOR_CKEIBN_OPTION_DESC', 'The toolbar built-in image button follows its own rules for stylings and markup! Since we recommend to use the Serendipity Media Library Button only, this is disabled by default. Allow with "No" here and use at own risk.');
+@define('PLUGIN_EVENT_CKEDITOR_CKEIBN_OPTION', 'Disable CKE-default "image" toolbar-button?');
+@define('PLUGIN_EVENT_CKEDITOR_CKEIBN_OPTION_DESC', 'The toolbar built-in image button follows its own rules for stylings and markup! Since we recommend to use the Serendipity "Media Library" button only, this is disabled by default. Allow with "No" here and use at own risk.');
 
 @define('PLUGIN_EVENT_CKEDITOR_SCAYTLANG_OPTION', 'Set lang for Scayt and online web spell checker');
 @define('PLUGIN_EVENT_CKEDITOR_SCAYT', '<h2>Scayt/wsc</h2>
 <p class="msg_notice">
-    <span class="icon-attention" aria-hidden="true"></span> As long as not purchased a license, you may only use the "SpellCheckAsYouType" (SCAYT-plugin) [ABC]-Button over the free online service "Check Spelling" dialog option, or define a custom dictionary, which first is stored to a cookie, later to the browsers localStorage and start from scratch.
+    <span class="icon-attention" aria-hidden="true"></span> As long as not purchased a license, you may only use the "SpellCheckAsYouType" (SCAYT-plugin) [ABC]-button over the free online service "Check Spelling" dialog option, or define a custom dictionary, which first is stored to a cookie, later to the browsers localStorage and start from scratch.
 </p>');
+
+@define('PLUGIN_EVENT_CKEDITOR_OEMBED_OPTION', 'Allow "oEmbed" toolbar-button?');
+@define('PLUGIN_EVENT_CKEDITOR_OEMBED_OPTION_DESC', 'The "oEmbed" button widget allows to embed all kind of resources (videos, images, tweets, etc.) hosted by other services (called the "content providers") in the editors configuration.
+To our own disadvantage, "oEmbed" does have to use an external "proxy" service to properly work and make sense at all.
+The default CKEditor configuration up till version 4.7 was using an anonymized endpoint provided by Iframely, however, it did not include several features such as Google Maps.
+This "//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}" endpoint is used and set here. There are a lot more, see "http://oembed.com/#section7.1".
+It is recommended by the CKEditor documentation, to set up an account on the "https://iframely.com/" service for better control over embedded content, or to set up your own private host, see "http://docs.ckeditor.com/#!/guide/dev_media_embed-section-embedding-media-demo".
+If you don\'t need to use all this, you better stick to the simple mediaembed already included and keep this option set false.');
+@define('PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_OPTION', 'Type of "oEmbed" button');
+@define('PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_OPTION_DESC', 'The difference between "Media Embed" and "Semantic Media Embed" is that the first will include the entire HTML needed to display the resource in the data, while the latter will only include an <oembed> tag with the URL to the resource.
+This difference makes the Media Embed plugin perfect for systems where the embedding feature should work out of the box.
+The Semantic Media Embed plugin is useful for rich content managment systems that store only pure, semantic content ready for further processing.
+For instance using different results in different browser screen or print types of a website. Also it is much shorter and clearer and less prone to automatic corrections of the editor. It does show the embedded content in the editor in your first include session, but you have to use an output-filter to transform the <oembed> tag to the frontpage and backend entry recalls on render to make it actually work.
+Test on your own and make your choice.');
+@define('PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_SEMANTIC_OPTION', 'Semantic Media Embed');
+@define('PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_MARKUP_OPTION', 'Media Embed');
 
