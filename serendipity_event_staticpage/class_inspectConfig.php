@@ -127,7 +127,8 @@ class icText extends inspectConfig
                 <button class="hilite_b wrap_selection lang-html" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="strong" data-tag-close="strong" name="insB">b</button>
                 <button class="wrap_selection lang-html" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="blockquote" data-tag-close="blockquote" name="insQ"><?php echo QUOTE ?></button>
                 <button class="wrap_insimg" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insJ">img</button>
-                <button class="wrap_insmedia" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insImage"><?php echo MEDIA ?></button>
+                <button class="wrap_insgal" type="button" name="insG" title="Media Gallery" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>"><span class="icon-gallery" aria-hidden="true"></span><span class="visuallyhidden"> Media Gallery</span></button>
+                <button class="wrap_insmedia" type="button" name="insImage" title="<?php echo MEDIA ?>" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>"><span class="icon-s9yml" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MEDIA ?></span></button>
                 <button class="wrap_insurl" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insURL">URL</button>
             </span></nobr>
 

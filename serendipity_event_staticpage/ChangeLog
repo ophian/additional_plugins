@@ -1,3 +1,11 @@
+5.35:
+----
+
+ * Add changed MediaLibrary button and new Media-Gallery button for PLAIN Editor toolbar.
+   This new gallery feature is supported up from Serendipity Styx 2.3-beta1.
+ * Changed preview linking and its "opened to new tab"-text.
+ * Added automatic unlink of removed file since v. 5.10 for upgraders.
+
 5.35 & 1.30:
 ----
 

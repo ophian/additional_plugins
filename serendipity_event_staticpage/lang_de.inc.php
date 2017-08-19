@@ -190,3 +190,5 @@
                     <span><strong>Bitte lesen Sie:</strong> </span> <a href="%s" target="_blank" style="color:#7fdbff">the readme for custom fields</a>-Beispiele.</p>
                     <p>Die "Disable nl2br markup parser" Radio-Option wird bereits intern verwendet, um automatisch WYSIWYG-Einträge von Statischen Seiten für die Speicherung zu markieren, auf dass sie folgend nicht durch das nl2br Markup-Parser Plugin bei der Anzeige verändert werden.</p>');
 
+@define('PLUGIN_STATICPAGE_PREVIEW', 'Die Voransicht ihrer statischen Seite wurde in einem neuen Browsertab geöffnet. Sonst benutzen Sie diesen: %s');
+

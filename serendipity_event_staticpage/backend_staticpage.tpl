@@ -1,4 +1,4 @@
-{* backend_staticpage template file v. 1.27, 2017-04-03 *}
+{* backend_staticpage template file v. 1.28, 2017-08-19 *}
 
 <!-- backend_staticpage.tpl START -->
 
@@ -232,7 +232,7 @@
             var staticpage_preview = window.open("{$sp_defpages_link}", "staticpage_preview");
             staticpage_preview.focus();
         </script>
-        <div class="msg_notice spmsg"><svg aria-hidden="true" class="icon icon-info"><use xlink:href="#icon-info"></use></svg> {$CONST.PLUGIN_STATICPAGE_PREVIEW|sprintf:"<a href=\"$sp_defpages_link\">{$sp_defpages_pagetitle|escape}</a>"}</div>
+        <div class="msg_notice spmsg"><svg aria-hidden="true" class="icon icon-info"><use xlink:href="#icon-info"></use></svg> {$CONST.PLUGIN_STATICPAGE_PREVIEW|sprintf:"<a target=\"_new\" href=\"$sp_defpages_link\" title=\"{$sp_defpages_pagetitle|escape}\">link</a>"}</div>
     {/if}
     </div><!-- //id sp_navigator end -->
 

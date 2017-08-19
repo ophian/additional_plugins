@@ -181,7 +181,7 @@
 @define('PLUGIN_STATICPAGELIST_SMARTIFY', 'Smartify Sidebar list');
 @define('PLUGIN_STATICPAGELIST_SMARTIFY_BLAHBLAH', 'Use smarty template file: "plugin_staticpage_sidebar.tpl" for sidebar output (allows to truncate length via smarty).');
 
-@define('PLUGIN_STATICPAGE_PREVIEW', 'The preview of your static page has been opened in a new pop-up window. If you can not see this, please click this link: %s');
+@define('PLUGIN_STATICPAGE_PREVIEW', 'The preview of your static page has been opened in a new browser tab. Else click this: %s.'); // appears as "Else cklick this: link"
 
 @define('STATICPAGE_SHOW_BREADCRUMB_DEFAULT', 'Show breadcrumb');
 @define('STATICPAGE_SHOW_BREADCRUMB', 'Show breadcrumb');

@@ -190,7 +190,7 @@
 @define('STATICPAGES_CUSTOM_META_DESC_BLAH_BLAH',		'V HTML kódu bude vlo¾eno jako <meta name="description" content="Tady bude vá¹ html meta popis stránky">');
 @define('STATICPAGES_CUSTOM_META_KEYS',		'HTML META Keywords (nepovinné)');
 @define('STATICPAGES_CUSTOM_META_KEYS_BLAH_BLAH',		'V HTML kódu bude vlo¾eno jako <meta name="keywords" content="va¹e html meta klíèová slova">' );
-@define('PLUGIN_STATICPAGE_PREVIEW',		'Náhled statické stránky byl otevøen v novém pop-up oknì. Pokud ho nevidíte, kliknìte na následující odkaz: %s');
 @define('STATICPAGE_SHOW_BREADCRUMB_DEFAULT',		'Zobrazit breadcrumb');
 @define('STATICPAGE_SHOW_BREADCRUMB',		'Zobrazit navigaèní koláèek (bradcrumb)');
 @define('STATICPAGE_SHOW_BREADCRUMB_DESC',		'Na této stránce zobrazí koláèkovou navigaci, tzv. breadcrumb.');
+
