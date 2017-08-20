@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.01');
+        $propbag->add('version',       '4.02');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1121,6 +1121,11 @@ class serendipity_event_freetag extends serendipity_event
                         $eventData .= '
 
 /* freetag plugin start */
+
+a.button_link.tagview_active {
+    box-shadow: 0 4px 6px -3px #0066ff;
+    z-index: 1;
+}
 
 .freetagMenu svg[class^="icon-"]:before, .freetagMenu svg[class*=" icon-"]:before {
   font-style: normal;
@@ -2314,21 +2319,21 @@ $(document).ready(function() {
                     </defs>
                 </svg>
                 <ul class="plainList clearfix">
-
 <?php
         }
+        $taction  = array('all', 'leaf', 'entryuntagged', 'entryleaf', 'keywords', 'cat2tag', 'tagupdate', 'cleanupmappings'); //re-ordered for button usage (see above)
+        $tagtitle = array(PLUGIN_EVENT_FREETAG_MANAGE_ALL, PLUGIN_EVENT_FREETAG_MANAGE_LEAF, PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED, PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED, PLUGIN_EVENT_FREETAG_KEYWORDS, PLUGIN_EVENT_FREETAG_GLOBALLINKS, PLUGIN_EVENT_FREETAG_REBUILD, PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP);
+        $svgsrc   = array('tags', 'tag', 'notag', 'leaftag', 'keytag', 'ctag', 'autotag', 'cleantag');
+        $svgtitle = array('tags', 'tag', 'no-tags', 'leaf-tag', 'key-to-tag', 'category-tags', 'autotag', 'clean-tag');
+        foreach ($taction AS $tk => $tv) {
+            if ($tk > 1) {
+                if ($full_permission === false) { break; }
+            }
+            $active  = ($serendipity['GET']['tagview'] == $tv) ? ' tagview_active' : '';
+            $confirm = ($tk == 6 && $tv == 'tagupdate') ? ' onclick="return confirm(\'' . htmlspecialchars(PLUGIN_EVENT_FREETAG_REBUILD_DESC, ENT_COMPAT, LANG_CHARSET) . '\')"' : '';
+            echo '<li><a class="button_link' . $active . '" href="' . FREETAG_MANAGE_URL . '&amp;serendipity[tagview]=' . $tv . '"' . $confirm . ' title="'. $tagtitle[$tk] .'"><svg class="icon icon-' . $svgsrc[$tk] . '" title="' . $svgtitle[$tk] . '"><use xlink:href="#icon-' . $svgsrc[$tk] . '"></use></svg></a></li>'."\n";
+        }
 ?>
-
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=all" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ALL; ?>"><svg class="icon icon-tags" title="tags"><use xlink:href="#icon-tags"></use></svg></a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=leaf" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_LEAF; ?>"><svg class="icon icon-tag" title="tag"><use xlink:href="#icon-tag"></use></svg></a></li>
-<?php if ($full_permission === true) { ?>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=entryuntagged" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED; ?>"><svg class="icon icon-notag" title="no-tags"><use xlink:href="#icon-notag"></use></svg></a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=entryleaf" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED; ?>"><svg class="icon icon-leaftag" title="leaf-tag"><use xlink:href="#icon-leaftag"></use></svg></a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=keywords" title="<?php echo PLUGIN_EVENT_FREETAG_KEYWORDS; ?>"><svg class="icon icon-keytag" title="key-to-tag"><use xlink:href="#icon-keytag"></use></svg></a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=cat2tag" title="<?php echo PLUGIN_EVENT_FREETAG_GLOBALLINKS; ?>"><svg class="icon icon-ctag" title="category-tags"><use xlink:href="#icon-ctag"></use></svg></a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=tagupdate" onclick="return confirm('<?php echo htmlspecialchars(PLUGIN_EVENT_FREETAG_REBUILD_DESC, ENT_COMPAT, LANG_CHARSET); ?>');" title="<?php echo PLUGIN_EVENT_FREETAG_REBUILD; ?>"><svg class="icon icon-autotag" title="autotag"><use xlink:href="#icon-autotag"></use></svg></a></li>
-                    <li><a class="button_link" href="<?php echo FREETAG_MANAGE_URL ?>&amp;serendipity[tagview]=cleanupmappings" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP; ?>"><svg class="icon icon-cleantag" title="clean-tag"><use xlink:href="#icon-cleantag"></use></svg></a></li>
-<?php } ?>
                 </ul>
             </div>
             <script type="text/javascript">
@@ -2546,7 +2551,7 @@ $(document).ready(function() {
                         </p>';
                 } else {
                     echo '    <li>
-                            <a class="button_link" href="' . FREETAG_EDITENTRY_URL . $row['id'] . '"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> ' . EDIT . '</span></a>
+                            <a class="button_link" title="' . EDIT . '" href="' . FREETAG_EDITENTRY_URL . $row['id'] . '"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> ' . EDIT . '</span></a>
                             ' . $row['title'] . (!empty($row['tag']) ? ' ( <strong>Single-Tag:</strong> <em>' . $row['tag'] . '</em> )' : '') . '
                         </li>'."\n"; // i18n?
                 }
