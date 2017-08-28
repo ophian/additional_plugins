@@ -3,6 +3,33 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <title>Documentation: Freetag</title>
         <style>
+            body {
+                font-family: Arial, sans-serif!important;
+                margin: 20px;
+            }
+            ol li {
+                margin-bottom: 0.5em;
+            }
+            h2 {
+                background: #efefef;
+                padding: 0.5em;
+            }
+            p {
+                max-width: 60em;
+            }
+            .title {
+                background: #cfcfcf;
+                margin: 0;
+                padding: 0.5em;
+            }
+            #content {
+                background: #efefef;
+                margin: 0;
+                padding: 0.5em;
+            }
+            #content h2 {
+                padding: 0;
+            }
             pre {
                 display: block;
                 padding: 5px;
@@ -14,13 +41,25 @@
 
 <body>
 
-<h1>Documentation of the Freetag event plugin<br />
-    <small>(serendipity_event_freetag)</small></h1>
+<h1 class="title">Documentation of the Freetag event and sidebar plugin<br />
+    <small>(serendipity_event_freetag / serendipity_plugin_)</small></h1>
 
-<p>Documentary added by Ian on 2014-09-27, changed on 2016-10-07.<br />
+<div id="content">
+    <h2>Content</h2>
+    <ol>
+        <li><a href="#desc">Description</a></li>
+        <li><a href="#option">Scriplets by options</a></li>
+    </ol>
+</div>
+
+<p>Documentary added by Ian on 2014-09-27, changed on 2017-08-28.<br />
 Informations given in <a href="README">The most current README</a>, <a href="README.txt"> and older README.txt</a> a <a href="ChangeLog">and the most current ChangeLog file</a>.
 
-<h2>Scripting changes by options</h2>
+<h2 id="desc">Description</h2>
+
+<p>Allows freestyle tagging of entries.</p>
+
+<h2 id="option">Scripting changes by options</h2>
 
 <h3>Option: Extended Smarty</h3>
 
