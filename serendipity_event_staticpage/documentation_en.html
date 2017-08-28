@@ -1,1 +1,115 @@
-Hopefully coming soon...
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Documentation: Staticpage</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif!important;
+                margin: 20px;
+            }
+            ol li {
+                margin-bottom: 0.5em;
+            }
+            h2 {
+                background: #efefef;
+                padding: 0.5em;
+            }
+            p {
+                max-width: 60em;
+            }
+            .title {
+                background: #cfcfcf;
+                margin: 0;
+                padding: 0.5em;
+            }
+            #content {
+                background: #efefef;
+                margin: 0;
+                padding: 0.5em;
+            }
+            #content h2 {
+                padding: 0;
+            }
+            pre {
+                display: block;
+                padding: 5px;
+                border: solid 1px #333;
+                background-color: #ddd;
+            }
+            blockquote,
+            blockquote + cite { margin: 0 2.5em 1em; }
+            blockquote { border: 1px solid #999; page-break-inside: avoid; padding: 0.25cm 0.25cm 0; }
+    </style>
+    </head>
+
+<body>
+
+<h1 class="title">Documentation of the Staticpage event and sidebar plugin<br />
+    <small>(serendipity_event_staticpage / serendipity_plugin_staticpage)</small></h1>
+
+<div id="content">
+    <h2>Content</h2>
+    <ol>
+        <li><a href="#desc">Description</a></li>
+        <li><a href="#undoc">Undocumented Features</a></li>
+    </ol>
+</div>
+
+<p>Documentary added by Ian on 2017-08-28.<br />
+Informations given in <a href="README.md">The most current README</a> and <a href="ChangeLog">and the most current ChangeLog file</a>.
+
+<h2 id="desc">Description</h2>
+
+<p><em>Hopefully coming soon...</em></p>
+
+<p>&nbsp;</p>
+
+<h2 id="undoc">Undocumented Features</h2>
+
+<p><em>Postby garvinhicking » Wed Jun 13, 2007 12:36 pm in <a target="_blank" href="http://board.s9y.org/viewtopic.php?p=57362#57362">the forum</a>.</em></p>
+
+<blockquote>
+
+<h4>New staticpage feature: Show staticpages via Smarty</h4>
+
+<p>I just upgraded the staticpage plugin in CVS to version 3.50.</p>
+
+<p>It now supports to use a custom smarty function to show static pages. This can be used in your custom template files (like the userprofile .tpls *) to emit specific staticpages depending on variables.</p>
+
+<p>Go ahead and play with it. The API is quite basic and described in the new 'smarty.inc.php' file. It basically works like this:</p>
+
+<p>(*) by the User-Profiles-Plugin</p>
+
+<pre>
+<code class="language-smarty">{staticpage_display template="$TEMPLATE" pagevar="$PAGEVAR" id="$ID" permalink="$PERMALINK" pagetitle="$PAGETITLE" authorid="$AUTHORID" query="$QUERY"}</code></pre>
+
+<p>Variable options:</p>
+
+<ul>
+    <li>&nbsp;- `$TEMPLATE` can be replaced with the name of the staticpage template to parse. It defaults to "plugin_staticpage.tpl".</li>
+    <li>&nbsp;- `$PAGEVAR` must match the variable prefix of the staticpage template. If you want to parse multiple staticpages, you might need to seperate those from each other. Always use the variable prefix that is also employed in the template file.</li>
+</ul>
+
+<p>To retrieve a staticpage, you need to supply either one of those options:</p>
+
+<ul>
+    <li>&nbsp;- `$ID` can be replaced with the ID of the staticpage you want to fetch.</li>
+    <li>&nbsp;- `$PERMALINK` can be replaced with the fully configured permalink of a staticpage.</li>
+    <li>&nbsp;- `$PAGETITLE` can be replaced with the URL shorthand/backwards compatibility name of a staticpage</li>
+    <li>&nbsp;- `$AUTHORID` additionally can be combined with the variables above to restrict output to a specific author</li>
+</ul>
+
+<p>If you need more customization, you can pass a SQL query directly using `$QUERY`.</p>
+
+<p>EXAMPLE:<br />
+To fetch a static page with the URL shorthand name 'static' you simply put this in your template file (index.tpl, a userprofile .tpl or whatever):</p>
+
+<pre>
+<code class="language-smarty">{staticpage_display pagetitle='static'}</code></pre>
+
+</blockquote>
+
+<p>&nbsp;</p>
+
+  </body>
+</html>
