@@ -38,7 +38,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $this->title = PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME;
         $propbag->add('description', PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name', $this->title);
-        $propbag->add('version', '0.4.27' );
+        $propbag->add('version', '0.4.28' );
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -47,6 +47,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $propbag->add('event_hooks', array ('frontend_saveComment' => true,
                                             'backend_spamblock_comments_shown' => true,
                                             'external_plugin' => true,
+                                            'css_backend' => true,
                                             'backend_view_comment' => true,
                                             'backend_comments_top' => true,
                                             'backend_sendcomment' => true,
@@ -57,7 +58,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                                             'xmlrpc_comment_ham' => true)
         );
         $propbag->add('groups', array ('ANTISPAM' ) );
-        $propbag->add('author', 'kleinerChemiker,  Malte Paskuda, based upon b8 by Tobias Leupold');
+        $propbag->add('author', 'kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold');
         $propbag->add('configuration', array(
             'method',
             'moderateBarrier',
@@ -1207,6 +1208,20 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                             return false;
                         }
                     }
+                    break;
+
+                case 'css_backend':
+                        $eventData .= '
+
+/* serendipity_event_spamblock_bayes start */
+
+#formMultiSelect .form_buttons fieldset > input {
+    margin-right: .25em;
+}
+
+/* serendipity_event_spamblock_bayes end */
+
+';
                     break;
 
                 case 'backend_view_comment':
