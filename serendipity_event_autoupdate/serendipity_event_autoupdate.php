@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.4.4');
+        $propbag->add('version',       '1.4.5');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -109,7 +109,12 @@ class serendipity_event_autoupdate extends serendipity_event
             }
             $wait = strstr($pname, 'Function') ? ' Please wait ... <span>Processing: '.$next.' ...</span>' : ''; // no attributes possible!
             // Tell user that the process is completed
-            echo '<script type="text/javascript">document.getElementById("information").innerHTML="'.$pname.' completed!'.$wait.'"</script>';
+            echo '
+<script type="text/javascript">
+    document.getElementById("information").innerHTML="'.$pname.' completed!'.$wait.'";
+    document.documentElement.scrollTop = getDocHeight();
+</script>
+';
         }
 
         echo "$message\n";
@@ -189,6 +194,16 @@ class serendipity_event_autoupdate extends serendipity_event
         <style type="text/css">
 {$css_upd}
         </style>
+        <script type="text/javascript">
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
+                Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
+                Math.max(D.body.clientHeight, D.documentElement.clientHeight)
+            );
+        }
+        </script>
     </head>
 
     <body id="serendipity_admin_page">
