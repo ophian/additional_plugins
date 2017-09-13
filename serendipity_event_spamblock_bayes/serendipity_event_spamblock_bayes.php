@@ -38,7 +38,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $this->title = PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME;
         $propbag->add('description', PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name', $this->title);
-        $propbag->add('version', '0.4.28' );
+        $propbag->add('version', '0.4.29' );
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -2022,7 +2022,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                                 spam = spam + VALUES(spam);";
 
                 serendipity_db_query($sql);
-                $result = mysql_error();
+                $result = ($serendipity['dbType'] == 'mysqli') ? mysqli_error() : mysql_error();
                 if ($result != "") {
                     serendipity_db_end_transaction(false);
                     return $result;

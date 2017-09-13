@@ -1,3 +1,7 @@
+0.4.29:
+-------
+ * Fix to use mysql/mysqli specfic errors
+
 0.4.28:
 -------
  * Since build lineless by JS, add margin between multiform toggle buttons
