@@ -29,7 +29,7 @@ class DbSpice
             $q = "CREATE TABLE {$serendipity['dbPrefix']}commentspice (" .
                     "commentid int(10) not null, " .
                     "twittername nvarchar(20), " .
-                    "primary key (commentid)" .
+                    "PRIMARY KEY (commentid)" .
                 ")";
 
             $result = serendipity_db_schema_import($q);

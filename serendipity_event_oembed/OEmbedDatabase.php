@@ -66,7 +66,7 @@ class OEmbedDatabase
                     "url varchar(3000) not null, " .
             		"oetype varchar(20) not null, " .
             		"oeobj text not null, " .
-                    "primary key (urlmd5)" .
+                    "PRIMARY KEY (urlmd5)" .
                 ")";
 
             $result = serendipity_db_schema_import($q);

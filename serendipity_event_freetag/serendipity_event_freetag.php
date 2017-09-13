@@ -424,7 +424,7 @@ class serendipity_event_freetag extends serendipity_event
             $q = "CREATE TABLE {$serendipity['dbPrefix']}entrytags (" .
                     "entryid int(10) not null, " .
                     "tag varchar(50) not null, " .
-                    "primary key (entryid, tag)" .
+                    "PRIMARY KEY (entryid, tag)" .
                 ")";
 
             $result = serendipity_db_schema_import($q);
@@ -441,7 +441,7 @@ class serendipity_event_freetag extends serendipity_event
             $q = "CREATE TABLE {$serendipity['dbPrefix']}tagkeywords (" .
                     "keywords text, " .
                     "tag varchar(50) not null, " .
-                    "primary key (tag)" .
+                    "PRIMARY KEY (tag)" .
                 ")";
 
             $result = serendipity_db_schema_import($q);

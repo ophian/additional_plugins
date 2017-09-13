@@ -131,7 +131,7 @@ class TwitterPluginDbAccess
                     "entryid int(10) not null, " .
                     "lasttweetid varchar(20) not null, " .
                     "lastcheck int(10) not null, " .
-                    "primary key (entryid)" .
+                    "PRIMARY KEY (entryid)" .
                 ")";
 
             $result = serendipity_db_schema_import($q);
@@ -146,7 +146,7 @@ class TwitterPluginDbAccess
                     "service varchar(15) not null, " .
                     "longurl varchar(255) not null, " .
                     "shorturl varchar(50) not null, " .
-                    "primary key (service, longurl(176))" .
+                    "PRIMARY KEY (service, longurl(176))" .
                 ")";
 
             $result = serendipity_db_schema_import($q);
