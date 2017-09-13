@@ -1590,9 +1590,9 @@
 <description>This plugin periodically executes plugins that provide/require periodic tasks. See the configuration of this plugin for details.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.9.2</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.0</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-09-13</date>
   <filelist>
     <dir name="serendipity_event_cronjob">
       <file>.htaccess</file>
@@ -2715,9 +2715,9 @@
 <description>Imports comments made on facebook postings (like through RSS Graffiti) back into the blog. Also embeds Facebook OpenGraph Meta-Tags into the blog. Note that adding &quot;like&quot;-Buttons to blog entries is achieved via the serendipity_event_findmore plugin! </description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.7</version>
+  <version>0.8</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2016-10-06</date>
+  <date>2017-09-13</date>
   <filelist>
     <dir name="serendipity_event_facebook">
       <file>.htaccess</file>
@@ -5471,9 +5471,9 @@
 <description>Links manager - Shows your favorite links in the sidebar.</description>
 <maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.03</version>
+  <version>2.04</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2017-09-13</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>.htaccess</file>
@@ -8653,9 +8653,9 @@
 <description>在文章页面显示一条指向统计资料的链接，另外还有访客计数器等</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.64</version>
+  <version>1.65</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-09-13</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>.htaccess</file>
@@ -9546,9 +9546,9 @@
 <description>Maintain a list of projects and their percentage completion.</description>
 <maintainers><maintainer><name>Steven Tonnesen, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.27</version>
+  <version>1.28</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2017-09-13</date>
   <filelist>
     <dir name="serendipity_event_todolist">
       <file>.htaccess</file>
@@ -10396,9 +10396,9 @@
 <description>You can specify new/existing links to your blog entries via [[title]], link to staticpages via ((title)) and link to both via {{title}}. References can be automatically appended to the blog entry.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.25.1</version>
-  <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.26</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-09-13</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>.htaccess</file>
