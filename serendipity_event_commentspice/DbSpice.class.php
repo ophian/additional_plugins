@@ -26,7 +26,7 @@ class DbSpice
 
         if (!DbSpice::table_created('commentspice')) {
             // twitternames cant be longer than 15 referring to API docs. 20 for safety. nvarchar because of unicode names
-            $q = "create table {$serendipity['dbPrefix']}commentspice (" .
+            $q = "CREATE TABLE {$serendipity['dbPrefix']}commentspice (" .
                     "commentid int(10) not null, " .
                     "twittername nvarchar(20), " .
                     "primary key (commentid)" .
@@ -41,26 +41,27 @@ class DbSpice
         }
         // Version 2 updates
         if ($obj->get_config((PLUGIN_EVENT_COMMENTSPICE_CNAME_DBCONFIG)<2)) {
-            $q = "alter table {$serendipity['dbPrefix']}commentspice" .
-                " add column promo_name nvarchar(200),".
-                " add column promo_url nvarchar(250);";
+            $q = "ALTER TABLE {$serendipity['dbPrefix']}commentspice" .
+                " ADD COLUMN promo_name nvarchar(200),".
+                " ADD COLUMN promo_url nvarchar(250);";
             serendipity_db_query($q);
             $obj->set_config(PLUGIN_EVENT_COMMENTSPICE_CNAME_DBCONFIG, 2);
         }
         // Version 3 updates
         if ($obj->get_config((PLUGIN_EVENT_COMMENTSPICE_CNAME_DBCONFIG)<3)) {
-            $q = "CREATE INDEX IDX_COMMENTS_EMAIL" .
-                  " on {$serendipity['dbPrefix']}comments (email);";
+            $q = "CREATE INDEX idx_comments_email" .
+                  " ON {$serendipity['dbPrefix']}comments (email(191));";
             serendipity_db_query($q); // if it already exists, it won't be created
             $obj->set_config(PLUGIN_EVENT_COMMENTSPICE_CNAME_DBCONFIG, 3);
         }
         // Version 4 updates
         if ($obj->get_config((PLUGIN_EVENT_COMMENTSPICE_CNAME_DBCONFIG)<4)) {
-            $q = "alter table {$serendipity['dbPrefix']}commentspice" .
-                " add column boo nvarchar(250);";
+            $q = "ALTER TABLE {$serendipity['dbPrefix']}commentspice" .
+                " ADD COLUMN boo nvarchar(250);";
             serendipity_db_query($q);
             $obj->set_config(PLUGIN_EVENT_COMMENTSPICE_CNAME_DBCONFIG, 4);
         }
+        // nvarchar supports multibyte characters
     }
 
     static function countComments($email)

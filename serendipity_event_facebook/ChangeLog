@@ -1,3 +1,8 @@
+0.8:
+----
+
+ * Restrict sql index key length for utf8mb4 migration
+
 0.7:
 ----
 

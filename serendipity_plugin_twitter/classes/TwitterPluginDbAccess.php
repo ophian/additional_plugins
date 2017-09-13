@@ -62,8 +62,8 @@ class TwitterPluginDbAccess
         global $serendipity;
 
         $inservices = "'" . implode("','", $selected_services) . "'";
-        $query = "select service, shorturl from {$serendipity['dbPrefix']}tweetbackshorturls where longurl like '$article_url'";
-        $query .= " and service in ($inservices)";
+        $query = "SELECT service, shorturl FROM {$serendipity['dbPrefix']}tweetbackshorturls WHERE longurl like '$article_url'";
+        $query .= " AND service IN ($inservices)";
 
         $rows = serendipity_db_query($query);
         if (!is_array($rows)) { // fresh search
@@ -96,7 +96,7 @@ class TwitterPluginDbAccess
             if (empty($loaded_shorturls[$service])) {
                 // Save only valid short urls!
                 if (preg_match('/^http/', $shorturl)) {
-                    $query = "insert into {$serendipity['dbPrefix']}tweetbackshorturls (service,longurl,shorturl) VALUES ('$service','$article_url','$shorturl')";
+                    $query = "INSERT INTO {$serendipity['dbPrefix']}tweetbackshorturls (service,longurl,shorturl) VALUES ('$service','$article_url','$shorturl')";
                 }
                 serendipity_db_query($query);
             }
@@ -127,7 +127,7 @@ class TwitterPluginDbAccess
         }
 
         if (!TwitterPluginDbAccess::table_created('tweetbackhistory')) {
-            $q = "create table {$serendipity['dbPrefix']}tweetbackhistory (" .
+            $q = "CREATE TABLE {$serendipity['dbPrefix']}tweetbackhistory (" .
                     "entryid int(10) not null, " .
                     "lasttweetid varchar(20) not null, " .
                     "lastcheck int(10) not null, " .
@@ -142,11 +142,11 @@ class TwitterPluginDbAccess
         }
 
         if (!TwitterPluginDbAccess::table_created('tweetbackshorturls')) {
-            $q = "create table {$serendipity['dbPrefix']}tweetbackshorturls (" .
+            $q = "CREATE TABLE {$serendipity['dbPrefix']}tweetbackshorturls (" .
                     "service varchar(15) not null, " .
                     "longurl varchar(255) not null, " .
                     "shorturl varchar(50) not null, " .
-                    "primary key (service, longurl)" .
+                    "primary key (service, longurl(176))" .
                 ")";
 
             $result = serendipity_db_schema_import($q);
@@ -155,20 +155,20 @@ class TwitterPluginDbAccess
                 return;
             }
 
-            serendipity_db_schema_import("CREATE INDEX idx_tweetbackshorturls_longurl ON {$serendipity['dbPrefix']}tweetbackshorturls (longurl)");
+            serendipity_db_schema_import("CREATE INDEX idx_tweetbackshorturls_longurl ON {$serendipity['dbPrefix']}tweetbackshorturls (longurl(191))");
             serendipity_db_schema_import("CREATE INDEX idx_tweetbackshorturls_service ON {$serendipity['dbPrefix']}tweetbackshorturls (service)");
 
         }
 
         // Clear old wrong entries!
-        $q = "delete from {$serendipity['dbPrefix']}tweetbackshorturls where shorturl LIKE 'Error'";
+        $q = "DELETE FROM {$serendipity['dbPrefix']}tweetbackshorturls WHERE shorturl LIKE 'Error'";
         $row = serendipity_db_query($q, true, 'num');
     }
 
     static function entry_deleted($entryid)
     {
         global $serendipity;
-        $q = "delete from {$serendipity['dbPrefix']}tweetbackhistory where entryid=$entryid";
+        $q = "DELETE FROM {$serendipity['dbPrefix']}tweetbackhistory WHERE entryid=$entryid";
         serendipity_db_schema_import($q);
     }
 

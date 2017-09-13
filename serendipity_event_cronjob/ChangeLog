@@ -1,12 +1,20 @@
-0.9.2: Allow to turn off specific cronjobs
-
-0.9: Properly use the example() API method by returning, not echo'ing. Unimportant update.
-0.8:
+1.0:
 ----
+ * Restrict sql index key length for utf8mb4 migration
+ * Use lang API - extends required version
 
-Static function call fixes for PHP5
+0.9.2:
+------
+ * Allow to turn off specific cronjobs
+
+0.9:
+------
+ * Properly use the example() API method by returning, not echo'ing. Unimportant update.
+
+0.8:
+------
+ * Static function call fixes for PHP5
 
 0.6:
 ----
-
-* Fix important bug that did not properly schedule cronjobs
+ * Fix important bug that did not properly schedule cronjobs

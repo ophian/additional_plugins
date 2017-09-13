@@ -1,19 +1,13 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_cronjob extends serendipity_event {
+class serendipity_event_cronjob extends serendipity_event
+{
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -22,9 +16,9 @@ class serendipity_event_cronjob extends serendipity_event {
         $propbag->add('description',   PLUGIN_EVENT_CRONJOB_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '0.9.2');
+        $propbag->add('version',       '1.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'php'         => '4.1.0'
         ));
 
@@ -40,7 +34,8 @@ class serendipity_event_cronjob extends serendipity_event {
         $this->dependencies = array();
     }
 
-    static function getValues($mode = 'select') {
+    static function getValues($mode = 'select')
+    {
         // Add future timespans here
         static $timespan = array(
             'off'       => 0,
@@ -65,7 +60,8 @@ class serendipity_event_cronjob extends serendipity_event {
         return $r;
     }
 
-    function example() {
+    function example()
+    {
         global $serendipity;
         $s = '';
         $s .= '<br /><div style="border: 1px solid red; padding: 5px;">' . PLUGIN_EVENT_CRONJOB_DETAILS . '</div>';
@@ -81,7 +77,8 @@ class serendipity_event_cronjob extends serendipity_event {
         return $s;
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'visitor_cronjob':
                 $propbag->add('type', 'boolean');
@@ -96,11 +93,13 @@ class serendipity_event_cronjob extends serendipity_event {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function checkDB() {
+    function checkDB()
+    {
         global $serendipity;
 
         if ($this->get_config('db_ver') < 2) {
@@ -113,20 +112,22 @@ class serendipity_event_cronjob extends serendipity_event {
             $q   = "CREATE INDEX kspamidx ON {$serendipity['dbPrefix']}cronjoblog (timestamp);";
             $sql = serendipity_db_schema_import($q);
 
-            $q   = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type);";
+            $q   = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type(191));";
             $sql = serendipity_db_schema_import($q);
             $this->set_config('db_ver', 2);
         }
     }
 
-    static function log($msg, $type = 'global') {
+    static function log($msg, $type = 'global')
+    {
         global $serendipity;
         $now = time();
         echo '[' . date('d.m.Y H:i', $now) . '] ' . $msg . "<br />\n";
         $r = serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}cronjoblog (timestamp, type, reason) VALUES ($now, '$type', '" . serendipity_db_escape_string($msg) . "')");
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -171,6 +172,8 @@ class serendipity_event_cronjob extends serendipity_event {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

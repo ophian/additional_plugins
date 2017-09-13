@@ -12,3 +12,4 @@
 @define('PLUGIN_EVENT_CRONJOB_VISITOR_DESC', 'Pokud je tato volba povolena, plánované úlohy budou spouštěny návštěvami blogu. K tomu bude do stránek blogu vložen obrázek o rozměrech 0 pixelů (který volá index.php?serendipity[cronjob]=true), který se stará o spuštění úloh. Pro ty z Vás, kteří nemáte možnost spouštět úlohy přímo na serveru (nemáte možnost používat Cron nebo podobný nástro), je to jediná možnost, jak periodicky opakovat některé úlohy. Pamatujte, že takovéto spouštění úloh je závislé na návštěvách Vašich stránek, tedy časové prodlevy mezi jednotlivými spuštěními skriptu nebudou přesné. (Například úloze nastavené na opakování každou hodinu se může stát, že nebude během 3 hodin spuštěna ani jednou, pokud během těch tří hodin na blog nepřijde jediný návštěvník.)');
 @define('PLUGIN_EVENT_CRONJOB_LOG', 'Poslední aktivita plánovače úloh');
 @define('PLUGIN_EVENT_CRONJOB_CHOOSE', 'Kdy spustit?');
+

@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 // TODO:
 // Show existing references for insertion in 'Extended options' panel for 'edit entry' screen
@@ -8,13 +8,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_wikilinks extends serendipity_event
 {
@@ -30,9 +24,9 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus');
-        $propbag->add('version',       '0.25.1');
+        $propbag->add('version',       '0.26');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.0',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -157,7 +151,7 @@ class serendipity_event_wikilinks extends serendipity_event
 
         if (isset($hooks[$event])) {
             switch($event) {
-            
+
                 case 'backend_publish':
                 case 'backend_save':
                     // Purge, so that the data within the entry takes precedence over other changes
@@ -237,7 +231,7 @@ class serendipity_event_wikilinks extends serendipity_event
                             } else {
                                 $source =& $eventData[$element];
                             }
-                            
+
                             $this->references = $this->refcount = array();
                             $this->ref_entry = $eventData['id'];
                             $source = preg_replace_callback(
@@ -251,7 +245,7 @@ class serendipity_event_wikilinks extends serendipity_event
                                 array($this, '_wikify'),
                                 $source
                             );
-                            
+
                             $source .= $this->reference_parse();
                             if ($is_body) {
                                 if (!is_array($eventData['properties']['references'])) $eventData['properties']['references'] = array();
@@ -447,8 +441,8 @@ function use_link_<?php echo $func; ?>(txt) {
                     entryid int(11) default '0',
                     refname text,
                     ref text)");
-            serendipity_db_schema_import("CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname(200));");
-            serendipity_db_schema_import("CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(200));");
+            serendipity_db_schema_import("CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname(191));");
+            serendipity_db_schema_import("CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(191));");
             serendipity_db_schema_import("CREATE INDEX wikiref_entry ON {$serendipity['dbPrefix']}wikireferences (entryid);");
             $this->set_config('db_built', 1);
         }
@@ -563,7 +557,7 @@ function use_link_<?php echo $func; ?>(txt) {
         $debug = true;
 
         $admin_url = false;
-        
+
         $cidx = 2;
 
         if ($buffer[1] == '((') {
@@ -600,7 +594,7 @@ function use_link_<?php echo $func; ?>(txt) {
         }
 
         if (is_array($entry)) { // The entry exists.
-            
+
             // check, wether we don't want draft or future links:
             //if (serendipity_db_bool($this->get_config('generate_draft_links', false)) ||  !$entry['isdraft']){
             if (serendipity_db_bool($this->get_config('generate_future_links', false)) ||  $entry['timestamp']<=serendipity_db_time()){
@@ -608,7 +602,7 @@ function use_link_<?php echo $func; ?>(txt) {
                     $entry_url = $entry['permalink'];
                 } else {
                     $entry_url = serendipity_archiveURL($entry['id'], $entry['title'], 'serendipityHTTPPath', true, array('timestamp' => $entry['timestamp']));
-                }               
+                }
             }
             if (serendipity_userLoggedIn()) {
                 $mode = 'edit';
@@ -677,3 +671,4 @@ function use_link_<?php echo $func; ?>(txt) {
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

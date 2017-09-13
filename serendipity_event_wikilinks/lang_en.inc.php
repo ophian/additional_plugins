@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -56,3 +56,4 @@ This will take care of fetching the existing, named reference text from the data
 @define('PLUGIN_EVENT_WIKILINKS_DB_REFNAME', 'Reference name');
 @define('PLUGIN_EVENT_WIKILINKS_DB_REF', 'Reference content');
 @define('PLUGIN_EVENT_WIKILINKS_DB_ENTRYDID', 'Defined in:');
+

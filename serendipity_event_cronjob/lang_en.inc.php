@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -13,3 +13,4 @@
 @define('PLUGIN_EVENT_CRONJOB_VISITOR_DESC', 'If this option is enabled, cronjobs will get executed by your visitors. For this, a 0-pixel image will be emitted (that calls index.php?serendipity[cronjob]=true), that takes care of cronjob functionality. For people without the ability to add custom cronjobs on their server, this is the only way one can execute periodic events on the webserver. You should note that then cronjobs will be executed only on page calls, and the timespan between cronjobs might not be exact then (it could take you 3 hours until the hourly cronjob gets executed, if no visitors come during the 1-hour timeframe).');
 @define('PLUGIN_EVENT_CRONJOB_LOG', 'Recent Cronjob activity');
 @define('PLUGIN_EVENT_CRONJOB_CHOOSE', 'Execute when?');
+

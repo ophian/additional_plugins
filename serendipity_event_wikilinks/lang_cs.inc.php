@@ -54,3 +54,4 @@ To se postará o vložení existující pojmenované reference z databáze. Pamatujte, 
 @define('PLUGIN_EVENT_WIKILINKS_DB_REFNAME', 'Název reference');
 @define('PLUGIN_EVENT_WIKILINKS_DB_REF', 'Obsah reference');
 @define('PLUGIN_EVENT_WIKILINKS_DB_ENTRYDID', 'Zadáno v:');
+

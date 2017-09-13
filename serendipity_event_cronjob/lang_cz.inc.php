@@ -12,3 +12,4 @@
 @define('PLUGIN_EVENT_CRONJOB_VISITOR_DESC', 'Pokud je tato volba povolena, plánované úlohy budou spou¹tìny náv¹tìvami blogu. K tomu bude do stránek blogu vlo¾en obrázek o rozmìrech 0 pixelù (který volá index.php?serendipity[cronjob]=true), který se stará o spu¹tìní úloh. Pro ty z Vás, kteøí nemáte mo¾nost spou¹tìt úlohy pøímo na serveru (nemáte mo¾nost pou¾ívat Cron nebo podobný nástro), je to jediná mo¾nost, jak periodicky opakovat nìkteré úlohy. Pamatujte, ¾e takovéto spou¹tìní úloh je závislé na náv¹tìvách Va¹ich stránek, tedy èasové prodlevy mezi jednotlivými spu¹tìními skriptu nebudou pøesné. (Napøíklad úloze nastavené na opakování ka¾dou hodinu se mù¾e stát, ¾e nebude bìhem 3 hodin spu¹tìna ani jednou, pokud bìhem tìch tøí hodin na blog nepøijde jediný náv¹tìvník.)');
 @define('PLUGIN_EVENT_CRONJOB_LOG', 'Poslední aktivita plánovaèe úloh');
 @define('PLUGIN_EVENT_CRONJOB_CHOOSE', 'Kdy spustit?');
+

@@ -1,3 +1,7 @@
+1.65:
+-----
+- Restrict sql index key length for utf8mb4 migration
+
 1.64:
 -----
 - Iconfont accessibility fixes

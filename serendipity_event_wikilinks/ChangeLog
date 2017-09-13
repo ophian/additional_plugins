@@ -1,4 +1,15 @@
-# 
+0.26:
+-----
+   * Restrict sql index key length for utf8mb4 migration
+   * Use lang API - extends required version
+
+0.25.1:
+-----
+   * Use serendipity_specialchars
+
+0.26:
+-----
+   * Bump version to propagate new .htaccess
 
 0.24:
 -----------------
@@ -7,12 +18,12 @@
 0.21:
 -----------------
    * Fixed references smarty variable
-   
+
 0.20:
 ------------------------------------------------------------------------
 
    * Added support for reference building via <ref (name=XXX)>...reference...</ref>
-   
+
 
 0.18:
    * Suppress html_entity_decode() warnings.
@@ -22,7 +33,7 @@ Version 0.17 (brockhaus):
 
     * The title of the article inside of the wiki link might contain HTML
       entities. The plugin won't find the article in that case, because
-      titles are saved in pure text. 
+      titles are saved in pure text.
       Now the entities will be decoded first, before searching for a
       matching article.
 

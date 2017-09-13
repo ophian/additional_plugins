@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -23,3 +23,4 @@
 @define('PLUGIN_EVENT_WIKILINKS_SHOWDRAFTLINKS_DESC', 'Да се създават ли връзки към статии, които все още са чернови (не са публикувани)?');
 @define('PLUGIN_EVENT_WIKILINKS_SHOWFUTURELINKS_NAME', 'Създаване на връзки към бъдещи статии?');
 @define('PLUGIN_EVENT_WIKILINKS_SHOWFUTURELINKS_DESK', 'Да се създават ли връзки към статии, които са с дата в  бъдещето?');
+
