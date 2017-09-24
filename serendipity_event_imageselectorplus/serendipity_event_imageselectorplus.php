@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian');
-        $propbag->add('version',       '1.01');
+        $propbag->add('version',       '1.10');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -138,6 +138,13 @@ class serendipity_event_imageselectorplus extends serendipity_event
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
+    function example()
+    {
+        return '<span class="msg_notice"><span class="icon-info-circled"></span> ' . PLUGIN_EVENT_IMAGESELECTORPLUS_EXAMPLE_READMEHINT . "</span>\n" .
+               '<span class="msg_notice"><span class="icon-info-circled"></span> ' . PLUGIN_EVENT_IMAGESELECTORPLUS_EXAMPLETEXT . "</span>\n" .
+               '<span class="msg_notice"><span class="icon-info-circled"></span> ' . PLUGIN_EVENT_IMAGESELECTORPLUS_EXAMPLE_QUICKBLOG . "</span>\n";
+    }
+
     function generate_content(&$title)
     {
         $title = $this->title;
@@ -223,7 +230,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                 case 'backend_image_addform':
 ?>
 
-        <div id="imageselectorplus">
+        <div id="imageselectorplus" class="checkpoint">
 
 <?php
                     if (class_exists('ZipArchive')) {
@@ -231,20 +238,29 @@ class serendipity_event_imageselectorplus extends serendipity_event
                         $checkedN = "";
                         $this->get_config('unzipping') ? $checkedY = ' checked="checked"' : $checkedN = ' checked="checked"';
 ?>
-            <div class="clearfix radio_field">
-                <h4><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES;?></h4>
-                <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_DESC;?>
+            <fieldset class="clearfix radio_field">
+                <span class="wrap_legend">
+                    <legend><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES;?></legend>
+                    <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_DESC;?>
+                </span>
                 <div>
                     <input type="radio" class="input_radio" id="unzip_yes" name="serendipity[unzip_archives]" value="<?php echo YES;?>"<?php echo $checkedY;?>><label for="unzip_yes"><?php echo YES;?></label>
                     <input type="radio" class="input_radio" id="unzip_no" name="serendipity[unzip_archives]" value="<?php echo NO;?>"<?php echo $checkedN;?>><label for="unzip_no"><?php echo NO;?></label>
                 </div>
-            </div>
+            </fieldset>
 <?php
                     }
 ?>
-            <h4><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG; ?>:</h4>
-            <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG_DESC; ?></em>
-            <div id="quickblog_tablefield" class="clearfix">
+            <fieldset id="quickblog_tablefield" class="clearfix">
+                <span class="wrap_legend">
+                    <legend><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG; ?>:</legend>
+                    <button class="toggle_info button_link" type="button" data-href="#quickblog_tab_info">
+                        <span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?= MORE ?></span>
+                    </button>
+                </span>
+                <div id="quickblog_tab_info" class="clearfix field_info additional_info">
+                    <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG_DESC; ?></em>
+                </div>
                 <div class="quickblog_form_field">
                     <label for="quickblog_titel"><?php echo TITLE; ?></label>
                     <input id="quickblog_title" class="input_textbox" name="serendipity[quickblog][title]" type="text">
@@ -319,9 +335,14 @@ class serendipity_event_imageselectorplus extends serendipity_event
                 <div class="quickblog_form_field">
                     <label for="quickblog_isize"><?php echo IMAGE_SIZE; ?></label>
                     <input id="quickblog_isize" class="input_textbox" name="serendipity[quickblog][size]" value="<?php echo $serendipity['thumbSize']; ?>" type="text">
+                    <button class="toggle_info button_link" type="button" data-href="#quickblog_size_info">
+                        <span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?= MORE ?></span>
+                    </button>
                 </div>
-            </div>
-            <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_IMAGE_SIZE_DESC; ?></em>
+                <div id="quickblog_size_info" class="clearfix field_info additional_info">
+                    <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_IMAGE_SIZE_DESC; ?></em>
+                </div>
+            </fieldset>
         </div>
 
 <?php
@@ -564,6 +585,9 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
 /* imageselectorplus plugin backend css start */
 
+#imageselectorplus {
+    margin-top: 1.5em;
+}
 #imageselectorplus .radio_field input {
     margin: 0 0.5em;
 }
@@ -594,6 +618,15 @@ class serendipity_event_imageselectorplus extends serendipity_event
 #quickblog_tablefield .quickblog_radio_field input {
     margin-left: 0.5em;
 }
+#quickblog_tablefield .wrap_legend button {
+    margin: -2.65em 5em 1em auto;
+    display: block;
+}
+#quickblog_tablefield .field_info {
+    margin-bottom: 1.5em;
+    width: 100%;
+}
+#quickblog_tablefield #quickblog_size_info.field_info { margin-bottom: inherit; }
 
 /* imageselectorplus plugin backend css end */
 
@@ -742,7 +775,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
         $serendipity['smarty']->assign('quickblog', $quickblog);
 
-        $content = $this->parseTemplate('quickblog.tpl');
+        $content = $this->parseTemplate('plugin_quickblog.tpl');
 
         return $content;
     }

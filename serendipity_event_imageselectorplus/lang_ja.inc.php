@@ -7,7 +7,7 @@
  */
 
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_NAME', 'メディアマネージャーの拡張されたオプション');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_DESC', 'Allows extended options for inserting images from the media manager [Serendipity >= 0.9]');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_DESC', 'Allows extended options for inserting images from the media manager');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET', 'このリンクのターゲット');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_JS', 'ポップアップウィンドウ (via JavaScript, adaptive size)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_ENTRY', 'Isolated Entry');

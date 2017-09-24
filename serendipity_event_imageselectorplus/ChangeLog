@@ -1,3 +1,10 @@
+1.10:
+-----
+ * Buttonize Quickblog description
+ * Added important example notes
+ * Added more about undocumented or extended features to the documentation file
+ * Renamed "quickblog.tpl" to "plugin_quickblog.tpl". If you have your own, please rename it too!
+
 1.01:
 -----
  * Fix broken quickblog entries added by v.0.53

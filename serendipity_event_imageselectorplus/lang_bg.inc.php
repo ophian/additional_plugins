@@ -7,7 +7,7 @@
  */
 
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_NAME',                      'Допълнителни опции за медийния менажер');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_DESC',                      'Дава допълнителни опции при вмъкване на изображения чрез медийния менажер [Serendipity >= 0.9]');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_DESC',                      'Дава допълнителни опции при вмъкване на изображения чрез медийния менажер');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET',                    'Цел (URL) на тази връзка');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_JS',                 'Изскачаш прозорец (през JavaScript, с големина която се адаптира)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_ENTRY',              'Изолирана статия');

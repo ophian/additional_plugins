@@ -11,7 +11,7 @@
  */
 
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_NAME', 'Rozšířené volby pro práci s médii');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_DESC', 'Rozšiřuje možnosti vkládání obrázků z knihovny médií - quickblog a hromadné vkládání obrázků (více v dokumentaci v adresáři plugins/serendipity_evnets_imageselectorplus) [verze Serendipity >= 0.9].');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_DESC', 'Rozšiřuje možnosti vkládání obrázků z knihovny médií - quickblog a hromadné vkládání obrázků (více v dokumentaci v adresáři plugins/serendipity_evnets_imageselectorplus).');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET', 'Cíl pro tento odkaz:');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_JS', 'Vyskakovací popup okno (pomocí JavaScriptu, přizpůsobitelná velikost)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_ENTRY', 'Samostatný příspěvek');

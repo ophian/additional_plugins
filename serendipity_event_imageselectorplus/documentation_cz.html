@@ -1,50 +1,92 @@
+<!doctype html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
-    <title>Dokumentace: Avatar Plugin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Dokumentation: ImageSelectorPlus</title>
+<style type="text/css">
+body {
+  font-family: Arial, sans-serif!important;
+  margin: 20px;
+}
+ol li {
+  margin-bottom: 0.5em;
+}
+h2 {
+  background: #efefef;
+  padding: 0.5em;
+}
+p {
+  max-width: 90em;
+}
+.title {
+  background: #cfcfcf;
+  margin: 0;
+  padding: 0.5em;
+}
+#content {
+  background: #efefef;
+  margin: 0;
+  padding: 0.5em;
+}
+#content h2 {
+  padding: 0;
+}
+</style>
 </head>
 <body>
-<h1>Dokumentace pluginy Serendipity ImageSelectorPlus</h1>
+<h1 class="title">Dokumentace pluginy Serendipity ImageSelectorPlus</h1>
 
-<p>Dokumentaci k tomuto pluginu přeložil do češtiny Vladimír Ajgl (vlada [zavinac] ajgl [tecka] cz) dne 26.6.2011. Od té doby mohl být plugin pozměněn nebo mohly být rozšířené jeho funkce. Zkontrolujte pro jistotu i <a href="documentation_en.html">anglickou dokumentaci</a> a <a href="ChangeLog">ChangeLog</a>.
+<div id="content">
+    <h2>Content</h2>
+    <ol>
+        <li><a href="#desc">Description</a></li>
+        <li><a href="#quick">QuickBlog</a></li>
+        <li><a href="#multi">Multi image insert</a></li>
+        <li><a href="#unzip">Deflated image inserts</a></li>
+        <li><a href="#auto">Auto Resizing of Images</a></li>
+        <li><a href="#dyn">Dynamic Image Resizing</a></li>
+        <li><a href="#author">Plugin authors</a></li>
+    </ol>
+</div>
 
-<h2>Obecný popis</h2>
+<p>Dokumentaci k tomuto pluginu pĹeloĹžil do ÄeĹĄtiny VladimĂ­r Ajgl (vlada [zavinac] ajgl [tecka] cz) dne 26.6.2011. Od tĂŠ doby mohl bĂ˝t plugin pozmÄnÄn nebo mohly bĂ˝t rozĹĄĂ­ĹenĂŠ jeho funkce. Zkontrolujte pro jistotu i <a href="documentation_en.html">anglickou dokumentaci</a> a <a href="ChangeLog">ChangeLog</a>.
+
+<h2 id="desc">ObecnĂ˝ popis</h2>
 <p>
-    Plugin ImageSelectorPlus se používá k usnadnění práce s obrázky, především k vkládání obrázků z mediatéky (interní galerie Serendipity).
+    Plugin ImageSelectorPlus se pouĹžĂ­vĂĄ k usnadnÄnĂ­ prĂĄce s obrĂĄzky, pĹedevĹĄĂ­m k vklĂĄdĂĄnĂ­ obrĂĄzkĹŻ z mediatĂŠky (internĂ­ galerie Serendipity).
 </p>
 
-<h2>QuickBlog</h2>
+<h2 id="quick">QuickBlog</h2>
 <p>
-Při nahrávání obrázku ho rovnou můžete vystavit jako příspěvek. Řiďte se podle instrukcí nad formulářem QuickBlogu na straně s nahráváním souborů.
+PĹi nahrĂĄvĂĄnĂ­ obrĂĄzku ho rovnou mĹŻĹžete vystavit jako pĹĂ­spÄvek. ĹiÄte se podle instrukcĂ­ nad formulĂĄĹem QuickBlogu na stranÄ s nahrĂĄvĂĄnĂ­m souborĹŻ.
 </p>
 
-<h3>Změna vzhledu příspěvku QuickBlogu</h3>
+<h3>ZmÄna vzhledu pĹĂ­spÄvku QuickBlogu</h3>
 <p>
-    Plugin používá šablonu "plugin_quickblog.tpl". Její změnou změníte vzhled vkládaných obrázků.
+    Plugin pouĹžĂ­vĂĄ ĹĄablonu "plugin_quickblog.tpl". JejĂ­ zmÄnou zmÄnĂ­te vzhled vklĂĄdanĂ˝ch obrĂĄzkĹŻ.
 </p>
 
-<p>Informace o obrázku jsou uchovány v poli {$quickblog}, které má tyto části:
+<p>Informace o obrĂĄzku jsou uchovĂĄny v poli {$quickblog}, kterĂŠ mĂĄ tyto ÄĂĄsti:
     <ul>
-        <li>fullimage - cesta a název velkého souboru</li>
-        <li>image - cesta a název k náhledu</li>
-        <li>body - tělo příspěvku</li>
-        <li>exif_mode - způsob získání exif tagů z fotky ('internal', 'jhead', 'none')</li>
-        <li>exif - pole obsahující různé exif tagy, pro jejich názvy si najděte dokumentaci exif tagů - jejich názvy použijte následovně, příklad $quickblog.exif.COMMENT nebo $quickblog.exif.Focal_length</li>
+        <li>fullimage - cesta a nĂĄzev velkĂŠho souboru</li>
+        <li>image - cesta a nĂĄzev k nĂĄhledu</li>
+        <li>body - tÄlo pĹĂ­spÄvku</li>
+        <li>exif_mode - zpĹŻsob zĂ­skĂĄnĂ­ exif tagĹŻ z fotky ('internal', 'jhead', 'none')</li>
+        <li>exif - pole obsahujĂ­cĂ­ rĹŻznĂŠ exif tagy, pro jejich nĂĄzvy si najdÄte dokumentaci exif tagĹŻ - jejich nĂĄzvy pouĹžijte nĂĄsledovnÄ, pĹĂ­klad $quickblog.exif.COMMENT nebo $quickblog.exif.Focal_length</li>
     </ul>
 </p>
 
-
-<h2>Hromadné vkládání obrázků</h2>
-     Další funkcí je hromadné vkládání obrázků. Funguje na principu, že v textu příspěvku napíšete xml strukturu, kterou plugin nahradí obrázky z databáze.
+<h2 id="multi">HromadnĂŠ vklĂĄdĂĄnĂ­ obrĂĄzkĹŻ</h2>
+     DalĹĄĂ­ funkcĂ­ je hromadnĂŠ vklĂĄdĂĄnĂ­ obrĂĄzkĹŻ. Funguje na principu, Ĺže v textu pĹĂ­spÄvku napĂ­ĹĄete xml strukturu, kterou plugin nahradĂ­ obrĂĄzky z databĂĄze.
 </p>
 
-<h3>Kdy se to hodí?</h3>
+<h3>Kdy se to hodĂ­?</h3>
 <p>
-    Když píšete fotoblog a potřebujete do příspěvku vkládat více obrázků najednou. Když máte padesát fotek, které jsou navíc očíslované, tak je můžete vložit buď po jedné, jak to Serendipity umožňují v základu, nebo pomocí jediné řádky s použitím popisovaného pluginu.
+    KdyĹž pĂ­ĹĄete fotoblog a potĹebujete do pĹĂ­spÄvku vklĂĄdat vĂ­ce obrĂĄzkĹŻ najednou. KdyĹž mĂĄte padesĂĄt fotek, kterĂŠ jsou navĂ­c oÄĂ­slovanĂŠ, tak je mĹŻĹžete vloĹžit buÄ po jednĂŠ, jak to Serendipity umoĹžĹujĂ­ v zĂĄkladu, nebo pomocĂ­ jedinĂŠ ĹĂĄdky s pouĹžitĂ­m popisovanĂŠho pluginu.
 </p>
 
-<h3>Příklady</h3>
-    <h4>Příklad 1 - vkládáme části galerie</h4>
+<h3>PĹĂ­klady</h3>
+    <h4>PĹĂ­klad 1 - vklĂĄdĂĄme ÄĂĄsti galerie</h4>
     <code><pre>
         &lt;mediainsert&gt;
             &lt;gallery name="MyHolidays/" /&gt;
@@ -54,16 +96,16 @@ Při nahrávání obrázku ho rovnou můžete vystavit jako příspěvek. Řiďte se podle i
         &lt;/mediainsert&gt;
     </pre></code>
     <p>
-        Takto vložíme z galerie "MyHolidays" obrázek "pict0034", po něm obrázek "pict0032" a pak všechny obrázky od "pict0035" do "pict0052".
+        Takto vloĹžĂ­me z galerie "MyHolidays" obrĂĄzek "pict0034", po nÄm obrĂĄzek "pict0032" a pak vĹĄechny obrĂĄzky od "pict0035" do "pict0052".
 
         <ul>
-        Chování pluginu:
-        <li>Zobrazuje pouze obrázky, které jsou přítomny v databázi. Takže pokud zrovna obrázky 44,45,48 a 50 v databázi nejsou, pluginu to nevadí a nespadne. Jednoduše tyto obrázky vynechá.</li>
-        <li>Zachovává pořadí obrázků z xml. Tedy obrázek 34 bude zobrazen před obrázkem 32.</li>
+        ChovĂĄnĂ­ pluginu:
+        <li>Zobrazuje pouze obrĂĄzky, kterĂŠ jsou pĹĂ­tomny v databĂĄzi. TakĹže pokud zrovna obrĂĄzky 44,45,48 a 50 v databĂĄzi nejsou, pluginu to nevadĂ­ a nespadne. JednoduĹĄe tyto obrĂĄzky vynechĂĄ.</li>
+        <li>ZachovĂĄvĂĄ poĹadĂ­ obrĂĄzkĹŻ z xml. Tedy obrĂĄzek 34 bude zobrazen pĹed obrĂĄzkem 32.</li>
         </ul>
     </p>
 
-    <h4>Příklad 2 - vkládáme celou galerii najednou</h4>
+    <h4>PĹĂ­klad 2 - vklĂĄdĂĄme celou galerii najednou</h4>
     <code><pre>
         &lt;mediainsert&gt;
             &lt;gallery name="MyHolidays/" /&gt;
@@ -71,113 +113,166 @@ Při nahrávání obrázku ho rovnou můžete vystavit jako příspěvek. Řiďte se podle i
         &lt;/mediainsert&gt;
     </pre></code>
 
-<h3>Důležité</h3>
-<p>Plugin je relativně citlivý na (ne)správnost syntaxe xml. Pokud není bezchybná, typicky zapomenete na ukončovací zpětné lomítko v tagu media, můžete vyřadit z činnosti celý blog!!! (prostě není ošetřená kontrola správnosti syntaxe a parser na špatné syntaxi havaruje)</p>
+<h3>DĹŻleĹžitĂŠ</h3>
+<p>Plugin je relativnÄ citlivĂ˝ na (ne)sprĂĄvnost syntaxe xml. Pokud nenĂ­ bezchybnĂĄ, typicky zapomenete na ukonÄovacĂ­ zpÄtnĂŠ lomĂ­tko v tagu media, mĹŻĹžete vyĹadit z Äinnosti celĂ˝ blog!!! (prostÄ nenĂ­ oĹĄetĹenĂĄ kontrola sprĂĄvnosti syntaxe a parser na ĹĄpatnĂŠ syntaxi havaruje)</p>
 
-<h3>Přehled xml tagů</h3>
+<h3>PĹehled xml tagĹŻ</h3>
 <dl>
     <dt>&lt;mediainsert&gt;</dt>
-    <dd>hlavní kontejner pro vkládané obrázky</dd>
+    <dd>hlavnĂ­ kontejner pro vklĂĄdanĂŠ obrĂĄzky</dd>
 
     <dt>&lt;gallery&gt;</dt>
-    <dd>cesta ke galerii, ze které mají být brány obrázky (reltivně k adresáři uploads/ - bez úvodního lomítka a s ukončujícím lomítkem - "MyHolidays" nebo "/MyHolidays/" jsou špatně. Správně je "MyHolidays/".)</dd>
+    <dd>cesta ke galerii, ze kterĂŠ majĂ­ bĂ˝t brĂĄny obrĂĄzky (reltivnÄ k adresĂĄĹi uploads/ - bez ĂşvodnĂ­ho lomĂ­tka a s ukonÄujĂ­cĂ­m lomĂ­tkem - "MyHolidays" nebo "/MyHolidays/" jsou ĹĄpatnÄ. SprĂĄvnÄ je "MyHolidays/".)</dd>
 
     <dt>&lt;media&gt;</dt>
-    <dd>Určuje, které obrázky mají být vloženy. Na základě atributu "type" je možno vložit obrázky třemi způsoby:
+    <dd>UrÄuje, kterĂŠ obrĂĄzky majĂ­ bĂ˝t vloĹženy. Na zĂĄkladÄ atributu "type" je moĹžno vloĹžit obrĂĄzky tĹemi zpĹŻsoby:
 
         <ul>
-            <li>"single" - vloží jeden obrázek se jménem zadaným atributem "name"</li>
-            <li>"gallery" - bez dalších atributů, vloží celou galerii</li>
-            <li>"range" - vloží číslované obrázky od obrázku "prefix""start" do obrázku "prefix""stop" (viz. příklad 1)</li>
+            <li>"single" - vloĹžĂ­ jeden obrĂĄzek se jmĂŠnem zadanĂ˝m atributem "name"</li>
+            <li>"gallery" - bez dalĹĄĂ­ch atributĹŻ, vloĹžĂ­ celou galerii</li>
+            <li>"range" - vloĹžĂ­ ÄĂ­slovanĂŠ obrĂĄzky od obrĂĄzku "prefix""start" do obrĂĄzku "prefix""stop" (viz. pĹĂ­klad 1)</li>
         </ul>
     </dd>
 </dl>
 
-<h3>Změna vzhledu vkládaných obrázků</h3>
+<h3>ZmÄna vzhledu vklĂĄdanĂ˝ch obrĂĄzkĹŻ</h3>
 <p>
-    Plugin používá šablonu "plugin_mediainsert.tpl". Její změnou změníte vzhled vkládaných obrázků.</p>
+    Plugin pouĹžĂ­vĂĄ ĹĄablonu "plugin_mediainsert.tpl". JejĂ­ zmÄnou zmÄnĂ­te vzhled vklĂĄdanĂ˝ch obrĂĄzkĹŻ.</p>
 
-    <p>Informace o obrázku jsou uchovány v poli {$plugin_mediainsert_media}, které má tyto části:
+    <p>Informace o obrĂĄzku jsou uchovĂĄny v poli {$plugin_mediainsert_media}, kterĂŠ mĂĄ tyto ÄĂĄsti:
     <ul>
-        <li>name - jméno obrázku (název souboru bez přípony)</li>
-        <li>extension - přípona souboru</li>
-        <li>realname - celé jméno souboru, to samé jako {$name}.{$extension}</li>
-        <li>thumbnail_name - název souboru s náhledem dostanete následovně - {$name}.{$thumbnail_name}.{$extension}</li>
-        <li>path - cesta ke galerii, stejná hodnota, kteoru zadáváte v tagu "gallery"</li>
-        <li>comment1 - krátký komentář z databáze</li>
-        <li>width - šířka původního (velkého) obrázku</li>
-        <li>height - výška původního (velkého) obrázku</li>
-        <li>thumbwidth - šířka náhledu</li>
-        <li>thumbheight - výška náhledu</li>
+        <li>name - jmĂŠno obrĂĄzku (nĂĄzev souboru bez pĹĂ­pony)</li>
+        <li>extension - pĹĂ­pona souboru</li>
+        <li>realname - celĂŠ jmĂŠno souboru, to samĂŠ jako {$name}.{$extension}</li>
+        <li>thumbnail_name - nĂĄzev souboru s nĂĄhledem dostanete nĂĄsledovnÄ - {$name}.{$thumbnail_name}.{$extension}</li>
+        <li>path - cesta ke galerii, stejnĂĄ hodnota, kteoru zadĂĄvĂĄte v tagu "gallery"</li>
+        <li>comment1 - krĂĄtkĂ˝ komentĂĄĹ z databĂĄze</li>
+        <li>width - ĹĄĂ­Ĺka pĹŻvodnĂ­ho (velkĂŠho) obrĂĄzku</li>
+        <li>height - vĂ˝ĹĄka pĹŻvodnĂ­ho (velkĂŠho) obrĂĄzku</li>
+        <li>thumbwidth - ĹĄĂ­Ĺka nĂĄhledu</li>
+        <li>thumbheight - vĂ˝ĹĄka nĂĄhledu</li>
     </ul>
 </p>
 
+<h2 id="unzip">RozbalovĂĄnĂ­ ZIP archivĹŻ</h2>
 
-<h2>Rozbalování ZIP archivů</h2>
+<h3>K Äemu je to dobrĂŠ</h3>
+<p>KupĹĂ­kladu kdyĹž chcete nahrĂĄt mnoho souborĹŻ najednou. NemusĂ­te vybĂ­rat jednotlivĂŠ soubory po jednom (coĹž je zdlouhavĂŠ). ProstÄ je zabalĂ­te do zip archivu, nahrajete tento archiv a ten bude na blogu rozbalen.</p>
 
-<h3>K čemu je to dobré</h3>
-<p>Kupříkladu když chcete nahrát mnoho souborů najednou. Nemusíte vybírat jednotlivé soubory po jednom (což je zdlouhavé). Prostě je zabalíte do zip archivu, nahrajete tento archiv a ten bude na blogu rozbalen.</p>
-
-<h3>Vlastnosti rozbalování ZIPů</h3>
+<h3>Vlastnosti rozbalovĂĄnĂ­ ZIPĹŻ</h3>
 <p>
 <ul>
-<li>Soubory z archivu jsou rozbaleny do stejného adresáře, do kterého je nahrán archiv.</li>
-<li>Rozbalené soubor (což nemusí být nutně obrázky) jsou vloženy do databáze médií.</li>
-<li>Pokud zvolíte volbu "Zadat vlastnosti", rozbalené obrázky se také zorazí pro zadávání vlastností.</li>
-<li>Nenahrávejte ZIP archivy s podadersáři. Netestoval jsem to, ale obávám se, že se tyto adresáře nevytvoří a všechny soubory se rozbalí do jednoho adresáře.</li>
-<li>Dávejte pozor na velikost ZIP archivu. Na webu máte nastavené určité omezení týkající se maximální velikosti nahrávaného souboru (obvykle to bývá 10MB).</li>
+<li>Soubory z archivu jsou rozbaleny do stejnĂŠho adresĂĄĹe, do kterĂŠho je nahrĂĄn archiv.</li>
+<li>RozbalenĂŠ soubor (coĹž nemusĂ­ bĂ˝t nutnÄ obrĂĄzky) jsou vloĹženy do databĂĄze mĂŠdiĂ­.</li>
+<li>Pokud zvolĂ­te volbu "Zadat vlastnosti", rozbalenĂŠ obrĂĄzky se takĂŠ zorazĂ­ pro zadĂĄvĂĄnĂ­ vlastnostĂ­.</li>
+<li>NenahrĂĄvejte ZIP archivy s podadersĂĄĹi. Netestoval jsem to, ale obĂĄvĂĄm se, Ĺže se tyto adresĂĄĹe nevytvoĹĂ­ a vĹĄechny soubory se rozbalĂ­ do jednoho adresĂĄĹe.</li>
+<li>DĂĄvejte pozor na velikost ZIP archivu. Na webu mĂĄte nastavenĂŠ urÄitĂŠ omezenĂ­ tĂ˝kajĂ­cĂ­ se maximĂĄlnĂ­ velikosti nahrĂĄvanĂŠho souboru (obvykle to bĂ˝vĂĄ 10MB).</li>
 </ul>
 </p>
 
+<h2 id="auto">AutomatickĂĄ zmÄna velikosti obrĂĄzkĹŻ</h2>
 
-<h2>Automatická změna velikosti obrázků</h2>
-
-<p>Tato funkce automaticky prohledá příspěvek blogu a vyhledá obrázky, které jsou zadány ve formě:</p>
+<p>Tato funkce automaticky prohledĂĄ pĹĂ­spÄvek blogu a vyhledĂĄ obrĂĄzky, kterĂŠ jsou zadĂĄny ve formÄ:</p>
 
 <pre>
 &lt;img src="/uploads/mujobrazek.jpg" width="100" height="150" /&gt;
 </pre>
 
-<p>Když najde obrázek v tomto formátu (pokud najde obrázek s definovanou výškou a/nebo šířkou), nahradí jeho atribut 'src' (adresa obrázku) odkazem na skript pro změnu velikosti obrázku 'serendipity_admin_image_selector.php'. Tedy přepíše odkaz na něco jako:</p>
+<p>KdyĹž najde obrĂĄzek v tomto formĂĄtu (pokud najde obrĂĄzek s definovanou vĂ˝ĹĄkou a/nebo ĹĄĂ­Ĺkou), nahradĂ­ jeho atribut 'src' (adresa obrĂĄzku) odkazem na skript pro zmÄnu velikosti obrĂĄzku 'serendipity_admin_image_selector.php'. Tedy pĹepĂ­ĹĄe odkaz na nÄco jako:</p>
 
 <pre>
 &lt;img src="http://www.mujblog.cz/serendipity_admin_image_selector.php?serendipity[image]=1&serendipity[disposition]=inline&serendipity[step]=showItem&serendipity[resizeWidth]=100&serendipity[resizeHeight]=150" width="100" height="150" /&gt;
 </pre>
 
-<p>Tato vlastnost šetří váš čás, pokud potřebujete použít stejný obrázek ve více rozlišeních a může také ušetřit čas nutný pro stažení obrázků při prohlížení vašeho blogu. Vliv na rychlost blogu je minimální, protože se změna velikosti obrázku provede jenom jednou, při prvním přepisu tagu &lt;img&gt;.
+<p>Tato vlastnost ĹĄetĹĂ­ vĂĄĹĄ ÄĂĄs, pokud potĹebujete pouĹžĂ­t stejnĂ˝ obrĂĄzek ve vĂ­ce rozliĹĄenĂ­ch a mĹŻĹže takĂŠ uĹĄetĹit Äas nutnĂ˝ pro staĹženĂ­ obrĂĄzkĹŻ pĹi prohlĂ­ĹženĂ­ vaĹĄeho blogu. Vliv na rychlost blogu je minimĂĄlnĂ­, protoĹže se zmÄna velikosti obrĂĄzku provede jenom jednou, pĹi prvnĂ­m pĹepisu tagu &lt;img&gt;.
 </p>
 
-<h3>Poznámky</h3>
+<h3>PoznĂĄmky</h3>
 
 <ol>
-<li>Poměr stran obrázku je zachován.</li>
-<li>Stačí definovat pouze jeden z atributů 'width' nebo 'height'. Pokud není zadán žádný z nich, obrázek je ignorován a adresa není nahrazena adresou na skript pro změnu velikosti obrázku.</li>
-<li>Pokud jsou zadány dohromady jak šířka ('width'), tak výška ('height'), obrázek bude zvětšen/zmenšen při zachování poměrů stran tak, aby se vešel do zadané oblasti.</li>
+<li>PomÄr stran obrĂĄzku je zachovĂĄn.</li>
+<li>StaÄĂ­ definovat pouze jeden z atributĹŻ 'width' nebo 'height'. Pokud nenĂ­ zadĂĄn ĹžĂĄdnĂ˝ z nich, obrĂĄzek je ignorovĂĄn a adresa nenĂ­ nahrazena adresou na skript pro zmÄnu velikosti obrĂĄzku.</li>
+<li>Pokud jsou zadĂĄny dohromady jak ĹĄĂ­Ĺka ('width'), tak vĂ˝ĹĄka ('height'), obrĂĄzek bude zvÄtĹĄen/zmenĹĄen pĹi zachovĂĄnĂ­ pomÄrĹŻ stran tak, aby se veĹĄel do zadanĂŠ oblasti.</li>
 </ol>
 
-<h2>Autoři</h2>
-<p>
-Garvin Hicking, Německo - všechno ostatní<br />
-Vladimír Ajgl (vlada [at] ajgl [dot] cz), Česká republika, 19.11.2007 - hromadné vkládání obrázků do příspěvků pomocí XML, hromadné nahrávání v ZIP souboru
-</p>
-
-
-<h2>Historie verzí (ChangeLog)</h2>
+<h2 id="dyn">Addition: Using "Allow dynamic image resizing"</h2>
+<p>Actually there are several different available approaches for the auto image resizing.</p>
+<ul>
+    <li>1. Via hand-crafted GET parameters and the <em>serendipity_admin_imageselector.php</em> script
+        <ul>
+            <li>a. to just get a different image output to a src or image tab</li>
+            <li>b. including the output file in a special crafted HTML page (via /templates/theme/media_showitem.tpl)</li>
+            <li>c. with changes to the file and the storage</li>
+        </ul>
+    </li>
+    <li>2. Using the quickblog resizing (including or without an entry)</li>
+    <li>3. Not actually image resizing, but somehow similar, is the media insert gallery creation, see this documentation part <a href="#multi">"Multiple image insertions"</a>.</li>
+</ul>
+<ul>
+    <p>
+        [<b>1</b>] This will access the serendipity_admin_imageselector.php script. It takes a <b>&serendipity[image]</b> GET parameter for the ID of the image you want to display.<br />
+        Then you can use <b>&serendipity[resizeWidth]</b> and/or <b>&serendipity[resizeHeight]</b> to indicate the new size of that image.
+    </p>
+    <p>The following is about <b>output</b>, NOT storage:</p>
+    <ul>
+        <li><b>&serendipity[show]</b> can be set to '<em>redirect</em>' if you want the script to redirect to the original image (without resizing) and '<em>redirectThumb</em>' to redirect to the original thumbnail (without resizing). Those methods will only count the referrers of an image without resizing.<br />
+            If <b>&serendipity[show]</b> is set to '<em>full</em>' it will resize the original image, '<em>thumb</em>' resizes the thumbnail.</li>
+        <li>Setting <b>&serendipity[show]</b> to anything else, be empty, or left away, will access the <em>media_showitem</em> page, see <b>1.b</b></li>
+        <li><b>&serendipity[disposition]</b> can be set to '<em>attachment</em>' or '<em>inline</em>' to change the HTTP-Headers for the Mime Content-Disposition.</li>
+        <li><b>&serendipity[step]</b> allows several (internal) actions to happen. '<em>showItem</em>' is the normal value for image show processing.</li>
+    </ul>
+    <p>
+        <u>Example for 1a.</u>:
+        <pre>serendipity_admin_image_selector.php?serendipity[image]=280&serendipity[show]=redirect&serendipity[disposition]=inline&serendipity[step]=showItem&serendipity[resizeWidth]=320&serendipity[resizeHeight]=240</pre>
+    </p>
+</ul>
 
 <ul>
-<li>nejnovější verze</li>
+    <p>
+        <u>1c.</u>:<br>
+        If <b>NOT</b> using this <em>imageselectorplus</em> plugin, appending hand-crafted GET parameters for image resizing will create an independent image cache file directory "/templates_c/mediacache/" and the files are named "cache_img"+ID_WIDTH_HEIGHT, eg "cache_img1_300_300".<br>
+        This is usefull for totally independent image management, eg. embedded systems etc., since the <em>serendipity_admin_imageselector</em> script has been developed to integrate the mediadatabase into another CMS, so this additional coding was not really tightly implemented for Serendipity as well.
+    </p>
+    <p>
+        <u>Examples for 1c.</u>:
+        <pre>serendipity_admin_image_selector.php?serendipity[image]=182&serendipity[step]=showItem&serendipity[show]=full&serendipity[resizeWidth]=300</pre>
+        which is shown as the original image ('full' or 'thumb', depending on [show]), but stored as a "/templates_c/mediacache/cache_img182_300_" file for later usage, while
+        <pre>serendipity_admin_image_selector.php?serendipity[image]=14&serendipity[step]=showItem</pre>
+        displays the origin image as fullimage inside the embedded page (via templates/theme/media_showitems.tpl).
+    </p>
+    <p>The MediaLibrary and imageselectorplus history shows, that some of these steps in the <em>serendipity_admin_imageselector</em> script and even more went into the development of this plugin to extend the image media creation and accessment in various ways.</p>
+</ul>
+
+<ul>
+    <p>
+        [<b>2</b>] Uploaded, but <b>Quickblog</b> <u>resized</u> images are stored as a third (additional) media-file into the MediaLibrary, eg <em>"imagename.quickblog.jpg"</em>. Since this "independent" file shall not sync (file and database cleanup) or double your auto-thumbnail generation for the MediaLibrary, the Serendipity <b>Styx Edtion 2.4+</b> has been touched to exclude these "differing" quickblog thumbs to only inform you being present by an additional MediaLibrary action button.<br>
+        These files always appear as "name.quickblog.extension". If the parent file and its thumb are purged, this quickblog "thumb" file is still present in "/uploads".
+    </p>
+</ul>
+
+<h2 id="author">AutoĹi</h2>
+<p>
+    Garvin Hicking, Germany <br />
+    User "nogad", http://board.s9y.org/viewtopic.php?f=4&t=20058, 2014-08-22 <br />
+    Ian, since 2013, last modified 2017-09-23
+</p>
+
+<h2>Historie verzĂ­ (ChangeLog)</h2>
+
+<ul>
+<li>nejnovÄjĹĄĂ­ verze</li>
 	<ul>
-	<li>Dopředná kompatibilita se smarty3</li>
+	<li>DopĹednĂĄ kompatibilita se smarty3</li>
 	</ul>
 <li>verze 0.28</li>
 	<ul>
-	<li>Předávání proměnné $eventData do šablony plugin_mediainsert.tpl, pomocí smarty tagu {$plugin_mediainsert_entry}.</li>
+	<li>PĹedĂĄvĂĄnĂ­ promÄnnĂŠ $eventData do ĹĄablony plugin_mediainsert.tpl, pomocĂ­ smarty tagu {$plugin_mediainsert_entry}.</li>
 	</ul>
-<li>verze 0.20 [Vladimír Ajgl]</li>
+<li>verze 0.20 [VladimĂ­r Ajgl]</li>
 	<ul>
-	<li>Přidána dokumentace (documentation_en.html, documentation_cs.html)</li>
-	<li>Přidán český překlad</li>
-	<li>Přidána funkce hromadného vkládání fotek do příspěvků pomocí XML kódu (pouze s PHP5)</li>
+	<li>PĹidĂĄna dokumentace (documentation_en.html, documentation_cs.html)</li>
+	<li>PĹidĂĄn ÄeskĂ˝ pĹeklad</li>
+	<li>PĹidĂĄna funkce hromadnĂŠho vklĂĄdĂĄnĂ­ fotek do pĹĂ­spÄvkĹŻ pomocĂ­ XML kĂłdu (pouze s PHP5)</li>
 	</ul>
 </ul>
 

@@ -1,7 +1,8 @@
+<!doctype html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Documentation: ImageSelectorPlus</title>
+<title>Dokumentation: ImageSelectorPlus</title>
 <style type="text/css">
 body {
   font-family: Arial, sans-serif!important;
@@ -15,7 +16,7 @@ h2 {
   padding: 0.5em;
 }
 p {
-  max-width: 60em;
+  max-width: 90em;
 }
 .title {
   background: #cfcfcf;
@@ -43,6 +44,7 @@ p {
         <li><a href="#multi">Multi image insert</a></li>
         <li><a href="#unzip">Deflated image inserts</a></li>
         <li><a href="#auto">Auto Resizing of Images</a></li>
+        <li><a href="#dyn">Dynamic Image Resizing</a></li>
         <li><a href="#author">Plugin authors</a></li>
     </ol>
 </div>
@@ -217,16 +219,71 @@ as is the parsing of img tags.</p>
 <h3>Notes</h3>
 
 <ol>
-<li>Image aspect ratios are maintained.</li>
-<li>Only the width or height attribute needs to be specified. If neither is specified then the image tag is ignored</li>
-<li>If both the width and height attributes are specified the image will be scaled to fit within this area while maintaining the aspect ratio</li>
+    <li>Image aspect ratios are maintained.</li>
+    <li>Only the width or height attribute needs to be specified. If neither is specified then the image tag is ignored</li>
+    <li>If both the width and height attributes are specified the image will be scaled to fit within this area while maintaining the aspect ratio</li>
 </ol>
 
+<h2 id="dyn">Addition: Using "Allow dynamic image resizing"</h2>
+<p>Actually there are several different available approaches for the auto image resizing.</p>
+<ul>
+    <li>1. Via hand-crafted GET parameters and the <em>serendipity_admin_imageselector.php</em> script
+        <ul>
+            <li>a. to just get a different image output to a src or image tab</li>
+            <li>b. including the output file in a special crafted HTML page (via /templates/theme/media_showitem.tpl)</li>
+            <li>c. with changes to the file and the storage</li>
+        </ul>
+    </li>
+    <li>2. Using the quickblog resizing (including or without an entry)</li>
+    <li>3. Not actually image resizing, but somehow similar, is the media insert gallery creation, see this documentation part <a href="#multi">"Multiple image insertions"</a>.</li>
+</ul>
+<ul>
+    <p>
+        [<b>1</b>] This will access the serendipity_admin_imageselector.php script. It takes a <b>&serendipity[image]</b> GET parameter for the ID of the image you want to display.<br />
+        Then you can use <b>&serendipity[resizeWidth]</b> and/or <b>&serendipity[resizeHeight]</b> to indicate the new size of that image.
+    </p>
+    <p>The following is about <b>output</b>, NOT storage:</p>
+    <ul>
+        <li><b>&serendipity[show]</b> can be set to '<em>redirect</em>' if you want the script to redirect to the original image (without resizing) and '<em>redirectThumb</em>' to redirect to the original thumbnail (without resizing). Those methods will only count the referrers of an image without resizing.<br />
+            If <b>&serendipity[show]</b> is set to '<em>full</em>' it will resize the original image, '<em>thumb</em>' resizes the thumbnail.</li>
+        <li>Setting <b>&serendipity[show]</b> to anything else, be empty, or left away, will access the <em>media_showitem</em> page, see <b>1.b</b></li>
+        <li><b>&serendipity[disposition]</b> can be set to '<em>attachment</em>' or '<em>inline</em>' to change the HTTP-Headers for the Mime Content-Disposition.</li>
+        <li><b>&serendipity[step]</b> allows several (internal) actions to happen. '<em>showItem</em>' is the normal value for image show processing.</li>
+    </ul>
+    <p>
+        <u>Example for 1a.</u>:
+        <pre>serendipity_admin_image_selector.php?serendipity[image]=280&serendipity[show]=redirect&serendipity[disposition]=inline&serendipity[step]=showItem&serendipity[resizeWidth]=320&serendipity[resizeHeight]=240</pre>
+    </p>
+</ul>
+
+<ul>
+    <p>
+        <u>1c.</u>:<br>
+        If <b>NOT</b> using this <em>imageselectorplus</em> plugin, appending hand-crafted GET parameters for image resizing will create an independent image cache file directory "/templates_c/mediacache/" and the files are named "cache_img"+ID_WIDTH_HEIGHT, eg "cache_img1_300_300".<br>
+        This is usefull for totally independent image management, eg. embedded systems etc., since the <em>serendipity_admin_imageselector</em> script has been developed to integrate the mediadatabase into another CMS, so this additional coding was not really tightly implemented for Serendipity as well.
+    </p>
+    <p>
+        <u>Examples for 1c.</u>:
+        <pre>serendipity_admin_image_selector.php?serendipity[image]=182&serendipity[step]=showItem&serendipity[show]=full&serendipity[resizeWidth]=300</pre>
+        which is shown as the original image ('full' or 'thumb', depending on [show]), but stored as a "/templates_c/mediacache/cache_img182_300_" file for later usage, while
+        <pre>serendipity_admin_image_selector.php?serendipity[image]=14&serendipity[step]=showItem</pre>
+        displays the origin image as fullimage inside the embedded page (via templates/theme/media_showitems.tpl).
+    </p>
+    <p>The MediaLibrary and imageselectorplus history shows, that some of these steps in the <em>serendipity_admin_imageselector</em> script and even more went into the development of this plugin to extend the image media creation and accessment in various ways.</p>
+</ul>
+
+<ul>
+    <p>
+        [<b>2</b>] Uploaded, but <b>Quickblog</b> <u>resized</u> images are stored as a third (additional) media-file into the MediaLibrary, eg <em>"imagename.quickblog.jpg"</em>. Since this "independent" file shall not sync (file and database cleanup) or double your auto-thumbnail generation for the MediaLibrary, the Serendipity <b>Styx Edtion 2.4+</b> has been touched to exclude these "differing" quickblog thumbs to only inform you being present by an additional MediaLibrary action button.<br>
+        These files always appear as "name.quickblog.extension". If the parent file and its thumb are purged, this quickblog "thumb" file is still present in "/uploads".
+    </p>
+</ul>
+
 <h2 id="author">Authors</h2>
-<p>Garvin Hicking, Germany <br />
-Vladimir Ajgl (vlada [at] ajgl [dot] cz), Czech Republic, 2007-11-19 <br />
-User "nogad", http://board.s9y.org/viewtopic.php?f=4&t=20058, 2014-08-22 <br />
-Ian, 2014-09-04
+<p>
+    Garvin Hicking, Germany <br />
+    User "nogad", http://board.s9y.org/viewtopic.php?f=4&t=20058, 2014-08-22 <br />
+    Ian, since 2013, last modified 2017-09-23
 </p>
 
 </body>
