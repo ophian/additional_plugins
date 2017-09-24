@@ -8,7 +8,7 @@ Example parts for 2k11/index.tpl:
 ...
 
     <div class="clearfix{if $leftSidebarElements > 0 && $rightSidebarElements > 0 && empty($staticpage_custom.sidebars)} col3{elseif ($leftSidebarElements > 0 && $rightSidebarElements == 0) || $staticpage_custom.sidebars=='left'} col2l{else} col2r{/if}">
-        <main id="content" {if $template_option.imgstyle != 'none'} class="{$template_option.imgstyle}"{/if}>
+        <main id="content"{if $template_option.imgstyle != 'none'} class="{$template_option.imgstyle}"{/if}>
         {$CONTENT}
         </main>
     {if !empty($staticpage_custom.sidebars)}
