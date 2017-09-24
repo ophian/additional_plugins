@@ -70,22 +70,22 @@ p {
         <li>image - Pfad und Dateiname zum Vorschaubild (Thumbnail)</li>
         <li>body - the body of the post</li>
         <li>exif_mode - Art des Auslesens der Exif-Information ('interne', 'jhead', 'none')</li>
-        <li>exif - Bereich der Exif-Informationen, bitte verwenden die EXiF-Daten, um die Feldwerte zu sehen - nutzen sie die in der Form wie $quickblog.exif.COMMENT oder $quickblog.exif.Focal_length</li>
+        <li>exif - Bereich der Exif-Informationen, bitte verwenden Sie die EXiF-Daten, um die Feldwerte zu sehen - nutzen Sie diese in der Form "$quickblog.exif.COMMENT" oder "$quickblog.exif.Focal_length"</li>
     </ul>
 </p>
 
-<h2 id="multi">Mehrfaches einbinden von Bildern</h2>
+<h2 id="multi">Mehrfaches einbinden von Bildern (mediainsert Galerien)</h2>
 <p>
-    Another functionality of this plugin is multiple image insertion. If you write an xml structure in your entry, this plugin then replaces this xml structure by pictures from your media library.
+    Eine weitere Funktionalität dieses Plugins ist das Einfügen mehrerer Bilder. Wenn Sie eine Xml-Struktur in Ihren Eintrag schreiben, ersetzt dieses Plugin diese Xml-Struktur durch Bilder aus Ihrer Mediathek.
 </p>
 
-<h3>When is it useful?</h3>
+<h3>Wann ist das sinnvoll?</h3>
 <p>
-    When you write a blog, where you want to include many pictures in your entries. When you have fifty images and these images numbered in an ascending row, it is lengthy to insert them one by one through the images selector. With this plugin, you can insert all of them using on a single line.
+    Zum Beisiel, wenn Sie einen Blog Eintrag schreiben, in den Sie viele Bilder aufnehmen möchten. Wenn Sie fünfzig Bilder haben und diese Bilder in einer aufsteigenden Reihe nummeriert sind, ist es langwierig, sie einzeln über den Bildauswahlschalter einzufügen. Mit diesem Plugin können Sie alle Dateien mittels einer einzigen Zeile einfügen.
 </p>
 
-<h3>Examples</h3>
-    <h4>Example 1 - including parts of gallery</h4>
+<h3>Beispiele</h3>
+    <h4>Beispiel 1 - Teile einer Galerie (Ordners) einbinden</h4>
     <code><pre>
         &lt;mediainsert&gt;
             &lt;gallery name="MyHolidays/" /&gt;
@@ -95,15 +95,15 @@ p {
         &lt;/mediainsert&gt;
     </pre></code>
     <p>
-        This example inserts from the directory "MyHolidays" picture "pict0034", then picture "pict0032" and then all pictures from "pict0035" to "pict0052".
+        Dieses Beispiel fügt aus dem Verzeichnis "MyHolidays" das Bild "pict0034"ein, dann das Bild "pict0032" und dann alle Bilder von "pict0035" bis "pict0052".
         <ul>
             Plugin features:
-            <li>It shows only pictures which are in the database. So if pictures 44,45,48 and 50 does not exist, the plugin will not fail. Simply it will not display the non-existing pictures.</li>
+            <li>It shows only pictures which are in the database. So if pictures 44, 45, 48 and 50 does not exist, the plugin will not fail. Simply it will not display the non-existing pictures.</li>
             <li>It respects order of pictures, so 34 will be displayed before 32.</li>
         </ul>
     </p>
 
-    <h4>Example 2 - including whole gallery at once</h4>
+    <h4>Beispiel 2 - Eine ganze Galerie (Ordner) zugleich einbinden</h4>
     <code><pre>
         &lt;mediainsert&gt;
             &lt;gallery name="MyHolidays/" /&gt;
@@ -142,10 +142,10 @@ p {
         Außerdem erfolgt eine Anordnung in 5 Reihen (15 / 3 = 5), es sind also 3 Bilder pro Reihe sichtbar in 5 Spalten.
     </p>
 
-<h3>Important</h3>
-<p>The plugin is sensitive to bad xml syntax. So if it is not perfect, for example if you ommit ending backslash in the media tag, it can cause fail to your whole blog!!!</p>
+<h3>Wichtig</h3>
+<p>Dies Plugin ist sehr empfindlich gegenüber schlechtert XML-Syntax! Also, wenn es nicht perfekt ist, zum Beispiel, wenn Sie den endenden Backslash im Media-Tag weglassen, kann es dazu führen, dass Ihr gesamter Blog nicht mehr funktioniert!!!</p>
 
-<h3>Review of xml tags</h3>
+<h3>Überprüfung von XML-Tags</h3>
 <dl>
     <dt>&lt;mediainsert&gt;</dt>
     <dd>general container of media insertion</dd>
@@ -165,10 +165,11 @@ p {
     </dd>
 </dl>
 
-<h3>Modifying the design of inserted galleries</h3>
+<h3>Änderung des Designs von eingefügten Galerien</h3>
 <p>
-    Plugin uses template file "plugin_mediainsert.tpl" to display the inserted pictures. So by modifying it, you can change the design of displayed images.</p>
-    <p>Information about pictures is stored in an array {$plugin_mediainsert_media} which has these parts you can use in your template:
+    Das Plugin verwendet die Template-Datei "plugin_mediainsert. tpl", um die eingefügten Bilder anzuzeigen. So können Sie das Design der angezeigten Bilder ändern, indem Sie es modifizieren.
+</p>
+<p>Informationen über Bilder werden in einem Array {$plugin_mediainsert_media} gespeichert, das diese Teile enthält, die Sie in Ihrer Vorlage verwenden können:
     <ul>
         <li>name - name of picture (filename without extension)</li>
         <li>extension - extension of filename</li>
@@ -183,43 +184,44 @@ p {
     </ul>
 </p>
 
-<h2 id="unzip">Unzipping ZIP archives</h2>
-<h3>What it is good for</h3>
-<p>Typically when you want to upload many pictures at once. You need not to select every image discinctly. Just pack them in the ZIP archive, upload this archive and it will be unzipped on your blog.</p>
+<h2 id="unzip">ZIP-Archive entpacken</h2>
+<h3>Wozu es gut ist</h3>
+<p>Gewöhnlich, wenn Sie viele Bilder auf einmal hochladen möchten. Sie müssen nicht jedes Bild einzeln auswählen. Packen Sie sie einfach in das ZIP-Archiv, laden Sie dieses Archiv hoch und es wird auf Ihrem Blog entpackt.<br>
+Ab Serendipity 2.0 gibt es aber die Möglichkeit mehrere Bilder zugleich hochzuladen und sie gleichzeitig automatisch zuzuschneiden. Dies hat aber Auswirkungen auf Funktionalitäten dieses Plugin!</p>
 
-<h3>Features of unzipping</h3>
+<h3>Funktionen zum Entzippen</h3>
 <p>
 <ul>
-<li>Files from archive are unzipped into the same directory, where the archive is uploaded.</li>
-<li>Unzipped files (not necessarily images) will be inserted in the media database.</li>
-<li>When selecting "Edit properties", unzipped images will be displayed.</li>
-<li>Do not make zip files with subdirectories. I didn't tested it, but I am afraid it will not unzip the directories, it will put all files in the target directory.</li>
-<li>Take into account the size of the archive. You have some limitations on maximal upload file size (typically 10MB).</li>
+<li>Dateien aus dem Archiv werden in dasselbe Verzeichnis entpackt, in das auch das Archiv hochgeladen wird.</li>
+<li>Ungezippte Dateien (nicht unbedingt Bilder) werden in die Mediendatenbank eingefügt.</li>
+<li>Bei Auswahl von "Eigenschaften bearbeiten"werden entpackte Bilder angezeigt.</li>
+<li>Erstellen Sie keine ZIP-Dateien mit Unterverzeichnissen. Ich habe es nicht getestet, aber ich fürchte, dass es die Verzeichnisse nicht entpacken wird, es wird alle Dateien in das Zielverzeichnis stellen.</li>
+<li>Berücksichtigen Sie die Größe des Archivs. Sie haben einige Einschränkungen bezüglich der maximalen Uploadgröße (typischerweise 10 MB).</li>
 </ul>
 </p>
 
 <h2 id="auto">Auto Resizing of Images</h2>
 
-<p>This feature will automatically search through your blog post for images in the form:</p>
+<p>Diese Funktion durchsucht automatisch Ihren Blog-Beitrag nach Bildern in der Form:</p>
 
 <pre>
     &lt;img src="/uploads/myimage.jpg" width="100" height="150" /&gt;
 </pre>
 
-<p>When it finds an image tag in this form it will replace the value of 'src' attribute with the path to the image resizing script, serendipity_admin_image_selector.php. The end result would be something like this:</p>
+<p>Wenn ein Image-Tag in dieser Form gefunden wird, ersetzt es den Wert des 'src'-Attributs durch den Pfad zum Image Resizing Script, serendipity_admin_image_selector. php. Das Endergebnis wäre ungefähr so:</p>
 
 <pre>
     &lt;img src="http://domain.com/serendipity_admin_image_selector.php?serendipity[image]=1&serendipity[disposition]=inline&serendipity[step]=showItem&serendipity[resizeWidth]=100&serendipity[resizeHeight]=150" width="100" height="150" /&gt;
 </pre>
 
-<p>This saves you time if you need to use images at multiple resolutions, and can also reduce download times for users. The performance hit is minimal as the image resize is only done once, as is the parsing of img tags.</p>
+<p>Dies spart Ihnen Zeit, wenn Sie Bilder mit mehreren Auflösungen verwenden müssen und kann auch die Downloadzeiten für Benutzer reduzieren. Der Performance-Effekt ist minimal, da die Bildgröße nur einmal geändert wird, webb das Parsen von img-Tags erfolgt.</p>
 
 <h3>Notes</h3>
 
 <ol>
-    <li>Image aspect ratios are maintained.</li>
-    <li>Only the width or height attribute needs to be specified. If neither is specified then the image tag is ignored</li>
-    <li>If both the width and height attributes are specified the image will be scaled to fit within this area while maintaining the aspect ratio</li>
+    <li>Die Bildseitenverhältnisse bleiben erhalten.</li>
+    <li>Es muss nur das Attribut width oder height angegeben werden. Wenn keiner von beiden angegeben ist, wird der Image-Tag ignoriert</li>
+    <li>Wenn sowohl die Breiten- als auch die Höhen-Attribute angegeben werden, wird das Bild unter Beibehaltung des Seitenverhältnisses so skaliert, dass es in diesen Bereich passt.</li>
 </ol>
 
 <h2 id="dyn">Zusatz: Verwendung von "Dynamische Bildgrößenanpassung zulassen"</h2>
