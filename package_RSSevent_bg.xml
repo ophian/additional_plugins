@@ -558,12 +558,12 @@
 <guid isPermaLink="false">serendipity_event_httpauth</guid>
 </item>
 <item>
-<title>Допълнителни опции за медийния менажер: Дава допълнителни опции при вмъкване на изображения чрез медийния менажер [Serendipity &gt;= 0.9]</title>
+<title>Допълнителни опции за медийния менажер: Дава допълнителни опции при вмъкване на изображения чрез медийния менажер</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_imageselectorplus</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Допълнителни опции за медийния менажер&lt;/b&gt;&lt;br /&gt;Дава допълнителни опции при вмъкване на изображения чрез медийния менажер [Serendipity &gt;= 0.9]&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 13 Aug 2017 13:33:35 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Допълнителни опции за медийния менажер&lt;/b&gt;&lt;br /&gt;Дава допълнителни опции при вмъкване на изображения чрез медийния менажер&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<pubDate>Sun, 24 Sep 2017 13:29:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>

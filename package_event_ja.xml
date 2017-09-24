@@ -4832,12 +4832,12 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <license>GPL</license>
 <summary>メディアマネージャーの拡張されたオプション</summary>
 <groups>IMAGES,MARKUP</groups>
-<description>Allows extended options for inserting images from the media manager [Serendipity &gt;= 0.9]</description>
+<description>Allows extended options for inserting images from the media manager</description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.01</version>
+  <version>1.10</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2017-08-13</date>
+  <date>2017-09-24</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>.htaccess</file>
@@ -4853,7 +4853,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>plugin_mediainsert.tpl</file>
-      <file>quickblog.tpl</file>
+      <file>plugin_quickblog.tpl</file>
       <file>serendipity_event_imageselectorplus.php</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
@@ -4878,7 +4878,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_imageselectorplus/lang_en.inc.php</file>
     <file>serendipity_event_imageselectorplus/lang_ja.inc.php</file>
     <file>serendipity_event_imageselectorplus/plugin_mediainsert.tpl</file>
-    <file>serendipity_event_imageselectorplus/quickblog.tpl</file>
+    <file>serendipity_event_imageselectorplus/plugin_quickblog.tpl</file>
     <file>serendipity_event_imageselectorplus/serendipity_event_imageselectorplus.php</file>
     <file>serendipity_event_imageselectorplus/UTF-8/lang_bg.inc.php</file>
     <file>serendipity_event_imageselectorplus/UTF-8/lang_cs.inc.php</file>
