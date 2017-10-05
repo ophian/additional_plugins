@@ -16,7 +16,6 @@
   <date>2017-04-25</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
-      <file>.htaccess</file>
       <file>ChangeLog</file>
       <file>communityrating_Amazon.tpl</file>
       <file>communityrating_IMDB.tpl</file>
@@ -47,7 +46,6 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_communityrating/.htaccess</file>
     <file>serendipity_event_communityrating/ChangeLog</file>
     <file>serendipity_event_communityrating/communityrating_Amazon.tpl</file>
     <file>serendipity_event_communityrating/communityrating_IMDB.tpl</file>
@@ -88,7 +86,6 @@
   <date>2017-02-02</date>
   <filelist>
     <dir name="serendipity_event_faq">
-      <file>.htaccess</file>
       <dir name="alternatives">
         <file>plugin_faq_categories.tpl</file>
         <file>plugin_faq_category_faq.tpl</file>
@@ -146,7 +143,6 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_faq/.htaccess</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_categories.tpl</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_category_faq.tpl</file>
     <file>serendipity_event_faq/alternatives/plugin_faq_category_faqs.tpl</file>
@@ -212,7 +208,6 @@
   <date>2017-02-02</date>
   <filelist>
     <dir name="serendipity_event_freetag">
-      <file>.htaccess</file>
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
@@ -263,7 +258,6 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_freetag/.htaccess</file>
     <file>serendipity_event_freetag/ChangeLog</file>
     <file>serendipity_event_freetag/documentation_cs.html</file>
     <file>serendipity_event_freetag/documentation_cz.html</file>
@@ -324,7 +318,6 @@
   <date>2017-02-02</date>
   <filelist>
     <dir name="serendipity_event_geotag">
-      <file>.htaccess</file>
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
@@ -347,7 +340,6 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_geotag/.htaccess</file>
     <file>serendipity_event_geotag/ChangeLog</file>
     <file>serendipity_event_geotag/documentation_cs.html</file>
     <file>serendipity_event_geotag/documentation_cz.html</file>
@@ -382,7 +374,6 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
-      <file>.htaccess</file>
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
@@ -435,7 +426,6 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_guestbook/.htaccess</file>
     <file>serendipity_event_guestbook/ChangeLog</file>
     <file>serendipity_event_guestbook/documentation_cs.html</file>
     <file>serendipity_event_guestbook/documentation_cz.html</file>
@@ -498,7 +488,6 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_linklist">
-      <file>.htaccess</file>
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
@@ -540,7 +529,6 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_linklist/.htaccess</file>
     <file>serendipity_event_linklist/ChangeLog</file>
     <file>serendipity_event_linklist/documentation_cs.html</file>
     <file>serendipity_event_linklist/documentation_cz.html</file>
@@ -592,7 +580,6 @@
   <date>2017-02-02</date>
   <filelist>
     <dir name="serendipity_event_microformats">
-      <file>.htaccess</file>
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
@@ -627,7 +614,6 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_microformats/.htaccess</file>
     <file>serendipity_event_microformats/ChangeLog</file>
     <file>serendipity_event_microformats/documentation_cs.html</file>
     <file>serendipity_event_microformats/documentation_cz.html</file>
@@ -672,7 +658,6 @@
   <date>2016-08-27</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
-      <file>.htaccess</file>
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
@@ -702,7 +687,6 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_multilingual/.htaccess</file>
     <file>serendipity_event_multilingual/ChangeLog</file>
     <file>serendipity_event_multilingual/documentation_cs.html</file>
     <file>serendipity_event_multilingual/documentation_cz.html</file>
@@ -744,7 +728,6 @@
   <date>2016-10-11</date>
   <filelist>
     <dir name="serendipity_event_mycalendar">
-      <file>.htaccess</file>
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
@@ -766,7 +749,6 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_mycalendar/.htaccess</file>
     <file>serendipity_event_mycalendar/ChangeLog</file>
     <file>serendipity_event_mycalendar/documentation_cs.html</file>
     <file>serendipity_event_mycalendar/documentation_cz.html</file>
@@ -854,7 +836,6 @@
   <date>2017-07-24</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
-      <file>.htaccess</file>
       <file>backend_staticpage.tpl</file>
       <dir name="backend_templates">
         <file>custom_template.tpl</file>
@@ -930,7 +911,6 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_staticpage/.htaccess</file>
     <file>serendipity_event_staticpage/backend_staticpage.tpl</file>
     <file>serendipity_event_staticpage/backend_templates/custom_template.tpl</file>
     <file>serendipity_event_staticpage/backend_templates/default_staticpage_backend.tpl</file>
@@ -1014,7 +994,6 @@
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_statistics">
-      <file>.htaccess</file>
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
@@ -1061,7 +1040,6 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_statistics/.htaccess</file>
     <file>serendipity_event_statistics/ChangeLog</file>
     <file>serendipity_event_statistics/documentation_cs.html</file>
     <file>serendipity_event_statistics/documentation_cz.html</file>
@@ -3199,7 +3177,6 @@
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>.cvsignore</file>
-      <file>.htaccess</file>
       <file>ChangeLog</file>
       <dir name="classes">
         <file>JSON.php</file>
@@ -3253,7 +3230,6 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_twitter/.cvsignore</file>
-    <file>serendipity_plugin_twitter/.htaccess</file>
     <file>serendipity_plugin_twitter/ChangeLog</file>
     <file>serendipity_plugin_twitter/classes/JSON.php</file>
     <file>serendipity_plugin_twitter/classes/json.php4.include.php</file>
