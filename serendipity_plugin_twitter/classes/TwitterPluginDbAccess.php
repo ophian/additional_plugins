@@ -142,20 +142,32 @@ class TwitterPluginDbAccess
         }
 
         if (!TwitterPluginDbAccess::table_created('tweetbackshorturls')) {
-            $q = "CREATE TABLE {$serendipity['dbPrefix']}tweetbackshorturls (" .
-                    "service varchar(15) not null, " .
-                    "longurl varchar(255) not null, " .
-                    "shorturl varchar(50) not null, " .
-                    "PRIMARY KEY (service, longurl(176))" .
-                ")";
-
+            if ($serendipity['dbType'] == 'mysqli') {
+                $q = "CREATE TABLE {$serendipity['dbPrefix']}tweetbackshorturls (" .
+                        "service varchar(15) not null, " .
+                        "longurl varchar(255) not null, " .
+                        "shorturl varchar(50) not null, " .
+                        "PRIMARY KEY (service, longurl(176))" .
+                    ")";
+            } else {
+                $q = "CREATE TABLE {$serendipity['dbPrefix']}tweetbackshorturls (" .
+                        "service varchar(15) not null, " .
+                        "longurl varchar(255) not null, " .
+                        "shorturl varchar(50) not null, " .
+                        "PRIMARY KEY (service, longurl)" .
+                    ")";
+            }
             $result = serendipity_db_schema_import($q);
 
             if ($result !== true) {
                 return;
             }
 
-            serendipity_db_schema_import("CREATE INDEX idx_tweetbackshorturls_longurl ON {$serendipity['dbPrefix']}tweetbackshorturls (longurl(191))");
+            if ($serendipity['dbType'] == 'mysqli') {
+                serendipity_db_schema_import("CREATE INDEX idx_tweetbackshorturls_longurl ON {$serendipity['dbPrefix']}tweetbackshorturls (longurl(191))");
+            } else {
+                serendipity_db_schema_import("CREATE INDEX idx_tweetbackshorturls_longurl ON {$serendipity['dbPrefix']}tweetbackshorturls (longurl)");
+            }
             serendipity_db_schema_import("CREATE INDEX idx_tweetbackshorturls_service ON {$serendipity['dbPrefix']}tweetbackshorturls (service)");
 
         }

@@ -24,8 +24,8 @@ class serendipity_event_linklist extends serendipity_event
                                             'plugins_linklist_conf'                           => true,
                                             'external_plugin'                                 => true
                                             ));
-        $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad');
-        $propbag->add('version',       '2.04');
+        $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian');
+        $propbag->add('version',       '2.05');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -197,7 +197,11 @@ class serendipity_event_linklist extends serendipity_event
         $q   = "CREATE INDEX dateind ON {$serendipity['dbPrefix']}links (date_added);";
         $sql = serendipity_db_schema_import($q);
 
-        $q   = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(191));";
+        if ($serendipity['dbType'] == 'mysqli') {
+            $q   = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(191));";
+        } else {
+            $q   = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title);";
+        }
         $sql = serendipity_db_schema_import($q);
 
         $q   = "CREATE INDEX catind ON {$serendipity['dbPrefix']}links (category);";

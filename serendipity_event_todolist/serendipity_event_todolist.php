@@ -17,7 +17,7 @@ if (IN_serendipity !== true) {
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-@define('PLUGIN_EVENT_TODOLIST_DBVERSION', '1.13');
+@define('PLUGIN_EVENT_TODOLIST_DBVERSION', '1.14');
 
 class serendipity_event_todolist extends serendipity_event
 {
@@ -35,7 +35,7 @@ class serendipity_event_todolist extends serendipity_event
                                             'backend_sidebar_entries'                               => true
                                             ));
         $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian');
-        $propbag->add('version', '1.28');
+        $propbag->add('version', '1.29');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -1245,7 +1245,11 @@ class serendipity_event_todolist extends serendipity_event
         $q   = "CREATE INDEX percentage_dateind ON {$serendipity['dbPrefix']}percentagedone (date_added);";
         $sql = serendipity_db_schema_import($q);
 
-        $q   = "CREATE INDEX percentage_titleind ON {$serendipity['dbPrefix']}percentagedone (title(191));";
+        if ($serendipity['dbType'] == 'mysqli') {
+            $q   = "CREATE INDEX percentage_titleind ON {$serendipity['dbPrefix']}percentagedone (title(191));";
+        } else {
+            $q   = "CREATE INDEX percentage_titleind ON {$serendipity['dbPrefix']}percentagedone (title);";
+        }
         $sql = serendipity_db_schema_import($q);
 
         $q   = "CREATE INDEX percentage_catind ON {$serendipity['dbPrefix']}percentagedone (category);";

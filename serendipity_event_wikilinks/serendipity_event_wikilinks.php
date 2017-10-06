@@ -23,8 +23,8 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_WIKILINKS_NAME);
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus');
-        $propbag->add('version',       '0.26');
+        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian');
+        $propbag->add('version',       '0.27');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -441,8 +441,13 @@ function use_link_<?php echo $func; ?>(txt) {
                     entryid int(11) default '0',
                     refname text,
                     ref text)");
-            serendipity_db_schema_import("CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname(191));");
-            serendipity_db_schema_import("CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(191));");
+            if ($serendipity['dbType'] == 'mysqli') {
+                serendipity_db_schema_import("CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname(191));");
+                serendipity_db_schema_import("CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(191));");
+            } else {
+                serendipity_db_schema_import("CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname);");
+                serendipity_db_schema_import("CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname);");
+            }
             serendipity_db_schema_import("CREATE INDEX wikiref_entry ON {$serendipity['dbPrefix']}wikireferences (entryid);");
             $this->set_config('db_built', 1);
         }

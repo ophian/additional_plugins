@@ -1,3 +1,7 @@
+1.1:
+----
+ * Restrict sql index key length for utf8mb4 migration to mysqli only
+
 1.0:
 ----
  * Restrict sql index key length for utf8mb4 migration
