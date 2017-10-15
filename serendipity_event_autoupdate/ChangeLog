@@ -1,3 +1,12 @@
+1.5.0:
+------
+
+ * Refactor the upgrade processor unit
+ * Make processing messages use the load_language() API
+   Translation done for [en, de].
+ * Fix regression with Smarty::clearCompiledTemplate()
+ * Do not end up with an alert (js) box for the installer redirect
+
 1.4.5:
 ------
 

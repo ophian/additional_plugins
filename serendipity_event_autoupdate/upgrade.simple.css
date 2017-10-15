@@ -48,22 +48,31 @@ h2 {font-size:1.42857em;line-height:1.05em;margin:1.05em 0}
 h3 {font-size:1.28571em;line-height:1.16667em;margin:1.16667em 0}
 h4 {font-size:1.14286em;line-height:1.3125em;margin:1.3125em 0}
 h5,h6 {font-size:1em}
-.msg_error,.msg_success,.msg_notice,.msg_dialogue {margin:1.5em 0;padding:10px}
+progress[value]{-webkit-appearance: none;-moz-appearance: none;appearance: none;border: none;width: 250px;height: 20px;color: blue;}
+progress[value]::-webkit-progress-value {background-image:-webkit-linear-gradient(-45deg,transparent 33%, rgba(0, 0, 0, .1) 33%,rgba(0,0, 0, .1) 66%, transparent 66%),-webkit-linear-gradient(top,rgba(255, 255, 255, .25),rgba(0, 0, 0, .25)),-webkit-linear-gradient(left, #09c, #f44);border-radius: 2px; background-size: 35px 20px, 100% 100%, 100% 100%;}
+progress[value]::-moz-progress-bar {background-image:-moz-linear-gradient(135deg,transparent 33%,rgba(0, 0, 0, 0.1) 33%,rgba(0, 0, 0, 0.1) 66%,transparent 66%),-moz-linear-gradient(top,rgba(255, 255, 255, 0.25),rgba(0, 0, 0, 0.25)),-moz-linear-gradient(left,#09c,#f44);border-radius: 2px;background-size: 35px 20px, 100% 100%, 100% 100%;}
+.progress-bar {background-color: whiteSmoke;border-radius: 2px;box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;width: 250px;height: 20px;position: relative;display: block;}
+.progress-bar > span {background-color: blue;border-radius: 2px;display: block;text-indent: -9999px;}
+.msg_error,.msg_success,.msg_notice,.msg_dialogue {margin:1.5em 0;padding:.5em}
 .msg_error {background:#f2dede;border:1px solid #e4b9b9;color:#b94a48}
 .msg_success {background:#dff0d8;border:1px solid #c1e2b3;color:#468847}
 .msg_notice {background:#fcf8e3;border:1px solid #f7ecb5;color:#c09853}
 .msg_dialogue {background:#eee;border:1px solid #aaa;color:#777}
 .msg_run {margin:0;padding-left:2em;color:#777;font-size:.9em}
 #top>div,#main {margin:0 auto;max-width:1280px;width:96%}
-#top,#terminator {background:#25253d;color:#fcfcfc}
+#infobox{display:block;float:right;width:40%;margin-top:-17em;}
+#infobox,#top,#terminator {background:#25253d;color:#fcfcfc}
+#terminator>.foot{display:block;margin:auto 2em;}
 #top a,#top a:visited {color:#ffbf00}
 #top a:hover,#top a:focus {color:#fcfcfc}
 #banner,#user_menu {text-shadow:1px 1px 1px rgba(0,0,0,.8)}
 #user_menu ul {font-size:1.5em;margin:.5em 0}
 #user_menu li {margin:0 1em 0 0}
 #serendipity_updater {background:#eee;border:1px solid #aaa;margin:1em 1.2em;padding:0 1em}
-#information span {font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;font-style:italic;color:#ff3600}
-#autobut {margin-bottom: .5em;}
+#information span, .file, .dir {font:12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;font-style:italic;vertical-align: text-bottom;}
+#information > span{color:#333}
+#information span > span{color:#ff3600}
+#autobut {margin-bottom:.5em;}
 @media only screen and (min-width:768px) {body {font-size:1em}
 h1 {font-size:2em;line-height:1.5em;margin:.75em 0 0}
 h2 {font-size:1.5em;line-height:1em;margin:1em 0}
