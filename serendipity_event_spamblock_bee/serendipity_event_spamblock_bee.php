@@ -483,7 +483,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
             // This check loads from DB, so do it last!
             // Check if we already have a comment with the same body. (it's a reload normaly)
             $spamHandle = $this->get_config('samebody', PLUGIN_EVENT_SPAMBLOCK_SWTCH_REJECT);
-            if (PLUGIN_EVENT_SPAMBLOCK_SWTCH_OFF!=$spamHandle) {
+            if (PLUGIN_EVENT_SPAMBLOCK_SWTCH_OFF != $spamHandle) {
                 $query = "SELECT count(id) AS counter FROM {$serendipity['dbPrefix']}comments WHERE type = '" . $addData['type'] . "' AND body = '" . serendipity_db_escape_string($addData['comment']) . "'";
                 // This is a little different to the normal Spam Plugin:
                 // We allow the same comment, if it is a trackback, but never on the same article
