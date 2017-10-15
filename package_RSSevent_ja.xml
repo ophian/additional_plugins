@@ -54,12 +54,12 @@
 <guid isPermaLink="false">serendipity_event_autotitle</guid>
 </item>
 <item>
-<title>Serendipity Autoupdate: When the dashboard (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin.</title>
+<title>Serendipity Autoupdate: When the Dashboard (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_autoupdate</link>
 <category>Event Plugins</category>
 <author>onli, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the dashboard (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Sep 2017 18:37:05 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the Dashboard (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 15 Oct 2017 13:12:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -990,7 +990,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Hidden Captcha)&lt;/b&gt;&lt;br /&gt;Implements simple comment antispam mechanisms, that are easy to configure but very effective.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 28 Dec 2016 09:20:48 +0100</pubDate>
+<pubDate>Fri, 13 Oct 2017 09:41:35 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>

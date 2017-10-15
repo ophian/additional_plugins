@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Automatické aktualizace (experimentální)&lt;/b&gt;&lt;br /&gt;Když &quot;tabule&quot; detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Sep 2017 18:37:05 +0200</pubDate>
+<pubDate>Sun, 15 Oct 2017 13:12:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -986,7 +986,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Skrytá Captcha)&lt;/b&gt;&lt;br /&gt;Implementuje jednoduché ale velmi účinné antispamové algoritmy.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 28 Dec 2016 09:20:48 +0100</pubDate>
+<pubDate>Fri, 13 Oct 2017 09:41:35 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
