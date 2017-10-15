@@ -5,6 +5,7 @@
  * Make processing messages use the load_language() API
    Translation done for [en, de].
  * Fix regression with Smarty::clearCompiledTemplate()
+ * Fix NOT extension_loaded('zip') error not shown (flushed)
  * Do not end up with an alert (js) box for the installer redirect
 
 1.4.5:
