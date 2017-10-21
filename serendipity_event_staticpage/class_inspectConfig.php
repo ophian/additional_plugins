@@ -31,10 +31,12 @@ class icSelect extends inspectConfig
 ?>
                 <select class="direction_<?php echo $inspectConfig['lang_direction']; ?>" name="serendipity[plugin][<?php echo $inspectConfig['config_item'] ?>]">
 <?php
-        foreach($inspectConfig['select'] AS $select_value => $select_desc) {
+        if (is_array($inspectConfig['select']) && !empty($inspectConfig['select'])) {
+            foreach($inspectConfig['select'] AS $select_value => $select_desc) {
 ?>
                     <option title="<?php echo $this->html_specialchars($select_desc); ?>"<?php echo ($select_value == $inspectConfig['hvalue'] ? ' selected="selected"' : ''); ?> value="<?php echo $select_value; ?>"><?php echo $this->html_specialchars($select_desc); ?></option>
 <?php
+            }
         }
 ?>
                 </select>

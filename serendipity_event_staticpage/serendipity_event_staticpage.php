@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.36');
+        $propbag->add('version', '5.37');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -670,10 +670,10 @@ class serendipity_event_staticpage extends serendipity_event
 
         $p = array('0' => STATICPAGE_PARENTPAGE_PARENT);
 
-        $q = 'SELECT id, authorid, pagetitle, parent_id
-                FROM '.$serendipity['dbPrefix'].'staticpages
-               WHERE content != \'plugin\'
-            ORDER BY parent_id, pageorder';
+        $q = "SELECT id, authorid, pagetitle, parent_id
+                FROM {$serendipity['dbPrefix']}staticpages
+               WHERE content != 'plugin'
+            ORDER BY parent_id, pageorder";
 
         $pages = serendipity_db_query($q, false, 'assoc');
 
@@ -700,8 +700,8 @@ class serendipity_event_staticpage extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT id, description
-                FROM '.$serendipity['dbPrefix'].'staticpages_types';
+        $q = "SELECT id, description
+                FROM {$serendipity['dbPrefix']}staticpages_types";
 
         $types = serendipity_db_query($q, false, 'assoc');
 
@@ -790,13 +790,13 @@ class serendipity_event_staticpage extends serendipity_event
 
                 case 'serendipity_event_downloadmanager':
                     if ($serendipity['rewrite'] == 'none') {
-                        $q = 'SELECT value
-                                FROM '.$serendipity['dbPrefix'].'config
-                               WHERE name LIKE \'serendipity_event_downloadmanager%pageurl\'';
+                        $q = "SELECT value
+                                FROM {$serendipity['dbPrefix']}config
+                               WHERE name LIKE 'serendipity_event_downloadmanager%pageurl'";
                     } else {
-                        $q = 'SELECT value
-                                FROM '.$serendipity['dbPrefix'].'config
-                               WHERE name LIKE \'serendipity_event_downloadmanager%permalink\'';
+                        $q = "SELECT value
+                                FROM {$serendipity['dbPrefix']}config
+                               WHERE name LIKE 'serendipity_event_downloadmanager%permalink'";
                     }
                     $ret = serendipity_db_query($q, true, 'assoc');
                     if (is_array($ret)) {
@@ -810,9 +810,9 @@ class serendipity_event_staticpage extends serendipity_event
                     break;
 
                 case 'serendipity_event_guestbook':
-                    $q = 'SELECT value
-                            FROM '.$serendipity['dbPrefix'].'config
-                           WHERE name LIKE \'serendipity_event_guestbook%'.(($serendipity['rewrite'] != 'none') ? 'permalink' : 'pagetitle').'\'';
+                    $q = "SELECT value
+                            FROM {$serendipity['dbPrefix']}config
+                           WHERE name LIKE 'serendipity_event_guestbook%".(($serendipity['rewrite'] != 'none') ? 'permalink' : 'pagetitle')."'";
                     $ret = serendipity_db_query($q, true, 'assoc');
                     if (is_array($ret)) {
                         $page[$plugin]['name'] = (defined('GUESTBOOK_TITLE') ? GUESTBOOK_TITLE : PLUGIN_GUESTBOOK_TITLE);
@@ -825,9 +825,9 @@ class serendipity_event_staticpage extends serendipity_event
                     break;
 
                 case 'serendipity_event_forum':
-                    $q = 'SELECT value
-                            FROM '.$serendipity['dbPrefix'].'config
-                           WHERE name LIKE \'serendipity_event_forum%pageurl\'';
+                    $q = "SELECT value
+                            FROM {$serendipity['dbPrefix']}config
+                           WHERE name LIKE 'serendipity_event_forum%pageurl'";
                     $ret = serendipity_db_query($q, true, 'assoc');
                     if (is_array($ret)) {
                         $page[$plugin] = array(
@@ -838,9 +838,9 @@ class serendipity_event_staticpage extends serendipity_event
                     break;
 
                 case 'serendipity_event_contactform':
-                    $q = 'SELECT value
-                            FROM '.$serendipity['dbPrefix'].'config
-                           WHERE name LIKE \'serendipity_event_contactform%'.(($serendipity['rewrite'] != 'none') ? 'permalink' : 'pagetitle').'\'';
+                    $q = "SELECT value
+                            FROM {$serendipity['dbPrefix']}config
+                           WHERE name LIKE 'serendipity_event_contactform%".(($serendipity['rewrite'] != 'none') ? 'permalink' : 'pagetitle')."'";
                     $ret = serendipity_db_query($q, true, 'assoc');
                     if (is_array($ret)) {
                         if ($serendipity['rewrite'] != 'none') {
@@ -861,13 +861,13 @@ class serendipity_event_staticpage extends serendipity_event
 
                 case 'serendipity_event_usergallery':
                     if ($serendipity['rewrite'] == 'none') {
-                        $q = 'SELECT value
-                                FROM '.$serendipity['dbPrefix'].'config
-                               WHERE name LIKE \'serendipity_event_usergallery%subpage\'';
+                        $q = "SELECT value
+                                FROM {$serendipity['dbPrefix']}config
+                               WHERE name LIKE 'serendipity_event_usergallery%subpage'";
                     } else {
-                        $q = 'SELECT value
-                                FROM '.$serendipity['dbPrefix'].'config
-                               WHERE name LIKE \'serendipity_event_usergallery%permalink\'';
+                        $q = "SELECT value
+                                FROM {$serendipity['dbPrefix']}config
+                               WHERE name LIKE 'serendipity_event_usergallery%permalink'";
                     }
                     $ret = serendipity_db_query($q, true, 'assoc');
                     if (is_array($ret)) {
@@ -881,9 +881,9 @@ class serendipity_event_staticpage extends serendipity_event
                     break;
 
                 case 'serendipity_event_faq':
-                    $q = 'SELECT value
-                            FROM '.$serendipity['dbPrefix'].'config
-                           WHERE name LIKE \'serendipity_event_faq%faqurl\'';
+                    $q = "SELECT value
+                            FROM {$serendipity['dbPrefix']}config
+                           WHERE name LIKE 'serendipity_event_faq%faqurl'";
                     $ret = serendipity_db_query($q, true, 'assoc');
                     if (is_array($ret)) {
                         if ($serendipity['rewrite'] == 'none') {
@@ -991,7 +991,7 @@ class serendipity_event_staticpage extends serendipity_event
             $fresh = true;
             @define('STATICPAGE_UPGRADE_DONE', true); // No further static pages may be called!
         }
-        // workaround for sqlite not being able to alter complicated things later
+        // workaround for SQLITE not being able to ALTER complicated things later - and not being able to use unsigned INTs for UNIX timestamps
         if (stristr($serendipity['dbType'], 'sqlite') !== FALSE) {
 
             serendipity_db_schema_import("CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}staticpages (
@@ -1010,8 +1010,8 @@ class serendipity_event_staticpage extends serendipity_event
                                             headline varchar(255) NOT NULL DEFAULT '',
                                             filename varchar(255) NOT NULL DEFAULT '',
                                             pass varchar(255) NOT NULL DEFAULT '',
-                                            timestamp int(10) unsigned DEFAULT NULL,
-                                            last_modified int(10) unsigned DEFAULT NULL,
+                                            timestamp INTEGER DEFAULT NULL,
+                                            last_modified INTEGER DEFAULT NULL,
                                             authorid int(11) DEFAULT '0',
                                             pageorder int(4) DEFAULT '0',
                                             articletype int(4) DEFAULT '0',
@@ -1136,17 +1136,17 @@ class serendipity_event_staticpage extends serendipity_event
                 );
                 serendipity_db_insert('staticpages_types', $this->pagetype);
 
-                $sql = 'CREATE TABLE '.$serendipity['dbPrefix'].'staticpage_categorypage (
+                $sql = "CREATE TABLE {$serendipity['dbPrefix']}staticpage_categorypage (
                             categoryid int(4) default 0,
                             staticpage_categorypage int(4) default 0
-                        ) {UTF_8}';
+                        ) {UTF_8}";
                 serendipity_db_schema_import($sql);
             case 17:
-                $sql = 'CREATE TABLE '.$serendipity['dbPrefix'].'staticpage_custom (
+                $sql = "CREATE TABLE {$serendipity['dbPrefix']}staticpage_custom (
                             staticpage int(11),
                             name varchar(128),
                             value text
-                        ) {UTF_8}';
+                        ) {UTF_8}";
                 serendipity_db_schema_import($sql);
             case 18:
                     $sql = "ALTER TABLE {$serendipity['dbPrefix']}staticpages ADD COLUMN is_404_page int(1) default 0";
@@ -1908,11 +1908,11 @@ class serendipity_event_staticpage extends serendipity_event
 
         $id = (int)$this->getPageID();
 
-        $q = 'SELECT pagetitle, permalink
-                FROM '.$serendipity['dbPrefix'].'staticpages
-               WHERE parent_id = '.$id.'
+        $q = "SELECT pagetitle, permalink
+                FROM {$serendipity['dbPrefix']}staticpages
+               WHERE parent_id = {$id}
                  AND publishstatus = 1
-            ORDER BY pageorder';
+            ORDER BY pageorder";
 
         $pages = serendipity_db_query($q, false, 'assoc');
 
@@ -1931,11 +1931,11 @@ class serendipity_event_staticpage extends serendipity_event
 
         $id = (int)$this->getPageID();
 
-        $q = 'SELECT id
-                FROM '.$serendipity['dbPrefix'].'staticpages
-               WHERE parent_id = '.$id.'
+        $q = "SELECT id
+                FROM {$serendipity['dbPrefix']}staticpages
+               WHERE parent_id = {$id}
                  AND publishstatus = 1
-            ORDER BY pageorder';
+            ORDER BY pageorder";
 
         $p = serendipity_db_query($q, false, 'assoc');
 
@@ -1960,10 +1960,10 @@ class serendipity_event_staticpage extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT pagetitle, permalink
-                FROM '.$serendipity['dbPrefix'].'staticpages
-               WHERE parent_id = '.(int)$id.'
-                 AND publishstatus = 1';
+        $q = "SELECT pagetitle, permalink
+                FROM {$serendipity['dbPrefix']}staticpages
+               WHERE parent_id = ".(int)$id."
+                 AND publishstatus = 1";
 
         $page = serendipity_db_query($q, false, 'assoc');
 
@@ -1981,10 +1981,10 @@ class serendipity_event_staticpage extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT *
-                FROM '.$serendipity['dbPrefix'].'staticpages
-               WHERE id = '.(int)$id.'
-               LIMIT 1';
+        $q = "SELECT *
+                FROM {$serendipity['dbPrefix']}staticpages
+               WHERE id = ".(int)$id."
+               LIMIT 1";
 
         $page = serendipity_db_query($q, true, 'assoc');
 
@@ -2058,10 +2058,10 @@ class serendipity_event_staticpage extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT *
-                FROM '.$serendipity['dbPrefix'].'staticpages
-               WHERE id = '.(int)$id.'
-               LIMIT 1';
+        $q = "SELECT *
+                FROM {$serendipity['dbPrefix']}staticpages
+               WHERE id = ".(int)$id."
+               LIMIT 1";
 
         $page = serendipity_db_query($q, true, 'assoc');
 
@@ -2082,10 +2082,10 @@ class serendipity_event_staticpage extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT *
-                FROM '.$serendipity['dbPrefix'].'staticpages_types
-               WHERE id = '.(int)$id.'
-              LIMIT 1';
+        $q = "SELECT *
+                FROM {$serendipity['dbPrefix']}staticpages_types
+               WHERE id = ".(int)$id."
+              LIMIT 1";
 
         $type = serendipity_db_query($q, true, 'assoc');
 
@@ -2192,9 +2192,9 @@ class serendipity_event_staticpage extends serendipity_event
         }
 
         // Fetch Custom properties!
-        $q = 'SELECT *
-                FROM ' . $serendipity['dbPrefix'] . 'staticpage_custom
-               WHERE staticpage = ' . (int)$this->staticpage['id'];
+        $q = "SELECT *
+                FROM {$serendipity['dbPrefix']}staticpage_custom
+               WHERE staticpage = " . (int)$this->staticpage['id'];
 
         $custom = serendipity_db_query($q, false, 'assoc');
 
@@ -2422,9 +2422,9 @@ class serendipity_event_staticpage extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT *
-                FROM '.$serendipity['dbPrefix'].'staticpages
-               WHERE 1 = 1';
+        $q = "SELECT *
+                FROM {$serendipity['dbPrefix']}staticpages
+               WHERE 1 = 1";
 
         if (!$plugins) {
             $q .= " AND content != 'plugin'";
@@ -2453,7 +2453,7 @@ class serendipity_event_staticpage extends serendipity_event
         } else {
             $q = 'SELECT id, parent_id, pagetitle, headline, timestamp, last_modified, publishstatus, language AS lang ';
         }
-        $q .= 'FROM '.$serendipity['dbPrefix'].'staticpages ORDER BY pageorder';
+        $q .= "FROM {$serendipity['dbPrefix']}staticpages ORDER BY pageorder";
 
         return serendipity_db_query($q);
     }
@@ -2655,7 +2655,7 @@ class serendipity_event_staticpage extends serendipity_event
                 if (isset($serendipity['POST']['typeSubmit'])) {
                     foreach($insplugins AS $key => $values) {
                         if (empty($serendipity['POST']['externalPlugins'][$key])) {
-                            serendipity_db_query('DELETE FROM '.$serendipity['dbPrefix'].'staticpages WHERE id = '.(int)$values['id']);
+                            serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}staticpages WHERE id = ".(int)$values['id']);
                         }
                     }
                     if (count($serendipity['POST']['externalPlugins'])) {
@@ -3152,9 +3152,9 @@ class serendipity_event_staticpage extends serendipity_event
 
         $id = $this->getPageID();
         if (is_numeric($id)) {
-            $q = 'SELECT content
-                    FROM '.$serendipity['dbPrefix'].'staticpages
-                   WHERE id = '.$id;
+            $q = "SELECT content
+                    FROM {$serendipity['dbPrefix']}staticpages
+                   WHERE id = {$id}";
             $res = serendipity_db_query($q, true, 'assoc');
             if ($res['content'] == 'plugin') {
                 return true;
@@ -3280,10 +3280,10 @@ class serendipity_event_staticpage extends serendipity_event
     {
         global $serendipity;
 
-        $q = 'SELECT *
-                FROM '.$serendipity['dbPrefix'].'staticpages
-               WHERE id = '.(int)$staticpage_id.'
-               LIMIT 1';
+        $q = "SELECT *
+                FROM {$serendipity['dbPrefix']}staticpages
+               WHERE id = ".(int)$staticpage_id."
+               LIMIT 1";
 
         $cache =  serendipity_db_query($q, true, 'assoc');
 

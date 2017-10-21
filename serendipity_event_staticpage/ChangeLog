@@ -1,3 +1,8 @@
+5.37:
+----
+ * Fix SQLite install bug, not being able to use unsigned for INTEGERS
+ * Fix $inspectConfig['select'] loop when empty
+
 5.36:
 ----
 
