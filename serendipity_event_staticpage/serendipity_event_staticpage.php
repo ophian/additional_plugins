@@ -991,7 +991,7 @@ class serendipity_event_staticpage extends serendipity_event
             $fresh = true;
             @define('STATICPAGE_UPGRADE_DONE', true); // No further static pages may be called!
         }
-        // workaround for SQLITE not being able to ALTER complicated things later - and not being able to use unsigned INTs for UNIX timestamps
+        // workaround for SQLITE not being able to ALTER complicated things later
         if (stristr($serendipity['dbType'], 'sqlite') !== FALSE) {
 
             serendipity_db_schema_import("CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}staticpages (
@@ -1010,8 +1010,8 @@ class serendipity_event_staticpage extends serendipity_event
                                             headline varchar(255) NOT NULL DEFAULT '',
                                             filename varchar(255) NOT NULL DEFAULT '',
                                             pass varchar(255) NOT NULL DEFAULT '',
-                                            timestamp INTEGER DEFAULT NULL,
-                                            last_modified INTEGER DEFAULT NULL,
+                                            timestamp int(10) {UNSIGNED} DEFAULT NULL,
+                                            last_modified int(10) {UNSIGNED} DEFAULT NULL,
                                             authorid int(11) DEFAULT '0',
                                             pageorder int(4) DEFAULT '0',
                                             articletype int(4) DEFAULT '0',
