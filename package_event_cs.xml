@@ -5565,9 +5565,9 @@
 <description>Používá JavaScript k ukázání náhledu komentáře a značkovací tlačítka</description>
 <maintainers><maintainer><name>Malte Paskuda, Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.5.5</version>
-  <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>2.5.6</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-11-02</date>
   <filelist>
     <dir name="serendipity_event_livecomment">
       <file>ChangeLog</file>
@@ -6637,11 +6637,11 @@
 <summary>Blok s novinkami</summary>
 <groups>FRONTEND_VIEWS,FRONTEND_FEATURES</groups>
 <description>Seskupte příspěvky z jedné kategorie na výchozí stránce blogu do jednoho bloku místo obvyklého výpisu příspěvků. Podporuje vnořené bloky s novinkami.</description>
-<maintainers><maintainer><name>Jude Anthony</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Jude Anthony, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.6</version>
-  <requirements:s9yVersion>1.0-alpha1</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.0</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2017-11-02</date>
   <filelist>
     <dir name="serendipity_event_newsbox">
       <file>lang_cs.inc.php</file>
@@ -8513,13 +8513,15 @@
 <release>
   <version>1.66</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-10-06</date>
+  <date>2017-10-28</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>green.png</file>
+      <file>html2canvas.js</file>
+      <file>jquery.plugin.html2canvas.js</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cn.inc.php</file>
       <file>lang_cs.inc.php</file>
@@ -8538,6 +8540,7 @@
       <file>lang_tn.inc.php</file>
       <file>lang_zh.inc.php</file>
       <file>red.png</file>
+      <file>savetodisk.php</file>
       <file>serendipity_event_statistics.php</file>
       <file>serendipity_plugin_statistics.php</file>
       <dir name="UTF-8">
@@ -8566,6 +8569,8 @@
     <file>serendipity_event_statistics/documentation_cs.html</file>
     <file>serendipity_event_statistics/documentation_cz.html</file>
     <file>serendipity_event_statistics/green.png</file>
+    <file>serendipity_event_statistics/html2canvas.js</file>
+    <file>serendipity_event_statistics/jquery.plugin.html2canvas.js</file>
     <file>serendipity_event_statistics/lang_bg.inc.php</file>
     <file>serendipity_event_statistics/lang_cn.inc.php</file>
     <file>serendipity_event_statistics/lang_cs.inc.php</file>
@@ -8584,6 +8589,7 @@
     <file>serendipity_event_statistics/lang_tn.inc.php</file>
     <file>serendipity_event_statistics/lang_zh.inc.php</file>
     <file>serendipity_event_statistics/red.png</file>
+    <file>serendipity_event_statistics/savetodisk.php</file>
     <file>serendipity_event_statistics/serendipity_event_statistics.php</file>
     <file>serendipity_event_statistics/serendipity_plugin_statistics.php</file>
     <file>serendipity_event_statistics/UTF-8/lang_bg.inc.php</file>
