@@ -41,9 +41,9 @@ function addPreview() {
     var $serendipity_preview_commentBody = jQuery("#serendipity_comment_preview > .serendipity_commentBody");
     //hide the whole Container for later fade in
     $serendipity_comment_preview.hide();
-    
+
     jQuery("#serendipity_previewTitle").html(storage.preview_title);
-    
+
     $serendipity_commentform_comment.focus(function() {
             //markup and show comment-text
             $serendipity_commentform_comment.keyup();
@@ -62,14 +62,14 @@ function addPreview() {
             //fade in if greyed out
             $serendipity_comment_preview.fadeTo('fast', 1);
         });
-    
+
     var serendipity_comment = '';
     //formate the input at keyrelease
     $serendipity_commentform_comment.keyup(function() {
         serendipity_comment = jQuery(this).val();
-        
+
         //format according to activated markuplanguages
-        if (storage.markdown) {		    
+        if (storage.markdown) {
             var converter = new Showdown.converter();
             serendipity_comment = converter.makeHtml(serendipity_comment);
         }
@@ -117,7 +117,7 @@ function elasticComments() {
 }
 
 /*
-*Check markups and functions activated for the comments 
+*Check markups and functions activated for the comments
 */
 function requestConfiguration() {
     if (typeof storage.requesterRunned == 'undefined') {
@@ -203,8 +203,8 @@ function isInt(x) {
    var y=parseInt(x);
    if (isNaN(y)) return false;
    return x==y && x.toString()==y.toString();
- }
-    
+}
+
 
 function addButtons() {
     var bold = storage.bold;
@@ -263,7 +263,7 @@ function addButtons() {
         jQuery(this).css('cursor','pointer');
     });
 }
- 
+
 function mark(event) {
     var bold = storage.bold;
     var italic = storage.italic;
@@ -276,7 +276,7 @@ function mark(event) {
     var liquid = storage.liquid;
 
     $serendipity_commentform_comment = jQuery('#serendipity_commentform_comment');
-    
+
     var scrollPos = $serendipity_commentform_comment.attr('scrollTop');
     var cursorPos = $serendipity_commentform_comment.attr('selectionStart');
     var input = document.getElementById('serendipity_commentform_comment');
@@ -285,7 +285,7 @@ function mark(event) {
     switch(event.target.id) {
         case 'markupBold':
             var middle = bold;
-            if (s9ymarkup){
+            if (s9ymarkup) {
                 if (pattern.text) {
                     middle = pattern.text;
                 } else {
@@ -294,38 +294,39 @@ function mark(event) {
                 $serendipity_commentform_comment.replaceSelection(
                                         '*'+ middle + '*'
                                         );
-            }else if (bb) {
-                    if (pattern.text) {
-                        middle = pattern.text;
-                    } else {
-                        var opening = '[b]';
-                    }
-                    $serendipity_commentform_comment.replaceSelection(
-                                        '[b]'+ middle + '[/b]'
+            } else if (bb) {
+                if (pattern.text) {
+                    middle = pattern.text;
+                } else {
+                    var opening = '[b]';
+                }
+                $serendipity_commentform_comment.replaceSelection(
+                                    '[b]'+ middle + '[/b]'
+                                    );
+            } else if (textile) {
+                if (pattern.text) {
+                    middle = pattern.text;
+                } else {
+                    var opening = '*';
+                }
+                $serendipity_commentform_comment.replaceSelection(
+                                        '*'+ middle + '*'
                                         );
-                }else if (textile) {
-                        if (pattern.text) {
-                            middle = pattern.text;
-                        } else {
-                            var opening = '*';
-                        }
-                        $serendipity_commentform_comment.replaceSelection(
-                                                '*'+ middle + '*'
-                                                );
-                    }else if (markdown || liquid) {
-                            if (pattern.text) {
-                                middle = pattern.text;
-                            } else {
-                                var opening = '**';
-                            }
-                            $serendipity_commentform_comment.replaceSelection(
-                                                    '**'+ middle + '**'
-                                                    );
-                        }
+            } else if (markdown || liquid) {
+                if (pattern.text) {
+                    middle = pattern.text;
+                } else {
+                    var opening = '**';
+                }
+                $serendipity_commentform_comment.replaceSelection(
+                                        '**'+ middle + '**'
+                                        );
+            }
             break;
+
         case 'markupItalic':
             var middle = italic;
-             if (bb) {
+            if (bb) {
                     if (pattern.text) {
                         middle = pattern.text;
                     } else {
@@ -334,29 +335,7 @@ function mark(event) {
                     $serendipity_commentform_comment.replaceSelection(
                                         '[i]'+ middle + '[/i]'
                                         );
-                }else if (textile) {
-                        if (pattern.text) {
-                            middle = pattern.text;
-                        } else {
-                            var opening = '_';
-                        }
-                        $serendipity_commentform_comment.replaceSelection(
-                                                '_'+ middle + '_'
-                                                );
-                    }else if (markdown || liquid) {
-                            if (pattern.text) {
-                                middle = pattern.text;
-                            } else {
-                                var opening = '*';
-                            }
-                            $serendipity_commentform_comment.replaceSelection(
-                                                    '*'+ middle + '*'
-                                                    );
-                        }
-            break;
-        case 'markupUnderline':
-            var middle = underline;
-            if (s9ymarkup){
+            } else if (textile) {
                 if (pattern.text) {
                     middle = pattern.text;
                 } else {
@@ -365,7 +344,30 @@ function mark(event) {
                 $serendipity_commentform_comment.replaceSelection(
                                         '_'+ middle + '_'
                                         );
-            }else if (bb) {
+            } else if (markdown || liquid) {
+                if (pattern.text) {
+                    middle = pattern.text;
+                } else {
+                    var opening = '*';
+                }
+                $serendipity_commentform_comment.replaceSelection(
+                                        '*'+ middle + '*'
+                                        );
+            }
+            break;
+
+        case 'markupUnderline':
+            var middle = underline;
+            if (s9ymarkup) {
+                if (pattern.text) {
+                    middle = pattern.text;
+                } else {
+                    var opening = '_';
+                }
+                $serendipity_commentform_comment.replaceSelection(
+                                        '_'+ middle + '_'
+                                        );
+            } else if (bb) {
                     if (pattern.text) {
                         middle = pattern.text;
                     } else {
@@ -374,60 +376,61 @@ function mark(event) {
                     $serendipity_commentform_comment.replaceSelection(
                                         '[u]'+ middle + '[/u]'
                                         );
-                }else if (textile) {
-                        if (pattern.text) {
-                            middle = pattern.text;
-                        } else {
-                            var opening = '+';
-                        }
-                        $serendipity_commentform_comment.replaceSelection(
-                                                '+'+ middle + '+'
-                                                );
-                                            }
+            } else if (textile) {
+                if (pattern.text) {
+                    middle = pattern.text;
+                } else {
+                    var opening = '+';
+                }
+                $serendipity_commentform_comment.replaceSelection(
+                                        '+'+ middle + '+'
+                                        );
+            }
             break;
+
         case 'markupLink':
             var middle = url;
             if (bb) {
-                    if (pattern.text) {
-                        middle = pattern.text;
-                    } else {
-                        var opening = '[url=http://]';
-                    }
-                    $serendipity_commentform_comment.replaceSelection(
-                                        '[url=http://]'+ middle + '[/url]'
+                if (pattern.text) {
+                    middle = pattern.text;
+                } else {
+                    var opening = '[url=http://]';
+                }
+                $serendipity_commentform_comment.replaceSelection(
+                                    '[url=http://]'+ middle + '[/url]'
+                                    );
+            } else if (textile) {
+                if (pattern.text) {
+                    middle = pattern.text;
+                } else {
+                    var opening = '"';
+                }
+                $serendipity_commentform_comment.replaceSelection(
+                                        '"'+ middle + '":http://'
                                         );
-            }else if (textile) {
-                        if (pattern.text) {
-                            middle = pattern.text;
-                        } else {
-                            var opening = '"';
-                        }
-                        $serendipity_commentform_comment.replaceSelection(
-                                                '"'+ middle + '":http://'
-                                                );
-                                                '['+ pattern.text + '](http://)'
-                }else if (markdown) {
-                            if (pattern.text) {
-                                middle = pattern.text;
-                            } else {
-                                var opening = '[';
-                            }
-                            $serendipity_commentform_comment.replaceSelection(
-                                                    '['+ middle + '](http://)'
-                                                    );
-                    } else if (liquid) {
-                            if (pattern.text) {
-                                middle = pattern.text;
-                            } else {
-                                var opening = '[http:// ';
-                            }
-                            $serendipity_commentform_comment.replaceSelection(
-                                                    '[http:// '+ middle + ']'
-                                                    );
-                    }
+                                        '['+ pattern.text + '](http://)'
+            } else if (markdown) {
+                if (pattern.text) {
+                    middle = pattern.text;
+                } else {
+                    var opening = '[';
+                }
+                $serendipity_commentform_comment.replaceSelection(
+                                        '['+ middle + '](http://)'
+                                        );
+            } else if (liquid) {
+                if (pattern.text) {
+                    middle = pattern.text;
+                } else {
+                    var opening = '[http:// ';
+                }
+                $serendipity_commentform_comment.replaceSelection(
+                                        '[http:// '+ middle + ']'
+                                        );
+            }
             break;
     }
-    //format text instant after click 
+    //format text instant after click
     $serendipity_commentform_comment.trigger('keyup');
 
     $serendipity_commentform_comment.focus();
@@ -435,7 +438,7 @@ function mark(event) {
         input.selectionStart = cursorPos + opening.length;
         input.selectionEnd = cursorPos + opening.length + middle.length;
     }
-    
+
     $serendipity_commentform_comment.attr('scrollTop', scrollPos);
 }
 
@@ -449,7 +452,7 @@ function s9y2html (text) {
                         "<u>$1</u>",
                         "<sup>$1</sup>",
                         "<sub>$1</sub>",
-                        "<strong>$1</strong>");	        
+                        "<strong>$1</strong>");
     for(i = 0; i < search.length; i++) {
         text = text.replace(search[i],replace[i]);
     }
@@ -464,7 +467,7 @@ function liquid2html (text) {
         replace = new Array(
                         "<strong>$1</strong>",
                         "<em>$1</em>",
-                        "<a href=\"$1\">$2</a>");	        
+                        "<a href=\"$1\">$2</a>");
         for(i = 0; i < search.length; i++) {
             text = text.replace(search[i],replace[i]);
         }
@@ -484,7 +487,7 @@ function bb2html (text) {
                        /\[u\](.*?)\[\/u\]/g,
                        /\[center\](.*?)\[\/center\]/g,
                        /\[strike\](.*?)\[\/strike\]/g);
-                       
+
                        replace = new Array(
                         "<img src=\"$1\" alt=\"An image\">",
                         "<a href=\"$1\" target=\"blank\">$2</a>",
@@ -497,14 +500,12 @@ function bb2html (text) {
                         "<span style=\"text-decoration:underline\">$1</span>",
                         "<div style=\"text-align:center\">$1</div>",
                         "<span style=\"text-decoration:line-through\">$1</span>");
-                       
-                                                                              
 
     for(i = 0; i < search.length; i++) {
         text = text.replace(search[i],replace[i]);
     }
     return text
-        }
+}
 
 function textile2html(s) {
     var r = s;
@@ -512,7 +513,7 @@ function textile2html(s) {
     qtags = [['\\*', 'strong'],
              ['\\?\\?', 'cite'],
              ['\\+', 'ins'],  //fixed
-             ['~', 'sub'],   
+             ['~', 'sub'],
              ['\\^', 'sup'], // me
              ['@', 'code']];
     for (var i=0;i<qtags.length;i++) {
@@ -523,8 +524,8 @@ function textile2html(s) {
     // underscores count as part of a word, so do them separately
     re = new RegExp('\\b_(.+?)_\\b','g');
     r = r.replace(re,'<em>$1</em>');
-	
-	//jeff: so do dashes
+
+    //jeff: so do dashes
     re = new RegExp('[\s\n]-(.+?)-[\s\n]','g');
     r = r.replace(re,'<del>$1</del>');
 
@@ -539,9 +540,9 @@ function textile2html(s) {
     r = r.replace(re,'<img src="$1" alt="$2">');
     re = new RegExp('!\\b(.+?)\\b!','g');
     r = r.replace(re,'<img src="$1">');
-    
+
     // block level formatting
-	
+
     // Jeff's hack to show single line breaks as they should.
     // insert breaks - but you get some....stupid ones
     re = new RegExp('(.*)\n([^#\*\n].*)','g');
@@ -549,33 +550,33 @@ function textile2html(s) {
     // remove the stupid breaks.
     re = new RegExp('\n<br />','g');
     r = r.replace(re,'\n');
-	
+
     lines = r.split('\n');
     nr = '';
     for (var i=0;i<lines.length;i++) {
         line = lines[i].replace(/\s*$/,'');
         changed = 0;
-        if (line.search(/^\s*bq\.\s+/) != -1) { 
-			line = line.replace(/^\s*bq\.\s+/,'\t<blockquote>')+'</blockquote>'; 
-			changed = 1; 
-		}
-		
-		// jeff adds h#.
-        if (line.search(/^\s*h[1|2|3|4|5|6]\.\s+/) != -1) { 
-	    	re = new RegExp('h([1|2|3|4|5|6])\.(.+)','g');
-	    	line = line.replace(re,'<h$1>$2</h$1>');
-			changed = 1; 
-		}
-		
-		if (line.search(/^\s*\*\s+/) != -1) { line = line.replace(/^\s*\*\s+/,'\t<liu>') + '</liu>'; changed = 1; } // * for bullet list; make up an liu tag to be fixed later
+        if (line.search(/^\s*bq\.\s+/) != -1) {
+            line = line.replace(/^\s*bq\.\s+/,'\t<blockquote>')+'</blockquote>';
+            changed = 1;
+        }
+
+        // jeff adds h#.
+        if (line.search(/^\s*h[1|2|3|4|5|6]\.\s+/) != -1) {
+            re = new RegExp('h([1|2|3|4|5|6])\.(.+)','g');
+            line = line.replace(re,'<h$1>$2</h$1>');
+            changed = 1;
+        }
+
+        if (line.search(/^\s*\*\s+/) != -1) { line = line.replace(/^\s*\*\s+/,'\t<liu>') + '</liu>'; changed = 1; } // * for bullet list; make up an liu tag to be fixed later
         if (line.search(/^\s*#\s+/) != -1) { line = line.replace(/^\s*#\s+/,'\t<lio>') + '</lio>'; changed = 1; } // # for numeric list; make up an lio tag to be fixed later
         if (!changed && (line.replace(/\s/g,'').length > 0)) line = '<p>'+line+'</p>';
         lines[i] = line + '\n';
     }
-	
+
     // Second pass to do lists
-    inlist = 0; 
-	listtype = '';
+    inlist = 0;
+    listtype = '';
     for (var i=0;i<lines.length;i++) {
         line = lines[i];
         if (inlist && listtype == 'ul' && !line.match(/^\t<liu/)) { line = '</ul>\n' + line; inlist = 0; }
@@ -586,7 +587,7 @@ function textile2html(s) {
     }
 
     r = lines.join('\n');
-	// jeff added : will correctly replace <li(o|u)> AND </li(o|u)>
+    // jeff added : will correctly replace <li(o|u)> AND </li(o|u)>
     r = r.replace(/li[o|u]>/g,'li>');
 
     return r;
@@ -625,7 +626,7 @@ Showdown.converter=function(){
                 return m3+m4;
             }else{
                 if(m4){
-                    _2[m1]=m4.replace(/"/g,"&quot;"); 
+                    _2[m1]=m4.replace(/"/g,"&quot;");
                 }
             }
             return "";
@@ -688,7 +689,7 @@ return _2a;
 };
 var _27=function(_2f){
     _2f=_2f.replace(/(\[((?:\[[^\]]*\]|[^\[\]])*)\][ ]?(?:\n[ ]*)?\[(.*?)\])()()()()/g,_30);
-    _2f=_2f.replace(/(\[((?:\[[^\]]*\]|[^\[\]])*)\]\([ \t]*()<?(.*?)>?[ \t]*((['"])(.*?)\6[ \t]*)?\))/g,_30); 
+    _2f=_2f.replace(/(\[((?:\[[^\]]*\]|[^\[\]])*)\]\([ \t]*()<?(.*?)>?[ \t]*((['"])(.*?)\6[ \t]*)?\))/g,_30);
     _2f=_2f.replace(/(\[([^\[\]]+)\])()()()()()/g,_30);
     return _2f;
 };
@@ -758,9 +759,9 @@ var _40=function(_41,m1,m2,m3,m4,m5,m6,m7){
         }
     }
     _4a=_4a.replace(/"/g,"&quot;");
-									      url=_2e(url,"*_");
-									      var _4e="<img src=\""+url+"\" alt=\""+_4a+"\"";
-									      _4d=_4d.replace(/"/g,"&quot;");
+    url=_2e(url,"*_");
+    var _4e="<img src=\""+url+"\" alt=\""+_4a+"\"";
+    _4d=_4d.replace(/"/g,"&quot;");
     _4d=_2e(_4d,"*_");
     _4e+=" title=\""+_4d+"\"";
     _4e+=" />";
@@ -928,7 +929,7 @@ var _25=function(_93){
     return _93;
 };
 var _28=function(_95){
-    _95=_95.replace(/<((https?|ftp|dict):[^'">\s]+)>/gi,"<a href=\"$1\">$1</a>"); 
+    _95=_95.replace(/<((https?|ftp|dict):[^'">\s]+)>/gi,"<a href=\"$1\">$1</a>");
     _95=_95.replace(/<(?:mailto:)?([-.\w]+\@[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+)>/gi,function(_96,m1){
             return _98(_a(m1));
         });
@@ -953,14 +954,14 @@ var _98=function(_99){
                 ch=_9d[Math.floor(Math.random()*2)](ch);
             }else{
                 if(ch!=":"){
-					var r=Math.random();
-					ch=(r>0.9?_9d[2](ch):r>0.45?_9d[1](ch):_9d[0](ch));
+                    var r=Math.random();
+                    ch=(r>0.9?_9d[2](ch):r>0.45?_9d[1](ch):_9d[0](ch));
                 }
             }
             return ch;
         });
     _99="<a href=\""+_99+"\">"+_99+"</a>";
-    _99=_99.replace(/">.+:/g,"\">"); 
+    _99=_99.replace(/">.+:/g,"\">");
     return _99;
 };
 var _a=function(_a3){

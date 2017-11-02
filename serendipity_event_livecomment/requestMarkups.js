@@ -1,5 +1,5 @@
 /*
-*Check markups activated in the comments 
+*Check markups activated in the comments
 */
 
 function requestMarkups() {

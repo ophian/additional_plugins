@@ -32,7 +32,7 @@ function addButtons() {
         $('#markupButtons').html('<img id="markupBold" class="markupIcon" src="/plugins/serendipity_event_livecomment/img/bold.png" />');
         $('#markupButtons').append('<img id="markupItalic" class="markupIcon" src="/plugins/serendipity_event_livecomment/img/italic.png" />');
         $('#markupButtons').append('<img id="markupUnderline" class="markupIcon" src="/plugins/serendipity_event_livecomment/img/underline.png" />');
-        
+
     }
     if (markdown) {
         $('#markupButtons').html('<img id="markupBold" class="markupIcon" src="/plugins/serendipity_event_livecomment/img/bold.png" />');
@@ -51,7 +51,7 @@ function addButtons() {
             break;
         }
 }
- 
+
 function mark(event) {
     var scrollPos = $('#serendipity_commentform_comment').attr('scrollTop');
     if ($('#serendipity_commentform_comment').getSelection().text) {
@@ -108,9 +108,9 @@ function mark(event) {
                 break;
             }
     }
-    //format text instant after click 
+    //format text instant after click
     $('#serendipity_commentform_comment').trigger('keyup');
-    
+
     $('#serendipity_commentform_comment').focus();
     $('#serendipity_commentform_comment').attr('scrollTop', scrollPos);
 }

@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -9,7 +9,7 @@
 @define('PLUGIN_EVENT_LIVECOMMENT_NAME', 'Enhanced Comment Area');
 @define('PLUGIN_EVENT_LIVECOMMENT_DESC', 'Uses JavaScript to show a live preview and markup-buttons');
 @define('PLUGIN_EVENT_LIVECOMMENT_VARIANT', 'Choose method for display.');
-@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_DESC', 'The jQuery method uses javascript functions to render the comments on screen, directly before the comment form. It is quick and gets the job done in most cases, but only supports a specific set of text formattings (BBCode, Textile, s9y, nl2br, markdown). 
+@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_DESC', 'The jQuery method uses javascript functions to render the comments on screen, directly before the comment form. It is quick and gets the job done in most cases, but only supports a specific set of text formattings (BBCode, Textile, s9y, nl2br, markdown).
 The old legacy method uses real AJAX calls to exactly format the comment with all possible markups (Wiki, Emoticons, etc) but is more laggy and inserts the comment preview at the exact place where it will later be shown.
 NOTE: Your template needs to support the usual CSS IDs and Classes to work properly (#serendipity_replyform_*, #serendipity_commentForm etc. from commentform.tpl).');
 @define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_JQUERY', 'jQuery (fixed position, faster and nicer)');
@@ -38,3 +38,4 @@ NOTE: Your template needs to support the usual CSS IDs and Classes to work prope
 @define('PLUGIN_EVENT_LIVECOMMENT_INLINE_DESC', 'Adds the JavaScript-Variables directly to the HTML-Output, improving performance.');
 @define('PLUGIN_EVENT_LIVECOMMENT_PATH', 'Plugin Path');
 @define('PLUGIN_EVENT_LIVECOMMENT_PATH_DESC', 'If a path is entered he is no longer determined dynamically, improving performance considerable. Example: http://www.example.com/plugins/serendipity_event_livecomment/ (note the / at the end).');
+

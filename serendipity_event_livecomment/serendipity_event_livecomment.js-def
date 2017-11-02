@@ -92,20 +92,20 @@ function liveGetSource() {
         liveCommentWarn = true;
         return false;
     }
-    
+
     return sourceel;
 }
 
 function liveCommentKeyPress(event) {
     sourceel = liveGetSource();
-    if (!sourceel) return false;    
+    if (!sourceel) return false;
 
     fields = sourceel.cloneNode(true);
     sourceel.id = 'serendipityCommentFormOld';
 
     store_text    = document.getElementById('serendipity_commentform_comment').value;
     store_replyTo = document.getElementById('serendipity_replyTo').value;
-    
+
     liveAttach(fields, 'click', liveCommentPreview);
     iNode  = document.getElementById('serendipity_replyform_' + rid);
     iNode.parentNode.appendChild(fields);
@@ -158,20 +158,20 @@ function liveCommentProcessReqChange() {
         }
 
         var  res = document.getElementById("serendipity_replyform_" + rid);
-        
+
         if (!res) {
             sourceel = document.getElementById('serendipityCommentForm');
             if (!sourceel) {
                 sourceel = document.getElementById('serendipity_comment_CommentForm');
             }
             if (!sourceel) return false;
-            
+
             oldFeed = document.getElementById('serendipityPreviewFeedback');
             if (oldFeed) {
                 poldFeed = oldFeed.parentNode;
                 poldFeed.removeChild(oldFeed);
             }
-        
+
             res = sourceel.cloneNode(true);
             res.id = 'serendipityPreviewFeedback';
             res.innerHTML = '';

@@ -8,7 +8,7 @@
 @define('PLUGIN_EVENT_LIVECOMMENT_NAME', 'Vylepšené políčko komentářů');
 @define('PLUGIN_EVENT_LIVECOMMENT_DESC', 'Používá JavaScript k ukázání náhledu komentáře a značkovací tlačítka');
 @define('PLUGIN_EVENT_LIVECOMMENT_VARIANT', 'Zvolte zobrazovací metodu.');
-@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_DESC', 'Metoda jQuery používá jvascriptové funkce pro vykreslení komentáře na obrazovku, a to před formulářem pro poslání komentáře. Je rychlá a ve většině případů odvede svoji práci dobře, ale podporuje pouze některé formtovací pluginy (BBCode, Textile, s9y, nl2br, markdown). 
+@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_DESC', 'Metoda jQuery používá jvascriptové funkce pro vykreslení komentáře na obrazovku, a to před formulářem pro poslání komentáře. Je rychlá a ve většině případů odvede svoji práci dobře, ale podporuje pouze některé formtovací pluginy (BBCode, Textile, s9y, nl2br, markdown).
 Stará metoda používá skutečná AJAXové volání pro naformátování náhledu komentáře s použitím všech dostupných značkovacích pluginů (Wiki, Emoticons apod.). Tato metoda je náročnější a vkládá náhled na přesné místo, kde bude komentář později zobrazen.
 POZOR: Šablona vzhledu, kterou používáte, musí používat obvyklá ID a třídy v CSS, aby fungovala správně (#serendipity_replyform_*, #serendipity_commentForm apod. v šabloně commentform.tpl).');
 @define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_JQUERY', 'jQuery (pevná poloha, rychlejší a hezčí)');
@@ -37,3 +37,4 @@ POZOR: Šablona vzhledu, kterou používáte, musí používat obvyklá ID a tř
 @define('PLUGIN_EVENT_LIVECOMMENT_INLINE_DESC', 'Přidává proměnné JavaScriptu přímo do HTML výstupu - zlepšuje to výkon blogu');
 @define('PLUGIN_EVENT_LIVECOMMENT_PATH', 'Cesta k pluginu');
 @define('PLUGIN_EVENT_LIVECOMMENT_PATH_DESC', 'Pokud je zadána HTTP cesta k pluginu, pak není určována dynamicky, což má významný vliv na zlepšení výkonu pluginu. Příklad: http://www.priklad.cz/plugins/serendipity_event_livecomment/ (na konci musí být lomítko /).');
+

@@ -1,3 +1,11 @@
+2.5.6:
+------
+ * Requirement and cleanup
+
+2.5.5:
+------
+ * Compat fixes
+
 2.5.4:
     * Made jQuery-Scripts compatible to other frameworks
     * Don't link to javascript when not on a singly entry

@@ -8,7 +8,7 @@
 @define('PLUGIN_EVENT_LIVECOMMENT_NAME', 'Vylep¹ené políèko komentáøù');
 @define('PLUGIN_EVENT_LIVECOMMENT_DESC', 'Pou¾ívá JavaScript k ukázání náhledu komentáøe a znaèkovací tlaèítka');
 @define('PLUGIN_EVENT_LIVECOMMENT_VARIANT', 'Zvolte zobrazovací metodu.');
-@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_DESC', 'Metoda jQuery pou¾ívá jvascriptové funkce pro vykreslení komentáøe na obrazovku, a to pøed formuláøem pro poslání komentáøe. Je rychlá a ve vìt¹inì pøípadù odvede svoji práci dobøe, ale podporuje pouze nìkteré formtovací pluginy (BBCode, Textile, s9y, nl2br, markdown). 
+@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_DESC', 'Metoda jQuery pou¾ívá jvascriptové funkce pro vykreslení komentáøe na obrazovku, a to pøed formuláøem pro poslání komentáøe. Je rychlá a ve vìt¹inì pøípadù odvede svoji práci dobøe, ale podporuje pouze nìkteré formtovací pluginy (BBCode, Textile, s9y, nl2br, markdown).
 Stará metoda pou¾ívá skuteèná AJAXové volání pro naformátování náhledu komentáøe s pou¾itím v¹ech dostupných znaèkovacích pluginù (Wiki, Emoticons apod.). Tato metoda je nároènìj¹í a vkládá náhled na pøesné místo, kde bude komentáø pozdìji zobrazen.
 POZOR: ©ablona vzhledu, kterou pou¾íváte, musí pou¾ívat obvyklá ID a tøídy v CSS, aby fungovala správnì (#serendipity_replyform_*, #serendipity_commentForm apod. v ¹ablonì commentform.tpl).');
 @define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_JQUERY', 'jQuery (pevná poloha, rychlej¹í a hezèí)');
@@ -37,3 +37,4 @@ POZOR: ©ablona vzhledu, kterou pou¾íváte, musí pou¾ívat obvyklá ID a tøídy v CSS
 @define('PLUGIN_EVENT_LIVECOMMENT_INLINE_DESC', 'Pøidává promìnné JavaScriptu pøímo do HTML výstupu - zlep¹uje to výkon blogu');
 @define('PLUGIN_EVENT_LIVECOMMENT_PATH', 'Cesta k pluginu');
 @define('PLUGIN_EVENT_LIVECOMMENT_PATH_DESC', 'Pokud je zadána HTTP cesta k pluginu, pak není urèována dynamicky, co¾ má významný vliv na zlep¹ení výkonu pluginu. Pøíklad: http://www.priklad.cz/plugins/serendipity_event_livecomment/ (na konci musí být lomítko /).');
+

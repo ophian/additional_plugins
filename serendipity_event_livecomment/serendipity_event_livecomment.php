@@ -1,17 +1,10 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_livecomment extends serendipity_event
 {
@@ -26,15 +19,15 @@ class serendipity_event_livecomment extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda, Garvin Hicking');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.0',
+            'serendipity' => '1.6',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '2.5.5');
+        $propbag->add('version',       '2.5.6');
         $propbag->add('event_hooks',   array(
-        	'frontend_footer'               => true,
-        	'external_plugin'               => true,
-        	'fetchcomments'                 => true,
-        	'genpage'                       => true
+            'frontend_footer'               => true,
+            'external_plugin'               => true,
+            'fetchcomments'                 => true,
+            'genpage'                       => true
         ));
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $propbag->add('configuration', array('variant',
@@ -46,99 +39,101 @@ class serendipity_event_livecomment extends serendipity_event
                                              'button_animation',
                                              'button_animation_speed',
                                              'timeout',
-                                             'inline'
-                                             )
+                                             'inline')
                                         );
         if (!$serendipity['capabilities']['jquery']) {
-	        $this->dependencies = array('serendipity_event_jquery' => 'remove');
-		}
+            $this->dependencies = array('serendipity_event_jquery' => 'remove');
+        }
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch($name) {
-	        case 'variant':
-	            $propbag->add('type', 'select');
-	            $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_VARIANT);
-	            $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_VARIANT_DESC);
+            case 'variant':
+                $propbag->add('type', 'select');
+                $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_VARIANT);
+                $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_VARIANT_DESC);
                 $propbag->add('select_values', array('jquery' => PLUGIN_EVENT_LIVECOMMENT_VARIANT_JQUERY, 'legacy' => PLUGIN_EVENT_LIVECOMMENT_VARIANT_LEGACY, 'none' => PLUGIN_EVENT_LIVECOMMENT_VARIANT_NONE));
-	            $propbag->add('default', 'jquery');
-	            return true;
-	            break;
+                $propbag->add('default', 'jquery');
+                break;
+
             case 'buttons':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_BUTTON);
                 $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_BUTTON_DESC);
                 $propbag->add('default', true);
-                return true;
-	            break;
+                break;
+
             case 'elastic':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_ELASTIC);
                 $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_ELASTIC_DESC);
                 $propbag->add('default', false);
-                return true;
-	            break;
+                break;
+
             case 'path':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_PATH);
                 $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_PATH_DESC);
                 $propbag->add('default', $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_livecomment/');
-                return true;
                 break;
+
             case 'preview_animation':
                 $propbag->add('type', 'select');
-	            $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION);
-	            $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION_DESC);
+                $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION);
+                $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION_DESC);
                 $propbag->add('select_values', array('show' => 'show', 'fadeIn' => 'fadeIn', 'slideDown' => ' slideDown'));
-	            $propbag->add('default', 'fadeIn');
-	            return true;
-	            break;
+                $propbag->add('default', 'fadeIn');
+                break;
+
             case 'preview_animation_speed':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION_SPEED);
                 $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION_SPEED_DESC);
                 $propbag->add('default', 'slow');
-                return true;
                 break;
+
             case 'button_animation':
                 $propbag->add('type', 'select');
-	            $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION);
-	            $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION_DESC);
+                $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION);
+                $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION_DESC);
                 $propbag->add('select_values', array('show' => 'show', 'fadeIn' => 'fadeIn', 'slideDown' => ' slideDown'));
-	            $propbag->add('default', 'slideDown');
-	            return true;
-	            break;
+                $propbag->add('default', 'slideDown');
+                break;
+
             case 'button_animation_speed':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION_SPEED);
                 $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION_SPEED_DESC);
                 $propbag->add('default', 'slow');
-                return true;
                 break;
+
             case 'timeout':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_TIMEOUT);
                 $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_TIMEOUT_DESC);
                 $propbag->add('default', '');
-                return true;
                 break;
+
             case 'inline':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_LIVECOMMENT_INLINE);
                 $propbag->add('description', PLUGIN_EVENT_LIVECOMMENT_INLINE_DESC);
                 $propbag->add('default', false);
-                return true;
-	            break;
+                break;
         }
+        return true;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         static $variant = null;
 
@@ -182,7 +177,7 @@ class serendipity_event_livecomment extends serendipity_event
                 $path_defined = false;
                 $imgpath = $serendipity['baseURL'] . 'index.php?/plugin/';
             }
-            
+
             switch($event) {
                 case 'external_plugin':
                     switch($eventData) {
@@ -190,7 +185,7 @@ class serendipity_event_livecomment extends serendipity_event
                             header('Content-Type: text/javascript');
                             echo file_get_contents(dirname(__FILE__). '/serendipity_event_livecomment.js');
                             break;
-                        case 'livecomment':    
+                        case 'livecomment':
                             $data = array('comment' => $_REQUEST['data']);
                             serendipity_plugin_api::hook_event('frontend_display', $data);
                             echo $data['comment'];
@@ -200,29 +195,29 @@ class serendipity_event_livecomment extends serendipity_event
                             echo file_get_contents(dirname(__FILE__). '/serendipity_event_reallivecomment.js');
                             break;
                         case 'reallivecomment':
-                            $markups =& $this->get_markups();    
-                            $data = array($this->check_markup($markups, 'serendipity_event_s9ymarkup', 's9ymarkup'),
-                                      $this->check_markup($markups, 'serendipity_event_nl2br', 'nl2br'),
-                                      $this->check_markup($markups, 'serendipity_event_textile', 'textile'),
-                                      $this->check_markup($markups, 'serendipity_event_bbcode', 'bb'),
-                                      $this->check_markup($markups, 'serendipity_event_markdown', 'markdown'),
-                                      $this->check_markup($markups, 'serendipity_event_nl2p', 'nl2p'),
-                                      $this->check_markup($markups, 'serendipity_event_liquid', 'liquid'),
-                                      $this->output($preview_animation),
-                                      $this->output($preview_animation_speed),
-                                      $this->output($button_animation),
-                                      $this->output($button_animation_speed),
-                                      $this->output(PLUGIN_EVENT_LIVECOMMENT_BOLD),
-                                      $this->output(PLUGIN_EVENT_LIVECOMMENT_ITALIC),
-                                      $this->output(PLUGIN_EVENT_LIVECOMMENT_UNDERLINE),
-                                      $this->output(PLUGIN_EVENT_LIVECOMMENT_URL),
-                                      $this->output($variant == 'jquery'),
-                                      $this->output($buttons),
-                                      $this->output($elastic),
-                                      $this->output($imgpath),
-                                      //has to be last element:
-                                      $this->get_Title()
-                                      );
+                            $markups =& $this->get_markups();
+                            $data = array(
+                                $this->check_markup($markups, 'serendipity_event_s9ymarkup', 's9ymarkup'),
+                                $this->check_markup($markups, 'serendipity_event_nl2br', 'nl2br'),
+                                $this->check_markup($markups, 'serendipity_event_textile', 'textile'),
+                                $this->check_markup($markups, 'serendipity_event_bbcode', 'bb'),
+                                $this->check_markup($markups, 'serendipity_event_markdown', 'markdown'),
+                                $this->check_markup($markups, 'serendipity_event_nl2p', 'nl2p'),
+                                $this->check_markup($markups, 'serendipity_event_liquid', 'liquid'),
+                                $this->output($preview_animation),
+                                $this->output($preview_animation_speed),
+                                $this->output($button_animation),
+                                $this->output($button_animation_speed),
+                                $this->output(PLUGIN_EVENT_LIVECOMMENT_BOLD),
+                                $this->output(PLUGIN_EVENT_LIVECOMMENT_ITALIC),
+                                $this->output(PLUGIN_EVENT_LIVECOMMENT_UNDERLINE),
+                                $this->output(PLUGIN_EVENT_LIVECOMMENT_URL),
+                                $this->output($variant == 'jquery'),
+                                $this->output($buttons),
+                                $this->output($elastic),
+                                $this->output($imgpath),
+                                //has to be last element:
+                                $this->get_Title());
                             break;
                         case 'commentMarkup.listen.js':
                             header('Content-Type: text/javascript');
@@ -253,40 +248,37 @@ class serendipity_event_livecomment extends serendipity_event
                             echo file_get_contents(dirname(__FILE__). '/img/world.png');
                             break;
                     }
-                    return true;
                     break;
 
                 case 'genpage':
                     if ($variant == 'legacy') {
                         $serendipity['plugindata']['smartyvars']['comment_onchange'] = 'liveCommentKeyPress(\'js\'); ';
                     }
-            	  	return true;
                     break;
 
-                case 'fetchcomments':                   
+                case 'fetchcomments':
                     if ($variant == 'legacy') {
                         $serendipity['plugindata']['onchange'] = 'javascript:liveCommentKeyPress()';
                     }
-            	  	return true;
                     break;
 
-            	case 'frontend_footer':
-            	    if ($eventData['view'] === 'entry' ) {
+                case 'frontend_footer':
+                    if ($eventData['view'] === 'entry' ) {
                         if ($variant == 'jquery' || $buttons || $elastic){
                             //lay basic for ajax-calls
                             if ($path_defined) {
                                 echo '<script type="text/javascript" src="' . $path . 'serendipity_event_reallivecomment.js"></script>
     <script type="text/javascript">
-    var lcbase = "' . $serendipity['baseURL'] .'index.php?/plugin/reallivecomment";
+        var lcbase = "' . $serendipity['baseURL'] .'index.php?/plugin/reallivecomment";
     </script>' . "\n";
                             } else {
                                 echo '<script type="text/javascript" src="' . $serendipity['baseURL'] . 'index.php?/plugin/reallivecomment.js"></script>
     <script type="text/javascript">
-    var lcbase = "' . $serendipity['baseURL'] .'index.php?/plugin/reallivecomment";
+        var lcbase = "' . $serendipity['baseURL'] .'index.php?/plugin/reallivecomment";
     </script>' . "\n";
                             }
                         }
-                        if($inline && ($variant == 'jquery' || $buttons || $elastic)) {
+                        if ($inline && ($variant == 'jquery' || $buttons || $elastic)) {
                             $markups =& $this->get_markups();
     ?><script type="text/javascript">
     var storage.s9ymarkup = <?php                       $this->check_markup($markups, 'serendipity_event_s9ymarkup', 's9ymarkup');
@@ -317,13 +309,13 @@ class serendipity_event_livecomment extends serendipity_event
                         if ($variant == 'legacy') {
                             if ($path_defined) {
                                 echo '<script type="text/javascript">
-    var lcbase = "'. $serendipity['baseURL'] .'index.php?/plugin/livecomment"; 
+    var lcbase = "'. $serendipity['baseURL'] .'index.php?/plugin/livecomment";
     var lcchar = LANG_CHARSET;
     </script>
     <script type="text/javascript" src="'. $path .'serendipity_event_livecomment.js"></script>'. "\n";
                             } else {
                                 echo '<script type="text/javascript">
-    var lcbase = "'. $serendipity['baseURL'] .'index.php?/plugin/livecomment"; 
+    var lcbase = "'. $serendipity['baseURL'] .'index.php?/plugin/livecomment";
     var lcchar = LANG_CHARSET;
     </script>
     <script type="text/javascript" src="' . $serendipity['baseURL'] . 'index.php?/plugin/livecomment.js"></script>'. "\n";
@@ -351,18 +343,19 @@ class serendipity_event_livecomment extends serendipity_event
                             }
                         }
                     }
-            	  	return true;
-            	  	break;
-                    
+                    break;
+
                 default:
                     return false;
             }
+            return true;
         } else {
             return false;
         }
     }
 
-    function get_markups() {
+    function get_markups()
+    {
         global $serendipity;
 
         $supported = serendipity_db_query("SELECT name, value
@@ -377,7 +370,7 @@ class serendipity_event_livecomment extends serendipity_event
         if (!is_array($supported)) {
             return array();
         }
-        
+
         $enabled_markups = array();
         foreach($supported AS $row) {
             preg_match('@^(.*):@', $row['name'], $m);
@@ -391,18 +384,23 @@ class serendipity_event_livecomment extends serendipity_event
         return $enabled_markups;
     }
 
-    function check_markup(&$dbset, $plugin_key = 'serendipity_event_s9ymarkup', $js_var = 's9ymarkup') {
+    function check_markup(&$dbset, $plugin_key = 'serendipity_event_s9ymarkup', $js_var = 's9ymarkup')
+    {
         global $serendipity;
 
         echo ' ' . (isset($dbset[$plugin_key]) ? (string)$dbset[$plugin_key] : (string)'false') . ';';
     }
 
-    function get_title() {
+    function get_title()
+    {
         echo PLUGIN_EVENT_LIVECOMMENT_PREVIEW_TITLE;
     }
-    function output($element) {
+
+    function output($element)
+    {
         echo $element . ';';
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab :
@@ -412,3 +410,5 @@ class serendipity_event_livecomment extends serendipity_event
  * indent-tabs-mode: nil
  * End:
 */
+
+?>
