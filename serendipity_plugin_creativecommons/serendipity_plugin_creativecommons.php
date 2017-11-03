@@ -49,13 +49,13 @@ class serendipity_plugin_creativecommons extends serendipity_plugin
 
     function generate_content(&$title)
     {
-      global $serendipity;
+        global $serendipity;
 
-      $title = $this->get_config('title', $this->title);
+        $title = $this->get_config('title', $this->title);
 
-      $eventData = array('display_dat' => '');
-      serendipity_plugin_api::hook_event('frontend_display:html_layout', $eventData);
-      echo $eventData['display_dat'];
+        $eventData = array('display_dat' => '');
+        serendipity_plugin_api::hook_event('frontend_display:html_layout', $eventData);
+        echo $eventData['display_dat'];
     }
 
 }
