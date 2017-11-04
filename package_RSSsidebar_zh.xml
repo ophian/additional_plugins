@@ -126,12 +126,12 @@
 <guid isPermaLink="false">serendipity_plugin_userprofiles</guid>
 </item>
 <item>
-<title>Birthdays of users: PLUGIN_USERPROFILES_BIRTHDAYSNAME_DESCRIPTION</title>
+<title>Birthdays of users: </title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_userprofiles</link>
 <category>Sidebar Plugins</category>
 <author>Falk Doering</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_userprofiles_birthdays&lt;br /&gt;Birthdays of users&lt;/b&gt;&lt;br /&gt;PLUGIN_USERPROFILES_BIRTHDAYSNAME_DESCRIPTION&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Mon, 19 Sep 2016 13:31:57 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_userprofiles_birthdays&lt;br /&gt;Birthdays of users&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 04 Nov 2017 16:51:39 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_userprofiles_birthdays</guid>
 </item>
 <item>
@@ -387,9 +387,9 @@
 <title>实时发言: 显示一个用于实时发言的文本框。此类发言并不一定准对某一具体文章。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_shoutbox</link>
 <category>Sidebar Plugins</category>
-<author>Matthias Lange</author>
+<author>Matthias Lange, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_shoutbox&lt;br /&gt;实时发言&lt;/b&gt;&lt;br /&gt;显示一个用于实时发言的文本框。此类发言并不一定准对某一具体文章。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Sat, 04 Nov 2017 17:54:04 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_shoutbox</guid>
 </item>
 <item>

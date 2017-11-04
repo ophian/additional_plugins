@@ -126,12 +126,12 @@
 <guid isPermaLink="false">serendipity_plugin_userprofiles</guid>
 </item>
 <item>
-<title>Birthdays of users: PLUGIN_USERPROFILES_BIRTHDAYSNAME_DESCRIPTION</title>
+<title>Birthdays of users: </title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_userprofiles</link>
 <category>Sidebar Plugins</category>
 <author>Falk Doering</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_userprofiles_birthdays&lt;br /&gt;Birthdays of users&lt;/b&gt;&lt;br /&gt;PLUGIN_USERPROFILES_BIRTHDAYSNAME_DESCRIPTION&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Mon, 19 Sep 2016 13:31:57 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_userprofiles_birthdays&lt;br /&gt;Birthdays of users&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sat, 04 Nov 2017 16:51:39 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_userprofiles_birthdays</guid>
 </item>
 <item>
@@ -387,9 +387,9 @@
 <title>소리 질러봐: 관련성이 없는 덧글을 달 수 있는 상자를 보여줌</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_shoutbox</link>
 <category>Sidebar Plugins</category>
-<author>Matthias Lange</author>
+<author>Matthias Lange, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_shoutbox&lt;br /&gt;소리 질러봐&lt;/b&gt;&lt;br /&gt;관련성이 없는 덧글을 달 수 있는 상자를 보여줌&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Sat, 04 Nov 2017 17:54:04 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_shoutbox</guid>
 </item>
 <item>
