@@ -182,6 +182,15 @@
 <guid isPermaLink="false">serendipity_plugin_coppermine</guid>
 </item>
 <item>
+<title>Creative Commons: V postranním panelu zobrazuje podrobnosti použité licence &quot;Creative Commons&quot; (Autorská práva)</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_creativecommons</link>
+<category>Sidebar Plugins</category>
+<author>Evan Nemerson, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_creativecommons&lt;br /&gt;Creative Commons&lt;/b&gt;&lt;br /&gt;V postranním panelu zobrazuje podrobnosti použité licence &quot;Creative Commons&quot; (Autorská práva)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 03 Nov 2017 12:13:12 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_creativecommons</guid>
+</item>
+<item>
 <title>Co právě dělám: Zobrazuje seznam toho, co právě posloucháte, hrajete nebo čtete.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_currently</link>
 <category>Sidebar Plugins</category>
@@ -362,15 +371,6 @@
 <guid isPermaLink="false">serendipity_plugin_quicklink</guid>
 </item>
 <item>
-<title>Rychlé hledání: Hledání záznamu</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_quicksearch</link>
-<category>Sidebar Plugins</category>
-<author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_quicksearch&lt;br /&gt;Rychlé hledání&lt;/b&gt;&lt;br /&gt;Hledání záznamu&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
-<guid isPermaLink="false">serendipity_plugin_quicksearch</guid>
-</item>
-<item>
 <title>Náhodný citát: Zobrazuje blok s náhodně vybraným citátem</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_randomquotes</link>
 <category>Sidebar Plugins</category>
@@ -423,6 +423,15 @@
 <content:encoded>&lt;b&gt;serendipity_plugin_socialbookmarks&lt;br /&gt;Sociální záložky&lt;/b&gt;&lt;br /&gt;Plugin zobrazuje záložky z webových záložkovcích služeb (jako del.icio.us, ma.gnolia, furl.net, linkroll nebo Mister Wong) pomocí jejich RSS kanálu.&lt;br/&gt;For: Serendipity 0.9alpha5</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_socialbookmarks</guid>
+</item>
+<item>
+<title>Výběr šablony: Zobrazuje rozbalovací políčko pro výběr šablony</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_templatedropdown</link>
+<category>Sidebar Plugins</category>
+<author>Evan Nemerson</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_templatedropdown&lt;br /&gt;Výběr šablony&lt;/b&gt;&lt;br /&gt;Zobrazuje rozbalovací políčko pro výběr šablony&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Tue, 27 Dec 2016 13:01:34 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_templatedropdown</guid>
 </item>
 <item>
 <title>Časová pásma: Zobrazuje čas až ze čtyř různých časových pásem</title>

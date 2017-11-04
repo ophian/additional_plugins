@@ -1546,6 +1546,90 @@
 </release>
 </package>
 <package version="1.0">
+<name>serendipity_event_creativecommons</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_creativecommons/ChangeLog</changelog>
+<license>GPL</license>
+<summary>Licencie Creative Commons</summary>
+<groups>FRONTEND_EXTERNAL_SERVICES</groups>
+<description>Výber a zobrazenie licencie Creative Commons (autorské práva) pro obsah Vášho webu.</description>
+<maintainers><maintainer><name>Evan Nemerson, Ian</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.7</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-11-03</date>
+  <filelist>
+    <dir name="serendipity_event_creativecommons">
+      <file>ChangeLog</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_cn.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_es.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>lang_pt_PT.inc.php</file>
+      <file>lang_sk.inc.php</file>
+      <file>lang_tn.inc.php</file>
+      <file>lang_zh.inc.php</file>
+      <file>serendipity_event_creativecommons.php</file>
+      <dir name="UTF-8">
+        <file>lang_cn.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_es.inc.php</file>
+        <file>lang_fr.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_ko.inc.php</file>
+        <file>lang_pl.inc.php</file>
+        <file>lang_pt_PT.inc.php</file>
+        <file>lang_sk.inc.php</file>
+        <file>lang_tn.inc.php</file>
+        <file>lang_zh.inc.php</file>
+      </dir>
+    </dir>
+  </filelist>
+  <serendipityFilelist>
+    <file>serendipity_event_creativecommons/ChangeLog</file>
+    <file>serendipity_event_creativecommons/documentation_cs.html</file>
+    <file>serendipity_event_creativecommons/documentation_cz.html</file>
+    <file>serendipity_event_creativecommons/lang_cn.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_cs.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_cz.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_de.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_en.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_es.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_fr.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_ja.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_ko.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_pl.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_pt_PT.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_sk.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_tn.inc.php</file>
+    <file>serendipity_event_creativecommons/lang_zh.inc.php</file>
+    <file>serendipity_event_creativecommons/serendipity_event_creativecommons.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_cn.inc.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_cs.inc.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_de.inc.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_es.inc.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_fr.inc.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_ja.inc.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_ko.inc.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_pl.inc.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_pt_PT.inc.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_sk.inc.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_tn.inc.php</file>
+    <file>serendipity_event_creativecommons/UTF-8/lang_zh.inc.php</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
 <name>serendipity_event_cronjob</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_cronjob/ChangeLog</changelog>
 <license>GPL</license>
@@ -4200,12 +4284,12 @@
 <license>GPL</license>
 <summary>Avatar Plugin</summary>
 <groups>IMAGES</groups>
-<description>Show avatars inside comments. Gravatars, Pavatars, Favatars, Twitter, Identica and MyBlogLog avatars are supported.</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
+<description>Show avatars inside comments. Gravatars, Pavatars, Favatars, Twitter and Identica avatars are supported.</description>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.59</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.66</version>
+  <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
+  <date>2017-11-03</date>
   <filelist>
     <dir name="serendipity_event_gravatar">
       <file>ChangeLog</file>
@@ -7773,6 +7857,35 @@
 </release>
 </package>
 <package version="1.0">
+<name>serendipity_event_responsiveimages</name>
+<license>GPL</license>
+<summary>Responsive Images</summary>
+<groups>MARKUP</groups>
+<description>Use HTML5 and the s9y backend to scale images to the visitors viewport width</description>
+<maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>0.3.2</version>
+  <requirements:s9yVersion>2.3.1</requirements:s9yVersion>
+  <date>2017-11-03</date>
+  <filelist>
+    <dir name="serendipity_event_responsiveimages">
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_event_responsiveimages.php</file>
+      <dir name="UTF-8">
+        <file>lang_de.inc.php</file>
+      </dir>
+    </dir>
+  </filelist>
+  <serendipityFilelist>
+    <file>serendipity_event_responsiveimages/lang_de.inc.php</file>
+    <file>serendipity_event_responsiveimages/lang_en.inc.php</file>
+    <file>serendipity_event_responsiveimages/serendipity_event_responsiveimages.php</file>
+    <file>serendipity_event_responsiveimages/UTF-8/lang_de.inc.php</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
 <name>serendipity_event_searchhighlight</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_searchhighlight/ChangeLog</changelog>
 <license>GPL</license>
@@ -8665,6 +8778,87 @@
 </release>
 </package>
 <package version="1.0">
+<name>serendipity_event_templatechooser</name>
+<license>GPL</license>
+<summary>Výber šablón</summary>
+<groups>BACKEND_TEMPLATES</groups>
+<description>Umožnuje návštevníkom zmeniť šablónu (= vzhľad) podľa vlastného výberu</description>
+<maintainers><maintainer><name>Evan Nemerson</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.7</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2016-05-01</date>
+  <filelist>
+    <dir name="serendipity_event_templatechooser">
+      <file>lang_bg.inc.php</file>
+      <file>lang_cn.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_es.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>lang_pt_PT.inc.php</file>
+      <file>lang_sk.inc.php</file>
+      <file>lang_tn.inc.php</file>
+      <file>lang_zh.inc.php</file>
+      <file>serendipity_event_templatechooser.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cn.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_es.inc.php</file>
+        <file>lang_fr.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_ko.inc.php</file>
+        <file>lang_pl.inc.php</file>
+        <file>lang_pt_PT.inc.php</file>
+        <file>lang_sk.inc.php</file>
+        <file>lang_tn.inc.php</file>
+        <file>lang_zh.inc.php</file>
+      </dir>
+    </dir>
+  </filelist>
+  <serendipityFilelist>
+    <file>serendipity_event_templatechooser/lang_bg.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_cn.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_cs.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_cz.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_de.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_en.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_es.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_fr.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_ja.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_ko.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_pl.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_pt_PT.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_sk.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_tn.inc.php</file>
+    <file>serendipity_event_templatechooser/lang_zh.inc.php</file>
+    <file>serendipity_event_templatechooser/serendipity_event_templatechooser.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_bg.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_cn.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_cs.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_de.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_es.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_fr.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_ja.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_ko.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_pl.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_pt_PT.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_sk.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_tn.inc.php</file>
+    <file>serendipity_event_templatechooser/UTF-8/lang_zh.inc.php</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
 <name>serendipity_event_template_editor</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_template_editor/ChangeLog</changelog>
 <license>GPL</license>
@@ -8763,6 +8957,129 @@
     <file>serendipity_event_template_editor/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_template_editor/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_template_editor/UTF-8/lang_de.inc.php</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_event_textile</name>
+<license>GPL</license>
+<summary>Markup: Textile</summary>
+<groups>MARKUP</groups>
+<description>Parse all output through the Textile converter</description>
+<maintainers><maintainer><name>Serendipity Team, Lars Strojny, Ian</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.8.4</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2017-11-03</date>
+  <filelist>
+    <dir name="serendipity_event_textile">
+      <file>classTextile.php</file>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cn.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_es.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_ja.inc.php</file>
+      <file>lang_ko.inc.php</file>
+      <file>lang_pl.inc.php</file>
+      <file>lang_pt_PT.inc.php</file>
+      <file>lang_tn.inc.php</file>
+      <file>lang_zh.inc.php</file>
+      <dir name="lib1">
+        <file>textile.php</file>
+      </dir>
+      <dir name="lib2">
+        <file>CHANGELOG.textile</file>
+        <file>classTextile.php</file>
+        <file>composer.json</file>
+        <file>LICENSE</file>
+        <file>README.textile</file>
+      </dir>
+      <dir name="lib3">
+        <file>CHANGELOG.textile</file>
+        <file>composer.json</file>
+        <file>CONTRIBUTING.textile</file>
+        <file>LICENSE</file>
+        <file>README.textile</file>
+        <dir name="src">
+          <dir name="Netcarver">
+            <dir name="Textile">
+              <file>DataBag.php</file>
+              <file>Parser.php</file>
+              <file>Tag.php</file>
+            </dir>
+          </dir>
+        </dir>
+      </dir>
+      <file>serendipity_event_textile.php</file>
+      <file>textile.php</file>
+      <file>textile_namespace.inc.php</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cn.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_es.inc.php</file>
+        <file>lang_fr.inc.php</file>
+        <file>lang_ja.inc.php</file>
+        <file>lang_ko.inc.php</file>
+        <file>lang_pl.inc.php</file>
+        <file>lang_pt_PT.inc.php</file>
+        <file>lang_tn.inc.php</file>
+        <file>lang_zh.inc.php</file>
+      </dir>
+    </dir>
+  </filelist>
+  <serendipityFilelist>
+    <file>serendipity_event_textile/classTextile.php</file>
+    <file>serendipity_event_textile/lang_bg.inc.php</file>
+    <file>serendipity_event_textile/lang_cn.inc.php</file>
+    <file>serendipity_event_textile/lang_cs.inc.php</file>
+    <file>serendipity_event_textile/lang_cz.inc.php</file>
+    <file>serendipity_event_textile/lang_de.inc.php</file>
+    <file>serendipity_event_textile/lang_en.inc.php</file>
+    <file>serendipity_event_textile/lang_es.inc.php</file>
+    <file>serendipity_event_textile/lang_fr.inc.php</file>
+    <file>serendipity_event_textile/lang_ja.inc.php</file>
+    <file>serendipity_event_textile/lang_ko.inc.php</file>
+    <file>serendipity_event_textile/lang_pl.inc.php</file>
+    <file>serendipity_event_textile/lang_pt_PT.inc.php</file>
+    <file>serendipity_event_textile/lang_tn.inc.php</file>
+    <file>serendipity_event_textile/lang_zh.inc.php</file>
+    <file>serendipity_event_textile/lib1/textile.php</file>
+    <file>serendipity_event_textile/lib2/CHANGELOG.textile</file>
+    <file>serendipity_event_textile/lib2/classTextile.php</file>
+    <file>serendipity_event_textile/lib2/composer.json</file>
+    <file>serendipity_event_textile/lib2/LICENSE</file>
+    <file>serendipity_event_textile/lib2/README.textile</file>
+    <file>serendipity_event_textile/lib3/CHANGELOG.textile</file>
+    <file>serendipity_event_textile/lib3/composer.json</file>
+    <file>serendipity_event_textile/lib3/CONTRIBUTING.textile</file>
+    <file>serendipity_event_textile/lib3/LICENSE</file>
+    <file>serendipity_event_textile/lib3/README.textile</file>
+    <file>serendipity_event_textile/lib3/src/Netcarver/Textile/DataBag.php</file>
+    <file>serendipity_event_textile/lib3/src/Netcarver/Textile/Parser.php</file>
+    <file>serendipity_event_textile/lib3/src/Netcarver/Textile/Tag.php</file>
+    <file>serendipity_event_textile/serendipity_event_textile.php</file>
+    <file>serendipity_event_textile/textile.php</file>
+    <file>serendipity_event_textile/textile_namespace.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_bg.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_cn.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_cs.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_de.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_es.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_fr.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_ja.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_ko.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_pl.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_pt_PT.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_tn.inc.php</file>
+    <file>serendipity_event_textile/UTF-8/lang_zh.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>

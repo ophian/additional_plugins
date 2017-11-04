@@ -216,6 +216,15 @@
 <guid isPermaLink="false">serendipity_event_cpgselector</guid>
 </item>
 <item>
+<title>Licence Creative Commons: Výběr a zobreazení licence Creative Commons (autorská práva) pro obsah Vašeho webu.</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_creativecommons</link>
+<category>Event Plugins</category>
+<author>Evan Nemerson, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_creativecommons&lt;br /&gt;Licence Creative Commons&lt;/b&gt;&lt;br /&gt;Výběr a zobreazení licence Creative Commons (autorská práva) pro obsah Vašeho webu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 03 Nov 2017 11:42:36 +0100</pubDate>
+<guid isPermaLink="false">serendipity_event_creativecommons</guid>
+</item>
+<item>
 <title>Plánovač úloh: Tento plugin periodicky vykonává pluginy, které poskytují/vyžadují opakované vykonávání. Podrobnosti v konfiguraci pluginu.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cronjob</link>
 <category>Event Plugins</category>
@@ -522,12 +531,12 @@
 <guid isPermaLink="false">serendipity_event_google_sitemap</guid>
 </item>
 <item>
-<title>Avatar Plugin: Zobrazuje avatary (ikona či obrázek přispěvatele) v komentářích. Podporovány jsou služby Gravatar, Pavatar, Favatar a MyBlogLog.</title>
+<title>Avatar Plugin: Zobrazuje avatary (ikona či obrázek přispěvatele) v komentářích. Podporovány jsou služby Gravatar, Pavatar a Favatar.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_gravatar</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Zobrazuje avatary (ikona či obrázek přispěvatele) v komentářích. Podporovány jsou služby Gravatar, Pavatar, Favatar a MyBlogLog.&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Garvin Hicking, Grischa Brockhaus, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Zobrazuje avatary (ikona či obrázek přispěvatele) v komentářích. Podporovány jsou služby Gravatar, Pavatar a Favatar.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
+<pubDate>Fri, 03 Nov 2017 11:55:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
@@ -927,6 +936,15 @@
 <guid isPermaLink="false">serendipity_event_relatedlinks</guid>
 </item>
 <item>
+<title>Responsive Images: Use HTML5 and the s9y backend to scale images to the visitors viewport width</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_responsiveimages</link>
+<category>Event Plugins</category>
+<author>Serendipity Team, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_responsiveimages&lt;br /&gt;Responsive Images&lt;/b&gt;&lt;br /&gt;Use HTML5 and the s9y backend to scale images to the visitors viewport width&lt;br/&gt;For: Serendipity 2.3.1</content:encoded>
+<pubDate>Fri, 03 Nov 2017 11:42:15 +0100</pubDate>
+<guid isPermaLink="false">serendipity_event_responsiveimages</guid>
+</item>
+<item>
 <title>Zvýraznění vyhledávaných řetězců: Zvýrazňuje řetězce hledané v odkazujícím vyhledávači.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_searchhighlight</link>
 <category>Event Plugins</category>
@@ -1053,6 +1071,15 @@
 <guid isPermaLink="false">serendipity_event_suggest</guid>
 </item>
 <item>
+<title>Výběr šablon: Umožňuje návštěvníkům Vašeho webu změnit šablonu (= vzhled) podle libosti</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_templatechooser</link>
+<category>Event Plugins</category>
+<author>Evan Nemerson</author>
+<content:encoded>&lt;b&gt;serendipity_event_templatechooser&lt;br /&gt;Výběr šablon&lt;/b&gt;&lt;br /&gt;Umožňuje návštěvníkům Vašeho webu změnit šablonu (= vzhled) podle libosti&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 01 May 2016 19:12:18 +0200</pubDate>
+<guid isPermaLink="false">serendipity_event_templatechooser</guid>
+</item>
+<item>
 <title>Editor stylů vzhledu: Upravujte soubory aktuálního stylu vzhledu/šablony přímo z adminstrační sekce.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_template_editor</link>
 <category>Event Plugins</category>
@@ -1060,6 +1087,15 @@
 <content:encoded>&lt;b&gt;serendipity_event_template_editor&lt;br /&gt;Editor stylů vzhledu&lt;/b&gt;&lt;br /&gt;Upravujte soubory aktuálního stylu vzhledu/šablony přímo z adminstrační sekce.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
 <pubDate>Thu, 02 Feb 2017 14:27:08 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_template_editor</guid>
+</item>
+<item>
+<title>Markup: Textile: Převádí text se značkami Textile do HTML</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_textile</link>
+<category>Event Plugins</category>
+<author>Serendipity Team, Lars Strojny, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;Markup: Textile&lt;/b&gt;&lt;br /&gt;Převádí text se značkami Textile do HTML&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 03 Nov 2017 11:41:47 +0100</pubDate>
+<guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
 <title>Vložené reklamy (TextLinkAds.com, vlastní): Vkládá reklamy do blogu.</title>

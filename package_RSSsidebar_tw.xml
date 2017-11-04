@@ -186,6 +186,15 @@
 <guid isPermaLink="false">serendipity_plugin_coppermine</guid>
 </item>
 <item>
+<title>Creative Commons: Display a creative commons notification in the sidebar.</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_creativecommons</link>
+<category>Sidebar Plugins</category>
+<author>Evan Nemerson, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_creativecommons&lt;br /&gt;Creative Commons&lt;/b&gt;&lt;br /&gt;Display a creative commons notification in the sidebar.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 03 Nov 2017 12:13:12 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_creativecommons</guid>
+</item>
+<item>
 <title>Currently...: Displays items you are currently listening, playing, or reading...</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_currently</link>
 <category>Sidebar Plugins</category>
@@ -366,15 +375,6 @@
 <guid isPermaLink="false">serendipity_plugin_quicklink</guid>
 </item>
 <item>
-<title>快速搜尋: 搜尋文章</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_quicksearch</link>
-<category>Sidebar Plugins</category>
-<author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_quicksearch&lt;br /&gt;快速搜尋&lt;/b&gt;&lt;br /&gt;搜尋文章&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
-<guid isPermaLink="false">serendipity_plugin_quicksearch</guid>
-</item>
-<item>
 <title>Random Quotes: Shows a block with a random quotation</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_randomquotes</link>
 <category>Sidebar Plugins</category>
@@ -427,6 +427,15 @@
 <content:encoded>&lt;b&gt;serendipity_plugin_socialbookmarks&lt;br /&gt;Social Bookmarks Plugin&lt;/b&gt;&lt;br /&gt;A plugin to display bookmarks from a social bookmark service (del.icio.us, ma.gnolia, furl.net, linkroll, Mister Wong) via an RSS feed.&lt;br/&gt;For: Serendipity 0.9alpha5</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_socialbookmarks</guid>
+</item>
+<item>
+<title>Theme dropdown: Show a box to change themes</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_templatedropdown</link>
+<category>Sidebar Plugins</category>
+<author>Evan Nemerson</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_templatedropdown&lt;br /&gt;Theme dropdown&lt;/b&gt;&lt;br /&gt;Show a box to change themes&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Tue, 27 Dec 2016 13:01:34 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_templatedropdown</guid>
 </item>
 <item>
 <title>Timezones: Shows the time of up to four timezones</title>

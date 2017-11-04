@@ -186,6 +186,15 @@
 <guid isPermaLink="false">serendipity_plugin_coppermine</guid>
 </item>
 <item>
+<title>クリエイティブコモンズ: サイドバーにクリエイティブコモンズを告示します。</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_creativecommons</link>
+<category>Sidebar Plugins</category>
+<author>Evan Nemerson, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_creativecommons&lt;br /&gt;クリエイティブコモンズ&lt;/b&gt;&lt;br /&gt;サイドバーにクリエイティブコモンズを告示します。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 03 Nov 2017 12:13:12 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_creativecommons</guid>
+</item>
+<item>
 <title>今してること...: 現在聞いているか、しているか、読んでいるものを表示します...</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_currently</link>
 <category>Sidebar Plugins</category>
@@ -366,15 +375,6 @@
 <guid isPermaLink="false">serendipity_plugin_quicklink</guid>
 </item>
 <item>
-<title>クイック サーチ: エントリーの検索</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_quicksearch</link>
-<category>Sidebar Plugins</category>
-<author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_quicksearch&lt;br /&gt;クイック サーチ&lt;/b&gt;&lt;br /&gt;エントリーの検索&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
-<guid isPermaLink="false">serendipity_plugin_quicksearch</guid>
-</item>
-<item>
 <title>Random Quotes: Shows a block with a random quotation</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_randomquotes</link>
 <category>Sidebar Plugins</category>
@@ -427,6 +427,15 @@
 <content:encoded>&lt;b&gt;serendipity_plugin_socialbookmarks&lt;br /&gt;Social Bookmarks Plugin&lt;/b&gt;&lt;br /&gt;A plugin to display bookmarks from a social bookmark service (del.icio.us, ma.gnolia, furl.net, linkroll, Mister Wong) via an RSS feed.&lt;br/&gt;For: Serendipity 0.9alpha5</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_socialbookmarks</guid>
+</item>
+<item>
+<title>テンプレートドロップダウン: テンプレート変更のボックスを表示します。</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_templatedropdown</link>
+<category>Sidebar Plugins</category>
+<author>Evan Nemerson</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_templatedropdown&lt;br /&gt;テンプレートドロップダウン&lt;/b&gt;&lt;br /&gt;テンプレート変更のボックスを表示します。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Tue, 27 Dec 2016 13:01:34 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_templatedropdown</guid>
 </item>
 <item>
 <title>Timezones: Shows the time of up to four timezones</title>

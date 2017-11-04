@@ -216,6 +216,15 @@
 <guid isPermaLink="false">serendipity_event_cpgselector</guid>
 </item>
 <item>
+<title>크리에이티브 커먼스 규약: 블로그에 작성한 글에 적용될 크리에이티브 커먼스 규약을 골라서 표시함</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_creativecommons</link>
+<category>Event Plugins</category>
+<author>Evan Nemerson, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_creativecommons&lt;br /&gt;크리에이티브 커먼스 규약&lt;/b&gt;&lt;br /&gt;블로그에 작성한 글에 적용될 크리에이티브 커먼스 규약을 골라서 표시함&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 03 Nov 2017 11:42:36 +0100</pubDate>
+<guid isPermaLink="false">serendipity_event_creativecommons</guid>
+</item>
+<item>
 <title>Cronjob scheduler: This plugin periodically executes plugins that provide/require periodic tasks. See the configuration of this plugin for details.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cronjob</link>
 <category>Event Plugins</category>
@@ -522,12 +531,12 @@
 <guid isPermaLink="false">serendipity_event_google_sitemap</guid>
 </item>
 <item>
-<title>Avatar Plugin: Show avatars inside comments. Gravatars, Pavatars, Favatars, Twitter, Identica and MyBlogLog avatars are supported.</title>
+<title>Avatar Plugin: Show avatars inside comments. Gravatars, Pavatars, Favatars, Twitter and Identica avatars are supported.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_gravatar</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Show avatars inside comments. Gravatars, Pavatars, Favatars, Twitter, Identica and MyBlogLog avatars are supported.&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Garvin Hicking, Grischa Brockhaus, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Show avatars inside comments. Gravatars, Pavatars, Favatars, Twitter and Identica avatars are supported.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
+<pubDate>Fri, 03 Nov 2017 11:55:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
@@ -927,6 +936,15 @@
 <guid isPermaLink="false">serendipity_event_relatedlinks</guid>
 </item>
 <item>
+<title>Responsive Images: Use HTML5 and the s9y backend to scale images to the visitors viewport width</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_responsiveimages</link>
+<category>Event Plugins</category>
+<author>Serendipity Team, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_responsiveimages&lt;br /&gt;Responsive Images&lt;/b&gt;&lt;br /&gt;Use HTML5 and the s9y backend to scale images to the visitors viewport width&lt;br/&gt;For: Serendipity 2.3.1</content:encoded>
+<pubDate>Fri, 03 Nov 2017 11:42:15 +0100</pubDate>
+<guid isPermaLink="false">serendipity_event_responsiveimages</guid>
+</item>
+<item>
 <title>검색 질의어를 강조 표시: 페이지를 검색하기 위해 검색엔진에 입력한 질의어를 강조해서 나타냄</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_searchhighlight</link>
 <category>Event Plugins</category>
@@ -1053,6 +1071,15 @@
 <guid isPermaLink="false">serendipity_event_suggest</guid>
 </item>
 <item>
+<title>템플릿 선택: 방문자가 즉석에서 템플릿을 바꿀 수 있도록 함</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_templatechooser</link>
+<category>Event Plugins</category>
+<author>Evan Nemerson</author>
+<content:encoded>&lt;b&gt;serendipity_event_templatechooser&lt;br /&gt;템플릿 선택&lt;/b&gt;&lt;br /&gt;방문자가 즉석에서 템플릿을 바꿀 수 있도록 함&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 01 May 2016 19:12:18 +0200</pubDate>
+<guid isPermaLink="false">serendipity_event_templatechooser</guid>
+</item>
+<item>
 <title>Template Editor: Edit the files of the currently used template directly form the adminarea.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_template_editor</link>
 <category>Event Plugins</category>
@@ -1060,6 +1087,15 @@
 <content:encoded>&lt;b&gt;serendipity_event_template_editor&lt;br /&gt;Template Editor&lt;/b&gt;&lt;br /&gt;Edit the files of the currently used template directly form the adminarea.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
 <pubDate>Thu, 02 Feb 2017 14:27:08 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_template_editor</guid>
+</item>
+<item>
+<title>마크업: 텍스타일: 텍스타일 변환기를 통해 모든 출력을 변환시킴</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_textile</link>
+<category>Event Plugins</category>
+<author>Serendipity Team, Lars Strojny, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;마크업: 텍스타일&lt;/b&gt;&lt;br /&gt;텍스타일 변환기를 통해 모든 출력을 변환시킴&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Fri, 03 Nov 2017 11:41:47 +0100</pubDate>
+<guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
 <title>Embed Ads (TextLinkAds.com, Custom): Embeds Ads into your page.</title>
