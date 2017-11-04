@@ -8,17 +8,16 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_userprofiles_birthdays extends serendipity_plugin
 {
-
     function introspect(&$propbag)
     {
         $propbag->add('name',        PLUGIN_USERPROFILES_BIRTHDAYSNAME);
-        $propbag->add('description', PLUGIN_USERPROFILES_BIRTHDAYSNAME_DESCRIPTION);
+        $propbag->add('description', '');
         $propbag->add('author',      'Falk Doering');
         $propbag->add('stackable',   false);
-        $propbag->add('version',     '0.4');
+        $propbag->add('version',     '0.5');
         $propbag->add('configuration', array('title', 'number'));
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -60,7 +59,6 @@ class serendipity_plugin_userprofiles_birthdays extends serendipity_plugin
 
     function date_diff_days($start_date, $end_date)
     {
-
         if (date('dm', $start_date) == date('dm', $end_date)) {
             return 0;
         }
