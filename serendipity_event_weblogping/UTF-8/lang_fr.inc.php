@@ -14,7 +14,7 @@
 @define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Envoyer une mise à jour pour les nouveaux billets aux services d\'indexation');
 @define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(remplace %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'Services ping additionnels');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Vous permet d\'ajouter des services additionnels; entrez les adresses cibles ici, séparez plusieurs adresses par des virgules (,). Les adresses doivent être au format "hôte.domaine/chemin". Si un "*" est ajouté au début de l\'hôte, les options XML-RPC étendues seront envoyées à l\hôte cible (seulement si celui-ci les gère).');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Vous permet d\'ajouter des services additionnels; entrez les adresses cibles ici, séparez plusieurs adresses par des virgules (,). Les adresses doivent être au format "hôte.domaine/chemin". Si un "*" est ajouté au début de l\'hôte, les options XML-RPC étendues seront envoyées à l\hôte cible (seulement si celui-ci les gère). You have to submit this form several times, until the new entries are placed into the upper list.');
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Le ping a échoué. (Raison: %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'Ping réussi.');
 

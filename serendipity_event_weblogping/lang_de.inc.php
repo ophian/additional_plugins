@@ -11,7 +11,7 @@
 @define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Benachrichtigt diverse Internetseiten, das ein neuer Eintrag erstellt wurde.');
 @define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(ersetzt %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'Selbstdefinierte Ping-Services');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Mehrere durch "," getrennte Ping-Services im Format: "host.domain/pfad". Falls am Anfang eines Hosts ein "*" eingefügt wird, werden an den Host die erweiterten XML-RPC Optionen gesendet; der Host muss diese Optionen unterstützen.');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Mehrere durch "," getrennte Ping-Services im Format: "host.domain/pfad". Falls am Anfang eines Hosts ein "*" eingefügt wird, werden an den Host die erweiterten XML-RPC Optionen gesendet; der Host muss diese Optionen unterstützen. Mehrfach speichern, bis die neuen Einträge in obiger Liste erscheinen.');
 
 // Next lines were translated on 2009/06/03
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Fehlgeschlagen (Grund: %s)');

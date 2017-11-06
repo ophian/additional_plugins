@@ -12,7 +12,7 @@
 @define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Posílá oznámení o nových příspěvcích na on-line internetové služby.');
 @define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(odstraňování %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'Vlastní oznamovací služby');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Jedna nebo více oznamovacích služeb oddělené čárkou ",". Formát služby je "host.domena/cesta". Pokud je na začátku služby uvedená hvězdička "*", budou na tuto adresu posílány rošířená XML-RPC oznámení.');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Jedna nebo více oznamovacích služeb oddělené čárkou ",". Formát služby je "host.domena/cesta". Pokud je na začátku služby uvedená hvězdička "*", budou na tuto adresu posílány rošířená XML-RPC oznámení. You have to submit this form several times, until the new entries are placed into the upper list.');
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Nezdařilo se (Důvod: %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'Úspěch!');
 
