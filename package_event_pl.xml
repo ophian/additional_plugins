@@ -8624,7 +8624,7 @@
 <description>Dodaje w dziale wpisy link do ciekawych statystyk. Także do licznika wizyt.</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.70</version>
+  <version>1.71</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-11-06</date>
   <filelist>
