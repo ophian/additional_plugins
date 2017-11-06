@@ -18,7 +18,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian');
-        $propbag->add('version',       '1.66');
+        $propbag->add('version',       '1.70');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -33,7 +33,7 @@ class serendipity_event_statistics extends serendipity_event
             'css_backend'        => true
         ));
 
-        $propbag->add('configuration', array('max_items','ext_vis_stat','stat_all','banned_bots'));
+        $propbag->add('configuration', array('max_items','ext_vis_stat','stat_all','banned_bots','autoclean'));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -46,7 +46,6 @@ class serendipity_event_statistics extends serendipity_event
                 $propbag->add('default',     20);
                 break;
 
-
             case 'ext_vis_stat':
                 $select = array('no'     => PLUGIN_EVENT_STATISTICS_EXT_OPT1,
                                 'yesBot' => PLUGIN_EVENT_STATISTICS_EXT_OPT2,
@@ -57,7 +56,6 @@ class serendipity_event_statistics extends serendipity_event
                 $propbag->add('description',   PLUGIN_EVENT_STATISTICS_EXT_ADD_DESC);
                 $propbag->add('select_values', $select);
                 $propbag->add('default',       'no');
-
                 break;
 
             case 'stat_all':
@@ -69,7 +67,6 @@ class serendipity_event_statistics extends serendipity_event
                 $propbag->add('description',   PLUGIN_EVENT_STATISTICS_EXT_ALL_DESC);
                 $propbag->add('select_values', $select);
                 $propbag->add('default',       'yes');
-
                 break;
 
            case 'banned_bots':
@@ -81,7 +78,13 @@ class serendipity_event_statistics extends serendipity_event
                 $propbag->add('description',   PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC);
                 $propbag->add('select_values', $select);
                 $propbag->add('default',       'yes');
+                break;
 
+            case 'autoclean':
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_STATISTICS_AUTOCLEAN);
+                $propbag->add('description', PLUGIN_EVENT_STATISTICS_AUTOCLEAN_DESC);
+                $propbag->add('default',     'true');
                 break;
         }
 
@@ -752,20 +755,31 @@ class serendipity_event_statistics extends serendipity_event
         return $container;
     }
 
+    private function autoCleanStats()
+    {
+        global $serendipity;
+
+        $today = (date('Y')-1).'-'.date('m-d');
+        serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}visitors WHERE day < '$today'", true);
+    }
+
     function extendedVisitorStatistics($max_items)
     {
         global $serendipity;
 
+        if (serendipity_db_bool($this->get_config('autoclean', 'true'))) {
+            $this->autoCleanStats();
+        }
         // ---------------QUERIES for Viewing statistics ----------------------------------------------
         $day = date('Y-m-d');
         list($year, $month, $day) = explode('-', $day);
 
         $visitors_count_firstday = serendipity_db_query("SELECT day FROM {$serendipity['dbPrefix']}visitors ORDER BY counter_id ASC LIMIT 1", true);
-        $visitors_count_today    = serendipity_db_query("SELECT visits FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '".$year."' AND month = '".$month."' AND day = '".$day."'", true);
+        $visitors_count_today    = serendipity_db_query("SELECT visits FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '$year' AND month = '$month' AND day = '$day'", true);
         $visitors_count          = serendipity_db_query("SELECT SUM(visits) FROM {$serendipity['dbPrefix']}visitors_count", true);
-        $hits_count_today        = serendipity_db_query("SELECT hits FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '".$year."' AND month = '".$month."' AND day = '".$day."'", true);
+        $hits_count_today        = serendipity_db_query("SELECT hits FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '$year' AND month = '$month' AND day = '$day'", true);
         $hits_count              = serendipity_db_query("SELECT SUM(hits) FROM {$serendipity['dbPrefix']}visitors_count", true);
-        $visitors_latest         = serendipity_db_query("SELECT counter_id, day, time, ref, browser, ip FROM {$serendipity['dbPrefix']}visitors ORDER BY counter_id DESC LIMIT ".$max_items."");
+        $visitors_latest         = serendipity_db_query("SELECT counter_id, day, time, ref, browser, ip FROM {$serendipity['dbPrefix']}visitors ORDER BY counter_id DESC LIMIT $max_items");
         $top_refs                = serendipity_db_query("SELECT refs, count FROM {$serendipity['dbPrefix']}refs ORDER BY count DESC LIMIT 20");
         ?>
         <h2><?php echo PLUGIN_EVENT_STATISTICS_OUT_EXT_STATISTICS; ?></h2>
@@ -774,7 +788,7 @@ class serendipity_event_statistics extends serendipity_event
             <section>
                 <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISITORS; ?></h3>
 
-                <p><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISSINCE." ".$visitors_count_firstday[0]; ?></p>
+                <p><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISSINCE.' '.$visitors_count_firstday[0]; ?></p>
 
                 <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC; ?></span>
 
@@ -795,18 +809,18 @@ class serendipity_event_statistics extends serendipity_event
         <?php
             $i=1;
             if (is_array($top_refs)) {
-                echo '<ol>';
+                echo "<ol>\n";
                 foreach($top_refs AS $key => $row) {
-                    echo '<li><a href="http://'.$row['refs'].'" target="_blank">'.$row['refs'].'</a> ('.$row['count'].')</li>';
+                    echo '<li><a href="http://'.$row['refs'].'" target="_blank">'.$row['refs'].'</a> ('.$row['count'].")</li>\n";
                 }
-                echo '</ol>';
+                echo "</ol>\n";
             } else {
-                echo "<span class='msg_notice'><span class='icon-info-circled'></span> ".PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE."</span>";
+                echo '<span class="msg_notice"><span class="icon-info-circled"></span> '.PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE."</span>\n";
             }
         ?>
             </section>
 
-            <section class="wide_box">
+            <section id="statistics_yearbox" class="wide_box">
                 <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_MONTHGRAPH;?></h3>
 
         <?php if ($visitors_count[0] > 0) { ?>
@@ -817,7 +831,7 @@ class serendipity_event_statistics extends serendipity_event
                 <?php
                     $mon = array('1' => 'Jan', '2' => 'Feb', '3' => 'Mar', '4' => 'Apr', '5' => 'May', '6' => 'Jun', '7' => 'Jul', '8' => 'Aug', '9' => 'Sep', '10' => 'Oct', '11' => 'Nov', '12' => 'Dec');
                     for ($i = 1; $i < 13; $i++) {
-                        echo '<td>'. serendipity_strftime('%b', mktime(0, 0, 0, $i, 1, 2000)) .'</td>';
+                        echo '<td>'. serendipity_strftime('%b', mktime(0, 0, 0, $i, 1, 2000)) ."</td>\n";
                     }
                 ?>
                     </tr>
@@ -826,7 +840,7 @@ class serendipity_event_statistics extends serendipity_event
                 <?php
                     $num = $this->statistics_getmonthlystats();
                     for ($i=1; $i < 13; $i++) {
-                        echo '<td>' . $num[$i] . '</td>';
+                        echo '<td>' . $num[$i] . "</td>\n";
                     }
                 ?>
                     </tr>
@@ -856,7 +870,7 @@ class serendipity_event_statistics extends serendipity_event
                         } else {
                             echo '+';
                         }
-                        echo '" /></td>';
+                        echo '" /></td>'."\n";
                     }
                 ?>
                     </tr>
@@ -875,7 +889,7 @@ class serendipity_event_statistics extends serendipity_event
                         <th scope="row"><?php echo DAYS; ?></th>
                 <?php
                     for ($i=1; $i < 32; $i++) {
-                        echo '<td>'. $i .'</td>';
+                        echo '<td>'. $i ."</td>\n";
                     }
                 ?>
                     </tr>
@@ -884,7 +898,7 @@ class serendipity_event_statistics extends serendipity_event
                 <?php
                     $num = $this->statistics_getdailystats();
                     for ($i=1; $i < 32; $i++) {
-                        echo '<td>' . $num[$i] . '</td>';
+                        echo '<td>' . $num[$i] . "</td>\n";
                     }
                 ?>
                     </tr>
@@ -914,7 +928,7 @@ class serendipity_event_statistics extends serendipity_event
                         } else {
                             echo '+';
                         }
-                        echo '" /></td>';
+                        echo '" /></td>'."\n";
                     }
                 ?>
                     </tr>
@@ -930,17 +944,17 @@ class serendipity_event_statistics extends serendipity_event
     $i=1;
     if (is_array($visitors_latest)) {
         foreach ($visitors_latest AS $key => $row) {
-                echo '<dt class="stats_header">'.$row['day'].' ('.$row['time'].')';
-                echo "<span>" . ($row['ip'] ? gethostbyaddr($row['ip']) : '-') . "</span>\n";
-                echo "</dt>\n";
+            echo '    <dt class="stats_header">'.$row['day'].' ('.$row['time'].')';
+            echo '<span>' . ($row['ip'] ? gethostbyaddr($row['ip']) : '-') . '</span>';
+            echo "</dt>\n";
 
-            if($row['ref'] != 'unknown'){
-                echo "<dd><a href=\"".$row['ref']."\">".$row['ref']."</a></dd>\n";
+            if ($row['ref'] != 'unknown') {
+                echo "    <dd><a href=\"{$row['ref']}\">{$row['ref']}</a></dd>\n";
             }
-            if($row['ref'] == 'unknown'){
-                echo "<dd>".$row['ref']."</dd>\n";
+            if ($row['ref'] == 'unknown') {
+                echo '    <dd>'.$row['ref']."</dd>\n";
             }
-                echo "<dd>".$row['browser']."</dd>\n";
+            echo '    <dd>'.$row['browser']."</dd>\n";
         }
     }
 ?>

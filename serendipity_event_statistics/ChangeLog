@@ -1,3 +1,10 @@
+1.70 & (sidebar 1.7):
+---------------------
+- Add new auto clean method and config option, to cleanup the database
+  "visitors"-table from old year(s) entries. Defaults to true!
+- Fixed sidebar plugin certain sqlite check for query build
+- cleanup and code consistency
+
 1.66:
 -----
 - Restrict sql index key length for utf8mb4 migration to mysqli only

@@ -106,3 +106,6 @@
 @define('PLUGIN_EVENT_STATISTICS_TEXT_DAYVISITORS', '%s Besucher heute');
 @define('PLUGIN_EVENT_STATISTICS_TEXT_WEEKVISITORS', '%s Besucher in dieser Woche');
 
+@define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN', 'Automatisches Löschen alter Logeinträge');
+@define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN_DESC', 'Löscht alle Einträge der "visitors"-Tabelle die nicht dem aktuellen Jahr entsprechen (und somit jeden Januar vergleichsweise frisch von vorne anfängt), da diese Logeinträge die Datenbank kontinuierlich aufblähen, zu einer steten Verlangsamung des System führen und z.Z. keinen echten Mehrwert bieten. Insofern Sie die alten Jahres-Daten für einen Vergleich benötigen, ist es einfacher, jeweils am Ende des Jahres einen manuellen Snapshot der Datenbank zu ziehen, bzw. (empfohlen) sich einen einfachen Browser Screenshot der "Erweiterte(n) Besucherstatistik" für Besucher, Top-Referrer und Monatsaufrufe zu erstellen. Natürlich bleiben die bereits ausgewerteten Daten der "visitors_count"-Tabelle weiterhin erhalten.');
+

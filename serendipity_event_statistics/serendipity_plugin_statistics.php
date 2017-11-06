@@ -19,31 +19,31 @@ class serendipity_plugin_statistics extends serendipity_plugin
         $propbag->add('name',          PLUGIN_EVENT_STATISTICS_NAME);
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_NAME);
         $propbag->add('stackable',     true);
-        $propbag->add('author',        'Arnan de Gans, Garvin Hicking');
-        $propbag->add('version',       '1.6');
+        $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Ian');
+        $propbag->add('version',       '1.7');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
         $propbag->add('groups', array('STATISTICS'));
         $propbag->add('configuration', array(
-                                             'title',
-                                             'show_lastentry',
-                                             'text_lastentry',
-                                             'show_entrycount',
-                                             'text_entrycount',
-                                             'show_commentcount',
-                                             'text_commentcount',
-                                             'show_monthvisitors',
-                                             'text_monthvisitors',
-                                             'show_dayvisitors',
-                                             'text_dayvisitors',
-                                             'show_weekvisitors',
-                                             'text_weekvisitors',
-                                             'show_currentvisitors',
-                                             'text_currentvisitors',
-                                             'cachetimeout'
+                                            'title',
+                                            'show_lastentry',
+                                            'text_lastentry',
+                                            'show_entrycount',
+                                            'text_entrycount',
+                                            'show_commentcount',
+                                            'text_commentcount',
+                                            'show_monthvisitors',
+                                            'text_monthvisitors',
+                                            'show_dayvisitors',
+                                            'text_dayvisitors',
+                                            'show_weekvisitors',
+                                            'text_weekvisitors',
+                                            'show_currentvisitors',
+                                            'text_currentvisitors',
+                                            'cachetimeout'
         ));
     }
 
@@ -62,42 +62,42 @@ class serendipity_plugin_statistics extends serendipity_plugin
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_STATISTICS_SHOW_LASTENTRY);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'show_entrycount':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_STATISTICS_SHOW_ENTRYCOUNT);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'show_commentcount':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_STATISTICS_SHOW_COMMENTCOUNT);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'show_monthvisitors':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_STATISTICS_SHOW_MONTHVISITORS);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'show_dayvisitors':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_STATISTICS_SHOW_DAYVISITORS);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'show_weekvisitors':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_STATISTICS_SHOW_WEEKVISITORS);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'text_lastentry':
@@ -153,7 +153,7 @@ class serendipity_plugin_statistics extends serendipity_plugin
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_STATISTICS_SHOW_CURRENTVISITORS);
                 $propbag->add('description', '');
-                $propbag->add('default',     true);
+                $propbag->add('default',     'true');
                 break;
 
             case 'title':
@@ -172,86 +172,89 @@ class serendipity_plugin_statistics extends serendipity_plugin
     function cleanup()
     {
         global $serendipity;
+
         @unlink($serendipity['serendipityPath'] . 'templates_c/statistics_cache.html');
     }
 
     function generate_content(&$title)
     {
         global $serendipity;
-        $title       = $this->get_config('title', $this->title);
-        $cachetime   = $this->get_config('cachetimeout', 60) * 60; // turn to seconds
-        $cachef      = $serendipity['serendipityPath'] . 'templates_c/statistics_cache.html';
+
+        $title      = $this->get_config('title', $this->title);
+        $cachetime  = $this->get_config('cachetimeout', 60) * 60; // turn to seconds
+        $cachef     = $serendipity['serendipityPath'] . 'templates_c/statistics_cache.html';
+        $date       = date('Y-m-d');
 
         if (!file_exists($cachef) || filesize($cachef) == 0 || filemtime($cachef) < (time() - $cachetime)) {
             // Create statistics
-            list($year, $month, $day) = explode('-', date('Y-m-d'));
+            list($year, $month, $day) = explode('-', $date);
             $lastmonday = date('Ynj', strtotime('last monday'));
             $nextsunday = date('Ynj', strtotime('next sunday'));
-            if (date('w', strtotime('today') ) == "1" ) { // now it is monday
+            if (date('w', strtotime('today') ) == '1' ) { // now it is monday
                 $lastmonday = date('Ynj', strtotime('today'));
-            } else if (date('w', strtotime('today') ) == "0" ) { // now it is sunday
+            } else if (date('w', strtotime('today') ) == '0' ) { // now it is sunday
                 $nextsunday = date('Ynj', strtotime('today'));
             }
 
             $content = '';
-            if (serendipity_db_bool($this->get_config('show_lastentry'))) {
+            if (serendipity_db_bool($this->get_config('show_lastentry', 'true'))) {
                 $res = serendipity_db_query("SELECT timestamp FROM {$serendipity['dbPrefix']}entries WHERE isdraft = 'false' AND timestamp <= " . time() . " ORDER BY timestamp DESC LIMIT 1", true, 'assoc');
                 if (is_array($res) && isset($res['timestamp'])) {
                     $content .= '<div class="stat_lastentry">' . sprintf($this->get_config('text_lastentry'), '<span class="stat_string">' . htmlspecialchars(serendipity_strftime(DATE_FORMAT_SHORT, $res['timestamp'])) . '</span>') . "</div>\n";
                 }
             }
 
-            if (serendipity_db_bool($this->get_config('show_entrycount'))) {
+            if (serendipity_db_bool($this->get_config('show_entrycount', 'true'))) {
                 $res = serendipity_db_query("SELECT count(id) as entrycount FROM {$serendipity['dbPrefix']}entries WHERE isdraft = 'false' AND timestamp <= " . time(), true, 'assoc');
                 if (is_array($res) && isset($res['entrycount'])) {
                     $content .= '<div class="stat_entrycount">' . sprintf($this->get_config('text_entrycount'), '<span class="stat_number">' . $res['entrycount'] . '</span>') . "</div>\n";
                 }
             }
 
-            if (serendipity_db_bool($this->get_config('show_commentcount'))) {
+            if (serendipity_db_bool($this->get_config('show_commentcount', 'true'))) {
                 $res = serendipity_db_query("SELECT count(id) AS commentcount FROM {$serendipity['dbPrefix']}comments WHERE type = 'NORMAL' AND status = 'approved'", true, 'assoc');
                 if (is_array($res) && isset($res['commentcount'])) {
                     $content .= '<div class="stat_commentcount">' . sprintf($this->get_config('text_commentcount'), '<span class="stat_number">' . $res['commentcount'] . '</span>') . "</div>\n";
                 }
             }
 
-            if (serendipity_db_bool($this->get_config('show_monthvisitors'))) {
-                $res = serendipity_db_query("SELECT sum(visits) AS monthvisitors FROM {$serendipity['dbPrefix']}visitors_count WHERE year='".$year."' AND month='".$month."'", true, 'assoc');
+            if (serendipity_db_bool($this->get_config('show_monthvisitors', 'true'))) {
+                $res = serendipity_db_query("SELECT sum(visits) AS monthvisitors FROM {$serendipity['dbPrefix']}visitors_count WHERE year='$year' AND month='$month'", true, 'assoc');
                 if (is_array($res) && isset($res['monthvisitors'])) {
                     $content .= '<div class="stat_monthvisitors">' . sprintf($this->get_config('text_monthvisitors'), '<span class="stat_number">' . $res['monthvisitors'] . '</span>') . "</div>\n";
                 }
             }
 
-            if (serendipity_db_bool($this->get_config('show_weekvisitors'))) {
-                $res = serendipity_db_query("SELECT sum(visits) AS weekvisitors FROM {$serendipity['dbPrefix']}visitors_count WHERE CONCAT(year,month,day) >= '".$lastmonday."' AND CONCAT(year,month,day) <= '".$nextsunday."'", true, 'assoc');
+            if (serendipity_db_bool($this->get_config('show_weekvisitors', 'true'))) {
+                $res = serendipity_db_query("SELECT sum(visits) AS weekvisitors FROM {$serendipity['dbPrefix']}visitors_count WHERE CONCAT(year,month,day) >= '$lastmonday' AND CONCAT(year,month,day) <= '$nextsunday'", true, 'assoc');
                 if (is_array($res) && isset($res['weekvisitors'])) {
                     $content .= '<div class="stat_weekhvisitors">' . sprintf($this->get_config('text_weekvisitors'), '<span class="stat_number">' . $res['weekvisitors'] . '</span>') . "</div>\n";
                 }
             }
 
-            if (serendipity_db_bool($this->get_config('show_dayvisitors'))) {
-                $res = serendipity_db_query("SELECT sum(visits) AS dayvisitors FROM {$serendipity['dbPrefix']}visitors_count WHERE year='".$year."' AND month='".$month."' AND day='".$day."'", true, 'assoc');
+            if (serendipity_db_bool($this->get_config('show_dayvisitors', 'true'))) {
+                $res = serendipity_db_query("SELECT sum(visits) AS dayvisitors FROM {$serendipity['dbPrefix']}visitors_count WHERE year='$year' AND month='$month' AND day='$day'", true, 'assoc');
                 if (is_array($res) && isset($res['dayvisitors'])) {
                     $content .= '<div class="stat_dayhvisitors">' . sprintf($this->get_config('text_dayvisitors'), '<span class="stat_number">' . $res['dayvisitors'] . '</span>') . "</div>\n";
                 }
             }
 
-            if (serendipity_db_bool($this->get_config('show_currentvisitors'))) {
+            if (serendipity_db_bool($this->get_config('show_currentvisitors', 'true'))) {
                 $max = time();
                 $min = $max - (15 * 60);
 
-                if ($serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'pdo-sqlite') {
+                if ($serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'sqlite3oo' || $serendipity['dbType'] == 'pdo-sqlite') {
                     $max_ts = date('H:i', $max);
                     $min_ts = date('H:i', $min);
-                    $q   = "SELECT count(counter_id) AS currentvisitors FROM {$serendipity['dbPrefix']}visitors WHERE day LIKE '" . date('Y-m-d') . "' AND (time BETWEEN '$min_ts' AND '$max_ts')";
+                    $q   = "SELECT count(counter_id) AS currentvisitors FROM {$serendipity['dbPrefix']}visitors WHERE day LIKE '$date' AND (time BETWEEN '$min_ts' AND '$max_ts')";
                 } elseif ($serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
                     $max_ts = date('Hi', $max);
                     $min_ts = date('Hi', $min);
-                    $q   = "SELECT count(counter_id) AS currentvisitors FROM {$serendipity['dbPrefix']}visitors WHERE day LIKE '" . date('Y-m-d') . "' AND (REPLACE(time, ':', '') BETWEEN CAST($min_ts AS text) AND CAST($max_ts AS text))";
+                    $q   = "SELECT count(counter_id) AS currentvisitors FROM {$serendipity['dbPrefix']}visitors WHERE day LIKE '$date' AND (REPLACE(time, ':', '') BETWEEN CAST($min_ts AS text) AND CAST($max_ts AS text))";
                 } else {
                     $max_ts = date('Hi', $max);
                     $min_ts = date('Hi', $min);
-                    $q   = "SELECT count(counter_id) AS currentvisitors FROM {$serendipity['dbPrefix']}visitors WHERE day LIKE '" . date('Y-m-d') . "' AND (REPLACE(time, ':', '') BETWEEN $min_ts AND $max_ts)";
+                    $q   = "SELECT count(counter_id) AS currentvisitors FROM {$serendipity['dbPrefix']}visitors WHERE day LIKE '$date' AND (REPLACE(time, ':', '') BETWEEN $min_ts AND $max_ts)";
                 }
                 $res = serendipity_db_query($q, true, 'assoc');
                 if (is_array($res) && isset($res['currentvisitors'])) {
