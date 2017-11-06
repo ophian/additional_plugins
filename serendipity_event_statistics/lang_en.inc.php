@@ -106,5 +106,5 @@
 @define('PLUGIN_EVENT_STATISTICS_TEXT_CURRENTVISITORS', '%s visitor(s) online');
 
 @define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN', 'Auto clean old logentries');
-@define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN_DESC', 'Cleans the database "visitors"-table from all old entries which are not in the current year (starting relatively fresh each january), since that table continuously blows up your database without real benefit. If you need the old (year) data for comparisson, you can easily snapshot the database visitors table manually, or take yourself a browser screenshot (recommended) of the "Extended Visitor Statistics" for visitors, top-referrers and the month table view at the end of year. Certainly the data of the "visitors_count"-table that has already been evaluated is not affected by this cleanup.');
+@define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN_DESC', 'Cleans the database "visitors"-table from all old entries each older than 1 year, since that table continuously blows up your database without real benefit. If you need the old (year) data for comparisson, you can easily take yourself a browser screenshot of the "Extended Visitor Statistics" for visitors, top-referrers and the month table view at the end of year. Certainly the data of the "visitors_count"-table that has already been evaluated is not affected by this cleanup.');
 
