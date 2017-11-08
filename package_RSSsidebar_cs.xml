@@ -254,15 +254,6 @@
 <guid isPermaLink="false">serendipity_plugin_google_adsense</guid>
 </item>
 <item>
-<title>Poslední vyhledávání (Google, Yahoo, Bing, Croogle): Zobrazuje slova, která byla v poslední době vyhledávánavna tomto blogu (pomocí Googlu, Yahoo, Bingu nebo Scrooglu).</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_google_last_query</link>
-<category>Sidebar Plugins</category>
-<author>Garvin Hicking, Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_google_last_query&lt;br /&gt;Poslední vyhledávání (Google, Yahoo, Bing, Croogle)&lt;/b&gt;&lt;br /&gt;Zobrazuje slova, která byla v poslední době vyhledávánavna tomto blogu (pomocí Googlu, Yahoo, Bingu nebo Scrooglu).&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
-<guid isPermaLink="false">serendipity_plugin_google_last_query</guid>
-</item>
-<item>
 <title>Google Rychl? hled?n?: Hled?n? z?znamu (Google)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_google_quicksearch</link>
 <category>Sidebar Plugins</category>

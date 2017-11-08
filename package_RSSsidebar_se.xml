@@ -258,15 +258,6 @@
 <guid isPermaLink="false">serendipity_plugin_google_adsense</guid>
 </item>
 <item>
-<title>Last Search (Google, Yahoo, Bing, Scroogle): Shows searched word of the last Google, Yahoo, Bing or Scoogle search, that lead to this blog.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_google_last_query</link>
-<category>Sidebar Plugins</category>
-<author>Garvin Hicking, Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_google_last_query&lt;br /&gt;Last Search (Google, Yahoo, Bing, Scroogle)&lt;/b&gt;&lt;br /&gt;Shows searched word of the last Google, Yahoo, Bing or Scoogle search, that lead to this blog.&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
-<guid isPermaLink="false">serendipity_plugin_google_last_query</guid>
-</item>
-<item>
 <title>Google Snabbsök: Sök efter artikel (Google)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_google_quicksearch</link>
 <category>Sidebar Plugins</category>
