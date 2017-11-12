@@ -1,5 +1,10 @@
+1.13:
+-----
+  * Removed 'bmi' (fun) option, since OUTDATED and does not exists
+    any more.
+
 1.12:
 -----
-   * Correct version
+  * Correct version
 
 older changelog stuff not leaked
