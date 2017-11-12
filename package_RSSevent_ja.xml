@@ -257,9 +257,9 @@
 <title>DBClean: Cleanup database</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_dbclean</link>
 <category>Event Plugins</category>
-<author>Malte Paskuda, Matthias Mees</author>
+<author>Malte Paskuda, Matthias Mees, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_dbclean&lt;br /&gt;DBClean&lt;/b&gt;&lt;br /&gt;Cleanup database&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sun, 12 Nov 2017 14:49:31 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_dbclean</guid>
 </item>
 <item>
@@ -1062,7 +1062,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;統計情報&lt;/b&gt;&lt;br /&gt;エントリパネルに興味のある統計へのリンクを加えます。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 06 Nov 2017 16:56:08 +0100</pubDate>
+<pubDate>Sat, 11 Nov 2017 15:44:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>

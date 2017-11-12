@@ -1770,11 +1770,11 @@
 <summary>DBClean</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Cleanup database</description>
-<maintainers><maintainer><name>Malte Paskuda, Matthias Mees</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Malte Paskuda, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.2.9</version>
+  <version>0.3.0</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2017-11-12</date>
   <filelist>
     <dir name="serendipity_event_dbclean">
       <file>ChangeLog</file>
@@ -8624,9 +8624,9 @@
 <description>記錄一些管於您的網誌的資料</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.71</version>
+  <version>1.72</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-11-06</date>
+  <date>2017-11-11</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>ChangeLog</file>
