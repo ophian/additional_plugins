@@ -186,10 +186,6 @@ class serendipity_event_trackexits extends serendipity_event
         $url      = 'http' . $buffer[3] . '://' . $buffer[4];
 
         if ($url_only) {
-            if ($redir == 'bmi') {
-                return 'http://bmi.pifo.biz/?' . $url;
-            }
-
             return sprintf(
                 '%sexit.php?url=%s%s',
                 $serendipity['baseURL'],
