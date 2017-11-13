@@ -18,7 +18,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian');
-        $propbag->add('version',       '1.72');
+        $propbag->add('version',       '1.73');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -839,7 +839,6 @@ class serendipity_event_statistics extends serendipity_event
                         <th scope="row">Visits</th>
                 <?php
                     $num = $this->statistics_getmonthlystats();
-                    if (!is_numeric($num)) return;
                     for ($i=1; $i < 13; $i++) {
                         echo '<td>' . $num[$i] . "</td>\n";
                     }
@@ -848,26 +847,25 @@ class serendipity_event_statistics extends serendipity_event
                     <tr>
                         <th scope="row">+/~/-</th>
                 <?php
-                    $num = $this->statistics_getmonthlystats();
-                    if (!is_numeric($num)) return;
                     $rep = $num;
-                    rsort($rep);
+                    rsort($rep); // Now $ret[0] is the heighest max vis height
 
                     for ($i=1; $i < 13; $i++) {
                         $maxVisHeigh = 100/$rep[0]*2;
-                        $monthHeight = round($num[$i]*$maxVisHeigh);
+                        $monthHeight = @round($num[$i]*$maxVisHeigh);
+                        $numCountInt = @($num[$i]*$maxVisHeigh/2);
                         echo '<td class="stats_imagecell"><img src="plugins/serendipity_event_statistics/';
-                        if ($num[$i]*$maxVisHeigh/2 <= 33) {
+                        if ($numCountInt <= 33) {
                             echo 'red.png';
-                        } else if ($num[$i]*$maxVisHeigh/2 > 33 && $num[$i]*$maxVisHeigh/2 < 66) {
+                        } else if ($numCountInt > 33 && $numCountInt < 66) {
                             echo 'yellow.png';
                         } else {
                             echo 'green.png';
                         }
                         echo '" width="8" height="'.$monthHeight.'" style="height:'.$monthHeight.'px" alt="';
-                        if ($num[$i]*$maxVisHeigh/2 <= 33) {
+                        if ($numCountInt <= 33) {
                             echo '-';
-                        } else if ($num[$i]*$maxVisHeigh/2 > 33 && $num[$i]*$maxVisHeigh/2 < 66) {
+                        } else if ($numCountInt > 33 && $numCountInt < 66) {
                             echo '~';
                         } else {
                             echo '+';
@@ -907,25 +905,25 @@ class serendipity_event_statistics extends serendipity_event
                     <tr>
                         <th scope="row">+/~/-</th>
                 <?php
-                    $num = $this->statistics_getdailystats();
                     $rep = $num;
-                    rsort($rep);
+                    rsort($rep); // Now $ret[0] is the heighest max vis height
 
                     for ($i=1; $i < 32; $i++) {
                         $maxVisHeigh = 100/$rep[0]*2;
-                        $dailyHeight = round($num[$i]*$maxVisHeigh);
+                        $dailyHeight = @round($num[$i]*$maxVisHeigh);
+                        $numCountInt = @($num[$i]*$maxVisHeigh/2);
                         echo '<td class="stats_imagecell"><img src="plugins/serendipity_event_statistics/';
-                        if ($num[$i]*$maxVisHeigh/2 <= 33) {
+                        if ($numCountInt <= 33) {
                             echo 'red.png';
-                        } else if ($num[$i]*$maxVisHeigh/2 > 33 && $num[$i]*$maxVisHeigh/2 < 66) {
+                        } else if ($numCountInt > 33 && $numCountInt < 66) {
                             echo 'yellow.png';
                         } else {
                             echo 'green.png';
                         }
                         echo '" width="8" height="'.$dailyHeight.'" style="height:'.$dailyHeight.'px" alt="';
-                        if ($num[$i]*$maxVisHeigh/2 <= 33) {
+                        if ($numCountInt <= 33) {
                             echo '-';
-                        } else if ($num[$i]*$maxVisHeigh/2 > 33 && $num[$i]*$maxVisHeigh/2 < 66) {
+                        } else if ($numCountInt > 33 && $numCountInt < 66) {
                             echo '~';
                         } else {
                             echo '+';

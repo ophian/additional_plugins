@@ -1,3 +1,7 @@
+1.73:
+-----
+- PHP 7.1 non-numeric value encountered error fixes
+
 1.72:
 -----
 - Check exception thrown on empty result check
