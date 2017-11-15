@@ -22,14 +22,13 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '4.1.0'
         ));
 
-        $propbag->add('version',       '0.21');
+        $propbag->add('version',       '0.22');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'html', 'markup', 'cutoff'));
         $propbag->add('event_hooks',   array(
             'backend_frontpage_display'                         => true,
             'backend_sidebar_entries'                           => true,
-            'backend_sidebar_admin'                             => true,
             'backend_sidebar_entries_event_display_adminnotes'  => true,
             'js_backend'                                        => true,
             'backend_dashboard'                                 => true,
@@ -451,17 +450,7 @@ class serendipity_event_adminnotes extends serendipity_event
 ?>
                         <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes"><?php echo PLUGIN_ADMINNOTES_TITLE; ?></a></li>
 <?php
-                    }
-                    // Serendipity 2.0  now uses the new backend_sidebar_admin hook
-
-                    break;
-
-                case 'backend_sidebar_admin':
-                    if ($serendipity['serendipityUserlevel'] < USERLEVEL_CHIEF) {
-                        break;
-                    }
-
-                    if ($serendipity['version'][0] > 1) {
+                    } else {
 ?>
                         <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes"><?php echo PLUGIN_ADMINNOTES_TITLE; ?></a></li>
 <?php

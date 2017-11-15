@@ -1,9 +1,14 @@
+0.22:
+-----
+
+ * Move S9y 2.0+ backend sidebar link to entries section
+
 0.21:
 -----
 
  * Add missing <id>_text ID element, which fixes a getElementById
    JS error with Serendipity 2.0+ versions, when toggling full text.
- * Set default toggle cutoff to 200 chars.
+ * Set default toggle cutOff to 200 chars.
 
 0.20:
 -----
