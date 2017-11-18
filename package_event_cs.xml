@@ -435,9 +435,9 @@
 <description>Když &quot;tabule&quot; detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin.</description>
 <maintainers><maintainer><name>onli, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5.0</version>
+  <version>1.5.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-10-15</date>
+  <date>2017-11-18</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
