@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.5.1');
+        $propbag->add('version',       '1.5.2');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -152,7 +152,7 @@ class serendipity_event_autoupdate extends serendipity_event
                     if (!(serendipity_checkPermission('siteConfiguration') || serendipity_checkPermission('blogConfiguration'))) {
                         return;
                     }
-                    $momacheck = (isset($serendipity['edition']) && $serendipity['edition'] == 'Styx' && $serendipity['maintenance'] == false) ? true : false;
+                    $momacheck = (isset($serendipity['edition']) && $serendipity['edition'] == 'Styx' && empty($serendipity['maintenance'])) ? true : false;
                     $askit = ($momacheck && version_compare($serendipity['version'], '2.1.0', '>=')) ? " onclick=\"return confirm('" . PLUGIN_EVENT_AUTOUPDATE_CHECK . "')\"" : '';
                     $eventData = '
                     <form' . $askit . ' action="?serendipity[adminModule]=event_display&serendipity[adminAction]=update" method="POST">
