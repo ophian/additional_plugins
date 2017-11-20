@@ -182,7 +182,7 @@ class serendipity_event_autoupdate extends serendipity_event
                     $lang_char = LANG_CHARSET;
                     $ad_suite  = SERENDIPITY_ADMIN_SUITE;
                     $ad_title  = PLUGIN_AUTOUPD_MSG_TITLE;
-                    $ad_help   = strip_tags(strip_PLUGIN_AUTOUPD_MSG_RELOAD);
+                    $ad_help   = strip_tags(PLUGIN_AUTOUPD_MSG_RELOAD);
                     $ad_loader = !$nozipext ? '<div id="loader"><span></span><span></span><span></span></div>' : '';
                     $css_upd   = @file_get_contents(dirname(__FILE__) . '/upgrade.min.css');
                     $bimgpath  = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . 's9y_banner_small.png';
