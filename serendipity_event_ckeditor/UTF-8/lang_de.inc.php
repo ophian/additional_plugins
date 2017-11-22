@@ -1,28 +1,28 @@
 <?php
 
 /**
- *  @file UTF-8/lang_de.inc.php 1.4.20 2017-08-19 Ian
- *  @version 1.4.20
+ *  @file UTF-8/lang_de.inc.php 1.4.21 2017-11-22 Ian
+ *  @version 1.4.21
  *  @author Translator Name <yourmail@example.com>
  *  DE-Revision: Revision of UTF-8/lang_de.inc.php
  */
 
 @define('PLUGIN_EVENT_CKEDITOR_NAME', 'CKEditor Plus');
-@define('PLUGIN_EVENT_CKEDITOR_DESC', 'Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lies die Plugin Konfigurations Seite für weitere Informationen.');
+@define('PLUGIN_EVENT_CKEDITOR_DESC', 'Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie Plugin Konfigurations Seite für erweiterte Informationen.');
 @define('PLUGIN_EVENT_CKEDITOR_REVISION_TITLE', '<h3>Das Plugin enthält:</h3>');
 @define('PLUGIN_EVENT_CKEDITOR_INSTALL', '<h2>Installation</h2>
 <p class="msg_notice">
     <span class="icon-attention" aria-hidden="true"></span> <strong>Abhängigkeiten:</strong> Deaktiviere body, extended und nugget parsing global im <strong>NL2BR</strong> Plugin, <strong>oder</strong> per entry über das entryproperties event plugin <strong>und/oder</strong> für statische Seiten über die Entry "Textformatierungs" Option!<br><strong>Seit Serendipity 2.0</strong> kann entryproperties den CKEditor diesbezüglich aber automatisch erkennen.
 </p>
 <ol style="line-height: 1.6">
-    <li>Um anderen Plugins Zugriff auf das Plugin oder dessen Hook zu gewähren, plaziere das (CKEditor) Plugin nahe dem Ende deiner Pluginliste.</li>
-    <li>Versichere dich, dass der WYSIWYG Modus in den "Eigenen Einstellungen" eingeschaltet ist.</li>
+    <li>Um anderen Plugins Zugriff auf das Plugin oder dessen Hook zu gewähren, plazieren Sie das (CKEditor) Plugin nahe dem Ende der Pluginliste.</li>
+    <li>Versichere Sie sich, dass der WYSIWYG Modus in den "Eigenen Einstellungen" eingeschaltet ist.</li>
 </ol>
 <div class="cke_config_block msg_dialogue">
     <h3>Manuelle Erweiterungen mit anderen CKEDITOR Plugins</h3>
     <ol style="line-height: 1.6">
-        <li>Definiere manuell hinzugefügte Plugins (analog zu <em>{ name: \'mediaembed\' },</em>) in der custom cke_config.js, in der <em>CKEDITOR.config.toolbarGroups = [...]</em> Definition.</li>
-        <li>Außerdem füge den neuen Pluginnamen (analog zu mediaembed) der <em>var extraPluginList = \'...\'</em> Definition in der cke_plugin.js Datei hinzu.</li>
+        <li>Definieren Sie manuell hinzugefügte Plugins (analog zu <em>{ name: \'mediaembed\' },</em>) in der custom cke_config.js, in der <em>CKEDITOR.config.toolbarGroups = [...]</em> Definition.</li>
+        <li>Außerdem fügen Sie den neuen Pluginnamen (analog zu mediaembed) der <em>var extraPluginList = \'...\'</em> Definition in der cke_plugin.js Datei hinzu.</li>
     </ol>
 
     <h3>Upgrading</h3>
