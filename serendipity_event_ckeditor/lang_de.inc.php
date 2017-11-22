@@ -12,11 +12,11 @@
 @define('PLUGIN_EVENT_CKEDITOR_REVISION_TITLE', '<h3>Das Plugin enthält:</h3>');
 @define('PLUGIN_EVENT_CKEDITOR_INSTALL', '<h2>Installation</h2>
 <p class="msg_notice">
-    <span class="icon-attention" aria-hidden="true"></span> <strong>Abhängigkeiten:</strong> Deaktiviere body, extended und nugget global im <strong>NL2BR</strong> Plugin, <strong>oder</strong> per entry über das entryproperties event plugin <strong>und/oder</strong> für statische Seiten über die Entry "Textformatierungs" Option!<br><strong>Seit Serendipity</strong> 2.0 kann entryproperties den CKEditor diesbezüglich aber automatisch erkennen.
+    <span class="icon-attention" aria-hidden="true"></span> <strong>Abhängigkeiten:</strong> Deaktivieren Sie das "body", "extended" und "nugget" parsing global im <strong>NL2BR</strong> Plugin, <strong>oder</strong> per entry über das entryproperties event plugin <strong>und/oder</strong> für statische Seiten über die Entry "Textformatierungs" Option!<br><strong>Seit Serendipity</strong> 2.0 kann entryproperties den CKEditor diesbezüglich aber automatisch erkennen.
 </p>
 <ol style="line-height: 1.6">
-    <li>Um anderen Plugins Zugriff auf das Plugin oder dessen Hook zu gewähren, plaziere Sie das (CKEditor) Plugin nahe dem Ende der Pluginliste.</li>
-    <li>Versichere Sie sich, dass der WYSIWYG Modus in den "Eigenen Einstellungen" eingeschaltet ist.</li>
+    <li>Um anderen Plugins Zugriff auf das Plugin oder dessen Hook zu gewähren, plazieren Sie das (CKEditor) Plugin nahe dem Ende der Pluginliste.</li>
+    <li>Versichern Sie sich, dass der WYSIWYG Modus in den "Eigenen Einstellungen" eingeschaltet ist.</li>
 </ol>
 <div class="cke_config_block msg_dialogue">
     <h3>Manuelle Erweiterungen mit anderen CKEDITOR Plugins</h3>
@@ -41,7 +41,7 @@
 @define('PLUGIN_EVENT_CKEDITOR_OPTION_DESC', 'Normalerweise: ');
 
 @define('PLUGIN_EVENT_CKEDITOR_FORCEINSTALL_OPTION', 'Entpacke Zip Datei (im Notfall)');
-@define('PLUGIN_EVENT_CKEDITOR_FORCEINSTALL_OPTION_DESC', 'Nur bei upgrade Fehlern: Entpacke augenblicklich das mitgelieferte ');
+@define('PLUGIN_EVENT_CKEDITOR_FORCEINSTALL_OPTION_DESC', 'Nur bei Upgrade Fehlern: Entpacke augenblicklich das mitgelieferte ');
 
 @define('PLUGIN_EVENT_CKEDITOR_CKEACF_OPTION_DESC', 'Dieser CKEDITOR "Housekeeper" Filter erlaubt nur bestimmtes Markup. Normalerweise ist dies gut und sollte als Einstellung erhalten bleiben, da es bereits eingebaute Workarounds für auffälliges Markup, zB. "iframe" Video-Media via den "Embed Media"-Knopf, oder "audio" und "andere Serendipity" tags via "Quellcode"-Anzeige, gibt. Bitte lesen Sie dazu auch: "http://docs.ckeditor.com/?_escaped_fragment_=/guide/dev_advanced_content_filter#!/guide/dev_advanced_content_filter".');
 
