@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;Sobald das Dashboard (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in das Dashboard des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten. Mit Styx 2.1+ ist zu empfehlen, dieses Plugin in Kombination mit dem modemaintain (Wartungs-) Ereignis Plugin zu nutzen.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 20 Nov 2017 08:51:22 +0100</pubDate>
+<pubDate>Mon, 20 Nov 2017 09:09:47 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -135,12 +135,12 @@
 <guid isPermaLink="false">serendipity_event_challengeresponse</guid>
 </item>
 <item>
-<title>CKEditor Plus: Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lies die Plugin Konfigurations Seite für weitere Informationen.</title>
+<title>CKEditor Plus: Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie Plugin Konfigurations Seite für erweiterte Informationen.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_ckeditor</link>
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lies die Plugin Konfigurations Seite für weitere Informationen.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Wed, 27 Sep 2017 13:34:59 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie Plugin Konfigurations Seite für erweiterte Informationen.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<pubDate>Wed, 22 Nov 2017 10:02:10 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>

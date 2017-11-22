@@ -987,12 +987,12 @@
 <license>GPL</license>
 <summary>CKEditor Plus</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lies die Plugin Konfigurations Seite für weitere Informationen.</description>
+<description>Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie Plugin Konfigurations Seite für erweiterte Informationen.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.7.3.1</version>
+  <version>4.7.3.2</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2017-09-27</date>
+  <date>2017-11-22</date>
   <filelist>
     <dir name="serendipity_event_ckeditor">
       <file>basic_toolbar.css</file>
