@@ -1,8 +1,8 @@
 <?php
 
 /**
- *  @file lang_de.inc.php 1.4.21 2017-11-22 Ian
- *  @version 1.4.21
+ *  @file lang_de.inc.php 1.4.22 2017-11-23 Ian
+ *  @version 1.4.22
  *  @author Translator Name <yourmail@example.com>
  *  DE-Revision: Revision of lang_de.inc.php
  */
@@ -15,7 +15,7 @@
     <span class="icon-attention" aria-hidden="true"></span> <strong>Abhängigkeiten:</strong> Deaktivieren Sie das "body", "extended" und "nugget" parsing global im <strong>NL2BR</strong> Plugin, <strong>oder</strong> per entry über das entryproperties event plugin <strong>und/oder</strong> für statische Seiten über die Entry "Textformatierungs" Option!<br><strong>Seit Serendipity</strong> 2.0 kann entryproperties den CKEditor diesbezüglich aber automatisch erkennen.
 </p>
 <ol style="line-height: 1.6">
-    <li>Um anderen Plugins Zugriff auf das Plugin oder dessen Hook zu gewähren, plazieren Sie das (CKEditor) Plugin nahe dem Ende der Pluginliste.</li>
+    <li>Um anderen Plugins Zugriff auf das Plugin oder dessen Hook zu gewähren, platzieren Sie das (CKEditor) Plugin nahe dem Ende der Pluginliste.</li>
     <li>Versichern Sie sich, dass der WYSIWYG Modus in den "Eigenen Einstellungen" eingeschaltet ist.</li>
 </ol>
 <div class="cke_config_block msg_dialogue">
@@ -27,7 +27,7 @@
 
     <h3>Upgrading</h3>
     <p>Dieses Plugin wird zeitnah selber Updates via Spartacus bereitstellen.</p>
-    <p><strong>Achtung</strong>: Bitte nutzen Sie <strong>nicht</strong> den automatisierten Spartacus Updater "Update All" Button für alle Plugins, sofern in ihrer S9y Version schon vorhanden, sondern führen Sie das Upgrade des CKEditors einzeln durch, um für die internen ZIP-Installer Operationen in diese Konfiguration weiter geleitet zu werden. Ansonsten müssen Sie nach jedem CKEditor (library) Upgrade selber die "Entpacke Zip Datei (im Notfall)" Option ausführen.</p>
+    <p><strong>Achtung</strong>: Bitte nutzen Sie <strong>nicht</strong> den automatisierten Spartacus Updater "Update All" Button für alle Plugins, sofern in ihrer S9y Version schon vorhanden, sondern führen Sie das Upgrade des CKEditors einzeln durch, um für die internen ZIP-Installer Operationen in diese Konfiguration weitergeleitet zu werden. Ansonsten müssen Sie nach jedem CKEditor (library) Upgrade selber die "Entpacke Zip Datei (im Notfall)" Option ausführen.</p>
     <p>Es ist generell abzuraten, ein eigenes "customized" CKEDITOR release zu erstellen und herunterzuladen, da dies zu unerwünschten Nebenwirkungen in der Einbindung führt.</p>
 </div>');
 @define('PLUGIN_EVENT_CKEDITOR_CONFIG', '');
