@@ -135,11 +135,11 @@
 <guid isPermaLink="false">serendipity_event_challengeresponse</guid>
 </item>
 <item>
-<title>CKEditor Plus: Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie Plugin Konfigurations Seite für erweiterte Informationen.</title>
+<title>CKEditor Plus: Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie die Plugin Konfigurations Seite für mehr Informationen.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_ckeditor</link>
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie Plugin Konfigurations Seite für erweiterte Informationen.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie die Plugin Konfigurations Seite für mehr Informationen.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
 <pubDate>Wed, 22 Nov 2017 10:02:10 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
@@ -572,7 +572,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Erweiterte Optionen für Bildauswahl&lt;/b&gt;&lt;br /&gt;Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediendatenbank.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Mon, 02 Oct 2017 15:01:15 +0200</pubDate>
+<pubDate>Fri, 24 Nov 2017 18:44:25 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
