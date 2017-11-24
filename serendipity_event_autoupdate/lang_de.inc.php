@@ -12,7 +12,7 @@
 @define('PLUGIN_EVENT_AUTOUPDATE_CHECK', 'SICHERHEITSHINWEIS:\n\nHaben Sie bereits auf Plugin UPDATES geprüft?\nHaben Sie wirklich das MODEMAINTAIN Plugin installiert und den Wartungsmodus für dieses Update angestellt?\n\nDrücken Sie OK, um mit dem AUTOUPDATE fortzufahren.');
 
 @define('PLUGIN_AUTOUPD_MSG_TITLE', 'Serendipity Auto-Upgrade Prozessor');
-@define('PLUGIN_AUTOUPD_MSG_INFO', 'Der ZIP Download, die Datei Überprüfungen und verschiedenen Verifizierungen, sowie die Dateiverschiebungen für das Serendipity Update: %s können eine gewisse Zeit beanspruchen... (ca. 1-3 Min).<br>Bitte werden Sie nicht unruhig und schließen oder verändern Sie diese Seite nicht während des Vorgangs!');
+@define('PLUGIN_AUTOUPD_MSG_INFO', 'Der ZIP Download, die Datei Überprüfungen und verschiedenen Verifizierungen, sowie die Dateiverschiebungen für das Serendipity Update: %s können eine gewisse Zeit beanspruchen... (ca. 1-3 Min).<br>Bitte werden Sie nicht ungeduldig und schließen oder verändern Sie diese Seite nicht während des Vorgangs!');
 @define('PLUGIN_AUTOUPD_MSG_RELOAD', 'BEACHTEN SIE: Wenn diese Seite je mit einem Fehler während des Vorganges abbricht, oder sich nichts mehr tut, können sie den Vorgang problemlos durch einen RELOAD ihrer Browserseite [<em>per Tastatur, zB. F5</em>] wiederanstoßen. Dieses tut der Fortsetzung der Updatefunktion keinen Schaden. Dies gilt auch, wenn Sie einen Hinweis Fehler behoben haben.');
 @define('PLUGIN_AUTOUPD_MSG_EXECUTIONTIME', 'PHP max execution time set to 210 seconds');
 
