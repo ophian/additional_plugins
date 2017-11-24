@@ -1,3 +1,11 @@
+1.12:
+-----
+ * Add margin between zip and quickblog fieldset
+
+1.11:
+-----
+ * lang constant fixes
+
 1.10:
 -----
  * Buttonize Quickblog description

@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian');
-        $propbag->add('version',       '1.10');
+        $propbag->add('version',       '1.12');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -390,7 +390,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
                         // now proceed all unzipped images
                         foreach ($extracted_images AS $target) {
-                            preg_match('@(^.*/)+(.*)\.+(\w*)@',$target,$matches);
+                            preg_match('@(^.*/)+(.*)\.+(\w*)@', $target, $matches);
                             $real_dir   = $matches[1];
                             $basename   = $matches[2];
                             $extension  = $matches[3];
@@ -403,7 +403,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                                 'thumbSize' => $serendipity['thumbSize'],
                                 'thumb'     => $serendipity['thumbSuffix']
                             ));
-                            serendipity_plugin_api::hook_event('backend_media_makethumb', $thumbs);
+                            serendipity_plugin_api::hook_event('backend_media_makethumb', $thumbs);// add addData $target?
 
                             foreach($thumbs AS $thumb) {
                                 // Create thumbnail
@@ -593,6 +593,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
 }
 #quickblog_tablefield {
    display: table-cell;
+   margin-top: 1em;
 }
 #uploadform .quickblog_nugget {
     margin-left: 0;
@@ -619,7 +620,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
     margin-left: 0.5em;
 }
 #quickblog_tablefield .wrap_legend button {
-    margin: -2.65em 5em 1em auto;
+    margin: -1.65em 5em auto auto;
     display: block;
 }
 #quickblog_tablefield .field_info {
