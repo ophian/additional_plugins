@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '4.1.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.35');
+        $propbag->add('version',        '2.36');
         $propbag->add('configuration',  array('copytext', 'placement', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -611,7 +611,9 @@ class serendipity_event_multilingual extends serendipity_event
                                 $eventData[$key]['body'] = $this->strip_langs($eventData[$key]['body']);
                                 if (is_array($eventData[$key]['categories'])) {
                                     foreach($eventData[$key]['categories'] AS $ec_key => $ec_val) {
-                                        $eventData[$key]['categories'][$ec_key]['category_name'] = $this->strip_langs($ec_val['category_name']);
+                                        if (isset($ec_val['category_name'])) {
+                                            $eventData[$key]['categories'][$ec_key]['category_name'] = $this->strip_langs($ec_val['category_name']);
+                                        }
                                     }
                                 }
                             }
