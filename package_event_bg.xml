@@ -7864,9 +7864,9 @@
 <description>Use HTML5 and the s9y backend to scale images to the visitors viewport width</description>
 <maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.3.2</version>
+  <version>0.5</version>
   <requirements:s9yVersion>2.3.1</requirements:s9yVersion>
-  <date>2017-11-03</date>
+  <date>2017-12-28</date>
   <filelist>
     <dir name="serendipity_event_responsiveimages">
       <file>lang_de.inc.php</file>
