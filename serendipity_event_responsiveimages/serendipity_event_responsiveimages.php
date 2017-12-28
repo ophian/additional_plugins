@@ -18,7 +18,7 @@ class serendipity_event_responsiveimages extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_RESPONSIVE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '0.3.2');
+        $propbag->add('version',       '0.4');
         $propbag->add('requirements',  array(
             'serendipity' => '2.3.1',
         ));
@@ -197,7 +197,10 @@ class serendipity_event_responsiveimages extends serendipity_event
         $thumbnails = $this->_getThumbnails($id);
 
         $srcset = "srcset=\"$imagePath {$origImage['dimensions_width']}w,";
-
+        if ($origImage['dimensions_width'] <= $this->breakpoints[0]) {
+            // don't set the original image as srcset source if its breakpoint would be too small
+            $srcset = 'srcset="';
+        }
         for ($i = 0; $i < count($this->thumbWidths); $i++) {
             $thumbWidth = $this->thumbWidths[$i];
             $matchedThumbnail = false;
@@ -212,6 +215,10 @@ class serendipity_event_responsiveimages extends serendipity_event
                 $breakpoint = $this->breakpoints[$i];
                 $srcset .= "{$thumbnailHttp} {$breakpoint}w,";
             }
+        }
+        if (substr($srcset, -strlen(',')) === ',') {
+            // we don't want to have the trailing comma
+            $srcset = substr($srcset, 0, -1);
         }
         $srcset .= '"';
 
