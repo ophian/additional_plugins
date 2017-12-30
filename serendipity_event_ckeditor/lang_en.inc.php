@@ -59,7 +59,7 @@
 @define('PLUGIN_EVENT_CKEDITOR_OEMBED_OPTION', 'Allow "oEmbed" toolbar-button?');
 @define('PLUGIN_EVENT_CKEDITOR_OEMBED_OPTION_DESC', 'The "oEmbed" button widget allows to embed all kind of resources (videos, images, tweets, etc.) hosted by other services (called the "content providers") in the editors configuration.
 To our own disadvantage, "oEmbed" does have to use an external "proxy" service to properly work and make sense at all.
-The default CKEditor configuration up till version 4.7 was using an anonymized endpoint provided by Iframely, however, it did not include several features such as Google Maps.
+The default CKEditor configuration uses an anonymized endpoint provided by Iframely, however, it does not include several features such as Google Maps without additional API key.
 This "//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}" endpoint is used and set here. There are a lot more, see "http://oembed.com/#section7.1".
 It is recommended by the CKEditor documentation, to set up an account on the "https://iframely.com/" service for better control over embedded content, or to set up your own private host, see "http://docs.ckeditor.com/#!/guide/dev_media_embed-section-embedding-media-demo".
 If you don\'t need to use all this, you better stick to the simple mediaembed already included and keep this option set false.');

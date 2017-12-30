@@ -55,10 +55,10 @@
 @define('PLUGIN_EVENT_CKEDITOR_OEMBED_OPTION', 'Nutze "oEmbed" Toolbar-Button?');
 @define('PLUGIN_EVENT_CKEDITOR_OEMBED_OPTION_DESC', 'Das "oEmbed"-Button-Widget ermöglicht es, alle Arten von Ressourcen (Videos, Bilder, Tweets, etc.) einzubetten, die von anderen Diensten (sogenannte "Content Provider" in der Editor-Konfiguration) gehostet werden.
 Zu unserem eigenen Bedauern muss "oEmbed" dafür einen externen "Proxy"-Dienst verwenden, um richtig arbeiten zu können und überhaupt sinnvoll zu sein.
-Die standardmäßige CKEditor-Konfiguration bis Version 4.7 verwendete einen anonymisierten Endpunkt, der von Iframely bereitgestellt wird, jedoch manche Features, wie zB. Google Maps, nicht einbetten kann.
+Die standardmäßige CKEditor-Konfiguration verwendet einen anonymisierten Endpunkt, der von Iframely bereitgestellt wird, jedoch manche Features, wie zB. Google Maps, ohne API key nicht einbetten kann.
 Dieser "//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}" Endpunkt wird hier verwendet und ist in der Konfiguration gesetzt. Es gibt aber zahlreiche andere, siehe "http://oembed.com/#section7.1".
 Es wird in der CKEditor Dokumentation empfohlen, ein eigenes Konto für eine bessere Kontrolle der eingebetteten Inhalte bei "https://iframely.com/" einzurichten, oder einen eigenen privaten Host aufzusetzen, siehe "http://docs.ckeditor.com/#!/guide/dev_media_embed-section-embedding-media-demo".
-Wenn Sie das alles nicht wirklich benötigen, sollten Sie sich an das vorhandene Mediaembed Button-Widget halten und diese Option hier auf "Nein" gestellt lassen.');
+Wenn Sie das alles nicht wirklich benötigen, sollten Sie sich an das vorhandene einfache Mediaembed Button-Widget halten und diese Option hier auf "Nein" gestellt lassen.');
 @define('PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_OPTION', 'Typ des "oEmbed" Buttons');
 @define('PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_OPTION_DESC', 'Der Unterschied zwischen "Media Embed" und "Semantic Media Embed" besteht darin, dass das Erste das gesamte HTML enthält, das benötigt wird, um die Ressource in den Daten anzuzeigen, während das Letztere nur einen <oembed> Tag mit der URL der Ressource enthält.
 Dieser Unterschied macht das Media Embed Plugin perfekt für Systeme, bei denen die Funktion des Eingebundenen ohne Weiteres funktionieren soll.
