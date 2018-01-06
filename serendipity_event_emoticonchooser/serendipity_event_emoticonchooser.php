@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.00');
+        $propbag->add('version',       '3.01');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -352,7 +352,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     $eventData['buttons'][] = array(
                         'id'         => 'emoticon' . $eventData['item'],
                         'name'       => PLUGIN_EVENT_EMOTICONCHOOSER_TITLE,
-                        'javascript' => 'function() { serendipity.openPopup(\'' . $link . '\', \'EmoticonChooser\', \'width=800,height=100,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\') }',
+                        'javascript' => 'function() { serendipity.openPopup(\'' . $link . '\', \'EmoticonChooser\') }',
                         'img_url'    => $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/plugin_emoticon.png',
                         'toolbar'    => 'other'
                     );

@@ -1,3 +1,9 @@
+3.01:
+-----
+
+ * Minor removing change to $eventData['buttons']['javascript'] properties.
+   Third prop has no influence for windowPopup/magnificPopup frame designs.
+
 3.00:
 -----
 
