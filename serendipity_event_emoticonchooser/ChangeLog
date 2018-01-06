@@ -1,6 +1,12 @@
 3.01:
 -----
 
+ * Fix sortage of link, emoticon-block defines for the "as button" option
+   and mixed backend/frontend cases.
+
+3.01:
+-----
+
  * Minor removing change to $eventData['buttons']['javascript'] properties.
    Third prop has no influence for windowPopup/magnificPopup frame designs.
 
@@ -39,7 +45,7 @@
 -----
 
  * requirement and consistent changes
- * append CSS to $eventData stream , not prepend!
+ * append CSS to $eventData stream, not prepend!
 
 2.11:
 -----

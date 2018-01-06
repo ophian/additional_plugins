@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.01');
+        $propbag->add('version',       '3.02');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -194,11 +194,11 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     $func    = 'comment';
                     $style   = '';
                     $popcl   = '';
+                    $frontend = true;
                     // no break
                 case 'backend_entry_toolbar_extended':
                     if (!isset($txtarea)) {
                         $txtarea = 'serendipity[extended]';
-                        #$txtarea = 'extended';//linktrimmer usage
                         $func    = 'extended';
                     }
                     // no break
@@ -206,12 +206,11 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     if (!isset($txtarea)) {
                         if (isset($eventData['backend_entry_toolbar_body:textarea'])) {
                             // event caller has given us the name of the textarea converted
-                            // into a wysiwg editor(for example, the staticpages plugin)
+                            // into a wysiwyg editor(for example, the staticpages plugin)
                             $txtarea = $eventData['backend_entry_toolbar_body:textarea'];
                         } else {
                             // default value
                             $txtarea = 'serendipity[body]';
-                            #$txtarea = 'body';//linktrimmer usage
                         }
                         if (isset($eventData['backend_entry_toolbar_body:nugget'])) {
                             $func = $eventData['backend_entry_toolbar_body:nugget'];
@@ -227,7 +226,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         $cke_txtarea = $txtarea;
                     }
 
-                    if (!$serendipity['wysiwyg']) {
+                    if (!$serendipity['wysiwyg'] || $frontend) {
                         if (!isset($popcl)) {
                             $popcl = ' serendipityPrettyButton';
                         }
@@ -238,9 +237,12 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
                         $popupstyle = '';
                         $popuplink  = '';
+                        $button = serendipity_db_bool($this->get_config('button', 'false'));
+                        $backend = defined('IN_serendipity_admin');
                         if (serendipity_db_bool($this->get_config('popup', 'false'))) {
                             $popupstyle = '; display: none';
-                            $popuplink  = serendipity_db_bool($this->get_config('button', 'false'))
+                            #var_dump($button);var_dump($backend);
+                            $popuplink  = ($backend || (!$backend && $button))
                                         ? '<input type="button" onclick="toggle_emoticon_bar_' . $func . '(); return false" href="#" class="serendipity_toggle_emoticon_bar' . $popcl . '" value="'.$this->get_config('popuptext').'">'
                                         : '<a class="serendipity_toggle_emoticon_bar' . $popcl . '" href="#" onclick="toggle_emoticon_bar_' . $func . '(); return false">' . $this->get_config('popuptext') . '</a>';
                         }
@@ -307,9 +309,11 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
                     $emotics = ''; // init
 
-                    if ($serendipity['wysiwyg']) {
+                    if ($serendipity['wysiwyg'] || $frontend) {
                         $style = '';
-                        $popupstyle = 'display: inline-flex;';
+                        if (!$frontend) {
+                            $popupstyle = 'display: inline-flex;';
+                        }
                         $emotics .= "
 
     <script type=\"text/javascript\">
@@ -327,11 +331,14 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         }
                     }
                     $emotics .= "    </div>\n\n";
-                    if (!$serendipity['wysiwyg']) {
+                    if (!$serendipity['wysiwyg'] || $frontend) {
                         $emotics .= "</div><!-- emoticon_bar end -->\n\n";
                     }
                     if ($serendipity['wysiwyg']) {
                         $this->set_config('emotics', $emotics); //cache this extra?
+                        if ($frontend) {
+                            echo $emotics;
+                        }
                     } else {
                         echo $emotics;
                     }
