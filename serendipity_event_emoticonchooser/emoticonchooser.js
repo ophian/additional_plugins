@@ -11,7 +11,7 @@ function emoticonchooser(instance_name, this_instance, cke_txtarea) {
     window[toggle_emobar] = function () {
         el = document.getElementById('serendipity_emoticonchooser_'+instance_name+'');
         if (el.style.display == 'none') {
-            el.style.display = 'inline-block';
+            el.style.display = 'inline-flex';
         } else {
             el.style.display = 'none';
         }

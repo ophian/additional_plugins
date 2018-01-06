@@ -19,14 +19,16 @@ class serendipity_event_emoticonchooser extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Jay Bertrandt, Ian');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.1.0',
+            'smarty'      => '3.1.8',
+            'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '2.16');
+        $propbag->add('version',       '3.00');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
+            'backend_wysiwyg'                => true,
+            'external_plugin'                => true,
             'frontend_comment'               => true,
             'backend_header'                 => true,
             'frontend_footer'                => true,
@@ -82,9 +84,97 @@ class serendipity_event_emoticonchooser extends serendipity_event
         return '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_EMOTICONCHOOSER_TOOLBAR_DESC . '</span>';
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null)
+    /**
+     * Creates the popup template for the WYSIWYG-Editor popup
+     */
+    function show()
     {
         global $serendipity;
+
+        if (IN_serendipity !== true) {
+            die ("Don't hack!");
+        }
+        $file = $this->get_config('emotics');
+// we cannot access $serendipity['enablePopup'] here correctly, which is weird, so in either case switching around it won't work properly. So we check first but make a try catch to workaround this....
+?>
+<!doctype html>
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="<?=$serendipity['language']?>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<?=$serendipity['language']?>"> <!--<![endif]-->
+<head>
+    <meta charset="<?=LANG_CHARSET?>">
+    <title><?=PLUGIN_LINKTRIMMER_NAME?></title>
+    <link rel="stylesheet" href="<?=$serendipity['baseURL']?>serendipity.css.php?serendipity[css_mode]=serendipity_admin.css">
+    <script>
+        function emoticonchooser(instance_name, this_instance, cke_txtarea) {
+            if (!instance_name) var instance_name = '';
+            if (!this_instance) var this_instance = '';
+            if (!cke_txtarea)   var cke_txtarea   = '';
+
+            var editor_instance = 'editor'+instance_name;
+            var use_emoticon    = 'use_emoticon_'+instance_name;
+
+            window[use_emoticon] = function (img) {
+                <?php if ($serendipity['enablePopup'] != true): ?>
+                try {
+                    window.parent.parent.serendipity.serendipity_imageSelector_addToBody(img+' ', editor_instance);
+                    window.parent.parent.$.magnificPopup.close();
+                }
+                catch (e) {
+                    self.opener.serendipity_imageSelector_addToBody(img+' ', editor_instance);
+                    self.close();
+                }
+                <?php else: ?>
+                self.opener.serendipity_imageSelector_addToBody(img+' ', editor_instance);
+                self.close();
+                <?php endif; ?>
+            }
+        }
+    </script>
+    <style>
+        .serendipity_emoticonchooser_page .emoticonchooser {
+            display: block;
+            margin: 1em auto auto;
+        }
+        #main_emoticonchooser {
+            border: 1px solid #BBB;
+            background: none repeat scroll 0% 0% #EEE;
+            padding: 0.75em;
+            margin: 0px 0px 1em;
+        }
+        #main_emoticonchooser legend {
+            border: 1px solid #72878A;
+            background: none repeat scroll 0% 0% #DDD;
+            padding: 2px 5px;
+        }
+    </style>
+</head>
+
+<body id="serendipity_admin_page" class="serendipity_emoticonchooser_page">
+    <main id="workspace" class="clearfix">
+        <div id="content" class="clearfix">
+
+            <div class="emoticonchooser">
+                <form action="" method="post">
+                    <input type="hidden" name="txtarea" value="<?php echo serendipity_specialchars($_GET['txtarea']) ?>">
+                    <fieldset id="main_emoticonchooser" class="">
+                        <legend><?php echo PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT ?></legend>
+
+                        <?php echo $file; ?>
+
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
+<?php
+    }
+
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
+        global $serendipity, $emotics;
 
         if (!class_exists('serendipity_event_emoticate')) {
             return false;
@@ -108,6 +198,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                 case 'backend_entry_toolbar_extended':
                     if (!isset($txtarea)) {
                         $txtarea = 'serendipity[extended]';
+                        #$txtarea = 'extended';//linktrimmer usage
                         $func    = 'extended';
                     }
                     // no break
@@ -120,11 +211,12 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         } else {
                             // default value
                             $txtarea = 'serendipity[body]';
+                            #$txtarea = 'body';//linktrimmer usage
                         }
                         if (isset($eventData['backend_entry_toolbar_body:nugget'])) {
                             $func = $eventData['backend_entry_toolbar_body:nugget'];
                         } else{
-                            $func    = 'body';
+                            $func = 'body';
                         }
                     }
 
@@ -135,21 +227,23 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         $cke_txtarea = $txtarea;
                     }
 
-                    if (!isset($popcl)) {
-                        $popcl = ' serendipityPrettyButton';
-                    }
+                    if (!$serendipity['wysiwyg']) {
+                        if (!isset($popcl)) {
+                            $popcl = ' serendipityPrettyButton';
+                        }
 
-                    if (!isset($style)) {
-                        $style = 'margin-top: 5px; vertical-align: bottom';
-                    }
+                        if (!isset($style)) {
+                            $style = 'margin-top: 5px; vertical-align: bottom';
+                        }
 
-                    $popupstyle = '';
-                    $popuplink  = '';
-                    if (serendipity_db_bool($this->get_config('popup', 'false'))) {
-                        $popupstyle = '; display: none';
-                        $popuplink  = serendipity_db_bool($this->get_config('button', 'false'))
-                                    ? '<input type="button" onclick="toggle_emoticon_bar_' . $func . '(); return false" href="#" class="serendipity_toggle_emoticon_bar' . $popcl . '" value="' . $this->get_config('popuptext') . '">'
-                                    : '<a class="serendipity_toggle_emoticon_bar' . $popcl . '" href="#" onclick="toggle_emoticon_bar_' . $func . '(); return false">' . $this->get_config('popuptext') . '</a>';
+                        $popupstyle = '';
+                        $popuplink  = '';
+                        if (serendipity_db_bool($this->get_config('popup', 'false'))) {
+                            $popupstyle = '; display: none';
+                            $popuplink  = serendipity_db_bool($this->get_config('button', 'false'))
+                                        ? '<input type="button" onclick="toggle_emoticon_bar_' . $func . '(); return false" href="#" class="serendipity_toggle_emoticon_bar' . $popcl . '" value="'.$this->get_config('popuptext').'">'
+                                        : '<a class="serendipity_toggle_emoticon_bar' . $popcl . '" href="#" onclick="toggle_emoticon_bar_' . $func . '(); return false">' . $this->get_config('popuptext') . '</a>';
+                        }
                     }
 
                     $i = 1;
@@ -178,8 +272,11 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         }
                         $unique[$value] = $key;
                     }
-                    // script include has to stick to to backend_header, while using inline onclick (see above)
+                    // script include has to stick to backend_header, while using inline onclick (see above)
                     if (IN_serendipity_admin === true) {
+                        if (!$serendipity['wysiwyg']) {
+                            echo "    $popuplink\n"; // append toolbar button in backend entries in PLAIN EDITOR toolbar
+
 ?>
 
 <div class="serendipity_emoticon_bar">
@@ -188,6 +285,10 @@ class serendipity_event_emoticonchooser extends serendipity_event
     </script>
 
 <?php
+                        }
+                        if ($serendipity['wysiwyg']) {
+                            echo "    $popuplink\n"; // add toolbar button in backend entries above CKEDITOR toolbar
+                        }
                     } else { // in frontend footer
 ?>
 
@@ -201,24 +302,60 @@ class serendipity_event_emoticonchooser extends serendipity_event
     </script>
 
 <?php
+                        echo "    $popuplink\n";
                     }
-                    echo "    $popuplink\n";
-                    echo '    <div id="serendipity_emoticonchooser_' . $func . '" style="' . $style . $popupstyle . '">'."\n";
+
+                    $emotics = ''; // init
+
+                    if ($serendipity['wysiwyg']) {
+                        $style = '';
+                        $popupstyle = 'display: inline-flex;';
+                        $emotics .= "
+
+    <script type=\"text/javascript\">
+        emoticonchooser('$func', '$txtarea', '$cke_txtarea');
+    </script>
+
+";
+                    }
+
+                    $emotics .= '    <div id="serendipity_emoticonchooser_' . $func . '" style="' . $style . $popupstyle . '">'."\n";
                     foreach($unique AS $value => $key) {
-                        echo '        <a href="javascript:use_emoticon_' . $func . '(\'' . addslashes($key) . '\')" title="' . $key . '"><img src="'. $value .'" style="border: 0px" alt="' . $key . '" /></a>&nbsp;'."\n";
+                        $emotics .= '        <a href="javascript:use_emoticon_' . $func . '(\'' . addslashes($key) . '\')" title="' . $key . '"><img src="'. $value .'" style="border: 0px" alt="' . $key . '" /></a>&nbsp;'."\n";
                         if ($i++ % 10 == 0) {
-                            echo "        <br />\n";
+                            $emotics .= "        <br />\n";
                         }
                     }
-                    echo "    </div>\n\n";
-                    echo "</div><!-- emoticon_bar end -->\n\n";
+                    $emotics .= "    </div>\n\n";
+                    if (!$serendipity['wysiwyg']) {
+                        $emotics .= "</div><!-- emoticon_bar end -->\n\n";
+                    }
+                    if ($serendipity['wysiwyg']) {
+                        $this->set_config('emotics', $emotics); //cache this extra?
+                    } else {
+                        echo $emotics;
+                    }
                     break;
 
                 case 'backend_header':
+                    if ($serendipity['wysiwyg']) $noemojs = true;
                 case 'frontend_footer':
+                    if (!isset($noemojs) || !$noemojs) {
 ?>
     <script type="text/javascript" src="<?php echo $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_emoticonchooser/emoticonchooser.js'; ?>"></script>
 <?php
+                    }
+                    break;
+
+                case 'backend_wysiwyg':
+                    $link = $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/emoticonchooser' . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;') . 'txtarea=emoticonchooser_'.$eventData['item'];
+                    $eventData['buttons'][] = array(
+                        'id'         => 'emoticon' . $eventData['item'],
+                        'name'       => PLUGIN_EVENT_EMOTICONCHOOSER_TITLE,
+                        'javascript' => 'function() { serendipity.openPopup(\'' . $link . '\', \'EmoticonChooser\', \'width=800,height=100,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\') }',
+                        'img_url'    => $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/plugin_emoticon.png',
+                        'toolbar'    => 'other'
+                    );
                     break;
 
                 case 'css_backend':
@@ -227,26 +364,55 @@ class serendipity_event_emoticonchooser extends serendipity_event
 /* emoticonchooser plugin start */
 
 .serendipity_toggle_emoticon_bar.serendipityPrettyButton {
-    display: inline-block;
+    display: inline-flex;
     margin: 0 auto 1px;
 }
 .serendipity_emoticon_bar {
     text-align: right;
 }
-';
-                    if ($serendipity['version'][0] < 2) {
-                        $eventData .= '
-.serendipity_emoticon_bar {
-    margin: 3px auto 0;
-}
-';
-
-                    }
-                    $eventData .= '
 
 /* emoticonchooser plugin end */
 
 ';
+                    break;
+
+                case 'external_plugin':
+                    if ($_SESSION['serendipityAuthedUser'] !== true)  {
+                        return true;
+                    }
+                    $uri_parts = explode('?', str_replace('&amp;', '&', $eventData));
+                    $parts     = explode('&', $uri_parts[0]);
+                    $uri_part  = $parts[0];
+                    $parts = array_pop($parts);
+                    if (count($parts) > 1) {
+                       foreach($parts AS $key => $value) {
+                            $val = explode('=', $value);
+                            $_GET[$val[0]] = $val[1];
+                       }
+                    } else {
+                       $val = explode('=', $parts[0]);
+                       $_GET[$val[0]] = $val[1];
+                    }
+                    if (!isset($_GET['txtarea'])) {
+                        $parts = explode('&', $uri_parts[1]);
+                        if (count($parts) > 1) {
+                            foreach($parts AS $key => $value) {
+                                 $val = explode('=', $value);
+                                 $_GET[$val[0]] = $val[1];
+                            }
+                        } else {
+                            $val = explode('=', $parts[0]);
+                            $_GET[$val[0]] = $val[1];
+                        }
+                    }
+                    switch($uri_part) {
+                        case 'plugin_emoticon.png':
+                            header('Content-Type: image/png');
+                            echo file_get_contents(dirname(__FILE__) . '/plugin_emoticon.png');
+                            break;
+                        case 'emoticonchooser':
+                            $this->show(true);
+                    }
                     break;
 
                 default:

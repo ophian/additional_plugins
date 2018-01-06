@@ -1,3 +1,12 @@
+3.00:
+-----
+
+ * Set minimum requirement to the Serendipity 2.1+ Series
+ * Append PLAIN EDITOR $eventData-hooked button to the editor_toolbar
+   and flex the emoticons display box, which saves a lot of space!
+ * In WYSIWYGT mode, add the hooked emoticon button to the WYSIWYG-Editor
+   toolbar and open the emoticons via windowPopup/magnificPopup.
+
 2.16:
 -----
 
