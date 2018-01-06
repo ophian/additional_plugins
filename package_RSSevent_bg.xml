@@ -311,7 +311,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Показва лента с картинки - &quot;усмивки&quot;&lt;/b&gt;&lt;br /&gt;Показва лента за избор на картинки, изразяващи емоции (emoticons). Не работи с WYSIWYG редактор.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sat, 06 Jan 2018 15:03:56 +0100</pubDate>
+<pubDate>Sat, 06 Jan 2018 19:33:38 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
