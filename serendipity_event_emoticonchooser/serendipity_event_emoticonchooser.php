@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.03');
+        $propbag->add('version',       '3.04');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -275,7 +275,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         $unique[$value] = $key;
                     }
                     // script include has to stick to backend_header, while using inline onclick (see above)
-                    if (IN_serendipity_admin === true) {
+                    if (defined('IN_serendipity_admin') && IN_serendipity_admin === true) {
                         if (!$serendipity['wysiwyg']) {
                             echo "    $popuplink\n"; // append toolbar button in backend entries in PLAIN EDITOR toolbar
 
