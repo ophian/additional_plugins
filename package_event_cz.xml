@@ -2398,7 +2398,7 @@
 <description>Zobrazí lištu se smajlíky, které je možné vložit do textu příspěvku nebo komentáře.</description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.03</version>
+  <version>3.04</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <date>2018-01-10</date>
   <filelist>
