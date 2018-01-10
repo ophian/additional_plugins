@@ -189,7 +189,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.8.0.1'); // is CKEDITOR Series 4.8.0 - and appended plugin revision .1
+        $propbag->add('version',       '4.8.0.2'); // is CKEDITOR Series 4.8.0 - and appended plugin revision .2
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
@@ -700,13 +700,16 @@ ol.linenums li {
                         // switch to finisher, in case of nuggets
                         $this->event_hook('backend_wysiwyg_finish', $bag, $eventData);
                     } else {
-                        if (serendipity_db_bool($this->get_config('codebutton'))) {
-                            // for case using customized toolbars, else it falls back to toolbar Group where 'others' is automatically added
-                            $bid = array();
-                            if (isset($eventData['buttons']) && (is_array($eventData['buttons']) && !empty($eventData['buttons']))) foreach ($eventData['buttons'] AS $bt) { $bid[] = $bt['id']; }
-                            $addB = implode(",", $bid);
-                            $addB = str_replace(',','","',$addB);
+                        // for case using customized toolbars, else it falls back to toolbar Group where 'others' is automatically added
+                        $bid = array();
+                        if (isset($eventData['buttons']) && (is_array($eventData['buttons']) && !empty($eventData['buttons']))) {
+                            foreach ($eventData['buttons'] AS $bt) {
+                                $bid[] = $bt['id'];
+                            }
                         }
+                        $addB = implode(",", $bid);
+                        $addB = str_replace(',','","',$addB);
+
                         // this builds both textareas of entry forms only
                         if (isset($eventData['item']) && !empty($eventData['item'])) {
                             $jebtnarr = (isset($eventData['buttons']) && (is_array($eventData['buttons']) && !empty($eventData['buttons']))) ? json_encode($eventData['buttons']) : 'null';
