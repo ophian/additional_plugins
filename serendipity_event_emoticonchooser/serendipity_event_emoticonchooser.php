@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.04');
+        $propbag->add('version',       '3.05');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -331,7 +331,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         }
                     }
                     $emotics .= "    </div>\n\n";
-                    if (!$serendipity['wysiwyg'] || $frontend) {
+                    if (!$serendipity['wysiwyg'] || ($serendipity['GET']['adminModule'] != 'comments' && $frontend)) {
                         $emotics .= "</div><!-- emoticon_bar end -->\n\n";
                     }
                     if ($serendipity['wysiwyg']) {
@@ -345,9 +345,12 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     break;
 
                 case 'backend_header':
-                    if ($serendipity['wysiwyg']) $noemojs = true;
+                    if ($serendipity['wysiwyg']) {
+                        $noemojs = true;
+                    }
+                    // no-BREAK!
                 case 'frontend_footer':
-                    if (!isset($noemojs) || !$noemojs) {
+                    if ((!isset($noemojs) || !$noemojs) || ($serendipity['GET']['adminModule'] == 'comments' && $serendipity['GET']['adminAction'] == 'edit')) {
 ?>
     <script type="text/javascript" src="<?php echo $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_emoticonchooser/emoticonchooser.js'; ?>"></script>
 <?php
