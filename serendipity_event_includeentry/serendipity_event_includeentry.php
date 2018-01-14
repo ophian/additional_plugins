@@ -32,7 +32,7 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian');
-        $propbag->add('version',       '2.19');
+        $propbag->add('version',       '2.20');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
@@ -231,7 +231,7 @@ class serendipity_event_includeentry extends serendipity_event
     {
         global $serendipity;
 
-        $html = (($serendipity['version'][0] < 2) ? '<strong>' . CATEGORIES . '</strong><br />' : '<span class="wrap_legend"><legend>' . CATEGORIES . '</legend></span>') ."\n";
+        $html = (($serendipity['version'][0] < 2) ? '<strong>' . CATEGORIES . '</strong><br />' : '<div class="configuration_group odd" style="display: flex;border-right: 0 none;border-bottom: 0 none;border-left: 0 none;"><div class="clearfix form_field" style="width: 50%;"><span class="wrap_legend"><legend>' . CATEGORIES . '</legend></span></div>') ."\n";
 
         $all_valid = false;
         if (is_array($serendipity['POST']['plugin']['enabled_categories'])) {
@@ -247,6 +247,7 @@ class serendipity_event_includeentry extends serendipity_event
             }
         }
 
+        if ($serendipity['version'][0] > 1) $html .= '<div class="clearfix grouped" style="width: 50%;">'."\n";
         $html .= '<select id="staticblock_enabled_categories" name="serendipity[plugin][enabled_categories][]" multiple="true" size="5">'."\n";
         $html .= '    <option value="-front-" ' . ($all_valid || isset($valid['-front-']) ? "selected='selected'" : '') . '>[' . NO_CATEGORY . ']</option>'."\n";
         if (is_array($cats = serendipity_fetchCategories())) {
@@ -257,6 +258,7 @@ class serendipity_event_includeentry extends serendipity_event
         }
 
         $html .= '</select>'."\n";
+        if ($serendipity['version'][0] > 1) $html .= "</div>\n</div>\n";
 
         return $html;
     }
