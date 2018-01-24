@@ -1,6 +1,10 @@
+2.21:
+-----
+ - Minor padding-top style for 2.20 
+
 2.20:
 -----
- - Fake & fix Serendipity option style for category selection
+ - Fake & fix plugin option style for the category selection
 
 2.19:
 -----
