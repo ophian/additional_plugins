@@ -23,7 +23,7 @@
 <category>Event Plugins</category>
 <author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Aggregiert Einträge von mehreren RSS Feeds (&quot;Planet&quot;). WICHTIGER HINWEIS: Die Aktualisierung des Aggregators muss derzeit noch manuell via Crontab aufgerufen werden. Rufen Sie im gewünschten Abstand per cronjob o.ä. folgende URL auf: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sat, 22 Jul 2017 13:34:11 +0200</pubDate>
+<pubDate>Mon, 05 Feb 2018 15:06:27 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
@@ -318,9 +318,9 @@
 <title>Regeln für Veröffentlichungen: Führt einige Prüfungen vor der Veröffentlichung eines Artikels durch.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrycheck</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Gregor Voeltz</author>
+<author>Garvin Hicking, Gregor Voeltz, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrycheck&lt;br /&gt;Regeln für Veröffentlichungen&lt;/b&gt;&lt;br /&gt;Führt einige Prüfungen vor der Veröffentlichung eines Artikels durch.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 03 Jan 2017 16:17:55 +0100</pubDate>
+<pubDate>Mon, 12 Feb 2018 16:54:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_entrycheck</guid>
 </item>
 <item>
@@ -1256,7 +1256,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Einträge via XML-RPC erstellen&lt;/b&gt;&lt;br /&gt;Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 25 Jun 2017 11:52:43 +0200</pubDate>
+<pubDate>Mon, 12 Feb 2018 16:40:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>

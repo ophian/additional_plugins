@@ -1091,11 +1091,11 @@
 <summary>Serendipity Autoren</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Zeigt eine Liste aller Autoren</description>
-<maintainers><maintainer><name>Falk Döring</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Falk Doering</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.2.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-19</date>
+  <date>2018-01-24</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
       <file>ChangeLog</file>
