@@ -17,8 +17,8 @@ class serendipity_event_entrycheck extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_ENTRYCHECK_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_ENTRYCHECK_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Gregor Voeltz');
-        $propbag->add('version',       '1.18');
+        $propbag->add('author',        'Garvin Hicking, Gregor Voeltz, Ian');
+        $propbag->add('version',       '1.19');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -36,11 +36,13 @@ class serendipity_event_entrycheck extends serendipity_event
 
     function introspect_config_item($name, &$propbag)
     {
+        global $serendipity;
+
         switch($name) {
             case 'locking':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_ENTRYCHECK_LOCKING);
-                $propbag->add('description', '');
+                $propbag->add('description', PLUGIN_EVENT_ENTRYCHECK_LOCKING_DESC);
                 $propbag->add('default',     'false');
                 break;
 
@@ -73,7 +75,7 @@ class serendipity_event_entrycheck extends serendipity_event
                 break;
 
             case 'defaultCat':
-                $cats    = serendipity_fetchCategories($serendipity['authorid']);
+                $cats = serendipity_fetchCategories($serendipity['authorid']);
                 if (!is_array($cats)) {
                     return false;
                 }
@@ -113,7 +115,7 @@ class serendipity_event_entrycheck extends serendipity_event
     {
         global $serendipity;
 
-        $locked = serendipity_db_query("SELECT property, value FROM {$serendipity['dbPrefix']}entryproperties WHERE (property = 'locked' or property = 'lock_owner')AND entryid = " . (int)$id, false, 'assoc', false, 'property', 'value');
+        $locked = serendipity_db_query("SELECT property, value FROM {$serendipity['dbPrefix']}entryproperties WHERE (property = 'locked' or property = 'lock_owner') AND entryid = " . (int)$id, false, 'assoc', false, 'property', 'value');
         if (is_array($locked) && $locked['locked'] > 0 ) {
             // Entry is locked
 
@@ -160,8 +162,8 @@ class serendipity_event_entrycheck extends serendipity_event
                         return true;
                     }
 
-                    $time   = time();
-                    $state  = 'unlocked';
+                    $time  = time();
+                    $state = 'unlocked';
                     if (serendipity_db_bool($this->get_config('locking', 'false'))) {
                         $this->checkLock($state, $eventData['id']);
 

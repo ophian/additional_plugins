@@ -1,0 +1,16 @@
+1.19:
+-----
+ * Fix to allow fetching categories by author by adding global $serendipity array
+ * Add PLUGIN_EVENT_ENTRYCHECK_LOCKING description
+ * Add ChangeLog
+
+1.18:
+-----
+ * Remove WYSIWYG warning
+
+1.17:
+-----
+ * Use lang API - extends required version
+ * Fix error (preview) messaging
+
+---

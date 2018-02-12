@@ -27,4 +27,5 @@
 @define('PLUGIN_EVENT_ENTRYCHECK_UNLOCK', 'Unlock Entry');
 @define('PLUGIN_EVENT_ENTRYCHECK_LOCK_WARNING', 'This entry is locked and can only be saved by the lock owner, unless you unlock the entry.');
 @define('PLUGIN_EVENT_ENTRYCHECK_LOCKING', 'Enable entry locks?');
+@define('PLUGIN_EVENT_ENTRYCHECK_LOCKING_DESC', 'When using Serendipity as a team collaboration platform, you may want to prevent your team authors to edit/review the same article without the risk to accidentally overwrite the others work. This option adds a basic locking support. It will automatically lock an article when entering the edit mode, and a lock is removed after 1 hour of inactivity. Also added is an "unlock" button, which will steal a lock and let you be able to edit an entry.');
 
