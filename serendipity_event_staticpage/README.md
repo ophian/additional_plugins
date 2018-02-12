@@ -162,7 +162,7 @@ Go ahead and play with it. The API is quite basic and described in the new 'smar
 
 Variable options:
  - `$TEMPLATE` can be replaced with the name of the staticpage template to parse. It defaults to "plugin_staticpage.tpl".
- - `$PAGEVAR` must match the variable prefix of the staticpage template. If you want to parse multiple staticpages, you might need to seperate those from each other. Always use the variable prefix that is also employed in the template file.
+ - `$PAGEVAR` must match the variable prefix of the staticpage template. If you want to parse multiple staticpages, you might need to separate those from each other. Always use the variable prefix that is also employed in the template file.
 
 To retrieve a staticpage, you need to supply either one of those options:
  - `$ID` can be replaced with the ID of the staticpage you want to fetch.

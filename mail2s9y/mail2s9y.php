@@ -4,7 +4,7 @@
 # mail2s9y.php, 0.7
 # -----------------
 #
-# Seperate PHP-Script to allow email blogging.
+# Separate PHP-Script to allow email blogging.
 # REQUIRES: PHP CLI-binary, Linux/Cygwin(?), local Mail installation.
 #
 # Contributed by Sebastian Nohn <sebastian@nohn.net>, Gijs van Tulder <gvtulder@gmx.net>

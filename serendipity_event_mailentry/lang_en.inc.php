@@ -7,7 +7,7 @@
  */
 
 @define('PLUGIN_MAILENTRY_NAME',         'e-Mail Entry');
-@define('PLUGIN_MAILENTRY_DESC',         'Allow users to e-mail a blog entry to a friend. Pay attention that this plugin can cause automatted traffic if bots are submitting your forms.');
+@define('PLUGIN_MAILENTRY_DESC',         'Allow users to e-mail a blog entry to a friend. Pay attention that this plugin can cause automated traffic if bots are submitting your forms.');
 @define('PLUGIN_MAILENTRY_TO',           'e-Mail this entry to:');
 @define('PLUGIN_MAILENTRY_FROM_NAME',    'Your name:');
 @define('PLUGIN_MAILENTRY_FROM_ADDR',    'Your e-mail address:');

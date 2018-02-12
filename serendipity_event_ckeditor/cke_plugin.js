@@ -75,7 +75,7 @@ function Spawnnuggets(item, addEP, jsED) {
     s9ymediabuttons.push('styxMLG'+area);
 
     // Init CKEDITOR added plugins
-    // Seperate by comma, no whitespace allowed, and keep last comma, since later on concatenated with Serendipity hooked plugins, eg MediaLibrary!
+    // Separate by comma, no whitespace allowed, and keep last comma, since later on concatenated with Serendipity hooked plugins, eg MediaLibrary!
     // 'codesnippet' is an official CKEDITOR plugin.
     //    Plugin Dependencies: codesnippet Add-on Dependencies: 'widget'
     //    Plugin Dependencies: widget      Add-on Dependencies: 'Line Utilities' and 'Clipboard'

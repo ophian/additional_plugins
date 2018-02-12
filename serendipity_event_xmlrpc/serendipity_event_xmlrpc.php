@@ -126,7 +126,7 @@ class serendipity_event_xmlrpc extends serendipity_event
                 break;
 
             case 'category':
-                $cats    = serendipity_fetchCategories($serendipity['authorid']);
+                $cats = serendipity_fetchCategories($serendipity['authorid']);
                 if (!is_array($cats)) {
                     return false;
                 }

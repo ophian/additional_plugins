@@ -39,7 +39,7 @@ if (IN_serendipity !== true) {
 // You can see the categoryIDs in the backend of managing categories in the URL ("cid"). Multiple categories
 // can be separated with a comma (,).
 //
-// Calling the update like that does NOT STORE THE ENTRIES in your usual blog database, but in a seperate
+// Calling the update like that does NOT STORE THE ENTRIES in your usual blog database, but in a separate
 // one. So this does not really aggregate entries, but simply display them. The cachetime means how many
 // seconds must pass until the feeds are refreshed when called.
 
@@ -1246,7 +1246,7 @@ class serendipity_event_aggregator extends serendipity_event
         }
         if ($this->debug) printf("DEBUG: cache_authors['realname'] = authorid has %d entries\n", count($cache_authors));
 
-        if ($opt['store_seperate']) {
+        if ($opt['store_separate']) {
             $sql_cache_entries = serendipity_db_query("SELECT e.feedid, e.id, e.entrydate, e.entrytitle
                                                          FROM {$serendipity['dbPrefix']}aggregator_feedlist AS e");
             if (is_array($sql_cache_entries)) {
@@ -1279,7 +1279,7 @@ class serendipity_event_aggregator extends serendipity_event
         if ($this->debug) printf("DEBUG: cache_md5['md5'] = entryid has %d entries.\n", count($cache_md5));
 
         foreach($feeds AS $feed) {
-            if (!$opt['store_seperate']) printf("Read %s.\n", $feed['feedurl']);
+            if (!$opt['store_separate']) printf("Read %s.\n", $feed['feedurl']);
             flush();
             $feed_authorid = $cache_authors[$feed['feedname']];
             if (empty($feed_authorid))
@@ -1435,7 +1435,7 @@ class serendipity_event_aggregator extends serendipity_event
 
                 // error handling
                 if ($simplefeed->error()) {
-                    if (!$opt['store_seperate']) printf('<p><b>ERROR:</b> ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($simplefeed->error()) : htmlspecialchars($simplefeed->error(), ENT_COMPAT, LANG_CHARSET)) . "</p>\r\n") ;
+                    if (!$opt['store_separate']) printf('<p><b>ERROR:</b> ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($simplefeed->error()) : htmlspecialchars($simplefeed->error(), ENT_COMPAT, LANG_CHARSET)) . "</p>\r\n") ;
                 }
 
                 if ($success) {
@@ -1457,13 +1457,13 @@ class serendipity_event_aggregator extends serendipity_event
                         $stack[] = $item;
                     }
                 } else {
-                    if (!$opt['store_seperate']) printf('<p><b>ERROR:</b> ' . print_r($success, true) . "</p>\r\n") ;
+                    if (!$opt['store_separate']) printf('<p><b>ERROR:</b> ' . print_r($success, true) . "</p>\r\n") ;
                 }
            }
 
            while(list($key, $item) = each($stack)) {
 
-                if ($opt['store_seperate']) {
+                if ($opt['store_separate']) {
                     $ep_id = $cache_entries[$item['title']][$feed['feedid']][$item['date']];
                     if ($this->debug) {
                             printf("DEBUG: lookup cache_entries[%s][%s][%s] finds %s.\n",
@@ -1584,7 +1584,7 @@ class serendipity_event_aggregator extends serendipity_event
                     }
                 }
 
-                if ($opt['store_seperate']) {
+                if ($opt['store_separate']) {
                     if ($entry['id'] > 0) {
                         serendipity_db_query("UPDATE {$serendipity['dbPrefix']}aggregator_feedlist
                         SET feedid      = '" . $feed['feedid'] . "',
@@ -1618,11 +1618,11 @@ class serendipity_event_aggregator extends serendipity_event
                     $entryid = serendipity_updertEntry($entry);
                     $this->insertProperties($entryid, $feed, $md5hash);
                 }
-                if (!$opt['store_seperate']) printf(" Save '%s' as %s.\n", $item['title'], $entryid);
+                if (!$opt['store_separate']) printf(" Save '%s' as %s.\n", $item['title'], $entryid);
             }
-            if (!$opt['store_seperate']) printf("Finish feed.\n");
+            if (!$opt['store_separate']) printf("Finish feed.\n");
         }
-        if (!$opt['store_seperate']) printf("Finish planetarium.\n");
+        if (!$opt['store_separate']) printf("Finish planetarium.\n");
     }
 
     function generate_content(&$title)
@@ -1695,7 +1695,7 @@ class serendipity_event_aggregator extends serendipity_event
             $opt['template'] = 'feedlist.tpl';
         }
 
-        $opt['store_seperate'] = true;
+        $opt['store_separate'] = true;
 
         $fkey = 'last_showfeed_' . md5(serialize($opt));
         if (time() - $this->get_config($fkey) > $opt['cachetime']) {
