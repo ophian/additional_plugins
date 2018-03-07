@@ -530,8 +530,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                 break;
             case 'sqlite':
             case 'sqlite3':
+            case 'sqlite3oo':
             case 'pdo-sqlite':
-            case 'pdo-sqlite3oo':
                 $sql = "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = '{$serendipity['dbPrefix']}comments';";
                 $sql = serendipity_db_query($sql);
                 if (is_array($sql)) {

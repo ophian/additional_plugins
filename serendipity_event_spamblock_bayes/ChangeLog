@@ -1,6 +1,10 @@
+0.4.31:
+-----
+ * Fix 'sqlite3oo' case check again
+
 0.4.30:
 -------
- * Fix 'pdo-sqlite3oo' case check
+ * Fix 'pdo-sqliteoo' case check
 
 0.4.29:
 -------
