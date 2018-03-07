@@ -1,4 +1,8 @@
-#
+1.06:
+-------
+ * Fix 'pdo-sqlite3oo' case check
+
+
 1.05:
 -----
  * Check REQUEST object
