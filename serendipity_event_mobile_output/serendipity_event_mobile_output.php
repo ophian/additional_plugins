@@ -14,7 +14,7 @@ TODO:
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
-@define('PLUGIN_EVENT_MOBILE_VERSION','1.06');
+@define('PLUGIN_EVENT_MOBILE_VERSION','1.07');
 @define('PLUGIN_EVENT_MOBILE_AUTHORS','Pelle Boese, Grischa Brockhaus');
 
 @define('PLUGIN_EVENT_MOBILE_TPL_IPHONE','iphone.app');
@@ -637,8 +637,8 @@ class serendipity_event_mobile_output extends serendipity_event
                 break;
             case 'sqlite':
             case 'sqlite3':
+            case 'sqlite3oo':
             case 'pdo-sqlite':
-            case 'pdo-sqlite3oo':
             case 'mysql':
             case 'mysqli':
                 $sqlnullfunction = 'IFNULL';
