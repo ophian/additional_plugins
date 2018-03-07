@@ -38,7 +38,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $this->title = PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME;
         $propbag->add('description', PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name', $this->title);
-        $propbag->add('version', '0.4.30' );
+        $propbag->add('version', '0.4.31' );
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
