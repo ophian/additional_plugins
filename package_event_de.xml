@@ -4236,7 +4236,7 @@
 <description>Erstellt eine sitemap.xml.gz für verschiedene Suchmaschinen-Crawler (Google, MSN, Yahoo und Ask).</description>
 <maintainers><maintainer><name>Boris</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.60</version>
+  <version>0.61</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2018-03-07</date>
   <filelist>
@@ -6377,7 +6377,7 @@
 <description>Dieses Plugin erkennt automatisch mobile Endgeräte und gibt optimiertes XHTML MP für diese aus. Für das Apple iPhone und den iPod Touch wird eine speziell angepasste Seite ausgegeben. Weiterhin werden Bilder automatisch passend skaliert.</description>
 <maintainers><maintainer><name>Pelle Boese, Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.06</version>
+  <version>1.07</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2018-03-07</date>
   <filelist>

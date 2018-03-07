@@ -4236,7 +4236,7 @@
 <description>Vytváří soubor sitemap.xml.gz, který používají nejrůznější webové vyhledávače (Google, MSN, Yahoo nebo Ask)</description>
 <maintainers><maintainer><name>Boris</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.60</version>
+  <version>0.61</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2018-03-07</date>
   <filelist>
@@ -6377,7 +6377,7 @@
 <description>Tento plugin se stará o vytvoření kódu optimalizovaného pro mobilní telefony (tzv. XHTML MP), pokud zjistí, že stránku prohlíží prohlížeč pro mobily. Plugin je speciálně optimalizován pro iPhone a iPod Touch. Plugin také mění velikost obrázků, aby se přizpůsobily velikosti displeje.</description>
 <maintainers><maintainer><name>Pelle Boese, Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.06</version>
+  <version>1.07</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2018-03-07</date>
   <filelist>
