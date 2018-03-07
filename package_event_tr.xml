@@ -8176,7 +8176,7 @@
 <description>Detects Spam via an algorithmus which learns.</description>
 <maintainers><maintainer><name>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.4.30</version>
+  <version>0.4.31</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <date>2018-03-07</date>
   <filelist>

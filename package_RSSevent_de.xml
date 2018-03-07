@@ -995,7 +995,7 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamschutz (Bayes)&lt;/b&gt;&lt;br /&gt;Filtert Kommentare mittels eines lernenden Algorithmus.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 07 Mar 2018 18:56:55 +0100</pubDate>
+<pubDate>Wed, 07 Mar 2018 19:02:39 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
