@@ -1,3 +1,7 @@
+0.4.30:
+-------
+ * Fix 'pdo-sqlite3oo' case check
+
 0.4.29:
 -------
  * Fix to use mysql/mysqli specfic errors

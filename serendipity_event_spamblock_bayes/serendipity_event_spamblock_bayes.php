@@ -38,7 +38,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $this->title = PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME;
         $propbag->add('description', PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name', $this->title);
-        $propbag->add('version', '0.4.29' );
+        $propbag->add('version', '0.4.30' );
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -531,7 +531,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
             case 'sqlite':
             case 'sqlite3':
             case 'pdo-sqlite':
-            case 'pdo-sqliteoo':
+            case 'pdo-sqlite3oo':
                 $sql = "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = '{$serendipity['dbPrefix']}comments';";
                 $sql = serendipity_db_query($sql);
                 if (is_array($sql)) {
