@@ -26,7 +26,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris');
-        $propbag->add('version', '0.59');
+        $propbag->add('version', '0.60');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -54,7 +54,7 @@ class serendipity_event_google_sitemap extends serendipity_event
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_EVENT_SITEMAP_URL);
                 $propbag->add('description', PLUGIN_EVENT_SITEMAP_URL_DESC);
-                $propbag->add('default', 'http://www.google.com/webmasters/tools/ping?sitemap=%s;http://submissions.ask.com/ping?sitemap=%s');
+                $propbag->add('default', 'https://www.google.com/webmasters/tools/ping?sitemap=%s;https://www.bing.com/webmaster/ping.aspx?siteMap=%s');
                 break;
 
             case 'gzip_sitemap':
@@ -155,7 +155,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         return true;
     }
 
-    /*! function to add an entry to the xml-string $str */
+    /**
+     * function to add an entry to the xml-string $str
+     */
     function addtoxml(&$str, $url, $lastmod = null, $priority = null, $changefreq = null, $props = null)
     {
         /* Sitemap requires this.
@@ -213,7 +215,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         $str .= "\t</url>\n";
     }
 
-    /*! This functions returns whether a URL-type should be added or not */
+    /**
+     * This functions returns whether a URL-type should be added or not
+     */
     function should_add($type)
     {
         if (!isset($this->types)) {
@@ -228,8 +232,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         }
     }
 
-
-    /*! This functions returns the NULL-function for the current DB-specific SQL-dialect */
+    /**
+     * This functions returns the NULL-function for the current DB-specific SQL-dialect
+     */
     function get_sqlnullfunction()
     {
         global $serendipity;
@@ -241,7 +246,7 @@ class serendipity_event_google_sitemap extends serendipity_event
             case 'sqlite':
             case 'sqlite3':
             case 'pdo-sqlite':
-            case 'pdo-sqliteoo':
+            case 'pdo-sqlite3oo':
             case 'mysql':
             case 'mysqli':
                 $sqlnullfunction = 'IFNULL';
@@ -252,8 +257,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         return $sqlnullfunction;
     }
 
-    /*! Get the real baseURL from the DB to get the primary URLs and
-     *  prevent wrong URLs (e.g. with https or different hostnames)
+    /**
+     * Get the real baseURL from the DB to get the primary URLs and
+     * prevent wrong URLs (e.g. with https or different hostnames)
      */
     function get_BaseURL()
     {
@@ -268,6 +274,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         return (is_array($url))? $url[0]['value'] : false;
     }
 
+    /**
+     *
+     */
     function add_entries(&$sitemap_xml, $limit = 0)
     {
         global $serendipity;
@@ -311,6 +320,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         }
     }
 
+    /**
+     *
+     */
     function add_permalinks(&$sitemap_xml)
     {
         global $serendipity;
@@ -342,13 +354,16 @@ class serendipity_event_google_sitemap extends serendipity_event
                    ORDER BY plugins.sort_order",
                 false, 'assoc');
             if (is_array($order) && isset($order[0]) && isset($order[1])) {
-                if( strpos($order[0]['name'], 'serendipity_event_custom_permalinks') === FALSE) {
+                if (strpos($order[0]['name'], 'serendipity_event_custom_permalinks') === FALSE) {
                     echo '<br/>'.PLUGIN_EVENT_SITEMAP_PERMALINK_WARNING.'<br/>';
                 }
             }
         }
     }
 
+    /**
+     *
+     */
     function add_categories(&$sitemap_xml)
     {
         global $serendipity;
@@ -388,6 +403,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         $this->categories = $categories;
     }
 
+    /**
+     *
+     */
     function add_authors(&$sitemap_xml)
     {
         global $serendipity;
@@ -424,6 +442,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         }
     }
 
+    /**
+     *
+     */
     function add_archives(&$sitemap_xml)
     {
         global $serendipity;
@@ -462,6 +483,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         }
     }
 
+    /**
+     *
+     */
     function add_feeds(&$sitemap_xml)
     {
         global $serendipity;
@@ -489,6 +513,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         }
     }
 
+    /**
+     *
+     */
     function add_static(&$sitemap_xml)
     {
         global $serendipity;
@@ -512,6 +539,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         }
     }
 
+    /**
+     *
+     */
     function add_tags(&$sitemap_xml)
     {
         global $serendipity;
@@ -532,6 +562,10 @@ class serendipity_event_google_sitemap extends serendipity_event
             }
         }
     }
+
+    /**
+     *
+     */
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
         global $serendipity;
@@ -576,6 +610,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         }
     }
 
+    /**
+     *
+     */
     function write_sitemap($basefilename = 'sitemap.xml', &$eventData, $gnewsmode = false)
     {
         global $serendipity;
@@ -627,15 +664,15 @@ class serendipity_event_google_sitemap extends serendipity_event
                 $this->addtoxml($sitemap_xml, serendipity_rewriteURL(PATH_ARCHIVE), time(), 0.5);
             }
 
-            if($this->should_add('sm_feeds')) {
+            if ($this->should_add('sm_feeds')) {
                 $this->add_feeds($sitemap_xml);
             }
 
-            if($this->should_add('sm_static')) {
+            if ($this->should_add('sm_static')) {
                 $this->add_static($sitemap_xml);
             }
 
-            if($this->should_add('sm_tags')) {
+            if ($this->should_add('sm_tags')) {
                 $this->add_tags($sitemap_xml);
             }
         } else {
@@ -666,7 +703,7 @@ class serendipity_event_google_sitemap extends serendipity_event
 
         // write result to file
         $outfile = fopen($serendipity['serendipityPath'] . $filename, 'w');
-        if($outfile === false) {
+        if ($outfile === false) {
             echo '<strong>'.PLUGIN_EVENT_SITEMAP_FAILEDOPEN.' (' . $serendipity['serendipityPath'] . $filename . ')</strong>';
             return false;
         }
@@ -710,6 +747,9 @@ class serendipity_event_google_sitemap extends serendipity_event
         echo PLUGIN_EVENT_SITEMAP_ROBOTS_TXT;
     }
 
+    /**
+     *
+     */
     function send_ping($loc)
     {
         global $serendipity;

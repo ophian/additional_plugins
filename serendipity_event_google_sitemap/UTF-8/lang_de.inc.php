@@ -16,8 +16,7 @@
 @define('PLUGIN_EVENT_SITEMAP_REPORT_MANUAL','Wenn die Sitemap noch nicht an %s gemeldet wurde, dann kann es mit <a href="%s">diesem Link</a> getan werden.<br/>');
 @define('PLUGIN_EVENT_SITEMAP_ROBOTS_TXT', 'Alternativ kann sie auch <a href="http://googlewebmastercentral-de.blogspot.com/2007/04/was-gibts-neues-bei-sitemapsorg.html">in die robots.txt eingefügt werden</a>.<br/>');
 @define('PLUGIN_EVENT_SITEMAP_URL', 'URL-Liste für Pings');
-@define('PLUGIN_EVENT_SITEMAP_URL_DESC', 'URLs für Pingbacks (%s wird durch URL zur Sitemap ersetzt, verschiedene Einträge werden mit \';\' (Semicolon) getrennt, fall nötig muss ein Semicolon durch \'%3B\' ersetzt werden).');
-@define('PLUGIN_EVENT_SITEMAP_URL_DESC', 'URL for pingbacks (%s is replaced with the sitemap-URL, seperate multiple entries with \';\' (semicolon), if you need to enter a ; use \'%3B\').');
+@define('PLUGIN_EVENT_SITEMAP_URL_DESC', 'URLs für Pingbacks (%s wird durch die URL zur Sitemap ersetzt, verschiedene Einträge werden mit \';\' (Semicolon) getrennt, fall nötig muss ein Semicolon durch \'%3B\' ersetzt werden).');
 @define('PLUGIN_EVENT_SITEMAP_ADDFEEDS', 'Newsfeeds hinzufügen');
 @define('PLUGIN_EVENT_SITEMAP_ADDFEEDS_DESC', 'Füge die URLs der Newsfeeds (RSS 0.9, 1.0, 2.0, Atom und Kategorien) zur Sitemap.');
 @define('PLUGIN_EVENT_SITEMAP_UNKNOWN_SERVICE', 'unbekannt');

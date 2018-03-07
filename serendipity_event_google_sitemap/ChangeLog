@@ -1,3 +1,10 @@
+0.60:
+-----
+ * Fix 'pdo-sqlite3oo' case check
+ * Replace default submissions.ask.com example PLUGIN_EVENT_SITEMAP_URL
+   with https://www.bing.com/webmaster/ping.aspx?siteMap=%s
+ * Fix some typos
+ 
 0.59:
 -----
 
