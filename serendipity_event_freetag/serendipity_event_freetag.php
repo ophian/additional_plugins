@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.02');
+        $propbag->add('version',       '4.03');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -3257,7 +3257,7 @@ $(document).ready(function() {
                     <label for="properties_freetag_kill"><?php echo PLUGIN_EVENT_FREETAG_KILL; ?></label>
                 </div>
                 <div id="edit_entry_submit" class="freetag_entry_submit">
-                    <a href="#top" class="button_link" title="<?php echo UP; ?>"><span class="ucc-up-pointing-triangle"></span></a>
+                    <a href="#top" class="button_link button_up" title="<?php echo UP; ?>"><span class="ucc-up-pointing-triangle"></span></a>
                 </div>
 <?php
         }
