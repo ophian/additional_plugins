@@ -1,3 +1,8 @@
+4.9.0.0:
+---------
+    * Upgrade to CKEDITOR 4.9. Series, update 0 (http://ckeditor.com/release-notes).
+      Without further notice, all manually added CKEditor AddOns are updated too.
+
 4.8.0.2:
 ---------
     * Fix embed hooked toolbar buttons, when no other were defined
