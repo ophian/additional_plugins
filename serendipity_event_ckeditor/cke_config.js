@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.13, 2017-08-19
+ * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.14, 2018-03-21
  */
 
  /**
@@ -42,7 +42,7 @@ CKEDITOR.editorConfig = function( config ) {
     */
     if (CKECONFIG_ACF_OFF === true) {
         config.allowedContent = CKECONFIG_ACF_OFF;
-        // <i (awesome icon tags) need a special care for emptyness!
+        // <i (awesome icon tags) need a special care for emptiness!
         CKEDITOR.dtd.$removeEmpty['i'] = false; // dtd seems to have NO effect and is not in need, when using config.allowedContent, config.protectedSource.push and config.extraAllowedContent !
     } else { // this is ACF ON by default
 

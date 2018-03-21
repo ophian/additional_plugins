@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.12, 2017-08-09
+ * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.13, 2018-03-21
  */
 
 // define array for hooked s9y plugins
@@ -84,7 +84,7 @@ function Spawnnuggets(item, addEP, jsED) {
     // mediaembed is a fast and simple YouTube code CKEditor-Plugin: v. 0.5+ (https://github.com/frozeman/MediaEmbed, 2013-09-12) to avoid ACF restrictions
     //
     // Enable embed and embedsemantic plugins with their dependency embedbase plugin by option.
-    // Though we should not allow autoembed and autolink, like notification,autolink,notificationaggregator,autoembed, since we don't what to paste and convert directly.
+    // Though we should not allow autoembed and autolink, like notification,autolink,notificationaggregator,autoembed, since we don't want to paste and convert directly.
     // procurator and cheatsheet are S9y only plugins
     var name_extraPlugins = (addEP !== null) ? addEP : $this;
     var jsEventData       = (jsED  !== null) ? jsED  : window.jsEventData; // global set by 'backend_wysiwyg_finish' hook
