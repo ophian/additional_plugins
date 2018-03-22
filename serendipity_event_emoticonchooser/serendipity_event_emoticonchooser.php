@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.05');
+        $propbag->add('version',       '3.06');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -32,7 +32,8 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'frontend_comment'               => true,
             'backend_header'                 => true,
             'frontend_footer'                => true,
-            'css_backend'                    => true
+            'css_backend'                    => true,
+            'css'                            => true
         ));
         $propbag->add('groups', array('BACKEND_EDITOR'));
         $propbag->add('configuration', array('frontend', 'popup', 'button', 'popuptext'));
@@ -379,6 +380,20 @@ class serendipity_event_emoticonchooser extends serendipity_event
 }
 .serendipity_emoticon_bar {
     text-align: right;
+}
+
+/* emoticonchooser plugin end */
+
+';
+                    break;
+
+                case 'css':
+                    $eventData .= '
+
+/* emoticonchooser plugin start */
+
+.serendipity_emoticon_bar {
+    margin-bottom: .75em;
 }
 
 /* emoticonchooser plugin end */
