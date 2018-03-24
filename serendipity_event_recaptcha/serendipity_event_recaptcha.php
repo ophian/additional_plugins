@@ -21,13 +21,13 @@ class serendipity_event_recaptcha extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_RECAPTCHA_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_RECAPTCHA_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin');
+        $propbag->add('author',        'Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin, @th-h, Ian');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '0.31');
+        $propbag->add('version',       '0.32');
         $propbag->add('event_hooks',    array(
             'frontend_configure'   => true,
             'frontend_saveComment' => true,
@@ -58,8 +58,8 @@ class serendipity_event_recaptcha extends serendipity_event
                 $propbag->add('description', PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_DESC);
                 $propbag->add('default', 'no');
                 $propbag->add('radio', array(
-                    'value' => array('yes2', 'no', 'yes'),
-                    'desc'  => array(YES . ' (v2)', NO, YES . ' (old v1, deprecated)')
+                    'value' => array('yes', 'no'),
+                    'desc'  => array(YES, NO)
                 ));
                 break;
 
@@ -148,6 +148,11 @@ class serendipity_event_recaptcha extends serendipity_event
         return true;
     }
 
+    function performConfig(&$bag) {
+        // set "yes" (recaptcha v2 is active)
+        if ($this->get_config('recaptcha', 'no') === 'yes2') { $this->set_config('recaptcha', 'yes'); };
+    }
+
     function generate_content(&$title)
     {
         $title = $this->title;
@@ -189,7 +194,7 @@ class serendipity_event_recaptcha extends serendipity_event
         if (isset($hooks[$event])) {
             $captchas_ttl = $this->get_config('captchas_ttl', 7);
             $_recaptcha   = $this->get_config('recaptcha', 'no');
-            $recaptcha    = ($_recaptcha === 'yes' || $_recaptcha === 'yes2' || $_recaptcha !== 'no'  || serendipity_db_bool($_recaptcha));
+            $recaptcha    = ($_recaptcha === 'yes' || $_recaptcha !== 'no' || serendipity_db_bool($_recaptcha));
 
             // Check if the entry is older than the allowed amount of time.
             // Enforce captchas if that is true of if captchas are activated
@@ -262,14 +267,6 @@ class serendipity_event_recaptcha extends serendipity_event
                                             $resp_error = $json_data->{'error-codes'};
                                         }
                                     }
-                                } else {
-                                    $resp = recaptcha_check_answer($privatekey,
-                                                                    $_SERVER["REMOTE_ADDR"],
-                                                                    $_POST["recaptcha_challenge_field"],
-                                                                    $_POST["recaptcha_response_field"]);
-
-                                    $resp_valid = $resp->is_valid;
-                                    $resp_error = $resp->error;
                                 }
 
                                 if (!$resp_valid) {
@@ -303,7 +300,7 @@ class serendipity_event_recaptcha extends serendipity_event
                          }
 
                         // The response from the reCAPTCHA Server
-                        if ($_recaptcha === 'yes2') {
+                        if ($_recaptcha === 'yes') {
                             echo "<script src='https://www.google.com/recaptcha/api.js'></script>";
                             echo '<div class="g-recaptcha" data-sitekey="' . $pubkey . '"></div>';
                         } else {

@@ -1,3 +1,9 @@
+0.32:
+-----
+ * remove recaptcha v1 (deprecated and switched OFF 2018-03-31)
+ * change description for reCaptcha v2
+ * Fix [de] typos
+
 0.31:
 -----
  * Replace documented dead recaptcha.net URLs with their
