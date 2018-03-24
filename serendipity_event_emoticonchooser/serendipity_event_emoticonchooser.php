@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.06');
+        $propbag->add('version',       '3.07');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -284,7 +284,11 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
 <div class="serendipity_emoticon_bar">
     <script type="text/javascript">
-        emoticonchooser('<?php echo $func; ?>', '<?php echo $txtarea; ?>', '<?php echo $cke_txtarea; ?>');
+        document.onreadystatechange = function () {
+            if (document.readyState == "interactive") {
+                emoticonchooser('<?php echo $func; ?>', '<?php echo $txtarea; ?>', '<?php echo $cke_txtarea; ?>');
+            }
+        }
     </script>
 
 <?php
@@ -318,7 +322,11 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         $emotics .= "
 
     <script type=\"text/javascript\">
-        emoticonchooser('$func', '$txtarea', '$cke_txtarea');
+        document.onreadystatechange = function () {
+            if (document.readyState == 'interactive') {
+                emoticonchooser('$func', '$txtarea', '$cke_txtarea');
+            }
+        }
     </script>
 
 ";
