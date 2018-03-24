@@ -1,3 +1,9 @@
+3.08:
+-----
+
+ * Fix backend entries in PLAIN EDITOR toolbar mode to NOT use previously
+   added (frontend related) onready state loading.
+
 3.07:
 -----
 

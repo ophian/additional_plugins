@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.07');
+        $propbag->add('version',       '3.08');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -278,17 +278,13 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     // script include has to stick to backend_header, while using inline onclick (see above)
                     if (defined('IN_serendipity_admin') && IN_serendipity_admin === true) {
                         if (!$serendipity['wysiwyg']) {
-                            echo "    $popuplink\n"; // append toolbar button in backend entries in PLAIN EDITOR toolbar
+                            echo "    $popuplink\n"; // append toolbar button to backend entries in PLAIN EDITOR toolbar. NO onready state loading !!
 
 ?>
 
 <div class="serendipity_emoticon_bar">
     <script type="text/javascript">
-        document.onreadystatechange = function () {
-            if (document.readyState == "interactive") {
-                emoticonchooser('<?php echo $func; ?>', '<?php echo $txtarea; ?>', '<?php echo $cke_txtarea; ?>');
-            }
-        }
+        emoticonchooser('<?php echo $func; ?>', '<?php echo $txtarea; ?>', '<?php echo $cke_txtarea; ?>');
     </script>
 
 <?php
