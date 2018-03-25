@@ -797,7 +797,7 @@
 <category>Event Plugins</category>
 <author>Jude Anthony, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_newsbox&lt;br /&gt;Newsbox&lt;/b&gt;&lt;br /&gt;Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 02 Nov 2017 18:57:11 +0100</pubDate>
+<pubDate>Sun, 25 Mar 2018 18:38:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_newsbox</guid>
 </item>
 <item>
@@ -1256,7 +1256,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 12 Feb 2018 16:40:09 +0100</pubDate>
+<pubDate>Sun, 25 Mar 2018 19:05:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
