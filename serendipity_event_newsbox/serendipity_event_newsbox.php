@@ -23,7 +23,7 @@ class serendipity_event_newsbox extends serendipity_event
         $propbag->add('groups',        array('FRONTEND_VIEWS', 'FRONTEND_FEATURES'));
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Jude Anthony, Ian');
-        $propbag->add('version',       '1.0');
+        $propbag->add('version',       '1.1');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -54,7 +54,7 @@ class serendipity_event_newsbox extends serendipity_event
                 break;
 
             case 'news_cats':
-                $cats = $this->makeCategorySelector();
+                $cats = $this->getCategorySelector();
                 $propbag->add('type', 'multiselect');
                 $propbag->add('name', PLUGIN_EVENT_NEWSBOX_NEWSCATS);
                 $propbag->add('description', PLUGIN_EVENT_NEWSBOX_NEWSCATS_DESC);
