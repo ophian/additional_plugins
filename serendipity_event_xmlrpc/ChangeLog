@@ -1,3 +1,6 @@
+Version 1.72:
+    * RPC lib: Replace PHP 7.2 set deprecated each() usage where possible
+
 Version 1.71:
     * Fix deprecation messages with PHP7 and use modern constructors in RPC
 
