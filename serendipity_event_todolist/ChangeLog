@@ -1,3 +1,7 @@
+1.30:
+-----
+ * Replace PHP 7.2 set deprecated each() usage where possible
+
 1.29:
 -----
  * Restrict sql index key length for utf8mb4 migration to mysqli only

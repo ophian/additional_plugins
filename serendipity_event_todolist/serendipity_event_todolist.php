@@ -35,7 +35,7 @@ class serendipity_event_todolist extends serendipity_event
                                             'backend_sidebar_entries'                               => true
                                             ));
         $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian');
-        $propbag->add('version', '1.29');
+        $propbag->add('version', '1.30');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -242,7 +242,7 @@ class serendipity_event_todolist extends serendipity_event
         arsort($atimes);
         reset($atimes);
         $cachedfilecounter = 0;
-        while (list($key,$val) = each($atimes)) {
+        foreach($atimes AS $key => $val) {
             if ($cachedfilecounter++ > 60) {
                 @unlink($key);
             }
