@@ -22,8 +22,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_aggregator</link>
 <category>Event Plugins</category>
 <author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS agregátor&lt;/b&gt;&lt;br /&gt;Zobrazuje zprávy z mnoha RSS kanálů. DŮLEŽITÁ POZNÁMKA: Aktualizace a &quot;krmení&quot; agregátoru je v současnosti nutno dělat ručně pomocí Cronjobs nebo podobně. Volejte následující adresu v libovolných časových intervalech: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Mon, 05 Feb 2018 15:06:27 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS agregátor&lt;/b&gt;&lt;br /&gt;Zobrazuje zprávy z mnoha RSS kanálů. DŮLEŽITÁ POZNÁMKA: Aktualizace a &quot;krmení&quot; agregátoru je v současnosti nutno dělat ručně pomocí Cronjobs nebo podobně. Volejte následující adresu v libovolných časových intervalech: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 2.2</content:encoded>
+<pubDate>Tue, 27 Mar 2018 10:26:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
@@ -311,7 +311,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Lišta smajlíků&lt;/b&gt;&lt;br /&gt;Zobrazí lištu se smajlíky, které je možné vložit do textu příspěvku nebo komentáře.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sat, 24 Mar 2018 13:25:11 +0100</pubDate>
+<pubDate>Tue, 27 Mar 2018 10:31:03 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -408,9 +408,9 @@
 <title>Zobrazuje odkazy jako Digg, Technorati, del.icio.us apod. vztažené k příspěvku.: Plugin DEPRECATED. Move along to the new event_social plugin! Můžete vložit/odstranit další webové služby pomocí souboru šablony &quot;plugin_findmore.tpl&quot;. Pamatujte, že pokud chcete ušetřit pár drahocených bodů za výkon blogu, můžete stejného efektu dosáhnout také vložením HTML/JavaScript snipletu do souboru šablony entries.tpl namísto používání tohoto pluginu!</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_findmore</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Kodewulf</author>
+<author>Garvin Hicking, Kodewulf, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_findmore&lt;br /&gt;Zobrazuje odkazy jako Digg, Technorati, del.icio.us apod. vztažené k příspěvku.&lt;/b&gt;&lt;br /&gt;Plugin DEPRECATED. Move along to the new event_social plugin! Můžete vložit/odstranit další webové služby pomocí souboru šablony &quot;plugin_findmore.tpl&quot;. Pamatujte, že pokud chcete ušetřit pár drahocených bodů za výkon blogu, můžete stejného efektu dosáhnout také vložením HTML/JavaScript snipletu do souboru šablony entries.tpl namísto používání tohoto pluginu!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 15:17:36 +0200</pubDate>
+<pubDate>Tue, 27 Mar 2018 10:35:50 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_findmore</guid>
 </item>
 <item>
@@ -759,9 +759,9 @@
 <title>Markup: Výstup na mobil: Tento plugin se stará o vytvoření kódu optimalizovaného pro mobilní telefony (tzv. XHTML MP), pokud zjistí, že stránku prohlíží prohlížeč pro mobily. Plugin je speciálně optimalizován pro iPhone a iPod Touch. Plugin také mění velikost obrázků, aby se přizpůsobily velikosti displeje.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mobile_output</link>
 <category>Event Plugins</category>
-<author>Pelle Boese, Grischa Brockhaus</author>
+<author>Pelle Boese, Grischa Brockhaus; iAN</author>
 <content:encoded>&lt;b&gt;serendipity_event_mobile_output&lt;br /&gt;Markup: Výstup na mobil&lt;/b&gt;&lt;br /&gt;Tento plugin se stará o vytvoření kódu optimalizovaného pro mobilní telefony (tzv. XHTML MP), pokud zjistí, že stránku prohlíží prohlížeč pro mobily. Plugin je speciálně optimalizován pro iPhone a iPod Touch. Plugin také mění velikost obrázků, aby se přizpůsobily velikosti displeje.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 07 Mar 2018 18:55:15 +0100</pubDate>
+<pubDate>Tue, 27 Mar 2018 13:53:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mobile_output</guid>
 </item>
 <item>
@@ -770,7 +770,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Vízejazyčné záznamy&lt;/b&gt;&lt;br /&gt;Umožňuje vytvořit příspěvek (záznam) ve více jazykových variantách. Obsahuje též fromulář pro výběr základního jazyka blogu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 27 Nov 2017 10:24:05 +0100</pubDate>
+<pubDate>Tue, 27 Mar 2018 10:39:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -858,9 +858,9 @@
 <title>Podcasting plugin: Přidává &quot;podcastovací&quot; možnosti (RSS zapouzdření, přehrávač videa a/nebo hudby)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_podcast</link>
 <category>Event Plugins</category>
-<author>Grischa Brockhaus, Hannes Gassert, Garvin Hicking</author>
+<author>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_podcast&lt;br /&gt;Podcasting plugin&lt;/b&gt;&lt;br /&gt;Přidává &quot;podcastovací&quot; možnosti (RSS zapouzdření, přehrávač videa a/nebo hudby)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 22 Jul 2017 13:32:24 +0200</pubDate>
+<pubDate>Tue, 27 Mar 2018 08:45:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_podcast</guid>
 </item>
 <item>
@@ -869,7 +869,7 @@
 <category>Event Plugins</category>
 <author>Jason Levitt</author>
 <content:encoded>&lt;b&gt;serendipity_event_popfetcher&lt;br /&gt;POP3 stahovač&lt;/b&gt;&lt;br /&gt;Stahuje zprávy z emailu a zobrazí je včetně příloh v bloku v postranním sloupci (speciální podpora pro mobilní telefony)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 14 Mar 2017 13:56:53 +0100</pubDate>
+<pubDate>Tue, 27 Mar 2018 16:55:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_popfetcher</guid>
 </item>
 <item>
@@ -975,9 +975,9 @@
 <title>SMTP Mail: Použití SMTP serveru pro odesílání pošty</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_smtpmail</link>
 <category>Event Plugins</category>
-<author>kleinerChemiker</author>
-<content:encoded>&lt;b&gt;serendipity_event_smtpmail&lt;br /&gt;SMTP Mail&lt;/b&gt;&lt;br /&gt;Použití SMTP serveru pro odesílání pošty&lt;br/&gt;For: Serendipity 1.3</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>kleinerChemiker, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_smtpmail&lt;br /&gt;SMTP Mail&lt;/b&gt;&lt;br /&gt;Použití SMTP serveru pro odesílání pošty&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Tue, 27 Mar 2018 18:42:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_smtpmail</guid>
 </item>
 <item>
@@ -1139,7 +1139,7 @@
 <category>Event Plugins</category>
 <author>Steven Tonnesen, Matthias Mees, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;Seznam úkolů / ToDo list / projektové řízení&lt;/b&gt;&lt;br /&gt;Správa seznamu projektů/úkolů a jejich splnění v procentech&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 06 Oct 2017 13:08:45 +0200</pubDate>
+<pubDate>Tue, 27 Mar 2018 10:47:43 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_todolist</guid>
 </item>
 <item>
@@ -1202,7 +1202,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Galerie&lt;/b&gt;&lt;br /&gt;Umožňuje nepřihlášeným uživatelům prohlížet Serendipity knihovnu médií&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 02 Feb 2017 14:18:58 +0100</pubDate>
+<pubDate>Tue, 27 Mar 2018 10:55:42 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>
@@ -1290,9 +1290,9 @@
 <title>Flickr Photostream CSS: Tento plugin je rozšířením postranního pluginu &quot;Flickr Photostream&quot; a přidává k němu stylování (CSS).</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_flickr</link>
 <category>Event Plugins</category>
-<author>Michael Kaiser</author>
-<content:encoded>&lt;b&gt;serendipity_event_flickrcss&lt;br /&gt;Flickr Photostream CSS&lt;/b&gt;&lt;br /&gt;Tento plugin je rozšířením postranního pluginu &quot;Flickr Photostream&quot; a přidává k němu stylování (CSS).&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 22 Mar 2017 16:55:21 +0100</pubDate>
+<author>Michael Kaiser, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_flickrcss&lt;br /&gt;Flickr Photostream CSS&lt;/b&gt;&lt;br /&gt;Tento plugin je rozšířením postranního pluginu &quot;Flickr Photostream&quot; a přidává k němu stylování (CSS).&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Tue, 27 Mar 2018 16:45:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flickrcss</guid>
 </item>
 <item>
