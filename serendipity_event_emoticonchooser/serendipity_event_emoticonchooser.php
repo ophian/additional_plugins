@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.08');
+        $propbag->add('version',       '3.09');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -256,8 +256,8 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     // the actual plugin:
                     $plugins = serendipity_plugin_api::get_event_plugins();
                     $emoticate_plugin = null;
-                    while(list($plugin, $plugin_data) = each($plugins)) {
-                        if (strpos($plugin, 'serendipity_event_emoticate') !== FALSE) {
+                    foreach($plugins AS $plugin => &$plugin_data) {
+                        if (FALSE !== strpos($plugin, 'serendipity_event_emoticate')) {
                             $emoticate_plugin =& $plugin_data['p'];
                             break;
                         }
