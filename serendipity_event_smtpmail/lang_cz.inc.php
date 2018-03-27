@@ -3,7 +3,8 @@
 /**
  *  @author Vladimír Ajgl <vlada@ajgl.cz>
  *  @translated 2009/07/14
- */@define('PLUGIN_EVENT_SMTPMAIL_NAME', 'SMTP Mail');
+ */
+@define('PLUGIN_EVENT_SMTPMAIL_NAME', 'SMTP Mail');
 @define('PLUGIN_EVENT_SMTPMAIL_DESC', 'Pou¾ití SMTP serveru pro odesílání po¹ty');
 @define('PLUGIN_EVENT_SMTPMAIL_SMTP_SERVER', 'SMTP server');
 @define('PLUGIN_EVENT_SMTPMAIL_SMTP_SERVER_DESC', 'Adresa, na které se nalézá SMTP server, pøes který se mají odesílat maily.');
@@ -21,4 +22,4 @@
 @define('PLUGIN_EVENT_SMTPMAIL_USER_DESC', '');
 @define('PLUGIN_EVENT_SMTPMAIL_PASSWD', 'Heslo');
 @define('PLUGIN_EVENT_SMTPMAIL_PASSWD_DESC', '');
-?>
+

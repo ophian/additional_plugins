@@ -1,0 +1,5 @@
+1.00:
+-----
+  * Replace libs with PHPMailer-6.0.4
+  * Cleanup and fixing typos
+  * Requires min PHP 5.5
