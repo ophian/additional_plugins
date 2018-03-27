@@ -8,7 +8,7 @@ if (IN_serendipity !== true) {
 
 include_once dirname(__FILE__) . '/podcast_player.php';
 
-@define("SERENDIPITY_EVENT_PODCAST_VERSION", "1.38");
+@define('SERENDIPITY_EVENT_PODCAST_VERSION', '1.39');
 
 /**
  * The Serendipity Podcasting Plugin
@@ -111,7 +111,7 @@ class serendipity_event_podcast extends serendipity_event
             'plugin_http_path'
         ));
 
-        $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking');
+        $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian');
         $propbag->add('version', SERENDIPITY_EVENT_PODCAST_VERSION);
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -1220,14 +1220,14 @@ class serendipity_event_podcast extends serendipity_event
 
         if (!isset($this->supportedFiletypes)) {
             $this->supportedFiletypes = array();
-            $qtexts     = explode(',', $this->get_config('extquicktime' ,PLUGIN_PODCAST_QTEXT_DDEFAULT));
-            $wmexts     = explode(',', $this->get_config('extwinmedia'  ,PLUGIN_PODCAST_WMEXT_DDEFAULT));
-            $flexts     = explode(',', $this->get_config('extflash'     ,PLUGIN_PODCAST_MFEXT_DDEFAULT));
-            $mp3exts    = explode(',', $this->get_config('extaudio'     ,PLUGIN_PODCAST_AUEXT_DDEFAULT));
-            $xspfexts   = explode(',', $this->get_config('extxspf'      ,PLUGIN_PODCAST_XSPFEXT_DDEFAULT));
-            $flvexts    = explode(',', $this->get_config('extflow'      ,PLUGIN_PODCAST_FLOWEXT_DEFAULT));
-            $a5exts     = explode(',', $this->get_config('exthtml5_audio',PLUGIN_PODCAST_HTML5_AUDIO_DEFAULT));
-            $v5exts     = explode(',', $this->get_config('exthtml5_video',PLUGIN_PODCAST_HTML5_VIDEO_DEFAULT));
+            $qtexts     = explode(',', $this->get_config('extquicktime', PLUGIN_PODCAST_QTEXT_DEFAULT));
+            $wmexts     = explode(',', $this->get_config('extwinmedia', PLUGIN_PODCAST_WMEXT_DEFAULT));
+            $flexts     = explode(',', $this->get_config('extflash', PLUGIN_PODCAST_MFEXT_DEFAULT));
+            $mp3exts    = explode(',', $this->get_config('extaudio', PLUGIN_PODCAST_AUEXT_DEFAULT));
+            $xspfexts   = explode(',', $this->get_config('extxspf', PLUGIN_PODCAST_XSPFEXT_DEFAULT));
+            $flvexts    = explode(',', $this->get_config('extflow', PLUGIN_PODCAST_FLOWEXT_DEFAULT));
+            $a5exts     = explode(',', $this->get_config('exthtml5_audio', PLUGIN_PODCAST_HTML5_AUDIO_DEFAULT));
+            $v5exts     = explode(',', $this->get_config('exthtml5_video', PLUGIN_PODCAST_HTML5_VIDEO_DEFAULT));
 
             foreach($qtexts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'q';

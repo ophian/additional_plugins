@@ -1,4 +1,8 @@
-#
+
+1.39:
+-----
+  * Fixed default ext constants
+
 1.38:
 -----
  * Check REQUEST object
