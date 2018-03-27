@@ -4,7 +4,7 @@
 // Author: Jason Levitt  fredb86@users.sourceforge.net
 
 require_once('class.pop3.php');
-require_once('class.mimedecode.php');
+require_once('mimeDecode.php');
 require_once('sprintpcs.php');
 require_once('cingular.php');
 require_once('verizon.php');
@@ -12,7 +12,7 @@ require_once('tmobile.php');
 require_once('o2.php');
 
 // Default values
-define('POPFETCHER_VERSION',  '1.48');       // This version of Popfetcher
+define('POPFETCHER_VERSION',  '1.49');       // This version of Popfetcher
 define('DEFAULT_ADMINMENU',   'true');       // True if run as sidebar plugin. False if external plugin.
 define('DEFAULT_HIDENAME',    'popfetcher'); // User should set this to something unguessable
 define('DEFAULT_MAILSERVER',  '');
