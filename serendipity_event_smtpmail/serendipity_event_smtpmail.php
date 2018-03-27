@@ -1,4 +1,6 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
@@ -124,23 +126,21 @@ class serendipity_event_smtpmail extends serendipity_event
         global $serendipity;
 
         if ($event == 'backend_sendmail') {
-            use PHPMailer\PHPMailer\PHPMailer;
-            use PHPMailer\PHPMailer\Exception;
 
-            require 'PHPMailer-6.0.4/src/Exception.php';
-            require 'PHPMailer-6.0.4/src/PHPMailer.php';
-            require 'PHPMailer-6.0.4/src/SMTP.php';
+            require 'PHPMailer/src/Exception.php';
+            require 'PHPMailer/src/PHPMailer.php';
+            require 'PHPMailer/src/SMTP.php';
 
             # Login to POP3 Server if Auth is "POP3 before SMTP"
             if ($this->get_config('smtpmail_auth') == 1) {
-                require 'PHPMailer-6.0.4/src/POP3.php';
+                require 'PHPMailer/src/POP3.php';
                 $pop = new POP3();
                 $pop->authorise($this->get_config('smtpmail_pop3_server'), $this->get_config('smtpmail_pop3_port'), false, $this->get_config('smtpmail_user'), $this->get_config('smtpmail_passwd'), 0);
             }
             
             $mail = new PHPMailer(true); // true is Exceptions ON
             $mail->isSMTP();
-            $mail->setLanguage($serendipity['lang'], 'PHPMailer-6.0.4/language/');
+            $mail->setLanguage($serendipity['lang'], 'PHPMailer/language/');
             
             # Activate Auth if Auth is "SMTP AUTH"
             if ($this->get_config('smtpmail_auth') == 2) {
