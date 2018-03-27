@@ -15,8 +15,8 @@ class serendipity_event_findmore extends serendipity_event
         $propbag->add('name',          PLUGIN_FINDMORE_NAME);
         $propbag->add('description',   PLUGIN_FINDMORE_DEPRECATED . PLUGIN_FINDMORE_DESCRIPTION);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Kodewulf');
-        $propbag->add('version',       '1.24');
+        $propbag->add('author',        'Garvin Hicking, Kodewulf, Ian');
+        $propbag->add('version',       '1.25');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -362,7 +362,7 @@ class serendipity_event_findmore extends serendipity_event
     function getUrls($input, $strict=true)
     {
         $types = array("href", "src", "url");
-        while(list(,$type) = each($types)) {
+        foreach ($types AS $type) {
             $innerT = $strict?'[a-z0-9:?=()&@/._-]+?':'.+?';
             preg_match_all("|$type\=([\"'`])(".$innerT.")\\1|i", $input, $matches);
             $ret[$type] = $matches[2];
