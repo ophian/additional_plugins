@@ -182,7 +182,7 @@ function startElement($parser, $name, $attr) {
 		case "contributor":
 			if ( sizeof($attr) > 0 ) {
 				// dirty trick: author is child of authors, contributor is child of contributors
-				while ($t = each($attr)) {
+				foreach($attr As $t) {
 					// example: $wurfl["authors"]["author"]["name"]="Andrea Trasatti";
 					$wurfl[$name."s"][$name][$attr["name"]][$t[0]]=$t[1];
 				}
@@ -197,7 +197,7 @@ function startElement($parser, $name, $attr) {
 				if ( !isset($wurfl["devices"][$attr["id"]])  ) {
 					$new_device = true;
 				}
-				while ($t = each($attr)) {
+				foreach($attr As $t) {
 					if ( $check_patch_params && defined('WURFL_PATCH_DEBUG') && WURFL_PATCH_DEBUG === true ) {
 						if ( !isset($wurfl["devices"][$attr["id"]][$t[0]])  ) {
 							if ( $new_device !== true ) {

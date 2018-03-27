@@ -14,8 +14,8 @@ TODO:
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
-@define('PLUGIN_EVENT_MOBILE_VERSION','1.07');
-@define('PLUGIN_EVENT_MOBILE_AUTHORS','Pelle Boese, Grischa Brockhaus');
+@define('PLUGIN_EVENT_MOBILE_VERSION','1.08');
+@define('PLUGIN_EVENT_MOBILE_AUTHORS','Pelle Boese, Grischa Brockhaus; iAN');
 
 @define('PLUGIN_EVENT_MOBILE_TPL_IPHONE','iphone.app');
 @define('PLUGIN_EVENT_MOBILE_TPL_ANDROID','android.app');

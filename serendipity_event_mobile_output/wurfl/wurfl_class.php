@@ -195,8 +195,8 @@ class wurfl_class {
 		for ( $i=sizeof($_fallback_list)-2; $i>= 0; $i-- ) {
 			$curr_device = $_fallback_list[$i];
 //echo "capabilities di $curr_device<br>\n";
-			while ( list($key, $val) = each($$curr_device) ) {
-				if ( is_array($val) ) {
+			foreach($curr_device AS $key => $val) {
+				if (is_array($val)) {
 //echo "array_merge per $key:<br>";
 //echo "<pre>\n";
 //var_export($_final[$key]);

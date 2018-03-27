@@ -1,3 +1,9 @@
+1.08:
+-----
+ * Replace PHP 7.2 set deprecated each() usage in
+   wurfl/wurfl_class.php and wurfl/wurfl_parser.php
+   without changing this outdated class.
+
 1.07:
 -----
  * Fix 'sqlite3oo' case check again
