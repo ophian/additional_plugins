@@ -35,7 +35,7 @@
 @define('PLUGIN_AGGREGATOR_DEBUG_BLAHBLAH', 'Debugging Output im Logbuch einschalten?');
 @define('PLUGIN_AGGREGATOR_IGNORE_UPDATES', 'Aktualisierungen ignorieren');
 @define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE', 'RSS Parser wählen');
-@define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onyx ist ein BSD-lizensierter Parser, der aber kein ATOM unterstützt. MagpieRSS ist ein GPL-lizensierter Parser, der dafür Atom und mehr Formate parst. SimplePie ist modern, wird aktiv entwickelt, und funktioniert');
+@define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onyx ist ein BSD-lizensierter Parser, der aber kein ATOM unterstützt. SimplePie ist modern, wird aktiv entwickelt, und funktioniert!');
 
 @define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION', 'Filter-Ausdruck');
 @define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION_DESC', 'Hier kann ein regulärer Ausdruck eingetragen werden, der auf jeden Feed-Artikel (Titel und Inhalt) angewandt wird, und diesen nur einfügt wenn das Muster zutrifft. Wenn der Filter leer gelassen wird, wird kein Filtervergleich durchgeführt. Mehrere reguläre Ausdrücke können durch das ~ Zeichen (Tilde) getrennt werden, und werden ODER-kombiniert.');

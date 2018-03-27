@@ -1,3 +1,12 @@
+1.00:
+-----
+    * Remove outdated MagPieRss library
+    * Remove simplePie library for core only usage
+    * Upgrade simplePie IDN Converter class
+    * Extend requirement to Serendipity Styx 2.2.0
+    * Use serendipity_request_url() HTTP/Request2 wrapper
+    * Replace PHP 7.2 set deprecated each() usage where possible
+
 0.44:
 -----
     * Iconfont accessibility fixes

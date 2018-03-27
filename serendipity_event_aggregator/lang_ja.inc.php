@@ -41,7 +41,7 @@
 @define('PLUGIN_AGGREGATOR_IGNORE_UPDATES_DESC', '記事テキストが後ほど変更されても更新を無視しますか?');
 
 @define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE', 'RSS パーサーを選択する');
-@define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onyx は BSD ライセンスですが、ATOM フィードをサポートしていません。MagpieRSS は GPL ライセンスですが、 ATOM フィードとより多くの機能をサポートしています。SimplePie はモダンでメンテナンスもされており、BSD ライセンスです。');
+@define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onyx は BSD ライセンスですが、ATOM フィードをサポートしていません。SimplePie はモダンでメンテナンスもされており、BSD ライセンスです。');
 
 @define('PLUGIN_AGGREGATOR_PUBLISH', 'Save aggregated entries as...');
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE', 'アグリゲートしたエントリーのマークアップ プラグオンを無効にする');

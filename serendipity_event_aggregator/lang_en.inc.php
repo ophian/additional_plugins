@@ -39,7 +39,7 @@
 @define('PLUGIN_AGGREGATOR_IGNORE_UPDATES', 'Ignore updates?');
 @define('PLUGIN_AGGREGATOR_IGNORE_UPDATES_DESC', 'If an article text changes later on, shall we ignore that update?');
 @define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE', 'Choose RSS parser');
-@define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onyx ist BSD-licensed, but does not support ATOM feeds. MagpieRSS is GPL-licensed, but does support Atom feeds and more features. SimplePie is modern, maintained, BSD licensed.');
+@define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onyx ist BSD-licensed, but does not support ATOM feeds. SimplePie is modern, maintained, BSD licensed.');
 @define('PLUGIN_AGGREGATOR_CRONJOB', 'This plugin supports the Serendipity Cronjob plugin. Go and install it if you want scheduled execution.');
 @define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION', 'Filter Expression');
 @define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION_DESC', 'Here you can enter a regular expression that will be matched on a feed entry (body and title) and only insert that entry, if the pattern matches. If left empty, no matching is done. Multiple expressions can be seperated by the ~ (tilde) character and are OR-combined.');

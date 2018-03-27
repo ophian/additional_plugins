@@ -7,9 +7,9 @@ if (IN_serendipity !== true) {
 
 // NOTES:
 //
-//      If using MagpieRSS as RSS fetching tool, this plugin is licensed as GPL.
 //      If using the Onyx parser, this plugin is licensed as BSD.
 //      If using SimplePie parser, this plugin is licensed as BSD-3.
+//      If using SimplePie IDN converter, this plugin is licensed GPL.
 //
 // *****************************************************************
 //
@@ -64,11 +64,11 @@ class serendipity_event_aggregator extends serendipity_event
         $propbag->add('name',          PLUGIN_AGGREGATOR_TITLE);
         $propbag->add('description',   PLUGIN_AGGREGATOR_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
-            'smarty'      => '3.0.0',
+            'serendipity' => '2.2',
+            'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '0.44');
+        $propbag->add('version',       '1.00');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -80,7 +80,7 @@ class serendipity_event_aggregator extends serendipity_event
         ));
         $propbag->add('configuration', array('cronjob', 'engine', 'publishflag', 'expire', 'expire_md5', 'ignore_updates', 'delete_dependencies', 'allow_comments', 'markup', 'debug'));
         $propbag->add('groups', array('FRONTEND_FULL_MODS'));
-        $propbag->add('license', 'GPL (MagpieRSS) or BSD (Onyx) or BSD-3 (SimplePie)');
+        $propbag->add('license', 'GPL (IDN converter) or BSD (Onyx) or BSD-3 (SimplePie)');
         $this->dependencies = array('serendipity_event_entryproperties' => 'keep');
     }
 
@@ -123,9 +123,7 @@ class serendipity_event_aggregator extends serendipity_event
                 $markups = array();
 
                 if (is_array($plugins)) {
-                    // foreach() operates on copies of values, but we want to operate on references, so we use while()
-                    @reset($plugins);
-                    while(list($plugin, $plugin_data) = each($plugins)) {
+                    foreach($plugins AS $plugin => &$plugin_data) {
                         if (!is_array($plugin_data['p']->markup_elements)) {
                             continue;
                         }
@@ -143,8 +141,8 @@ class serendipity_event_aggregator extends serendipity_event
 
             case 'engine':
                 $propbag->add('type', 'radio');
-                $propbag->add('radio', array('value' => array('onyx', 'magpierss','simplepie'),
-                                             'desc'  => array('Onyx [BSD]', 'MagpieRSS [GPL]', 'SimplePie [BSD-3]')));
+                $propbag->add('radio', array('value' => array('onyx', 'simplepie'),
+                                             'desc'  => array('Onyx [BSD]', 'SimplePie [BSD-3]')));
                 $propbag->add('name', PLUGIN_AGGREGATOR_CHOOSE_ENGINE);
                 $propbag->add('description', PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC);
                 $propbag->add('default', 'onyx');
@@ -920,37 +918,8 @@ class serendipity_event_aggregator extends serendipity_event
         global $serendipity;
 
         $file = $serendipity['POST']['aggregatorOPML'];
-        if (function_exists('serendipity_request_start')) {
-            serendipity_request_start();
-        }
 
-        if (function_exists('serendipity_request_object')) {
-            $req = serendipity_request_object($file);
-            $response = $req->send();
-            if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
-                $data = file_get_contents($file);
-                if (empty($data)) {
-                    return false;
-                }
-            }
-            # Fetch html content:
-            $data = $response->getBody();
-        } else {
-            require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
-            $req = new HTTP_Request($file);
-            if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
-                $data = file_get_contents($file);
-                if (empty($data)) {
-                    return false;
-                }
-            }
-            # Fetch html content:
-            $data = $req->getResponseBody();
-        }
-
-        if (function_exists('serendipity_request_end')) {
-            serendipity_request_end();
-        }
+        $data = serendipity_request_url($file);
 
         // XML functions
         $xml_string = '<?xml version="1.0" encoding="UTF-8" ?>';
@@ -1161,29 +1130,7 @@ class serendipity_event_aggregator extends serendipity_event
     {
         global $serendipity;
 
-        if (function_exists('serendipity_request_object')) {
-            $req = serendipity_request_object($feed['feedurl']);
-            $response = $req->send();
-            if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
-                $data = file_get_contents($feed['feedurl']);
-                if (empty($data)) {
-                    return false;
-                }
-            }
-            # Fetch html content:
-            $data = $response->getBody();
-        } else {
-            require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
-            $req = new HTTP_Request($feed['feedurl']);
-            if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
-                $data = file_get_contents($feed['feedurl']);
-                if (empty($data)) {
-                    return false;
-                }
-            }
-            # Fetch html content:
-            $data = $req->getResponseBody();
-        }
+        $data = serendipity_request_url($feed['feedurl']);
 
         #XML functions
         $xml_string = '<' . '?xml version="1.0" encoding="UTF-8"?' . '>';
@@ -1222,14 +1169,10 @@ class serendipity_event_aggregator extends serendipity_event
 
         $engine = $this->get_config('engine', 'onyx');
         if ($engine == 'onyx') {
-            require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'Onyx/RSS.php';
-        } elseif ($engine == 'magpierss') {
-            // CLSC: NEW "MagpieRSS" include
-            require_once dirname(__FILE__) . '/magpierss/rss_fetch.inc';
-        } elseif ($engine == 'simplepie') {
-            //hwa: NEW "SimplePie" include
-            #require_once dirname(__FILE__) . '/simplepie/simplepie.inc'; // we could use the compiled file, but since 1.3 simplePie starters have been split up
-            include_once(dirname(__FILE__) . '/simplepie/autoloader.php');
+            require_once S9Y_PEAR_PATH . 'Onyx/RSS.php';
+        }
+        if ($engine == 'simplepie') {
+            require_once S9Y_PEAR_PATH . '/simplepie/SimplePie.php';
             include_once(dirname(__FILE__) . '/simplepie/idn/idna_convert.class.php');
         }
 
@@ -1333,86 +1276,6 @@ class serendipity_event_aggregator extends serendipity_event
                     $stack[] = $item;
                 }
 
-            } elseif ($engine == 'magpierss') {
-                // ----------------------------------------------------------
-                // CLSC: New MagpieRSS code start
-                // ----------------------------------------------------------
-
-                $rss = fetch_rss($feed['feedurl']);
-                foreach ($rss->items AS $item) {
-                    $fake_timestamp = false;
-                    $date = $item['pubdate'];
-                    if ($this->debug) printf("DEBUG: pubdate = %s\n", $item['pubdate'], $date);
-
-                    // ----------------------------------------------------------
-                    // CLSC:        Try a few different types of timestamp fields
-                    //                So that we might get lucky even with non-standard feeds
-                    // ----------------------------------------------------------
-
-                    if ($date == "") {
-                        // CLSC: magpie syntax for nested fields
-                        $date = $item['dc']['date'];
-                        if ($this->debug) printf("DEBUG: falling back to [dc][date] = %s\n", $item['dc:date'], $date);
-                    }
-
-                    if ($date == "") {
-                        $date = $item['modified'];
-                        if ($this->debug) printf("DEBUG: falling back to modified = %s\n", $item['modified'], $date);
-                    }
-
-                    if ($date == "") {
-                        $date = $item['PubDate'];
-                        if ($this->debug) printf("DEBUG: falling back PubDate = %s\n", $item['PubDate'], $date);
-                    }
-
-                    if ($date == "") {
-                        $date = $item['created'];
-                        if ($this->debug) printf("DEBUG: falling back to created = %s\n", $item['created'], $date);
-                    }
-
-                    if ($date == "") {
-                        // CLSC: not proper magpie syntax but still catches some
-                        $date = $item['dc:date'];
-                        if ($this->debug) printf("DEBUG: falling back to dc:date = %s\n", $item['dc:date'], $date);
-                    }
-
-                    if ($date == "") {
-                        $date = $item['updated'];
-                        if ($this->debug) printf("DEBUG: falling back to updated = %s\n", $item['updated'], $date);
-                    }
-
-                    if ($date == "") {
-                        $date = $item['published'];
-                        if ($this->debug) printf("DEBUG: falling back to published = %s\n", $item['published'], $date);
-                    }
-
-                    if ($date == "") {
-                        // ----------------------------------------------------------
-                        //    CLSC:        If none of the above managed to identify a date:
-                        //                 Set date to "now" and hope that the md5hash will get it.
-                        // ----------------------------------------------------------
-
-                        $date = time();
-                        $fake_timestamp = true;
-                        if ($this->debug) printf("DEBUG: falling back to time() = %s\n", $date);
-                    }
-
-                    // CLSC: if date is set to "now" parseDate can't parse it.
-                    if ($fake_timestamp != true) {
-                        $date = $this->parseDate($date);
-                    }
-
-                    if ($item['title'] == "") {
-                        if ($this->debug) printf("DEBUG: skip item: title was empty for %s\n", print_r($item, true));
-                        continue;
-                    }
-
-                    $item['date'] = $date;
-                    $stack[] = $item;
-                    // ----------------------------------------------------------
-                    //    CLSC: New MagpieRSS code end
-                    // ----------------------------------------------------------
-                }
             } elseif ($engine == 'simplepie') {
 
                 // hwa: new SimplePie code  ; lifted from the SimplePie demo
@@ -1461,7 +1324,7 @@ class serendipity_event_aggregator extends serendipity_event
                 }
            }
 
-           while(list($key, $item) = each($stack)) {
+           foreach ($stack AS $key => $item) {
 
                 if ($opt['store_separate']) {
                     $ep_id = $cache_entries[$item['title']][$feed['feedid']][$item['date']];

@@ -40,7 +40,7 @@
 @define('PLUGIN_AGGREGATOR_IGNORE_UPDATES', 'Ignorovat aktualizace?');
 @define('PLUGIN_AGGREGATOR_IGNORE_UPDATES_DESC', 'Pokud se text článku změní později po vydání, má se tato aktualizace ignorovat?');
 @define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE', 'Vybrat RSS parser');
-@define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onys je distribuován pod BSD licencí, ale nepodporuje kanály typu ATOM. MagpieRSS je licencováno pod GPL licencí, ale nepodporuje formát ATOM a další funkce.');
+@define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onys je distribuován pod BSD licencí, ale nepodporuje kanály typu ATOM.');
 @define('PLUGIN_AGGREGATOR_CRONJOB', 'Tento plugin využívá Serendipity plugin Cronjob. Nainstalujte jej, pokud potřebujete využívat pravidelně opakované aktualizace.');
 @define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION', 'Filtr');
 @define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION_DESC', 'Zde lze zadat regulární výraz, kterým se bude porovnávat obsah příspěvku (nadpis a tělo) a tento příspěvek se vloží do bogu, pouze pokud obsahuje zde zadaný vzor. Pokud je ponecháno prázdné, žádné porovnávání se neprovádí. Více výrazů může být odděleno znakem ~ (vlnovka = tilda) a jsou kombinovány podle logiky OR (nebo = pokud článek obsahuje alespoň jeden z výrazů, je přijat).');
