@@ -5,19 +5,6 @@ if (IN_serendipity !== true) {
 }
 // todo: add config groups, aka freetag dev
 
-if (!function_exists('array_combine')) {
-    function array_combine($a, $b) {
-        $c = array();
-        if (is_array($a) && is_array($b))
-            while (list(, $va) = each($a))
-                if (list(, $vb) = each($b))
-                    $c[$va] = $vb;
-                else
-                    break 1;
-        return $c;
-    }
-}
-
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_usergallery extends serendipity_event
@@ -31,7 +18,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian');
-        $propbag->add('version',       '2.68');
+        $propbag->add('version',       '2.69');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -1028,17 +1015,19 @@ class serendipity_event_usergallery extends serendipity_event
             if (is_array($images)) {
                 $stop = false;
                 $onecount = false;
-                while ((list($f, $image) = each($images)) && !$stop) {
-                    if ($image['id'] == $file['id']) {
-                        $path = $image['path'];
-                        $previous_id = $previous_attempt;
-                        $onecount = true;
-                    } else {
-                        if ($onecount == true) {
-                            $next_id = $image['id'];
-                            $stop = true;
+                foreach($images AS $f => $image) {
+                    if (!$stop) {
+                        if ($image['id'] == $file['id']) {
+                            $path = $image['path'];
+                            $previous_id = $previous_attempt;
+                            $onecount = true;
                         } else {
-                            $previous_attempt = $image['id'];
+                            if ($onecount == true) {
+                                $next_id = $image['id'];
+                                $stop = true;
+                            } else {
+                                $previous_attempt = $image['id'];
+                            }
                         }
                     }
                 }

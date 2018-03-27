@@ -1,3 +1,8 @@
+2.69:
+----
+
+ * Replace PHP 7.2 set deprecated each() usage where possible
+
 2.68:
 ----
 
