@@ -15,16 +15,16 @@ class serendipity_event_flickrcss extends serendipity_event
         $propbag->add('name',        PLUGIN_EVENT_FLICKRCSS);
         $propbag->add('description', PLUGIN_EVENT_FLICKRCSS_DESC);
         $propbag->add('stackable',   false);
-        $propbag->add('author',      'Michael Kaiser');
-        $propbag->add('version',     '1.06');
+        $propbag->add('author',      'Michael Kaiser, Ian');
+        $propbag->add('version',     '1.07');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.9',
-            'php'         => '5.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.6.0'
         ));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
         $propbag->add('event_hooks', array(
-            'css'    => true,
+            'css'    => true
         ));
 
 
@@ -54,14 +54,16 @@ class serendipity_event_flickrcss extends serendipity_event
                         return true;
                     }
                     $this->addToCSS($eventData);
-                    return true;
                     break;
 
                 default:
                     return false;
             }
+            return true;
         }
-        else {return false;}
+        else {
+            return false;
+        }
     }
     
     function addToCSS(&$eventData)

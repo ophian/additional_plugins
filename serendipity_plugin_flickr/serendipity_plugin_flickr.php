@@ -6,7 +6,10 @@ if (IN_serendipity !== true) {
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/phpFlickr/phpFlickr.php';
+use \Samwilson\PhpFlickr\PhpFlickr;
+
+// A PHP wrapper for the Flickr API, including Oauth.
+require dirname(__FILE__) . '/phpFlickr/src/PhpFlickr.php';
 
 class serendipity_plugin_flickr extends serendipity_plugin {
 
@@ -17,11 +20,11 @@ class serendipity_plugin_flickr extends serendipity_plugin {
         $propbag->add('name', PLUGIN_SIDEBAR_FLICKR);
         $propbag->add('description', PLUGIN_SIDEBAR_FLICKR_DESC);
         $propbag->add('stackable',   true);
-        $propbag->add('author',      'Michael Kaiser');
+        $propbag->add('author',      'Michael Kaiser, Ian');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.9',
-            'php'         => '5.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.6.0'
         ));
         $propbag->add('version',  '1.10');
         $propbag->add('configuration', array(
@@ -183,18 +186,18 @@ class serendipity_plugin_flickr extends serendipity_plugin {
     {
         global $serendipity;
 
-        $title = $this->get_config('title');
-        $username = $this->get_config('email');
-        $num = $this->get_config('perpage');
-        $choices = $this->get_config('numberOfChoices');                //added 110730 by artodeto
-        $useChoices = $this->get_config('useChoices');                //added 110730 by artodeto
-        $apiKey = $this->get_config('apikey');
-        $apiSecret = $this->get_config('apisecret');
-        $sourceimgtype = $this->get_config('sourceimgtype');
-        $targetimgtype = $this->get_config('targetimgtype');
+        $title          = $this->get_config('title');
+        $username       = $this->get_config('email');
+        $num            = $this->get_config('perpage');
+        $choices        = $this->get_config('numberOfChoices');                //added 110730 by artodeto
+        $useChoices     = $this->get_config('useChoices');                //added 110730 by artodeto
+        $apiKey         = $this->get_config('apikey');
+        $apiSecret      = $this->get_config('apisecret');
+        $sourceimgtype  = $this->get_config('sourceimgtype');
+        $targetimgtype  = $this->get_config('targetimgtype');
         $errors=array();
 
-/*         Get image data from flickr */
+        // Get image data from flickr
 
         $f = new phpFlickr($apiKey,$apiSecret);
 
@@ -202,11 +205,12 @@ class serendipity_plugin_flickr extends serendipity_plugin {
 
         if (stristr($username,'@')) {
             $nsid = $f->people_findByEmail($username);
-            }
-        else {
+        } else {
             $nsid = $f->people_findByUsername($username);
         }
-        if ($nsid===false) { $errors[]=PLUGIN_SIDEBAR_FLICKR_ERROR_WRONGUSER; } /* Can't find user */
+        if ($nsid === false) {
+            $errors[] = PLUGIN_SIDEBAR_FLICKR_ERROR_WRONGUSER; // Can't find user
+        }
         $photos_url = $f->urls_getUserPhotos($nsid['nsid']);
         if($useChoices === true) {
             $photos = $f->photos_search(array("user_id" => $nsid['nsid'], "per_page" => $choices, "sort" => "date-posted-desc", "extras" => "date_taken"));
@@ -214,16 +218,16 @@ class serendipity_plugin_flickr extends serendipity_plugin {
             $photos = $f->photos_search(array("user_id" => $nsid['nsid'], "per_page" => $num, "sort" => "date-posted-desc", "extras" => "date_taken"));
         }
 
-        if($photos[total] > 0 && $f) {
+        if ($photos[total] > 0 && $f) {
             $sizelist = array("0"=>"Square", "1"=>"Thumbnail", "2"=>"Small", "3"=>"Medium", "4"=>"Large", "5"=>"Original");
-            if($useChoices === true) {                    //added 110730 by artodeto
+            if ($useChoices === true) {                    //added 110730 by artodeto
                 shuffle($photos['photo']);
                 array_splice($photos['photo'], $num);
             }
-            foreach($photos['photo'] as $photo) {
+            foreach($photos['photo'] AS $photo) {
                 if ($photo['ispublic'] !== 1) continue;
-                $imgdate=strftime("%d.%m.%y %H:%M",strtotime($photo['datetaken']));
-                $imgtitle=$photo['title'];
+                $imgdate = strftime("%d.%m.%y %H:%M",strtotime($photo['datetaken']));
+                $imgtitle = $photo['title'];
 
 /*                 Choose available image size */
                 $sizes_available = $f->photos_getSizes($photo[id]);
@@ -246,25 +250,24 @@ class serendipity_plugin_flickr extends serendipity_plugin {
                 $img_height = $imgsrcdata['height'];
                 $img_url = $imgsrcdata['source'];
 
-                if ( $this->get_config('targetlink')=="JPG" )
+                if ( $this->get_config('targetlink') == "JPG" ) {
                     $link_url = $imgtrgdata['source'];
-                else
+                } else {
                     $link_url = $imgtrgdata['url'];
-
+                }
                 if ($this->get_config('showdate') || $this->get_config('showtitle')) {
 
                     unset($info);
 
                     if ($this->get_config('showdate')) {
                         $info .= '<span class="serendipity_plugin_flickr_date">'.$imgdate.'</span>';
-                        }
+                    }
                     if ($this->get_config('showtitle')) {
                         $info .= '<span class="serendipity_plugin_flickr_title">'.$imgtitle.'</span>';
-                        }
-
+                    }
                     if ($this->get_config('lightbox')!='') {
                         $lightbox = 'rel="'.$this->get_config('lightbox').'" ';
-                        }
+                    }
 
                     $images .= sprintf(
                     '<dd style="width:%spx;"><a %shref="%s" ><img src="%s" width="%s" height="%s" title="%s" alt="%s"/></a></dd><dt style="width:%spx;margin-left:-%spx;">%s</dt>' . "\n",
@@ -294,16 +297,16 @@ class serendipity_plugin_flickr extends serendipity_plugin {
             }
         }
         else {
-            $errors[] = PLUGIN_SIDEBAR_FLICKR_ERROR_NOIMG; /* No images available */
+            $errors[] = PLUGIN_SIDEBAR_FLICKR_ERROR_NOIMG; // No images available
         }
         $content = '<dl class="serendipity_plugin_flickr">' . "\n";
         $content .= "\n".$images;
         $content .= '</dl>';
 
-        $footer=array();
+        $footer = array();
         if ($this->get_config('showrss')) {
             $rssicon  = serendipity_getTemplateFile('img/xml.gif');
-            $footer[]='<a class="serendipity_xml_icon" href="http://api.flickr.com/services/feeds/photos_public.gne?id='.$nsid['nsid'].'&amp;format=rss_200"><img src="'.$rssicon.'" alt="XML" style="border: 0px" /></a>'."\n".'<a href="http://api.flickr.com/services/feeds/photos_public.gne?id='.$nsid['nsid'].'&amp;format=rss_200">'.PLUGIN_SIDEBAR_FLICKR_LINK_SHOWRSS.'</a>';
+            $footer[] = '<a class="serendipity_xml_icon" href="http://api.flickr.com/services/feeds/photos_public.gne?id='.$nsid['nsid'].'&amp;format=rss_200"><img src="'.$rssicon.'" alt="XML" style="border: 0px" /></a>'."\n".'<a href="http://api.flickr.com/services/feeds/photos_public.gne?id='.$nsid['nsid'].'&amp;format=rss_200">'.PLUGIN_SIDEBAR_FLICKR_LINK_SHOWRSS.'</a>';
         }
         if ($this->get_config('showphotostream')) {
             $footer[]='<a href="http://www.flickr.com/photos/'.$username.'/">'.PLUGIN_SIDEBAR_FLICKR_LINK_PHOTOSTREAM.'</a>';

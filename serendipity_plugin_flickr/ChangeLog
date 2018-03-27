@@ -1,4 +1,14 @@
-1.06 & 1.10: Cleanup & use modern constructor method call
+1.20 (1.07 css event):
+----------------------
+ * Change phpFlickr lib to "successor" at https://github.com/samwilson/phpflickr v4.3.0
+ * Removed outdated bundled PEAR
+ * Cleanup
+ * Changed PHP requirement to 5.6
+
+1.06 & 1.10:
+------------
+ * Cleanup & use modern constructor method call
+
 1.09 ?
 1.08: Upgraded phpFlickr library
 1.07: Added an option to shuffle the phpFlickr return set, patch by artodeto
