@@ -1,3 +1,7 @@
+4.04:
+-----
+    * Remove technorati_tag_link option (outdated service since 2014)
+
 4.03:
 -----
     * Add and fix for button_up selector

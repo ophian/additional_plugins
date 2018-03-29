@@ -6,7 +6,7 @@
  * - Refactor out the entryproperties depenancy, and use our own space (RQ: ?)
  *
  * TODO:
- * - - convert database structure to a truely 3rd normal form (RQ: ?)
+ * - - convert database structure to a truly 3rd normal form (RQ: ?)
  *
  *  (RQ: We are ten years later now. Shall we keep this?)
  */
@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.03');
+        $propbag->add('version',       '4.04');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -99,7 +99,6 @@ class serendipity_event_freetag extends serendipity_event
             'taglist',
             'sortlist',
             'send_http_header',
-            'technorati_tag_link', 'technorati_tag_image',
             'embed_footer')
         );
     }
@@ -282,20 +281,6 @@ class serendipity_event_freetag extends serendipity_event
                  $propbag->add('name',        PLUGIN_EVENT_FREETAG_ADMIN_DELIMITER);
                  $propbag->add('description', '');
                  $propbag->add('default',     'true');
-                 break;
-
-            case 'technorati_tag_link':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK);
-                 $propbag->add('description', PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_DESC);
-                 $propbag->add('default',     'false');
-                 break;
-
-            case 'technorati_tag_image':
-                 $propbag->add('type',        'string');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG);
-                 $propbag->add('description', '');
-                 $propbag->add('default',     'http://static.technorati.com/static/img/pub/icon-utag-16x13.png');
                  break;
 
             case 'use_rotacloud':
@@ -587,21 +572,14 @@ class serendipity_event_freetag extends serendipity_event
             return '';
         }
 
-        $technorati     = serendipity_db_bool($this->get_config('technorati_tag_link', 'false'));
-        $technorati_img = $this->get_config('technorati_tag_image');
-        $img_url        = $this->get_config('path_img',$serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_freetag/img/');
-
         foreach($tags AS $tag) {
             $tag = trim($tag);
             if (empty($tag)) {
                 continue;
             }
-            $links[] = "\n".'    <a href="' . $taglink . self::makeURLTag($tag) . '"' .
-                   ' title="' . self::specialchars_mapper($tag) . '"' .
-                   ' rel="tag">' . self::specialchars_mapper($tag) . '</a>' .
-                   ($technorati?'<a href="http://technorati.com/tag/' . urlencode($tag) . '" class="serendipity_freeTag_technoratiTag" rel="tag"><img style="border:0;vertical-align:middle;margin-left:.4em" src="' . $technorati_img . '?tag=' . urlencode($tag) . '" alt="technorati" /></a>':'');
-
+            $links[] = "\n".'    <a href="' . $taglink . self::makeURLTag($tag) . '" title="' . self::specialchars_mapper($tag) . '" rel="tag">' . self::specialchars_mapper($tag) . '</a>';
         }
+
         if ($extended_smarty) {
             return $links;
         } else {
