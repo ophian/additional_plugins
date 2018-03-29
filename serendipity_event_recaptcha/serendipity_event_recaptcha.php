@@ -21,18 +21,42 @@ class serendipity_event_recaptcha extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_RECAPTCHA_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_RECAPTCHA_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin, @th-h, Ian');
+        $propbag->add('author',        'Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '0.32');
+        $propbag->add('version',       '0.33');
         $propbag->add('event_hooks',    array(
             'frontend_configure'   => true,
             'frontend_saveComment' => true,
             'frontend_comment'     => true
         ));
+
+        $propbag->add('legal',    array(
+            'services' => array(
+                'Google reCaptcha' => array(
+                    'url'  => 'https://developers.google.com/recaptcha/',
+                    'desc' => 'Transmits Captcha form data to Google Servers to check for human (=non robot) input to prevent spam'
+                )
+            ),
+            'frontend' => array(
+                'If logging is enabled, saves user comment data (name, email, url, user agent, ip, comment body, timestamp, referrer) in database or file.',
+                'Transmits comment data to the Google ReCaptcha API'
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+            ),
+            'sessiondata' => array(
+            ),
+            'stores_user_input'     => true,
+            'stores_ip'             => true,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
+
         $propbag->add('configuration', array(
             'info',
             'sep',
