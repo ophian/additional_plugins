@@ -587,7 +587,7 @@ class serendipity_event_freetag extends serendipity_event
             return '';
         }
 
-        $technorati     = $this->get_config('technorati_tag_link', 'false');
+        $technorati     = serendipity_db_bool($this->get_config('technorati_tag_link', 'false'));
         $technorati_img = $this->get_config('technorati_tag_image');
         $img_url        = $this->get_config('path_img',$serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_freetag/img/');
 
