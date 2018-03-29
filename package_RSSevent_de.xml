@@ -297,6 +297,15 @@
 <guid isPermaLink="false">serendipity_event_dpsyntaxhighlighter</guid>
 </item>
 <item>
+<title>DSGVO / GPDR: General Data Protection Regulation: This plugin aims to help blog owners apply conformity to the General Data Protection Regulation Act.</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_dsgvo_gpdr</link>
+<category>Event Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_event_dsgvo_gpdr&lt;br /&gt;DSGVO / GPDR: General Data Protection Regulation&lt;/b&gt;&lt;br /&gt;This plugin aims to help blog owners apply conformity to the General Data Protection Regulation Act.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Thu, 29 Mar 2018 17:52:36 +0200</pubDate>
+<guid isPermaLink="false">serendipity_event_dsgvo_gpdr</guid>
+</item>
+<item>
 <title>Textformatierung: Klickbare E-Mail-Adressen - Verschleiern von E-Mail-Adressen : Macht E-Mail-Adressen klickbar, aber verschleiert sie, um sie vor Spambots zu schützen</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_email_bot_obfuscator</link>
 <category>Event Plugins</category>
@@ -536,7 +545,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Avatare bei Kommentaren anzeigen. Unterstützt werden Gravatare, Pavatare, Favatare, Twitter und Identica Avatare&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Fri, 03 Nov 2017 11:55:37 +0100</pubDate>
+<pubDate>Thu, 29 Mar 2018 17:08:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
@@ -912,9 +921,9 @@
 <title>Recaptcha: Recaptcha für die Kommentar-Funktion von Artikeln aktivieren (Sie müssen einen Schlüssel anfordern)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_recaptcha</link>
 <category>Event Plugins</category>
-<author>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin, @th-h, Ian</author>
+<author>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_recaptcha&lt;br /&gt;Recaptcha&lt;/b&gt;&lt;br /&gt;Recaptcha für die Kommentar-Funktion von Artikeln aktivieren (Sie müssen einen Schlüssel anfordern)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 24 Mar 2018 19:03:23 +0100</pubDate>
+<pubDate>Thu, 29 Mar 2018 18:05:25 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_recaptcha</guid>
 </item>
 <item>
