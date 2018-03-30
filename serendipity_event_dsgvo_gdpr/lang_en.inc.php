@@ -1,7 +1,7 @@
 <?php
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_NAME', 'DSGVO / GDPR: General Data Protection Regulation');
-@define('PLUGIN_EVENT_DSGVO_GDPR_DESC', 'This plugin aims to help blog owners apply conformity to the General Data Protection Regulation Act.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_DESC', 'This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_MENU', 'GDPR statement');
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT', 'Your privacy statement / imprint');
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_DESC', 'You can use the automatic inspection above as a rough draft of information you should include in your privacy statement. Make sure that your privacy statement contains all relevant information. Contact a lawyer if you need help with this, we sadly cannot provide a bulletproof statement draft for you for liability reasons.');
@@ -14,7 +14,7 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DESC', 'Enter the text here that is displayed to the user for accepting your terms of reference. Use %gdpr_url% as a placeholder for the URL.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DEFAULT', 'I agree that my data will be stored. Please review the <a href="%gdpr_url%" target="_blank">terms of usage / imprint</a> for further details.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_INFO', 'Information to your blog\'s GDPR relevance');
-@define('PLUGIN_EVENT_DSGVO_GDPR_INFO_DESC', 'Serendipity allows plugins to specify, which impact they have on your blog\'s usage and handling of sensible data. At this place, this data is automatically evaluted and printed here for your information. Please be sure to always have the recent versions of plugins. You yourself are legally responsible to disclose any used services to the visitor. If you use any functionality outside of core and plugin Serendipity (custom plugins, custom templates, snippets) that is relevant, be sure to include them in your privacy statement!');
+@define('PLUGIN_EVENT_DSGVO_GDPR_INFO_DESC', 'Serendipity allows plugins to specify, which impact they have on your blog\'s usage and handling of sensible data. At this place, this data is automatically evaluated and printed here for your information. Please be sure to always have the recent versions of plugins. You yourself are legally responsible to disclose any used services to the visitor. If you use any functionality outside of core and plugin Serendipity (custom plugins, custom templates, snippets) that is relevant, be sure to include them in your privacy statement!');
 
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER', 'Show privacy statement link in footer?');
