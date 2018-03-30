@@ -2186,34 +2186,40 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_dsgvo_gpdr</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_dsgvo_gpdr/ChangeLog</changelog>
+<name>serendipity_event_dsgvo_gdpr</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_dsgvo_gdpr/ChangeLog</changelog>
 <license>GPL</license>
-<summary>DSGVO / GPDR: General Data Protection Regulation</summary>
+<summary>DSGVO / GDPR: Allgemeine Datenschutzverordnung</summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
-<description>This plugin aims to help blog owners apply conformity to the General Data Protection Regulation Act.</description>
+<description>Dieses Plugin soll Blog-Besitzern helfen, die Übereinstimmung mit dem Allgemeinen Datenschutzgesetz zu gewährleisten.</description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.1</version>
+  <version>1.2</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-03-29</date>
+  <date>2018-03-30</date>
   <filelist>
-    <dir name="serendipity_event_dsgvo_gpdr">
+    <dir name="serendipity_event_dsgvo_gdpr">
       <file>ChangeLog</file>
       <file>cookieconsent.min.css</file>
       <file>cookieconsent.min.js</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
-      <file>serendipity_event_dsgvo_gpdr.php</file>
+      <file>serendipity_event_dsgvo_gdpr.php</file>
       <file>todo.txt</file>
-</dir>
+      <dir name="UTF-8">
+        <file>lang_de.inc.php</file>
+      </dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_dsgvo_gpdr/ChangeLog</file>
-    <file>serendipity_event_dsgvo_gpdr/cookieconsent.min.css</file>
-    <file>serendipity_event_dsgvo_gpdr/cookieconsent.min.js</file>
-    <file>serendipity_event_dsgvo_gpdr/lang_en.inc.php</file>
-    <file>serendipity_event_dsgvo_gpdr/serendipity_event_dsgvo_gpdr.php</file>
-    <file>serendipity_event_dsgvo_gpdr/todo.txt</file>
+    <file>serendipity_event_dsgvo_gdpr/ChangeLog</file>
+    <file>serendipity_event_dsgvo_gdpr/cookieconsent.min.css</file>
+    <file>serendipity_event_dsgvo_gdpr/cookieconsent.min.js</file>
+    <file>serendipity_event_dsgvo_gdpr/lang_de.inc.php</file>
+    <file>serendipity_event_dsgvo_gdpr/lang_en.inc.php</file>
+    <file>serendipity_event_dsgvo_gdpr/serendipity_event_dsgvo_gdpr.php</file>
+    <file>serendipity_event_dsgvo_gdpr/todo.txt</file>
+    <file>serendipity_event_dsgvo_gdpr/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
