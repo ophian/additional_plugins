@@ -1,3 +1,7 @@
+1.23:
+-----
+ * ix append data exclude self for $out
+
 1.22:
 -----
  * Fix inspect_gdpr class_data

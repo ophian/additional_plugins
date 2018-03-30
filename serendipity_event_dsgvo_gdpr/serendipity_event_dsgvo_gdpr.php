@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.22');
+        $propbag->add('version',       '1.23');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -154,94 +154,92 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                 $pluginFile =  serendipity_plugin_api::probePlugin($class_data['name'], $class_data['classname'], $class_data['pluginPath']);
                 $plugin     =& serendipity_plugin_api::getPluginInfo($pluginFile, $class_data, 'event');
                 $plugin     =& serendipity_plugin_api::getPluginInfo($pluginFile, $class_data, 'sidebar');
-            }
 
-            if (is_object($plugin)) {
-                // Object is returned when a plugin could not be cached.
-                $bag = new serendipity_property_bag;
-                $plugin->introspect($bag);
+                if (is_object($plugin)) {
+                    // Object is returned when a plugin could not be cached.
+                    $bag = new serendipity_property_bag;
+                    $plugin->introspect($bag);
 
-                $legal = $bag->get('legal');
-                if (is_array($legal)) {
-                    $out .= '<h3>' . $class_data['classname'] . "</h3>\n\n";
+                    $legal = $bag->get('legal');
+                    if (is_array($legal)) {
+                        $out .= '<h3>' . $class_data['classname'] . "</h3>\n\n";
 
-                    if (is_array($legal['services']) && count($legal['services']) > 0) {
-                        $out .= "<h4>Web services / Third Party</h4>\n";
-                        $out .= "<ul>\n";
-                        foreach($legal['services'] AS $servicename => $servicedata) {
-                            $out .= '    <li><a href="' . $servicedata['url'] . '">' . $servicename . '</a>: ' . $servicedata['desc'] . "</li>\n";
+                        if (is_array($legal['services']) && count($legal['services']) > 0) {
+                            $out .= "<h4>Web services / Third Party</h4>\n";
+                            $out .= "<ul>\n";
+                            foreach($legal['services'] AS $servicename => $servicedata) {
+                                $out .= '    <li><a href="' . $servicedata['url'] . '">' . $servicename . '</a>: ' . $servicedata['desc'] . "</li>\n";
+                            }
+                            $out .= "</ul>\n";
                         }
-                        $out .= "</ul>\n";
-                    }
 
-                    if (is_array($legal['frontend']) && count($legal['frontend']) > 0) {
-                        $out .= "<h4>Frontend</h4>\n";
+                        if (is_array($legal['frontend']) && count($legal['frontend']) > 0) {
+                            $out .= "<h4>Frontend</h4>\n";
+                            $out .= '<ul>';
+                            foreach($legal['frontend'] AS $servicename => $servicedata) {
+                                $out .= '    <li>' . $servicedata . "</li>\n";
+                            }
+                            $out .= "</ul>\n";
+                        }
+
+                        if (is_array($legal['backend']) && count($legal['backend']) > 0) {
+                            $out .= "<h4>Backend</h4>\n";
+                            $out .= '<ul>';
+                            foreach($legal['backend'] AS $servicename => $servicedata) {
+                                $out .= '    <li>' . $servicedata . "</li>\n";
+                            }
+                            $out .= "</ul>\n";
+                        }
+
+                        if (is_array($legal['cookies']) && count($legal['cookies']) > 0) {
+                            $out .= "<h4>Cookies</h4>\n";
+                            $out .= '<ul>';
+                            foreach($legal['cookies'] AS $servicename => $servicedata) {
+                                $out .= '    <li>' . $servicedata . "</li>\n";
+                            }
+                            $out .= "</ul>\n";
+                        }
+
+                        if (is_array($legal['sessiondata']) && count($legal['sessiondata']) > 0) {
+                            $out .= "<h4>Session data</h4>\n";
+                            $out .= '<ul>';
+                            foreach($legal['sessiondata'] AS $servicename => $servicedata) {
+                                $out .= '    <li>' . $servicedata . "</li>\n";
+                            }
+                            $out .= "</ul>\n";
+                        }
+
+                        $out .= "<h4>Attributes</h4>\n";
                         $out .= '<ul>';
-                        foreach($legal['frontend'] AS $servicename => $servicedata) {
-                            $out .= '    <li>' . $servicedata . "</li>\n";
+                        if ($legal['stores_user_input']) {
+                            $out .= "<li>Stores user data</li>\n";
+                        } else {
+                            $out .= "<li>Does not store user data (or not specified)</li>\n";
                         }
+
+                        if ($legal['stores_ip']) {
+                            $out .= "<li>Stores IP data</li>\n";
+                        } else {
+                            $out .= "<li>Does not store IP data (or not specified)</li>\n";
+                        }
+
+                        if ($legal['uses_ip']) {
+                            $out .= "<li>Operates on IP data</li>\n";
+                        } else {
+                            $out .= "<li>Does not operate on IP data (or not specified)</li>\n";
+                        }
+
+                        if ($legal['transmits_user_input']) {
+                            $out .= "<li>Transmits user input to services / third parties</li>\n";
+                        } else {
+                            $out .= "<li>Does not transmit user input to services / third parties (or not specified)</li>\n";
+                        }
+
                         $out .= "</ul>\n";
                     }
-
-                    if (is_array($legal['backend']) && count($legal['backend']) > 0) {
-                        $out .= "<h4>Backend</h4>\n";
-                        $out .= '<ul>';
-                        foreach($legal['backend'] AS $servicename => $servicedata) {
-                            $out .= '    <li>' . $servicedata . "</li>\n";
-                        }
-                        $out .= "</ul>\n";
-                    }
-
-                    if (is_array($legal['cookies']) && count($legal['cookies']) > 0) {
-                        $out .= "<h4>Cookies</h4>\n";
-                        $out .= '<ul>';
-                        foreach($legal['cookies'] AS $servicename => $servicedata) {
-                            $out .= '    <li>' . $servicedata . "</li>\n";
-                        }
-                        $out .= "</ul>\n";
-                    }
-
-                    if (is_array($legal['sessiondata']) && count($legal['sessiondata']) > 0) {
-                        $out .= "<h4>Session data</h4>\n";
-                        $out .= '<ul>';
-                        foreach($legal['sessiondata'] AS $servicename => $servicedata) {
-                            $out .= '    <li>' . $servicedata . "</li>\n";
-                        }
-                        $out .= "</ul>\n";
-                    }
-
-                    $out .= "<h4>Attributes</h4>\n";
-                    $out .= '<ul>';
-                    if ($legal['stores_user_input']) {
-                        $out .= "<li>Stores user data</li>\n";
-                    } else {
-                        $out .= "<li>Does not store user data (or not specified)</li>\n";
-                    }
-
-                    if ($legal['stores_ip']) {
-                        $out .= "<li>Stores IP data</li>\n";
-                    } else {
-                        $out .= "<li>Does not store IP data (or not specified)</li>\n";
-                    }
-
-                    if ($legal['uses_ip']) {
-                        $out .= "<li>Operates on IP data</li>\n";
-                    } else {
-                        $out .= "<li>Does not operate on IP data (or not specified)</li>\n";
-                    }
-
-                    if ($legal['transmits_user_input']) {
-                        $out .= "<li>Transmits user input to services / third parties</li>\n";
-                    } else {
-                        $out .= "<li>Does not transmit user input to services / third parties (or not specified)</li>\n";
-                    }
-
-                    $out .= "</ul>\n";
                 }
             }
-
         }
-
         return $out;
     }
 
