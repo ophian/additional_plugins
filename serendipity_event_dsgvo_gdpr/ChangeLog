@@ -1,3 +1,7 @@
+1.22:
+-----
+ * Fix inspect_gdpr class_data
+
 1.21:
 -----
  * Fix minor spellings and translation

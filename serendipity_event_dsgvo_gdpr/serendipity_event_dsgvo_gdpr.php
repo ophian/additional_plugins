@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.21');
+        $propbag->add('version',       '1.22');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -144,10 +144,17 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
     {
         $out = PLUGIN_EVENT_DSGVO_GDPR_SERENDIPITY_CORE;
 
-        $classes = serendipity_plugin_api::enum_plugins();
+        $classes = serendipity_plugin_api::enum_plugins('hide', true); // reverse is all installed, except hidden plugins
         foreach ($classes AS $class_data) {
-            $pluginFile =  serendipity_plugin_api::probePlugin($class_data['name'], $class_data['classname'], $class_data['pluginPath']);
-            $plugin     =& serendipity_plugin_api::getPluginInfo($pluginFile, $class_data);
+            // classname does not and pluginPath may not exist yet
+            $class_data['classname']  = explode(':', $class_data['name'])[0];
+            $class_data['pluginPath'] = !empty($class_data['path']) ? $class_data['path'] : $class_data['classname'];
+
+            if ($class_data['classname'] != 'serendipity_event_dsgvo_gdpr') {
+                $pluginFile =  serendipity_plugin_api::probePlugin($class_data['name'], $class_data['classname'], $class_data['pluginPath']);
+                $plugin     =& serendipity_plugin_api::getPluginInfo($pluginFile, $class_data, 'event');
+                $plugin     =& serendipity_plugin_api::getPluginInfo($pluginFile, $class_data, 'sidebar');
+            }
 
             if (is_object($plugin)) {
                 // Object is returned when a plugin could not be cached.
