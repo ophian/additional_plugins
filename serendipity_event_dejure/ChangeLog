@@ -1,3 +1,8 @@
+1.12:
+-----
+ * Check openssl extension loaded
+ * Raise PHP requirement
+
 1.11:
 -----
  * Change author list on author's request.
