@@ -1,22 +1,18 @@
 <div id="bayesContent">
-    {if $s9ybackend == 1}<p>{else}<span class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> {/if}{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_IMPORT_EXPLANATION}{if $s9ybackend == 1}</p>{else}</span>{/if}
+    <span class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> {$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_IMPORT_EXPLANATION}</span>
 
     <form enctype="multipart/form-data" action="{$serendipityBaseURL}index.php?/plugin/spamblock_bayes_import" method="post">
-    {if $s9ybackend != 1}
         <div class="form_field">
-    {/if}
-        <input name="importcsv" type="file" />
-        <input class="serendipityPrettyButton input_button" type="submit" value="{$CONST.GO}" />
-    {if $s9ybackend != 1}
+            <input name="importcsv" type="file" />
+            <input class="serendipityPrettyButton input_button" type="submit" value="{$CONST.GO}" />
         </div>
-    {/if}
     </form>
 
     <h3>{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA}</h3>
 
-    {if $s9ybackend == 1}<p>{else}<span class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> {/if}{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_EXPLANATION}{if $s9ybackend == 1}</p>{else}</span>{/if}
+    <span class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> {$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_EXPLANATION}</span>
 
-    <form{if $s9ybackend != 1} class="bayesTrojaButtons"{/if} action="{$serendipityBaseURL}index.php?/plugin/bayesTrojaRequestDB" method="post">
+    <form class="bayesTrojaButtons" action="{$serendipityBaseURL}index.php?/plugin/bayesTrojaRequestDB" method="post">
         <input id="trojaImport" class="serendipityPrettyButton input_button" type="submit" value="{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_IMPORT}" />
     </form>
     {if $trojaRegistered}

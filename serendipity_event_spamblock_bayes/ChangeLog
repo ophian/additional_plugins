@@ -1,3 +1,28 @@
+1.02:
+------
+ * Raise to Serendipity 2.1.2 + requirement for the token email approach
+
+1.01:
+------
+ * Fix approve comment method properties call
+ * Apply token generation to Styx Standard
+ * Fix default token for non-useCommentTokens option
+
+1.00:
+------
+ * Remove Series 1.7 switches and set to Serendipity 2.0 up requirement
+ * Use Serendipity bundled jquery if needed
+ * Consistency cleanups
+
+0.5.1:
+------
+ * Sync - Fixed token generation for delete/approve comment.
+
+0.5.0:
+------
+ * Sync - Use tokens to classificate comments via E-Mail if the option is activated in your Blog
+   Caution: This feature is only available if you use Serendipity 2.1.2 or higher.
+
 0.4.31:
 -----
  * Fix 'sqlite3oo' case check again
