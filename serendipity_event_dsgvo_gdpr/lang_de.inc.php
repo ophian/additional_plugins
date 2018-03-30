@@ -54,7 +54,7 @@ window.cookieconsent.initialise({
 ');
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_PATH', 'CookieConsent javascript location');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_PATH_DESC', 'Dieses Plugin bündelt die JS und CSS der Cookie-Einwilligungsseite. Sie können hier auf andere Verzeichnisse verweisen. Stellen Sie sicher, dass die Dateien cookieconsent.min.css und cookieconsent.min.js') heißen;
+@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_PATH_DESC', 'Dieses Plugin bündelt die JS und CSS der Cookie-Einwilligungsseite. Sie können hier auf andere Verzeichnisse verweisen. Stellen Sie sicher, dass die Dateien cookieconsent.min.css und cookieconsent.min.js heißen');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_ERROR', 'Sie müssen die Bedingungen akzeptieren, um einen Kommentar zu hinterlassen.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_ERROR', 'Dieses Blog hat noch keine Datenschutzerklärung erstellt, es muss in der Plugin-Konfiguration konfiguriert werden.');
 
