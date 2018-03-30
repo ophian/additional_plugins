@@ -266,9 +266,9 @@
 <title>dejure.org automatic linking: Automatically links quoted statues and judicature (references and source of information) with contents of dejure.org.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_dejure</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Bjoern Urban, dejure.org, Thomas Hochstein, Ian</author>
+<author>Garvin Hicking, dejure.org, Thomas Hochstein, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_dejure&lt;br /&gt;dejure.org automatic linking&lt;/b&gt;&lt;br /&gt;Automatically links quoted statues and judicature (references and source of information) with contents of dejure.org.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 09 Jul 2017 17:21:40 +0200</pubDate>
+<pubDate>Fri, 30 Mar 2018 09:54:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dejure</guid>
 </item>
 <item>
@@ -301,12 +301,12 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <guid isPermaLink="false">serendipity_event_dpsyntaxhighlighter</guid>
 </item>
 <item>
-<title>DSGVO / GDPR: General Data Protection Regulation: This plugin aims to help blog owners apply conformity to the General Data Protection Regulation Act.</title>
+<title>DSGVO / GDPR: General Data Protection Regulation: This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_dsgvo_gdpr</link>
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_event_dsgvo_gdpr&lt;br /&gt;DSGVO / GDPR: General Data Protection Regulation&lt;/b&gt;&lt;br /&gt;This plugin aims to help blog owners apply conformity to the General Data Protection Regulation Act.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 30 Mar 2018 08:21:10 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_dsgvo_gdpr&lt;br /&gt;DSGVO / GDPR: General Data Protection Regulation&lt;/b&gt;&lt;br /&gt;This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 30 Mar 2018 09:45:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dsgvo_gdpr</guid>
 </item>
 <item>
@@ -1006,9 +1006,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>Spamblock (Bayes): Detects Spam via an algorithmus which learns.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_spamblock_bayes</link>
 <category>Event Plugins</category>
-<author>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold</author>
-<content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detects Spam via an algorithmus which learns.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 07 Mar 2018 19:02:39 +0100</pubDate>
+<author>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detects Spam via an algorithmus which learns.&lt;br/&gt;For: Serendipity 2.1.2</content:encoded>
+<pubDate>Fri, 30 Mar 2018 11:16:25 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
