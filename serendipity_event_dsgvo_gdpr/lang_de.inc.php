@@ -119,3 +119,15 @@ Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporäre 
 
 ');
 
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SERVICES_HEAD', 'Webservices / Dritte');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SESSIONDATA_HEAD', 'Sitzungsdaten');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_HEAD', 'Eigenschaften');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_YES', 'Speichert Benutzerdaten');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_NO', 'Keine Speicherung von Benutzerdaten (oder nicht angegeben)');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_YES', 'Speichert IP-Daten');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_NO', 'Speichert keine IP-Daten (oder nicht spezifiziert)');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_YES', 'Arbeitet mit IP-Daten');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_NO', 'Verwendet keine IP-Daten (oder nicht spezifiziert)');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_YES', 'Überträgt Benutzereingaben an Dienste / Dritte');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_NO', 'Übermittelt keine Benutzereingaben an Dienste / Dritte (oder nicht spezifiziert)');
+

@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.23');
+        $propbag->add('version',       '1.24');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -165,7 +165,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         $out .= '<h3>' . $class_data['classname'] . "</h3>\n\n";
 
                         if (is_array($legal['services']) && count($legal['services']) > 0) {
-                            $out .= "<h4>Web services / Third Party</h4>\n";
+                            $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SERVICES_HEAD."</h4>\n";
                             $out .= "<ul>\n";
                             foreach($legal['services'] AS $servicename => $servicedata) {
                                 $out .= '    <li><a href="' . $servicedata['url'] . '">' . $servicename . '</a>: ' . $servicedata['desc'] . "</li>\n";
@@ -201,38 +201,38 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         }
 
                         if (is_array($legal['sessiondata']) && count($legal['sessiondata']) > 0) {
-                            $out .= "<h4>Session data</h4>\n";
+                            $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SESSIONDATA_HEAD."</h4>\n";
                             $out .= '<ul>';
                             foreach($legal['sessiondata'] AS $servicename => $servicedata) {
                                 $out .= '    <li>' . $servicedata . "</li>\n";
                             }
-                            $out .= "</ul>\n";
+                            $out .= "</ul>\n\n";
                         }
 
-                        $out .= "<h4>Attributes</h4>\n";
+                        $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_HEAD."</h4>\n";
                         $out .= '<ul>';
                         if ($legal['stores_user_input']) {
-                            $out .= "<li>Stores user data</li>\n";
+                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_YES."</li>\n";
                         } else {
-                            $out .= "<li>Does not store user data (or not specified)</li>\n";
+                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_NO."</li>\n";
                         }
 
                         if ($legal['stores_ip']) {
-                            $out .= "<li>Stores IP data</li>\n";
+                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_YES."</li>\n";
                         } else {
-                            $out .= "<li>Does not store IP data (or not specified)</li>\n";
+                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_NO."</li>\n";
                         }
 
                         if ($legal['uses_ip']) {
-                            $out .= "<li>Operates on IP data</li>\n";
+                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_YES."</li>\n";
                         } else {
-                            $out .= "<li>Does not operate on IP data (or not specified)</li>\n";
+                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_NO."</li>\n";
                         }
 
                         if ($legal['transmits_user_input']) {
-                            $out .= "<li>Transmits user input to services / third parties</li>\n";
+                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_YES."</li>\n";
                         } else {
-                            $out .= "<li>Does not transmit user input to services / third parties (or not specified)</li>\n";
+                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_NO."</li>\n";
                         }
 
                         $out .= "</ul>\n";
@@ -273,9 +273,11 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'frontend_saveComment':
-                    if (serendipity_db_bool($this->get_config('commentform_checkbox'))) {
+                    if (serendipity_db_bool($this->get_config('commentform_checkbox', 'true'))) {
                         if ($addData['type'] == 'NORMAL') {
                             // Only act to comments. Trackbacks are an API so we cannot add checks there.
                             if (empty($serendipity['POST']['accept_privacy'])) {
@@ -288,11 +290,11 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     break;
 
                 case 'frontend_comment':
-                    if (serendipity_db_bool($this->get_config('commentform_checkbox'))) {
+                    if (serendipity_db_bool($this->get_config('commentform_checkbox', 'true'))) {
 ?>
                         <fieldset class="form_toolbar dsgvo_gdpr_comment">
                             <div class="form_box">
-                                <input id="checkbox_dsgvo_gdpr" name="serendipity[accept_privacy]" value="1" type="checkbox" <?php echo ($serendipity['POST']['accept_privacy'] == 1 ? 'checked="checked"' : ''); ?>><label for="checkbox_dsgvo_gdpr"><?php echo $this->parseText($this->get_config('commentform_text')); ?></label>
+                                <input id="checkbox_dsgvo_gdpr" name="serendipity[accept_privacy]" value="1" type="checkbox"<?php echo ($serendipity['POST']['accept_privacy'] == 1 ? ' checked="checked"' : ''); ?>><label for="checkbox_dsgvo_gdpr"><?php echo $this->parseText($this->get_config('commentform_text')); ?></label>
                             </div>
                         </fieldset>
 <?php
@@ -323,7 +325,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         $statement = $this->get_config('gdpr_content');
 
                         if (empty($statement)) {
-                            $statement = '<div class="dsgvo_gdpr_statement_error">' . PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_ERROR . '</div>';
+                            $statement = '<div class="dsgvo_gdpr_statement_error">' . PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_ERROR . "</div>\n";
                         }
 
                         echo '<div class="dsgvo_gdpr_statement">' . $statement . '</div>';
@@ -331,8 +333,8 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     break;
 
                 case 'frontend_footer':
-                    if (serendipity_db_bool($this->get_config('show_in_footer'))) {
-                        echo '<div class="dsgvo_gdpr_footer">' . $this->parseText($this->get_config('show_in_footer_text')) . '</div>';
+                    if (serendipity_db_bool($this->get_config('show_in_footer', 'true'))) {
+                        echo '<div class="dsgvo_gdpr_footer">' . $this->parseText($this->get_config('show_in_footer_text')) . "</div>\n";
                     }
 
                     if (serendipity_db_bool($this->get_config('cookie_consent', 'true'))) {

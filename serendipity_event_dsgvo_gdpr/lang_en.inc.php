@@ -16,7 +16,6 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_INFO', 'Information to your blog\'s GDPR relevance');
 @define('PLUGIN_EVENT_DSGVO_GDPR_INFO_DESC', 'Serendipity allows plugins to specify, which impact they have on your blog\'s usage and handling of sensible data. At this place, this data is automatically evaluated and printed here for your information. Please be sure to always have the recent versions of plugins. You yourself are legally responsible to disclose any used services to the visitor. If you use any functionality outside of core and plugin Serendipity (custom plugins, custom templates, snippets) that is relevant, be sure to include them in your privacy statement!');
 
-
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER', 'Show privacy statement link in footer?');
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_DESC', 'When enabled, a link to your privacy statement is included in the footer of your blog. You can adjust the displayed text. The placeholder %gdpr_url% can be used for that link.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT', 'Privacy statement link text');
@@ -119,4 +118,16 @@ Certain plugins can use the session cookie to store additional temporary data.</
 <p>Additionally, the following plugins are currently enabled and this is their automatically generated manifest:</p>
 
 ');
+
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SERVICES_HEAD', 'Web services / Third Party');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SESSIONDATA_HEAD', 'Session data');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_HEAD', 'Attributes');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_YES', 'Stores user data');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_NO', 'Does not store user data (or not specified)');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_YES', 'Stores IP data');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_NO', 'Does not store IP data (or not specified)');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_YES', 'Operates on IP data');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_NO', 'Does not operate on IP data (or not specified)');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_YES', 'Transmits user input to services / third parties');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_NO', 'Does not transmit user input to services / third parties (or not specified)');
 

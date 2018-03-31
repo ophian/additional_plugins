@@ -1,6 +1,10 @@
+1.24:
+-----
+ * Manifest properties translations
+
 1.23:
 -----
- * ix append data exclude self for $out
+ * Fix append data exclude self for $out
 
 1.22:
 -----
