@@ -2194,9 +2194,9 @@
 <description>This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.</description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.23</version>
+  <version>1.24</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-03-30</date>
+  <date>2018-03-31</date>
   <filelist>
     <dir name="serendipity_event_dsgvo_gdpr">
       <file>ChangeLog</file>
@@ -4124,7 +4124,7 @@
 <release>
   <version>0.61</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-03-07</date>
+  <date>2018-03-31</date>
   <filelist>
     <dir name="serendipity_event_google_sitemap">
       <file>ChangeLog</file>
@@ -4178,9 +4178,9 @@
 <description>Pokazuje avatary w komentarzach. Gravatars, Pavatars und Favatars avatars are supported.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.67</version>
+  <version>1.68</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2018-03-29</date>
+  <date>2018-03-31</date>
   <filelist>
     <dir name="serendipity_event_gravatar">
       <file>ChangeLog</file>
@@ -7597,7 +7597,7 @@
 <release>
   <version>0.33</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-03-29</date>
+  <date>2018-03-31</date>
   <filelist>
     <dir name="serendipity_event_recaptcha">
       <file>ChangeLog</file>

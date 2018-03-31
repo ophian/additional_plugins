@@ -302,7 +302,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_dsgvo_gdpr&lt;br /&gt;DSGVO / GDPR: General Data Protection Regulation&lt;/b&gt;&lt;br /&gt;This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 30 Mar 2018 20:07:43 +0200</pubDate>
+<pubDate>Sat, 31 Mar 2018 09:47:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dsgvo_gdpr</guid>
 </item>
 <item>
@@ -536,7 +536,7 @@
 <category>Event Plugins</category>
 <author>Boris</author>
 <content:encoded>&lt;b&gt;serendipity_event_google_sitemap&lt;br /&gt;Sitemap Generator (for Crawlers)&lt;/b&gt;&lt;br /&gt;Creates a sitemap.xml.gz, which can be used by miscellaneous Web-Crawlers. (Google, MSN, Yahoo and Ask)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 07 Mar 2018 18:53:22 +0100</pubDate>
+<pubDate>Sat, 31 Mar 2018 17:34:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_google_sitemap</guid>
 </item>
 <item>
@@ -545,7 +545,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Pokazuje avatary w komentarzach. Gravatars, Pavatars und Favatars avatars are supported.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Thu, 29 Mar 2018 17:08:45 +0200</pubDate>
+<pubDate>Sat, 31 Mar 2018 17:00:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
@@ -923,7 +923,7 @@
 <category>Event Plugins</category>
 <author>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_recaptcha&lt;br /&gt;Recaptcha&lt;/b&gt;&lt;br /&gt;Enabling a recaptcha for commenting articles (You need to apply for a key)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 29 Mar 2018 18:05:25 +0200</pubDate>
+<pubDate>Sat, 31 Mar 2018 09:53:43 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_recaptcha</guid>
 </item>
 <item>
