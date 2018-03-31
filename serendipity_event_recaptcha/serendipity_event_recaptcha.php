@@ -172,7 +172,8 @@ class serendipity_event_recaptcha extends serendipity_event
         return true;
     }
 
-    function performConfig(&$bag) {
+    function performConfig(&$bag)
+    {
         // set "yes" (recaptcha v2 is active)
         if ($this->get_config('recaptcha', 'no') === 'yes2') { $this->set_config('recaptcha', 'yes'); };
     }
