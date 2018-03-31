@@ -1,3 +1,11 @@
+1.68:
+-----
+ * Fix legal information to be used by serendipity_event_dsgvo_gpdr
+ * Fixed Changed URL protocols
+ * Changed favartar info URL to webarchive.org since the old page did not exist any more
+ * Fixed [en, de] lang files
+ * Fixed typos and some consistency cleanup
+
 1.67:
 -----
  * Add legal information to be used by serendipity_event_dsgvo_gpdr

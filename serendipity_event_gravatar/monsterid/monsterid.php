@@ -14,9 +14,8 @@ function build_monster($filename, $seed='',$size=''){
         'mouth'=> rand(1,10)
     );
 
-    // create backgound
-    $monster = @imagecreatetruecolor(120, 120)
-        or die("GD image create failed");
+    // create background
+    $monster = @imagecreatetruecolor(120, 120) or die("GD image create failed");
     $white   = imagecolorallocate($monster, 255, 255, 255);
     imagefill($monster,0,0,$white);
 
