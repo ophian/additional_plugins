@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.25');
+        $propbag->add('version',       '1.26');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -154,9 +154,12 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                 $pluginFile =  serendipity_plugin_api::probePlugin($class_data['name'], $class_data['classname'], $class_data['pluginPath']);
                 $plugin     =& serendipity_plugin_api::getPluginInfo($pluginFile, $class_data, 'event');
                 $plugin     =& serendipity_plugin_api::getPluginInfo($pluginFile, $class_data, 'sidebar');
+                // Object is returned when a plugin could not be cached. So we need to work on objects for db pluginlist too.
+                if (is_array($plugin)) {
+                    $plugin =& serendipity_plugin_api::load_plugin($class_data['name'], null, $class_data['path'], $pluginFile);
+                }
 
                 if (is_object($plugin)) {
-                    // Object is returned when a plugin could not be cached.
                     $bag = new serendipity_property_bag;
                     $plugin->introspect($bag);
 

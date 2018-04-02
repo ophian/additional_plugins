@@ -1,3 +1,7 @@
+1.26:
+-----
+ * Work on plugins objects for the bag needs to load instance if "cached" array
+
 1.25:
 -----
  * Minor convenience fixes
