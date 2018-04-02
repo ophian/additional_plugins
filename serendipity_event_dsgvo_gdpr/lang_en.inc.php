@@ -3,7 +3,7 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_NAME', 'DSGVO / GDPR: General Data Protection Regulation');
 @define('PLUGIN_EVENT_DSGVO_GDPR_DESC', 'This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_MENU', 'GDPR statement');
-@define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT', 'Your privacy statement / imprint');
+@define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT', 'Your privacy statement / legal notice');
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_DESC', 'You can use the automatic inspection above as a rough draft of information you should include in your privacy statement. Make sure that your privacy statement contains all relevant information. Contact a lawyer if you need help with this, we sadly cannot provide a bulletproof statement draft for you for liability reasons.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_URL', 'Optional URL to privacy statement');
 @define('PLUGIN_EVENT_DSGVO_GDPR_URL_DESC', 'By default, an internal link is created that displays the text of your privacy statement with the text you enter here. However if you have a specific URL (or a staticpage URL) that you want to link your visitors to, you can enter it here. Then the privacy statement text will not be displayed and does not need to be entered.');
@@ -66,7 +66,7 @@ a unique ID, which is used on the server to store temporary session user data (i
 This cookie is mandatory for logging in to the backend, but optional for the frontend.
 Certain plugins can use the session cookie to store additional temporary data.</p>
 
-<p>The following data can be stored by the Serendipity application on the server (temporarily, invalidated after the server-configured timeout, usually in the rang of hours):</p>
+<p>The following data can be stored by the Serendipity application on the server (temporarily, invalidated after the server-configured timeout, usually in the range of hours):</p>
 
 <ul>
     <li>HTTP browser referrer when entering the blog</li>

@@ -1,13 +1,13 @@
 <?php
 
-@define('PLUGIN_EVENT_DSGVO_GDPR_NAME', 'DSGVO / GDPR: Allgemeine Datenschutzverordnung');
+@define('PLUGIN_EVENT_DSGVO_GDPR_NAME', 'DSGVO / GDPR: Datenschutz-Grundverordnung');
 @define('PLUGIN_EVENT_DSGVO_GDPR_DESC', 'Dieses Plugin soll Blog-Besitzern helfen, die Übereinstimmung mit dem Allgemeinen Datenschutzgesetz zu gewährleisten.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_MENU', 'GDPR-Anweisung');
+@define('PLUGIN_EVENT_DSGVO_GDPR_MENU', 'GDPR-Erklärung');
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT', 'Ihre Datenschutzerklärung / Impressum');
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_DESC', 'Sie können die obige automatische Überprüfung als groben Entwurf einer Information verwenden, die Sie in Ihre Datenschutzerklärung aufnehmen sollten. Stellen Sie sicher, dass Ihre Datenschutzerklärung alle relevanten Informationen enthält. Wenden Sie sich an einen Anwalt, wenn Sie dabei Hilfe benötigen, wir können Ihnen aus Haftungsgründen leider keinen vollständigen Entwurf zur Verfügung stellen.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_URL', 'Optionale URL zur Datenschutzerklärung');
 @define('PLUGIN_EVENT_DSGVO_GDPR_URL_DESC', 'Standardmäßig wird ein interner Link erstellt, der den Text Ihrer Datenschutzerklärung mit dem hier eingegebenen Text anzeigt. Wenn Sie jedoch eine bestimmte URL (oder eine statische Seiten-URL) haben, mit der Sie Ihre Besucher verlinken möchten, können Sie diese hier eingeben. Dann wird der Text der Datenschutzerklärung nicht angezeigt und muss nicht eingegeben werden.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX', 'Kommentare zur Annahme der Datenschutzerklärung erforderlich?');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX', 'Kommentare zur Annahme erforderlich?');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX_DESC', 'Wenn aktiviert, müssen Besucher eine zusätzliche Checkbox für Blog-Kommentare aktivieren, um Ihre Datenschutzerklärung zu bestätigen.');
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT', 'Text für Kommentarzustimmung');
@@ -16,7 +16,7 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_INFO', 'Informationen zur GDPR-Relevanz Ihres Blogs');
 @define('PLUGIN_EVENT_DSGVO_GDPR_INFO_DESC', 'Serendipity erlaubt es Plugins zu spezifizieren, welche Auswirkungen sie auf die Nutzung und Handhabung sensibler Daten in Ihrem Blog haben. An dieser Stelle werden diese Daten automatisch ausgewertet und zu Ihrer Information an dieser Stelle ausgegeben. Bitte stellen Sie sicher, dass Sie immer die neuesten Versionen ihrer Plugins verwenden. Sie sind selbst dafür verantwortlich, die von Ihnen genutzten Dienste dem Besucher zur Verfügung zu stellen. Wenn Sie Funktionen außerhalb vom Serendipity Kern und seinen Plugins (inkl. Spartacus) verwenden (benutzerdefinierte Plugins, benutzerdefinierte Vorlagen, Snippets), die relevant sind, sollten Sie diese in Ihre Datenschutzerklärung aufnehmen!');
 
-@define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER', 'Link zur Datenschutzerklärung in der Fußzeile anzeigen?');
+@define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER', 'Link zur Erklärung in der Fußzeile anzeigen?');
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_DESC', 'Wenn aktiviert, wird ein Link zu Ihrer Datenschutzerklärung in die Fußzeile Ihres Blogs eingefügt. Sie können den angezeigten Text anpassen. Der Platzhalter %gdpr_url% kann für diesen Link verwendet werden.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT', 'Datenschutzerklärung Linktext');
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT_DESC', 'Wenn der Link zur Datenschutzerklärung aktiviert ist, geben Sie den Text ein, den Sie dort anzeigen möchten');
