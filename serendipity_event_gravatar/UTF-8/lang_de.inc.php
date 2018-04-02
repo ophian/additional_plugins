@@ -46,7 +46,7 @@
 @define('PLUGIN_EVENT_GRAVATAR_SUPPORTED',          '%s Autoren-Bilder werden unterstützt.');
 
 @define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT',          'Autorenname im ALT Attribut');
-@define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT_DESC',     'Normaler Weise wird der Autorenname im TITLE Attribut des Avatar Bildes angegeben, das ALT Attribut wird mit einem * gefüllt, um das Seitenlayout nicht zu zerstören, wenn der Browser das Bild nicht laden kann. Allerdings wird blinden Lesern das ALT Attribut vorgelesen. Falls Sie diese Leser unterstützen wollen, sollten Sie diese Option einschalten.');
+@define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT_DESC',     'Normalerweise wird der Autorenname im TITLE Attribut des Avatar Bildes angegeben, das ALT Attribut wird mit einem * gefüllt, um das Seitenlayout nicht zu zerstören, wenn der Browser das Bild nicht laden kann. Allerdings wird blinden Lesern das ALT Attribut vorgelesen. Falls Sie diese Leser unterstützen wollen, sollten Sie diese Option einschalten.');
 
 @define('PLUGIN_EVENT_GRAVATAR_LONG_DESCRIPTION',   '<b><a href="https://www.gravatar.com" target="_blank">Gravatare</a></b> werden von einem zentralen Server anhand der EMail Information des Kommentators abgeholt, ' .
         '<b><a href="https://web.archive.org/web/20120118023537/http://www.peej.co.uk/projects/favatars.html" target="_blank">Favatare</a></b> und <b><a href="http://www.pavatar.com" target="_blank">Pavatare</a></b> sind die favicons, bzw eigene größere Bilder auf der Homepage, die der Kommentator angegeben hat, ' .
