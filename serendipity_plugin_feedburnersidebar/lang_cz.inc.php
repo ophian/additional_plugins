@@ -17,4 +17,3 @@
 @define('FEEDBURNERSIDEBAR_EMAIL_TITLE','Text emailového pøihlá¹ení - odkaz');
 @define('FEEDBURNERSIDEBAR_EMAIL_TITLE_DESC','Zadejte text, na který bude náv¹tìvník blogu klikat, aby se pøihlásil k odebírání novinek pomocí emailu.');
 
-?>

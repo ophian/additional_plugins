@@ -14,4 +14,3 @@
 @define('FEEDBURNERSIDEBAR_EMAIL_TITLE','Email Subscribe Text - Link');
 @define('FEEDBURNERSIDEBAR_EMAIL_TITLE_DESC','Enter the link text that users will click to subscribe to blog updates via email.');
 
-?>
