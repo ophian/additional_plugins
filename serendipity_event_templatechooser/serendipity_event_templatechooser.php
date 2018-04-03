@@ -18,7 +18,7 @@ class serendipity_event_templatechooser extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_TEMPLATECHOOSER_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Evan Nemerson');
-        $propbag->add('version',     '1.7');
+        $propbag->add('version',     '1.8');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -30,7 +30,23 @@ class serendipity_event_templatechooser extends serendipity_event
         // Register (multiple) dependencies. KEY is the name of the depending plugin. VALUE is a mode of either 'remove' or 'keep'.
         // If the mode 'remove' is set, removing the plugin results in a removal of the depending plugin. 'Keep' meens to
         // not touch the depending plugin.
-        $this->dependencies = array('serendipity_plugin_templatedropdown' => 'remove');
+        $this->dependencies =   array('serendipity_plugin_templatedropdown' => 'remove');
+        $propbag->add('legal',  array(
+            'services' => array(
+            ),
+            'frontend' => array(
+                'To allow the visitor to pick a custom theme, the selected theme name is stored in a cookie',
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+                'To allow the visitor to pick a custom theme, the selected theme name is stored in a cookie',
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => false,
+            'transmits_user_input'  => false
+        ));
     }
 
     function generate_content(&$title)
