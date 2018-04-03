@@ -26,4 +26,3 @@
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_WIDTH',       'Javascript: ©íøka okna');
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_WIDTH_DESC',  '©íøka novì otevøeného okna s Wikipedií. Pou¾ije se pouze pokud je vybráno "'.PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW .'".');
 
-?>

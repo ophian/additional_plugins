@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Demin Yin <damon@deminy.net>
  *  CN-Revision: Revision of lang_cn.inc.php
  */
@@ -27,4 +27,3 @@
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_WIDTH',       "Javascript窗口宽度");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_WIDTH_DESC',  "目标窗口高度。仅在\"" . PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW . "\"选项被选择的时候有效。");
 
-?>

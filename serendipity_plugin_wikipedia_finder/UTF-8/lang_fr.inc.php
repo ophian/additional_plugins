@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ronny Staquet <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */

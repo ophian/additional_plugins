@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -27,4 +27,3 @@
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_WIDTH',       "Javascript window: Width");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_WIDTH_DESC',  "Width of the target window. Only effective when \"" . PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW . "\" selected.");
 
-?>
