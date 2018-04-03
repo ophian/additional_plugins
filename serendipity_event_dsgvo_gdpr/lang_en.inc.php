@@ -16,6 +16,9 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_INFO', 'Information to your blog\'s GDPR relevance');
 @define('PLUGIN_EVENT_DSGVO_GDPR_INFO_DESC', 'Serendipity allows plugins to specify, which impact they have on your blog\'s usage and handling of sensible data. At this place, this data is automatically evaluated and printed here for your information. Please be sure to always have the recent versions of plugins. You yourself are legally responsible to disclose any used services to the visitor. If you use any functionality outside of core and plugin Serendipity (custom plugins, custom templates, snippets) that is relevant, be sure to include them in your privacy statement!');
 
+@define('PLUGIN_EVENT_DSGVO_GDPR_ANONYMIZE', 'Anonymize IPs?');
+@define('PLUGIN_EVENT_DSGVO_GDPR_ANONYMIZE_DESC', 'If enabled, the last parts of the IP address (ipv4 and ipv6) will be replaced with "0". This means, all places where serendipity saves or utilizes the IP address of the visitor (also for anti-spam methods) the recorded IP will not be the actual IP of the user. In case of abuse, you will not be able to tell the actual IP used for a comment, for example.');
+
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER', 'Show privacy statement link in footer?');
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_DESC', 'When enabled, a link to your privacy statement is included in the footer of your blog. You can adjust the displayed text. The placeholder %gdpr_url% can be used for that link.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT', 'Privacy statement link text');
