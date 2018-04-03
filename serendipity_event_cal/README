@@ -22,16 +22,16 @@ ATTENTION:
 
 ADDITIONAL NOTES:
 **************************************************************************************************
-* Some vars in this plugin need PHP version >= 5.1! There is no incompatibleness mode if not!
-* This plugin, specially the calendar width, is not really usefull in a threeside design - better use 2sb not under 770px width!
-* This calendar allows using all-day-events only. To specify time values, use the long description or the shorttitle field.
+* Some vars in this plugin need PHP version >= 5.1! There is no in-compatibleness mode if not!
+* This plugin, specially the calendar width, is not really useful in a three-side design - better use 2sb not under 770px width!
+* This calendar allows using all-day-events only. To specify time values, use the long description or the short-title field.
 * Time values are not supported by plugins iCal export (by now).
 * If you proceed individual changes to the css or tpl files, copy them to your default template directory!
 * Save config options again, if updating a previous installation!
-* If you need to work in the code of this plugin itself, you may use internal smarty (as popup) or eventcal debugging. Search '##$serendipity['smarty']->debugging' on top.
+* If you need to work in the code of this plugin itself, you may use internal Smarty (as popup) or eventcal debugging. Search '##$serendipity['smarty']->debugging' on top.
 *
-* If using iCal, be advised that there are differences between Outlook|Mozilla|Goggle|Apple|Web|smartphone|etc calendar apps.
-* Some of them are still in beta mode, so this is experimental too and will not work in any cases! Truly tested with Mozillas Sunbird/Lightning.
+* If using iCal, be advised that there are differences between Outlook|Mozilla|Google|Apple|Web|smartphone|etc calendar apps.
+* Some of them are still in beta mode, so this is experimental too and will not work in any cases! Truly tested with Mozilla's Sunbird/Lightning.
 * If you encounter problems with timezone settings different from CET, please change them manually in plugin_eventcal_ical.tpl,
 * particularly the DAYLIGHT settings TZOFFSETFROM:+0200, TZID:Europe/Berlin, and X-LIC-LOCATION:Europe/Berlin and TZNAME:CEST
 *
@@ -60,7 +60,7 @@ ADDITIONAL NOTES:
      END:STANDARD
      END:VTIMEZONE
 
-* Have a deep look inside how Mozillas Sunbird/Lightning sets the section BEGIN:VTIMEZONE to END:VTIMEZONE for your timezone
+* Have a deep look inside how Mozilla's Sunbird/Lightning sets the section BEGIN:VTIMEZONE to END:VTIMEZONE for your timezone
 * see https://wiki.mozilla.org/QA_Feature_Specification:Timezone_Test_ICS
 *
 * Please read the ChangeLOG also at page bottom:
