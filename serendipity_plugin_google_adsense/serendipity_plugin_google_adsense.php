@@ -1,17 +1,10 @@
 <?php
 
-
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_plugin_google_adsense extends serendipity_plugin
 {
@@ -27,9 +20,9 @@ class serendipity_plugin_google_adsense extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADSENSE_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Jim Dabell');
-        $propbag->add('version',       '0.3');
+        $propbag->add('version',       '0.4');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -40,6 +33,24 @@ class serendipity_plugin_google_adsense extends serendipity_plugin
                                              'type',
                                              'channel',
                                              'number'));
+        $propbag->add('legal',    array(
+            'services' => array(
+                'Google AdSense' => array(
+                    'url'  => 'https://www.google.com/',
+                    'desc' => 'Shows Ads from Google, transmits user cookies to and from Google'
+                ),
+            ),
+            'frontend' => array(
+                'Embeds JavaScripts for Google AdSense to display customized Ads. Google sets and uses cookies to track the user. The IP address metadata is also submitted to Google.',
+            ),
+            'cookies' => array(
+                'Google sets and uses cookies to track the user.'
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
     }
 
     function introspect_config_item($name, &$propbag)
