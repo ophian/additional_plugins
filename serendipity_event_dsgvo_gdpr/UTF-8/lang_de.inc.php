@@ -16,6 +16,9 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_INFO', 'Informationen zur GDPR-Relevanz Ihres Blogs');
 @define('PLUGIN_EVENT_DSGVO_GDPR_INFO_DESC', 'Serendipity erlaubt es Plugins zu spezifizieren, welche Auswirkungen sie auf die Nutzung und Handhabung sensibler Daten in Ihrem Blog haben. An dieser Stelle werden diese Daten automatisch ausgewertet und zu Ihrer Information an dieser Stelle ausgegeben. Bitte stellen Sie sicher, dass Sie immer die neuesten Versionen ihrer Plugins verwenden. Sie sind selbst dafür verantwortlich, die von Ihnen genutzten Dienste dem Besucher zur Verfügung zu stellen. Wenn Sie Funktionen außerhalb vom Serendipity Kern und seinen Plugins (inkl. Spartacus) verwenden (benutzerdefinierte Plugins, benutzerdefinierte Vorlagen, Snippets), die relevant sind, sollten Sie diese in Ihre Datenschutzerklärung aufnehmen!');
 
+@define('PLUGIN_EVENT_DSGVO_GDPR_ANONYMIZE', 'Anonymisiere IPs?');
+@define('PLUGIN_EVENT_DSGVO_GDPR_ANONYMIZE_DESC', 'Wenn aktiviert, werden die letzten Teile der IP-Adresse (ipv4 und ipv6) durch "0" ersetzt. Dies bedeutet, dass überall dort, wo serendipity die IP-Adresse des Besuchers speichert oder nutzt (auch für Anti-Spam-Methoden), die aufgezeichnete IP-Adresse nicht die tatsächliche IP-Adresse des Nutzers ist. Im Falle eines missbräuchlichen Zugriffs können Sie die tatsächliche IP, dann beispielsweise für einen Kommentar, nicht mehr erkennen.');
+
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER', 'Link zur Erklärung in der Fußzeile anzeigen?');
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_DESC', 'Wenn aktiviert, wird ein Link zu Ihrer Datenschutzerklärung in die Fußzeile Ihres Blogs eingefügt. Sie können den angezeigten Text anpassen. Der Platzhalter %gdpr_url% kann für diesen Link verwendet werden.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT', 'Datenschutzerklärung Linktext');
