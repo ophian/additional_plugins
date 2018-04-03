@@ -1929,17 +1929,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_feedburnersidebar</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_feedburnersidebar/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Feedburner Sidebar</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Adds assorted functionality of the feedburner service into the sidebar.</description>
 <maintainers><maintainer><name>Aaron Axelsen</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.0</version>
-  <requirements:s9yVersion>1.2.1</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.1</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-03</date>
   <filelist>
     <dir name="serendipity_plugin_feedburnersidebar">
+      <file>ChangeLog</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -1951,6 +1953,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_plugin_feedburnersidebar/ChangeLog</file>
     <file>serendipity_plugin_feedburnersidebar/lang_cs.inc.php</file>
     <file>serendipity_plugin_feedburnersidebar/lang_cz.inc.php</file>
     <file>serendipity_plugin_feedburnersidebar/lang_en.inc.php</file>
@@ -2149,9 +2152,9 @@
 <description>Displays adverts from Google.</description>
 <maintainers><maintainer><name>Jim Dabell</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.3</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.4</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-03</date>
   <filelist>
     <dir name="serendipity_plugin_google_adsense">
       <file>ChangeLog</file>
@@ -2190,17 +2193,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_google_quicksearch</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_google_quicksearch/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Google Быстрый поиск</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Поиск по записям (Google)</description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.6</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-03</date>
   <filelist>
     <dir name="serendipity_plugin_google_quicksearch">
+      <file>ChangeLog</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -2217,6 +2222,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_plugin_google_quicksearch/ChangeLog</file>
     <file>serendipity_plugin_google_quicksearch/lang_cs.inc.php</file>
     <file>serendipity_plugin_google_quicksearch/lang_cz.inc.php</file>
     <file>serendipity_plugin_google_quicksearch/lang_en.inc.php</file>
@@ -2725,17 +2731,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_quicklink</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_quicklink/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Quick Link</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Displays a box for quick links</description>
 <maintainers><maintainer><name>Omid Mottaghi Rad</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.8</version>
+  <version>0.9</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-24</date>
+  <date>2018-04-03</date>
   <filelist>
     <dir name="serendipity_plugin_quicklink">
+      <file>ChangeLog</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -2747,6 +2755,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_plugin_quicklink/ChangeLog</file>
     <file>serendipity_plugin_quicklink/lang_cs.inc.php</file>
     <file>serendipity_plugin_quicklink/lang_cz.inc.php</file>
     <file>serendipity_plugin_quicklink/lang_en.inc.php</file>
@@ -2799,17 +2808,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_shoutbox</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_shoutbox/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Shoutbox</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Displays a shoutbox for unrelated comments</description>
 <maintainers><maintainer><name>Matthias Lange, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.03</version>
+  <version>1.04</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-11-04</date>
+  <date>2018-04-03</date>
   <filelist>
     <dir name="serendipity_plugin_shoutbox">
+      <file>ChangeLog</file>
       <file>lang_cn.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -2841,6 +2852,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_plugin_shoutbox/ChangeLog</file>
     <file>serendipity_plugin_shoutbox/lang_cn.inc.php</file>
     <file>serendipity_plugin_shoutbox/lang_cs.inc.php</file>
     <file>serendipity_plugin_shoutbox/lang_cz.inc.php</file>
@@ -3216,7 +3228,7 @@
 <description>Show your current Twitter entries</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Damian Luszczymak, Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.70</version>
+  <version>1.71</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2017-07-22</date>
   <filelist>
@@ -3317,17 +3329,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_wikipedia_finder</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_wikipedia_finder/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Wikipedia Finder</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Highlight a phrase and click the icon to search on using Wikipedia.</description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.5</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-03</date>
   <filelist>
     <dir name="serendipity_plugin_wikipedia_finder">
+      <file>ChangeLog</file>
       <file>lang_cn.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -3352,6 +3366,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_plugin_wikipedia_finder/ChangeLog</file>
     <file>serendipity_plugin_wikipedia_finder/lang_cn.inc.php</file>
     <file>serendipity_plugin_wikipedia_finder/lang_cs.inc.php</file>
     <file>serendipity_plugin_wikipedia_finder/lang_cz.inc.php</file>
