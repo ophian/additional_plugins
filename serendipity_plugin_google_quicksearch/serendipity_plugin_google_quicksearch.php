@@ -1,32 +1,50 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_plugin_google_quicksearch extends serendipity_plugin {
+class serendipity_plugin_google_quicksearch extends serendipity_plugin
+{
     var $title = PLUGIN_GOOGLE_QS_NAME;
 
     function introspect(&$propbag)
     {
         $this->title = $this->get_config('title', $this->title);
+        $this->protected = TRUE; // If set to TRUE, only allows the owner of the plugin to modify its configuration
         $propbag->add('name',          PLUGIN_GOOGLE_QS_GOOGLE . ' ' . QUICKSEARCH);
         $propbag->add('description',   SEARCH_FOR_ENTRY . ' (' . PLUGIN_GOOGLE_QS_GOOGLE . ')');
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Wesley Hwang-Chung');
-        $propbag->add('version',       '1.5');
+        $propbag->add('version',       '1.6');
+        $propbag->add('requirements',  array(
+            'serendipity' => '1.6',
+            'smarty'      => '2.6.7',
+            'php'         => '4.1.0'
+        ));
         $propbag->add('configuration', array('submit', 'adsense', 'background', 'text', 'border', 'title_s', 'faint_text', 'url', 'logo_background', 'visited_url', 'logo_place', 'logo_url', 'logo_height', 'logo_width'));
-	$propbag->add('groups',        array('FRONTEND_EXTERNAL_SERVICES'));
-        $this->protected = TRUE; // If set to TRUE, only allows the owner of the plugin to modify its configuration
+        $propbag->add('groups',        array('FRONTEND_EXTERNAL_SERVICES'));
+        $propbag->add('legal',         array(
+            'services' => array(
+                'google.com' => array(
+                    'url'  => 'https://www.google.com/',
+                    'desc' => 'You know Google.'
+                ),
+            ),
+            'frontend' => array(
+                'Embeds a quicksearch form, which submits all entered data to google (search term, and request metadata like visitor IP etc.)',
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => false,
+            'transmits_user_input'  => true
+        ));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -175,6 +193,7 @@ class serendipity_plugin_google_quicksearch extends serendipity_plugin {
         }
         echo '</form>';
     }
+
 }
 
 ?>

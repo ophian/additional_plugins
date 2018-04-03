@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -24,4 +24,3 @@
 @define('PLUGIN_GOOGLE_QS_LEFT', 'Left of search box');
 @define('PLUGIN_GOOGLE_QS_SUBMIT',   'Show a submit button');
 
-?>
