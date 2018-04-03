@@ -20,7 +20,7 @@ class serendipity_plugin_shoutbox extends serendipity_plugin
         $propbag->add('description',   PLUGIN_SHOUTBOX_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Lange, Ian');
-        $propbag->add('version',       '1.03');
+        $propbag->add('version',       '1.04');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -35,7 +35,22 @@ class serendipity_plugin_shoutbox extends serendipity_plugin
                                             'box_cols',
                                             'box_rows'));
 
-        $propbag->add('groups', array('FRONTEND_FEATURES'));
+        $propbag->add('groups',     array('FRONTEND_FEATURES'));
+        $propbag->add('legal',      array(
+            'services' => array(
+            ),
+            'frontend' => array(
+                'Shows a shoutbox which stores user comments / text and the submitting IP (no other metadata)',
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => true,
+            'stores_ip'             => true,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
     }
 
     function introspect_config_item($name, &$propbag)
