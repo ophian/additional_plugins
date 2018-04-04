@@ -1,3 +1,11 @@
+0.6:
+------
+   * Don't include required Request lib if using API, which already does
+   * Add missing hack protection
+   * Use core specialchars/entity API methods - else add LANG_CHARSET
+   * Check for real booleans
+   * Make PHP7 ready
+
 0.5.1:
 ------
    * Use correct required Request lib

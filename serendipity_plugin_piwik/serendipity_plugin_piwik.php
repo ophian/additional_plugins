@@ -1,11 +1,17 @@
 <?php
 
-$httpDirname = (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/';
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
 
-if (file_exists($httpDirname . 'Request2.php')) {
-    require_once $httpDirname . 'Request2.php';
-} else {
-    require_once $httpDirname . 'Request.php';
+if (function_exists('serendipity_request_url')) {
+    $httpDirname = (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/';
+
+    if (file_exists($httpDirname . 'Request2.php')) {
+        require_once $httpDirname . 'Request2.php';
+    } else {
+        require_once $httpDirname . 'Request.php';
+    }
 }
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
@@ -33,11 +39,12 @@ class serendipity_plugin_piwik extends serendipity_plugin
     public function introspect(&$propbag)
     {
         $this->title = $this->get_config('title', $this->title);
+
         $propbag->add('name',          PLUGIN_SIDEBAR_PIWIK_NAME);
         $propbag->add('description',   PLUGIN_SIDEBAR_PIWIK_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Bernd Distler, Ian');
-        $propbag->add('version',       '0.5.1');
+        $propbag->add('version',       '0.6');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -149,16 +156,15 @@ class serendipity_plugin_piwik extends serendipity_plugin
         $token = $this->get_config('token', $this->token);
         $site_id = $this->get_config('site_id', $this->site_id);
         $url = $this->get_config('url', $this->url);
-        $live_show = $this->get_config('live_show', $this->live_show);
+        $live_show = serendipity_db_bool($this->get_config('live_show', $this->live_show));
         $live_title = $this->get_config('live_title', $this->live_title);
         $live_minutes = $this->get_config('live_minutes', $this->live_minutes);
-        $entries_show = $this->get_config('entries_show', $this->entries_show);
+        $entries_show = serendipity_db_bool($this->get_config('entries_show', $this->entries_show));
         $entries_title = $this->get_config('entries_title', $this->entries_title);
         $entries_days = $this->get_config('entries_days', $this->entries_days);
         $entries_max = $this->get_config('entries_max', $this->entries_max);
         $entries_remove = $this->get_config('entries_remove', $this->entries_remove);
-        $debug = $this->get_config('debug', $this->debug);
-        $error = false;
+        $debug = serendipity_db_bool($this->get_config('debug', $this->debug));
         $piwik_array_pagesurls = array();
         $piwik_array_pagestitles = array();
         $piwik_array_live = array();
@@ -174,38 +180,39 @@ class serendipity_plugin_piwik extends serendipity_plugin
             if ($debug) {$this->debug_append('Live.getCounters - API-URL: '.$api_url);}
             try {
                 $piwik_array_live = unserialize($this->requestPiwikData($api_url));
+            } catch (Throwable $t) {
+                return;
             } catch (Exception $e) {
-                $error = true;
-            }
-            if ($error) {
                 return;
             }
 
-            if ($live_title <> '') {echo "\n<h4>".$live_title."</h4>\n";}
-            echo '<ul class="plainList" >';
+            if ($live_title <> '') {
+                echo "\n<h4>".$live_title."</h4>\n";
+            }
+            echo '<ul class="plainList">'."\n";
             foreach($piwik_array_live AS $row) {
-                $piwik_live_visits = htmlspecialchars(
-                    html_entity_decode(urldecode($row['visits']), ENT_QUOTES),
-                    ENT_QUOTES
+                $piwik_live_visits = (function_exists('serendipity_specialchars')
+                    ? serendipity_specialchars(serendipity_entity_decode(urldecode($row['visits']), ENT_QUOTES), ENT_QUOTES)
+                    : htmlspecialchars(html_entity_decode(urldecode($row['visits']), ENT_QUOTES, LANG_CHARSET), ENT_QUOTES, LANG_CHARSET)
                 );
-                $piwik_live_actions = htmlspecialchars(
-                    html_entity_decode(urldecode($row['actions']), ENT_QUOTES),
-                    ENT_QUOTES
+                $piwik_live_actions = function_exists('serendipity_specialchars')
+                    ? serendipity_specialchars(serendipity_entity_decode(urldecode($row['actions']), ENT_QUOTES), ENT_QUOTES)
+                    : htmlspecialchars(html_entity_decode(urldecode($row['actions']), ENT_QUOTES, LANG_CHARSET), ENT_QUOTES, LANG_CHARSET)
                 );
-                $piwik_live_visitsConverted = htmlspecialchars(
-                    html_entity_decode(urldecode($row['visitsConverted']), ENT_QUOTES),
-                    ENT_QUOTES
+                $piwik_live_visitsConverted = function_exists('serendipity_specialchars')
+                    ? serendipity_specialchars(serendipity_entity_decode(urldecode($row['visitsConverted']), ENT_QUOTES), ENT_QUOTES)
+                    : htmlspecialchars(html_entity_decode(urldecode($row['visitsConverted']), ENT_QUOTES, LANG_CHARSET), ENT_QUOTES, LANG_CHARSET)
                 );
-                $piwik_live_visitors = htmlspecialchars(
-                    html_entity_decode(urldecode($row['visitors']), ENT_QUOTES),
-                    ENT_QUOTES
+                $piwik_live_visitors = function_exists('serendipity_specialchars')
+                    ? serendipity_specialchars(serendipity_entity_decode(urldecode($row['visitors']), ENT_QUOTES), ENT_QUOTES)
+                    : htmlspecialchars(html_entity_decode(urldecode($row['visitors']), ENT_QUOTES, LANG_CHARSET), ENT_QUOTES, LANG_CHARSET)
                 );
 
                 echo '    <li>'. PLUGIN_SIDEBAR_PIWIK_LIVE_VISITORS .': '. $piwik_live_visitors."</li>\n";
                 echo '    <li>'. PLUGIN_SIDEBAR_PIWIK_LIVE_VISITS .': '. $piwik_live_visits."</li>\n";
                 echo '    <li>'. PLUGIN_SIDEBAR_PIWIK_LIVE_ACTIONS .': '. $piwik_live_actions."</li>\n";
             }
-            echo "\n</ul>\n";
+            echo "</ul>\n";
 
         }
 
@@ -227,8 +234,10 @@ class serendipity_plugin_piwik extends serendipity_plugin
             if ($debug) {$this->debug_append('Actions.getPageUrls - API-URL: '.$api_url);}
             try {
                 $piwik_array_pagesurls = unserialize($this->requestPiwikData($api_url));
+            } catch (Throwable $t) {
+                return;
             } catch (Exception $e) {
-                $error = true;
+                return;
             }
 
             // read Actions.getPageTitles from Piwik
@@ -247,34 +256,35 @@ class serendipity_plugin_piwik extends serendipity_plugin
             if ($debug) {$this->debug_append('Actions.getPageTitles - API-URL: '.$api_url);}
             try {
                 $piwik_array_pagestitles = unserialize($this->requestPiwikData($api_url));
+            } catch (Throwable $t) {
+                return;
             } catch (Exception $e) {
-                $error = true;
-            }
-            if ($error) {
                 return;
             }
 
-            // take pagetitles from seconed array and write it into first one
+            // take pagetitles from second array and write it into first one
             for ($i = 0; $i < count($piwik_array_pagesurls); $i++) {
                 $piwik_array_pagesurls[$i]['label'] = $piwik_array_pagestitles[$i]['label'];
             }
 
-            if ($entries_title <> '') {echo "\n<h4>".$entries_title."</h4>\n";}
-            echo "\n<ol>\n";
+            if ($entries_title <> '') {
+                echo "\n<h4>".$entries_title."</h4>\n";
+            }
+            echo "<ol>\n";
             foreach($piwik_array_pagesurls AS $row) {
-                $piwik_content_pageurl = htmlspecialchars(
-                    html_entity_decode(urldecode($row['url']), ENT_QUOTES),
-                    ENT_QUOTES
+                $piwik_content_pageurl = (function_exists('serendipity_specialchars')
+                    ? serendipity_specialchars(serendipity_entity_decode(urldecode($row['url']), ENT_QUOTES), ENT_QUOTES)
+                    : htmlspecialchars(html_entity_decode(urldecode($row['url']), ENT_QUOTES, LANG_CHARSET), ENT_QUOTES, LANG_CHARSET)
                 );
-                $piwik_content_pagelabel = htmlspecialchars(
-                    html_entity_decode(urldecode($row['label']), ENT_QUOTES),
-                    ENT_QUOTES
+                $piwik_content_pagelabel = (function_exists('serendipity_specialchars')
+                    ? serendipity_specialchars(serendipity_entity_decode(urldecode($row['label']), ENT_QUOTES), ENT_QUOTES)
+                    : htmlspecialchars(html_entity_decode(urldecode($row['label']), ENT_QUOTES, LANG_CHARSET), ENT_QUOTES, LANG_CHARSET)
                 );
-                $piwik_content_pagelabel = str_replace($entries_remove, "", $piwik_content_pagelabel);
+                $piwik_content_pagelabel = str_replace($entries_remove, '', $piwik_content_pagelabel);
                 $piwik_content_hits = $row['nb_visits'];
                 echo '    <li><a href="' . $piwik_content_pageurl . '" title="' . $piwik_content_hits . ' ' . PLUGIN_SIDEBAR_PIWIK_ENTRIES_VIEWS . '">' . $piwik_content_pagelabel . "</a></li>\n";
             }
-            echo "\n</ol>\n";
+            echo "</ol>\n";
         }
     }
 
