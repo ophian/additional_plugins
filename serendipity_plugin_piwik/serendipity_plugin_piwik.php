@@ -195,15 +195,15 @@ class serendipity_plugin_piwik extends serendipity_plugin
                     ? serendipity_specialchars(serendipity_entity_decode(urldecode($row['visits']), ENT_QUOTES), ENT_QUOTES)
                     : htmlspecialchars(html_entity_decode(urldecode($row['visits']), ENT_QUOTES, LANG_CHARSET), ENT_QUOTES, LANG_CHARSET)
                 );
-                $piwik_live_actions = function_exists('serendipity_specialchars')
+                $piwik_live_actions = (function_exists('serendipity_specialchars')
                     ? serendipity_specialchars(serendipity_entity_decode(urldecode($row['actions']), ENT_QUOTES), ENT_QUOTES)
                     : htmlspecialchars(html_entity_decode(urldecode($row['actions']), ENT_QUOTES, LANG_CHARSET), ENT_QUOTES, LANG_CHARSET)
                 );
-                $piwik_live_visitsConverted = function_exists('serendipity_specialchars')
+                $piwik_live_visitsConverted = (function_exists('serendipity_specialchars')
                     ? serendipity_specialchars(serendipity_entity_decode(urldecode($row['visitsConverted']), ENT_QUOTES), ENT_QUOTES)
                     : htmlspecialchars(html_entity_decode(urldecode($row['visitsConverted']), ENT_QUOTES, LANG_CHARSET), ENT_QUOTES, LANG_CHARSET)
                 );
-                $piwik_live_visitors = function_exists('serendipity_specialchars')
+                $piwik_live_visitors = (function_exists('serendipity_specialchars')
                     ? serendipity_specialchars(serendipity_entity_decode(urldecode($row['visitors']), ENT_QUOTES), ENT_QUOTES)
                     : htmlspecialchars(html_entity_decode(urldecode($row['visitors']), ENT_QUOTES, LANG_CHARSET), ENT_QUOTES, LANG_CHARSET)
                 );
