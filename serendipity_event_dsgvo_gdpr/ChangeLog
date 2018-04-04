@@ -1,3 +1,8 @@
+1.32:
+-----
+ * Remove self exclusion of v.1.23
+ * Add self legal bag notes
+
 1.31:
 -----
  * Translate [de] "Anonymize IP" option

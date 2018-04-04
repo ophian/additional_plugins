@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.31');
+        $propbag->add('version',       '1.32');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -54,6 +54,21 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('config_groups', array(
             PLUGIN_EVENT_DSGVO_GDPR_MENU => array('gdpr_url', 'gdpr_info', 'gdpr_content'),
             PLUGIN_EVENT_DSGVO_GDPR_COOKIE_MENU => array('cookie_consent', 'cookie_consent_text', 'cookie_consent_path')
+        ));
+        $propbag->add('legal',         array(
+            'services' => array(),
+            'frontend' => array(
+                'This plugin helps the user to comply with the hideous EU Cookie Law and adds easy links to your sites legal notes. Optionally it adds the comment consent checkbox and/or the CookieConsent JavaScript for alerting users about the use of Cookies on this website.',
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+                'The CookieConsent by Insites option stores a consent-cookie which is build by several third-party location API services itself for country code, geoIP-location, hostname, organization and other data types.',
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => false,
+            'transmits_user_input'  => false
         ));
     }
 
@@ -159,96 +174,94 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
             $class_data['classname']  = explode(':', $class_data['name'])[0];
             $class_data['pluginPath'] = !empty($class_data['path']) ? $class_data['path'] : $class_data['classname'];
 
-            if ($class_data['classname'] != 'serendipity_event_dsgvo_gdpr') {
-                $pluginFile =  serendipity_plugin_api::probePlugin($class_data['name'], $class_data['classname'], $class_data['pluginPath']);
-                $plugin     =& serendipity_plugin_api::getPluginInfo($pluginFile, $class_data, 'event');
-                $plugin     =& serendipity_plugin_api::getPluginInfo($pluginFile, $class_data, 'sidebar');
-                // Object is returned when a plugin could not be cached. So we need to work on objects for db pluginlist too.
-                if (is_array($plugin)) {
-                    $plugin =& serendipity_plugin_api::load_plugin($class_data['name'], null, $class_data['path'], $pluginFile);
-                }
+            $pluginFile =  serendipity_plugin_api::probePlugin($class_data['name'], $class_data['classname'], $class_data['pluginPath']);
+            $plugin     =& serendipity_plugin_api::getPluginInfo($pluginFile, $class_data, 'event');
+            $plugin     =& serendipity_plugin_api::getPluginInfo($pluginFile, $class_data, 'sidebar');
+            // Object is returned when a plugin could not be cached. So we need to work on objects for db pluginlist too.
+            if (is_array($plugin)) {
+                $plugin =& serendipity_plugin_api::load_plugin($class_data['name'], null, $class_data['path'], $pluginFile);
+            }
 
-                if (is_object($plugin)) {
-                    $bag = new serendipity_property_bag;
-                    $plugin->introspect($bag);
+            if (is_object($plugin)) {
+                $bag = new serendipity_property_bag;
+                $plugin->introspect($bag);
 
-                    $legal = $bag->get('legal');
-                    if (is_array($legal)) {
-                        $out .= '<h3>' . $class_data['classname'] . "</h3>\n\n";
+                $legal = $bag->get('legal');
+                if (is_array($legal)) {
+                    $out .= '<h3>' . $class_data['classname'] . "</h3>\n\n";
 
-                        if (is_array($legal['services']) && count($legal['services']) > 0) {
-                            $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SERVICES_HEAD."</h4>\n";
-                            $out .= "<ul>\n";
-                            foreach($legal['services'] AS $servicename => $servicedata) {
-                                $out .= '    <li><a href="' . $servicedata['url'] . '">' . $servicename . '</a>: ' . $servicedata['desc'] . "</li>\n";
-                            }
-                            $out .= "</ul>\n";
+                    if (is_array($legal['services']) && count($legal['services']) > 0) {
+                        $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SERVICES_HEAD."</h4>\n";
+                        $out .= "<ul>\n";
+                        foreach($legal['services'] AS $servicename => $servicedata) {
+                            $out .= '    <li><a href="' . $servicedata['url'] . '">' . $servicename . '</a>: ' . $servicedata['desc'] . "</li>\n";
                         }
-
-                        if (is_array($legal['frontend']) && count($legal['frontend']) > 0) {
-                            $out .= "<h4>Frontend</h4>\n";
-                            $out .= '<ul>';
-                            foreach($legal['frontend'] AS $servicename => $servicedata) {
-                                $out .= '    <li>' . $servicedata . "</li>\n";
-                            }
-                            $out .= "</ul>\n";
-                        }
-
-                        if (is_array($legal['backend']) && count($legal['backend']) > 0) {
-                            $out .= "<h4>Backend</h4>\n";
-                            $out .= '<ul>';
-                            foreach($legal['backend'] AS $servicename => $servicedata) {
-                                $out .= '    <li>' . $servicedata . "</li>\n";
-                            }
-                            $out .= "</ul>\n";
-                        }
-
-                        if (is_array($legal['cookies']) && count($legal['cookies']) > 0) {
-                            $out .= "<h4>Cookies</h4>\n";
-                            $out .= '<ul>';
-                            foreach($legal['cookies'] AS $servicename => $servicedata) {
-                                $out .= '    <li>' . $servicedata . "</li>\n";
-                            }
-                            $out .= "</ul>\n";
-                        }
-
-                        if (is_array($legal['sessiondata']) && count($legal['sessiondata']) > 0) {
-                            $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SESSIONDATA_HEAD."</h4>\n";
-                            $out .= '<ul>';
-                            foreach($legal['sessiondata'] AS $servicename => $servicedata) {
-                                $out .= '    <li>' . $servicedata . "</li>\n";
-                            }
-                            $out .= "</ul>\n\n";
-                        }
-
-                        $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_HEAD."</h4>\n";
-                        $out .= '<ul>';
-                        if ($legal['stores_user_input']) {
-                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_YES."</li>\n";
-                        } else {
-                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_NO."</li>\n";
-                        }
-
-                        if ($legal['stores_ip']) {
-                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_YES."</li>\n";
-                        } else {
-                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_NO."</li>\n";
-                        }
-
-                        if ($legal['uses_ip']) {
-                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_YES."</li>\n";
-                        } else {
-                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_NO."</li>\n";
-                        }
-
-                        if ($legal['transmits_user_input']) {
-                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_YES."</li>\n";
-                        } else {
-                            $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_NO."</li>\n";
-                        }
-
                         $out .= "</ul>\n";
                     }
+
+                    if (is_array($legal['frontend']) && count($legal['frontend']) > 0) {
+                        $out .= "<h4>Frontend</h4>\n";
+                        $out .= '<ul>';
+                        foreach($legal['frontend'] AS $servicename => $servicedata) {
+                            $out .= '    <li>' . $servicedata . "</li>\n";
+                        }
+                        $out .= "</ul>\n";
+                    }
+
+                    if (is_array($legal['backend']) && count($legal['backend']) > 0) {
+                        $out .= "<h4>Backend</h4>\n";
+                        $out .= '<ul>';
+                        foreach($legal['backend'] AS $servicename => $servicedata) {
+                            $out .= '    <li>' . $servicedata . "</li>\n";
+                        }
+                        $out .= "</ul>\n";
+                    }
+
+                    if (is_array($legal['cookies']) && count($legal['cookies']) > 0) {
+                        $out .= "<h4>Cookies</h4>\n";
+                        $out .= '<ul>';
+                        foreach($legal['cookies'] AS $servicename => $servicedata) {
+                            $out .= '    <li>' . $servicedata . "</li>\n";
+                        }
+                        $out .= "</ul>\n";
+                    }
+
+                    if (is_array($legal['sessiondata']) && count($legal['sessiondata']) > 0) {
+                        $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SESSIONDATA_HEAD."</h4>\n";
+                        $out .= '<ul>';
+                        foreach($legal['sessiondata'] AS $servicename => $servicedata) {
+                            $out .= '    <li>' . $servicedata . "</li>\n";
+                        }
+                        $out .= "</ul>\n\n";
+                    }
+
+                    $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_HEAD."</h4>\n";
+                    $out .= '<ul>';
+                    if ($legal['stores_user_input']) {
+                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_YES."</li>\n";
+                    } else {
+                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_NO."</li>\n";
+                    }
+
+                    if ($legal['stores_ip']) {
+                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_YES."</li>\n";
+                    } else {
+                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_NO."</li>\n";
+                    }
+
+                    if ($legal['uses_ip']) {
+                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_YES."</li>\n";
+                    } else {
+                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_NO."</li>\n";
+                    }
+
+                    if ($legal['transmits_user_input']) {
+                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_YES."</li>\n";
+                    } else {
+                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_NO."</li>\n";
+                    }
+
+                    $out .= "</ul>\n";
                 }
             }
         }
