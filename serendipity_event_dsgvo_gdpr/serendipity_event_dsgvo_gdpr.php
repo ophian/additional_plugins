@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.32');
+        $propbag->add('version',       '1.33');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -190,6 +190,10 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                 if (is_array($legal)) {
                     $out .= '<h3>' . $class_data['classname'] . "</h3>\n\n";
 
+                    // "services" should list every service that a plugin connects to via a HTTP or other API interface,
+                    // and describe what each service does, and which data it gets.
+                    // Only services that are executed on visitor input must be listed; services that the blog server (instead
+                    // of a client) connects to are nice to have, but are only required to be shown if it includes visitor (meta)data.
                     if (is_array($legal['services']) && count($legal['services']) > 0) {
                         $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SERVICES_HEAD."</h4>\n";
                         $out .= "<ul>\n";
@@ -199,6 +203,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         $out .= "</ul>\n";
                     }
 
+                    // "frontend" lists descriptions what the plugin does on the frontendside and where it uses visitor data or metadata
                     if (is_array($legal['frontend']) && count($legal['frontend']) > 0) {
                         $out .= "<h4>Frontend</h4>\n";
                         $out .= '<ul>';
@@ -208,6 +213,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         $out .= "</ul>\n";
                     }
 
+                    // "backend" lists descriptions what the plugin does on the backend and where it uses visitor data or metadata
                     if (is_array($legal['backend']) && count($legal['backend']) > 0) {
                         $out .= "<h4>Backend</h4>\n";
                         $out .= '<ul>';
@@ -217,6 +223,8 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         $out .= "</ul>\n";
                     }
 
+                    // "cookies" lists an array of which cookies might be set a a plugin and why. If a plugin makes use of
+                    // session features, also mention that it relies on that session id.
                     if (is_array($legal['cookies']) && count($legal['cookies']) > 0) {
                         $out .= "<h4>Cookies</h4>\n";
                         $out .= '<ul>';
@@ -226,6 +234,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         $out .= "</ul>\n";
                     }
 
+                    // "sessiondata" lists an array of which PHP session data values are (temporarily) saved
                     if (is_array($legal['sessiondata']) && count($legal['sessiondata']) > 0) {
                         $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SESSIONDATA_HEAD."</h4>\n";
                         $out .= '<ul>';
@@ -235,6 +244,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         $out .= "</ul>\n\n";
                     }
 
+                    // This is a list of TRUE/FALSE boolean toggles
                     $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_HEAD."</h4>\n";
                     $out .= '<ul>';
                     if ($legal['stores_user_input']) {
