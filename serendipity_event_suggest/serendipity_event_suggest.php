@@ -14,27 +14,43 @@ class serendipity_event_suggest extends serendipity_event
     {
         global $serendipity;
 
-        $propbag->add('name',            PLUGIN_SUGGEST_TITLE);
-        $propbag->add('description',     PLUGIN_SUGGEST_DESC);
-        $propbag->add('event_hooks',     array(
+        $propbag->add('name',           PLUGIN_SUGGEST_TITLE);
+        $propbag->add('description',    PLUGIN_SUGGEST_DESC);
+        $propbag->add('event_hooks',    array(
                                             'entries_header'  => true,
                                             'entry_display'   => true,
                                             'genpage'         => true,
                                             'external_plugin' => true,
                                             'backend_display' => true,
                                             'backend_publish' => true
-                                         ));
-        $propbag->add('configuration',   array('permalink', 'pagetitle', 'authorid', 'email'));
-        $propbag->add('author',          'Garvin Hicking');
-        $propbag->add('version',         '0.13');
-        $propbag->add('groups',          array('FRONTEND_FEATURES'));
-        $propbag->add('requirements',    array(
+                                        ));
+        $propbag->add('configuration',  array('permalink', 'pagetitle', 'authorid', 'email'));
+        $propbag->add('author',         'Garvin Hicking');
+        $propbag->add('version',        '0.14');
+        $propbag->add('groups',         array('FRONTEND_FEATURES'));
+        $propbag->add('requirements',   array(
                                             'serendipity' => '1.7',
                                             'smarty'      => '3.0.0',
                                             'php'         => '5.1.0'
-                                         ));
-        $propbag->add('stackable',       true);
-        $propbag->add('license',         'Commercial');
+                                        ));
+        $propbag->add('stackable',      true);
+        $propbag->add('license',        'Commercial');
+        $propbag->add('legal',          array(
+            'services' => array(
+            ),
+            'frontend' => array(
+                'Stores recommended entries in the database, contains some visitor metadata (IP addresses)',
+                'Sends user data via e-mail'
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => true,
+            'stores_ip'             => true,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
     }
 
     function install()
@@ -197,7 +213,7 @@ class serendipity_event_suggest extends serendipity_event
             $serendipity['smarty']->assign('is_suggest_sent', true);
             return true;
         } else {
-            // Unkown error occurred.
+            // Unknown error occurred.
             $serendipity['smarty']->assign(
                 array(
                     'is_suggest_error'     => true,
