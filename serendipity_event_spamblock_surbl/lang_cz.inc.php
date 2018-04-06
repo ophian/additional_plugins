@@ -10,4 +10,3 @@
 @define('PLUGIN_EVENT_SPAMBLOCKSURBL_DESC',     'Zamítne komentáøe, které obsahují URL adresy z èerné listiny.');
 @define('PLUGIN_EVENT_SPAMBLOCK_ERROR_SURBL',   'Ochrana proti spamu:Vá¹ komentáø obsahuje URL adresu, která je na èerné listinì SURBL.');
 
-?>

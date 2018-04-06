@@ -10,4 +10,3 @@
 @define('PLUGIN_EVENT_SPAMBLOCKSURBL_DESC',     'Zamítne komentáře, které obsahují URL adresy z černé listiny.');
 @define('PLUGIN_EVENT_SPAMBLOCK_ERROR_SURBL',   'Ochrana proti spamu:Váš komentář obsahuje URL adresu, která je na černé listině SURBL.');
 
-?>
