@@ -33,7 +33,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '1.02');
+        $propbag->add('version',        '1.03');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -67,6 +67,22 @@ class serendipity_event_spamblock_bayes extends serendipity_event
             'path',
             'logtype',
             'logfile'
+        ));
+        $propbag->add('legal',    array(
+            'services' => array(
+            ),
+            'frontend' => array(
+                'Anti-Spam measurements by this plugin can transfer user data and metadata (??? plugin description missing ???)',
+                'All user data and metadata (IP address, comment fields) can be logged to database or file'
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => true,
+            'stores_ip'             => true,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
         ));
     }
 

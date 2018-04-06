@@ -1,3 +1,7 @@
+1.03:
+------
+ * Added legal property bag information for gdpr/dsgvo
+
 1.02:
 ------
  * Raise to Serendipity 2.1.2 + requirement for the token email approach
