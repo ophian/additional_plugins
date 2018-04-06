@@ -1,5 +1,11 @@
 <?php
 
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
+
+@serendipity_plugin_api::load_language(dirname(__FILE__));
+
 include_once dirname(__FILE__) . '/common.inc.php';
 
 class serendipity_plugin_pollbox extends serendipity_plugin
@@ -15,7 +21,7 @@ class serendipity_plugin_pollbox extends serendipity_plugin
         $propbag->add('configuration', array('title'));
         $propbag->add('author', 'Garvin Hicking, Evan Nemerson');
         $propbag->add('stackable', false);
-        $propbag->add('version', '2.16');
+        $propbag->add('version', '2.17');
         $propbag->add('groups', array('STATISTICS'));
         $this->dependencies = array('serendipity_event_pollbox' => 'keep');
     }

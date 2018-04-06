@@ -1,5 +1,11 @@
 <?php
 
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
+
+@serendipity_plugin_api::load_language(dirname(__FILE__));
+
 include_once dirname(__FILE__) . '/common.inc.php';
 
 class serendipity_event_pollbox extends serendipity_event
@@ -22,7 +28,7 @@ class serendipity_event_pollbox extends serendipity_event
         $propbag->add('configuration', array('permalink', "articleformat", "pagetitle", "articleformattitle"));
         $propbag->add('author', 'Garvin Hicking, Matthias Mees');
         $propbag->add('groups', array('STATISTICS'));
-        $propbag->add('version', '2.19');
+        $propbag->add('version', '2.20');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
