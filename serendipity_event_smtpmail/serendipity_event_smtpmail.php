@@ -20,7 +20,7 @@ class serendipity_event_smtpmail extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SMTPMAIL_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'kleinerChemiker, Ian');
-        $propbag->add('version',       '1.00');
+        $propbag->add('version',       '1.01');
         $propbag->add('license',       'GPL');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
@@ -41,6 +41,25 @@ class serendipity_event_smtpmail extends serendipity_event
         $conf_array[] = 'smtpmail_user';
         $conf_array[] = 'smtpmail_passwd';
         $propbag->add('configuration', $conf_array);
+        $propbag->add('legal',    array(
+            'services' => array(
+                'SMTP proxy' => array(
+                    'url'  => '#',
+                    'desc' => 'The configured SMTP proxy will receive the content of all emails'
+                ),
+            ),
+            'frontend' => array(
+            ),
+            'backend' => array(
+                'All emails from this blog are send through a configured SMTP proxy and can possibly be logged there.'
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => false,
+            'transmits_user_input'  => true
+        ));
     }
 
     function introspect_config_item($name, &$propbag)
