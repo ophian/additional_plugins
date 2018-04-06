@@ -1,17 +1,10 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_spamblock_rbl extends serendipity_event
 {
@@ -26,12 +19,12 @@ class serendipity_event_spamblock_rbl extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_SPAMBLOCK_RBL_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_SPAMBLOCK_RBL_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Sebastian Nohn');
+        $propbag->add('author',        'Sebastian Nohn, Ian');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.2',
+            'serendipity' => '1.6',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '1.4');
+        $propbag->add('version',       '1.6');
         $propbag->add('event_hooks',    array(
             'frontend_saveComment' => true
         ));
@@ -39,6 +32,25 @@ class serendipity_event_spamblock_rbl extends serendipity_event
             'rbllist',
             'httpBL_key'));
         $propbag->add('groups', array('ANTISPAM'));
+        $propbag->add('legal',  array(
+            'services' => array(
+                'httpbl.org' => array(
+                    'url'  => '#',
+                    'desc' => 'Checks submitted comment URLs through the HTTPBL'
+                ),
+            ),
+            'frontend' => array(
+                'Comment URLs are checked by the HTTPBL, entered URLs and the visitors IP are passed through that service',
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -55,12 +67,14 @@ class serendipity_event_spamblock_rbl extends serendipity_event
                 // $propbag->add('default', 'sbl-xbl.spamhaus.org, bl.spamcop.net');
                 $propbag->add('default', 'list.blogspambl.com');
                 break;
+
             case 'httpBL_key':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_EVENT_SPAMBLOCK_HONEYPOT_KEY);
                 $propbag->add('description', PLUGIN_EVENT_SPAMBLOCK_HONEYPOT_KEY_DESC);
                 $propbag->add('default', '');
                 break;
+
             default:
                 return false;
         }
@@ -68,11 +82,13 @@ class serendipity_event_spamblock_rbl extends serendipity_event
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -105,15 +121,15 @@ class serendipity_event_spamblock_rbl extends serendipity_event
 
                         if (!empty($honeypot_apikey) ) {
 
-                            $h=new http_bl($honeypot_apikey);
+                            $h = new http_bl($honeypot_apikey);
 
                             // known spammer
 // DEBUG                    $remoteIP = '206.51.226.106';
                             // A quick tip for testing: change $remoteIP = '$_SERVER['REMOTE_ADDR']; on line 89 to e.g.
                             // $remoteIP = '109.200.6.202'; // Comments should get rejected as this ip is on both blacklists right now.
-                            $r=$h->query($remoteIP);
+                            $r = $h->query($remoteIP);
 
-                            if ($r==2) {
+                            if ($r == 2) {
                                 $eventData = array('allow_comments' => false);
                                 $reason = PLUGIN_EVENT_SPAMBLOCK_REASON_HONEYPOT . $h->type_txt .' ['.$h->type_num .'] with a score of '. $h->score . ', last seen since '. $h->days . ' days';
                                 $serendipity['messagestack']['comments'][] = $reason;
@@ -121,13 +137,12 @@ class serendipity_event_spamblock_rbl extends serendipity_event
                             return false;
                         }
                     }
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
             }
+            return true;
         } else {
             return false;
         }

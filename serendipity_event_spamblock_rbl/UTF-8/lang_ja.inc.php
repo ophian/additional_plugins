@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.2
  */
@@ -13,4 +13,3 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_RBLLIST_DESC', '提供された RBL 一覧に基づいたコメントブロックを行います。動的ホストの記録は無効です。');
 @define('PLUGIN_EVENT_SPAMBLOCK_REASON_RBL', 'RBL ブロック');
 
-?>

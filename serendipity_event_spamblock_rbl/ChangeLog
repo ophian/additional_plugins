@@ -1,3 +1,15 @@
+1.6:
+----
+
+ * Added legal property bag information for gdpr/dsgvo
+
+1.5:
+----
+
+ * Set plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+ * Use PHP5+ constructor in httpbl class
+
 1.4:
 ----
 

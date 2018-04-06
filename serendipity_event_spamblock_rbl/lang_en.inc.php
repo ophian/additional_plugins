@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -18,4 +18,4 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_HONEYPOT_KEY', 'httpBL_key');
 @define('PLUGIN_EVENT_SPAMBLOCK_HONEYPOT_KEY_DESC', 'Enter you http:BL key');
 @define('PLUGIN_EVENT_SPAMBLOCK_REASON_HONEYPOT', 'Project Honeypot http:BL found a ');
-?>
+

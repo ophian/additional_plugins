@@ -17,4 +17,4 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_HONEYPOT_KEY', 'httpBL_key');
 @define('PLUGIN_EVENT_SPAMBLOCK_HONEYPOT_KEY_DESC', 'Zadejte http:BL klíč');
 @define('PLUGIN_EVENT_SPAMBLOCK_REASON_HONEYPOT', 'Projekt Honeypot http:BL nalezl ');
-?>
+
