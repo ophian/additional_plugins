@@ -1,4 +1,5 @@
 <?php
+
 @define('PLUGIN_EVENT_STARTCAT_NAME', 'Kategorie als Startseite');
 @define('PLUGIN_EVENT_STARTCAT_DESC', 'Ermöglicht, die Artikel einer speziellen Kategorie anstelle der Übersicht aller Artikel auf der Startseite anzuzeigen.');
 @define('PLUGIN_EVENT_STARTCAT_CATEGORY_NAME', 'Ursprungskategorie');
@@ -11,3 +12,4 @@
 @define('PLUGIN_EVENT_STARTCAT_MULTIHIDECATEGORY_DESC', 'Falls Sie mehrere Ursprungskategorien verstecken wollen, geben Sie die Liste der IDs getrennt durch ";" ein. Die ID einer Kategorie können Sie in der Kategorieübersicht ersehen wenn Sie mit der Maus über den Bearbeiten-Link fahren. Diese Option übergeht die obige Auswahl einer einzelnen Kategorie.');
 @define('PLUGIN_EVENT_STARTCAT_REMEMBERCAT_NAME', 'Gewählte Kategorie besucherseitig merken');
 @define('PLUGIN_EVENT_STARTCAT_REMEMBERCAT_DESC', 'Falls aktiviert, wird die Auswahl der Kategorien des Besuchers dauerhaft in einem Cookie für den nächsten Besuch gespeichert.');
+

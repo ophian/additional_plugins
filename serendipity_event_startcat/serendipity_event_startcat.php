@@ -4,14 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_startcat extends serendipity_event
 {
@@ -24,10 +17,10 @@ class serendipity_event_startcat extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_STARTCAT_NAME);
         $propbag->add('description',   PLUGIN_EVENT_STARTCAT_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Stefan Willoughby, Garvin Hicking');
-        $propbag->add('version',       '1.10');
+        $propbag->add('author',        'Stefan Willoughby, Garvin Hicking, Ian');
+        $propbag->add('version',       '1.12');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -41,6 +34,21 @@ class serendipity_event_startcat extends serendipity_event
         $propbag->add('groups', array('FRONTEND_VIEWS'));
 
         $propbag->add('configuration', array('base_category', 'hide_category', 'base_categories', 'hide_categories', 'remembercat'));
+        $propbag->add('legal',    array(
+            'services' => array(
+            ),
+            'frontend' => array(
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+                'If enabled, saves the last selected category in a cookie ("category")',
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => false,
+            'transmits_user_input'  => false
+        ));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -48,58 +56,50 @@ class serendipity_event_startcat extends serendipity_event
         global $serendipity;
         switch ($name) {
             case 'base_category':
-                if (version_compare($serendipity['version'], '0.8', '>=')) {
-                    $base_cats = serendipity_fetchCategories();
-                    $base_cats = serendipity_walkRecursive($base_cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
-                    $select['none'] = NONE;
-                    foreach ( $base_cats as $cat ) {
-                        $select[$cat['categoryid']] = str_repeat('-', $cat['depth']) . ' '. $cat['category_name'];
-                    }
-
-
-                    $propbag->add('type', 'select');
-                    $propbag->add('name', PLUGIN_EVENT_STARTCAT_CATEGORY_NAME);
-                    $propbag->add('description', PLUGIN_EVENT_STARTCAT_CATEGORY_DESC);
-                    $propbag->add('select_values', $select);
+                $base_cats = serendipity_fetchCategories();
+                $base_cats = serendipity_walkRecursive($base_cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
+                $select['none'] = NONE;
+                foreach($base_cats AS $cat) {
+                    $select[$cat['categoryid']] = str_repeat('-', $cat['depth']) . ' '. $cat['category_name'];
                 }
+                $propbag->add('type',           'select');
+                $propbag->add('name',           PLUGIN_EVENT_STARTCAT_CATEGORY_NAME);
+                $propbag->add('description',    PLUGIN_EVENT_STARTCAT_CATEGORY_DESC);
+                $propbag->add('select_values',  $select);
                 break;
 
             case 'base_categories':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_EVENT_STARTCAT_MULTICATEGORY_NAME);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_EVENT_STARTCAT_MULTICATEGORY_NAME);
                 $propbag->add('description', PLUGIN_EVENT_STARTCAT_MULTICATEGORY_DESC);
-                $propbag->add('default', '');
+                $propbag->add('default',     '');
                 break;
 
             case 'remembercat':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_EVENT_STARTCAT_REMEMBERCAT_NAME);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_STARTCAT_REMEMBERCAT_NAME);
                 $propbag->add('description', PLUGIN_EVENT_STARTCAT_REMEMBERCAT_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'hide_category':
-                if (version_compare($serendipity['version'], '0.8', '>=')) {
-                    $base_cats = serendipity_fetchCategories();
-                    $base_cats = serendipity_walkRecursive($base_cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
-                    $select['none'] = NONE;
-                    foreach ( $base_cats as $cat ) {
-                        $select[$cat['categoryid']] = str_repeat('-', $cat['depth']) . ' '. $cat['category_name'];
-                    }
-
-
-                    $propbag->add('type', 'select');
-                    $propbag->add('name', PLUGIN_EVENT_STARTCAT_HIDECATEGORY_NAME);
-                    $propbag->add('description', PLUGIN_EVENT_STARTCAT_HIDECATEGORY_DESC);
-                    $propbag->add('select_values', $select);
+                $base_cats = serendipity_fetchCategories();
+                $base_cats = serendipity_walkRecursive($base_cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
+                $select['none'] = NONE;
+                foreach($base_cats AS $cat) {
+                    $select[$cat['categoryid']] = str_repeat('-', $cat['depth']) . ' '. $cat['category_name'];
                 }
+                $propbag->add('type',           'select');
+                $propbag->add('name',           PLUGIN_EVENT_STARTCAT_HIDECATEGORY_NAME);
+                $propbag->add('description',    PLUGIN_EVENT_STARTCAT_HIDECATEGORY_DESC);
+                $propbag->add('select_values',  $select);
                 break;
 
             case 'hide_categories':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_EVENT_STARTCAT_MULTIHIDECATEGORY_NAME);
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_EVENT_STARTCAT_MULTIHIDECATEGORY_NAME);
                 $propbag->add('description', PLUGIN_EVENT_STARTCAT_MULTIHIDECATEGORY_DESC);
-                $propbag->add('default', '');
+                $propbag->add('default',     '');
                 break;
 
             default:
@@ -109,7 +109,8 @@ class serendipity_event_startcat extends serendipity_event
     }
 
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -134,7 +135,6 @@ class serendipity_event_startcat extends serendipity_event
                         return true;
                     }
 
-
                     $bc = $this->get_config('base_categories');
                     if (empty($bc)) {
                         $bc = $this->get_config('base_category');
@@ -156,7 +156,7 @@ class serendipity_event_startcat extends serendipity_event
                         $serendipity['GET']['hide_category'] = $hc;
                     }
 
-                    if (serendipity_db_bool($this->get_config('remembercat'))) {
+                    if (serendipity_db_bool($this->get_config('remembercat', 'false'))) {
                         if ((empty($serendipity['GET']['category']) || defined('STARTCAT_CATEGORY')) && !empty($serendipity['COOKIE']['category']) && !isset($serendipity['GET']['id'])) {
                             $serendipity['GET']['category'] = $serendipity['COOKIE']['category'];
                         }
@@ -173,11 +173,18 @@ class serendipity_event_startcat extends serendipity_event
                             serendipity_setCookie('category', $serendipity['GET']['category']);
                         }
                     }
-
                     break;
-            }
-        }
 
+                default:
+                    return false;
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
+
 }
 
+/* vim: set sts=4 ts=4 expandtab : */
+?>
