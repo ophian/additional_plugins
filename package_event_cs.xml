@@ -623,9 +623,9 @@
 <description>Umožňuje autorům přihlašovat se do blogu pomocí služby BrowserID</description>
 <maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.2</version>
+  <version>1.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_browserid">
       <file>browserid_signin.png</file>
@@ -671,9 +671,9 @@
 <description>Zobrazuje kalendář akcí jako samostatnou stránku v blogu. Design stránky zůstává stejný jako u zbytku blogu. (MySQL only)</description>
 <maintainers><maintainer><name>Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.80</version>
+  <version>1.81</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-06-18</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_cal">
       <file>backend_inherits.css</file>
@@ -1055,9 +1055,9 @@
 <description>Okořeňte formulář pro zadání komentářů pomocí twitteru komentujícího, odkazem na poslední článek nebo pravidly pro ne-sledování.</description>
 <maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.10</version>
+  <version>1.11</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-07-22</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -1201,9 +1201,9 @@
 <description>Zobrazuje kontaktní formulář k poslání e-mailu jako statickou stránku. Přístup k fromuláři buď pomocí stálého odkazu (permalinku) nebo na adrese index.php?serendipity[subpage]=contactform. Vzhled fromuláře si můžete upravit podle svého vložením souboru plugin_contactform.tpl do adresáře s Vaší šablonou. Kryptogramy z pluginu SpamBlock budou použity, pokud je SpamBlock nainstalován.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.24</version>
+  <version>1.25</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-04-23</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_contactform">
       <file>ChangeLog</file>
@@ -1666,9 +1666,9 @@
 <description>Automaticky vytváří odkazy na citace a judikaturu (odkazy a zdroje informací) pomocí služby dejure.org.</description>
 <maintainers><maintainer><name>Garvin Hicking, dejure.org, Thomas Hochstein, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.12</version>
+  <version>1.13</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-03-30</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_dejure">
       <file>ChangeLog</file>
@@ -1706,11 +1706,11 @@
 <summary>Komentáře Disqus</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Disqus.com je webová služba pro správu komentářů. Ukládá a spravuje komentáře vně instalace serendipity a je do blogu vkládána pomocí JavaScriptu. Pro více informací přejděte na www.disqus.com.</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.3</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.5</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_disqus">
       <file>ChangeLog</file>
@@ -2636,9 +2636,9 @@
 <description>Importuje do blogu komentáře u příspěvků na facebooku (pomocí RSS Graffiti). Také do blogu vloží facebookové OpenGraph Meta-Tagy. Pamatujte, že přidání talčítka &quot;Líbí se mi&quot; k příspěvkům blogu je zajišťováno pluginem serendipity_event_findmore!</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.9</version>
+  <version>0.10</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-10-06</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_facebook">
       <file>ChangeLog</file>
@@ -2829,9 +2829,9 @@
 <description>Umožňuje návštěvníkům blogu filtrovat/řadit příspěvky podle různých pravidel</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.9</version>
+  <version>1.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-02-22</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_filter_entries">
       <file>ChangeLog</file>
@@ -2993,9 +2993,9 @@
 <description>Flattr je platforma pro sociální mikroplatby, která čtenáři umožňuje ocenit drobným příspěvkem obsah, který se mu líbí. Tento plugin vkládá do příspěvků a RSS kanálů tlačítka &quot;Flattr&quot; (tzv. Flattr Badges). U každého příspěvku můžete jednotlivě zadat nastavení Flattru. Pokud tak neučiníte, použije se globální nastavení.</description>
 <maintainers><maintainer><name>Garvin Hicking, Joachim Breitner</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.13</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.15</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -3089,9 +3089,9 @@
 <description>Vybranému uživateli umožňuje změnit heslo.</description>
 <maintainers><maintainer><name>Omid Mottaghi</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.12.1</version>
-  <requirements:s9yVersion>0.9.1</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.14</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_forgotpassword">
       <file>ChangeLog</file>
@@ -5880,17 +5880,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_mailentry</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mailentry/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Posílání příspěvku emailem</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>Umožňuje uživatelům poslat příspěvek emailem kamarádovi. Dejte pozor, tento plugin může zvýšit provoz po síti, pokud začnou   spamboti zneužívat této funkce.</description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.23</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.25</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_mailentry">
+      <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -5916,6 +5918,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_mailentry/ChangeLog</file>
     <file>serendipity_event_mailentry/lang_bg.inc.php</file>
     <file>serendipity_event_mailentry/lang_cs.inc.php</file>
     <file>serendipity_event_mailentry/lang_cz.inc.php</file>
@@ -6039,17 +6042,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_markread</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_markread/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Přečteno/Nepřečteno označování příspěvků uživateli</summary>
 <groups>STATISTICS</groups>
 <description>Přečteno/Nepřečteno označování příspěvků uživateli</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.3</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.5</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_markread">
+      <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -6063,6 +6068,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_markread/ChangeLog</file>
     <file>serendipity_event_markread/lang_bg.inc.php</file>
     <file>serendipity_event_markread/lang_cs.inc.php</file>
     <file>serendipity_event_markread/lang_cz.inc.php</file>
@@ -6449,9 +6455,9 @@
 <description>Umožňuje vytvořit příspěvek (záznam) ve více jazykových variantách. Obsahuje též fromulář pro výběr základního jazyka blogu.</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.37</version>
+  <version>2.38</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-03-27</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -6653,9 +6659,9 @@
 <description>oEmbed je formát, který umožňuje vkládat do blogu jiné stránky z internetu. Umožňuje zobrazovat v příspěvcích vložený obsah (jako tweety, fotky nebo videa), když autor příspěvku napíše odkaz na zdroj obsahu, aniž by bylo potřeba přímo parsovat cílovou stránku.</description>
 <maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.14</version>
+  <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-11-18</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_oembed">
       <file>ChangeLog</file>
@@ -6694,6 +6700,7 @@
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -6729,6 +6736,7 @@
     <file>serendipity_event_oembed/serendipity_event_oembed.php</file>
     <file>serendipity_event_oembed/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_oembed/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_oembed/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6739,11 +6747,11 @@
 <summary>Přihlašování pomocí OpenID</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
 <description>Umožňuje autorům přihlásit se pomocí OpenID.</description>
-<maintainers><maintainer><name>Grischa Brockhaus, Rob Richards</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Grischa Brockhaus, Rob Richards, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.2.2</version>
-  <requirements:s9yVersion>1.2</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.4</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_openid">
       <file>ChangeLog</file>
@@ -7964,9 +7972,9 @@
 <description>Použití SMTP serveru pro odesílání pošty</description>
 <maintainers><maintainer><name>kleinerChemiker, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.00</version>
+  <version>1.01</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-03-27</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_smtpmail">
       <file>ChangeLog</file>
@@ -8126,9 +8134,9 @@
 <description>Show social share buttons for services like Facebook and Twitter using shariff.</description>
 <maintainers><maintainer><name>onli, Matthias Mees, Thomas Hochstein, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.14</version>
+  <version>0.15</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2017-06-03</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_social">
       <file>ChangeLog</file>
@@ -8162,9 +8170,9 @@
 <description>Detekce spamu pomocí adaptivního algoritmu, který se dokáže sám učit.</description>
 <maintainers><maintainer><name>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.02</version>
+  <version>1.03</version>
   <requirements:s9yVersion>2.1.2</requirements:s9yVersion>
-  <date>2018-03-30</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bayes">
       <dir name="admin">
@@ -8250,9 +8258,9 @@
 <description>Implementuje jednoduché ale velmi účinné antispamové algoritmy.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Janek Bevendorff</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.3.2</version>
+  <version>1.3.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-10-13</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bee">
       <file>ChangeLog</file>
@@ -8302,11 +8310,11 @@
 <summary>Antispamová ochrana (RBL)</summary>
 <groups>ANTISPAM</groups>
 <description>Odmítne komentáře, které jsou zadány ze adres, které jsou vedeny v blacklistu RBL. Pozor, že tato volba může znemožnit posílání komentářů uživatelům, kteří sedí za proxy serverem nebo kteří používají vytáčené spojení.</description>
-<maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Sebastian Nohn, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4</version>
-  <requirements:s9yVersion>1.2</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.6</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_spamblock_rbl">
       <file>ChangeLog</file>
@@ -8343,17 +8351,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_spamblock_surbl</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_spamblock_surbl/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Spam Protector (SURBL)</summary>
 <groups>ANTISPAM</groups>
 <description>Zamítne komentáře, které obsahují URL adresy z černé listiny.</description>
-<maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Sebastian Nohn, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.3</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_spamblock_surbl">
+      <file>ChangeLog</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
@@ -8369,6 +8379,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_spamblock_surbl/ChangeLog</file>
     <file>serendipity_event_spamblock_surbl/lang_cs.inc.php</file>
     <file>serendipity_event_spamblock_surbl/lang_cz.inc.php</file>
     <file>serendipity_event_spamblock_surbl/lang_de.inc.php</file>
@@ -8412,11 +8423,11 @@
 <summary>Kategorie na výchozí stránce</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Umožňuje zobrazovat na výchozí stránce blogu příspěvky pouze z jedné kategorie</description>
-<maintainers><maintainer><name>Stefan Willoughby, Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Stefan Willoughby, Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.10</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.12</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_startcat">
       <file>ChangeLog</file>
@@ -8613,9 +8624,9 @@
 <description>Zobrazení statistik záznamů</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.73</version>
+  <version>1.74</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-11-13</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>ChangeLog</file>
@@ -8717,9 +8728,9 @@
 <description>Umožňuje neregistrovaným návštěvníkům navrhovat články, které by se měly vydat.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.13</version>
+  <version>0.14</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-01-15</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_suggest">
       <file>ChangeLog</file>
@@ -9075,9 +9086,9 @@
 <description>Vkládá reklamy do blogu.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.12.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.14</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_textlinkads">
       <file>ChangeLog</file>
@@ -9987,9 +9998,9 @@
 <description>Sleduje kliknutí na URL adresy mimo blog</description>
 <maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.13</version>
+  <version>1.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-11-12</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_trackexits">
       <file>ChangeLog</file>
@@ -11063,11 +11074,11 @@
 <summary>Rozšířená tlačítka editoru: Youtube apod.</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Přidává tlačítka do editačního formuláře pro lehčí vkládání HTML/JS akriptů jako např. Youtube apod.</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.3</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.5</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
@@ -11237,9 +11248,9 @@
 <description>Správa anket</description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.19</version>
+  <version>2.20</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-03</date>
+  <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_plugin_pollbox">
       <file>ChangeLog</file>
