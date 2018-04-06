@@ -1,1 +1,14 @@
-Properly use the example() API method by returning, not echo'ing. Unimportant update.    
+0.14:
+-----
+
+ * Added legal property bag information for gdpr/dsgvo
+ * Removed HTTP referer and URI variables to outgoing request
+
+0.13:
+-----
+
+ * Set plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+
+---
+ * Properly use the example() API method by returning, not echo'ing. Unimportant update.

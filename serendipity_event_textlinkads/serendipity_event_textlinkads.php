@@ -1,23 +1,17 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_textlinkads extends serendipity_event
 {
     var $title = PLUGIN_EVENT_TEXTLINKADS_TITLE;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_EVENT_TEXTLINKADS_TITLE);
@@ -25,25 +19,46 @@ class serendipity_event_textlinkads extends serendipity_event
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Garvin Hicking');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
-        $propbag->add('version',       '0.12.1');
+        $propbag->add('groups',        array('FRONTEND_EXTERNAL_SERVICES'));
+        $propbag->add('version',       '0.14');
         $propbag->add('configuration', array('htmlid', 'xmlfilename'));
-        $propbag->add('event_hooks',    array(
+        $propbag->add('event_hooks',   array(
             'css'                  => true,
             'external_service_tla' => true,
             'external_service_ad'  => true
         ));
+        $propbag->add('legal', array(
+            'services' => array(
+                'text-link-ads.com' => array(
+                    'url'  => 'https://www.text-link-ads.com',
+                    'desc' => 'Receives text link ads.'
+                ),
+            ),
+            'frontend' => array(
+                '',
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => true,
+            'stores_ip'             => false,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
     }
 
-    function example() {
+    function example()
+    {
         return PLUGIN_EVENT_TEXTLINKADS_INFO;
     }
     
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'htmlid':
                 $propbag->add('type',        'string');
@@ -66,7 +81,8 @@ class serendipity_event_textlinkads extends serendipity_event
     }
 
     /* BEGIN FOREIGN CODE */
-    function tla_ads() {
+    function tla_ads()
+    {
         global $serendipity;
 
         // Number of seconds before connection to XML times out
@@ -89,8 +105,8 @@ class serendipity_event_textlinkads extends serendipity_event
         }
 
         if (filemtime($LOCAL_XML_FILENAME) < (time() - 3600) || filesize($LOCAL_XML_FILENAME) < 20) {
-            $request_uri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "";
-            $user_agent  = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "";
+            $request_uri = '';
+            $user_agent  = '';
             $this->tla_updateLocalXML("http://www.text-link-ads.com/xml.php?inventory_key=0FPDC7VH5JLP3YAN8K1M&referer=" . urlencode($request_uri) . "&user_agent=" . urlencode($user_agent), $LOCAL_XML_FILENAME, $CONNECTION_TIMEOUT);
         }
 
@@ -110,7 +126,8 @@ class serendipity_event_textlinkads extends serendipity_event
         echo "</ul>";
     }
 
-    function tla_updateLocalXML($url, $file, $time_out) {
+    function tla_updateLocalXML($url, $file, $time_out)
+    {
         if ($handle = fopen($file, "a")) {
             fwrite($handle, "\n");
             fclose($handle);
@@ -126,7 +143,8 @@ class serendipity_event_textlinkads extends serendipity_event
         }
     }
 
-    function tla_getLocalXML($file) {
+    function tla_getLocalXML($file)
+    {
         $contents = "";
         if ($handle = fopen($file, "r")){
             $contents = fread($handle, filesize($file)+1);
@@ -136,7 +154,8 @@ class serendipity_event_textlinkads extends serendipity_event
         return $contents;
     }
 
-    function file_get_contents_tla($url, $time_out) {
+    function file_get_contents_tla($url, $time_out)
+    {
         $result = "";
         $url = parse_url($url);
 
@@ -157,7 +176,8 @@ class serendipity_event_textlinkads extends serendipity_event
         return $result;
     }
 
-    function html_entity_decode($string) {
+    function html_entity_decode($string)
+    {
         if (function_exists('html_entity_decode')) {
             return html_entity_decode($string, ENT_COMPAT, LANG_CHARSET);
         }
@@ -171,7 +191,8 @@ class serendipity_event_textlinkads extends serendipity_event
         return strtr($string, $trans_tbl);
     }
 
-    function tla_decodeXML($xmlstg) {
+    function tla_decodeXML($xmlstg)
+    {
         $out = "";
         $retarr = "";
 
@@ -189,11 +210,13 @@ class serendipity_event_textlinkads extends serendipity_event
     }
     /* END FOREIGN CODE */
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function textlink_custom(&$data) {
+    function textlink_custom(&$data)
+    {
         global $serendipity;
         
         $config = explode(':', $data);
@@ -276,13 +299,14 @@ class serendipity_event_textlinkads extends serendipity_event
         return;
     }
 
-
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'external_service_ad':
                     $this->textlink_custom($eventData);
@@ -296,22 +320,22 @@ class serendipity_event_textlinkads extends serendipity_event
     ul#<?php echo $id; ?> li span { display: block; width: 100%; padding: 3px; margin: 0px; font-size: 12px; color: #000000; }
     ul#<?php echo $id; ?> li span a { font-size: 12px; color: #0000FF; }
 <?php
-                    return true;
                     break;
 
                 case 'external_service_tla':
                     $this->tla_ads();
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

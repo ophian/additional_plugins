@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ivan Cenov <JWalker@hotmail.bg>
  *  EN-Revision: 1.3
  */
@@ -18,3 +18,4 @@
 <p>След като се обърнете към блога, ще видите съдържанието на случайно избран .html файл вмъкнат в съдържанието му. Той ще бъде променен след изтичане на зададения период (седмица, ден, час ...). В HTML файловете можете да слагате HTML код, какъвто желаете, също и JavaScript, GoogleAdSense и т.н.');
 @define('PLUGIN_EVENT_TEXTLINKADS_HTMLID', 'CSS ID на HTML елемента с вашите реклами');
 @define('PLUGIN_EVENT_TEXTLINKADS_XMLFILENAME', 'Локално име на файл, където да се запише връзката');
+

@@ -17,3 +17,4 @@
 <p>Kdy¾ pak budete prohlí¾et blog, uvidíte na místech vlo¾ení kódu reklamy, které se budou mìnit se zadanou frekvencí. Do HTML souborù mù¾ete vlo¾it libovolný HTML kód (napø. libovolný JavaScrip, GoogleAdSense, apod.)');
 @define('PLUGIN_EVENT_TEXTLINKADS_HTMLID', '(Pouze TextLinkAds) CSS ID identifikátor HTML tagu, který obsahuje textové reklamy');
 @define('PLUGIN_EVENT_TEXTLINKADS_XMLFILENAME', '(Pouze TextLinkAds) Jméno lokálního souboru, pdo ukládání textových odkazù');
+
