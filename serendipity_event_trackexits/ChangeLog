@@ -1,3 +1,7 @@
+1.14:
+-----
+ * Added legal property bag information for gdpr/dsgvo
+
 1.13:
 -----
   * Removed 'bmi' (fun) option, since OUTDATED and does not exists

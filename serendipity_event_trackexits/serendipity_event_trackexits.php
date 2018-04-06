@@ -19,7 +19,7 @@ class serendipity_event_trackexits extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TRACKBACK_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '1.13');
+        $propbag->add('version',       '1.14');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -29,6 +29,25 @@ class serendipity_event_trackexits extends serendipity_event
         $propbag->add('event_hooks',   array('frontend_display' => true, 'frontend_display_cache' => true));
         $propbag->add('scrambles_true_content', true);
         $propbag->add('groups', array('STATISTICS'));
+        $propbag->add('legal',  array(
+            'services' => array(
+                'favatar' => array(
+                    'url'  => 'https://www.google.com',
+                    'desc' => 'Google link deflector.'
+                ),
+            ),
+            'frontend' => array(
+                'Outgoing links are routed through a link deflector, so the target page will not get the referrer of this blog. However, this means that the link deflector service will get both the target and the originating link plus metadata of a visitor.',
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
 
         $this->markup_elements = array(
             array(
@@ -50,7 +69,7 @@ class serendipity_event_trackexits extends serendipity_event
         );
 
         $conf_array = array();
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
         $conf_array[] = 'commentredirection';
@@ -148,7 +167,7 @@ class serendipity_event_trackexits extends serendipity_event
                                         break;
 
                                     case 'google':
-                                        $eventData['url'] = 'http://www.google.com/url?sa=D&q=' . $eventData['url'];
+                                        $eventData['url'] = 'https://www.google.com/url?sa=D&q=' . $eventData['url'];
                                         break;
 
                                     default:
