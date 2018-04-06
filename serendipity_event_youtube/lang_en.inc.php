@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -18,3 +18,4 @@
 @define('PLUGIN_EVENT_YOUTUBE_BORDER', 'Youtube: Use Border?');
 @define('PLUGIN_EVENT_YOUTUBE_COLOR1', 'Youtube: Primary color?');
 @define('PLUGIN_EVENT_YOUTUBE_COLOR2', 'Youtube: Secondary color?');
+

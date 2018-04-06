@@ -17,3 +17,4 @@
 @define('PLUGIN_EVENT_YOUTUBE_BORDER', 'Youtube: Používat rámeèky?');
 @define('PLUGIN_EVENT_YOUTUBE_COLOR1', 'Youtube: Hlavní barva?');
 @define('PLUGIN_EVENT_YOUTUBE_COLOR2', 'Youtube: Druhá barva?');
+

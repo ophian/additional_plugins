@@ -1,17 +1,10 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_youtube extends serendipity_event
 {
@@ -24,22 +17,43 @@ class serendipity_event_youtube extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_YOUTUBE_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_YOUTUBE_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking');
+        $propbag->add('author',        'Garvin Hicking, Ian');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '1.3');
+        $propbag->add('version',       '1.5');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body' => true,
         ));
         $propbag->add('groups', array('BACKEND_EDITOR'));
         $propbag->add('configuration', array('youtube_server', 'youtube_width', 'youtube_height', 'youtube_rel', 'youtube_border', 'youtube_color1', 'youtube_color2'));
+        $propbag->add('legal',    array(
+            'services' => array(
+                'youtube' => array(
+                    'url'  => 'https://www.youtube.com',
+                    'desc' => 'Youtube.'
+                ),
+            ),
+            'frontend' => array(
+                'When Youtube videos are embedded, Google gets the request metadata (IP address, user agent) of the visitor.',
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+                'Google can set tracking cookies for videos'
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => false,
+            'transmits_user_input'  => true
+        ));
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_EVENT_YOUTUBE_TITLE;
     }
 
@@ -49,66 +63,66 @@ class serendipity_event_youtube extends serendipity_event
             case 'youtube_server':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_YOUTUBE_SERVER);
-                $propbag->add('default',     'http://www.youtube.com/v/');
-                return true;
+                $propbag->add('default',     'https://www.youtube.com/v/');
                 break;
 
             case 'youtube_width':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_YOUTUBE_WIDTH);
                 $propbag->add('default',     '425');
-                return true;
                 break;
 
             case 'youtube_height':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_YOUTUBE_HEIGHT);
                 $propbag->add('default',     '344');
-                return true;
                 break;
 
             case 'youtube_rel':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_YOUTUBE_REL);
                 $propbag->add('default',     'true');
-                return true;
                 break;
 
             case 'youtube_border':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_YOUTUBE_BORDER);
                 $propbag->add('default',     'false');
-                return true;
                 break;
 
             case 'youtube_color1':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_YOUTUBE_COLOR1);
                 $propbag->add('default',     '0x3a3a3a');
-                return true;
                 break;
 
             case 'youtube_color2':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_YOUTUBE_COLOR2);
                 $propbag->add('default',     '0x999999');
-                return true;
                 break;
+
+            default:
+                return false;
         }
+        return true;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
+
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'backend_entry_toolbar_extended':
                     if (!isset($txtarea)) {
                         $txtarea = 'serendipity[extended]';
                         $func    = 'extended';
                     }
-
+                    // no break
                 case 'backend_entry_toolbar_body':
                     if (!isset($txtarea)) {
                         if (isset($eventData['backend_entry_toolbar_body:textarea'])) {
@@ -122,7 +136,7 @@ class serendipity_event_youtube extends serendipity_event
                         if (isset($eventData['backend_entry_toolbar_body:nugget'])) {
                             $func = $eventData['backend_entry_toolbar_body:nugget'];
                         } else{
-                            $func    = 'body';
+                            $func = 'body';
                         }
                     }
                     // CKEDITOR needs this little switch
@@ -138,8 +152,8 @@ class serendipity_event_youtube extends serendipity_event
 var youtube_server = '<?php echo $this->get_config('youtube_server'); ?>';
 var youtube_width  = '<?php echo $this->get_config('youtube_width'); ?>';
 var youtube_height = '<?php echo $this->get_config('youtube_height'); ?>';
-var youtube_rel    = '<?php echo (serendipity_db_bool($this->get_config('youtube_rel')) ? '1' : '0'); ?>';
-var youtube_border = '<?php echo (serendipity_db_bool($this->get_config('youtube_border')) ? '1' : '0'); ?>';
+var youtube_rel    = '<?php echo (serendipity_db_bool($this->get_config('youtube_rel', 'true')) ? '1' : '0'); ?>';
+var youtube_border = '<?php echo (serendipity_db_bool($this->get_config('youtube_border', 'false')) ? '1' : '0'); ?>';
 var youtube_color1 = '<?php echo $this->get_config('youtube_color1'); ?>';
 var youtube_color2 = '<?php echo $this->get_config('youtube_color2'); ?>';
 
@@ -165,7 +179,7 @@ function use_text_<?php echo $func; ?>(img) {
         + '<embed src="' + youtube_url + '" type="application/x-shockwave-flash" '
         + '  allowscriptaccess="always" allowfullscreen="true" width="' + youtube_width + '" height="' + youtube_height + '">'
         + '</embed></object></div>' 
-        + '<noscript><a href="http://www.youtube.com/watch?v='+ videoid + '"></a></noscript>'
+        + '<noscript><a href="https://www.youtube.com/watch?v='+ videoid + '"></a></noscript>'
         + "\n";
 
     if(typeof(CKEDITOR) != 'undefined') {
@@ -230,18 +244,18 @@ function use_text_<?php echo $func; ?>(img) {
                     #echo '<div id="serendipity_extbuttons_youtube" style="float: right; margin-top: 5px">';
                     echo '  <a class="serendipityPrettyButton serendipityExtButton" href="javascript:use_text_' . $func . '()" title="' . PLUGIN_EVENT_YOUTUBE_BUTTON . '">' . PLUGIN_EVENT_YOUTUBE_BUTTON . '</a>&nbsp;';
                     #echo '</div>';
-
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>
