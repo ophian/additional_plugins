@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -18,4 +18,3 @@
 @define('PLUGIN_MAILENTRY_FAILURE',      'Unable to send message.');
 @define('PLUGIN_MAILENTRY_EMAIL',        "%s saw this on %s and thought you might be interested:\r\n\r\n%s\r\n%s\r\n\r\n%s\r\n%s\r\n");
 
-?>

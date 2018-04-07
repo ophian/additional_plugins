@@ -17,4 +17,3 @@
 @define('PLUGIN_MAILENTRY_FAILURE',      'Nezdaøilo se poslat email.');
 @define('PLUGIN_MAILENTRY_EMAIL',        "%s èetl následující èlánek na blogu %s a myslí si, ¾e by Tì mohl zajímat:\r\n\r\n%s\r\n%s\r\n\r\n%s\r\n%s\r\n");
 
-?>

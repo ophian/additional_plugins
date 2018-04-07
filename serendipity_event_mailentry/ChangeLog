@@ -1,0 +1,11 @@
+1.25:
+----
+
+ * Added legal property bag information for gdpr/dsgvo
+
+1.24:
+----
+
+ * Set plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+

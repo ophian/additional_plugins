@@ -1,28 +1,44 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
+class serendipity_event_mailentry extends serendipity_event
+{
+    var $title = PLUGIN_MAILENTRY_NAME;
 
-class serendipity_event_mailentry extends serendipity_event {
     function introspect(&$propbag)
     {
         $propbag->add('name',        PLUGIN_MAILENTRY_NAME);
         $propbag->add('description', PLUGIN_MAILENTRY_DESC);
         $propbag->add('configuration', array('title'));
-        $propbag->add('version',     '1.23');
+        $propbag->add('version',     '1.25');
+        $propbag->add('requirements',  array(
+            'serendipity' => '1.6',
+            'smarty'      => '2.6.7',
+            'php'         => '4.1.0'
+        ));
         $propbag->add('event_hooks',
                       array('frontend_display:html:per_entry' => true));
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
+        $propbag->add('legal',    array(
+            'services' => array(
+            ),
+            'frontend' => array(
+                'Blog entries can be mailed to user-specified mail addresses by the server (without opt-in)',
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -42,52 +58,60 @@ class serendipity_event_mailentry extends serendipity_event {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
       $title = PLUGIN_MAILENTRY_NAME;
     }
 
-    function stripMe($str) {
+    function stripMe($str)
+    {
        return str_replace(array("\n", "\r", "\t", "\0"), array('', '', '', ''), $str);
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
-        switch ($event) {
-            case 'frontend_display:html:per_entry':
-                if ( $serendipity['GET']['id'] ) {
-                    ob_start();
-                    if ( isset($serendipity['POST']) && isset($serendipity['POST']['mailEntry']) ) {
-                        $me = $serendipity['POST']['mailEntry'];
+        $hooks = &$bag->get('event_hooks');
 
-                        if ( !preg_match('/^[.\w-]+@([\w-]+\.)+[a-zA-Z]{2,6}$/', $me['to']) ) {
-                          echo '<div class="serendipity_msg_important">' . PLUGIN_MAILENTRY_TO_INVALID . "</div>\n";
-                          break;
+        if (isset($hooks[$event])) {
+
+            switch($event) {
+
+                case 'frontend_display:html:per_entry':
+                    if ($serendipity['GET']['id']) {
+                        ob_start();
+                        if ( isset($serendipity['POST']) && isset($serendipity['POST']['mailEntry']) ) {
+                            $me = $serendipity['POST']['mailEntry'];
+
+                            if ( !preg_match('/^[.\w-]+@([\w-]+\.)+[a-zA-Z]{2,6}$/', $me['to']) ) {
+                              echo '<div class="serendipity_msg_important">' . PLUGIN_MAILENTRY_TO_INVALID . "</div>\n";
+                              break;
+                            }
+
+                            if ( !preg_match('/^[.\w-]+@([\w-]+\.)+[a-zA-Z]{2,6}$/', $me['fromAddr']) ) {
+                              echo '<div class="serendipity_msg_important">' . PLUGIN_MAILENTRY_FROM_INVALID . "</div>\n";
+                              break;
+                            }
+
+                            $headers = "To: " . $this->stripMe($me['to']) . "\r\n" .
+                              "Reply-To: " . $this->stripMe($me['fromName']) . " <" . $this->stripMe($me['fromAddr']) . ">\r\n" .
+                              "From: " . (!empty($serendipity['blogMail']) ? $serendipity['blogMail'] : $serendipity['email']) . "\r\n";
+
+                            $message = sprintf(PLUGIN_MAILENTRY_EMAIL,
+                                               $me['fromName'],
+                                               $serendipity['blogTitle'],
+                                               $eventData['title'],
+                                               serendipity_archiveURL($eventData['id'], $eventData['title'], 'baseURL', true, array('timestamp' => $eventData['timestamp'])),
+                                               trim($me['message']),
+                                               $serendipity['signature']);
+
+                            if ( mail($me['to'], $eventData['title'] . ' - ' . $serendipity['blogTitle'], $message, $headers) ) {
+                              echo '<div class="serendipity_msg_notice">' . PLUGIN_MAILENTRY_SUCCESS . "</div>\n";
+                            } else {
+                              echo '<div class="serendipity_msg_important">' . PLUGIN_MAILENTRY_FAILURE . "</div>\n";
+                            }
                         }
-
-                        if ( !preg_match('/^[.\w-]+@([\w-]+\.)+[a-zA-Z]{2,6}$/', $me['fromAddr']) ) {
-                          echo '<div class="serendipity_msg_important">' . PLUGIN_MAILENTRY_FROM_INVALID . "</div>\n";
-                          break;
-                        }
-
-                        $headers = "To: " . $this->stripMe($me['to']) . "\r\n" .
-                          "Reply-To: " . $this->stripMe($me['fromName']) . " <" . $this->stripMe($me['fromAddr']) . ">\r\n" .
-                          "From: " . (!empty($serendipity['blogMail']) ? $serendipity['blogMail'] : $serendipity['email']) . "\r\n";
-
-                        $message = sprintf(PLUGIN_MAILENTRY_EMAIL,
-                                           $me['fromName'],
-                                           $serendipity['blogTitle'],
-                                           $eventData['title'],
-                                           serendipity_archiveURL($eventData['id'], $eventData['title'], 'baseURL', true, array('timestamp' => $eventData['timestamp'])),
-                                           trim($me['message']),
-                                           $serendipity['signature']);
-
-                        if ( mail($me['to'], $eventData['title'] . ' - ' . $serendipity['blogTitle'], $message, $headers) ) {
-                          echo '<div class="serendipity_msg_notice">' . PLUGIN_MAILENTRY_SUCCESS . "</div>\n";
-                        } else {
-                          echo '<div class="serendipity_msg_important">' . PLUGIN_MAILENTRY_FAILURE . "</div>\n";
-                        }
-                    }
 ?>
 <form id="serendipity_mailEntry_form" action="" method="post" class="serendipity_comments">
   <br/>
@@ -124,13 +148,17 @@ class serendipity_event_mailentry extends serendipity_event {
                         $eventData['display_dat'] = ob_get_contents();
                         ob_end_clean();
                     }
-                break;
+                    break;
 
-            default:
-                return true;
-                break;
+                default:
+                    return false;
+            }
+            return true;
+        } else {
+            return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */

@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <ahmetusal@gmail.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -18,4 +18,3 @@
 @define('PLUGIN_MAILENTRY_FAILURE',      'İleti gönderilemedi.');
 @define('PLUGIN_MAILENTRY_EMAIL',        "%s önced buraya bakın %s ve bu da ilginç olabilir:\r\n\r\n%s\r\n%s\r\n\r\n%s\r\n%s\r\n");
 
-?>

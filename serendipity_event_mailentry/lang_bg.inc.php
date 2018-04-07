@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.2
  */
@@ -17,3 +17,4 @@
 @define('PLUGIN_MAILENTRY_SUCCESS',      'Статията е изпратена успешно.');
 @define('PLUGIN_MAILENTRY_FAILURE',      'Статията не беше изпратена поради някаква причина.');
 @define('PLUGIN_MAILENTRY_EMAIL',        "%s прочете това в %s и мисли, че може би ще бъде интересно и за Вас:\r\n\r\n%s\r\n%s\r\n\r\n%s\r\n%s\r\n");
+
