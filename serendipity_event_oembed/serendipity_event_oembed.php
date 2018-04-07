@@ -25,7 +25,7 @@ class serendipity_event_oembed extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_OEMBED_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Grischa Brockhaus');
-        $propbag->add('version',       '1.14');
+        $propbag->add('version',       '1.15');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -39,6 +39,26 @@ class serendipity_event_oembed extends serendipity_event
         $configuration = $configuration = array('info','maxwidth','maxheight','generic_service','embedly_apikey', 'audioboo_player');
         $configuration[] = 'supported'; // always last
         $propbag->add('configuration', $configuration);
+        $propbag->add('legal',    array(
+            'services' => array(
+                'oEmbed' => array(
+                    'url'  => '#',
+                    'desc' => 'oEmbed providers will receive visitor metadata (IP, User Agent, etc) when embedded content is loaded'
+                ),
+            ),
+            'frontend' => array(
+                'oEmbed providers will receive visitor metadata (IP, User Agent, etc) when embedded content is loaded'
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+                'oEmbed providers might set cookies for tracking purposes of embedded content'
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -48,18 +68,21 @@ class serendipity_event_oembed extends serendipity_event
                 $propbag->add('type',           'content');
                 $propbag->add('default',        sprintf(PLUGIN_EVENT_OEMBED_INFO, ProviderList::ul_providernames(true)));
                 break;
+
             case 'maxwidth':
                 $propbag->add('type',           'string');
                 $propbag->add('name',           PLUGIN_EVENT_OEMBED_MAXWIDTH);
                 $propbag->add('description',    PLUGIN_EVENT_OEMBED_MAXWIDTH_DESC);
                 $propbag->add('default',        '');
                 break;
+
             case 'maxheight':
                 $propbag->add('type',           'string');
                 $propbag->add('name',           PLUGIN_EVENT_OEMBED_MAXHEIGHT);
                 $propbag->add('description',    PLUGIN_EVENT_OEMBED_MAXHEIGHT_DESC);
                 $propbag->add('default',        '');
                 break;
+
             case 'generic_service':
                 $generic_services = array (
                     'none'       => PLUGIN_EVENT_OEMBED_SERVICE_NONE,
@@ -72,6 +95,7 @@ class serendipity_event_oembed extends serendipity_event
                 $propbag->add('select_values',  $generic_services);
                 $propbag->add('default',        'oohembed');
                 break;
+
             case 'audioboo_player':
                 $player_boo = array (
                     'standard'       => PLUGIN_EVENT_OEMBED_PLAYER_BOO_STANDARD,
@@ -84,12 +108,14 @@ class serendipity_event_oembed extends serendipity_event
                 $propbag->add('select_values',  $player_boo);
                 $propbag->add('default',        'wordpress');
                 break;
+
             case 'embedly_apikey':
                 $propbag->add('type',           'string');
                 $propbag->add('name',           PLUGIN_EVENT_OEMBED_EMBEDLY_APIKEY);
                 $propbag->add('description',    PLUGIN_EVENT_OEMBED_EMBEDLY_APIKEY_DESC);
                 $propbag->add('default',        '');
                 break;
+
             case 'supported':
                 $propbag->add('type',           'content');
                 $propbag->add('default',        sprintf(PLUGIN_EVENT_OEMBED_SUPPORTED, ProviderList::ul_providernames(true)));
@@ -104,7 +130,7 @@ class serendipity_event_oembed extends serendipity_event
 
         static $simplePatterns = null;
 
-        if ($simplePatterns==null) {
+        if ($simplePatterns == null) {
             $simplePatterns = array(
                 //'simpleTweet' => '@\(tweet\s+(\S*)\)@Usi',
                 'simpleTweet' => '@\[(?:e|embed)\s+(.*)\]@Usi',
@@ -114,21 +140,19 @@ class serendipity_event_oembed extends serendipity_event
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'frontend_display':
                     if (isset($eventData['body']) && isset($eventData['extended'])) {
                         $this->update_entry($eventData, $simplePatterns, 'body');
                         $this->update_entry($eventData, $simplePatterns, 'extended');
                     }
-                    return true;
+                    break;
 
                 case 'css':
-                    if (strpos($eventData, '.serendipity_oembed')) {
-                        // class exists in CSS, so a user has customized it and we don't need default
-                        // (doesn't work with templates like BP or 2k11 as the user css is loaded from a seperate file)
-                        return true;
-                    }
-                    $eventData .= '
+                    if (strpos($eventData, '.serendipity_oembed') === false) {
+                        $eventData .= '
 
 /* serendipity_event oembed start */
 
@@ -153,12 +177,17 @@ class serendipity_event_oembed extends serendipity_event
 /* serendipity_event oembed end */
 
 ';
-                return true;
+                    }
+                    break;
+
+                default:
+                    return false;
+
             }
+            return true;
+        } else {
+            return false;
         }
-
-        return true;
-
     }
 
     function update_entry(&$eventData, &$patterns, $dateType)

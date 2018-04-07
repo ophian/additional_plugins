@@ -20,7 +20,7 @@
 @define('PLUGIN_EVENT_OEMBED_SERVICE_OOHEMBED',  'oohembed (free but limited)');
 @define('PLUGIN_EVENT_OEMBED_SERVICE_EMBEDLY',   'embed.ly (apikey needed)');
 @define('PLUGIN_EVENT_OEMBED_EMBEDLY_APIKEY',     'embed.ly API key');
-@define('PLUGIN_EVENT_OEMBED_EMBEDLY_APIKEY_DESC','embed.ly needs an API key to be used. The free account allows 10k calls per month atm, what should be enough even for heavy used blogs, as the results are cached localy and fetched only once per URL. You can register for your free account at http://app.embed.ly/pricing/free');
+@define('PLUGIN_EVENT_OEMBED_EMBEDLY_APIKEY_DESC','embed.ly needs an API key to be used. The free account allows 10k calls per month atm, what should be enough even for heavy used blogs, as the results are cached locally and fetched only once per URL. You can register for your free account at http://app.embed.ly/pricing/free');
 
 @define('PLUGIN_EVENT_OEMBED_INFO',      '<h3>oEmbed Plugin</h3>' .
 '<p>'.
