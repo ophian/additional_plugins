@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 // Done for augusto @ bauer - online . org :-)
 
@@ -16,17 +16,11 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_markread extends serendipity_event
 {
-    var $title        = PLUGIN_MARKREAD_NAME;
+    var $title = PLUGIN_MARKREAD_NAME;
 
     function introspect(&$propbag)
     {
@@ -35,10 +29,10 @@ class serendipity_event_markread extends serendipity_event
         $propbag->add('name',          PLUGIN_MARKREAD_NAME);
         $propbag->add('description',   PLUGIN_MARKREAD_NAME);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.3');
+        $propbag->add('author',        'Garvin Hicking, Ian');
+        $propbag->add('version',       '1.5');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -53,6 +47,22 @@ class serendipity_event_markread extends serendipity_event
 
         $propbag->add('groups', array('STATISTICS'));
         $propbag->add('configuration', array('marklink', 'markedtext'));
+        $propbag->add('legal',    array(
+            'services' => array(
+            ),
+            'frontend' => array(
+                'To remember the read-state of entries, they are stored in a cookie (markread_visitor). Read indicators are stored in the database, referencing anonymous visitor IDs plus their read-timestamp and author-ids for logged in authors.',
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+                'Cookies are used to store the read-state of entries, by referencing visitor IDs to a database table'
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => false,
+            'transmits_user_input'  => false
+        ));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -73,12 +83,13 @@ class serendipity_event_markread extends serendipity_event
                 break;
 
             default:
-                    return false;
+                return false;
         }
         return true;
     }
 
-    function checkScheme() {
+    function checkScheme()
+    {
         global $serendipity;
 
         $version = $this->get_config('version', 'none');
@@ -102,10 +113,11 @@ class serendipity_event_markread extends serendipity_event
 
     function generate_content(&$title)
     {
-        $title       = $this->title;
+        $title = $this->title;
     }
 
-    function getToken() {
+    function getToken()
+    {
         global $serendipity;
 
         if ($_SESSION['serendipityAuthedUser'] === true && $_SESSION['serendipityAuthorid'] > 0) {
@@ -124,7 +136,8 @@ class serendipity_event_markread extends serendipity_event
         }
     }
 
-    function markRead($id) {
+    function markRead($id)
+    {
         global $serendipity;
 
         $time = time();
@@ -134,7 +147,8 @@ class serendipity_event_markread extends serendipity_event
         return serendipity_db_query($sql);
     }
 
-    function getRead($id) {
+    function getRead($id)
+    {
         global $serendipity;
 
         $res = serendipity_db_query("SELECT read_date
@@ -148,17 +162,20 @@ class serendipity_event_markread extends serendipity_event
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
+
                 case 'external_plugin':
-                    $parts     = explode('_', $eventData);
+                    $parts = explode('_', $eventData);
                     if (!empty($parts[1])) {
-                        $param     = (int)$parts[1];
+                        $param = (int)$parts[1];
                     } else {
                         return;
                     }
@@ -181,7 +198,6 @@ class serendipity_event_markread extends serendipity_event
 </body>
 </html>
 <?php
-
                     break;
 
                 case 'frontend_fetchentries':
@@ -190,7 +206,6 @@ class serendipity_event_markread extends serendipity_event
                                                            AS mr
                                                            ON (mr.entryid = e.id AND mr.visitor = '" . serendipity_db_escape_string($this->getToken()) . "')\n";
                     $eventData['addkey'] .= "mr.read_date,\n";
-                    return true;
                     break;
 
                 case 'frontend_configure':
@@ -215,7 +230,7 @@ class serendipity_event_markread extends serendipity_event
                     // {if $entry.properties.read_date > 0}This entry has been read!{/if}
                     if (!is_array($eventData)) {
                     }
-                    foreach($eventData as $i => $entry) {
+                    foreach($eventData AS $i => $entry) {
                         if (!is_array($entry)) continue;
 
                         if (!isset($entry['read_date'])) {
@@ -246,10 +261,13 @@ class serendipity_event_markread extends serendipity_event
                 default:
                     return false;
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

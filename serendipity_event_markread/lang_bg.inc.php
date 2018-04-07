@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.1
  */
@@ -14,3 +14,4 @@
 
 @define('PLUGIN_MARKREAD_MARKTEXT', 'Текст, показващ че статията е прочетена');
 @define('PLUGIN_MARKREAD_MARKTEXT_DEFAULT', 'Статията е прочетена');
+

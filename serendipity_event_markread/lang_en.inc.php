@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -15,4 +15,3 @@
 @define('PLUGIN_MARKREAD_MARKTEXT', 'Text to display when entry has been read');
 @define('PLUGIN_MARKREAD_MARKTEXT_DEFAULT', 'Entry marked as read');
 
-?>

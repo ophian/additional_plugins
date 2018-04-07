@@ -15,4 +15,3 @@
 @define('PLUGIN_MARKREAD_MARKTEXT',         'Text, který se zobrazí, když je příspěvek přečtený');
 @define('PLUGIN_MARKREAD_MARKTEXT_DEFAULT', 'Přečteno');
 
-?>

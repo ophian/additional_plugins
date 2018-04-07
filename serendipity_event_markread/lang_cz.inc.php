@@ -15,4 +15,3 @@
 @define('PLUGIN_MARKREAD_MARKTEXT',         'Text, který se zobrazí, kdy¾ je pøíspìvek pøeètený');
 @define('PLUGIN_MARKREAD_MARKTEXT_DEFAULT', 'Pøeèteno');
 
-?>
