@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.3
  */
@@ -27,4 +27,3 @@
 @define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER', 'Error message if no mail address exists.');
 @define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER_DEFAULT', 'No mail address has been configured for that author. A new password cannot be sent.');
 
-?>

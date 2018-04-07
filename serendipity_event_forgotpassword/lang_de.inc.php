@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_de.inc.php
  */
@@ -20,3 +20,4 @@
 @define('PLUGIN_EVENT_FORGOTPASSWORD_CHANGE_PASSWORD', 'Ändere Passwort');
 @define('PLUGIN_EVENT_FORGOTPASSWORD_PASSWORD_CHANGED', 'Änderung des Passwortes erfolgreich');
 @define('PLUGIN_EVENT_FORGOTPASSWORD_USER_NOT_EXIST', 'Gewählter Benutzername existiert nicht in der Datenbank, bitte zurück und erneut versuchen');
+

@@ -28,3 +28,4 @@
 @define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER_MAILTXT_DEFAULT', 'Uživatel "%s" se pokusil pøihlásit, ale nezadal emailovou adresu. Vytvoøte prosím nové heslo a kontaktujte uživatele.');
 @define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER', 'Chybová zpráva, pokud neexistuje emailová adresa.');
 @define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER_DEFAULT', 'Pro uživatele nebyla zadána žádná emailová adresa. Nové heslo nemohlo být posláno mailem.');
+

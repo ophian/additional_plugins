@@ -1,17 +1,10 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_forgotpassword extends serendipity_event
 {
@@ -23,23 +16,44 @@ class serendipity_event_forgotpassword extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FORGOTPASSWORD_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Omid Mottaghi');
-        $propbag->add('version',       '0.12.1');
+        $propbag->add('version',       '0.14');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9.1',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
         $propbag->add('event_hooks',   array('backend_login_page' => true));
-        
+
         $propbag->add('configuration', array('nomailinfo', 'nomailadd', 'nomailtxt'));
         $propbag->add('groups', array('BACKEND_FEATURES'));
+        $propbag->add('legal',    array(
+            'services' => array(
+                'mail' => array(
+                    'url'  => '#',
+                    'desc' => 'Sends E-Mails to user-specified addresses'
+                ),
+            ),
+            'frontend' => array(
+            ),
+            'backend' => array(
+                'This plugin sends tokens/links via e-mail as the result of a "forgot login" function.',
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => false,
+            'transmits_user_input'  => true
+        ));
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'nomailinfo':
                 $propbag->add('type',        'text');
@@ -65,15 +79,38 @@ class serendipity_event_forgotpassword extends serendipity_event
         return true;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function install()
+    {
+        global $serendipity;
+
+        //create table xxxx_forgotpassword
+            $q = "CREATE TABLE {$serendipity['dbPrefix']}forgotpassword (
+                    uid varchar(32) not null,
+                    authorid int(11) not null
+                )";
+            serendipity_db_schema_import($q);
+    }
+
+    function uninstall(&$propbag)
+    {
+        global $serendipity;
+
+        // Drop tables
+        $q = "DROP TABLE ".$serendipity['dbPrefix']."forgotpassword";
+        serendipity_db_schema_import($q);
+    }
+
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
-            switch($event) {
-                case 'backend_login_page':
 
+            switch($event) {
+
+                case 'backend_login_page':
                     // first LINK
                     if (!isset($_GET['forgotpassword']) && !isset($_GET['username']) && !isset($_POST['username'])) {
                         $eventData['footer'] = '
@@ -113,10 +150,10 @@ class serendipity_event_forgotpassword extends serendipity_event
                         }
 
                         if ($sql && is_array($sql)) {
-                            
+
                             if (empty($sql[0]['email'])) {
                                 $eventData['footer'] = '<div class="serendipityAdminMsgError"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png') . '" alt="" />' . $this->get_config('nomailinfo') . '</div>';
-                                
+
                                 if ($this->get_config('nomailadd') != '') {
                                     $sent = serendipity_sendMail($this->get_config('nomailadd'), PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SUBJECT, sprintf($this->get_config('nomailtxt'), $_POST['username']), NULL);
                                 }
@@ -190,7 +227,7 @@ class serendipity_event_forgotpassword extends serendipity_event
                         </form>';
                         return true;
                     // changed password page
-                    } elseif (isset($_POST['uid']) && isset($_POST['username']) && isset($_POST['password'])){
+                    } elseif (isset($_POST['uid']) && isset($_POST['username']) && isset($_POST['password'])) {
                         $q = 'SELECT * FROM '.$serendipity['dbPrefix'].'forgotpassword where authorid = \''.serendipity_db_escape_string($_POST['username']).'\' and uid = \''.serendipity_db_escape_string($_POST['uid']).'\'';
                         $sql = serendipity_db_query($q);
 
@@ -201,11 +238,11 @@ class serendipity_event_forgotpassword extends serendipity_event
 
                             if (function_exists('serendipity_hash')) {
                                 $password = serendipity_hash($_POST['password']);
-    
+
                                 $q = 'UPDATE '.$serendipity['dbPrefix'].'authors SET hashtype=1, password=\''.$password.'\' where authorid = \''.serendipity_db_escape_string($_POST['username']).'\'';
                             } else {
                                 $password = md5($_POST['password']);
-    
+
                                 $q = 'UPDATE '.$serendipity['dbPrefix'].'authors SET password=\''.$password.'\' where authorid = \''.serendipity_db_escape_string($_POST['username']).'\'';
                             }
                             $sql = serendipity_db_query($q);
@@ -238,37 +275,20 @@ class serendipity_event_forgotpassword extends serendipity_event
                                 </tr>
                             </table>';
                             return true;
+                        }
                     }
-                }
-                break;
+                    break;
 
                 default:
                     return false;
             }
+            return true;
         } else {
             return false;
         }
-        return false;
     }
 
-    function install() {
-    global $serendipity;
-
-    //create table xxxx_forgotpassword
-        $q = "CREATE TABLE {$serendipity['dbPrefix']}forgotpassword (
-    uid varchar(32) not null,
-    authorid int(11) not null
-        )";
-        serendipity_db_schema_import($q);
-    }
-
-    function uninstall(&$propbag) {
-        global $serendipity;
-
-    // Drop tables
-        $q = "DROP TABLE ".$serendipity['dbPrefix']."forgotpassword";
-        serendipity_db_schema_import($q);
-    }
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

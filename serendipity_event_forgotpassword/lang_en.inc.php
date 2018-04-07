@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -27,4 +27,3 @@
 @define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER', 'Error message if no mail address exists.');
 @define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER_DEFAULT', 'No mail address has been configured for that author. A new password cannot be sent.');
 
-?>
