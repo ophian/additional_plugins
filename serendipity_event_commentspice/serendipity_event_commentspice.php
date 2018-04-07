@@ -28,7 +28,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',        '1.10');
+        $propbag->add('version',        '1.11');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -43,6 +43,39 @@ class serendipity_event_commentspice extends serendipity_event
             'avatar_fetch_userinfos'        => true,
         ));
         $propbag->add('groups', array('FRONTEND_VIEWS'));
+        $propbag->add('legal',    array(
+            'services' => array(
+                'twitter' => array(
+                    'url'  => 'https://www.twitter.com/',
+                    'desc' => 'Transmits comment data and metadata to twitter.'
+                ),
+                'identica' => array(
+                    'url'  => 'http://www.identi.ca',
+                    'desc' => 'Transmits comment data and metadata to identica.'
+                ),
+                'audio/boo' => array(
+                    'url'  => 'http://boo.fm',
+                    'desc' => 'Transmits comment data and metadata to boo.fm / audioboo.fm.'
+                ),
+                'rss' => array(
+                    'url'  => '#',
+                    'desc' => 'Transmits comment data and metadata to RSS'
+                ),
+            ),
+            'frontend' => array(
+                'Various webservices can be enabled to provide widget functionality for enhancing user comments',
+                'Comment data and metadata may be transferred to the configured service providers'
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+                '"Remember me" functionality can be offered when commenting with specific service providers'
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
 
         $config_bee = array();
         if (!class_exists('serendipity_event_spamblock_bee')) { // Only do that, if spamblock is not installed.
@@ -131,24 +164,24 @@ class serendipity_event_commentspice extends serendipity_event
                 break;
 
             case 'followme_widget':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET);
                 $propbag->add('description', PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'followme_widget_counter':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_COUNT);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_COUNT);
                 $propbag->add('description', PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_COUNT_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'followme_widget_dark':
-                $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_DARK);
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_DARK);
                 $propbag->add('description', PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_DARK_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'title_announcerss':
@@ -493,7 +526,7 @@ class serendipity_event_commentspice extends serendipity_event
 ";
         }
 
-        if (serendipity_db_bool($this->get_config('followme_widget', false))) {
+        if (serendipity_db_bool($this->get_config('followme_widget', 'false'))) {
             echo '<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>' . "\n";
         }
     }
@@ -895,7 +928,7 @@ class serendipity_event_commentspice extends serendipity_event
                     $eventData['spice_twitter_followme'] = $followme_widget;
                 }
                 else {
-                    if (serendipity_db_bool($this->get_config('followme_widget', false))) {
+                    if (serendipity_db_bool($this->get_config('followme_widget', 'false'))) {
                         $eventData['comment'] = $followme_widget . '<br/>' . $eventData['comment'];
                     }
                     else {
@@ -962,12 +995,12 @@ class serendipity_event_commentspice extends serendipity_event
 
     function createFollowMeWidget($wittername, $timeline_url_nofollow)
     {
-        if (serendipity_db_bool($this->get_config('followme_widget', false))) {
+        if (serendipity_db_bool($this->get_config('followme_widget', 'false'))) {
             $extra_style = '';
-            if (serendipity_db_bool($this->get_config('followme_widget_dark', false))) {
+            if (serendipity_db_bool($this->get_config('followme_widget_dark', 'false'))) {
                 $extra_style .= ' data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF"';
             }
-            if (!serendipity_db_bool($this->get_config('followme_widget_counter', false))) {
+            if (!serendipity_db_bool($this->get_config('followme_widget_counter', 'false'))) {
                 $extra_style .= '  data-show-count="false"';
             }
             return '<a href="https://twitter.com/' . $wittername . '" class="twitter-follow-button"' . $extra_style . ($timeline_url_nofollow ? ' rel="nofollow"' : '') . '>Follow @' . $wittername . '</a>';

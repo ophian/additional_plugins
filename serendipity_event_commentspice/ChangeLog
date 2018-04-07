@@ -1,10 +1,15 @@
+1.11:
+-----
+ * Added legal property bag information for gdpr/dsgvo
+ * Fixes for plugin consistency
+
 1.10:
 -----
-    * Fix spelling issue
+ * Fix spelling issue
 
 1.09:
 -----
-    * Fix Adress for Twitter JS-Script to avoid broken security chain when using https.
+ * Fix Adress for Twitter JS-Script to avoid broken security chain when using https.
 
 1.08:
 -----
