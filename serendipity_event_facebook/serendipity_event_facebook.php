@@ -24,7 +24,7 @@ class serendipity_event_facebook extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.1.0'
         ));
-        $propbag->add('version',       '0.9');
+        $propbag->add('version',       '1.00');
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $propbag->add('event_hooks', array(
             'frontend_display'  => true,
@@ -35,6 +35,26 @@ class serendipity_event_facebook extends serendipity_event
         ));
 
         $propbag->add('configuration', array('facebook_users', 'facebook_moderate', 'limit', 'via', 'cronjob'));
+        $propbag->add('legal',    array(
+            'services' => array(
+                'facebook' => array(
+                    'url'  => 'https://www.facebook.com',
+                    'desc' => 'Checks links against  the FB Graph API and imports comments on facebook to this blog (duplicating user data/input from facebook).'
+                ),
+            ),
+            'frontend' => array(
+                'Checks links against  the FB Graph API and imports comments on facebook to this blog (duplicating user data/input from facebook).',
+                'Can display users facebook avatars from those comments, which will make the visitor request a Facebook URL and thus transmits visitor metadata (IP, browser, referrer) to the facebook servers.'
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => true,
+            'stores_ip'             => false,
+            'uses_ip'               => false,
+            'transmits_user_input'  => true
+        ));
     }
 
     function tableCreated($table = 'facebook')

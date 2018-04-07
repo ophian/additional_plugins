@@ -1,3 +1,8 @@
+1.00:
+----
+
+ * Added legal property bag information for gdpr/dsgvo
+
 0.9:
 ----
  * Restrict sql index key length for utf8mb4 migration to mysqli only
