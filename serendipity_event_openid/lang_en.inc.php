@@ -21,14 +21,14 @@
 '<h3>OpenID Delegation Settings (Optional)</h3>' .
 '<p>If you want to use your blog as your OpenID URL while logging in to services supporting it, you can configure here a delegation from your blog to the OpenID service hosting your ID.<br/>' .
 'The plugin will add some information to your blogs HTML informing the services about where to look up your ID when you enter your blogs URL as your OpenID.</p>' .
-'<p>Settung up delegation is completely optional and not needed for logging into your blog with OpenID.</p>'
+'<p>Setting up delegation is completely optional and not needed for logging into your blog with OpenID.</p>'
 );
 
 @define('PLUGIN_OPENID_LOGIN_USERS', 'Login with user selection');
 @define('PLUGIN_OPENID_LOGIN_USERS_DESC', 
 'After authors of this blog have configured their OpenID URL they can select their name and log in.
 As this is a very convenient way to log in it shows others the names of the authors of your blog.
-This should be no problem normaly as they are visible in your articles, too.
+This should be no problem normally as they are visible in your articles, too.
 But if you don\'t like that you can switch this off and there will be a normal OpenID URL input only.');
 
 @define('PLUGIN_OPENID_SERVER', 'OpenID server used for delegation');
@@ -38,15 +38,15 @@ But if you don\'t like that you can switch this off and there will be a normal O
 @define('PLUGIN_OPENID_DELEGATE_DESC', 'OpenID delegate (requires OpenID server to be populated)');
 
 @define('PLUGIN_OPENID_XRDS_LOC', 'OpenID XRDS Location');
-@define('PLUGIN_OPENID_XRDS_LOC_DESC', 'URL for XRDS Document Location (not needed normaly)');
+@define('PLUGIN_OPENID_XRDS_LOC_DESC', 'URL for XRDS Document Location (not needed normally)');
 
 @define('PLUGIN_OPENID_VERSION_SUPPORTED', 'OpenID Version');
-@define('PLUGIN_OPENID_VERSION_SUPPORTED_DESC', 'The version your OpenID provider is supporting. Normaly "both" is okay, but if you know your provider does support only version 1 or only version 2 you can configure it here.');
+@define('PLUGIN_OPENID_VERSION_SUPPORTED_DESC', 'The version your OpenID provider is supporting. Normally "both" is okay, but if you know your provider does support only version 1 or only version 2 you can configure it here.');
 @define('PLUGIN_OPENID_VERSION_SUPPORTED_V1', 'OpenID Version 1 only');
 @define('PLUGIN_OPENID_VERSION_SUPPORTED_V2', 'OpenID Version 2 only');
 @define('PLUGIN_OPENID_VERSION_SUPPORTED_BOTH', 'Both OpenID Versions');
 
-@define('PLUGIN_OPENID_LOGIN_INPUT', 'Logon using your OpenID.');
+@define('PLUGIN_OPENID_LOGIN_INPUT', 'Login using your OpenID.');
 
 @define('PLUGIN_OPENID_UPDATE_SUCCESS', 'Your OpenID has been updated');
 @define('PLUGIN_OPENID_UPDATE_FAIL', 'An Error occurred updating your OpenID');

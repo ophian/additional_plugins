@@ -1,7 +1,12 @@
-<?php # 
+<?php
+
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
+
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 include_once dirname(__FILE__) . '/common.inc.php';
-
 
 class serendipity_event_openid extends serendipity_event
 {
@@ -12,10 +17,10 @@ class serendipity_event_openid extends serendipity_event
         $propbag->add('name',        PLUGIN_OPENID_NAME);
         $propbag->add('description', PLUGIN_OPENID_DESC);
         $propbag->add('stackable',   false);
-        $propbag->add('author',      'Grischa Brockhaus, Rob Richards');
-        $propbag->add('version',     '1.2.2');
+        $propbag->add('author',      'Grischa Brockhaus, Rob Richards, Ian');
+        $propbag->add('version',     '1.4');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.2',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '5.1.3'
         ));
@@ -25,7 +30,7 @@ class serendipity_event_openid extends serendipity_event
             'backend_login_page'        => true,
             'backend_sidebar_entries_event_display_profiles' => true,
             'frontend_header'           => true,
-            'external_plugin'			=> true
+            'external_plugin'           => true
         ));
 
         $propbag->add('configuration', array(
@@ -36,6 +41,26 @@ class serendipity_event_openid extends serendipity_event
             'delegate',
             'xrds_location',
             'openid_version'
+        ));
+        $propbag->add('legal',    array(
+            'services' => array(
+                'openID' => array(
+                    'url'  => '#',
+                    'desc' => 'OpenID provides will receive login data'
+                ),
+            ),
+            'frontend' => array(
+                'When a openID login provider is selected, logging in to the blog will transmit data from and to the selected OpenID provider.',
+            ),
+            'backend' => array(
+                'When a openID login provider is selected, logging in to the blog will transmit data from and to the selected OpenID provider.',
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
         ));
     }
 
@@ -92,11 +117,13 @@ class serendipity_event_openid extends serendipity_event
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_OPENID_NAME;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         static $login_url = null;
 
@@ -139,6 +166,7 @@ class serendipity_event_openid extends serendipity_event
                         echo file_get_contents(dirname(__FILE__). '/img/aol_small.png');
                     }
                     break;
+
                 case 'frontend_header':
                     $this->print_header();
                     break;
@@ -153,19 +181,23 @@ class serendipity_event_openid extends serendipity_event
 
                 case 'backend_login':
                     return $this->do_login($eventData);
-                                        
+                // no break
                 case 'backend_sidebar_entries_event_display_profiles':
                     $this->print_sidebar();
-                    return true;
+                    break;
+
                 default:
                     return false;
+
             }
+            return true;
         } else {
             return false;
         }
     }
     
-    function do_login(&$eventData) {
+    function do_login(&$eventData)
+    {
         global $serendipity;
         
         $inOpenIdChange = !empty($serendipity['POST']['openidflag']) && ($serendipity['POST']['openidflag']==3);
@@ -209,7 +241,8 @@ class serendipity_event_openid extends serendipity_event
         return $eventData;
     }
     
-    function print_header() {
+    function print_header()
+    {
         $server = $this->get_config('server');
         $openidurl = $this->get_config('delegate');
         $xrdsloc = $this->get_config('xrds_location');
@@ -229,17 +262,18 @@ class serendipity_event_openid extends serendipity_event
             }
             /* Make sure linefeeds exist otherwise OpenID does not always work correctly */
             echo "\n";
-            echo '<link rel="' . $rel_oserver .'" href="'.$server.'" />	'."\n";
+            echo '<link rel="' . $rel_oserver .'" href="'.$server.'" />'."\n";
             if (! empty($openidurl)) {
-                echo '<link rel="' . $rel_odelegate .'" href="'.$openidurl.'" />	'."\n";
+                echo '<link rel="' . $rel_odelegate .'" href="'.$openidurl.'" />'."\n";
             }
             if (! empty($xrdsloc)) {
-                echo '<meta http-equiv="X-XRDS-Location" content="'.$xrdsloc.'" />	'."\n";
+                echo '<meta http-equiv="X-XRDS-Location" content="'.$xrdsloc.'" />'."\n";
             }
         }
     }
     
-    function print_sidebar() {
+    function print_sidebar()
+    {
         global $serendipity;
         
         if (($_SESSION['serendipityAuthedUser'] == true)) {
@@ -293,6 +327,8 @@ class serendipity_event_openid extends serendipity_event
         
         return $serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/_php_consumer_test';
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

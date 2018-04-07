@@ -1,38 +1,52 @@
+1.4:
+----
+
+ * Added legal property bag information for gdpr/dsgvo
+
+1.3:
+----
+
+ * Set plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+
 Version 1.2.2
-* Use PHP 5.3+ "static" function keyword
+-------------
+
+ * Use PHP 5.3+ "static" function keyword
 
 Version 1.2
+-------------
 
-* Fixed missing "realname" attribute in authentication
+ * Fixed missing "realname" attribute in authentication
 
 Version 1.0 (brockhaus)
 ---------------------------------
-* Delegation: Configure what OpenID version the provider is supporting (Version 1 or 2 or both)
-* A little refactoring done to make code more readable.
+ * Delegation: Configure what OpenID version the provider is supporting (Version 1 or 2 or both)
+ * A little refactoring done to make code more readable.
 
 Version 0.9 (brockhaus)
 ---------------------------------
-* If no user has configured his OpenID yet, there will be no OpenID login but a info about that.
-* No need to enter your OpenID URL anymore, just choose the user and log in (can be switched back to old style)
+ * If no user has configured his OpenID yet, there will be no OpenID login but a info about that.
+ * No need to enter your OpenID URL anymore, just choose the user and log in (can be switched back to old style)
 
 Version 0.8 (brockhaus)
 ---------------------------------
-* Added AOL shortcut
-* Added description about the shortcuts to the configuration screen.
+ * Added AOL shortcut
+ * Added description about the shortcuts to the configuration screen.
 
 Version 0.7 (brockhaus)
 ---------------------------------
-* Was not able to change users OpenID url, if logged in with another external login (like BrowserID)
-* Added Google and Yahoo as shortcuts. They provide OpenID with a generic URL. 
+ * Was not able to change users OpenID url, if logged in with another external login (like BrowserID)
+ * Added Google and Yahoo as shortcuts. They provide OpenID with a generic URL. 
 
 Version 0.6 (brockhaus)
 ---------------------------------
-* Patched OpenID library to do an autofallback, if /dev/urandom is not accessible instead of failing completely.
+ * Patched OpenID library to do an autofallback, if /dev/urandom is not accessible instead of failing completely.
  
 Version 0.5 (brockhaus)
 ---------------------------------
-* New PHP-OpenId lib
-* Patched it with a pull request found at GitHub solving depreated problems
-* Removed temp storage path from config (as no user knows what to do here) and replaced it with a templates_c path.
-* A lot more documentation inside the plugin configuration.
-* A lot of fixes.
+ * New PHP-OpenId lib
+ * Patched it with a pull request found at GitHub solving depreated problems
+ * Removed temp storage path from config (as no user knows what to do here) and replaced it with a templates_c path.
+ * A lot more documentation inside the plugin configuration.
+ * A lot of fixes.
