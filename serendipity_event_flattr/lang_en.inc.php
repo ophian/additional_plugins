@@ -20,3 +20,4 @@
 @define('PLUGIN_FLATTR_ACTIVE', 'Enable flattr');
 
 @define('PLUGIN_FLATTR_BUTTON_DESC', 'If you enter anything other than "default" or "compact", this text will be used for a static button. You can enter "Click here to flattr" for example.');
+

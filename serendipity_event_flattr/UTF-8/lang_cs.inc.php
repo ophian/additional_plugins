@@ -35,3 +35,4 @@
 
 @define('PLUGIN_FLATTR_POPOUT', 'Zobrazovat popup okno během pohybu myši nad tlačítkem Flattr');
 @define('PLUGIN_FLATTR_ADD_TO_FEED', 'Přidat tlačítko Flattr do kanálu RSS/ATOM?');
+

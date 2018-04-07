@@ -1,4 +1,4 @@
-<?php # lang_de.inc.php 1.0 2011-11-22 16:56:19 VladaAjgl $
+<?php
 
 /**
  *  @version 1.0
@@ -25,3 +25,4 @@
 
 // Next lines were translated on 2011/11/22
 @define('PLUGIN_FLATTR_BUTTON_DESC', 'Wird etwas anderes als "default" oder "compact" eingetragen, dann wird dieser Text für den Button verwendet. Z.B. kann hier "Klicke hier um zu Flattern" eingetragen werden.');
+

@@ -1,21 +1,16 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 /**
  * Serendipity Flattr Plugin
  */
-class serendipity_event_flattr extends serendipity_event {
+class serendipity_event_flattr extends serendipity_event
+{
     /**
      * @var string
      */
@@ -25,7 +20,8 @@ class serendipity_event_flattr extends serendipity_event {
      * @param string $str
      * @return string
      */
-    function _addslashes($str) {
+    function _addslashes($str)
+    {
         $str = str_replace(array("\r", "\n"), array(' ', ' '), $str);
         return addslashes($str);
     }
@@ -33,7 +29,8 @@ class serendipity_event_flattr extends serendipity_event {
     /**
      * @param serendipity_property_bag $propbag
      */
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $events = array(
             'backend_display'                     => true,
             'frontend_display'                    => true,
@@ -59,12 +56,29 @@ class serendipity_event_flattr extends serendipity_event {
             'flattr_pop',
             'add_to_feed',
         ));
-        $propbag->add('author',  'Garvin Hicking, Joachim Breitner', 'Matthias Gutjahr');
-        $propbag->add('version', '1.13');
+        $propbag->add('author',  'Garvin Hicking, Joachim Breitner', 'Matthias Gutjahr, Ian');
+        $propbag->add('version', '1.15');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
+        ));
+        $propbag->add('legal',    array(
+            'services' => array(
+                'flattr' => array(
+                    'url'  => 'https://www.flattr.com',
+                    'desc' => 'Transmits user metadata (IP) to flattr for embedded widgets'
+                ),
+            ),
+            'frontend' => array(
+                'To display a flattr badge and the ability to sponsor sites, a widget is embedded from a foreign server, which transmits the user metadata (IP, browser, referrer).',
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => false,
+            'transmits_user_input'  => true
         ));
         $this->flattr_cats = array(
             'text'      => 'text', 
@@ -236,22 +250,26 @@ class serendipity_event_flattr extends serendipity_event {
      * @param mixed $addData
      * @return bool
      */
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
-        switch ($event) {
-            case 'backend_publish':
-            case 'backend_save':
-                serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = '" . $eventData['id'] . "' AND property LIKE 'ep_flattr%'");
+        $hooks = &$bag->get('event_hooks');
 
-                foreach($this->flattr_attrs AS $attr => $attr_desc) {
-                    serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, value, property) VALUES ('" . $eventData['id'] . "', '" . serendipity_db_escape_string($serendipity['POST']['properties']['ep_' . $attr]) . "', 'ep_" . $attr . "')");
-                }
+        if (isset($hooks[$event])) {
 
-                return true;
-                break;
+            switch($event) {
 
-            case 'backend_display':
+                case 'backend_publish':
+                case 'backend_save':
+                    serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = '" . $eventData['id'] . "' AND property LIKE 'ep_flattr%'");
+
+                    foreach($this->flattr_attrs AS $attr => $attr_desc) {
+                        serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, value, property) VALUES ('" . $eventData['id'] . "', '" . serendipity_db_escape_string($serendipity['POST']['properties']['ep_' . $attr]) . "', 'ep_" . $attr . "')");
+                    }
+                    break;
+
+                case 'backend_display':
 ?>
                     <fieldset style="margin: 5px">
                         <legend><?php echo PLUGIN_FLATTR_NAME; ?></legend>
@@ -291,14 +309,13 @@ class serendipity_event_flattr extends serendipity_event {
 ?>
                     </fieldset>
 <?php
-                    return true;
                     break;
 
-            case 'frontend_header':
-                $flattr_uid = substr($this->_addslashes($this->get_config('userid')), 0, 500);
-                $flattr_btn = $this->_addslashes($this->get_config('flattr_btn'));
-                $flattr_lng = substr($this->get_config('flattr_lng'), 0, 255);
-                $flattr_cat = substr($this->get_config('flattr_cat'), 0, 255);
+                case 'frontend_header':
+                    $flattr_uid = substr($this->_addslashes($this->get_config('userid')), 0, 500);
+                    $flattr_btn = $this->_addslashes($this->get_config('flattr_btn'));
+                    $flattr_lng = substr($this->get_config('flattr_lng'), 0, 255);
+                    $flattr_cat = substr($this->get_config('flattr_cat'), 0, 255);
 ?>
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -320,76 +337,76 @@ class serendipity_event_flattr extends serendipity_event {
 /* ]]> */
 </script>
 <?php
-                break;
+                    break;
 
-            case 'frontend_display':
-                if (empty($eventData['properties'])) {
-                    $eventData['properties'] =& serendipity_fetchEntryProperties($eventData['id']);
-                }
-            
-                if ($eventData['properties']['ep_flattr_active'] == '-1') {
-                    return true;
-                }
-
-                if (empty($eventData['body']) && empty($eventData['extended'])) {
-                    return true;
-                }
+                case 'frontend_display':
+                    if (empty($eventData['properties'])) {
+                        $eventData['properties'] =& serendipity_fetchEntryProperties($eventData['id']);
+                    }
                 
-                $flattr_uid = $this->_addslashes($this->get_config('userid'));
-                $flattr_tle = $this->_addslashes($eventData['title']);
-                $flattr_pop = (int) $this->get_config('flattr_pop');
+                    if ($eventData['properties']['ep_flattr_active'] == '-1') {
+                        return true;
+                    }
 
-                $flattr_dsc = $this->_addslashes($eventData['properties']['ep_flattr_dsc']);
-                $flattr_cat = $this->_addslashes($eventData['properties']['ep_flattr_cat']);
-                $flattr_lng = $this->_addslashes($eventData['properties']['ep_flattr_lng']);
-                $flattr_tag = $this->_addslashes($eventData['properties']['ep_flattr_tag']);
+                    if (empty($eventData['body']) && empty($eventData['extended'])) {
+                        return true;
+                    }
+                    
+                    $flattr_uid = $this->_addslashes($this->get_config('userid'));
+                    $flattr_tle = $this->_addslashes($eventData['title']);
+                    $flattr_pop = (int) $this->get_config('flattr_pop');
 
-                if (empty($flattr_dsc)) {
-                    $flattr_dsc = $this->_addslashes($eventData['body']);
-                }
-                $flattr_dsc = strip_tags($flattr_dsc);
-                
-                if (empty($flattr_cat)) {
-                    $flattr_cat = $this->get_config('flattr_cat');
-                }
-                
-                if (empty($flattr_lng)) {
-                    $flattr_lng = $this->get_config('flattr_lng');
-                }
-                
-                if (empty($flattr_tag) && class_exists('serendipity_event_freetag')) {
-                    $_tags = serendipity_event_freetag::getTagsForEntries(array($eventData['id']));
-                    $tags = (is_array($_tags) ? array_pop($_tags) : array());
-                    $flattr_tag = implode(',', $tags);
-                }
+                    $flattr_dsc = $this->_addslashes($eventData['properties']['ep_flattr_dsc']);
+                    $flattr_cat = $this->_addslashes($eventData['properties']['ep_flattr_cat']);
+                    $flattr_lng = $this->_addslashes($eventData['properties']['ep_flattr_lng']);
+                    $flattr_tag = $this->_addslashes($eventData['properties']['ep_flattr_tag']);
 
-                $flattr_url = $this->_addslashes(serendipity_archiveURL($eventData['id'], $eventData['title'], 'baseURL', true, array('timestamp' => $eventData['timestamp'])));
-            
-                $flattr_btn = $this->_addslashes($this->get_config('flattr_btn'));
-                
-                $flattr_uid = substr($flattr_uid, 0, 500);
-                $flattr_tle = substr($flattr_tle, 0, 500);
-                $flattr_dsc = substr($flattr_dsc, 0, 1000);
-                $flattr_cat = substr($flattr_cat, 0, 255);
-                $flattr_lng = substr($flattr_lng, 0, 255);
-                $flattr_tag = substr($flattr_tag, 0, 255);
-                $flattr_url = substr($flattr_url, 0, 2048);
-                $flattr_btn = substr($flattr_btn, 0, 255);
+                    if (empty($flattr_dsc)) {
+                        $flattr_dsc = $this->_addslashes($eventData['body']);
+                    }
+                    $flattr_dsc = strip_tags($flattr_dsc);
+                    
+                    if (empty($flattr_cat)) {
+                        $flattr_cat = $this->get_config('flattr_cat');
+                    }
+                    
+                    if (empty($flattr_lng)) {
+                        $flattr_lng = $this->get_config('flattr_lng');
+                    }
+                    
+                    if (empty($flattr_tag) && class_exists('serendipity_event_freetag')) {
+                        $_tags = serendipity_event_freetag::getTagsForEntries(array($eventData['id']));
+                        $tags = (is_array($_tags) ? array_pop($_tags) : array());
+                        $flattr_tag = implode(',', $tags);
+                    }
 
-                if ($flattr_btn != 'default' && $flattr_btn != 'compact') {
-                    $flattr = "<a href=\"https://flattr.com/submit/auto?".
-                             "user_id=".urlencode($flattr_uid)."&".
-                             "url=".urlencode($flattr_url)."&".
-                             "title=".urlencode($flattr_tle)."&".
-                             "description=".urlencode($flattr_dsc)."&".
-                             "category=".urlencode($flattr_cat)."&".
-                             "popout=".urlencode($flattr_pop)."&".
-                             "language=".urlencode($flattr_lng).
-                             "\">" . $flattr_btn . "</a>";
-                } else {
-                    $flattr_tle2 = stripslashes($flattr_tle2);
-                    $flattr_tle2 = (function_exists('serendipity_specialchars') ? serendipity_specialchars($flattr_tle2) : htmlspecialchars($flattr_tle2, ENT_COMPAT, LANG_CHARSET));
-                    $flattr = "
+                    $flattr_url = $this->_addslashes(serendipity_archiveURL($eventData['id'], $eventData['title'], 'baseURL', true, array('timestamp' => $eventData['timestamp'])));
+                
+                    $flattr_btn = $this->_addslashes($this->get_config('flattr_btn'));
+                    
+                    $flattr_uid = substr($flattr_uid, 0, 500);
+                    $flattr_tle = substr($flattr_tle, 0, 500);
+                    $flattr_dsc = substr($flattr_dsc, 0, 1000);
+                    $flattr_cat = substr($flattr_cat, 0, 255);
+                    $flattr_lng = substr($flattr_lng, 0, 255);
+                    $flattr_tag = substr($flattr_tag, 0, 255);
+                    $flattr_url = substr($flattr_url, 0, 2048);
+                    $flattr_btn = substr($flattr_btn, 0, 255);
+
+                    if ($flattr_btn != 'default' && $flattr_btn != 'compact') {
+                        $flattr = "<a href=\"https://flattr.com/submit/auto?".
+                                 "user_id=".urlencode($flattr_uid)."&".
+                                 "url=".urlencode($flattr_url)."&".
+                                 "title=".urlencode($flattr_tle)."&".
+                                 "description=".urlencode($flattr_dsc)."&".
+                                 "category=".urlencode($flattr_cat)."&".
+                                 "popout=".urlencode($flattr_pop)."&".
+                                 "language=".urlencode($flattr_lng).
+                                 "\">" . $flattr_btn . "</a>";
+                    } else {
+                        $flattr_tle2 = stripslashes($flattr_tle2);
+                        $flattr_tle2 = (function_exists('serendipity_specialchars') ? serendipity_specialchars($flattr_tle2) : htmlspecialchars($flattr_tle2, ENT_COMPAT, LANG_CHARSET));
+                        $flattr = "
 <a class='FlattrButton' style='display:none;'
     title=\"" . $flattr_tle2 . "\"
     data-flattr-uid='" . $flattr_uid . "'
@@ -401,58 +418,65 @@ class serendipity_event_flattr extends serendipity_event {
     " . stripslashes($flattr_dsc) . "
 </a>
     ";
-                }
+                    }
 
-                $field = $this->get_config('placement');
-                
-                if ($addData['from'] == 'functions_entries:updertEntry') {
-                } elseif ($addData['from'] == 'functions_entries:printEntries_rss') {
-                    $entryText =& $this->getFieldReference($field, $eventData);
-                    $entryText .= (function_exists('serendipity_specialchars') ? serendipity_specialchars($flattr) : htmlspecialchars($flattr, ENT_COMPAT, LANG_CHARSET));
-                } else {
-                    $entryText =& $this->getFieldReference($field, $eventData);
-                    $entryText .= $flattr;
-                }
-                
-                if ($field == 'extended') {
-                    $eventData['is_extended'] = true;
-                }
+                    $field = $this->get_config('placement');
+                    
+                    if ($addData['from'] == 'functions_entries:updertEntry') {
+                    } elseif ($addData['from'] == 'functions_entries:printEntries_rss') {
+                        $entryText =& $this->getFieldReference($field, $eventData);
+                        $entryText .= (function_exists('serendipity_specialchars') ? serendipity_specialchars($flattr) : htmlspecialchars($flattr, ENT_COMPAT, LANG_CHARSET));
+                    } else {
+                        $entryText =& $this->getFieldReference($field, $eventData);
+                        $entryText .= $flattr;
+                    }
+                    
+                    if ($field == 'extended') {
+                        $eventData['is_extended'] = true;
+                    }
+                    break;
 
-                break;
-
-            case 'frontend_display:rss-1.0:namespace':
-            case 'frontend_display:rss-2.0:namespace':
-                if ($this->get_config('add_to_feed')) {
-                    $eventData['display_dat'] .= '
+                case 'frontend_display:rss-1.0:namespace':
+                case 'frontend_display:rss-2.0:namespace':
+                    if ($this->get_config('add_to_feed')) {
+                        $eventData['display_dat'] .= '
    xmlns:atom="http://www.w3.org/2005/Atom"';
-                }
-                return true;
-                break;
+                    }
+                    break;
 
-            case 'frontend_display:rss-1.0:per_entry':
-            case 'frontend_display:rss-2.0:per_entry':
-                if ($this->get_config('add_to_feed')) {
-                    $flattr_uid = $this->_addslashes($this->get_config('userid'));
-                    $flattr_uid = substr($flattr_uid, 0, 500);
-                    $flattr_url = $this->_addslashes(serendipity_archiveURL($eventData['id'], $eventData['title'], 'baseURL', true, array('timestamp' => $eventData['timestamp'])));
-                    $flattr_url = substr($flattr_url, 0, 2048);
-                    $eventData['display_dat'] .= '
+                case 'frontend_display:rss-1.0:per_entry':
+                case 'frontend_display:rss-2.0:per_entry':
+                    if ($this->get_config('add_to_feed')) {
+                        $flattr_uid = $this->_addslashes($this->get_config('userid'));
+                        $flattr_uid = substr($flattr_uid, 0, 500);
+                        $flattr_url = $this->_addslashes(serendipity_archiveURL($eventData['id'], $eventData['title'], 'baseURL', true, array('timestamp' => $eventData['timestamp'])));
+                        $flattr_url = substr($flattr_url, 0, 2048);
+                        $eventData['display_dat'] .= '
     <atom:link rel="payment" href="https://flattr.com/submit/auto?url=' . urlencode($flattr_url) . '&amp;user_id=' . $flattr_uid . '" type="text/html" />';
-                }
-                return true;
-                break;
+                    }
+                    break;
 
-            case 'frontend_display:atom-1.0:per_entry':
-                if ($this->get_config('add_to_feed')) {
-                    $flattr_uid = $this->_addslashes($this->get_config('userid'));
-                    $flattr_uid = substr($flattr_uid, 0, 500);
-                    $flattr_url = $this->_addslashes(serendipity_archiveURL($eventData['id'], $eventData['title'], 'baseURL', true, array('timestamp' => $eventData['timestamp'])));
-                    $flattr_url = substr($flattr_url, 0, 2048);
-                    $eventData['display_dat'] .= '
+                case 'frontend_display:atom-1.0:per_entry':
+                    if ($this->get_config('add_to_feed')) {
+                        $flattr_uid = $this->_addslashes($this->get_config('userid'));
+                        $flattr_uid = substr($flattr_uid, 0, 500);
+                        $flattr_url = $this->_addslashes(serendipity_archiveURL($eventData['id'], $eventData['title'], 'baseURL', true, array('timestamp' => $eventData['timestamp'])));
+                        $flattr_url = substr($flattr_url, 0, 2048);
+                        $eventData['display_dat'] .= '
     <link rel="payment" href="https://flattr.com/submit/auto?url=' . $flattr_url . '&amp;user_id=' . $flattr_uid . '" type="text/html" />';
-                }
-                return true;
-                break;
+                    }
+                    break;
+
+                default:
+                    return false;
+            }
+            return true;
+        } else {
+            return false;
         }
     }
+
 }
+
+/* vim: set sts=4 ts=4 expandtab : */
+?>
