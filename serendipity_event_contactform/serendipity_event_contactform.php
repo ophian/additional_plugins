@@ -27,7 +27,7 @@ class serendipity_event_contactform extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'backend_title', 'email', 'subject', 'counter', 'intro', 'sent', 'articleformat', 'dynamic_tpl', 'dynamic_fields', 'dynamic_fields_tpl', 'dynamic_fields_desc'));
         $propbag->add('author', 'Garvin Hicking, Ian');
-        $propbag->add('version', '1.24');
+        $propbag->add('version', '1.25');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -35,6 +35,25 @@ class serendipity_event_contactform extends serendipity_event
         ));
         $propbag->add('stackable', true);
         $propbag->add('groups', array('FRONTEND_FEATURES'));
+        $propbag->add('legal',    array(
+            'services' => array(
+                'mail' => array(
+                    'url' => '#',
+                    'desc' => 'Visitor feedback of the contact form is transferred via e-mail'
+                )
+            ),
+            'frontend' => array(
+                'desc' => 'Visitor feedback of the contact form is transferred via e-mail'
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
     }
 
     function introspect_config_item($name, &$propbag)
