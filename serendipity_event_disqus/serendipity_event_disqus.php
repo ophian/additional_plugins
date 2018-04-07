@@ -1,46 +1,63 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_disqus extends serendipity_event {
+class serendipity_event_disqus extends serendipity_event
+{
     var $title = PLUGIN_DISQUS_TITLE;
-    
-    function introspect(&$propbag) {
+
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_DISQUS_TITLE);
         $propbag->add('description',   PLUGIN_DISQUS_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus');
+        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '0.3');
+        $propbag->add('version',       '0.5');
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $propbag->add('event_hooks', array(
             'frontend_display:html:per_entry' => true,
             'entries_footer' => true,
             'entry_display' => true
         ));
-        
+
         $propbag->add('configuration', array('shortname', 'enable_since','template_hide_css','footer_comment_link'));
+        $propbag->add('legal',    array(
+            'services' => array(
+                'disqus' => array(
+                    'url'  => 'https://www.disqus.com',
+                    'desc' => 'Embeds a javascript widget from disqus to display comment badges, which allows Disqus to receive visitor metadata (IP, browser, referrer).'
+                ),
+            ),
+            'frontend' => array(
+                'Embeds a javascript widget from disqus to display comment badges, which allows Disqus to receive visitor metadata (IP, browser, referrer).',
+                'Comments will be stored in Disqus and are subject to their terms; all comment data will be handled on disqus servers.'
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
-        
+
         switch($name) {
             case 'enable_since':
                 $propbag->add('type',        'string');
@@ -48,7 +65,7 @@ class serendipity_event_disqus extends serendipity_event {
                 $propbag->add('description', PLUGIN_DISQUS_ENABLE_SINCE_DESC);
                 $propbag->add('default',     date('Y-m-d'));
                 break;
-                
+
             case 'shortname':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_DISQUS_SHORTNAME);
@@ -67,33 +84,37 @@ class serendipity_event_disqus extends serendipity_event {
                 $propbag->add('description', PLUGIN_DISQUS_FOOTERCOMMENTLINK_DESC);
                 $propbag->add('default',     'false');
                 break;
-                
+
         }
 
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_DISQUS_TITLE;
     }
-    
-    function example() {
+
+    function example()
+    {
         return nl2br(PLUGIN_DISQUS_DESC2);
     }
-    
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
-        
+
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
             switch($event) {
-            
+
                 case 'entries_footer':
                     $putFooterLink = $this->get_config('footer_comment_link', false);
                     // If we don't have a DISQUSfied footer, the JS is of no sense.
-                    if (!$putFooterLink) return true; 
-                    
+                    if (!$putFooterLink) return true;
+
 ?>
 <script type="text/javascript">
     var disqus_shortname = '<?php echo $this->get_config('shortname'); ?>';
@@ -101,23 +122,23 @@ class serendipity_event_disqus extends serendipity_event {
     (function () {
         var s = document.createElement('script'); s.async = true;
         s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
 <?php
-                    return true;
+                    break;
 
                 case 'frontend_display:html:per_entry':
                     $_ts = explode('-', $this->get_config('enable_since'));
                     $ts = mktime(0, 0, 0, $_ts[1], $_ts[2], $_ts[0]);
-                    
+
                     if ($eventData['timestamp'] < $ts) {
                         return true;
                     }
                     $putFooterLink = $this->get_config('footer_comment_link', false);
                     $eventData['has_disqus'] = true;
-                    
+
                     // This is problematic, because some templates (like 2k11) expect text only here!
                     if ($putFooterLink) {
                         $eventData['comments'] = '<a href="' . $eventData['link'] . '#disqus_thread" data-disqus-identifier="disq_id_' . $eventData['id'] . '">DISQUS</a>';
@@ -125,56 +146,58 @@ class serendipity_event_disqus extends serendipity_event {
                     else {
                         $eventData['comments'] = COMMENTS;
                     }
-                    return true;
+                    break;
+
                 case 'entry_display':
-    		        $singleArticle = $addData['extended'];
-    		        if (!$singleArticle) return true;
-                    
-    		        $_ts = explode('-', $this->get_config('enable_since'));
+                    $singleArticle = $addData['extended'];
+                    if (!$singleArticle) return true;
+
+                    $_ts = explode('-', $this->get_config('enable_since'));
                     $ts = mktime(0, 0, 0, $_ts[1], $_ts[2], $_ts[0]);
-                    
-    		        if (isset($eventData) && is_array($eventData)) {
-                    	foreach($eventData as $event) {
+
+                    if (isset($eventData) && is_array($eventData)) {
+                        foreach($eventData as $event) {
                             if ($event['timestamp'] < $ts) {
                                 continue;
                             }
-    		        
-                    	    $i = 0;
+
+                            $i = 0;
                             $disqus = $this->produce_disqus_output($event);
                             $event[$i]['display_dat'] .= $disqus;
                             $eventData[$i]['disqus'] .= $disqus;
                             $eventData[$i]['has_disqus'] = true;
                             $eventData[$i]['commentform'] = true;
                             $eventData[$i]['add_footer'] .= $disqus;
-                            
-                    	    $i++;
-                    	}
+
+                            $i++;
+                        }
                     }
-                    
-    		        
-                    return true;
-                    
-              default:
-                return false;
+                    break;
+
+                default:
+                    return false;
+
             }
+            return true;
         } else {
             return false;
         }
     }
-    
-    function produce_disqus_output(&$eventData) {
+
+    function produce_disqus_output(&$eventData)
+    {
         $hidecss = $this->get_config('template_hide_css','serendipity_section_comments,serendipity_section_commentform');
         if (empty($hidecss)) return '';
         $csslist = explode(',', $hidecss);
         $hide = '';
         $count = count($csslist);
         $index = 0;
-        foreach ($csslist as $css) {
+        foreach ($csslist AS $css) {
             $hide .= '.' . $css;
             $index ++;
             if ($index<$count) $hide .= ',';
         }
-        
+
         return '
 <style type="text/css">'. $hide .
 ' {
@@ -186,33 +209,37 @@ class serendipity_event_disqus extends serendipity_event {
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = \'' . $this->get_config('shortname') . '\';
-    
+
         // The following are highly recommended additional parameters. Remove the slashes in front to use.
         var disqus_identifier = \'disq_id_' . $eventData['id'] . '\';
         var disqus_url = \'' . $this->generate_article_url($eventData) . '\';
         var disqus_title = \'' . addslashes($eventData['title']) . '\';
-    
+
         (function() {
             var dsq = document.createElement(\'script\'); dsq.type = \'text/javascript\'; dsq.async = true;
-            dsq.src = \'http://\' + disqus_shortname + \'.disqus.com/embed.js\';
+            dsq.src = \'https://\' + disqus_shortname + \'.disqus.com/embed.js\';
             (document.getElementsByTagName(\'head\')[0] || document.getElementsByTagName(\'body\')[0]).appendChild(dsq);
         })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 ';
     }
-    
-    function generate_article_url( $entry ) {
+
+    function generate_article_url($entry)
+    {
         global $serendipity;
-        
+
         $urlparts = @parse_url($serendipity['baseURL']);
         $server = $urlparts['scheme'] . '://' . $urlparts['host'];
-        if (!empty($urlparts['port'])) $server = $server . ':' . $urlparts['port'];  
-        
+        if (!empty($urlparts['port'])) $server = $server . ':' . $urlparts['port'];
+
         $relurl = serendipity_archiveURL($entry['id'], $entry['title'], 'serendipityHTTPPath', true, array('timestamp' => $entry['timestamp']));
 
         return $server . $relurl;
     }
-    
+
 }
+
+/* vim: set sts=4 ts=4 expandtab : */
+?>

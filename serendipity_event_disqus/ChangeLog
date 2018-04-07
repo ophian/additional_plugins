@@ -1,4 +1,18 @@
-0.3: Properly use the example() API method by returning, not echo'ing. Unimportant update.
+0.5:
+----
+
+ * Added legal property bag information for gdpr/dsgvo
+
+0.4:
+----
+
+ * Set plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+
+0.3:
+----
+ * Properly use the example() API method by returning, not echo'ing. Unimportant update.
+
 Version 0.2
 * Made it work with articles not having an extended part.
 * Made trackbacks visible again (for templates supporting it), css class to be hidden configurable now.
