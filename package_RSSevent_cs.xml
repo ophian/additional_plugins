@@ -86,7 +86,7 @@
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Zálohování&lt;/b&gt;&lt;br /&gt;Zpřístupňuje možnost automatického zálohování Serendepity - databázových tabulek i souborů. V současnosti je podporována pouze databáze MySQL(i). VAROVÁNÍ: Plugin nefunguje optimálně s velkou databází nebo velkým množstvím souborů.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 27 Oct 2016 12:55:40 +0200</pubDate>
+<pubDate>Sun, 08 Apr 2018 09:48:53 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
@@ -1022,7 +1022,7 @@
 <category>Event Plugins</category>
 <author>Sebastian Nohn, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_rbl&lt;br /&gt;Antispamová ochrana (RBL)&lt;/b&gt;&lt;br /&gt;Odmítne komentáře, které jsou zadány ze adres, které jsou vedeny v blacklistu RBL. Pozor, že tato volba může znemožnit posílání komentářů uživatelům, kteří sedí za proxy serverem nebo kteří používají vytáčené spojení.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Apr 2018 15:07:52 +0200</pubDate>
+<pubDate>Sun, 08 Apr 2018 09:28:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_rbl</guid>
 </item>
 <item>
