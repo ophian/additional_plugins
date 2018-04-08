@@ -7,7 +7,7 @@
 
     - 2008-01-18 version 0.1 by Francois Dechery, www.440net.net
 
-    This php class is distribured under the GNU Public License ("GPL") version 2.
+    This php class is distributed under the GNU Public License ("GPL") version 2.
     http://www.gnu.org/licenses/gpl.txt
 
     --------------
@@ -66,7 +66,7 @@ class http_bl
         }
 
         $this->ip = $ip;
-        list((int)$a,(int)$b,(int)$c,(int)$d) = explode('.', $ip);
+        list($a,$b,$c,$d) = explode('.', $ip);
         $query = $this->access_key.".$d.$c.$b.$a.".$this->domain;
         $host = gethostbyname($query);
         
