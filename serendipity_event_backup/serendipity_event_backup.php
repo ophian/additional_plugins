@@ -25,7 +25,7 @@ class serendipity_event_backup extends serendipity_event
             'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '0.16');
+        $propbag->add('version',       '0.17');
         $propbag->add('author',       'Alexander Mieland, Matthias Mees, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -159,6 +159,7 @@ class serendipity_event_backup extends serendipity_event
     function getRelPath()
     {
         global $serendipity;
+
         $c_path = dirname(__FILE__);
         $b_path = $serendipity['serendipityPath'];
         if ($b_path[(strlen($b_path)-1)] == "/")
@@ -193,6 +194,7 @@ class serendipity_event_backup extends serendipity_event
     function MakeHTMLBackup($dir_to_backup="", $exclude=NULL)
     {
         global $serendipity;
+
         $BACKUPDIR = $this->get_config('abspath_backupdir');
         $backupscript = dirname(__FILE__) . '/backup.sh';
         @chmod($backupscript, 0777);
@@ -210,6 +212,7 @@ class serendipity_event_backup extends serendipity_event
     function MakeSQLBackup($complete=1, $tables="", $what="data", $drop=1)
     {
         global $serendipity;
+
         $BACKUPDIR = $this->get_config('abspath_backupdir');
         $filetime = date("Y-m-d-H-i",time());
         $success = 0;
@@ -408,6 +411,7 @@ class serendipity_event_backup extends serendipity_event
     function CheckAutoHTMLBackup()
     {
         global $serendipity;
+
         $BACKUPDIR = $this->get_config('abspath_backupdir');
         if (!file_exists($BACKUPDIR)) {
             @mkdir($BACKUPDIR, 0777);
@@ -462,6 +466,7 @@ class serendipity_event_backup extends serendipity_event
     function CheckAutoSQLBackup()
     {
         global $serendipity;
+
         $BACKUPDIR = $this->get_config('abspath_backupdir');
         $TEMPDIR = $BACKUPDIR."/tmp";
         $ARCHIVDIR = $BACKUPDIR;
@@ -554,6 +559,7 @@ class serendipity_event_backup extends serendipity_event
     function CheckAutoDelHTMLBackup()
     {
         global $serendipity;
+
         $BACKUPDIR = $this->get_config('abspath_backupdir');
         $backupdir = $BACKUPDIR;
         if (!file_exists($BACKUPDIR)) {
@@ -591,6 +597,7 @@ class serendipity_event_backup extends serendipity_event
     function CheckAutoDelSQLBackup()
     {
         global $serendipity;
+
         $BACKUPDIR = $this->get_config('abspath_backupdir');
         $backupdir = $BACKUPDIR;
         if (!file_exists($BACKUPDIR)) {
@@ -635,6 +642,7 @@ class serendipity_event_backup extends serendipity_event
     function RecoverSQLBackup($backupfile)
     {
         global $serendipity;
+
         $BACKUPDIR = $this->get_config('abspath_backupdir');
         $backupdir = $BACKUPDIR;
         $pbackupfile = $BACKUPDIR."/".basename($backupfile);
@@ -729,6 +737,7 @@ class serendipity_event_backup extends serendipity_event
     function backup_interface()
     {
         global $serendipity;
+
         $BACKUPDIR = $this->get_config('abspath_backupdir');
         $TEMPDIR = $BACKUPDIR."/tmp";
         $ARCHIVDIR = $BACKUPDIR;
@@ -1337,7 +1346,7 @@ class serendipity_event_backup extends serendipity_event
                             }
                         }
                     }
-                    $parts     = explode('_', $uri_parts[0]);
+                    $parts = explode('_', $uri_parts[0]);
 
                     switch($parts[0]) {
                         case 'checkautobackup':
@@ -1347,8 +1356,6 @@ class serendipity_event_backup extends serendipity_event
                             $this->CheckAutoHTMLBackup();
                             $this->CheckAutoDelHTMLBackup();
                             break;
-
-
 
                         case 'dlbackup':
 
@@ -1366,7 +1373,6 @@ class serendipity_event_backup extends serendipity_event
                             } else {
                                 $contenttype = "application/x-zip-compressed";
                             }
-
 
                             $filename = $file;
                             $path = $BACKUPDIR;
