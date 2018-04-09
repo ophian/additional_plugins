@@ -27,14 +27,25 @@ class serendipity_event_recaptcha extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '0.33');
+        $propbag->add('version',       '0.34');
         $propbag->add('event_hooks',    array(
             'frontend_configure'   => true,
             'frontend_saveComment' => true,
             'frontend_comment'     => true
         ));
-
-        $propbag->add('legal',    array(
+        $propbag->add('configuration', array(
+            'info',
+            'sep',
+            'hide_for_authors',
+            'recaptcha',
+            'recaptcha_style',
+            'recaptcha_pub',
+            'recaptcha_priv',
+            'captchas_ttl',
+            'logtype',
+            'logfile'));
+        $propbag->add('groups', array('ANTISPAM'));
+        $propbag->add('legal',  array(
             'services' => array(
                 'Google reCaptcha' => array(
                     'url'  => 'https://developers.google.com/recaptcha/',
@@ -56,19 +67,6 @@ class serendipity_event_recaptcha extends serendipity_event
             'uses_ip'               => true,
             'transmits_user_input'  => true
         ));
-
-        $propbag->add('configuration', array(
-            'info',
-            'sep',
-            'hide_for_authors',
-            'recaptcha',
-            'recaptcha_style',
-            'recaptcha_pub',
-            'recaptcha_priv',
-            'captchas_ttl',
-            'logtype',
-            'logfile'));
-        $propbag->add('groups', array('ANTISPAM'));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -156,8 +154,8 @@ class serendipity_event_recaptcha extends serendipity_event
                 break;
 
             case 'info':
-                $suche='!http(?:s)?:\/\/(?:(?:[^.]*)\.)?([^.\/]*)!';
-                $result=preg_match($suche,$serendipity['baseURL'],$domain);
+                $search = '!http(?:s)?:\/\/(?:(?:[^.]*)\.)?([^.\/]*)!';
+                $result = preg_match($search, $serendipity['baseURL'], $domain);
                 $propbag->add('type', 'content');
                 $propbag->add('default', PLUGIN_EVENT_RECAPTCHA_INFO1.$domain[1]. PLUGIN_EVENT_RECAPTCHA_INFO2);
                 break;
@@ -175,7 +173,9 @@ class serendipity_event_recaptcha extends serendipity_event
     function performConfig(&$bag)
     {
         // set "yes" (recaptcha v2 is active)
-        if ($this->get_config('recaptcha', 'no') === 'yes2') { $this->set_config('recaptcha', 'yes'); };
+        if ($this->get_config('recaptcha') == 'yes2') {
+            $this->set_config('recaptcha', 'yes');
+        };
     }
 
     function generate_content(&$title)
@@ -184,7 +184,7 @@ class serendipity_event_recaptcha extends serendipity_event
     }
 
     // Checks whether the current author is contained in one of the groups that
-    // need no spam checking
+    // need no SPAM checking
     function inGroup()
     {
         global $serendipity;
@@ -222,10 +222,8 @@ class serendipity_event_recaptcha extends serendipity_event
             $recaptcha    = ($_recaptcha === 'yes' || $_recaptcha !== 'no' || serendipity_db_bool($_recaptcha));
 
             // Check if the entry is older than the allowed amount of time.
-            // Enforce captchas if that is true of if captchas are activated
-            // for every entry
-
-            $show_captcha = (($recaptcha) && isset($eventData['timestamp']) && ($captchas_ttl < 1 || ($eventData['timestamp'] < (time() - ($captchas_ttl*60*60*24)))) ? true : false);
+            // Enforce captchas if that is true
+            $show_captcha = ($recaptcha && isset($eventData['timestamp']) && ($captchas_ttl < 1 || ($eventData['timestamp'] < (time() - ($captchas_ttl*60*60*24))))) ? true : false;
 
             switch($event) {
                 case 'frontend_configure':
