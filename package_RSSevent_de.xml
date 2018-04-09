@@ -99,15 +99,6 @@
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
-<title>BrowserID Authentifizierung: Ermöglicht Autoren, sich mittels de BrowserID Services einzuloggen.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_browserid</link>
-<category>Event Plugins</category>
-<author>Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_browserid&lt;br /&gt;BrowserID Authentifizierung&lt;/b&gt;&lt;br /&gt;Ermöglicht Autoren, sich mittels de BrowserID Services einzuloggen.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Apr 2018 14:40:00 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_browserid</guid>
-</item>
-<item>
 <title>Event-Terminkalender: Zeigt einen Terminkalender innerhalb des Blogs mit dem Blog-Design und allen Formatierungen an. Unterstützt Backend/Frontend Administration, vielfache Termine und iCal Export. (Nur MySQL)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cal</link>
 <category>Event Plugins</category>
@@ -320,7 +311,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Smiley-Auswahlleiste&lt;/b&gt;&lt;br /&gt;Zeigt eine Auswahlleiste bei der Erstellung eines Eintrags um Smileys einzufügen.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Tue, 27 Mar 2018 10:31:03 +0200</pubDate>
+<pubDate>Mon, 09 Apr 2018 10:10:21 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -923,7 +914,7 @@
 <category>Event Plugins</category>
 <author>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_recaptcha&lt;br /&gt;Recaptcha&lt;/b&gt;&lt;br /&gt;Recaptcha für die Kommentar-Funktion von Artikeln aktivieren (Sie müssen einen Schlüssel anfordern)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 31 Mar 2018 09:53:43 +0200</pubDate>
+<pubDate>Mon, 09 Apr 2018 10:31:13 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_recaptcha</guid>
 </item>
 <item>
@@ -1058,7 +1049,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statische Seiten&lt;/b&gt;&lt;br /&gt;Verwaltet beliebige statische Seiten innerhalb des Blogs mit dem Blog-Design und allen Formatierungen. Fügt einen neuen Menüpunkt in der Admin-Oberfläche hinzu!&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sat, 21 Oct 2017 14:49:11 +0200</pubDate>
+<pubDate>Mon, 09 Apr 2018 11:44:40 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>

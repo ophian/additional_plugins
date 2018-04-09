@@ -101,15 +101,6 @@
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
-<title>BrowserID Authentication: Allows authors to authenticate using the BrowserID service.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_browserid</link>
-<category>Event Plugins</category>
-<author>Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_browserid&lt;br /&gt;BrowserID Authentication&lt;/b&gt;&lt;br /&gt;Allows authors to authenticate using the BrowserID service.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Apr 2018 14:40:00 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_browserid</guid>
-</item>
-<item>
 <title>Event-Calendar: Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cal</link>
 <category>Event Plugins</category>
@@ -324,7 +315,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;表情アイコンツールバーの表示&lt;/b&gt;&lt;br /&gt;エントリに挿入する表情アイコンとスマイルを選択するツールバーを表示します。&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Tue, 27 Mar 2018 10:31:03 +0200</pubDate>
+<pubDate>Mon, 09 Apr 2018 10:10:21 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -927,7 +918,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_recaptcha&lt;br /&gt;Recaptcha&lt;/b&gt;&lt;br /&gt;Enabling a recaptcha for commenting articles (You need to apply for a key)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 31 Mar 2018 09:53:43 +0200</pubDate>
+<pubDate>Mon, 09 Apr 2018 10:31:13 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_recaptcha</guid>
 </item>
 <item>
@@ -1062,7 +1053,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;静的ページ&lt;/b&gt;&lt;br /&gt;デザインとすべての書式化されたブログとウェブログ内部に静的ページを表示します。管理インターフェースに新しいメニューを追加します。&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sat, 21 Oct 2017 14:49:11 +0200</pubDate>
+<pubDate>Mon, 09 Apr 2018 11:44:40 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
