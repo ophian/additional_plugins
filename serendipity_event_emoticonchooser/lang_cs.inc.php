@@ -10,7 +10,7 @@
 
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_TITLE', 'Lišta smajlíkù');
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_DESC', 'Zobrazí lištu se smajlíky, které je možné vložit do textu pøíspìvku nebo komentáøe.');
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_FRONTEND', 'Zobrazit smajlíkovou lištu u komentáøù?');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_COMMENTS', 'Zobrazit smajlíkovou lištu u komentáøù?');
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUP', 'Zobrazit smajlíkovou lištu jako vyskakovací (popup) blok?');
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT', 'Nadpis odkazu k zobrazení popup bloku se smajlíky.');
 @define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT', 'Smajlíci');

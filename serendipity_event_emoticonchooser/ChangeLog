@@ -1,3 +1,7 @@
+3.10:
+-----
+ * Rename option 'frontend' to 'comments' since also used in backend
+
 3.09:
 -----
  * Replace PHP 7.2 set deprecated each() usage where possible

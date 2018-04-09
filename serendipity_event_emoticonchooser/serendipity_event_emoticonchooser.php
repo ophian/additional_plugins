@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.09');
+        $propbag->add('version',       '3.10');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -36,7 +36,15 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'css'                            => true
         ));
         $propbag->add('groups', array('BACKEND_EDITOR'));
-        $propbag->add('configuration', array('frontend', 'popup', 'button', 'popuptext'));
+        $propbag->add('configuration', array('comments', 'popup', 'button', 'popuptext'));
+    }
+
+    function performConfig(&$bag)
+    {
+        // set 'frontend' to 'comments' option
+        if ($this->get_config('frontend') == 'true') {
+            $this->set_config('comments', 'true');
+        };
     }
 
     function generate_content(&$title)
@@ -47,9 +55,9 @@ class serendipity_event_emoticonchooser extends serendipity_event
     function introspect_config_item($name, &$propbag)
     {
         switch($name) {
-            case 'frontend':
+            case 'comments':
                 $propbag->add('type',        'boolean');
-                $propbag->add('name',        PLUGIN_EVENT_EMOTICONCHOOSER_FRONTEND);
+                $propbag->add('name',        PLUGIN_EVENT_EMOTICONCHOOSER_COMMENTS);
                 $propbag->add('description', '');
                 $propbag->add('default',     'false');
                 break;
@@ -188,14 +196,14 @@ class serendipity_event_emoticonchooser extends serendipity_event
             switch($event) {
 
                 case 'frontend_comment':
-                    if (serendipity_db_bool($this->get_config('frontend', 'false')) === false) {
+                    if (serendipity_db_bool($this->get_config('comments', 'false')) === false) {
                         break;
                     }
                     $txtarea = 'serendipity_commentform_comment';
                     $func    = 'comment';
                     $style   = '';
                     $popcl   = '';
-                    $frontend = true;
+                    $comments = true;
                     // no break
                 case 'backend_entry_toolbar_extended':
                     if (!isset($txtarea)) {
@@ -227,7 +235,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         $cke_txtarea = $txtarea;
                     }
 
-                    if (!$serendipity['wysiwyg'] || $frontend) {
+                    if (!$serendipity['wysiwyg'] || $comments) {
                         if (!isset($popcl)) {
                             $popcl = ' serendipityPrettyButton';
                         }
@@ -310,9 +318,9 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
                     $emotics = ''; // init
 
-                    if ($serendipity['wysiwyg'] || $frontend) {
+                    if ($serendipity['wysiwyg'] || $comments) {
                         $style = '';
-                        if (!$frontend) {
+                        if (!$comments) {
                             $popupstyle = 'display: inline-flex;';
                         }
                         $emotics .= "
@@ -336,12 +344,12 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         }
                     }
                     $emotics .= "    </div>\n\n";
-                    if (!$serendipity['wysiwyg'] || ($serendipity['GET']['adminModule'] != 'comments' && $frontend)) {
+                    if (!$serendipity['wysiwyg'] || ($serendipity['GET']['adminModule'] != 'comments' && $comments)) {
                         $emotics .= "</div><!-- emoticon_bar end -->\n\n";
                     }
                     if ($serendipity['wysiwyg']) {
                         $this->set_config('emotics', $emotics); //cache this extra?
-                        if ($frontend) {
+                        if ($comments) {
                             echo $emotics;
                         }
                     } else {
