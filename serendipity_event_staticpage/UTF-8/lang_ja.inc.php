@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.6
  */
@@ -94,29 +94,6 @@
 @define('STATICPAGE_SEARCHRESULTS', '%d の静的ページが見つかりました:');
 
 @define('LANG_ALL', 'すべての言語');
-@define('LANG_EN', '英語');
-@define('LANG_DE', 'ドイツ語');
-@define('LANG_DA', 'デンマーク語');
-@define('LANG_ES', 'スペイン語');
-@define('LANG_FR', 'フランス語');
-@define('LANG_FI', 'フィンランド語');
-@define('LANG_CS', 'チェコ語 (Win-1250)');
-@define('LANG_CZ', 'チェコ語 (ISO-8859-2)');
-@define('LANG_NL', 'オランダ語');
-@define('LANG_IS', 'アイスランド語');
-@define('LANG_PT', 'ブラジル系ポルトガル語');
-@define('LANG_BG', 'ブルガリア語');
-@define('LANG_NO', 'ノルウェー語');
-@define('LANG_RO', 'ルーマニア語');
-@define('LANG_IT', 'イタリア語');
-@define('LANG_RU', 'ロシア語');
-@define('LANG_FA', 'ペルシア語');
-@define('LANG_TW', '繁体字中国語 (Big5)');
-@define('LANG_TN', '繁体字中国語 (UTF-8)');
-@define('LANG_ZH', '簡体字中国語 (GB2312)');
-@define('LANG_CN', '簡体字中国語 (UTF-8)');
-@define('LANG_JA', '日本語');
-@define('LANG_KO', '韓国語');
 
 @define('STATICPAGE_STATUS', '状態');
 
@@ -144,4 +121,3 @@
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC',       '有効の場合、親ページのみ表示します。無効の場合、子ページも表示するでしょう。');
 @define('PLUGIN_STATICPAGELIST_IMG_NAME',               'ツリー構造で画像を有効にする');
 
-?>

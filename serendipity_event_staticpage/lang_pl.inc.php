@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Kostas CoSTa Brzezinski <costa@kofeina.net>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -94,30 +94,6 @@
 @define('STATICPAGE_SEARCHRESULTS', 'Znaleziono %d Stron statycznych:');
 
 @define('LANG_ALL', 'Wszystkie jêzyki');
-@define('LANG_EN', 'English');
-@define('LANG_DE', 'German');
-@define('LANG_DA', 'Danish');
-@define('LANG_ES', 'Spanish');
-@define('LANG_FR', 'French');
-@define('LANG_FI', 'Finnish');
-@define('LANG_CS', 'Czech (Win-1250)');
-@define('LANG_CZ', 'Czech (ISO-8859-2)');
-@define('LANG_NL', 'Dutch');
-@define('LANG_IS', 'Icelandic');
-@define('LANG_PT', 'Portuguese Brazilian');
-@define('LANG_BG', 'Bulgarian');
-@define('LANG_NO', 'Norwegian');
-@define('LANG_RO', 'Romanian');
-@define('LANG_IT', 'Italian');
-@define('LANG_RU', 'Russian');
-@define('LANG_FA', 'Persian');
-@define('LANG_TW', 'Traditional Chinese (Big5)');
-@define('LANG_TN', 'Traditional Chinese (UTF-8)');
-@define('LANG_ZH', 'Simplified Chinese (GB2312)');
-@define('LANG_CN', 'Simplified Chinese (UTF-8)');
-@define('LANG_JA', 'Japanese');
-@define('LANG_KO', 'Korean');
-@define('LANG_PL', 'Polish');
 
 @define('STATICPAGE_STATUS', 'Status');
 
@@ -145,4 +121,3 @@
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC', 'Je¶li opcja zostanie w³±czona, w strukturze menu pojawi± siê tylko strony oznaczone jako "nadrzêdne". Wy³±czenie opcji poka¿e tak¿e strony "potomne" w strukturze menu.');
 @define('PLUGIN_STATICPAGELIST_IMG_NAME', 'W³±czyæ graficzn± reprezentacjê struktury menu');
 
-?>

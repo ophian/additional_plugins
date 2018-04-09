@@ -1,29 +1,6 @@
 <?php
 
 @define('LANG_ALL', 'Alle Sprachen');
-@define('LANG_BG', 'Bulgarisch');
-@define('LANG_CN', 'Vereinfachtes Chinesisch (UTF-8)');
-@define('LANG_CS', 'Tschechisch (Win-1250)');
-@define('LANG_CZ', 'Tschechisch (ISO-8859-2)');
-@define('LANG_DA', 'Dänisch');
-@define('LANG_DE', 'Deutsch');
-@define('LANG_EN', 'Englisch');
-@define('LANG_ES', 'Spanisch');
-@define('LANG_FA', 'Persisch');
-@define('LANG_FI', 'Finnisch');
-@define('LANG_FR', 'Französisch');
-@define('LANG_IS', 'Isländisch');
-@define('LANG_IT', 'Italienisch');
-@define('LANG_JA', 'Japanisch');
-@define('LANG_KO', 'Koreanisch');
-@define('LANG_NL', 'Holländisch');
-@define('LANG_NO', 'Norwegisch');
-@define('LANG_PT', 'Portugiesisch (Brasilien)');
-@define('LANG_RO', 'Rumänisch');
-@define('LANG_RU', 'Russisch');
-@define('LANG_TN', 'Traditionelles Chinesisch (UTF-8)');
-@define('LANG_TW', 'Traditionelles Chinesisch (Big5)');
-@define('LANG_ZH', 'Vereinfachtes Chinesisch (GB2312)');
 
 @define('PLUGIN_STATICPAGELIST_NAME', 'Liste der statischen Seiten');
 @define('PLUGIN_STATICPAGELIST_NAME_DESC', 'Dieses Plugin zeigt eine konfigurierbare Liste der statischen Seiten. Das StaticPage-Plugin benötigt Version 1.22 oder höher.');
@@ -165,7 +142,7 @@
 @define('RELATED_CATEGORY_CHANGE_MSG', 'Dies hat eine vorherige, zugeordnete-Kategorie-Assoziierung von ID #%s, mit Staticpage ID #%s überschrieben, da nur 1:1 Beziehungen erlaubt sind! Bitte ändern Sie diese oder die vorherige statische Seite im Staticpage Auswahlfeld "zugeordnete Kategorie" zu "keine"!');
 @define('RELATED_CATEGORY_CHANGE_DEL_MSG', 'Das korrespondierende related_category_id Feld von Staticpage ID #%s wurde zurückgesetzt.');
 
-@define('STATICPAGE_CONFIGGROUP_FORM', 'Backend Formular Options-Voreinstellungen:');
+@define('STATICPAGE_CONFIGGROUP_FORM', 'Backend Formular Voreinstellungen:');
 @define('STATICPAGE_CONFIGGROUP_FRONTEND', 'Allgemeine Frontend Anzeigen:');
 @define('STATICPAGE_CONFIGGROUP_BACKEND', 'Allgemeine Backend Anzeigen:');
 

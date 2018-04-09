@@ -1,3 +1,7 @@
+5.38:
+----
+ * Fixed some and removed some old constants
+
 5.37:
 ----
  * Fix SQLite install bug, not being able to use unsigned for INTEGERS

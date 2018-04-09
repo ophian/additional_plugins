@@ -100,29 +100,6 @@
 @define('STATICPAGE_SEARCHRESULTS', 'Počet nalezených statických stránek - %d:');
 
 @define('LANG_ALL', 'Všechny jazyky');
-@define('LANG_EN', 'Angličtina');
-@define('LANG_DE', 'Němčina');
-@define('LANG_DA', 'Dánština');
-@define('LANG_ES', 'Španělština');
-@define('LANG_FR', 'Francouzština');
-@define('LANG_FI', 'Finština');
-@define('LANG_CS', 'Čeština (Win-1250)');
-@define('LANG_CZ', 'Čeština (ISO-8859-2)');
-@define('LANG_NL', 'Holandština');
-@define('LANG_IS', 'Islandština');
-@define('LANG_PT', 'Brazilská portugalština');
-@define('LANG_BG', 'Bulharština');
-@define('LANG_NO', 'Norština');
-@define('LANG_RO', 'Rumunština');
-@define('LANG_IT', 'Italština');
-@define('LANG_RU', 'Ruština');
-@define('LANG_FA', 'Perština');
-@define('LANG_TW', 'Tradiční Čínština (Big5)');
-@define('LANG_TN', 'Tradiční Čínština (UTF-8)');
-@define('LANG_ZH', 'Zjednodušená Čínština (GB2312)');
-@define('LANG_CN', 'Zjednodušená Čínština (UTF-8)');
-@define('LANG_JA', 'Japonština');
-@define('LANG_KO', 'Korejština');
 
 @define('STATICPAGE_STATUS', 'Stav');
 

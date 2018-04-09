@@ -1,4 +1,4 @@
-<?php #
+<?php
 
 /**
  *  @author Ahmet Usal <ahmetusal@gmail.com>
@@ -88,30 +88,6 @@
 @define('STATICPAGE_PLUGIN_NOTAVAILABLE', 'Eklenti kurulamaz');
 
 @define('LANG_ALL', 'Tüm Diller');
-@define('LANG_EN', 'İngilizce');
-@define('LANG_DE', 'Almanca');
-@define('LANG_DA', 'Danimarkaca');
-@define('LANG_ES', 'İspanyolca');
-@define('LANG_FR', 'Fransızca');
-@define('LANG_FI', 'Fince');
-@define('LANG_CS', 'Çekce (Win-1250)');
-@define('LANG_CZ', 'Çekce (ISO-8859-2)');
-@define('LANG_NL', 'Flemenkçe');
-@define('LANG_IS', 'İzlandaca');
-@define('LANG_PT', 'Portekiz Brezilcesi');
-@define('LANG_BG', 'Bulgarca');
-@define('LANG_NO', 'Norveçce');
-@define('LANG_RO', 'Rumence');
-@define('LANG_IT', 'İtalyanca');
-@define('LANG_RU', 'Rusça');
-@define('LANG_FA', 'Farsça');
-@define('LANG_TR', 'Türkçe (ISO-8859-9)');
-@define('LANG_TW', 'Geleneksel Çince (Big5)');
-@define('LANG_TN', 'Geleneksel Çince (UTF-8)');
-@define('LANG_ZH', 'Basit Çince (GB2312)');
-@define('LANG_CN', 'Basit Çince (UTF-8)');
-@define('LANG_JA', 'Japonca');
-@define('LANG_KO', 'Korece');
 
 //
 //  serendipity_plugin_staticpage.php

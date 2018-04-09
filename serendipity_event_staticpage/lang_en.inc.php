@@ -13,7 +13,7 @@
 @define('STATICPAGE_HEADLINE', 'Headline');
 @define('STATICPAGE_HEADLINE_BLAHBLAH', 'Shows a headline above the content which is rendered as every other headline in your blog');
 @define('STATICPAGE_TITLE', 'Static Pages');
-@define('STATICPAGE_TITLE_BLAHBLAH', 'Shows static pages inside your blog with your blogs design and all formattings. Adds a new menu item to the admin interface.');
+@define('STATICPAGE_TITLE_BLAHBLAH', 'Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.');
 @define('CONTENT_BLAHBLAH', 'the content');
 @define('STATICPAGE_PERMALINK', 'Permalink');
 @define('STATICPAGE_PERMALINK_BLAHBLAH', 'Defines a permalink for the URL. Needs the absolute HTTP path and needs to end with .htm or .html!');
@@ -24,13 +24,13 @@
 @define('STATICPAGE_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'Using article format, you can choose which text to display where the blog DATE shows up for an article.');
 @define('STATICPAGE_SELECT', 'Select a staticpage to edit or create.');
 @define('STATICPAGE_PASSWORD_NOTICE', 'This page is password protected. Please enter the appropriate password given to you: ');
-@define('STATICPAGE_PARENTPAGES_NAME', 'Parentpage');
+@define('STATICPAGE_PARENTPAGES_NAME', 'Parent page');
 @define('STATICPAGE_PARENTPAGE_DESC', 'Select the Parent-Page');
 @define('STATICPAGE_PARENTPAGE_PARENT', 'Is parent');
 @define('STATICPAGE_AUTHORS_NAME', 'Author\'s Name');
 @define('STATICPAGE_AUTHORS_DESC', 'This author is the owner of this page');
 @define('STATICPAGE_FILENAME_NAME', 'Template (Smarty)');
-@define('STATICPAGE_FILENAME_DESC', 'Enter the filename of the template which should be used for this page. That smarty file can be placed in this plugin\'s directory or into your template directory.');
+@define('STATICPAGE_FILENAME_DESC', 'Enter the filename of the template which should be used for this page. That Smarty file can be placed in this plugin\'s directory or into your template directory.');
 @define('STATICPAGE_SHOWCHILDPAGES_NAME', 'Show childpages');
 @define('STATICPAGE_SHOWCHILDPAGES_DESC', 'Show all childpages of current page as linklist.');
 @define('STATICPAGE_PRECONTENT_NAME', 'Pre-content');
@@ -97,29 +97,6 @@
 @define('STATICPAGE_SEARCHRESULTS', 'Found %d static pages:');
 
 @define('LANG_ALL', 'All languages');
-@define('LANG_EN', 'English');
-@define('LANG_DE', 'German');
-@define('LANG_DA', 'Danish');
-@define('LANG_ES', 'Spanish');
-@define('LANG_FR', 'French');
-@define('LANG_FI', 'Finnish');
-@define('LANG_CS', 'Czech (Win-1250)');
-@define('LANG_CZ', 'Czech (ISO-8859-2)');
-@define('LANG_NL', 'Dutch');
-@define('LANG_IS', 'Icelandic');
-@define('LANG_PT', 'Portuguese Brazilian');
-@define('LANG_BG', 'Bulgarian');
-@define('LANG_NO', 'Norwegian');
-@define('LANG_RO', 'Romanian');
-@define('LANG_IT', 'Italian');
-@define('LANG_RU', 'Russian');
-@define('LANG_FA', 'Persian');
-@define('LANG_TW', 'Traditional Chinese (Big5)');
-@define('LANG_TN', 'Traditional Chinese (UTF-8)');
-@define('LANG_ZH', 'Simplified Chinese (GB2312)');
-@define('LANG_CN', 'Simplified Chinese (UTF-8)');
-@define('LANG_JA', 'Japanese');
-@define('LANG_KO', 'Korean');
 
 @define('STATICPAGE_STATUS', 'Status');
 
@@ -217,7 +194,7 @@
                     <span><strong>Please read:</strong> </span><a href="%s" target="_blank" style="color:#7fdbff">the readme for custom fields</a> examples.</p>
                     <p>The "Disable nl2br markup parser" radio option is already used internally to automark staticpage entries on wysiwyg usage by submit, to not pass through the nl2br markup parser on show.</p>');
 
-@define('STATICPAGE_CONFIGGROUP_FORM', 'Backend Form Option-Preferences:');
+@define('STATICPAGE_CONFIGGROUP_FORM', 'Backend Form Preferences:');
 @define('STATICPAGE_CONFIGGROUP_FRONTEND', 'Default Frontend Appearance:');
 @define('STATICPAGE_CONFIGGROUP_BACKEND', 'Default Backend Appearance:');
 
