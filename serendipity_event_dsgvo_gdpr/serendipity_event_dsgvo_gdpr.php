@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.33');
+        $propbag->add('version',       '1.40');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -164,8 +164,17 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         return true;
     }
 
+    function file_get_contents_utf8($str)
+    {
+        $content = file_get_contents($str);
+        return mb_convert_encoding($content, LANG_CHARSET,
+               mb_detect_encoding($content, (LANG_CHARSET.', UTF-8, ISO-8859-1'), true));
+    }
+
     function inspect_gdpr()
     {
+        global $serendipity;
+
         $out = PLUGIN_EVENT_DSGVO_GDPR_SERENDIPITY_CORE;
 
         $classes = serendipity_plugin_api::enum_plugins('hide', true); // reverse is all installed, except hidden plugins
@@ -200,44 +209,44 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         foreach($legal['services'] AS $servicename => $servicedata) {
                             $out .= '    <li><a href="' . $servicedata['url'] . '">' . $servicename . '</a>: ' . $servicedata['desc'] . "</li>\n";
                         }
-                        $out .= "</ul>\n";
+                        $out .= "</ul>\n\n";
                     }
 
                     // "frontend" lists descriptions what the plugin does on the frontendside and where it uses visitor data or metadata
                     if (is_array($legal['frontend']) && count($legal['frontend']) > 0) {
                         $out .= "<h4>Frontend</h4>\n";
-                        $out .= '<ul>';
+                        $out .= "<ul>\n";
                         foreach($legal['frontend'] AS $servicename => $servicedata) {
                             $out .= '    <li>' . $servicedata . "</li>\n";
                         }
-                        $out .= "</ul>\n";
+                        $out .= "</ul>\n\n";
                     }
 
                     // "backend" lists descriptions what the plugin does on the backend and where it uses visitor data or metadata
                     if (is_array($legal['backend']) && count($legal['backend']) > 0) {
                         $out .= "<h4>Backend</h4>\n";
-                        $out .= '<ul>';
+                        $out .= "<ul>\n";
                         foreach($legal['backend'] AS $servicename => $servicedata) {
                             $out .= '    <li>' . $servicedata . "</li>\n";
                         }
-                        $out .= "</ul>\n";
+                        $out .= "</ul>\n\n";
                     }
 
                     // "cookies" lists an array of which cookies might be set a a plugin and why. If a plugin makes use of
                     // session features, also mention that it relies on that session id.
                     if (is_array($legal['cookies']) && count($legal['cookies']) > 0) {
                         $out .= "<h4>Cookies</h4>\n";
-                        $out .= '<ul>';
+                        $out .= "<ul>\n";
                         foreach($legal['cookies'] AS $servicename => $servicedata) {
                             $out .= '    <li>' . $servicedata . "</li>\n";
                         }
-                        $out .= "</ul>\n";
+                        $out .= "</ul>\n\n";
                     }
 
                     // "sessiondata" lists an array of which PHP session data values are (temporarily) saved
                     if (is_array($legal['sessiondata']) && count($legal['sessiondata']) > 0) {
                         $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SESSIONDATA_HEAD."</h4>\n";
-                        $out .= '<ul>';
+                        $out .= "<ul>\n";
                         foreach($legal['sessiondata'] AS $servicename => $servicedata) {
                             $out .= '    <li>' . $servicedata . "</li>\n";
                         }
@@ -246,35 +255,99 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
 
                     // This is a list of TRUE/FALSE boolean toggles
                     $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_HEAD."</h4>\n";
-                    $out .= '<ul>';
+                    $out .= "<ul>\n";
                     if ($legal['stores_user_input']) {
-                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_YES."</li>\n";
+                        $out .= '    <li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_YES."</li>\n";
                     } else {
-                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_NO."</li>\n";
+                        $out .= '    <li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_NO."</li>\n";
                     }
 
                     if ($legal['stores_ip']) {
-                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_YES."</li>\n";
+                        $out .= '    <li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_YES."</li>\n";
                     } else {
-                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_NO."</li>\n";
+                        $out .= '    <li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_NO."</li>\n";
                     }
 
                     if ($legal['uses_ip']) {
-                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_YES."</li>\n";
+                        $out .= '    <li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_YES."</li>\n";
                     } else {
-                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_NO."</li>\n";
+                        $out .= '    <li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_NO."</li>\n";
                     }
 
                     if ($legal['transmits_user_input']) {
-                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_YES."</li>\n";
+                        $out .= '    <li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_YES."</li>\n";
                     } else {
-                        $out .= '<li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_NO."</li>\n";
+                        $out .= '    <li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_NO."</li>\n";
                     }
 
-                    $out .= "</ul>\n";
+                    $out .= "</ul>\n\n";
                 }
             }
         }
+
+        // Themes
+        $stack = array();
+        serendipity_plugin_api::hook_event('backend_templates_fetchlist', $stack);
+        $themes = serendipity_fetchTemplates();
+        foreach($themes AS $theme) {
+            $stack[$theme] = serendipity_fetchTemplateInfo($theme);
+        }
+        ksort($stack);
+
+        $theme_active = '';
+        $theme_other = '';
+
+        $static_info =  array(
+                '2k11' => array(
+                    'This theme can optionally use webfonts. If enabled, webfonts are loaded from Google/CDN servers, who will receive the IP address of the visitor and his metadata (browser, referrer, user agent, possible cookies).'
+                ),
+                'next' => array(
+                    'This theme can optionally use webfonts. If enabled, webfonts are loaded from Google/CDN servers, who will receive the IP address of the visitor and his metadata (browser, referrer, user agent, possible cookies).'
+                ),
+                'clean-blog' => array(
+                    'This theme uses javascript libraries via bootstrap CDN services (maxcdn.bootstrapcdn.com) and some polyfill libraries via the (oss.maxcdn.com) CDN service for old browsers. These services might track your metadata and IP. It can also optionally use webfonts. If enabled, webfonts are loaded from Google/CDN servers, who will receive the IP address of the visitor and his metadata (browser, referrer, user agent, possible cookies).'
+                ),
+                'skeleton' => array(
+                    'This theme can optionally use webfonts. If enabled, webfonts are loaded from Google/CDN servers, who will receive the IP address of the visitor and his metadata (browser, referrer, user agent, possible cookies).'
+                ),
+                'timeline' => array(
+                    'This theme uses javascript libraries via bootstrap CDN services (maxcdn.bootstrapcdn.com), which might track your metadata and IP. It can also optionally use webfonts. If enabled, webfonts are loaded from Google/CDN servers, who will receive the IP address of the visitor and his metadata (browser, referrer, user agent, possible cookies).'
+                ),
+
+        );
+
+        foreach ($stack AS $theme => $info) {
+            if (strtolower($info['engine']) == 'yes') {
+                continue;
+            }
+
+            if (file_exists($serendipity["serendipityPath"] . $serendipity["templatePath"] . $theme . "/legal.txt") || isset($static_info[$theme])) {
+                if ($theme == $serendipity['template']) {
+                    $pointer = 'theme_active';
+
+                    $$pointer .= '<h3>Active Theme "' . $theme .  "\"</h3>\n";
+                } else {
+                    $pointer = 'theme_other';
+
+                    $$pointer .= '<h3>Available Theme "' . $theme .  "\"</h3>\n";
+                }
+
+                $$pointer .= "<ul>\n";
+                if (isset($static_info[$theme])) {
+                    foreach($static_info[$theme] AS $themeout) {
+                        $$pointer .= '    <li>' . $themeout . "</li>\n";
+                    }
+                }
+
+                if (file_exists($serendipity["serendipityPath"] . $serendipity["templatePath"] . $theme . "/legal.txt")) {
+                    $$pointer .= '    <li>' . htmlspecialchars($this->file_get_contents_utf8($serendipity["serendipityPath"] . $serendipity["templatePath"] . $theme . "/legal.txt"), ENT_COMPAT, LANG_CHARSET, false) . "</li>\n";
+                }
+                $$pointer .= "</ul>\n";
+            }
+        }
+
+        $out .= $theme_active . $theme_other;
+
         return $out;
     }
 
