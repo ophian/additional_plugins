@@ -1,7 +1,18 @@
+3.65:
+----
+
+ * Fix guestbook fullentries view to stay independent from nl2br
+   plugin usage, since the (new) p-tag option badly interprets the
+   guestbook markup for admin comments!
+   This changes 2 files, adding a |nl2br modifier to the $entry.body output
+   - plugin_guestbook_backend_entries.tpl for v.3.65 - 2018-04-11
+   - plugin_guestbook_entries.tpl for v.3.65 - 2018-04-11
+   If you use a copy template in your theme, please make sure to apply these changes!
+
 3.64:
 ----
 
- * Colourize unapproved entries header different
+ * Colorize unapproved entries header different
 
 3.63:
 ----
@@ -27,7 +38,7 @@
    PLEASE NOTE:
       if you provide your own template guestbook stylesheets
       remember to include the images to your img/ directory.
- * Requirement and consitence changes
+ * Requirement and consistence changes
  * Now uses lang API - extends required Serendipity version to 1.6
 
 

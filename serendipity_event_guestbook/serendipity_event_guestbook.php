@@ -1,7 +1,7 @@
 <?php
 
 /**
- * serendipity_event_guestbook.php, v.3.64 - 2017-07-18
+ * serendipity_event_guestbook.php, v.3.65 - 2018-04-11
  */
 
 //error_reporting(E_ALL);
@@ -61,7 +61,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian');
-        $propbag->add('version',      '3.64');
+        $propbag->add('version',      '3.65');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -1219,6 +1219,9 @@ class serendipity_event_guestbook extends serendipity_event
             // count db entries as array: [$maxres]
             $maxres = $this->countEntriesDB($ap);
 
+            // disable nl2br plugin parsing, since the (new) p-tag option badly interprets the guestbook markup for admin comments!
+            $serendipity['POST']['properties']['disable_markups'] = array(true);
+
             $url = $is_guestbook_url . (($serendipity['rewrite'] == 'rewrite') ? '?' : '&');
             // generate $entries array and frontend pagination
             $entries = is_array($maxres) ? $this->frontend_guestbook_paginator($maxres[0], $ap, $url, $max_entries) : false;
@@ -1748,6 +1751,9 @@ class serendipity_event_guestbook extends serendipity_event
             // slice and save last element of $result
             $paginator = array_pop($result);
         }
+
+        // disable nl2br plugin parsing, since the (new) p-tag option badly interprets the guestbook markup for admin comments!
+        $serendipity['POST']['properties']['disable_markups'] = array(true);
 
         // this assigns db entries output to guestbooks backend smarty array: {$entries}
         $entries = $this->generate_EntriesArray($result, $_SERVER['PHP_SELF'], $this->get_config('wordwrap'), true);

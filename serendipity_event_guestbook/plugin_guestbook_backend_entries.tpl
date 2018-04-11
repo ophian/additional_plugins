@@ -1,5 +1,5 @@
 {*
-     plugin_guestbook_backend_entries.tpl for v.3.64 - 2017-07-18 Ian
+     plugin_guestbook_backend_entries.tpl for v.3.65 - 2018-04-11
 *}
 
 <!-- plugin_guestbook_backend_entries start -->
@@ -96,7 +96,7 @@
                     </label>
                     <input type=radio id="show" name="group">
                     <input type=radio id="hide" name="group">
-                    <span class="gbboxfull">{$entry.body|replace:'&amp;quot;':'&quot;'}</span>
+                    <span class="gbboxfull">{$entry.body|replace:'&amp;quot;':'&quot;'|nl2br}</span>
                     <span class="gbsummary">{$entry.body|strip|replace:'<br />':''|replace:'&amp;quot;':'&quot;'|truncate:50}</span>
                 </div>
                 </form>
