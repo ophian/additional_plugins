@@ -22,7 +22,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '4.1.0'
         ));
 
-        $propbag->add('version',       '0.23');
+        $propbag->add('version',       '0.24');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'html', 'markup', 'cutoff'));
@@ -470,7 +470,7 @@ function fulltext_toggle(id) {
     if ( document.getElementById(id + '_full').style.display == '' ) {
         document.getElementById(id + '_full').style.display='none';
         document.getElementById(id + '_summary').style.display='';
-        document.getElementById(id + '_text').innerHTML = '<?php echo TOGGLE_ALL ?>';
+        document.getElementById(id + '_text').innerHTML = '<?php echo TOGGLE_OPTION ?>';
     } else {
         document.getElementById(id + '_full').style.display='';
         document.getElementById(id + '_summary').style.display='none';
@@ -493,7 +493,7 @@ function fulltext_toggle(id) {
     if ( document.getElementById(id + '_full').style.display == '' ) {
         document.getElementById(id + '_full').style.display='none';
         document.getElementById(id + '_summary').style.display='';
-        document.getElementById(id + '_text').innerHTML = '<?php echo TOGGLE_ALL ?>';
+        document.getElementById(id + '_text').innerHTML = '<?php echo TOGGLE_OPTION ?>';
     } else {
         document.getElementById(id + '_full').style.display='';
         document.getElementById(id + '_summary').style.display='none';
@@ -516,7 +516,7 @@ function fulltext_toggle(id) {
                                 $output = $this->output($note['body']);
                                 echo '    <div id="' . $id . '_full" style="display: none" class="note_body">' .  $output . '</div>' . "\n";
                                 echo '    <div id="' . $id . '_summary" class="note_body">' .  serendipity_mb('substr', strip_tags($output), 0, $cutoff) . '...</div>' . "\n";
-                                echo '    <div class="note_summarylink"><a href="#' . $id . '_full" onclick="fulltext_toggle(' . $id . '); return false;" title="' . VIEW . '" class="serendipityIconLink"><img src="' . $zoom . '" alt="' . TOGGLE_ALL . '" /><span id="' . $id . '_text">' . TOGGLE_ALL  . '</span></a></div>';
+                                echo '    <div class="note_summarylink"><a href="#' . $id . '_full" onclick="fulltext_toggle(' . $id . '); return false;" title="' . VIEW . '" class="serendipityIconLink"><img src="' . $zoom . '" alt="' . TOGGLE_OPTION . '" /><span id="' . $id . '_text">' . TOGGLE_OPTION  . '</span></a></div>';
                             } else {
                                 echo '    <div class="note_body">' . $this->output($note['body']) . '</div>' . "\n";
                             }
@@ -554,7 +554,7 @@ function fulltext_toggle(id) {
                         <?php echo serendipity_mb('substr', strip_tags($output), 0, $cutoff) . "&hellip;\n"; ?>
                     </div>
                     <div class="note_summarylink">
-                        <button class="button_link toggle_comment_full" type="button" onclick="fulltext_toggle(<?php echo $id ?>); return false;" data-href="#qn<?php echo $id ?>_full" title="<?php echo TOGGLE_ALL ?>"><span class="icon-right-dir" aria-hidden="true"></span><span id="<?php echo $id ?>_text" class="visuallyhidden"> <?php echo TOGGLE_ALL ?></span></button>
+                        <button class="button_link toggle_comment_full" type="button" onclick="fulltext_toggle(<?php echo $id ?>); return false;" data-href="#qn<?php echo $id ?>_full" title="<?php echo TOGGLE_OPTION ?>"><span class="icon-right-dir" aria-hidden="true"></span><span id="<?php echo $id ?>_text" class="visuallyhidden"> <?php echo TOGGLE_OPTION ?></span></button>
                     </div>
 <?php
                     } else {
