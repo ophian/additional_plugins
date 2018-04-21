@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.40');
+        $propbag->add('version',       '1.41');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -439,7 +439,11 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         $statement = $this->get_config('gdpr_content');
 
                         if (empty($statement)) {
-                            $statement = '<div class="dsgvo_gdpr_statement_error">' . PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_ERROR . "</div>\n";
+                            if (empty($url)) {
+                                $statement = '<div class="dsgvo_gdpr_statement_error">' . PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_ERROR . "</div>\n";
+                            } else {
+                                $statement = $this->parseText($this->get_config('commentform_text'));
+                            }
                         }
 
                         echo '<div class="dsgvo_gdpr_statement">' . $statement . '</div>';

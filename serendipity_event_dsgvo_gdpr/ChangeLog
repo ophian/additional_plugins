@@ -1,3 +1,7 @@
+1.41:
+-----
+ * Fix case subpage load message output when having an URL set
+
 1.40:
 -----
  * Added ability to make themes provide a "legal.txt" with information,
