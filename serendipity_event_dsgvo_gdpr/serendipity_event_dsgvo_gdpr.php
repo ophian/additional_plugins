@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.50');
+        $propbag->add('version',       '1.51');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -486,6 +486,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
 
         echo "</form>\n";
 
+        echo '<p><em>' . PLUGIN_EVENT_DSGVO_GDPR_BACKEND_CHECK_REQUESTS . "</em></p>\n";
     }
 
     function event_hook($event, &$bag, &$eventData, $addData = null)

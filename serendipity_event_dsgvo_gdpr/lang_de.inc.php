@@ -139,3 +139,5 @@ Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporäre 
 @define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_INFO', 'Hier können Sie einen passgenauen Benutzernamen oder eine E-Mail-Adresse eingeben, um alle Kommentar-Metadaten dieses Benutzer zu löschen oder die Kommentare zu exportieren. Sie können mehrere Namen mit einem Zeilenumbruch trennen.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_DELFAIL', 'Um Daten zu exportieren oder zu löschen, müssen Sie mindestens einen Benutzernamen oder eine E-Mail-Adresse angeben.');
 
+@define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_CHECK_REQUESTS', 'Momentan ist ein solches Auskunfts- bzw Löschersuchen nicht oder nur bedingt über die Email verifizierbar. Ist der Anfragende wirklich auch der Kommentator?');
+
