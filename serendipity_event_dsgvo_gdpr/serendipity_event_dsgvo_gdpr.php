@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.41');
+        $propbag->add('version',       '1.50');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -34,7 +34,10 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                 'genpage'               => true,
                 'frontend_footer'       => true,
                 'frontend_configure'    => true,
-                'css'                   => true
+                'css'                   => true,
+                'backend_sidebar_admin' => true,
+                'backend_sidebar_entries_event_display_dsgvo'  => true,
+                'backend_deletecomment' => true
             )
         );
 
@@ -374,6 +377,117 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         return false;
     }
 
+    function parseParts($string)
+    {
+        $out = array();
+        $parts = explode("\n", $string);
+        foreach($parts AS $part) {
+            $part = trim($part);
+            if (empty($part)) continue;
+            $out[] = "'" . serendipity_db_escape_string($part) . "'";
+        }
+        return $out;
+    }
+
+    function showBackend()
+    {
+        global $serendipity;
+
+        if ($serendipity['serendipityUserlevel'] < USERLEVEL_ADMIN) {
+            return false;
+        }
+
+        echo '<h2>' . PLUGIN_EVENT_DSGVO_GDPR_BACKEND_TITLE . "</h2>\n";
+
+        $clist = array();
+        if (isset($serendipity['POST']['delete']) || isset($serendipity['POST']['export'])) {
+
+            $author_list = $this->parseParts($serendipity['POST']['filter']['author']);
+            $email_list  = $this->parseParts($serendipity['POST']['filter']['email']);
+
+            if (count($author_list) == 0 && count($email_list) == 0) {
+                echo '<span class="msg_error"><span class="icon-attention-circled"></span> ' . PLUGIN_EVENT_DSGVO_GDPR_BACKEND_DELFAIL . "</span>\n";
+            } else {
+                $where = array();
+
+                if (count($author_list) > 0) {
+                    $where[] = 'author IN (' . implode(', ', $author_list) . ')';
+                }
+
+                if (count($email_list) > 0) {
+                    $where[] = 'email IN (' . implode(', ', $email_list) . ')';
+                }
+
+                $clist = serendipity_db_query("SELECT *
+                                                 FROM {$serendipity['dbPrefix']}comments
+                                                WHERE " . implode(' OR ', $where), false, 'assoc');
+            }
+
+            if (!is_array($clist) || count($clist) == 0) {
+                echo '<span class="msg_notice"><span class="icon-info-circled"></span> ' . NO_COMMENTS . "</span>\n";
+            } else {
+
+                if (isset($serendipity['POST']['delete'])) {
+                    foreach($clist AS $comment) {
+                        if (serendipity_deleteComment($comment['id'], $comment['entry_id'])) {
+                            echo '<span class="msg_success"><span class="icon-ok-circled"></span> ' . sprintf(COMMENT_DELETED, $comment['id']) . "</span>\n";
+                        }
+                    }
+                }
+
+                if (isset($serendipity['POST']['export'])) {
+                    header('Content-Type: application/csv; charset=' . LANG_CHARSET);
+                    header('Content-Disposition: attachment; filename=blog-userData.csv');
+                    header('Pragma: no-cache');
+                    echo '#';
+                    foreach($clist[0] AS $key => $val) {
+                        echo '"' . $key . '";';
+                    }
+                    echo "\n";
+                    foreach($clist AS $comment) {
+                        foreach($comment AS $key => $val) {
+                            echo '"' . $val . '";';
+                        }
+                        echo "\n";
+                    }
+                }
+            }
+        }
+
+        echo '<form action="?" method="post">'."\n";
+        echo serendipity_setFormToken();
+        echo '<input type="hidden" name="serendipity[adminModule]" value="event_display" />'."\n";
+        echo '<input type="hidden" name="serendipity[adminAction]" value="dsgvo" />'."\n";
+
+        echo '<p>' . PLUGIN_EVENT_DSGVO_GDPR_BACKEND_INFO . "</p>\n";
+
+?>
+        <fieldset id="filter_dsgvo" class="filter_pane">
+            <legend class="visuallyhidden"><?php echo PLUGIN_EVENT_DSGVO_GDPR_BACKEND; ?></legend>
+            <div class="clearfix inputs">
+                <div class="form_field">
+                    <label for="filter_author"><?php echo AUTHOR; ?></label>
+                    <textarea id="filter_author" name="serendipity[filter][author]"><?php echo serendipity_specialchars($serendipity['POST']['filter']['author']); ?></textarea>
+                </div>
+
+                <div class="form_field">
+                    <label for="filter_email"><?php echo EMAIL; ?></label>
+                    <textarea id="filter_email" name="serendipity[filter][email]"><?php echo serendipity_specialchars($serendipity['POST']['filter']['email']); ?></textarea>
+                </div>
+
+            </div>
+
+            <div class="form_buttons">
+                <input name="serendipity[export]" value="CSV" type="submit">
+                <input name="serendipity[delete]" class="state_cancel comments_multidelete" data-delmsg="<?php echo COMMENTS_DELETE_CONFIRM; ?>" value="<?php echo DELETE; ?>" type="submit">
+            </div>
+        </fieldset>
+<?php
+
+        echo "</form>\n";
+
+    }
+
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
         global $serendipity;
@@ -383,6 +497,19 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         if (isset($hooks[$event])) {
 
             switch($event) {
+
+                case 'backend_sidebar_admin':
+                    if ($serendipity['serendipityUserlevel'] < USERLEVEL_ADMIN) {
+                        break;
+                    }
+?>
+                    <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=dsgvo"><?php echo PLUGIN_EVENT_DSGVO_GDPR_BACKEND_SB_TITLE; ?></a></li>
+<?php
+                    break;
+
+                case 'backend_sidebar_entries_event_display_dsgvo':
+                    $this->showBackend();
+                    break;
 
                 case 'frontend_configure':
                     if (serendipity_db_bool($this->get_config('anonymizeIp'))) {
@@ -419,6 +546,14 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     if ($this->isActive()) {
                         $serendipity['is_staticpage'] = true;
                     }
+                    break;
+
+                case 'backend_deletecomment':
+                    // Vanilla s9y does not delete all metadata of a comment that has threaded replies, it only sets the body to "Deleted".
+                    // Here we take care that all metadata is cleared in that case.
+                    serendipity_db_query("UPDATE {$serendipity['dbPrefix']}comments
+                                             SET title = '', author = '', email = '', url = '', ip = '', referer = ''
+                                           WHERE id = {$addData['cid']}");
                     break;
 
                 case 'entry_display':

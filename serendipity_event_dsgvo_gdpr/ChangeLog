@@ -1,3 +1,8 @@
+1.50:
+-----
+ * Added ability to export and/or remove comments made by users to comply
+   with the request for information
+
 1.41:
 -----
  * Fix case subpage load message output when having an URL set

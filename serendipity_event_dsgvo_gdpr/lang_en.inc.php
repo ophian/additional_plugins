@@ -134,3 +134,8 @@ Certain plugins can use the session cookie to store additional temporary data.</
 @define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_YES', 'Transmits user input to services / third parties (not necessarily stored)');
 @define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_NO', 'Does not transmit user input to services / third parties (or not specified)');
 
+@define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_SB_TITLE', 'Comments userdata');
+@define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_TITLE', 'DSGVO/GDPR - Manage user comment-data');
+@define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_INFO', 'Here you can enter an exactly matching username or e-mail address to wipe out all comment metadata or export the comments for that user. You can separate multiple names with a newline.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_DELFAIL', 'To export or delete data you must specify at least one username or e-mail address.');
+
