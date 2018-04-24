@@ -1,3 +1,7 @@
+1.52:
+-----
+ * Set default anonymizeIp option value to false
+
 1.51:
 -----
  * Think about how to verify the inquirer..

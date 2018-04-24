@@ -17,8 +17,8 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_DSGVO_GDPR_NAME);
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.51');
+        $propbag->add('author',        'Serendipity Team, Ian');
+        $propbag->add('version',       '1.52');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -117,7 +117,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_DSGVO_GDPR_ANONYMIZE);
                 $propbag->add('description', PLUGIN_EVENT_DSGVO_GDPR_ANONYMIZE_DESC);
-                $propbag->add('default',     'true');
+                $propbag->add('default',     'false');
                 break;
 
             case 'show_in_footer':
@@ -513,7 +513,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     break;
 
                 case 'frontend_configure':
-                    if (serendipity_db_bool($this->get_config('anonymizeIp'))) {
+                    if (serendipity_db_bool($this->get_config('anonymizeIp', 'false'))) {
                         $_SERVER['REMOTE_ADDR'] = IpAnonymizer::anonymizeIp($_SERVER['REMOTE_ADDR']);
                     }
                     break;
