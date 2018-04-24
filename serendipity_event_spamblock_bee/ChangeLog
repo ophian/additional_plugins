@@ -1,3 +1,8 @@
+1.3.4:
+------
+
+ * Cleanup legal property bag information for gdpr/dsgvo
+
 1.3.3:
 ------
 
@@ -16,7 +21,7 @@
 1.3.0:
 ------
 
- * set new reqirements and add consistence
+ * set new requirements and add consistence
  * use lang API - extends required version
  * update pear JSON.php file
  * use modern constructor methods for PHP compatibility
@@ -31,7 +36,7 @@ Version 1.2.7
 * Made it work more nice with the contactform plugin
 
 Version 1.2.6
-* Fixed the plugin constrctor to make it compatible with the plugin api.
+* Fixed the plugin constructor to make it compatible with the plugin api.
 
 Version 1.2.5
 * AntiSpam statistics sidebar plugin.

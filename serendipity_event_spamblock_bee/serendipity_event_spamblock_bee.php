@@ -141,7 +141,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
             'services' => array(
             ),
             'frontend' => array(
-                'Anti-Spam measurements by this plugin can transfer user data and metadata (??? plugin description missing ???)',
+                'Anti-Spam measurements by this plugin can transfer comment user data and metadata',
                 'All user data and metadata (IP address, comment fields) can be logged to database or file'
             ),
             'backend' => array(
