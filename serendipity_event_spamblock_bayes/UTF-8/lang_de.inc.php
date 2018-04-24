@@ -1,14 +1,14 @@
 <?php
 
 /**
- *  @version
- *  @author Translator Name <yourmail@example.com>
- *  EN-Revision: Revision of lang_en.inc.php
+ * @version
+ * @author Translator Name <yourmail@example.com>
+ * EN-Revision: Revision of lang_en.inc.php
  */
 
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME', 'Spamschutz (Bayes)');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC', 'Filtert Kommentare mittels eines lernenden Algorithmus.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_HAM',  'Valid');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_HAM', 'Valid');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAM', 'Spam');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_DIRECTBLOCK', 'Direktes Abweisen');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_DIRECTBLOCK_DESC', 'Weist Spam-Kommentare direkt ab anstatt sie erst zu moderieren.');
@@ -53,7 +53,7 @@ define('PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAMBUTTON', 'Als Spam lernen');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RESTORE', 'Wiederherstellen');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_ANALYSIS', 'Analyse');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_DELETE', 'Papierkorbgrenze');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_DELETE_DESC', 'Ab welcher Bewertung soll ein Kommentar direkt gelöscht statt in den Papierkorb geschoben werden? Beispiel: 98');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_DELETE_DESC', 'Ab welcher Bewertung soll ein Kommentar direkt gelöscht anstatt in den Papierkorb verschoben zu werden? Beispiel: 98');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_IGNORE', 'Ignorieren');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_IGNORE_DESC', 'Gibt Kommentarfelder an, die ignoriert werden sollen. Möglich sind: ip, referer, author, body, email, url. Beispiel: "ip, referer".');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_EXPORTDB', 'Datenbank exportieren');

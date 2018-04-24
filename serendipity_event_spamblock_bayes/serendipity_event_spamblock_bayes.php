@@ -33,7 +33,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '1.03');
+        $propbag->add('version',        '1.04');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -72,8 +72,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
             'services' => array(
             ),
             'frontend' => array(
-                'Anti-Spam measurements by this plugin can transfer user data and metadata (??? plugin description missing ???)',
-                'All user data and metadata (IP address, comment fields) can be logged to database or file'
+                'Anti-Spam measurements by this plugin can transfer user data and metadata to a shared repository',
+                'All user data and metadata (IP address, comment fields) can be logged to a database or file, and partially are used for SPAM / HAM filter measurements'
             ),
             'backend' => array(
             ),
@@ -120,21 +120,21 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_SPAMBLOCK_BAYES_AUTOLEARN);
                 $propbag->add('description', PLUGIN_EVENT_SPAMBLOCK_BAYES_AUTOLEARN_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default', 'false');
                 break;
 
             case 'menu':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU);
                 $propbag->add('description', PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_DESC);
-                $propbag->add('default', true);
+                $propbag->add('default', 'true');
                 break;
 
             case 'recycler':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_RECYCLER);
                 $propbag->add('description', PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_DESC);
-                $propbag->add('default', true);
+                $propbag->add('default', 'true');
                 break;
 
             case 'recyclerdelete':
@@ -149,7 +149,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL);
                 $propbag->add('description', PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default', 'false');
                 break;
 
             case 'path':
@@ -714,7 +714,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $this->lastRating = $rating;
         //a rating greater 0.8 is probably spam
         if ($rating >= 0.8) {
-            $autolearn = $this->get_config('autolearn', false);
+            $autolearn = serendipity_db_bool($this->get_config('autolearn', 'false'));
             if (($rating > 0.9) && $autolearn)  {
                 $this->startLearn($comment, 'spam');
             }
@@ -782,7 +782,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                                         // prevent infinite loop
                                         $loop++;
                                     }
-                                    if ($this->get_config('recycler', true)) {
+                                    if (serendipity_db_bool($this->get_config('recycler', 'true'))) {
                                         $this->recycleComment($id, $entry_id);
                                     }
                                     serendipity_deleteComment($id, $entry_id);
@@ -937,8 +937,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                                 }
                             }
                             if (isset($_REQUEST['empty'])) {
+                                $emptyAll = serendipity_db_bool($this->get_config('emptyAll', 'false'));
                                 if (isset($_REQUEST['recyclerSpam'])) {
-                                    if ($this->get_config('emptyAll', false)) {
+                                    if ($emptyAll) {
                                         $comments = $this->getAllRecyclerComments();
                                     } else {
                                         $comments = $this->getRecyclerComment($ids);
@@ -947,7 +948,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                                         $this->startLearn($comment, 'spam');
                                     }
                                 }
-                                if ($this->get_config('emptyAll', false)) {
+                                if ($emptyAll) {
                                     $success = $this->emptyRecycler();
                                 } else {
                                     $success = $this->deleteFromRecycler($ids);
@@ -1351,7 +1352,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                         break;
                     }
                     if ($serendipity['version'][0] < 2) {
-                        if ($this->get_config('menu', true)) {
+                        if (serendipity_db_bool($this->get_config('menu', 'true'))) {
                             echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks">
                                 <a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=spamblock_bayes&serendipity[subpage]=1">
                                     '. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME .'
@@ -1366,7 +1367,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                         break;
                     }
                     if ($serendipity['version'][0] > 1) {
-                        if ($this->get_config('menu', true)) {
+                        if (serendipity_db_bool($this->get_config('menu', 'true'))) {
                             echo '<li><a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=spamblock_bayes&serendipity[subpage]=1">' . PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME . '</a></li>';
                         }
                     }
@@ -1429,7 +1430,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                         // prevent infinite loop
                         $loop++;
                     }
-                    if ($this->get_config('recycler', true)) {
+                    if (serendipity_db_bool($this->get_config('recycler', 'true'))) {
                         $this->recycleComment($comment_id, $entry_id);
                     }
                     serendipity_deleteComment($comment_id, $entry_id);
@@ -1794,7 +1795,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     {
         global $serendipity;
 
-        if ($this->get_config('recycler', true)) {
+        if (serendipity_db_bool($this->get_config('recycler', 'true'))) {
             $delete = $this->get_config('recyclerdelete', '');
             $rating = preg_replace('/\..*/', '', $this->lastRating * 100);
             if (empty($delete) || $rating < $delete) {

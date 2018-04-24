@@ -1,3 +1,9 @@
+1.04:
+------
+ * Cleanup legal property bag information for gdpr/dsgvo
+ * Fix some lang constant typos
+ * Consistency fixes
+
 1.03:
 ------
  * Added legal property bag information for gdpr/dsgvo
@@ -15,7 +21,7 @@
 1.00:
 ------
  * Remove Series 1.7 switches and set to Serendipity 2.0 up requirement
- * Use Serendipity bundled jquery if needed
+ * Use Serendipity bundled jQuery if needed
  * Consistency cleanups
 
 0.5.1:
