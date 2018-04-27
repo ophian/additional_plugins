@@ -49,7 +49,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.9.0.0-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.9.2.0-plus.zip';
 
     /**
      * Access property checkUpdateVersion
@@ -57,17 +57,17 @@ class serendipity_event_ckeditor extends serendipity_event
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.9.0.0');
+    protected $checkUpdateVersion = array('ckeditor:4.9.2.0');
 
     /**
      * Access property revisionPackage
      * Note revisions of ckeditor and plugin additions to lang files
      * @var array
      */
-    protected $revisionPackage = array('CKEditor 4.9.0 (revision 9204212, full package, 2018-03-21)',
+    protected $revisionPackage = array('CKEditor 4.9.2 (revision 95e5d83, full package, 2018-04-18)',
                                        'The main ckeditor.js file was slightly modified to prevent an odd IE 11 error with the gallery selection',
                                        'CKEditor-Plugin: mediaembed, v. 0.6+ (https://github.com/frozeman/MediaEmbed, 2016-07-24)',
-                                       'CKEditor-Plugin: manually added autogrow, clipboard, codesnippet, embedbase, embed, embedsemantic, fakeobjects, lineutils, notification, notificationaggregator, widget and widgetselection plugins, 2018-03-21)',
+                                       'CKEditor-Plugin: manually added for version "autogrow", "clipboard", "codesnippet", "dialog", "dialogui", "embedbase", "embed", "embedsemantic", "fakeobjects", "lineutils", "notification", "notificationaggregator", "placeholder", "widget" and "widgetselection" plugins, 2018-04-27)',
                                        'CKEditor-Plugin: procurator, v. 1.6 (Serendipity placeholder Plugin, 2016-01-01)',
                                        'CKEditor-Plugin: cheatsheet, v. 1.2 (Serendipity CKE-Cheatsheet Plugin, 2016-08-15)',
                                        'CKEditor-S9yCustomConfig, cke_config.js, v. 2.13, 2017-08-19',
@@ -178,7 +178,7 @@ class serendipity_event_ckeditor extends serendipity_event
 
     function uninstall(&$propbag)
     {
-        // todo? uninstall old instances which may be in there, caused by a duplicating bug using installer fallback without right instance, in 2.3.2 (was for one day online only)
+        // todo? uninstall old instances which may be in there, caused by a duplicating bug using installer fallback without right instance, in 2.3.2 (though, was for one day online only)
     }
 
     function introspect(&$propbag)
@@ -189,7 +189,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.9.0.0'); // is CKEDITOR Series 4.9.0 - and appended plugin revision .0
+        $propbag->add('version',       '4.9.2.0'); // is CKEDITOR Series 4.9.2 - and appended plugin revision .0
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
@@ -211,6 +211,20 @@ class serendipity_event_ckeditor extends serendipity_event
         ));
         $propbag->add('configuration', array('path', 'plugpath', 'codebutton', 'prettify', 'oembed', 'oembed_type', 'acf_off', 'toolbar', 'ibn_off', 'toolbar_break', 'force_install', 'timestamp'));
         $propbag->add('groups', array('BACKEND_EDITOR'));
+        $propbag->add('legal',         array(
+            'services' => array(),
+            'frontend' => array(
+            ),
+            'backend' => array(
+                'If enabled, some plugins used by the CKEditor library (wsc/scayt and embed/embedbase/embedsemantic) use external services for web spell checking, and iframed proxy services. These may receive metadata.',
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => false,
+            'transmits_user_input'  => false
+        ));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -408,7 +422,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.9.0.0', '4.8.0.2'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.9.2.0', '4.9.0.0'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -422,7 +436,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.9.0.0', '4.8.0.2'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.9.2.0', '4.9.0.0'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);

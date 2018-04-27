@@ -1,3 +1,9 @@
+4.9.2.0:
+---------
+    * Security update CKEDITOR 4.9.2 (http://ckeditor.com/release-notes).
+      Without further notice, all manually added CKEditor AddOns are updated too.
+    * Add GDPR / DSGVO legal notes
+
 4.9.0.0:
 ---------
     * Upgrade to CKEDITOR 4.9. Series, update 0 (http://ckeditor.com/release-notes).
