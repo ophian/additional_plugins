@@ -7359,6 +7359,576 @@
 </release>
 </package>
 <package version="1.0">
+<name>serendipity_event_portier</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_portier/ChangeLog</changelog>
+<license>GPL</license>
+<summary>Portier Email Authentication</summary>
+<groups>BACKEND_USERMANAGEMENT</groups>
+<description>Allows authors to authenticate only using their email.</description>
+<maintainers><maintainer><name>Grischa Brockhaus, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0.1</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2018-04-27</date>
+  <filelist>
+    <dir name="serendipity_event_portier">
+      <file>ChangeLog</file>
+      <file>composer.json</file>
+      <file>composer.lock</file>
+      <file>documentation_cs.html</file>
+      <file>documentation_cz.html</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>LICENSE</file>
+      <file>README.md</file>
+      <file>S9yStore.php</file>
+      <file>serendipity_event_portier.php</file>
+      <dir name="src">
+        <file>AbstractStore.php</file>
+        <file>Client.php</file>
+        <file>RedisStore.php</file>
+        <file>StoreInterface.php</file>
+      </dir>
+      <dir name="UTF-8">
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+      </dir>
+      <dir name="vendor">
+        <file>autoload.php</file>
+        <dir name="composer">
+          <file>autoload_classmap.php</file>
+          <file>autoload_files.php</file>
+          <file>autoload_namespaces.php</file>
+          <file>autoload_psr4.php</file>
+          <file>autoload_real.php</file>
+          <file>autoload_static.php</file>
+          <file>ClassLoader.php</file>
+          <file>installed.json</file>
+          <file>LICENSE</file>
+        </dir>
+        <dir name="fgrosse">
+          <dir name="phpasn1">
+            <file>.coveralls.yml</file>
+            <file>.gitignore</file>
+            <file>.styleci.yml</file>
+            <file>.travis.yml</file>
+            <file>CHANGELOG.md</file>
+            <file>composer.json</file>
+            <file>composer.lock</file>
+            <dir name="lib">
+              <dir name="ASN1">
+                <file>AbstractString.php</file>
+                <file>AbstractTime.php</file>
+                <file>Base128.php</file>
+                <dir name="Composite">
+                  <file>AttributeTypeAndValue.php</file>
+                  <file>RDNString.php</file>
+                  <file>RelativeDistinguishedName.php</file>
+                </dir>
+                <file>Construct.php</file>
+                <dir name="Exception">
+                  <file>NotImplementedException.php</file>
+                  <file>ParserException.php</file>
+                </dir>
+                <file>ExplicitlyTaggedObject.php</file>
+                <file>Identifier.php</file>
+                <file>Object.php</file>
+                <file>OID.php</file>
+                <file>Parsable.php</file>
+                <file>TemplateParser.php</file>
+                <dir name="Universal">
+                  <file>BitString.php</file>
+                  <file>BMPString.php</file>
+                  <file>Boolean.php</file>
+                  <file>CharacterString.php</file>
+                  <file>Enumerated.php</file>
+                  <file>GeneralizedTime.php</file>
+                  <file>GeneralString.php</file>
+                  <file>GraphicString.php</file>
+                  <file>IA5String.php</file>
+                  <file>Integer.php</file>
+                  <file>Null.php</file>
+                  <file>NullObject.php</file>
+                  <file>NumericString.php</file>
+                  <file>ObjectDescriptor.php</file>
+                  <file>ObjectIdentifier.php</file>
+                  <file>OctetString.php</file>
+                  <file>PrintableString.php</file>
+                  <file>RelativeObjectIdentifier.php</file>
+                  <file>Sequence.php</file>
+                  <file>Set.php</file>
+                  <file>T61String.php</file>
+                  <file>UniversalString.php</file>
+                  <file>UTCTime.php</file>
+                  <file>UTF8String.php</file>
+                  <file>VisibleString.php</file>
+                </dir>
+                <file>UnknownConstructedObject.php</file>
+                <file>UnknownObject.php</file>
+              </dir>
+              <dir name="X509">
+                <file>AlgorithmIdentifier.php</file>
+                <file>CertificateExtensions.php</file>
+                <file>CertificateSubject.php</file>
+                <dir name="CSR">
+                  <file>Attributes.php</file>
+                  <file>CSR.php</file>
+                </dir>
+                <file>PrivateKey.php</file>
+                <file>PublicKey.php</file>
+                <dir name="SAN">
+                  <file>DNSName.php</file>
+                  <file>IPAddress.php</file>
+                  <file>SubjectAlternativeNames.php</file>
+                </dir>
+              </dir>
+            </dir>
+            <file>LICENSE</file>
+            <file>phpunit.xml.dist</file>
+            <file>README.md</file>
+          </dir>
+        </dir>
+        <dir name="guzzlehttp">
+          <dir name="guzzle">
+            <file>.travis.yml</file>
+            <file>CHANGELOG.md</file>
+            <file>composer.json</file>
+            <file>LICENSE</file>
+            <file>README.md</file>
+            <dir name="src">
+              <file>Client.php</file>
+              <file>ClientInterface.php</file>
+              <dir name="Cookie">
+                <file>CookieJar.php</file>
+                <file>CookieJarInterface.php</file>
+                <file>FileCookieJar.php</file>
+                <file>SessionCookieJar.php</file>
+                <file>SetCookie.php</file>
+              </dir>
+              <dir name="Exception">
+                <file>BadResponseException.php</file>
+                <file>ClientException.php</file>
+                <file>ConnectException.php</file>
+                <file>GuzzleException.php</file>
+                <file>RequestException.php</file>
+                <file>SeekException.php</file>
+                <file>ServerException.php</file>
+                <file>TooManyRedirectsException.php</file>
+                <file>TransferException.php</file>
+              </dir>
+              <file>functions.php</file>
+              <file>functions_include.php</file>
+              <dir name="Handler">
+                <file>CurlFactory.php</file>
+                <file>CurlFactoryInterface.php</file>
+                <file>CurlHandler.php</file>
+                <file>CurlMultiHandler.php</file>
+                <file>EasyHandle.php</file>
+                <file>MockHandler.php</file>
+                <file>Proxy.php</file>
+                <file>StreamHandler.php</file>
+              </dir>
+              <file>HandlerStack.php</file>
+              <file>MessageFormatter.php</file>
+              <file>Middleware.php</file>
+              <file>Pool.php</file>
+              <file>PrepareBodyMiddleware.php</file>
+              <file>RedirectMiddleware.php</file>
+              <file>RequestOptions.php</file>
+              <file>RetryMiddleware.php</file>
+              <file>TransferStats.php</file>
+              <file>UriTemplate.php</file>
+            </dir>
+            <file>UPGRADING.md</file>
+          </dir>
+          <dir name="promises">
+            <file>CHANGELOG.md</file>
+            <file>composer.json</file>
+            <file>LICENSE</file>
+            <file>Makefile</file>
+            <file>README.md</file>
+            <dir name="src">
+              <file>AggregateException.php</file>
+              <file>CancellationException.php</file>
+              <file>Coroutine.php</file>
+              <file>EachPromise.php</file>
+              <file>FulfilledPromise.php</file>
+              <file>functions.php</file>
+              <file>functions_include.php</file>
+              <file>Promise.php</file>
+              <file>PromiseInterface.php</file>
+              <file>PromisorInterface.php</file>
+              <file>RejectedPromise.php</file>
+              <file>RejectionException.php</file>
+              <file>TaskQueue.php</file>
+              <file>TaskQueueInterface.php</file>
+            </dir>
+          </dir>
+          <dir name="psr7">
+            <file>.gitignore</file>
+            <file>.travis.yml</file>
+            <file>CHANGELOG.md</file>
+            <file>composer.json</file>
+            <file>LICENSE</file>
+            <file>Makefile</file>
+            <file>phpunit.xml.dist</file>
+            <file>README.md</file>
+            <dir name="src">
+              <file>AppendStream.php</file>
+              <file>BufferStream.php</file>
+              <file>CachingStream.php</file>
+              <file>DroppingStream.php</file>
+              <file>FnStream.php</file>
+              <file>functions.php</file>
+              <file>functions_include.php</file>
+              <file>InflateStream.php</file>
+              <file>LazyOpenStream.php</file>
+              <file>LimitStream.php</file>
+              <file>MessageTrait.php</file>
+              <file>MultipartStream.php</file>
+              <file>NoSeekStream.php</file>
+              <file>PumpStream.php</file>
+              <file>Request.php</file>
+              <file>Response.php</file>
+              <file>ServerRequest.php</file>
+              <file>Stream.php</file>
+              <file>StreamDecoratorTrait.php</file>
+              <file>StreamWrapper.php</file>
+              <file>UploadedFile.php</file>
+              <file>Uri.php</file>
+            </dir>
+          </dir>
+        </dir>
+        <dir name="lcobucci">
+          <dir name="jwt">
+            <file>.gitignore</file>
+            <file>.scrutinizer.yml</file>
+            <file>.travis.yml</file>
+            <file>composer.json</file>
+            <file>composer.lock</file>
+            <file>LICENSE</file>
+            <file>phpunit.xml.dist</file>
+            <file>README.md</file>
+            <dir name="src">
+              <file>Builder.php</file>
+              <dir name="Claim">
+                <file>Basic.php</file>
+                <file>EqualsTo.php</file>
+                <file>Factory.php</file>
+                <file>GreaterOrEqualsTo.php</file>
+                <file>LesserOrEqualsTo.php</file>
+                <file>Validatable.php</file>
+              </dir>
+              <file>Claim.php</file>
+              <file>Parser.php</file>
+              <dir name="Parsing">
+                <file>Decoder.php</file>
+                <file>Encoder.php</file>
+              </dir>
+              <file>Signature.php</file>
+              <dir name="Signer">
+                <file>BaseSigner.php</file>
+                <dir name="Ecdsa">
+                  <file>KeyParser.php</file>
+                  <file>Sha256.php</file>
+                  <file>Sha384.php</file>
+                  <file>Sha512.php</file>
+                </dir>
+                <file>Ecdsa.php</file>
+                <dir name="Hmac">
+                  <file>Sha256.php</file>
+                  <file>Sha384.php</file>
+                  <file>Sha512.php</file>
+                </dir>
+                <file>Hmac.php</file>
+                <file>Key.php</file>
+                <file>Keychain.php</file>
+                <dir name="Rsa">
+                  <file>Sha256.php</file>
+                  <file>Sha384.php</file>
+                  <file>Sha512.php</file>
+                </dir>
+                <file>Rsa.php</file>
+              </dir>
+              <file>Signer.php</file>
+              <file>Token.php</file>
+              <file>ValidationData.php</file>
+            </dir>
+          </dir>
+        </dir>
+        <dir name="psr">
+          <dir name="http-message">
+            <file>CHANGELOG.md</file>
+            <file>composer.json</file>
+            <file>LICENSE</file>
+            <file>README.md</file>
+            <dir name="src">
+              <file>MessageInterface.php</file>
+              <file>RequestInterface.php</file>
+              <file>ResponseInterface.php</file>
+              <file>ServerRequestInterface.php</file>
+              <file>StreamInterface.php</file>
+              <file>UploadedFileInterface.php</file>
+              <file>UriInterface.php</file>
+            </dir>
+          </dir>
+        </dir>
+        <dir name="spomky-labs">
+          <dir name="base64url">
+            <file>composer.json</file>
+            <file>LICENSE</file>
+            <dir name="src">
+              <file>Base64Url.php</file>
+            </dir>
+          </dir>
+        </dir>
+      </dir>
+    </dir>
+  </filelist>
+  <serendipityFilelist>
+    <file>serendipity_event_portier/ChangeLog</file>
+    <file>serendipity_event_portier/composer.json</file>
+    <file>serendipity_event_portier/composer.lock</file>
+    <file>serendipity_event_portier/documentation_cs.html</file>
+    <file>serendipity_event_portier/documentation_cz.html</file>
+    <file>serendipity_event_portier/lang_cs.inc.php</file>
+    <file>serendipity_event_portier/lang_cz.inc.php</file>
+    <file>serendipity_event_portier/lang_de.inc.php</file>
+    <file>serendipity_event_portier/lang_en.inc.php</file>
+    <file>serendipity_event_portier/LICENSE</file>
+    <file>serendipity_event_portier/README.md</file>
+    <file>serendipity_event_portier/S9yStore.php</file>
+    <file>serendipity_event_portier/serendipity_event_portier.php</file>
+    <file>serendipity_event_portier/src/AbstractStore.php</file>
+    <file>serendipity_event_portier/src/Client.php</file>
+    <file>serendipity_event_portier/src/RedisStore.php</file>
+    <file>serendipity_event_portier/src/StoreInterface.php</file>
+    <file>serendipity_event_portier/UTF-8/lang_cs.inc.php</file>
+    <file>serendipity_event_portier/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_portier/UTF-8/lang_de.inc.php</file>
+    <file>serendipity_event_portier/vendor/autoload.php</file>
+    <file>serendipity_event_portier/vendor/composer/autoload_classmap.php</file>
+    <file>serendipity_event_portier/vendor/composer/autoload_files.php</file>
+    <file>serendipity_event_portier/vendor/composer/autoload_namespaces.php</file>
+    <file>serendipity_event_portier/vendor/composer/autoload_psr4.php</file>
+    <file>serendipity_event_portier/vendor/composer/autoload_real.php</file>
+    <file>serendipity_event_portier/vendor/composer/autoload_static.php</file>
+    <file>serendipity_event_portier/vendor/composer/ClassLoader.php</file>
+    <file>serendipity_event_portier/vendor/composer/installed.json</file>
+    <file>serendipity_event_portier/vendor/composer/LICENSE</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/.coveralls.yml</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/.gitignore</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/.styleci.yml</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/.travis.yml</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/CHANGELOG.md</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/composer.json</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/composer.lock</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/AbstractString.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/AbstractTime.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Base128.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Composite/AttributeTypeAndValue.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Composite/RDNString.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Composite/RelativeDistinguishedName.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Construct.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Exception/NotImplementedException.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Exception/ParserException.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/ExplicitlyTaggedObject.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Identifier.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Object.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/OID.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Parsable.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/TemplateParser.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/BitString.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/BMPString.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/Boolean.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/CharacterString.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/Enumerated.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/GeneralizedTime.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/GeneralString.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/GraphicString.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/IA5String.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/Integer.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/Null.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/NullObject.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/NumericString.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/ObjectDescriptor.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/ObjectIdentifier.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/OctetString.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/PrintableString.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/RelativeObjectIdentifier.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/Sequence.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/Set.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/T61String.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/UniversalString.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/UTCTime.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/UTF8String.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/Universal/VisibleString.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/UnknownConstructedObject.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/ASN1/UnknownObject.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/X509/AlgorithmIdentifier.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/X509/CertificateExtensions.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/X509/CertificateSubject.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/X509/CSR/Attributes.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/X509/CSR/CSR.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/X509/PrivateKey.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/X509/PublicKey.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/X509/SAN/DNSName.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/X509/SAN/IPAddress.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/lib/X509/SAN/SubjectAlternativeNames.php</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/LICENSE</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/phpunit.xml.dist</file>
+    <file>serendipity_event_portier/vendor/fgrosse/phpasn1/README.md</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/.travis.yml</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/CHANGELOG.md</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/composer.json</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/LICENSE</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/README.md</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Client.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/ClientInterface.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Cookie/CookieJarInterface.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Cookie/SetCookie.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Exception/BadResponseException.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Exception/ClientException.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Exception/ConnectException.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Exception/GuzzleException.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Exception/SeekException.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Exception/ServerException.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Exception/TooManyRedirectsException.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Exception/TransferException.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/functions.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/functions_include.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Handler/CurlFactoryInterface.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Handler/CurlMultiHandler.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Handler/MockHandler.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/HandlerStack.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/MessageFormatter.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Middleware.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/Pool.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/RequestOptions.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/RetryMiddleware.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/TransferStats.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/src/UriTemplate.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/guzzle/UPGRADING.md</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/CHANGELOG.md</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/composer.json</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/LICENSE</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/Makefile</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/README.md</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/AggregateException.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/CancellationException.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/Coroutine.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/EachPromise.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/FulfilledPromise.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/functions.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/functions_include.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/Promise.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/PromiseInterface.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/PromisorInterface.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/RejectedPromise.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/RejectionException.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/TaskQueue.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/promises/src/TaskQueueInterface.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/.gitignore</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/.travis.yml</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/CHANGELOG.md</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/composer.json</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/LICENSE</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/Makefile</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/phpunit.xml.dist</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/README.md</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/AppendStream.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/BufferStream.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/CachingStream.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/DroppingStream.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/FnStream.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/functions.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/functions_include.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/InflateStream.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/LazyOpenStream.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/LimitStream.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/MessageTrait.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/MultipartStream.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/NoSeekStream.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/PumpStream.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/Request.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/Response.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/ServerRequest.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/Stream.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/StreamDecoratorTrait.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/StreamWrapper.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/UploadedFile.php</file>
+    <file>serendipity_event_portier/vendor/guzzlehttp/psr7/src/Uri.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/.gitignore</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/.scrutinizer.yml</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/.travis.yml</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/composer.json</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/composer.lock</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/LICENSE</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/phpunit.xml.dist</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/README.md</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Builder.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Claim/Basic.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Claim/EqualsTo.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Claim/Factory.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Claim/GreaterOrEqualsTo.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Claim/LesserOrEqualsTo.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Claim/Validatable.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Claim.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Parser.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Parsing/Decoder.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Parsing/Encoder.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signature.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/BaseSigner.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Ecdsa/KeyParser.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Ecdsa/Sha256.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Ecdsa/Sha384.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Ecdsa/Sha512.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Ecdsa.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Hmac/Sha256.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Hmac/Sha384.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Hmac/Sha512.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Hmac.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Key.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Keychain.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Rsa/Sha256.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Rsa/Sha384.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Rsa/Sha512.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer/Rsa.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Signer.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/Token.php</file>
+    <file>serendipity_event_portier/vendor/lcobucci/jwt/src/ValidationData.php</file>
+    <file>serendipity_event_portier/vendor/psr/http-message/CHANGELOG.md</file>
+    <file>serendipity_event_portier/vendor/psr/http-message/composer.json</file>
+    <file>serendipity_event_portier/vendor/psr/http-message/LICENSE</file>
+    <file>serendipity_event_portier/vendor/psr/http-message/README.md</file>
+    <file>serendipity_event_portier/vendor/psr/http-message/src/MessageInterface.php</file>
+    <file>serendipity_event_portier/vendor/psr/http-message/src/RequestInterface.php</file>
+    <file>serendipity_event_portier/vendor/psr/http-message/src/ResponseInterface.php</file>
+    <file>serendipity_event_portier/vendor/psr/http-message/src/ServerRequestInterface.php</file>
+    <file>serendipity_event_portier/vendor/psr/http-message/src/StreamInterface.php</file>
+    <file>serendipity_event_portier/vendor/psr/http-message/src/UploadedFileInterface.php</file>
+    <file>serendipity_event_portier/vendor/psr/http-message/src/UriInterface.php</file>
+    <file>serendipity_event_portier/vendor/spomky-labs/base64url/composer.json</file>
+    <file>serendipity_event_portier/vendor/spomky-labs/base64url/LICENSE</file>
+    <file>serendipity_event_portier/vendor/spomky-labs/base64url/src/Base64Url.php</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
 <name>serendipity_event_prettify</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_prettify/ChangeLog</changelog>
 <license>GPL</license>
@@ -8086,12 +8656,23 @@
 <description>Show social share buttons for services like Facebook and Twitter using shariff.</description>
 <maintainers><maintainer><name>onli, Matthias Mees, Thomas Hochstein, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.15</version>
+  <version>0.16</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2018-04-27</date>
   <filelist>
     <dir name="serendipity_event_social">
       <file>ChangeLog</file>
+      <dir name="fa">
+        <file>fa-brands-400.ttf</file>
+        <file>fa-brands-400.woff</file>
+        <file>fa-brands-400.woff2</file>
+        <file>fa-regular-400.ttf</file>
+        <file>fa-regular-400.woff</file>
+        <file>fa-regular-400.woff2</file>
+        <file>fa-solid-900.ttf</file>
+        <file>fa-solid-900.woff</file>
+        <file>fa-solid-900.woff2</file>
+      </dir>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_social.php</file>
@@ -8104,6 +8685,15 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_social/ChangeLog</file>
+    <file>serendipity_event_social/fa/fa-brands-400.ttf</file>
+    <file>serendipity_event_social/fa/fa-brands-400.woff</file>
+    <file>serendipity_event_social/fa/fa-brands-400.woff2</file>
+    <file>serendipity_event_social/fa/fa-regular-400.ttf</file>
+    <file>serendipity_event_social/fa/fa-regular-400.woff</file>
+    <file>serendipity_event_social/fa/fa-regular-400.woff2</file>
+    <file>serendipity_event_social/fa/fa-solid-900.ttf</file>
+    <file>serendipity_event_social/fa/fa-solid-900.woff</file>
+    <file>serendipity_event_social/fa/fa-solid-900.woff2</file>
     <file>serendipity_event_social/lang_de.inc.php</file>
     <file>serendipity_event_social/lang_en.inc.php</file>
     <file>serendipity_event_social/serendipity_event_social.php</file>

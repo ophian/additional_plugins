@@ -877,6 +877,15 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <guid isPermaLink="false">serendipity_event_popfetcher</guid>
 </item>
 <item>
+<title>Portier Email Authentication: Allows authors to authenticate only using their email.</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_portier</link>
+<category>Event Plugins</category>
+<author>Grischa Brockhaus, Malte Paskuda, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_portier&lt;br /&gt;Portier Email Authentication&lt;/b&gt;&lt;br /&gt;Allows authors to authenticate only using their email.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 27 Apr 2018 10:23:39 +0200</pubDate>
+<guid isPermaLink="false">serendipity_event_portier</guid>
+</item>
+<item>
 <title>Prettify for S9Y: Use Prettify to brush content between PRE tags for simple syntax highlighting.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_prettify</link>
 <category>Event Plugins</category>
@@ -990,7 +999,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>onli, Matthias Mees, Thomas Hochstein, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_social&lt;br /&gt;Share Buttons&lt;/b&gt;&lt;br /&gt;Show social share buttons for services like Facebook and Twitter using shariff.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 06 Apr 2018 11:36:09 +0200</pubDate>
+<pubDate>Fri, 27 Apr 2018 09:48:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_social</guid>
 </item>
 <item>
