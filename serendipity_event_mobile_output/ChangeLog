@@ -1,3 +1,7 @@
+1.09:
+-----
+ * Remover dead website documentary link
+
 1.08:
 -----
  * Replace PHP 7.2 set deprecated each() usage in
