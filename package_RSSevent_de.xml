@@ -759,9 +759,9 @@
 <title>Markup: Mobile Ausgabe: Dieses Plugin erkennt automatisch mobile Endgeräte und gibt optimiertes XHTML MP für diese aus. Für das Apple iPhone und den iPod Touch wird eine speziell angepasste Seite ausgegeben. Weiterhin werden Bilder automatisch passend skaliert.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mobile_output</link>
 <category>Event Plugins</category>
-<author>Pelle Boese, Grischa Brockhaus; iAN</author>
+<author>Pelle Boese, Grischa Brockhaus; Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_mobile_output&lt;br /&gt;Markup: Mobile Ausgabe&lt;/b&gt;&lt;br /&gt;Dieses Plugin erkennt automatisch mobile Endgeräte und gibt optimiertes XHTML MP für diese aus. Für das Apple iPhone und den iPod Touch wird eine speziell angepasste Seite ausgegeben. Weiterhin werden Bilder automatisch passend skaliert.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 27 Mar 2018 13:53:55 +0200</pubDate>
+<pubDate>Fri, 27 Apr 2018 12:19:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mobile_output</guid>
 </item>
 <item>
