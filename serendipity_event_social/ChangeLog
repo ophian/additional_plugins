@@ -1,3 +1,13 @@
+0.16:
+-----
+
+  * Update bundled shariff lib to 3.0.1
+    This version uses local hosted webfonts. In order to save space
+    and bandwidth, it supports .ttf, woff and .woff2 only. That means
+    no support for legacy iOS (.svg) or IE < 9 (.eot).
+    The CSS uses a hardcoded path "plugins/serendipity_event_social/fa/"
+    to these fonts.
+
 0.15:
 -----
 
@@ -10,7 +20,7 @@
 
 0.13:
 -----
- * Ignore smileys graphics for og:image
+ * Ignore smiley's graphics for og:image
  * Use entry picture from the timeline theme if set
  * Use entry picture from the photo theme if set
 
@@ -30,7 +40,7 @@
     * Work with and without @ in the twittervia username
 
 0.9:
-    * Add option to set  a fallback image for
+    * Add option to set a fallback image for
       twitter and facebook tags
 
 0.8:
