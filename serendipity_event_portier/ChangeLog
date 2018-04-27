@@ -1,0 +1,29 @@
+1.01:
+-----
+ * Hide Serendipity loginform when portier loginform is active
+
+1.00:
+-----
+ * Portier is a self-hostable login service that you can use instead of passwords.
+   Portier sits between your website and third-party services like Google Sign-In
+   to provide your users the fastest and easiest login experience, without ever
+   needing a new password.
+   Portier is a successor of both discontinued BrowserID and Mozillas Persona.
+   Therefore the serendipity_event_browserid plugin was renamed and reset for version.
+
+old browserid plugin changelog
+===============================
+
+2.0.1:
+------
+
+ * Added legal gdpr/dsgvo info
+
+Version 1.1 (brockhaus)
+---------------------------------
+
+ * Removed depedencies to OpenID (was working only if OpenID was installed, too)
+
+Version 1.0 (brockhaus)
+---------------------------------
+ * Initial working release
