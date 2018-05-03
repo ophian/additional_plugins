@@ -1,3 +1,10 @@
+1.60:
+-----
+ * Fix CSV data and file generation
+ * Use plugin properties as separator for GDPR statement selection
+ * Some lang corrections
+ * Change frontend fieldset to div, since not has a legend
+
 1.52:
 -----
  * Set default anonymizeIp option value to false

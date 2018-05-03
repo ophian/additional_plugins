@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '1.52');
+        $propbag->add('version',       '1.60');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -35,6 +35,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                 'frontend_footer'       => true,
                 'frontend_configure'    => true,
                 'css'                   => true,
+                'css_backend'           => true,
                 'backend_sidebar_admin' => true,
                 'backend_sidebar_entries_event_display_dsgvo'  => true,
                 'backend_deletecomment' => true
@@ -61,9 +62,10 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('legal',         array(
             'services' => array(),
             'frontend' => array(
-                'This plugin helps the user to comply with the hideous EU Cookie Law and adds easy links to your sites legal notes. Optionally it adds the comment consent checkbox and/or the CookieConsent JavaScript for alerting users about the use of Cookies on this website.',
+                'This plugin helps the user to comply with the European General Data Protection Regulation Act and adds easy links to your sites legal notes. Optionally it adds the comment consent checkbox and/or the CookieConsent JavaScript for alerting users about the use of Cookies on this website.',
             ),
             'backend' => array(
+                'Adds Backend actions to CSV extract or delete user data.',
             ),
             'cookies' => array(
                 'The CookieConsent by Insites option stores a consent-cookie which is build by several third-party location API services itself for country code, geoIP-location, hostname, organization and other data types.',
@@ -258,6 +260,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
 
                     // This is a list of TRUE/FALSE boolean toggles
                     $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_HEAD."</h4>\n";
+                    $out .= '<div class="dsgvo_gdpr_properties">'."\n";
                     $out .= "<ul>\n";
                     if ($legal['stores_user_input']) {
                         $out .= '    <li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_YES."</li>\n";
@@ -283,7 +286,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         $out .= '    <li>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_NO."</li>\n";
                     }
 
-                    $out .= "</ul>\n\n";
+                    $out .= "</ul>\n</div>\n\n";
                 }
             }
         }
@@ -397,7 +400,9 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
             return false;
         }
 
-        echo '<h2>' . PLUGIN_EVENT_DSGVO_GDPR_BACKEND_TITLE . "</h2>\n";
+        if (!isset($serendipity['POST']['export'])) {
+            echo '<h2>' . PLUGIN_EVENT_DSGVO_GDPR_BACKEND_TITLE . "</h2>\n";
+        }
 
         $clist = array();
         if (isset($serendipity['POST']['delete']) || isset($serendipity['POST']['export'])) {
@@ -436,20 +441,23 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                 }
 
                 if (isset($serendipity['POST']['export'])) {
+                    $csvdata  = '';
                     header('Content-Type: application/csv; charset=' . LANG_CHARSET);
                     header('Content-Disposition: attachment; filename=blog-userData.csv');
                     header('Pragma: no-cache');
-                    echo '#';
+                    $csvdata .= '#';
                     foreach($clist[0] AS $key => $val) {
-                        echo '"' . $key . '";';
+                        $csvdata .= '"' . $key . '";';
                     }
-                    echo "\n";
+                    $csvdata .= "\n";
                     foreach($clist AS $comment) {
                         foreach($comment AS $key => $val) {
-                            echo '"' . $val . '";';
+                            $csvdata .= '"' . $val . '";';
                         }
-                        echo "\n";
+                        $csvdata .= "\n";
                     }
+                    echo $csvdata;
+                    die();
                 }
             }
         }
@@ -512,6 +520,21 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     $this->showBackend();
                     break;
 
+                case 'css_backend':
+                    $eventData .= '
+
+/* serendipity_event_dsgvo_gdpr start */
+
+.dsgvo_gdpr_properties {
+    background-color: #EEE;
+    border: 1px solid #DDD;
+}
+
+/* serendipity_event_dsgvo_gdpr end */
+
+';
+                    break;
+
                 case 'frontend_configure':
                     if (serendipity_db_bool($this->get_config('anonymizeIp', 'false'))) {
                         $_SERVER['REMOTE_ADDR'] = IpAnonymizer::anonymizeIp($_SERVER['REMOTE_ADDR']);
@@ -534,11 +557,11 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                 case 'frontend_comment':
                     if (serendipity_db_bool($this->get_config('commentform_checkbox', 'true'))) {
 ?>
-                        <fieldset class="form_toolbar dsgvo_gdpr_comment">
+                        <div class="form_toolbar dsgvo_gdpr_comment">
                             <div class="form_box">
                                 <input id="checkbox_dsgvo_gdpr" name="serendipity[accept_privacy]" value="1" type="checkbox"<?php echo ($serendipity['POST']['accept_privacy'] == 1 ? ' checked="checked"' : ''); ?>><label for="checkbox_dsgvo_gdpr"><?php echo $this->parseText($this->get_config('commentform_text')); ?></label>
                             </div>
-                        </fieldset>
+                        </div>
 <?php
                     }
                     break;

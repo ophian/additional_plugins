@@ -64,7 +64,7 @@ window.cookieconsent.initialise({
 
 <h4>Serendipity Kern</h4>
 
-<p>Serendipity verwendet ein sogenanntes "Session-Cookie" für Frontend und Backend. Ein Besucher erhält ein Cookie mit dem folgenden Inhalt
+<p>Serendipity verwendet ein sogenanntes "Session-Cookie" für Frontend und Backend. Ein Besucher erhält ein Cookie mit dem folgenden Inhalt:
 eine eindeutige ID, die auf dem Server verwendet wird, um temporäre Session-Benutzerdaten zu speichern (z.B. Login-Gültigkeit, Benutzereinstellungen).
 Dieses Cookie ist obligatorisch für die Anmeldung am Backend, aber optional für das Frontend.
 Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporäre Daten zu speichern.</p>
@@ -86,7 +86,7 @@ Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporä
         </ul>
     </li>
     <li>Letzter Blogeintrag beim Speichern</li>
-    <li>Indikator, wenn Smarty Templating verwendet wird</li>
+    <li>Indikator, ob das Smarty Templating verwendet wird</li>
     <li>Möglicher Inhalt eines generierten Captcha-Bildes</li>
     <li>Das konfigurierte Frontend-Theme</li>
 </ul>
@@ -105,7 +105,7 @@ Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporä
 
 <ul>
     <li>Speichert in der Datenbank, wenn das Referrer-Tracking aktiviert ist (Statistik)</li>
-    <li>Speichert für Kommentare eines Besuchers und wird in der E-Mail, die an Moderatoren gesendet wird, angezeigt</li>
+    <li>Gespeichert bei den Kommentaren eines Besuchers und werden in der E-Mail, die an Moderatoren gesendet wird, angezeigt</li>
     <li>Speichert in der Logdatei (falls aktiviert) des Antispam-Spamblock-Plugins</li>
     <li>Übermittelt im Antispam-Filter von Akismet (falls aktiviert)</li>
     <li>Temporärer Nur-Lesezugriff zur Überprüfung von Referrern, Logins, IP-Flooding</li>
@@ -115,7 +115,7 @@ Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporä
 
 <ul>
     <li>Kommentare (alle Kommentar-Metadaten, gespeichert in der Datenbanktabelle serendipity_comments)</li>
-    <li>Referring URL beim Betreten des Blogs (wenn das Referrer-Tracking aktiviert ist, in der Datenbanktabelle serendipity_referers)</li>
+    <li>Referring URL beim Betreten des Blogs (wenn das Referrer-Tracking aktiviert ist, gespeichert in der Datenbanktabelle serendipity_referers)</li>
 </ul>
 
 <p>Zusätzlich sind derzeit die folgenden Plugins aktiviert und dies ist ihr automatisch generiertes Manifest:</p>.

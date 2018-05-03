@@ -105,8 +105,8 @@ Certain plugins can use the session cookie to store additional temporary data.</
 
 <ul>
     <li>Stored in database when referrer tracking is enabled (Statistics)</li>
-    <li>Stored for comments of a visitor and displayed within the E-Mail that is sent to moderators</li>
-    <li>Stored in logfile (if enabled) of the antispam spamblock plugin</li>
+    <li>Database storage for comments of a visitor and displayed within the E-Mail that is sent to moderators</li>
+    <li>Stored in logfile (if enabled) of the Antispam spamblock plugin</li>
     <li>Transmitted in Antispam filter for Akismet (if enabled)</li>
     <li>Temporary Read-only access for checking referrers, logins, IP flooding</li>
 </ul>
@@ -114,8 +114,8 @@ Certain plugins can use the session cookie to store additional temporary data.</
 <p>User input from visitors (not editors):</p>
 
 <ul>
-    <li>Comments (all comment metadata, stored in Database table serendipity_comments)</li>
-    <li>Referring URL when entering the blog (if referrer tracking is enabled, in database table serendipity_referers)</li>
+    <li>Comments (all comment metadata, is stored in the database table "serendipity_comments")</li>
+    <li>Referring URL when entering the blog (if referrer tracking is enabled, in stored in the database table serendipity_referers)</li>
 </ul>
 
 <p>Additionally, the following plugins are currently enabled and this is their automatically generated manifest:</p>
