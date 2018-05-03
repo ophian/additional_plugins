@@ -10,6 +10,7 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX', 'Require comments to accept privacy statement?');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX_DESC', 'If enabled, visitors are required to check an additional checkbox for blog comments to confirm your privacy statement.');
 
+@define('PLUGIN_EVENT_DSGVO_GDPR_SAVENEWLANG', 'If this field has already been saved in another language, delete the contents and save again to obtain a customized language version for saving.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT', 'Text for comment consent');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DESC', 'Enter the text here that is displayed to the user for accepting your terms of reference. Use %gdpr_url% as a placeholder for the URL.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DEFAULT', 'I agree that my data will be stored. Please review the <a href="%gdpr_url%" target="_blank">terms of usage / imprint</a> for further details.');

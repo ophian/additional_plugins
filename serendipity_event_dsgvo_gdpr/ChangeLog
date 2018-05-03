@@ -1,3 +1,7 @@
+1.61:
+-----
+ * Add text description reference for translated text strings
+
 1.60:
 -----
  * Fix CSV data and file generation

@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '1.60');
+        $propbag->add('version',       '1.61');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -104,7 +104,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
             case 'commentform_text':
                 $propbag->add('type',        'html');
                 $propbag->add('name',        PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT);
-                $propbag->add('description', PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DESC);
+                $propbag->add('description', PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DESC . ' '. PLUGIN_EVENT_DSGVO_GDPR_SAVENEWLANG);
                 $propbag->add('default',     PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DEFAULT);
                 break;
 
@@ -132,7 +132,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
             case 'show_in_footer_text':
                 $propbag->add('type',        'html');
                 $propbag->add('name',        PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT);
-                $propbag->add('description', PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT_DESC);
+                $propbag->add('description', PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT_DESC . ' '. PLUGIN_EVENT_DSGVO_GDPR_SAVENEWLANG);
                 $propbag->add('default',     PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT_DEFAULT);
                 break;
 

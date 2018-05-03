@@ -10,6 +10,7 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX', 'Kommentare zur Annahme erforderlich?');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX_DESC', 'Wenn aktiviert, müssen Besucher eine zusätzliche Checkbox für Blog-Kommentare aktivieren, um Ihre Datenschutzerklärung zu bestätigen.');
 
+@define('PLUGIN_EVENT_DSGVO_GDPR_SAVENEWLANG', 'Wurde dieses Feld bereits unter einer anderen Sprache abgespeichert, löschen Sie den Inhalt und speichern Sie erneut, um eine angepasste Sprach-Version zum Speichern zu erhalten.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT', 'Text für Kommentarzustimmung');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DESC', 'Geben Sie hier den Text ein, der dem Benutzer zur Annahme Ihrer Aufgabenstellung angezeigt wird. Verwenden Sie %gdpr_url% als Platzhalter für die URL.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DEFAULT', 'Ich bin damit einverstanden, dass meine Daten gespeichert werden. Bitte lesen Sie die <a href="%gdpr_url%" target="_blank">Nutzungsbedingungen / Impressum</a> für weitere Details.');
