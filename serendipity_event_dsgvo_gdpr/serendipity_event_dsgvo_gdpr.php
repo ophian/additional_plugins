@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '1.61');
+        $propbag->add('version',       '1.62');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -36,7 +36,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                 'frontend_configure'    => true,
                 'css'                   => true,
                 'css_backend'           => true,
-                'backend_sidebar_admin' => true,
+                'backend_sidebar_admin_appearance' => true,
                 'backend_sidebar_entries_event_display_dsgvo'  => true,
                 'backend_deletecomment' => true
             )
@@ -507,7 +507,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
 
             switch($event) {
 
-                case 'backend_sidebar_admin':
+                case 'backend_sidebar_admin_appearance':
                     if ($serendipity['serendipityUserlevel'] < USERLEVEL_ADMIN) {
                         break;
                     }
