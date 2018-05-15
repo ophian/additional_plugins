@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '1.62');
+        $propbag->add('version',       '1.63');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -147,7 +147,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT);
                 $propbag->add('description', PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_DESC);
-                $propbag->add('default',     'true');
+                $propbag->add('default',     'false');
                 break;
 
             case 'cookie_consent_text':
@@ -614,7 +614,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         echo '<div class="dsgvo_gdpr_footer">' . $this->parseText($this->get_config('show_in_footer_text')) . "</div>\n";
                     }
 
-                    if (serendipity_db_bool($this->get_config('cookie_consent', 'true'))) {
+                    if (serendipity_db_bool($this->get_config('cookie_consent', 'false'))) {
 ?>
                         <link rel="stylesheet" type="text/css" href="<?php echo $this->get_config('cookie_consent_path'); ?>/cookieconsent.min.css" />
                         <script type="text/javascript" src="<?php echo $this->get_config('cookie_consent_path'); ?>cookieconsent.min.js"></script>

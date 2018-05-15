@@ -1,3 +1,9 @@
+1.63:
+-----
+ * Set default cookie_consent option value to false
+ * Improve description for the rough auto information, which is NOT
+   meant to be a copy & paste prototype near to be ready for GDPR.
+
 1.62:
 -----
  * Move backend sidebar link to activity section
