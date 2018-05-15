@@ -1,3 +1,7 @@
+1.64:
+-----
+ * Improve confusing checkbox required option constants text
+
 1.63:
 -----
  * Set default cookie_consent option value to false

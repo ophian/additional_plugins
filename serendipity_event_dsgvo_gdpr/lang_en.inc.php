@@ -7,8 +7,8 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_DESC', 'You can see this automatic inspection above as a rough draft of information, which you can use to understand what to include to your sites privacy statement. Make sure that your privacy statement contains all relevant information. Contact a lawyer if you need help with this, we sadly cannot provide a bulletproof statement draft for you for liability reasons.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_URL', 'Optional URL to privacy statement');
 @define('PLUGIN_EVENT_DSGVO_GDPR_URL_DESC', 'By default, an internal link is created that displays the text of your privacy statement with the text you enter here. However if you have a specific URL (or a staticpage URL) that you want to link your visitors to, you can enter it here. Then the privacy statement text will not be displayed and does not need to be entered.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX', 'Require comments to accept privacy statement?');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX_DESC', 'If enabled, visitors are required to check an additional checkbox for blog comments to confirm your privacy statement.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX', 'Require to accept privacy statement in send forms?');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX_DESC', 'If enabled, visitors are required to check an additional checkbox for blog comments or contact forms to confirm your privacy statement.');
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_SAVENEWLANG', 'If this field has already been saved in another language, delete the contents and save again to obtain a customized language version for saving.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT', 'Text for comment consent');
