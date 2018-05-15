@@ -438,20 +438,20 @@
 <guid isPermaLink="false">serendipity_plugin_timezones</guid>
 </item>
 <item>
-<title>Top Exits: Shows top exit links from your blogs</title>
+<title>Top Exits: Shows top exit links from your Blogs</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_topexits</link>
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_topexits&lt;br /&gt;Top Exits&lt;/b&gt;&lt;br /&gt;Shows top exit links from your blogs&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_topexits&lt;br /&gt;Top Exits&lt;/b&gt;&lt;br /&gt;Shows top exit links from your Blogs&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topexits</guid>
 </item>
 <item>
-<title>Top Referrers: Shows top sites that linked to your blogs</title>
+<title>Top Referrers: Shows top sites that linked to your Blogs</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_topreferrers</link>
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_topreferrers&lt;br /&gt;Top Referrers&lt;/b&gt;&lt;br /&gt;Shows top sites that linked to your blogs&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_topreferrers&lt;br /&gt;Top Referrers&lt;/b&gt;&lt;br /&gt;Shows top sites that linked to your Blogs&lt;br/&gt;For: Serendipity 0.8</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topreferrers</guid>
 </item>
