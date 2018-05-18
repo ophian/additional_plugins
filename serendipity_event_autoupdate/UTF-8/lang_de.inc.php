@@ -28,7 +28,7 @@
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_NEXT_UNPACK', 'Entpacke das Update'); // = next function msg
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_NEXT_INTEGRITY', 'Überprüfe Integrität'); // = next function msg
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_NEXT_COPY', 'Kopiere das Update'); // = next function msg
-@define('PLUGIN_AUTOUPD_MSG_FLUSH_NEXT_CLEAN', 'Lösche den vorläufigen Auotoupdate Ordner'); // = next function msg
+@define('PLUGIN_AUTOUPD_MSG_FLUSH_NEXT_CLEAN', 'Lösche den vorläufigen Autoupdate Ordner'); // = next function msg
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_NEXT_FINISH', 'Beende Verarbeitungsfunction'); // = next function msg
 
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_FINI_CLEANUP', 'Aufräumen der temporären Autoupdate-Verarbeitung beendet!');
@@ -37,7 +37,7 @@
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_FAIL_COPY', 'Kopieren der Update-Dateien gescheitert!');
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_FAIL_UNPACK', 'Das Entpacken der Update-Zip-Datei ist fehlgeschlagen!');
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_FAIL_CLEAN', 'Bereinigung des entpackten Verzeichnisses!');
-@define('PLUGIN_AUTOUPD_MSG_FLUSH_FAIL_RELOAD', 'Bitte <a href="?serendipity[newVersion]=%s">laden</a> Sie diese Seite (zB per F5) neu, um noch einmal zu versuchen, Ihr Blog erfolgreich zu aktualisieren!');
+@define('PLUGIN_AUTOUPD_MSG_FLUSH_FAIL_RELOAD', 'Bitte <a href="?serendipity[newVersion]=%s">laden</a> Sie diese Seite [F5] neu, um noch einmal zu versuchen, Ihr Blog erfolgreich zu aktualisieren!');
 
 @define('PLUGIN_AUTOUPD_MSG_EXISTS', 'Existiert der Link nach (<span class="file">%s</span>) überhaupt?');
 @define('PLUGIN_AUTOUPD_MSG_RETURN', 'Seite neu <a href="?serendipity[newVersion]=%s">laden</a>, oder zurück zum <a href="serendipity_admin.php">Backend</a> Ihres Blogs.');
@@ -54,7 +54,7 @@
 
 @define('PLUGIN_AUTOUPD_MSG_COPY_FAIL', 'Fehler! Kopieren der Datei "<span class="file">%s</span>" nach "<span class="file">%s</span>" ist fehlgeschlagen!');
 
-@define('PLUGIN_AUTOUPD_MSG_WRITE_FAIL', 'Das Entpacken der Update-Zip-Datei ist fehlgeschlagen, da die folgenden Dateien nicht schreibbar waren:');
+@define('PLUGIN_AUTOUPD_MSG_WRITE_FAIL', 'Das Entpacken der Update-Zip-Datei ist fehlgeschlagen, da die folgenden Dateien nicht beschreibbar waren:');
 
 @define('PLUGIN_AUTOUPD_MSG_CKSUM_FAIL', 'Die Aktualisierung ist fehlgeschlagen, da der Integritätstest für die folgenden Dateien fehlgeschlagen ist:');
 

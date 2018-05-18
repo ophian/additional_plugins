@@ -1,3 +1,8 @@
+1.5.4
+------
+
+ * Minor typo fixes in the lang constant files
+
 1.5.3
 ------
 
@@ -6,7 +11,7 @@
 1.5.2
 ------
 
- * Fix momacheck for askit javascript confirmation
+ * Fix "momacheck" for "askit" javascript confirmation
 
 1.5.1:
 ------

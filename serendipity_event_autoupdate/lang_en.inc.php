@@ -4,10 +4,10 @@
 @define('PLUGIN_EVENT_AUTOUPDATE_DESC', 'When the Dashboard (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin.');
 @define('PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON', 'Start automatic upgrade');
 
-@define('PLUGIN_EVENT_AUTOUPDATE_DL_URL', 'Custom (GitHub?) download url');
-@define('PLUGIN_EVENT_AUTOUPDATE_DL_URL_DESC', 'Please set an URL like this: "https://github.com/s9y/Serendipity/releases/download/". Your custom location dir/file-pattern has to end with "$version/serendipity-$version.zip" (replace $version with the version string provided in your custom RELEASE-file, eg. "2.1.5/serendipity-2.1.5.zip"). You can set the latter in the backend configuration - general setting option block. Else leave this default-URL untouched!');
-@define('PLUGIN_EVENT_AUTOUPDATE_RF_URL', 'Custom (GitHub?) release tag url');
-@define('PLUGIN_EVENT_AUTOUPDATE_RF_URL_DESC', 'Please set an URL like this: "https://github.com/s9y/Serendipity/releases/tag/". Your custom location page name must be named "$version" (replace $version with the version string provided in your custom RELEASE-file, eg. "2.1.5"). You can set the latter in the backend configuration - general setting option block. Else leave this default-URL untouched!');
+@define('PLUGIN_EVENT_AUTOUPDATE_DL_URL', 'Custom (GitHub?) download URL');
+@define('PLUGIN_EVENT_AUTOUPDATE_DL_URL_DESC', 'Please set an URL like this: "https://github.com/s9y/Serendipity/releases/download/". Your custom location dir/file-pattern has to end with "$version/serendipity-$version.zip" (replace $version with the version string provided in your custom RELEASE-file, eg. "2.1.5/serendipity-2.1.5.zip"). You can set the latter in the Backend configuration - general setting option block. Else leave this default-URL untouched!');
+@define('PLUGIN_EVENT_AUTOUPDATE_RF_URL', 'Custom (GitHub?) release tag URL');
+@define('PLUGIN_EVENT_AUTOUPDATE_RF_URL_DESC', 'Please set an URL like this: "https://github.com/s9y/Serendipity/releases/tag/". Your custom location page name must be named "$version" (replace $version with the version string provided in your custom RELEASE-file, eg. "2.1.5"). You can set the latter in the Backend configuration - general setting option block. Else leave this default-URL untouched!');
 
 @define('PLUGIN_EVENT_AUTOUPDATE_CHECK', 'SECURITY ADVICE:\n\nDid you already check for plugin UPDATES?\nDo you really have the MODEMAINTAIN plugin installed and is the Maintenance-Mode enabled and ON for the current upgrade?\n\nPress OK to continue with the AUTOUPDATE.');
 
@@ -37,12 +37,12 @@
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_FAIL_COPY', 'Copying the files for the update failed!');
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_FAIL_UNPACK', 'Unpacking the update zip file failed!');
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_FAIL_CLEAN', 'Cleaning up the failed unpack directory!');
-@define('PLUGIN_AUTOUPD_MSG_FLUSH_FAIL_RELOAD', 'Please <a href="?serendipity[newVersion]=%s">reload</a> this page (or by F5) to have another try to upgrade your Blog successful!');
+@define('PLUGIN_AUTOUPD_MSG_FLUSH_FAIL_RELOAD', 'Please <a href="?serendipity[newVersion]=%s">reload</a> this page [F5] to have another try to upgrade your Blog successful!');
 
 @define('PLUGIN_AUTOUPD_MSG_EXISTS', 'Does the Link to (<span class="file">%s</span>) exist?');
 @define('PLUGIN_AUTOUPD_MSG_RETURN', '<a href="?serendipity[newVersion]=%s">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.');
 
-@define('PLUGIN_AUTOUPD_MSG_FETCH_ZIPFAIL', 'Existing zip file error; Code: %s. The autoupdater will try to download again...');
+@define('PLUGIN_AUTOUPD_MSG_FETCH_ZIPFAIL', 'Existing zip file error; Code: %s. The Autoupdater will try to download again...');
 @define('PLUGIN_AUTOUPD_MSG_FETCH_CURLFAIL', 'Downloading update failed (Curl installed, but failed)!');
 @define('PLUGIN_AUTOUPD_MSG_FETCH_DWLFAIL', 'Downloading update failed (copy failed, Curl not available)!');
 @define('PLUGIN_AUTOUPD_MSG_FETCH_DWLDONE', 'Fetch download to "<span class="dir">templates_c</span>" done!');
@@ -54,7 +54,7 @@
 
 @define('PLUGIN_AUTOUPD_MSG_COPY_FAIL', 'Error! Copying file "<span class="file">%s</span>" to "<span class="file">%s</span>" failed!');
 
-@define('PLUGIN_AUTOUPD_MSG_WRITE_FAIL', 'Unpacking the update zip file failed, while the following files were not writeable:');
+@define('PLUGIN_AUTOUPD_MSG_WRITE_FAIL', 'Unpacking the update zip file failed, while the following files were not writable:');
 
 @define('PLUGIN_AUTOUPD_MSG_CKSUM_FAIL', 'Updating failed, while the integrity-test for the following files failed:');
 
