@@ -1,4 +1,4 @@
-<?php # lang_de.inc.php 1.2 2009-08-20 10:17:33 VladaAjgl $
+<?php
 
 /**
  *  @version 1.2
@@ -34,7 +34,7 @@
 @define('PLUGIN_ADSENSE_TYPE_IMAGES_ONLY', 'nur Bildwerbung');
 
 @define('PLUGIN_ADSENSE_CHANNEL_NAME', 'Kanal (Channel)');
-@define('PLUGIN_ADSENSE_CHANNEL_DESCRIPTION', 'Optional, unterscheidet zwischen verschiedenen Werbekanälen. Die Nummer die Google vergegeben hat, nicht der Name des Kanals!');
+@define('PLUGIN_ADSENSE_CHANNEL_DESCRIPTION', 'Optional, unterscheidet zwischen verschiedenen Werbekanälen. Die Nummer die Google vergeben hat, nicht der Name des Kanals!');
 
 @define('PLUGIN_ADSENSE_NUMBER_NAME', 'Anzahl');
 @define('PLUGIN_ADSENSE_NUMBER_DESCRIPTION', 'Anzahl der Anzeigen, die angezeigt werden sollen. Werbeblöcke werden durch <BR> Tags getrennt. ');
@@ -42,3 +42,4 @@
 // Next lines were translated on 2009/08/20
 @define('PLUGIN_ADSENSE_SLOT_NAME', 'Slot ID');
 @define('PLUGIN_ADSENSE_SLOT_DESCRIPTION', 'Optional SLOT ID.');
+

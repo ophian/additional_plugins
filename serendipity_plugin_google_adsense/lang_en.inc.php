@@ -1,7 +1,7 @@
 <?php
 
 /**
-*  @version 
+*  @version
 *  @author Translator Name <yourmail@example.com>
 *  EN-Revision: Revision of lang_en.inc.php
 */
@@ -40,4 +40,3 @@
 @define('PLUGIN_ADSENSE_NUMBER_NAME', 'Number');
 @define('PLUGIN_ADSENSE_NUMBER_DESCRIPTION', 'Number of ads to show, with a <BR> tag in between');
 
-?>
