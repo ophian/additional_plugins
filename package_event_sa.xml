@@ -4672,9 +4672,9 @@
 <description>Allows extended options for inserting images from the media manager</description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.12</version>
+  <version>1.13</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2017-11-24</date>
+  <date>2018-05-25</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
