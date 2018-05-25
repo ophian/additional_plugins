@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian');
-        $propbag->add('version',       '1.12');
+        $propbag->add('version',       '1.13');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -374,7 +374,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                             for($i=0; $i < $zip->numFiles; $i++) {
                                 $file_to_extract = $zip->getNameIndex($i);
                                 if (file_exists($target_dir.$file_to_extract)) {
-                                    echo '(' . $file_to_extract . ') ' . ERROR_FILE_EXISTS_ALREADY . '<br />';
+                                    echo '(' . $file_to_extract . ') ' . ERROR_FILE_EXISTS_ALREADY . "<br />\n";
                                 } else {
                                     $files_to_unzip[] = $file_to_extract;
                                     $extracted_images[] = $target_dir.$file_to_extract;
@@ -383,9 +383,9 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
                             $zip->extractTo($target_dir,$files_to_unzip);
                             $zip->close();
-                            echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_OK;
+                            echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_OK . "<br />\n";
                         } else {
-                            echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FAILED;
+                            echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FAILED . "<br />\n";
                         }
 
                         // now proceed all unzipped images
@@ -408,13 +408,13 @@ class serendipity_event_imageselectorplus extends serendipity_event
                             foreach($thumbs AS $thumb) {
                                 // Create thumbnail
                                 if ( $created_thumbnail = serendipity_makeThumbnail($tfile, $image_directory, $thumb['thumbSize'], $thumb['thumb']) ) {
-                                    echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE . " - " . THUMB_CREATED_DONE . '<br />';
+                                    echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE . " - " . sprintf(THUMB_CREATED_DONE, $thumb['thumb']) . "<br />\n";
                                 }
                             }
 
                             // Insert into database
                             $image_id = serendipity_insertImageInDatabase($tfile, $image_directory, $authorid, null, $realname);
-                            echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE." ($tfile) ".PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_ADD_TO_DB."<br />";
+                            echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE . " ($tfile) " . PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_ADD_TO_DB . "<br />\n";
                             $new_media[] = array(
                                 'image_id'          => $image_id,
                                 'target'            => $target,
