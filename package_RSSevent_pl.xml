@@ -405,11 +405,11 @@
 <guid isPermaLink="false">serendipity_event_filter_entries</guid>
 </item>
 <item>
-<title>Pokaż linki do usług, takich jak Facebook, Digg, Technorati, del.icio.us itp. by promować twoje wpisy: Plugin DEPRECATED. Move along to the new event_social plugin! Możesz dodawać lub usuwać serwisy znajdujące się w pliku &quot;plugin_findmore.tpl&quot;. Pamiętaj także, że zamiast używać tej wtyczki, możesz wstawić fragmenty kodu do pliku entries.tpl znajdującego się w folderze twojego szablonu.</title>
+<title>Pokaż linki do usług, takich jak Facebook, Digg, del.icio.us itp. by promować twoje wpisy: Plugin DEPRECATED. Move along to the new event_social plugin! Możesz dodawać lub usuwać serwisy znajdujące się w pliku &quot;plugin_findmore.tpl&quot;. Pamiętaj także, że zamiast używać tej wtyczki, możesz wstawić fragmenty kodu do pliku entries.tpl znajdującego się w folderze twojego szablonu.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_findmore</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Kodewulf, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_findmore&lt;br /&gt;Pokaż linki do usług, takich jak Facebook, Digg, Technorati, del.icio.us itp. by promować twoje wpisy&lt;/b&gt;&lt;br /&gt;Plugin DEPRECATED. Move along to the new event_social plugin! Możesz dodawać lub usuwać serwisy znajdujące się w pliku &quot;plugin_findmore.tpl&quot;. Pamiętaj także, że zamiast używać tej wtyczki, możesz wstawić fragmenty kodu do pliku entries.tpl znajdującego się w folderze twojego szablonu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_event_findmore&lt;br /&gt;Pokaż linki do usług, takich jak Facebook, Digg, del.icio.us itp. by promować twoje wpisy&lt;/b&gt;&lt;br /&gt;Plugin DEPRECATED. Move along to the new event_social plugin! Możesz dodawać lub usuwać serwisy znajdujące się w pliku &quot;plugin_findmore.tpl&quot;. Pamiętaj także, że zamiast używać tej wtyczki, możesz wstawić fragmenty kodu do pliku entries.tpl znajdującego się w folderze twojego szablonu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
 <pubDate>Thu, 31 May 2018 09:52:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_findmore</guid>
 </item>

@@ -2824,7 +2824,7 @@
 <name>serendipity_event_findmore</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_findmore/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Zobrazuje odkazy jako Digg, Technorati, del.icio.us apod. vztažené k příspěvku.</summary>
+<summary>Zobrazuje odkazy jako Digg, del.icio.us apod. vztažené k příspěvku.</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Plugin DEPRECATED. Move along to the new event_social plugin! Můžete vložit/odstranit další webové služby pomocí souboru šablony &quot;plugin_findmore.tpl&quot;. Pamatujte, že pokud chcete ušetřit pár drahocených bodů za výkon blogu, můžete stejného efektu dosáhnout také vložením HTML/JavaScript snipletu do souboru šablony entries.tpl namísto používání tohoto pluginu!</description>
 <maintainers><maintainer><name>Garvin Hicking, Kodewulf, Ian</name><role>lead</role></maintainer></maintainers>

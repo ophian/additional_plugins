@@ -2824,7 +2824,7 @@
 <name>serendipity_event_findmore</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_findmore/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Pokaż linki do usług, takich jak Facebook, Digg, Technorati, del.icio.us itp. by promować twoje wpisy</summary>
+<summary>Pokaż linki do usług, takich jak Facebook, Digg, del.icio.us itp. by promować twoje wpisy</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Plugin DEPRECATED. Move along to the new event_social plugin! Możesz dodawać lub usuwać serwisy znajdujące się w pliku &quot;plugin_findmore.tpl&quot;. Pamiętaj także, że zamiast używać tej wtyczki, możesz wstawić fragmenty kodu do pliku entries.tpl znajdującego się w folderze twojego szablonu.</description>
 <maintainers><maintainer><name>Garvin Hicking, Kodewulf, Ian</name><role>lead</role></maintainer></maintainers>
