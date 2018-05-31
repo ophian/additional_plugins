@@ -2831,9 +2831,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Plugin DEPRECATED. Move along to the new event_social plugin! You can remove/insert other custom services to link to via the &quot;plugin_findmore.tpl&quot; template file easily. Also remember that if you want to save grandma's performance pennies that you can also insert the HTML/JS snippets into your entries.tpl template file instead of using this plugin!</description>
 <maintainers><maintainer><name>Garvin Hicking, Kodewulf, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.25</version>
+  <version>1.26</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-03-27</date>
+  <date>2018-05-31</date>
   <filelist>
     <dir name="serendipity_event_findmore">
       <file>ChangeLog</file>
@@ -3373,18 +3373,15 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>エントリーの自由なタグを許可します。</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.04</version>
+  <version>4.05</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-03-29</date>
+  <date>2018-05-31</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>documentation_en.html</file>
-      <dir name="img">
-        <file>technorati.jpg</file>
-      </dir>
       <file>jquery-1.11.3.min.js</file>
       <file>jquery.autocomplete.js</file>
       <file>jquery.autocomplete.min.css</file>
@@ -3432,7 +3429,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_freetag/documentation_cs.html</file>
     <file>serendipity_event_freetag/documentation_cz.html</file>
     <file>serendipity_event_freetag/documentation_en.html</file>
-    <file>serendipity_event_freetag/img/technorati.jpg</file>
     <file>serendipity_event_freetag/jquery-1.11.3.min.js</file>
     <file>serendipity_event_freetag/jquery.autocomplete.js</file>
     <file>serendipity_event_freetag/jquery.autocomplete.min.css</file>

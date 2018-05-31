@@ -410,7 +410,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Kodewulf, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_findmore&lt;br /&gt;Pokaż linki do usług, takich jak Facebook, Digg, Technorati, del.icio.us itp. by promować twoje wpisy&lt;/b&gt;&lt;br /&gt;Plugin DEPRECATED. Move along to the new event_social plugin! Możesz dodawać lub usuwać serwisy znajdujące się w pliku &quot;plugin_findmore.tpl&quot;. Pamiętaj także, że zamiast używać tej wtyczki, możesz wstawić fragmenty kodu do pliku entries.tpl znajdującego się w folderze twojego szablonu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 27 Mar 2018 10:35:50 +0200</pubDate>
+<pubDate>Thu, 31 May 2018 09:52:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_findmore</guid>
 </item>
 <item>
@@ -455,7 +455,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Tagowanie wpisów&lt;/b&gt;&lt;br /&gt;Umożliwia dowolne tagowanie wpisów&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 29 Mar 2018 14:28:48 +0200</pubDate>
+<pubDate>Thu, 31 May 2018 09:41:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>

@@ -212,9 +212,6 @@
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>documentation_en.html</file>
-      <dir name="img">
-        <file>technorati.jpg</file>
-      </dir>
       <file>jquery-1.11.3.min.js</file>
       <file>jquery.autocomplete.js</file>
       <file>jquery.autocomplete.min.css</file>
@@ -262,7 +259,6 @@
     <file>serendipity_event_freetag/documentation_cs.html</file>
     <file>serendipity_event_freetag/documentation_cz.html</file>
     <file>serendipity_event_freetag/documentation_en.html</file>
-    <file>serendipity_event_freetag/img/technorati.jpg</file>
     <file>serendipity_event_freetag/jquery-1.11.3.min.js</file>
     <file>serendipity_event_freetag/jquery.autocomplete.js</file>
     <file>serendipity_event_freetag/jquery.autocomplete.min.css</file>
