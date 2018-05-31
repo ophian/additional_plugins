@@ -1,3 +1,9 @@
+1.26:
+-----
+
+ * Removed dead service: technorati
+ * Removed "http:" protocol to use remotes default protocol
+
 1.25:
 -----
 

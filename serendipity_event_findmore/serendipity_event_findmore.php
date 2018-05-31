@@ -16,7 +16,7 @@ class serendipity_event_findmore extends serendipity_event
         $propbag->add('description',   PLUGIN_FINDMORE_DEPRECATED . PLUGIN_FINDMORE_DESCRIPTION);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Kodewulf, Ian');
-        $propbag->add('version',       '1.25');
+        $propbag->add('version',       '1.26');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -392,7 +392,7 @@ class serendipity_event_findmore extends serendipity_event
         if (empty($diggs) || count($diggs) < 1) {
             return '<!-- no digg urls in entry -->';
         }
-        $diggCountDiv = "<div class=\"serendipity_diggcount\">\n<script>digg_url = '%s';</script>\n<script src=\"http://digg.com/api/diggthis.js\"></script>\n</div>\n\n";
+        $diggCountDiv = "<div class=\"serendipity_diggcount\">\n<script>digg_url = '%s';</script>\n<script src=\"//digg.com/api/diggthis.js\"></script>\n</div>\n\n";
         $diggCount = null;
 
         foreach ($diggs AS $url) {
