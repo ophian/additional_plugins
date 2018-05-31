@@ -40,7 +40,7 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Kilistázza a meglévő címkéket');
 @define('PLUGIN_FREETAG_NEWLINE', 'Soremelés minden címke után?');
 @define('PLUGIN_FREETAG_XML', 'XML-ikonok megjelenítése?');
-@define('PLUGIN_FREETAG_SCALE', 'Címke betűméret nyújtás/zsugorítás népszerűség alapján (a Technorati-hoz és a flickr-hez hasonlóan)?');
+@define('PLUGIN_FREETAG_SCALE', 'Címke betűméret nyújtás/zsugorítás népszerűség alapján (a flickr-hez hasonlóan)?');
 @define('PLUGIN_FREETAG_UPGRADE1_2', '%d db címke frissítése a %d. bejegyzéshez: ');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Mennyi címkét mutassunk?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Mennyi előfordulás felett jelenjenek meg a címkék?');

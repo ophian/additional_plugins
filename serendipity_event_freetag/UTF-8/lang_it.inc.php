@@ -43,7 +43,7 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Mostra i tag associati ai post');
 @define('PLUGIN_FREETAG_NEWLINE', 'Fineriga dopo ogni tag?');
 @define('PLUGIN_FREETAG_XML', 'Visualizza le icone XML?');
-@define('PLUGIN_FREETAG_SCALE','Scala la dimensione dei font in base alla popolarit (come Technorati, Flickr)?');
+@define('PLUGIN_FREETAG_SCALE','Scala la dimensione dei font in base alla popolarità (come Flickr)?');
 @define('PLUGIN_FREETAG_UPGRADE1_2','Salvando i tag %d per il post %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Quanti tag devono essere visualizzati?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Quante occorrenze deve avere un tag per essere visibile?');

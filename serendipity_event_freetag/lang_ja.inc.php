@@ -43,7 +43,7 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'エントリーの既存タグの一覧を表示します。');
 @define('PLUGIN_FREETAG_NEWLINE', '各タグの後に改行を入れますか?');
 @define('PLUGIN_FREETAG_XML', 'XML アイコンを表示しますか?');
-@define('PLUGIN_FREETAG_SCALE','(Technorati、flickr のように)タグのフォントサイズを人気度に依存して変化させますか?');
+@define('PLUGIN_FREETAG_SCALE','(flickr のように)タグのフォントサイズを人気度に依存して変化させますか?');
 @define('PLUGIN_FREETAG_UPGRADE1_2','エントリー番号の %d 個のタグをアップグレード中: %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'いくつのタグを表示するべきですか?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'How many occurences must a tag have in order to be shown?');
@@ -90,11 +90,6 @@
 
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'タグ名');
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'タグ数');
-
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK', 'Technorati のタグ リンク');
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_DESC', 'Adds technorati tag links behind the tags in the entry footer. Clicking them will show similair articles in other blogs found on technorati.');
-
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG', 'Technorati のタグ画像');
 
 @define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML 画像の画像に関するテンプレートのパス');
 

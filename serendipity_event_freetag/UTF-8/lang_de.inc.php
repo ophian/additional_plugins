@@ -51,7 +51,7 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Zeigt alle vorhandenen Tags');
 @define('PLUGIN_FREETAG_NEWLINE', 'Zeilenumbruch nach jedem Tag?');
 @define('PLUGIN_FREETAG_XML', 'XML-Icons anzeigen?');
-@define('PLUGIN_FREETAG_SCALE', 'Schriftgröße des Font-Tags je nach Popularität vergrößern (wie Technorati, flickr)?');
+@define('PLUGIN_FREETAG_SCALE', 'Schriftgröße des Font-Tags je nach Popularität vergrößern (wie flickr)?');
 @define('PLUGIN_FREETAG_UPGRADE1_2', 'Aktualisiere %d Tags zu Eintrag %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Wieviele Tags sollen angezeigt werden?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Wie oft muss ein Tag vorkommen, damit er angezeigt wird?');
@@ -104,11 +104,6 @@
 
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'Tag-Name');
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'Tag-Anzahl');
-
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK', 'Technorati Tag Links');
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_DESC', 'Fügt Links auf Technorati Tags hinzu. Wenn auf diese Links geklickt wird, so wird eine Liste von ähnlichen Einträgen in weiteren Blogs angezeigt, die in Technorati zu dem entsprechenden Tag gespeichert wurden.');
-
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG', 'Technorati Tag Bild');
 
 @define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML Bild relativ zum Template Verzeichnis');
 

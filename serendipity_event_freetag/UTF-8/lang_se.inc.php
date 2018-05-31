@@ -43,7 +43,7 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Visar en lista med existerande etiketter på artiklar');
 @define('PLUGIN_FREETAG_NEWLINE', 'Radmatning efter varje etikett?');
 @define('PLUGIN_FREETAG_XML', 'Visa XML-ikoner?');
-@define('PLUGIN_FREETAG_SCALE', 'Skala storleken på etiketter efter popularitet (som Technorati, flickr)?');
+@define('PLUGIN_FREETAG_SCALE', 'Skala storleken på etiketter efter popularitet (som flickr)?');
 @define('PLUGIN_FREETAG_UPGRADE1_2', 'Uppgraderar %d etiketter för artikel nummer: %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Hur många etiketter skall visas?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Hur många förekomster måste en etikett ha för att visas?');
@@ -80,11 +80,6 @@
 
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'Etikettnamn');
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'Etikettantal');
-
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK', 'Technorati-etikettlänkar');
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_DESC', 'Adderar technorati-etikettlänkar efter etiketterna i artikeln. Genom att klicka på dem visas liknande artiklar i andra bloggar funna via technorati.');
-
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG', 'Technorati-etikettbild');
 
 @define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML-bild relativt till mallsökvägen');
 

@@ -40,7 +40,7 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Pokazuje listê tagów zdefiniowanych dla wpisów');
 @define('PLUGIN_FREETAG_NEWLINE', 'Przej¶cie do nowej linii po ka¿dym tagu?');
 @define('PLUGIN_FREETAG_XML', 'Pokazywaæ ikony XML?');
-@define('PLUGIN_FREETAG_SCALE', 'Skalowaæ rozmiar czcionki w zale¿no¶ci od popularno¶ci taga (jak w serwisach Technorati czy flickr)?');
+@define('PLUGIN_FREETAG_SCALE', 'Skalowaæ rozmiar czcionki w zale¿no¶ci od popularno¶ci taga (jak w serwisach ??? czy flickr)?');
 @define('PLUGIN_FREETAG_UPGRADE1_2', 'Poprawiono %d tagów dla wpisu numer: %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Jak wiele tagów ma byæ pokazywanych?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Jak wiele razy musi wyst±piæ dany tag, by by³ pokazywany na li¶cie?');

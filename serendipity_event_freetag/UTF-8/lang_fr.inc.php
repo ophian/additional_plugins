@@ -43,7 +43,7 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Montre une liste des tags existant pour les billets');
 @define('PLUGIN_FREETAG_NEWLINE', 'Retour à la ligne après chaque tag ?');
 @define('PLUGIN_FREETAG_XML', 'Afficher les icones XML ?');
-@define('PLUGIN_FREETAG_SCALE','Ajuster la taille du tag par rapport à sa fréquence (comme sur Technorati, flickr) ?');
+@define('PLUGIN_FREETAG_SCALE','Ajuster la taille du tag par rapport à sa fréquence (comme sur flickr) ?');
 @define('PLUGIN_FREETAG_UPGRADE1_2','Mise à jour des tags %d pour le billet numéro: %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Combien de tags doivent être affichés ?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Combien de fois un tag doit-il être présent pour apparaître ?');

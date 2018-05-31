@@ -58,7 +58,7 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Zobrazí seznam existujících klíčových slov');
 @define('PLUGIN_FREETAG_NEWLINE', 'Nová řádka za každým klíčovým slovem?');
 @define('PLUGIN_FREETAG_XML', 'Zobrazovat XML ikony?');
-@define('PLUGIN_FREETAG_SCALE', 'Měnit velikost fontu klíčového slova podle jeho oblíbenosti (jako je to na Technorati nebo Flickru)?');
+@define('PLUGIN_FREETAG_SCALE', 'Měnit velikost fontu klíčového slova podle jeho oblíbenosti (jako je to na ??? nebo Flickru)?');
 @define('PLUGIN_FREETAG_UPGRADE1_2', 'Aktualizace %d klíčových slov pro příspěvek č.%d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Kolik klíčových slov zobrazovat?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Kolikrát se musí klíčové slovo vyskytnout, aby bylo zobrazeno?');
@@ -104,11 +104,6 @@
 
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'Klíčové slovo');
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'Počet klíčových slov');
-
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK', 'Technorati odkazy');
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_DESC', 'Přidá odkazy na klíčová slova z Technorati za klíčová slova v patičce stránky. Kliknutí na ně zobrazí podobné články z jiných blogů nalezených na Technorati.');
-
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG', 'Technorati obrázky');
 
 @define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML obrázek - cesta relativní k umístění šablon');
 

@@ -25,7 +25,7 @@
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP', 'Cleanup entry-to-tag mappings');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_INFO', 'The following list contains tags non-existent entries are assigned to. Please click on &quot;Cleanup&quot; to remove these unnecessary assignments.');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING', 'No Tags assigned to non-existent entries could be found. Therefor there is nothing to clean up.');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_LOOKUP_ERROR', 'Tags assigned to non-existent entries could be found, because an error occured.');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_LOOKUP_ERROR', 'Tags assigned to non-existent entries could be found, because an error occurred.');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_PERFORM', 'Cleanup');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_ENTRIES', 'IDs of affected entries');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_SUCCESSFUL', 'All unnecessary assignments have successfully been removed.');
@@ -51,10 +51,10 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Shows a list of existing tags for entries');
 @define('PLUGIN_FREETAG_NEWLINE', 'Linefeed after each Tag?');
 @define('PLUGIN_FREETAG_XML', 'Show XML-icons?');
-@define('PLUGIN_FREETAG_SCALE', 'Scale tag font size depending on popularity (like Technorati, flickr)?');
+@define('PLUGIN_FREETAG_SCALE', 'Scale tag font size depending on popularity (like flickr)?');
 @define('PLUGIN_FREETAG_UPGRADE1_2', 'Upgrading %d tags for entry number: %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'How many tags should be shown?');
-@define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'How many occurences must a tag have in order to be shown?');
+@define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'How many occurrences must a tag have in order to be shown?');
 
 //
 // later on additions
@@ -76,7 +76,7 @@
 
 @define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'Related entries by tags:');
 @define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'Display related entries by tags?');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'How many related entries should be dislayed?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'How many related entries should be displayed?');
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER', 'Show tags in footer?');
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC', 'If enabled, the tags will be shown in the footer of an entry. If disabled, the tags will be put inside the body/extended part of your entries.');
 @define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS', 'Lowercase tags');
@@ -96,22 +96,17 @@
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Found keyword <strong>%s</strong>, tag <strong><em>%s</em></strong> assigned automatically.');
 
 @define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', 'Fetching entries %d to %d');
-@define('PLUGIN_EVENT_FREETAG_REBUILD_TOTAL', ' (totalling %d entries)...');
+@define('PLUGIN_EVENT_FREETAG_REBUILD_TOTAL', ' (totaling %d entries)...');
 @define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNEXT', 'Fetching next batch of entries...');
-@define('PLUGIN_EVENT_FREETAG_REBUILD', 'Reparse all automated keywords');
+@define('PLUGIN_EVENT_FREETAG_REBUILD', 'Re-parse all automated keywords');
 @define('PLUGIN_EVENT_FREETAG_REBUILD_DESC', 'Warning: This function will fetch and re-save every single one of your entries. This will take some time, and it might even damage existing articles. It is suggested you first backup your database! Click on "CANCEL" to abort this action.');
 
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'Tag name');
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'Tag count');
 
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK', 'Technorati tag links');
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_DESC', 'Adds technorati tag links behind the tags in the entry footer. Clicking them will show similair articles in other blogs found on technorati.');
-
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG', 'Technorati tag image');
-
 @define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML image relative to template path');
 
-@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC2', 'If set to "Smarty", then a smarty variable {$entry.freetag} will be created that you can place anywhere in your entries.tpl template file.');
+@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC2', 'If set to "Smarty", then a Smarty variable {$entry.freetag} will be created that you can place anywhere in your entries.tpl template file.');
 
 @define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY', 'Extended Smarty');
 @define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC', 'Emit separate Smarty-variables for later use in a template. This will override the other settings. An example for later use can be found in the Readme.');
@@ -122,7 +117,7 @@
 @define('PLUGIN_EVENT_FREETAG_TAGLINK_DESC', 'A possible change in your taglink, is to write "plugin/taglist/" instead of "plugin/tag/". This will make your tag(s) appear as as clickable list, instead of already opened entries. You can also add this manually to certain taglinks in the frontend or append a "/taglist" tag to an already existing path (eg "/plugin/tag/your/tags/append/taglist"). In both cases "taglist" is a reserved word from now on and can not be used as a normal tag elsewhere anymore. If you want to use this, please enable the "tags-as-list (non-opened entries)" option and add some code manually, described in the documentary for the "tag-as-list" option.');
 
 @define('PLUGIN_EVENT_FREETAG_TAGSASLIST', 'Enable "tags-as-list" (non-opened entries)');
-@define('PLUGIN_EVENT_FREETAG_TAGSASLIST_DESC', 'Please read the documentary in this plugins "Local Documentation" on how to add the smarty taglist code to your existing templates entries.tpl file.');
+@define('PLUGIN_EVENT_FREETAG_TAGSASLIST_DESC', 'Please read the documentary in this plugins "Local Documentation" on how to add the Smarty taglist code to your existing templates entries.tpl file.');
 
 @define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT', 'Sort Multi-Tags entries result');
 @define('PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT_DESC', 'URL Multi-Tags are normally sorted by entry date. This Option sorts shown entries by taglist count, which shows the entries with the most tags in list first, in descending order.');
@@ -145,7 +140,7 @@
 @define('PLUGIN_EVENT_FREETAG_CAROC_BOXWIDTH', 'Rotating Canvas-Cloud width');
 
 @define('PLUGIN_EVENT_FREETAG_USE_CAWOC', 'Use a modern Canvas 2D word cloud?');
-@define('PLUGIN_EVENT_FREETAG_USE_CAWOC_DESC', 'A state-of-the-Art "wordle" like awesome 2D tagword canvas cloud in %s!');
+@define('PLUGIN_EVENT_FREETAG_USE_CAWOC_DESC', 'A state-of-the-Art "wordle" like awesome 2D-tagword canvas cloud in %s!');
 
 @define('PLUGIN_EVENT_FREETAG_USE_CANVAS_PLUGIN_SPRINT', 'sidebars and archives');
 @define('PLUGIN_EVENT_FREETAG_USE_CANVAS_EVENT_SPRINT', 'related tags');
@@ -154,7 +149,7 @@
 
 @define('PLUGIN_FREETAG_USE_CANVAS_SCRIPTS_DESC', 'For including the canvas scripts, "show_tagcloud" needs to be enabled in event plugin too!');
 
-@define('PLUGIN_EVENT_FREETAG_SET_OPTION_ERROR_1', '<strong>Set option Error[1]:</strong> You may only use one cloud by time. All clouds were internally set false again. Please set and submit again here! (The form still shows what you had choosen before!)</p>');
+@define('PLUGIN_EVENT_FREETAG_SET_OPTION_ERROR_1', '<strong>Set option Error[1]:</strong> You may only use one cloud by time. All clouds were internally set false again. Please set and submit again here! (The form still shows what you had chosen before!)</p>');
 
 @define('PLUGIN_EVENT_FREETAG_ADMIN_DELIMITER', 'Allow alphabetical index tag-list delimiter?');
 

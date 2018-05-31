@@ -40,7 +40,7 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Toon een "tag cloud" van gebruikte tags');
 @define('PLUGIN_FREETAG_NEWLINE', 'Linefeed na elke tag?');
 @define('PLUGIN_FREETAG_XML', 'Toon XML-icoon?');
-@define('PLUGIN_FREETAG_SCALE', 'Lettergrootte obv populariteit (zoals Technorati, flickr)?');
+@define('PLUGIN_FREETAG_SCALE', 'Lettergrootte obv populariteit (zoals flickr)?');
 @define('PLUGIN_FREETAG_UPGRADE1_2', 'Bijwerken van %d tags voor bijdrage: %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Hoeveel tags maximaal tonen?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Hoevaak moet een tag gebruikt zijn om getoond te worden?');

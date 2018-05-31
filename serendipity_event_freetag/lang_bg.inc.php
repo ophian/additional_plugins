@@ -43,7 +43,7 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Показва списък на маркери към статиите');
 @define('PLUGIN_FREETAG_NEWLINE', 'Всеки маркер на нов ред?');
 @define('PLUGIN_FREETAG_XML', 'Показване на XML икони?');
-@define('PLUGIN_FREETAG_SCALE','Мащабиране на големината на шрифта в зависимост от популярността на маркера (подобно на Technorati, flickr)?');
+@define('PLUGIN_FREETAG_SCALE','Мащабиране на големината на шрифта в зависимост от популярността на маркера (подобно на flickr)?');
 @define('PLUGIN_FREETAG_UPGRADE1_2','Обновяване на %d маркера за статия номер %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Колко маркера да бъдат показвани?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Минимален брой на използване на маркер, за да бъде показван?');
@@ -90,11 +90,6 @@
 
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'Име на маркер');
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'Брой появи');
-
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK', 'Technorati връзки');
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_DESC', 'Добавя Technorati връзки след маркерите в основата на статията. Натискането на тези маркери ще покаже подобни статии в други блогове, намерени в Technorati.');
-
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG', 'Изображение за Technorati връзка');
 
 @define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML изображение (относително спрямо пътя до избраната тема на блога)');
 

@@ -43,7 +43,7 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'エントリーの既存タグの一覧を表示します。');
 @define('PLUGIN_FREETAG_NEWLINE', '各タグの後に改行を入れますか?');
 @define('PLUGIN_FREETAG_XML', 'XML アイコンを表示しますか?');
-@define('PLUGIN_FREETAG_SCALE', '(Technorati、flickr のように)タグのフォントサイズを人気度に依存して変化させますか?');
+@define('PLUGIN_FREETAG_SCALE', '(flickr のように)タグのフォントサイズを人気度に依存して変化させますか?');
 @define('PLUGIN_FREETAG_UPGRADE1_2', 'エントリー番号の %d 個のタグをアップグレード中: %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'いくつのタグを表示するべきですか?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'How many occurences must a tag have in order to be shown?');
@@ -91,15 +91,10 @@
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'タグ名');
 @define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'タグ数');
 
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK', 'Technorati のタグ リンク');
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_DESC', 'Adds technorati tag links behind the tags in the entry footer. Clicking them will show similair articles in other blogs found on technorati.');
-
-@define('PLUGIN_EVENT_FREETAG_TECHNORATI_TAGLINK_IMG', 'Technorati のタグ画像');
-
 @define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML 画像の画像に関するテンプレートのパス');
 
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC2', 'If set to "Smarty", then a smarty variable {$entry.freetag} will be created that you can place anywhere in your entries.tpl template file.');
 
 @define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY', 'Extended Smarty');
-@define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC', 'Emit seperate Smarty-variables for later use in a template. This will override the other settings. An example for later use can be found in the Readme.');
+@define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC', 'Emit separate Smarty-variables for later use in a template. This will override the other settings. An example for later use can be found in the Readme.');
 
