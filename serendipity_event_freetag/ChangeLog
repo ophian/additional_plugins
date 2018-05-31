@@ -1,3 +1,7 @@
+4.05:
+-----
+    * Remove remaining technorati image leftover (see 4.04)
+
 4.04:
 -----
     * Remove technorati_tag_link option (outdated service since 2014)
