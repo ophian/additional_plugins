@@ -13,7 +13,7 @@
  *  @revisionDate 2012/01/08
  */
 
-@define('PLUGIN_FINDMORE_NAME', 'Zobrazuje odkazy jako Digg, Technorati, del.icio.us apod. vzta¾ené k pøíspìvku.');
+@define('PLUGIN_FINDMORE_NAME', 'Zobrazuje odkazy jako Digg, del.icio.us apod. vzta¾ené k pøíspìvku.');
 @define('PLUGIN_FINDMORE_DESCRIPTION', 'Mù¾ete vlo¾it/odstranit dal¹í webové slu¾by pomocí souboru ¹ablony "plugin_findmore.tpl". Pamatujte, ¾e pokud chcete u¹etøit pár drahocených bodù za výkon blogu, mù¾ete stejného efektu dosáhnout také vlo¾ením HTML/JavaScript snipletu do souboru ¹ablony entries.tpl namísto pou¾ívání tohoto pluginu!');
 
 @define('PLUGIN_FINDMORE_PATH_NAME', 'Relativní cesta k obrázkùm Findmore');

@@ -6,7 +6,7 @@
  *  EN-Revision: 1.7
  */
 
-@define('PLUGIN_FINDMORE_NAME', 'Pokaż linki do usług, takich jak Facebook, Digg, Technorati, del.icio.us itp. by promować twoje wpisy');
+@define('PLUGIN_FINDMORE_NAME', 'Pokaż linki do usług, takich jak Facebook, Digg, del.icio.us itp. by promować twoje wpisy');
 @define('PLUGIN_FINDMORE_DESCRIPTION', 'Możesz dodawać lub usuwać serwisy znajdujące się w pliku "plugin_findmore.tpl". Pamiętaj także, że zamiast używać tej wtyczki, możesz wstawić fragmenty kodu do pliku entries.tpl znajdującego się w folderze twojego szablonu.');
 
 @define('PLUGIN_FINDMORE_PATH_NAME', 'Względna ścieżka do obrazków ');
