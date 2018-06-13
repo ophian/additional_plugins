@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '1.64');
+        $propbag->add('version',       '1.65');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -542,7 +542,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     break;
 
                 case 'frontend_saveComment':
-                    if (serendipity_db_bool($this->get_config('commentform_checkbox', 'true'))) {
+                    if ($serendipity['serendipityUserlevel'] < USERLEVEL_ADMIN && serendipity_db_bool($this->get_config('commentform_checkbox', 'true'))) {
                         if ($addData['type'] == 'NORMAL') {
                             // Only act to comments. Trackbacks are an API so we cannot add checks there.
                             if (empty($serendipity['POST']['accept_privacy'])) {
@@ -555,7 +555,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     break;
 
                 case 'frontend_comment':
-                    if (serendipity_db_bool($this->get_config('commentform_checkbox', 'true'))) {
+                    if ($serendipity['serendipityUserlevel'] < USERLEVEL_ADMIN && serendipity_db_bool($this->get_config('commentform_checkbox', 'true'))) {
 ?>
                         <div class="form_toolbar dsgvo_gdpr_comment">
                             <div class="form_box">
