@@ -1,3 +1,4 @@
+<div id="plugin_contact" class="clearfix serendipity_staticpage staticpage_plugin_contactform">
 {if $plugin_contactform_articleformat}
 <div class="serendipity_Entry_Date">
     <h3 class="serendipity_date">{$plugin_contactform_name}</h3>
@@ -77,3 +78,4 @@
 {if $plugin_contactform_articleformat}
 </div></div></div>
 {/if}
+</div>

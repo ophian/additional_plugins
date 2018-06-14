@@ -1,3 +1,9 @@
+1.26:
+----
+
+ * Changed both fallback contactform plugin templates files
+   to support the "staticpage_plugin_contactform" class selector.
+
 1.25:
 ----
 
