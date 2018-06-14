@@ -1711,6 +1711,7 @@ function metaWeblog_newMediaObject($message) {
 
     $path = $serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $serendipity['xmlrpc_uploadreldir'] . $struct['name'];
     universal_debug("url: " . $path);
+    serendipity_makeThumbnail($struct['name'], $serendipity['xmlrpc_uploadreldir']);
     return new XML_RPC_Response(new XML_RPC_Value(array('url' => new XML_RPC_Value($path, 'string')), 'struct'));
 }
 

@@ -1,3 +1,6 @@
+Version 1.73:
+    * serendipity_xmlrpc.inc: Run missing Thumbnail generation if uploaded an image to Serendipity upload dir
+
 Version 1.72:
     * RPC lib: Replace PHP 7.2 set deprecated each() usage where possible
 
