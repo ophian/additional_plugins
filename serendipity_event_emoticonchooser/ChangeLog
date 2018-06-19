@@ -1,3 +1,8 @@
+3.11:
+-----
+ * Fix WYSIWYG-Editor popuplink style to display the Smiley's, when the
+   entries preview was opened in the backend.
+
 3.10:
 -----
  * Rename option 'frontend' to 'comments' since also used in backend
