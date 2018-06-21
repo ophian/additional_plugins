@@ -135,6 +135,7 @@ Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporä
 @define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_YES', 'Überträgt Benutzereingaben an Dienste / Dritte (nicht unbedingt gespeichert)');
 @define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_NO', 'Übermittelt keine Benutzereingaben an Dienste / Dritte (oder nicht spezifiziert)');
 
+@define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND', 'Verwaltung des Datenschutz-Plugins');
 @define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_SB_TITLE', 'Kommentar-Benutzerdaten');
 @define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_TITLE', 'DSGVO/GDPR - Kommentar-Benutzerdaten verwalten');
 @define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_INFO', 'Hier können Sie einen passgenauen Benutzernamen oder eine E-Mail-Adresse eingeben, um alle Kommentar-Metadaten dieses Benutzer zu löschen oder die Kommentare zu exportieren. Sie können mehrere Namen mit einem Zeilenumbruch trennen.');

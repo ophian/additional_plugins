@@ -1,3 +1,7 @@
+1.66:
+-----
+ * Added missing legend constant
+
 1.65:
 -----
  * We don't need a commentform_checkbox if logged-in admin userlevel
