@@ -22,7 +22,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '4.1.0'
         ));
 
-        $propbag->add('version',       '0.24');
+        $propbag->add('version',       '0.25');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'html', 'markup', 'cutoff'));
@@ -178,7 +178,7 @@ class serendipity_event_adminnotes extends serendipity_event
 
         $allow_html = $this->get_config('html');
 
-        switch($_REQUEST['action']) {
+        switch(@$_REQUEST['action']) {
             case 'edit':
                 $entry = $this->getMyNotes((int)$_REQUEST['note']);
                 $mode  = 'update';
@@ -187,11 +187,11 @@ class serendipity_event_adminnotes extends serendipity_event
                     $mode = 'insert';
                 }
 
-                if (!is_array($entry)) {
+                if (!isset($entry) || !is_array($entry)) {
                     $entry = array();
                 }
 
-                if ($_REQUEST['submit'] /* && serendipity_checkFormToken() */) {
+                if (isset($_REQUEST['submit'])/* && serendipity_checkFormToken() */) {
                     $valid_groups = serendipity_getAllGroups($serendipity['authorid']);
                     $targets = array();
                     if (is_array($_REQUEST['note_target'])) {
@@ -235,37 +235,37 @@ class serendipity_event_adminnotes extends serendipity_event
                     }
 
                     if ($serendipity['version'][0] < 2) {
-                        echo '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />' . DONE . ': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . '</div>';
+                        echo '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />' . DONE . ': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . "</div>\n";
                     } else {
-                        echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . DONE . ': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . '</span>';
+                        echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . DONE . ': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . "</span>\n";
                     }
                 }
 
-                echo '<p>' . PLUGIN_ADMINNOTES_FEEDBACK_INFO . '</p>';
+                echo '<p>' . PLUGIN_ADMINNOTES_FEEDBACK_INFO . "</p>\n\n";
 
                 echo '<form action="?" method="post">';
                 echo serendipity_setFormToken();
-                echo '<input type="hidden" name="serendipity[adminModule]" value="event_display" />';
-                echo '<input type="hidden" name="serendipity[adminAction]" value="adminnotes" />';
-                echo '<input type="hidden" name="action" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($_REQUEST['action']) : htmlspecialchars($_REQUEST['action'], ENT_COMPAT, LANG_CHARSET)) . '" />';
-                echo '<input type="hidden" name="note" value="' . $entry['noteid'] . '" />';
-                echo '<input type="hidden" name="note_notetype" value="note" />';
+                echo '<input type="hidden" name="serendipity[adminModule]" value="event_display" />'."\n";
+                echo '<input type="hidden" name="serendipity[adminAction]" value="adminnotes" />'."\n";
+                echo '<input type="hidden" name="action" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($_REQUEST['action']) : htmlspecialchars($_REQUEST['action'], ENT_COMPAT, LANG_CHARSET)) . '" />'."\n";
+                echo '<input type="hidden" name="note" value="' . @$entry['noteid'] . '" />'."\n";
+                echo '<input type="hidden" name="note_notetype" value="note" />'."\n";
 
                 if ($serendipity['version'][0] < 2) {
                     echo TITLE . '<br />';
-                    echo '<input class="input_textbox" type="text" name="note_subject" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['subject']) : htmlspecialchars($entry['subject'], ENT_COMPAT, LANG_CHARSET)) . '" /><br /><br />';
+                    echo '<input class="input_textbox" type="text" name="note_subject" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(@$entry['subject']) : htmlspecialchars(@$entry['subject'], ENT_COMPAT, LANG_CHARSET)) . '" /><br /><br />'."\n";
                 } else {
-                    echo '<div class="form_field">';
-                    echo '<label for="note_subject" class="block_level">' . TITLE . '</label>';
-                    echo '<input id="note_subject" type="text" name="note_subject" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['subject']) : htmlspecialchars($entry['subject'], ENT_COMPAT, LANG_CHARSET)) . '">';
-                    echo '</div>';
+                    echo '<div class="form_field">'."\n";
+                    echo '<label for="note_subject" class="block_level">' . TITLE . "</label>\n";
+                    echo '<input id="note_subject" type="text" name="note_subject" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(@$entry['subject']) : htmlspecialchars(@$entry['subject'], ENT_COMPAT, LANG_CHARSET)) . '">'."\n";
+                    echo "</div>\n";
                 }
 
                 if ($serendipity['version'][0] < 2) {
                     echo USERCONF_GROUPS . '<br />';
                 } else {
-                    echo '<div class="form_multiselect">';
-                    echo '<label for="note_target" class="block_level">' . USERCONF_GROUPS . '</label>';
+                    echo '<div class="form_multiselect">'."\n";
+                    echo '<label for="note_target" class="block_level">' . USERCONF_GROUPS . "</label>\n";
                 }
                 $valid_groups = serendipity_getAllGroups($serendipity['authorid']);
                 if (isset($_REQUEST['note_target'])) {
@@ -276,9 +276,11 @@ class serendipity_event_adminnotes extends serendipity_event
                     foreach($sql AS $row) {
                         $selected[] = $row['groupid'];
                     }
+                } else {
+                    $selected = array();
                 }
 
-                echo '<select id="note_target" name="note_target[]" multiple="multiple" size="5">';
+                echo '<select id="note_target" name="note_target[]" multiple="multiple" size="5">'."\n";
                 foreach($valid_groups AS $group) {
                     # PRESELECT!
                     if (in_array($group['confkey'], (array)$selected) || count($selected) == 0) {
@@ -286,31 +288,31 @@ class serendipity_event_adminnotes extends serendipity_event
                     } else {
                         $is_selected = '';
                     }
-                    echo '<option ' . $is_selected . ' value="' . $group['confkey'] . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($group['confvalue']) : htmlspecialchars($group['confvalue'], ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
+                    echo '    <option ' . $is_selected . ' value="' . $group['confkey'] . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($group['confvalue']) : htmlspecialchars($group['confvalue'], ENT_COMPAT, LANG_CHARSET)) . "</option>\n";
                 }
                 if ($serendipity['version'][0] < 2) {
-                    echo '</select><br /><br />';
+                    echo "</select><br /><br />\n";
                 } else {
-                    echo '</select></div>';
+                    echo "</select>\n</div>\n";
                 }
 
                 if ($serendipity['version'][0] < 2) {
                     echo ENTRY_BODY . '<br />';
                 } else {
-                    echo '<div class="form_area">';
-                    echo '<label for="note_body" class="block_level">' . ENTRY_BODY . '</label>';
+                    echo '<div class="form_area">'."\n";
+                    echo '<label for="note_body" class="block_level">' . ENTRY_BODY . "</label>\n";
                 }
-                    echo '<textarea id="note_body" rows=10 cols=80 name="note_body">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['body']) : htmlspecialchars($entry['body'], ENT_COMPAT, LANG_CHARSET)) . '</textarea>';
+                    echo '<textarea id="note_body" rows=10 cols=80 name="note_body">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(@$entry['body']) : htmlspecialchars(@$entry['body'], ENT_COMPAT, LANG_CHARSET)) . "</textarea>\n";
                 if (($allow_html === 'admin' && $serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN) && isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) {
                     @include_once $serendipity['serendipityPath'] . 'include/functions_entries_admin.inc.php';
                     serendipity_emit_htmlarea_code('note_body','');
                 }
                 if ($serendipity['version'][0] < 2) {
-                    echo '<br /><br />';
-                    echo '<input type="submit" name="submit" value="' . SAVE . '" class="serendipityPrettyButton input_button" />';
+                    echo "<br /><br />\n";
+                    echo '<input type="submit" name="submit" value="' . SAVE . '" class="serendipityPrettyButton input_button" />'."\n";
                 } else {
-                    echo '</div>';
-                    echo '<div class="form_buttons"><input type="submit" name="submit" value="' . SAVE . '"></div>';
+                    echo "</div>\n";
+                    echo '<div class="form_buttons"><input type="submit" name="submit" value="' . SAVE . '"></div>'."\n";
                 }
 
                 echo '</form>';
@@ -327,7 +329,7 @@ class serendipity_event_adminnotes extends serendipity_event
                 }
                 printf(DELETE_SURE, $entry['noteid'] . ' - ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['subject']) : htmlspecialchars($entry['subject'], ENT_COMPAT, LANG_CHARSET)));
                 if ($serendipity['version'][0] > 1) {
-                    echo '</span>';
+                    echo "</span>\n";
                 }
 
                 if ($serendipity['version'][0] < 2) {
@@ -538,7 +540,7 @@ function fulltext_toggle(id) {
 <?php
             foreach($notes AS $id => $note) {
 ?>
-                <li class="serendipity_note note_<?php echo $this->output($note['notetype']) ?> note_owner_<?php echo $note['authorid'] . ($serendipity['COOKIE']['lastnote'] < $note['noteid'] ? ' note_new' : ''); ?>">
+                <li class="serendipity_note note_<?php echo $this->output($note['notetype']) ?> note_owner_<?php echo $note['authorid'] . (isset($serendipity['COOKIE']['lastnote']) && $serendipity['COOKIE']['lastnote'] < $note['noteid'] ? ' note_new' : ''); ?>">
                     <div class="note_subject">
                         <h3><?php echo $this->output($note['subject']) ?></h3>
                         <?php echo POSTED_BY . ' ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($note['realname']) : htmlspecialchars($note['realname'], ENT_COMPAT, LANG_CHARSET)) . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, $note['notetime'])."\n"; ?>

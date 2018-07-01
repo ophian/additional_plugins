@@ -1,3 +1,10 @@
+0.25:
+-----
+
+ * Init some variable defaults when the Smarty muted error handler
+   was disabled for debugging purposes and add some linefeeds [lf]
+   for better readable source code views.
+
 0.24:
 -----
 
