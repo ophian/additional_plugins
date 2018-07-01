@@ -8,7 +8,7 @@
     - simplified WYSIWYG (backend comments and special cases, like html nugget),
     - PLAIN TEXT Editor usage.
    Since HTML comments and a stored cache are involved too, this still might
-   lack working always and immediately ... just give me a note then.
+   lack working straightaway ... just give me a note then.
  * Improve the emoticonchooser.js script to allow a simplified WYSIWYG-Editor
    toolbar fallback usage, when WYSIWYG is used without hooked plugins.
 
