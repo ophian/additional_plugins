@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.11');
+        $propbag->add('version',       '3.20');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -94,7 +94,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
     }
 
     /**
-     * Creates the popup template for the WYSIWYG-Editor popup
+     * Creates the template for either the WYSIWYG-Editor OR the old style popup window
      */
     function show()
     {
@@ -103,8 +103,12 @@ class serendipity_event_emoticonchooser extends serendipity_event
         if (IN_serendipity !== true) {
             die ("Don't hack!");
         }
+        // get the stored "cache"
         $file = $this->get_config('emotics');
-// we cannot access $serendipity['enablePopup'] here correctly, which is weird, so in either case switching around it won't work properly. So we check first but make a try catch to workaround this....
+        $file = str_replace(array(' style="; display: none"', ' style="display: none;"', '</div><!-- emoticon_bar end -->'), '', $file); // we don't want this here! (see "lazy cache")
+// we cannot access $serendipity['enablePopup'] here correctly, which is weird because of the storage cache,
+// so in either case switching around won't work properly. So we check first, but make a try catch to workaround
+// this lazy cache behaviour, since settings may have changed in the meanwhile.
 ?>
 <!doctype html>
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="<?=$serendipity['language']?>"> <![endif]-->
@@ -123,7 +127,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             var use_emoticon    = 'use_emoticon_'+instance_name;
 
             window[use_emoticon] = function (img) {
-                <?php if ($serendipity['enablePopup'] != true): ?>
+                <?php if ($serendipity['enablePopup'] !== true): ?>
                 try {
                     window.parent.parent.serendipity.serendipity_imageSelector_addToBody(img+' ', editor_instance);
                     window.parent.parent.$.magnificPopup.close();
@@ -191,26 +195,33 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
         $hooks = &$bag->get('event_hooks');
 
+        $comments = false;
+
         if (isset($hooks[$event])) {
 
             switch($event) {
 
+                // frontend commentform, backend comments edit/reply commentform
                 case 'frontend_comment':
                     if (serendipity_db_bool($this->get_config('comments', 'false')) === false) {
                         break;
                     }
+
                     $txtarea = 'serendipity_commentform_comment';
                     $func    = 'comment';
                     $style   = '';
                     $popcl   = '';
-                    $comments = true;
-                    // no break
+                    $comments = true; // have in mind, this is also true in the Backend while having added the {serendipity_hookPlugin hook="frontend_comment"} hook call
+                                      // to the admin/commentform.tpl for s9ymarkup/spamblock/emoticonchooser alike plugins.
+                    // no break [PSR-2] - extends backend_entry_toolbar_extended
+
                 case 'backend_entry_toolbar_extended':
                     if (!isset($txtarea)) {
                         $txtarea = 'serendipity[extended]';
                         $func    = 'extended';
                     }
-                    // no break
+                    // no break [PSR-2] - extends backend_entry_toolbar_body
+
                 case 'backend_entry_toolbar_body':
                     if (!isset($txtarea)) {
                         if (isset($eventData['backend_entry_toolbar_body:textarea'])) {
@@ -223,7 +234,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         }
                         if (isset($eventData['backend_entry_toolbar_body:nugget'])) {
                             $func = $eventData['backend_entry_toolbar_body:nugget'];
-                        } else{
+                        } else {
                             $func = 'body';
                         }
                     }
@@ -235,10 +246,8 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         $cke_txtarea = $txtarea;
                     }
 
-                    if (!$serendipity['wysiwyg'] || $comments) {
-                        if (!isset($popcl)) {
-                            $popcl = ' serendipityPrettyButton';
-                        }
+                    if ((!isset($serendipity['wysiwyg']) || !$serendipity['wysiwyg']) || $comments) {
+                        $popcl = ' serendipityPrettyButton';
 
                         if (!isset($style)) {
                             $style = 'margin-top: 5px; vertical-align: bottom';
@@ -247,10 +256,9 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         $popupstyle = '';
                         $popuplink  = '';
                         $button = serendipity_db_bool($this->get_config('button', 'false'));
-                        $backend = defined('IN_serendipity_admin');
+                        $backend = (defined('IN_serendipity_admin') && IN_serendipity_admin === true);
                         if (serendipity_db_bool($this->get_config('popup', 'false'))) {
                             $popupstyle = '; display: none';
-                            #var_dump($button);var_dump($backend);
                             $popuplink  = ($backend || (!$backend && $button))
                                         ? '<input type="button" onclick="toggle_emoticon_bar_' . $func . '(); return false" href="#" class="serendipity_toggle_emoticon_bar' . $popcl . '" value="'.$this->get_config('popuptext').'">'
                                         : '<a class="serendipity_toggle_emoticon_bar' . $popcl . '" href="#" onclick="toggle_emoticon_bar_' . $func . '(); return false">' . $this->get_config('popuptext') . '</a>';
@@ -283,24 +291,28 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         }
                         $unique[$value] = $key;
                     }
-                    // script include has to stick to backend_header, while using inline onclick (see above)
-                    if (defined('IN_serendipity_admin') && IN_serendipity_admin === true) {
+                    // script include has to stick to backend_header, while using an inline onclick (see above)
+                    if (defined('IN_serendipity_admin') && IN_serendipity_admin === true) { // This is case entries, isn't it?! YES, and staticpages nuggets!
                         if (!$serendipity['wysiwyg']) {
+                            $next = '';
                             echo "    $popuplink\n"; // append toolbar button to backend entries in PLAIN EDITOR toolbar. NO onready state loading !!
+                            if ($serendipity['GET']['adminModule'] == 'comments' && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || $serendipity['POST']['preview'])) {
+                                $next = ' emotin';
+                            }
 
 ?>
 
-<div class="serendipity_emoticon_bar">
+<div class="serendipity_emoticon_bar<?php echo $next; ?>">
     <script type="text/javascript">
         emoticonchooser('<?php echo $func; ?>', '<?php echo $txtarea; ?>', '<?php echo $cke_txtarea; ?>');
     </script>
 
 <?php
                         }
-                        if ($serendipity['wysiwyg']) {
+                        if ($serendipity['wysiwyg'] && isset($popuplink)) {
                             echo "    $popuplink\n"; // add toolbar button in backend entries above CKEDITOR toolbar
                         }
-                    } else { // in frontend footer
+                    } else { // in frontend footer ONLY!
 ?>
 
 <div class="serendipity_emoticon_bar">
@@ -316,19 +328,32 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         echo "    $popuplink\n";
                     }
 
-                    $emotics = ''; // init
+                    $emotics = ''; // init default
 
-                    if ($serendipity['wysiwyg'] || $comments) {
+                    // this is case WYSIWYG (magnific) popup backend mode AND/OR comment backend mode
+                    if ((isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) && (defined('IN_serendipity_admin') && IN_serendipity_admin === true)) {
                         $style = '';
-                        if ($serendipity['wysiwyg']) {
+                        if ($serendipity['GET']['adminModule'] == 'comments' && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || $serendipity['POST']['preview'])) {
+                            // void
+                            // YEAH this works well for FRONTEND entries in either/or WYSIWYG mode,
+                            // BACKEND comments [non-wysiwyg] edit, reply, preview, icon-insert and
+                            // BACKEND comments [wysiwyg] edit, reply, preview, (simple textarea-mode) icon-insert, since it is in WYSIWYG insert mode
+                            if (!isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] == 'plugins') {
+                                $popupstyle = 'display: none;';
+                            }
+                            $simple = (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) ? 'false' : 'true';
+                        } else {
+                            // BACKEND normal [wysiwyg] case in entries, staticpages, but NOT for the simplified ones in nuggets or comments
                             $popupstyle = 'display: inline-flex;';
+                            $simple = 'false';
                         }
+
                         $emotics .= "
 
     <script type=\"text/javascript\">
         document.onreadystatechange = function () {
             if (document.readyState == 'interactive') {
-                emoticonchooser('$func', '$txtarea', '$cke_txtarea');
+                emoticonchooser('$func', '$txtarea', '$cke_txtarea', $simple);
             }
         }
     </script>
@@ -344,10 +369,12 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         }
                     }
                     $emotics .= "    </div>\n\n";
-                    if (!$serendipity['wysiwyg'] || ($serendipity['GET']['adminModule'] != 'comments' && $comments)) {
+                    // Close in all frontend AND all non-wysiwyg backend modes - but NOT in HTML nuggets
+                    if ((!isset($serendipity['GET']['adminModule']) || !isset($serendipity['wysiwyg']) || !$serendipity['wysiwyg'])
+                      || (isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] != 'comments' && $comments)) {
                         $emotics .= "</div><!-- emoticon_bar end -->\n\n";
                     }
-                    if ($serendipity['wysiwyg']) {
+                    if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) {
                         $this->set_config('emotics', $emotics); //cache this extra?
                         if ($comments) {
                             echo $emotics;
@@ -361,9 +388,10 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     if ($serendipity['wysiwyg']) {
                         $noemojs = true;
                     }
-                    // no-BREAK!
+                    // no-BREAK! [PSR-2] - extends frontend_footer
+
                 case 'frontend_footer':
-                    if ((!isset($noemojs) || !$noemojs) || ($serendipity['GET']['adminModule'] == 'comments' && $serendipity['GET']['adminAction'] == 'edit')) {
+                    if ((!isset($noemojs) || !$noemojs) || ($serendipity['GET']['adminModule'] == 'comments' && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || isset($serendipity['POST']['preview'])))) {
 ?>
     <script type="text/javascript" src="<?php echo $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_emoticonchooser/emoticonchooser.js'; ?>"></script>
 <?php
@@ -392,6 +420,9 @@ class serendipity_event_emoticonchooser extends serendipity_event
 }
 .serendipity_emoticon_bar {
     text-align: right;
+}
+.serendipity_emoticon_bar.emotin {
+    display: inline;
 }
 
 /* emoticonchooser plugin end */
@@ -422,16 +453,16 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     $uri_part  = $parts[0];
                     $parts = array_pop($parts);
                     if (count($parts) > 1) {
-                       foreach($parts AS $key => $value) {
+                        foreach($parts AS $key => $value) {
                             $val = explode('=', $value);
                             $_GET[$val[0]] = $val[1];
-                       }
+                        }
                     } else {
-                       $val = explode('=', $parts[0]);
-                       $_GET[$val[0]] = $val[1];
+                        $val = explode('=', $parts[0]);
+                        $_GET[$val[0]] = isset($val[1]) ? $val[1] : $val[0]; //?
                     }
                     if (!isset($_GET['txtarea'])) {
-                        $parts = explode('&', $uri_parts[1]);
+                        $parts = isset($uri_parts[1]) ? explode('&', $uri_parts[1]) : $uri_parts[0];
                         if (count($parts) > 1) {
                             foreach($parts AS $key => $value) {
                                  $val = explode('=', $value);
@@ -439,7 +470,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                             }
                         } else {
                             $val = explode('=', $parts[0]);
-                            $_GET[$val[0]] = $val[1];
+                            $_GET[$val[0]] = isset($val[1]) ? $val[1] : $val[0]; //?
                         }
                     }
                     switch($uri_part) {

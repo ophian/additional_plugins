@@ -1,12 +1,29 @@
-function emoticonchooser(instance_name, this_instance, cke_txtarea) {
+function emoticonchooser(instance_name, this_instance, cke_txtarea, simple) {
     if (!instance_name) var instance_name = '';
     if (!this_instance) var this_instance = '';
     if (!cke_txtarea)   var cke_txtarea   = '';
+    if (!simple)        var simple        = false;
 
     var editor_instance = 'editor'+instance_name;
     var use_emoticon    = 'use_emoticon_'+instance_name;
     var toggle_emobar   = 'toggle_emoticon_bar_'+instance_name;
     var drop_handler    = 'drop_handler_'+instance_name;
+
+    plainTextArea = function(id, img) {
+        // default case: no wysiwyg editor
+        txtarea = document.getElementById(id); // must be this, since staticpages and entryforms set the [id] different
+
+        if (txtarea.selectionEnd) {
+            lft = txtarea.value.substring(0, txtarea.selectionEnd);
+            rgt = txtarea.value.substring(txtarea.selectionEnd);
+            txtarea.value = lft + ' ' + img + ' ' + rgt;
+        } else {
+            txtarea.value  += ' ' + img + ' ';
+        }
+
+        // alert(obj);
+        txtarea.focus();
+    }
 
     window[toggle_emobar] = function () {
         el = document.getElementById('serendipity_emoticonchooser_'+instance_name+'');
@@ -18,53 +35,45 @@ function emoticonchooser(instance_name, this_instance, cke_txtarea) {
     }
 
     window[use_emoticon] = function (img) {
-        if(typeof(CKEDITOR) != 'undefined') {
-            var oEditor = CKEDITOR.instances[cke_txtarea];
-            oEditor.insertHtml(img);
-        } else if(typeof(FCKeditorAPI) != 'undefined') {
-            var oEditor = FCKeditorAPI.GetInstance(this_instance) ;
-            oEditor.InsertHtml(img);
-        } else if(typeof(xinha_editors) != 'undefined') {
-            if(typeof(xinha_editors[this_instance]) != 'undefined') {
-                // this is good for the two default editors (body & extended)
-                xinha_editors[this_instance].insertHTML(img);
-            } else if(typeof(xinha_editors[instance_name]) != 'undefined') {
-                // this should work in any other cases than previous one
-                xinha_editors[instance_name].insertHTML(img);
-            } else {
-                // this is the last chance to retrieve the instance of the editor !
-                // editor has not been registered by the name of it's textarea
-                // so we must iterate over editors to find the good one
-                for (var editorName in xinha_editors) {
-                    if(this_instance == xinha_editors[editorName]._textArea.name) {
-                        xinha_editors[editorName].insertHTML(img);
-                        return;
+        if (!simple) {
+            if (typeof(CKEDITOR) != 'undefined') {
+                var oEditor = CKEDITOR.instances[cke_txtarea];
+                oEditor.insertHtml(img);
+            } else if (typeof(FCKeditorAPI) != 'undefined') {
+                var oEditor = FCKeditorAPI.GetInstance(this_instance) ;
+                oEditor.InsertHtml(img);
+            } else if (typeof(xinha_editors) != 'undefined') {
+                if (typeof(xinha_editors[this_instance]) != 'undefined') {
+                    // this is good for the two default editors (body & extended)
+                    xinha_editors[this_instance].insertHTML(img);
+                } else if (typeof(xinha_editors[instance_name]) != 'undefined') {
+                    // this should work in any other cases than previous one
+                    xinha_editors[instance_name].insertHTML(img);
+                } else {
+                    // this is the last chance to retrieve the instance of the editor !
+                    // editor has not been registered by the name of it's textarea
+                    // so we must iterate over editors to find the good one
+                    for (var editorName in xinha_editors) {
+                        if (this_instance == xinha_editors[editorName]._textArea.name) {
+                            xinha_editors[editorName].insertHTML(img);
+                            return;
+                        }
                     }
+                    // not found ?!?
                 }
-                // not found ?!?
-            }
-        } else if(typeof(HTMLArea) != 'undefined') {
-            if(typeof(editor_instance) != 'undefined')
-                editor_instance.insertHTML(img);
-            else if(typeof(htmlarea_editors) != 'undefined' && typeof(htmlarea_editors[instance_name]) != 'undefined')
-                htmlarea_editors[instance_name].insertHTML(img);
-        } else if(typeof(TinyMCE) != 'undefined') {
-            //tinyMCE.execCommand('mceInsertContent', false, img);
-            tinyMCE.execInstanceCommand(this_instance, 'mceInsertContent', false, img);
-        } else  {
-            // default case: no wysiwyg editor
-            txtarea = document.getElementById(cke_txtarea); // must be this, since staticpages and entryforms set the [id] different
-
-            if (txtarea.selectionEnd) {
-                lft = txtarea.value.substring(0, txtarea.selectionEnd);
-                rgt = txtarea.value.substring(txtarea.selectionEnd);
-                txtarea.value = lft + ' ' + img + ' ' + rgt;
+            } else if (typeof(HTMLArea) != 'undefined') {
+                if (typeof(editor_instance) != 'undefined')
+                    editor_instance.insertHTML(img);
+                else if (typeof(htmlarea_editors) != 'undefined' && typeof(htmlarea_editors[instance_name]) != 'undefined')
+                    htmlarea_editors[instance_name].insertHTML(img);
+            } else if (typeof(TinyMCE) != 'undefined') {
+                //tinyMCE.execCommand('mceInsertContent', false, img);
+                tinyMCE.execInstanceCommand(this_instance, 'mceInsertContent', false, img);
             } else {
-                txtarea.value  += ' ' + img + ' ';
+                plainTextArea(cke_txtarea, img);
             }
-
-            // alert(obj);
-            txtarea.focus();
+        } else {
+            plainTextArea(cke_txtarea, img);
         }
     }
 

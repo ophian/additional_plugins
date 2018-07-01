@@ -1,3 +1,17 @@
+3.20:
+-----
+ * Init some variable defaults when the Smarty muted error handler
+   was disabled for debugging purposes.
+ * Improve 3.11 WYSIWYG-Editor emoticon plugin usage under different conditions,
+   which there are:
+    - Normal WYSIWYG hooked usage,
+    - simplified WYSIWYG (backend comments and special cases, like html nugget),
+    - PLAIN TEXT Editor usage.
+   Since HTML comments and a stored cache are involved too, this still might
+   lack working always and immediately ... just give me a note then.
+ * Improve the emoticonchooser.js script to allow a simplified WYSIWYG-Editor
+   toolbar fallback usage, when WYSIWYG is used without hooked plugins.
+
 3.11:
 -----
  * Fix WYSIWYG-Editor popuplink style to display the Smiley's, when the
