@@ -14,7 +14,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;QuickNotes&lt;/b&gt;&lt;br /&gt;Displays information for authors on the administration panel&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 15 Apr 2018 10:52:17 +0200</pubDate>
+<pubDate>Sun, 01 Jul 2018 11:46:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
@@ -131,7 +131,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Fri, 27 Apr 2018 15:35:22 +0200</pubDate>
+<pubDate>Sun, 01 Jul 2018 11:59:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -311,7 +311,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Show Emoticon/Smiley toolbar&lt;/b&gt;&lt;br /&gt;Shows a toolbar to select emoticons to insert into your entry.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Tue, 19 Jun 2018 13:15:26 +0200</pubDate>
+<pubDate>Sun, 01 Jul 2018 13:47:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -1166,7 +1166,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Trackback-Control&lt;/b&gt;&lt;br /&gt;Allows granular control over how trackbacks are sent when creating entries&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Tue, 27 Jun 2017 18:55:27 +0200</pubDate>
+<pubDate>Sun, 01 Jul 2018 13:16:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>
@@ -1236,9 +1236,9 @@
 <title>新文章通知: 傳送新文章的通知到線上服務功能</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_weblogping</link>
 <category>Event Plugins</category>
-<author>Serendipity Team</author>
+<author>Serendipity Team, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;新文章通知&lt;/b&gt;&lt;br /&gt;傳送新文章的通知到線上服務功能&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 06 Nov 2017 18:30:45 +0100</pubDate>
+<pubDate>Sun, 01 Jul 2018 13:20:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>
@@ -1265,7 +1265,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 13 Jun 2018 19:11:16 +0200</pubDate>
+<pubDate>Sun, 01 Jul 2018 13:24:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
