@@ -19,7 +19,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian');
-        $propbag->add('version',       '1.23');
+        $propbag->add('version',       '1.24');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -205,13 +205,11 @@ class serendipity_event_trackback extends serendipity_event
 
                 case 'backend_save':
                 case 'backend_publish':
-                    if (!serendipity_db_bool($entry['isdraft'])
-                        &&
-                            $eventData['timestamp'] >= serendipity_serverOffsetHour()
-                        &&
-                            serendipity_db_bool($this->get_config('delayed_trackbacks', 'true'))
-                        ) {
-                        #trackbacks couldn't get generated, so store this entry
+                    if (!serendipity_db_bool($eventData['isdraft'])
+                      && $eventData['timestamp'] >= serendipity_serverOffsetHour()
+                      && serendipity_db_bool($this->get_config('delayed_trackbacks', 'true'))
+                    ) {
+                        // trackbacks couldn't get generated, so store this entry
                         $this->delay($eventData['id'], $eventData['timestamp']);
                     }
                     break;

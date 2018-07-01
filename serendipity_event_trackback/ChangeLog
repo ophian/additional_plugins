@@ -1,3 +1,7 @@
+1.24:
+-----
+   * Fixed wrong used variable usage when option delayed_trackbacks was used
+
 1.23:
 -----
    * Since PEAR/Request2 uses a new password variable we had to raise up the
