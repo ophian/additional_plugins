@@ -489,6 +489,7 @@ class serendipity_event_ckeditor extends serendipity_event
                 case 'frontend_header':
                     $headcss = true;
                 case 'frontend_footer':
+                    if (!isset($headcss)) $headcss = false;
                     // set prettify.css and prettify.js in frontend footer by plugin option (too much overhead to split this into head css and food js!)
                     if (serendipity_db_bool($this->get_config('codebutton', false))) {
                         $plugingpath = function_exists('serendipity_specialchars') ? serendipity_specialchars($this->get_config('plugpath')) : htmlspecialchars($this->get_config('plugpath'), ENT_COMPAT, LANG_CHARSET);
