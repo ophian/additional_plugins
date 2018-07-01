@@ -1,3 +1,9 @@
+1.13:
+-----
+
+ * Fix wrong variable for unset
+ * Silence an undefined variable Notice
+
 1.12:
 -----
 

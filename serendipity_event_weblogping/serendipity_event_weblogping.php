@@ -17,8 +17,8 @@ class serendipity_event_weblogping extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_WEBLOGPING_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_WEBLOGPING_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Serendipity Team');
-        $propbag->add('version',       '1.12');
+        $propbag->add('author',        'Serendipity Team, Ian');
+        $propbag->add('version',       '1.13');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -51,7 +51,7 @@ class serendipity_event_weblogping extends serendipity_event
                     $ms_name = trim($ms_name, '*');
                     $ms_parts = explode('/', $ms_name);
                     $ms_host = $ms_parts[0];
-                    unset($ms_party[0]);
+                    unset($ms_parts[0]);
 
                     array_shift( $ms_parts);  //  remove hostname.
                     $this->services[] = array(
@@ -118,7 +118,7 @@ class serendipity_event_weblogping extends serendipity_event
                     foreach($this->services AS $index => $service) {
                         // Detect if the current checkbox needs to be saved. We use the field chk_timestamp to see,
                         // if the form has already been submitted and individual changes shall be preserved
-                        $selected = (($serendipity['POST']['chk_timestamp'] && $serendipity['POST']['announce_entries_' . $service['name']])
+                        $selected = (($serendipity['POST']['chk_timestamp'] && @$serendipity['POST']['announce_entries_' . $service['name']])
                                         || (!isset($serendipity['POST']['chk_timestamp']) && serendipity_db_bool($this->get_config($service['name'], 'false')))
                                             ? 'checked="checked"'
                                             : '');
