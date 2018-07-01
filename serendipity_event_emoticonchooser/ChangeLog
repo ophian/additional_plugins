@@ -7,6 +7,7 @@
     - Normal WYSIWYG hooked usage,
     - simplified WYSIWYG (backend comments and special cases, like html nugget),
     - PLAIN TEXT Editor usage.
+   Backend comments usage will do with upcoming Styx 2.6.
    Since HTML comments and a stored cache are involved too, this still might
    lack working straightaway ... just give me a note then.
  * Improve the emoticonchooser.js script to allow a simplified WYSIWYG-Editor
