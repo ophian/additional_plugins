@@ -1233,12 +1233,12 @@
 <guid isPermaLink="false">serendipity_event_versioning</guid>
 </item>
 <item>
-<title>Einträge ankündigen: Benachrichtigt diverse Internetseiten, das ein neuer Eintrag erstellt wurde.</title>
+<title>Einträge ankündigen: Benachrichtigt diverse Internetseiten, dass ein neuer Eintrag erstellt wurde.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_weblogping</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Einträge ankündigen&lt;/b&gt;&lt;br /&gt;Benachrichtigt diverse Internetseiten, das ein neuer Eintrag erstellt wurde.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 01 Jul 2018 13:20:04 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Einträge ankündigen&lt;/b&gt;&lt;br /&gt;Benachrichtigt diverse Internetseiten, dass ein neuer Eintrag erstellt wurde.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Tue, 03 Jul 2018 18:13:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>

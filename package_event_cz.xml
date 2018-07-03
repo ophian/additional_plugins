@@ -11008,9 +11008,9 @@
 <description>Posílá oznámení o nových příspěvcích na on-line internetové služby.</description>
 <maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.13</version>
+  <version>1.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-07-01</date>
+  <date>2018-07-03</date>
   <filelist>
     <dir name="serendipity_event_weblogping">
       <file>ChangeLog</file>
