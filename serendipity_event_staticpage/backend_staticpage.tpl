@@ -1,15 +1,15 @@
-{* backend_staticpage template file v. 1.28, 2017-08-19 *}
+{* backend_staticpage template file v. 1.29, 2018-06-22 *}
 
 <!-- backend_staticpage.tpl START -->
 
 {include file="./svg_iconizr.tpl"}
 
-{if $switch_spcat == 'pageorder' || $switch_spcat == 'pagetype' || $switch_spcat == 'pageadd'}
+{if $switch_spcat == 'pageorder' OR $switch_spcat == 'pagetype' OR $switch_spcat == 'pageadd'}
 <div id="serendipityStaticpagesNav">
     <ul class="sp_tabnav">
         <li{if $s9y_get_cat == 'pageedit'} id="active"{/if} class="spnav"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pageedit"><span title="{$CONST.STATICPAGE_CATEGORY_PAGES}"><svg role="img" class="icon icon-pagelist"><title>{$CONST.STATICPAGE_CATEGORY_PAGES}</title><use xlink:href="#icon-pagelist"></use></svg></span><span class="spshow"> {$CONST.STATICPAGE_CATEGORY_PAGES}</span></a></li>
         <li{if $s9y_get_cat == 'pageorder'} id="active"{/if} class="spnav"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pageorder"><span title="{$CONST.STATICPAGE_CATEGORY_PAGEORDER}"><svg role="img" class="icon icon-pageorder"><<title>{$CONST.STATICPAGE_CATEGORY_PAGEORDER}</title><use xlink:href="#icon-pageorder"></use></svg></span><span class="spshow"> {$CONST.STATICPAGE_CATEGORY_PAGEORDER}</span></a></li>
-        <li{if $s9y_get_cat == 'pagetype' || $s9y_post_cat == 'pagetype'} id="active"{/if} class="spnav"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pagetype"><span title="{$CONST.STATICPAGE_CATEGORY_PAGETYPES}"><svg role="img" class="icon icon-pagetype"><title>{$CONST.STATICPAGE_CATEGORY_PAGETYPES}</title><use xlink:href="#icon-pagetype"></use></svg></span><span class="spshow"> {$CONST.STATICPAGE_CATEGORY_PAGETYPES}</span></a></li>
+        <li{if $s9y_get_cat == 'pagetype' OR $s9y_post_cat == 'pagetype'} id="active"{/if} class="spnav"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pagetype"><span title="{$CONST.STATICPAGE_CATEGORY_PAGETYPES}"><svg role="img" class="icon icon-pagetype"><title>{$CONST.STATICPAGE_CATEGORY_PAGETYPES}</title><use xlink:href="#icon-pagetype"></use></svg></span><span class="spshow"> {$CONST.STATICPAGE_CATEGORY_PAGETYPES}</span></a></li>
         <li{if $s9y_get_cat == 'pageadd'} id="active"{/if} class="spnav"><a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pageadd"><span title="{$CONST.STATICPAGE_CATEGORY_PAGEADD}"><svg role="img" class="icon icon-otherplugins"><title>{$CONST.STATICPAGE_CATEGORY_PAGEADD}</title>><use xlink:href="#icon-otherplugins"></use></svg></span><span class="spshow"> {$CONST.STATICPAGE_CATEGORY_PAGEADD}</span></a></li>
     </ul>
 </div>
@@ -72,7 +72,7 @@
         <select name="serendipity[pagetype]">
             <option value="__new">{$CONST.NEW_ENTRY}</option>
             <option value="__new">-----------------</option>
-{if $sp_pagetype && is_array($sp_pagetype_types)}
+{if $sp_pagetype AND is_array($sp_pagetype_types)}
     {foreach $sp_pagetype_types AS $type}
         <option value="{$type['id']}"{if $smarty.post.serendipity.pagetype == $type['id']} selected="selected"{/if}>{$type['description']|escape}</option>
     {/foreach}
@@ -82,7 +82,7 @@
         <input type="submit" class="input_button state_submit" name="serendipity[typeSubmit]" value="{$CONST.GO}">
         <input type="submit" class="input_button state_cancel" name="serendipity[typeDelete]" value="{$CONST.DELETE}">
         {if $sp_pagetype_submit}<input type="hidden" name="serendipity[typeSave]" value="true">{/if}
-        {if $sp_pagetype_isshowform && !empty($sp_pagetype_showform)}
+        {if $sp_pagetype_isshowform AND !empty($sp_pagetype_showform)}
 
         <!-- sp_pagetype_showform start -->
         {$sp_pagetype_showform}
@@ -147,9 +147,9 @@
     </fieldset>
 </div>
 
-{else} {* == 'pages' || 'pageedit' || default *}
+{else} {* == 'pages' OR 'pageedit' OR default *}
 
-    {if $sp_staticsubmit}
+    {if isset($sp_staticsubmit) AND $sp_staticsubmit}
         {if !empty($sp_defpages_upd_result)}
 <div class="msg_error spmsg"><svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> {$CONST.ERROR}: {$sp_defpages_upd_result}</div>
         {else}
@@ -157,7 +157,7 @@
         {/if}
     {/if}
 
-    {if $sp_staticdelete}
+    {if isset($sp_staticdelete) AND $sp_staticdelete}
         {if isset($sp_defpages_rip_success)}
 <div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> {$sp_defpages_rip_success}</div>
         {else}
@@ -166,13 +166,13 @@
 </div>
         {/if}
     {/if}
-    {if $sp_relcatchange}
+    {if isset($sp_relcatchange) AND $sp_relcatchange}
 <div class="msg_notice spmsg">
     <svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> {$CONST.IMPORT_NOTES}: {$CONST.RELATED_CATEGORY_CHANGE_MSG|sprintf:$prev_relcat_staticpage:$this_relcat_staticpage}
 </div>
     {/if}
 
-    {if !$sp_listentries_entries} {* show selectbox form header start, if showform is present, since we need to select entries quickly *}
+    {if empty($sp_listentries_entries)} {* show selectbox form header start, if showform is present, since we need to select entries quickly *}
 
 <form action="serendipity_admin.php" method="post" name="serendipityEntry">
     <div>
@@ -191,7 +191,7 @@
         <div class="sp_templateselector">
             <label for="sp_templateselector">{$CONST.STATICPAGE_TEMPLATE}</label>
             <select id="sp_templateselector" name="serendipity[backend_template]">
-            {if isset($sp_defpages_top) && is_array($sp_defpages_top)}
+            {if isset($sp_defpages_top) AND is_array($sp_defpages_top)}
 
                 {foreach $sp_defpages_top AS $templateform}{$templateform}{/foreach}
             {/if}
@@ -203,20 +203,22 @@
             <select id="staticpage_dropdown" name="serendipity[staticpage]">
                 <option value="__new">{$CONST.NEW_ENTRY}</option>
                 <option value="__new">-----------------</option>
-            {if isset($sp_defpages_pop) && is_array($sp_defpages_pop)}
+            {if isset($sp_defpages_pop) AND is_array($sp_defpages_pop)}
 
                 {foreach $sp_defpages_pop AS $selectpage}{$selectpage}{/foreach}
             {/if}
             </select>
-        {if isset($smarty.post.serendipity['staticpagecategory']) || isset($smarty.get.serendipity['staticid'])}
+        {if isset($smarty.post.serendipity['staticpagecategory']) OR isset($smarty.get.serendipity['staticid'])}
             <script>var dropdown_dialog = "{$CONST.STATICPAGE_CONFIRM_SELECTDIALOG}";</script>
         {/if}
-            <input class="input_button state_submit" type="submit" name="serendipity[staticSubmit]" value="{$CONST.GO}"> -
-            <input class="input_button state_cancel" type="submit" name="serendipity[staticDelete]" onclick="return confirm('{$CONST.DELETE_SURE|sprintf:"{$sp_selected_id} ({$sp_selected_name|truncate:30})"}');" value="{$CONST.DELETE}">
-            {if (int)$smarty.request.serendipity.staticid || (int)$smarty.post.serendipity.staticpage}
+            <input class="input_button state_submit" type="submit" name="serendipity[staticSubmit]" value="{$CONST.GO}">
+            {if isset($sp_selected_id)}
+            - <input class="input_button state_cancel" type="submit" name="serendipity[staticDelete]" onclick="return confirm('{$CONST.DELETE_SURE|sprintf:"{$sp_selected_id} ({$sp_selected_name|truncate:30})"}');" value="{$CONST.DELETE}">
+            {/if}
+            {if !empty($smarty.request.serendipity.staticid) OR !empty($smarty.post.serendipity.staticpage)}
             - <button type="submit" name="serendipity[staticPreview]" value="1" title="{$CONST.PREVIEW}" class="button_link entry_preview icon-search"><span class="visuallyhidden">{$CONST.PREVIEW}</span></button>
             {/if}
-        {if $sp_defpages_sbplav}
+        {if isset($sp_defpages_sbplav) AND $sp_defpages_sbplav}
             <span class="sp_right sp_info" title="Staticpage Sidebar {$CONST.STATICPAGE_PLUGIN_AVAILABLE}"><svg aria-hidden="true" class="icon icon-info"><use xlink:href="#icon-info"></use></svg></span>
         {/if}
             <ul class="sp_listnav">
@@ -237,7 +239,7 @@
     </div><!-- //id sp_navigator end -->
 
     {/if}{* showform, but not not entrylist end *}
-    {if false === $sp_defpages_showlist} {* SELECT LIST BAR start WE NEED === here, do not use plain ! *}
+    {if isset($sp_defpages_showlist) AND false === $sp_defpages_showlist} {* SELECT LIST BAR start WE NEED === here, do not use plain ! *}
 
     {if $sp_defpages_staticsave}
 
@@ -304,7 +306,7 @@
 
 </div>
 
-    {else} {* if !$sp_listentries_entries || empty($sp_listentries_entries) *}
+    {else} {* if !$sp_listentries_entries OR empty($sp_listentries_entries) *}
 
 <div class="msg_notice spmsg">
     <svg aria-hidden="true" class="icon icon-attention"><use xlink:href="#icon-attention"></use></svg> {$CONST.NO_ENTRIES_TO_PRINT}
@@ -327,7 +329,7 @@
 </div>
 
     {/if} {* sp_defpages_showlist false/true end  *}
-    {if $sp_pagetype_showform_isnuggets}
+    {if isset($sp_pagetype_showform_isnuggets) AND $sp_pagetype_showform_isnuggets}
 
 <!-- sp_pagetype_showform_isnuggets start -->
 <script>
@@ -346,7 +348,7 @@
 
 {/if} {* switch end *}
 
-{if $switch_spcat == 'pageedit' || !$switch_spcat}
+{if $switch_spcat == 'pageedit' OR !$switch_spcat}
 <script>
     var spconfig_listPerPage = {$sp_listpp|default:6};
 </script>

@@ -50,7 +50,7 @@
 
         <fieldset class="sect_struct">
             <legend>{$CONST.STATICPAGE_SECTION_STRUCT}</legend>
-            {if !$is_wysiwyg}
+            {if empty($is_wysiwyg)}
             <div class="sp_sect configuration_group">
                 <h3 class="toggle_headline"><button id="optionel2" class="toggle_info show_config_option sp_toggle" type="button" data-href="#el2" title="{$CONST.STATICPAGE_TOGGLEANDSAVE|sprintf:$CONST.TOGGLE_OPTION}"><span class="icon-right-dir" aria-hidden="true"></span> {$CONST.STATICPAGES_CUSTOM_STRUCTURE_SHOW}</button></h3>
             </div>
