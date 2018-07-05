@@ -1,3 +1,7 @@
+1.67:
+-----
+ * Check undefined vars (Styx 2.6-alpha debug session)
+
 1.66:
 -----
  * Added missing legend constant

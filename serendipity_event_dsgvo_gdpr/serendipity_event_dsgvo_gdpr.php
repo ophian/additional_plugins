@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '1.66');
+        $propbag->add('version',       '1.67');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -228,7 +228,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     }
 
                     // "backend" lists descriptions what the plugin does on the backend and where it uses visitor data or metadata
-                    if (is_array($legal['backend']) && count($legal['backend']) > 0) {
+                    if (isset($legal['backend']) && is_array($legal['backend']) && count($legal['backend']) > 0) {
                         $out .= "<h4>Backend</h4>\n";
                         $out .= "<ul>\n";
                         foreach($legal['backend'] AS $servicename => $servicedata) {
@@ -249,7 +249,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     }
 
                     // "sessiondata" lists an array of which PHP session data values are (temporarily) saved
-                    if (is_array($legal['sessiondata']) && count($legal['sessiondata']) > 0) {
+                    if (isset($legal['sessiondata']) && is_array($legal['sessiondata']) && count($legal['sessiondata']) > 0) {
                         $out .= '<h4>'.PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SESSIONDATA_HEAD."</h4>\n";
                         $out .= "<ul>\n";
                         foreach($legal['sessiondata'] AS $servicename => $servicedata) {
@@ -323,7 +323,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         );
 
         foreach ($stack AS $theme => $info) {
-            if (strtolower($info['engine']) == 'yes') {
+            if (isset($info['engine']) && strtolower($info['engine']) == 'yes') {
                 continue;
             }
 
@@ -555,7 +555,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     break;
 
                 case 'frontend_comment':
-                    if ($serendipity['serendipityUserlevel'] < USERLEVEL_ADMIN && serendipity_db_bool($this->get_config('commentform_checkbox', 'true'))) {
+                    if (isset($serendipity['serendipityUserlevel']) && $serendipity['serendipityUserlevel'] < USERLEVEL_ADMIN && serendipity_db_bool($this->get_config('commentform_checkbox', 'true'))) {
 ?>
                         <div class="form_toolbar dsgvo_gdpr_comment">
                             <div class="form_box">
