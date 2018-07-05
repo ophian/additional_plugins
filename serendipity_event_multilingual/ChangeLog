@@ -1,3 +1,7 @@
+2.39:
+-----
+ * Check undefined vars
+
 2.38:
 -----
  * Added legal property bag information for gdpr/dsgvo

@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '4.1.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.38');
+        $propbag->add('version',        '2.39');
         $propbag->add('configuration',  array('copytext', 'placement', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -611,7 +611,7 @@ class serendipity_event_multilingual extends serendipity_event
                                 unset($eventData[$i]['properties']['ep_cache_extended']);
                             }
 
-                            if ($langs = $this->getLang($eventData[$i]['id'], $eventData[$i]['properties'])) {
+                            if (isset($eventData[$i]['id']) && $langs = $this->getLang($eventData[$i]['id'], $eventData[$i]['properties'])) {
                                 $eventData[$i][$place] .= sprintf($msg, $langs);
                                 // this may throw two for the same, eg. when already linked as <en>, them set to POST cookie <en> too in the sidebar selection.
                                 // In this case the lang link and the default lang link are both named 'english'
@@ -626,7 +626,7 @@ class serendipity_event_multilingual extends serendipity_event
                             if (isset($eventData[$key]['title'])) {
                                 $eventData[$key]['title'] = $this->strip_langs($eventData[$key]['title']);
                                 $eventData[$key]['body'] = $this->strip_langs($eventData[$key]['body']);
-                                if (is_array($eventData[$key]['categories'])) {
+                                if (isset($eventData[$key]['categories']) && is_array($eventData[$key]['categories'])) {
                                     foreach($eventData[$key]['categories'] AS $ec_key => $ec_val) {
                                         if (isset($ec_val['category_name'])) {
                                             $eventData[$key]['categories'][$ec_key]['category_name'] = $this->strip_langs($ec_val['category_name']);
@@ -735,11 +735,11 @@ class serendipity_event_multilingual extends serendipity_event
                         $this->showlang = $this->lang_display;
                     }
 
-                    if (IN_serendipity_admin && serendipity_checkPermission('adminEntries') && $serendipity['GET']['adminAction'] == 'editSelect') {
+                    if (defined('IN_serendipity_admin') && serendipity_checkPermission('adminEntries') && $serendipity['GET']['adminAction'] == 'editSelect') {
                         $entrieslist = true;
                     }
 
-                    if ($addData['source'] == 'search' && empty($this->showlang) && !empty($_SESSION['last_lang'])) {
+                    if (isset($addData['source']) && $addData['source'] == 'search' && empty($this->showlang) && !empty($_SESSION['last_lang'])) {
                         header('X-SearchLangOverride: ' . $_SESSION['last_lang']);
                         $this->showlang = $_SESSION['last_lang'];
                     }
@@ -785,7 +785,7 @@ class serendipity_event_multilingual extends serendipity_event
                         $eventData['joins'] .= $cond;
                     }
 
-                    if ($addData['source'] == 'search' && isset($eventData['find_part'])) {
+                    if (isset($addData['source']) && $addData['source'] == 'search' && isset($eventData['find_part'])) {
                         $term =& $addData['term'];
                         $cond =& $eventData;
                         if (stristr($serendipity['dbType'], 'postgres')) {
