@@ -2894,7 +2894,7 @@ addLoadEvent(enableAutocomplete);
 
         // Merge kept oldtags with automated and/or category tags into tagList - may partly be or look a little redundant, but catches every case
         if (is_array($tags) && !empty($tags)) {
-            if (!is_array($oldtags) && empty($oldtags)) {
+            if (empty($oldtags) || !is_array($oldtags)) {
                 $oldtags = self::makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id']))); // as ARRAY
             }
             if (!is_array($oldtags)) { $oldtags = array(); }
