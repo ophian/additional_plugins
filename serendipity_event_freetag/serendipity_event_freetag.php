@@ -3,7 +3,7 @@
  * PRIORITY
  * - get some kind of data-sharing protocol in action.  It is very difficult
  *   tracing out what the hell is going on with this thing. (RQ: ?)
- * - Refactor out the entryproperties depenancy, and use our own space (RQ: ?)
+ * - Refactor out the entryproperties dependency, and use our own space (RQ: ?)
  *
  * TODO:
  * - - convert database structure to a truly 3rd normal form (RQ: ?)
@@ -39,16 +39,15 @@ class serendipity_event_freetag extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
+            'serendipity' => '2.1',
+            'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.05');
+        $propbag->add('version',       '4.10');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
             'frontend_display:rss-2.0:per_entry'                => true,
-            'frontend_header'                                   => true,
             'frontend_footer'                                   => true,
 //            'frontend_display:rss-0.92:per_entry'             => true,
             'frontend_display:rss-1.0:per_entry'                => true,
@@ -442,7 +441,7 @@ class serendipity_event_freetag extends serendipity_event
     /**
      * Response table created
      *
-     * @param   string  tablename
+     * @param   string  table name
      * @return  boolean
      * @static
      * @see     static_install()
@@ -512,7 +511,7 @@ class serendipity_event_freetag extends serendipity_event
     }
 
     /**
-     * Prepare url ready tag
+     * Prepare URL ready tag
      *
      * @param   string  $tag
      * @return  string  $tag
@@ -657,7 +656,7 @@ class serendipity_event_freetag extends serendipity_event
                 foreach($entries AS $entry) {
                     $ret['entries'][] = array('url' => serendipity_archiveURL($entry['id'], self::specialchars_mapper($entry['title'])) , 'title' => self::specialchars_mapper($entry['title']) , 'and so on' => 'for more additions per key' );
                 }
-                since now being a full multi-dimensional array, if you want to add more like an entries teaser image for expample.
+                since now being a full multi-dimensional array, if you want to add more like an entries teaser image for example.
                 See: http://board.s9y.org/viewtopic.php?f=4&t=20260&p=10443603#p10443603 ff
                 */
                 // OR better keep this first and use some Smarty split regex for the {$link} var (see extended_smarty example) to separate title and url again, eg.
@@ -680,7 +679,7 @@ class serendipity_event_freetag extends serendipity_event
     /**
      * Display tags for both plugins
      *  Tags should be an array with the key being the tag name, and val being
-     *  the number of occurances.
+     *  the number of occurrences.
      *
      * @static
      * @see     generateContent()
@@ -729,13 +728,13 @@ class serendipity_event_freetag extends serendipity_event
         global $serendipity;
 
         // Hey! Do NOT allow mixing clouds !
-        if ($flash && ($useRotCanvas || $useWordCloud)) {
-            $flash = false;
+        if ($useFlash && ($useRotCanvas || $useWordCloud)) {
+            $useFlash = false;
         }
-        if ($useRotCanvas && ($flash || $useWordCloud)) {
+        if ($useRotCanvas && ($useFlash || $useWordCloud)) {
             $useRotCanvas = false;
         }
-        if ($useWordCloud && ($flash || $useRotCanvas)) {
+        if ($useWordCloud && ($useFlash || $useRotCanvas)) {
             $useWordCloud = false;
         }
         if ($useRotCanvas && $useWordCloud) {
@@ -758,7 +757,7 @@ class serendipity_event_freetag extends serendipity_event
         $multiply = ($cTags > 33) ? 2 : 3;
         $multiply = ($cTags > 66) ? 1 : $multiply;
 
-        $scale    = ($biggest - $smallest); // eg 3 - 0.5 = 2.5
+        $scale    = ($biggest - $smallest); // eg. 3 - 0.5 = 2.5
 
         if ($scale < 0) {
             $scale = 1;
@@ -991,14 +990,7 @@ class serendipity_event_freetag extends serendipity_event
 
             switch($event) {
 
-                case 'frontend_header':
-                    if ($serendipity['version'][0] > 1) {
-                        break;
-                    }
                 case 'frontend_footer':
-                    if ($serendipity['version'][0] < 2) {
-                        break;
-                    }
                     if (serendipity_db_bool($this->get_config('use_flash', 'false'))) {
                         echo '<script type="text/javascript" src="';
                         echo $serendipity['serendipityHTTPPath'];
@@ -1022,19 +1014,27 @@ class serendipity_event_freetag extends serendipity_event
 ';
                     }
 
-                    $this->displayMetaKeywords($serendipity['GET']['id'], $this->displayTag);
+                    if (isset($serendipity['GET']['id'])) {
+                        $this->displayMetaKeywords($serendipity['GET']['id'], $this->displayTag);
+                    }
                     break;
 
                 case 'frontend_display:rss-2.0:per_entry':
                 case 'frontend_display:rss-0.91:per_entry':
-                    $eventData['display_dat'] .= $this->getFeedXmlForTags('category', $eventData['properties']['freetag_tags']);
+                    if (!isset($eventData['display_dat'])) $eventData['display_dat'] = '';
+                    if (isset($eventData['properties']['freetag_tags'])) {
+                        $eventData['display_dat'] .= $this->getFeedXmlForTags('category', $eventData['properties']['freetag_tags']);
+                    }
                     break;
 
                 case 'frontend_display:rss-1.0:per_entry':
                 case 'frontend_display:rss-0.91:per_entry':
                 case 'frontend_display:atom-0.3:per_entry':
                 case 'frontend_display:atom-1.0:per_entry':
-                    $eventData['display_dat'] .= $this->getFeedXmlForTags('dc:subject', $eventData['properties']['freetag_tags']);
+                    if (!isset($eventData['display_dat'])) $eventData['display_dat'] = '';
+                    if (isset($eventData['properties']['freetag_tags'])) {
+                        $eventData['display_dat'] .= $this->getFeedXmlForTags('dc:subject', $eventData['properties']['freetag_tags']);
+                    }
                     break;
 
                 case 'external_plugin':
@@ -1058,11 +1058,7 @@ class serendipity_event_freetag extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries':
-                    if ($serendipity['version'][0] < 2) {
-                        echo "\n".'                        <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=managetags">' . PLUGIN_EVENT_FREETAG_MANAGETAGS . '</a></li>'."\n";
-                    } else {
-                        echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=managetags">' . PLUGIN_EVENT_FREETAG_MANAGETAGS . '</a></li>'."\n";
-                    }
+                    echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=managetags">' . PLUGIN_EVENT_FREETAG_MANAGETAGS . '</a></li>'."\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_managetags':
@@ -1075,7 +1071,7 @@ class serendipity_event_freetag extends serendipity_event
                     if (!isset($eventData['id'])) {
                         break;
                     }
-                    if ($serendipity['GET']['tagview'] == 'tagupdate' && !serendipity_db_bool($this->get_config('keyword2tag', 'false'))) {
+                    if (isset($serendipity['GET']['tagview']) && $serendipity['GET']['tagview'] == 'tagupdate' && !serendipity_db_bool($this->get_config('keyword2tag', 'false'))) {
                         break;
                     }
 
@@ -1087,16 +1083,15 @@ class serendipity_event_freetag extends serendipity_event
                     break;
 
                 case 'css_backend':
-                    if ($serendipity['version'][0] > 1) {
-                        if (false === strpos($eventData, '.ucc-up-pointing-triangle')) {
-                            $eventData .= '
+                    if (false === strpos($eventData, '.ucc-up-pointing-triangle')) {
+                        $eventData .= '
 .ucc-up-pointing-triangle:before {
     content: "\25B2"; /* U+25B2 BLACK UP-POINTING TRIANGLE */
     color: #222;
 }
 ';
-                        }
-                        $eventData .= '
+                    }
+                    $eventData .= '
 
 /* freetag plugin start */
 
@@ -1207,7 +1202,6 @@ a.button_link.tagview_active {
 /* freetag plugin end */
 
 ';
-                    }
                     break;
 
                 case 'js_backend':
@@ -1295,29 +1289,13 @@ function enableAutocomplete() {
 addLoadEvent(enableAutocomplete);
 
 <?php
-
-                    }
-
-                    // keep for 2.0 < 2.1 version, since they do not have this nice config grouper item
-                    if ($serendipity['version'][0] == 2 && version_compare($serendipity['version'], '2.0.99', '<')) {
-
-?>
-
-$(document).ready(function() {
-    $('.configure_plugin div.configuration_group').each(function() {
-        if(!/[\S]/.test($(this).html())) {
-            $(this).replaceWith('<hr class="config_separator" style="visibility:hidden">');
-        }
-    });
-});
-
-<?php
-
                     }
                     break;
 
                 case 'backend_display':
-                    $this->backend_display($eventData['id']);
+                    if (isset($eventData['id'])) {
+                        $this->backend_display($eventData['id']);
+                    }
                     break;
 
                 case 'frontend_entryproperties':
@@ -1437,29 +1415,27 @@ $(document).ready(function() {
         // If not using extended-smarty, we want related entries only when
         // showing one single entry. It is better to ask Smarty here than doing
         // this manually for edge cases like overview pages
-        if ($serendipity['version'][0] > 1) {
-            $manyEntries = ! $serendipity['smarty']->getTemplateVars('is_single_entry');
-        } else {
-            $manyEntries = ! $serendipity['smarty']->get_template_vars('is_single_entry');
-        }
+        $manyEntries = ! $serendipity['smarty']->getTemplateVars('is_single_entry');
 
         for ($entry = 0; $entry < $elements; $entry++) {
-            // runs everywhere to generate a flattened array of tags
-            $tags = $this->getTagsForEntry($eventData[$entry]['id']); // as ARRAY
+            if (isset($eventData[$entry]['id'])) {
+                // runs everywhere to generate a flattened array of tags
+                $tags = $this->getTagsForEntry($eventData[$entry]['id']); // as ARRAY
 
-            if ($to_lower) {
-                $tags =  $this->array_imap($tags); // set to_lower for frontend entries (new)
-            }
+                if ($to_lower) {
+                    $tags =  $this->array_imap($tags); // set to_lower for frontend entries (new)
+                }
 
-            // when in preview, maybe there are no tags stored yet
-            if ($addData['preview'] && empty($tags)) {
-                $tags = explode(',', $serendipity['POST']['properties']['freetag_tagList']);
-            }
-            $eventData = $this->addTags($entry, $tags, $eventData);
+                // when in preview, maybe there are no tags stored yet
+                if ($addData['preview'] && empty($tags)) {
+                    $tags = explode(',', (isset($serendipity['POST']['properties']['freetag_tagList']) ? $serendipity['POST']['properties']['freetag_tagList'] : ''));
+                }
+                $eventData = $this->addTags($entry, $tags, $eventData);
 
-            if ($show_related) {
-                $relatedEntries = $this->getRelatedEntries($tags, $eventData[$entry]['id']);
-                $eventData = $this->addRelatedEntries($entry, $manyEntries, $relatedEntries, $eventData);
+                if ($show_related) {
+                    $relatedEntries = $this->getRelatedEntries($tags, $eventData[$entry]['id']);
+                    $eventData = $this->addRelatedEntries($entry, $manyEntries, $relatedEntries, $eventData);
+                }
             }
         }
     }
@@ -1558,6 +1534,7 @@ $(document).ready(function() {
      */
     static function makeTagsFromTaglist($tagList)
     {
+        $tags = array();
         $freetags = explode(',', $tagList);
         foreach($freetags AS $tag) {
             $tag = trim($tag);
@@ -1571,7 +1548,7 @@ $(document).ready(function() {
     /**
      * Returns a list of all tags
      *
-     *  This performs a memoization operation, so that if we happen to be
+     *  This performs a memorization operation, so that if we happen to be
      *  getting all tags more then one time per request, we only perform
      *  the SQL query once
      *
@@ -1612,7 +1589,7 @@ $(document).ready(function() {
     /**
      * event hook: entries_header executor
      *
-     * @param   string  $tag is single url tag only $eventData['plugin_vars']['tag']
+     * @param   string  $tag is single URL tag only $eventData['plugin_vars']['tag']
      */
     function displayTagCloud($tag)
     {
@@ -1894,7 +1871,7 @@ $(document).ready(function() {
      *  Why does it use array pop? It turns multi-dimensional arrays into flattened arrays!
      *
      * @param   int      entries $eventData['id']
-     * @return  array    in any case for the tolower array_imap()
+     * @return  array    in any case for the "tolower" array_imap()
      * @see     diverse methods like backend_fetch_tags_for_saving()
      */
     function getTagsForEntry($entryId)
@@ -1982,6 +1959,10 @@ $(document).ready(function() {
             }
         } else if (!empty($serendipity['GET']['tag'])) {
             $showtag = serendipity_db_escape_string(urldecode($serendipity['GET']['tag']));
+        }
+
+        if (!isset($showtag)) {
+            $showtag = '';
         }
 
         if (is_array($showtag)) {
@@ -2107,7 +2088,7 @@ $(document).ready(function() {
         // Manually added (last) parameter 'taglist' to view tags by list for certain taglinks eg.: example.org/plugin/tag/Serendipity/Blog/Plums/taglist - both need a modified entries.tpl
         if ($ctaglist && in_array('taglist', $serendipity['uriArguments'])) {
             $param = array_map('urldecode', $param);
-            $param = array_map('urldecode', $param); // for doubled encoded tag umlauts via searchengine backlinks
+            $param = array_map('urldecode', $param); // for doubled encoded tag umlauts via search engine backlinks
             $param = is_array($param) ? array_map('strip_tags', $param) : strip_tags($param);
             $param = array_filter($param); // filter out all left BOOL, NULL and EMPTY elements, which still are possible by removing XSS with strip_tags
 
@@ -2157,14 +2138,14 @@ $(document).ready(function() {
             $param = null;
         } else if (count($param) == 1) {
             $param = urldecode($param[0]);
-            $param = urldecode($param); // for doubled encoded tag umlauts via searchengine backlinks
+            $param = urldecode($param); // for doubled encoded tag umlauts via search engine backlinks
             $param = strip_tags($param);
             $serendipity['head_subtitle'] = sprintf(PLUGIN_EVENT_FREETAG_USING, self::specialchars_mapper($param));
             $emit_404 = true;
         } else {
             if (!$tagged_as_list) {
                 $param = array_map('urldecode', $param);
-                $param = array_map('urldecode', $param); // for doubled encoded tag umlauts via searchengine backlinks in sprintf
+                $param = array_map('urldecode', $param); // for doubled encoded tag umlauts via search engine backlinks in sprintf
             }
             $param = array_map('strip_tags', $param);
             $param = array_filter($param); // filter out all left BOOL, NULL and EMPTY elements, which still are possible by removing XSS with strip_tags
@@ -2201,8 +2182,7 @@ $(document).ready(function() {
         if ($tagged_as_list) {
             $serendipity['fetchLimit'] = 99; // do not use frontend entries pagination if count < 100 entries
         }
-        // check if ob_start() was set, which is not in Serendipity 2.1
-        if (ob_get_level() == 1) { ob_start(); }
+        ob_start();
         include_once(S9Y_INCLUDE_PATH . 'include/genpage.inc.php');
 
         if ($emit_404 && $this->taggedEntries !== null && $this->taggedEntries < 1) {
@@ -2217,7 +2197,7 @@ $(document).ready(function() {
             }
         }
         $raw_data = ob_get_contents();
-        ob_end_clean(); // the "missing" ob_start() is defined in serendipity roots index.php file until Serendipity 2.1
+        ob_end_clean();
         $serendipity['smarty']->assign('raw_data', $raw_data);
 
         if (serendipity_db_bool($this->get_config('show_tagcloud', 'true'))) {
@@ -2226,7 +2206,7 @@ $(document).ready(function() {
         }
         serendipity_gzCompression();
         $serendipity['smarty']->display(serendipity_getTemplateFile($serendipity['smarty_file'], 'serendipityPath'));
-        @define('NO_EXIT', true); // RQ: Why did or do we (still) need this? (see index.php file change in 2.1-alpha2) - with 2.1 obsolet!
+        @define('NO_EXIT', true); // RQ: Why did or do we (still) need this? (see index.php file change in 2.1-alpha2) - with 2.1 obsolete!
     }
 
     /**
@@ -2244,17 +2224,11 @@ $(document).ready(function() {
 
         $full_permission = serendipity_checkPermission('adminPlugins'); // AFAIS, BY USERLEVEL permission checks are being deprecated
 
-        if ($serendipity['version'][0] < 2) {
-?>
-
-            <div style="border: 1px solid #000;" class="freetagMenu">
-            <ul>
-
-<?php
-        } else {
-            $tagview = array('all', 'entryleaf', 'leaf', 'entryuntagged', 'keywords', 'cat2tag', 'tagupdate', 'cleanupmappings');// strange issue occurs, when first comes 'leaf', then 'entryleaf' is not replaced correct, so we need to check the latter first!
-            $tagviewtitle = array(PLUGIN_EVENT_FREETAG_MANAGE_ALL, PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED, PLUGIN_EVENT_FREETAG_MANAGE_LEAF, PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED, PLUGIN_EVENT_FREETAG_KEYWORDS, PLUGIN_EVENT_FREETAG_GLOBALLINKS, PLUGIN_EVENT_FREETAG_REBUILD, PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP);
+        $tagview = array('all', 'entryleaf', 'leaf', 'entryuntagged', 'keywords', 'cat2tag', 'tagupdate', 'cleanupmappings');// strange issue occurs, when first comes 'leaf', then 'entryleaf' is not replaced correct, so we need to check the latter first!
+        $tagviewtitle = array(PLUGIN_EVENT_FREETAG_MANAGE_ALL, PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED, PLUGIN_EVENT_FREETAG_MANAGE_LEAF, PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED, PLUGIN_EVENT_FREETAG_KEYWORDS, PLUGIN_EVENT_FREETAG_GLOBALLINKS, PLUGIN_EVENT_FREETAG_REBUILD, PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP);
+        if (!empty($serendipity['GET']['tagview'])) {
             $freetag_section = str_replace($tagview, $tagviewtitle, $serendipity['GET']['tagview']);
+        }
 ?>
 
             <h2 id="freetag_adminer_title"><?php echo (empty($freetag_section) ? PLUGIN_EVENT_FREETAG_MANAGETAGS : $freetag_section); ?></h2>
@@ -2298,7 +2272,6 @@ $(document).ready(function() {
                 </svg>
                 <ul class="plainList clearfix">
 <?php
-        }
         $taction  = array('all', 'leaf', 'entryuntagged', 'entryleaf', 'keywords', 'cat2tag', 'tagupdate', 'cleanupmappings'); //re-ordered for button usage (see above)
         $tagtitle = array(PLUGIN_EVENT_FREETAG_MANAGE_ALL, PLUGIN_EVENT_FREETAG_MANAGE_LEAF, PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED, PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED, PLUGIN_EVENT_FREETAG_KEYWORDS, PLUGIN_EVENT_FREETAG_GLOBALLINKS, PLUGIN_EVENT_FREETAG_REBUILD, PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP);
         $svgsrc   = array('tags', 'tag', 'notag', 'leaftag', 'keytag', 'ctag', 'autotag', 'cleantag');
@@ -2307,7 +2280,7 @@ $(document).ready(function() {
             if ($tk > 1) {
                 if ($full_permission === false) { break; }
             }
-            $active  = ($serendipity['GET']['tagview'] == $tv) ? ' tagview_active' : '';
+            $active  = (isset($serendipity['GET']['tagview']) && $serendipity['GET']['tagview'] == $tv) ? ' tagview_active' : '';
             $confirm = ($tk == 6 && $tv == 'tagupdate') ? ' onclick="return confirm(\'' . htmlspecialchars(PLUGIN_EVENT_FREETAG_REBUILD_DESC, ENT_COMPAT, LANG_CHARSET) . '\')"' : '';
             echo '<li><a class="button_link' . $active . '" href="' . FREETAG_MANAGE_URL . '&amp;serendipity[tagview]=' . $tv . '"' . $confirm . ' title="'. $tagtitle[$tk] .'"><svg class="icon icon-' . $svgsrc[$tk] . '" title="' . $svgtitle[$tk] . '"><use xlink:href="#icon-' . $svgsrc[$tk] . '"></use></svg></a></li>'."\n";
         }
@@ -2374,7 +2347,7 @@ $(document).ready(function() {
                         break;
                     }
                     if (!serendipity_db_bool($this->get_config('keyword2tag', 'false'))) {
-                        echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>The option "' . PLUGIN_EVENT_FREETAG_KEYWORDS . '" is not set!</span>'."\n"; // i18n?
+                        echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> The option "' . PLUGIN_EVENT_FREETAG_KEYWORDS . '" is not set!</span>'."\n"; // i18n?
                         break;
                     }
                     $this->displayTagUpdate();
@@ -2429,24 +2402,9 @@ $(document).ready(function() {
                     <td><?php echo $tag; ?></td>
                     <td><?php echo $weight; ?></td>
                     <td>
-<?php
-                    if ($serendipity['version'][0] < 2) {
-?>
-
-                        <a href="<?php echo $url?>&amp;serendipity[tagaction]=rename&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?></a>
-                        <a href="<?php echo $url?>&amp;serendipity[tagaction]=split&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?></a>
-                        <a href="<?php echo $url?>&amp;serendipity[tagaction]=delete&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?></a>
-<?php
-                    } else {
-?>
-
                         <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=rename&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?></span></a>
                         <a class="button_link" title="<?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=split&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-resize-full" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?></span></a>
                         <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=delete&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-trash" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?></span></a>
-<?php
-                    }
-?>
-
                     </td>
                 </tr>
 <?php
@@ -2510,33 +2468,18 @@ $(document).ready(function() {
         $r = serendipity_db_query($q);
 
         if ($r === true) {
-            if ($serendipity['version'][0] < 2) {
-                echo PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE;
-            } else {
-                echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE . "</span>\n";
-            }
+            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE . "</span>\n";
         } else if (!is_array($r)) {
             echo $r;
         } else {
-            if ($serendipity['version'][0] > 1) {
-                echo '<ul class="plainList freetags_list">'."\n";
-            }
+            echo '<ul class="plainList freetags_list">'."\n";
             foreach ($r AS $row) {
-                if ($serendipity['version'][0] < 2) {
-                    echo '<p style="margin: 5px; border: 1px dotted #000; padding: 3px;" class="freetagMenu">
-                            <a href="' . FREETAG_EDITENTRY_URL . $row['id'] . '"><img style="border: 0px;" src="' . serendipity_getTemplateFile('admin/img/edit.png') . '"></a>
-                            ' . $row['title'] . '
-                        </p>';
-                } else {
-                    echo '    <li>
-                            <a class="button_link" title="' . EDIT . '" href="' . FREETAG_EDITENTRY_URL . $row['id'] . '"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> ' . EDIT . '</span></a>
-                            ' . $row['title'] . (!empty($row['tag']) ? ' ( <strong>Single-Tag:</strong> <em>' . $row['tag'] . '</em> )' : '') . '
-                        </li>'."\n"; // i18n?
-                }
+                echo '    <li>
+                        <a class="button_link" title="' . EDIT . '" href="' . FREETAG_EDITENTRY_URL . $row['id'] . '"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> ' . EDIT . '</span></a>
+                        ' . $row['title'] . (!empty($row['tag']) ? ' ( <strong>Single-Tag:</strong> <em>' . $row['tag'] . '</em> )' : '') . '
+                    </li>'."\n"; // i18n?
             }
-            if ($serendipity['version'][0] > 1) {
-                echo "</ul>\n";
-            }
+            echo "</ul>\n";
         }
     }
 
@@ -2564,11 +2507,7 @@ $(document).ready(function() {
         }
         $url = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . self::specialchars_mapper($this->eventData['GET']['tagview']);
 
-        if ($serendipity['version'][0] < 2) {
-            echo '<br />' . PLUGIN_EVENT_FREETAG_KEYWORDS_DESC . '<br /><br />';
-        } else {
-            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_EVENT_FREETAG_KEYWORDS_DESC . "</span>\n";
-        }
+        echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_KEYWORDS_DESC . "</span>\n";
 ?>
         <form action="<?php echo $url; ?>" method="post">
         <table class="freetags_manage">
@@ -2587,42 +2526,28 @@ $(document).ready(function() {
                     <td> <?php echo $tag; ?> </td>
                     <td>
 <?php
-            if (urldecode($serendipity['GET']['tag']) == $tag) {
+                if (isset($serendipity['GET']['tag']) && urldecode($serendipity['GET']['tag']) == $tag) {
 ?>
                         <a id="edit"></a>
-                        <textarea rows="4" cols="40" name="serendipity[keywords]"><?php echo self::specialchars_mapper($keys[$tag]) ?></textarea>
+                        <textarea rows="4" cols="40" name="serendipity[keywords]"><?php echo self::specialchars_mapper((isset($keys[$tag]) ? $keys[$tag] :'')) ?></textarea>
 <?php
-            } else {
-                        echo $keys[$tag];
-            }
+                } else {
+                        if (isset($keys[$tag])) echo $keys[$tag];
+                }
 ?>
                     </td>
                     <td>
 <?php
-            if (urldecode($serendipity['GET']['tag']) == $tag) {
+                if (isset($serendipity['GET']['tag']) && urldecode($serendipity['GET']['tag']) == $tag) {
 ?>
                         <input type="hidden" name="serendipity[tag]" value="<?php echo urlencode(urldecode($serendipity['GET']['tag'])); ?>" />
-<?php
-                    if ($serendipity['version'][0] < 2) {
-?>
-                        <input type="submit" name="serendipity[keywordsubmit]" class="serendipityPrettyButton input_button" value="<?php echo SAVE; ?>" />
-<?php
-                    } else {
-?>
                         <input type="submit" name="serendipity[keywordsubmit]" value="<?php echo SAVE; ?>">
 <?php
-                    }
-            } else {
-                    if ($serendipity['version'][0] < 2) {
-?>
-                        <a href="<?php echo $url ?>&amp;serendipity%5Btag%5D=<?php echo urlencode($tag)?>#edit"><?php echo EDIT ?></a>
-<?php
-                    } else {
+                } else {
 ?>
                         <a class="button_link" title="<?php echo EDIT ?>" href="<?php echo $url ?>&amp;serendipity%5Btag%5D=<?php echo urlencode($tag)?>#edit"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo EDIT ?></span></a>
 <?php
-                    }
-            }
+                }
 ?>
                     </td>
                 </tr>
@@ -2665,9 +2590,7 @@ $(document).ready(function() {
         }
 
         // Cycle all entries
-        if ($serendipity['version'][0] > 1) {
-            echo '<ul class="plainList">'."\n";
-        }
+        echo '<ul class="plainList">'."\n";
         foreach ($entries AS $id => $props) {
             $newtags = array();
             // Fetch all tags that should be added
@@ -2688,32 +2611,17 @@ $(document).ready(function() {
             }
 
             $this->addTagsToEntry($id, $newtags);
-            if ($serendipity['version'][0] < 2) {
-                printf(
-                    PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY . '<br />',
-                    $id,
-                    self::specialchars_mapper($props['title']),
-                    self::specialchars_mapper(implode(', ', $newtags))
-                );
-            } else {
-                echo '<li>';
-                printf(
-                    PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY,
-                    $id,
-                    self::specialchars_mapper($props['title']),
-                    self::specialchars_mapper(implode(', ', $newtags))
-                );
-                echo "</li>\n";
-            }
+            echo '<li>';
+            printf(
+                PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY,
+                $id,
+                self::specialchars_mapper($props['title']),
+                self::specialchars_mapper(implode(', ', $newtags))
+            );
+            echo "</li>\n";
         }
-        if ($serendipity['version'][0] > 1) {
-            echo "</ul>\n";
-        }
-        if ($serendipity['version'][0] < 2) {
-            echo PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG . '<br />';
-        } else {
-            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG . "</span>\n";
-        }
+        echo "</ul>\n";
+        echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG . "</span>\n";
     }
 
     /**
@@ -2730,9 +2638,7 @@ $(document).ready(function() {
         $from  = ($page - 1) * $limit;
         $to    = ($page) * $limit;
 
-        if ($serendipity['version'][0] > 1) {
-            echo '<h3>';
-        }
+        echo '<h3>';
         printf(PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO, $from, $to);
 
         $entries = serendipity_fetchEntries(
@@ -2747,26 +2653,16 @@ $(document).ready(function() {
         );
 
         $total = serendipity_getTotalEntries();
-        if ($serendipity['version'][0] < 2) {
-            printf(PLUGIN_EVENT_FREETAG_REBUILD_TOTAL . '<br />', $total);
-        } else {
-            printf(PLUGIN_EVENT_FREETAG_REBUILD_TOTAL, $total);
-            echo '</h3>';
-        }
+        printf(PLUGIN_EVENT_FREETAG_REBUILD_TOTAL, $total);
+        echo '</h3>';
 
         if (is_array($entries)) {
-            if ($serendipity['version'][0] > 1) {
-                echo '<ul class="plainList">'."\n";
-            }
+            echo '<ul class="plainList">'."\n";
             foreach ($entries AS $entry) {
                 unset($entry['orderkey']);
                 unset($entry['loginname']);
                 unset($entry['email']);
-                if ($serendipity['version'][0] < 2) {
-                    printf('%d - "%s"<br />', $entry['id'], self::specialchars_mapper($entry['title']));
-                } else {
-                    printf('    <li>%d - "%s"', $entry['id'], self::specialchars_mapper($entry['title']));
-                }
+                printf('    <li>%d - "%s"', $entry['id'], self::specialchars_mapper($entry['title']));
                 $serendipity['POST']['properties']['fake'] = 'fake';
                 $current_cat = $entry['categories'];
                 $entry['categories'] = array();
@@ -2778,18 +2674,9 @@ $(document).ready(function() {
                 if (is_string($up)) {
                     echo "<div>$up</div>\n";
                 }
-                if ($serendipity['version'][0] < 2) {
-                    echo DONE . "<br />\n";
-                } else {
-                    echo ' ... ' . DONE . "</li>\n";
-                }
+                echo ' ... ' . DONE . "</li>\n";
             }
-            if ($serendipity['version'][0] > 1) {
-                echo "</ul>\n";
-            }
-        }
-        if ($serendipity['version'][0] < 2) {
-            echo '<br />';
+            echo "</ul>\n";
         }
 
         if ($to < $total) {
@@ -2805,11 +2692,7 @@ $(document).ready(function() {
 
 <?php
         } else {
-            if ($serendipity['version'][0] < 2) {
-                echo '<div class="serendipity_msg_notice">' . DONE . '</div>';
-            } else {
-                echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . DONE . "</span>\n";
-            }
+            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . DONE . "</span>\n";
         }
     }
 
@@ -2821,10 +2704,6 @@ $(document).ready(function() {
     function cleanupTagAssignments()
     {
         global $serendipity;
-
-        if ($serendipity['version'][0] < 2) {
-            echo "<br>";
-        }
 
         // Search for inconsistencies
         $q_search = "SELECT et.tag AS tag, et.entryid AS entryid, e.id
@@ -2852,18 +2731,10 @@ $(document).ready(function() {
                 $cleanup = serendipity_db_query($q_cleanup);
 
                 if ($cleanup === TRUE) {
-                    if ($serendipity['version'][0] < 2) {
-                        echo "<b>".PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_SUCCESSFUL."</b>";
-                    } else {
-                        echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_SUCCESSFUL . "</span>\n";
-                    }
+                    echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_SUCCESSFUL . "</span>\n";
                 }
                 else {
-                    if ($serendipity['version'][0] < 2) {
-                        echo "<b>".PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_FAILED."</b><br><br><b>DB-Error:</b>".$cleanup;
-                    } else {
-                        echo '<div class="msg_error"><p><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_FAILED . '</p><strong>DB-Error:</strong> ' . $cleanup . "</div>\n";
-                    }
+                    echo '<div class="msg_error"><p><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_FAILED . '</p><strong>DB-Error:</strong> ' . $cleanup . "</div>\n";
                 }
             }
             else {
@@ -2872,11 +2743,7 @@ $(document).ready(function() {
                 foreach ($mappings AS $mapping) {
                     $cleanup_tags[$mapping['tag']][] = $mapping['entryid'];
                 }
-                if ($serendipity['version'][0] < 2) {
-                    echo PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_INFO."<br><br>";
-                } else {
-                    echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_INFO . "</span>\n";
-                }
+                echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_INFO . "</span>\n";
 
                 // Display list of found inconsistencies
                 echo "<table class='freetags_manage'>\n<thead>\n";
@@ -2893,29 +2760,17 @@ $(document).ready(function() {
                 echo '    <input type="hidden" name="serendipity[adminAction]" value="managetags" />';
                 echo '    <input type="hidden" name="serendipity[tagview]" value="' . self::specialchars_mapper($this->eventData['GET']['tagview']) . '">'."\n";
                 echo '    <input type="hidden" name="serendipity[perform]" value="true" />'."\n";
-                if ($serendipity['version'][0] < 2) {
-                    echo '    <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="'.PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_PERFORM.'" />'."\n";
-                } else {
-                    echo '    <input type="submit" name="submit" value="'.PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_PERFORM.'">'."\n";
-                }
+                echo '    <input type="submit" name="submit" value="'.PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_PERFORM.'">'."\n";
                 echo "</form>\n";
             }
         }
         elseif ($mappings === TRUE) {
             // No inconsistencies found
-            if ($serendipity['version'][0] < 2) {
-                echo "<b>".PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING."</b>";
-            } else {
-                echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING . "</span>\n";
-            }
+            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING . "</span>\n";
         }
         else {
-            // An error occures while searching for inconsistencies
-            if ($serendipity['version'][0] < 2) {
-                echo "<b>".PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_LOOKUP_ERROR."</b><br><br><b>DB-Error:</b>".$mappings;
-            } else {
-                echo '<div class="msg_error"><p><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_LOOKUP_ERROR . '</p><strong>DB-Error:</strong> ' . $mappings . "</div>\n";
-            }
+            // An error occurs while searching for inconsistencies
+            echo '<div class="msg_error"><p><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_LOOKUP_ERROR . '</p><strong>DB-Error:</strong> ' . $mappings . "</div>\n";
         }
     }
 
@@ -2925,7 +2780,7 @@ $(document).ready(function() {
      *
      * CLARIFY STATEMENT:
      *      TAGS are stored to the database entrytags table like they are written by the user or being tagged already:
-     *      uppercased, mixed, lowercased, capitalised, etc. To change older tags, use the backend tag administration rename button function.
+     *      uppercased, mixed, lowercased, capitalized, etc. To change older tags, use the backend tag administration rename button function.
      *      The 'lowercase_tags' option sets TAGS lowercased in every frontend related output at runtime and is used for comparison matters.
      *
      * @param   array   $eventData as copy
@@ -2955,7 +2810,7 @@ $(document).ready(function() {
         // When this variable is not set, the entry might be saved i.e. by recreating cache or automated trackback.
         // Do not loose such tags. :)
         // And do not use it with multiple entry cases, since this would always get the first of multiple IDs!!
-        if (!isset($serendipity['POST']['properties']['freetag_tagList']) && $serendipity['GET']['tagview'] != 'tagupdate' && $serendipity['GET']['tagview'] != 'cat2tag') {
+        if (!isset($serendipity['POST']['properties']['freetag_tagList']) && isset($serendipity['GET']['tagview']) && $serendipity['GET']['tagview'] != 'tagupdate' && $serendipity['GET']['tagview'] != 'cat2tag') {
             $serendipity['POST']['properties']['freetag_tagList'] = implode(',', $this->getTagsForEntry($eventData['id'])); // as STRING
         }
         if (!empty($serendipity['POST']['properties']['freetag_tagList'])) {
@@ -2963,7 +2818,7 @@ $(document).ready(function() {
         }
 
         // check for keyword2tag empty or set cases
-        if (!is_array($tags) && empty($tags)) {
+        if (empty($tags) || !is_array($tags)) {
             $tags = array();
         }
 
@@ -3053,7 +2908,7 @@ $(document).ready(function() {
             }
         }
 
-        $key2tagIDs = (is_array($key2tagIDs) && !empty($key2tagIDs)) ? array_unique($key2tagIDs) : array();
+        $key2tagIDs = (!empty($key2tagIDs) && is_array($key2tagIDs)) ? array_unique($key2tagIDs) : array();
 
         // ACTIONS - Only do this to entries which really changed tags!!
         if ((is_array($tags) && !empty($tags) && $oldtags !== $tags)
@@ -3111,119 +2966,18 @@ $(document).ready(function() {
             foreach ($tagsArray AS $k => $v) {
                 $wicktags[] = '\'' . addslashes($k) . '\'';
             }
-            echo ($serendipity['version'][0] < 2 ? '<script type="text/javascript" src="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery-1.11.3.min.js"></script>' : '') . '
+            echo '
             <link rel="stylesheet" type="text/css" href="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.min.css" />
             <script type="text/javascript" src="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.min.js"></script>
             <script type="text/javascript">
                 var tags = [' . implode(',', $wicktags) . '];
-                 ' . ($serendipity['version'][0] < 2 ? '
-                function enableAutocomplete() {
-                    if (typeof(tags) != "undefined") {
-                        function split(val) {
-                            return val.split(/,\s*/);
-                        }
-                        function extractLast(term) {
-                            return split(term).pop();
-                        }
-                        $("#properties_freetag_tagList")
-                            .bind("keydown", function (event) {
-                                // dont navigate away from the field on tab when selecting an item
-                                if (event.keyCode === 9 && $(this).data("ui-autocomplete").menu.active) {
-                                    event.preventDefault();
-                                }
-                            })
-                            .autocomplete({
-                                minLength: 0,
-                                source: function (request, response) {
-                                    // delegate back to autocomplete, but extract the last term
-                                    response($.ui.autocomplete.filter(tags, extractLast(request.term)));
-                                },
-                                focus: function () {
-                                    // prevent value inserted on focus
-                                    return false;
-                                },
-                                select: function (event, ui) {
-                                    var terms = split(this.value);
-                                    // remove the current input
-                                    terms.pop();
-                                    // add the selected item
-                                    terms.push(ui.item.value);
-                                    // add placeholder to get the comma-and-space at the end
-                                    terms.push("");
-                                    this.value = terms.join(",");
-                                    return false;
-                                }
-                            });
-                    }
-                };
-                addLoadEvent(enableAutocomplete);' : '') . '
             </script>'."\n";
         }
 
-        if (($serendipity['version'][0] < 2) && $admin_show_taglist) {
-?>
-
-            <script type="text/javascript">
-                function addTag(addTag)
-                {
-                    var elem = document.getElementById("properties_freetag_tagList");
-                    var freetags = elem.value.split(',');
-
-                    inList = false;
-                    for (var freetag = 0; freetag < freetags.length; freetag++) {
-                        if (freetags[freetag] && trim(freetags[freetag].toLowerCase()) == addTag.toLowerCase()) {
-                            inList = true;
-                        }
-                    }
-
-                    if (!inList) {
-                        if (elem.value.lastIndexOf(',') == (elem.value.length-1)) {
-                            sepChar = '';
-                        } else {
-                            sepChar = ',';
-                        }
-
-                        elem.value = elem.value + sepChar + addTag;
-                        elem.focus();
-                    }
-                }
-
-                function trim(str)
-                {
-                    if (str) return str.replace(/^\s*|\s*$/g,"");
-                     else return '';
-                }
-            </script>
-<?php
-        }
         $dir_reverse = (LANG_DIRECTION == 'rtl') ? 'ltr' : 'rtl';
 ?>
 
             <a name="tagListAnchor"></a>
-
-<?php
-        if ($serendipity['version'][0] < 2) {
-?>
-
-            <fieldset style="margin: 5px">
-                <legend><?php echo PLUGIN_EVENT_FREETAG_TITLE; ?></legend>
-                <label for="serendipity[properties][freetag_tagList]" title="<?php echo PLUGIN_EVENT_FREETAG_TITLE; ?>"><?php echo PLUGIN_EVENT_FREETAG_ENTERDESC; ?>:</label><br/>
-                <input type="text" name="serendipity[properties][freetag_tagList]" id="properties_freetag_tagList" class="wickEnabled input_textbox" dir="<?php echo $dir_reverse; ?>" value="<?php echo self::specialchars_mapper($tagList) ?>" style="width: 100%" />
-
-                <input id="properties_freetag_kill" name="serendipity[properties][freetag_kill]" class="input_checkbox" type="checkbox" value="true" />
-                <label for="serendipity[properties][freetag_kill]" title="<?php echo PLUGIN_EVENT_FREETAG_KILL; ?>"><?php echo PLUGIN_EVENT_FREETAG_KILL; ?></label><br/>
-
-<?php
-            if ($admin_show_taglist) {
-?>
-
-                <div id="backend_freetag_list" style="margin: 5px; border: 1px dotted #000; padding: 5px; font-size: 9px;">
-
-<?php
-            }
-
-        } else {
-?>
             <fieldset id="edit_entry_freetags" class="entryproperties_freetag">
                 <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_FREETAG_TITLE; ?></legend></span>
                 <div class="form_field">
@@ -3238,7 +2992,6 @@ $(document).ready(function() {
                     <a href="#top" class="button_link button_up" title="<?php echo UP; ?>"><span class="ucc-up-pointing-triangle"></span></a>
                 </div>
 <?php
-        }
 
         if ($admin_show_taglist) {
             echo '                <div id="backend_freetag_list">'."\n";
@@ -3255,11 +3008,7 @@ $(document).ready(function() {
                     // HEY - do NOT remove this FEATURE(!) for 2.0+!! Is configurable by option!
                     echo "<strong>|" . $upc . ':</strong> ';
                 }
-                if ($serendipity['version'][0] < 2) {
-                    echo "<a href=\"#tagListAnchor\" style=\"text-decoration: none\" onClick=\"addTag('{$tag}')\">{$tag}</a>, ";
-                } else {
-                    echo "<a {$class}href=\"#tagListAnchor\" onClick=\"addTag('{$tag}')\">{$tag}</a> ";
-                }
+                echo "<a {$class}href=\"#tagListAnchor\" onClick=\"addTag('{$tag}')\">{$tag}</a> ";
                 $lastletter = $upc;
             }
             echo "\n                </div>\n";
@@ -3294,7 +3043,7 @@ $(document).ready(function() {
             exit ("DON'T HACK!");
         }
 
-        if ($this->eventData['GET']['commit'] == 'true') {
+        if (isset($this->eventData['GET']['commit']) && $this->eventData['GET']['commit'] == 'true') {
             $method = 'get'.ucfirst($this->eventData['GET']['tagaction']).'TagQuery';
             $q = $this->$method($tag, $this->eventData);
             echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . $this->eventData['GET']['tagaction'] . " Completed</span>\n"; // i18n?
@@ -3330,12 +3079,12 @@ $(document).ready(function() {
      * Execute a rename of a tag
      *  We select all the entries with the old tag name, delete all entry tags
      *  with the old tag name, and finally re insert.  The reason we do this is
-     *  that we might be renaming a tag, to an already exising tag that is
+     *  that we might be renaming a tag, to an already existing tag that is
      *  already associated to an entry, duplicating the primary key.
      *  If we do it via an update, the update fails, and our rename doesn't
      *  happen.  This way our update does happen, and we can silently fail
      *  when we hit a duplicate key condition.
-     *  Postgres doesnt have an UPDATE IGNORE syntax, so we can't use that
+     *  Postgres doesn't have an UPDATE IGNORE syntax, so we can't use that
      *  method.  Sux0rz.
      *
      * Combined method for get tag button, called by

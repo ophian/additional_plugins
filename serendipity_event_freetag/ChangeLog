@@ -1,3 +1,12 @@
+4.10:
+-----
+    * Better check undefined variables also in plugin_freetag.tpl
+    * Fix useFlash using wrong variable (Flash is dead! Do NOT use!)
+    * Remove older code < Styx 2.1
+    * Add some missing whitespaces in messages
+    * Remove code for Serendipity pre 2.0 version
+        Sets new off requirement to Styx 2.1.
+
 4.05:
 -----
     * Remove remaining technorati image leftover (see 4.04)
