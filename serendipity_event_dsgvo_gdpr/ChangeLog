@@ -1,3 +1,7 @@
+1.68:
+-----
+ * Improve hint for automatic generated theme manifests
+
 1.67:
 -----
  * Check undefined vars (Styx 2.6-alpha debug session)

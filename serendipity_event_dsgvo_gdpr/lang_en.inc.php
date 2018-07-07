@@ -122,6 +122,13 @@ Certain plugins can use the session cookie to store additional temporary data.</
 <p>Additionally, the following plugins are currently enabled and this is their automatically generated manifest:</p>
 
 ');
+@define('PLUGIN_EVENT_DSGVO_GDPR_SERENDIPITY_CORE_THEMES', '
+
+<h2>Serendipity Core Themes</h2>
+
+<p>Additionally, the following themes are active/available and this is their automatically generated manifest:</p>
+
+');
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SERVICES_HEAD', 'Web services / Third Party');
 @define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SESSIONDATA_HEAD', 'Session data');

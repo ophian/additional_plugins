@@ -122,6 +122,13 @@ Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporäre 
 <p>Zusätzlich sind derzeit die folgenden Plugins aktiviert und dies ist ihr automatisch generiertes Manifest:</p>.
 
 ');
+@define('PLUGIN_EVENT_DSGVO_GDPR_SERENDIPITY_CORE_THEMES', '
+
+<h2>Serendipity Kern Themes</h2>
+
+<p>Zusätzlich sind folgende Themes vorhanden und dies ist ihr automatisch generiertes Manifest:</p>.
+
+');
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SERVICES_HEAD', 'Webservices / Dritte');
 @define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_SESSIONDATA_HEAD', 'Sitzungsdaten');
