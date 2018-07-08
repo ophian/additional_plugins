@@ -1,3 +1,16 @@
+4.10.0.0:
+---------
+    * Upgrade to CKEDITOR 4.10. Series, update 0 (http://ckeditor.com/release-notes).
+      Without further notice, all manually added CKEditor AddOns are updated too.
+    * Added new CKEditor Add-On "emoji", which has (new) Add-on dependencies:
+      "Autocomplete", "Text Match", "Ajax Data Loading", which have dependencies
+      themselves: "textwatcher" and "xml".
+      This plugin introduces support for easy inserting of emoji characters in a
+      unified, platform-independent way. Emojis are inserted by typing codes based
+      on Unicode Short Names in the editor. The Emoji plugin that provides this
+      functionality is an implementation of the Autocomplete feature. It includes
+      an autocomplete component that will list available emojis after the user types
+      the colon character (":") in the editor content.
     * Init a variable default when the Smarty muted error handler was
       disabled for debugging purposes.
 

@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.13, 2018-03-21
+ * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.14, 2018-07-08
  */
 
 // define array for hooked s9y plugins
@@ -81,6 +81,9 @@ function Spawnnuggets(item, addEP, jsED) {
     //    Plugin Dependencies: widget      Add-on Dependencies: 'Line Utilities' and 'Clipboard'
     // 'embed' and 'embedsemantic' are official CKEDITOR plugins.
     //    Plugin Dependencies: Add-on Dependencies: 'embedbase'
+    // 'emoji' is an official CKEDITOR plugin.
+    //    Plugin Dependencies: emoji Add-on Dependencies: 'Autocomplete', 'Text Match', 'Ajax Data Loading',
+    //    which have Add-on Dependencies themselves: "textwatcher" and "xml".
     // mediaembed is a fast and simple YouTube code CKEditor-Plugin: v. 0.5+ (https://github.com/frozeman/MediaEmbed, 2013-09-12) to avoid ACF restrictions
     //
     // Enable embed and embedsemantic plugins with their dependency embedbase plugin by option.
@@ -88,7 +91,7 @@ function Spawnnuggets(item, addEP, jsED) {
     // procurator and cheatsheet are S9y only plugins
     var name_extraPlugins = (addEP !== null) ? addEP : $this;
     var jsEventData       = (jsED  !== null) ? jsED  : window.jsEventData; // global set by 'backend_wysiwyg_finish' hook
-    var extraPluginACF    = (CKECONFIG_ACF_OFF === true) ? name_extraPlugins+',mediaembed,cheatsheet,autogrow' : name_extraPlugins+',mediaembed,procurator,cheatsheet,autogrow'; // no spaces allowed!
+    var extraPluginACF    = (CKECONFIG_ACF_OFF === true) ? name_extraPlugins+',autocomplete,emoji,textmatch,textwatcher,ajax,xml,mediaembed,cheatsheet,autogrow' : name_extraPlugins+',autocomplete,emoji,textmatch,textwatcher,ajax,xml,mediaembed,procurator,cheatsheet,autogrow'; // no spaces allowed!
     var extraPluginList   = (CKECONFIG_CODE_ON === true) ? extraPluginACF+',codesnippet' : extraPluginACF; // no spaces allowed!
         extraPluginList   = (CKECONFIG_OEMBED_ON === true) ? extraPluginList+',embedbase,embed' : extraPluginList; // no spaces allowed!
         extraPluginList   = (CKECONFIG_OEMBED_SMT_ON === true) ? extraPluginList+',embedbase,embedsemantic' : extraPluginList; // no spaces allowed!
