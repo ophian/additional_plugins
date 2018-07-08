@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '1.68');
+        $propbag->add('version',       '1.69');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -561,7 +561,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
 ?>
                         <div class="form_toolbar dsgvo_gdpr_comment">
                             <div class="form_box">
-                                <input id="checkbox_dsgvo_gdpr" name="serendipity[accept_privacy]" value="1" type="checkbox"<?php echo ($serendipity['POST']['accept_privacy'] == 1 ? ' checked="checked"' : ''); ?>><label for="checkbox_dsgvo_gdpr"><?php echo $this->parseText($this->get_config('commentform_text')); ?></label>
+                                <input id="checkbox_dsgvo_gdpr" name="serendipity[accept_privacy]" value="1" type="checkbox"<?php echo (isset($serendipity['POST']['accept_privacy']) && $serendipity['POST']['accept_privacy'] == 1 ? ' checked="checked"' : ''); ?>><label for="checkbox_dsgvo_gdpr"><?php echo $this->parseText($this->get_config('commentform_text')); ?></label>
                             </div>
                         </div>
 <?php

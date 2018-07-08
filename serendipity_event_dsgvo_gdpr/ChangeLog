@@ -1,3 +1,7 @@
+1.69:
+-----
+ * Fix another undefined var when logged-in as a simple permissive author
+
 1.68:
 -----
  * Improve hint for automatic generated theme manifests
