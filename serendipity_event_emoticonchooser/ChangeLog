@@ -1,3 +1,7 @@
+3.21:
+-----
+ * Init another variable defaults when logged in as a simple permissive author
+
 3.20:
 -----
  * Init some variable defaults when the Smarty muted error handler

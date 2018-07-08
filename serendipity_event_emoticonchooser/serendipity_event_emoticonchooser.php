@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.20');
+        $propbag->add('version',       '3.21');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -293,7 +293,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     }
                     // script include has to stick to backend_header, while using an inline onclick (see above)
                     if (defined('IN_serendipity_admin') && IN_serendipity_admin === true) { // This is case entries, isn't it?! YES, and staticpages nuggets!
-                        if (!$serendipity['wysiwyg']) {
+                        if (empty($serendipity['wysiwyg'])) {
                             $next = '';
                             echo "    $popuplink\n"; // append toolbar button to backend entries in PLAIN EDITOR toolbar. NO onready state loading !!
                             if ($serendipity['GET']['adminModule'] == 'comments' && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || $serendipity['POST']['preview'])) {
@@ -309,7 +309,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
 <?php
                         }
-                        if ($serendipity['wysiwyg'] && isset($popuplink)) {
+                        if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg'] && isset($popuplink)) {
                             echo "    $popuplink\n"; // add toolbar button in backend entries above CKEDITOR toolbar
                         }
                     } else { // in frontend footer ONLY!
@@ -385,7 +385,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     break;
 
                 case 'backend_header':
-                    if ($serendipity['wysiwyg']) {
+                    if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) {
                         $noemojs = true;
                     }
                     // no-BREAK! [PSR-2] - extends frontend_footer
