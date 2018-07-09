@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.14, 2018-03-21
+ * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.15, 2018-07-09
  */
 
  /**
@@ -108,7 +108,7 @@ CKEDITOR.editorConfig = function( config ) {
     //config.enterMode = CKEDITOR.ENTER_BR; // inserts <br />
     // You can always use SHIFT+ENTER to set a br in the P-mode default option or change the SHIFT-mode to something else
     //config.shiftEnterMode = CKEDITOR.ENTER_BR;
-    // Better learn to do this via keyboard commands, see cheatsheet toolbar button.
+    // Better learn to do this via keyboard commands, see 'cheatsheet' toolbar button.
     */
 
     /**
@@ -227,8 +227,8 @@ CKEDITOR.editorConfig = function( config ) {
     //              It allows pasting the resource URL directly into the editing area and will result in embedding its content.
     //              THIS IS NOT want we want to have!
     //
-    // Note: Plugin names are always lower case, while widget names are not, so widget names do not have to equal plugin names.
-    //       For example, there is the embedsemantic plugin and the embedSemantic widget.
+    // NOTE: Plugin names are always lower case, while widget names are not, so widget names do not have to equal plugin names.
+    //       For example, there is the 'embedsemantic' plugin and the 'embedSemantic' widget.
 
     */
     if (CKECONFIG_OEMBED_ON === true || CKECONFIG_OEMBED_SMT_ON === true) {
@@ -237,14 +237,14 @@ CKEDITOR.editorConfig = function( config ) {
 
     /** SECTION: Custom Plugin and Button behaviour configurations
     // [CRTL + right mouse click] gives access to Browsers contextmenu, else you need to disable and set these
-    // The general idea is that you would need to remove all plugins that depend on the "contextmenu" one for removing the "contextmenu" one itself to work. But this has other sideeffects!
-    //config.removePlugins = 'wsc,scayt,menubutton,liststyle,tabletools,contextmenu';
+    // The general idea is that you would need to remove all plugins that depend on the "contextmenu" one for removing the "contextmenu" one itself to work. But this has other side effects!
+    //config.removePlugins = 'wsc, scayt, menubutton, liststyle, tabletools, contextmenu';
     //config.browserContextMenuOnCtrl = true;
     */
 
 
     /**
-    // Allow certain font sizes, eg.
+    // ALLOW certain font sizes, eg.
     //config.fontSize_sizes = '8/8px;9/9px;10/10px;11/11px;12/12px;14/14px;15/15px;16/16px;18/18px;20/20px;22/22px;24/24px;26/26px;28/28px;36/36px;48/48px;72/72px' ;
     // Allow one(!) default font label, eg.
     //config.font_defaultLabel = 'Arial';
@@ -256,10 +256,10 @@ CKEDITOR.editorConfig = function( config ) {
     */
 
 
-    // Remove custom toolbar buttons and plugins from all toolbars
+    // REMOVE custom toolbar buttons and plugins from all toolbars
     // A list of plugins that must not be loaded. This setting makes it possible to avoid loading some plugins defined in the CKEDITOR.config.plugins setting, without having to touch it and potentially break it.
-    config.removePlugins = 'flash,iframe,forms'; // possible strict suggestions: 'flash,iframe,elementspath,save,font,showblocks,div,liststyle,pagebreak,smiley,specialchar,horizontalrule,indentblock,justify,pastefromword,newpage,preview,print,stylescombo'
-    config.removeButtons = 'Preview,Styles,JustifyLeft'; // these buttons are useless or preset in Serendipity and therefore not set. Without even the toolbar Groups break better on screens.
+    config.removePlugins = 'flash, iframe, forms'; // possible strict suggestions: 'flash, iframe, elementspath, save, font, showblocks, div, liststyle, pagebreak, smiley, specialchar, horizontalrule, indentblock, justify, pastefromword, newpage, preview, print, stylescombo'
+    config.removeButtons = 'Preview, Styles, JustifyLeft'; // these buttons are useless or preset in Serendipity and therefore not set. Without, even the toolbar Groups break better on screens.
 
     /**
      * Customizing CodeSnippet AddOn
@@ -267,7 +267,7 @@ CKEDITOR.editorConfig = function( config ) {
      * Add extra languages for CodeSnippet default and added ['Go'] and ['Rust']
      */
 
-    // Default theme of CKEDITOR codesnippet plugin - else use 'default' or 'monokai_sublime' or 'pojoaque' or any of those described at https://highlightjs.org/static/test.html
+    // Default theme of CKEDITOR 'codesnippet' plugin - else use 'default' or 'monokai_sublime' or 'pojoaque' or any of those described at https://highlightjs.org/static/test.html
     config.codeSnippet_theme = 'GitHub';
     // Extend or remove the default selection
     config.codeSnippet_languages = {

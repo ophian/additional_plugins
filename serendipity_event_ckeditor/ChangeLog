@@ -1,6 +1,6 @@
 4.10.0.0:
 ---------
-    * Upgrade to CKEDITOR 4.10. Series, update 0 (http://ckeditor.com/release-notes).
+    * Upgrade to CKEDITOR 4.10. Series, update 0 (https://ckeditor.com/cke4/release-notes).
       Without further notice, all manually added CKEditor AddOns are updated too.
     * Added new CKEditor Add-On "emoji", which has (new) Add-on dependencies:
       "Autocomplete", "Text Match", "Ajax Data Loading", which have dependencies
@@ -10,7 +10,8 @@
       on Unicode Short Names in the editor. The Emoji plugin that provides this
       functionality is an implementation of the Autocomplete feature. It includes
       an autocomplete component that will list available emojis after the user types
-      the colon character (":") in the editor content.
+      the colon character (":") plus the first two letters of emojis in question in
+      the editor content.
     * Init a variable default when the Smarty muted error handler was
       disabled for debugging purposes.
 
@@ -40,11 +41,11 @@
 
 4.7.3.2:
 ---------
-    * Fully switch to "Sie" in german lang constants
+    * Fully switch to "Sie" in German lang constants
 
 4.7.3.1:
 ---------
-    * Added mising clipboard plugin
+    * Added missing clipboard plugin
 
 4.7.3.0:
 ---------

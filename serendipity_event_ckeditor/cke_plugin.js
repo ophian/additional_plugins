@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.14, 2018-07-08
+ * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.15, 2018-07-09
  */
 
 // define array for hooked s9y plugins
@@ -74,27 +74,31 @@ function Spawnnuggets(item, addEP, jsED) {
     s9ymediabuttons.push('s9yML'+area);
     s9ymediabuttons.push('styxMLG'+area);
 
-    // Init CKEDITOR added plugins
-    // Separate by comma, no whitespace allowed, and keep last comma, since later on concatenated with Serendipity hooked plugins, eg MediaLibrary!
+    // INIT CKEDITOR added plugins
+    // Separate by comma, no whitespace allowed, and keep last comma, since later on concatenated with Serendipity hooked plugins, eg. MediaLibrary!
+    // (Since v.4.10.0 this newly supports array and whitespace in between too.)
+    //
     // 'codesnippet' is an official CKEDITOR plugin.
-    //    Plugin Dependencies: codesnippet Add-on Dependencies: 'widget'
-    //    Plugin Dependencies: widget      Add-on Dependencies: 'Line Utilities' and 'Clipboard'
+    //    Plugin Dependencies: 'codesnippet' Add-on Dependencies: 'widget'
+    //    Plugin Dependencies: 'widget'      Add-on Dependencies: 'Line Utilities' and 'Clipboard'
     // 'embed' and 'embedsemantic' are official CKEDITOR plugins.
     //    Plugin Dependencies: Add-on Dependencies: 'embedbase'
-    // 'emoji' is an official CKEDITOR plugin.
-    //    Plugin Dependencies: emoji Add-on Dependencies: 'Autocomplete', 'Text Match', 'Ajax Data Loading',
-    //    which have Add-on Dependencies themselves: "textwatcher" and "xml".
-    // mediaembed is a fast and simple YouTube code CKEditor-Plugin: v. 0.5+ (https://github.com/frozeman/MediaEmbed, 2013-09-12) to avoid ACF restrictions
+    // 'emoji' is an official CKEDITOR plugin, which is an implementation of the Autocomplete feature.
+    //    Plugin Dependencies: 'emoji' Add-on Dependencies: 'Autocomplete', 'Text Match', 'Ajax Data Loading',
+    //    which have Add-on Helper Dependencies themselves: 'textwatcher' for autocomplete and 'xml' for the ajax Add-on.
+    // 'mediaembed' is a fast and simple YouTube code/markup CKEditor-Plugin: v. 0.5+ (https://github.com/frozeman/MediaEmbed, 2013-09-12) to avoid ACF restrictions
     //
-    // Enable embed and embedsemantic plugins with their dependency embedbase plugin by option.
-    // Though we should not allow autoembed and autolink, like notification,autolink,notificationaggregator,autoembed, since we don't want to paste and convert directly.
-    // procurator and cheatsheet are S9y only plugins
+    // Enable 'embed' and 'embedsemantic' plugins with their dependency 'embedbase' plugin by option.
+    // Though we should NOT allow and add the 'autoembed' and the 'autolink' Add-on like this eg. 'notification,autolink,notificationaggregator,autoembed', since we don't want to paste and convert directly.
+    //
+    // Both 'procurator' and 'cheatsheet' are Serendipity added only plugins.
+    //
     var name_extraPlugins = (addEP !== null) ? addEP : $this;
-    var jsEventData       = (jsED  !== null) ? jsED  : window.jsEventData; // global set by 'backend_wysiwyg_finish' hook
-    var extraPluginACF    = (CKECONFIG_ACF_OFF === true) ? name_extraPlugins+',autocomplete,emoji,textmatch,textwatcher,ajax,xml,mediaembed,cheatsheet,autogrow' : name_extraPlugins+',autocomplete,emoji,textmatch,textwatcher,ajax,xml,mediaembed,procurator,cheatsheet,autogrow'; // no spaces allowed!
-    var extraPluginList   = (CKECONFIG_CODE_ON === true) ? extraPluginACF+',codesnippet' : extraPluginACF; // no spaces allowed!
-        extraPluginList   = (CKECONFIG_OEMBED_ON === true) ? extraPluginList+',embedbase,embed' : extraPluginList; // no spaces allowed!
-        extraPluginList   = (CKECONFIG_OEMBED_SMT_ON === true) ? extraPluginList+',embedbase,embedsemantic' : extraPluginList; // no spaces allowed!
+    var jsEventData       = (jsED  !== null) ? jsED  : window.jsEventData; // global set by the 'backend_wysiwyg_finish' hook
+    var extraPluginACF    = (CKECONFIG_ACF_OFF === true) ? name_extraPlugins+', autogrow, mediaembed, cheatsheet, autocomplete, emoji, textmatch, textwatcher, ajax, xml' : name_extraPlugins+', autogrow, mediaembed, procurator, cheatsheet, autocomplete, emoji, textmatch, textwatcher, ajax, xml';
+    var extraPluginList   = (CKECONFIG_CODE_ON === true) ? extraPluginACF+', codesnippet' : extraPluginACF;
+        extraPluginList   = (CKECONFIG_OEMBED_ON === true) ? extraPluginList+', embedbase, embed' : extraPluginList;
+        extraPluginList   = (CKECONFIG_OEMBED_SMT_ON === true) ? extraPluginList+', embedbase, embedsemantic' : extraPluginList;
     var customConfigPath  = CKEDITOR_PLUGPATH+'serendipity_event_ckeditor/cke_config.js?v='+CKECONFIG_FORCE_LOAD;
     var useAutoSave       = (CKECONFIG_USEAUTOSAVE === true && Modernizr.indexeddb === true) ? 'on' : null;
 
