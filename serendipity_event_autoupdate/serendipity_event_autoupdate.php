@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.5.4');
+        $propbag->add('version',       '1.5.5');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -827,14 +827,15 @@ EOS;
         } else {
             $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_CLEAN_DIR_FAILED, $zipDir) . '</p>');
         }
-        // We now clear all compiled smarty template files of the current used template in templates_c and only leave the page we are on: "/serendipity/templates/default/admin/index.tpl"
+        // We now clear all compiled Smarty template files of the current used template in templates_c and only leave the page we are on: eg. "/serendipity/templates/2styx/admin/index.tpl"
         if ($finish) {
-            // The Smarty method clearCompiledTemplate() clears all compiled Smarty template files in templates_c and IS loaded dynamically by the extension handler when called.
-            // We have to reduce this call() = all tpl files, to clear the blogs template only, to not have the following automated recompile, force the servers memory
+            // The Smarty method clearCompiledTemplate() clears all compiled Smarty template files in templates_c and is loaded dynamically by the extension handler when called.
+            // We had to reduce this call() purging all tpl files, to clear the Blogs current template files only, to not have the following automated recompile, force the servers memory
             // to get exhausted, when using huge Smarty compiles like in serendipity_event_gravatar plugin, which can eat up some MB...
             if (is_object($serendipity['smarty'])) {
                 if (null !== Smarty::SMARTY_VERSION) { // SMARTY 3, since 3.0.8
                     if (0 != $serendipity['smarty']->clearCompiledTemplate(null, $serendipity['template'])) {
+                        @$serendipity['smarty']->clearCompiledTemplate(null, $serendipity['template_backend']); // silent result for the backend template theme used with Styx 2.6.0+.
                         $this->show_message('<p class="msg_success"><svg class="icon icon-ok" title="success"><use xlink:href="#icon-ok"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_CLEAN_TC_OK, $serendipity['template']) . '</p>');
                         return true;
                     }
