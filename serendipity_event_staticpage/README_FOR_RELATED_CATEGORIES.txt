@@ -6,7 +6,7 @@ for the backlinks from a category to the related static-page use this in your en
 {if ($view == 'archives' && isset($head_subtitle)) || ($view == 'frontpage')}
     <div id="staticpage_nav" class="staticpage_index_navigation">
         <ul class="staticpage_navigation">
-            <li class="staticpage_navigation_center">&raquo;<a href="{$serendipityBaseURL}">{$blogTitle}</a>&raquo; {$CONST.STATICPAGE_ARTICLE_OVERVIEW}{if $view == 'archives'} {$dateRange.0|@formatTime:"%B %Y"}{/if}</li>
+            <li class="staticpage_navigation_center">&raquo;<a href="{$serendipityBaseURL}">{$blogTitle}</a>&raquo; {$CONST.STATICPAGE_ARTICLE_OVERVIEW}{if $view == 'archives'} {$dateRange.0|formatTime:"%B %Y"}{/if}</li>
         </ul>
     </div>
 {/if}

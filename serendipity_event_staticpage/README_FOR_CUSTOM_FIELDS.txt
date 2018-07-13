@@ -63,7 +63,7 @@ $serendipity['smarty']->registerPlugin('function', 'show_tags', 'smarty_show_tag
 
 3. Then create a file named "plugin_staticpage_related_article.tpl" to your template, with this content:
 
-<article id="staticpage_{$staticpage_pagetitle|@makeFilename}" class="clearfix serendipity_staticpage{if $staticpage_articleformat} serendipity_entry{/if}">
+<article id="staticpage_{$staticpage_pagetitle|makeFilename}" class="clearfix serendipity_staticpage{if $staticpage_articleformat} serendipity_entry{/if}">
     <header>
         <h2>{if $staticpage_articleformat}{if $staticpage_articleformattitle}{$staticpage_articleformattitle}{else}{$staticpage_pagetitle|escape}{/if}{else}{if $staticpage_headline}{$staticpage_headline}{else}{$staticpage_pagetitle|escape}{/if}{/if}</h2>
     {if is_array($staticpage_navigation) AND ($staticpage_shownavi OR $staticpage_show_breadcrumb)}
@@ -131,11 +131,11 @@ $serendipity['smarty']->registerPlugin('function', 'show_tags', 'smarty_show_tag
         {if $staticpage_lastchange}
             <span class="visuallyhidden">{$CONST.ON} </span>
             {if $staticpage_use_lmdate}
-            <time datetime="{$staticpage_lastchange|@serendipity_html5time}">{$staticpage_lastchange|@formatTime:$template_option.date_format}</time>
-            {if $staticpage_adminlink AND $staticpage_adminlink.page_user} ({$CONST.CREATED_ON|lower}: {$staticpage_created_on|@date_format:"%Y-%m-%d"}){/if}
+            <time datetime="{$staticpage_lastchange|serendipity_html5time}">{$staticpage_lastchange|formatTime:$template_option.date_format}</time>
+            {if $staticpage_adminlink AND $staticpage_adminlink.page_user} ({$CONST.CREATED_ON|lower}: {$staticpage_created_on|date_format:"%Y-%m-%d"}){/if}
             {else}
-            <time datetime="{$staticpage_created_on|@serendipity_html5time}">{$staticpage_created_on|@formatTime:$template_option.date_format}</time>
-            {if $staticpage_adminlink AND $staticpage_adminlink.page_user} ({$CONST.LAST_UPDATED|lower}: {$staticpage_lastchange|@date_format:"%Y-%m-%d"}){/if}
+            <time datetime="{$staticpage_created_on|serendipity_html5time}">{$staticpage_created_on|formatTime:$template_option.date_format}</time>
+            {if $staticpage_adminlink AND $staticpage_adminlink.page_user} ({$CONST.LAST_UPDATED|lower}: {$staticpage_lastchange|date_format:"%Y-%m-%d"}){/if}
             {/if}
         {/if}
         {if $staticpage_adminlink AND $staticpage_adminlink.page_user}
