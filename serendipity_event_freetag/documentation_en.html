@@ -163,7 +163,7 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
         {if $entry.url_shorturl}
             | &lt;a href=&quot;{$entry.url_shorturl}&quot; title=&quot;{$CONST.TWOK11_SHORT_URL_HINT}&quot; class=&quot;short-url&quot;&gt;{$CONST.TWOK11_SHORT_URL}&lt;/a&gt;
         {/if}
-            {$entry.add_footer}
+            {$entry.add_footer|default:''}
         &lt;/footer&gt;
 
         &lt;!--

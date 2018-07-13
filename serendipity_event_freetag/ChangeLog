@@ -1,23 +1,32 @@
+4.11:
+-----
+
+ * Add other variable default in getTagCloudTags() and displayExternalTaglist()
+
 4.10:
 -----
-    * Better check undefined variables also in plugin_freetag.tpl
-    * Fix useFlash using wrong variable (Flash is dead! Do NOT use!)
-    * Remove older code < Styx 2.1
-    * Add some missing whitespaces in messages
-    * Remove code for Serendipity pre 2.0 version
-        Sets new off requirement to Styx 2.1.
+
+ * Better check undefined variables also in plugin_freetag.tpl
+ * Fix useFlash using wrong variable (Flash is dead! Do NOT use!)
+ * Remove older code < Styx 2.1
+ * Add some missing whitespaces in messages
+ * Remove code for Serendipity pre 2.0 version
+   Sets new off requirement to Styx 2.1.
 
 4.05:
 -----
-    * Remove remaining technorati image leftover (see 4.04)
+
+ * Remove remaining technorati image leftover (see 4.04)
 
 4.04:
 -----
-    * Remove technorati_tag_link option (outdated service since 2014)
+
+ * Remove technorati_tag_link option (outdated service since 2014)
 
 4.03:
 -----
-    * Add and fix for button_up selector
+
+ * Add and fix for button_up selector
 
 4.02:
 -----

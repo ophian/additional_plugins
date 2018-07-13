@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.10');
+        $propbag->add('version',       '4.11');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1641,11 +1641,12 @@ addLoadEvent(enableAutocomplete);
 
         $rows = serendipity_db_query($this->getTagCloudQuery('', $tag));
 
+        $tags = array();
         if (is_array($rows)) {
             foreach((array)$rows AS $r) {
 
                 if ($to_lower) {
-                    $r = $this->array_imap($r); // set to_lower for frontend clouds (new)
+                    $r = $this->array_imap($r); // set to_lower for Frontend clouds (new)
                 }
                 $tags[$r['tag']] = $r['total'];
 
@@ -2084,6 +2085,7 @@ addLoadEvent(enableAutocomplete);
         global $serendipity;
 
         $tagged_as_list = false;
+        $emit_404 = false;
 
         // Manually added (last) parameter 'taglist' to view tags by list for certain taglinks eg.: example.org/plugin/tag/Serendipity/Blog/Plums/taglist - both need a modified entries.tpl
         if ($ctaglist && in_array('taglist', $serendipity['uriArguments'])) {
