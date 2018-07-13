@@ -133,7 +133,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 08 Jul 2018 17:24:40 +0200</pubDate>
+<pubDate>Fri, 13 Jul 2018 11:22:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -459,7 +459,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;エントリーのタグ&lt;/b&gt;&lt;br /&gt;エントリーの自由なタグを許可します。&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Thu, 05 Jul 2018 17:59:21 +0200</pubDate>
+<pubDate>Wed, 11 Jul 2018 14:20:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -1062,7 +1062,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;静的ページ&lt;/b&gt;&lt;br /&gt;デザインとすべての書式化されたブログとウェブログ内部に静的ページを表示します。管理インターフェースに新しいメニューを追加します。&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Thu, 05 Jul 2018 16:32:25 +0200</pubDate>
+<pubDate>Fri, 13 Jul 2018 14:43:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
