@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.39');
+        $propbag->add('version', '5.40');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -2707,7 +2707,7 @@ class serendipity_event_staticpage extends serendipity_event
                     foreach ($config_names AS $config_item) {
                         $cbag = new serendipity_property_bag;
                         if ($this->introspect_item($config_item, $cbag)) {
-                            $this->staticpage[$config_item] = serendipity_get_bool($serendipity['POST']['plugin'][$config_item]);
+                            $this->staticpage[$config_item] = isset($serendipity['POST']['plugin'][$config_item]) ? serendipity_get_bool($serendipity['POST']['plugin'][$config_item]) : null;
                         }
                     }
 
@@ -2784,8 +2784,8 @@ class serendipity_event_staticpage extends serendipity_event
                         $pages = serendipity_walkRecursive($pages);
                         foreach ($pages AS $page) {
                             if ($this->checkPageUser($page['authorid'])) {
-                                $ps_option[] = '<option value="' . $page['id'] . '"' . ($serendipity['POST']['staticpage'] == $page['id'] ? ' selected="selected"' : '') . '>' . str_repeat('&nbsp;&nbsp;', $page['depth']) . self::html_specialchars($page['pagetitle']) . '</option>'."\n";
-                                if ($serendipity['POST']['staticpage'] == $page['id']) {
+                                $ps_option[] = '<option value="' . $page['id'] . '"' . ((isset($serendipity['POST']['staticpage']) && $serendipity['POST']['staticpage'] == $page['id']) ? ' selected="selected"' : '') . '>' . str_repeat('&nbsp;&nbsp;', $page['depth']) . self::html_specialchars($page['pagetitle']) . '</option>'."\n";
+                                if (isset($serendipity['POST']['staticpage']) && $serendipity['POST']['staticpage'] == $page['id']) {
                                     $this_selected_id = $page['id'];
                                     $this_selected_name = self::html_specialchars($page['pagetitle']);
                                 }

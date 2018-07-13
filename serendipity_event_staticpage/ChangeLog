@@ -1,7 +1,15 @@
+5.40:
+----
+ * Highlight the Staticpage Form Navigation top box, to have a visual
+   step between the navigation-form and the staticpage-form itself.
+ * Fix some more undefined variables
+   - also in backend form templates
+ * Remove some old Smarty 2 syntax helpers in examples
+
 5.39:
 ----
  * Check some undefined variables
-   also in backend form templates
+   - also in backend form templates
 
 5.38:
 ----

@@ -241,7 +241,7 @@
     {/if}{* showform, but not not entrylist end *}
     {if isset($sp_defpages_showlist) AND false === $sp_defpages_showlist} {* SELECT LIST BAR start WE NEED === here, do not use plain ! *}
 
-    {if $sp_defpages_staticsave}
+    {if !empty($sp_defpages_staticsave)}
 
     <div>
         <input type="hidden" name="serendipity[staticSave]" value="true">
