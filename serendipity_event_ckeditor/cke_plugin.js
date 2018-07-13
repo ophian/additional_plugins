@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.15, 2018-07-09
+ * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.16, 2018-07-13
  */
 
 // define array for hooked s9y plugins
@@ -278,7 +278,7 @@ function serendipity_imageSelector_addToBody (str, textarea) {
  * We run this on any possible CKEDITOR instance - even on blogentry instances.
  * Refill from cache is done per instance inside Spawnnuggets CKEDITOR.replace.
  */
-$(window).load(function() {
+$(window).on('load', function() {
 
     if (CKECONFIG_USEAUTOSAVE === true && Modernizr.indexeddb === true) {
 
