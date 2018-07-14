@@ -1,3 +1,10 @@
+5.41:
+----
+ * The Frontend template files "plugin_staticpage.tpl"
+   $template_option.date_format variable needs a fallback, if a template
+   does not provide an config.inc.php file configuring and assigning this
+   array variable.
+
 5.40:
 ----
  * Highlight the Staticpage Form Navigation top box, to have a visual

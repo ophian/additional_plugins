@@ -1,4 +1,4 @@
-{* origin plugin - frontend plugin_staticpage.tpl file v. 1.07, 2017-04-13 *}
+{* origin plugin - frontend plugin_staticpage.tpl file v. 1.07, 2018-07-14 *}
 <article id="staticpage_{$staticpage_pagetitle|makeFilename}" class="clearfix serendipity_staticpage{if $staticpage_articleformat} serendipity_entry{/if}">
     <header>
         <h2>{if $staticpage_articleformat}{if $staticpage_articleformattitle}{$staticpage_articleformattitle}{else}{$staticpage_pagetitle|escape}{/if}{else}{if $staticpage_headline}{$staticpage_headline}{else}{$staticpage_pagetitle|escape}{/if}{/if}</h2>
@@ -61,10 +61,10 @@
         {if $staticpage_lastchange}
             <span class="visuallyhidden">{$CONST.ON} </span>
             {if $staticpage_use_lmdate}
-            <time datetime="{$staticpage_lastchange|serendipity_html5time}">{$staticpage_lastchange|formatTime:$template_option.date_format}</time>
+            <time datetime="{$staticpage_lastchange|serendipity_html5time}">{$staticpage_lastchange|formatTime:$template_option.date_format|default:$CONST.DATE_FORMAT_ENTRY}</time>
             {if $staticpage_adminlink AND $staticpage_adminlink.page_user} ({$CONST.CREATED_ON|lower}: {$staticpage_created_on|date_format:"%Y-%m-%d"}){/if}
             {else}
-            <time datetime="{$staticpage_created_on|serendipity_html5time}">{$staticpage_created_on|formatTime:$template_option.date_format}</time>
+            <time datetime="{$staticpage_created_on|serendipity_html5time}">{$staticpage_created_on|formatTime:$template_option.date_format|default:$CONST.DATE_FORMAT_ENTRY}</time>
             {if $staticpage_adminlink AND $staticpage_adminlink.page_user} ({$CONST.LAST_UPDATED|lower}: {$staticpage_lastchange|date_format:"%Y-%m-%d"}){/if}
             {/if}
         {/if}
