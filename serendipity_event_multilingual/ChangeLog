@@ -153,7 +153,7 @@
 ----
 
  * Add smarty modifier "multilingual_lang" that you can use like
-   {$entry_category.category_name|@multilingual_lang|@escape}
+   {$entry_category.category_name|multilingual_lang|escape}
    in templates, to replace possible {{...}} language variants.
    Also, by default parse such language constructs in the category name.
 
