@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.11');
+        $propbag->add('version',       '4.12');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1293,9 +1293,7 @@ addLoadEvent(enableAutocomplete);
                     break;
 
                 case 'backend_display':
-                    if (isset($eventData['id'])) {
-                        $this->backend_display($eventData['id']);
-                    }
+                    $this->backend_display(@$eventData['id']); // new entry forms don't have $eventData['id'] set, so silence to still display the form
                     break;
 
                 case 'frontend_entryproperties':

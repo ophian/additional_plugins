@@ -1,3 +1,9 @@
+4.12:
+-----
+
+ * Fix regression in 4.10 not displaying the entryproperties tag form fieldset
+   for new entry posts.
+
 4.11:
 -----
 
@@ -9,7 +15,7 @@
  * Better check undefined variables also in plugin_freetag.tpl
  * Fix useFlash using wrong variable (Flash is dead! Do NOT use!)
  * Remove older code < Styx 2.1
- * Add some missing whitespaces in messages
+ * Add some missing whitespace in messages
  * Remove code for Serendipity pre 2.0 version
    Sets new off requirement to Styx 2.1.
 
