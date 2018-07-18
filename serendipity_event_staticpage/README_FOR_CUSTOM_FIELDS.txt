@@ -3,15 +3,15 @@ CUSTOM EXAMPLE USAGE:
 This example here enables to use a custom CSS-BODY-ID to render the page. Or you can specify, which sidebar you want to see, when this staticpage is rendered.
 Example parts for 2k11/index.tpl:
 
-<body{if $template_option.webfonts != 'none'} class="{$template_option.webfonts}{if !empty($staticpage_custom.css_class)} {$staticpage_custom.css_class}{/if}"{else}{if !empty($staticpage_custom.css_class)} class="{$staticpage_custom.css_class}"{/if}>
+<body{if $template_option.webfonts != 'none'} class="{$template_option.webfonts}{if NOT empty($staticpage_custom.css_class)} {$staticpage_custom.css_class}{/if}"{else}{if NOT empty($staticpage_custom.css_class)} class="{$staticpage_custom.css_class}"{/if}>
 
 ...
 
-    <div class="clearfix{if $leftSidebarElements > 0 && $rightSidebarElements > 0 && empty($staticpage_custom.sidebars)} col3{elseif ($leftSidebarElements > 0 && $rightSidebarElements == 0) || $staticpage_custom.sidebars=='left'} col2l{else} col2r{/if}">
+    <div class="clearfix{if $leftSidebarElements > 0 AND $rightSidebarElements > 0 AND empty($staticpage_custom.sidebars)} col3{elseif ($leftSidebarElements > 0 AND $rightSidebarElements == 0) OR $staticpage_custom.sidebars == 'left'} col2l{else} col2r{/if}">
         <main id="content"{if $template_option.imgstyle != 'none'} class="{$template_option.imgstyle}"{/if}>
         {$CONTENT}
         </main>
-    {if !empty($staticpage_custom.sidebars)}
+    {if NOT empty($staticpage_custom.sidebars)}
         <aside id="sidebar_{$staticpage_custom.sidebars}">
             <h2 class="visuallyhidden">{$smarty.const.TWOK11_SIDEBAR}</h2>
             {serendipity_printSidebar side="{$staticpage_custom.sidebars}"}
@@ -42,11 +42,11 @@ The related tags example, having the freetag event plugin installed, needs you t
 
 2. Add a function to your templates "config.inc.php", which is:
 
-function smarty_show_tags($params, &$smarty) {
+function smarty_show_tags($params, $template) {
     global $serendipity;
     $o = $serendipity['GET']['tag'];
     $serendipity['GET']['tag'] = $params['tag'];
-    $e = serendipity_smarty_fetchPrintEntries($params, $smarty);
+    $e = serendipity_smarty_fetchPrintEntries($params, $template);
     echo $e;
     if (!empty($o)) {
         $serendipity['GET']['tag'] = $o;
@@ -70,14 +70,14 @@ $serendipity['smarty']->registerPlugin('function', 'show_tags', 'smarty_show_tag
         <div id="staticpage_nav">
         {if $staticpage_shownavi}
             <ul class="staticpage_navigation">
-                <li class="staticpage_navigation_left">{if !empty($staticpage_navigation.prev.link)}<a href="{$staticpage_navigation.prev.link}" title="prev">{$staticpage_navigation.prev.name|escape}</a>{else}<span class="staticpage_navigation_dummy">{$CONST.PREVIOUS}</span>{/if}</li>
-                <li class="staticpage_navigation_center">{if !empty($staticpage_navigation.top.topp_name)}<a href="{$staticpage_navigation.top.topp_link}" title="top">{$staticpage_navigation.top.topp_name|escape}</a> | {/if}&#171 {$staticpage_navigation.top.curr_name|escape} &#187; {if !empty($staticpage_navigation.top.exit_name)}| <a href="{$staticpage_navigation.top.exit_link}" title="exit">{$staticpage_navigation.top.exit_name|escape}</a>{/if}</li>
-                <li class="staticpage_navigation_right">{if !empty($staticpage_navigation.next.link)}<a href="{$staticpage_navigation.next.link}" title="next">{$staticpage_navigation.next.name|escape}</a>{else}<span class="staticpage_navigation_dummy">{$CONST.NEXT}</span>{/if}</li>
+                <li class="staticpage_navigation_left">{if NOT empty($staticpage_navigation.prev.link)}<a href="{$staticpage_navigation.prev.link}" title="prev">{$staticpage_navigation.prev.name|escape}</a>{else}<span class="staticpage_navigation_dummy">{$CONST.PREVIOUS}</span>{/if}</li>
+                <li class="staticpage_navigation_center">{if NOT empty($staticpage_navigation.top.topp_name)}<a href="{$staticpage_navigation.top.topp_link}" title="top">{$staticpage_navigation.top.topp_name|escape}</a> | {/if}&#171 {$staticpage_navigation.top.curr_name|escape} &#187; {if NOT empty($staticpage_navigation.top.exit_name)}| <a href="{$staticpage_navigation.top.exit_link}" title="exit">{$staticpage_navigation.top.exit_name|escape}</a>{/if}</li>
+                <li class="staticpage_navigation_right">{if NOT empty($staticpage_navigation.next.link)}<a href="{$staticpage_navigation.next.link}" title="next">{$staticpage_navigation.next.name|escape}</a>{else}<span class="staticpage_navigation_dummy">{$CONST.NEXT}</span>{/if}</li>
             </ul>
         {/if}
         {if $staticpage_show_breadcrumb}
             <div class="staticpage_navigation_breadcrumb">
-                <a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE}</a>{if !empty($staticpage_navigation.crumbs)} &#187; {/if}
+                <a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE}</a>{if NOT empty($staticpage_navigation.crumbs)} &#187; {/if}
             {foreach name="crumbs" from=$staticpage_navigation.crumbs item="crumb"}
                 {if !$smarty.foreach.crumbs.first}&#187; {/if}{if $crumb.id != $staticpage_pid} <a href="{$crumb.link}">{$crumb.name|escape}</a> {else} {$crumb.name|escape} {/if}
             {/foreach}
@@ -151,14 +151,14 @@ $serendipity['smarty']->registerPlugin('function', 'show_tags', 'smarty_show_tag
 /* Staticpage related article by freetags. Better use a theme unique name, eg. mytheme_related_articles.tpl, because of the fallback line! */
 4. This page calls another file, named: "related_articles.tpl", in need to be placed to your template too. This actually shows the tagged related entries by entry title link, with this content as example:
 
-{if !empty($staticpage_custom.relTags)}
+{if NOT empty($staticpage_custom.relTags)}
 
         <h3>Entries by related tags</h3>
         <div class="serendipity_freeTag">
              <p>({$staticpage_custom.relTags|replace:';':', '})</p>
         </div>
 
-    {if !empty($entries)}
+    {if NOT empty($entries)}
         <ul>
     {foreach from=$entries item="dategroup"}
         {foreach from=$dategroup.entries item="entry"}
@@ -180,7 +180,7 @@ $serendipity['smarty']->registerPlugin('function', 'show_tags', 'smarty_show_tag
 
 After tweaking your theme templates margin needs, like such:
 
-#staticpage_customtags.serendipity_entry  header {
+#staticpage_customtags.serendipity_entry header {
     margin-top: 1.5em;
 }
 

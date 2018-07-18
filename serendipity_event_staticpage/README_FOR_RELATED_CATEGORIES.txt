@@ -11,7 +11,7 @@ for the backlinks from a category to the related static-page use this in your en
     </div>
 {/if}
 
-{if ($view == 'categories')}
+{if $view == 'categories'}
     <div id="staticpage_nav" class="staticpage_index_navigation">
         <ul class="staticpage_navigation">
             <li class="staticpage_navigation_center">&raquo;

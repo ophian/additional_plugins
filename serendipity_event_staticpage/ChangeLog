@@ -1,3 +1,8 @@
+5.42:
+----
+ * Fixed issue, when cookie stored custom backend form template file does
+   not exits any more, when having theme switched in the meantime.
+
 5.41:
 ----
  * The Frontend template files "plugin_staticpage.tpl"
