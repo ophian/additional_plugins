@@ -2,6 +2,7 @@
 ----
  * Fixed issue, when cookie stored custom backend form template file does
    not exits any more, when having theme switched in the meantime.
+ * Update some examples and userland Smarty operator naming
 
 5.41:
 ----
