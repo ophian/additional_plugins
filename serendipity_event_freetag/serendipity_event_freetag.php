@@ -1675,19 +1675,20 @@ addLoadEvent(enableAutocomplete);
     function getTagCloudQuery($sort = '', $tag)
     {
         global $serendipity;
+
         if ($tag === true) {
             $q = "SELECT tag, count(tag) AS total FROM {$serendipity['dbPrefix']}entrytags GROUP BY tag ORDER BY tag";
         } else {
 
             if (is_string($tag)) {
-                $cond = "main.tag = '$tag'";
-                $ncond = "neg.tag != '$tag'";
-                $join = "LEFT JOIN {$serendipity['dbPrefix']}entrytags AS neg ".
-                      "ON main.entryid = neg.entryid ";
+                $cond  = "main.tag = '" . serendipity_db_escape_string($tag) . "'";
+                $ncond = "neg.tag != '" . serendipity_db_escape_string($tag) . "'";
+                $join  = "LEFT JOIN {$serendipity['dbPrefix']}entrytags AS neg ".
+                                "ON main.entryid = neg.entryid ";
                 $totalModifier = '';
             } else if (is_array($tag)) {
                  $join = "LEFT JOIN {$serendipity['dbPrefix']}entrytags AS neg ".
-                    "ON main.entryid = neg.entryid ";
+                                "ON main.entryid = neg.entryid ";
                 $ccond = '';
                 $ncond = '';
 
@@ -1699,15 +1700,15 @@ addLoadEvent(enableAutocomplete);
                 for ($i = 0; $i < $total; $i++) {
                     if (!$first) {
                         $ncond .= " AND ";
-                        $cond .= " AND ";
+                        $cond  .= " AND ";
                     } else {
                         $first = false;
                     }
 
-                    $join .= "LEFT JOIN {$serendipity['dbPrefix']}entrytags AS sub{$i} ".
-                                "ON main.entryid = sub{$i}.entryid ";
-                    $cond .= "sub{$i}.tag = '{$tag[$i]}' ";
-                    $ncond .= "neg.tag != '{$tag[$i]}' ";
+                    $join  .= "LEFT JOIN {$serendipity['dbPrefix']}entrytags AS sub{$i} ".
+                                     "ON main.entryid = sub{$i}.entryid ";
+                    $cond  .= "sub{$i}.tag = '" . serendipity_db_escape_string($tag[$i]) . "' ";
+                    $ncond .= "neg.tag != '" . serendipity_db_escape_string($tag[$i]) . "' ";
                 }
             } else {
                 return;

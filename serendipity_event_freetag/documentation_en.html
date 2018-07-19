@@ -67,7 +67,7 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
 
 <pre class="prettyprint linenums lang-php " data-pbcklang="php" data-pbcktabsize="4">
 {if isset($entry.freetag.extended) &amp;&amp; $entry.freetag.extended == 1}
-    {if $entry.freetag.tags.tags}
+    {if NOT empty($entry.freetag.tags.tags)}
         &lt;div class=&quot;serendipity_freeTag&quot;&gt;{$entry.freetag.tags.description}
             {foreach $entry.freetag.tags.tags AS $tag}
                 {$tag}
@@ -124,7 +124,7 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
 
             &lt;h2&gt;&lt;a href=&quot;{$entry.link}&quot;&gt;{$entry.title}&lt;/a&gt;&lt;/h2&gt;
 
-            &lt;span class=&quot;serendipity_byline block_level&quot;&gt;&lt;span class=&quot;single_user&quot;&gt;{$CONST.POSTED_BY} &lt;a href=&quot;{$entry.link_author}&quot;&gt;{$entry.author}&lt;/a&gt; {$CONST.ON} &lt;/span&gt;&lt;time datetime=&quot;{$entry.timestamp|serendipity_html5time}&quot;&gt;{$entry.timestamp|formatTime:$template_option.date_format}&lt;/time&gt;{if $entry.is_entry_owner AND NOT $is_preview} | &lt;a href=&quot;{$entry.link_edit}&quot;&gt;{$CONST.EDIT_ENTRY}&lt;/a&gt;{/if}&lt;/span&gt;
+            &lt;span class=&quot;serendipity_byline block_level&quot;&gt;&lt;span class=&quot;single_user&quot;&gt;{$CONST.POSTED_BY} &lt;a href=&quot;{$entry.link_author}&quot;&gt;{$entry.author}&lt;/a&gt; {$CONST.ON} &lt;/span&gt;&lt;time datetime=&quot;{$entry.timestamp|serendipity_html5time}&quot;&gt;{$entry.timestamp|formatTime:$template_option.date_format}&lt;/time&gt;{if NOT empty($entry.is_entry_owner) AND NOT $is_preview} | &lt;a href=&quot;{$entry.link_edit}&quot;&gt;{$CONST.EDIT_ENTRY}&lt;/a&gt;{/if}&lt;/span&gt;
         &lt;/header&gt;
 
         &lt;div class=&quot;clearfix content serendipity_entry_body&quot;&gt;
@@ -216,7 +216,7 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
             &lt;/p&gt;
 
             {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
-        {if $entry.is_entry_owner}
+        {if NOT empty($entry.is_entry_owner)}
             &lt;p class=&quot;manage_comments&quot;&gt;
             {if $entry.allow_comments}
             &lt;a href=&quot;{$entry.link_deny_comments}&quot;&gt;{$CONST.COMMENTS_DISABLE}&lt;/a&gt;
@@ -255,10 +255,10 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
 +
 + {/if}{* NOT taglist end *}
 +
-{if (!empty($footer_info) OR !empty($footer_prev_page) OR !empty($footer_next_page)) AND NOT $is_preview}
+{if (NOT empty($footer_info) OR NOT empty($footer_prev_page) OR NOT empty($footer_next_page)) AND NOT $is_preview}
 +{if $taglist}
-+    {if !empty($footer_prev_page)}{assign var=&quot;footer_prev_page&quot; value=$footer_prev_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
-+    {if !empty($footer_next_page)}{assign var=&quot;footer_next_page&quot; value=$footer_next_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
++    {if NOT empty($footer_prev_page)}{assign var=&quot;footer_prev_page&quot; value=$footer_prev_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
++    {if NOT empty($footer_next_page)}{assign var=&quot;footer_next_page&quot; value=$footer_next_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
 +{/if}
 +
     &lt;nav class=&quot;serendipity_pagination block_level&quot;&gt;
@@ -268,8 +268,8 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
             {if $footer_info}
             &lt;li class=&quot;info&quot;&gt;&lt;span&gt;{$footer_info}&lt;/span&gt;&lt;/li&gt;
             {/if}
-            &lt;li class=&quot;prev&quot;&gt;{if !empty($footer_prev_page)}&lt;a href=&quot;{$footer_prev_page}&quot;&gt;{/if}{if !empty($footer_prev_page)}&amp;larr; {$CONST.PREVIOUS_PAGE}{else}&amp;nbsp;{/if}{if !empty($footer_prev_page)}&lt;/a&gt;{/if}&lt;/li&gt;
-            &lt;li class=&quot;next&quot;&gt;{if !empty($footer_next_page)}&lt;a href=&quot;{$footer_next_page}&quot;&gt;{/if}{if !empty($footer_next_page)}{$CONST.NEXT_PAGE} &amp;rarr;{else}&amp;nbsp;{/if}{if !empty($footer_next_page)}&lt;/a&gt;{/if}&lt;/li&gt;
+            &lt;li class=&quot;prev&quot;&gt;{if NOT empty($footer_prev_page)}&lt;a href=&quot;{$footer_prev_page}&quot;&gt;{/if}{if NOT empty($footer_prev_page)}&amp;larr; {$CONST.PREVIOUS_PAGE}{else}&amp;nbsp;{/if}{if NOT empty($footer_prev_page)}&lt;/a&gt;{/if}&lt;/li&gt;
+            &lt;li class=&quot;next&quot;&gt;{if NOT empty($footer_next_page)}&lt;a href=&quot;{$footer_next_page}&quot;&gt;{/if}{if NOT empty($footer_next_page)}{$CONST.NEXT_PAGE} &amp;rarr;{else}&amp;nbsp;{/if}{if NOT empty($footer_next_page)}&lt;/a&gt;{/if}&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/nav&gt;
 {/if}

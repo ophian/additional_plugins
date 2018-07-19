@@ -1,3 +1,10 @@
+4.13:
+-----
+
+ * Fix possible SQL injection for tagnames, Thanks to Brian carpenter (geeknik)
+   and Hanno Boeck.
+ * Update docu code examples for userland Smarty operator naming
+
 4.12:
 -----
 
