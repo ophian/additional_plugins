@@ -1,3 +1,7 @@
+4.10.0.2:
+---------
+    * Update wysiwyg-style.css file for serendipity images styles in p tags
+
 4.10.0.1:
 ---------
     * Update cke_plugins.js file for jQuery compatibility
