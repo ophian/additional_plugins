@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '1.69');
+        $propbag->add('version',       '1.70');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -345,9 +345,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     foreach($static_info[$theme] AS $themeout) {
                         $$pointer .= '    <li>' . $themeout . "</li>\n";
                     }
-                }
-
-                if (file_exists($serendipity["serendipityPath"] . $serendipity["templatePath"] . $theme . "/legal.txt")) {
+                } else if (file_exists($serendipity["serendipityPath"] . $serendipity["templatePath"] . $theme . "/legal.txt")) {
                     $$pointer .= '    <li>' . htmlspecialchars($this->file_get_contents_utf8($serendipity["serendipityPath"] . $serendipity["templatePath"] . $theme . "/legal.txt"), ENT_COMPAT, LANG_CHARSET, false) . "</li>\n";
                 }
                 $$pointer .= "</ul>\n";

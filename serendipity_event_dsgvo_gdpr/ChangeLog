@@ -1,3 +1,8 @@
+1.70:
+-----
+ * Do not check a themes legal.txt file, if it was already described in $static_info[$theme].
+   The legal.txt file in these themes, is only for copy theme purposes.
+
 1.69:
 -----
  * Fix another undefined var when logged-in as a simple permissive author
