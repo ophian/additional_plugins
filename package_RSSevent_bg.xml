@@ -185,7 +185,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Форма за обратна връзка&lt;/b&gt;&lt;br /&gt;Показва форма за изпращане на e-mail в блога като статична страница. Тя може да бъде достигната или чрез постоянна връзка, указана тук при конфигурирането на приставката или чрез 'index.php?serendipity[subpage]=contactform'. Можете да промените външния вид на формата като поставите файл 'plugin_contactform.tpl' в директорията на вашата тема и я модифицирате там. Captchas от приставка Spamblock (ако са позволени) ще бъдат приложени.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 14 Jun 2018 12:57:05 +0200</pubDate>
+<pubDate>Mon, 23 Jul 2018 09:58:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -293,7 +293,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_dsgvo_gdpr&lt;br /&gt;DSGVO / GDPR: General Data Protection Regulation&lt;/b&gt;&lt;br /&gt;This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 22 Jul 2018 13:19:22 +0200</pubDate>
+<pubDate>Mon, 23 Jul 2018 10:23:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dsgvo_gdpr</guid>
 </item>
 <item>
