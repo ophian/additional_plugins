@@ -1,3 +1,8 @@
+1.71:
+-----
+ * Modify title and lang constant text for GDPR statement menu and URL description
+   to better describe these manifests as informational, for individual use only.
+
 1.70:
 -----
  * Do not check a themes legal.txt file, if it was already described in $static_info[$theme].

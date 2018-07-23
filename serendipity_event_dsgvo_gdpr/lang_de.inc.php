@@ -2,11 +2,11 @@
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_NAME', 'DSGVO / GDPR: Datenschutz-Grundverordnung');
 @define('PLUGIN_EVENT_DSGVO_GDPR_DESC', 'Dieses Plugin soll Blog-Besitzern helfen, die Übereinstimmung mit dem Allgemeinen Datenschutzgesetz zu gewährleisten.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_MENU', 'GDPR-Erklärung');
+@define('PLUGIN_EVENT_DSGVO_GDPR_MENU', 'GDPR-Erklärung und Text-Baustein "Grabbelkiste"');
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT', 'Ihre Datenschutzerklärung / Impressum');
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_DESC', 'Sie können die obige automatische Überprüfung als groben Entwurf einer Information sehen, deren Elemente Sie (soweit sie zutreffen) in Ihre Datenschutzerklärung aufnehmen sollten. Stellen Sie sicher, dass Ihre Datenschutzerklärung alle relevanten Informationen enthält. Wenden Sie sich an einen Anwalt, wenn Sie dabei Hilfe benötigen, wir können Ihnen aus Haftungsgründen leider keinen vollständigen Entwurf zur Verfügung stellen.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_URL', 'Optionale URL zur Datenschutzerklärung');
-@define('PLUGIN_EVENT_DSGVO_GDPR_URL_DESC', 'Standardmäßig wird ein interner Link erstellt, der den Text Ihrer Datenschutzerklärung mit dem hier eingegebenen Text anzeigt. Wenn Sie jedoch eine bestimmte URL (oder eine statische Seiten-URL) haben, mit der Sie Ihre Besucher verlinken möchten, können Sie diese hier eingeben. Dann wird der Text der Datenschutzerklärung nicht angezeigt und muss nicht eingegeben werden.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_URL_DESC', 'Standardmäßig wird ein interner Link erstellt, der den Text Ihrer Datenschutzerklärung mit dem hier eingegebenen Text anzeigt (siehe textarea input form "Ihre Datenschutzerklärung / Impressum" weiter unten). Wenn Sie jedoch eine bestimmte URL (oder eine statische Seiten-URL) haben, mit der Sie Ihre Besucher verlinken möchten, können Sie diese hier eingeben. Dann wird der Text der Datenschutzerklärung nicht angezeigt und muss nicht eingegeben werden.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX', 'Ausdrückliche Annahme in Formularen erforderlich?');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX_DESC', 'Wenn aktiviert, müssen Besucher eine zusätzliche Checkbox für Blog-Kommentare oder Kontaktformulare aktivieren, um Ihre Datenschutzerklärung zu bestätigen.');
 
