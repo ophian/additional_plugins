@@ -1,3 +1,7 @@
+1.75:
+-----
+- Added a missed sql-table field in fetch command
+
 1.74:
 -----
 - Added legal property bag information for gdpr/dsgvo
