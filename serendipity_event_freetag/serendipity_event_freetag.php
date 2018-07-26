@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.13');
+        $propbag->add('version',       '4.14');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2203,7 +2203,7 @@ addLoadEvent(enableAutocomplete);
 
         if (serendipity_db_bool($this->get_config('show_tagcloud', 'true'))) {
             $serendipity['smarty']->assign('istagcloud', true); // allows to remove a sidebar with a tag cloud, when using an entry cloud
-            // @see changeLog - needs to change your template index.tpl sidebar condition(s), eg. {if !$istagcloud}
+            // @see changeLog - needs to change your template index.tpl sidebar condition(s), eg. {if NOT $istagcloud}
         }
         serendipity_gzCompression();
         $serendipity['smarty']->display(serendipity_getTemplateFile($serendipity['smarty_file'], 'serendipityPath'));

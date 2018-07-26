@@ -1,3 +1,8 @@
+4.14:
+-----
+
+ * Minor update some examples and Smarty operator naming
+
 4.13:
 -----
 
@@ -298,7 +303,7 @@
  * Do not show related tags cloud, when using multitags.
    PLEASE NOTE:
     This changed the plugin_freetag.tpl file. If you have a template copy,
-    please add a surrounding {if !$freetag_isList} to the cloud markup {/if}
+    please add a surrounding {if NOT $freetag_isList} to the cloud markup {/if}
     itself.
  * Changed multitag delimiter for the frontent from " + " to a comma separated
    list ", ", see http://board.s9y.org/viewtopic.php?f=10&t=20551 .

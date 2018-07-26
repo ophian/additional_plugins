@@ -147,7 +147,7 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
         {if NOT empty($entry.categories)}
             &lt;span class=&quot;visuallyhidden&quot;&gt;{$CONST.CATEGORIES}: &lt;/span&gt;{foreach $entry.categories AS $entry_category}&lt;a href=&quot;{$entry_category.category_link}&quot;&gt;{$entry_category.category_name|escape}&lt;/a&gt;{if NOT $categories@last}, {/if}{/foreach}
         {/if}
-        {if $entry.categories AND ($entry.has_comments OR $entry.has_disqus)} | {/if}
+        {if NOT empty($entry.categories) AND ($entry.has_comments OR $entry.has_disqus)} | {/if}
         {if ($entry.has_comments OR $entry.has_disqus)}
         {if $entry.has_disqus}
             {$entry.comments}{if $entry.has_trackbacks}, &lt;a href=&quot;{$entry.link}#trackbacks&quot;&gt;{$entry.trackbacks} {$entry.label_trackbacks}&lt;/a&gt;{/if}
@@ -255,10 +255,10 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
 +
 + {/if}{* NOT taglist end *}
 +
-{if (NOT empty($footer_info) OR NOT empty($footer_prev_page) OR NOT empty($footer_next_page)) AND NOT $is_preview}
+{if (NOT empty($footer_info) OR $footer_prev_page OR $footer_next_page) AND NOT $is_single_entry AND NOT $is_preview}
 +{if $taglist}
-+    {if NOT empty($footer_prev_page)}{assign var=&quot;footer_prev_page&quot; value=$footer_prev_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
-+    {if NOT empty($footer_next_page)}{assign var=&quot;footer_next_page&quot; value=$footer_next_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
++    {if $footer_prev_page}{assign var=&quot;footer_prev_page&quot; value=$footer_prev_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
++    {if $footer_next_page}{assign var=&quot;footer_next_page&quot; value=$footer_next_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
 +{/if}
 +
     &lt;nav class=&quot;serendipity_pagination block_level&quot;&gt;
@@ -268,8 +268,8 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
             {if $footer_info}
             &lt;li class=&quot;info&quot;&gt;&lt;span&gt;{$footer_info}&lt;/span&gt;&lt;/li&gt;
             {/if}
-            &lt;li class=&quot;prev&quot;&gt;{if NOT empty($footer_prev_page)}&lt;a href=&quot;{$footer_prev_page}&quot;&gt;{/if}{if NOT empty($footer_prev_page)}&amp;larr; {$CONST.PREVIOUS_PAGE}{else}&amp;nbsp;{/if}{if NOT empty($footer_prev_page)}&lt;/a&gt;{/if}&lt;/li&gt;
-            &lt;li class=&quot;next&quot;&gt;{if NOT empty($footer_next_page)}&lt;a href=&quot;{$footer_next_page}&quot;&gt;{/if}{if NOT empty($footer_next_page)}{$CONST.NEXT_PAGE} &amp;rarr;{else}&amp;nbsp;{/if}{if NOT empty($footer_next_page)}&lt;/a&gt;{/if}&lt;/li&gt;
+            &lt;li class=&quot;prev&quot;&gt;{if $footer_prev_page}&lt;a href=&quot;{$footer_prev_page}&quot;&gt;{/if}{if $footer_prev_page}&amp;larr; {$CONST.PREVIOUS_PAGE}{else}&amp;nbsp;{/if}{if $footer_prev_page}&lt;/a&gt;{/if}&lt;/li&gt;
+            &lt;li class=&quot;next&quot;&gt;{if $footer_next_page}&lt;a href=&quot;{$footer_next_page}&quot;&gt;{/if}{if $footer_next_page}{$CONST.NEXT_PAGE} &amp;rarr;{else}&amp;nbsp;{/if}{if $footer_next_page}&lt;/a&gt;{/if}&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/nav&gt;
 {/if}
