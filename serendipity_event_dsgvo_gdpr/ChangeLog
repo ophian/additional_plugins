@@ -1,3 +1,7 @@
+1.72:
+-----
+ * Fix commentform_checkbox for 1.65. Sorry.
+
 1.71:
 -----
  * Modify title and lang constant text for GDPR statement menu and URL description
