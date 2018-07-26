@@ -1811,7 +1811,7 @@ class serendipity_event_staticpage extends serendipity_event
 
             }
         }
-        // the #uncommented are already assigned [see line 1492, which assigns $this->config vars]
+        // the #uncommented are already assigned [see line 1731, which assigns $this->config vars]
         $serendipity['smarty']->assign(
             array(
                 $pagevar . 'articleformat'      => serendipity_db_bool($this->get_static('articleformat')),// already assigned, but overwrite as boolean
