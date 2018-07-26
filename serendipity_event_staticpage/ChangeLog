@@ -1,3 +1,9 @@
+5.43:
+----
+ * Remove $staticpage_pre_content assigned Smarty variable, which is an internal.
+   All Frontend related templates use {$staticpage_precontent}.
+ * Update some examples and userland Smarty operator naming
+
 5.42:
 ----
  * Fixed issue, when cookie stored custom backend form template file does

@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.42');
+        $propbag->add('version', '5.43');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -1727,7 +1727,9 @@ class serendipity_event_staticpage extends serendipity_event
         foreach($this->config AS $staticpage_config) {
             $cvar = $this->get_static($staticpage_config);
             // this is, where eg {$staticpage_articleformattitle} and headline etc are assigned, which needs the fixUTFEntity or single escape with double_encode:false on Smarty side, or overwrite assignment at line 1576 ff
-            $serendipity['smarty']->assign($pagevar . $staticpage_config, $cvar);
+            if ($staticpage_config != 'pre_content') { // We dont need to assign *_pre_content here, which is the internal used variable and field name; Template used *_precontent is defined later on ~1815 ff
+                $serendipity['smarty']->assign($pagevar . $staticpage_config, $cvar);
+            }
             // This is a global variable assignment, so that within entries.tpl you can access $smarty.env.staticpage_pagetitle. Otherwise, $staticpage_pagetitle would only be available to index.tpl and content.tpl
             $_ENV[$pagevar . $staticpage_config] = $cvar;
         }

@@ -24,7 +24,7 @@
 <div id="sp_sequencer" class="configuration_group even">
     <fieldset class="sp_sequence">
         <legend>{$CONST.STATICPAGE_PAGEORDER_DESC}</legend>
-        <input type="hidden" name="serendipity[plugin][sequence]" id="sequence_value" value="{foreach $sp_pageorder_pages AS $orderlist}{$orderlist['pagetitle']}{if !$orderlist@last},{/if}{/foreach}">
+        <input type="hidden" name="serendipity[plugin][sequence]" id="sequence_value" value="{foreach $sp_pageorder_pages AS $orderlist}{$orderlist['pagetitle']}{if NOT $orderlist@last},{/if}{/foreach}">
 
         <ol id="sequence" data-placement="sqid" class="sequence_container pluginmanager_container">
         {foreach $sp_pageorder_pages AS $entryorder}
