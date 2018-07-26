@@ -455,7 +455,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Freie Artikel-Tags&lt;/b&gt;&lt;br /&gt;Erlaubt das freie Tagging von Artikeln&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Thu, 19 Jul 2018 09:50:07 +0200</pubDate>
+<pubDate>Thu, 26 Jul 2018 11:38:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -1058,7 +1058,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statische Seiten&lt;/b&gt;&lt;br /&gt;Verwaltet beliebige statische Seiten innerhalb des Blogs mit dem Blog-Design und allen Formatierungen. Fügt einen neuen Menüpunkt in der Admin-Oberfläche hinzu!&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Wed, 18 Jul 2018 19:19:44 +0200</pubDate>
+<pubDate>Thu, 26 Jul 2018 11:27:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
