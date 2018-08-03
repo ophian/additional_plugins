@@ -123,7 +123,7 @@ class icText extends inspectConfig
 ?>
             <nobr><span id="tools_<?php echo $inspectConfig['config_item']; ?>" class="editor_toolbar" style="display: none">
             <?php if ( $inspectConfig['s9y']['nl2br']['iso2br'] ) { ?>
-                <button class="wrap_selection lang-html" type="button" name="insX" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="nl" data-tag-close="nl">NoBR</button>
+                <button class="wrap_selection lang-html" type="button" name="insX" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="nl" data-tag-close="nl">noBR</button>
             <?php } ?>
                 <button class="hilite_i wrap_selection lang-html" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="em" data-tag-close="em" name="insI">i</button>
                 <button class="hilite_b wrap_selection lang-html" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="strong" data-tag-close="strong" name="insB">b</button>
