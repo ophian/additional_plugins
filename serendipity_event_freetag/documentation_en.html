@@ -96,7 +96,7 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
 
 <pre class="prettyprint linenums lang-html " data-pbcklang="html" data-pbcktabsize="4">
 {serendipity_hookPlugin hook=&quot;entries_header&quot; addData=$entry_id}
-+ {if $taglist}
++ {if NOT empty($taglist)}
 +     &lt;article id=&quot;taglistentries&quot; class=&quot;clearfix serendipity_entry&quot;&gt;
 +         &lt;div class=&quot;clearfix content serendipity_entry_body&quot;&gt;
 +             &lt;h2&gt;{$head_subtitle}&lt;/h2&gt;
@@ -255,8 +255,8 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
 +
 + {/if}{* NOT taglist end *}
 +
-{if (NOT empty($footer_info) OR $footer_prev_page OR $footer_next_page) AND NOT $is_single_entry AND NOT $is_preview}
-+{if $taglist}
+{if NOT $is_single_entry AND NOT $is_preview AND NOT $startpage AND $view != 'plugin'}
++{if NOT empty($taglist)}
 +    {if $footer_prev_page}{assign var=&quot;footer_prev_page&quot; value=$footer_prev_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
 +    {if $footer_next_page}{assign var=&quot;footer_next_page&quot; value=$footer_next_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
 +{/if}
