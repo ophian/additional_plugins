@@ -1,3 +1,9 @@
+3.66:
+----
+
+ * Do not allow frontend_comment hook in in backend form, since that breaks
+   with emoticonchooser plugin and makes no sense with others.
+
 3.65:
 ----
 

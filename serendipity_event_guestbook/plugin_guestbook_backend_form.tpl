@@ -1,5 +1,5 @@
 {*
- plugin_guestbook_backend_form.tpl v.3.50 2014-06-14 Ian
+ plugin_guestbook_backend_form.tpl v.3.51 2018-08-05 Ian
  *}
 
 <!-- plugin_guestbook_backend_form start -->
@@ -78,9 +78,8 @@
        {/if}
 
         <div class="input-textarea">
-            <label for="serendipity_commentform_comment">{$CONST.BODY}</label>
-            <textarea cols="100" rows="8" name="serendipity[comment]" id="serendipity_commentform_comment">{$plugin_guestbook_comment}</textarea>
-            {serendipity_hookPlugin hook="frontend_comment" data=$plugin_guestbook_entry}
+            <label for="serendipity_commentform_comment_user">{$CONST.BODY}</label>
+            <textarea cols="100" rows="8" name="serendipity[comment]" id="serendipity_commentform_comment_user">{$plugin_guestbook_comment}</textarea>
         </div>
 
         {if $plugin_guestbook_id}
@@ -97,6 +96,7 @@
         <div class="input-textarea">
             <label for="serendipity_commentform_comment">{$CONST.PLUGIN_GUESTBOOK_ADMINBODY}</label>
             <textarea cols="100" rows="6" name="serendipity[admincomment]" id="serendipity_guestbookform_admincomment">{$plugin_guestbook_ac_comment}</textarea>
+            {* serendipity_hookPlugin hook="frontend_comment" data=$plugin_guestbook_entry *}
         </div>
         {/if}
 
