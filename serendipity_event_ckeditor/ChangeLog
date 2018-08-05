@@ -1,4 +1,9 @@
-4.10.0.2:
+4.10.0.4:
+---------
+    * Update wysiwyg-style.css fix 4.10.0.3 which was not respected by the cke_widget_wrapper,
+      e.g codesnippet boxes
+
+4.10.0.3:
 ---------
     * Update wysiwyg-style.css fix 4.10.0.2 which issued bad cursor pointing
 
