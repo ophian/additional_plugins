@@ -790,9 +790,9 @@
 <description>Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.10.0.3</version>
+  <version>4.10.0.4</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2018-08-04</date>
+  <date>2018-08-05</date>
   <filelist>
     <dir name="serendipity_event_ckeditor">
       <file>basic_toolbar.css</file>
@@ -1230,7 +1230,7 @@
 <release>
   <version>1.4.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2018-08-05</date>
   <filelist>
     <dir name="serendipity_event_contentrewrite">
       <file>lang_bg.inc.php</file>
@@ -4476,9 +4476,9 @@
 <description>Shows a guestbook inside your blog with your normal blog design.</description>
 <maintainers><maintainer><name>Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.65</version>
+  <version>3.66</version>
   <requirements:s9yVersion>1.7.0</requirements:s9yVersion>
-  <date>2018-04-11</date>
+  <date>2018-08-05</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
       <file>ChangeLog</file>
