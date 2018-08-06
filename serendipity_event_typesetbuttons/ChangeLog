@@ -1,0 +1,19 @@
+0.25:
+----
+
+ * Modernize strike button to <del> (html5)
+
+0.24:
+----
+
+ * In absence of constructor parameters - remove parentheses for consistency
+
+0.23:
+----
+
+ * Cleanup and consistency
+
+0.22:
+----
+
+ * Complete refactoring of serendipity_event_typesetbuttons
