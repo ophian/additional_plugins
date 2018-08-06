@@ -48,7 +48,7 @@ window.cookieconsent.initialise({
   },
   "content": {
     "message": "This website uses cookies.",
-    "dismiss": "I accept",
+    "dismiss": "I understand",
     "link": "Read more in the privacy statement",
     "href": "%gdpr_url%"
   }
