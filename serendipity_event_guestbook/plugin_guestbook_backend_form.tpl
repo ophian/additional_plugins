@@ -9,17 +9,19 @@
 {include file='./plugin_guestbook_backend_header.tpl'}
 
     <div class="gb_head">
-        {if $gb_view}<h2>{$CONST.PLUGIN_GUESTBOOK_ADMIN_VIEW}</h2> {$CONST.PLUGIN_GUESTBOOK_ADMIN_VIEW_DESC}{/if}
-        {if $gb_app}<h2>{$CONST.PLUGIN_GUESTBOOK_ADMIN_APP}</h2> {$CONST.PLUGIN_GUESTBOOK_ADMIN_APP_DESC}{/if}
-        {if $gb_add}<h2>{$CONST.PLUGIN_GUESTBOOK_ADMIN_ADD}</h2>{/if}
-        {if $gb_db}<h2>{$CONST.PLUGIN_GUESTBOOK_ADMIN_DBC}</h2>{/if}
+        {if !empty($gb_view)}<h2>{$CONST.PLUGIN_GUESTBOOK_ADMIN_VIEW}</h2> {$CONST.PLUGIN_GUESTBOOK_ADMIN_VIEW_DESC}{/if}
+        {if !empty($gb_app)}<h2>{$CONST.PLUGIN_GUESTBOOK_ADMIN_APP}</h2> {$CONST.PLUGIN_GUESTBOOK_ADMIN_APP_DESC}{/if}
+        {if !empty($gb_add)}<h2>{$CONST.PLUGIN_GUESTBOOK_ADMIN_ADD}</h2>{/if}
+        {if !empty($gb_db)}<h2>{$CONST.PLUGIN_GUESTBOOK_ADMIN_DBC}</h2>{/if}
     </div>
 
+{if isset($plugin_guestbook_messagestack) AND is_array($plugin_guestbook_messagestack)}
 {foreach from=$plugin_guestbook_messagestack item="message"}
     <div class="msg_notice">{$message}</div>
 {/foreach}
+{/if}
 
-{if $is_guestbook_message}{$msg_header=$error_occured}{call feedback}{/if}
+{if !empty($is_guestbook_message)}{$msg_header=$error_occured}{call feedback}{/if}
 
     <script type="text/javascript">
     {literal}
@@ -50,22 +52,22 @@
       <a id="serendipity_CommentForm"></a>
       <form name="guestbookEntry" id="guestbookEntry" action="{$plugin_guestbook_backend_path}" method="post">
         <div>
-          <input type="hidden" name="guestbook[id]" value="{$plugin_guestbook_id}">
-          <input type="hidden" name="guestbook[ip]" value="{$plugin_guestbook_ip}">
-          <input type="hidden" name="guestbook[timestamp]" value="{$plugin_guestbook_ts}">
-          <input type="hidden" name="guestbook[approved]" value="{$plugin_guestbook_app}">
+          <input type="hidden" name="guestbook[id]" value="{$plugin_guestbook_id|default:''}">
+          <input type="hidden" name="guestbook[ip]" value="{$plugin_guestbook_ip|default:''}">
+          <input type="hidden" name="guestbook[timestamp]" value="{$plugin_guestbook_ts|default:''}">
+          <input type="hidden" name="guestbook[approved]" value="{$plugin_guestbook_app|default:''}">
           <input type="hidden" name="serendipity[guestbookform]" value="true">
         </div>
 
         <div class="input-text">
           <label for="serendipity_guestbookform_name">{$CONST.NAME}</label>
-          <input id="serendipity_guestbookform_name" name="serendipity[name]" value="{$plugin_guestbook_name}" size="60" maxlength="29" type="text">
+          <input id="serendipity_guestbookform_name" name="serendipity[name]" value="{$plugin_guestbook_name|default:''}" size="60" maxlength="29" type="text">
         </div>
 
        {if $is_show_mail}
         <div class="input-text">
             <label for="serendipity_commentform_email">{$CONST.EMAIL}</label>
-            <input type="text" size="60" maxlength="99" name="serendipity[email]" value="{$plugin_guestbook_email}" id="serendipity_commentform_email">
+            <input type="text" size="60" maxlength="99" name="serendipity[email]" value="{$plugin_guestbook_email|default:''}" id="serendipity_commentform_email">
             <div class="guestbook_emailprotect">{$CONST.PLUGIN_GUESTBOOK_PROTECTION}</div>
         </div>
        {/if}
@@ -73,16 +75,16 @@
        {if $is_show_url}
         <div class="input-text">
             <label for="serendipity_commentform_url">{$CONST.URL}</label>
-            <input type="text" size="60" maxlength="99" name="serendipity[url]" value="{$plugin_guestbook_url}" id="serendipity_commentform_url">
+            <input type="text" size="60" maxlength="99" name="serendipity[url]" value="{$plugin_guestbook_url|default:''}" id="serendipity_commentform_url">
         </div>
        {/if}
 
         <div class="input-textarea">
             <label for="serendipity_commentform_comment_user">{$CONST.BODY}</label>
-            <textarea cols="100" rows="8" name="serendipity[comment]" id="serendipity_commentform_comment_user">{$plugin_guestbook_comment}</textarea>
+            <textarea cols="100" rows="8" name="serendipity[comment]" id="serendipity_commentform_comment_user">{$plugin_guestbook_comment|default:''}</textarea>
         </div>
 
-        {if $plugin_guestbook_id}
+        {if !empty($plugin_guestbook_id)}
         <div class="input-buttons">
             {if $is_logged_in && $plugin_guestbook_id}<br><sup>{$CONST.PLUGIN_GUESTBOOK_FORM_RIGHT_BBC}</sup><br>
             <input type="button" class="input_button bbc_i" name="insI" value="I" accesskey="i" onclick="guestbookBBC(document.forms['guestbookEntry']['serendipity[admincomment]'],'[i]','[/i]')">

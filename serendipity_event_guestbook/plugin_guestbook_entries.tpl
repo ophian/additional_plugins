@@ -1,5 +1,5 @@
 {*
-    plugin_guestbook_entries.tpl for v.3.65 - 2018-04-11
+    plugin_guestbook_entries.tpl for v.3.66 - 2018-08-07
 *}
 
 {if $plugin_guestbook_articleformat}
@@ -15,8 +15,8 @@
           <div class="clearfix">
 
             <div class="entry-info">
-              {if !$plugin_guestbook_articleformat}<h2 class="page-title">{$staticpage_headline}</h1>{/if}
-              {if !$is_contactform_sent and $plugin_guestbook_intro}
+              {if NOT $plugin_guestbook_articleformat}<h2 class="page-title">{$staticpage_headline}</h1>{/if}
+              {if empty($is_contactform_sent) and $plugin_guestbook_intro}
 
               <div id="preface" class="preface guestbook_intro">{$plugin_guestbook_intro}</div>
               {/if}
@@ -26,7 +26,7 @@
             {if $staticpage_formorder == 'top'}{$GUESTBOOK_FORM}{/if}
 
             <div class="entry-body">
-            {if $is_guestbook_message}
+            {if NOT empty($is_guestbook_message)}
               <p class="serendipity_center serendipity_msg_important guestbook_errorbundled">{$error_occured}</p>
               {if $guestbook_messages}
                 <ul>

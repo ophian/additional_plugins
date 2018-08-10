@@ -1,5 +1,5 @@
 {*
-     plugin_guestbook_backend_entries.tpl for v.3.65 - 2018-04-11
+     plugin_guestbook_backend_entries.tpl for v.3.66 - 2018-08-05
 *}
 
 <!-- plugin_guestbook_backend_entries start -->
@@ -8,7 +8,7 @@
 
 {include file='./plugin_guestbook_backend_header.tpl'}
 
-{if $gb_gbadd_approve}
+{if !empty($gb_gbadd_approve)}
     <div class="gb_head">
     {if !empty($msg_header)}
         {call feedback}
@@ -17,7 +17,7 @@
         {$CONST.PLUGIN_GUESTBOOK_ADMIN_APP_DESC}
     {/if}
     </div>
-{elseif $gb_gbadd_view}
+{elseif !empty($gb_gbadd_view)}
     <div class="gb_head">
     {if !empty($msg_header)}
         {call feedback}
@@ -26,7 +26,7 @@
         {$CONST.PLUGIN_GUESTBOOK_ADMIN_VIEW_DESC}
     {/if}
     </div>
-{elseif $gb_gbadd_add}
+{elseif !empty($gb_gbadd_add)}
     <div class="gb_head">
     {if !empty($msg_header)}
         {call feedback}
@@ -36,15 +36,15 @@
     </div>
 {/if}
 
-{if $is_guestbook_message}{$msg_header=$error_occured}{call feedback}{/if}
+{if !empty($is_guestbook_message)}{$msg_header=$error_occured}{call feedback}{/if}
 
-{if $is_gbadmin_noappresult}
+{if !empty($is_gbadmin_noappresult)}
     <div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> {$CONST.PLUGIN_GUESTBOOK_ADMIN_APP_NORESULT}</div>
 {/if}
-{if $is_gbadmin_noviewresult}
+{if !empty($is_gbadmin_noviewresult)}
     <div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> {$CONST.PLUGIN_GUESTBOOK_ADMIN_VIEW_NORESULT}</div>
 {/if}
-{if $is_gbadmin_nodbcdb}
+{if !empty($is_gbadmin_nodbcdb)}
     <div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> {$CONST.PLUGIN_GUESTBOOK_ADMIN_DBC_NIXDA_DESC}</div>
 {/if}
 
@@ -66,7 +66,7 @@
 
                 </div>
 
-                <div class="gb_entryhead{if $gb_app} approve{/if}">
+                <div class="gb_entryhead{if !empty($gb_app)} approve{/if}">
                     <span>
                         <a href="mailto:{$entry.email}">{$entry.name}</a>
                         {$CONST.PLUGIN_GUESTBOOK_USERSDATE_OF_ENTRY} <span class="icon-clock" aria-hidden="true" title="{$CONST.TEXT_IMG_LASTMODIFIED}: {$entry.timestamp}"></span>

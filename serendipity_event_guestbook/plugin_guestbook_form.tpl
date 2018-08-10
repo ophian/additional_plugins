@@ -1,5 +1,5 @@
 {*
-  plugin_guestbook_form.tpl v.3.28 - 2015-05-10 ian
+  plugin_guestbook_form.tpl v.3.29 - 2018-08-07 Ian
  *}
 
     <!-- Needed for Captchas -->
@@ -42,7 +42,7 @@
         </div>
 
         <div id="directions">
-             <div class="serendipity_commentDirection">{$plugin_guestbook_captcha}</div>
+             <div class="serendipity_commentDirection">{$plugin_guestbook_captcha|default:''}</div>
         </div>
 
         <div class="input-buttons">
