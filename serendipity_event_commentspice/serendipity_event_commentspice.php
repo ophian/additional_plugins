@@ -22,13 +22,13 @@ class serendipity_event_commentspice extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_COMMENTSPICE_TITLE);
         $propbag->add('description',    PLUGIN_EVENT_COMMENTSPICE_DESC);
         $propbag->add('stackable',      false);
-        $propbag->add('author',         'Grischa Brockhaus');
+        $propbag->add('author',         'Grischa Brockhaus, Ian');
         $propbag->add('requirements',   array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',        '1.11');
+        $propbag->add('version',        '1.12');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -883,20 +883,20 @@ class serendipity_event_commentspice extends serendipity_event
             // Fetch "spice" from form elements
             $spice = array();
             $spice['commentid'] = -1;
-            $spice['twittername'] = $serendipity['POST']['twitter'];
-            $spice['boo'] = $serendipity['POST']['boo'];
+            $spice['twittername'] = isset($serendipity['POST']['twitter']) ? $serendipity['POST']['twitter'] : null;
+            $spice['boo'] = isset($serendipity['POST']['boo']) ? $serendipity['POST']['boo'] : null;
 
             // Get the input w/o checking if it's modified: We are in preview!
-            $promorss = $serendipity['POST']['promorss'];
+            $promorss = isset($serendipity['POST']['promorss']) ? $serendipity['POST']['promorss'] : null;
             $parts = explode("\n", $promorss);
             $promo_hash = trim($parts[0]);
-            $promo_name = trim($parts[1]);
-            $promo_url = trim($parts[2]);
+            $promo_name = isset($parts[1]) ? trim($parts[1]) : null;
+            $promo_url = isset($parts[2]) ? trim($parts[2]) : null;
             $spice['promo_name'] = $promo_name;
             $spice['promo_url'] = $promo_url;
         }
         else {
-            $spice = DbSpice::loadCommentSpice($eventData['id']);
+            $spice = isset($eventData['id']) ? DbSpice::loadCommentSpice($eventData['id']) : null;
         }
         if (!is_array($spice)) {
             return true;
