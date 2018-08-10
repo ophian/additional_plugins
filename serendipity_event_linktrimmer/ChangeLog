@@ -1,3 +1,8 @@
+1.6.9:
+------
+
+ * Added some uninitialized variable checks
+
 1.6.8:
 ------
 
