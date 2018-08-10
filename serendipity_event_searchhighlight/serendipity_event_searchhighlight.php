@@ -229,12 +229,10 @@ class serendipity_event_searchhighlight extends serendipity_event
             $_SESSION['is_searchengine_visitor'] = true;
             $_SESSION['search_referer'] = $this->uri;
 
-            foreach ($this->markup_elements as $temp) {
-
+            foreach ($this->markup_elements AS $temp) {
                 if (!(serendipity_db_bool($this->get_config($temp['name'])) && isset($eventData[$temp['element']]))) {
                     continue;
                 }
-
                 if ($eventData['properties']['ep_disable_markup_' . $this->instance] ||
                         isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                     continue;
@@ -243,7 +241,7 @@ class serendipity_event_searchhighlight extends serendipity_event
                 $element = &$eventData[$temp['element']];
 
                 //Iterate over search terms and do the highlighting.
-                foreach ($queries as $word) {
+                foreach ($queries AS $word) {
                     if (strpos($word, '*')) {
                         // fuzzy search (case insensitive) all words containing term;
                         $word = str_replace('*', '', $word);
