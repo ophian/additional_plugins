@@ -442,7 +442,7 @@ class serendipity_event_textwiki extends serendipity_event
         }
         // Save non wiki-rule configuration
         $this->nonWikiRules = $conf_array;
-        // Seperate markup elements from wiki-rule config
+        // Separate markup elements from wiki-rule config
         $conf_array[] = "internal_seperator";
         // Add wiki-rule config
         $this->_introspect_rule_config($conf_array);
