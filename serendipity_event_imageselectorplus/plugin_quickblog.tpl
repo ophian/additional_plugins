@@ -4,7 +4,7 @@
 {if $quickblog.exif_mode == 'internal'}
 <br>
 Taken on: {$quickblog.exif.FileDateTime|formatTime:DATE_FORMAT_ENTRY}<br>
-Copyright: {$quickblog.exif.COMMENT.0}<br>
+Copyright: {$quickblog.exif.COMMENT.0|default:''}<br>
 {else if $quickblog.exif_mode == 'jhead'}
 File date    : {$quickblog.exif.File_date}<br>
 Camera make  : {$quickblog.exif.Camera_make}<br>

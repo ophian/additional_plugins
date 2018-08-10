@@ -4,7 +4,7 @@
 {foreach $plugin_mediainsert_media AS $medium}
 
  {if isset($plugin_mediainsert_hideafter) AND isset($plugin_mediainsert_picperrow) AND $medium@iteration <= $plugin_mediainsert_hideafter}
-  {if !$medium@first AND $plugin_mediainsert_picperrow > 0 AND $medium@index % $plugin_mediainsert_picperrow == 0}
+  {if NOT $medium@first AND $plugin_mediainsert_picperrow > 0 AND (($medium@index % $plugin_mediainsert_picperrow) == 0)}
   <div style="clear:both">&nbsp;</div>
   {/if}
  {/if}
