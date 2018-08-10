@@ -7,7 +7,7 @@ if (IN_serendipity !== true) {
 // Load possible language files.
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.68');
+@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.69');
 
 // Defines the maximum available method  slots in the configuration.
 @define('PLUGIN_EVENT_GRAVATAR_METHOD_MAX', 6);
@@ -479,9 +479,9 @@ class serendipity_event_gravatar extends serendipity_event
                     . $this->getPermaPluginPath() . '/cachedAvatar_' . md5($url) . '_' . $email_md5
                     . '_' . md5($author);
             } else { // no image cached yet, call external plugin hook for fetching a new one
-                $url = $serendipity['baseURL'] . $serendipity['indexFile'] . '?/'
+                $url = isset($eventData['id']) ? $serendipity['baseURL'] . $serendipity['indexFile'] . '?/'
                     . $this->getPermaPluginPath() . '/fetchAvatar_' . $this->urlencode($url) . '_' . $email_md5
-                    . '_' . $this->urlencode($author) . '_' . $eventData['id'];
+                    . '_' . $this->urlencode($author) . '_' . $eventData['id'] : '';
             }
 
         } else { // call external plugin hook for fetching a new one
@@ -1221,7 +1221,7 @@ class serendipity_event_gravatar extends serendipity_event
         // test whether this really is (at least declared as) an image!
         // else deny it.
         $mime_parts = explode('/', $mime_type);
-        if (count($mime_parts)!=2 || $mime_parts[0]!='image') {
+        if (count($mime_parts) != 2 || $mime_parts[0] != 'image') {
             return false;
         }
 
@@ -1266,7 +1266,7 @@ class serendipity_event_gravatar extends serendipity_event
         if (empty($title)){
             $title = 'Avatar';
         }
-        if (PLUGIN_EVENT_GRAVATAR_DEBUG) $title .= ' (Avatar Plugin V.' . PLUGIN_EVENT_GRAVATAR_VERSION . ' DEBUG)';
+        if (PLUGIN_EVENT_GRAVATAR_DEBUG) $title .= ' (Avatar Plugin v.' . PLUGIN_EVENT_GRAVATAR_VERSION . ' DEBUG)';
 
         // set alignment by configuration
         $cssAlign = '';
@@ -1336,7 +1336,7 @@ class serendipity_event_gravatar extends serendipity_event
      */
     function urlencode($url)
     {
-        $hash = md5($this->instance_id . $url);
+        $hash = @md5($this->instance_id . $url);
         return $hash . str_replace ('_', '%5F', urlencode($url));
     }
 
@@ -1345,7 +1345,7 @@ class serendipity_event_gravatar extends serendipity_event
         $hash     = substr($url, 0, 32);
         $real_url = urldecode(substr($url, 32));
 
-        if ($hash == md5($this->instance_id . $real_url)) {
+        if ($hash == @md5($this->instance_id . $real_url)) {
             // Valid hash was found.
             return $real_url;
         } else {
@@ -1387,7 +1387,7 @@ class serendipity_event_gravatar extends serendipity_event
     {
         global $serendipity;
 
-        if ($this->defaultImageConfigurationdefault === null) {
+        if (@$this->defaultImageConfigurationdefault === null) {
             $this->defaultImageConfigurationdefault = array(
                 'defaultavatar' => ($this->get_config('defaultavatar')==''?'': $this->get_config('defaultavatar', '')),
                 'size'          => $this->get_config('size', '40'),

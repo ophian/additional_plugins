@@ -1,3 +1,7 @@
+1.69:
+-----
+ * Add some uninitialized variable checks
+
 1.68:
 -----
  * Fix legal information to be used by serendipity_event_dsgvo_gpdr
