@@ -21,7 +21,7 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian');
-        $propbag->add('version',       '0.24');
+        $propbag->add('version',       '0.25');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'php'         => '5.1.0'
@@ -167,7 +167,7 @@ class serendipity_event_metadesc extends serendipity_event
                     $default_keywords = $this->get_config('default_keywords');
 
                     // Only emit in Single Entry Mode
-                    if ($serendipity['GET']['id'] && $serendipity['view'] == 'entry') {
+                    if (!empty($serendipity['GET']['id']) && $serendipity['view'] == 'entry') {
                         // we fetch the internal smarty object to get the current entry body
                         if ($serendipity['template'] != 'default-php' && is_object($eventData['smarty'])) {
                             $entry = (array)$eventData['smarty']->tpl_vars['entry']->value;
@@ -187,7 +187,7 @@ class serendipity_event_metadesc extends serendipity_event
                             );
                         }
 
-                        $meta_description = $entry['properties']['meta_description'];
+                        $meta_description = isset($entry['properties']['meta_description']) ? $entry['properties']['meta_description'] : null;
                         if (empty($meta_description)) {
                             $description_body = $entry['body'];
                             if (isset($GLOBALS['entry'][0]['plaintext_body'])) {
@@ -196,7 +196,7 @@ class serendipity_event_metadesc extends serendipity_event
                             $meta_description = $this->extract_description($description_body);
                         }
 
-                        $meta_keywords = $entry['properties']['meta_keywords'];
+                        $meta_keywords = isset($entry['properties']['meta_keywords']) ? $entry['properties']['meta_keywords'] : null;
                         if (empty($meta_keywords)) {
                             $meta_keywords = (array)$this->extract_keywords($entry['body']);
                             if (!empty($meta_keywords)) {
@@ -290,13 +290,15 @@ class serendipity_event_metadesc extends serendipity_event
                         $prop_val = (isset($serendipity['POST']['properties'][$prop_key]) ? $serendipity['POST']['properties'][$prop_key] : null);
                         if (!isset($property[$prop_key]) && !empty($prop_val)) {
                             $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES (" . (int)$eventData['id'] . ", '" . serendipity_db_escape_string($prop_key) . "', '" . serendipity_db_escape_string($prop_val) . "')";
-                        } elseif ($property[$propkey] != $prop_val && !empty($prop_val)) {
+                        } elseif (!empty($propkey) && $property[$propkey] != $prop_val && !empty($prop_val)) {
                             $q = "UPDATE {$serendipity['dbPrefix']}entryproperties SET value = '" . serendipity_db_escape_string($prop_val) . "' WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
                         } else {
-                            $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
+                            if (!empty($propkey)) {
+                                $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
+                            }
                         }
 
-                        serendipity_db_query($q);
+                        if (isset($q)) serendipity_db_query($q);
                     }
                     break;
 
