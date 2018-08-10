@@ -6,7 +6,7 @@
         <div><a href="{$serendipityBaseURL}">{$CONST.ADMIN_FRONTPAGE}</a> &gt; <a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}">{$CONST.FAQ_CATEGORIES}</a>
 
         {foreach $cat_tree AS $cat}
-            &gt; {if $cat.id != $faq_plugin.catid}<a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}/{$cat.id}">{/if}{$cat.category}{if $cat.id != $faq_plugin.catid}</a>{/if}
+            &gt; {if isset($faq_plugin.catid) AND $cat.id != $faq_plugin.catid}<a href="{$serendipityBaseURL}{$faq_plugin.plugin_url}/{$cat.id}">{/if}{$cat.category}{if isset($faq_plugin.catid) AND $cat.id != $faq_plugin.catid}</a>{/if}
         {/foreach}
         </div>
     </div>

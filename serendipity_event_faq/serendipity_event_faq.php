@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian');
-        $propbag->add('version',      '1.29');
+        $propbag->add('version',      '1.30');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -356,7 +356,8 @@ class serendipity_event_faq extends serendipity_event
 
     function &getFaq($key, $default = null)
     {
-        return (isset($this->faq[$key]) ? $this->faq[$key] : $default);
+        $key = isset($this->faq[$key]) ? $this->faq[$key] : $default; // Avoid Notice: Only variable references should be returned by reference
+        return $key;
     }
 
     function &getCategory($key, $default = null)
@@ -523,7 +524,7 @@ class serendipity_event_faq extends serendipity_event
     {
         global $serendipity;
 
-        return (($serendipity['uriArguments'][0] == $serendipity['permalinkPluginPath']) && ($serendipity['uriArguments'][1] == $this->get_config('faqurl', 'faqs')));
+        return ((isset($serendipity['uriArguments'][0]) && $serendipity['uriArguments'][0] == $serendipity['permalinkPluginPath']) && (isset($serendipity['uriArguments'][1]) && $serendipity['uriArguments'][1] == $this->get_config('faqurl', 'faqs')));
     }
 
     function countFAQbyCid(&$cid)
@@ -546,7 +547,7 @@ class serendipity_event_faq extends serendipity_event
                 $array[$i]['down'] = (isset($array[$i]['down']) ? $array[$i]['down'] : false);
                 $array[$i]['up']   = (isset($array[$i]['up']) ? $array[$i]['up'] : false);
                 for ($j = ($i + 1); $j < $ii; $j++) {
-                    if ($array[$j]['parent_id'] == $array[$i]['parent_id']) {
+                    if (isset($array[$j]['parent_id']) && $array[$j]['parent_id'] == $array[$i]['parent_id']) {
                         $array[$i]['down'] = true;
                         $array[$j]['up'] = true;
                     }
@@ -748,10 +749,12 @@ class serendipity_event_faq extends serendipity_event
                     }
                 }
 
-                if ($serendipity['GET']['actiondo'] == 'faqMoveUp') {
-                    $this->faqMove($serendipity['GET']['id'], $serendipity['GET']['cid'], D_FAQ_MOVEUP);
-                } elseif ($serendipity['GET']['actiondo'] == 'faqMoveDown') {
-                    $this->faqMove($serendipity['GET']['id'], $serendipity['GET']['cid'], D_FAQ_MOVEDOWN);
+                if (isset($serendipity['GET']['actiondo'])) {
+                    if ($serendipity['GET']['actiondo'] == 'faqMoveUp') {
+                        $this->faqMove($serendipity['GET']['id'], $serendipity['GET']['cid'], D_FAQ_MOVEUP);
+                    } elseif ($serendipity['GET']['actiondo'] == 'faqMoveDown') {
+                        $this->faqMove($serendipity['GET']['id'], $serendipity['GET']['cid'], D_FAQ_MOVEDOWN);
+                    }
                 }
 
                 if (!empty($serendipity['POST']['cid'])) {
@@ -904,14 +907,14 @@ class serendipity_event_faq extends serendipity_event
         header('Content-Type: text/html; charset=' . LANG_CHARSET);
         include_once(S9Y_INCLUDE_PATH . 'include/genpage.inc.php');
 
-        if (is_string($serendipity['uriArguments'][2]) && isset($serendipity['languages'][$serendipity['uriArguments'][2]])) {
+        if (isset($serendipity['uriArguments'][2]) && is_string($serendipity['uriArguments'][2]) && isset($serendipity['languages'][$serendipity['uriArguments'][2]])) {
             $faq_language   = $serendipity['uriArguments'][2];
             $faq_categoryid = $serendipity['uriArguments'][3];
             $faq_faqid      = $serendipity['uriArguments'][4];
         } else {
             $faq_language   = $serendipity['lang'];
-            $faq_categoryid = $serendipity['uriArguments'][2];
-            $faq_faqid      = $serendipity['uriArguments'][3];
+            $faq_categoryid = isset($serendipity['uriArguments'][2]) ? $serendipity['uriArguments'][2] : null;
+            $faq_faqid      = isset($serendipity['uriArguments'][3]) ? $serendipity['uriArguments'][3] : null;
         }
 
         if (is_numeric($faq_categoryid)) {
@@ -1196,7 +1199,7 @@ class serendipity_event_faq extends serendipity_event
         // add some $serendipity items to check for
         $inspectConfig['s9y']['wysiwyg'] = $serendipity['wysiwyg'];
         $inspectConfig['s9y']['version'] = $serendipity['version'][0];
-        $inspectConfig['s9y']['nl2br']['iso2br'] = $serendipity['nl2br']['iso2br'];
+        $inspectConfig['s9y']['nl2br']['iso2br'] = isset($serendipity['nl2br']['iso2br']) ? $serendipity['nl2br']['iso2br'] : null;
         $inspectConfig['s9y']['plugin_path'] = $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/';
 
         foreach ($this->config_faq AS $config_item) {
