@@ -1651,10 +1651,10 @@ class serendipity_event_guestbook extends serendipity_event
                         $serendipity['smarty']->assign('is_show_url', true);
                     }
 
-                    if (isset($entry)) {
+                    if (isset($entry) && is_array($entry)) {
                         // extract entry body admincomment to var
                         preg_match_all("/\[ac\](.*?)\[\/ac\]/", $entry['body'], $match);
-                        $entry['acbody'] = $match[1][0];
+                        $entry['acbody'] = @$match[1][0];
                         $entry['body']   = preg_replace("/\[ac\](.*?)\[\/ac\]/","", $entry['body']);
 
                         // assign form array entries to smarty
