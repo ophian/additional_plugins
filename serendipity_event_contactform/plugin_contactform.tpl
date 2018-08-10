@@ -15,13 +15,13 @@
 </div>
 <br /><br />
 
-{if $is_contactform_sent}
+{if NOT empty($is_contactform_sent)}
 <div class="serendipity_center serendipity_msg_notice">
     {$plugin_contactform_sent}
 </div>
 {else}
 
-{if $is_contactform_error}
+{if NOT empty($is_contactform_error)}
 <div class="serendipity_center serendipity_msg_important">
     {$plugin_contactform_error}
 </div>

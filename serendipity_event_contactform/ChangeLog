@@ -1,3 +1,10 @@
+1.28:
+----
+
+ * Fix dynamicform textarea ID name for hooked plugins, since this needs
+   to be statically set. (See theme changes since Serendipity Styx 2.6-beta1)
+ * Better check some uninitialized variables
+
 1.27:
 ----
 

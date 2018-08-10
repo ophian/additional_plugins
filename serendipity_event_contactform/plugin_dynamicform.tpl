@@ -15,13 +15,13 @@
 </div>
 <br /><br />
 
-{if $is_contactform_sent}
+{if NOT empty($is_contactform_sent)}
 <div class="serendipity_center serendipity_msg_notice">
     {$plugin_contactform_sent}
 </div>
 {else}
 
-{if $is_contactform_error}
+{if NOT empty($is_contactform_error)}
 <div class="serendipity_center serendipity_msg_important">
     {$plugin_contactform_error}
 </div>
@@ -50,7 +50,7 @@
        {foreach name="field" from=$commentform_dynamicfields item="field"}
           {if $field.type != "hidden"}
            <tr>
-              <td class="serendipity_commentsLabel">{if $field.required}<sup>*</sup>{/if}<label for="serendipity_commentform_{$field.id}">{$field.name}</label></td>
+              <td class="serendipity_commentsLabel">{if $field.required}<sup>&#8727;</sup>{/if}<label for="serendipity_commentform_{$field.id}">{$field.name}</label></td>
               <td class="serendipity_commentsValue">
                  {if $field.type == "checkbox"}
                        <input type="checkbox" name="{$field.id}" id="{$field.id}" {$field.default} /><label for="{$field.id}">{$field.message}</label>
@@ -65,7 +65,7 @@
                  {elseif $field.type == "password"}
                      <input type="password" id="serendipity_commentform_{$field.id}" name="serendipity[{$field.id}]" value="{$field.default}" size="30" />
                  {elseif $field.type == "textarea"}
-                     <textarea rows="10" cols="40" id="serendipity_commentform_{$field.id}" name="serendipity[{$field.id}]">{$field.default}</textarea><br />
+                     <textarea rows="10" cols="40" id="serendipity_commentform_comment" name="serendipity[{$field.id}]">{$field.default}</textarea><br />
                  {else}
                      <input type="text" id="serendipity_commentform_{$field.id}" name="serendipity[{$field.id}]" value="{$field.default}" size="30" />
                  {/if}
