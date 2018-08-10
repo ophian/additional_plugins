@@ -3,10 +3,9 @@
 # (c) 2005 by Alexander 'dma147' Mieland, http://blog.linux-stats.org, <dma147@linux-stats.org>
 # Contact me on IRC in #linux-stats, #archlinux, #archlinux.de, #s9y on irc.freenode.net
 
-
-
-
-
+    /**
+     *
+     */
     function DMA_forum_array_remove($array, $remove) {
         if (is_array($array)) {
             foreach($array AS $key => $val) {
@@ -16,10 +15,10 @@
                 }
             }
             unset($array[$key_index]);
-            if(gettype($key_index) != "string") {
+            if (gettype($key_index) != "string") {
                 $temparray = array();
                 $i = 0;
-                foreach($array as $value) {
+                foreach($array AS $value) {
                     $temparray[$i] = $value;
                     $i++;
                 }
@@ -31,7 +30,9 @@
         }
     }
 
-
+    /**
+     *
+     */
     function DMA_forum_calcFilesize($filesize) {
        $array = array(
            'YB' => 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024,
@@ -43,20 +44,20 @@
            'MB' => 1024 * 1024,
            'KB' => 1024,
        );
-       if($filesize <= 1024) {
+       if ($filesize <= 1024) {
            $filesize = $filesize . ' Bytes';
        }
        foreach($array AS $name => $size) {
-           if($filesize > $size || $filesize == $size) {
+           if ($filesize > $size || $filesize == $size) {
                $filesize = round((round($filesize / $size * 100) / 100), 2) . ' ' . $name;
            }
        }
        return $filesize;
     }
 
-
-
-
+    /**
+     *
+     */
     function DMA_forum_getMime($filename, $relpath="./") {
         static $mimetypes = array(
              "ez" => "application/andrew-inset",
@@ -229,6 +230,9 @@
         return $MIMETYPE;
     }
 
+    /**
+     *
+     */
     function DMA_forum_genCryptString($pwdLen=32, $usables=PWD_ALLOW_ALL) {
         $pwdSource = "";
         $STRING = "";
@@ -244,10 +248,9 @@
         return $STRING;
     }
 
-
-
-
-
+    /**
+     *
+     */
     function DMA_forum_uploadFiles($postid, $uploaddir) {
         global $serendipity;
         $upload_max_filesize = ini_get('upload_max_filesize');
@@ -317,12 +320,9 @@
         return $return;
     }
 
-
-
-
-
-
-
+    /**
+     *
+     */
     function DMA_forum_CheckLastProperties($boardid) {
         global $serendipity;
         $boardid = intval($boardid);
@@ -373,8 +373,9 @@
         serendipity_db_query($sql);
     }
 
-
-
+    /**
+     *
+     */
     function DMA_strip($string) {
     	$string = str_replace("\n", "", $string);
     	$string = str_replace("\r", "", $string);
@@ -385,6 +386,9 @@
 		return $string;
     }
 
+    /**
+     *
+     */
     function DMA_forum_InsertReply($boardid, $threadid, $replyto, $authorname, $title, $message, $itemsperpage, $frommail, $fromname, $pageurl, $admin_notify=true) {
         global $serendipity;
         if (serendipity_userLoggedIn()) {
@@ -426,11 +430,10 @@
 
         $sql = "SELECT title, notifymails FROM {$serendipity['dbPrefix']}dma_forum_threads WHERE threadid='".intval($threadid)."'";
         $notifylist = serendipity_db_query($sql);
-        
-        
+
         $fromname = DMA_strip($fromname);
         $frommail = DMA_strip($frommail);
-        
+
         if (is_array($notifylist) && trim($notifylist[0]['title']) != "") {
             $NOTIFYARRAY = unserialize(stripslashes(trim($notifylist[0]['notifymails'])));
             $Bcc_headers = "";
@@ -484,10 +487,9 @@
         return $lastpostid;
     }
 
-
-
-
-
+    /**
+     *
+     */
     function DMA_forum_EditReply($boardid, $threadid, $edit, $authorname, $title, $message, $page=1, $announce=0) {
         global $serendipity;
         $now = time();
@@ -511,8 +513,9 @@
         return $edit;
     }
 
-
-
+    /**
+     *
+     */
     function DMA_forum_InsertThread($boardid, $authorname, $title, $message, $announce=0, $frommail, $fromname, $pageurl, $admin_notify=true) {
         global $serendipity;
         if (serendipity_userLoggedIn()) {
@@ -566,7 +569,7 @@
 		
         $fromname = DMA_strip($fromname);
         $frommail = DMA_strip($frommail);
-        
+
 		if ($admin_notify === true) {
             $subject = str_replace("{postauthor}", trim($authorname), PLUGIN_FORUM_EMAIL_NOTIFY_SUBJECT);
             $subject = str_replace("{blogurl}", $serendipity['baseURL'], $subject);
@@ -593,9 +596,9 @@
         return $postid;
     }
 
-
-
-
+    /**
+     *
+     */
     function DMA_forum_DeletePost($boardid, $threadid, $postid, $page=1, $uploaddir="./", $itemsperpage) {
         global $serendipity;
         $q = "DELETE FROM {$serendipity['dbPrefix']}dma_forum_posts
@@ -630,12 +633,9 @@
         $_GET['page'] = intval($page);
     }
 
-
-
-
-
-
-
+    /**
+     *
+     */
     function DMA_forum_DeleteBoards($delboardsarray, $movetoboardid='delete', $uploaddir="./") {
         global $serendipity;
         if ($movetoboardid == 'delete') {
@@ -687,18 +687,11 @@
             for($idx = 0; $idx < count($boards); $idx++) {
                 $boards[$idx]['sortorder'] = $idx;
             }
-            foreach($boards as $board) {
+            foreach($boards AS $board) {
                 $key = intval($board['boardid']);
                 serendipity_db_query("UPDATE {$serendipity['dbPrefix']}dma_forum_boards SET sortorder = {$board['sortorder']} WHERE boardid='$key'");
             }
         }
     }
-
-
-
-
-
-
-
 
 ?>

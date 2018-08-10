@@ -9,13 +9,8 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+// Load possible language files.
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 include dirname(__FILE__) . '/include/functions.inc.php';
 
@@ -42,24 +37,28 @@ class serendipity_event_forum extends serendipity_event {
 
     var $debug;
 
-    function introspect(&$propbag) {
+    /**
+     *
+     */
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_FORUM_TITLE);
         $propbag->add('description',   PLUGIN_FORUM_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '0.38.2');
+        $propbag->add('version',       '0.39');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, http://blog.linux-stats.org, dma147@linux-stats.org');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
                                             'entries_header'           => true,
                                             'entry_display'           => true,
-                                            'backend_sidebar_entries' => true,
+                                            'backend_sidebar_admin_appearance' => true,
                                             'backend_sidebar_entries_event_display_forum' => true,
                                             'external_plugin'          => true,
                                             'css'                     => true,
@@ -111,7 +110,11 @@ class serendipity_event_forum extends serendipity_event {
         $this->dependencies = array('serendipity_event_entryproperties' => 'keep');
     }
 
-    function introspect_config_item($name, &$propbag) {
+    /**
+     *
+     */
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch($name) {
@@ -346,10 +349,11 @@ class serendipity_event_forum extends serendipity_event {
         return true;
     }
 
-
-
-
-    function show() {
+    /**
+     *
+     */
+    function show()
+    {
         global $serendipity;
 
         if ($serendipity['GET']['subpage'] == $this->get_config('pageurl')) {
@@ -362,17 +366,14 @@ class serendipity_event_forum extends serendipity_event {
         }
     }
 
-
-
-
-
-
-
-    function setupDB() {
+    /**
+     *
+     */
+    function setupDB()
+    {
         global $serendipity;
 
         $installed = $this->get_config('forum_installed', null);
-
 
         if (empty($installed) && !defined('FORUM_UPGRADE')) {
 
@@ -501,7 +502,6 @@ class serendipity_event_forum extends serendipity_event {
             @define('FORUM_UPGRADE', 1);
         }
 
-
         switch($installed) {
             case 1:
 
@@ -511,9 +511,6 @@ class serendipity_event_forum extends serendipity_event {
                 //
                 $TABLE['uploads'] = 0;
                 $TABLE['users'] = 0;
-
-
-
 
                 if ($serendipity['dbType'] == "postgres") {
                     $tables = serendipity_db_query("SELECT * FROM information_schema.tables WHERE table_schema='public' AND table_type='BASE TABLE'");
@@ -704,8 +701,7 @@ class serendipity_event_forum extends serendipity_event {
                     $sql = serendipity_db_schema_import($q);
                 }
 
-
-                 //
+                //
                 //
                 // Update from 0.4 to 0.5
                 //
@@ -731,10 +727,11 @@ class serendipity_event_forum extends serendipity_event {
         }
     }
 
-
-
-
-    function uninstall(&$propbag) {
+    /**
+     *
+     */
+    function uninstall(&$propbag)
+    {
         global $serendipity;
 
         serendipity_db_query("DROP TABLE {$serendipity['dbPrefix']}dma_forum_boards");
@@ -756,8 +753,11 @@ class serendipity_event_forum extends serendipity_event {
 
     }
 
-
-    function DMA_forum_getRelPath() {
+    /**
+     *
+     */
+    function DMA_forum_getRelPath()
+    {
         global $serendipity;
         static $path = null;
 
@@ -768,7 +768,11 @@ class serendipity_event_forum extends serendipity_event {
         return $path;
     }
 
-    function showForum() {
+    /**
+     *
+     */
+    function showForum()
+    {
         global $serendipity;
         if (!headers_sent()) {
             header('HTTP/1.0 200');
@@ -785,7 +789,6 @@ class serendipity_event_forum extends serendipity_event {
         $THREAD_HUGE_READ = "<img src=\"".$this->DMA_forum_getRelPath()."/img/thread_huge_read.png\" width=\"20\" height=\"18\" border=\"0\" alt=\"".PLUGIN_FORUM_ALT_READ."\" title=\"".PLUGIN_FORUM_ALT_READ."\" />";
         $DEL_FILE_BUTTON = "<img src=\"".serendipity_getTemplateFile('admin/img/delete.png')."\" width=\"18\" height=\"18\" border=\"0\" alt=\"".DELETE."\" title=\"".DELETE."\" />";
 
-
         if (!isset($_SESSION['forum_visited']) || intval($_SESSION['forum_visited']) <= 0) {
             if (serendipity_userLoggedIn()) {
                 $sql = "SELECT visits, lastvisit FROM {$serendipity['dbPrefix']}dma_forum_users WHERE authorid = '".intval($serendipity['authorid'])."'";
@@ -800,10 +803,6 @@ class serendipity_event_forum extends serendipity_event {
                 $_SESSION['forum_visited'] = 1;
             }
         }
-
-
-
-
 
         if (is_array($_COOKIE) && trim($_COOKIE['s9yread']) != "") {
             $READARRAY = unserialize(stripslashes(trim($_COOKIE['s9yread'])));
@@ -820,7 +819,6 @@ class serendipity_event_forum extends serendipity_event {
                     $serendipity['POST']['authorname'] = PLUGIN_FORUM_GUEST;
                 }
             }
-
 
             if ($this->get_config('use_captchas')) {
                 // Fake call to spamblock and other comment plugins.
@@ -864,7 +862,7 @@ class serendipity_event_forum extends serendipity_event {
                     } else {
                         if (trim($serendipity['POST']['comment']) == $_SESSION['lastposttext']) {
                             $ERRORMSG = PLUGIN_FORUM_ERR_DOUBLE_POST;
-                        } elseif($_SESSION['lastposttime'] >= (time()-10)) {
+                        } elseif ($_SESSION['lastposttime'] >= (time()-10)) {
                             $ERRORMSG = PLUGIN_FORUM_ERR_POST_INTERVAL;
                         } else {
                             $now = time();
@@ -1012,7 +1010,7 @@ class serendipity_event_forum extends serendipity_event {
                 } else {
                     if (trim($serendipity['POST']['comment']) == $_SESSION['lastthreadtext']) {
                         $ERRORMSG = PLUGIN_FORUM_ERR_DOUBLE_THREAD;
-                    } elseif($_SESSION['lastposttime'] >= (time()-10)) {
+                    } elseif ($_SESSION['lastposttime'] >= (time()-10)) {
                         $ERRORMSG = PLUGIN_FORUM_ERR_POST_INTERVAL;
                     } else {
                         $now = time();
@@ -1059,10 +1057,6 @@ class serendipity_event_forum extends serendipity_event {
                 unset($_GET['action']);
             }
         }
-
-
-
-
 
         // GET part
         if ((isset($_GET['replyto']) && !isset($_GET['edit']) && !isset($_GET['delete'])) && (isset($_GET['boardid']) && intval($_GET['boardid']) >= 1) && (isset($_GET['threadid']) && intval($_GET['threadid']) >= 1)) {
@@ -1223,7 +1217,7 @@ class serendipity_event_forum extends serendipity_event {
                 }
 
                 $uploads = array();
-                for ($x=0;$x<$max_possible;$x++) {
+                for ($x=0; $x<$max_possible; $x++) {
                     $uploads[] = ($x+1);
                 }
                 $serendipity['smarty']->assign(
@@ -1292,8 +1286,6 @@ class serendipity_event_forum extends serendipity_event {
             serendipity_db_query($sql);
         }
 
-
-
         if (isset($_GET['delfile']) && intval($_GET['delfile']) >= 1) {
             $sql = "SELECT * FROM {$serendipity['dbPrefix']}dma_forum_uploads WHERE uploadid = '".intval($_GET['delfile'])."'";
             $upload = serendipity_db_query($sql);
@@ -1303,8 +1295,6 @@ class serendipity_event_forum extends serendipity_event {
                 $sql = serendipity_db_query($q);
             }
         }
-
-
 
         if ((isset($_GET['subscribe']) && intval($_GET['subscribe']) == 1) && isset($_GET['threadid'])) {
             if (serendipity_userLoggedIn()) {
@@ -1340,19 +1330,16 @@ class serendipity_event_forum extends serendipity_event {
             }
         }
 
-
-
-        /** Jahr des getrigen Tages */
+        /** Year of yesterday */
         $yesterday_year = intval(date("Y", (time()-86400)));
-        /** Monat des getrigen Tages */
+        /** Month of yesterday */
         $yesterday_month = intval(date("n", (time()-86400)));
-        /** Tageszahl des getrigen Tages */
+        /** Day of yesterday */
         $yesterday_day = intval(date("j", (time()-86400)));
-        /** Letzter Timestamp des getrigen Tages (23:59:59 Uhr) */
+        /** Last timestamp of yesterday (23:59:59 time) */
         $yesterday_lasttstamp = mktime(23,59,59,$yesterday_month,$yesterday_day,$yesterday_year);
-        /** Erster Timestamp des getrigen Tages (00:00:00 Uhr) */
+        /** First timestamp of yesterday (00:00:00 time) */
         $yesterday_firsttstamp = mktime(0,0,0,$yesterday_month,$yesterday_day,$yesterday_year);
-
 
         if ((!isset($_GET['boardid']) || intval($_GET['boardid']) <= 0) && (!isset($_GET['replyto']) && !isset($_GET['edit']) && !isset($_GET['delete']) && !isset($_GET['quote']))) {
             // BOARDLIST
@@ -1388,15 +1375,14 @@ class serendipity_event_forum extends serendipity_event {
                     } else {
                         $boards[$a]['lastpost'] = PLUGIN_FORUM_NO_ENTRIES;
                     }
+
                     if ($thiscolor == $this->get_config('bgcolor2')) { $thiscolor = $this->get_config('bgcolor1'); } else { $thiscolor = $this->get_config('bgcolor2'); }
+
                     $boards[$a]['color'] = $thiscolor;
                     $boards[$a]['name'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($boards[$a]['name']) : htmlspecialchars($boards[$a]['name'], ENT_COMPAT, LANG_CHARSET));
                     $temp_array = array('body' => (function_exists('serendipity_specialchars') ? serendipity_specialchars(trim(stripslashes($boards[$a]['description']))) : htmlspecialchars(trim(stripslashes($boards[$a]['description'])), ENT_COMPAT, LANG_CHARSET)));
                     serendipity_plugin_api::hook_event('frontend_display', $temp_array);
                     $boards[$a]['description'] = trim($temp_array['body']);
-
-
-
                 }
                 $serendipity['smarty']->assign(
                     array(
@@ -1443,11 +1429,9 @@ class serendipity_event_forum extends serendipity_event {
                     )
                 );
 
-
                 if (serendipity_userLoggedIn() && $serendipity['serendipityUserlevel'] == USERLEVEL_ADMIN) {
                     $serendipity['smarty']->assign('announcement', true);
                 }
-
 
                 if ((serendipity_userLoggedIn() && $this->get_config('fileupload_reguser')) || ($this->get_config('fileupload_guest'))) {
                     $upload_max_filesize = ini_get('upload_max_filesize');
@@ -1615,9 +1599,6 @@ class serendipity_event_forum extends serendipity_event {
                             }
                         }
 
-
-
-
                         $paging = "";
                         $sql = "SELECT COUNT(*) FROM {$serendipity['dbPrefix']}dma_forum_posts WHERE threadid='".intval($threads[$a]['threadid'])."'";
                         $postnum = serendipity_db_query($sql);
@@ -1781,20 +1762,14 @@ class serendipity_event_forum extends serendipity_event {
                         $posts[$a]['message'] = nl2br((function_exists('serendipity_specialchars') ? serendipity_specialchars(trim(stripslashes($posts[$a]['message']))) : htmlspecialchars(trim(stripslashes($posts[$a]['message'])), ENT_COMPAT, LANG_CHARSET)));
                     }
 
-
-
-
                     unset($email);
                     unset($gravatar_array);
                     unset($posts[$a]['gravatar']);
                     $authorid = intval(trim($posts[$a]['authorid']));
                     if ($authorid >= 1) {
 
-
                         $sql = "SELECT email FROM {$serendipity['dbPrefix']}authors WHERE authorid = '".$authorid."'";
                         $email = serendipity_db_query($sql);
-
-
 
                         $gravatar_array = array(
                                             'comment'   => "",
@@ -1805,11 +1780,6 @@ class serendipity_event_forum extends serendipity_event {
                             $posts[$a]['gravatar'] = $gravatar_array['comment'];
                         }
                     }
-
-
-
-
-
 
                     $POSTBUTTONS = "";
                     if ($thread[0]['flag'] != 1) {
@@ -1849,15 +1819,11 @@ class serendipity_event_forum extends serendipity_event {
                             $content_type = $mime['TYPE'];
 
                             $posts[$a]['upload'][$y]['filename'] = "<a href=\"".$serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "") . "plugin/forumdl_".intval($uploads[$y]['uploadid'])."\">".(function_exists('serendipity_specialchars') ? serendipity_specialchars(basename($uploads[$y]['realfilename'])) : htmlspecialchars(basename($uploads[$y]['realfilename']), ENT_COMPAT, LANG_CHARSET))."</a>";
-
-
-
-
-
                             $posts[$a]['upload'][$y]['filesize'] = $filesize;
                             $posts[$a]['upload'][$y]['fileicon'] = $fileicon;
                             $posts[$a]['upload'][$y]['filetype'] = $content_type;
                             $posts[$a]['upload'][$y]['dlcount'] = intval($uploads[$y]['dlcount']);
+
                             if (serendipity_userLoggedIn() && (($serendipity['serendipityUserlevel'] == USERLEVEL_ADMIN) || (intval($uploads[$y]['authorid']) == intval($serendipity['authorid'])))) {
                                 $posts[$a]['upload'][$y]['delbutton'] = "<a href=\"".$serendipity['baseURL']."index.php?serendipity[subpage]=".$this->get_config('pageurl')."&amp;boardid=".intval($_GET['boardid'])."&amp;threadid=".intval($_GET['threadid'])."&amp;page=".$page."&amp;delfile=".intval($uploads[$y]['uploadid'])."#".intval($posts[$a]['postid'])."\">".$DEL_FILE_BUTTON."</a>";
                             }
@@ -1880,7 +1846,6 @@ class serendipity_event_forum extends serendipity_event {
                     }
                 }
 
-
                 if (serendipity_userLoggedIn()) {
                     if (trim($thread[0]['notifymails']) != "") {
                         $NOTIFYARRAY = unserialize(stripslashes(trim($thread[0]['notifymails'])));
@@ -1897,8 +1862,6 @@ class serendipity_event_forum extends serendipity_event {
                     $serendipity['smarty']->assign('subscribeurl', $subscribeurl);
                     $serendipity['smarty']->assign('unsubscribeurl', $unsubscribeurl);
                 }
-
-
 
                 $serendipity['smarty']->assign(
                     array(
@@ -1927,25 +1890,20 @@ class serendipity_event_forum extends serendipity_event {
             $serendipity['smarty']->assign('THREADBUTTONS', $THREADBUTTONS);
         }
 
-        $serendipity['smarty']->assign('plugin_eventforum_not20', (($serendipity['version'][0] < 2) ? true : false));
-
         $filename = $filename;
         $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
         if (!$tfile || $tfile == $filename) {
             $tfile = dirname(__FILE__) . '/' . $filename;
         }
-        $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
         $content = $serendipity['smarty']->fetch('file:'. $tfile);
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = $inclusion;
         echo $content;
     }
 
-
-
-
-
-    function forumAdmin() {
+    /**
+     *
+     */
+    function forumAdmin()
+    {
         global $serendipity;
         if (!headers_sent()) {
             header('HTTP/1.0 200');
@@ -1958,7 +1916,6 @@ class serendipity_event_forum extends serendipity_event {
         $OUTPUT = "";
         $OUTPUT .= "<h2>".PLUGIN_FORUM_TITLE."</h2>\n";
         $OUTPUT .= PLUGIN_FORUM_DESC."<br /><br />\n";
-
 
         // POST part
         if (isset($serendipity['POST']['action']) && (trim($serendipity['POST']['action']) == "delete" && (is_array($serendipity['POST']['delboard']) || trim($serendipity['POST']['s_delboard']) != ""))) {
@@ -2005,7 +1962,7 @@ class serendipity_event_forum extends serendipity_event {
                     </tr>
                     </form>
                 </table>\n";
-            } elseif(trim($serendipity['POST']['s_delboard']) != "" && isset($serendipity['POST']['yes']) && $serendipity['POST']['yes'] != "") {
+            } elseif (trim($serendipity['POST']['s_delboard']) != "" && isset($serendipity['POST']['yes']) && $serendipity['POST']['yes'] != "") {
                 $delboards = unserialize(str_replace("M", "\"", trim(stripslashes($serendipity['POST']['s_delboard']))));
                 DMA_forum_DeleteBoards($delboards, $serendipity['POST']['moveto'], $this->get_config('uploaddir'));
             }
@@ -2070,17 +2027,6 @@ class serendipity_event_forum extends serendipity_event {
             DMA_forum_CheckLastProperties(intval($serendipity['POST']['boardid']));
         }
 
-
-
-
-
-
-
-
-
-
-
-
         // GET part
         if (isset($_GET['action']) && (trim($_GET['action']) == "down" || trim($_GET['action']) == "up")) {
             //  Reorder the boards
@@ -2097,7 +2043,7 @@ class serendipity_event_forum extends serendipity_event {
                 $tmp = $boards[$idx_to_move]['sortorder'];
                 $boards[$idx_to_move]['sortorder'] = (int)$boards[$idx_to_move + (trim($_GET['action']) == 'down' ? 1 : -1)]['sortorder'];
                 $boards[$idx_to_move + (trim($_GET['action']) == 'down' ? 1 : -1)]['sortorder'] = (int)$tmp;
-                foreach($boards as $board) {
+                foreach($boards AS $board) {
                     $key = intval($board['boardid']);
                     serendipity_db_query("UPDATE {$serendipity['dbPrefix']}dma_forum_boards SET sortorder = {$board['sortorder']} WHERE boardid='$key'");
                 }
@@ -2276,33 +2222,39 @@ class serendipity_event_forum extends serendipity_event {
         echo $OUTPUT;
     }
 
-
-
-
-
-
-
-    function generate_content(&$title) {
+    /**
+     *
+     */
+    function generate_content(&$title)
+    {
         global $serendipity;
         if (!headers_sent()) {
             header('HTTP/1.0 200');
             header('Status: 200 OK');
         }
         $title = PLUGIN_FORUM_TITLE.' ('.$this->get_config('pageurl').')';
-        if ($serendipity['GET']['subpage'] == $this->get_config('pageurl')) {
+        if (isset($serendipity['GET']['subpage']) && $serendipity['GET']['subpage'] == $this->get_config('pageurl')) {
             $serendipity['head_title'] = $this->get_config('pagetitle');
             $serendipity['head_subtitle'] = $this->get_config('headline');
         }
     }
 
-    function install() {
+    /**
+     *
+     */
+    function install()
+    {
         $this->setupDB();
     }
 
-    function logMSG($msg, $forceOutput = false) {
+    /**
+     *
+     */
+    function logMSG($msg, $forceOutput = false)
+    {
         global $serendipity;
         $debug = false;
-        
+
         if (empty($msg)) {
             return false;
         }
@@ -2318,7 +2270,11 @@ class serendipity_event_forum extends serendipity_event {
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    /**
+     *
+     */
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         static $phpbb_mirror = null;
@@ -2339,16 +2295,13 @@ class serendipity_event_forum extends serendipity_event {
         }
 
         $hooks = &$bag->get('event_hooks');
+
         if (isset($hooks[$event])) {
             switch($event) {
 
-
                 case 'entries_header' :
                     $this->show();
-                    return true;
                     break;
-
-
 
                 case 'entry_display' :
                     if (($serendipity['GET']['subpage'] == $this->get_config('pageurl'))) {
@@ -2358,23 +2311,18 @@ class serendipity_event_forum extends serendipity_event {
                             $eventData = array ('clean_page' => true);
                         }
                     }
-                    return true;
                     break;
 
-
-
-                case 'backend_sidebar_entries':
+                case 'backend_sidebar_admin_appearance':
                     $this->setupDB();
                     if ($serendipity['serendipityUserlevel'] < USERLEVEL_ADMIN) {
                         break;
                     } else {
-                    ?>
+?>
                     <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=forum"><?php echo PLUGIN_FORUM_TITLE; ?></a></li>
-                    <?php
+<?php
                     }
                     break;
-
-
 
                 case 'backend_sidebar_entries_event_display_forum':
                     if ($serendipity['serendipityUserlevel'] < USERLEVEL_ADMIN) {
@@ -2383,7 +2331,6 @@ class serendipity_event_forum extends serendipity_event {
                         $this->forumAdmin();
                     }
                     break;
-
 
                 case 'external_plugin':
                     if (isset($eventData['setthreadcookie']) && intval($eventData['setthreadcookie']) >= 1) {
@@ -2411,7 +2358,6 @@ class serendipity_event_forum extends serendipity_event {
                             }
                         }
                     }
-
 
                     $parts     = explode('_', $uri_parts[0]);
                     if (!empty($parts[1])) {
@@ -2495,13 +2441,9 @@ class serendipity_event_forum extends serendipity_event {
                                 header("Connection: close");
                                 echo $contents;
                             }
-
                             break;
                     }
-
-                    return true;
                     break;
-
 
                 case 'backend_save':
                 case 'backend_publish':
@@ -2531,7 +2473,7 @@ class serendipity_event_forum extends serendipity_event {
                     $prefix = $this->get_config('phpbb_db_prefix');
                     $fid    = (int)$this->get_config('phpbb_forum');
                     $topic_poster = (int)$this->get_config('phpbb_poster');
-                    
+
                     if ($phpbb_mirror == 4) {
                         $tp = mysql_query("SELECT realName AS username FROM {$prefix}members WHERE ID_MEMBER = $topic_poster");
                     } else {
@@ -2540,7 +2482,6 @@ class serendipity_event_forum extends serendipity_event {
                     if (mysql_num_rows($tp) > 0) {
                         $topic_poster_data = mysql_fetch_array($tp, MYSQL_ASSOC);
                     }
-                    
 
                     if ($event == 'backend_save') {
                         $r = serendipity_db_query("SELECT value, property
@@ -2579,7 +2520,7 @@ class serendipity_event_forum extends serendipity_event {
                                             SET post_subject = '" . serendipity_db_escape_string($eventData['title']) . "',
                                                 post_text    = '" . serendipity_db_escape_string($eventData['body'] . $eventData['extended']) . "'
                                           WHERE post_id = " . (int)$r['phpbb_post']['value'], $con);
-                        }              
+                        }
                         $this->logMSG(mysql_error(), true);
 
                         return true;
@@ -2617,7 +2558,7 @@ class serendipity_event_forum extends serendipity_event {
                         mysql_query("INSERT INTO {$prefix}posts_text (post_id, post_subject, post_text)
                                           VALUES ($post_id, '" . serendipity_db_escape_string($eventData['title']) . "', '" . serendipity_db_escape_string($eventData['body'] . $eventData['extended']) . "')", $con);
                         $this->logMSG(mysql_error(), true);
-                    }    
+                    }
 
                     if ($phpbb_mirror == 4) {
                         mysql_query("UPDATE {$prefix}topics
@@ -2670,8 +2611,7 @@ class serendipity_event_forum extends serendipity_event {
                                                VALUES (" . (int)$eventData['id'] . ", 'phpbb_post', $post_id)");
                     serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value)
                                                VALUES (" . (int)$eventData['id'] . ", 'phpbb_url', '" . $url . "')");
-
-                    return true;
+                    break;
 
                 case 'frontend_saveComment':
                     if (!$phpbb_mirror) {
@@ -2733,7 +2673,7 @@ class serendipity_event_forum extends serendipity_event {
                         mysql_query($q1, $con);
                         $this->logMSG(mysql_error(), true);
                         $post_id = mysql_insert_id($con);
-    
+
                         $q2 = "INSERT INTO {$prefix}posts_text (post_id, post_subject, post_text)
                                           VALUES ($post_id, '" . strip_tags(serendipity_db_escape_string($addData['title'])) . "', '" . strip_tags(serendipity_db_escape_string($addData['comment'])) . "')";
                         mysql_query($q2, $con);
@@ -2741,10 +2681,10 @@ class serendipity_event_forum extends serendipity_event {
                     }
 
                     if ($phpbb_mirror == 4) {
-                        $q3 = "UPDATE {$prefix}topics 
-                                  SET numReplies = numReplies + 1, 
-                                      ID_MEMBER_UPDATED = 0, 
-                                      ID_LAST_MSG = $post_id 
+                        $q3 = "UPDATE {$prefix}topics
+                                  SET numReplies = numReplies + 1,
+                                      ID_MEMBER_UPDATED = 0,
+                                      ID_LAST_MSG = $post_id
                                 WHERE ID_TOPIC = $topic_id";
                     } elseif ($phpbb_mirror == 3) {
                         $q3 = "UPDATE {$prefix}topics SET topic_replies = topic_replies + 1, topic_replies_real = topic_replies_real + 1, topic_last_poster_id = 1, topic_last_poster_name = '" . strip_tags(serendipity_db_escape_string($addData['name'])) . "', topic_last_post_id = $post_id WHERE topic_id = $topic_id";
@@ -2772,8 +2712,7 @@ class serendipity_event_forum extends serendipity_event {
                     header('Status: 302 Found');
                     header('Location: ' . $phpbb_url);
                     exit;
-
-                    return true;
+                    break;
 
                 case 'frontend_display:html:per_entry':
                     if (!$phpbb_mirror) {
@@ -2783,7 +2722,7 @@ class serendipity_event_forum extends serendipity_event {
                     #$this->logMSG('PHPBB Entry #' . $eventData['id'] . ': ' . print_r($eventData['properties'], true));
                     $eventData['display_dat'] .= $eventData['phpbb_discuss'] = '<a class="phpbb_link" href="' . $eventData['properties']['phpbb_url'] . '">' . FORUM_PLUGIN_PHPBB_DISCUSS . '</a>';
                     break;
-                    
+
                 case 'frontend_display':
                     if (!$phpbb_mirror || !is_array($eventData['properties']) || !isset($eventData['comments'])) {
                         return true;
@@ -2794,7 +2733,7 @@ class serendipity_event_forum extends serendipity_event {
                         if (!$con) {
                             return false;
                         }
-    
+
                         mysql_select_db($this->get_config('phpbb_db_name'), $con);
 
                         mysql_query("SET NAMES " . SQL_CHARSET);
@@ -2803,7 +2742,7 @@ class serendipity_event_forum extends serendipity_event {
                         $basepost_id = $eventData['properties']['phpbb_post'];
                         $topic_id = $eventData['properties']['phpbb_topic'];
                         $phpbb_url = $eventData['properties']['phpbb_url'];
-                        
+
                         if ($phpbb_mirror == 4) {
                             $pq = "SELECT count(m.ID_MSG) AS postcount
                                                        FROM {$prefix}messages AS m
@@ -2827,8 +2766,7 @@ class serendipity_event_forum extends serendipity_event {
                             }
                         }
                     }
-
-                    return true;
+                    break;
 
                 case 'fetchcomments':
                     if (!$phpbb_mirror || !is_array($eventData)) {
@@ -2842,7 +2780,7 @@ class serendipity_event_forum extends serendipity_event {
                             unset($eventData[$idx]);
                         }
                     }
-                    
+
                     if (empty($entryid) && isset($addData['id'])) {
                         $entryid = $addData['id'];
                     }
@@ -2862,7 +2800,7 @@ class serendipity_event_forum extends serendipity_event {
                         $this->logMSG(mysql_error(), true);
                         return false;
                     }
-                    
+
                     mysql_query("SET NAMES " . SQL_CHARSET);
 
 
@@ -2887,11 +2825,11 @@ class serendipity_event_forum extends serendipity_event {
                                                         p.posterTime AS timestamp,
                                                         p.subject AS ctitle,
                                                         p.body AS body,
-                                                        'NORMAL' as type,
+                                                        'NORMAL' AS type,
                                                         0 AS subscribed,
-                                                        
+
                                                         IF(m.realName != '', m.realName, p.posterName) AS author
-    
+
                                                    FROM {$prefix}messages AS p
 
                                         LEFT OUTER JOIN {$prefix}members AS m
@@ -2908,10 +2846,10 @@ class serendipity_event_forum extends serendipity_event {
                                                         p.post_time AS timestamp,
                                                         p.post_subject AS ctitle,
                                                         p.post_text AS body,
-                                                        'NORMAL' as type,
+                                                        'NORMAL' AS type,
                                                         0 AS subscribed,
                                                         p.post_username AS author
-    
+
                                                    FROM {$prefix}posts AS p
                                                   WHERE p.topic_id = $topic_id
                                                     AND p.post_id != $basepost_id
@@ -2923,10 +2861,10 @@ class serendipity_event_forum extends serendipity_event {
                                                         p.post_time AS timestamp,
                                                         pt.post_subject AS ctitle,
                                                         pt.post_text AS body,
-                                                        'NORMAL' as type,
+                                                        'NORMAL' AS type,
                                                         0 AS subscribed,
                                                         p.post_username AS author
-    
+
                                                    FROM {$prefix}posts AS p
                                                    JOIN {$prefix}posts_text AS pt
                                                      ON p.post_id = pt.post_id
@@ -2949,16 +2887,17 @@ class serendipity_event_forum extends serendipity_event {
                         $return[] = $row;
                     }
                     $eventData = $return;
-                    
+
                     serendipity_db_Query("UPDATE {$serendipity['dbPrefix']}entries SET comments = " . count($eventData) . " WHERE id = " . (int)$entryid);
-                    return true;
+                    break;
 
                 case 'css':
                     if (strpos($eventData, '.forum-') !== false) {
                         // class exists in CSS, so a user has customized it and we don't need default
                         return true;
                     }
-?>
+                    $eventData .= '
+
 .forum-filebox {
     font: normal 12px Courier, Courier New, fixed;
     background-color: #fffde0;
@@ -2968,17 +2907,17 @@ class serendipity_event_forum extends serendipity_event {
     margin: 10px auto;
     padding: 5px;
 }
-<?php
-                    return true;
+
+';
                     break;
 
-
+                default:
+                    return false;
             }
+            return true;
         }
-
-        return true;
+        return false;
     }
-
 
 }
 
