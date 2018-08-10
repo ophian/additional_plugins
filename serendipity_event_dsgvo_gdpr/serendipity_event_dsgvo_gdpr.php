@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '1.73');
+        $propbag->add('version',       '1.74');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -610,6 +610,9 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     break;
 
                 case 'frontend_footer':
+                    if (isset($serendipity['serendipityUserlevel']) && $serendipity['serendipityUserlevel'] == USERLEVEL_ADMIN) {
+                        break;
+                    }
                     if (serendipity_db_bool($this->get_config('show_in_footer', 'true'))) {
                         echo '<div class="dsgvo_gdpr_footer">' . $this->parseText($this->get_config('show_in_footer_text')) . "</div>\n";
                     }
