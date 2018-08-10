@@ -1,8 +1,8 @@
-{* dlmanager.filelist.tpl last modified 2016-07-14 *}
+{* dlmanager.filelist.tpl last modified 2018-08-08 *}
 <div id="downloadmanager" class="serendipity_Entry_Date">
 <!-- dlmanager.filelist.tpl start -->
-    <h3 class="serendipity_date">{$pagetitle}</h3>
-    <h4 class="serendipity_title">{$headline}</h4>
+    <h4 class="serendipity_date">{$pagetitle}</h4>
+    <h5 class="serendipity_title">{$headline}</h5>
     {if !empty($dlm_intro)}<div class="dlm_intro">{$dlm_intro}</div>{/if}
 
     {if $dlm_is_registered == false || $is_logged_in}
@@ -12,7 +12,7 @@
             <li>{$CONST.PLUGIN_DOWNLOADMANAGER_SUBCATEGORIES}: {$numsubcats}</li>
             <li>{$CONST.PLUGIN_DOWNLOADMANAGER_DLS_IN_THIS_CAT}: {$numdls}</li>
         </ul>
-        {if $has_subcats}
+        {if !empty($has_subcats)}
 
         <table id="subcatlist" cellspacing="0">
         <thead>
@@ -51,7 +51,7 @@
 
                 <th class="dlm_filelist_size"> {$filesize_field}</th>
             {/if}
-            {if $filedate_field}
+            {if !empty($filedate_field)}
 
                 <th class="dlm_filelist_date"> {$filedate_field}</th>
             {/if}
@@ -63,7 +63,7 @@
 
             <tr class="dlm_file {cycle name="cycle2" values="odd,even"}">
                 <td class="dlm_filename">
-                    <a href="{$fltable[file].info.iconurl}" class="dlm_fileicon"><img src="{$fltable[file].info.iconfile}" width="{$fltable[file].info.iconwidth}" height="{$fltable[file].info.iconheight}" alt="{$fltable[file].info.icontype}" title="{$fltable[file].info.icontype}" /></a>{if $fltable[file].is.showfilename} <a href="{$fltable[file].info.nameurl}" class="dlm_filename" title="{$fltable[file].file.realfilename}">{$fltable[file].file.realfilename}</a>{/if}{if $fltable[file].is.showdesc_inlist && $fltable[file].info.file_desc} <span class="dlm_filedesc">{$fltable[file].info.file_desc}{/if}
+                    <a href="{$fltable[file].info.iconurl}" class="dlm_fileicon"><img src="{$fltable[file].info.iconfile}" width="{$fltable[file].info.iconwidth}" height="{$fltable[file].info.iconheight}" alt="{$fltable[file].info.icontype}" title="{$fltable[file].info.icontype}" /></a>{if $fltable[file].is.showfilename} <a href="{$fltable[file].info.nameurl}" class="dlm_filename" title="{$fltable[file].file.realfilename}">{$fltable[file].file.realfilename}</a>{/if}{if !empty($fltable[file].is.showdesc_inlist) && $fltable[file].info.file_desc} <span class="dlm_filedesc">{$fltable[file].info.file_desc}{/if}
 
                 </td>
                 {if $fltable[file].is.showdownloads}
@@ -74,7 +74,7 @@
 
                 <td class="dlm_filesize">{$fltable[file].info.filesize}</td>
                 {/if}
-                {if $fltable[file].is.showdate}
+                {if !empty($fltable[file].is.showdate)}
 
                 <td class="dlm_filedate">{$fltable[file].info.filedate}</td>
                 {/if}

@@ -24,14 +24,15 @@
     border: 1px solid #aaa;
     margin: 10px 0;
     width: 96%;
+    font-size: .875rem;
 }
 
 #downloadmanager th {
     border-bottom: 1px solid #aaa;
     font-weight: bold;
+    padding: 4px 2px;
 }
 
-#downloadmanager th { padding: 4px 2px; }
 #downloadmanager td { padding: 0 2px; line-height:1.6; }
 
 #downloadmanager .error { color: #f00; }

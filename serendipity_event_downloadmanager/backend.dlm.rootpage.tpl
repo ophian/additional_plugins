@@ -1,4 +1,4 @@
-{* backend.dlm.rootpage.tpl last modified 2016-06-06 *}
+{* backend.dlm.rootpage.tpl last modified 2018-08-10 *}
 {if $dlmgbl.thispage == 1 && $dlmact.addcat === true}
 {* Add category to selectfield cat *}
 <p id="dlm_addcat_header" class="dlm_backend_option"><a href="#" onclick="showConfig('dlm1'); return false" title="{$CONST.TOGGLE_OPTION}"><img src="{serendipity_getFile file="img/plus.png"}" id="optiondlm1" alt="+/-" /> {$CONST.PLUGIN_DOWNLOADMANAGER_ADD_CAT}</a></p>
@@ -19,8 +19,8 @@
         <div class="addcat_field">
             <label for="addcat_childof">{$CONST.PLUGIN_DOWNLOADMANAGER_SUBCAT_OF}</label>
             <select id="addcat_childof" name="serendipity[childof]">
-            {foreach from=$dlmact.selcatlist item="thiscat"}
-                <option value="{$thiscat.cat.node_id}"{if $thiscat.cat.node_id == $id} selected{/if}>{if $thiscat.cat.node_id != 1}&nbsp;&nbsp;{/if}{if is_array( $thiscat.imgname )}{foreach from=$thiscat.imgname item="tab"}{if $tab == 'e'}&nbsp;&nbsp;&nbsp;&nbsp;{/if}{if $tab == 'l'}&nbsp;&nbsp;&nbsp;|{/if}{if $tab == 'b' || $tab == 'nb'}&nbsp;&nbsp;&nbsp;{/if}{/foreach}{/if}{$thiscat.cat.payload}</option>
+            {foreach $dlmact.selcatlist AS $thiscat}
+                <option value="{$thiscat.cat.node_id}"{if isset($id) AND $thiscat.cat.node_id == $id} selected{/if}>{if $thiscat.cat.node_id != 1}&nbsp;&nbsp;{/if}{if is_array( $thiscat.imgname )}{foreach $thiscat.imgname AS $tab}{if $tab == 'e'}&nbsp;&nbsp;&nbsp;&nbsp;{/if}{if $tab == 'l'}&nbsp;&nbsp;&nbsp;|{/if}{if $tab == 'b' || $tab == 'nb'}&nbsp;&nbsp;&nbsp;{/if}{/foreach}{/if}{$thiscat.cat.payload}</option>
             {/foreach}
             </select>
         </div>
@@ -42,19 +42,19 @@
     <thead>
         <tr>
             <th>{$dlmgbl.filename_field}</th>
-            <th>{$dlmgbl.filenums_field}</th>
+            <th title="{$CONST.PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS}"><span class="icon icon-download"></span></th>
             <th>{$dlmgbl.filesize_field}</th>
             <th>{$dlmgbl.filedate_field}</th>
         </tr>
     </thead>
     {if is_array( $dlmcfs.filelist )}
     <tbody>
-    {foreach from=$dlmcfs.filelist item="file"}
+    {foreach $dlmcfs.filelist AS $file}
         <tr class="{cycle name="cycle1" values="odd,even"}">
             <td>
                 <input name="dlm[files][]" value="{$file.id}" type="checkbox">
-                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmgbl.thiscat}&amp;delfile={$file.id}"><img src="{$dlmgbl.httppath}img/del.png" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_DEL_FILE}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_DEL_FILE}" /></a>
-                <a href="{$dlmcfs.downloadpath}{$file.id}"><img src="{$dlmgbl.httppath}img/dl.png" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_DOWNLOAD_FILE}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_DOWNLOAD_FILE}" /></a>
+                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmgbl.thiscat}&amp;delfile={$file.id}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_DEL_FILE}"><span class="icon icon-trash-empty"></span></a>
+                <a href="{$dlmcfs.downloadpath}{$file.id}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_DOWNLOAD_FILE}"><span class="icon icon-download"></span></a>
                 <img src="{$file.mime.ICON}" width="16" height="16" alt="{$file.mime.TYPE}" title="{$file.mime.TYPE}" />
                 <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmgbl.thiscat}&amp;editfile={$file.id}">{$file.realfilename}</a>
             </td>
@@ -121,7 +121,7 @@
             {else}
                 <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;hidecat=1&amp;hide=0&amp;catid={$dlmhcs.catlist[cat].cat.node_id}"><img src="{$dlmgbl.httppath}img/unhide2.png" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_UNHIDE_TREE}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_UNHIDE_TREE}" /></a>
             {/if}
-            {foreach from=$dlmhcs.catlist[cat].imgname item="s"}<img src="{$dlmgbl.httppath}img/{$s}.gif" alt="tree" /> {/foreach}
+            {foreach $dlmhcs.catlist[cat].imgname AS $s}<img src="{$dlmgbl.httppath}img/{$s}.gif" alt="tree" /> {/foreach}
             {if $dlmhcs.catlist[cat].cat.hidden != 1}
                 <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmhcs.catlist[cat].cat.node_id}"><img src="{$dlmgbl.httppath}{if $dlmhcs.catlist[cat].cat.node_id == $dlmhcs.cn}img/fex.png{else}img/f.png{/if}" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_OPEN_CAT}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_OPEN_CAT}" /></a>
             {else}
@@ -167,7 +167,7 @@
     <!-- // div container page {$dlmgbl.thispage} dlm(4) -->
     <div id="dlm4" class="dlm_help_box">
         <ul>
-        {foreach from=$dlmapx.helplist item='help'}
+        {foreach $dlmapx.helplist AS $help}
             <li>{$help}</li>
         {/foreach}
         </ul>

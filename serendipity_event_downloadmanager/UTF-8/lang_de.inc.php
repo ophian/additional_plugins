@@ -36,8 +36,8 @@
 @define('PLUGIN_DOWNLOADMANAGER_FILESIZE_FIELD_BLAHBLAH', 'Eintragen eines beliebigen Namens für das Dateigröße-Feld in der Dateiliste');
 @define('PLUGIN_DOWNLOADMANAGER_FILEDATE_FIELD', 'Bezeichnung des Dateidatum-Felds');
 @define('PLUGIN_DOWNLOADMANAGER_FILEDATE_FIELD_BLAHBLAH', 'Eintragen eines beliebigen Namens für das Dateidatum-Feld in der Dateiliste');
-@define('PLUGIN_DOWNLOADMANAGER_DLS_FIELD', 'Bezeichnung des \'Anzahl bisheriger Downloads\'-Felds');
-@define('PLUGIN_DOWNLOADMANAGER_DLS_FIELD_BLAHBLAH', 'Eintragen eines beliebigen Namens für das \'Anzahl bisheriger Downloads\'-Feld in der Dateiliste');
+@define('PLUGIN_DOWNLOADMANAGER_DLS_FIELD', 'Kürzel des Tabellen-Feldes: Anzahl-Downloads');
+@define('PLUGIN_DOWNLOADMANAGER_DLS_FIELD_BLAHBLAH', 'Eintragen eines beliebigen Namens oder ikonographischen Zeichens wie "#" für das \'Anzahl bisheriger Downloads\'-Feld in der Dateiliste');
 @define('PLUGIN_DOWNLOADMANAGER_ICONWIDTH', 'Icon Breite');
 @define('PLUGIN_DOWNLOADMANAGER_ICONWIDTHBLAH', 'Breite der Dateiicons in der Dateiliste');
 @define('PLUGIN_DOWNLOADMANAGER_ICONHEIGHT', 'Icon Höhe');
@@ -49,7 +49,7 @@
 @define('PLUGIN_DOWNLOADMANAGER_CATEGORIES', 'Kategorien');
 @define('PLUGIN_DOWNLOADMANAGER_SUBCATEGORIES', 'Unter-Kategorien');
 @define('PLUGIN_DOWNLOADMANAGER_CATEGORY', 'Kategorie');
-@define('PLUGIN_DOWNLOADMANAGER_NUMBER_OF_DOWNLOADS', '# Dateien');
+@define('PLUGIN_DOWNLOADMANAGER_NUMBER_OF_DOWNLOADS', 'Dateien');
 @define('PLUGIN_DOWNLOADMANAGER_CATNAME', 'Kategorie-Name:');
 @define('PLUGIN_DOWNLOADMANAGER_SUBCAT_OF', 'Unter-Kategorie von:');
 @define('PLUGIN_DOWNLOADMANAGER_ADD_CAT', 'Neue Kategorie erstellen');
@@ -63,7 +63,7 @@
 @define('PLUGIN_DOWNLOADMANAGER_FILENAME', 'Dateiname');
 @define('PLUGIN_DOWNLOADMANAGER_FILESIZE', 'Dateigröße');
 @define('PLUGIN_DOWNLOADMANAGER_FILEDATE', 'Datum');
-@define('PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS', 'dls');
+@define('PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS', 'Anzahl der Downloads');
 @define('PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS_BLAH', 'Anzahl der Downloads');
 @define('PLUGIN_DOWNLOADMANAGER_IMPORT_FILE', 'Importieren von dieser Datei in die aktuelle Kategorie...');
 @define('PLUGIN_DOWNLOADMANAGER_COPY_NOT_ALLOWED', 'Konnte Datei nicht in das Download-Verzeichnis kopieren!<br />Dies kann zB. passieren, wenn das encoding nicht stimmt. oder wenn der SAFE_MODE aktiviert ist<br />Bitte SAFE_MODE in der php.ini deaktivieren!');
@@ -133,7 +133,7 @@
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_CF_CHANGE', 'Kategorie Name im Feld selbst ändern / <em>Enter</em>');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_VIEW', 'Um das ftp/trash Verzeichnis zu sehen, wählen sie einen Subordner von root.');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_MULTI', 'Alle Dateien im ftp/trash Verzeichnis werden sofort gelöscht!');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_SINGLE', 'Alle Löschungen über den aktiven roten Button werden sofort gelöscht!');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_SINGLE', 'Alle Löschungen über den aktiven roten bzw Mülleimer Button werden sofort gelöscht!');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_ERASE', 'Alle markierten und gelöschten (x) Dateien, werden in das ftp/trash Verzeichnis <b>verschoben</b>,<br />&nbsp;&nbsp;&nbsp;um das versehentliche Löschen vieler Dateien zu vermeiden!');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_KEEP', 'Dateien behalten, aber nicht im Frontend zeigen? Verschieben Sie sie in den root Ordner,<br />&nbsp;&nbsp;&nbsp;oder erstellen Sie einen verstecken Subordner! Beachten Sie, dass es 2 Config Einstellungen<br />&nbsp;&nbsp;&nbsp;bezüglich registrierter und eingeloggter Benutzer des Blog im Frontend gibt.');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_CHANGE', 'Datei Name ändern auf der Datei-Link Sub-Seite.');

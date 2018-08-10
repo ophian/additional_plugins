@@ -1,4 +1,4 @@
-{* backend.dlm.index.tpl last modified 2016-07-06 *}
+{* backend.dlm.index.tpl last modified 2018-08-10 *}
 
 {* PLEASE READ CAREFULLY:
    The DownLoadManagers (dlm) backend template vars have their own array name to be unique in global context of Serendipity blog.
@@ -25,24 +25,24 @@
 <script type="text/javascript" src="{$dlmgbl.httppath}dlm_functions.js"></script>
 
 <div id="backend_downloadmanager">
-{if $dlmerr.thiserror === true}
+{if isset($dlmerr) AND $dlmerr.thiserror === true}
     <{$div|default:'span'} id="dlm_messages">
-    {if $dlmerr.errormsg}
-    {foreach from=$dlmerr.errormsg item="msg"}
+    {if !empty($dlmerr.errormsg)}
+    {foreach $dlmerr.errormsg AS $msg}
         <{$tag|default:'span'} class="serendipityAdminMsgError msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> {$msg}</{$tag|default:'span'}>
     {/foreach}
-    {elseif $dlmerr.successmsg}
-    {foreach from=$dlmerr.successmsg item="msg"}
+    {elseif !empty($dlmerr.successmsg)}
+    {foreach $dlmerr.successmsg AS $msg}
         <{$tag|default:'span'} class="serendipityAdminMsgNotice msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> {$msg}</{$tag|default:'span'}>
     {/foreach}
-    {elseif $dlmerr.statusmsg}
-    {foreach from=$dlmerr.statusmsg item="msg"}
+    {elseif !empty($dlmerr.statusmsg)}
+    {foreach $dlmerr.statusmsg AS $msg}
         <{$tag|default:'span'} class="serendipityAdminMsgNotice msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> {$msg}</{$tag|default:'span'}>
     {/foreach}
     {/if}
     </{$div|default:'span'}>
 {/if}
-{if !$dlmefe.thistype && !$dlmulf.thistype}
+{if (empty($dlmefe) OR !$dlmefe.thistype) && (empty($dlmulf) OR !$dlmulf.thistype)}
     <p id="dlm_toggle_optionall"><a href="#" onclick="showConfigAll({if $dlmgbl.thispage == 1}3{else}4{/if})" title="{$CONST.TOGGLE_ALL}"><img src="{serendipity_getFile file="img/plus.png"}" id="optionall" alt="+/-" />&nbsp;{$CONST.TOGGLE_ALL}</a></p>
 {/if}
     <h3>{$CONST.PLUGIN_DOWNLOADMANAGER_BACKEND_TITLE|replace:"%s":$dlmgbl.thisversion}</h3>
@@ -55,26 +55,26 @@
 {/if}
 
 {if $dlmgbl.thispage == 2}
-    {if true === ( $dlmcfs.catfiles || $dlmtfp.thisftp || $dlmtsl.thissml || $dlmhcs.hascats || $dlmapx.appendix )}
+    {if true === ( (isset($dlmcfs.catfiles) && $dlmcfs.catfiles) || (isset($dlmtfp.thisftp) && $dlmtfp.thisftp) || (isset($dlmtsl.thissml) && $dlmtsl.thissml) || (isset($dlmhcs.hascats) && $dlmhcs.hascats) || (isset($dlmapx.appendix) && $dlmapx.appendix) )}
     {* header section page 2 normally *}
     <div class="dlm_page_header">
-        <div class="dlm_back_root"><a id="back" class="button_link" href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager" title="{$CONST.BACK}&hellip;"><img src="{$dlmgbl.httppath}img/f.png" alt="{$CONST.BACK}&hellip;" /> {$CONST.BACK}</a></div>
+        <div class="dlm_back_root"><a id="back" class="button_link" href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager" title="{$CONST.BACK}&hellip;"><span class="icon icon-collapse-left"></span></a></div>
 
         <h4>{$CONST.PLUGIN_DOWNLOADMANAGER_CATEGORY}: {$dlmgbl[0].cat.payload}</h4>
 
         <ul>
             <li><strong>{$CONST.PLUGIN_DOWNLOADMANAGER_SUBCATEGORIES}:</strong> {$dlmgbl[0].cat.subcats}</li>
-            <li><strong>{$CONST.PLUGIN_DOWNLOADMANAGER_DLS_IN_THIS_CAT}:</strong> {$dlmgbl[0].cat.num} <span class="dlm_upload_to"><a class="button_link" href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmgbl.thiscat}&amp;upload=1">{$CONST.PLUGIN_DOWNLOADMANAGER_UPLOAD_FILE}&hellip;</a></span></li>
+            <li><strong>{$CONST.PLUGIN_DOWNLOADMANAGER_DLS_IN_THIS_CAT}:</strong> {$dlmgbl[0].cat.num} <span class="dlm_upload_to"><a class="button_link" href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmgbl.thiscat}&amp;upload=1"><span class="icon icon-upload"></span> {$CONST.PLUGIN_DOWNLOADMANAGER_UPLOAD_FILE}&hellip;</a></span></li>
         </ul>
     </div>
     {* include div body part of page 2, which includes the header, the files in category, the ftp/trash files, the Serendipity media library files, the subcats of root and section the appendix (helptip and cleartrash) section *}
     {include file="$path/backend.dlm.subpage.tpl" title="Downloadmanager Sub Page 2"}
     {/if}
 
-    {if $dlmulf.thistype == 'uploadform'}
+    {if isset($dlmulf.thistype) && $dlmulf.thistype == 'uploadform'}
     {* header section page 2 uploaddform *}
     <div class="dlm_page_header">
-        <div class="dlm_back_root"><a id="back" class="button_link" href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager" title="{$CONST.BACK}&hellip;"><img src="{$dlmgbl.httppath}img/f.png" alt="{$CONST.BACK}&hellip;" />&nbsp;{$CONST.BACK}</a></div>
+        <div class="dlm_back_root"><a id="back" class="button_link" href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager" title="{$CONST.BACK}&hellip;"><span class="icon icon-collapse-left"></span></a></div>
 
         <h4>{$CONST.PLUGIN_DOWNLOADMANAGER_CATEGORY}: {$dlmgbl[0].cat.payload}</h4>
 
@@ -89,10 +89,10 @@
     {include file="$path/backend.dlm.upload.tpl" title="Downloadmanager Upload Form"}
     {/if}
 
-    {if $dlmefe.thistype == 'editfile'}
+    {if isset($dlmefe.thistype) && $dlmefe.thistype == 'editfile'}
     {* header section page 2 editfile *}
     <div class="dlm_page_header">
-        <div class="dlm_back_root"><a id="back" class="button_link" href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager" title="Root category..."><img src="{$dlmgbl.httppath}img/f.png" alt="Root category..." />&nbsp;{$CONST.BACK}</a></div>
+        <div class="dlm_back_root"><a id="back" class="button_link" href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager" title="{$CONST.BACK} Root category..."><span class="icon icon-collapse-left"></span></a></div>
 
         <h4>{$CONST.PLUGIN_DOWNLOADMANAGER_THIS_FILE}: <img src="{$dlmefe.mime.ICON}" width="16" height="16" alt="{$dlmefe.mime.TYPE}" title="{$dlmefe.mime.TYPE}" /> {$dlmefe.realfilename}</h4>
 

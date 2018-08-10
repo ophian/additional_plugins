@@ -31,8 +31,8 @@
 @define('PLUGIN_DOWNLOADMANAGER_FILESIZE_FIELD_BLAHBLAH', 'Change the label of the filesize field here');
 @define('PLUGIN_DOWNLOADMANAGER_FILEDATE_FIELD', 'Label of filedate field');
 @define('PLUGIN_DOWNLOADMANAGER_FILEDATE_FIELD_BLAHBLAH', 'Change the label of the filedate field here');
-@define('PLUGIN_DOWNLOADMANAGER_DLS_FIELD', 'Label of \'dls\' field');
-@define('PLUGIN_DOWNLOADMANAGER_DLS_FIELD_BLAHBLAH', 'Change the label of the \'number of downloads of this file\' field here');
+@define('PLUGIN_DOWNLOADMANAGER_DLS_FIELD', 'Short-Label of table field: Number of Downloads');
+@define('PLUGIN_DOWNLOADMANAGER_DLS_FIELD_BLAHBLAH', 'Change the label or iconographic symbol like "#" of the \'Number of downloads\' field here');
 @define('PLUGIN_DOWNLOADMANAGER_ICONWIDTH', 'Icon width');
 @define('PLUGIN_DOWNLOADMANAGER_ICONWIDTHBLAH', 'Width of the filetype-icon in the filelist');
 @define('PLUGIN_DOWNLOADMANAGER_ICONHEIGHT', 'Icon height');
@@ -44,7 +44,7 @@
 @define('PLUGIN_DOWNLOADMANAGER_CATEGORIES', 'Categories');
 @define('PLUGIN_DOWNLOADMANAGER_SUBCATEGORIES', 'Subcategories');
 @define('PLUGIN_DOWNLOADMANAGER_CATEGORY', 'Category');
-@define('PLUGIN_DOWNLOADMANAGER_NUMBER_OF_DOWNLOADS', '# files');
+@define('PLUGIN_DOWNLOADMANAGER_NUMBER_OF_DOWNLOADS', 'files');
 @define('PLUGIN_DOWNLOADMANAGER_CATNAME', 'Category name:');
 @define('PLUGIN_DOWNLOADMANAGER_SUBCAT_OF', 'Sub-category of:');
 @define('PLUGIN_DOWNLOADMANAGER_ADD_CAT', 'Add new category');
@@ -58,7 +58,7 @@
 @define('PLUGIN_DOWNLOADMANAGER_FILENAME', 'Filename');
 @define('PLUGIN_DOWNLOADMANAGER_FILESIZE', 'Filesize');
 @define('PLUGIN_DOWNLOADMANAGER_FILEDATE', 'Date');
-@define('PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS', 'dls');
+@define('PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS', 'Number of Downloads');
 @define('PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS_BLAH', 'Number of downloads');
 @define('PLUGIN_DOWNLOADMANAGER_IMPORT_FILE', 'Import this file from your incoming directory into this actual category...');
 @define('PLUGIN_DOWNLOADMANAGER_COPY_NOT_ALLOWED', 'Not able to copy the new file from your incoming directory to the download directory!<br />This can happen for example, if the file encoding is wrong, or when safe_mode is activated in your php.ini.<br />Please deactivate the php safe_mode to use this feature!');
@@ -69,7 +69,7 @@
 <ul>
     <li>allows to import files via FTP upload to the current category "<strong>%s</strong>"</li>
     <li>is used as a temporary(!) directory for delete and/or for moving files between categories.</li>
-    <li>On the other hand you should not keep files in here and always erase stored files completly (see blue trash symbol link).</li>
+    <li>On the other hand you should not keep files in here and always erase stored files completely (see blue trash symbol link).</li>
     <li>For keeping and hiding files in the longer term please use the root directory. See DLM Help box.</li>
 </ul>');
 @define('PLUGIN_DOWNLOADMANAGER_THIS_FILE', 'Selected file');
@@ -81,7 +81,7 @@
 @define('PLUGIN_DOWNLOADMANAGER_UPLOAD_FILE', 'Upload files');
 @define('PLUGIN_DOWNLOADMANAGER_FILE', 'File');
 @define('PLUGIN_DOWNLOADMANAGER_UPLOAD_NOT_ALLOWED', 'File uploads are not allowed!<br />Allow them in your php.ini (file_uploads)!');
-@define('PLUGIN_DOWNLOADMANAGER_ERRORS_OCCOURED', 'Some errors occoured during file upload!');
+@define('PLUGIN_DOWNLOADMANAGER_ERRORS_OCCOURED', 'Some errors occurred during file upload!');
 @define('PLUGIN_DOWNLOADMANAGER_ERRORS_NOTCOPIED', 'These files could not be copied:');
 @define('PLUGIN_DOWNLOADMANAGER_ERRORS_TOOBIG', 'These files were too big:');
 @define('PLUGIN_DOWNLOADMANAGER_NO_FILES_UPLOADED', 'No uploaded files found!');
@@ -89,18 +89,18 @@
 @define('PLUGIN_DOWNLOADMANAGER_MEDIA_LIBRARY_BLAHBLAH', 'You can import already uploaded files from the media library to your downloadmanager.<br />Note: These files will not be moved, they will only be copied!<br />Current directory: ');
 @define('PLUGIN_DOWNLOADMANAGER_HIDE_TREE', 'Hide this and the complete subtree below this category...');
 @define('PLUGIN_DOWNLOADMANAGER_UNHIDE_TREE', 'Unhide this and the complete subtree below this category...');
-@define('PLUGIN_DOWNLOADMANAGER_OPEN_CAT', 'Click to open this categorie for uploading or modifying files...');
+@define('PLUGIN_DOWNLOADMANAGER_OPEN_CAT', 'Click to open this category for uploading or modifying files...');
 
 @define('PLUGIN_DOWNLOADMANAGER_SHOWDESC_INLIST',       'Show file description in filelists');
 @define('PLUGIN_DOWNLOADMANAGER_SHOWDESC_INLIST_DESC',  'If you want to have a short file list, switch this off, if you want more information in the list, switch this on.');
 @define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST',       'Download files directly in filelist');
-@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_DESC',  'The default behavior is to present an info page first before accessing the file. Here you can configure, if you want to have a direct download from the filelist. This can be accessd clicking file icon, file name or both.');
+@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_DESC',  'The default behavior is to present an info page first before accessing the file. Here you can configure, if you want to have a direct download from the filelist. This can be accessed clicking file icon, file name or both.');
 @define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_NO',    'Infopage always');
 @define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_ICON',  'Direct download on icon');
 @define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_NAME',  'Direct download on filename');
 @define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_BOTH',  'Direct download on both');
 @define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING',          'New versions of existing files do..');
-@define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING_DESC',     'If you uploaded a file that is already exisitng should a new file entry be created or should the old one be refreshed with the new file information?');
+@define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING_DESC',     'If you uploaded a file that is already existing should a new file entry be created or should the old one be refreshed with the new file information?');
 @define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING_INSERT',   'create a new entry');
 @define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING_UPDATE',   'refresh the old entry');
 
@@ -114,7 +114,7 @@
 @define('PLUGIN_DOWNLOADMANAGER_REGISTERED_ONLY_BLAHBLAH', 'Do you want the frontend to show categories and downloads to this blogs registered and logged in users only?');
 @define('PLUGIN_DOWNLOADMANAGER_REGISTERED_ONLY_ERROR', 'The downloads are available only to this blogs registered users!');
 @define('PLUGIN_DOWNLOADMANAGER_ROOTLEVEL_TITLE', 'files at root level (hidden in frontend!)');
-@define('PLUGIN_DOWNLOADMANAGER_ERRORS_UPGRADE_NOTCOPIED', 'We are sorry! An error occured. The files of<br /><em>%s</em><br />could not be moved to<br /><em>%s</em>.<br /><br />Please move them manually and press <a class="backend_error_link" href="%s">this link</a>, to inform this plugin about it!<br />Additionally remove the old directories manually too.<br />');
+@define('PLUGIN_DOWNLOADMANAGER_ERRORS_UPGRADE_NOTCOPIED', 'We are sorry! An error occurred. The files of<br /><em>%s</em><br />could not be moved to<br /><em>%s</em>.<br /><br />Please move them manually and press <a class="backend_error_link" href="%s">this link</a>, to inform this plugin about it!<br />Additionally remove the old directories manually too.<br />');
 #@define('PLUGIN_DOWNLOADMANAGER_ALLFILES_COPIED_NEWDIR', 'Since you upgraded your downloadmanager plugin to v.0.24, all you files were copied to the new \'/.dlm/files\' and \'/.dlm/ftpin\' directories in serendipities \'/archives\' folder to avoid oldpath conflicts.<br /><br />The config settings were set to hold the new path strings and are not alterable any more in future.<br />Please remove the old directories manually.<br />');
 #@define('PLUGIN_DOWNLOADMANAGER_ALLFILES_COPY_NEWDIR_REMEMBER', 'You have successfully changed this plugin to accept the new path settings only.<br /><br />Please remember, to move your files manually to the new \'archives/.dlm/files\' and \'archives/.dlm/ftpin\' directories!<br />Additionally remove the old directories manually too.<br />');
 @define('PLUGIN_DOWNLOADMANAGER_BUTTON_MARK', 'mark all / unmark');
@@ -130,7 +130,7 @@
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_CF_CHANGE', 'Change category name in cat field directly / <em>Enter</em>');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_VIEW', 'To view and handle ftp/trash folder, choose subcategory of root.');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_MULTI', 'All file erasing in ftp/trash folder will happen immediately!');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_SINGLE', 'The active red button single erasing will happen immediately!');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_SINGLE', 'The active red or trash button single erasing will happen immediately!');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_ERASE', 'All multi file erasing as marked, will be <b>moved</b> to the ftp/trash folder,<br />&nbsp;&nbsp;&nbsp;to avoid unintentional destroying!');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_KEEP', 'Keep files, but do not show in frontend? Send them to root,<br />&nbsp;&nbsp;&nbsp;or create a hidden subfolder! Keep in mind you have 2 config settings<br />&nbsp;&nbsp;&nbsp;concerning registered and logged in users in frontend.');
 @define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_CHANGE', 'Change file name on file-links edit-subpage.');

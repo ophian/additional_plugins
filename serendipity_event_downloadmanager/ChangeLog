@@ -1,6 +1,15 @@
 ChangeLog:
 """"""""""
 
+0.39:
+----
+
+ * Change some icons to fontello font icons
+ * Fix uninitialized variables
+ * Add restriction .htaccess to the "hidden" directories
+ * Set up requirement to Serendipity 1.7+ and PHP 5.4+
+ * Rephrase some language constants [en, de] for better understanding
+
 0.38:
 ----
 

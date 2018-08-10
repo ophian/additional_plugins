@@ -1,4 +1,4 @@
-{* backend.dlm.subpage.tpl last modified 2016-08-06 *}
+{* backend.dlm.subpage.tpl last modified 2018-08-10 *}
 {if $dlmgbl.thispage == 2 && $dlmcfs.catfiles === true}
 {* Show all files in category *}
 <p id="dlm_files_header" class="dlm_backend_option"><a href="#" onclick="showConfig('dlm1'); return false" title="{$CONST.TOGGLE_OPTION}"><img src="{if $dlmcfs.ddiv === true}{serendipity_getFile file="img/minus.png"}{else}{serendipity_getFile file="img/plus.png"}{/if}" id="optiondlm1" alt="+/-" /> {$CONST.PLUGIN_DOWNLOADMANAGER_DLS_IN_THIS_CAT}[ {$dlmgbl[0].cat.payload} ]:</a> {$dlmgbl[0].cat.num}</p>
@@ -9,19 +9,19 @@
     <thead>
         <tr>
             <th>{$dlmgbl.filename_field}</th>
-            <th>{$dlmgbl.filenums_field}</th>
+            <th title="{$CONST.PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS}"><span class="icon icon-download"></span></th>
             <th>{$dlmgbl.filesize_field}</th>
             <th>{$dlmgbl.filedate_field}</th>
         </tr>
     </thead>
     {if is_array( $dlmcfs.filelist )}
     <tbody>
-    {foreach from=$dlmcfs.filelist item="file"}
+    {foreach $dlmcfs.filelist AS $file}
         <tr class="{cycle name="cycle1" values="odd,even"}">
             <td>
                 <input name="dlm[files][]" value="{$file.id}" type="checkbox">
-                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmgbl.thiscat}&amp;delfile={$file.id}"><img src="{$dlmgbl.httppath}img/del.png" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_DEL_FILE}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_DEL_FILE}" /></a>
-                <a href="{$dlmcfs.downloadpath}{$file.id}"><img src="{$dlmgbl.httppath}img/dl.png" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_DOWNLOAD_FILE}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_DOWNLOAD_FILE}" /></a>
+                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmgbl.thiscat}&amp;delfile={$file.id}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_DEL_FILE}"><span class="icon icon-trash-empty"></span></a>
+                <a href="{$dlmcfs.downloadpath}{$file.id}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_DOWNLOAD_FILE}"><span class="icon icon-download"></span></a>
                 <img src="{$file.mime.ICON}" width="16" height="16" alt="{$file.mime.TYPE}" title="{$file.mime.TYPE}" />
                 <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmgbl.thiscat}&amp;editfile={$file.id}">{$file.realfilename}</a>
             </td>
@@ -35,7 +35,8 @@
         <tr>
             <td colspan="4">
                 <input name="dlm[chkFileMove]" value="1" onclick="chkAll(this.form, 'dlm[files][]', this.checked)" type="checkbox" /> {$CONST.PLUGIN_DOWNLOADMANAGER_BUTTON_MARK}&#160;&#160;
-                <input type="image" src="{$dlmgbl.httppath}img/notes-delete.gif" name="Reject_Selected" alt="notes-delete" title=" Reject " /> {$CONST.PLUGIN_DOWNLOADMANAGER_BUTTON_MARK_TITLE}
+                <button name="Reject_Selected" type="submit"><span class="icon icon-check"></span> {$CONST.PLUGIN_DOWNLOADMANAGER_BUTTON_MARK_TITLE}</button>
+{*                <input type="image" src="{$dlmgbl.httppath}img/notes-delete.gif" name="Reject_Selected" alt="notes-delete" title=" Reject " /> {$CONST.PLUGIN_DOWNLOADMANAGER_BUTTON_MARK_TITLE} *}
             </td>
         </tr>
     </tfoot>
@@ -78,13 +79,13 @@
         </tr>
     </thead>
     <tbody>
-    {foreach from=$dlmtfp.ftpfiles item="ifile"}
+    {foreach $dlmtfp.ftpfiles AS $ifile}
         {if !empty($ifile.filename)}{* remove to subarrays d_arr and f_arr *}
         <tr class="{cycle name="cycle1" values="odd,even"}">
             <td>
                 <input name="dlm[ifiles][]" value="{$ifile.filename}" type="checkbox">
-                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;delinfile={$ifile.filename|escape:'url':$CONST.LANG_CHARSET:false}&amp;thiscat={$dlmgbl.thiscat}"><img src="{$dlmgbl.httppath}img/del.png" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_DEL_FILE}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_DEL_FILE}" /></a>
-                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;importfile={$ifile.filename|escape:'url':$CONST.LANG_CHARSET:false}&amp;thiscat={$dlmgbl.thiscat}"><img src="{$dlmgbl.httppath}img/importfile.gif" height="16" width="16" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_IMPORT_FILE}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_IMPORT_FILE}" /></a>
+                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;delinfile={$ifile.filename|escape:'url':$CONST.LANG_CHARSET:false}&amp;thiscat={$dlmgbl.thiscat}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_DEL_FILE}"><span class="icon icon-trash-empty"></span></a>
+                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;importfile={$ifile.filename|escape:'url':$CONST.LANG_CHARSET:false}&amp;thiscat={$dlmgbl.thiscat}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_IMPORT_FILE}"><span class="icon icon-upload"></span></a>
                 <img src="{$ifile.filemime.ICON}" alt="{$ifile.filemime.TYPE}" title="{$ifile.filemime.TYPE}" height="16" width="16" />
                 {$ifile.filename}
             </td>
@@ -138,25 +139,24 @@
     {if !empty($dlmtsl.extrapath)}
         <tr>
             <td colspan="3">
-                <img src="{$dlmgbl.httppath}img/fex.png" width="16" height="16" alt="" />
-                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;smlpath={$dlmtsl.backpath}&amp;thiscat={$dlmgbl.thiscat}">{$CONST.PLUGIN_DOWNLOADMANAGER_BACK}</a>
+                <a class="button_link" href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;smlpath={$dlmtsl.backpath}&amp;thiscat={$dlmgbl.thiscat}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_BACK}"><span class="icon icon-collapse-left"></span></a>
             </td>
         </tr>
     {/if}
     {* array of serendipity directories in media library *}
-    {foreach from=$dlmtsl.smldirs item="smlda"}
+    {foreach $dlmtsl.smldirs AS $smlda}
         <tr class="{cycle name="cycle1" values="odd,even"}">
             <td colspan="3">
                 <img src="{$dlmgbl.httppath}img/f.png" width="16" height="16" alt="" />
-                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;smlpath={$smlda.filepath}/{$smlda.filename}&amp;thiscat={$dlmgbl.thiscat}">{$smlda.filename}</a>
+                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;smlpath={$smlda.filepath|default:''}/{$smlda.filename}&amp;thiscat={$dlmgbl.thiscat}">{$smlda.filename}</a>
             </td>
         </tr>
     {/foreach}
     {* array of serendipity files in media library *}
-    {foreach from=$dlmtsl.smlfiles item="smlfa"}
+    {foreach $dlmtsl.smlfiles AS $smlfa}
         <tr class="{cycle name="cycle1" values="odd,even"}">
             <td>
-                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;medialib=1&amp;smlpath={$smlfa.filepath}{$dlmtsl.extrapath}&amp;ifile={$smlfa.filename}&amp;thiscat={$dlmgbl.thiscat}"><img src="{$dlmgbl.httppath}img/s9yml2.png" width="20" height="20" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_IMPORT_FILE}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_IMPORT_FILE}" /></a>
+                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;medialib=1&amp;smlpath={$smlfa.filepath|default:''}{$dlmtsl.extrapath}&amp;ifile={$smlfa.filename}&amp;thiscat={$dlmgbl.thiscat}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_IMPORT_FILE}"><span class="icon icon-upload"></span></a>
                 <img src="{$smlfa.filemime.ICON}" width="16" height="16" alt="{$smlfa.filemime.TYPE}" title="{$smlfa.filemime.TYPE}" />
                 {$smlfa.filename}
             </td>
@@ -217,7 +217,7 @@
             {else}
                 <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;hidecat=1&amp;hide=0&amp;catid={$dlmhcs.catlist[cat].cat.node_id}"><img src="{$dlmgbl.httppath}img/unhide2.png" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_UNHIDE_TREE}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_UNHIDE_TREE}" /></a>
             {/if}
-            {foreach from=$dlmhcs.catlist[cat].imgname item="s"}<img src="{$dlmgbl.httppath}img/{$s}.gif" alt="tree" /> {/foreach}
+            {foreach $dlmhcs.catlist[cat].imgname AS $s}<img src="{$dlmgbl.httppath}img/{$s}.gif" alt="tree" /> {/foreach}
             {if $dlmhcs.catlist[cat].cat.hidden != 1}
                 <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmhcs.catlist[cat].cat.node_id}"><img src="{$dlmgbl.httppath}{if $dlmhcs.catlist[cat].cat.node_id == $dlmhcs.cn}img/fex.png{else}img/f.png{/if}" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_OPEN_CAT}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_OPEN_CAT}" /></a>
             {else}
@@ -262,7 +262,7 @@
     <!-- // div container page {$dlmgbl.thispage} dlm(4) -->
     <div id="dlm5">
         <ul>
-        {foreach from=$dlmapx.helplist item='help'}
+        {foreach $dlmapx.helplist AS $help}
             <li>{$help}</li>
         {/foreach}
         </ul>

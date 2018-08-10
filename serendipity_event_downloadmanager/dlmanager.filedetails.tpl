@@ -1,8 +1,8 @@
-{* dlmanager.filedetails.tpl last modified 2016-07-06 *}
+{* dlmanager.filedetails.tpl last modified 2018-08-08 *}
 <div id="downloadmanager" class="serendipity_Entry_Date">
 <!-- dlmanager.filedetails.tpl start -->
-    <h3 class="serendipity_date">{$pagetitle}</h3>
-    <h4 class="serendipity_title">{$headline}</h4>
+    <h4 class="serendipity_date">{$pagetitle}</h4>
+    <h5 class="serendipity_title">{$headline}</h5>
     {if !empty($dlm_intro)}<div class="dlm_intro">{$dlm_intro}</div>{/if}
 
     {if $dlm_is_registered == false || $is_logged_in}

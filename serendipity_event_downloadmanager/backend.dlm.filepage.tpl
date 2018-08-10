@@ -1,4 +1,4 @@
-{* backend.dlm.filepage.tpl last modified 2010-09-08 *}
+{* backend.dlm.filepage.tpl last modified 2018-08-10 *}
 <div id="dlm_backend_fileedit">
     <form action="?" name="editfileform" method="POST">
     <div>
@@ -15,8 +15,8 @@
         <div class="edit_field">
             <label for="dlm_file_moveto">{$CONST.PLUGIN_DOWNLOADMANAGER_MOVE_TO_CAT}</label>
             <select id="dlm_file_moveto" name="serendipity[moveto]">
-            {foreach from=$dlmefe.selcatlist item="thiscat"}
-                <option value="{$thiscat.cat.node_id}"{if $thiscat.cat.node_id == $dlmefe.catid} selected{/if}>{if $thiscat.cat.node_id != 1}&nbsp;&nbsp;{/if}{if is_array( $thiscat.imgname )}{foreach from=$thiscat.imgname item="tab"}{if $tab == 'e'}&nbsp;&nbsp;&nbsp;&nbsp;{/if}{if $tab == 'l'}&nbsp;&nbsp;&nbsp;|{/if}{if $tab == 'b' || $tab == 'nb'}&nbsp;&nbsp;&nbsp;{/if}{/foreach}{/if}{$thiscat.cat.payload}</option>
+            {foreach $dlmefe.selcatlist AS $thiscat}
+                <option value="{$thiscat.cat.node_id}"{if $thiscat.cat.node_id == $dlmefe.catid} selected{/if}>{if $thiscat.cat.node_id != 1}&nbsp;&nbsp;{/if}{if is_array( $thiscat.imgname )}{foreach $thiscat.imgname AS $tab}{if $tab == 'e'}&nbsp;&nbsp;&nbsp;&nbsp;{/if}{if $tab == 'l'}&nbsp;&nbsp;&nbsp;|{/if}{if $tab == 'b' || $tab == 'nb'}&nbsp;&nbsp;&nbsp;{/if}{/foreach}{/if}{$thiscat.cat.payload}</option>
             {/foreach}
             </select>
         </div>
