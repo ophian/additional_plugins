@@ -1,3 +1,7 @@
+5.44:
+----
+ * Fix some more undefined variables
+
 5.43:
 ----
  * Remove $staticpage_pre_content assigned Smarty variable, which is an internal.
