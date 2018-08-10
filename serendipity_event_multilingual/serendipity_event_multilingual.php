@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '4.1.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.39');
+        $propbag->add('version',        '2.40');
         $propbag->add('configuration',  array('copytext', 'placement', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -493,28 +493,31 @@ class serendipity_event_multilingual extends serendipity_event
                     break;
 
                 case 'backend_entryform':
-                    if (!empty($this->showlang)) {
-                        // language is given (he wants a translation)
-                        $props = serendipity_fetchEntryProperties($eventData['id']);
-                        // this is a language change, not a save -- we want the DB values
-                        // unless the user chooses to retain previous language content
-                        if (isset($serendipity['POST']['no_save'])) {
-                            foreach($this->switch_keys AS $key) {
-                                if (!serendipity_db_bool($this->get_config('copytext', 'true')) || !empty($props['multilingual_' . $key . '_' . $this->showlang])) {
-                                    $eventData[$key] = $props['multilingual_' . $key . '_' . $this->showlang];
+                    // existing entries only
+                    if (!empty($eventData['id'])) {
+                        if (!empty($this->showlang)) {
+                            // language is given (user wants a translation)
+                            $props = serendipity_fetchEntryProperties($eventData['id']);
+                            // this is a language change, not a save -- we want the DB values
+                            // unless the user chooses to retain previous language content
+                            if (isset($serendipity['POST']['no_save'])) {
+                                foreach($this->switch_keys AS $key) {
+                                    if (!serendipity_db_bool($this->get_config('copytext', 'true')) || !empty($props['multilingual_' . $key . '_' . $this->showlang])) {
+                                        $eventData[$key] = $props['multilingual_' . $key . '_' . $this->showlang];
+                                    }
                                 }
                             }
-                        }
-                    } elseif (!empty($eventData['id'])) {
-                        // language is NOT given (he wants the default language)
-                        $props = serendipity_fetchEntry('id', $eventData['id'], 1, 1);
-                        if (!is_array($props)) {
-                            return true;
-                        }
-                        // this is a language change, not a save -- we want the DB values
-                        if (isset($serendipity['POST']['no_save'])) {
-                            foreach($this->switch_keys AS $key) {
-                                $eventData[$key] = $props[$key];
+                        } else {
+                            // language is NOT given (user wants the default language)
+                            $props = serendipity_fetchEntry('id', $eventData['id'], 1, 1);
+                            if (!is_array($props)) {
+                                return true;
+                            }
+                            // this is a language change, not a save -- we want the DB values
+                            if (isset($serendipity['POST']['no_save'])) {
+                                foreach($this->switch_keys AS $key) {
+                                    $eventData[$key] = $props[$key];
+                                }
                             }
                         }
                     }
