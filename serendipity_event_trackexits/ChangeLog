@@ -1,3 +1,7 @@
+1.15:
+-----
+ * Added some uninitialized variable checks
+
 1.14:
 -----
  * Added legal property bag information for gdpr/dsgvo
