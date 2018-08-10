@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.14');
+        $propbag->add('version',       '4.15');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2177,7 +2177,7 @@ addLoadEvent(enableAutocomplete);
             @define('PLUGIN_VARS_TAG', $param);
         }
 
-        $serendipity['GET']['subpage'] = $eventData;
+        $serendipity['GET']['subpage'] = isset($eventData) ? $eventData : null;
         unset($serendipity['GET']['category']); // No restriction should be enforced here.
 
         if ($tagged_as_list) {
