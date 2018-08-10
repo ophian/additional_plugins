@@ -22,7 +22,7 @@ class serendipity_event_amazonchooser extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AMAZONCHOOSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthew Groeninger, Ian');
-        $propbag->add('version',       '0.77');
+        $propbag->add('version',       '0.78');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -138,7 +138,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                 case 'frontend_display':
                     foreach ($this->markup_elements AS $temp) {
                        if (isset($eventData[$temp['element']]) &&
-                           !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
+                           @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = $temp['element'];
                             $eventData[$element] = preg_replace_callback('/(?<!\\\\)\[amazon_chooser\](.*?),(.*?)\[\/amazon_chooser\]/', array(&$this,'get_amazon_item'), $eventData[$element]);
@@ -194,19 +194,21 @@ class serendipity_event_amazonchooser extends serendipity_event
                        }
                     } else {
                        $val = explode('=', $parts[0]);
-                       $_REQUEST[$val[0]] = $val[1];
+                       if (isset($val[1])) $_REQUEST[$val[0]] = $val[1];
                     }
 
                     if (!isset($_REQUEST['txtarea'])) {
-                        $parts = explode('&', $uri_parts[1]);
-                        if (count($parts) > 1) {
-                            foreach($parts AS $key => $value) {
-                                 $val = explode('=', $value);
-                                 $_REQUEST[$val[0]] = $val[1];
+                        if (isset($uri_parts[1])) {
+                            $parts = explode('&', $uri_parts[1]);
+                            if (count($parts) > 1) {
+                                foreach($parts AS $key => $value) {
+                                     $val = explode('=', $value);
+                                     $_REQUEST[$val[0]] = $val[1];
+                                }
+                            } else {
+                                $val = explode('=', $parts[0]);
+                                $_REQUEST[$val[0]] = $val[1];
                             }
-                        } else {
-                            $val = explode('=', $parts[0]);
-                            $_REQUEST[$val[0]] = $val[1];
                         }
                     }
 
