@@ -1,39 +1,35 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_plugin_showentries extends serendipity_plugin {
+class serendipity_plugin_showentries extends serendipity_plugin
+{
     var $title = PLUGIN_SHOWENTRIES_TITLE;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $this->title = $this->get_config('title', $this->title);
 
         $propbag->add('name',        PLUGIN_SHOWENTRIES_TITLE);
         $propbag->add('description', PLUGIN_SHOWENTRIES_BLAHBLAH);
         $propbag->add('configuration', array('title', 'number', 'skip', 'category', 'showtitle', 'showext'));
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.2.0'
         ));
+        $propbag->add('version',       '1.9');
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',     '1.8.1');
         $propbag->add('stackable', true);
         $propbag->add('groups', array('FRONTEND_VIEWS'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch($name) {
@@ -85,12 +81,12 @@ class serendipity_plugin_showentries extends serendipity_plugin {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
-        $title          = $this->get_config('title', $this->title);
-
-        $current_cat = $serendipity['GET']['category'];
+        $title        = $this->get_config('title', $this->title);
+        $current_cat  = $serendipity['GET']['category'];
         $current_page = $serendipity['GET']['page'];
         $current_auth = $serendipity['GET']['viewAuthor'];
         $current_rng  = $serendipity['range'];
@@ -111,7 +107,7 @@ class serendipity_plugin_showentries extends serendipity_plugin {
             $limit = serendipity_db_limit(0, $this->get_config('number'));
         }
 
-        $entries     = serendipity_fetchEntries(null, true, $limit, false, false, 'timestamp DESC', '', false, true);
+        $entries = serendipity_fetchEntries(null, true, $limit, false, false, 'timestamp DESC', '', false, true);
         if (is_array($entries)) {
             foreach($entries AS $i => $entry) {
                 serendipity_plugin_api::hook_event('frontend_display', $entry);
@@ -156,10 +152,7 @@ class serendipity_plugin_showentries extends serendipity_plugin {
         if (!$tfile) {
             $tfile = dirname(__FILE__) . '/plugin_showentries.tpl';
         }
-        $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
         $content = $serendipity['smarty']->fetch('file:'. $tfile);
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = $inclusion;
 
         echo $content;
 
@@ -168,6 +161,8 @@ class serendipity_plugin_showentries extends serendipity_plugin {
         $serendipity['GET']['viewAuthor'] = $current_auth;
         $serendipity['range'] = $current_rng;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

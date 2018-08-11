@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: 1.1
  */
@@ -15,4 +15,3 @@
 @define('PLUGIN_SHOWENTRIES_SHOWTITLE',     'エントリの題名を表示しますか?');
 @define('PLUGIN_SHOWENTRIES_SHOWEXT',       '拡張エントリを表示しますか?');
 
-?>

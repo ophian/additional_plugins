@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.1
  */
@@ -14,3 +14,4 @@
 @define('PLUGIN_SHOWENTRIES_CATEGORY',      'Идентификатори на категории, които да се показват (празно=всички или избройте категориите, разделени с \';\')');
 @define('PLUGIN_SHOWENTRIES_SHOWTITLE',     'Да се показват ли заглавията на статиите ?');
 @define('PLUGIN_SHOWENTRIES_SHOWEXT',       'Да се показва ли допълнителното съдържание на статиите ?');
+
