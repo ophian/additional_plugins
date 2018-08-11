@@ -1,17 +1,10 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_relatedlinks extends serendipity_event
 {
@@ -26,11 +19,11 @@ class serendipity_event_relatedlinks extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '1.8.1');
+        $propbag->add('version',       '1.9');
         $propbag->add('event_hooks',    array(
             'frontend_display:html:per_entry'                   => true,
             'backend_publish'                                   => true,
@@ -56,7 +49,6 @@ class serendipity_event_relatedlinks extends serendipity_event
                 ));
                 $propbag->add('default', 'footer');
                 $propbag->add('radio_per_row',1);
-                return true;
                 break;
 
             case 'explodechar':
@@ -64,20 +56,21 @@ class serendipity_event_relatedlinks extends serendipity_event
                 $propbag->add('name',        PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR);
                 $propbag->add('description', PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR_DESC);
                 $propbag->add('default', '=');
-                return true;
                 break;
         }
 
         return false;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $title = $this->title;
     }
 
-    function getLinks($id) {
+    function getLinks($id)
+    {
         global $serendipity;
 
         $q = "SELECT value FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = ". (int)$id . " AND property = 'post_relatedentries'";
@@ -90,7 +83,8 @@ class serendipity_event_relatedlinks extends serendipity_event
         }
     }
 
-    function showRelatedLinks($CustomHook, &$eventData, $addData) {
+    function showRelatedLinks($CustomHook, &$eventData, $addData)
+    {
         global $serendipity;
 
         if (!$eventData['is_extended'] && !$serendipity['GET']['id'] && !$CustomHook) {
@@ -112,15 +106,13 @@ class serendipity_event_relatedlinks extends serendipity_event
             default:
             case 'footer':
                 $eventData['display_dat'] .= $content;
-                return true;
                 break;
 
             case 'body':
                 $eventData['exflag']       = 1;
                 $eventData['has_extended'] = 1;
-                $eventData['is_extended'] = 1;
-                $eventData['extended']     .= $content;
-                return true;
+                $eventData['is_extended']  = 1;
+                $eventData['extended']    .= $content;
                 break;
 
             case 'smarty':
@@ -131,10 +123,12 @@ class serendipity_event_relatedlinks extends serendipity_event
         return false;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
+
         if (isset($hooks[$event])) {
             switch($event) {
 
@@ -144,7 +138,7 @@ class serendipity_event_relatedlinks extends serendipity_event
                         return true;
                     }
 
-                    $links      = (array)explode("\n", str_replace("\r", '', $serendipity['POST']['properties']['relatedentries']));
+                    $links = (array)explode("\n", str_replace("\r", '', $serendipity['POST']['properties']['relatedentries']));
 
                     $html_links = array();
                     foreach ($links AS $link) {
@@ -175,14 +169,10 @@ class serendipity_event_relatedlinks extends serendipity_event
                     if (!$tfile) {
                         $tfile = dirname(__FILE__) . '/plugin_relatedlinks.tpl';
                     }
-                    $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-                    $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
                     $content = $serendipity['smarty']->fetch('file:'. $tfile);
                     if (count($html_links) < 1) {
                         $content = true;
                     }
-
-                    $serendipity['smarty']->security_settings[INCLUDE_ANY] = $inclusion;
 
                     if (!empty($content)) {
                         $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = ". (int)$eventData['id'] . " AND (property = 'relatedentries' OR property = 'post_relatedentries')";
@@ -192,8 +182,6 @@ class serendipity_event_relatedlinks extends serendipity_event
                         $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES (" . (int)$eventData['id'] . ", 'post_relatedentries', '" . serendipity_db_escape_string($serendipity['POST']['properties']['relatedentries']) . "')";
                         serendipity_db_query($q);
                     }
-
-                    return true;
                     break;
 
                 case 'backend_display':
@@ -213,28 +201,26 @@ class serendipity_event_relatedlinks extends serendipity_event
                         <textarea name="serendipity[properties][relatedentries]" style="width: 90%; height: 100px" id="properties_relatedentries"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($links) : htmlspecialchars($links, ENT_COMPAT, LANG_CHARSET)); ?></textarea>
                     </fieldset>
 <?php
-                    return true;
                     break;
-
 
                 case 'frontend_display:html:per_entry':
                     $this->showRelatedLinks(false, $eventData, $addData);
-                    return true;
                     break;
 
                 case 'frontend_display_relatedlinks':
                     $this->showRelatedLinks(true, $eventData, $addData);
-                    return true;
                     break;
 
                 default:
                     return false;
-                    break;
+
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
