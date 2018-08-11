@@ -1,7 +1,7 @@
-<?php # 
+<?php 
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -31,7 +31,7 @@
 @define('PLUGIN_MYMOOD_PLACE_BEFORE', 'Place before');
 @define('PLUGIN_MYMOOD_PLACE_BEFORE_DESC', 'Place your mood before the field you chose?  If no, place it after.');
 @define('PLUGIN_MYMOOD_DISPLAY_FORMAT', 'Display Format');
-@define('PLUGIN_MYMOOD_DISPLAY_FORMAT_DESC', 'The format of the mood.  You may use {name}, {img}, and {ascii} in any order to control the output of the moods.  This will have no effect if are placing the mood in the title.  You may enter html here.  (Default: {img} {name})');
+@define('PLUGIN_MYMOOD_DISPLAY_FORMAT_DESC', 'The format of the mood.  You may use {name}, {img}, and {ascii} in any order to control the output of the moods. This will have no effect if are placing the mood in the title. You may enter html here. (Default: {img} {name})');
 @define('PLUGIN_MYMOOD_MORE_NEW_MOODS', 'More New Moods');
 @define('PLUGIN_MYMOOD_NEW_MOOD', 'New Mood)');
 @define('PLUGIN_MYMOOD_NEW_ASCII', 'Ascii');
@@ -171,4 +171,3 @@
 @define('PLUGIN_MYMOOD_WORKING'         , 'working       ');
 @define('PLUGIN_MYMOOD_WORRIED'         , 'worried       ');
 
-?>

@@ -4,14 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 #mood list.
 #i apologize for the pain this list may cause.
@@ -45,18 +38,18 @@ $img_pre = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . 
 
 class serendipity_event_mymood extends serendipity_event {
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_MYMOOD_TITLE);
         $propbag->add('description',   PLUGIN_MYMOOD_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.2.0'
         ));
-
-        $propbag->add('version',       '0.11.1');
+        $propbag->add('version',       '0.12');
         $propbag->add('author',       'Brett Profitt');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -77,11 +70,12 @@ class serendipity_event_mymood extends serendipity_event {
 
                                             ));
 
-    #we use this to match entries to moods.  mood metadata get their own db.
+        #we use this to match entries to moods.  mood metadata get their own db.
         $this->dependencies = array('serendipity_event_entryproperties' => 'keep');
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch ($name) {
             case 'intro':
                 $propbag->add('type', 'string');
@@ -123,10 +117,8 @@ class serendipity_event_mymood extends serendipity_event {
     }
 
 
-
-
 #################################
-# general funcitons
+# general functions
 
     function setupDB() {
         global $serendipity;
@@ -553,26 +545,25 @@ class serendipity_event_mymood extends serendipity_event {
         if (!$tfile) {
             $tfile = dirname(__FILE__) . '/plugin_mymood.tpl';
         }
-        $inclusion = $serendipity['smarty']->security_settings[INCLUDE_ANY];
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = true;
         $serendipity['smarty']->assign('plugin_mymood_intro', $this->get_config('intro', ''));
         $serendipity['smarty']->assign('plugin_mymood_location', $this->get_config('location', 'body'));
         $serendipity['smarty']->assign('plugin_mymood_mood_list', $formatted_moods);
         $serendipity['smarty']->assign('plugin_mymood_outro', $this->get_config('outro', ''));
+
         $content = $serendipity['smarty']->fetch('file:'. $tfile);
-        $serendipity['smarty']->security_settings[INCLUDE_ANY] = $inclusion;
 
         return $content;
     }
 
-
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_MYMOOD_TITLE;
     }
 
-
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
+
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
@@ -581,8 +572,8 @@ class serendipity_event_mymood extends serendipity_event {
 ?>
                     <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=mymood"><?php echo PLUGIN_MYMOOD_TITLE; ?></a></li>
 <?php
-                    return true;
                     break;
+
                 case 'backend_sidebar_entries_event_display_mymood':
                     if ($serendipity['POST']['mymood_resetdb']=='true') {
                         $this->resetDB();
@@ -590,18 +581,15 @@ class serendipity_event_mymood extends serendipity_event {
                         echo 'Reset the db!!!';
                     }
                     $this->a_show_moods();
-                    return true;
                     break;
 
                 case 'backend_display':
                     $this->b_pick_moods($eventData['id']);
-                    return true;
                     break;
 
                 case 'backend_publish':
                 case 'backend_save':
                     $this->b_add_moods($eventData['id']);
-                    return true;
                     break;
 
                 case 'entry_display':
@@ -611,42 +599,49 @@ class serendipity_event_mymood extends serendipity_event {
                     }
                     for ($i = 0; $i < $elements; $i++) {
 
-                            $location = ($this->get_config('location', 'body'));
+                        $location = ($this->get_config('location', 'body'));
 
-                            switch ($location) {
-                                case 'body':
-                                case 'title':
-                                case 'author':
-                                    $location = $location;
-                                    break;
+                        switch ($location) {
+                            case 'body':
+                            case 'title':
+                            case 'author':
+                                $location = $location;
+                                break;
 
-                                case 'smarty':
-                                    $location = 'mymood';
-                                    break;
+                            case 'smarty':
+                                $location = 'mymood';
+                                break;
 
-                                case 'footer':
-                                    $location = 'add_footer';
-                                    $delim = '';
-                                    break;
-                            }
+                            case 'footer':
+                                $location = 'add_footer';
+                                $delim = '';
+                                break;
+                        }
 
-                            # do nothing if we don't have any moods
+                        # do nothing if we don't have any moods
 
-                            $moods = $this->f_display_moods($eventData[$i]['id']);
-                            if (!empty($moods)) {
-                                if ($this->get_config('place_before')==false) {
-                                    $eventData[$i][$location] .= $delim . $moods;
-                                } else {
-                                    $eventData[$i][$location] = $delim . $moods . $eventData[$i][$location];
-                                }
+                        $moods = $this->f_display_moods($eventData[$i]['id']);
+                        if (!empty($moods)) {
+                            if ($this->get_config('place_before')==false) {
+                                $eventData[$i][$location] .= $delim . $moods;
+                            } else {
+                                $eventData[$i][$location] = $delim . $moods . $eventData[$i][$location];
                             }
                         }
+                    }
                     break;
 
+                default:
+                    return false;
+
             }
+            return true;
+        } else {
+            return false;
         }
-        return true;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

@@ -171,4 +171,3 @@
 @define('PLUGIN_MYMOOD_WORKING'         , 'pracující     ');
 @define('PLUGIN_MYMOOD_WORRIED'         , 'ustaraný      ');
 
-?>

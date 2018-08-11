@@ -1,1 +1,7 @@
-latest: Smarty3 forward compatibility
+0.12:
+----
+ * Up for Smarty3
+
+Before:
+-------
+ * latest: Smarty3 forward compatibility
