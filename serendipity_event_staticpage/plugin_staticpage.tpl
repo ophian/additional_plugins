@@ -1,4 +1,4 @@
-{* origin plugin - frontend plugin_staticpage.tpl file v. 1.07, 2018-07-14 *}
+{* origin plugin - frontend plugin_staticpage.tpl file v. 1.08, 2018-07-14 *}
 <article id="staticpage_{$staticpage_pagetitle|makeFilename}" class="clearfix serendipity_staticpage{if $staticpage_articleformat} serendipity_entry{/if}">
     <header>
         <h2>{if $staticpage_articleformat}{if $staticpage_articleformattitle}{$staticpage_articleformattitle}{else}{$staticpage_pagetitle|escape}{/if}{else}{if $staticpage_headline}{$staticpage_headline}{else}{$staticpage_pagetitle|escape}{/if}{/if}</h2>
