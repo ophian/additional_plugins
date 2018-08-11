@@ -11,7 +11,7 @@ require_once dirname(__FILE__) . '/OEmbedDatabase.php';
 require_once dirname(__FILE__) . '/OEmbedTemplater.php';
 require_once dirname(__FILE__) . '/oembed/ProviderList.php';
 
-@define('OEMBED_USE_CURL',TRUE);
+@define('OEMBED_USE_CURL', TRUE);
 
 class serendipity_event_oembed extends serendipity_event
 {
@@ -25,11 +25,11 @@ class serendipity_event_oembed extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_OEMBED_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Grischa Brockhaus');
-        $propbag->add('version',       '1.15');
+        $propbag->add('version',       '1.16');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.3.0'
         ));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
         $propbag->add('event_hooks',    array(
