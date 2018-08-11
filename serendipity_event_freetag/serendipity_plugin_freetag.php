@@ -293,7 +293,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
         }
 
         // not sure if we can optimize this loop... :/
-        // Probably through some SQL magick.
+        // Probably through some SQL magic.
         foreach($rows AS $r) {
             if ($to_lower) {
                  // set to_lower for frontend sidebar list/clouds (new)

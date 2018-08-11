@@ -2983,7 +2983,7 @@ addLoadEvent(enableAutocomplete);
                 <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_FREETAG_TITLE; ?></legend></span>
                 <div class="form_field">
                     <label for="properties_freetag_tagList" class="block_level"><?php echo PLUGIN_EVENT_FREETAG_ENTERDESC; ?>:</label>
-                    <input id="properties_freetag_tagList" dir="<?php echo $dir_reverse; ?>" type="text" name="serendipity[properties][freetag_tagList]" class="wickEnabled" value="<?php echo self::specialchars_mapper($tagList) ?>">
+                    <input id="properties_freetag_tagList" class="wickEnabled" dir="<?php echo $dir_reverse; ?>" type="text" name="serendipity[properties][freetag_tagList]" value="<?php echo self::specialchars_mapper($tagList) ?>">
                 </div>
                 <div class="form_check">
                     <input id="properties_freetag_kill" name="serendipity[properties][freetag_kill]" type="checkbox" value="true">
