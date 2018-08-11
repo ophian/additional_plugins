@@ -455,7 +455,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Freie Artikel-Tags&lt;/b&gt;&lt;br /&gt;Erlaubt das freie Tagging von Artikeln&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Fri, 10 Aug 2018 14:32:53 +0200</pubDate>
+<pubDate>Sat, 11 Aug 2018 09:17:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -545,7 +545,7 @@
 <category>Event Plugins</category>
 <author>Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Gästebuch&lt;/b&gt;&lt;br /&gt;Zeigt ein Gästebuch innerhalb des Blogs mit dem gewählten Design und allen Formatierungen an.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Fri, 10 Aug 2018 11:07:46 +0200</pubDate>
+<pubDate>Fri, 10 Aug 2018 20:17:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -787,8 +787,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mymood</link>
 <category>Event Plugins</category>
 <author>Brett Profitt</author>
-<content:encoded>&lt;b&gt;serendipity_event_mymood&lt;br /&gt;My Mood&lt;/b&gt;&lt;br /&gt;Allows you to add your current mood or moods to entries.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_mymood&lt;br /&gt;My Mood&lt;/b&gt;&lt;br /&gt;Allows you to add your current mood or moods to entries.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Sat, 11 Aug 2018 15:06:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mymood</guid>
 </item>
 <item>
@@ -805,8 +805,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_oembed</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_oembed&lt;br /&gt;oEmbed Plugin&lt;/b&gt;&lt;br /&gt;oEmbed ist ein Format für die eingebettete Darstellung einer URL in Ihrem Blog. Es erlaubt Blog-Artikeln, eingebettete Inhalte (wie Tweets, Fotos oder Videos) anzuzeigen, wenn ein Benutzer einen Link zu dieser Ressource veröffentlicht, ohne die Ressource direkt analysieren zu müssen.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Apr 2018 12:04:54 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_oembed&lt;br /&gt;oEmbed Plugin&lt;/b&gt;&lt;br /&gt;oEmbed ist ein Format für die eingebettete Darstellung einer URL in Ihrem Blog. Es erlaubt Blog-Artikeln, eingebettete Inhalte (wie Tweets, Fotos oder Videos) anzuzeigen, wenn ein Benutzer einen Link zu dieser Ressource veröffentlicht, ohne die Ressource direkt analysieren zu müssen.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Sat, 11 Aug 2018 15:17:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_oembed</guid>
 </item>
 <item>
@@ -940,8 +940,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_relatedlinks</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_relatedlinks&lt;br /&gt;Verwandte Links/Einträge&lt;/b&gt;&lt;br /&gt;Fügt verwandte Links/Einträge in die Artikelansicht ein, die manuell für jeden Eintrag eingegeben werden können. Für flexible Ausgabe kann das Smarty-Template &quot;plugin_relatedlinks.tpl&quot; angepasst werde.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_relatedlinks&lt;br /&gt;Verwandte Links/Einträge&lt;/b&gt;&lt;br /&gt;Fügt verwandte Links/Einträge in die Artikelansicht ein, die manuell für jeden Eintrag eingegeben werden können. Für flexible Ausgabe kann das Smarty-Template &quot;plugin_relatedlinks.tpl&quot; angepasst werde.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Sat, 11 Aug 2018 15:03:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_relatedlinks</guid>
 </item>
 <item>
