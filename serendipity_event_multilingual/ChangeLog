@@ -1,3 +1,9 @@
+2.41:
+----
+
+ * Fix blogTitle and blogDescription translation issue when a quicksearch
+   result was not successful because of length or emptiness.
+
 2.40:
 ----
 

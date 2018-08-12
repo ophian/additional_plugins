@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '4.1.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.40');
+        $propbag->add('version',        '2.41');
         $propbag->add('configuration',  array('copytext', 'placement', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -480,8 +480,8 @@ class serendipity_event_multilingual extends serendipity_event
                         $serendipity['smarty']->assign('blogDescription', $serendipity['blogDescription']);
                     }
 
-                    if (!defined('Smarty::SMARTY_VERSION')) {
-                        $this->tag_title(); // in Smarty 2 only
+                    if (!defined('Smarty::SMARTY_VERSION') || !empty($serendipity['GET']['searchTerm'])) {
+                        $this->tag_title(); // in Smarty 2 and generally for non-results searches only !!!
                         // check this deeply! - since at least for the non-tag banner entry_title this seems to not work here with Smarty 3 - see workaround in frontent_display
                     }
 
