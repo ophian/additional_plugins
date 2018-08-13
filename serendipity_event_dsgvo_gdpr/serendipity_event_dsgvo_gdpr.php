@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '1.74');
+        $propbag->add('version',       '1.75');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -587,6 +587,9 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                         } else {
                             $eventData = array('clean_page' => true);
                         }
+                         // Assign Smarty defaults for pagination
+                        $serendipity['smarty']->assign('footer_prev_page', null);
+                        $serendipity['smarty']->assign('footer_next_page', null);
                     }
                     break;
 
