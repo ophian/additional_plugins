@@ -2,7 +2,7 @@
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_NAME', 'DSGVO / GDPR: Datenschutz-Grundverordnung');
 @define('PLUGIN_EVENT_DSGVO_GDPR_DESC', 'Dieses Plugin soll Blog-Besitzern helfen, die Übereinstimmung mit dem Allgemeinen Datenschutzgesetz zu gewährleisten.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_MENU', 'GDPR-Erklärung und Text-Baustein "Grabbelkiste"');
+@define('PLUGIN_EVENT_DSGVO_GDPR_MENU', 'GDPR-Erklärung und dafür benötigte Informationen"');
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT', 'Ihre Datenschutzerklärung / Impressum');
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_DESC', 'Sie können die obige automatische Überprüfung als groben Entwurf einer Information sehen, deren Elemente Sie (soweit sie zutreffen) in Ihre Datenschutzerklärung aufnehmen sollten. Stellen Sie sicher, dass Ihre Datenschutzerklärung alle relevanten Informationen enthält. Wenden Sie sich an einen Anwalt, wenn Sie dabei Hilfe benötigen, wir können Ihnen aus Haftungsgründen leider keinen vollständigen Entwurf zur Verfügung stellen.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_URL', 'Optionale URL zur Datenschutzerklärung');

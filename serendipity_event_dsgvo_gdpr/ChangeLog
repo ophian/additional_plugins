@@ -1,3 +1,7 @@
+1.76:
+-----
+ * Better name for the first group toggle box
+
 1.75:
 -----
  * Assign some Smarty entries initial default values if the dsgvo subpage

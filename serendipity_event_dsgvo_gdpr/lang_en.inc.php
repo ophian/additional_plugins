@@ -2,7 +2,7 @@
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_NAME', 'DSGVO / GDPR: General Data Protection Regulation');
 @define('PLUGIN_EVENT_DSGVO_GDPR_DESC', 'This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_MENU', 'GDPR statement and text module "grabbox"');
+@define('PLUGIN_EVENT_DSGVO_GDPR_MENU', 'GDPR statement and informational text modules');
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT', 'Your privacy statement / legal notice');
 @define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_DESC', 'You can see this automatic inspection above as a rough draft of information, which you can use to understand what to include to your sites privacy statement. Make sure that your privacy statement contains all relevant information. Contact a lawyer if you need help with this, we sadly cannot provide a bulletproof statement draft for you for liability reasons.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_URL', 'Optional URL to privacy statement');
