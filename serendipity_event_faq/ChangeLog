@@ -1,3 +1,10 @@
+1.32:
+-----
+
+ * Fixes form description styles
+ * Precise FAQ_CATEGORY_DESC for [en, de]
+ * Fixup some previous init checks
+
 1.31:
 -----
 

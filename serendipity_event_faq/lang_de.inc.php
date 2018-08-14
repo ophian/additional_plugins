@@ -16,7 +16,7 @@
 @define('FAQ_ANSWER_DESC', 'Geben Sie hier die Antwort ein.');
 @define('FAQ_CATEGORY', 'Kategorie');
 @define('FAQ_CATEGORIES', 'Kategorien');
-@define('FAQ_CATEGORY_DESC', 'Wählen Sie hier die Kategorie aus.');
+@define('FAQ_CATEGORY_DESC', 'Setzen Sie hier den Namen der Kategorie.');
 @define('FAQ_PID', 'Elternseite');
 @define('FAQ_PID_PID', 'Welches ist die übergeordnete Seite.');
 @define('FAQ_DESCRIPTION', 'Beschreibung');
@@ -47,5 +47,5 @@
 @define('FAQ_REALYDELETECATEGORY', 'Möchten Sie diese Kategorie wirklich löschen?');
 @define('FAQ_NEWFAQ', 'Neue FAQ');
 @define('FAQ_MARKUP', 'Textformatierung für FAQ Artikel anwenden');
-@define('FAQ_MARKUP_DESC', 'Wenn aktiviert, werden die Textformatierungen auch auf FAQ Artikel angewandt. ');
+@define('FAQ_MARKUP_DESC', 'Wenn aktiviert, werden die Textformatierungen auch auf FAQ Artikel angewandt.');
 

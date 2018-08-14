@@ -14,7 +14,7 @@
 @define('FAQ_ANSWER_DESC', 'Enter the answer.');
 @define('FAQ_CATEGORY', 'Category');
 @define('FAQ_CATEGORIES', 'Categories');
-@define('FAQ_CATEGORY_DESC', 'Select the category.');
+@define('FAQ_CATEGORY_DESC', 'Set the category name.');
 @define('FAQ_PID', 'Parent');
 @define('FAQ_PID_PID', 'Select the parent page.');
 @define('FAQ_DESCRIPTION', 'Description');

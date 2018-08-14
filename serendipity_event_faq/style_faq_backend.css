@@ -98,10 +98,17 @@
 #backend_faq_formpage .hook_buttons {
     display: inline;
 }
-#backend_faq_formpage textarea {
+#backend_faq_formpage .plain_editor {
     width: 100%;
 }
-
+#backend_faq_formpage .form_field textarea,
+#backend_faq_formpage .form_field div:not(.action_field) {
+    display: inline-block;
+}
+.faq_config_desc {
+    color: #5E7A94;
+    font-size: 8pt;
+}
 .faq_lang {
     border: 1px solid #999;
     background: #efefef;

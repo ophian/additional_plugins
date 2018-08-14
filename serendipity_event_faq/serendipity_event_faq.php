@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian');
-        $propbag->add('version',      '1.31');
+        $propbag->add('version',      '1.32');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -227,7 +227,7 @@ class serendipity_event_faq extends serendipity_event
         switch ($name) {
             case 'id':
                 $propbag->add('type',           'hidden');
-                $propbag->add('value',          $this->category['id']);
+                $propbag->add('value',          isset($this->category['id']) ? $this->category['id'] : null);
                 break;
 
             case 'parent_id':
@@ -335,7 +335,7 @@ class serendipity_event_faq extends serendipity_event
         if (is_array($cats)) {
             $cats = serendipity_walkRecursive($cats);
             foreach ($cats AS $cat) {
-                if (($this->category['id'] != $cat['id']) && ($this->category['id'] != $cat['parent_id'])) {
+                if (isset($this->category['id']) && $this->category['id'] != $cat['id'] && $this->category['id'] != $cat['parent_id']) {
                     $c[$cat['id']] = $cat['category'];
                 }
             }
@@ -356,13 +356,14 @@ class serendipity_event_faq extends serendipity_event
 
     function &getFaq($key, $default = null)
     {
-        $key = isset($this->faq[$key]) ? $this->faq[$key] : $default; // Avoid Notice: Only variable references should be returned by reference
+        $key = !empty($this->faq[$key]) ? $this->faq[$key] : $default; // Avoid Notice: Only variable references should be returned by reference
         return $key;
     }
 
     function &getCategory($key, $default = null)
     {
-        return (isset($this->category[$key]) ? $this->category[$key] : $default);
+        $category = !empty($this->category[$key]) ? $this->category[$key] : $default;
+        return $category; // Avoid Notice: Only variable references should be returned by reference
     }
 
     function postgreFaqPrepare()
@@ -464,7 +465,7 @@ class serendipity_event_faq extends serendipity_event
         return false;
     }
 
-    function postgreCategoryPrepare()
+    function postCategoryPrepare()
     {
         if (empty($this->category['parent_id'])) {
             $this->category['parent_id'] = '0';
@@ -485,7 +486,7 @@ class serendipity_event_faq extends serendipity_event
             $res = serendipity_db_query($q, true, 'assoc');
 
             $this->category['catorder'] = ($res['counter'] + 1);
-            $this->postgreCategoryPrepare();
+            $this->postCategoryPrepare();
             $result = serendipity_db_insert('faq_categorys', $this->category);
             $serendipity['POST']['cid'] = serendipity_db_insert_id('faq_categorys', 'id');
         } else {
@@ -697,7 +698,7 @@ class serendipity_event_faq extends serendipity_event
                     $this->fetchCategory($serendipity['POST']['id']);
                 }
 
-                if (($serendipity['POST']['categorySave'] == "true") && (!empty($serendipity['POST']['SAVECONF']))) {
+                if (isset($serendipity['POST']['categorySave']) && $serendipity['POST']['categorySave'] == "true" && !empty($serendipity['POST']['SAVECONF'])) {
                     $serendipity['POST']['categorySubmit'] = true;
                     $bag = new serendipity_property_bag;
                     $this->introspect($bag);
@@ -1305,7 +1306,7 @@ class serendipity_event_faq extends serendipity_event
             include_once(S9Y_INCLUDE_PATH.'include/functions_entries_admin.inc.php');
         }
 
-        // call moduled abstract class
+        // call modulated abstract class
         if (!is_callable('inspectConfig')) {
             require_once dirname(__FILE__).'/class_inspectConfig.php';
         }
@@ -1316,7 +1317,7 @@ class serendipity_event_faq extends serendipity_event
         // add some $serendipity items to check for
         $inspectConfig['s9y']['wysiwyg'] = $serendipity['wysiwyg'];
         $inspectConfig['s9y']['version'] = $serendipity['version'][0];
-        $inspectConfig['s9y']['nl2br']['iso2br'] = $serendipity['nl2br']['iso2br'];
+        $inspectConfig['s9y']['nl2br']['iso2br'] = isset($serendipity['nl2br']['iso2br']) ? $serendipity['nl2br']['iso2br'] : null;
         $inspectConfig['s9y']['plugin_path'] = $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/';
 
         foreach ($this->config_category AS $config_item) {
@@ -1327,7 +1328,7 @@ class serendipity_event_faq extends serendipity_event
 
             $inspectConfig['cname'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('name')) : htmlspecialchars($cbag->get('name'), ENT_COMPAT, LANG_CHARSET));
             $inspectConfig['cdesc'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('description')) : htmlspecialchars($cbag->get('description'), ENT_COMPAT, LANG_CHARSET));
-            $inspectConfig['value'] = $value = $this->getCategory($config_item, 'unset'); // case hidden
+            $inspectConfig['value'] = $value = $this->getCategory($config_item, 'unset'); // default case hidden
             $inspectConfig['lang_direction'] = $lang_direction = (function_exists('serendipity_specialchars') ? serendipity_specialchars($cbag->get('lang_direction')) : htmlspecialchars($cbag->get('lang_direction'), ENT_COMPAT, LANG_CHARSET));
 
             $type = $cbag->get('type');
@@ -1335,7 +1336,7 @@ class serendipity_event_faq extends serendipity_event
                 $inspectConfig['lang_direction'] = LANG_DIRECTION;
             }
             if ($value === 'unset') {
-                $inspectConfig['value'] = $value = $cbag->get('default'); // check prop type default for alles cases, except case hidden language and id and cid!
+                $inspectConfig['value'] = $value = $cbag->get('default'); // check prop type default for all cases, except case hidden language and id and cid!
             }
             // check the special cases
             if (($config_item == 'language' || $config_item == 'id' || $config_item == 'cid')

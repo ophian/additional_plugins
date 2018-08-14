@@ -34,7 +34,7 @@ class icSelect extends inspectConfig
 <?php
         if ($inspectConfig['cdesc'] != '') {
 ?>
-            <span class="title_descriptor"><span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $inspectConfig['cdesc']; ?></span></span>
+            <span class="title_descriptor"><span class="faq_config_desc">&nbsp;<?php echo $inspectConfig['cdesc']; ?></span></span>
 <?php
         }
 ?>
@@ -115,7 +115,7 @@ class icRadio extends inspectConfig
 <?php
         if ($inspectConfig['cdesc'] != '') {
 ?>
-        <span class="title_descriptor"><span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $inspectConfig['cdesc']; ?></span></span>
+        <span class="title_descriptor"><span class="faq_config_desc">&nbsp;<?php echo $inspectConfig['cdesc']; ?></span></span>
 <?php
         }
 ?>
@@ -170,7 +170,7 @@ class icString extends inspectConfig
 
         <div class="form_field clear text_field">
             <label for="<?php echo $inspectConfig['cname']; ?><?php echo $inspectConfig['elcount']; ?>"><?php echo $inspectConfig['cname']; ?></label>
-            <span class="title_descriptor"><span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $inspectConfig['cdesc']; ?></span></span>
+            <span class="title_descriptor"><span class="faq_config_desc">&nbsp;<?php echo $inspectConfig['cdesc']; ?></span></span>
         </div>
 
         <div class="form_field clear action_field">
@@ -192,7 +192,7 @@ class icText extends inspectConfig
 
         <div class="form_field clear text_field">
             <label for="<?php echo $inspectConfig['cname']; ?><?php echo $inspectConfig['elcount']; ?>"><?php echo $inspectConfig['cname']; ?></label>
-            <span class="title_descriptor">&nbsp;<span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $inspectConfig['cdesc']; ?></span></span>
+            <span class="title_descriptor">&nbsp;<span class="faq_config_desc">&nbsp;<?php echo $inspectConfig['cdesc']; ?></span></span>
         </div>
 
         <div class="form_editor">
@@ -269,7 +269,7 @@ class icText extends inspectConfig
 
         <div class="form_field clear text_field">
             <label for="nuggets<?php echo $inspectConfig['elcount']; ?>"><?php echo $inspectConfig['cname']; ?></label>
-            <span class="title_descriptor">&nbsp;<span style="color: #5E7A94; font-size: 8pt;">&nbsp;<?php echo $inspectConfig['cdesc']; ?></span></span>
+            <span class="title_descriptor">&nbsp;<span class="faq_config_desc">&nbsp;<?php echo $inspectConfig['cdesc']; ?></span></span>
         </div>
 
         <div class="form_field clear plain_editor">
