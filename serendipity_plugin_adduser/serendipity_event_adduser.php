@@ -16,7 +16,7 @@ class serendipity_event_adduser extends serendipity_event
         $propbag->add('description', PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking, Ian');
-        $propbag->add('version',     '2.46');
+        $propbag->add('version',     '2.47');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -111,7 +111,7 @@ class serendipity_event_adduser extends serendipity_event
         $title = PLUGIN_ADDUSER_NAME;
     }
 
-    // Checks whether the current author is contained in one of the gorups that need no spam checking
+    // Checks whether the current author is contained in one of the groups that need no spam checking
     function inGroup()
     {
         global $serendipity;

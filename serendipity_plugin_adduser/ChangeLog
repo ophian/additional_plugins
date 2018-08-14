@@ -1,4 +1,10 @@
 2.46: (event)
+2.45: (plugin)
+-----
+
+ * Fix some remaining Smarty2 instances in template files
+
+2.46: (event)
 -----
 
  * Added legal property bag information for gdpr/dsgvo
