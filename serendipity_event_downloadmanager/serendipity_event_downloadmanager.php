@@ -37,7 +37,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '5.4.0'
         ));
 
-        $propbag->add('version',       '0.39');
+        $propbag->add('version',       '0.40');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -507,16 +507,8 @@ class serendipity_event_downloadmanager extends serendipity_event
      */
     function mb_basename($file)
     {
-        try {
-            $basename = @basename($file);
-        } catch (Throwable $t) {
-            // Executed only in PHP 7, will not match in PHP 5.x
-            $basename = @end(explode('/',$file));
-        } catch (Exception $e) {
-            // Executed only in PHP 5.x, will not be reached in PHP 7
-            $basename = @end(explode('/',$file));
-        }
-        return $basename;
+        $r = explode('/',$file);
+        return end($r); // avoid Notice: Only variables should be assigned by reference
     }
 
     /**
@@ -548,13 +540,13 @@ class serendipity_event_downloadmanager extends serendipity_event
             $serendipity['smarty']->assign(array('div' => 'div', 'tag' => 'p'));
         }
         if ($type == 'error') {
-            // assign files of category to smarty
+            // assign files of category to Smarty
             $serendipity['smarty']->assign('dlmerr', array('thiserror' => true, 'errormsg' => $msg));
         } elseif ( $type == 'success') {
-            // assign files of category to smarty
+            // assign files of category to Smarty
             $serendipity['smarty']->assign('dlmerr', array('thiserror' => true, 'successmsg' => $msg));
         } elseif ( $type == 'status') {
-            // assign files of category to smarty
+            // assign files of category to Smarty
             $serendipity['smarty']->assign('dlmerr', array('thiserror' => true, 'statusmsg' => $msg));
         }
     }
@@ -841,12 +833,12 @@ class serendipity_event_downloadmanager extends serendipity_event
         }
 
         if (!serendipity_db_bool($this->get_config('unhideroot'))) {
-            // with DLM version 0.25 we set payload.root to be unhidden.0, to get the expected results in frontend
+            // with DLM version 0.25 we set payload.root to be unhidden.0, to get the expected results in Frontend
             $result = $this->dlm_sql_db('DLM_UPDATE', "hidden = '0' WHERE payload = 'root' AND node_id = '1'");
             if ($result) $this->set_config('unhideroot', 'true');
         }
 
-        // assign to smarty and all 3 frontend pages
+        // assign to Smarty and all 3 Frontend pages
         $serendipity['smarty']->assign(
             array(
                 'httppath'          => $this->get_config('httppath'),
@@ -888,8 +880,8 @@ class serendipity_event_downloadmanager extends serendipity_event
                     )
                 );
 
-                // get single file content as a simple linear array, smarty tpl needs no loop, but has no proper $var|print_r output
-                // else take DLM_SELECT_ARRAY and add $file[0] here - remember smarty switches arrays back -1 level in templates!
+                // get single file content as a simple linear array, Smarty tpl needs no loop, but has no proper $var|print_r output
+                // else take DLM_SELECT_ARRAY and add $file[0] here - remember Smarty switches arrays back -1 level in templates!
                 $file = $this->dlm_sql_db('DLM_SELECT', "id = $id");
                 $mime = $this->getMime($file['realfilename']);
 
@@ -966,11 +958,11 @@ class serendipity_event_downloadmanager extends serendipity_event
                                             'e' => $this->get_config('httppath').'img/e.gif',
                                             'path' => $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . "?serendipity[subpage]=".$this->get_config('pageurl')."&amp;level=".($subcat['level']-1)."&amp;thiscat=".$subcat['node_id']
                                             );
-                            // construct the smarty template array
+                            // construct the Smarty template array
                             $sctable[] = array('subcat' => $subcat, 'node' => $nodetb, 'num' => $num_dls);
                         }
                     }
-                    // assign subcategeories to smarty
+                    // assign subcategeories to Smarty
                     $serendipity['smarty']->assign('sclist', $sctable);
                 }
 
@@ -1025,10 +1017,10 @@ class serendipity_event_downloadmanager extends serendipity_event
                                           'iconurl'    => ($this->get_config('directdl_inlist','no') == 'icon' || $this->get_config('directdl_inlist','no') == 'both') ? $dlurl : $infourl,
                                           'nameurl'    => ($this->get_config('directdl_inlist','no') == 'name' || $this->get_config('directdl_inlist','no') == 'both') ? $dlurl : $infourl
                                         );
-                        // construct the smarty template array
+                        // construct the Smarty template array
                         $fltable[] = array('file' => $file, 'info' => $fileinfo, 'is' => $nis, 'col' => $colspan);
                     }
-                    // assign files of categeory to smarty
+                    // assign files of category to Smarty
                     $serendipity['smarty']->assign('fltable', $fltable);
                 }
 
@@ -1042,7 +1034,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             if (empty($filename) || $filename == 'none.html')
                 $filename = 'dlmanager.catlist.tpl';
 
-            // build the frontend category array list (in backend = false and as <select> call list = false)
+            // build the Frontend category array list (in Backend = false and as <select> call list = false)
             $catlist = array();
             $catlist = $this->buildCategoriesList();
 
@@ -1062,7 +1054,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             unset($cats);
         }
 
-        /* get the frontend dlm template file */
+        /* get the Frontend dlm template file */
         echo $this->parseTemplate($filename);
     }
 
@@ -1155,7 +1147,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     /**
      * build the full categories list array
      *
-     * @param   boolean catlist call backend (default: false)
+     * @param   boolean catlist call Backend (default: false)
      * @param   boolean <select> call array  (default: false)
      * @return  array
      */
@@ -1174,12 +1166,12 @@ class serendipity_event_downloadmanager extends serendipity_event
                 $parent[$last['level']] = $last;
             }
             if ($seca === false) {
-                // the frontend and backend category call
+                // the Frontend and Backend category call
                 if ($cat['payload'] != 'root') {
                     $clt[] = $this->buildCat($cat, $parent);
                 }
             } else {
-                // the backend <select> call
+                // the Backend <select> call
                 $clt[] = $this->buildCat($cat, $parent, true);
             }
             $last = $cat;
@@ -1197,8 +1189,8 @@ class serendipity_event_downloadmanager extends serendipity_event
      * build the category array
      *
      * @param   array   A referenced array of this category
-     * @param   array   A referenced array of the interating last cat array
-     * @param   boolean is backend <select> call (default: false)
+     * @param   array   A referenced array of the iterating last cat array
+     * @param   boolean is Backend <select> call (default: false)
      * @return  array
      */
     function buildCat($cat, $parent, $seca=false)
@@ -1208,7 +1200,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         if ($seca === false) {
             $ret  = $this->dlm_sql_db('DLM_COUNT', "catid = ".$cat['node_id']);
             $fnum = intval($ret['num']);
-        } else $fnum = NULL; // backend <select> has no need of filenum in cat
+        } else $fnum = NULL; // Backend <select> has no need of filenum in cat
 
         $tl = array(); // build tab list
         $cl = array(); // build cat list
@@ -1233,7 +1225,7 @@ class serendipity_event_downloadmanager extends serendipity_event
               ? ''
               : $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?serendipity[subpage]='.$this->get_config('pageurl').'&amp;level='.$cat['level'].'&amp;thiscat='.$cat['node_id'];
 
-        // construct the smarty template array (no need of catname, while sending full cat array, used here, as long as defined in other function)
+        // construct the Smarty template array (no need of catname, while sending full cat array, used here, as long as defined in other function)
         $cl = array( 'cat'     => $cat,
                      'catname' => $cat['payload'],
                      'imgname' => $tl,
@@ -1245,7 +1237,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * delete categoey
+     * delete category
      */
     function delCat($node_id)
     {
@@ -1335,15 +1327,15 @@ class serendipity_event_downloadmanager extends serendipity_event
         }
         @serendipity_db_query("LOCK TABLES {$serendipity['dbPrefix']}dma_downloadmanager_categories WRITE");
         foreach ($catnames AS $id => $name) {
-            serendipity_db_query("UPDATE     {$serendipity['dbPrefix']}dma_downloadmanager_categories
-                                     SET     payload = '".serendipity_db_escape_string($name)."'
-                                   WHERE     node_id = ".intval($id));
+            serendipity_db_query("UPDATE {$serendipity['dbPrefix']}dma_downloadmanager_categories
+                                     SET payload = '".serendipity_db_escape_string($name)."'
+                                   WHERE node_id = ".intval($id));
         }
         @serendipity_db_query("UNLOCK TABLES");
     }
 
     /**
-     * delete possible empty ftp directories
+     * delete possible empty FTP directories
      */
     function delEmptyDir()
     {
@@ -1424,7 +1416,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 if (!function_exists('mb_convert_encoding')) {
                     $this->ERRMSG(PLUGIN_DOWNLOADMANAGER_PHPMB_ERROR, 'status');
                 }
-                if (mb_detect_encoding($name, 'UTF-8', false)) {
+                if (mb_detect_encoding($name, 'UTF-8', false) !== 'UTF-8') {
                     if ($this->debug) echo "<b>NAME</b> return mb_convert_encoding back to UTF-8 for file prop stats reading: ";
                     $name = mb_convert_encoding($name, 'UTF-8', 'ISO-8859-1');
                     if ($this->debug) echo "<b>".mb_detect_encoding($name, 'UTF-8, ISO-8859-1', true)."</b><br><br>\n";
@@ -1728,8 +1720,8 @@ class serendipity_event_downloadmanager extends serendipity_event
         if (isset($_GET['editfile'])) { $page = 3; }
         if (isset($_GET['thiscat']))  { $page = 2; $divnum = 4; }
 
-        // assign some global backend vars as 'dlmgbl' array to smarty backend index template
-        // strip last character / in string 'thispath' is $string = substr($string, 0, -1); else in smarty as modifier $string|substr:0:-1
+        // assign some global Backend vars as 'dlmgbl' array to Smarty Backend index template
+        // strip last character / in string 'thispath' is $string = substr($string, 0, -1); else in Smarty as modifier $string|substr:0:-1
         $serendipity['smarty']->assign('dlmgbl',
                 array(
                         'httppath'       => $this->get_config('httppath'),
@@ -1750,7 +1742,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                                     - edit (single file move and file description),
                                     - upload form,
                                     - files in selected category,
-                                    - ftp/trash folderfiles,
+                                    - FTP/trash-folder files,
                                     - Serendipities media library files with subcats,
                                     - subcategories of root,
                                     - the appendix (including the helptip and the clear trash button) */
@@ -1765,7 +1757,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 $num_dls = intval($ret1['num']);
                 $cat['num'] = $num_dls;
 
-                // append to backend global array in index headers and page 2 subpages the selected cat array
+                // append to Backend global array in index headers and page 2 subpages the selected cat array
                 $serendipity['smarty']->append('dlmgbl', array('cat' => $cat));
 
                 if (!empty($_GET['editfile']) && intval($_GET['editfile']) >= 1) {
@@ -1808,7 +1800,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                         // generate file table content here - DIV 1 @ PAGE 2
                         $this->backend_dlm_build_filetable($files, (($ct) ? false : $ddiv), $this->globs['ftppath'], $this->globs['dlmpath'], $this->globs['dateformat'], $num_dls, intval($_GET['thiscat']), 1, 2);
 
-                        // generate ftp/trash folder table content here - DIV 2 @ PAGE 2
+                        // generate FTP/trash folder table content here - DIV 2 @ PAGE 2
                         $this->backend_dlm_build_ftptable($ct, $this->globs['ftppath'], intval($_GET['thiscat']), 2, 2);
 
                         // generate media library folder table content here - DIV 3 @ PAGE 2
@@ -1869,7 +1861,7 @@ class serendipity_event_downloadmanager extends serendipity_event
 
         }
 
-        /* get the backend dlm index template file */
+        /* get the Backend dlm index template file */
         echo $this->parseTemplate('backend.dlm.index.tpl');
 
     }
@@ -2072,7 +2064,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                     }
                     break;
 
-                /* put here all your css stuff you need for the downloadmanagers plugin frontend output */
+                /* put here all your css stuff you need for the downloadmanagers plugin Frontend output */
                 case 'css':
 
                     if (stristr($eventData, '#downloadmanager')) {
@@ -2093,7 +2085,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                     $eventData .= $dlm_css; // append CSS
                     break;
 
-                /* put here all you css stuff you need for the backend of dlm */
+                /* put here all you css stuff you need for the Backend of dlm */
                 case 'css_backend':
                     if (stristr($eventData, '#backend_downloadmanager')) {
                         // class exists in CSS, so a user has customized it and we don't need default
@@ -2141,7 +2133,7 @@ class serendipity_event_downloadmanager extends serendipity_event
   * Backend administration functions
   **************************************************/
 
-    /* add backend css to serendipity_admin.css */
+    /* add Backend css to serendipity_admin.css */
     function backend_dlm_css(&$eventData, &$becss)
     {
         $eventData .= $becss;
@@ -2152,7 +2144,7 @@ class serendipity_event_downloadmanager extends serendipity_event
      *
      * HELPTIP_CF = (sub)category folder;
      * HELPTIP_FF = file folder;
-     * HELPTIP_IF = incoming ftp/trash folder;
+     * HELPTIP_IF = incoming FTP/trash folder;
      * HELPTIP_MF = s9y media library folder;
      */
     function backend_dlm_helptip()
@@ -2181,7 +2173,7 @@ class serendipity_event_downloadmanager extends serendipity_event
      * refresh a page to show correct values directly after move, erase, clean etc (mostly done on page 2)
      * order by header(), Javascript, HTML (meta refresh)
      *
-     * @param   string request url
+     * @param   string request URL
 
      * @return  false  exit page
      */
@@ -2201,7 +2193,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * fetch dlm backend pathfiles table content
+     * fetch dlm Backend pathfiles table content
      *
      * @param   string  The path to iterate
      * @param   boolean If path is Serendipity MediaLibrary (default false)
@@ -2220,6 +2212,9 @@ class serendipity_event_downloadmanager extends serendipity_event
         try {
             $_dir = new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS);
             // NOTE: UnexpectedValueException thrown for PHP >= 5.3
+        } catch (Throwable $t) {
+            // Executed only in PHP 7, will not match in PHP 5.x
+            echo "Error: " . $t->getMessage();#return;
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();#return;
         }
@@ -2248,12 +2243,12 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * recursive str_replaces in files array, happens to special keys only, used by smarty files array to set filesize, mime array and filedate
+     * recursive str_replaces in files array, happens to special keys only, used by Smarty files array to set filesize, mime array and filedate
      *
      * @param array           the array data
-     * @param string/boolean  use with date() replacement funktion too
+     * @param string/boolean  use with date() replacement function too
      * @param string/boolean  search in specific key only = string (optional)
-     * @param string/boolean  new keyname, use with different replacement funktion only (optional)
+     * @param string/boolean  new key name, use with different replacement function only (optional)
      *
      * @return array
      **/
@@ -2304,12 +2299,12 @@ class serendipity_event_downloadmanager extends serendipity_event
     {
         global $serendipity;
 
-        // fetch all physically files in incoming ftp or trash table
+        // fetch all physically files in incoming FTP or trash table
         $ifiles = $this->backend_dlm_fetch_pathfiles($absinth); // is 3rd and last run in workflow
         $ifn    = count($ifiles['f_arr']);
         unset($ifiles);
 
-        // assign the backend appendix vars to smarty template page section 'appendix'
+        // assign the Backend appendix vars to Smarty template page section 'appendix'
         $serendipity['smarty']->assign('dlmapx',
             array(
                 'appendix'  => true,
@@ -2318,14 +2313,14 @@ class serendipity_event_downloadmanager extends serendipity_event
             )
         );
 
-        // view all smarty template vars
+        // view all Smarty template vars
         #echo '<pre>' . print_r( $serendipity['smarty']->getTemplateVars(), true ) . '</pre>';
 
         return;
     }
 
     /**
-     * build the dlm backend add categories table
+     * build the dlm Backend add categories table
      *
      * @param   array   A referenced array of categories
      * @param   int     The div number (standard=3)
@@ -2337,10 +2332,10 @@ class serendipity_event_downloadmanager extends serendipity_event
     {
         global $serendipity;
 
-        // build the category list in backend => true and as <select> call list => true
+        // build the category list in Backend => true and as <select> call list => true
         $catlist = $this->buildCategoriesList(true, true);
 
-        // assign the backend addcat vars to smarty template page section 'addcat'
+        // assign the Backend addcat vars to Smarty template page section 'addcat'
         $serendipity['smarty']->assign('dlmact',
             array(
                 'addcat'      => true,
@@ -2352,7 +2347,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * build the dlm backend categories table content
+     * build the dlm Backend categories table content
      *
      * @param   array   A referenced array of categories
      * @param   boolean Default value foldable divs (permanently open = true)
@@ -2371,13 +2366,13 @@ class serendipity_event_downloadmanager extends serendipity_event
 
             $cc = is_array($cats) ? count($cats)-1 : 0; // else root level would be counted too
 
-            // build the category list in backend => true and as <select> call list => false
+            // build the category list in Backend => true and as <select> call list => false
             $catlist = $this->buildCategoriesList(true, false);
 
             // set value of key filesize to something readable
             $catlist = $this->backend_str_replace_recursive_cat($catlist, false, 'level', 'inputsize');
 
-            // assign the backend category vars to smarty template page section 'hascats'
+            // assign the Backend category vars to Smarty template page section 'hascats'
             $serendipity['smarty']->assign('dlmhcs',
                 array(
                     'hascats'        => true,
@@ -2394,10 +2389,10 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * build dlm backend file table content
+     * build dlm Backend file table content
      *
      * @param   array   A referenced array of files
-     * @param   boolean Default value foldable divs (permanently open = true)
+     * @param   boolean Default value collapsible divs (permanently open = true)
      * @param   string  The configs absincomepath
      * @param   string  The configs absdownloadspath
      * @param   string  The configs Dateformat
@@ -2473,7 +2468,7 @@ class serendipity_event_downloadmanager extends serendipity_event
 
         }
 
-        // assign the backend filetable vars to smarty template page section 'catfiles'
+        // assign the Backend filetable vars to Smarty template page section 'catfiles'
         $serendipity['smarty']->assign('dlmcfs',
             array(
                 'catfiles'       => true,
@@ -2486,9 +2481,9 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * build dlm backend s9y media gallery file table content
+     * build dlm Backend s9y media gallery file table content
      *
-     * @param   string  The configs Dateformat
+     * @param   string  The configs dateformat
      * @param   string  The path to the s9y media library
      * @param   int     The div number
      * @param   int     The page number
@@ -2546,7 +2541,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 );
             }
         }
-        // assign as array('sml') the S9y media library files to smarty tpl page 2 'thissml' section
+        // assign as array('sml') the S9y media library files to Smarty tpl page 2 'thissml' section
         $serendipity['smarty']->assign('dlmtsl',
             array(
                 'thissml'        => true,
@@ -2565,7 +2560,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     /**
      * generate page 2 incoming folder table content here - DLM 2 @ PAGE 2
      *
-     * @param  boolean Default value foldable divs (permanently open = true)
+     * @param  boolean Default value collapsible divs (permanently open = true)
      * @param  string  The full path incoming FTP folder
      * @param  int     The category id number
      * @param  int     The div number
@@ -2577,7 +2572,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     {
         global $serendipity;
 
-        // fetch all physically files in incoming ftp or trash table
+        // fetch all physically files in incoming FTP or trash table
         $files = $this->backend_dlm_fetch_pathfiles($absinth); // is first run in workflow
 
         $fn = count($files['f_arr']);
@@ -2587,6 +2582,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         if ($ct && (isset($_GET['cleantrash']) && intval($_GET['cleantrash']) == 1 && intval($_POST['dlm']['cleartrash']) == 1)
                && !(isset($_POST['Move_Selected']) || isset($_POST['Move_Selected_x']) || isset($_POST['Move_Selected_y'])) ) {
             foreach($files['f_arr'] AS $file) {
+                #echo "Trying to delete $file<br>\n";
                 $ctfile = $this->delIncomingFile($file); // already as fullpath
                 #$ctfile = true;
             }
@@ -2598,7 +2594,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             }
         }
 
-        if (isset($ctfile) && $ctfile === true && is_array($files)) unset($files); // when does this ever happen?
+        if (isset($ctfile) && $ctfile === true && isset($files) && is_array($files)) unset($files); // when does this ever happen?
 
         /* move multiple files being marked to move to a new directory */
         if ( isset($_POST['Move_Selected']) || isset($_POST['Move_Selected_x']) || isset($_POST['Move_Selected_y']) ) {
@@ -2632,7 +2628,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             );
         }
 
-        // assign the backend ftp/trash vars to smarty template page section 'thisftp'
+        // assign the Backend FTP/trash vars to Smarty template page section 'thisftp'
         $serendipity['smarty']->assign('dlmtfp',
             array(
                 'thisftp'        => true,
@@ -2658,7 +2654,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         $MAX_FILE_SIZE       = intval($upload_max_filesize);
         $MAX_SIZE_PER_FILE   = ($MAX_FILE_SIZE / 1000000)." MB";
 
-        // assign the backend uploadform vars to smarty template page section 'uploadform'
+        // assign the Backend uploadform vars to Smarty template page section 'uploadform'
         $serendipity['smarty']->assign('dlmulf',
             array(
                 'thistype'            =>    'uploadform',
@@ -2672,7 +2668,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * build dlm backend file table content
+     * build dlm Backend file table content
      *
      * @param   array   A referenced array of this category
      * @param   int     The single file id number

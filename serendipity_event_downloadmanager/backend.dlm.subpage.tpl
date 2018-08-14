@@ -1,4 +1,4 @@
-{* backend.dlm.subpage.tpl last modified 2018-08-10 *}
+{* backend.dlm.subpage.tpl last modified 2018-08-14 *}
 {if $dlmgbl.thispage == 2 && $dlmcfs.catfiles === true}
 {* Show all files in category *}
 <p id="dlm_files_header" class="dlm_backend_option"><a href="#" onclick="showConfig('dlm1'); return false" title="{$CONST.TOGGLE_OPTION}"><img src="{if $dlmcfs.ddiv === true}{serendipity_getFile file="img/minus.png"}{else}{serendipity_getFile file="img/plus.png"}{/if}" id="optiondlm1" alt="+/-" /> {$CONST.PLUGIN_DOWNLOADMANAGER_DLS_IN_THIS_CAT}[ {$dlmgbl[0].cat.payload} ]:</a> {$dlmgbl[0].cat.num}</p>
@@ -100,7 +100,8 @@
             <td colspan="3" class="dlm_fileform_validation">
                 <input name="dlm[thiscat]" value="{$dlmgbl.thiscat}" type="hidden" />
                 <input name="dlm[chkFtpMove]" value="1" onclick="chkAll(this.form, 'dlm[ifiles][]', this.checked)" type="checkbox">&nbsp;{$CONST.PLUGIN_DOWNLOADMANAGER_BUTTON_MARK}&#160;&#160;
-                <input src="{$dlmgbl.httppath}img/notes-checkmark.gif" name="Move_Selected" alt="notes-move" title=" Move " type="image">&nbsp;{$CONST.PLUGIN_DOWNLOADMANAGER_BUTTON_MOVE_TITLE}
+                <button name="Move_Selected" type="submit"><span class="icon icon-check"></span> {$CONST.PLUGIN_DOWNLOADMANAGER_BUTTON_MOVE_TITLE}</button>
+{*                <input src="{$dlmgbl.httppath}img/notes-checkmark.gif" name="Move_Selected" alt="notes-move" title=" Move " type="image">&nbsp;{$CONST.PLUGIN_DOWNLOADMANAGER_BUTTON_MOVE_TITLE} *}
             </td>
         </tr>
     </tfoot>

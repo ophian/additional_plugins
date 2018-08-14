@@ -1,6 +1,13 @@
 ChangeLog:
 """"""""""
 
+0.40:
+----
+
+ * Add another Icon for the FTP/trash dir
+ * Fix mb_basename()
+ * Fix (WIN) encodeToUTF() is UTF-8 check
+
 0.39:
 ----
 
