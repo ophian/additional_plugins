@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian');
-        $propbag->add('version',      '1.30');
+        $propbag->add('version',      '1.31');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -1489,7 +1489,7 @@ class serendipity_event_faq extends serendipity_event
                     break;
 
                 case 'entries_footer':
-                    if ($serendipity['GET']['action'] == 'search') {
+                    if (isset($serendipity['GET']['action']) && $serendipity['GET']['action'] == 'search') {
                         $this->showSearch();
                     }
                     break;
