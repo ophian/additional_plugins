@@ -197,7 +197,7 @@ class serendipity_event_faq extends serendipity_event
 
             case 'id':
                 $propbag->add('type',           'hidden');
-                $propbag->add('value',          $this->faq['id']);
+                $propbag->add('value',          isset($this->faq['id']) ? $this->faq['id'] : null);
                 break;
 
             default:
@@ -657,7 +657,7 @@ class serendipity_event_faq extends serendipity_event
                 if (!empty($serendipity['POST']['id'])) {
                     $serendipity['GET']['id'] = &$serendipity['POST']['id'];
                 }
-                if (is_numeric($serendipity['GET']['id'])) {
+                if (isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
                     $this->fetchFAQ($serendipity['GET']['id']);
                 }
                 if (!is_numeric($serendipity['GET']['cid'])) {

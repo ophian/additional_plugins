@@ -1,7 +1,7 @@
 1.31:
 -----
 
- * Add another uninitialized variable check
+ * Add some other uninitialized variable checks
 
 1.30:
 -----
