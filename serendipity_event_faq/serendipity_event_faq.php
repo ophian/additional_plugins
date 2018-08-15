@@ -109,7 +109,7 @@ class serendipity_event_faq extends serendipity_event
      * Called by serendipity when it wants to display the configuration
      * editor for your plugin.
      * $name is the name of a configuration item added in this
-     * instrospect method.
+     * introspect method.
      *
      * @access  public
      * @param   string      Name of the config item
@@ -163,7 +163,7 @@ class serendipity_event_faq extends serendipity_event
      * Called by this plugin when it wants to display the configuration
      * editor for one faq.
      * $name is the name of a configuration item added in this
-     * instrospect method.
+     * introspect method.
      *
      * @access  public
      * @param   string      Name of the faq item
@@ -212,7 +212,7 @@ class serendipity_event_faq extends serendipity_event
      * Called by this plugin when it wants to display the configuration
      * editor for one category.
      * $name is the name of a configuration item added in this
-     * instrospect method.
+     * introspect method.
      *
      * @access  public
      * @param   string      Name of the category item
