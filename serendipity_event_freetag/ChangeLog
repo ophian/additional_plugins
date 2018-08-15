@@ -1,3 +1,8 @@
+4.16:
+-----
+
+ * Fix PHP 7 warning for parameter must implement Countable
+
 4.15:
 -----
 

@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.15');
+        $propbag->add('version',       '4.16');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1408,7 +1408,7 @@ addLoadEvent(enableAutocomplete);
         $show_related = serendipity_db_bool($this->get_config('show_related', 'true'));
         $to_lower     = serendipity_db_bool($this->get_config('lowercase_tags', 'true'));
 
-        $elements = count($eventData);
+        $elements = is_array($eventData) ? count($eventData) : 0;
 
         // If not using extended-smarty, we want related entries only when
         // showing one single entry. It is better to ask Smarty here than doing
