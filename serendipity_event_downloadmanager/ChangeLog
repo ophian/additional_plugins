@@ -29,7 +29,7 @@ ChangeLog:
 
 [Version 0.36 2016/08/22] by Ian
 --------------------------------
- * Fix some frontend styles mainly for 2k11
+ * Fix some Frontend styles mainly for 2k11
 
 [Version 0.35 2016/08/06] by Ian
 --------------------------------
@@ -47,7 +47,7 @@ ChangeLog:
 --------------------------------
  * Improved filedir read iteration to PHP SPL Iterator, because of errors.
  * In ISO-8859-1 to UTF-8 (recommended) environments we now support encoded filenames.
- * Some more fixes related to these changes and other false or unconsistent usage.
+ * Some more fixes related to these changes and other false or inconsistent usage.
  * Some more minor 2.0 enhancements.
  * Remove conversion to new archives location with version 0.24. Six years is enough!
    (Improved some lang constant vars for this.)
@@ -66,9 +66,9 @@ latest: Smarty3 forward compatibility
 
 [Version 0.26 2011/02/15] by Ian
 --------------------------------
-    - changed smarty->fetch method call to be less strict to support smarty 2 to smarty3 parameter order change - removed param 4
-    - added   restrict backend functionality and administration sidebar link to admin only
-    - fixed   show Data for registered Users only in frontent tpls if set to true in config
+    - changed smarty->fetch method call to be less strict to support Smarty 2 to smarty3 parameter order change - removed param 4
+    - added   restrict Backend functionality and administration sidebar link to admin only
+    - fixed   show Data for registered Users only in Frontend templates if set to true in config
     - added   serendipity_db_bool() to $this->get_config('registered_only')
 
 [Version 0.25.1 2010/10/20] by Ian
@@ -81,59 +81,59 @@ latest: Smarty3 forward compatibility
     - fixed   wrong path error, when copying a file from a s9y media library subfolder to selected category (0.25b only)
     - changed minor details in lang files and frontend filelist.tpl and filedetails.tpl
     - added   rename file ability in backends single file edit page (this added a new Constant to lang files too)
-    - changed 0.25 beta version of all new backend templates and their stylesheet, to contain a contemporary new look & feel under the hood (based and designed by YellowLed, thank you!)
+    - changed 0.25 beta version of all new Backend templates and their stylesheet, to contain a contemporary new look & feel under the hood (based and designed by YellowLed, thank you!)
     - changed header part on backends subpages, which now has a point back to root and to previous level, if any
     - changed root level db setting to be unhidden by now - this does not change the behaviour of showing cats without root level, but makes access to it more easy
     - added   new s9y media library import icon
     - fixed   some possible bugs and/or inconvenient behaviour, which may have been in 0.24 too
-    - added   smarty backend array names to be unique in global blog context - read list in backend.dlm.index.tpl
-    - added   a complete smarty template to backend, which caused multiple changes in plugins code
+    - added   Smarty Backend array names to be unique in global blog context - read list in backend.dlm.index.tpl
+    - added   a complete Smarty template to Backend, which caused multiple changes in plugins code
 
 
 [Version 0.24 2010/08/26] by Ian
 --------------------------------
-    - added   new config setting: 'intro', to have some more introduction text before frontend content (optional)
+    - added   new config setting: 'intro', to have some more introduction text before Frontend content (optional)
     - added   ics mime icon
-    - changed frontend templates, frontend.css and download mime icons to show up refreshed in a new contemporary look (designed by YellowLed, thank you!)
-    - changed downloadmanagers file path again to '/serendipty/archives/.dlm/files' and '/serendipty/archives/.dlm/ftpin' which seems to be
+    - changed Frontend templates, frontend.css and download mime icons to show up refreshed in a new contemporary look (designed by YellowLed, thank you!)
+    - changed downloadmanagers file path again to '/serendipity/archives/.dlm/files' and '/serendipity/archives/.dlm/ftpin' which seems to be
               the best place, dealing with files to come in and go out. The /uploads directory threw a problem with the media library and the
               /templates_c directory is cleaned up directly by users in some cases. After contacting Garvin about this issues, he came up with
               the /archives folder. I tried to automate the process of switching all files to the new folders and 0.24s new config settings.
               If you encounter any problems with it, please move your files manually. If you get a link to inform the plugin, please follow.
-              A next reload will set configs 'chg2archivespath' to true.
+              A next reload will set configuration option 'chg2archivespath' to true.
               From now on these directories are not customizable any more and hidden in the downloadmanagers config settings.
     - changed some more plugin cleanup, code optimizing, function sallying, general refactoring
-    - changed the frontend files and category templates to be as much smarty based as possible by now
-    - added   Smarty var 'dlm_is_registered' to all three frontend templates
-    - added   new config setting, show categories and downloads in frontend to this blogs registered and logged in users only (default: false)
-    - added   and changed some backend icons (switched the ugly ones to some famfamfam_silk_icons)
-    - changed the frontend.css and backend.css files to support multiple html code changes, which still is a work in progress
-    - added   the possibility to clean up the income (ftp/trash) folder immediately via trashbox button
+    - changed the Frontend files and category templates to be as much Smarty based as possible by now
+    - added   Smarty var 'dlm_is_registered' to all three Frontend templates
+    - added   new config setting, show categories and downloads in Frontend to this blogs registered and logged in users only (default: false)
+    - added   and changed some Backend icons (switched the ugly ones to some famfamfam_silk_icons)
+    - changed the frontend.css and backend.css files to support multiple HTML code changes, which still is a work in progress
+    - added   the possibility to clean up the income (FTP/trash) folder immediately via trashbox button
     - changed the usability of income folder. Now it is used as a trash/temp folder for multiple erased (moved) files also!
-    - added   a foldable downloadmanager helptip
+    - added   a collapsible downloadmanager helptip
     - changed and added lang files constants <en>, <de> and <de-utf8>
     - changed arrangement of plugins functions to be more clear and flexible and to support future enhancements
     - changed dlm_functions.js to support mark/unmark functionality
     - added   mark and move all selected files in income folder to current folder
-    - added   mark and erase all selected files in category and move them to the income (ftp/trash) folder to avoid unintentional destroying
+    - added   mark and erase all selected files in category and move them to the income (FTP/trash) folder to avoid unintentional destroying
 
 [Version 0.23.1 2010/08/16] by Ian
 --------------------------------
-    - Version bump to support belatedly added files (v.0.23) in CVS spartacus download.
+    - Version bump to support belatedly added files (v.0.23) in CVS Spartacus download.
 
 [Version 0.23 2010/08/11] by Ian
 --------------------------------
-    - added root level file appearance in backend (fixed: moved files to root level did not show up)
-            The frontend did/does not show root level files, which isn't really a bug, while it is a feature (by now) ;-)
+    - added root level file appearance in Backend (fixed: moved files to root level did not show up)
+            The Frontend did/does not show root level files, which isn't really a bug, while it is a feature (by now) ;-)
     - changed dlm file work behaviour to support root level files too (please report, if you experience some unusual behaviour)
-    - added download file button to backend
+    - added download file button to Backend
     - changed 'dlmanager/incoming' folder path to '.dlmanager/incoming', (effects new installations only!)
             so it does not appear when the plugin presents the media gallery values
             (if have, erase uploads/'dlmanager' folder yourself, next time you upload the new one will be created)
     - fixed download of files with spaces in filename to have replaced spaces (_)
     - added the missing style_dlmanager_frontend.css to CVS
-    - added style_dlmanager_backend.css to support future dlm backend templates
-    - added dlm_functions.js to support future dlm backend javascript - using foldable div containers by now
+    - added style_dlmanager_backend.css to support future dlm Backend templates
+    - added dlm_functions.js to support future dlm Backend javascript - using collapsible div containers by now
     - added some missing closing divs - hopefully all of them at the right place
 
 [Version 0.221 2010/08/09] by Ian
@@ -147,7 +147,7 @@ latest: Smarty3 forward compatibility
     - added missing mkdir of directories using the recursive mkdir function added with PHP 5.0.0
     - fixed is_dir($handle) bug and warning (onli)
     - added the ability to have a very own plugin stylesheet with some very minor values to start with
-    - changed the frontend tpls to support these changes
+    - changed the Frontend tpls to support these changes
 
 [Version 0.21 2009/08/25]
     - PHP 5.3 compatibility, split() is deprecated
