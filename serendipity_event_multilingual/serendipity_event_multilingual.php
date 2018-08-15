@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '4.1.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.41');
+        $propbag->add('version',        '2.42');
         $propbag->add('configuration',  array('copytext', 'placement', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -588,7 +588,7 @@ class serendipity_event_multilingual extends serendipity_event
                             $eventData[0][$place] .= sprintf($msg, $langs);
                         }
                     } else {
-                        $elements = count($eventData);
+                        $elements = is_array($eventData) ? count($eventData) : 0;
 
                         // Walk entry array and insert karma voting line.
                         for ($i = 0; $i < $elements; $i++) {
