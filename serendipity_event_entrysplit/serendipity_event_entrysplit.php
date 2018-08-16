@@ -1,21 +1,14 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_entrysplit extends serendipity_event
 {
-    var $title        = PLUGIN_ENTRYSPLIT_NAME;
+    var $title = PLUGIN_ENTRYSPLIT_NAME;
     var $toc_count;
     var $toc;
     var $split_index;
@@ -29,11 +22,11 @@ class serendipity_event_entrysplit extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYSPLIT_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Tadashi Jokagi, Thomas Werner');
-        $propbag->add('version',       '1.5.6');
+        $propbag->add('version',       '1.6');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',   array('entry_display' => true));
         $propbag->add('scrambles_true_content', true);
@@ -76,13 +69,14 @@ class serendipity_event_entrysplit extends serendipity_event
         $title       = $this->title;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
             switch($event) {
                 case 'entry_display':
-                    $evtCount = count($eventData);
+                    $evtCount = is_array($eventData) ? count($eventData) : 0;
 
                     for ($entryIdx = 0; $entryIdx < $evtCount; ++$entryIdx) {
                         $this->toc_count = 0;
@@ -94,7 +88,7 @@ class serendipity_event_entrysplit extends serendipity_event
                         $text = &$this->getFieldReference('extended', $eventData[$entryIdx]);
                         $body_text = &$this->getFieldReference('body', $eventData[$entryIdx]);
 
-                        if(!$addData['extended']) {
+                        if (!$addData['extended']) {
                             // The entry url needs to be specified more precisely if the system isn't currently
                             // displaying the current entry.
                             $url = $this->get_entrysplit_url($eventData[$entryIdx]['id'], $eventData[$entryIdx]['title']);
@@ -189,11 +183,12 @@ class serendipity_event_entrysplit extends serendipity_event
         }
     }
 
-    function modify_header_tag($match) {
+    function modify_header_tag($match)
+    {
         $order = $match[1];
         $label = $match[2];
 
-        if($order == $this->header_order) {
+        if ($order == $this->header_order) {
             $url = $this->get_entrysplit_url().($this->split_index + 1);
             $this->toc .= '<li class="articletoc"><a class="articletoc" href="'.$url.'#artoc'.($this->toc_count).'">'.$label.'</a></li>';
 
@@ -203,15 +198,17 @@ class serendipity_event_entrysplit extends serendipity_event
         return $match[0];
     }
 
-    function add_to_toc(&$txt) {
-        if(!$this->toc) {
+    function add_to_toc(&$txt)
+    {
+        if (!$this->toc) {
             $this->toc = '<div class="articletoc">'.PLUGIN_ENTRYSPLIT_TOC.'<ul class="articletoc">';
         }
 
         $txt = preg_replace_callback('#<h(\d)[^>]*?>(.*)?</h[^>]*?>#i', array($this, 'modify_header_tag'), $txt);
     }
 
-    function get_entrysplit_url($id = false, $title = false) {
+    function get_entrysplit_url($id = false, $title = false)
+    {
         static $url;
 
         if ($url === null || $id !== false) {
@@ -228,7 +225,8 @@ class serendipity_event_entrysplit extends serendipity_event
         return $url;
     }
 
-    function get_userselected_page() {
+    function get_userselected_page()
+    {
         global $serendipity;
         static $current_page;
 
@@ -242,7 +240,8 @@ class serendipity_event_entrysplit extends serendipity_event
 
         return $current_page;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
-
+?>

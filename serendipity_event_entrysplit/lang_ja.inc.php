@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.3
  */
@@ -18,4 +18,4 @@
 @define('PLUGIN_ENTRYSPLIT_PAGES_NEXT', NEXT);
 @define('PLUGIN_ENTRYSPLIT_PAGES_PREV', PREVIOUS);
 @define('PLUGIN_ENTRYSPLIT_TOC', '目次');
-?>
+

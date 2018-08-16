@@ -1,0 +1,9 @@
+1.6:
+----
+
+ * Fix possible PHP 7 warning for parameter must implement Countable
+ * Raise requirement for consistency and lang API usage
+
+xxx:
+----
+

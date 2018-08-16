@@ -17,3 +17,4 @@
 @define('PLUGIN_ENTRYSPLIT_SHOWBODY',		'Chcete zobrazovat tìlo pøíspìvku na následujících stránkách?');
 @define('PLUGIN_ENTRYSPLIT_PAGES_ALL',		'Vše');
 @define('PLUGIN_ENTRYSPLIT_TOC',		'Obsah');
+
