@@ -855,17 +855,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_comics</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_comics/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Comics</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>Run webcomics in your blog</description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.5</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2018-08-15</date>
   <filelist>
     <dir name="serendipity_event_comics">
+      <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>lang_cs.inc.php</file>
@@ -882,6 +884,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_comics/ChangeLog</file>
     <file>serendipity_event_comics/documentation_cs.html</file>
     <file>serendipity_event_comics/documentation_cz.html</file>
     <file>serendipity_event_comics/lang_cs.inc.php</file>
@@ -2193,7 +2196,7 @@
 <name>serendipity_event_email_bot_obfuscator</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_email_bot_obfuscator/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Markup: clickable email adresses - but with antispam</summary>
+<summary>Markup: clickable email addresses - but with antispam</summary>
 <groups>ANTISPAM,MARKUP</groups>
 <description>Makes email addresses clickable, but obfuscates them to block spam harvester bots</description>
 <maintainers><maintainer><name>Stephan Manske, Ian</name><role>lead</role></maintainer></maintainers>
@@ -2351,17 +2354,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_entrylastmodified</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_entrylastmodified/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Show last modification date</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>Shows a message with the last modification date of an entry on the blogs frontpage. For not modified entries shows a message that says they are not modified.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.9</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.10</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2018-08-15</date>
   <filelist>
     <dir name="serendipity_event_entrylastmodified">
+      <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -2379,6 +2384,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_entrylastmodified/ChangeLog</file>
     <file>serendipity_event_entrylastmodified/lang_bg.inc.php</file>
     <file>serendipity_event_entrylastmodified/lang_cs.inc.php</file>
     <file>serendipity_event_entrylastmodified/lang_cz.inc.php</file>
@@ -2452,17 +2458,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_entrysplit</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_entrysplit/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Uzun yazıları kendiliğinden böl</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Uzun yazıların çeşitli alt sayfalara bölünmesi seçeneğini etkinleştirir.</description>
 <maintainers><maintainer><name>Garvin Hicking, Tadashi Jokagi, Thomas Werner</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5.6</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.6</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2018-08-15</date>
   <filelist>
     <dir name="serendipity_event_entrysplit">
+      <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -2482,6 +2490,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_entrysplit/ChangeLog</file>
     <file>serendipity_event_entrysplit/lang_bg.inc.php</file>
     <file>serendipity_event_entrysplit/lang_cs.inc.php</file>
     <file>serendipity_event_entrysplit/lang_cz.inc.php</file>
@@ -4796,9 +4805,9 @@
 <description>Let visitors rate your entries</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.13</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-02-02</date>
+  <version>2.14</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2018-08-15</date>
   <filelist>
     <dir name="serendipity_event_karma">
       <file>ChangeLog</file>
@@ -6540,9 +6549,9 @@
 <description>Allows you to add your current mood or moods to entries.</description>
 <maintainers><maintainer><name>Brett Profitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.12</version>
+  <version>0.13</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-08-11</date>
+  <date>2018-08-15</date>
   <filelist>
     <dir name="serendipity_event_mymood">
       <file>ChangeLog</file>
@@ -6930,9 +6939,9 @@
 <description>Puts an HTML nugget on top or bottom of the page, or inside the page's HEAD tag</description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.14</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.15</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2018-08-15</date>
   <filelist>
     <dir name="serendipity_event_page_nugget">
       <file>ChangeLog</file>
@@ -7028,9 +7037,9 @@
 <description>Adds a single image to an entry.</description>
 <maintainers><maintainer><name>Cameron MacFarland</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.7</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2018-08-15</date>
   <filelist>
     <dir name="serendipity_event_photoblog">
       <file>ChangeLog</file>
