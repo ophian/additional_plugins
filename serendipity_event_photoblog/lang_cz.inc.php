@@ -10,4 +10,3 @@
 @define('PLUGIN_EVENT_PHOTOBLOG_DESC',          'Pøidá do pøíspìvku jednu fotku');
 @define('PLUGIN_EVENT_PHOTOBLOG_SELECTPHOTO',   'Vyber fotku k vlo¾ení do tohoto pøíspìvku:');
 
-?>

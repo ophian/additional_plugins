@@ -1,3 +1,10 @@
-1.5:
+1.6:
+----
 
-Fix not showing thumbnail after editing.
+ * Fix possible PHP 7 warning for parameter must implement Countable
+ * Raise requirement for consistency and lang API usage
+
+1.5:
+----
+
+ * Fix not showing thumbnail after editing.

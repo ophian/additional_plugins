@@ -1,19 +1,10 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.6');
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_photoblog extends serendipity_event
 {
@@ -28,31 +19,34 @@ class serendipity_event_photoblog extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Cameron MacFarland');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.1.0'
         ));
-        $propbag->add('version',   PLUGIN_EVENT_PHOTOBLOG_VERSION);
+        $propbag->add('version',   '1.7');
 
         $propbag->add('event_hooks',    array(
-            'backend_display'                                   => true,
-            'frontend_display'                                  => true,
-            'entry_display'                                     => true
+            'backend_display'   => true,
+            'frontend_display'  => true,
+            'entry_display'     => true
         ));
         $propbag->add('groups', array('IMAGES'));
 
         $this->supported_properties = array('photoname');
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function install() {
+    function install()
+    {
         $this->checkScheme();
     }
 
-    function checkScheme() {
+    function checkScheme()
+    {
         global $serendipity;
 
         $version = $this->get_config('version', '0.9');
@@ -79,20 +73,26 @@ class serendipity_event_photoblog extends serendipity_event
         }
     }
 
-    function addPhoto($entryid, $photoid, $thumb = false) {
+    function addPhoto($entryid, $photoid, $thumb = false)
+    {
         global $serendipity;
+
         $q = "INSERT INTO {$serendipity['dbPrefix']}photoblog (entryid, photoid, use_thumbnail) VALUES (" . (int)$entryid . ", " . (int)$photoid . ", " . (int)$thumb .")";
         serendipity_db_query($q);
     }
 
-    function updatePhoto($entryid, $photoid, $thumb = false) {
+    function updatePhoto($entryid, $photoid, $thumb = false)
+    {
         global $serendipity;
+
         $q = "UPDATE {$serendipity['dbPrefix']}photoblog SET photoid = " . (int)$photoid . ", use_thumbnail = " . (int)$thumb ." WHERE entryid = " . (int)$entryid;
         serendipity_db_query($q);
     }
 
-    function getPhoto($entryid) {
+    function getPhoto($entryid)
+    {
         global $serendipity;
+
         $q = "SELECT * FROM {$serendipity['dbPrefix']}photoblog WHERE entryid=" . (int)$entryid;
         $row = serendipity_db_query($q, true);
 
@@ -103,14 +103,18 @@ class serendipity_event_photoblog extends serendipity_event
         return $row;
     }
 
-    function deletePhoto($entryid) {
+    function deletePhoto($entryid)
+    {
         global $serendipity;
+
         $q = "DELETE FROM {$serendipity['dbPrefix']}photoblog WHERE entryid = " . (int)$entryid;
         serendipity_db_query($q);
     }
 
-    function parsePhotoname($name) {
+    function parsePhotoname($name)
+    {
         global $serendipity;
+
         $use_thumbnail = 0;
         $bits = explode("/", $name);
         $filename = array_pop($bits);
@@ -146,7 +150,8 @@ class serendipity_event_photoblog extends serendipity_event
         return $file;
     }
 
-    function pb_backend_display() {
+    function pb_backend_display()
+    {
         global $serendipity;
 
         if ($this->get_config('version') != PLUGIN_EVENT_PHOTOBLOG_VERSION) {
@@ -181,7 +186,8 @@ class serendipity_event_photoblog extends serendipity_event
 <?php
     }
 
-    function pb_backend_save($eventData) {
+    function pb_backend_save($eventData)
+    {
         global $serendipity;
 
         if (!isset($serendipity['POST']['properties']) ||
@@ -202,13 +208,14 @@ class serendipity_event_photoblog extends serendipity_event
             } else {
                 $this->deletePhoto($eventData['id']);
             }
-        } elseif(!empty($prop_val)) {
+        } elseif (!empty($prop_val)) {
             $file = $this->parsePhotoname($prop_val);
             $this->addPhoto($eventData['id'], $file['id'],$file['use_thumbnail']);
         }
     }
 
-    function pb_entry_display(&$eventData) {
+    function pb_entry_display(&$eventData)
+    {
         global $serendipity;
 
         if (is_array($eventData[0]['properties'])) {
@@ -226,7 +233,7 @@ class serendipity_event_photoblog extends serendipity_event
             }
         } else {
 
-            $elements = count($eventData);
+            $elements = is_array($eventData) ? count($eventData) : 0;
             for ($i = 0; $i < $elements; $i++) {
                 $row = $this->getPhoto($eventData[$i]['id']);
                 if (isset($row)) {
@@ -240,7 +247,8 @@ class serendipity_event_photoblog extends serendipity_event
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -264,7 +272,8 @@ class serendipity_event_photoblog extends serendipity_event
         }
     }
 
-    function return_thumbstr($file) {
+    function return_thumbstr($file)
+    {
         $thumbstring = "";
         if ($file['use_thumbnail']) {
             $thumbstring = ".serendipityThumb";
