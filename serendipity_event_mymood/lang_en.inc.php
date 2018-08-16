@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  *  @version
@@ -43,18 +43,18 @@
 @define('PLUGIN_MYMOOD_ANGRY'           , 'angry         ');
 @define('PLUGIN_MYMOOD_ANNOYED'         , 'annoyed       ');
 @define('PLUGIN_MYMOOD_ANXIOUS'         , 'anxious       ');
-@define('PLUGIN_MYMOOD_APATHETIC'       , 'apathetic     '); 
-@define('PLUGIN_MYMOOD_ARTISTIC'        , 'artistic      '); 
-@define('PLUGIN_MYMOOD_AWAKE'           , 'awake         '); 
-@define('PLUGIN_MYMOOD_BITCHY'          , 'bitchy        '); 
-@define('PLUGIN_MYMOOD_BLAH'            , 'blah          '); 
-@define('PLUGIN_MYMOOD_BLANK'           , 'blank         '); 
-@define('PLUGIN_MYMOOD_BORED'           , 'bored         '); 
-@define('PLUGIN_MYMOOD_BOUNCY'          , 'bouncy        '); 
-@define('PLUGIN_MYMOOD_BUSY'            , 'busy          '); 
-@define('PLUGIN_MYMOOD_CALM'            , 'calm          '); 
-@define('PLUGIN_MYMOOD_CHEERFUL'        , 'cheerful      '); 
-@define('PLUGIN_MYMOOD_CHIPPER'         , 'chipper       '); 
+@define('PLUGIN_MYMOOD_APATHETIC'       , 'apathetic     ');
+@define('PLUGIN_MYMOOD_ARTISTIC'        , 'artistic      ');
+@define('PLUGIN_MYMOOD_AWAKE'           , 'awake         ');
+@define('PLUGIN_MYMOOD_BITCHY'          , 'bitchy        ');
+@define('PLUGIN_MYMOOD_BLAH'            , 'blah          ');
+@define('PLUGIN_MYMOOD_BLANK'           , 'blank         ');
+@define('PLUGIN_MYMOOD_BORED'           , 'bored         ');
+@define('PLUGIN_MYMOOD_BOUNCY'          , 'bouncy        ');
+@define('PLUGIN_MYMOOD_BUSY'            , 'busy          ');
+@define('PLUGIN_MYMOOD_CALM'            , 'calm          ');
+@define('PLUGIN_MYMOOD_CHEERFUL'        , 'cheerful      ');
+@define('PLUGIN_MYMOOD_CHIPPER'         , 'chipper       ');
 @define('PLUGIN_MYMOOD_COLD'            , 'cold          ');
 @define('PLUGIN_MYMOOD_COMPLACENT'      , 'complacent    ');
 @define('PLUGIN_MYMOOD_CONFUSED'        , 'confused      ');

@@ -1,3 +1,7 @@
+0.13:
+----
+ * Fix possible PHP 7 warning for parameter must implement Countable
+
 0.12:
 ----
  * Up for Smarty3

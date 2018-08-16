@@ -36,7 +36,8 @@ $img_pre = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . 
         PLUGIN_MYMOOD_TIRED."|~||~||`|".PLUGIN_MYMOOD_TOUCHED."|~||~||`|".PLUGIN_MYMOOD_UNCOMFORTABLE."|~||~||`|".PLUGIN_MYMOOD_WEIRD."|~||~||`|".PLUGIN_MYMOOD_WORKING."|~||~||`|".PLUGIN_MYMOOD_WORRIED."|~|$img_pre/sad.png|~|"
 );
 
-class serendipity_event_mymood extends serendipity_event {
+class serendipity_event_mymood extends serendipity_event
+{
 
     function introspect(&$propbag)
     {
@@ -49,7 +50,7 @@ class serendipity_event_mymood extends serendipity_event {
             'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '0.12');
+        $propbag->add('version',       '0.13');
         $propbag->add('author',       'Brett Profitt');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -116,11 +117,8 @@ class serendipity_event_mymood extends serendipity_event {
         return true;
     }
 
-
-#################################
-# general functions
-
-    function setupDB() {
+    function setupDB()
+    {
         global $serendipity;
 
         if (serendipity_db_bool($this->get_config('db_built', false))) {
@@ -142,7 +140,7 @@ class serendipity_event_mymood extends serendipity_event {
         $moods = array();
         $default_moods = explode('|`|', PLUGIN_MYMOOD_LISTOFMOODS);
 
-        foreach ($default_moods as $mood_s) {
+        foreach ($default_moods AS $mood_s) {
             $info_array = explode('|~|', $mood_s);
             $moods[]=array(
                 'mood_name'  => $info_array[0],
@@ -153,7 +151,7 @@ class serendipity_event_mymood extends serendipity_event {
 #gar!  hafta check if there's already one defined...stupid 5000 'Happy's in my db...
 #fixme:  this may need some sort of case insensitive stuff...
 # also will want to add that to the adding part..
-        foreach ($moods as $mood_array) {
+        foreach ($moods AS $mood_array) {
             $check_q = "SELECT mood_id FROM {$serendipity['dbPrefix']}mymood WHERE mood_name='{$mood_array['mood_name']}'";
             $t=serendipity_db_query($check_q);
             if (!empty($t[0])) { continue; }
@@ -169,15 +167,19 @@ class serendipity_event_mymood extends serendipity_event {
         $this->set_config('db_built', 'true');
     }
 
-    function resetDB() {
+    function resetDB()
+    {
         global $serendipity;
+
         serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}mymood");
         $this->set_config('db_built', 'false');
     }
 
 
-    function get_moods_list() {
+    function get_moods_list()
+    {
         global $serendipity;
+
         $this->setupDB();
 
         $sql = "SELECT *
@@ -192,8 +194,10 @@ class serendipity_event_mymood extends serendipity_event {
         }
     }
 
-    function get_entry_moods($e_id) {
+    function get_entry_moods($e_id)
+    {
         global $serendipity;
+
         $this->setupDB();
 
         if (empty($e_id)) {
@@ -209,10 +213,11 @@ class serendipity_event_mymood extends serendipity_event {
         }
     }
 
-    function get_mood_info($m_id) {
-        $this->setupDB();
+    function get_mood_info($m_id)
+    {
         global $serendipity;
 
+        $this->setupDB();
         $q = "SELECT * FROM {$serendipity['dbPrefix']}mymood WHERE mood_id = '$m_id'";
         $t = serendipity_db_query($q);
 
@@ -225,7 +230,8 @@ class serendipity_event_mymood extends serendipity_event {
 
     # second param is to ignore the location field and force
     # adding of all 3 fields (used for background stuff)
-    function format_mood($mood_info, $forced=FALSE) {
+    function format_mood($mood_info, $forced=FALSE)
+    {
         $format = $this->get_config('display_format', '{img} {name}');
 
         $img_tag = (!empty($mood_info['mood_img'])) ?
@@ -248,8 +254,10 @@ class serendipity_event_mymood extends serendipity_event {
 
 ####################################
 # admin functions
-    function a_add_mood() {
+    function a_add_mood()
+    {
         global $serendipity;
+
         $this->setupDB();
 
         $moods = $this->get_moods_list();
@@ -273,9 +281,11 @@ class serendipity_event_mymood extends serendipity_event {
         }
     }
 
-    function a_update_mood($m_id, &$array) {
-        $this->setupDB();
+    function a_update_mood($m_id, &$array)
+    {
         global $serendipity;
+
+        $this->setupDB();
         $q = "UPDATE {$serendipity['dbPrefix']}mymood
                  SET mood_name     = '" . serendipity_db_escape_string($array['mood_name']) . "',
                      mood_img      = '" . serendipity_db_escape_string($array['mood_img']) . "',
@@ -284,24 +294,30 @@ class serendipity_event_mymood extends serendipity_event {
         return serendipity_db_query($q);
     }
 
-    function a_delete_mood($m_id, &$array) {
-        $this->setupDB();
+    function a_delete_mood($m_id, &$array)
+    {
         global $serendipity;
+
+        $this->setupDB();
         $q = "DELETE FROM {$serendipity['dbPrefix']}mymood
                     WHERE mood_id = " . (int)$m_id;
         return serendipity_db_query($q);
     }
 
-    function a_insert_mood(&$array) {
+    function a_insert_mood(&$array)
+    {
         global $serendipity;
+
         $this->setupDB();
         return serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}mymood
                                                 (mood_name, mood_img, mood_ascii)
                                           VALUES ('" . serendipity_db_escape_string($array['mood_name']) . "','" . serendipity_db_escape_string($array['mood_img']) . "','" . serendipity_db_escape_string($array['mood_ascii']) . "')");
     }
 
-    function a_show_moods() {
+    function a_show_moods()
+    {
         global $serendipity;
+
         if (!empty($serendipity['POST']['mymoodAction'])) {
             $this-> a_add_mood();
         }
@@ -379,7 +395,8 @@ class serendipity_event_mymood extends serendipity_event {
 ########################
 # backend_display functions for entries
 #
-    function b_pick_moods($e_id) {
+    function b_pick_moods($e_id)
+    {
         global $serendipity;
 
         $moods = $this->get_moods_list();
@@ -394,7 +411,7 @@ class serendipity_event_mymood extends serendipity_event {
         # getting moods to add
         $new_moods = array();
         if (is_array($serendipity['POST']['mymood_new'])) {
-            foreach ($serendipity['POST']['mymood_new'] as $mood) {
+            foreach ($serendipity['POST']['mymood_new'] AS $mood) {
                 if (!empty($mood['mood_name'])) {
                     $new_moods[] = $mood;
                 }
@@ -407,7 +424,7 @@ class serendipity_event_mymood extends serendipity_event {
 
         $c = 0;
         $max = 5;
-        foreach ($moods as $mood) {
+        foreach ($moods AS $mood) {
             $checked = (in_array($mood['mood_id'], $used_moods)) ? 'checked="checked"' : '';
             $label = $this->format_mood($mood, true);
             if ($c == 0) {
@@ -466,7 +483,7 @@ class serendipity_event_mymood extends serendipity_event {
 </script>
 ';
         $i=0;
-        foreach ($new_moods as $mood) {
+        foreach ($new_moods AS $mood) {
             echo '
             '.PLUGIN_MYMOOD_NEW_MOOD.': <input class="input_textbox" type="text" name="serendipity[mymood_new]['.$i.'][mood_name]" value="{$mood[\'mood_name\']}" size="10">
             '.PLUGIN_MYMOOD_NEW_ASCII.': <input class="input_textbox" type="text" size="3" name="serendipity[mymood_new]['.$i.'][mood_ascii]" value="{$mood[\'mood_ascii\']}" size="3">
@@ -491,14 +508,16 @@ class serendipity_event_mymood extends serendipity_event {
 ';
     }
 
-    function b_add_moods($e_id) {
+    function b_add_moods($e_id)
+    {
         global $serendipity;
+
         # add any new moods...
         # fixme:  there has to be a better way to get the
         # last insert'd id...
         $new_ids = array();
         if (is_array($serendipity['POST']['mymood_new'])) {
-            foreach ($serendipity['POST']['mymood_new'] as $mood) {
+            foreach ($serendipity['POST']['mymood_new'] AS $mood) {
                 if (!empty($mood['mood_name'])) {
                     $this->a_insert_mood($mood);
 
@@ -520,7 +539,8 @@ class serendipity_event_mymood extends serendipity_event {
 
 ################################
 # frontend functions for entries...
-    function f_display_moods($e_id) {
+    function f_display_moods($e_id)
+    {
         global $serendipity;
 
         # bail if there is no way to display (pdf plugin, for example)
@@ -535,7 +555,7 @@ class serendipity_event_mymood extends serendipity_event {
 
         #format moods
         $delimiter = "";
-        foreach ($moods as $mood) {
+        foreach ($moods AS $mood) {
             $formatted_moods[] = $delimiter.$this->format_mood($this->get_mood_info($mood));
             $delimiter = " | ";
         }
@@ -593,7 +613,7 @@ class serendipity_event_mymood extends serendipity_event {
                     break;
 
                 case 'entry_display':
-                    $elements = count($eventData);
+                    $elements = is_array($eventData) ? count($eventData) : 0;
                     if ($elements < 1) {
                         return true;
                     }
