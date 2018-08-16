@@ -46,4 +46,3 @@
 @define('PLUGIN_KARMA_STATISTICS_VOTES_NO', '回の投票');
 @define('PLUGIN_KARMA_STATISTICS_POINTS_NO', 'ポイント');
 
-?>

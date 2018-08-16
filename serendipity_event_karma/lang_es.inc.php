@@ -45,4 +45,3 @@
 @define('PLUGIN_KARMA_STATISTICS_VOTES_NO', 'votos');
 @define('PLUGIN_KARMA_STATISTICS_POINTS_NO', 'puntos');
 
-?>

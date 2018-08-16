@@ -122,3 +122,4 @@
 @define('PLUGIN_KARMA_AJAX_BLAHBLAH', 'Shall rating be performed by asynchronous javascript? If set to "yes", your rating will be send to the server in the background and the result will be displayed without refreshing the website.');
 @define('PLUGIN_KARMA_ALIGNMENT', 'Alignmnet of the plugin');
 @define('PLUGIN_KARMA_ALIGNMENT_BLAHBLAH', 'Shall the plugin be displayed left, center or right');
+

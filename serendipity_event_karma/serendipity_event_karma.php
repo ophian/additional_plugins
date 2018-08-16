@@ -3,7 +3,7 @@
 if (IN_serendipity !== true) { die ("Don't hack!"); }
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-@define('PLUGIN_KARMA_DB_VERSION', '2.2');
+@define('PLUGIN_KARMA_DB_VERSION', '2.3');
 
 class serendipity_event_karma extends serendipity_event
 {
@@ -44,11 +44,11 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian');
-        $propbag->add('version',       '2.13');
+        $propbag->add('version',       '2.14');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',   array(
             'external_plugin'             => true,
@@ -381,7 +381,8 @@ class serendipity_event_karma extends serendipity_event
     /**
      * Updates database schema when upgrading from older versions.
      */
-    function checkScheme() {
+    function checkScheme()
+    {
         global $serendipity;
 
         $version = $this->get_config('dbversion', '0');
@@ -463,7 +464,8 @@ class serendipity_event_karma extends serendipity_event
      * @return Boolean true when $get is false; otherwise the array of
      *   entries with their exit counts.
      */
-    function prepareExits($entries, $get = false) {
+    function prepareExits($entries, $get = false)
+    {
         static $exits = null;
         global $serendipity;
 
@@ -488,7 +490,8 @@ class serendipity_event_karma extends serendipity_event
         return true;
     }
 
-    function getExits($entryid, $get_prepared = false) {
+    function getExits($entryid, $get_prepared = false)
+    {
         global $serendipity;
         static $karma_exits = null;
 
@@ -510,7 +513,8 @@ class serendipity_event_karma extends serendipity_event
         return sprintf($karma_exits, $points);
     }
 
-    function performkarmaVote() {
+    function performkarmaVote()
+    {
         global $serendipity;
         // Make sure the karmaVote cookie is set, even if empty <a name="#1" />
         if (!isset($serendipity['COOKIE']['karmaVote'])) {
@@ -518,7 +522,7 @@ class serendipity_event_karma extends serendipity_event
         }
 
         // If user didn't vote, we're done.
-        // Do we realy need this?
+        // Do we really need this?
         if (!isset($_POST['karmaId'])) {
             if (!isset($serendipity['GET']['karmaId']) || !isset($serendipity['GET']['karmaVote'])) {
                 return;
@@ -545,7 +549,7 @@ class serendipity_event_karma extends serendipity_event
         }
 
         // Everything is ready.  Get the cookie vote data.
-        $karma   = unserialize($serendipity['COOKIE']['karmaVote']);
+        $karma = unserialize($serendipity['COOKIE']['karmaVote']);
 
         // Stop on invalid votes (cookie invalid, or URL data incorrect)
         if (!is_array($karma) || !is_numeric($this->karmaVoting) || !is_numeric($this->karmaId) || $this->karmaVoting > 2 || $this->karmaVoting < -2) {
@@ -672,7 +676,8 @@ class serendipity_event_karma extends serendipity_event
         serendipity_setCookie('karmaVote', serialize($karma));
     }
 
-    function karmaVoted($myvote,$points,$votes) {
+    function karmaVoted($myvote,$points,$votes)
+    {
         $msg = '<div class="serendipity_karmaSuccess">' . PLUGIN_KARMA_VOTED . '</div>';
         if ($this->get_config('rate_with_words', false)) {
             $myvote = $this->wordRating($myvote, 1);
@@ -685,7 +690,8 @@ class serendipity_event_karma extends serendipity_event
         return array("myvote" => $myvote, "msg" => $msg, "bar" => $bar);
     }
 
-    function createkarmaBlock($entryid, $textual_msg, $msg, $bar, $enough_votes, $textual_current, $enough_visits, $textual_visits, $points, $votes) {
+    function createkarmaBlock($entryid, $textual_msg, $msg, $bar, $enough_votes, $textual_current, $enough_visits, $textual_visits, $points, $votes)
+    {
         $image_class = '';
         if ($this->image_name != '0') {
             $image_class = ' serendipity_karmaVoting_images';
@@ -713,7 +719,8 @@ class serendipity_event_karma extends serendipity_event
         return array("karma_block" => $karma_block, "points" => $points);
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -1207,7 +1214,7 @@ END_IMG_CSS;
                                 $eventData[0]['exflag'] = 1;
                                 $eventData[0]['add_footer'] .= $msg;
                             } else {
-                                $elements = count($eventData);
+                                $elements = is_array($eventData) ? count($eventData) : 0;
                                 // Find the right container to store our message in.
                                 for ($i = 0; $i < $elements; $i++) {
                                     if ($eventData[$i]['id'] == $this->karmaId) {
@@ -1804,7 +1811,8 @@ END_IMG_CSS;
     /**
      * Check, if visit counting for the actual visitor should be done.
      */
-    function track_clicks_allowed_by_user(){
+    function track_clicks_allowed_by_user()
+    {
         if (!$this->get_config('track_visits_of_loggedin_users',true) && serendipity_userLoggedIn()){
             return false;
         }
@@ -1816,7 +1824,8 @@ END_IMG_CSS;
      *
      * @return string an HTML string including working images of all the rating bars in the img/ directory.
      */
-    function createRatingSelector() {
+    function createRatingSelector()
+    {
         global $serendipity;
 
         // Since the inputs are set up with the proper names, the config item
@@ -1957,7 +1966,8 @@ END_IMG_CSS;
      * @return array an array with 'fname', 'width', and 'height' entries for
      *     each valid image file in the img/ directory
      */
-    function getImageFiles() {
+    function getImageFiles()
+    {
         $path = dirname(__FILE__) . "/img";
         $images = array();
         $folder = opendir($path);
@@ -1989,7 +1999,8 @@ END_IMG_CSS;
      * @param int votes optional The total number of votes (default: 0 votes))
      * @param string extra_class optional Any additional CSS classes to be added to the bar container
      */
-    function createRatingBar($id = null, $karma = 0, $votes = 0, $extra_class = '') {
+    function createRatingBar($id = null, $karma = 0, $votes = 0, $extra_class = '')
+    {
         // Are there enough votes to display the current rating?
         $enough_votes = ($votes >= $this->get_config('min_disp_votes', 0));
         // Do I need to create links?
@@ -2095,7 +2106,8 @@ END_IMG_CSS;
      * Sets $this->image_name to the name of a valid image, or to '0' to
      * indicate text-only rating bars should be used.
      */
-    function set_valid_image_data() {
+    function set_valid_image_data()
+    {
         $base_image = $this->get_config('base_image', false);
         if ($base_image !== false) {
             // Definitely configured
@@ -2135,7 +2147,8 @@ END_IMG_CSS;
      * @return string A string indicating the number of points "of 5",
      *     or PLUGIN_KARMA_IMAGE_NONE_RATING if no votes have been recorded.
      */
-    function imageRating($points, $votes) {
+    function imageRating($points, $votes)
+    {
         if ($votes == 0) {
             $rating = PLUGIN_KARMA_IMAGE_NONE_RATING;
         } else {
@@ -2161,7 +2174,8 @@ END_IMG_CSS;
      * @return string A word corresponding to the article rating,
      *     or PLUGIN_KARMA_IMAGE_NONE_RATING if no votes have been recorded.
      */
-    function wordRating($points, $votes) {
+    function wordRating($points, $votes)
+    {
         if ($votes == 0) {
             $rating = PLUGIN_KARMA_IMAGE_NONE_RATING;
         } else {
@@ -2185,4 +2199,4 @@ END_IMG_CSS;
     }
 }
 
-/* vim: set sts=4 ts=4 sw=4 expandtab : */
+?>

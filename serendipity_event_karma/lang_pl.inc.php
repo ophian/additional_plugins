@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  *  @author Kostas CoSTa Brzezinski <costa@kofeina.net>
@@ -47,4 +47,4 @@
 @define('PLUGIN_KARMA_STATISTICS_POINTS_NO', 'punktów');
 
 @define('PLUGIN_KARMA_STARRATING', 'W³±czyæ induwidualne ocenianie w tym wpisie?');
-?>
+

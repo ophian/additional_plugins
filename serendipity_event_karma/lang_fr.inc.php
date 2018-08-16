@@ -55,5 +55,3 @@
 @define('PLUGIN_KARMA_STATISTICS_VOTES_NO', 'notes');
 @define('PLUGIN_KARMA_STATISTICS_POINTS_NO', 'points');
 
-/* vim: set sts=4 ts=4 expandtab : */
-?>

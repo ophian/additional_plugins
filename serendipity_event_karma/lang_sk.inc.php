@@ -115,3 +115,4 @@
 @define('PLUGIN_KARMA_INVALID_INPUT',		'Nesprávny vstup!');
 @define('PLUGIN_KARMA_DELETE_VOTES',		'Vymaza» vybrané hlasy');
 @define('PLUGIN_KARMA_APPROVE_VOTES',		'Potvrdi» vybrané hlasy');
+

@@ -1,4 +1,4 @@
-<?php 
+<?php
 # Copyright (c) 2003-2005, Jannis Hermanns (on behalf the Serendipity Developer Team)
 # All rights reserved.  See LICENSE file for licensing details
 # Translation (c) by  Joao P Matos <jmatos@math.ist.utl.pt>
@@ -18,7 +18,7 @@
 @define('PLUGIN_KARMA_INVALID', 'Voto inválido.');
 @define('PLUGIN_KARMA_ALREADYVOTED', 'A sua classificação já tinha sido guardada.');
 @define('PLUGIN_KARMA_NOCOOKIE', 'O seu navegador deve aceitar cookies para que possa votar.');
-@define('PLUGIN_KARMA_CLOSED', 'Vote artigos mais recentes que %s dias!'); 
+@define('PLUGIN_KARMA_CLOSED', 'Vote artigos mais recentes que %s dias!');
 @define('PLUGIN_KARMA_ENTRYTIME', 'Tempo até à votação depois da publicação');
 @define('PLUGIN_KARMA_VOTINGTIME', 'Tempo de votação');
 @define('PLUGIN_KARMA_ENTRYTIME_BLAHBLAH', 'Quanto tempo (em minutos) depois do artigo ser publicado deve decorrer até à votação sem restrições? Por omissão: 1440 (um dia)');
@@ -46,4 +46,3 @@
 @define('PLUGIN_KARMA_STATISTICS_VOTES_NO', 'votos');
 @define('PLUGIN_KARMA_STATISTICS_POINTS_NO', 'pontos');
 
-?>

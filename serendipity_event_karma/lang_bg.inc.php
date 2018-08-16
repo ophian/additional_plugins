@@ -70,3 +70,4 @@
 @define('PLUGIN_KARMA_TAB_OPTIONS', 'Опции');
 @define('PLUGIN_KARMA_TAB_APPEARANCE', 'Външен вид');
 @define('PLUGIN_KARMA_TAB_TEXT', 'Текст');
+

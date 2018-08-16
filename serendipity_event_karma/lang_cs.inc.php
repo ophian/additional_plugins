@@ -1,4 +1,4 @@
-<?php # lang_cs.inc.php 1475.3 2011-03-09 20:05:20 VladaAjgl $
+<?php
 
 /**
  *  @version 1475.3
@@ -125,3 +125,4 @@
 
 // Next lines were translated on 2011/03/09
 @define('PLUGIN_KARMA_ACTIVE_REGISTERED',		'Hlasovat mohou pouze pøihlášení uživatelé');
+

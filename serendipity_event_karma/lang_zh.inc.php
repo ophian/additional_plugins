@@ -41,3 +41,4 @@
 @define('PLUGIN_KARMA_STATISTICS_VOTES_NO', '次数');
 @define('PLUGIN_KARMA_STATISTICS_POINTS_NO', '分数');
 @define('PLUGIN_KARMA_STARRATING', '对这篇文章使用单独的打分方式吗？');
+

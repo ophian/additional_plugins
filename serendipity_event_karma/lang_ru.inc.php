@@ -48,3 +48,4 @@
 @define('PLUGIN_KARMA_STATISTICS_POINTS_NO', 'очков');
 
 @define('PLUGIN_KARMA_STARRATING', 'Включить отдельное голосование по этой записи?');
+
