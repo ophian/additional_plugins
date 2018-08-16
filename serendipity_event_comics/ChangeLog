@@ -1,0 +1,13 @@
+1.5:
+----
+
+ * Fix possible PHP 7 warning for parameter must implement Countable
+ * Raise requirement for consistency and lang API usage
+
+1.4:
+----
+
+1.3: Potential parameter-related bug fixed
+1.2: Moved up the navigation links above 'Posted by...' line when
+     viewing individual entries to keep visual consistency.
+1.1: Initial Release

@@ -1,5 +1,5 @@
-<?php # 
-# Translated by: Wesley Hwang-Chung <wesley96@gmail.com> 
+<?php
+# Translated by: Wesley Hwang-Chung <wesley96@gmail.com>
 # (c) 2005 http://www.tool-box.info/
 
 @define('PLUGIN_COMICS_NAME', '만화');
@@ -16,4 +16,3 @@
 @define('PLUGIN_COMICS_FIRST', '처음');
 @define('PLUGIN_COMICS_LAST', '마지막');
 
-?>

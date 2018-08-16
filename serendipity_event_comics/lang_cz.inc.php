@@ -19,4 +19,3 @@
 @define('PLUGIN_COMICS_FIRST', 'První');
 @define('PLUGIN_COMICS_LAST', 'Poslední');
 
-?>
