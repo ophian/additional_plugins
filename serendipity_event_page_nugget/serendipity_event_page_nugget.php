@@ -17,11 +17,11 @@ class serendipity_event_page_nugget extends serendipity_event
         $propbag->add('description',   PLUGIN_PAGE_NUGGET_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Wesley Hwang-Chung');
-        $propbag->add('version',       '1.14');
+        $propbag->add('version',       '1.15');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.1.0'
         ));
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
         $propbag->add('event_hooks',   array(
@@ -194,7 +194,7 @@ class serendipity_event_page_nugget extends serendipity_event
             return true;
         } elseif ($placement == 'art_foot' && $event == 'entry_display') {
             if (!is_array($eventData)) return false;
-            $elements = count($eventData);
+            $elements = is_array($eventData) ? count($eventData) : 0;
             for ($i = 0; $i < $elements; $i++) {
                 if (serendipity_db_bool($this->get_config('markup', 'true'))) {
                     $entry = array('html_nugget' => $this->get_config('content'));
