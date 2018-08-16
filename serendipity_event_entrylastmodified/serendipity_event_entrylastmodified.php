@@ -1,33 +1,28 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_entrylastmodified extends serendipity_event {
+class serendipity_event_entrylastmodified extends serendipity_event
+{
     var $title = PLUGIN_EVENT_ENTRYLASTMODIFIED_NAME;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_EVENT_ENTRYLASTMODIFIED_NAME);
         $propbag->add('description',   PLUGIN_EVENT_ENTRYLASTMODIFIED_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.9');
+        $propbag->add('version',       '1.10');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
+            'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',   array('entry_display' => true));
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
@@ -37,6 +32,7 @@ class serendipity_event_entrylastmodified extends serendipity_event {
     function introspect_config_item($name, &$propbag)
     {
         global $serendipity;
+
         switch($name) {
             case 'position':
                 $propbag->add('type','radio');
@@ -76,11 +72,13 @@ class serendipity_event_entrylastmodified extends serendipity_event {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -110,7 +108,7 @@ class serendipity_event_entrylastmodified extends serendipity_event {
 
                         }
                     } elseif (is_array($eventData)) {
-                        $elements = count($eventData);
+                        $elements = is_array($eventData) ? count($eventData) : 0;
                         for ($i = 0; $i < $elements; $i++) {
                             if (!isset($eventData[$i]['add_footer'])) {
                                 $eventData[$i]['add_footer'] = '';
@@ -133,6 +131,7 @@ class serendipity_event_entrylastmodified extends serendipity_event {
 
         return false;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
