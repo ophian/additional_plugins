@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -19,4 +19,3 @@
 @define('PLUGIN_EVENT_GLOSSARY_LIST', 'Glossary List');
 @define('PLUGIN_EVENT_GLOSSARY_LIST_BLAHBLAH', 'Enter the glossary list, one per line "term"<separator>"the definition"<cr>');
 
-?>

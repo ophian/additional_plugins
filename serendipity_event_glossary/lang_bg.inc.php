@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -18,3 +18,4 @@
 @define('PLUGIN_EVENT_GLOSSARY_TYPE_APPEND', 'Добавяне на [?] след термините');
 @define('PLUGIN_EVENT_GLOSSARY_LIST', 'Списък');
 @define('PLUGIN_EVENT_GLOSSARY_LIST_BLAHBLAH', 'Въведете терминолoгичния списък, по един термин на ред: \'термин\'<разделител>\'дефиниция\'');
+

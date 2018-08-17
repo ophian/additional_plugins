@@ -18,4 +18,3 @@
 @define('PLUGIN_EVENT_GLOSSARY_LIST', 'Rejstøík');
 @define('PLUGIN_EVENT_GLOSSARY_LIST_BLAHBLAH', 'Zadejte slova do rejstøíku, jedno na ka¾dý øádek ve formátu "termín/slovo"<oddìlovaè>"definice/vysvìtlivka"<cr>');
 
-?>

@@ -18,4 +18,3 @@
 @define('PLUGIN_EVENT_GLOSSARY_LIST', 'Rejstřík');
 @define('PLUGIN_EVENT_GLOSSARY_LIST_BLAHBLAH', 'Zadejte slova do rejstříku, jedno na každý řádek ve formátu "termín/slovo"<oddělovač>"definice/vysvětlivka"<cr>');
 
-?>

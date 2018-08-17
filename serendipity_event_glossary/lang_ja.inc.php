@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -19,4 +19,3 @@
 @define('PLUGIN_EVENT_GLOSSARY_LIST', '用語集一覧');
 @define('PLUGIN_EVENT_GLOSSARY_LIST_BLAHBLAH', '用語集を入力します。一行毎に「[用語]<区切り文字>[定義]<改行>」と入力していきます。');
 
-?>
