@@ -28,7 +28,7 @@ class serendipity_event_contentrewrite extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.4.1');
+        $propbag->add('version',       '1.4.2');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -272,7 +272,7 @@ class serendipity_event_contentrewrite extends serendipity_event
                             // \1 and \3 are the prepend/append strings (usually whitespaces) and $new containing the new value
                             foreach ($this->markup_elements as $temp) {
                                 if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                                    !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
+                                    @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                                     !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                                     $element = $temp['element'];
                                     $eventData[$element] = preg_replace($regex, '\1' . $new . '\3', $eventData[$element]);
