@@ -1,28 +1,27 @@
 <?php
+
 if (IN_serendipity !== true) {
 	die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname (__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists ($probelang)) {
-	include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname (__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_google_analytics extends serendipity_event {
+class serendipity_event_google_analytics extends serendipity_event
+ {
 	var $title = PLUGIN_EVENT_GOOGLE_ANALYTICS_NAME;
 	
-	function introspect(&$propbag) {
+	function introspect(&$propbag)
+    {
 		global $serendipity;
 		
 		$propbag->add ('name', PLUGIN_EVENT_GOOGLE_ANALYTICS_NAME);
 		$propbag->add ('description', PLUGIN_EVENT_GOOGLE_ANALYTICS_DESC);
 		$propbag->add ('stackable', false);
 		$propbag->add ('author', '<a href="https://github.com/kleinerChemiker" target="_blank">kleinerChemiker</a>');
-		$propbag->add ('version', '1.4.1');
-		$propbag->add ('requirements', array ('serendipity' => '0.8', 'smarty' => '2.6.7', 'php' => '4.1.0' ));
+		$propbag->add ('version', '1.5');
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.3.0'
 		$propbag->add ('groups', array ('STATISTICS' ));
 		$propbag->add ('cachable_events', array ('frontend_display' => true ));
 		$propbag->add ('event_hooks', array ('frontend_header' => true, 'frontend_display' => true ));
@@ -40,13 +39,14 @@ class serendipity_event_google_analytics extends serendipity_event {
 		$conf_array[] = 'analytics_exclude_groups';
 		$conf_array[] = 'analytics_enh_link_attr';
 		
-		foreach ( $this->markup_elements as $element ) {
+		foreach ( $this->markup_elements AS $element ) {
 			$conf_array[] = $element['name'];
 		}
 		$propbag->add ('configuration', $conf_array);
 	}
 	
-	function introspect_config_item($name, &$propbag) {
+	function introspect_config_item($name, &$propbag)
+    {
 		switch ($name) {
 			case 'analytics_account_number' :
 				$propbag->add ('type', 'string');
@@ -119,24 +119,29 @@ class serendipity_event_google_analytics extends serendipity_event {
 		return true;
 	}
 	
-	function generate_content(&$title) {
+	function generate_content(&$title)
+    {
 		$title = $this->get_config ('title');
 	}
 	
-	function install() {
+	function install()
+    {
 		serendipity_plugin_api::hook_event ('backend_cache_entries', $this->title);
 	}
 	
-    function uninstall(&$propbag) {
+    function uninstall(&$propbag)
+    {
 	    serendipity_plugin_api::hook_event ('backend_cache_purge', $this->title);
 		serendipity_plugin_api::hook_event ('backend_cache_entries', $this->title);
 	}
 	
-	function trim_value(&$value) {
+	function trim_value(&$value)
+    {
 		$value = trim ($value);
 	}
 	
-	function in_array_loop($array1, $array2) {
+	function in_array_loop($array1, $array2)
+    {
 		if (is_array ($array1)) {
 			foreach ( $array1 as $array ) {
 				if (in_array ($array, $array2)) {
@@ -147,7 +152,8 @@ class serendipity_event_google_analytics extends serendipity_event {
 		return false;
 	}
 	
-	function analytics_tracker_callback($matches) {
+	function analytics_tracker_callback($matches)
+    {
 		static $internal_hosts = null;
 		static $download_extensions = null;
 		static $analytics_track_external = null;
@@ -195,7 +201,8 @@ class serendipity_event_google_analytics extends serendipity_event {
 		}
 	}
 	
-	function event_hook($event, &$bag, &$eventData, $addData = null) {
+	function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
 		global $serendipity;
 		static $analytics_anonymizeIp = null;
 		static $analytics_track_adsense = null;
@@ -272,7 +279,7 @@ class serendipity_event_google_analytics extends serendipity_event {
 					}
 					
 					foreach ( $this->markup_elements as $temp ) {
-						if (serendipity_db_bool ($this->get_config ($temp['name'], true)) && isset ($eventData[$temp['element']]) && !$eventData['properties']['ep_disable_markup_' . $this->instance] && !isset ($serendipity['POST']['properties']['disable_markup_' . $this->instance]) && ($analytics_track_downloads || $analytics_track_external)) {
+						if (serendipity_db_bool ($this->get_config ($temp['name'], true)) && isset ($eventData[$temp['element']]) && @!$eventData['properties']['ep_disable_markup_' . $this->instance] && !isset ($serendipity['POST']['properties']['disable_markup_' . $this->instance]) && ($analytics_track_downloads || $analytics_track_external)) {
 							$element = $temp['element'];
 							$eventData[$element] = preg_replace_callback ("#<a (.*)href=(\"|')(http://|https://|)([^\"']+)(\"|')([^>]*)>#isUm", array ($this, 'analytics_tracker_callback' ), $eventData[$element]);
 						}
@@ -287,5 +294,7 @@ class serendipity_event_google_analytics extends serendipity_event {
 			return false;
 		}
 	}
+
 }
 
+?>

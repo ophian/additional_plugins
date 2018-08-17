@@ -1,3 +1,7 @@
+1.5:
+-----
+ * Silence possible eventData property check
+
 1.4.0 (fishnix):
 -----
 # add enhanced link attribution option

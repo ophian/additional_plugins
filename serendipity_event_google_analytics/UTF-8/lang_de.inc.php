@@ -18,3 +18,4 @@
 @define('PLUGIN_EVENT_GOOGLE_ANALYTICS_INTERNAL_HOSTS_DESC', 'Ein Host pro Zeile (www.example.net).');
 @define('PLUGIN_EVENT_GOOGLE_ANALYTICS_EXCLUDE_GROUPS', 'Zu ignorierende Benutzergruppe?');
 @define('PLUGIN_EVENT_GOOGLE_ANALYTICS_EXCLUDE_GROUPS_DESC', 'Sie können eingeloggte Redakteure, die Mitglied in speziellen Benutzergruppen sind von der Erfassung durch Google Analytics ausschließen. Besuche dieser Benutzer werden in der Statistik dann nicht auftauchen.');
+
