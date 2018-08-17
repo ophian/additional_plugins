@@ -1,3 +1,7 @@
+1.13:
+-----
+ * Silence possible eventData property check
+
 1.12:
 -----
  * Fix deprecated preg_replace /e modifier for PHP7+ versions, by robelix

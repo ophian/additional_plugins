@@ -27,7 +27,7 @@ class serendipity_event_galleryimage extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_GALLERYIMAGE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rob Antonishen, Alexander Mieland');
-        $propbag->add('version',       '1.12');
+        $propbag->add('version',       '1.13');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -262,7 +262,7 @@ class serendipity_event_galleryimage extends serendipity_event
 
                     foreach ($this->markup_elements as $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && isset($eventData[$temp['element']]) &&
-                                !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
+                                @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                                 !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = $temp['element'];
                             $eventData[$element] = $this->gimage_markup($eventData[$element]);
