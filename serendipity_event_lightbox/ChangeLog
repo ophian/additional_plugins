@@ -1,3 +1,7 @@
+2.5.1:
+------
+ * Silence possible eventData property check
+
 2.5.0:
     * Magnific Popup update v.1.1.0 - 2016-02-20
 
