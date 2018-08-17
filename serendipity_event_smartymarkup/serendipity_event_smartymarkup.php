@@ -9,7 +9,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_smartymarkup extends serendipity_event
 {
-    var $title     = PLUGIN_EVENT_SMARTYMARKUP_NAME;
+    var $title = PLUGIN_EVENT_SMARTYMARKUP_NAME;
 
     function introspect(&$propbag)
     {
@@ -19,7 +19,7 @@ class serendipity_event_smartymarkup extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SMARTYMARKUP_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.15');
+        $propbag->add('version',       '1.16');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -167,7 +167,7 @@ class serendipity_event_smartymarkup extends serendipity_event
 
                     foreach($this->markup_elements AS $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                            !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
+                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                             !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance]))
                         {
 

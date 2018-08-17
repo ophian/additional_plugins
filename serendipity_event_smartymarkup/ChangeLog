@@ -1,3 +1,7 @@
+1.16:
+----
+ * Silence possible eventData property check
+
 1.15:
 ----
  * Iconfont accessibility fixes
