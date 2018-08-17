@@ -28,7 +28,7 @@ class serendipity_event_contentrewrite extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.4.2');
+        $propbag->add('version',       '1.4.3');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -73,14 +73,16 @@ class serendipity_event_contentrewrite extends serendipity_event
                 preg_match('|^(.+)_([0-9]+)$|msU', $plugin_value, $reg_counter);
 
                 $found = false;
-                if ($reg_counter[1] == 'title') {
-                    $this->title_values[] = $plugin_value;
-                    $this->rewrite_from[] = $row['value'];
-                    $found = true;
-                } elseif ($reg_counter[1] == 'description') {
-                    $this->descr_values[] = $plugin_value;
-                    $this->rewrite_to[]   = $row['value'];
-                    $found = true;
+                if (isset($reg_counter[1])) {
+                    if ($reg_counter[1] == 'title') {
+                        $this->title_values[] = $plugin_value;
+                        $this->rewrite_from[] = $row['value'];
+                        $found = true;
+                    } elseif ($reg_counter[1] == 'description') {
+                        $this->descr_values[] = $plugin_value;
+                        $this->rewrite_to[]   = $row['value'];
+                        $found = true;
+                    }
                 }
 
                 if ($found) {
