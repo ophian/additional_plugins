@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 @define('PLUGIN_EVENT_MIMETEX_NOTE','This plugin relies on an external executable to render gifs of TeX input.  It either requires MimeTex or a full laTeX installation.  MimeTex is a considerably easier install, but does not render fonts as cleanly as true LateX output. LaTeX rendering is done on a modifed version of the GPL <a href="http://www.mayer.dial.pipex.com/tex.htm">LatexRender</a>, which relies on a laTeX distribution and ImageMagick (which relies on Ghostscript).<br />  For more information, please see <a href="http://www.forkosh.com/mimetex.html">http://www.forkosh.com/mimetex.html</a><br />');
 @define('PLUGIN_EVENT_MIMETEX_NAME', 'MimeTex/LaTeX TeX Interpreter');
@@ -26,3 +26,4 @@ if (substr(php_uname(), 0, 7) == "Windows"){
 @define('PLUGIN_EVENT_MIMETEX_ADDTRANSPARENCY_DESC','Toggles whether to use transparency when convert creates the final gif image. Useful for sites with dark backgrounds. Note that previously created images are uneffected.');
 @define('PLUGIN_EVENT_MIMETEX_FILETYPE','Filetype of image');
 @define('PLUGIN_EVENT_MIMETEX_FILETYPE_DESC','LatexRender can support either gif or png output.');
+

@@ -1,16 +1,10 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_mimetex extends serendipity_event
 {
@@ -24,11 +18,11 @@ class serendipity_event_mimetex extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MIMETEX_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthew Groeninger');
-        $propbag->add('version',       '1.4');
+        $propbag->add('version',       '1.5');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.3.0'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',    array(
@@ -59,14 +53,11 @@ class serendipity_event_mimetex extends serendipity_event
         );
         $conf_array = array('info','auto_replace','mimetex_or_latex','mimetex_path','latex_path','dvips_path','convert_path', 'transparency','filetype');
 
-
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
 
         $propbag->add('configuration', $conf_array);
-
-
 
     }
 
@@ -165,12 +156,13 @@ class serendipity_event_mimetex extends serendipity_event
 
     }
 
-
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -293,7 +285,7 @@ class serendipity_event_mimetex extends serendipity_event
                         $url4 = '" \/>';
                         foreach ($this->markup_elements as $temp) {
                             if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                            !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
+                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                             !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                                 $element = $temp['element'];
                                 $eventData[$element] = preg_replace('/(?<!\\\\)\[tex\](.*?)\[\/tex\]/e', "'$url1'.rawurlencode('\\1').'$url2'.'\\1'.'$url3'.'\\1'.'$url4'", $eventData[$element]);
@@ -314,7 +306,8 @@ class serendipity_event_mimetex extends serendipity_event
         }
     }
 
-    function generate_button ($txtarea) {
+    function generate_button ($txtarea)
+    {
         global $serendipity;
         if (!isset($txtarea)) {
            $txtarea = 'body';

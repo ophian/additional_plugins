@@ -4,6 +4,7 @@
  *  @author Vladimír Ajgl <vlada@ajgl.cz>
  *  @translated 2009/07/07
  */
+
 @define('PLUGIN_EVENT_MIMETEX_NOTE','Plugin vykresluje obrázky gif podle vstupu TeXu. Závisím na externím spustitelním programu. Vyžaduje buï MimeTex nebo plnou verzi laTeX. MimeTex je podstatnì jednodušší nainstalovat, ale nevykresluje fonty tak èistì jako opravdový LaTeX. LaTeX vykresluje pomocí pozmìnìné knihovny GPL <a href="http://www.mayer.dial.pipex.com/tex.htm">LatexRender</a>, která se liší podle distribuce LaTeXu a pomocí ImageMagicku (který závisí na Ghostcriptu).<br />  Pro více informací ètìte <a href="http://www.forkosh.com/mimetex.html">http://www.forkosh.com/mimetex.html</a><br />');
 @define('PLUGIN_EVENT_MIMETEX_NAME', 'Interpret pøíkazù MimeTex/LaTeX');
 @define('PLUGIN_EVENT_MIMETEX_NAME_BUTTON', 'TeX');
@@ -24,3 +25,4 @@
 @define('PLUGIN_EVENT_MIMETEX_ADDTRANSPARENCY_DESC','Pøepíná, jestli má být u výsledného gif obrázku použita prùhledná barva. To je vhodné u blogù s tmavým nebo rùznorodým pozadím. Pamatujte, že døíve vytvoøené obrázky nebudou znovu tvoøeny a zùstanou v pùvodní verzi.');
 @define('PLUGIN_EVENT_MIMETEX_FILETYPE','Typ obrázku');
 @define('PLUGIN_EVENT_MIMETEX_FILETYPE_DESC','LatexRendere umí poskytnout obrázky buï ve formátu gif nebo png.');
+

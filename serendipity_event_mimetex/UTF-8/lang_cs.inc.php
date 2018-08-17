@@ -24,3 +24,4 @@
 @define('PLUGIN_EVENT_MIMETEX_ADDTRANSPARENCY_DESC','Přepíná, jestli má být u výsledného gif obrázku použita průhledná barva. To je vhodné u blogů s tmavým nebo různorodým pozadím. Pamatujte, že dříve vytvořené obrázky nebudou znovu tvořeny a zůstanou v původní verzi.');
 @define('PLUGIN_EVENT_MIMETEX_FILETYPE','Typ obrázku');
 @define('PLUGIN_EVENT_MIMETEX_FILETYPE_DESC','LatexRendere umí poskytnout obrázky buď ve formátu gif nebo png.');
+
