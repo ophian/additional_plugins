@@ -1,3 +1,7 @@
+2.22:
+-----
+ * Silence possible eventData property check
+
 2.21:
 -----
  - Minor padding-top style for 2.20 
