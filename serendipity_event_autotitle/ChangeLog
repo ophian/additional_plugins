@@ -1,3 +1,7 @@
+0.3:
+----
+ * Silence possible eventData property check
+
 0.2:
 ----
  * Set plugin consistencies
