@@ -1231,7 +1231,7 @@
 <description>使用新的字符串替换现有单词 (一般为缩略词。这有益于对缩略词、技术名词等作出解释)</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.2</version>
+  <version>1.4.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2018-08-17</date>
   <filelist>

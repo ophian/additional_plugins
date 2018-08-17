@@ -1231,7 +1231,7 @@
 <description>Nahrazuje slovat libovolným řetězcem (užitečné pro vkládání akronymů)</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.2</version>
+  <version>1.4.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2018-08-17</date>
   <filelist>

@@ -1231,7 +1231,7 @@
 <description>특정 단어를 지정한 문장으로 모두 변환함 (약자를 적었을 때 유용합니다)</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.2</version>
+  <version>1.4.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2018-08-17</date>
   <filelist>
