@@ -15,3 +15,4 @@
 @define('PLUGIN_EVENT_GESHI_PATHTOGESHI_DESC',		'Cesta k instalaci balíèku GeSHi, relativnì ke koøenovému adresáøi Serendipity');
 @define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS',		'Èíslování øádkù?');
 @define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS_DESC',		'Mají se standardnì zobrazovat èísla øádkù?');
+

@@ -55,13 +55,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_geshi extends serendipity_event
 {
@@ -76,11 +70,11 @@ class serendipity_event_geshi extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'David Rolston');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '0.9');
+        $propbag->add('version',       '1.0');
         $propbag->add('event_hooks', array('frontend_display' => true, 'frontend_comment' => true));
         $propbag->add('groups', array('MARKUP'));
 
@@ -110,12 +104,13 @@ class serendipity_event_geshi extends serendipity_event
         $propbag->add('configuration', $conf_array);
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch ($name) {
             case 'pathtogeshi' :
                 $propbag->add('name',        PLUGIN_EVENT_GESHI_PATHTOGESHI);
@@ -139,14 +134,16 @@ class serendipity_event_geshi extends serendipity_event
         return true;
     }
 
-    function geshi($input) {
+    function geshi($input)
+    {
         $pathtogeshi = $this->get_config('pathtogeshi');
         require_once($pathtogeshi . '/geshi.php');
         $input = preg_replace_callback('/\[geshi(?:\s)*lang=([A-Za-z0-9_\-]+)(?:\s)*(ln=[YyNn])?\](.*?)\[\/geshi\]/si', array(&$this, 'geshicallback'), $input);
         return $input;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -156,7 +153,7 @@ class serendipity_event_geshi extends serendipity_event
                 case 'frontend_display':
                     foreach ($this->markup_elements as $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                            !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
+                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                             !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = $temp['element'];
                             $eventData[$element] = $this->geshi($eventData[$element]);
@@ -180,7 +177,8 @@ class serendipity_event_geshi extends serendipity_event
         }
     }
 
-    function geshicallback($matches) {
+    function geshicallback($matches)
+    {
         $pathtogeshi = $this->get_config('pathtogeshi') . '/geshi';
         $geshilang = strtolower($matches[1]);
         $showln = ($this->get_config('showlinenumbers') == TRUE) ? TRUE : FALSE;
@@ -197,6 +195,8 @@ class serendipity_event_geshi extends serendipity_event
         $geshi->set_overall_class('geshi');
         return str_replace("\n", '', $geshi->parse_code());
     }
+
 }
+
 /* vim: set sts=4 ts=4 expandtab : */
 ?>

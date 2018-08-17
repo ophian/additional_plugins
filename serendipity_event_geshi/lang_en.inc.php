@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -15,4 +15,3 @@
 @define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS', 'Line Numbers?');
 @define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS_DESC','Do you want line numbers to be shown by default');
 
-?>

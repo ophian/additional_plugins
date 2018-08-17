@@ -15,3 +15,4 @@
 @define('PLUGIN_EVENT_GESHI_PATHTOGESHI_DESC',		'Cesta k instalaci balíčku GeSHi, relativně ke kořenovému adresáři Serendipity');
 @define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS',		'Číslování řádků?');
 @define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS_DESC',		'Mají se standardně zobrazovat čísla řádků?');
+
