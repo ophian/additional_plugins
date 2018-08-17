@@ -1,17 +1,11 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+// Load possible language files.
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_tooltips extends serendipity_event
 {
@@ -25,11 +19,11 @@ class serendipity_event_tooltips extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TOOLTIPS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Enrico Stahn');
-        $propbag->add('version',       '1.6');
+        $propbag->add('version',       '1.7');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.3.0'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
@@ -72,7 +66,8 @@ class serendipity_event_tooltips extends serendipity_event
         $propbag->add('configuration', $conf_array);
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch ($name) {
             case 'fullimages' :
                 $propbag->add('name', PLUGIN_EVENT_TOOLTIPS_FULLIMAGES_NAME);
@@ -132,16 +127,19 @@ class serendipity_event_tooltips extends serendipity_event
         return true;
     }
 
-    function install() {
+    function install()
+    {
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function uninstall(&$propbag) {
+    function uninstall(&$propbag)
+    {
         serendipity_plugin_api::hook_event('backend_cache_purge', $this->title);
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
@@ -260,7 +258,8 @@ class serendipity_event_tooltips extends serendipity_event
         return $element;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
         $hooks = &$bag->get('event_hooks');
 
@@ -276,7 +275,7 @@ class serendipity_event_tooltips extends serendipity_event
                 case 'frontend_display':
                     foreach ($this->markup_elements as $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                            !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
+                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                             !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = &$eventData[$temp['element']];
 
@@ -337,3 +336,4 @@ function tooltips_replace7($matches) {
 
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>

@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -25,4 +25,3 @@
 @define('PLUGIN_EVENT_TOOLTIPS_TEXTCOLOR_NAME', 'Textcolor');
 @define('PLUGIN_EVENT_TOOLTIPS_TEXTCOLOR_DESC', '');
 
-?>
