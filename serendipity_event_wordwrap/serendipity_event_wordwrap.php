@@ -1,17 +1,11 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+// Load possible language files.
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_wordwrap extends serendipity_event
 {
@@ -25,11 +19,11 @@ class serendipity_event_wordwrap extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WORDWRAP_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.04');
+        $propbag->add('version',       '1.05');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.3.0'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array('frontend_display' => true));
@@ -64,16 +58,19 @@ class serendipity_event_wordwrap extends serendipity_event
         $propbag->add('configuration', $conf_array);
     }
 
-    function install() {
+    function install()
+    {
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function uninstall(&$propbag) {
+    function uninstall(&$propbag)
+    {
         serendipity_plugin_api::hook_event('backend_cache_purge', $this->title);
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
@@ -110,7 +107,8 @@ class serendipity_event_wordwrap extends serendipity_event
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -137,7 +135,7 @@ class serendipity_event_wordwrap extends serendipity_event
 
                 foreach ($this->markup_elements as $temp) {
                     if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                            !$eventData['properties']['ep_disable_markup_' . $this->instance] &&
+                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                             !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                         $element = $temp['element'];
                         $eventData[$element] = wordwrap($eventData[$element], $this->get_config('length'), $char, $this->get_config('hardbreak'));
@@ -154,6 +152,7 @@ class serendipity_event_wordwrap extends serendipity_event
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
