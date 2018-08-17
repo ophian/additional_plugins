@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.44');
+        $propbag->add('version', '5.45');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -3381,6 +3381,8 @@ class serendipity_event_staticpage extends serendipity_event
         $gc = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}config WHERE value LIKE '" . $this->instance . "%' LIMIT 1", true, 'assoc');
         if (is_array($gc)) {
             $ci = (string)str_replace('/dependencies', '', $gc['name']) . '/' . $name;
+        } else {
+            return $default;
         }
         $cv = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}config WHERE name like '" . $ci . "' LIMIT 1", true, 'assoc');
         if (is_array($cv) && $gc['authorid'] == $cv['authorid']) {
