@@ -1,3 +1,7 @@
+0.28:
+----
+ * Silence possible eventData property check
+
 0.27:
 -----
    * Restrict sql index key length for utf8mb4 migration to mysqli only
