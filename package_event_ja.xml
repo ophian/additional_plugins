@@ -239,9 +239,9 @@
 <description>Set the title-tag into the links of the entry.</description>
 <maintainers><maintainer><name>Malte Paskuda</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.2</version>
+  <version>0.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-02-02</date>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_autotitle">
       <file>ChangeLog</file>
@@ -1232,9 +1232,9 @@
 <description>単語を新しく選択された文字列に置換します (useful for acronyms)</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.1</version>
+  <version>1.4.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-06</date>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_contentrewrite">
       <file>lang_bg.inc.php</file>
@@ -2203,9 +2203,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Makes email addresses clickable, but obfuscates them to block spam harvester bots</description>
 <maintainers><maintainer><name>Stephan Manske, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.04</version>
+  <version>1.05</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_email_bot_obfuscator">
       <file>ChangeLog</file>
@@ -3502,9 +3502,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Gallery アルバムか画像を用いたマークアップテキストの挿入です。</description>
 <maintainers><maintainer><name>Rob Antonishen, Alexander Mieland</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.12</version>
+  <version>1.13</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-07-09</date>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_galleryimage">
       <file>ChangeLog</file>
@@ -3646,9 +3646,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Computer Language Color Syntax Highlighting. Tag usage: [geshi lang=lang_name [,ln={y|n}]]code snippet[/geshi]</description>
 <maintainers><maintainer><name>David Rolston</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.9</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.0</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_geshi">
       <file>ChangeLog</file>
@@ -3983,9 +3983,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>ユーザーが定義した用語集をハイライトテキストとツールチップにします。</description>
 <maintainers><maintainer><name>Rob Antonishen</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.8</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_glossary">
       <file>lang_bg.inc.php</file>
@@ -4027,25 +4027,12 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>This plugin adds extendet Google Analytic funcionality to youre Page like tracking external links or download links.</description>
 <maintainers><maintainer><name>&lt;a href=&quot;https://github.com/kleinerChemiker&quot; target=&quot;_blank&quot;&gt;kleinerChemiker&lt;/a&gt;</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.1</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.5</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_google_analytics">
       <file>ChangeLog</file>
-      <dir name="CVSROOT">
-        <file>checkoutlist</file>
-        <file>commitinfo</file>
-        <file>config</file>
-        <file>cvswrappers</file>
-        <file>editinfo</file>
-        <file>loginfo</file>
-        <file>modules</file>
-        <file>notify</file>
-        <file>rcsinfo</file>
-        <file>taginfo</file>
-        <file>verifymsg</file>
-      </dir>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>lang_cs.inc.php</file>
@@ -4062,17 +4049,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_google_analytics/ChangeLog</file>
-    <file>serendipity_event_google_analytics/CVSROOT/checkoutlist</file>
-    <file>serendipity_event_google_analytics/CVSROOT/commitinfo</file>
-    <file>serendipity_event_google_analytics/CVSROOT/config</file>
-    <file>serendipity_event_google_analytics/CVSROOT/cvswrappers</file>
-    <file>serendipity_event_google_analytics/CVSROOT/editinfo</file>
-    <file>serendipity_event_google_analytics/CVSROOT/loginfo</file>
-    <file>serendipity_event_google_analytics/CVSROOT/modules</file>
-    <file>serendipity_event_google_analytics/CVSROOT/notify</file>
-    <file>serendipity_event_google_analytics/CVSROOT/rcsinfo</file>
-    <file>serendipity_event_google_analytics/CVSROOT/taginfo</file>
-    <file>serendipity_event_google_analytics/CVSROOT/verifymsg</file>
     <file>serendipity_event_google_analytics/documentation_cs.html</file>
     <file>serendipity_event_google_analytics/documentation_cz.html</file>
     <file>serendipity_event_google_analytics/lang_cs.inc.php</file>
@@ -4753,9 +4729,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Allows you to add HTML-style tags to your entry that includes parts of other entrys. Use this markup: [s9y-include-entry:XXX:YYY]. Replace XXX with the target entryid and YYY with the target field name (i.e. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). You can also use the new menu functions to maintain templates and blocks that can get inserted in between your entries.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.21</version>
+  <version>2.22</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-01-24</date>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -5017,9 +4993,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Lightbox JS is a simple, unobtrusive script used to overlay images on the current page. It's a snap to setup and works with all modern browsers. All lightboxes pop-up images. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the internal display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version. To display also hidden set images by display:none, use lightbox2. These lightbox scripts are all jQuery based. They do not only support image types, they may also add support for ajax, videos, flash, YouTube, iFrame, inline, or modal boxes. This Plugin uses them for image lightboxes only, but you can easily add other content types manually to your entries and start the chosen lightbox as described in their online documentaries.</description>
 <maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.5.0</version>
+  <version>2.5.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
       <file>ChangeLog</file>
@@ -5924,9 +5900,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>エントリテキストに Markdown マークアップを適用します。</description>
 <maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.27</version>
+  <version>1.28</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-07-24</date>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_markdown">
       <file>ChangeLog</file>
@@ -6191,9 +6167,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Create Gifs from TeX expressions using MimeTex or LaTeX</description>
 <maintainers><maintainer><name>Matthew Groeninger</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.5</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_mimetex">
       <dir name="images">
@@ -8197,9 +8173,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Mark up via user custom regexp files. See example files in &quot;regexps&quot; subdirectory of this plugin.</description>
 <maintainers><maintainer><name>Rob Antonishen</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.9</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.0</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_regexpmarkup">
       <file>ChangeLog</file>
@@ -8310,9 +8286,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Use HTML5 and the s9y backend to scale images to the visitors viewport width</description>
 <maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.5</version>
+  <version>0.6</version>
   <requirements:s9yVersion>2.3.1</requirements:s9yVersion>
-  <date>2017-12-28</date>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_responsiveimages">
       <file>lang_de.inc.php</file>
@@ -8470,9 +8446,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Parses Smarty instructions inside the article text. This is not usable in combination with syntax code-highlighters or multilingual tags in entry context fields!</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.15</version>
+  <version>1.16</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-02-02</date>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_smartymarkup">
       <file>ChangeLog</file>
@@ -9699,9 +9675,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Text_Wiki を使用してテキストをマークアップします。</description>
 <maintainers><maintainer><name>Tobias Schlitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8</version>
+  <version>1.9</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-10</date>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_textwiki">
       <file>lang_bg.inc.php</file>
@@ -10438,9 +10414,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>ツールチップテキストと画像を起動します。</description>
 <maintainers><maintainer><name>Enrico Stahn</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.7</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_tooltips">
       <file>lang_cs.inc.php</file>
@@ -10743,9 +10719,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Convert straight quotes to smart quotes.  Also can use SmartyPants PHP library (by Michel Fortin, based on SmartyPants by John Gruber) to provide further typographic replacement.</description>
 <maintainers><maintainer><name>Jonathan Spalink and Matthew Groeninger</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
+  <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-08-27</date>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_typoquote">
       <file>lang_bg.inc.php</file>
@@ -11124,9 +11100,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>You can specify new/existing links to your blog entries via [[title]], link to staticpages via ((title)) and link to both via {{title}}. References can be automatically appended to the blog entry.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.27</version>
+  <version>0.28</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-10-06</date>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -11175,9 +11151,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Inserts breaks for lengthy entries/comments</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.04</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.05</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2018-08-17</date>
   <filelist>
     <dir name="serendipity_event_wordwrap">
       <file>lang_cs.inc.php</file>
