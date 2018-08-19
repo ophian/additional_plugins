@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.22');
+        $propbag->add('version',       '3.23');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -111,8 +111,8 @@ class serendipity_event_emoticonchooser extends serendipity_event
 // this lazy cache behaviour, since settings may have changed in the meanwhile.
 ?>
 <!doctype html>
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="<?=$serendipity['language']?>"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="<?=$serendipity['language']?>"> <!--<![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="<?=$serendipity['lang']?>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<?=$serendipity['lang']?>"> <!--<![endif]-->
 <head>
     <meta charset="<?=LANG_CHARSET?>">
     <title><?=PLUGIN_LINKTRIMMER_NAME?></title>

@@ -1,3 +1,7 @@
+3.23:
+-----
+ * Fix wrong set $serendipity['lang'] variable
+
 3.22:
 -----
  * Add another uninitialized variable check
