@@ -1,3 +1,8 @@
+3.68:
+----
+
+ * Added some more uninitialized variable checks
+
 3.67:
 ----
 

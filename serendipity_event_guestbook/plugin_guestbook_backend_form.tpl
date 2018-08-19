@@ -1,5 +1,5 @@
 {*
- plugin_guestbook_backend_form.tpl v.3.51 2018-08-05 Ian
+ plugin_guestbook_backend_form.tpl v.3.52 2018-08-19 Ian
  *}
 
 <!-- plugin_guestbook_backend_form start -->
@@ -64,7 +64,7 @@
           <input id="serendipity_guestbookform_name" name="serendipity[name]" value="{$plugin_guestbook_name|default:''}" size="60" maxlength="29" type="text">
         </div>
 
-       {if $is_show_mail}
+       {if !empty($is_show_mail)}
         <div class="input-text">
             <label for="serendipity_commentform_email">{$CONST.EMAIL}</label>
             <input type="text" size="60" maxlength="99" name="serendipity[email]" value="{$plugin_guestbook_email|default:''}" id="serendipity_commentform_email">
@@ -72,7 +72,7 @@
         </div>
        {/if}
 
-       {if $is_show_url}
+       {if !empty($is_show_url)}
         <div class="input-text">
             <label for="serendipity_commentform_url">{$CONST.URL}</label>
             <input type="text" size="60" maxlength="99" name="serendipity[url]" value="{$plugin_guestbook_url|default:''}" id="serendipity_commentform_url">
