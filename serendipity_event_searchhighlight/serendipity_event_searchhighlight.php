@@ -22,8 +22,8 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME);
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Tom Sommer');
-        $propbag->add('version',       '1.8.3');
+        $propbag->add('author',        'Tom Sommer, Ian');
+        $propbag->add('version',       '1.8.4');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -56,7 +56,7 @@ class serendipity_event_searchhighlight extends serendipity_event
         );
 
         $conf_array = array();
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
         $propbag->add('configuration', $conf_array);
@@ -78,16 +78,16 @@ class serendipity_event_searchhighlight extends serendipity_event
 
     function loadConstants()
     {
-        define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NONE', 0);
-        define('PLUGIN_EVENT_SEARCHHIGHLIGHT_GOOGLE', 1);
-        define('PLUGIN_EVENT_SEARCHHIGHLIGHT_YAHOO', 2);
-        define('PLUGIN_EVENT_SEARCHHIGHLIGHT_LYCOS', 3);
-        define('PLUGIN_EVENT_SEARCHHIGHLIGHT_MSN', 4);
-        define('PLUGIN_EVENT_SEARCHHIGHLIGHT_ALTAVISTA', 5);
-        define('PLUGIN_EVENT_SEARCHHIGHLIGHT_AOL_DE', 6);
-        define('PLUGIN_EVENT_SEARCHHIGHLIGHT_AOL_COM', 7);
-        define('PLUGIN_EVENT_SEARCHHIGHLIGHT_BING', 8);
-        define('PLUGIN_EVENT_SEARCHHIGHLIGHT_S9Y', 9);
+        @define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NONE', 0);
+        @define('PLUGIN_EVENT_SEARCHHIGHLIGHT_GOOGLE', 1);
+        @define('PLUGIN_EVENT_SEARCHHIGHLIGHT_YAHOO', 2);
+        @define('PLUGIN_EVENT_SEARCHHIGHLIGHT_LYCOS', 3);
+        @define('PLUGIN_EVENT_SEARCHHIGHLIGHT_MSN', 4);
+        @define('PLUGIN_EVENT_SEARCHHIGHLIGHT_ALTAVISTA', 5);
+        @define('PLUGIN_EVENT_SEARCHHIGHLIGHT_AOL_DE', 6);
+        @define('PLUGIN_EVENT_SEARCHHIGHLIGHT_AOL_COM', 7);
+        @define('PLUGIN_EVENT_SEARCHHIGHLIGHT_BING', 8);
+        @define('PLUGIN_EVENT_SEARCHHIGHLIGHT_S9Y', 9);
     }
 
     function getSearchEngine()
@@ -141,13 +141,13 @@ class serendipity_event_searchhighlight extends serendipity_event
 
         $this->loadConstants();
         $url = parse_url($this->uri);
-        parse_str($url['query'], $pStr);
+        if (isset($url['query'])) parse_str($url['query'], $pStr);
 
         $s = $this->getSearchEngine();
 
         switch ( $s ) {
             case PLUGIN_EVENT_SEARCHHIGHLIGHT_S9Y:
-                $query = $pStr['serendipity']['searchTerm'];
+                $query = isset($pStr['serendipity']['searchTerm']) ? $pStr['serendipity']['searchTerm'] : null;
 
                 if (!empty($_REQUEST['serendipity']['searchTerm'])) {
                     $query = $_REQUEST['serendipity']['searchTerm'];
@@ -214,7 +214,7 @@ class serendipity_event_searchhighlight extends serendipity_event
     {
         global $serendipity;
 
-        $this->uri = $_SERVER['HTTP_REFERER'];
+        $this->uri = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
         $hooks = &$bag->get('event_hooks');
 
         if (!isset($hooks[$event])) {
@@ -230,9 +230,11 @@ class serendipity_event_searchhighlight extends serendipity_event
             $_SESSION['search_referer'] = $this->uri;
 
             foreach ($this->markup_elements AS $temp) {
+
                 if (!(serendipity_db_bool($this->get_config($temp['name'])) && isset($eventData[$temp['element']]))) {
                     continue;
                 }
+
                 if ($eventData['properties']['ep_disable_markup_' . $this->instance] ||
                         isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                     continue;

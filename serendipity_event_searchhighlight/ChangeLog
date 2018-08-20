@@ -1,3 +1,8 @@
+1.8.4:
+------
+
+ * Add some uninitialized variable checks
+ * Consistency changes
 
 1.8.3:
 ------
