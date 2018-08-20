@@ -22,7 +22,7 @@ class serendipity_event_linktrimmer extends serendipity_event
             'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '1.6.9');
+        $propbag->add('version',       '1.7.0');
         $propbag->add('author',        'Garvin Hicking, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('prefix', 'frontpage', 'domain'));
@@ -206,11 +206,11 @@ class serendipity_event_linktrimmer extends serendipity_event
 
         $serendipity['smarty']->assign(array(
             'linktrimmer_ispopup'     => $serendipity['enablePopup'],
-            'linktrimmer_error'       => $error,
-            'linktrimmer_url'         => $url,
-            'linktrimmer_origurl'     => $_REQUEST['linktrimmer_url'],
+            'linktrimmer_error'       => !empty($error) ? $error : null,
+            'linktrimmer_url'         => !empty($url) ? $url : null,
+            'linktrimmer_origurl'     => !empty($_REQUEST['linktrimmer_url']) ? $_REQUEST['linktrimmer_url'] : null,
             'linktrimmer_external'    => $external,
-            'linktrimmer_txtarea'     => $_REQUEST['txtarea']
+            'linktrimmer_txtarea'     => !empty($_REQUEST['txtarea']) ? $_REQUEST['txtarea'] : null
         ));
 
         if ($serendipity['version'][0] > 1) {
