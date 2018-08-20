@@ -22,7 +22,7 @@ class serendipity_plugin_showentries extends serendipity_plugin
             'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '1.9');
+        $propbag->add('version',       '1.10');
         $propbag->add('author',        'Garvin Hicking');
         $propbag->add('stackable', true);
         $propbag->add('groups', array('FRONTEND_VIEWS'));
@@ -86,15 +86,15 @@ class serendipity_plugin_showentries extends serendipity_plugin
         global $serendipity;
 
         $title        = $this->get_config('title', $this->title);
-        $current_cat  = $serendipity['GET']['category'];
-        $current_page = $serendipity['GET']['page'];
-        $current_auth = $serendipity['GET']['viewAuthor'];
-        $current_rng  = $serendipity['range'];
+        $current_cat  = isset($serendipity['GET']['category']) ? $serendipity['GET']['category'] : null;
+        $current_page = isset($serendipity['GET']['page']) ? $serendipity['GET']['page'] : null;
+        $current_auth = isset($serendipity['GET']['viewAuthor']) ? $serendipity['GET']['viewAuthor'] : null;
+        $current_rng  = isset($serendipity['range']) ? $serendipity['range'] : null;
         $serendipity['GET']['page'] = 0;
         unset($serendipity['GET']['viewAuthor']);
         unset($serendipity['range']);
 
-        $c = $this->get_config('category');
+        $c = $this->get_config('category', '');
         if ($c > 0) {
             $serendipity['GET']['category'] = (int)$c;
         }
@@ -120,7 +120,7 @@ class serendipity_plugin_showentries extends serendipity_plugin
                 $entry['link_allow_comments']    = $serendipity['baseURL'] . 'comment.php?serendipity[switch]=enable&amp;serendipity[entry]=' . $entry['id'];
                 $entry['link_deny_comments']     = $serendipity['baseURL'] . 'comment.php?serendipity[switch]=disable&amp;serendipity[entry]=' . $entry['id'];
                 $entry['allow_comments']         = serendipity_db_bool($entry['allow_comments']);
-                $entry['moderate_comments']      = serendipity_db_bool($entry['moderate_comments']);
+                $entry['moderate_comments']      = isset($entry['moderate_comments']) ? serendipity_db_bool($entry['moderate_comments']) : null;
                 $entry['link_popup_comments']    = $serendipity['serendipityHTTPPath'] .'comment.php?serendipity[entry_id]='. $entry['id'] .'&amp;serendipity[type]=comments';
                 $entry['link_popup_trackbacks']  = $serendipity['serendipityHTTPPath'] .'comment.php?serendipity[entry_id]='. $entry['id'] .'&amp;serendipity[type]=trackbacks';
                 $entry['link_edit']              = $serendipity['baseURL'] .'serendipity_admin.php?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]='. $entry['id'];
