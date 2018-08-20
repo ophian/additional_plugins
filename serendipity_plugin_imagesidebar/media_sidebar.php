@@ -2,6 +2,8 @@
 
 class media_sidebar extends subplug_sidebar {
 
+    var $title = PLUGIN_SIDEBAR_IMAGESIDEBAR_NAME;
+
     function introspect_custom()
     {
         return array('media_hotlinks_only',
