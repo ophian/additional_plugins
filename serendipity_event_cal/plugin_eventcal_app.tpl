@@ -1,4 +1,4 @@
-{* file: plugin_eventcal_app.tpl - 2015-12-04, Ian *}
+{* file: plugin_eventcal_app.tpl - 2018-08-20, Ian *}
 
 <!-- plugin_eventcal_app.tpl start -->
 
@@ -43,7 +43,7 @@ function chkAll(frm, arr, mark) {
             <td class="eventcal_appform_validation">{$e.sdesc}</td>
             <td class="eventcal_appform_validation eventcal_appldesc">{$e.ldesc|truncate:63:" [&hellip;]"|strip_tags}{if $e.ldesc|count_characters:true > 63} <abbr title="{$e.ldesc|replace:"\n":" "|strip_tags}"></abbr>{/if}<br />{$CONST.CAL_EVENT_FORM_LEFT_AUTHOR|strip_tags:false}: {$e.app_by}</td>
             <td class="eventcal_appform_validation">{if $e.url} <a href="{$e.url}" target="_blank">go</a>{else}&nbsp;{/if}</td>
-            {if $is_eventcal_cal_admin_noapp != true}
+            {if isset( $is_eventcal_cal_admin_noapp) AND $is_eventcal_cal_admin_noapp != true}
             <td class="eventcal_appform_validation">&nbsp;&nbsp;<input type="image" class="eventcal_appform_move" src="{$plugin_eventcal_cal_imgpath}img/notes-approve.gif" name="Approve_Selected" alt="notes-approve" title=" Approve " align="bottom" />&nbsp;&nbsp;</td>
             {else}
             <td class="eventcal_appform_validation">&nbsp;&nbsp;<img class="eventcal_appform_move" src="{$plugin_eventcal_cal_imgpath}img/notes-checkmark.gif" name="Approve_Selected" alt="notes-approve" title=" is approved already - no action " align="bottom" />&nbsp;&nbsp;</td>

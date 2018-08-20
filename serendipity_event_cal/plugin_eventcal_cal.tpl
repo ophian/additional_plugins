@@ -1,5 +1,5 @@
-{* file: plugin_eventcal_cal.tpl - 2015-12-04, Ian *}
-{if $is_eventcal_articleformat == true}
+{* file: plugin_eventcal_cal.tpl - 2018-08-20, Ian *}
+{if NOT empty($is_eventcal_articleformat) AND $is_eventcal_articleformat == true}
 
 <div class="serendipity_Entry_Date">
     <h3 class="serendipity_date">{$CONST.PLUGIN_EVENTCAL_TITLE}</h3>
@@ -16,18 +16,18 @@
 
 <!-- plugin_eventcal_cal.tpl start -->
 
-{if $plugin_eventcal_cal_preface}
+{if NOT empty($plugin_eventcal_cal_preface) AND $plugin_eventcal_cal_preface}
 <div class="eventcal_intro">{$plugin_eventcal_cal_preface}</div>
 {/if}
 
-{if $is_eventcal_error}{if $is_eventcal_cal_admin_clear == true}<br />{/if}
+{if NOT empty($is_eventcal_error)}{if $is_eventcal_cal_admin_clear == true}<br />{/if}
 
 <div class="serendipity_center eventcal_tpl_error">
     <div class="eventcal_tpl_error_inner">{$plugin_eventcal_error}</div>
 </div>
 {/if}
 
-{if $is_eventcal_message}
+{if NOT empty($is_eventcal_message)}
 
 <div class="serendipity_center eventcal_tpl_message">
     <div class="serendipity_center serendipity_msg_notice msg_notice">{$plugin_eventcal_cal_admin}</div>
@@ -39,7 +39,7 @@
 </div>
 {/if}
 
-{if $admin_delete == true}
+{if isset($admin_delete) AND $admin_delete == true}
 
 <div class="serendipity_center eventcal_tpl_message">
     <div class="eventcal_tpl_message_inner">{$CONST.CAL_EVENT_USER_FREE_SURE}<br /><br />
@@ -49,34 +49,34 @@
 </div>
 {/if}
 
-{if $admin_dodelete == true && $rip_entry}
+{if isset($admin_dodelete) AND $admin_dodelete == true && $rip_entry}
 
 <div class="serendipity_center">{$rip_entry}</div>
 {/if}
 
 
-{if $is_eventcal_cal_debug_fdc}
+{if NOT empty($is_eventcal_cal_debug_fdc)}
 
 <div id="eventcal_error_surrounder">
     <div class="error_brand">&nbsp;&nbsp;function: {$is_eventcal_cal_debug_fdc} </div>
 </div>
 {/if}
 
-{if $is_eventcal_cal_debug_fcwe}
+{if NOT empty($is_eventcal_cal_debug_fcwe)}
 
 <div id="eventcal_error_surrounder">
     <div class="error_brand">&nbsp;&nbsp;function: {$is_eventcal_cal_debug_fcwe} </div>
 </div>
 {/if}
 
-{if $is_eventcal_cal_debug_fs1}
+{if NOT empty($is_eventcal_cal_debug_fs1)}
 
 <div id="eventcal_error_surrounder">
     <div class="error_brand">&nbsp;&nbsp;function: {$is_eventcal_cal_debug_fs1} </div>
 </div>
 {/if}
 
-{if $is_eventcal_icalswitch == true}
+{if isset($is_eventcal_icalswitch) AND $is_eventcal_icalswitch == true}
 
 <div class="serendipity_center eventcal_tpl_message">
     <div class="eventcal_tpl_message_inner">{$CONST.PLUGIN_EVENTCAL_ICAL_ICSURL_BLAH}<br /><br />
@@ -107,7 +107,7 @@
 
 <table align="left" class="eventborder">
     <tbody>
-{if $plugin_eventcal_cal_monthviewnav}
+{if NOT empty($plugin_eventcal_cal_monthviewnav)}
     <!-- navigation buttons in monthview start -->
     <tr>
         <th align="center">
@@ -159,7 +159,7 @@
     <!-- navigation buttons in monthview end -->
 {/if}{* monthviewnav end *}
 
-{if $is_eventcal_cal_admin_clear != true}
+{if empty($is_eventcal_cal_admin_clear) OR $is_eventcal_cal_admin_clear != true}
     <tr>
         <td>
         {if $plugin_eventcal_cal_sed}
@@ -228,7 +228,7 @@
 
     {* now we include the weekly event table if there is - plugin_eventcal_calweek.tpl *}
 
-    {if $plugin_eventcal_cal_buildweektable}
+    {if NOT empty($plugin_eventcal_cal_buildweektable)}
         {$plugin_eventcal_cal_buildweektable}
     {/if}
 
@@ -238,16 +238,16 @@
 
     {*    now we include the separate build single event day entry - plugin_eventcal_entry.tpl *}
 
-    {if $plugin_eventcal_cal_buildsetable}
+    {if NOT empty($plugin_eventcal_cal_buildsetable)}
         {$plugin_eventcal_cal_buildsetable}
     {/if}
 
     {*    now we include the the open/close form button and the open/close lookout for unapproved events table *}
 
-    {if $is_eventcal_cal_buildbuttons == true}
+    {if isset($is_eventcal_cal_buildbuttons) AND $is_eventcal_cal_buildbuttons == true}
 
-    {if $is_eventcal_cal_buildbuttonadd == true}
-    {if $is_eventcal_cal_admin_clear != true}
+    {if isset($is_eventcal_cal_buildbuttonadd) AND $is_eventcal_cal_buildbuttonadd == true}
+    {if empty($is_eventcal_cal_admin_clear) OR $is_eventcal_cal_admin_clear != true}
 
     <!-- open form button start -->
     <tr>
@@ -261,14 +261,14 @@
 
     {*    now we include the open form table - plugin_eventcal_add.tpl *}
 
-    {if $plugin_eventcal_cal_buildaddtable}
+    {if NOT empty($plugin_eventcal_cal_buildaddtable)}
         {$plugin_eventcal_cal_buildaddtable}
     {/if}
 
     {/if}{* buildbuttonadd end *}
 
-    {if $is_eventcal_cal_buildbuttonapp == true}
-    {if $is_eventcal_cal_admin_clear != true}
+    {if isset($is_eventcal_cal_buildbuttonapp) AND $is_eventcal_cal_buildbuttonapp == true}
+    {if empty($is_eventcal_cal_admin_clear) OR $is_eventcal_cal_admin_clear != true}
 
     <!-- unapproved event table button start -->
     <tr>
@@ -282,7 +282,7 @@
 
     {* now we include the lookout for unapproved events table - plugin_eventcal_app.tpl *}
 
-    {if $plugin_eventcal_cal_buildapptable}
+    {if NOT empty($plugin_eventcal_cal_buildapptable)}
         {$plugin_eventcal_cal_buildapptable}
     {/if}
 
@@ -302,9 +302,9 @@
                     <td class="eventcal_helptip"><span class="multi tip"> Multi Events </span></td>
                     <td class="eventcal_helptip"><span class="recm tip"> Monthly Events </span></td>
                     <td class="eventcal_helptip"><span class="recw tip"> Weekly Events </span></td>
-                    {if $is_eventcal_ical && !$plugin_eventcal_cal_sedweek}
+                    {if NOT empty($is_eventcal_ical) && empty($plugin_eventcal_cal_sedweek)}
                     {* now we create the monthly ical link, depending on config settings *}
-                    {if $plugin_eventcal_icsdl == 'ud'}
+                    {if isset($plugin_eventcal_icsdl) AND $plugin_eventcal_icsdl == 'ud'}
                     <td class="eventcal_ical"><a href="{$plugin_eventcal_cal_path}?serendipity[ics_export]=1&amp;calendar[cm]={$plugin_eventcal_cal_m}&amp;calendar[cy]={$plugin_eventcal_cal_y}" target="_{if $plugin_eventcal_icsdl == 'wc'}blank{else}self{/if}"><img src="{$plugin_eventcal_cal_imgpath}img/icalm.png" alt="ical month feed" title="{$CONST.CAL_EVENT_FORM_BUTTON_HELP_ICALM}" /></a></td>
                     {else}
                     <td class="eventcal_ical"><a href="{$serendipityHTTPPath}plugin/ics_export/0/{$plugin_eventcal_cal_m}/{$plugin_eventcal_cal_y}/{$plugin_eventcal_icsdl}" target="_{if $plugin_eventcal_icsdl == 'wc'}blank{else}self{/if}"><img src="{$plugin_eventcal_cal_imgpath}img/icalm.png" alt="ical month feed" title="{$CONST.CAL_EVENT_FORM_BUTTON_HELP_ICALM}" /></a></td>
@@ -325,7 +325,7 @@
 </div> <!-- eventcal_wrapper end -->
 <br class="clear" />
 
-{if $is_eventcal_articleformat == true}
+{if NOT empty($is_eventcal_articleformat) AND $is_eventcal_articleformat == true}
         </div> <!-- serendipity_entry_body -->
     </div> <!-- serendipity_entry -->
 </div> <!-- serendipity_Entry_Date -->

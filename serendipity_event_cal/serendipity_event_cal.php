@@ -72,7 +72,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian');
-        $propbag->add('version',        '1.81');
+        $propbag->add('version',        '1.82');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '1.6',
@@ -2488,11 +2488,11 @@ class serendipity_event_cal extends serendipity_event
 
             global $serendipity;
             $y         = date("Y");
-            $m         = date("m");
+            $m         = (int)date("m");
             $months    = $this->months();
             $monthName = $months[$m];
             $currmonth = $this->load_monthly_events($y, $m, false); // ORDERed BY tipo, sdato
-            $entryURI  = '//' . $_SERVER['HTTP_HOST'] . $this->fetchPluginUri() . (($serendipity['rewrite'] == 'rewrite') ? '?' : '&') . 'calendar[cm]='.$month.'&calendar[cy]='.$year.'&amp;calendar[ev]=';
+            $entryURI  = '//' . $_SERVER['HTTP_HOST'] . $this->fetchPluginUri() . (($serendipity['rewrite'] == 'rewrite') ? '?' : '&') . 'calendar[cm]='.$m.'&calendar[cy]='.$y.'&amp;calendar[ev]=';
 
             // some content output for the eventwrapper faking sidebar plugin
             echo '
@@ -2846,7 +2846,7 @@ class serendipity_event_cal extends serendipity_event
             case 'adevapp':
 
                 // catch entry form error
-                if ($serendipity['eventcal']['setopen'] !== true) {
+                if (isset($serendipity['eventcal']['setopen']) && $serendipity['eventcal']['setopen'] !== true) {
                     echo '<div class="backend_eventcal_head"><h2>' . PLUGIN_EVENTCAL_ADMIN_APP . '</h2></div><br />'."\n";
                     unset($serendipity['eventcal']['setopen']);
                 } else {
@@ -2944,7 +2944,7 @@ class serendipity_event_cal extends serendipity_event
             unset($serendipity['eventcal']['adminpost']);
         }
 
-        if (is_array($serendipity['eventcal']) && $serendipity['eventcal']['setopen'] === true) {
+        if (is_array($serendipity['eventcal']) && isset($serendipity['eventcal']['setopen']) && $serendipity['eventcal']['setopen'] === true) {
             /* there is a returning admin/public event validation error - give back the form vars - backforming $type to $tipo is done in draw_add() function */
             foreach($_POST['calendar'] AS $ck => $cv) {
                 $$ck = trim(stripslashes($cv));
@@ -2957,7 +2957,7 @@ class serendipity_event_cal extends serendipity_event
         $count = $this->mysql_db_result_sets('SELECT-NUM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "approved=1");
 
         if (is_array($count)) {
-            $order  = ($serendipity['GET']['eventcalorderby'] == 'desc') ? 'tstamp DESC' : 'tipo ASC';
+            $order  = (isset($serendipity['GET']['eventcalorderby']) && $serendipity['GET']['eventcalorderby'] == 'desc') ? 'tstamp DESC' : 'tipo ASC';
             $result = $this->backend_eventcal_paginator($count[0], 1, 'adevview', $order);
         }
 
@@ -3064,7 +3064,7 @@ class serendipity_event_cal extends serendipity_event
             unset($serendipity['eventcal']['adminpost']);
         }
 
-        if (is_array($serendipity['eventcal']) && $serendipity['eventcal']['setopen'] === true) {
+        if (is_array($serendipity['eventcal']) && isset($serendipity['eventcal']['setopen']) && $serendipity['eventcal']['setopen'] === true) {
             /* there is a returning admin/public event validation error - give back the form vars - backforming $type to $tipo is done in draw_add() function */
             foreach($_POST['calendar'] AS $ck => $cv) {
                 $$ck = trim(stripslashes($cv));
@@ -3521,9 +3521,9 @@ class serendipity_event_cal extends serendipity_event
      */
     function backend_check_requests()
     {
-        global $serendipity;
+        global $serendipity, $re;
         // form the recurring event array names
-        if (!isset($re) && !is_array($re)) {
+        if (empty($re) && !is_array($re)) {
             $re = array(     1    => CAL_EVENT_FORM_DAY_FIRST,
                              2    => CAL_EVENT_FORM_DAY_SECOND,
                              3    => CAL_EVENT_FORM_DAY_THIRD,
@@ -3536,7 +3536,7 @@ class serendipity_event_cal extends serendipity_event
         }
         $year  = date('Y');
         $month = date('m');
-        $month = sprintf("%02d",$month);                // make sure month is a two digit number
+        $month = sprintf("%02d",$month); // make sure month is a two digit number
 
         /* check for backend administration, validating data and db input issues */
         if (isset($_REQUEST['calendar']['cm']))   $cm = (int)$_REQUEST['calendar']['cm'];
@@ -3688,7 +3688,7 @@ class serendipity_event_cal extends serendipity_event
         $limit  = 'LIMIT ' .($paginator - 1) * $rows_per_page .',' .$rows_per_page;
         $result = $this->mysql_db_result_sets('SELECT-ARRAY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "approved=$ap ORDER BY $orderby $limit");
         // else return db error
-        $pagoby = ($serendipity['GET']['eventcalorderby'] == 'desc') ? '&amp;serendipity[eventcalorderby]=desc' : '';
+        $pagoby = (isset($serendipity['GET']['eventcalorderby']) && $serendipity['GET']['eventcalorderby'] == 'desc') ? '&amp;serendipity[eventcalorderby]=desc' : '';
 
         if (is_array($result)) {
             echo "\n";

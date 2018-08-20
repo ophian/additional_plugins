@@ -1,10 +1,10 @@
-{* file: plugin_eventcal_add.tpl - 2015-12-04, Ian *}
+{* file: plugin_eventcal_add.tpl - 2018-08-20, Ian *}
 
 <!-- plugin_eventcal_add.tpl start -->
 
 <tr>
     <td class="f0" align="left">
-        {if $is_eventcal_add_debug_fda}
+        {if NOT empty($is_eventcal_add_debug_fda)}
         <div id="eventcal_error_surrounder">
             <div class="error_brand">&nbsp;&nbsp;function: {$is_eventcal_add_debug_fda} </div>
         </div>
