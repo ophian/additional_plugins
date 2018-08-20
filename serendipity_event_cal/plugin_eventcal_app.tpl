@@ -19,7 +19,7 @@ function chkAll(frm, arr, mark) {
 /* ]]> */
 </script>
 {/literal}
-<form name="checkform" method="post" action="{$plugin_eventcal_app_path}{$plugin_eventcal_admin_add_path}">
+<form name="checkform" method="post" action="{$plugin_eventcal_app_path}{$plugin_eventcal_admin_add_path|default:''}">
     <input type="hidden" name="calendar[nomarkup]" value="true" />
     <input type="hidden" name="calendar[a]" value="{$plugin_eventcal_app_a}" />
     <input type="hidden" name="calendar[cm]" value="{$plugin_eventcal_app_m}" />
@@ -37,7 +37,7 @@ function chkAll(frm, arr, mark) {
             <th class="eventcal_appform_title_rgt">{$CONST.CAL_EVENT_FORM_TITLE_DEL}</th>
         </tr>
         {foreach from=$plugin_eventcal_app_array_events item="e"}
-        <tr class="{if $plugin_eventcal_app_admin_tipocolor}{if $e.tipo == 1 || $e.tipo == 6}mono{elseif $e.tipo == 2}multi{elseif $e.tipo == 3}recm{elseif $e.tipo == 4 || $e.tipo == 5}recw{/if}{else}f0{/if}">
+        <tr class="{if NOT empty($plugin_eventcal_app_admin_tipocolor)}{if $e.tipo == 1 || $e.tipo == 6}mono{elseif $e.tipo == 2}multi{elseif $e.tipo == 3}recm{elseif $e.tipo == 4 || $e.tipo == 5}recw{/if}{else}f0{/if}">
             <td class="eventcal_appform_validation"><input type="checkbox" name="calendar[entries][]" value="{$e.id}" /></td>
             <td class="eventcal_appform_validation eventcal_appdate">{$e.tipodate}{if $e.tipo == 5} ({$CONST.CAL_EVENT_FORM_RIGHT_RECUR_BIWEEK}){/if}</td>
             <td class="eventcal_appform_validation">{$e.sdesc}</td>

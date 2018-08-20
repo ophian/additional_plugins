@@ -37,7 +37,7 @@
         </script>
         {/literal}
 
-        <form id="eventcalEntry" name="eventcalEntry" method="post" action="{$plugin_eventcal_add_path}{$plugin_eventcal_admin_add_path}">
+        <form id="eventcalEntry" name="eventcalEntry" method="post" action="{$plugin_eventcal_add_path}{$plugin_eventcal_admin_add_path|default:''}">
             <input type="hidden" name="calendar[nomarkup]" value="true" />
             <input type="hidden" name="calendar[eventcalform]" value="true" />
             <input type="hidden" name="calendar[id]" value="{$plugin_eventcal_add_id}" />
@@ -147,7 +147,7 @@
                     </td>
                 </tr>
 
-                {if !$is_logged_in && $is_show_captcha == true}
+                {if !$is_logged_in && isset($is_show_captcha) && $is_show_captcha == true}
 
                 <tr class="e0">
                     <th class="eventformtitle">{$CONST.CAL_EVENT_FORM_LEFT_SPAM}</th>

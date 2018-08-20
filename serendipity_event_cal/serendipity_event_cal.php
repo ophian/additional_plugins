@@ -1406,7 +1406,7 @@ class serendipity_event_cal extends serendipity_event
         $serendipity['smarty']->assign(
                 array(
                     'plugin_eventcal_cal_preface'       => $this->get_config('showintro'),
-                    'plugin_eventcal_cal_admin'         => sprintf(PLUGIN_EVENTCAL_HALLO_ADMIN, $serendipity['serendipityUser'], $serendipity['permissionLevels'][$serendipity['serendipityUserlevel']]),
+                    'plugin_eventcal_cal_admin'         => @sprintf(PLUGIN_EVENTCAL_HALLO_ADMIN, $serendipity['serendipityUser'], $serendipity['permissionLevels'][$serendipity['serendipityUserlevel']]),
                     'plugin_eventcal_cal_path'          => $this->fetchPluginUri(),
                     'plugin_eventcal_cal_imgpath'       => $serendipity['serendipityHTTPPath'] . $serendipity['eventcal']['pluginpath'],
                     'plugin_eventcal_cal_monthviewnav'  => true,
@@ -1458,7 +1458,7 @@ class serendipity_event_cal extends serendipity_event
         }
 
         /* if user does not want the weekly view (sdw) - fall back to monthly view (sd) */
-        if (!$sdw) {
+        if (empty($sdw)) {
             /* and assign the event calendar table monthview to smarty */
             $serendipity['smarty']->assign('plugin_eventcal_cal_sed', $sd);
         } else {
@@ -2221,7 +2221,7 @@ class serendipity_event_cal extends serendipity_event
      */
     function show()
     {
-        global $serendipity;
+        global $serendipity, $re;
 
         if ($this->selected()) {
             //if not set verify entries by Admin - show entries by default.
@@ -2247,7 +2247,7 @@ class serendipity_event_cal extends serendipity_event
             if (isset($_POST['calendar']['cw_prev'])) $cw_prev = (boolean)$_POST['calendar']['cw_prev'];
             if (isset($_POST['calendar']['cw_next'])) $cw_next = (boolean)$_POST['calendar']['cw_next'];
 
-            if ( ($cw_prev || $cw_next) == true && isset($_POST['calendar']['cm']) )
+            if ( (!empty($cw_prev) || !empty($cw_next)) == true && isset($_POST['calendar']['cm']) )
                 $post_cm = (int)$_POST['calendar']['cm'];
             elseif (isset($cm)) $post_cm = (int)$cm;
 
@@ -2326,7 +2326,7 @@ class serendipity_event_cal extends serendipity_event
                 }
 
                 /* case export ics file - set the mail export call and send to external_plugin hook */
-                if (!$typeofuser && isset($_POST['calendar']['icseptarget'])) {
+                if (empty($typeofuser) && isset($_POST['calendar']['icseptarget'])) {
                     if (isset($_POST['calendar']['icstomail'])) {
                         if ($this->is_valid_email($_POST['calendar']['icstomail'])) $to = $_POST['calendar']['icstomail'];
                         if (isset($to)) $url = $_POST['calendar']['icseptarget'] . $to;
@@ -2338,7 +2338,7 @@ class serendipity_event_cal extends serendipity_event
                 }
 
                 /* return of mailfunction and external_plugin hook send iCal via email */
-                if (!$typeofuser && isset($serendipity['GET']['mailData'])) {
+                if (empty($typeofuser) && isset($serendipity['GET']['mailData'])) {
                     if ($serendipity['GET']['mailData'] == 1)
                         $this->smarty_assign_error('msg', PLUGIN_EVENTCAL_SENDMAIL_BLAHBLAH);
                     else
@@ -2353,7 +2353,7 @@ class serendipity_event_cal extends serendipity_event
             if (isset($_POST['calendar']) || isset($serendipity['GET']['adminModule'])) {
                 $this->cal_admin_backend();
 
-                if (is_array($serendipity['eventcal']['adminpost'])) {
+                if (isset($serendipity['eventcal']['adminpost']) && is_array($serendipity['eventcal']['adminpost'])) {
                     /* there is a returning admin event insert or replace error - give back the form vars of db select event array */
                     foreach($serendipity['eventcal']['adminpost'] AS $k => $v) {
                         $$k = trim(stripslashes($v)); // old version without stripslashes worked with debian lenny, but not with Win/Php 5.3 - why?
@@ -2361,7 +2361,7 @@ class serendipity_event_cal extends serendipity_event
                     unset($serendipity['eventcal']['adminpost']);
                 }
 
-                if (is_array($serendipity['eventcal']) && $serendipity['eventcal']['setopen'] === true) {
+                if (is_array($serendipity['eventcal']) && isset($serendipity['eventcal']['setopen']) && $serendipity['eventcal']['setopen'] === true) {
                     /* there is a returning admin/public event validation error - give back the form vars - backforming $type to $tipo is done in draw_app() function */
                     foreach($_POST['calendar'] AS $calk => $calv) {
                         $$calk = trim(stripslashes($calv));
@@ -2371,7 +2371,7 @@ class serendipity_event_cal extends serendipity_event
                     unset($serendipity['eventcal']['setopen']);
                 }
 
-                if (is_array($serendipity['eventcal']['showsev'])) {
+                if (isset($serendipity['eventcal']['showsev']) && is_array($serendipity['eventcal']['showsev'])) {
                     /* event has been validated -> show newly approved single event */
                     $ev = $serendipity['eventcal']['showsev']['id'];
                     $cm = $serendipity['eventcal']['showsev']['sm'];
@@ -2396,9 +2396,9 @@ class serendipity_event_cal extends serendipity_event
             if (!isset($cw_next)) $cw_next = false;
 
             // construct the event calendar
-            $this->draw_cal($a, $ap, $app_by, $approved, $cd, $cm, $cw, $cw_prev, $cw_next, $cy, $day, $eday, $emonth, $ev, $eyear,
-                            $id, $ldesc, $nm, $post_cm, $re, $recur, $recur_day, $sdato, $sday, $sdesc, $smonth,
-                            $syear, $tipo, $tst, $type, $url, $which);
+            $this->draw_cal($a, $ap, @$app_by, @$approved, $cd, $cm, $cw, $cw_prev, $cw_next, $cy, @$day, @$eday, @$emonth, @$ev, @$eyear,
+                            @$id, @$ldesc, $nm, @$post_cm, $re, @$recur, @$recur_day, @$sdato, @$sday, @$sdesc, @$smonth,
+                            @$syear, @$tipo, @$tst, @$type, @$url, @$which);
 
             /* set the serendipity_event_cal.php footer - unused */
             ##$this->htmlPageFooter();

@@ -3,7 +3,7 @@
 
 <div class="serendipity_Entry_Date">
     <h3 class="serendipity_date">{$CONST.PLUGIN_EVENTCAL_TITLE}</h3>
-    {if $is_eventcal_headline == true}
+    {if isset($is_eventcal_headline) AND $is_eventcal_headline == true}
 
     <h4 class="serendipity_title"><a href="{$plugin_eventcal_permalink}">{$plugin_eventcal_headline}</a></h4>
     {/if}
@@ -12,7 +12,7 @@
         <div class="serendipity_entry_body clear">
 {/if}
 
-<div {if $plugin_eventcal_admin_add_path}class="ec_backend_table"{else}id="eventcal_wrapper"{/if}>
+<div {if NOT empty($plugin_eventcal_admin_add_path)}class="ec_backend_table"{else}id="eventcal_wrapper"{/if}>
 
 <!-- plugin_eventcal_cal.tpl start -->
 
@@ -20,7 +20,7 @@
 <div class="eventcal_intro">{$plugin_eventcal_cal_preface}</div>
 {/if}
 
-{if NOT empty($is_eventcal_error)}{if $is_eventcal_cal_admin_clear == true}<br />{/if}
+{if NOT empty($is_eventcal_error)}{if isset($is_eventcal_cal_admin_clear) AND $is_eventcal_cal_admin_clear == true}<br />{/if}
 
 <div class="serendipity_center eventcal_tpl_error">
     <div class="eventcal_tpl_error_inner">{$plugin_eventcal_error}</div>
@@ -124,7 +124,7 @@
                             <input type="submit" name="calendar[monthback]" value="{$plugin_eventcal_cal_back}" />
                         </form>
                     </td>
-                {if $plugin_eventcal_cal_sedweek}
+                {if NOT empty($plugin_eventcal_cal_sedweek)}
 
                     <td class="mid" align="center">
                         <form method="post" action="{$plugin_eventcal_cal_path}">
@@ -180,7 +180,7 @@
 
                 <tbody>
                 {foreach from=$plugin_eventcal_cal_sed item="week"}
-                    {if $week.days}
+                    {if NOT empty($week.days)}
 
                 <!-- eventcal table row start -->
                 <tr>
@@ -201,13 +201,15 @@
                                 <td class="eventcal_{$day.col} eventcal_rgt">{$day.label|default:'&nbsp;'}</td>
                             </tr>
                             <tr>
-                                <td class="eventcal_{$day.col} eventcal_lft" colspan="2">{if !$day.arrdata}&nbsp;{/if}
+                                <td class="eventcal_{$day.col} eventcal_lft" colspan="2">{if empty($day.arrdata)}&nbsp;{/if}
+                                {if isset($day.arrdata) AND is_array($day.arrdata)}
                                 {foreach from=$day.arrdata item="r"}{* start=1 *}
 
                                     <span{if $r.tipo == 1 || $r.tipo == 6} class="mono{elseif $r.tipo == 2} class="multi{elseif $r.tipo == 3} class="recm{elseif $r.tipo == 4 || $r.tipo == 5} class="recw{/if} eventtype">
                                         <a class="small_eventcal_link" href="{$plugin_eventcal_cal_path}{$eventcal_permalink_add}calendar[a]={$r.a}&amp;calendar[ap]={$r.ap}&amp;calendar[cm]={$r.m}&amp;calendar[cy]={$r.y}&amp;calendar[ev]={$r.id}" title="open event entry {$r.sdesc}"><b class="eventcal_tab">{$r.sdesc}</b></a><br />
                                     </span>
                                 {/foreach}
+                                {/if}
 
                                 </td>
                             </tr>

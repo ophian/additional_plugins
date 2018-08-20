@@ -1,6 +1,6 @@
 
 /************************************************************************************/
-/* style_eventcal.css for serendipity_eventcal_cal.php v.1.76 2016-01-21 Ian        */
+/* style_eventcal.css for serendipity_eventcal_cal.php v.1.77 2018-08-20 Ian        */
 /************************************************************************************/
 
 /*****************************************/
@@ -208,9 +208,10 @@ table.eventcal_monthbutton {
     border-collapse: collapse;
     border-spacing: 0;
 }
-table.eventcal_monthbutton td.left { width: 34%; vertical-align: bottom; }
-table.eventcal_monthbutton td.mid { width: 32%; vertical-align: bottom; }
-table.eventcal_monthbutton td.right { width: 34%; vertical-align: bottom; }
+table.eventcal_monthbutton td { display: inline-table; vertical-align: bottom; }
+table.eventcal_monthbutton td.left { width: 34%; }
+table.eventcal_monthbutton td.mid { width: 32%; }
+table.eventcal_monthbutton td.right { width: 34%; }
 
 table.innereventborder {
     padding: 0;
