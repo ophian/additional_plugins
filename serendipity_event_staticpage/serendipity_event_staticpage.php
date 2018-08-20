@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.45');
+        $propbag->add('version', '5.46');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -3561,7 +3561,7 @@ class serendipity_event_staticpage extends serendipity_event
                         foreach ($pages AS $page) {
                             if ($page['permalink'] == $nice_url) {
                                 $this->error_404 = FALSE;
-                                if ($pages['is_404_page']) {
+                                if (!empty($pages['is_404_page'])) {
                                     $this->error_404 = TRUE;
                                 }
                                 break;

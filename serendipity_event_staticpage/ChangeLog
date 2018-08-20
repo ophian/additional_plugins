@@ -1,3 +1,7 @@
+5.46:
+-----
+ * Fix an uninitialized variable check
+
 5.45:
 -----
  * Fix check_config() method non-dependency check and return
