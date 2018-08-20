@@ -18,7 +18,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian');
-        $propbag->add('version',       '2.69');
+        $propbag->add('version',       '2.70');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -391,7 +391,7 @@ class serendipity_event_usergallery extends serendipity_event
         //Can't trust $serendipity['GET'] on all servers.... so we build it ourselves from subpage
         if ($serendipity['rewrite'] != 'none') {
             $uri_parts = explode('?', str_replace('&amp;', '&', $serendipity['GET']['subpage']));
-            $parts     = explode('&', $uri_parts[1]);
+            $parts     = isset($uri_parts[1]) ? explode('&', $uri_parts[1]) : null;
             if (count($parts) > 1) {
                 foreach($parts AS $key => $value) {
                     $val = explode('=', $value);
@@ -406,11 +406,11 @@ class serendipity_event_usergallery extends serendipity_event
             } else {
                 $val = explode('=', $parts[0]);
                 $val0 = str_replace('serendipity[','',$val[0]);
-                if ($val[0] == $val0) {
+                if ($val[0] == $val0 &&  isset($val[1])) {
                     $_GET[$val[0]] = $val[1];
                 } else {
                     $val0 = str_replace(']','',$val0);
-                    $serendipity['GET'][$val0] = $val[1];
+                    $serendipity['GET'][$val0] = isset($val[1]) ? $val[1] : null;
                 }
             }
         }
@@ -450,50 +450,52 @@ class serendipity_event_usergallery extends serendipity_event
                 $permitted_gallery = false;
 
                 if ($base_directory == 'gallery') {
-                    $limit_directory =  '';
+                    $limit_directory = '';
                 } else {
-                    $limit_directory =  $base_directory;
+                    $limit_directory = $base_directory;
                 }
                 $limit_images_directory = $limit_directory;
                 $limit_output = $limit_directory;
                 $serendipity['smarty']->assign('plugin_usergallery_currentgal','');
                 $serendipity['smarty']->assign('plugin_usergallery_uppath','');
                 $serendipity['smarty']->assign('plugin_usergallery_toplevel','yes');
-                //Let's get a directory listing that has all our ACLs applied already!
-                $directories_temp = serendipity_traversePath($serendipity['serendipityPath'].$serendipity['uploadPath'], $limit_directory, NULL, $pattern,1, NULL, "read", NULL);
-                //Check to see if we are calling a gallery directly
+                // Let's get a directory listing that has all our ACLs applied already!
+                $directories_temp = serendipity_traversePath($serendipity['serendipityPath'].$serendipity['uploadPath'], $limit_directory, NULL, NULL, 1, NULL, "read", NULL);
+                // Check to see if we are calling a gallery directly
                 if (isset($_GET['gallery']) && $_GET['gallery'] != '') {
-                    //replace weird characters.  Was more important before we used the database.
+                    // replace weird characters.  Was more important before we used the database.
                     $getpathtemp =  str_replace("//","/",str_replace("..","",urldecode ($_GET['gallery'])));
-                    //Ok, let's check the out directory is actually in the returned directories.
+                    // Ok, let's check the out directory is actually in the returned directories.
                     if (is_array($directories_temp)) {
                         foreach($directories_temp AS $f => $dir) {
                             if ($getpathtemp == $dir['relpath']) {
-                                //yay! We have access to the directory.
+                                // yay! We have access to the directory.
                                 $permitted_gallery = true;
                                 break;
                             }
                         }
                     }
 
-                    //If we have a matching directory, let's set the gallery up.
+                    // If we have a matching directory, let's set the gallery up.
                     if ($permitted_gallery) {
                         $limit_images_directory = $getpathtemp;
                         $temp_array = explode('/',$getpathtemp);
                         array_pop($temp_array);
                         $limit_output = array_pop($temp_array);
                         if  ($display_dir_tree == 'no' ) {
-                            $up_path = implode('/',$temp_array);
-                            if ($up_path != "") {$up_path = $up_path."/";}
+                            $up_path = implode('/', $temp_array);
+                            if ($up_path != "") {
+                                $up_path = $up_path."/";
+                            }
                         }
-                        $serendipity['smarty']->assign('plugin_usergallery_currentgal',$getpathtemp);
-                        $serendipity['smarty']->assign('plugin_usergallery_uppath',$up_path);
-                        $serendipity['smarty']->assign('plugin_usergallery_toplevel','no');
+                        $serendipity['smarty']->assign('plugin_usergallery_currentgal', $getpathtemp);
+                        $serendipity['smarty']->assign('plugin_usergallery_uppath', $up_path);
+                        $serendipity['smarty']->assign('plugin_usergallery_toplevel', 'no');
                     }
                 } else {
                     //We weren't calling a gallery directory, so it is set up in the configuration.  If it is the base 'uploads' directory there are never any permissions on it.
                     if (($limit_images_directory != '')) {
-                        $perm_test_array = array ( array ( 'name'=>str_replace("/","", $limit_images_directory),'depth'=>1,'relpath'=> $limit_images_directory,'directory'=>1));
+                        $perm_test_array = array ( array ( 'name'=>str_replace("/", "", $limit_images_directory), 'depth'=>1, 'relpath'=> $limit_images_directory, 'directory'=>1));
                         if (serendipity_directoryACL($perm_test_array, 'read')) {
                             $permitted_gallery = true;
                         }
@@ -565,7 +567,7 @@ class serendipity_event_usergallery extends serendipity_event
                         }
                     }
                 }
-
+                if (!isset($directories)) $directories = array();
                 $serendipity['smarty']->assign('plugin_usergallery_subdirectories', $directories);
 
                 $lower_limit = 0;
@@ -596,10 +598,10 @@ class serendipity_event_usergallery extends serendipity_event
                     array(
                        'plugin_usergallery_pagination'      => $showpage,
                        'plugin_usergallery_total_count'     => $total_count,
-                       'plugin_usergallery_total_pages'     => $total_pages,
-                       'plugin_usergallery_current_page'    => $current_page,
-                       'plugin_usergallery_next_page'       => $current_page+1,
-                       'plugin_usergallery_previous_page'   => $current_page-1
+                       'plugin_usergallery_total_pages'     => isset($total_pages) ? $total_pages : null,
+                       'plugin_usergallery_current_page'    => isset($current_page) ? $current_page : null,
+                       'plugin_usergallery_next_page'       => isset($current_page) ? $current_page+1 : null,
+                       'plugin_usergallery_previous_page'   => isset($current_page) ? $current_page-1 : null
                     )
                 );
 
@@ -630,9 +632,10 @@ class serendipity_event_usergallery extends serendipity_event
                     }
                 }
 
-                $gallery_array = explode('/',$up_path);
+                if (!isset($up_path)) $up_path = null;
+                $gallery_array = explode('/', $up_path);
                 foreach($gallery_array AS $f => $gallery) {
-                    $gallery_path = $gallery_path.$gallery."/";
+                    $gallery_path = @$gallery_path.$gallery."/";
                     if ($gallery_path != $base_directory ) {
                         $path_array[$gallery]['path'] = $gallery_path;
                         $path_array[$gallery]['name'] = $gallery;
