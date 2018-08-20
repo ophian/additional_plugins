@@ -209,7 +209,7 @@ class serendipity_event_lightbox extends serendipity_event
                     }
                     // LightBox2 jQuery based - http://lokeshdhakar.com/projects/lightbox2/ - this lightbox does not allow to show :visible anchors only - it shows and counts all gallery images, if set to view galleries
                     elseif ($type == 'lightbox2jq') {
-                        if ($headcss) {
+                        if (!empty($headcss)) {
                             echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/lightbox2-jquery/css/lightbox.css" />' . "\n";
                         } else {
                             if (!class_exists('serendipity_event_jquery') && !$serendipity['capabilities']['jquery']) {
