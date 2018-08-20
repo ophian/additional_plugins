@@ -22,12 +22,12 @@ class serendipity_event_multilingual extends serendipity_event
         $propbag->add('stackable',      false);
         $propbag->add('author',         'Garvin Hicking, Wesley Hwang-Chung, Ian');
         $propbag->add('requirements',   array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.1',
+            'smarty'      => '3.1.28',
+            'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.42');
+        $propbag->add('version',        '2.50');
         $propbag->add('configuration',  array('copytext', 'placement', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -43,7 +43,6 @@ class serendipity_event_multilingual extends serendipity_event
                 'backend_entryform'         => true,
                 'backend_entry_presave'     => true,
                 'backend_entry_updertEntry' => true,
-                'frontend_display'          => true,
                 'frontend_entries_rss'      => true,
                 'frontend_comment'          => true,
                 'frontend_sidebar_plugins'  => true,
@@ -309,25 +308,13 @@ class serendipity_event_multilingual extends serendipity_event
         return $lang;
     }
 
-    // currently unused method for years
-    //function neglang($lang) {
-    function neglang($lang, $assert = '?!')
-    {
-        /* Creates the negation pattern from a two letter language identifier. */
-        // Negative look ahead assertion. ".*" is used because any letter except of the language string shall be allowed, without it, nothing would ever match
-        return '(' . $assert . $lang . ').*';
-        //return '(?!' . $lang . ').*';
-
-        //return '[^'.$lang[0].'][^'.$lang[1].']';
-    }
-
     static function strip_langs($msg)
     {
         global $serendipity;
 
         if (!preg_match('@{{@', $msg)) return $msg;
 
-        #$language = $serendipity['lang']; // disabled - nowhere used so far
+        $language = (isset($serendipity['GET']['lang_selected']) && $serendipity['GET']['lang_selected'] != 'default') ? $serendipity['GET']['lang_selected'] : $serendipity['lang'];
 
         /* Handle escaping of {} chars. If someone is up for it,
            they're welcome to try and find a better way. As it is,
@@ -335,18 +322,29 @@ class serendipity_event_multilingual extends serendipity_event
         $msg = str_replace('\{', chr(1), $msg);
         $msg = str_replace('\}', chr(2), $msg);
 
-        // The explode actually makes sure that each latter array part will end on either the full string end or {{--}}. {{--}} will also never be contained inside the string, so we don't need to rule it out any longer.
+        // The explode actually makes sure that each latter array part will end on either the full string end or {{--}}.
+        // {{--}} will also never be contained inside the string, so we don't need to rule it out any longer.
         $parts = explode('{{--}}', $msg);
         $out   = '';
-        // Iterate each subblock and inspect if its language matches.
+        $tr9   = false;
+        // Iterate each sub-block and inspect if its language matches.
         foreach($parts AS $idx => $match) {
             if (empty($match)) continue; // Last block part, skip it.
-            if (stristr($match, '{{!' . $serendipity['lang'] . '}}')) {
+            if (stristr($match, '{{!' . $language . '}}')) {
                 // Current language found. Keep the string, minus the {{!xx}} part.
-                $out .= preg_replace('@\{\{!' . $serendipity['lang'] . '\}\}@', '', $match);
+                $out .= preg_replace('@\{\{!' . $language . '\}\}@', '', $match);
+                $tr9 = true;
             } else {
                 // Current language not found. Remove everything after {{!xx}}.
                 $out .= preg_replace('@\{\{![^\}]+\}\}.+$@s', '', $match);
+            }
+        }
+
+        if (!$tr9) {
+            // iterate again since we do not want any empty theme banner or navigation tab titles, which ie. is the case when title language does not match a chosen sidebar selector language
+            foreach($parts AS $idx => $match) {
+                $out = preg_replace('@\{\{!([a-z]){2}+\}\}@s', '', $match); // take the first matching language as fallback
+                break;
             }
         }
 
@@ -359,34 +357,52 @@ class serendipity_event_multilingual extends serendipity_event
         return $msg;
     }
 
-    function tag_title()
+    function tag_title($forced = null, $fallback = null)
     {
         global $serendipity;
-
-        if (serendipity_db_bool($this->get_config('tagged_title', 'true'))) {
-
-            if (isset($serendipity['smarty'])) {
-                $serendipity['smarty']->assign('blogTitle', $this->strip_langs($serendipity['blogTitle']));
-                $serendipity['smarty']->assign('blogDescription', $this->strip_langs($serendipity['blogDescription']));
-                if ($serendipity['version'][0] < 2) {
-                    $head_title = $serendipity['smarty']->get_template_vars('head_title');
-                    $head_subtitle = $serendipity['smarty']->get_template_vars('head_subtitle');
+        static $runit = null;
+/*
+// Trying to sort this out: We are talking about a single entry view only!
+// serendipity_getSessionLanguage() and/or cookie stored lang is the current used backend language which is set in Configuration - General Settings
+// serendipity['lang'] as well as sidebar selected lang is the PersonalPreferences lang and (probably) is the current set language of authorid 0, which is used for non-logged in matters in the frontend as a fallback
+//  Case 1: A multilingual entry is chosen in the frontend without any preferences - it uses serendipity['lang']
+//  Case 2: the entries multilingual language target links are used appending ['GET']['lang_selected'] - getSessionLanguage changes
+//  Case 3: The multilingual sidebar language selection is used - getSessionLanguage AND serendipity['lang'] change and you have to deal with a possible lang Cookie.
+// So generally it can get quite complicated to deal with all possible nested lang descriptions (also see this introspect language deals):
+// Best use is to set Configuration lang the same as the Preferences language and better NOT use the multilingual sidebar language selection at all!
+*/
+        // do not run twice or more
+        if (isset($serendipity['smarty']) && $runit === null) {
+            if ($serendipity['view'] == 'entry' && !empty($forced)) {
+                //Debug// echo ' forced='.$forced." fallback=".$fallback . " ".$serendipity['smarty']->getTemplateVars('head_title');
+                if ($forced === $fallback) {
+                    // getTemplateVars('head_title') is the entries title in the default language - now grab the correct banner title
+                    $lang = $forced;
+                    $r = serendipity_db_query("SELECT value AS title FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = '".(int)$serendipity['GET']['id']."' AND property = 'multilingual_title_$lang'");
+                    $serendipity['blogTitle'] = $blogTitle = isset($r[0]['title']) ? $r[0]['title'] : $serendipity['smarty']->getTemplateVars('head_title'); // fallback if not available
                 } else {
-                    $head_title = $serendipity['smarty']->getTemplateVars('head_title');
-                    $head_subtitle = $serendipity['smarty']->getTemplateVars('head_subtitle');
+                    $serendipity['blogTitle'] = $blogTitle = $serendipity['smarty']->getTemplateVars('head_title');
                 }
+                if (isset($serendipity['GET']['lang_selected'])) {
+                    $serendipity['head_title'] = null; // since the index.tpl template does {$head_title|default:$blogTitle|truncate....
+                    // and we need the entries title as blogTitle to be displayed in case the selected language has either a match or falls back
+                }
+                $runit = 1;
+            }
+            $serendipity['smarty']->assign('blogTitle', $serendipity['blogTitle']); // strip_lang already done in genpage
+            $serendipity['smarty']->assign('blogDescription', $serendipity['blogDescription']); // dito
 
-                if (!empty($head_title)) {
-                    $serendipity['smarty']->assign('head_title', $this->strip_langs($head_title));
-                }
-                if (!empty($head_subtitle)) {
-                    $serendipity['smarty']->assign('head_subtitle', $this->strip_langs($head_subtitle));
-                }
-            } else {
-                $serendipity['blogTitle'] = $this->strip_langs($serendipity['blogTitle']);
-                $serendipity['blogDescription'] = $this->strip_langs($serendipity['blogDescription']);
+            $head_title = isset($blogTitle) ? $blogTitle : $serendipity['smarty']->getTemplateVars('head_title');
+            $head_subtitle = $serendipity['smarty']->getTemplateVars('head_subtitle');
+
+            if (!empty($head_title)) {
+                $serendipity['smarty']->assign('head_title', $this->strip_langs($head_title));
+            }
+            if (!empty($head_subtitle)) {
+                $serendipity['smarty']->assign('head_subtitle', $this->strip_langs($head_subtitle));
             }
         }
+        $runit = 2;
     }
 
     function event_hook($event, &$bag, &$eventData, $addData = null)
@@ -470,26 +486,26 @@ class serendipity_event_multilingual extends serendipity_event
                         serendipity_smarty_init($serendipity['plugindata']['smartyvars']);
                     }
 
-                    // set lang strip change more global, since we need this in the email subject too for example
-                    $serendipity['blogTitle'] = $this->strip_langs($serendipity['blogTitle']);
-                    $serendipity['blogDescription'] = $this->strip_langs($serendipity['blogDescription']);
+                    //Debug// echo "getSessionLang=".serendipity_getSessionLanguage() . ' S9L='.$serendipity['lang']. ' showPreferedLang='.$this->showlang.' ';
+                    if (serendipity_db_bool($this->get_config('tagged_title', 'true'))) {
+                        // set lang strip change more global, since we need this in the email subject too for example
+                        $serendipity['blogTitle'] = $this->strip_langs($serendipity['blogTitle']);
+                        $serendipity['blogDescription'] = $this->strip_langs($serendipity['blogDescription']);
+                        if (empty(trim($serendipity['blogTitle']))) $serendipity['blogTitle'] = 'Unknown translation title';
 
-                    // assign lang stripped blogTitle to archive page, which overwrites them for case archive pages
-                    if ($serendipity['plugindata']['smartyvars']['view'] == 'archive') {
-                        $serendipity['smarty']->assign('blogTitle', $serendipity['blogTitle']);
-                        $serendipity['smarty']->assign('blogDescription', $serendipity['blogDescription']);
+                        if (isset($eventData['properties']['multilingual_title_'.$this->showlang])
+                        || !empty($serendipity['GET']['searchTerm'])
+                        || !empty($serendipity['GET']['lang_selected'])
+                        || $serendipity['view'] == 'entry') {
+                            if (empty($this->lang_display) && empty($this->showlang)) {
+                                $this->showlang = $serendipity['lang'];
+                            }
+                            //Debug// echo 'FoLa='.$this->lang_display . ' LaPf='.$this->showlang.' ';
+                            $this->tag_title($this->lang_display, $this->showlang);
+                        }
                     }
 
-                    if (!defined('Smarty::SMARTY_VERSION') || !empty($serendipity['GET']['searchTerm'])) {
-                        $this->tag_title(); // in Smarty 2 and generally for non-results searches only !!!
-                        // check this deeply! - since at least for the non-tag banner entry_title this seems to not work here with Smarty 3 - see workaround in frontent_display
-                    }
-
-                    if ($serendipity['version'][0] < 2) {
-                        $serendipity['smarty']->register_modifier('multilingual_lang', array($this, 'strip_langs'));
-                    } else {
-                        $serendipity['smarty']->registerPlugin('modifier', 'multilingual_lang', array($this, 'strip_langs'));
-                    }
+                    $serendipity['smarty']->registerPlugin('modifier', 'multilingual_lang', array($this, 'strip_langs'));
                     break;
 
                 case 'backend_entryform':
@@ -552,18 +568,6 @@ class serendipity_event_multilingual extends serendipity_event
 /* serendipity_event_multilingual end */
 
 ';
-                    }
-                    break;
-
-                case 'frontend_display':
-                    // cannot use tag_title() method here and use with Smarty3+ only
-                    // check for single entry multilingual context only, to set the correct themes banner title
-                    if (defined('Smarty::SMARTY_VERSION') &&
-                        isset($eventData['properties']['multilingual_title_'.$this->showlang]) &&
-                        serendipity_db_bool($this->get_config('tagged_title', 'true'))  &&
-                        $serendipity['view'] == 'entry')
-                    {
-                        $serendipity['smarty']->assign('head_title', $eventData['title']);
                     }
                     break;
 
@@ -656,22 +660,14 @@ class serendipity_event_multilingual extends serendipity_event
                     foreach($use_lang AS $code => $desc) {
                         $langs .= '<option value="' . $code . '" ' . ($lang_selected == $code ? 'selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($desc) : htmlspecialchars($desc, ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
                     }
-                    if ($serendipity['version'][0] < 2) {
-?>
-                    <fieldset style="margin: 5px">
-                        <legend><?php echo PLUGIN_EVENT_MULTILINGUAL_TITLE; ?></legend>
-                        <div class="form_field">
-<?php
-                    } else {
 ?>
                     <fieldset id="edit_entry_multilingual" class="entryproperties_multilingual">
                         <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_MULTILINGUAL_TITLE; ?></legend></span>
                         <div class="form_field">
 <?php
-                    }
                     if (isset($eventData['id'])) { ?>
                         <label for="serendipity[properties][lang_selected]"><?php echo PLUGIN_EVENT_MULTILINGUAL_CURRENT; ?></label><br />
-                        <select name="serendipity[properties][lang_selected]" id="properties_lang_selected" />
+                        <select name="serendipity[properties][lang_selected]" id="properties_lang_selected">
                             <option value=""><?php echo USE_DEFAULT; ?></option>
                             <?php echo $langs; ?>
                         </select>

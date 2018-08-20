@@ -1,3 +1,13 @@
+2.50:
+-----
+
+ * Fix display of Blog banner title(s) translation
+ * Refactor tag translation workflow
+ * Change [en, de] lang constants PLUGIN_EVENT_MULTILINGUAL_TAGTITLE and
+   PLUGIN_EVENT_MULTILINGUAL_TAGTITLE_DESC for better understanding.
+ * Translate [de] lang constants
+ * Raise requirement to Smarty3 and Serendipity 2.1+
+
 2.42:
 -----
 
