@@ -25,7 +25,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian');
-        $propbag->add('version',       '2.05');
+        $propbag->add('version',       '2.06');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -52,7 +52,7 @@ class serendipity_event_linklist extends serendipity_event
                 $output = $this->get_config('cached_output');
             }
         }
-        if (!$output || $output == '') {
+        if (empty($output)) {
             $display = $this->get_config('display');
             if ($display == 'category' || $display == '') {
                 if ($this->get_config('category') == 'custom') {
@@ -60,7 +60,7 @@ class serendipity_event_linklist extends serendipity_event
                 } else {
                    $table  = $serendipity['dbPrefix'].'category';
                 }
-                $output = $this->category_output($table,0,0);
+                $output = $this->category_output($table, 0, 0);
             } else {
                 $q   = $this->set_query($display);
                 $sql = serendipity_db_query($q);
@@ -75,7 +75,7 @@ class serendipity_event_linklist extends serendipity_event
                 }
             }
             if ($cache == 'yes') {
-                if (is_object($cache_obj)) {
+                if (isset($cache_obj) && is_object($cache_obj)) {
                     $cache_obj->save($output,'linklist_cache');
                 } else {
                     $output = $this->set_config('cached_output',$output);
@@ -85,10 +85,13 @@ class serendipity_event_linklist extends serendipity_event
         return $output;
     }
 
-    function category_output($table,$catid,$level)
+    function category_output($table, $catid, $level)
     {
         global $serendipity;
+        $cat_open = false;
         $output = '';
+        $indent = '';
+        $indent_link = '';
         $indent_int = ($level-1)*5;
         for ($counter = 0; $counter < $indent_int; $counter++) {
             $indent = $indent.' ';
@@ -114,8 +117,6 @@ class serendipity_event_linklist extends serendipity_event
                 $cat_open = true;
                 $open_category = str_replace($replace_name,(function_exists('serendipity_specialchars') ? serendipity_specialchars($cat_name) : htmlspecialchars($cat_name, ENT_COMPAT, LANG_CHARSET)),$open_category);
                 $output .= $open_category;
-            } else {
-                $cat_open = false;
             }
         }
 
@@ -123,7 +124,7 @@ class serendipity_event_linklist extends serendipity_event
         $sql = serendipity_db_query($q);
         if ($sql && is_array($sql)) {
             foreach($sql AS $key => $row) {
-                 $output .= $this->category_output($table,$row['categoryid'],$level+1,$tags);
+                 $output .= $this->category_output($table, $row['categoryid'], $level+1);
             }
         }
         $q = 'SELECT     s.link              AS link,
@@ -277,7 +278,7 @@ class serendipity_event_linklist extends serendipity_event
 
                     if (isset($_POST['ADD'])) {
                        if (isset($_POST['serendipity']['add_link']['title']) && isset($_POST['serendipity']['add_link']['link'])) {
-                            $this->add_link($_POST['serendipity']['add_link']['link'],$_POST['serendipity']['add_link']['title'],$_POST['serendipity']['add_link']['desc'],$_POST['serendipity']['link_to_recat']['cat']);
+                            $this->add_link($_POST['serendipity']['add_link']['link'], $_POST['serendipity']['add_link']['title'], $_POST['serendipity']['add_link']['desc'], $_POST['serendipity']['link_to_recat']['cat']);
                        } else {
                            if (isset($_POST['serendipity']['add_category']['title'])) {
                                $this->add_cat($_POST['serendipity']['add_category']['title'],$_POST['serendipity']['link_to_recat']['cat']);
@@ -287,17 +288,19 @@ class serendipity_event_linklist extends serendipity_event
 
                     if (isset($_POST['EDIT'])) {
                        if (isset($_POST['serendipity']['add_link']['title']) && isset($_POST['serendipity']['add_link']['link'])&& isset($_POST['serendipity']['add_link']['id'])) {
-                            $this->update_link($_POST['serendipity']['add_link']['id'],$_POST['serendipity']['add_link']['link'],$_POST['serendipity']['add_link']['title'],$_POST['serendipity']['add_link']['desc'],$_POST['serendipity']['link_to_recat']['cat']);
+                            $this->update_link($_POST['serendipity']['add_link']['id'], $_POST['serendipity']['add_link']['link'], $_POST['serendipity']['add_link']['title'], $_POST['serendipity']['add_link']['desc'], $_POST['serendipity']['link_to_recat']['cat']);
                        }
                     }
-                    switch ($_GET['submit']){
-                        case 'move up':
-                            $this->move_up($_GET['serendipity']['link_to_move']);
-                        break;
+                    if (isset($_GET['submit'])) {
+                        switch ($_GET['submit']) {
+                            case 'move up':
+                                $this->move_up($_GET['serendipity']['link_to_move']);
+                            break;
 
-                        case 'move down':
-                            $this->move_down($_GET['serendipity']['link_to_move']);
-                        break;
+                            case 'move down':
+                                $this->move_down($_GET['serendipity']['link_to_move']);
+                            break;
+                        }
                     }
 
                     if ($this->get_config('cache') == 'yes') {
@@ -311,9 +314,9 @@ class serendipity_event_linklist extends serendipity_event
                         }
                     }
                     if (isset($_GET['serendipity']['edit_link'])) {
-                        $this->output_add_edit_linkadmin(TRUE,$_GET['serendipity']['edit_link']);
+                        $this->output_add_edit_linkadmin(TRUE, $_GET['serendipity']['edit_link']);
                     } else {
-                        if (isset($_GET['serendipity']['manage_category'])) {
+                        if (isset($_GET['serendipity']['manage_category']) && isset($_GET['serendipity']['edit_link'])) {
                             $this->output_categoryadmin(TRUE,$_GET['serendipity']['edit_link']);
                         } else {
                             $this->output_add_edit_linkadmin(FALSE);
@@ -406,7 +409,7 @@ class serendipity_event_linklist extends serendipity_event
                                             $blah = array_pop($in_cat);
                                             $depth--;
                                         } else if ($struct[$i]['type']=='complete' && strtolower($struct[$i]['tag'])=='link'){
-                                            $this->add_link($this->decode($struct[$i]['attributes']['LINK']),$this->decode($struct[$i]['attributes']['NAME']),$this->decode($struct[$i]['attributes']['DESCRIP']),$in_cat[$depth]);
+                                            $this->add_link($this->decode($struct[$i]['attributes']['LINK']), $this->decode($struct[$i]['attributes']['NAME']), $this->decode($struct[$i]['attributes']['DESCRIP']), $in_cat[$depth]);
                                         }
                                     }
                                 }
@@ -451,7 +454,7 @@ class serendipity_event_linklist extends serendipity_event
         }
     }
 
-    function add_link($link,$name,$desc,$catid = 0)
+    function add_link($link, $name, $desc, $catid = 0)
     {
         global $serendipity;
 
@@ -597,7 +600,7 @@ class serendipity_event_linklist extends serendipity_event
                 <td><strong><?php echo PLUGIN_LINKLIST_LINK_NAME; ?></strong></td>
                 <td><strong><?php echo PLUGIN_LINKLIST_LINK; ?></strong></td>
                 <td><strong><?php echo CATEGORY; ?></strong></td>
-                <?php echo $tdoutput; ?>
+                <?php echo isset($tdoutput) ? $tdoutput : ''; ?>
             </tr>
 <?php
 
@@ -634,11 +637,11 @@ class serendipity_event_linklist extends serendipity_event
                         <div><?php echo $link?></div>
                     </td>
                     <td style="border-bottom: 1px solid #000000">
-                    <?php echo $this->category_box($id,$categories,$current_category); ?>
+                    <?php echo $this->category_box($id, $categories, $current_category); ?>
 
                     </td>
-                    <?php echo $moveup ?>
-                    <?php echo $movedown ?>
+                    <?php echo isset($moveup) ? $moveup : '<td style="border-bottom: 1px solid #000000">&nbsp;</td>';?>
+                    <?php echo isset($movedown) ? $movedown : '<td style="border-bottom: 1px solid #000000">&nbsp;</td>';?>
                 </tr>
 <?php
                 $sort_idx++;
@@ -646,7 +649,7 @@ class serendipity_event_linklist extends serendipity_event
             echo '
             </table>
         <div>
-            <input type="submit" name="REMOVE" title="'.REMOVE.'"  value="'.DELETE.'" class="serendipityPrettyButton input_button state_cancel" />
+            <input type="submit" name="REMOVE" title="'.DELETE.'"  value="'.DELETE.'" class="serendipityPrettyButton input_button state_cancel" />
             <span>&nbsp;</span>
             <input type="submit" name="SAVE" title="'.SAVE.'"  value="'.SAVE.'" class="serendipityPrettyButton input_button" />
         </div>
@@ -654,7 +657,7 @@ class serendipity_event_linklist extends serendipity_event
         }
     }
 
-    function category_box($id,$categories,$current_category = 0)
+    function category_box($id, $categories, $current_category = 0)
     {
         $x = "\n<select name=\"serendipity[link_to_recat][".$id."]\">\n";
         foreach ($categories as $k => $v) {
@@ -663,7 +666,7 @@ class serendipity_event_linklist extends serendipity_event
         return $x . "</select>\n";
     }
 
-    function output_add_edit_linkadmin($edit = FALSE,$id = -1)
+    function output_add_edit_linkadmin($edit = FALSE, $id = -1)
     {
         global $serendipity;
         $display = $this->get_config('display');
@@ -679,10 +682,12 @@ class serendipity_event_linklist extends serendipity_event
                 $cat = $res['category'];
                 $desc = $res['descrip'];
             }
-            $button = '<input type="submit" name="EDIT" title="'.EDIT.'"  value="'.EDIT.'" class="serendipityPrettyButton input_button" />';
+            $button = '<input type="submit" name="EDIT" title="EDIT"  value="EDIT" class="serendipityPrettyButton input_button" />';
         } else {
+            $link = $title = $desc = '';
+            $cat = array();
             $maintitle = PLUGIN_LINKLIST_ADDLINK;
-            $button = '<input type="submit" name="ADD" title="'.ADD.'"  value="'.ADD.'" class="serendipityPrettyButton input_button" />';
+            $button = '<input type="submit" name="ADD" title="ADD"  value="ADD" class="serendipityPrettyButton input_button" />';
         }
 
         if ($this->get_config('category') == 'custom') {
@@ -695,7 +700,7 @@ class serendipity_event_linklist extends serendipity_event
             <table border="0" cellpadding="5" cellspacing="0" width="100%">
                 <tr><td><?php echo PLUGIN_LINKLIST_LINK.'<div style="font-size: smaller;">'.PLUGIN_LINKLIST_LINK_EXAMPLE.'</div>'; ?></td><td><input class="input_textbox" type="text" name="serendipity[add_link][link]" value="<?php echo $link; ?>" size="30" /></td></tr>
                 <tr><td><?php echo PLUGIN_LINKLIST_LINK_NAME; ?></td><td><input class="input_textbox" type="text" name="serendipity[add_link][title]" value="<?php echo $title; ?>" size="30" /></td></tr>
-                <tr><td><?php echo CATEGORY; ?> <?php echo $catlink;?></td><td><?php echo $this->category_box('cat',$categories,$cat); ?></td></tr>
+                <tr><td><?php echo CATEGORY; ?> <?php echo $catlink;?></td><td><?php echo $this->category_box('cat', $categories, $cat); ?></td></tr>
                 <tr><td valign="top"><?php echo PLUGIN_LINKLIST_LINKDESC; ?></td><td><textarea style="width: 100%" name="serendipity[add_link][desc]" id="serendipity[add_link][desc]" cols="80" rows="3"><?php echo $desc; ?></textarea></td></tr>
 
 <?php
@@ -726,7 +731,7 @@ class serendipity_event_linklist extends serendipity_event
                 </tr>
                 <tr>
                     <td><?php echo PLUGIN_LINKLIST_PARENT_CATEGORY; ?></td>
-                    <td><?php echo $this->category_box('cat',$categories,$cat); ?></td>
+                    <td><?php echo $this->category_box('cat', $categories, $cat); ?></td>
                 </tr>
 <?php
         echo '
@@ -831,25 +836,23 @@ class serendipity_event_linklist extends serendipity_event
 
     function clean_link($link)
     {
+        $ret_url = '';
         $parts_arr = parse_url($link);
-        if (strcmp($parts_arr['pass'], '') != 0) {
+        if (isset($parts_arr['pass']) && strcmp($parts_arr['pass'], '') != 0) {
             $ret_url .= $parts_arr['user'];
         }
-        if (strcmp($parts_arr['pass'], '') != 0) {
-         $ret_url .= ':' . $parts_arr['pass'];
+        if ((isset($parts_arr['user']) && strcmp($parts_arr['user'], '') != 0) || (isset($parts_arr['pass']) && strcmp($parts_arr['pass'], '') != 0)) {
+            $ret_url .= '@';
         }
-        if ((strcmp($parts_arr['user'], '') != 0) || (strcmp($parts_arr['pass'], '') != 0)) {
-         $ret_url .= '@';
+        $ret_url .= isset($parts_arr['host']) ? $parts_arr['host'] : '';
+        if (isset($parts_arr['port']) && strcmp($parts_arr['port'], '') != 0) {
+            $ret_url .= ':' . $parts_arr['port'];
         }
-        $ret_url .= $parts_arr['host'];
-        if (strcmp($parts_arr['port'], '') != 0) {
-           $ret_url .= ':' . $parts_arr['port'];
-        }
-        $ret_url .= $parts_arr['path'];
-        if (strcmp($parts_arr['query'], '') != 0) {
+        $ret_url .= isset($parts_arr['path']) ? $parts_arr['path'] : '';
+        if (isset($parts_arr['query']) && strcmp($parts_arr['query'], '') != 0) {
             $ret_url .= '?' . $parts_arr['query'];
         }
-        if (strcmp($parts_arr['fragment'], '') != 0) {
+        if (isset($parts_arr['fragment']) && strcmp($parts_arr['fragment'], '') != 0) {
             $ret_url .= '#' . $parts_arr['fragment'];
         }
         return $ret_url;

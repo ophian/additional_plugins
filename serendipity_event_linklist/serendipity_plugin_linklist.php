@@ -18,7 +18,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $propbag->add('description',   PLUGIN_LINKS_BLAHBLAH);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad');
-        $propbag->add('version',       '1.23');
+        $propbag->add('version',       '1.24');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array(
                                              'title',
@@ -454,27 +454,46 @@ class serendipity_plugin_linklist extends serendipity_plugin
             $link_array = array();
             $dirname = array();
             $level = array();
-            $dir_array[''] = array('dirname' => '','level' => 1,linkcount => 0,'links' => $link_array,'dircount' => 0,'directories' => $link_array);
-            for($level[] = 0, $i=1, $j=1; isset($struct[$i]); $i++, $j++){
-                if (isset($struct[$i]['type'])){
-                    if ($struct[$i]['type'] == 'open' && strtolower($struct[$i]['tag']) == 'dir'){
-                        $dir_array[$dirname[0]]['directories'][] = $this->decode($struct[$i]['attributes']['NAME']);
-                        $dir_array[$dirname[0]]['dircount']++;
+            $dirname[0]['dircount'] = 0;
+            $dir_array[''] = array(
+                                'dirname'       => '',
+                                'level'         => 1,
+                                'linkcount'     => 0,
+                                'links'         => $link_array,
+                                'dircount'      => 0,
+                                'directories'   => $link_array);
+            for($level[] = 0, $i=1, $j=1; isset($struct[$i]); $i++, $j++) {
+                if (isset($struct[$i]['type'])) {
+                    if (@$struct[$i]['type'] == 'open' && strtolower($struct[$i]['tag']) == 'dir') { // silenced ff for Illegal offset type error - where to fix this?
+                        @$dir_array[$dirname[0]]['directories'][] = $this->decode($struct[$i]['attributes']['NAME']);
+                        @$dir_array[$dirname[0]]['dircount']++;
                         array_unshift($dirname, $this->decode($struct[$i]['attributes']['NAME']));
                         array_unshift($level,$j);
-                        $dir_array[$dirname[0]] = array('dirname' => $dirname[0],'level' => count($level),'linkcount' => 0,'links' => $link_array,'dircount' => 0,'directories' => $link_array);
+                        $dir_array[$dirname[0]] = array(
+                                                    'dirname'       => $dirname[0],
+                                                    'level'         => count($level),
+                                                    'linkcount'     => 0,
+                                                    'links'         => $link_array,
+                                                    'dircount'      => 0,
+                                                    'directories'   => $link_array);
                     } else if ($struct[$i]['type'] == 'close' && strtolower($struct[$i]['tag']) == 'dir'){
                         $dump=array_shift($dirname);
                         $dump=array_shift($level);
                     } else if ($struct[$i]['type'] == 'complete' && strtolower($struct[$i]['tag']) == 'link'){
-                        $dir_array[$dirname[0]]['linkcount']++;
+                        @$dir_array[$dirname[0]]['linkcount']++; // silenced for Illegal offset type error - where to fix this?
                         if (count($level) == 0) {
                             $level_pass = 1;
                         } else {
                             $level_pass = count($level)+1;
                         }
-                        $basic_array = array('linkloc' => $this->decode($struct[$i]['attributes']['LINK']),'name' => $this->decode($struct[$i]['attributes']['NAME']),'descr' => $this->decode($struct[$i]['attributes']['DESCRIP']),'level' => $level_pass,'dirname' => $dirname,'hcard' => $this->decode($struct[$i]['attributes']['HCARD']),'rel' => $this->decode($struct[$i]['attributes']['REL']));
-                        $dir_array[$dirname[0]]['links'][] = $basic_array;
+                        $basic_array = array(
+                                        'linkloc'   => $this->decode($struct[$i]['attributes']['LINK']),
+                                        'name'      => $this->decode($struct[$i]['attributes']['NAME']),
+                                        'descr'     => $this->decode($struct[$i]['attributes']['DESCRIP']),
+                                        'level'     => $level_pass, 'dirname' => $dirname,
+                                        'hcard'     => (isset($struct[$i]['attributes']['HCARD']) ? $this->decode($struct[$i]['attributes']['HCARD']) : ''),
+                                        'rel'       => (isset($struct[$i]['attributes']['REL']) ? $this->decode($struct[$i]['attributes']['REL']) : ''));
+                        @$dir_array[$dirname[0]]['links'][] = $basic_array; // silenced for Illegal offset type error - where to fix this?
                     }
                 }
             }
@@ -519,7 +538,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
             $class = !$lessformatting ? 'csslist' : 'simple';
             $str .= '<div class="linklist"><ul class="'. $class .'">'.$delimiter;
             $more_track = array();
-            $str .= $this->build_tree($dir_array, "", $imagear, $more_track, $strtemp, $lessformatting, $delimiter, $use_descrip);
+            $str .= $this->build_tree($dir_array, "", $imagear, $more_track, '', $lessformatting, $delimiter, $use_descrip);
             $str .= '</ul></div>';
         }
 
