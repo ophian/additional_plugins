@@ -25,7 +25,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian');
-        $propbag->add('version',        '2.5.1');
+        $propbag->add('version',        '2.5.2');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'php'         => '5.3.0'
@@ -267,25 +267,25 @@ class serendipity_event_lightbox extends serendipity_event
 
                 case 'frontend_display':
                     if ($type == 'lightbox2jq') {
-                        if ($navigate == 'entry') {
+                        if (isset($navigate) && $navigate == 'entry' && isset($eventData['id'])) {
                             $sub   = '<a $1 rel=$3lightbox[' . $eventData['id'] . ']$3 $2';
                         } elseif ($navigate == 'page') {
                             $sub   = '<a $1 rel=$3lightbox[]$3 $2';
                         }
                     } elseif ($type == 'prettyPhoto') {
-                        if ($navigate == 'entry') {
+                        if (isset($navigate) && $navigate == 'entry' && isset($eventData['id'])) {
                             $sub   = '<a rel=$3prettyPhoto[' . $eventData['id'] . ']$3 $1 $2';
                         } elseif ($navigate == 'page') {
                             $sub   = '<a rel=$3prettyPhoto[]$3 $1 $2';
                         }
                     } elseif ($type == 'colorbox') {
-                        if ($navigate == 'entry') {
+                        if (isset($navigate) && $navigate == 'entry' && isset($eventData['id'])) {
                             $sub   = '<a rel=$3colorbox[' . $eventData['id'] . ']$3 $1 $2';
                         } elseif ($navigate == 'page') {
                             $sub   = '<a rel=$3colorbox[]$3 $1 $2';
                         }
                     } elseif ($type == 'magnific') {
-                        if ($navigate == 'entry') {
+                        if (isset($navigate) && $navigate == 'entry' && isset($eventData['id'])) {
                             $sub   = '<a rel=$3magnificPopup[' . $eventData['id'] . ']$3 $1 $2';
                         } elseif ($navigate == 'page') {
                             $sub   = '<a rel=$3magnificPopup[]$3 $1 $2';
