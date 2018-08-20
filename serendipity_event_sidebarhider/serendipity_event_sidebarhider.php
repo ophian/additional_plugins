@@ -18,7 +18,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian');
-        $propbag->add('version',       '1.31');
+        $propbag->add('version',       '1.32');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.2.0'
@@ -203,7 +203,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries_event_display_sidebarhider':
-                    if (!$_REQUEST['sbh_action']) {
+                    if (empty($_REQUEST['sbh_action'])) {
                         $this->admin_display();
                     } else if ($_REQUEST['sbh_action'] == 'save') {
                         $this->admin_save();

@@ -1,3 +1,8 @@
+1.32:
+----
+
+ * Fix an uninitialized variable
+
 1.31:
 ----
 
