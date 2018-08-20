@@ -335,7 +335,7 @@ class serendipity_event_feed extends serendipity_plugin
                     // We want the dashboard widgets to easily float into the 2-grid (>= medium screen) space available in height.
 ?>
 
-    <section id="dashboard_feedly" class="<?php if ($eq) { ?>equal_heights <?php } ?>quick_list dashboard_widget widget_right">
+    <section id="dashboard_feedly" class="<?php if (!empty($eq)) { ?>equal_heights <?php } ?>quick_list dashboard_widget widget_right">
         <h3><?php echo PLUGIN_DASHBOARD_FEEDME_TITLE; ?></h3>
         <div class="feedlies">
             <?php echo $content; ?>
@@ -352,8 +352,8 @@ class serendipity_event_feed extends serendipity_plugin
 
 /* serendipity event_feed start */
 
-/* if in specific order, we need to reset the nth-child(2n) left margin for other boxes */
-#dashboard > .dashboard_widget:nth-child(2n) { margin: 0 0 1em 0; }
+/* if in specific order, we need to reset the nth-child(2n) left margin for other boxes - no need with 2.4
+#dashboard > .dashboard_widget:nth-child(2n) { margin: 0 0 1em 0; } */
 
 /* MEDIUM SCREEN UP */
 @media only screen and (min-width: 768px) {
