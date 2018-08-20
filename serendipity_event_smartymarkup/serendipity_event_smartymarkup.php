@@ -19,7 +19,7 @@ class serendipity_event_smartymarkup extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SMARTYMARKUP_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.16');
+        $propbag->add('version',       '1.17');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -156,7 +156,7 @@ class serendipity_event_smartymarkup extends serendipity_event
 
                 case 'frontend_display':
 
-                    if ($_GET['serendipity']['is_iframe'] == 'true' && $_GET['serendipity']['iframe_mode'] == 'save') {
+                    if (!empty($_GET['serendipity']['is_iframe']) && $_GET['serendipity']['is_iframe'] == 'true' && $_GET['serendipity']['iframe_mode'] == 'save') {
                         // Due to strange errors passing by with an unregistered function at this point,
                         // eg. giving a 'Fatal error:  Call to undefined function staticpage_display()',
                         // we disable this in Serendipity iframe preview saving mode.
