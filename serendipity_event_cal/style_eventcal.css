@@ -208,10 +208,10 @@ table.eventcal_monthbutton {
     border-collapse: collapse;
     border-spacing: 0;
 }
-table.eventcal_monthbutton td { display: inline-table; vertical-align: bottom; }
+table.eventcal_monthbutton td { vertical-align: bottom; }
 table.eventcal_monthbutton td.left { width: 34%; }
 table.eventcal_monthbutton td.mid { width: 32%; }
-table.eventcal_monthbutton td.right { width: 34%; }
+table.eventcal_monthbutton td.right { width: auto; }
 
 table.innereventborder {
     padding: 0;
