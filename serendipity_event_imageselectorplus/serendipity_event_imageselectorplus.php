@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian');
-        $propbag->add('version',       '1.15');
+        $propbag->add('version',       '1.16');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -692,10 +692,12 @@ class serendipity_event_imageselectorplus extends serendipity_event
         global $serendipity;
 
         preg_match('@<!--quickblog:(.+\|)+(.+)-->@imsU', $body, $target);
-        $path = str_replace($target[1], '', $path);
-        $body = str_replace($target[1], '', $body);
+        if (isset($target[1])) {
+            $path = str_replace($target[1], '', $path);
+            $body = str_replace($target[1], '', $body);
+        }
 
-        //check for non-image object
+        // check for non-image object
         if (!isset($target) && empty($target)) return $body;
 
         $file = basename($path);
@@ -704,7 +706,6 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $t       = serendipity_parseFileName($file);
         $f       = $t[0];
         $suf     = $t[1];
-
         $infile  = $dir . $file;
 
         $s9yimgID = (int)$this->getImageIdByUrl($infile);
@@ -742,7 +743,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $http_outfile = $this->httpize($outfile);
 
         // create link targets
-        $totarget = str_replace('|', '', $target[1]);
+        $totarget = isset($target[1]) ? str_replace('|', '', $target[1]) : $target;
         $linktarget = '';
         switch($totarget) {
             case '_blank':
