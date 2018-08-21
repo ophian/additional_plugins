@@ -52,6 +52,11 @@ div.serendipity_gallery_pagination_bottom {
     border-bottom: 1px solid #ccc;
 }
 
+.plainList.serendipity_gallery_directory {
+    list-style: disclosure-closed;
+    margin: .5rem auto 1.5rem 42%;
+}
+
 /* EXIF TAGS */
 .all_img_info {
     width: 100%;
