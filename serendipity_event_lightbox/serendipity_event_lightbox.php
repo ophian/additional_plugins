@@ -12,7 +12,6 @@ if (IN_serendipity !== true) {
 // 12/2006  Andy Hopkins Added Greybox functionality. <andy.hopkins@gmail.com>
 class serendipity_event_lightbox extends serendipity_event
 {
-
     var $title = PLUGIN_EVENT_LIGHTBOX_NAME;
 
     // Remembers, if an image link was found in the article. If not found, nor CSS nor JS will be added to the blog header.
@@ -67,12 +66,10 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('configuration', $conf_array);
     }
 
-
     function generate_content(&$title)
     {
         $title = PLUGIN_EVENT_LIGHTBOX_NAME;
     }
-
 
     function introspect_config_item($name, &$propbag)
     {

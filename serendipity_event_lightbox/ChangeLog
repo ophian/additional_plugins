@@ -1,3 +1,7 @@
+2.5.3:
+------
+ * disable/hide "waiting" .lightbox box appended at page end
+
 2.5.2:
 ------
  * Better check frontend_display patterns
