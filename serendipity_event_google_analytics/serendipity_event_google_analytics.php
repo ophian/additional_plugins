@@ -281,7 +281,10 @@ class serendipity_event_google_analytics extends serendipity_event
 					}
 					
 					foreach ( $this->markup_elements as $temp ) {
-						if (serendipity_db_bool ($this->get_config ($temp['name'], true)) && isset ($eventData[$temp['element']]) && @!$eventData['properties']['ep_disable_markup_' . $this->instance] && !isset ($serendipity['POST']['properties']['disable_markup_' . $this->instance]) && ($analytics_track_downloads || $analytics_track_external)) {
+						if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && isset($eventData[$temp['element']])
+                        && @!$eventData['properties']['ep_disable_markup_' . $this->instance]
+                        && !isset ($serendipity['POST']['properties']['disable_markup_' . $this->instance])
+                        && ($analytics_track_downloads || $analytics_track_external)) {
 							$element = $temp['element'];
 							$eventData[$element] = preg_replace_callback ("#<a (.*)href=(\"|')(http://|https://|)([^\"']+)(\"|')([^>]*)>#isUm", array ($this, 'analytics_tracker_callback' ), $eventData[$element]);
 						}
