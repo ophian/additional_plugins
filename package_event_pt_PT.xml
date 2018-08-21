@@ -623,9 +623,9 @@
 <description>Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)</description>
 <maintainers><maintainer><name>Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.82</version>
+  <version>1.83</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-20</date>
+  <date>2018-08-21</date>
   <filelist>
     <dir name="serendipity_event_cal">
       <file>backend_inherits.css</file>
@@ -2201,9 +2201,9 @@
 <description>Makes email addresses clickable, but obfuscates them to block spam harvester bots</description>
 <maintainers><maintainer><name>Stephan Manske, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.05</version>
+  <version>1.06</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-17</date>
+  <date>2018-08-21</date>
   <filelist>
     <dir name="serendipity_event_email_bot_obfuscator">
       <file>ChangeLog</file>
@@ -4027,7 +4027,7 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-08-17</date>
+  <date>2018-08-21</date>
   <filelist>
     <dir name="serendipity_event_google_analytics">
       <file>ChangeLog</file>
@@ -8314,9 +8314,9 @@
 <description>Highlights queries used in the referring search engine to locate your page</description>
 <maintainers><maintainer><name>Tom Sommer, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8.4</version>
+  <version>1.8.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-20</date>
+  <date>2018-08-21</date>
   <filelist>
     <dir name="serendipity_event_searchhighlight">
       <file>ChangeLog</file>
@@ -9498,9 +9498,9 @@
 <description>Filtra o texto das entradas através do conversor Textile</description>
 <maintainers><maintainer><name>Serendipity Team, Lars Strojny, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8.4</version>
+  <version>1.8.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-11-03</date>
+  <date>2018-08-21</date>
   <filelist>
     <dir name="serendipity_event_textile">
       <file>classTextile.php</file>
@@ -10719,7 +10719,7 @@
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-17</date>
+  <date>2018-08-21</date>
   <filelist>
     <dir name="serendipity_event_typoquote">
       <file>lang_bg.inc.php</file>
