@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.50');
+        $propbag->add('version',        '2.51');
         $propbag->add('configuration',  array('copytext', 'placement', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -500,6 +500,7 @@ class serendipity_event_multilingual extends serendipity_event
                             if (empty($this->lang_display) && empty($this->showlang)) {
                                 $this->showlang = $serendipity['lang'];
                             }
+                            if (empty($this->lang_display)) $this->lang_display = '';
                             //Debug// echo 'FoLa='.$this->lang_display . ' LaPf='.$this->showlang.' ';
                             $this->tag_title($this->lang_display, $this->showlang);
                         }
@@ -589,6 +590,7 @@ class serendipity_event_multilingual extends serendipity_event
                                 unset($eventData[0]['properties']['ep_cache_body']);
                                 unset($eventData[0]['properties']['ep_cache_extended']);
                             }
+                            if (!isset($eventData[0][$place])) $eventData[0][$place] = '';
                             $eventData[0][$place] .= sprintf($msg, $langs);
                         }
                     } else {
