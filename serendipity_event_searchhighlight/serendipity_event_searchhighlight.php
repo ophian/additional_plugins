@@ -23,7 +23,7 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian');
-        $propbag->add('version',       '1.8.4');
+        $propbag->add('version',       '1.8.5');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -235,8 +235,8 @@ class serendipity_event_searchhighlight extends serendipity_event
                     continue;
                 }
 
-                if ($eventData['properties']['ep_disable_markup_' . $this->instance] ||
-                        isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                if (isset($eventData['properties']['ep_disable_markup_' . $this->instance])
+                ||  isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                     continue;
                 }
 
