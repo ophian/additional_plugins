@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian');
-        $propbag->add('version',       '1.14');
+        $propbag->add('version',       '1.15');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -906,8 +906,8 @@ class serendipity_event_imageselectorplus extends serendipity_event
                                             array(
                                                 'plugin_mediainsert_media' => $t,
                                                 'plugin_mediainsert_entry' => $eventData,
-                                                'plugin_mediainsert_hideafter' => $hideafter,
-                                                'plugin_mediainsert_picperrow' => $picperrow
+                                                'plugin_mediainsert_hideafter' => isset($hideafter) ? $hideafter : null,
+                                                'plugin_mediainsert_picperrow' => isset($picperrow) ? $picperrow : null
                                                 )
                         );
 

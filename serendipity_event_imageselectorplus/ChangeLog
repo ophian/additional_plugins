@@ -1,3 +1,7 @@
+1.15:
+-----
+ * Fix some more uninitialized variable checks
+
 1.14:
 -----
  * Fix some undefined vars
