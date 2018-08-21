@@ -18,7 +18,7 @@ class serendipity_event_email_bot_obfuscator extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Stephan Manske, Ian');
-        $propbag->add('version',       '1.05');
+        $propbag->add('version',       '1.06');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -143,7 +143,7 @@ class serendipity_event_email_bot_obfuscator extends serendipity_event
     function anti_callback_entity($matches)
     {
         $email = $matches[0];
-        return $matches[1].'<a href="mailto:'.$this->antispambot($email).'">'.$this->antispambot($email).'</a>';
+        return (isset($matches[1]) ? $matches[1] : '').'<a href="mailto:'.$this->antispambot($email).'">'.$this->antispambot($email).'</a>';
     }
 
     function anti_callback_js($matches)
