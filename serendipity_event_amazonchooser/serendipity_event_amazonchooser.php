@@ -22,7 +22,7 @@ class serendipity_event_amazonchooser extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AMAZONCHOOSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthew Groeninger, Ian');
-        $propbag->add('version',       '0.78');
+        $propbag->add('version',       '0.79');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -263,7 +263,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                                       'plugin_amazonchooser_js'  => serendipity_rewriteURL('plugin/amazonch-js')
                                  ));
 
-                            switch ($_REQUEST['step']) {
+                            switch (@$_REQUEST['step']) {
                                 case '1':
                                     $page = 1;
                                     if (isset($_REQUEST['page'])) {
@@ -339,10 +339,10 @@ class serendipity_event_amazonchooser extends serendipity_event
                                     break;
 
                                 default:
-                                    $defaultmode = rawurlencode($_REQUEST['mode']);
+                                    $defaultmode = isset($_REQUEST['mode']) ? rawurlencode($_REQUEST['mode']) : null;
                                     $link = serendipity_rewriteURL('plugin/amazonch') . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;');
                                     foreach($mode AS $type) {
-                                      $mode_out[$type]=$mode_names[$type];
+                                      $mode_out[$type] = isset($mode_names[$type]) ? $mode_names[$type] : null;
                                     }
                                     if (isset($_REQUEST['simple']) && ($_REQUEST['simple'])) {
                                        $simple = "1";
@@ -353,7 +353,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                                     $serendipity['smarty']->assign(
                                         array(
                                             'plugin_amazonchooser_page'          => "default",
-                                            'plugin_amazonchooser_keyword'       => rawurldecode($_REQUEST['keyword']),
+                                            'plugin_amazonchooser_keyword'       => isset($_REQUEST['keyword']) ? rawurldecode($_REQUEST['keyword']) : null,
                                             'plugin_amazonchooser_link'          => $link,
                                             'plugin_amazonchooser_txtarea'       => trim((function_exists('serendipity_specialchars') ? serendipity_specialchars(rawurlencode($_REQUEST['txtarea'])) : htmlspecialchars(rawurlencode($_REQUEST['txtarea']), ENT_COMPAT, LANG_CHARSET))),
                                             'plugin_amazonchooser_simple'        => $simple,
