@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.53');
+        $propbag->add('version',        '2.54');
         $propbag->add('configuration',  array('copytext', 'placement', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -46,6 +46,7 @@ class serendipity_event_multilingual extends serendipity_event
                 'frontend_entries_rss'      => true,
                 'frontend_comment'          => true,
                 'frontend_sidebar_plugins'  => true,
+                'frontend_media_showitem'   => true,
                 'frontend_rss'              => true,
                 'genpage'                   => true,
         ));
@@ -696,6 +697,20 @@ class serendipity_event_multilingual extends serendipity_event
                     }
                     foreach($properties AS $idx => $row) {
                         $eventData[$addData[$row['entryid']]]['properties'][$row['property']] = $row['value'];
+                    }
+                    break;
+
+                case 'frontend_media_showitem':
+                    // Take care of translatable modules in blogTitle and head_subtitle, split by {{--}} if using the multilingual event plugin.
+                    $parts = explode('{{--}}', $serendipity['smarty']->getTemplateVars('blogTitle'));
+                    foreach($parts AS $idx => $match) {
+                        $serendipity['smarty']->assign('blogTitle', preg_replace('@\{\{!([a-z]){2}+\}\}@s', '', $match)); // take the first matching language to be displayed
+                        break;
+                    }
+                    $parts = explode('{{--}}', $serendipity['smarty']->getTemplateVars('head_subtitle'));
+                    foreach($parts AS $idx => $match) {
+                        $serendipity['smarty']->assign('head_subtitle', preg_replace('@\{\{!([a-z]){2}+\}\}@s', '', $match)); // take the first matching language to be displayed
+                        break;
                     }
                     break;
 

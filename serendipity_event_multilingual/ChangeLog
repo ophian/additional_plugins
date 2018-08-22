@@ -1,3 +1,8 @@
+2.54:
+-----
+
+ * Add 'frontend_media_showitem' hook for lang modulated banner title(s) fallback
+
 2.53:
 -----
 
