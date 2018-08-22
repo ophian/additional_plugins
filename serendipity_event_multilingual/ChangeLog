@@ -1,7 +1,14 @@
+2.53:
+-----
+
+ * Add $view = 'plugin' pages to translatable banner title(s). This is
+   only needed, if a plugin emits something, but has no expression in
+   entries, ie. like for freetag tags without any entries expression.
+
 2.52:
 -----
 
- * Add $view = archive pages to translatable banner title(s)
+ * Add $view = 'archive' pages to translatable banner title(s)
 
 2.51:
 -----
