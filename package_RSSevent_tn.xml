@@ -455,7 +455,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Tagging of entries&lt;/b&gt;&lt;br /&gt;Allows freestyle tagging of entries&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Wed, 15 Aug 2018 09:41:29 +0200</pubDate>
+<pubDate>Wed, 22 Aug 2018 12:35:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -770,7 +770,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilingual entries&lt;/b&gt;&lt;br /&gt;Allows to create multiple language versions of an entry&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Tue, 21 Aug 2018 17:49:38 +0200</pubDate>
+<pubDate>Wed, 22 Aug 2018 11:15:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
