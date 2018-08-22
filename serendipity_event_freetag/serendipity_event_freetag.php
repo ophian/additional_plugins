@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.16');
+        $propbag->add('version',       '4.17');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1044,11 +1044,11 @@ class serendipity_event_freetag extends serendipity_event
                     $plugincode     = array_shift($param);
 
                     // Added by option or manually: example.org/plugin/taglist/Serendipity/Blog/Plums - see in displayExternalTaglist()
-                    if ($plugincode == "taglist") {
-                        $plugincode = "tags";
+                    if ($plugincode == 'taglist') {
+                        $plugincode = 'tags';
                     }
 
-                    if (($plugincode == "tag") || ($plugincode == "tags") || ($plugincode == "freetag")) {
+                    if ($plugincode == 'tag' || $plugincode == 'tags' || $plugincode == 'freetag') {
                         $this->displayExternalTaglist($param, $ctaglist);
                     }
                     break;
@@ -1340,6 +1340,15 @@ addLoadEvent(enableAutocomplete);
                     if (strpos($eventData, '.serendipity_freeTag') === false) {
                         $this->addToCSS($eventData);
                     }
+                    $eventData .= '
+/* additional freetag styles */
+.serendipity_freetag_taglist .ftr-empty {
+    margin-left: 1rem;
+    font-style: italic;
+    color: #6495ed;
+}
+
+';
                     break;
 
                 case 'entry_display':
@@ -1784,7 +1793,11 @@ addLoadEvent(enableAutocomplete);
             if (is_array($this->tags['show'])) {
                 $not_first = false;
                 foreach($this->tags['show'] AS $r) {
-                    $not_first ? print(', ') : $not_first = true;
+                    if (isset($not_first) && $not_first === true) {
+                        print(', ');
+                    } else {
+                        $not_first = true;
+                    }
                     echo $r;
                 }
             } else {
@@ -1796,7 +1809,11 @@ addLoadEvent(enableAutocomplete);
             if (empty($r['tag'])) {
                 continue;
             }
-            $not_first ? print(', ') : $not_first = true;
+            if (isset($not_first) && $not_first === true) {
+                print(', ');
+            } else {
+                $not_first = true;
+            }
             echo self::specialchars_mapper($r['tag']);
         }
         echo "\" />\n";
@@ -3318,8 +3335,7 @@ addLoadEvent(enableAutocomplete);
 
 /* serendipity_event_freetag plugin start */
 
-.serendipity_freeTag
-{
+.serendipity_freeTag {
     margin-left: auto;
     margin-right: 0px;
     text-align: right;
@@ -3328,9 +3344,7 @@ addLoadEvent(enableAutocomplete);
     margin-top: 5px;
     margin-bottom: 0px;
 }
-
-.serendipity_freeTag_related
-{
+.serendipity_freeTag_related {
     margin-left: 50px;
     margin-right: 0px;
     text-align: left;
@@ -3339,10 +3353,8 @@ addLoadEvent(enableAutocomplete);
     margin-top: 20px;
     margin-bottom: 0px;
 }
-
 ' . (serendipity_db_bool($this->get_config('use_flash', 'false')) ? '
-.serendipity_freetag_taglist
-{
+.serendipity_freetag_taglist {
     margin: 10px;
     border: 1px solid #' . $this->get_config('flash_tag_color', 'ffffff') . ';
     padding: 5px;
@@ -3350,20 +3362,15 @@ addLoadEvent(enableAutocomplete);
     text-align: justify;
 }
 ' : '') . '
-
-.serendipity_freeTag a
-{
+.serendipity_freeTag a {
     font-size: 7pt;
     text-decoration: none;
 }
-
-.serendipity_freeTag a:hover
-{
+.serendipity_freeTag a:hover {
     color: green;
     text-decoration: underline;
 }
-img.serendipity_freeTag_xmlButton
-{
+img.serendipity_freeTag_xmlButton {
     vertical-align: bottom;
     display: inline;
     border: 0px;

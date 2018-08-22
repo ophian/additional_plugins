@@ -1,3 +1,9 @@
+4.17:
+-----
+
+ * Fix obscure ternary syntax with out and set $not_first tags
+ * Add style and markup tag for PLUGIN_EVENT_FREETAG_NO_RELATED
+
 4.16:
 -----
 

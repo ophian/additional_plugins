@@ -9,7 +9,7 @@
         {if $freetag_hasTags}
             {$freetag_displayTags}
         {else}
-            {$CONST.PLUGIN_EVENT_FREETAG_NO_RELATED}
+            <span class="ftr-empty">{$CONST.PLUGIN_EVENT_FREETAG_NO_RELATED}</span>
         {/if}
 
     </div>
