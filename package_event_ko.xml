@@ -119,9 +119,9 @@
 <description>Adds a button to allow Amazon.com search which are insertable into your entry</description>
 <maintainers><maintainer><name>Matthew Groeninger, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.78</version>
+  <version>0.79</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-10</date>
+  <date>2018-08-22</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
