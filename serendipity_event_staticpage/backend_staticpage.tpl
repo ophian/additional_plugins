@@ -1,4 +1,4 @@
-{* backend_staticpage template file v. 1.29, 2018-06-22 *}
+{* backend_staticpage template file v. 1.30, 2018-08-23 *}
 
 <!-- backend_staticpage.tpl START -->
 
@@ -29,7 +29,7 @@
         <ol id="sequence" data-placement="sqid" class="sequence_container pluginmanager_container">
         {foreach $sp_pageorder_pages AS $entryorder}
             <li id="{$entryorder['id']}" class="sequence_item pluginmanager_item_{cycle values="odd,even"}">{*  in normal situations id=$entryorder['pagetitle'], but we need id for js sequence mode *}
-                <input type="hidden" name="serendipity[plugin][sequence][id]" id="sid{$sp_element['id']}" value="{$entryorder['id']}">
+                <input type="hidden" name="serendipity[plugin][sequence][id]" id="sid{$entryorder@iteration}" value="{$entryorder['id']}">
                 <div id="sg{$entryorder['id']}" class="pluginmanager_grablet sequence_grablet">
                     <button class="icon_link" type="button" title="{$CONST.MOVE}"><span class="icon-move" aria-hidden="true"></span><span class="visuallyhidden"> {$CONST.MOVE}</span></button>
                 </div>
@@ -50,15 +50,15 @@
 
 {elseif $switch_spcat == 'pagetype'}
 
-    {if $sp_pagetype_saveconf}
+    {if NOT empty($sp_pagetype_saveconf)}
 <div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> {$CONST.DONE}! {$CONST.SETTINGS_SAVED_AT|sprintf:($smarty.now|formatTime:'%H:%M:%S')}</div>
     {/if}
 
-    {if $sp_pagetype_purged}
+    {if NOT empty($sp_pagetype_purged)}
 <div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> {$CONST.DONE}! {$CONST.RIP_ENTRY|sprintf:$sp_pagetype_ripped}</div>
     {/if}
 
-    {if $sp_pagetype_update}
+    {if NOT empty($sp_pagetype_update)}
 <div class="msg_error spmsg"><svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> {$CONST.ERROR}: {$sp_pagetype_mixedresult}</div>
     {/if}
 
@@ -81,8 +81,8 @@
         </select>
         <input type="submit" class="input_button state_submit" name="serendipity[typeSubmit]" value="{$CONST.GO}">
         <input type="submit" class="input_button state_cancel" name="serendipity[typeDelete]" value="{$CONST.DELETE}">
-        {if $sp_pagetype_submit}<input type="hidden" name="serendipity[typeSave]" value="true">{/if}
-        {if $sp_pagetype_isshowform AND !empty($sp_pagetype_showform)}
+        {if NOT empty($sp_pagetype_submit)}<input type="hidden" name="serendipity[typeSave]" value="true">{/if}
+        {if NOT empty($sp_pagetype_isshowform) AND NOT empty($sp_pagetype_showform)}
 
         <!-- sp_pagetype_showform start -->
         {$sp_pagetype_showform}
@@ -101,9 +101,9 @@
 
 <div id="staticpage_pageadd" class="sp_padd">
 
-    {if $sp_addsubmit}
+{if NOT empty($sp_addsubmit)}
     <div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> {$CONST.DONE}! {$CONST.SETTINGS_SAVED_AT|sprintf:($smarty.now|formatTime:'%H:%M:%S')}</div>
-    {/if}
+{/if}
 
     <p>{$CONST.STATICPAGE_PAGEADD_DESC}</p>
 

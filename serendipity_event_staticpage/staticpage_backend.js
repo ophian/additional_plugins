@@ -157,5 +157,9 @@ $(function() {
         event.preventDefault();
         event.stopPropagation();
         saveNewOrder();
+        $('html, body').animate({
+             scrollTop: $("#splistorder").offset().top
+        }, 1000);
+        return false;
     });
 });

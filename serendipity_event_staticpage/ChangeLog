@@ -1,3 +1,10 @@
+5.47:
+-----
+ * Fix some more uninitialized variable checks
+ * Fix pageorder item selector id
+ * Improve pageorder submit to jump on top
+ * Add customarchive to plugins with staticpage like permalink
+
 5.46:
 -----
  * Fix an uninitialized variable check
