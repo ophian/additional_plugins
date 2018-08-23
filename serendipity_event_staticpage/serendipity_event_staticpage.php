@@ -3376,7 +3376,7 @@ class serendipity_event_staticpage extends serendipity_event
                WHERE id = ".(int)$staticpage_id."
                LIMIT 1";
 
-        $cache =  serendipity_db_query($q, true, 'assoc');
+        $cache = serendipity_db_query($q, true, 'assoc');
 
         if (is_array($cache)) {
              return $cache;
