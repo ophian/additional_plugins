@@ -1,9 +1,9 @@
-5.47:
+5.50:
 -----
  * Fix some more uninitialized variable checks
  * Fix pageorder item selector id
  * Improve pageorder submit to jump on top
- * Add customarchive to plugins with staticpage like permalink
+ * Added event cal, customarchive, externalphp, pollbox, suggest to plugins with staticpage like permalink
  * Added also to the 'FRONTEND_FEATURES' Spartacus Group
 
 5.46:

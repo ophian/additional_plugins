@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.47');
+        $propbag->add('version', '5.50');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -742,12 +742,16 @@ class serendipity_event_staticpage extends serendipity_event
         global $serendipity;
 
         $uplugs = array(
+            'serendipity_event_cal',
             'serendipity_event_contactform',
             'serendipity_event_customarchive',
             'serendipity_event_downloadmanager',
+            'serendipity_event_externalphp',
             'serendipity_event_faq',
             'serendipity_event_forum',
             'serendipity_event_guestbook',
+            'serendipity_event_pollbox',
+            'serendipity_event_suggest',
             'serendipity_event_thumbnails',
             'serendipity_event_usergallery'
         );
@@ -790,6 +794,36 @@ class serendipity_event_staticpage extends serendipity_event
         foreach($plugins AS $plugin) {
             switch($plugin) {
 
+                case 'serendipity_event_cal':
+                    $q = "SELECT value
+                            FROM {$serendipity['dbPrefix']}config
+                           WHERE name LIKE 'serendipity_event_cal%".(($serendipity['rewrite'] != 'none') ? 'permalink' : 'pagetitle')."'";
+                    $ret = serendipity_db_query($q, true, 'assoc');
+                    if (is_array($ret)) {
+                        if ($serendipity['rewrite'] != 'none') {
+                            $page[$plugin]['link'] = $ret['value'];
+                        } else {
+                            $page[$plugin]['link'] = $serendipity['serendipityHTTPPath'].$serendipity['indexFile'].'?serendipity[subpage]='.$ret['value'];
+                        }
+                    }
+                    $page[$plugin]['name'] = PLUGIN_EVENTCAL_TITLE;
+                    break;
+
+                case 'serendipity_event_contactform':
+                    $q = "SELECT value
+                            FROM {$serendipity['dbPrefix']}config
+                           WHERE name LIKE 'serendipity_event_contactform%".(($serendipity['rewrite'] != 'none') ? 'permalink' : 'pagetitle')."'";
+                    $ret = serendipity_db_query($q, true, 'assoc');
+                    if (is_array($ret)) {
+                        if ($serendipity['rewrite'] != 'none') {
+                            $page[$plugin]['link'] = $ret['value'];
+                        } else {
+                            $page[$plugin]['link'] = $serendipity['serendipityHTTPPath'].$serendipity['indexFile'].'?serendipity[subpage]='.$ret['value'];
+                        }
+                    }
+                    $page[$plugin]['name'] = PLUGIN_CONTACTFORM_TITLE;
+                    break;
+
                 case 'serendipity_event_customarchive':
                     $q = "SELECT value
                             FROM {$serendipity['dbPrefix']}config
@@ -826,19 +860,19 @@ class serendipity_event_staticpage extends serendipity_event
                     }
                     break;
 
-                case 'serendipity_event_guestbook':
+                case 'serendipity_event_externalphp':
                     $q = "SELECT value
                             FROM {$serendipity['dbPrefix']}config
-                           WHERE name LIKE 'serendipity_event_guestbook%".(($serendipity['rewrite'] != 'none') ? 'permalink' : 'pagetitle')."'";
+                           WHERE name LIKE 'serendipity_event_externalphp%".(($serendipity['rewrite'] != 'none') ? 'permalink' : 'pagetitle')."'";
                     $ret = serendipity_db_query($q, true, 'assoc');
                     if (is_array($ret)) {
-                        $page[$plugin]['name'] = (defined('GUESTBOOK_TITLE') ? GUESTBOOK_TITLE : PLUGIN_GUESTBOOK_TITLE);
                         if ($serendipity['rewrite'] != 'none') {
                             $page[$plugin]['link'] = $ret['value'];
                         } else {
                             $page[$plugin]['link'] = $serendipity['serendipityHTTPPath'].$serendipity['indexFile'].'?serendipity[subpage]='.$ret['value'];
                         }
                     }
+                    $page[$plugin]['name'] = PLUGIN_EXTERNALPHP_TITLE;
                     break;
 
                 case 'serendipity_event_forum':
@@ -854,10 +888,25 @@ class serendipity_event_staticpage extends serendipity_event
                     }
                     break;
 
-                case 'serendipity_event_contactform':
+                case 'serendipity_event_guestbook':
                     $q = "SELECT value
                             FROM {$serendipity['dbPrefix']}config
-                           WHERE name LIKE 'serendipity_event_contactform%".(($serendipity['rewrite'] != 'none') ? 'permalink' : 'pagetitle')."'";
+                           WHERE name LIKE 'serendipity_event_guestbook%".(($serendipity['rewrite'] != 'none') ? 'permalink' : 'pagetitle')."'";
+                    $ret = serendipity_db_query($q, true, 'assoc');
+                    if (is_array($ret)) {
+                        $page[$plugin]['name'] = (defined('GUESTBOOK_TITLE') ? GUESTBOOK_TITLE : PLUGIN_GUESTBOOK_TITLE);
+                        if ($serendipity['rewrite'] != 'none') {
+                            $page[$plugin]['link'] = $ret['value'];
+                        } else {
+                            $page[$plugin]['link'] = $serendipity['serendipityHTTPPath'].$serendipity['indexFile'].'?serendipity[subpage]='.$ret['value'];
+                        }
+                    }
+                    break;
+
+                case 'serendipity_event_pollbox':
+                    $q = "SELECT value
+                            FROM {$serendipity['dbPrefix']}config
+                           WHERE name LIKE 'serendipity_event_pollbox%".(($serendipity['rewrite'] != 'none') ? 'permalink' : 'pagetitle')."'";
                     $ret = serendipity_db_query($q, true, 'assoc');
                     if (is_array($ret)) {
                         if ($serendipity['rewrite'] != 'none') {
@@ -866,7 +915,22 @@ class serendipity_event_staticpage extends serendipity_event
                             $page[$plugin]['link'] = $serendipity['serendipityHTTPPath'].$serendipity['indexFile'].'?serendipity[subpage]='.$ret['value'];
                         }
                     }
-                    $page[$plugin]['name'] = PLUGIN_CONTACTFORM_TITLE;
+                    $page[$plugin]['name'] = PLUGIN_POLL_TITLE;
+                    break;
+
+                case 'serendipity_event_suggest':
+                    $q = "SELECT value
+                            FROM {$serendipity['dbPrefix']}config
+                           WHERE name LIKE 'serendipity_event_suggest%".(($serendipity['rewrite'] != 'none') ? 'permalink' : 'pagetitle')."'";
+                    $ret = serendipity_db_query($q, true, 'assoc');
+                    if (is_array($ret)) {
+                        if ($serendipity['rewrite'] != 'none') {
+                            $page[$plugin]['link'] = $ret['value'];
+                        } else {
+                            $page[$plugin]['link'] = $serendipity['serendipityHTTPPath'].$serendipity['indexFile'].'?serendipity[subpage]='.$ret['value'];
+                        }
+                    }
+                    $page[$plugin]['name'] = PLUGIN_SUGGEST_TITLE;
                     break;
 
                 case 'serendipity_event_thumbnails':
