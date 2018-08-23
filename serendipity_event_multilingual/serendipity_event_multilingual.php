@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.54');
+        $propbag->add('version',        '2.55');
         $propbag->add('configuration',  array('copytext', 'placement', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -374,7 +374,7 @@ class serendipity_event_multilingual extends serendipity_event
 */
         // do not run twice or more
         if (isset($serendipity['smarty']) && $runit === null) {
-            if ($serendipity['view'] == 'entry' && !empty($forced)) {
+            if (isset($serendipity['view']) && $serendipity['view'] == 'entry' && !empty($forced)) {
                 //Debug// echo ' forced='.$forced." fallback=".$fallback . " ".$serendipity['smarty']->getTemplateVars('head_title');
                 if ($forced === $fallback) {
                     // getTemplateVars('head_title') is the entries title in the default language - now grab the correct banner title
