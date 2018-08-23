@@ -1,3 +1,7 @@
+5.51:
+-----
+ * Fix selectPlugins return if empty
+
 5.50:
 -----
  * Fix some more uninitialized variable checks

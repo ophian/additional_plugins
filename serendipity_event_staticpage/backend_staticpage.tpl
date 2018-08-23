@@ -107,7 +107,7 @@
 
     <p>{$CONST.STATICPAGE_PAGEADD_DESC}</p>
 
-    {if is_array($sp_pageadd_plugins)}
+    {if isset($sp_pageadd_plugins) AND is_array($sp_pageadd_plugins)}
 
     <form action="serendipity_admin.php" method="post" name="serendipityPlugins">
         <div>
