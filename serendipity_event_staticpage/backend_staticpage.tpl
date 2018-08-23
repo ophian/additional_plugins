@@ -19,7 +19,7 @@
 
 <div id="splistorder" class="sp_msg_success"></div>
 
-    {if is_array($sp_pageorder_pages)}
+    {if isset($sp_pageorder_pages) AND is_array($sp_pageorder_pages)}
 
 <div id="sp_sequencer" class="configuration_group even">
     <fieldset class="sp_sequence">

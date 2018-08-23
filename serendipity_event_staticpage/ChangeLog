@@ -1,3 +1,7 @@
+5.52:
+-----
+ * Better check pageadd pageorder pages array for set/un/reset item
+
 5.51:
 -----
  * Fix selectPlugins return if empty

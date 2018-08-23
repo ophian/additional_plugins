@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.51');
+        $propbag->add('version', '5.52');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -2446,7 +2446,7 @@ class serendipity_event_staticpage extends serendipity_event
             // case new or default or set to false
             if (!isset($serendipity['POST']['plugin']['custom']) || $serendipity['POST']['plugin']['custom']['wysiwyg'] != '') $serendipity['POST']['plugin']['custom']['wysiwyg'] = 1;
             // in case textformat was set false, we don't need this all - this markup option has higher priority
-            if ($serendipity['POST']['plugin']['markup'] == 'false') $serendipity['POST']['plugin']['custom']['wysiwyg'] = '';
+            if (isset($serendipity['POST']['plugin']['markup']) && $serendipity['POST']['plugin']['markup'] == 'false') $serendipity['POST']['plugin']['custom']['wysiwyg'] = '';
         } else {
             // remove custom wysiwyg entry
             $serendipity['POST']['plugin']['custom']['wysiwyg'] = '';
