@@ -101,7 +101,7 @@ class serendipity_event_staticpage extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('stackable', false);
-        $propbag->add('groups', array('BACKEND_EDITOR', 'BACKEND_FEATURES'));
+        $propbag->add('groups', array('BACKEND_EDITOR', 'BACKEND_FEATURES', 'FRONTEND_FEATURES'));
         $propbag->add('configuration', array(
             'config_formgrouper',
             'markup',

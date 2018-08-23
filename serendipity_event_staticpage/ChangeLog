@@ -4,6 +4,7 @@
  * Fix pageorder item selector id
  * Improve pageorder submit to jump on top
  * Add customarchive to plugins with staticpage like permalink
+ * Added also to the 'FRONTEND_FEATURES' Spartacus Group
 
 5.46:
 -----
