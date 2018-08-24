@@ -104,7 +104,7 @@
 <category>Event Plugins</category>
 <author>Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Calendar&lt;/b&gt;&lt;br /&gt;Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 21 Aug 2018 19:57:20 +0200</pubDate>
+<pubDate>Fri, 24 Aug 2018 17:23:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
@@ -545,7 +545,7 @@
 <category>Event Plugins</category>
 <author>Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Księga gości&lt;/b&gt;&lt;br /&gt;Pokazuje księgę gości w ramach twojego blogu, stosując normalny jego wygląd.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Sun, 19 Aug 2018 17:21:43 +0200</pubDate>
+<pubDate>Fri, 24 Aug 2018 12:36:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -1220,7 +1220,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;User Profiles&lt;/b&gt;&lt;br /&gt;Shows simple user profiles and allows to embed author pictures.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 27 Oct 2016 10:32:48 +0200</pubDate>
+<pubDate>Fri, 24 Aug 2018 18:59:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
