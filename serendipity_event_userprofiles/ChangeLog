@@ -1,8 +1,14 @@
+0.33:
+-----
+
+ * Fix some uninitialized variable checks
+ * Fix vCard constructor
+ * Fix some "Only variable references should be returned by reference" notices
+
 0.32:
 -----
 
  * Iconfont accessibility fixes
-
 
 0.31:
 -----

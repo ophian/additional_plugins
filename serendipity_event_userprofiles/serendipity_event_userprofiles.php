@@ -92,7 +92,7 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian');
-        $propbag->add('version', '0.32');
+        $propbag->add('version', '0.33');
         $propbag->add('requirements', array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -169,7 +169,7 @@ class serendipity_event_userprofiles extends serendipity_event
         return true;
     }
 
-    function &getLocalProperties()
+    function getLocalProperties() /* no more & */
     {
         return array(
             'realname' => array('desc' => USERCONF_REALNAME,
@@ -341,7 +341,7 @@ class serendipity_event_userprofiles extends serendipity_event
         global $serendipity;
 
         echo '<dl class="userprofiles_show clearfix">'."\n";
-        $local_properties =& $this->getLocalProperties();
+        $local_properties = $this->getLocalProperties(); /* no more & */
         foreach($local_properties AS $property => $info) {
             echo '<dt>' . $info['desc'] ."</dt>\n";
             echo '<dd>' . $user[$property] . "</dd>\n";
@@ -388,7 +388,7 @@ class serendipity_event_userprofiles extends serendipity_event
      *
      * @access private
      *
-     * @param array $user  The Userproperties to edit
+     * @param array $user  The User-properties to edit
      *
      */
     function editUser(&$user)
@@ -404,7 +404,7 @@ class serendipity_event_userprofiles extends serendipity_event
 
         echo '<div class="userprofiles_wrap">'."\n";
         echo '<table class="userprofiles_table">'."\n";
-        $local_properties =& $this->getLocalProperties();
+        $local_properties = $this->getLocalProperties(); /* no more & */
 
         foreach($local_properties AS $property => $info) {
             if (isset($serendipity['POST']['submitProfile']) && isset($serendipity['POST']['profile' . $property])) {
@@ -423,7 +423,7 @@ class serendipity_event_userprofiles extends serendipity_event
                 $this->updateConfigVar($property, $profile, $user[$property], $user['authorid']);
                 $profile[$property] = $user[$property];
             } else {
-                $user[$property] = $profile[$property];
+                $user[$property] = isset($profile[$property]) ? $profile[$property] : null;
             }
 
             $this->showCol($property, $info, $user);
@@ -448,7 +448,7 @@ class serendipity_event_userprofiles extends serendipity_event
                 $this->updateConfigVar($property, $profile, $user[$property], $user['authorid']);
                 $profile[$property] = $user[$property];
             } else {
-                $user[$property] = $profile[$property];
+                $user[$property] = isset($profile[$property]) ? $profile[$property] : null;
             }
 
             $this->showCol($property, $info, $user);
@@ -691,7 +691,7 @@ class serendipity_event_userprofiles extends serendipity_event
                     }
 
                     if (empty($eventData['author'])) {
-                        $tmp = serendipity_fetchAuthor($eventData['authorid']);
+                        $tmp = isset($eventData['authorid']) ? serendipity_fetchAuthor($eventData['authorid']) : 0;
                         $author = $tmp[0]['realname'];
                     } else {
                         $author = $eventData['author'];
@@ -810,7 +810,7 @@ class serendipity_event_userprofiles extends serendipity_event
 
         $vcard = new Contact_Vcard_Build();
         $vcard->setFormattedName($serendipity['POST']['profilerealname']);
-        $vcard->setName($name[1], $name[0], "", "", "");
+        $vcard->setName((isset($name[1]) ? $name[1] : ''), $name[0], "", "", "");
         $vcard->addEmail($serendipity['POST']['profileemail']);
         $vcard->addParam('TYPE', 'WORK');
         $vcard->addParam('TYPE', 'PREF');
@@ -818,7 +818,7 @@ class serendipity_event_userprofiles extends serendipity_event
             "",
             "",
             $serendipity['POST']['profilestreet'],
-            $city[1],
+            isset($city[1]) ? $city[1] : '',
             "",
             $city[0],
             $serendipity['POST']['profilecountry']
