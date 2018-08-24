@@ -72,7 +72,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian');
-        $propbag->add('version',        '1.83');
+        $propbag->add('version',        '1.84');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '1.6',
@@ -3027,7 +3027,7 @@ class serendipity_event_cal extends serendipity_event
             $serendipity['smarty']->assign('plugin_eventcal_cal_buildapptable', $appdata);
         }
 
-        if (is_array($events)) {
+        if (isset($events) && is_array($events)) {
             echo $this->parseTemplate('plugin_eventcal_cal.tpl');
         }
     }
@@ -3137,7 +3137,7 @@ class serendipity_event_cal extends serendipity_event
             $serendipity['smarty']->assign('plugin_eventcal_cal_buildapptable', $appdata);
         }
 
-        if (is_array($events)) {
+        if (isset($events) && is_array($events)) {
             echo $this->parseTemplate('plugin_eventcal_cal.tpl');
         }
 
