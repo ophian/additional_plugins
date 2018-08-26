@@ -2409,11 +2409,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>次/前のエントリへのリンク</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>閲覧時、次/前のエントリを閲覧することを可能にします。</description>
-<maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.40</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.50</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2018-08-26</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -2425,6 +2425,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_ja.inc.php</file>
       <file>lang_ko.inc.php</file>
       <file>lang_pl.inc.php</file>
+      <file>README_FOR_SMARTY_TEMPLATING.txt</file>
       <file>serendipity_event_entrypaging.php</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
@@ -2447,6 +2448,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_entrypaging/lang_ja.inc.php</file>
     <file>serendipity_event_entrypaging/lang_ko.inc.php</file>
     <file>serendipity_event_entrypaging/lang_pl.inc.php</file>
+    <file>serendipity_event_entrypaging/README_FOR_SMARTY_TEMPLATING.txt</file>
     <file>serendipity_event_entrypaging/serendipity_event_entrypaging.php</file>
     <file>serendipity_event_entrypaging/UTF-8/lang_bg.inc.php</file>
     <file>serendipity_event_entrypaging/UTF-8/lang_cs.inc.php</file>

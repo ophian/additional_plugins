@@ -333,12 +333,12 @@
 <guid isPermaLink="false">serendipity_event_entrylastmodified</guid>
 </item>
 <item>
-<title>Nächster/Voriger Artikel: Ermöglicht bei Betrachten eines Eintrages vor und zurück zu blättern</title>
+<title>Nächster/Voriger Artikel: Ermöglicht beim Betrachten eines Eintrages in der Eintragsliste vor und zurück zu blättern</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrypaging</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Wesley Hwang-Chung</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Nächster/Voriger Artikel&lt;/b&gt;&lt;br /&gt;Ermöglicht bei Betrachten eines Eintrages vor und zurück zu blättern&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Nächster/Voriger Artikel&lt;/b&gt;&lt;br /&gt;Ermöglicht beim Betrachten eines Eintrages in der Eintragsliste vor und zurück zu blättern&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sun, 26 Aug 2018 17:25:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>

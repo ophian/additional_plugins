@@ -336,9 +336,9 @@
 <title>Linki do następnego/poprzedniego wpisu: Umieszcza w widoku wpisu linki do następnego/poprzedniego wpisu</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrypaging</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Wesley Hwang-Chung</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Linki do następnego/poprzedniego wpisu&lt;/b&gt;&lt;br /&gt;Umieszcza w widoku wpisu linki do następnego/poprzedniego wpisu&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Linki do następnego/poprzedniego wpisu&lt;/b&gt;&lt;br /&gt;Umieszcza w widoku wpisu linki do następnego/poprzedniego wpisu&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sun, 26 Aug 2018 17:25:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
