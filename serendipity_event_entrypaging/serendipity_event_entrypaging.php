@@ -19,16 +19,16 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('name',          PLUGIN_ENTRYPAGING_NAME);
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung');
-        $propbag->add('version',       '1.40');
+        $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian');
+        $propbag->add('version',       '1.50');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.2.0'
         ));
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
-        $propbag->add('event_hooks',   array('entry_display' => true, 'css' => true, 'entries_header' => true));
-        $propbag->add('configuration', array('placement','showrandom', 'next', 'prev', 'use_category'));
+        $propbag->add('event_hooks',   array('entry_display' => true, 'css' => true, 'entries_header' => true, 'entries_footer' => true));
+        $propbag->add('configuration', array('placement', 'showrandom', 'next', 'prev', 'use_category'));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -81,7 +81,14 @@ class serendipity_event_entrypaging extends serendipity_event
 
     function generate_content(&$title)
     {
-        $title       = PLUGIN_ENTRYPAGING_NAME;
+        $title = PLUGIN_ENTRYPAGING_NAME;
+    }
+
+    function example()
+    {
+        global $serendipity;
+        $base = $serendipity['baseURL'].'plugins/serendipity_event_entrypaging';
+        return '<p class="msg_notice"><span class="icon icon-info-circled"></span> Please also read the entrypages <a href="' . $base . '/README_FOR_SMARTY_TEMPLATING.txt" target="_blank">README_FOR_SMARTY_TEMPLATING</a> file for custom Smarty entrypaging!</p>';
     }
 
     function timeOffset($timestamp)
@@ -135,13 +142,15 @@ class serendipity_event_entrypaging extends serendipity_event
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
-        $placement = $this->get_config('placement', 'top');
 
-        if ($event == 'css') {
-            if (stristr($eventData, '.serendipity_entrypaging')) {
-                // class exists in CSS, so a user has customized it and we don't need default
-                return true;
-            }
+        if (isset($hooks[$event])) {
+
+            switch ($event) {
+                case 'css':
+                    if (stristr($eventData, '.serendipity_entrypaging') || false !== strpos($eventData, 'serendipity_smarty_entrypaging')) {
+                        // class exists in CSS, so a user has customized it and we don't need default
+                        return true;
+                    }
                     // append css
                     $eventData .= '
 
@@ -158,116 +167,123 @@ class serendipity_event_entrypaging extends serendipity_event
 /* serendipity_event entrypaging end */
 
 ';
-            return true;
-        }
+                    break;
 
-        if ($event == 'entry_display' || $event == 'entries_header') {
-            if (isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
-                // top placement: 'entries_header' available since 0.8; 'entries_display' for fallback and case smarty!
-                if (($placement == 'top' || $placement == 'smarty') &&
-                    (($event == 'entry_display' && !version_compare($serendipity['version'], '0.7.1', '>')) ||
-                    $event == 'entries_header')) {
-                    $disp = '1';
-                }
-                // bottom placement
-                elseif ($placement == 'bottom' && $event == 'entry_display') {
-                    $disp = '2';
-                } else {
-                    if ($placement != 'smarty') return false;
-                }
+                case 'entry_display':
+                case 'entries_header':
+                case 'entries_footer':
+                    if (isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
+                        $placement = $this->get_config('placement', 'top');
+                        if (($placement == 'top' || $placement == 'smarty') && $event == 'entries_header') {
+                            $disp = '1';
+                        }
+                        elseif ($placement == 'bottom') {
+                            $disp = '2';
+                        } else {
+                            if ($placement != 'smarty') return false;
+                        }
 
-                // showPaging function integrated here
-                $id     = $serendipity['GET']['id'];
-                $links  = array();
-                $cond   = array();
+                        // showPaging function integrated here
+                        $id     = $serendipity['GET']['id'];
+                        $links  = array();
+                        $cond   = array();
 
-                $currentTimeSQL = serendipity_db_query("SELECT e.timestamp , ec.categoryid
-                                                          FROM {$serendipity['dbPrefix']}entries AS e
-                                               LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec
-                                                            ON ec.entryid = e.id
-                                                         WHERE e.id = " . (int)$id . "
-                                                      ORDER BY ec.categoryid
-                                                         LIMIT 1", true);
-                if (is_array($currentTimeSQL)) {
-                    $cond['compare'] = "e.timestamp [%1] " . $currentTimeSQL['timestamp'];
-                } else {
-                    $cond['compare'] = "e.id [%1] " . (int) $id;
-                }
+                        $currentTimeSQL = serendipity_db_query("SELECT e.timestamp, ec.categoryid
+                                                                  FROM {$serendipity['dbPrefix']}entries AS e
+                                                       LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec
+                                                                    ON ec.entryid = e.id
+                                                                 WHERE e.id = " . (int)$id . "
+                                                              ORDER BY ec.categoryid
+                                                                 LIMIT 1", true);
+                        if (is_array($currentTimeSQL)) {
+                            $cond['compare'] = "e.timestamp [%1] " . $currentTimeSQL['timestamp'];
+                        } else {
+                            $cond['compare'] = "e.id [%1] " . (int)$id;
+                        }
 
-                $cond['and'] = " AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
-                serendipity_plugin_api::hook_event('frontend_fetchentry', $cond);
-                if (serendipity_db_bool($this->get_config('use_category')) && !empty($currentTimeSQL['categoryid'])) {
-                    $cond['joins'] .= " JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.categoryid = " . (int)$currentTimeSQL['categoryid'] . " AND ec.entryid = e.id)";
-                }
+                        $cond['and'] = " AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
+                        serendipity_plugin_api::hook_event('frontend_fetchentry', $cond);
+                        if (!isset($cond['joins'])) {
+                            $cond['joins'] = '';
+                        }
+                        if (serendipity_db_bool($this->get_config('use_category')) && !empty($currentTimeSQL['categoryid'])) {
+                            $cond['joins'] .= " JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.categoryid = " . (int)$currentTimeSQL['categoryid'] . " AND ec.entryid = e.id)";
+                        }
 
-                $querystring = "SELECT
-                                    e.id, e.title, e.timestamp
-                                  FROM
-                                    {$serendipity['dbPrefix']}entries e
-                                    {$cond['joins']}
-                                 WHERE
-                                    {$cond['compare']}
-                                    {$cond['and']}
-                              ORDER BY e.timestamp [%2]
-                                 LIMIT  1";
+                        $querystring = "SELECT
+                                            e.id, e.title, e.timestamp
+                                          FROM
+                                            {$serendipity['dbPrefix']}entries e
+                                            {$cond['joins']}
+                                         WHERE
+                                            {$cond['compare']}
+                                            {$cond['and']}
+                                      ORDER BY e.timestamp [%2]
+                                         LIMIT  1";
 
-                // We cannot use sprintf() for parametrizing, because "%" strings can occur in checks for "LIKE '%serendipity...%'" SQL parts!
-                $prevID = serendipity_db_query(str_replace(array('[%1]', '[%2]'), array('<', 'DESC'), $querystring));
-                $nextID = serendipity_db_query(str_replace(array('[%1]', '[%2]'), array('>', 'ASC'), $querystring));
+                        // We cannot use sprintf() for parameterizing, because "%" strings can occur in checks for "LIKE '%serendipity...%'" SQL parts!
+                        $prevID = serendipity_db_query(str_replace(array('[%1]', '[%2]'), array('<', 'DESC'), $querystring));
+                        $nextID = serendipity_db_query(str_replace(array('[%1]', '[%2]'), array('>', 'ASC'), $querystring));
 
-                // display random link if selected
-                $randomlink = "";
-                if (serendipity_db_bool($this->get_config('showrandom', 'false'))) {
-                    $cond['compare2'] = " e.id <> " . (int)$id ." AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
+                        // display random link if selected
+                        $randomlink = '';
+                        if (serendipity_db_bool($this->get_config('showrandom', 'false'))) {
+                            $cond['compare2'] = " e.id <> " . (int)$id ." AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
 
-                    if ($serendipity['dbType'] ==  'mysql' || $serendipity['dbType'] == 'mysqli') {
-                        $sql_order = "ORDER BY RAND()";
-                    } else {
-                        // SQLite and PostgreSQL support this, hooray.
-                        $sql_order = "ORDER BY RANDOM()";
+                            if ($serendipity['dbType'] ==  'mysql' || $serendipity['dbType'] == 'mysqli') {
+                                $sql_order = "ORDER BY RAND()";
+                            } else {
+                                // SQLite and PostgreSQL support this, hooray.
+                                $sql_order = "ORDER BY RANDOM()";
+                            }
+
+                            $querystring = "SELECT
+                                                e.id, e.title, e.timestamp
+                                              FROM
+                                                {$serendipity['dbPrefix']}entries e
+                                             WHERE
+                                                {$cond['compare2']}
+                                                $sql_order
+                                             LIMIT  1";
+                            $randID = serendipity_db_query($querystring);
+
+                            if ($link = $this->makeLink($randID, 'random')) {
+                                $randomlink = '<span class="serendipity_entrypaging_random">' . PLUGIN_ENTRYPAGING_RANDOM_TEXT . $link . '<br /></span>';
+                            }
+                        }
+
+                        if ($link = $this->makeLink($prevID, 'prev')) {
+                            $links[] = '<span class="serendipity_entrypaging_left"><span class="epicon">&lt;</span> ' . $link . '</span>';
+                        }
+
+                        if ($link = $this->makeLink($nextID, 'next')) {
+                            $links[] = '<span class="serendipity_entrypaging_right">' . $link . ' <span class="epicon">&gt;</span></span>';
+                        }
+
+                        // choose method of display
+                        if ($placement == 'smarty' && is_object($serendipity['smarty'])) {
+                            $serendipity['smarty']->assign('smarty_entrypaging', true);
+                            $serendipity['smarty']->assign($this->smartylinks);
+                        } elseif ($disp == '1' && $event == 'entries_header') {
+                            echo '<div class="serendipity_entrypaging">' . $randomlink . implode(' <span class="epicon">|</span> ', $links) . '</div>';
+                        } elseif ($disp == '2' && $event == 'entries_footer') {
+                            echo '<div class="serendipity_entrypaging">' . $randomlink . implode(' <span class="epicon">|</span> ', $links) . '</div>';
+                        } else {
+                            return false;
+                        }
                     }
+                    break;
 
-                    $querystring = "SELECT
-                                        e.id, e.title, e.timestamp
-                                      FROM
-                                        {$serendipity['dbPrefix']}entries e
-                                     WHERE
-                                        {$cond['compare2']}
-                                        $sql_order
-                                     LIMIT  1";
-                    $randID = serendipity_db_query($querystring);
-
-                    if ($link = $this->makeLink($randID, 'random')) {
-                        $randomlink = '<span class="serendipity_entrypaging_random">' . PLUGIN_ENTRYPAGING_RANDOM_TEXT . $link . '<br /></span>';
-                    }
-                }
-
-                if ($link = $this->makeLink($prevID, 'prev')) {
-                    $links[] = '<span class="serendipity_entrypaging_left"><span class="epicon">&lt;</span> ' . $link . '</span>';
-                }
-
-                if ($link = $this->makeLink($nextID, 'next')) {
-                    $links[] = '<span class="serendipity_entrypaging_right">' . $link . ' <span class="epicon">&gt;</span></span>';
-                }
-
-                // choose method of display
-                if ($placement == 'smarty' && is_object($serendipity['smarty'])) {
-                    $serendipity['smarty']->assign('smarty_entrypaging', true);
-                    $serendipity['smarty']->assign($this->smartylinks);
-                } elseif ($disp == '1') {
-                    echo '<div class="serendipity_entrypaging">' . $randomlink . implode(' <span class="epicon">|</span> ', $links) . '</div>';
-                } elseif ($disp == '2') {
-                    $eventData[0]['add_footer'] .= '<div class="serendipity_entrypaging">' . $randomlink . implode(' <span class="epicon">|</span> ', $links) . '</div>';
-                } else {
+                default:
                     return false;
-                }
-                return true;
             }
+            return true;
+        } else {
             return false;
         }
-        return false;
     }
 
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>
