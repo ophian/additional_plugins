@@ -81,9 +81,9 @@
     clear: right;
 }
 #content #faqBackendPage .clear,
-#content #backend_faq_formpage .clear {
+#content #backend_faq_formpage .form_field.clear {
     /* 2.0 only fixes - unset styles */
-    margin: 0 auto; /* form_field */
+    margin: .5rem auto auto; /* form_field */
     line-height: 0; /* body */
 }
 #content #backend_faq_formpage .submit_set {
@@ -100,10 +100,11 @@
 }
 #backend_faq_formpage .plain_editor {
     width: 100%;
+    display: -webkit-box;
 }
 #backend_faq_formpage .form_field textarea,
 #backend_faq_formpage .form_field div:not(.action_field) {
-    display: inline-block;
+    display: block;
 }
 .faq_config_desc {
     color: #5E7A94;

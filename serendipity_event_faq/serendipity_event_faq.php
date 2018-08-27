@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian');
-        $propbag->add('version',      '1.32');
+        $propbag->add('version',      '1.33');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -192,7 +192,7 @@ class serendipity_event_faq extends serendipity_event
 
             case 'cid':
                 $propbag->add('type',           'hidden');
-                $propbag->add('value',          (empty($this->faq['cid']) ? $serendipity['GET']['cid'] : $this->faq['cid']));
+                $propbag->add('value',          (empty($this->faq['cid']) ? (!empty($serendipity['GET']['cid']) ? $serendipity['GET']['cid'] : null) : $this->faq['cid']));
                 break;
 
             case 'id':
@@ -661,7 +661,8 @@ class serendipity_event_faq extends serendipity_event
                 if (isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
                     $this->fetchFAQ($serendipity['GET']['id']);
                 }
-                if (!is_numeric($serendipity['GET']['cid'])) {
+                #echo '<pre>'.print_r($serendipity['GET'],1).'</pre>';
+                if (empty($serendipity['GET']['cid']) || !is_numeric($serendipity['GET']['cid'])) {
                     $cid = &$this->faq['cid'];
                 } else {
                     $cid = &$serendipity['GET']['cid'];

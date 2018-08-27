@@ -1,3 +1,10 @@
+1.33:
+-----
+
+ * Style fixes for form toolbars
+ * Fix issue with WYSIWYG Editor to keep the regular display: block for the .form_field (width)
+ * Add some other uninitialized variable checks
+
 1.32:
 -----
 
