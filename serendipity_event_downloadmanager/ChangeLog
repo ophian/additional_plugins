@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+0.41:
+----
+ * Fix a strange styles issue with Chromium for the category title
+
 0.40:
 ----
 

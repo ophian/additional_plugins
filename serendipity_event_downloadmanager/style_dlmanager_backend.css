@@ -320,7 +320,7 @@ input#dlm_file_rename { border: 1px solid #888; background-color: rgb(221, 230, 
     text-overflow: ellipsis;
     width: 41.75em;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: inherit; /* normally hidden; but Chrome breaks in combination with back button */
     overflow: -moz-hidden-unscrollable;
 }
 #backend_downloadmanager .dlm_page_header h4 img {
