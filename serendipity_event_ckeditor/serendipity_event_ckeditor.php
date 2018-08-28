@@ -49,7 +49,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.10.0.0-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.10.0.5-plus.zip';
 
     /**
      * Access property checkUpdateVersion
@@ -57,7 +57,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.10.0.0');
+    protected $checkUpdateVersion = array('ckeditor:4.10.0.5');
 
     /**
      * Access property revisionPackage
@@ -121,7 +121,7 @@ class serendipity_event_ckeditor extends serendipity_event
                     @unlink($this->cke_path . '/UTF-8/documentation_cz.html');
                     @unlink($this->cke_path . '/UTF-8/lang_en.inc.php');
                     @unlink($this->cke_path . '/UTF-8/documentation_cs.html');
-                    // purge accidently added Thumbs.db file with 4.5.8.0/1 throwing errors on unzip
+                    // purge accidentally added Thumbs.db file with 4.5.8.0/1 throwing errors on unzip
                     @unlink($this->cke_path . '/ckeditor/plugins/codesnippet/icons/hidpi/Thumbs.db');
                     @unlink($this->cke_path . '/ckeditor/plugins/procurator/images/Thumbs.db');
                     // purge replaced by basic_toolbar.css, or removed files, since now requires 2.0+ only
@@ -189,7 +189,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.10.0.4'); // is CKEDITOR Series 4.10.0 - and appended plugin revision .4
+        $propbag->add('version',       '4.10.0.5'); // is CKEDITOR Series 4.10.0 - and appended plugin revision .5
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
@@ -422,7 +422,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.10.0.4', '4.10.0.3'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.10.0.5', '4.10.0.4'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -436,7 +436,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.10.0.4', '4.10.0.3'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.10.0.5', '4.10.0.4'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);

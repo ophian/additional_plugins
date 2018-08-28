@@ -1,3 +1,7 @@
+4.10.0.5:
+---------
+    * Fix broken IE 11 Styx gallery fix in the ckeditor.js library file
+
 4.10.0.4:
 ---------
     * Update wysiwyg-style.css fix 4.10.0.3 which was not respected by the cke_widget_wrapper,
