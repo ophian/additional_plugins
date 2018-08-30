@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon Media Button&lt;/b&gt;&lt;br /&gt;Adds a button to allow Amazon.com search which are insertable into your entry&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 22 Aug 2018 17:20:19 +0200</pubDate>
+<pubDate>Thu, 30 Aug 2018 14:04:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -311,7 +311,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Показва лента с картинки - &quot;усмивки&quot;&lt;/b&gt;&lt;br /&gt;Показва лента за избор на картинки, изразяващи емоции (emoticons). Не работи с WYSIWYG редактор.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sun, 19 Aug 2018 13:17:55 +0200</pubDate>
+<pubDate>Thu, 30 Aug 2018 14:03:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -644,7 +644,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linktrimmer&lt;/b&gt;&lt;br /&gt;Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Mon, 20 Aug 2018 16:57:35 +0200</pubDate>
+<pubDate>Thu, 30 Aug 2018 14:04:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
@@ -1058,7 +1058,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Статични страници&lt;/b&gt;&lt;br /&gt;Показва статични страници във вашия блог използвайки общия дизайн на блога. Добавя нова команда към административното меню.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Thu, 23 Aug 2018 15:00:26 +0200</pubDate>
+<pubDate>Thu, 30 Aug 2018 14:03:22 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1211,7 +1211,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Gallery Display&lt;/b&gt;&lt;br /&gt;Allows anonymous users to view Serendipity media gallery&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 21 Aug 2018 15:18:51 +0200</pubDate>
+<pubDate>Thu, 30 Aug 2018 14:57:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>
