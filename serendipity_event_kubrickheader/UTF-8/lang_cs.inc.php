@@ -28,4 +28,3 @@
 @define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE',           'Obrázek');
 @define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE_DESC',     'Buď zadejte obrázek, který chcete použít, nebo zadejte název adresáře (s ukončujícím lomítkem!) a plugin bude střídat všechny obrázky *.jpg/*.jpeg/*.png/*.gif z tohoto adresáře.');
 
-?>

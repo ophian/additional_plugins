@@ -28,4 +28,3 @@
 @define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE',           'Obrázek');
 @define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE_DESC',     'Buï zadejte obrázek, který chcete použít, nebo zadejte název adresáøe (s ukonèujícím lomítkem!) a plugin bude støídat všechny obrázky *.jpg/*.jpeg/*.png/*.gif z tohoto adresáøe.');
 
-?>

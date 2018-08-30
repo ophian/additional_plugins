@@ -1,11 +1,12 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
+@define('PLUGIN_EVENT_KUBRICKHEADER_STYLE', 'Kubrick header style')
 @define('PLUGIN_EVENT_KUBRICKHEADER_STYLE_DESC',      'Which Template are you using ?');
 @define('PLUGIN_EVENT_KUBRICKHEADER_STYLE_DESC_BLAH', 'Choose the Style you are currently using');
 @define('PLUGIN_EVENT_KUBRICKHEADER_KUBRICK',         'Kubrick');
@@ -29,4 +30,3 @@
 @define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE',           'Image');
 @define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE_DESC',     'Either specify an image to use, or put in the name of a directory (with trailing slash!) and the plugin will shuffle a .jpg/.jpeg/.png/.gif image inside that directory.');
 
-?>
