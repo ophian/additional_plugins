@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.53');
+        $propbag->add('version', '5.54');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -2744,7 +2744,7 @@ class serendipity_event_staticpage extends serendipity_event
                             serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}staticpages WHERE id = ".(int)$values['id']);
                         }
                     }
-                    if (count($serendipity['POST']['externalPlugins'])) {
+                    if (is_array($serendipity['POST']['externalPlugins']) && count($serendipity['POST']['externalPlugins'])) {
                         foreach($serendipity['POST']['externalPlugins'] AS $plugin) {
                             $this->staticpage =  array(
                                 'permalink'   => $plugins[$plugin]['link'],

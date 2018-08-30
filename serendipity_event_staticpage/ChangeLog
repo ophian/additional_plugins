@@ -1,6 +1,10 @@
+5.54:
+-----
+ * Minor PHP 7.2 fix for externalPlugins category pageadd, extends 5.53
+
 5.53:
 -----
- * Minor PHP7.2 fix for "implements Countable"
+ * Minor PHP 7.2 fix for "implements Countable"
 
 5.52:
 -----
