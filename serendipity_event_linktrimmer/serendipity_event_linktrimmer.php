@@ -22,7 +22,7 @@ class serendipity_event_linktrimmer extends serendipity_event
             'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '1.7.0');
+        $propbag->add('version',       '1.7.1');
         $propbag->add('author',        'Garvin Hicking, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('prefix', 'frontpage', 'domain'));
@@ -340,7 +340,7 @@ class serendipity_event_linktrimmer extends serendipity_event
                     $uri_part = $parts[0];
                     $parts = array_pop($parts);
 
-                    if (count($parts) > 1) {
+                    if (is_array($parts) && count($parts) > 1) {
                        foreach($parts AS $key => $value) {
                             $val = explode('=', $value);
                             $_REQUEST[$val[0]] = $val[1];
@@ -353,7 +353,7 @@ class serendipity_event_linktrimmer extends serendipity_event
                     if (!isset($_REQUEST['txtarea'])) {
                         if (isset($uri_parts[1])) {
                             $parts = explode('&', $uri_parts[1]);
-                            if (count($parts) > 1) {
+                            if (is_array($parts) && count($parts) > 1) {
                                 foreach($parts AS $key => $value) {
                                      $val = explode('=', $value);
                                      $_REQUEST[$val[0]] = $val[1];
