@@ -22,7 +22,7 @@ class serendipity_event_amazonchooser extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AMAZONCHOOSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthew Groeninger, Ian');
-        $propbag->add('version',       '0.79');
+        $propbag->add('version',       '0.80');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -187,7 +187,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                     $uri_part = $parts[0];
                     $parts = array_pop($parts);
 
-                    if (count($parts) > 1) {
+                    if (is_array($parts) && count($parts) > 1) {
                        foreach($parts AS $key => $value) {
                             $val = explode('=', $value);
                             $_REQUEST[$val[0]] = $val[1];
@@ -200,7 +200,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                     if (!isset($_REQUEST['txtarea'])) {
                         if (isset($uri_parts[1])) {
                             $parts = explode('&', $uri_parts[1]);
-                            if (count($parts) > 1) {
+                            if (is_array($parts) && count($parts) > 1) {
                                 foreach($parts AS $key => $value) {
                                      $val = explode('=', $value);
                                      $_REQUEST[$val[0]] = $val[1];
