@@ -75,7 +75,7 @@ class serendipity_plugin_heavyrotation extends serendipity_plugin
         ));
         $propbag->add('stackable', true);
         $propbag->add('requirements', array('php' => '5.1', 'serendipity' => '1.6'));
-        $propbag->add('groups', array(FRONTEND_EXTERNAL_SERVICES));
+        $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
         $propbag->add('author', 'Lars Strojny');
         $propbag->add('version', SERENDIPITY_PLUGIN_HEAVYROTATION_VERSION);
     }
