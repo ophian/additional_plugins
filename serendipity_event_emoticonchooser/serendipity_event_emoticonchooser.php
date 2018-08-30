@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.23');
+        $propbag->add('version',       '3.24');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -451,8 +451,8 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     $uri_parts = explode('?', str_replace('&amp;', '&', $eventData));
                     $parts     = explode('&', $uri_parts[0]);
                     $uri_part  = $parts[0];
-                    $parts = array_pop($parts);
-                    if (count($parts) > 1) {
+                    $parts     = array_pop($parts);
+                    if (is_array($parts) && count($parts) > 1) {
                         foreach($parts AS $key => $value) {
                             $val = explode('=', $value);
                             $_GET[$val[0]] = $val[1];
@@ -463,7 +463,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     }
                     if (!isset($_GET['txtarea'])) {
                         $parts = isset($uri_parts[1]) ? explode('&', $uri_parts[1]) : $uri_parts[0];
-                        if (count($parts) > 1) {
+                        if (is_array($parts) && count($parts) > 1) {
                             foreach($parts AS $key => $value) {
                                  $val = explode('=', $value);
                                  $_GET[$val[0]] = $val[1];

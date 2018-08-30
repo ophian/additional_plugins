@@ -1,3 +1,7 @@
+3.24:
+-----
+ * Minor PHP7.2 fix for "implements Countable"
+
 3.23:
 -----
  * Fix wrong set $serendipity['lang'] variable
