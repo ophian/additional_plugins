@@ -6,7 +6,7 @@ if (IN_serendipity !== true) {
 
 // Note: @access cased private method phpDOC notations, without(!) a private method keyword, were wished to make public again by Garvin. ;-)
 
-@define ('DEBUG_STATICPAGE', false); // for related category debugging only
+@define('DEBUG_STATICPAGE', false); // for related category debugging only
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
