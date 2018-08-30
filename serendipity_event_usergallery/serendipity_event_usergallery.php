@@ -18,7 +18,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian');
-        $propbag->add('version',       '2.71');
+        $propbag->add('version',       '2.72');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -392,7 +392,7 @@ class serendipity_event_usergallery extends serendipity_event
         if ($serendipity['rewrite'] != 'none') {
             $uri_parts = explode('?', str_replace('&amp;', '&', $serendipity['GET']['subpage']));
             $parts     = isset($uri_parts[1]) ? explode('&', $uri_parts[1]) : null;
-            if (count($parts) > 1) {
+            if (is_array($parts) && count($parts) > 1) {
                 foreach($parts AS $key => $value) {
                     $val = explode('=', $value);
                     $val0 = str_replace('serendipity[','',$val[0]);
