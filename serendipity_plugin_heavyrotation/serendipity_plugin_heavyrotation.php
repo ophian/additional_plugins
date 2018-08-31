@@ -7,9 +7,9 @@
  *
  * @author Lars Strojny <lars@strojny.net>
  */
-@define('SERENDIPITY_PLUGIN_HEAVYROTATION_VERSION', '0.11');
+@define('SERENDIPITY_PLUGIN_HEAVYROTATION_VERSION', '0.12');
 
-if (!defined('IN_serendipity_admin') || IN_serendipity !== true) die("Don't hack");
+if (!defined('IN_serendipity') || IN_serendipity !== true) die("Don't hack");
 
 if (version_compare(phpversion(), '5.1.0', '>=')) {
     @serendipity_plugin_api::load_language(dirname(__FILE__));
