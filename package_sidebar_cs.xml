@@ -2042,9 +2042,9 @@
 <description>Zobrazuje nejnovější fotky z Flickr.com (pozn. překladatele - Stejné věci umí plugin Flickr, který toho navíc umí ještě víc.)</description>
 <maintainers><maintainer><name>Lars Strojny</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.12</version>
+  <version>0.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-07-22</date>
+  <date>2018-08-31</date>
   <filelist>
     <dir name="serendipity_plugin_flickrbadge">
       <file>ChangeLog</file>
@@ -2240,9 +2240,9 @@
 <description>Tento přídavný modul zobrazuje ze serveru last.fm obal alba, které bylo minulý týden &quot;Heavy Rotation&quot; (první v hitparádě)</description>
 <maintainers><maintainer><name>Lars Strojny</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.10</version>
+  <version>0.12</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-07-22</date>
+  <date>2018-08-31</date>
   <filelist>
     <dir name="serendipity_plugin_heavyrotation">
       <file>ChangeLog</file>

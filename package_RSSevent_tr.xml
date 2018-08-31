@@ -598,8 +598,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_kubrickheader</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Sebastian Mayeres, Jude Anthony</author>
-<content:encoded>&lt;b&gt;serendipity_event_kubrickheader&lt;br /&gt;Template Header/Logo Image&lt;/b&gt;&lt;br /&gt;Switch header image or logo for templates&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_kubrickheader&lt;br /&gt;Template Header/Logo Image&lt;/b&gt;&lt;br /&gt;Switch header image or logo for templates&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Thu, 30 Aug 2018 15:02:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_kubrickheader</guid>
 </item>
 <item>
@@ -1049,7 +1049,7 @@
 <category>Event Plugins</category>
 <author>Stefan Willoughby, Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_startcat&lt;br /&gt;Start Page Category&lt;/b&gt;&lt;br /&gt;Allows you to show only one category on the frontpage&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Apr 2018 10:26:54 +0200</pubDate>
+<pubDate>Thu, 30 Aug 2018 15:08:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_startcat</guid>
 </item>
 <item>
@@ -1058,7 +1058,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statik Sayfalar&lt;/b&gt;&lt;br /&gt;Statik sayfalar site içerisinde tasarım ve tüm biçimlemeye dahil olsun. Yönetim arabirimine yeni menü unsuru olarak eklensin.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Thu, 30 Aug 2018 14:03:22 +0200</pubDate>
+<pubDate>Thu, 30 Aug 2018 19:32:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>

@@ -4912,9 +4912,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Switch header image or logo for templates</description>
 <maintainers><maintainer><name>Garvin Hicking, Sebastian Mayeres, Jude Anthony</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.6</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-08-30</date>
   <filelist>
     <dir name="serendipity_event_kubrickheader">
       <file>lang_cs.inc.php</file>
@@ -8967,7 +8967,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>1.12</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2018-08-30</date>
   <filelist>
     <dir name="serendipity_event_startcat">
       <file>ChangeLog</file>
@@ -9006,7 +9006,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>デザインとすべての書式化されたブログとウェブログ内部に静的ページを表示します。管理インターフェースに新しいメニューを追加します。</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>5.53</version>
+  <version>5.54</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <date>2018-08-30</date>
   <filelist>
