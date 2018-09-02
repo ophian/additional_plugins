@@ -1703,9 +1703,9 @@
 <description>Provides full downloadmanager capabilities to your s9y. When uninstalling, all related tables will be dropped!</description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.41</version>
+  <version>0.42</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-08-27</date>
+  <date>2018-09-02</date>
   <filelist>
     <dir name="serendipity_event_downloadmanager">
       <file>AUTHORS</file>
@@ -4671,7 +4671,7 @@
 <release>
   <version>1.16</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2018-08-21</date>
+  <date>2018-09-01</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
@@ -9004,9 +9004,9 @@
 <description>Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>5.54</version>
+  <version>5.55</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2018-08-30</date>
+  <date>2018-09-02</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
