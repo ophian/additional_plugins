@@ -868,7 +868,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                             $h = intval($t[$j]['height']);
                             $w = intval($t[$j]['width']);
                             $h = $h==0 ? 1 : $h; // avoid 'Division by zero' errors for height
-                            $w = $w==0 ? 1 : $w; // dito for width
+                            $w = $w==0 ? 1 : $w; // ditto for width
                             if ($w > $h) {
                                 $t[$j]['thumbheight'] = round($thumb_size*$h/$w);
                                 $t[$j]['thumbwidth']  = round($thumb_size);
