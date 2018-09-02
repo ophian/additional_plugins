@@ -9004,7 +9004,7 @@
 <description>Statik sayfalar site içerisinde tasarım ve tüm biçimlemeye dahil olsun. Yönetim arabirimine yeni menü unsuru olarak eklensin.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>5.55</version>
+  <version>5.60</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <date>2018-09-02</date>
   <filelist>
