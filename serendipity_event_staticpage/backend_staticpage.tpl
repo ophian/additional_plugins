@@ -1,4 +1,4 @@
-{* backend_staticpage template file v. 1.30, 2018-08-23 *}
+{* backend_staticpage template file v. 1.31, 2018-09-02 *}
 
 <!-- backend_staticpage.tpl START -->
 
@@ -39,7 +39,7 @@
         </ol>
     </fieldset>
     <form action="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pageorder" method="post" name="saveOrder">
-        <input type="submit" class="input_button state_submit" name="serendipity[typeSubmit]" value="{$CONST.GO}">
+        <input type="submit" class="input_button state_submit" name="serendipity[typeSubmit]" value="{$CONST.SAVE}">
     </form>
 </div>
     {else}
@@ -119,7 +119,7 @@
         <input class="input_checkbox" type="checkbox" name="serendipity[externalPlugins][]" value="{$plugin@key}"{if isset($sp_pageadd_insplugins[$plugin@key])} checked="checked"{/if}>{$plugin['name']}<br>
     {/foreach}
 
-        <input type="submit" name="serendipity[typeSubmit]" class="input_button state_submit" value="{$CONST.GO}">
+        <input type="submit" name="serendipity[typeSubmit]" class="input_button state_submit" value="{$CONST.SAVE}">
         </div>
     </form>
 
