@@ -1,6 +1,13 @@
 ChangeLog:
 """"""""""
 
+0.42:
+----
+ * Fix some PHP 7.2 thrown notices on "Countable"
+ * Consistency fixes for submit SAVE button naming
+ * Change an order for POST submit checks
+ * Throw message on empty uploads
+
 0.41:
 ----
  * Fix a strange styles issue with Chromium for the category title

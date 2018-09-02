@@ -37,7 +37,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '5.4.0'
         ));
 
-        $propbag->add('version',       '0.41');
+        $propbag->add('version',       '0.42');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1638,6 +1638,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                     }
                     @unlink($_FILES['file']['tmp_name'][$ulnum]);
                 }
+                if ($SUCCESS = 0) $NOTCOPIED[0] = 'Did you really submit any files?';
             }
         }
         $this->UPLOAD_SUCCESS   =& $SUCCESS;
@@ -1678,7 +1679,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         if (!empty($serendipity['POST']['dlmanAction']) && isset($serendipity['POST']['childof']) && $serendipity['POST']['childof'] >= 1) {
             $this->addCat(intval($serendipity['POST']['childof']), $serendipity['POST']['catname']);
         }
-        elseif (!empty($serendipity['POST']['dlmanAction']) && $serendipity['POST']['edited'] >= 1) {
+        elseif (!empty($serendipity['POST']['dlmanAction']) && isset($serendipity['POST']['edited']) && $serendipity['POST']['edited'] >= 1) {
             $this->editFile(intval($serendipity['POST']['fileid']), intval($serendipity['POST']['catid']), intval($serendipity['POST']['moveto']), $serendipity['POST']['realfilename'], $serendipity['POST']['description']);
         }
         elseif (!empty($serendipity['POST']['dlmanAction']) && $serendipity['POST']['uploaded'] >= 1) {
@@ -1776,13 +1777,13 @@ class serendipity_event_downloadmanager extends serendipity_event
 
                         if (isset($this->UPLOAD_TOOBIG) && count($this->UPLOAD_TOOBIG) >= 1 || isset($this->UPLOAD_NOTCOPIED) && count($this->UPLOAD_NOTCOPIED) >= 1) {
                             $ERRMSG = PLUGIN_DOWNLOADMANAGER_ERRORS_OCCOURED."<br />";
-                            if (count($this->UPLOAD_TOOBIG) >= 1) {
+                            if (is_array($this->UPLOAD_TOOBIG) && count($this->UPLOAD_TOOBIG) >= 1) {
                                 $ERRMSG .= "<br />".PLUGIN_DOWNLOADMANAGER_ERRORS_TOOBIG."<br />";
                                 for ($a=0; $a<count($this->UPLOAD_TOOBIG); ++$a) {
                                     $ERRMSG .= $this->UPLOAD_TOOBIG[$a]."<br />";
                                 }
                             }
-                            if (count($this->UPLOAD_NOTCOPIED) >= 1) {
+                            if (is_array($this->UPLOAD_NOTCOPIED) && count($this->UPLOAD_NOTCOPIED) >= 1) {
                                 $ERRMSG .= "<br />".PLUGIN_DOWNLOADMANAGER_ERRORS_NOTCOPIED."<br />";
                                 for ($a=0;$a<count($this->UPLOAD_NOTCOPIED);++$a) {
                                     $ERRMSG .= $this->UPLOAD_NOTCOPIED[$a]."<br />";
@@ -2599,7 +2600,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         /* move multiple files being marked to move to a new directory */
         if ( isset($_POST['Move_Selected']) || isset($_POST['Move_Selected_x']) || isset($_POST['Move_Selected_y']) ) {
 
-            if (is_array($_POST['dlm']['ifiles']) && !empty($_POST['dlm']['ifiles'])) {
+            if (!empty($_POST['dlm']['ifiles']) && is_array($_POST['dlm']['ifiles'])) {
                 foreach ($_POST['dlm']['ifiles'] AS $ifile) {
                     $this->importFile($ifile, $catid);
                 }
