@@ -2,7 +2,8 @@
 .sp_listnav {
     float: right;
     list-style: none;
-    display: block;
+    display: inline-block;
+    width: auto;
     margin-top: 0;
     margin-bottom: 0;
     padding: 2px 0 0 0;
@@ -50,7 +51,7 @@
     margin-left: .75em;
 }
 #splistorder .icon-ok, .spmsg .icon-ok, .spmsg .icon-info, .spmsg .icon-error, .spmsg .icon-attention { font-size: 20px; width: 32px; }
-.spmod .icon-clock { width: 1em; color: #444; }
+.spmod .icon-clock { width: 1em; color: #444; height: 1.25rem; }
 .spmsg .icon-attention, .spmsg .icon-error { color: red; }
 .spmsg .icon-ok { color: green; }
 .icon-info { color: #C09853; }
@@ -203,6 +204,7 @@
 }
 .sp_entries_pane .spmod {
     margin-top: -1.25em;
+    width: auto;
 }
 .sp_entries_pane .spmod,
 .sp_entries_pane .spform {
@@ -508,13 +510,17 @@
 }
 @media only screen and (max-width: 531px) {
     .sp_listnav {
-        margin-top: 1em;
-        margin-bottom: 1em;
+        margin-top: .125rem;
+        margin-bottom: auto;
         padding: 0;
+    }
+    .sp_entries_pane .spmod {
+        margin-top: -2.5em;
     }
     #sp_entries_list h3 {
         margin: 0px 0px 1.16667em;
-    }
+         width: 75%
+   }
 }
 @media only screen and (max-width: 480px) {
     #staticpage_pagetype.configuration_group .form_field input {
@@ -606,10 +612,11 @@ ul.simple-pagination {
 }
 
 .simple-pagination {
-    display: block;
+    display: inline-block;
     overflow: hidden;
     padding: 0 5px 5px 0;
     margin: 0;
+    width: auto;
 }
 
 .simple-pagination ul {

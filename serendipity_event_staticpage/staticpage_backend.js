@@ -1,6 +1,6 @@
 /***
  * Staticpage event backend js
- * Last modified: 2015-06-28
+ * Last modified: 2018-09-02
  **/
 
 /**
@@ -99,6 +99,11 @@ $(function() {
             }
         }
     });
+    if (numItems <= perPage) {
+        $('#sp_entry_pagination.simple-pagination ul li.disabled').hide();
+        $('#sp_entry_pagination.simple-pagination ul li.active .current').html('Page 1');
+        return;
+    }
 });
 
 /**

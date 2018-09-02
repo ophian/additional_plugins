@@ -1,3 +1,11 @@
+5.60:
+-----
+ * Add icon for Password-protected pages in the entries list
+ * Styled entries list icon modified clock in vertical height
+ * Better styled entries pager vs. sp_listnav block floats for smaller screens
+ * Better styled modified block floats for smaller screens
+ * Hide entries pager if not enough pages for show
+
 5.55:
 -----
  * Minor consistency fix for submit SAVE button naming

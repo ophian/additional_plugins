@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.55');
+        $propbag->add('version', '5.60');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -1914,7 +1914,7 @@ class serendipity_event_staticpage extends serendipity_event
                 #$pagevar . 'title_element'      => self::fixUTFEntity(self::html_specialchars($this->get_static('title_element'))),// these three metas are not set, fixed and escaped here,
                 #$pagevar . 'meta_description'   => self::fixUTFEntity(self::html_specialchars($this->get_static('meta_description'))),// since nowhere used as a Smarty var yet
                 #$pagevar . 'meta_keywords'      => self::fixUTFEntity(self::html_specialchars($this->get_static('meta_keywords'))),// and being already assigned and properly escaped in SmartyInspectConfig()
-                $pagevar . 'articleformattitle' => self::fixUTFEntity(self::html_specialchars($this->get_static('articleformattitle'))), // overwrite already assigned and possibly unproperly escaped
+                $pagevar . 'articleformattitle' => self::fixUTFEntity(self::html_specialchars($this->get_static('articleformattitle'))), // overwrite already assigned and possibly non-properly escaped
                 $pagevar . 'headline'           => self::fixUTFEntity(self::html_specialchars($this->get_static('headline'))), // in SmartyInspectConfig()
                 $pagevar . 'doublesc'           => ((LANG_CHARSET === 'ISO-8859-1') ? false : true)
             )
