@@ -1574,8 +1574,8 @@ class serendipity_event_downloadmanager extends serendipity_event
         $countfile = 0;
         if (isset($serendipity['POST']['uploaded']) && intval($serendipity['POST']['uploaded']) >= 1) {
             $catid = intval($serendipity['POST']['catid']);
-            for ($ulnum=0;$ulnum<count($_FILES['file']['tmp_name']);++$ulnum) {
-                if (trim($_FILES['file']['tmp_name'][$ulnum]) != "none" AND $_FILES['file']['size'][$ulnum] >= 5 AND is_uploaded_file($_FILES['file']['tmp_name'][$ulnum])) {
+            for ($ulnum=0; $ulnum<count($_FILES['file']['tmp_name']); ++$ulnum) {
+                if (trim($_FILES['file']['tmp_name'][$ulnum]) != 'none' AND $_FILES['file']['size'][$ulnum] >= 5 AND is_uploaded_file($_FILES['file']['tmp_name'][$ulnum])) {
                     $FILESIZE = $_FILES['file']['size'][$ulnum];
                     if ($FILESIZE > ($MAX_FILE_SIZE)) {
                         $TOOBIG[] = $_FILES['file']['name'][$ulnum];
