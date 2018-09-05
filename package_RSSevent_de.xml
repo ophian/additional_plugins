@@ -806,7 +806,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
 <content:encoded>&lt;b&gt;serendipity_event_oembed&lt;br /&gt;oEmbed Plugin&lt;/b&gt;&lt;br /&gt;oEmbed ist ein Format für die eingebettete Darstellung einer URL in Ihrem Blog. Es erlaubt Blog-Artikeln, eingebettete Inhalte (wie Tweets, Fotos oder Videos) anzuzeigen, wenn ein Benutzer einen Link zu dieser Ressource veröffentlicht, ohne die Ressource direkt analysieren zu müssen.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sat, 11 Aug 2018 15:17:38 +0200</pubDate>
+<pubDate>Wed, 05 Sep 2018 09:59:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_oembed</guid>
 </item>
 <item>
