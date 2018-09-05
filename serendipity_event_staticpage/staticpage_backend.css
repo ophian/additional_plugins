@@ -340,7 +340,7 @@
     border-style: solid solid none;
     border-color: #CCC;
 }
-/* defaultform */
+/* default form */
 #backend_sp_simple {
     font-size: .875em;
 }
@@ -519,8 +519,8 @@
     }
     #sp_entries_list h3 {
         margin: 0px 0px 1.16667em;
-         width: 75%
-   }
+        width: 75%
+    }
 }
 @media only screen and (max-width: 480px) {
     #staticpage_pagetype.configuration_group .form_field input {

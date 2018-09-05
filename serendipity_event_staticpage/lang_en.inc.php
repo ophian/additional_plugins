@@ -100,16 +100,16 @@
 
 @define('STATICPAGE_STATUS', 'Status');
 
-@define('STATICPAGES_CUSTOMEXAMPLE_OPTION_SHOW', 'Show CUSTOM optiones');
+@define('STATICPAGES_CUSTOMEXAMPLE_OPTION_SHOW', 'Show CUSTOM options');
 @define('STATICPAGES_CUSTOM_OPTION_SHOW', 'Show CONFIGURATION options');
 @define('STATICPAGES_CUSTOM_STRUCTURE_SHOW', 'Show STRUCTURAL options');
 @define('STATICPAGES_CUSTOM_META_SHOW', 'Show META FIELD options');
 @define('STATICPAGES_CUSTOM_META_TITLE', 'HTML title element (optional)');
 @define('STATICPAGES_CUSTOM_META_TITLE_BLAH_BLAH', 'Will be emitted as <title>Your title here</title>');
 @define('STATICPAGES_CUSTOM_META_DESC', 'HTML META Description (optional)');
-@define('STATICPAGES_CUSTOM_META_DESC_BLAH_BLAH', 'Will be emitted as <meta name="description" content="Your html meta description here">');
+@define('STATICPAGES_CUSTOM_META_DESC_BLAH_BLAH', 'Will be emitted as <meta name="description" content="Your HTML meta description here">');
 @define('STATICPAGES_CUSTOM_META_KEYS', 'HTML META Keywords (optional)');
-@define('STATICPAGES_CUSTOM_META_KEYS_BLAH_BLAH', 'Will be emitted as <meta name="keywords" content="Your html meta keywords here">');
+@define('STATICPAGES_CUSTOM_META_KEYS_BLAH_BLAH', 'Will be emitted as <meta name="keywords" content="Your HTML meta keywords here">');
 
 //
 // serendipity_plugin_staticpage.php
@@ -156,7 +156,7 @@
 @define('STATICPAGE_SECTION_STRUCT', 'Structural');
 
 @define('PLUGIN_STATICPAGELIST_SMARTIFY', 'Smartify Sidebar list');
-@define('PLUGIN_STATICPAGELIST_SMARTIFY_BLAHBLAH', 'Use smarty template file: "plugin_staticpage_sidebar.tpl" for sidebar output (allows to truncate length via smarty).');
+@define('PLUGIN_STATICPAGELIST_SMARTIFY_BLAHBLAH', 'Use Smarty template file: "plugin_staticpage_sidebar.tpl" for sidebar output (allows to truncate length via Smarty).');
 
 @define('PLUGIN_STATICPAGE_PREVIEW', 'The preview of your static page has been opened in a new browser tab. Else click this: %s.'); // appears as "Else click this: link"
 
