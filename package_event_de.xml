@@ -2253,9 +2253,9 @@
 <description>Zeigt eine Auswahlleiste bei der Erstellung eines Eintrags um Smileys einzufügen.</description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.24</version>
+  <version>3.25</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2018-08-30</date>
+  <date>2018-09-06</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
