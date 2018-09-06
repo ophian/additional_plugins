@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.24');
+        $propbag->add('version',       '3.25');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -115,7 +115,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
 <!--[if gt IE 8]><!--> <html class="no-js" lang="<?=$serendipity['lang']?>"> <!--<![endif]-->
 <head>
     <meta charset="<?=LANG_CHARSET?>">
-    <title><?=PLUGIN_LINKTRIMMER_NAME?></title>
+    <title>Serendipity <?=PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT?></title>
     <link rel="stylesheet" href="<?=$serendipity['baseURL']?>serendipity.css.php?serendipity[css_mode]=serendipity_admin.css">
     <script>
         function emoticonchooser(instance_name, this_instance, cke_txtarea) {

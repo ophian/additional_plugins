@@ -1,3 +1,7 @@
+3.25:
+-----
+ * Fix a wrong used title throwing undefined constant warnings
+
 3.24:
 -----
  * Minor PHP7.2 fix for "implements Countable"
