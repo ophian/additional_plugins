@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian');
-        $propbag->add('version',       '1.5.5');
+        $propbag->add('version',       '1.5.6');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -105,7 +105,7 @@ class serendipity_event_autoupdate extends serendipity_event
                 echo str_repeat(' ',1024*64); // need to keep here since this also flushes the progress bar on fastCGI
 
                 // Send output to browser immediately
-                ob_flush();
+                @ob_flush();
                 flush();
 
                 // Sleep one second so we can see the delay
@@ -126,7 +126,7 @@ class serendipity_event_autoupdate extends serendipity_event
         for ($i=0; $i<$levels; $i++) {
             ob_end_flush();
         }
-        ob_flush();
+        @ob_flush();
         flush();
     }
 
@@ -183,7 +183,7 @@ class serendipity_event_autoupdate extends serendipity_event
                     $ad_suite  = SERENDIPITY_ADMIN_SUITE;
                     $ad_title  = PLUGIN_AUTOUPD_MSG_TITLE;
                     $ad_help   = strip_tags(PLUGIN_AUTOUPD_MSG_RELOAD);
-                    $ad_loader = !$nozipext ? '<div id="loader"><span></span><span></span><span></span></div>' : '';
+                    $ad_loader = empty($nozipext) ? '<div id="loader"><span></span><span></span><span></span></div>' : '';
                     $css_upd   = @file_get_contents(dirname(__FILE__) . '/upgrade.min.css');
                     $bimgpath  = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . 's9y_banner_small.png';
                     $s9ybanner = (file_exists($_SERVER['DOCUMENT_ROOT'] . $bimgpath) ? '<img src="' . $bimgpath . '" alt="Serendipity Styx PHP Weblog" title="' . POWERED_BY . ' Serendipity Styx"> ' : ' ');
@@ -269,7 +269,7 @@ class serendipity_event_autoupdate extends serendipity_event
             <article>
 EOS;
 
-                    if ($nozipext) {
+                    if (isset($nozipext) && $nozipext) {
                         $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>' . PLUGIN_AUTOUPD_MSG_ZIPEXTFAIL . '</p>');
                         $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_RETURN, $nv) . '</p>');
                         $this->close_page(true);
