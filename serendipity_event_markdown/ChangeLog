@@ -1,3 +1,11 @@
+1.29:
+=====
+
+ *  Partially sync (Changes by Thomas Hochstein <thh@inter.net>)
+    Undo replacing of ">" (by "&gt;"), done by serendipity_event_unstrip_tags,
+    at the beginning of the line in comments to make blockquotes possible.
+ *  Depends on serendipity_event_unstrip_tags plugin >= v.1.04
+
 1.28:
 -----
  * Silence possible eventData property check
