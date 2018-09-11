@@ -5900,9 +5900,9 @@
 <description>Převádí značky Markdown na HTML v textu příspěvku</description>
 <maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.28</version>
+  <version>1.29</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-17</date>
+  <date>2018-09-11</date>
   <filelist>
     <dir name="serendipity_event_markdown">
       <file>ChangeLog</file>
@@ -10764,9 +10764,9 @@
 <description>Umožňuje vkládat HTML tagy do komentářů k příspěvkům (místo jejich odstranění, bez tohoto modulu jsou převáděny na HTML entity). Musí být první ze všech značkovacích (markup) pluginů v seznamu pluginů událostí!</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.03.1</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.04</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2018-09-11</date>
   <filelist>
     <dir name="serendipity_event_unstrip_tags">
       <file>lang_cs.inc.php</file>
@@ -11617,9 +11617,9 @@
 <description>Přidává tlačítka do editačního formuláře pro lehčí vkládání HTML/JS akriptů jako např. Youtube apod.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
+  <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2018-09-11</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
