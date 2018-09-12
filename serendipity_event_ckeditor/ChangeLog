@@ -1,3 +1,8 @@
+4.10.1.0:
+---------
+    * Upgrade to CKEDITOR 4.10. Series, update 1 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns are updated too.
+
 4.10.0.5:
 ---------
     * Fix broken IE 11 Styx gallery fix in the ckeditor.js library file
