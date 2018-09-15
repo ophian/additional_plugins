@@ -1,3 +1,7 @@
+5.61:
+-----
+ * Fix a special case of wrong set $view variable for the staticPreview
+
 5.60:
 -----
  * Add icon for Password-protected pages in the entries list
