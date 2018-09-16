@@ -1,3 +1,7 @@
+5.62:
+-----
+ * Fix a minor style change for small screens
+
 5.61:
 -----
  * Fix a special case of wrong set $view variable for the staticPreview
