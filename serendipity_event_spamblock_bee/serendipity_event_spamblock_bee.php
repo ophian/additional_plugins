@@ -348,7 +348,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
 
                 case 'frontend_saveComment':
                     // Check only, if no one else denied it before
-                    if (!is_array ( $eventData ) || serendipity_db_bool ( $eventData ['allow_comments'] )) {
+                    if (!is_array($eventData) || serendipity_db_bool($eventData['allow_comments'])) {
                         return $this->checkComment($eventData, $addData);
                     }
                     break;
@@ -362,9 +362,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
                     // If contact form is installed, display on any page not being the article list
                     // else display in single article only.
                     $contactFormInstalled = class_exists('serendipity_event_contactform');
-                    if (($contactFormInstalled && empty($eventData['GET']['page']))
-                        || (!$contactFormInstalled && !empty($eventData['GET']['id'])))
-                    {
+                    if (($eventData['GET']['id'] && $serendipity['view'] == 'entry') || ($contactFormInstalled && $serendipity['view'] == 'plugin')) {
                         $this->printJsExtras();
                     }
                     break;
