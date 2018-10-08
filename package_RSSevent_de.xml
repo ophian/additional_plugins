@@ -1233,6 +1233,15 @@
 <guid isPermaLink="false">serendipity_event_versioning</guid>
 </item>
 <item>
+<title>VG Wort (inoffiziell): Integriert VG Wort Zählmarken.</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_vgwort</link>
+<category>Event Plugins</category>
+<author>Malte Paskuda</author>
+<content:encoded>&lt;b&gt;serendipity_event_vgwort&lt;br /&gt;VG Wort (inoffiziell)&lt;/b&gt;&lt;br /&gt;Integriert VG Wort Zählmarken.&lt;br/&gt;For: Serendipity 2.1</content:encoded>
+<pubDate>Mon, 08 Oct 2018 09:33:05 +0200</pubDate>
+<guid isPermaLink="false">serendipity_event_vgwort</guid>
+</item>
+<item>
 <title>Einträge ankündigen: Benachrichtigt diverse Internetseiten, dass ein neuer Eintrag erstellt wurde.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_weblogping</link>
 <category>Event Plugins</category>

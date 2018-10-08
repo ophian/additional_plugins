@@ -1233,6 +1233,15 @@
 <guid isPermaLink="false">serendipity_event_versioning</guid>
 </item>
 <item>
+<title>VG Wort (unofficial): Integrate VG Wort counters into your blog.</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_vgwort</link>
+<category>Event Plugins</category>
+<author>Malte Paskuda</author>
+<content:encoded>&lt;b&gt;serendipity_event_vgwort&lt;br /&gt;VG Wort (unofficial)&lt;/b&gt;&lt;br /&gt;Integrate VG Wort counters into your blog.&lt;br/&gt;For: Serendipity 2.1</content:encoded>
+<pubDate>Mon, 08 Oct 2018 09:33:05 +0200</pubDate>
+<guid isPermaLink="false">serendipity_event_vgwort</guid>
+</item>
+<item>
 <title>글 발표: 온라인 서비스에 새로운 글이 올라왔음을 알림</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_weblogping</link>
 <category>Event Plugins</category>
