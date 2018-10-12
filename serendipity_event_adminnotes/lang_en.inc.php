@@ -13,3 +13,5 @@
 @define('PLUGIN_ADMINNOTES_CUTOFF', 'Shorten notes after X bytes?');
 @define('PLUGIN_ADMINNOTES_CUTOFF_DESC', 'Notes that contain more characters than configured will be cut off and can be expanded by clicking on a link.');
 
+@define('PLUGIN_ADMINNOTES_EXPIRE_IN_DAYS', 'Set expiration days for show. 0 is unlimited.');
+

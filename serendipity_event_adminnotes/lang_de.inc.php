@@ -13,3 +13,5 @@
 @define('PLUGIN_ADMINNOTES_CUTOFF', 'Nachrichten nach X Bytes kürzen?');
 @define('PLUGIN_ADMINNOTES_CUTOFF_DESC', 'Nachrichten, die größer als die Anzahl der konfigurierten Bytes sind werden abgeschnitten und durch einen Link erweiterbar gemacht.');
 
+@define('PLUGIN_ADMINNOTES_EXPIRE_IN_DAYS', 'Bestimme Ablauf der Dashboard Notiz nach Tagen. 0 ist immer an.');
+

@@ -22,10 +22,10 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '4.1.0'
         ));
 
-        $propbag->add('version',       '0.25');
+        $propbag->add('version',       '0.26');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian');
         $propbag->add('stackable',     false);
-        $propbag->add('configuration', array('feedback', 'limit', 'html', 'markup', 'cutoff'));
+        $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
         $propbag->add('event_hooks',   array(
             'backend_frontpage_display'                         => true,
             'backend_sidebar_entries'                           => true,
@@ -70,6 +70,13 @@ class serendipity_event_adminnotes extends serendipity_event
                 $propbag->add('name',        LIMIT_TO_NUMBER);
                 $propbag->add('description', '');
                 $propbag->add('default',     '15');
+                break;
+
+            case 'expire':
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_ADMINNOTES_EXPIRE_IN_DAYS);
+                $propbag->add('description', '');
+                $propbag->add('default',     '0');
                 break;
 
             case 'cutoff':
@@ -127,6 +134,10 @@ class serendipity_event_adminnotes extends serendipity_event
 
         $this->setupDB();
 
+        $expire = (int)$this->get_config('expire', 0);
+        $and    = is_int($limited) ? " AND" : "WHERE";
+        $where  = ($expire > 0) ? "$and a.notetime > (UNIX_TIMESTAMP(DATE_SUB(NOW(), INTERVAL $expire DAY)))" : '';
+
         $sql = "SELECT a.noteid, a.authorid, a.notetime, a.subject, a.body, a.notetype,
                        ar.realname
                   FROM {$serendipity['dbPrefix']}adminnotes
@@ -147,13 +158,14 @@ class serendipity_event_adminnotes extends serendipity_event
                   JOIN {$serendipity['dbPrefix']}authors
                     AS ar
                     ON ar.authorid = a.authorid
-                " . (is_int($limited) ? 'WHERE a.noteid = ' . (int)$limited : '') . "
+                " . (is_int($limited) ? 'WHERE a.noteid = ' . (int)$limited : '') . $where . "
               GROUP BY a.noteid
               ORDER BY a.notetime DESC";
 
         if ($limited) {
             $sql .= ' ' . serendipity_db_limit_sql($this->get_config('limit'));
         }
+        echo $sql;
         return serendipity_db_query($sql, (is_int($limited) ? true : false), 'assoc');
     }
 
