@@ -165,7 +165,6 @@ class serendipity_event_adminnotes extends serendipity_event
         if ($limited) {
             $sql .= ' ' . serendipity_db_limit_sql($this->get_config('limit'));
         }
-        echo $sql;
         return serendipity_db_query($sql, (is_int($limited) ? true : false), 'assoc');
     }
 
