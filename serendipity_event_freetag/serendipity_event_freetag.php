@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.17');
+        $propbag->add('version',       '4.18');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2841,7 +2841,7 @@ addLoadEvent(enableAutocomplete);
         }
 
         if (empty($tags) && serendipity_db_bool($this->get_config('keyword2tag', 'false'))) {
-            $searchtext = strip_tags($eventData['body'] . $eventData['extended']);
+            $searchtext = strip_tags($eventData['body'] . @$eventData['extended']);
             // fetch oldtags AS ARRAY for each entry, valid to be checked for keywords
             $oldtags = self::makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id']))); // as ARRAY
 
@@ -2854,17 +2854,18 @@ addLoadEvent(enableAutocomplete);
                     continue;
                 }
 
-                $keywordtag = array_pop(array_keys($ktags)); // get type key as string
+                $keywordtag = is_array($ktags) ? array_pop(array_keys($ktags)) : ''; // get type key as string
                 if (is_array($oldtags) && in_array($keywordtag, $oldtags)) {
                     continue; // if automated keyword-tag already is in oldtags, do next
                 }
 
                 // only match check those, which have no keyword-tag yet
-                if (!is_array($key2tagIDs)) {
+                if (!isset($key2tagIDs) || !is_array($key2tagIDs)) {
                     $key2tagIDs = array();
                 }
                 $regex = sprintf("/((\s+|[\(\[-]+)%s([-\/,\.\?!'\";\)\]]*+|[\/-]+))/i", $keyword);
 
+                $kaddmsg = '';
                 if (preg_match($regex, $searchtext) > 0) {
                     foreach($ktags AS $tag => $is_assigned) {
                         if (!is_array($tags) || (!in_array($tag, $tags) && !in_array($tag, $tags))) {
@@ -2873,12 +2874,13 @@ addLoadEvent(enableAutocomplete);
                                 $tags = array(); // avoid having "[] operator not supported for strings" errors
                             }
                             $tags[] = $tag;
-                            printf("\n - ".PLUGIN_EVENT_FREETAG_KEYWORDS_ADD."\n<br>", self::specialchars_mapper($keyword), self::specialchars_mapper($tag));
+                            $kaddmsg .= sprintf('    <li>' . PLUGIN_EVENT_FREETAG_KEYWORDS_ADD . "</li>\n", self::specialchars_mapper($keyword), self::specialchars_mapper($tag));
                             if (!empty($tags)) {
                                 $key2tagIDs[] = $eventData['id']; // gather ids to updertEntries
                             }
                         }
                     }
+                    echo '<span class="msg_success"><span class="icon-ok-circled"></span><ul class="plainText">' . "\n    <li>FreeTag:</li>\n $kaddmsg </ul></span>";
                 } else {
                     // get the other entries tags
                     if (is_array($key2tagIDs) && !in_array($eventData['id'], $key2tagIDs)) {
