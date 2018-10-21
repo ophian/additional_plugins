@@ -455,7 +455,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Freie Artikel-Tags&lt;/b&gt;&lt;br /&gt;Erlaubt das freie Tagging von Artikeln&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Wed, 22 Aug 2018 12:35:41 +0200</pubDate>
+<pubDate>Sun, 21 Oct 2018 19:29:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -572,7 +572,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Erweiterte Optionen für Bildauswahl&lt;/b&gt;&lt;br /&gt;Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediendatenbank.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 21 Oct 2018 18:14:34 +0200</pubDate>
+<pubDate>Sun, 21 Oct 2018 18:52:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -1166,7 +1166,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Trackbacks kontrollieren&lt;/b&gt;&lt;br /&gt;Ermöglicht beim Anlegen eines Eintrages zu weiteren URLs Trackbacks zu schicken oder Trackbacks zu deaktivieren&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 01 Jul 2018 13:16:27 +0200</pubDate>
+<pubDate>Sun, 21 Oct 2018 19:25:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>
