@@ -1,3 +1,7 @@
+1.25:
+-----
+   * Fixed some uninitialized variable checks
+
 1.24:
 -----
    * Fixed wrong used variable usage when option delayed_trackbacks was used

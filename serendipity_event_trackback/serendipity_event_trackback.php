@@ -19,7 +19,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian');
-        $propbag->add('version',       '1.24');
+        $propbag->add('version',       '1.25');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -123,10 +123,10 @@ class serendipity_event_trackback extends serendipity_event
                 case 'backend_trackbacks':
                     if (!isset($serendipity['POST']['enable_trackback']) && serendipity_db_bool($this->get_config('disable_trackall', 'false'))) {
                         $serendipity['noautodiscovery'] = true;
-                    } elseif ($serendipity['POST']['enable_trackback'] == 'off') {
+                    } elseif (isset($serendipity['POST']['enable_trackback']) && $serendipity['POST']['enable_trackback'] == 'off') {
                         $serendipity['noautodiscovery'] = true;
                     } else {
-                        if ($serendipity['POST']['enable_trackback'] == 'selective') {
+                        if (isset($serendipity['POST']['enable_trackback']) && $serendipity['POST']['enable_trackback'] == 'selective') {
                             // Clear TB URLs from the entry, start afresh from the textarea input.
                             $eventData = array();
                         }
