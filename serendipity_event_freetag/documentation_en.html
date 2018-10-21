@@ -255,7 +255,7 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
 +
 + {/if}{* NOT taglist end *}
 +
-{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND NOT empty($footer_prev_page) OR NOT empty($footer_next_page)}
+{if NOT $is_single_entry AND NOT $is_preview AND NOT $plugin_clean_page AND (NOT empty($footer_prev_page) OR NOT empty($footer_next_page))}
 +{if NOT empty($taglist)}
 +    {if $footer_prev_page}{assign var=&quot;footer_prev_page&quot; value=$footer_prev_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
 +    {if $footer_next_page}{assign var=&quot;footer_next_page&quot; value=$footer_next_page|replace:'/plugin/':'/plugin/taglist/'}{/if}
