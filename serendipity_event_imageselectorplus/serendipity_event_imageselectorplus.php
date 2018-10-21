@@ -537,13 +537,13 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     break;
 
                 case 'backend_entry_presave':
-                    if (is_numeric($eventData['id'])) {
+                    if (isset($eventData['id']) && is_numeric($eventData['id'])) {
                         $eventData['body']     = str_replace('{{s9yisp_entryid}}', $eventData['id'], $eventData['body']);
                         $eventData['extended'] = str_replace('{{s9yisp_entryid}}', $eventData['id'], $eventData['extended']);
                         $this->gotMilk = true;
                     } else {
-                        $this->cache['body']     = $eventData['body'];
-                        $this->cache['extended'] = $eventData['extended'];
+                        if (isset($eventData['body']))     $this->cache['body']     = $eventData['body'];
+                        if (isset($eventData['extended'])) $this->cache['extended'] = $eventData['extended'];
                     }
                     break;
 
