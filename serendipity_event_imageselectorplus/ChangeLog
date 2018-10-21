@@ -1,3 +1,9 @@
+1.17:
+-----
+ * Add option to allow the quickblog form
+   Default is false. If already using in the past, please enable.
+ * Better mark and style the imageselectorplus added options in upload form
+
 1.16:
 -----
  * Fix target offsets

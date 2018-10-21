@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian');
-        $propbag->add('version',       '1.16');
+        $propbag->add('version',       '1.17');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -63,7 +63,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
             )
         );
 
-        $conf_array = array('thumb_max_width', 'thumb_max_height','unzipping', 'autoresize', 'force_jhead');
+        $conf_array = array('unzipping', 'quickblog',  'thumb_max_width', 'thumb_max_height', 'autoresize', 'force_jhead');
 
         foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
@@ -76,10 +76,19 @@ class serendipity_event_imageselectorplus extends serendipity_event
         global $serendipity;
 
         switch ($name) {
-            case 'force_jhead':
+            case 'unzipping':
+                if (class_exists('ZipArchive')) {
+                    $propbag->add('type', 'boolean');
+                    $propbag->add('name', PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES);
+                    $propbag->add('description', PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_BLABLAH);
+                    $propbag->add('default', 'true');
+                }
+                break;
+
+            case 'quickblog':
                 $propbag->add('type', 'boolean');
-                $propbag->add('name', PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD);
-                $propbag->add('description', PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD_DESC);
+                $propbag->add('name', PLUGIN_EVENT_IMAGESELECTORPLUS_ALLOW_QUICKBLOG);
+                $propbag->add('description', PLUGIN_EVENT_IMAGESELECTORPLUS_ALLOW_QUICKBLOG_DESC);
                 $propbag->add('default', 'false');
                 break;
 
@@ -97,19 +106,17 @@ class serendipity_event_imageselectorplus extends serendipity_event
                 $propbag->add('default', '0');
                 break;
 
-            case 'unzipping':
-                if (class_exists('ZipArchive')) {
-                    $propbag->add('type', 'boolean');
-                    $propbag->add('name', PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES);
-                    $propbag->add('description', PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_BLABLAH);
-                    $propbag->add('default', 'true');
-                }
-                break;
-
             case 'autoresize':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE);
                 $propbag->add('description', PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC);
+                $propbag->add('default', 'false');
+                break;
+
+            case 'force_jhead':
+                $propbag->add('type', 'boolean');
+                $propbag->add('name', PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD);
+                $propbag->add('description', PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD_DESC);
                 $propbag->add('default', 'false');
                 break;
 
@@ -125,13 +132,13 @@ class serendipity_event_imageselectorplus extends serendipity_event
         return true;
     }
 
-    // to recash all entries after installing the plugin
+    // to re-cache all entries after installing the plugin
     function install()
     {
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    // to recash all entries after uninstalling the plugin
+    // to re-cache all entries after uninstalling the plugin
     function uninstall(&$propbag)
     {
         serendipity_plugin_api::hook_event('backend_cache_purge', $this->title);
@@ -231,16 +238,17 @@ class serendipity_event_imageselectorplus extends serendipity_event
 ?>
 
         <div id="imageselectorplus" class="checkpoint">
+            <h3>ImageSelectorPlus Plugin</h3>
 
 <?php
                     if (class_exists('ZipArchive')) {
                         $checkedY = "";
                         $checkedN = "";
-                        $this->get_config('unzipping') ? $checkedY = ' checked="checked"' : $checkedN = ' checked="checked"';
+                        serendipity_db_bool($this->get_config('unzipping', 'true')) ? $checkedY = ' checked="checked"' : $checkedN = ' checked="checked"';
 ?>
-            <fieldset class="clearfix radio_field">
+            <fieldset id="isp_archives" class="clearfix isp_archives radio_field">
                 <span class="wrap_legend">
-                    <legend><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES;?></legend>
+                    <legend class="visuallyhidden"><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES;?></legend>
                     <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_DESC;?>
                 </span>
                 <div>
@@ -250,6 +258,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
             </fieldset>
 <?php
                     }
+                    if (serendipity_db_bool($this->get_config('quickblog', 'false'))) {
 ?>
             <fieldset id="quickblog_tablefield" class="clearfix">
                 <span class="wrap_legend">
@@ -261,92 +270,94 @@ class serendipity_event_imageselectorplus extends serendipity_event
                 <div id="quickblog_tab_info" class="clearfix field_info additional_info">
                     <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG_DESC; ?></em>
                 </div>
-                <div class="quickblog_form_field">
-                    <label for="quickblog_titel"><?php echo TITLE; ?></label>
-                    <input id="quickblog_title" class="input_textbox" name="serendipity[quickblog][title]" type="text">
-                </div>
+                <div id="quickblog_content" class="quickblog_content">
+                    <div class="quickblog_form_field">
+                        <label for="quickblog_titel"><?php echo TITLE; ?></label>
+                        <input id="quickblog_title" class="input_textbox" name="serendipity[quickblog][title]" type="text">
+                    </div>
 
-                <div class="quickblog_textarea_field">
-                    <label for="quickblog_body_area"><?php echo ENTRY_BODY; ?></label>
-                    <textarea id="quickblog_body_area" class="quickblog_nugget" data-tarea="quickblog_body_area" name="serendipity[quickblog][body]" rows="10" cols="80"></textarea>
+                    <div class="quickblog_textarea_field">
+                        <label for="quickblog_body_area"><?php echo ENTRY_BODY; ?></label>
+                        <textarea id="quickblog_body_area" class="quickblog_nugget" data-tarea="quickblog_body_area" name="serendipity[quickblog][body]" rows="10" cols="80"></textarea>
 <?php
-                if ($serendipity['wysiwyg']) {
-                    $plugins = serendipity_plugin_api::enum_plugins('*', false, 'serendipity_event_nl2br');
+    if ($serendipity['wysiwyg']) {
+        $plugins = serendipity_plugin_api::enum_plugins('*', false, 'serendipity_event_nl2br');
 ?>
-                    <input name="serendipity[properties][disable_markups][]" type="hidden" value="<?php echo $plugins[0]['name']; ?>">
+                        <input name="serendipity[properties][disable_markups][]" type="hidden" value="<?php echo $plugins[0]['name']; ?>">
 <?php
-                    // Styx changed path
-                    if (version_compare($serendipity['version'], '2.1.0', '>')) {
+        // Styx changed path
+        if (version_compare($serendipity['version'], '2.1.0', '>')) {
 ?>
-                    <script src="<?php echo $serendipity['serendipityHTTPPath']; ?>htmlarea/ckeditor/ckeditor.js"></script>
+                        <script src="<?php echo $serendipity['serendipityHTTPPath']; ?>htmlarea/ckeditor/ckeditor.js"></script>
 <?php
-                    } else {
+        } else {
 ?>
-                    <script src="<?php echo $serendipity['serendipityHTTPPath']; ?>htmlarea/ckeditor/ckeditor/ckeditor.js"></script>
+                        <script src="<?php echo $serendipity['serendipityHTTPPath']; ?>htmlarea/ckeditor/ckeditor/ckeditor.js"></script>
 <?php
-                    } // now just add a simple basic toolbar, since we cannot use embedded plugins here
+        } // now just add a simple basic toolbar, since we cannot use embedded plugins here
 ?>
-                    <script>
-                        CKEDITOR.replace( 'quickblog_body_area',
-                        {
-                            toolbar : [['Format'],['Bold','Italic','Underline','Strike','Superscript','TextColor','-','NumberedList','BulletedList','Outdent','Blockquote'],['JustifyBlock','JustifyCenter','JustifyRight'],['Link','Unlink'],['SpecialChar'],['Maximize'],['Source']],
-                            toolbarGroups: null,
-                            extraAllowedContent: 'div(*);p(*);ul(*);'
-                        });
-                    </script>
+                        <script>
+                            CKEDITOR.replace( 'quickblog_body_area',
+                            {
+                                toolbar : [['Format'],['Bold','Italic','Underline','Strike','Superscript','TextColor','-','NumberedList','BulletedList','Outdent','Blockquote'],['JustifyBlock','JustifyCenter','JustifyRight'],['Link','Unlink'],['SpecialChar'],['Maximize'],['Source']],
+                                toolbarGroups: null,
+                                extraAllowedContent: 'div(*);p(*);ul(*);'
+                            });
+                        </script>
 <?php
-                }
+    }
 ?>
-                </div>
+                    </div>
 
-                <div class="quickblog_form_field">
-                    <label for="quickblog_select"><?php echo CATEGORY; ?></label>
-                    <select id="quickblog_select" name="serendipity[quickblog][category]">
-                        <option value=""><?php echo NO_CATEGORY; ?></option>
-                    <?php
+                    <div class="quickblog_form_field">
+                        <label for="quickblog_select"><?php echo CATEGORY; ?></label>
+                        <select id="quickblog_select" name="serendipity[quickblog][category]">
+                            <option value=""><?php echo NO_CATEGORY; ?></option>
+<?php
                     if (is_array($cats = serendipity_fetchCategories())) {
                         $cats = serendipity_walkRecursive($cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
                         foreach ($cats AS $cat) {
-                            echo '<option value="'. $cat['categoryid'] .'">'. str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
+                            echo '    <option value="'. $cat['categoryid'] .'">'. str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
                         }
                     }
-                    ?>
-                    </select>
-                </div>
-
-                <div class="quickblog_form_select">
-                    <label for="select_image_target"><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET; ?></label>
-                    <select id="select_image_target" name="serendipity[quickblog][target]">
-                        <option value="none"<?php echo serendipity_ifRemember('target', 'none', false, 'selected'); ?>><?php echo NONE; ?></option>
-                        <option value="js"<?php echo serendipity_ifRemember('target', 'js', false, 'selected'); ?>><?php echo MEDIA_TARGET_JS; ?></option>
-                        <option value="plugin"<?php echo serendipity_ifRemember('target', 'plugin', false, 'selected'); ?>><?php echo MEDIA_ENTRY; ?></option>
-                        <option value="_blank"<?php echo serendipity_ifRemember('target', '_blank', false, 'selected'); ?>><?php echo MEDIA_TARGET_BLANK; ?></option>
-                    </select>
-                </div>
-
-                <div class="clearfix radio_field quickblog_radio_field">
-                    <label><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_ASOBJECT; ?></label>
-                    <div>
-                        <input type="radio" class="input_radio" id="image_yes" name="serendipity[quickblog][isobject]" value="<?php echo YES;?>"><label for="image_yes"><?php echo YES;?></label>
-                        <input type="radio" class="input_radio" id="image_no" name="serendipity[quickblog][isobject]" value="<?php echo NO;?>" checked="checked"><label for="image_no"><?php echo NO;?></label>
+?>
+                        </select>
                     </div>
-                </div>
 
-                <div class="quickblog_form_field">
-                    <label for="quickblog_isize"><?php echo IMAGE_SIZE; ?></label>
-                    <input id="quickblog_isize" class="input_textbox" name="serendipity[quickblog][size]" value="<?php echo $serendipity['thumbSize']; ?>" type="text">
-                    <button class="toggle_info button_link" type="button" data-href="#quickblog_size_info">
-                        <span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?= MORE ?></span>
-                    </button>
-                </div>
-                <div id="quickblog_size_info" class="clearfix field_info additional_info">
-                    <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_IMAGE_SIZE_DESC; ?></em>
+                    <div class="quickblog_form_select">
+                        <label for="select_image_target"><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET; ?></label>
+                        <select id="select_image_target" name="serendipity[quickblog][target]">
+                            <option value="none"<?php echo serendipity_ifRemember('target', 'none', false, 'selected'); ?>><?php echo NONE; ?></option>
+                            <option value="js"<?php echo serendipity_ifRemember('target', 'js', false, 'selected'); ?>><?php echo MEDIA_TARGET_JS; ?></option>
+                            <option value="plugin"<?php echo serendipity_ifRemember('target', 'plugin', false, 'selected'); ?>><?php echo MEDIA_ENTRY; ?></option>
+                            <option value="_blank"<?php echo serendipity_ifRemember('target', '_blank', false, 'selected'); ?>><?php echo MEDIA_TARGET_BLANK; ?></option>
+                        </select>
+                    </div>
+
+                    <div class="clearfix radio_field quickblog_radio_field">
+                        <label><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_ASOBJECT; ?></label>
+                        <div>
+                            <input type="radio" class="input_radio" id="image_yes" name="serendipity[quickblog][isobject]" value="<?php echo YES;?>"><label for="image_yes"><?php echo YES;?></label>
+                            <input type="radio" class="input_radio" id="image_no" name="serendipity[quickblog][isobject]" value="<?php echo NO;?>" checked="checked"><label for="image_no"><?php echo NO;?></label>
+                        </div>
+                    </div>
+
+                    <div class="quickblog_form_field">
+                        <label for="quickblog_isize"><?php echo IMAGE_SIZE; ?></label>
+                        <input id="quickblog_isize" class="input_textbox" name="serendipity[quickblog][size]" value="<?php echo $serendipity['thumbSize']; ?>" type="text">
+                        <button class="toggle_info button_link" type="button" data-href="#quickblog_size_info">
+                            <span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?= MORE ?></span>
+                        </button>
+                    </div>
+                    <div id="quickblog_size_info" class="clearfix field_info additional_info">
+                        <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_IMAGE_SIZE_DESC; ?></em>
+                    </div>
                 </div>
             </fieldset>
         </div>
 
 <?php
-
+                    }
                     break;
 
                 case 'backend_image_add':
@@ -495,7 +506,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
                 case 'frontend_display':
                     // auto resizing images based on width and/or height attributes in img tag
-                    if (serendipity_db_bool($this->get_config('autoresize'))) {
+                    if (serendipity_db_bool($this->get_config('autoresize', 'false'))) {
                         if (!empty($eventData['body'])) {
                             $eventData['body'] = $this->substituteImages($eventData['body']);
                         }
@@ -516,7 +527,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
                     // displaying galleries introduced by markup
                     foreach ($this->markup_elements AS $temp) {
-                        if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
+                        if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && isset($eventData[$temp['element']]) &&
                             @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                             !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = $temp['element'];
@@ -595,6 +606,16 @@ class serendipity_event_imageselectorplus extends serendipity_event
    display: table-cell;
    margin-top: 1em;
 }
+#quickblog_tablefield .wrap_legend {
+    display: -webkit-box;
+    margin: 0
+}
+.isp_archives,
+#quickblog_tablefield .quickblog_content {
+    border: 1px solid #aaa;
+    background: #eee;
+    padding: 0 0 0 .4em;
+}
 #uploadform .quickblog_nugget {
     margin-left: 0;
     padding: 0;
@@ -619,15 +640,12 @@ class serendipity_event_imageselectorplus extends serendipity_event
 #quickblog_tablefield .quickblog_radio_field input {
     margin-left: 0.5em;
 }
-#quickblog_tablefield .wrap_legend button {
-    margin: -1.65em 5em auto auto;
-    display: block;
-}
 #quickblog_tablefield .field_info {
-    margin-bottom: 1.5em;
     width: 100%;
+    float: none;
 }
-#quickblog_tablefield #quickblog_size_info.field_info { margin-bottom: inherit; }
+#quickblog_title.input_textbox { width: 50%; min-width: 18em; }
+#quickblog_size_info.field_info { width: 99.4%; }
 
 /* imageselectorplus plugin backend css end */
 
@@ -714,7 +732,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         // check for existing image.quickblog thumb (see change in backend_image_addHotlink) else change to default thumbnail name
         if (!file_exists($outfile)) $outfile = $dir . $f . '.' . $serendipity['thumbSuffix'] . '.' . $suf;
 
-        if (function_exists('exif_read_data') && file_exists($infile) && !serendipity_db_bool($this->get_config('force_jhead'))) {
+        if (function_exists('exif_read_data') && file_exists($infile) && !serendipity_db_bool($this->get_config('force_jhead', 'false'))) {
             $exif      = @exif_read_data($infile);
             $exif_mode = 'internal';
         } elseif (file_exists($infile)) {
@@ -782,10 +800,9 @@ class serendipity_event_imageselectorplus extends serendipity_event
         return $content;
     }
 
-
     /*
      * media_insert
-     * this function replaces xml-like structure in the $text @string
+     * this function replaces XML-like structure in the $text @string
      * by images from media gallery
      */
     function media_insert($text, &$eventData)
@@ -796,13 +813,13 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $entry_parts = preg_split('@(<mediainsert>[\S\s]*?</mediainsert>)@', $text, -1, PREG_SPLIT_DELIM_CAPTURE);
 
         // parse mediainserts
-        // (if xml parser is present at php installation
+        // (if XML parser is present at PHP installation
         //         - SimpleXMLElement in PHP > 5.0, users of older version could have troubles )
-        // text is splitted into parts
+        // text is split into parts
         if (class_exists('SimpleXMLElement')) {
             for ($i=0, $pcount = count($entry_parts); $i < $pcount; $i++) {
                 if (!(strpos($entry_parts[$i],"<mediainsert>") === false)) {
-                    // There was a problem with wysiwyg-ckeditor: which removes linebreaks and sometimes inserts ending tags
+                    // There was a problem with WYSIWYG-ckeditor: which removes linebreaks and sometimes inserts ending tags
                     // To not error, we remove at least the ending tags and possibly single-tags missing trailing slashes
                     $epart   = str_replace(array('</media>','</gallery>','">'), array('','','" />'), $entry_parts[$i]);
                     $xml     = new SimpleXMLElement($epart);
@@ -892,7 +909,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                         }
 
                         if ((count($t)+1) == count($order)) {
-                            // remove last $order array element, since else we might get a Fatal error:  Uncaught exception 'ErrorException' with message 'Warning: array_multisort(): Array sizes are inconsistent'
+                            // remove last $order array element, since else we might get a Fatal error: Uncaught exception 'ErrorException' with message 'Warning: array_multisort(): Array sizes are inconsistent'
                             array_pop($order);
                         }
 
@@ -933,7 +950,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
     /// The following methods are used for the auto image resizing
 
     /**
-     * Substitute img src attributes in $html with auto resize urls
+     * Substitute img src attributes in $html with auto resize URLs
      *
      * @author Adam Charnock (http://omniwiki.co.uk)
      * @param string $html
@@ -942,8 +959,8 @@ class serendipity_event_imageselectorplus extends serendipity_event
     function substituteImages($html)
     {
         $imgTags = $this->getImageTags($html);
-        //We need to make sure we substitute the last images first otherwise
-        //our char offsets will get messed up
+        // We need to make sure we substitute the last images first otherwise
+        // our char offsets will get messed up
         $imgTags = array_reverse($imgTags);
 
         foreach ($imgTags AS $attrs) {
@@ -960,7 +977,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
             }
             $newTag .= ' ' . implode(' ', $attrPairs) . ' />';
 
-            //Now we need to splice the new tag into the HTML
+            // Now we need to splice the new tag into the HTML
             $firstHalf = substr($html, 0, $attrs['_offset']);
             $secondHalf = substr($html, $attrs['_offset'] + $attrs['_length']);
 
@@ -1000,7 +1017,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
             $row = serendipity_db_query($sql, true);
             $imageId = $row['id'];
         } else {
-            //We got an unrecognised url so return false
+            // We got an unrecognized URL so return false
             $imageId = false;
         }
 
@@ -1011,7 +1028,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
      * Get the transformed src for an img tag
      *
      * @author Adam Charnock (http://omniwiki.co.uk)
-     * @param array $attrs An associative array of the image's attributes. Must conatain src, and either width or height
+     * @param array $attrs An associative array of the image's attributes. Must contain src, and either width or height
      * @return unknown
      */
     function getTransformImg($attrs)
@@ -1036,7 +1053,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $url = $attrs['src'];
         $imageId = $this->getImageIdByUrl($url);
         if (!$imageId) {
-            //We got an unrecognised url so don't do anything to it, just send it right back
+            // We got an unrecognized URL so don't do anything to it, just send it right back
             return $url;
         }
 
@@ -1117,7 +1134,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $currentAttrName = '';
         $currentAttrValue = '';
 
-        //We append an extra space to ensure the last attr gets processd
+        // We append an extra space to ensure the last attr gets processed
         $chars = str_split($attrs . ' ', 1);
 
         $state = 'read-name';
