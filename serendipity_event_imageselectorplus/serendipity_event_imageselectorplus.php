@@ -542,8 +542,8 @@ class serendipity_event_imageselectorplus extends serendipity_event
                         $eventData['extended'] = str_replace('{{s9yisp_entryid}}', $eventData['id'], $eventData['extended']);
                         $this->gotMilk = true;
                     } else {
-                        if (isset($eventData['body']))     $this->cache['body']     = $eventData['body'];
-                        if (isset($eventData['extended'])) $this->cache['extended'] = $eventData['extended'];
+                        $this->cache['body']     = $eventData['body'];
+                        $this->cache['extended'] = isset($eventData['extended') ? $eventData['extended'] : '';
                     }
                     break;
 
