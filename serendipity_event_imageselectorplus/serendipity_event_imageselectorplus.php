@@ -543,7 +543,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                         $this->gotMilk = true;
                     } else {
                         $this->cache['body']     = $eventData['body'];
-                        $this->cache['extended'] = isset($eventData['extended') ? $eventData['extended'] : '';
+                        $this->cache['extended'] = isset($eventData['extended']) ? $eventData['extended'] : '';
                     }
                     break;
 
