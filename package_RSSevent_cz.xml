@@ -572,7 +572,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Rozšířené volby pro práci s médii&lt;/b&gt;&lt;br /&gt;Rozšiřuje možnosti vkládání obrázků z knihovny médií - quickblog a hromadné vkládání obrázků (více v dokumentaci v adresáři plugins/serendipity_evnets_imageselectorplus).&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 21 Oct 2018 18:52:00 +0200</pubDate>
+<pubDate>Sun, 21 Oct 2018 19:57:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -968,7 +968,7 @@
 <category>Event Plugins</category>
 <author>Tys von Gaza, Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_sidebarhider&lt;br /&gt;Přepínání stavu postranního sloupce (sbalený/rozbalený)&lt;/b&gt;&lt;br /&gt;Smrští postranní sloupce pouze na jejich nadpisy. Přidává nastavení do psaní příspěvků a také položku &quot;Správa postranních sloupců&quot; do administrační sekce.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 20 Aug 2018 17:28:50 +0200</pubDate>
+<pubDate>Mon, 22 Oct 2018 19:38:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_sidebarhider</guid>
 </item>
 <item>
@@ -1013,7 +1013,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Skrytá Captcha)&lt;/b&gt;&lt;br /&gt;Implementuje jednoduché ale velmi účinné antispamové algoritmy.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 30 Sep 2018 19:48:03 +0200</pubDate>
+<pubDate>Mon, 22 Oct 2018 09:32:22 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
