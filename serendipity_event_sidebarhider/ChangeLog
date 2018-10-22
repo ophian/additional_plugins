@@ -1,3 +1,8 @@
+1.33:
+----
+
+ * Fix some more uninitialized variable checks
+
 1.32:
 ----
 

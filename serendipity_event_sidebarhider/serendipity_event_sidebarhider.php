@@ -18,7 +18,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian');
-        $propbag->add('version',       '1.32');
+        $propbag->add('version',       '1.33');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.2.0'
@@ -429,7 +429,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                 $checked_myself = "";
                 $checked_everyone = "";
 
-                if ($plugin_list[$side] && !$plugin_list[$side][$i]) {
+                if (isset($plugin_list[$side]) && $plugin_list[$side] && !$plugin_list[$side][$i]) {
                     $checked = "checked='checked'";
                 }
 
@@ -590,8 +590,10 @@ class serendipity_event_sidebarhider extends serendipity_event
 
         $this->set_config('category_view_list', serialize($category_view_list));
 
-        foreach((array)$_REQUEST['plugin_usergroups_view'] AS $instance => $prop) {
-            $usergroups_view_list[base64_decode($instance)] = implode(',', $prop);
+        if (isset($_REQUEST['plugin_usergroups_view'])) {
+            foreach((array)$_REQUEST['plugin_usergroups_view'] AS $instance => $prop) {
+                $usergroups_view_list[base64_decode($instance)] = implode(',', $prop);
+            }
         }
 
         $this->set_config('usergroups_view_list', serialize($usergroups_view_list));
