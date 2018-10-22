@@ -362,7 +362,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
                     // If contact form is installed, display on any page not being the article list
                     // else display in single article only.
                     $contactFormInstalled = class_exists('serendipity_event_contactform');
-                    if (($eventData['GET']['id'] && $serendipity['view'] == 'entry') || ($contactFormInstalled && $serendipity['view'] == 'plugin')) {
+                    if ((isset($eventData['GET']['id']) && $serendipity['view'] == 'entry') || ($contactFormInstalled && $serendipity['view'] == 'plugin')) {
                         $this->printJsExtras();
                     }
                     break;
