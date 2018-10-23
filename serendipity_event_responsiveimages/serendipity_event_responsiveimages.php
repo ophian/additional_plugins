@@ -18,7 +18,7 @@ class serendipity_event_responsiveimages extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_RESPONSIVE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '0.6');
+        $propbag->add('version',       '0.7');
         $propbag->add('requirements',  array(
             'serendipity' => '2.3.1',
         ));
@@ -77,8 +77,8 @@ class serendipity_event_responsiveimages extends serendipity_event
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
-        $this->breakpoints = $serendipity['responsiveImageBreakpoints'] ?: [1600, 1200, 600]; # This can later on be overwritten by the theme
-        $this->thumbWidths = $serendipity['responsiveImageThumbnails'] ?: [1200, 800, 400]; # This can later on be overwritten by the theme
+        $this->breakpoints = !empty($serendipity['responsiveImageBreakpoints']) ? $serendipity['responsiveImageBreakpoints'] : [1600, 1200, 600]; # This can later on be overwritten by the theme
+        $this->thumbWidths = !empty($serendipity['responsiveImageThumbnails'])  ? $serendipity['responsiveImageBreakpoints'] : [1200, 800, 400]; # This can later on be overwritten by the theme
 
         if (isset($hooks[$event])) {
 
@@ -141,7 +141,7 @@ class serendipity_event_responsiveimages extends serendipity_event
         foreach ($matches['id'] AS $imgId) {
             preg_match('@<!-- s9ymdb:\d+ --><img[^>]+width=["\'](\d+)["\']@', $text, $matches);
 
-            if ($matches[1]) {
+            if (!empty($matches[1])) {
                 $srcset = $this->createSrcset($imgId, $matches[1]);
             } else {
                 $srcset = $this->createSrcset($imgId);
