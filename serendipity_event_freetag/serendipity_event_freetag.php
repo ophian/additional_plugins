@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.18');
+        $propbag->add('version',       '4.19');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2854,7 +2854,8 @@ addLoadEvent(enableAutocomplete);
                     continue;
                 }
 
-                $keywordtag = is_array($ktags) ? array_pop(array_keys($ktags)) : ''; // get type key as string
+                $_ktags = array_keys($ktags); // avoids Only variables should be passed by reference error
+                $keywordtag = array_pop($_ktags); // get type key as string
                 if (is_array($oldtags) && in_array($keywordtag, $oldtags)) {
                     continue; // if automated keyword-tag already is in oldtags, do next
                 }
