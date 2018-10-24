@@ -1,3 +1,7 @@
+1.18:
+-----
+ * Fix quickblog entry saving moderate and allow comments personal config set variables
+
 1.17:
 -----
  * Add option to dis/allow the quickblog form

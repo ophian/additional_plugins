@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian');
-        $propbag->add('version',       '1.17');
+        $propbag->add('version',       '1.18');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -498,8 +498,8 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     $entry['categories'][0] = (function_exists('serendipity_specialchars')
                                                 ? serendipity_specialchars($serendipity['POST']['quickblog']['category'])
                                                 : htmlspecialchars($serendipity['POST']['quickblog']['category'], ENT_COMPAT, LANG_CHARSET));
-                    #$entry['allow_comments']    = 'true'; // both disabled
-                    #$entry['moderate_comments'] = 'false'; // to take default values
+                    $entry['allow_comments']    = serendipity_db_bool($serendipity['allowCommentsDefault']) ? 'true' : 'false';
+                    $entry['moderate_comments'] = serendipity_db_bool($serendipity['moderateCommentsDefault']) ? 'true' : 'false';
                     $serendipity['POST']['properties']['fake'] = 'fake';
                     $id = serendipity_updertEntry($entry);
                     break;
