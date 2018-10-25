@@ -18,7 +18,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian');
-        $propbag->add('version',       '1.33');
+        $propbag->add('version',       '1.34');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.2.0'
@@ -118,7 +118,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                         $usergroups_viewlist = array();
                         $mygroups            = array();
                     } else {
-                        $mygroups = serendipity_getGroups($serendipity['authorid']);
+                        $mygroups = isset($serendipity['authorid']) ? serendipity_getGroups($serendipity['authorid']) : array();
                     }
 
                     foreach ($plugins AS $idx => $plugin_data) {
