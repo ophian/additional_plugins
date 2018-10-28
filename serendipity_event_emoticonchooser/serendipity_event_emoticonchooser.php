@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.25');
+        $propbag->add('version',       '3.26');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -415,7 +415,6 @@ class serendipity_event_emoticonchooser extends serendipity_event
 /* emoticonchooser plugin start */
 
 .serendipity_toggle_emoticon_bar.serendipityPrettyButton {
-    display: inline-flex;
     margin: 0 auto 1px;
 }
 .serendipity_emoticon_bar {
