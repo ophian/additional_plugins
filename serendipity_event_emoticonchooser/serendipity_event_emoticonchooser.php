@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.26');
+        $propbag->add('version',       '3.27');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -291,6 +291,9 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         }
                         $unique[$value] = $key;
                     }
+
+                    $emoticon_bar = null;
+
                     // script include has to stick to backend_header, while using an inline onclick (see above)
                     if (defined('IN_serendipity_admin') && IN_serendipity_admin === true) { // This is case entries, isn't it?! YES, and staticpages nuggets!
                         if (empty($serendipity['wysiwyg'])) {
@@ -313,6 +316,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                             echo "    $popuplink\n"; // add toolbar button in backend entries above CKEDITOR toolbar
                         }
                     } else { // in frontend footer ONLY!
+                        $emoticon_bar = true;
 ?>
 
 <div class="serendipity_emoticon_bar">
@@ -370,8 +374,9 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     }
                     $emotics .= "    </div>\n\n";
                     // Close in all frontend AND all non-wysiwyg backend modes - but NOT in HTML nuggets
-                    if ((!isset($serendipity['GET']['adminModule']) || !isset($serendipity['wysiwyg']) || !$serendipity['wysiwyg'])
-                      || (isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] != 'comments' && $comments)) {
+                    if (((!isset($serendipity['GET']['adminModule']) || !isset($serendipity['wysiwyg']) || !$serendipity['wysiwyg'])
+                      || (isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] != 'comments' && $comments))
+                      && $emoticon_bar === true) {
                         $emotics .= "</div><!-- emoticon_bar end -->\n\n";
                     }
                     if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) {

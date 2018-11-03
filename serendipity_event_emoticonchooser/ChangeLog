@@ -1,3 +1,7 @@
+3.27:
+-----
+ * Better check a closing div block
+
 3.26:
 -----
  * Remove a toolbar style causing issue with IE browser
