@@ -865,7 +865,7 @@ class serendipity_event_guestbook extends serendipity_event
             $serendipity['POST'] = $this->strip_security($serendipity['POST'], array('name', 'email', 'comment', 'admincomment', 'url'));
         }
 
-        if ($serendipity['POST']['stripped'] === true) {
+        if (isset($serendipity['POST']['stripped']) && $serendipity['POST']['stripped'] === true) {
             array_push($messages, ERROR_OCCURRED . '<br>' . ERROR_DATASTRIPPED);
             return false;
         }
@@ -1613,7 +1613,7 @@ class serendipity_event_guestbook extends serendipity_event
                 $error_occured = (@$serendipity['guestbook_message_header'] === true) ? THANKS_FOR_ENTRY : ERROR_OCCURRED;
 
                 if (@$serendipity['guestbook_message_header'] === true) {
-                    if ($moderate === true && $serendipity['POST']['guestbook_category'] == 'gbapp') {
+                    if ($moderate === true && isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbook_category'] == 'gbapp') {
 
                         $serendipity['smarty']->assign(array('gb_gbadd_approve' => true, 'msg_header' => $error_occured, 'guestbook_messages' => $messages));
 
