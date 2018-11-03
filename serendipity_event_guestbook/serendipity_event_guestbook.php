@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian');
-        $propbag->add('version',      '3.69');
+        $propbag->add('version',      '3.70');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -1553,8 +1553,8 @@ class serendipity_event_guestbook extends serendipity_event
             $serendipity['smarty']->assign(
                 array(
                     'gb_liva'     => (!isset($serendipity['GET']['guestbookcategory']) || $serendipity['GET']['guestbookcategory'] == 'gbview') ? ' id="active"' : '',
-                    'gb_liapa'    => ((isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbapp') || $serendipity['POST']['guestbook_category'] == 'gbapp') ? ' id="active"' : '',
-                    'gb_liada'    => (((isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbadd') || $serendipity['POST']['guestbookcategory'] == 'gbadd') && $serendipity['POST']['guestbook_category'] != 'gbapp') ? ' id="active"' : '',
+                    'gb_liapa'    => ((isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbapp') || (isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbook_category'] == 'gbapp')) ? ' id="active"' : '',
+                    'gb_liada'    => (((isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbadd') || $serendipity['POST']['guestbookcategory'] == 'gbadd') && (isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbook_category'] != 'gbapp')) ? ' id="active"' : '',
                     'gb_lida'     => (isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbdb') ? ' id="active"' : '',
                     'gb_moderate' => $moderate,
                     'gb_isnav'    => true

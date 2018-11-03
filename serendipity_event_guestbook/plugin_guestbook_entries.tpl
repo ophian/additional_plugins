@@ -1,5 +1,5 @@
 {*
-    plugin_guestbook_entries.tpl for v.3.66 - 2018-08-07
+    plugin_guestbook_entries.tpl for v.3.67 - 2018-11-03
 *}
 
 {if $plugin_guestbook_articleformat}
@@ -37,9 +37,9 @@
               {/if}
             {/if}
 
-            {if $guestbook_entry_paging}<div id="guestbook_entrypaging">{$guestbook_paging}</div>{/if}
+            {if isset($guestbook_entry_paging) AND $guestbook_entry_paging}<div id="guestbook_entrypaging">{$guestbook_paging}</div>{/if}
 
-            {if $guestbook_entries}
+            {if isset($guestbook_entries) AND is_array($guestbook_entries)}
               {foreach from=$guestbook_entries item="entry"}
 
                 <div id="guestbook_entrybundle">
@@ -65,7 +65,7 @@
               {/foreach}
             {/if}
 
-            {if $guestbook_entry_paging}<div id="guestbook_entrypaging">{$guestbook_paging}</div>{/if}
+            {if isset($guestbook_entry_paging) AND $guestbook_entry_paging}<div id="guestbook_entrypaging">{$guestbook_paging}</div>{/if}
 
             </div><!-- //- class:entry-body end -->
 
