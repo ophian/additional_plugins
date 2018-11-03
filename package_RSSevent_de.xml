@@ -311,7 +311,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Smiley-Auswahlleiste&lt;/b&gt;&lt;br /&gt;Zeigt eine Auswahlleiste bei der Erstellung eines Eintrags um Smileys einzufügen.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sun, 28 Oct 2018 12:00:36 +0100</pubDate>
+<pubDate>Sat, 03 Nov 2018 17:11:23 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -545,7 +545,7 @@
 <category>Event Plugins</category>
 <author>Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Gästebuch&lt;/b&gt;&lt;br /&gt;Zeigt ein Gästebuch innerhalb des Blogs mit dem gewählten Design und allen Formatierungen an.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Fri, 24 Aug 2018 12:36:23 +0200</pubDate>
+<pubDate>Sat, 03 Nov 2018 17:00:13 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -567,11 +567,11 @@
 <guid isPermaLink="false">serendipity_event_httpauth</guid>
 </item>
 <item>
-<title>Erweiterte Optionen für Bildauswahl: Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediendatenbank.</title>
+<title>Erweiterte Optionen für Bildauswahl: Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediathek.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_imageselectorplus</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Erweiterte Optionen für Bildauswahl&lt;/b&gt;&lt;br /&gt;Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediendatenbank.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Erweiterte Optionen für Bildauswahl&lt;/b&gt;&lt;br /&gt;Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediathek.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
 <pubDate>Wed, 24 Oct 2018 18:56:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>

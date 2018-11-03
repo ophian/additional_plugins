@@ -2253,9 +2253,9 @@
 <description>Zeigt eine Auswahlleiste bei der Erstellung eines Eintrags um Smileys einzufügen.</description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.26</version>
+  <version>3.27</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2018-10-28</date>
+  <date>2018-11-03</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -4477,9 +4477,9 @@
 <description>Zeigt ein Gästebuch innerhalb des Blogs mit dem gewählten Design und allen Formatierungen an.</description>
 <maintainers><maintainer><name>Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.69</version>
+  <version>3.70</version>
   <requirements:s9yVersion>1.7.0</requirements:s9yVersion>
-  <date>2018-08-24</date>
+  <date>2018-11-03</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
       <file>ChangeLog</file>
@@ -4666,7 +4666,7 @@
 <license>GPL</license>
 <summary>Erweiterte Optionen für Bildauswahl</summary>
 <groups>IMAGES,MARKUP</groups>
-<description>Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediendatenbank.</description>
+<description>Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediathek.</description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.18</version>
