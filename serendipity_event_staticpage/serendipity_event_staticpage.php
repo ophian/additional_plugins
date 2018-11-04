@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.62');
+        $propbag->add('version', '5.63');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -557,9 +557,9 @@ class serendipity_event_staticpage extends serendipity_event
 
         $users = (array)serendipity_fetchUsers();
         foreach ($users AS $user) {
-            if ($this->checkUser($user)) {
+            #if ($this->checkUser($user)) {
                 $u[$user['authorid']] = $user['realname'];
-            }
+            #}
         }
         return $u;
     }
