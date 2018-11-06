@@ -18,15 +18,15 @@ class serendipity_event_weblogping extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WEBLOGPING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian');
-        $propbag->add('version',       '1.14');
+        $propbag->add('version',       '1.15');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
         $propbag->add('event_hooks',    array(
-            'backend_display'   => true,
             'frontend_display'  => true,
+            'backend_display'   => true,
             'backend_insert'    => true,
             'backend_update'    => true,
             'backend_publish'   => true,
@@ -53,7 +53,7 @@ class serendipity_event_weblogping extends serendipity_event
                     $ms_host = $ms_parts[0];
                     unset($ms_parts[0]);
 
-                    array_shift( $ms_parts);  //  remove hostname.
+                    array_shift($ms_parts);  //  remove hostname.
                     $this->services[] = array(
                                           'name'     => $ms_name,
                                           'host'     => $ms_host,
@@ -85,10 +85,18 @@ class serendipity_event_weblogping extends serendipity_event
                 break;
 
             default:
-                $propbag->add('type',        'boolean');
+                $propbag->add('type',        'radio');
                 $propbag->add('name',        $name);
                 $propbag->add('description', sprintf(PLUGIN_EVENT_WEBLOGPING_PING, $name));
-                $propbag->add('default',     'false');
+                $propbag->add('default',     'disable');
+
+                $ping = array();
+                $ping['value'][] = $ping['desc'][] = 'true';
+                $ping['value'][] = $ping['desc'][] = 'false';
+                $ping['value'][] = $ping['desc'][] = 'disable';
+                $propbag->add('radio',       $ping);
+                break;
+
         }
         return true;
     }
@@ -116,6 +124,7 @@ class serendipity_event_weblogping extends serendipity_event
 <?php
                     $noneclick = '';
                     foreach($this->services AS $index => $service) {
+                        if ($this->get_config($service['name'], 'false') == 'disable') continue;
                         // Detect if the current checkbox needs to be saved. We use the field chk_timestamp to see,
                         // if the form has already been submitted and individual changes shall be preserved
                         $selected = (($serendipity['POST']['chk_timestamp'] && @$serendipity['POST']['announce_entries_' . $service['name']])
@@ -174,8 +183,8 @@ class serendipity_event_weblogping extends serendipity_event
                     }
                     foreach ($this->services AS $index => $service) {
                         if (isset($serendipity['POST']['announce_entries_' . $service['name']])
-                                || (defined('SERENDIPITY_IS_XMLRPC') && serendipity_db_bool($this->get_config($service['name'], 'false')))
-                            ) {
+                        || (defined('SERENDIPITY_IS_XMLRPC') && serendipity_db_bool($this->get_config($service['name'], 'false')))
+                        ) {
                             if (!defined('SERENDIPITY_IS_XMLRPC') || defined('SERENDIPITY_XMLRPC_VERBOSE')) {
                                 printf(PLUGIN_EVENT_WEBLOGPING_SENDINGPING . '...', $service['host']);
                             }

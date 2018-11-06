@@ -1,3 +1,11 @@
+1.15:
+-----
+
+ * Changed radio true/false as default checked input field for ping services
+   to true/false/disable, to be able to remove unwanted services to show up
+   in entry form.
+   Changed "list" styles in Serendipity Styx 2.7.0.
+
 1.14:
 -----
 
