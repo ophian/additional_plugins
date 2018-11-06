@@ -124,7 +124,7 @@ class serendipity_event_weblogping extends serendipity_event
 <?php
                     $noneclick = '';
                     foreach($this->services AS $index => $service) {
-                        if ($this->get_config($service['name'], 'false') == 'disable') continue;
+                        if ($this->get_config($service['name'], 'false') === 'disable') continue;
                         // Detect if the current checkbox needs to be saved. We use the field chk_timestamp to see,
                         // if the form has already been submitted and individual changes shall be preserved
                         $selected = (($serendipity['POST']['chk_timestamp'] && @$serendipity['POST']['announce_entries_' . $service['name']])
