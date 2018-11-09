@@ -1,3 +1,7 @@
+1.19:
+-----
+ * Prepare [de] for Serendipity Styx 2.7.0 wording change
+
 1.18:
 -----
  * Fix quickblog entry saving moderate and allow comments personal config set variables
