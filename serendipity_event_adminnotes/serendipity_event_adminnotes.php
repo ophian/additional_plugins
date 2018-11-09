@@ -22,7 +22,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '4.1.0'
         ));
 
-        $propbag->add('version',       '0.26');
+        $propbag->add('version',       '0.27');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
@@ -404,7 +404,7 @@ class serendipity_event_adminnotes extends serendipity_event
                 if ($serendipity['version'][0] < 2) {
                     echo '<a class="serendipityPrettyButton" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes&amp;action=new">' . NEW_ENTRY . '</a>';
                 } else {
-                    echo '<div class="form_buttons"><a class="button_link state_submit" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes&amp;action=new">' . NEW_ENTRY . '</a></div>';
+                    echo '<div class="form_buttons"><a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes&amp;action=new">' . NEW_ENTRY . '</a></div>';
                 }
                 break;
         }
