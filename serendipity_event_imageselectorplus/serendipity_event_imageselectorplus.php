@@ -614,7 +614,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
 #quickblog_tablefield .quickblog_content {
     border: 1px solid #aaa;
     background: #eee;
-    padding: 0 0 0 .4em;
+    padding: .5em 0 .5em .5em;
 }
 #uploadform .quickblog_nugget {
     margin-left: 0;
