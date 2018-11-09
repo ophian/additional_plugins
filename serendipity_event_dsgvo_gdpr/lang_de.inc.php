@@ -96,7 +96,7 @@ Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporäre 
 
 <ul>
     <li>PHP Sitzungs ID</li>
-    <li>Zustand des Eintragseditors: Umschaltungszustand, Sortierung, Sortierungs- und Filterzustand, zuletzt benutztes Verzeichnis der Mediendatenbank (nur wenn eingeloggt)</li>
+    <li>Zustand des Eintragseditors: Umschaltungszustand, Sortierung, Sortierungs- und Filterzustand, zuletzt benutztes Verzeichnis der Mediathek (nur wenn eingeloggt)</li>
     <li>Author Login Token (nur wenn angemeldet)</li>
     <li>Anzeigesprache</li>
     <li>Nach dem Kommentar: Nachname, E-Mail, URL, Status von "Kommentare merken" (falls aktiviert)</li>
