@@ -11,9 +11,9 @@
 <description>Zobrazuje v administrační sekci oznámení přihlášeným uživatelům</description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.26</version>
+  <version>0.27</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-10-12</date>
+  <date>2018-11-09</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
       <file>ChangeLog</file>
@@ -2163,9 +2163,9 @@
 <description>This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.</description>
 <maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.76</version>
+  <version>1.77</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-08-14</date>
+  <date>2018-11-09</date>
   <filelist>
     <dir name="serendipity_event_dsgvo_gdpr">
       <file>ChangeLog</file>
@@ -4669,9 +4669,9 @@
 <description>Rozšiřuje možnosti vkládání obrázků z knihovny médií - quickblog a hromadné vkládání obrázků (více v dokumentaci v adresáři plugins/serendipity_evnets_imageselectorplus).</description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.18</version>
+  <version>1.19</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2018-10-24</date>
+  <date>2018-11-09</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
