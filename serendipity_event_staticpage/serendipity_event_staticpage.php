@@ -3517,6 +3517,8 @@ class serendipity_event_staticpage extends serendipity_event
                     }
                     // hooked into category.inc.tpl
 ?>
+<h3><?php echo defined('ADDITIONAL_PROPERTIES_BY_PLUGIN') ? sprintf(ADDITIONAL_PROPERTIES_BY_PLUGIN, 'StaticPage') : 'Additional properties by Plugin: StaticPage'; ?></h3>
+
 <div id="category_staticpage" class="clearfix">
     <div class="form_field">
         <label for="staticpage_categorypage"><?php echo STATICPAGE_CATEGORYPAGE; ?></label>
