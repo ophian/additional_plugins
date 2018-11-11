@@ -238,7 +238,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
 ?>
 
         <div id="imageselectorplus" class="checkpoint">
-            <h3>ImageSelectorPlus Plugin</h3>
+            <h3><?php echo defined('ADDITIONAL_PROPERTIES_BY_PLUGIN') ? sprintf(ADDITIONAL_PROPERTIES_BY_PLUGIN, 'ImageSelectorPlus') : 'Additional properties by Plugin: ImageSelectorPlus'; ?></h3>
 
 <?php
                     if (class_exists('ZipArchive')) {
