@@ -426,7 +426,7 @@ class serendipity_event_categorytemplates extends serendipity_event
      *
      * @return mixed Name of Engine or NIL
      */
-    function setFallbackChain($file)
+    function getFallbackEngineChain($file)
     {
         if (file_exists($file)) {
             $lines = @file($file);
@@ -835,7 +835,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     // Password protection SQL
                     if (serendipity_db_bool($this->get_config('pass'))) {
                         $pw = !empty($this->current_pw) ? $this->current_pw : '';
-                        $conds[] = "(ctpass.pass IS NULL OR ctpass.pass = '$pw' OR ctpass.pass = '')";
+                        $conds[] = "(ctpass.pass IS NULL OR ctpass.pass = '$pw')";
                         $joins[] = "LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates ctpass
                             ON (ec.categoryid = ctpass.categoryid)";
                     }
@@ -942,7 +942,7 @@ class serendipity_event_categorytemplates extends serendipity_event
 
                     // Fetch an engine template if set
                     $infofile = $serendipity['serendipityPath'] . $serendipity['templatePath'] . $serendipity['template'] . '/info.txt';
-                    $serendipity['template_engine'] = $this->setFallbackChain($infofile); // This is a need for the correct fallback chain
+                    $serendipity['template_engine'] = $this->getFallbackEngineChain($infofile); // This is a need for the correct fallback chain
 
                     // Set the template options
                     if (!$this->usesDefaultTemplate) {
