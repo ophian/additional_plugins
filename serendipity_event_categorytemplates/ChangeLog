@@ -1,3 +1,13 @@
+1.00:
+-----
+ * Fix fetchSortOrder() issue not returning the sort order string
+ * Fix fetchlimit condition
+ * Fix missing template engine fallback
+ * Fix lang typos
+ * Fix uninitialized variable checks
+ * Fix issue with password protected category [NOTE: Turn OFF Serendipity gZip Compression!]
+ * General changes for Serendipity Styx 2.0+ - requires 2.0+
+
 0.35:
 ----
  * Set Plugin consistencies

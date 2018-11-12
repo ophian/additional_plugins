@@ -22,15 +22,16 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('name',          PLUGIN_CATEGORYTEMPLATES_NAME);
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Judebert');
-        $propbag->add('version',       '0.36');
+        $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
+        $propbag->add('version',       '1.00');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
+            'serendipity' => '2.0',
             'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',    array(
             'genpage'                   => true,
             'external_plugin'           => true,
+            'css_backend'               => true,
             'backend_category_addNew'   => true,
             'backend_category_update'   => true,
             'backend_category_delete'   => true,
@@ -103,6 +104,7 @@ class serendipity_event_categorytemplates extends serendipity_event
 
     /**
      * Retrieves a list of IDs of all categories that have some customization enabled.
+     *
      * @return array A list of category IDs, or false if no categories are customized.
      */
     function getTemplatizedCats()
@@ -129,7 +131,9 @@ class serendipity_event_categorytemplates extends serendipity_event
 
     /**
      * Updates database to version-appropriate schema
+     *
      * @param The current version number of the database (could be empty)
+     *
      * @return true
      */
     function checkScheme($ver)
@@ -184,7 +188,9 @@ class serendipity_event_categorytemplates extends serendipity_event
     /**
      * Returns the most appropriate category ID for the current entry.
      * Only called from genpage hook.
+     *
      * @global array $serendipity Determines the current entry from HTTP variables
+     *
      * @return int|string Category ID if custom template defined or category
      *    view, otherwise 'default'
      */
@@ -246,8 +252,10 @@ class serendipity_event_categorytemplates extends serendipity_event
     /**
      * Wrapper for fetchProp() returning name of custom template for the
      * given category ID, if defined, with default.
+     *
      * @param int cid The category ID to lookup
      * @param string fallback The default template name
+     *
      * @return string The name of the template to be used
      */
     function fetchTemplate($cid, $fallback)
@@ -270,8 +278,10 @@ class serendipity_event_categorytemplates extends serendipity_event
     /**
      * Wrapper for fetchProp() returning the limit of entries to fetch
      * for this category ID, with default.
+     *
      * @param int cid The category ID to lookup
      * @param int fallback The default number of entries to fetch
+     *
      * @return int The max number of entries to be fetched
      */
     function fetchLimit($cid, $fallback)
@@ -291,8 +301,10 @@ class serendipity_event_categorytemplates extends serendipity_event
     /**
      * Wrapper for fetchProp() returning the language for the category ID,
      * with default.
+     *
      * @param int cid The category ID to lookup
      * @param string fallback The default language to use
+     *
      * @return string The language to be used
      */
     function fetchLang($cid, $fallback)
@@ -312,8 +324,10 @@ class serendipity_event_categorytemplates extends serendipity_event
     /**
      * Wrapper for fetchProp() returning whether to display entries with
      * dates in the future for this category ID, with default.
+     *
      * @param int cid The category ID to lookup
      * @param bool fallback The default whether to display entries from the future
+     *
      * @return bool Whether to display entries from the future
      */
     function fetchFuture($cid, $fallback)
@@ -335,8 +349,10 @@ class serendipity_event_categorytemplates extends serendipity_event
     /**
      * Wrapper for fetchProp() returning the entry sort order for this
      * category ID, with default.
+     *
      * @param int cid The category ID to lookup
      * @param string fallback The default database ordering string
+     *
      * @return string The database ordering string to use (i.e, 'date ASC')
      */
     function fetchSortOrder($cid, $fallback)
@@ -345,23 +361,19 @@ class serendipity_event_categorytemplates extends serendipity_event
             return $fallback;
         } else {
             $val = $this->fetchProp($cid, 'sort_order');
-            if ($val == 'timestamp DESC' /*|| $fallback == 'timestamp DESC'*/) {
-                return false;
-            }
-            if (!empty($val)) {
-                return $val;
-            }
         }
 
-        return $fallback;
+        return !empty($val) ? $val : $fallback;
     }
 
     /**
      * Fetches the requested property of the given category ID, retrieving
      * from cache where possible, querying database and populating cache
      * with all properties otherwise.
+     *
      * @param int cide The category ID to be queried
      * @param string key optional The property to be fetched (default 'template')
+     *
      * @return mixed The value of the requested property
      */
     function fetchProp($cid, $key = 'template')
@@ -385,10 +397,12 @@ class serendipity_event_categorytemplates extends serendipity_event
 
     /**
      * Sets or deletes properties for this category from the database.
+     *
      * @param int cid The category ID to use
      * @param array val optional An array associating SQL column names with
      *     their desired values (default false)
      * @param bool deleteOnly optional Whether to skip inserting new values (default false)
+     *
      * @return true
      */
     function setProps($cid, $val = false, $deleteOnly = false)
@@ -406,6 +420,49 @@ class serendipity_event_categorytemplates extends serendipity_event
         return true;
     }
 
+    /**
+     * Check for an engine based category template
+     * @param string The full Path to the themes info.txt file
+     *
+     * @return mixed Name of Engine or NIL
+     */
+    function setFallbackChain($file)
+    {
+        if (file_exists($file)) {
+            $lines = @file($file);
+            if (!$lines) {
+                return null;
+            }
+            // init default
+            $data['summary'] = $data['description'] = $data['backenddesc'] = $data['backend'] = null;
+
+            for($x=0; $x<count($lines); $x++) {
+                $j = preg_split('/([^\:]+)\:/', $lines[$x], -1, PREG_SPLIT_DELIM_CAPTURE);
+                if (!empty($j[2])) {
+                    $currSec = $j[1];
+                    $data[strtolower($currSec)][] = trim($j[2]);
+                } else {
+                    $data[strtolower($currSec)][] = trim($j[0]);
+                }
+            }
+
+            foreach($data AS $k => $v) {
+                $data[$k] = @trim(implode("\n", $v));
+            }
+        }
+        if (isset($data['engine'])) {
+            return $data['engine'];
+        }
+        return null;
+    }
+
+    /**
+     * Set category template options
+     * @param string The theme
+     * @param integer The category ID
+     *
+     * @return mixed
+     */
     function template_options($template, $catid)
     {
         global $serendipity, $template_config;
@@ -437,7 +494,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                 foreach($serendipity['POST']['template'] AS $option => $value) {
                     categorytemplate_option::set_config($option, $value, $serendipity['smarty_vars']['template_option']);
                 }
-                echo '<div class="serendipityAdminMsgSuccess"><img style="height: 22px; width: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />' . DONE .': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . '</div>';
+                echo '<span class="msg_success"><span class="icon-ok-circled"></span> ' . DONE .': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . '</span>';
             }
 
             echo '<form method="post" action="serendipity_admin.php">';
@@ -467,20 +524,22 @@ class serendipity_event_categorytemplates extends serendipity_event
                 true,
                 'template'
             );
-            echo '</form><br />';
+            echo "</form>\n";
             serendipity_plugin_api::hook_event('backend_templates_configuration_bottom', $template_config);
         } else {
-            echo '<p>' . STYLE_OPTIONS_NONE . '</p>';
+            echo '<p>' . STYLE_OPTIONS_NONE . "</p>\n";
             serendipity_plugin_api::hook_event('backend_templates_configuration_none', $template_config);
         }
     }
 
     /**
      * The meat of the plugin, called for each registered hook.
+     *
      * @param string event The name of the hook being called
      * @param mixed bag An array of configuration options for this plugin
      * @param mixed eventData An array containing parameters for the hook
      * @param mixed addData Additional hook data, if any
+     *
      * @return true
      */
     function event_hook($event, &$bag, &$eventData, $addData = null)
@@ -510,78 +569,89 @@ class serendipity_event_categorytemplates extends serendipity_event
                         $hide_rss = serendipity_db_bool($hide_rss['hide_rss']);
                     }
 ?>
-    <tr>
-        <td valign="top"><label for="template"><?php echo SELECT_TEMPLATE; ?></label></td>
-        <td><input class="input_textbox" id="template" type="text" name="serendipity[cat][template]" value="<?php echo $template; ?>" /><br />
-            - <?php echo WORD_OR; ?> -<br />
-            <select name="serendipity[cat][drop_template]">
-                <option value=""><?php echo NONE; ?></option>
+
+            <h3 class="additional_properties"><?php echo defined('ADDITIONAL_PROPERTIES_BY_PLUGIN') ? sprintf(ADDITIONAL_PROPERTIES_BY_PLUGIN, PLUGIN_CATEGORYTEMPLATES_NAME) : 'Additional properties by Plugin: ' . PLUGIN_CATEGORYTEMPLATES_NAME; ?></h3>
+
+            <div id="category_templates" class="clearfix">
+                <div class="form_field">
+                    <label for="category_template" class="wrap_legend"><?php echo PLUGIN_CATEGORYTEMPLATES_SELECT_TEMPLATE; ?><a class="toggle_info button_link" href="#hide_templates_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?=MORE?></span></a></label>
+                    <input id="category_template" class="input_textbox" name="serendipity[cat][template]" type="text" data-configitem="category_template" value="<?php echo $template; ?>">
+                </div>
+                <div class="select_field">
+                    <legend>- <?php echo WORD_OR; ?> -</legend>
+                    <select name="serendipity[cat][drop_template]">
+                        <option value=""><?php echo NONE; ?></option>
 <?php
                     foreach ($styles AS $style => $path) {
                         $templateInfo = serendipity_fetchTemplateInfo($style);
 ?>
-            <option value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($style) : htmlspecialchars($style, ENT_COMPAT, LANG_CHARSET)); ?>" <?php echo ($style == $template? 'selected="selected"' : ''); ?>><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($templateInfo['name']) : htmlspecialchars($templateInfo['name'], ENT_COMPAT, LANG_CHARSET)); ?></option>
+                        <option value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($style) : htmlspecialchars($style, ENT_COMPAT, LANG_CHARSET)); ?>" <?php echo ($style == $template? 'selected="selected"' : ''); ?>><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($templateInfo['name']) : htmlspecialchars($templateInfo['name'], ENT_COMPAT, LANG_CHARSET)); ?></option>
 <?php
                     }
 ?>
-            </select>
+                    </select>
+                </div>
+<?php if (!empty($template)) { ?>
+                <div><a class="button_link" href="serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=cattemplate&amp;serendipity[catid]=<?php echo $eventData; ?>&amp;serendipity[cat_template]=<?php echo urlencode($template);?>"><?php echo STYLE_OPTIONS; ?></a></div>
+<?php } ?>
+                <span id="hide_templates_info" class="field_info category_field_info additional_info">
+                    <span class="icon-info-circled"></span> <em><?php echo PLUGIN_CATEGORYTEMPLATES_SELECT; ?></em>
+                </span>
+            </div>
 
-            <?php if (!empty($template)) { ?>
-            <br /><br /><a class="serendipityPrettyButton" href="serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=cattemplate&amp;serendipity[catid]=<?php echo $eventData; ?>&amp;serendipity[cat_template]=<?php echo urlencode($template);?>"><?php echo STYLE_OPTIONS; ?></a>
-            <?php } ?>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2"><em><?php echo PLUGIN_CATEGORYTEMPLATES_SELECT; ?></em></td>
-    </tr>
-
-<!-- TODO: This does not work easily.
-    <tr>
-        <td><label for="language"><?php echo INSTALL_LANG; ?></label></td>
-        <td><select id="language" name="serendipity[cat][lang]">
-            <option value="default"><?php echo USE_DEFAULT; ?></option>
-        <?php foreach($serendipity['languages'] AS $langkey => $lang) { ?>
-            <option value="<?php echo $lang; ?>" <?php echo ($langkey == $clang ? 'selected="selected"' : ''); ?>><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($lang) : htmlspecialchars($lang, ENT_COMPAT, LANG_CHARSET)); ?></option>
-        <?php } ?>
-        </select></td>
-    </tr>
--->
-
-    <tr>
-        <td><?php echo INSTALL_SHOWFUTURE; ?></td>
-        <td>
-            <input class="input_radio" type="radio" id ="futureentries_default" name="serendipity[cat][futureentries]" value="0" <?php echo (empty($cfuture) || $cfuture == 0 ? 'checked="checked"' : ''); ?> /><label for="futureentries_default"><?php echo USE_DEFAULT; ?></label><br />
-            <input class="input_radio" type="radio" id ="futureentries_no"      name="serendipity[cat][futureentries]" value="1" <?php echo ($cfuture == 1 ? 'checked="checked"' : ''); ?> /><label for="futureentries_no"><?php echo NO; ?></label><br />
-            <input class="input_radio" type="radio" id ="futureentries_yes"     name="serendipity[cat][futureentries]" value="2" <?php echo ($cfuture == 2 ? 'checked="checked"' : ''); ?> /><label for="futureentries_yes"><?php echo YES; ?></label>
-        </td>
-    </tr>
+<?php /* TODO: This does not work easily. ... Ian: Why not?
+            <div id="category_language" class="clearfix">
+                <div class="select_field">
+                    <label for="language"><?php echo INSTALL_LANG; ?></label>
+                    <select id="language" name="serendipity[cat][lang]">
+                        <option value="default"><?php echo USE_DEFAULT; ?></option>
+<?php foreach($serendipity['languages'] AS $langkey => $lang) { ?>
+                        <option value="<?php echo $lang; ?>" <?php echo ($langkey == $clang ? 'selected="selected"' : ''); ?>><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($lang) : htmlspecialchars($lang, ENT_COMPAT, LANG_CHARSET)); ?></option>
+<?php } ?>
+                    </select>
+                </div>
+            </div>
+*/ ?>
+            <div id="category_future" class="clearfix">
+                <div class="radio_field">
+                    <label for="language"><?php echo INSTALL_SHOWFUTURE; ?></label>
+                    <input id ="futureentries_default" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="0"<?php echo (empty($cfuture) || $cfuture == 0) ? ' checked="checked"' : ''; ?>><label for="futureentries_default" class="wrap_legend"><?php echo USE_DEFAULT; ?></label>
+                    <input id ="futureentries_no" class="input_radio"      name="serendipity[cat][futureentries]" type="radio" value="1"<?php echo $cfuture == 1 ? ' checked="checked"' : ''; ?>><label for="futureentries_no" class="wrap_legend"><?php echo NO; ?></label>
+                    <input id ="futureentries_yes" class="input_radio"     name="serendipity[cat][futureentries]" type="radio" value="2"<?php echo $cfuture == 2 ? ' checked="checked"' : ''; ?>><label for="futureentries_yes" class="wrap_legend"><?php echo YES; ?></label>
+                </div>
+            </div>
 
 
-    <tr>
-        <td><label for="fetchlimit"><?php echo PLUGIN_CATEGORYTEMPLATES_FETCHLIMIT; ?></label></td>
-        <td><input class="input_textbox" id="fetchlimit" type="text" name="serendipity[cat][fetchlimit]" value="<?php echo $this->fetchLimit($eventData, ''); ?>" /></td>
-    </tr>
+            <div id="category_fetchlimit" class="clearfix">
+                <div class="radio_field">
+                    <label for="fetchlimit"><?php echo PLUGIN_CATEGORYTEMPLATES_FETCHLIMIT; ?></label>
+                    <input id="fetchlimit" class="input_textbox" name="serendipity[cat][fetchlimit]" type="text" value="<?php echo $this->fetchLimit($eventData, ''); ?>">
+                </div>
+            </div>
 
-    <tr>
-        <td><label for="sort_order"><?php echo SORT_ORDER; ?></label></td>
-        <td><input class="input_textbox" id="sort_order" type="text" name="serendipity[cat][sort_order]" value="<?php echo $this->fetchSortOrder($eventData, $this->get_config('sort_order')); ?>" /></td>
-    </tr>
+            <div id="category_sortorder" class="clearfix">
+                <div class="radio_field">
+                    <label for="sort_order"><?php echo SORT_ORDER; ?></label>
+                    <input id="sort_order" class="input_textbox" name="serendipity[cat][sort_order]" type="text" value="<?php echo $this->fetchSortOrder($eventData, $this->get_config('sort_order')); ?>">
+                </div>
+            </div>
 
-    <tr>
-        <td><label for="hide_rss"><?php echo PLUGIN_CATEGORYTEMPLATES_HIDERSS; ?></label></td>
-        <td>
-            <input class="input_radio" type="radio" id="hiderss_no"  name="serendipity[cat][hide_rss]" value="0" <?php echo ($hide_rss ? '' : 'checked="checked"'); ?> /><label for="hiderss_no"><?php echo NO; ?></label><br />
-            <input class="input_radio" type="radio" id="hiderss_yes"  name="serendipity[cat][hide_rss]" value="1" <?php echo ($hide_rss ? 'checked="checked"' : ''); ?> /><label for="hiderss_yes"><?php echo YES; ?></label><br />
-        </td>
-    </tr>
+            <div id="category_hiderss" class="clearfix">
+                <div class="radio_field">
+                    <label for="hide_rss"><?php echo PLUGIN_CATEGORYTEMPLATES_HIDERSS; ?></label>
+                    <input class="input_radio" type="radio" id="hiderss_no"  name="serendipity[cat][hide_rss]" value="0" <?php echo ($hide_rss ? '' : 'checked="checked"'); ?>><label for="hiderss_no"><?php echo NO; ?></label>
+                    <input class="input_radio" type="radio" id="hiderss_yes"  name="serendipity[cat][hide_rss]" value="1" <?php echo ($hide_rss ? 'checked="checked"' : ''); ?>><label for="hiderss_yes"><?php echo YES; ?></label>
+                </div>
+            </div>
+<?php if (serendipity_db_bool($this->get_config('pass', 'false'))) { ?>
 
-<?php if (serendipity_db_bool($this->get_config('pass'))) { ?>
-    <tr>
-        <td><label for="pass"><?php echo PLUGIN_CATEGORYTEMPLATES_PASS; ?></label></td>
-        <td><input class="input_textbox" id="pass" type="text" name="serendipity[cat][pass]" value="<?php echo $this->fetchProp($eventData, 'pass'); ?>" /></td>
-    </tr>
+            <div id="category_pass" class="clearfix">
+                <div class="radio_field">
+                    <label for="pass"><?php echo PLUGIN_CATEGORYTEMPLATES_PASS; ?></label>
+                    <input class="input_textbox" id="pass" type="text" name="serendipity[cat][pass]" value="<?php echo $this->fetchProp($eventData, 'pass'); ?>">
+                </div>
+            </div>
 <?php }
-                    return true;
                     break;
 
                 // When a category is deleted, delete its custom properties
@@ -608,6 +678,49 @@ class serendipity_event_categorytemplates extends serendipity_event
                     }
                     break;
 
+                case 'css_backend':
+                    $eventData .= '
+/* serendipity_event_categorytemplates backend start */
+
+@media screen and (max-width: 768px) {
+    #serendipity_category > div#category_templates,
+    #serendipity_category > div#category_language,
+    #serendipity_category > div#category_future,
+    #serendipity_category > div#category_fetchlimit,
+    #serendipity_category > div#category_sortorder,
+    #serendipity_category > div#category_hiderss,
+    #serendipity_category > div#category_pass {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+}
+#serendipity_category > div#category_future > div.radio_field,
+#serendipity_category > div#category_hiderss > div.radio_field {
+    float: none;
+    width: 100%;
+    display: block;
+}
+#category_future .radio_field label,
+#category_hiderss .radio_field label {
+    padding-left: 0;
+    display: inline-block;
+}
+#category_future .radio_field input,
+#category_hiderss .radio_field input {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+#category_templates .category_field_info {
+    width: 100%;
+    float: none;
+}
+#cat_precedence_info.field_info {
+    margin-right: 0;
+}
+/* serendipity_event_categorytemplates backend end */
+';
+                break;
+
                 // When a category is updated or added, modify its properties
                 case 'backend_category_update':
                 case 'backend_category_addNew':
@@ -626,12 +739,12 @@ class serendipity_event_categorytemplates extends serendipity_event
                         $set_tpl = $drop_tpl;
                     }
                     $val = array(
-                        'fetchlimit'    => (int)$serendipity['POST']['cat']['fetchlimit'],
+                        'fetchlimit'    => !empty($serendipity['POST']['cat']['fetchlimit']) ? (int)$serendipity['POST']['cat']['fetchlimit'] : $serendipity['fetchLimit'],
                         'template'      => $set_tpl,
                         'categoryid'    => (int)$eventData,
-                        'lang'          => $serendipity['POST']['cat']['lang'],
+                        'lang'          => isset($serendipity['POST']['cat']['lang']) ? $serendipity['POST']['cat']['lang'] : 'default',
                         'futureentries' => (int)$serendipity['POST']['cat']['futureentries'],
-                        'pass'          => $serendipity['POST']['cat']['pass'],
+                        'pass'          => isset($serendipity['POST']['cat']['pass']) ? $serendipity['POST']['cat']['pass'] : null,
                         'sort_order'    => serendipity_db_escape_string($serendipity['POST']['cat']['sort_order']),
                         'hide_rss'      => $serendipity['POST']['cat']['hide_rss'],
                     );
@@ -677,14 +790,9 @@ class serendipity_event_categorytemplates extends serendipity_event
                 // When an entry or category is displayed, this changes the
                 // CSS to the custom template
                 case 'external_plugin':
-                    $parts     = explode('_', $eventData);
-                    if (!empty($parts[1])) {
-                        $param     = (int) $parts[1];
-                    } else {
-                        $param     = null;
-                    }
+                    $parts = explode('_', $eventData);
+                    $param = !empty($parts[1]) ? (int)$parts[1] : null;
 
-                    // Shouldn't this just be a string comparison?
                     $methods = array('categorytemplate');
 
                     if (!in_array($parts[0], $methods)) {
@@ -709,8 +817,7 @@ class serendipity_event_categorytemplates extends serendipity_event
 
                     // Password not required on search or calendar, and we
                     // don't do rss for them, either
-                    if (!isset($addData['source']) ||
-                            ($addData['source'] == 'search' || $addData['source'] == 'calendar')) {
+                    if (!isset($addData['source']) || ($addData['source'] == 'search' || $addData['source'] == 'calendar')) {
                         return true;
                     }
 
@@ -723,10 +830,12 @@ class serendipity_event_categorytemplates extends serendipity_event
                     $joins = array();
                     $conds = array();
                     $addkeys = array();
+                    $havings = array();
 
                     // Password protection SQL
                     if (serendipity_db_bool($this->get_config('pass'))) {
-                        $conds[] = "(ctpass.pass IS NULL OR ctpass.pass = '{$this->current_pw}' OR ctpass.pass = '')";
+                        $pw = !empty($this->current_pw) ? $this->current_pw : '';
+                        $conds[] = "(ctpass.pass IS NULL OR ctpass.pass = '$pw' OR ctpass.pass = '')";
                         $joins[] = "LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates ctpass
                             ON (ec.categoryid = ctpass.categoryid)";
                     }
@@ -803,19 +912,19 @@ class serendipity_event_categorytemplates extends serendipity_event
                         }
                     }
                     break;
-
-                // Experimental code: fetch language for entry
+/*
+                // Experimental code: fetch language for entry (wrong hook..?)
                 case 'frontend_configure':
                     // TODO: This does not work. The ID is not present! :-()
                     // $cid = $this->getID(true);
-                    // $serendipity['lang']              = $this->fetchLang($cid, $serendipity['lang']);
+                    // $serendipity['lang'] = $this->fetchLang($cid, $serendipity['lang']);
                     break;
-
+*/
                 // When the HTML is generated, apply properties
                 case 'genpage':
                     // Get the category in question
                     $cid = $this->getID();
-                    $fc  = $this->get_config('fixcat');
+                    $fc  = $this->get_config('fixcat', 'false');
                     if ((string)$fc === 'hard') {
                         $fc = 'true';
                     }
@@ -830,6 +939,10 @@ class serendipity_event_categorytemplates extends serendipity_event
                     $serendipity['showFutureEntries'] = $this->fetchFuture($cid, $serendipity['showFutureEntries']);
                     $serendipity['template']          = $this->fetchTemplate($cid, $serendipity['template']);
                     $this->sort_order                 = $this->fetchSortOrder($cid, $this->get_config('sort_order'));
+
+                    // Fetch an engine template if set
+                    $infofile = $serendipity['serendipityPath'] . $serendipity['templatePath'] . $serendipity['template'] . '/info.txt';
+                    $serendipity['template_engine'] = $this->setFallbackChain($infofile); // This is a need for the correct fallback chain
 
                     // Set the template options
                     if (!$this->usesDefaultTemplate) {
