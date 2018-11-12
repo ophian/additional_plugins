@@ -111,9 +111,9 @@
 <title>Properties/Templates of categories: This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, and RSS hiding.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_categorytemplates</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Judebert</author>
-<content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Properties/Templates of categories&lt;/b&gt;&lt;br /&gt;This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, and RSS hiding.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 14:58:26 +0200</pubDate>
+<author>Garvin Hicking, Judebert, Ian</author>
+<content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Properties/Templates of categories&lt;/b&gt;&lt;br /&gt;This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, and RSS hiding.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Mon, 12 Nov 2018 14:51:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -572,7 +572,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Extended options for media manager&lt;/b&gt;&lt;br /&gt;Allows extended options for inserting images from the media manager&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Fri, 09 Nov 2018 15:07:16 +0100</pubDate>
+<pubDate>Sun, 11 Nov 2018 15:31:16 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -716,7 +716,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Markup: Markdown&lt;/b&gt;&lt;br /&gt;Apply Markdown markup to entry text&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 11 Sep 2018 16:27:33 +0200</pubDate>
+<pubDate>Mon, 12 Nov 2018 14:56:36 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -1058,7 +1058,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statik Sayfalar&lt;/b&gt;&lt;br /&gt;Statik sayfalar site içerisinde tasarım ve tüm biçimlemeye dahil olsun. Yönetim arabirimine yeni menü unsuru olarak eklensin.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sun, 04 Nov 2018 13:43:10 +0100</pubDate>
+<pubDate>Sun, 11 Nov 2018 15:30:38 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
