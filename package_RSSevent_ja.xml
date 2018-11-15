@@ -115,7 +115,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;カテゴリのプロパティとテンプレート&lt;/b&gt;&lt;br /&gt;このプラグインは、選択されたカテゴリに依存するテンプレートと他のいくつかのプロパティを変更することを可能にします。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 12 Nov 2018 14:51:37 +0100</pubDate>
+<pubDate>Wed, 14 Nov 2018 19:50:06 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -378,7 +378,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook&lt;/b&gt;&lt;br /&gt;Imports comments made on facebook postings (like through RSS Graffiti) back into the blog. Also embeds Facebook OpenGraph Meta-Tags into the blog. Note that adding &quot;like&quot;-Buttons to blog entries is achieved via the serendipity_event_findmore plugin! &lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sat, 07 Apr 2018 09:57:54 +0200</pubDate>
+<pubDate>Thu, 15 Nov 2018 19:03:55 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>

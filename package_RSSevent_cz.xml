@@ -113,7 +113,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Vlastnosti/šablona vzhledu pro kategorie&lt;/b&gt;&lt;br /&gt;Tento plugin poskytuje přídavné vlastnosti pro kategorie a v nich obsažené příspěvky, včetně volitené šablony vzhledu, pořadí řazení, počet zobrazených příspěvků, ochranu heslem a schovávání RSS kanálu.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 12 Nov 2018 14:51:37 +0100</pubDate>
+<pubDate>Wed, 14 Nov 2018 19:50:06 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -374,7 +374,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook&lt;/b&gt;&lt;br /&gt;Importuje do blogu komentáře u příspěvků na facebooku (pomocí RSS Graffiti). Také do blogu vloží facebookové OpenGraph Meta-Tagy. Pamatujte, že přidání talčítka &quot;Líbí se mi&quot; k příspěvkům blogu je zajišťováno pluginem serendipity_event_findmore!&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sat, 07 Apr 2018 09:57:54 +0200</pubDate>
+<pubDate>Thu, 15 Nov 2018 19:03:55 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>
