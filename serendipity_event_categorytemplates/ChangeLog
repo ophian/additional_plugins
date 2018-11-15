@@ -1,3 +1,11 @@
+1.10:
+-----
+ * Changed category option to hide this categories entries from RSS feeds,
+   to ALSO hide these entries from this Serendipity Blog Startpage, which
+   is the (mixed categories) entries list.
+   With this you are able to build (nearly) independent categories.
+ * Fix an uninitialized variable check
+
 1.00:
 -----
  * Fix fetchSortOrder() issue not returning the sort order string

@@ -23,7 +23,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.00');
+        $propbag->add('version',       '1.10');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.1.0'
@@ -639,8 +639,10 @@ class serendipity_event_categorytemplates extends serendipity_event
             <div id="category_hiderss" class="clearfix">
                 <div class="radio_field">
                     <label for="hide_rss"><?php echo PLUGIN_CATEGORYTEMPLATES_HIDERSS; ?></label>
-                    <input class="input_radio" type="radio" id="hiderss_no"  name="serendipity[cat][hide_rss]" value="0" <?php echo ($hide_rss ? '' : 'checked="checked"'); ?>><label for="hiderss_no"><?php echo NO; ?></label>
-                    <input class="input_radio" type="radio" id="hiderss_yes"  name="serendipity[cat][hide_rss]" value="1" <?php echo ($hide_rss ? 'checked="checked"' : ''); ?>><label for="hiderss_yes"><?php echo YES; ?></label>
+                    <div>
+                        <input class="input_radio" type="radio" id="hiderss_no"  name="serendipity[cat][hide_rss]" value="0" <?php echo ($hide_rss ? '' : 'checked="checked"'); ?>><label for="hiderss_no"><?php echo NO; ?></label>
+                        <input class="input_radio" type="radio" id="hiderss_yes"  name="serendipity[cat][hide_rss]" value="1" <?php echo ($hide_rss ? 'checked="checked"' : ''); ?>><label for="hiderss_yes"><?php echo YES; ?></label>
+                    </div>
                 </div>
             </div>
 <?php if (serendipity_db_bool($this->get_config('pass', 'false'))) { ?>
@@ -812,7 +814,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                 case 'frontend_fetchentry':
                     // Override sort order
                     if (!empty($this->sort_order)) {
-                        $eventData['orderby'] = $this->sort_order . (!empty($eventData['orderby']) ? ',' : '') . $eventData['orderby'] . '/*categorytemplate*/';
+                        $eventData['orderby'] = $this->sort_order . (!empty($eventData['orderby']) ? ',' : '') . (!empty($eventData['orderby']) ? $eventData['orderby'] : '') . '/*categorytemplate*/';
                     }
 
                     // Password not required on search or calendar, and we
@@ -840,8 +842,8 @@ class serendipity_event_categorytemplates extends serendipity_event
                             ON (ec.categoryid = ctpass.categoryid)";
                     }
 
-                    // RSS hiding SQL
-                    if ($serendipity['view'] == 'feed') {
+                    // Serendipity entries list startpage AND RSS hiding SQL
+                    if (in_array($serendipity['view'], ['feed', 'start', 'entries'])) {
                         $conds[] = ("(e.id NOT IN (SELECT e.id FROM {$serendipity['dbPrefix']}entries AS e
                             LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON ec.entryid = e.id
                             JOIN {$serendipity['dbPrefix']}categorytemplates AS t ON ec.categoryid = t.categoryid AND hide_rss = '1'))");
