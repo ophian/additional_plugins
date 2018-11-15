@@ -1,3 +1,8 @@
+1.01:
+----
+
+ * Allow HTTPS secured facebook $commentInfo['url'] URL
+
 1.00:
 ----
 

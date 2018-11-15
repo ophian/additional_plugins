@@ -24,7 +24,7 @@ class serendipity_event_facebook extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.1.0'
         ));
-        $propbag->add('version',       '1.00');
+        $propbag->add('version',       '1.01');
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $propbag->add('event_hooks', array(
             'frontend_display'  => true,
@@ -167,7 +167,7 @@ class serendipity_event_facebook extends serendipity_event
 
         $commentInfo = array();
         $commentInfo['name']  = $comment->from->name . $this->get_config('via');
-        $commentInfo['url']   = 'http://www.facebook.com/' . $user . '?v=wall&story_fbid=' . $post_id;
+        $commentInfo['url']   = '//www.facebook.com/' . $user . '?v=wall&story_fbid=' . $post_id;
         $commentInfo['email'] = $comment->from->id . '@example.com';
         $tcomment = $comment->message;
         if ($strip_tags) {
