@@ -53,9 +53,9 @@
 <description>Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator</description>
 <maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.00</version>
+  <version>1.01</version>
   <requirements:s9yVersion>2.2</requirements:s9yVersion>
-  <date>2018-03-27</date>
+  <date>2018-11-17</date>
   <filelist>
     <dir name="serendipity_event_aggregator">
       <file>ChangeLog</file>
@@ -1010,9 +1010,9 @@
 <description>Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.12</version>
+  <version>1.13</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-10</date>
+  <date>2018-11-17</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -4590,9 +4590,9 @@
 <description>Zezwala na dodanie kodu HTML w sekcji HEAD bloga. Można dzięki tej wtyczce zdefiniować własne meta-tagi lub inkorporować skrypty JavaScript.</description>
 <maintainers><maintainer><name>Jannis Hermanns</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
+  <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2018-11-17</date>
   <filelist>
     <dir name="serendipity_event_head_nugget">
       <file>lang_bg.inc.php</file>
