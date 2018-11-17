@@ -1,3 +1,7 @@
+1.01:
+-----
+ * Fix eventData uninitialized variables check
+
 1.00:
 -----
     * Remove outdated MagPieRss library
