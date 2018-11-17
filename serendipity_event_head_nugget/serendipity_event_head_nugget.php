@@ -20,7 +20,7 @@ class serendipity_event_head_nugget extends serendipity_event
         );
         $propbag->add('event_hooks', array('frontend_header' => true));
         $propbag->add('author', 'Jannis Hermanns');
-        $propbag->add('version', '1.5');
+        $propbag->add('version', '1.6');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
