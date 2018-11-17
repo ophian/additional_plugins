@@ -28,7 +28,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',        '1.12');
+        $propbag->add('version',        '1.13');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -136,6 +136,7 @@ class serendipity_event_commentspice extends serendipity_event
                     $tablink = str_replace($querypar, '', $actConfigUrl);
                     $tabvalue = PLUGIN_EVENT_COMMENTSPICE_STANDARDSETTINGS;
                 }
+                if (!isset($htmlswitchline)) $htmlswitchline = '';
                 $htmlswitchline .= '<img src="' . $serendipity['baseURL'] . 'index.php?/plugin/commentspice.png" style="float:right"> [<a href="' . $tablink . '" class="serendipity_pluginconfig_tab">'. $tabvalue .'</a>] ';
 
                 $propbag->add('type',           'content');
@@ -327,9 +328,9 @@ class serendipity_event_commentspice extends serendipity_event
 
             case 'fetchPingback':
                 $fetchPingbackValues = array (
-                    'none' => $serendipity['pingbackFetchPage'] ? PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_LEAVE_ON : PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_LEAVE_OFF,
+                    'none' => (isset($serendipity['pingbackFetchPage']) && $serendipity['pingbackFetchPage']) ? PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_LEAVE_ON : PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_LEAVE_OFF,
                 );
-                if ($serendipity['pingbackFetchPage']) $fetchPingbackValues['false'] = PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_DONTFETCH;
+                if (isset($serendipity['pingbackFetchPage']) && $serendipity['pingbackFetchPage']) $fetchPingbackValues['false'] = PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_DONTFETCH;
                 else  $fetchPingbackValues['true'] = PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_FETCH;
                 $propbag->add('type',       'select');
                 $propbag->add('name',        PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK);
