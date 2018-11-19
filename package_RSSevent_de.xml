@@ -104,7 +104,7 @@
 <category>Event Plugins</category>
 <author>Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Terminkalender&lt;/b&gt;&lt;br /&gt;Zeigt einen Terminkalender innerhalb des Blogs mit dem Blog-Design und allen Formatierungen an. Unterstützt Backend/Frontend Administration, vielfache Termine und iCal Export. (Nur MySQL)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 24 Aug 2018 17:23:54 +0200</pubDate>
+<pubDate>Mon, 19 Nov 2018 14:08:22 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
