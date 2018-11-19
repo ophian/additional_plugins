@@ -3,6 +3,11 @@
 * 
 
 
+1.85:
+----
+
+ * Fix some uninitialized properties
+
 1.84:
 ----
 

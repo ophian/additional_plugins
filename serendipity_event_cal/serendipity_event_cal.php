@@ -72,7 +72,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian');
-        $propbag->add('version',        '1.84');
+        $propbag->add('version',        '1.85');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '1.6',
@@ -2996,6 +2996,9 @@ class serendipity_event_cal extends serendipity_event
             if (!empty($tstamp)) $tst = $tstamp;
             if (!empty($ts) && !isset($tst)) $tst = $ts;
             if (isset($_POST['calendar']['ts']) && !isset($tst)) $tst = $_POST['calendar']['ts'];
+            if (!isset($ev)) $ev = null;
+            if (!isset($nm)) $nm = null;
+            if (!isset($type)) $type = null;
 
             /* there is an id request - open form with data to re-edit an already approved event */
             $add_data = $this->draw_add( 1, 1, $app_by, $approved, $cd, $day, $eday, $emonth, $ev, $eyear, $id, $ldesc,
