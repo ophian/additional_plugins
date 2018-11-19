@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+0.43:
+----
+ * Fix uninitialized variable check
+
 0.42:
 ----
  * Fix some PHP 7.2 thrown notices on "Countable"

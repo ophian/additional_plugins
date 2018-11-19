@@ -37,7 +37,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '5.4.0'
         ));
 
-        $propbag->add('version',       '0.42');
+        $propbag->add('version',       '0.43');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -2412,7 +2412,7 @@ class serendipity_event_downloadmanager extends serendipity_event
 
         /* reject multiple files being marked to erase */
         if (isset($_POST['Reject_Selected']) || isset($_POST['Reject_Selected_x']) || isset($_POST['Reject_Selected_y'])) {
-            if  (is_array($_POST['dlm']['files'])) {
+            if  (isset($_POST['dlm']['files']) && is_array($_POST['dlm']['files'])) {
 
                 // build new array - fetch file names by id
                 $dfile  = array();
