@@ -1,3 +1,10 @@
+4.11.1.0:
+---------
+    * Upgrade to CKEDITOR 4.11. Series, update 1 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns are updated too.
+    * Update wysiwyg-style.css for upcoming gallery changes in Serendipity Styx 2.7.0.
+      Sets new requirement to Serendipity Styx 2.6.2 plus.
+
 4.10.1.0:
 ---------
     * Upgrade to CKEDITOR 4.10. Series, update 1 (https://ckeditor.com/cke4/release-notes).

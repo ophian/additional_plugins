@@ -49,7 +49,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.10.1.0-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.11.1.0-plus.zip';
 
     /**
      * Access property checkUpdateVersion
@@ -57,14 +57,14 @@ class serendipity_event_ckeditor extends serendipity_event
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.10.1.0');
+    protected $checkUpdateVersion = array('ckeditor:4.11.1.0');
 
     /**
      * Access property revisionPackage
      * Note revisions of ckeditor and plugin additions to lang files
      * @var array
      */
-    protected $revisionPackage = array('CKEditor 4.10.1 (revision 59246e9, full package, 2018-09-11)',
+    protected $revisionPackage = array('CKEditor 4.11.1 (revision c264cac, full package, 2018-11-08)',
                                        'The main ckeditor.js file was slightly modified to prevent an odd IE 11 error with the gallery selection',
                                        'CKEditor-Plugin: mediaembed, v. 0.6+ (https://github.com/frozeman/MediaEmbed, 2016-07-24)',
                                        'CKEditor-Plugin: manually added for version "ajax", "autocomplete", "autogrow", "button", "clipboard", "codesnippet", "dialog", "dialogui", "embed", "embedbase", "embedsemantic", "emoji", "fakeobjects", "lineutils", "notification", "notificationaggregator", "placeholder", "textmatch", "textwatcher", "widget", "widgetselection" and "xml" plugins, 2018-09-11)',
@@ -189,10 +189,10 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.10.1.0'); // is CKEDITOR Series 4.10.1 - and appended plugin revision .0
+        $propbag->add('version',       '4.11.1.0'); // is CKEDITOR Series 4.11.1 - and appended plugin revision .0
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0.0',
+            'serendipity' => '2.6.2',
             'smarty'      => '3.1.13',
             'php'         => '5.2.6'
         ));
@@ -422,7 +422,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.10.1.0', '4.10.0.5'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.11.1.0', '4.10.1.0'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -436,7 +436,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.10.1.0', '4.10.0.5'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.11.1.0', '4.10.1.0'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
