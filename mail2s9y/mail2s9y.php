@@ -301,7 +301,7 @@ if ($post > 0) {
     echo $msg;
     mail($from, MAIL2S9Y_POSTING_FAILED, $msg);
     logger($msg);
-} else  {
+} else {
     logger($body);
     $newbody = url_replace($body);
     if (isset($params['nl2br']) && $params['nl2br']) {

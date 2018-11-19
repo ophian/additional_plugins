@@ -20,7 +20,7 @@ if ($serendipity['xmlrpc_debuglog'] == 'normal') {
     $debug_xmlrpc = 1;
 } elseif ($serendipity['xmlrpc_debuglog'] == 'verbose') {
     $debug_xmlrpc = 2;
-} else  {
+} else {
     $debug_xmlrpc = 0;
 }
 
