@@ -132,8 +132,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_ckeditor</link>
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Thu, 13 Sep 2018 11:10:21 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
+<pubDate>Mon, 19 Nov 2018 17:31:50 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -279,7 +279,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;ダウンロードマネージャー&lt;/b&gt;&lt;br /&gt;
 s9yに十分なダウンロードマネージャーの能力を提供します。インストール解除する時、関連するテーブルがすべて破棄されるでしょう!&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 02 Sep 2018 11:24:59 +0200</pubDate>
+<pubDate>Mon, 19 Nov 2018 17:02:23 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
