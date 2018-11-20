@@ -67,7 +67,7 @@ class serendipity_event_ckeditor extends serendipity_event
     protected $revisionPackage = array('CKEditor 4.11.1 (revision c264cac, full package, 2018-11-08)',
                                        'The main ckeditor.js file was slightly modified to prevent an odd IE 11 error with the gallery selection',
                                        'CKEditor-Plugin: mediaembed, v. 0.6+ (https://github.com/frozeman/MediaEmbed, 2016-07-24)',
-                                       'CKEditor-Plugin: manually added for version "ajax", "autocomplete", "autogrow", "button", "clipboard", "codesnippet", "dialog", "dialogui", "embed", "embedbase", "embedsemantic", "emoji", "fakeobjects", "lineutils", "notification", "notificationaggregator", "placeholder", "textmatch", "textwatcher", "widget", "widgetselection" and "xml" plugins, 2018-09-11)',
+                                       'CKEditor-Plugin: manually added for version "ajax", "autocomplete", "autogrow", "button", "clipboard", "codesnippet", "dialog", "dialogui", "embed", "embedbase", "embedsemantic", "emoji", "fakeobjects", "lineutils", "notification", "notificationaggregator", "placeholder", "textmatch", "textwatcher", "toolbar", "widget", "widgetselection" and "xml" plugins, 2018-11-08)',
                                        'CKEditor-Plugin: procurator, v. 1.6 (Serendipity placeholder Plugin, 2016-01-01)',
                                        'CKEditor-Plugin: cheatsheet, v. 1.2 (Serendipity CKE-Cheatsheet Plugin, 2016-08-15)',
                                        'CKEditor-S9yCustomConfig, cke_config.js, v. 2.13, 2017-08-19',
