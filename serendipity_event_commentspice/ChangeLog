@@ -1,3 +1,7 @@
+1.14:
+-----
+ * Change REQUEST object check for RSS to serendipity_request_url()
+
 1.13:
 -----
  * Fix some more uninitialized variables

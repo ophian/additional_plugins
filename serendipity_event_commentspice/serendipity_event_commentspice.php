@@ -28,7 +28,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',        '1.13');
+        $propbag->add('version',        '1.14');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -761,15 +761,9 @@ class serendipity_event_commentspice extends serendipity_event
     {
         $this->log("Fetchig remote rss from: " . $url);
 
-        if (function_exists('serendipity_request_object')) {
-            $req = serendipity_request_object($url, 'get', array('follow_redirects' => true, 'max_redirects' => 3));
-            $response = $req->send();
-            if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
-                $this->log("Error reading $url");
-                return;
-            }
-            # Fetch html content:
-            $data = $response->getBody();
+        if (function_exists('serendipity_request_url')) {
+            $data = serendipity_request_url($url);
+            if (empty($data)) return false;
         } else {
             require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
             $req = new HTTP_Request($url, array('allowRedirects' => true, 'maxRedirects' => 3));
