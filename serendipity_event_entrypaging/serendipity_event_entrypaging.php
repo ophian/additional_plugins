@@ -20,7 +20,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian');
-        $propbag->add('version',       '1.60');
+        $propbag->add('version',       '1.61');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -220,7 +220,11 @@ class serendipity_event_entrypaging extends serendipity_event
                         else if (isset($bycategory['categoryid'])) {
                             $cond['joinct'] = " LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
                             $cond['joins'] .= $cond['joinct'];
-                            $cond['where'] .= "(ec.categoryid != " . (int)$bycategory['categoryid'] . " OR ec.categoryid IS NULL) AND";
+                            if (isset($bycategory['template']) && $bycategory['template'] == $serendipity['template']) {
+                                $cond['where'] .= "(ec.categoryid = " . (int)$bycategory['categoryid'] . ") AND";
+                            } else {
+                                $cond['where'] .= "(ec.categoryid != " . (int)$bycategory['categoryid'] . " OR ec.categoryid IS NULL) AND";
+                            }
                         }
 
                         $querystring = "SELECT

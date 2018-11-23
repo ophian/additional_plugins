@@ -1,3 +1,8 @@
+1.61:
+-----
+ * Finetune the SQL query condition sticky for the categorytemplates
+   hidden category if inside that category for the entry paging generation.
+
 1.60:
 -----
  * Fix uninitialized variable check
