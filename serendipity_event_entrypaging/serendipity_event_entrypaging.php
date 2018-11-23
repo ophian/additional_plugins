@@ -20,7 +20,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian');
-        $propbag->add('version',       '1.50');
+        $propbag->add('version',       '1.60');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -183,6 +183,10 @@ class serendipity_event_entrypaging extends serendipity_event
                             if ($placement != 'smarty') return false;
                         }
 
+                        if (class_exists('serendipity_event_categorytemplates')) {
+                            $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", true, "both", false, false, false, true);
+                        }
+
                         // showPaging function integrated here
                         $id     = $serendipity['GET']['id'];
                         $links  = array();
@@ -203,11 +207,20 @@ class serendipity_event_entrypaging extends serendipity_event
 
                         $cond['and'] = " AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
                         serendipity_plugin_api::hook_event('frontend_fetchentry', $cond);
+
                         if (!isset($cond['joins'])) {
                             $cond['joins'] = '';
                         }
+                        if (!isset($cond['where'])) {
+                            $cond['where'] = '';
+                        }
                         if (serendipity_db_bool($this->get_config('use_category')) && !empty($currentTimeSQL['categoryid'])) {
                             $cond['joins'] .= " JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.categoryid = " . (int)$currentTimeSQL['categoryid'] . " AND ec.entryid = e.id)";
+                        }
+                        else if (isset($bycategory['categoryid'])) {
+                            $cond['joinct'] = " LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
+                            $cond['joins'] .= $cond['joinct'];
+                            $cond['where'] .= "(ec.categoryid NOT IN (" . (int)$bycategory['categoryid'] . ") OR ec.categoryid IS NULL) AND";
                         }
 
                         $querystring = "SELECT
@@ -216,6 +229,7 @@ class serendipity_event_entrypaging extends serendipity_event
                                             {$serendipity['dbPrefix']}entries e
                                             {$cond['joins']}
                                          WHERE
+                                            {$cond['where']}
                                             {$cond['compare']}
                                             {$cond['and']}
                                       ORDER BY e.timestamp [%2]
@@ -230,6 +244,9 @@ class serendipity_event_entrypaging extends serendipity_event
                         if (serendipity_db_bool($this->get_config('showrandom', 'false'))) {
                             $cond['compare2'] = " e.id <> " . (int)$id ." AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
 
+                            if (!isset($cond['joinct'])) {
+                                $cond['joinct'] = '';
+                            }
                             if ($serendipity['dbType'] ==  'mysql' || $serendipity['dbType'] == 'mysqli') {
                                 $sql_order = "ORDER BY RAND()";
                             } else {
@@ -241,7 +258,9 @@ class serendipity_event_entrypaging extends serendipity_event
                                                 e.id, e.title, e.timestamp
                                               FROM
                                                 {$serendipity['dbPrefix']}entries e
+                                                {$cond['joinct']}
                                              WHERE
+                                                {$cond['where']}
                                                 {$cond['compare2']}
                                                 $sql_order
                                              LIMIT  1";

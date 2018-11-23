@@ -1,3 +1,9 @@
+1.60:
+-----
+ * Fix uninitialized variable check
+ * Add enhancement regarding the categorytemplates event plugin,
+   to support and exclude hidden categories from entry paging.
+
 1.50:
 -----
  * Fix bottom placement which did not work at all
