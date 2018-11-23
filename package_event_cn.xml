@@ -717,7 +717,7 @@
 <description>This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, and RSS hiding.</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.20</version>
+  <version>1.21</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <date>2018-11-23</date>
   <filelist>

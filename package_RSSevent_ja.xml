@@ -115,7 +115,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;カテゴリのプロパティとテンプレート&lt;/b&gt;&lt;br /&gt;このプラグインは、選択されたカテゴリに依存するテンプレートと他のいくつかのプロパティを変更することを可能にします。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 23 Nov 2018 10:47:27 +0100</pubDate>
+<pubDate>Fri, 23 Nov 2018 19:04:48 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
