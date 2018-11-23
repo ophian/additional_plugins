@@ -2409,7 +2409,7 @@
 <description>글을 읽으면서 다음이나 이전 글로 갈 수 있도록 함</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.60</version>
+  <version>1.61</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <date>2018-11-23</date>
   <filelist>
