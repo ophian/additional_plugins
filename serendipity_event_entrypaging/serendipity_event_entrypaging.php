@@ -220,7 +220,7 @@ class serendipity_event_entrypaging extends serendipity_event
                         else if (isset($bycategory['categoryid'])) {
                             $cond['joinct'] = " LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
                             $cond['joins'] .= $cond['joinct'];
-                            $cond['where'] .= "(ec.categoryid NOT IN (" . (int)$bycategory['categoryid'] . ") OR ec.categoryid IS NULL) AND";
+                            $cond['where'] .= "(ec.categoryid != " . (int)$bycategory['categoryid'] . " OR ec.categoryid IS NULL) AND";
                         }
 
                         $querystring = "SELECT
