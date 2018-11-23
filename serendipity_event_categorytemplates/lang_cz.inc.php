@@ -17,5 +17,5 @@
 @define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE', 'Poøadí ¹ablon kategorií');
 @define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Pokud je pøíspìvek pøiøazen do více kategorií, tento seznam urèuje, která ¹ablona bude pou¾ita. ©ablona pro kategorii, která je nejvý¹e, bude pou¾ita.');
 @define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', '®ádné kategorie je¹tì nemají vlastní ¹ablonu.');
-#@define('PLUGIN_CATEGORYTEMPLATES_HIDERSS', 'Pøíspìvky v této kategorii se nebudou zobrazovat v RSS kanálu');// translate new
+#@define('PLUGIN_CATEGORYTEMPLATES_HIDE', 'Pøíspìvky v této kategorii se nebudou zobrazovat v RSS kanálu');// translate new, see en
 

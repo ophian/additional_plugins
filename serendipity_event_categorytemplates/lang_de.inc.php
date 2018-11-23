@@ -12,6 +12,6 @@
 @define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE', 'Rangordnung von Kategorie-Vorlagen');
 @define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Wenn einem Artikel mehrere Kategorien zugewiesen sind, wird anhand dieser Liste entschieden, welches speziell angepasste Template (Formatvorlage) angewandt wird. Das oberste Template wird als erstes angewandt.');
 @define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'Bisher haben keine Kategorien speziell angepasste Templates.');
-@define('PLUGIN_CATEGORYTEMPLATES_HIDERSS', 'Sollen Einträge dieser Kategorie von RSS-Feeds und der Serendipity Blog Startseite ausgeschlossen werden?');
+@define('PLUGIN_CATEGORYTEMPLATES_HIDE', 'Sollen Einträge dieser Kategorie von Eintragslisten und RSS-Feeds ausgeschlossen werden?');
 @define('PLUGIN_CATEGORYTEMPLATES_SELECT_TEMPLATE', 'Wählen oder setzen Sie das Theme für diese Blogkategorie:');
 
