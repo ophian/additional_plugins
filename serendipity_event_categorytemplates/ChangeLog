@@ -1,3 +1,10 @@
+1.20:
+-----
+ * Change SQL TABLE field name 'hide_rss' and all referencing variables
+   to 'hide', since this is now a general option to hide a category template
+   from other entries listings.
+   For example this from now on will be supported by the entrypaging plugin (>= v.1.20).
+
 1.10:
 -----
  * Changed category option to hide this categories entries from RSS feeds,

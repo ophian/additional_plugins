@@ -10,7 +10,7 @@ if (IN_serendipity !== true) {
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-@define('CATEGORYTEMPLATE_DB_VERSION', 4);
+@define('CATEGORYTEMPLATE_DB_VERSION', 5);
 
 class serendipity_event_categorytemplates extends serendipity_event
 {
@@ -23,7 +23,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.10');
+        $propbag->add('version',       '1.20');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.1.0'
@@ -140,7 +140,12 @@ class serendipity_event_categorytemplates extends serendipity_event
     {
         global $serendipity;
 
-        if ($ver == 3) {
+        if ($ver == 4) {
+            $q   = "ALTER TABLE {$serendipity['dbPrefix']}categorytemplates CHANGE hide_rss hide varchar(4)";
+            $sql = serendipity_db_schema_import($q);
+
+            $this->set_config('dbversion', CATEGORYTEMPLATE_DB_VERSION);
+        } elseif ($ver == 3) {
             $q   = "ALTER TABLE {$serendipity['dbPrefix']}categorytemplates ADD COLUMN hide_rss varchar(4) default false";
             $sql = serendipity_db_schema_import($q);
 
@@ -172,7 +177,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         lang varchar(255) default null,
                         pass varchar(255) default null,
                         sort_order varchar(255),
-                        hide_rss varchar(4) default null
+                        hide varchar(4) default null
                     )";
             $sql = serendipity_db_schema_import($q);
 
@@ -564,9 +569,9 @@ class serendipity_event_categorytemplates extends serendipity_event
                     $cfuture    = $this->fetchFuture($eventData, '');
                     $styles     = serendipity_fetchTemplates();
                     $template   = $this->fetchTemplate($eventData, '');
-                    $hide_rss   = serendipity_db_query("SELECT hide_rss FROM {$serendipity['dbPrefix']}categorytemplates AS t WHERE t.categoryid = {$eventData}", true);
-                    if ($hide_rss !== false) {
-                        $hide_rss = serendipity_db_bool($hide_rss['hide_rss']);
+                    $hidden     = serendipity_db_query("SELECT hide FROM {$serendipity['dbPrefix']}categorytemplates AS t WHERE t.categoryid = {$eventData}", true);
+                    if ($hidden !== false) {
+                        $hide = serendipity_db_bool($hidden['hide']);
                     }
 ?>
 
@@ -636,12 +641,12 @@ class serendipity_event_categorytemplates extends serendipity_event
                 </div>
             </div>
 
-            <div id="category_hiderss" class="clearfix">
+            <div id="category_hide" class="clearfix">
                 <div class="radio_field">
-                    <label for="hide_rss"><?php echo PLUGIN_CATEGORYTEMPLATES_HIDERSS; ?></label>
+                    <label for="hide"><?php echo PLUGIN_CATEGORYTEMPLATES_HIDE; ?></label>
                     <div>
-                        <input class="input_radio" type="radio" id="hiderss_no"  name="serendipity[cat][hide_rss]" value="0" <?php echo ($hide_rss ? '' : 'checked="checked"'); ?>><label for="hiderss_no"><?php echo NO; ?></label>
-                        <input class="input_radio" type="radio" id="hiderss_yes"  name="serendipity[cat][hide_rss]" value="1" <?php echo ($hide_rss ? 'checked="checked"' : ''); ?>><label for="hiderss_yes"><?php echo YES; ?></label>
+                        <input class="input_radio" type="radio" id="hide_no"  name="serendipity[cat][hide]" value="0" <?php echo ($hide ? '' : 'checked="checked"'); ?>><label for="hide_no"><?php echo NO; ?></label>
+                        <input class="input_radio" type="radio" id="hide_yes"  name="serendipity[cat][hide]" value="1" <?php echo ($hide ? 'checked="checked"' : ''); ?>><label for="hide_yes"><?php echo YES; ?></label>
                     </div>
                 </div>
             </div>
@@ -690,25 +695,25 @@ class serendipity_event_categorytemplates extends serendipity_event
     #serendipity_category > div#category_future,
     #serendipity_category > div#category_fetchlimit,
     #serendipity_category > div#category_sortorder,
-    #serendipity_category > div#category_hiderss,
+    #serendipity_category > div#category_hide,
     #serendipity_category > div#category_pass {
         margin-top: 0.5em;
         margin-bottom: 0.5em;
     }
 }
 #serendipity_category > div#category_future > div.radio_field,
-#serendipity_category > div#category_hiderss > div.radio_field {
+#serendipity_category > div#category_hide > div.radio_field {
     float: none;
     width: 100%;
     display: block;
 }
 #category_future .radio_field label,
-#category_hiderss .radio_field label {
+#category_hide .radio_field label {
     padding-left: 0;
     display: inline-block;
 }
 #category_future .radio_field input,
-#category_hiderss .radio_field input {
+#category_hide .radio_field input {
     margin-left: 0.5em;
     margin-right: 0.5em;
 }
@@ -748,7 +753,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         'futureentries' => (int)$serendipity['POST']['cat']['futureentries'],
                         'pass'          => isset($serendipity['POST']['cat']['pass']) ? $serendipity['POST']['cat']['pass'] : null,
                         'sort_order'    => serendipity_db_escape_string($serendipity['POST']['cat']['sort_order']),
-                        'hide_rss'      => $serendipity['POST']['cat']['hide_rss'],
+                        'hide'          => $serendipity['POST']['cat']['hide'],
                     );
                     $this->setProps($eventData, $val);
                     // Update list of template categories, too.
@@ -846,9 +851,9 @@ class serendipity_event_categorytemplates extends serendipity_event
                     if (in_array($serendipity['view'], ['feed', 'start', 'entries'])) {
                         $conds[] = ("(e.id NOT IN (SELECT e.id FROM {$serendipity['dbPrefix']}entries AS e
                             LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON ec.entryid = e.id
-                            JOIN {$serendipity['dbPrefix']}categorytemplates AS t ON ec.categoryid = t.categoryid AND hide_rss = '1'))");
+                            JOIN {$serendipity['dbPrefix']}categorytemplates AS t ON ec.categoryid = t.categoryid AND hide = '1'))");
                         /*
-                        $q = serendipity_db_query("SELECT categoryid FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide_rss = 1");
+                        $q = serendipity_db_query("SELECT categoryid FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1");
                         if (is_array($q)) {
                             $hidecats = array();
                             foreach($q AS $hidden) {
@@ -863,16 +868,16 @@ class serendipity_event_categorytemplates extends serendipity_event
                         */
 
                         /*
-                        $addkeys[] = "SUM(ctpass.hide_rss) AS cat_hide_rss, ";
+                        $addkeys[] = "SUM(ctpass.hide) AS cat_hide, ";
                         // Reuse password join if possible
                         if (count($joins) == 0) {
                             $joins[] = "LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates AS ctpass
                                 ON (ec.categoryid = ctpass.categoryid)\n";
                         }
-                        //$conds[] = "(cat_hide_rss IS NULL OR cat_hide_rss < 1)";
-                        //$conds[] = "(ctpass.hide_rss IS NULL OR ctpass.hide_rss = 0)";
-                        //$conds[] = "(SUM(ctpass.hide_rss < 1))";
-                        $havings[] = '(cat_hide_rss IS NULL OR cat_hide_rss < 1)';
+                        //$conds[] = "(cat_hide IS NULL OR cat_hide < 1)";
+                        //$conds[] = "(ctpass.hide IS NULL OR ctpass.hide = 0)";
+                        //$conds[] = "(SUM(ctpass.hide < 1))";
+                        $havings[] = '(cat_hide IS NULL OR cat_hide < 1)';
                         */
                     }
 
@@ -1037,4 +1042,6 @@ class categorytemplate_option
     }
 
 }
+
 /* vim: set ts=4 sts=4 sw=4 expandtab: */
+?>
