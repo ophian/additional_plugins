@@ -6,7 +6,7 @@ The XML sidebar or event plugin files in question are synced to contain new or u
 This will fully work with **Styx** only, which has some bugs fixed in core.
 
 ## Spartacus related changes for connects
-* **Ignore** the following since the **Serendipity Styx 2.6-beta1** release, see [4th list element](https://ophian.github.io/2018/08/06/Styx-2.6-beta1-released/) Spartacus notes!
+* **Ignore** the following since the **Serendipity Styx 2.6-beta1** release, see [4th list element](https://ophian.github.io/2018/08/06/Serendipity-Styx-2.6-beta1-released/) Spartacus notes!
 * - - -
 * Spartacus connect changes - regarding plugin updates - require to set this url `https://raw.githubusercontent.com/ophian/additional_plugins/master/` into the "_Custom location for mirror_" **Spartacus** plugin option.
 * Due to **bugs** in the previous (origin Serendipity) Spartacus plugin versions this does not work without **temporary fixing** the Spartacus plugin file by dropping this file https://raw.githubusercontent.com/ophian/styx-spartacus-up/master/serendipity_event_spartacus.php over the old file.
