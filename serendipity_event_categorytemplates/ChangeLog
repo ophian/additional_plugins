@@ -1,3 +1,7 @@
+1.21:
+-----
+ * Better style plugin option styles
+
 1.20:
 -----
  * Change SQL TABLE field name 'hide_rss' and all referencing variables

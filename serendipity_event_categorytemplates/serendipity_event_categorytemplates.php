@@ -23,7 +23,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.20');
+        $propbag->add('version',       '1.21');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.1.0'
@@ -721,9 +721,15 @@ class serendipity_event_categorytemplates extends serendipity_event
     width: 100%;
     float: none;
 }
+#cat_precedence.sequence_container,
 #cat_precedence_info.field_info {
     margin-right: 0;
 }
+.info_expanded #cat_precedence.sequence_container {
+    float: inline-end;
+    margin-right: 1%;
+}
+
 /* serendipity_event_categorytemplates backend end */
 ';
                 break;
