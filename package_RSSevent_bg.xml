@@ -113,7 +113,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Свойства/шаблони за категории&lt;/b&gt;&lt;br /&gt;Тази приставка Ви позволява да сменяте шаблона и някои други свойства в зависимост от избраната катергория&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 14 Nov 2018 19:50:06 +0100</pubDate>
+<pubDate>Fri, 23 Nov 2018 10:47:27 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -131,7 +131,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Mon, 19 Nov 2018 17:31:50 +0100</pubDate>
+<pubDate>Tue, 20 Nov 2018 10:06:27 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -167,7 +167,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 17 Nov 2018 13:07:10 +0100</pubDate>
+<pubDate>Wed, 21 Nov 2018 12:54:59 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -338,7 +338,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Връзки към предишна/следваща статия&lt;/b&gt;&lt;br /&gt;Поставя връзки към предишната и следващата статия в страницата на настоящата статия. Това позволява по-лесно разглеждане на статиите.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 26 Aug 2018 17:25:33 +0200</pubDate>
+<pubDate>Fri, 23 Nov 2018 11:30:02 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
