@@ -109,7 +109,7 @@ class serendipity_event_entrypaging extends serendipity_event
             if (class_exists('serendipity_event_multilingual')) {
                 $localtitle = serendipity_db_query("SELECT value FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = {$resultset[0]['id']} AND property = 'multilingual_title_{$serendipity['lang']}'", true, "both", false, false, false, true);
             }
-            if (!is_array($localtitle)) {
+            if (!isset($localtitle) || !is_array($localtitle)) {
                 $localtitle = array(0 => $resultset[0]['title']);
             }
 
