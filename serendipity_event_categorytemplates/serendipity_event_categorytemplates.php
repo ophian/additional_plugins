@@ -23,7 +23,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.21');
+        $propbag->add('version',       '1.30');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.1.0'
@@ -823,18 +823,23 @@ class serendipity_event_categorytemplates extends serendipity_event
                 // passwords
                 case 'frontend_fetchentries':
                 case 'frontend_fetchentry':
+                    $allowPasswordProtected = serendipity_db_bool($this->get_config('pass'));
+
                     // Override sort order - don't touch for default serendipity_fetchEntries(... $orderby)
                     if (!empty($this->sort_order) && $this->sort_order != 'timestamp DESC') {
                         $eventData['orderby'] = $this->sort_order . (!empty($eventData['orderby']) ? ', ' : '') . (!empty($eventData['orderby']) ? $eventData['orderby'] : '') . '/*BYcategorytemplate*/';
                     }
 
-                    // Password not required on search or calendar, and we
-                    // don't do rss for them, either
-                    if (!isset($addData['source']) || ($addData['source'] == 'search' || $addData['source'] == 'calendar')) {
-                        return true;
+                    // This usually emits the normal query search like being used to dig into all and return
+                    // Password are not required on search or calendar, and we
+                    // don't do RSS for them either
+                    if ($allowPasswordProtected || ($allowPasswordProtected && $serendipity['view'] == 'feed')) {
+                        if (!isset($addData['source']) || ($addData['source'] == 'search' || $addData['source'] == 'calendar')) {
+                            return true;
+                        }
                     }
 
-                    // Password and RSS not required for installation
+                    // Password and hidden categories not required for installation
                     if (defined('IN_installer') && IN_installer === true && defined('IN_upgrader') && IN_upgrader === true) {
                         return true;
                     }
@@ -846,19 +851,28 @@ class serendipity_event_categorytemplates extends serendipity_event
                     $havings = array();
 
                     // Password protection SQL
-                    if (serendipity_db_bool($this->get_config('pass'))) {
+                    if ($allowPasswordProtected) {
                         $pw = !empty($this->current_pw) ? $this->current_pw : '';
                         $conds[] = "(ctpass.pass IS NULL OR ctpass.pass = '$pw')";
                         $joins[] = "LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates ctpass
                             ON (ec.categoryid = ctpass.categoryid)";
                     }
 
-                    // Serendipity entries list startpage AND RSS hiding SQL
-                    if (in_array($serendipity['view'], ['feed', 'start', 'entries'])) {
-                        $conds[] = ("(e.id NOT IN (SELECT e.id FROM {$serendipity['dbPrefix']}entries AS e
-                            LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON ec.entryid = e.id
-                            JOIN {$serendipity['dbPrefix']}categorytemplates AS t ON ec.categoryid = t.categoryid AND hide = '1'))");
-                        /*
+                    // Serendipity entries list startpage, (P) paged views of archives, search requests and feeds.
+                    // Add       <input type="hidden" name="serendipity[category]" value="5">   and take the correct category ID number(!)
+                    // to your categorytemplate index.tpl or sidebar.tpl; wherever you have the quicksearch form!
+
+                    if (in_array($serendipity['view'], ['archives', 'entries', 'feed', 'search', 'start'])) {
+                        $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", true, "both", false, false, false, true);
+                        if (isset($bycategory['template'])) {
+                            if ($bycategory['template'] == $serendipity['template']) {
+                                $conds[] = "(ec.categoryid = " . (int)$bycategory['categoryid'] . ")";
+                            } else {
+                                $conds[] = "(ec.categoryid != " . (int)$bycategory['categoryid'] . " OR ec.categoryid IS NULL)";
+                            }
+                        }
+                        /* This looks like a try to support multiple hidden categories. All above is truly tested with a single categorytemplate only.
+                         *
                         $q = serendipity_db_query("SELECT categoryid FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1");
                         if (is_array($q)) {
                             $hidecats = array();
@@ -926,7 +940,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     }
                     break;
 /*
-                // Experimental code: fetch language for entry (wrong hook..?)
+                // EXPERIMENTAL CODE: fetch language for entry (:: maybe wrong hook..?)
                 case 'frontend_configure':
                     // TODO: This does not work. The ID is not present! :-()
                     // $cid = $this->getID(true);

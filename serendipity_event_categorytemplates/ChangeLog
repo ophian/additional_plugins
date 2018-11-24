@@ -1,3 +1,11 @@
+1.30:
+-----
+ * Fix possible SQL query ORDER BY doublets
+ * Rewrite the main SQL entries query to support other database types.
+   Fix hidden categories query to now support archives (P) paging pages,
+   search request results, sidebar categories, (and the /archive where it
+   links to the entries).
+
 1.21:
 -----
  * Better style plugin option styles
