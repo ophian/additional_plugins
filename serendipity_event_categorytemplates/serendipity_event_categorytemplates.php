@@ -823,9 +823,9 @@ class serendipity_event_categorytemplates extends serendipity_event
                 // passwords
                 case 'frontend_fetchentries':
                 case 'frontend_fetchentry':
-                    // Override sort order
-                    if (!empty($this->sort_order)) {
-                        $eventData['orderby'] = $this->sort_order . (!empty($eventData['orderby']) ? ',' : '') . (!empty($eventData['orderby']) ? $eventData['orderby'] : '') . '/*categorytemplate*/';
+                    // Override sort order - don't touch for default serendipity_fetchEntries(... $orderby)
+                    if (!empty($this->sort_order) && $this->sort_order != 'timestamp DESC') {
+                        $eventData['orderby'] = $this->sort_order . (!empty($eventData['orderby']) ? ', ' : '') . (!empty($eventData['orderby']) ? $eventData['orderby'] : '') . '/*BYcategorytemplate*/';
                     }
 
                     // Password not required on search or calendar, and we
@@ -840,8 +840,8 @@ class serendipity_event_categorytemplates extends serendipity_event
                     }
 
                     // Prepare to modify SQL
-                    $joins = array();
-                    $conds = array();
+                    $joins   = array();
+                    $conds   = array();
                     $addkeys = array();
                     $havings = array();
 
