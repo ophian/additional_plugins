@@ -830,9 +830,8 @@ class serendipity_event_categorytemplates extends serendipity_event
                         $eventData['orderby'] = $this->sort_order . (!empty($eventData['orderby']) ? ', ' : '') . (!empty($eventData['orderby']) ? $eventData['orderby'] : '') . '/*BYcategorytemplate*/';
                     }
 
-                    // This usually emits the normal query search like being used to dig into all and return
-                    // Password are not required on search or calendar, and we
-                    // don't do RSS for them either
+                    // This usually emits the normal query search like being used to - to dig into all and return
+                    // Password are not required on search or calendar, and we don't do RSS for them either
                     if ($allowPasswordProtected || ($allowPasswordProtected && $serendipity['view'] == 'feed')) {
                         if (!isset($addData['source']) || ($addData['source'] == 'search' || $addData['source'] == 'calendar')) {
                             return true;
