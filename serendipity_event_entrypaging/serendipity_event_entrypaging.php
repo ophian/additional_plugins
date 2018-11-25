@@ -20,7 +20,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian');
-        $propbag->add('version',       '1.61');
+        $propbag->add('version',       '1.62');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -184,7 +184,7 @@ class serendipity_event_entrypaging extends serendipity_event
                         }
 
                         if (class_exists('serendipity_event_categorytemplates')) {
-                            $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", true, "both", false, false, false, true);
+                            $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", true, 'assoc');
                         }
 
                         // showPaging function integrated here

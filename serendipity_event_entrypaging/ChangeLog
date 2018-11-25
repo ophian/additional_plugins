@@ -1,3 +1,7 @@
+1.62:
+-----
+ * Simplify categorytemplates query usage
+
 1.61:
 -----
  * Finetune the SQL query condition sticky for the categorytemplates
