@@ -1,3 +1,10 @@
+1.40:
+-----
+ * Use new event hook 'frontend_fetcharchives' for archive pages SQL conditionals
+ * This raises requirement version to minimum 2.6.4
+ * Having multiple hidden category (templates) is still not supported and will be
+   done later on if possible.
+
 1.30:
 -----
  * Fix possible SQL query ORDER BY doublets

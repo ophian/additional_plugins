@@ -6,8 +6,8 @@
  */
 
 @define('PLUGIN_CATEGORYTEMPLATES_NAME', 'Vlastnosti/šablona vzhledu pro kategorie');
-@define('PLUGIN_CATEGORYTEMPLATES_DESC', 'Tento plugin poskytuje pøídavné vlastnosti pro kategorie a v nich obsažené pøíspìvky, vèetnì volitené šablony vzhledu, poøadí øazení, poèet zobrazených pøíspìvkù, ochranu heslem a schovávání RSS kanálu.');
-@define('PLUGIN_CATEGORYTEMPLATES_SELECT', 'Zadejte prosím název adresáøe se šablonou, kterou chcete použít pro tuto kategorii. Relativní cesta zaèíná v adresáøi "templates/". Takže mùžete zadat napøíklad "blue" nebo "kubrick". Mùžete použít také název podadresáøe, pokud jste uložili šablonu v podadresáøi jiné šablony. Pak zadáváte "blue/kategorie1" nebo "blue/kategorie2".');
+#@define('PLUGIN_CATEGORYTEMPLATES_DESC', 'Tento plugin poskytuje pøídavné vlastnosti pro kategorie a v nich obsažené pøíspìvky, vèetnì volitené šablony vzhledu, poøadí øazení, poèet zobrazených pøíspìvkù, ochranu heslem a schovávání RSS kanálu.');// translate new, see en
+@define('PLUGIN_CATEGORYTEMPLATES_SELECT', 'Zadejte prosím název adresáøe se šablonou, kterou chcete použít pro tuto kategorii. Relativní cesta zaèíná v adresáøi "templates/". Takže mùžete zadat napøíklad "blue" nebo "kubrick". Mùžete použít také název podadresáøe, pokud jste uložili šablonu v podadresáøi jiné šablony. Pak zadáváte "blue/kategorie1" nebo "blue/kategorie2". Recommended use is to add a category own "Engine:" template.');
 @define('PLUGIN_CATEGORYTEMPLATES_FETCHLIMIT', 'Pøíspìvky zobrazené na výchozí stránce kategorie');
 @define('PLUGIN_CATEGORYTEMPLATES_PASS', 'Ochrana heslem:');
 @define('PLUGIN_CATEGORYTEMPLATES_PASS_DESC', 'Má být zapnuta ochrana kategorií heslem? Nevýhoda je, že se kvùli zaheslovanému pøístupu musí provést jeden dotaz do databáze navíc a že pøíspìvky v kategoriích chránìných heslem se nezobrazují na výchozí stránce blogu dokud uživatel nezobrazí chránìnou kategorii.');

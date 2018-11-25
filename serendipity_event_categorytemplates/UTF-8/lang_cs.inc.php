@@ -6,8 +6,8 @@
  */
 
 @define('PLUGIN_CATEGORYTEMPLATES_NAME', 'Vlastnosti/šablona vzhledu pro kategorie');
-@define('PLUGIN_CATEGORYTEMPLATES_DESC', 'Tento plugin poskytuje přídavné vlastnosti pro kategorie a v nich obsažené příspěvky, včetně volitené šablony vzhledu, pořadí řazení, počet zobrazených příspěvků, ochranu heslem a schovávání RSS kanálu.');
-@define('PLUGIN_CATEGORYTEMPLATES_SELECT', 'Zadejte prosím název adresáře se šablonou, kterou chcete použít pro tuto kategorii. Relativní cesta začíná v adresáři "templates/". Takže můžete zadat například "blue" nebo "kubrick". Můžete použít také název podadresáře, pokud jste uložili šablonu v podadresáři jiné šablony. Pak zadáváte "blue/kategorie1" nebo "blue/kategorie2".');
+#@define('PLUGIN_CATEGORYTEMPLATES_DESC', 'Tento plugin poskytuje přídavné vlastnosti pro kategorie a v nich obsažené příspěvky, včetně volitené šablony vzhledu, pořadí řazení, počet zobrazených příspěvků, ochranu heslem a schovávání RSS kanálu.');// translate new, see en
+@define('PLUGIN_CATEGORYTEMPLATES_SELECT', 'Zadejte prosím název adresáře se šablonou, kterou chcete použít pro tuto kategorii. Relativní cesta začíná v adresáři "templates/". Takže můžete zadat například "blue" nebo "kubrick". Můžete použít také název podadresáře, pokud jste uložili šablonu v podadresáři jiné šablony. Pak zadáváte "blue/kategorie1" nebo "blue/kategorie2". Recommended use is to add a category own "Engine:" template.');
 @define('PLUGIN_CATEGORYTEMPLATES_FETCHLIMIT', 'Příspěvky zobrazené na výchozí stránce kategorie');
 @define('PLUGIN_CATEGORYTEMPLATES_PASS', 'Ochrana heslem:');
 @define('PLUGIN_CATEGORYTEMPLATES_PASS_DESC', 'Má být zapnuta ochrana kategorií heslem? Nevýhoda je, že se kvůli zaheslovanému přístupu musí provést jeden dotaz do databáze navíc a že příspěvky v kategoriích chráněných heslem se nezobrazují na výchozí stránce blogu dokud uživatel nezobrazí chráněnou kategorii.');

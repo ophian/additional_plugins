@@ -23,9 +23,9 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.30');
+        $propbag->add('version',       '1.40');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
+            'serendipity' => '2.6.4',
             'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',    array(
@@ -36,6 +36,7 @@ class serendipity_event_categorytemplates extends serendipity_event
             'backend_category_update'   => true,
             'backend_category_delete'   => true,
             'backend_category_showForm' => true,
+            'frontend_fetcharchives'    => true,
             'frontend_fetchentries'     => true,
             'frontend_fetchentry'       => true,
             'backend_sidebar_entries_event_display_cattemplate' => true,
@@ -572,7 +573,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     $hidden     = serendipity_db_query("SELECT hide FROM {$serendipity['dbPrefix']}categorytemplates AS t WHERE t.categoryid = {$eventData}", true);
                     if ($hidden !== false) {
                         $hide = serendipity_db_bool($hidden['hide']);
-                    }
+                    } else $hide = false;
 ?>
 
             <h3 class="additional_properties"><?php echo defined('ADDITIONAL_PROPERTIES_BY_PLUGIN') ? sprintf(ADDITIONAL_PROPERTIES_BY_PLUGIN, PLUGIN_CATEGORYTEMPLATES_NAME) : 'Additional properties by Plugin: ' . PLUGIN_CATEGORYTEMPLATES_NAME; ?></h3>
@@ -819,6 +820,19 @@ class serendipity_event_categorytemplates extends serendipity_event
 				    exit;
 				    break;
 
+                // When Styx tries to gather the archive entry sums, exclude hidden category(template) entries
+                case 'frontend_fetcharchives':
+                    $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", true, 'assoc');
+                    if (isset($bycategory['template'])) {
+                        $eventData['joins'] = "LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
+                        if ($bycategory['template'] == $serendipity['template']) {
+                            $eventData['and'] = " AND (ec.categoryid = " . (int)$bycategory['categoryid'] . ")";
+                        } else {
+                            $eventData['and'] = " AND (ec.categoryid != " . (int)$bycategory['categoryid'] . " OR ec.categoryid IS NULL)";
+                        }
+                    }
+				    break;
+
                 // When Serendipity tries to get the entries, check for
                 // passwords
                 case 'frontend_fetchentries':
@@ -862,7 +876,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     // to your categorytemplate index.tpl or sidebar.tpl; wherever you have the quicksearch form!
 
                     if (in_array($serendipity['view'], ['archives', 'entries', 'feed', 'search', 'start'])) {
-                        $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", true, "both", false, false, false, true);
+                        $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", true, 'assoc');
                         if (isset($bycategory['template'])) {
                             if ($bycategory['template'] == $serendipity['template']) {
                                 $conds[] = "(ec.categoryid = " . (int)$bycategory['categoryid'] . ")";
