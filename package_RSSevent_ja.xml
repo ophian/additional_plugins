@@ -110,12 +110,12 @@
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
-<title>カテゴリのプロパティとテンプレート: このプラグインは、選択されたカテゴリに依存するテンプレートと他のいくつかのプロパティを変更することを可能にします。</title>
+<title>カテゴリのプロパティとテンプレート: This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_categorytemplates</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;カテゴリのプロパティとテンプレート&lt;/b&gt;&lt;br /&gt;このプラグインは、選択されたカテゴリに依存するテンプレートと他のいくつかのプロパティを変更することを可能にします。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 24 Nov 2018 19:40:33 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;カテゴリのプロパティとテンプレート&lt;/b&gt;&lt;br /&gt;This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.&lt;br/&gt;For: Serendipity 2.6.4</content:encoded>
+<pubDate>Sun, 25 Nov 2018 13:44:19 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -342,7 +342,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;次/前のエントリへのリンク&lt;/b&gt;&lt;br /&gt;閲覧時、次/前のエントリを閲覧することを可能にします。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 23 Nov 2018 16:41:05 +0100</pubDate>
+<pubDate>Sun, 25 Nov 2018 14:44:56 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>

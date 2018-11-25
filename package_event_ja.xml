@@ -715,12 +715,12 @@
 <license>GPL</license>
 <summary>カテゴリのプロパティとテンプレート</summary>
 <groups>FRONTEND_FULL_MODS,FRONTEND_VIEWS,BACKEND_TEMPLATES</groups>
-<description>このプラグインは、選択されたカテゴリに依存するテンプレートと他のいくつかのプロパティを変更することを可能にします。</description>
+<description>This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.30</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-11-24</date>
+  <version>1.40</version>
+  <requirements:s9yVersion>2.6.4</requirements:s9yVersion>
+  <date>2018-11-25</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -2411,9 +2411,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>閲覧時、次/前のエントリを閲覧することを可能にします。</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.61</version>
+  <version>1.62</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-11-23</date>
+  <date>2018-11-25</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
