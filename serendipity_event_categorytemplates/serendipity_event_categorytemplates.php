@@ -23,7 +23,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.40');
+        $propbag->add('version',       '1.41');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.4',
             'php'         => '5.1.0'
@@ -646,8 +646,8 @@ class serendipity_event_categorytemplates extends serendipity_event
                 <div class="radio_field">
                     <label for="hide"><?php echo PLUGIN_CATEGORYTEMPLATES_HIDE; ?></label>
                     <div>
+                        <input class="input_radio" type="radio" id="hide_yes" name="serendipity[cat][hide]" value="1" <?php echo ($hide ? 'checked="checked"' : ''); ?>><label for="hide_yes"><?php echo YES; ?></label>
                         <input class="input_radio" type="radio" id="hide_no"  name="serendipity[cat][hide]" value="0" <?php echo ($hide ? '' : 'checked="checked"'); ?>><label for="hide_no"><?php echo NO; ?></label>
-                        <input class="input_radio" type="radio" id="hide_yes"  name="serendipity[cat][hide]" value="1" <?php echo ($hide ? 'checked="checked"' : ''); ?>><label for="hide_yes"><?php echo YES; ?></label>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,7 @@
+1.41:
+-----
+ * Change display order of input radio yes/no for consistency
+
 1.40:
 -----
  * Use new event hook 'frontend_fetcharchives' for archive pages SQL conditionals
