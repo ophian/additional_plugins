@@ -113,7 +113,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Properties/Templates of categories&lt;/b&gt;&lt;br /&gt;This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.&lt;br/&gt;For: Serendipity 2.6.4</content:encoded>
-<pubDate>Sun, 25 Nov 2018 13:44:19 +0100</pubDate>
+<pubDate>Mon, 26 Nov 2018 13:03:16 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -338,7 +338,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;다음/이전 글로 가는 링크 표시&lt;/b&gt;&lt;br /&gt;글을 읽으면서 다음이나 이전 글로 갈 수 있도록 함&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 25 Nov 2018 14:44:56 +0100</pubDate>
+<pubDate>Mon, 26 Nov 2018 13:25:04 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
