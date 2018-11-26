@@ -1,3 +1,8 @@
+1.70:
+-----
+ * Allow and support multiple hidden categories by SQL condition exclusion
+   for the categorytemplates plugin
+
 1.62:
 -----
  * Simplify categorytemplates query usage

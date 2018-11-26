@@ -20,7 +20,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian');
-        $propbag->add('version',       '1.62');
+        $propbag->add('version',       '1.70');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -184,7 +184,7 @@ class serendipity_event_entrypaging extends serendipity_event
                         }
 
                         if (class_exists('serendipity_event_categorytemplates')) {
-                            $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", true, 'assoc');
+                            $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
                         }
 
                         // showPaging function integrated here
@@ -217,13 +217,15 @@ class serendipity_event_entrypaging extends serendipity_event
                         if (serendipity_db_bool($this->get_config('use_category')) && !empty($currentTimeSQL['categoryid'])) {
                             $cond['joins'] .= " JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.categoryid = " . (int)$currentTimeSQL['categoryid'] . " AND ec.entryid = e.id)";
                         }
-                        else if (isset($bycategory['categoryid'])) {
+                        else if (isset($bycategory[0]['categoryid'])) {
                             $cond['joinct'] = " LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
                             $cond['joins'] .= $cond['joinct'];
-                            if (isset($bycategory['template']) && $bycategory['template'] == $serendipity['template']) {
-                                $cond['where'] .= "(ec.categoryid = " . (int)$bycategory['categoryid'] . ") AND";
-                            } else {
-                                $cond['where'] .= "(ec.categoryid != " . (int)$bycategory['categoryid'] . " OR ec.categoryid IS NULL) AND";
+                            foreach ($bycategory AS $bcat) {
+                                if ($bcat['template'] == $serendipity['template']) {
+                                    $cond['where'] .= "(ec.categoryid = " . (int)$bcat['categoryid'] . ") AND";
+                                } else {
+                                    $cond['where'] .= "(ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL) AND";
+                                }
                             }
                         }
 
