@@ -1,3 +1,8 @@
+1.50:
+-----
+ * Use new event hook 'frontend_fetchcategories' for (sidebar) category SQL conditions
+ * Enable and allow multiple hidden category (templates) SQL listing conditions
+
 1.41:
 -----
  * Change display order of input radio yes/no for consistency
@@ -7,8 +12,8 @@
  * Use new event hook 'frontend_fetcharchives' for archive pages SQL conditionals
  * This raises requirement version to minimum 2.6.4
  * Simplify query usage
- * Having multiple hidden category (templates) is still not supported and will be
-   done later on if possible.
+ * Having multiple hidden category (templates) is still not supported by SQL conditions
+   and will be done later on, if possible.
 
 1.30:
 -----

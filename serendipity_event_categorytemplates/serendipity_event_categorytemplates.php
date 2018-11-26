@@ -23,7 +23,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.41');
+        $propbag->add('version',       '1.50');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.4',
             'php'         => '5.1.0'
@@ -36,6 +36,7 @@ class serendipity_event_categorytemplates extends serendipity_event
             'backend_category_update'   => true,
             'backend_category_delete'   => true,
             'backend_category_showForm' => true,
+            'frontend_fetchcategories'  => true,
             'frontend_fetcharchives'    => true,
             'frontend_fetchentries'     => true,
             'frontend_fetchentry'       => true,
@@ -820,15 +821,32 @@ class serendipity_event_categorytemplates extends serendipity_event
 				    exit;
 				    break;
 
-                // When Styx tries to gather the archive entry sums, exclude hidden category(template) entries
+                // When Serendipity Styx tries to gather the archive entry sums, exclude hidden category(template) entries
+                case 'frontend_fetchcategories':
                 case 'frontend_fetcharchives':
-                    $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", true, 'assoc');
-                    if (isset($bycategory['template'])) {
-                        $eventData['joins'] = "LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
-                        if ($bycategory['template'] == $serendipity['template']) {
-                            $eventData['and'] = " AND (ec.categoryid = " . (int)$bycategory['categoryid'] . ")";
-                        } else {
-                            $eventData['and'] = " AND (ec.categoryid != " . (int)$bycategory['categoryid'] . " OR ec.categoryid IS NULL)";
+                    $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
+                    if (isset($bycategory[0]['template'])) {
+                        $conds = array();
+                        if ($event == 'frontend_fetcharchives') {
+                            $eventData['joins'] = "LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
+                        }
+                        $as = ($event == 'frontend_fetchcategories') ? 'c' : 'ec';
+                        foreach ($bycategory AS $bcat) {
+                            if ($bcat['template'] == $serendipity['template']) {
+                                $conds[] = "($as.categoryid = " . (int)$bcat['categoryid'] . ")";
+                            } else {
+                                $conds[] = "($as.categoryid != " . (int)$bcat['categoryid'] . " OR $as.categoryid IS NULL)";
+                            }
+                        }
+                        // Conditions
+                        if (count($conds) > 0) {
+                            $cond = count($conds) > 1 ? '(' .implode(' AND ', $conds) .')' : implode(' AND ', $conds);
+                            $and  = ($event == 'frontend_fetchcategories') ? '' : ' AND ';
+                            if (empty($eventData['and'])) {
+                                $eventData['and'] = $and . $cond;
+                            } else {
+                                $eventData['and'] .= $and . $cond;
+                            }
                         }
                     }
 				    break;
@@ -839,7 +857,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                 case 'frontend_fetchentry':
                     $allowPasswordProtected = serendipity_db_bool($this->get_config('pass'));
 
-                    // Override sort order - don't touch for default serendipity_fetchEntries(... $orderby)
+                    // Override sort order - don't touch for default serendipity_fetchEntries(..., $orderby)
                     if (!empty($this->sort_order) && $this->sort_order != 'timestamp DESC') {
                         $eventData['orderby'] = $this->sort_order . (!empty($eventData['orderby']) ? ', ' : '') . (!empty($eventData['orderby']) ? $eventData['orderby'] : '') . '/*BYcategorytemplate*/';
                     }
@@ -876,15 +894,17 @@ class serendipity_event_categorytemplates extends serendipity_event
                     // to your categorytemplate index.tpl or sidebar.tpl; wherever you have the quicksearch form!
 
                     if (in_array($serendipity['view'], ['archives', 'entries', 'feed', 'search', 'start'])) {
-                        $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", true, 'assoc');
-                        if (isset($bycategory['template'])) {
-                            if ($bycategory['template'] == $serendipity['template']) {
-                                $conds[] = "(ec.categoryid = " . (int)$bycategory['categoryid'] . ")";
-                            } else {
-                                $conds[] = "(ec.categoryid != " . (int)$bycategory['categoryid'] . " OR ec.categoryid IS NULL)";
+                        $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
+                        if (isset($bycategory[0]['template'])) {
+                            foreach ($bycategory AS $bcat) {
+                                if ($bcat['template'] == $serendipity['template']) {
+                                    $conds[] = "(ec.categoryid = " . (int)$bcat['categoryid'] . ")";
+                                } else {
+                                    $conds[] = "(ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL)";
+                                }
                             }
                         }
-                        /* This looks like a try to support multiple hidden categories. All above is truly tested with a single categorytemplate only.
+                        /* This looks like an other (old archived) try to support multiple hidden categories.
                          *
                         $q = serendipity_db_query("SELECT categoryid FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1");
                         if (is_array($q)) {
@@ -926,7 +946,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     }
                     // Conditions
                     if (count($conds) > 0) {
-                        $cond = implode(' AND ', $conds);
+                        $cond = count($conds) > 1 ? '(' .implode(' AND ', $conds) .')' : implode(' AND ', $conds);
                         if (empty($eventData['and'])) {
                             $eventData['and'] = " WHERE $cond ";
                         } else {
