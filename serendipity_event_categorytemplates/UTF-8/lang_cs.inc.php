@@ -15,7 +15,7 @@
 @define('PLUGIN_CATEGORYTEMPLATES_FIXENTRY', 'Globální nastavení kategorie příspěvku');
 @define('PLUGIN_CATEGORYTEMPLATES_FIXENTRY_DESC', 'Pokud je zapnuto, kategorie příspěvku při zobrazení jediného příspěvku bude nastavena jako aktuální kategorie.');
 @define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE', 'Pořadí šablon kategorií');
-@define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Pokud je příspěvek přiřazen do více kategorií, tento seznam určuje, která šablona bude použita. Šablona pro kategorii, která je nejvýše, bude použita.');
-@define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'Žádné kategorie ještě nemají vlastní šablonu.');
+@define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Pokud je příspěvek přiřazen do více kategorií, tento seznam určuje, která šablona bude použita. Šablona pro kategorii, která je nejvýše, bude použita. To be able to save and activate your order changes for existing categorytemplates, you must first activate their checkbox(es) here.');
+@define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'Žádné kategorie ještě nemají vlastní šablonu. In this case let this checkbox unchecked!');
 #@define('PLUGIN_CATEGORYTEMPLATES_HIDE', 'Příspěvky v této kategorii se nebudou zobrazovat v RSS kanálu');// translate new, see en
 

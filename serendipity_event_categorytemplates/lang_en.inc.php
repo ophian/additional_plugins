@@ -16,8 +16,8 @@
 @define('PLUGIN_CATEGORYTEMPLATES_FIXENTRY', 'Globally set entry\'s category');
 @define('PLUGIN_CATEGORYTEMPLATES_FIXENTRY_DESC', 'If enabled, the category of an article in single entry view will be set as the current category.');
 @define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE', 'Precedence of category templates');
-@define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'When an entry is assigned to multiple categories, this list determines the category whose custom template is applied. The category on top is considered first.');
-@define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'No categories have customized templates yet.');
+@define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'When an entry is assigned to multiple categories, this list determines the category whose custom template is applied. The category on top is considered first. To be able to save and activate your order changes for existing categorytemplates, you must first activate their checkbox(es) here.');
+@define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'No categories have customized templates yet. In this case let this checkbox unchecked!');
 @define('PLUGIN_CATEGORYTEMPLATES_HIDE', 'Shall entries of this category be hidden from entries listings and RSS feeds?');
 @define('PLUGIN_CATEGORYTEMPLATES_SELECT_TEMPLATE', 'Set the Theme for this blog category:');
 

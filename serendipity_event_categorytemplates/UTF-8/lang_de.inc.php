@@ -10,7 +10,7 @@
 @define('PLUGIN_CATEGORYTEMPLATES_FIXENTRY', 'Fixe Zuweisung eines Artikels zu seiner Kategorie');
 @define('PLUGIN_CATEGORYTEMPLATES_FIXENTRY_DESC', 'Wenn aktiviert, wird die Kategorie eines Artikels in der Detailansicht auf die jeweils aktuelle Kategorie gesetzt.');
 @define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE', 'Rangordnung von Kategorie-Vorlagen');
-@define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Wenn einem Artikel mehrere Kategorien zugewiesen sind, wird anhand dieser Liste entschieden, welches speziell angepasste Template (Formatvorlage) angewandt wird. Das oberste Template wird als erstes angewandt.');
-@define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'Bisher haben keine Kategorien speziell angepasste Templates.');
+@define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Wenn einem Artikel mehrere Kategorien zugewiesen sind, wird anhand dieser Liste entschieden, welches speziell angepasste Template (Formatvorlage) angewandt wird. Das oberste Template wird als erstes angewandt. Damit Ihre Rangordnungs-Änderungen für tatsächliche Kategorietemplates gespeichert und aktiv werden können, müssen Sie die Checkbox(en) vorher aktivieren.');
+@define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'Bisher haben keine Kategorien speziell angepasste Templates. Lassen Sie diese Checkbox solange leer!');
 @define('PLUGIN_CATEGORYTEMPLATES_HIDE', 'Sollen Einträge dieser Kategorie von Eintragslisten und RSS-Feeds ausgeschlossen werden?');
 @define('PLUGIN_CATEGORYTEMPLATES_SELECT_TEMPLATE', 'Setzen Sie das Theme für diese Blogkategorie:');

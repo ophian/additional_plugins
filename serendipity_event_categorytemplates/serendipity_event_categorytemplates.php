@@ -23,7 +23,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.50');
+        $propbag->add('version',       '1.60');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.4',
             'php'         => '5.1.0'
@@ -80,6 +80,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                 $propbag->add('type',        'sequence');
                 $propbag->add('name',        PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE);
                 $propbag->add('description', PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC);
+                $propbag->add('checkable',   true);
                 $tcats = $this->getTemplatizedCats();
                 $values = array();
                 if (is_array($tcats)) {
@@ -90,6 +91,9 @@ class serendipity_event_categorytemplates extends serendipity_event
                     $values = array(PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES);
                 }
                 $propbag->add('values',      $values);
+                // To make this work with Serendipity 2.0+ versions (maybe even before)
+                // we had to make them checkable, although not having a default they are
+                // unchecked before usage and the drag&drop value isn't stored unless they are!
 
                 // People who already had custom categories, but don't have
                 // the sequence widget, will not save this value.  So entries
@@ -100,6 +104,10 @@ class serendipity_event_categorytemplates extends serendipity_event
                 // If you want to set a default here:
                 // Note that get_config() will cause HTTP error 500 the first
                 // time the plugin is installed, unless we provide a default
+                break;
+
+            default:
+                return false;
         }
         return true;
     }
@@ -488,7 +496,9 @@ class serendipity_event_categorytemplates extends serendipity_event
         $serendipity['GET']['adminModule'] == 'templates';
         $serendipity['smarty_vars']['template_option'] = $template . '_' . $catid;
 
-        echo '<h3>' . STYLE_OPTIONS . '</h3>';
+        echo '<section id="template_options">'."\n";
+        echo '    <h2>' . STYLE_OPTIONS . ' ('.$template.')</h2>'."\n\n";
+
         if (file_exists($tpl_path . '/config.inc.php')) {
             serendipity_smarty_init();
             include_once $tpl_path . '/config.inc.php';
@@ -499,27 +509,27 @@ class serendipity_event_categorytemplates extends serendipity_event
 
             if ($serendipity['POST']['adminSubAction'] == 'configure') {
                 foreach($serendipity['POST']['template'] AS $option => $value) {
-                    categorytemplate_option::set_config($option, $value, $serendipity['smarty_vars']['template_option']);
+                    self::set_config($option, $value, $serendipity['smarty_vars']['template_option']);
                 }
-                echo '<span class="msg_success"><span class="icon-ok-circled"></span> ' . DONE .': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . '</span>';
+                echo '<span class="msg_success"><span class="icon-ok-circled"></span> ' . DONE .': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . "</span>\n";
             }
 
-            echo '<form method="post" action="serendipity_admin.php">';
-            echo '<input type="hidden" name="serendipity[adminModule]" value="templates" />';
-            echo '<input type="hidden" name="serendipity[adminSubAction]" value="configure" />';
-            echo '<input type="hidden" name="serendipity[adminAction]" value="cattemplate" />';
-            echo '<input type="hidden" name="serendipity[adminModule]" value="event_display" />';
-            echo '<input type="hidden" name="serendipity[catid]" value="' . $catid . '" />';
-            echo '<input type="hidden" name="serendipity[cat_template]" value="' . urlencode($template) . '" />';
+            echo '<form class="theme_options option_list" method="post" action="serendipity_admin.php">'."\n";
+            echo '<input type="hidden" name="serendipity[adminSubAction]" value="configure">'."\n";
+            echo '<input type="hidden" name="serendipity[adminAction]" value="cattemplate">'."\n";
+            echo '<input type="hidden" name="serendipity[adminModule]" value="event_display">'."\n";
+            echo '<input type="hidden" name="serendipity[catid]" value="' . $catid . '">'."\n";
+            echo '<input type="hidden" name="serendipity[cat_template]" value="' . urlencode($template) . '">'."\n";
+            echo serendipity_setFormToken();
 
-            include S9Y_INCLUDE_PATH . 'include/functions_plugins_admin.inc.php';
-            $template_vars =& serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option']);
+            include_once S9Y_INCLUDE_PATH . 'include/functions_plugins_admin.inc.php';
+            $template_vars =& serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option'], true);
 
             $template_options = new categorytemplate_option();
             $template_options->import($template_config);
             $template_options->values =& $template_vars;
 
-            serendipity_plugin_config(
+            echo serendipity_plugin_config(
                 $template_options,
                 $template_vars,
                 $serendipity['template'],
@@ -531,12 +541,14 @@ class serendipity_event_categorytemplates extends serendipity_event
                 true,
                 'template'
             );
-            echo "</form>\n";
+
+            echo "\n</form>\n";
             serendipity_plugin_api::hook_event('backend_templates_configuration_bottom', $template_config);
         } else {
             echo '<p>' . STYLE_OPTIONS_NONE . "</p>\n";
             serendipity_plugin_api::hook_event('backend_templates_configuration_none', $template_config);
         }
+        echo "</section>\n";
     }
 
     /**

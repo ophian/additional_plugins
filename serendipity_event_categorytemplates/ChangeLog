@@ -1,3 +1,9 @@
+1.60:
+-----
+ * Finalize 1.xx Series development:
+ * Fix the cat_precedence sequence drag&drop storage
+ * Fix missing category-templates template_options
+.
 1.50:
 -----
  * Use new event hook 'frontend_fetchcategories' for (sidebar) category SQL conditions

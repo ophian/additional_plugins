@@ -15,7 +15,7 @@
 @define('PLUGIN_CATEGORYTEMPLATES_FIXENTRY', 'Globální nastavení kategorie pøíspìvku');
 @define('PLUGIN_CATEGORYTEMPLATES_FIXENTRY_DESC', 'Pokud je zapnuto, kategorie pøíspìvku pøi zobrazení jediného pøíspìvku bude nastavena jako aktuální kategorie.');
 @define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE', 'Poøadí ¹ablon kategorií');
-@define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Pokud je pøíspìvek pøiøazen do více kategorií, tento seznam urèuje, která ¹ablona bude pou¾ita. ©ablona pro kategorii, která je nejvý¹e, bude pou¾ita.');
-@define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', '®ádné kategorie je¹tì nemají vlastní ¹ablonu.');
+@define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Pokud je pøíspìvek pøiøazen do více kategorií, tento seznam urèuje, která ¹ablona bude pou¾ita. ©ablona pro kategorii, která je nejvý¹e, bude pou¾ita. To be able to save and activate your order changes for existing categorytemplates, you must first activate their checkbox(es) here.');
+@define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', '®ádné kategorie je¹tì nemají vlastní ¹ablonu. In this case let this checkbox unchecked!');
 #@define('PLUGIN_CATEGORYTEMPLATES_HIDE', 'Pøíspìvky v této kategorii se nebudou zobrazovat v RSS kanálu');// translate new, see en
 
