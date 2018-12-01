@@ -1,9 +1,18 @@
+1.70:
+-----
+ * Use new event hook 'frontend_fetchcomments' for summary /comments/ pages,
+   when using hidden category templates by SQL conditions. This means: The full,
+   all-category comment view is applied to logged-in Users with Site or Blog
+   permissions only.
+   For all others, these site-wide summary pages will contain items of non-hidden
+   categories or non-category entries only.
+
 1.60:
 -----
  * Finalize 1.xx Series development:
  * Fix the cat_precedence sequence drag&drop storage
  * Fix missing category-templates template_options
-.
+
 1.50:
 -----
  * Use new event hook 'frontend_fetchcategories' for (sidebar) category SQL conditions

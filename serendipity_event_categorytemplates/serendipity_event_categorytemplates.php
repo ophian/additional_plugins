@@ -23,7 +23,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.60');
+        $propbag->add('version',       '1.70');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.4',
             'php'         => '5.1.0'
@@ -38,9 +38,10 @@ class serendipity_event_categorytemplates extends serendipity_event
             'backend_category_showForm' => true,
             'frontend_fetchcategories'  => true,
             'frontend_fetcharchives'    => true,
+            'frontend_fetchcomments'    => true,
             'frontend_fetchentries'     => true,
             'frontend_fetchentry'       => true,
-            'backend_sidebar_entries_event_display_cattemplate' => true,
+            'backend_sidebar_entries_event_display_cattemplate' => true
 //            'frontend_configure'        => true
         ));
 
@@ -211,7 +212,7 @@ class serendipity_event_categorytemplates extends serendipity_event
      */
     function getID()
     {
-    	global $serendipity;
+        global $serendipity;
 
         // If category view, just return the current category ID
         if ($serendipity['GET']['category'] && !isset($serendipity['GET']['id'])) {
@@ -828,10 +829,10 @@ class serendipity_event_categorytemplates extends serendipity_event
 
                     $cid = (int)$parts[1];
                     $serendipity['template'] = $this->fetchTemplate($cid, $serendipity['template']);
-				    $css_mode = 'serendipity.css';
-				    include_once(S9Y_INCLUDE_PATH . 'serendipity.css.php');
-				    exit;
-				    break;
+                    $css_mode = 'serendipity.css';
+                    include_once(S9Y_INCLUDE_PATH . 'serendipity.css.php');
+                    exit;
+                    break;
 
                 // When Serendipity Styx tries to gather the archive entry sums, exclude hidden category(template) entries
                 case 'frontend_fetchcategories':
@@ -861,7 +862,48 @@ class serendipity_event_categorytemplates extends serendipity_event
                             }
                         }
                     }
-				    break;
+                    break;
+
+                case 'frontend_fetchcomments':
+                    $coctr = (isset($addData['source']) && $addData['source'] == 'comments_counter') ? true : false;
+                    // Do not apply to logged in Administrators (so not in the backend as well)
+                    if ((isset($_SESSION['serendipityAuthedUser']) && $_SESSION['serendipityAuthedUser'] === true)
+                    && (serendipity_checkPermission('siteConfiguration') || serendipity_checkPermission('blogConfiguration'))) {
+                        return;
+                    }
+                    // Will force comments query to not fetch comments of (hidden) categorytemplates to be not displayed in comments and RSS feed for comments.
+                    $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
+                    if (isset($bycategory[0]['template'])) {
+                        if ($coctr) {
+                            $joins[] = "LEFT OUTER JOIN {$serendipity['dbPrefix']}entries AS e ON (co.entry_id = e.id)";
+                        }
+                        $joins[] = "LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (e.id = ec.entryid)";
+                        $joins[] = "LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates AS ct ON (ec.categoryid = ct.categoryid)";
+                        foreach ($bycategory AS $bcat) {
+                            if ($bcat['template'] != $serendipity['template']) {
+                                $conds[] = "(ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL)";
+                            }
+                        }
+                    }
+                    // Conditions
+                    if (count($conds) > 0) {
+                        $cond = count($conds) > 1 ? '(' .implode(' AND ', $conds) .')' : implode(' AND ', $conds);
+                        if (empty($eventData['and'])) {
+                            $eventData['and'] = $cond;
+                        } else {
+                            $eventData['and'] .= $cond;
+                        }
+                    }
+                    // Joins
+                    if (count($joins) > 0) {
+                        $cond = implode("\n", $joins);
+                        if (empty($eventData['joins'])) {
+                            $eventData['joins'] = $cond."\n";
+                        } else {
+                            $eventData['joins'] .= $cond."\n";
+                        }
+                    }
+                    break;
 
                 // When Serendipity tries to get the entries, check for
                 // passwords
