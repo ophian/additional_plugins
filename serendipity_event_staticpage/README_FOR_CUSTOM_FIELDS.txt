@@ -78,8 +78,8 @@ $serendipity['smarty']->registerPlugin('function', 'show_tags', 'smarty_show_tag
         {if $staticpage_show_breadcrumb}
             <div class="staticpage_navigation_breadcrumb">
                 <a href="{$serendipityBaseURL}">{$CONST.HOMEPAGE}</a>{if NOT empty($staticpage_navigation.crumbs)} &#187; {/if}
-            {foreach name="crumbs" from=$staticpage_navigation.crumbs item="crumb"}
-                {if NOT $smarty.foreach.crumbs.first}&#187; {/if}{if $crumb.id != $staticpage_pid} <a href="{$crumb.link}">{$crumb.name|escape}</a> {else} {$crumb.name|escape} {/if}
+            {foreach $staticpage_navigation.crumbs AS $crumb}
+                {if NOT $crumb@first}&#187; {/if}{if $crumb.id != $staticpage_pid} <a href="{$crumb.link}">{$crumb.name|escape}</a> {else} {$crumb.name|escape} {/if}
             {/foreach}
             </div>
         {/if}
@@ -103,9 +103,9 @@ $serendipity['smarty']->registerPlugin('function', 'show_tags', 'smarty_show_tag
     {if is_array($staticpage_childpages)}
     <div class="clearfix content staticpage_childpages">
         <ul id="staticpage_childpages">
-            {foreach from=$staticpage_childpages item="childpage"}
+        {foreach $staticpage_childpages AS $childpage}
             <li><a href="{$childpage.permalink}" title="{$childpage.pagetitle|escape}">{$childpage.pagetitle|escape}</a></li>
-            {/foreach}
+        {/foreach}
         </ul>
     </div>
     {/if}
@@ -160,8 +160,8 @@ $serendipity['smarty']->registerPlugin('function', 'show_tags', 'smarty_show_tag
 
     {if NOT empty($entries)}
         <ul>
-    {foreach from=$entries item="dategroup"}
-        {foreach from=$dategroup.entries item="entry"}
+    {foreach $entries AS $dategroup}
+        {foreach $dategroup.entries AS $entry}
 
             <li class="static-entries">
                 ({$dategroup.date|date_format:"%d.%m.%Y"}) <a href="{$entry.link}">{$entry.title|default:$entry.id}</a>

@@ -1,3 +1,7 @@
+5.64:
+-----
+ * Update the readme for custom fields for Smarty3 syntax
+
 5.63:
 -----
  * Fix fetching authors name when not logged-in as Administrator
