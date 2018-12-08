@@ -28,7 +28,7 @@
 <br /><br />
 
 <!-- Needed for Captchas -->
-{foreach from=$comments_messagestack item="message"}
+{foreach $comments_messagestack AS $message}
 <div class="serendipity_center serendipity_msg_important">{$message}</div>
 {/foreach}
 {/if}

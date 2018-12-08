@@ -1,3 +1,9 @@
+1.29:
+----
+
+ * Use Smarty3 syntax in both default template forms
+   Now requires Serendipity 1.7.0 +.
+
 1.28:
 ----
 
