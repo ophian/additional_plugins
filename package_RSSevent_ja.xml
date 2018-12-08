@@ -331,9 +331,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>最終更新日を表示する: ブログのフロントページにエントリの最終修正日を表示します。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrylastmodified</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking</author>
+<author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrylastmodified&lt;br /&gt;最終更新日を表示する&lt;/b&gt;&lt;br /&gt;ブログのフロントページにエントリの最終修正日を表示します。&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 15 Aug 2018 16:51:56 +0200</pubDate>
+<pubDate>Sat, 08 Dec 2018 17:03:50 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_entrylastmodified</guid>
 </item>
 <item>

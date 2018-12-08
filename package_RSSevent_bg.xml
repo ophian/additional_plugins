@@ -327,9 +327,9 @@
 <title>Показва съобщения с датите на последните промени на статиите: Показва кога (дата и час) са направени последните промени на статиите, веднага след тяхното съдържание. При непроменяните статии се извежда текст, поясняващ, че те не са променяни.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrylastmodified</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking</author>
+<author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrylastmodified&lt;br /&gt;Показва съобщения с датите на последните промени на статиите&lt;/b&gt;&lt;br /&gt;Показва кога (дата и час) са направени последните промени на статиите, веднага след тяхното съдържание. При непроменяните статии се извежда текст, поясняващ, че те не са променяни.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 15 Aug 2018 16:51:56 +0200</pubDate>
+<pubDate>Sat, 08 Dec 2018 17:03:50 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_entrylastmodified</guid>
 </item>
 <item>

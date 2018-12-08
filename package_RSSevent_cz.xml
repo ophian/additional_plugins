@@ -327,9 +327,9 @@
 <title>Zobrazit datum poslední změny: Na úvodní stránce blogu zobrazuje u každého příspěvku zprávu o datu poslední změny. Pro příspěvky, které nikdy nebyly pozměňovány, zobrazuje zprávu, že nikdy nebyly měněny.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrylastmodified</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking</author>
+<author>Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrylastmodified&lt;br /&gt;Zobrazit datum poslední změny&lt;/b&gt;&lt;br /&gt;Na úvodní stránce blogu zobrazuje u každého příspěvku zprávu o datu poslední změny. Pro příspěvky, které nikdy nebyly pozměňovány, zobrazuje zprávu, že nikdy nebyly měněny.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 15 Aug 2018 16:51:56 +0200</pubDate>
+<pubDate>Sat, 08 Dec 2018 17:03:50 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_entrylastmodified</guid>
 </item>
 <item>
