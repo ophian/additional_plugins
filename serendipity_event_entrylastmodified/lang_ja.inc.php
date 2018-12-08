@@ -6,9 +6,9 @@
  *  EN-Revision: 1.2
  */
 
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_NAME',     '最終更新日を表示する');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_DESC',     'ブログのフロントページにエントリの最終修正日を表示します。');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_HTML',     '最終更新日時: %s</div>');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_NAME', '最終更新日を表示する');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_DESC', 'ブログのフロントページにエントリの最終修正日を表示します。');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_HTML', '最終更新日時: %s</div>');
 @define('PLUGIN_EVENT_ENTRYLASTMODIFIED_NOTMODIFIED','修正はありません');
 @define('PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED','修正していないエントリのメッセージを表示する');
 @define('PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED_DESC','有効にした場合、メッセージは修正されたエントリのみではなく、すべてのエントリが表示されるでしょう。');

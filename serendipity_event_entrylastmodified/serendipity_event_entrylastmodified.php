@@ -17,8 +17,8 @@ class serendipity_event_entrylastmodified extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_ENTRYLASTMODIFIED_NAME);
         $propbag->add('description',   PLUGIN_EVENT_ENTRYLASTMODIFIED_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.10');
+        $propbag->add('author',        'Garvin Hicking, Ian');
+        $propbag->add('version',       '1.11');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -39,8 +39,8 @@ class serendipity_event_entrylastmodified extends serendipity_event
                 $propbag->add('name',PLUGIN_EVENT_ENTRYLASTMODIFIED_POSITION);
                 $propbag->add('description',PLUGIN_EVENT_ENTRYLASTMODIFIED_POSITION_DESC);
                 $propbag->add('radio',array(
-                    'value' => array('left','center','right'),
-                    'desc' => array(PLUGIN_EVENT_ENTRYLASTMODIFIED_LEFT,PLUGIN_EVENT_ENTRYLASTMODIFIED_CENTER,PLUGIN_EVENT_ENTRYLASTMODIFIED_RIGHT)
+                    'value' => array('left', 'center', 'right'),
+                    'desc' => array(PLUGIN_EVENT_ENTRYLASTMODIFIED_LEFT, PLUGIN_EVENT_ENTRYLASTMODIFIED_CENTER, PLUGIN_EVENT_ENTRYLASTMODIFIED_RIGHT)
                 ));
                 $propbag->add('default','right');
 
@@ -50,22 +50,25 @@ class serendipity_event_entrylastmodified extends serendipity_event
                 $per_row_3 = array(1 => 'en');
 
                 $lang = $serendipity['lang'];
-                if (in_array($lang,$per_row_2) == true)
+                if (in_array($lang, $per_row_2)) {
                     $per_row = 2;
-                else if (in_array($lang,$per_row_3) == true)
+                } else if (in_array($lang, $per_row_3)) {
                     $per_row = 3;
-                else
+                } else {
                     $per_row = 1;    // by default one option per row - for languages with very long words
+                }
                 unset($per_row_2, $per_row_3);
 
                 $propbag->add('radio_per_row', $per_row);
                 break;
+
             case 'notmodified':
-                $propbag->add('type','boolean');
-                $propbag->add('name',PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED);
+                $propbag->add('type',       'boolean');
+                $propbag->add('name',       PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED);
                 $propbag->add('description',PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED_DESC);
-                $propbag->add('default','true');
+                $propbag->add('default',    'true');
                 break;
+
             default:
                 return false;
         }
@@ -79,10 +82,8 @@ class serendipity_event_entrylastmodified extends serendipity_event
 
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
-        global $serendipity;
-
         $hooks = &$bag->get('event_hooks');
-        $notmodified = $this->get_config('notmodified');
+        $notmodified = serendipity_db_bool($this->get_config('notmodified', 'true'));
         $position = $this->get_config('position');
 
 // %1 = position, %2 = the message itself, %3 = last_modified timestamp
@@ -93,7 +94,7 @@ class serendipity_event_entrylastmodified extends serendipity_event
         if (isset($hooks[$event])) {
             switch($event) {
                 case 'entry_display':
-                    if (!isset($eventData[0])) continue;
+                    if (!isset($eventData[0])) break;
                     $extended_key = &$this->getFieldReference('extended', $eventData);
                     if ($addData['extended'] || $addData['preview']) {
                         $eventData[0]['exflag'] = 1;
@@ -124,12 +125,15 @@ class serendipity_event_entrylastmodified extends serendipity_event
                             }
                         }
                     }
-                    return true;
                     break;
-            }
-        }
 
-        return false;
+                default:
+                    return false;
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
