@@ -1,5 +1,5 @@
 {*
- plugin_guestbook_backend_form.tpl v.3.52 2018-08-19 Ian
+ plugin_guestbook_backend_form.tpl v.3.53 2018-12-06 Ian
  *}
 
 <!-- plugin_guestbook_backend_form start -->
@@ -16,7 +16,7 @@
     </div>
 
 {if isset($plugin_guestbook_messagestack) AND is_array($plugin_guestbook_messagestack)}
-{foreach from=$plugin_guestbook_messagestack item="message"}
+{foreach $plugin_guestbook_messagestack AS $message}
     <div class="msg_notice">{$message}</div>
 {/foreach}
 {/if}

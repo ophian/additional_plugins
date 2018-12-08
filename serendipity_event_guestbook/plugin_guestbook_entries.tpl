@@ -1,5 +1,5 @@
 {*
-    plugin_guestbook_entries.tpl for v.3.67 - 2018-11-03
+    plugin_guestbook_entries.tpl for v.3.68 - 2018-12-06
 *}
 
 {if $plugin_guestbook_articleformat}
@@ -30,7 +30,7 @@
               <p class="serendipity_center serendipity_msg_important guestbook_errorbundled">{$error_occured}</p>
               {if $guestbook_messages}
                 <ul>
-                {foreach from=$guestbook_messages item="messages"}
+                {foreach $guestbook_messages AS $messages}
                     <li class="guestbook_errors">{$messages}</li>
                 {/foreach}
                 </ul>
@@ -40,7 +40,7 @@
             {if isset($guestbook_entry_paging) AND $guestbook_entry_paging}<div id="guestbook_entrypaging">{$guestbook_paging}</div>{/if}
 
             {if isset($guestbook_entries) AND is_array($guestbook_entries)}
-              {foreach from=$guestbook_entries item="entry"}
+              {foreach $guestbook_entries AS $entry}
 
                 <div id="guestbook_entrybundle">
                   <div class="guestbook_entrytop">

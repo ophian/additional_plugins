@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian');
-        $propbag->add('version',      '3.70');
+        $propbag->add('version',      '3.71');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -1331,7 +1331,7 @@ class serendipity_event_guestbook extends serendipity_event
                         $this->alter_db($cur);
                         $this->set_config('dbversion', '5');
                     } elseif ($cur == '5') {
-                        continue;
+                        break;
                     } else {
                         $this->install();
                         $this->set_config('dbversion', '5');
