@@ -23,7 +23,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.70');
+        $propbag->add('version',       '1.80');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.4',
             'php'         => '5.1.0'
@@ -510,7 +510,7 @@ class serendipity_event_categorytemplates extends serendipity_event
 
             if ($serendipity['POST']['adminSubAction'] == 'configure') {
                 foreach($serendipity['POST']['template'] AS $option => $value) {
-                    self::set_config($option, $value, $serendipity['smarty_vars']['template_option']);
+                    categorytemplate_option::set_config($option, $value, $serendipity['smarty_vars']['template_option']);
                 }
                 echo '<span class="msg_success"><span class="icon-ok-circled"></span> ' . DONE .': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . "</span>\n";
             }
@@ -540,7 +540,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                 true,
                 true,
                 true,
-                'template'
+                'categorytemplate'
             );
 
             echo "\n</form>\n";
@@ -1117,19 +1117,19 @@ class categorytemplate_option
     var $values = null;
     var $keys   = null;
 
-    function introspect_config_item($item, &$bag)
+    public function introspect_config_item($item, &$bag)
     {
         foreach($this->config[$item] AS $key => $val) {
             $bag->add($key, $val);
         }
     }
 
-    function get_config($item)
+    public function get_config($item)
     {
         return $this->values[$item];
     }
 
-    function set_config($item, $value, $okey = '')
+    public static function set_config($item, $value, $okey = '')
     {
         global $serendipity;
         serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}options
@@ -1140,7 +1140,7 @@ class categorytemplate_option
         return true;
     }
 
-    function import(&$config)
+    public function import(&$config)
     {
         foreach($config AS $key => $item) {
             $this->config[$item['var']] = $item;
