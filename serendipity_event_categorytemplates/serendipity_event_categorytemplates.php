@@ -23,7 +23,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.80');
+        $propbag->add('version',       '1.81');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.4',
             'php'         => '5.1.0'
@@ -821,14 +821,14 @@ class serendipity_event_categorytemplates extends serendipity_event
                     $parts = explode('_', $eventData);
                     $param = !empty($parts[1]) ? (int)$parts[1] : null;
 
-                    $methods = array('categorytemplate');
+                    $cid = (int)$parts[1];
+                    $serendipity['template'] = $this->fetchTemplate($cid, $serendipity['template']);
+                    $methods = array('ct', "ct{$serendipity['template']}", 'categorytemplate');
 
                     if (!in_array($parts[0], $methods)) {
                         return;
                     }
 
-                    $cid = (int)$parts[1];
-                    $serendipity['template'] = $this->fetchTemplate($cid, $serendipity['template']);
                     $css_mode = 'serendipity.css';
                     include_once(S9Y_INCLUDE_PATH . 'serendipity.css.php');
                     exit;
@@ -1080,7 +1080,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     }
 
                     // Set the template stylesheet
-                    $serendipity['smarty_vars']['head_link_stylesheet'] = serendipity_rewriteURL('plugin/categorytemplate_' . $cid, 'baseURL', true);
+                    $serendipity['smarty_vars']['head_link_stylesheet'] = serendipity_rewriteURL('plugin/ct' . $serendipity['template'] . '_' . $cid);
                     break;
 
                 // When the back end is displayed, use the custom template, too
