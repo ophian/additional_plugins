@@ -23,7 +23,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.82');
+        $propbag->add('version',       '1.83');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.4',
             'php'         => '5.1.0'
@@ -943,11 +943,11 @@ class serendipity_event_categorytemplates extends serendipity_event
                             ON (ec.categoryid = ctpass.categoryid)";
                     }
 
-                    // Serendipity entries list startpage, (P) paged views of archives, 404 fallback, search requests and feeds.
+                    // Serendipity entries list startpage, (P) paged views of archives, by authors, 404 fallback, search requests and feeds.
                     // Add       <input type="hidden" name="serendipity[category]" value="5">   and take the correct category ID number(!)
                     // to your categorytemplate index.tpl or sidebar.tpl; wherever you have the quicksearch form!
 
-                    if (in_array($serendipity['view'], ['archives', 'entries', 'feed', 'search', 'start', '404'])) {
+                    if (in_array($serendipity['view'], ['archives', 'authors', 'entries', 'feed', 'search', 'start', '404'])) {
                         $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
                         if (isset($bycategory[0]['template'])) {
                             foreach ($bycategory AS $bcat) {

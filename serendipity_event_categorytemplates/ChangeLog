@@ -1,6 +1,10 @@
+1.83:
+-----
+ * Allow categorytemplates fetchentries conditional SQL query on "by authors" pages too
+
 1.82:
 -----
- * Allow categorytemplates entries list SQL query on 404 fallback pages too.
+ * Allow categorytemplates fetchentries conditional SQL query on "404" fallback pages too
 
 1.81:
 -----
