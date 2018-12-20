@@ -23,9 +23,9 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.83');
+        $propbag->add('version',       '1.90');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.6.4',
+            'serendipity' => '2.7.0',
             'php'         => '5.1.0'
         ));
         $propbag->add('event_hooks',    array(
@@ -819,9 +819,11 @@ class serendipity_event_categorytemplates extends serendipity_event
                 // CSS to the custom template
                 case 'external_plugin':
                     $parts = explode('_', $eventData);
-                    $param = !empty($parts[1]) ? (int)$parts[1] : null;
+                    $cid = !empty($parts[1]) ? (int)$parts[1] : null;
 
-                    $cid = (int)$parts[1];
+                    if (is_null($cid)) {
+                        return;
+                    }
                     $serendipity['template'] = $this->fetchTemplate($cid, $serendipity['template']);
                     $methods = array('ct', "ct{$serendipity['template']}", 'categorytemplate');
 
@@ -829,7 +831,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         return;
                     }
 
-                    $css_mode = 'serendipity.css';
+                    $serendipity['GET']['css_mode'] = 'external_plugin';
                     include_once(S9Y_INCLUDE_PATH . 'serendipity.css.php');
                     exit;
                     break;

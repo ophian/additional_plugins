@@ -1,3 +1,8 @@
+1.90:
+-----
+ * Improve external_plugin for subdirectory called {TEMPLATE_PATH} css_mode replacements
+ * Raises Requirement to Serendipity Styx 2.7.0
+
 1.83:
 -----
  * Allow categorytemplates fetchentries conditional SQL query on "by authors" pages too
