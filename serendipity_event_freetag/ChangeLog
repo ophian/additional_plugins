@@ -1,3 +1,9 @@
+sidebar v.3.12:
+---------------
+
+ * Add cloud sidebar SQL query additions for categorytemplates
+   to exclude tagged entries living in hidden set categories OR vice versa.
+
 4.20:
 -----
 

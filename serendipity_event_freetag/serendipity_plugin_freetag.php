@@ -10,6 +10,8 @@ class serendipity_plugin_freetag extends serendipity_plugin
 {
     var $title = PLUGIN_FREETAG_NAME;
 
+    private $bycategory = [];
+
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -25,7 +27,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.11');
+        $propbag->add('version',       '3.12');
         $propbag->add('groups',        array('FRONTEND_ENTRY_RELATED'));
         $propbag->add('configuration', array(
             'config_pagegrouper',
@@ -263,6 +265,19 @@ class serendipity_plugin_freetag extends serendipity_plugin
         }
     }
 
+    /**
+     * Fetch and memorize possible hidden set categories by categorytemplates
+     */
+    function fetchHiddenCategoryTemplates()
+    {
+        global $serendipity;
+
+        if (!isset($this->bycategory[0]) && class_exists('serendipity_event_categorytemplates')) {
+            #echo 'NOCACHEUsed Freetag';
+            $this->bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
+        }
+    }
+
     function generate_content(&$title)
     {
         global $serendipity;
@@ -276,12 +291,31 @@ class serendipity_plugin_freetag extends serendipity_plugin
             $limit = '';
         }
 
+        $ct_conds = '';
+        $ct_joins = '';
+
+        $this->fetchHiddenCategoryTemplates();
+
+        if (isset($this->bycategory[0]['template'])) {
+            $ct_joins .= " LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (et.entryid = ec.entryid)";
+            $ct_joins .= " LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates AS ct ON (ec.categoryid = ct.categoryid)";
+            foreach ($this->bycategory AS $bcat) {
+                if ($bcat['template'] == $serendipity['template']) {
+                    $ct_conds .= " AND (ec.categoryid = " . (int)$bcat['categoryid'] . ")";
+                } else {
+                    $ct_conds .= " AND (ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL)";
+                }
+            }
+        }
+
         $query = "SELECT et.tag, count(et.tag) AS total
                     FROM {$serendipity['dbPrefix']}entrytags AS et
          LEFT OUTER JOIN {$serendipity['dbPrefix']}entries AS e
                       ON et.entryid = e.id
-                   WHERE e.isdraft = 'false' "
-                         . (!serendipity_db_bool($serendipity['showFutureEntries']) ? " AND e.timestamp <= " . time() : '') . "
+                    $ct_joins
+                   WHERE e.isdraft = 'false'
+                   " . (!serendipity_db_bool($serendipity['showFutureEntries']) ? " AND e.timestamp <= " . time() : '') . "
+                    $ct_conds
                 GROUP BY et.tag
                   HAVING count(et.tag) >= " . $this->get_config('treshold_tag_count') . "
                 ORDER BY total DESC $limit";
@@ -334,6 +368,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
     {
         serendipity_event_freetag::static_install();
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
