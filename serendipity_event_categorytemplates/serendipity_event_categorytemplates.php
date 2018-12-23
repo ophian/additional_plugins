@@ -15,6 +15,9 @@ if (IN_serendipity !== true) {
 class serendipity_event_categorytemplates extends serendipity_event
 {
     var $title = PLUGIN_CATEGORYTEMPLATES_NAME;
+
+    private $bycategory = [];
+
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -23,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
-        $propbag->add('version',       '1.90');
+        $propbag->add('version',       '1.91');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '5.1.0'
@@ -553,6 +556,18 @@ class serendipity_event_categorytemplates extends serendipity_event
     }
 
     /**
+     * Fetch and memorize possible hidden set categories
+     */
+    function fetchHiddenCategoryTemplates()
+    {
+        global $serendipity;
+
+        if (!isset($this->bycategory[0])) {
+            $this->bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
+        }
+    }
+
+    /**
      * The meat of the plugin, called for each registered hook.
      *
      * @param string event The name of the hook being called
@@ -839,14 +854,14 @@ class serendipity_event_categorytemplates extends serendipity_event
                 // When Serendipity Styx tries to gather the archive entry sums, exclude hidden category(template) entries
                 case 'frontend_fetchcategories':
                 case 'frontend_fetcharchives':
-                    $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
-                    if (isset($bycategory[0]['template'])) {
+                    $this->fetchHiddenCategoryTemplates();
+                    if (isset($this->bycategory[0]['template'])) {
                         $conds = array();
                         if ($event == 'frontend_fetcharchives') {
                             $eventData['joins'] = "LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
                         }
                         $as = ($event == 'frontend_fetchcategories') ? 'c' : 'ec';
-                        foreach ($bycategory AS $bcat) {
+                        foreach ($this->bycategory AS $bcat) {
                             if ($bcat['template'] == $serendipity['template']) {
                                 $conds[] = "($as.categoryid = " . (int)$bcat['categoryid'] . ")";
                             } else {
@@ -874,14 +889,14 @@ class serendipity_event_categorytemplates extends serendipity_event
                         return;
                     }
                     // Will force comments query to not fetch comments of (hidden) categorytemplates to be not displayed in comments and RSS feed for comments.
-                    $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
-                    if (isset($bycategory[0]['template'])) {
+                    $this->fetchHiddenCategoryTemplates();
+                    if (isset($this->bycategory[0]['template'])) {
                         if ($coctr) {
                             $joins[] = "LEFT OUTER JOIN {$serendipity['dbPrefix']}entries AS e ON (co.entry_id = e.id)";
                         }
                         $joins[] = "LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (e.id = ec.entryid)";
                         $joins[] = "LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates AS ct ON (ec.categoryid = ct.categoryid)";
-                        foreach ($bycategory AS $bcat) {
+                        foreach ($this->bycategory AS $bcat) {
                             if ($bcat['template'] != $serendipity['template']) {
                                 $conds[] = "(ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL)";
                             }
@@ -950,9 +965,9 @@ class serendipity_event_categorytemplates extends serendipity_event
                     // to your categorytemplate index.tpl or sidebar.tpl; wherever you have the quicksearch form!
 
                     if (in_array($serendipity['view'], ['archives', 'authors', 'entries', 'feed', 'search', 'start', '404'])) {
-                        $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
-                        if (isset($bycategory[0]['template'])) {
-                            foreach ($bycategory AS $bcat) {
+                        $this->fetchHiddenCategoryTemplates();
+                        if (isset($this->bycategory[0]['template'])) {
+                            foreach ($this->bycategory AS $bcat) {
                                 if ($bcat['template'] == $serendipity['template']) {
                                     $conds[] = "(ec.categoryid = " . (int)$bcat['categoryid'] . ")";
                                 } else {
