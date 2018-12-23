@@ -30,6 +30,8 @@ class serendipity_event_freetag extends serendipity_event
     var $supported_properties = array();
     var $dependencies         = array();
 
+    private $bycategory = [];
+
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -43,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.19');
+        $propbag->add('version',       '4.20');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -606,16 +608,36 @@ class serendipity_event_freetag extends serendipity_event
             $tags[$idx] = serendipity_db_escape_string($tag);
         }
 
+        $this->fetchHiddenCategoryTemplates();
+
+        $conds = '';
+        $join0 = $join1 = $join2 = '';
+        $join0 = " LEFT JOIN {$serendipity['dbPrefix']}entries AS e2 ON e1.entryid = e2.id";
+
+        if (isset($this->bycategory[0]['template'])) {
+            $join1  = " LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (e1.entryid = ec.entryid)";
+            $join0  = " LEFT JOIN {$serendipity['dbPrefix']}entries AS e2 ON ec.entryid = e2.id";
+            $join2  = " LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates AS ct ON (ec.categoryid = ct.categoryid)";
+            foreach ($this->bycategory AS $bcat) {
+                if ($bcat['template'] == $serendipity['template']) {
+                    $conds .= " AND (ec.categoryid = " . (int)$bcat['categoryid'] . ")";
+                } else {
+                    $conds .= " AND (ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL)";
+                }
+            }
+        }
         $q = "SELECT DISTINCT e1.entryid,
                      e2.title,
                      e2.timestamp
                 FROM {$serendipity['dbPrefix']}entrytags AS e1
-           LEFT JOIN {$serendipity['dbPrefix']}entries   AS e2
-                  ON e1.entryid = e2.id
+            $join1
+            $join0
+            $join2
                WHERE e1.tag IN ('" . implode("', '", $tags) . "')
                  AND e1.entryid != " . (int)$postID . "
                  AND e2.isdraft = 'false'
-                     " . (!serendipity_db_bool($serendipity['showFutureEntries']) ? " AND e2.timestamp <= " . time() : '') . "
+                " . (!serendipity_db_bool($serendipity['showFutureEntries']) ? " AND e2.timestamp <= " . time() : '') . "
+                $conds
             ORDER BY e2.timestamp DESC
                LIMIT " . $this->get_config('show_related_count', 5);
 
@@ -1405,6 +1427,38 @@ addLoadEvent(enableAutocomplete);
     }
 
     /**
+     * Fetch and memorize possible hidden set categories by categorytemplates
+     */
+    function fetchHiddenCategoryTemplates()
+    {
+        global $serendipity;
+
+        if (!isset($this->bycategory[0]) && class_exists('serendipity_event_categorytemplates')) {
+            $this->bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
+        }
+    }
+
+    /**
+     * Exclude possible [categorytemplates] hidden set category items from main blog entries
+     *         when searched by tag(s)
+     * @see frontend_fetch_showtag()
+     * @param   string      $cond by reference
+     */
+    function addCategoryTemplatesCondition(&$cond)
+    {
+        $conds = array();
+
+        $this->fetchHiddenCategoryTemplates();
+
+        if (isset($this->bycategory[0]['template'])) {
+            foreach ($this->bycategory AS $bcat) {
+                $conds[] = "(ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL)";
+            }
+        }
+        $cond .= !empty($conds) ? ' AND (' .implode(' AND ', $conds) .') ' : '';
+    }
+
+    /**
      * Places the entries tags in entry footer
      *
      * @param   array       $eventData by reference
@@ -1685,8 +1739,32 @@ addLoadEvent(enableAutocomplete);
     {
         global $serendipity;
 
+        $ct_where = '';
+        $ct_conds = '';
+        $ct_joins = '';
+
+        $this->fetchHiddenCategoryTemplates();
+
+        if (isset($this->bycategory[0]['template'])) {
+            $ct_joins .= " LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (et.entryid = ec.entryid)";
+            $ct_joins .= " LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates AS ct ON (ec.categoryid = ct.categoryid)";
+            $ct_where .= " WHERE 1=1 ";
+            foreach ($this->bycategory AS $bcat) {
+                if ($bcat['template'] == $serendipity['template']) {
+                    $ct_conds .= " AND (ec.categoryid = " . (int)$bcat['categoryid'] . ")";
+                } else {
+                    $ct_conds .= " AND (ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL)";
+                }
+            }
+        }
+
         if ($tag === true) {
-            $q = "SELECT tag, count(tag) AS total FROM {$serendipity['dbPrefix']}entrytags GROUP BY tag ORDER BY tag";
+            $q = "SELECT et.tag, count(et.tag) AS total
+                    FROM {$serendipity['dbPrefix']}entrytags AS et
+                    $ct_joins
+                    $ct_where
+                    $ct_conds
+                GROUP BY tag ORDER BY tag";
         } else {
 
             if (is_string($tag)) {
@@ -1725,8 +1803,10 @@ addLoadEvent(enableAutocomplete);
             $q = "SELECT neg.tag AS tag, count(neg.tag) {$totalModifier} AS total
                     FROM {$serendipity['dbPrefix']}entrytags AS main
                {$join}
+                $ct_joins
                    WHERE ($cond)
                      AND ($ncond)
+                    $ct_conds
                 GROUP BY neg.tag";
         }
 
@@ -2026,6 +2106,7 @@ addLoadEvent(enableAutocomplete);
             if (is_string($showtag)) {
                 $join = " INNER JOIN {$serendipity['dbPrefix']}entrytags AS entrytags ON (e.id = entrytags.entryid) ";
                 $cond = "entrytags.tag = $collateP '$showtag' $collate";
+                $this->addCategoryTemplatesCondition($cond); // exclude items which live in hidden set categories
             } else if (is_array($showtag)) {
                 $_taglist = array();
                 $cond = '(1=2 ';
@@ -2034,6 +2115,7 @@ addLoadEvent(enableAutocomplete);
                     $cond .= " OR entrytags.tag = $collateP '" . serendipity_db_escape_string($_showtag) . "' $collate ";
                 }
                 $cond .= ' ) ';
+                $this->addCategoryTemplatesCondition($cond); // exclude items which live in hidden set categories
                 $total = count($showtag);
                 $join = " INNER JOIN {$serendipity['dbPrefix']}entrytags AS entrytags ".
                         "         ON e.id = entrytags.entryid ";

@@ -1,3 +1,11 @@
+4.20:
+-----
+
+ * Add categorytemplates SQL join and SQL condition references
+   to exclude tagged entries living in hidden set categories. Since freetag tagging
+   is a global approach and will always land in the blogs central section, these queries
+   exclude tag listed entries from hidden set categories for clouds, entries and tags.
+
 4.19:
 -----
 
