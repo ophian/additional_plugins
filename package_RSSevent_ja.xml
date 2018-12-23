@@ -115,7 +115,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;カテゴリのプロパティとテンプレート&lt;/b&gt;&lt;br /&gt;This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.&lt;br/&gt;For: Serendipity 2.7.0</content:encoded>
-<pubDate>Thu, 20 Dec 2018 15:52:23 +0100</pubDate>
+<pubDate>Sun, 23 Dec 2018 17:28:01 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -459,7 +459,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;エントリーのタグ&lt;/b&gt;&lt;br /&gt;エントリーの自由なタグを許可します。&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Wed, 24 Oct 2018 18:53:19 +0200</pubDate>
+<pubDate>Sun, 23 Dec 2018 16:26:24 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
