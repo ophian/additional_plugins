@@ -454,8 +454,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_freetag</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Marquage des entrées&lt;/b&gt;&lt;br /&gt;Autorise le marquage libre des billets&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 23 Dec 2018 16:26:24 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Marquage des entrées&lt;/b&gt;&lt;br /&gt;Autorise le marquage libre des billets&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
+<pubDate>Thu, 27 Dec 2018 12:51:25 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -545,7 +545,7 @@
 <category>Event Plugins</category>
 <author>Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Guestbook&lt;/b&gt;&lt;br /&gt;Shows a guestbook inside your blog with your normal blog design.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Fri, 07 Dec 2018 17:07:00 +0100</pubDate>
+<pubDate>Thu, 27 Dec 2018 13:23:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -1211,7 +1211,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Gallery Display&lt;/b&gt;&lt;br /&gt;Allows anonymous users to view Serendipity media gallery&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 30 Aug 2018 14:57:05 +0200</pubDate>
+<pubDate>Thu, 27 Dec 2018 13:26:10 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>
