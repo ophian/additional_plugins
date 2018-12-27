@@ -1,5 +1,5 @@
 {*
- plugin_guestbook_backend_form.tpl v.3.53 2018-12-06 Ian
+ plugin_guestbook_backend_form.tpl v.3.54 2018-12-27 Ian
  *}
 
 <!-- plugin_guestbook_backend_form start -->
@@ -21,7 +21,7 @@
 {/foreach}
 {/if}
 
-{if !empty($is_guestbook_message)}{$msg_header=$error_occured}{call feedback}{/if}
+{if !empty($is_guestbook_message)}{$msg_header=$error_occurred}{call feedback}{/if}
 
     <script type="text/javascript">
     {literal}

@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian');
-        $propbag->add('version',      '3.71');
+        $propbag->add('version',      '3.72');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -962,7 +962,7 @@ class serendipity_event_guestbook extends serendipity_event
             // drop entry back to form - beware 'allow_comments' return value is empty, not false, if false
             array_push($messages,  PLUGIN_GUESTBOOK_MESSAGE . ': ' . PLUGIN_GUESTBOOK_ERROR_DATA);
         }
-        // set valid messages to true, if no errors occured
+        // set valid messages to true, if no errors occurred
         $valid['message'] = (count($messages) < 1) ? TRUE : FALSE;
 
         // no errors and messages
@@ -1242,7 +1242,7 @@ class serendipity_event_guestbook extends serendipity_event
             $serendipity['smarty']->assign(
                     array(
                         'is_guestbook_message'     => true,
-                        'error_occured'            => ERROR_OCCURRED
+                        'error_occurred'           => ERROR_OCCURRED
                     )
             );
 
@@ -1250,7 +1250,7 @@ class serendipity_event_guestbook extends serendipity_event
                 $serendipity['smarty']->assign(
                     array(
                         'is_guestbook_message'     => true,
-                        'error_occured'            => THANKS_FOR_ENTRY
+                        'error_occurred'           => THANKS_FOR_ENTRY
                     )
                 );
             }
@@ -1610,19 +1610,19 @@ class serendipity_event_guestbook extends serendipity_event
                 if (count($messages) < 1 && @$serendipity['guestbook_message_header'] === false) {
                     array_push($messages, PLUGIN_GUESTBOOK_MESSAGE . ': ' . ERROR_UNKNOWN . '<br>' . ERROR_NOCAPTCHASET);
                 }
-                $error_occured = (@$serendipity['guestbook_message_header'] === true) ? THANKS_FOR_ENTRY : ERROR_OCCURRED;
+                $error_occurred = (@$serendipity['guestbook_message_header'] === true) ? THANKS_FOR_ENTRY : ERROR_OCCURRED;
 
                 if (@$serendipity['guestbook_message_header'] === true) {
                     if ($moderate === true && isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbook_category'] == 'gbapp') {
 
-                        $serendipity['smarty']->assign(array('gb_gbadd_approve' => true, 'msg_header' => $error_occured, 'guestbook_messages' => $messages));
+                        $serendipity['smarty']->assign(array('gb_gbadd_approve' => true, 'msg_header' => $error_occurred, 'guestbook_messages' => $messages));
 
                         // came from moderation table view and goes back
                         $this->backend_guestbook_moderate();
 
                     } else {
 
-                        $serendipity['smarty']->assign(array('gb_gbadd_view' => true, 'msg_header' => $error_occured, 'guestbook_messages' => $messages));
+                        $serendipity['smarty']->assign(array('gb_gbadd_view' => true, 'msg_header' => $error_occurred, 'guestbook_messages' => $messages));
 
                         // view all approved entries in a table
                         $ve = $this->backend_guestbook_view(1, 'gbview');
@@ -1641,7 +1641,7 @@ class serendipity_event_guestbook extends serendipity_event
                             $entry[$gk] = $gv;
                         }
                         $entry['body'] = $entry['comment'];
-                        $serendipity['smarty']->assign(array('gb_gbadd_add' => true, 'msg_header' => $error_occured, 'guestbook_messages' => $messages));
+                        $serendipity['smarty']->assign(array('gb_gbadd_add' => true, 'msg_header' => $error_occurred, 'guestbook_messages' => $messages));
                     }
                     if (serendipity_db_bool($this->get_config('showemail', 'true'))) {
                         $serendipity['smarty']->assign('is_show_mail', true);
