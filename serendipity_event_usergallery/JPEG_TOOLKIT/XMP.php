@@ -73,7 +73,7 @@ include_once $JPEG_TOOLKIT.'XML.php';
 *
 * Returns:      xmp_data - the string of raw XML text
 *               FALSE - if an APP 1 XMP segment could not be found,
-*                       or if an error occured
+*                       or if an error occurred
 *
 ******************************************************************************/
 
@@ -125,7 +125,7 @@ function get_XMP_text( $jpeg_header_data )
 *
 * Returns:      jpeg_header_data - the JPEG header data array with the
 *                                  XMP segment added.
-*               FALSE - if an error occured
+*               FALSE - if an error occurred
 *
 ******************************************************************************/
 
@@ -193,7 +193,7 @@ function put_XMP_text( $jpeg_header_data, $newXMP )
 * Parameters:   xmptext - a string containing the XMP data (XML) to be parsed
 *
 * Returns:      output - the tree structure array containing the XMP (XML) information
-*               FALSE - if an error occured
+*               FALSE - if an error occurred
 *
 ******************************************************************************/
 
@@ -534,7 +534,7 @@ function Interpret_RDF_Item( $Item )
 
 
 
-        // Return the captiona and value
+        // Return the caption and value
         return array($tag_caption, $value_str);
 }
 
@@ -798,7 +798,7 @@ $GLOBALS[ 'XMP_tag_captions' ] = array (
 "dc:date" => "Date",
 "dc:description" => "Description (Caption)",
 "dc:format" => "MIME Data Format",
-"dc:identifier" => "Unique Resource Identifer",
+"dc:identifier" => "Unique Resource Identifier",
 "dc:language" => "Language(s)",
 "dc:publisher" => "Publisher(s)",
 "dc:relation" => "Relations to other documents",
@@ -808,7 +808,7 @@ $GLOBALS[ 'XMP_tag_captions' ] = array (
 "dc:title" => "Title",
 "dc:type" => "Resource Type",
 
-"xmp:Advisory" => "Externally Editied Properties",
+"xmp:Advisory" => "Externally Edited Properties",
 "xmp:BaseURL" => "Base URL for relative URL's",
 "xmp:CreateDate" => "Original Creation Date",
 "xmp:CreatorTool" => "Creator Tool",
@@ -821,7 +821,7 @@ $GLOBALS[ 'XMP_tag_captions' ] = array (
 "xmpidq:Scheme" => "Identification Scheme",
 
 // These are not in spec but Photoshop CS seems to use them
-"xap:Advisory" => "Externally Editied Properties",
+"xap:Advisory" => "Externally Edited Properties",
 "xap:BaseURL" => "Base URL for relative URL's",
 "xap:CreateDate" => "Original Creation Date",
 "xap:CreatorTool" => "Creator Tool",
@@ -981,7 +981,7 @@ $GLOBALS[ 'XMP_tag_captions' ] = array (
 "exif:GPSImgDirection" => "GPS Image Direction",
 "exif:GPSMapDatum" => "GPS Map Datum",
 "exif:GPSDestLatitude" => "GPS Destination Latitude",
-"exif:GPSDestLongitude" => "GPS Destnation Longitude",
+"exif:GPSDestLongitude" => "GPS Destination Longitude",
 "exif:GPSDestBearingRef" => "GPS Destination Bearing Reference",
 "exif:GPSDestBearing" => "GPS Destination Bearing",
 "exif:GPSDestDistanceRef" => "GPS Destination Distance Reference",

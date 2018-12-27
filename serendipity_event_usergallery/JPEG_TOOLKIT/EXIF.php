@@ -111,7 +111,7 @@ include_once $JPEG_TOOLKIT.'pjmt_utils.php';          // Change: as of version 1
 * Parameters:   filename - the filename of the JPEG image to process
 *
 * Returns:      OutputArray - Array of EXIF records
-*               FALSE - If an error occured in decoding
+*               FALSE - If an error occurred in decoding
 *
 ******************************************************************************/
 
@@ -209,7 +209,7 @@ function get_EXIF_JPEG( $filename )
 *                                  should be stored, as from get_jpeg_header_data
 *
 * Returns:      jpeg_header_data - JPEG header array with the EXIF segment inserted
-*               FALSE - If an error occured
+*               FALSE - If an error occurred
 *
 ******************************************************************************/
 
@@ -289,7 +289,7 @@ function put_EXIF_JPEG( $exif_data, $jpeg_header_data )
 * Parameters:   filename - the filename of the JPEG image to process
 *
 * Returns:      OutputArray - Array of Meta records
-*               FALSE - If an error occured in decoding
+*               FALSE - If an error occurred in decoding
 *
 ******************************************************************************/
 
@@ -390,7 +390,7 @@ function get_Meta_JPEG( $filename )
 *                                  should be stored, as from get_jpeg_header_data
 *
 * Returns:      jpeg_header_data - JPEG header array with the Meta segment inserted
-*               FALSE - If an error occured
+*               FALSE - If an error occurred
 *
 ******************************************************************************/
 
@@ -465,7 +465,7 @@ function put_Meta_JPEG( $meta_data, $jpeg_header_data )
 * Parameters:   filename - the filename of the TIFF image to process
 *
 * Returns:      OutputArray - Array of EXIF records
-*               FALSE - If an error occured in decoding
+*               FALSE - If an error occurred in decoding
 *
 ******************************************************************************/
 
@@ -997,7 +997,7 @@ function get_IFD_Packed_Data( $ifd_data, $IFD_offset, $Byte_Align, $Another_IFD 
 *
 *
 * Returns:      OutputArray - Array of IFD records
-*               FALSE - If an error occured in decoding
+*               FALSE - If an error occurred in decoding
 *
 ******************************************************************************/
 

@@ -29,7 +29,7 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
 
         <div class="serendipity_entry_body">
             <div class="serendipity_gallery_navigation">
-                <a href="{$plugin_usergallery_httppath}">{$plugin_usergallery_title}</a>{foreach name="gallery" from=$plugin_usergallery_gallery_breadcrumb item="gallery"} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$gallery.path}">{$gallery.name}</a>{/foreach}{if $plugin_usergallery_limit_directory!=""} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$plugin_usergallery_currentgal}">{$plugin_usergallery_limit_directory}</a>{/if}
+                <a href="{$plugin_usergallery_httppath}">{$plugin_usergallery_title}</a>{foreach $plugin_usergallery_gallery_breadcrumb AS $gallery} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$gallery.path}">{$gallery.name}</a>{/foreach}{if $plugin_usergallery_limit_directory!=""} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$plugin_usergallery_currentgal}">{$plugin_usergallery_limit_directory}</a>{/if}
 
             </div>
         {if $plugin_usergallery_preface}
@@ -58,7 +58,7 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
             {/if}
 
                 <!-- folders -->
-               {foreach name="dir_list" from=$plugin_usergallery_subdirectories item="dir"}
+               {foreach $plugin_usergallery_subdirectories AS $dir}
                     {if $dir.filecount > 0}
 
                 <li style="padding-left: {$dir.pxdepth}px;"><a href="{$plugin_usergallery_httppath_extend}gallery={$dir.relpath}">{$dir.name} ({$dir.filecount} {if $dir.filecount == 1}{$CONST.IMAGE}{else}{$CONST.PLUGIN_EVENT_USERGALLERY_IMAGES}{/if})</a></li>
@@ -89,8 +89,8 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
         {/if}
 
             <!-- images -->
-        {foreach name="column" from=$plugin_usergallery_images item="image"}
-            {if $smarty.foreach.column.first}
+        {foreach $plugin_usergallery_images AS $image}
+            {if $image@first}
 
             <div class="serendipity_gallery_row">
             {/if}
@@ -119,13 +119,13 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
             {/if}
 
                 </div>
-            {if $smarty.foreach.column.last}
+            {if $image@last}
 
                 <!-- last column -->
                 <div style="clear: both;"></div>
             </div>
             {else}
-                {if $smarty.foreach.column.iteration is div by $plugin_usergallery_cols}
+                {if $image@iteration is div by $plugin_usergallery_cols}
 
                 <!-- new column -->
                 <div style="clear: both;"></div>

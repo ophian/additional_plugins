@@ -3,13 +3,11 @@
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
-// todo: add config groups, aka freetag dev
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_usergallery extends serendipity_event
 {
-
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -18,7 +16,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian');
-        $propbag->add('version',       '2.72');
+        $propbag->add('version',       '2.73');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -34,8 +32,8 @@ class serendipity_event_usergallery extends serendipity_event
         ));
         $propbag->add('groups', array('IMAGES'));
         $propbag->add('configuration', array('title', 'num_cols', 'subpage', 'frontpage', 'permalink', 'style', 'base_directory', 'dir_list', 'show_1lvl_sub',
-        'display_dir_tree', 'dir_tab', 'images_per_page', 'image_order','intro', 'image_display', 'show_lightbox', 'lightbox_type', 'lightbox_path', 'show_objects', 'image_strict', 'fixed_width', 'image_width',
-        'feed_width', 'feed_linked_only', 'feed_body', 'exif_show_data', 'exif_data', 'show_media_properties', 'media_properties', 'linked_entries'));
+        'display_dir_tree', 'dir_tab', 'images_per_page', 'image_order', 'separator1', 'intro', 'separator2', 'image_display', 'show_lightbox', 'lightbox_type', 'lightbox_path', 'show_objects', 'image_strict', 'fixed_width', 'image_width',
+        'feed_width', 'feed_linked_only', 'feed_body', 'separator3', 'exif_show_data', 'exif_data', 'show_media_properties', 'media_properties', 'linked_entries'));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -43,6 +41,7 @@ class serendipity_event_usergallery extends serendipity_event
         global $serendipity;
 
         switch ($name) {
+            case 'separator3':
             case 'separator2':
             case 'separator1':
                 $propbag->add('type',        'separator');
@@ -388,7 +387,7 @@ class serendipity_event_usergallery extends serendipity_event
                                             ? $permalink.'?'
                                             : $serendipity['indexFile'] . '?serendipity[subpage]='.$sub_page.'&amp;');
 
-        //Can't trust $serendipity['GET'] on all servers.... so we build it ourselves from subpage
+        // Can't trust $serendipity['GET'] on all servers.... so we build it ourselves from subpage
         if ($serendipity['rewrite'] != 'none') {
             $uri_parts = explode('?', str_replace('&amp;', '&', $serendipity['GET']['subpage']));
             $parts     = isset($uri_parts[1]) ? explode('&', $uri_parts[1]) : null;
@@ -706,6 +705,7 @@ class serendipity_event_usergallery extends serendipity_event
         static $pluginDir = null;
 
         $hooks = &$bag->get('event_hooks');
+
         if (isset($hooks[$event])) {
 
             if ($pluginDir === null) {
@@ -924,9 +924,11 @@ class serendipity_event_usergallery extends serendipity_event
         return($exif_data);
     }
 
-    function &makeExifSelector() {
+    function &makeExifSelector()
+    {
         global $serendipity;
 
+        $selector  = '';
         #$selector .= "</td></tr>\n";
         $selector .= '<tr><td style="vertical-align: top; width: 80%"><strong>'.PLUGIN_EVENT_USERGALLERY_EXIFDATA_NAME.'</strong></td>';
         $selector .= '<td style="vertical-align: top"><strong>Options</strong></td></tr>'."\n";
@@ -934,16 +936,16 @@ class serendipity_event_usergallery extends serendipity_event
         $selector .= '<span style="color: rgb(94, 122, 148); font-size: 8pt;">'.PLUGIN_EVENT_USERGALLERY_EXIFDATA_CAMERA.'</span></td></tr>'."\n";
 
         if (is_array($serendipity['POST']['plugin']['exifdata'])) {
-            //create new array
+            // create new array
             $exif_array = array();
             foreach($serendipity['POST']['plugin']['exifdata'] AS $key => $value) {
                 $exif_array[$key] = $key.'-'.$value;
             }
 
-            //build new optionstring and save it
+            // build new option string and save it
             $newexifstring = implode(',', array_values($exif_array));
             $this->set_config('exif_data', $newexifstring);
-            //break down the array and rebuild for immediate recycling on the page
+            // break down the array and rebuild for immediate recycling on the page
             foreach($exif_array AS $key => $value) {
                 list($newkey, $newvalue) = explode('-', $value);
                 $res1_exif_array[] = $newkey;
@@ -951,19 +953,19 @@ class serendipity_event_usergallery extends serendipity_event
             }
             $exif_array = array_combine($res1_exif_array, $res2_exif_array);
         } else {
-            //get the optionstring
+            // get the option string
             $exifsettings = $this->get_config('exif_data','Copyright Notice-no,Camera Make-no,Camera Model-no,Orientation-no,Resolution Unit-no,X Resolution-no,Y Resolution-no,Date and Time-no,YCbCr Positioning-no,Exposure Time-no,Aperture-no,Exposure Program-no,ISO-no,Exif Version-no,Date (Original)-no,Date (Digitized)-no,APEX Exposure Bias-no,APEX Max Aperture-no,Metering Mode-no,Light Source-no,Flash-no,FocalLength-no,User Comment-no,FlashPix Version-no,Colour Space-no,Pixel X Dimension-no,Pixel Y Dimension-no,File Source-no,Special Processing-no,Exposure Mode-no,White Balance-no,Digital Zoom Ratio-no,Scene Capture Type-no,Gain Control-no,Contrast-no,Saturation-no,Sharpness-no,Components Config-no');
             if (!$exifsettings) {
-                //return empty array if invalid or non-existant
+                // return empty array if invalid or non-existent
                 $exifsettings = array();
                 $selector .= '<tr><td colspan="2" style="color: #f00;">
-                    An error occured. Your website will function AS NORMAL. But EXIF tags cannot be shown.<br />
+                    An error occurred. Your website will function AS NORMAL. But EXIF tags cannot be shown.<br />
                     Error: $this->get_config(\'exif_data\') is not fetched from the database properly.
                     Please contact support at http://www.s9y.org/forums/.</td></tr>';
             } else {
-                //split the string into options
+                // split the string into options
                 $exifstring = explode(',', $exifsettings);
-                //split the options into name and value
+                // split the options into name and value
                 foreach($exifstring AS $key => $value) {
                     $display = explode('-', $exifstring[$key]);
                     $exif_array[$display[0]] = $display[1];
@@ -971,7 +973,7 @@ class serendipity_event_usergallery extends serendipity_event
             }
         }
 
-        //output options
+        // output options
         foreach($exif_array AS $key => $value) {
             $selector .= '<tr><td style="vertical-align: top">'.$key.'</td>';
             $selector .= '<td><input name="serendipity[plugin][exifdata]['.$key.']" type="radio" value="yes"';
@@ -1051,11 +1053,11 @@ class serendipity_event_usergallery extends serendipity_event
 
             // EXIF DATA
             if ($this->get_config('exif_show_data') == 'yes') {
-                // If any exif tags that are available.
+                // If any EXIF tags that are available.
                 $filepath = $serendipity['serendipityPath'] . $serendipity['uploadHTTPPath'] . $file['path'];
                 $exif_data = $this->getExifTags($filepath, $file['name'], $file['extension']);
                 $exifsettings_one = $this->get_config('exif_data', $this->makeExifSelector());
-                // Create array of exif display settings for main information table.
+                // Create array of EXIF display settings for main information table.
                 $exif_arr = explode(',', $exifsettings_one);
                 foreach($exif_arr AS $key => $value) {
                     $display = explode('-', $exif_arr[$key]);
@@ -1077,7 +1079,7 @@ class serendipity_event_usergallery extends serendipity_event
                 $exif_output .= '</div>';
             }
             // END EXIF DATA
-            //Show Media Library Properties
+            // Show Media Library Properties
             if ($this->get_config('show_media_properties','no') == 'yes') {
                 if (is_array($extended_data) && isset($extended_data['base_property'])) {
                     $extended_data = array_merge($extended_data['base_property'], (array)$extended_data['base_metadata']);

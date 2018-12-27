@@ -27,7 +27,7 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
 
           <div class="serendipity_gallery_navigation">
                <!-- navigation -->
-            <a href="{$plugin_usergallery_httppath}">{$plugin_usergallery_title}</a>{foreach name="gallery" from=$plugin_usergallery_gallery_breadcrumb item="gallery"} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$gallery.path}">{$gallery.name}</a>{/foreach}
+            <a href="{$plugin_usergallery_httppath}">{$plugin_usergallery_title}</a>{foreach name="gallery" $plugin_usergallery_gallery_breadcrumb AS $gallery} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$gallery.path}">{$gallery.name}</a>{/foreach}
             <div style="float: left;">
                 {if $plugin_usergallery_previousid != -1}
                 <a href="{$plugin_usergallery_httppath_extend}serendipity[image]={$plugin_usergallery_previousid}">&laquo; {$CONST.PREVIOUS}</a>
@@ -57,7 +57,7 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
                 <h5>{$CONST.USERGALLERY_LINKED_ENTRIES}</h5>
 
                 <ol>
-                {foreach from=$plugin_usergallery_file.entries item="link"}
+                {foreach $plugin_usergallery_file.entries AS $link}
                     <li><a href="{$link.href}">{$link.title}</a></li>
                 {/foreach}
                 </ol>
@@ -66,7 +66,7 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
                 <h5>{$CONST.USERGALLERY_LINKED_STATICPAGES}</h5>
 
                 <ol>
-                {foreach from=$plugin_usergallery_file.staticpage_results item="result"}
+                {foreach $plugin_usergallery_file.staticpage_results AS $result}
                     <li><a href="{$result.href}">{$result.title}</a></li>
                 {/foreach}
                 </ol>
@@ -74,7 +74,7 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
                 <dl>
                        <dt>{$plugin_usergallery_file.name}.{$plugin_usergallery_file.extension}</dt>
                        <dd>{$const.filesize}: {$plugin_usergallery_file.size_txt} kb</dd>
-                {foreach name="info" from=$plugin_usergallery_extended_info item="entry"}
+                {foreach $plugin_usergallery_extended_info AS $entry}
                     <dd>{$entry.name}: {$entry.value}</dd>
                 {/foreach}
                 {if $plugin_usergallery_file.is_image}
