@@ -24,7 +24,7 @@
 @define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED', 'Einträge mit \'verwaisten\' Tags anzeigen');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP', 'Eintrag-Tag-Zuordnungen bereinigen');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_INFO', 'In der nachfolgenden Auflistung sind Tags aufgeführt, die mit nicht existierenden Einträgen verknüpft sind. Klicken Sie auf &quot;Bereinigen&quot;, um diese nicht benötigten Verknüpfungen zu entfernen.');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING', 'Es wurden keine Tags gefunden, die mit nicht existieren Einträgen verknüpft sind. Daher ist keine Bereinigung erforderlich.');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING', 'Es wurden keine Tags gefunden, die mit nicht existierenden Einträgen verknüpft sind. Daher ist keine Bereinigung erforderlich.');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_LOOKUP_ERROR', 'Es konnten keine Tags, die mit nicht existierenden Einträgen verknüpft sind, gefunden werden, da ein Fehler aufgetreten ist.');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_PERFORM', 'Bereinigen');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_ENTRIES', 'IDs der betroffenen Einträge');
@@ -108,7 +108,7 @@
 
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC2', 'Wenn auf "Smarty" gestellt wird, dann wird eine smarty Variable {$entry.freetag} generiert, die an beliebiger Stelle in der entries.tpl Vorlagendatei eingefügt werden kann.');
 
-@define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY', 'Erweiteres Smarty');
+@define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY', 'Erweitertes Smarty');
 @define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC', 'Nutze statt der HTML-Ausgabe, ob nun direkt oder per Smarty, verschiedene Smarty Variablen, die im Template zusammengefügt werden können. Dies überschreibt alle anderen diesbezüglichen Einstellungen. Ein Beispiel für die Nutzung findet sich im Readme.');
 @define('PLUGIN_EVENT_FREETAG_KILL', 'Wenn aktiviert werden alle zugehörigen Tags gelöscht.');
 
