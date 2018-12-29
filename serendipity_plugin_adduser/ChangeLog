@@ -1,13 +1,21 @@
-2.46: (event)
+2.48:
+-----
+
+ * Fix variable typo
+
+
+2.47: (event)
 2.45: (plugin)
 -----
 
  * Fix some remaining Smarty2 instances in template files
 
+
 2.46: (event)
 -----
 
  * Added legal property bag information for gdpr/dsgvo
+
 
 2.45: (event),
 2.44: (plugin)
@@ -15,14 +23,17 @@
  * In WYSIWYG case, remove obvious title and description field in the "content" field
  * Remove some old requirement code
 
+
 2.44: (event)
 --------------
  * Remove reference in serendipity_plugin_adduser::sendMail()
    Fixes 7.1.x ++ error "Only variables can be passed by reference"
 
+
 2.43:
 -----
  * Catch possible manipulated form fields
+
 
 2.42:
 -----
