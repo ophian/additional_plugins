@@ -9,7 +9,7 @@
 
 @define('PLUGIN_GETID3', 'getID3() podpora pro získání vlastností média');
 @define('PLUGIN_GETID3_DESC', 'Používá knihovnu getID3() k získání doplòujících informací o audio/video souborech. getID3() samotná není distribuována s tímto pluginem.');
-@define('PLUGIN_GETID3_INSTALL', 'Knihovna getID3() není z licenèních dùvodù distribuována s tímto pluginem, musíte si ji ruènì stáhnout z http://getid3.org/. Rozbalte soubory do adresáøe serendpity_event_getid3 nebo (a to je lepší volba) do adresáøe bundled-libs.');
+@define('PLUGIN_GETID3_INSTALL', 'Knihovna getID3() není z licenèních dùvodù distribuována s tímto pluginem, musíte si ji ruènì stáhnout z http://getid3.org/. Rozbalte soubory do adresáøe serendipity_event_getid3 nebo (a to je lepší volba) do adresáøe bundled-libs.');
 
 @define('PLUGIN_GETID3_INSTALL_DESC', 
 '<h3>Instalace</h3>' .
