@@ -9162,9 +9162,9 @@
 <description>Az admin felületen, a bejegyzések panelban, statisztika hivatkozást hoz létre, ahol különféle statisztikákat láthasz, pl. látogatószámláló</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.75</version>
+  <version>1.76</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-07-24</date>
+  <date>2018-12-31</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>ChangeLog</file>
