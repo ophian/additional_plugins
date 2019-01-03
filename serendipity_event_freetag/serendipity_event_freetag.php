@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.21');
+        $propbag->add('version',       '4.22');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1768,14 +1768,14 @@ addLoadEvent(enableAutocomplete);
         } else {
 
             if (is_string($tag)) {
-                $cond  = "main.tag = '" . serendipity_db_escape_string($tag) . "'";
+                $cond  = "et.tag = '" . serendipity_db_escape_string($tag) . "'";
                 $ncond = "neg.tag != '" . serendipity_db_escape_string($tag) . "'";
                 $join  = "LEFT JOIN {$serendipity['dbPrefix']}entrytags AS neg ".
-                                "ON main.entryid = neg.entryid ";
+                                "ON et.entryid = neg.entryid ";
                 $totalModifier = '';
             } else if (is_array($tag)) {
                  $join = "LEFT JOIN {$serendipity['dbPrefix']}entrytags AS neg ".
-                                "ON main.entryid = neg.entryid ";
+                                "ON et.entryid = neg.entryid ";
                 $ccond = '';
                 $ncond = '';
 
@@ -1793,7 +1793,7 @@ addLoadEvent(enableAutocomplete);
                     }
 
                     $join  .= "LEFT JOIN {$serendipity['dbPrefix']}entrytags AS sub{$i} ".
-                                     "ON main.entryid = sub{$i}.entryid ";
+                                     "ON et.entryid = sub{$i}.entryid ";
                     $cond  .= "sub{$i}.tag = '" . serendipity_db_escape_string($tag[$i]) . "' ";
                     $ncond .= "neg.tag != '" . serendipity_db_escape_string($tag[$i]) . "' ";
                 }
@@ -1801,7 +1801,7 @@ addLoadEvent(enableAutocomplete);
                 return;
             }
             $q = "SELECT neg.tag AS tag, count(neg.tag) {$totalModifier} AS total
-                    FROM {$serendipity['dbPrefix']}entrytags AS main
+                    FROM {$serendipity['dbPrefix']}entrytags AS et
                {$join}
                 $ct_joins
                    WHERE ($cond)

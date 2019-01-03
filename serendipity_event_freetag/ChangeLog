@@ -1,3 +1,8 @@
+4.22:
+-----
+
+ * Fix (4.20) cloud related tags SQL regression
+
 4.21:
 -----
 
