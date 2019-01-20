@@ -149,7 +149,7 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
         {/if}
         {if NOT empty($entry.categories) AND ($entry.has_comments OR $entry.has_disqus)} | {/if}
         {if ($entry.has_comments OR $entry.has_disqus)}
-        {if $entry.has_disqus}
+        {if isset($entry.has_disqus) AND $entry.has_disqus}
             {$entry.comments}{if $entry.has_trackbacks}, &lt;a href=&quot;{$entry.link}#trackbacks&quot;&gt;{$entry.trackbacks} {$entry.label_trackbacks}&lt;/a&gt;{/if}
         {else}
             &lt;a href=&quot;{$entry.link}#comments&quot; title=&quot;{$entry.comments} {$entry.label_comments}{if $entry.has_trackbacks}, {$entry.trackbacks} {$entry.label_trackbacks}{/if}&quot;&gt;{$entry.comments} {$entry.label_comments}&lt;/a&gt;
