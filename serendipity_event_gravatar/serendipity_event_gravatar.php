@@ -1312,7 +1312,7 @@ class serendipity_event_gravatar extends serendipity_event
         if (!isset($cache_filename)) {
             return null;
         }
-        return $this->getCacheDirectory() .'/' .  $cache_filename;;
+        return $this->getCacheDirectory() .'/' .  $cache_filename;
     }
 
     /**
