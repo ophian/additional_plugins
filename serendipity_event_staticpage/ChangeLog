@@ -1,3 +1,7 @@
+5.66:
+-----
+ * Remove inline styles in searchresults template
+
 5.65:
 -----
  * Don't use plugin instance id in frontend as unique id

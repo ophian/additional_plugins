@@ -1,4 +1,4 @@
-<div class="staticpage_results" style="text-align: left">
+<div class="staticpage_results">
     <p class="staticpage_result_header">{$CONST.STATICPAGE_SEARCHRESULTS|sprintf:$staticpage_searchresults}</p>
 
     {if $staticpage_results}
