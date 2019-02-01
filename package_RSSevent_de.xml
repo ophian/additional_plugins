@@ -536,7 +536,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Avatare bei Kommentaren anzeigen. Unterstützt werden Gravatare, Pavatare, Favatare, Wavatare, Monster ID, Identicon, Twitter und Identica Avatare&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Fri, 10 Aug 2018 14:30:01 +0200</pubDate>
+<pubDate>Wed, 23 Jan 2019 12:01:15 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
@@ -770,7 +770,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilinguale Einträge&lt;/b&gt;&lt;br /&gt;Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Mon, 29 Oct 2018 12:10:09 +0100</pubDate>
+<pubDate>Fri, 01 Feb 2019 14:29:40 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -1058,7 +1058,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statische Seiten&lt;/b&gt;&lt;br /&gt;Verwaltet beliebige statische Seiten innerhalb des Blogs mit dem Blog-Design und allen Formatierungen. Fügt einen neuen Menüpunkt in der Admin-Oberfläche hinzu!&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Wed, 09 Jan 2019 20:42:55 +0100</pubDate>
+<pubDate>Fri, 01 Feb 2019 17:14:58 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1211,7 +1211,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Bildergalerie&lt;/b&gt;&lt;br /&gt;Ermöglicht es den Besuchern, die Mediendatenbank anzusehen&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 27 Dec 2018 13:26:10 +0100</pubDate>
+<pubDate>Wed, 23 Jan 2019 12:00:43 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>

@@ -4131,7 +4131,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>1.69</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2018-08-10</date>
+  <date>2019-01-23</date>
   <filelist>
     <dir name="serendipity_event_gravatar">
       <file>ChangeLog</file>
@@ -6405,9 +6405,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>エントリの複数の言語バージョンを作成することを可能にします。</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.56</version>
+  <version>2.57</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <date>2018-10-29</date>
+  <date>2019-02-01</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -9006,9 +9006,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>デザインとすべての書式化されたブログとウェブログ内部に静的ページを表示します。管理インターフェースに新しいメニューを追加します。</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>5.65</version>
+  <version>5.66</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2019-01-09</date>
+  <date>2019-02-01</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
@@ -10806,7 +10806,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>2.73</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-12-27</date>
+  <date>2019-01-23</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
       <file>ChangeLog</file>
