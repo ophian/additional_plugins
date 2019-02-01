@@ -443,7 +443,7 @@ class serendipity_event_usergallery extends serendipity_event
             if ($this->get_config('style') == "thumbpage")  {
                 $images_per_page   = $this->get_config('images_per_page');
                 $display_dir_tree  = $this->get_config('display_dir_tree','no');
-                $show_1lvl_sub     = $this->get_config('show_1lvl_sub','no');;
+                $show_1lvl_sub     = $this->get_config('show_1lvl_sub','no');
                 $dir_list          = $this->get_config('dir_list');
                 $num_cols          = $this->get_config('num_cols');
                 $permitted_gallery = false;
