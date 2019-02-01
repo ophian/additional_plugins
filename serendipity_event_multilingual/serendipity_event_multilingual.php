@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.56');
+        $propbag->add('version',        '2.57');
         $propbag->add('configuration',  array('copytext', 'placement', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -582,7 +582,7 @@ class serendipity_event_multilingual extends serendipity_event
                     $place = $this->get_config('placement', 'add_footer');
                     $msg = '<div class="serendipity_multilingualInfo">' . PLUGIN_EVENT_MULTILINGUAL_SWITCH . ': %s</div>';
                     if ($addData['extended'] || $addData['preview']) {
-                        if ($langs = $this->getLang($eventData[0]['id'], $eventData[0]['properties'])) {
+                        if (isset($eventData[0]['id']) && $langs = $this->getLang($eventData[0]['id'], $eventData[0]['properties'])) {
                             if (!empty($this->showlang)) {
                                 $props = &$eventData[0]['properties'];
                                 foreach($this->switch_keys AS $key) {
