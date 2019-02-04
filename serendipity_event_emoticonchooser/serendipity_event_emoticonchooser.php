@@ -110,7 +110,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
 // so in either case switching around won't work properly. So we check first, but make a try catch to workaround
 // this lazy cache behaviour, since settings may have changed in the meanwhile.
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="<?=$serendipity['lang']?>"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="<?=$serendipity['lang']?>"> <!--<![endif]-->
 <head>
