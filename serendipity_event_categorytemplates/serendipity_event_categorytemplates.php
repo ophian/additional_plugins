@@ -544,7 +544,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                 true,
                 true,
                 'categorytemplate'
-            ); // normally this is 'template' to properly work but since used for buttonizing we have made an exception for categorytemplate(s)
+            ); // normally this is 'template' to properly work but since used for buttoning we have made an exception for categorytemplate(s)
 
             echo "\n</form>\n";
             serendipity_plugin_api::hook_event('backend_templates_configuration_bottom', $template_config);
