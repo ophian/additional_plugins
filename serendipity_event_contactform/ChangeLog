@@ -1,3 +1,9 @@
+1.30:
+----
+
+ * Fix contact form selector for consistency with the Serendipity book
+   declaration. References styx/e67be70 commit.
+
 1.29:
 ----
 
