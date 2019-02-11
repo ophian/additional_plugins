@@ -1,0 +1,30 @@
+0.8:
+-----
+ * Sync: "Rewrite srcset in feeds to absolute urls (#585)"
+
+0.7:
+-----
+ * Fix some uninitialized variable checks
+
+0.6:
+------
+ * Silence possible eventData property check
+
+0.5:
+----
+ * Bump for head
+
+0.4:
+----
+ * Sync: small fixes
+
+0.3.2:
+------
+ * Move to additional plugins
+
+0.3.1:
+0.3:
+0.2:
+0.1:
+----
+ * Initial working release
