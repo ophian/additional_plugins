@@ -1,3 +1,7 @@
+5.67:
+-----
+ * Optimize getPageID method when subpage empty
+
 5.66:
 -----
  * Remove inline styles in searchresults template
