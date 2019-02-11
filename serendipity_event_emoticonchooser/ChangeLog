@@ -1,3 +1,7 @@
+3.28:
+-----
+ * Check an uninitialized variable
+
 3.27:
 -----
  * Better check a closing div block

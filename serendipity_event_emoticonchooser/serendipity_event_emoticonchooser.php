@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.27');
+        $propbag->add('version',       '3.28');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -396,7 +396,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     // no-BREAK! [PSR-2] - extends frontend_footer
 
                 case 'frontend_footer':
-                    if (empty($noemojs) || ($serendipity['GET']['adminModule'] == 'comments' && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || isset($serendipity['POST']['preview'])))) {
+                    if (empty($noemojs) || (isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] == 'comments' && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || isset($serendipity['POST']['preview'])))) {
 ?>
     <script type="text/javascript" src="<?php echo $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_emoticonchooser/emoticonchooser.js'; ?>"></script>
 <?php
