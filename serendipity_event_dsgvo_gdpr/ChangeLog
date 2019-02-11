@@ -1,3 +1,7 @@
+1.78:
+-----
+ * Check an uninitialized variable
+
 1.77:
 -----
  * Prepare [de] for Serendipity Styx 2.7.0 wording change
