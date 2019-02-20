@@ -20,4 +20,5 @@
 @define('PLUGIN_SIDEBAR_HIDER_CONF_MYSELF', 'Nur ich:');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_CATEGORIES', 'Nur Kategorien:');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_EVERYONE', 'Jeder Besucher:');
+@define('PLUGIN_SIDEBAR_HIDER_FRONTPAGE_DESC', 'Startseite');
 

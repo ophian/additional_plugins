@@ -25,6 +25,5 @@
 @define('PLUGIN_SIDEBAR_HIDER_CONF_MEMBERS', 'Pouze přihlášení:');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_MYSELF', 'Pouze já:');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_CATEGORIES', 'Pouze kategorie:');
-@define('PLUGIN_SIDEBAR_HIDER_FRONTPAGE_DESC', '<Úvodní stránka>');
-@define('PLUGIN_SIDEBAR_HIDER_FRONTPAGE_ID', '0');
+@define('PLUGIN_SIDEBAR_HIDER_FRONTPAGE_DESC', 'Úvodní stránka');
 

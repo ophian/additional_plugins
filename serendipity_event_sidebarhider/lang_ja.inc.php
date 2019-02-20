@@ -15,9 +15,9 @@
 @define('PLUGIN_SIDEBAR_HIDER_STYLE_LINK', 'リンクの隠蔽スタイル');
 @define('PLUGIN_SIDEBAR_HIDER_STYLE_LINK_DESC', 'リンクの隠蔽に適用するスタイルタグ');
 @define('PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE', '可視状態のリンク HTML');
-@define('PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE_DESC', 'HTML of the Sidebar Hidder Link when the Sidebar is visible. (例えば画像)');
+@define('PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE_DESC', 'HTML of the Sidebar Hider Link when the Sidebar is visible. (例えば画像)');
 @define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN', '隠蔽状態のリンク HTML');
-@define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN_DESC', 'HTML of the Sidebar Hidder Link when the Sidebar is hidden. (例えば画像)');
+@define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN_DESC', 'HTML of the Sidebar Hider Link when the Sidebar is hidden. (例えば画像)');
 @define('PLUGIN_SIDEBAR_HIDER_ADMINLINK', 'サイドバーの可視状態管理');
 @define('PLUGIN_SIDEBAR_HIDER_CONF', 'サイドバー隠蔽設定');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_DESC', 'Note: This plugin hides based on location and changes made to plugin order and placement will not be reflected here.');
