@@ -23,9 +23,9 @@ class serendipity_event_newsbox extends serendipity_event
         $propbag->add('groups',        array('FRONTEND_VIEWS', 'FRONTEND_FEATURES'));
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Jude Anthony, Ian');
-        $propbag->add('version',       '1.1');
+        $propbag->add('version',       '1.2');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
+            'serendipity' => '2.7',
             'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
@@ -116,7 +116,6 @@ class serendipity_event_newsbox extends serendipity_event
                 $categories[$cat['categoryid']] = str_repeat('^ ', $cat['depth']) . $cat['category_name'];
             }
         }
-
         return $categories;
     }
 
@@ -141,26 +140,25 @@ class serendipity_event_newsbox extends serendipity_event
 
             switch($event) {
                 case 'genpage':
-                    // Is this the frontpage? (Garvin's algorythm; works
+                    // Is this the frontpage? (Garvin's algorithm; works
                     // for all cases except index.html, on my server)
                     if ($addData['startpage']) {
                         $this->isFrontPage = true;
                     } else {
                         $this->isFrontPage = false;
-                        return true;
+                        break;
                     }
-
                     // Get this newsbox's entries
                     //
 
                     // Hidden newsboxes don't need to waste time doing this.
                     if ($placement == 'hidden') {
-                        return true;
+                        break;
                     }
 
                     // If I don't contain categories, I don't generate HTML from categories.
                     if ($content_type != 'categories') {
-                        return true;
+                        break;
                     }
 
                     // If this newsbox is empty, we'd get an SQL error.
@@ -168,7 +166,7 @@ class serendipity_event_newsbox extends serendipity_event
                         $this->html = '<div class="newsbox"><i>No ' .
                             $this->get_config('title', PLUGIN_EVENT_NEWSBOX_DEFAULT_TITLE) .
                             " today.</i></div>\n";
-                        return true;
+                        break;
                     }
 
                     if (!is_object($serendipity['smarty'])) {
@@ -194,11 +192,13 @@ class serendipity_event_newsbox extends serendipity_event
                         $max_entries = 5;
                     }
                     $entries = serendipity_fetchEntries(null, true, $max_entries, false, false, 'timestamp DESC', $sql);
+
+                    $amount = is_array($entries) ? count($entries) : 0;
                     $serendipity['fetchLimit'] = $oldLimit;
                     unset($serendipity['newsbox']);
 
                     // Process our input data with new printEntries:
-                    // $entries, no extended, no preview, block NEWSBOX, no smarty fetch, no hooks, footer
+                    // $entries, no extended, no preview, block NEWSBOX, no Smarty fetch, no hooks, footer
                     serendipity_printEntries($entries, 0, false, 'NEWSBOX', false, false, false);
                     $newsbox_data = array();
                     $newsbox_data['title'] = $this->get_config('title', PLUGIN_EVENT_NEWSBOX_DEFAULT_TITLE);
@@ -211,65 +211,81 @@ class serendipity_event_newsbox extends serendipity_event
                         'plugin_clean_page' => true,
                         'view'              => $serendipity['view'])
                     );
-                    $nb = serendipity_getTemplateFile('newsbox.tpl');
-                    if ($nb && $nb != 'newsbox.tpl') {
-                        // Template is obviously newsbox-aware
-                        $this->html = serendipity_smarty_fetch('NEWSBOX', 'newsbox.tpl', false);
+                    // NOTE: 'plugin clean_page' just avoids to apply the entries footer container for the newsbox run (a "second" time). It is not set while fetching the normal entries list.
+
+                    $filename = 'newsbox.tpl';
+                    $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
+
+                    if (!$tfile || $tfile == $filename) {
+                        $tfile = dirname(__FILE__) . '/' . $filename;
+                    }
+                    if (file_exists($tfile)) {
+                        // if to add pagination
+                        $serendipity['smarty']->assign('is_nbpagination', ($amount > $max_entries));
+                        $this->html = $this->parseTemplate($tfile);
                     } else {
                         // Set the newsbox variable for the template, in case it's newsbox-aware
                         $serendipity['smarty']->assign('isNewsbox', true);
 
-                        // Modify the footer link
-                        $more = '<form style="display:inline;" action="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '" method="post">';
-                        foreach(explode(',', $news_cats) AS $cat) {
-                            $more .= '<input type="hidden" name="serendipity[multiCat][]" value="' . $cat . '">';
+                        // add pagination if there is any more
+                        if ($amount > $max_entries) {
+                            // Modify the footer link
+                            $more = '<form style="display:inline;" action="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '" method="post">';
+                            foreach(explode(',', $news_cats) AS $cat) {
+                                $more .= '<input type="hidden" name="serendipity[multiCat][]" value="' . $cat . '">';
+                            }
+                            $more .= '<input class="serendipityPrettyButton input_button" type="submit" name="serendipity[isMultiCat]" value="' . MORE . ' ' . $this->get_config('title', PLUGIN_EVENT_NEWSBOX_DEFAULT_TITLE) . '"></form>';
+                            $serendipity['smarty']->assign('footer_info', $more);
                         }
-                        $more .= '<input class="serendipityPrettyButton input_button" type="submit" name="serendipity[isMultiCat]" value="' . MORE . ' ' . $this->get_config('title', PLUGIN_EVENT_NEWSBOX_DEFAULT_TITLE) . '"></form>';
-                        $serendipity['smarty']->assign('footer_info', $more);
+
+                        // just in case we have a theme template with weired conditions - unset normal entries pagination variables
+                        $serendipity['smarty']->assign('footer_prev_page', null);
+                        $serendipity['smarty']->assign('footer_next_page', null);
 
                         // Get the HTML
-                        $serendipity['skip_smarty_hooks'] = true;  // Don't call entries_header from the template!
+                        $serendipity['skip_smarty_hooks'] = true;  // Don't call 'entries_header' from the template!
                         $this->html = serendipity_smarty_fetch('NEWSBOX', 'entries.tpl', false);
-                        unset($serendipity['skip_smarty_hooks']);
-
-                        // Don't leave the newsbox variable set for the regular fetch
-                        $serendipity['smarty']->clearAssign('isNewsbox');
-
-                        // Check if the template supports newsboxes
-                        /* Matches class = "whatever_newsbox_whatever", taking care to allow
-                           whitespace where legal and match quote types (I don't think you
-                           can use a quote in a class name, but hey...) */
-                        if (preg_match('/class\\s*=\\s*(["\'])[^\\1]*newsbox/', $this->html) == 0) {
-                            // Add the div; give it the default class "newsbox" and a title
-                            $title = $this->get_config('title');
-                            $this->html = "\n<div class=\"newsbox\"><h3 class=\"newsbox_title\">$title</h3>\n" . $this->html . "\n</div><!--newsbox-->\n";
-                        }
+                        unset($serendipity['skip_smarty_hooks']);// is equal to false
                     }
 
+                    // Don't leave the newsbox variable set for the regular fetch
+                    $serendipity['smarty']->clearAssign('isNewsbox');
+
+                    // Check if the template supports newsboxes
+
+                    /* Matches class = "whatever_newsbox_whatever", taking care to allow
+                       whitespace where legal and match quote types (I don't think you
+                       can use a quote in a class name, but hey...) */
+                    if (preg_match('/class\\s*=\\s*(["\'])[^\\1]*newsbox/', $this->html) == 0) {
+                        // Add the div; give it the default class "newsbox" and a title
+                        $title = $this->get_config('title');
+                        $this->html = "\n<div class=\"newsbox\"><h3 class=\"newsbox_title\">$title</h3>\n" . $this->html . "\n</div><!--newsbox-->\n";
+                    }
                     // Done processing the newsbox
                     break;
 
                 case 'frontend_fetchentries':
+                    /* is executed twice - once for the newsbox genpage entries, next for the normal entries list without the newsbox entries of the first */
                     // Only on the frontpage
                     if (!$this->isFrontPage) {
-                        return true;
+                        break;
                     }
 
                     // Don't even call this hook if we're already in this hook
                     if (isset($serendipity['newsbox']) && $serendipity['newsbox'] == 'no_exclude') {
-                        return true;
+                        break;
                     }
 
                     // If we don't contain categories, we don't want to
                     // exclude categories accidentally
                     if ($content_type != 'categories') {
-                        return true;
+                        break;
                     }
 
                     // Don't restrict the calendar, etc; only the main listing
                     $source = $addData['source'];
                     if ($source != 'entries') {
-                        return true;
+                        break;
                     }
 
                     // No joins required!
@@ -277,7 +293,7 @@ class serendipity_event_newsbox extends serendipity_event
                     $conds = array();
 
                     if (isset($news_cats) && !empty($news_cats)) {
-                        // Exclude entries in the newbox
+                        // Exclude entries of the newbox
                         $conds[] =
                         ' (e.id NOT IN (SELECT entryid from '
                         . $serendipity['dbPrefix'] . 'entrycat'
@@ -297,7 +313,7 @@ class serendipity_event_newsbox extends serendipity_event
                 case 'css':
                     if (false !== strpos($eventData, 'newsbox')) {
                         // This CSS is already newsbox-aware.
-                        return true;
+                        break;
                     }
                     $eventData .= '
 
@@ -307,6 +323,7 @@ class serendipity_event_newsbox extends serendipity_event
     border: 1px solid #DDD;
     padding: 0 .5em;
     margin-bottom: 1em;
+    text-align: left;
 }
 .newsbox_title {
     font-style: italic;
@@ -353,11 +370,7 @@ class serendipity_event_newsbox extends serendipity_event
 
                 case 'entries_footer':
                     if ($this->isFrontPage && $placement == 'entry bottom') {
-                        // Entry footer markup is ugly.  Close the div.
-                        echo '</div>';
                         echo $this->getHTML();
-                        // Reopen the div we closed to avoid bad markup.
-                        echo '<div>';
                     }
                     break;
 
@@ -374,22 +387,21 @@ class serendipity_event_newsbox extends serendipity_event
                     if ($addData['id'] == $placement) {
                         // 1. Avoid recursion.
                         // 2. Go to step 1.
-                        if (!$this->got_content[$addData['id']]) {
+                        if (empty($this->got_content[$addData['id']])) {
                             $this->got_content[$addData['id']] = true;
                             $eventData[] = $this->getHTML();
                         }
-                        return true;
+                        break;
                     }
                     break;
 
                 case 'newsbox:get_containers':
                     // Custom hook to find newsbox containers.  If I'm a newsbox
-                    // container, return my instance ID.
+                    // container, return my instance ID and store the title in plugin config placement select box
                     if (($addData['id'] != $this->instance) && ($this->get_config('content_type', 'categories') == 'newsboxes')) {
                         $eventData[] = array(
                             'id' => $this->instance,
                             'name' => 'Newsbox: ' . $this->get_config('title', PLUGIN_EVENT_NEWSBOX_DEFAULT_TITLE));
-                        return true;
                     }
                     break;
 
@@ -416,7 +428,7 @@ class serendipity_event_newsbox extends serendipity_event
             // Wrap content from my contained newsboxes.
             $contents = array();
             serendipity_plugin_api::hook_event('newsbox:get_content', $contents, array('id' => $this->instance));
-            $nb = serendipity_getTemplateFile('newsbox.tpl');
+            $nb = serendipity_getTemplateFile('newsbox.tpl', 'serendipityPath');
             if ($nb && $nb != 'newsbox.tpl') {
                 // The template should be able to handle this
                 $serendipity['smarty']->assign('NEWSBOX', $contents);
@@ -433,7 +445,7 @@ class serendipity_event_newsbox extends serendipity_event
                 foreach($contents AS $box) {
                     $this->html .= $box . "\n";
                 }
-                $this->html .= '<div class="cbox"><br /></div>' . "\n";
+                $this->html .= '<div class="cbox"><br></div>' . "\n";
                 $this->html .= "\n</div><!--newsbox_container-->\n";
             }
         }

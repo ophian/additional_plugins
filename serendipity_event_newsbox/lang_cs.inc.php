@@ -18,9 +18,9 @@
 @define('PLUGIN_EVENT_NEWSBOX_NUMENTRIES_DESC', 'Pokud tento blok obsahuje kategorie, zadejte zde maximální poèet pøíspìvkù, kteér se budou v bloku zobrazovat.');
 @define('PLUGIN_EVENT_NEWSBOX_PLACEMENT', 'Umístìní');
 @define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_DESC', 'Kde bude blok s novinkami umístìn? Blok mùžete umístit na zaèátek nebo na konec seznamu pøíspìvkù, do hlavièky stránky, do patièky, do jiného bloku s novinkami a nebo ho skrýt. Skryté bloky se nikde nezobrazují. Bloky, které obsahují samy sebe se také nikdy nezobraí. V šablonách/stylech vzhledu, které nepodporují bloky s novinkami, se mohou bloky zobrazovat ošklivì, pokud nejsou zobrazeny nad ostatními pøíspìvky.');
-@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_PAGE_TOP', 'Záhlaví stránky');
+@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_PAGE_TOP', 'Záhlaví stránky (when using raw data)');
 @define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_ENTRY_TOP', 'Pøed pøíspìvky');
 @define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_ENTRY_BOTTOM', 'Za pøíspìvky');
-@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_PAGE_BOTTOM', 'Patièka stránky');
+@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_PAGE_BOTTOM', 'Patièka stránky (when using raw data)');
 @define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_HIDDEN', '*SKRYTÝ*');
 

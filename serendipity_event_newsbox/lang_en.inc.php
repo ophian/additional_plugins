@@ -19,9 +19,9 @@
 @define('PLUGIN_EVENT_NEWSBOX_NUMENTRIES_DESC', 'If you decided this newsbox should contain categories, you should enter the maximum number of entries to show here.');
 @define('PLUGIN_EVENT_NEWSBOX_PLACEMENT', 'Placement');
 @define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_DESC', 'Where will this newsbox be placed? You may place the newsbox at the top or bottom of the entries, in the page header, in the page footer, in another newsbox, or hidden altogether. Hidden newsboxes do not display at all. Containers that contain themselves never display, either. In templates that don\'t understand newsboxes, this CSS can look ugly if the newsbox is placed anywhere other than the top of the entries.');
-@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_PAGE_TOP', 'In page header');
+@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_PAGE_TOP', 'In page header (when using raw data)');
 @define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_ENTRY_TOP', 'Top of entries');
 @define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_ENTRY_BOTTOM', 'Bottom of entries');
-@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_PAGE_BOTTOM', 'In page footer');
+@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_PAGE_BOTTOM', 'In page footer (when using raw data)');
 @define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_HIDDEN', '*HIDDEN*');
 

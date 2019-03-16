@@ -9,7 +9,7 @@
         {foreach $dategroup.entries AS $entry}
             {assign var="entry" value=$entry scope="root"}{* See scoping issue(s) for comment "_self" *}
             <div class="shadow">
-              <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if $entry.is_entry_owner}serendipity_entry_author_self{/if} drop newsbox_entry">
+              <div class="serendipity_entry serendipity_entry_author_{$entry.author|makeFilename} {if NOT empty($entry.is_entry_owner)}serendipity_entry_author_self{/if} drop newsbox_entry">
                 <h3 class="serendipity_title"><a href="{$entry.link}">{$entry.title}</a></h3>
                 <h4 class="serendipity_date">{$dategroup.date|formatTime:DATE_FORMAT_ENTRY}</h4>
 
@@ -18,7 +18,7 @@
                 </div>
 
             {if $entry.has_extended}
-                <a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a>
+                <p><a href="{$entry.link}#extended">{$CONST.VIEW_EXTENDED_ENTRY|sprintf:$entry.title}</a></p>
             {/if}
 
               </div>
@@ -41,8 +41,9 @@
         <p class="nocontent">{$CONST.NO_ENTRIES_TO_PRINT}</p>
     {/if}
     {/foreach}
+{if $is_nbpagination}
 
-        <div class="serendipity_entryFooter" style="text-align: center">
+        <div class="serendipity_entries_footer">
             <form style="display:inline;" action="{$newsbox_data.multicat_action}" method="post">
             {foreach $newsbox_data.cats AS $cat_id}
                 <input type="hidden" name="serendipity[multiCat][]" value="{$cat_id}">
@@ -50,5 +51,7 @@
                 <input type="submit" name="serendipity[isMultiCat]" value="{$CONST.MORE} {$newsbox_data.title}">
             </form>
         </div>
+{/if}
+
     </fieldset>
 <!-- NEWBOX ENTRIES END -->
