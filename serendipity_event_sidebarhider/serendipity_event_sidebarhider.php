@@ -30,11 +30,11 @@ class serendipity_event_sidebarhider extends serendipity_event
             'css_backend'               => true,
             'backend_sidebar_entries'   => true,
             'backend_sidebar_admin'     => true,
-            'backend_sidebar_entries_event_display_sidebarhider'    => true,
+            'backend_sidebar_entries_event_display_sidebarhider' => true,
             'frontend_generate_plugins' => true
         ));
         $propbag->add('groups', array('BACKEND_TEMPLATES'));
-        $propbag->add('configuration', array('enable', 'style_sidebar_hidden','style_title_hidden','style_link','html_link_visible','html_link_hidden','plugin_list'));
+        $propbag->add('configuration', array('enable', 'style_sidebar_hidden', 'style_title_hidden', 'style_link', 'html_link_visible', 'html_link_hidden', 'plugin_list'));
     }
 
     function introspect_config_item($name, &$propbag)
