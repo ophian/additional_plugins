@@ -75,7 +75,7 @@ function addSideBarHiders(sideBars)
             linkText = _html_link_visible;
             
             // put the title's inner html in a div tag and add a div tag on the end with our button
-            title.innerHTML = "<div style='float:left'>" + title.innerHTML + "</div><a href=\"javascript:sideBarHide("+i+","+j+")\" id='sbl_"+i+"_"+j+"' style='text-decoration:none;float:right;margin-right:3px'>"+linkText+"</a>";
+            title.innerHTML = "<div style='float:left'>" + title.innerHTML + "</div><a href='javascript:sideBarHide("+i+","+j+")' id='sbl_"+i+"_"+j+"' style='text-decoration:none;float:right;margin-right:3px'>"+linkText+"</a>";
             
             // create new tag and toss title bar in it
             var titleWrap = document.createElement('div');
@@ -84,7 +84,7 @@ function addSideBarHiders(sideBars)
             item.removeChild(title);
             titleWrap.appendChild(title);
             
-            if (!_sideBarVisibility[i][j])
+            if (typeof(_sideBarVisibility[i]) === 'undefined' || !_sideBarVisibility[i][j])
                 sideBarHide(i,j);
         }
     }

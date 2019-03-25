@@ -18,7 +18,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian');
-        $propbag->add('version',       '1.35');
+        $propbag->add('version',       '1.36');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.2.0'
@@ -309,15 +309,16 @@ class serendipity_event_sidebarhider extends serendipity_event
                         }
                     }
 
-                    $parts     = explode('[/&]', $uri_parts[0]);
+                    $parts = explode('[/&]', $uri_parts[0]);
                     if (!empty($parts[1])) {
-                        $param     = (int) $parts[1];
+                        $param = (int) $parts[1];
                     } else {
-                        $param     = null;
+                        $param = null;
                     }
 
                     switch($parts[0]) {
                         case 'sidebarhider.js':
+                            header('Content-Type: application/javascript');
                             include dirname(__FILE__) . '/sidebarhider.js';
                             break;
                     }
@@ -429,19 +430,19 @@ class serendipity_event_sidebarhider extends serendipity_event
                 $checked_myself = "";
                 $checked_everyone = "";
 
-                if (isset($plugin_list[$side]) && $plugin_list[$side] && !$plugin_list[$side][$i]) {
+                if (isset($plugin_list[$side]) && $plugin_list[$side] && !isset($plugin_list[$side][$i])) {
                     $checked = "checked='checked'";
                 }
 
 
                 if ($viewlist[$plugin->instance] == 'member') {
-                    $checked_member = "checked='checked'";
+                    $checked_member = 'checked="checked"';
                 } elseif ($viewlist[$plugin->instance] == 'myself' || $viewlist[$plugin->instance] == $serendipity['authorid']) {
-                    $checked_myself = "checked='checked'";
+                    $checked_myself = 'checked="checked"';
                 } elseif ($viewlist[$plugin->instance] == 'everyone') {
-                    $checked_everyone = "checked='checked'";
+                    $checked_everyone = 'checked="checked"';
                 } else {
-                    $checked_everyone = "checked='checked'";
+                    $checked_everyone = 'checked="checked"';
                 }
 
                 $title = '';
@@ -455,36 +456,36 @@ class serendipity_event_sidebarhider extends serendipity_event
                     $title = $plugin->get_config('backend_title');
                 }
                 $zebra = $i % 2 ? 'pluginmanager_item_odd' : 'pluginmanager_item_even';
-                echo "<li class=\"$zebra\"><div class='serendipitySideBarItem' style='margin-top:10px;margin-bottom:20px;'>\n";
-                echo "<h3 class='serendipitySideBarTitle'>$title</h3>\n";
-                echo "<div class='serendipitySideBarContent'><table>";
+                echo "<li class=\"$zebra\"><div class=\"serendipitySideBarItem\" style=\"margin-top:10px;margin-bottom:20px;\">\n";
+                echo "<h3 class=\"serendipitySideBarTitle\">$title</h3>\n";
+                echo "<div class=\"serendipitySideBarContent\"><table>";
                 if ($enabled) {
                     echo "<tr>\n";
                     echo "<td>".PLUGIN_SIDEBAR_HIDER_CONF_HIDDEN."</td>\n";
-                    echo "<td><input class='input_checkbox' type='checkbox' name='plugin_".$side."_".$i."' $checked /></td>\n";
+                    echo "<td><input class=\"input_checkbox\" type=\"checkbox\" name=\"plugin_{$side}_{$i}\" $checked /></td>\n";
                     echo "</tr>";
                 }
 
                 //--JAM: 2005-10-18 Added "everyone" value to clear members and myself values
                 echo "<tr>\n";
                 echo "<td>".PLUGIN_SIDEBAR_HIDER_CONF_EVERYONE."</td>\n";
-                echo "<td><input class='input_radio' type='radio' name='plugin_view[" . base64_encode($plugin->instance) . "]' value='everyone' $checked_everyone /></td>\n";
+                echo '<td><input class="input_radio" type="radio" name="plugin_view[' . base64_encode($plugin->instance) . ']" value="everyone" ' . $checked_everyone . "/></td>\n";
                 echo "</tr>";
 
                 echo "<tr>\n";
                 echo "<td>".PLUGIN_SIDEBAR_HIDER_CONF_MEMBERS."</td>\n";
-                echo "<td><input class='input_radio' type='radio' name='plugin_view[" . base64_encode($plugin->instance) . "]' value='member' $checked_member /></td>\n";
+                echo '<td><input class="input_radio" type="radio" name="plugin_view[' . base64_encode($plugin->instance) . ']" value="member" ' . $checked_member . "/></td>\n";
                 echo "</tr>";
 
                 echo "<tr>\n";
                 echo "<td>".PLUGIN_SIDEBAR_HIDER_CONF_MYSELF."</td>\n";
-                echo "<td><input class='input_radio' type='radio' name='plugin_view[" . base64_encode($plugin->instance) . "]' value='myself' $checked_myself /></td>\n";
+                echo '<td><input class="input_radio" type="radio" name="plugin_view[' . base64_encode($plugin->instance) . ']" value="myself" ' . $checked_myself . "/></td>\n";
                 echo "</tr>";
 
                 echo "<tr>\n";
-                echo "<td colspan='2'>".GROUP."<br >\n";
-                echo "<select name='plugin_usergroups_view[" . base64_encode($plugin->instance) . "][]' multiple='multiple'>\n";
-                $selected_groups = explode(',', $usergroups_viewlist[$plugin->instance]);
+                echo '<td colspan="2">'.GROUP."<br />\n";
+                echo '<select name="plugin_usergroups_view[' . base64_encode($plugin->instance) . '][]" multiple="multiple">'."\n";
+                $selected_groups = explode(',', @$usergroups_viewlist[$plugin->instance]);
                 foreach($mygroups AS $group) {
                     if ('USERLEVEL_' == substr($group['confvalue'], 0, 10)) {
                         $group['name'] = constant($group['confvalue']);
@@ -497,10 +498,10 @@ class serendipity_event_sidebarhider extends serendipity_event
                 echo "</tr>";
 
                 echo "<tr>\n";
-                echo "<td colspan='2'>".PLUGIN_SIDEBAR_HIDER_CONF_CATEGORIES."<br />\n";
+                echo '<td colspan="2">'.PLUGIN_SIDEBAR_HIDER_CONF_CATEGORIES."<br />\n";
                 echo "\n";
                 $selected = explode(',', $category_viewlist[$plugin->instance]);
-                echo "<select name='plugin_category_view[" . base64_encode($plugin->instance) . "][]' multiple='multiple'>\n";
+                echo '<select name="plugin_category_view[' . base64_encode($plugin->instance) . '][]" multiple="multiple">'."\n";
                 // --JAM: 2005-10-18: The front page selection goes on the top
                 echo '<option value="" ' . (in_array('', $selected) ? 'selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(ALL_CATEGORIES) : htmlspecialchars(ALL_CATEGORIES, ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
                 echo '<option value="' . PLUGIN_SIDEBAR_HIDER_FRONTPAGE_ID . '" ' . (in_array(PLUGIN_SIDEBAR_HIDER_FRONTPAGE_ID, $selected) ? 'selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(PLUGIN_SIDEBAR_HIDER_FRONTPAGE_DESC) : htmlspecialchars(PLUGIN_SIDEBAR_HIDER_FRONTPAGE_DESC, ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
