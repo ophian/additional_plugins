@@ -7,7 +7,7 @@
  */
 
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_NAME', 'Unified Sidebar Image Display');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC', 'Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to connect to a Menalto Gallery (deprecated) installs "random" URL, access a Coppermine database directory (MySql only), connect to the web service Zooomr (http://beta.zooomr.com/home) (deprecated) or access images in the Serendipity Media Library.');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC', 'Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to connect to a (deprecated) Menalto Gallery installs "random" URL, access a Coppermine database directory (MySql only), connect to the web service Zooomr (http://beta.zooomr.com/home) (deprecated) or access images in the Serendipity Media Library.');
 
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NAME', 'Image Source');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_DESC', 'Please choose a source for your images from the drop down.');
@@ -83,7 +83,7 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_NAME', 'Pick a default directory');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_DESC', 'Pick the default directory you would like the plugin to be restricted to');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_NAME', 'Output images strictly');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_DESC', 'If set to "yes" the plugin will only display pictures in the current directory. If set to "no" the plugin will output all pictures in all subdirecteries.');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_DESC', 'If set to "yes" the plugin will only display pictures in the current directory. If set to "no" the plugin will output all pictures in all subdirectories.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_NAME', 'Behavior of image link');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_DESC', '"In Page" links to the image. "Pop Up" will open the image in a new, sized window. "URL" allows you to define a specific, static URL as the destination. "Gallery" will link the image to the permalink view of the usergallery plugin (if installed). "None" will be just the image.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_INPAGE', 'In Page');
