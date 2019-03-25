@@ -7,12 +7,12 @@
  */
 
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_NAME', 'Unified Sidebar Image Display');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC', 'Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to connect to a Menalto Gallery installs "random" url, access a Coppermine database directory (MySql only), connect to the web service Zooomr (http://beta.zooomr.com/home) or access images in the Serendipity Media Library.');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC', 'Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to connect to a Menalto Gallery (deprecated) installs "random" URL, access a Coppermine database directory (MySql only), connect to the web service Zooomr (http://beta.zooomr.com/home) (deprecated) or access images in the Serendipity Media Library.');
 
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NAME', 'Image Source');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_DESC', 'Please choose a source for your images from the drop down.');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NONE', 'No selection made');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MENALTO', 'Menalto Gallery Url');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MENALTO', 'Menalto Gallery URL (deprecated)');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_COPPERMINE', 'Coppermine Database');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MEDIALIB', 'Media Library');
 
@@ -35,12 +35,12 @@
 @define('PLUGIN_GALLERYRANDOMBLOCK_G2DISPLAYTYPE_SPECIFIC', 'Specific');
 @define('PLUGIN_GALLERYRANDOMBLOCK_SINGLE_ITEMID', 'ID of the specific image to display.');
 @define('PLUGIN_GALLERYRANDOMBLOCK_SINGLE_ITEMID_DESC', '');
-@define('PLUGIN_GALLERYRANDOMBLOCK_MAXSIZE', 'Maximium Width of Image.');
+@define('PLUGIN_GALLERYRANDOMBLOCK_MAXSIZE', 'Maximum Width of Image.');
 @define('PLUGIN_GALLERYRANDOMBLOCK_MAXSIZE_DESC', 'This will set the image to a specific width. Unfortunately, this setting causes the large image to be downloaded and then rescaled to the required size. Leave blank to use the standard Gallery thumbnail.');
 @define('PLUGIN_GALLERYRANDOMBLOCK_LINKTARGET', 'Link Target');
 @define('PLUGIN_GALLERYRANDOMBLOCK_LINKTARGET_DESC', 'Sets the links "target" option. Leave blank to leave unset. A good setting might be "_blank".');
 @define('PLUGIN_GALLERYRANDOMBLOCK_SHOWDETAIL', 'Which details should be displayed.');
-@define('PLUGIN_GALLERYRANDOMBLOCK_SHOWDETAIL_DESC', 'Tell the plugin which details to display. This must be a comma seperated list of keywords. Available keywords are "title, date, views, owner, heading". To display no information use the keyword "none".');
+@define('PLUGIN_GALLERYRANDOMBLOCK_SHOWDETAIL_DESC', 'Tell the plugin which details to display. This must be a comma separated list of keywords. Available keywords are "title, date, views, owner, heading". To display no information use the keyword "none".');
 
 @define('PLUGIN_CPGS_NAME', 'Coppermine Thumbnails');
 @define('PLUGIN_CPGS_DESC', 'Display thumbnails from a Coppermine gallery in the sidebar');
@@ -79,16 +79,16 @@
 @define('PLUGIN_CPGS_RANDOM', 'Random Images');
 
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NAME', 'Media library sidebar display');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DESC', 'Display a random image from the Media library in the sidebar. (Note, it does not distingish images from other file types)');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DESC', 'Display a random image from the Media library in the sidebar. (Note, it does not distinguish images from other file types)');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_NAME', 'Pick a default directory');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_DESC', 'Pick the default directory you would like the plugin to be restricted to');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_NAME', 'Output images strictly');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_DESC', 'If set to "yes" the plugin will only display pictures in the current directory. If set to "no" the plugin will output all pictures in all subdirecteries.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_NAME', 'Behavior of image link');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_DESC', '"In Page" links to the image. "Pop Up" will open the image in a new, sized window. "Url" allows you to define a specific, static url as the destination. "Gallery" will link the image to the permalink view of the usergallery plugin (if installed). "None" will be just the image.');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_DESC', '"In Page" links to the image. "Pop Up" will open the image in a new, sized window. "URL" allows you to define a specific, static URL as the destination. "Gallery" will link the image to the permalink view of the usergallery plugin (if installed). "None" will be just the image.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_INPAGE', 'In Page');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_POPUP', 'Pop Up');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_URL', 'Url');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_URL', 'URL');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_GALLERY', 'Gallery');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_ENTRY', 'Try to link to related entry');
 
@@ -97,7 +97,7 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_NAME', 'Enter URL');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_DESC', 'Enter the static URL you would like to link to. (example: \'http://www.s9y.org\')');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_NAME', 'Enter the permalink or subpage');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_DESC', 'This value should match the value set in the gallery plugin. Note, if url rewriting is turned off you must use the subpage.');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_DESC', 'This value should match the value set in the gallery plugin. Note, if URL rewriting is turned off you must use the subpage.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_INTRO', 'Enter any text (or html) you would like placed before the picture');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_SUMMERY', 'Enter any text (or html) you would like appended to the picture');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_NAME', 'Rotate image time');
@@ -109,7 +109,7 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_NAME', 'Hotlink limiting keyword');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_DESC', 'This option takes a single keyword (no spaces) and limits the output to anything containing that word. For example, if you have hotlinks from a variety of sources, but only want to display those from a single host you could put "host.com" in this field.');
 
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_ZOOOMR', 'Zooomr Plugin');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_ZOOOMR', 'Zooomr Plugin (deprecated)');
 @define('PLUGIN_ZOOOMR_DESC', 'Display the most recent pictures of any Zooomr Feed');
 @define('PLUGIN_ZOOOMR_FEEDURL', 'Feed-URL');
 @define('PLUGIN_ZOOOMR_FEEDDESC', 'URL of your Zooomr feed');

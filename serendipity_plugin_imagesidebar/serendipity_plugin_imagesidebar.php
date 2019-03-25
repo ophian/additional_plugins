@@ -74,7 +74,7 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
         $propbag->add('description',   PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC . ' PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.');
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian');
-        $propbag->add('version',       '1.13');
+        $propbag->add('version',       '1.14');
         $propbag->add('license',       'BSD');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -201,6 +201,7 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
     {
         global $serendipity;
 
+        $title = $this->get_config('title');
         if (!is_object($this->object_extend)) {
             $this->object_extend = $this->create_sub_class(true);
             if (method_exists($this->object_extend, 'generate_content_custom')) {
@@ -226,7 +227,7 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
         if (is_object($this->object_extend)) {
             $settings = $this->object_extend->update_conf();
         }
-        if (is_array($settings)) {
+        if (isset($settings) && is_array($settings)) {
             foreach ($settings AS $name => $value) {
                 $this->set_config($name, $value);
             }
