@@ -1,3 +1,10 @@
+1.37:
+----
+
+ * Fix sidebarhider js to wrong index to support serendipityLeftSideBar items too closed on startup
+ * Fix sidebarhider js to reset the serendipitySideBarTitle to float:unset
+   for the possible theme floats, while title and +/- link are floated to their side as intended.
+
 1.36:
 ----
 
