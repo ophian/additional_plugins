@@ -968,7 +968,7 @@
 <category>Event Plugins</category>
 <author>Tys von Gaza, Garvin Hicking, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_sidebarhider&lt;br /&gt;Přepínání stavu postranního sloupce (sbalený/rozbalený)&lt;/b&gt;&lt;br /&gt;Smrští postranní sloupce pouze na jejich nadpisy. Přidává nastavení do psaní příspěvků a také položku &quot;Správa postranních sloupců&quot; do administrační sekce.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 25 Mar 2019 16:11:06 +0100</pubDate>
+<pubDate>Wed, 27 Mar 2019 10:46:46 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_sidebarhider</guid>
 </item>
 <item>
