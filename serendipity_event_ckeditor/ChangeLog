@@ -1,3 +1,8 @@
+4.11.3.0:
+---------
+    * Upgrade to CKEDITOR 4.11. Series, update 3 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
+
 4.11.2.0:
 ---------
     * Upgrade to CKEDITOR 4.11. Series, update 2 (https://ckeditor.com/cke4/release-notes).
