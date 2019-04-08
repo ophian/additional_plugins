@@ -1,3 +1,7 @@
+2.15:
+-----
+ * Don't emit "frontend_footer" hook output in commentpopup case
+
 2.14:
 -----
  * Fix possible PHP 7 warning for parameter must implement Countable

@@ -44,7 +44,7 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian');
-        $propbag->add('version',       '2.14');
+        $propbag->add('version',       '2.15');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -749,6 +749,10 @@ class serendipity_event_karma extends serendipity_event
 
                 //Javascript for ajax functionality
                 case 'frontend_footer':
+                    // Don't run in/via commentpopup
+                    if (!empty($serendipity['GET']['entry_id']) && isset($serendipity['GET']['type']) && in_array($serendipity['GET']['type'], ['comments', 'trackbacks'])) {
+                        break;
+                    }
                     if ($this->get_config('ajax') == true) {
 ?>
 <script type="text/javascript">
