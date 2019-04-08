@@ -83,7 +83,7 @@ class serendipity_event_ckeditor extends serendipity_event
         if (!$serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN) {
             return false;
         }
-        // do we already have it?
+        // do we have it already?
         if (!$this->forceZipInstall && is_dir($this->cke_dir) && is_file($this->cke_dir . '/ckeditor.js')) {
             // this is running while getting a new Plugin version
             if ($this->checkUpdate()) {
@@ -189,7 +189,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian');
-        $propbag->add('version',       '4.11.3.0'); // is CKEDITOR Series 4.11.2 - and appended plugin revision .0
+        $propbag->add('version',       '4.11.3.0'); // is CKEDITOR Series 4.11.3 - and appended plugin revision .0
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
