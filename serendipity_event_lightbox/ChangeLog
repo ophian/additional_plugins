@@ -1,3 +1,7 @@
+2.5.4:
+------
+ * Don't emit "frontend_footer" hook output in commentpopup case
+
 2.5.3:
 ------
  * disable/hide "waiting" .lightbox box appended at page end
