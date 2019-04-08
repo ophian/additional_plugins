@@ -1,3 +1,9 @@
+4.23:
+-----
+
+ * Fix (disable) frontend_footer hook for commentpopup cases
+ * Fix documentation example for list containers
+
 4.22:
 -----
 

@@ -201,7 +201,9 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
 
             &lt;div id=&quot;trackback_url&quot; class=&quot;block_level&quot;&gt;&lt;a rel=&quot;nofollow&quot; href=&quot;{$entry.link_trackback}&quot; title=&quot;{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|escape}&quot;&gt;{$CONST.TRACKBACK_SPECIFIC}&lt;/a&gt;&lt;/div&gt;
 
+            &lt;div id=&quot;serendipity_trackbacklist&quot;&gt;
             {serendipity_printTrackbacks entry=$entry.id}
+            &lt;/div&gt;
         &lt;/section&gt;
 
         &lt;section id=&quot;comments&quot; class=&quot;serendipity_comments serendipity_section_comments&quot;&gt;
@@ -215,7 +217,9 @@ Informations given in <a href="README">The most current README</a>, <a href="REA
             {/if}
             &lt;/p&gt;
 
+            &lt;div id=&quot;serendipity_commentlist&quot;&gt;
             {serendipity_printComments entry=$entry.id mode=$entry.viewmode}
+            &lt;/div&gt;
         {if NOT empty($entry.is_entry_owner)}
             &lt;p class=&quot;manage_comments&quot;&gt;
             {if $entry.allow_comments}

@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.22');
+        $propbag->add('version',       '4.23');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1013,6 +1013,10 @@ class serendipity_event_freetag extends serendipity_event
             switch($event) {
 
                 case 'frontend_footer':
+                    // Don't run in/via commentpopup
+                    if (!empty($serendipity['GET']['entry_id']) && isset($serendipity['GET']['type']) && in_array($serendipity['GET']['type'], ['comments', 'trackbacks'])) {
+                        break;
+                    }
                     if (serendipity_db_bool($this->get_config('use_flash', 'false'))) {
                         echo '<script type="text/javascript" src="';
                         echo $serendipity['serendipityHTTPPath'];
