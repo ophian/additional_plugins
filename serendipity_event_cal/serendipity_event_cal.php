@@ -3340,8 +3340,8 @@ class serendipity_event_cal extends serendipity_event
                         echo '<div class="backend_eventcal_dbclean_error"><p class="msg_success">' . $attention . PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_DONE . "</p></div>\n";
 
                     if (is_dir('templates_c/eventcal')) {
-                        echo "<div class='backend_eventcal_dbclean_innertitle'>templates_c/eventcal/ <b><u>backup files</u></b></div>\n";
-                        echo "<div class='backend_eventcal_dbclean_object'>\n";
+                        echo "<div class=\"backend_eventcal_dbclean_innertitle\">templates_c/eventcal/ <b><u>backup files</u></b></div>\n";
+                        echo "<div class=\"backend_eventcal_dbclean_object\">\n";
                         $this->backend_read_backup_dir('templates_c/eventcal/', $adminpath.'&serendipity[eventcaldbclean]=dbdelfile&serendipity[eventcaldbcleanfilename]=');
                         echo "</div>\n";
                     } else {
@@ -3508,9 +3508,9 @@ class serendipity_event_cal extends serendipity_event
         $content = highlight_file($file, true);
 
         echo "<table width='100%' height='200px'>\n";
-        echo "  <tr class='backend_eventcal_line'>\n";
-        echo "    <td class='backend_eventcal_linenum'>\n$lines\n</td>\n";
-        echo "    <td class='backend_eventcal_linetxt'>\n$content\n</td>\n";
+        echo "  <tr class=\"backend_eventcal_line\">\n";
+        echo "    <td class=\"backend_eventcal_linenum\">\n$lines\n</td>\n";
+        echo "    <td class=\"backend_eventcal_linetxt\">\n$content\n</td>\n";
         echo "  </tr>\n";
         echo "</table>\n";
     }
@@ -3590,7 +3590,7 @@ class serendipity_event_cal extends serendipity_event
      */
     function backend_eventcal_smsg()
     {
-        return $str = "<div class='serendipity_center eventcal_tpl_message'>\n    <div class='eventcal_tpl_message_inner'>\n";
+        return $str = "<div class=\"serendipity_center eventcal_tpl_message\">\n    <div class=\"eventcal_tpl_message_inner\">\n";
     }
 
     /**
