@@ -2850,7 +2850,7 @@ addLoadEvent(enableAutocomplete);
                 echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_INFO . "</span>\n";
 
                 // Display list of found inconsistencies
-                echo "<table class='freetags_manage'>\n<thead>\n";
+                echo "<table class=\"freetags_manage\">\n<thead>\n";
                 echo "    <tr><th>".PLUGIN_EVENT_FREETAG_MANAGE_LIST_TAG."</th><th>".PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_ENTRIES."</th></tr>\n";
                 echo "</thead><tbody>\n";
                 foreach ($cleanup_tags AS $tag => $entries) {
