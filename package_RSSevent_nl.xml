@@ -104,7 +104,7 @@
 <category>Event Plugins</category>
 <author>Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Calendar&lt;/b&gt;&lt;br /&gt;Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 19 Nov 2018 14:08:22 +0100</pubDate>
+<pubDate>Wed, 10 Apr 2019 11:31:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
@@ -129,9 +129,9 @@
 <title>CKEditor Plus: Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_ckeditor</link>
 <category>Event Plugins</category>
-<author>Rustam Abdullaev, Ian</author>
+<author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Mon, 08 Apr 2019 13:53:30 +0200</pubDate>
+<pubDate>Mon, 22 Apr 2019 16:11:35 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -455,7 +455,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Taggen van bijdragen&lt;/b&gt;&lt;br /&gt;Maakt het mogelijk om bijdragen van tags te voorzien&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Mon, 08 Apr 2019 10:49:16 +0200</pubDate>
+<pubDate>Wed, 10 Apr 2019 11:18:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
