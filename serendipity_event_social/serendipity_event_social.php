@@ -18,7 +18,7 @@ class serendipity_event_social extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SOCIAL_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Matthias Mees, Thomas Hochstein, Ian, Mario Hommel');
-        $propbag->add('version',       '0.17');
+        $propbag->add('version',       '0.18');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
         ));
@@ -59,7 +59,6 @@ class serendipity_event_social extends serendipity_event
         $title = $this->title;
     }
 
-
     function introspect_config_item($name, &$propbag)
     {
         global $serendipity;
@@ -69,7 +68,7 @@ class serendipity_event_social extends serendipity_event
                 $propbag->add('type',           'multiselect');
                 $propbag->add('name',           PLUGIN_EVENT_SOCIAL_SERVICES);
                 $propbag->add('description',    PLUGIN_EVENT_SOCIAL_SERVICES_DESC);
-                $propbag->add('default',        'twitter^facebook^googleplus');
+                $propbag->add('default',        'twitter^facebook');
                 $propbag->add('select_values',  array('twitter' => 'twitter', 'facebook' => 'facebook', 'googleplus' => 'googleplus', 'linkedin' => 'linkedin', 'pinterest' => 'pinterest', 'xing' => 'xing', 'whatsapp' => 'whatsapp', 'mail' => 'mail', 'info' => 'info', 'addthis' => 'addthis', 'tumblr' => 'tumblr', 'flattr' => 'flattr', 'diaspora' => 'diaspora', 'reddit' => 'reddit', 'stumbleupon' => 'stumbleupon', 'threema' => 'threema', 'weibo' => 'weibo', 'tencent-weibo' => 'tencent-weibo', 'qzone' => 'qzone', 'print' => 'print', 'telegram' => 'telegram', 'vk' => 'vk', 'flipboard' => 'flipboard'));
                 break;
 

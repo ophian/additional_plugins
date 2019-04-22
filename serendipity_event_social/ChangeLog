@@ -1,4 +1,10 @@
-0.16:
+0.18:
+-----
+
+  * Remove public google+ from default 'services',
+    but keep in selection for professional users.
+
+0.17:
 -----
 
   * Added new services
