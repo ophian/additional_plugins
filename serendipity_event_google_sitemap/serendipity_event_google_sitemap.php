@@ -7,7 +7,7 @@ if (IN_serendipity !== true) {
 
 /** This plugin builds a sitemap.xml according to sitemap.org definition of the
   * "Sitemap XML format" Version 0.9 after every save and publish.
-  * See http://www.sitemaps.org/protocol.html for details
+  * See https://www.sitemaps.org/protocol.html for details
   *
   */
 
@@ -26,7 +26,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris');
-        $propbag->add('version', '0.61');
+        $propbag->add('version', '0.62');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -42,6 +42,7 @@ class serendipity_event_google_sitemap extends serendipity_event
     function introspect_config_item($name, &$propbag)
     {
         global $serendipity;
+
         switch($name) {
             case 'report':
                 $propbag->add('type', 'boolean');
@@ -617,18 +618,6 @@ class serendipity_event_google_sitemap extends serendipity_event
     {
         global $serendipity;
 
-        // start the xml
-        $sitemap_xml  = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
-        $sitemap_xml .= "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"\n";
-        $sitemap_xml .= "\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n";
-        if ($gnewsmode) {
-            $sitemap_xml .= "\txmlns:news=\"http://www.google.com/schemas/sitemap-news/0.9\"\n";
-        }
-        $sitemap_xml .= "\txsi:schemaLocation=\"http://www.sitemaps.org/schemas/sitemap/0.9\n";
-        $sitemap_xml .= "\t\t\thttp://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd\" ";
-        $sitemap_xml .= $this->get_config('custom2');
-        $sitemap_xml .= ">\n";
-
         $this->gnewsmode = false;
 
         // If this variable is enabled, each XML article will get its gnews:... counterpart.
@@ -639,9 +628,20 @@ class serendipity_event_google_sitemap extends serendipity_event
             $this->gnewsmode = true;
         }
 
+        // start the xml
+        $sitemap_xml  = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
+        $sitemap_xml .= "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"\n";
+        $sitemap_xml .= "\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n";
+        if ($this->gnewsmode) {
+            $sitemap_xml .= "\txmlns:news=\"http://www.google.com/schemas/sitemap-news/0.9\"\n";
+        }
+        $sitemap_xml .= "\txsi:schemaLocation=\"http://www.sitemaps.org/schemas/sitemap/0.9\n";
+        $sitemap_xml .= "\t\t\thttp://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd\" ";
+        $sitemap_xml .= $this->get_config('custom2');
+        $sitemap_xml .= ">\n";
+
         // add link to the main page
         $this->addtoxml($sitemap_xml, $serendipity['baseURL'], time(), 0.6);
-
 
         if (!$gnewsmode) {
             $this->add_entries($sitemap_xml);
@@ -692,7 +692,7 @@ class serendipity_event_google_sitemap extends serendipity_event
             $temp = gzencode($sitemap_xml);
 
             // only use the compressed data and filename if no error occured
-            if ( !($temp === FALSE) ) {
+            if ( !($temp === false) ) {
                 $sitemap_xml = $temp;
             } else {
                 $filename = '/' . $basefilename;
