@@ -456,6 +456,9 @@ input#dlm_file_rename { border: 1px solid #888; background-color: rgb(221, 230, 
 }
 
 #editfile_submit { margin: 0 0 5px 20px; }
+#editfile_submit:hover {
+    color: #fafafa !important;
+}
 
 /* #FAFAFA-F8F8F8, now with #F4F4F4 a slightly little more difference */
 #backend_downloadmanager .odd {  background: none repeat scroll 0 0 #fafafa; }

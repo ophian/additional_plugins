@@ -1,6 +1,11 @@
 ChangeLog:
 """"""""""
 
+0.44:
+----
+ * Fix MediaLibrary files .empty file re-movement
+ * Fix a button hover
+
 0.43:
 ----
  * Fix uninitialized variable check

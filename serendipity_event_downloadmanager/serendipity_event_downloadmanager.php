@@ -37,7 +37,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '5.4.0'
         ));
 
-        $propbag->add('version',       '0.43');
+        $propbag->add('version',       '0.44');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -422,7 +422,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * dlm sql db function set
+     * DLM sql db function set
      *
      * @param  type string and db vars
      * @return result
@@ -1054,7 +1054,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             unset($cats);
         }
 
-        /* get the Frontend dlm template file */
+        /* get the Frontend DLM template file */
         echo $this->parseTemplate($filename);
     }
 
@@ -1737,14 +1737,14 @@ class serendipity_event_downloadmanager extends serendipity_event
                     )
         );
 
-        if (!empty($_GET['thiscat']) && intval($_GET['thiscat']) >= 1) { //!= 1, this didn't get root level files to move etc, but now the back button of page 3 (file details) returns two root levels, one like a sublevel and one as the dlm startpage which isn't too confusing
+        if (!empty($_GET['thiscat']) && intval($_GET['thiscat']) >= 1) { //!= 1, this didn't get root level files to move etc, but now the back button of page 3 (file details) returns two root levels, one like a sublevel and one as the DLM startpage which isn't too confusing
 
             /* BACKEND PAGE 2 SECTION
                                     - edit (single file move and file description),
                                     - upload form,
                                     - files in selected category,
                                     - FTP/trash-folder files,
-                                    - Serendipities media library files with subcats,
+                                    - Serendipity media library files with subcats,
                                     - subcategories of root,
                                     - the appendix (including the helptip and the clear trash button) */
 
@@ -1862,7 +1862,7 @@ class serendipity_event_downloadmanager extends serendipity_event
 
         }
 
-        /* get the Backend dlm index template file */
+        /* get the Backend DLM index template file */
         echo $this->parseTemplate('backend.dlm.index.tpl');
 
     }
@@ -2086,7 +2086,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                     $eventData .= $dlm_css; // append CSS
                     break;
 
-                /* put here all you css stuff you need for the Backend of dlm */
+                /* put here all you css stuff you need for the Backend of DLM */
                 case 'css_backend':
                     if (stristr($eventData, '#backend_downloadmanager')) {
                         // class exists in CSS, so a user has customized it and we don't need default
@@ -2194,7 +2194,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * fetch dlm Backend pathfiles table content
+     * fetch DLM Backend pathfiles table content
      *
      * @param   string  The path to iterate
      * @param   boolean If path is Serendipity MediaLibrary (default false)
@@ -2227,8 +2227,9 @@ class serendipity_event_downloadmanager extends serendipity_event
 
         foreach ($iterator AS $file) {
             $_bfname = $this->mb_basename($file);
+            #echo $_bfname."<br>\n";
             $_mdepth = $ml ? $iterator->getDepth() : 0; // allows to avoid recursive file iteration in ML since we have the dir structure to navigate
-            if ($file->isFile() && $_mdepth == 0 && $_bfname != '.empty' && (false === (strpos($_bfname, '.serendipityThumb')))) {
+            if ($file->isFile() && $_mdepth == 0 && $_bfname != 'uploads\.empty' && $_bfname != '.empty' && (false === (strpos($_bfname, '.serendipityThumb')))) {
                 $filename = $this->encodeToUTF($file->getPathname(), true); // OK
                 $fa['f_arr'][++$f] = str_replace("\\", "/", $filename);
             } else {
@@ -2321,7 +2322,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * build the dlm Backend add categories table
+     * build the DLM Backend add categories table
      *
      * @param   array   A referenced array of categories
      * @param   int     The div number (standard=3)
@@ -2348,7 +2349,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * build the dlm Backend categories table content
+     * build the DLM Backend categories table content
      *
      * @param   array   A referenced array of categories
      * @param   boolean Default value foldable divs (permanently open = true)
@@ -2390,7 +2391,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * build dlm Backend file table content
+     * build DLM Backend file table content
      *
      * @param   array   A referenced array of files
      * @param   boolean Default value collapsible divs (permanently open = true)
@@ -2482,7 +2483,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * build dlm Backend s9y media gallery file table content
+     * build DLM Backend s9y media gallery file table content
      *
      * @param   string  The configs dateformat
      * @param   string  The path to the s9y media library
@@ -2669,7 +2670,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     }
 
     /**
-     * build dlm Backend file table content
+     * build DLM Backend file table content
      *
      * @param   array   A referenced array of this category
      * @param   int     The single file id number
