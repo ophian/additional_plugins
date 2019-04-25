@@ -26,7 +26,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris');
-        $propbag->add('version', '0.62');
+        $propbag->add('version', '0.63');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -334,7 +334,7 @@ class serendipity_event_google_sitemap extends serendipity_event
                         {$serendipity['dbPrefix']}entries AS entries
                   WHERE entryproperties.property = 'permalink'
                     AND timestamp < " . time() . "
-                    AND value NOT LIKE '%/" . UNKNOWN . "%'
+                    AND value NOT LIKE '%/unknown%'
                     AND entries.id = entryproperties.entryid",
                 false, 'assoc');
 
@@ -725,7 +725,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         echo $basefilename . ':<br />';
 
         foreach(explode(';', $pingback_url) AS $cur_pingback_url) {
-            $pingback_name = PLUGIN_EVENT_SITEMAP_UNKNOWN_HOST;
+            $pingback_name = PLUGIN_EVENT_SITEMAP_UNKNOWN_SERVICE;
             $cur_url = sprintf($cur_pingback_url, rawurlencode($serendipity['baseURL'].$filename));
 
             // extract domain-portion from URL

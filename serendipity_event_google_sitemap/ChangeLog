@@ -1,3 +1,9 @@
+0.63:
+-----
+ * Fix unknown message constant and fix to sub check for lowercased 'unknown'
+   entryproperties property value match (custom permalinks plugin). They both
+   tried to access a UNKNOWN constant, which did not exist.
+
 0.62:
 -----
  * Set xmlns for sitemap-news also with gnews_single mode
