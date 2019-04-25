@@ -1793,7 +1793,7 @@ function universal_setEntry(&$entry, &$tmp) {
         'mt_convert_breaks' => new XML_RPC_Value('', 'string'),
         'mt_keywords'       => new XML_RPC_Value('', 'string'),
         'title'             => new XML_RPC_Value($entry['title'],'string'),
-        'permalink'         => new XML_RPC_Value(serendipity_rewriteURL(PATH_ARCHIVES.'/' . $entry['id']. '_.html', 'baseURL'), 'string'),
+        'permalink'         => new XML_RPC_Value(serendipity_rewriteURL(PATH_ARCHIVES.'/' . $entry['id'] . '_.html', 'baseURL'), 'string'),
         'link'              => new XML_RPC_Value(serendipity_rewriteURL(PATH_ARCHIVES.'/' . $entry['id'] . '_.html', 'baseURL'), 'string'),
     );
 
