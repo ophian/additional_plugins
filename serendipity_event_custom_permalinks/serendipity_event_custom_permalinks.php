@@ -27,7 +27,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
                                         'backend_display'                   => true));
 
         $propbag->add('author', 'Garvin Hicking, Ian');
-        $propbag->add('version', '1.18');
+        $propbag->add('version', '1.19');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -77,7 +77,6 @@ class serendipity_event_custom_permalinks extends serendipity_event
             switch($event) {
 
                 case 'genpage':
-
                     if ($serendipity['rewrite'] != 'none') {
                         $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
                     } else {
@@ -124,7 +123,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
                     break;
 
                 case 'frontend_display:html:per_entry':
-                    if (isset($this->ids[$eventData['id']]) && stristr($this->ids[$eventData['id']], '/' . UNKNOWN) === FALSE) {
+                    if (isset($this->ids[$eventData['id']]) && stristr(strtolower($this->ids[$eventData['id']]), '/unknown') === FALSE) {
                         $eventData['link'] =  $this->ids[$eventData['id']];
                         $urldata = parse_url($serendipity['baseURL']);
                         $eventData['rdf_ident'] = $urldata['scheme'] . '://' . $urldata['host'] . $this->ids[$eventData['id']];
@@ -164,7 +163,7 @@ meta_properties_permalink {
 
                     $title = $eventData['title'];
                     if (empty($title)) {
-                        $title = UNKNOWN;
+                        $title = 'unknown';
                     }
 
                     if (empty($permalink)) {

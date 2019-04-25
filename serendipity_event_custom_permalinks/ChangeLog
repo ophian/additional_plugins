@@ -1,3 +1,9 @@
+1.19:
+----
+
+ * Fix unknown title constant to lowercased string
+   (see dependency in google sitemap plugin).
+
 1.18:
 ----
 
