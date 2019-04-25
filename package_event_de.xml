@@ -1531,9 +1531,9 @@
 <description>Ermöglicht die Eingabe eines individuellen Permalinks (dauerhafter Link) um spezifische Artikel aufzurufen. Es können nur URL-Muster verwendet werden, die nicht bereits intern verwendet werden - eigene Permalinks innerhalb der /archives/ Struktur sind daher nicht möglich. Aber andere, auch nicht existierende, Verzeichnisse können verwendet werden.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.18</version>
+  <version>1.19</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-01-06</date>
+  <date>2019-04-25</date>
   <filelist>
     <dir name="serendipity_event_custom_permalinks">
       <file>ChangeLog</file>
@@ -4071,9 +4071,9 @@
 <description>Erstellt eine sitemap.xml.gz für verschiedene Suchmaschinen-Crawler (Google, MSN, Yahoo und Ask).</description>
 <maintainers><maintainer><name>Boris</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.62</version>
+  <version>0.63</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-04-22</date>
+  <date>2019-04-25</date>
   <filelist>
     <dir name="serendipity_event_google_sitemap">
       <file>ChangeLog</file>
