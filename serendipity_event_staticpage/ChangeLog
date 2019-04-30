@@ -1,3 +1,9 @@
+5.68:
+-----
+ * Remove hooked media renaming limitation to MySQL databases to now support
+   all supported database layers, although MySQL is still more precise using
+   REGEXP SELECTs.
+
 5.67:
 -----
  * Optimize getPageID method when subpage empty

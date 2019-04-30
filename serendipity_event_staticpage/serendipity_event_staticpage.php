@@ -93,8 +93,8 @@ class serendipity_event_staticpage extends serendipity_event
 
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
-        $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian, Don Chambers');
-        $propbag->add('version', '5.67');
+        $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
+        $propbag->add('version', '5.68');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -2108,8 +2108,7 @@ class serendipity_event_staticpage extends serendipity_event
             $sql_where .= ' AND publishstatus = 1 ';
         }
 
-        if (empty($serendipity['GET']['staticid']))
-        {
+        if (empty($serendipity['GET']['staticid'])) {
             $q = "SELECT *
                     FROM {$serendipity['dbPrefix']}staticpages
                    WHERE (pagetitle = '" . serendipity_db_escape_string($serendipity['GET']['subpage']) . "'
@@ -3749,11 +3748,11 @@ class serendipity_event_staticpage extends serendipity_event
                     if (!$access_granted) {
                         break;
                     }
-                    // Only MySQL supported, since I don't know how to use REGEXPs differently. // RQ: this is an old dev note. What shall we do about it, to enable this for other db layers?
-                    if ($serendipity['dbType'] != 'mysql' && $serendipity['dbType'] != 'mysqli') {
-                        echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY . "</span>\n";
-                        break;
-                    }
+                    // Only MySQL supported, since I don't know how to use REGEXPs differently. (Ian: Should be fixed now!)
+                    #if ($serendipity['dbType'] != 'mysqli' && $serendipity['dbType'] != 'mysql') {
+                    #    echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY . "</span>\n";
+                    #    break;
+                    #}
 
                     // isset '' == true! Serendipity 2.1 will now support an empty oldDir to remove files to 'uploads/' root
                     if (!isset($eventData[0]['oldDir'])) {
@@ -3769,19 +3768,37 @@ class serendipity_event_staticpage extends serendipity_event
                         // REPLACE BY Path and Name only to also match Thumbs
                         $fromFile = $eventData[0]['oldDir'] . $eventData[0]['file']['name'];
                         $toFile   = $eventData[0]['newDir'] . $eventData[0]['file']['name'];
-                        $q = "SELECT id, content, pre_content
-                                FROM {$serendipity['dbPrefix']}staticpages
-                               WHERE content     REGEXP '(src=|href=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . ")'
-                                  OR pre_content REGEXP '(src=|href=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . ")'";
+
+                        if ($serendipity['dbType'] == 'mysqli' || $serendipity['dbType'] == 'mysql') {
+                            $q = "SELECT id, content, pre_content
+                                    FROM {$serendipity['dbPrefix']}staticpages
+                                   WHERE content     REGEXP '(src=|href=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . ")'
+                                      OR pre_content REGEXP '(src=|href=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . ")'";
+                        } else {
+                            $q = "SELECT id, content, pre_content
+                                    FROM {$serendipity['dbPrefix']}staticpages
+                                    WHERE (content || pre_content LIKE '%" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "%')
+                                       OR (content || pre_content LIKE '%" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "%')
+                                       OR (content || pre_content LIKE '%" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . "%')
+                                       OR (content || pre_content LIKE '%" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . "%')";
+                        }
                     } elseif ($eventData[0]['type'] == 'dir') {
                         // RENAME vars to oldDir and newDir for the SELECT regex match and simplify query
                         // and REPLACE BY Path only to also match Thumbs
                         $fromFile = $oldDir = $eventData[0]['oldDir'];
                         $toFile   = $newDir = $eventData[0]['newDir'];
-                        $q = "SELECT id, content, pre_content
-                                FROM {$serendipity['dbPrefix']}staticpages
-                               WHERE content     REGEXP '(src=|href=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDir) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDir) . ")'
-                                  OR pre_content REGEXP '(src=|href=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDir) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDir) . ")'";
+
+                        if ($serendipity['dbType'] == 'mysqli' || $serendipity['dbType'] == 'mysql') {
+                            $q = "SELECT id, content, pre_content
+                                    FROM {$serendipity['dbPrefix']}staticpages
+                                   WHERE content     REGEXP '(src=|href=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDir) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDir) . ")'
+                                      OR pre_content REGEXP '(src=|href=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDir) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDir) . ")'";
+                        } else {
+                            $q = "SELECT id, content, pre_content
+                                    FROM {$serendipity['dbPrefix']}staticpages
+                                    WHERE (content || pre_content LIKE '%" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDir) . "%')
+                                       OR (content || pre_content LIKE '%" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDir) . "%')";
+                        }
                     }
                     $dirs = serendipity_db_query($q);
 
