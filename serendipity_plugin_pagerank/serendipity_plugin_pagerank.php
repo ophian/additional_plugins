@@ -27,7 +27,7 @@ class serendipity_plugin_pagerank extends serendipity_plugin
         $propbag->add('description',   PLUGIN_PAGERANK_DETAIL);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Christian Lescuyer');
-        $propbag->add('version',       '0.33');
+        $propbag->add('version',       '0.34');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -202,7 +202,7 @@ class serendipity_plugin_pagerank extends serendipity_plugin
     {
         $url = 'info:'.$url;
         $ch = $this->GoogleCH($this->strord($url));
-        $url = "http://www.google.com/search?client=navclient-auto&ch=6$ch&features=Rank&q=" . urlencode($url);
+        $url = "https://www.google.com/search?client=navclient-auto&ch=6$ch&features=Rank&q=" . urlencode($url);
 
         if (ini_get('allow_url_fopen')) {
             $data = file_get_contents($url, 128);
