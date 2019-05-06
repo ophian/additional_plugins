@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian');
-        $propbag->add('version',      '3.72');
+        $propbag->add('version',      '3.73');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -1380,7 +1380,6 @@ class serendipity_event_guestbook extends serendipity_event
 
                     if ($gb['export'][0] == 'guestbookdlsql') {
                         $file = file_get_contents ($serendipity['serendipityPath'] . 'templates_c/guestbook/'.$gb['export'][1]);
-                        echo $file;
                         header('Status: 302 Found');
                         header('Content-Type: application/octet-stream; charset=UTF-8'); // text/plain to see as file in browser
                         header('Content-Disposition: inline; filename='.$gb['export'][1]);
@@ -1718,7 +1717,7 @@ class serendipity_event_guestbook extends serendipity_event
         global $serendipity;
 
         if ($serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli') {
-            return serendipity_db_query("SHOW TABLES LIKE '{$serendipity['dbPrefix']}eventcal'", true, 'num', true);
+            return serendipity_db_query("SHOW TABLES LIKE '{$serendipity['dbPrefix']}guestbook'", true, 'num', true);
         } else {
             $sql = "SELECT count(id) FROM {$serendipity['dbPrefix']}guestbook";
             return count(serendipity_db_query($sql, true, 'num', true)) > 0;
@@ -1908,13 +1907,14 @@ class serendipity_event_guestbook extends serendipity_event
     function backend_read_backup_dir($dpath, $delpath)
     {
         global $serendipity;
-        $dir = array_slice(@scanDir($dpath), 2);
+
+        $files = preg_grep('/^([^.])/', scanDir($dpath));
         $url = $serendipity['serendipityHTTPPath'] . 'plugin/guestbookdlsql/';
-        if (is_array($dir) && !empty($dir)) {
+        if (is_array($files) && !empty($files)) {
             $str = '<table width="100%">';
-            foreach($dir AS $e) {
-                $str .= '<tr><td align="left"><a href="'.$url.$e.'">';
-                $str .= $e.'</a></td> <td align="right" class="gb_button"><a href="'.$delpath.$e.'"><input type="submit" class="input_button state_cancel" name="erase file" value=" ' . TEXT_DELETE . ' "></a></td></tr>'."\n";
+            foreach($files AS $f) {
+                $str .= '<tr><td align="left"><a href="'.$url.$f.'">';
+                $str .= $f.'</a></td> <td align="right" class="gb_button"><a href="'.$delpath.$f.'"><input type="submit" class="input_button state_cancel" name="erase file" value=" ' . TEXT_DELETE . ' "></a></td></tr>'."\n";
             }
             $str .= '</table>';
             return $str;
@@ -1953,6 +1953,41 @@ class serendipity_event_guestbook extends serendipity_event
 
 
     /**
+     * Check existing DB log directory for htaccess secured access restriction, else create that file
+     *
+     * @return boolean
+     */
+    function backend_check_db_secured_log()
+    {
+        global $serendipity;
+
+        $target = $serendipity['serendipityPath'] . 'templates_c/guestbook/.htaccess';
+        if (is_dir($serendipity['serendipityPath'] . 'templates_c/guestbook') && file_exists($target)) {
+            return true;
+        }
+        if (!file_exists($target)) {
+            $old = getcwd(); // Save the current directory
+            @chdir($serendipity['serendipityPath'] . 'templates_c/guestbook/');
+            $content = '<Files "*.sql">' . "\n";
+            $content .= "    deny from all\n";
+            $content .= "    Require all denied\n";
+            $content .= "</Files>\n";
+
+            file_put_contents('.htaccess', $content);
+            @chmod($target, 0664);
+            @chdir($old); // Restore the old working directory
+            if (file_exists($target)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
+
+
+    /**
      * Guestbook backup table and dir/file voodoo
      *      Currently only MySql(i) layers supported
      * @return boolean
@@ -1967,6 +2002,9 @@ class serendipity_event_guestbook extends serendipity_event
         $directory = "guestbook";
         if (!is_dir('templates_c/' . $directory)) {
             @mkdir('templates_c/' . $directory, 0777);
+        }
+        if (false === $this->backend_check_db_secured_log()) {
+            return false;
         }
         $file = $serendipity['serendipityPath'] . 'templates_c/guestbook/'.$date.'_guestbook.sql';
         $fp   = fopen($file, 'w');

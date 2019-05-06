@@ -1,3 +1,11 @@
+3.73:
+----
+
+ * [Security] Add .htaccess with denied direct access to stored db log files directory
+              It is still recommended to not let them live long!
+ * Fixed debug leftover preventing filed download
+ * Fix wrong counter db check
+
 3.72:
 ----
 
