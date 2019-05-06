@@ -2503,7 +2503,7 @@
 <release>
   <version>0.33</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-07-22</date>
+  <date>2019-05-06</date>
   <filelist>
     <dir name="serendipity_plugin_pagerank">
       <file>ChangeLog</file>
