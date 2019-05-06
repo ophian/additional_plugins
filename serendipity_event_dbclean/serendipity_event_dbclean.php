@@ -17,8 +17,8 @@ class serendipity_event_dbclean extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_DBCLEAN_NAME);
         $propbag->add('description',   PLUGIN_EVENT_DBCLEAN_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Malte Paskuda, Matthias Mees, Ian');
-        $propbag->add('version',       '0.3.1');
+        $propbag->add('author',        'Malte Paskuda, Matthias Mees, Ian Styx');
+        $propbag->add('version',       '0.4');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6'
         ));
@@ -350,7 +350,7 @@ EOS;
 
         $sql = "SELECT COUNT(1)
                   FROM {$serendipity['dbPrefix']}$table";
-        $count = @serendipity_db_query($sql);
+        $count = serendipity_db_query($sql, true, 'num', false, false, false, true); // set single true and last expectError true, since table is known to fail when not exist
         if (is_array($count)) {
             if (is_array($count[0])) {
                 return $count[0][0];
