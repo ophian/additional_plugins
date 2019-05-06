@@ -2503,7 +2503,7 @@
 <description>Affichage dynamique du PageRank Google</description>
 <maintainers><maintainer><name>Christian Lescuyer</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.33</version>
+  <version>0.34</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2019-05-06</date>
   <filelist>
