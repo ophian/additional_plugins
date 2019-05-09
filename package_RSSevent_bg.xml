@@ -131,7 +131,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Mon, 22 Apr 2019 16:11:35 +0200</pubDate>
+<pubDate>Thu, 09 May 2019 09:08:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -490,8 +490,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geshi</link>
 <category>Event Plugins</category>
 <author>David Rolston</author>
-<content:encoded>&lt;b&gt;serendipity_event_geshi&lt;br /&gt;Форматиране на текст: GeSHi&lt;/b&gt;&lt;br /&gt;Синтактично оцветяване на програмни текстове. Приложение: [geshi lang=lang_name [,ln={y|n}]] програмен текст (без HTML) [/geshi]. Поддържани езици: actionscript, ada, apache, asm, asp, bash, c, c_mac, caddcl, cadlisp, cpp, csharp (C#), css, delphi, html4strict, java, javascript, lisp, lua, mpasm, nsis, objc, oobas, oracle8, pascal, perl, php, python, qbasic, smarty, vb, vbnet, visualfoxpro, xml&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 17 Aug 2018 16:03:47 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_geshi&lt;br /&gt;Форматиране на текст: GeSHi&lt;/b&gt;&lt;br /&gt;Синтактично оцветяване на програмни текстове. Приложение: [geshi lang=lang_name [,ln={y|n}]] програмен текст (без HTML) [/geshi]. Поддържани езици: actionscript, ada, apache, asm, asp, bash, c, c_mac, caddcl, cadlisp, cpp, csharp (C#), css, delphi, html4strict, java, javascript, lisp, lua, mpasm, nsis, objc, oobas, oracle8, pascal, perl, php, python, qbasic, smarty, vb, vbnet, visualfoxpro, xml&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<pubDate>Thu, 09 May 2019 08:47:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geshi</guid>
 </item>
 <item>
