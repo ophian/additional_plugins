@@ -1,3 +1,7 @@
+4.11.4.1:
+---------
+    * Minor update for Serendipity Styx 2.8.0 regarding WYSIWYG styles consistency
+
 4.11.4.0:
 ---------
     * Upgrade to CKEDITOR 4.11. Series, update 4 (https://ckeditor.com/cke4/release-notes).
