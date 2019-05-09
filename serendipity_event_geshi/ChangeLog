@@ -1,5 +1,12 @@
+1.1:
+----
+ * Upgrade to Geshi 1.0.9.0 + master (October 02, 2018)
+   see https://raw.githubusercontent.com/GeSHi/geshi-1.0/master/CHANGELOG
+
 1.0:
 ----
  * Silence possible eventData property check
 
-0.7: Upgrade to Geshi 1.0.8.1
+0.7:
+----
+ * Upgrade to Geshi 1.0.8.1

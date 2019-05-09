@@ -70,11 +70,11 @@ class serendipity_event_geshi extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'David Rolston');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
+            'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.3.0'
+            'php'         => '5.6.0'
         ));
-        $propbag->add('version',       '1.0');
+        $propbag->add('version',       '1.1');
         $propbag->add('event_hooks', array('frontend_display' => true, 'frontend_comment' => true));
         $propbag->add('groups', array('MARKUP'));
 

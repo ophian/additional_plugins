@@ -4,7 +4,7 @@
  * ---------------
  * Author: Benny Baumann (BenBE@geshi.org)
  * Copyright: (c) 2008 Benny Baumann (http://qbnz.com/highlighter/)
- * Release Version: 1.0.8.1
+ * Release Version: 1.0.9.0
  * Date Started: 2008/10/19
  *
  * Email (mbox \ eml \ RFC format) language file for GeSHi.
@@ -47,17 +47,62 @@ $language_data = array (
     'QUOTEMARKS' => array('"'),
     'ESCAPE_CHAR' => '',
     'KEYWORDS' => array(
+        1 => array(
+            'HTTP', 'SMTP', 'ASMTP', 'ESMTP'
+            ),
         2 => array(
-            'content-type','content-transfer-encoding','content-disposition',
-            'delivered-to','dkim-signature','domainkey-signature','message-id',
-            'mime-version','received','received-spf','resend-from','resend-to',
-            'return-path',
+            'Original-Recipient','Accept-Language','Alternate-Recipient',
+            'Archived-At','Authentication-Results','Auto-Submitted',
+            'Autoforwarded','Autosubmitted','Base','Comments',
+            'Content-Alternative','Content-Base','Content-Description',
+            'Content-Disposition','Content-Duration','Content-features',
+            'Content-ID','Content-Identifier','Content-Language',
+            'Content-Location','Content-MD5','Content-Return',
+            'Content-Transfer-Encoding','Content-Type','Conversion',
+            'Conversion-With-Loss','Deferred-Delivery','Delivery-Date',
+            'Discarded-X400-IPMS-Extensions','Discarded-X400-MTS-Extensions',
+            'Disclose-Recipients','Disposition-Notification-Options',
+            'Disposition-Notification-To','DKIM-Signature',
+            'DL-Expansion-History','Downgraded-Bcc','Downgraded-Cc',
+            'Downgraded-Disposition-Notification-To',
+            'Downgraded-Final-Recipient','Downgraded-From',
+            'Downgraded-In-Reply-To','Downgraded-Mail-From',
+            'Downgraded-Message-Id','Downgraded-Original-Recipient',
+            'Downgraded-Rcpt-To','Downgraded-References',
+            'Downgraded-Reply-To','Downgraded-Resent-Bcc',
+            'Downgraded-Resent-Cc','Downgraded-Resent-From',
+            'Downgraded-Resent-Reply-To','Downgraded-Resent-Sender',
+            'Downgraded-Resent-To','Downgraded-Return-Path',
+            'Downgraded-Sender','Downgraded-To','Encoding','Encrypted','Expires',
+            'Expiry-Date','Generate-Delivery-Report','Importance','In-Reply-To',
+            'Incomplete-Copy','Keywords','Language','Latest-Delivery-Time',
+            'List-Archive','List-Help','List-ID','List-Owner','List-Post',
+            'List-Subscribe','List-Unsubscribe','List-Unsubscribe-Post',
+            'Message-Context','Message-ID','Message-Type','MIME-Version',
+            'MMHS-Acp127-Message-Identifier','MMHS-Codress-Message-Indicator',
+            'MMHS-Copy-Precedence','MMHS-Exempted-Address',
+            'MMHS-Extended-Authorisation-Info','MMHS-Handling-Instructions',
+            'MMHS-Message-Instructions','MMHS-Message-Type',
+            'MMHS-Originator-PLAD','MMHS-Originator-Reference',
+            'MMHS-Other-Recipients-Indicator-CC',
+            'MMHS-Other-Recipients-Indicator-To','MMHS-Primary-Precedence',
+            'MMHS-Subject-Indicator-Codes','MT-Priority','Obsoletes',
+            'Organization','Original-Encoded-Information-Types','Original-From',
+            'Original-Message-ID','Original-Subject','Originator-Return-Address',
+            'PICS-Label','Prevent-NonDelivery-Report','Priority','Received',
+            'Received-SPF','References','Reply-By','Reply-To',
+            'Require-Recipient-Valid-Since','Resent-Bcc','Resent-Cc',
+            'Resent-Date','Resent-From','Resent-Message-ID','Resent-Reply-To',
+            'Resent-Sender','Resent-To','Return-Path','Sensitivity',
+            'Solicitation','Supersedes','VBR-Info','X400-Content-Identifier',
+            'X400-Content-Return','X400-Content-Type','X400-MTS-Identifier',
+            'X400-Originator','X400-Received','X400-Recipients','X400-Trace'
             ),
         3 => array(
-            'date','from','subject','to',
+            'Bcc','CC','Date','From','Sender','Subject','To'
             ),
         4 => array(
-            'by', 'from', 'id', 'with'
+            'by', 'for', 'from', 'id', 'with'
             )
         ),
     'SYMBOLS' => array(
@@ -65,12 +110,14 @@ $language_data = array (
         ),
     'CASE_SENSITIVE' => array(
         GESHI_COMMENTS => false,
+        1 => true,
         2 => false,
         3 => false,
         4 => true
         ),
     'STYLES' => array(
         'KEYWORDS' => array(
+            1 => 'color: #0000FF; font-weight: bold;',
             2 => 'color: #000000; font-weight: bold;',
             3 => 'color: #800000; font-weight: bold;',
             4 => 'font-weight: bold;',
@@ -96,14 +143,19 @@ $language_data = array (
             ),
         'SCRIPT' => array(
             0 => 'color: #000040;',
+            1 => 'color: #002040;',
             ),
         'REGEXPS' => array(
             1 => 'color: #000000; font-weight: bold;',
             2 => 'color: #0000FF;',
-            3 => 'color: #008000;'
+            3 => 'color: #008000;',
+            4 => 'color: #0000FF; font-weight: bold;',
+            5 => 'font-weight: bold;',
+            6 => 'color: #400080;'
             )
         ),
     'URLS' => array(
+        1 => '',
         2 => '',
         3 => '',
         4 => ''
@@ -114,7 +166,7 @@ $language_data = array (
     'REGEXPS' => array(
         // Non-Standard-Header
         1 => array(
-            GESHI_SEARCH => "(?<![:=])x-[a-z0-9\-]*(?=\s*:|\s*<)",
+            GESHI_SEARCH => "(?<=\A\x20|\n)x-[a-z0-9\-]*(?=\s*:|\s*<)",
             GESHI_REPLACE => "\\0",
             GESHI_MODIFIERS => "smi",
             GESHI_BEFORE => "",
@@ -122,7 +174,7 @@ $language_data = array (
             ),
         //Email-Adresses or Mail-IDs
         2 => array(
-            GESHI_SEARCH => "\b[\w\.]+@\w+(?:(?:\.\w+)*\.\w{2,4})?",
+            GESHI_SEARCH => "\b(?<!\\/)(?P<q>\"?)[\w\.\-]+\k<q>@(?!-)[\w\-]+(?<!-)(?:(?:\.(?!-)[\w\-]+(?<!-))*)?",
             GESHI_REPLACE => "\\0",
             GESHI_MODIFIERS => "mi",
             GESHI_BEFORE => "",
@@ -137,24 +189,65 @@ $language_data = array (
             GESHI_MODIFIERS => "mi",
             GESHI_BEFORE => "",
             GESHI_AFTER => ""
+            ),
+        //IP addresses
+        4 => array(
+            GESHI_SEARCH => "(?<=\s)\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?=\s)|".
+                "(?<=\[)\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?=\])|".
+                "(?<==)\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?=<)|".
+
+                "(?<=\s)(?:[a-f\d]{1,4}\:)+(?:[a-f\d]{0,4})?(?:\:[a-f\d]{1,4})+(?=\s)|".
+                "(?<=\[)(?:[a-f\d]{1,4}\:)+(?:[a-f\d]{0,4})?(?:\:[a-f\d]{1,4})+(?=\])|".
+                "(?<==)(?:[a-f\d]{1,4}\:)+(?:[a-f\d]{0,4})?(?:\:[a-f\d]{1,4})+(?=<)|".
+
+                "(?<=\s)\:(?:\:[a-f\d]{1,4})+(?=\s)|".
+                "(?<=\[)\:(?:\:[a-f\d]{1,4})+(?=\])|".
+                "(?<==)\:(?:\:[a-f\d]{1,4})+(?=<)|".
+
+                "(?<=\s)(?:[a-f\d]{1,4}\:)+\:(?=\s)|".
+                "(?<=\[)(?:[a-f\d]{1,4}\:)+\:(?=\])|".
+                "(?<==)(?:[a-f\d]{1,4}\:)+\:(?=<)",
+            GESHI_REPLACE => "\\0",
+            GESHI_MODIFIERS => "i",
+            GESHI_BEFORE => "",
+            GESHI_AFTER => ""
+            ),
+        //Field-Assignments
+        5 => array(
+            GESHI_SEARCH => "(?<=\s)[A-Z0-9\-\.]+(?==(?:$|\s$|[^\s=]))",
+            GESHI_REPLACE => "\\0",
+            GESHI_MODIFIERS => "mi",
+            GESHI_BEFORE => "",
+            GESHI_AFTER => ""
+            ),
+        //MIME type
+        6 => array(
+            GESHI_SEARCH => "(?<=\s)(?:audio|application|image|multipart|text|".
+                "video|x-[a-z0-9\-]+)\/[a-z0-9][a-z0-9\-]*(?=\s|<|$)",
+            GESHI_REPLACE => "\\0",
+            GESHI_MODIFIERS => "m",
+            GESHI_BEFORE => "",
+            GESHI_AFTER => ""
             )
         ),
     'STRICT_MODE_APPLIES' => GESHI_ALWAYS,
     'SCRIPT_DELIMITERS' => array(
-        0 => "/(^)[A-Z][a-zA-Z0-9\-]*\s*:\s*(?:.|(?=\n\s)\n)*($)/m"
+        0 => "/(?P<start>^)[A-Za-z][a-zA-Z0-9\-]*\s*:\s*(?:.|(?=\n\s)\n)*(?P<end>$)/m",
+        1 => "/(?P<start>^)--[a-zA-Z0-9_=\-]+[a-zA-Z0-9_](?:--)?(?P<end>$)/m"
     ),
     'HIGHLIGHT_STRICT_BLOCK' => array(
         0 => true,
+        1 => false
         ),
     'TAB_WIDTH' => 4,
     'PARSER_CONTROL' => array(
         'KEYWORDS' => array(
             2 => array(
-                'DISALLOWED_BEFORE' => '(?<![:=])',
+                'DISALLOWED_BEFORE' => '(?<=\A\x20|\n)',
                 'DISALLOWED_AFTER' => '(?=\s*:)',
             ),
             3 => array(
-                'DISALLOWED_BEFORE' => '(?<![:=])',
+                'DISALLOWED_BEFORE' => '(?<=\A\x20|\n)',
                 'DISALLOWED_AFTER' => '(?=\s*:)',
             ),
             4 => array(
@@ -169,5 +262,3 @@ $language_data = array (
         )
     )
 );
-
-?>
