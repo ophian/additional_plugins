@@ -159,7 +159,7 @@ in our forum on
 @define('PLUGIN_FORUM_IMGDIR_DESC', 'The HTTP path to where this plugin is stored. Used to output image files, for example.');
 
 
-@define('PLUGIN_FORUM_PHPBB_MIRROR', 'Enable phpBB mirroring?');
+@define('PLUGIN_FORUM_PHPBB_MIRROR', 'Enable phpBB mirroring? (old MySQL only!)');
 @define('PLUGIN_FORUM_PHPBB_MIRROR_DESC', 'If enabled, new blog entries you post will be mirrored into a phpBB installation. Comments will then be made to the phpBB installation instead of into the serendipity blog.');
 
 @define('FORUM_PLUGIN_PHPBB_USER', '(optional) phpBB database username');
