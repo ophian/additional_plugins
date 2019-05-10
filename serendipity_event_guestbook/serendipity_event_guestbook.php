@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian');
-        $propbag->add('version',      '3.73');
+        $propbag->add('version',      '3.74');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -873,8 +873,8 @@ class serendipity_event_guestbook extends serendipity_event
         // Fake call to spamblock and other comment plugins, if not in backend.
         $ca = array(
                     'id'                    => 0,
-                    'allow_comments'        => true,
-/*                    'moderate_comments'     => true, dont use here, while it overrides spamblock option setting */
+                    'allow_comments'        => 'true',
+/*                    'moderate_comments'     => true, do not use here, while it overrides spamblock option setting */
                     'last_modified'         => time(),
                     'timestamp'             => strtotime("-8 day" ,time()) // remember captchas_ttl using 7 days as normal setting, just 10 sec. throws Moderation after X days
                     );
