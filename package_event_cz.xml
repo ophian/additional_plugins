@@ -11503,9 +11503,9 @@
 <description>Umožňuje posílat/editovat příspěvky pomocí XML-RPC API (MT, Blogger, WordPress Endpoints)</description>
 <maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.74</version>
+  <version>1.75</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-07-01</date>
+  <date>2019-05-12</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
       <file>.gitignore</file>
