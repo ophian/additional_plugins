@@ -1,3 +1,10 @@
+5.69:
+-----
+ * Fix some uninitialized variable checks
+    - in custom backend template
+    - for fetching category props
+    - in example
+
 5.68:
 -----
  * Remove hooked media renaming limitation to MySQL databases to now support

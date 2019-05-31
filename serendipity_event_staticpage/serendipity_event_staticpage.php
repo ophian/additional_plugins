@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '5.68');
+        $propbag->add('version', '5.69');
         $propbag->add('requirements', array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
@@ -1723,7 +1723,7 @@ class serendipity_event_staticpage extends serendipity_event
         if (!isset($this->smarty_init)) {
             include_once dirname(__FILE__) . '/smarty.inc.php';
             if (isset($serendipity['smarty'])) {
-                $staticpage_cat = $this->fetchCatProp((int)@$serendipity['GET']['category']); // mute possible undefined global
+                $staticpage_cat = isset($serendipity['GET']['category']) ? $this->fetchCatProp((int)$serendipity['GET']['category']) : false;
                 $serendipity['smarty']->assign('staticpage_categorypage', $this->fetchStaticPageForCat($staticpage_cat));
                 $serendipity['smarty']->assign('serendipityArchiveURL', getArchiveURL());
                 $serendipity['smarty']->registerPlugin('function', 'getCategoryLinkByID', 'smarty_getCategoryLinkByID');

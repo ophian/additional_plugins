@@ -238,7 +238,7 @@
                     <input class="input_textbox direction_ltr" type="text" size="30" name="serendipity[plugin][custom][css_class]" value="{$form_values.custom.css_class|default:'None'}">
             </div>
 
-            {if $custom_wysiwyg}
+            {if NOT empty($custom_wysiwyg)}
             <div id="entry_custom_markup" class="form_field form_radio sp_sect" style="clear:both">
                 <label class="sp_label" title="Mark nl2br disabled">Disable nl2br markup parser (auto true)</label>
                 <div class="sp_input_radio">

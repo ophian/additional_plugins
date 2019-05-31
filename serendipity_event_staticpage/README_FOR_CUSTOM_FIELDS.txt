@@ -3,7 +3,7 @@ CUSTOM EXAMPLE USAGE:
 This example here enables to use a custom CSS-BODY-ID to render the page. Or you can specify, which sidebar you want to see, when this staticpage is rendered.
 Example parts for 2k11/index.tpl:
 
-<body{if $template_option.webfonts != 'none'} class="{$template_option.webfonts}{if NOT empty($staticpage_custom.css_class)} {$staticpage_custom.css_class}{/if}"{else}{if NOT empty($staticpage_custom.css_class)} class="{$staticpage_custom.css_class}"{/if}>
+<body{if isset($template_option.webfonts) AND $template_option.webfonts != 'none'} class="{$template_option.webfonts}{if NOT empty($staticpage_custom.css_class)} {$staticpage_custom.css_class}{/if}"{else}{if NOT empty($staticpage_custom.css_class)} class="{$staticpage_custom.css_class}"{/if}>
 
 ...
 
