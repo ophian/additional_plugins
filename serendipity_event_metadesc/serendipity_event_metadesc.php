@@ -20,8 +20,8 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('name',          PLUGIN_METADESC_NAME);
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian');
-        $propbag->add('version',       '0.25');
+        $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian Styx');
+        $propbag->add('version',       '0.26');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'php'         => '5.1.0'
@@ -290,10 +290,10 @@ class serendipity_event_metadesc extends serendipity_event
                         $prop_val = (isset($serendipity['POST']['properties'][$prop_key]) ? $serendipity['POST']['properties'][$prop_key] : null);
                         if (!isset($property[$prop_key]) && !empty($prop_val)) {
                             $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES (" . (int)$eventData['id'] . ", '" . serendipity_db_escape_string($prop_key) . "', '" . serendipity_db_escape_string($prop_val) . "')";
-                        } elseif (!empty($propkey) && $property[$propkey] != $prop_val && !empty($prop_val)) {
+                        } elseif (!empty($prop_key) && $property[$prop_key] != $prop_val && !empty($prop_val)) {
                             $q = "UPDATE {$serendipity['dbPrefix']}entryproperties SET value = '" . serendipity_db_escape_string($prop_val) . "' WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
                         } else {
-                            if (!empty($propkey)) {
+                            if (!empty($prop_key)) {
                                 $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
                             }
                         }

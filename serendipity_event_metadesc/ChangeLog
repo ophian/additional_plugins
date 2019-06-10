@@ -1,3 +1,8 @@
+0.26:
+-----
+
+ * Fix updating entryproperties table in backend_publish and backend_save hooked cases
+
 0.25:
 -----
 
