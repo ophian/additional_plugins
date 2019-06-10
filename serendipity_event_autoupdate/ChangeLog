@@ -1,3 +1,10 @@
+1.5.8
+------
+
+ * Partial revert 1.5.7 commit, to make sure it is the "Administrator Group" only
+   to access the autoupdate(r). So you can simply give a certain Editor in Chief
+   administrator GROUP rights to access the autoupdate .
+
 1.5.7
 ------
 

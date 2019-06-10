@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.5.7');
+        $propbag->add('version',       '1.5.8');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -149,7 +149,7 @@ class serendipity_event_autoupdate extends serendipity_event
                     break;
 
                 case 'plugin_dashboard_updater':
-                    if (false === (serendipity_checkPermission('siteConfiguration') && serendipity_checkPermission('adminUsersMaintainOthers') && $serendipity['serendipityUserlevel'] == USERLEVEL_ADMIN)) {
+                    if (false === (serendipity_checkPermission('siteConfiguration') && serendipity_checkPermission('adminUsersMaintainOthers'))) {
                         return;
                     }
                     $momacheck = (isset($serendipity['edition']) && $serendipity['edition'] == 'Styx' && empty($serendipity['maintenance'])) ? true : false;
@@ -162,7 +162,7 @@ class serendipity_event_autoupdate extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries_event_display_update':
-                    if (false === (serendipity_checkPermission('siteConfiguration') && serendipity_checkPermission('adminUsersMaintainOthers') && $serendipity['serendipityUserlevel'] == USERLEVEL_ADMIN)) {
+                    if (false === (serendipity_checkPermission('siteConfiguration') && serendipity_checkPermission('adminUsersMaintainOthers'))) {
                         return;
                     }
                     if (!extension_loaded('zip')) {
