@@ -1157,8 +1157,8 @@
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.31</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2019-03-14</date>
+  <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
+  <date>2019-06-03</date>
   <filelist>
     <dir name="serendipity_event_contactform">
       <file>ChangeLog</file>
@@ -6312,11 +6312,11 @@
 <summary>HTML META tagy</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_METAINFORMATION</groups>
 <description>Zadejte HTML meta tagy pro klíčová slova nebo popis blogu. Také můžete zadávat různý titulek pro jednotlivé stránky blogu a výchozí hodnotu pro klíčová slova/popis pro stránky se zobrazenm více příspěvků (výchozí stránka, přehledy kategorií).</description>
-<maintainers><maintainer><name>Garvin Hicking, Judebert, Don Chambers, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Judebert, Don Chambers, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.25</version>
+  <version>0.26</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-08-10</date>
+  <date>2019-06-10</date>
   <filelist>
     <dir name="serendipity_event_metadesc">
       <file>ChangeLog</file>
