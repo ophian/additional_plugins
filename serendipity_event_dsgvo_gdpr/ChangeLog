@@ -1,3 +1,8 @@
+1.79:
+-----
+ * Remove totally outdated "Engine: Yes" theme info stack check.
+   Engines are checked by name since 2014.
+
 1.78:
 -----
  * Check an uninitialized variable
