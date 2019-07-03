@@ -49,7 +49,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.11.4.0-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.12.1.0-plus.zip';
 
     /**
      * Access property checkUpdateVersion
@@ -57,17 +57,17 @@ class serendipity_event_ckeditor extends serendipity_event
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.11.4.0');
+    protected $checkUpdateVersion = array('ckeditor:4.12.1.0');
 
     /**
      * Access property revisionPackage
      * Note revisions of ckeditor and plugin additions to lang files
      * @var array
      */
-    protected $revisionPackage = array('CKEditor 4.11.4 (revision e1836357e, full package, 2019-04-09)',
+    protected $revisionPackage = array('CKEditor 4.12.1 (revision 64749bb245, full package, 2019-06-28)',
                                        'The main ckeditor.js file was slightly modified to prevent an odd IE 11 error with the gallery selection',
                                        'CKEditor-Plugin: mediaembed, v. 0.6+ (https://github.com/frozeman/MediaEmbed, 2016-07-24)',
-                                       'CKEditor-Plugin: manually added for version "ajax", "autocomplete", "autogrow", "autolink", "clipboard", "codesnippet", "dialog", "dialogui", "embed", "embedbase", "embedsemantic", "emoji", "fakeobjects", "lineutils", "notification", "notificationaggregator", "placeholder", "textmatch", "textwatcher", "undo", "widget", "widgetselection" and "xml" plugins, 2019-04-09)',
+                                       'CKEditor-Plugin: manually added for version "ajax", "autocomplete", "autogrow", "autolink", "clipboard", "codesnippet", "dialog", "dialogui", "embed", "embedbase", "embedsemantic", "emoji", "fakeobjects", "lineutils", "notification", "notificationaggregator", "placeholder", "textmatch", "textwatcher", "undo", "widget", "widgetselection" and "xml" plugins, 2019-06-28)',
                                        'CKEditor-Plugin: procurator, v. 1.6 (Serendipity placeholder Plugin, 2016-01-01)',
                                        'CKEditor-Plugin: cheatsheet, v. 1.2 (Serendipity CKE-Cheatsheet Plugin, 2016-08-15)',
                                        'CKEditor-S9yCustomConfig, cke_config.js, v. 2.13, 2017-08-19',
@@ -189,7 +189,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.11.4.1'); // is CKEDITOR Series 4.11.4 - and appended plugin revision .1
+        $propbag->add('version',       '4.12.1.0'); // is CKEDITOR Series 4.12.1 - and appended plugin revision .0
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
@@ -422,7 +422,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.11.4.1', '4.11.4.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.12.1.0', '4.11.4.1'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -436,7 +436,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.11.4.1', '4.11.4.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.12.1.0', '4.11.4.1'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);

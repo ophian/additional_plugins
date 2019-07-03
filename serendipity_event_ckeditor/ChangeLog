@@ -1,3 +1,12 @@
+4.12.1.0:
+---------
+    * Upgrade to CKEDITOR 4.12. Series, update 1 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
+    * Gave up IE 11 support changing the ckeditor.js file for the Styx gallery closing call.
+      If you have to use this poor browser, just close the last overlay per X.
+    * ACF preparations to allow upcoming Styx 3.0 WebP support with <picture> elements
+      including <source>/<img> tags and link <a> tag attributes for [data-*] fallback handlers.
+
 4.11.4.1:
 ---------
     * Minor update for Serendipity Styx 2.8.0 regarding WYSIWYG styles consistency
