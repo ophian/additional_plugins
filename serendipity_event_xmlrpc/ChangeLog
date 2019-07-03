@@ -1,3 +1,6 @@
+Version 1.76:
+    * Fix serendipitytraversePath() call for upcoming Serendipity Styx 3.0 excludeDirectories
+
 Version 1.75:
     * Fix (old) lib XML/RPC because of PHP7 new count() warnings
 
