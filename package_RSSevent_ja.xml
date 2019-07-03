@@ -133,7 +133,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Thu, 09 May 2019 09:08:52 +0200</pubDate>
+<pubDate>Wed, 03 Jul 2019 15:10:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -1276,9 +1276,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>Post via XML-RPC: Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_xmlrpc</link>
 <category>Event Plugins</category>
-<author>Serendipity Team, Ian</author>
+<author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 12 May 2019 12:46:49 +0200</pubDate>
+<pubDate>Mon, 01 Jul 2019 13:08:47 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
