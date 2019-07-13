@@ -24,11 +24,11 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian');
-        $propbag->add('version',       '0.28');
+        $propbag->add('version',       '0.29');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.1.0'
         ));
         $propbag->add('groups', array('MARKUP'));
         $propbag->add('event_hooks',   array(
@@ -362,7 +362,7 @@ function use_link_<?php echo $func; ?>(txt) {
 
     // use the shared insert function instead of the wikilinks provided function
     // the shared JS function implements all the wikilinks functionality + NO WYSIWYG insertion
-    serendipity_imageSelector_addToBody(txt, '<?php echo $func; ?>' );
+    serendipity.serendipity_imageSelector_addToBody(txt, '<?php echo $func; ?>' );
     return;
 
     if(typeof(CKEDITOR) != 'undefined') {

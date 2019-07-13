@@ -1,3 +1,8 @@
+0.29:
+----
+ * Raise Serendipity Requirement to min 2.0 to get rid of old non-scoped JS
+   function handlers. Now uses serendipity.serendipity_imageSelector_addToBody().
+
 0.28:
 ----
  * Silence possible eventData property check
