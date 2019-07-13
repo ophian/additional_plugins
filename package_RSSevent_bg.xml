@@ -318,9 +318,9 @@
 <title>Показва съобщения с датите на последните промени на статиите: Показва кога (дата и час) са направени последните промени на статиите, веднага след тяхното съдържание. При непроменяните статии се извежда текст, поясняващ, че те не са променяни.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrylastmodified</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Ian</author>
+<author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrylastmodified&lt;br /&gt;Показва съобщения с датите на последните промени на статиите&lt;/b&gt;&lt;br /&gt;Показва кога (дата и час) са направени последните промени на статиите, веднага след тяхното съдържание. При непроменяните статии се извежда текст, поясняващ, че те не са променяни.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sat, 08 Dec 2018 17:03:50 +0100</pubDate>
+<pubDate>Sat, 13 Jul 2019 13:51:40 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrylastmodified</guid>
 </item>
 <item>
@@ -1224,12 +1224,12 @@
 <guid isPermaLink="false">serendipity_event_versioning</guid>
 </item>
 <item>
-<title>VG Wort (unofficial): Integrate VG Wort counters into your blog.</title>
+<title>VG Wort: Integrate VG Wort counters into your blog.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_vgwort</link>
 <category>Event Plugins</category>
-<author>Malte Paskuda</author>
-<content:encoded>&lt;b&gt;serendipity_event_vgwort&lt;br /&gt;VG Wort (unofficial)&lt;/b&gt;&lt;br /&gt;Integrate VG Wort counters into your blog.&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Mon, 11 Feb 2019 09:36:08 +0100</pubDate>
+<author>Malte Paskuda, Thomas Hochstein</author>
+<content:encoded>&lt;b&gt;serendipity_event_vgwort&lt;br /&gt;VG Wort&lt;/b&gt;&lt;br /&gt;Integrate VG Wort counters into your blog.&lt;br/&gt;For: Serendipity 2.2.1</content:encoded>
+<pubDate>Sat, 13 Jul 2019 14:21:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_vgwort</guid>
 </item>
 <item>
