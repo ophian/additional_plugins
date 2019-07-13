@@ -1,0 +1,4 @@
+1.6:
+-----
+
+ * Put JS serendipity_imageSelector_addToBody() into the serendipity scope
