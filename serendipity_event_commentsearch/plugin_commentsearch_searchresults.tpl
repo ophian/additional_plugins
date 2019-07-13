@@ -9,8 +9,7 @@
         {else}
             {$result.author|escape} - <a href="{$result.permalink|escape}">{$result.title|escape}</a>
         {/if}
-            <br />
-            {$result.comment|strip_tags|strip|truncate:200:" ..."}</li>
+        {$result.comment|strip_tags|strip|truncate:200:" ..."}</li>
     {/foreach}
     </ul>
 </div>
