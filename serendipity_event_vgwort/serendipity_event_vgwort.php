@@ -17,10 +17,10 @@ class serendipity_event_vgwort extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_VGWORT_NAME);
         $propbag->add('description',   PLUGIN_EVENT_VGWORT_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Malte Paskuda');
-        $propbag->add('version',       '0.3.3');
+        $propbag->add('author',        'Malte Paskuda, Thomas Hochstein');
+        $propbag->add('version',       '0.4');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.1'
+            'serendipity' => '2.2.1'
         ));
         $propbag->add('event_hooks',   array('external_plugin' => true,
                                              'backend_maintenance' => true,
@@ -51,8 +51,8 @@ class serendipity_event_vgwort extends serendipity_event
 
         $sql = "CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}vgwort (
                     entry_id INTEGER,
-                    counter_public TEXT UNIQUE NOT NULL,
-                    counter_private TEXT UNIQUE NOT NULL);";
+                    counter_public VARCHAR(32) UNIQUE NOT NULL,
+                    counter_private VARCHAR(32) UNIQUE NOT NULL);";
         serendipity_db_schema_import($sql);
     }
 
@@ -67,7 +67,7 @@ class serendipity_event_vgwort extends serendipity_event
         $entry = array_values($entry)[0]['entries'][0];
         $fullEntry = $entry['body'];
         if (! empty($entry['extended'])) {
-            $fullEntry += $entry['extended'];
+            $fullEntry .= $entry['extended'];
         }
 
         $rawEntry = strip_tags($fullEntry);
@@ -76,7 +76,7 @@ class serendipity_event_vgwort extends serendipity_event
     }
 
     /**
-     * Import the Zählmarken stored in the given CSV. Store them in the database, with an entry id if there are available entries (=that are long enough)
+     * Import the counter codes ("Zählmarken") stored in the given CSV. Store them in the database, with an entry id if there are available entries (=that are long enough)
      */
     function import($csv)
     {
@@ -99,7 +99,7 @@ class serendipity_event_vgwort extends serendipity_event
     }
 
     /**
-     * Return array of up to 100 ids of entries long enough to get a Zählmarke and not already marked
+     * Return array of up to 100 ids of entries long enough to get a counter code and not already marked
      */
     function markableEntries()
     {
@@ -107,9 +107,9 @@ class serendipity_event_vgwort extends serendipity_event
 
         $ids = [];
         $sql = "SELECT id from {$serendipity['dbPrefix']}entries
-                LEFT OUTER JOIN {$serendipity['dbPrefix']}vgwort
-                ON {$serendipity['dbPrefix']}entries.id = {$serendipity['dbPrefix']}vgwort.entry_id
-                WHERE {$serendipity['dbPrefix']}vgwort.entry_id IS NULL;";
+        LEFT OUTER JOIN {$serendipity['dbPrefix']}vgwort
+                     ON {$serendipity['dbPrefix']}entries.id = {$serendipity['dbPrefix']}vgwort.entry_id
+                  WHERE {$serendipity['dbPrefix']}vgwort.entry_id IS NULL;";
         $results = serendipity_db_query($sql);
 
         foreach($results AS $result) {
@@ -132,9 +132,9 @@ class serendipity_event_vgwort extends serendipity_event
         global $serendipity;
 
         $sql = "INSERT INTO {$serendipity['dbPrefix']}vgwort(entry_id, counter_public, counter_private)
-                VALUES(" . (int)$entry_id . ", '" . serendipity_db_escape_string($public) . "', '" . serendipity_db_escape_string($private) . "')";
+                     VALUES(" . (int)$entry_id . ", '" . serendipity_db_escape_string($public) . "', '" . serendipity_db_escape_string($private) . "')";
 
-                return serendipity_db_query($sql);
+        return serendipity_db_query($sql);
     }
 
     /**
@@ -144,14 +144,15 @@ class serendipity_event_vgwort extends serendipity_event
     {
         global $serendipity;
 
-        $sql = "UPDATE {$serendipity['dbPrefix']}vgwort SET entry_id = " . (int)$entry_id . "
-                WHERE counter_public = '" . serendipity_db_escape_string($public) . "' AND counter_private = '" . serendipity_db_escape_string($private) . "'";
+        $sql = "UPDATE {$serendipity['dbPrefix']}vgwort
+                   SET entry_id = " . (int)$entry_id . "
+                 WHERE counter_public = '" . serendipity_db_escape_string($public) . "' AND counter_private = '" . serendipity_db_escape_string($private) . "'";
 
         return serendipity_db_query($sql);
     }
 
     /**
-     * Return an array of unused public and private Zählmarken
+     * Return an array of unused public and private counter codes
      */
     function unused()
     {
@@ -162,14 +163,15 @@ class serendipity_event_vgwort extends serendipity_event
     {
         global $serendipity;
 
-        $sql = "SELECT counter_public, counter_private FROM {$serendipity['dbPrefix']}vgwort
-                WHERE entry_id == " . (int) $entry_id;
+        $sql = "SELECT counter_public, counter_private
+                  FROM {$serendipity['dbPrefix']}vgwort
+                 WHERE entry_id = " . (int) $entry_id;
 
         return serendipity_db_query($sql, false);
     }
 
     /**
-     * If entry is long enough and not already marked, assign one of the unused Zählmarken
+     * If entry is long enough and not already marked, assign one of the unused counter codes
      */
     function assignUnusedCounter($entry_id)
     {
@@ -212,8 +214,8 @@ class serendipity_event_vgwort extends serendipity_event
                             $csv = iconv("ISO-8859-1", "UTF-8", file_get_contents($_FILES['csv']['tmp_name']));
                             $this->import($csv);
 
-                            $redirect= '<meta http-equiv="REFRESH" content="0;url=';
-                            $url = 'serendipity_admin.php?serendipity[adminModule]=maintenance">';
+                            $redirect = '<meta http-equiv="REFRESH" content="0;url=';
+                            $url      = 'serendipity_admin.php?serendipity[adminModule]=maintenance">';
                             echo $redirect . $url;
 
                             return true;
@@ -248,11 +250,11 @@ class serendipity_event_vgwort extends serendipity_event
                 case 'backend_view_entry':
                     $counter = $this->getCounter($eventData['id'])[0];
                     $eventData['info_more'] = '<section class="vgwort">
-                        <span>Length: ' . $this->entryLength($eventData['id']) . '</span>';
+                        <span>' . PLUGIN_EVENT_VGWORT_LENGTH . ': ' . $this->entryLength($eventData['id']) . '</span>';
 
                     if (is_array($counter) && $counter['counter_public']) {
-                        $eventData['info_more'] .='<span>Zählmarke: ' . $counter['counter_public'] . '</span>
-                        <span>Identifikationscode: ' . $counter['counter_private'] . '</span>';
+                        $eventData['info_more'] .='<span>' . PLUGIN_EVENT_VGWORT_COUNTERCODE . ': ' . $counter['counter_public'] . '</span>
+                        <span>' . PLUGIN_EVENT_VGWORT_PRIVATECODE . ': ' . $counter['counter_private'] . '</span>';
                     }
 
                     $eventData['info_more'] .= '</section>';
@@ -267,7 +269,7 @@ class serendipity_event_vgwort extends serendipity_event
                         return false;
                     }
                     if ($counter['counter_public']) {
-                        // the entry has a Zählmarke, but we have to make sure it is also shown completely
+                        // the entry has a counter code, but we have to make sure it is also shown completely
                         if ((empty($eventData['extended'])) || $serendipity['feedFull'] == 1) {
                             $eventData['feed_body'] .= '<img src="https://ssl-vg03.met.vgwort.de/na/' . $counter['counter_public'] . '" width="1" height="1" alt="">';
                         }
@@ -282,7 +284,7 @@ class serendipity_event_vgwort extends serendipity_event
                         return false;
                     }
                     if ($counter['counter_public']) {
-                        // the entry has a Zählmarke, but we have to make sure it is also shown completely
+                        // the entry has a counter code, but we have to make sure it is also shown completely
                         if ((! $eventData['has_extended']) || ($serendipity['GET']['action'] == 'read' && is_int($serendipity['GET']['id']))) {
                             $eventData['display_dat'] .= '<img src="https://ssl-vg03.met.vgwort.de/na/' . $counter['counter_public'] . '" width="1" height="1" alt="">';
                         }
@@ -296,7 +298,7 @@ class serendipity_event_vgwort extends serendipity_event
                         $term = serendipity_db_escape_string($serendipity['GET']['filter']['body']);
                         $filter = " OR counter_public LIKE '%$term%' OR counter_private LIKE '%$term%' ";
                         $eventData['joins'] .= $join;
-                        $eventData['and'] .= $filter;
+                        $eventData['and']   .= $filter;
                     }
                     break;
 
