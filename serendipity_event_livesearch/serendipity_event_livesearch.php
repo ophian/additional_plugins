@@ -61,7 +61,7 @@ class serendipity_event_livesearch extends serendipity_event
     position: absolute;
     margin-left: 4px;
     margin-top: 4px;
-       background-color: #fff7e8;
+    background-color: #fff7e8;
 }
 
 #LSShadow {
