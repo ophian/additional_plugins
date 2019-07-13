@@ -538,7 +538,7 @@ function cpg_imageSelector_done(textarea)
     }
 
     if (f['filename_only'] && f['filename_only'].value == 'true') {
-        self.opener.serendipity_imageSelector_addToElement(img, f['htmltarget'].value);
+        self.opener.serendipity.serendipity_imageSelector_addToElement(img, f['htmltarget'].value);
         self.close();
         return true;
     }
@@ -586,7 +586,7 @@ function cpg_imageSelector_done(textarea)
     if (self.opener.editorref) {
         self.opener.editorref.surroundHTML(block, '');
     } else {
-        self.opener.serendipity_imageSelector_addToBody(block, textarea);
+        self.opener.serendipity.serendipity_imageSelector_addToBody(block, textarea);
     }
 
     self.close();
@@ -599,7 +599,7 @@ function cpg_imageSelector_done(textarea)
     <img align="right" src="<?php echo $image['thumbnail']; ?>">
     <h1><?php printf(YOU_CHOSE, $image['filename']); ?></h1>
     <p>
-        <form action="#" method="GET" name="cpgSelForm" onSubmit="serendipity_imageSelector_done()">
+        <form action="#" method="GET" name="cpgSelForm" onSubmit="serendipity.serendipity_imageSelector_done()">
             <div>
                 <input type="hidden" name="imgThumbWidth"  value="<?php echo $image['iconWidth']; ?>" />
                 <input type="hidden" name="imgThumbHeight" value="<?php echo $image['iconHeight']; ?>" />
@@ -660,7 +660,7 @@ function cpg_imageSelector_done(textarea)
         if (!empty($CPG['filename_only'])) {
 ?>
     <script type="text/javascript">
-        self.opener.serendipity_imageSelector_addToElement('<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($imgName) : htmlspecialchars($imgName, ENT_COMPAT, LANG_CHARSET)); ?>', '<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($CPG['htmltarget']) : htmlspecialchars($CPG['htmltarget'], ENT_COMPAT, LANG_CHARSET)); ?>');
+        self.opener.serendipity.serendipity_imageSelector_addToElement('<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($imgName) : htmlspecialchars($imgName, ENT_COMPAT, LANG_CHARSET)); ?>', '<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($CPG['htmltarget']) : htmlspecialchars($CPG['htmltarget'], ENT_COMPAT, LANG_CHARSET)); ?>');
         self.close();
     </script>
 <?php
@@ -671,7 +671,7 @@ function cpg_imageSelector_done(textarea)
     if (self.opener.editorref) {
         self.opener.editorref.surroundHTML(block, '');
     } else {
-        self.opener.serendipity_imageSelector_addToBody(block, '<?php echo $CPG['post']['textarea']; ?>');
+        self.opener.serendipity.serendipity_imageSelector_addToBody(block, '<?php echo $CPG['post']['textarea']; ?>');
     }
     self.close();
     </script>
