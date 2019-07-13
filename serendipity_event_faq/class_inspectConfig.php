@@ -196,28 +196,6 @@ class icText extends inspectConfig
         </div>
 
         <div class="form_editor">
-<?php
-            if ($inspectConfig['s9y']['version'] < 2) {
-?>
-            <div class="form_field clear plain_editor">
-
-            <nobr><span id="tools_<?php echo $inspectConfig['config_item'] ?>" class="editor_toolbar" style="display: none">
-            <?php if ( $inspectConfig['s9y']['nl2br']['iso2br'] ) { ?>
-                <input type="button" class="serendipityPrettyButton input_button" name="insX" value="NoBR" accesskey="x" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag="nl" style="font-style: italic" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]'],'<nl>','</nl>')" />
-            <?php } ?>
-                <input type="button" class="serendipityPrettyButton input_button wrap_selection" name="insI" value="I" accesskey="i" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag="em" style="font-style: italic" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[plugin][<?php echo $inspectConfig['config_item'] ?>]'],'<em>','</em>')" />
-                <input type="button" class="serendipityPrettyButton input_button wrap_selection" name="insB" value="B" accesskey="b" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag="strong" style="font-weight: bold" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]'],'<strong>','</strong>')" />
-                <input type="button" class="serendipityPrettyButton input_button wrap_selection" name="insU" value="U" accesskey="u" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag="u" style="text-decoration: underline;" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]'],'<u>','</u>')" />
-                <input type="button" class="serendipityPrettyButton input_button wrap_selection" name="insQ" value="<?php echo QUOTE ?>" accesskey="q" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag="blockquote" style="font-style: italic" onclick="wrapSelection(document.forms['serendipityEntry']['serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]'],'<blockquote>','</blockquote>')" />
-                <input type="button" class="serendipityPrettyButton input_button wrap_insimg" name="insJ" value="img" accesskey="j" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" onclick="wrapInsImage(document.forms['serendipityEntry']['serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]'])" />
-                <input type="button" class="serendipityPrettyButton input_button wrap_insmedia" name="insImage" value="<?php echo MEDIA; ?>" style="" onclick="window.open('serendipity_admin_image_selector.php?serendipity[textarea]=<?php echo urlencode('serendipity[plugin]['.$inspectConfig['config_item'].']'); ?>', 'ImageSel', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');" />
-                <input type="button" class="serendipityPrettyButton input_button wrap_insurl" name="insU" value="URL" accesskey="l" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" onclick="wrapSelectionWithLink(document.forms['serendipityEntry']['serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]'])" />
-            </span></nobr>
-
-            <script type="text/javascript" src="<?php echo $inspectConfig['s9y']['plugin_path']; ?>jquery.serendipity_old_plain_editor.js"></script>
-<?php
-                } else {
-?>
             <div class="form_field clear plain_editor">
 
             <nobr><span id="tools_<?php echo $inspectConfig['config_item']; ?>" class="editor_toolbar" style="display: none">
@@ -231,9 +209,6 @@ class icText extends inspectConfig
                 <button class="wrap_insmedia" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insImage"><?php echo MEDIA ?></button>
                 <button class="wrap_insurl" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insURL">URL</button>
             </span></nobr>
-<?php
-            }
-?>
 
             <script type="text/javascript">
                 var tb_<?php echo $inspectConfig['config_item']; ?> = document.getElementById('tools_<?php echo $inspectConfig['config_item']; ?>');
@@ -260,9 +235,7 @@ class icText extends inspectConfig
             $tdimension = $inspectConfig['config_item'] == 'question' ? ' rows="5" cols="80"' : ' rows="20" cols="80"';
         } else { // case WYSIWYG EDITOR
             $tdimension = ' rows="10" cols="80"';
-            if ($inspectConfig['s9y']['version'] > 1) {
-                serendipity_emit_htmlarea_code("nuggets{$inspectConfig['elcount']}","");
-            }
+            serendipity_emit_htmlarea_code("nuggets{$inspectConfig['elcount']}","");
             $entry['backend_entry_toolbar_body:nugget'] = 'nuggets' . $inspectConfig['elcount'];
             $entry['backend_entry_toolbar_body:textarea'] = 'serendipity[plugin]['.$inspectConfig['config_item'].']';
 ?>

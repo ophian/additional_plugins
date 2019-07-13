@@ -76,11 +76,11 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian');
-        $propbag->add('version',      '1.33');
+        $propbag->add('version',      '1.40');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
-            'serendipity'   => '1.7',
+            'serendipity'   => '2.0',
             'smarty'        => '3.1.0',
             'php'           => '5.2.0'
         ));
@@ -1200,7 +1200,6 @@ class serendipity_event_faq extends serendipity_event
         $inspectConfig = array();
         // add some $serendipity items to check for
         $inspectConfig['s9y']['wysiwyg'] = $serendipity['wysiwyg'];
-        $inspectConfig['s9y']['version'] = $serendipity['version'][0];
         $inspectConfig['s9y']['nl2br']['iso2br'] = isset($serendipity['nl2br']['iso2br']) ? $serendipity['nl2br']['iso2br'] : null;
         $inspectConfig['s9y']['plugin_path'] = $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/';
 
@@ -1317,7 +1316,6 @@ class serendipity_event_faq extends serendipity_event
         $inspectConfig = array();
         // add some $serendipity items to check for
         $inspectConfig['s9y']['wysiwyg'] = $serendipity['wysiwyg'];
-        $inspectConfig['s9y']['version'] = $serendipity['version'][0];
         $inspectConfig['s9y']['nl2br']['iso2br'] = isset($serendipity['nl2br']['iso2br']) ? $serendipity['nl2br']['iso2br'] : null;
         $inspectConfig['s9y']['plugin_path'] = $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/';
 
