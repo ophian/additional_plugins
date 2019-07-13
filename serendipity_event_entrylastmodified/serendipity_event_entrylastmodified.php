@@ -17,8 +17,8 @@ class serendipity_event_entrylastmodified extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_ENTRYLASTMODIFIED_NAME);
         $propbag->add('description',   PLUGIN_EVENT_ENTRYLASTMODIFIED_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Ian');
-        $propbag->add('version',       '1.11');
+        $propbag->add('author',        'Garvin Hicking, Ian Styx');
+        $propbag->add('version',       '1.12');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -98,7 +98,8 @@ class serendipity_event_entrylastmodified extends serendipity_event
                     $extended_key = &$this->getFieldReference('extended', $eventData);
                     if ($addData['extended'] || $addData['preview']) {
                         $eventData[0]['exflag'] = 1;
-                        if ($eventData[0]['timestamp'] != $eventData[0]['last_modified']) {
+                        # 631152000 is 01.01.1990 00:00:00 GMT - earlier timestamps must be wrong
+                        if ($eventData[0]['timestamp'] != $eventData[0]['last_modified'] && $eventData[0]['last_modified'] > 631152000) {
                             $lm = sprintf($format_string_mod, $position, PLUGIN_EVENT_ENTRYLASTMODIFIED_HTML, serendipity_formatTime(DATE_FORMAT_SHORT, $eventData[0]['last_modified']));
                             $eventData[0]['add_footer'] .= $lm;
                             $eventData[0]['string_last_modified'] .= $lm;
