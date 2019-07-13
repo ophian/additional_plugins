@@ -1,3 +1,8 @@
+0.81:
+-----
+ * Put JS serendipity_imageSelector_addToBody() into the serendipity scope
+ * Raise requirements to Serendipity 2.0 for this scope issue.
+
 0.80:
 -----
  * Minor PHP7.2 fix for "implements Countable"

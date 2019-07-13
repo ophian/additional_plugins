@@ -9,7 +9,7 @@ function serendipity_amazonSelector_done(textarea)
            +  ','
            +    mode
            +'[/amazon_chooser]'
-    self.opener.serendipity_imageSelector_addToBody(block, textarea);
+    self.opener.serendipity.serendipity_imageSelector_addToBody(block, textarea);
     self.close();
 }
 
