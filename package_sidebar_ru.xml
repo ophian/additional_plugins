@@ -116,7 +116,6 @@
         <file>question.svg</file>
         <file>question.svg.png</file>
       </dir>
-      <file>jquery.serendipity_old_plain_editor.js</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -169,7 +168,6 @@
     <file>serendipity_event_faq/img/plusbottom.gif</file>
     <file>serendipity_event_faq/img/question.svg</file>
     <file>serendipity_event_faq/img/question.svg.png</file>
-    <file>serendipity_event_faq/jquery.serendipity_old_plain_editor.js</file>
     <file>serendipity_event_faq/lang_bg.inc.php</file>
     <file>serendipity_event_faq/lang_cs.inc.php</file>
     <file>serendipity_event_faq/lang_cz.inc.php</file>

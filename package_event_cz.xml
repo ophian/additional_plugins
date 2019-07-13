@@ -119,9 +119,9 @@
 <description>Přidává tlačítko, které umožňuje vkládat do příspěvků výsledky hledání na Amazon.com</description>
 <maintainers><maintainer><name>Matthew Groeninger, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.80</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-30</date>
+  <version>0.81</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2019-07-13</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -1154,9 +1154,9 @@
 <description>Vybírá obrázky z webové galerie Coppermine</description>
 <maintainers><maintainer><name>Matthew Maude (modified by Jim Davies)</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.09</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-12-12</date>
+  <version>2.10</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2019-07-13</date>
   <filelist>
     <dir name="serendipity_event_cpgselector">
       <file>ChangeLog</file>
@@ -2498,9 +2498,9 @@
 <description>Správa FAQ - často kladených otázek</description>
 <maintainers><maintainer><name>Falk Doering, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.33</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-08-27</date>
+  <version>1.40</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2019-07-13</date>
   <filelist>
     <dir name="serendipity_event_faq">
       <dir name="alternatives">
@@ -2533,7 +2533,6 @@
         <file>question.svg</file>
         <file>question.svg.png</file>
       </dir>
-      <file>jquery.serendipity_old_plain_editor.js</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -2586,7 +2585,6 @@
     <file>serendipity_event_faq/img/plusbottom.gif</file>
     <file>serendipity_event_faq/img/question.svg</file>
     <file>serendipity_event_faq/img/question.svg.png</file>
-    <file>serendipity_event_faq/jquery.serendipity_old_plain_editor.js</file>
     <file>serendipity_event_faq/lang_bg.inc.php</file>
     <file>serendipity_event_faq/lang_cs.inc.php</file>
     <file>serendipity_event_faq/lang_cz.inc.php</file>
@@ -6282,17 +6280,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_mimetex</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mimetex/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Interpret příkazů MimeTex/LaTeX</summary>
 <groups>MARKUP</groups>
 <description>Vytvoří obrázky gif z výrazu TeX použitím softwaru MimeTex nebo LaTeX</description>
 <maintainers><maintainer><name>Matthew Groeninger</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
+  <version>1.6</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-08-17</date>
+  <date>2019-07-13</date>
   <filelist>
     <dir name="serendipity_event_mimetex">
+      <file>ChangeLog</file>
       <dir name="images">
         <file>error.gif</file>
         <file>error.png</file>
@@ -6314,6 +6314,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_mimetex/ChangeLog</file>
     <file>serendipity_event_mimetex/images/error.gif</file>
     <file>serendipity_event_mimetex/images/error.png</file>
     <file>serendipity_event_mimetex/lang_cs.inc.php</file>

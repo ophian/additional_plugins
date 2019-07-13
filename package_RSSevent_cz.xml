@@ -31,8 +31,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_amazonchooser</link>
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Tlačítko médií Amazon&lt;/b&gt;&lt;br /&gt;Přidává tlačítko, které umožňuje vkládat do příspěvků výsledky hledání na Amazon.com&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 30 Aug 2018 14:04:52 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Tlačítko médií Amazon&lt;/b&gt;&lt;br /&gt;Přidává tlačítko, které umožňuje vkládat do příspěvků výsledky hledání na Amazon.com&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sat, 13 Jul 2019 10:24:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -193,8 +193,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cpgselector</link>
 <category>Event Plugins</category>
 <author>Matthew Maude (modified by Jim Davies)</author>
-<content:encoded>&lt;b&gt;serendipity_event_cpgselector&lt;br /&gt;Coppermine Selector&lt;/b&gt;&lt;br /&gt;Vybírá obrázky z webové galerie Coppermine&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 12 Dec 2016 12:32:52 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_cpgselector&lt;br /&gt;Coppermine Selector&lt;/b&gt;&lt;br /&gt;Vybírá obrázky z webové galerie Coppermine&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sat, 13 Jul 2019 10:27:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cpgselector</guid>
 </item>
 <item>
@@ -373,8 +373,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_faq</link>
 <category>Event Plugins</category>
 <author>Falk Doering, Ian</author>
-<content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;FAQ - Často kladené otázky&lt;/b&gt;&lt;br /&gt;Správa FAQ - často kladených otázek&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Mon, 27 Aug 2018 20:25:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;FAQ - Často kladené otázky&lt;/b&gt;&lt;br /&gt;Správa FAQ - často kladených otázek&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sat, 13 Jul 2019 10:49:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_faq</guid>
 </item>
 <item>
@@ -743,7 +743,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger</author>
 <content:encoded>&lt;b&gt;serendipity_event_mimetex&lt;br /&gt;Interpret příkazů MimeTex/LaTeX&lt;/b&gt;&lt;br /&gt;Vytvoří obrázky gif z výrazu TeX použitím softwaru MimeTex nebo LaTeX&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 17 Aug 2018 16:14:30 +0200</pubDate>
+<pubDate>Sat, 13 Jul 2019 10:18:21 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mimetex</guid>
 </item>
 <item>
