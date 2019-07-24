@@ -1,3 +1,7 @@
+2.16:
+-----
+ * Sync: Fix error in PHP 7 by casting variables
+
 2.15:
 -----
  * Don't emit "frontend_footer" hook output in commentpopup case

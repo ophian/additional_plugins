@@ -44,7 +44,7 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian');
-        $propbag->add('version',       '2.15');
+        $propbag->add('version',       '2.16');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -2074,8 +2074,8 @@ END_IMG_CSS;
                 // Only display the current rating if there are enough votes
                 if ($enough_votes) {
                     // Figure out the image-based rating and width
-                    $rating = $this->imageRating($karma, $votes);
-                    $cr_width = ($rating * $this->image_width) / 5;
+                    $rating = (int)$this->imageRating($karma, $votes);
+                    $cr_width = ($rating * (int)$this->image_width) / 5;
                     // Get current karma text
                     $curr_msg = $this->get_config('curr_msg', PLUGIN_KARMA_CURRENT);
                     $karma_display .= "
