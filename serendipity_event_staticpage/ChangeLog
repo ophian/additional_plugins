@@ -1,3 +1,13 @@
+6.00:
+-----
+
+ * Refactor backend_media_rename hook for Serendipity Styx 3.0
+   to allow WepP Variations and change image formats.
+   Implements staticpage database handles back into plugin via the hook.
+ * Raises Requirement to at least PHP 7 and min Styx 3.0-Dev versions.
+
+
+============================================================
 5.69:
 -----
  * Fix some uninitialized variable checks

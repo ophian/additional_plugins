@@ -94,11 +94,11 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '5.69');
+        $propbag->add('version', '6.00');
         $propbag->add('requirements', array(
-            'serendipity' => '2.1.0',
+            'serendipity' => '3.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.3.0'
+            'php'         => '7.0.0'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('BACKEND_EDITOR', 'BACKEND_FEATURES', 'FRONTEND_FEATURES'));
@@ -3743,37 +3743,59 @@ class serendipity_event_staticpage extends serendipity_event
                     $this->showBackend(serendipity_smarty_init());
                     break;
 
-
                 case 'backend_media_rename':
                     if (!$access_granted) {
                         break;
                     }
+                    if (isset($debug)) { // this is Serendipity Styx 3.0-dev only
+                        $debug = $eventData[0]['debug'] ?? false; // PHP 7
+                    } else {
+                        $debug = false; // old version
+                        $eventData[0]['haswebp'] = false;
+                    }
+
                     // Only MySQL supported, since I don't know how to use REGEXPs differently. (Ian: Should be fixed now!)
                     #if ($serendipity['dbType'] != 'mysqli' && $serendipity['dbType'] != 'mysql') {
                     #    echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY . "</span>\n";
                     #    break;
                     #}
 
-                    // isset '' == true! Serendipity 2.1 will now support an empty oldDir to remove files to 'uploads/' root
-                    if (!isset($eventData[0]['oldDir'])) {
-                        break;
+                    if ($debug) { $serendipity['logger']->debug("IN_staticpage:: eventData= ".print_r($eventData,1)); }
+                    // From Serendipity 2.1 now supports an non-set oldDir to remove files to 'uploads/' root
+                    if ($eventData[0]['oldDir'] === null) {
+                        $eventData[0]['oldDir'] = '';
                     }
 
                     if ($eventData[0]['type'] == 'filedir' || $eventData[0]['type'] == 'file') {
                         // Path patterns to SELECT en detail
-                        $oldDirThumb = $eventData[0]['oldDir'] . $eventData[0]['file']['name'] . '.' . $eventData[0]['file']['thumbnail_name'] . (($eventData[0]['file']['extension']) ? '.'.$eventData[0]['file']['extension'] : '');
-                        $newDirThumb = $eventData[0]['newDir'] . $eventData[0]['file']['name'] . '.' . $eventData[0]['file']['thumbnail_name'] . (($eventData[0]['file']['extension']) ? '.'.$eventData[0]['file']['extension'] : '');
-                        $oldDirFile  = $eventData[0]['oldDir'] . $eventData[0]['file']['name'] . (($eventData[0]['file']['extension']) ? '.'.$eventData[0]['file']['extension'] : '');
-                        $newDirFile  = $eventData[0]['newDir'] . $eventData[0]['file']['name'] . (($eventData[0]['file']['extension']) ? '.'.$eventData[0]['file']['extension'] : '');
-                        // REPLACE BY Path and Name only to also match Thumbs
-                        $fromFile = $eventData[0]['oldDir'] . $eventData[0]['file']['name'];
-                        $toFile   = $eventData[0]['newDir'] . $eventData[0]['file']['name'];
+                        $oldDirFile  = $eventData[0]['file']['path'] . $eventData[0]['file']['name'] . (($eventData[0]['file']['extension']) ? '.'.$eventData[0]['file']['extension'] : '');
+                        $oldDirThumb = $eventData[0]['file']['path'] . $eventData[0]['file']['name'] . '.' . $eventData[0]['file']['thumbnail_name'] . (($eventData[0]['file']['extension']) ? '.'.$eventData[0]['file']['extension'] : '');
 
+                        // REPLACE BY Path and Name only to also match Thumbs
+                        $fromFile = $eventData[0]['from']; // passed as a relative and already filedir type like cut path in fnc_img ~4680.
+                        $toFile   = $eventData[0]['to'];   // Ditto
+                        // Format case
+                        if ($eventData[0]['chgformat']) {
+                            $fromThumbFormat = $eventData[0]['fromThumb'];
+                            $toThumbFormat   = $eventData[0]['toThumb'];
+                        }
+                        // ARE any image (webp) variations set? And YES we don't need to check for variations but replace them in case!
+                        if ($eventData[0]['haswebp']) {
+                            if ($eventData[0]['type'] == 'file') {
+                                $fromVarFile = $eventData[0]['fromwebp']; // Should be relative upload path + .v/ + filename w/o webp extension to also match potential thumbnails
+                                $toVarFile   = $eventData[0]['towebp']; // Ditto
+                            } else {
+                                $fromVarFile = $eventData[0]['oldDir'] . '.v/' . $eventData[0]['file']['name'];
+                                $toVarFile   = $eventData[0]['newDir'] . '.v/' . $eventData[0]['file']['name'];
+                            }
+                        }
+
+                        // no need for VARIATION checks in SELECT since they don't exist independently
                         if ($serendipity['dbType'] == 'mysqli' || $serendipity['dbType'] == 'mysql') {
                             $q = "SELECT id, content, pre_content
                                     FROM {$serendipity['dbPrefix']}staticpages
-                                   WHERE content     REGEXP '(src=|href=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . ")'
-                                      OR pre_content REGEXP '(src=|href=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . ")'";
+                                   WHERE content     REGEXP '(src=|href=|data-fallback=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . ")'
+                                      OR pre_content REGEXP '(src=|href=|data-fallback=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirFile) . "|" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . ")'";
                         } else {
                             $q = "SELECT id, content, pre_content
                                     FROM {$serendipity['dbPrefix']}staticpages
@@ -3782,17 +3804,25 @@ class serendipity_event_staticpage extends serendipity_event
                                        OR (content || pre_content LIKE '%" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . "%')
                                        OR (content || pre_content LIKE '%" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDirThumb) . "%')";
                         }
+                        if ($debug) {
+                            $serendipity['logger']->debug("IN_staticpage:: SELECT SQL= \n                                  $q");
+                            $serendipity['logger']->debug(" - - - "); /*spacer*/
+                        }
                     } elseif ($eventData[0]['type'] == 'dir') {
                         // RENAME vars to oldDir and newDir for the SELECT regex match and simplify query
                         // and REPLACE BY Path only to also match Thumbs
                         $fromFile = $oldDir = $eventData[0]['oldDir'];
                         $toFile   = $newDir = $eventData[0]['newDir'];
+                        // ARE any image (webp) variations set? And YES we don't need to check SELECT for variations, but replace them in case!
+                        $fromVarFile = $eventData[0]['oldDir'] . '.v/';
+                        $toVarFile   = $eventData[0]['newDir'] . '.v/';
+                        $eventData[0]['haswebp'] = true;
 
                         if ($serendipity['dbType'] == 'mysqli' || $serendipity['dbType'] == 'mysql') {
                             $q = "SELECT id, content, pre_content
                                     FROM {$serendipity['dbPrefix']}staticpages
-                                   WHERE content     REGEXP '(src=|href=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDir) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDir) . ")'
-                                      OR pre_content REGEXP '(src=|href=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDir) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDir) . ")'";
+                                   WHERE content     REGEXP '(src=|href=|data-fallback=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDir) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDir) . ")'
+                                      OR pre_content REGEXP '(src=|href=|data-fallback=|window.open.)(\'|\")(" . serendipity_db_escape_String($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $oldDir) . "|" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDir) . ")'";
                         } else {
                             $q = "SELECT id, content, pre_content
                                     FROM {$serendipity['dbPrefix']}staticpages
@@ -3800,23 +3830,50 @@ class serendipity_event_staticpage extends serendipity_event
                                        OR (content || pre_content LIKE '%" . serendipity_db_escape_String($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $oldDir) . "%')";
                         }
                     }
-                    $dirs = serendipity_db_query($q);
+                    $dirs = serendipity_db_query($q, false, 'assoc');// we only want to play with assoc
 
                     if (is_array($dirs)) {
+                        $i = 0;
                         foreach($dirs AS $dir) {
 
-                            $dir['content']     = preg_replace('@(src=|href=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromFile) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromFile) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toFile, $dir['content']);
-                            $dir['pre_content'] = preg_replace('@(src=|href=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromFile) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromFile) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toFile, $dir['pre_content']);
+                            if ($debug) {
+                                $serendipity['logger']->debug("IN_staticpage:: ORIGINs    REPLACE fromFile=   ..$fromFile    => toFile=   ..$toFile");
+                                if ((isset($eventData[0]['chgformat']) && $eventData[0]['chgformat'] === true) && !empty($toThumbFormat)) {
+                                    $serendipity['logger']->debug("IN_staticpage:: FORMAT REPLACE fromThumbFormat=..$fromThumbFormat => toThumbFormat=..$toThumbFormat");
+                                }
+                                if ($eventData[0]['haswebp'] && !empty($toVarFile)) {
+                                    $serendipity['logger']->debug("IN_staticpage:: VARIATIONs REPLACE fromVarFile=..$fromVarFile => toVarFile=..$toVarFile");
+                                }
+                            }
 
+                            $dir['content']     = preg_replace('@(src=|href=|data-fallback=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromFile) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromFile) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toFile, $dir['content']);
+                            $dir['pre_content'] = preg_replace('@(src=|href=|data-fallback=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromFile) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromFile) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toFile, $dir['pre_content']);
+                            // Format case
+                            if ((isset($eventData[0]['chgformat']) && $eventData[0]['chgformat'] === true) && !empty($toThumbFormat)) {
+                                $dir['content']     = preg_replace('@(src=|href=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromThumbFormat) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromThumbFormat) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toThumbFormat, $dir['content']);
+                                $dir['pre_content'] = preg_replace('@(src=|href=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromThumbFormat) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromThumbFormat) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toThumbFormat, $dir['pre_content']);
+                            }
+                            // Variation case
+                            if ($eventData[0]['haswebp'] && !empty($toVarFile)) {
+                                $dir['content']     = preg_replace('@(srcset=|href=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromVarFile) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromVarFile) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toVarFile, $dir['content']);
+                                $dir['pre_content'] = preg_replace('@(srcset=|href=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromVarFile) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromVarFile) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toVarFile, $dir['pre_content']);
+                            }
                             $uq = "UPDATE {$serendipity['dbPrefix']}staticpages
                                       SET content     = '" . serendipity_db_escape_string($dir['content']) . "' ,
                                           pre_content = '" . serendipity_db_escape_string($dir['pre_content']) . "'
                                     WHERE id          = " . serendipity_db_escape_string($dir['id']);
                             serendipity_db_query($uq);// RQ: does it matter to serendipity_db_escape_string() content which already has been escaped ??
+                            $i++;
                         }
+                        #if ($debug) { $serendipity['logger']->debug("IN_staticpage:: REPLACEd= ".print_r($dir,1)); }
+                        if ($debug) { $serendipity['logger']->debug(" - - - "); /*spacer*/ }
 
                         $spimgmovedtodir = sprintf(STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRIES, count($dirs));
                         printf('<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . $spimgmovedtodir . "</span>\n");
+
+                        if (is_array($dirs) && !empty($dirs) && count($dirs) > 0 && $i > 0) {
+                            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . sprintf(MEDIA_FILE_RENAME_ENTRY, count($dirs) . ' (staticpages)') . "</span>\n";
+                        }
                     }
                     break;
 
