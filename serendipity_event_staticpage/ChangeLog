@@ -1,3 +1,7 @@
+6.01:
+-----
+ * Raises Requirement to at least PHP 7 and min Styx 3.0-Dev = 2.9.99 versions.
+
 6.00:
 -----
 
