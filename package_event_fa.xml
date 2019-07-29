@@ -9129,8 +9129,8 @@
 <description>Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.00</version>
-  <requirements:s9yVersion>3.0</requirements:s9yVersion>
+  <version>6.01</version>
+  <requirements:s9yVersion>2.9.99</requirements:s9yVersion>
   <date>2019-07-29</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
