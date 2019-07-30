@@ -1,3 +1,7 @@
+6.02:
+-----
+ * Checked 6.00 media actions working OK with 2.9.0. Reset requirement to 2.9.0.
+
 6.01:
 -----
  * Raises Requirement to at least PHP 7 and min Styx 3.0-Dev = 2.9.99 versions.
