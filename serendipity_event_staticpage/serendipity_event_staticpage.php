@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.02');
+        $propbag->add('version', '6.03');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -3775,7 +3775,7 @@ class serendipity_event_staticpage extends serendipity_event
                         $fromFile = $eventData[0]['from']; // passed as a relative and already filedir type like cut path in fnc_img ~4680.
                         $toFile   = $eventData[0]['to'];   // Ditto
                         // Format case
-                        if ($eventData[0]['chgformat']) {
+                        if (!empty($eventData[0]['chgformat'])) {
                             $fromThumbFormat = $eventData[0]['fromThumb'];
                             $toThumbFormat   = $eventData[0]['toThumb'];
                         }
