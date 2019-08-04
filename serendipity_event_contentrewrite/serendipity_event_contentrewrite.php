@@ -12,7 +12,8 @@ class serendipity_event_contentrewrite extends serendipity_event
     var $rewrite_from, $rewrite_to;
     var $fromstring, $tostring;
 
-    function cleanup() {
+    function cleanup()
+    {
         // Cleanup. Remove all empty configs on SAVECONF-Submit.
         serendipity_plugin_api::remove_plugin_value($this->instance, array('title', 'description'));
 
@@ -24,11 +25,12 @@ class serendipity_event_contentrewrite extends serendipity_event
         global $serendipity;
 
         $this->title = $this->get_config('title', $this->title);
+
         $propbag->add('name',          PLUGIN_EVENT_CONTENTREWRITE_NAME);
         $propbag->add('description',   PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.4.3');
+        $propbag->add('version',       '1.4.4');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -92,7 +94,7 @@ class serendipity_event_contentrewrite extends serendipity_event
             }
         }
 
-        $counter        = ($counter > 0 ? $counter + 1 : $counter);
+        $counter = ($counter > 0 ? $counter + 1 : $counter);
 
         if (count($this->title_values) == count($this->descr_values)) {
             foreach($this->title_values AS $key => $val) {
@@ -131,15 +133,18 @@ class serendipity_event_contentrewrite extends serendipity_event
         $this->counter = $counter;
     }
 
-    function example() {
+    function example()
+    {
         return sprintf(PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING, $this->fromstring, $this->tostring);
     }
 
-    function install() {
+    function install()
+    {
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
 
-    function uninstall(&$propbag) {
+    function uninstall(&$propbag)
+    {
         serendipity_plugin_api::hook_event('backend_cache_purge', $this->title);
         serendipity_plugin_api::hook_event('backend_cache_entries', $this->title);
     }
@@ -166,50 +171,49 @@ class serendipity_event_contentrewrite extends serendipity_event
 
         switch($switch[1]) {
             case 'title':
-
-                    if ($switch[2] != 'empty') {
-                        $propbag->add('type',        'string');
-
-                        if ($this->counter == $switch[2]) {
-                            $propbag->add('name',        PLUGIN_EVENT_CONTENTREWRITE_NEWTITLE);
-                            $propbag->add('description', PLUGIN_EVENT_CONTENTREWRITE_NEWTDESCRIPTION);
-                        } else {
-                            $propbag->add('name',        sprintf(PLUGIN_EVENT_CONTENTREWRITE_OLDTITLE, $switch[2]));
-                            $propbag->add('description', PLUGIN_EVENT_CONTENTREWRITE_OLDTDESCRIPTION);
-                        }
-                    } else {
-                        $propbag->add('type',        'string');
-                        $propbag->add('name',        PLUGIN_EVENT_CONTENTREWRITE_PTITLE);
-                        $propbag->add('description', PLUGIN_EVENT_CONTENTREWRITE_PDESCRIPTION);
-                    }
-                    break;
-
-            case 'description':
-                    $propbag->add('type',        'string');
+                if ($switch[2] != 'empty') {
+                    $propbag->add('type', 'string');
 
                     if ($this->counter == $switch[2]) {
-                        $propbag->add('name',        PLUGIN_EVENT_CONTENTREWRITE_NEWDESCRIPTION);
-                        $propbag->add('description', PLUGIN_EVENT_CONTENTREWRITE_NEWDDESCRIPTION);
+                        $propbag->add('name',        PLUGIN_EVENT_CONTENTREWRITE_NEWTITLE);
+                        $propbag->add('description', PLUGIN_EVENT_CONTENTREWRITE_NEWTDESCRIPTION);
                     } else {
-                        $propbag->add('name',        sprintf(PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION, $switch[2]));
-                        $propbag->add('description', PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION);
+                        $propbag->add('name',        sprintf(PLUGIN_EVENT_CONTENTREWRITE_OLDTITLE, $switch[2]));
+                        $propbag->add('description', PLUGIN_EVENT_CONTENTREWRITE_OLDTDESCRIPTION);
                     }
-                    break;
+                } else {
+                    $propbag->add('type',        'string');
+                    $propbag->add('name',        PLUGIN_EVENT_CONTENTREWRITE_PTITLE);
+                    $propbag->add('description', PLUGIN_EVENT_CONTENTREWRITE_PDESCRIPTION);
+                }
+                break;
+
+            case 'description':
+                $propbag->add('type', 'string');
+
+                if ($this->counter == $switch[2]) {
+                    $propbag->add('name',        PLUGIN_EVENT_CONTENTREWRITE_NEWDESCRIPTION);
+                    $propbag->add('description', PLUGIN_EVENT_CONTENTREWRITE_NEWDDESCRIPTION);
+                } else {
+                    $propbag->add('name',        sprintf(PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION, $switch[2]));
+                    $propbag->add('description', PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION);
+                }
+                break;
 
             case 'rewrite_string':
-                    $propbag->add('type',         'string');
-                    $propbag->add('name',         PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING);
-                    $propbag->add('description',  PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRINGDESC);
-                    break;
+                $propbag->add('type',         'string');
+                $propbag->add('name',         PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING);
+                $propbag->add('description',  PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRINGDESC);
+                break;
 
             case 'rewrite_char':
-                    $propbag->add('type',         'string');
-                    $propbag->add('name',         PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR);
-                    $propbag->add('description',  PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC);
-                    break;
+                $propbag->add('type',         'string');
+                $propbag->add('name',         PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR);
+                $propbag->add('description',  PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC);
+                break;
 
             default:
-                    return false;
+                return false;
         }
         return true;
     }
@@ -224,7 +228,7 @@ class serendipity_event_contentrewrite extends serendipity_event
             foreach($this->rewrite_from AS $key => $val) {
 ?>
     <tr>
-        <th style="font-size: 8pt; font-color: white;"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET)); ?></th>
+        <th style="font-size: 8pt; color: white;"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET)); ?></th>
         <td><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($this->rewrite_to[$key]) : htmlspecialchars($this->rewrite_to[$key], ENT_COMPAT, LANG_CHARSET)); ?></td>
     </tr>
 <?php
@@ -235,37 +239,26 @@ class serendipity_event_contentrewrite extends serendipity_event
 <?php
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
+
         if (isset($hooks[$event])) {
+
             switch($event) {
                 case 'frontend_display':
                     $char   = &$this->get_config('rewrite_char');
                     $string = &$this->get_config('rewrite_string');
                     foreach($this->rewrite_from AS $nr => $v_from) {
-                        $v_to   = $this->rewrite_to[$nr];
+                        $v_to = $this->rewrite_to[$nr];
                         if ($v_from != '' && $v_to != '') {
                             // Use the supplied rewrite string and replace the {from} and {to} values with the ones we got from the plugin
-                            $new =
-                              str_replace(
-                                array(
-                                  '{' . $this->fromstring . '}',
-                                  '{' . $this->tostring . '}'
-                                ),
-
-                                array(
-                                  str_replace(
-                                    $char,
-                                    '',
-                                    $v_from
-                                  ),
-
-                                  $v_to
-                                ),
-
-                                $string
+                            $new = str_replace(
+                                        array('{' . $this->fromstring . '}', '{' . $this->tostring . '}'),
+                                        array( str_replace($char, '', $v_from), $v_to ),
+                                        $string
                             );
 
                             // Build a regular expression (ungreedy, multiline) with our quoted value. $val here is the word needing the replacement
@@ -280,15 +273,14 @@ class serendipity_event_contentrewrite extends serendipity_event
                                     $eventData[$element] = preg_replace($regex, '\1' . $new . '\3', $eventData[$element]);
                                 }
                             }
-
                         }
                     }
-
                     return true;
                     break;
             }
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
