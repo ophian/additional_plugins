@@ -7,8 +7,10 @@
 <template>1024px</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-08-27 to 2009-08-16 as v.1.1 with a fixed size of ~970px. Structural child of andreas.. themes.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway &amp; Andreas Viklund</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -77,8 +79,10 @@
 <template>adaptation</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2008-05-02 to 2009-08-25 as v.0.81</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and basically mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Basically Yes</mobile>
 <maintainers><maintainer><name>Alp UÃ§kan</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -223,8 +227,10 @@
 <template>andreas00</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-04-10 to 2008-08-16 with a fixed content size of 780px width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway &amp; Andreas Viklund</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -303,8 +309,10 @@
 <template>andreas06</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2005-11-28 to 2014-01-08 as v1.1.1, with a fixed content size of 752px width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway, Andreas Viklund</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -395,8 +403,10 @@
 <template>andreas08</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-10-23 to 2013-10-26 as v2.0, with a fixed content size of 760px width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway, Andreas Viklund</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -513,8 +523,10 @@
 <template>andreas09</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full screen theme from 2006-11-05 to 2013-02-07, responsive with a fixed minimum content size of 770px width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway, Rebecca Hemstad, Andreas Viklund</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -609,8 +621,10 @@
 <template>artistic</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old small-screen theme from 2006-08-24 to 2009-08-27 as v.1.1, with a fixed content width of 774px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway &amp; Ricky Wilson</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -665,8 +679,10 @@
 <template>axcur</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old small-screen theme from 2009-08-13 to 2013-10-26, with a fixed content width of 1000px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly! Derivate of xkur theme.</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Derivate of xkur theme.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>reinhardl</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -817,8 +833,10 @@
 <template>barSinister3</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-04-01 to 2008-02-14 with a fixed content size of 780px width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Martin, Carl Galloway</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -885,8 +903,10 @@
 <template>bartleby</template>
 <license>N/A (=GPL)</license>
 <summary>Simplified additional &lt;u&gt;engine&lt;/u&gt; theme from Mar 4, 2015, with no sidebars.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended>Yes</recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>onli</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -939,8 +959,10 @@
 <template>bazooka</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-01-21 to 2008-02-14 with a fixed content size of 880px width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>David Cummins &amp; Carl Galloway</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1009,8 +1031,10 @@
 <template>be-nice</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-08-26 to 2009-08-17 as v.1.1, with a fixed content size of 758px. Structural child sibling of andreas* themes.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1131,8 +1155,10 @@
 <template>bex01</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-05-01 to 2013-10-26, with a fixed content size of 754px. Structural child sibling of andreas* themes.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Rebecca Hemstad</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1247,8 +1273,10 @@
 <template>blix</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-01-03 to 2014-01-09, with a fixed content size of 770px. Structural child sibling of leaf and glossy_white themes.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Sebastian Schmieg (ported by Christian Hoffmann)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1357,9 +1385,11 @@
 <template>blogger_death</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-10-14 to 2007-04-03 as v0.1, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Fully responsive and mobile friendly! Based on a blogger template&amp;colon;
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Based on a blogger template&amp;colon;
 &quot;//blogger-templates.blogspot.com/2004_03_14_blogger-templates_archive.html#108060235862359662&quot;</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Frederic Wenzel</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1400,6 +1430,8 @@
 <summary>CSS complete theme only.</summary>
 <description>Simple example theme from 2004 using all the template files from the old default fallback (Serendipity 2.3) theme. Styled by CSS only.</description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>Sebastian Bergmann</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1440,8 +1472,10 @@
 <template>blue-haze</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-22 to 2007-04-03, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Fully responsive and mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Evan Nemerson</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1472,8 +1506,10 @@
 <template>blue-iceberg</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-23 to 2007-04-03, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Fully responsive and mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Evan Nemerson</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1504,8 +1540,10 @@
 <template>brownpaper</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old 2-sidebar full-screen theme from 2006-04-28 to 2008-02-14.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Now - with 2019 - a full modern grid/flexible system theme with a browsers content size up to ~96 percent. Responsive, &lt;u&gt;and&lt;/u&gt; fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Now - with 2019 revision - a full modern grid/flexible system theme with a browsers content size up to ~96 percent.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Abdussamad Abdurrazzaq, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1574,8 +1612,10 @@
 <template>carl_blue</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen 2-sidebar-right theme from 2005-12-09 to 2008-02-14, with a fixed content width of 880px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1628,6 +1668,8 @@
 <summary></summary>
 <description></description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>Carl Galloway</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1690,8 +1732,10 @@
 <template>carl_green</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen 2-sidebar-right theme from 2005-12-01 to 2008-02-14, with a fixed content width of 880px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1742,8 +1786,10 @@
 <template>ceejay01</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen concatenated sidebar to right theme from 2006-08-25 to 2009-08-17 as v.1.1, with a fixed content width of ~869 to 935px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>ceejay</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1806,8 +1852,10 @@
 <template>chocolate_fudge</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-08-25 to 2008-02-14 as v.1.1</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>ceejay</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1866,8 +1914,10 @@
 <template>chromZv2</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, up to 2-sidebar to right theme from 2007-07-15 to 2009-08-17, with a fixed content width of 760px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name></name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1954,8 +2004,10 @@
 <template>codeschmiede</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen theme from 2005-11-08 to 2008-02-14, with a fixed content width of 780px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but &lt;u&gt;not&lt;/u&gt; fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Partly Yes</mobile>
 <maintainers><maintainer><name>Florian Anderiasch</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1994,8 +2046,10 @@
 <template>coffee_bar</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, concatenated sidebar to left theme from 2006-08-03 to 2008-02-14 as v1.1 with a fixed content size of 760px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly! Authors successor theme of Coffee Cup (competition).</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Authors successor theme of Coffee Cup (competition).</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>David Cummins</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2066,6 +2120,8 @@
 <summary></summary>
 <description></description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>David Cummins</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2114,8 +2170,10 @@
 <template>connections</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old WP-port theme from 2005-12-10 to 2008-02-14, with a fixed content size of 760px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions, leaving the &quot;old&quot; index main table design. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions, leaving the &quot;old&quot; index main table design.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2192,6 +2250,8 @@
 <summary></summary>
 <description></description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2249,18 +2309,20 @@
 </package>
 <package version="1.0">
 <name>CoSTa's Nature Theme</name>
-<template>costa-nature_theme</template>
+<template>costa-nature</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-05-02 to 2013-02-07 as v.0.6, with a fixed content size of 700px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Kostas CoSTa Brzezinski</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
   <date>2019-02-17</date>
   <filelist>
-    <dir name="costa-nature_theme">
+    <dir name="costa-nature">
       <file>comments.tpl</file>
       <file>entries.tpl</file>
       <dir name="img">
@@ -2296,36 +2358,36 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>costa-nature_theme/comments.tpl</file>
-    <file>costa-nature_theme/entries.tpl</file>
-    <file>costa-nature_theme/img/arrow_right-01.png</file>
-    <file>costa-nature_theme/img/banner-bottom.jpg</file>
-    <file>costa-nature_theme/img/banner-title.jpg</file>
-    <file>costa-nature_theme/img/banner-top.jpg</file>
-    <file>costa-nature_theme/img/cite.gif</file>
-    <file>costa-nature_theme/img/code.gif</file>
-    <file>costa-nature_theme/img/comment.gif</file>
-    <file>costa-nature_theme/img/favicon.png</file>
-    <file>costa-nature_theme/img/graph_bar_horisontal.png</file>
-    <file>costa-nature_theme/img/link.gif</file>
-    <file>costa-nature_theme/img/main-gradient.png</file>
-    <file>costa-nature_theme/img/search.png</file>
-    <file>costa-nature_theme/img/shadow-left.png</file>
-    <file>costa-nature_theme/img/shadow-right.png</file>
-    <file>costa-nature_theme/img/spacer.png</file>
-    <file>costa-nature_theme/img/title.gif</file>
-    <file>costa-nature_theme/img/title_hover.gif</file>
-    <file>costa-nature_theme/img/trackback.gif</file>
-    <file>costa-nature_theme/img/xml.gif</file>
-    <file>costa-nature_theme/index.tpl</file>
-    <file>costa-nature_theme/info.txt</file>
-    <file>costa-nature_theme/preview.png</file>
-    <file>costa-nature_theme/preview.webp</file>
-    <file>costa-nature_theme/preview_fullsize.jpg</file>
-    <file>costa-nature_theme/preview_fullsize.webp</file>
-    <file>costa-nature_theme/README</file>
-    <file>costa-nature_theme/style.css</file>
-    <file>costa-nature_theme/trackbacks.tpl</file>
+    <file>costa-nature/comments.tpl</file>
+    <file>costa-nature/entries.tpl</file>
+    <file>costa-nature/img/arrow_right-01.png</file>
+    <file>costa-nature/img/banner-bottom.jpg</file>
+    <file>costa-nature/img/banner-title.jpg</file>
+    <file>costa-nature/img/banner-top.jpg</file>
+    <file>costa-nature/img/cite.gif</file>
+    <file>costa-nature/img/code.gif</file>
+    <file>costa-nature/img/comment.gif</file>
+    <file>costa-nature/img/favicon.png</file>
+    <file>costa-nature/img/graph_bar_horisontal.png</file>
+    <file>costa-nature/img/link.gif</file>
+    <file>costa-nature/img/main-gradient.png</file>
+    <file>costa-nature/img/search.png</file>
+    <file>costa-nature/img/shadow-left.png</file>
+    <file>costa-nature/img/shadow-right.png</file>
+    <file>costa-nature/img/spacer.png</file>
+    <file>costa-nature/img/title.gif</file>
+    <file>costa-nature/img/title_hover.gif</file>
+    <file>costa-nature/img/trackback.gif</file>
+    <file>costa-nature/img/xml.gif</file>
+    <file>costa-nature/index.tpl</file>
+    <file>costa-nature/info.txt</file>
+    <file>costa-nature/preview.png</file>
+    <file>costa-nature/preview.webp</file>
+    <file>costa-nature/preview_fullsize.jpg</file>
+    <file>costa-nature/preview_fullsize.webp</file>
+    <file>costa-nature/README</file>
+    <file>costa-nature/style.css</file>
+    <file>costa-nature/trackbacks.tpl</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2336,6 +2398,8 @@
 <summary>Language dependent Right-To-Left written RTL-Theme [still needs some love!] as v0.4</summary>
 <description>Simple example theme from 2006 in right-to-left oriented manner, depending on the old styled default (Serendipity 2.3) theme.</description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>Tom Sommer, Omid Mottaghi</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2392,6 +2456,8 @@ It does still effect some minor plugin integrations on the backend side, like li
 and is more or less meant to be used in a non-too-much-extended core release blog,
 though it does works with some well known plugin apps, like staticpages, freetags etc.</description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2434,8 +2500,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>dreisechzig</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, concatenated sidebar to right theme from 2005-05-21 to 2008-02-14, with a fixed content width of 745 to 824px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2482,8 +2550,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>earphone</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2005-05-21 to 2007-04-03, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Fully responsive and mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2518,8 +2588,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>elitist-latte</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-22 to 2007-04-03, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Fully responsive and mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Evan Nemerson</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2550,8 +2622,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>fifty50</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar to left theme from 2006-08-19 to 2008-02-14, with a fixed content width of 800 to 844px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Rainer Steinke</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2610,8 +2684,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>freshy</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2008-04-15 to 2008-11-13, with a fixed real content size of 999px width with 2 sidebars, 780px with 1 or no sidebar.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Julien De Luca (ported by Abdussamad Abdurrazzaq)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2864,8 +2940,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>gila_two</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2005-05-29 to 2007-04-03, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Fully responsive and mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Haran (ported by Sebastian Nohn)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2896,8 +2974,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>glossy_white</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2005-12-13 to 2014-01-09, with a concatenated sidebar to the right and with a fixed content size of 770px. Structural child of leaf and (parent) sibling of blix theme.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Christian Hoffmann (ported by Ziyad Saeed)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2977,18 +3057,20 @@ though it does works with some well known plugin apps, like staticpages, freetag
 </package>
 <package version="1.0">
 <name>Green Mile</name>
-<template>GreenMile</template>
+<template>greenmile</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-02-27 to 2013-10-26 as v1.1, with a fixed content size of 852px width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Christian Hoffmann (Lordcoffee)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
   <date>2019-02-25</date>
   <filelist>
-    <dir name="GreenMile">
+    <dir name="greenmile">
       <file>comments.tpl</file>
       <file>entries.tpl</file>
       <file>entries_summary.tpl</file>
@@ -3077,85 +3159,85 @@ though it does works with some well known plugin apps, like staticpages, freetag
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>GreenMile/comments.tpl</file>
-    <file>GreenMile/entries.tpl</file>
-    <file>GreenMile/entries_summary.tpl</file>
-    <file>GreenMile/img/back.gif</file>
-    <file>GreenMile/img/beton.jpg</file>
-    <file>GreenMile/img/category_icons/abort.png</file>
-    <file>GreenMile/img/category_icons/airplane.png</file>
-    <file>GreenMile/img/category_icons/alien.png</file>
-    <file>GreenMile/img/category_icons/audio.png</file>
-    <file>GreenMile/img/category_icons/badge.png</file>
-    <file>GreenMile/img/category_icons/bicycle.png</file>
-    <file>GreenMile/img/category_icons/blank.png</file>
-    <file>GreenMile/img/category_icons/book.png</file>
-    <file>GreenMile/img/category_icons/books.png</file>
-    <file>GreenMile/img/category_icons/camcorder.png</file>
-    <file>GreenMile/img/category_icons/closed.png</file>
-    <file>GreenMile/img/category_icons/cup.png</file>
-    <file>GreenMile/img/category_icons/discussion.png</file>
-    <file>GreenMile/img/category_icons/email.png</file>
-    <file>GreenMile/img/category_icons/emergency.png</file>
-    <file>GreenMile/img/category_icons/exclamation.png</file>
-    <file>GreenMile/img/category_icons/female.png</file>
-    <file>GreenMile/img/category_icons/firebrigade.png</file>
-    <file>GreenMile/img/category_icons/flowers.png</file>
-    <file>GreenMile/img/category_icons/formula1.png</file>
-    <file>GreenMile/img/category_icons/games.png</file>
-    <file>GreenMile/img/category_icons/gentleman.png</file>
-    <file>GreenMile/img/category_icons/golf.png</file>
-    <file>GreenMile/img/category_icons/hear.png</file>
-    <file>GreenMile/img/category_icons/heart.png</file>
-    <file>GreenMile/img/category_icons/info.png</file>
-    <file>GreenMile/img/category_icons/male.png</file>
-    <file>GreenMile/img/category_icons/meal.png</file>
-    <file>GreenMile/img/category_icons/megaphon.png</file>
-    <file>GreenMile/img/category_icons/monitor.png</file>
-    <file>GreenMile/img/category_icons/motorcycle.png</file>
-    <file>GreenMile/img/category_icons/newspaper.png</file>
-    <file>GreenMile/img/category_icons/nosmoking.png</file>
-    <file>GreenMile/img/category_icons/notepad.png</file>
-    <file>GreenMile/img/category_icons/ok.png</file>
-    <file>GreenMile/img/category_icons/pepperoni.png</file>
-    <file>GreenMile/img/category_icons/photography.png</file>
-    <file>GreenMile/img/category_icons/present.png</file>
-    <file>GreenMile/img/category_icons/question.png</file>
-    <file>GreenMile/img/category_icons/refresh.png</file>
-    <file>GreenMile/img/category_icons/satelite.png</file>
-    <file>GreenMile/img/category_icons/search.png</file>
-    <file>GreenMile/img/category_icons/see.png</file>
-    <file>GreenMile/img/category_icons/speedboat.png</file>
-    <file>GreenMile/img/category_icons/spider.png</file>
-    <file>GreenMile/img/category_icons/star.png</file>
-    <file>GreenMile/img/category_icons/sun.png</file>
-    <file>GreenMile/img/category_icons/sunglasses.png</file>
-    <file>GreenMile/img/category_icons/swimming.png</file>
-    <file>GreenMile/img/category_icons/tools.png</file>
-    <file>GreenMile/img/category_icons/tv.png</file>
-    <file>GreenMile/img/category_icons/weightlifting.png</file>
-    <file>GreenMile/img/category_icons/wheather.png</file>
-    <file>GreenMile/img/emoticons/cool.png</file>
-    <file>GreenMile/img/emoticons/cry.png</file>
-    <file>GreenMile/img/emoticons/eek.png</file>
-    <file>GreenMile/img/emoticons/laugh.png</file>
-    <file>GreenMile/img/emoticons/normal.png</file>
-    <file>GreenMile/img/emoticons/sad.png</file>
-    <file>GreenMile/img/emoticons/smile.png</file>
-    <file>GreenMile/img/emoticons/tongue.png</file>
-    <file>GreenMile/img/emoticons/wink.png</file>
-    <file>GreenMile/img/entrytitlebg03.png</file>
-    <file>GreenMile/img/forward.gif</file>
-    <file>GreenMile/img/header03.jpg</file>
-    <file>GreenMile/img/xml.gif</file>
-    <file>GreenMile/index.tpl</file>
-    <file>GreenMile/info.txt</file>
-    <file>GreenMile/plugin_calendar.tpl</file>
-    <file>GreenMile/preview.png</file>
-    <file>GreenMile/preview.webp</file>
-    <file>GreenMile/preview_fullsize.jpg</file>
-    <file>GreenMile/preview_fullsize.webp</file>
-    <file>GreenMile/style.css</file>
+    <file>greenmile/comments.tpl</file>
+    <file>greenmile/entries.tpl</file>
+    <file>greenmile/entries_summary.tpl</file>
+    <file>greenmile/img/back.gif</file>
+    <file>greenmile/img/beton.jpg</file>
+    <file>greenmile/img/category_icons/abort.png</file>
+    <file>greenmile/img/category_icons/airplane.png</file>
+    <file>greenmile/img/category_icons/alien.png</file>
+    <file>greenmile/img/category_icons/audio.png</file>
+    <file>greenmile/img/category_icons/badge.png</file>
+    <file>greenmile/img/category_icons/bicycle.png</file>
+    <file>greenmile/img/category_icons/blank.png</file>
+    <file>greenmile/img/category_icons/book.png</file>
+    <file>greenmile/img/category_icons/books.png</file>
+    <file>greenmile/img/category_icons/camcorder.png</file>
+    <file>greenmile/img/category_icons/closed.png</file>
+    <file>greenmile/img/category_icons/cup.png</file>
+    <file>greenmile/img/category_icons/discussion.png</file>
+    <file>greenmile/img/category_icons/email.png</file>
+    <file>greenmile/img/category_icons/emergency.png</file>
+    <file>greenmile/img/category_icons/exclamation.png</file>
+    <file>greenmile/img/category_icons/female.png</file>
+    <file>greenmile/img/category_icons/firebrigade.png</file>
+    <file>greenmile/img/category_icons/flowers.png</file>
+    <file>greenmile/img/category_icons/formula1.png</file>
+    <file>greenmile/img/category_icons/games.png</file>
+    <file>greenmile/img/category_icons/gentleman.png</file>
+    <file>greenmile/img/category_icons/golf.png</file>
+    <file>greenmile/img/category_icons/hear.png</file>
+    <file>greenmile/img/category_icons/heart.png</file>
+    <file>greenmile/img/category_icons/info.png</file>
+    <file>greenmile/img/category_icons/male.png</file>
+    <file>greenmile/img/category_icons/meal.png</file>
+    <file>greenmile/img/category_icons/megaphon.png</file>
+    <file>greenmile/img/category_icons/monitor.png</file>
+    <file>greenmile/img/category_icons/motorcycle.png</file>
+    <file>greenmile/img/category_icons/newspaper.png</file>
+    <file>greenmile/img/category_icons/nosmoking.png</file>
+    <file>greenmile/img/category_icons/notepad.png</file>
+    <file>greenmile/img/category_icons/ok.png</file>
+    <file>greenmile/img/category_icons/pepperoni.png</file>
+    <file>greenmile/img/category_icons/photography.png</file>
+    <file>greenmile/img/category_icons/present.png</file>
+    <file>greenmile/img/category_icons/question.png</file>
+    <file>greenmile/img/category_icons/refresh.png</file>
+    <file>greenmile/img/category_icons/satelite.png</file>
+    <file>greenmile/img/category_icons/search.png</file>
+    <file>greenmile/img/category_icons/see.png</file>
+    <file>greenmile/img/category_icons/speedboat.png</file>
+    <file>greenmile/img/category_icons/spider.png</file>
+    <file>greenmile/img/category_icons/star.png</file>
+    <file>greenmile/img/category_icons/sun.png</file>
+    <file>greenmile/img/category_icons/sunglasses.png</file>
+    <file>greenmile/img/category_icons/swimming.png</file>
+    <file>greenmile/img/category_icons/tools.png</file>
+    <file>greenmile/img/category_icons/tv.png</file>
+    <file>greenmile/img/category_icons/weightlifting.png</file>
+    <file>greenmile/img/category_icons/wheather.png</file>
+    <file>greenmile/img/emoticons/cool.png</file>
+    <file>greenmile/img/emoticons/cry.png</file>
+    <file>greenmile/img/emoticons/eek.png</file>
+    <file>greenmile/img/emoticons/laugh.png</file>
+    <file>greenmile/img/emoticons/normal.png</file>
+    <file>greenmile/img/emoticons/sad.png</file>
+    <file>greenmile/img/emoticons/smile.png</file>
+    <file>greenmile/img/emoticons/tongue.png</file>
+    <file>greenmile/img/emoticons/wink.png</file>
+    <file>greenmile/img/entrytitlebg03.png</file>
+    <file>greenmile/img/forward.gif</file>
+    <file>greenmile/img/header03.jpg</file>
+    <file>greenmile/img/xml.gif</file>
+    <file>greenmile/index.tpl</file>
+    <file>greenmile/info.txt</file>
+    <file>greenmile/plugin_calendar.tpl</file>
+    <file>greenmile/preview.png</file>
+    <file>greenmile/preview.webp</file>
+    <file>greenmile/preview_fullsize.jpg</file>
+    <file>greenmile/preview_fullsize.webp</file>
+    <file>greenmile/style.css</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -3164,8 +3246,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>greenway</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2007-07-27 to 2013-10-26, with a maximum content size of ~900px. Free Css Templates port.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Reinhard Linnemann</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -3318,8 +3402,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>hemingway</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old WP-port theme from 2006-08-27 to 2014-01-09, with a minimum content size of ~800px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -3440,8 +3526,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>hipporatorium</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar to right theme from 2006-03-09 to 2008-02-14, with a fixed content width of 830px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Rainer Steinke</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -3486,8 +3574,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>i3theme</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2009-04-01 to 2013-10-26 as v.1.6</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>N.Design Studio &amp; MangoOrange, ported to s9y by YellowLed</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -3692,6 +3782,8 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <summary>CSS complete theme only.</summary>
 <description>Simple example theme from 2004 using all the template files from the old default fallback (Serendipity 2.3) theme. Styled by CSS only.</description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>Evan Nemerson</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -3744,6 +3836,8 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <summary>Additional old full-screen, sidebars-to-left theme from 2007-07-12 to 2009-08-17.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and Mobile friendly!</description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>Free CSS Templates ported by Reinhard Linnemann</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -3834,8 +3928,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>jazzcafe</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, concatenated sidebar to right theme from 2006-03-04 to 2008-08-17, with a fixed content width of 750px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Piotr Polak and Ahmet Usal</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -3938,8 +4034,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>joshua</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen theme from 2005-06-14 to 2008-02-14, with a fixed content width of 780px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but &lt;u&gt;not&lt;/u&gt; fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Hendrik Scholz</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -3986,8 +4084,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>joshua_nino</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen theme from 2006-01-15 to 2008-02-14 as v.1.1, with a fixed content width of 780px and a concatenated single sidebar.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but &lt;u&gt;not&lt;/u&gt; fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Hendrik Scholz (Modified by David Cummins)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4034,8 +4134,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>joshua_tree</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen theme from 2005-12-31 to 2008-02-14, with a fixed content width of 800px and a concatenated single sidebar.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but &lt;u&gt;not&lt;/u&gt; fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>David Cummins</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4086,8 +4188,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>kamouflage</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-04-08 to 2013-10-26 as v1.1, with a browsers content size of 90 percent.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Now, with 2019, responsive &lt;u&gt;and&lt;/u&gt; mobile friendly! Since being relatively friendly to change the &quot;martial-design&quot;, chosen to accomplish a modern browsers grid/flex flexible system example.</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Since being relatively friendly to change the &quot;martial-design&quot;, with 2019 revision chosen to accomplish a modern browsers grid/flex flexible system example.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>David Cummins, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4176,8 +4280,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>kubrick</template>
 <license>N/A (=GPL)</license>
 <summary>A Kubrick 1.2.6 port. Additional old theme from 2004-08-12 with a default size of ~760 pixel content width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not &lt;u&gt;fully&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>Basically Yes</mobile>
 <maintainers><maintainer><name>Tom Sommer</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4256,8 +4362,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>ladybird</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen theme from 2006-01-29 to 2008-02-14 as v.1.0, with a fixed minimum content width of ~660px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but &lt;u&gt;not&lt;/u&gt; fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Jude Anthony - restyled by David Cummins</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4354,8 +4462,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>ladybug</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen theme from 2005-12-13 to 2008-02-14, with a fixed minimum content width of ~640px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but &lt;u&gt;not&lt;/u&gt; fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Jude Anthony</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4432,8 +4542,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>leaf</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2005-09-01 to 2014-01-09 with a fixed content size of ~770px. Parent structure of glossy_white and blix themes.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Ivon Fong (ported by Ziyad Saeed)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4546,8 +4658,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>mimbo</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old, magazine like theme from 2009-04-01(?) to 2013-10-26 with a fixed size of ~900 pixels content width.</summary>
-<description>Plugin dependency&amp;colon; event_entryproperties plugin.&lt;br&gt;Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Plugin dependency&amp;colon; event_entryproperties plugin.&lt;br&gt;Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Darren Hoyt, ported to s9y by Matthias 'YellowLed' Mees.</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4646,8 +4760,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>mo3</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old, magazine like theme from 200?-08-29 to 2014-01-09 with a fixed size of ~932 pixels content width.</summary>
-<description>Plugin dependency&amp;colon; Install event_freetag, event_entryproperties, plugin_staticpage before you install the theme.&lt;br&gt;Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly.</description>
+<description>Plugin dependency&amp;colon; Install event_freetag, event_entryproperties, plugin_staticpage before you install the theme.&lt;br&gt;Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>ReinhardL</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4803,18 +4919,20 @@ though it does works with some well known plugin apps, like staticpages, freetag
 </package>
 <package version="1.0">
 <name>Modern World</name>
-<template>Modern_World_s9y_port</template>
+<template>modern_world</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old small-screen theme from 2006-07-23 to 2008-02-14, with a fixed content width of 850px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>nerdwg.org port of Luka Cvrk Theme</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
   <date>2019-03-11</date>
   <filelist>
-    <dir name="Modern_World_s9y_port">
+    <dir name="modern_world">
       <dir name="images">
         <file>bg.gif</file>
         <file>commentbg.gif</file>
@@ -4836,22 +4954,22 @@ though it does works with some well known plugin apps, like staticpages, freetag
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>Modern_World_s9y_port/images/bg.gif</file>
-    <file>Modern_World_s9y_port/images/commentbg.gif</file>
-    <file>Modern_World_s9y_port/images/contentbg.gif</file>
-    <file>Modern_World_s9y_port/images/footerbg.gif</file>
-    <file>Modern_World_s9y_port/images/header.gif</file>
-    <file>Modern_World_s9y_port/images/linkcorner.gif</file>
-    <file>Modern_World_s9y_port/images/logo.gif</file>
-    <file>Modern_World_s9y_port/images/navbg.gif</file>
-    <file>Modern_World_s9y_port/images/quotebg.gif</file>
-    <file>Modern_World_s9y_port/index.tpl</file>
-    <file>Modern_World_s9y_port/info.txt</file>
-    <file>Modern_World_s9y_port/preview.png</file>
-    <file>Modern_World_s9y_port/preview.webp</file>
-    <file>Modern_World_s9y_port/preview_fullsize.jpg</file>
-    <file>Modern_World_s9y_port/preview_fullsize.webp</file>
-    <file>Modern_World_s9y_port/style.css</file>
+    <file>modern_world/images/bg.gif</file>
+    <file>modern_world/images/commentbg.gif</file>
+    <file>modern_world/images/contentbg.gif</file>
+    <file>modern_world/images/footerbg.gif</file>
+    <file>modern_world/images/header.gif</file>
+    <file>modern_world/images/linkcorner.gif</file>
+    <file>modern_world/images/logo.gif</file>
+    <file>modern_world/images/navbg.gif</file>
+    <file>modern_world/images/quotebg.gif</file>
+    <file>modern_world/index.tpl</file>
+    <file>modern_world/info.txt</file>
+    <file>modern_world/preview.png</file>
+    <file>modern_world/preview.webp</file>
+    <file>modern_world/preview_fullsize.jpg</file>
+    <file>modern_world/preview_fullsize.webp</file>
+    <file>modern_world/style.css</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -4860,8 +4978,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>morsel</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old small-screen theme from 2005-03-18 to 2007-04-03, with a fixed content width of 900px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>risc</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4896,8 +5016,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>moz-modern</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar theme from 2004-03-02.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but &lt;u&gt;not&lt;/u&gt; fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4941,8 +5063,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <license>N/A (=GPL)</license>
 <summary>Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.</summary>
 <description>This &quot;MT-Trendy&quot; child port (by date), basically an early days ~2003 MovableType &quot;Clean&quot; theme port, is styled by CSS only. Theme-wise it is a sister theme of MT-Georgiablue and MT-Plainjane.
-Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Evan Nemerson, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4978,8 +5102,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <license>N/A (=GPL)</license>
 <summary>Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.</summary>
 <description>This &quot;MT-Trendy&quot; child port (by date), basically an early days ~2003 MovableType &quot;GeorgiaBlue&quot; theme port, is styled by CSS only. Theme-wise it is a sister theme of MT-Plainjane and MT-Clean.
-Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Evan Nemerson, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5015,8 +5141,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <license>N/A (=GPL)</license>
 <summary>Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.</summary>
 <description>This &quot;MT-Trendy&quot; child port (by date), basically an early days ~2003 MovableType &quot;GettysBurg&quot; theme port, is styled by CSS only. Theme-wise it is a sister theme of MT-Rusty.
-Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Evan Nemerson, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5052,8 +5180,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <license>N/A (=GPL)</license>
 <summary>Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.</summary>
 <description>This &quot;MT-Trendy&quot; child port (by date), basically an early days ~2003 MovableType &quot;Plainjane&quot; theme port, is styled by CSS only. Theme-wise it is a sister theme of MT-Georgiablue and MT-Clean.
-Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Evan Nemerson, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5089,8 +5219,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <license>N/A (=GPL)</license>
 <summary>Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.</summary>
 <description>This &quot;MT-Trendy&quot; child port (by date), basically an early days ~2003 MovableType &quot;Rusty&quot; theme port, is styled by CSS only. Theme-wise it is a sister theme of MT-GettysBurg.
-Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Evan Nemerson, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5126,8 +5258,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <license>N/A (=GPL)</license>
 <summary>Additional full-screen theme from 2004-02-16. Now 2019, and as an example, fully mobile first responsive.</summary>
 <description>This &quot;early days ~2003 MovableType theme port&quot; is styled by CSS only. Without any theme engine set, all template files are taken from default theme.
-Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Sebastian Bergmann, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5167,8 +5301,10 @@ Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendl
 <license>N/A (=GPL)</license>
 <summary>Additional small-screen theme from 2004-06-31 with a fixed content width of 860px. Revision 2019 made it fully mobile first responsive.</summary>
 <description>This early days MovableType-3 theme port, is styled by CSS only. Theme-wise it is a sister theme of MT3-Independence, MT3-Squash, MT3-Gettysburg.
-Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Kaustubh Srikanth, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5204,8 +5340,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <license>N/A (=GPL)</license>
 <summary>Additional small-screen theme from 2004-06-31 with a fixed content width of 860px. Revision 2019 made it fully mobile first responsive.</summary>
 <description>This early days MovableType-3 theme port, is styled by CSS only. Theme-wise it is a sister theme of MT3-Independence, MT3-Squash, MT3-Chalkboard.
-Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Kaustubh Srikanth &amp; Tom Sommer, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5241,8 +5379,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <license>N/A (=GPL)</license>
 <summary>Additional small-screen theme from 2004-06-31 with a fixed content width of 860px. Revision 2019 made it fully mobile first responsive.</summary>
 <description>This early days MovableType-3 theme port, is styled by CSS only. Theme-wise it is a sister theme of MT3-Chalkboard, MT3-Squash, MT3-Gettysburg.
-Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Kaustubh Srikanth &amp; Tom Sommer, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5278,8 +5418,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <license>N/A (=GPL)</license>
 <summary>Additional small-screen theme from 2004-06-31 with a fixed content width of 860px. Revision 2019 made it fully mobile first responsive.</summary>
 <description>This early days MovableType-3 theme port, is styled by CSS only. Theme-wise it is a sister theme of MT3-Chalkboard, MT3-Independence, MT3-Gettysburg.
-Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Kaustubh Srikanth, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5314,8 +5456,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>newfangled</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar theme from 2007-07-07 to 2009-08-27, with a fixed maximum content size of 960px width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>based on Free CSS Templates. - ported by Reinhard</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5388,8 +5532,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>newspaper</template>
 <license>N/A (=GPL)</license>
 <summary>Additional full-screen, 2-sidebar styles only theme from 2003-06-26. Previously used an old method of render which got obsolete with Serendipity 2.0. Uses fallback cascade now.</summary>
-<description>Cleaned, fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and fully mobile friendly!</description>
+<description>Cleaned, fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Jannis Hermanns, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5420,8 +5566,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>one_true_layout</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar colorset theme from 2009-08-27.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Fully responsive but &lt;u&gt;not&lt;/u&gt; small-device mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway &amp; Matthias Mees</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5512,8 +5660,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>party-brown</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-08-20 to 2007-04-03, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Evan Nemerson</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5544,8 +5694,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>perun_blue</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old small-screen theme from 2005-01-15 to 2007-04-03 as v.1.0, with a fixed content width of 765px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Vladimir Simovic (aka Perun) | www.perun.net | www.vlad-design.de</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5592,8 +5744,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>perun_red</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old small-screen theme from 2005-01-12 to 2007-04-03, with a fixed content width of 760px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Vladimir Simovic (aka Perun) | www.perun.net | www.vlad-design.de</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5640,8 +5794,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>photo</template>
 <license>N/A (=GPL)</license>
 <summary>Simplified additional &lt;u&gt;engine&lt;/u&gt; theme from Aug 12, 2014, with no sidebars.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended>Yes</recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>onli</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5728,8 +5884,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>pink-lilies</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-03-06 to 2009-08-17 with a concatenated sidebar to the right and a fixed size of ~718px width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &quot;Responsive&quot;, but not mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway and Naoko M</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5818,8 +5976,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>pixel</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2010-11-30 to 2013-10-26 with a fixed size of ~960px width. Ported to s9y by YellowLed.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but not mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>85ideas.com (Ported to s9y by YellowLed, sponsored by serendipity-templates.org)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -5934,8 +6094,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>plain-vanilla</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2005-04-12 to 2009-08-17 with a concatenated sidebar to the right and a fixed size of 750px content with.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but not &lt;u&gt;fully&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Chetan Kunte. Port by Jason Levitt.</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6006,8 +6168,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>plus9</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2014-01-09</summary>
-<description>Basically upgraded for Serendipity Styx 2.1+ revisions. Not fully mobile friendly!</description>
+<description>Basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Reinhard Linnemann</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6194,8 +6358,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>powered</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old small-screen theme from 2006-03-09 to 2009-02-14, with a fixed content width of 760px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. &lt;u&gt;Not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Rainer Steinke</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6254,8 +6420,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>reflection</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-08-28 to 2008-02-14 as v1.1. Design by snop, photo by plasticboy.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Carl Galloway</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6346,8 +6514,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>resy</template>
 <license>N/A (=GPL)</license>
 <summary>Additional mid-screen, concatenated sidebar-to-right theme from 2012-04-21 to 2012-04-25.</summary>
-<description>Marginally fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and fully mobile friendly!</description>
+<description>Marginally fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Manuel Hiptmair, based on a template by Jonathan Verrecchia</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6407,18 +6577,20 @@ Without any theme engine set, all template files are taken from default theme. F
 </package>
 <package version="1.0">
 <name>RoundedCorner</name>
-<template>RoundedCorner</template>
+<template>roundedcorner</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-08-13 to 2008-11-13.</summary>
-<description>Fixed and upgraded for Serendipity Styx 2.1+ revisions. Responsive and mobile friendly!</description>
+<description>Fixed and upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Abdussamad Abdurrazzaq, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
   <date>2019-01-31</date>
   <filelist>
-    <dir name="RoundedCorner">
+    <dir name="roundedcorner">
       <file>commentform.tpl</file>
       <file>comments.tpl</file>
       <file>entries.tpl</file>
@@ -6467,49 +6639,49 @@ Without any theme engine set, all template files are taken from default theme. F
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>RoundedCorner/commentform.tpl</file>
-    <file>RoundedCorner/comments.tpl</file>
-    <file>RoundedCorner/entries.tpl</file>
-    <file>RoundedCorner/img/back.png</file>
-    <file>RoundedCorner/img/content_bc.gif</file>
-    <file>RoundedCorner/img/content_bl.gif</file>
-    <file>RoundedCorner/img/content_br.gif</file>
-    <file>RoundedCorner/img/content_lc.gif</file>
-    <file>RoundedCorner/img/content_rc.gif</file>
-    <file>RoundedCorner/img/content_tc.gif</file>
-    <file>RoundedCorner/img/content_tl.gif</file>
-    <file>RoundedCorner/img/content_tr.gif</file>
-    <file>RoundedCorner/img/forward.png</file>
-    <file>RoundedCorner/img/hbc.gif</file>
-    <file>RoundedCorner/img/hbl.gif</file>
-    <file>RoundedCorner/img/hbr.gif</file>
-    <file>RoundedCorner/img/hlc.gif</file>
-    <file>RoundedCorner/img/hrc.gif</file>
-    <file>RoundedCorner/img/htc.gif</file>
-    <file>RoundedCorner/img/htl.gif</file>
-    <file>RoundedCorner/img/htr.gif</file>
-    <file>RoundedCorner/img/old_hbc.gif</file>
-    <file>RoundedCorner/img/old_hbl.gif</file>
-    <file>RoundedCorner/img/old_hbr.gif</file>
-    <file>RoundedCorner/img/old_hrc.gif</file>
-    <file>RoundedCorner/img/old_htr.gif</file>
-    <file>RoundedCorner/img/sidebar_bc.gif</file>
-    <file>RoundedCorner/img/sidebar_bl.gif</file>
-    <file>RoundedCorner/img/sidebar_br.gif</file>
-    <file>RoundedCorner/img/sidebar_lc.gif</file>
-    <file>RoundedCorner/img/sidebar_rc.gif</file>
-    <file>RoundedCorner/img/sidebar_tc.gif</file>
-    <file>RoundedCorner/img/sidebar_tl.gif</file>
-    <file>RoundedCorner/img/sidebar_tr.gif</file>
-    <file>RoundedCorner/img/xml.gif</file>
-    <file>RoundedCorner/index.tpl</file>
-    <file>RoundedCorner/info.txt</file>
-    <file>RoundedCorner/plugin_staticpage_sidebar.tpl</file>
-    <file>RoundedCorner/preview.png</file>
-    <file>RoundedCorner/preview.webp</file>
-    <file>RoundedCorner/preview_fullsize.jpg</file>
-    <file>RoundedCorner/preview_fullsize.webp</file>
-    <file>RoundedCorner/style.css</file>
+    <file>roundedcorner/commentform.tpl</file>
+    <file>roundedcorner/comments.tpl</file>
+    <file>roundedcorner/entries.tpl</file>
+    <file>roundedcorner/img/back.png</file>
+    <file>roundedcorner/img/content_bc.gif</file>
+    <file>roundedcorner/img/content_bl.gif</file>
+    <file>roundedcorner/img/content_br.gif</file>
+    <file>roundedcorner/img/content_lc.gif</file>
+    <file>roundedcorner/img/content_rc.gif</file>
+    <file>roundedcorner/img/content_tc.gif</file>
+    <file>roundedcorner/img/content_tl.gif</file>
+    <file>roundedcorner/img/content_tr.gif</file>
+    <file>roundedcorner/img/forward.png</file>
+    <file>roundedcorner/img/hbc.gif</file>
+    <file>roundedcorner/img/hbl.gif</file>
+    <file>roundedcorner/img/hbr.gif</file>
+    <file>roundedcorner/img/hlc.gif</file>
+    <file>roundedcorner/img/hrc.gif</file>
+    <file>roundedcorner/img/htc.gif</file>
+    <file>roundedcorner/img/htl.gif</file>
+    <file>roundedcorner/img/htr.gif</file>
+    <file>roundedcorner/img/old_hbc.gif</file>
+    <file>roundedcorner/img/old_hbl.gif</file>
+    <file>roundedcorner/img/old_hbr.gif</file>
+    <file>roundedcorner/img/old_hrc.gif</file>
+    <file>roundedcorner/img/old_htr.gif</file>
+    <file>roundedcorner/img/sidebar_bc.gif</file>
+    <file>roundedcorner/img/sidebar_bl.gif</file>
+    <file>roundedcorner/img/sidebar_br.gif</file>
+    <file>roundedcorner/img/sidebar_lc.gif</file>
+    <file>roundedcorner/img/sidebar_rc.gif</file>
+    <file>roundedcorner/img/sidebar_tc.gif</file>
+    <file>roundedcorner/img/sidebar_tl.gif</file>
+    <file>roundedcorner/img/sidebar_tr.gif</file>
+    <file>roundedcorner/img/xml.gif</file>
+    <file>roundedcorner/index.tpl</file>
+    <file>roundedcorner/info.txt</file>
+    <file>roundedcorner/plugin_staticpage_sidebar.tpl</file>
+    <file>roundedcorner/preview.png</file>
+    <file>roundedcorner/preview.webp</file>
+    <file>roundedcorner/preview_fullsize.jpg</file>
+    <file>roundedcorner/preview_fullsize.webp</file>
+    <file>roundedcorner/style.css</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6520,6 +6692,8 @@ Without any theme engine set, all template files are taken from default theme. F
 <summary></summary>
 <description></description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>nuvio/kendahlin (ported by fwaggle)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6634,8 +6808,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>s9y_bluegrey</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-12-15 to 2007-04-03, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Kaustubh Srikanth</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6672,6 +6848,8 @@ Without any theme engine set, all template files are taken from default theme. F
 <summary>Additional old mid-screen, 2-sidebar theme from 2004-12-15 to 2007-04-03, with a fixed content size of 750px and a disabled banner.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>Kaustubh Srikanth</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6710,6 +6888,8 @@ Without any theme engine set, all template files are taken from default theme. F
 <summary>Additional old mid-screen, 2-sidebar theme from 2004-12-15 to 2007-04-03, with a fixed content size of 750px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>Kaustubh Srikanth</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6742,8 +6922,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>safety-yellow</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-22 to 2007-04-03, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Evan Nemerson</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6771,18 +6953,20 @@ Without any theme engine set, all template files are taken from default theme. F
 </package>
 <package version="1.0">
 <name>Sagittarius-A</name>
-<template>Sagittarius-A</template>
+<template>sagittarius</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old &quot;full&quot;-screen newspaper/magazine Blueprint Theme port with yaml from 2009-04-01 to 2014-01-09, with a fixed maximum content width of 1440px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive until minimum width of 768px, but &lt;u&gt;not&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive until minimum width of 768px!</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Reinhard Linnemann</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
   <date>2019-03-11</date>
   <filelist>
-    <dir name="Sagittarius-A">
+    <dir name="sagittarius">
       <file>404.tpl</file>
       <file>commentform.tpl</file>
       <file>commentpopup.tpl</file>
@@ -6824,40 +7008,40 @@ Without any theme engine set, all template files are taken from default theme. F
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>Sagittarius-A/404.tpl</file>
-    <file>Sagittarius-A/commentform.tpl</file>
-    <file>Sagittarius-A/commentpopup.tpl</file>
-    <file>Sagittarius-A/config.inc.php</file>
-    <file>Sagittarius-A/content.tpl</file>
-    <file>Sagittarius-A/entries.tpl</file>
-    <file>Sagittarius-A/entries_lcol.tpl</file>
-    <file>Sagittarius-A/entries_lead.tpl</file>
-    <file>Sagittarius-A/entries_rcol.tpl</file>
-    <file>Sagittarius-A/entries_single.tpl</file>
-    <file>Sagittarius-A/entries_summary.tpl</file>
-    <file>Sagittarius-A/img/graph_bar_horisontal.png</file>
-    <file>Sagittarius-A/img/xml.gif</file>
-    <file>Sagittarius-A/index.tpl</file>
-    <file>Sagittarius-A/info.txt</file>
-    <file>Sagittarius-A/lang_cs.inc.php</file>
-    <file>Sagittarius-A/lang_cz.inc.php</file>
-    <file>Sagittarius-A/lang_de.inc.php</file>
-    <file>Sagittarius-A/lang_en.inc.php</file>
-    <file>Sagittarius-A/plugin_categories.tpl</file>
-    <file>Sagittarius-A/plugin_contactform.tpl</file>
-    <file>Sagittarius-A/plugin_dynamicform.tpl</file>
-    <file>Sagittarius-A/plugin_staticpage.tpl</file>
-    <file>Sagittarius-A/preview.png</file>
-    <file>Sagittarius-A/preview.webp</file>
-    <file>Sagittarius-A/preview_fullsize.jpg</file>
-    <file>Sagittarius-A/preview_fullsize.webp</file>
-    <file>Sagittarius-A/print.css</file>
-    <file>Sagittarius-A/sidebar.tpl</file>
-    <file>Sagittarius-A/style.css</file>
-    <file>Sagittarius-A/UTF-8/lang_cs.inc.php</file>
-    <file>Sagittarius-A/UTF-8/lang_cz.inc.php</file>
-    <file>Sagittarius-A/UTF-8/lang_de.inc.php</file>
-    <file>Sagittarius-A/UTF-8/lang_en.inc.php</file>
+    <file>sagittarius/404.tpl</file>
+    <file>sagittarius/commentform.tpl</file>
+    <file>sagittarius/commentpopup.tpl</file>
+    <file>sagittarius/config.inc.php</file>
+    <file>sagittarius/content.tpl</file>
+    <file>sagittarius/entries.tpl</file>
+    <file>sagittarius/entries_lcol.tpl</file>
+    <file>sagittarius/entries_lead.tpl</file>
+    <file>sagittarius/entries_rcol.tpl</file>
+    <file>sagittarius/entries_single.tpl</file>
+    <file>sagittarius/entries_summary.tpl</file>
+    <file>sagittarius/img/graph_bar_horisontal.png</file>
+    <file>sagittarius/img/xml.gif</file>
+    <file>sagittarius/index.tpl</file>
+    <file>sagittarius/info.txt</file>
+    <file>sagittarius/lang_cs.inc.php</file>
+    <file>sagittarius/lang_cz.inc.php</file>
+    <file>sagittarius/lang_de.inc.php</file>
+    <file>sagittarius/lang_en.inc.php</file>
+    <file>sagittarius/plugin_categories.tpl</file>
+    <file>sagittarius/plugin_contactform.tpl</file>
+    <file>sagittarius/plugin_dynamicform.tpl</file>
+    <file>sagittarius/plugin_staticpage.tpl</file>
+    <file>sagittarius/preview.png</file>
+    <file>sagittarius/preview.webp</file>
+    <file>sagittarius/preview_fullsize.jpg</file>
+    <file>sagittarius/preview_fullsize.webp</file>
+    <file>sagittarius/print.css</file>
+    <file>sagittarius/sidebar.tpl</file>
+    <file>sagittarius/style.css</file>
+    <file>sagittarius/UTF-8/lang_cs.inc.php</file>
+    <file>sagittarius/UTF-8/lang_cz.inc.php</file>
+    <file>sagittarius/UTF-8/lang_de.inc.php</file>
+    <file>sagittarius/UTF-8/lang_en.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6866,8 +7050,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>simpla</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2010-01-19 with a default, but configurable size of ~760 pixel content width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not &lt;u&gt;fully&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Phu ported by Kunze Media</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6940,8 +7126,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>slate-grey</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-23 to 2007-04-03, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Evan Nemerson</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6972,8 +7160,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>soccer2006</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, concatenated sidebar-to-left theme from 2006-08-24 to 2009-08-17 as v1.1, with a fixed content size of 780px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -7030,8 +7220,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>softenedcells</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-08-25 to 2009-08-27 as v.1.1 with a concatenated sidebar to the right and a size of ~640 pixel content width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not &lt;u&gt;fully&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -7124,6 +7316,8 @@ Without any theme engine set, all template files are taken from default theme. F
 <summary>Additional old mid-screen, 2-sidebar theme from 2007-01-24 to 2013-10-26 as v1.0.1, with a fixed content size of 1024px.</summary>
 <description>Upgraded to v.1.1. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>David Cummins, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -7220,8 +7414,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>square</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-10-02 to 2009-02-14 (v1.0.1) with a fixed size of ~900 pixel content width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not &lt;u&gt;fully&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>David Cummins</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -7288,6 +7484,8 @@ Without any theme engine set, all template files are taken from default theme. F
 <summary>Additional old mid-screen, 2-sidebar colorset theme from 2005-10-07 to 2008-02-14, with a fixed content size of 860px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>Mads Sigvert</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -7487,19 +7685,21 @@ Without any theme engine set, all template files are taken from default theme. F
 </package>
 <package version="1.0">
 <name>Blogger-Tabacco</name>
-<template>tabacco_s9y_07</template>
+<template>tabacco</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-10-17 to 2007-04-03 as v0.1, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and fully mobile friendly! Based on a blogger template&amp;colon;
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Based on a blogger template&amp;colon;
 &quot;//blogger-templates.blogspot.com/2004_03_14_blogger-templates_archive.html#107996288536718375&quot;</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Frederic Wenzel</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
   <date>2019-04-05</date>
   <filelist>
-    <dir name="tabacco_s9y_07">
+    <dir name="tabacco">
       <dir name="img">
         <file>back.png</file>
         <file>forward.png</file>
@@ -7515,16 +7715,16 @@ Without any theme engine set, all template files are taken from default theme. F
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>tabacco_s9y_07/img/back.png</file>
-    <file>tabacco_s9y_07/img/forward.png</file>
-    <file>tabacco_s9y_07/img/quotes.gif</file>
-    <file>tabacco_s9y_07/img/tabacco.jpg</file>
-    <file>tabacco_s9y_07/info.txt</file>
-    <file>tabacco_s9y_07/preview.png</file>
-    <file>tabacco_s9y_07/preview.webp</file>
-    <file>tabacco_s9y_07/preview_fullsize.jpg</file>
-    <file>tabacco_s9y_07/preview_fullsize.webp</file>
-    <file>tabacco_s9y_07/style.css</file>
+    <file>tabacco/img/back.png</file>
+    <file>tabacco/img/forward.png</file>
+    <file>tabacco/img/quotes.gif</file>
+    <file>tabacco/img/tabacco.jpg</file>
+    <file>tabacco/info.txt</file>
+    <file>tabacco/preview.png</file>
+    <file>tabacco/preview.webp</file>
+    <file>tabacco/preview_fullsize.jpg</file>
+    <file>tabacco/preview_fullsize.webp</file>
+    <file>tabacco/style.css</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -7533,8 +7733,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>terrafirma</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2007-06-20 to 2009-08-16 with a fixed size of ~748 pixel content width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not &lt;u&gt;fully&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>NodeThirtyThree (ported by Christian Hoffmann)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -7641,6 +7843,8 @@ Without any theme engine set, all template files are taken from default theme. F
 <summary>Additional old mid-screen, 2-sidebar theme from 2005-08-18 to 2007-04-03, with a fixed content size of 760px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -7705,8 +7909,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>translucency</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2007-06-10 to 2009-08-14 with a fixed size of ~608 pixel content width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not &lt;u&gt;fully&lt;/u&gt; mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Christian Hoffmann</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -7809,6 +8015,8 @@ Without any theme engine set, all template files are taken from default theme. F
 <summary>THEME_INFO_SUMMARY (text in lang_info_en.inc.php pattern)</summary>
 <description>THEME_INFO_DESC (and LANG_CHARSET depending language files)</description>
 <recommended></recommended>
+<responsive></responsive>
+<mobile></mobile>
 <maintainers><maintainer><name>Eddie Traversa</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -7949,8 +8157,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>wp-clone</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-24 to 2007-04-03, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and fully mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Evan Nemerson, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -7981,8 +8191,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>xkur</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old small-screen theme from 2006-01-26 to 2013-10-26, with a fixed content width of 1024px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive, but &lt;u&gt;not&lt;/u&gt; mobile friendly! Based on Carl Galloway`s Serendipity Theme 3.0.</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Based on Carl Galloway`s Serendipity Theme 3.0.</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Reinhard Linnemann</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -8083,8 +8295,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>youngbutstrong</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2007-07-17 to 2008-02-14 with a concatenated sidebar to the right and with a size of ~850 pixel mainframe width.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Not mobile friendly! If this sponsored links usage note is still valid after all these years is at least questionable. Perhaps you could simply make your own engine template without.., without violating..</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. If this sponsored links usage note is still valid after all these years is at least questionable. Perhaps you could simply make your own engine template without.., without violating..</description>
 <recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Stefan2k1 (Ported by fwaggle)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -8155,8 +8369,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>zenlike</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2007-10-09 to 2009-08-26 with a concatenated sidebar to the right. Ported to Serendipity by YellowLed.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but not &lt;u&gt;fully&lt;/u&gt; mobile friendly! For removing the sponsored links you might still need to ask.</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. For removing the sponsored links you might still need to ask.</description>
 <recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>NodeThirtyThree</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
