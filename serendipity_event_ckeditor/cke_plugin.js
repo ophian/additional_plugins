@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) from 2013, Author: Ian. All rights reserved.
+ * @license Copyright (c) from 2013, Author: Ian Styx. All rights reserved. Last Modified date: 2019-07-18.
  */
 
 /**
@@ -21,7 +21,7 @@ CKEDITOR.on( 'instanceReady', function( event ) {
 });
 
 /*
- * Create a prototyp foreach array function
+ * Create a prototype foreach array function
  * This is faster than using ckeditor.js internal forEach() implementation or even using plain for()
  **/
 if (!Array.prototype.forEach) {
@@ -257,18 +257,6 @@ function Spawnnuggets(item, addEP, jsED) {
                 });
             }
         });
-    }
-}
-
-/*
- * Clone a serendipity_editor.js function, to avoid a
- * TypeError: parent.self.opener.serendipity_imageSelector_addToBody is not a function
- * in case of serendipity_html_nugget_plugin textarea (nuggets3) usage in S9y 1.7 Series
- */
-function serendipity_imageSelector_addToBody (str, textarea) {
-    var oEditor = isinstance;
-    if (oEditor.mode == "wysiwyg") {
-        oEditor.insertHtml(str);
     }
 }
 

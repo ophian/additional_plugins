@@ -1,3 +1,10 @@
+4.12.1.1:
+---------
+    * Add CKEplus config items for new figure/figcaption elements since Styx 2.9.0
+      to the ACF extraAllowedContent string handler to support this for display and saving!
+    * Remove a deprecated serendipity_imageSelector_addToBody() clone function, held for
+      S9y 1.7 Series revisions.
+
 4.12.1.0:
 ---------
     * Upgrade to CKEDITOR 4.12. Series, update 1 (https://ckeditor.com/cke4/release-notes).
