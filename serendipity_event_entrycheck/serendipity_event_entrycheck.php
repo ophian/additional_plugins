@@ -17,7 +17,7 @@ class serendipity_event_entrycheck extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_ENTRYCHECK_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_ENTRYCHECK_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Gregor Voeltz, Ian');
+        $propbag->add('author',        'Garvin Hicking, Gregor Voeltz, Ian Styx');
         $propbag->add('version',       '1.19');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

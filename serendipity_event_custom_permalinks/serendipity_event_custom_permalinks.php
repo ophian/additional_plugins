@@ -26,7 +26,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
                                         'frontend_display:html:per_entry'   => true,
                                         'backend_display'                   => true));
 
-        $propbag->add('author', 'Garvin Hicking, Ian');
+        $propbag->add('author', 'Garvin Hicking, Ian Styx');
         $propbag->add('version', '1.19');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

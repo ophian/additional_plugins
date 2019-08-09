@@ -31,7 +31,7 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_INCLUDEENTRY_NAME);
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Ian');
+        $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('version',       '2.22');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(

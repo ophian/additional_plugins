@@ -22,7 +22,7 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME);
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Tom Sommer, Ian');
+        $propbag->add('author',        'Tom Sommer, Ian Styx');
         $propbag->add('version',       '1.8.5');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

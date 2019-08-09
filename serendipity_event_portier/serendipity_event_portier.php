@@ -15,7 +15,7 @@ class serendipity_event_portier extends serendipity_event
         $propbag->add('name',        PLUGIN_PORTIER_NAME);
         $propbag->add('description', PLUGIN_PORTIER_DESC);
         $propbag->add('stackable',   false);
-        $propbag->add('author',      'Grischa Brockhaus, Malte Paskuda, Ian');
+        $propbag->add('author',      'Grischa Brockhaus, Malte Paskuda, Ian Styx');
         $propbag->add('version',     '1.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',

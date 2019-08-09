@@ -17,7 +17,7 @@ class serendipity_event_startcat extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_STARTCAT_NAME);
         $propbag->add('description',   PLUGIN_EVENT_STARTCAT_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Stefan Willoughby, Garvin Hicking, Ian');
+        $propbag->add('author',        'Stefan Willoughby, Garvin Hicking, Ian Styx');
         $propbag->add('version',       '1.12');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

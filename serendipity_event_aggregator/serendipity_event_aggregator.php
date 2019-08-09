@@ -69,7 +69,7 @@ class serendipity_event_aggregator extends serendipity_event
             'php'         => '5.2.0'
         ));
         $propbag->add('version',       '1.01');
-        $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian');
+        $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
             'external_plugin'           => true,

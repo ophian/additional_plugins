@@ -91,7 +91,7 @@ class serendipity_event_customarchive extends serendipity_event
         $propbag->add('description', PLUGIN_CUSTOMARCHIVE_TITLE_BLAHBLAH);
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'articleformat', 'exclude_emptyyears'));
-        $propbag->add('author', 'Garvin Hicking, Ian');
+        $propbag->add('author', 'Garvin Hicking, Ian Styx');
         $propbag->add('version', '1.15');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',

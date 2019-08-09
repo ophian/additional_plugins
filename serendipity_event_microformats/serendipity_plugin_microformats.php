@@ -55,7 +55,7 @@ class serendipity_plugin_microformats extends serendipity_plugin
         $propbag->add('name',          $this->title);
         $propbag->add('description',   PLUGIN_MICROFORMATS_TITLE_D);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Matthias Gutjahr, Ian');
+        $propbag->add('author',        'Matthias Gutjahr, Ian Styx');
         $propbag->add('version',       '0.25');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

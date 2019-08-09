@@ -18,7 +18,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_MTRACKBACK_TITLETITLE);
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian');
+        $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian Styx');
         $propbag->add('version',       '1.25');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',

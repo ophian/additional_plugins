@@ -17,7 +17,7 @@ class serendipity_event_disqus extends serendipity_event
         $propbag->add('name',          PLUGIN_DISQUS_TITLE);
         $propbag->add('description',   PLUGIN_DISQUS_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian');
+        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',

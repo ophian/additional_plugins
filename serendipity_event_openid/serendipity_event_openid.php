@@ -17,7 +17,7 @@ class serendipity_event_openid extends serendipity_event
         $propbag->add('name',        PLUGIN_OPENID_NAME);
         $propbag->add('description', PLUGIN_OPENID_DESC);
         $propbag->add('stackable',   false);
-        $propbag->add('author',      'Grischa Brockhaus, Rob Richards, Ian');
+        $propbag->add('author',      'Grischa Brockhaus, Rob Richards, Ian Styx');
         $propbag->add('version',     '1.4');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

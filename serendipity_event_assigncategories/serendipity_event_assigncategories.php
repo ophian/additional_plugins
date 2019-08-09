@@ -16,7 +16,7 @@ class serendipity_event_assigncategories extends serendipity_event
         $propbag->add('name',          PLUGIN_ASSIGNCATEGORIES_NAME);
         $propbag->add('description',   PLUGIN_ASSIGNCATEGORIES_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian');
+        $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('version',       '1.6');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

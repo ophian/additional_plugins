@@ -34,7 +34,7 @@ class serendipity_event_todolist extends serendipity_event
                                             'external_plugin'                                       => true,
                                             'backend_sidebar_entries'                               => true
                                             ));
-        $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian');
+        $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian Styx');
         $propbag->add('version', '1.30');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',

@@ -38,7 +38,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         ));
 
         $propbag->add('version',       '0.44');
-        $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian');
+        $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
                                             'entries_header'          => true,

@@ -22,7 +22,7 @@ class serendipity_event_newsbox extends serendipity_event
         $propbag->add('copyright',     'GPL');
         $propbag->add('groups',        array('FRONTEND_VIEWS', 'FRONTEND_FEATURES'));
         $propbag->add('stackable',     true);
-        $propbag->add('author',        'Jude Anthony, Ian');
+        $propbag->add('author',        'Jude Anthony, Ian Styx');
         $propbag->add('version',       '1.2');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7',

@@ -21,7 +21,7 @@ class serendipity_event_recaptcha extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_RECAPTCHA_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_RECAPTCHA_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian');
+        $propbag->add('author',        'Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',

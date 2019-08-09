@@ -20,7 +20,7 @@ class serendipity_event_multilingual extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_MULTILINGUAL_TITLE);
         $propbag->add('description',    PLUGIN_EVENT_MULTILINGUAL_DESC);
         $propbag->add('stackable',      false);
-        $propbag->add('author',         'Garvin Hicking, Wesley Hwang-Chung, Ian');
+        $propbag->add('author',         'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.28',

@@ -18,7 +18,7 @@ class serendipity_event_trackexits extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_TRACKBACK_NAME);
         $propbag->add('description',   PLUGIN_EVENT_TRACKBACK_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Serendipity Team, Ian');
+        $propbag->add('author',        'Serendipity Team, Ian Styx');
         $propbag->add('version',       '1.15');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

@@ -39,7 +39,7 @@ class serendipity_event_freetag extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_FREETAG_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_FREETAG_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian');
+        $propbag->add('author',        'Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',

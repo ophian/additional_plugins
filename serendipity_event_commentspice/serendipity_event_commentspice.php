@@ -22,7 +22,7 @@ class serendipity_event_commentspice extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_COMMENTSPICE_TITLE);
         $propbag->add('description',    PLUGIN_EVENT_COMMENTSPICE_DESC);
         $propbag->add('stackable',      false);
-        $propbag->add('author',         'Grischa Brockhaus, Ian');
+        $propbag->add('author',         'Grischa Brockhaus, Ian Styx');
         $propbag->add('requirements',   array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',

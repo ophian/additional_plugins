@@ -15,7 +15,7 @@ class serendipity_event_flickrcss extends serendipity_event
         $propbag->add('name',        PLUGIN_EVENT_FLICKRCSS);
         $propbag->add('description', PLUGIN_EVENT_FLICKRCSS_DESC);
         $propbag->add('stackable',   false);
-        $propbag->add('author',      'Michael Kaiser, Ian');
+        $propbag->add('author',      'Michael Kaiser, Ian Styx');
         $propbag->add('version',     '1.07');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',

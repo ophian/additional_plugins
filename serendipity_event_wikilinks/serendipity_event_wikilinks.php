@@ -23,7 +23,7 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_WIKILINKS_NAME);
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian');
+        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
         $propbag->add('version',       '0.29');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',

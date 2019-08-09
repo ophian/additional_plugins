@@ -20,7 +20,7 @@ class serendipity_plugin_flickr extends serendipity_plugin {
         $propbag->add('name', PLUGIN_SIDEBAR_FLICKR);
         $propbag->add('description', PLUGIN_SIDEBAR_FLICKR_DESC);
         $propbag->add('stackable',   true);
-        $propbag->add('author',      'Michael Kaiser, Ian');
+        $propbag->add('author',      'Michael Kaiser, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',

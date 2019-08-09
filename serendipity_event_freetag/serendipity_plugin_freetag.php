@@ -21,7 +21,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
         $propbag->add('name',          PLUGIN_FREETAG_NAME);
         $propbag->add('description',   PLUGIN_FREETAG_BLAHBLAH);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian');
+        $propbag->add('author',        'Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',

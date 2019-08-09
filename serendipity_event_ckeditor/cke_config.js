@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) from 2013, Author: Ian. All rights reserved.
+ * @license Copyright (c) from 2013, Author: Ian Styx. All rights reserved.
  */
 
 /**

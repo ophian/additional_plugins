@@ -17,7 +17,7 @@ class serendipity_event_weblogping extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_WEBLOGPING_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_WEBLOGPING_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Serendipity Team, Ian');
+        $propbag->add('author',        'Serendipity Team, Ian Styx');
         $propbag->add('version',       '1.16');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

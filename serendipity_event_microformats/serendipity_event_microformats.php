@@ -52,7 +52,7 @@ class serendipity_event_microformats extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_MICROFORMATS_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_MICROFORMATS_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Matthias Gutjahr, Ian');
+        $propbag->add('author',        'Matthias Gutjahr, Ian Styx');
         $propbag->add('version',       '0.49');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

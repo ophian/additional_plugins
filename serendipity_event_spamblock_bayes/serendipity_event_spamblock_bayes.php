@@ -53,7 +53,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                                             'xmlrpc_comment_ham' => true
         ));
         $propbag->add('groups',         array('ANTISPAM'));
-        $propbag->add('author',         'kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian');
+        $propbag->add('author',         'kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx');
         $propbag->add('configuration',  array(
             'method',
             'moderateBarrier',

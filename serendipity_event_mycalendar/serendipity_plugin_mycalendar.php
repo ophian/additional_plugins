@@ -13,7 +13,7 @@ class serendipity_plugin_mycalendar extends serendipity_plugin
         $propbag->add('name',          PLUGIN_MYCALENDAR_SIDE_NAME);
         $propbag->add('description',   PLUGIN_MYCALENDAR_SIDE_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Markus Gerstel, Ian');
+        $propbag->add('author',        'Garvin Hicking, Markus Gerstel, Ian Styx');
         $propbag->add('version',       '0.14');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

@@ -29,7 +29,7 @@ class serendipity_event_markread extends serendipity_event
         $propbag->add('name',          PLUGIN_MARKREAD_NAME);
         $propbag->add('description',   PLUGIN_MARKREAD_NAME);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Ian');
+        $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('version',       '1.5');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

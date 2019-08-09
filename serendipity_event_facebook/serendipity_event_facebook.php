@@ -18,7 +18,7 @@ class serendipity_event_facebook extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_FACEBOOK_NAME);
         $propbag->add('description',   PLUGIN_EVENT_FACEBOOK_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Ian');
+        $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '2.6.7',

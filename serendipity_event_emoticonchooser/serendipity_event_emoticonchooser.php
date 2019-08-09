@@ -17,7 +17,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_EMOTICONCHOOSER_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_EMOTICONCHOOSER_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Jay Bertrandt, Ian');
+        $propbag->add('author',        'Garvin Hicking, Jay Bertrandt, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.8',

@@ -43,7 +43,7 @@ class serendipity_plugin_piwik extends serendipity_plugin
         $propbag->add('name',          PLUGIN_SIDEBAR_PIWIK_NAME);
         $propbag->add('description',   PLUGIN_SIDEBAR_PIWIK_DESC);
         $propbag->add('stackable',     true);
-        $propbag->add('author',        'Bernd Distler, Ian');
+        $propbag->add('author',        'Bernd Distler, Ian Styx');
         $propbag->add('version',       '0.6');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

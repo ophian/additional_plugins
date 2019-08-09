@@ -19,7 +19,7 @@ class serendipity_event_spamblock_rbl extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_SPAMBLOCK_RBL_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_SPAMBLOCK_RBL_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Sebastian Nohn, Ian');
+        $propbag->add('author',        'Sebastian Nohn, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'php'         => '4.1.0'

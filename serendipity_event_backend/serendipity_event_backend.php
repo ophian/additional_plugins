@@ -26,7 +26,7 @@ class serendipity_event_backend extends serendipity_event
         ));
 
         $propbag->add('version',       '0.7');
-        $propbag->add('author',       'Alexander Mieland, Ian');
+        $propbag->add('author',       'Alexander Mieland, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
             'external_plugin'         => true

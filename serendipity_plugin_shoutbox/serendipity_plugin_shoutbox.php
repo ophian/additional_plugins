@@ -19,7 +19,7 @@ class serendipity_plugin_shoutbox extends serendipity_plugin
         $propbag->add('name',          PLUGIN_SHOUTBOX_NAME);
         $propbag->add('description',   PLUGIN_SHOUTBOX_BLAHBLAH);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Matthias Lange, Ian');
+        $propbag->add('author',        'Matthias Lange, Ian Styx');
         $propbag->add('version',       '1.04');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

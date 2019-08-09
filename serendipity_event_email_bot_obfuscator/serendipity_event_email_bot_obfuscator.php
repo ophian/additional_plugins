@@ -17,7 +17,7 @@ class serendipity_event_email_bot_obfuscator extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_NAME);
         $propbag->add('description',   PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Stephan Manske, Ian');
+        $propbag->add('author',        'Stephan Manske, Ian Styx');
         $propbag->add('version',       '1.06');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

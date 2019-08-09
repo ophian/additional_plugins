@@ -19,7 +19,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_IMAGESELECTORPLUS_NAME);
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian');
+        $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
         $propbag->add('version',       '1.19');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',

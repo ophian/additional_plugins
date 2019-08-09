@@ -16,7 +16,7 @@ class serendipity_event_creativecommons extends serendipity_event
         $propbag->add('name',          PLUGIN_CREATIVECOMMONS_NAME);
         $propbag->add('description',   PLUGIN_CREATIVECOMMONS_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Evan Nemerson, Ian');
+        $propbag->add('author',        'Evan Nemerson, Ian Styx');
         $propbag->add('version',       '1.7');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

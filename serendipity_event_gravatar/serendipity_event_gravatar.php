@@ -30,7 +30,7 @@ class serendipity_event_gravatar extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_GRAVATAR_NAME);
         $propbag->add('description',   PLUGIN_EVENT_GRAVATAR_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian');
+        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1.0',
             'php'         => '5.3.0'

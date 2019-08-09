@@ -43,7 +43,7 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('name',          PLUGIN_KARMA_NAME);
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian');
+        $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx');
         $propbag->add('version',       '2.16');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',

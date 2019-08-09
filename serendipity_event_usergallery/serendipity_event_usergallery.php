@@ -15,7 +15,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_USERGALLERY_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
-        $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian');
+        $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian Styx');
         $propbag->add('version',       '2.73');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

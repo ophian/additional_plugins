@@ -17,7 +17,7 @@ class serendipity_plugin_creativecommons extends serendipity_plugin
         $propbag->add('name',          PLUGIN_SIDEBAR_CREATIVECOMMONS_NAME);
         $propbag->add('description',   PLUGIN_SIDEBAR_CREATIVECOMMONS_DESC);
         $propbag->add('stackable',     true);
-        $propbag->add('author',        'Evan Nemerson, Ian');
+        $propbag->add('author',        'Evan Nemerson, Ian Styx');
         $propbag->add('version',       '1.2');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

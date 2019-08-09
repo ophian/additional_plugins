@@ -18,7 +18,7 @@ class serendipity_event_dejure extends serendipity_event
 
         $propbag->add('name',        DEJURE_TITLE);
         $propbag->add('description', DEJURE_DESCRIPTION);
-        $propbag->add('author',      'Garvin Hicking, dejure.org, Thomas Hochstein, Ian');
+        $propbag->add('author',      'Garvin Hicking, dejure.org, Thomas Hochstein, Ian Styx');
         $propbag->add('version',     DJO_VERSION);
         $propbag->add('stackable',   false);
         $propbag->add('groups',      array('FRONTEND_EXTERNAL_SERVICES'));

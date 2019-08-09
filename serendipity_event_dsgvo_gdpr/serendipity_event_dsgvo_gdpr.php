@@ -17,7 +17,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_DSGVO_GDPR_NAME);
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Serendipity Team, Ian');
+        $propbag->add('author',        'Serendipity Team, Ian Styx');
         $propbag->add('version',       '1.79');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',

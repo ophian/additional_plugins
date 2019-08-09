@@ -23,7 +23,7 @@ class serendipity_event_mycalendar extends serendipity_event
         ));
 
         $propbag->add('version',       '0.19');
-        $propbag->add('author',        'Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian');
+        $propbag->add('author',        'Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
                                             'backend_sidebar_entries' => true,

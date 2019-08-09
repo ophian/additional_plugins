@@ -23,7 +23,7 @@ class serendipity_event_adminnotes extends serendipity_event
         ));
 
         $propbag->add('version',       '0.27');
-        $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian');
+        $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
         $propbag->add('event_hooks',   array(

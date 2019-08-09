@@ -25,7 +25,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('name',          PLUGIN_CATEGORYTEMPLATES_NAME);
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Judebert, Ian');
+        $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
         $propbag->add('version',       '1.91');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',

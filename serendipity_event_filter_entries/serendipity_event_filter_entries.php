@@ -18,7 +18,7 @@ class serendipity_event_filter_entries extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_FILTER_ENTRIES_NAME);
         $propbag->add('description',   PLUGIN_EVENT_FILTER_ENTRIES_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Ian');
+        $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('version',       '1.11');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',

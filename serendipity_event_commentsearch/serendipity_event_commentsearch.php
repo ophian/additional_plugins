@@ -21,7 +21,7 @@ class serendipity_event_commentsearch extends serendipity_event
             'frontend_fetchentries' => true
         ));
 
-        $propbag->add('author', 'Garvin Hicking, Ian');
+        $propbag->add('author', 'Garvin Hicking, Ian Styx');
         $propbag->add('version', '1.8');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
