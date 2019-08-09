@@ -19,7 +19,7 @@ class serendipity_event_feed extends serendipity_plugin
         $propbag->add('name', PLUGIN_DASHBOARD_FEEDME_PLUGIN_TITLE);
         $propbag->add('description',    PLUGIN_DASHBOARD_FEEDME_PLUGIN_DESC);
         $propbag->add('stackable',      false);
-        $propbag->add('author',         'Ian');
+        $propbag->add('author',         'Ian Styx');
         $propbag->add('version',        '1.04');
         $propbag->add('requirements',   array(
             'serendipity' => '2.0.0',

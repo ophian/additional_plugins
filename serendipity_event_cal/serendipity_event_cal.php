@@ -71,7 +71,7 @@ class serendipity_event_cal extends serendipity_event
                                             'log_email'
                                         )
                     );
-        $propbag->add('author',         'Ian');
+        $propbag->add('author',         'Ian Styx');
         $propbag->add('version',        '1.85');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(

@@ -56,7 +56,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'entrychecks',
                         'dateformat'
                     ));
-        $propbag->add('author',       'Ian');
+        $propbag->add('author',       'Ian Styx');
         $propbag->add('version',      '3.74');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
