@@ -30,9 +30,9 @@
 <title>Show tagged entries: Shows a list of existing tags for entries</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_freetag</link>
 <category>Sidebar Plugins</category>
-<author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian</author>
+<author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_freetag&lt;br /&gt;Show tagged entries&lt;/b&gt;&lt;br /&gt;Shows a list of existing tags for entries&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 23 Dec 2018 17:05:42 +0100</pubDate>
+<pubDate>Fri, 09 Aug 2019 11:20:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_freetag</guid>
 </item>
 <item>
@@ -48,9 +48,9 @@
 <title>Guestbook Sidebar: Display the latest guestbook items in the sidebar</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_guestbook</link>
 <category>Sidebar Plugins</category>
-<author>Jaap Boerma ( j@webbict.com ), Tadashi Jokagi &lt;elf2000@users.sourceforge.net&gt;, Ian</author>
+<author>Jaap Boerma ( j@webbict.com ), Tadashi Jokagi &lt;elf2000@users.sourceforge.net&gt;, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_guestbook&lt;br /&gt;Guestbook Sidebar&lt;/b&gt;&lt;br /&gt;Display the latest guestbook items in the sidebar&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Fri, 09 Aug 2019 11:20:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_guestbook</guid>
 </item>
 <item>
@@ -66,9 +66,9 @@
 <title>Upcoming Events: Display upcoming and recommended events in the sidebar and apply the hCalendar microformat to them.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_microformats</link>
 <category>Sidebar Plugins</category>
-<author>Matthias Gutjahr, Ian</author>
+<author>Matthias Gutjahr, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_microformats&lt;br /&gt;Upcoming Events&lt;/b&gt;&lt;br /&gt;Display upcoming and recommended events in the sidebar and apply the hCalendar microformat to them.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 02 Feb 2017 14:30:28 +0100</pubDate>
+<pubDate>Fri, 09 Aug 2019 11:21:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_microformats</guid>
 </item>
 <item>
@@ -84,9 +84,9 @@
 <title>My Calendar: Shows your personal calendar with X upcoming scheduled events</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mycalendar</link>
 <category>Sidebar Plugins</category>
-<author>Garvin Hicking, Markus Gerstel, Ian</author>
+<author>Garvin Hicking, Markus Gerstel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_mycalendar&lt;br /&gt;My Calendar&lt;/b&gt;&lt;br /&gt;Shows your personal calendar with X upcoming scheduled events&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 11 Oct 2016 15:21:07 +0200</pubDate>
+<pubDate>Fri, 09 Aug 2019 11:22:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_mycalendar</guid>
 </item>
 <item>
@@ -102,18 +102,18 @@
 <title>Static Page List: This plugin displays a configurable list of the static pages.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_staticpage</link>
 <category>Sidebar Plugins</category>
-<author>Rob Antonishen, Falk Doering, Ian</author>
+<author>Rob Antonishen, Falk Doering, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_staticpage&lt;br /&gt;Static Page List&lt;/b&gt;&lt;br /&gt;This plugin displays a configurable list of the static pages.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Wed, 09 Jan 2019 21:13:08 +0100</pubDate>
+<pubDate>Fri, 09 Aug 2019 11:24:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_staticpage</guid>
 </item>
 <item>
 <title>统计资料: 统计资料</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_statistics</link>
 <category>Sidebar Plugins</category>
-<author>Arnan de Gans, Garvin Hicking, Ian</author>
+<author>Arnan de Gans, Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_statistics&lt;br /&gt;统计资料&lt;/b&gt;&lt;br /&gt;统计资料&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 06 Nov 2017 15:38:16 +0100</pubDate>
+<pubDate>Fri, 09 Aug 2019 11:24:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_statistics</guid>
 </item>
 <item>
@@ -153,9 +153,9 @@
 <title>User Self-Registration: Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_adduser</link>
 <category>Sidebar Plugins</category>
-<author>Garvin Hicking, Ian</author>
+<author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Tue, 14 Aug 2018 16:21:39 +0200</pubDate>
+<pubDate>Fri, 09 Aug 2019 11:25:42 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_adduser</guid>
 </item>
 <item>
@@ -189,9 +189,9 @@
 <title>“创作共用”协议: 在侧栏显示一条“创作共用”协议的提示。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_creativecommons</link>
 <category>Sidebar Plugins</category>
-<author>Evan Nemerson, Ian</author>
+<author>Evan Nemerson, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_creativecommons&lt;br /&gt;“创作共用”协议&lt;/b&gt;&lt;br /&gt;在侧栏显示一条“创作共用”协议的提示。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 03 Nov 2017 12:13:12 +0100</pubDate>
+<pubDate>Fri, 09 Aug 2019 11:25:50 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_creativecommons</guid>
 </item>
 <item>
@@ -225,9 +225,9 @@
 <title>flickr Photostream: Display the latest photos from flickr Photostreams.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_flickr</link>
 <category>Sidebar Plugins</category>
-<author>Michael Kaiser, Ian</author>
+<author>Michael Kaiser, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_flickr&lt;br /&gt;flickr Photostream&lt;/b&gt;&lt;br /&gt;Display the latest photos from flickr Photostreams.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Tue, 27 Mar 2018 16:45:43 +0200</pubDate>
+<pubDate>Fri, 09 Aug 2019 11:26:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_flickr</guid>
 </item>
 <item>
@@ -279,9 +279,9 @@
 <title>Unified Sidebar Image Display: Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to connect to a (deprecated) Menalto Gallery installs &quot;random&quot; URL, access a Coppermine database directory (MySql only), connect to the web service Zooomr (http://beta.zooomr.com/home) (deprecated) or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_imagesidebar</link>
 <category>Sidebar Plugins</category>
-<author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian</author>
+<author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Unified Sidebar Image Display&lt;/b&gt;&lt;br /&gt;Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to connect to a (deprecated) Menalto Gallery installs &quot;random&quot; URL, access a Coppermine database directory (MySql only), connect to the web service Zooomr (http://beta.zooomr.com/home) (deprecated) or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 25 Mar 2019 16:18:04 +0100</pubDate>
+<pubDate>Fri, 09 Aug 2019 11:26:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>
@@ -333,9 +333,9 @@
 <title>Piwik: show statistics of Piwik in sidebar</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_piwik</link>
 <category>Sidebar Plugins</category>
-<author>Bernd Distler, Ian</author>
+<author>Bernd Distler, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_piwik&lt;br /&gt;Piwik&lt;/b&gt;&lt;br /&gt;show statistics of Piwik in sidebar&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 04 Apr 2018 11:06:06 +0200</pubDate>
+<pubDate>Fri, 09 Aug 2019 11:26:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_piwik</guid>
 </item>
 <item>
@@ -378,9 +378,9 @@
 <title>实时发言: 显示一个用于实时发言的文本框。此类发言并不一定准对某一具体文章。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_shoutbox</link>
 <category>Sidebar Plugins</category>
-<author>Matthias Lange, Ian</author>
+<author>Matthias Lange, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_shoutbox&lt;br /&gt;实时发言&lt;/b&gt;&lt;br /&gt;显示一个用于实时发言的文本框。此类发言并不一定准对某一具体文章。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 03 Apr 2018 18:43:49 +0200</pubDate>
+<pubDate>Fri, 09 Aug 2019 11:26:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_shoutbox</guid>
 </item>
 <item>

@@ -9,11 +9,11 @@
 <summary>Rychlé poznámky</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Zobrazuje v administrační sekci oznámení přihlášeným uživatelům</description>
-<maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.27</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-11-09</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
       <file>ChangeLog</file>
@@ -51,11 +51,11 @@
 <summary>RSS agregátor</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Zobrazuje zprávy z mnoha RSS kanálů. DŮLEŽITÁ POZNÁMKA: Aktualizace a &quot;krmení&quot; agregátoru je v současnosti nutno dělat ručně pomocí Cronjobs nebo podobně. Volejte následující adresu v libovolných časových intervalech: index.php?/plugin/aggregator</description>
-<maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.01</version>
   <requirements:s9yVersion>2.2</requirements:s9yVersion>
-  <date>2018-11-17</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_aggregator">
       <file>ChangeLog</file>
@@ -117,11 +117,11 @@
 <summary>Tlačítko médií Amazon</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Přidává tlačítko, které umožňuje vkládat do příspěvků výsledky hledání na Amazon.com</description>
-<maintainers><maintainer><name>Matthew Groeninger, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.81</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-07-13</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -189,11 +189,11 @@
 <summary>Přiřazení více kategorií</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Umožňuje přiřadit příspěvku více kategorií</description>
-<maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_assigncategories">
       <file>ChangeLog</file>
@@ -329,11 +329,11 @@
 <summary>Zobrazování příspěvků pomocí JavaScriptu</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Poskytuje Javascriptový výstup nejnovějších článků pro jejich vložení do cizích, externích stránek. (Přečtěte si soubor README v adresáři pluginu!)</description>
-<maintainers><maintainer><name>Alexander Mieland, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Alexander Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-10</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_backend">
       <file>backend.html</file>
@@ -560,11 +560,11 @@
 <summary>Vlastnosti/šablona vzhledu pro kategorie</summary>
 <groups>FRONTEND_FULL_MODS,FRONTEND_VIEWS,BACKEND_TEMPLATES</groups>
 <description>This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.</description>
-<maintainers><maintainer><name>Garvin Hicking, Judebert, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Judebert, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.91</version>
   <requirements:s9yVersion>2.7.0</requirements:s9yVersion>
-  <date>2019-02-04</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -803,11 +803,11 @@
 <summary>Hledání v komentářích</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Pokud je tento plugin nainstalovaný, rychlé vyhledávání bude prohledávat také komentáře</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.8</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-02-22</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_commentsearch">
       <file>ChangeLog</file>
@@ -853,11 +853,11 @@
 <summary>Komentářové koření</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Okořeňte formulář pro zadání komentářů pomocí twitteru komentujícího, odkazem na poslední článek nebo pravidly pro ne-sledování.</description>
-<maintainers><maintainer><name>Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-11-21</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -929,11 +929,11 @@
 <summary>Hodnocení</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Můžete hodnotit výrobky, filmy nebo cokoliv jiného a zobrazovat jejich hodnocení v příslušných příspěvcích. Také umožňuje sdíle hodnocení s ostatními uživateli tohoto pluginu. Tento plugin vyžaduje zásah do šablon, přečtěte si prosím soubor README.</description>
-<maintainers><maintainer><name>Garvin Hicking, Lewe Zipfel, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Lewe Zipfel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.14</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-07-22</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
       <file>ChangeLog</file>
@@ -999,11 +999,11 @@
 <summary>Kontaktní formulář</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Zobrazuje kontaktní formulář k poslání e-mailu jako statickou stránku. Přístup k fromuláři buď pomocí stálého odkazu (permalinku) nebo na adrese index.php?serendipity[subpage]=contactform. Vzhled fromuláře si můžete upravit podle svého vložením souboru plugin_contactform.tpl do adresáře s Vaší šablonou. Kryptogramy z pluginu SpamBlock budou použity, pokud je SpamBlock nainstalován.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.31</version>
+  <version>1.32</version>
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
-  <date>2019-06-03</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_contactform">
       <file>ChangeLog</file>
@@ -1200,11 +1200,11 @@
 <summary>Licence Creative Commons</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Výběr a zobreazení licence Creative Commons (autorská práva) pro obsah Vašeho webu.</description>
-<maintainers><maintainer><name>Evan Nemerson, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Evan Nemerson, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-11-03</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_creativecommons">
       <file>ChangeLog</file>
@@ -1284,11 +1284,11 @@
 <summary>Plánovač úloh</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Tento plugin periodicky vykonává pluginy, které poskytují/vyžadují opakované vykonávání. Podrobnosti v konfiguraci pluginu.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-10-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_cronjob">
       <file>ChangeLog</file>
@@ -1324,11 +1324,11 @@
 <summary>Přizpůsobitelný archiv příspěvků</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>Zobrazuje návštěvníkovi blogu všechny dosud vydané články s možností třídění. Odkaz na tuto stránku by měl být vložen do HTML nugetu (bloku).</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2016-09-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_customarchive">
       <file>asc.gif</file>
@@ -1374,11 +1374,11 @@
 <summary>Stálé odkazy pro příspěvky</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Můžete definovat stálé odkazy k jednotlivým příspěvkům. Lze použít pouze URL vzory, které JEŠTĚ NEJSOU používané - používání stálých odkazů ve tvaru /archives/odkaz není tedy možné. Ale používání jakéhokoliv jiného (virtuálního) adresáře možné je.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.19</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-04-25</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_custom_permalinks">
       <file>ChangeLog</file>
@@ -1464,11 +1464,11 @@
 <summary>Automatické odkazy Dejure.org</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Automaticky vytváří odkazy na citace a judikaturu (odkazy a zdroje informací) pomocí služby dejure.org.</description>
-<maintainers><maintainer><name>Garvin Hicking, dejure.org, Thomas Hochstein, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, dejure.org, Thomas Hochstein, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.13</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_dejure">
       <file>ChangeLog</file>
@@ -1506,11 +1506,11 @@
 <summary>Komentáře Disqus</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Disqus.com je webová služba pro správu komentářů. Ukládá a spravuje komentáře vně instalace serendipity a je do blogu vkládána pomocí JavaScriptu. Pro více informací přejděte na www.disqus.com.</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-07</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_disqus">
       <file>ChangeLog</file>
@@ -1546,11 +1546,11 @@
 <summary>Downloadmanager</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Zajišťuje Serendipity všechny funkce download managera. Při odinstalování jsou odstraněny všechny tabulky z databáze (ztráta všech dat)!!!</description>
-<maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.44</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2019-04-23</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_downloadmanager">
       <file>AUTHORS</file>
@@ -2006,11 +2006,11 @@
 <summary>DSGVO / GDPR: General Data Protection Regulation</summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
 <description>This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.</description>
-<maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.79</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-06-13</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_dsgvo_gdpr">
       <file>ChangeLog</file>
@@ -2044,11 +2044,11 @@
 <summary>Markup: klikatelná emailová adresa - s protispamovou ochranou</summary>
 <groups>ANTISPAM,MARKUP</groups>
 <description>Umožňuje vložit do blogu klikatelnou emailovou adresu, ale vkládá ji upravenou tak, aby ji nepoznaly internetové roboty, které hledají mailové adresy.</description>
-<maintainers><maintainer><name>Stephan Manske, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Stephan Manske, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.06</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-21</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_email_bot_obfuscator">
       <file>ChangeLog</file>
@@ -2096,11 +2096,11 @@
 <summary>Lišta smajlíků</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Zobrazí lištu se smajlíky, které je možné vložit do textu příspěvku nebo komentáře.</description>
-<maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>3.28</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2019-02-09</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -2152,11 +2152,11 @@
 <summary>Pravidla vydávání příspěvků</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Provádí kontrolu příspěvku před jeho vydáním.</description>
-<maintainers><maintainer><name>Garvin Hicking, Gregor Voeltz, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.19</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-02-12</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_entrycheck">
       <file>ChangeLog</file>
@@ -2252,11 +2252,11 @@
 <summary>Odkaz na další/předchozí příspěvek</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>Umožňuje prohlížení dalších/předchozích příspěvků</description>
-<maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.70</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-11-26</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -2456,11 +2456,11 @@
 <summary>Facebook</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Importuje do blogu komentáře u příspěvků na facebooku (pomocí RSS Graffiti). Také do blogu vloží facebookové OpenGraph Meta-Tagy. Pamatujte, že přidání talčítka &quot;Líbí se mi&quot; k příspěvkům blogu je zajišťováno pluginem serendipity_event_findmore!</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.01</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-11-15</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_facebook">
       <file>ChangeLog</file>
@@ -2496,11 +2496,11 @@
 <summary>FAQ - Často kladené otázky</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Správa FAQ - často kladených otázek</description>
-<maintainers><maintainer><name>Falk Doering, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Falk Doering, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.40</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-07-13</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_faq">
       <dir name="alternatives">
@@ -2647,11 +2647,11 @@
 <summary>Filtrování příspěvků</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Umožňuje návštěvníkům blogu filtrovat/řadit příspěvky podle různých pravidel</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-03-14</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_filter_entries">
       <file>ChangeLog</file>
@@ -2695,11 +2695,11 @@
 <summary>Zobrazuje odkazy jako Digg, del.icio.us apod. vztažené k příspěvku.</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Plugin DEPRECATED. Move along to the new event_social plugin! Můžete vložit/odstranit další webové služby pomocí souboru šablony &quot;plugin_findmore.tpl&quot;. Pamatujte, že pokud chcete ušetřit pár drahocených bodů za výkon blogu, můžete stejného efektu dosáhnout také vložením HTML/JavaScript snipletu do souboru šablony entries.tpl namísto používání tohoto pluginu!</description>
-<maintainers><maintainer><name>Garvin Hicking, Kodewulf, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Kodewulf, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.26</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-05-31</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_findmore">
       <file>ChangeLog</file>
@@ -2815,7 +2815,7 @@
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -3237,11 +3237,11 @@
 <summary>Klíčová slova</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Umožňuje libovolné přidávání klíčových slov k příspěvkům</description>
-<maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>4.23</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2019-04-10</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -4244,11 +4244,11 @@
 <summary>Avatar Plugin</summary>
 <groups>IMAGES</groups>
 <description>Zobrazuje avatary (ikona či obrázek přispěvatele) v komentářích. Podporovány jsou služby Gravatar, Pavatar a Favatar.</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.69</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2019-07-29</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_gravatar">
       <file>ChangeLog</file>
@@ -4786,11 +4786,11 @@
 <summary>Rozšířené volby pro práci s médii</summary>
 <groups>IMAGES,MARKUP</groups>
 <description>Rozšiřuje možnosti vkládání obrázků z knihovny médií - quickblog a hromadné vkládání obrázků (více v dokumentaci v adresáři plugins/serendipity_evnets_imageselectorplus).</description>
-<maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.19</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2018-11-11</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
@@ -4846,11 +4846,11 @@
 <summary>Markup: Vložení příspěvku/šablony/bloku</summary>
 <groups>MARKUP</groups>
 <description>Umožňuje přidat do příspěvku tagy, které zajistí vložení část jiného příspěvku. Použijte tuto značku: [s9y-include-entry:XXX:YYY]. Nahraďte XXX číslem ID odkazovaného příspěvku a YYY nahraďte názvem pole příspěvku, které chcete vložit (např. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). Také můžete využít nové funkce menu pro správu šablon a bloků, které je možno vložit mezi příspěvky.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.22</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-08-17</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -4900,11 +4900,11 @@
 <summary>Karma</summary>
 <groups>STATISTICS</groups>
 <description>Čtenáři hodnotí kvalitu Vašich příspěvků</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.16</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2019-07-24</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_karma">
       <file>ChangeLog</file>
@@ -5110,11 +5110,11 @@
 <summary>Lightbox for entry images</summary>
 <groups>IMAGES</groups>
 <description>Lightbox JS is a simple, unobtrusive script used to overlay images on the current page. It's a snap to setup and works with all modern browsers. All lightboxes pop-up images. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the internal display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version. To display also hidden set images by display:none, use lightbox2. These lightbox scripts are all jQuery based. They do not only support image types, they may also add support for ajax, videos, flash, YouTube, iFrame, inline, or modal boxes. This Plugin uses them for image lightboxes only, but you can easily add other content types manually to your entries and start the chosen lightbox as described in their online documentaries.</description>
-<maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.5.4</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-04-08</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
       <file>ChangeLog</file>
@@ -5416,11 +5416,11 @@
 <summary>Link List</summary>
 <groups>FRONTEND_VIEWS,BACKEND_FEATURES</groups>
 <description>Správce odkazů (linků) - V bočním panelu zobrazuje vaše oblíbené odkazy.</description>
-<maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.06</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-20</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
@@ -5556,11 +5556,11 @@
 <summary>Zkracovač adres</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Umožňuje zkrátit odkaz na Váš blog, podobně jako třeba tr.im, tinyurl.com apod.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7.1</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-08-30</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -6017,11 +6017,11 @@
 <summary>Markup: Markdown</summary>
 <groups>MARKUP</groups>
 <description>Převádí značky Markdown na HTML v textu příspěvku</description>
-<maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.30</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-11-12</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_markdown">
       <file>ChangeLog</file>
@@ -6115,11 +6115,11 @@
 <summary>Přečteno/Nepřečteno označování příspěvků uživateli</summary>
 <groups>STATISTICS</groups>
 <description>Přečteno/Nepřečteno označování příspěvků uživateli</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_markread">
       <file>ChangeLog</file>
@@ -6207,11 +6207,11 @@
 <summary>Mikroformáty</summary>
 <groups>BACKEND_EDITOR,BACKEND_TEMPLATES</groups>
 <description>Tento plugin poskytuje jednoduché publikování přehledů (nebo událostí); podporuje příslušné mikroformáty.</description>
-<maintainers><maintainer><name>Matthias Gutjahr, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Matthias Gutjahr, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.49</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-07-30</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_microformats">
       <file>ChangeLog</file>
@@ -6523,11 +6523,11 @@
 <summary>Vízejazyčné záznamy</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_EDITOR</groups>
 <description>Umožňuje vytvořit příspěvek (záznam) ve více jazykových variantách. Obsahuje též fromulář pro výběr základního jazyka blogu.</description>
-<maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.57</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <date>2019-02-01</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -6593,11 +6593,11 @@
 <summary>Můj kalendář</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Správa osobního kalendáře</description>
-<maintainers><maintainer><name>Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.19</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-02-02</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_mycalendar">
       <file>ChangeLog</file>
@@ -6689,11 +6689,11 @@
 <summary>Blok s novinkami</summary>
 <groups>FRONTEND_VIEWS,FRONTEND_FEATURES</groups>
 <description>Seskupte příspěvky z jedné kategorie na výchozí stránce blogu do jednoho bloku místo obvyklého výpisu příspěvků. Podporuje vnořené bloky s novinkami.</description>
-<maintainers><maintainer><name>Jude Anthony, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Jude Anthony, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>2.7</requirements:s9yVersion>
-  <date>2019-03-16</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_newsbox">
       <file>ChangeLog</file>
@@ -6817,11 +6817,11 @@
 <summary>Přihlašování pomocí OpenID</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
 <description>Umožňuje autorům přihlásit se pomocí OpenID.</description>
-<maintainers><maintainer><name>Grischa Brockhaus, Rob Richards, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Grischa Brockhaus, Rob Richards, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.4</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_openid">
       <file>ChangeLog</file>
@@ -7183,11 +7183,11 @@
 <summary>Podcasting plugin</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Přidává &quot;podcastovací&quot; možnosti (RSS zapouzdření, přehrávač videa a/nebo hudby)</description>
-<maintainers><maintainer><name>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.39</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-03-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_podcast">
       <file>ChangeLog</file>
@@ -7483,11 +7483,11 @@
 <summary>Portier Email přihlašování</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
 <description>Allows authors to authenticate only using their email.</description>
-<maintainers><maintainer><name>Grischa Brockhaus, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Grischa Brockhaus, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-04-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_portier">
       <file>ChangeLog</file>
@@ -8241,11 +8241,11 @@
 <summary>Recaptcha</summary>
 <groups>ANTISPAM</groups>
 <description>Při vkládání komentářů používá systém kryptogramů Recaptcha (je třeba předem zažádat o přístupový klíč)</description>
-<maintainers><maintainer><name>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.34</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-09</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_recaptcha">
       <file>ChangeLog</file>
@@ -8407,11 +8407,11 @@
 <summary>Responsive Images</summary>
 <groups>MARKUP</groups>
 <description>Use HTML5 and the s9y backend to scale images to the visitors viewport width</description>
-<maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.8</version>
   <requirements:s9yVersion>2.3.1</requirements:s9yVersion>
-  <date>2019-02-09</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_responsiveimages">
       <file>ChangeLog</file>
@@ -8439,11 +8439,11 @@
 <summary>Zvýraznění vyhledávaných řetězců</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Zvýrazňuje řetězce hledané v odkazujícím vyhledávači.</description>
-<maintainers><maintainer><name>Tom Sommer, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Tom Sommer, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.8.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-21</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_searchhighlight">
       <file>ChangeLog</file>
@@ -8523,11 +8523,11 @@
 <summary>Přepínání stavu postranního sloupce (sbalený/rozbalený)</summary>
 <groups>BACKEND_TEMPLATES</groups>
 <description>Smrští postranní sloupce pouze na jejich nadpisy. Přidává nastavení do psaní příspěvků a také položku &quot;Správa postranních sloupců&quot; do administrační sekce.</description>
-<maintainers><maintainer><name>Tys von Gaza, Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Tys von Gaza, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.37</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-03-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_sidebarhider">
       <file>ChangeLog</file>
@@ -8613,11 +8613,11 @@
 <summary>SMTP Mail</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Použití SMTP serveru pro odesílání pošty</description>
-<maintainers><maintainer><name>kleinerChemiker, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.01</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_smtpmail">
       <file>ChangeLog</file>
@@ -8775,11 +8775,11 @@
 <summary>Share Buttons</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Show social share buttons for services like Facebook and Twitter using shariff.</description>
-<maintainers><maintainer><name>onli, Matthias Mees, Thomas Hochstein, Ian, Mario Hommel</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.18</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-04-22</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_social">
       <file>ChangeLog</file>
@@ -8831,11 +8831,11 @@
 <summary>Spamblock (Bayes)</summary>
 <groups>ANTISPAM</groups>
 <description>Detekce spamu pomocí adaptivního algoritmu, který se dokáže sám učit.</description>
-<maintainers><maintainer><name>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.04</version>
   <requirements:s9yVersion>2.1.2</requirements:s9yVersion>
-  <date>2018-04-24</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bayes">
       <dir name="admin">
@@ -8973,11 +8973,11 @@
 <summary>Antispamová ochrana (RBL)</summary>
 <groups>ANTISPAM</groups>
 <description>Odmítne komentáře, které jsou zadány ze adres, které jsou vedeny v blacklistu RBL. Pozor, že tato volba může znemožnit posílání komentářů uživatelům, kteří sedí za proxy serverem nebo kteří používají vytáčené spojení.</description>
-<maintainers><maintainer><name>Sebastian Nohn, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Sebastian Nohn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-08</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_spamblock_rbl">
       <file>ChangeLog</file>
@@ -9019,11 +9019,11 @@
 <summary>Spam Protector (SURBL)</summary>
 <groups>ANTISPAM</groups>
 <description>Zamítne komentáře, které obsahují URL adresy z černé listiny.</description>
-<maintainers><maintainer><name>Sebastian Nohn, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Sebastian Nohn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_spamblock_surbl">
       <file>ChangeLog</file>
@@ -9086,11 +9086,11 @@
 <summary>Kategorie na výchozí stránce</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Umožňuje zobrazovat na výchozí stránce blogu příspěvky pouze z jedné kategorie</description>
-<maintainers><maintainer><name>Stefan Willoughby, Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Stefan Willoughby, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.12</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-30</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_startcat">
       <file>ChangeLog</file>
@@ -9285,11 +9285,11 @@
 <summary>Statistiky</summary>
 <groups>STATISTICS</groups>
 <description>Zobrazení statistik záznamů</description>
-<maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.76</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-12-31</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>ChangeLog</file>
@@ -9623,11 +9623,11 @@
 <summary>Markup: Textile</summary>
 <groups>MARKUP</groups>
 <description>Převádí text se značkami Textile do HTML</description>
-<maintainers><maintainer><name>Serendipity Team, Lars Strojny, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team, Lars Strojny, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.8.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-21</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_textile">
       <file>classTextile.php</file>
@@ -10308,11 +10308,11 @@
 <summary>TinyMCE jako WYSIWYG editor</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Použije TiniMCE WYSIWYG editor pro psaní příspěvků. Vyžaduje Serendipity 1.6 nebo novější. Po instalaci si přečtěte instalačního průvodce v nastavení tohoto pluginu.</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-04-25</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_tinymce">
       <file>ChangeLog</file>
@@ -10374,11 +10374,11 @@
 <summary>Seznam úkolů / ToDo list / projektové řízení</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Správa seznamu projektů/úkolů a jejich splnění v procentech</description>
-<maintainers><maintainer><name>Steven Tonnesen, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Steven Tonnesen, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.30</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-03-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_todolist">
       <file>ChangeLog</file>
@@ -10603,11 +10603,11 @@
 <summary>Správa odezev</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Umožňuje podrobnou kontrolu chování odezev, jak jsou posílány při vytváření příspěvků</description>
-<maintainers><maintainer><name>Garvin Hicking, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.25</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <date>2018-10-21</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_trackback">
       <file>ChangeLog</file>
@@ -10659,11 +10659,11 @@
 <summary>Markup: Sledování odchodů</summary>
 <groups>STATISTICS</groups>
 <description>Sleduje kliknutí na URL adresy mimo blog</description>
-<maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-10</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_trackexits">
       <file>ChangeLog</file>
@@ -10925,11 +10925,11 @@
 <summary>Galerie</summary>
 <groups>IMAGES</groups>
 <description>Umožňuje nepřihlášeným uživatelům prohlížet Serendipity knihovnu médií</description>
-<maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.73</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-01-23</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
       <file>ChangeLog</file>
@@ -11033,11 +11033,11 @@
 <summary>Profily uživatelů</summary>
 <groups>BACKEND_USERMANAGEMENT,BACKEND_TEMPLATES</groups>
 <description>Zobrazuje jednoduché profily uživatelů a dovoluje přiložit jejich fotku.</description>
-<maintainers><maintainer><name>Garvin Hicking, Falk Doering, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.33</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-08-24</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
       <file>ChangeLog</file>
@@ -11169,11 +11169,11 @@
 <summary>Oznamování příspěvků</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Posílá oznámení o nových příspěvcích na on-line internetové služby.</description>
-<maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.16</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-02-09</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_weblogping">
       <file>ChangeLog</file>
@@ -11257,11 +11257,11 @@
 <summary>Wiki odkazy v příspěvcích</summary>
 <groups>MARKUP</groups>
 <description>V příspěvcích můžete zadat odkazy na existující/nové příspěvky pomocí [[nadpis příspěvku]], na statické stránky pomocí ((nadpis stránky)) a na obojí pomocí {{nadpis}}.</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.29</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-07-13</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -11774,11 +11774,11 @@
 <summary>Rozšířená tlačítka editoru: Youtube apod.</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Přidává tlačítka do editačního formuláře pro lehčí vkládání HTML/JS akriptů jako např. Youtube apod.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-09-11</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
@@ -11810,11 +11810,11 @@
 <summary>Samoregistrace nových uživatelů</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
 <description>Umožňuje návštěvníkům webu vytvořit si vlastní uživatelský účet. Dohromady s pluginem událostí (index.php?serendipity[subpage]=adduser) můžete určit, jestli komentáře mohou posílat pouze registrovaní uživatelé.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.48</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-12-29</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -11870,11 +11870,11 @@
 <summary>Flickr Photostream CSS</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Tento plugin je rozšířením postranního pluginu &quot;Flickr Photostream&quot; a přidává k němu stylování (CSS).</description>
-<maintainers><maintainer><name>Michael Kaiser, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Michael Kaiser, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.07</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-03-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_plugin_flickr">
       <file>ChangeLog</file>

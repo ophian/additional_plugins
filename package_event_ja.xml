@@ -9,11 +9,11 @@
 <summary>QuickNotes</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Displays information for authors on the administration panel</description>
-<maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.27</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-11-09</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
       <file>ChangeLog</file>
@@ -51,11 +51,11 @@
 <summary>RSS アグリゲータ</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator</description>
-<maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.01</version>
   <requirements:s9yVersion>2.2</requirements:s9yVersion>
-  <date>2018-11-17</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_aggregator">
       <file>ChangeLog</file>
@@ -117,11 +117,11 @@
 <summary>Amazon メディアボタン</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>あなたのエントリに Amazon を検索するためのボタンを追加し、エントリに挿入することができるほうになります。</description>
-<maintainers><maintainer><name>Matthew Groeninger, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.81</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-07-13</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -189,11 +189,11 @@
 <summary>カテゴリの割り当て</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>エントリに複数のカテゴリを割り当てます。</description>
-<maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-10-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_assigncategories">
       <file>ChangeLog</file>
@@ -329,11 +329,11 @@
 <summary>Show entries via JavaScript</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Provides javascript output of recent entries for inclusion on other, extern websites. (see the README in the plugins directory!)</description>
-<maintainers><maintainer><name>Alexander Mieland, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Alexander Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2016-09-10</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_backend">
       <file>backend.html</file>
@@ -561,11 +561,11 @@
 <summary>カテゴリのプロパティとテンプレート</summary>
 <groups>FRONTEND_FULL_MODS,FRONTEND_VIEWS,BACKEND_TEMPLATES</groups>
 <description>This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.</description>
-<maintainers><maintainer><name>Garvin Hicking, Judebert, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Judebert, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.91</version>
   <requirements:s9yVersion>2.7.0</requirements:s9yVersion>
-  <date>2019-02-04</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -804,11 +804,11 @@
 <summary>Searches comments on quicksearch</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>If this plugin is installed, the quicksearch on your blog will also search through comments on your blog</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.8</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-02-22</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_commentsearch">
       <file>ChangeLog</file>
@@ -854,11 +854,11 @@
 <summary>Comment Spice</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.</description>
-<maintainers><maintainer><name>Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-11-21</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -930,11 +930,11 @@
 <summary>Community Rating</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.</description>
-<maintainers><maintainer><name>Garvin Hicking, Lewe Zipfel, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Lewe Zipfel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.14</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2017-07-22</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
       <file>ChangeLog</file>
@@ -1000,11 +1000,11 @@
 <summary>お問合せフォーム</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>静的ページとしてブログに電子メールお問合せフォームを表示します。It can be accessed by either the custom permalink or by index.php?serendipity[subpage]=contactform. You can customize the look of the contact form by putting the plugin_contactform.tpl file into your template directory and modify it there. spam ブロックプラグインの Captcha が(もし有効なら)適用されるでしょう。</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.31</version>
+  <version>1.32</version>
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
-  <date>2019-06-03</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_contactform">
       <file>ChangeLog</file>
@@ -1201,11 +1201,11 @@
 <summary>クリエイティブコモンライセンス</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>あなたのコンテンツのクリエイティブコモンズライセンスの選択と表示をします。</description>
-<maintainers><maintainer><name>Evan Nemerson, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Evan Nemerson, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-11-03</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_creativecommons">
       <file>ChangeLog</file>
@@ -1285,11 +1285,11 @@
 <summary>Cronjob scheduler</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>This plugin periodically executes plugins that provide/require periodic tasks. See the configuration of this plugin for details.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-10-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_cronjob">
       <file>ChangeLog</file>
@@ -1325,11 +1325,11 @@
 <summary>Customizable Entries Archive</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>Shows a sortable view of all past articles for the visitor. The link to this page should be inserted into a HTML nugget.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2016-09-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_customarchive">
       <file>asc.gif</file>
@@ -1375,11 +1375,11 @@
 <summary>Custom Permalinks for Entries</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Defines custom permalinks that can be used to access a specific entry. It can only use URL patterns which are NOT YET in use - using custom permalinks within the /archives/ structure is thus not possible. But any (virtual) other directory is.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.19</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-04-25</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_custom_permalinks">
       <file>ChangeLog</file>
@@ -1465,11 +1465,11 @@
 <summary>dejure.org automatic linking</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Automatically links quoted statues and judicature (references and source of information) with contents of dejure.org.</description>
-<maintainers><maintainer><name>Garvin Hicking, dejure.org, Thomas Hochstein, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, dejure.org, Thomas Hochstein, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.13</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_dejure">
       <file>ChangeLog</file>
@@ -1507,11 +1507,11 @@
 <summary>Disqus comments</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Disqus.com is a webservice that allows you to manage comments, with central logins. It stores and manages comments outside of your Serendipity installation, and is embedded using JavaScript. For more information see disqus.com.</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-07</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_disqus">
       <file>ChangeLog</file>
@@ -1548,11 +1548,11 @@
 <groups>FRONTEND_FULL_MODS</groups>
 <description>
 s9yに十分なダウンロードマネージャーの能力を提供します。インストール解除する時、関連するテーブルがすべて破棄されるでしょう!</description>
-<maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.44</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2019-04-23</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_downloadmanager">
       <file>AUTHORS</file>
@@ -2008,11 +2008,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>DSGVO / GDPR: General Data Protection Regulation</summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
 <description>This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.</description>
-<maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.79</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-06-13</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_dsgvo_gdpr">
       <file>ChangeLog</file>
@@ -2046,11 +2046,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Markup: clickable email addresses - but with antispam</summary>
 <groups>ANTISPAM,MARKUP</groups>
 <description>Makes email addresses clickable, but obfuscates them to block spam harvester bots</description>
-<maintainers><maintainer><name>Stephan Manske, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Stephan Manske, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.06</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-21</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_email_bot_obfuscator">
       <file>ChangeLog</file>
@@ -2098,11 +2098,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>表情アイコンツールバーの表示</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>エントリに挿入する表情アイコンとスマイルを選択するツールバーを表示します。</description>
-<maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>3.28</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2019-02-09</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -2154,11 +2154,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>公開のルール</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>エントリの公開前にいくつかの確認を適用します。.</description>
-<maintainers><maintainer><name>Garvin Hicking, Gregor Voeltz, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.19</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-02-12</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_entrycheck">
       <file>ChangeLog</file>
@@ -2254,11 +2254,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>次/前のエントリへのリンク</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>閲覧時、次/前のエントリを閲覧することを可能にします。</description>
-<maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.70</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-11-26</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -2458,11 +2458,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Facebook</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Imports comments made on facebook postings (like through RSS Graffiti) back into the blog. Also embeds Facebook OpenGraph Meta-Tags into the blog. Note that adding &quot;like&quot;-Buttons to blog entries is achieved via the serendipity_event_findmore plugin! </description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.01</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-11-15</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_facebook">
       <file>ChangeLog</file>
@@ -2498,11 +2498,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>よくある質問と回答(Frequently Asked Questions)</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>よくある質問と回答(Frequently Asked Question)の編集です。</description>
-<maintainers><maintainer><name>Falk Doering, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Falk Doering, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.40</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-07-13</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_faq">
       <dir name="alternatives">
@@ -2649,11 +2649,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Frontend entry filtering</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Allows visitors to filter/order your entries by several options</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-03-14</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_filter_entries">
       <file>ChangeLog</file>
@@ -2697,11 +2697,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Show social share buttons for services like Facebook and Twitter</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Plugin DEPRECATED. Move along to the new event_social plugin! You can remove/insert other custom services to link to via the &quot;plugin_findmore.tpl&quot; template file easily. Also remember that if you want to save grandma's performance pennies that you can also insert the HTML/JS snippets into your entries.tpl template file instead of using this plugin!</description>
-<maintainers><maintainer><name>Garvin Hicking, Kodewulf, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Kodewulf, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.26</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-05-31</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_findmore">
       <file>ChangeLog</file>
@@ -2817,7 +2817,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -3239,11 +3239,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>エントリーのタグ</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>エントリーの自由なタグを許可します。</description>
-<maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>4.23</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2019-04-10</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -4246,11 +4246,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Avatar Plugin</summary>
 <groups>IMAGES</groups>
 <description>Show Avatars inside comments. Gravatars, Pavatars, Favatars, Wavatars, Monster ID, Identicon, Twitter and Identica Avatars are supported.</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.69</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2019-07-29</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_gravatar">
       <file>ChangeLog</file>
@@ -4788,11 +4788,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>メディアマネージャーの拡張されたオプション</summary>
 <groups>IMAGES,MARKUP</groups>
 <description>Allows extended options for inserting images from the media manager</description>
-<maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.19</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2018-11-11</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
@@ -4848,11 +4848,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Markup: Include entry data/templates/blocks</summary>
 <groups>MARKUP</groups>
 <description>Allows you to add HTML-style tags to your entry that includes parts of other entrys. Use this markup: [s9y-include-entry:XXX:YYY]. Replace XXX with the target entryid and YYY with the target field name (i.e. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). You can also use the new menu functions to maintain templates and blocks that can get inserted in between your entries.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.22</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-08-17</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -4902,11 +4902,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>評価</summary>
 <groups>STATISTICS</groups>
 <description>訪問者にあなたのエントリの品質を評価させます。</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.16</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2019-07-24</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_karma">
       <file>ChangeLog</file>
@@ -5112,11 +5112,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Lightbox for entry images</summary>
 <groups>IMAGES</groups>
 <description>Lightbox JS is a simple, unobtrusive script used to overlay images on the current page. It's a snap to setup and works with all modern browsers. All lightboxes pop-up images. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the internal display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version. To display also hidden set images by display:none, use lightbox2. These lightbox scripts are all jQuery based. They do not only support image types, they may also add support for ajax, videos, flash, YouTube, iFrame, inline, or modal boxes. This Plugin uses them for image lightboxes only, but you can easily add other content types manually to your entries and start the chosen lightbox as described in their online documentaries.</description>
-<maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.5.4</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-04-08</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
       <file>ChangeLog</file>
@@ -5418,11 +5418,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>リンク集</summary>
 <groups>FRONTEND_VIEWS,BACKEND_FEATURES</groups>
 <description>表示するリンク集の維持をします。</description>
-<maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.06</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-20</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
@@ -5558,11 +5558,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Linktrimmer</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7.1</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-08-30</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -6019,11 +6019,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>マークアップ: Markdown</summary>
 <groups>MARKUP</groups>
 <description>エントリテキストに Markdown マークアップを適用します。</description>
-<maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.30</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-11-12</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_markdown">
       <file>ChangeLog</file>
@@ -6117,11 +6117,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Show read/unread state of entries for visitors</summary>
 <groups>STATISTICS</groups>
 <description>Show read/unread state of entries for visitors</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_markread">
       <file>ChangeLog</file>
@@ -6209,11 +6209,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Microformats</summary>
 <groups>BACKEND_EDITOR,BACKEND_TEMPLATES</groups>
 <description>This plugin provides an easy way to publish reviews (or events); it supports the respective microformats.</description>
-<maintainers><maintainer><name>Matthias Gutjahr, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Matthias Gutjahr, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.49</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-07-30</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_microformats">
       <file>ChangeLog</file>
@@ -6525,11 +6525,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>多言語エントリ</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_EDITOR</groups>
 <description>エントリの複数の言語バージョンを作成することを可能にします。</description>
-<maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.57</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <date>2019-02-01</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -6595,11 +6595,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>自分のカレンダー</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>個人カレンダーの管理をします。</description>
-<maintainers><maintainer><name>Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.19</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-02-02</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_mycalendar">
       <file>ChangeLog</file>
@@ -6691,11 +6691,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Newsbox</summary>
 <groups>FRONTEND_VIEWS,FRONTEND_FEATURES</groups>
 <description>Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.</description>
-<maintainers><maintainer><name>Jude Anthony, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Jude Anthony, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>2.7</requirements:s9yVersion>
-  <date>2019-03-16</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_newsbox">
       <file>ChangeLog</file>
@@ -6819,11 +6819,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>OpenID Authentication</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
 <description>Allows authors to authenticate using an OpenID, their Google or Yahoo account.</description>
-<maintainers><maintainer><name>Grischa Brockhaus, Rob Richards, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Grischa Brockhaus, Rob Richards, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.4</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_openid">
       <file>ChangeLog</file>
@@ -7185,11 +7185,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Easy Podcasting Plugin</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Adds &quot;podcasting&quot; capabilities hinzu (RSS enclosure, Video/Sound-Player)</description>
-<maintainers><maintainer><name>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.39</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-03-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_podcast">
       <file>ChangeLog</file>
@@ -7485,11 +7485,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Portier Email Authentication</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
 <description>Allows authors to authenticate only using their email.</description>
-<maintainers><maintainer><name>Grischa Brockhaus, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Grischa Brockhaus, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-04-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_portier">
       <file>ChangeLog</file>
@@ -8243,11 +8243,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Recaptcha</summary>
 <groups>ANTISPAM</groups>
 <description>Enabling a recaptcha for commenting articles (You need to apply for a key)</description>
-<maintainers><maintainer><name>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.34</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-09</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_recaptcha">
       <file>ChangeLog</file>
@@ -8409,11 +8409,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Responsive Images</summary>
 <groups>MARKUP</groups>
 <description>Use HTML5 and the s9y backend to scale images to the visitors viewport width</description>
-<maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.8</version>
   <requirements:s9yVersion>2.3.1</requirements:s9yVersion>
-  <date>2019-02-09</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_responsiveimages">
       <file>ChangeLog</file>
@@ -8441,11 +8441,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>検索キーワードをハイライト</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>ページを見つけるために検索エンジンからの参照に使用されたキーワードをハイライトします。</description>
-<maintainers><maintainer><name>Tom Sommer, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Tom Sommer, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.8.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-21</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_searchhighlight">
       <file>ChangeLog</file>
@@ -8525,11 +8525,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>サイドバーの状態切り替え (折り畳み/展開)</summary>
 <groups>BACKEND_TEMPLATES</groups>
 <description>Shrinks Sidebars to just their titles.  Extra configuration in Entries -&gt; Manage Sidebars in the Admin Suite.</description>
-<maintainers><maintainer><name>Tys von Gaza, Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Tys von Gaza, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.37</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-03-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_sidebarhider">
       <file>ChangeLog</file>
@@ -8615,11 +8615,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>SMTP Mail</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Use a SMTP server to send your mails</description>
-<maintainers><maintainer><name>kleinerChemiker, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.01</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_smtpmail">
       <file>ChangeLog</file>
@@ -8777,11 +8777,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Share Buttons</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Show social share buttons for services like Facebook and Twitter using shariff.</description>
-<maintainers><maintainer><name>onli, Matthias Mees, Thomas Hochstein, Ian, Mario Hommel</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.18</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-04-22</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_social">
       <file>ChangeLog</file>
@@ -8833,11 +8833,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Spamblock (Bayes)</summary>
 <groups>ANTISPAM</groups>
 <description>Detects SPAM via an algorithm which learns.</description>
-<maintainers><maintainer><name>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.04</version>
   <requirements:s9yVersion>2.1.2</requirements:s9yVersion>
-  <date>2018-04-24</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bayes">
       <dir name="admin">
@@ -8975,11 +8975,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>スパムプロテクター (RBL)</summary>
 <groups>ANTISPAM</groups>
 <description>URL に記録されたホストが作成したコメントを拒否します。これはプロキシユーザーやダイアルアップユーザーに影響することに注意してください。</description>
-<maintainers><maintainer><name>Sebastian Nohn, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Sebastian Nohn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-08</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_spamblock_rbl">
       <file>ChangeLog</file>
@@ -9021,11 +9021,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>スパムプロテクター (SURBL)</summary>
 <groups>ANTISPAM</groups>
 <description>ブラックリストの URL を含むコメントを拒否します。</description>
-<maintainers><maintainer><name>Sebastian Nohn, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Sebastian Nohn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_spamblock_surbl">
       <file>ChangeLog</file>
@@ -9088,11 +9088,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Start Page Category</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Allows you to show only one category on the frontpage</description>
-<maintainers><maintainer><name>Stefan Willoughby, Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Stefan Willoughby, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.12</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-30</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_startcat">
       <file>ChangeLog</file>
@@ -9287,11 +9287,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>統計情報</summary>
 <groups>STATISTICS</groups>
 <description>エントリパネルに興味のある統計へのリンクを加えます。</description>
-<maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.76</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-12-31</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>ChangeLog</file>
@@ -9625,11 +9625,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>マークアップ: テクスタイル</summary>
 <groups>MARKUP</groups>
 <description>テクスタールコンバーターを通して出力をすべて解析します。</description>
-<maintainers><maintainer><name>Serendipity Team, Lars Strojny, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team, Lars Strojny, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.8.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-21</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_textile">
       <file>classTextile.php</file>
@@ -10310,11 +10310,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Uses TinyMCE as WYSIWYG editor</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Utilizes the TinyMCE WYSIWYG editor. Requires Serendipity 1.6 or later. After installation, read the installation guide in the configuration screen for this plugin.</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-04-25</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_tinymce">
       <file>ChangeLog</file>
@@ -10376,11 +10376,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>ToDo/プロジェクト一覧</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Maintain a list of projects and their percentage completion.</description>
-<maintainers><maintainer><name>Steven Tonnesen, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Steven Tonnesen, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.30</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-03-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_todolist">
       <file>ChangeLog</file>
@@ -10605,11 +10605,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>トラックバック制御</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Allows granular control over how trackbacks are sent when creating entries</description>
-<maintainers><maintainer><name>Garvin Hicking, Malte Paskuda, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.25</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <date>2018-10-21</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_trackback">
       <file>ChangeLog</file>
@@ -10661,11 +10661,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>マークアップ: 退出追跡</summary>
 <groups>STATISTICS</groups>
 <description>外部 URL のクリックを追跡します。</description>
-<maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-10</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_trackexits">
       <file>ChangeLog</file>
@@ -10927,11 +10927,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>ギャラリー表示</summary>
 <groups>IMAGES</groups>
 <description>匿名ユーザーに Serendipity メディアギャラリー閲覧を許可します。</description>
-<maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.73</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-01-23</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
       <file>ChangeLog</file>
@@ -11035,11 +11035,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>ユーザープロフィール</summary>
 <groups>BACKEND_USERMANAGEMENT,BACKEND_TEMPLATES</groups>
 <description>簡単なユーザープロフィールを表示します。</description>
-<maintainers><maintainer><name>Garvin Hicking, Falk Doering, Matthias Mees, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.33</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-08-24</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
       <file>ChangeLog</file>
@@ -11171,11 +11171,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>アナウンスエントリ一覧</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>新規エントリの通知をオンラインサービスに送信します。</description>
-<maintainers><maintainer><name>Serendipity Team, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.16</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-02-09</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_weblogping">
       <file>ChangeLog</file>
@@ -11259,11 +11259,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Free Wiki links for your entries</summary>
 <groups>MARKUP</groups>
 <description>You can specify new/existing links to your blog entries via [[title]], link to staticpages via ((title)) and link to both via {{title}}. References can be automatically appended to the blog entry.</description>
-<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.29</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-07-13</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -11776,11 +11776,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Extended Editor Buttons: Youtube etc.</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Offers more buttons to the editing screen to implement easy access to HTML/JS snippets like Youtube etc.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-09-11</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
@@ -11812,11 +11812,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>ユーザー自身での登録</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
 <description>ブログ訪問者が自分のアカウントを作成することを許可します。Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.</description>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.48</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-12-29</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -11872,11 +11872,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>flickr Photostream CSS</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>This plugin is an extension to the flickr Photostream sidebar plugin and adds style information (CSS).</description>
-<maintainers><maintainer><name>Michael Kaiser, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Michael Kaiser, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.07</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-03-27</date>
+  <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_plugin_flickr">
       <file>ChangeLog</file>

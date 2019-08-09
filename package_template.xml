@@ -75,7 +75,7 @@
 </release>
 </package>
 <package version="1.0">
-<name>adaptation</name>
+<name>Adaptation</name>
 <template>adaptation</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2008-05-02 to 2009-08-25 as v.0.81</summary>
@@ -519,7 +519,7 @@
 </release>
 </package>
 <package version="1.0">
-<name>andreas09</name>
+<name>Andreas09</name>
 <template>andreas09</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full screen theme from 2006-11-05 to 2013-02-07, responsive with a fixed minimum content size of 770px width.</summary>
@@ -675,7 +675,7 @@
 </release>
 </package>
 <package version="1.0">
-<name>xcur</name>
+<name>Axcur</name>
 <template>axcur</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old small-screen theme from 2009-08-13 to 2013-10-26, with a fixed content width of 1000px.</summary>
@@ -1269,7 +1269,7 @@
 </release>
 </package>
 <package version="1.0">
-<name>blix</name>
+<name>Blix</name>
 <template>blix</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-01-03 to 2014-01-09, with a fixed content size of 770px. Structural child sibling of leaf and glossy_white themes.</summary>
@@ -1424,7 +1424,7 @@
 </release>
 </package>
 <package version="1.0">
-<name>blue</name>
+<name>Blue</name>
 <template>blue</template>
 <license>N/A (=GPL)</license>
 <summary>CSS complete theme only.</summary>
@@ -1782,7 +1782,7 @@
 </release>
 </package>
 <package version="1.0">
-<name>ceejay01</name>
+<name>Ceejay01</name>
 <template>ceejay01</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen concatenated sidebar to right theme from 2006-08-25 to 2009-08-17 as v.1.1, with a fixed content width of ~869 to 935px.</summary>
@@ -1910,7 +1910,7 @@
 </release>
 </package>
 <package version="1.0">
-<name>chromZv2</name>
+<name>ChromZv2</name>
 <template>chromZv2</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, up to 2-sidebar to right theme from 2007-07-15 to 2009-08-17, with a fixed content width of 760px.</summary>
@@ -2000,7 +2000,7 @@
 </release>
 </package>
 <package version="1.0">
-<name>codeschmiede</name>
+<name>Codeschmiede</name>
 <template>codeschmiede</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen theme from 2005-11-08 to 2008-02-14, with a fixed content width of 780px.</summary>
@@ -2618,7 +2618,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 </release>
 </package>
 <package version="1.0">
-<name>fifty50</name>
+<name>Fifty50</name>
 <template>fifty50</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar to left theme from 2006-08-19 to 2008-02-14, with a fixed content width of 800 to 844px.</summary>
@@ -2970,7 +2970,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 </release>
 </package>
 <package version="1.0">
-<name>glossy white</name>
+<name>Glossy white</name>
 <template>glossy_white</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2005-12-13 to 2014-01-09, with a concatenated sidebar to the right and with a fixed content size of 770px. Structural child of leaf and (parent) sibling of blix theme.</summary>
@@ -3834,10 +3834,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <template>informatif</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, sidebars-to-left theme from 2007-07-12 to 2009-08-17.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive and Mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
-<responsive></responsive>
-<mobile></mobile>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Free CSS Templates ported by Reinhard Linnemann</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -4538,7 +4538,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 </release>
 </package>
 <package version="1.0">
-<name>leaf</name>
+<name>Leaf</name>
 <template>leaf</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2005-09-01 to 2014-01-09 with a fixed content size of ~770px. Parent structure of glossy_white and blix themes.</summary>
@@ -4974,7 +4974,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 </release>
 </package>
 <package version="1.0">
-<name>morsel</name>
+<name>Morsel</name>
 <template>morsel</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old small-screen theme from 2005-03-18 to 2007-04-03, with a fixed content width of 900px.</summary>
@@ -5452,7 +5452,7 @@ Without any theme engine set, all template files are taken from default theme. F
 </release>
 </package>
 <package version="1.0">
-<name>newfangled</name>
+<name>Newfangled</name>
 <template>newfangled</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar theme from 2007-07-07 to 2009-08-27, with a fixed maximum content size of 960px width.</summary>
@@ -5790,7 +5790,7 @@ Without any theme engine set, all template files are taken from default theme. F
 </release>
 </package>
 <package version="1.0">
-<name>photo</name>
+<name>Photo</name>
 <template>photo</template>
 <license>N/A (=GPL)</license>
 <summary>Simplified additional &lt;u&gt;engine&lt;/u&gt; theme from Aug 12, 2014, with no sidebars.</summary>
@@ -6686,19 +6686,19 @@ Without any theme engine set, all template files are taken from default theme. F
 </release>
 </package>
 <package version="1.0">
-<name>RubyX (2008-02-14)</name>
+<name>RubyX</name>
 <template>rubyx</template>
 <license>N/A (=GPL)</license>
-<summary></summary>
-<description></description>
+<summary>Additional old small-screen theme of 770px in width, with content, right-sidebar and navigation from 2008-02-14.</summary>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
-<responsive></responsive>
-<mobile></mobile>
+<responsive>No</responsive>
+<mobile>No</mobile>
 <maintainers><maintainer><name>nuvio/kendahlin (ported by fwaggle)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2007-07-21</date>
+  <date>2019-04-21</date>
   <filelist>
     <dir name="rubyx">
       <file>config.inc.php</file>
@@ -6742,9 +6742,7 @@ Without any theme engine set, all template files are taken from default theme. F
       </dir>
       <file>index.tpl</file>
       <file>info.txt</file>
-      <file>lang_en.inc.php</file>
       <file>license.txt</file>
-      <file>plugin_staticpage.tpl</file>
       <file>preview.png</file>
       <file>preview.webp</file>
       <file>preview_fullsize.jpg</file>
@@ -6792,9 +6790,7 @@ Without any theme engine set, all template files are taken from default theme. F
     <file>rubyx/img/tmp_photo.gif</file>
     <file>rubyx/index.tpl</file>
     <file>rubyx/info.txt</file>
-    <file>rubyx/lang_en.inc.php</file>
     <file>rubyx/license.txt</file>
-    <file>rubyx/plugin_staticpage.tpl</file>
     <file>rubyx/preview.png</file>
     <file>rubyx/preview.webp</file>
     <file>rubyx/preview_fullsize.jpg</file>
@@ -6846,10 +6842,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>s9y_orange</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar theme from 2004-12-15 to 2007-04-03, with a fixed content size of 750px and a disabled banner.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
-<responsive></responsive>
-<mobile></mobile>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Kaustubh Srikanth</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -6882,14 +6878,14 @@ Without any theme engine set, all template files are taken from default theme. F
 </release>
 </package>
 <package version="1.0">
-<name>s9y Thin</name>
+<name>S9y Thin</name>
 <template>s9y_thin</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar theme from 2004-12-15 to 2007-04-03, with a fixed content size of 750px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
-<responsive></responsive>
-<mobile></mobile>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Kaustubh Srikanth</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -7046,7 +7042,7 @@ Without any theme engine set, all template files are taken from default theme. F
 </release>
 </package>
 <package version="1.0">
-<name>simpla</name>
+<name>Simpla</name>
 <template>simpla</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2010-01-19 with a default, but configurable size of ~760 pixel content width.</summary>
@@ -7156,7 +7152,7 @@ Without any theme engine set, all template files are taken from default theme. F
 </release>
 </package>
 <package version="1.0">
-<name>soccer2006</name>
+<name>Soccer2006</name>
 <template>soccer2006</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, concatenated sidebar-to-left theme from 2006-08-24 to 2009-08-17 as v1.1, with a fixed content size of 780px.</summary>
@@ -7314,10 +7310,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>splat</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar theme from 2007-01-24 to 2013-10-26 as v1.0.1, with a fixed content size of 1024px.</summary>
-<description>Upgraded to v.1.1. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+<description>Upgraded to v.1.1. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
-<responsive></responsive>
-<mobile></mobile>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>David Cummins, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -7410,7 +7406,7 @@ Without any theme engine set, all template files are taken from default theme. F
 </release>
 </package>
 <package version="1.0">
-<name>square</name>
+<name>Square</name>
 <template>square</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2006-10-02 to 2009-02-14 (v1.0.1) with a fixed size of ~900 pixel content width.</summary>
@@ -7729,7 +7725,7 @@ Without any theme engine set, all template files are taken from default theme. F
 </release>
 </package>
 <package version="1.0">
-<name>terrafirma</name>
+<name>Terrafirma</name>
 <template>terrafirma</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old theme from 2007-06-20 to 2009-08-16 with a fixed size of ~748 pixel content width.</summary>
@@ -7841,10 +7837,10 @@ Without any theme engine set, all template files are taken from default theme. F
 <template>toolbox</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar theme from 2005-08-18 to 2007-04-03, with a fixed content size of 760px.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
-<responsive></responsive>
-<mobile></mobile>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -8015,8 +8011,8 @@ Without any theme engine set, all template files are taken from default theme. F
 <summary>THEME_INFO_SUMMARY (text in lang_info_en.inc.php pattern)</summary>
 <description>THEME_INFO_DESC (and LANG_CHARSET depending language files)</description>
 <recommended></recommended>
-<responsive></responsive>
-<mobile></mobile>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
 <maintainers><maintainer><name>Eddie Traversa</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -8153,7 +8149,7 @@ Without any theme engine set, all template files are taken from default theme. F
 </release>
 </package>
 <package version="1.0">
-<name>wp-clone</name>
+<name>WP-clone</name>
 <template>wp-clone</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-24 to 2007-04-03, fully based on default template files.</summary>
@@ -8187,7 +8183,7 @@ Without any theme engine set, all template files are taken from default theme. F
 </release>
 </package>
 <package version="1.0">
-<name>xkur</name>
+<name>Xkur</name>
 <template>xkur</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old small-screen theme from 2006-01-26 to 2013-10-26, with a fixed content width of 1024px.</summary>
