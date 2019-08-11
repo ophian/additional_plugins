@@ -553,10 +553,8 @@ class serendipity_plugin_linklist extends serendipity_plugin
         }
     }
 
-
     function cleanup()
     {
-
         $cache = $this->get_config('cache');
         if ($this->get_config('cache') == 'no') {
             if (@include_once("Cache/Lite.php")) {
