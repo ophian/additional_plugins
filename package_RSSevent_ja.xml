@@ -177,8 +177,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_contactform</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;お問合せフォーム&lt;/b&gt;&lt;br /&gt;静的ページとしてブログに電子メールお問合せフォームを表示します。It can be accessed by either the custom permalink or by index.php?serendipity[subpage]=contactform. You can customize the look of the contact form by putting the plugin_contactform.tpl file into your template directory and modify it there. spam ブロックプラグインの Captcha が(もし有効なら)適用されるでしょう。&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:31:14 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;お問合せフォーム&lt;/b&gt;&lt;br /&gt;静的ページとしてブログに電子メールお問合せフォームを表示します。It can be accessed by either the custom permalink or by index.php?serendipity[subpage]=contactform. You can customize the look of the contact form by putting the plugin_contactform.tpl file into your template directory and modify it there. spam ブロックプラグインの Captcha が(もし有効なら)適用されるでしょう。&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
+<pubDate>Sun, 11 Aug 2019 10:08:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
