@@ -25,7 +25,7 @@ class serendipity_event_backup extends serendipity_event
             'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '0.17');
+        $propbag->add('version',       '0.18');
         $propbag->add('author',       'Alexander Mieland, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1236,7 +1236,7 @@ class serendipity_event_backup extends serendipity_event
         closedir($fd);
         @reset($BACKUPS);
         @array_multisort($BACKUPS['TIME'], SORT_DESC, SORT_NUMERIC, $BACKUPS['NAME'], $BACKUPS['FILE'], $BACKUPS['SIZE']);
-        if (count($BACKUPS['NAME']) >= 1) {
+        if (isset($BACKUPS['NAME']) && is_array($BACKUPS['NAME']) && count($BACKUPS['NAME']) >= 1) {
             $BACKUPFORM .= '<h3>' . PLUGIN_BACKUP_LABEL_BACKUPS . '</h3>' . "\n";
             $BACKUPFORM .= '<form name="UPForm" action="?" method="POST">'."\n";
             $BACKUPFORM .= '    <input type="hidden" name="serendipity[c]" value="backup">
