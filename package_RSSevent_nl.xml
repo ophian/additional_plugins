@@ -86,7 +86,7 @@
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Backup Interface&lt;/b&gt;&lt;br /&gt;Provides the ability to automatically make backups from your s9y, the database-tables, the whole database and the files. Only MySQL(i) databases are currently supported. WARNING: This plugin does not work well with large databases or directories.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:43:24 +0200</pubDate>
+<pubDate>Fri, 16 Aug 2019 10:57:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Contactformulier&lt;/b&gt;&lt;br /&gt;Geeft een contactformulier weer op uw blog als een statische pagina. Het kan zowel worden opgeroepen via een zelfgemaakte permalink of door index.php?serendipity[subpage]=contactform. Het uiterlijk van het contactformulier kan worden aangepast door het plugin_contactform.tpl-bestand in de template map te plaatsen en vervolgens te bewerken. Captchas van de Spamblock plugin worden ondersteund (indien geactiveerd).&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Sun, 11 Aug 2019 10:11:19 +0200</pubDate>
+<pubDate>Sun, 11 Aug 2019 10:16:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
