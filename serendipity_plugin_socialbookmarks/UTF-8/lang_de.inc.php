@@ -1,4 +1,5 @@
 <?php
+
 @define('PLUGIN_SOCIALBOOKMARKS_N', 'Social Bookmarks Plugin');
 @define('PLUGIN_SOCIALBOOKMARKS_D', 'Ein Plugin, um Lesezeichen mithilfe eines RSS-Feeds eines social bookmarks-Dienstes (del.icio.us, ma.gnolia, furl.net, linkroll, Mister Wong) anzuzeigen.');
 @define('PLUGIN_SOCIALBOOKMARKS_TITLE_N', 'Titel');
@@ -27,4 +28,4 @@
 @define('PLUGIN_SOCIALBOOKMARKS_SPECIALFEATURES_GEN_POPULAR', 'Populärste Lesezeichen der letzten 24 Stunden');
 @define('PLUGIN_SOCIALBOOKMARKS_SPECIALFEATURES_USR_JS_TAGCLOUD', 'Meine Tagcloud (del.icio.us)');
 @define('PLUGIN_SOCIALBOOKMARKS_EXPLAIN', '<h3>Was macht dieses Plugin?</h3><p>Lesezeichen helfen eine einmal gefundene Seite auch ohne Suchmaschine wiederzufinden. Erfahrene Internetanwender sammeln Lesezeichen und kommen so häufig auf tausende von Einträgen. Soziale Lesezeichen oder auch social bookmarks werden die Lesezeichen genannt, die öffentlich verwaltet werden. Neben der Webseite werden die Lesezeichen oft als abonnierbare Liste (meistens als RSS-Feed) publiziert.</p><p>Mithilfe dieses Plugins lassen sich kürzlich gespeicherte persönliche Lesezeichen von einem Social bookmarks-Dienst einfach im Blog anzeigen.</p>');
-?>
+

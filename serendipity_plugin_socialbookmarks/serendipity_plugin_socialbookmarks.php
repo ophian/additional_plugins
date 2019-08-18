@@ -14,50 +14,6 @@
      Most of the source code was copied from the S9Y del.icio.us plugin v0.2.3 by riscky (thanks!)
 
     Change log:
-    v0.47:
-     * included more current version of SimplePie
-     * added docblocks
-    v0.46:
-     * fixed problem with encoding!?
-     * corrected <script>-Tag (thx again to Andreas <http://www.depretis.at/>)
-    v0.45:
-     * title now displayed in backend
-     * added support for del.icio.us's JS based tag clouds (inspired by Andreas <http://www.depretis.at/sd/archives/5-del.icio.us-Tag-Cloud-im-Serendipity-Joshua-Template.html>)
-    v0.44:
-     * SimplePie: new version (1.0 Beta 3.2) added
-     * del.icio.us, ma.gnolia: they changed the format of their rss feed
-     * corrected language files, added explanatory text
-     v0.43:
-     * automatic security patch
-     v0.42:
-     * SimplePie: new version (1.0 Beta 3) added
-     * small UTF-8 fix
-     v0.41:
-     * additional features and url fixes for mister-wong.de
-     * fixed charset bug (hopefully)
-     v0.40:
-     * html entities in title attribute
-     * added new service: mister-wong.de
-     v0.35:
-     * fix the fix of $_SERVER['DOCUMENT_ROOT'] ;)
-     v0.34:
-     * fix use of $_SERVER['DOCUMENT_ROOT'] (garvinhicking)
-     * change way of freetag detection
-     v0.33:
-     * sidebar title now customizable
-     * fixed issue with "more" link
-     * check if freetag plugin is installed
-     v0.32:
-     * made tag links more compatible with freetag plugin
-     * changed class names
-     v0.31:
-     * fixed caching problem (thx, kodewulf)
-     v0.3:
-     * introduced method for getting tags
-     * fixed title display
-     v0.2:
-     * replaced Onyx_RSS with SimplePie (http://simplepie.org/) because of better docs and nicer looks ;O)
-     * added tags display
 
     Todo:
      * fix a bug regarding special characters (or wait for the next SimplePie release, maybe?)
@@ -74,17 +30,13 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-$probelang = dirname(__FILE__).'/'.$serendipity['charset'].'lang_'.$serendipity['lang'].'.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-} else {
-    include dirname(__FILE__).'/lang_en.inc.php';
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 /**
  * Class serendipity_plugin_socialbookmarks
  */
-class serendipity_plugin_socialbookmarks extends serendipity_plugin {
+class serendipity_plugin_socialbookmarks extends serendipity_plugin
+{
 
     /**
      * @var string
@@ -125,18 +77,19 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
      * @param serendipity_property_bag $propbag
      * @return void
      */
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $this->title = $this->get_config('sidebarTitle', $this->title);
 
         $propbag->add('name', PLUGIN_SOCIALBOOKMARKS_N);
         $propbag->add('description', PLUGIN_SOCIALBOOKMARKS_D);
         $propbag->add('author', 'Matthias Gutjahr');
-        $propbag->add('version', '0.47');
+        $propbag->add('version', '0.48');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9alpha5',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
-        ));	// not sure about the requirements
+        ));
         $propbag->add('stackable', true);
         $propbag->add('configuration',
             array(  'sidebarTitle',
@@ -159,13 +112,15 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
      * @param serendipity_property_bag $propbag
      * @return bool
      */
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'sidebarTitle':
-            	$propbag->add('type', 'string');
-            	$propbag->add('name', PLUGIN_SOCIALBOOKMARKS_TITLE_N);
-            	$propbag->add('description', PLUGIN_SOCIALBOOKMARKS_TITLE_D);
-            	break;
+                $propbag->add('type', 'string');
+                $propbag->add('name', PLUGIN_SOCIALBOOKMARKS_TITLE_N);
+                $propbag->add('description', PLUGIN_SOCIALBOOKMARKS_TITLE_D);
+                break;
+
             case 'socialbookmarksService':
                 $propbag->add('type', 'select');
                 $propbag->add('name', PLUGIN_SOCIALBOOKMARKS_SOCIALBOOKMARKSSERVICE_N);
@@ -177,36 +132,42 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
                                                         'misterwong' => 'Mister Wong'));
                 $propbag->add('default', 'ma.gnolia');
                 break;
+
             case 'socialbookmarksID':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_SOCIALBOOKMARKS_USERNAME_N);
                 $propbag->add('description', PLUGIN_SOCIALBOOKMARKS_USERNAME_D);
                 $propbag->add('default', 'numblog');
                 break;
+
             case 'displayNumber':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_SOCIALBOOKMARKS_DISPLAYNUMBER_N);
                 $propbag->add('description', PLUGIN_SOCIALBOOKMARKS_DISPLAYNUMBER_D);
                 $propbag->add('default', '10');
                 break;
+
             case 'cacheTime':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_SOCIALBOOKMARKS_CACHETIME_N);
                 $propbag->add('description', PLUGIN_SOCIALBOOKMARKS_CACHETIME_D);
                 $propbag->add('default', 1);
                 break;
+
             case 'moreLink':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_SOCIALBOOKMARKS_MORELINK_N);
                 $propbag->add('description', PLUGIN_SOCIALBOOKMARKS_MORELINK_D);
                 $propbag->add('default', 'true');
                 break;
+
             case 'displayTags':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_SOCIALBOOKMARKS_DISPLAYTAGS_N);
                 $propbag->add('description', PLUGIN_SOCIALBOOKMARKS_DISPLAYTAGS_D);
                 $propbag->add('default', 'true');
                 break;
+
             case 'specialFeatures':
                 $propbag->add('type', 'select');
                 $propbag->add('name', PLUGIN_SOCIALBOOKMARKS_SPECIALFEATURES_N);
@@ -217,22 +178,26 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
                                                         'usr_js_tagcloud'      => PLUGIN_SOCIALBOOKMARKS_SPECIALFEATURES_USR_JS_TAGCLOUD));
                 $propbag->add('default', 'usr_recent_bookmarks');
                 break;
+
             case 'displayThumbnails':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_SOCIALBOOKMARKS_DISPLAYTHUMBS_N);
                 $propbag->add('description', PLUGIN_SOCIALBOOKMARKS_DISPLAYTHUMBS_D);
                 $propbag->add('default', 'false');
                 break;
+
             case 'additionalParams':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_SOCIALBOOKMARKS_ADDPARAMS_N);
                 $propbag->add('description', PLUGIN_SOCIALBOOKMARKS_ADDPARAMS_D);
                 $propbag->add('default', '?icon;count=30;size=10-20;color=87ceeb-0000ff;title=my%20del.icio.us%20tags;name;showadd');
                 break;
+
             case 'explain':
                 $propbag->add('type', 'content');
                 $propbag->add('default', PLUGIN_SOCIALBOOKMARKS_EXPLAIN);
                 break;
+
             default:
                 return false;
         }
@@ -243,7 +208,8 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
      * @param string $title
      * @return bool
      */
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $socialbookmarksID = $this->get_config('socialbookmarksID');
@@ -283,18 +249,18 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
             }
 
             if ($this->get_config('specialFeatures') != 'usr_js_tagcloud') {
-                if (file_exists(S9Y_PEAR_PATH . '/simplepie/simplepie.inc')) {
-                    require_once S9Y_PEAR_PATH . '/simplepie/simplepie.inc';
+                if (file_exists(S9Y_PEAR_PATH . 'simplepie/simplepie.inc')) {
+                    require_once S9Y_PEAR_PATH . 'simplepie/simplepie.inc';
                 } else {
                     require_once dirname(__FILE__) . '/simplepie/simplepie.inc';
                 }
                 $socialbookmarksFeed = new SimplePie();
                 $socialbookmarksFeed->set_feed_url(str_replace('%username%',urlencode(utf8_decode(stripslashes($socialbookmarksID))),$gsocialbookmarksFeedURL));
-                $socialbookmarksFeed->set_cache_location($serendipity['serendipityPath'] . '/templates_c/');
+                $socialbookmarksFeed->set_cache_location($serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/');
                 $socialbookmarksFeed->enable_cache(false);
                 $socialbookmarksFeed->init();
                 $socialbookmarksFeed->handle_content_type();
-    
+
                 if ($socialbookmarksFeed->data) {
                     $fileHandle = @fopen($parsedCache, 'w');
                     if ($fileHandle) {
@@ -311,12 +277,12 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
                                 $socialbookmarksContent .= html_entity_decode($this->decode($item->get_title()), ENT_COMPAT, LANG_CHARSET);
                             }
                             $socialbookmarksContent .= '</a>';
-                            if ($this->get_config('displayTags') && class_exists('serendipity_event_freetag')) {	// display tags for each bookmark
+                            if ($this->get_config('displayTags') && class_exists('serendipity_event_freetag')) {    // display tags for each bookmark
                                 $socialbookmarksContent .= $this->socialbookmarks_get_tags($item);
                             }
                             $socialbookmarksContent .= '</li>' . "\r\n";
                         }
-    
+
                         $socialbookmarksContent .= '</ul>';
                         fwrite($fileHandle, $socialbookmarksContent);
                         fclose($fileHandle);
@@ -346,7 +312,8 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
      * @param SimplePie_Item $item
      * @return string
      */
-    function socialbookmarks_get_tags($item) {
+    function socialbookmarks_get_tags($item)
+    {
         global $serendipity;
 
         $return = '';
@@ -362,6 +329,7 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
                 }
                 $return .= ']</p>';
                 break;
+
             case 'ma.gnolia': // they've changed this recently
                 $return .= '<br/><p style="font-size:.7em;margin:0;padding:0" class="serendipity_socialbookmarks_tags">[Tags:';
                 $tags = $item->get_categories();
@@ -371,6 +339,7 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
                 }
                 $return .= ']</p>';
                 break;
+
             case 'furl':
                 $return .= '<br/><p style="font-size:.7em;margin:0;padding:0" class="serendipity_socialbookmarks_tags">[Tags:';
                 $tags = $item->get_category();
@@ -379,9 +348,11 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
                 }
                 $return .= ']</p>';
                 break;
+
             case 'misterwong':
             case 'linkroll':
                 // services don't provide tags in their RSS feeds (yet)!?
+
             default:
                 break;
         }
@@ -392,7 +363,8 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
      * @param string $item
      * @return string
      */
-    function socialbookmarks_get_thumbnail($item) {
+    function socialbookmarks_get_thumbnail($item)
+    {
         $regexp = '/(<img[^>]*src=")([^"]*)("[^>]*>)/i';
         preg_match($regexp, $item, $img);
         $return = $img[1] . $img[2] . '" style="border:none;margin:none;padding:none;" />';
@@ -403,12 +375,14 @@ class serendipity_plugin_socialbookmarks extends serendipity_plugin {
      * @param string $string
      * @return string
      */
-    function decode($string) {
+    function decode($string)
+    {
         if (LANG_CHARSET != 'UTF-8') {
             return utf8_decode($string);
         }
         return $string;
     }
+
 }
 
 /**

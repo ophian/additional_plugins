@@ -32,4 +32,4 @@
 @define('PLUGIN_SOCIALBOOKMARKS_SPECIALFEATURES_GEN_RECENT', 'Nejnovější záložky všech uživatelů');
 @define('PLUGIN_SOCIALBOOKMARKS_SPECIALFEATURES_GEN_POPULAR', 'Nejoblíbenější záložky');
 @define('PLUGIN_SOCIALBOOKMARKS_EXPLAIN', '<h3>K čemu slouží tento plugin záložek?</h3><p>Hlavním účelem sociálních záložek je jednoduché třídění a přístup k webovým stránkám, které uživatel již navštívil nebo hodlá navštívit, aniž by si musel pamatovat jejich URL adresu a aniž by se musel spoléhat na jiný software. Nověji se sdílené záložky staly pro mnoho uživatelů způsobem, jak se dozvědět o nových stránkách, o kterých by se jinak třeba nedozvěděli. Sdílené záložky představují také způsob, jak mít své záložky stále při ruce, aniž by byl uživatel závislý na jednom počítači.</p><p>S pomocí tohoto pluginu můžete na svém blogu jednoduše zobrazit své záložky, tedy záložky, které jste uložili na některou z podporovaných webových záložkovacích služeb.</p>');
-?>
+
