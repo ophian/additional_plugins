@@ -24,7 +24,7 @@ class serendipity_plugin_guestbook extends serendipity_plugin
         $propbag->add('description',   PLUGIN_GUESTSIDE_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Jaap Boerma ( j@webbict.com ), Tadashi Jokagi <elf2000@users.sourceforge.net>, Ian Styx');
-        $propbag->add('version',       '1.26');
+        $propbag->add('version',       '1.27');
         $propbag->add('requirements', array(
                         'serendipity' => '1.6',
                         'smarty'      => '2.6.7',

@@ -1,3 +1,7 @@
+1.27 (sidebar):
+----
+ * Fix wrong [de] lang constant
+
 3.75:
 ----
  * Use the defined constant for the compile dir
