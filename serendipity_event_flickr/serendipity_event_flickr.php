@@ -24,7 +24,7 @@ class serendipity_event_flickr extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('license',       'GPL');
         $propbag->add('author',        'Jay Bertrand');
-        $propbag->add('version',       '0.6');
+        $propbag->add('version',       '0.7');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',

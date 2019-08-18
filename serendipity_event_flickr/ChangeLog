@@ -1,3 +1,7 @@
+0.7:
+----
+ * Sync [de] translation
+
 0.6:
 ----
  * Use load language API - extends required Serendipity version to v.1.6
