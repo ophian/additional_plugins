@@ -1,3 +1,7 @@
+0.82:
+-----
+ * Fix wrong language constant
+
 0.81:
 -----
  * Put JS serendipity_imageSelector_addToBody() into the serendipity scope
