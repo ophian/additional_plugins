@@ -1,17 +1,10 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_httpauth extends serendipity_event
 {
@@ -26,9 +19,9 @@ class serendipity_event_httpauth extends serendipity_event
         $propbag->add('description',   PLUGIN_HTTPAUTH_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.6');
+        $propbag->add('version',       '1.7');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -100,7 +93,8 @@ class serendipity_event_httpauth extends serendipity_event
         $title       = PLUGIN_HTTPAUTH_NAME;
     }
 
-    function wildcard_auth($user, $authorid = null, $userlevel = null, $publish = 1) {
+    function wildcard_auth($user, $authorid = null, $userlevel = null, $publish = 1)
+    {
         global $serendipity;
 
         if ($authorid === null) {
@@ -121,7 +115,8 @@ class serendipity_event_httpauth extends serendipity_event
         serendipity_load_configuration($serendipity['authorid']);
     }
 
-    function getPassword($user) {
+    function getPassword($user)
+    {
         global $serendipity;
 
         $this->debug('Checking password.');
@@ -136,7 +131,8 @@ class serendipity_event_httpauth extends serendipity_event
         }
     }
 
-    function debug($string) {
+    function debug($string)
+    {
         static $i = 0;
 
         if (!$this->debugmsg) {
@@ -147,7 +143,8 @@ class serendipity_event_httpauth extends serendipity_event
         header('X-HTTPAUTH-MSG-' . $i . ': ' . $string);
     }
 
-    function performLogin($exit = true) {
+    function performLogin($exit = true)
+    {
         global $serendipity;
 
         $this->debug('PerformLogin called.');
@@ -187,7 +184,8 @@ class serendipity_event_httpauth extends serendipity_event
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -204,7 +202,6 @@ class serendipity_event_httpauth extends serendipity_event
                     }
 
                     $this->performLogin(false);
-                    return true;
                     break;
 
                 case 'frontend_configure':
@@ -218,8 +215,6 @@ class serendipity_event_httpauth extends serendipity_event
                     }
 
                     $this->performLogin();
-
-                    return true;
                     break;
 
                 default:
@@ -229,6 +224,8 @@ class serendipity_event_httpauth extends serendipity_event
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>
