@@ -7,8 +7,9 @@
  *  @revisionDate 2009/08/26
  */
 
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_NAME',		'Layout plugin: verze pro tisk');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_BLAHBLAH',		'Při použití funkce "vytisknout stránku" v prohlížeči uvidíte výstup, který bude na tiskárně lépe vypadat.');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_SIDEBARS',		'Tisknout postraní sloupce?');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_FOOTER',		'Tisknout patičky?');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_COMMENTS',		'Tisknout komentáře?');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_NAME', 'Layout plugin: verze pro tisk');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_BLAHBLAH', 'Při použití funkce "vytisknout stránku" v prohlížeči uvidíte výstup, který bude na tiskárně lépe vypadat.');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_SIDEBARS', 'Tisknout postraní sloupce?');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_FOOTER', 'Tisknout patičky?');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_COMMENTS', 'Tisknout komentáře?');
+

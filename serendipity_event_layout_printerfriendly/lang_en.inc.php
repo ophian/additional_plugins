@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 /**
  *  @version 
@@ -12,4 +12,3 @@
 @define('PLUGIN_LAYOUT_PRINTERFRIENDLY_FOOTER', 'Print footers');
 @define('PLUGIN_LAYOUT_PRINTERFRIENDLY_COMMENTS', 'Print comments');
 
-?>
