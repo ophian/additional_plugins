@@ -1,6 +1,11 @@
 ChangeLog:
 """"""""""
 
+1.45:
+----
+ * Fix some wrong path concatenation double slashes
+ * Change Version to 1.xx, since it is ridiculous to have 0.xx releases
+
 0.44:
 ----
  * Fix MediaLibrary files .empty file re-movement

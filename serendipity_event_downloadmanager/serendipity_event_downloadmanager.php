@@ -37,7 +37,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '5.4.0'
         ));
 
-        $propbag->add('version',       '0.44');
+        $propbag->add('version',       '1.45');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1670,11 +1670,11 @@ class serendipity_event_downloadmanager extends serendipity_event
             @mkdir($this->globs['dlmpath'], 0777, true);
         }
 
-        if ( ! file_exists($serendipity['serendipityPath'] . '/archives/.dlm/.htaccess')) {
+        if ( ! file_exists($serendipity['serendipityPath'] . 'archives/.dlm/.htaccess')) {
             $deny  = "deny from all\n";
             $deny .= "Require all denied\n";
-            file_put_contents($serendipity['serendipityPath'] . '/archives/.dlm/.htaccess', $deny);
-            @chmod($serendipity['serendipityPath'] . '/archives/.dlm/.htaccess', 0664);
+            file_put_contents($serendipity['serendipityPath'] . 'archives/.dlm/.htaccess', $deny);
+            @chmod($serendipity['serendipityPath'] . 'archives/.dlm/.htaccess', 0664);
         }
         if (!empty($serendipity['POST']['dlmanAction']) && isset($serendipity['POST']['childof']) && $serendipity['POST']['childof'] >= 1) {
             $this->addCat(intval($serendipity['POST']['childof']), $serendipity['POST']['catname']);
