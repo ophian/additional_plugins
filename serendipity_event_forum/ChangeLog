@@ -1,3 +1,8 @@
+0.41:
+-----
+ * Fix a wrong path concatenation slash and
+   use the defined constant for the compile dir
+
 0.40:
 -----
  * Fix 'allow_comments' check

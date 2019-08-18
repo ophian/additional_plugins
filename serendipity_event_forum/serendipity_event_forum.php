@@ -52,7 +52,7 @@ class serendipity_event_forum extends serendipity_event
             'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '0.40');
+        $propbag->add('version',       '0.41');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, http://blog.linux-stats.org, dma147@linux-stats.org');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -2259,7 +2259,7 @@ class serendipity_event_forum extends serendipity_event
             return false;
         }
 
-        $fp = @fopen($serendipity['serendipityPath'] . '/templates_c/forum.log', 'a');
+        $fp = @fopen($serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/forum.log', 'a');
         if ($fp) {
             fwrite($fp, $_SERVER['REQUEST_URI'] . "\n" . date('d.m.Y H:i') . ': ' . $msg . "\n");
             fclose($fp);
