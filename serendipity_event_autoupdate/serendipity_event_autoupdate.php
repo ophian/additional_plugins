@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.5.9');
+        $propbag->add('version',       '1.6.0');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -380,7 +380,7 @@ EOS;
         $geturl = $this->get_config('download_url', 'https://github.com/ophian/styx/releases/download/');
         #$url    = (string)"http://prdownloads.sourceforge.net/php-blog/serendipity-{$version}.zip?download";
         $url    = (string)"{$geturl}{$version}/serendipity-{$version}.zip";
-        $update = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-{$version}.zip";
+        $update = (string)$serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . "/serendipity-{$version}.zip";
 
         // do we already have it and is it eventually broken?
         if (file_exists($update)) {
@@ -496,8 +496,8 @@ EOS;
     {
         global $serendipity;
 
-        $update    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-{$version}.zip";
-        $updateDir = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-{$version}/";
+        $update    = (string)$serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . "/serendipity-{$version}.zip";
+        $updateDir = (string)$serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . "/serendipity-{$version}/";
 
         // do we already have it?
         if (is_dir($updateDir) && is_file($updateDir . '/serendipity/README.markdown') && (is_file($updateDir . '/serendipity/checksums.inc.php') && filesize($updateDir . '/serendipity/checksums.inc.php'))) {
@@ -535,8 +535,8 @@ EOS;
     {
         global $serendipity;
 
-        $update    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-{$version}.zip";
-        $updateDir = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-{$version}/";
+        $update    = (string)$serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . "/serendipity-{$version}.zip";
+        $updateDir = (string)$serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . "/serendipity-{$version}/";
 
         $zip = new ZipArchive;
 
@@ -662,7 +662,7 @@ EOS;
     {
         global $serendipity;
 
-        $updateDir    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-{$version}/";
+        $updateDir    = (string)$serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . "/serendipity-{$version}/";
         $checksumFile = (string)$updateDir . 'serendipity/checksums.inc.php';
 
         // Serendipity BETA version release files prior to Styx 2.1-beta2 did not have checksums
@@ -693,7 +693,7 @@ EOS;
     {
         global $serendipity;
 
-        $updateDir    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-{$version}/";
+        $updateDir    = (string)$serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . "/serendipity-{$version}/";
         $checksumFile = (string)$updateDir . 'serendipity/checksums.inc.php';
 
         include_once $checksumFile;
@@ -809,8 +809,8 @@ EOS;
     {
         global $serendipity;
 
-        $zip    = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-{$version}.zip";
-        $zipDir = (string)$serendipity['serendipityPath'] . 'templates_c/' . "serendipity-{$version}";
+        $zip    = (string)$serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . "/serendipity-{$version}.zip";
+        $zipDir = (string)$serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . "/serendipity-{$version}";
 
         // leave rm zip untouched here since not causing any errors
         #unlink($zip);// if (unlink($zip)) { else error note?
