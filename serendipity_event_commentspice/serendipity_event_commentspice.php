@@ -28,7 +28,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',        '1.14');
+        $propbag->add('version',        '1.15');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -855,7 +855,7 @@ class serendipity_event_commentspice extends serendipity_event
     {
         global $serendipity;
         $url_md5 = md5($url);
-        return $serendipity['serendipityPath'] . '/' . PATH_SMARTY_COMPILE . '/commentspice/rss_' . $url_md5;
+        return $serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/commentspice/rss_' . $url_md5;
     }
 
     function commentDeleted($eventData, $addData)
