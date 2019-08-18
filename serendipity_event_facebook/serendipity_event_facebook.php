@@ -24,7 +24,7 @@ class serendipity_event_facebook extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '5.1.0'
         ));
-        $propbag->add('version',       '1.01');
+        $propbag->add('version',       '1.02');
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $propbag->add('event_hooks', array(
             'frontend_display'  => true,
