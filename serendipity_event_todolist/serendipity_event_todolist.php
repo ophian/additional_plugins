@@ -35,7 +35,7 @@ class serendipity_event_todolist extends serendipity_event
                                             'backend_sidebar_entries'                               => true
                                             ));
         $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian Styx');
-        $propbag->add('version', '1.30');
+        $propbag->add('version', '1.31');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -230,7 +230,7 @@ class serendipity_event_todolist extends serendipity_event
             return true;
         }
 
-        $tdir   = $serendipity['serendipityPath'] . '/' . PATH_SMARTY_COMPILE;
+        $tdir   = $serendipity['serendipityPath'] . PATH_SMARTY_COMPILE;
         $files  = array();
         $atimes = array();
         $this->pushFiles($files, $tdir, 'cache_todolist_progressimage');
@@ -691,7 +691,7 @@ class serendipity_event_todolist extends serendipity_event
                             $this->purgeCache();
                             // Save a copy of this image in the cache
 
-                            $cap = $serendipity['serendipityPath'] . '/' . PATH_SMARTY_COMPILE . '/cache_todolist_progressimage-' . $param . '_'.$originalwidth.'_'.$height.'_'.$startcolor.'_'.$endcolor.'_'.$whitetextborder.'_'.$fontsize.'_'.$filefontname.'_'.$outsidetext.'_'.$backgroundcolor.'.png';
+                            $cap = $serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/cache_todolist_progressimage-' . $param . '_'.$originalwidth.'_'.$height.'_'.$startcolor.'_'.$endcolor.'_'.$whitetextborder.'_'.$fontsize.'_'.$filefontname.'_'.$outsidetext.'_'.$backgroundcolor.'.png';
                             imagepng($image,$cap);
                         }
                         imagepng($image);

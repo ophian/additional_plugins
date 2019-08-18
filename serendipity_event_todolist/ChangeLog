@@ -1,3 +1,7 @@
+1.31:
+-----
+ * Fix some wrong path concatenation double slashes
+
 1.30:
 -----
  * Replace PHP 7.2 set deprecated each() usage where possible
