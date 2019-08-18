@@ -1,3 +1,7 @@
+1.02:
+-----
+ * Fix a wrong path slash including the simplePie lib
+
 1.01:
 -----
  * Fix eventData uninitialized variables check
