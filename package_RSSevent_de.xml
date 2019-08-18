@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon Medien-Button&lt;/b&gt;&lt;br /&gt;Fügt einen Button zum Artikeleditor hinzu, über den eine Amazon.com Suche für Produkte ausgeführt werden kann und die Ergebnisse in den Eintrag eingebettet werden&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:16:55 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 14:00:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -81,12 +81,12 @@
 <guid isPermaLink="false">serendipity_event_backendrss</guid>
 </item>
 <item>
-<title>Backup Interface: Provides the ability to automatically make backups from your s9y, the database-tables, the whole database and the files. Only MySQL(i) databases are currently supported. WARNING: This plugin does not work well with large databases or directories.</title>
+<title>Backup-Interface: Bietet die MÃ¶glichkeit, automatisch Backups von Ihren Serendipity - den Datenbanktabellen, der gesamten Datenbank und den Dateien - zu erstellen. Derzeit werden nur MySQL(i)-Datenbanken unterstÃ¼tzt. WARNUNG: Dieses Plugin funktioniert nicht gut mit groÃŸen Datenbanken oder Verzeichnissen.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backup</link>
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Backup Interface&lt;/b&gt;&lt;br /&gt;Provides the ability to automatically make backups from your s9y, the database-tables, the whole database and the files. Only MySQL(i) databases are currently supported. WARNING: This plugin does not work well with large databases or directories.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 16 Aug 2019 10:57:27 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Backup-Interface&lt;/b&gt;&lt;br /&gt;Bietet die MÃ¶glichkeit, automatisch Backups von Ihren Serendipity - den Datenbanktabellen, der gesamten Datenbank und den Dateien - zu erstellen. Derzeit werden nur MySQL(i)-Datenbanken unterstÃ¼tzt. WARNUNG: Dieses Plugin funktioniert nicht gut mit groÃŸen Datenbanken oder Verzeichnissen.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sun, 18 Aug 2019 14:07:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
@@ -189,12 +189,12 @@
 <guid isPermaLink="false">serendipity_event_contentrewrite</guid>
 </item>
 <item>
-<title>Coppermine Selector: Select images from a Coppermine gallery in new entries</title>
+<title>Coppermine-Selektor: Wählen Sie Bilder aus einer Coppermine-Galerie für neue Einträge aus.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cpgselector</link>
 <category>Event Plugins</category>
 <author>Matthew Maude (modified by Jim Davies)</author>
-<content:encoded>&lt;b&gt;serendipity_event_cpgselector&lt;br /&gt;Coppermine Selector&lt;/b&gt;&lt;br /&gt;Select images from a Coppermine gallery in new entries&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 13 Jul 2019 10:27:09 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_cpgselector&lt;br /&gt;Coppermine-Selektor&lt;/b&gt;&lt;br /&gt;Wählen Sie Bilder aus einer Coppermine-Galerie für neue Einträge aus.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sun, 18 Aug 2019 14:17:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cpgselector</guid>
 </item>
 <item>
@@ -252,12 +252,12 @@
 <guid isPermaLink="false">serendipity_event_dejure</guid>
 </item>
 <item>
-<title>Disqus comments: Disqus.com is a webservice that allows you to manage comments, with central logins. It stores and manages comments outside of your Serendipity installation, and is embedded using JavaScript. For more information see disqus.com.</title>
+<title>Disqus-Kommentare: Disqus.com ist ein Webservice, mit dem Sie Kommentare zentral verwalten können. Der Dienst speichert und verwaltet Kommentare außerhalb Ihrer Serendipity-Installation und ist mit JavaScript eingebettet. Weitere Informationen finden Sie unter https://disqus.com/.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_disqus</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_disqus&lt;br /&gt;Disqus comments&lt;/b&gt;&lt;br /&gt;Disqus.com is a webservice that allows you to manage comments, with central logins. It stores and manages comments outside of your Serendipity installation, and is embedded using JavaScript. For more information see disqus.com.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:18:19 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_disqus&lt;br /&gt;Disqus-Kommentare&lt;/b&gt;&lt;br /&gt;Disqus.com ist ein Webservice, mit dem Sie Kommentare zentral verwalten können. Der Dienst speichert und verwaltet Kommentare außerhalb Ihrer Serendipity-Installation und ist mit JavaScript eingebettet. Weitere Informationen finden Sie unter https://disqus.com/.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 18 Aug 2019 14:22:13 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_disqus</guid>
 </item>
 <item>
@@ -270,12 +270,12 @@
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
-<title>Markup: Syntax Highlighter: This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It's a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).</title>
+<title>Markup: Syntax-Hervorhebung: Dieses Plugin ist ein JavaScript-Syntax-Hervorheber, der auf dem gleichnamigen Code von Alex Gorbatchev basiert. Es benötigt weniger serverseitige Ressourcen als GeSHi und zeigt im eigentlichen HTML-Code weniger Markups an; eine leichtgewichtigere, sauberere Alternative. Dieses Plugin benötigt das zugehörige Theme, um die folgenden Hooks bereitzustellen: frontend_header, frontend_footer (und optional backend_preview im Admin-Theme).</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_dpsyntaxhighlighter</link>
 <category>Event Plugins</category>
 <author>Alex Gorbatchev (core), Brendon Kozlowski and J.M. Roth (plugin)</author>
-<content:encoded>&lt;b&gt;serendipity_event_dpsyntaxhighlighter&lt;br /&gt;Markup: Syntax Highlighter&lt;/b&gt;&lt;br /&gt;This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It's a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).&lt;br/&gt;For: Serendipity 1.0</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_dpsyntaxhighlighter&lt;br /&gt;Markup: Syntax-Hervorhebung&lt;/b&gt;&lt;br /&gt;Dieses Plugin ist ein JavaScript-Syntax-Hervorheber, der auf dem gleichnamigen Code von Alex Gorbatchev basiert. Es benötigt weniger serverseitige Ressourcen als GeSHi und zeigt im eigentlichen HTML-Code weniger Markups an; eine leichtgewichtigere, sauberere Alternative. Dieses Plugin benötigt das zugehörige Theme, um die folgenden Hooks bereitzustellen: frontend_header, frontend_footer (und optional backend_preview im Admin-Theme).&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 18 Aug 2019 16:19:47 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dpsyntaxhighlighter</guid>
 </item>
 <item>
@@ -360,12 +360,12 @@
 <guid isPermaLink="false">serendipity_event_externalphp</guid>
 </item>
 <item>
-<title>Facebook: Imports comments made on facebook postings (like through RSS Graffiti) back into the blog. Also embeds Facebook OpenGraph Meta-Tags into the blog. Note that adding &quot;like&quot;-Buttons to blog entries is achieved via the serendipity_event_findmore plugin! </title>
+<title>Facebook (Experimentell!): Importiert Kommentare von Facebook-Posts (vergleichbar RSS-Graffiti) zurück in den Blog. Bettet auch Facebook-OpenGraph-Meta-Tags in den Blog ein.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_facebook</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook&lt;/b&gt;&lt;br /&gt;Imports comments made on facebook postings (like through RSS Graffiti) back into the blog. Also embeds Facebook OpenGraph Meta-Tags into the blog. Note that adding &quot;like&quot;-Buttons to blog entries is achieved via the serendipity_event_findmore plugin! &lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:19:16 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook (Experimentell!)&lt;/b&gt;&lt;br /&gt;Importiert Kommentare von Facebook-Posts (vergleichbar RSS-Graffiti) zurück in den Blog. Bettet auch Facebook-OpenGraph-Meta-Tags in den Blog ein.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Sun, 18 Aug 2019 14:26:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>
@@ -414,12 +414,12 @@
 <guid isPermaLink="false">serendipity_event_flattr</guid>
 </item>
 <item>
-<title>Import from Flickr: Import images from flickr.com into the media library</title>
+<title>Aus Flickr importieren: Bilder von flickr.com in die Mediendatenbank importieren.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_flickr</link>
 <category>Event Plugins</category>
 <author>Jay Bertrand</author>
-<content:encoded>&lt;b&gt;serendipity_event_flickr&lt;br /&gt;Import from Flickr&lt;/b&gt;&lt;br /&gt;Import images from flickr.com into the media library&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 22 Jul 2017 14:48:24 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_flickr&lt;br /&gt;Aus Flickr importieren&lt;/b&gt;&lt;br /&gt;Bilder von flickr.com in die Mediendatenbank importieren.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 18 Aug 2019 16:22:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flickr</guid>
 </item>
 <item>
@@ -549,12 +549,12 @@
 <guid isPermaLink="false">serendipity_event_head_nugget</guid>
 </item>
 <item>
-<title>HTTP-Authentication: Authenticates users via HTTP auth using their s9y user login data.</title>
+<title>HTTP-Authentifizierung: Authentifiziert Benutzer über HTTP-Authentifizierung (basic_auth) mit ihren s9y-Anmeldedaten.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_httpauth</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_httpauth&lt;br /&gt;HTTP-Authentication&lt;/b&gt;&lt;br /&gt;Authenticates users via HTTP auth using their s9y user login data.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_httpauth&lt;br /&gt;HTTP-Authentifizierung&lt;/b&gt;&lt;br /&gt;Authentifiziert Benutzer über HTTP-Authentifizierung (basic_auth) mit ihren s9y-Anmeldedaten.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 18 Aug 2019 14:41:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_httpauth</guid>
 </item>
 <item>
@@ -599,7 +599,7 @@
 <category>Event Plugins</category>
 <author>Sebastian Nohn</author>
 <content:encoded>&lt;b&gt;serendipity_event_layout_printerfriendly&lt;br /&gt;Layout-Plugin: Druckfreundliche Version&lt;/b&gt;&lt;br /&gt;Ermöglicht den besseren Ausdruck eines Eintrages im Browser&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 14:46:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_layout_printerfriendly</guid>
 </item>
 <item>
@@ -612,12 +612,12 @@
 <guid isPermaLink="false">serendipity_event_lightbox</guid>
 </item>
 <item>
-<title>Link List: Links manager - Shows your favorite links in the sidebar.</title>
+<title>Linkliste: Linkmanager - zeigt Ihre Lieblingslinks in der Seitenleiste an.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_linklist</link>
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Links manager - Shows your favorite links in the sidebar.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:20:50 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Linkliste&lt;/b&gt;&lt;br /&gt;Linkmanager - zeigt Ihre Lieblingslinks in der Seitenleiste an.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 18 Aug 2019 16:25:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linklist</guid>
 </item>
 <item>
@@ -630,12 +630,12 @@
 <guid isPermaLink="false">serendipity_event_linktoolbar</guid>
 </item>
 <item>
-<title>Linktrimmer: Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.</title>
+<title>Linkverkürzung: Ermöglicht Linkverkürzung zur Weiterleitung in Ihrem eigenen Blog, z.B. vermittels tr.im, tinyurl.com usw.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_linktrimmer</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linktrimmer&lt;/b&gt;&lt;br /&gt;Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:11:32 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linkverkürzung&lt;/b&gt;&lt;br /&gt;Ermöglicht Linkverkürzung zur Weiterleitung in Ihrem eigenen Blog, z.B. vermittels tr.im, tinyurl.com usw.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Sun, 18 Aug 2019 14:54:22 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
@@ -711,12 +711,12 @@
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
-<title>Show read/unread state of entries for visitors: Show read/unread state of entries for visitors</title>
+<title>Einträge für Besucher als gelesenen / ungelesenen anzeigen: Einträge für Besucher als gelesenen / ungelesenen anzeigen</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_markread</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_markread&lt;br /&gt;Show read/unread state of entries for visitors&lt;/b&gt;&lt;br /&gt;Show read/unread state of entries for visitors&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:21:05 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_markread&lt;br /&gt;Einträge für Besucher als gelesenen / ungelesenen anzeigen&lt;/b&gt;&lt;br /&gt;Einträge für Besucher als gelesenen / ungelesenen anzeigen&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 18 Aug 2019 14:58:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markread</guid>
 </item>
 <item>
@@ -995,7 +995,7 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamschutz (Bayes)&lt;/b&gt;&lt;br /&gt;Filtert Kommentare mittels eines lernenden Algorithmus.&lt;br/&gt;For: Serendipity 2.1.2</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:23:28 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 15:50:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
@@ -1098,12 +1098,12 @@
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
-<title>Embed Ads (TextLinkAds.com, Custom): Embeds Ads into your page.</title>
+<title>Werbeanzeigen einbetten (TextLinkAds.com oder benutzerdefiniert): Werbenanzeigen ins Blog einbetten.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_textlinkads</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_textlinkads&lt;br /&gt;Embed Ads (TextLinkAds.com, Custom)&lt;/b&gt;&lt;br /&gt;Embeds Ads into your page.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Apr 2018 09:51:15 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_textlinkads&lt;br /&gt;Werbeanzeigen einbetten (TextLinkAds.com oder benutzerdefiniert)&lt;/b&gt;&lt;br /&gt;Werbenanzeigen ins Blog einbetten.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 18 Aug 2019 16:29:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textlinkads</guid>
 </item>
 <item>
@@ -1132,6 +1132,15 @@
 <content:encoded>&lt;b&gt;serendipity_event_tinymce&lt;br /&gt;TinyMCE als WYSIWYG Editor benutzen&lt;/b&gt;&lt;br /&gt;Es wird Serendipity ab Version 1.6 benötigt. Bitte lesen Sie nach der Installation die weitere Installationsbeschreibung in der Plugin Konfiguration.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
 <pubDate>Fri, 09 Aug 2019 11:24:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_tinymce</guid>
+</item>
+<item>
+<title>Bilder komprimieren: PNG- und JPG-Bilder mit dem TinyPNG-Dienst komprimieren.</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_tinypng</link>
+<category>Event Plugins</category>
+<author>onli</author>
+<content:encoded>&lt;b&gt;serendipity_event_tinypng&lt;br /&gt;Bilder komprimieren&lt;/b&gt;&lt;br /&gt;PNG- und JPG-Bilder mit dem TinyPNG-Dienst komprimieren.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sun, 18 Aug 2019 15:14:19 +0200</pubDate>
+<guid isPermaLink="false">serendipity_event_tinypng</guid>
 </item>
 <item>
 <title>ToDo/Projekt-Liste: Verwaltet eine Liste von Projekten und deren aktuellem Status</title>

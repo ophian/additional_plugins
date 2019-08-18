@@ -119,9 +119,9 @@
 <description>Adds a button to allow Amazon.com search which are insertable into your entry</description>
 <maintainers><maintainer><name>Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.81</version>
+  <version>0.82</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -422,9 +422,9 @@
 <description>Provides the ability to automatically make backups from your s9y, the database-tables, the whole database and the files. Only MySQL(i) databases are currently supported. WARNING: This plugin does not work well with large databases or directories.</description>
 <maintainers><maintainer><name>Alexander Mieland, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.18</version>
+  <version>0.19</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-08-16</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_backup">
       <file>backup.sh</file>
@@ -434,12 +434,14 @@
       <file>ChangeLog</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>serendipity_event_backup.php</file>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
     </dir>
@@ -450,11 +452,13 @@
     <file>serendipity_event_backup/ChangeLog</file>
     <file>serendipity_event_backup/lang_cs.inc.php</file>
     <file>serendipity_event_backup/lang_cz.inc.php</file>
+    <file>serendipity_event_backup/lang_de.inc.php</file>
     <file>serendipity_event_backup/lang_en.inc.php</file>
     <file>serendipity_event_backup/lang_ja.inc.php</file>
     <file>serendipity_event_backup/serendipity_event_backup.php</file>
     <file>serendipity_event_backup/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_backup/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_backup/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_backup/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
@@ -1154,9 +1158,9 @@
 <description>Select images from a Coppermine gallery in new entries</description>
 <maintainers><maintainer><name>Matthew Maude (modified by Jim Davies)</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.10</version>
+  <version>2.11</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-07-13</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_cpgselector">
       <file>ChangeLog</file>
@@ -1166,6 +1170,7 @@
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>README</file>
       <file>serendipity_event_cpgselector.php</file>
@@ -1173,6 +1178,7 @@
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -1184,12 +1190,14 @@
     <file>serendipity_event_cpgselector/lang_bg.inc.php</file>
     <file>serendipity_event_cpgselector/lang_cs.inc.php</file>
     <file>serendipity_event_cpgselector/lang_cz.inc.php</file>
+    <file>serendipity_event_cpgselector/lang_de.inc.php</file>
     <file>serendipity_event_cpgselector/lang_en.inc.php</file>
     <file>serendipity_event_cpgselector/README</file>
     <file>serendipity_event_cpgselector/serendipity_event_cpgselector.php</file>
     <file>serendipity_event_cpgselector/UTF-8/lang_bg.inc.php</file>
     <file>serendipity_event_cpgselector/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_cpgselector/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_cpgselector/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1508,9 +1516,9 @@
 <description>Disqus.com is a webservice that allows you to manage comments, with central logins. It stores and manages comments outside of your Serendipity installation, and is embedded using JavaScript. For more information see disqus.com.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.5</version>
+  <version>0.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_disqus">
       <file>ChangeLog</file>
@@ -1518,11 +1526,13 @@
       <file>documentation_cz.html</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_disqus.php</file>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -1532,10 +1542,12 @@
     <file>serendipity_event_disqus/documentation_cz.html</file>
     <file>serendipity_event_disqus/lang_cs.inc.php</file>
     <file>serendipity_event_disqus/lang_cz.inc.php</file>
+    <file>serendipity_event_disqus/lang_de.inc.php</file>
     <file>serendipity_event_disqus/lang_en.inc.php</file>
     <file>serendipity_event_disqus/serendipity_event_disqus.php</file>
     <file>serendipity_event_disqus/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_disqus/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_disqus/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1870,9 +1882,9 @@
 <description>This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It's a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).</description>
 <maintainers><maintainer><name>Alex Gorbatchev (core), Brendon Kozlowski and J.M. Roth (plugin)</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.0.83</version>
-  <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>3.20</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_dpsyntaxhighlighter">
       <file>ChangeLog</file>
@@ -1880,6 +1892,7 @@
       <file>documentation_cz.html</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_dpsyntaxhighlighter.php</file>
       <dir name="sh">
@@ -1938,6 +1951,7 @@
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -1947,6 +1961,7 @@
     <file>serendipity_event_dpsyntaxhighlighter/documentation_cz.html</file>
     <file>serendipity_event_dpsyntaxhighlighter/lang_cs.inc.php</file>
     <file>serendipity_event_dpsyntaxhighlighter/lang_cz.inc.php</file>
+    <file>serendipity_event_dpsyntaxhighlighter/lang_de.inc.php</file>
     <file>serendipity_event_dpsyntaxhighlighter/lang_en.inc.php</file>
     <file>serendipity_event_dpsyntaxhighlighter/serendipity_event_dpsyntaxhighlighter.php</file>
     <file>serendipity_event_dpsyntaxhighlighter/sh/3.0.83/scripts/shAutoloader.js</file>
@@ -1996,6 +2011,7 @@
     <file>serendipity_event_dpsyntaxhighlighter/sh/3.0.83/styles/shThemeRDark.css</file>
     <file>serendipity_event_dpsyntaxhighlighter/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_dpsyntaxhighlighter/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_dpsyntaxhighlighter/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2458,9 +2474,9 @@
 <description>Imports comments made on facebook postings (like through RSS Graffiti) back into the blog. Also embeds Facebook OpenGraph Meta-Tags into the blog. Note that adding &quot;like&quot;-Buttons to blog entries is achieved via the serendipity_event_findmore plugin! </description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.01</version>
+  <version>1.02</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_facebook">
       <file>ChangeLog</file>
@@ -2468,11 +2484,13 @@
       <file>documentation_cz.html</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_facebook.php</file>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -2482,10 +2500,12 @@
     <file>serendipity_event_facebook/documentation_cz.html</file>
     <file>serendipity_event_facebook/lang_cs.inc.php</file>
     <file>serendipity_event_facebook/lang_cz.inc.php</file>
+    <file>serendipity_event_facebook/lang_de.inc.php</file>
     <file>serendipity_event_facebook/lang_en.inc.php</file>
     <file>serendipity_event_facebook/serendipity_event_facebook.php</file>
     <file>serendipity_event_facebook/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_facebook/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_facebook/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2857,9 +2877,9 @@
 <description>Import images from flickr.com into the media library</description>
 <maintainers><maintainer><name>Jay Bertrand</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.6</version>
+  <version>0.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-07-22</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_flickr">
       <file>ChangeLog</file>
@@ -2867,6 +2887,7 @@
       <file>documentation_cz.html</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>lang_fr.inc.php</file>
       <dir name="phpFlickr">
@@ -2878,6 +2899,7 @@
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
         <file>lang_fr.inc.php</file>
       </dir>
     </dir>
@@ -2888,6 +2910,7 @@
     <file>serendipity_event_flickr/documentation_cz.html</file>
     <file>serendipity_event_flickr/lang_cs.inc.php</file>
     <file>serendipity_event_flickr/lang_cz.inc.php</file>
+    <file>serendipity_event_flickr/lang_de.inc.php</file>
     <file>serendipity_event_flickr/lang_en.inc.php</file>
     <file>serendipity_event_flickr/lang_fr.inc.php</file>
     <file>serendipity_event_flickr/phpFlickr/phpFlickr.php</file>
@@ -2896,6 +2919,7 @@
     <file>serendipity_event_flickr/serendipity_event_flickr.php</file>
     <file>serendipity_event_flickr/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_flickr/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_flickr/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_flickr/UTF-8/lang_fr.inc.php</file>
   </serendipityFilelist>
 </release>
@@ -4754,28 +4778,32 @@
 <description>Authenticates users via HTTP auth using their s9y user login data.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.7</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_httpauth">
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_httpauth.php</file>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_httpauth/lang_cs.inc.php</file>
     <file>serendipity_event_httpauth/lang_cz.inc.php</file>
+    <file>serendipity_event_httpauth/lang_de.inc.php</file>
     <file>serendipity_event_httpauth/lang_en.inc.php</file>
     <file>serendipity_event_httpauth/serendipity_event_httpauth.php</file>
     <file>serendipity_event_httpauth/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_httpauth/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_httpauth/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -5066,9 +5094,9 @@
 <description>Tarayıcınızın yazdırma işlevselliğini kullanarak, Yazınız için daha iyi bir yazıcı çıktısı görünümü sağlayabilirsiniz</description>
 <maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.1</version>
+  <version>1.2</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_layout_printerfriendly">
       <file>lang_bg.inc.php</file>
@@ -5418,9 +5446,9 @@
 <description>Links manager - Shows your favorite links in the sidebar.</description>
 <maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.06</version>
+  <version>2.07</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
@@ -5446,6 +5474,7 @@
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>lang_pl.inc.php</file>
@@ -5458,6 +5487,7 @@
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
         <file>lang_pl.inc.php</file>
       </dir>
@@ -5485,6 +5515,7 @@
     <file>serendipity_event_linklist/lang_bg.inc.php</file>
     <file>serendipity_event_linklist/lang_cs.inc.php</file>
     <file>serendipity_event_linklist/lang_cz.inc.php</file>
+    <file>serendipity_event_linklist/lang_de.inc.php</file>
     <file>serendipity_event_linklist/lang_en.inc.php</file>
     <file>serendipity_event_linklist/lang_ja.inc.php</file>
     <file>serendipity_event_linklist/lang_pl.inc.php</file>
@@ -5496,6 +5527,7 @@
     <file>serendipity_event_linklist/UTF-8/lang_bg.inc.php</file>
     <file>serendipity_event_linklist/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_linklist/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_linklist/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_linklist/UTF-8/lang_ja.inc.php</file>
     <file>serendipity_event_linklist/UTF-8/lang_pl.inc.php</file>
   </serendipityFilelist>
@@ -5558,9 +5590,9 @@
 <description>Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7.1</version>
+  <version>1.7.2</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -5569,6 +5601,7 @@
       <file>documentation_en.html</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>linktrimmer.css</file>
       <file>plugin_linktrimmer.tpl</file>
@@ -5578,6 +5611,7 @@
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -5588,6 +5622,7 @@
     <file>serendipity_event_linktrimmer/documentation_en.html</file>
     <file>serendipity_event_linktrimmer/lang_cs.inc.php</file>
     <file>serendipity_event_linktrimmer/lang_cz.inc.php</file>
+    <file>serendipity_event_linktrimmer/lang_de.inc.php</file>
     <file>serendipity_event_linktrimmer/lang_en.inc.php</file>
     <file>serendipity_event_linktrimmer/linktrimmer.css</file>
     <file>serendipity_event_linktrimmer/plugin_linktrimmer.tpl</file>
@@ -5596,6 +5631,7 @@
     <file>serendipity_event_linktrimmer/serendipity_event_linktrimmer.php</file>
     <file>serendipity_event_linktrimmer/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_linktrimmer/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_linktrimmer/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6117,21 +6153,23 @@
 <description>Show read/unread state of entries for visitors</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
+  <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_markread">
       <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_markread.php</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -6140,11 +6178,13 @@
     <file>serendipity_event_markread/lang_bg.inc.php</file>
     <file>serendipity_event_markread/lang_cs.inc.php</file>
     <file>serendipity_event_markread/lang_cz.inc.php</file>
+    <file>serendipity_event_markread/lang_de.inc.php</file>
     <file>serendipity_event_markread/lang_en.inc.php</file>
     <file>serendipity_event_markread/serendipity_event_markread.php</file>
     <file>serendipity_event_markread/UTF-8/lang_bg.inc.php</file>
     <file>serendipity_event_markread/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_markread/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_markread/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -8833,9 +8873,9 @@
 <description>Detects SPAM via an algorithm which learns.</description>
 <maintainers><maintainer><name>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.04</version>
+  <version>1.05</version>
   <requirements:s9yVersion>2.1.2</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bayes">
       <dir name="admin">
@@ -9749,9 +9789,9 @@
 <description>Embeds Ads into your page.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.14</version>
+  <version>0.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-06</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_textlinkads">
       <file>ChangeLog</file>
@@ -9766,12 +9806,14 @@
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_textlinkads.php</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -9784,11 +9826,13 @@
     <file>serendipity_event_textlinkads/lang_bg.inc.php</file>
     <file>serendipity_event_textlinkads/lang_cs.inc.php</file>
     <file>serendipity_event_textlinkads/lang_cz.inc.php</file>
+    <file>serendipity_event_textlinkads/lang_de.inc.php</file>
     <file>serendipity_event_textlinkads/lang_en.inc.php</file>
     <file>serendipity_event_textlinkads/serendipity_event_textlinkads.php</file>
     <file>serendipity_event_textlinkads/UTF-8/lang_bg.inc.php</file>
     <file>serendipity_event_textlinkads/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_textlinkads/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_textlinkads/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -10364,6 +10408,68 @@
     <file>serendipity_event_tinymce/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_tinymce/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_tinymce/UTF-8/lang_de.inc.php</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_event_tinypng</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_tinypng/ChangeLog</changelog>
+<license>GPL</license>
+<summary>Compress Images</summary>
+<groups>IMAGES</groups>
+<description>Compress PNG and JPG images with the TinyPNG service.</description>
+<maintainers><maintainer><name>onli</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.03</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2019-08-18</date>
+  <filelist>
+    <dir name="serendipity_event_tinypng">
+      <file>Changelog</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_event_tinypng.php</file>
+      <dir name="tinify-php">
+        <file>.gitignore</file>
+        <file>.travis.yml</file>
+        <dir name="lib">
+          <dir name="data">
+            <file>cacert.pem</file>
+          </dir>
+          <dir name="Tinify">
+            <file>Client.php</file>
+            <file>Exception.php</file>
+            <file>Result.php</file>
+            <file>ResultMeta.php</file>
+            <file>Source.php</file>
+          </dir>
+          <file>Tinify.php</file>
+        </dir>
+        <file>LICENSE</file>
+        <file>README.md</file>
+      </dir>
+      <dir name="UTF-8">
+        <file>lang_de.inc.php</file>
+      </dir>
+    </dir>
+  </filelist>
+  <serendipityFilelist>
+    <file>serendipity_event_tinypng/Changelog</file>
+    <file>serendipity_event_tinypng/lang_de.inc.php</file>
+    <file>serendipity_event_tinypng/lang_en.inc.php</file>
+    <file>serendipity_event_tinypng/serendipity_event_tinypng.php</file>
+    <file>serendipity_event_tinypng/tinify-php/.gitignore</file>
+    <file>serendipity_event_tinypng/tinify-php/.travis.yml</file>
+    <file>serendipity_event_tinypng/tinify-php/lib/data/cacert.pem</file>
+    <file>serendipity_event_tinypng/tinify-php/lib/Tinify/Client.php</file>
+    <file>serendipity_event_tinypng/tinify-php/lib/Tinify/Exception.php</file>
+    <file>serendipity_event_tinypng/tinify-php/lib/Tinify/Result.php</file>
+    <file>serendipity_event_tinypng/tinify-php/lib/Tinify/ResultMeta.php</file>
+    <file>serendipity_event_tinypng/tinify-php/lib/Tinify/Source.php</file>
+    <file>serendipity_event_tinypng/tinify-php/lib/Tinify.php</file>
+    <file>serendipity_event_tinypng/tinify-php/LICENSE</file>
+    <file>serendipity_event_tinypng/tinify-php/README.md</file>
+    <file>serendipity_event_tinypng/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>

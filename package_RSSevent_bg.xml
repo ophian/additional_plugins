@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon Media Button&lt;/b&gt;&lt;br /&gt;Adds a button to allow Amazon.com search which are insertable into your entry&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:16:55 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 14:00:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -86,7 +86,7 @@
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Backup Interface&lt;/b&gt;&lt;br /&gt;Provides the ability to automatically make backups from your s9y, the database-tables, the whole database and the files. Only MySQL(i) databases are currently supported. WARNING: This plugin does not work well with large databases or directories.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 16 Aug 2019 10:57:27 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 14:07:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
@@ -194,7 +194,7 @@
 <category>Event Plugins</category>
 <author>Matthew Maude (modified by Jim Davies)</author>
 <content:encoded>&lt;b&gt;serendipity_event_cpgselector&lt;br /&gt;Coppermine селектор&lt;/b&gt;&lt;br /&gt;Избира картинки от галерия Coppermine при редактиране на статии&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 13 Jul 2019 10:27:09 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 14:17:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cpgselector</guid>
 </item>
 <item>
@@ -257,7 +257,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_disqus&lt;br /&gt;Disqus comments&lt;/b&gt;&lt;br /&gt;Disqus.com is a webservice that allows you to manage comments, with central logins. It stores and manages comments outside of your Serendipity installation, and is embedded using JavaScript. For more information see disqus.com.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:18:19 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 14:22:13 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_disqus</guid>
 </item>
 <item>
@@ -274,8 +274,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_dpsyntaxhighlighter</link>
 <category>Event Plugins</category>
 <author>Alex Gorbatchev (core), Brendon Kozlowski and J.M. Roth (plugin)</author>
-<content:encoded>&lt;b&gt;serendipity_event_dpsyntaxhighlighter&lt;br /&gt;Markup: Syntax Highlighter&lt;/b&gt;&lt;br /&gt;This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It's a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).&lt;br/&gt;For: Serendipity 1.0</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_dpsyntaxhighlighter&lt;br /&gt;Markup: Syntax Highlighter&lt;/b&gt;&lt;br /&gt;This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It's a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 18 Aug 2019 16:19:47 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dpsyntaxhighlighter</guid>
 </item>
 <item>
@@ -365,7 +365,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook&lt;/b&gt;&lt;br /&gt;Imports comments made on facebook postings (like through RSS Graffiti) back into the blog. Also embeds Facebook OpenGraph Meta-Tags into the blog. Note that adding &quot;like&quot;-Buttons to blog entries is achieved via the serendipity_event_findmore plugin! &lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:19:16 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 14:26:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>
@@ -419,7 +419,7 @@
 <category>Event Plugins</category>
 <author>Jay Bertrand</author>
 <content:encoded>&lt;b&gt;serendipity_event_flickr&lt;br /&gt;Import from Flickr&lt;/b&gt;&lt;br /&gt;Import images from flickr.com into the media library&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 22 Jul 2017 14:48:24 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 16:22:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flickr</guid>
 </item>
 <item>
@@ -553,8 +553,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_httpauth</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_httpauth&lt;br /&gt;HTTP-Authentication&lt;/b&gt;&lt;br /&gt;Authenticates users via HTTP auth using their s9y user login data.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_httpauth&lt;br /&gt;HTTP-Authentication&lt;/b&gt;&lt;br /&gt;Authenticates users via HTTP auth using their s9y user login data.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Sun, 18 Aug 2019 14:41:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_httpauth</guid>
 </item>
 <item>
@@ -599,7 +599,7 @@
 <category>Event Plugins</category>
 <author>Sebastian Nohn</author>
 <content:encoded>&lt;b&gt;serendipity_event_layout_printerfriendly&lt;br /&gt;Layout-Plugin: Изглед за принтер&lt;/b&gt;&lt;br /&gt;По-добър изглед за печат на Вашите статии&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 14:46:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_layout_printerfriendly</guid>
 </item>
 <item>
@@ -617,7 +617,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Списък от връзки&lt;/b&gt;&lt;br /&gt;Менажер на връзките - показва връзки към други сайтове в странична приставка.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:20:50 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 16:25:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linklist</guid>
 </item>
 <item>
@@ -635,7 +635,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linktrimmer&lt;/b&gt;&lt;br /&gt;Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:11:32 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 14:54:22 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
@@ -716,7 +716,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_markread&lt;br /&gt;Показва дали статиите са прочетени от посетителите&lt;/b&gt;&lt;br /&gt;Показва дали статиите са прочетени от посетителите&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:21:05 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 14:58:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markread</guid>
 </item>
 <item>
@@ -995,7 +995,7 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detects SPAM via an algorithm which learns.&lt;br/&gt;For: Serendipity 2.1.2</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:23:28 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 15:50:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
@@ -1103,7 +1103,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_textlinkads&lt;br /&gt;TextLinkAds.com Ad&lt;/b&gt;&lt;br /&gt;Вгражда рекламни банери в страниците на блога.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Apr 2018 09:51:15 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 16:29:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textlinkads</guid>
 </item>
 <item>
@@ -1132,6 +1132,15 @@
 <content:encoded>&lt;b&gt;serendipity_event_tinymce&lt;br /&gt;Uses TinyMCE as WYSIWYG editor&lt;/b&gt;&lt;br /&gt;Utilizes the TinyMCE WYSIWYG editor. Requires Serendipity 1.6 or later. After installation, read the installation guide in the configuration screen for this plugin.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
 <pubDate>Fri, 09 Aug 2019 11:24:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_tinymce</guid>
+</item>
+<item>
+<title>Compress Images: Compress PNG and JPG images with the TinyPNG service.</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_tinypng</link>
+<category>Event Plugins</category>
+<author>onli</author>
+<content:encoded>&lt;b&gt;serendipity_event_tinypng&lt;br /&gt;Compress Images&lt;/b&gt;&lt;br /&gt;Compress PNG and JPG images with the TinyPNG service.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sun, 18 Aug 2019 15:14:19 +0200</pubDate>
+<guid isPermaLink="false">serendipity_event_tinypng</guid>
 </item>
 <item>
 <title>Задачи/Проекти: Поддържа списък от проекти и степента на изпълнението им.</title>
