@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '3.74');
+        $propbag->add('version',      '3.75');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -1379,7 +1379,7 @@ class serendipity_event_guestbook extends serendipity_event
                     $gb['export'] = explode('/', $eventData);
 
                     if ($gb['export'][0] == 'guestbookdlsql') {
-                        $file = file_get_contents ($serendipity['serendipityPath'] . 'templates_c/guestbook/'.$gb['export'][1]);
+                        $file = file_get_contents ($serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/guestbook/'.$gb['export'][1]);
                         header('Status: 302 Found');
                         header('Content-Type: application/octet-stream; charset=UTF-8'); // text/plain to see as file in browser
                         header('Content-Disposition: inline; filename='.$gb['export'][1]);
@@ -1833,8 +1833,8 @@ class serendipity_event_guestbook extends serendipity_event
 
                 case 'dbdownload':
                     $serendipity['smarty']->assign('is_guestbook_admin_download', true);
-                    if (is_dir('templates_c/guestbook')) {
-                        $str = $this->backend_read_backup_dir('templates_c/guestbook/', $adminpath.'&serendipity[guestbookdbclean]=dbdelfile&serendipity[guestbookdbcleanfilename]=');
+                    if (is_dir(PATH_SMARTY_COMPILE . '/guestbook')) {
+                        $str = $this->backend_read_backup_dir(PATH_SMARTY_COMPILE . '/guestbook/', $adminpath.'&serendipity[guestbookdbclean]=dbdelfile&serendipity[guestbookdbcleanfilename]=');
                         $serendipity['smarty']->assign(array('is_guestbook_admin_download_msg' => true, 'gb_read_backup_dir' => $str));
                     } else {
                         $serendipity['smarty']->assign('is_guestbook_admin_download_msg', false);
@@ -1845,7 +1845,7 @@ class serendipity_event_guestbook extends serendipity_event
                     $insfile = false;
                     if (isset($serendipity['GET']['guestbookdbinsertfilename'])) {
                         $old = getcwd(); // Save the current directory
-                        @chdir('templates_c/guestbook/');
+                        @chdir(PATH_SMARTY_COMPILE . '/guestbook/');
                         if (is_file($serendipity['GET']['guestbookdbinsertfilename'])) {
                             @unlink($serendipity['GET']['guestbookdbinsertfilename']);
                         }
@@ -1858,7 +1858,7 @@ class serendipity_event_guestbook extends serendipity_event
                     $delfile = false;
                     if (isset($serendipity['GET']['guestbookdbcleanfilename'])) {
                         $old = getcwd(); // Save the current directory
-                        @chdir('templates_c/guestbook/');
+                        @chdir(PATH_SMARTY_COMPILE . '/guestbook/');
                         if (is_file($serendipity['GET']['guestbookdbcleanfilename'])) {
                             @unlink($serendipity['GET']['guestbookdbcleanfilename']);
                         }
@@ -1961,13 +1961,13 @@ class serendipity_event_guestbook extends serendipity_event
     {
         global $serendipity;
 
-        $target = $serendipity['serendipityPath'] . 'templates_c/guestbook/.htaccess';
-        if (is_dir($serendipity['serendipityPath'] . 'templates_c/guestbook') && file_exists($target)) {
+        $target = $serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/guestbook/.htaccess';
+        if (is_dir($serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/guestbook') && file_exists($target)) {
             return true;
         }
         if (!file_exists($target)) {
             $old = getcwd(); // Save the current directory
-            @chdir($serendipity['serendipityPath'] . 'templates_c/guestbook/');
+            @chdir($serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/guestbook/');
             $content = '<Files "*.sql">' . "\n";
             $content .= "    deny from all\n";
             $content .= "    Require all denied\n";
@@ -2000,13 +2000,13 @@ class serendipity_event_guestbook extends serendipity_event
 
         $date = date('Y-m-d_H-i-s');
         $directory = "guestbook";
-        if (!is_dir('templates_c/' . $directory)) {
-            @mkdir('templates_c/' . $directory, 0777);
+        if (!is_dir(PATH_SMARTY_COMPILE . '/' . $directory)) {
+            @mkdir(PATH_SMARTY_COMPILE . '/' . $directory, 0777);
         }
         if (false === $this->backend_check_db_secured_log()) {
             return false;
         }
-        $file = $serendipity['serendipityPath'] . 'templates_c/guestbook/'.$date.'_guestbook.sql';
+        $file = $serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/guestbook/'.$date.'_guestbook.sql';
         $fp   = fopen($file, 'w');
         if ($fp) {
             $create = serendipity_db_query("SHOW CREATE TABLE {$serendipity['dbPrefix']}guestbook", true, 'num', true);

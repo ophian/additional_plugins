@@ -1,3 +1,7 @@
+3.75:
+----
+ * Use the defined constant for the compile dir
+
 3.74:
 ----
  * Fix 'allow_comments' pre set 'true' string in fake call to spamblock and other comment plugins
