@@ -10,11 +10,6 @@ if (IN_serendipity !== true) {
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-@define('PLUGIN_FEEDBURNERSIDEBAR_TITLE',   'Feedburner Sidebar');
-@define('PLUGIN_FEEDBURNERSIDEBAR_TITLE_DESC',   '');
-@define('PLUGIN_FEEDBURNERSIDEBAR_NAME',   'Feedburner Sidebar');
-@define('PLUGIN_FEEDBURNERSIDEBAR_DESC',   'Adds assorted functionality of the feedburner service into the sidebar.');
-
 class serendipity_plugin_feedburnersidebar extends serendipity_plugin
 {
     var $title = PLUGIN_FEEDBURNERSIDEBAR_NAME;
@@ -27,7 +22,7 @@ class serendipity_plugin_feedburnersidebar extends serendipity_plugin
         $propbag->add('description',   PLUGIN_FEEDBURNERSIDEBAR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Aaron Axelsen');
-        $propbag->add('version',       '1.1');
+        $propbag->add('version',       '1.2');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -63,43 +58,43 @@ class serendipity_plugin_feedburnersidebar extends serendipity_plugin
         switch($name) {
             case 'title':
                 $propbag->add('type',        'string');
-                $propbag->add('name',        FEEDBURNERSIDEBAR_TITLE);
-                $propbag->add('description', FEEDBURNERSIDEBAR_TITLE_DESC);
+                $propbag->add('name',        PLUGIN_FEEDBURNERSIDEBAR_TITLE);
+                $propbag->add('description', PLUGIN_FEEDBURNERSIDEBAR_TITLE_DESC);
                 $propbag->add('default',     'Feedburner');
                 break;
 
             case 'feedid':
                 $propbag->add('type',        'string');
-                $propbag->add('name',        FEEDBURNERSIDEBAR_FEEDID);
-                $propbag->add('description', FEEDBURNERSIDEBAR_FEEDID_DESC);
+                $propbag->add('name',        PLUGIN_FEEDBURNERSIDEBAR_FEEDID);
+                $propbag->add('description', PLUGIN_FEEDBURNERSIDEBAR_FEEDID_DESC);
                 $propbag->add('default',     '');
                 break;
 
             case 'feedaddress':
                 $propbag->add('type',        'string');
-                $propbag->add('name',        FEEDBURNERSIDEBAR_FEEDADDRESS);
-                $propbag->add('description', FEEDBURNERSIDEBAR_FEEDADDRESS_DESC);
+                $propbag->add('name',        PLUGIN_FEEDBURNERSIDEBAR_FEEDADDRESS);
+                $propbag->add('description', PLUGIN_FEEDBURNERSIDEBAR_FEEDADDRESS_DESC);
                 $propbag->add('default',     'YOURFEEDNAMEHERE');
                 break;
 
             case 'email_subscribe':
                 $propbag->add('type',	     'radio');
-                $propbag->add('name',	     FEEDBURNERSIDEBAR_EMAIL_SUBSCRIBE);
-                $propbag->add('description', FEEDBURNERSIDEBAR_EMAIL_SUBSCRIBE_DESC);
+                $propbag->add('name',	     PLUGIN_FEEDBURNERSIDEBAR_EMAIL_SUBSCRIBE);
+                $propbag->add('description', PLUGIN_FEEDBURNERSIDEBAR_EMAIL_SUBSCRIBE_DESC);
                 $propbag->add('default','none');
                 $propbag->add('radio', array(
                     'value' => array('link','form','none'),
-                    'desc' => array(FEEDBURNERSIDEBAR_EMAIL_SUBSCRIBE_LINK,
-                        FEEDBURNERSIDEBAR_EMAIL_SUBSCRIBE_FORM,
-                        FEEDBURNERSIDEBAR_EMAIL_SUBSCRIBE_NONE)
+                    'desc' => array(PLUGIN_FEEDBURNERSIDEBAR_EMAIL_SUBSCRIBE_LINK,
+                        PLUGIN_FEEDBURNERSIDEBAR_EMAIL_SUBSCRIBE_FORM,
+                        PLUGIN_FEEDBURNERSIDEBAR_EMAIL_SUBSCRIBE_NONE)
                 ));
                 $propbag->add('radio_per_row','1');
                 break;
 
             case 'email_title':
                 $propbag->add('type',        'string');
-                $propbag->add('name',        FEEDBURNERSIDEBAR_EMAIL_TITLE);
-                $propbag->add('description', FEEDBURNERSIDEBAR_EMAIL_TITLE_DESC);
+                $propbag->add('name',        PLUGIN_FEEDBURNERSIDEBAR_EMAIL_TITLE);
+                $propbag->add('description', PLUGIN_FEEDBURNERSIDEBAR_EMAIL_TITLE_DESC);
                 $propbag->add('default',     'Subscribe to blog updates by email!');
                 break;
 
