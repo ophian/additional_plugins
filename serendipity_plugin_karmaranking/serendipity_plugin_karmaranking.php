@@ -1,35 +1,33 @@
-<?php # 
+<?php
 
 // Google Last Query Plugin for Serendipity
 // 10/2004 by Thomas Nesges <thomas@tnt-computer.de>
-
-@define('PLUGIN_KARMARANKING_TITLE',                "Karma Ranking");
-
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
+class serendipity_plugin_karmaranking extends serendipity_plugin
+{
 
-class serendipity_plugin_karmaranking extends serendipity_plugin {
-
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $propbag->add('name',           PLUGIN_KARMARANKING_TITLE);
         $propbag->add('description',    PLUGIN_KARMARANKING_DESC);
         $propbag->add('configuration',  array('title', 'count'));
-        $propbag->add('version',     '1.1');
+        $propbag->add('requirements',  array(
+            'serendipity' => '1.6',
+            'php'         => '5.1.0'
+        ));
+        $propbag->add('version',     '1.2');
    	    $propbag->add('author',	'Andreas Brandmaier');
         $propbag->add('groups', array('STATISTICS'));
    }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'title':
                 $propbag->add('type',           'string');
@@ -51,36 +49,41 @@ class serendipity_plugin_karmaranking extends serendipity_plugin {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $title = $this->get_config('title');
         $count = $this->get_config('count');
-        if($count<1) {
+        if ($count < 1) {
             $count = 1;
         }
 
-	$rows = serendipity_db_query("select {$serendipity['dbPrefix']}authors.username,
-SUM({$serendipity['dbPrefix']}karma.points) as score, SUM({$serendipity['dbPrefix']}karma.votes) as
-votes,SUM({$serendipity['dbPrefix']}karma.points) / SUM({$serendipity['dbPrefix']}karma.votes) as overall FROM
-{$serendipity['dbPrefix']}entries, {$serendipity['dbPrefix']}karma, {$serendipity['dbPrefix']}authors WHERE {$serendipity['dbPrefix']}entries.id = {$serendipity['dbPrefix']}karma.entryid
-AND {$serendipity['dbPrefix']}authors.authorid = {$serendipity['dbPrefix']}entries.authorid ".
- "GROUP BY {$serendipity['dbPrefix']}authors.username ORDER BY score DESC; ");
+        $rows = serendipity_db_query("SELECT {$serendipity['dbPrefix']}authors.username,
+                                         SUM({$serendipity['dbPrefix']}karma.points) AS score,
+                                         SUM({$serendipity['dbPrefix']}karma.votes) AS votes,
+                                         SUM({$serendipity['dbPrefix']}karma.points) / SUM({$serendipity['dbPrefix']}karma.votes) AS overall
+                                        FROM {$serendipity['dbPrefix']}entries,
+                                             {$serendipity['dbPrefix']}karma,
+                                             {$serendipity['dbPrefix']}authors
+                                       WHERE {$serendipity['dbPrefix']}entries.id = {$serendipity['dbPrefix']}karma.entryid
+                                         AND {$serendipity['dbPrefix']}authors.authorid = {$serendipity['dbPrefix']}entries.authorid ".
+                                   "GROUP BY {$serendipity['dbPrefix']}authors.username ORDER BY score DESC; ");
 
-	echo "<table>";
+        echo "<table>";
 
-	echo "<tr><th style='background-color: #DDDDDD'>".PLUGIN_KARMARANKING_AUTHOR."</th>";
-	echo "<th style='background-color: #DDDDDD'>".PLUGIN_KARMARANKING_TOTAL."</th></tr>";
+        echo "<tr><th style='background-color: #DDDDDD'>".PLUGIN_KARMARANKING_AUTHOR."</th>";
+        echo "<th style='background-color: #DDDDDD'>".PLUGIN_KARMARANKING_TOTAL."</th></tr>";
 
-#var_dump($rows);
+        #var_dump($rows);
 
-        foreach($rows as $row) {
-		echo "<tr><td>".$row[0]."</td><td style='text-align: center'>".$row[1]."</td></tr>";
+        foreach($rows AS $row) {
+            echo "<tr><td>".$row[0]."</td><td style='text-align: center'>".$row[1]."</td></tr>";
         }
 
-	echo "</table>";
-
+        echo "</table>";
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
