@@ -20,7 +20,7 @@ class serendipity_event_stalkerbuster extends serendipity_event
         $propbag->add('description',   PLUGIN_STALKERBUSTER_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.02');
+        $propbag->add('version',       '1.03');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -74,7 +74,7 @@ class serendipity_event_stalkerbuster extends serendipity_event
                         serendipity_setCookie($this->get_config('cname'), uniqid('sb', true));
                     }
                     
-                    $bl = @file_get_contents($serendipity['serendipityPath'] . '/stalkerbuster.php');
+                    $bl = @file_get_contents($serendipity['serendipityPath'] . 'stalkerbuster.php');
                     if (preg_match('@' . preg_quote($_COOKIE['serendipity'][$this->get_config('cname')]) . '@imsU', $bl)) {
                         mail($this->get_config('mail'), 'StalkerBuster', print_r($_REQUEST, true) . "\n" . print_r($_SERVER, true) . "\n");
                         header('HTTP/1.0 404 Not found');
