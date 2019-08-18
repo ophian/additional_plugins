@@ -20,7 +20,7 @@ class serendipity_plugin_quicklink extends serendipity_plugin
         $propbag->add('description',   PLUGIN_QUICKLINK_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Omid Mottaghi Rad');
-        $propbag->add('version',       '0.9');
+        $propbag->add('version',       '1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
