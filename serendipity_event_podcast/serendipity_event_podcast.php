@@ -8,7 +8,7 @@ if (IN_serendipity !== true) {
 
 include_once dirname(__FILE__) . '/podcast_player.php';
 
-@define('SERENDIPITY_EVENT_PODCAST_VERSION', '1.39');
+@define('SERENDIPITY_EVENT_PODCAST_VERSION', '1.40');
 
 /**
  * The Serendipity Podcasting Plugin
@@ -1079,9 +1079,9 @@ class serendipity_event_podcast extends serendipity_event
         // Try to find the getid3 library in the bundled-libs first:
         if (file_exists(dirname(__FILE__) . '/player/getid3/getid3.lib.php')) {
             @define('GETID3_INCLUDEPATH', dirname(__FILE__) . '/player/getid3/');
-        } elseif (file_exists(S9Y_INCLUDE_PATH . '/bundled-libs/getid3/getid3.lib.php')) {
-            $this->log("GetID3Infos: include path " . S9Y_INCLUDE_PATH . '/bundled-libs/getid3/');
-            @define('GETID3_INCLUDEPATH', S9Y_INCLUDE_PATH . '/bundled-libs/getid3/');
+        } elseif (file_exists(S9Y_INCLUDE_PATH . 'bundled-libs/getid3/getid3.lib.php')) {
+            $this->log("GetID3Infos: include path " . S9Y_INCLUDE_PATH . 'bundled-libs/getid3/');
+            @define('GETID3_INCLUDEPATH', S9Y_INCLUDE_PATH . 'bundled-libs/getid3/');
         } else if (file_exists(dirname(__FILE__) . '/getid3/getid3.lib.php')) {
             $this->log("GetID3Infos: include path " . dirname(__FILE__) . '/getid3/');
             @define('GETID3_INCLUDEPATH', dirname(__FILE__) . '/getid3/');
