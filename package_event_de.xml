@@ -53,9 +53,9 @@
 <description>Aggregiert Einträge von mehreren RSS Feeds (&quot;Planet&quot;). WICHTIGER HINWEIS: Die Aktualisierung des Aggregators muss derzeit noch manuell via Crontab aufgerufen werden. Rufen Sie im gewünschten Abstand per cronjob o.ä. folgende URL auf: index.php?/plugin/aggregator</description>
 <maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.01</version>
+  <version>1.02</version>
   <requirements:s9yVersion>2.2</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_aggregator">
       <file>ChangeLog</file>
@@ -283,9 +283,9 @@
 <description>Sobald das Dashboard (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in das Dashboard des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten. Mit Styx 2.1+ ist zu empfehlen, dieses Plugin in Kombination mit dem modemaintain (Wartungs-) Ereignis Plugin zu nutzen.</description>
 <maintainers><maintainer><name>onli, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5.9</version>
+  <version>1.6.0</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-06-10</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -468,9 +468,9 @@
 <description>Zeigt einen Terminkalender innerhalb des Blogs mit dem Blog-Design und allen Formatierungen an. Unterstützt Backend/Frontend Administration, vielfache Termine und iCal Export. (Nur MySQL)</description>
 <maintainers><maintainer><name>Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.85</version>
+  <version>1.86</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_cal">
       <file>backend_inherits.css</file>
@@ -855,9 +855,9 @@
 <description>Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.14</version>
+  <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -1548,9 +1548,9 @@
 <description>Stellt einen kompletten Downloadmanager zur Verfügung. Bei Deinstallation werden alle zugehörigen Tabellen gelöscht!</description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.44</version>
+  <version>1.45</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_downloadmanager">
       <file>AUTHORS</file>
@@ -2961,9 +2961,9 @@
 <description>Stellt ein komplettes Diskussions-Forum zur Verfügung, kann alternativ Blog-Kommentare in eine phpBB-Installation spiegeln.</description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, http://blog.linux-stats.org, dma147@linux-stats.org</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.40</version>
+  <version>0.41</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-05-10</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_forum">
       <file>AUTHORS</file>
@@ -4596,9 +4596,9 @@
 <description>Zeigt ein Gästebuch innerhalb des Blogs mit dem gewählten Design und allen Formatierungen an.</description>
 <maintainers><maintainer><name>Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.74</version>
+  <version>3.75</version>
   <requirements:s9yVersion>1.7.0</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
       <file>ChangeLog</file>
@@ -7185,9 +7185,9 @@
 <description>Fügt &quot;Podcasting&quot; Faehigkeiten hinzu (RSS enclosure, Video/Sound-Player)</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.39</version>
+  <version>1.40</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_podcast">
       <file>ChangeLog</file>
@@ -7415,9 +7415,9 @@
 <description>Holt E-Mail inkl. Anhängen ab und veröffentlicht sie von einem POP3 E-Mail-Account (mit spezieller Handy-Unterstützung)</description>
 <maintainers><maintainer><name>Jason Levitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.49</version>
+  <version>1.50</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-03-27</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
       <file>ChangeLog</file>
@@ -9064,9 +9064,9 @@
 <description>Denies access to baddies. Write line-separated list of blocked cookies to a stalkerbuster.php file in your root.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.02</version>
+  <version>1.03</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2017-02-10</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_stalkerbuster">
       <file>lang_en.inc.php</file>
@@ -10376,9 +10376,9 @@
 <description>Verwaltet eine Liste von Projekten und deren aktuellem Status</description>
 <maintainers><maintainer><name>Steven Tonnesen, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.30</version>
+  <version>1.31</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_todolist">
       <file>ChangeLog</file>

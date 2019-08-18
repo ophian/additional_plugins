@@ -3012,11 +3012,12 @@
 <description>A plugin to display bookmarks from a social bookmark service (del.icio.us, ma.gnolia, furl.net, linkroll, Mister Wong) via an RSS feed.</description>
 <maintainers><maintainer><name>Matthias Gutjahr</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.47</version>
-  <requirements:s9yVersion>0.9alpha5</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.48</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_plugin_socialbookmarks">
+      <file>ChangeLog.txt</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>INSTALL</file>
@@ -3034,11 +3035,11 @@
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
       </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_plugin_socialbookmarks/ChangeLog.txt</file>
     <file>serendipity_plugin_socialbookmarks/documentation_cs.html</file>
     <file>serendipity_plugin_socialbookmarks/documentation_cz.html</file>
     <file>serendipity_plugin_socialbookmarks/INSTALL</file>
@@ -3053,7 +3054,6 @@
     <file>serendipity_plugin_socialbookmarks/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_socialbookmarks/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_socialbookmarks/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_socialbookmarks/UTF-8/lang_en.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
