@@ -3,6 +3,11 @@
 * 
 
 
+1.86:
+----
+
+ * Use the defined constant for the compile dir
+
 1.85:
 ----
 

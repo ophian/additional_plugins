@@ -72,7 +72,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '1.85');
+        $propbag->add('version',        '1.86');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '1.6',
@@ -1087,12 +1087,12 @@ class serendipity_event_cal extends serendipity_event
 
         // write to ical.log file
         $logstring  = "$sub, ID=$sid, MONTH=$monthdate, $info, IP=".$_SERVER['REMOTE_ADDR'].", EMAIL=$fromEmail, PATH=$entryURI\n";
-        $fullpath   = $serendipity['serendipityPath'] . 'templates_c/eventcal/ical.log';
+        $fullpath   = $serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/eventcal/ical.log';
         $filename   = 'ical.log';
-        $filepath   = 'templates_c/eventcal/';
+        $filepath   = PATH_SMARTY_COMPILE . '/eventcal/';
         $directory  = "eventcal";
-        if (!is_dir('templates_c/' . $directory)) {
-            @mkdir('templates_c/' . $directory, 0777);
+        if (!is_dir(PATH_SMARTY_COMPILE . '/' . $directory)) {
+            @mkdir(PATH_SMARTY_COMPILE . '/' . $directory, 0777);
         }
 
         if ( false === ( $wicl = $this->backend_file_write($logstring, $fullpath, $filename, $filepath, 'a') ) ) $nolog = true;
@@ -2548,7 +2548,7 @@ class serendipity_event_cal extends serendipity_event
                     $evc['export'] = explode('/', $eventData);
 
                     if (is_array($evc['export']) && $evc['export'][0] == 'sql_export') {
-                        $file = file_get_contents ($serendipity['serendipityPath'] . 'templates_c/eventcal/'.$evc['export'][1]);
+                        $file = file_get_contents ($serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/eventcal/'.$evc['export'][1]);
                         echo $file;
                         header('Status: 302 Found');
                         header('Content-Type: application/octet-stream; charset=UTF-8'); // text/plain to see as file in browser
@@ -3234,10 +3234,10 @@ class serendipity_event_cal extends serendipity_event
 
         $date = date('Y-m-d_H-i-s');
         $directory = "eventcal";
-        if (!is_dir('templates_c/' . $directory)) {
-            @mkdir('templates_c/' . $directory, 0777);
+        if (!is_dir(PATH_SMARTY_COMPILE . '/' . $directory)) {
+            @mkdir(PATH_SMARTY_COMPILE . '/' . $directory, 0777);
         }
-        $file = $serendipity['serendipityPath'] . 'templates_c/eventcal/'.$date.'_eventcal.sql';
+        $file = $serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/eventcal/'.$date.'_eventcal.sql';
         $fp   = fopen($file, 'w');
         if ($fp) {
             $create = serendipity_db_query("SHOW CREATE TABLE {$serendipity['dbPrefix']}eventcal", true, 'num', true);
