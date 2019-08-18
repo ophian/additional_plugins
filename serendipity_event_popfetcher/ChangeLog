@@ -1,3 +1,7 @@
+1.50:
+-----
+ * Fix a wrong path concatenation double slash
+
 1.49:
 -----
  * Update class.mimedecode.php to Mail_mimeDecode-1.5.6
