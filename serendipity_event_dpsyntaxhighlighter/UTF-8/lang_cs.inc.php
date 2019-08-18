@@ -16,3 +16,4 @@
 @define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_PATH_DESC', 'Zadejte plnou HTTP cestu (všechno po názvu Vaší domény), která vede do adresáře s tímto pluginem.');
 @define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_THEME', 'Vyberte téma (šablonu vzhledu)');
 @define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_THEME_DESC', 'Vyberte téma (šablonu vzhledu, styl) pro zvýraznění syntaxe, která se nejlépe hodí k Vašemu blogu.');
+

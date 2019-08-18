@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @author Brendon Kozlowski
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -31,3 +31,4 @@
 @define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_TABSIZE_DESC', 'Allows you to adjust tab size.');
 @define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_STRIPBRS', 'Ignore <br> tags');
 @define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_STRIPBRS_DESC', 'If your software adds <br /> tags at the end of each line, this option allows you to ignore those..');
+
