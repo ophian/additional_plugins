@@ -1,3 +1,7 @@
+1.05:
+------
+ * Temporary disable 2 [de] only constants with usage (yet?)
+
 1.04:
 ------
  * Cleanup legal property bag information for gdpr/dsgvo
