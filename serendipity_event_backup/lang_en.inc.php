@@ -9,18 +9,18 @@
 @define("PLUGIN_BACKUP_TITLE", "Backup Interface");
 @define("PLUGIN_BACKUP_DESC", "Provides the ability to automatically make backups from your s9y, the database-tables, the whole database and the files. Only MySQL(i) databases are currently supported. WARNING: This plugin does not work well with large databases or directories.");
 @define("PLUGIN_BACKUP_ABSPATH_BACKUPDIR", "Absolute Path to backup directory");
-@define("PLUGIN_BACKUP_ABSPATH_BACKUPDIR_BLAHBLAH", "This directory should be outside the document root of your website. It must exist and be writeable for the webserver!");
+@define("PLUGIN_BACKUP_ABSPATH_BACKUPDIR_BLAHBLAH", "This directory should be outside the document root of your website. It must exist and be writable for the webserver!");
 
 @define("PLUGIN_BACKUP_NOT_FOUND", "Backup not found");
 @define("PLUGIN_BACKUP_SQL_RECOVERED", "SQL Backup recovered");
-@define("PLUGIN_BACKUP_AUTO_SQL_BACKUP_STARTED", "Automatic SQL backupping started");
-@define("PLUGIN_BACKUP_AUTO_SQL_BACKUP_STOPPED", "Automatic SQL backupping stopped");
+@define("PLUGIN_BACKUP_AUTO_SQL_BACKUP_STARTED", "Automatic SQL backup started");
+@define("PLUGIN_BACKUP_AUTO_SQL_BACKUP_STOPPED", "Automatic SQL backup stopped");
 @define("PLUGIN_BACKUP_AUTO_SQL_DELETE_STARTED", "Automatic SQL deletion started");
 @define("PLUGIN_BACKUP_AUTO_SQL_DELETE_STOPPED", "Automatic SQL deletion stopped");
 @define("PLUGIN_BACKUP_SQL_SAVED", "Actual SQL backup saved");
 @define("PLUGIN_BACKUP_HTML_RECOVERED", "HTML Backup recovered");
-@define("PLUGIN_BACKUP_AUTO_HTML_BACKUP_STARTED", "Automatic HTML backupping started");
-@define("PLUGIN_BACKUP_AUTO_HTML_BACKUP_STOPPED", "Automatic HTML backupping stopped");
+@define("PLUGIN_BACKUP_AUTO_HTML_BACKUP_STARTED", "Automatic HTML backup started");
+@define("PLUGIN_BACKUP_AUTO_HTML_BACKUP_STOPPED", "Automatic HTML backup stopped");
 @define("PLUGIN_BACKUP_AUTO_HTML_DELETE_STARTED", "Automatic HTML deletion started");
 @define("PLUGIN_BACKUP_AUTO_HTML_DELETE_STOPPED", "Automatic HTML deletion stopped");
 @define("PLUGIN_BACKUP_HTML_SAVED", "Actual HTML backup saved");
