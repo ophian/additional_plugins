@@ -712,9 +712,9 @@
 <description>Run webcomics in your blog</description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
+  <version>1.6</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-08-15</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_comics">
       <file>ChangeLog</file>
@@ -722,6 +722,7 @@
       <file>documentation_cz.html</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>lang_ko.inc.php</file>
       <file>README</file>
@@ -729,6 +730,7 @@
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
         <file>lang_ko.inc.php</file>
       </dir>
     </dir>
@@ -739,12 +741,14 @@
     <file>serendipity_event_comics/documentation_cz.html</file>
     <file>serendipity_event_comics/lang_cs.inc.php</file>
     <file>serendipity_event_comics/lang_cz.inc.php</file>
+    <file>serendipity_event_comics/lang_de.inc.php</file>
     <file>serendipity_event_comics/lang_en.inc.php</file>
     <file>serendipity_event_comics/lang_ko.inc.php</file>
     <file>serendipity_event_comics/README</file>
     <file>serendipity_event_comics/serendipity_event_comics.php</file>
     <file>serendipity_event_comics/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_comics/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_comics/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_comics/UTF-8/lang_ko.inc.php</file>
   </serendipityFilelist>
 </release>
@@ -1295,9 +1299,9 @@
 <description>This plugin periodically executes plugins that provide/require periodic tasks. See the configuration of this plugin for details.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.1</version>
+  <version>1.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_cronjob">
       <file>ChangeLog</file>
@@ -1305,11 +1309,13 @@
       <file>documentation_cz.html</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_cronjob.php</file>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -1319,10 +1325,12 @@
     <file>serendipity_event_cronjob/documentation_cz.html</file>
     <file>serendipity_event_cronjob/lang_cs.inc.php</file>
     <file>serendipity_event_cronjob/lang_cz.inc.php</file>
+    <file>serendipity_event_cronjob/lang_de.inc.php</file>
     <file>serendipity_event_cronjob/lang_en.inc.php</file>
     <file>serendipity_event_cronjob/serendipity_event_cronjob.php</file>
     <file>serendipity_event_cronjob/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_cronjob/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_cronjob/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -3371,20 +3379,22 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Gallery アルバムか画像を用いたマークアップテキストの挿入です。</description>
 <maintainers><maintainer><name>Rob Antonishen, Alexander Mieland</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.13</version>
+  <version>1.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-17</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_galleryimage">
       <file>ChangeLog</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>serendipity_event_galleryimage.php</file>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
       </dir>
     </dir>
@@ -3393,11 +3403,13 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_galleryimage/ChangeLog</file>
     <file>serendipity_event_galleryimage/lang_cs.inc.php</file>
     <file>serendipity_event_galleryimage/lang_cz.inc.php</file>
+    <file>serendipity_event_galleryimage/lang_de.inc.php</file>
     <file>serendipity_event_galleryimage/lang_en.inc.php</file>
     <file>serendipity_event_galleryimage/lang_ja.inc.php</file>
     <file>serendipity_event_galleryimage/serendipity_event_galleryimage.php</file>
     <file>serendipity_event_galleryimage/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_galleryimage/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_galleryimage/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_galleryimage/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
@@ -8875,7 +8887,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Detects SPAM via an algorithm which learns.</description>
 <maintainers><maintainer><name>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.05</version>
+  <version>1.06</version>
   <requirements:s9yVersion>2.1.2</requirements:s9yVersion>
   <date>2019-08-18</date>
   <filelist>
@@ -11884,19 +11896,21 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Offers more buttons to the editing screen to implement easy access to HTML/JS snippets like Youtube etc.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
+  <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_youtube.php</file>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -11904,10 +11918,12 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_youtube/ChangeLog</file>
     <file>serendipity_event_youtube/lang_cs.inc.php</file>
     <file>serendipity_event_youtube/lang_cz.inc.php</file>
+    <file>serendipity_event_youtube/lang_de.inc.php</file>
     <file>serendipity_event_youtube/lang_en.inc.php</file>
     <file>serendipity_event_youtube/serendipity_event_youtube.php</file>
     <file>serendipity_event_youtube/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_youtube/UTF-8/lang_cz.inc.php</file>
+    <file>serendipity_event_youtube/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>

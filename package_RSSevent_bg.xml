@@ -131,7 +131,7 @@
 <category>Event Plugins</category>
 <author>Wesley Hwang-Chung</author>
 <content:encoded>&lt;b&gt;serendipity_event_comics&lt;br /&gt;Comics&lt;/b&gt;&lt;br /&gt;Run webcomics in your blog&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 15 Aug 2018 17:01:51 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 18:06:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_comics</guid>
 </item>
 <item>
@@ -212,7 +212,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_cronjob&lt;br /&gt;Cronjob scheduler&lt;/b&gt;&lt;br /&gt;This plugin periodically executes plugins that provide/require periodic tasks. See the configuration of this plugin for details.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:18:01 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 18:08:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cronjob</guid>
 </item>
 <item>
@@ -455,7 +455,7 @@
 <category>Event Plugins</category>
 <author>Rob Antonishen, Alexander Mieland</author>
 <content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;Markup: Gallery Image&lt;/b&gt;&lt;br /&gt;Inserts a Gallery album or image using markup text.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 17 Aug 2018 16:00:54 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 18:11:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_galleryimage</guid>
 </item>
 <item>
@@ -995,7 +995,7 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detects SPAM via an algorithm which learns.&lt;br/&gt;For: Serendipity 2.1.2</content:encoded>
-<pubDate>Sun, 18 Aug 2019 15:50:58 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 18:28:21 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
@@ -1292,7 +1292,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_youtube&lt;br /&gt;Extended Editor Buttons: Youtube etc.&lt;/b&gt;&lt;br /&gt;Offers more buttons to the editing screen to implement easy access to HTML/JS snippets like Youtube etc.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:25:30 +0200</pubDate>
+<pubDate>Sun, 18 Aug 2019 18:12:40 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_youtube</guid>
 </item>
 <item>
