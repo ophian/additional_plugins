@@ -1,21 +1,19 @@
-<?php /* serendipity_plugin_timezones.php from Christoph Eunicke <s9y-plugin@eunicke.org> */
+<?php
 
+/* serendipity_plugin_timezones.php from Christoph Eunicke <s9y-plugin@eunicke.org> */
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_plugin_timezones extends serendipity_plugin {
+class serendipity_plugin_timezones extends serendipity_plugin
+{
     var $title = PLUGIN_TIMEZONES_TITLE;
-    function introspect(&$propbag) {
+
+    function introspect(&$propbag)
+    {
         $propbag->add('name',           PLUGIN_TIMEZONES_TITLE);
         $propbag->add('description',    PLUGIN_TIMEZONES_BLAHBLAH);
         $propbag->add('configuration',  array('title', 'zone1_text', 'zone1_name', 'zone1_format', 'timeshift1',
@@ -24,16 +22,17 @@ class serendipity_plugin_timezones extends serendipity_plugin {
                             'zone4_text', 'zone4_name', 'zone4_format', 'timeshift4'));
         $propbag->add('author',         'Christoph Eunicke <s9y-plugin@eunicke.org>');
         $propbag->add('stackable',      true);
-        $propbag->add('version',        '0.5');
+        $propbag->add('version',        '0.6');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.9',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'php'         => '5.1.0'
         ));
         $propbag->add('groups', array('FRONTEND_FEATURES'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'zone1_text':
                 $propbag->add('type',           'string');
@@ -161,7 +160,8 @@ class serendipity_plugin_timezones extends serendipity_plugin {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $title = $this->get_config('title');
@@ -219,4 +219,7 @@ class serendipity_plugin_timezones extends serendipity_plugin {
         }
         echo '</ul>';
     }
-} 
+
+}
+
+?>
