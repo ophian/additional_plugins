@@ -22,7 +22,7 @@ class serendipity_plugin_showentries extends serendipity_plugin
             'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '1.10');
+        $propbag->add('version',       '1.11');
         $propbag->add('author',        'Garvin Hicking');
         $propbag->add('stackable', true);
         $propbag->add('groups', array('FRONTEND_VIEWS'));
