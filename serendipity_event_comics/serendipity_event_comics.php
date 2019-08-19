@@ -19,7 +19,7 @@ class serendipity_event_comics extends serendipity_event
         $propbag->add('description',   PLUGIN_COMICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Wesley Hwang-Chung');
-        $propbag->add('version',       '1.5');
+        $propbag->add('version',       '1.6');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
