@@ -278,14 +278,14 @@
 <name>serendipity_event_autoupdate</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_autoupdate/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Automatické aktualizace (experimentální)</summary>
+<summary>Automatické aktualizace</summary>
 <groups>BACKEND_ADMIN,BACKEND_DASHBOARD,BACKEND_FEATURES</groups>
 <description>Když &quot;tabule&quot; detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin.</description>
 <maintainers><maintainer><name>onli, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6.0</version>
+  <version>1.6.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-18</date>
+  <date>2019-08-20</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
