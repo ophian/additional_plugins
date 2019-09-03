@@ -1,3 +1,8 @@
+1.6.2
+------
+
+ * Fix upgrade permission for special cased user group
+
 1.6.1
 ------
 
