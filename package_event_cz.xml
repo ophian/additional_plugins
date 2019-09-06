@@ -7467,9 +7467,9 @@
 <description>Stahuje zprávy z emailu a zobrazí je včetně příloh v bloku v postranním sloupci (speciální podpora pro mobilní telefony)</description>
 <maintainers><maintainer><name>Jason Levitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.50</version>
+  <version>1.51</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-18</date>
+  <date>2019-09-06</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
       <file>ChangeLog</file>
@@ -7496,7 +7496,6 @@
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
       </dir>
       <file>verizon.php</file>
     </dir>
@@ -7523,7 +7522,6 @@
     <file>serendipity_event_popfetcher/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_popfetcher/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_popfetcher/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_popfetcher/UTF-8/lang_en.inc.php</file>
     <file>serendipity_event_popfetcher/verizon.php</file>
   </serendipityFilelist>
 </release>
