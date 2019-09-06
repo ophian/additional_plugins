@@ -8,13 +8,13 @@
 @define('PLUGIN_MF', 'POPfetcher');
 @define('PLUGIN_MF_DESC', 'Holt E-Mail inkl. Anhängen ab und veröffentlicht sie von einem POP3 E-Mail-Account (mit spezieller Handy-Unterstützung)');
 @define('PLUGIN_MF_AM', 'Plugin-Methode');
-@define('PLUGIN_MF_AM_DESC', 'Wenn auf "Intern" gesetzt, müssen Sie den POPfetcher über das Admin-Menü aufrufen. Wenn "Extern" eingestellt ist, kann POPfetcher nur über einen Crinjob aufgerufen werden. (Vorgabe ist "Intern".');
+@define('PLUGIN_MF_AM_DESC', 'Wenn auf "Intern" gesetzt, müssen Sie den POPfetcher über das Admin-Menü aufrufen. Wenn "Extern" eingestellt ist, kann POPfetcher nur über einen Cronjob aufgerufen werden. (Vorgabe ist "Intern".');
 @define('PLUGIN_MF_HN', 'Name für externen Aufruf');
 @define('PLUGIN_MF_HN_DESC', 'Bitte geben Sie eine Zeichenkette ein, über die das Plugin später gezielt aufgerufen werden kann. Diese Zeichenkette sollten nur sie kennen, so dass der Aufruf des Popfetcher vor fremden Besuchern geschützt ist. Wenn der Name z.B. auf "xyz123" gesetzt wird, kann der Aufruf mittels http://yourblog/index.php?/plugin/xyz1234" durchgeführt werden (auch automatisiert via wget/lynx). Falls der Aufruf des Plugins nicht auf "Extern" steht, hat diese Option keine Auswirkung.');
 @define('PLUGIN_MF_MS', 'Mail-Server');
 @define('PLUGIN_MF_MS_DESC', 'Der Servername des POP3-Servers, z.B. yourdomain.com');
 @define('PLUGIN_MF_MD', 'Upload-Verzeichnis');
-@define('PLUGIN_MF_MD_DESC', 'Anhänge einer Mail werden hier gespeichert. Vorgabe ist das oberste Upload-Verzeichniss (einfach das Feld leer lassen). Wenn ein Verzeichniss angegeben wird, bitte den Slash "/" am Ende nicht vergessen. Beispiel: MyVacation/ ');
+@define('PLUGIN_MF_MD_DESC', 'Anhänge einer Mail werden hier gespeichert. Vorgabe ist das oberste Upload-Verzeichnis (einfach das Feld leer lassen). Wenn ein Verzeichnis angegeben wird, bitte den Slash "/" am Ende nicht vergessen. Beispiel: MyVacation/ ');
 @define('PLUGIN_MF_PP', 'POP3 port');
 @define('PLUGIN_MF_PP_DESC', 'POP3 Service Port. Falls auf 995 eingestellt, dann wird POP3 über SSL aufgebaut. Voreinstellung ist 110.');
 @define('PLUGIN_MF_MU', 'POP3 User');
@@ -26,11 +26,11 @@
 @define('PLUGIN_MF_TO', 'Timeout');
 @define('PLUGIN_MF_TO_DESC', 'Maximalzeit in Sekunden für die Kontaktaufnahme mit dem POP3-Server. Vorgabe ist 30 Sekunden.');
 @define('PLUGIN_MF_DF', 'Mail nach Abruf löschen?');
-@define('PLUGIN_MF_DF_DESC', 'Wenn auf "Ja", werden Mails nach dem Aholen auf dem Server gelöscht. Sollte nur auf "Nein" stehen zu Testzwecken.');
+@define('PLUGIN_MF_DF_DESC', 'Wenn auf "Ja", werden Mails nach dem Abholen auf dem Server gelöscht. Sollte nur auf "Nein" stehen zu Testzwecken.');
 @define('PLUGIN_MF_PF', 'Publizieren');
-@define('PLUGIN_MF_PF_DESC', 'Wenn auf "Publizieren" werden die Einträge sofort veröffentlicht. Wenn auf "Entwurf" werden die Einträge als Entwurf markiert. Default is draft. (Wird ignoriert wenn Blog auf "Nein" steht).');
+@define('PLUGIN_MF_PF_DESC', 'Wenn auf "Publizieren" werden die Einträge sofort veröffentlicht. Wenn auf "Entwurf" werden die Einträge als Entwurf markiert. Die Voreinstellung ist "Entwurf". (Wird ignoriert wenn Blog auf "Nein" steht).');
 @define('PLUGIN_MF_BF', 'Als Blog-Artikel veröffentlichen?');
-@define('PLUGIN_MF_BF_DESC', 'Wenn auf "Ja", werden Anhänge dekodiert, in den Medienmanger verschoben, zum Eintrag angefügt und der Eintrag wird eingepflegt. Wenn auf "Nein" werden nur die Anhänge in den Medienmanager abgelegt und die Mail wird ansonsten ignoriert.');
+@define('PLUGIN_MF_BF_DESC', 'Wenn auf "Ja", werden Anhänge dekodiert, in den Medienmanager verschoben, zum Eintrag angefügt und der Eintrag wird eingepflegt. Wenn auf "Nein" werden nur die Anhänge in den Medienmanager abgelegt und die Mail wird ansonsten ignoriert.');
 @define('PLUGIN_MF_AF', 'APOP');
 @define('PLUGIN_MF_AF_DESC', 'Wenn "Ja" wird APOP für den Login-Vorgang verwendet. Vorgabe ist "Nein".');
 @define('ERROR_CHECK', 'FEHLER:');
@@ -88,7 +88,7 @@
 @define('PLUGIN_MF_STRIPTEXT', 'Text nach speziellen Buchstaben abschneiden');
 @define('PLUGIN_MF_STRIPTEXT_DESC', 'Wenn Sie Werbung oder andere Textpassagen abschneiden wollen, können Sie hier einen "magischen Text" angeben. Sobald dieser im Inhalt ihrer Mail vorkommt, wird aller Text danach aus dem Eintrag gelöscht.');
 @define('PLUGIN_MF_ONLYFROM', 'E-Mail Absender');
-@define('PLUGIN_MF_ONLYFROM_DESC', 'Wenn nur ein spezieller Absender anerkannt werden soll, tragen Sie hier diese E-Mail Addresse ein. Bei einem leeren Feld werden alle E-Mails im Blog angenommen');
+@define('PLUGIN_MF_ONLYFROM_DESC', 'Wenn nur ein spezieller Absender anerkannt werden soll, tragen Sie hier diese E-Mail Adresse ein. Bei einem leeren Feld werden alle E-Mails im Blog angenommen');
 @define('MF_ERROR_ONLYFROM', 'E-Mail Absender %s entspricht nicht dem zugelassenen Absender %s. Ignoriere E-Mail.');
 
 @define('PLUGIN_MF_SPLITTEXT', 'Spezieller Text, der Text und erweiterten Eintrag einer E-Mail aufteilt');
@@ -96,7 +96,7 @@
 
 @define('PLUGIN_MF_USETEXT', 'Spezieller Text, der den Bloginhalt definiert');
 @define('PLUGIN_MF_USETEXT_DESC', 'Falls nur ein Ausschnitt der E-Mail als Blogeintrag genutzt werden soll, kann dieser Marker hier spezifiziert werden. Sobald der Begriff in der E-Mail auftaucht wird alles zwischen diesem Marker als Bloginhalt verwendet. Es ist sicherzustellen, dass der "magische" Textmarker innerhalb der E-Mail eindeutig ist, also z.B. "xxx-BLOG-xxx".');
-@define('PLUGIN_MF_CRONJOB', 'Dieses Plugin wird vom Serendipity Cronjob plugin unterstützt. Mit diesem Plugin kann einfach eine periodische Ausführung konfiguriert werden.');
+@define('PLUGIN_MF_CRONJOB', 'Dieses Plugin wird vom Serendipity Cronjob Plugin unterstützt. Mit diesem Plugin kann einfach eine periodische Ausführung konfiguriert werden.');
 
 @define('PLUGIN_MF_TEXTPREF', 'Bevorzugter Textbereich');
 @define('PLUGIN_MF_TEXTPREF_DESC', 'Einige Mailprogramme senden E-Mails, die den Text sowohl als HTML als auch als Plain-Text enthalten, was zu dupliziertem Inhalt führen kann. Mit dieser Option wird eingestellt, welcher Textteil Priorität erhält.');

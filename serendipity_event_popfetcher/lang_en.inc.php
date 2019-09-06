@@ -74,7 +74,7 @@
 @define('MF_MSG16', 'Subject: ');
 @define('MF_MSG17', '[No subject header found]');
 @define('MF_MSG18', 'Click for full size image');
-@define('MF_MSG19', 'Possible virus decoded. Skipping msg because a risky attachment name was found');
+@define('MF_MSG19', 'Possible virus decoded. Skipping message because a risky attachment name was found');
 @define('MF_MSG20', 'Skipped msg with no attachments');
 @define('MF_MSG21', 'Sound Memo');
 @define('MF_MSG22', 'Click for your video');
@@ -98,9 +98,9 @@
 @define('PLUGIN_MF_ONLYFROM_DESC', 'If you only want to allow a certain e-mail address to send mails, you can enter it here. If you leave this field empty, all mails received for your configured account are stored in the blog.');
 @define('MF_ERROR_ONLYFROM', 'E-mail address %s is not the same as configured restriction to %s. Ignoring mail.');
 @define('MF_ERROR_NOAUTHOR', 'No author with email address %s.  Skipping email.');
-
 @define('PLUGIN_MF_SPLITTEXT', 'Define a string which separates body/extended parts');
-@define('PLUGIN_MF_SPLITTEXT_DESC', 'If you want to use a special string which separates the body and the extended body text in your emails, enter that string here. Serendipity will look for the occurence of that string, and put everything before that string in the body part, and everything after the string in the extended section. Be sure to use a unique string that does not occur as usual text, like "xxx-SPLIT-xxx". If you leave this option empty, the email will be computed as usual - but if you configure a magic string here, some of the other options will be overridden!');
+@define('PLUGIN_MF_SPLITTEXT_DESC', 'If you want to use a special string which separates the body and the extended body text in your emails, enter that string here. Serendipity will look for the occurrence of that string, and put everything before that string in the body part, and everything after the string in the extended section. Be sure to use a unique string that does not occur as usual text, like "xxx-SPLIT-xxx". If you leave this option empty, the email will be computed as usual - but if you configure a magic string here, some of the other options will be overridden!');
+@define('PLUGIN_MF_DEBUGMAIL', 'For developers: You can enter a filename (including path) here to a EML file to debug popfetcher with such file');
 
 @define('PLUGIN_MF_USETEXT', 'Define a string which indicates the text to capture');
 @define('PLUGIN_MF_USETEXT_DESC', 'If you want to only match a partial text of your mail to include it, you can specify a magic text here. You will then need to place this magic text inside your E-Mail to indicate that everything between the magic words is captured. Be sure to use a unique string that does not occur as usual text, like "xxx-BLOG-xxx".');

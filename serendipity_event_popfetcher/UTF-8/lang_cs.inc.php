@@ -132,3 +132,4 @@
 
 @define('THUMBNAIL_VIEW', 'Zobrazovat náhledy v těle příspěvku');
 @define('THUMBNAIL_VIEW_DESC', 'Když chcete zobrazit v těle příspěvku náhledy připojených obrázků. Pokud nastavíte "NE", budou se zobrazovat obrázky v plné velikosti.');
+

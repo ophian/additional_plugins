@@ -132,3 +132,4 @@
 
 @define('THUMBNAIL_VIEW', 'Zobrazovat náhledy v tìle pøíspìvku');
 @define('THUMBNAIL_VIEW_DESC', 'Kdy¾ chcete zobrazit v tìle pøíspìvku náhledy pøipojených obrázkù. Pokud nastavíte "NE", budou se zobrazovat obrázky v plné velikosti.');
+

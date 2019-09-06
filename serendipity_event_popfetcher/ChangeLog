@@ -1,3 +1,8 @@
+1.51:
+-----
+ * Removed very old API deprecated and removed function call
+ * Fix some lang typos
+
 1.50:
 -----
  * Fix a wrong path concatenation double slash
