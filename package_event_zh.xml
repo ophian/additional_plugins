@@ -7467,9 +7467,9 @@
 <description>Fetches and publishes email and attachments from a POP3 email account (with special cell phone support)</description>
 <maintainers><maintainer><name>Jason Levitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.51</version>
+  <version>1.52</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-09-06</date>
+  <date>2019-09-09</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
       <file>ChangeLog</file>
