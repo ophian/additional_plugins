@@ -99,7 +99,7 @@
 @define('PLUGIN_MF_STRIPTEXT_DESC', 'Pokud chcete ořezat z mailů reklamy nebo jiný nežádoucí text, můžete zde zadat "kouzelný řetězec". Všechen text, který se v mailu nachází za tímto řetězcem, bude odstraněn a nebude se zobrazovat v příspěvku.');
 
 @define('PLUGIN_MF_ONLYFROM', 'Omezení na konkrétní odesílatele');
-@define('PLUGIN_MF_ONLYFROM_DESC', 'Pokud chcete povolit posílání mailů do blogu pouze z jedné mailové adresy, jednoduše ji sem zadejte. Pokud ponecháte políčko prázdné, na blogu budou zobrazovány všechny stažené maily.');
+@define('PLUGIN_MF_ONLYFROM_DESC', 'Pokud chcete povolit posílání mailů do blogu pouze z jedné mailové adresy, jednoduše ji sem zadejte. Pokud ponecháte políčko prázdné, na blogu budou zobrazovány všechny stažené maily. Separate multiple mail adresses with a semicolon.');
 @define('MF_ERROR_ONLYFROM', 'Emailová adresa %s se neshoduje s povolenou adresou %s. Mail byl ignorován.');
 @define('MF_ERROR_NOAUTHOR', 'Žádný z autorů nemá adresu %s. Mail byl přeskočen.');
 

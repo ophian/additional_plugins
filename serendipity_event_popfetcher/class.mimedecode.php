@@ -53,7 +53,7 @@
 * $params['input'] = $input;
 * $structure = mimeDecode::decode($params);
 * print_r($structure);
-* @version 
+* @version
 *
 * July 10, 2004 -- Modifed for standalone use
 */
@@ -210,8 +210,7 @@ class mimeDecode
             }
         }
 
-        reset($headers);
-        while (list($key, $value) = each($headers)) {
+        foreach($headers AS $key => $value) {
             $headers[$key]['name'] = strtolower($headers[$key]['name']);
             switch ($headers[$key]['name']) {
 
@@ -224,7 +223,7 @@ class mimeDecode
                 }
 
                 if (isset($content_type['other'])) {
-                    while (list($p_name, $p_value) = each($content_type['other'])) {
+                    foreach($content_type['other'] AS $p_name => $p_value) {
                         $return->ctype_parameters[$p_name] = $p_value;
                     }
                 }
@@ -234,7 +233,7 @@ class mimeDecode
                 $content_disposition = $this->_parseHeaderValue($headers[$key]['value']);
                 $return->disposition   = $content_disposition['value'];
                 if (isset($content_disposition['other'])) {
-                    while (list($p_name, $p_value) = each($content_disposition['other'])) {
+                    foreach($content_disposition['other'] AS $p_name => $p_value) {
                         $return->d_parameters[$p_name] = $p_value;
                     }
                 }
@@ -519,7 +518,7 @@ class mimeDecode
         } else {
             //$input .= "\n\n(delsp NOT triggered: " . print_r($return, true) . ")\n\n";
         }
-        
+
         switch (strtolower($encoding)) {
             case '7bit':
             return $input;
@@ -552,7 +551,9 @@ class mimeDecode
         $input = preg_replace("/=\r?\n/", '', $input);
 
         // Replace encoded characters
-        $input = preg_replace('/=([a-f0-9]{2})/ie', "chr(hexdec('\\1'))", $input);
+        $input = quoted_printable_decode($input);
+        #OLD, no longer working with preg_replace 'e' modifier
+        #$input = preg_replace('/=([a-f0-9]{2})/ie', "chr(hexdec('\\1'))", $input);
 
         return $input;
     }

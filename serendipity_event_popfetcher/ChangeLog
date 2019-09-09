@@ -1,3 +1,12 @@
+1.52
+----
+ * Serendipity 2.3 compatibility:
+    - Proper evaluation of allow_comments/moderate_comments booleans
+ * Adds ability to specify multiple valid e-mail addresses by semicolon
+ * PHP7 compatibility:
+    - use quoted_printable_decode instead of a preg-e rule
+    - Use foreach instead of while(list(...) = each())
+
 1.51:
 -----
  * Removed very old API deprecated and removed function call

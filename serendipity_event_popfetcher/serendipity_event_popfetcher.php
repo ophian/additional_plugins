@@ -12,7 +12,7 @@ require_once('tmobile.php');
 require_once('o2.php');
 
 // Default values
-define('POPFETCHER_VERSION',  '1.51');       // This version of Popfetcher
+define('POPFETCHER_VERSION',  '1.52');       // This version of Popfetcher
 define('DEFAULT_ADMINMENU',   'true');       // True if run as sidebar plugin. False if external plugin.
 define('DEFAULT_HIDENAME',    'popfetcher'); // User should set this to something unguessable
 define('DEFAULT_MAILSERVER',  '');
@@ -507,6 +507,19 @@ class serendipity_event_popfetcher extends serendipity_event
         $entry['allow_comments']    = serendipity_db_bool($this->get_config('default_comments', 'true'));
         $entry['moderate_comments'] = serendipity_db_bool($this->get_config('default_moderate', 'false'));
 
+
+        // s9y internally works with false/true strings.
+        if (serendipity_db_bool($entry['allow_comments'])) {
+            $entry['allow_comments'] = 'true';
+        } else {
+            $entry['allow_comments'] = 'false';
+        }
+        if (serendipity_db_bool($entry['moderate_comments'])) {
+            $entry['moderate_comments'] = 'true';
+        } else {
+            $entry['moderate_comments'] = 'false';
+        }
+
         if (!empty($usetext)) {
             // Only match the text we specified.
             $this->captureText($usetext, $entry['body']);
@@ -881,21 +894,21 @@ class serendipity_event_popfetcher extends serendipity_event
         $cid = str_replace(array('<', '>'), array('', ''), $cid);
 
         if ($this->debug) {
-        	$this->out('<br />Scanning for inlinepic: ' . $cid . ' (and [attach:' . $inline_count . '])<br />');
+            $this->out('<br />Scanning for inlinepic: ' . $cid . ' (and [attach:' . $inline_count . '])<br />');
         }
 
         $has_match = false;
         foreach($postbody AS $idx => $pb) {
             if (stristr($pb, 'cid:' . $cid)) {
-				if ($this->debug) {
-					$this->out('<br />Match on body, replace with: ' . $local_cid . '<br />');
-				}
+                if ($this->debug) {
+                    $this->out('<br />Match on body, replace with: ' . $local_cid . '<br />');
+                }
                 $has_match = true;
                 $postbody[$idx] = str_replace('cid:' . $cid, $local_cid, $pb);
             } elseif (stristr($pb, '[attach:' . $inline_count . ']')) {
-				if ($this->debug) {
-					$this->out('<br />attach-Match on body, replace with: ' . $local_cid . '<br />');
-				}
+                if ($this->debug) {
+                    $this->out('<br />attach-Match on body, replace with: ' . $local_cid . '<br />');
+                }
                 $has_match = true;
                 $postbody[$idx] = str_replace('[attach:' . $inline_count . ']', $local_cid_link, $pb);
             }
@@ -903,15 +916,15 @@ class serendipity_event_popfetcher extends serendipity_event
 
         foreach($postex AS $idx => $pb) {
             if (stristr($pb, 'cid:' . $cid)) {
-				if ($this->debug) {
-					$this->out('<br />Match on extended body, replace with: ' . $local_cid . '<br />');
-				}
+                if ($this->debug) {
+                    $this->out('<br />Match on extended body, replace with: ' . $local_cid . '<br />');
+                }
                 $has_match = true;
                 $postex[$idx] = str_replace('cid:' . $cid, $local_cid, $pb);
             } elseif (stristr($pb, '[attach:' . $inline_count . ']')) {
-				if ($this->debug) {
-					$this->out('<br />attach-Match on extended body, replace with: ' . $local_cid . '<br />');
-				}
+                if ($this->debug) {
+                    $this->out('<br />attach-Match on extended body, replace with: ' . $local_cid . '<br />');
+                }
                 $has_match = true;
                 $postex[$idx] = str_replace('[attach:' . $inline_count . ']', $local_cid_link, $pb);
             }
@@ -944,7 +957,7 @@ class serendipity_event_popfetcher extends serendipity_event
             $debug_file = $debug_mail;
         }
         if ($debug_file != null) {
-        	$this->debug = true;
+            $this->debug = true;
         }
 
         $authorid = $this->get_config('author');
@@ -952,7 +965,7 @@ class serendipity_event_popfetcher extends serendipity_event
         if (empty($authorid) || $authorid == 'empty') {
             $authorid      = (isset($serendipity['authorid'])) ? $serendipity['authorid'] : 1;
         }
-		
+
         $mailserver    = trim($this->get_config('mailserver'));
         $mailport      = $this->get_config('mailport');
         $mailuser      = trim($this->get_config('mailuser'));
@@ -1092,7 +1105,7 @@ class serendipity_event_popfetcher extends serendipity_event
 
             // Extract the msg from MessArray and store it in Message
             $Message[$i-1]='';
-            while (list($lineNum, $line) = each ($MessArray)) {
+            foreach($MessArray AS $lineNum => $line) {
                 $Message[$i-1] .= $line;
             }
 
@@ -1137,7 +1150,7 @@ class serendipity_event_popfetcher extends serendipity_event
                 // DEBUG Struct
                 // echo '<pre>';
                 // print_r($s);
-		// echo '</pre>';
+        // echo '</pre>';
             }
 
             if ($s == null) {
@@ -1145,11 +1158,25 @@ class serendipity_event_popfetcher extends serendipity_event
                 return true;
             }
 
-            $date    = (isset($s->headers['date']))    ? $s->headers['date']    : MF_MSG3;
-            $from    = (isset($s->headers['from']))    ? $s->headers['from']    : MF_MSG4;
-            if (!empty($onlyfrom) && trim($from) != trim($onlyfrom)) {
-                $this->out('<br />'.sprintf(MF_ERROR_ONLYFROM, '"' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($from) : htmlspecialchars($from, ENT_COMPAT, LANG_CHARSET)) . '"', '"' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($onlyfrom) : htmlspecialchars($onlyfrom, ENT_COMPAT, LANG_CHARSET)) . '"'));
-                continue;
+            $date = (isset($s->headers['date'])) ? $s->headers['date'] : MF_MSG3;
+            $from = (isset($s->headers['from'])) ? $s->headers['from'] : MF_MSG4;
+            if (strlen($onlyfrom) > 0) {
+                $onlyfrom_parts = explode(';', $onlyfrom);
+                $validSender = false;
+                foreach($onlyfrom_parts AS $onlyfrom_part) {
+                    if (trim($from) == trim($onlyfrom_part)) {
+                        $validSender = true;
+                    }
+                    if (preg_match('@^[^<]*<([^>]+)>$@imsU', trim($from), $rfc_from)) {
+                        if (trim($rfc_from[1]) == trim($onlyfrom_part)) {
+                            $validSender = true;
+                        }
+                    }
+                }
+                if (!$validSender) {
+                    $this->out('<br />'.sprintf(MF_ERROR_ONLYFROM, '"' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($from) : htmlspecialchars($from, ENT_COMPAT, LANG_CHARSET)) . '"', '"' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($onlyfrom) : htmlspecialchars($onlyfrom, ENT_COMPAT, LANG_CHARSET)) . '"'));
+                    continue;
+                }
             }
 
             if (empty($s->ctype_parameters['charset'])) {
@@ -1183,7 +1210,7 @@ class serendipity_event_popfetcher extends serendipity_event
                 foreach($auths AS $auth) {
                     if (isset($auth['email']) && strtolower($auth['email']) == $clean) {
                         $useAuthor = $auth['authorid'];
-                        break;       	
+                        break;
                     }
                 }
 
