@@ -1,5 +1,5 @@
 /**
- * Adds custom Serendipity image float styles to CKEDITOR Plus plugin wysiwyg-mode v.1.8 on 2019-04-27
+ * Adds custom Serendipity image float styles to CKEDITOR Plus plugin wysiwyg-mode v.1.9 on 2019-09-11
  */
 
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
@@ -183,6 +183,11 @@ p > img.serendipity_image_right {
 .serendipity_image_block > .serendipity_image_right,
 .serendipity_image_block  .serendipity_image_link {
     margin: .5em 0 0 0; /* no display here! */
+}
+/* already defined gallery image_blocks without col or row defines */
+.serendipity_image_block:not(.col):not(.row) > .serendipity_image_left,
+.serendipity_image_block:not(.col):not(.row) > .serendipity_image_right {
+    margin: .5em .5em 0 0;
 }
 /* Gallery-Margins: end */
 

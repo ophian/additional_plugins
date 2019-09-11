@@ -1,3 +1,7 @@
+4.12.1.2:
+---------
+    * Add wysiwyg-editor styles for elder gallery image_blocks without col or row defines
+
 4.12.1.1:
 ---------
     * Add CKEplus config items for new figure/figcaption elements since Styx 2.9.0

@@ -188,7 +188,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.12.1.1'); // is CKEDITOR Series 4.12.1 - and appended plugin revision .1
+        $propbag->add('version',       '4.12.1.2'); // is CKEDITOR Series 4.12.1 - and appended plugin revision .2
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
@@ -421,7 +421,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.12.1.1', '4.12.1.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.12.1.2', '4.12.1.1'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -435,7 +435,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.12.1.1', '4.12.1.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.12.1.2', '4.12.1.1'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
