@@ -75,9 +75,9 @@
 <title>言語の選択: 訪問者がフロントエンドインターフェースの言語を変更することを可能にします。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_multilingual</link>
 <category>Sidebar Plugins</category>
-<author>Garvin Hicking, Wesley Hwang-Chung</author>
+<author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_multilingual&lt;br /&gt;言語の選択&lt;/b&gt;&lt;br /&gt;訪問者がフロントエンドインターフェースの言語を変更することを可能にします。&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Mon, 20 Aug 2018 11:37:33 +0200</pubDate>
+<pubDate>Sun, 15 Sep 2019 17:44:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_multilingual</guid>
 </item>
 <item>

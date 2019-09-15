@@ -6838,7 +6838,7 @@ Without any theme engine set, all template files are taken from default theme. F
 </release>
 </package>
 <package version="1.0">
-<name>Orange</name>
+<name>S9y Orange</name>
 <template>s9y_orange</template>
 <license>N/A (=GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar theme from 2004-12-15 to 2007-04-03, with a fixed content size of 750px and a disabled banner.</summary>

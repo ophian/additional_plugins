@@ -6577,9 +6577,9 @@
 <description>Позволява създаването на версии на статиите на различни езици</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.57</version>
+  <version>2.58</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-09-15</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -6595,6 +6595,7 @@
       <file>lang_fr.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>lang_ko.inc.php</file>
+      <file>lang_names.inc.php</file>
       <file>lang_tr.inc.php</file>
       <file>serendipity_event_multilingual.php</file>
       <file>serendipity_plugin_multilingual.php</file>
@@ -6606,6 +6607,7 @@
         <file>lang_fr.inc.php</file>
         <file>lang_ja.inc.php</file>
         <file>lang_ko.inc.php</file>
+        <file>lang_names.inc.php</file>
         <file>lang_tr.inc.php</file>
       </dir>
     </dir>
@@ -6624,6 +6626,7 @@
     <file>serendipity_event_multilingual/lang_fr.inc.php</file>
     <file>serendipity_event_multilingual/lang_ja.inc.php</file>
     <file>serendipity_event_multilingual/lang_ko.inc.php</file>
+    <file>serendipity_event_multilingual/lang_names.inc.php</file>
     <file>serendipity_event_multilingual/lang_tr.inc.php</file>
     <file>serendipity_event_multilingual/serendipity_event_multilingual.php</file>
     <file>serendipity_event_multilingual/serendipity_plugin_multilingual.php</file>
@@ -6634,6 +6637,7 @@
     <file>serendipity_event_multilingual/UTF-8/lang_fr.inc.php</file>
     <file>serendipity_event_multilingual/UTF-8/lang_ja.inc.php</file>
     <file>serendipity_event_multilingual/UTF-8/lang_ko.inc.php</file>
+    <file>serendipity_event_multilingual/UTF-8/lang_names.inc.php</file>
     <file>serendipity_event_multilingual/UTF-8/lang_tr.inc.php</file>
   </serendipityFilelist>
 </release>

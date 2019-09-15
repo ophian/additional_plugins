@@ -649,11 +649,11 @@
 <summary>Избор на език</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Позволява посетителите да сменят езика на лицевата страница</description>
-<maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.17</version>
+  <version>1.18</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <date>2018-08-20</date>
+  <date>2019-09-15</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -669,6 +669,7 @@
       <file>lang_fr.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>lang_ko.inc.php</file>
+      <file>lang_names.inc.php</file>
       <file>lang_tr.inc.php</file>
       <file>serendipity_event_multilingual.php</file>
       <file>serendipity_plugin_multilingual.php</file>
@@ -680,6 +681,7 @@
         <file>lang_fr.inc.php</file>
         <file>lang_ja.inc.php</file>
         <file>lang_ko.inc.php</file>
+        <file>lang_names.inc.php</file>
         <file>lang_tr.inc.php</file>
       </dir>
     </dir>
@@ -698,6 +700,7 @@
     <file>serendipity_event_multilingual/lang_fr.inc.php</file>
     <file>serendipity_event_multilingual/lang_ja.inc.php</file>
     <file>serendipity_event_multilingual/lang_ko.inc.php</file>
+    <file>serendipity_event_multilingual/lang_names.inc.php</file>
     <file>serendipity_event_multilingual/lang_tr.inc.php</file>
     <file>serendipity_event_multilingual/serendipity_event_multilingual.php</file>
     <file>serendipity_event_multilingual/serendipity_plugin_multilingual.php</file>
@@ -708,6 +711,7 @@
     <file>serendipity_event_multilingual/UTF-8/lang_fr.inc.php</file>
     <file>serendipity_event_multilingual/UTF-8/lang_ja.inc.php</file>
     <file>serendipity_event_multilingual/UTF-8/lang_ko.inc.php</file>
+    <file>serendipity_event_multilingual/UTF-8/lang_names.inc.php</file>
     <file>serendipity_event_multilingual/UTF-8/lang_tr.inc.php</file>
   </serendipityFilelist>
 </release>
