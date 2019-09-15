@@ -31,6 +31,9 @@
 
 @define('PLUGIN_EVENT_MULTILINGUAL_ENTRY_RELOADED', 'Multilingual entry language &lt;%s&gt; reloaded');
 
+@define('PLUGIN_EVENT_MULTILINGUAL_LANGIFIED', 'Use national language names?');
+@define('PLUGIN_EVENT_MULTILINGUAL_LANGIFIED_DESC', 'Default: in English. Pertains linknames of multilingual entry metadata.');
+
 //
 //  serendipity_plugin_multilingual.php
 //
@@ -40,4 +43,6 @@
 @define('PLUGIN_SIDEBAR_MULTILINGUAL_SUBMIT', 'Submit button?');
 @define('PLUGIN_SIDEBAR_MULTILINGUAL_SUBMIT_DESC', 'Show a submit button?');
 @define('PLUGIN_SIDEBAR_MULTILINGUAL_SIZE', 'Font size');
+
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_LANGIFIED_DESC', 'Default: in English. Pertains select-title of sidebar selectbox.');
 

@@ -17,14 +17,14 @@ class serendipity_plugin_multilingual extends serendipity_event
         $propbag->add('name',          PLUGIN_SIDEBAR_MULTILINGUAL_TITLE);
         $propbag->add('description',   PLUGIN_SIDEBAR_MULTILINGUAL_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung');
+        $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.28',
             'php'         => '5.3.0'
         ));
 
-        $conf = array('title', 'show_submit', 'size');
+        $conf = array('title', 'show_submit', 'langified', 'size');
         /* Available languages */
         if (!is_array($serendipity['languages'])) {
             $serendipity['languages'] = array('en' => 'English',
@@ -63,7 +63,7 @@ class serendipity_plugin_multilingual extends serendipity_event
             $conf[] = $lkey;
         }
         $propbag->add('configuration', $conf);
-        $propbag->add('version',       '1.17');
+        $propbag->add('version',       '1.18');
         $propbag->add('groups',        array('FRONTEND_VIEWS'));
         $this->dependencies = array('serendipity_event_multilingual' => 'remove');
     }
@@ -96,6 +96,13 @@ class serendipity_plugin_multilingual extends serendipity_event
                 $propbag->add('default',     'false');
                 break;
 
+            case 'langified':
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_MULTILINGUAL_LANGIFIED);
+                $propbag->add('description', PLUGIN_SIDEBAR_MULTILINGUAL_LANGIFIED_DESC);
+                $propbag->add('default',     'false');
+                break;
+
             case 'size':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_SIDEBAR_MULTILINGUAL_SIZE);
@@ -115,10 +122,17 @@ class serendipity_plugin_multilingual extends serendipity_event
         $title = $this->get_config('title', $this->title);
         $url   = serendipity_currentURL(true);
 
+        $probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_names.inc.php';
+        if (file_exists($probelang)) {
+            include $probelang;
+        }
+
+        $languages = serendipity_db_bool($this->get_config('langified', 'false')) ? $mlp['lang'] : $serendipity['languages'];
+
         echo '<form id="language_chooser" action="' . $url . '" method="post"><div>';
         echo '<select style="font-size: ' . $this->get_config('size', '9') . 'px" name="user_language" onchange="document.getElementById(\'language_chooser\').submit();">';
 //        echo '<option value=""> </option>'."\n";
-        foreach ($serendipity['languages'] AS $lang_key => $language) {
+        foreach ($languages AS $lang_key => $language) {
             if (serendipity_db_bool($this->get_config($lang_key, 'false'))) {
                 echo '<option value="' . $lang_key . '"' . ($serendipity['lang'] == $lang_key ? ' selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($language) : htmlspecialchars($language, ENT_COMPAT, LANG_CHARSET)) . "</option>\n";
             }
