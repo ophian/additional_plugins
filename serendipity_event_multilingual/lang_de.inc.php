@@ -25,6 +25,8 @@
 @define('PLUGIN_EVENT_MULTILINGUAL_LANGIFIED', 'Sprachname in Landessprache?');
 @define('PLUGIN_EVENT_MULTILINGUAL_LANGIFIED_DESC', 'Default: in Englisch. Betrifft Linknamen der multilingualen Eintrags Metadaten.');
 
+@define('PLUGIN_EVENT_MULTILINGUAL_EXAMPLE_READMEHINT', 'Bitte lesen Sie die Plugin Documentation über obigen Link sorgfältig durch!');
+
 //
 //  serendipity_plugin_multilingual.php
 //

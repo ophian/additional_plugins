@@ -1,25 +1,151 @@
 <!doctype html>
-<html dir="ltr" lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Tagged translation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Documentation: Multilingual</title>
+<style type="text/css">
+body {
+  font-family: Arial, sans-serif!important;
+  margin: 20px;
+}
+ul.d {list-style-type: decimal;}
+ol li {
+  margin-bottom: 0.5em;
+}
+h2 {
+  background: #efefef;
+  padding: 0.5em;
+}
+p {
+  max-width: 90em;
+}
+em {
+  font-family: Serif;
+}
+.title {
+  background: #cfcfcf;
+  margin: 0;
+  padding: 0.5em;
+}
+#content {
+  background: #efefef;
+  margin: 0;
+  padding: 0.5em;
+}
+#content h2 {
+  padding: 0;
+}
+</style>
 </head>
 <body>
-<h1>Tagged translation</h1>
+<h1 class="title">Serendipity Multilingual Plugin Description</h1>
 
-<p>The multilingual plugin supports tagged translations by the use of <code>{{!&lt;lang&gt;}}&lt;text&gt;{{--}}</code> tags. So if you want to write text with an english and a danish version, for instance, you can write: "<code>{{!en}}English version of text{{--}}{{!da}}Dansk version af tekst{{--}}</code>" into the input field.</p>
+<div id="content">
+    <h2>Inhalt</h2>
+    <ol>
+        <li><a href="#desc">General description</a></li>
+        <li><a href="#notes">Important preliminary remarks</a></li>
+        <li><a href="#entries">Multilingual Entries</a></li>
+        <li><a href="#tagged">Tagged translation</a></li>
+        <li><a href="#sumit">Summarizing</a></li>
+        <li><a href="#dpdc">Dependencies</a></li>
+        <li><a href="#notabene">Special note</a></li>
+        <li><a href="#faq">FAQ</a></li>
+    </ol>
+</div>
 
-<p>Tagged translation have the advantage of being usable in the sidebar for example. So any editable content (typically the title) of a sidebar item can be translated as well. It even extends to the blog title and subtitle.</p>
+<h2 id="desc">General description</h2>
+<p>
+    The Multilingual Plugin is used to offer different language versions / editions of a blog, and/or its entries, and/or certain parts / content.
+    There are two key points to this:
+    <ul class="d">
+        <li>The existing language setting via the language constants, which mainly affects navigational displays, eg. "Einträge" instead of "Entries",
+        or the multilingual date stamps of entries, etc., so that a visitor can navigate the blog in the language of his origin (as long as they are
+        language constants and already translated constants) and</li>
+        <li>The handling of special requirements of a language version via selection fields, links or cookies.</li>
+    </ul>
+</p>
 
-<p>Also theme based options like a navigation bar may be used tagged multilingual very easily. For this case you have to manually edit your themes index.tpl and add the Smarty Modifier "|multilingual_lang" to the variables in question per <code class="language-php">{$navlink.title|multilingual_lang}</code>.</p>
+<h2 id="notes">Important preliminary remarks</h2>
+<p>
+   The Serendipity Visitor and User Management is based on saved settings, sessions and cookies, in which visitors, but also
+   authors and administrators, store their current allocations or settings or carry them with them.<br>
+   This applies in particular to language settings. Two important approaches serve this purpose:<br>
+   The global language setting of the blog under Configuration - General Settings - Language and the user-specific setting under
+   the Backend Gears button.
+</p>
+<p>
+   So you can imagine that different settings are very individual, differently prioritized and also user
+   bound, especially if a third, additional language setting / request is added, eg. via the sidebar plugin in the frontend.
+   In addition there are plugin own setting options, which concern the "durability" of the hit language for the visitor. If you are
+   <b>logged in</b>, a language setting via the frontend can have effects on your backend, and vice versa. Different levels of language
+   prioritization apply. Here it can come very fast to basic <b>misunderstandings</b>, especially if you try to check a frontend
+   behavior, which might not meet your expectations. It is therefore strongly recommended never to perform such checks yourself with
+   the same browser, but always to use two independent browsers!<br>
+   See also <a href="#notabene">below</a>
+</p>
 
-<p>Tagged translation for blog entries is also available, but is disabled by default, as it duplicates functionality already present in the plugin. Entry translation is already implemented by use of a database based approach, and you should decide on which approach you prefer when creating entries. Using both approaches at the same time could end up being weird and confusing. The database implemented method uses the entryproperties plugin, which has to be installed first. Using this default method you have to write and save your entry as ever in the default blogs language. Then you can use the <u>same</u> entry, translate its content and title, select the language in the new language select field and save the entry again. This translated entry variant is now saved to the entryproperties database table. In the blogs frontend you can easily switch the translation variant by entry in the entries footer language links. This entry based lang switch has no change inheritance to the general blogs language, like the sidebar languagechooser field has, if not set by option. To get access to the translated entry version in the backend, open the origin lang blog entry in the entry form, select the translated language and hit the button "Select language". This will bring up the translated entry variant. Now you can edit and save this entry in purpose.</p>
+<h2 id="entries">Multilingual Entries</h2>
+<p>
+   An additional field can be used to create and manage a blog entry multilingually.
+   To do this, write a blog entry in the actual blog language (example) "English" and save it as usual. When you call it again from
+   the database, the entryproperties event plugin now provides an additional option in the <b>Advanced Options</b>, with which you
+   can select or create a language version (eg. "German") for editing. Depending on the optional setting in the multilingual plugin,
+   the same entry is now made available as an German language pendant of the same entry, either filled in as a copy or not. Now change
+   and write your German text and the German heading and save it. Technically, this is a language copy of the old entry and is stored
+   in the entryproperties database table.<br>
+   The backend entry list still only lists the English blog entry, but marks it with the additional language as a multilingual entry.
+   If you click on the &laquo;title&raquo; or &laquo;Edit&raquo;, the original English entry will be displayed again for editing. If you now - as before - simply
+   change the language to "German", then your German-speaking Entry will appear. (Frontend behavior is described below.)
+</p>
 
-<p>Also be aware that tagged translation works by simply stripping out any language blocks that are not the current language. There is no fallback language in this case and means to only allow that much languages for the users to switch in the sidebar, that you already tagged.</p>
+<h2 id="tagged">Tagged translation</h2>
 
-<p>For staticpages use its language select field and emit <u>one</u> single staticpage per language! This will be automatically evaluated in the frontend language. This is handled differently to the blog entry approach! Lang 'ALL' field staticpages are shown in any case.</p>
+<p>
+    The multilingual plugin supports tagged translations by the use of <code>{{!&lt;lang&gt;}}&lt;text&gt;{{--}}</code> tags.
+    So if you want to write text with an english and a danish version, for instance, you can write:
+    "<code>{{!en}}English version of text{{--}}{{!da}}Dansk version af tekst{{--}}</code>" into the input field.
+</p>
 
-<h3>In summary you have these possibilities with this plugin:</h3>
+<p>
+    Tagged translation have the advantage of being usable in the sidebar for example. So any editable content (typically the
+    title) of a sidebar item can be translated as well. It even extends to the blog title and subtitle.
+</p>
+
+<p>
+    Also theme based options like a navigation bar may be used tagged multilingual very easily. For this case you have to
+    manually edit your themes index.tpl and add the Smarty Modifier "|multilingual_lang" to the variables in question per
+    <code class="language-php">{$navlink.title|multilingual_lang}</code>.
+</p>
+
+<p>
+    Tagged translation for blog entries is also available, but is disabled by default, as it duplicates functionality
+    already present in the plugin (<em>see above</em>). Entry translation is already implemented by use of a database based approach, and
+    you should decide on which approach you prefer when creating entries. Using both approaches at the same time could
+    end up being weird and confusing. The database implemented method (<em>see above</em>) uses the entryproperties plugin, which has to be
+    installed first. Using this default method you have to write and save your entry as ever in the default blogs language.
+    Then you can use the <u>same</u> entry, translate its content and title, select the language in the new language select
+    field and save the entry again. This translated entry variant is now saved to the entryproperties database table. In the
+    blogs frontend you can easily switch the translation variant by entry in the entries footer language links. This entry
+    based lang switch has no change inheritance to the general blogs language, like the sidebar languagechooser field has,
+    if not set by option. To get access to the translated entry version in the backend, open the origin lang blog entry in
+    the entry form, select the translated language and hit the button "Select language". This will bring up the translated
+    entry variant. Now you can edit and save this entry in purpose.
+</p>
+
+<p>
+    Also be aware that tagged translation works by simply stripping out any language blocks that are not the current
+    language. There is no fallback language in this case and means to only allow that much languages for the users
+    to switch in the sidebar, that you have already tagged.
+</p>
+
+<p>
+    For staticpages use its language select field and emit <u>one</u> single staticpage per language! This will be
+    automatically evaluated in the frontend language. This is handled differently to the blog entry approach!
+    Lang 'ALL' field staticpages are shown in any case.
+</p>
+
+<h2 id="sumit">In summary you have these possibilities with this plugin</h2>
 
 <ol>
     <li>Content of input fields per "tag" automatically translated multilingual</li>
@@ -27,24 +153,59 @@
     <li>Write blog entries per "tag" multilingual (per default disabled, in favour of)</li>
     <li>Make blog entries translation available via database and the entryproperties event plugin</li>
     <li>Non default language Staticpages are independent from this multilingual plugin, but are depending on the blogs language</li>
-    <li>Multilinguale nuggets can be set set independently by another plugin (serendipity_plugin_nugget_multilingual)</li>
+    <li>Multilingual nuggets can be set set independently by another plugin (serendipity_plugin_nugget_multilingual)</li>
 </ol>
 
-<p>Dependencies for:</p>
+<h2 id="dpdc">Dependencies</h2>
 
 <ul>
     <li>(4) - Installed serendipity_event_entryproperties plugin.</li>
-    <li>(3) - This means that you should probably disable the Markup plugin: "NL2BR" for entries in general or per entry. Otherwise newlines outside language blocks will be converted to &lt;br /&gt; tags and included.</li>
+    <li>(3) - This means that you should probably disable the Markup plugin: "NL2BR" for entries in general or per entry. (CKEditor does this automatically.)
+    Otherwise newlines outside language blocks will be converted to &lt;br /&gt; tags and included.</li>
 </ul>
 
-<p><u>Please also pay attention to:</u></p>
+<h2 id="notabene">Please also pay attention to</h2>
 
-<blockquote>
-<p>If the "<em>browser language detection</em>" option is enabled in Serendipity, this actually overrides the current language - and the current language is always what Serendipity displays and describes as "default" language. It currently actually relies on the blog editors to have the same setup of their language whenever they edit an article, else it would lead into problems or may loose data.</p>
-</blockquote>
-<blockquote>
-<p>As the blogs Admin, better set the "Global Configuration" Blog language and the "Personal Preferences" language to the same language. Further on, do not use the sidebars language selection in the frontend. Elsewise the language cookie set, can lead to unwanted language problems overall.</p>
-</blockquote>
+<p>
+    If the "<em>browser language detection</em>" option is enabled in Serendipity, this actually overrides the current
+    language - and the current language is always what Serendipity displays and describes as "default" language. It
+    currently actually relies on the blog editors to have the same setup of their language whenever they edit an article,
+    else it would lead into problems or may loose data.</p>
+
+<p>
+    As the blogs Admin, better set the "Global Configuration" Blog language and the "Personal Preferences" language to
+    the same language. Further on, do not use the sidebars language selection in the frontend. Elsewise the language
+    cookie set, can lead to unwanted language problems overall.</p>
+
+<h2 id="faq">Questions</h2>
+
+<p>
+    <b>My blog doesn't show some things in the expected language after changing the language. Why is that?</b><br>
+    <blockquote>Is this "thing" (eg. a page performance title) a language constant? Is this language constant already translated?<br>
+    Is this "thing" (eg. a page performance title) possibly an option field of a plugin? What does it say? Maybe you want to use a tagged translation there?!</blockquote>
+</p>
+
+<p>
+    <b>My blog doesn't keep the language setting for a visitor who keeps clicking around. Why is that?</b><br>
+    <blockquote>In this case you have to set the option "<em>Overwrite global language?</em>" to <b>Yes</b> in the serendipity_event_multilingual plugin.</blockquote>
+</p>
+
+<p>
+    <b>My blog still shows the normal language (eg. English) entries in the archives. Why is this so?</b><br>
+    <blockquote>The entries are shown in the selected language via the Archive (serendipity_plugin_archives) Plugin.
+    It is not possible to display only <em>english</em> or <em>german</em> entries (<em>example</em>), because this is based on
+    on the normal database queries, as they are generated for the blog entries themselves.<br>
+    To operate a complete separation of an English and a German blog (<em>example</em>), you better run two separate instances
+    of Serendipity your own.
+    (See <a href="https://ophian.github.io/hc/en/faq/" target="_blank">Serendipity FAQ</a>).</blockquote>
+</p>
+
+<p>
+    <b>The language settings are permanently reset in the frontend. Why is this so?</b><br>
+    <blockquote>You probably have not correctly read/understood the special notes and the important preliminary remarks. Try again.</blockquote>
+</p>
+
+<p>&nbsp;</p>
 
 </body>
 </html>

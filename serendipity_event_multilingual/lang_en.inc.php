@@ -34,6 +34,8 @@
 @define('PLUGIN_EVENT_MULTILINGUAL_LANGIFIED', 'Use national language names?');
 @define('PLUGIN_EVENT_MULTILINGUAL_LANGIFIED_DESC', 'Default: in English. Pertains linknames of multilingual entry metadata.');
 
+@define('PLUGIN_EVENT_MULTILINGUAL_EXAMPLE_READMEHINT', 'Please carefully read the plugin documentation using above link!');
+
 //
 //  serendipity_plugin_multilingual.php
 //

@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.58');
+        $propbag->add('version',        '2.59');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -247,6 +247,11 @@ class serendipity_event_multilingual extends serendipity_event
                 return false;
         }
         return true;
+    }
+
+    function example()
+    {
+        return '<span class="msg_notice"><span class="icon-info-circled"></span> ' . PLUGIN_EVENT_MULTILINGUAL_EXAMPLE_READMEHINT . "</span>\n";
     }
 
     function generate_content(&$title)
