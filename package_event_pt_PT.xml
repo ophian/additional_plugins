@@ -11054,7 +11054,7 @@
 <maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.75</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <date>2019-09-21</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
