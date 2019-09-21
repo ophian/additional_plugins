@@ -27,7 +27,7 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
 
           <div class="serendipity_gallery_navigation">
                <!-- navigation -->
-            <a href="{$plugin_usergallery_httppath}">{$plugin_usergallery_title}</a>{foreach name="gallery" $plugin_usergallery_gallery_breadcrumb AS $gallery} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$gallery.path}">{$gallery.name}</a>{/foreach}
+            <a href="{$plugin_usergallery_httppath}">{$plugin_usergallery_title}</a>{foreach $plugin_usergallery_gallery_breadcrumb AS $gallery} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$gallery.path}">{$gallery.name}</a>{/foreach}
             <div style="float: left;">
                 {if $plugin_usergallery_previousid != -1}
                 <a href="{$plugin_usergallery_httppath_extend}serendipity[image]={$plugin_usergallery_previousid}">&laquo; {$CONST.PREVIOUS}</a>
@@ -72,15 +72,15 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
                 </ol>
             {/if}
                 <dl>
-                       <dt>{$plugin_usergallery_file.name}.{$plugin_usergallery_file.extension}</dt>
-                       <dd>{$const.filesize}: {$plugin_usergallery_file.size_txt} kb</dd>
+                    <dt>{$plugin_usergallery_file.name}.{$plugin_usergallery_file.extension}</dt>
+                    <dd>{$const.filesize}: {$plugin_usergallery_file.size_txt} kb</dd>
                 {foreach $plugin_usergallery_extended_info AS $entry}
                     <dd>{$entry.name}: {$entry.value}</dd>
                 {/foreach}
                 {if $plugin_usergallery_file.is_image}
                     {if $plugin_usergallery_xtra_info}
-                       <dd>{$plugin_usergallery_xtra_info}</dd>
-                       {/if}
+                    <dd>{$plugin_usergallery_xtra_info}</dd>
+                    {/if}
                 {/if}
                 </dl>
             </div>

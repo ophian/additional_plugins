@@ -1,3 +1,7 @@
+2.75:
+-----
+ * Fix Smarty2 leftover in plugin_usergallery_imagedisplay.tpl
+
 2.74:
 -----
  * Fix PHP7 issues within JPEG_TOOLKIT/EXIF and JPEG_TOOLKIT/IPTC
