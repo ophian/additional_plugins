@@ -18,8 +18,8 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian Styx');
         $propbag->add('version',       '2.75');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
+            'serendipity' => '1.7',
+            'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
         $propbag->add('event_hooks', array(
