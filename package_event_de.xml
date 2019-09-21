@@ -5152,9 +5152,9 @@
 <description>Das Lightbox Plugin ist eine einfaches unauffälliges Skript, das Bilder auf der Seite überlagern kann, wenn die große Version angeklickt wurde. Es fügt sich selbstständig in die Seite ein und funktioniert mit jedem modernen Browser. Alle Leuchtkästen verschönern Bilder-Popups. Dieses Plugin durchsucht ihre Einträge und ersetzt jeden auf ein Bild verweisenden 'a href=&quot;XXX&quot;' Link so, dass die interne Darstellung benutzt wird. Wenn Sie also ein Thumbnail Bild mit einem Popup der großen Version haben wollen, so fügen Sie das Thumbnail in ihren Eintrag ein und verlinken dieses mit der großen Version. Um auch versteckte Bilder mit display:none anzuzeigen, nutzen Sie das Lightbox2 Script. Diese Leuchtkasten Scripte sind alle jQuery basiert. Sie unterstützen nicht allein nur Bildtypen, sondern überwiegend auch anderes, wie Ajax, Videos, Flash, YouTube, iFrame, Inline oder modale Felder. Dieses Plugin nutzt sie nur für Fotografie Leuchtkästen, aber Sie können leicht andere Typen ihren Blog-Einträgen manuell hinzufügen und eine lightbox entsprechend für diesen Zweck initiieren, so wie es den jeweiligen Online-Dokumentationen beschrieben wird.</description>
 <maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.5.4</version>
+  <version>2.6.0</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-09-21</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
       <file>ChangeLog</file>
@@ -5224,6 +5224,7 @@
       <dir name="lightbox2-jquery">
         <dir name="css">
           <file>lightbox.css</file>
+          <file>lightbox.min.css</file>
         </dir>
         <dir name="images">
           <file>close.png</file>
@@ -5239,7 +5240,9 @@
           <file>lightbox.min.js</file>
           <file>lightbox.min.map</file>
         </dir>
+        <file>LICENSE</file>
         <file>README.md</file>
+        <file>ROADMAP.md</file>
       </dir>
       <dir name="magnific-popup">
         <file>jquery.magnific-popup.init.js</file>
@@ -5382,6 +5385,7 @@
     <file>serendipity_event_lightbox/lang_en.inc.php</file>
     <file>serendipity_event_lightbox/lang_pl.inc.php</file>
     <file>serendipity_event_lightbox/lightbox2-jquery/css/lightbox.css</file>
+    <file>serendipity_event_lightbox/lightbox2-jquery/css/lightbox.min.css</file>
     <file>serendipity_event_lightbox/lightbox2-jquery/images/close.png</file>
     <file>serendipity_event_lightbox/lightbox2-jquery/images/loading.gif</file>
     <file>serendipity_event_lightbox/lightbox2-jquery/images/next.png</file>
@@ -5392,7 +5396,9 @@
     <file>serendipity_event_lightbox/lightbox2-jquery/js/lightbox.js</file>
     <file>serendipity_event_lightbox/lightbox2-jquery/js/lightbox.min.js</file>
     <file>serendipity_event_lightbox/lightbox2-jquery/js/lightbox.min.map</file>
+    <file>serendipity_event_lightbox/lightbox2-jquery/LICENSE</file>
     <file>serendipity_event_lightbox/lightbox2-jquery/README.md</file>
+    <file>serendipity_event_lightbox/lightbox2-jquery/ROADMAP.md</file>
     <file>serendipity_event_lightbox/magnific-popup/jquery.magnific-popup.init.js</file>
     <file>serendipity_event_lightbox/magnific-popup/jquery.magnific-popup.js</file>
     <file>serendipity_event_lightbox/magnific-popup/jquery.magnific-popup.min.js</file>
@@ -11047,9 +11053,9 @@
 <description>Ermöglicht es den Besuchern, die Mediendatenbank anzusehen</description>
 <maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.73</version>
+  <version>2.74</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-09-21</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
       <file>ChangeLog</file>
