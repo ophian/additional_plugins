@@ -1,7 +1,13 @@
+1.16:
+----
+
+ * Run dependency check for multilingual entries
+   (PLEASE NOTE: Always check language frontend changes with a different browser to get correct results!)
+
 1.15:
 ----
 
- * Adds option for empty archive years excludement
+ * Add option to exclude empty archive years
  * Fix customarchive template for Smarty3 and to check {pickKey..} first,
    if not deliver a default fallback.
  * Fixes genpage Smarty initiation
@@ -18,7 +24,7 @@
  * Load lang with lang api
  * Remove legacy code
  * Now requires Serendipity 2.0+
- * Fix inconistencies
+ * Fix inconsistencies
 
 
 1.12.1:
