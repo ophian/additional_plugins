@@ -212,7 +212,7 @@ class serendipity_event_customarchive extends serendipity_event
         if (is_array($entries)) {
             foreach($entries AS $entry) {
                 $mt = serendipity_db_query("SELECT multilingual_title.value AS multilingual_title FROM {$serendipity['dbPrefix']}entryproperties multilingual_title WHERE multilingual_title.entryid = {$entry['id']} AND multilingual_title.property = 'multilingual_title_{$serendipity['lang']}'");
-                $title = $mt[0]['multilingual_title'] ?? $entry['title'];
+                $title = $mt[0]['multilingual_title'] ? $mt[0]['multilingual_title'] : $entry['title'];
                 $entryLink = serendipity_archiveURL(
                                $entry['id'],
                                $title,
