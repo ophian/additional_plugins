@@ -1342,9 +1342,9 @@
 <description>Zeigt eine sortierbare Ansicht aller Artikel für den Besucher an. Der Link zu dieser eigenständigen Seite sollte in einem eigenen HTML Klotz verlinkt werden!</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.15</version>
+  <version>1.16</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-09-22</date>
   <filelist>
     <dir name="serendipity_event_customarchive">
       <file>asc.gif</file>
