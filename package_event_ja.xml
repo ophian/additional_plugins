@@ -6585,7 +6585,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>エントリの複数の言語バージョンを作成することを可能にします。</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.60</version>
+  <version>2.61</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <date>2019-09-23</date>
   <filelist>
