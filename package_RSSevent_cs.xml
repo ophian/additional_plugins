@@ -175,8 +175,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_contactform</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Kontaktní formulář&lt;/b&gt;&lt;br /&gt;Zobrazuje kontaktní formulář k poslání e-mailu jako statickou stránku. Přístup k fromuláři buď pomocí stálého odkazu (permalinku) nebo na adrese index.php?serendipity[subpage]=contactform. Vzhled fromuláře si můžete upravit podle svého vložením souboru plugin_contactform.tpl do adresáře s Vaší šablonou. Kryptogramy z pluginu SpamBlock budou použity, pokud je SpamBlock nainstalován.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Sun, 11 Aug 2019 10:16:14 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Kontaktní formulář&lt;/b&gt;&lt;br /&gt;Zobrazuje kontaktní formulář k poslání e-mailu jako statickou stránku. Přístup k fromuláři buď pomocí stálého odkazu (permalinku) nebo na adrese index.php?serendipity[subpage]=contactform. Vzhled fromuláře si můžete upravit podle svého vložením souboru plugin_contactform.tpl do adresáře s Vaší šablonou. Kryptogramy z pluginu SpamBlock budou použity, pokud je SpamBlock nainstalován.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<pubDate>Sun, 22 Sep 2019 16:02:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -221,7 +221,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_customarchive&lt;br /&gt;Přizpůsobitelný archiv příspěvků&lt;/b&gt;&lt;br /&gt;Zobrazuje návštěvníkovi blogu všechny dosud vydané články s možností třídění. Odkaz na tuto stránku by měl být vložen do HTML nugetu (bloku).&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 22 Sep 2019 15:44:54 +0200</pubDate>
+<pubDate>Sun, 22 Sep 2019 16:05:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_customarchive</guid>
 </item>
 <item>
@@ -977,7 +977,7 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_smtpmail&lt;br /&gt;SMTP Mail&lt;/b&gt;&lt;br /&gt;Použití SMTP serveru pro odesílání pošty&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:23:13 +0200</pubDate>
+<pubDate>Mon, 23 Sep 2019 10:56:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_smtpmail</guid>
 </item>
 <item>
