@@ -1,3 +1,7 @@
+1.10:
+-----
+  * Replace libs with PHPMailer-6.0.7 (for better PHP7 support?)
+
 1.01:
 -----
   * Added legal property bag information for gdpr/dsgvo
