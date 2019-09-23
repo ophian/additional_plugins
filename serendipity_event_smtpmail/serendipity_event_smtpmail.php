@@ -164,7 +164,9 @@ class serendipity_event_smtpmail extends serendipity_event
             # Activate Auth if Auth is "SMTP AUTH"
             if ($this->get_config('smtpmail_auth') == 2) {
                 $mail->SMTPAuth = true;
-                if ($this->get_config('smtpmail_auth') != 0) {$mail->SMTPSecure = $this->get_config('smtpmail_secure');}
+                if ($this->get_config('smtpmail_auth') != 0) {
+                    $mail->SMTPSecure = $this->get_config('smtpmail_secure');
+                }
                 $mail->Username   = $this->get_config('smtpmail_user');
                 $mail->Password   = $this->get_config('smtpmail_passwd');
             }
