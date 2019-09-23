@@ -204,7 +204,14 @@ em {
     <b>Mein Blog zeigt in den Achiven auch weiterhin die normalsprachigen (zB. deutschen) Einträge. Warum ist das so?</b><br>
     <blockquote>Die Einträge werden über das Archive Plugin (serendipity_plugin_archives) in der gewählten Sprache gezeigt.
     Es ist ohne weiteres nicht möglich nur englische oder deutsche Einträge (<em>Beispiel</em>) anzeigen zu lassen, denn dies basiert
-    auf den normalen Datenbankabfragen, wie sie auch für die Blogeinträge selbst generiert werden.<br>
+    auf den normalen Datenbankabfragen, wie sie auch für die Blogeinträge selbst generiert werden.
+</p>
+<p>
+    Allerdings kann man sein Blog multilingual nach Sprache darstellen, wenn man den Links in einem Nugget oder der Navigation eine geeignete GET Variable hinzufügt: <code>https://example.org/serendipity/index.php?serendipity[lang_display]=en</code>.
+    Damit würden <b>nur</b> englischsprachige - also bereits multilingual übersetzte Blogeinträge aufgeführt. (<em>Das index.php kann meist sogar ganz weggelassen werden.</em>) Dies gilt aber nicht für die Standardsprache; hier muss die Variable im Link einfach weggelassen werden.<br>
+    Mit dem optionalen customarchive event plugin kann man so zum Beispiel eingegrenzte Suchanfragen mit Sprachbegrenzung erstellen: <code>https://example.org/serendipity/index.php?serendipity[subpage]=customarchives&serendipity[lang_display]=en&serendipity[custom_sortyears]=2015</code>.
+</p>
+<p>
     Um eine vollständige Trennung eines englischen und eines deutschen Blogs (<em>Beispiel</em>) zu betreiben,
     sollten Sie besser zwei eigene, separate Serendipity Instanzen verwenden.
     (Siehe <a href="https://ophian.github.io/hc/en/faq/" target="_blank">Serendipity FAQ</a>).</blockquote>
