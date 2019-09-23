@@ -27,11 +27,11 @@ class serendipity_event_contactform extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'backend_title', 'email', 'subject', 'counter', 'intro', 'sent', 'articleformat', 'dynamic_tpl', 'dynamic_fields', 'dynamic_fields_tpl', 'dynamic_fields_desc'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.32');
+        $propbag->add('version', '1.33');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7.0',
+            'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
-            'php'         => '4.1.0'
+            'php'         => '7.0.0'
         ));
         $propbag->add('stackable', true);
         $propbag->add('groups', array('FRONTEND_FEATURES'));
@@ -483,7 +483,7 @@ class serendipity_event_contactform extends serendipity_event
                     'commentform_url'            => isset($serendipity['POST']['url']) ? $this->specialchars_mapper(strip_tags($serendipity['POST']['url'])) : null,
                     'commentform_email'          => isset($serendipity['POST']['email']) ? $this->specialchars_mapper(strip_tags($serendipity['POST']['email'])) : null,
                     'commentform_data'           => isset($serendipity['POST']['comment']) ? $this->specialchars_mapper(strip_tags($serendipity['POST']['comment'])) : null,
-                    'comments_messagestack'      => isset($serendipity['messagestack']['comments']) ? $serendipity['messagestack']['comments'] : null,
+                    'comments_messagestack'      => $serendipity['messagestack']['comments'] ?? null,
                     'commentform_entry'          => array(
                                                         'timestamp' => 1, // force captchas!
                                                     ),
