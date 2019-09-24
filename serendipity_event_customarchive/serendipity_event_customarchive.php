@@ -92,7 +92,7 @@ class serendipity_event_customarchive extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'articleformat', 'exclude_emptyyears'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.17');
+        $propbag->add('version', '1.18');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -333,6 +333,11 @@ class serendipity_event_customarchive extends serendipity_event
             $this->setDefaultValue('custom_sortorder', $custom_sortorder, 'asc');
             $this->setDefaultValue('custom_sortyears', $custom_sortyears, date('Y'));
             $this->setDefaultValue('custom_sortauthors', $custom_sortauthors, 'all');
+            //  This needs at least a link in navigation or sidebar nugget pointing to "?serendipity[subpage]=customarchives&serendipity[custom_sortyears]=all&serendipity[lang_display]=en" for example
+            if (!empty($serendipity['GET']['lang_display']) && $serendipity['GET']['lang_display'] != $serendipity['lang']) {
+                $custom_language[] = array('value' => '', 'desc' => $serendipity['lang']);
+                $custom_language[] = array('value' => $serendipity['GET']['lang_display'], 'desc' => $serendipity['GET']['lang_display']);
+            }
 
 ?>
 <form action="<?php echo $serendipity['baseURL']; ?>index.php?" method="get">
@@ -343,6 +348,7 @@ class serendipity_event_customarchive extends serendipity_event
 <?php echo $this->dropdown('custom_sortorder', $custom_sortorder); ?>
 <?php echo $this->dropdown('custom_sortyears', $custom_sortyears); ?>
 <?php echo $this->dropdown('custom_sortauthors', $custom_sortauthors); ?>
+<?php if (!empty($custom_language)) echo $this->dropdown('lang_display', $custom_language); ?>
     <input type="submit" name="submit" value="<?php echo GO; ?>" />
 </div>
 </form>

@@ -1,3 +1,13 @@
+1.18:
+----
+
+ * Added a simple selection to view multilingual translated entries and return to default language.
+   This needs at least a link in your themes navigation bar or a sidebar nugget pointing to:
+   "index.php?serendipity[subpage]=customarchives&serendipity[custom_sortyears]=all&serendipity[lang_display]=en"
+   for example.
+   Then the customarchive form allows to query by lang_display variable too or return to the default language,
+   which also wipes this simple new select option.
+
 1.17:
 ----
 
