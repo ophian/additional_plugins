@@ -193,13 +193,16 @@ em {
 <p>
     <b>My blog still shows the normal language (eg. English) entries in the archives. Why is this so?</b><br>
     <blockquote>The entries are shown in the selected language via the Archive (serendipity_plugin_archives) Plugin.
-    It is not possible to display only <em>english</em> or <em>german</em> entries (<em>example</em>), because this is based on
-    on the normal database queries, as they are generated for the blog entries themselves.
+    It is not possible without further ado to display only <em>english</em> or <em>german</em> entries (<em>example</em>),
+    because this is based on the normal database queries, as they are generated for the blog entries themselves.
 </p>
 <p>
-    However, you can display your blog multilingual by language by adding a suitable GET variable to any link in a sidebar nugget or the themes navigation: <code>https://example.org/serendipity/index.php?serendipity[lang_display]=de</code>.
-    This would list <b>only</b> German-language blog entries that have already been multilingually translated. (<em>The index.php can usually even be omitted.</em>) This does not apply to the default language; the variable in the link must simply be omitted here.<br>
-    With the optional customarchive event plugin you can then for example create narrowed search queries based on language constraints: <code>https://example.org/serendipity/index.php?serendipity[subpage]=customarchives&serendipity[lang_display]=de&serendipity[custom_sortyears]=2015</code>.
+    However, you can display your blog multilingual by language by adding a suitable GET variable to any link in a sidebar
+    nugget or the themes navigation: <code>https://example.org/serendipity/index.php?serendipity[lang_display]=de</code>.
+    This would list <b>only</b> German-language blog entries that have already been multilingually translated. (<em>The index.php
+    can usually even be omitted.</em>) This does not apply to the default language; the variable in the link must simply be omitted here.<br>
+    With the optional customarchive event plugin you can then for example create narrowed search queries based on language constraints:
+    <code>https://example.org/serendipity/index.php?serendipity[subpage]=customarchives&serendipity[lang_display]=de&serendipity[custom_sortyears]=2015</code>.
 </p>
 <p>
     To operate a complete separation of an English and a German blog (<em>example</em>), you better run two separate instances
