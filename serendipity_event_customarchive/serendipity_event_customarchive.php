@@ -92,7 +92,7 @@ class serendipity_event_customarchive extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'articleformat', 'exclude_emptyyears'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.18');
+        $propbag->add('version', '1.19');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -208,10 +208,11 @@ class serendipity_event_customarchive extends serendipity_event
         }
 
         $entries = serendipity_fetchEntries($range, false, '', false, false, $sql_order);
+        $perlang = isset($serendipity['GET']['lang_display']) ? $serendipity['GET']['lang_display'] : $serendipity['lang'];
         $pool = array();
         if (is_array($entries)) {
             foreach($entries AS $entry) {
-                $mt = serendipity_db_query("SELECT multilingual_title.value AS multilingual_title FROM {$serendipity['dbPrefix']}entryproperties multilingual_title WHERE multilingual_title.entryid = {$entry['id']} AND multilingual_title.property = 'multilingual_title_{$serendipity['lang']}'");
+                $mt = serendipity_db_query("SELECT multilingual_title.value AS multilingual_title FROM {$serendipity['dbPrefix']}entryproperties multilingual_title WHERE multilingual_title.entryid = {$entry['id']} AND multilingual_title.property = 'multilingual_title_$perlang'");
                 $title = $mt[0]['multilingual_title'] ?? $entry['title'];
                 $entryLink = serendipity_archiveURL(
                                $entry['id'],
