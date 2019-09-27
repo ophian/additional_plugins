@@ -1,3 +1,8 @@
+4.13.0.0:
+---------
+    * Upgrade to CKEDITOR 4.13. Series, update 0 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
+
 4.12.1.2:
 ---------
     * Add wysiwyg-editor styles for elder gallery image_blocks without col or row defines
