@@ -5,7 +5,7 @@
 <package version="1.0">
 <name>1024px</name>
 <template>1024px</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-08-27 to 2009-08-16 as v.1.1 with a fixed size of ~970px. Structural child of andreas.. themes.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -77,7 +77,7 @@
 <package version="1.0">
 <name>Adaptation</name>
 <template>adaptation</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2008-05-02 to 2009-08-25 as v.0.81</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -225,7 +225,7 @@
 <package version="1.0">
 <name>Andreas00</name>
 <template>andreas00</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-04-10 to 2008-08-16 with a fixed content size of 780px width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -307,7 +307,7 @@
 <package version="1.0">
 <name>Andreas06</name>
 <template>andreas06</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2005-11-28 to 2014-01-08 as v1.1.1, with a fixed content size of 752px width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -401,7 +401,7 @@
 <package version="1.0">
 <name>Andreas08</name>
 <template>andreas08</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-10-23 to 2013-10-26 as v2.0, with a fixed content size of 760px width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -521,7 +521,7 @@
 <package version="1.0">
 <name>Andreas09</name>
 <template>andreas09</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full screen theme from 2006-11-05 to 2013-02-07, responsive with a fixed minimum content size of 770px width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -619,7 +619,7 @@
 <package version="1.0">
 <name>Artistic</name>
 <template>artistic</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old small-screen theme from 2006-08-24 to 2009-08-27 as v.1.1, with a fixed content width of 774px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -677,7 +677,7 @@
 <package version="1.0">
 <name>Axcur</name>
 <template>axcur</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old small-screen theme from 2009-08-13 to 2013-10-26, with a fixed content width of 1000px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Derivate of xkur theme.</description>
 <recommended></recommended>
@@ -831,7 +831,7 @@
 <package version="1.0">
 <name>Bar Sinister</name>
 <template>barSinister3</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-04-01 to 2008-02-14 with a fixed content size of 780px width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -901,7 +901,7 @@
 <package version="1.0">
 <name>Bartleby</name>
 <template>bartleby</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Simplified additional &lt;u&gt;engine&lt;/u&gt; theme from Mar 4, 2015, with no sidebars.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended>Yes</recommended>
@@ -957,7 +957,7 @@
 <package version="1.0">
 <name>Bazooka</name>
 <template>bazooka</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-01-21 to 2008-02-14 with a fixed content size of 880px width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -1029,7 +1029,7 @@
 <package version="1.0">
 <name>Be Nice</name>
 <template>be-nice</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-08-26 to 2009-08-17 as v.1.1, with a fixed content size of 758px. Structural child sibling of andreas* themes.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -1153,7 +1153,7 @@
 <package version="1.0">
 <name>Bex01</name>
 <template>bex01</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-05-01 to 2013-10-26, with a fixed content size of 754px. Structural child sibling of andreas* themes.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -1271,7 +1271,7 @@
 <package version="1.0">
 <name>Blix</name>
 <template>blix</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-01-03 to 2014-01-09, with a fixed content size of 770px. Structural child sibling of leaf and glossy_white themes.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -1383,7 +1383,7 @@
 <package version="1.0">
 <name>Blogger-Death</name>
 <template>blogger_death</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-10-14 to 2007-04-03 as v0.1, fully based on default template files.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Based on a blogger template&amp;colon;
 &quot;//blogger-templates.blogspot.com/2004_03_14_blogger-templates_archive.html#108060235862359662&quot;</description>
@@ -1426,7 +1426,7 @@
 <package version="1.0">
 <name>Blue</name>
 <template>blue</template>
-<license>N/A (=GPL)</license>
+<license>(BSD license)</license>
 <summary>CSS complete theme only.</summary>
 <description>Simple example theme from 2004 using all the template files from the old default fallback (Serendipity 2.3) theme. Styled by CSS only.</description>
 <recommended></recommended>
@@ -1470,7 +1470,7 @@
 <package version="1.0">
 <name>Blue Haze</name>
 <template>blue-haze</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-22 to 2007-04-03, fully based on default template files.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -1504,7 +1504,7 @@
 <package version="1.0">
 <name>Blue Iceberg</name>
 <template>blue-iceberg</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-23 to 2007-04-03, fully based on default template files.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -1536,9 +1536,47 @@
 </release>
 </package>
 <package version="1.0">
+<name>BlueGrey</name>
+<template>bluegrey</template>
+<license>(N/A GPL)</license>
+<summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-12-15 to 2007-04-03, fully based on default template files.</summary>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
+<recommended></recommended>
+<responsive>Yes</responsive>
+<mobile>Yes</mobile>
+<maintainers><maintainer><name>Kaustubh Srikanth</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion></requirements:s9yVersion>
+  <date>2019-04-05</date>
+  <filelist>
+    <dir name="bluegrey">
+      <dir name="img">
+        <file>quotes.gif</file>
+      </dir>
+      <file>info.txt</file>
+      <file>preview.png</file>
+      <file>preview.webp</file>
+      <file>preview_fullsize.jpg</file>
+      <file>preview_fullsize.webp</file>
+      <file>style.css</file>
+    </dir>
+  </filelist>
+  <serendipityFilelist>
+    <file>bluegrey/img/quotes.gif</file>
+    <file>bluegrey/info.txt</file>
+    <file>bluegrey/preview.png</file>
+    <file>bluegrey/preview.webp</file>
+    <file>bluegrey/preview_fullsize.jpg</file>
+    <file>bluegrey/preview_fullsize.webp</file>
+    <file>bluegrey/style.css</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
 <name>Brown Paper</name>
 <template>brownpaper</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old 2-sidebar full-screen theme from 2006-04-28 to 2008-02-14.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Now - with 2019 revision - a full modern grid/flexible system theme with a browsers content size up to ~96 percent.</description>
 <recommended></recommended>
@@ -1610,7 +1648,7 @@
 <package version="1.0">
 <name>Carl Blue</name>
 <template>carl_blue</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen 2-sidebar-right theme from 2005-12-09 to 2008-02-14, with a fixed content width of 880px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -1664,12 +1702,12 @@
 <package version="1.0">
 <name>Serendipity v3.0 (carl_contest)</name>
 <template>carl_contest</template>
-<license>N/A (=GPL)</license>
-<summary></summary>
-<description></description>
+<license>(BSD license)</license>
+<summary>Old 2-sidebar theme from the early 2003+ years.</summary>
+<description>Standard Theme until 2007 for early Serendipity editions. Untouched for additional themes upgrade, since moved out of core relatively late.</description>
 <recommended></recommended>
 <responsive></responsive>
-<mobile></mobile>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Carl Galloway</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -1730,7 +1768,7 @@
 <package version="1.0">
 <name>Carl Green</name>
 <template>carl_green</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen 2-sidebar-right theme from 2005-12-01 to 2008-02-14, with a fixed content width of 880px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -1784,7 +1822,7 @@
 <package version="1.0">
 <name>Ceejay01</name>
 <template>ceejay01</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen concatenated sidebar to right theme from 2006-08-25 to 2009-08-17 as v.1.1, with a fixed content width of ~869 to 935px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -1850,7 +1888,7 @@
 <package version="1.0">
 <name>Chocolate Fudge</name>
 <template>chocolate_fudge</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-08-25 to 2008-02-14 as v.1.1</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -1912,7 +1950,7 @@
 <package version="1.0">
 <name>ChromZv2</name>
 <template>chromZv2</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, up to 2-sidebar to right theme from 2007-07-15 to 2009-08-17, with a fixed content width of 760px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -2002,7 +2040,7 @@
 <package version="1.0">
 <name>Codeschmiede</name>
 <template>codeschmiede</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen theme from 2005-11-08 to 2008-02-14, with a fixed content width of 780px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -2044,7 +2082,7 @@
 <package version="1.0">
 <name>Coffee Bar</name>
 <template>coffee_bar</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, concatenated sidebar to left theme from 2006-08-03 to 2008-02-14 as v1.1 with a fixed content size of 760px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Authors successor theme of Coffee Cup (competition).</description>
 <recommended></recommended>
@@ -2116,12 +2154,12 @@
 <package version="1.0">
 <name>Coffee Cup (competition)</name>
 <template>competition</template>
-<license>N/A (=GPL)</license>
-<summary></summary>
-<description></description>
+<license>(BSD license)</license>
+<summary>Old 2-sidebar theme from the early 2003+ years.</summary>
+<description>Untouched for additional themes upgrade, since moved out of core relatively late.</description>
 <recommended></recommended>
 <responsive></responsive>
-<mobile></mobile>
+<mobile>No</mobile>
 <maintainers><maintainer><name>David Cummins</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2168,7 +2206,7 @@
 <package version="1.0">
 <name>Connections</name>
 <template>connections</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old WP-port theme from 2005-12-10 to 2008-02-14, with a fixed content size of 760px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions, leaving the &quot;old&quot; index main table design.</description>
 <recommended></recommended>
@@ -2246,12 +2284,12 @@
 <package version="1.0">
 <name>Blue Streak (contest)</name>
 <template>contest</template>
-<license>N/A (=GPL)</license>
-<summary></summary>
-<description></description>
+<license>(BSD license)</license>
+<summary>Old 2-sidebar theme from the early 2003+ years.</summary>
+<description>Untouched for additional themes upgrade, since moved out of core relatively late.</description>
 <recommended></recommended>
 <responsive></responsive>
-<mobile></mobile>
+<mobile>No</mobile>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
@@ -2310,7 +2348,7 @@
 <package version="1.0">
 <name>CoSTa's Nature Theme</name>
 <template>costa-nature</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-05-02 to 2013-02-07 as v.0.6, with a fixed content size of 700px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -2394,7 +2432,7 @@
 <package version="1.0">
 <name>RTL-Languages</name>
 <template>default-rtl</template>
-<license>N/A (=GPL)</license>
+<license>(BSD license)</license>
 <summary>Language dependent Right-To-Left written RTL-Theme [still needs some love!] as v0.4</summary>
 <description>Simple example theme from 2006 in right-to-left oriented manner, depending on the old styled default (Serendipity 2.3) theme.</description>
 <recommended></recommended>
@@ -2448,7 +2486,7 @@
 <package version="1.0">
 <name>XML Engine (Dev)</name>
 <template>default-xml</template>
-<license>N/A (=GPL)</license>
+<license>(BSD license)</license>
 <summary>Raw XML output XML-Template theme for the Serendipity Styx Blog system</summary>
 <description>Simple theme from 2006, newly refurbished to work with Serendipity Styx Edition.
 This theme outputs raw XML on the frontside, to make the content readable by XML-Readers.
@@ -2458,10 +2496,10 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <recommended></recommended>
 <responsive></responsive>
 <mobile></mobile>
-<maintainers><maintainer><name>Garvin Hicking, Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
-  <requirements:s9yVersion>2.0.99</requirements:s9yVersion>
+  <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <date>2018-09-05</date>
   <filelist>
     <dir name="default-xml">
@@ -2498,7 +2536,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>XBox 360 (dreisechzig)</name>
 <template>dreisechzig</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, concatenated sidebar to right theme from 2005-05-21 to 2008-02-14, with a fixed content width of 745 to 824px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -2548,7 +2586,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Earphone</name>
 <template>earphone</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2005-05-21 to 2007-04-03, fully based on default template files.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -2586,7 +2624,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Elitist Latte</name>
 <template>elitist-latte</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-22 to 2007-04-03, fully based on default template files.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -2620,7 +2658,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Fifty50</name>
 <template>fifty50</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar to left theme from 2006-08-19 to 2008-02-14, with a fixed content width of 800 to 844px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -2682,7 +2720,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Freshy</name>
 <template>freshy</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2008-04-15 to 2008-11-13, with a fixed real content size of 999px width with 2 sidebars, 780px with 1 or no sidebar.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -2938,7 +2976,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Gila Two</name>
 <template>gila_two</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2005-05-29 to 2007-04-03, fully based on default template files.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -2972,7 +3010,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Glossy white</name>
 <template>glossy_white</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2005-12-13 to 2014-01-09, with a concatenated sidebar to the right and with a fixed content size of 770px. Structural child of leaf and (parent) sibling of blix theme.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -3058,7 +3096,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Green Mile</name>
 <template>greenmile</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-02-27 to 2013-10-26 as v1.1, with a fixed content size of 852px width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -3244,7 +3282,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Greenway</name>
 <template>greenway</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2007-07-27 to 2013-10-26, with a maximum content size of ~900px. Free Css Templates port.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -3400,7 +3438,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Hemingway</name>
 <template>hemingway</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old WP-port theme from 2006-08-27 to 2014-01-09, with a minimum content size of ~800px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -3524,7 +3562,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>HippoRatorium</name>
 <template>hipporatorium</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar to right theme from 2006-03-09 to 2008-02-14, with a fixed content width of 830px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -3572,7 +3610,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>i3Theme</name>
 <template>i3theme</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2009-04-01 to 2013-10-26 as v.1.6</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -3778,7 +3816,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Idea</name>
 <template>idea</template>
-<license>N/A (=GPL)</license>
+<license>(BSD license)</license>
 <summary>CSS complete theme only.</summary>
 <description>Simple example theme from 2004 using all the template files from the old default fallback (Serendipity 2.3) theme. Styled by CSS only.</description>
 <recommended></recommended>
@@ -3832,7 +3870,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Informatif</name>
 <template>informatif</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, sidebars-to-left theme from 2007-07-12 to 2009-08-17.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -3926,7 +3964,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>JazzCafe</name>
 <template>jazzcafe</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, concatenated sidebar to right theme from 2006-03-04 to 2008-08-17, with a fixed content width of 750px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -4032,7 +4070,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Joshua</name>
 <template>joshua</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen theme from 2005-06-14 to 2008-02-14, with a fixed content width of 780px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -4082,7 +4120,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Joshua-Nino</name>
 <template>joshua_nino</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen theme from 2006-01-15 to 2008-02-14 as v.1.1, with a fixed content width of 780px and a concatenated single sidebar.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -4132,7 +4170,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Joshua Tree</name>
 <template>joshua_tree</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen theme from 2005-12-31 to 2008-02-14, with a fixed content width of 800px and a concatenated single sidebar.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -4186,7 +4224,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Kamouflage</name>
 <template>kamouflage</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-04-08 to 2013-10-26 as v1.1, with a browsers content size of 90 percent.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Since being relatively friendly to change the &quot;martial-design&quot;, with 2019 revision chosen to accomplish a modern browsers grid/flex flexible system example.</description>
 <recommended></recommended>
@@ -4278,7 +4316,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Kubrick</name>
 <template>kubrick</template>
-<license>N/A (=GPL)</license>
+<license>(BSD license)</license>
 <summary>A Kubrick 1.2.6 port. Additional old theme from 2004-08-12 with a default size of ~760 pixel content width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -4360,7 +4398,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Ladybird</name>
 <template>ladybird</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen theme from 2006-01-29 to 2008-02-14 as v.1.0, with a fixed minimum content width of ~660px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -4460,7 +4498,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Ladybug</name>
 <template>ladybug</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen theme from 2005-12-13 to 2008-02-14, with a fixed minimum content width of ~640px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -4540,7 +4578,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Leaf</name>
 <template>leaf</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2005-09-01 to 2014-01-09 with a fixed content size of ~770px. Parent structure of glossy_white and blix themes.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -4656,7 +4694,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Mimbo</name>
 <template>mimbo</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old, magazine like theme from 2009-04-01(?) to 2013-10-26 with a fixed size of ~900 pixels content width.</summary>
 <description>Plugin dependency&amp;colon; event_entryproperties plugin.&lt;br&gt;Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -4758,7 +4796,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Mo3</name>
 <template>mo3</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old, magazine like theme from 200?-08-29 to 2014-01-09 with a fixed size of ~932 pixels content width.</summary>
 <description>Plugin dependency&amp;colon; Install event_freetag, event_entryproperties, plugin_staticpage before you install the theme.&lt;br&gt;Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -4920,7 +4958,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Modern World</name>
 <template>modern_world</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old small-screen theme from 2006-07-23 to 2008-02-14, with a fixed content width of 850px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -4976,7 +5014,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Morsel</name>
 <template>morsel</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old small-screen theme from 2005-03-18 to 2007-04-03, with a fixed content width of 900px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -5014,7 +5052,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>Mozilla Modern Tribute</name>
 <template>moz-modern</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar theme from 2004-03-02.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -5060,7 +5098,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <package version="1.0">
 <name>MT - Clean</name>
 <template>mt-clean</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.</summary>
 <description>This &quot;MT-Trendy&quot; child port (by date), basically an early days ~2003 MovableType &quot;Clean&quot; theme port, is styled by CSS only. Theme-wise it is a sister theme of MT-Georgiablue and MT-Plainjane.
 Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
@@ -5099,7 +5137,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>MT - GeorgiaBlue</name>
 <template>mt-georgiablue</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.</summary>
 <description>This &quot;MT-Trendy&quot; child port (by date), basically an early days ~2003 MovableType &quot;GeorgiaBlue&quot; theme port, is styled by CSS only. Theme-wise it is a sister theme of MT-Plainjane and MT-Clean.
 Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
@@ -5138,7 +5176,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>MT - GettysBurg</name>
 <template>mt-gettysburg</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.</summary>
 <description>This &quot;MT-Trendy&quot; child port (by date), basically an early days ~2003 MovableType &quot;GettysBurg&quot; theme port, is styled by CSS only. Theme-wise it is a sister theme of MT-Rusty.
 Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
@@ -5177,7 +5215,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>MT - Plainjane</name>
 <template>mt-plainjane</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.</summary>
 <description>This &quot;MT-Trendy&quot; child port (by date), basically an early days ~2003 MovableType &quot;Plainjane&quot; theme port, is styled by CSS only. Theme-wise it is a sister theme of MT-Georgiablue and MT-Clean.
 Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
@@ -5216,7 +5254,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>MT - Rusty</name>
 <template>mt-rusty</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional full-screen theme from 2004-06-29. Now 2019, and as an example, fully mobile first responsive.</summary>
 <description>This &quot;MT-Trendy&quot; child port (by date), basically an early days ~2003 MovableType &quot;Rusty&quot; theme port, is styled by CSS only. Theme-wise it is a sister theme of MT-GettysBurg.
 Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
@@ -5255,7 +5293,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>MT - Trendy</name>
 <template>mt-trendy</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional full-screen theme from 2004-02-16. Now 2019, and as an example, fully mobile first responsive.</summary>
 <description>This &quot;early days ~2003 MovableType theme port&quot; is styled by CSS only. Without any theme engine set, all template files are taken from default theme.
 Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
@@ -5298,7 +5336,7 @@ Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <package version="1.0">
 <name>MT3 - Chalkboard</name>
 <template>mt3-chalkboard</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional small-screen theme from 2004-06-31 with a fixed content width of 860px. Revision 2019 made it fully mobile first responsive.</summary>
 <description>This early days MovableType-3 theme port, is styled by CSS only. Theme-wise it is a sister theme of MT3-Independence, MT3-Squash, MT3-Gettysburg.
 Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
@@ -5337,7 +5375,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>MT3 - Gettysburg</name>
 <template>mt3-gettysburg</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional small-screen theme from 2004-06-31 with a fixed content width of 860px. Revision 2019 made it fully mobile first responsive.</summary>
 <description>This early days MovableType-3 theme port, is styled by CSS only. Theme-wise it is a sister theme of MT3-Independence, MT3-Squash, MT3-Chalkboard.
 Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
@@ -5376,7 +5414,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>MT3 - Independence</name>
 <template>mt3-independence</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional small-screen theme from 2004-06-31 with a fixed content width of 860px. Revision 2019 made it fully mobile first responsive.</summary>
 <description>This early days MovableType-3 theme port, is styled by CSS only. Theme-wise it is a sister theme of MT3-Chalkboard, MT3-Squash, MT3-Gettysburg.
 Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
@@ -5415,7 +5453,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>MT3 - Squash</name>
 <template>mt3-squash</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional small-screen theme from 2004-06-31 with a fixed content width of 860px. Revision 2019 made it fully mobile first responsive.</summary>
 <description>This early days MovableType-3 theme port, is styled by CSS only. Theme-wise it is a sister theme of MT3-Chalkboard, MT3-Independence, MT3-Gettysburg.
 Without any theme engine set, all template files are taken from default theme. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
@@ -5454,7 +5492,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Newfangled</name>
 <template>newfangled</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar theme from 2007-07-07 to 2009-08-27, with a fixed maximum content size of 960px width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -5530,7 +5568,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Newspaper Blog</name>
 <template>newspaper</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional full-screen, 2-sidebar styles only theme from 2003-06-26. Previously used an old method of render which got obsolete with Serendipity 2.0. Uses fallback cascade now.</summary>
 <description>Cleaned, fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -5564,7 +5602,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>One True Layout</name>
 <template>one_true_layout</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar colorset theme from 2009-08-27.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -5658,7 +5696,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Party Brown</name>
 <template>party-brown</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-08-20 to 2007-04-03, fully based on default template files.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -5692,7 +5730,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Perun Blue</name>
 <template>perun_blue</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old small-screen theme from 2005-01-15 to 2007-04-03 as v.1.0, with a fixed content width of 765px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -5742,7 +5780,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Peruns Vorlage</name>
 <template>perun_red</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old small-screen theme from 2005-01-12 to 2007-04-03, with a fixed content width of 760px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -5792,7 +5830,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Photo</name>
 <template>photo</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Simplified additional &lt;u&gt;engine&lt;/u&gt; theme from Aug 12, 2014, with no sidebars.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended>Yes</recommended>
@@ -5802,7 +5840,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-04-1 5</date>
+  <date>2019-04-15</date>
   <filelist>
     <dir name="photo">
       <file>config.inc.php</file>
@@ -5882,7 +5920,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Pink Lilies</name>
 <template>pink-lilies</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-03-06 to 2009-08-17 with a concatenated sidebar to the right and a fixed size of ~718px width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -5974,7 +6012,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Pixel</name>
 <template>pixel</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2010-11-30 to 2013-10-26 with a fixed size of ~960px width. Ported to s9y by YellowLed.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -6092,7 +6130,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Plain Vanilla</name>
 <template>plain-vanilla</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2005-04-12 to 2009-08-17 with a concatenated sidebar to the right and a fixed size of 750px content with.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -6166,7 +6204,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Plus9</name>
 <template>plus9</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2014-01-09</summary>
 <description>Basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -6356,7 +6394,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Powered</name>
 <template>powered</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old small-screen theme from 2006-03-09 to 2009-02-14, with a fixed content width of 760px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -6418,7 +6456,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Reflection</name>
 <template>reflection</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-08-28 to 2008-02-14 as v1.1. Design by snop, photo by plasticboy.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -6512,7 +6550,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>RESY</name>
 <template>resy</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional mid-screen, concatenated sidebar-to-right theme from 2012-04-21 to 2012-04-25.</summary>
 <description>Marginally fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -6578,7 +6616,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>RoundedCorner</name>
 <template>roundedcorner</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-08-13 to 2008-11-13.</summary>
 <description>Fixed and upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -6688,7 +6726,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>RubyX</name>
 <template>rubyx</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old small-screen theme of 770px in width, with content, right-sidebar and navigation from 2008-02-14.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -6800,47 +6838,9 @@ Without any theme engine set, all template files are taken from default theme. F
 </release>
 </package>
 <package version="1.0">
-<name>BlueGrey</name>
-<template>s9y_bluegrey</template>
-<license>N/A (=GPL)</license>
-<summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-12-15 to 2007-04-03, fully based on default template files.</summary>
-<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
-<recommended></recommended>
-<responsive>Yes</responsive>
-<mobile>Yes</mobile>
-<maintainers><maintainer><name>Kaustubh Srikanth</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>1.0</version>
-  <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-04-05</date>
-  <filelist>
-    <dir name="s9y_bluegrey">
-      <dir name="img">
-        <file>quotes.gif</file>
-      </dir>
-      <file>info.txt</file>
-      <file>preview.png</file>
-      <file>preview.webp</file>
-      <file>preview_fullsize.jpg</file>
-      <file>preview_fullsize.webp</file>
-      <file>style.css</file>
-    </dir>
-  </filelist>
-  <serendipityFilelist>
-    <file>s9y_bluegrey/img/quotes.gif</file>
-    <file>s9y_bluegrey/info.txt</file>
-    <file>s9y_bluegrey/preview.png</file>
-    <file>s9y_bluegrey/preview.webp</file>
-    <file>s9y_bluegrey/preview_fullsize.jpg</file>
-    <file>s9y_bluegrey/preview_fullsize.webp</file>
-    <file>s9y_bluegrey/style.css</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>S9y Orange</name>
 <template>s9y_orange</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar theme from 2004-12-15 to 2007-04-03, with a fixed content size of 750px and a disabled banner.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -6880,7 +6880,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>S9y Thin</name>
 <template>s9y_thin</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar theme from 2004-12-15 to 2007-04-03, with a fixed content size of 750px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -6916,7 +6916,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Safety Yellow</name>
 <template>safety-yellow</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-22 to 2007-04-03, fully based on default template files.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -6950,7 +6950,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Sagittarius-A</name>
 <template>sagittarius</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old &quot;full&quot;-screen newspaper/magazine Blueprint Theme port with yaml from 2009-04-01 to 2014-01-09, with a fixed maximum content width of 1440px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Partial inner responsive until minimum width of 768px!</description>
 <recommended></recommended>
@@ -7044,7 +7044,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Simpla</name>
 <template>simpla</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2010-01-19 with a default, but configurable size of ~760 pixel content width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -7120,7 +7120,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Slate Grey</name>
 <template>slate-grey</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-23 to 2007-04-03, fully based on default template files.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -7154,7 +7154,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Soccer2006</name>
 <template>soccer2006</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, concatenated sidebar-to-left theme from 2006-08-24 to 2009-08-17 as v1.1, with a fixed content size of 780px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -7214,7 +7214,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Softened Cells</name>
 <template>softenedcells</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-08-25 to 2009-08-27 as v.1.1 with a concatenated sidebar to the right and a size of ~640 pixel content width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -7308,7 +7308,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>SPLAT!</name>
 <template>splat</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar theme from 2007-01-24 to 2013-10-26 as v1.0.1, with a fixed content size of 1024px.</summary>
 <description>Upgraded to v.1.1. Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -7408,7 +7408,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Square</name>
 <template>square</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-10-02 to 2009-02-14 (v1.0.1) with a fixed size of ~900 pixel content width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -7476,7 +7476,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Styled Bar (colorsets)</name>
 <template>styled-bar</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar colorset theme from 2005-10-07 to 2008-02-14, with a fixed content size of 860px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Mobile friendly!</description>
 <recommended></recommended>
@@ -7682,7 +7682,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Blogger-Tabacco</name>
 <template>tabacco</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-10-17 to 2007-04-03 as v0.1, fully based on default template files.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Based on a blogger template&amp;colon;
 &quot;//blogger-templates.blogspot.com/2004_03_14_blogger-templates_archive.html#107996288536718375&quot;</description>
@@ -7727,7 +7727,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Terrafirma</name>
 <template>terrafirma</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2007-06-20 to 2009-08-16 with a fixed size of ~748 pixel content width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -7835,7 +7835,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Tool-Box</name>
 <template>toolbox</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old mid-screen, 2-sidebar theme from 2005-08-18 to 2007-04-03, with a fixed content size of 760px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -7903,7 +7903,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Translucency</name>
 <template>translucency</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2007-06-10 to 2009-08-14 with a fixed size of ~608 pixel content width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -8007,9 +8007,9 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Truth</name>
 <template>truth</template>
-<license>N/A (=GPL)</license>
-<summary>THEME_INFO_SUMMARY (text in lang_info_en.inc.php pattern)</summary>
-<description>THEME_INFO_DESC (and LANG_CHARSET depending language files)</description>
+<license>(N/A GPL)</license>
+<summary>Additional old theme from 2005-11-07 to 2008-02-14.</summary>
+<description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Responsive, but not fully mobile friendly!</description>
 <recommended></recommended>
 <responsive>Yes</responsive>
 <mobile>Yes</mobile>
@@ -8151,7 +8151,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>WP-clone</name>
 <template>wp-clone</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old full-screen, 2-sidebar and styles only theme from 2004-06-24 to 2007-04-03, fully based on default template files.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions.</description>
 <recommended></recommended>
@@ -8185,7 +8185,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Xkur</name>
 <template>xkur</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old small-screen theme from 2006-01-26 to 2013-10-26, with a fixed content width of 1024px.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. Based on Carl Galloway`s Serendipity Theme 3.0.</description>
 <recommended></recommended>
@@ -8289,7 +8289,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>YoungButStrong port</name>
 <template>youngbutstrong</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2007-07-17 to 2008-02-14 with a concatenated sidebar to the right and with a size of ~850 pixel mainframe width.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. If this sponsored links usage note is still valid after all these years is at least questionable. Perhaps you could simply make your own engine template without.., without violating..</description>
 <recommended></recommended>
@@ -8363,7 +8363,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <package version="1.0">
 <name>Zenlike (contains sponsor links)</name>
 <template>zenlike</template>
-<license>N/A (=GPL)</license>
+<license>(N/A GPL)</license>
 <summary>Additional old theme from 2007-10-09 to 2009-08-26 with a concatenated sidebar to the right. Ported to Serendipity by YellowLed.</summary>
 <description>Fixed and basically upgraded for Serendipity Styx 2.1+ revisions. For removing the sponsored links you might still need to ask.</description>
 <recommended></recommended>
