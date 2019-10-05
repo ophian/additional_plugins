@@ -8675,9 +8675,9 @@
 <description>Nutze einen beliebigen SMTP Server zum Versenden deiner Mails</description>
 <maintainers><maintainer><name>kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.10</version>
+  <version>1.20</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-09-23</date>
+  <date>2019-10-05</date>
   <filelist>
     <dir name="serendipity_event_smtpmail">
       <file>ChangeLog</file>
@@ -8690,6 +8690,7 @@
         <file>composer.json</file>
         <file>get_oauth_token.php</file>
         <dir name="language">
+          <file>phpmailer.lang-af.php</file>
           <file>phpmailer.lang-am.php</file>
           <file>phpmailer.lang-ar.php</file>
           <file>phpmailer.lang-az.php</file>
@@ -8770,6 +8771,7 @@
     <file>serendipity_event_smtpmail/PHPMailer/COMMITMENT</file>
     <file>serendipity_event_smtpmail/PHPMailer/composer.json</file>
     <file>serendipity_event_smtpmail/PHPMailer/get_oauth_token.php</file>
+    <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-af.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-am.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-ar.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-az.php</file>
