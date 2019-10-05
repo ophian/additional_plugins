@@ -20,11 +20,11 @@ class serendipity_event_smtpmail extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SMTPMAIL_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'kleinerChemiker, Ian Styx');
-        $propbag->add('version',       '1.10');
+        $propbag->add('version',       '1.20');
         $propbag->add('license',       'GPL');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
-            'php'         => '5.5.0'
+            'php'         => '5.6.0'
         ));
         $propbag->add('event_hooks',    array(
             'backend_sendmail' => true
