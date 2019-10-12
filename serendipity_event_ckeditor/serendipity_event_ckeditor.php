@@ -69,7 +69,7 @@ class serendipity_event_ckeditor extends serendipity_event
                                        'CKEditor-Plugin: manually added for version "ajax", "autocomplete", "autogrow", "autolink", "clipboard", "codesnippet", "dialog", "dialogui", "embed", "embedbase", "embedsemantic", "emoji", "fakeobjects", "lineutils", "notification", "notificationaggregator", "placeholder", "textmatch", "textwatcher", "undo", "widget", "widgetselection" and "xml" plugins, 2019-09-27)',
                                        'CKEditor-Plugin: procurator, v. 1.6 (Serendipity placeholder Plugin, 2016-01-01)',
                                        'CKEditor-Plugin: cheatsheet, v. 1.2 (Serendipity CKE-Cheatsheet Plugin, 2016-08-15)',
-                                       'CKEditor-S9yCustomConfig, cke_config.js, v. 2.17, 2019-08-06',
+                                       'CKEditor-S9yCustomConfig, cke_config.js, v. 2.18, 2019-10-12',
                                        'CKEditor-S9yCustomPlugins, cke_plugin.js, v. 1.16, 2018-07-13',
                                        'CKEditor-S9yAddOn, fresh highlight.pack.js file v. 9.12.0 and github styles in highlight.css, standard + go + rust (https://highlightjs.org/) 2017-08-18',
                                        'Prettify: JS & CSS files, v. "current", (http://code.google.com/p/google-code-prettify/, 2013-03-04)');
@@ -188,7 +188,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.13.0.0'); // is CKEDITOR Series 4.13.0 - and appended plugin revision .0
+        $propbag->add('version',       '4.13.0.1'); // is CKEDITOR Series 4.13.0 - and appended plugin revision .1
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
@@ -421,7 +421,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.13.0.0', '4.12.1.2'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.13.0.1', '4.13.0.0'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -435,7 +435,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.13.0.0', '4.12.1.2'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.13.0.1', '4.13.0.0'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
