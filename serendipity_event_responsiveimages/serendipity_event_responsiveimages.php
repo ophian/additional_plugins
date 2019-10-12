@@ -157,7 +157,7 @@ class serendipity_event_responsiveimages extends serendipity_event
 
     /**
      * Given an entry text, replace each image linked to the ML with an img element containing
-     * an srcset.
+     * a srcset.
      */
     function _responsive_markup($text)
     {
@@ -174,7 +174,7 @@ class serendipity_event_responsiveimages extends serendipity_event
 
             $callback = function($matches) use ($srcset) {
                 if (false === strpos($matches[1], 'srcset')) {
-                    // the image has not yet an srcset, at least at the position where we insert it normally
+                    // the image has not yet a srcset, at least at the position where we insert it normally
                     return "{$matches[1]} $srcset src=";
                 } else {
                     return "{$matches[1]} src=";
@@ -206,7 +206,7 @@ class serendipity_event_responsiveimages extends serendipity_event
     }
 
     /**
-     * Given an id for a image in the ML, create an srcset using smaller thumbnail images and their width.
+     * Given an id for a image in the ML, create a srcset using smaller thumbnail images and their width.
      * Don't worry over thumbnail creation here, that's done on image upload and thumbnail creation.
      */
     function createSrcset($id, $maxWidth = 20000)
