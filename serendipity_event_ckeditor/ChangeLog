@@ -1,6 +1,6 @@
 4.13.0.1:
 ---------
-    * Add CKEplus config items for <dl> + styles/<dd> Description List Elements
+    * Add CKEplus config items for <dl> styles and classes / <dd> Description List Elements
       to the ACF extraAllowedContent string handler to support this for display and saving!
 
 4.13.0.0:
