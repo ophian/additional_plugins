@@ -1,6 +1,11 @@
+4.13.0.2:
+---------
+    * Fix (inner) wysiwyg editor styles to clear <hr> tags and serendipity_images_block selectors
+      for previous floats.
+
 4.13.0.1:
 ---------
-    * Add CKEplus config items for <dl> styles and classes / <dd> Description List Elements
+    * Add CKEplus config items for <dl> styles and classes / <dt> / <dd> Description List Elements
       to the ACF extraAllowedContent string handler to support this for display and saving!
 
 4.13.0.0:
@@ -498,7 +503,7 @@
     * changed lang files revision message to be automatically set
     * Fixed bug not showing media library button, if not using other hooked-in plugins (thanks to ICE)
     * Fixed bug not proceeding image button path correctly, with non_rewrite_mode sites (thanks to ICE)
-    * Enhanced old (multiple) zip file removement
+    * Enhanced old (multiple) zip file removing
 
 1.3.0:
 -----
