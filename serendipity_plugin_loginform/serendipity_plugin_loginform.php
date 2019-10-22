@@ -1,30 +1,24 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_plugin_loginform extends serendipity_plugin {
+class serendipity_plugin_loginform extends serendipity_plugin
+{
     function introspect(&$propbag)
     {
         $propbag->add('name',          PLUGIN_LOGINFORM_NAME);
         $propbag->add('description',   PLUGIN_LOGINFORM_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Neil Dudman');
-        $propbag->add('version',       '1.09');
+        $propbag->add('version',       '1.10');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.6',
+            'php'         => '5.6.0'
         ));
         $propbag->add('configuration', array('title', 'login_url', 'logout_url'));
         $propbag->add('groups', array('FRONTEND_FEATURES'));
@@ -44,25 +38,29 @@ class serendipity_plugin_loginform extends serendipity_plugin {
                 $propbag->add('description', TITLE);
                 $propbag->add('default',     '');
                 break;
+
             case 'login_url':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        LOGINURL_NAME);
                 $propbag->add('description', LOGINURL_DESC);
                 $propbag->add('default',     '');
                 break;
-    	    case 'logout_url':
+
+            case 'logout_url':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        LOGOUTURL_NAME);
                 $propbag->add('description', LOGOUTURL_DESC);
                 $propbag->add('default',     '');
                 break;
+
             default:
-                    return false;
+                return false;
         }
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $title = $this->get_config('title', $title);
@@ -72,7 +70,7 @@ class serendipity_plugin_loginform extends serendipity_plugin {
         if ($login_url == "") {
             $login_url = serendipity_currentURL();
         }
-        
+
         if ($logout_url == "") {
             $logout_url = serendipity_currentURL();
         }
@@ -115,16 +113,16 @@ class serendipity_plugin_loginform extends serendipity_plugin {
         // Logout is performed in bundled event plugin!
 
         echo '<form id="loginform" action="' . $login_url . '" method="post">';
-        echo '<fieldset id="loginform_userdata" style="border: none;">';
-        echo '<label for="username">' . USERNAME . '</label>';
-        echo '<input id="username" type="text" name="serendipity[user]" value="" />';
-        echo '<label for="s9ypassw">' . PASSWORD . '</label>';
-        echo '<input id="s9ypassw" type="password" name="serendipity[pass]" value="" />';
-        echo '</fieldset>';
-        echo '<fieldset id="loginform_login" style="border: none;">';
-        echo '<input id="autologin" type="checkbox" name="serendipity[auto]" /><label for="autologin"> ' . AUTOMATIC_LOGIN . '</label>';
-        echo '<input type="submit" id="loginform_submit" name="serendipity[action]" value="' . LOGIN . ' &gt;" />';
-        echo '</fieldset>';
+        echo '  <fieldset id="loginform_userdata" style="border: none;">';
+        echo '      <label for="username">' . USERNAME . '</label>';
+        echo '      <input id="username" type="text" name="serendipity[user]" value="" />';
+        echo '      <label for="s9ypassw">' . PASSWORD . '</label>';
+        echo '      <input id="s9ypassw" type="password" name="serendipity[pass]" value="" />';
+        echo '  </fieldset>';
+        echo '  <fieldset id="loginform_login" style="border: none;">';
+        echo '      <input id="autologin" type="checkbox" name="serendipity[auto]" /><label for="autologin"> ' . AUTOMATIC_LOGIN . '</label>';
+        echo '      <input type="submit" id="loginform_submit" name="serendipity[action]" value="' . LOGIN . ' &gt;" />';
+        echo '  </fieldset>';
         echo '</form>';
 
         if (class_exists('serendipity_event_forgotpassword')) {
@@ -133,6 +131,7 @@ class serendipity_plugin_loginform extends serendipity_plugin {
 
         return true;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
