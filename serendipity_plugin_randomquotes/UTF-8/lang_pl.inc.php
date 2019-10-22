@@ -1,9 +1,9 @@
-<?php # 
+<?php
 
 /**
- *  @version 
- *  @author Kostas CoSTa Brzezinski <costa@kofeina.net>
- *  EN-Revision: Revision of lang_en.inc.php
+ * @version
+ * @author Kostas CoSTa Brzezinski <costa@kofeina.net>
+ * EN-Revision: Revision of lang_en.inc.php
  */
 
 @define('PLUGIN_RNDQUOTES_TITLE', 'Cytaty');
@@ -16,3 +16,4 @@
 @define('PLUGIN_RNDQUOTES_QUOTES_BLAHBLAH', 'Jeden cytat na linię (zakończoną znakiem Enter). Format: Cytat|Autor|URL. URL jest opcjonalny, jeśli zostawisz puste miejsce po ostatnim "|" żaden link nie będzie wywoływany. Jeśli w ogóle nie wstawisz ostatniego "|", autor będzie linkowany do engine wyszukującego.');
 @define('PLUGIN_RNDQUOTES_NEWWINDOW', 'Otwieraj linki w nowym oknie');
 @define('PLUGIN_RNDQUOTES_NEWWINDOW_BLAHBLAH', 'Czy linki powinny być otwierane w nowym oknie? (wymaga obsługi javascript)');
+

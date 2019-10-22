@@ -1,56 +1,52 @@
 <?php
 
-
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
+class serendipity_plugin_randomquotes extends serendipity_plugin
+{
 
-class serendipity_plugin_randomquotes extends serendipity_plugin {
-
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $propbag->add('name',           PLUGIN_RNDQUOTES_TITLE);
         $propbag->add('description',    PLUGIN_RNDQUOTES_BLAHBLAH);
         $propbag->add('configuration',  array('title', 'searchenginelink', 'formatstring', 'quotes', 'newwindow', 'numquotes'));
         $propbag->add('author',         'Florian Solcher');
         $propbag->add('stackable',      true);
-        $propbag->add('version',        '1.05.1');
+        $propbag->add('version',        '1.06');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.6',
+            'php'         => '5.6.0'
         ));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'title':
-                $propbag->add('type', 'string');
-                $propbag->add('name', TITLE);
-                $propbag->add('description', TITLE_FOR_NUGGET);
-                $propbag->add('default', PLUGIN_RNDQUOTES_TITLE);
+                $propbag->add('type',           'string');
+                $propbag->add('name',           TITLE);
+                $propbag->add('description',    TITLE_FOR_NUGGET);
+                $propbag->add('default',        PLUGIN_RNDQUOTES_TITLE);
                 break;
 
             case 'searchenginelink':
                 $propbag->add('type',           'string');
                 $propbag->add('name',           PLUGIN_RNDQUOTES_SEARCHENGINELINK);
                 $propbag->add('description',    PLUGIN_RNDQUOTES_SEARCHENGINELINK_BLAHBLAH);
-                $propbag->add('default',        'http://www.google.com/search?hl=en&amp;q=%QUERY%');
+                $propbag->add('default',        'https://www.google.com/search?hl=en&amp;q=%QUERY%');
                 break;
 
             case 'newwindow':
                 $propbag->add('type',           'boolean');
                 $propbag->add('name',           PLUGIN_RNDQUOTES_NEWWINDOW);
                 $propbag->add('description',    PLUGIN_RNDQUOTES_NEWWINDOW_BLAHBLAH);
-                $propbag->add('default',        false);
+                $propbag->add('default',        'false');
                 break;
 
             case 'formatstring':
@@ -65,7 +61,7 @@ class serendipity_plugin_randomquotes extends serendipity_plugin {
                 $propbag->add('name',           PLUGIN_RNDQUOTES_NUMQUOTES);
                 $propbag->add('description',    PLUGIN_RNDQUOTES_NUMQUOTES_BLAHBLAH);
                 $propbag->add('default',        '1');
-		break;
+                break;
 
             case 'quotes':
                 $propbag->add('type',           'text');
@@ -87,14 +83,15 @@ class serendipity_plugin_randomquotes extends serendipity_plugin {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $title          = $this->get_config('title');
         $url            = $this->get_config('searchenginelink');
         $formatstring   = $this->get_config('formatstring');
         $quotes         = $this->get_config('quotes');
-        $newwindow      = $this->get_config('newwindow');
+        $newwindow      = serendipity_db_bool($this->get_config('newwindow', 'false'));
         $numquotes      = (int)$this->get_config('numquotes');
         $quotes         = explode("\n", $quotes);
         $i              = 0;
@@ -140,4 +137,5 @@ class serendipity_plugin_randomquotes extends serendipity_plugin {
             echo str_replace(array('%QUOTE%', '%AUTHOR%'), array($item['quote'], $item['author']), $formatstring);
         }
     }
+
 }
