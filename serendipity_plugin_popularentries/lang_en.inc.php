@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -23,3 +23,4 @@
 @define('PLUGIN_POPULARENTRIES_SORTBY_EXITS', 'top-exits [requires Track Exits plugin]');
 @define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER', 'Filtered commentors');
 @define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER_DESC', 'Comma-separated list (no blanks!) of commentor names that will be filtered when sorting entries by commentors.');
+

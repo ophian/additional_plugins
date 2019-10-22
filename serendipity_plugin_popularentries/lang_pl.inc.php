@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Kostas CoSTa Brzezinski (costa@kofeina.net)
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -21,4 +21,3 @@
 @define('PLUGIN_POPULARENTRIES_SORTBY_KARMAVOTES', 'karmie [wymaga wtyczki Karma]');
 @define('PLUGIN_POPULARENTRIES_SORTBY_EXITS', 'wyj¶ciach (top-exits) [wymaga wtyczki Track Exits]');
 
-?>

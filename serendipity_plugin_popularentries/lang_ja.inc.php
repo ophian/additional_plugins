@@ -1,10 +1,10 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.3
- */ 
+ */
 
 @define('PLUGIN_POPULARENTRIES_TITLE', '人気のエントリ');
 @define('PLUGIN_POPULARENTRIES_BLAHBLAH', '多くコメントされたエントリによって計算された最も人気のあるエントリのコメントの題名と数を表示します。');
@@ -19,4 +19,3 @@
 @define('PLUGIN_POPULARENTRIES_SORTBY_KARMAVOTES', 'カルマ [カルマプラグインが必要です]');
 @define('PLUGIN_POPULARENTRIES_SORTBY_EXITS', 'トップ退出 [退出追跡プラグインが必要です]');
 
-?>

@@ -22,3 +22,4 @@
 @define('PLUGIN_POPULARENTRIES_SORTBY_EXITS', 'poètu odkazù [vyžaduje nainstalovaný plugin "Sledování odkazù (Track Exits)"]');
 @define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER', 'Filtrování komentujících osob');
 @define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER_DESC', 'Èárkami oddìlený seznam (bez mezer) jmen koemntujících osob, které budou odfiltrovány pøi øazení podle poètu komentujících osob.');
+

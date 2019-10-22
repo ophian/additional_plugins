@@ -1,21 +1,17 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_plugin_POPULARENTRIES extends serendipity_plugin {
+class serendipity_plugin_POPULARENTRIES extends serendipity_plugin
+{
     var $title = PLUGIN_POPULARENTRIES_TITLE;
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $this->title = $this->get_config('title', $this->title);
 
         $propbag->add('name',          PLUGIN_POPULARENTRIES_TITLE);
@@ -23,18 +19,19 @@ class serendipity_plugin_POPULARENTRIES extends serendipity_plugin {
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Kaustubh Srikanth');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.6',
+            'php'         => '5.6.0'
         ));
-        $propbag->add('version',       '1.10.1');
+        $propbag->add('version',       '1.11');
         $propbag->add('configuration', array('title', 'sortby', 'number', 'number_from', 'category', 'commentors_hide'));
         $propbag->add('groups', array('STATISTICS'));
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
-        
+
         switch($name) {
             case 'title':
                 $propbag->add('type',        'string');
@@ -44,44 +41,44 @@ class serendipity_plugin_POPULARENTRIES extends serendipity_plugin {
                 break;
 
             case 'number':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_POPULARENTRIES_NUMBER);
+                $propbag->add('type',       'string');
+                $propbag->add('name',        PLUGIN_POPULARENTRIES_NUMBER);
                 $propbag->add('description', PLUGIN_POPULARENTRIES_NUMBER_BLAHBLAH);
-                $propbag->add('default', 10);
+                $propbag->add('default',     10);
                 break;
 
             case 'number_from':
-                $propbag->add('type', 'radio');
-                $propbag->add('name', PLUGIN_POPULARENTRIES_NUMBER_FROM);
+                $propbag->add('type',       'radio');
+                $propbag->add('name',        PLUGIN_POPULARENTRIES_NUMBER_FROM);
                 $propbag->add('description', PLUGIN_POPULARENTRIES_NUMBER_FROM_DESC);
                 $propbag->add('radio',  array(
                     'value' => array('all', 'skip'),
                     'desc'  => array(PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_ALL, PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_POPULAR)
                     ));
-                $propbag->add('default', 'all');
+                $propbag->add('default',    'all');
                 break;
 
             case 'sortby':
-                $propbag->add('type', 'radio');
-                $propbag->add('name', PLUGIN_POPULARENTRIES_SORTBY);
+                $propbag->add('type',       'radio');
+                $propbag->add('name',        PLUGIN_POPULARENTRIES_SORTBY);
                 $propbag->add('description', '');
                 $propbag->add('radio_per_row', '1');
                 $propbag->add('radio',  array(
                     'value' => array('comments', 'commentors', 'visits', 'lowvisits', 'exits', 'karma'),
                     'desc'  => array(PLUGIN_POPULARENTRIES_SORTBY_COMMENTS, PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS, PLUGIN_POPULARENTRIES_SORTBY_VISITS,PLUGIN_POPULARENTRIES_SORTBY_LOWVISITS, PLUGIN_POPULARENTRIES_SORTBY_EXITS, PLUGIN_POPULARENTRIES_SORTBY_KARMAVOTES)
                     ));
-                $propbag->add('default', 'comments');
+                $propbag->add('default',    'comments');
                 break;
 
             case 'commentors_hide':
-                $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER);
+                $propbag->add('type',       'string');
+                $propbag->add('name',        PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER);
                 $propbag->add('description', PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER_DESC);
-                $propbag->add('default', $serendipity['realname']);
+                $propbag->add('default',    $serendipity['realname']);
                 break;
 
             case 'category':
-                $cats    = serendipity_fetchCategories($serendipity['authorid']);
+                $cats = serendipity_fetchCategories($serendipity['authorid']);
                 if (!is_array($cats)) {
                     return false;
                 }
@@ -116,7 +113,8 @@ class serendipity_plugin_POPULARENTRIES extends serendipity_plugin {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $number         = $this->get_config('number');
@@ -226,7 +224,7 @@ class serendipity_plugin_POPULARENTRIES extends serendipity_plugin {
                                       ON k.entryid = e.id
                                    WHERE e.isdraft = 'false' AND e.timestamp <= " . time() . "
                                          $sql_where
-                                GROUP BY e.id, e.title, e.comments, e.timestamp, k.visits         
+                                GROUP BY e.id, e.title, e.comments, e.timestamp, k.visits
                                 ORDER BY k.visits ASC
                     $sql_number";
                 break;
@@ -248,7 +246,7 @@ class serendipity_plugin_POPULARENTRIES extends serendipity_plugin {
                                     $sql_number";
                 break;
         }
-        
+
         $entries = serendipity_db_query($entries_query);
 
         $hidden = explode(',', trim($this->get_config('commentors_hide')));
@@ -272,7 +270,7 @@ class serendipity_plugin_POPULARENTRIES extends serendipity_plugin {
                                    true,
                                    array('timestamp' => $entry['timestamp'])
                                 );
-    
+
                     echo '<li><a href="' . $entryLink . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['title']) : htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET)) . '">' . $entry['title'] . '</a>';
                     echo ' <span class="serendipitySideBarDate">(' . (!empty($entry['points']) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['points']) : htmlspecialchars($entry['points'], ENT_COMPAT, LANG_CHARSET)) : 0) . ')</span></li>';
                 }
@@ -281,4 +279,5 @@ class serendipity_plugin_POPULARENTRIES extends serendipity_plugin {
 
         echo '</ul>';
     }
+
 }
