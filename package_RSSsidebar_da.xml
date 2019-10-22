@@ -298,8 +298,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_loginform</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Neil Dudman</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_loginform&lt;br /&gt;Authors login&lt;/b&gt;&lt;br /&gt;Show a login form for authors&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_loginform&lt;br /&gt;Authors login&lt;/b&gt;&lt;br /&gt;Show a login form for authors&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Tue, 22 Oct 2019 14:20:49 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_loginform</guid>
 </item>
 <item>
@@ -352,8 +352,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_popularentries</link>
 <category>Sidebar Plugins</category>
 <author>Kaustubh Srikanth</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_popularentries&lt;br /&gt;Popular Entries&lt;/b&gt;&lt;br /&gt;Shows the titles and number of comments of the most popular entries calculated according to the entries most commented on.&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_popularentries&lt;br /&gt;Popular Entries&lt;/b&gt;&lt;br /&gt;Shows the titles and number of comments of the most popular entries calculated according to the entries most commented on.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Tue, 22 Oct 2019 14:19:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_popularentries</guid>
 </item>
 <item>
@@ -370,8 +370,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_randomquotes</link>
 <category>Sidebar Plugins</category>
 <author>Florian Solcher</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_randomquotes&lt;br /&gt;Random Quotes&lt;/b&gt;&lt;br /&gt;Shows a block with a random quotation&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_randomquotes&lt;br /&gt;Random Quotes&lt;/b&gt;&lt;br /&gt;Shows a block with a random quotation&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Tue, 22 Oct 2019 14:16:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_randomquotes</guid>
 </item>
 <item>

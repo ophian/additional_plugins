@@ -294,8 +294,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_loginform</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Neil Dudman</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_loginform&lt;br /&gt;Přihlašovací formulář&lt;/b&gt;&lt;br /&gt;Zobrazuje postranní blok s přihlašovacím formulářem&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_loginform&lt;br /&gt;Přihlašovací formulář&lt;/b&gt;&lt;br /&gt;Zobrazuje postranní blok s přihlašovacím formulářem&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Tue, 22 Oct 2019 14:20:49 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_loginform</guid>
 </item>
 <item>
@@ -348,8 +348,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_popularentries</link>
 <category>Sidebar Plugins</category>
 <author>Kaustubh Srikanth</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_popularentries&lt;br /&gt;Oblíbené příspěvky&lt;/b&gt;&lt;br /&gt;Zobrazuje nadpisy a počet komentářů nejoblíbenějších příspěvků. Oblíbenost je počítána na základě množství komentářů.&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_popularentries&lt;br /&gt;Oblíbené příspěvky&lt;/b&gt;&lt;br /&gt;Zobrazuje nadpisy a počet komentářů nejoblíbenějších příspěvků. Oblíbenost je počítána na základě množství komentářů.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Tue, 22 Oct 2019 14:19:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_popularentries</guid>
 </item>
 <item>
@@ -366,8 +366,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_randomquotes</link>
 <category>Sidebar Plugins</category>
 <author>Florian Solcher</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_randomquotes&lt;br /&gt;Náhodný citát&lt;/b&gt;&lt;br /&gt;Zobrazuje blok s náhodně vybraným citátem&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_randomquotes&lt;br /&gt;Náhodný citát&lt;/b&gt;&lt;br /&gt;Zobrazuje blok s náhodně vybraným citátem&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Tue, 22 Oct 2019 14:16:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_randomquotes</guid>
 </item>
 <item>
