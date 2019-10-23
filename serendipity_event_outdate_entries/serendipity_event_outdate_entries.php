@@ -4,18 +4,14 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_outdate_entries extends serendipity_event {
+
     var $title = PLUGIN_EVENT_OUTDATE;
-    function introspect(&$propbag) {
+
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name', PLUGIN_EVENT_OUTDATE);
@@ -24,12 +20,12 @@ class serendipity_event_outdate_entries extends serendipity_event {
         $propbag->add('configuration', array('timeout', 'timeout_sticky', 'timeout_custom'));
         $propbag->add('author', 'Garvin Hicking');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.6',
+            'php'         => '5.6.0'
         ));
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
-        $propbag->add('version', '1.6');
+        $propbag->add('version', '1.7');
         $propbag->add('stackable', false);
         $this->dependencies = array('serendipity_event_entryproperties' => 'keep');
     }
@@ -64,11 +60,13 @@ class serendipity_event_outdate_entries extends serendipity_event {
         return true;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = PLUGIN_EVENT_OUTDATE;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -107,7 +105,7 @@ class serendipity_event_outdate_entries extends serendipity_event {
                                     AS ep
                                     ON ep.entryid = e.id
                                  WHERE e.isdraft = 'false'
-                                   AND ep.property = 'ep_" . $timeout_custom . "' 
+                                   AND ep.property = 'ep_" . $timeout_custom . "'
                                    AND ep.value != ''
                                    AND UNIX_TIMESTAMP(ep.value) < " . time();
 
@@ -138,16 +136,17 @@ class serendipity_event_outdate_entries extends serendipity_event {
                             }
                         }
                     }
-                    return true;
                     break;
 
                 default:
-                    return false;
-                    break;
+                  return false;
             }
+            return true;
         } else {
             return false;
         }
     }
+
 }
+
 /* vim: set sts=4 ts=4 expandtab : */

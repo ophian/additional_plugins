@@ -1,9 +1,9 @@
-<?php # 
+<?php
 
 /**
- *  @version 
- *  @author Translator Name <yourmail@example.com>
- *  EN-Revision: Revision of lang_en.inc.php
+ * @version
+ * @author Translator Name <yourmail@example.com>
+ * EN-Revision: Revision of lang_en.inc.php
  */
 
 @define('PLUGIN_EVENT_OUTDATE', 'Hide/delete entries for non-registered users after a specific timespan');
@@ -15,3 +15,4 @@
 
 @define('PLUGIN_EVENT_OUTDATE_TIMEOUT_EXPIRY', 'Custom Field expiry date');
 @define('PLUGIN_EVENT_OUTDATE_TIMEOUT_EXPIRY_FIELD', 'If you are using the plugin "Extended properties for entries" you can define a custom field where you enter the date when an entry shall expire. That date should be formatted using a timestamp like YYYY-MM-DD. This plugin will look for this expiry date and will set the entry to DRAFT so that it is hidden from the frontend. Enter the fieldname of the custom field (like "ExpiryDate") here.');
+
