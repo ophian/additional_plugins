@@ -1,8 +1,8 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
- *  @translated 2009/05/07
+ * @author Vladimír Ajgl <vlada@ajgl.cz>
+ * @translated 2009/05/07
  */
 
 @define('PLUGIN_SIDEBAR_SHOUTCAST_NAME', 'Shoutcast');
@@ -16,4 +16,3 @@
 @define('PLUGIN_SIDEBAR_SHOUTCAST_UNABLE_TO_CONNECT', 'Nelze se pøipojit k serveru.');
 @define('PLUGIN_SIDEBAR_SHOUTCAST_SERVER_DOWN', 'Server momentálnì není pøístupný.');
 
-?>

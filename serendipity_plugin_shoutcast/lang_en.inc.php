@@ -1,9 +1,9 @@
-<?php # 
+<?php
 
 /**
- *  @version 
- *  @author Translator Name <yourmail@example.com>
- *  EN-Revision: Revision of lang_en.inc.php
+ * @version
+ * @author Translator Name <yourmail@example.com>
+ * EN-Revision: Revision of lang_en.inc.php
  */
 
 @define('PLUGIN_SIDEBAR_SHOUTCAST_NAME', 'Shoutcast');
@@ -17,4 +17,3 @@
 @define('PLUGIN_SIDEBAR_SHOUTCAST_UNABLE_TO_CONNECT', 'Unable to connect to server.');
 @define('PLUGIN_SIDEBAR_SHOUTCAST_SERVER_DOWN', 'Server is not available right now.');
 
-?>
