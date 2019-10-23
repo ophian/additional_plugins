@@ -22,7 +22,7 @@ function requestComments(entryId) {
                             if (id != '') {
                                 ids[i] = id.replace('serendipity_comment_', '');
                                 i++;
-                            }                        
+                            }
                         });
                     for(var j=0; j<i; j++) {
                         if(notSet(ids[j])) {
@@ -84,7 +84,7 @@ function addDetails($commentDiv, id) {
             commentFooter = jQuery(this).text();
         }
     });
-        
+
     $commentDiv.find('div').each(function() {
         if (jQuery(this).hasClass('serendipity_comment_source')) {
             jQuery(this).html(jQuery(this).html() +
@@ -92,7 +92,7 @@ function addDetails($commentDiv, id) {
                 )
         }
     });
-    
+
     jQuery('#serendipity_replyTo').append('<option value="'+id+'">' + commentFooter +'</option>');
 }
 

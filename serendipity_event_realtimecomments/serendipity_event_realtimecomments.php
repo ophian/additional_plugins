@@ -4,29 +4,26 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_realtimecomments extends serendipity_event {
+class serendipity_event_realtimecomments extends serendipity_event
+{
     var $title = PLUGIN_EVENT_REALTIMECOMMENTS_NAME;
     var $interval = 10;
-    
-    function introspect(&$propbag) {
+
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name',          PLUGIN_EVENT_REALTIMECOMMENTS_NAME);
         $propbag->add('description',   PLUGIN_EVENT_REALTIMECOMMENTS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda');
-        $propbag->add('version',       '0.1.3');
+        $propbag->add('version',       '0.2');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.6',
+            'php'         => '5.6.0'
         ));
         $propbag->add('event_hooks',   array(
                                             'frontend_comment'              => true,
@@ -41,42 +38,44 @@ class serendipity_event_realtimecomments extends serendipity_event {
                                         );
 
         if (!$serendipity['capabilities']['jquery']) {
-	        $this->dependencies = array('serendipity_event_jquery' => 'remove');
-		}
+            $this->dependencies = array('serendipity_event_jquery' => 'remove');
+        }
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function install() {
+    function install()
+    {
         $this->setupDB();
     }
 
-
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch($name) {
             case 'path':
-                    $propbag->add('type', 'string');
-                    $propbag->add('name', PLUGIN_EVENT_REALTIMECOMMENTS_PATH);
-                    $propbag->add('description', PLUGIN_EVENT_REALTIMECOMMENTS_PATH_DESC);
-                    $propbag->add('default', $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_realtimecomments/');
-                    return true;
-                    break;
+                $propbag->add('type', 'string');
+                $propbag->add('name', PLUGIN_EVENT_REALTIMECOMMENTS_PATH);
+                $propbag->add('description', PLUGIN_EVENT_REALTIMECOMMENTS_PATH_DESC);
+                $propbag->add('default', $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_realtimecomments/');
+                break;
+
             case 'interval':
-                    $propbag->add('type', 'string');
-                    $propbag->add('name', PLUGIN_EVENT_REALTIMECOMMENTS_INTERVAL);
-                    $propbag->add('description', PLUGIN_EVENT_REALTIMECOMMENTS_INTERVAL_DESC);
-                    $propbag->add('default', '10');
-                    return true;
-                    break;
-            }
+                $propbag->add('type', 'string');
+                $propbag->add('name', PLUGIN_EVENT_REALTIMECOMMENTS_INTERVAL);
+                $propbag->add('description', PLUGIN_EVENT_REALTIMECOMMENTS_INTERVAL_DESC);
+                $propbag->add('default', '10');
+                break;
+        }
+        return true;
     }
 
-
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -100,13 +99,13 @@ class serendipity_event_realtimecomments extends serendipity_event {
                                 #existing parent_id crashes the smarty-fetch
                                 $comments_code = serendipity_printComments($comments, VIEWMODE_LINEAR);
                                 $serendipity['smarty_raw_mode'] = $old_raw_mode;
-                                
+
                                 echo $comments_code;
                             }
                             break;
-                        }
-                    return true;
+                    }
                     break;
+
                 case 'frontend_comment':
                     if (!empty($path) && $path != 'default' && $path != 'none' && $path != 'empty') {
                         $path_defined = true;
@@ -127,21 +126,23 @@ class serendipity_event_realtimecomments extends serendipity_event {
                         var rtcinterval = '. $this->interval .';
                         var rtcreply = "'. REPLY .'";</script>';
                     }
-                    return true;
                     break;
+
                 case 'frontend_saveComment_finish':
-                    $this->addNewComment($eventData['id'], $addData['comment_cid'], time()); 
-                    return true;
+                    $this->addNewComment($eventData['id'], $addData['comment_cid'], time());
                     break;
+
                 default:
-                    return false;
+                  return false;
             }
+            return true;
         } else {
             return false;
         }
     }
 
-    function setupDB() {
+    function setupDB()
+    {
         global $serendipity;
         $sql = "CREATE TABLE {$serendipity['dbPrefix']}rtcomments_comments (
                           timestamp int(10) UNSIGNED default NULL,
@@ -151,14 +152,16 @@ class serendipity_event_realtimecomments extends serendipity_event {
         serendipity_db_query($sql);
 
     }
+/*
+    // if entry has an observer, let him see this in his next pull
+    function notify($entry_id, $comment_id, $timestamp)
+    {
 
-    #if entry has an observer, let him see this in his next pull
-    function notify($entry_id, $comment_id, $timestamp) {
-        
     }
-
-    #Return true if entry has a new comment
-    function hasNewComment($entry_id, $timestamp) {
+*/
+    // Return true if entry has a new comment
+    function hasNewComment($entry_id, $timestamp)
+    {
         global $serendipity;
         #remove comments who weren't delivered in the last interval (*2 to prevent races)
         $this->cleanComments($timestamp - ($this->interval*2));
@@ -174,7 +177,8 @@ class serendipity_event_realtimecomments extends serendipity_event {
         }
     }
 
-    function addNewComment($entry_id, $comment_id, $timestamp) {
+    function addNewComment($entry_id, $comment_id, $timestamp)
+    {
         global $serendipity;
         $sql = "INSERT INTO
                     {$serendipity['dbPrefix']}rtcomments_comments
@@ -183,7 +187,8 @@ class serendipity_event_realtimecomments extends serendipity_event {
         serendipity_db_query($sql);
     }
 
-    function getNewComments($entry_id) {
+    function getNewComments($entry_id)
+    {
         global $serendipity;
         $sql = "SELECT comment_id FROM
                     {$serendipity['dbPrefix']}rtcomments_comments
@@ -198,7 +203,8 @@ class serendipity_event_realtimecomments extends serendipity_event {
 
     }
 
-    function cleanComments($timestamp) {
+    function cleanComments($timestamp)
+    {
         global $serendipity;
         $sql = "DELETE FROM
                      {$serendipity['dbPrefix']}rtcomments_comments
@@ -207,10 +213,11 @@ class serendipity_event_realtimecomments extends serendipity_event {
         serendipity_db_query($sql);
     }
 
-    #id: array of ids or a single id
-	function getComment($id, $eid) {
+    // id: array of ids or a single id
+    function getComment($id, $eid)
+    {
         global $serendipity;
-        
+
         if(is_array($id)) {
             $sql = "SELECT * FROM {$serendipity['dbPrefix']}comments
                 WHERE " . serendipity_db_in_sql ( 'id', $id ) ." AND status = 'approved'";
@@ -219,25 +226,26 @@ class serendipity_event_realtimecomments extends serendipity_event {
                 WHERE id = " . (int)$id ." AND status = 'approved'";
         }
         $comments = serendipity_db_query($sql);
-        
+
         return $comments;
     }
-    
-    function debugMsg($msg) {
-		global $serendipity;
-		
-		$this->debug_fp = @fopen ( $serendipity ['serendipityPath'] . 'templates_c/realtimecomments.log', 'a' );
-		if (! $this->debug_fp) {
-			return false;
-		}
-		
-		if (empty ( $msg )) {
-			fwrite ( $this->debug_fp, "failure \n" );
-		} else {
-			fwrite ( $this->debug_fp, print_r ( $msg, true ) );
-		}
-		fclose ( $this->debug_fp );
-	}
+
+    function debugMsg($msg)
+    {
+        global $serendipity;
+
+        $this->debug_fp = @fopen ( $serendipity ['serendipityPath'] . 'templates_c/realtimecomments.log', 'a' );
+        if (! $this->debug_fp) {
+            return false;
+        }
+
+        if (empty ( $msg )) {
+            fwrite ( $this->debug_fp, "failure \n" );
+        } else {
+            fwrite ( $this->debug_fp, print_r ( $msg, true ) );
+        }
+        fclose ( $this->debug_fp );
+    }
 
 }
 
