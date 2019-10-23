@@ -1,17 +1,10 @@
-<?php # 
-
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_loginform extends serendipity_event
 {
@@ -23,11 +16,11 @@ class serendipity_event_loginform extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_LOGINFORM_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking');
-        $propbag->add('version',     '1.04');
+        $propbag->add('version',     '1.05');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.6',
+            'php'         => '5.6.0'
         ));
         $propbag->add('event_hooks', array('frontend_configure' => true));
         $propbag->add('groups', array('FRONTEND_FEATURES'));
@@ -42,30 +35,32 @@ class serendipity_event_loginform extends serendipity_event
 
     function introspect_config_item($name, &$propbag)
     {
-        switch($name) {            
-	    case 'logout_url':
-            $propbag->add('type',        'string');
-            $propbag->add('name',        LOGOUTURL_NAME);
-            $propbag->add('description', LOGOUTURL_DESC);
-            $propbag->add('default',     '');
-            break;
+        switch($name) {
+            case 'logout_url':
+                $propbag->add('type',        'string');
+                $propbag->add('name',        LOGOUTURL_NAME);
+                $propbag->add('description', LOGOUTURL_DESC);
+                $propbag->add('default',     '');
+                break;
 
-            default:
+                default:
                     return false;
         }
         return true;
     }
 
-    function generate_content(&$title) {
-        $title = PLUGIN_EVENT_LOGINFORM_NAME;	
+    function generate_content(&$title)
+    {
+        $title = PLUGIN_EVENT_LOGINFORM_NAME;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
 
- 	$logout_url = $this->get_config('logout_url');
+        $logout_url = $this->get_config('logout_url');
 
         if (isset($hooks[$event])) {
             switch($event) {
@@ -83,19 +78,17 @@ class serendipity_event_loginform extends serendipity_event
                     }
                     exit;
                 }
-
-                return true;
                 break;
 
-              default:
-                return false;
+                default:
+                  return false;
             }
-
+            return true;
         } else {
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
-?>
