@@ -19,7 +19,7 @@ class serendipity_event_externalphp extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'include', 'articleformat'));
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '1.5');
+        $propbag->add('version', '1.6');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -168,10 +168,6 @@ class serendipity_event_externalphp extends serendipity_event
                             $eventData = array('clean_page' => true);
                         }
                     }
-
-                    if (version_compare($serendipity['version'], '0.7.1', '<=')) {
-                        $this->show();
-                    }
                     break;
 
                 case 'entries_header':
@@ -190,4 +186,3 @@ class serendipity_event_externalphp extends serendipity_event
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
-?>
