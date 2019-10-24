@@ -100,4 +100,3 @@ class serendipity_plugin_externalphp extends serendipity_plugin
 
 }
 /* vim: set sts=4 ts=4 expandtab : */
-?>

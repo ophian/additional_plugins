@@ -7,7 +7,7 @@
  */
 
 @define('PLUGIN_EXTERNALPHP_TITLE', 'External PHP Application');
-@define('PLUGIN_EXTERNALPHP_TITLE_BLAHBLAH', 'Shows an external PHP application inside your blog with your blogs design and all formattings. USE WITH CARE, THIS PLUGIN HAS SECURITY IMPLICATIONS AS IT INCLUDES ANY GENERIC PHP FILE! YOU CAN ONLY USE THIS PLUGIN AS ADMIN!');
+@define('PLUGIN_EXTERNALPHP_TITLE_BLAHBLAH', 'Shows an external PHP application inside your blog with your blogs design and all formatting. USE WITH CARE, THIS PLUGIN HAS SECURITY IMPLICATIONS AS IT INCLUDES ANY GENERIC PHP FILE! YOU CAN ONLY USE THIS PLUGIN AS ADMIN!');
 @define('PLUGIN_EXTERNALPHP_PERMALINK', 'Permalink');
 @define('PLUGIN_EXTERNALPHP_PAGETITLE', 'URL shorthand name (Backwards compatibility)');
 @define('PLUGIN_EXTERNALPHP_PERMALINK_BLAHBLAH', 'Defines permalink for the URL. Needs the absolute HTTP path and needs to end with .htm or .html!');
