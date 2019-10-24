@@ -1,3 +1,7 @@
+1.20:
+-----
+ * Extend documentation files to prevent inexperienced usage of extending isp functions
+
 1.19:
 -----
  * Prepare [de] for Serendipity Styx 2.7.0 wording change
