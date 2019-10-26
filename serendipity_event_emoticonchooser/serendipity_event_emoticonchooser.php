@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.28');
+        $propbag->add('version',       '3.29');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -106,9 +106,6 @@ class serendipity_event_emoticonchooser extends serendipity_event
         // get the stored "cache"
         $file = $this->get_config('emotics');
         $file = str_replace(array(' style="; display: none"', ' style="display: none;"', '</div><!-- emoticon_bar end -->'), '', $file); // we don't want this here! (see "lazy cache")
-// we cannot access $serendipity['enablePopup'] here correctly, which is weird because of the storage cache,
-// so in either case switching around won't work properly. So we check first, but make a try catch to workaround
-// this lazy cache behaviour, since settings may have changed in the meanwhile.
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="<?=$serendipity['lang']?>"> <![endif]-->
@@ -127,17 +124,17 @@ class serendipity_event_emoticonchooser extends serendipity_event
             var use_emoticon    = 'use_emoticon_'+instance_name;
 
             window[use_emoticon] = function (img) {
-                <?php if ($serendipity['enablePopup'] !== true): ?>
+                <?php if ($serendipity['enableBackendPopup'] != true): ?>
                 try {
                     window.parent.parent.serendipity.serendipity_imageSelector_addToBody(img+' ', editor_instance);
                     window.parent.parent.$.magnificPopup.close();
                 }
                 catch (e) {
-                    self.opener.serendipity_imageSelector_addToBody(img+' ', editor_instance);
+                    self.opener.serendipity.serendipity_imageSelector_addToBody(img+' ', editor_instance);
                     self.close();
                 }
                 <?php else: ?>
-                self.opener.serendipity_imageSelector_addToBody(img+' ', editor_instance);
+                self.opener.serendipity.serendipity_imageSelector_addToBody(img+' ', editor_instance);
                 self.close();
                 <?php endif; ?>
             }

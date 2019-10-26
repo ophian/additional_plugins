@@ -1,3 +1,7 @@
+3.29:
+-----
+ * Fixup conditional for enableBackendPopup and use direct serendipity js namespace
+
 3.28:
 -----
  * Check an uninitialized variable
