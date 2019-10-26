@@ -73,7 +73,7 @@
                 window.parent.parent.serendipity.serendipity_imageSelector_addToBody('<a href="{$linktrimmer_url|escape}" title="{$linktrimmer_origurl|escape}">{$linktrimmer_origurl|escape}</a>', '{$linktrimmer_txtarea|escape}');
                 window.parent.parent.$.magnificPopup.close();
         {else}
-                self.opener.serendipity_imageSelector_addToBody('<a href="{$linktrimmer_url|escape}" title="{$linktrimmer_origurl|escape}">{$linktrimmer_origurl|escape}</a>', '{$linktrimmer_txtarea|escape}');
+                self.opener.serendipity.serendipity_imageSelector_addToBody('<a href="{$linktrimmer_url|escape}" title="{$linktrimmer_origurl|escape}">{$linktrimmer_origurl|escape}</a>', '{$linktrimmer_txtarea|escape}');
                 self.close();
         {/if}
             </script>

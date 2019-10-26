@@ -1,3 +1,7 @@
+1.7.3:
+-----
+ * Use serendipity js namespace, raises Serendipity requirement
+
 1.7.2:
 -----
  * Partly Sync [de] translation
