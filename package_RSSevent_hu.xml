@@ -302,7 +302,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Show Emoticon/Smiley toolbar&lt;/b&gt;&lt;br /&gt;Shows a toolbar to select emoticons to insert into your entry.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:18:51 +0200</pubDate>
+<pubDate>Sat, 26 Oct 2019 18:05:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -634,8 +634,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_linktrimmer</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linktrimmer&lt;/b&gt;&lt;br /&gt;Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:54:22 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linktrimmer&lt;/b&gt;&lt;br /&gt;Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
+<pubDate>Sat, 26 Oct 2019 18:18:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>

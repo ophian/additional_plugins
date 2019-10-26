@@ -2122,9 +2122,9 @@
 <description>Zobrazí lištu se smajlíky, které je možné vložit do textu příspěvku nebo komentáře.</description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.28</version>
+  <version>3.29</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-10-26</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -5608,9 +5608,9 @@
 <description>Umožňuje zkrátit odkaz na Váš blog, podobně jako třeba tr.im, tinyurl.com apod.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7.2</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2019-08-18</date>
+  <version>1.7.3</version>
+  <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
+  <date>2019-10-26</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -5623,7 +5623,6 @@
       <file>lang_en.inc.php</file>
       <file>linktrimmer.css</file>
       <file>plugin_linktrimmer.tpl</file>
-      <file>plugin_linktrimmer_old.tpl</file>
       <file>serendipity_event_linktrimmer.gif</file>
       <file>serendipity_event_linktrimmer.php</file>
       <dir name="UTF-8">
@@ -5644,7 +5643,6 @@
     <file>serendipity_event_linktrimmer/lang_en.inc.php</file>
     <file>serendipity_event_linktrimmer/linktrimmer.css</file>
     <file>serendipity_event_linktrimmer/plugin_linktrimmer.tpl</file>
-    <file>serendipity_event_linktrimmer/plugin_linktrimmer_old.tpl</file>
     <file>serendipity_event_linktrimmer/serendipity_event_linktrimmer.gif</file>
     <file>serendipity_event_linktrimmer/serendipity_event_linktrimmer.php</file>
     <file>serendipity_event_linktrimmer/UTF-8/lang_cs.inc.php</file>
