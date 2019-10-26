@@ -1,6 +1,7 @@
 1.7.3:
 -----
  * Use serendipity js namespace, raises Serendipity requirement
+ * Fix enableBackendPopup condition
 
 1.7.2:
 -----

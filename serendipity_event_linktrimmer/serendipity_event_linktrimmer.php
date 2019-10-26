@@ -204,7 +204,7 @@ class serendipity_event_linktrimmer extends serendipity_event
         }
 
         $serendipity['smarty']->assign(array(
-            'linktrimmer_ispopup'     => $serendipity['enablePopup'],
+            'linktrimmer_ispopup'     => $serendipity['enableBackendPopup'],
             'linktrimmer_error'       => !empty($error) ? $error : null,
             'linktrimmer_url'         => !empty($url) ? $url : null,
             'linktrimmer_origurl'     => !empty($_REQUEST['linktrimmer_url']) ? $_REQUEST['linktrimmer_url'] : null,
