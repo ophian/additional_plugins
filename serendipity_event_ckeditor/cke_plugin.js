@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) from 2013, Author: Ian Styx. All rights reserved. Last Modified date: 2019-07-18.
+ * @license Copyright (c) from 2013, Author: Ian Styx. All rights reserved. Last Modified date: 2019-11-02.
  */
 
 /**
@@ -238,7 +238,7 @@ function Spawnnuggets(item, addEP, jsED) {
                 });
                 editor.ui.addButton('s9yML'+area, {
                     label:    'S9yMedia',
-                    title:    'Serendipity Media Library',
+                    title:    'Styx Media Library',
                     icon:     CKEDITOR_PLUGPATH+'serendipity_event_ckeditor/img/mls9y.png',
                     iconName: 's9yML'+area+'_icon',
                     command:  's9yML'+area
