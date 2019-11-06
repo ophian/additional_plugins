@@ -1,3 +1,7 @@
+0.64:
+-----
+ * By default do not add pages that modern themes will set as noindex (overview pages)
+
 0.63:
 -----
  * Fix unknown message constant and fix to sub check for lowercased 'unknown'
