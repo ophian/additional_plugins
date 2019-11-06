@@ -1,4 +1,4 @@
-{* backend_staticpage template file v. 1.31, 2018-09-02 *}
+{* backend_staticpage template file v. 1.32, 2019-11-06 *}
 
 <!-- backend_staticpage.tpl START -->
 
@@ -276,8 +276,8 @@
     <div class="sp_entries_pane {cycle values="odd,even"}{if $entry@last} sp_close{/if}">
         <ul id="sp_entries_list" class="plainList{if $entry['parent_id'] > 0} sp_isChild{/if}">
             <li id="sple{$entry['id']}" class="clearfix">
-                <h3>{if $entry['parent_id'] > 0}<span class="entry_status sp_ptree" title="parent static page ID">#{$entry['parent_id']}</span><span class="icon-right-dir sp_ctree" aria-hidden="true"></span>{/if}{if empty($entry['headline'])}<span class="five">{$CONST.STATICPAGE_PAGETITLE}: </span>{/if}<a href="?serendipity[action]=admin&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pages&amp;serendipity[staticid]={$entry['id']}" title="#{$entry['id']} {$entry['pagetitle']|escape}">{if !empty($entry['headline'])}{$entry['headline']|truncate:50}{else}{$entry['pagetitle']|escape}{/if}</a></h3>
-                <div class="clearfix spnav spmod">{if NOT empty($entry.pass)}<span class="icon-lightbulb" title="Password-protected"></span>{/if} <span title="{$CONST.LAST_UPDATED}: {$entry['last_modified']|formatTime:'%Y-%m-%d'}">{$entry['timestamp']|formatTime:'%Y-%m-%d'} {if $entry['timestamp'] <= ($entry['last_modified'] - 1800)}<svg aria-hidden="true" class="icon icon-clock"><use xlink:href="#icon-clock"></use></svg>{/if}</span></div>
+                <h3>{if $entry['parent_id'] > 0}<span class="entry_status sp_ptree" title="parent static page ID">#{$entry['parent_id']}</span><span class="icon-right-dir sp_ctree" aria-hidden="true"></span>{/if}{if empty($entry['headline'])}<span class="five"><span class="icon-lightbulb" title="{$CONST.STATICPAGE_PAGETITLE}"><span class="visuallyhidden">urltitle</span></span>: </span>{/if}<a href="?serendipity[action]=admin&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pages&amp;serendipity[staticid]={$entry['id']}" title="#{$entry['id']} {$entry['pagetitle']|escape}">{if !empty($entry['headline'])}{$entry['headline']|truncate:50}{else}{$entry['pagetitle']|escape}{/if}</a></h3>
+                <div class="clearfix spnav spmod">{if NOT empty($entry.pass)}<span class="icon-lightbulb" title="Password-protected"><span class="visuallyhidden">private</span></span>{/if} <span title="{$CONST.LAST_UPDATED}: {$entry['last_modified']|formatTime:'%Y-%m-%d'}">{$entry['timestamp']|formatTime:'%Y-%m-%d'} {if $entry['timestamp'] <= ($entry['last_modified'] - 1800)}<svg aria-hidden="true" class="icon icon-clock"><use xlink:href="#icon-clock"></use></svg>{/if}</span></div>
             </li>
             <li class="clearfix">
                 {$CONST.POSTED_BY} {$sp_listentries_authors[$entry['authorid']]|escape} <span class="sp_dim">[<em class="sp_lang">{$entry['language']}</em>]</span>

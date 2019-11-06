@@ -1,3 +1,7 @@
+6.04:
+-----
+ * Shorten up by icon the backend staticpage list title, case "url title only".
+
 6.03:
 -----
  * Check a possible uninitialized variable for the replacement hook
