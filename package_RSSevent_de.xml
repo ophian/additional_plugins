@@ -518,7 +518,7 @@
 <category>Event Plugins</category>
 <author>Boris</author>
 <content:encoded>&lt;b&gt;serendipity_event_google_sitemap&lt;br /&gt;Suchmaschinen-Sitemap Generator&lt;/b&gt;&lt;br /&gt;Erstellt eine sitemap.xml.gz für verschiedene Suchmaschinen-Crawler (Google, MSN, Yahoo und Ask).&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 25 Apr 2019 09:59:15 +0200</pubDate>
+<pubDate>Wed, 06 Nov 2019 12:17:44 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_google_sitemap</guid>
 </item>
 <item>
@@ -635,7 +635,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linkverkürzung&lt;/b&gt;&lt;br /&gt;Ermöglicht Linkverkürzung zur Weiterleitung in Ihrem eigenen Blog, z.B. vermittels tr.im, tinyurl.com usw.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sat, 26 Oct 2019 18:18:55 +0200</pubDate>
+<pubDate>Sat, 26 Oct 2019 18:27:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
@@ -1049,7 +1049,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statische Seiten&lt;/b&gt;&lt;br /&gt;Verwaltet beliebige statische Seiten innerhalb des Blogs mit dem Blog-Design und allen Formatierungen. Fügt einen neuen Menüpunkt in der Admin-Oberfläche hinzu!&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Fri, 02 Aug 2019 10:42:03 +0200</pubDate>
+<pubDate>Wed, 06 Nov 2019 11:22:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>

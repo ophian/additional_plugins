@@ -4226,9 +4226,9 @@
 <description>Creates a sitemap.xml.gz, which can be used by miscellaneous Web-Crawlers. (Google, MSN, Yahoo and Ask)</description>
 <maintainers><maintainer><name>Boris</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.63</version>
+  <version>0.64</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-04-25</date>
+  <date>2019-11-06</date>
   <filelist>
     <dir name="serendipity_event_google_sitemap">
       <file>ChangeLog</file>
@@ -9206,9 +9206,9 @@
 <description>Pokazuje Strony statyczne w Twoim blogu tak, jak pokazywane są wszystkie inne wpisy (z zachowaniem formatowania i layoutu). Dodaje nową zakładkę w menu w Panelu administracyjnym.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.03</version>
+  <version>6.04</version>
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
-  <date>2019-08-02</date>
+  <date>2019-11-06</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>

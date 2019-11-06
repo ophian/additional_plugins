@@ -518,7 +518,7 @@
 <category>Event Plugins</category>
 <author>Boris</author>
 <content:encoded>&lt;b&gt;serendipity_event_google_sitemap&lt;br /&gt;Generátor mapy stránek pro vyhledávače&lt;/b&gt;&lt;br /&gt;Vytváří soubor sitemap.xml.gz, který používají nejrůznější webové vyhledávače (Google, MSN, Yahoo nebo Ask)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 25 Apr 2019 09:59:15 +0200</pubDate>
+<pubDate>Wed, 06 Nov 2019 12:17:44 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_google_sitemap</guid>
 </item>
 <item>
@@ -635,7 +635,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Zkracovač adres&lt;/b&gt;&lt;br /&gt;Umožňuje zkrátit odkaz na Váš blog, podobně jako třeba tr.im, tinyurl.com apod.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sat, 26 Oct 2019 18:18:55 +0200</pubDate>
+<pubDate>Sat, 26 Oct 2019 18:27:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
@@ -1049,7 +1049,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statické stránky&lt;/b&gt;&lt;br /&gt;Zobrazuje v blogu statické stránky se stejným designem jako mají běžné přspěvky. Přidá nové menu do adminstrátorského rozhraní.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Fri, 02 Aug 2019 10:42:03 +0200</pubDate>
+<pubDate>Wed, 06 Nov 2019 11:22:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
