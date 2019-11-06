@@ -151,6 +151,7 @@
                     Durch die Nutzung dieses Feldes können spezifische Statische Seiten nach Sprache erstellt werden, die auch nur dann angezeigt werden,
                     wenn das Frontend diese Sprache aktiv nutzt. "Alle Sprachen" meint "in jedem Fall".');
 
+@define('PLAIN_ASCII', 'URLs sollten nur ASCII verwenden. [A-Za-z0-9]');
 @define('STATICPAGE_RELCAT_INFO', 'Dies funktioniert <b>nur</b> in Kombination mit dem entries.tpl-Patch, der in der "README FOR RELATED CATEGORIES.txt" <a href="%s" target="_blank" style="color:#7fdbff">Datei</a> beschrieben ist.<br>
                     Für eine Frontend-Kategorien-Seite, mit einer Anzahl<span style="font-size:10px"><sup> (1)</sup></span> der letzten Eintrags-Links als Teaser, ist die beste Verwendung mit dem Artikeltyp: "<em>Staticpage with related category</em>" Feld in diesem Formular.
                     Bitte beachten Sie, dass nur einheitliche 1:1-Beziehungen zwischen Statischen Seiten und Kategorien erlaubt sind.<br><br>
