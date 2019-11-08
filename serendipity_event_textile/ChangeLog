@@ -1,0 +1,14 @@
+1.9.0:
+-----
+
+ * Upgrade textile lib3 to v.3.7.3, which prevents some PHP7 errors with previous 3.5.5 lib version parser
+
+1.8.5:
+-----
+
+ * Add an uninitialized ep variable check
+
+
+
+
+textile: Move core event textile to Spartacus
