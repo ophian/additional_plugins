@@ -9696,17 +9696,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_textile</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_textile/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Formato: Textile</summary>
 <groups>MARKUP</groups>
 <description>Analizar la salida a través del convertidor Textile</description>
 <maintainers><maintainer><name>Serendipity Team, Lars Strojny, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8.5</version>
+  <version>1.9.0</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-11-08</date>
   <filelist>
     <dir name="serendipity_event_textile">
+      <file>ChangeLog</file>
       <file>classTextile.php</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cn.inc.php</file>
@@ -9735,7 +9737,6 @@
       <dir name="lib3">
         <file>CHANGELOG.textile</file>
         <file>composer.json</file>
-        <file>CONTRIBUTING.textile</file>
         <file>LICENSE</file>
         <file>README.textile</file>
         <dir name="src">
@@ -9769,6 +9770,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_textile/ChangeLog</file>
     <file>serendipity_event_textile/classTextile.php</file>
     <file>serendipity_event_textile/lang_bg.inc.php</file>
     <file>serendipity_event_textile/lang_cn.inc.php</file>
@@ -9792,7 +9794,6 @@
     <file>serendipity_event_textile/lib2/README.textile</file>
     <file>serendipity_event_textile/lib3/CHANGELOG.textile</file>
     <file>serendipity_event_textile/lib3/composer.json</file>
-    <file>serendipity_event_textile/lib3/CONTRIBUTING.textile</file>
     <file>serendipity_event_textile/lib3/LICENSE</file>
     <file>serendipity_event_textile/lib3/README.textile</file>
     <file>serendipity_event_textile/lib3/src/Netcarver/Textile/DataBag.php</file>
