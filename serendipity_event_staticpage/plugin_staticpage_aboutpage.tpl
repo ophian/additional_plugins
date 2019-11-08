@@ -47,7 +47,7 @@
     </div>
     {/if}
     *}
-    {* extendet view *}
+    {* extended view *}
     {if is_array($staticpage_extchildpages)}
     <div class="clearfix content staticpage_childpages">
         <ul id="staticpage_childpages">
