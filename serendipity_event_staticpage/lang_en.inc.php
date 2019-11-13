@@ -203,3 +203,5 @@
                     Using the field, staticpage entries can be created that each have a specific translation and will show up only in the currently active language.
                     "All languages" means "in any case".');
 
+@define('STATICPAGE_FORM_FAIL', 'Add new page failed! It requires at least a unique "' . STATICPAGE_PERMALINK . '" and "' . STATICPAGE_PAGETITLE . '" setting.');
+

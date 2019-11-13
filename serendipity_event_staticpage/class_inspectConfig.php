@@ -207,6 +207,10 @@ class icTimestamp extends inspectConfig
     {
         global $inspectConfig;
 
+        // fallback to empty form for fail and to avoid passing '01.01.1970 01:00'
+        if (is_string($inspectConfig['hvalue'])) {
+            $inspectConfig['hvalue'] = date_create($inspectConfig['hvalue'])->getTimestamp();
+        }
 ?>
                 <input class="input_textbox direction_<?php echo $inspectConfig['lang_direction']; ?>" type="text" name="serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]" value="<?php echo serendipity_strftime(DATE_FORMAT_SHORT, $inspectConfig['hvalue']); ?>" size="30">
 <?php

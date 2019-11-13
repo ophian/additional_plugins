@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.04');
+        $propbag->add('version', '6.05');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -2490,7 +2490,7 @@ class serendipity_event_staticpage extends serendipity_event
 
         if (!isset($this->pagetype['id'])) {
             $result = serendipity_db_insert('staticpages_types', $this->pagetype);
-            $serendipity["POST"]["pagetype"] = serendipity_db_insert_id('staticpages_types', 'id');
+            $serendipity['POST']['pagetype'] = serendipity_db_insert_id('staticpages_types', 'id');
         } else {
             $result = serendipity_db_update('staticpages_types', array('id' => $this->pagetype['id']), $this->pagetype);
         }
@@ -2798,9 +2798,12 @@ class serendipity_event_staticpage extends serendipity_event
                         }
                     }
 
-                    $result = $this->updateStaticPage();
-
-                    $serendipity['smarty']->assign('sp_defpages_upd_result', is_string($result) ? $result : null);
+                    if ($serendipity['POST']['staticpage'] == '__new' && (empty($serendipity['POST']['plugin']['headline']) && in_array($serendipity['POST']['plugin']['pagetitle'], ['', 'pagetitle'])) || $serendipity['POST']['plugin']['permalink'] == $serendipity['serendipityHTTPPath'] . 'pages/pagetitle.html' && empty($serendipity['POST']['plugin']['content'])) {
+                        $serendipity['smarty']->assign('sp_defpages_upd_result', STATICPAGE_FORM_FAIL);
+                    } else {
+                        $result = $this->updateStaticPage();
+                        $serendipity['smarty']->assign('sp_defpages_upd_result', is_string($result) ? $result : null);
+                    }
                 }
 
                 if (!empty($serendipity['POST']['staticDelete']) && $serendipity['POST']['staticpage'] != '__new') {

@@ -170,3 +170,5 @@
 
 @define('PLUGIN_STATICPAGE_PREVIEW', 'Die Voransicht ihrer statischen Seite wurde in einem neuen Browsertab geöffnet. Sonst benutzen Sie diesen: %s');
 
+@define('STATICPAGE_FORM_FAIL', 'Die Erstellung einer neuen Seite ist fehlgeschlagen! Es ist mindestens eine eindeutige Einstellung in "' . STATICPAGE_PERMALINK . '" und in "' . STATICPAGE_PAGETITLE . '" erforderlich.');
+

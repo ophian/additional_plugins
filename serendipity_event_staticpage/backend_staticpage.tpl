@@ -51,15 +51,15 @@
 {elseif $switch_spcat == 'pagetype'}
 
     {if NOT empty($sp_pagetype_saveconf)}
-<div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> {$CONST.DONE}! {$CONST.SETTINGS_SAVED_AT|sprintf:($smarty.now|formatTime:'%H:%M:%S')}</div>
+<div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> <strong>{$CONST.DONE}!</strong> {$CONST.SETTINGS_SAVED_AT|sprintf:($smarty.now|formatTime:'%H:%M:%S')}</div>
     {/if}
 
     {if NOT empty($sp_pagetype_purged)}
-<div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> {$CONST.DONE}! {$CONST.RIP_ENTRY|sprintf:$sp_pagetype_ripped}</div>
+<div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> <strong>{$CONST.DONE}!</strong> {$CONST.RIP_ENTRY|sprintf:$sp_pagetype_ripped}</div>
     {/if}
 
     {if NOT empty($sp_pagetype_update)}
-<div class="msg_error spmsg"><svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> {$CONST.ERROR}: {$sp_pagetype_mixedresult}</div>
+<div class="msg_error spmsg"><svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> <strong>{$CONST.ERROR}:</strong> {$sp_pagetype_mixedresult}</div>
     {/if}
 
 <form action="serendipity_admin.php" method="post" name="serendipityEntry">
@@ -102,7 +102,7 @@
 <div id="staticpage_pageadd" class="sp_padd">
 
 {if NOT empty($sp_addsubmit)}
-    <div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> {$CONST.DONE}! {$CONST.SETTINGS_SAVED_AT|sprintf:($smarty.now|formatTime:'%H:%M:%S')}</div>
+    <div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> <strong>{$CONST.DONE}!</strong> {$CONST.SETTINGS_SAVED_AT|sprintf:($smarty.now|formatTime:'%H:%M:%S')}</div>
 {/if}
 
     <p>{$CONST.STATICPAGE_PAGEADD_DESC}</p>
@@ -151,9 +151,9 @@
 
     {if isset($sp_staticsubmit) AND $sp_staticsubmit}
         {if !empty($sp_defpages_upd_result)}
-<div class="msg_error spmsg"><svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> {$CONST.ERROR}: {$sp_defpages_upd_result}</div>
+<div class="msg_error spmsg"><svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> <strong>{$CONST.ERROR}:</strong> {$sp_defpages_upd_result}</div>
         {else}
-<div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> {$CONST.DONE}! {$CONST.SETTINGS_SAVED_AT|sprintf:($smarty.now|formatTime:'%H:%M:%S')}</div>
+<div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> <strong>{$CONST.DONE}!</strong> {$CONST.SETTINGS_SAVED_AT|sprintf:($smarty.now|formatTime:'%H:%M:%S')}</div>
         {/if}
     {/if}
 
@@ -162,13 +162,13 @@
 <div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> {$sp_defpages_rip_success}</div>
         {else}
 <div class="msg_notice spmsg">
-    <svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> {$CONST.IMPORT_NOTES}: {$CONST.STATICPAGE_CANNOTDELETE_MSG}
+    <svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> <strong>{$CONST.IMPORT_NOTES}:</strong> {$CONST.STATICPAGE_CANNOTDELETE_MSG}
 </div>
         {/if}
     {/if}
     {if isset($sp_relcatchange) AND $sp_relcatchange}
 <div class="msg_notice spmsg">
-    <svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> {$CONST.IMPORT_NOTES}: {$CONST.RELATED_CATEGORY_CHANGE_MSG|sprintf:$prev_relcat_staticpage:$this_relcat_staticpage}
+    <svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> <strong>{$CONST.IMPORT_NOTES}:</strong> {$CONST.RELATED_CATEGORY_CHANGE_MSG|sprintf:$prev_relcat_staticpage:$this_relcat_staticpage}
 </div>
     {/if}
 
