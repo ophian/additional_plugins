@@ -37,7 +37,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '5.4.0'
         ));
 
-        $propbag->add('version',       '1.45');
+        $propbag->add('version',       '1.46');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1097,7 +1097,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             $bits   = (int) $log + 1; // length in bits
             $filter = (int) ( 1 << $bits ) - 1; // set all lower bits to 1
             do {
-                $rnd = hexdec( bin2hex( openssl_random_pseudo_bytes( $bytes ) ) );
+                $rnd = hexdec( bin2hex( (function_exists('random_bytes') ? random_bytes( $bytes ) : openssl_random_pseudo_bytes( $bytes )) ) );
                 $rnd = $rnd & $filter; // discard irrelevant bits
             } while ( $rnd >= $range );
             return $min + $rnd;

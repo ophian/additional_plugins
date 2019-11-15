@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+1.46:
+----
+ * Add PHP 7 build-in random_bytes() check
+
 1.45:
 ----
  * Fix some wrong path concatenation double slashes
