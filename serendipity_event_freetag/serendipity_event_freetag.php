@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.24');
+        $propbag->add('version',       '4.25');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1171,6 +1171,11 @@ a.button_link.tagview_active {
 
 #backend_freetag_list a.tagzoom {
     font-size: 0.875em;
+}
+
+.plainList.freetags_list .odd {
+    background-color: #EEE;
+    border: 1px solid #DDD;
 }
 
 #edit_entry_freetags .freetag_entry_submit {
@@ -2575,9 +2580,10 @@ addLoadEvent(enableAutocomplete);
         } else if (!is_array($r)) {
             echo $r;
         } else {
+            $index = 0;
             echo '<ul class="plainList freetags_list">'."\n";
             foreach ($r AS $row) {
-                echo '    <li>
+                echo '    <li class="' . (++$index%2 ? "odd" : "even") . '">
                         <a class="button_link" title="' . EDIT . '" href="' . FREETAG_EDITENTRY_URL . $row['id'] . '"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> ' . EDIT . '</span></a>
                         ' . $row['title'] . (!empty($row['tag']) ? ' ( <strong>Single-Tag:</strong> <em>' . $row['tag'] . '</em> )' : '') . '
                     </li>'."\n"; // i18n?
