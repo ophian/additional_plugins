@@ -1568,9 +1568,9 @@
 <description>Aggiunge le funzionalita' di downloadmanager a s9y. Quando viene disinstallato, tutte le tabelle vengono eliminate! Visita http://blog.linux-stats.org per scaricare il plugin.</description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.45</version>
+  <version>1.46</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2019-08-18</date>
+  <date>2019-11-15</date>
   <filelist>
     <dir name="serendipity_event_downloadmanager">
       <file>AUTHORS</file>
