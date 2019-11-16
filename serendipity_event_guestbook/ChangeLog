@@ -1,3 +1,7 @@
+3.76:
+----
+ * Unset wordwrap body text in case of using serendipity_event_emoticate plugin
+
 1.27 (sidebar):
 ----
  * Fix wrong [de] lang constant
