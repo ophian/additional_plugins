@@ -1,3 +1,7 @@
+1.80:
+-----
+ * Fix a wrong slash in cookieconsent css url
+
 1.79:
 -----
  * Remove totally outdated "Engine: Yes" theme info stack check.
