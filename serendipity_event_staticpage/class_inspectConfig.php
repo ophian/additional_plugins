@@ -208,7 +208,7 @@ class icTimestamp extends inspectConfig
         global $inspectConfig;
 
         // fallback to empty form for fail and to avoid passing '01.01.1970 01:00'
-        if (is_string($inspectConfig['hvalue'])) {
+        if (false !== strpos($inspectConfig['hvalue'], '.')) {
             $inspectConfig['hvalue'] = date_create($inspectConfig['hvalue'])->getTimestamp();
         }
 ?>
