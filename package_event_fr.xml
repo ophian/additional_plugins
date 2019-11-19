@@ -639,9 +639,9 @@
 <description>Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.13.0.2</version>
+  <version>4.13.0.3</version>
   <requirements:s9yVersion>2.6.2</requirements:s9yVersion>
-  <date>2019-10-13</date>
+  <date>2019-11-19</date>
   <filelist>
     <dir name="serendipity_event_ckeditor">
       <file>basic_toolbar.css</file>
@@ -3271,9 +3271,9 @@
 <description>Autorise le marquage libre des billets</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.25</version>
+  <version>4.26</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2019-11-15</date>
+  <date>2019-11-19</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
