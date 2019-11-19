@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.25');
+        $propbag->add('version',       '4.26');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1235,10 +1235,14 @@ a.button_link.tagview_active {
                     break;
 
                 case 'js_backend':
+                    $close = false;
                     // show_taglist adding function
                     if (serendipity_db_bool($this->get_config('admin_show_taglist', 'true'))) {
+                        $close = true;
 
 ?>
+
+/* serendipity_event_freetag start */
 
 function addTag(addTag) {
     var elem = document.getElementById('properties_freetag_tagList');
@@ -1318,6 +1322,11 @@ function enableAutocomplete() {
 
 addLoadEvent(enableAutocomplete);
 
+<?php
+                    }
+                    if ($close) {
+?>
+/* serendipity_event_freetag end */
 <?php
                     }
                     break;
