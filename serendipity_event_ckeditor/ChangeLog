@@ -1,12 +1,16 @@
+4.13.0.4:
+---------
+    * Fix padding style of cke image toolbar button for hover (by option)
+
 4.13.0.3:
 ---------
-    * Move (inner) wysiwyg editor javascript constants into serendipity_admin.js
+    * Move (inner) WYSIWYG editor javascript constants into serendipity_admin.js
       and make clear to manually (F5) hard reload WYSIWYG-Editor pages once,
-      on Upgrade or having changed the configurator.
+      on Upgrade or having changed the Plugin-Configuration.
 
 4.13.0.2:
 ---------
-    * Fix (inner) wysiwyg editor styles to clear <hr> tags and serendipity_images_block selectors
+    * Fix (inner) WYSIWYG editor styles to clear <hr> tags and serendipity_images_block selectors
       for previous floats.
 
 4.13.0.1:
@@ -21,7 +25,7 @@
 
 4.12.1.2:
 ---------
-    * Add wysiwyg-editor styles for elder gallery image_blocks without col or row defines
+    * Add WYSIWYG-editor styles for elder gallery image_blocks without col or row defines
 
 4.12.1.1:
 ---------
