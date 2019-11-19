@@ -188,7 +188,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.13.0.2'); // is CKEDITOR Series 4.13.0 - and appended plugin revision .2
+        $propbag->add('version',       '4.13.0.3'); // is CKEDITOR Series 4.13.0 - and appended plugin revision .3
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
@@ -200,6 +200,7 @@ class serendipity_event_ckeditor extends serendipity_event
             'frontend_header'                        => true,
             'frontend_footer'                        => true,
             'backend_header'                         => true,
+            'js_backend'                             => true,
             'css'                                    => true,
             'css_backend'                            => true,
             'external_plugin'                        => true,
@@ -349,6 +350,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $installer = $this->get_config('installer'); // Can't use method return value in write context in '' with substr(), get_config() and isset()
         $parts     = explode(':', $this->checkUpdateVersion[0]); // this is ckeditor only
 
+        $s .= '<span class="msg_notice"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_CKEDITOR_OPHANDLER . "</span>\n";
         $s .= PLUGIN_EVENT_CKEDITOR_REVISION_TITLE;
         $s .= "\n<ul>\n";
         // hook this as a scalar value into this plugins lang files (would be needed by adding this to a constant)
@@ -421,7 +423,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.13.0.2', '4.13.0.1'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.13.0.3', '4.13.0.2'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -435,7 +437,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.13.0.2', '4.13.0.1'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.13.0.3', '4.13.0.2'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
@@ -527,75 +529,87 @@ class serendipity_event_ckeditor extends serendipity_event
                     }
                     break;
 
+                case 'js_backend':
+                    $pastejs = true;
                 case 'backend_header':
+                    if (!isset($pastejs)) $pastejs = false;
                     if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg'] && isset($eventData) && !isset($_GET['serendipity']['iframe_mode'])) {
-                        // Check, if Styx-Serendipity 2.1 changed WYSIWYG_LANG constant already is defined,
-                        // which changed 2-letter or "**-utf" marked langs eg. "en" to "en_US", using the POSIX underscore standard,
-                        // else workaround using DATE_LOCALES.
-                        if (defined('DATE_LOCALES') && (false !== strpos('_', WYSIWYG_LANG))) {
-                            // scayt available langs are ('en_US', 'en_GB', 'pt_BR', 'da_DK', 'nl_NL', 'en_CA', 'fi_FI', 'fr_FR', 'fr_CA', 'de_DE', 'el_GR', 'it_IT', 'la_VA', 'nb_NO', 'pt_PT', 'es_ES', 'sv_SE');
-                            $locale  = explode(',', DATE_LOCALES); // get the current defined locales as array
-                            $special = array('Arabic', 'bulgarian', 'pl.UTF-8', 'tw'); // special lang exceptions which have them at last position
-                            if (in_array($locale[0], $special)) {
-                                $slocale = @strtok(end($locale), "."); // strtok dot fixes 'ar_SA.windows-1256'
-                                @reset($locale);
-                            }
-                            $_locale = trim(isset($slocale) ? $slocale : $locale[0]); // set the current lang locale as string
-                            if (!empty($_locale)) {
-                                $flocale = explode('.', $_locale); // $flocale array is the first defined 4-letter lang locale, eg "de_DE".
-                                if ($flocale[0] == 'nl_BE') $flocale[0] = 'nl_NL'; // case locale Nederlands / België set back to Dutch (Netherlands)
-                                if ($flocale[0] == 'sv_SV') $flocale[0] = 'sv_SE'; // case Swedish set back to Swedish (Sweden)
-                            }
-                        }
+                        // both cases
                         $relpath = function_exists('serendipity_specialchars') ? serendipity_specialchars($this->get_config('path')) : htmlspecialchars($this->get_config('path'), ENT_COMPAT, LANG_CHARSET);
                         $plgpath = function_exists('serendipity_specialchars') ? serendipity_specialchars($this->get_config('plugpath')) : htmlspecialchars($this->get_config('plugpath'), ENT_COMPAT, LANG_CHARSET);
-                        $acf_off = serendipity_db_bool($this->get_config('acf_off', 'false')) ? 'true' : 'false';    // need this, to be passed correctly as boolean true/false to custom cke_config.js
-                        $code_on = serendipity_db_bool($this->get_config('codebutton', 'false')) ? 'true' : 'false'; // same here for cke_plugins.js
-                        $oembed  = serendipity_db_bool($this->get_config('oembed', 'false'));
-                        $oetype  = $this->get_config('oembed_type', 'semantic');
-                        $oembed1 = ($oembed && $oetype == 'markup') ? 'true' : 'false';
-                        $oembed2 = ($oembed && $oetype == 'semantic') ? 'true' : 'false';
-                        $uats_on = $serendipity['use_autosave'] ? 'true' : 'false';                                  // dito
                         $toolbar = $this->get_config('toolbar', 'Standard');
-                        $time    = $this->get_config('timestamp', time());
-                        $slang   = (isset($flocale) && !empty($flocale[0]) ? $flocale[0] : WYSIWYG_LANG); // set scayt locales 4-letter POSIX lang or fall back
-                        $lang    = $slang ? $slang : 'en_US'; // use new WYSIWYG_LANG, or the workaround locale, or fall back to default
-                        $lang    = str_replace('_', '-', $lang); // change to IETF standard unicode language tag, using a dash
-                        /*
-                            Define some global CKEDITOR plugin startup vars
-                            Include the ckeditor
-                            Build dynamic plugins and set the custom config (cke_config.js)
-                            Sadly this can not hook into js_backend hook in 2.0, since that is cached to lazyload
-                        */
+                        // js_backend case
+                        if ($pastejs) {
+                            // Check, if Styx-Serendipity 2.1 changed WYSIWYG_LANG constant already is defined,
+                            // which changed 2-letter or "**-utf" marked langs eg. "en" to "en_US", using the POSIX underscore standard,
+                            // else workaround using DATE_LOCALES.
+                            if (defined('DATE_LOCALES') && (false !== strpos('_', WYSIWYG_LANG))) {
+                                // scayt available langs are ('en_US', 'en_GB', 'pt_BR', 'da_DK', 'nl_NL', 'en_CA', 'fi_FI', 'fr_FR', 'fr_CA', 'de_DE', 'el_GR', 'it_IT', 'la_VA', 'nb_NO', 'pt_PT', 'es_ES', 'sv_SE');
+                                $locale  = explode(',', DATE_LOCALES); // get the current defined locales as array
+                                $special = array('Arabic', 'bulgarian', 'pl.UTF-8', 'tw'); // special lang exceptions which have them at last position
+                                if (in_array($locale[0], $special)) {
+                                    $slocale = @strtok(end($locale), "."); // strtok dot fixes 'ar_SA.windows-1256'
+                                    @reset($locale);
+                                }
+                                $_locale = trim(isset($slocale) ? $slocale : $locale[0]); // set the current lang locale as string
+                                if (!empty($_locale)) {
+                                    $flocale = explode('.', $_locale); // $flocale array is the first defined 4-letter lang locale, eg "de_DE".
+                                    if ($flocale[0] == 'nl_BE') $flocale[0] = 'nl_NL'; // case locale Nederlands / België set back to Dutch (Netherlands)
+                                    if ($flocale[0] == 'sv_SV') $flocale[0] = 'sv_SE'; // case Swedish set back to Swedish (Sweden)
+                                }
+                            }
+                            $acf_off = serendipity_db_bool($this->get_config('acf_off', 'false')) ? 'true' : 'false';    // need this, to be passed correctly as boolean true/false to custom cke_config.js
+                            $code_on = serendipity_db_bool($this->get_config('codebutton', 'false')) ? 'true' : 'false'; // same here for cke_plugins.js
+                            $oembed  = serendipity_db_bool($this->get_config('oembed', 'false'));
+                            $oetype  = $this->get_config('oembed_type', 'semantic');
+                            $oembed1 = ($oembed && $oetype == 'markup') ? 'true' : 'false';
+                            $oembed2 = ($oembed && $oetype == 'semantic') ? 'true' : 'false';
+                            $uats_on = $serendipity['use_autosave'] ? 'true' : 'false';                                  // dito
+                            $time    = $this->get_config('timestamp', time());
+                            $slang   = (isset($flocale) && !empty($flocale[0]) ? $flocale[0] : WYSIWYG_LANG); // set scayt locales 4-letter POSIX lang or fall back
+                            $lang    = $slang ? $slang : 'en_US'; // use new WYSIWYG_LANG, or the workaround locale, or fall back to default
+                            $lang    = str_replace('_', '-', $lang); // change to IETF standard unicode language tag, using a dash
+                            /*
+                                Define some global CKEDITOR plugin startup vars
+                                Include the ckeditor
+                                Build dynamic plugins and set the custom config (cke_config.js)
+                            */
 ?>
 
-    <script type="text/javascript">
-        CKEDITOR_BASEPATH       = '<?php echo $relpath; ?>';
-        CKEDITOR_PLUGPATH       = '<?php echo $plgpath; ?>';
-        CKECONFIG_ACF_OFF       = <?php echo $acf_off; ?>;
-        CKECONFIG_CODE_ON       = <?php echo $code_on; ?>;
-        CKECONFIG_OEMBED_ON     = <?php echo $oembed1; ?>;
-        CKECONFIG_OEMBED_SMT_ON = <?php echo $oembed2; ?>;
-        CKECONFIG_LANG          = '<?php echo $lang; ?>'; // as IETF
-        CKECONFIG_SLANG         = '<?php echo $slang; ?>'; // as POSIX
-        CKECONFIG_TOOLBAR       = '<?php echo $toolbar; ?>';
-        CKECONFIG_TOOLBAR_BREAK = <?php echo serendipity_db_bool($this->get_config('toolbar_break', 'false')) ? "'/'" : "''"; ?>;
-        CKECONFIG_FORCE_LOAD    = <?php echo $time; ?>;
-        CKECONFIG_USEAUTOSAVE   = <?php echo $uats_on; ?>;
-    </script>
-    <script type="text/javascript" src="<?php echo $serendipity['serendipityHTTPPath'] . $relpath; ?>ckeditor.js"></script>
-    <script type="text/javascript" src="<?php echo $plgpath . 'serendipity_event_ckeditor/'; ?>cke_plugin.js"></script>
+/* serendipity_event_ckeditor start */
+
+// define CKE PLUS constants
+CKEDITOR_BASEPATH       = '<?php echo $relpath; ?>';
+CKEDITOR_PLUGPATH       = '<?php echo $plgpath; ?>';
+CKECONFIG_ACF_OFF       = <?php echo $acf_off; ?>;
+CKECONFIG_CODE_ON       = <?php echo $code_on; ?>;
+CKECONFIG_OEMBED_ON     = <?php echo $oembed1; ?>;
+CKECONFIG_OEMBED_SMT_ON = <?php echo $oembed2; ?>;
+CKECONFIG_LANG          = '<?php echo $lang; ?>'; // as IETF
+CKECONFIG_SLANG         = '<?php echo $slang; ?>'; // as POSIX
+CKECONFIG_TOOLBAR       = '<?php echo $toolbar; ?>';
+CKECONFIG_TOOLBAR_BREAK = <?php echo serendipity_db_bool($this->get_config('toolbar_break', 'false')) ? "'/'" : "''"; ?>;
+CKECONFIG_FORCE_LOAD    = <?php echo $time; ?>;
+CKECONFIG_USEAUTOSAVE   = <?php echo $uats_on; ?>;
+
+/* serendipity_event_ckeditor end */
 <?php
-                        // sadly this can't be pushed into streamed css, since that is cached to lazyload.
-                        if ($toolbar == 'Basic') {
+                        } else { //'backend_header' case
+?>
+    <script src="<?php echo $serendipity['serendipityHTTPPath'] . $relpath; ?>ckeditor.js"></script>
+    <script src="<?php echo $plgpath . 'serendipity_event_ckeditor/'; ?>cke_plugin.js"></script>
+<?php
+                            // sadly this can't be pushed into streamed css, since that is cached to lazyload.
+                            if ($toolbar == 'Basic') {
 ?>
     <link rel="stylesheet" href="<?php echo $plgpath . 'serendipity_event_ckeditor/'; ?>basic_toolbar.css" />
 <?php
-                        } else { // case other toolbars
-                            if (false === serendipity_db_bool($this->get_config('ibn_off', 'true')) ) {
+                            } else { // case other toolbars
+                                if (false === serendipity_db_bool($this->get_config('ibn_off', 'true')) ) {
 ?>
     <link rel="stylesheet" href="<?php echo $plgpath . 'serendipity_event_ckeditor/'; ?>cke_ibn.css" />
 <?php
+                                }
                             }
                         }
                     }

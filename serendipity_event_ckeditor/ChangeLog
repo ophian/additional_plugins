@@ -1,3 +1,9 @@
+4.13.0.3:
+---------
+    * Move (inner) wysiwyg editor javascript constants into serendipity_admin.js
+      and make clear to manually (F5) hard reload WYSIWYG-Editor pages once,
+      on Upgrade or having changed the configurator.
+
 4.13.0.2:
 ---------
     * Fix (inner) wysiwyg editor styles to clear <hr> tags and serendipity_images_block selectors

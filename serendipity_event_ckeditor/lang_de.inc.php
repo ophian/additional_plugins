@@ -37,7 +37,7 @@
 
 @define('PLUGIN_EVENT_CKEDITOR_CODEBUTTON_OPTION', 'Nutze "codesnippet" Toolbar-Button?');
 @define('PLUGIN_EVENT_CKEDITOR_PRETTIFY_OPTION', 'Nutze zusätzliches code prettify css/js im Frontend?');
-@define('PLUGIN_EVENT_CKEDITOR_PRETTIFY_OPTION_DESC', 'Nur für Upgrader! Rückwärtskompatibilität für alte Blog Einträge mit Code-Blöcken.');
+@define('PLUGIN_EVENT_CKEDITOR_PRETTIFY_OPTION_DESC', 'Nur für Upgrader! Rückwärtskompatibilität für sehr alte Blog Einträge mit Code-Blöcken.');
 @define('PLUGIN_EVENT_CKEDITOR_OPTION_DESC', 'Normalerweise: ');
 
 @define('PLUGIN_EVENT_CKEDITOR_FORCEINSTALL_OPTION', 'Entpacke Zip Datei (im Notfall)');
@@ -67,4 +67,6 @@ Zum Beispiel bei unterschiedlichen Styles für verschiedene Browser Screen- oder 
 Wählen und testen Sie also selbst.');
 @define('PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_SEMANTIC_OPTION', 'Semantic Media Embed');
 @define('PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_MARKUP_OPTION', 'Media Embed');
+
+@define('PLUGIN_EVENT_CKEDITOR_OPHANDLER', '<b>Achtung:</b> Nach jedem Upgrade und durch interne Optimierungen der Plugin Ausgaben betreffend Javascript Konstanten im Backend Kontext, müssen sie nach Änderungen in obiger Plugin-Konfiguration Ihren Browser, <em>auf einer Seite eines WYSIWYG-Editor &lt;textarea&gt; Formulares</em>, <b>einmal</b> manuell anweisen den Browser Cache <u><b>neu</b> zu laden</u> (zB. durch <b>F5</b>), sonst wird ihre Änderung durch den Browsercache der serendipity_admin.js Datei möglicherweise erst nach bis zu einer Stunde aktiv.');
 

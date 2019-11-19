@@ -37,7 +37,7 @@
 
 @define('PLUGIN_EVENT_CKEDITOR_CODEBUTTON_OPTION', 'Allow "codesnippet" toolbar-button?');
 @define('PLUGIN_EVENT_CKEDITOR_PRETTIFY_OPTION', 'Allow additional prettify css/js in frontend?');
-@define('PLUGIN_EVENT_CKEDITOR_PRETTIFY_OPTION_DESC', 'For upgraders only! Keeps backward compatibility for old entries with code-blocks.');
+@define('PLUGIN_EVENT_CKEDITOR_PRETTIFY_OPTION_DESC', 'For upgraders only! Keeps backward compatibility for very old entries with code-blocks.');
 @define('PLUGIN_EVENT_CKEDITOR_OPTION_DESC', 'Usually: ');
 
 @define('PLUGIN_EVENT_CKEDITOR_FORCEINSTALL_OPTION', 'Force install process (in emergencies)');
@@ -66,9 +66,11 @@ If you don\'t need to use all this, you better stick to the simple mediaembed al
 @define('PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_OPTION', 'Type of "oEmbed" button');
 @define('PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_OPTION_DESC', 'The difference between "Media Embed" and "Semantic Media Embed" is that the first will include the entire HTML needed to display the resource in the data, while the latter will only include an <oembed> tag with the URL to the resource.
 This difference makes the Media Embed plugin perfect for systems where the embedding feature should work out of the box.
-The Semantic Media Embed plugin is useful for rich content managment systems that store only pure, semantic content ready for further processing.
+The Semantic Media Embed plugin is useful for rich content management systems that store only pure, semantic content ready for further processing.
 For instance using different results in different browser screen or print types of a website. Also it is much shorter and clearer and less prone to automatic corrections of the editor. It does show the embedded content in the editor in your first include session, but you have to use an output-filter to transform the <oembed> tag to the frontpage and backend entry recalls on render to make it actually work.
 Test on your own and make your choice.');
 @define('PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_SEMANTIC_OPTION', 'Semantic Media Embed');
 @define('PLUGIN_EVENT_CKEDITOR_OEMBEDTYPE_MARKUP_OPTION', 'Media Embed');
+
+@define('PLUGIN_EVENT_CKEDITOR_OPHANDLER', '<b>Please note:</b> After each CKEditor upgrade and due to a plugin change improvement placing javascript constants in the backends context, you need to manually <u>hard reload</u> your browsers cache (eg. by <b>F5</b>) <b>once</b> (<em>on some wysiwyg editor textarea form page</em>) after having changed this CKEditor plugin option configurator. Else your <em>unchanged</em> change will be cached-lazyloaded by the serendipity_admin.js file up for an hour.');
 
