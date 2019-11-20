@@ -12,9 +12,12 @@
 .icon-ok:before {color:green;}
 .icon-ok:before, .icon-error:before, .icon-attention:before {font-size:131%;}
 
+.cke_revpack,
+.cke_config_block {
+    font-size: smaller;
+}
 .cke_config_block {
     opacity: 0.9;
-    font-size: smaller;
     border: 1px dashed;
     padding: 0 .5em;
 }

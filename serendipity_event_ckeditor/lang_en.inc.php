@@ -74,3 +74,10 @@ Test on your own and make your choice.');
 
 @define('PLUGIN_EVENT_CKEDITOR_OPHANDLER', '<b>Please note:</b> After each CKEditor upgrade and due to a plugin change improvement placing javascript constants in the backends context, you need to manually <u>hard reload</u> your browsers cache (eg. by <b>F5</b>) <b>once</b> (<em>on some wysiwyg editor textarea form page</em>) after having changed this CKEditor plugin option configurator. Else your <em>unchanged</em> change will be cached-lazyloaded by the serendipity_admin.js file up for an hour.');
 
+@define('PLUGIN_EVENT_CKEDITOR_INSTALLER_DEFLATEDONE', '<strong>Force deflate done:</strong> Please reload this page <a href="%s" target="_self">here</a>!');
+@define('PLUGIN_EVENT_CKEDITOR_INSTALLER_MSG4', '<strong>Check Plugin Update Message:</strong> NO CONFIG SET or NO MATCH -> config_set: "last_%s_version:%s"');
+@define('PLUGIN_EVENT_CKEDITOR_INSTALLER_MSG3', '<strong>Installer Update Message:</strong> Check Zip-Upgrade found false, no unpack needed. Plugin upgrade successfully done <strong>or</strong> has been triggered to be checked by an other Spartacus Plugin update!');
+@define('PLUGIN_EVENT_CKEDITOR_INSTALLER_MSG2', '<strong>Installer Message:</strong> Extracting the zip to %s directory done!');
+@define('PLUGIN_EVENT_CKEDITOR_INSTALLER_MSG1', '<strong>Installer Error[1]:</strong> Extracting the zip to %s directory failed!<br>Please extract %s by hand.');
+@define('PLUGIN_EVENT_CKEDITOR_INSTALLER_MSG0', '<strong>Installer Error[0]:</strong> Due to a writing permission error, extracting the zip to %s directory failed!<br>Please set "/plugins" or "/plugins/serendipity_event_ckeditor" directory and files correct writing permissions and extract %s by hand or try again and <u>remove(!)</u> this plugin from your plugin list and install it again.');
+

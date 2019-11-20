@@ -70,3 +70,10 @@ Wählen und testen Sie also selbst.');
 
 @define('PLUGIN_EVENT_CKEDITOR_OPHANDLER', '<b>Achtung:</b> Nach jedem Upgrade und durch interne Optimierungen der Plugin Ausgaben betreffend Javascript Konstanten im Backend Kontext, müssen sie nach Änderungen in obiger Plugin-Konfiguration Ihren Browser, <em>auf einer Seite eines WYSIWYG-Editor &lt;textarea&gt; Formulares</em>, <b>einmal</b> manuell anweisen den Browser Cache <u><b>neu</b> zu laden</u> (zB. durch <b>F5</b>), sonst wird ihre Änderung durch den Browsercache der serendipity_admin.js Datei möglicherweise erst nach bis zu einer Stunde aktiv.');
 
+@define('PLUGIN_EVENT_CKEDITOR_INSTALLER_DEFLATEDONE', '<strong>Notfall-Zip-Extraktion ausgeführt:</strong> Bitte laden Sie diese Seite neu <a href="%s" target="_self">hier</a>!');
+@define('PLUGIN_EVENT_CKEDITOR_INSTALLER_MSG4', '<strong>Meldung der Plugin-Update Überprüfung:</strong> NO CONFIG SET oder NO MATCH -> config_set: "last_%s_version:%s"');
+@define('PLUGIN_EVENT_CKEDITOR_INSTALLER_MSG3', '<strong>Installer Update Meldung:</strong> Zip-Upgrade Überprüfung meldet false; keine Extraktion nötig. Das Plugin Update wurde erfolgreich durchgeführt <strong>oder</strong> durch ein anderes Spartacus Plugin Update angestossen!');
+@define('PLUGIN_EVENT_CKEDITOR_INSTALLER_MSG2', '<strong>Installer Upgrade Meldung:</strong> Extraktion der Zip-Datei in das %s Verzeichnis abgeschlossen!');
+@define('PLUGIN_EVENT_CKEDITOR_INSTALLER_MSG1', '<strong>Installer Fehler[1]:</strong> Das Extrahieren der Zip-Datei in das %s Verzeichnis ist fehlgeschlagen!<br>Bitte extrahieren Sie die Datei %s von Hand.');
+@define('PLUGIN_EVENT_CKEDITOR_INSTALLER_MSG0', '<strong>Installer Fehler[0]:</strong> Aufgrund eines Schreibberechtigungsfehlers ist das Extrahieren der Zip-Datei in das Verzeichnis %s fehlgeschlagen!<br>Überprüfen Sie die "/plugins" und "/plugins/serendipity_event_ckeditor" Verzeichnisse/Dateien auf fehlende Schreibberechtigungen, oder extrahieren Sie %s von Hand, oder versuchen es anschließend hier erneut, oder <u>deinstallieren(!)</u> Sie dieses Plugin von ihrer Pluginliste, um es daraufhin neu zu installieren.');
+
