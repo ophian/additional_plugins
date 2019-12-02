@@ -124,7 +124,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Wed, 20 Nov 2019 16:38:45 +0100</pubDate>
+<pubDate>Mon, 02 Dec 2019 15:06:05 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -1141,9 +1141,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>Compress Images: Compress PNG and JPG images with the TinyPNG service.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_tinypng</link>
 <category>Event Plugins</category>
-<author>onli</author>
+<author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_tinypng&lt;br /&gt;Compress Images&lt;/b&gt;&lt;br /&gt;Compress PNG and JPG images with the TinyPNG service.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 18 Aug 2019 15:14:19 +0200</pubDate>
+<pubDate>Mon, 02 Dec 2019 12:32:11 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_tinypng</guid>
 </item>
 <item>
