@@ -16,8 +16,8 @@ class serendipity_event_tinypng extends serendipity_event {
         $propbag->add('name',          PLUGIN_EVENT_TINYPNG_NAME);
         $propbag->add('description',   PLUGIN_EVENT_TINYPNG_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'onli');
-        $propbag->add('version',       '1.03');
+        $propbag->add('author',        'onli, Ian Styx');
+        $propbag->add('version',       '1.10');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0'
         ));
@@ -25,6 +25,26 @@ class serendipity_event_tinypng extends serendipity_event {
         $propbag->add('groups', array('IMAGES'));
 
         $propbag->add('configuration', array('tinypngkey'));
+
+        $propbag->add('legal',         array(
+            'services' => array(
+                'tinify' => array(
+                    'url'  => 'https://tinify.com',
+                    'desc' => 'Transmits image data (and metadata) to an online service to get back a new rendered PNG/JPEG image by best compression. You need an API key for tinypng, register at https://tinypng.com/developers. The API_ENDPOINT is "https://api.tinify.com"'
+                ),
+            ),
+            'frontend' => array(
+            ),
+            'backend' => array(
+                'Hooks into Serendipity backend "backend_image_add" hook for uploading images to the MediaLibrary.'
+            ),
+            'cookies' => array(
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => false,
+            'transmits_user_input'  => true
+        ));
     }
 
     function generate_content(&$title)

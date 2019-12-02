@@ -1,3 +1,8 @@
+1.10:
+----
+ * Upgrade TinyPNG library to 1.5.2
+ * Add legal notice for the DSGVO / GDPR plugin
+
 1.03:
 ----
  * Fixed and UP.
