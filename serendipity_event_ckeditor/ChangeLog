@@ -1,3 +1,7 @@
+4.13.0.6:
+---------
+    * Fix a tag redundancy in config.extraAllowedContent() with cke_config.js, v.2.20, 2019-11-24
+
 4.13.0.5:
 ---------
     * Use lang constants for configuration and update messages - done for [en, de]

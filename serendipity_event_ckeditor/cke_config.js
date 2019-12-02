@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.19, 2019-10-3
+ * @fileOverview A Serendipity Styx serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.20, 2019-11-24
  */
 
  /**
@@ -87,7 +87,7 @@ CKEDITOR.editorConfig = function( config ) {
               - Allow <oembed> tag using Semantic Media Embed
         */
         // protect tags
-        config.extraAllowedContent = 'mediainsert[*]{*}(*);gallery[*]{*}(*);media[*]{*}(*);script[*]{*}(*);audio[*]{*}(*);video[*];figure{*}(*);figcaption(*);source[*];div[*]{*}(*);p(*);ul{*}(*);dl{*}(*);dt;dd;a[*](*);span[*]{*}(*);picture;source[*]{*}(*);img[height,width];pre[*](*);code(*);i[*](*);oembed;';
+        config.extraAllowedContent = 'mediainsert[*]{*}(*);gallery[*]{*}(*);media[*]{*}(*);script[*]{*}(*);audio[*]{*}(*);video[*];figure{*}(*);figcaption(*);div[*]{*}(*);p(*);ul{*}(*);dl{*}(*);dt;dd;a[*](*);span[*]{*}(*);picture;source[*]{*}(*);img[height,width];pre[*](*);code(*);i[*](*);oembed;';
 
         // do not use auto paragraphs added to these allowed tags.
         config.autoParagraph = false;
