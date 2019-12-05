@@ -7,7 +7,7 @@ if (IN_serendipity !== true) {
 // Load possible language files.
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.69');
+@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.70');
 
 // Defines the maximum available method  slots in the configuration.
 @define('PLUGIN_EVENT_GRAVATAR_METHOD_MAX', 6);
@@ -1276,7 +1276,9 @@ class serendipity_event_gravatar extends serendipity_event
         if (serendipity_db_bool($this->get_config('autoralt', 'false'))) {
             $alt = $title;
         }
-        return '<img src="' . $url . '" alt="' . $alt . '" title="' . $title . '" class="' . $cssClass . ($addAlignClass? " $cssAlign":"") . '" height="' . $default['size'] . '" width="' . $default['size'] . '"/>';
+        if (!empty($url)) {
+            return '<img src="' . $url . '" alt="' . $alt . '" title="' . $title . '" class="' . $cssClass . ($addAlignClass? " $cssAlign":"") . '" height="' . $default['size'] . '" width="' . $default['size'] . '"/>';
+        } else return '';
     }
 
     /**

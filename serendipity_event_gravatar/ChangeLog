@@ -1,3 +1,7 @@
+1.70:
+-----
+ * Fix returning avatar image when url empty, now empty string
+
 1.69:
 -----
  * Add some uninitialized variable checks
