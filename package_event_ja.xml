@@ -4284,9 +4284,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Show Avatars inside comments. Gravatars, Pavatars, Favatars, Wavatars, Monster ID, Identicon, Twitter and Identica Avatars are supported.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.69</version>
+  <version>1.70</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-12-05</date>
   <filelist>
     <dir name="serendipity_event_gravatar">
       <file>ChangeLog</file>
