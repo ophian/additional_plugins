@@ -566,9 +566,9 @@
 <description>Dieses Plugin ermöglicht erweiterte Eigenschaften für Kategorien und deren Einträge festzulegen: speziell angepasste Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus anderen Eintragslisten, sowie auch dem RSS-Feed.</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.91</version>
+  <version>1.92</version>
   <requirements:s9yVersion>2.7.0</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-12-06</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
