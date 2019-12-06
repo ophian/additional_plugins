@@ -26,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '1.91');
+        $propbag->add('version',       '1.92');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '5.1.0'
@@ -882,12 +882,13 @@ class serendipity_event_categorytemplates extends serendipity_event
                     break;
 
                 case 'frontend_fetchcomments':
-                    $coctr = (isset($addData['source']) && $addData['source'] == 'comments_counter') ? true : false;
                     // Do not apply to logged in Administrators (so not in the backend as well)
                     if ((isset($_SESSION['serendipityAuthedUser']) && $_SESSION['serendipityAuthedUser'] === true)
                     && (serendipity_checkPermission('siteConfiguration') || serendipity_checkPermission('blogConfiguration'))) {
                         return;
                     }
+                    $coctr = (isset($addData['source']) && $addData['source'] == 'comments_counter') ? true : false;
+                    $conds = array();
                     // Will force comments query to not fetch comments of (hidden) categorytemplates to be not displayed in comments and RSS feed for comments.
                     $this->fetchHiddenCategoryTemplates();
                     if (isset($this->bycategory[0]['template'])) {

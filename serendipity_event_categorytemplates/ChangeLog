@@ -1,3 +1,7 @@
+1.92:
+-----
+ * Fix some 'frontend_fetchcomments' PHP7 implements Countable $cond array errors
+
 1.91:
 -----
  * Refactor $bycategory call
