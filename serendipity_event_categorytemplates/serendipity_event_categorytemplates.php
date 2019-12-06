@@ -26,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '1.92');
+        $propbag->add('version',       '1.93');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '5.1.0'
@@ -889,6 +889,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     }
                     $coctr = (isset($addData['source']) && $addData['source'] == 'comments_counter') ? true : false;
                     $conds = array();
+                    $joins = array();
                     // Will force comments query to not fetch comments of (hidden) categorytemplates to be not displayed in comments and RSS feed for comments.
                     $this->fetchHiddenCategoryTemplates();
                     if (isset($this->bycategory[0]['template'])) {

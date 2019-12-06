@@ -1,3 +1,7 @@
+1.93:
+-----
+ * Fix another occurence of uninitialized Countable (see 1.92)
+
 1.92:
 -----
  * Fix some 'frontend_fetchcomments' PHP7 implements Countable $cond array errors
