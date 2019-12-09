@@ -1,6 +1,10 @@
+1.81:
+-----
+ * Correct a minor markup indent including footer assets
+
 1.80:
 -----
- * Fix a wrong slash in cookieconsent css url
+ * Fix a wrong slash in cookieconsent CSS URL
 
 1.79:
 -----
