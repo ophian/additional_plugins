@@ -789,7 +789,6 @@ class serendipity_event_spamblock_bee extends serendipity_event
         if (!(strpos($eventData, '.comment_phone_input'))) {
             ob_start();
 ?>
-
 .comment_phone_input {
     max-width: 100%;
     display:none;
