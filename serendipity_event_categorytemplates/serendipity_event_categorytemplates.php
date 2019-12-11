@@ -26,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '1.93');
+        $propbag->add('version',       '1.94');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '5.1.0'
@@ -218,12 +218,12 @@ class serendipity_event_categorytemplates extends serendipity_event
         global $serendipity;
 
         // If category view, just return the current category ID
-        if ($serendipity['GET']['category'] && !isset($serendipity['GET']['id'])) {
+        if (!empty($serendipity['GET']['category']) && !isset($serendipity['GET']['id'])) {
             return (int)$serendipity['GET']['category'];
         }
 
         // If entry view, determine the best category ID for custom templating
-        if ($serendipity['GET']['id']) {
+        if (!empty($serendipity['GET']['id'])) {
             // Find all the category IDs that have custom templates
             $cidstr = $this->get_config('cat_precedence', false);
             if ($cidstr === false) {
