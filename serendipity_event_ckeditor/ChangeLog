@@ -1,3 +1,8 @@
+4.13.1.0:
+---------
+    * Upgrade to CKEDITOR 4.13. Series, update 1 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
+
 4.13.0.6:
 ---------
     * Fix a tag redundancy in config.extraAllowedContent() with cke_config.js, v.2.20, 2019-11-24
