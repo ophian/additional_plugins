@@ -87,7 +87,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-01-28</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="adaptation">
       <dir name="colorsets">
@@ -2358,7 +2358,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-02-17</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="costa-nature">
       <file>comments.tpl</file>
@@ -2730,7 +2730,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-02-17</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="freshy">
       <file>commentform.tpl</file>
@@ -3448,7 +3448,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-02-14</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="hemingway">
       <file>404.tpl</file>
@@ -3620,7 +3620,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.1</requirements:s9yVersion>
-  <date>2019-01-11</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="i3theme">
       <file>commentform.tpl</file>
@@ -3974,7 +3974,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-03-20</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="jazzcafe">
       <file>commentpopup.tpl</file>
@@ -4326,7 +4326,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2019-05-18</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="kubrick">
       <file>commentpopup.tpl</file>
@@ -4704,7 +4704,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-02-04</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="mimbo">
       <file>404.tpl</file>
@@ -4806,7 +4806,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-02-03</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="mo3">
       <file>404.tpl</file>
@@ -6022,7 +6022,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-01-25</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="pixel">
       <file>botbar.tpl</file>
@@ -6140,7 +6140,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-01-20</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="plain-vanilla">
       <file>commentpopup.tpl</file>
@@ -6214,7 +6214,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <date>2019-01-11</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="plus9">
       <file>AJS.js</file>
@@ -8017,7 +8017,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-02-03</date>
+  <date>2019-12-16</date>
   <filelist>
     <dir name="truth">
       <file>commentform.tpl</file>
