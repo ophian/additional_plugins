@@ -31,15 +31,41 @@ Then you can place {entrypagination} anywhere in you entries tpl file and can st
 
 ######################################################################################################################
 
-OR just use this snippet to not call that function on every request:
+OR just use this snippet to not call that function on every request inside the entries.tpl entry foreach loop (in example above your section id="comments"..):
 
 {if $is_single_entry AND NOT $is_preview AND NOT empty($smarty_entrypaging)}
     <div id="serendipity_smarty_entrypaging">
         {if NOT empty($pagination_prev_link)}
-            <div class="smarty_pagination_left"><a href="{$pagination_prev_link}" title="{$pagination_prev_title}"><svg viewbox="0 0 100 100"><path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" /></svg></a></div>
+            <div class="smarty_pagination_left"><a href="{$pagination_prev_link}" title="{$pagination_prev_title}"><svg viewbox="0 0 100 100"><path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" /></svg>{$pagination_prev_title}</a></div> | 
         {/if}
         {if NOT empty($pagination_next_link)}
-            <div class="smarty_pagination_right"><a href="{$pagination_next_link}" title="{$pagination_next_title}"><svg viewbox="0 0 100 100"><path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" /></svg></a></div>
+            <div class="smarty_pagination_right"><a href="{$pagination_next_link}" title="{$pagination_next_title}">{$pagination_next_title}<svg viewbox="0 0 100 100"><path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" /></svg></a></div>
         {/if}
     </div>
 {/if}
+
+And this to style it in your user.css file (build for Styx 3.0 pure Standard theme):
+
+#serendipity_smarty_entrypaging {
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px rgba(111, 111, 111, 0.5);
+    display: -webkit-inline-box;
+    margin: .5em 0em 0em;
+    padding: .5em;
+    width: 100%;
+}
+#serendipity_smarty_entrypaging svg {
+    width: 16px;
+    vertical-align: middle;
+}
+#serendipity_smarty_entrypaging .smarty_pagination_right svg {
+    transform: rotateY(180deg);
+}
+.smarty_pagination_left {
+    margin-right: auto;
+}
+.smarty_pagination_right {
+    margin-left: auto;
+}
