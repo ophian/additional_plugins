@@ -2278,9 +2278,9 @@
 <description>Umieszcza w widoku wpisu linki do następnego/poprzedniego wpisu</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.70</version>
+  <version>1.71</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2019-12-19</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
