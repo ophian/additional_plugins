@@ -1053,7 +1053,7 @@ class serendipity_event_commentspice extends serendipity_event
             }
         }
         if ($do_announce && !serendipity_db_bool($this->get_config('inputpatched_rss', 'false'))) {
-            echo '<div id="serendipity_commentspice_rss" class="form_tarea spicehidden">' . "\n";
+            echo '<div id="serendipity_commentspice_rss" class="form_tarea spicehidden">' . "\n";//normally form_tarea is for form textareas .. is this checked in 2k11?
             echo '<label for="serendipity_commentform_rss">' . PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_LABEL . '</label>' . "\n";
             echo '<select ' . ($styleInputRss ? 'class="commentspice_rss_input" ' : '') . 'id="serendipity_commentform_rss" name="serendipity[promorss]"></select>' . "\n"; //  style="max-width: 20em; width: 100%"
             echo '</div>' . "\n";
