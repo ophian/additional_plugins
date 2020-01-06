@@ -1,3 +1,7 @@
+2.62:
+-----
+ * Fix mySQL search $cond['find_part'] append string
+
 2.61:
 -----
  * Improve FAQ N° 3 in documentation [en, de] to show explicit chosen languages only

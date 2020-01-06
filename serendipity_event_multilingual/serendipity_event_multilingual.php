@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.61');
+        $propbag->add('version',        '2.62');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -835,7 +835,7 @@ class serendipity_event_multilingual extends serendipity_event
                         } else {
                             if (@mb_detect_encoding($term, 'UTF-8', true) && @mb_strlen($term, 'utf-8') < strlen($term)) {
                                 $_term = str_replace('*', '', $term);
-                                $cond['find_part'] = " OR (multilingual_body.value LIKE '%$_term%' OR multilingual_extended.value LIKE '%$_term%' OR multilingual_title.value LIKE '%$_term%')";
+                                $cond['find_part'] .= " OR (multilingual_body.value LIKE '%$_term%' OR multilingual_extended.value LIKE '%$_term%' OR multilingual_title.value LIKE '%$_term%')";
                             } else {
                                 if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
                                     $bool = ' IN BOOLEAN MODE';
