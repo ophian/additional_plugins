@@ -212,7 +212,8 @@
 .sp_entries_pane .spform form {
     display: inline-table;
     margin-right: auto;
-    zoom: 1;
+    /*transform: scale(1);
+    transform-origin: 0 0;*/
 }
 .serendipityAdminContent span.five {
     font-weight: 500;
