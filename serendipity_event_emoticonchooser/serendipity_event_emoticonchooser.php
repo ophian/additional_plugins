@@ -19,11 +19,11 @@ class serendipity_event_emoticonchooser extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Jay Bertrandt, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.1.0',
+            'serendipity' => '3.0',
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.29');
+        $propbag->add('version',       '3.30');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -417,7 +417,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
 /* emoticonchooser plugin start */
 
 .serendipity_toggle_emoticon_bar.serendipityPrettyButton {
-    margin: 0 auto 1px;
+    margin: 1em auto 1px;
 }
 .serendipity_emoticon_bar {
     text-align: right;
