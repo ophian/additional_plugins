@@ -2122,9 +2122,9 @@
 <description>Shows a toolbar to select emoticons to insert into your entry.</description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.29</version>
-  <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <date>2019-10-26</date>
+  <version>3.30</version>
+  <requirements:s9yVersion>3.0</requirements:s9yVersion>
+  <date>2020-01-08</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -9206,9 +9206,9 @@
 <description>Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.06</version>
+  <version>6.07</version>
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
-  <date>2019-11-19</date>
+  <date>2020-01-07</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>

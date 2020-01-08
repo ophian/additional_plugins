@@ -911,7 +911,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-01-08</date>
+  <date>2020-01-07</date>
   <filelist>
     <dir name="bartleby">
       <file>config.inc.php</file>
@@ -4588,7 +4588,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-01</date>
+  <date>2020-01-07</date>
   <filelist>
     <dir name="leaf">
       <file>commentform.tpl</file>
@@ -5840,7 +5840,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-04-15</date>
+  <date>2020-01-07</date>
   <filelist>
     <dir name="photo">
       <file>config.inc.php</file>
@@ -6960,7 +6960,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-03-11</date>
+  <date>2020-01-07</date>
   <filelist>
     <dir name="sagittarius">
       <file>404.tpl</file>
@@ -8195,7 +8195,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-03-10</date>
+  <date>2020-01-07</date>
   <filelist>
     <dir name="xkur">
       <file>config.inc.php</file>
