@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity Styx serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.20, 2019-11-24
+ * @fileOverview A Serendipity Styx serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.21, 2020-01-08
  */
 
  /**
@@ -345,6 +345,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'insert',      items : [ 'Image' ] },
         { name: 'links',       items : [ 'Link','Unlink' ] },
         { name: 'snippet',     items : [ 'CodeSnippet' ] },
+        { name: 'emoji',       items : [ 'EmojiPanel' ] },
         { name: 'oembed',      items : [ 'MediaEmbed', 'Embed', 'EmbedSemantic' ] },
         { name: 'others',      items : s9ypluginbuttons },
         { name: 'document',    items : [ 'Source' ] }
@@ -372,6 +373,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'forms',       items : [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
         CKECONFIG_TOOLBAR_BREAK,
         { name: 'snippet', groups : [ 'snippet' ], items : [ 'CodeSnippet' ] },
+        { name: 'emoji',       items : [ 'EmojiPanel' ] },
         { name: 'oembed', groups : [ 'oembed' ], items : [ 'MediaEmbed', 'Embed', 'EmbedSemantic' ] },
         { name: 'others',      items : s9ypluginbuttons },
         { name: 'document', groups : [ 'mode', 'document', 'doctools' ], items : [ 'Source' ] },
@@ -394,6 +396,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'insert',      items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak' ] },
         { name: 'colors',      items : [ 'TextColor','BGColor' ] },
         { name: 'snippet', groups : [ 'snippet' ], items : [ 'CodeSnippet' ] },
+        { name: 'emoji',       items : [ 'EmojiPanel' ] },
         { name: 'oembed', groups : [ 'oembed' ], items : [ 'MediaEmbed', 'Embed', 'EmbedSemantic' ] },
         { name: 'others',      items : s9ypluginbuttons },
         { name: 'tools',       items : [ 'Maximize', 'ShowBlocks','-','About' ] },
@@ -415,6 +418,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'clipboard',   items : [ 'Cut', 'Copy', 'Paste', 'PasteText', '-', 'Undo', 'Redo'] },
         { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Scayt' ] },
         { name: 'snippet',     items : [ 'CodeSnippet' ] },
+        { name: 'emoji',       items : [ 'EmojiPanel' ] },
         { name: 'oembed', groups : [ 'oembed' ], items : [ 'MediaEmbed', 'Embed', 'EmbedSemantic' ] },
         { name: 'others',      items : s9ypluginbuttons },
         { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source' ] },
@@ -445,6 +449,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ] },
 
         { name: 'snippet', groups: [ 'codesnippet', 'snippet' ] },
+        { name: 'emoji', groups : [ 'emoji' ] },
         { name: 'oembed' },
         { name: 'others' },
         { name: 'tools' },

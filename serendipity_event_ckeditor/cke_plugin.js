@@ -1,9 +1,9 @@
 /**
- * @license Copyright (c) from 2013, Author: Ian Styx. All rights reserved. Last Modified date: 2019-11-02.
+ * @license Copyright (c) from 2013, Author: Ian Styx. All rights reserved. Last Modified date: 2020-01-08.
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.16, 2018-07-13
+ * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.17, 2020-01-08.
  */
 
 // define array for hooked s9y plugins
@@ -84,7 +84,7 @@ function Spawnnuggets(item, addEP, jsED) {
     // 'embed' and 'embedsemantic' are official CKEDITOR plugins.
     //    Plugin Dependencies: Add-on Dependencies: 'embedbase'
     // 'emoji' is an official CKEDITOR plugin, which is an implementation of the Autocomplete feature.
-    //    Plugin Dependencies: 'emoji' Add-on Dependencies: 'Autocomplete', 'Text Match', 'Ajax Data Loading',
+    //    Plugin Dependencies: 'emoji' Add-on Dependencies: 'Autocomplete', 'Button', 'FloatPanel', 'PanelButton', 'Text Match', 'Ajax Data Loading',
     //    which have Add-on Helper Dependencies themselves: 'textwatcher' for autocomplete and 'xml' for the ajax Add-on.
     // 'mediaembed' is a fast and simple YouTube code/markup CKEditor-Plugin: v. 0.5+ (https://github.com/frozeman/MediaEmbed, 2013-09-12) to avoid ACF restrictions
     //
@@ -95,7 +95,7 @@ function Spawnnuggets(item, addEP, jsED) {
     //
     var name_extraPlugins = (addEP !== null) ? addEP : $this;
     var jsEventData       = (jsED  !== null) ? jsED  : window.jsEventData; // global set by the 'backend_wysiwyg_finish' hook
-    var extraPluginACF    = (CKECONFIG_ACF_OFF === true) ? name_extraPlugins+', autogrow, mediaembed, cheatsheet, autocomplete, emoji, textmatch, textwatcher, ajax, xml' : name_extraPlugins+', autogrow, mediaembed, procurator, cheatsheet, autocomplete, emoji, textmatch, textwatcher, ajax, xml';
+    var extraPluginACF    = (CKECONFIG_ACF_OFF === true) ? name_extraPlugins+', ajax, autocomplete, autogrow, button, cheatsheet, emoji, floatpanel, mediaembed, panelbutton, textmatch, textwatcher, xml' : name_extraPlugins+', ajax,autocomplete, autogrow, button, cheatsheet, emoji, floatpanel, mediaembed, panelbutton, procurator, textmatch, textwatcher, xml';
     var extraPluginList   = (CKECONFIG_CODE_ON === true) ? extraPluginACF+', codesnippet' : extraPluginACF;
         extraPluginList   = (CKECONFIG_OEMBED_ON === true) ? extraPluginList+', embedbase, embed' : extraPluginList;
         extraPluginList   = (CKECONFIG_OEMBED_SMT_ON === true) ? extraPluginList+', embedbase, embedsemantic' : extraPluginList;
@@ -120,7 +120,7 @@ function Spawnnuggets(item, addEP, jsED) {
 
             // or do and set
             // Reset toolbar Groups settings
-            // toolbarGroups: null
+            // toolbarGroups: null,
             // or any other configuration option here
             // uiColor : '#AADC6E', // light green example
             // language: 'fr', // lang set example
@@ -142,7 +142,7 @@ function Spawnnuggets(item, addEP, jsED) {
                                         // XHTML output instead of HTML - but this does not react on trailing slash eg <media "blah" />
                                         // editor.dataProcessor.writer.selfClosingEnd = ' />';
 
-                                        //avoid line breaks with special block elements
+                                        // avoid line breaks with special block elements
                                         var tags = ['mediainsert', 'gallery', 'media'];
 
                                         for (var key in tags) {

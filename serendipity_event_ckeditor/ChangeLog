@@ -1,3 +1,9 @@
+4.13.1.1:
+---------
+    * Update to CKEDITOR zip 4.13.1.1
+    * Allow Emoji Panel Plugin button, by adding dependencies Plugins: button, panelbutton, floatpanel.
+    * Changed cke_config.js revision to v. 2.21 and cke_plugin.js revision to v. 1.17 accordingly.
+
 4.13.1.0:
 ---------
     * Upgrade to CKEDITOR 4.13. Series, update 1 (https://ckeditor.com/cke4/release-notes).
