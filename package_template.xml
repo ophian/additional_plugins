@@ -87,7 +87,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-01</date>
+  <date>2020-01-12</date>
   <filelist>
     <dir name="adaptation">
       <dir name="colorsets">
@@ -2730,7 +2730,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-12-16</date>
+  <date>2020-01-12</date>
   <filelist>
     <dir name="freshy">
       <file>commentform.tpl</file>
@@ -4588,7 +4588,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-07</date>
+  <date>2020-01-12</date>
   <filelist>
     <dir name="leaf">
       <file>commentform.tpl</file>
@@ -4704,7 +4704,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-12-16</date>
+  <date>2020-01-12</date>
   <filelist>
     <dir name="mimbo">
       <file>404.tpl</file>
@@ -4806,7 +4806,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2019-12-16</date>
+  <date>2020-01-12</date>
   <filelist>
     <dir name="mo3">
       <file>404.tpl</file>
@@ -7224,7 +7224,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-01</date>
+  <date>2020-01-12</date>
   <filelist>
     <dir name="softenedcells">
       <file>comments.tpl</file>
@@ -8017,7 +8017,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-01</date>
+  <date>2020-01-12</date>
   <filelist>
     <dir name="truth">
       <file>commentform.tpl</file>
