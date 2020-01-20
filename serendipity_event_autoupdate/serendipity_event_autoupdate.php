@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.6.3');
+        $propbag->add('version',       '1.6.4');
         $propbag->add('configuration', array('download_url', 'releasefile_url'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -567,7 +567,7 @@ EOS;
                 }
                 if (!$success) {
                     $failmsg = sprintf(PLUGIN_AUTOUPD_MSG_COPY_FAIL, "{$updateDir}{$file}", $target);
-                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>' . $failmsg . ' ' . PLUGIN_AUTOUPD_MSG_RETURN . '</p>');
+                    $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>' . $failmsg . ' ' . sprintf(PLUGIN_AUTOUPD_MSG_RETURN, $version) . '</p>');
                     return false;
                 }
             }

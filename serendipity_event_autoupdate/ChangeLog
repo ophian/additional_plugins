@@ -1,3 +1,8 @@
+1.6.4
+------
+
+ * Fix an error string missing version parameter
+
 1.6.3
 ------
 
