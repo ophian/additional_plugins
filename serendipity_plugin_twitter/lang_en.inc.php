@@ -130,7 +130,7 @@
 @define('PLUGIN_EVENT_TWITTER_TWEETER_DM',              'Direct Message. (Works only, if the user is following)');
 
 @define('PLUGIN_EVENT_TWITTER_IGNORE_TWEETBACKS_BYNAME','Ignore Tweetbacks from');
-@define('PLUGIN_EVENT_TWITTER_IGNORE_TWEETBACKS_BYNAME_DESC','A komma seperated list of twitter accounts you don\'t want to receive tweetbacks from.');
+@define('PLUGIN_EVENT_TWITTER_IGNORE_TWEETBACKS_BYNAME_DESC','A komma separated list of twitter accounts you don\'t want to receive tweetbacks from.');
 
 @define('PLUGIN_TWITTER_EVENT_NOT_INSTALLED',           '<p class="serendipityAdminMsgError">' .
                 '<img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png'). '" alt="" />' .
@@ -167,10 +167,10 @@
 @define('PLUGIN_EVENT_TWITTER_TWEETTHIS_NEWWINDOW',     'TweetThis in new window');
 @define('PLUGIN_EVENT_TWITTER_TWEETTHIS_NEWWINDOW_DESC','If enabled, twitter and identica will be loaded in a new window instead of replacing the actual blog window.');
 @define('PLUGIN_EVENT_TWITTER_TWEETTHIS_SMARTIFY',      'Smartify TweetThis functionality');
-@define('PLUGIN_EVENT_TWITTER_TWEETTHIS_SMARTIFY_DESC', 'If enabled the plugin won\'t add a button by itself. Instead it will emit smarty variables: entry.url_tweetthis, entry.url_dentthis and entry.url_shorturl for each entry to be used in your template. These are only the URLs so you are able to create textlinks only in example or place a big tweetthis button in the head of your entry.');
+@define('PLUGIN_EVENT_TWITTER_TWEETTHIS_SMARTIFY_DESC', 'If enabled the plugin won\'t add a button by itself. Instead it will emit Smarty variables: entry.url_tweetthis, entry.url_dentthis and entry.url_shorturl for each entry to be used in your template. These are only the URLs so you are able to create textlinks only in example or place a big tweetthis button in the head of your entry.');
 
 @define('PLUGIN_EVENT_TWITTER_BACKEND_DONTANNOUNCE',    'Do *not* announce this article using microblogging services');
-@define('PLUGIN_EVENT_TWITTER_BACKEND_ENTERDESC',       'Enter any tags that apply. Seperate multiple tags with a comma (,). If something is entered here, free tag tags are ignored while announcing!');
+@define('PLUGIN_EVENT_TWITTER_BACKEND_ENTERDESC',       'Enter any tags that apply. Separate multiple tags with a comma (,). If something is entered here, free tag tags are ignored while announcing!');
 
 @define('PLUGIN_EVENT_TWITTER_TB_MODERATE',             'Tweetback moderation');
 @define('PLUGIN_EVENT_TWITTER_TB_MODERATE_DESC',        'How to handle catched tweetbacks? You may use the global comments configuration, moderate them or auto-approve them.');
@@ -180,7 +180,7 @@
 @define('PLUGIN_EVENT_TWITTER_SHORTURL_ON_CLICK',       'This link is not meant to be clicked. It contains the short URL for this entry. You can use this URL as a short form for a link tho this article for use in twitter in example. To copy the link, right click and select "Copy Shortcut" in Internet Explorer or "Copy Link Location" in Mozilla.');
 
 @define('PLUGIN_EVENT_TWITTER_SHOW_SHORTURL',           'Show short URL for each article');
-@define('PLUGIN_EVENT_TWITTER_SHOW_SHORTURL_DESC',      'Will show the drefault short URL in the footer of each article. If TwwetThis smartifying is enabled, each entry will get the variable entry.url_shorturl instead.');
+@define('PLUGIN_EVENT_TWITTER_SHOW_SHORTURL_DESC',      'Will show the default short URL in the footer of each article. If TwwetThis smartifying is enabled, each entry will get the variable entry.url_shorturl instead.');
 
 // oauth
 @define('PLUGIN_EVENT_TWITTER_CONSUMER_KEY',            'Consumer key');
@@ -212,7 +212,7 @@ You have to be logged out or logged in with the <b>matching twitter account</b> 
 @define('PLUGIN_TWITTER_API11',                            'Use OAuth Twitter API 1.1');
 @define('PLUGIN_TWITTER_API11_DESC',                       'Twitter API 1.0 is depreciated and will be closed 2013. So you should switch to API 1.1. But this requires to configure at least one OAuth connection in the main microblogging plugin. If you find some accout in the selector below, you already have done this.');
 @define('PLUGIN_TWITTER_OAUTHACC',                        'OAuth acc to be used by this plugin');
-@define('PLUGIN_TWITTER_OAUTHACC_DESC',                   'The new OAuth Twitter API needs to be called using an OAuthorized twitter acc. This acc will be used for rate limiting, too. You may use any acc owned by you, an acc never used anywhere else for example in order to have a seperate rate limit for this plugin.');
+@define('PLUGIN_TWITTER_OAUTHACC_DESC',                   'The new OAuth Twitter API needs to be called using an OAuthorized twitter acc. This acc will be used for rate limiting, too. You may use any acc owned by you, an acc never used anywhere else for example in order to have a separate rate limit for this plugin.');
 
 @define('PLUGIN_EVENT_TWITTER_API_TYPE',                 'Twitter API Version');
 @define('PLUGIN_EVENT_TWITTER_API_TYPE_DESC',            'Twitter API 1.0 is depreciated and will be closed 2013. So you should switch to API 1.1. But this requires to configure at least one OAuth connection (in the identities settings).');
