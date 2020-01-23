@@ -504,11 +504,11 @@
 <guid isPermaLink="false">serendipity_event_glossary</guid>
 </item>
 <item>
-<title>Google Analytics: This plugin adds extendet Google Analytic funcionality to youre Page like tracking external links or download links.</title>
+<title>Google Analytics: This plugin adds extended Google Analytic functionality to your Page like tracking external links or download links.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_google_analytics</link>
 <category>Event Plugins</category>
 <author>&lt;a href=&quot;https://github.com/kleinerChemiker&quot; target=&quot;_blank&quot;&gt;kleinerChemiker&lt;/a&gt;</author>
-<content:encoded>&lt;b&gt;serendipity_event_google_analytics&lt;br /&gt;Google Analytics&lt;/b&gt;&lt;br /&gt;This plugin adds extendet Google Analytic funcionality to youre Page like tracking external links or download links.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_event_google_analytics&lt;br /&gt;Google Analytics&lt;/b&gt;&lt;br /&gt;This plugin adds extended Google Analytic functionality to your Page like tracking external links or download links.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
 <pubDate>Tue, 21 Aug 2018 20:18:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_google_analytics</guid>
 </item>
@@ -860,7 +860,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_popfetcher&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Mon, 09 Sep 2019 18:57:56 +0200</pubDate>
+<pubDate>Thu, 23 Jan 2020 13:44:10 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_popfetcher</guid>
 </item>
 <item>
@@ -896,7 +896,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_randomblogdescription&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Tue, 22 Oct 2019 16:43:24 +0200</pubDate>
+<pubDate>Thu, 23 Jan 2020 13:32:20 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_randomblogdescription</guid>
 </item>
 <item>
@@ -1130,7 +1130,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_tinymce&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:24:29 +0200</pubDate>
+<pubDate>Thu, 23 Jan 2020 13:45:21 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_tinymce</guid>
 </item>
 <item>
@@ -1283,7 +1283,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_xsstrust&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Tue, 14 Mar 2017 13:15:33 +0100</pubDate>
+<pubDate>Thu, 23 Jan 2020 13:47:22 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_xsstrust</guid>
 </item>
 <item>
