@@ -96,5 +96,5 @@
 @define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC2', 'If set to "Smarty", then a smarty variable {$entry.freetag} will be created that you can place anywhere in your entries.tpl template file.');
 
 @define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY', 'Extended Smarty');
-@define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC', 'Emit seperate Smarty-variables for later use in a template. This will override the other settings. An example for later use can be found in the Readme.');
+@define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC', 'Emit separate Smarty-variables for later use in a template. This will override the other settings. An example for later use can be found in the Readme.');
 

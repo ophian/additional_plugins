@@ -30,7 +30,7 @@
 @define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT', 'Felosztás');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE', 'Törlés');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE', 'Törölni kívánod a következõ címkét: %s?');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT', 'use a comma to seperate tags:');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT', 'use a comma to separate tags:');
 @define('PLUGIN_EVENT_FREETAG_SHOW_TAGCLOUD', 'Címke felhõ mutatása a kapcsolódó címkékkel?');
 @define('PLUGIN_EVENT_FREETAG_SEND_HTTP_HEADER', 'X-FreeTag-HTTP fejlécek küldése');
 //
