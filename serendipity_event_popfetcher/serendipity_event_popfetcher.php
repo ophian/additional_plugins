@@ -873,7 +873,7 @@ class serendipity_event_popfetcher extends serendipity_event
             }
         } else {
             if ($debug_file !== null || $debug) {
-                $this->out( "Saving attachment seperately.<br />\n");
+                $this->out( "Saving attachment separately.<br />\n");
             }
             // Standard attachment mode
             $postattach[] = $attlink;
