@@ -1981,7 +1981,7 @@ END_IMG_CSS;
                 $img_data = serendipity_getimagesize($path . '/' . $filename);
                 if (!isset($img_data['noimage'])) {
                     // Curly braces are just a different syntax of associative array assignment
-                    $images{$filename] = array('fname'=>$filename, 'width'=>$img_data[0], 'height'=>$img_data[1]);
+                    $images[$filename] = array('fname'=>$filename, 'width'=>$img_data[0], 'height'=>$img_data[1]);
                 }
             }
         }
