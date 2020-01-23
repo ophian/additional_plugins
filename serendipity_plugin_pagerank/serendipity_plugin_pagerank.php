@@ -27,7 +27,7 @@ class serendipity_plugin_pagerank extends serendipity_plugin
         $propbag->add('description',   PLUGIN_PAGERANK_DETAIL);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Christian Lescuyer');
-        $propbag->add('version',       '0.34');
+        $propbag->add('version',       '0.35');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -164,7 +164,8 @@ class serendipity_plugin_pagerank extends serendipity_plugin
         }
 
         $c += $length;
-        switch($len)              /* all the case statements fall through */
+        /* all the case statements fall through */
+        switch($len)
         {
             case 11: $c+=($url[$k+10]<<24);
             case 10: $c+=($url[$k+9]<<16);
@@ -185,11 +186,13 @@ class serendipity_plugin_pagerank extends serendipity_plugin
         return $mix[2];
     }
 
-    //converts a string into an array of integers containing the numeric value of the char
+   /**
+    * converts a string into an array of integers containing the numeric value of the char
+    */
     function strord($string)
     {
         for($i=0;$i<strlen($string);$i++) {
-            $result[$i] = ord($string{$i});
+            $result[$i] = ord($string[$i]);
         }
 
         return $result;
