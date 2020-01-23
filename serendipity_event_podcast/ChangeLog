@@ -1,3 +1,8 @@
+1.41:
+-----
+
+ * Fix PHP 7.4 deprecated offset access syntax with curly braces
+
 
 1.40:
 -----
