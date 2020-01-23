@@ -1512,7 +1512,7 @@ function metaWeblog_createPostRpcValue($entry) {
         'mt_excerpt'        => new XML_RPC_Value('', 'string'),
         'mt_allow_comments' => new XML_RPC_Value($entry['allow_comments'] ? 1 : 0, 'int'),
         'mt_text_more'      => new XML_RPC_Value($entry['extended'], 'string' ),
-        'mt_allow_pings'    => new XML_RPC_Value($entry['allow_comments'] ? 1 : 0, 'int'), // we don't seperate the both.
+        'mt_allow_pings'    => new XML_RPC_Value($entry['allow_comments'] ? 1 : 0, 'int'), // we don't separate the both.
         'mt_convert_breaks' => new XML_RPC_Value('', 'string'),
         'mt_keywords'       => new XML_RPC_Value(isset($entry['mt_keywords']) ? $entry['mt_keywords']:'', 'string'),
         'title'             => new XML_RPC_Value($entry['title'],'string'),
