@@ -218,7 +218,7 @@ class serendipity_mobile
                         $img->setAttribute('alt','');
                     // rewrite image src to i.php
                     $imgUrl = $imageScriptURL.'?i='.base64_encode(basename($imgFile)).'&s='.base64_encode($size[0].'|'.$size[1].'|'.$width.'|'.$height.'|'.$size['mime']);
-                    // if we fetched an external image, tell the script to use the seperate folder
+                    // if we fetched an external image, tell the script to use the separate folder
                     if ($externalImage)
                         $imgUrl .= '&e=1';
                     $img->setAttribute('src', $imgUrl);

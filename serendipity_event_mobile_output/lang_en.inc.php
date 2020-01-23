@@ -39,10 +39,10 @@
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_CATEGORIES_DESC', 'Show all categories within the footer navigation and add accesskey functionality. If more than 9 categories exist, only the first 9 will get an accesskey attribute.');
 
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_REMOVE_TAGS_NAME', 'Remove HTML tags');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_REMOVE_TAGS_DESC', 'A comma seperated list of tags to remove, e.g. script,object,embed...');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_REMOVE_TAGS_DESC', 'A comma separated list of tags to remove, e.g. script,object,embed...');
 
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_REMOVE_ATTRIBUTES_NAME', 'Remove HTML attributes');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_REMOVE_ATTRIBUTES_DESC', 'A comma seperated list of attributes to remove, e.g. onclick,onmouseover,style');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_REMOVE_ATTRIBUTES_DESC', 'A comma separated list of attributes to remove, e.g. onclick,onmouseover,style');
 
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_REWRITE_WIKIPEDIA_NAME', 'Rewrite Wikipedia links');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_REWRITE_WIKIPEDIA_DESC', 'Rewrite links to wikipedia.org to the mobile version created by Sevenval AG (http://wikipedia.7val.com/)');
@@ -57,7 +57,7 @@
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_NAME', 'Report updates');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_DESC', 'Report updates to the services defined below');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_URL_NAME', 'Ping URL-list');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_URL_DESC', 'URLs for pingbacks (%s is replaced with the sitemap-URL, seperate multiple entries with \';\' (semicolon), if you need to enter a ; use \'%3B\').');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_URL_DESC', 'URLs for pingbacks (%s is replaced with the sitemap-URL, separate multiple entries with \';\' (semicolon), if you need to enter a ; use \'%3B\').');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_GZIP_NAME', 'Gzip the mobile_sitemap.xml');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_GZIP_DESC', 'The sitemap-protocol supports gziped files to save bandwith. If you\'re experiencing problems, you can try to turn this off. (Note: If your PHP doesn\'t support gzip the plugin will create an unzipped file automagically until you get a PHP with gzip-enabled. So generally you don\'t need to turn this off)');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_PERMALINK_WARNING', 'Warning: to get a correct sitemap you have to place the permalink-plugin before the sitemap-plug in your configuration.');
