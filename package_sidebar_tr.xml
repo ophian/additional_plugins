@@ -2,4 +2,922 @@
 <!--  -->
 
 <packages>
+<package version="1.0">
+<name>serendipity_plugin_communityrating</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2017-04-25</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_faq</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2017-02-02</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_freetag</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-09</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_geotag</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2017-02-02</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_guestbook</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-18</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_linklist</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-18</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_microformats</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-09</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_multilingual</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-09-15</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_mycalendar</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-09</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_spamblock_bee</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2016-07-07</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_staticpage</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-09</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_statistics</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-09</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_userprofiles</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2018-01-24</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_userprofiles_birthdays</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2017-11-04</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_xsstrust</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2016-07-07</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_adduser</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-09</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_amazon</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-18</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_category_dhtml_menu</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2016-07-07</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_coppermine</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2016-07-07</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_creativecommons</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-09</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_currently</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2016-07-07</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_externalphp</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-10-23</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_feedburnersidebar</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-18</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_flickr</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-09</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_flickrbadge</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2018-08-31</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_ggopis</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-18</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_google_adsense</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2018-05-24</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_google_quicksearch</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2018-04-03</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_heavyrotation</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2018-08-31</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_imagesidebar</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2020-01-23</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_karmaranking</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-18</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_loginform</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-10-22</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_nugget_multilingual</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2016-07-07</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_pagerank</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2020-01-23</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_photoblog</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2016-07-07</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_piwik</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-09</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_pollbox</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2018-04-06</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_popularentries</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-10-22</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_quicklink</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-18</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_randomquotes</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-10-22</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_shoutbox</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-09</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_shoutcast</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-10-22</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_showentries</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-18</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_sidebarlogo</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2016-10-24</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_socialbookmarks</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-18</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_templatedropdown</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2016-12-27</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_timezones</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2019-08-18</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_topexits</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2016-07-07</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_topreferrers</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2016-07-07</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_twitter</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2017-07-22</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_plugin_wikipedia_finder</name>
+<license>GPL</license>
+<summary></summary>
+<groups></groups>
+<description></description>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <date>2018-04-03</date>
+  <filelist>
+    
+  </filelist>
+  <serendipityFilelist>
+  </serendipityFilelist>
+</release>
+</package>
 </packages>

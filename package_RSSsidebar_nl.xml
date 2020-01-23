@@ -8,5 +8,464 @@
 <description>TOC</description>
 <dc:language>en</dc:language>
 <generator>Serendipity SPARTACUS</generator>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_communityrating</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_communityrating&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Tue, 25 Apr 2017 14:33:44 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_communityrating</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_faq</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_faq&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 02 Feb 2017 14:35:56 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_faq</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_freetag</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_freetag&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 09 Aug 2019 11:20:00 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_freetag</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geotag</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_geotag&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 02 Feb 2017 14:53:43 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_geotag</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_guestbook</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_guestbook&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sun, 18 Aug 2019 14:33:00 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_guestbook</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_linklist</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_linklist&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sun, 18 Aug 2019 16:27:06 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_linklist</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_microformats</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_microformats&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 09 Aug 2019 11:21:27 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_microformats</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_multilingual</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_multilingual&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sun, 15 Sep 2019 17:44:45 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_multilingual</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mycalendar</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_mycalendar&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 09 Aug 2019 11:22:00 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_mycalendar</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_spamblock_bee</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_spamblock_bee&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_spamblock_bee</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_staticpage</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_staticpage&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 09 Aug 2019 11:24:00 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_staticpage</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_statistics</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_statistics&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 09 Aug 2019 11:24:17 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_statistics</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_userprofiles</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_userprofiles&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Wed, 24 Jan 2018 21:02:55 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_userprofiles</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_userprofiles</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_userprofiles_birthdays&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sat, 04 Nov 2017 16:51:39 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_userprofiles_birthdays</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_xsstrust</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_xsstrust&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_xsstrust</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_adduser</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 09 Aug 2019 11:25:42 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_adduser</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_amazon</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_amazon&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sun, 18 Aug 2019 15:21:34 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_amazon</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_category_dhtml_menu</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_category_dhtml_menu&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_category_dhtml_menu</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_coppermine</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_coppermine&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_coppermine</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_creativecommons</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_creativecommons&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 09 Aug 2019 11:25:50 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_creativecommons</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_currently</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_currently&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_currently</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_externalphp</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_externalphp&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Wed, 23 Oct 2019 11:28:58 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_externalphp</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_feedburnersidebar</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_feedburnersidebar&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sun, 18 Aug 2019 16:32:50 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_feedburnersidebar</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_flickr</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_flickr&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 09 Aug 2019 11:26:04 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_flickr</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_flickrbadge</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_flickrbadge&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 31 Aug 2018 09:06:50 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_flickrbadge</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_ggopis</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_ggopis&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sun, 18 Aug 2019 16:35:30 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_ggopis</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_google_adsense</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_google_adsense&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 24 May 2018 10:21:50 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_google_adsense</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_google_quicksearch</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_google_quicksearch&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Tue, 03 Apr 2018 18:56:48 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_google_quicksearch</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_heavyrotation</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_heavyrotation&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 31 Aug 2018 09:06:34 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_heavyrotation</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_imagesidebar</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 23 Jan 2020 11:12:22 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_karmaranking</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_karmaranking&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sun, 18 Aug 2019 15:42:48 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_karmaranking</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_loginform</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_loginform&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Tue, 22 Oct 2019 14:20:49 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_loginform</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_nugget_multilingual</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_nugget_multilingual&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_nugget_multilingual</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_pagerank</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_pagerank&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 23 Jan 2020 11:52:15 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_pagerank</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_photoblog</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_photoblog&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_photoblog</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_piwik</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_piwik&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 09 Aug 2019 11:26:20 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_piwik</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_pollbox</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_pollbox&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 06 Apr 2018 16:34:49 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_pollbox</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_popularentries</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_popularentries&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Tue, 22 Oct 2019 14:19:11 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_popularentries</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_quicklink</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_quicklink&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sun, 18 Aug 2019 15:45:51 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_quicklink</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_randomquotes</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_randomquotes&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Tue, 22 Oct 2019 14:16:38 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_randomquotes</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_shoutbox</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_shoutbox&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Fri, 09 Aug 2019 11:26:27 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_shoutbox</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_shoutcast</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_shoutcast&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Tue, 22 Oct 2019 16:42:57 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_shoutcast</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_showentries</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_showentries&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sun, 18 Aug 2019 18:15:12 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_showentries</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_sidebarlogo</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_sidebarlogo&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Mon, 24 Oct 2016 17:22:41 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_sidebarlogo</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_socialbookmarks</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_socialbookmarks&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sun, 18 Aug 2019 11:54:37 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_socialbookmarks</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_templatedropdown</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_templatedropdown&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Tue, 27 Dec 2016 13:01:34 +0100</pubDate>
+<guid isPermaLink="false">serendipity_plugin_templatedropdown</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_timezones</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_timezones&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sun, 18 Aug 2019 18:21:10 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_timezones</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_topexits</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_topexits&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_topexits</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_topreferrers</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_topreferrers&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_topreferrers</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_twitter</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_twitter&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Sat, 22 Jul 2017 12:43:15 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_twitter</guid>
+</item>
+<item>
+<title>: </title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_wikipedia_finder</link>
+<category>Sidebar Plugins</category>
+<author>Serendipity Team</author>
+<content:encoded>&lt;b&gt;serendipity_plugin_wikipedia_finder&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<pubDate>Tue, 03 Apr 2018 19:13:24 +0200</pubDate>
+<guid isPermaLink="false">serendipity_plugin_wikipedia_finder</guid>
+</item>
 </channel>
 </rss>
