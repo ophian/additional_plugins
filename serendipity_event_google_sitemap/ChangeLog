@@ -50,7 +50,7 @@ to toggle whether sitemap.xml contains any NEWS references
 0.53:
 -----
 
-Create a second, smaller 'news_sitemap.xml' file that's suitable for submitting to google news seperately.
+Create a second, smaller 'news_sitemap.xml' file that's suitable for submitting to google news separately.
 
 0.52:
 ----
