@@ -18,7 +18,7 @@ class serendipity_event_dbclean extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DBCLEAN_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '0.4');
+        $propbag->add('version',       '0.5');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6'
         ));
@@ -356,7 +356,7 @@ EOS;
                 return $count[0][0];
             }
         }
-        return is_numeric($count[0]) ? $count[0] : '-';
+        return (!empty($count) && is_numeric($count[0])) ? $count[0] : '-';
     }
 
     function debugMsg($msg)
