@@ -42,7 +42,7 @@ class getid3_mpc
 
 		} elseif (preg_match('/^[\x00\x01\x10\x11\x40\x41\x50\x51\x80\x81\x90\x91\xC0\xC1\xD0\xD1][\x20-37][\x00\x20\x40\x60\x80\xA0\xC0\xE0]/s', $MPCheaderData)) {
 
-			// this is SV4 - SV6, handle seperately
+			// this is SV4 - SV6, handle separately
 			return $this->ParseMPCsv6($fd, $ThisFileInfo);
 
 		} else {

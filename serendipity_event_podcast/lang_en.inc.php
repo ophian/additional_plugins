@@ -7,10 +7,10 @@
  */
 
 @define('PLUGIN_PODCAST_NAME', 'Easy Podcasting Plugin');
-@define('PLUGIN_PODCAST_DESC', 'Adds "podcasting" capabilities hinzu (RSS enclosure, Video/Sound-Player)');
+@define('PLUGIN_PODCAST_DESC', 'Adds "podcasting" capabilities (RSS enclosure, Video/Sound-Player)');
 @define('PLUGIN_PODCAST_EASY', '<br/><h3>Simple settings:</h3>');
 @define('PLUGIN_PODCAST_USEPLAYER', 'Show Player');
-@define('PLUGIN_PODCAST_USEPLAYER_DESC', 'Should HTML code for playing podcasts be generated instead of just having the link to the mediafile??');
+@define('PLUGIN_PODCAST_USEPLAYER_DESC', 'Should HTML code for playing podcasts be generated instead of just having the link to the mediafile?');
 @define('PLUGIN_PODCAST_AUTOSIZE', 'Adjust players size');
 @define('PLUGIN_PODCAST_AUTOSIZE_DESC', 'Tries to detect the size of a video and adjusts the dimension of the player. The width and height settings will be ignored then.');
 @define('PLUGIN_PODCAST_WIDTH', 'Width');
@@ -30,7 +30,7 @@
 
 @define('PLUGIN_PODCAST_EXTATTRSETTINGS', '<br/><h3>Podcasting using extended article attributes:</h3>');
 @define('PLUGIN_PODCAST_EXTATTR', 'Extended article attributes');
-@define('PLUGIN_PODCAST_EXTATTR_DESC', 'You can define, what extended atributes should be interpreted as media file attachments and therfor be added as enclosure to RSS feeds. This has to be a comma seperated list of attribute names. The plugin "Extended article attributes" is needed for this to work.');
+@define('PLUGIN_PODCAST_EXTATTR_DESC', 'You can define, what extended attributes should be interpreted as media file attachments and therefor be added as enclosure to RSS feeds. This has to be a comma separated list of attribute names. The plugin "Extended article attributes" is needed for this to work.');
 
 @define('PLUGIN_PODCAST_EXTPOS', 'Position of media files found in ext. article attr.');
 @define('PLUGIN_PODCAST_EXTPOS_DESC', 'Define how media files found in extended article attributes should be embeded into the article.');
