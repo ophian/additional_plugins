@@ -1,3 +1,7 @@
+6.08:
+-----
+ * Fix an uninitialized variable check for PHP 7.4
+
 6.07:
 -----
  * Get rid of staticpage entries list IE zoom button style forcing annoying warning in Mozilla

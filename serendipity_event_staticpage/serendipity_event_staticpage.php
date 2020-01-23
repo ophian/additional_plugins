@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.07');
+        $propbag->add('version', '6.08');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -2778,7 +2778,7 @@ class serendipity_event_staticpage extends serendipity_event
             default:
 
                 $serendipity['smarty']->assign('sp_listpp', (int)$this->get_config('listpp', '6')); // is case 'pagedit' and '' = default by backend sidebar link
-                if ($serendipity['POST']['staticpage'] != '__new') {
+                if (isset($serendipity['POST']['staticpage']) && $serendipity['POST']['staticpage'] != '__new') {
                     $this->fetchStaticPage($serendipity['POST']['staticpage']);
                 }
                 if (isset($serendipity['POST']['staticSave']) && $serendipity['POST']['staticSave'] == 'true' && !empty($serendipity['POST']['SAVECONF'])) {
