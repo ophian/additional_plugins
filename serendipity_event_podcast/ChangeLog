@@ -3,7 +3,6 @@
 
  * Fix PHP 7.4 deprecated offset access syntax with curly braces
 
-
 1.40:
 -----
   * Fix some wrong path concatenation slashes with S9Y_INCLUDE_PATH
