@@ -70,7 +70,7 @@ class serendipity_event_xsstrust extends serendipity_event
         if (is_null($_res)) {
             // A protected plugin by a specific owner may not have its values stored in $serendipity
             // because of the special authorid. To display such contents, we need to fetch it
-            // seperately from the DB.
+            // separately from the DB.
             $_res = serendipity_get_user_config_var($this->instance . '/' . $name, null, '');
         }
 

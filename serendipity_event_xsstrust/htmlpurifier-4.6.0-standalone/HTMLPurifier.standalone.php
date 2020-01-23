@@ -9148,7 +9148,7 @@ class HTMLPurifier_URIParser
 
         if (!$result) return false; // *really* invalid URI
 
-        // seperate out parts
+        // separate out parts
         $scheme     = !empty($matches[1]) ? $matches[2] : null;
         $authority  = !empty($matches[3]) ? $matches[4] : null;
         $path       = $matches[5]; // always present, can be empty
@@ -19419,7 +19419,7 @@ class HTMLPurifier_Strategy_Core extends HTMLPurifier_Strategy_Composite
  * The second objective is to ensure that explicitly excluded elements of
  * an element do not appear in its children.  Code that accomplishes this
  * task is pervasive through the strategy, though the two are distinct tasks
- * and could, theoretically, be seperated (although it's not recommended).
+ * and could, theoretically, be separated (although it's not recommended).
  *
  * @note Whether or not unrecognized children are silently dropped or
  *       translated into text depends on the child definitions.
