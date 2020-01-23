@@ -20,7 +20,7 @@
  *
  * TODO (updated <date-of-release>)
  * -------------------------
- * seperate the funtions from the procedures, and have a slight color change for each.
+ * separate the functions from the procedures, and have a slight color change for each.
  *
  *************************************************************************************
  *
