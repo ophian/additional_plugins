@@ -13,7 +13,7 @@ if (substr(php_uname(), 0, 7) == "Windows"){
 @define('PLUGIN_EVENT_MIMETEX_REPLACE', 'TeX Markup On');
 @define('PLUGIN_EVENT_MIMETEX_REPLACE_DESC', 'If enabled TeX strings between [tex][/tex] tags (ex: [tex]\frac{2}{3}[/tex]) will be converted dynamically.  If disabled, TeX strings must be entered using the TeX button above the editor.');
 @define('PLUGIN_EVENT_MIMETEX_OR_LATEX', 'Use mimeTeX or LaTex?');
-@define('PLUGIN_EVENT_MIMETEX_OR_LATEX_BLAHBLAH', 'Would you like to use the mimeTeX or the LaTeX rendering engines?  Either one must be installed seperately from the plugin.');
+@define('PLUGIN_EVENT_MIMETEX_OR_LATEX_BLAHBLAH', 'Would you like to use the mimeTeX or the LaTeX rendering engines?  Either one must be installed separately from the plugin.');
 @define('PLUGIN_EVENT_MIMETEX_OR_LATEX_LATEX','LaTeX');
 @define('PLUGIN_EVENT_MIMETEX_OR_LATEX_MIMETEX','MimeTeX');
 @define('PLUGIN_EVENT_MIMETEX_LATEXPATH','Path to latex');
