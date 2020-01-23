@@ -74,7 +74,7 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
         $propbag->add('description',   PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC . ' PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.');
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx');
-        $propbag->add('version',       '1.14');
+        $propbag->add('version',       '1.15');
         $propbag->add('license',       'BSD');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -84,7 +84,7 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
         $propbag->add('groups', array('IMAGES'));
 
         //And now, off the beaten path.  Here we check to see if the configuration is being saved.  If so, lets just 'borrow' display_source so we can get the configuration right.
-        if (isset($_POST['SAVECONF']) && serendipity_checkFormToken()) {
+        if (isset($_POST['SAVECONF']) && isset($_POST['serendipity']['plugin']['display_source']) && serendipity_checkFormToken()) {
             $this->set_config('display_source', $_POST['serendipity']['plugin']['display_source']);
         }
 

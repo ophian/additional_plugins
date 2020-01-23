@@ -1,3 +1,8 @@
+1.15:
+-----
+
+ * Fix an uninitialized variable check for PHP 7.4
+
 1.14:
 -----
 
@@ -11,8 +16,8 @@
 1.12:
 -----
 
- * Check missing REQUEST url (Request2) switch for zooomer getURL()
-   and menalto generate_content_custom(), thought the latter is being
+ * Check missing REQUEST url (Request2) switch for Zoomr getURL()
+   and Menalto generate_content_custom(), thought the latter is being
    set deprecated at all.
 
 1.11:
@@ -25,7 +30,7 @@
 
  * Fix errors
  * Removed inline styles where possible
- * Added mediasidebar image omlx "none" option
+ * Added mediasidebar image only "none" option
 
 0.99:
 -----
