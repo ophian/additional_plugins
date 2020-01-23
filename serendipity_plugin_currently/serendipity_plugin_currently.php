@@ -281,7 +281,7 @@ class serendipity_plugin_currently extends serendipity_plugin
             if ($listening_track) print ("<dd><em>$listening_track</em></dd>");
 
             // The most reliable way to get the proper album cover off amazon is searching for "Artist - Album"
-            // which is why I seperated everything out. Some people didnt mind putting everyting in one
+            // which is why I separated everything out. Some people didnt mind putting everyting in one
             // text box, but some wanted the song title which messed up the query a lot, and some wanted just
             // the album and band displayed.
 
