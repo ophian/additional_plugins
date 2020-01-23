@@ -36,7 +36,7 @@
 @define('PLUGIN_FINDMORE_EXTENDEDONLY_BLAHBLAH', 'Only show social bookmarks on extended article view?');
 
 #@define('PLUGIN_FINDMORE_SPREADLY_EMAILS', '(Spread.ly) Registered E-Mails');
-#@define('PLUGIN_FINDMORE_SPREADLY_EMAILS_DESC', 'When spreadly.com is enabled, you can associate/claim your blog with the spreadly.com account. For this, enter the E-Mail address(es) that you registered with on spreadly.com (seperate multiple lines with a newline). More information can be found on <a href="http://spreadly.com">spreadly.com</a>!');
+#@define('PLUGIN_FINDMORE_SPREADLY_EMAILS_DESC', 'When spreadly.com is enabled, you can associate/claim your blog with the spreadly.com account. For this, enter the E-Mail address(es) that you registered with on spreadly.com (separate multiple lines with a newline). More information can be found on <a href="http://spreadly.com">spreadly.com</a>!');
 
 #@define('PLUGIN_FINDMORE_SPREADLY', '(Spread.ly) Enable extended, social functionality?');
 #@define('PLUGIN_FINDMORE_SPREADLY_DESC', 'When enabled, an iframe is embedded to track and show additional data. When disabled, a static image button is shown.');
