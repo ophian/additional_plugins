@@ -206,7 +206,7 @@ if (!window.tinymce_inited) {
     });
 };
 </script>
-<!-- Needs to be seperate script tags! -->
+<!-- Needs to be separate script tags! -->
 <script language="javascript" type="text/javascript">
 if (!window.tinymce_inited) {
 	tinyMCE.init({
