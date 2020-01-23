@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.26');
+        $propbag->add('version',       '4.27');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2611,7 +2611,7 @@ addLoadEvent(enableAutocomplete);
     {
         global $serendipity;
 
-        if ($serendipity['POST']['keywordsubmit']) {
+        if (isset($serendipity['POST']['keywordsubmit'])) {
             serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}tagkeywords WHERE tag = '" . serendipity_db_escape_string(urldecode($serendipity['POST']['tag'])) . "'");
             serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}tagkeywords (tag, keywords) VALUES ('" . serendipity_db_escape_string(urldecode($serendipity['POST']['tag'])) . "', '" . serendipity_db_escape_string($serendipity['POST']['keywords']) . "')");
         }
