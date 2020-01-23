@@ -42,7 +42,7 @@
 @define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onyx ist BSD-licensed, but does not support ATOM feeds. SimplePie is modern, maintained, BSD licensed.');
 @define('PLUGIN_AGGREGATOR_CRONJOB', 'This plugin supports the Serendipity Cronjob plugin. Go and install it if you want scheduled execution.');
 @define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION', 'Filter Expression');
-@define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION_DESC', 'Here you can enter a regular expression that will be matched on a feed entry (body and title) and only insert that entry, if the pattern matches. If left empty, no matching is done. Multiple expressions can be seperated by the ~ (tilde) character and are OR-combined.');
+@define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION_DESC', 'Here you can enter a regular expression that will be matched on a feed entry (body and title) and only insert that entry, if the pattern matches. If left empty, no matching is done. Multiple expressions can be separated by the ~ (tilde) character and are OR-combined.');
 
 @define('PLUGIN_AGGREGATOR_PUBLISH', 'Save aggregated entries as...');
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE', 'Disable markup plugins for aggregated entries.');
