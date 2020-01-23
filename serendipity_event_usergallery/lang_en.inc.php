@@ -21,7 +21,7 @@
 @define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_NAME', 'Pick a default directory');
 @define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_DESC', 'Pick the default directory you would like the gallery to be restricted to');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_NAME', 'Choose the gallery style');
-@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', '"Media library" allows folder navigation and searchs, while "Thumbnail page" give a thumbnail display of all images under a folder and opens the images in a new window');
+@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', '"Media library" allows folder navigation and searches, while "Thumbnail page" give a thumbnail display of all images under a folder and opens the images in a new window');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_SERENDIPITY', 'Media library');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_THUMBPAGE', 'Thumbnail page');
 @define('PLUGIN_EVENT_USERGALLERY_PRETTY_NAME', 'Display name');
@@ -33,7 +33,7 @@
 @define('PLUGIN_EVENT_USERGALLERY_FILENAME', 'Filename');
 @define('PLUGIN_EVENT_USERGALLERY_DIMENSION', 'Dimension');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_NAME', 'Display Single Image');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_DESC', 'You may either have images displayed scaled to fit on a seperate page (with adaptive pop-up for large images), or in an adaptive pop-up directly from the gallery page.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_DESC', 'You may either have images displayed scaled to fit on a separate page (with adaptive pop-up for large images), or in an adaptive pop-up directly from the gallery page.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_INPAGE', 'Scaled to fit');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_POPUP', 'Adaptive pop-up');
 @define('PLUGIN_EVENT_USERGALLERY_DIRLIST_NAME', 'Show a directory listing');
@@ -48,8 +48,8 @@
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DATEDESC', 'Date (Descending)');
 @define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_NAME', 'Display the whole directory tree');
 @define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_DESC', 'If set to "yes" the gallery will display the whole directory tree on each page.  If set to "no" the the gallery will display a directory list of only subfolders. (This behavior is also dependent on the template used to display the gallery.)');
-@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_NAME','Only show one directory level lower');
-@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_DESC','This will limit the directory output to only show one directory level below the current, and will summerize the number of pictures in all directories under the next level. This is not available if you are using the full directory tree.');
+@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_NAME', 'Only show one directory level lower');
+@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_DESC', 'This will limit the directory output to only show one directory level below the current, and will summerize the number of pictures in all directories under the next level. This is not available if you are using the full directory tree.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_NAME', 'Images per page');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_DESC', 'Set the number of images to display per page.  If set to "0" pagination will be turned off.');
 @define('PLUGIN_EVENT_USERGALLERY_PREVIOUS', 'previous');
@@ -79,10 +79,10 @@
 @define('USERGALLERY_LINKED_ENTRIES', 'Entries using this image:');
 @define('USERGALLERY_LINKED_STATICPAGES', 'Static Pages using this image:');
 @define('PLUGIN_EVENT_USERGALLERY_SHOW_LINKED_ENTRY', 'Show links to entries where an image is referenced?');
-@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_NAME','Subdirectory spacing in tree');
-@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_DESC','Number of pixels to tab subdirectories in directory view.');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_NAME','Max. image width in page.');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_DESC','Maximum width an image can be when displayed using "scaled to fit".  A setting of "0" means images are displayed full size.');
+@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_NAME', 'Subdirectory spacing in tree');
+@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_DESC', 'Number of pixels to tab subdirectories in directory view.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_NAME', 'Max. image width in page.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_DESC', 'Maximum width an image can be when displayed using "scaled to fit".  A setting of "0" means images are displayed full size.');
 
 //Media properties
 @define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_SHOW_NAME', 'Show Media Properties');
