@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.62');
+        $propbag->add('version',        '2.63');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -298,7 +298,7 @@ class serendipity_event_multilingual extends serendipity_event
         foreach($properties AS $key => $lang) {
             preg_match('@^multilingual_body_(.+)$@', $key, $match);
             if (isset($match[1])) {
-                $langs[$match[1]] = '<a class="multilingual_' . $match[1] . '" href="' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?' . serendipity_archiveURL($id, $serendipity['languages'][$match[1]], 'serendipityHTTPPath', false) . '&amp;' . $this->urlparam($match[1]) . '">' . $languages[$match[1]] . '</a>';
+                $langs[$match[1]] = '<a class="multilingual_' . $match[1] . '" href="' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?' . serendipity_archiveURL($id, $serendipity['languages'][$match[1]], 'serendipityHTTPPath', false, array('timestamp' => time())) . '&amp;' . $this->urlparam($match[1]) . '">' . $languages[$match[1]] . '</a>';
             }
         }
 
@@ -323,7 +323,7 @@ class serendipity_event_multilingual extends serendipity_event
         }
 
         if (!isset($langs[$default_lang])) {
-            $langs[$default_lang] = '<a class="multilingual_default multilingual_' . $default_lang . '" href="' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?' . serendipity_archiveURL($id, 'Default', 'serendipityHTTPPath', false) . '&amp;' . $this->urlparam('default') . '">' . $lang_title . '</a>';
+            $langs[$default_lang] = '<a class="multilingual_default multilingual_' . $default_lang . '" href="' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?' . serendipity_archiveURL($id, 'Default', 'serendipityHTTPPath', false, array('timestamp' => time())) . '&amp;' . $this->urlparam('default') . '">' . $lang_title . '</a>';
         }
         $lang = implode(', ', $langs);
 

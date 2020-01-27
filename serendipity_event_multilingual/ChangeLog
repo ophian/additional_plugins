@@ -1,3 +1,7 @@
+2.63:
+-----
+ * Fix serendipity_archiveURL() for serendipity_makePermalink()
+
 2.62:
 -----
  * Fix mySQL search $cond['find_part'] append string
