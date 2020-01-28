@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.27');
+        $propbag->add('version',       '4.28');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -665,18 +665,19 @@ class serendipity_event_freetag extends serendipity_event
             return false;
         }
 
+        $fakets = time();
         if ($extended_smarty) {
             $ret = array();
             $ret['description'] = PLUGIN_EVENT_FREETAG_RELATED_ENTRIES;
             foreach($entries AS $entryid => $title) {
                 // prepare preset anchor link in a simple array
-                $ret['entries'][] = '<a href="' . serendipity_archiveURL($entryid, $title) . '" title="' . self::specialchars_mapper($title) . '">' . self::specialchars_mapper($title) . '</a>';
+                $ret['entries'][] = '<a href="' . serendipity_archiveURL($entryid, $title, 'baseURL', true, array('timestamp' => $fakets)) . '" title="' . self::specialchars_mapper($title) . '">' . self::specialchars_mapper($title) . '</a>';
                 // You can have EITHER / OR, NOT both(!), without compat break - that means, switching here by hand or have to add another plugin config option for this case.
-                #$ret['entries'][] = array('url' => serendipity_archiveURL($entryid, self::specialchars_mapper($title)) , 'title' => self::specialchars_mapper($title));
+                #$ret['entries'][] = array('url' => serendipity_archiveURL($entryid, self::specialchars_mapper($title), 'baseURL', true, array('timestamp' => $fakets)) , 'title' => self::specialchars_mapper($title));
                 /*
                 Returning the entries array this way will need you to extend the array readout in the entries.tpl extended example and may need to run this "flattened" loop as
                 foreach($entries AS $entry) {
-                    $ret['entries'][] = array('url' => serendipity_archiveURL($entry['id'], self::specialchars_mapper($entry['title'])) , 'title' => self::specialchars_mapper($entry['title']) , 'and so on' => 'for more additions per key' );
+                    $ret['entries'][] = array('url' => serendipity_archiveURL($entry['id'], self::specialchars_mapper($entry['title']), 'baseURL', true, array('timestamp' => $fakets)) , 'title' => self::specialchars_mapper($entry['title']) , 'and so on' => 'for more additions per key' );
                 }
                 since now being a full multi-dimensional array, if you want to add more like an entries teaser image for example.
                 See: http://board.s9y.org/viewtopic.php?f=4&t=20260&p=10443603#p10443603 ff
@@ -690,7 +691,7 @@ class serendipity_event_freetag extends serendipity_event
             $ret  = "\n".'<div class="serendipity_freeTag_related">' . PLUGIN_EVENT_FREETAG_RELATED_ENTRIES;
             $ret .= "\n    <ul class=\"plainList\">\n";
             foreach($entries AS $entryid => $title) {
-                $ret .= '    <li> <a href="' . serendipity_archiveURL($entryid, $title) . '" title="' . self::specialchars_mapper($title) . '">' . self::specialchars_mapper($title) . "</a></li>\n";
+                $ret .= '    <li> <a href="' . serendipity_archiveURL($entryid, $title, 'baseURL', true, array('timestamp' => $fakets)) . '" title="' . self::specialchars_mapper($title) . '">' . self::specialchars_mapper($title) . "</a></li>\n";
             }
             $ret .= "    </ul>\n</div>\n";
         }
