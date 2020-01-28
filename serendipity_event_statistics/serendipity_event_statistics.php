@@ -18,7 +18,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '1.76');
+        $propbag->add('version',       '1.77');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -38,7 +38,7 @@ class serendipity_event_statistics extends serendipity_event
             'services' => array(
             ),
             'frontend' => array(
-                'Saves user visitor data to the local database (visitors) for statistical analysis. Tracks IP, User Agent, HTTP Referer',
+                'Saves user visitor data to the local database (visitors) for statistical analysis. Tracks IP, User Agent, HTTP Referrer',
             ),
             'backend' => array(
             ),
@@ -126,7 +126,7 @@ class serendipity_event_statistics extends serendipity_event
                         return;
                     }
 
-                    //checking if db tables exists, otherwise install them
+                    // checking if db tables exists, otherwise install them
                     $tableChecker = serendipity_db_query("SELECT counter_id FROM {$serendipity['dbPrefix']}visitors LIMIT 1", true);
                     if (!is_array($tableChecker)) {
                         $this->createTables();
@@ -139,7 +139,7 @@ class serendipity_event_statistics extends serendipity_event
                         $this->updateTables(1);
                     }
 
-                    //Unique visitors are beeing registered and counted here. Calling function below.
+                    // Unique visitors are beeing registered and counted here. Calling function below.
                     $sessionChecker = serendipity_db_query("SELECT count(sessID) FROM {$serendipity['dbPrefix']}visitors WHERE '".serendipity_db_escape_string(session_id())."' = sessID GROUP BY sessID", true);
                     if (!is_array($sessionChecker) || (is_array($sessionChecker)) && ($sessionChecker[0] == 0)) {
 
@@ -365,7 +365,10 @@ class serendipity_event_statistics extends serendipity_event
                                                         LIMIT $max_items");
 
                         $length      = serendipity_db_query("SELECT SUM(LENGTH(body) + LENGTH(extended)) FROM {$serendipity['dbPrefix']}entries", true);
-                        $length_rows = serendipity_db_query("SELECT id, title, timestamp, (LENGTH(body) + LENGTH(extended)) AS full_length FROM {$serendipity['dbPrefix']}entries ORDER BY full_length DESC LIMIT $max_items");
+                        $length_rows = serendipity_db_query("SELECT id, title, timestamp, (LENGTH(body) + LENGTH(extended)) AS full_length
+                                                        FROM {$serendipity['dbPrefix']}entries
+                                                        ORDER BY full_length
+                                                        DESC LIMIT $max_items");
 ?>
     <h2><?php echo PLUGIN_EVENT_STATISTICS_OUT_STATISTICS; ?></h2>
 
@@ -513,7 +516,7 @@ class serendipity_event_statistics extends serendipity_event
         <section>
             <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS; ?></h3>
 
-            <p><?php echo $subscriber_count; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS2; ?></p>
+            <p><?php echo $subscriber_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS2; ?></p>
 
             <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPSUBSCRIBERS; ?></h4>
 
@@ -641,7 +644,7 @@ class serendipity_event_statistics extends serendipity_event
         }
     }
 
-    //Statistics
+    // Statistics
     function updatestats($action)
     {
         global $serendipity;
@@ -710,24 +713,24 @@ class serendipity_event_statistics extends serendipity_event
         // updating the referrer-table
         if (strlen($referer) >= 1) {
 
-            //retrieving the referrer base URL
+            // retrieving the referrer base URL
             $temp_array = explode('?', $referer);
             $urlA = $temp_array[0];
 
-            //removing "http://" & trailing subdirectories
+            // removing "http://" & trailing subdirectories
             $temp_array3 = explode('//', $urlA);
             $urlB = $temp_array3[1];
             $temp_array4 = explode('/', $urlB);
             $urlB = $temp_array4[0];
 
-            //removing www
+            // removing www
             $urlC = serendipity_db_escape_string(str_replace('www.', '', $urlB));
 
             if(strlen($urlC) < 1) {
                 $urlC = 'unknown';
             }
 
-            //updating db
+            // updating db
             $q = serendipity_db_query("SELECT count(refs) AS referrer FROM {$serendipity['dbPrefix']}refs WHERE refs = '$urlC' GROUP BY refs", true);
             if ($q['referrer'] >= 1){
                 serendipity_db_query("UPDATE {$serendipity['dbPrefix']}refs SET count=count+1 WHERE (refs = '$urlC')");
@@ -736,7 +739,7 @@ class serendipity_event_statistics extends serendipity_event
             }
         }
 
-    } //end of function countVisitor
+    } // end of function countVisitor
 
     // Calculate daily stats
     function statistics_getdailystats()
@@ -826,7 +829,7 @@ class serendipity_event_statistics extends serendipity_event
             if (is_array($top_refs)) {
                 echo "<ol>\n";
                 foreach($top_refs AS $key => $row) {
-                    echo '<li><a href="http://'.$row['refs'].'" target="_blank">'.$row['refs'].'</a> ('.$row['count'].")</li>\n";
+                    echo '<li><a href="//'.$row['refs'].'" target="_blank">'.$row['refs'].'</a> ('.$row['count'].")</li>\n";
                 }
                 echo "</ol>\n";
             } else {
@@ -983,7 +986,7 @@ class serendipity_event_statistics extends serendipity_event
     {
         global $serendipity;
 
-        //create table xxxx_visitors
+        // create table xxxx_visitors
         $q   = "CREATE TABLE {$serendipity['dbPrefix']}visitors (
             counter_id {AUTOINCREMENT} {PRIMARY},
             sessID varchar(35) not null default '',
@@ -996,7 +999,7 @@ class serendipity_event_statistics extends serendipity_event
 
        serendipity_db_schema_import($q);
 
-        //create table xxxx_visitors_counts
+        // create table xxxx_visitors_counts
         $q   = "CREATE TABLE {$serendipity['dbPrefix']}visitors_count (
             year int(4) not null,
             month int(2) not null,
@@ -1007,7 +1010,7 @@ class serendipity_event_statistics extends serendipity_event
 
        serendipity_db_schema_import($q);
 
-        //create table xxxx_refs
+        // create table xxxx_refs
         $q   = "CREATE TABLE {$serendipity['dbPrefix']}refs (
             id {AUTOINCREMENT} {PRIMARY},
             refs varchar(255) not null default '',
@@ -1023,7 +1026,7 @@ class serendipity_event_statistics extends serendipity_event
         global $serendipity;
 
         if ($dbic == 0) {
-            //create indices
+            // create indices
             $q   = "CREATE INDEX visitorses ON {$serendipity['dbPrefix']}visitors (sessID);";
             serendipity_db_schema_import($q);
             $q   = "CREATE INDEX visitorday ON {$serendipity['dbPrefix']}visitors (day);";
@@ -1068,7 +1071,7 @@ class serendipity_event_statistics extends serendipity_event
         $q   = "DROP TABLE ".$serendipity['dbPrefix']."refs";
         $sql = serendipity_db_schema_import($q);
 
-    } //end of function dropTables
+    }
 
     function install()
     {
