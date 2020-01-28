@@ -1,6 +1,6 @@
 2.63:
 -----
- * Fix serendipity_archiveURL() for serendipity_makePermalink()
+ * PHP 7.4 fix serendipity_archiveURL() parameters for serendipity_makePermalink()
 
 2.62:
 -----
