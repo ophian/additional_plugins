@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '2.6.0');
+        $propbag->add('version',        '2.6.1');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'php'         => '5.3.0'
@@ -157,22 +157,22 @@ class serendipity_event_lightbox extends serendipity_event
 
             if ($regex == null) {
                 if ($type == 'lightbox2jq') {
-                    $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png)["\'])/i';
+                    $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png|webp)["\'])/i';
                     $sub   = '<a $1 rel=$3lightbox$3 $2';
                 } elseif ($type == 'prettyPhoto') {
-                    $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png)["\'])/i';
+                    $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png|webp)["\'])/i';
                     $sub   = '<a rel=$3prettyPhoto$3 $1 $2';
                 } elseif ($type == 'colorbox') {
-                    $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png)["\'])/i';
+                    $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png|webp)["\'])/i';
                     $sub   = '<a $1 rel=$3singlebox$3 $2';
                 } elseif ($type == 'magnific') {
-                    $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png)["\'])/i';
+                    $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png|webp)["\'])/i';
                     $sub   = '<a rel=$3onemagnificPopup$3 $1 $2';
                 }// do not use 'class' here as identifier, whenever possible, since this conflicts/not validates with $1 'class'es
                 else { // force new lib to prevent empty regular expression errors in preg_replace()
                     $type  = 'lightbox2jq';
                     $this->set_config('type', $type);
-                    $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png)["\'])/i';
+                    $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png|webp)["\'])/i';
                     $sub   = '<a $1 rel=$3lightbox$3 $2';
                 }
             }

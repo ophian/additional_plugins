@@ -1,3 +1,7 @@
+2.6.1:
+------
+ * Allow webp format images which extends usage for picture source img approaches
+
 2.6.0:
 ------
  * lightbox2-jquery update v2.11.1
