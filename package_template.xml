@@ -7693,7 +7693,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-30</date>
+  <date>2020-02-02</date>
   <filelist>
     <dir name="tabacco">
       <dir name="img">
