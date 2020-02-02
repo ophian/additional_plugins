@@ -1394,7 +1394,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-30</date>
+  <date>2020-02-02</date>
   <filelist>
     <dir name="blogger_death">
       <dir name="img">
@@ -1480,7 +1480,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-30</date>
+  <date>2020-02-02</date>
   <filelist>
     <dir name="blue-haze">
       <file>info.txt</file>
@@ -1514,7 +1514,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-30</date>
+  <date>2020-02-02</date>
   <filelist>
     <dir name="blue-iceberg">
       <file>info.txt</file>
@@ -2596,7 +2596,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-30</date>
+  <date>2020-02-02</date>
   <filelist>
     <dir name="earphone">
       <dir name="img">
@@ -2634,7 +2634,7 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-30</date>
+  <date>2020-02-02</date>
   <filelist>
     <dir name="elitist-latte">
       <file>info.txt</file>
@@ -5578,7 +5578,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-30</date>
+  <date>2020-01-02</date>
   <filelist>
     <dir name="newspaper">
       <file>info.txt</file>
@@ -5706,7 +5706,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-30</date>
+  <date>2020-02-02</date>
   <filelist>
     <dir name="party-brown">
       <file>info.txt</file>
@@ -6926,7 +6926,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-30</date>
+  <date>2020-02-02</date>
   <filelist>
     <dir name="safety-yellow">
       <file>info.txt</file>
@@ -7130,7 +7130,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-30</date>
+  <date>2020-02-02</date>
   <filelist>
     <dir name="slate-grey">
       <file>info.txt</file>
@@ -8161,7 +8161,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-30</date>
+  <date>2020-02-02</date>
   <filelist>
     <dir name="wp-clone">
       <file>info.txt</file>
