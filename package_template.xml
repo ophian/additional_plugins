@@ -1394,7 +1394,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-02-02</date>
+  <date>2020-02-03</date>
   <filelist>
     <dir name="blogger_death">
       <dir name="img">
@@ -1586,7 +1586,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-01-30</date>
+  <date>2020-02-03</date>
   <filelist>
     <dir name="brownpaper">
       <file>credits.txt</file>
@@ -7693,7 +7693,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-02-02</date>
+  <date>2020-02-03</date>
   <filelist>
     <dir name="tabacco">
       <dir name="img">
