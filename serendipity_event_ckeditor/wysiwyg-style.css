@@ -159,9 +159,10 @@ source.serendipity_image_right {
     clear: both;
     display: inline-block;
 }
+/* Gallery-Container: default (fallback for rows and cols) */
 .serendipity_image_block.row,
 .serendipity_image_block.col {
-    display: inherit;
+    display: inline-block;
 }
 
 /* Gallery-Container: This is used to enclose a gallery, using serendipity_image_left or _right floated images */
