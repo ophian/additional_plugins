@@ -1,3 +1,7 @@
+4.13.1.5:
+---------
+    * Prepare wysiwyg editor styles for Serendipity Styx 3.0
+
 4.13.1.4:
 ---------
     * Update wysiwyg-style.css improving media handlers for upcoming Styx 3.0
