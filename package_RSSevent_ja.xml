@@ -81,14 +81,12 @@
 <guid isPermaLink="false">serendipity_event_backendrss</guid>
 </item>
 <item>
-<title>バックアップインターフェース: 
-自動的に s9y のデータベース内テーブル、データベース全体およびファイルからバックアップを作る能力を提供します。現在 MySQL(i) データベースのみサポートしています。警告: このプラグインは大きなデータベースやディレクトリーでは正しく処理できません。</title>
+<title>バックアップインターフェース: 自動的に s9y のデータベース内テーブル、データベース全体およびファイルからバックアップを作る能力を提供します。現在 MySQL(i) データベースのみサポートしています。警告: このプラグインは大きなデータベースやディレクトリーでは正しく処理できません。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backup</link>
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;バックアップインターフェース&lt;/b&gt;&lt;br /&gt;
-自動的に s9y のデータベース内テーブル、データベース全体およびファイルからバックアップを作る能力を提供します。現在 MySQL(i) データベースのみサポートしています。警告: このプラグインは大きなデータベースやディレクトリーでは正しく処理できません。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:07:34 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;バックアップインターフェース&lt;/b&gt;&lt;br /&gt;自動的に s9y のデータベース内テーブル、データベース全体およびファイルからバックアップを作る能力を提供します。現在 MySQL(i) データベースのみサポートしています。警告: このプラグインは大きなデータベースやディレクトリーでは正しく処理できません。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 07 Feb 2020 08:43:59 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
@@ -124,7 +122,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Thu, 06 Feb 2020 12:49:46 +0100</pubDate>
+<pubDate>Tue, 25 Feb 2020 14:10:03 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>

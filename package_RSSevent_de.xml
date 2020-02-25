@@ -81,12 +81,12 @@
 <guid isPermaLink="false">serendipity_event_backendrss</guid>
 </item>
 <item>
-<title>Backup-Interface: Bietet die MÃ¶glichkeit, automatisch Backups von Ihren Serendipity - den Datenbanktabellen, der gesamten Datenbank und den Dateien - zu erstellen. Derzeit werden nur MySQL(i)-Datenbanken unterstÃ¼tzt. WARNUNG: Dieses Plugin funktioniert nicht gut mit groÃŸen Datenbanken oder Verzeichnissen.</title>
+<title>Backup-Interface: Bietet die Möglichkeit, automatisch Backups von Ihren Serendipity - den Datenbanktabellen, der gesamten Datenbank und den Dateien - zu erstellen. Derzeit werden nur MySQL(i)-Datenbanken unterstützt. WARNUNG: Dieses Plugin funktioniert nicht gut mit großen Datenbanken oder Verzeichnissen.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backup</link>
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Backup-Interface&lt;/b&gt;&lt;br /&gt;Bietet die MÃ¶glichkeit, automatisch Backups von Ihren Serendipity - den Datenbanktabellen, der gesamten Datenbank und den Dateien - zu erstellen. Derzeit werden nur MySQL(i)-Datenbanken unterstÃ¼tzt. WARNUNG: Dieses Plugin funktioniert nicht gut mit groÃŸen Datenbanken oder Verzeichnissen.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:07:34 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Backup-Interface&lt;/b&gt;&lt;br /&gt;Bietet die Möglichkeit, automatisch Backups von Ihren Serendipity - den Datenbanktabellen, der gesamten Datenbank und den Dateien - zu erstellen. Derzeit werden nur MySQL(i)-Datenbanken unterstützt. WARNUNG: Dieses Plugin funktioniert nicht gut mit großen Datenbanken oder Verzeichnissen.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 07 Feb 2020 08:43:59 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
@@ -122,7 +122,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie die Plugin Konfigurations Seite für mehr Informationen.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Thu, 06 Feb 2020 12:49:46 +0100</pubDate>
+<pubDate>Tue, 25 Feb 2020 14:10:03 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>

@@ -419,12 +419,12 @@
 <license>GPL</license>
 <summary>Backup-Interface</summary>
 <groups>FRONTEND_FULL_MODS,BACKEND_FEATURES</groups>
-<description>Bietet die MÃ¶glichkeit, automatisch Backups von Ihren Serendipity - den Datenbanktabellen, der gesamten Datenbank und den Dateien - zu erstellen. Derzeit werden nur MySQL(i)-Datenbanken unterstÃ¼tzt. WARNUNG: Dieses Plugin funktioniert nicht gut mit groÃŸen Datenbanken oder Verzeichnissen.</description>
+<description>Bietet die Möglichkeit, automatisch Backups von Ihren Serendipity - den Datenbanktabellen, der gesamten Datenbank und den Dateien - zu erstellen. Derzeit werden nur MySQL(i)-Datenbanken unterstützt. WARNUNG: Dieses Plugin funktioniert nicht gut mit großen Datenbanken oder Verzeichnissen.</description>
 <maintainers><maintainer><name>Alexander Mieland, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.19</version>
+  <version>0.20</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-08-18</date>
+  <date>2020-02-07</date>
   <filelist>
     <dir name="serendipity_event_backup">
       <file>backup.sh</file>
@@ -639,9 +639,9 @@
 <description>Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie die Plugin Konfigurations Seite für mehr Informationen.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.13.1.4</version>
+  <version>4.13.1.5</version>
   <requirements:s9yVersion>2.6.2</requirements:s9yVersion>
-  <date>2020-02-06</date>
+  <date>2020-02-25</date>
   <filelist>
     <dir name="serendipity_event_ckeditor">
       <file>basic_toolbar.css</file>
