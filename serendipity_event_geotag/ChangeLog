@@ -1,3 +1,7 @@
+1.37:
+-----
+ * Pasting "lat,long" values into lan or long field will fill both fields (pattern: /^\s*(\d+(\.\d+))\s*[,/]\s*(\d+(\.\d+)?)\s*$/)
+
 1.36:
 -----
  * Use protocol-relative URL
