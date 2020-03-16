@@ -254,6 +254,7 @@ class media_sidebar extends subplug_sidebar {
 
             if (is_array($images)) {
                 $output_str .= $this->get_config('media_intro');
+                $output_str .= '<div id="mediasidebar">';
                 foreach ($images AS $image) {
                     if (isset($image['name'])) {
                         if ($image['hotlink'] == 1) {
@@ -267,7 +268,7 @@ class media_sidebar extends subplug_sidebar {
                             }
                         }
 
-                        $output_str .= '<div id="mediasidebar">';
+                        $output_str .= '<div class="mediasidebaritem">';
 
                         switch ($this->get_config("media_linkbehavior")) {
 
@@ -312,6 +313,7 @@ class media_sidebar extends subplug_sidebar {
 
                         $output_str .= '</div>';
                     }
+                    $output_str .= '</div>';
                 }
                 $output_str .= $this->get_config('media_summery');
             } else {
