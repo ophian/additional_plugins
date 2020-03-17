@@ -49,7 +49,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.13.1.1-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.14.0.0-plus.zip';
 
     /**
      * Access property checkUpdateVersion
@@ -57,20 +57,20 @@ class serendipity_event_ckeditor extends serendipity_event
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.13.1.1');
+    protected $checkUpdateVersion = array('ckeditor:4.14.0.0');
 
     /**
      * Access property revisionPackage
      * Note revisions of ckeditor and plugin additions to lang files
      * @var array
      */
-    protected $revisionPackage = array('CKEditor 4.13.1 (revision 411985373e, full package, 2019-12-09)',
-                                       'CKEditor-Plugin: mediaembed, v. 0.6+ (https://github.com/frozeman/MediaEmbed, 2016-07-24)',
-                                       'CKEditor-Plugin: Manually added for current version "ajax", "autocomplete", "autogrow", "autolink", "button", "clipboard", "codesnippet", "dialog", "dialogui", "embed", "embedbase", "embedsemantic", "emoji", "fakeobjects", "floatpanel", "lineutils", "notification", "notificationaggregator", "panelbutton", "placeholder", "textmatch", "textwatcher", "undo", "widget", "widgetselection" and "xml" plugins, 2019-12-09 and 2020-01-06)',
-                                       'CKEditor-Plugin: procurator, v. 1.6 (Serendipity placeholder Plugin, 2016-01-01)',
-                                       'CKEditor-Plugin: cheatsheet, v. 1.2 (Serendipity CKE-Cheatsheet Plugin, 2016-08-15)',
-                                       'CKEditor-S9yCustomConfig, cke_config.js, v. 2.18, 2019-10-12',
-                                       'CKEditor-S9yCustomPlugins, cke_plugin.js, v. 1.16, 2018-07-13',
+    protected $revisionPackage = array('CKEditor 4.14.0 (revision 8a12b04171, full package, 2020-03-04)',
+                                       'CKEditor-Plugin: mediaembed, v. 0.6+ (https://github.com/frozeman/MediaEmbed, 2019-07-03)',
+                                       'CKEditor-Plugin: Manually added for current version "ajax", "autocomplete", "autogrow", "autolink", "button", "clipboard", "codesnippet", "dialog", "dialogui", "embed", "embedbase", "embedsemantic", "emoji", "fakeobjects", "floatpanel", "lineutils", "notification", "notificationaggregator", "panelbutton", "placeholder", "textmatch", "textwatcher", "undo", "widget", "widgetselection" and "xml" plugins, 2020-03-04)',
+                                       'CKEditor-Plugin: procurator, v. 1.7 (Serendipity placeholder Plugin, 2019-11-24)',
+                                       'CKEditor-Plugin: cheatsheet, v. 1.3 (Serendipity CKE-Cheatsheet Plugin, 2019-07-03)',
+                                       'CKEditor-S9yCustomConfig, cke_config.js, v. 2.21, 2020-01-08',
+                                       'CKEditor-S9yCustomPlugins, cke_plugin.js, v. 1.17, 2020-01-08',
                                        'CKEditor-S9yAddOn, fresh highlight.pack.js file v. 9.12.0 and github styles in highlight.css, standard + go + rust (https://highlightjs.org/) 2017-08-18',
                                        'Prettify: JS & CSS files, v. "current", (http://code.google.com/p/google-code-prettify/, 2013-03-04)');
 
@@ -423,7 +423,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.13.1.5', '4.13.1.4'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.14.0.0', '4.13.1.5'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -437,7 +437,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.13.1.5', '4.13.1.4'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.14.0.0', '4.13.1.5'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);

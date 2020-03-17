@@ -2,6 +2,11 @@
 ---------
     * Prepare wysiwyg editor styles for Serendipity Styx 3.0
 
+4.14.0.0:
+---------
+    * Upgrade to CKEDITOR 4.14. Series, update 0 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
+
 4.13.1.4:
 ---------
     * Update wysiwyg-style.css improving media handlers for upcoming Styx 3.0
