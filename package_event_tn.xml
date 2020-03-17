@@ -641,12 +641,12 @@
 <release>
   <version>4.13.1.5</version>
   <requirements:s9yVersion>2.6.2</requirements:s9yVersion>
-  <date>2020-02-25</date>
+  <date>2020-03-17</date>
   <filelist>
     <dir name="serendipity_event_ckeditor">
       <file>basic_toolbar.css</file>
       <file>ChangeLog</file>
-      <file>ckeditor_4.13.1.1-plus.zip</file>
+      <file>ckeditor_4.14.0.0-plus.zip</file>
       <file>cke_backend.css</file>
       <file>cke_config.js</file>
       <file>cke_ibn.css</file>
@@ -677,7 +677,7 @@
   <serendipityFilelist>
     <file>serendipity_event_ckeditor/basic_toolbar.css</file>
     <file>serendipity_event_ckeditor/ChangeLog</file>
-    <file>serendipity_event_ckeditor/ckeditor_4.13.1.1-plus.zip</file>
+    <file>serendipity_event_ckeditor/ckeditor_4.14.0.0-plus.zip</file>
     <file>serendipity_event_ckeditor/cke_backend.css</file>
     <file>serendipity_event_ckeditor/cke_config.js</file>
     <file>serendipity_event_ckeditor/cke_ibn.css</file>
