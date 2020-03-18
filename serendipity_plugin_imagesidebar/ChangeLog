@@ -1,3 +1,10 @@
+1.17:
+-----
+
+ * Fix #mediasidebar ID closing container tag place (of 1.16)
+ * Add new option to set/remove plugin gallery and image inline styles (recommended set is: no!) set to 'yes' for compat
+ * Improve line endings
+
 1.16:
 -----
 

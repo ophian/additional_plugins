@@ -91,6 +91,19 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_URL', 'URL');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_GALLERY', 'Gallery');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_ENTRY', 'Try to link to related entry');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GAL_STYLES', 'Set #mediasidebar and image inline styles');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GAL_STYLES_DESC', 'Better(!) do this in your theme (user.css) if really in need to have it; Example:
+#mediasidebar .mediasidebar_link {
+    display: inline-table;
+    text-decoration: none transparent;
+    color: transparent;
+    border: 0 none;
+}
+#mediasidebar .mediasidebaritem img {
+    border: 0 none;
+    width: 200px;
+}
+');
 
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_NAME', 'Image width');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_DESC', 'Set a fixed image width. If the width is set to "0" the plugin will output "width:100%"');

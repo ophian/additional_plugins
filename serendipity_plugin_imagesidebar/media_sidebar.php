@@ -10,6 +10,7 @@ class media_sidebar extends subplug_sidebar {
                      'media_hotlink_base',
                      'media_base_directory',
                      'media_image_strict',
+                     'media_gal_styles',
                      'media_rotate_time',
                      'media_number_images',
                      'media_fixed_width',
@@ -120,6 +121,18 @@ class media_sidebar extends subplug_sidebar {
                 } else $propbag->add('type', 'suboption');
                 break;
 
+            case 'media_gal_styles':
+                $propbag->add('type',           'radio');
+                $propbag->add('name',         PLUGIN_SIDEBAR_MEDIASIDEBAR_GAL_STYLES);
+                $propbag->add('description',  PLUGIN_SIDEBAR_MEDIASIDEBAR_GAL_STYLES_DESC);
+                $propbag->add('radio',
+                            array(  'value' => array('yes','no'),
+                                    'desc'  => array(YES,NO)
+                            ));
+                $propbag->add('radio_per_row',  '2');
+                $propbag->add('default',        'yes');// sadly we need this set to 'yes' for compat, better value is 'no'
+                break;
+
             case 'media_intro':
                 $propbag->add('type',           'html');
                 $propbag->add('name',           PLUGIN_SIDEBAR_MEDIASIDEBAR_INTRO);
@@ -147,7 +160,7 @@ class media_sidebar extends subplug_sidebar {
                 break;
 
             case 'media_hotlink_base':
-                if ($this->get_config('media_hotlinks_only','no') == 'yes') {
+                if ($this->get_config('media_hotlinks_only', 'no') == 'yes') {
                     $propbag->add('type',        'string');
                     $propbag->add('name',        PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_NAME);
                     $propbag->add('description', PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_DESC);
@@ -241,6 +254,9 @@ class media_sidebar extends subplug_sidebar {
             if ($width_test > 0) {
                 $width_str = 'width:'.$width_test.'px;';
             }
+
+            $gallery_styles = $this->get_config('media_gal_styles');
+            if ($gallery_styles == 'yes') {
 ?>
 <style>
 #mediasidebar .mediasidebar_link {
@@ -251,10 +267,11 @@ class media_sidebar extends subplug_sidebar {
 }
 </style>
 <?php
+            }
 
             if (is_array($images)) {
                 $output_str .= $this->get_config('media_intro');
-                $output_str .= '<div id="mediasidebar">';
+                $output_str .= '<div id="mediasidebar">'."\n";
                 foreach ($images AS $image) {
                     if (isset($image['name'])) {
                         if ($image['hotlink'] == 1) {
@@ -268,7 +285,8 @@ class media_sidebar extends subplug_sidebar {
                             }
                         }
 
-                        $output_str .= '<div class="mediasidebaritem">';
+                        $gstyles = ($gallery_styles == 'yes') ? ' style="border: 0px; '.$width_str .'"' : '';
+                        $output_str .= '<div class="mediasidebaritem">'."\n";
 
                         switch ($this->get_config("media_linkbehavior")) {
 
@@ -279,15 +297,15 @@ class media_sidebar extends subplug_sidebar {
                                 } else {
                                     $link = $image_path;
                                 }
-                                $output_str .= '<a href="' . $link . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($e[0]['title']) : htmlspecialchars($e[0]['title'], ENT_COMPAT, LANG_CHARSET)) . '"><img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" /></a>';
+                                $output_str .= '<a href="' . $link . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($e[0]['title']) : htmlspecialchars($e[0]['title'], ENT_COMPAT, LANG_CHARSET)) . '"><img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" /></a>'."\n";
                                 break;
 
                             case 'popup':
-                                $output_str .= '<a href="'.$image_path.'" onclick="F1 = window.open(\''.$image_path.'\',\'Zoom\',\'height='.$image['dimensions_height'].',width='.$image['dimensions_width'].',top=298,left=354,toolbar=no,menubar=no,location=no,resize=1,resizable=1,scrollbars=yes\'); return false;"><img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" /></a>';
+                                $output_str .= '<a href="'.$image_path.'" onclick="F1 = window.open(\''.$image_path.'\',\'Zoom\',\'height='.$image['dimensions_height'].',width='.$image['dimensions_width'].',top=298,left=354,toolbar=no,menubar=no,location=no,resize=1,resizable=1,scrollbars=yes\'); return false;"><img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" /></a>'."\n";
                                 break;
 
                             case 'url':
-                                $output_str .= '<a href="'.$this->get_config('media_url').'"><img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" /></a>';
+                                $output_str .= '<a href="'.$this->get_config('media_url').'"><img'.$gstyles.' src="'.$thumb_path.'" alt="" /></a>'."\n";
                                 break;
 
                             case 'gallery':
@@ -297,24 +315,24 @@ class media_sidebar extends subplug_sidebar {
                                 } else {
                                     $gallery_str = $gallery_str.'?serendipity[image]='.$image['id'];
                                 }
-                                $output_str .= '<a href="'.$gallery_str.'"><img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" /></a>';
+                                $output_str .= '<a href="'.$gallery_str.'"><img'.$gstyles.' src="'.$thumb_path.'" alt="" /></a>'."\n";
                                 break;
 
                             case 'inpage':
-                                $output_str .= '<a class="mediasidebar_link" ' . $this->get_config('media_lightbox', '') . ' href="'.$image_path.'"><img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" /></a>';
+                                $output_str .= '<a class="mediasidebar_link" ' . $this->get_config('media_lightbox', '') . ' href="'.$image_path.'"><img'.$gstyles.' src="'.$thumb_path.'" alt="" /></a>'."\n";
                                 break;
 
                             default:
                             case 'none':
-                                $output_str .= '<img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" />';
+                                $output_str .= '<img'.$gstyles.' src="'.$thumb_path.'" alt="" />'."\n";
                                 break;
 
                         }
 
-                        $output_str .= '</div>';
+                        $output_str .= "</div>\n";
                     }
-                    $output_str .= '</div>';
                 }
+                $output_str .= "</div>\n"; // #mediasidebar end
                 $output_str .= $this->get_config('media_summery');
             } else {
                 $output_str = 'Error accessing images.';
