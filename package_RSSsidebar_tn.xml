@@ -281,7 +281,7 @@
 <category>Sidebar Plugins</category>
 <author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Unified Sidebar Image Display&lt;/b&gt;&lt;br /&gt;Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to connect to a (deprecated) Menalto Gallery installs &quot;random&quot; URL, access a Coppermine database directory (MySql only), connect to the web service Zooomr (http://beta.zooomr.com/home) (deprecated) or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only. You will find limitations and old legacy code with at least the Menalto Gallery (dead project) and modern PHP using old MySQL extension code API calls.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 16 Mar 2020 19:05:09 +0100</pubDate>
+<pubDate>Wed, 18 Mar 2020 10:55:23 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>
