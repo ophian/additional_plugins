@@ -1,3 +1,8 @@
+1.19:
+-----
+
+ * Fix missing popup inline style occurrence for remove styles option
+
 1.18:
 -----
 

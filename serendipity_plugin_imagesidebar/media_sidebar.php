@@ -301,7 +301,7 @@ class media_sidebar extends subplug_sidebar {
                                 break;
 
                             case 'popup':
-                                $output_str .= '<a href="'.$image_path.'" onclick="F1 = window.open(\''.$image_path.'\',\'Zoom\',\'height='.$image['dimensions_height'].',width='.$image['dimensions_width'].',top=298,left=354,toolbar=no,menubar=no,location=no,resize=1,resizable=1,scrollbars=yes\'); return false;"><img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" /></a>'."\n";
+                                $output_str .= '<a href="'.$image_path.'" onclick="F1 = window.open(\''.$image_path.'\',\'Zoom\',\'height='.$image['dimensions_height'].',width='.$image['dimensions_width'].',top=298,left=354,toolbar=no,menubar=no,location=no,resize=1,resizable=1,scrollbars=yes\'); return false;"><img'.$gstyles.' src="'.$thumb_path.'" alt="" /></a>'."\n";
                                 break;
 
                             case 'url':
