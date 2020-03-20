@@ -297,7 +297,7 @@ class media_sidebar extends subplug_sidebar {
                                 } else {
                                     $link = $image_path;
                                 }
-                                $output_str .= '<a href="' . $link . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($e[0]['title']) : htmlspecialchars($e[0]['title'], ENT_COMPAT, LANG_CHARSET)) . '"><img style="border: 0px; '.$width_str .'" src="'.$thumb_path.'" alt="" /></a>'."\n";
+                                $output_str .= '<a href="' . $link . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($e[0]['title']) : htmlspecialchars($e[0]['title'], ENT_COMPAT, LANG_CHARSET)) . '"><img'.$gstyles.' src="'.$thumb_path.'" alt="" /></a>'."\n";
                                 break;
 
                             case 'popup':

@@ -1,7 +1,12 @@
+1.20:
+-----
+
+ * Fix missing entry case inline style occurrence for remove styles option
+
 1.19:
 -----
 
- * Fix missing popup inline style occurrence for remove styles option
+ * Fix missing popup case inline style occurrence for remove styles option
 
 1.18:
 -----
