@@ -1,3 +1,8 @@
+1.72:
+-----
+ * Improve running database requests for speed by setting this to entry_display hook only
+ * Now requires PHP 7
+
 1.71:
 -----
  * Extend and improve Smarty example in README_FOR_SMARTY_TEMPLATING.txt

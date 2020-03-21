@@ -20,11 +20,11 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
-        $propbag->add('version',       '1.71');
+        $propbag->add('version',       '1.72');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.2.0'
+            'php'         => '7.0.0'
         ));
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
         $propbag->add('event_hooks',   array('entry_display' => true, 'css' => true, 'entries_header' => true, 'entries_footer' => true));
@@ -183,105 +183,113 @@ class serendipity_event_entrypaging extends serendipity_event
                             if ($placement != 'smarty') return false;
                         }
 
-                        if (class_exists('serendipity_event_categorytemplates')) {
-                            $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
-                        }
+                        if ($event == 'entry_display') {
 
-                        // showPaging function integrated here
-                        $id     = $serendipity['GET']['id'];
-                        $links  = array();
-                        $cond   = array();
-
-                        $currentTimeSQL = serendipity_db_query("SELECT e.timestamp, ec.categoryid
-                                                                  FROM {$serendipity['dbPrefix']}entries AS e
-                                                       LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec
-                                                                    ON ec.entryid = e.id
-                                                                 WHERE e.id = " . (int)$id . "
-                                                              ORDER BY ec.categoryid
-                                                                 LIMIT 1", true);
-                        if (is_array($currentTimeSQL)) {
-                            $cond['compare'] = "e.timestamp [%1] " . $currentTimeSQL['timestamp'];
-                        } else {
-                            $cond['compare'] = "e.id [%1] " . (int)$id;
-                        }
-
-                        $cond['and'] = " AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
-                        serendipity_plugin_api::hook_event('frontend_fetchentry', $cond);
-
-                        if (!isset($cond['joins'])) {
-                            $cond['joins'] = '';
-                        }
-                        if (!isset($cond['where'])) {
-                            $cond['where'] = '';
-                        }
-                        if (serendipity_db_bool($this->get_config('use_category')) && !empty($currentTimeSQL['categoryid'])) {
-                            $cond['joins'] .= " JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.categoryid = " . (int)$currentTimeSQL['categoryid'] . " AND ec.entryid = e.id)";
-                        }
-                        else if (isset($bycategory[0]['categoryid'])) {
-                            $cond['joinct'] = " LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
-                            $cond['joins'] .= $cond['joinct'];
-                            foreach ($bycategory AS $bcat) {
-                                if ($bcat['template'] == $serendipity['template']) {
-                                    $cond['where'] .= "(ec.categoryid = " . (int)$bcat['categoryid'] . ") AND";
-                                } else {
-                                    $cond['where'] .= "(ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL) AND";
-                                }
+                            if (class_exists('serendipity_event_categorytemplates')) {
+                                $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
                             }
-                        }
 
-                        $querystring = "SELECT
-                                            e.id, e.title, e.timestamp
-                                          FROM
-                                            {$serendipity['dbPrefix']}entries e
-                                            {$cond['joins']}
-                                         WHERE
-                                            {$cond['where']}
-                                            {$cond['compare']}
-                                            {$cond['and']}
-                                      ORDER BY e.timestamp [%2]
-                                         LIMIT  1";
+                            // showPaging function integrated here
+                            $id     = $serendipity['GET']['id'];
+                            $links  = array();
+                            $cond   = array();
 
-                        // We cannot use sprintf() for parameterizing, because "%" strings can occur in checks for "LIKE '%serendipity...%'" SQL parts!
-                        $prevID = serendipity_db_query(str_replace(array('[%1]', '[%2]'), array('<', 'DESC'), $querystring));
-                        $nextID = serendipity_db_query(str_replace(array('[%1]', '[%2]'), array('>', 'ASC'), $querystring));
-
-                        // display random link if selected
-                        $randomlink = '';
-                        if (serendipity_db_bool($this->get_config('showrandom', 'false'))) {
-                            $cond['compare2'] = " e.id <> " . (int)$id ." AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
-
-                            if (!isset($cond['joinct'])) {
-                                $cond['joinct'] = '';
-                            }
-                            if ($serendipity['dbType'] ==  'mysql' || $serendipity['dbType'] == 'mysqli') {
-                                $sql_order = "ORDER BY RAND()";
+                            $currentTimeSQL = serendipity_db_query("SELECT e.timestamp, ec.categoryid
+                                                                      FROM {$serendipity['dbPrefix']}entries AS e
+                                                           LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec
+                                                                        ON ec.entryid = e.id
+                                                                     WHERE e.id = " . (int)$id . "
+                                                                  ORDER BY ec.categoryid
+                                                                     LIMIT 1", true);
+                            if (is_array($currentTimeSQL)) {
+                                $cond['compare'] = "e.timestamp [%1] " . $currentTimeSQL['timestamp'];
                             } else {
-                                // SQLite and PostgreSQL support this, hooray.
-                                $sql_order = "ORDER BY RANDOM()";
+                                $cond['compare'] = "e.id [%1] " . (int)$id;
+                            }
+
+                            $cond['and'] = " AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
+                            serendipity_plugin_api::hook_event('frontend_fetchentry', $cond);
+
+                            if (!isset($cond['joins'])) {
+                                $cond['joins'] = '';
+                            }
+                            if (!isset($cond['where'])) {
+                                $cond['where'] = '';
+                            }
+                            if (serendipity_db_bool($this->get_config('use_category')) && !empty($currentTimeSQL['categoryid'])) {
+                                $cond['joins'] .= " JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.categoryid = " . (int)$currentTimeSQL['categoryid'] . " AND ec.entryid = e.id)";
+                            }
+                            else if (isset($bycategory[0]['categoryid'])) {
+                                $cond['joinct'] = " LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
+                                $cond['joins'] .= $cond['joinct'];
+                                foreach ($bycategory AS $bcat) {
+                                    if ($bcat['template'] == $serendipity['template']) {
+                                        $cond['where'] .= "(ec.categoryid = " . (int)$bcat['categoryid'] . ") AND";
+                                    } else {
+                                        $cond['where'] .= "(ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL) AND";
+                                    }
+                                }
                             }
 
                             $querystring = "SELECT
                                                 e.id, e.title, e.timestamp
                                               FROM
                                                 {$serendipity['dbPrefix']}entries e
-                                                {$cond['joinct']}
+                                                {$cond['joins']}
                                              WHERE
                                                 {$cond['where']}
-                                                {$cond['compare2']}
-                                                $sql_order
-                                             LIMIT  1";
-                            $randID = serendipity_db_query($querystring);
+                                                {$cond['compare']}
+                                                {$cond['and']}
+                                          ORDER BY e.timestamp [%2]
+                                             LIMIT 1";
 
-                            if ($link = $this->makeLink($randID, 'random')) {
-                                $randomlink = '<span class="serendipity_entrypaging_random">' . PLUGIN_ENTRYPAGING_RANDOM_TEXT . $link . '<br /></span>';
+                            // We cannot use sprintf() for parameterizing, because "%" strings can occur in checks for "LIKE '%serendipity...%'" SQL parts!
+                            $prevID = $serendipity['entrypaging']['prevID'] = serendipity_db_query(str_replace(array('[%1]', '[%2]'), array('<', 'DESC'), $querystring));
+                            $nextID = $serendipity['entrypaging']['nextID'] = serendipity_db_query(str_replace(array('[%1]', '[%2]'), array('>', 'ASC'), $querystring));
+
+                            // display random link if selected
+                            $randomlink = '';
+                            if (serendipity_db_bool($this->get_config('showrandom', 'false'))) {
+                                $cond['compare2'] = " e.id <> " . (int)$id ." AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
+
+                                if (!isset($cond['joinct'])) {
+                                    $cond['joinct'] = '';
+                                }
+                                if ($serendipity['dbType'] ==  'mysql' || $serendipity['dbType'] == 'mysqli') {
+                                    $sql_order = "ORDER BY RAND()";
+                                } else {
+                                    // SQLite and PostgreSQL support this, hooray.
+                                    $sql_order = "ORDER BY RANDOM()";
+                                }
+
+                                $querystring = "SELECT
+                                                    e.id, e.title, e.timestamp
+                                                  FROM
+                                                    {$serendipity['dbPrefix']}entries e
+                                                    {$cond['joinct']}
+                                                 WHERE
+                                                    {$cond['where']}
+                                                    {$cond['compare2']}
+                                                    $sql_order
+                                                 LIMIT 1";
+                                $randID = serendipity_db_query($querystring);
+
+                                if ($link = $this->makeLink($randID, 'random')) {
+                                    $randomlink = '<span class="serendipity_entrypaging_random">' . PLUGIN_ENTRYPAGING_RANDOM_TEXT . $link . '<br /></span>';
+                                }
                             }
+                        } else {
+                            $prevID = $prevID ?? '';
+                            $nextID = $nextID ?? '';
+                            unset($serendipity['entrypaging']['prevID']);
+                            unset($serendipity['entrypaging']['nextID']);
                         }
 
-                        if ($link = $this->makeLink($prevID, 'prev')) {
+                        if ($link = $this->makeLink(($serendipity['entrypaging']['prevID'] ?? $prevID), 'prev')) {
                             $links[] = '<span class="serendipity_entrypaging_left"><span class="epicon">&lt;</span> ' . $link . '</span>';
                         }
 
-                        if ($link = $this->makeLink($nextID, 'next')) {
+                        if ($link = $this->makeLink(($serendipity['entrypaging']['nextID'] ?? $nextID), 'next')) {
                             $links[] = '<span class="serendipity_entrypaging_right">' . $link . ' <span class="epicon">&gt;</span></span>';
                         }
 
