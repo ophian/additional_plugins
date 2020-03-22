@@ -20,7 +20,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
-        $propbag->add('version',       '1.72');
+        $propbag->add('version',       '1.73');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -113,7 +113,7 @@ class serendipity_event_entrypaging extends serendipity_event
                 $localtitle = array(0 => $resultset[0]['title']);
             }
 
-            // what above does is to retrieve the multilingual title, if available
+            // what above does, is to retrieve the multilingual title, if available
             $title = (function_exists('serendipity_specialchars') ? serendipity_specialchars($localtitle[0]) : htmlspecialchars($localtitle[0], ENT_COMPAT, LANG_CHARSET));
             if ($this->get_config($type) != '') {
                 $title = (function_exists('serendipity_specialchars') ? serendipity_specialchars($this->get_config($type)) : htmlspecialchars($this->get_config($type), ENT_COMPAT, LANG_CHARSET));
@@ -183,7 +183,7 @@ class serendipity_event_entrypaging extends serendipity_event
                             if ($placement != 'smarty') return false;
                         }
 
-                        if ($event == 'entry_display') {
+                        if ($event == 'entry_display' || (isset($disp) && !isset($serendipity['entrypaging']))) {
 
                             if (class_exists('serendipity_event_categorytemplates')) {
                                 $bycategory = serendipity_db_query("SELECT categoryid, template FROM {$serendipity['dbPrefix']}categorytemplates WHERE hide = 1", false, 'assoc');
@@ -275,7 +275,7 @@ class serendipity_event_entrypaging extends serendipity_event
                                 $randID = serendipity_db_query($querystring);
 
                                 if ($link = $this->makeLink($randID, 'random')) {
-                                    $randomlink = '<span class="serendipity_entrypaging_random">' . PLUGIN_ENTRYPAGING_RANDOM_TEXT . $link . '<br /></span>';
+                                    $randomlink = $serendipity['entrypaging']['randomlink'] = '<span class="serendipity_entrypaging_random">' . PLUGIN_ENTRYPAGING_RANDOM_TEXT . $link . '<br /></span>';
                                 }
                             }
                         } else {
@@ -283,7 +283,11 @@ class serendipity_event_entrypaging extends serendipity_event
                             $nextID = $nextID ?? '';
                             unset($serendipity['entrypaging']['prevID']);
                             unset($serendipity['entrypaging']['nextID']);
+                            unset($serendipity['entrypaging']['randomlink']);
                         }
+
+                        $links = array();
+                        $randomlink = $serendipity['entrypaging']['randomlink'] ?? '';
 
                         if ($link = $this->makeLink(($serendipity['entrypaging']['prevID'] ?? $prevID), 'prev')) {
                             $links[] = '<span class="serendipity_entrypaging_left"><span class="epicon">&lt;</span> ' . $link . '</span>';
