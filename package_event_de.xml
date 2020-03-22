@@ -2278,9 +2278,9 @@
 <description>Ermöglicht beim Betrachten eines Eintrages in der Eintragsliste vor und zurück zu blättern</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.72</version>
+  <version>1.73</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-03-21</date>
+  <date>2020-03-22</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
