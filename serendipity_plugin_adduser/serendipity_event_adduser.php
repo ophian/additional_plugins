@@ -54,7 +54,7 @@ class serendipity_event_adduser extends serendipity_event
             'transmits_user_input'  => true
         ));
         // Register (multiple) dependencies. KEY is the name of the depending plugin. VALUE is a mode of either 'remove' or 'keep'.
-        // If the mode 'remove' is set, removing the plugin results in a removal of the depending plugin. 'Keep' meens to
+        // If the mode 'remove' is set, removing the plugin results in a removal of the depending plugin. 'Keep' means to
         // not touch the depending plugin.
         $this->dependencies = array('serendipity_plugin_adduser' => 'keep');
     }

@@ -24,7 +24,7 @@ class serendipity_plugin_mycalendar extends serendipity_plugin
         $propbag->add('configuration', array('title', 'items', 'datefm', 'datefm2', 'showtime', 'autoprune', 'countdown', 'skipfirst', 'rss'));
 
         // Register (multiple) dependencies. KEY is the name of the depending plugin. VALUE is a mode of either 'remove' or 'keep'.
-        // If the mode 'remove' is set, removing the plugin results in a removal of the depending plugin. 'Keep' meens to
+        // If the mode 'remove' is set, removing the plugin results in a removal of the depending plugin. 'Keep' means to
         // not touch the depending plugin.
         $this->dependencies = array('serendipity_event_mycalendar' => 'remove');
     }
