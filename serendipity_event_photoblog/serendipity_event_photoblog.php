@@ -4,6 +4,8 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
+@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.8');// necessary, as used for db install checkScheme
+
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_photoblog extends serendipity_event
@@ -23,7 +25,7 @@ class serendipity_event_photoblog extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.1.0'
         ));
-        $propbag->add('version',   '1.7');
+        $propbag->add('version',   PLUGIN_EVENT_PHOTOBLOG_VERSION);
 
         $propbag->add('event_hooks',    array(
             'backend_display'   => true,

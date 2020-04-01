@@ -1,8 +1,18 @@
-1.6:
+1.8:
+----
+ * Fix db install
+ * Fix up [tr] lang
+
+1.7:
 ----
 
  * Fix possible PHP 7 warning for parameter must implement Countable
  * Raise requirement for consistency and lang API usage
+
+1.6:
+----
+
+ * Compat fixes
 
 1.5:
 ----
