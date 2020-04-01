@@ -4,7 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.8');// necessary, as used for db install checkScheme
+@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.9');// necessary, as used for db install checkScheme
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -19,11 +19,11 @@ class serendipity_event_photoblog extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_PHOTOBLOG_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_PHOTOBLOG_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Cameron MacFarland');
+        $propbag->add('author',        'Cameron MacFarland, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
+            'serendipity' => '2.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.1.0'
+            'php'         => '5.6.0'
         ));
         $propbag->add('version',   PLUGIN_EVENT_PHOTOBLOG_VERSION);
 
@@ -132,13 +132,13 @@ class serendipity_event_photoblog extends serendipity_event
         if ($path == '/') {
             $path = '';
         }
-        $q = "SELECT * FROM {$serendipity['dbPrefix']}images WHERE name='" . $f . "' and extension='" . $ext . "' and path='" . $path . "'" ;
+        $q = "SELECT * FROM {$serendipity['dbPrefix']}images WHERE name='" . serendipity_db_escape_string($f) . "' and extension='" . serendipity_db_escape_string($ext) . "' and path='" . serendipity_db_escape_string($path) . "'" ;
         $file = serendipity_db_query($q, true);
 
         if (!isset($file) || !is_array($file)) {
             $thumb = array_pop($filebits);
             $f = implode(".", $filebits);
-            $q = "SELECT * FROM {$serendipity['dbPrefix']}images WHERE name='" . $f . "' and extension='" . $ext . "' and path='" . $path . "'" ;
+            $q = "SELECT * FROM {$serendipity['dbPrefix']}images WHERE name='" . serendipity_db_escape_string($f) . "' and extension='" . serendipity_db_escape_string($ext) . "' and path='" . serendipity_db_escape_string($path) . "'" ;
             $file = serendipity_db_query($q, true);
             if (!isset($file) || !is_array($file)) {
                 echo "Couldn't find file";
@@ -178,13 +178,17 @@ class serendipity_event_photoblog extends serendipity_event
         }
 
 ?>
-        <fieldset style="margin: 5px">
-            <legend><?php echo PLUGIN_EVENT_PHOTOBLOG_TITLE; ?></legend>
-            <?php echo PLUGIN_EVENT_PHOTOBLOG_SELECTPHOTO; ?>
-            <input class="input_textbox" id="photoname" type="text" name="serendipity[properties][photoname]" readonly="true" size="30" value="<?php echo $photoname; ?>" />
-            <input class="serendipityPrettyButton input_button" type="button" name="addPhoto" value="Photo" style="" onclick="window.open('serendipity_admin_image_selector.php?serendipity[filename_only]=true&serendipity[htmltarget]=photoname', 'ImageSel', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');" />
-            <input class="serendipityPrettyButton input_button" type="button" name="delPhoto" value="Clear" style="" onclick="document.getElementById('photoname').value = '';" />
-        </fieldset>
+
+            <fieldset id="edit_entry_photoblog" class="entryproperties_photoblog">
+                <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_PHOTOBLOG_TITLE; ?></legend></span>
+                <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_PHOTOBLOG_SELECTPHOTO; ?></span>
+                <div class="form_field">
+                    <input class="input_textbox" id="photoname" type="text" name="serendipity[properties][photoname]" readonly="true" size="30" value="<?php echo $photoname; ?>" />
+                    <input class="serendipityPrettyButton input_button" type="button" name="addPhoto" value="Photo" onclick="window.open('serendipity_admin.php?serendipity[adminModule]=media&serendipity[filename_only]=true&serendipity[htmltarget]=photoname&serendipity[noBanner]=true&serendipity[noSidebar]=true&serendipity[noFooter]=true&serendipity[showMediaToolbar]=false&serendipity[showUpload]=false', 'ImageSel', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');" />
+                    <input class="serendipityPrettyButton input_button" type="button" name="delPhoto" value="Clear" onclick="document.getElementById('photoname').value = '';" />
+                </div>
+            </fieldset>
+
 <?php
     }
 
@@ -224,13 +228,13 @@ class serendipity_event_photoblog extends serendipity_event
             unset($eventData[0]['properties']['ep_cache_body']);
             unset($eventData[0]['properties']['ep_cache_extended']);
         }
-        if ($serendipity['POST']['preview'] == 'true') {
+        if (isset($serendipity['POST']['preview']) && $serendipity['POST']['preview'] == 'true') {
             $prop_val = $serendipity['POST']['properties']['photoname'];
             if (!empty($prop_val)) {
                 $file = $this->parsePhotoname($prop_val);
                 $thumbstring = $this->return_thumbstr($file);
                 $imgsrc= $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . $thumbstring.'.'. $file['extension'];
-                $img = '<div align=center><img src="' . $imgsrc . '" /></div>';
+                $img = '<div align="center"><img src="' . $imgsrc . '" /></div>';
                 $eventData[0]['body'] = $img . $eventData[0]['body'];
             }
         } else {
@@ -242,7 +246,7 @@ class serendipity_event_photoblog extends serendipity_event
                     $file = serendipity_fetchImageFromDatabase($row['photoid']);
                     $thumbstring = $this->return_thumbstr($row);
                     $imgsrc= $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . $thumbstring .'.'. $file['extension'];
-                    $img = '<div align=center><img src="' . $imgsrc . '" /></div>';
+                    $img = '<div align="center"><img src="' . $imgsrc . '" /></div>';
                     $eventData[$i]['body'] = $img . $eventData[$i]['body'];
                 }
             }
@@ -277,8 +281,9 @@ class serendipity_event_photoblog extends serendipity_event
     function return_thumbstr($file)
     {
         $thumbstring = "";
+        $thumbSuffix = isset($serendipity['thumbSuffix']) ? $serendipity['thumbSuffix'] : 'serendipityThumb';
         if ($file['use_thumbnail']) {
-            $thumbstring = ".serendipityThumb";
+            $thumbstring = ".$thumbSuffix";
         }
         return $thumbstring;
     }

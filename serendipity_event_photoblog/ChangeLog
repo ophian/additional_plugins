@@ -1,5 +1,14 @@
+1.9:
+----
+
+ * Raise requirement to 2.0+
+ * Fix up for proper Serendipity 2.0 media selections
+ * Secure database requests
+ * Allow different thumbSuffix for Serendipity Styx
+
 1.8:
 ----
+
  * Fix db install
  * Fix up [tr] lang
 
