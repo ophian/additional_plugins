@@ -671,7 +671,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_loginform&lt;br /&gt;Ověření přihlášení autorů&lt;/b&gt;&lt;br /&gt;Ověřuje správnost přihlašovacích údajů autora, který se přihlašuje přes formulář v postranním sloupci&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 23 Oct 2019 09:41:40 +0200</pubDate>
+<pubDate>Sun, 22 Mar 2020 15:51:25 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_loginform</guid>
 </item>
 <item>
@@ -842,7 +842,7 @@
 <category>Event Plugins</category>
 <author>Cameron MacFarland</author>
 <content:encoded>&lt;b&gt;serendipity_event_photoblog&lt;br /&gt;Fotoblog&lt;/b&gt;&lt;br /&gt;Přidá do příspěvku jednu fotku&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 15 Aug 2018 17:19:29 +0200</pubDate>
+<pubDate>Wed, 01 Apr 2020 11:15:49 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_photoblog</guid>
 </item>
 <item>
@@ -1076,7 +1076,7 @@
 <category>Event Plugins</category>
 <author>Evan Nemerson</author>
 <content:encoded>&lt;b&gt;serendipity_event_templatechooser&lt;br /&gt;Výběr šablon&lt;/b&gt;&lt;br /&gt;Umožňuje návštěvníkům Vašeho webu změnit šablonu (= vzhled) podle libosti&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 03 Apr 2018 12:05:27 +0200</pubDate>
+<pubDate>Sun, 22 Mar 2020 15:48:14 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_templatechooser</guid>
 </item>
 <item>
@@ -1301,7 +1301,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;Samoregistrace nových uživatelů&lt;/b&gt;&lt;br /&gt;Umožňuje návštěvníkům webu vytvořit si vlastní uživatelský účet. Dohromady s pluginem událostí (index.php?serendipity[subpage]=adduser) můžete určit, jestli komentáře mohou posílat pouze registrovaní uživatelé.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:11:45 +0200</pubDate>
+<pubDate>Sun, 22 Mar 2020 15:47:50 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>
@@ -1310,7 +1310,7 @@
 <category>Event Plugins</category>
 <author>Michael Kaiser, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_flickrcss&lt;br /&gt;Flickr Photostream CSS&lt;/b&gt;&lt;br /&gt;Tento plugin je rozšířením postranního pluginu &quot;Flickr Photostream&quot; a přidává k němu stylování (CSS).&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:25:58 +0200</pubDate>
+<pubDate>Sun, 22 Mar 2020 15:51:46 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_flickrcss</guid>
 </item>
 <item>

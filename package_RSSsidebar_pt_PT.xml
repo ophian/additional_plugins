@@ -50,7 +50,7 @@
 <category>Sidebar Plugins</category>
 <author>Jaap Boerma ( j@webbict.com ), Tadashi Jokagi &lt;elf2000@users.sourceforge.net&gt;, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_guestbook&lt;br /&gt;Guestbook Sidebar&lt;/b&gt;&lt;br /&gt;Display the latest guestbook items in the sidebar&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:33:00 +0200</pubDate>
+<pubDate>Sun, 22 Mar 2020 15:51:17 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_guestbook</guid>
 </item>
 <item>
@@ -86,7 +86,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Markus Gerstel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_mycalendar&lt;br /&gt;My Calendar&lt;/b&gt;&lt;br /&gt;Shows your personal calendar with X upcoming scheduled events&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:22:00 +0200</pubDate>
+<pubDate>Sun, 22 Mar 2020 15:51:36 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_mycalendar</guid>
 </item>
 <item>
@@ -299,7 +299,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Neil Dudman</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_loginform&lt;br /&gt;Authors login&lt;/b&gt;&lt;br /&gt;Show a login form for authors&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 22 Oct 2019 14:20:49 +0200</pubDate>
+<pubDate>Sun, 22 Mar 2020 15:51:55 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_loginform</guid>
 </item>
 <item>
@@ -425,7 +425,7 @@
 <category>Sidebar Plugins</category>
 <author>Evan Nemerson</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_templatedropdown&lt;br /&gt;Selector de temas&lt;/b&gt;&lt;br /&gt;Mostra um menu para mudar o tema visual&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 27 Dec 2016 13:01:34 +0100</pubDate>
+<pubDate>Sun, 22 Mar 2020 15:52:08 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_templatedropdown</guid>
 </item>
 <item>

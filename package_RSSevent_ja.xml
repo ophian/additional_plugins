@@ -673,7 +673,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_loginform&lt;br /&gt;Validates authors login&lt;/b&gt;&lt;br /&gt;Validates the login credentials of an author using the sidebar login form&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 23 Oct 2019 09:41:40 +0200</pubDate>
+<pubDate>Sun, 22 Mar 2020 15:51:25 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_loginform</guid>
 </item>
 <item>
@@ -844,7 +844,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Cameron MacFarland</author>
 <content:encoded>&lt;b&gt;serendipity_event_photoblog&lt;br /&gt;フォトログエントリ&lt;/b&gt;&lt;br /&gt;一つの画像をエントリに追加します。&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 15 Aug 2018 17:19:29 +0200</pubDate>
+<pubDate>Wed, 01 Apr 2020 11:15:49 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_photoblog</guid>
 </item>
 <item>
@@ -1078,7 +1078,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Evan Nemerson</author>
 <content:encoded>&lt;b&gt;serendipity_event_templatechooser&lt;br /&gt;テンプレート選択&lt;/b&gt;&lt;br /&gt;訪問者がすぐさまテンプレートを変更することを許可します。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 03 Apr 2018 12:05:27 +0200</pubDate>
+<pubDate>Sun, 22 Mar 2020 15:48:14 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_templatechooser</guid>
 </item>
 <item>
@@ -1303,7 +1303,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;ユーザー自身での登録&lt;/b&gt;&lt;br /&gt;ブログ訪問者が自分のアカウントを作成することを許可します。Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:11:45 +0200</pubDate>
+<pubDate>Sun, 22 Mar 2020 15:47:50 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>
@@ -1312,7 +1312,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Michael Kaiser, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_flickrcss&lt;br /&gt;flickr Photostream CSS&lt;/b&gt;&lt;br /&gt;This plugin is an extension to the flickr Photostream sidebar plugin and adds style information (CSS).&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:25:58 +0200</pubDate>
+<pubDate>Sun, 22 Mar 2020 15:51:46 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_flickrcss</guid>
 </item>
 <item>
