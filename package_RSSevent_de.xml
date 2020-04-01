@@ -840,9 +840,9 @@
 <title>Photoblog Einträge/Bilder: Ein Bild zu einem Eintrag hinzufügen</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_photoblog</link>
 <category>Event Plugins</category>
-<author>Cameron MacFarland</author>
-<content:encoded>&lt;b&gt;serendipity_event_photoblog&lt;br /&gt;Photoblog Einträge/Bilder&lt;/b&gt;&lt;br /&gt;Ein Bild zu einem Eintrag hinzufügen&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 01 Apr 2020 11:15:49 +0200</pubDate>
+<author>Cameron MacFarland, Ian Styx</author>
+<content:encoded>&lt;b&gt;serendipity_event_photoblog&lt;br /&gt;Photoblog Einträge/Bilder&lt;/b&gt;&lt;br /&gt;Ein Bild zu einem Eintrag hinzufügen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Wed, 01 Apr 2020 15:19:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_photoblog</guid>
 </item>
 <item>

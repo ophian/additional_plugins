@@ -7198,10 +7198,10 @@
 <summary>FotoG�nl�k Kay�tlar�</summary>
 <groups>IMAGES</groups>
 <description>En son yay�nlad��n�z fotog�nl�k kay�tlar�n�zdaki k��kresimleri g�sterir (olaylar eklentisine bak�n).</description>
-<maintainers><maintainer><name>Cameron MacFarland</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Cameron MacFarland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <version>1.9</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <date>2020-04-01</date>
   <filelist>
     <dir name="serendipity_event_photoblog">
