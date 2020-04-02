@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.08');
+        $propbag->add('version', '6.09');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -3629,6 +3629,9 @@ class serendipity_event_staticpage extends serendipity_event
 
                 case 'genpage':
                     $this->setupDB();
+
+                    // hotfix facebook adding ?fbclid=something in certain cases
+                    $addData['uriargs'] = $addData['uriargs'][0] == '?' ? substr($addData['uriargs'], 1) : $addData['uriargs'];
 
                     if ($serendipity['rewrite'] != 'none') {
                         $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];

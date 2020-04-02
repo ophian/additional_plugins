@@ -1,3 +1,7 @@
+6.09:
+-----
+ * Fix $nice_url for certain case
+
 6.08:
 -----
  * Fix an uninitialized variable check for PHP 7.4
