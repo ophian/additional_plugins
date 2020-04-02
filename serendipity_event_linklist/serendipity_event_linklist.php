@@ -25,7 +25,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '2.08');
+        $propbag->add('version',       '2.09');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -43,6 +43,7 @@ class serendipity_event_linklist extends serendipity_event
     function generate_output($ignorecache)
     {
         global $serendipity;
+
         $cache = $this->get_config('cache');
         if ($cache == 'yes' && $ignorecache == false) {
             if (@include_once("Cache/Lite.php")) {
@@ -88,6 +89,7 @@ class serendipity_event_linklist extends serendipity_event
     function category_output($table, $catid, $level)
     {
         global $serendipity;
+
         $cat_open = false;
         $output = '';
         $indent = '';
@@ -163,6 +165,7 @@ class serendipity_event_linklist extends serendipity_event
     function cleanup()
     {
         global $serendipity;
+
         if ($this->get_config('cache') == 'yes') {
             if (@include_once("Cache/Lite.php")) {
                 $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/','automaticSerialization' => true));
@@ -258,12 +261,12 @@ class serendipity_event_linklist extends serendipity_event
                     }
                     if (isset($_POST['REMOVE'])) {
                         if (isset($_POST['serendipity']['link_to_remove'])) {
-                            foreach ($_POST['serendipity']['link_to_remove'] as $key) {
+                            foreach($_POST['serendipity']['link_to_remove'] AS $key) {
                                 $this->del_link($key);
                             }
                         } else {
                             if (isset($_POST['serendipity']['category_to_remove'])) {
-                                foreach ($_POST['serendipity']['category_to_remove'] as $key) {
+                                foreach($_POST['serendipity']['category_to_remove'] AS $key) {
                                     $this->del_category($key);
                                 }
                             }
@@ -271,7 +274,7 @@ class serendipity_event_linklist extends serendipity_event
                     }
 
                     if (isset($_POST['SAVE'])) {
-                        foreach ($_POST['serendipity']['link_to_recat'] AS $key => $row) {
+                        foreach($_POST['serendipity']['link_to_recat'] AS $key => $row) {
                             $this->update_cat($key,$row);
                         }
                     }
@@ -516,6 +519,7 @@ class serendipity_event_linklist extends serendipity_event
     function del_category($id)
     {
         global $serendipity;
+
         $q   = 'DELETE FROM '.$serendipity['dbPrefix'].'link_category where categoryid='.(int)$id;
         $sql = serendipity_db_query($q);
 
@@ -535,6 +539,7 @@ class serendipity_event_linklist extends serendipity_event
     function move_up($id)
     {
         global $serendipity;
+
         $q   = 'SELECT order_num FROM '.$serendipity['dbPrefix'].'links where id='.(int)$id;
         $sql = serendipity_db_query($q);
 
@@ -565,7 +570,6 @@ class serendipity_event_linklist extends serendipity_event
             $count = 0;
         }
 
-        global $serendipity;
         $q   = 'SELECT order_num FROM '.$serendipity['dbPrefix'].'links where id='.(int)$id;
         $sql = serendipity_db_query($q);
 
@@ -586,6 +590,7 @@ class serendipity_event_linklist extends serendipity_event
     function output_linkadmin()
     {
         global $serendipity;
+
         $display = $this->get_config('display');
         $q = $this->set_query($display);
         $categories = $this->build_categories();
@@ -659,7 +664,7 @@ class serendipity_event_linklist extends serendipity_event
     function category_box($id, $categories, $current_category = 0)
     {
         $x = "\n<select name=\"serendipity[link_to_recat][".$id."]\">\n";
-        foreach ($categories as $k => $v) {
+        foreach($categories AS $k => $v) {
             $x .= "    <option value=\"$k\"" . ($k == $current_category ? ' selected="selected"' : '') . ">$v</option>\n";
         }
         return $x . "</select>\n";
@@ -668,6 +673,7 @@ class serendipity_event_linklist extends serendipity_event
     function output_add_edit_linkadmin($edit = FALSE, $id = -1)
     {
         global $serendipity;
+
         $display = $this->get_config('display');
         $categories = $this->build_categories();
         if ($edit) {
@@ -714,6 +720,7 @@ class serendipity_event_linklist extends serendipity_event
     function output_categoryadmin()
     {
         global $serendipity;
+
         $display = $this->get_config('display');
         $categories = $this->build_categories();
         $maintitle = PLUGIN_LINKLIST_ADD_CAT;
@@ -757,7 +764,7 @@ class serendipity_event_linklist extends serendipity_event
         $categories = serendipity_db_query($q);
         $categories = @serendipity_walkRecursive($categories, 'categoryid', 'parentid', VIEWMODE_THREADED);
 
-        foreach ( $categories as $category ) {
+        foreach($categories AS $category) {
 ?>
             <tr>
                 <td width="16">
@@ -783,12 +790,14 @@ class serendipity_event_linklist extends serendipity_event
     function set_query($display)
     {
         global $serendipity;
-               $q = 'SELECT s.link     AS link,
-                            s.title    AS name,
-                            s.descrip  AS descrip,
-                            s.category AS cat_id,
-                            s.id       AS id
-                       FROM '.$serendipity['dbPrefix'].'links AS s ';
+
+        $q = 'SELECT s.link     AS link,
+                    s.title    AS name,
+                    s.descrip  AS descrip,
+                    s.category AS cat_id,
+                    s.id       AS id
+               FROM '.$serendipity['dbPrefix'].'links AS s ';
+
         switch($display) {
             case 'category':
                    $q .= 'ORDER BY s.category';
@@ -814,17 +823,21 @@ class serendipity_event_linklist extends serendipity_event
     function build_categories()
     {
          global $serendipity;
+
          if ($this->get_config('category') == 'custom') {
              $table = $serendipity['dbPrefix'].'link_category';
          } else {
              $table = $serendipity['dbPrefix'].'category';
          }
+
          $q = 'SELECT s.categoryid AS id,
                       s.category_name AS name
                  FROM '.$table.' AS s
              ORDER BY s.category_name DESC';
          $sql = serendipity_db_query($q);
+
          $categories['0'] = '';
+
          if ($sql && is_array($sql)) {
              foreach($sql AS $key => $row) {
                  $categories[$row['id']] = $row['name'];

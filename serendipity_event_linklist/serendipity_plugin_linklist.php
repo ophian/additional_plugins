@@ -18,7 +18,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $propbag->add('description',   PLUGIN_LINKS_BLAHBLAH);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '1.26');
+        $propbag->add('version',       '1.27');
         $propbag->add('configuration', array(
                                              'title',
                                              'prepend_text',
@@ -598,7 +598,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
             $default_cat_img_bottom = $imagearray['plusBottom'];
         }
         $tempcount = 0;
-        foreach($directories as $sub) {
+        foreach($directories AS $sub) {
             $safename = preg_replace('@[^a-z0-9]@i', '_',$sub);
             if ($safename != "") {
                 $tempcount++;
@@ -659,7 +659,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
             }
         }
         if (isset($links)) {
-            foreach ($links as $link) {
+            foreach($links AS $link) {
                 $linkcount--;
                 if (!$lessformatting) {
                     if ($linkcount > 0) {
