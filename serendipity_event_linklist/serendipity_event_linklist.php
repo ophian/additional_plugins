@@ -25,7 +25,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '2.07');
+        $propbag->add('version',       '2.08');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -357,7 +357,6 @@ class serendipity_event_linklist extends serendipity_event
                     }
                     break;
 
-
                 case 'external_plugin':
                     $uri_parts = explode('?', str_replace('&amp;', '&', $eventData));
                     $parts     = explode('&', $uri_parts[0]);
@@ -397,18 +396,18 @@ class serendipity_event_linklist extends serendipity_event
                                 xml_parse_into_struct($xml, '<list>'.serendipity_utf8_encode($eventData['links']).'</list>', $struct, $index);
                                 xml_parser_free($xml);
                                 $depth = -1;
-                                for($level[]=0, $i=1, $j=1; isset($struct[$i]); $i++, $j++){
-                                    if (isset($struct[$i]['type'])){
-                                        if ($struct[$i]['type']=='open' && strtolower($struct[$i]['tag'])=='dir'){
+                                for($level[]=0, $i=1, $j=1; isset($struct[$i]); $i++, $j++) {
+                                    if (isset($struct[$i]['type'])) {
+                                        if ($struct[$i]['type']=='open' && strtolower($struct[$i]['tag'])=='dir') {
                                             $this->add_cat($this->decode($struct[$i]['attributes']['NAME']),$in_cat[0]);
                                             $q   = 'SELECT categoryid FROM '.$serendipity['dbPrefix'].'link_category where category_name = "'.serendipity_db_escape_string($this->decode($struct[$i]['attributes']['NAME'])).'"';
                                             $sql = serendipity_db_query($q);
                                             $in_cat[] = $sql[0][0];
                                             $depth++;
-                                        } else if ($struct[$i]['type']=='close' && strtolower($struct[$i]['tag'])=='dir'){
+                                        } else if ($struct[$i]['type']=='close' && strtolower($struct[$i]['tag'])=='dir') {
                                             $blah = array_pop($in_cat);
                                             $depth--;
-                                        } else if ($struct[$i]['type']=='complete' && strtolower($struct[$i]['tag'])=='link'){
+                                        } else if ($struct[$i]['type']=='complete' && strtolower($struct[$i]['tag'])=='link') {
                                             $this->add_link($this->decode($struct[$i]['attributes']['LINK']), $this->decode($struct[$i]['attributes']['NAME']), $this->decode($struct[$i]['attributes']['DESCRIP']), $in_cat[$depth]);
                                         }
                                     }

@@ -1,3 +1,11 @@
+2.08 & 1.26:
+------------
+
+ * Fix sidebar plugin being stackable
+ * Fix sidebar plugin dependency to the event plugin
+ * Fix sidebar plugin wrong lldree.js generated link to external_plugin, while being subjected stackable
+ * Fix sidebar plugin wrong placed $plugin_dir generation for image assignment path fallbacks
+
 2.07 & 1.25:
 ------------
 
