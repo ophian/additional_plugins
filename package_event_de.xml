@@ -8852,11 +8852,11 @@
 <summary>Sharebuttons</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Zeige Sharebuttons für Netzwerke wie Facebook und Twitter (nutzt shariff)</description>
-<maintainers><maintainer><name>onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.18</version>
+  <version>0.20</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2020-04-05</date>
   <filelist>
     <dir name="serendipity_event_social">
       <file>ChangeLog</file>
