@@ -17,7 +17,7 @@ class serendipity_event_social extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_SOCIAL_NAME);
         $propbag->add('description',   PLUGIN_EVENT_SOCIAL_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel');
+        $propbag->add('author',        'onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein');
         $propbag->add('version',       '0.19');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
