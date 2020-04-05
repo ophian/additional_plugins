@@ -18,9 +18,9 @@ class serendipity_event_social extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SOCIAL_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein');
-        $propbag->add('version',       '0.20');
+        $propbag->add('version',       '0.21');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
+            'serendipity' => '2.9',
         ));
         $propbag->add('event_hooks',   array(
                                         'frontend_display:html:per_entry' => true,
@@ -253,19 +253,20 @@ class serendipity_event_social extends serendipity_event
                         $entry_image = '';
                     }
 ?>
-                    <div class="social_entry_image adv_opts_box form_field">
-                        <div class="clearfix form_area media_choose" id="ep_column_entry_image">
-                            <label for="properties_entry_image"><?php echo PLUGIN_EVENT_SOCIAL_ENTRY_IMAGE; ?>:</label>
-                            <textarea data-configitem="properties_entry_image" name="serendipity[properties][entry_image]" class="change_preview" id="properties_entry_image" style="width: 100%"><?php echo serendipity_specialchars($entry_image); ?></textarea>
-                            <button class="customfieldMedia" type="button" name="insImage" title="<?php echo MEDIA ; ?>"><span class="icon-picture" aria-hidden="true"></span><span class="visuallyhidden"><?php echo MEDIA ; ?></span></button>
-                            <figure id="properties_entry_image_preview">
-                                <figcaption><?php echo PREVIEW; ?></figcaption>
-                                <img src="<?php echo $entry_image; ?>"  alt=""/>
-                            </figure>
-                        </div>
-                    </div>
+
+            <fieldset id="edit_entry_social_image" class="entryproperties_social_image adv_opts_box form_field">
+                <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_SOCIAL_ENTRY_IMAGE; ?></legend></span>
+                <div class="clearfix form_area media_choose" id="ep_column_entry_image">
+                    <textarea data-configitem="properties_entry_image" name="serendipity[properties][entry_image]" class="change_preview" id="properties_entry_image" style="width: 100%"><?php echo serendipity_specialchars($entry_image); ?></textarea>
+                    <button class="customfieldMedia" type="button" name="insImage" title="<?php echo MEDIA ; ?>"><span class="icon-picture" aria-hidden="true"></span><span class="visuallyhidden"><?php echo MEDIA ; ?></span></button>
+                    <figure id="properties_entry_image_preview">
+                        <figcaption><?php echo PREVIEW; ?></figcaption>
+                        <img src="<?php echo $entry_image; ?>"  alt=""/>
+                    </figure>
+                </div>
+            </fieldset>
+
 <?php
-                    return true;
                     break;
 
                 case 'backend_publish':
@@ -285,6 +286,7 @@ class serendipity_event_social extends serendipity_event
                         $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES (" . (int)$eventData['id'] . ", 'entry_image', '" . serendipity_db_escape_string($entry_image) . "')";
                         serendipity_db_query($q);
                     }
+                    break;
 
                 default:
                     return false;

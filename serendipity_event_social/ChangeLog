@@ -1,3 +1,9 @@
+0.21:
+-----
+
+ * Fix 'backend_display' markup for Styx
+ * Sets Serendipity Requirement to Styx 2.9
+
 0.20:
 -----
   * Upgrade to shariff - v3.2.1
