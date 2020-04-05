@@ -1,3 +1,8 @@
+0.22:
+-----
+
+ * Fix shariff.complete.css for missing first src: selector, since we had removed some font data files for (v.0.16) tweaks.
+
 0.21:
 -----
 
