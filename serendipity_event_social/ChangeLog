@@ -2,6 +2,7 @@
 -----
   * Upgrade to shariff - v3.2.1
   * Fix font data path for http "/something" blog cases
+  * Fix shariff on single entries
 
 0.19:
 -----
