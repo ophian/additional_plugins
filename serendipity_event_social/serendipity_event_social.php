@@ -165,7 +165,7 @@ class serendipity_event_social extends serendipity_event
                     break;
 
                 case 'css':
-                    $eventData .= file_get_contents(dirname(__FILE__) . '/shariff.complete.css');
+                    $eventData .= str_replace('{SOFA_PATH}', $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_social/fa/', file_get_contents(dirname(__FILE__) . '/shariff.complete.css'));
                     break;
 
                 case 'frontend_footer':
