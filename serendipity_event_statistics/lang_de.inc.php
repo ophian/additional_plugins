@@ -20,7 +20,7 @@
 @define('PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES2', 'Kategorie(n)');
 @define('PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_CATEGORIES', 'Verteilung der Artikel auf Kategorien');
 @define('PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_CATEGORIES2', 'eingetragene(r) Artikel');
-@define('PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES', 'Hochgeladene Bilder');
+@define('PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES', 'Hochgeladene Bilder/Medien');
 @define('PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES2', 'Bild(er)');
 @define('PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_IMAGES', 'Verteilung der Bild-Dateitypen');
 @define('PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_IMAGES2', 'vorhandene Datei(en)');

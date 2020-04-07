@@ -18,11 +18,10 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '1.77');
+        $propbag->add('version',       '1.78');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'php'         => '7.2'
         ));
         $propbag->add('groups', array('STATISTICS'));
         $propbag->add('event_hooks',   array(
@@ -387,7 +386,7 @@ class serendipity_event_statistics extends serendipity_event
                         <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOTAL_PUBLIC; ?></dt>
                         <dd><?php echo $publish_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ENTRIES; ?></dd>
                         <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOTAL_DRAFTS; ?></dt>
-                        <dd><?php echo $draft_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ENTRIES; ?></dd>
+                        <dd><?php echo ($draft_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ENTRIES; ?></dd>
                     </dl>
                 </dd>
             </dl>
@@ -413,7 +412,7 @@ class serendipity_event_statistics extends serendipity_event
         <section>
             <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES; ?></h3>
 
-            <p><?php echo $category_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES2; ?></p>
+            <p><?php echo ($category_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES2; ?></p>
 
             <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_CATEGORIES; ?></h4>
 
@@ -434,7 +433,7 @@ class serendipity_event_statistics extends serendipity_event
         <section>
             <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES; ?></h3>
 
-            <p><?php echo $image_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES2; ?></p>
+            <p><?php echo ($image_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES2; ?></p>
 
             <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_IMAGES; ?></h4>
 
@@ -457,7 +456,7 @@ class serendipity_event_statistics extends serendipity_event
 
             <dl>
                 <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS; ?></dt>
-                <dd><?php echo $comment_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS2; ?></dd>
+                <dd><?php echo ($comment_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS2; ?></dd>
             </dl>
 
             <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS3; ?></h4>
@@ -516,7 +515,7 @@ class serendipity_event_statistics extends serendipity_event
         <section>
             <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS; ?></h3>
 
-            <p><?php echo $subscriber_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS2; ?></p>
+            <p><?php echo ($subscriber_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS2; ?></p>
 
             <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPSUBSCRIBERS; ?></h4>
 
@@ -537,7 +536,7 @@ class serendipity_event_statistics extends serendipity_event
         <section>
             <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS; ?></h3>
 
-            <p><?php echo $tb_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS2; ?></p>
+            <p><?php echo ($tb_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS2; ?></p>
 
             <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACK; ?></h4>
 
