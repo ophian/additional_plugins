@@ -4,7 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.9');// necessary, as used for db install checkScheme
+@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.10');// necessary, as used for db install checkScheme
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -244,10 +244,12 @@ class serendipity_event_photoblog extends serendipity_event
                 $row = $this->getPhoto($eventData[$i]['id']);
                 if (isset($row)) {
                     $file = serendipity_fetchImageFromDatabase($row['photoid']);
-                    $thumbstring = $this->return_thumbstr($row);
-                    $imgsrc= $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . $thumbstring .'.'. $file['extension'];
-                    $img = '<div align="center"><img src="' . $imgsrc . '" /></div>';
-                    $eventData[$i]['body'] = $img . $eventData[$i]['body'];
+                    if (!empty($file)) {
+                        $thumbstring = $this->return_thumbstr($row);
+                        $imgsrc = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . $thumbstring .'.'. $file['extension'];
+                        $img = '<div align="center"><img src="' . $imgsrc . '" /></div>';
+                        $eventData[$i]['body'] = $img . $eventData[$i]['body'];
+                    }
                 }
             }
         }
