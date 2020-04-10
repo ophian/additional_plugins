@@ -1,3 +1,9 @@
+1.11:
+-----
+
+ * Check some more eventData push or POST cases before action
+ * Raise PHP reqirement
+
 1.10:
 -----
 

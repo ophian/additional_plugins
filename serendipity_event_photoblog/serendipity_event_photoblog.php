@@ -4,7 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.10');// necessary, as used for db install checkScheme
+@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.11');// necessary, as used for db install checkScheme
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -23,7 +23,7 @@ class serendipity_event_photoblog extends serendipity_event
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.6.0'
+            'php'         => '7.0.0'
         ));
         $propbag->add('version',   PLUGIN_EVENT_PHOTOBLOG_VERSION);
 
@@ -199,11 +199,11 @@ class serendipity_event_photoblog extends serendipity_event
         if (!isset($serendipity['POST']['properties']) ||
             !is_array($serendipity['POST']['properties']) ||
             !isset($eventData['id']) ||
-            ($serendipity['POST']['preview'] == 'true') ) {
+            (isset($serendipity['POST']['preview']) && $serendipity['POST']['preview'] == 'true') ) {
             return true;
         }
 
-        $prop_val = $serendipity['POST']['properties']['photoname'];
+        $prop_val = $serendipity['POST']['properties']['photoname'] ?? null;
 
         $row = $this->getPhoto($eventData['id']);
 
@@ -224,7 +224,7 @@ class serendipity_event_photoblog extends serendipity_event
     {
         global $serendipity;
 
-        if (is_array($eventData[0]['properties'])) {
+        if (isset($eventData[0]['properties']) && is_array($eventData[0]['properties'])) {
             unset($eventData[0]['properties']['ep_cache_body']);
             unset($eventData[0]['properties']['ep_cache_extended']);
         }
@@ -240,8 +240,10 @@ class serendipity_event_photoblog extends serendipity_event
         } else {
 
             $elements = is_array($eventData) ? count($eventData) : 0;
-            for ($i = 0; $i < $elements; $i++) {
-                $row = $this->getPhoto($eventData[$i]['id']);
+            for ($i=0; $i < $elements; $i++) {
+                if (isset($eventData[$i]['id'])) {
+                    $row = $this->getPhoto($eventData[$i]['id']);
+                }
                 if (isset($row)) {
                     $file = serendipity_fetchImageFromDatabase($row['photoid']);
                     if (!empty($file)) {
