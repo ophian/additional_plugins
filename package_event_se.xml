@@ -9364,9 +9364,9 @@
 <description>Adds a link to interesting statistics in your entries panel, including a visitors counter</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.78</version>
+  <version>1.79</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-04-07</date>
+  <date>2020-04-11</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>ChangeLog</file>
