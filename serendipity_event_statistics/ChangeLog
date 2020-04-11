@@ -1,3 +1,7 @@
+1.79:
+-----
+ *  Fix comments subscriber_count query
+
 1.78:
 -----
  *  Add some default values to counted item parts
