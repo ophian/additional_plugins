@@ -1,3 +1,7 @@
+6.10:
+-----
+ * Add default value to some staticpage $template_option.date_format
+
 6.09:
 -----
  * Fix $nice_url for certain case
