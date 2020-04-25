@@ -1,7 +1,7 @@
 1.31:
 =====
 
- * Treat <details> and <summary> tag elelements as block level
+ * Treat <details> and <summary> tag elements as block level
 
 1.30:
 =====
