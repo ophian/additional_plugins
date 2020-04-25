@@ -1,3 +1,9 @@
+0.50 (event) for 0.26 (sidebar):
+------------------------
+
+ * Try to fixup SQL query for (postgresql) text vs int comparison issue
+ * Set requirements up and remove old Serendipity or smarty requests
+
 0.49:
 -----
 
@@ -15,7 +21,7 @@
  * Some fixes and enhancements for 2.0x
  * Fix for doubled or tripled entries
  * Set plugin consistencies
- * Fix idents, this & that
+ * Fix indents, this & that
 
  (Strike: Known issue: tabber javascript removes title of tabbed divs.)
 

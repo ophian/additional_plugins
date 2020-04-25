@@ -1,7 +1,4 @@
 <?php
-/*
-    Microformats Sidebar Display
-*/
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
@@ -56,7 +53,7 @@ class serendipity_plugin_microformats extends serendipity_plugin
         $propbag->add('description',   PLUGIN_MICROFORMATS_TITLE_D);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version',       '0.25');
+        $propbag->add('version',       '0.26');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -153,7 +150,8 @@ class serendipity_plugin_microformats extends serendipity_plugin
                                 'mf_hCalendar_enddate'  => 'DTEND',
                                 'mf_hCalendar_desc'     => 'DESC');
             if ($this->get_config('include_entries') === true) {
-                $query = 'SELECT * FROM ' . $serendipity['dbPrefix'] . 'entryproperties WHERE property LIKE \'mf_hCalendar_%\' AND entryid IN (SELECT entryid FROM ' . $serendipity['dbPrefix'] . 'entryproperties WHERE property = \'mf_hCalendar_startdate\' AND value > (' . time() . ($this->get_config('purge') !== false ? ' - ' . 86400 * intval($this->get_config('purge')) : ' ') . '))';
+                $checktime = (string)(time() . ($this->get_config('purge') !== false ? ' - ' . 86400 * intval($this->get_config('purge')) : ' '));
+                $query = "SELECT * FROM {$serendipity['dbPrefix']}entryproperties WHERE property LIKE 'mf_hCalendar_%' AND entryid IN (SELECT entryid FROM {$serendipity['dbPrefix']}entryproperties WHERE property = 'mf_hCalendar_startdate' AND value > $checktime)";
                 $result = serendipity_db_query($query, false, 'assoc');
                 $counter = count($event)-1;
                 if (is_array($result)) {

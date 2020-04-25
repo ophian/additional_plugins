@@ -53,11 +53,11 @@ class serendipity_event_microformats extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MICROFORMATS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version',       '0.49');
+        $propbag->add('version',       '0.50');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '5.6.0'
         ));
         $propbag->add('event_hooks',    array(
             'frontend_header'                                   => true,
@@ -249,16 +249,8 @@ div.tabbertab fieldset {
                         serendipity_smarty_init($serendipity['plugindata']['smartyvars']);
                     }
                     include_once(dirname(__FILE__).'/smarty.inc.php');
-                    if( !defined('Smarty::SMARTY_VERSION') ) {
-                        // For Smarty 2
-                        if (!isset($serendipity['smarty']->_plugins['function']['microformats_show'])) {
-                            $serendipity['smarty']->register_function('microformats_show', 'microformats_serendipity_show');
-                        }
-                    } else {
-                        // For Smarty 3
-                        if (!isset($serendipity['smarty']->registered_plugins['function']['microformats_show'])) {
-                            $serendipity['smarty']->registerPlugin('function', 'microformats_show', 'microformats_serendipity_show');
-                        }
+                    if (!isset($serendipity['smarty']->registered_plugins['function']['microformats_show'])) {
+                        $serendipity['smarty']->registerPlugin('function', 'microformats_show', 'microformats_serendipity_show');
                     }
                     break;
 
@@ -285,16 +277,8 @@ div.tabbertab fieldset {
                     }
                     include_once(dirname(__FILE__).'/smarty.inc.php');
                     $serendipity['smarty']->assign('subnode', ($this->get_config('subnode') ? 1 : 0));
-                    if( !defined('Smarty::SMARTY_VERSION') ) {
-                        // For Smarty 2
-                        if (!isset($serendipity['smarty']->_plugins['function']['microformats_show'])) {
-                            $serendipity['smarty']->register_function('microformats_show', 'microformats_serendipity_show');
-                        }
-                    } else {
-                        // For Smarty 3
-                        if (!isset($serendipity['smarty']->registered_plugins['function']['microformats_show'])) {
-                            $serendipity['smarty']->registerPlugin('function', 'microformats_show', 'microformats_serendipity_show');
-                        }
+                    if (!isset($serendipity['smarty']->registered_plugins['function']['microformats_show'])) {
+                        $serendipity['smarty']->registerPlugin('function', 'microformats_show', 'microformats_serendipity_show');
                     }
                     break;
 
@@ -320,9 +304,7 @@ div.tabbertab fieldset {
                     $itemtypes  = array('hReview' => array('product', 'business', 'event', 'person', 'place', 'website', 'url'));
                     $ratings    = array('hReview' => range(1.0, $this->get_config('best'), $this->get_config('step')));
 
-                    $clock = ($serendipity['version'] > 1)
-                        ? ' <span class="icon-clock" aria-hidden="true"></span><span class="visuallyhidden"> ' . RESET_DATE . '</span>'
-                        : ' <img src="'.serendipity_getTemplateFile('admin/img/clock.png').'" style="border:none;vertical-align:text-top" alt="' . RESET_DATE . '" />'."\n";
+                    $clock = ' <span class="icon-clock" aria-hidden="true"></span><span class="visuallyhidden"> ' . RESET_DATE . '</span>';
 
                     include_once('microformatsBackend.inc.php');
                     break;

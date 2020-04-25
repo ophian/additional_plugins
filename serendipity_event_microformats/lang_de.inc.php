@@ -1,4 +1,4 @@
-<?php # lang_de.inc.php 1.2 2011-11-22 17:22:01 VladaAjgl $
+<?php
 
 /**
  *  @version 1.2
