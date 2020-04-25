@@ -573,9 +573,9 @@
 <description>Display upcoming and recommended events in the sidebar and apply the hCalendar microformat to them.</description>
 <maintainers><maintainer><name>Matthias Gutjahr, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.25</version>
+  <version>0.26</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2020-04-23</date>
   <filelist>
     <dir name="serendipity_event_microformats">
       <file>ChangeLog</file>

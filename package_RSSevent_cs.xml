@@ -707,7 +707,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Markup: Markdown&lt;/b&gt;&lt;br /&gt;Převádí značky Markdown na HTML v textu příspěvku&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:20:59 +0200</pubDate>
+<pubDate>Thu, 23 Apr 2020 17:50:13 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -733,8 +733,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_microformats</link>
 <category>Event Plugins</category>
 <author>Matthias Gutjahr, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Mikroformáty&lt;/b&gt;&lt;br /&gt;Tento plugin poskytuje jednoduché publikování přehledů (nebo událostí); podporuje příslušné mikroformáty.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:21:20 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Mikroformáty&lt;/b&gt;&lt;br /&gt;Tento plugin poskytuje jednoduché publikování přehledů (nebo událostí); podporuje příslušné mikroformáty.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 24 Apr 2020 09:07:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_microformats</guid>
 </item>
 <item>
