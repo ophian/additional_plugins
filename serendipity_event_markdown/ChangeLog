@@ -1,3 +1,8 @@
+1.31:
+=====
+
+ * Treat <details> and <summary> tag elelements as block level
+
 1.30:
 =====
 
