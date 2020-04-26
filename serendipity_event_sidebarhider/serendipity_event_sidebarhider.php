@@ -18,7 +18,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '1.37');
+        $propbag->add('version',       '1.38');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.2.0'
@@ -284,7 +284,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                         echo '<script type="text/javascript" src="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/sidebarhider.js"></script>' . "\n";
 
                         // setup the CSS, this has to go after the big css is loaded to override some classes
-                        echo "<style type='text/css'>\n";
+                        echo '<style type="text/css">'."\n";
                         echo "<!--\n";
                         echo ".serendipitySideBarItemHidden    { " . $this->get_config('style_sidebar_hidden') . "}\n";
                         echo "div.serendipitySideBarItemHidden { " . $this->get_config('style_sidebar_hidden') . "}\n";
