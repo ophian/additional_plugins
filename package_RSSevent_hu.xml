@@ -851,7 +851,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_podcast&lt;br /&gt;Easy Podcasting Plugin&lt;/b&gt;&lt;br /&gt;Adds &quot;podcasting&quot; capabilities (RSS enclosure, Video/Sound-Player)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 23 Jan 2020 11:57:34 +0100</pubDate>
+<pubDate>Sat, 02 May 2020 10:37:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_podcast</guid>
 </item>
 <item>
@@ -1094,7 +1094,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;Markup: Textile&lt;/b&gt;&lt;br /&gt;Parse all output through the Textile converter&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 08 Nov 2019 14:24:30 +0100</pubDate>
+<pubDate>Sat, 02 May 2020 13:15:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
