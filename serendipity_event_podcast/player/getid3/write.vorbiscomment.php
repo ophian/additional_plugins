@@ -1,10 +1,12 @@
 <?php
+
 /////////////////////////////////////////////////////////////////
 /// getID3() by James Heinrich <info@getid3.org>               //
-//  available at http://getid3.sourceforge.net                 //
-//            or http://www.getid3.org                         //
+//  available at https://github.com/JamesHeinrich/getID3       //
+//            or https://www.getid3.org                        //
+//            or http://getid3.sourceforge.net                 //
 /////////////////////////////////////////////////////////////////
-// See readme.txt for more details                             //
+//  see readme.txt for more details                            //
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // write.vorbiscomment.php                                     //
@@ -16,17 +18,37 @@
 
 class getid3_write_vorbiscomment
 {
+	/**
+	 * @var string
+	 */
+	public $filename;
 
-	var $filename;
-	var $tag_data;
-	var $warnings = array(); // any non-critical errors will be stored here
-	var $errors   = array(); // any critical errors will be stored here
+	/**
+	 * @var array
+	 */
+	public $tag_data;
 
-	function getid3_write_vorbiscomment() {
-		return true;
+	/**
+	 * Any non-critical errors will be stored here.
+	 *
+	 * @var array
+	 */
+	public $warnings = array();
+
+	/**
+	 * Any critical errors will be stored here.
+	 *
+	 * @var array
+	 */
+	public $errors   = array();
+
+	public function __construct() {
 	}
 
-	function WriteVorbisComment() {
+	/**
+	 * @return bool
+	 */
+	public function WriteVorbisComment() {
 
 		if (preg_match('#(1|ON)#i', ini_get('safe_mode'))) {
 			$this->errors[] = 'PHP running in Safe Mode (backtick operator not available) - cannot call vorbiscomment, tags not written';
@@ -35,10 +57,8 @@ class getid3_write_vorbiscomment
 
 		// Create file with new comments
 		$tempcommentsfilename = tempnam(GETID3_TEMP_DIR, 'getID3');
-		ob_start();
-		if ($fpcomments = fopen($tempcommentsfilename, 'wb')) {
+		if (getID3::is_writable($tempcommentsfilename) && is_file($tempcommentsfilename) && ($fpcomments = fopen($tempcommentsfilename, 'wb'))) {
 
-			ob_end_clean();
 			foreach ($this->tag_data as $key => $value) {
 				foreach ($value as $commentdata) {
 					fwrite($fpcomments, $this->CleanVorbisCommentName($key).'='.$commentdata."\n");
@@ -47,12 +67,8 @@ class getid3_write_vorbiscomment
 			fclose($fpcomments);
 
 		} else {
-
-			$errormessage = ob_get_contents();
-			ob_end_clean();
 			$this->errors[] = 'failed to open temporary tags file "'.$tempcommentsfilename.'", tags not written';
 			return false;
-
 		}
 
 		$oldignoreuserabort = ignore_user_abort(true);
@@ -105,23 +121,29 @@ class getid3_write_vorbiscomment
 		return true;
 	}
 
-	function DeleteVorbisComment() {
+	/**
+	 * @return bool
+	 */
+	public function DeleteVorbisComment() {
 		$this->tag_data = array(array());
 		return $this->WriteVorbisComment();
 	}
 
-	function CleanVorbisCommentName($originalcommentname) {
+	/**
+	 * @param string $originalcommentname
+	 *
+	 * @return string
+	 */
+	public function CleanVorbisCommentName($originalcommentname) {
 		// A case-insensitive field name that may consist of ASCII 0x20 through 0x7D, 0x3D ('=') excluded.
 		// ASCII 0x41 through 0x5A inclusive (A-Z) is to be considered equivalent to ASCII 0x61 through
 		// 0x7A inclusive (a-z).
 
 		// replace invalid chars with a space, return uppercase text
-		// Thanks Chris Bolt <chris-getid3Øbolt*cx> for improving this function
+		// Thanks Chris Bolt <chris-getid3Ã˜bolt*cx> for improving this function
 		// note: *reg_replace() replaces nulls with empty string (not space)
 		return strtoupper(preg_replace('#[^ -<>-}]#', ' ', str_replace("\x00", ' ', $originalcommentname)));
 
 	}
 
 }
-
-?>

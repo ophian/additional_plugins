@@ -1,16 +1,17 @@
 <?php
+
 /////////////////////////////////////////////////////////////////
 /// getID3() by James Heinrich <info@getid3.org>               //
-//  available at http://getid3.sourceforge.net                 //
-//            or http://www.getid3.org                         //
-/////////////////////////////////////////////////////////////////
+//  available at https://github.com/JamesHeinrich/getID3       //
+//            or https://www.getid3.org                        //
+//            or http://getid3.sourceforge.net                 //
 //                                                             //
 // extension.cache.dbm.php - part of getID3()                  //
 // Please see readme.txt for more information                  //
 //                                                            ///
 /////////////////////////////////////////////////////////////////
 //                                                             //
-// This extension written by Allan Hansen <ahØartemis*dk>      //
+// This extension written by Allan Hansen <ahÃ˜artemis*dk>      //
 //                                                            ///
 /////////////////////////////////////////////////////////////////
 
@@ -71,9 +72,37 @@
 
 class getID3_cached_dbm extends getID3
 {
+	/**
+	 * @var resource
+	 */
+	private $dba;
 
-	// public: constructor - see top of this file for cache type and cache_options
-	function getID3_cached_dbm($cache_type, $dbm_filename, $lock_filename) {
+	/**
+	 * @var resource|bool
+	 */
+	private $lock;
+
+	/**
+	 * @var string
+	 */
+	private $cache_type;
+
+	/**
+	 * @var string
+	 */
+	private $dbm_filename;
+
+	/**
+	 * constructor - see top of this file for cache type and cache_options
+	 *
+	 * @param string $cache_type
+	 * @param string $dbm_filename
+	 * @param string $lock_filename
+	 *
+	 * @throws Exception
+	 * @throws getid3_exception
+	 */
+	public function __construct($cache_type, $dbm_filename, $lock_filename) {
 
 		// Check for dba extension
 		if (!extension_loaded('dba')) {
@@ -120,7 +149,7 @@ class getID3_cached_dbm extends getID3
 			}
 
 			// Insert getID3 version number
-			dba_insert(GETID3_VERSION, GETID3_VERSION, $this->dba);
+			dba_insert(getID3::VERSION, getID3::VERSION, $this->dba);
 		}
 
 		// Init misc values
@@ -131,17 +160,19 @@ class getID3_cached_dbm extends getID3
 		register_shutdown_function(array($this, '__destruct'));
 
 		// Check version number and clear cache if changed
-		if (dba_fetch(GETID3_VERSION, $this->dba) != GETID3_VERSION) {
+		if (dba_fetch(getID3::VERSION, $this->dba) != getID3::VERSION) {
 			$this->clear_cache();
 		}
 
-		parent::getID3();
+		parent::__construct();
 	}
 
 
 
-	// public: destuctor
-	function __destruct() {
+	/**
+	 * destructor
+	 */
+	public function __destruct() {
 
 		// Close dbm file
 		dba_close($this->dba);
@@ -155,8 +186,12 @@ class getID3_cached_dbm extends getID3
 
 
 
-	// public: clear cache
-	function clear_cache() {
+	/**
+	 * clear cache
+	 *
+	 * @throws Exception
+	 */
+	public function clear_cache() {
 
 		// Close dbm file
 		dba_close($this->dba);
@@ -169,7 +204,7 @@ class getID3_cached_dbm extends getID3
 		}
 
 		// Insert getID3 version number
-		dba_insert(GETID3_VERSION, GETID3_VERSION, $this->dba);
+		dba_insert(getID3::VERSION, getID3::VERSION, $this->dba);
 
 		// Re-register shutdown function
 		register_shutdown_function(array($this, '__destruct'));
@@ -177,8 +212,17 @@ class getID3_cached_dbm extends getID3
 
 
 
-	// public: analyze file
-	function analyze($filename) {
+	/**
+	 * clear cache
+	 *
+	 * @param string   $filename
+	 * @param int      $filesize
+	 * @param string   $original_filename
+	 * @param resource $fp
+	 *
+	 * @return mixed
+	 */
+	public function analyze($filename, $filesize=null, $original_filename='', $fp=null) {
 
 		if (file_exists($filename)) {
 
@@ -195,10 +239,10 @@ class getID3_cached_dbm extends getID3
 		}
 
 		// Miss
-		$result = parent::analyze($filename);
+		$result = parent::analyze($filename, $filesize, $original_filename, $fp);
 
 		// Save result
-		if (file_exists($filename)) {
+		if (isset($key) && file_exists($filename)) {
 			dba_insert($key, serialize($result), $this->dba);
 		}
 
@@ -206,6 +250,3 @@ class getID3_cached_dbm extends getID3
 	}
 
 }
-
-
-?>

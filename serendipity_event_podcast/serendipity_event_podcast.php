@@ -8,7 +8,7 @@ if (IN_serendipity !== true) {
 
 include_once dirname(__FILE__) . '/podcast_player.php';
 
-@define('SERENDIPITY_EVENT_PODCAST_VERSION', '1.41');
+@define('SERENDIPITY_EVENT_PODCAST_VERSION', '1.42');
 
 /**
  * The Serendipity Podcasting Plugin
@@ -1262,7 +1262,6 @@ class serendipity_event_podcast extends serendipity_event
      */
     function InitializeSupportedPlayers()
     {
-
         if (!isset($this->supportedPlayers)){
             $this->supportedPlayers = array(
                 'q'  => $this->get_config('extquicktime_player', PLUGIN_PODCAST_QUICKTIMEPLAYER),

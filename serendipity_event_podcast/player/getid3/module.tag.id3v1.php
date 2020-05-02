@@ -1,10 +1,11 @@
 <?php
+
 /////////////////////////////////////////////////////////////////
 /// getID3() by James Heinrich <info@getid3.org>               //
-//  available at http://getid3.sourceforge.net                 //
-//            or http://www.getid3.org                         //
-/////////////////////////////////////////////////////////////////
-// See readme.txt for more details                             //
+//  available at https://github.com/JamesHeinrich/getID3       //
+//            or https://www.getid3.org                        //
+//            or http://getid3.sourceforge.net                 //
+//  see readme.txt for more details                            //
 /////////////////////////////////////////////////////////////////
 //                                                             //
 // module.tag.id3v1.php                                        //
@@ -14,23 +15,26 @@
 /////////////////////////////////////////////////////////////////
 
 
-class getid3_id3v1
+class getid3_id3v1 extends getid3_handler
 {
+	/**
+	 * @return bool
+	 */
+	public function Analyze() {
+		$info = &$this->getid3->info;
 
-	function getid3_id3v1(&$fd, &$ThisFileInfo) {
-
-		if (!getid3_lib::intValueSupported($ThisFileInfo['filesize'])) {
-			$ThisFileInfo['warning'][] = 'Unable to check for ID3v1 because file is larger than '.round(PHP_INT_MAX / 1073741824).'GB';
+		if (!getid3_lib::intValueSupported($info['filesize'])) {
+			$this->warning('Unable to check for ID3v1 because file is larger than '.round(PHP_INT_MAX / 1073741824).'GB');
 			return false;
 		}
 
-		fseek($fd, -256, SEEK_END);
-		$preid3v1 = fread($fd, 128);
-		$id3v1tag = fread($fd, 128);
+		$this->fseek(-256, SEEK_END);
+		$preid3v1 = $this->fread(128);
+		$id3v1tag = $this->fread(128);
 
 		if (substr($id3v1tag, 0, 3) == 'TAG') {
 
-			$ThisFileInfo['avdataend'] = $ThisFileInfo['filesize'] - 128;
+			$info['avdataend'] = $info['filesize'] - 128;
 
 			$ParsedID3v1['title']   = $this->cutfield(substr($id3v1tag,   3, 30));
 			$ParsedID3v1['artist']  = $this->cutfield(substr($id3v1tag,  33, 30));
@@ -41,9 +45,9 @@ class getid3_id3v1
 
 			// If second-last byte of comment field is null and last byte of comment field is non-null
 			// then this is ID3v1.1 and the comment field is 28 bytes long and the 30th byte is the track number
-			if (($id3v1tag{125} === "\x00") && ($id3v1tag{126} !== "\x00")) {
-				$ParsedID3v1['track']   = ord(substr($ParsedID3v1['comment'], 29,  1));
-				$ParsedID3v1['comment'] =     substr($ParsedID3v1['comment'],  0, 28);
+			if (($id3v1tag[125] === "\x00") && ($id3v1tag[126] !== "\x00")) {
+				$ParsedID3v1['track_number'] = ord(substr($ParsedID3v1['comment'], 29,  1));
+				$ParsedID3v1['comment']      =     substr($ParsedID3v1['comment'],  0, 28);
 			}
 			$ParsedID3v1['comment'] = $this->cutfield($ParsedID3v1['comment']);
 
@@ -58,6 +62,26 @@ class getid3_id3v1
 			foreach ($ParsedID3v1 as $key => $value) {
 				$ParsedID3v1['comments'][$key][0] = $value;
 			}
+			// ID3v1 encoding detection hack START
+			// ID3v1 is defined as always using ISO-8859-1 encoding, but it is not uncommon to find files tagged with ID3v1 using Windows-1251 or other character sets
+			// Since ID3v1 has no concept of character sets there is no certain way to know we have the correct non-ISO-8859-1 character set, but we can guess
+			$ID3v1encoding = 'ISO-8859-1';
+			foreach ($ParsedID3v1['comments'] as $tag_key => $valuearray) {
+				foreach ($valuearray as $key => $value) {
+					if (preg_match('#^[\\x00-\\x40\\xA8\\xB8\\x80-\\xFF]+$#', $value)) {
+						foreach (array('Windows-1251', 'KOI8-R') as $id3v1_bad_encoding) {
+							if (function_exists('mb_convert_encoding') && @mb_convert_encoding($value, $id3v1_bad_encoding, $id3v1_bad_encoding) === $value) {
+								$ID3v1encoding = $id3v1_bad_encoding;
+								break 3;
+							} elseif (function_exists('iconv') && @iconv($id3v1_bad_encoding, $id3v1_bad_encoding, $value) === $value) {
+								$ID3v1encoding = $id3v1_bad_encoding;
+								break 3;
+							}
+						}
+					}
+				}
+			}
+			// ID3v1 encoding detection hack END
 
 			// ID3v1 data is supposed to be padded with NULL characters, but some taggers pad with spaces
 			$GoodFormatID3v1tag = $this->GenerateID3v1Tag(
@@ -67,17 +91,18 @@ class getid3_id3v1
 											$ParsedID3v1['year'],
 											(isset($ParsedID3v1['genre']) ? $this->LookupGenreID($ParsedID3v1['genre']) : false),
 											$ParsedID3v1['comment'],
-											(!empty($ParsedID3v1['track']) ? $ParsedID3v1['track'] : ''));
+											(!empty($ParsedID3v1['track_number']) ? $ParsedID3v1['track_number'] : ''));
 			$ParsedID3v1['padding_valid'] = true;
 			if ($id3v1tag !== $GoodFormatID3v1tag) {
 				$ParsedID3v1['padding_valid'] = false;
-				$ThisFileInfo['warning'][] = 'Some ID3v1 fields do not use NULL characters for padding';
+				$this->warning('Some ID3v1 fields do not use NULL characters for padding');
 			}
 
-			$ParsedID3v1['tag_offset_end']   = $ThisFileInfo['filesize'];
+			$ParsedID3v1['tag_offset_end']   = $info['filesize'];
 			$ParsedID3v1['tag_offset_start'] = $ParsedID3v1['tag_offset_end'] - 128;
 
-			$ThisFileInfo['id3v1'] = $ParsedID3v1;
+			$info['id3v1'] = $ParsedID3v1;
+			$info['id3v1']['encoding'] = $ID3v1encoding;
 		}
 
 		if (substr($preid3v1, 0, 3) == 'TAG') {
@@ -93,19 +118,29 @@ class getid3_id3v1
 				// a Lyrics3 tag footer was found before the last ID3v1, assume false "TAG" synch
 			} else {
 				// APE and Lyrics3 footers not found - assume double ID3v1
-				$ThisFileInfo['warning'][] = 'Duplicate ID3v1 tag detected - this has been known to happen with iTunes';
-				$ThisFileInfo['avdataend'] -= 128;
+				$this->warning('Duplicate ID3v1 tag detected - this has been known to happen with iTunes');
+				$info['avdataend'] -= 128;
 			}
 		}
 
 		return true;
 	}
 
-	static function cutfield($str) {
+	/**
+	 * @param string $str
+	 *
+	 * @return string
+	 */
+	public static function cutfield($str) {
 		return trim(substr($str, 0, strcspn($str, "\x00")));
 	}
 
-	static function ArrayOfGenres($allowSCMPXextended=false) {
+	/**
+	 * @param bool $allowSCMPXextended
+	 *
+	 * @return string[]
+	 */
+	public static function ArrayOfGenres($allowSCMPXextended=false) {
 		static $GenreLookup = array(
 			0    => 'Blues',
 			1    => 'Classic Rock',
@@ -251,7 +286,7 @@ class getid3_id3v1
 			141  => 'Christian Rock',
 			142  => 'Merengue',
 			143  => 'Salsa',
-			144  => 'Trash Metal',
+			144  => 'Thrash Metal',
 			145  => 'Anime',
 			146  => 'JPop',
 			147  => 'Synthpop',
@@ -289,7 +324,13 @@ class getid3_id3v1
 		return ($allowSCMPXextended ? $GenreLookupSCMPX : $GenreLookup);
 	}
 
-	static function LookupGenreName($genreid, $allowSCMPXextended=true) {
+	/**
+	 * @param string $genreid
+	 * @param bool   $allowSCMPXextended
+	 *
+	 * @return string|false
+	 */
+	public static function LookupGenreName($genreid, $allowSCMPXextended=true) {
 		switch ($genreid) {
 			case 'RX':
 			case 'CR':
@@ -301,12 +342,18 @@ class getid3_id3v1
 				$genreid = intval($genreid); // to handle 3 or '3' or '03'
 				break;
 		}
-		$GenreLookup = getid3_id3v1::ArrayOfGenres($allowSCMPXextended);
+		$GenreLookup = self::ArrayOfGenres($allowSCMPXextended);
 		return (isset($GenreLookup[$genreid]) ? $GenreLookup[$genreid] : false);
 	}
 
-	static function LookupGenreID($genre, $allowSCMPXextended=false) {
-		$GenreLookup = getid3_id3v1::ArrayOfGenres($allowSCMPXextended);
+	/**
+	 * @param string $genre
+	 * @param bool   $allowSCMPXextended
+	 *
+	 * @return string|false
+	 */
+	public static function LookupGenreID($genre, $allowSCMPXextended=false) {
+		$GenreLookup = self::ArrayOfGenres($allowSCMPXextended);
 		$LowerCaseNoSpaceSearchTerm = strtolower(str_replace(' ', '', $genre));
 		foreach ($GenreLookup as $key => $value) {
 			if (strtolower(str_replace(' ', '', $value)) == $LowerCaseNoSpaceSearchTerm) {
@@ -316,14 +363,30 @@ class getid3_id3v1
 		return false;
 	}
 
-	static function StandardiseID3v1GenreName($OriginalGenre) {
-		if (($GenreID = getid3_id3v1::LookupGenreID($OriginalGenre)) !== false) {
-			return getid3_id3v1::LookupGenreName($GenreID);
+	/**
+	 * @param string $OriginalGenre
+	 *
+	 * @return string|false
+	 */
+	public static function StandardiseID3v1GenreName($OriginalGenre) {
+		if (($GenreID = self::LookupGenreID($OriginalGenre)) !== false) {
+			return self::LookupGenreName($GenreID);
 		}
 		return $OriginalGenre;
 	}
 
-	static function GenerateID3v1Tag($title, $artist, $album, $year, $genreid, $comment, $track='') {
+	/**
+	 * @param string     $title
+	 * @param string     $artist
+	 * @param string     $album
+	 * @param string     $year
+	 * @param int        $genreid
+	 * @param string     $comment
+	 * @param int|string $track
+	 *
+	 * @return string
+	 */
+	public static function GenerateID3v1Tag($title, $artist, $album, $year, $genreid, $comment, $track='') {
 		$ID3v1Tag  = 'TAG';
 		$ID3v1Tag .= str_pad(trim(substr($title,  0, 30)), 30, "\x00", STR_PAD_RIGHT);
 		$ID3v1Tag .= str_pad(trim(substr($artist, 0, 30)), 30, "\x00", STR_PAD_RIGHT);
@@ -356,6 +419,3 @@ class getid3_id3v1
 	}
 
 }
-
-
-?>
