@@ -1,3 +1,8 @@
+1.9.1:
+-----
+
+ * Parser::textileThis() is deprecated. Use Parser::parse() instead.
+
 1.9.0:
 -----
 
