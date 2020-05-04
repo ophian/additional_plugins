@@ -557,7 +557,7 @@ function Interpret_IRB_to_HTML( $IRB_array, $filename )
                                                 $Slicepos += $AltTaglen * 2;
 
                                                 // Unpack the HTML flag
-                                                if ( ord( $IRB_Resource['ResData']{ $Slicepos } ) === 0x01 )
+                                                if ( ord( $IRB_Resource['ResData'][$Slicepos] ) === 0x01 )
                                                 {
                                                         $output_str .= "Cell Text is HTML<br>\n";
                                                 }
@@ -999,7 +999,7 @@ function unpack_Photoshop_IRB_Data( $IRB_Data )
                 $pos += 4;
 
                 // Next two characters are the record ID - denoting what type of record it is.
-                $ID = ord( $IRB_Data{ $pos } ) * 256 + ord( $IRB_Data{ $pos +1 } );
+                $ID = ord( $IRB_Data[ $pos ] ) * 256 + ord( $IRB_Data[ $pos +1 ] );
 
                 // Skip the positionover the two record ID characters
                 $pos += 2;
@@ -1019,7 +1019,7 @@ function unpack_Photoshop_IRB_Data( $IRB_Data )
 
                 // Name - process it
                 // Get the length
-                $namelen = ord ( $IRB_Data{ $namestartpos } );
+                $namelen = ord ( $IRB_Data[ $namestartpos ] );
 
                 // Total length of name and length info must be even, hence name length must be odd
                 // Check if the name length is even,
@@ -1034,8 +1034,8 @@ function unpack_Photoshop_IRB_Data( $IRB_Data )
 
 
                 // Next is a four byte size field indicating the size in bytes of the record's data  - MSB first
-                $datasize =     ord( $IRB_Data{ $pos } ) * 16777216 + ord( $IRB_Data{ $pos + 1 } ) * 65536 +
-                                ord( $IRB_Data{ $pos + 2 } ) * 256 + ord( $IRB_Data{ $pos + 3 } );
+                $datasize =     ord( $IRB_Data[ $pos ] ) * 16777216 + ord( $IRB_Data[ $pos + 1 ] ) * 65536 +
+                                ord( $IRB_Data[ $pos + 2 ] ) * 256 + ord( $IRB_Data[ $pos + 3 ] );
                 $pos += 4;
 
                 // The record is stored padded with 0x00 characters to make the size even, so we need to calculate the stored size

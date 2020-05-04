@@ -1840,7 +1840,7 @@ function get_Special_Tag_Text_Value( $Tag, $Tag_Definitions_Name )
                                         // Construct second part of text string via
                                         // lookup using numerical value
 
-                                        $value = ord( $Tag['Data']{$Num} );
+                                        $value = ord( $Tag['Data'][$Num] );
                                         switch( $value )
                                         {
                                                 case 0:
@@ -1910,7 +1910,7 @@ function get_Special_Tag_Text_Value( $Tag, $Tag_Definitions_Name )
                                                 // Append text from a lookup table according to
                                                 // the value read for this element
 
-                                                switch ( ord($Tag['Data']{($n_max*($m-1)+$n+3)}) )
+                                                switch ( ord($Tag['Data'][($n_max*($m-1)+$n+3)]) )
                                                 {
                                                         case 0:
                                                                 $output_str .= "RED     ";

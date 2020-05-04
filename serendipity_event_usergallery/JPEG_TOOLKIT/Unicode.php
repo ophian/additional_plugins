@@ -145,7 +145,7 @@ function UTF8_fix( $utf8_text )
         while ( $pos < strlen( $utf8_text ) )
         {
                 // Retreive the current numerical character value
-                $chval = ord($utf8_text{$pos});
+                $chval = ord($utf8_text[$pos]);
 
                 // Check what the first character is - it will tell us how many bytes the
                 // Unicode value covers
@@ -195,7 +195,7 @@ function UTF8_fix( $utf8_text )
                         // copying them to the output string
                         while ( $bytes > 0 )
                         {
-                                $output .= $utf8_text{$pos};
+                                $output .= $utf8_text[$pos];
                                 $pos++;
                                 $bytes--;
                         }
@@ -250,7 +250,7 @@ function UTF16_fix( $utf16_text, $MSB_first )
         while ( $pos < strlen( $utf16_text ) )
         {
                 // Retreive the current numerical character value
-                $chval1 = ord($utf16_text{$pos});
+                $chval1 = ord($utf16_text[$pos]);
 
                 // Skip over character just read
                 $pos++;
@@ -259,7 +259,7 @@ function UTF16_fix( $utf16_text, $MSB_first )
                 if ( $pos  < strlen( $utf16_text ) )
                 {
                         // Another character is available - get it for the second half of the UTF-16 value
-                        $chval2 = ord( $utf16_text{$pos} );
+                        $chval2 = ord( $utf16_text[$pos] );
                 }
                 else
                 {
@@ -299,8 +299,8 @@ function UTF16_fix( $utf16_text, $MSB_first )
                         if ( ( $pos + 3 ) < strlen( $utf16_text ) )
                         {
                                 // Another 2 characters are available - get them
-                                $chval3 = ord( $utf16_text{$pos} );
-                                $chval4 = ord( $utf16_text{$pos+1} );
+                                $chval3 = ord( $utf16_text[$pos] );
+                                $chval4 = ord( $utf16_text[$pos+1] );
 
                                 // Calculate the second 16 bit unicode value
                                 if ( $MSB_first )
@@ -382,7 +382,7 @@ function UTF8_to_unicode_array( $utf8_text )
         for ( $pos = 0; $pos < strlen( $utf8_text ); $pos++ )
         {
                 // Retreive the current numerical character value
-                $chval = ord($utf8_text{$pos});
+                $chval = ord($utf8_text[$pos]);
 
                 // Check what the first character is - it will tell us how many bytes the
                 // Unicode value covers
@@ -451,7 +451,7 @@ function UTF8_to_unicode_array( $utf8_text )
                                         // order bits. Hence we need to shift left by 6 bits (0x40) then add the
                                         // current characer after it has been bitwise ANDed with 0x3F to remove the
                                         // highest two bits.
-                                        $outputval = $outputval*0x40 + ( (ord($utf8_text{$pos})) & 0x3F );
+                                        $outputval = $outputval*0x40 + ( (ord($utf8_text[$pos])) & 0x3F );
                                 }
 
                                 // Add the calculated Unicode number to the output array
@@ -501,7 +501,7 @@ function UTF16_to_unicode_array( $utf16_text, $MSB_first )
         while ( $pos < strlen( $utf16_text ) )
         {
                 // Retreive the current numerical character value
-                $chval1 = ord($utf16_text{$pos});
+                $chval1 = ord($utf16_text[$pos]);
 
                 // Skip over character just read
                 $pos++;
@@ -510,7 +510,7 @@ function UTF16_to_unicode_array( $utf16_text, $MSB_first )
                 if ( $pos  < strlen( $utf16_text ) )
                 {
                         // Another character is available - get it for the second half of the UTF-16 value
-                        $chval2 = ord( $utf16_text{$pos} );
+                        $chval2 = ord( $utf16_text[$pos] );
                 }
                 else
                 {
@@ -549,8 +549,8 @@ function UTF16_to_unicode_array( $utf16_text, $MSB_first )
                         if ( ( $pos + 3 ) < strlen( $utf16_text ) )
                         {
                                 // Another 2 characters are available - get them
-                                $chval3 = ord( $utf16_text{$pos} );
-                                $chval4 = ord( $utf16_text{$pos+1} );
+                                $chval3 = ord( $utf16_text[$pos] );
+                                $chval4 = ord( $utf16_text[$pos+1] );
 
                                 // Calculate the second 16 bit unicode value
                                 if ( $MSB_first )

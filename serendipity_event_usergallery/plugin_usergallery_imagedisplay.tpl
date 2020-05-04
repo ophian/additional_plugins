@@ -53,7 +53,7 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
             <!-- file information -->
             <div class="serendipity_gallery_info">
                 <div>{$CONST.USERGALLERY_SEE_FULLSIZED}.</div>
-            {if count($plugin_usergallery_file.entries) > 0}
+            {if is_array($plugin_usergallery_file.entries) AND count($plugin_usergallery_file.entries) > 0}
                 <h5>{$CONST.USERGALLERY_LINKED_ENTRIES}</h5>
 
                 <ol>
@@ -62,7 +62,7 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
                 {/foreach}
                 </ol>
             {/if}
-            {if count($plugin_usergallery_file.staticpage_results) > 0}
+            {if is_array($plugin_usergallery_file.staticpage_results) AND count($plugin_usergallery_file.staticpage_results) > 0}
                 <h5>{$CONST.USERGALLERY_LINKED_STATICPAGES}</h5>
 
                 <ol>

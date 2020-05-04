@@ -481,10 +481,10 @@ function get_jpeg_intrinsic_values( $jpeg_header_data )
                 // Following this is a table containing information about the components
                 for( $i = 0; $i < $numcomponents; $i++ )
                 {
-                        $Outputarray['Components'][] = array (  'Component Identifier' => ord( $data{ 6 + $i * 3 } ),
-                                                                'Horizontal Sampling Factor' => ( ord( $data{ 7 + $i * 3 } ) & 0xF0 ) / 16,
-                                                                'Vertical Sampling Factor' => ( ord( $data{ 7 + $i * 3 } ) & 0x0F ),
-                                                                'Quantization table destination selector' => ord( $data{ 8 + $i * 3 } ) );
+                        $Outputarray['Components'][] = array (  'Component Identifier' => ord( $data[ 6 + $i * 3 ] ),
+                                                                'Horizontal Sampling Factor' => ( ord( $data[ 7 + $i * 3 ] ) & 0xF0 ) / 16,
+                                                                'Vertical Sampling Factor' => ( ord( $data[ 7 + $i * 3 ] ) & 0x0F ),
+                                                                'Quantization table destination selector' => ord( $data[ 8 + $i * 3 ] ) );
                 }
         }
         else

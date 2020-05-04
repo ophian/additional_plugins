@@ -1,3 +1,7 @@
+2.76:
+-----
+ * Fix some PHP 7.4 deprecation errors
+
 2.75:
 -----
  * Fix Smarty2 leftover in plugin_usergallery_imagedisplay.tpl
