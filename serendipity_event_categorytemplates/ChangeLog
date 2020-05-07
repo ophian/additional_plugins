@@ -1,3 +1,7 @@
+1.95:
+-----
+ * Fix not strict enough category templates check against normal categories using the hide option
+
 1.94:
 -----
  * Fix some uninitialized Variable checks

@@ -26,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '1.94');
+        $propbag->add('version',       '1.95');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '5.1.0'
@@ -855,7 +855,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                 case 'frontend_fetchcategories':
                 case 'frontend_fetcharchives':
                     $this->fetchHiddenCategoryTemplates();
-                    if (isset($this->bycategory[0]['template'])) {
+                    if (!empty($this->bycategory[0]['template'])) {
                         $conds = array();
                         if ($event == 'frontend_fetcharchives') {
                             $eventData['joins'] = "LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
@@ -892,7 +892,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     $joins = array();
                     // Will force comments query to not fetch comments of (hidden) categorytemplates to be not displayed in comments and RSS feed for comments.
                     $this->fetchHiddenCategoryTemplates();
-                    if (isset($this->bycategory[0]['template'])) {
+                    if (!empty($this->bycategory[0]['template'])) {
                         if ($coctr) {
                             $joins[] = "LEFT OUTER JOIN {$serendipity['dbPrefix']}entries AS e ON (co.entry_id = e.id)";
                         }
@@ -968,7 +968,7 @@ class serendipity_event_categorytemplates extends serendipity_event
 
                     if (in_array($serendipity['view'], ['archives', 'authors', 'entries', 'feed', 'search', 'start', '404'])) {
                         $this->fetchHiddenCategoryTemplates();
-                        if (isset($this->bycategory[0]['template'])) {
+                        if (!empty($this->bycategory[0]['template'])) {
                             foreach ($this->bycategory AS $bcat) {
                                 if ($bcat['template'] == $serendipity['template']) {
                                     $conds[] = "(ec.categoryid = " . (int)$bcat['categoryid'] . ")";
