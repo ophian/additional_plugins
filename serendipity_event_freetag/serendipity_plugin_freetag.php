@@ -27,7 +27,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             'smarty'      => '2.6.7',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.12');
+        $propbag->add('version',       '3.13');
         $propbag->add('groups',        array('FRONTEND_ENTRY_RELATED'));
         $propbag->add('configuration', array(
             'config_pagegrouper',
@@ -296,7 +296,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
 
         $this->fetchHiddenCategoryTemplates();
 
-        if (isset($this->bycategory[0]['template'])) {
+        if (!empty($this->bycategory[0]['template'])) {
             $ct_joins .= " LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (et.entryid = ec.entryid)";
             $ct_joins .= " LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates AS ct ON (ec.categoryid = ct.categoryid)";
             foreach ($this->bycategory AS $bcat) {

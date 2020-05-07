@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.28');
+        $propbag->add('version',       '4.29');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -614,7 +614,7 @@ class serendipity_event_freetag extends serendipity_event
         $join0 = $join1 = $join2 = '';
         $join0 = " LEFT JOIN {$serendipity['dbPrefix']}entries AS e2 ON e1.entryid = e2.id";
 
-        if (isset($this->bycategory[0]['template'])) {
+        if (!empty($this->bycategory[0]['template'])) {
             $join1  = " LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (e1.entryid = ec.entryid)";
             $join0  = " LEFT JOIN {$serendipity['dbPrefix']}entries AS e2 ON ec.entryid = e2.id";
             $join2  = " LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates AS ct ON (ec.categoryid = ct.categoryid)";
@@ -1468,7 +1468,7 @@ addLoadEvent(enableAutocomplete);
 
         $this->fetchHiddenCategoryTemplates();
 
-        if (isset($this->bycategory[0]['template'])) {
+        if (!empty($this->bycategory[0]['template'])) {
             foreach ($this->bycategory AS $bcat) {
                 $conds[] = "(ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL)";
             }
@@ -1763,7 +1763,7 @@ addLoadEvent(enableAutocomplete);
 
         $this->fetchHiddenCategoryTemplates();
 
-        if (isset($this->bycategory[0]['template'])) {
+        if (!empty($this->bycategory[0]['template'])) {
             $ct_joins .= " LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (et.entryid = ec.entryid)";
             $ct_joins .= " LEFT OUTER JOIN {$serendipity['dbPrefix']}categorytemplates AS ct ON (ec.categoryid = ct.categoryid)";
             $ct_where .= " WHERE 1=1 ";
