@@ -24,6 +24,26 @@ class serendipity_event_osm extends serendipity_event
         ));
         $propbag->add('stackable', true);
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
+        $propbag->add('legal',    array(
+            'services' => array(
+                'oEmbed' => array(
+                    'url'  => '#',
+                    'desc' => 'OpenStreetMap providers will receive visitor metadata (IP, User Agent, etc) when embedded content is loaded'
+                ),
+            ),
+            'frontend' => array(
+                'OpenStreetMap providers will receive visitor metadata (IP, User Agent, etc) when embedded content is loaded'
+            ),
+            'backend' => array(
+            ),
+            'cookies' => array(
+                'OpenStreetMap providers might set cookies for tracking purposes of embedded content'
+            ),
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
+            'uses_ip'               => true,
+            'transmits_user_input'  => true
+        ));
     }
 
     function introspect_config_item($name, &$propbag)
