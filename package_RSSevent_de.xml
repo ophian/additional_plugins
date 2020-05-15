@@ -815,7 +815,7 @@
 <category>Event Plugins</category>
 <author>Martin Sewelies</author>
 <content:encoded>&lt;b&gt;serendipity_event_osm&lt;br /&gt;OpenStreetMap Integration&lt;/b&gt;&lt;br /&gt;Bietet eine interaktive Karte für *.gpx Uploads und Blogs mit Geo-Daten.&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Fri, 15 May 2020 10:12:10 +0200</pubDate>
+<pubDate>Fri, 15 May 2020 16:56:10 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_osm</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statische Seiten&lt;/b&gt;&lt;br /&gt;Verwaltet beliebige statische Seiten innerhalb des Blogs mit dem Blog-Design und allen Formatierungen. Fügt einen neuen Menüpunkt in der Admin-Oberfläche hinzu!&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Fri, 15 May 2020 10:44:11 +0200</pubDate>
+<pubDate>Fri, 15 May 2020 11:01:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>

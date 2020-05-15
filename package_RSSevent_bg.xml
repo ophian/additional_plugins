@@ -815,7 +815,7 @@
 <category>Event Plugins</category>
 <author>Martin Sewelies</author>
 <content:encoded>&lt;b&gt;serendipity_event_osm&lt;br /&gt;OpenStreetMap integration&lt;/b&gt;&lt;br /&gt;Provides an interactive map with *.gpx uploads and tagged geo data.&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Fri, 15 May 2020 10:12:10 +0200</pubDate>
+<pubDate>Fri, 15 May 2020 16:56:10 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_osm</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Статични страници&lt;/b&gt;&lt;br /&gt;Показва статични страници във вашия блог използвайки общия дизайн на блога. Добавя нова команда към административното меню.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Fri, 15 May 2020 10:44:11 +0200</pubDate>
+<pubDate>Fri, 15 May 2020 11:01:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
