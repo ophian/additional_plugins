@@ -1,3 +1,7 @@
+6.11:
+-----
+ * Fix a rare case of very old installations missing one or two staticpage database tables
+
 6.10:
 -----
  * Add default value to some staticpage $template_option.date_format

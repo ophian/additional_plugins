@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.10');
+        $propbag->add('version', '6.11');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -1125,8 +1125,8 @@ class serendipity_event_staticpage extends serendipity_event
             #serendipity_db_schema_import("CREATE {FULLTEXT_MYSQL} INDEX staticentry_idx on {$serendipity['dbPrefix']}staticpages (headline, content);");
 
             // set to latest build
-            $this->set_config('db_built', 22);
-            $build = 22;
+            $this->set_config('db_built', 23);
+            $build = 23;
             $fresh = true;
             @define('STATICPAGE_UPGRADE_DONE', true); // don't do this again!
         }
@@ -1305,6 +1305,20 @@ class serendipity_event_staticpage extends serendipity_event
                 } else {
                     $this->set_config('db_built', 21);
                 }
+            case 22:
+            // case 16 and case 17 did not run on some old machines and where the error reporting, not as good as in Styx 2.9.x and 3.0, did not alert this issue! An error of db build in staticpage versions prior to the year 2011, when plugin were migrated to github.
+                $sql = "CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}staticpage_categorypage (
+                            categoryid int(4) default 0,
+                            staticpage_categorypage int(4) default 0
+                        ) {UTF_8}";
+                serendipity_db_schema_import($sql);
+                $sql = "CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}staticpage_custom (
+                            staticpage int(11),
+                            name varchar(128),
+                            value text
+                        ) {UTF_8}";
+                serendipity_db_schema_import($sql);
+                $this->set_config('db_built', 23);
                 break;
         }
     }
@@ -3738,7 +3752,9 @@ class serendipity_event_staticpage extends serendipity_event
                     if (!$access_granted) {
                         break;
                     }
-                    $this->setupDB(); // RQ: why here too? It is already done in genpage ?!
+                    if (!defined('STATICPAGE_UPGRADE_DONE') && stristr($serendipity['dbType'], 'sqlite') === FALSE) {
+                        $this->setupDB(); // in case of sudebar plugin only (?), else done in genpage or install
+                    }
                     echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages">' . STATICPAGE_TITLE . '</a></li>'."\n";
                     break;
 
