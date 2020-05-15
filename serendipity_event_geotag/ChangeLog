@@ -1,6 +1,10 @@
+1.38: (surrim)
+-----
+ * Supports using a space character for LAT/LNG separation (OsmAnd)
+
 1.37:
 -----
- * Pasting "lat,long" values into lan or long field will fill both fields (pattern: /^\s*(\d+(\.\d+))\s*[,/]\s*(\d+(\.\d+)?)\s*$/)
+ * Pasting "lat,long" values into lat or long field will fill both fields (pattern: /^\s*(\d+(\.\d+))\s*[,/]\s*(\d+(\.\d+)?)\s*$/)
 
 1.36:
 -----
