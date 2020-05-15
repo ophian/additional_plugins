@@ -1307,6 +1307,7 @@ class serendipity_event_staticpage extends serendipity_event
                 }
             case 22:
             // case 16 and case 17 did not run on some old machines and where the error reporting, not as good as in Styx 2.9.x and 3.0, did not alert this issue! An error of db build in staticpage versions prior to the year 2011, when plugin were migrated to github.
+            // postgres 9.1+ since 2011-09-12 supports IF NOT EXISTS syntax
                 $sql = "CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}staticpage_categorypage (
                             categoryid int(4) default 0,
                             staticpage_categorypage int(4) default 0
