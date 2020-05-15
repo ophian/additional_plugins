@@ -1,4 +1,13 @@
-0.3:
----
+0.4:
+----
 
-* Only show GPX records instead of all markers
+ * Cleanup for Styx
+ * Add PHP 7 requirement
+ * Fix Smarty API calls
+   NOTE: This Plugin does still need an independent test
+
+
+0.3:
+----
+
+ * Only show GPX records instead of all markers
