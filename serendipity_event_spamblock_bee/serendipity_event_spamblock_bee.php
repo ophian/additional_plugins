@@ -804,7 +804,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
         $eventData .= $beecss;
     }
 
-    function hashString( $what )
+    function hashString($what)
     {
         $installation_secret = $this->get_config('installation_secret');
         if (empty($installation_secret)) {
@@ -930,11 +930,11 @@ class serendipity_event_spamblock_bee extends serendipity_event
                 $result['answer'] =  $number2 - $number1;
             }
         } else {
-                // Add them
-                $result['operator'] = '+';
-                $result['n1'] = $number1;
-                $result['n2'] = $number2;
-                $result['answer'] =  $number1 + $number2;
+            // Add them
+            $result['operator'] = '+';
+            $result['n1'] = $number1;
+            $result['n2'] = $number2;
+            $result['answer'] =  $number1 + $number2;
         }
 
         return $result;
