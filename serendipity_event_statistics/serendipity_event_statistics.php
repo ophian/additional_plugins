@@ -18,7 +18,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '1.79');
+        $propbag->add('version',       '1.80');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '7.2'
@@ -923,7 +923,7 @@ class serendipity_event_statistics extends serendipity_event
                         <th scope="row">+/~/-</th>
                 <?php
                     $rep = $num;
-                    rsort($rep); // Now $ret[0] is the heighest max vis height
+                    rsort($rep); // Now $ret[0] is the highest max vis height
 
                     for ($i=1; $i < 32; $i++) {
                         $maxVisHeigh = 100/$rep[0]*2;
@@ -954,7 +954,7 @@ class serendipity_event_statistics extends serendipity_event
             </section>
 
             <section class="wide_box">
-                <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISLATEST;?></h3>
+                <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISLATEST;?> (TZ <?=date('e')?>)</h3>
 
                 <dl>
 <?php
