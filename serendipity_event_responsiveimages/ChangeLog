@@ -1,3 +1,8 @@
+0.9:
+-----
+ * Add the original image to the response images srcset when
+   the original image is small, to avoid upscaling
+
 0.8:
 -----
  * Sync: "Rewrite srcset in feeds to absolute urls (#585)"
