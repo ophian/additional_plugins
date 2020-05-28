@@ -761,7 +761,6 @@ class serendipity_event_spamblock_bee extends serendipity_event
             return;
         }
 
-        global $serendipity;
         $beecss = "\n/* serendipity_event_spamblock_bee start */\n";
 
 
