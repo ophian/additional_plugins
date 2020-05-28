@@ -790,7 +790,7 @@ function wp_newComment($message) {
     $comment =  $val->getval();
 
     // Setup defaults, if not given by client. The serendipity vars were setup while authenticating.
-    if (!empty($serendipity['xmlrpc_asureauthor']) && $serendipity['xmlrpc_asureauthor']!='default') {
+    if (!empty($serendipity['xmlrpc_asureauthor']) && $serendipity['xmlrpc_asureauthor'] != 'default') {
         $comment['author'] = $serendipity[$serendipity['xmlrpc_asureauthor']];
     }
     if (empty($comment['author'])) $comment['author'] = $serendipity['serendipityRealname'];
