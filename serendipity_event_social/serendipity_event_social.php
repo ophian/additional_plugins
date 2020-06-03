@@ -18,7 +18,7 @@ class serendipity_event_social extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SOCIAL_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein');
-        $propbag->add('version',       '0.23');
+        $propbag->add('version',       '0.24');
         $propbag->add('requirements',  array(
             'serendipity' => '2.9',
         ));
@@ -42,7 +42,7 @@ class serendipity_event_social extends serendipity_event
                     'desc' => 'All supported social platforms can receive user data and metadata (IP, cookies)'
                 ),
                 's9y Shariff' => array(
-                    'url' => 'https://onli.columba.uberspace.de/s9y_shariff/',
+                    'url' => 'https://onli2.uber.space/s9y_shariff/',
                     'desc' => 'When enabled, this shariff backend will receive metadata of URL requests'
                 )
             ),
@@ -112,7 +112,7 @@ class serendipity_event_social extends serendipity_event
                 $propbag->add('type',           'string');
                 $propbag->add('name',           PLUGIN_EVENT_SOCIAL_BACKEND);
                 $propbag->add('description',    PLUGIN_EVENT_SOCIAL_BACKEND_DESC);
-                $propbag->add('default',        'https://onli.columba.uberspace.de/s9y_shariff/');
+                $propbag->add('default',        'https://onli2.uber.space/s9y_shariff/');
                 break;
 
             case 'social_image':
@@ -148,7 +148,7 @@ class serendipity_event_social extends serendipity_event
                     if ($twitter_via != 'none') {
                         $twitter_via_tag = ' data-twitter-via="' . str_replace('@', '', $twitter_via) .'"';
                     }
-                    $backend = $this->get_config('backend', 'https://onli.columba.uberspace.de/s9y_shariff/');
+                    $backend = $this->get_config('backend', 'https://onli2.uber.space/s9y_shariff/');
                     if ($backend != 'none') {
                         $backend_tag = ' data-backend-url="' . $backend .'"';
                     }
