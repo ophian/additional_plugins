@@ -8976,9 +8976,9 @@
 <description>Show social share buttons for services like Facebook and Twitter using shariff.</description>
 <maintainers><maintainer><name>onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.23</version>
+  <version>0.24</version>
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
-  <date>2020-04-06</date>
+  <date>2020-06-03</date>
   <filelist>
     <dir name="serendipity_event_social">
       <file>ChangeLog</file>
