@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.40');
+        $propbag->add('version',      '1.41');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -617,16 +617,6 @@ class serendipity_event_faq extends serendipity_event
         if (!empty($serendipity['POST']['action'])) {
             $serendipity['GET']['action'] = &$serendipity['POST']['action'];
         }
-        // S9y 1.7 Series box sizing
-        $bosi  = $serendipity['version'][0] > 1 ? '' : ' class="boxsizingBorder"';
-        // notification switch
-        $error = $serendipity['version'][0] > 1 ? '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' : '<div class="serendipityAdminMsgError"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png') . '" alt="" />';
-        $ok    = $serendipity['version'][0] > 1 ? '<div class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' : '<div class="serendipityAdminMsgSuccess"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />';
-        // iconizr by version
-        $editimg  = $serendipity['version'][0] > 1 ? '<span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo EDIT; ?></span>' : '<img src="' . serendipity_getTemplateFile('admin/img/edit.png') . '" width="16" height="16" alt="EDIT" />';
-        $trashimg = $serendipity['version'][0] > 1 ? '<span class="icon-trash" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo DELETE; ?></span>' : '<img src="' . serendipity_getTemplateFile('admin/img/delete.png') . '" width="16" height="16" alt="DELETE" />';
-        $moveupimg = $serendipity['version'][0] > 1 ? '<img src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/img/move_up.png" data-file-width="128" data-file-height="128" width="24" height="24" alt="UP" />' : '<img src="'.serendipity_getTemplateFile('admin/img/uparrow.png').'" width="16" height="16" alt="UP" />';
-        $movedownimg = $serendipity['version'][0] > 1 ? '<img src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/img/move_down.png" data-file-width="128" data-file-height="128" width="24" height="24" alt="DOWN" />' : '<img src="'.serendipity_getTemplateFile('admin/img/downarrow.png').'" width="16" height="16" alt="DOWN" />';
 
         echo "<h2>FAQs</h2>\n\n";
 
@@ -648,9 +638,9 @@ class serendipity_event_faq extends serendipity_event
                     }
                     $result = $this->updateFAQ();
                     if (is_bool($result)) {
-                        echo $ok . DONE .': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) .'</div>'."\n";
+                        echo '<div class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . DONE .': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) ."</div>\n";
                     } else {
-                        echo $error . ERROR. ': ' . $result . '</div>'."\n";
+                        echo '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . ERROR. ': ' . $result . "</div>\n";
                     }
 
                 }
@@ -672,7 +662,7 @@ class serendipity_event_faq extends serendipity_event
                 echo '    <a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=faq">' . FAQ_CATEGORIES . '</a> :: <a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=faq&serendipity[action]=show_faqs&serendipity[cid]='.$cid.'">' . FAQS . "</a>\n";
                 echo "</div>\n\n";
 
-                echo '<div id="backend_faq_formpage"'.$bosi.'>'."\n";
+                echo '<div id="backend_faq_formpage">'."\n";
                 echo '<form action="serendipity_admin.php" method="post" name="serendipityEntry">'."\n";
                 echo '    <input type="hidden" name="serendipity[adminModule]" value="event_display" />'."\n";
                 echo '    <input type="hidden" name="serendipity[adminAction]" value="faq" />'."\n";
@@ -715,14 +705,14 @@ class serendipity_event_faq extends serendipity_event
                     $result = $this->updateCategory();
 
                     if (is_bool($result)) {
-                        echo $ok . DONE .': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) .'</div>'."\n";
+                        echo '<div class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . DONE .': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) ."</div>\n";
                     } else {
-                        echo $error . ERROR .': ' . $result . '</div>'."\n";
+                        echo '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . ERROR .': ' . $result . "</div>\n";
                     }
 
                 }
 
-                echo '<div id="backend_faq_formpage"'.$bosi.'>'."\n";
+                echo '<div id="backend_faq_formpage">'."\n";
                 echo '<form action="serendipity_admin.php" method="post" name="serendipityEntry">'."\n";
                 echo '    <input type="hidden" name="serendipity[adminModule]" value="event_display" />'."\n";
                 echo '    <input type="hidden" name="serendipity[adminAction]" value="faq" />'."\n";
@@ -740,14 +730,14 @@ class serendipity_event_faq extends serendipity_event
             case 'show_faqs':
                 echo '    <div class="faq_navigator">'."\n\n";
                 echo '        <a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=faq">' . FAQ_CATEGORIES.'</a> :: ' . FAQS . "\n";
-                echo '    </div>'."\n\n";
+                echo "    </div>\n\n";
 
                 if ((!empty($serendipity['POST']['faqDelete'])) && (is_numeric($serendipity['POST']['id']))) {
                     $result = $this->deleteFAQ($serendipity['POST']['id']);
                     if (is_bool($result)) {
-                        echo $ok . DONE .': '. sprintf(RIP_ENTRY, $serendipity['POST']['id']) . '</div>'."\n";
+                        echo '<div class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . DONE .': '. sprintf(RIP_ENTRY, $serendipity['POST']['id']) . "</div>\n";
                     } else {
-                        echo $error . ERROR .': ' . $result . '</div>'."\n";
+                        echo '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . ERROR .': ' . $result . "</div>\n";
                     }
                 }
 
@@ -770,11 +760,11 @@ class serendipity_event_faq extends serendipity_event
                 if (is_array($faqs)) {
                     foreach ($faqs AS $faq) {
                         echo '    <ul class="plainList">'."\n";
-                        echo '        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=faqs&amp;serendipity[cid]='.$serendipity['GET']['cid'].'&amp;serendipity[id]='.$faq['id'].'" title="' . EDIT . '">'.$editimg.'</a></li>'."\n";
-                        echo '        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=deleteFAQ&amp;serendipity[cid]='.$serendipity['GET']['cid'].'&amp;serendipity[id]='.$faq['id'].'" title="' . DELETE . '">'.$trashimg.'</a></li>'."\n";
+                        echo '        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=faqs&amp;serendipity[cid]='.$serendipity['GET']['cid'].'&amp;serendipity[id]='.$faq['id'].'" title="' . EDIT . '"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> ' . EDIT . "</span></a></li>\n";
+                        echo '        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=deleteFAQ&amp;serendipity[cid]='.$serendipity['GET']['cid'].'&amp;serendipity[id]='.$faq['id'].'" title="' . DELETE . '"><span class="icon-trash" aria-hidden="true"></span><span class="visuallyhidden"> ' . DELETE . "</span></a></li>\n";
                         echo '        <li class="fixed col"><img alt="question.svg" title="question title" src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/img/question.svg.png" data-file-width="240" data-file-height="240" height="24" width="24">&nbsp;'.$faq['question'].'</li>'."\n";
-                        echo '        <li'.(($faq['up'] == true) ? ('><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=show_faqs&amp;serendipity[actiondo]=faqMoveUp&amp;serendipity[cid]='.$serendipity['GET']['cid'].'&amp;serendipity[id]='.$faq['id'].'" title="'.MOVE_UP.'">'.$moveupimg.'</a>') : ' class="empty">&nbsp;').'</li>'."\n";
-                        echo '        <li'.(($faq['down'] == true) ? ('><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=show_faqs&amp;serendipity[actiondo]=faqMoveDown&amp;serendipity[cid]='.$serendipity['GET']['cid'].'&amp;serendipity[id]='.$faq['id'].'" title="'.MOVE_DOWN.'">'.$movedownimg.'</a>') : ' class="empty">&nbsp;').'</li>'."\n";
+                        echo '        <li'.(($faq['up'] == true) ? ('><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=show_faqs&amp;serendipity[actiondo]=faqMoveUp&amp;serendipity[cid]='.$serendipity['GET']['cid'].'&amp;serendipity[id]='.$faq['id'].'" title="'.MOVE_UP.'"><img src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/img/move_up.png" data-file-width="128" data-file-height="128" width="24" height="24" alt="UP" /></a>') : ' class="empty">&nbsp;').'</li>'."\n";
+                        echo '        <li'.(($faq['down'] == true) ? ('><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=show_faqs&amp;serendipity[actiondo]=faqMoveDown&amp;serendipity[cid]='.$serendipity['GET']['cid'].'&amp;serendipity[id]='.$faq['id'].'" title="'.MOVE_DOWN.'"><img src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/img/move_down.png" data-file-width="128" data-file-height="128" width="24" height="24" alt="DOWN" /></a>') : ' class="empty">&nbsp;').'</li>'."\n";
                         echo "    </ul>\n";
                     }
                 }
@@ -841,9 +831,9 @@ class serendipity_event_faq extends serendipity_event
                     }
                     $result = $this->deleteCategory($serendipity['POST']['id']);
                     if (is_bool($result)) {
-                        echo $ok . DONE .': '. sprintf(RIP_ENTRY, $serendipity['POST']['id']) . '</div>'."\n";
+                        echo '<div class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . DONE .': '. sprintf(RIP_ENTRY, $serendipity['POST']['id']) . "</div>\n";
                     } else {
-                        echo $error . ERROR .': ' . $result . '</div>'."\n";
+                        echo '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . ERROR .': ' . $result . "</div>\n";
                     }
 
                 }
@@ -867,7 +857,7 @@ class serendipity_event_faq extends serendipity_event
                 }
                 echo '    <div class="faq_lang_navigation">'."\n\n";
                 echo $lang_links;
-                echo '    </div>'."\n\n";
+                echo "    </div>\n\n";
 
                 $fcats = $this->fetchCategories($this_cat_lang);
 
@@ -879,16 +869,16 @@ class serendipity_event_faq extends serendipity_event
                     foreach ($fcats AS $category) {
                         $caticon = $category['depth'] > 0 ? '<img alt="category" title="category depth" src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/img/category.png" data-file-width="128" data-file-height="128" height="24" width="24">&nbsp;' : '';
                         echo '        <ul class="plainList">'."\n";
-                        echo '            <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=categories&amp;serendipity[id]='.$category['id'].'&amp;serendipity[cat_lang]='.$this_cat_lang.'" title="' . EDIT . '">'.$editimg.'</a></li>'."\n";
-                        echo '            <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=deleteCategory&amp;serendipity[id]='.$category['id'].'" title="' . DELETE . '">'.$trashimg.'</a></li>'."\n";
+                        echo '            <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=categories&amp;serendipity[id]='.$category['id'].'&amp;serendipity[cat_lang]='.$this_cat_lang.'" title="' . EDIT . '"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> ' . EDIT . "</span></a></li>\n";
+                        echo '            <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=deleteCategory&amp;serendipity[id]='.$category['id'].'" title="' . DELETE . '"><span class="icon-trash" aria-hidden="true"></span><span class="visuallyhidden"> ' . DELETE . "</span></a></li>\n";
                         echo '            <li class="fixed" style="padding-left:'.(1.5 * $category['depth']).'em">' . $caticon . '<a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=show_faqs&amp;serendipity[cid]='.$category['id'].'">'.$category['category'].'</a></li>'."\n";
                         echo '            <li class="fixed">'.$this->countFAQbyCid($category['id']).' '.FAQ_NAME.'</li>'."\n";
-                        echo '            <li'.(($category['up'] == true) ? ('><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=category_moveup&amp;serendipity[id]='.$category['id'].'" title="'.MOVE_UP.'">'.$moveupimg.'</a>') : ' class="empty">&nbsp;').'</li>'."\n";
-                        echo '            <li'.(($category['down'] == true) ? ('><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=category_movedown&amp;serendipity[id]='.$category['id'].'" title="'.MOVE_DOWN.'">'.$movedownimg.'</a>') : ' class="empty">&nbsp;').'</li>'."\n";
+                        echo '            <li'.(($category['up'] == true) ? ('><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=category_moveup&amp;serendipity[id]='.$category['id'].'" title="'.MOVE_UP.'"><img src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/img/move_up.png" data-file-width="128" data-file-height="128" width="24" height="24" alt="UP" /></a>') : ' class="empty">&nbsp;').'</li>'."\n";
+                        echo '            <li'.(($category['down'] == true) ? ('><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=category_movedown&amp;serendipity[id]='.$category['id'].'" title="'.MOVE_DOWN.'"><img src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/img/move_down.png" data-file-width="128" data-file-height="128" width="24" height="24" alt="DOWN" /></a>') : ' class="empty">&nbsp;').'</li>'."\n";
                         echo "        </ul>\n";
                     }
                 }
-                echo '    </div>'."\n\n";
+                echo "    </div>\n\n";
 
                 echo '    <div class="clear action_field">'."\n";
                 echo '        <a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=categories&amp;serendipity[cat_lang]='.$this_cat_lang.'" class="serendipityPrettyButton button_link">'.FAQ_NEWCATEGORY.'</a>'."\n";

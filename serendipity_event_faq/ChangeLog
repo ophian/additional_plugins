@@ -1,3 +1,7 @@
+1.41:
+-----
+ * Fixup some S9y Series 1 leftover variable conditioning for 1.40
+
 1.40:
 -----
  * Raises Requirement to min Serendipity 2.0 for JS scope issues.
