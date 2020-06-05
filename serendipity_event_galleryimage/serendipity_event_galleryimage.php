@@ -27,9 +27,9 @@ class serendipity_event_galleryimage extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_GALLERYIMAGE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rob Antonishen, Alexander Mieland');
-        $propbag->add('version',       '1.14');
+        $propbag->add('version',       '1.15');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
+            'serendipity' => '2.0',
             'smarty'      => '2.6.7',
             'php'         => '5.1.0'
         ));
@@ -240,7 +240,7 @@ class serendipity_event_galleryimage extends serendipity_event
                 exec($cmd, $output, $result);
 
                 if ( $result != 0 ) {
-                    echo '<div class="serendipityAdminMsgError"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png') . '" alt="" />'. sprintf(IMAGICK_EXEC_ERROR, $cmd, $output[0], $result) .'</div>';
+                    echo '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> '. sprintf(IMAGICK_EXEC_ERROR, $cmd, $output[0], $result) .'</div>';
                     $r = false; // return failure
                 } else {
                    touch($outfile);
