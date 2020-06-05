@@ -29,9 +29,9 @@ class serendipity_event_geotag extends serendipity_event
         $propbag->add('author',        PLUGIN_EVENT_GEOTAG_AUTHOR);
         $propbag->add('version',       PLUGIN_EVENT_GEOTAG_VERSION);
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.2.0'
         ));
         $propbag->add('event_hooks',    array(
             'backend_publish'                                   => true,
@@ -82,7 +82,7 @@ class serendipity_event_geotag extends serendipity_event
             case 'content_geourl_warning':
                 $propbag->add('type',        'content');
                 if (class_exists('serendipity_event_geourl')) {
-                    $propbag->add('default',     '<div class="serendipityAdminMsgError">'. PLUGIN_EVENT_GEOTAG_WARNING_GEOURL_PLUGIN .'</div>');
+                    $propbag->add('default',     '<div class="msg_error">'. PLUGIN_EVENT_GEOTAG_WARNING_GEOURL_PLUGIN .'</div>');
                 }
                 break;
 

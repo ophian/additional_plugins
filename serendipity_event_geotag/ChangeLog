@@ -1,3 +1,8 @@
+1.39:
+-----
+ * Fixup an old S9y Series 1 message variable
+ * Raises serendipity requirement to 2.0 and others
+
 1.38: (surrim)
 -----
  * Supports using a space character for LAT/LNG separation (OsmAnd)
