@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.41');
+        $propbag->add('version',      '1.42');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -90,7 +90,6 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('configuration',          array('markup', 'daysnew', 'daysupdate', 'faqurl' ));
         $propbag->add('event_hooks',            array(
             'backend_sidebar_entries_event_display_faq' => true,
-            'backend_sidebar_entries'                   => true,
             'backend_sidebar_admin_appearance'          => true,
             'entries_footer'                            => true,
             'external_plugin'                           => true,
@@ -1268,16 +1267,6 @@ class serendipity_event_faq extends serendipity_event
 <?php
             }
         }
-
-        if ($serendipity['version'][0] < 2) {
-?>
-
-        <div style="margin-top: 1em; padding-left: 20px">
-            <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[SAVECONF]" value="<?php echo SAVE; ?>" />
-        </div>
-
-<?php
-        } else {
 ?>
 
         <div class="clear form_field submit_set">
@@ -1285,7 +1274,6 @@ class serendipity_event_faq extends serendipity_event
         </div>
 
 <?php
-        }
     } // showFAQForm() end
 
     function showCategoryForm()
@@ -1384,23 +1372,12 @@ class serendipity_event_faq extends serendipity_event
 <?php
             }
         }
-
-        if ($serendipity['version'][0] < 2) {
-?>
-
-        <div style="margin-top: 1em; padding-left: 20px">
-            <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[SAVECONF]" value="<?php echo SAVE; ?>" />
-        </div>
-
-<?php
-        } else {
 ?>
         <div class="clear form_field submit_set">
             <input class="state_submit" type="submit" name="serendipity[SAVECONF]" value="<?php echo SAVE; ?>">
         </div>
 
 <?php
-        }
     } // showCategoryForm() end
 
     function event_hook($event, &$bag, &$eventData, $addData = null)
@@ -1424,26 +1401,13 @@ class serendipity_event_faq extends serendipity_event
                     }
                     break;
 
-                case 'backend_sidebar_entries':
-                    // forbid entry if not admin
-                    #if (!serendipity_userLoggedIn() && $_SESSION['serendipityAuthedUser'] !== true && $_SESSION['serendipityUserlevel'] != '255') {
-                    #    break;
-                    #}
-                    if ($serendipity['version'][0] < 2) {
-                        $this->setupDB();
-                        echo "\n".'                        <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq">' . FAQ_NAME . '</a></li>';
-                    }
-                    break;
-
                 case 'backend_sidebar_admin_appearance':
                     // forbid entry if not admin
                     #if (!serendipity_userLoggedIn() && $_SESSION['serendipityAuthedUser'] !== true && $_SESSION['serendipityUserlevel'] != '255') {
                     #    break;
                     #}
-                    if ($serendipity['version'][0] > 1) {
-                        $this->setupDB();
-                        echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq">' . FAQ_NAME . '</a></li>'."\n";
-                    }
+                    $this->setupDB();
+                    echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq">' . FAQ_NAME . '</a></li>'."\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_faq':
