@@ -46,11 +46,11 @@ class serendipity_event_mymood extends serendipity_event
         $propbag->add('name',          PLUGIN_MYMOOD_TITLE);
         $propbag->add('description',   PLUGIN_MYMOOD_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
+            'serendipity' => '2.0',
             'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '0.13');
+        $propbag->add('version',       '0.14');
         $propbag->add('author',       'Brett Profitt');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -267,7 +267,7 @@ class serendipity_event_mymood extends serendipity_event
                 if (empty($array['mood_img']) && empty($array['mood_ascii'])) {
                     continue;
                 } elseif (empty($array['mood_name'])) {
-                    echo '<div class="serendipityAdminMsgError"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png') . '" alt="" />' . PLUGIN_MYMOOD_MISSING_DATA . '</div>';
+                    echo '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_MYMOOD_MISSING_DATA . '</div>';
                 } else {
                     $this->a_insert_mood($array);
                 }
