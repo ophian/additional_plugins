@@ -18,14 +18,13 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '1.80');
+        $propbag->add('version',       '1.81');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '7.2'
         ));
         $propbag->add('groups', array('STATISTICS'));
         $propbag->add('event_hooks',   array(
-            'backend_sidebar_entries' => true,
             'backend_sidebar_admin_appearance' => true,
             'backend_sidebar_entries_event_display_statistics' => true,
             'frontend_configure' => true,
@@ -273,20 +272,10 @@ class serendipity_event_statistics extends serendipity_event
 ';
                     break;
 
-                case 'backend_sidebar_entries':
-                    if ($serendipity['version'][0] < 2) {
-?>
-                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=statistics"><?php echo PLUGIN_EVENT_STATISTICS_NAME; ?></a></li>
-<?php
-                    }
-                    break;
-
                 case 'backend_sidebar_admin_appearance':
-                    if ($serendipity['version'][0] > 1) {
 ?>
                         <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=statistics"><?php echo PLUGIN_EVENT_STATISTICS_NAME; ?></a></li>
 <?php
-                    }
                     break;
 
                 case 'backend_sidebar_entries_event_display_statistics':

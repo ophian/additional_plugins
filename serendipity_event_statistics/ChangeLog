@@ -1,3 +1,7 @@
+1.81:
+-----
+ *  Fixup some S9y Series 1 leftover variable conditioning for 1.78
+
 1.80:
 -----
  *  Add timezone information to latest visitors title which is guilty
@@ -10,6 +14,8 @@
 1.78:
 -----
  *  Add some default values to counted item parts
+ *  Raised Serendipity requirement to 2.0
+ *  Raised PHP requirement to 7.2
 
 1.77:
 -----
@@ -63,7 +69,7 @@
 1.63:
 -----
 - append backend CSS to $eventData, not prepend!
-- consistence changes
+- consistency changes
 
 1.62:
 -----
