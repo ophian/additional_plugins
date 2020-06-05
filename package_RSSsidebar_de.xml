@@ -460,8 +460,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_twitter</link>
 <category>Sidebar Plugins</category>
 <author>Grischa Brockhaus, Damian Luszczymak, Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_twitter&lt;br /&gt;Twitter Timeline&lt;/b&gt;&lt;br /&gt;Zeigt die aktuellsten Twitter-Einträge an&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 22 Jul 2017 12:43:15 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_twitter&lt;br /&gt;Twitter Timeline&lt;/b&gt;&lt;br /&gt;Zeigt die aktuellsten Twitter-Einträge an&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 05 Jun 2020 09:11:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_twitter</guid>
 </item>
 <item>

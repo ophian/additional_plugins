@@ -23,7 +23,7 @@
 <category>Event Plugins</category>
 <author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Aggregiert Einträge von mehreren RSS Feeds (&quot;Planet&quot;). WICHTIGER HINWEIS: Die Aktualisierung des Aggregators muss derzeit noch manuell via Crontab aufgerufen werden. Rufen Sie im gewünschten Abstand per cronjob o.ä. folgende URL auf: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 2.2</content:encoded>
-<pubDate>Sun, 18 Aug 2019 10:53:32 +0200</pubDate>
+<pubDate>Thu, 04 Jun 2020 19:10:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
@@ -374,7 +374,7 @@
 <category>Event Plugins</category>
 <author>Falk Doering, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;FAQs&lt;/b&gt;&lt;br /&gt;Liste von Fragen und Antworten werden übersichtlich aufbereitet dargestellt.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 04 Jun 2020 13:30:26 +0200</pubDate>
+<pubDate>Thu, 04 Jun 2020 18:50:03 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_faq</guid>
 </item>
 <item>
@@ -427,8 +427,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_forgotpassword</link>
 <category>Event Plugins</category>
 <author>Omid Mottaghi</author>
-<content:encoded>&lt;b&gt;serendipity_event_forgotpassword&lt;br /&gt;Passwort vergessen&lt;/b&gt;&lt;br /&gt;Ändere das Passwort für ausgewählten Benutzer&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Apr 2018 15:04:53 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_forgotpassword&lt;br /&gt;Passwort vergessen&lt;/b&gt;&lt;br /&gt;Ändere das Passwort für ausgewählten Benutzer&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Thu, 04 Jun 2020 16:38:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_forgotpassword</guid>
 </item>
 <item>
@@ -454,8 +454,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_galleryimage</link>
 <category>Event Plugins</category>
 <author>Rob Antonishen, Alexander Mieland</author>
-<content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;Markup: Gallery&lt;/b&gt;&lt;br /&gt;Fügt ein Gallery-Album oder Bild in Form von Markup ein.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 18:11:05 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;Markup: Gallery&lt;/b&gt;&lt;br /&gt;Fügt ein Gallery-Album oder Bild in Form von Markup ein.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Thu, 04 Jun 2020 16:37:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_galleryimage</guid>
 </item>
 <item>
@@ -463,8 +463,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geotag</link>
 <category>Event Plugins</category>
 <author>Zoran Kovacevic, Grischa Brockhaus, Matthias Gutjahr, Martin Sewelies</author>
-<content:encoded>&lt;b&gt;serendipity_event_geotag&lt;br /&gt;Geotag&lt;/b&gt;&lt;br /&gt;Erlaubt Einträge mit Geokoordinaten zu versehen&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 15 May 2020 09:41:00 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_geotag&lt;br /&gt;Geotag&lt;/b&gt;&lt;br /&gt;Erlaubt Einträge mit Geokoordinaten zu versehen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 05 Jun 2020 09:43:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geotag</guid>
 </item>
 <item>
@@ -571,8 +571,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_includeentry</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_includeentry&lt;br /&gt;Textformatierung: Eintragsdaten einfügen&lt;/b&gt;&lt;br /&gt;Ermöglicht das Hinzufügen von HTML-ähnlichen Tags um Teile von anderen Einträgen einzubinden. Benutzen Sie folgende Formatierung: [s9y-include-entry:XXX:YYY]. Ersetzen Sie XXX mit der Ziel-ID des Eintrags und YYY mit dem Zielfeldnamen der Datenbank (z.B. &quot;body&quot;, &quot;extended&quot;, &quot;title&quot; usw.).&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:21:34 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_includeentry&lt;br /&gt;Textformatierung: Eintragsdaten einfügen&lt;/b&gt;&lt;br /&gt;Ermöglicht das Hinzufügen von HTML-ähnlichen Tags um Teile von anderen Einträgen einzubinden. Benutzen Sie folgende Formatierung: [s9y-include-entry:XXX:YYY]. Ersetzen Sie XXX mit der Ziel-ID des Eintrags und YYY mit dem Zielfeldnamen der Datenbank (z.B. &quot;body&quot;, &quot;extended&quot;, &quot;title&quot; usw.).&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 05 Jun 2020 09:39:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_includeentry</guid>
 </item>
 <item>
@@ -769,8 +769,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mycalendar</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_mycalendar&lt;br /&gt;Mein Kalender&lt;/b&gt;&lt;br /&gt;Pflegt einen persönlichen Kalender&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:21:50 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_mycalendar&lt;br /&gt;Mein Kalender&lt;/b&gt;&lt;br /&gt;Pflegt einen persönlichen Kalender&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 05 Jun 2020 09:25:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mycalendar</guid>
 </item>
 <item>
@@ -778,8 +778,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mymood</link>
 <category>Event Plugins</category>
 <author>Brett Profitt</author>
-<content:encoded>&lt;b&gt;serendipity_event_mymood&lt;br /&gt;My Mood&lt;/b&gt;&lt;br /&gt;Allows you to add your current mood or moods to entries.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 15 Aug 2018 17:22:09 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_mymood&lt;br /&gt;My Mood&lt;/b&gt;&lt;br /&gt;Allows you to add your current mood or moods to entries.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 05 Jun 2020 09:19:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mymood</guid>
 </item>
 <item>
@@ -977,7 +977,7 @@
 <category>Event Plugins</category>
 <author>Tys von Gaza, Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_sidebarhider&lt;br /&gt;Seitenleisten ein/ausklappbar machen&lt;/b&gt;&lt;br /&gt;Verkleinert Seitenleisten-Elemente auf ihren Titel und ermöglicht das individuelle Ausklappen. Zusätzliche Konfiguration siehe Einträge -&gt; Seitenleisten verwalten in der Administrationsoberfläche.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 25 Apr 2020 16:35:42 +0200</pubDate>
+<pubDate>Thu, 04 Jun 2020 18:52:15 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_sidebarhider</guid>
 </item>
 <item>
@@ -1076,7 +1076,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistiken&lt;/b&gt;&lt;br /&gt;Zeigt einen Link zu informativen Statistiken (inkl. Besucherzähler) in der Administrationsoberfläche an.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 22 May 2020 12:32:28 +0200</pubDate>
+<pubDate>Thu, 04 Jun 2020 19:00:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
@@ -1345,8 +1345,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_twitter</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Peter Heimann</author>
-<content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Microblogging (Twitter,Identica)&lt;/b&gt;&lt;br /&gt;Fügt einen Twitter/Identica Client zum Administrator Interface hinzu, sucht nach Tweetbacks und kündigt neue Artikel über Twitter/Identica Accounts an.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 03 Apr 2018 18:41:03 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Microblogging (Twitter,Identica)&lt;/b&gt;&lt;br /&gt;Fügt einen Twitter/Identica Client zum Administrator Interface hinzu, sucht nach Tweetbacks und kündigt neue Artikel über Twitter/Identica Accounts an.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Thu, 04 Jun 2020 18:41:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>
