@@ -16,9 +16,9 @@ class serendipity_event_forgotpassword extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FORGOTPASSWORD_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Omid Mottaghi');
-        $propbag->add('version',       '0.14');
+        $propbag->add('version',       '0.15');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
+            'serendipity' => '2.0',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -145,14 +145,14 @@ class serendipity_event_forgotpassword extends serendipity_event
                         $q   = 'SELECT email, authorid FROM '.$serendipity['dbPrefix'].'authors where username = \''.serendipity_db_escape_string($_POST['username']).'\'';
                         $sql = serendipity_db_query($q);
                         if (!is_array($sql) || count($sql) < 1) {
-                            $eventData['footer'] = '<div class="serendipityAdminMsgError"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png') . '" alt="" />' . PLUGIN_EVENT_FORGOTPASSWORD_USER_NOT_EXIST . '</div>';
+                            $eventData['footer'] = '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FORGOTPASSWORD_USER_NOT_EXIST . '</div>';
                             return true;
                         }
 
                         if ($sql && is_array($sql)) {
 
                             if (empty($sql[0]['email'])) {
-                                $eventData['footer'] = '<div class="serendipityAdminMsgError"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png') . '" alt="" />' . $this->get_config('nomailinfo') . '</div>';
+                                $eventData['footer'] = '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . $this->get_config('nomailinfo') . '</div>';
 
                                 if ($this->get_config('nomailadd') != '') {
                                     $sent = serendipity_sendMail($this->get_config('nomailadd'), PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SUBJECT, sprintf($this->get_config('nomailtxt'), $_POST['username']), NULL);

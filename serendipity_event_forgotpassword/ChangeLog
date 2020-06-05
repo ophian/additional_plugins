@@ -1,3 +1,8 @@
+1.15:
+-----
+ * Fixup an old S9y Series 1 message variable
+ * Raises serendipity requirement to 2.0
+
 0.14:
 ----
 
