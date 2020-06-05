@@ -18,7 +18,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '1.38');
+        $propbag->add('version',       '1.39');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.2.0'
@@ -28,7 +28,6 @@ class serendipity_event_sidebarhider extends serendipity_event
             'frontend_header'           => true,
             'css'                       => true,
             'css_backend'               => true,
-            'backend_sidebar_entries'   => true,
             'backend_sidebar_admin'     => true,
             'backend_sidebar_entries_event_display_sidebarhider' => true,
             'frontend_generate_plugins' => true
@@ -189,12 +188,6 @@ class serendipity_event_sidebarhider extends serendipity_event
 /* serendipity_event_sidebarhider end */
 
 ';
-                    break;
-
-                case 'backend_sidebar_entries':
-                    if ($serendipity['version'][0] < 2) {
-                        echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=sidebarhider">'.PLUGIN_SIDEBAR_HIDER_ADMINLINK.'</a></li>';
-                    }
                     break;
 
                 case 'backend_sidebar_admin':
