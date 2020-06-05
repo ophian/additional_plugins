@@ -17,12 +17,12 @@ class serendipity_event_mycalendar extends serendipity_event
         $propbag->add('name',          PLUGIN_MYCALENDAR_TITLE);
         $propbag->add('description',   PLUGIN_MYCALENDAR_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '0.19');
+        $propbag->add('version',       '0.20');
         $propbag->add('author',        'Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -154,7 +154,7 @@ class serendipity_event_mycalendar extends serendipity_event
                 if (empty($array['eventurl']) && empty($array['eventname'])) {
                     continue;
                 } elseif (empty($array['eventname'])) {
-                    echo '<div class="serendipityAdminMsgError"><img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png') . '" alt="" />' . PLUGIN_MYCALENDAR_EVENT_MISSINGDATA . '</div>';
+                    echo '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_MYCALENDAR_EVENT_MISSINGDATA . '</div>';
                 } else {
                     $this->insertevent($array);
                 }

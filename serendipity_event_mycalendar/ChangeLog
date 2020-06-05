@@ -1,15 +1,23 @@
+0.20:
+-----
+
+ * Fixup an old S9y Series 1 message variable
+ * Raises serendipity requirement to 2.0 and others
+
 0.19:
+-----
 
  * Iconfont accessibility fixes
 
 0.18:
+-----
 
  * Rewrite backend markup for Serendipity 2.0x+
  * Add backend CSS styles
  * Use lang API includement - extends required version to 1.6
  * Set some plugin consistencies
 
-0.16
+0.16_
 -----
 
 Use htmlspecialchars() in the RSS output to prevent XML parsing errors
