@@ -93,10 +93,10 @@
 @define('PLUGIN_EVENT_TWITTER_PLUGIN_EVENT_REL_URL',    'Plugin rel. path');
 @define('PLUGIN_EVENT_TWITTER_PLUGIN_EVENT_REL_URL_DESC', 'Enter the full HTTP path (everything after your domain name) that leads to this plugin\'s directory.');
 
-@define('PLUGIN_EVENT_TWITTER_TWEETER_WARNING',         '<p class="serendipityAdminMsgError">' .
-                '<img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png'). '" alt="" />' .
+@define('PLUGIN_EVENT_TWITTER_TWEETER_WARNING',         '<p class="msg_error">' .
+                '<span class="icon-attention-circled" aria-hidden="true"></span> ' .
                 'WARNING: Found an installed TwitterTweeter plugin.</p>' .
-                '<p class="serendipityAdminMsgError">This plugin is a merge of TwitterTweeter the old official S9Y twitter plugin and extends both. You should deinstall the tweeter plugin now.</p>');
+                '<p class="msg_error">This plugin is a merge of TwitterTweeter the old official S9Y twitter plugin and extends both. You should deinstall the tweeter plugin now.</p>');
 
 @define('PLUGIN_EVENT_TWITTER_TB_USE_URL',              'Tweetback URL');
 @define('PLUGIN_EVENT_TWITTER_TB_USE_URL_DESC',         'What to save as URL for the tweetback? You have 3 options. Status: the url the the tweet causing the tweetback, Profile: the users twitter profile or WebURL: the url the user defined as his Web URL in his twitter profile');
@@ -132,10 +132,10 @@
 @define('PLUGIN_EVENT_TWITTER_IGNORE_TWEETBACKS_BYNAME','Ignore Tweetbacks from');
 @define('PLUGIN_EVENT_TWITTER_IGNORE_TWEETBACKS_BYNAME_DESC','A komma separated list of twitter accounts you don\'t want to receive tweetbacks from.');
 
-@define('PLUGIN_TWITTER_EVENT_NOT_INSTALLED',           '<p class="serendipityAdminMsgError">' .
-                '<img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png'). '" alt="" />' .
+@define('PLUGIN_TWITTER_EVENT_NOT_INSTALLED',           '<p class="msg_error">' .
+                '<span class="icon-attention-circled" aria-hidden="true"></span> ' .
                 'WARNING: The "' . PLUGIN_EVENT_TWITTER_NAME . '" event plugin was not installed yet!</p>' .
-                '<p class="serendipityAdminMsgError">This is no error but the main part of the twitter/identica functionality is covered by the microblogging (twitter/identica) event plugin.<br/>You should install that, too, if you want to enable the complete microblogging support.<br/>The event plugin will emit some nice CSS for the sidebar plugin, too.</p>');
+                '<p class="msg_error">This is no error but the main part of the twitter/identica functionality is covered by the microblogging (twitter/identica) event plugin.<br/>You should install that, too, if you want to enable the complete microblogging support.<br/>The event plugin will emit some nice CSS for the sidebar plugin, too.</p>');
 
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_FORMAT',         'Announce format');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_FORMAT_DESC',    'Define the format of your announcement. You should use placeholders. #title#: replaced with article title (and matching tags); #link#: link to your article; #author#: Author of the article; #tags#: tags that are left.');

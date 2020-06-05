@@ -29,7 +29,7 @@ class serendipity_plugin_twitter extends serendipity_plugin
         //$propbag->add('website',       'http://board.s9y.org');
         $propbag->add('version',       PLUGIN_TWITTER_VERSION);
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
+            'serendipity' => '2.0',
             'smarty'      => '2.6.7',
             'php'         => '5.1.0'
         ));
@@ -468,7 +468,7 @@ class serendipity_plugin_twitter extends serendipity_plugin
                 serendipity_request_end();
             }
 
-            if ($error == 200 &&!empty($response)) {
+            if ($error == 200 && !empty($response)) {
                 $fp = fopen($cachefile, 'w');
                 fwrite($fp, serialize($response));
                 fflush($fp);

@@ -9,6 +9,11 @@ TODO:
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
 
+1.72:
+-----
+ * Fixup some S9y Series 1 variable conditioning
+ * Raises serendipity requirement to 2.0
+
 1.71:
 -----
 

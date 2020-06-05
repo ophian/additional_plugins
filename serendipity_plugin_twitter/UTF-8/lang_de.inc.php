@@ -93,10 +93,10 @@
 @define('PLUGIN_EVENT_TWITTER_PLUGIN_EVENT_REL_URL',    'Plugin rel. Pfad');
 @define('PLUGIN_EVENT_TWITTER_PLUGIN_EVENT_REL_URL_DESC', 'Geben Sie hier den kompletten HTTP Pfad ein (alles nach ihrem Domain Namen), der das Verzeichnis des Plugins angibt.');
 
-@define('PLUGIN_EVENT_TWITTER_TWEETER_WARNING',         '<p class="serendipityAdminMsgError">' .
-                '<img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png'). '" alt="" />' .
+@define('PLUGIN_EVENT_TWITTER_TWEETER_WARNING',         '<p class="msg_error">' .
+                '<span class="icon-attention-circled" aria-hidden="true"></span> ' .
                 'WARNING: Ein installiertes TwitterTweeter Plugin gefunden.</p>' .
-                '<p class="serendipityAdminMsgError">Dieses Plugin ist ein Merge des alten S9Y Titter Plugins und des Twitter Tweeters. Es erweitert beide. Das Twitter Tweeter Plugin sollte deshalb deinstalliert werden.</p>');
+                '<p class="msg_error">Dieses Plugin ist ein Merge des alten S9Y Twitter Plugins und des Twitter Tweeters. Es erweitert beide. Das Twitter Tweeter Plugin sollte deshalb deinstalliert werden.</p>');
 
 @define('PLUGIN_EVENT_TWITTER_TB_USE_URL',              'Tweetback URL');
 @define('PLUGIN_EVENT_TWITTER_TB_USE_URL_DESC',         'Was soll als URL für einen Tweetback gespeichert werden? Es gibt 3 Möglichkeiten. Status: Die URL des Tweets, der den Tweetback erzeugt hat, Profil: Die URL des Profils des Twitter Benutzers oder Web URL, die URL, die der Benutzer in seinem Profil als seine Web URL angegeben hat.');
@@ -132,10 +132,10 @@
 @define('PLUGIN_EVENT_TWITTER_IGNORE_TWEETBACKS_BYNAME','Tweetbacks ignorieren von');
 @define('PLUGIN_EVENT_TWITTER_IGNORE_TWEETBACKS_BYNAME_DESC','EIne Komma separierte Liste von Benutzern, deren Tweetbacks ignoriert werden sollen.');
 
-@define('PLUGIN_TWITTER_EVENT_NOT_INSTALLED',           '<p class="serendipityAdminMsgError">' .
-                '<img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png'). '" alt="" />' .
+@define('PLUGIN_TWITTER_EVENT_NOT_INSTALLED',           '<p class="msg_error">' .
+                '<span class="icon-attention-circled" aria-hidden="true"></span> ' .
                 'WARNUNG: Das "' . PLUGIN_EVENT_TWITTER_NAME . '" Event Plugin wurde noch nicht installiert!</p>' .
-                '<p class="serendipityAdminMsgError">Dies ist kein Fehler, aber der Hauptanteil der twitter/identica Funktionalität steckt im Microblogging (twitter/identica) Event Plugin.<br/>Für eine komplette microblogging Unterstützung sollte dieses ebenfalls installiert werden.<br/>Außerdem gibt das Event Plugin CSS code aus, der das Seitenleistenplugin etwas schöner aussehen lässt.</p>');
+                '<p class="msg_error">Dies ist kein Fehler, aber der Hauptanteil der twitter/identica Funktionalität steckt im Microblogging (twitter/identica) Event Plugin.<br/>Für eine komplette microblogging Unterstützung sollte dieses ebenfalls installiert werden.<br/>Außerdem gibt das Event Plugin CSS code aus, der das Seitenleistenplugin etwas schöner aussehen lässt.</p>');
 
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_FORMAT',         'Ankündigungsformat');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_FORMAT_DESC',    'Hier wird die Formatierung von Ankündigungen beschrieben. Es sollten Platzhalter benutzt werden, um sinnvolle Ankündigungen zu erhalten. #title#: Ersetzt durch den Titel des Artikels (mit Tagersetzungen); #link#: Der Link auf den Blogeintrag; #autor#: Autor des Artikels; #tags#: Übrig gebliebende Tags.');

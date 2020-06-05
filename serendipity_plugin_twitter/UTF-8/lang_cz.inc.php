@@ -101,10 +101,10 @@
 @define('PLUGIN_EVENT_TWITTER_PLUGIN_EVENT_REL_URL',    'Plugin rel. path');
 @define('PLUGIN_EVENT_TWITTER_PLUGIN_EVENT_REL_URL_DESC', 'Zadejte celou HTTP cestu (všechno, co následuje po Vašem doménovém jméně), které vede do adresáře s pluginem.');
 
-@define('PLUGIN_EVENT_TWITTER_TWEETER_WARNING',         '<p class="serendipityAdminMsgError">' .
-                '<img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png'). '" alt="" />' .
+@define('PLUGIN_EVENT_TWITTER_TWEETER_WARNING',         '<p class="msg_error">' .
+                '<span class="icon-attention-circled" aria-hidden="true"></span> ' .
                 'UPOZORNĚNÍ: Nalezen nainstalovaný plugin TwitterTweeter.</p>' .
-                '<p class="serendipityAdminMsgError">Tento plugin je sloučením pluginu TwitterTweeter a oficiálního starého serendipity pluginu twitter, navíc oba dva pluginy rozšiřuje.Měli byste odinstalovat všechny předchozí pluginy.</p>');
+                '<p class="msg_error">Tento plugin je sloučením pluginu TwitterTweeter a oficiálního starého serendipity pluginu twitter, navíc oba dva pluginy rozšiřuje.Měli byste odinstalovat všechny předchozí pluginy.</p>');
 
 @define('PLUGIN_EVENT_TWITTER_TB_USE_URL',              'URL Tweetbacku');
 @define('PLUGIN_EVENT_TWITTER_TB_USE_URL_DESC',         'Co uložit jako URL adresu tweetbacku? Máte 3 možnosti. Status: url tweetu, který je tweetbackem, Profil: adresa profilu uživatele twitteru nebo WebURL: adresa zadaná uživatelem twitteru v jeho profilu jako Web URL');
@@ -141,10 +141,10 @@
 @define('PLUGIN_EVENT_TWITTER_IGNORE_TWEETBACKS_BYNAME','Ignorovat tweetbacky z');
 @define('PLUGIN_EVENT_TWITTER_IGNORE_TWEETBACKS_BYNAME_DESC','Čárkami oddělený seznam účtů twitteru, ze kterých nechcete přijímat tweetbacky.');
 
-@define('PLUGIN_TWITTER_EVENT_NOT_INSTALLED',           '<p class="serendipityAdminMsgError">' .
-                '<img style="width: 22px; height: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_error.png'). '" alt="" />' .
+@define('PLUGIN_TWITTER_EVENT_NOT_INSTALLED',           '<p class="msg_error">' .
+                '<span class="icon-attention-circled" aria-hidden="true"></span> ' .
                 'VAROVÁNÍ: Plugin událostí pro mikroblogování (twitter/identica) ještě nebyl nainstalován!</p>' .
-                '<p class="serendipityAdminMsgError">Hlavní část funkcí twitter/identica je zabezpečována pluginem událostí mikroblogování. Pokud chcete plnou funkčnost pluginu, měli byste ho také nainstalovat
+                '<p class="msg_error">Hlavní část funkcí twitter/identica je zabezpečována pluginem událostí mikroblogování. Pokud chcete plnou funkčnost pluginu, měli byste ho také nainstalovat
 .</p>');
 
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_FORMAT',         'Formát oznámení');

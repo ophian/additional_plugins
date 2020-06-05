@@ -52,7 +52,7 @@ class serendipity_event_twitter extends serendipity_plugin
         $propbag->add('author',        'Grischa Brockhaus, Peter Heimann');
         //$propbag->add('website',       'http://board.s9y.org');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
+            'serendipity' => '2.0',
             'smarty'      => '2.6.7',
             'php'         => '5.1.0'
         ));
@@ -65,7 +65,6 @@ class serendipity_event_twitter extends serendipity_plugin
             'backend_display'           => true, // Extended attributes
             'backend_publish'           => true, // An entry was puplished (was draft before or saved from the scratch).
             'backend_frontpage_display' => true,
-            'backend_sidebar_entries'   => true,
             'backend_sidebar_admin_appearance' => true,
             'backend_sidebar_entries_event_display_tweeter' => true,
             'backend_delete_entry'      => true,
@@ -294,7 +293,7 @@ class serendipity_event_twitter extends serendipity_plugin
             'identica'  => PLUGIN_EVENT_TWITTER_ACCOUNT_SERVICE_IDENTICA,
         );
 
-        // Get actual idetntifier count
+        // Get actual identifier count
         if (is_numeric($this->get_config('id_count',1))) {
             $identitycount = $this->get_config('id_count',1);
         }
@@ -371,7 +370,6 @@ class serendipity_event_twitter extends serendipity_plugin
                 break;
 
             case 'twitterpwd':
-
                 if (!$this->get_config('id_service') OR $this->get_config('id_service') == "identica") {
                     $propbag->add('type',           'string');
                     $propbag->add('name',           PLUGIN_EVENT_TWITTER_ACCOUNT_PWD);
@@ -1033,25 +1031,11 @@ class serendipity_event_twitter extends serendipity_plugin
                     }
                     break;
 
-                case 'backend_sidebar_entries':
-                    if ($serendipity['version'][0] < 2) {
-                        if ($this->get_config('tweeter_show', 'disable') == 'sidebar') {
-?>
-                            <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=tweeter"><?php echo PLUGIN_EVENT_TWITTER_TWEETER_SIDEBARTITLE; ?></a></li>
-<?php
-                        } else {
-                        }
-                    }
-                    break;
-
                 case 'backend_sidebar_admin_appearance':
-                    if ($serendipity['version'][0] < 2) {
-                    } else {
-                        if ($this->get_config('tweeter_show', 'disable') == 'sidebar') {
+                    if ($this->get_config('tweeter_show', 'disable') == 'sidebar') {
 ?>
-                            <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=tweeter"><?php echo PLUGIN_EVENT_TWITTER_TWEETER_SIDEBARTITLE; ?></a></li>
+                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=tweeter"><?php echo PLUGIN_EVENT_TWITTER_TWEETER_SIDEBARTITLE; ?></a></li>
 <?php
-                        }
                     }
                     break;
 
@@ -1087,21 +1071,6 @@ class serendipity_event_twitter extends serendipity_plugin
                     if (serendipity_db_bool($this->get_config('announce_articles_default_no'))) {
                         $checked_dontannounce = "checked='checked'";
                     }
-                    if ($serendipity['version'][0] < 2) {
-?>
-                        <fieldset style="margin: 5px">
-                            <a name="microbloggingAnchor"></a>
-                            <legend><?php echo PLUGIN_EVENT_TWITTER_NAME; ?></legend>
-                            <div class="entryproperties_microblogging_dontannounce">
-                            <input id="properties_microblogging_dontannounce" class="input_checkbox" type="checkbox" name="serendipity[properties][microblogging_dontannounce]" <?php echo $checked_dontannounce; ?>/>
-                            <label for="properties_microblogging_dontannounce" title="<?php echo PLUGIN_EVENT_TWITTER_BACKEND_DONTANNOUNCE; ?>"> <?php echo PLUGIN_EVENT_TWITTER_BACKEND_DONTANNOUNCE; ?>  </label>
-                            </div>
-                            <label for="serendipity[properties][microblogging_tagList]" title="<?php echo PLUGIN_EVENT_TWITTER_NAME; ?>">
-                                <?php echo PLUGIN_EVENT_TWITTER_BACKEND_ENTERDESC; ?></label><br/>
-                            <input type="text" name="serendipity[properties][microblogging_tagList]" id="properties_microblogging_tagList" class="wickEnabled input_textbox" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($tagList) : htmlspecialchars($tagList, ENT_COMPAT, LANG_CHARSET)); ?>" style="width: 100%" />
-                        </fieldset>
-<?php
-                    } else {
 ?>
                         <fieldset class="entryproperties">
                             <a name="microbloggingAnchor"></a>
@@ -1118,7 +1087,6 @@ class serendipity_event_twitter extends serendipity_plugin
                             </div>
                         </fieldset>
 <?php
-                    }
                     break;
 
                 default:
