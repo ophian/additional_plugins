@@ -119,7 +119,7 @@
 <description>あなたのエントリに Amazon を検索するためのボタンを追加し、エントリに挿入することができるほうになります。</description>
 <maintainers><maintainer><name>Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.83</version>
+  <version>0.84</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <date>2020-06-07</date>
   <filelist>
@@ -1438,7 +1438,7 @@
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2020-01-23</date>
+  <date>2020-06-07</date>
   <filelist>
     <dir name="serendipity_event_dbclean">
       <file>ChangeLog</file>
@@ -8715,7 +8715,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>1.39</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-06-04</date>
+  <date>2020-06-07</date>
   <filelist>
     <dir name="serendipity_event_sidebarhider">
       <file>ChangeLog</file>
