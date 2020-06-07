@@ -31,7 +31,7 @@
 0.77:
 -----
  * Touched Amazon_s9y_lib functions for:
-   - idents
+   - indents
    - PEAR HTTP/Request2 supports
    - fixed $country_url for exiting languages
    - Add some new searchIndex values documented in history:
