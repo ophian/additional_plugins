@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Tlačítko médií Amazon&lt;/b&gt;&lt;br /&gt;Přidává tlačítko, které umožňuje vkládat do příspěvků výsledky hledání na Amazon.com&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:00:55 +0200</pubDate>
+<pubDate>Sun, 07 Jun 2020 13:28:42 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -86,7 +86,7 @@
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Zálohování&lt;/b&gt;&lt;br /&gt;Zpřístupňuje možnost automatického zálohování Serendepity - databázových tabulek i souborů. V současnosti je podporována pouze databáze MySQL(i). VAROVÁNÍ: Plugin nefunguje optimálně s velkou databází nebo velkým množstvím souborů.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 07 Feb 2020 08:43:59 +0100</pubDate>
+<pubDate>Sun, 07 Jun 2020 13:34:21 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
@@ -1184,7 +1184,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Správa odezev&lt;/b&gt;&lt;br /&gt;Umožňuje podrobnou kontrolu chování odezev, jak jsou posílány při vytváření příspěvků&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:24:46 +0200</pubDate>
+<pubDate>Sun, 07 Jun 2020 13:19:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>
