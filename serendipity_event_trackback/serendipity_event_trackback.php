@@ -19,7 +19,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '1.25');
+        $propbag->add('version',       '1.26');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -215,18 +215,6 @@ class serendipity_event_trackback extends serendipity_event
                     break;
 
                 case 'css_backend':
-                    if ($serendipity['version'][0] < 2) {
-                        $eventData .= '
-
-#edit_entry_trackbacks.entryproperties_trackbacks {
-    margin: 5px;
-}
-#edit_entry_trackbacks .wrap_legend {
-    font-weight: bold;
-}
-
-';
-                    }
                     $eventData .= '
 
 /* serendipity_event_trackback start */
