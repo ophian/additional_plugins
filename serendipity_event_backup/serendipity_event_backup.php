@@ -1303,7 +1303,7 @@ class serendipity_event_backup extends serendipity_event
 
             switch($event) {
 
-                case 'backend_sidebar_admin':
+                case 'backend_sidebar_admin': // this is section: settings on 2.x - append
                     if ($serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN && ($serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli')) {
 ?>
 
