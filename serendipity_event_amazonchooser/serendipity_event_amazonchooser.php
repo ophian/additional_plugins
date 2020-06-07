@@ -22,7 +22,7 @@ class serendipity_event_amazonchooser extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AMAZONCHOOSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthew Groeninger, Ian Styx');
-        $propbag->add('version',       '0.83');
+        $propbag->add('version',       '0.84');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -147,16 +147,15 @@ class serendipity_event_amazonchooser extends serendipity_event
                     break;
 
                 case 'backend_wysiwyg':
-                    $link = serendipity_rewriteURL('plugin/amazonch') . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;') . 'txtarea=' . ($serendipity['version'][0] > '1' ? 'amazonchooser'.$eventData['item'] : $eventData['jsname']);
-                    $open = $serendipity['version'][0] > '1' ? 'serendipity.openPopup' : 'window.open';
+                    $link = serendipity_rewriteURL('plugin/amazonch') . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;') . 'txtarea=' . 'amazonchooser'.$eventData['item'];
+                    $open = 'serendipity.openPopup';
                     $eventData['buttons'][] = array(
-                        'id'         => 'amazonchooser' . ($serendipity['version'][0] > '1' ? $eventData['item'] : $eventData['jsname']),
+                        'id'         => 'amazonchooser' . $eventData['item'],
                         'name'       => PLUGIN_EVENT_AMAZONCHOOSER_MEDIA_BUTTON,
                         'javascript' => 'function() { '.$open.'(\'' . $link . '\', \'AmazonImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\') }',
                         'img_url'    => $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/plugin_amazonchooser.gif',
-                        'img_path'   => 'serendipity_event_amazonchooser/serendipity_event_amazonchooser.gif',
                         'toolbar'    => 'other'
-                    );//'img_path' deprecated, used by ckeditor plugin <= 4.1.0
+                    );
                     break;
 
                 case 'css_backend':
@@ -393,21 +392,13 @@ class serendipity_event_amazonchooser extends serendipity_event
             $txtarea = 'body';
         }
         $link =  serendipity_rewriteURL('plugin/amazonch') . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;') . 'txtarea=' . $txtarea;
-        $open = $serendipity['version'][0] > '1' ? 'serendipity.openPopup' : 'window.open';
+        $open = 'serendipity.openPopup';
 
         if ($return_output) {
-            if ($serendipity['version'][0] > '1') {
-                $button = '<input type="button" class="input_button" name="insAmazonImage" value="'.PLUGIN_EVENT_AMAZONCHOOSER_MEDIA_BUTTON.'" style="" onclick="'.$open.'(\''.$link."&amp;simple=1".'\', \'AmazonImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\');">';
-            } else {
-                $button = '<input type="button" class="serendipityPrettyButton input_button" name="insAmazonImage" value="'.PLUGIN_EVENT_AMAZONCHOOSER_MEDIA_BUTTON.'" style="" onclick="'.$open.'(\''.$link."&amp;simple=1".'\', \'AmazonImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\');" />';
-            }
+            $button = '<input type="button" class="input_button" name="insAmazonImage" value="'.PLUGIN_EVENT_AMAZONCHOOSER_MEDIA_BUTTON.'" style="" onclick="'.$open.'(\''.$link."&amp;simple=1".'\', \'AmazonImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\');">';
             return $button;
         } else {
-            if ($serendipity['version'][0] > '1') {
-                $button = '<input type="button" class="input_button" name="insAmazonImage" value="'.PLUGIN_EVENT_AMAZONCHOOSER_MEDIA_BUTTON.'" style="" onclick="'.$open.'(\''.$link.'\', \'AmazonImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\');">';
-            } else {
-                $button = '<input type="button" class="serendipityPrettyButton input_button"  name="insAmazonImage" value="'.PLUGIN_EVENT_AMAZONCHOOSER_MEDIA_BUTTON.'" style="" onclick="'.$open.'(\''.$link.'\', \'AmazonImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\');" />';
-            }
+            $button = '<input type="button" class="input_button" name="insAmazonImage" value="'.PLUGIN_EVENT_AMAZONCHOOSER_MEDIA_BUTTON.'" style="" onclick="'.$open.'(\''.$link.'\', \'AmazonImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\');">';
             echo $button;
         }
     }
