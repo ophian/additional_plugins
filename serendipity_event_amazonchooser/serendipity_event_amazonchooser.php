@@ -22,7 +22,7 @@ class serendipity_event_amazonchooser extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AMAZONCHOOSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthew Groeninger, Ian Styx');
-        $propbag->add('version',       '0.82');
+        $propbag->add('version',       '0.83');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -109,7 +109,7 @@ class serendipity_event_amazonchooser extends serendipity_event
 
                 case 'backend_entry_toolbar_extended':
                     if (isset($eventData['backend_entry_toolbar_extended:textarea'])) {
-                        $txtarea = $serendipity['version'][0] < '2' ?  $eventData['backend_entry_toolbar_extended:textarea'] : $eventData['backend_entry_toolbar_extended:nugget'];
+                        $txtarea = $eventData['backend_entry_toolbar_extended:nugget'];
                     } else {
                         $txtarea = 'extended';
                     }
@@ -123,7 +123,7 @@ class serendipity_event_amazonchooser extends serendipity_event
 
                 case 'backend_entry_toolbar_body':
                     if (isset($eventData['backend_entry_toolbar_body:textarea'])) {
-                        $txtarea = $serendipity['version'][0] < '2' ?  $eventData['backend_entry_toolbar_body:textarea'] : $eventData['backend_entry_toolbar_body:nugget'];
+                        $txtarea = $eventData['backend_entry_toolbar_body:nugget'];
                     } else {
                         $txtarea = 'body';
                     }
