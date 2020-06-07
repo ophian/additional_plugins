@@ -190,7 +190,7 @@ class serendipity_event_sidebarhider extends serendipity_event
 ';
                     break;
 
-                case 'backend_sidebar_admin':
+                case 'backend_sidebar_admin': // this is section: settings on 2.x - append
                     echo '<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=sidebarhider">'.PLUGIN_SIDEBAR_HIDER_ADMINLINK.'</a></li>';
                     break;
 
