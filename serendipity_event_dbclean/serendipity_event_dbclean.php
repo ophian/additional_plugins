@@ -133,7 +133,7 @@ class serendipity_event_dbclean extends serendipity_event
                     echo '<li><a href="serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=dbclean">' .PLUGIN_EVENT_DBCLEAN_NAME ."</a></li>\n";
                     break;
 
-                case 'backend_sidebar_admin':
+                case 'backend_sidebar_admin': // this is section: settings on 2.x - append
                     if ($serendipity['version'][0] < 2) {
                         echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=dbclean">' .PLUGIN_EVENT_DBCLEAN_NAME ."</a></li>\n";
                     }
