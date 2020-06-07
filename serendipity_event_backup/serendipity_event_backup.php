@@ -25,13 +25,12 @@ class serendipity_event_backup extends serendipity_event
             'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '0.20');
+        $propbag->add('version',       '0.21');
         $propbag->add('author',       'Alexander Mieland, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
                     'frontend_footer'         => true,
                     'external_plugin'         => true,
-                    'backend_sidebar_entries' => true,
                     'backend_sidebar_admin'   => true,
                     'css_backend'             => true,
                     'backend_sidebar_entries_event_display_backup' => true
@@ -1303,16 +1302,6 @@ class serendipity_event_backup extends serendipity_event
         if (isset($hooks[$event])) {
 
             switch($event) {
-
-                case 'backend_sidebar_entries':
-                    if ($serendipity['version'][0] < 2) {
-                        if ($serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN && ($serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli')) {
-?>
-                            <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=backup"><?php echo PLUGIN_BACKUP_TITLE; ?></a></li>
-<?php
-                        }
-                    }
-                    break;
 
                 case 'backend_sidebar_admin':
                     if ($serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN && ($serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli')) {
