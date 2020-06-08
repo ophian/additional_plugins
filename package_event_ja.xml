@@ -11615,12 +11615,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)</description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.76</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-21</date>
+  <version>1.77</version>
+  <requirements:s9yVersion>2.9</requirements:s9yVersion>
+  <date>2020-06-07</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
-      <file>.gitignore</file>
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
@@ -11648,7 +11647,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_xmlrpc/.gitignore</file>
     <file>serendipity_event_xmlrpc/ChangeLog</file>
     <file>serendipity_event_xmlrpc/documentation_cs.html</file>
     <file>serendipity_event_xmlrpc/documentation_cz.html</file>
