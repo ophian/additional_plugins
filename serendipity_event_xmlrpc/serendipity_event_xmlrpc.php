@@ -18,11 +18,11 @@ class serendipity_event_xmlrpc extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_XMLRPC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.76');
+        $propbag->add('version',       '1.77');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.9',
+            'smarty'      => '3.1',
+            'php'         => '7.0'
         ));
         $propbag->add('event_hooks',    array(
             'frontend_xmlrpc'  => true,
@@ -285,7 +285,7 @@ class serendipity_event_xmlrpc extends serendipity_event
             1,
             NULL,
             'write',
-            array('CVS' => true, '.svn' => true, '_vti_cnf' => true, '.git' => true, '.v' => true)
+            array('CVS' => true, '.svn' => true, '.git' => true, '.v' => true)
 
         );
         usort($folders, 'serendipity_sortPath');
