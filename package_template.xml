@@ -2433,8 +2433,8 @@
 <name>RTL-Languages</name>
 <template>default-rtl</template>
 <license>(BSD license)</license>
-<summary>Language dependent Right-To-Left written RTL-Theme [still needs some love!] as v0.4</summary>
-<description>Simple example theme from 2006 in right-to-left oriented manner, depending on the old styled default (Serendipity 2.3) theme.</description>
+<summary>THEME_INFO_SUMMARY (text in lang_info_en.inc.php pattern)</summary>
+<description>THEME_INFO_DESC (and LANG_CHARSET depending language files)</description>
 <recommended></recommended>
 <responsive>Partly Yes</responsive>
 <mobile>No</mobile>
@@ -2487,12 +2487,8 @@
 <name>XML Engine (Dev)</name>
 <template>default-xml</template>
 <license>(BSD license)</license>
-<summary>Raw XML output XML-Template theme for the Serendipity Styx Blog system</summary>
-<description>Simple theme from 2006, newly refurbished to work with Serendipity Styx Edition.
-This theme outputs raw XML on the frontside, to make the content readable by XML-Readers.
-It does still effect some minor plugin integrations on the backend side, like linktrimmer or amazonchooser,
-and is more or less meant to be used in a non-too-much-extended core release blog,
-though it does works with some well known plugin apps, like staticpages, freetags etc.</description>
+<summary>THEME_INFO_SUMMARY (text in lang_info_en.inc.php pattern)</summary>
+<description>THEME_INFO_DESC (and LANG_CHARSET depending language files)</description>
 <recommended></recommended>
 <responsive></responsive>
 <mobile></mobile>
@@ -3817,8 +3813,8 @@ though it does works with some well known plugin apps, like staticpages, freetag
 <name>Idea</name>
 <template>idea</template>
 <license>(BSD license)</license>
-<summary>CSS complete theme only.</summary>
-<description>Simple example theme from 2004 using all the template files from the old default fallback (Serendipity 2.3) theme. Styled by CSS only.</description>
+<summary>THEME_INFO_SUMMARY (text in lang_info_en.inc.php pattern)</summary>
+<description>THEME_INFO_DESC (and LANG_CHARSET depending language files)</description>
 <recommended></recommended>
 <responsive>Partly Yes</responsive>
 <mobile>No</mobile>
@@ -8195,7 +8191,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-15</date>
+  <date>2020-06-10</date>
   <filelist>
     <dir name="xkur">
       <file>config.inc.php</file>
