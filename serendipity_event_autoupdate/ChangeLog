@@ -1,3 +1,9 @@
+1.7.0
+------
+
+ * Add NEW option to remove all existing old upgrade zip binaries, which can eat up valuable space.
+   The recommended settings is YES. But defaults false for upgraders.
+
 1.6.4
 ------
 

@@ -8,6 +8,8 @@
 @define('PLUGIN_EVENT_AUTOUPDATE_DL_URL_DESC', 'Definieren Sie hier eine URL wie diese: "https://github.com/name/repo/releases/download/". Ihr benutzerdefiniertes Verzeichnis/Datei-Schema muss mit "$version/serendipity-$version.zip" enden (ersetzen Sie $version mit dem Versionnummern String aus ihrer benutzerdefinierten RELEASE-Datei, zB. "2.1.5/serendipity-2.1.5.zip"). Sie können die URL zu Letzterer in der Backend Konfiguration, unter dem Optionsblock "Generelle Einstellungen" hinterlegen. Lassen Sie ansonsten die angegebene Styx Default-URL hier unverändert stehen!');
 @define('PLUGIN_EVENT_AUTOUPDATE_RF_URL', 'Benutzerdefinierte (GitHub?) release tag URL');
 @define('PLUGIN_EVENT_AUTOUPDATE_RF_URL_DESC', 'Definieren Sie hier eine URL wie diese: "https://github.com/name/repo/releases/tag/". Ihr benutzerdefinierter Dateiname muss "$version" heißen (ersetzen Sie $version mit dem Versionnummern String aus ihrer benutzerdefinierten RELEASE-Datei, zB. "2.1.5"). Sie können die URL zu Letzterer in der Backend Konfiguration, unter dem Optionsblock "Generelle Einstellungen" hinterlegen. Lassen Sie ansonsten die angegebene Styx Default-URL hier unverändert stehen!');
+@define('PLUGIN_EVENT_AUTOUPDATE_REMOVE_ZIPS', 'Erlaube alle alten zip-upgrade Dateien zu entfernen?');
+@define('PLUGIN_EVENT_AUTOUPDATE_REMOVE_ZIPS_DESC', 'Empfehlung (ja)!');
 
 @define('PLUGIN_EVENT_AUTOUPDATE_CHECK', 'SICHERHEITSHINWEIS:\n\nHaben Sie bereits auf Plugin UPDATES geprüft?\nHaben Sie wirklich das MODEMAINTAIN Plugin installiert und den Wartungsmodus für dieses Update angestellt?\n\nDrücken Sie OK, um mit dem AUTOUPDATE fortzufahren.');
 
@@ -63,7 +65,7 @@
 @define('PLUGIN_AUTOUPD_MSG_DUNNE_JS', "Autoupdate erfolgreich durchgeführt!\\nWir leiten nun zum Serendipity Installer um!\\n"); // KEEP double quotes and escape for js
 @define('PLUGIN_AUTOUPD_MSG_DUNNE_OK', 'Autoupdate erfolgreich durchgeführt - leite zum Serendipity Installer um...');
 
-#@define('PLUGIN_AUTOUPD_MSG_CLEAN_ZIP', 'Entfernen der Zip-Datei in "<span class="dir">templates_c</span>" erfolgt!'); // currently not used
+@define('PLUGIN_AUTOUPD_MSG_CLEAN_ZIPS', 'Entfernung von %d alten Zip-Dateien in "<span class="dir">templates_c</span>" erfolgt!');
 @define('PLUGIN_AUTOUPD_MSG_CLEAN_FILES', 'Entfernen aller Dateien in "<span class="dir">%s</span>" erfolgt!');
 @define('PLUGIN_AUTOUPD_MSG_CLEAN_DIR', 'Löschen des leeren Verzeichnisses: "<span class="dir">%s</span>" erfolgt!');
 @define('PLUGIN_AUTOUPD_MSG_CLEAN_DIR_FAILED', 'Löschen des leeren Verzeichnisses: "<span class="dir">%s</span>" fehlgeschlagen!');

@@ -18,8 +18,8 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.6.4');
-        $propbag->add('configuration', array('download_url', 'releasefile_url'));
+        $propbag->add('version',       '1.7.0');
+        $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'php'         => '5.2'
@@ -50,6 +50,13 @@ class serendipity_event_autoupdate extends serendipity_event
                 $propbag->add('name',        PLUGIN_EVENT_AUTOUPDATE_RF_URL);
                 $propbag->add('description', PLUGIN_EVENT_AUTOUPDATE_RF_URL_DESC);
                 $propbag->add('default',     'https://github.com/ophian/styx/releases/tag/');
+                break;
+
+            case 'purge_zips':
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_AUTOUPDATE_REMOVE_ZIPS);
+                $propbag->add('description', PLUGIN_EVENT_AUTOUPDATE_REMOVE_ZIPS_DESC);
+                $propbag->add('default',     'false');
                 break;
 
             default:
@@ -831,6 +838,10 @@ EOS;
         }
         // We now clear all compiled Smarty template files of the current used template in templates_c and only leave the page we are on: eg. "/serendipity/templates/2styx/admin/index.tpl"
         if ($finish) {
+            // purge all previously fetched upgrade binaries, since that can easily mount up to 100+MB
+            if (serendipity_db_bool($this->get_config('purge_zips', 'false'))) {
+                $this->cleanUpgradeZipBinaries($version);
+            }
             // The Smarty method clearCompiledTemplate() clears all compiled Smarty template files in templates_c and is loaded dynamically by the extension handler when called.
             // We had to reduce this call() purging all tpl files, to clear the Blogs current template files only, to not have the following automated recompile, force the servers memory
             // to get exhausted, when using huge Smarty compiles like in serendipity_event_gravatar plugin, which can eat up some MB...
@@ -854,6 +865,29 @@ EOS;
             return true;
         }
         return false;
+    }
+
+    /**
+     * Delete all previous auto upgrade zip binaries
+     *
+     * @param   string version
+     * @return  boolean
+     */
+    protected function cleanUpgradeZipBinaries($version)
+    {
+        global $serendipity;
+
+        $files = glob($serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/serendipity-*.zip');
+        $i = 0;
+        foreach($files AS $file){
+            if (is_file($file) && preg_match('/serendipity-(\d+\.\d+(-(beta|rc)\d|\.\d+))\.zip/', $file, $matches) && $file != "serendipity-$version.zip") {
+                unlink($file);
+                $i++;
+            }
+        }
+        if ($i > 0) {
+            return $this->show_message('<p class="msg_success"><svg class="icon icon-ok" title="success"><use xlink:href="#icon-ok"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_CLEAN_ZIPS, $i) . '</p>');
+        }
     }
 
 }

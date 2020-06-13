@@ -8,6 +8,8 @@
 @define('PLUGIN_EVENT_AUTOUPDATE_DL_URL_DESC', 'Please set an URL like this: "https://github.com/name/repo/releases/download/". Your custom location dir/file-pattern has to end with "$version/serendipity-$version.zip" (replace $version with the version string provided in your custom RELEASE-file, eg. "2.1.5/serendipity-2.1.5.zip"). You can set the latter in the Backend configuration - general setting option block. Else leave this Styx default-URL untouched!');
 @define('PLUGIN_EVENT_AUTOUPDATE_RF_URL', 'Custom (GitHub?) release tag URL');
 @define('PLUGIN_EVENT_AUTOUPDATE_RF_URL_DESC', 'Please set an URL like this: "https://github.com/name/repo/releases/tag/". Your custom location page name must be named "$version" (replace $version with the version string provided in your custom RELEASE-file, eg. "2.1.5"). You can set the latter in the Backend configuration - general setting option block. Else leave this Styx default-URL untouched!');
+@define('PLUGIN_EVENT_AUTOUPDATE_REMOVE_ZIPS', 'Enable to remove all previously fetched upgrade zip binaries?');
+@define('PLUGIN_EVENT_AUTOUPDATE_REMOVE_ZIPS_DESC', 'Recommendation (yes)!');
 
 @define('PLUGIN_EVENT_AUTOUPDATE_CHECK', 'SECURITY ADVICE:\n\nDid you already check for plugin UPDATES?\nDo you really have the MODEMAINTAIN plugin installed and is the Maintenance-Mode enabled and ON for the current upgrade?\n\nPress OK to continue with the AUTOUPDATE.');
 
@@ -63,7 +65,7 @@
 @define('PLUGIN_AUTOUPD_MSG_DUNNE_JS', "Autoupdate successfully done!\\nWe now refresh to the Serendipity Installer!\\n"); // KEEP double quotes and escape for js
 @define('PLUGIN_AUTOUPD_MSG_DUNNE_OK', 'Autoupdate successfully done - refreshing to Serendipity Installer...');
 
-#@define('PLUGIN_AUTOUPD_MSG_CLEAN_ZIP', 'Removing the zip file in "<span class="dir">templates_c</span>" done!'); // currently not used
+@define('PLUGIN_AUTOUPD_MSG_CLEAN_ZIPS', 'Removing %d zip files in "<span class="dir">templates_c</span>" done!');
 @define('PLUGIN_AUTOUPD_MSG_CLEAN_FILES', 'Removing all files in "<span class="dir">%s</span>" done!');
 @define('PLUGIN_AUTOUPD_MSG_CLEAN_DIR', 'Removing the empty directory: "<span class="dir">%s</span>" done!');
 @define('PLUGIN_AUTOUPD_MSG_CLEAN_DIR_FAILED', 'Removing the empty directory: "<span class="dir">%s</span>" failed!');
