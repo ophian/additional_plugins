@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.7.0');
+        $propbag->add('version',       '1.7.1');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -880,7 +880,7 @@ EOS;
         $files = glob($serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/serendipity-*.zip');
         $i = 0;
         foreach($files AS $file){
-            if (is_file($file) && preg_match('/serendipity-(\d+\.\d+(-(beta|rc)\d|\.\d+))\.zip/', $file, $matches) && $file != "serendipity-$version.zip") {
+            if (is_file($file) && preg_match('/serendipity-(\d+\.\d+(-(beta|rc)\d|\.\d+))\.zip/', $file, $matches) && basename($file) != "serendipity-$version.zip") {
                 unlink($file);
                 $i++;
             }
