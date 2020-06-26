@@ -1,6 +1,8 @@
+4.14.1.2:
+---------
 4.14.1.1:
 ---------
-    * Improved the upgrade build, to pack everything not explicitely configurable by this plugin
+    * Improved the upgrade build, to pack everything not explicitly configurable by this plugin
       into the ckeditor.js file itself, which massively improves the load by much less add-on requests.
       This also lowers the size of the install and upgrade zip file about minus 400kb.
       And it helps to build these upgrades more easily.

@@ -135,8 +135,8 @@ class serendipity_event_ckeditor extends serendipity_event
                 }
                 // remove lineutils/dev samples directory
                 if (is_file(dirname(__FILE__) . '/ckeditor/plugins/lineutils/dev/dnd.html')) {
-                    $this->empty_dir(dirname(__FILE__) . '/ckeditor/lineutils/dev');
-                    @rmdir(dirname(__FILE__) . '/ckeditor/lineutils/dev');
+                    $this->empty_dir(dirname(__FILE__) . '/ckeditor/plugins/lineutils/dev');
+                    @rmdir(dirname(__FILE__) . '/ckeditor/plugins/lineutils/dev');
                 }
                 // remove usused placeholder plugin
                 if (is_file(dirname(__FILE__) . '/ckeditor/plugins/placeholder/plugin.js')) {
@@ -162,7 +162,7 @@ class serendipity_event_ckeditor extends serendipity_event
                     unset($_COOKIE['KCFINDER_view']);
                 }
                 // remove all additional plugins which are now build in (customized) and don't need to be configurable
-                $rips = ['ajax, autogrow, autolink, button, fakeobjects, floatpanel, lineutils, mediaembed, notification, notificationaggregator, panelbutton, textmatch, textwatcher, toolbar, undo, widgetselection, xml'];
+                $rips = ['ajax', 'autogrow', 'autolink', 'button', 'fakeobjects', 'floatpanel', 'lineutils', 'mediaembed', 'notification', 'notificationaggregator', 'panelbutton', 'textmatch', 'textwatcher', 'toolbar', 'undo', 'widgetselection', 'xml'];
                 $this->cleanupAddOns($rips);
                 // extracted, continue to set this version into config
             } else {
@@ -191,7 +191,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.14.1.1'); // is CKEDITOR Series 4.14.1 - and appended plugin revision .1
+        $propbag->add('version',       '4.14.1.2'); // is CKEDITOR Series 4.14.1 - and appended plugin revision .2
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
@@ -390,9 +390,11 @@ class serendipity_event_ckeditor extends serendipity_event
     }
 
     /**
-     * Remove list of all additional plugins which are now build in (customized) ckeditor.js file and don't need to be configurable by this ckeplus plugin
+     * Remove a list of all additional plugins which are now build into the (customized) ckeditor.js file
+     * and do not need to be explicitly configurable by this CKEplus plugin
      */
-    function cleanupAddOns($plugins=array()) {
+    private function cleanupAddOns($plugins=array())
+    {
         foreach ($plugins AS $plugin) {
             if (is_file(dirname(__FILE__) . "/ckeditor/plugins/$plugin/plugin.js")) {
                 $this->empty_dir(dirname(__FILE__) . "/ckeditor/plugins/$plugin");
@@ -438,7 +440,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.14.1.1', '4.14.1.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.14.1.2', '4.14.1.1'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -452,7 +454,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.14.1.1', '4.14.1.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.14.1.2', '4.14.1.1'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
