@@ -49,7 +49,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.14.1.0-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.14.1.1-plus.zip';
 
     /**
      * Access property checkUpdateVersion
@@ -57,7 +57,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.14.1.0');
+    protected $checkUpdateVersion = array('ckeditor:4.14.1.1');
 
     /**
      * Access property revisionPackage
@@ -161,6 +161,9 @@ class serendipity_event_ckeditor extends serendipity_event
                     unset($_COOKIE['KCFINDER_orderDesc']);
                     unset($_COOKIE['KCFINDER_view']);
                 }
+                // remove all additional plugins which are now build in (customized) and don't need to be configurable
+                $rips = ['ajax, autogrow, autolink, button, fakeobjects, floatpanel, lineutils, mediaembed, notification, notificationaggregator, panelbutton, textmatch, textwatcher, toolbar, undo, widgetselection, xml'];
+                $this->cleanupAddOns($rips);
                 // extracted, continue to set this version into config
             } else {
                 $this->set_config('installer', '1-'.date('Ymd-H:i:s'));
@@ -188,7 +191,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.14.1.0'); // is CKEDITOR Series 4.14.1 - and appended plugin revision .0
+        $propbag->add('version',       '4.14.1.1'); // is CKEDITOR Series 4.14.1 - and appended plugin revision .1
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
@@ -387,6 +390,18 @@ class serendipity_event_ckeditor extends serendipity_event
     }
 
     /**
+     * Remove list of all additional plugins which are now build in (customized) ckeditor.js file and don't need to be configurable by this ckeplus plugin
+     */
+    function cleanupAddOns($plugins=array()) {
+        foreach ($plugins AS $plugin) {
+            if (is_file(dirname(__FILE__) . "/ckeditor/plugins/$plugin/plugin.js")) {
+                $this->empty_dir(dirname(__FILE__) . "/ckeditor/plugins/$plugin");
+                @rmdir(dirname(__FILE__) . "/ckeditor/plugins/$plugin");
+            }
+        }
+    }
+
+    /**
      * Downgrade of version to keep plugin version track with CKE versioning for upcoming next major upgrades!
      * This method is temporary only!
      * @see updateConfig()
@@ -423,7 +438,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.14.1.0', '4.14.0.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.14.1.1', '4.14.1.0'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -437,7 +452,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.14.1.0', '4.14.0.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.14.1.1', '4.14.1.0'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);

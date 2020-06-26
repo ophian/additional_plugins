@@ -1,9 +1,16 @@
+4.14.1.1:
+---------
+    * Improved the upgrade build, to pack everything not explicitely configurable by this plugin
+      into the ckeditor.js file itself, which massively improves the load by much less add-on requests.
+      This also lowers the size of the install and upgrade zip file about minus 400kb.
+      And it helps to build these upgrades more easily.
+
 4.14.1.0:
 ---------
     * Upgrade to CKEDITOR 4.14. Series, update 1 (https://ckeditor.com/cke4/release-notes).
       Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
     * This update tries to to add all manually added plugins automatically customized without adding
-      them embded to the ckeditor.js file. So the zip is slightly lighter in weight.
+      them embedded to the ckeditor.js file. So the zip is slightly lighter in weight.
       Please tell me if you get any behaviour differences.
 
 4.14.0.0:
