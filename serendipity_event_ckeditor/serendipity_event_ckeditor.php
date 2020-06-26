@@ -191,7 +191,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.14.1.2'); // is CKEDITOR Series 4.14.1 - and appended plugin revision .2
+        $propbag->add('version',       '4.14.1.3'); // is CKEDITOR Series 4.14.1 - and appended plugin revision .3
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
@@ -339,6 +339,8 @@ class serendipity_event_ckeditor extends serendipity_event
 
     function example()
     {
+        global $serendipity;
+
         $s = '';
         if (serendipity_db_bool($this->get_config('force_install'))) {
             $this->forceZipInstall = true;
@@ -440,7 +442,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.14.1.2', '4.14.1.1'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.14.1.3', '4.14.1.2'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -454,7 +456,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.14.1.2', '4.14.1.1'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.14.1.3', '4.14.1.2'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
