@@ -1,6 +1,6 @@
 4.14.1.4:
 ---------
-    * Fix an unitialized variable
+    * Fix an uninitialized variable
 
 4.14.1.3:
 ---------
