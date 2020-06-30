@@ -1,5 +1,5 @@
 {*
-    plugin_guestbook_entries.tpl for v.3.69 - 2018-12-27
+    plugin_guestbook_entries.tpl for v.3.77 - 2020-06-30
 *}
 
 {if $plugin_guestbook_articleformat}
@@ -50,7 +50,7 @@
                            {$entry.timestamp}
                       </dt>
                       {if $entry.homepage}
-                      <dt>{$CONST.TEXT_USERS_HOMEPAGE}: <a href="{$entry.homepage}" target="_blank">{$entry.homepage|truncate:24:'&hellip;'}</a></dt>
+                      <dt>{$CONST.TEXT_USERS_HOMEPAGE}: <a href="{$entry.homepage}" target="_blank" rel="noopener">{$entry.homepage|truncate:24:'&hellip;'}</a></dt>
                       {/if}
 
                     </dl>

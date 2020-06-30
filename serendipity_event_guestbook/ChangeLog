@@ -1,3 +1,8 @@
+3.77:
+----
+ * Secure plugin_guestbook_entries.tpl and plugin_guestbook_backend_entries.tpl target="_blank" link homepage URL.
+   If you have your own theme template file(s) please add the default rel="noopener" attribute.
+
 3.76:
 ----
  * Unset wordwrap body text in case of using serendipity_event_emoticate plugin

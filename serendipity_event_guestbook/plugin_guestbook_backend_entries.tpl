@@ -1,5 +1,5 @@
 {*
-     plugin_guestbook_backend_entries.tpl for v.3.66 - 2018-08-05
+     plugin_guestbook_backend_entries.tpl for v.3.77 - 2020-06-30
 *}
 
 <!-- plugin_guestbook_backend_entries start -->
@@ -84,7 +84,7 @@
                 {if $entry.homepage}
 
                     <span>
-                        {$CONST.TEXT_USERS_HOMEPAGE}: <a href="{$entry.homepage}" title="{$entry.homepage}" target="_blank">{$entry.homepage|truncate:24:'&hellip;'}</a>
+                        {$CONST.TEXT_USERS_HOMEPAGE}: <a href="{$entry.homepage}" title="{$entry.homepage}" target="_blank" rel="noopener">{$entry.homepage|truncate:24:'&hellip;'}</a>
                     </span>
                 {/if}
 
