@@ -4,10 +4,14 @@ TODO:
 * Collect all tweets of a day/week/whatever of the blog owner
   into one article and publish it daily/weekly/whatever
 * "check tweetback" link should add new tweetbacks immediately
-* Link twitter accs with s9y accs. Only s9y autors linked to a
+* Link twitter accs with s9y accs. Only s9y authors linked to a
   twitter acc should be able to create tweets with that acc.
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
+
+1.73:
+-----
+ * Secure some external target _blank links
 
 1.72:
 -----

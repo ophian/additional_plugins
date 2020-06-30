@@ -140,11 +140,11 @@
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_FORMAT',         'Ankündigungsformat');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_FORMAT_DESC',    'Hier wird die Formatierung von Ankündigungen beschrieben. Es sollten Platzhalter benutzt werden, um sinnvolle Ankündigungen zu erhalten. #title#: Ersetzt durch den Titel des Artikels (mit Tagersetzungen); #link#: Der Link auf den Blogeintrag; #autor#: Autor des Artikels; #tags#: Übrig gebliebende Tags.');
 
-@define('PLUGIN_EVENT_TWITTER_ANNOUNCE_BITLYDESC',    	'<h3>bitly Benutzername und API Key</h3><b>bit.ly</b> und <b>j.mp</b> KurzURLs benötigen ein bitly login und einen API Key. Wenn Du keine der beiden benutzt, ist diese Einstellung für Dich irrelevant.<br/>Der API Key, der hier eingetragen ist, wird die meiste Zeit über nicht funktionieren, da es ein Demo Key und seine Ratio meist überschritten ist. Wenn Du einen bitly Account hast, so trage Deinen eigenen Namen und API Key ein.<br/><a href="http://bitly.com/a/your_api_key/" target="_blank">Hier findest Du beides</a>.');
+@define('PLUGIN_EVENT_TWITTER_ANNOUNCE_BITLYDESC',    	'<h3>bitly Benutzername und API Key</h3><b>bit.ly</b> und <b>j.mp</b> KurzURLs benötigen ein bitly login und einen API Key. Wenn Du keine der beiden benutzt, ist diese Einstellung für Dich irrelevant.<br/>Der API Key, der hier eingetragen ist, wird die meiste Zeit über nicht funktionieren, da es ein Demo Key und seine Ratio meist überschritten ist. Wenn Du einen bitly Account hast, so trage Deinen eigenen Namen und API Key ein.<br/><a href="http://bitly.com/a/your_api_key/" target="_blank" rel="noopener">Hier findest Du beides</a>.');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_BITLYLOGIN',    	'bit.ly Benutzername');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_BITLYAPIKEY',	'bit.ly API Key');
 
-@define('PLUGIN_EVENT_TWITTER_ANNOUNCE_PIRATLYDESC',    '<h3>pirat.ly API Token</h3>Für <b>pirat.ly</b> KurzURLs kannst Du Dir ein API token abholen, <a href="http://pirat.ly/account" target="_blank">indem Du Dich kostenlos bei dem Service registrierst</a>. Wenn das API Token bei der Artikel Ankündigung verwendet wird, kannst Du die Klick Raten der URL über das piratly Webinterface oder auf dem Android Handy mittels der <a href="http://pirat.ly/shortenerrr" target="_blank">Shortenerrr App</a> beobachten.');
+@define('PLUGIN_EVENT_TWITTER_ANNOUNCE_PIRATLYDESC',    '<h3>pirat.ly API Token</h3>Für <b>pirat.ly</b> KurzURLs kannst Du Dir ein API token abholen, <a href="http://pirat.ly/account" target="_blank" rel="noopener">indem Du Dich kostenlos bei dem Service registrierst</a>. Wenn das API Token bei der Artikel Ankündigung verwendet wird, kannst Du die Klick Raten der URL über das piratly Webinterface oder auf dem Android Handy mittels der <a href="http://pirat.ly/shortenerrr" target="_blank" rel="noopener">Shortenerrr App</a> beobachten.');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_PIRATLYAPIKEY',  'Dein persönliches piratly API Token');
 
 @define('PLUGIN_EVENT_TWITTER_CFGTAB_TWEETTHIS',        'Tweet This!');
@@ -201,7 +201,7 @@ Du must aktuell bei Twitter entweder ausgeloggt oder mit dem <b>richtigen Twitte
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_ARTICLES_NO',     'Artikel standardmäßig nicht via Microblogging veröffentlichen');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_ARTICLES_NO_DESC','Wenn aktiviert, werden neue Artikel nur dann via Microblogging veröffentlicht, wenn dies ausdrücklich angegeben wird.');
 
-@define('PLUGIN_EVENT_TWITTER_GENERALCONSUMER',        '<h3>Dein eigener Twitter Client</h3>Normaler Weise nimmt das Plugin einen Twitter Client namens \'s9y\'. Du kannst aber auch <a href="https://dev.twitter.com/apps" target="_blank">Deinen eigenen Twitter Client registrieren</a> und dann den consumer key und das secret hier eintragen, wenn Du möchtest.');
+@define('PLUGIN_EVENT_TWITTER_GENERALCONSUMER',        '<h3>Dein eigener Twitter Client</h3>Normaler Weise nimmt das Plugin einen Twitter Client namens \'s9y\'. Du kannst aber auch <a href="https://dev.twitter.com/apps" target="_blank" rel="noopener">Deinen eigenen Twitter Client registrieren</a> und dann den consumer key und das secret hier eintragen, wenn Du möchtest.');
 
 @define('PLUGIN_TWITTER_FILTER_RT',                    	'Native Retweets filtern');
 @define('PLUGIN_TWITTER_FILTER_RT_DESC',               	'Sollen native Retweets gefiltert werden? (Nur für die Twitter API 1.1, API 1.0 filtert diese immer heraus)');

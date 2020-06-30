@@ -219,15 +219,15 @@ Musíte se prihlásit nebo odhlásit s <b>odpovídajícím úctem Twitteru</b>!<br/>
 @define('PLUGIN_TWITTER_FOLLOWME_WIDGET_COUNT_DESC',    'Pokud je povoleno, widget zobrazuje pocet followeru.');
 @define('PLUGIN_TWITTER_FOLLOWME_WIDGET_DARK',          'Widget sledování Twitter na tmavém pozadí');
 @define('PLUGIN_TWITTER_FOLLOWME_WIDGET_DARK_DESC',     'Pokud Vaše šablona používá tmavé pozadí, meli byste toto povolit.');
-@define('PLUGIN_EVENT_TWITTER_ANNOUNCE_BITLYDESC',      '<h3>uživatelské jméno bit.ly a API klíc</h3><b>bit.ly</b> a <b>j.mp</b> zkracovace URL adres potrebují prihlašovací jméno k bit.ly a API klíc. Pokud ani jeden z techto zkracovacu nepoužíváte, nemeli byste je potrebovat.<br/>Výchozí klíc vetšinou nefunguje, protože je to demo klíc a jeho kvóta je pravidelne precerpána. Pokud máte úcet na bit.ly account, meli byste zadat vlastní prihlašovací údaje.<br/><a href="http://bitly.com/a/your_api_key/" target="_blank">Najdete je tady</a>.');
+@define('PLUGIN_EVENT_TWITTER_ANNOUNCE_BITLYDESC',      '<h3>uživatelské jméno bit.ly a API klíc</h3><b>bit.ly</b> a <b>j.mp</b> zkracovace URL adres potrebují prihlašovací jméno k bit.ly a API klíc. Pokud ani jeden z techto zkracovacu nepoužíváte, nemeli byste je potrebovat.<br/>Výchozí klíc vetšinou nefunguje, protože je to demo klíc a jeho kvóta je pravidelne precerpána. Pokud máte úcet na bit.ly account, meli byste zadat vlastní prihlašovací údaje.<br/><a href="http://bitly.com/a/your_api_key/" target="_blank" rel="noopener">Najdete je tady</a>.');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_BITLYLOGIN',     'Uživatelské jméno bit.ly');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_BITLYAPIKEY',    'bit.ly API klíc');
-@define('PLUGIN_EVENT_TWITTER_GENERALCONSUMER',         '<h3>Vlastní twitter klient</h3>Ve výchozím nastavení používá plugin klienta \'s9y\'. Mužete si <a href="https://dev.twitter.com/apps" target="_blank">zaregistrovat vlastního klienta</a> a nastavit consumer klíc a heslo vašeho klienta.');
+@define('PLUGIN_EVENT_TWITTER_GENERALCONSUMER',         '<h3>Vlastní twitter klient</h3>Ve výchozím nastavení používá plugin klienta \'s9y\'. Mužete si <a href="https://dev.twitter.com/apps" target="_blank" rel="noopener">zaregistrovat vlastního klienta</a> a nastavit consumer klíc a heslo vašeho klienta.');
 
 // Next lines were translated on 2013/03/31
 
 @define('PLUGIN_EVENT_TWITTER_TWEETER_UPDATE',           'Update');
-@define('PLUGIN_EVENT_TWITTER_ANNOUNCE_PIRATLYDESC',     '<h3>pirat.ly API token</h3>Pro zkrácené odkaz <b>pirat.ly</b> mužete <a href="http://pirat.ly/account" target="_blank">získat API token tím, že se zdarma registrujete na službe piratly</a>. Použitím tohoto API tokenu pri oznamování Vašich príspevku mužete prohlížet pocty prokliku bud pomocí webového rozhraní nebo na zarízení s Androidem pomocí <a href="http://pirat.ly/shortenerrr" target="_blank">aplikace Shortenerrr</a>.');
+@define('PLUGIN_EVENT_TWITTER_ANNOUNCE_PIRATLYDESC',     '<h3>pirat.ly API token</h3>Pro zkrácené odkaz <b>pirat.ly</b> mužete <a href="http://pirat.ly/account" target="_blank" rel="noopener">získat API token tím, že se zdarma registrujete na službe piratly</a>. Použitím tohoto API tokenu pri oznamování Vašich príspevku mužete prohlížet pocty prokliku bud pomocí webového rozhraní nebo na zarízení s Androidem pomocí <a href="http://pirat.ly/shortenerrr" target="_blank" rel="noopener">aplikace Shortenerrr</a>.');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_PIRATLYAPIKEY',   'Váš osobní piratly API token');
 @define('PLUGIN_TWITTER_FILTER_RT',                      'FIltrovat nativní retweety');
 @define('PLUGIN_TWITTER_FILTER_RT_DESC',                 'Mají se filtrovat nativní retweety? (pouze pro Twitter API 1.1; API 1.0 filtruje vždy)');
@@ -241,7 +241,7 @@ Musíte se prihlásit nebo odhlásit s <b>odpovídajícím úctem Twitteru</b>!<br/>
 @define('PLUGIN_EVENT_TWITTER_API_11',                   'API 1.1 OAuth');
 
 // Next lines were translated on 2013/10/26
-@define('PLUGIN_EVENT_TWITTER_ANNOUNCE_YOURLSDESC',      '<h3>Yourls doména a API klíc</h3>Zkracovac adres <b>yourls</b> vlastní nastavení a API klíc. Pokud žádné nemáte, nebudete toto nastavení potrebovat.<br/>Výchozí klíc není funkcní<br/><a href="http://yourls.org/" target="_blank">Prectete si o zkracovaci URL adres yourls</a>. Nepoužívejte prosím bez <a href="https://bitbucket.org/laceous/yourls-concurrency-fix" target="_blank">opravy konfliktu</a> pluginu YOURIS.');
+@define('PLUGIN_EVENT_TWITTER_ANNOUNCE_YOURLSDESC',      '<h3>Yourls doména a API klíc</h3>Zkracovac adres <b>yourls</b> vlastní nastavení a API klíc. Pokud žádné nemáte, nebudete toto nastavení potrebovat.<br/>Výchozí klíc není funkcní<br/><a href="http://yourls.org/" target="_blank" rel="noopener">Prectete si o zkracovaci URL adres yourls</a>. Nepoužívejte prosím bez <a href="https://bitbucket.org/laceous/yourls-concurrency-fix" target="_blank" rel="noopener">opravy konfliktu</a> pluginu YOURIS.');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_YOURLSURL',       'Vaše Yourls doména');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_YOURLSAPIKEY',    'Yourls API klíc');
 

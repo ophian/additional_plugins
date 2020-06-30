@@ -260,7 +260,7 @@ class serendipity_event_twitter extends serendipity_plugin
                         // OAuth token and key is setup: Delete connection
                         $linkdel = $serendipity['baseURL'] . $serendipity['indexFile'] . '?/' . TwitterPluginFileAccess::get_permaplugin_path() . '/twitteroa-del=' . $idx;
                         $propbag->add('type', 'content');
-                        $propbag->add('default', PLUGIN_EVENT_TWITTER_VERBINDUNG_OK . ' <a padding-left: 30px;" href="' . $linkdel . '" target="_blank" onclick="window.open(\''.$linkdel.'\',\'\',\'width=800,height=400\'); return false">'.PLUGIN_EVENT_TWITTER_VERBINDUNG_DEL.'</a>');
+                        $propbag->add('default', PLUGIN_EVENT_TWITTER_VERBINDUNG_OK . ' <a padding-left: 30px;" href="' . $linkdel . '" target="_blank" rel="noopener" onclick="window.open(\''.$linkdel.'\',\'\',\'width=800,height=400\'); return false">'.PLUGIN_EVENT_TWITTER_VERBINDUNG_DEL.'</a>');
                     } else {
                         // OAuth not yet setup, but we have consumer key/secret: Login and connect application
                         $url = $serendipity['baseURL'] . $serendipity['indexFile'] . '?/' . TwitterPluginFileAccess::get_permaplugin_path() . '/twitteroa-redirect=' . $idx;
@@ -269,7 +269,7 @@ class serendipity_event_twitter extends serendipity_plugin
                         <p><div style="width: 151px;
                             height: 24px; line-height: 24px;
                             background: url(\'' . $this->get_config('plugin_rel_url') . '/img/signin.png\') no-repeat;">
-                            <a style="color: #fff; padding-left: 30px;" href="' . $url . '" target="_blank" onclick="window.open(\''.$url.'\',\'\',\'width=800,height=550\'); return false">' . PLUGIN_EVENT_TWITTER_SIGNIN . '</a></div></p>');
+                            <a style="color: #fff; padding-left: 30px;" href="' . $url . '" target="_blank" rel="noopener" onclick="window.open(\''.$url.'\',\'\',\'width=800,height=550\'); return false">' . PLUGIN_EVENT_TWITTER_SIGNIN . '</a></div></p>');
                     }
                 }
                 break;
@@ -1686,7 +1686,7 @@ a.twitter_update_time {
 
             $tweetthis_target = '';
             if (serendipity_db_bool($this->get_config('tweetthis_newwindow',false))) {
-                $tweetthis_target = ' target="_blank"';
+                $tweetthis_target = ' target="_blank" rel="noopener"';
             }
         }
 
@@ -1703,7 +1703,7 @@ a.twitter_update_time {
             //if ($do_tweetbacks && $_SESSION['serendipityAuthedUser'] && $addData['extended']) {
             if ($_SESSION['serendipityAuthedUser'] && $addData['extended']) {
                 $checkurl = $pluginurl. '/tweetback=' . $this->urlencode($entryurl);
-                $tweetback_check_msg = '<div class="serendipity_tweetback_check"><a target="_blank" href="' . $checkurl . '">check tweetbacks</a></div>';
+                $tweetback_check_msg = '<div class="serendipity_tweetback_check"><a target="_blank" rel="noopener" href="' . $checkurl . '">check tweetbacks</a></div>';
                 $eventData[$event_index]['add_footer'] .= $tweetback_check_msg;
             }
 
