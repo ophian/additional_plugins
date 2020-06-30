@@ -1,6 +1,11 @@
+1.18:
+-----
+ * Secure oembed.tpl target="_blank" link oembed URL.
+   If you have your own theme template file please add the default rel="noopener" attribute.
+
 1.17:
 -----
-  * Fixed PHP warning caused by typo in template and cleanup that file
+ * Fixed PHP warning caused by typo in template and cleanup that file
 
 1.16:
 -----
