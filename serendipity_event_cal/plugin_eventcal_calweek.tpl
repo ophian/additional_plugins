@@ -1,4 +1,4 @@
-{* file: plugin_eventcal_calweek.tpl - 2015-12-04, Ian *}
+{* file: plugin_eventcal_calweek.tpl - 2020-06-29, Ian *}
 
   {if $plugin_eventcal_cal_sedweek}
 
@@ -69,7 +69,7 @@
 
         <tr class="f0">
             <td class="eventcal_weekly_eventlabel"></td>
-            <td class="eventcal_weekly_eventtext" colspan="7">{$ad.ldesc|nl2br}{if $ad.url}<div class="eventcal_weekly_eventurl"><a href="{$ad.url}" target="_blank" title="{$ad.url}">&laquo; EVENT-URL &raquo;</a></div>{/if}</td>
+            <td class="eventcal_weekly_eventtext" colspan="7">{$ad.ldesc|nl2br}{if $ad.url}<div class="eventcal_weekly_eventurl"><a href="{$ad.url}" target="_blank" rel="noopener" title="{$ad.url}">&laquo; EVENT-URL &raquo;</a></div>{/if}</td>
         </tr>
 
         <tr class="a0">

@@ -1,4 +1,4 @@
-{* file: plugin_eventcal_entry.tpl - 2015-12-05, Ian *}
+{* file: plugin_eventcal_entry.tpl - 2020-06-29, Ian *}
 
 <!-- plugin_eventcal_entry.tpl start -->
 
@@ -20,7 +20,7 @@
                 <th>{$plugin_eventcal_entry_event.sdesc}</th>
                 <td rowspan="{if $is_logged_in}5{else}4{/if}" class="entry">{$plugin_eventcal_entry_ldesc}
                 {if $plugin_eventcal_entry_event.url}
-                    <br /><b>URL/MAIL</b>: <a href="{$plugin_eventcal_entry_event.url}" target="_blank">{$plugin_eventcal_entry_event.url}</a>
+                    <br /><b>URL/MAIL</b>: <a href="{$plugin_eventcal_entry_event.url}" target="_blank" rel="noopener">{$plugin_eventcal_entry_event.url}</a>
                 {/if}</td>
             </tr>
             <tr>

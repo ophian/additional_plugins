@@ -3,6 +3,12 @@
 * 
 
 
+1.87:
+----
+
+ * Secure plugin_eventcal_entry.tpl, plugin_eventcal_app.tpl and plugin_eventcal_calweek.tpl target="_blank" link event URL
+   If you have your own theme template file(s) please add the default rel="noopener" attribute.
+
 1.86:
 ----
 
