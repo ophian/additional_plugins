@@ -18,7 +18,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '1.81');
+        $propbag->add('version',       '1.82');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '7.2'
@@ -817,7 +817,7 @@ class serendipity_event_statistics extends serendipity_event
             if (is_array($top_refs)) {
                 echo "<ol>\n";
                 foreach($top_refs AS $key => $row) {
-                    echo '<li><a href="//'.$row['refs'].'" target="_blank">'.$row['refs'].'</a> ('.$row['count'].")</li>\n";
+                    echo '<li><a href="//'.$row['refs'].'" target="_blank" rel="noopener">'.$row['refs'].'</a> ('.$row['count'].")</li>\n";
                 }
                 echo "</ol>\n";
             } else {
