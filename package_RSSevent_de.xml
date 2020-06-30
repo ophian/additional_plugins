@@ -95,7 +95,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Terminkalender&lt;/b&gt;&lt;br /&gt;Zeigt einen Terminkalender innerhalb des Blogs mit dem Blog-Design und allen Formatierungen an. Unterstützt Backend/Frontend Administration, vielfache Termine und iCal Export. (Nur MySQL)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 11:00:03 +0200</pubDate>
+<pubDate>Mon, 29 Jun 2020 16:38:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
@@ -158,7 +158,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 06 Jan 2020 12:04:56 +0100</pubDate>
+<pubDate>Tue, 30 Jun 2020 09:42:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -284,7 +284,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_dsgvo_gdpr&lt;br /&gt;DSGVO / GDPR: Datenschutz-Grundverordnung&lt;/b&gt;&lt;br /&gt;Dieses Plugin soll Blog-Besitzern helfen, die Übereinstimmung mit dem Allgemeinen Datenschutzgesetz zu gewährleisten.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 23 Jan 2020 11:16:31 +0100</pubDate>
+<pubDate>Mon, 29 Jun 2020 19:10:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dsgvo_gdpr</guid>
 </item>
 <item>
@@ -329,7 +329,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Nächster/Voriger Artikel&lt;/b&gt;&lt;br /&gt;Ermöglicht beim Betrachten eines Eintrages in der Eintragsliste vor und zurück zu blättern&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 22 Mar 2020 08:19:06 +0100</pubDate>
+<pubDate>Mon, 29 Jun 2020 17:53:47 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
@@ -455,7 +455,7 @@
 <category>Event Plugins</category>
 <author>Rob Antonishen, Alexander Mieland</author>
 <content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;Markup: Gallery&lt;/b&gt;&lt;br /&gt;Fügt ein Gallery-Album oder Bild in Form von Markup ein.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 04 Jun 2020 16:37:14 +0200</pubDate>
+<pubDate>Mon, 29 Jun 2020 18:05:22 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_galleryimage</guid>
 </item>
 <item>
@@ -464,7 +464,7 @@
 <category>Event Plugins</category>
 <author>Zoran Kovacevic, Grischa Brockhaus, Matthias Gutjahr, Martin Sewelies</author>
 <content:encoded>&lt;b&gt;serendipity_event_geotag&lt;br /&gt;Geotag&lt;/b&gt;&lt;br /&gt;Erlaubt Einträge mit Geokoordinaten zu versehen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 05 Jun 2020 09:43:12 +0200</pubDate>
+<pubDate>Tue, 30 Jun 2020 10:35:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geotag</guid>
 </item>
 <item>
@@ -507,9 +507,9 @@
 <title>Google Analytics: Dieses Plugin fügt Google Analytics Funktionalität hinzu. So können auch externe Links oder Downloads verfolgt werden.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_google_analytics</link>
 <category>Event Plugins</category>
-<author>&lt;a href=&quot;https://github.com/kleinerChemiker&quot; target=&quot;_blank&quot;&gt;kleinerChemiker&lt;/a&gt;</author>
+<author>&lt;a href=&quot;https://github.com/kleinerChemiker&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;kleinerChemiker&lt;/a&gt;</author>
 <content:encoded>&lt;b&gt;serendipity_event_google_analytics&lt;br /&gt;Google Analytics&lt;/b&gt;&lt;br /&gt;Dieses Plugin fügt Google Analytics Funktionalität hinzu. So können auch externe Links oder Downloads verfolgt werden.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 21 Aug 2018 20:18:14 +0200</pubDate>
+<pubDate>Mon, 29 Jun 2020 13:14:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_google_analytics</guid>
 </item>
 <item>
@@ -536,7 +536,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Gästebuch&lt;/b&gt;&lt;br /&gt;Zeigt ein Gästebuch innerhalb des Blogs mit dem gewählten Design und allen Formatierungen an.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Sun, 12 Jan 2020 13:08:16 +0100</pubDate>
+<pubDate>Mon, 29 Jun 2020 13:26:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -563,7 +563,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Erweiterte Optionen für Bildauswahl&lt;/b&gt;&lt;br /&gt;Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediathek.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Mon, 27 Jan 2020 18:13:13 +0100</pubDate>
+<pubDate>Mon, 29 Jun 2020 13:08:25 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -797,7 +797,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
 <content:encoded>&lt;b&gt;serendipity_event_oembed&lt;br /&gt;oEmbed Plugin&lt;/b&gt;&lt;br /&gt;oEmbed ist ein Format für die eingebettete Darstellung einer URL in Ihrem Blog. Es erlaubt Blog-Artikeln, eingebettete Inhalte (wie Tweets, Fotos oder Videos) anzuzeigen, wenn ein Benutzer einen Link zu dieser Ressource veröffentlicht, ohne die Ressource direkt analysieren zu müssen.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 05 Sep 2018 09:59:29 +0200</pubDate>
+<pubDate>Mon, 29 Jun 2020 17:23:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_oembed</guid>
 </item>
 <item>
@@ -1013,7 +1013,7 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamschutz (Bayes)&lt;/b&gt;&lt;br /&gt;Filtert Kommentare mittels eines lernenden Algorithmus.&lt;br/&gt;For: Serendipity 2.1.2</content:encoded>
-<pubDate>Sun, 18 Aug 2019 18:28:21 +0200</pubDate>
+<pubDate>Mon, 29 Jun 2020 17:33:21 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statische Seiten&lt;/b&gt;&lt;br /&gt;Verwaltet beliebige statische Seiten innerhalb des Blogs mit dem Blog-Design und allen Formatierungen. Fügt einen neuen Menüpunkt in der Admin-Oberfläche hinzu!&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Fri, 15 May 2020 11:01:56 +0200</pubDate>
+<pubDate>Mon, 29 Jun 2020 17:41:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1076,7 +1076,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistiken&lt;/b&gt;&lt;br /&gt;Zeigt einen Link zu informativen Statistiken (inkl. Besucherzähler) in der Administrationsoberfläche an.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 04 Jun 2020 19:00:06 +0200</pubDate>
+<pubDate>Mon, 29 Jun 2020 13:12:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
@@ -1346,7 +1346,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Peter Heimann</author>
 <content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Microblogging (Twitter,Identica)&lt;/b&gt;&lt;br /&gt;Fügt einen Twitter/Identica Client zum Administrator Interface hinzu, sucht nach Tweetbacks und kündigt neue Artikel über Twitter/Identica Accounts an.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 04 Jun 2020 18:41:00 +0200</pubDate>
+<pubDate>Mon, 29 Jun 2020 18:03:16 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>
