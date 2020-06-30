@@ -22,7 +22,7 @@
                         <input id="serendipity[selected][{$comment.id}]" type="checkbox" class="bayesRecyclerSelectBox" name="serendipity[selected][{$comment.id}]">
                         <label for="serendipity[selected][{$comment.id}]" class="visuallyhidden">{$CONST.TOGGLE_SELECT}</label>
                     </div>
-                    <h4 id="c{$comment.id}">{$comment.author|truncate:20:"..."|escape:"html"} {$CONST.IN_REPLY_TO} <a href="{$comment.article_link}" target="_blank">{$comment.article_title}</a> {$CONST.ON} {$comment.timestamp|date_format:"%d.%m.%y, %R"} – <span title="{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_RATING}">{$comment.rating|regex_replace:"/\..*/":""}%</span> <button class="toggle_info button_link" type="button" data-href="#comment_data_{$comment.id}"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> More</span></button></h4>
+                    <h4 id="c{$comment.id}">{$comment.author|truncate:20:"..."|escape:"html"} {$CONST.IN_REPLY_TO} <a href="{$comment.article_link}" target="_blank" rel="noopener">{$comment.article_title}</a> {$CONST.ON} {$comment.timestamp|date_format:"%d.%m.%y, %R"} – <span title="{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_RATING}">{$comment.rating|regex_replace:"/\..*/":""}%</span> <button class="toggle_info button_link" type="button" data-href="#comment_data_{$comment.id}"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> More</span></button></h4>
 
                     <div id="comment_data_{$comment.id}" class="additional_info">
                         <dl class="comment_data clearfix">
