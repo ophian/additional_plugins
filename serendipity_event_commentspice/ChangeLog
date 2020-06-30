@@ -1,3 +1,7 @@
+1.16:
+-----
+ * Secure some external target _blank links
+
 1.15:
 -----
  * Fix a wrong path concatenation double slash

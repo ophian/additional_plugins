@@ -28,7 +28,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',        '1.15');
+        $propbag->add('version',        '1.16');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -927,7 +927,7 @@ class serendipity_event_commentspice extends serendipity_event
                         $eventData['comment'] = $followme_widget . '<br/>' . $eventData['comment'];
                     }
                     else {
-                        $eventData['comment'] = '<a href="' . $timeline_url . '" class="commentspice_twitterlink" target="_blank"' . ($timeline_url_nofollow ? ' rel="nofollow"' : '') . '>' . $twitter_icon_html .  ' ' . $twittername . '</a>' . '<br/>' . $eventData['comment'];
+                        $eventData['comment'] = '<a href="' . $timeline_url . '" class="commentspice_twitterlink" target="_blank" rel="noopener' . ($timeline_url_nofollow ? ' nofollow' : '') . '">' . $twitter_icon_html .  ' ' . $twittername . '</a>' . '<br/>' . $eventData['comment'];
                     }
                 }
             }
@@ -950,7 +950,7 @@ class serendipity_event_commentspice extends serendipity_event
                 $eventData['spice_article_nofollow'] = $spice_article_nofollow;
             }
             else {
-                $eventData['comment'] .= "<p class=\"commentspice_announce_article\">" . $spice_article_prefix . ": <a href=\"$spice_article_url\" target=\"_blank\"" . ($spice_article_nofollow ? ' rel="nofollow"' : '') . ">$spice_article_name</a></p>";
+                $eventData['comment'] .= "<p class=\"commentspice_announce_article\">" . $spice_article_prefix . ": <a href=\"$spice_article_url\" target=\"_blank\" rel=\"noopener" . ($spice_article_nofollow ? ' nofollow' : '') . "\">$spice_article_name</a></p>";
             }
         }
     }
@@ -1060,9 +1060,9 @@ class serendipity_event_commentspice extends serendipity_event
         }
         if ($do_boo) {
             echo '<div  id="serendipity_commentspice_boo_desc" class="serendipity_commentDirection serendipity_comment_spice">' . "\n";
-            echo '<a href="http://audioboo.fm/profile" target="_blank"><img src="' . $serendipity['baseURL'] . 'index.php?/plugin/audioboo.png" class="commentspice_ico" title="Audioboo.com"></a>' . "\n";
+            echo '<a href="http://audioboo.fm/profile" target="_blank" rel="noopener"><img src="' . $serendipity['baseURL'] . 'index.php?/plugin/audioboo.png" class="commentspice_ico" title="Audioboo.com"></a>' . "\n";
             echo PLUGIN_EVENT_COMMENTSPICE_BOO_FOOTER . '<br/>' . "\n";
-            echo '<a href="http://audioboo.fm/boos/new" target="_blank"><img src="' . $serendipity['baseURL'] . 'index.php?/plugin/spiceicorecord.png" class="commentspice_ico" title="create a boo" alt="record" onClick="window.open(\'http://audioboo.fm/boos/new\',\'recordboo\',\'width=600,height=300\');return false;"></a>' . "\n";
+            echo '<a href="http://audioboo.fm/boos/new" target="_blank" rel="noopener"><img src="' . $serendipity['baseURL'] . 'index.php?/plugin/spiceicorecord.png" class="commentspice_ico" title="create a boo" alt="record" onClick="window.open(\'http://audioboo.fm/boos/new\',\'recordboo\',\'width=600,height=300\');return false;"></a>' . "\n";
             echo '<input class="commentspice_boo_input" type="url" id="serendipity_commentform_boo" name="serendipity[boo]" placeholder="' . PLUGIN_EVENT_COMMENTSPICE_BOO_PLACEHOLDER . '" value=""/>' . "\n";
             echo '</div>' . "\n";
         }

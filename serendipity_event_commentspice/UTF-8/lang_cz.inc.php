@@ -82,12 +82,12 @@
 @define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_CORRUPTED', 'Je mi líto, nepodařilo se mi stáhnout Vaše "nedávné články"...');
 
 @define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO','Audio komentáře pomocí audioboo.fm');
-@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO_DESC','Pokud máte podcastovací blog, možná chcete umožnit uživatelům vkládat i audio komentáře, tzv. boo audios (mini podcasty) umístěné na <a href="http://audioboo.fm" target="_blank">audioboo.fm</a>.');
+@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO_DESC','Pokud máte podcastovací blog, možná chcete umožnit uživatelům vkládat i audio komentáře, tzv. boo audios (mini podcasty) umístěné na <a href="http://audioboo.fm" target="_blank" rel="noopener">audioboo.fm</a>.');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_ALLOW','Povolit boo audio komentáře');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_ALLOW_DESC','Zapněte, pokud chcete povolit audio boo komentáře. Pod políčkem pro vložení komentáře se objeví políčko pro vložení a nahrání (beta funkce!) audio boo komentářů.');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATE','Schvalovat audio boo komentáře');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATE_DESC','Zapněte, pokud mají audio boo komentáře podléhat schvalování před zveřejněním.');
-@define('PLUGIN_EVENT_COMMENTSPICE_BOO_FOOTER','Tento blog Vám umožňuje vložit audio boo komentáře pomocí <a href="http://audioboo.fm/profile" target="_blank">audioboo.fm</a>. <a href="http://audioboo.fm/boos/new" target="_blank">Nahrajte nový komentář</a> a zadejte odkaz do políčka audio boo.');
+@define('PLUGIN_EVENT_COMMENTSPICE_BOO_FOOTER','Tento blog Vám umožňuje vložit audio boo komentáře pomocí <a href="http://audioboo.fm/profile" target="_blank" rel="noopener">audioboo.fm</a>. <a href="http://audioboo.fm/boos/new" target="_blank" rel="noopener">Nahrajte nový komentář</a> a zadejte odkaz do políčka audio boo.');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_PLACEHOLDER', 'http://audioboo.fm/boos/123456-nadpis');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_WRONG', 'Je mi líto, toto nevypadá jako boo URL (http://audioboo.fm/boos/12345-nadpis)');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATED', 'Audio boo komentáře podléhají schválení před zveřejněním, prosíme o trpělivost.');

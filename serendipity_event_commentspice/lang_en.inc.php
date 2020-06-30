@@ -78,12 +78,12 @@
 @define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_CORRUPTED', 'Sorry, unable to verify your "recent post" datas..');
 
 @define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO','Audio comments using audioboo.fm');
-@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO_DESC','If you have a podcasting blog you may allow your listeners to comment your podcasts using boo audios (mini podcasts) hosted on <a href="http://audioboo.fm" target="_blank">audioboo.fm</a>.');
+@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO_DESC','If you have a podcasting blog you may allow your listeners to comment your podcasts using boo audios (mini podcasts) hosted on <a href="http://audioboo.fm" target="_blank" rel="noopener">audioboo.fm</a>.');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_ALLOW','Allow boo comments');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_ALLOW_DESC','Switch it on, if you want to allow boo audio comments. There will be a field below the comment editor for adding and recording (beta!) boo comments.');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATE','Moderate boo comments');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATE_DESC','Switch this on, if you want boo audio comments to be moderated');
-@define('PLUGIN_EVENT_COMMENTSPICE_BOO_FOOTER','This blog allows you to add audio comments using <a href="http://audioboo.fm/profile" target="_blank">audioboo.fm</a>. <a href="http://audioboo.fm/boos/new" target="_blank">Create a new boo</a> and enter the link to the page into the boo field.');
+@define('PLUGIN_EVENT_COMMENTSPICE_BOO_FOOTER','This blog allows you to add audio comments using <a href="http://audioboo.fm/profile" target="_blank" rel="noopener">audioboo.fm</a>. <a href="http://audioboo.fm/boos/new" target="_blank" rel="noopener">Create a new boo</a> and enter the link to the page into the boo field.');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_PLACEHOLDER', 'http://audioboo.fm/boos/123456-title');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_WRONG', 'Sorry, this does not seem to bee a boo URL (http://audioboo.fm/boos/12345-title)');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATED', 'Boo comments are moderated first, please be patient');
