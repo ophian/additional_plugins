@@ -16,7 +16,7 @@
 @define('PLUGIN_EVENT_GEOTAG_HEADER_FOOTER_LIST', 'Einstellungen: Artikel Footer (Listenansicht)');
 @define('PLUGIN_EVENT_GEOTAG_HEADER_FOOTER_SINGLE', 'Einstellungen: Artikel Footer (Einzelartikel)');
 @define('PLUGIN_EVENT_GEOTAG_HEADER_HDRTAG', 'Geotagging im HTML Kopfbereich');
-@define('PLUGIN_EVENT_GEOTAG_HEADER_HDRTAG_DESC', 'Das Plugin fügt <a href="http://de.wikipedia.org/wiki/Geotag" target="_blank">Geourl MetaTags</a> in den HTML Kopf ein, damit andere es leichter haben, die Geokoordinaten eines Artikels oder des Blogs auszulesen.');
+@define('PLUGIN_EVENT_GEOTAG_HEADER_HDRTAG_DESC', 'Das Plugin fügt <a href="http://de.wikipedia.org/wiki/Geotag" target="_blank" rel="noopener">Geourl MetaTags</a> in den HTML Kopf ein, damit andere es leichter haben, die Geokoordinaten eines Artikels oder des Blogs auszulesen.');
 
 @define('PLUGIN_EVENT_GEOTAG_TITLE', 'Geotag');
 @define('PLUGIN_EVENT_GEOTAG_DESC', 'Erlaubt Einträge mit Geokoordinaten zu versehen');

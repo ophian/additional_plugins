@@ -80,7 +80,7 @@
 @define('PLUGIN_EVENT_GEOTAG_HEADER_FOOTER_LIST', 'Nastavení patičky příspěvku (v přehledu příspěvků)');
 @define('PLUGIN_EVENT_GEOTAG_HEADER_FOOTER_SINGLE', 'Nastavení patičky příspěvku (při zobrazení jediného příspěvku)');
 @define('PLUGIN_EVENT_GEOTAG_HEADER_HDRTAG', 'HTML hlavička GeoTagu');
-@define('PLUGIN_EVENT_GEOTAG_HEADER_HDRTAG_DESC', 'Tento plugin přidává <a href="http://en.wikipedia.org/wiki/Geotag#HTML_pages" target="_blank">geourl meta tagy</a> do HTML hlavičky stránky. Tak umožňuje ostatním snadno zjistit zeměpisné souřadnice článku nebo blogu.');
+@define('PLUGIN_EVENT_GEOTAG_HEADER_HDRTAG_DESC', 'Tento plugin přidává <a href="http://en.wikipedia.org/wiki/Geotag#HTML_pages" target="_blank" rel="noopener">geourl meta tagy</a> do HTML hlavičky stránky. Tak umožňuje ostatním snadno zjistit zeměpisné souřadnice článku nebo blogu.');
 @define('PLUGIN_EVENT_GEOTAG_SERVICE_DESC', 'Chcete vytvořit mapu do patičky stránky pomocí Google Map nebo pomocí Openstreetmap?');
 @define('PLUGIN_EVENT_GEOTAG_EDITOR_AUTOFILL', 'Automaticky vyplňovat polohu v editoru');
 @define('PLUGIN_EVENT_GEOTAG_EDITOR_AUTOFILL_DESC', 'To se pokusí automaticky zjistit Vaši aktuální polohu při psaní příspěvku a zjišťenou hodnotu předvyplní do políčka polohy. (Pouze pokud tuto funkci podporuje prohlížeč.)');

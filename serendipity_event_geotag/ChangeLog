@@ -1,3 +1,7 @@
+1.40:
+-----
+ * Secure external target _blank links by living standard rel="noopener"
+
 1.39:
 -----
  * Fixup an old S9y Series 1 message variable

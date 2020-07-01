@@ -710,7 +710,7 @@ class serendipity_event_geotag extends serendipity_event
             $msg = '<div class="serendipity_geotag">' . PLUGIN_EVENT_GEOTAG_FRONTEND_LABEL . ': %s</div>';
         }
         // Write the link
-        $link = "<a href=\"" . $this->get_config('map_url') . "\"" . ($use_targetblank ? " target=\"_blank\"" : "")  .">$linkdesc</a>";
+        $link = "<a href=\"" . $this->get_config('map_url') . "\"" . ($use_targetblank ? " target=\"_blank\" rel=\"noopener\"" : "")  .">$linkdesc</a>";
         $link = str_replace("%GEO_LAT%", preg_replace('@[^0-9\.,\-]@i', '', $lat), $link);
         $link = str_replace("%GEO_LONG%", preg_replace('@[^0-9\.,\-]@i', '', $long), $link);
         $link = str_replace("%TITLE%", $replace_by, $link);
