@@ -1,4 +1,4 @@
-{* backend_staticpage template file v. 1.32, 2019-11-06 *}
+{* backend_staticpage template file v. 1.33, 2020-06-29 *}
 
 <!-- backend_staticpage.tpl START -->
 
@@ -285,7 +285,7 @@
                     {if $entry['publishstatus'] == false}<span class="entry_status sp_status_draft">{$CONST.DRAFT}</span>{/if}
                     {if $entry['parent_id'] > 0}<span class="entry_status sp_tree_child">{$CONST.STATICPAGE_TREE_CHILD} #{$entry['parent_id']}</span>{/if}
 
-                    <a target="_blank" class="button_link" href="{$serendipityHTTPPath}{$serendipityIndexFile}?serendipity[staticid]={$entry['id']}&amp;serendipity[staticPreview]=1" title="{$CONST.VIEW} #{$entry['id']} ({$entry['pagetitle']|escape})"><span class="icon-search" aria-hidden="true"></span><span class="visuallyhidden"> {$CONST.VIEW} #{$entry['pagetitle']|escape}</span></a>
+                    <a target="_blank" rel="noopener" class="button_link" href="{$serendipityHTTPPath}{$serendipityIndexFile}?serendipity[staticid]={$entry['id']}&amp;serendipity[staticPreview]=1" title="{$CONST.VIEW} #{$entry['id']} ({$entry['pagetitle']|escape})"><span class="icon-search" aria-hidden="true"></span><span class="visuallyhidden"> {$CONST.VIEW} #{$entry['pagetitle']|escape}</span></a>
                     <form action="serendipity_admin.php" method="post" name="sp_listentry_{$entry['id']}">
                     <div>
                         <input type="hidden" name="serendipity[adminModule]" value="event_display">

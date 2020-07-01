@@ -1,3 +1,7 @@
+6.12:
+-----
+ * Secure backend_staticpage.tpl target="_blank" [zoom button and external] link URLs.
+
 6.11:
 -----
  * Fix a rare case of very old installations missing one or two staticpage database tables

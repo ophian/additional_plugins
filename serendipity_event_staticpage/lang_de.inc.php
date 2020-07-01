@@ -152,7 +152,7 @@
                     wenn das Frontend diese Sprache aktiv nutzt. "Alle Sprachen" meint "in jedem Fall".');
 
 @define('PLAIN_ASCII', 'URLs sollten nur ASCII verwenden. [A-Za-z0-9]');
-@define('STATICPAGE_RELCAT_INFO', 'Dies funktioniert <b>nur</b> in Kombination mit dem entries.tpl-Patch, der in der "README FOR RELATED CATEGORIES.txt" <a href="%s" target="_blank" style="color:#7fdbff">Datei</a> beschrieben ist.<br>
+@define('STATICPAGE_RELCAT_INFO', 'Dies funktioniert <b>nur</b> in Kombination mit dem entries.tpl-Patch, der in der "README FOR RELATED CATEGORIES.txt" <a href="%s" target="_blank" rel="noopener" style="color:#7fdbff">Datei</a> beschrieben ist.<br>
                     Für eine Frontend-Kategorien-Seite, mit einer Anzahl<span style="font-size:10px"><sup> (1)</sup></span> der letzten Eintrags-Links als Teaser, ist die beste Verwendung mit dem Artikeltyp: "<em>Staticpage with related category</em>" Feld in diesem Formular.
                     Bitte beachten Sie, dass nur einheitliche 1:1-Beziehungen zwischen Statischen Seiten und Kategorien erlaubt sind.<br><br>
                     <span style="font-size:10px"><sup>(1)</sup></span> Das Ändern der Menge der dargestellten Teaser-Eintragsverknüpfungen erfolgt in der Datei "plugin staticpage related category.tpl" durch den konfigurierbaren Aufruf-Hook. Standard sind 5 Einträge.');
@@ -165,7 +165,7 @@
                     Oder Sie können angeben, welche Seitenleiste Sie sehen möchten, wenn diese Statische Seite gerendert wird.
                     Ein weiteres schönes Beispiel hierin ist es, einige verwandte Tags für diese Statische Seite zu definieren, um eine bestimmte Anzahl von Einträgen mit diesen Tags anzuzeigen,
                     so wie es das Freetag-Plugin für Blog Einträge erlaubt.<br>
-                    <span><strong>Bitte lesen Sie:</strong> </span> <a href="%s" target="_blank" style="color:#7fdbff">the readme for custom fields</a>-Beispiele.</p>
+                    <span><strong>Bitte lesen Sie:</strong> </span> <a href="%s" target="_blank" rel="noopener" style="color:#7fdbff">the readme for custom fields</a>-Beispiele.</p>
                     <p>Die "Disable nl2br markup parser" Radio-Option wird bereits intern verwendet, um automatisch WYSIWYG-Einträge von Statischen Seiten für die Speicherung zu markieren, auf dass sie folgend nicht durch das nl2br Markup-Parser Plugin bei der Anzeige verändert werden.</p>');
 
 @define('PLUGIN_STATICPAGE_PREVIEW', 'Die Voransicht ihrer statischen Seite wurde in einem neuen Browsertab geöffnet. Sonst benutzen Sie diesen: %s');

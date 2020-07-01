@@ -180,7 +180,7 @@
 @define('RELATED_CATEGORY_CHANGE_DEL_MSG', 'The corresponding related_category_id field of staticpage ID #%s has been updated and set to 0.');
 
 @define('PLAIN_ASCII', 'URLs shall use plain ASCII only. [A-Za-z0-9]');
-@define('STATICPAGE_RELCAT_INFO', 'This <b>only</b> works in combination with the entries.tpl patch, described in the "README FOR RELATED CATEGORIES.txt" <a href="%s" target="_blank" style="color:#7fdbff">file</a>.
+@define('STATICPAGE_RELCAT_INFO', 'This <b>only</b> works in combination with the entries.tpl patch, described in the "README FOR RELATED CATEGORIES.txt" <a href="%s" target="_blank" rel="noopener" style="color:#7fdbff">file</a>.
                         For a frontend category page, with an amount<span style="font-size:10px"><sup> (1)</sup></span> of last entry links as a teaser,
                         the best use is a set Articletype: "<em>Staticpage with related category</em>" field in this form.
                         Please note, that only unique 1:1 relations between staticpages and categories are allowed.<br><br>
@@ -191,7 +191,7 @@
                     when later being displayed in the frontend. This way, you can easily add new custom fields for a staticpage, ie. to specify a custom header image for each staticpage. Sky\'s the limit!</p>
                     <p>These optional examples enable to use either a custom CSS-BODY-ID to render the page. Or you can specify, which sidebar you want to see when this staticpage is rendered.
                     Another nice example included here, is to define some related tags for this staticpage, to show a specific amount of entries including these tags, like the freetag plugin allows for normal blog entries.<br>
-                    <span><strong>Please read:</strong> </span><a href="%s" target="_blank" style="color:#7fdbff">the readme for custom fields</a> examples.</p>
+                    <span><strong>Please read:</strong> </span><a href="%s" target="_blank" rel="noopener" style="color:#7fdbff">the readme for custom fields</a> examples.</p>
                     <p>The "Disable nl2br markup parser" radio option is already used internally to automark staticpage entries on wysiwyg usage by submit, to not pass through the nl2br markup parser on show.</p>');
 
 @define('STATICPAGE_CONFIGGROUP_FORM', 'Backend Form Preferences:');
