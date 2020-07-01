@@ -284,7 +284,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_dsgvo_gdpr&lt;br /&gt;DSGVO / GDPR: General Data Protection Regulation&lt;/b&gt;&lt;br /&gt;This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 29 Jun 2020 19:10:28 +0200</pubDate>
+<pubDate>Wed, 01 Jul 2020 08:02:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dsgvo_gdpr</guid>
 </item>
 <item>
@@ -527,7 +527,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Show Avatars inside comments. Gravatars, Pavatars, Favatars, Wavatars, Monster ID, Identicon, Twitter and Identica Avatars are supported.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Thu, 05 Dec 2019 17:20:01 +0100</pubDate>
+<pubDate>Wed, 01 Jul 2020 10:30:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
@@ -563,7 +563,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Extended options for media manager&lt;/b&gt;&lt;br /&gt;Allows extended options for inserting images from the media manager&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Mon, 29 Jun 2020 13:08:25 +0200</pubDate>
+<pubDate>Wed, 01 Jul 2020 10:08:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -761,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Billets multilingues&lt;/b&gt;&lt;br /&gt;Saisie des billets en plusieurs langues&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Mon, 27 Jan 2020 16:19:41 +0100</pubDate>
+<pubDate>Wed, 01 Jul 2020 10:49:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -869,7 +869,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_podcast&lt;br /&gt;Easy Podcasting Plugin&lt;/b&gt;&lt;br /&gt;Ajoute des moyens pour le &quot;podcasting&quot; (RSS, boutons video/audio)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 02 May 2020 13:24:55 +0200</pubDate>
+<pubDate>Wed, 01 Jul 2020 10:42:26 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_podcast</guid>
 </item>
 <item>
