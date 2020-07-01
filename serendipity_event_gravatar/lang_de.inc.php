@@ -31,7 +31,7 @@
 @define('PLUGIN_EVENT_GRAVATAR_CACHING_DESC',       'Wenn Avatare zwischengespeichert werden sollen (empfohlen!), muss hier die Anzahl der Stunden eingetragen werden, die Bilder vom eigenen Server anstatt vom externen Service abgeholt werden sollen. Dies wird ein wenig mehr Traffic auf diesem Blog Server verursachen, dafür macht es die Avatar Darstellung unabhängiger vom externen, zentralen Servern. "0" stellt das Zwischenspeichern ab.');
 
 @define('PLUGIN_EVENT_GRAVATAR_ALIGN',              'Ausrichtung');
-@define('PLUGIN_EVENT_GRAVATAR_ALIGN_DESC',         'Mit dieser Option kann die Ausrichtung des Avatars im Kommentar konfiguriert werden, falls sie nicht die Smarty Tag Option verwenden. Bei der Smarty Tag Option muss die Ausrichtung über die entsprechende CSS Klasse im Stylesheet konfiguriert werden.');
+@define('PLUGIN_EVENT_GRAVATAR_ALIGN_DESC',         'Mit dieser Option kann die Ausrichtung des Avatars im Kommentar konfiguriert werden, falls Sie nicht die Smarty Tag Option verwenden. Bei der Smarty Tag Option muss die Ausrichtung über die entsprechende CSS Klasse im Stylesheet konfiguriert werden.');
 @define('PLUGIN_EVENT_GRAVATAR_ALIGN_LEFT',         'links');
 @define('PLUGIN_EVENT_GRAVATAR_ALIGN_RIGHT',        'rechts');
 @define('PLUGIN_EVENT_GRAVATAR_ALIGN_NONE',         'keine Ausrichtung');
@@ -48,11 +48,11 @@
 @define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT',          'Autorenname im ALT Attribut');
 @define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT_DESC',     'Normalerweise wird der Autorenname im TITLE Attribut des Avatar Bildes angegeben, das ALT Attribut wird mit einem * gefüllt, um das Seitenlayout nicht zu zerstören, wenn der Browser das Bild nicht laden kann. Allerdings wird blinden Lesern das ALT Attribut vorgelesen. Falls Sie diese Leser unterstützen wollen, sollten Sie diese Option einschalten.');
 
-@define('PLUGIN_EVENT_GRAVATAR_LONG_DESCRIPTION',   '<b><a href="https://www.gravatar.com" target="_blank">Gravatare</a></b> werden von einem zentralen Server anhand der EMail Information des Kommentators abgeholt, ' .
-        '<b><a href="https://web.archive.org/web/20120118023537/http://www.peej.co.uk/projects/favatars.html" target="_blank">Favatare</a></b> und <b><a href="http://www.pavatar.com" target="_blank">Pavatare</a></b> sind die favicons, bzw eigene größere Bilder auf der Homepage, die der Kommentator angegeben hat, ' .
-        '<b><a href="https://twitter.com" target="_blank">Twitter</a></b> lädt Bilder aus Twitter Profilen, ' .
-        '<b><a href="https://identi.ca" target="_blank">Identica</a></b> lädt Bilder aus Identica Profilen, ' .
-        '<b><a href="https://www.splitbrain.org/go/monsterid" target="_blank">Monster ID</a></b>, <b><a href="http://scott.sherrillmix.com/blog/blogger/wp_identicon/" target="_blank">Identicon</a></b> und <b><a href="http://www.shamusyoung.com/twentysidedtale/?p=1462" target="_blank">Wavatar</a></b> Avatare sind lokal erstellte und für jeden Schreiber einzigartige Bilder.');
+@define('PLUGIN_EVENT_GRAVATAR_LONG_DESCRIPTION',   '<b><a href="https://www.gravatar.com" target="_blank" rel="noopener">Gravatare</a></b> werden von einem zentralen Server anhand der EMail Information des Kommentators abgeholt, ' .
+        '<b><a href="https://web.archive.org/web/20120118023537/http://www.peej.co.uk/projects/favatars.html" target="_blank" rel="noopener">Favatare</a></b> und <b><a href="http://www.pavatar.com" target="_blank" rel="noopener">Pavatare</a></b> sind die favicons, bzw eigene größere Bilder auf der Homepage, die der Kommentator angegeben hat, ' .
+        '<b><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></b> lädt Bilder aus Twitter Profilen, ' .
+        '<b><a href="https://identi.ca" target="_blank" rel="noopener">Identica</a></b> lädt Bilder aus Identica Profilen, ' .
+        '<b><a href="https://www.splitbrain.org/go/monsterid" target="_blank" rel="noopener">Monster ID</a></b>, <b><a href="http://scott.sherrillmix.com/blog/blogger/wp_identicon/" target="_blank" rel="noopener">Identicon</a></b> und <b><a href="http://www.shamusyoung.com/twentysidedtale/?p=1462" target="_blank" rel="noopener">Wavatar</a></b> Avatare sind lokal erstellte und für jeden Schreiber einzigartige Bilder.');
 @define('PLUGIN_EVENT_GRAVATAR_EXTLING_WARNING',    '<span class="msg_notice"><strong>ACHTUNG!</strong> Dieses Plugin muss vor allen Plugins ausgeführt werden, die Links verändern (wie z.B. das Exit Tracking, oder das Allgemeine Datenschutzverordnung (dgsvo) Plugin)!<br/>' .
         'Ansonsten werden Pavatare, Favatare und Wavatar Avatare nicht funktionieren!</span>');
 

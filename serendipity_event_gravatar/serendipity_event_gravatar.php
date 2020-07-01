@@ -7,7 +7,7 @@ if (IN_serendipity !== true) {
 // Load possible language files.
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.70');
+@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.71');
 
 // Defines the maximum available method  slots in the configuration.
 @define('PLUGIN_EVENT_GRAVATAR_METHOD_MAX', 6);

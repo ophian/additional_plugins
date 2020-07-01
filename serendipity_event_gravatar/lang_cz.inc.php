@@ -49,10 +49,10 @@
 @define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT',          'Jméno autora v atributu ALT v obrázku');
 @define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT_DESC',     'Obvykle se jméno autora zobrazuje v atributu TITLE v obrázku s avatarem a atribut ALT je vyplnìn hvìzdièkami. To zabraòuje zhroucení vzhledu stránky, pokud není prohlí¾eè schopen natáhnout obrázky. Ale slepci pou¾ívají pro prohlí¾ení internetu èasto právì atribut ALT, tak¾e pokud jim chcete zpøístupnit své stránky, zapnìte tuto volbu.');
 
-@define('PLUGIN_EVENT_GRAVATAR_LONG_DESCRIPTION',   '<b><a href="http://www.gravatar.com" target="_blank">Gravatar</a></b> je centrální úlo¾i¹tì obrázkù u¾ivatelù spøa¾ené s emailovou adresou, ' .
-        '<b><a href="http://www.peej.co.uk/projects/favatars.html" target="_blank">Favatar</a></b> poskytuje favicony naètené z osobních stránek u¾ivatele, <b><a href="http://www.pavatar.com" target="_blank">Pavatar</a></b> ' .
+@define('PLUGIN_EVENT_GRAVATAR_LONG_DESCRIPTION',   '<b><a href="http://www.gravatar.com" target="_blank" rel="noopener">Gravatar</a></b> je centrální úlo¾i¹tì obrázkù u¾ivatelù spøa¾ené s emailovou adresou, ' .
+        '<b><a href="http://www.peej.co.uk/projects/favatars.html" target="_blank" rel="noopener">Favatar</a></b> poskytuje favicony naètené z osobních stránek u¾ivatele, <b><a href="http://www.pavatar.com" target="_blank" rel="noopener">Pavatar</a></b> ' .
         'jsou obrázky ulo¾ené na osobních stránkách pisatele a ' .
-        '<b><a href="http://www.splitbrain.org/go/monsterid" target="_blank">Monster ID</a></b>, <b><a href="http://scott.sherrillmix.com/blog/blogger/wp_identicon/" target="_blank">Identicon</a></b> a <b><a href="http://www.shamusyoung.com/twentysidedtale/?p=1462" target="_blank">Wavatar</a></b> avatary jsou nahrávané obrázky vytvoøené jednotlivými u¾ivateli.');
+        '<b><a href="http://www.splitbrain.org/go/monsterid" target="_blank" rel="noopener">Monster ID</a></b>, <b><a href="http://scott.sherrillmix.com/blog/blogger/wp_identicon/" target="_blank" rel="noopener">Identicon</a></b> a <b><a href="http://www.shamusyoung.com/twentysidedtale/?p=1462" target="_blank" rel="noopener">Wavatar</a></b> avatary jsou nahrávané obrázky vytvoøené jednotlivými u¾ivateli.');
 @define('PLUGIN_EVENT_GRAVATAR_EXTLING_WARNING',    '<font color="red">POZOR!</font> Tento plugin musí být zaøazen pøed v¹emi pluginy, které mìní odkazy (jako napø. plugin "exit tracking plugin")! ' .
         '<font color="red">Jinak nebudou pracovat avatary slu¾eb Pavatar, Favatar a MayBlogLog!</font>');
 

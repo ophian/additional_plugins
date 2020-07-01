@@ -48,12 +48,12 @@
 @define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT',          'Authorname in ALT attribute');
 @define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT_DESC',     'Normally the authors name is displayed in the TITLE attribute of the Avatar image, the ALT attribute is filled with an *. This prevents destroying the layout, when the browser is not able to load the image. But for blind people the ALT attribute is read, so if you want to support them, switch this option ON.');
 
-@define('PLUGIN_EVENT_GRAVATAR_LONG_DESCRIPTION',   '<b><a href="https://www.gravatar.com" target="_blank">Gravatars</a></b> are central-served Avatar images by email, ' .
-        '<b><a https://web.archive.org/web/20120118023537/http://www.peej.co.uk/projects/favatars.html" target="_blank">Favatars</a></b> are favicons of the writer\'s site, ' .
-        '<b><a href="http://www.pavatar.com" target="_blank">Pavatars</a></b> are images at the writer\'s site, ' .
-        '<b><a href="https://twitter.com" target="_blank">Twitter</a></b> loads twitter profile images, ' .
-        '<b><a href="https://identi.ca" target="_blank">Identica</a></b> loads identi.ca profile images and ' .
-        '<b><a href="http://www.splitbrain.org/go/monsterid" target="_blank">Monster ID</a></b>, <b><a href="http://scott.sherrillmix.com/blog/blogger/wp_identicon/" target="_blank">Identicon</a></b> and <b><a href="http://www.shamusyoung.com/twentysidedtale/?p=1462" target="_blank">Wavatar</a></b> Avatars are locally created monster images, unique for each writer.');
+@define('PLUGIN_EVENT_GRAVATAR_LONG_DESCRIPTION',   '<b><a href="https://www.gravatar.com" target="_blank" rel="noopener">Gravatars</a></b> are central-served Avatar images by email, ' .
+        '<b><a https://web.archive.org/web/20120118023537/http://www.peej.co.uk/projects/favatars.html" target="_blank" rel="noopener">Favatars</a></b> are favicons of the writer\'s site, ' .
+        '<b><a href="http://www.pavatar.com" target="_blank" rel="noopener">Pavatars</a></b> are images at the writer\'s site, ' .
+        '<b><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></b> loads twitter profile images, ' .
+        '<b><a href="https://identi.ca" target="_blank" rel="noopener">Identica</a></b> loads identi.ca profile images and ' .
+        '<b><a href="http://www.splitbrain.org/go/monsterid" target="_blank" rel="noopener">Monster ID</a></b>, <b><a href="http://scott.sherrillmix.com/blog/blogger/wp_identicon/" target="_blank" rel="noopener">Identicon</a></b> and <b><a href="http://www.shamusyoung.com/twentysidedtale/?p=1462" target="_blank" rel="noopener">Wavatar</a></b> Avatars are locally created monster images, unique for each writer.');
 @define('PLUGIN_EVENT_GRAVATAR_EXTLING_WARNING',    '<span class="msg_notice"><strong>CAUTION!</strong> This plugin has to be executed before any plugin changing links (like i.e. the exit tracking, or the General Data Protection Regulation (dgsvo) plugin)! ' .
         'Else Pavatars, Favatars and Wavatar Avatars won\'t work!</span>');
 
