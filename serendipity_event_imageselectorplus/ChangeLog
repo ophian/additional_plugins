@@ -1,3 +1,8 @@
+1.22:
+-----
+ * Secure target _blank image links by living standard rel="noopener"
+ * Add historical note to frontend_image_selector_XXX hooks for admin/media_choose.tpl
+
 1.21:
 -----
  * Add new url for Rich Text Editor changes with upcoming Serendipity Styx 3.0

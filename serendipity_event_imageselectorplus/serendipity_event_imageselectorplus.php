@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '1.21');
+        $propbag->add('version',       '1.22');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -593,6 +593,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                 case 'frontend_image_selector_imagesize':
                 case 'frontend_image_selector_hiddenfields':
                 case 'frontend_image_selector_imagelink':
+                    // these hooks are, in case of imagelink was used in the past by Serendipity < 0.9, but kept alive for possible future purposes
                     break;
 
                 case 'css_backend':
@@ -769,7 +770,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $linktarget = '';
         switch($totarget) {
             case '_blank':
-                $linktarget = ' target="_blank"';
+                $linktarget = ' target="_blank" rel="noopener"'; // Probably this default noopener behaviour will prevent foreign CMS inclusion to use the window.opener object for cases. In this case remove the 'no'.
                 break;
             case 'js':
                 try { list($width, $height, $type, $attr) = getimagesize("$infile"); } catch (Exception $e) { echo ERROR_SOMETHING . ': '.$e->getMessage(); }
