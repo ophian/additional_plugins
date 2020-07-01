@@ -13,7 +13,7 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_SAVENEWLANG', 'If this field has already been saved in another language, delete the contents and save again to obtain a customized language version for saving.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT', 'Text for comment consent');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DESC', 'Enter the text here that is displayed to the user for accepting your terms of reference. Use %gdpr_url% as a placeholder for the URL.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DEFAULT', 'I agree that my data will be stored. Please review the <a href="%gdpr_url%" target="_blank">terms of usage / imprint</a> for further details.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DEFAULT', 'I agree that my data will be stored. Please review the <a href="%gdpr_url%" target="_blank" rel="noopener">terms of usage / imprint</a> for further details.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_INFO', 'Information to your blog\'s GDPR relevance');
 @define('PLUGIN_EVENT_DSGVO_GDPR_INFO_DESC', 'Serendipity allows plugins to specify, which impact they have on your blog\'s usage and handling of sensible data. At this place, this data is automatically evaluated and printed here for your information. Please be sure to always have the recent versions of plugins. You yourself are legally responsible to disclose any used services to the visitor. If you use any functionality outside of core and plugin Serendipity (custom plugins, custom templates, snippets) that is relevant, be sure to include them in your privacy statement!');
 
