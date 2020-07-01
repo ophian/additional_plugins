@@ -1,3 +1,7 @@
+1.6:
+-----
+ * Secure authors target _blank link by living standard rel="noopener"
+
 1.5:
 -----
  * Silence possible eventData property check

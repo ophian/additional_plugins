@@ -17,8 +17,8 @@ class serendipity_event_google_analytics extends serendipity_event
 		$propbag->add ('name', PLUGIN_EVENT_GOOGLE_ANALYTICS_NAME);
 		$propbag->add ('description', PLUGIN_EVENT_GOOGLE_ANALYTICS_DESC);
 		$propbag->add ('stackable', false);
-		$propbag->add ('author', '<a href="https://github.com/kleinerChemiker" target="_blank">kleinerChemiker</a>');
-		$propbag->add ('version', '1.5');
+		$propbag->add ('author', '<a href="https://github.com/kleinerChemiker" target="_blank" rel="noopener">kleinerChemiker</a>');
+		$propbag->add ('version', '1.6');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
