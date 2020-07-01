@@ -1,3 +1,7 @@
+2.64:
+-----
+ * [Minor] Secure some (well-known) target _blank links by living standard rel="noopener"
+
 2.63:
 -----
  * PHP 7.4 fix serendipity_archiveURL() parameters for serendipity_makePermalink()
