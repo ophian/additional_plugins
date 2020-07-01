@@ -246,7 +246,7 @@
         </div>
 
         <p style="margin-left:8px; margin-right:8px">
-            <a href="https://www.instagram.com/p/xyz123Raw1/" target="_blank">Really Nothing.</a>
+            <a href="https://www.instagram.com/p/xyz123Raw1/" rel="noopener" target="_blank">Really Nothing.</a>
         </p>
         <p style="text-align:center">A post shared by John Doe (@example) on Jul 29, 2017 at 12:21pm GMT</p>
     </div>
