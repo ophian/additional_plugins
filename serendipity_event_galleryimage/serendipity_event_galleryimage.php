@@ -27,7 +27,7 @@ class serendipity_event_galleryimage extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_GALLERYIMAGE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rob Antonishen, Alexander Mieland');
-        $propbag->add('version',       '1.15');
+        $propbag->add('version',       '1.16');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '2.6.7',
@@ -601,7 +601,7 @@ class serendipity_event_galleryimage extends serendipity_event
                 break;
 
             case 'new':
-                $link_target = '<a href="'.$image_link.'" target="_blank">';
+                $link_target = '<a href="'.$image_link.'" target="_blank" rel="noopener">';
                 break;
 
             case 'none':
