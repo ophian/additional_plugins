@@ -1,3 +1,13 @@
+1.43:
+-----
+ * Secure some target _blank links by living standard rel="noopener"
+
+1.42:
+-----
+ * Update getid3 lib to 1.9.19-201912131005
+   This all does need a general rework though, since we would need to remove xspf and flowplayer libs and old audio/video formats like quicktime, well tested!
+   The question after all is, what does it do better than a current Styx version can do out-of-the-box regarding HTML5 audio/video players?!
+
 1.41:
 -----
 

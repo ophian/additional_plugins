@@ -105,11 +105,11 @@ This will only put files with an "ogg" extension inside a feed. You can specify 
 @define('PLUGIN_PODCAST_INSTALL_DESC', 
 '<h3>Installation</h3>' .
 '<p>The plugin uses the getID3() library that can\'t be shiped with this plugin. You have to download the getid3 archive on your own at ' .
-'<a href="http://getid3.org/" target="_blank">getid3.org</a>. <b>Only the 1.x version is supported!</b></p>' .
+'<a href="http://getid3.org/" target="_blank" rel="noopener">getid3.org</a>. <b>Only the 1.x version is supported!</b></p>' .
 '<p>Insinde of that archive you will find a subdirectory called getid3. This subdirectory has to be copied into the "bundled-libs" directory of Serenddipity.</p>');
 @define('PLUGIN_PODCAST_INSTALL_FLV_DESC', 
 '<h3>FLV Player</h3>' .
-'<p>The plugin uses the JW-FLV Player to play back FLV video files. Because of different licenses this free player is not bundled with this Plugin, so you <a href="http://www.jeroenwijering.com/?item=Flash_Video_Player" target="_blank">have to download it here</a>.<br />' .
+'<p>The plugin uses the JW-FLV Player to play back FLV video files. Because of different licenses this free player is not bundled with this Plugin, so you <a href="http://www.jeroenwijering.com/?item=Flash_Video_Player" target="_blank" rel="noopener">have to download it here</a>.<br />' .
 'In the archive you\'ll find the files flvplayer.swf and swfobject.js. Plesae copy them into the subdirectory player of this plugin. If the archive only contains "mediaplayer.*" files, please rename them to "flvplayer.*"</p>');
 
 @define('PLUGIN_PODCAST_ITUNES', 'iTunes XML markup');

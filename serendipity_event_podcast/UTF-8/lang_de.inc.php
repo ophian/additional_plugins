@@ -70,10 +70,10 @@
 @define('PLUGIN_PODCAST_INSTALL_DESC', 
 '<h3>Installationsanweisung</h3>' .
 '<p>Das Plugin benutzt die Bibliothek getID3(), die nicht zusammen mit diesem Plugin ausgeliefert wird. Sie müssen die getid3 Dateien selbst von ' .
-'<a href="http://getid3.org/" target="_blank">getid3.org</a> herunter laden. <b>Es wird nur die 1.x Version unterstützt!</b></p>' .
+'<a href="http://getid3.org/" target="_blank" rel="noopener">getid3.org</a> herunter laden. <b>Es wird nur die 1.x Version unterstützt!</b></p>' .
 '<p>In dem Archiv finden Sie ein Unterverzeichnis mit Namen getid3, dieses müssen Sie in das Serenddipity Verzeichnis "bundled-libs" entpacken.</p>');
 @define('PLUGIN_PODCAST_INSTALL_FLV_DESC', 
 '<h3>FLV Player</h3>' .
-'<p>Das Plugin spielt FLV Dateien mit dem JW-FLV Player ab. Aus Lizenzgründen kan dieser nicht mit dem Plugin mitgeliefert werden. <a href="http://www.jeroenwijering.com/?item=Flash_Video_Player" target="_blank">Bitte laden Sie diesen hier herunter</a>.<br />' .
+'<p>Das Plugin spielt FLV Dateien mit dem JW-FLV Player ab. Aus Lizenzgründen kan dieser nicht mit dem Plugin mitgeliefert werden. <a href="http://www.jeroenwijering.com/?item=Flash_Video_Player" target="_blank" rel="noopener">Bitte laden Sie diesen hier herunter</a>.<br />' .
 'In dem Archiv finden Sie die Dateien flvplayer.swf und swfobject.js. Diese legen Sie bitte in das Unterverzeichnis player dieses Plugins. Falls die Dateien nach dem Schema "mediaplayer.*" benannt sind, aendern Sie diese Dateien bitte in "flvplayer.*"</p>');
 

@@ -71,11 +71,11 @@
 @define('PLUGIN_PODCAST_INSTALL_DESC', 
 '<h3>Instalace</h3>' .
 '<p>Plugin pou¾ívá knihovnu getID3(), která nemù¾e být z licenèních dùvodù distribuována s tímto pluginem. Musíte si ji sami stáhnout z ' .
-'<a href="http://getid3.org/" target="_blank">getid3.org</a>. <b>Podporovaná je pouze verze 1.x!</b></p>' .
+'<a href="http://getid3.org/" target="_blank" rel="noopener">getid3.org</a>. <b>Podporovaná je pouze verze 1.x!</b></p>' .
 '<p>Ve sta¾eném archivu naleznete podadresáø getid3. Tento podadresáø je tøeba zkopírovat do adresáøe "bundled-libs" v Serenddipity.</p>');
 @define('PLUGIN_PODCAST_INSTALL_FLV_DESC', 
 '<h3>FLV Player</h3>' .
-'<p>Plugin pou¾ává JW-FLV Player pro zobrazení videí ve formátu FLV. Z licenèních dùvodù tento pøehrávaè není distribuován spolu s tímto pluginem, musíte si ho <a href="http://www.jeroenwijering.com/?item=Flash_Video_Player" target="_blank">stáhnout zde</a>.<br />' .
+'<p>Plugin pou¾ává JW-FLV Player pro zobrazení videí ve formátu FLV. Z licenèních dùvodù tento pøehrávaè není distribuován spolu s tímto pluginem, musíte si ho <a href="http://www.jeroenwijering.com/?item=Flash_Video_Player" target="_blank" rel="noopener">stáhnout zde</a>.<br />' .
 'Ve sta¾eném archivu najdete soubory flvplayer.swf a swfobject.js. Zkopírujte je do adresáøe tohoto pluginu. Pokud adresáø obsahuje pouze soubory "mediaplayer.*", pøejmenujte je na "flvplayer.*"</p>');
 
 // Next lines were translated on 2011/06/19

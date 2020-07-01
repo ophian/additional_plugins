@@ -8,7 +8,7 @@ if (IN_serendipity !== true) {
 
 include_once dirname(__FILE__) . '/podcast_player.php';
 
-@define('SERENDIPITY_EVENT_PODCAST_VERSION', '1.42');
+@define('SERENDIPITY_EVENT_PODCAST_VERSION', '1.43');
 
 /**
  * The Serendipity Podcasting Plugin
