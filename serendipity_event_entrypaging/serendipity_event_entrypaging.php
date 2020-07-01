@@ -20,7 +20,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
-        $propbag->add('version',       '1.73');
+        $propbag->add('version',       '1.74');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -88,7 +88,7 @@ class serendipity_event_entrypaging extends serendipity_event
     {
         global $serendipity;
         $base = $serendipity['baseURL'].'plugins/serendipity_event_entrypaging';
-        return '<p class="msg_notice"><span class="icon icon-info-circled"></span> Please also read the entrypages <a href="' . $base . '/README_FOR_SMARTY_TEMPLATING.txt" target="_blank">README_FOR_SMARTY_TEMPLATING</a> file for custom Smarty entrypaging!</p>';
+        return '<p class="msg_notice"><span class="icon icon-info-circled"></span> Please also read the entrypages <a href="' . $base . '/README_FOR_SMARTY_TEMPLATING.txt" target="_blank" rel="noopener">README_FOR_SMARTY_TEMPLATING</a> file for custom Smarty entrypaging!</p>';
     }
 
     function timeOffset($timestamp)
