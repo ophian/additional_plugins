@@ -1,3 +1,7 @@
+0.42:
+-----
+ * [Minor] Secure some (well-known) external target _blank links
+
 0.41:
 -----
  * Fix a wrong path concatenation slash and

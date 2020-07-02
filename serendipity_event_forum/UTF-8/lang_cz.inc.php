@@ -79,7 +79,7 @@
 @define('PLUGIN_FORUM_ALT_UNREAD', 'ještě nebylo přečteno nebo přibyly nové odpovědi...');
 @define('PLUGIN_FORUM_ALT_READ', 'již přečteno...');
 @define('PLUGIN_FORUM_ALT_DIRECTGOTOPOST', 'přejít přímo na příspěvek...');
-@define('PLUGIN_FORUM_MARKUPS', 'Následující značkovací jazyky mohou být použity, pokud je administrátor povolil: <br />&nbsp; - <a href=\"http://www.s9y.org/forums/faq.php?mode=bbcode\" target=\"_blank\">BBCode</a><br />&nbsp; - Smajlíci<br />&nbsp; - GalleryImage<br />');
+@define('PLUGIN_FORUM_MARKUPS', 'Následující značkovací jazyky mohou být použity, pokud je administrátor povolil: <br />&nbsp; - <a href=\"http://www.s9y.org/forums/faq.php?mode=bbcode\" target=\"_blank\" rel=\"noopener\">BBCode</a><br />&nbsp; - Smajlíci<br />&nbsp; - GalleryImage<br />');
 @define('PLUGIN_FORUM_GUEST', 'Host');
 @define('PLUGIN_FORUM_CONFIRM_DELETE_POST', 'Opravdu chcete smazat tento příspěvek?');
 @define('PLUGIN_FORUM_ORDER', 'Seřadit');

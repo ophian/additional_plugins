@@ -77,7 +77,7 @@
 @define("PLUGIN_FORUM_ALT_UNREAD", "Bisher noch nicht gelesen oder neue Antworten wurden geschrieben...");
 @define("PLUGIN_FORUM_ALT_READ", "Dieser Beitrag wurde bereits vollständig gelesen...");
 @define("PLUGIN_FORUM_ALT_DIRECTGOTOPOST", "Gehe direkt zu diesen Beitrag...");
-@define("PLUGIN_FORUM_MARKUPS", "Folgende Textformatierungen können benutzt werden, wenn vom Administrator aktiviert:<br />&nbsp; - <a href=\"http://www.s9y.org/forums/faq.php?mode=bbcode\" target=\"_blank\">BBCode</a><br />&nbsp; - Smilies<br />&nbsp; - GalleryImage<br />");
+@define("PLUGIN_FORUM_MARKUPS", "Folgende Textformatierungen können benutzt werden, wenn vom Administrator aktiviert:<br />&nbsp; - <a href=\"http://www.s9y.org/forums/faq.php?mode=bbcode\" target=\"_blank\" rel=\"noopener\">BBCode</a><br />&nbsp; - Smilies<br />&nbsp; - GalleryImage<br />");
 @define("PLUGIN_FORUM_GUEST", "Gast");
 @define("PLUGIN_FORUM_CONFIRM_DELETE_POST", "Möchtest Du diese Antwort wirklich löschen?");
 @define("PLUGIN_FORUM_ORDER", "Umsortieren");

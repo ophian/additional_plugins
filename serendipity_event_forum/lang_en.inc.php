@@ -85,7 +85,7 @@
 @define("PLUGIN_FORUM_ALT_UNREAD", "not read before or new replies were made...");
 @define("PLUGIN_FORUM_ALT_READ", "already read...");
 @define("PLUGIN_FORUM_ALT_DIRECTGOTOPOST", "direct goto post...");
-@define("PLUGIN_FORUM_MARKUPS", "Following markups can be used if enabled by the administrator:<br />&nbsp; - <a href=\"http://www.s9y.org/forums/faq.php?mode=bbcode\" target=\"_blank\">BBCode</a><br />&nbsp; - Smilies<br />&nbsp; - GalleryImage<br />");
+@define("PLUGIN_FORUM_MARKUPS", "Following markups can be used if enabled by the administrator:<br />&nbsp; - <a href=\"http://www.s9y.org/forums/faq.php?mode=bbcode\" target=\"_blank\" rel=\"noopener\">BBCode</a><br />&nbsp; - Smilies<br />&nbsp; - GalleryImage<br />");
 @define("PLUGIN_FORUM_GUEST", "Guest");
 @define("PLUGIN_FORUM_CONFIRM_DELETE_POST", "Do you really want to delete this post?");
 @define("PLUGIN_FORUM_ORDER", "Reorder");

@@ -85,7 +85,7 @@
 @define("PLUGIN_FORUM_ALT_READ", "既に読んでいます...");
 @define("PLUGIN_FORUM_ALT_DIRECTGOTOPOST", "直接投稿に移動する...");
 @define("PLUGIN_FORUM_MARKUPS", "
-もし管理者によって有効にされている場合、次のマークアップを使うことができます:<br />&nbsp; - <a href=\"http://www.s9y.org/forums/faq.php?mode=bbcode\" target=\"_blank\">BBCode</a><br />&nbsp; - 顔文字<br />&nbsp; - ギャラリー画像<br />");
+もし管理者によって有効にされている場合、次のマークアップを使うことができます:<br />&nbsp; - <a href=\"http://www.s9y.org/forums/faq.php?mode=bbcode\" target=\"_blank\" rel=\"noopener\">BBCode</a><br />&nbsp; - 顔文字<br />&nbsp; - ギャラリー画像<br />");
 @define("PLUGIN_FORUM_GUEST", "ゲスト");
 @define("PLUGIN_FORUM_CONFIRM_DELETE_POST", "本当にこの投稿を削除しますか?");
 @define("PLUGIN_FORUM_ORDER", "順番変更");
