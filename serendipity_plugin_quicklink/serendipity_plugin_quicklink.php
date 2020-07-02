@@ -20,7 +20,7 @@ class serendipity_plugin_quicklink extends serendipity_plugin
         $propbag->add('description',   PLUGIN_QUICKLINK_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Omid Mottaghi Rad');
-        $propbag->add('version',       '1.0');
+        $propbag->add('version',       '1.1');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -293,7 +293,7 @@ initToolTips();
                 }
 
                 // create link string
-                $link = '<a href="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($row['link']) : htmlspecialchars($row['link'], ENT_COMPAT, LANG_CHARSET)) . '"' . $tip . ' target="_blank">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($label) : htmlspecialchars($label, ENT_COMPAT, LANG_CHARSET)) . '</a>';
+                $link = '<a href="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($row['link']) : htmlspecialchars($row['link'], ENT_COMPAT, LANG_CHARSET)) . '"' . $tip . ' target="_blank" rel="noopener">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($label) : htmlspecialchars($label, ENT_COMPAT, LANG_CHARSET)) . '</a>';
 
                 // create delete link string
                 $deleteLink = '';
