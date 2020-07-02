@@ -1,6 +1,6 @@
 <?php
 // ClickableURL preg replace markup
-// turns urls into clickable links
+// turns URLs into clickable links
 //
 $regexpArray = array(
     'SearchArray'=>array(
@@ -11,11 +11,11 @@ $regexpArray = array(
 		"/^((www\.))([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si"
     ),
     'ReplaceArray'=>array(
-		'\\1<a href="\\2\\4" target="_blank">\\2\\4</a>', 
-		'<a href="\\1\\3" target="_blank">\\1\\3</a>', 
+		'\\1<a href="\\2\\4" target="_blank" rel="noopener">\\2\\4</a>', 
+		'<a href="\\1\\3" target="_blank" rel="noopener">\\1\\3</a>', 
 
-		'\\1<a href="http://\\2\\4" target="_blank">\\2\\4</a>', 
-		'<a href="http://\\1\\3" target="_blank">\\1\\3</a>' 
+		'\\1<a href="http://\\2\\4" target="_blank" rel="noopener">\\2\\4</a>', 
+		'<a href="http://\\1\\3" target="_blank" rel="noopener">\\1\\3</a>' 
     )
 );
 

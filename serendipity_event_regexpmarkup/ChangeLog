@@ -1,3 +1,12 @@
+1.1:
+----
+ * Secure some external target _blank links by living standard rel="noopener"
+
+1.0:
+----
+ * Silence possible eventData property check and (clean) Up to 2.0
+ * Raises requirements
+
 0.9:
 ----
 

@@ -18,7 +18,7 @@ class serendipity_event_regexpmarkup extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_REGEXPMARKUP_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rob Antonishen');
-        $propbag->add('version',       '1.0');
+        $propbag->add('version',       '1.1');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
