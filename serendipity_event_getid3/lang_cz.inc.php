@@ -14,9 +14,10 @@
 @define('PLUGIN_GETID3_INSTALL_DESC', 
 '<h3>Instalace</h3>' .
 '<p>Knihovna getID3() sama o sobì není distribuována s tímto pluginem. Musíte ji ruènì stáhnout z ' .
-'<a href="http://getid3.org/" target="_blank">getid3.org</a>. <b>Podporována je pouze verze knihovny 1.x!</b></p>' .
+'<a href="http://getid3.org/" target="_blank" rel="noopener">getid3.org</a>. <b>Podporována je pouze verze knihovny 1.x!</b></p>' .
 '<p>Ve sta¾eném archivu najdete podadresáø getid3. Zkopírujte prosím obsah tohoto adresáøe do adresáøe Serendipity "bundled-libs".</p>');
 
-@define('PLUGIN_GETID3_LIBNOTFOUND',    'Knihovna getID3 nebyla nalezena ani v adresáøi bundled-libs, ani v adresáøi pluginu!'); 
-@define('PLUGIN_GETID3_LIBFOUNDBUNDLED','Knihovna getID3 byla nalezena v adresáøi bundled-libs.'); 
+@define('PLUGIN_GETID3_LIBNOTFOUND',    'Knihovna getID3 nebyla nalezena ani v adresáøi bundled-libs, ani v adresáøi pluginu!');
+@define('PLUGIN_GETID3_LIBFOUNDBUNDLED','Knihovna getID3 byla nalezena v adresáøi bundled-libs.');
 @define('PLUGIN_GETID3_LIBFOUNDPLUGIN', 'Knihovna getID3 nalezena v adresáøi pluginu.');
+

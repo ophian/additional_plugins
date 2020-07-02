@@ -1,6 +1,12 @@
-# 
+Version 1.5:
 
-Made event_hook() declaration the same as in s9y core
+ * Use lang API. Raises requirement.
+ * Fix some external target _blank links
+
+------------------------------------------------------------------------
+Version 1.4:
+
+ * Made event_hook() declaration the same as in s9y core
 
 ------------------------------------------------------------------------
 Version 1.3 (brockhaus):
