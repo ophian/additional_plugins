@@ -1,3 +1,8 @@
+1.84:
+-----
+ * Add sameSite: 'lax' to cookieconsent.min.js files Cookie “cookieconsent_status”
+   for upcoming Browser revisions.
+
 1.83:
 -----
  * Secure some external target _blank links
