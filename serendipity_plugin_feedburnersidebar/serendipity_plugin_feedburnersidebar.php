@@ -22,7 +22,7 @@ class serendipity_plugin_feedburnersidebar extends serendipity_plugin
         $propbag->add('description',   PLUGIN_FEEDBURNERSIDEBAR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Aaron Axelsen');
-        $propbag->add('version',       '1.3');
+        $propbag->add('version',       '1.4');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -121,7 +121,7 @@ class serendipity_plugin_feedburnersidebar extends serendipity_plugin
                 case 'none':
                     break;
                 case 'link':
-                    $rv[] = '<a href="http://feedburner.google.com/fb/a/mailverify?uri='.$feedid.'&amp;loc=en_US" target="_blank">'.$emailTitle.'</a>';
+                    $rv[] = '<a href="http://feedburner.google.com/fb/a/mailverify?uri='.$feedid.'&amp;loc=en_US" target="_blank" rel="noopener">'.$emailTitle.'</a>';
                     break;
                 case 'form':
                     $rv[] = '<form action="http://feedburner.google.com/fb/a/mailverify" 
