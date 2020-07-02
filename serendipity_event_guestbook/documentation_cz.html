@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Dokumentace: Návštěvní kniha</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2"> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
     <style type="text/css">
         /*<![CDATA[*/
         body { font: 80%/130% 'Lucida Grande',Geneva,Verdana,Arial,sans-serif; background: #A8A8A8; color: #333; margin: 20px; border: 1px solid #000 }
@@ -45,11 +45,11 @@
     Tento Serendipity plugin "Návštěvní kniha" je založen na ŠABLONÁCH vzhledu, nastavitelný vlastním stylopisem, má FRONTEND (to, co se zobrazuje návštěvníkům blogu) a BACKEND (stránky v administrační sekci sloužící k nastavení pluginu).<br />
     Přečtěte si prosím pečlivě části <a href="#config">Nastavení</a>, <a href="#admin">Administrace</a>, <a href="#design">Vzhled</a> a nejnověji měněné položky v části <a href="#change">Changelog</a>. <br />
     <br /><a name="config"></a>
-    
+
     <div class="skip"><a href="#top">Nahoru</a></div>
 
     <div class="readme_title">S9Y :: NÁVŠTĚVNÍ KNIHA :: NASTAVENÍ</div>
-    
+
     <ul class="readme config">
     <li>Volba <span class="eye">'Permalink'</span> určuje stálý odkaz (= permalink). Potřebuje absolutní HTTP cestu a musí končit na .htm nebo .html! <br />
     Výchozí hodnota je "<em>/blogname/pages/guestbook.html</em>", nebo, v případě že nepoužíváte mod_rewrite, "<em>/blogname/index.php?/pages/guestbook.html</em>".</li>
@@ -71,11 +71,11 @@
     <li><span class="eye">'Formát data'</span> umožňuje nastavit libovolný formát pro zobrazení data příspěvku pomocí funkce php strftime() (<em>výchozí: %a, %d.%m.%Y %H:%M</em>).</li>
     </ul>
     <a name="admin"></a>
-    
+
     <div class="skip"><a href="#top">Nahoru</a></div>
 
     <div class="readme_title">S9Y :: GUESTBOOK :: ADMINISTRACE</a></div>
-    
+
     <ul class="readme administration">
         <li>Po přihlášení do blogu je možné spravovat plugin jak z administártorské sekce (z backendu), tak přímo ze stránky návštěvní knihy (z frontendu). Z frontendu je možné pouze mazat příspěvky. Před smazáním budete požádáni o potvrzení smazání.<br />
 		Administrace z frontendu byla odstraněna ve verzi 3.24.</li>
@@ -89,11 +89,11 @@
         <li>Odkaz na vložení SQL je zobrazen, ale v současnosti není aktivní, neboť se v současnosti nejedná o jednoduchou operaci.</li>
     </ul>
     <a name="design"></a>
-    
+
     <div class="skip"><a href="#top">Nahoru</a></div>
 
     <div class="readme_title">S9Y :: GUESTBOOK :: VZHLED</div>
-    
+
     <ul class="readme design">
         <li>Všechny šablony smarty (soubory *.tpl), obrázky a hlavní css stylopis pluginu jsou umístěny v adresáři pluginu a musí zde zůstat.
         <li>Pokud to umíte a chcete upravit vzhled návštěvní knihy podle sebe, zkopírujte tyto soubory do adresáře se stylem/šablonou vzhledu, kterou používáte.
@@ -120,23 +120,23 @@
         #guestbook_entrybundle .guestbook_admin_comment p,<br />
         #guestbook_entrybundle .guestbook_admin_comment blockquote,<br />
         #guestbook_entrybundle .guestbook_admin_comment blockquote p, <br />
-        #guestbook_entrybundle .guestbook_admin_comment blockquote p q { color: #000; } 
+        #guestbook_entrybundle .guestbook_admin_comment blockquote p q { color: #000; }
         </em></span>
         pro nastavení černé barvy (#000).</li>
         <li>Nechcete <span class="eye">žádné mezery</span> mezi bloky s jednotlivými příspěvky? Přidejte: <em>.guestbook_splitentries { display: none; visibility: hidden; }</em></li>
         <li><span class="eye">Úvodní text</span>, pokud je zadán v nastavení pluginu, může být upraven pomocí: <em>#guestbook_wrapper .guestbook_intro { padding: 0 none; text-align: left; border: 0 none; background:none repeat scroll 0 0 #FFF; }</em></li>
-        <li>Krásný seznam dostupných barev naleznete například <a href="http://www.wackerart.de/rgbfarben.html" target="_blank">tady</a>. Krásné obarvování!</li>
+        <li>Krásný seznam dostupných barev naleznete například <a href="http://www.wackerart.de/rgbfarben.html" target="_blank" rel="noopener">tady</a>. Krásné obarvování!</li>
         <br />
     </ul>
 </div>
 <div class="doc_block changelog">
 
     <a name="change"></a>
-    
+
 	<div class="skip"><a href="#top">Nahoru</a></div>
-    
+
     <div class="readme_title">S9Y :: NÁVŠTĚVNÍ KNIHA :: CHANGELOG</div>
-    
+
 <h2>POZOR: Nejnovější verze pluginu vyžaduje, abyste zkontrolovali a zadali/znovu potvrdili nastavení návštěvní knihy!</h2>
 
 <p>
@@ -216,7 +216,7 @@
     <li> Oprava serendipity_plugin_guestbook.php, aby správně zobrazeovalo pouze schválené vzkazy, pokud je to zadáno v nastavení.</li>
     <li>Opravení překlepů v jazykovém souboru lang_en.* a upravení dokumentace tak, aby byla validní s W3C XHTML.</li>
 </ul>
- 
+
 <h2>Verze 3.20 <span class="date">[ 17.7.2010 ]</span></h2>
 
 <ul>
