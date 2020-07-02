@@ -194,7 +194,7 @@
 <category>Event Plugins</category>
 <author>Matthew Maude (modified by Jim Davies)</author>
 <content:encoded>&lt;b&gt;serendipity_event_cpgselector&lt;br /&gt;Coppermine-Selektor&lt;/b&gt;&lt;br /&gt;Wählen Sie Bilder aus einer Coppermine-Galerie für neue Einträge aus.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:17:32 +0200</pubDate>
+<pubDate>Thu, 02 Jul 2020 08:12:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cpgselector</guid>
 </item>
 <item>
@@ -419,7 +419,7 @@
 <category>Event Plugins</category>
 <author>Jay Bertrand</author>
 <content:encoded>&lt;b&gt;serendipity_event_flickr&lt;br /&gt;Aus Flickr importieren&lt;/b&gt;&lt;br /&gt;Bilder von flickr.com in die Mediendatenbank importieren.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 16:22:04 +0200</pubDate>
+<pubDate>Thu, 02 Jul 2020 07:57:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flickr</guid>
 </item>
 <item>
@@ -437,7 +437,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, http://blog.linux-stats.org, dma147@linux-stats.org</author>
 <content:encoded>&lt;b&gt;serendipity_event_forum&lt;br /&gt;Diskussions-Forum / phpBB-Kommentare&lt;/b&gt;&lt;br /&gt;Stellt ein komplettes Diskussions-Forum zur Verfügung, kann alternativ Blog-Kommentare in eine phpBB-Installation spiegeln.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 18 Aug 2019 11:14:18 +0200</pubDate>
+<pubDate>Wed, 01 Jul 2020 13:05:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_forum</guid>
 </item>
 <item>
@@ -490,8 +490,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_getid3</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_getid3&lt;br /&gt;getID3() Unterstützung zum Erkennen von Medien Eigenschaften&lt;/b&gt;&lt;br /&gt;Benutzt die getID3() Bibliothek um erweiterte Medien Eigenschaften für Filme und Audios zu erkennen. getID3() selbst wird nicht mit dem Plugin ausgeliefert.&lt;br/&gt;For: Serendipity 1.1</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_getid3&lt;br /&gt;getID3() Unterstützung zum Erkennen von Medien Eigenschaften&lt;/b&gt;&lt;br /&gt;Benutzt die getID3() Bibliothek um erweiterte Medien Eigenschaften für Filme und Audios zu erkennen. getID3() selbst wird nicht mit dem Plugin ausgeliefert.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Wed, 01 Jul 2020 13:14:50 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_getid3</guid>
 </item>
 <item>
@@ -878,7 +878,7 @@
 <category>Event Plugins</category>
 <author>Jason Levitt</author>
 <content:encoded>&lt;b&gt;serendipity_event_popfetcher&lt;br /&gt;POPfetcher&lt;/b&gt;&lt;br /&gt;Holt E-Mail inkl. Anhängen ab und veröffentlicht sie von einem POP3 E-Mail-Account (mit spezieller Handy-Unterstützung)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 23 Jan 2020 13:44:10 +0100</pubDate>
+<pubDate>Wed, 01 Jul 2020 13:11:43 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_popfetcher</guid>
 </item>
 <item>
@@ -941,7 +941,7 @@
 <category>Event Plugins</category>
 <author>Rob Antonishen</author>
 <content:encoded>&lt;b&gt;serendipity_event_regexpmarkup&lt;br /&gt;Textformatierung: Regexp&lt;/b&gt;&lt;br /&gt;Textformatierung mittels benutzerdefinierter regexp-Datei. Beachten Sie die Beispieldateien im &quot;regexps&quot;-Unterverzeichnis dieses Plugins.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 17 Aug 2018 16:13:40 +0200</pubDate>
+<pubDate>Wed, 01 Jul 2020 13:10:51 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_regexpmarkup</guid>
 </item>
 <item>
@@ -1112,7 +1112,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;Textformatierung: Textile&lt;/b&gt;&lt;br /&gt;Textile-Formatierung durchführen&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 02 May 2020 13:15:08 +0200</pubDate>
+<pubDate>Wed, 01 Jul 2020 13:09:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
@@ -1148,7 +1148,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_tinymce&lt;br /&gt;TinyMCE als WYSIWYG Editor benutzen&lt;/b&gt;&lt;br /&gt;Es wird Serendipity ab Version 1.6 benötigt. Bitte lesen Sie nach der Installation die weitere Installationsbeschreibung in der Plugin Konfiguration.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 23 Jan 2020 13:45:21 +0100</pubDate>
+<pubDate>Wed, 01 Jul 2020 13:08:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_tinymce</guid>
 </item>
 <item>

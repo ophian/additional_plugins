@@ -1162,9 +1162,9 @@
 <description>Select images from a Coppermine gallery in new entries</description>
 <maintainers><maintainer><name>Matthew Maude (modified by Jim Davies)</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.11</version>
+  <version>2.12</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-08-18</date>
+  <date>2020-07-02</date>
   <filelist>
     <dir name="serendipity_event_cpgselector">
       <file>ChangeLog</file>
@@ -2885,9 +2885,9 @@
 <description>Import images from flickr.com into the media library</description>
 <maintainers><maintainer><name>Jay Bertrand</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.7</version>
+  <version>0.8</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-18</date>
+  <date>2020-07-02</date>
   <filelist>
     <dir name="serendipity_event_flickr">
       <file>ChangeLog</file>
@@ -2993,9 +2993,9 @@
 <description>Provides a complete discussion forum to your users. Can alternatively provide to mirror comments into a phpBB installation.</description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, http://blog.linux-stats.org, dma147@linux-stats.org</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.41</version>
+  <version>0.42</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-08-18</date>
+  <date>2020-07-01</date>
   <filelist>
     <dir name="serendipity_event_forum">
       <file>AUTHORS</file>
@@ -4091,9 +4091,9 @@
 <description>Uses the getID3() library to fetch extended media properties for movies/audio files. getID3() itself is not distributed with this plugin.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4</version>
-  <requirements:s9yVersion>1.1</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.5</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2020-07-01</date>
   <filelist>
     <dir name="serendipity_event_getid3">
       <file>ChangeLog</file>
@@ -7598,9 +7598,9 @@
 <description>Fetches and publishes email and attachments from a POP3 email account (with special cell phone support)</description>
 <maintainers><maintainer><name>Jason Levitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.52</version>
+  <version>1.53</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2020-01-23</date>
+  <date>2020-07-01</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
       <file>ChangeLog</file>
@@ -8482,9 +8482,9 @@
 <description>Mark up via user custom regexp files. See example files in &quot;regexps&quot; subdirectory of this plugin.</description>
 <maintainers><maintainer><name>Rob Antonishen</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.0</version>
+  <version>1.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-08-17</date>
+  <date>2020-07-01</date>
   <filelist>
     <dir name="serendipity_event_regexpmarkup">
       <file>ChangeLog</file>
@@ -9823,9 +9823,9 @@
 <description>텍스타일 변환기를 통해 모든 출력을 변환시킴</description>
 <maintainers><maintainer><name>Serendipity Team, Lars Strojny, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.9.1</version>
+  <version>1.9.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2020-05-02</date>
+  <date>2020-07-01</date>
   <filelist>
     <dir name="serendipity_event_textile">
       <file>ChangeLog</file>
@@ -10512,9 +10512,9 @@
 <description>Utilizes the TinyMCE WYSIWYG editor. Requires Serendipity 1.6 or later. After installation, read the installation guide in the configuration screen for this plugin.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.15</version>
+  <version>1.16</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2020-01-23</date>
+  <date>2020-07-01</date>
   <filelist>
     <dir name="serendipity_event_tinymce">
       <file>ChangeLog</file>
