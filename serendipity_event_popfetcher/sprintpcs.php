@@ -255,14 +255,14 @@ function sprintpcs_pictureshare($maildir, $body, $authorid) {
         serendipity_insertImageInDatabase($memofilename, $maildir, $authorid , NULL);
 
         echo '<br />'.MF_MSG13.$memofilename;
-        $memo='<a href="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$memofilename.'" target="_blank">'.MF_MSG21.'</a><br /><br />';
+        $memo='<a href="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$memofilename.'" target="_blank" rel="noopener">'.MF_MSG21.'</a><br /><br />';
     } else  {
         $memo='';
     }
 
     echo '<br />'.MF_MSG13.$filename;
 
-    return $msg.$memo.'<a href="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$filename.'" target="_blank"><img src="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$thumbname.'" alt="'.MF_MSG18.'" /></a>';
+    return $msg.$memo.'<a href="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$filename.'" target="_blank" rel="noopener"><img src="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$thumbname.'" alt="'.MF_MSG18.'" /></a>';
 }
 
 function sprintpcs_videoshare($maildir, $body, $authorid) {
@@ -397,14 +397,14 @@ function sprintpcs_videoshare($maildir, $body, $authorid) {
         serendipity_insertImageInDatabase($memofilename, $maildir, $authorid , NULL);
 
         echo '<br />'.MF_MSG13.$memofilename;
-        $memo='<a href="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$memofilename.'" target="_blank">'.MF_MSG21.'</a><br /><br />';
+        $memo='<a href="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$memofilename.'" target="_blank" rel="noopener">'.MF_MSG21.'</a><br /><br />';
     } else {
         $memo='';
     }
 
     echo '<br />'.MF_MSG13.$filename;
 
-    return $msg.$memo.'<a href="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$mfilename.'" target="_blank"><img src="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$thumbname.'" alt="'.MF_MSG22.'" /></a>';
+    return $msg.$memo.'<a href="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$mfilename.'" target="_blank" rel="noopener"><img src="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$thumbname.'" alt="'.MF_MSG22.'" /></a>';
 }
 
 function sprintpcs_albumshare($maildir, $body, $authorid) {
@@ -538,14 +538,14 @@ function sprintpcs_albumshare($maildir, $body, $authorid) {
         serendipity_makeThumbnail($memofilename, $maildir, false);
         serendipity_insertImageInDatabase($memofilename, $maildir, $authorid , NULL);
         echo '<br />'.MF_MSG13.$memofilename;
-        $memo='<a href="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$memofilename.'" target="_blank">'.MF_MSG21.'</a><br /><br />';
+        $memo='<a href="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$memofilename.'" target="_blank" rel="noopener">'.MF_MSG21.'</a><br /><br />';
     } else {
         $memo='';
     }
 
     echo '<br />'.MF_MSG13.$filename;
 
-    return $msg.$memo.'<a href="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$mfilename.'" target="_blank"><img src="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$thumbname.'" alt="'.MF_MSG22.'" /></a>';
+    return $msg.$memo.'<a href="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$mfilename.'" target="_blank" rel="noopener"><img src="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$thumbname.'" alt="'.MF_MSG22.'" /></a>';
 }
 
 ?>

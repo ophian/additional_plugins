@@ -12,7 +12,7 @@ require_once('tmobile.php');
 require_once('o2.php');
 
 // Default values
-define('POPFETCHER_VERSION',  '1.52');       // This version of Popfetcher
+define('POPFETCHER_VERSION',  '1.53');       // This version of Popfetcher
 define('DEFAULT_ADMINMENU',   'true');       // True if run as sidebar plugin. False if external plugin.
 define('DEFAULT_HIDENAME',    'popfetcher'); // User should set this to something unguessable
 define('DEFAULT_MAILSERVER',  '');
@@ -842,14 +842,14 @@ class serendipity_event_popfetcher extends serendipity_event
                 $displayed_class = "popfetcherimage";
             }
             $attfile = $serendipity['serendipityHTTPPath'].$serendipity['uploadHTTPPath'].$maildir.$filename;
-            $attlink = '<a class="'. $displayed_class .'" href="' . $attfile . '" target="_blank"><img src="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$displayed_file.'" alt="'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($this->stripsubject($subject)) : htmlspecialchars($this->stripsubject($subject), ENT_COMPAT, LANG_CHARSET)).'" /></a>';
+            $attlink = '<a class="'. $displayed_class .'" href="' . $attfile . '" target="_blank" rel="noopener"><img src="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$displayed_file.'" alt="'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($this->stripsubject($subject)) : htmlspecialchars($this->stripsubject($subject), ENT_COMPAT, LANG_CHARSET)).'" /></a>';
 
             if ($this->inline_picture($p->headers['content-id'], $postbody, $postex, $attfile, $attlink)) {
                 return true;
             }
 
         } else {
-            $attlink = '<a class="popfetcherfile"  href="' . $serendipity['serendipityHTTPPath'].$serendipity['uploadHTTPPath'].$maildir.$filename.'" target="_blank">'.$filename.'</a>';
+            $attlink = '<a class="popfetcherfile"  href="' . $serendipity['serendipityHTTPPath'].$serendipity['uploadHTTPPath'].$maildir.$filename.'" target="_blank" rel="noopener">'.$filename.'</a>';
         }
 
         if ($debug_file !== null || $debug) {
@@ -1534,7 +1534,7 @@ class serendipity_event_popfetcher extends serendipity_event
                             fwrite($fp, $p->body);
                             fclose($fp);
                             serendipity_insertImageInDatabase($filename, $maildir, $authorid , NULL);
-                            $attlink = '<a class="popfetcherfile"  href="' . $serendipity['serendipityHTTPPath'].$serendipity['uploadHTTPPath'].$maildir.$filename.'" target="_blank">'.$filename.'</a>';
+                            $attlink = '<a class="popfetcherfile"  href="' . $serendipity['serendipityHTTPPath'].$serendipity['uploadHTTPPath'].$maildir.$filename.'" target="_blank" rel="noopener">'.$filename.'</a>';
 
                             // Inline pictures to match the structure of the mail
                             if ($plaintext_is_body_flag) {

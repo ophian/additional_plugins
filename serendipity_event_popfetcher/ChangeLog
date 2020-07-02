@@ -1,5 +1,9 @@
 1.52
 ----
+ * Secure some target _blank links by living standard rel="noopener"
+
+1.52
+----
  * Serendipity 2.3 compatibility:
     - Proper evaluation of allow_comments/moderate_comments booleans
  * Adds ability to specify multiple valid e-mail addresses by semicolon
