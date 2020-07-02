@@ -23,7 +23,7 @@ class serendipity_event_tinymce extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TINYMCE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',       '1.15');
+        $propbag->add('version',       '1.16');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',

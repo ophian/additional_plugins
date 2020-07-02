@@ -31,7 +31,7 @@
 @define('PLUGIN_EVENT_TINYMCE_HTTPREL_DESC',    'Definuje HTTP cestu k pluginu relativnì ke koøenu serveru. Pokud jste nezmìnili strukturu permalinkù pro tento plugin a pokud Vá¹ blog nebì¾í na serveru v podadresáøi, pak by mìlo dobøe fungovat výchozí nastavení.');
 @define('PLUGIN_EVENT_TINYMCE_INSTALL',         '<br /><br /><strong>Instalaèní pøíruèka:</strong><br />
 <ul>
-<li><a href="http://tinymce.moxiecode.com/download.php" target="_blank">Stáhnìte TinyMCE, TinyMCE compressor</a> (Pouze TinyMCE 2.0 nebo novìj¹í).</li>
+<li><a href="http://tinymce.moxiecode.com/download.php" target="_blank" rel="noopener">Stáhnìte TinyMCE, TinyMCE compressor</a> (Pouze TinyMCE 2.0 nebo novìj¹í).</li>
 <li><b>TinyMCE</b>: Rozbalte do adresáøe "tinymce" v adresáøi ' . dirname(__FILE__) . '.</li>
 <li>TinyMCE compressor rozbalte do adresáøe "tinymce/jscripts/tiny_mce/" v adresáøi ' . dirname(__FILE__) . ' (Pouze TinyMCE 2.0 nebo novìj¹í).</li>
 <li>Mù¾ete stáhnout iManager, ale není to poviné (vy¾aduje PHP knihovnu GD):

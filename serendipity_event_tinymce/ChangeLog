@@ -1,7 +1,11 @@
+1.16:
+-----
+ * Secure target _blank links by living standard rel="noopener"
+
 1.15:
 -----
     * Consistent fixes
-    * Consisent typo fixed
+    * typo fixes
 
 1.14:
 -----

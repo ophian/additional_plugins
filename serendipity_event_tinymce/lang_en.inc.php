@@ -32,7 +32,7 @@
 @define('PLUGIN_EVENT_TINYMCE_HTTPREL_DESC',    'This defines the HTTP path of the plugin relative to the base server url. If you didn\'t change the permalink structure for plugins and your blog is not running in a subdirectory of the server, you are fine with the default setting.');
 @define('PLUGIN_EVENT_TINYMCE_INSTALL',         '<br /><br /><strong>Installation guide:</strong><br />
 <ul>
-<li><a href="http://tinymce.moxiecode.com/download.php" target="_blank">Download TinyMCE, TinyMCE compressor</a> (Only TinyMCE 2.0 or later).</li>
+<li><a href="http://tinymce.moxiecode.com/download.php" target="_blank" rel="noopener">Download TinyMCE, TinyMCE compressor</a> (Only TinyMCE 2.0 or later).</li>
 <li><b>TinyMCE</b>: Extract to a "tinymce" directory below ' . dirname(__FILE__) . '.</li>
 <li>TinyMCE compressor extract to a "tinymce/jscripts/tiny_mce/" directory below ' . dirname(__FILE__) . ' (Only TinyMCE 2.0 or later).</li>
 <li>Optionally download iManager (requires PHP GD support):

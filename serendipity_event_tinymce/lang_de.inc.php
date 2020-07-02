@@ -32,12 +32,12 @@
 @define('PLUGIN_EVENT_TINYMCE_HTTPREL_DESC',    'Hier können Sie angeben, wie ihr relativer Pfad zu dem Plugin bezogen auf die Basis Adresse lautet. Wenn Sie die Permalink Struktur für Plugins nicht geändert haben und wenn ihr Blog nicht in einem Unterverzeichnis installiert ist, können Sie die Vorgabe so belassen.');
 @define('PLUGIN_EVENT_TINYMCE_INSTALL',         '<br /><br /><strong>Installations Anweisungen:</strong><br />
 <ul>
-<li>Bitte <a href="http://tinymce.moxiecode.com/download.php" target="_blank">laden Sie TinyMCE und den TinyMCE Compressor</a> (Nur ab TinyMCE 2.0) von der Webseite .</li>
+<li>Bitte <a href="http://tinymce.moxiecode.com/download.php" target="_blank" rel="noopener">laden Sie TinyMCE und den TinyMCE Compressor</a> (Nur ab TinyMCE 2.0) von der Webseite .</li>
 <li><b>TinyMCE</b>: Entpacken Sie das Verzeichnis "tinymce" in dem Archiv in das Pluginverzeichnis serendipity_event_tinymce.</li>
 <li><b>TinyMCE compressor</b>: Entpacken Sie den Inhalt in das Verzeichnis "tinymce/jscripts/tiny_mce/" unterhalb des Pluginverzeichnisses serendipity_event_tinymce (Nur ab TinyMCE 2.0).</li>
 <li>Da sie die deutsche Sprache verwenden, müssen Sie diese in TinyMCE installieren, da diese nicht mit TinyMCE ausgeliefert wird:
 <ul>
-<li><a href="http://tinymce.moxiecode.com/language.php" target="_blank">Weitere Sprachen können Sie hier herunter laden</a></li>
+<li><a href="http://tinymce.moxiecode.com/language.php" target="_blank" rel="noopener">Weitere Sprachen können Sie hier herunter laden</a></li>
 <li>Entpacken Sie das Spracharchiv und kopieren Sie die entstandene Verzeichnisstruktur in das tinymce Verzeichnis unterhalb des Pluginverzeichnisses.</li>
 </ul>
 </li>
