@@ -27,7 +27,7 @@
 <p>Tento plugin bude čas od času umožňovat aktualizace pomocí pluginu Spartacus.<hr>
 Pokud vůbec někdy budete potřebovat ručně aktualizovat dodané CKEditor balíčky na vlastní balíčky (*), pak prosím:
 <ol style="line-height: 1.6">
-<li><a href="http://ckeditor.com/download" target="_blank">stáhněte CKEditor</a></li>
+<li><a href="http://ckeditor.com/download" target="_blank" rel="noopener">stáhněte CKEditor</a></li>
 <li>Rozbalte jej do: <em>' . dirname(__FILE__) . '</em> (měl by být vytvořen podadresář <em>"ckeditor"</em>)</li>
 </ol>
 </p>');*/
