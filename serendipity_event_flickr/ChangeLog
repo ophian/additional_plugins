@@ -1,3 +1,7 @@
+0.8:
+----
+ * Secure external target _blank links by living standard rel="noopener"
+
 0.7:
 ----
  * Sync [de] translation

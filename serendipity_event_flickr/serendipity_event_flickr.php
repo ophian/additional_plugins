@@ -24,7 +24,7 @@ class serendipity_event_flickr extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('license',       'GPL');
         $propbag->add('author',        'Jay Bertrand');
-        $propbag->add('version',       '0.7');
+        $propbag->add('version',       '0.8');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -181,7 +181,7 @@ class serendipity_event_flickr extends serendipity_event
                             $photos_url = $f->urls_getUserPhotos($nsid);
                             echo '<h4 style="margin-bottom: 0; padding-bottom: 0;">Photos of <em>';
                             echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['POST']['flickr_username']) : htmlspecialchars($serendipity['POST']['flickr_username'], ENT_COMPAT, LANG_CHARSET)).'</em> at ';
-                            echo '<a href="'.$photos_url.'" target="_blank">'.$photos_url.'</a></h4>';
+                            echo '<a href="'.$photos_url.'" target="_blank" rel="noopener">'.$photos_url.'</a></h4>';
 
                             // default page is number one
                             if (empty($serendipity['POST']['flickr_page']) || !is_numeric($serendipity['POST']['flickr_page'])) {
