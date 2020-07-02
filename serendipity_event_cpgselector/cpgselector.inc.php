@@ -667,7 +667,7 @@ function cpg_imageSelector_done(textarea)
         } else {
 ?>
     <script type="text/javascript">
-    block = '<a href="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($imgName) : htmlspecialchars($imgName, ENT_COMPAT, LANG_CHARSET)); ?>" title="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($file['name'] . '.' . $file['extension']) : htmlspecialchars($file['name'] . '.' . $file['extension'], ENT_COMPAT, LANG_CHARSET)); ?>" target="_blank"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($file['name'] . '.' . $file['extension']) : htmlspecialchars($file['name'] . '.' . $file['extension'], ENT_COMPAT, LANG_CHARSET)); ?></a>';
+    block = '<a href="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($imgName) : htmlspecialchars($imgName, ENT_COMPAT, LANG_CHARSET)); ?>" title="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($file['name'] . '.' . $file['extension']) : htmlspecialchars($file['name'] . '.' . $file['extension'], ENT_COMPAT, LANG_CHARSET)); ?>" target="_blank" rel="noopener"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($file['name'] . '.' . $file['extension']) : htmlspecialchars($file['name'] . '.' . $file['extension'], ENT_COMPAT, LANG_CHARSET)); ?></a>';
     if (self.opener.editorref) {
         self.opener.editorref.surroundHTML(block, '');
     } else {
