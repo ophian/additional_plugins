@@ -881,7 +881,7 @@ Applying Attributes:
 
 // -------------------------------------------------------------
     function textile_popup_help($name,$helpvar,$windowW,$windowH) {
-        return ' <a target="_blank" href="http://www.textpattern.com/help/?item='.$helpvar.'" onclick="window.open(this.href, \'popupwindow\', \'width='.$windowW.',height='.$windowH.',scrollbars,resizable\'); return false;">'.$name.'</a><br />';
+        return ' <a target="_blank" rel="noopener" href="http://www.textpattern.com/help/?item='.$helpvar.'" onclick="window.open(this.href, \'popupwindow\', \'width='.$windowW.',height='.$windowH.',scrollbars,resizable\'); return false;">'.$name.'</a><br />';
     }
 
 // -------------------------------------------------------------

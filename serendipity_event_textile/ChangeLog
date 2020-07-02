@@ -1,3 +1,7 @@
+1.9.2:
+------
+ * Secure external helper target _blank links by living standard rel="noopener"
+
 1.9.1:
 -----
 
