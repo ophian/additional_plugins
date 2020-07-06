@@ -12,7 +12,7 @@ var s9ypluginbuttons = [];
 
 /*
  * Get the instance ready event and set global instance var
- * This is read by serendipity_editor.js and in case of serendipity_html_nugget_plugin by below serendipity_imageSelector_addToBody()
+ * This is read by serendipity_editor.js | serendipity_styx.js and in case of serendipity_html_nugget_plugin by below serendipity_imageSelector_addToBody()
  */
 CKEDITOR.on( 'instanceReady', function( event ) {
     event.editor.on( 'focus', function() {
