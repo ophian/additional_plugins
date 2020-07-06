@@ -983,7 +983,7 @@ class serendipity_event_staticpage extends serendipity_event
 
     /**
      * Check for db error string in backend environment only
-     * Avoids errors placed into the admin/serendipity_editor.js | serendipity_styx.js and the frontend!
+     * Avoids errors placed into the admin/serendipity_editor.js | [styx >= 3.1] serendipity_styx.js and the frontend!
      *
      * @param   mixed   serendipity_db_schema_import() result
      * @access  private
