@@ -9329,7 +9329,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <release>
   <version>6.12</version>
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
-  <date>2020-06-29</date>
+  <date>2020-07-06</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
