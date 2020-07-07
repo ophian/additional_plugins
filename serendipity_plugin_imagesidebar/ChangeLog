@@ -1,3 +1,10 @@
+2.00:
+-----
+ * Removed deprecated menalto and zoomr galleries.
+ * Raised requirements to Serendipity 2.0
+ * Use webp image source variations by <picture> <source> HTML elements when Serendipity Styx meets version 3.
+ * Added some styles when "Set #mediasidebar and image inline styles" Option set to yes. (Better put them in your themes user.css file!)
+
 1.20:
 -----
 

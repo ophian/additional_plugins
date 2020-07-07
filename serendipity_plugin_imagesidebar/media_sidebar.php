@@ -98,7 +98,7 @@ class media_sidebar extends subplug_sidebar {
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_NAME);
                 $propbag->add('description', PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_DESC);
-                $propbag->add('default',     '162');
+                $propbag->add('default',     '260');
                 break;
 
             case 'media_url':
@@ -196,7 +196,7 @@ class media_sidebar extends subplug_sidebar {
             $cache_output = $this->get_config('media_cache_output','');
         }
 
-        if ($rotate_time !=0 ) {
+        if ($rotate_time != 0 ) {
             if ($next_update > time()) {
                $update = false;
             } else {
@@ -252,7 +252,7 @@ class media_sidebar extends subplug_sidebar {
 
             $width_test = $this->get_config('media_fixed_width');
             if ($width_test > 0) {
-                $width_str = 'width:'.$width_test.'px;';
+                $width_str = ' width:'.$width_test.'px;';
             }
 
             $gallery_styles = $this->get_config('media_gal_styles');
@@ -265,6 +265,26 @@ class media_sidebar extends subplug_sidebar {
     color: transparent;
     border: 0 none;
 }
+.mediasidebaritem img {
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #dfdfdf;
+    box-sizing: border-box;
+    margin-bottom: .25rem;
+}
+</style>
+<?php
+            } else {
+?>
+<style>
+.mediasidebaritem img {
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #dfdfdf;
+    box-sizing: border-box;
+    margin-bottom: .25rem;
+    width: auto;
+}
 </style>
 <?php
             }
@@ -275,19 +295,26 @@ class media_sidebar extends subplug_sidebar {
                 foreach ($images AS $image) {
                     if (isset($image['name'])) {
                         if ($image['hotlink'] == 1) {
-                            $thumb_path = $image_path = $image['path'];
+                            $thumb_path = $image_link = $image_path = $image['path'];
+                            $thumb_webp = '';
                         } else {
                             $image_path = $serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$image['path'].$image['name'].'.'.$image['extension'];
+                            $image_link = ($image['hotlink'] != 1 && file_exists($serendipity['serendipityPath'].$serendipity['uploadPath'].$image['path'].'.v/'.$image['name'].'.webp'))
+                                        ? $serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$image['path'].'.v/'.$image['name'].'.webp'
+                                        : $serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$image['path'].$image['name'].'.'.$image['extension'];
                             $thumb_path = $serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$image['path'].$image['name'].'.'.$image['thumbnail_name'].'.'.$image['extension'];
+                            $thumb_webp = file_exists($serendipity['serendipityPath'].$serendipity['uploadPath'].$image['path'].'.v/'.$image['name'].'.'.$image['thumbnail_name'].'.webp')
+                                        ? $serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$image['path'].'.v/'.$image['name'].'.'.$image['thumbnail_name'].'.webp'
+                                        : '';
                             if (!serendipity_isImage($image)) {
                                 $thumb_path = serendipity_getTemplateFile('admin/img/mime_unknown.png');
                                 $width_str = '';
                             }
                         }
 
-                        $gstyles = ($gallery_styles == 'yes') ? ' style="border: 0px; '.$width_str .'"' : '';
+                        $gstyles = ($gallery_styles == 'yes') ? ' style="border: 0px;'.$width_str .'"' : '';
+                        $picture = ($serendipity['version'][0] == 3 && !empty($thumb_webp)) ? '<picture><source srcset="'.$thumb_webp.'" type="image/webp"><img'.$gstyles.' src="'.$thumb_path.'" alt="" /></picture>' : '<img'.$gstyles.' src="'.$thumb_path.'" alt="" />';
                         $output_str .= '<div class="mediasidebaritem">'."\n";
-
                         switch ($this->get_config("media_linkbehavior")) {
 
                             case 'entry':
@@ -295,17 +322,18 @@ class media_sidebar extends subplug_sidebar {
                                 if (is_array($e)) {
                                     $link = serendipity_archiveURL($e[0]['id'], $e[0]['title'], 'serendipityHTTPPath', true, array('timestamp' => $e[0]['timestamp']));
                                 } else {
-                                    $link = $image_path;
+                                    $link = $image_link;
                                 }
-                                $output_str .= '<a href="' . $link . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($e[0]['title']) : htmlspecialchars($e[0]['title'], ENT_COMPAT, LANG_CHARSET)) . '"><img'.$gstyles.' src="'.$thumb_path.'" alt="" /></a>'."\n";
+                                $title = $e[0]['title'] ?? '';
+                                $output_str .= '<a href="' . $link . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($title) : htmlspecialchars($title, ENT_COMPAT, LANG_CHARSET)) . '">'.$picture."</a>\n";
                                 break;
 
                             case 'popup':
-                                $output_str .= '<a href="'.$image_path.'" onclick="F1 = window.open(\''.$image_path.'\',\'Zoom\',\'height='.$image['dimensions_height'].',width='.$image['dimensions_width'].',top=298,left=354,toolbar=no,menubar=no,location=no,resize=1,resizable=1,scrollbars=yes\'); return false;"><img'.$gstyles.' src="'.$thumb_path.'" alt="" /></a>'."\n";
+                                $output_str .= '<a href="'.$image_link.'" onclick="F1 = window.open(\''.$image_link.'\',\'Zoom\',\'height='.$image['dimensions_height'].',width='.$image['dimensions_width'].',top=298,left=354,toolbar=no,menubar=no,location=no,resize=1,resizable=1,scrollbars=yes\'); return false;">'.$picture."</a>\n";
                                 break;
 
                             case 'url':
-                                $output_str .= '<a href="'.$this->get_config('media_url').'"><img'.$gstyles.' src="'.$thumb_path.'" alt="" /></a>'."\n";
+                                $output_str .= '<a href="'.$this->get_config('media_url').'">'.$picture."</a>\n";
                                 break;
 
                             case 'gallery':
@@ -315,16 +343,16 @@ class media_sidebar extends subplug_sidebar {
                                 } else {
                                     $gallery_str = $gallery_str.'?serendipity[image]='.$image['id'];
                                 }
-                                $output_str .= '<a href="'.$gallery_str.'"><img'.$gstyles.' src="'.$thumb_path.'" alt="" /></a>'."\n";
+                                $output_str .= '<a href="'.$gallery_str.'">'.$picture."</a>\n";
                                 break;
 
                             case 'inpage':
-                                $output_str .= '<a class="mediasidebar_link" ' . $this->get_config('media_lightbox', '') . ' href="'.$image_path.'"><img'.$gstyles.' src="'.$thumb_path.'" alt="" /></a>'."\n";
+                                $output_str .= '<a class="mediasidebar_link" ' . $this->get_config('media_lightbox', '') . ' href="'.$image_link.'">'.$picture."</a>\n";
                                 break;
 
                             default:
                             case 'none':
-                                $output_str .= '<img'.$gstyles.' src="'.$thumb_path.'" alt="" />'."\n";
+                                $output_str .= $picture."\n";
                                 break;
 
                         }
@@ -349,29 +377,6 @@ class media_sidebar extends subplug_sidebar {
         echo $output_str;
 
     }
-
-    /* removed, was for S9y versions < 1.1
-    function mediasidebar_getimage($directory,$strict = false)
-    {
-        global $serendipity;
-
-        if ($directory == 'gallery') {$directory = '';}
-
-        if (!$strict) {
-            if ($directory == '') {
-               $directorysql = '';
-            } else {
-               $directorysql = "WHERE path LIKE '".serendipity_db_escape_string($directory)."%'";
-            }
-        } else {
-            $directorysql = "WHERE path = '".serendipity_db_escape_string($directory)."'";
-        }
-        $query = "SELECT * FROM {$serendipity['dbPrefix']}images $directorysql";
-        $rs = serendipity_db_query($query, false, 'assoc');
-        if (!is_array($rs)) return false;
-
-        return $rs;
-    }*/
 
     function cleanup_custom()
     {

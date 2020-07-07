@@ -8,41 +8,13 @@
  */
 
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_NAME', 'Jednotné zobrazování obrázkù v postranním sloupci');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC', 'Umo¾òuje zobrazovat obrázky v postranním sloupci. Zdrojù tìchto obrázkù mù¾e být vícero. Plugin se doká¾e pøipojit do Menalto Gallery, do databáze Coppermine galerie (pouze pokud bì¾í na MySQL), k webové slu¾bì Zooomr (http://beta.zooomr.com/home) a samozøejmì i ke Knihovnì médií Serendipity.');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC', 'Umo¾òuje zobrazovat obrázky v postranním sloupci. Zdrojù tìchto obrázkù mù¾e být vícero. Plugin se doká¾e pøipojit do databáze Coppermine galerie (pouze pokud bì¾í na MySQL) a samozøejmì i ke Knihovnì médií Serendipity.');
 
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NAME', 'Zdroj obrázku');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_DESC', 'Vyberte ze seznamu zdroj obrázkù');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NONE', 'Je¹tì nebylo nic vybráno');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MENALTO', 'Menalto Gallery');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_COPPERMINE', 'Databáze Coppermine');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MEDIALIB', 'Knihovna médií Serendipity');
-
-@define('PLUGIN_GALLERYRANDOMBLOCK_NAME', 'Náhodné foto (Gallery Random Photo Block)');
-@define('PLUGIN_GALLERYRANDOMBLOCK_DESC', 'Pøidává odkaz na skript Gallery Random Block (funkce Menalto Gallery, více viz. http://gallery.menalto.com)');
-@define('PLUGIN_GALLERYRANDOMBLOCK_URL_NAME', 'Adresáø galerie');
-@define('PLUGIN_GALLERYRANDOMBLOCK_URL_DESC', 'Zadejte virtuální cestu ke galerii');
-@define('PLUGIN_GALLERYRANDOMBLOCK_NUMREPEAT_NAME', 'Poèet náhodných fotek');
-@define('PLUGIN_GALLERYRANDOMBLOCK_NUMREPEAT_DESC', 'Poèet fotek, které se mají zobrazovat v postranním bloku.');
-@define('PLUGIN_GALLERYRANDOMBLOCK_FILE_NAME', 'Jméno souboru vnoøeného skriptu (pouze pro verze Gallery 1.x!)');
-@define('PLUGIN_GALLERYRANDOMBLOCK_VERSION', 'Kterou verzi Gallery pou¾íváte?');
-@define('PLUGIN_GALLERYRANDOMBLOCK_ERROR_CONNECT', 'CHYBA: URL adresa nemohla být pou¾ita. ®ádná galerie pod ní není pøístupná.');
-@define('PLUGIN_GALLERYRANDOMBLOCK_ERROR_HTTP', 'CHYBA: HTTP server vrátil chybu nebo varování (výsledek: %d).');
-@define('PLUGIN_GALLERYRANDOMBLOCK_ITEMID', 'ID alba');
-@define('PLUGIN_GALLERYRANDOMBLOCK_ITEMID_DESC', 'Pøi prázdném poli budou zobrazena v¹echna alba. Pouze pro verze Gallery 2.x.');
-@define('PLUGIN_GALLERYRANDOMBLOCK_G2DISPLAYTYPE', 'Zobrazený obrázek');
-@define('PLUGIN_GALLERYRANDOMBLOCK_G2DISPLAYTYPE_RAND', 'Náhodný');
-@define('PLUGIN_GALLERYRANDOMBLOCK_G2DISPLAYTYPE_RENCENT', 'Poslední');
-@define('PLUGIN_GALLERYRANDOMBLOCK_G2DISPLAYTYPE_VIEWED', 'Nejèastìji prohlí¾ený');
-@define('PLUGIN_GALLERYRANDOMBLOCK_G2DISPLAYTYPE_SPECIFIC', 'Zadaný');
-@define('PLUGIN_GALLERYRANDOMBLOCK_SINGLE_ITEMID', 'ID identifikátor konkrétního obrázku');
-@define('PLUGIN_GALLERYRANDOMBLOCK_SINGLE_ITEMID_DESC', ' ');
-@define('PLUGIN_GALLERYRANDOMBLOCK_MAXSIZE', 'Maximální ¹íøka obrázku');
-@define('PLUGIN_GALLERYRANDOMBLOCK_MAXSIZE_DESC', 'Nastaví ¹íøku obrázku na zadanou hodnotu. Nane¹tìstí toto nastavení vy¾aduje, aby byly vìt¹í obrázky sta¾eny a teprvé poté zmìn¹eny. Ponechte prázdné a pou¾ije se standardní náhled Gallery.');
-@define('PLUGIN_GALLERYRANDOMBLOCK_LINKTARGET', 'Cíl odkazu');
-@define('PLUGIN_GALLERYRANDOMBLOCK_LINKTARGET_DESC', 'Hodnota cíle odkazu - v <a href="" target="">. Rozumné nastavení je "_blank".');
-@define('PLUGIN_GALLERYRANDOMBLOCK_SHOWDETAIL', 'Zobrazené podrobnosti');
-@define('PLUGIN_GALLERYRANDOMBLOCK_SHOWDETAIL_DESC', 'Seznam klíèových slov oznaèujících podrobnosti o obrázku oddìlený èárkou. Pou¾itelná klíèová slova jsou: "title" (titulek), "date" (datum), "views" (poèet zobrazení), "owner" (vlastník, autor), "heading" (nadpis). Ke skrytí informací napi¹te "none".');
-
 
 @define('PLUGIN_CPGS_NAME', 'Coppermine náhledy');
 @define('PLUGIN_CPGS_DESC', 'Zobrazit náhledy galerie Coppermine v postranním sloupci');
@@ -110,17 +82,6 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKS_DESC', 'Tato volba omezuje zobrazování obrázkù v postranním sloupci pouze na ty, které jsou v Knihovnì médií oznaèeny jako hotlink (nejsou ulo¾ené na va¹em blogu, ale jedná se pouze na odkazy na cizí servery).');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_NAME', 'Klíèové slovo');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_DESC', 'Vstupem pro tuto funkci je jediné klíèové slovo (bez mezer). Funkce omezuje zobrazování pouze na obrázky obsahující zadané slovo. Napø. pokud máte hotlinky z více zdrojù, ale chcete zobrazovat pouze ty pocházející z jednoho zdroje, mù¾ete sem napsat napøíklad "zdroj.cz".');
-
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_ZOOOMR', 'Plugin Zooomr');
-@define('PLUGIN_ZOOOMR_DESC', 'Zobrazuje nejnovìj¹í obrázky ze Zooomr feedu');
-@define('PLUGIN_ZOOOMR_FEEDURL', 'URL Adresa kanálu (feedu)');
-@define('PLUGIN_ZOOOMR_FEEDDESC', 'URL adresa na Zooomr feed');
-@define('PLUGIN_ZOOOMR_IMGCOUNT', 'Obrázky');
-@define('PLUGIN_ZOOOMR_IMGCOUNTDESC', 'Poèet zobrazených obrázkù');
-@define('PLUGIN_ZOOOMR_DLINK', 'Pøímý odkaz na obrázky');
-@define('PLUGIN_ZOOOMR_DLINKDESC', 'Odkaz vedoucí pøímo na velkou verzi obrázkù');
-@define('PLUGIN_ZOOOMR_LOGO', 'Zobrazit logo Zooomr');
-@define('PLUGIN_ZOOOMR_IMGWIDTH', '©íøka náhledù');
 
 @define('PLUGIN_CPGS_GROUP_NAME', 'U¾ivatelská skupina (usergroup)');
 @define('PLUGIN_CPGS_GROUP_DESC', 'Coppermine umo¾òuje omezit zobrazení obrázkù pouze na zadanou skupinu u¾ivatelù. Pokud potøebujete zobrazovat pouze nìkteré obrázky, zadejte u¾ivatelskou skupinu, za kterou se bude tento plugin maskovat. "Everybody" znamená, ¾e nastavení u¾ivatelské skupiny bude ignorováno.');

@@ -7,40 +7,13 @@
  */
 
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_NAME', 'Unified Sidebar Image Display');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC', 'Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to connect to a (deprecated) Menalto Gallery installs "random" URL, access a Coppermine database directory (MySql only), connect to the web service Zooomr (http://beta.zooomr.com/home) (deprecated) or access images in the Serendipity Media Library.');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC', 'Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to a Coppermine database directory (MySql only), or access images in the Serendipity Media Library.');
 
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NAME', 'Image Source');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_DESC', 'Please choose a source for your images from the drop down.');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NONE', 'No selection made');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MENALTO', 'Menalto Gallery URL (deprecated)');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_COPPERMINE', 'Coppermine Database');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MEDIALIB', 'Media Library');
-
-@define('PLUGIN_GALLERYRANDOMBLOCK_NAME', 'Gallery Random Photo Block');
-@define('PLUGIN_GALLERYRANDOMBLOCK_DESC', 'Adds a reference to a Gallery Random Block script (see http://gallery.menalto.com for details on this script)');
-@define('PLUGIN_GALLERYRANDOMBLOCK_URL_NAME', 'Directory of Gallery installation');
-@define('PLUGIN_GALLERYRANDOMBLOCK_URL_DESC', 'Enter the virtual path to your gallery installation');
-@define('PLUGIN_GALLERYRANDOMBLOCK_NUMREPEAT_NAME', 'Number of Random Photos');
-@define('PLUGIN_GALLERYRANDOMBLOCK_NUMREPEAT_DESC', 'Enter the number of random photos to show in this block.');
-@define('PLUGIN_GALLERYRANDOMBLOCK_FILE_NAME', 'Filename of the embedded script (Only used for Gallery 1.x versions!)');
-@define('PLUGIN_GALLERYRANDOMBLOCK_VERSION', 'Which version of Gallery are you using?');
-@define('PLUGIN_GALLERYRANDOMBLOCK_ERROR_CONNECT', 'ERROR: URL could not be opened. the gallery cannot be embedded here');
-@define('PLUGIN_GALLERYRANDOMBLOCK_ERROR_HTTP', 'ERROR: The HTTP server returned the error or the warning(result:%d).');
-@define('PLUGIN_GALLERYRANDOMBLOCK_ITEMID', 'Album ID to show');
-@define('PLUGIN_GALLERYRANDOMBLOCK_ITEMID_DESC', 'Empty value shows all albums, only applies to Gallery 2.x versions.');
-@define('PLUGIN_GALLERYRANDOMBLOCK_G2DISPLAYTYPE', 'Picture to display.');
-@define('PLUGIN_GALLERYRANDOMBLOCK_G2DISPLAYTYPE_RAND', 'Random');
-@define('PLUGIN_GALLERYRANDOMBLOCK_G2DISPLAYTYPE_RENCENT', 'Recent');
-@define('PLUGIN_GALLERYRANDOMBLOCK_G2DISPLAYTYPE_VIEWED', 'Most Viewed');
-@define('PLUGIN_GALLERYRANDOMBLOCK_G2DISPLAYTYPE_SPECIFIC', 'Specific');
-@define('PLUGIN_GALLERYRANDOMBLOCK_SINGLE_ITEMID', 'ID of the specific image to display.');
-@define('PLUGIN_GALLERYRANDOMBLOCK_SINGLE_ITEMID_DESC', '');
-@define('PLUGIN_GALLERYRANDOMBLOCK_MAXSIZE', 'Maximum Width of Image.');
-@define('PLUGIN_GALLERYRANDOMBLOCK_MAXSIZE_DESC', 'This will set the image to a specific width. Unfortunately, this setting causes the large image to be downloaded and then rescaled to the required size. Leave blank to use the standard Gallery thumbnail.');
-@define('PLUGIN_GALLERYRANDOMBLOCK_LINKTARGET', 'Link Target');
-@define('PLUGIN_GALLERYRANDOMBLOCK_LINKTARGET_DESC', 'Sets the links "target" option. Leave blank to leave unset. A good setting might be "_blank".');
-@define('PLUGIN_GALLERYRANDOMBLOCK_SHOWDETAIL', 'Which details should be displayed.');
-@define('PLUGIN_GALLERYRANDOMBLOCK_SHOWDETAIL_DESC', 'Tell the plugin which details to display. This must be a comma separated list of keywords. Available keywords are "title, date, views, owner, heading". To display no information use the keyword "none".');
 
 @define('PLUGIN_CPGS_NAME', 'Coppermine Thumbnails');
 @define('PLUGIN_CPGS_DESC', 'Display thumbnails from a Coppermine gallery in the sidebar');
@@ -121,17 +94,6 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKS_DESC', 'This option limits the sidebar output to only images which are hotlinks in the Media Library.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_NAME', 'Hotlink limiting keyword');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_DESC', 'This option takes a single keyword (no spaces) and limits the output to anything containing that word. For example, if you have hotlinks from a variety of sources, but only want to display those from a single host you could put "host.com" in this field.');
-
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_ZOOOMR', 'Zooomr Plugin (deprecated)');
-@define('PLUGIN_ZOOOMR_DESC', 'Display the most recent pictures of any Zooomr Feed');
-@define('PLUGIN_ZOOOMR_FEEDURL', 'Feed-URL');
-@define('PLUGIN_ZOOOMR_FEEDDESC', 'URL of your Zooomr feed');
-@define('PLUGIN_ZOOOMR_IMGCOUNT', 'Images');
-@define('PLUGIN_ZOOOMR_IMGCOUNTDESC', 'Number of Images to show');
-@define('PLUGIN_ZOOOMR_DLINK', 'Direct Image-Link');
-@define('PLUGIN_ZOOOMR_DLINKDESC', 'Link directly to big version of the image');
-@define('PLUGIN_ZOOOMR_LOGO', 'Show Zooomr Logo');
-@define('PLUGIN_ZOOOMR_IMGWIDTH', 'Thumbnail width');
 
 @define('PLUGIN_CPGS_GROUP_NAME', 'Usergroup');
 @define('PLUGIN_CPGS_GROUP_DESC', 'Coppermine allows to define visibility of images restricted to certain usergroups. If you want this plugin to only fetch specific images, enter the usergroup this plugin shall act as in this field. "Everybody" means that all group permissions are ignored.');
