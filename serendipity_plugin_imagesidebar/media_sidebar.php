@@ -313,7 +313,7 @@ class media_sidebar extends subplug_sidebar {
                         }
 
                         $gstyles = ($gallery_styles == 'yes') ? ' style="border: 0px;'.$width_str .'"' : '';
-                        $picture = ($serendipity['version'][0] == 3 && !empty($thumb_webp)) ? '<picture><source srcset="'.$thumb_webp.'" type="image/webp"><img'.$gstyles.' src="'.$thumb_path.'" alt="" /></picture>' : '<img'.$gstyles.' src="'.$thumb_path.'" alt="" />';
+                        $picture = ($serendipity['version'][0] == 3 && !empty($thumb_webp)) ? '<picture><source srcset="'.$thumb_webp.'" type="image/webp"><img'.$gstyles.' src="'.$thumb_path.'" alt=""></picture>' : '<img'.$gstyles.' src="'.$thumb_path.'" alt="" />';
                         $output_str .= '<div class="mediasidebaritem">'."\n";
                         switch ($this->get_config("media_linkbehavior")) {
 
@@ -324,8 +324,8 @@ class media_sidebar extends subplug_sidebar {
                                 } else {
                                     $link = $image_link;
                                 }
-                                $title = $e[0]['title'] ?? '';
-                                $output_str .= '<a href="' . $link . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($title) : htmlspecialchars($title, ENT_COMPAT, LANG_CHARSET)) . '">'.$picture."</a>\n";
+                                $linktitle = $e[0]['title'] ?? ''; // do not call it title, since that overwrites (extends) the generate_content config option set title!
+                                $output_str .= '<a href="' . $link . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($linktitle) : htmlspecialchars($linktitle, ENT_COMPAT, LANG_CHARSET)) . '">'.$picture."</a>\n";
                                 break;
 
                             case 'popup':
