@@ -32,8 +32,13 @@ class media_sidebar extends subplug_sidebar {
             case 'media_base_directory':
                 if ($this->get_config('media_hotlinks_only', 'no') == 'no') {
                     $select['gallery'] = ALL_DIRECTORIES;
-                    $paths = serendipity_traversePath($serendipity['serendipityPath'] . $serendipity['uploadPath']);
-                    foreach ( $paths AS $folder ) {
+                    if ($serendipity['version'][0] == 3) {
+                        $mediaExcludeDirs = array('CVS' => true, '.svn' => true, '.git' => true, '.v' => true); // the last is about Variations
+                        $paths = serendipity_traversePath($serendipity['serendipityPath'] . $serendipity['uploadPath'], '', true, NULL, 1, NULL, false, $mediaExcludeDirs);
+                    } else {
+                        $paths = serendipity_traversePath($serendipity['serendipityPath'] . $serendipity['uploadPath']);
+                    }
+                    foreach($paths AS $folder) {
                         $select[$folder['relpath']] = str_repeat('-', $folder['depth']) . ' '. $folder['name'];
                     }
                     $propbag->add('type', 'select');
