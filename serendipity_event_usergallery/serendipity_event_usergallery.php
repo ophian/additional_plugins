@@ -16,7 +16,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '2.76');
+        $propbag->add('version',       '2.77');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -96,7 +96,12 @@ class serendipity_event_usergallery extends serendipity_event
             case 'base_directory':
                 if ($this->get_config('style') == "thumbpage") {
                     $select['gallery'] = ALL_DIRECTORIES;
-                    $paths = serendipity_traversePath($serendipity['serendipityPath'] . $serendipity['uploadPath']);
+                    if ($serendipity['version'][0] == 3) {
+                        $mediaExcludeDirs = array('CVS' => true, '.svn' => true, '.git' => true, '.v' => true); // the last is about Variations
+                        $paths = serendipity_traversePath($serendipity['serendipityPath'] . $serendipity['uploadPath'], '', true, NULL, 1, NULL, false, $mediaExcludeDirs);
+                    } else {
+                        $paths = serendipity_traversePath($serendipity['serendipityPath'] . $serendipity['uploadPath']);
+                    }
                     foreach($paths AS $folder) {
                         $select[$folder['relpath']] = str_repeat('-', $folder['depth']) . ' '. $folder['name'];
                     }
@@ -459,7 +464,7 @@ class serendipity_event_usergallery extends serendipity_event
                 $serendipity['smarty']->assign('plugin_usergallery_uppath','');
                 $serendipity['smarty']->assign('plugin_usergallery_toplevel','yes');
                 // Let's get a directory listing that has all our ACLs applied already!
-                $directories_temp = serendipity_traversePath($serendipity['serendipityPath'].$serendipity['uploadPath'], $limit_directory, NULL, NULL, 1, NULL, "read", NULL);
+                $directories_temp = serendipity_traversePath($serendipity['serendipityPath'] . $serendipity['uploadPath'], $limit_directory, true, NULL, 1, NULL, "read", array('CVS' => true, '.svn' => true, '.thumbs' => true, '.git' => true, '.v' => true));
                 // Check to see if we are calling a gallery directly
                 if (isset($_GET['gallery']) && $_GET['gallery'] != '') {
                     // replace weird characters.  Was more important before we used the database.
