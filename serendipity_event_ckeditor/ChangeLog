@@ -1,3 +1,9 @@
+4.14.1.5:
+---------
+    * Add new highlight.js build v.10.1.1 asset launched by option (codesnippet)
+      and Styx < 3.1, since that uses the default assets.
+    * Add jQuery independent init launcher
+
 4.14.1.4:
 ---------
     * Fix an uninitialized variable
