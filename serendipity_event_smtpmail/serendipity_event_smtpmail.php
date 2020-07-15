@@ -134,7 +134,7 @@ class serendipity_event_smtpmail extends serendipity_event
         }
         return true;
     }
-    
+
     function generate_content(&$title)
     {
         $title = $this->title;
@@ -156,11 +156,11 @@ class serendipity_event_smtpmail extends serendipity_event
                 $pop = new POP3();
                 $pop->authorise($this->get_config('smtpmail_pop3_server'), $this->get_config('smtpmail_pop3_port'), false, $this->get_config('smtpmail_user'), $this->get_config('smtpmail_passwd'), 0);
             }
-            
+
             $mail = new PHPMailer(true); // true is Exceptions ON
             $mail->isSMTP();
             $mail->setLanguage($serendipity['lang'], 'PHPMailer/language/');
-            
+
             # Activate Auth if Auth is "SMTP AUTH"
             if ($this->get_config('smtpmail_auth') == 2) {
                 $mail->SMTPAuth = true;
@@ -170,7 +170,7 @@ class serendipity_event_smtpmail extends serendipity_event
                 $mail->Username   = $this->get_config('smtpmail_user');
                 $mail->Password   = $this->get_config('smtpmail_passwd');
             }
-            
+
             $mail->isHTML(false);
             $mail->Host     = $this->get_config('smtpmail_smtp_server');
             $mail->Port     = $this->get_config('smtpmail_smtp_port');
