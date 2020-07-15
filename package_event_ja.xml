@@ -8803,9 +8803,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Use a SMTP server to send your mails</description>
 <maintainers><maintainer><name>kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.20</version>
+  <version>1.30</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-10-05</date>
+  <date>2020-07-15</date>
   <filelist>
     <dir name="serendipity_event_smtpmail">
       <file>ChangeLog</file>
@@ -8819,7 +8819,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
         <file>get_oauth_token.php</file>
         <dir name="language">
           <file>phpmailer.lang-af.php</file>
-          <file>phpmailer.lang-am.php</file>
           <file>phpmailer.lang-ar.php</file>
           <file>phpmailer.lang-az.php</file>
           <file>phpmailer.lang-ba.php</file>
@@ -8843,6 +8842,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
           <file>phpmailer.lang-hi.php</file>
           <file>phpmailer.lang-hr.php</file>
           <file>phpmailer.lang-hu.php</file>
+          <file>phpmailer.lang-hy.php</file>
           <file>phpmailer.lang-id.php</file>
           <file>phpmailer.lang-it.php</file>
           <file>phpmailer.lang-ja.php</file>
@@ -8900,7 +8900,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_smtpmail/PHPMailer/composer.json</file>
     <file>serendipity_event_smtpmail/PHPMailer/get_oauth_token.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-af.php</file>
-    <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-am.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-ar.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-az.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-ba.php</file>
@@ -8924,6 +8923,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-hi.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-hr.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-hu.php</file>
+    <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-hy.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-id.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-it.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-ja.php</file>
