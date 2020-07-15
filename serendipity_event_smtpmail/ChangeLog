@@ -1,3 +1,8 @@
+1.30:
+-----
+  * Replace libs with PHPMailer-6.1.7
+    @see commit changes, https://github.com/PHPMailer/PHPMailer/releases/
+
 1.20:
 -----
   * Raise PHP requirement to minimum PHP 5.6 for the updated libs
