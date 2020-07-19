@@ -355,7 +355,7 @@ Version 1.10 (brockhaus):
 
     * Pavatar / Avatar information where never loaded from cache
 
-    * .. but after beeing loaded from cache it produced an endless
+    * .. but after being loaded from cache it produced an endless
       request loop for images loaded from the local blog (if comment
       sidebar plugin was enabled)
 
