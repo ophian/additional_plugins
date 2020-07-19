@@ -468,7 +468,7 @@ class serendipity_event_podcast extends serendipity_event
 
                 // Search for all embedded objects and make the RSS enclosured.
                 // RSS only displays body always. In fullview, body contains body + extended here.
-                // In "small" view only embed the media beeing part of the small view.
+                // In "small" view only embed the media being part of the small view.
                 // In short: body only always!
                 $matchSource = $eventData['body'];
 
