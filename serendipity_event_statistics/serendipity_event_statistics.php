@@ -18,9 +18,9 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '1.82');
+        $propbag->add('version',       '2.00');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
+            'serendipity' => '2.9',
             'php'         => '7.2'
         ));
         $propbag->add('groups', array('STATISTICS'));
@@ -31,7 +31,7 @@ class serendipity_event_statistics extends serendipity_event
             'css_backend'        => true
         ));
 
-        $propbag->add('configuration', array('max_items','ext_vis_stat','stat_all','banned_bots','autoclean'));
+        $propbag->add('configuration', array('max_items','ext_vis_stat','stat_all','banned_bots','gethostbyaddr','autoclean'));
         $propbag->add('legal',    array(
             'services' => array(
             ),
@@ -93,6 +93,13 @@ class serendipity_event_statistics extends serendipity_event
                 $propbag->add('default',       'yes');
                 break;
 
+            case 'gethostbyaddr':
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_STATISTICS_CHECKDNS);
+                $propbag->add('description', PLUGIN_EVENT_STATISTICS_CHECKDNS_DESC);
+                $propbag->add('default',     'true');
+                break;
+
             case 'autoclean':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_STATISTICS_AUTOCLEAN);
@@ -112,6 +119,9 @@ class serendipity_event_statistics extends serendipity_event
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
         global $serendipity;
+
+        $debug = false;
+        $logtag = 'PLUGIN_STATISTICS::';
 
         $hooks = &$bag->get('event_hooks');
 
@@ -137,9 +147,9 @@ class serendipity_event_statistics extends serendipity_event
                         $this->updateTables(1);
                     }
 
-                    // Unique visitors are beeing registered and counted here. Calling function below.
+                    // Unique visitors are being registered and counted here. Calling function below.
                     $sessionChecker = serendipity_db_query("SELECT count(sessID) FROM {$serendipity['dbPrefix']}visitors WHERE '".serendipity_db_escape_string(session_id())."' = sessID GROUP BY sessID", true);
-                    if (!is_array($sessionChecker) || (is_array($sessionChecker)) && ($sessionChecker[0] == 0)) {
+                    if (!is_array($sessionChecker) || (is_array($sessionChecker) && $sessionChecker[0] == 0)) {
 
                         $referer = $useragent = $remoteaddr = 'unknown';
 
@@ -158,61 +168,317 @@ class serendipity_event_statistics extends serendipity_event
 
                         // avoiding banned browsers
                         if ($this->get_config('banned_bots') == 'yes') {
-                            // excludelist botagents
-                            $banned_array = array(
-                                    '1'     =>     "unknown",
-                                    '2'     =>     "bot",
-                                    '3'     =>     "slurpy",
-                                    '4'     =>     "agent 007",
-                                    '5'     =>     "ichiro",
-                                    '6'     =>     "ia_archiver",
-                                    '7'     =>     "zyborg",
-                                    '8'     =>     "linkwalker",
-                                    '9'     =>     "crawler",
-                                    '10'    =>     "python",
-                                    '11'    =>     "w3c_validator",
-                                    '12'    =>     "almaden",
-                                    '13'    =>     "topicspy",
-                                    '14'    =>     "poodle predictor",
-                                    '15'    =>     "link checker pro",
-                                    '16'    =>     "xenu link sleuth",
-                                    '17'    =>     "iconsurf",
-                                    '18'    =>     "zoe indexer",
-                                    '19'    =>     "grub-client",
-                                    '20'    =>     "spider",
-                                    '21'    =>     "pompos",
-                                    '22'    =>     "virus_detector",
-                                    '23'    =>     "bot",
-                                    '24'    =>     "Wells Search II",
-                                    '25'    =>     "Dumbot",
-                                    '26'    =>     "GeoBot",
-                                    '27'    =>     "DigExt",
-                                    '28'    =>     "Jeeves/Teoma",
-                                    '29'    =>     "FeedBurner",
-                                    '30'    =>     "Technorati",
-                                    '31'    =>     "Java/1.5.0_10",
-                                    '32'    =>     "Java/1.5.0_06",
-                                    '33'    =>     "MarsEdit",
-                                    '34'    =>     "Blogslive",
-                                    '35'    =>     "XMLRPCCocoa",
-                                    '36'    =>     "Google",
-                                    '37'    =>     "MagpieRSS",
-                                    '38'    =>     "Sphere Scout",
-                                    '39'    =>     "BlogCorpusReader",
-                                    '41'    =>     "libwww-perl",
-                                    '42'    =>     "WordPress",
-                                    '43'    =>     "ping.wordblog.de",
-                                    '44'    =>     "PEAR HTTP_Request",
-                                    '45'    =>     "Java/1.5.0_07",
-                                    '46'    =>     "BlogPulseLive(support@blogpulse.com)",
-                                    '47'    =>     "TrackBack",
-                                    '48'    =>     "Blogdimension",
-                                    '49'    =>     "Yahoo"
-                                    );
+                            // excludelist spider/botagents
+                            /**
+                             * # MIT License
+                             * https://github.com/atmire/COUNTER-Robots/
+                             * Official list of user agents that are regarded as robots/spiders by Project COUNTER (https://www.projectcounter.org/)
+                             * https://github.com/atmire/COUNTER-Robots/blob/master/generated/COUNTER_Robots_list.txt
+                             * $array = explode("\n", file_get_contents(dirname(__FILE__).'/botlist.txt'));
+                             * echo '<pre>'.var_export($array,1).'</pre>';
+                             * Fixed for preg_match()
+                             */
+                            $bannbots = array (
+                              0 => 'bot',
+                              1 => '^Buck\\/[0-9]',
+                              2 => 'spider',
+                              3 => 'crawl',
+                              4 => '^.?$',
+                              5 => '[^a]fish',
+                              6 => '^IDA$',
+                              7 => '^ruby$',
+                              8 => '^@ozilla\\/\\d',
+                              9 => '^\?\?\?\?\?\?\?\?$',
+                              10 => '^\?\?\?\?$',
+                              11 => 'AddThis',
+                              12 => 'A6-Indexer',
+                              13 => 'ADmantX',
+                              14 => 'alexa',
+                              15 => 'Alexandria(\\s|\\+)prototype(\\s|\\+)project',
+                              16 => 'AllenTrack',
+                              17 => 'almaden',
+                              18 => 'appie',
+                              19 => 'API[\\+\\s]scraper',
+                              20 => 'Arachni',
+                              21 => 'Arachmo',
+                              22 => 'architext',
+                              23 => 'ArchiveTeam',
+                              24 => 'aria2\\/\\d',
+                              25 => 'arks',
+                              26 => '^Array$',
+                              27 => 'asterias',
+                              28 => 'atomz',
+                              29 => 'BDFetch',
+                              30 => 'Betsie',
+                              31 => 'baidu',
+                              32 => 'biglotron',
+                              33 => 'BingPreview',
+                              34 => 'binlar',
+                              35 => 'bjaaland',
+                              36 => 'Blackboard[\\+\\s]Safeassign',
+                              37 => 'blaiz-bee',
+                              38 => 'bloglines',
+                              39 => 'blogpulse',
+                              40 => 'boitho\\.com-dc',
+                              41 => 'bookmark-manager',
+                              42 => 'Brutus\\/AET',
+                              43 => 'BUbiNG',
+                              44 => 'bwh3_user_agent',
+                              45 => 'CakePHP',
+                              46 => 'celestial',
+                              47 => 'cfnetwork',
+                              48 => 'checklink',
+                              49 => 'checkprivacy',
+                              50 => 'China\\sLocal\\sBrowse\\s2\\.6',
+                              51 => 'cloakDetect',
+                              52 => 'coccoc\\/1\\.0',
+                              53 => 'Code\\sSample\\sWeb\\sClient',
+                              54 => 'ColdFusion',
+                              55 => 'collection@infegy.com',
+                              56 => 'com\\.plumanalytics',
+                              57 => 'combine',
+                              58 => 'contentmatch',
+                              59 => 'ContentSmartz',
+                              60 => 'convera',
+                              61 => 'core',
+                              62 => 'Cortana',
+                              63 => 'CoverScout',
+                              64 => 'curl\\/',
+                              65 => 'cursor',
+                              66 => 'custo',
+                              67 => 'DataCha0s\\/2\\.0',
+                              68 => 'daumoa',
+                              69 => '^\\%?default\\%?$',
+                              70 => 'DeuSu\\/',
+                              71 => 'Dispatch\\/\\d',
+                              72 => 'Docoloc',
+                              73 => 'docomo',
+                              74 => 'Download\\+Master',
+                              75 => 'DSurf',
+                              76 => 'DTS Agent',
+                              77 => 'EasyBib[\\+\\s]AutoCite[\\+\\s]',
+                              78 => 'easydl',
+                              79 => 'EBSCO\\sEJS\\sContent\\sServer',
+                              80 => 'EcoSearch',
+                              81 => 'ELinks\\/',
+                              82 => 'EmailSiphon',
+                              83 => 'EmailWolf',
+                              84 => 'Embedly',
+                              85 => 'EThOS\\+\\(British\\+Library\\)',
+                              86 => 'facebookexternalhit\\/',
+                              87 => 'favorg',
+                              88 => 'FDM(\\s|\\+)\\d',
+                              89 => 'Feedbin',
+                              90 => 'feedburner',
+                              91 => 'FeedFetcher',
+                              92 => 'feedreader',
+                              93 => 'ferret',
+                              94 => 'Fetch(\\s|\\+)API(\\s|\\+)Request',
+                              95 => 'findlinks',
+                              96 => 'findthatfile',
+                              97 => '^FileDown$',
+                              98 => '^Filter$',
+                              99 => '^firefox$',
+                              100 => '^FOCA',
+                              101 => 'Fulltext',
+                              102 => 'Funnelback',
+                              103 => 'Genieo',
+                              104 => 'GetRight',
+                              105 => 'geturl',
+                              106 => 'GigablastOpenSource',
+                              107 => 'G-i-g-a-b-o-t',
+                              108 => 'GLMSLinkAnalysis',
+                              109 => 'Goldfire(\\s|\\+)Server',
+                              110 => 'google',
+                              111 => 'Grammarly',
+                              112 => 'grub',
+                              113 => 'gulliver',
+                              114 => 'gvfs\\/',
+                              115 => 'harvest',
+                              116 => 'heritrix',
+                              117 => 'holmes',
+                              118 => 'htdig',
+                              119 => 'htmlparser',
+                              120 => 'HttpComponents\\/1.1',
+                              121 => 'HTTPFetcher',
+                              122 => 'http.?client',
+                              123 => 'httpget',
+                              124 => 'httrack',
+                              125 => 'ia_archiver',
+                              126 => 'ichiro',
+                              127 => 'iktomi',
+                              128 => 'ilse',
+                              129 => 'Indy Library',
+                              130 => '^integrity\\/\\d',
+                              131 => 'internetseer',
+                              132 => 'intute',
+                              133 => 'iSiloX',
+                              134 => 'iskanie',
+                              135 => '^java\\/\\d{1,2}.\\d',
+                              136 => 'jeeves',
+                              137 => 'Jersey\\/\\d',
+                              138 => 'jobo',
+                              139 => 'kyluka',
+                              140 => 'larbin',
+                              141 => 'libcurl',
+                              142 => 'libhttp',
+                              143 => 'libwww',
+                              144 => 'lilina',
+                              145 => '^LinkAnalyser',
+                              146 => 'link.?check',
+                              147 => 'LinkLint-checkonly',
+                              148 => '^LinkParser\\/',
+                              149 => '^LinkSaver\\/',
+                              150 => 'linkscan',
+                              151 => 'LinkTiger',
+                              152 => 'linkwalker',
+                              153 => 'lipperhey',
+                              154 => 'livejournal\\.com',
+                              155 => 'LOCKSS',
+                              156 => 'LongURL.API',
+                              157 => 'ltx71',
+                              158 => 'lwp',
+                              159 => 'lycos[_+]',
+                              160 => 'mail.ru',
+                              161 => 'MarcEdit',
+                              162 => 'mediapartners-google',
+                              163 => 'megite',
+                              164 => 'MetaURI[\\+\\s]API\\/\\d\\.\\d',
+                              165 => 'Microsoft(\\s|\\+)URL(\\s|\\+)Control',
+                              166 => 'Microsoft Office Existence Discovery',
+                              167 => 'Microsoft Office Protocol Discovery',
+                              168 => 'Microsoft-WebDAV-MiniRedir',
+                              169 => 'mimas',
+                              170 => 'mnogosearch',
+                              171 => 'moget',
+                              172 => 'motor',
+                              173 => '^Mozilla$',
+                              174 => '^Mozilla.4\\.0$',
+                              175 => '^Mozilla\\/4\\.0\\+\\(compatible;\\)$',
+                              176 => '^Mozilla\\/4\\.0\\+\\(compatible;\\+ICS\\)$',
+                              177 => '^Mozilla\\/4\\.5\\+\\[en]\\+\\(Win98;\\+I\\)$',
+                              178 => '^Mozilla.5\\.0$',
+                              179 => '^Mozilla\\/5.0\\+\\(compatible;\\+MSIE\\+6\\.0;\\+Windows\\+NT\\+5\\.0\\)$',
+                              180 => '^Mozilla\\/5\\.0\\+like\\+Gecko$',
+                              181 => '^Mozilla\\/5.0(\\s|\\+)Gecko\\/20100115(\\s|\\+)Firefox\\/3.6$',
+                              182 => '^MSIE',
+                              183 => 'MuscatFerre',
+                              184 => 'myweb',
+                              185 => 'nagios',
+                              186 => '^NetAnts\\/\\d',
+                              187 => 'netcraft',
+                              188 => 'netluchs',
+                              189 => 'ng\\/2\\.',
+                              190 => '^Ning\\/\\d',
+                              191 => 'no_user_agent',
+                              192 => 'nomad',
+                              193 => 'nutch',
+                              194 => '^oaDOI$',
+                              195 => 'ocelli',
+                              196 => 'Offline(\\s|\\+)Navigator',
+                              197 => 'OgScrper',
+                              198 => '^okhttp$',
+                              199 => 'onetszukaj',
+                              200 => '^Opera\\/4$',
+                              201 => 'OurBrowser',
+                              202 => 'panscient',
+                              203 => 'parsijoo',
+                              204 => 'Pcore-HTTP',
+                              205 => 'pear.php.net',
+                              206 => 'perman',
+                              207 => 'PHP\\/',
+                              208 => 'pidcheck',
+                              209 => 'pioneer',
+                              210 => 'playmusic\\.com',
+                              211 => 'playstarmusic\\.com',
+                              212 => '^Postgenomic(\\s|\\+)v2',
+                              213 => 'powermarks',
+                              214 => 'proximic',
+                              215 => 'PycURL',
+                              216 => 'python',
+                              217 => 'Qwantify',
+                              218 => 'rambler',
+                              219 => 'ReactorNetty\\/\\d',
+                              220 => 'Readpaper',
+                              221 => 'redalert',
+                              222 => 'Riddler',
+                              223 => 'robozilla',
+                              224 => 'rss',
+                              225 => 'scan4mail',
+                              226 => 'scientificcommons',
+                              227 => 'scirus',
+                              228 => 'scooter',
+                              229 => 'Scrapy\\/\\d',
+                              230 => 'ScoutJet',
+                              231 => '^scrutiny\\/\\d',
+                              232 => 'SearchBloxIntra',
+                              233 => 'shoutcast',
+                              234 => 'SkypeUriPreview',
+                              235 => 'slurp',
+                              236 => 'sogou',
+                              237 => 'speedy',
+                              238 => 'Strider',
+                              239 => 'summify',
+                              240 => 'sunrise',
+                              241 => 'Sysomos',
+                              242 => 'T\\-H\\-U\\-N\\-D\\-E\\-R\\-S\\-T\\-O\\-N\\-E',
+                              243 => 'tailrank',
+                              244 => 'Teleport(\\s|\\+)Pro',
+                              245 => 'Teoma',
+                              246 => 'The\\+Knowledge\\+AI',
+                              247 => 'titan',
+                              248 => '^Traackr\\.com$',
+                              249 => 'Trove',
+                              250 => 'twiceler',
+                              251 => 'ucsd',
+                              252 => 'ultraseek',
+                              253 => '^undefined$',
+                              254 => '^unknown$',
+                              255 => 'Unpaywall',
+                              256 => 'URL2File',
+                              257 => 'urlaliasbuilder',
+                              258 => 'urllib',
+                              259 => '^user.?agent$',
+                              260 => '^User-Agent',
+                              261 => 'validator',
+                              262 => 'virus.detector',
+                              263 => 'voila',
+                              264 => '^voltron$',
+                              265 => 'voyager\\/',
+                              266 => 'w3af.org',
+                              267 => 'Wanadoo',
+                              268 => 'Web(\\s|\\+)Downloader',
+                              269 => 'WebCloner',
+                              270 => 'webcollage',
+                              271 => 'WebCopier',
+                              272 => 'Webinator',
+                              273 => 'weblayers',
+                              274 => 'Webmetrics',
+                              275 => 'webmirror',
+                              276 => 'webmon',
+                              277 => 'weborama-fetcher',
+                              278 => 'webreaper',
+                              279 => 'WebStripper',
+                              280 => 'WebZIP',
+                              281 => 'Wget',
+                              282 => 'wordpress',
+                              283 => 'worm',
+                              284 => 'www\\.gnip\\.com',
+                              285 => 'WWW-Mechanize',
+                              286 => 'xenu',
+                              287 => 'y!j',
+                              288 => 'yacy',
+                              289 => 'yahoo',
+                              290 => 'yandex',
+                              291 => 'Yeti\\/\\d',
+                              292 => 'zeus',
+                              293 => 'zyborg',
+                            );
 
-                            foreach($banned_array AS $ban) {
-                                if (stristr($useragent, $ban) !== false) {
+                            foreach($bannbots AS $ban) {
+                                if (preg_match('/'.$ban.'/i', $useragent, $m)) {
                                     $found = 1;
+                                    if ($debug) { $serendipity['logger']->debug("L_".__LINE__.":: $logtag FoundBot[useragent]: $ban - $useragent"); }
                                     break;
                                 }
                             }
@@ -266,6 +532,22 @@ class serendipity_event_statistics extends serendipity_event
     margin-left: 0;
     padding: 0px 0.5em 0.5em 0;
 }
+.serendipity_statistics .serendipityReferer {
+    margin: 1em 0;
+    display: inline-block;
+}
+.serendipity_statistics .serendipityReferer span.block_level {
+    display: flow-root list-item;
+    list-style: symbols;
+    margin-left: 2em;
+}
+.serendipity_statistics:not(.extended_statistics) {
+    column-count: 2;
+    width: 100%;
+}
+.serendipity_statistics:not(.extended_statistics) section {
+    width: 100%;
+}
 
 /* serendipity_event_statistics BACKEND STOP */
 
@@ -289,7 +571,6 @@ class serendipity_event_statistics extends serendipity_event
                     if ($ext_vis_stat == 'yesTop') {
                         $this->extendedVisitorStatistics($max_items);
                     }
-
 
                     if ($this->get_config('stat_all') == 'yes') {
                         $first_entry    = serendipity_db_query("SELECT timestamp FROM {$serendipity['dbPrefix']}entries ORDER BY timestamp ASC limit 1", true);
@@ -671,7 +952,7 @@ class serendipity_event_statistics extends serendipity_event
 
         $time = date('H:i');
         $day  = date('Y-m-d');
-        return serendipity_db_query("UPDATE {$serendipity['dbPrefix']}visitors SET time = '$time', day  = '$day' WHERE sessID = '" . serendipity_db_escape_string(strip_tags(session_id())) . "'");
+        return serendipity_db_query("UPDATE {$serendipity['dbPrefix']}visitors SET time = '$time', day = '$day' WHERE sessID = '" . serendipity_db_escape_string(strip_tags(session_id())) . "'");
     }
 
     function countVisitor($useragent, $remoteaddr, $referer)
@@ -680,11 +961,11 @@ class serendipity_event_statistics extends serendipity_event
 
         $thedate = date('Y-m-d');
         $ip      = strip_tags($remoteaddr);
-        $ip_how_often = serendipity_db_query("SELECT COUNT(ip) AS result FROM {$serendipity['dbPrefix']}visitors WHERE ip ='$ip' and day='$thedate'", true);
+        $ip_how_often = serendipity_db_query("SELECT COUNT(ip) AS result FROM {$serendipity['dbPrefix']}visitors WHERE ip = '$ip' and day = '$thedate'", true);
 
-        if($ip_how_often['result'] >=1){
+        if ($ip_how_often['result'] >= 1) {
             $this->updatestats('update');
-       } else {
+        } else {
             $this->updatestats('new');
         }
         $values = array(
@@ -714,7 +995,7 @@ class serendipity_event_statistics extends serendipity_event
             // removing www
             $urlC = serendipity_db_escape_string(str_replace('www.', '', $urlB));
 
-            if(strlen($urlC) < 1) {
+            if (strlen($urlC) < 1) {
                 $urlC = 'unknown';
             }
 
@@ -773,6 +1054,9 @@ class serendipity_event_statistics extends serendipity_event
     {
         global $serendipity;
 
+        $debug = false;
+        $logtag = 'PLUGIN_STATISTICS::';
+
         if (serendipity_db_bool($this->get_config('autoclean', 'true'))) {
             $this->autoCleanStats();
         }
@@ -813,7 +1097,6 @@ class serendipity_event_statistics extends serendipity_event
             <section>
                 <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_TOPREFS; ?></h3>
         <?php
-            $i=1;
             if (is_array($top_refs)) {
                 echo "<ol>\n";
                 foreach($top_refs AS $key => $row) {
@@ -947,11 +1230,15 @@ class serendipity_event_statistics extends serendipity_event
 
                 <dl>
 <?php
-    $i=1;
+    $checkdns = serendipity_db_bool($this->get_config('gethostbyaddr', 'true'));
     if (is_array($visitors_latest)) {
+        $address = [];
         foreach ($visitors_latest AS $key => $row) {
+            if ($checkdns && !in_array($row['ip'], $address)) {
+                $address[$row['ip']] = gethostbyaddr($row['ip']);
+            }
             echo '    <dt class="stats_header">'.$row['day'].' ('.$row['time'].')';
-            echo '<span>' . ($row['ip'] ? gethostbyaddr($row['ip']) : '-') . '</span>';
+            echo $checkdns ? '<span>' . ($address[$row['ip']] ?? '-') . '</span>' : '<span>' . $row['ip'] . '</span>';
             echo "</dt>\n";
 
             if ($row['ref'] != 'unknown') {
@@ -962,6 +1249,8 @@ class serendipity_event_statistics extends serendipity_event
             }
             echo '    <dd>'.$row['browser']."</dd>\n";
         }
+        #echo '<pre>'.print_r($address,1).'</pre>';
+        if ($debug) { $serendipity['logger']->debug("L_".__LINE__.":: $logtag CACHED IP DNS check for last_visitors [20] array ".print_r($address,1)); }
     }
 ?>
                 </dl>
@@ -1015,21 +1304,21 @@ class serendipity_event_statistics extends serendipity_event
 
         if ($dbic == 0) {
             // create indices
-            $q   = "CREATE INDEX visitorses ON {$serendipity['dbPrefix']}visitors (sessID);";
+            $q = "CREATE INDEX visitorses ON {$serendipity['dbPrefix']}visitors (sessID);";
             serendipity_db_schema_import($q);
-            $q   = "CREATE INDEX visitorday ON {$serendipity['dbPrefix']}visitors (day);";
+            $q = "CREATE INDEX visitorday ON {$serendipity['dbPrefix']}visitors (day);";
             serendipity_db_schema_import($q);
-            $q   = "CREATE INDEX visitortime ON {$serendipity['dbPrefix']}visitors (time);";
+            $q = "CREATE INDEX visitortime ON {$serendipity['dbPrefix']}visitors (time);";
             serendipity_db_schema_import($q);
-            $q   = "CREATE INDEX visitortimeb ON {$serendipity['dbPrefix']}visitors_count (year, month, day);";
+            $q = "CREATE INDEX visitortimeb ON {$serendipity['dbPrefix']}visitors_count (year, month, day);";
             serendipity_db_schema_import($q);
             if ($serendipity['dbType'] == 'mysqli') {
-                $q   = "CREATE INDEX refsrefs ON {$serendipity['dbPrefix']}refs (refs(191));";
+                $q = "CREATE INDEX refsrefs ON {$serendipity['dbPrefix']}refs (refs(191));";
             } else {
-                $q   = "CREATE INDEX refsrefs ON {$serendipity['dbPrefix']}refs (refs);";
+                $q = "CREATE INDEX refsrefs ON {$serendipity['dbPrefix']}refs (refs);";
             }
             serendipity_db_schema_import($q);
-            $q   = "CREATE INDEX refscount ON {$serendipity['dbPrefix']}refs (count);";
+            $q = "CREATE INDEX refscount ON {$serendipity['dbPrefix']}refs (count);";
             serendipity_db_schema_import($q);
 
             $this->set_config('db_indices_created', '2');

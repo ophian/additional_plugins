@@ -56,6 +56,8 @@
 @define('PLUGIN_EVENT_STATISTICS_OUT_LONGEST_ARTICLES', 'The %s longest entries');
 @define('PLUGIN_EVENT_STATISTICS_MAX_ITEMS', 'Maximum items');
 @define('PLUGIN_EVENT_STATISTICS_MAX_ITEMS_DESC', 'How many items to display per statistical value? (Default: 20)');
+@define('PLUGIN_EVENT_STATISTICS_CHECKDNS', 'Check "Latest Visitors" IP for host address');
+@define('PLUGIN_EVENT_STATISTICS_CHECKDNS_DESC', 'This uses PHPs gethostbyaddr() function, which may slow down you statistics activity results drastically in some server cases. If so, and you don\'t bother having an IP outsigned only, please just turn this off.');
 
 //Language constants for the Extended Visitors feature
 @define('PLUGIN_EVENT_STATISTICS_EXT_ADD', 'Extended Visitors Statistics');
@@ -68,8 +70,8 @@
 @define('PLUGIN_EVENT_STATISTICS_EXT_ALL1', 'No, hide everything but the counter.');
 @define('PLUGIN_EVENT_STATISTICS_EXT_ALL2', 'Yes, show me all statistics!');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISITORS', 'Individual counters');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISTODAY', 'Vistors today');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Vistors ever');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISTODAY', 'Visitors today');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Visitors ever');
 @define('PLUGIN_EVENT_STATISTICS_EXT_HITSTODAY', 'Hits today');
 @define('PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL', 'Hits ever');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'Collecting stats since');
@@ -82,8 +84,8 @@
 @define('PLUGIN_EVENT_STATISTICS_OUT_EXT_STATISTICS', 'Extended Visitor Statistics');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS1', 'Enable, do not count bots');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS2', 'Disable, please count bots');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'Robot count protection');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Set to \'yes\' to not count robots. set to \'no\' to count robots. Currently over 25 bots are banned.');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'Spider/Robot count protection');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Set to \'yes\' to not count spiders/robots. Set to \'no\' to count spiders/robots. Currently over 290 bots are banned.');
 
 @define('PLUGIN_EVENT_STATISTICS_SHOW_LASTENTRY', 'Show date of last entry');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_ENTRYCOUNT', 'Show number of entries');

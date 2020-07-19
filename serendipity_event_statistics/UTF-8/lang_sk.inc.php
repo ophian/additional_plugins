@@ -82,7 +82,7 @@
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS1', 'Zapnuté, nepočítať roboty');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS2', 'Vypnuté, započítavať aj roboty');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'Ochrana proti vyhľadávacím robotom');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Nastavte na \'Zapnuté\', ak nechcete do štatistík počítať vyhľadávacie roboty. Pri nastavení \'Vypnuté\' budú započítané aj roboty. Aktuálne sa filtruje 25 známych robotov.');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Nastavte na \'Zapnuté\', ak nechcete do štatistík počítať vyhľadávacie roboty. Pri nastavení \'Vypnuté\' budú započítané aj roboty. Aktuálne sa filtruje 290 známych robotov.');
 
 @define('PLUGIN_EVENT_STATISTICS_SHOW_LASTENTRY', 'Zobraziť dátom posledného článku');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_ENTRYCOUNT', 'Zobraziť počet článkov');

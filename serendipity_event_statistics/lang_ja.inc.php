@@ -82,9 +82,7 @@
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS1', '有効にし、ボットをカウントしない');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS2', '無効にし、ボットをカウントする');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'ロボットのカウント保護');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', '「はい」に設定すると、ロボットをカウントしません。「いいえ」に設定すると、ロボットをカウントします。現在 25 を超えるロボットを禁止します。');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'カウントを禁止するブラウザー');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', '「|」で区切ったカウントから除外されるべきブラウザーを指定します。現在 25 を超えるボットを禁止しています。');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', '「はい」に設定すると、ロボットをカウントしません。「いいえ」に設定すると、ロボットをカウントします。現在 290 を超えるロボットを禁止します。');
 
 @define('PLUGIN_EVENT_STATISTICS_SHOW_LASTENTRY', '最後のエントリの日付を表示する');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_ENTRYCOUNT', 'エントリの数を表示する');

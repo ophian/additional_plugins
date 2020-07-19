@@ -88,7 +88,7 @@
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS1', 'Zapnout, nepočítej roboty');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS2', 'Vypnout, započítej i roboty');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'Ochrana proti vyhledávacím robotům');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Nastav na \'Zapnout\' pokud do statistik nechceš započítávat vyhledávací roboty. nastav na \'Vypnout\' a roboti budou započítáni. V současné době filtruje 25 známých robotů.');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Nastav na \'Zapnout\' pokud do statistik nechceš započítávat vyhledávací roboty. nastav na \'Vypnout\' a roboti budou započítáni. V současné době filtruje 290 známých robotů.');
 
 @define('PLUGIN_EVENT_STATISTICS_SHOW_LASTENTRY', 'Zobraz datum posledního příspěvku');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_ENTRYCOUNT', 'Zobraz počet příspěvků');

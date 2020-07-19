@@ -1,4 +1,12 @@
-1.8s:
+2.00:
+-----
+ * Upgrade spiders and bots list 290+ items
+ * Raised Requirements
+ * Added new option to disable gethostbyaddr() check in cases
+ * Improve gethostbyaddr() "Last Visitors" IP handler
+ * Improve display of blocks into columns of full statistics
+
+1.82:
 -----
  * Secure external referrers target _blank links
 

@@ -185,7 +185,7 @@ class serendipity_plugin_statistics extends serendipity_plugin
         $cachef     = $serendipity['serendipityPath'] . 'templates_c/statistics_cache.html';
         $date       = date('Y-m-d');
 
-        if (!file_exists($cachef) || filesize($cachef) == 0 || filemtime($cachef) < (time() - $cachetime)) {
+        if (!file_exists($cachef) || filesize($cachef) == 0 || (filemtime($cachef) < (time() - $cachetime))) {
             // Create statistics
             list($year, $month, $day) = explode('-', $date);
             $lastmonday = date('Ynj', strtotime('last monday'));

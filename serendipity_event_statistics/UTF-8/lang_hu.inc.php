@@ -83,7 +83,7 @@
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS1', 'Engedélyezve, ne számoljuk a robotokat');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS2', 'Tiltva, számoljuk a robotokat is');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'Robot számolás elleni védelem');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Állítsd \'iegn\'-re, hogy ne számoljuk az oldalakat látogató robotokat. \'Nem\' esetén számoljuk az oldalt lekérő robotot is mint látogató. Jelenleg több mint 25 robot van tiltólistán.');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Állítsd \'iegn\'-re, hogy ne számoljuk az oldalakat látogató robotokat. \'Nem\' esetén számoljuk az oldalt lekérő robotot is mint látogató. Jelenleg több mint 290 robot van tiltólistán.');
 
 @define('PLUGIN_EVENT_STATISTICS_SHOW_LASTENTRY', 'Mutassuk az utolsó bejegyzés dátumát');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_ENTRYCOUNT', 'Mutassuk a bejegyzések számát');

@@ -82,7 +82,7 @@
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS1', 'Да, да не се броят роботите');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS2', 'Не, да се броят роботите');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'Броене на роботите (webbots)');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Установете на \'Да\', за да не се броят роботите. Установете на \'Не\', за да се броят. Понастоящем над 25 робота са забранени.');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Установете на \'Да\', за да не се броят роботите. Установете на \'Не\', за да се броят. Понастоящем над 290 робота са забранени.');
 
 @define('PLUGIN_EVENT_STATISTICS_SHOW_LASTENTRY', 'Показване на датата на последната статия');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_ENTRYCOUNT', 'Показване на броя на статиите');

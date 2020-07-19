@@ -82,7 +82,7 @@
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS1', 'W³±cz, nie zliczaj botów');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS2', 'Wy³±cz, zliczaj boty');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'Ochrona przed zliczaniem botów');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Ustaw "W³±cz" by roboty nie by³y zliczane. Ustaw "Wy³±cz" by by³y zliczane tak¿e trafienia dokonywane przez boty. Obecnie ponad 25 botów jest blokowanych.');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Ustaw "W³±cz" by roboty nie by³y zliczane. Ustaw "Wy³±cz" by by³y zliczane tak¿e trafienia dokonywane przez boty. Obecnie ponad 290 botów jest blokowanych.');
 
 @define('PLUGIN_EVENT_STATISTICS_SHOW_LASTENTRY', 'Poka¿ datê ostatniego wpisu');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_ENTRYCOUNT', 'Poka¿ ilo¶æ wpisów');
