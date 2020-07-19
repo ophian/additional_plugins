@@ -993,9 +993,10 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2020-07-18</date>
   <filelist>
     <dir name="serendipity_event_statistics">
+      <file>botlist.txt</file>
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
@@ -1042,6 +1043,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_statistics/botlist.txt</file>
     <file>serendipity_event_statistics/ChangeLog</file>
     <file>serendipity_event_statistics/documentation_cs.html</file>
     <file>serendipity_event_statistics/documentation_cz.html</file>

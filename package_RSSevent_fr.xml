@@ -869,7 +869,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_podcast&lt;br /&gt;Easy Podcasting Plugin&lt;/b&gt;&lt;br /&gt;Ajoute des moyens pour le &quot;podcasting&quot; (RSS, boutons video/audio)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 01 Jul 2020 10:42:26 +0200</pubDate>
+<pubDate>Fri, 17 Jul 2020 09:54:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_podcast</guid>
 </item>
 <item>
@@ -1075,8 +1075,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_statistics</link>
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistiques&lt;/b&gt;&lt;br /&gt;Ajoute un lien vers des statistiques intétressantes dans votre panneau d'administration des billets&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 29 Jun 2020 13:12:01 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistiques&lt;/b&gt;&lt;br /&gt;Ajoute un lien vers des statistiques intétressantes dans votre panneau d'administration des billets&lt;br/&gt;For: Serendipity 2.9</content:encoded>
+<pubDate>Sun, 19 Jul 2020 15:05:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
