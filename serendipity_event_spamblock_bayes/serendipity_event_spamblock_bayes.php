@@ -33,7 +33,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '1.07');
+        $propbag->add('version',        '1.08');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -524,8 +524,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $sql = "CREATE TABLE IF NOT EXISTS
                     {$serendipity['dbPrefix']}spamblock_bayes (
                     token VARCHAR(100) NOT NULL,
-                    ham BIGINT UNSIGNED NOT NULL DEFAULT '0',
-                    spam BIGINT UNSIGNED NOT NULL DEFAULT '0',
+                    ham BIGINT {UNSIGNED} NOT NULL DEFAULT '0',
+                    spam BIGINT {UNSIGNED} NOT NULL DEFAULT '0',
                     type VARCHAR(20) DEFAULT '{$this->type['body']}'
                     ) {UTF_8};";
         serendipity_db_schema_import($sql);

@@ -1,3 +1,7 @@
+1.08:
+------
+ * By consistency, take PostgreSQL table creation into consideration
+
 1.07:
 ------
  * Secure admin/bayesRecyclermenu.tpl target="_blank" link article_link URL.
