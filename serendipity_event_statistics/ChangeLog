@@ -1,3 +1,7 @@
+2.03:
+-----
+ * Fix a possible column display mismatch by 2.02
+
 2.02:
 -----
  * Fix a possible column display mismatch
