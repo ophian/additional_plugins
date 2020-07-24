@@ -1,3 +1,7 @@
+2.06:
+-----
+ * Retry fixing column display mismatch against core styles
+
 2.05:
 -----
  * Retry fixing column display mismatch again
