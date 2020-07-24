@@ -9484,7 +9484,7 @@
 <description>Добавя връзка към интересни статистически данни в страницата на постингите, включително и брояч на посетителите</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.05</version>
+  <version>2.06</version>
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
   <date>2020-07-24</date>
   <filelist>
