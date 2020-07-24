@@ -1,7 +1,7 @@
 4.29 & sb 3.13:
 ---------------
 
- * Fix categorytemplates regression regarding sql joins against normal category hide
+ * Fix categorytemplates regression regarding SQL joins against normal category hide
 
 4.28:
 -----
