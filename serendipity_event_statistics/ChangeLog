@@ -1,3 +1,7 @@
+2.04:
+-----
+ * Retry fixing column display mismatch by 2.02 and 2.03
+
 2.03:
 -----
  * Fix a possible column display mismatch by 2.02
