@@ -9484,7 +9484,7 @@
 <description>Voegt een link toe aan het controlepaneel waar je interessante statistieken kunt lezen</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.04</version>
+  <version>2.05</version>
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
   <date>2020-07-24</date>
   <filelist>
