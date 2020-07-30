@@ -285,7 +285,7 @@
 <release>
   <version>1.7.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2020-06-13</date>
+  <date>2020-07-29</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -6072,9 +6072,9 @@
 <description>Převádí značky Markdown na HTML v textu příspěvku</description>
 <maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.31</version>
+  <version>1.32</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2020-04-23</date>
+  <date>2020-07-30</date>
   <filelist>
     <dir name="serendipity_event_markdown">
       <file>ChangeLog</file>
@@ -11155,7 +11155,7 @@
 <release>
   <version>1.04</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-09-11</date>
+  <date>2020-07-29</date>
   <filelist>
     <dir name="serendipity_event_unstrip_tags">
       <file>lang_cs.inc.php</file>

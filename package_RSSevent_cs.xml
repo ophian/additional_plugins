@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Automatické aktualizace&lt;/b&gt;&lt;br /&gt;Když &quot;tabule&quot; detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate Notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 13 Jun 2020 16:43:19 +0200</pubDate>
+<pubDate>Wed, 29 Jul 2020 12:27:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -707,7 +707,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Markup: Markdown&lt;/b&gt;&lt;br /&gt;Převádí značky Markdown na HTML v textu příspěvku&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 23 Apr 2020 17:50:13 +0200</pubDate>
+<pubDate>Thu, 30 Jul 2020 19:52:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -1220,7 +1220,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_unstrip_tags&lt;br /&gt;Transformace HTML v komentářích&lt;/b&gt;&lt;br /&gt;Umožňuje vkládat HTML tagy do komentářů k příspěvkům (místo jejich odstranění, bez tohoto modulu jsou převáděny na HTML entity). Musí být první ze všech značkovacích (markup) pluginů v seznamu pluginů událostí!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 11 Sep 2018 16:09:46 +0200</pubDate>
+<pubDate>Wed, 29 Jul 2020 18:50:16 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_unstrip_tags</guid>
 </item>
 <item>
