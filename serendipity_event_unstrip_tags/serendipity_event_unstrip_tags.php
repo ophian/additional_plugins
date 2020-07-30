@@ -44,7 +44,7 @@ class serendipity_event_unstrip_tags extends serendipity_event
                 case 'frontend_display':
                     if (isset($eventData['comment']) && !empty($eventData['body'])) {
                         $eventData['comment'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($eventData['body']) : htmlspecialchars($eventData['body'], ENT_COMPAT, LANG_CHARSET));
-                        $addData['comment_escaped'] = true;
+                        $addData['comment_escaped'] = true; // @see serendipity_event_markdown
                     }
                     break;
 
