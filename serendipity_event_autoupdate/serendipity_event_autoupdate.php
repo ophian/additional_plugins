@@ -836,7 +836,7 @@ EOS;
         } else {
             $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_CLEAN_DIR_FAILED, $zipDir) . '</p>');
         }
-        // We now clear all compiled Smarty template files of the current used template in templates_c and only leave the page we are on: eg. "/serendipity/templates/2styx/admin/index.tpl"
+        // We now clear all compiled Smarty template files of the current used template in templates_c and only leave the page we are on: eg. "/serendipity/templates/styx/admin/index.tpl"
         if ($finish) {
             // purge all previously fetched upgrade binaries, since that can easily mount up to 100+MB
             if (serendipity_db_bool($this->get_config('purge_zips', 'false'))) {
