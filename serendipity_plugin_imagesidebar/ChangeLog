@@ -1,3 +1,7 @@
+2.03:
+-----
+ * Serendipity Styx 3.0 + now uses the voku simple cache for caching when "Rotate image time" option is used
+
 2.02:
 -----
  * Fixed traversing media uploads directory for Serendipity Styx 3.0 +
