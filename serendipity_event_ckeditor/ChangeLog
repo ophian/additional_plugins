@@ -1,3 +1,7 @@
+4.14.1.7:
+---------
+    * Fix a possible case sensitive loading issue of codesnippet styles
+
 4.14.1.6:
 ---------
     * Support diverse multilingual blog post elements by manually added (pseudo)

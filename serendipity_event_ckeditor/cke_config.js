@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity Styx serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.22, 2020-07-22
+ * @fileOverview A Serendipity Styx serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.23, 2020-08-03
  */
 
  /**
@@ -272,7 +272,7 @@ CKEDITOR.editorConfig = function( config ) {
      */
 
     // Default theme of CKEDITOR 'codesnippet' plugin - else use 'default' or 'monokai_sublime' or 'pojoaque' or any of those described at https://highlightjs.org/static/test.html
-    config.codeSnippet_theme = 'GitHub';
+    config.codeSnippet_theme = 'github'; // write as exists, since can be case sensitive when loading!
     // Extend or remove the default selection
     config.codeSnippet_languages = {
                         apache: 'Apache',
