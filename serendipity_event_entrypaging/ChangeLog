@@ -1,3 +1,11 @@
+1.75:
+-----
+ * Improve speed. Remove redundant compatibility function checks
+
+1.74:
+-----
+ * Minor. Add default noopener attribute to the example readme link
+
 1.73:
 -----
  * Fix 1.72 for top and bottom placement cases

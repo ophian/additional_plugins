@@ -20,7 +20,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
-        $propbag->add('version',       '1.74');
+        $propbag->add('version',       '1.75');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -91,15 +91,6 @@ class serendipity_event_entrypaging extends serendipity_event
         return '<p class="msg_notice"><span class="icon icon-info-circled"></span> Please also read the entrypages <a href="' . $base . '/README_FOR_SMARTY_TEMPLATING.txt" target="_blank" rel="noopener">README_FOR_SMARTY_TEMPLATING</a> file for custom Smarty entrypaging!</p>';
     }
 
-    function timeOffset($timestamp)
-    {
-        if (function_exists('serendipity_serverOffsetHour')) {
-            return serendipity_serverOffsetHour($timestamp, true);
-        }
-
-        return $timestamp;
-    }
-
     function makeLink($resultset, $type = 'next')
     {
         if (is_array($resultset) && is_numeric($resultset[0]['id'])) {
@@ -114,9 +105,9 @@ class serendipity_event_entrypaging extends serendipity_event
             }
 
             // what above does, is to retrieve the multilingual title, if available
-            $title = (function_exists('serendipity_specialchars') ? serendipity_specialchars($localtitle[0]) : htmlspecialchars($localtitle[0], ENT_COMPAT, LANG_CHARSET));
+            $title = serendipity_specialchars($localtitle[0]);
             if ($this->get_config($type) != '') {
-                $title = (function_exists('serendipity_specialchars') ? serendipity_specialchars($this->get_config($type)) : htmlspecialchars($this->get_config($type), ENT_COMPAT, LANG_CHARSET));
+                $title = serendipity_specialchars($this->get_config($type));
             }
             if (empty($title)) {
                 if ($type == 'next') {
@@ -207,7 +198,7 @@ class serendipity_event_entrypaging extends serendipity_event
                                 $cond['compare'] = "e.id [%1] " . (int)$id;
                             }
 
-                            $cond['and'] = " AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
+                            $cond['and'] = " AND e.isdraft = 'false' AND e.timestamp <= " . serendipity_serverOffsetHour(time(), true);
                             serendipity_plugin_api::hook_event('frontend_fetchentry', $cond);
 
                             if (!isset($cond['joins'])) {
@@ -250,7 +241,7 @@ class serendipity_event_entrypaging extends serendipity_event
                             // display random link if selected
                             $randomlink = '';
                             if (serendipity_db_bool($this->get_config('showrandom', 'false'))) {
-                                $cond['compare2'] = " e.id <> " . (int)$id ." AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
+                                $cond['compare2'] = " e.id <> " . (int)$id ." AND e.isdraft = 'false' AND e.timestamp <= " . serendipity_serverOffsetHour(time(), true);
 
                                 if (!isset($cond['joinct'])) {
                                     $cond['joinct'] = '';
