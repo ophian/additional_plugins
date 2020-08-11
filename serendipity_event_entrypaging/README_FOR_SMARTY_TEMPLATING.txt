@@ -36,10 +36,10 @@ OR just use this snippet to not call that function on every request inside the e
 {if $is_single_entry AND NOT $is_preview AND NOT empty($smarty_entrypaging)}
     <div id="serendipity_smarty_entrypaging">
         {if NOT empty($pagination_prev_link)}
-            <div class="smarty_pagination_left"><a href="{$pagination_prev_link}" title="{$pagination_prev_title}"><svg viewbox="0 0 100 100"><path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" /></svg>{$pagination_prev_title}</a></div> | 
+            <div class="smarty_pagination_left"><a href="{$pagination_prev_link}" title="{$pagination_prev_title}"><svg viewbox="-10 -10 120 120"><path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" class="arrow" stroke="black" stroke-width="10" /></svg>{$pagination_prev_title}</a></div> | 
         {/if}
         {if NOT empty($pagination_next_link)}
-            <div class="smarty_pagination_right"><a href="{$pagination_next_link}" title="{$pagination_next_title}">{$pagination_next_title}<svg viewbox="0 0 100 100"><path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" /></svg></a></div>
+            <div class="smarty_pagination_right"><a href="{$pagination_next_link}" title="{$pagination_next_title}">{$pagination_next_title}<svg viewbox="-10 -10 120 120"><path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" class="arrow" transform="translate(85,100) rotate(180)" stroke="black" stroke-width="10" /></svg></a></div>
         {/if}
     </div>
 {/if}
@@ -58,10 +58,8 @@ And this to style it in your user.css file (build for Styx 3.0 pure Standard the
 }
 #serendipity_smarty_entrypaging svg {
     width: 16px;
+    height: auto;
     vertical-align: middle;
-}
-#serendipity_smarty_entrypaging .smarty_pagination_right svg {
-    transform: rotateY(180deg);
 }
 .smarty_pagination_left {
     margin-right: auto;

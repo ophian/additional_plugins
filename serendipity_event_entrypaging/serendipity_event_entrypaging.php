@@ -9,8 +9,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_entrypaging extends serendipity_event
 {
-    var $found_images = array();
-    var $smartylinks = array();
+    private $smartylinks = array();
 
     function introspect(&$propbag)
     {
@@ -20,7 +19,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
-        $propbag->add('version',       '1.75');
+        $propbag->add('version',       '1.76');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -168,10 +167,12 @@ class serendipity_event_entrypaging extends serendipity_event
                         if (($placement == 'top' || $placement == 'smarty') && $event == 'entries_header') {
                             $disp = '1';
                         }
-                        elseif ($placement == 'bottom') {
+                        elseif ($placement == 'bottom' && $event == 'entries_footer') {
                             $disp = '2';
                         } else {
-                            if ($placement != 'smarty') return false;
+                            if ($placement != 'smarty') {
+                                return false;
+                            }
                         }
 
                         if ($event == 'entry_display' || (isset($disp) && !isset($serendipity['entrypaging']))) {
