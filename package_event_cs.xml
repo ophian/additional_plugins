@@ -2278,9 +2278,9 @@
 <description>Umožňuje prohlížení dalších/předchozích příspěvků</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.75</version>
+  <version>1.76</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-08-06</date>
+  <date>2020-08-11</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
