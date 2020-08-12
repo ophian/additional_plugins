@@ -329,7 +329,7 @@ class media_sidebar extends subplug_sidebar {
                         }
 
                         $gstyles = ($gallery_styles == 'yes') ? ' style="border: 0px;'.$width_str.'"' : '';
-                        $picture = ($serendipity['version'][0] == 3 && !empty($thumb_webp)) ? '<picture><source srcset="'.$thumb_webp.'" type="image/webp"><img'.$gstyles.' src="'.$thumb_path.'" alt=""></picture>' : '<img'.$gstyles.' src="'.$thumb_path.'" alt="" />';
+                        $picture = ($serendipity['version'][0] == 3 && !empty($thumb_webp)) ? '<picture><source srcset="'.$thumb_webp.'" type="image/webp"><img'.$gstyles.' src="'.$thumb_path.'" loading=lazy alt=""></picture>' : '<img'.$gstyles.' src="'.$thumb_path.'" loading=lazy alt="" />';
                         $output_str .= '<div class="mediasidebaritem">'."\n";
 
                         switch ($this->get_config("media_linkbehavior")) {

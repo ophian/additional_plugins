@@ -1,3 +1,7 @@
+2.04:
+-----
+ * Use lazy loading image attribute from ML to allow loading images when in viewport
+
 2.03:
 -----
  * Serendipity Styx 3.0 + now uses the voku simple cache for caching when "Rotate image time" option is used
