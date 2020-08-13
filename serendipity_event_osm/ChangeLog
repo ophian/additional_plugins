@@ -1,3 +1,10 @@
+0.6:
+----
+
+ * Calculate the total distance and put it into a span, for example
+     "<span class="distance-counter" data-category="42">(wait...)</span>"
+ * Updated OpenLayers to v6.4.3
+
 0.5:
 ----
 
