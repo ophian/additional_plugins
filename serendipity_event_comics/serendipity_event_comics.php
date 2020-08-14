@@ -19,7 +19,7 @@ class serendipity_event_comics extends serendipity_event
         $propbag->add('description',   PLUGIN_COMICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Wesley Hwang-Chung');
-        $propbag->add('version',       '1.6');
+        $propbag->add('version',       '1.7');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -78,15 +78,6 @@ class serendipity_event_comics extends serendipity_event
         return true;
     }
 
-    function timeOffset($timestamp)
-    {
-        if (function_exists('serendipity_serverOffsetHour')) {
-            return serendipity_serverOffsetHour($timestamp, true);
-        }
-
-        return $timestamp;
-    }
-
     function makeQlink($resultset, $label)
     {
         if (is_array($resultset) && is_numeric($resultset[0]['id'])) {
@@ -110,8 +101,10 @@ class serendipity_event_comics extends serendipity_event
             $cond['compare'] = "e.id [%1] " . (int) $id;
         }
 
-        $cond['and'] = " AND e.isdraft = 'false' AND e.timestamp <= " . $this->timeOffset(time());
-        if ($cat != '') $cond['and'] .= " AND {$serendipity['dbPrefix']}entrycat.categoryid = {$cat}";
+        $cond['and'] = " AND e.isdraft = 'false' AND e.timestamp <= " . serendipity_serverOffsetHour(time(), true);
+        if ($cat != '') {
+            $cond['and'] .= " AND {$serendipity['dbPrefix']}entrycat.categoryid = {$cat}";
+        }
         serendipity_plugin_api::hook_event('frontend_fetchentry', $cond);
 
         $querystring = "SELECT
@@ -187,7 +180,7 @@ class serendipity_event_comics extends serendipity_event
                     INNER JOIN {$serendipity['dbPrefix']}entrycat
                         ON e.id = {$serendipity['dbPrefix']}entrycat.entryid
                     WHERE e.isdraft =  'false'
-                        AND e.timestamp <= " . $this->timeOffset(time()) . "
+                        AND e.timestamp <= " . serendipity_serverOffsetHour(time(), true) . "
                         AND {$serendipity['dbPrefix']}entrycat.categoryid = {$comic_cat}
                     ORDER BY e.timestamp DESC
                     LIMIT 1");
