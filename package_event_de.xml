@@ -711,9 +711,9 @@
 <description>Webcomics im Blog posten</description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
+  <version>1.7</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2019-08-18</date>
+  <date>2020-08-14</date>
   <filelist>
     <dir name="serendipity_event_comics">
       <file>ChangeLog</file>
