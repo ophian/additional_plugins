@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.30');
+        $propbag->add('version',       '3.31');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -308,6 +308,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
     </script>
 
 <?php
+                            $emoticon_bar = true;
                         }
                         if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg'] && isset($popuplink)) {
                             echo "    $popuplink\n"; // add toolbar button in backend entries above CKEDITOR toolbar

@@ -1,3 +1,7 @@
+3.31:
+-----
+ * Fix missing div close condition for PLAIN TEXT Editor
+
 3.30:
 -----
  * Change backend top margin (to textarea) for when other hooked messages are gone
