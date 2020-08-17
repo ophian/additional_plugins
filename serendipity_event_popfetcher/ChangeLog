@@ -1,4 +1,8 @@
-1.52
+1.54
+----
+ * Fix strtotime() returncode checkup (since PHP 5.1.0)
+
+1.53
 ----
  * Secure some target _blank links by living standard rel="noopener"
 

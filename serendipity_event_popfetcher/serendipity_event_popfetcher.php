@@ -12,7 +12,7 @@ require_once('tmobile.php');
 require_once('o2.php');
 
 // Default values
-define('POPFETCHER_VERSION',  '1.53');       // This version of Popfetcher
+define('POPFETCHER_VERSION',  '1.54');       // This version of Popfetcher
 define('DEFAULT_ADMINMENU',   'true');       // True if run as sidebar plugin. False if external plugin.
 define('DEFAULT_HIDENAME',    'popfetcher'); // User should set this to something unguessable
 define('DEFAULT_MAILSERVER',  '');
@@ -1571,7 +1571,7 @@ class serendipity_event_popfetcher extends serendipity_event
                 if ($blogflag) {
                     if ( trim($subject) == SPRINTPCS_IDENT_ALBUM || trim($subject) == SPRINTPCS_IDENT_PICTURE || trim($subject) == SPRINTPCS_IDENT_VIDEO || stristr($subject, CINGULAR_IDENT_PICTURE) || ($verizonflag and ($subject == MF_MSG17)) || ($tmobileflag and ($subject == MF_MSG17))) {
                         $time    = strtotime($s->headers['date']);
-                        $stamp   = ($time == -1) ?  date("l, F j, Y, g:ia") : date("l, F j, Y, g:ia", $time);
+                        $stamp   = ($time === false) ? date("l, F j, Y, g:ia") : date("l, F j, Y, g:ia", $time);
                         $subject = MF_MSG23.$stamp;
                     }
 
@@ -1586,7 +1586,7 @@ class serendipity_event_popfetcher extends serendipity_event
                 if ($blogflag) {
                     if (trim($subject) == SPRINTPCS_IDENT_ALBUM || trim($subject) == SPRINTPCS_IDENT_PICTURE || trim($subject) == SPRINTPCS_IDENT_VIDEO || stristr($subject, CINGULAR_IDENT_PICTURE) || (stristr($s->body, VERIZON_IDENT_PICTURE) and ($subject == MF_MSG17)) || ($tmobileflag and ($subject == MF_MSG17)) ) {
                         $time    = strtotime($s->headers['date']);
-                        $stamp   = ($time == -1) ?  date("l, F j, Y, g:ia") : date("l, F j, Y, g:ia", $time);
+                        $stamp   = ($time === false) ? date("l, F j, Y, g:ia") : date("l, F j, Y, g:ia", $time);
                         $subject = MF_MSG23.$stamp;
                     }
 
