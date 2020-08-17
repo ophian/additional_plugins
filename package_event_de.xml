@@ -474,7 +474,7 @@
 <release>
   <version>1.87</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2020-06-29</date>
+  <date>2020-08-17</date>
   <filelist>
     <dir name="serendipity_event_cal">
       <file>backend_inherits.css</file>
@@ -7598,9 +7598,9 @@
 <description>Holt E-Mail inkl. Anhängen ab und veröffentlicht sie von einem POP3 E-Mail-Account (mit spezieller Handy-Unterstützung)</description>
 <maintainers><maintainer><name>Jason Levitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.53</version>
+  <version>1.54</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2020-07-01</date>
+  <date>2020-08-17</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
       <file>ChangeLog</file>
