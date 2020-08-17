@@ -610,7 +610,7 @@ class serendipity_event_cal extends serendipity_event
                         list(,$day) = explode(':',$row['recur']);
 
                         for ( $i = 1; $i <= 5; ++$i ) {
-                            $ts  = $this->weekday($year,$month,$day,$i); // eg. $day = Thuesday(3) and $which hast to be each 1 2 3 4 (5)
+                            $ts  = $this->weekday($year,$month,$day,$i); // eg. $day = Thuesday(3) and $which has to be each 1 2 3 4 (5)
                             $wnd = (int)strftime('%d',$ts);              // weekly recurring day in month
 
                             if ($i > 4) {
