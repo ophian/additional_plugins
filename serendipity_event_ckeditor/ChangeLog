@@ -1,3 +1,9 @@
+4.14.1.8:
+---------
+    * Allow lazy loading attribute in cke_config to not get removed automatically.
+      NOTE: Open up the config js file once in a new tab of your browser, like:
+      https://your.blog/plugins/serendipity_event_ckeditor/cke_config.js
+
 4.14.1.7:
 ---------
     * Fix a possible case sensitive loading issue of codesnippet styles

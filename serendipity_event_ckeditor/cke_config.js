@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity Styx serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.23, 2020-08-03
+ * @fileOverview A Serendipity Styx serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.24, 2020-08-17
  */
 
  /**
@@ -82,13 +82,13 @@ CKEDITOR.editorConfig = function( config ) {
               - Allowed <p> custom classes - to easier style certain paragraphs!
               - Allowed <ul> listing for styles & classes, <dl> styles and classes, <dt>, <dd>, full <audio> and <video> and <source> attributes, <i> attributes & classes for font-awesome icons and full <span> to make life a bit easier!
               - Allowed <a> link tag attributes and classes for having to add data-* attributes (see picture element) - which tells ACF to not touch the code!
-              - Reset <img[height,width]> Media Library image inserts to avoid ACF OFF suspension of height attributes. (Dependency in cke_plugin.js)
+              - Reset <img[height,width,loading]> Could as well be [*]. Media Library image inserts to avoid ACF OFF suspension of height attributes. (Dependency in cke_plugin.js)
               - Allow <pre[*attributes](*classes)> and <code(*classes)> for custom attributes/classes in codesnippet code blocks
               - Allow <oembed> tag using Semantic Media Embed
               - Allow (pseudo) [lang] attribute in p and ul elements, see @https://www.w3.org/International/questions/qa-css-lang.en
         */
         // protect tags
-        config.extraAllowedContent = 'mediainsert[*]{*}(*);gallery[*]{*}(*);media[*]{*}(*);script[*]{*}(*);audio[*]{*}(*);video[*];figure{*}(*);figcaption(*);div[*]{*}(*);p[lang](*);ul[lang]{*}(*);dl{*}(*);dt;dd;a[*](*);span[*]{*}(*);picture;source[*]{*}(*);img[height,width];pre[*](*);code(*);i[*](*);oembed;';
+        config.extraAllowedContent = 'mediainsert[*]{*}(*);gallery[*]{*}(*);media[*]{*}(*);script[*]{*}(*);audio[*]{*}(*);video[*];figure{*}(*);figcaption(*);div[*]{*}(*);p[lang](*);ul[lang]{*}(*);dl{*}(*);dt;dd;a[*](*);span[*]{*}(*);picture;source[*]{*}(*);img[height,width,loading];pre[*](*);code(*);i[*](*);oembed;';
 
         // do not use auto paragraphs added to these allowed tags.
         config.autoParagraph = false;
