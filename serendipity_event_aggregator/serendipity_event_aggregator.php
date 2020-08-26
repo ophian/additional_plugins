@@ -53,6 +53,8 @@ if (IN_serendipity !== true) {
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
+@define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
+
 class serendipity_event_aggregator extends serendipity_event
 {
     var $debug;
@@ -68,7 +70,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '1.03');
+        $propbag->add('version',       '1.04');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -895,6 +897,11 @@ class serendipity_event_aggregator extends serendipity_event
         // Global replacements
         // by: waldo@wh-e.com - trim space around tags not within
         $data = preg_replace('@>[[:space:]]+<@i', '><', $data);
+
+        // Check for xml_parser_create()
+        if (!function_exists('xml_parser_create')) {
+            echo '<span class="msg_error"><span class="icon-attention-circled"></span> ' . sprintf(CANT_EXECUTE_EXTENSION, 'php-xml (PHP)') . "</span>\n";
+        }
 
         switch(strtolower($encoding)) {
             case 'iso-8859-1':
