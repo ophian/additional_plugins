@@ -23,7 +23,7 @@
 <category>Event Plugins</category>
 <author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 2.2</content:encoded>
-<pubDate>Thu, 04 Jun 2020 19:10:38 +0200</pubDate>
+<pubDate>Wed, 26 Aug 2020 17:28:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
@@ -185,7 +185,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_contentrewrite&lt;br /&gt;Prepisovač obsahu&lt;/b&gt;&lt;br /&gt;Nahradzuje slová ľubovolným reťazcom (užitočné na vkladanie akronymov)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 25 Feb 2019 18:02:52 +0100</pubDate>
+<pubDate>Mon, 24 Aug 2020 15:05:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contentrewrite</guid>
 </item>
 <item>
@@ -455,7 +455,7 @@
 <category>Event Plugins</category>
 <author>Rob Antonishen, Alexander Mieland</author>
 <content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;Markup: Gallery Image&lt;/b&gt;&lt;br /&gt;Inserts a Gallery album or image using markup text.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 29 Jun 2020 18:05:22 +0200</pubDate>
+<pubDate>Mon, 24 Aug 2020 15:04:26 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_galleryimage</guid>
 </item>
 <item>
@@ -482,7 +482,7 @@
 <category>Event Plugins</category>
 <author>David Rolston</author>
 <content:encoded>&lt;b&gt;serendipity_event_geshi&lt;br /&gt;Markup: GeSHi&lt;/b&gt;&lt;br /&gt;Computer Language Color Syntax Highlighting. Tag usage: [geshi lang=lang_name [,ln={y|n}]]code snippet[/geshi]&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Thu, 09 May 2019 08:47:44 +0200</pubDate>
+<pubDate>Mon, 24 Aug 2020 15:05:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geshi</guid>
 </item>
 <item>
@@ -527,7 +527,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Show Avatars inside comments. Gravatars, Pavatars, Favatars, Wavatars, Monster ID, Identicon, Twitter and Identica Avatars are supported.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Wed, 01 Jul 2020 10:30:18 +0200</pubDate>
+<pubDate>Wed, 26 Aug 2020 17:25:19 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
@@ -617,7 +617,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Links manager - Shows your favorite links in the sidebar.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 02 Apr 2020 16:42:45 +0200</pubDate>
+<pubDate>Wed, 26 Aug 2020 17:17:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linklist</guid>
 </item>
 <item>
@@ -1112,7 +1112,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;Markup: Textile&lt;/b&gt;&lt;br /&gt;Parse all output through the Textile converter&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 01 Jul 2020 13:09:44 +0200</pubDate>
+<pubDate>Mon, 24 Aug 2020 15:04:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
@@ -1193,7 +1193,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackexits&lt;br /&gt;Markup: Sledovanie odchodov&lt;/b&gt;&lt;br /&gt;Sleduje kliknutie na externé adresy URL&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:24:52 +0200</pubDate>
+<pubDate>Mon, 24 Aug 2020 15:06:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackexits</guid>
 </item>
 <item>
