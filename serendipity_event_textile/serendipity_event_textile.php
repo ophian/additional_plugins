@@ -149,7 +149,7 @@ class serendipity_event_textile extends serendipity_event
 
                     $preserve_tags = &$bag->get('preserve_tags');
 
-                    foreach ($this->markup_elements as $temp) {
+                    foreach ($this->markup_elements AS $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], 'true'))) {
                             if (isset($eventData['properties']['ep_disable_markup_' . $this->instance])
                             ||  isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
@@ -160,7 +160,7 @@ class serendipity_event_textile extends serendipity_event
                             /* find all the tags and store them in $blocks */
 
                             $blocks = array();
-                            foreach($preserve_tags as $tag) {
+                            foreach($preserve_tags AS $tag) {
                                 if (preg_match_all('/(<'.$tag.'[^>]?>.*<\/'.$tag.'>)/msU', $eventData[$element], $matches )) {
                                     foreach($matches[1] as $match) {
                                         $blocks[] = $match;
@@ -170,7 +170,7 @@ class serendipity_event_textile extends serendipity_event
 
                             /* replace all the blocks with some code */
 
-                            foreach($blocks as $id=>$block) {
+                            foreach($blocks AS $id=>$block) {
                                 $eventData[$element] = str_replace($block, '@BLOCK::'.$id.'@', $eventData[$element]);
                             }
 
