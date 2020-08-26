@@ -139,7 +139,7 @@ class serendipity_event_trackexits extends serendipity_event
                         #echo "<pre>" . print_r($this->links, true) . "</pre><br />\n";
                     }
 
-                    foreach ($this->markup_elements as $temp) {
+                    foreach ($this->markup_elements AS $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
                             @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
                             !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
