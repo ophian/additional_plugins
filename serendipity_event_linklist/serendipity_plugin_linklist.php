@@ -6,6 +6,8 @@ if (IN_serendipity !== true) {
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
+@define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
+
 class serendipity_plugin_linklist extends serendipity_plugin
 {
     var $title = PLUGIN_LINKS_NAME;
@@ -18,7 +20,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $propbag->add('description',   PLUGIN_LINKS_BLAHBLAH);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '1.27');
+        $propbag->add('version',       '1.28');
         $propbag->add('configuration', array(
                                              'title',
                                              'prepend_text',
@@ -370,8 +372,13 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $use_descrip = serendipity_db_bool($this->get_config('use_description', 'false'));
         $plugin_dir = basename(dirname(__FILE__));
 
+        // Check for xml_parser_create()
+        if (!function_exists('xml_parser_create')) {
+            echo '<span class="msg_error"><span class="icon-attention-circled"></span> ' . sprintf(CANT_EXECUTE_EXTENSION, 'php-xml (PHP)') . "</span>\n";
+        }
+
         /* XML definition */
-        $xml = xml_parser_create('UTF-8');
+        $xml = @xml_parser_create('UTF-8');
         $linkxml = serendipity_utf8_encode($links);
         xml_parse_into_struct($xml, '<list>' . $linkxml . '</list>', $struct, $index);
         xml_parser_free($xml);

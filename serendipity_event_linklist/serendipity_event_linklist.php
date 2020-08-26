@@ -786,7 +786,6 @@ class serendipity_event_linklist extends serendipity_event
 
     }
 
-
     function set_query($display)
     {
         global $serendipity;

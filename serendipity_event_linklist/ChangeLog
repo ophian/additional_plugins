@@ -1,3 +1,8 @@
+1.28:
+------------
+
+ * Add error note when not having installed/enabled php-xml extension
+
 2.09 & 1.27:
 ------------
 
