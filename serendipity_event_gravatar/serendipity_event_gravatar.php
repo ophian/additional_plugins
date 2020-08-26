@@ -7,7 +7,9 @@ if (IN_serendipity !== true) {
 // Load possible language files.
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.71');
+@define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
+
+@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.72');
 
 // Defines the maximum available method  slots in the configuration.
 @define('PLUGIN_EVENT_GRAVATAR_METHOD_MAX', 6);
@@ -900,6 +902,11 @@ class serendipity_event_gravatar extends serendipity_event
             }
 
             serendipity_request_end();
+
+            // Check for xml_parser_create()
+            if (!function_exists('xml_parser_create')) {
+                echo '<span class="msg_error"><span class="icon-attention-circled"></span> ' . sprintf(CANT_EXECUTE_EXTENSION, 'php-xml (PHP)') . "</span>\n";
+            }
 
             $parser = xml_parser_create();
             $vals = array();
