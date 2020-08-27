@@ -6,6 +6,8 @@ if (IN_serendipity !== true) {
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
+@define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
+
 class serendipity_plugin_microformats extends serendipity_plugin
 {
     var $title = PLUGIN_MICROFORMATS_TITLE_N;
@@ -53,7 +55,7 @@ class serendipity_plugin_microformats extends serendipity_plugin
         $propbag->add('description',   PLUGIN_MICROFORMATS_TITLE_D);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version',       '0.26');
+        $propbag->add('version',       '0.27');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -130,6 +132,10 @@ class serendipity_plugin_microformats extends serendipity_plugin
         }
 
         if ($this->get_config('eventlist_XML') != '') {
+            // Check for xml_parser_create()
+            if (!function_exists('xml_parser_create')) {
+                echo '<span class="msg_error"><span class="icon-attention-circled"></span> ' . sprintf(CANT_EXECUTE_EXTENSION, 'php-xml (PHP)') . "</span>\n";
+            }
             $xml = xml_parser_create('ISO-8859-1');
             $linkxml = $this->get_config('eventlist_XML');
             xml_parse_into_struct($xml, $linkxml, $struct, $index);
