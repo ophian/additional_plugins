@@ -6,6 +6,8 @@ if (IN_serendipity !== true) {
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
+@define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
+
 class serendipity_event_linklist extends serendipity_event
 {
     var $title = PLUGIN_LINKLIST_TITLE;
@@ -25,7 +27,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '2.09');
+        $propbag->add('version',       '2.10');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -395,6 +397,10 @@ class serendipity_event_linklist extends serendipity_event
                             $q   = 'SELECT count(id) FROM '.$serendipity['dbPrefix'].'links';
                             $sql = serendipity_db_query($q);
                             if ($sql[0][0] == 0) {
+                                // Check for xml_parser_create()
+                                if (!function_exists('xml_parser_create')) {
+                                    echo '<span class="msg_error"><span class="icon-attention-circled"></span> ' . sprintf(CANT_EXECUTE_EXTENSION, 'php-xml (PHP)') . "</span>\n";
+                                }
                                 $xml = xml_parser_create('UTF-8');
                                 xml_parse_into_struct($xml, '<list>'.serendipity_utf8_encode($eventData['links']).'</list>', $struct, $index);
                                 xml_parser_free($xml);
