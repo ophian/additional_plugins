@@ -5462,7 +5462,7 @@
 <description>Manadżer linków - pokazuje Twoje ulubione linki w Panelu bocznym.</description>
 <maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.09</version>
+  <version>2.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <date>2020-08-26</date>
   <filelist>
