@@ -49,7 +49,7 @@
 @define('PLUGIN_AUTOUPD_MSG_FETCH_DWLFAIL', 'Das Herunterladen des Updates ist fehlgeschlagen (Kopie fehlgeschlagen, Curl nicht verfügbar)!');
 @define('PLUGIN_AUTOUPD_MSG_FETCH_DWLDONE', 'Herunterladen des Download nach "<span class="dir">templates_c</span>" erfolgt!');
 
-@define('PLUGIN_AUTOUPD_MSG_VERIFY_MD5', 'Überprüfung der MD5-Zip-Datei-Prüfsumme: %s');
+@define('PLUGIN_AUTOUPD_MSG_VERIFY_CKS', 'Überprüfung der %s-Zip-Datei-Prüfsumme: %s');
 @define('PLUGIN_AUTOUPD_MSG_VERIFY_FAIL', 'Fehler! Das Update konnte nicht überprüft werden.');
 
 @define('PLUGIN_AUTOUPD_MSG_UNPACK', 'Extrahieren des Zips in "<span class="dir">templates_c</span>" erfolgt!');

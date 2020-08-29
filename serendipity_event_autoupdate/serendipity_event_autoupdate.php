@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.7.1');
+        $propbag->add('version',       '1.8.0');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -440,7 +440,7 @@ EOS;
     }
 
     /**
-     * Compare the MD5 of downloaded archive with the MD5 posted on the downloadpage
+     * Compare the CHECKSUM of downloaded archive with the CHECKSUM (MD5/SHA1) posted on the download page
      *
      * @param   string updatePath
      * @param   string version
@@ -460,10 +460,15 @@ EOS;
         $found        = array();
         // grep the checksum
         #preg_match("/\(MD5: (.*)\)/", $downloadLink, $found);
-        preg_match("/\(MD5: (.*)\)/", $updatePage, $found);
+
+        $typ = 'SHA1';
+        if (0 === preg_match("/\(SHA1: (.*)\)/", $updatePage, $found)) {
+            $md5 = preg_match("/\(MD5: (.*)\)/", $updatePage, $found);
+            $typ = 'MD5';
+        }
         $checksum = $found[1];
-        $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_VERIFY_MD5, $checksum) . '</p>');
-        $check = md5_file($update);
+        $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_VERIFY_CKS, $typ, $checksum) . '</p>');
+        $check = !isset($md5) ? sha1_file($update) : md5_file($update);
 
         if ($check == $checksum) {
             return true;

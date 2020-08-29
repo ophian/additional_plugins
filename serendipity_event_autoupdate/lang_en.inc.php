@@ -49,7 +49,7 @@
 @define('PLUGIN_AUTOUPD_MSG_FETCH_DWLFAIL', 'Downloading update failed (copy failed, Curl not available)!');
 @define('PLUGIN_AUTOUPD_MSG_FETCH_DWLDONE', 'Fetch download to "<span class="dir">templates_c</span>" done!');
 
-@define('PLUGIN_AUTOUPD_MSG_VERIFY_MD5', 'Checking MD5 zip file checksum: %s');
+@define('PLUGIN_AUTOUPD_MSG_VERIFY_CKS', 'Checking %s-zip file checksum: %s');
 @define('PLUGIN_AUTOUPD_MSG_VERIFY_FAIL', 'Error! Could not verify the update.');
 
 @define('PLUGIN_AUTOUPD_MSG_UNPACK', 'Extracting the zip in "<span class="dir">templates_c</span>" done!');
