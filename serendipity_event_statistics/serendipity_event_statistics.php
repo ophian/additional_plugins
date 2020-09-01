@@ -18,7 +18,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '2.06');
+        $propbag->add('version',       '2.07');
         $propbag->add('requirements',  array(
             'serendipity' => '2.9',
             'php'         => '7.2'
@@ -153,14 +153,14 @@ class serendipity_event_statistics extends serendipity_event
 
                         $referer = $useragent = $remoteaddr = 'unknown';
 
-                        // gathering intel
-                        if ($_SERVER['REMOTE_ADDR']) {
+                        // gathering visitor meta
+                        if (isset($_SERVER['REMOTE_ADDR'])) {
                             $remoteaddr = $_SERVER['REMOTE_ADDR'];
                         }
-                        if ($_SERVER['HTTP_USER_AGENT']) {
+                        if (isset($_SERVER['HTTP_USER_AGENT'])) {
                             $useragent = substr($_SERVER['HTTP_USER_AGENT'], 0, 255);
                         }
-                        if ($_SERVER['HTTP_REFERER']) {
+                        if (isset($_SERVER['HTTP_REFERER'])) {
                             $referer = substr($_SERVER['HTTP_REFERER'], 0, 255);
                         }
 

@@ -1,3 +1,9 @@
+2.07:
+-----
+ * Check Global_Server_Vars by isset()
+ * Add searchable continuous last history link before 2014, Sept 28th:
+    https://github.com/ophian/styx/blob/f7da64165d29dd393135593d0ae42e3568fa7c00/plugins/serendipity_event_statistics/serendipity_event_statistics.php
+
 2.06:
 -----
  * Retry fixing column display mismatch against core styles
