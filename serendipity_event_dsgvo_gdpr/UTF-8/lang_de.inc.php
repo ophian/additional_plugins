@@ -30,29 +30,34 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT','CookieConsent durch Osano aktivieren?');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_DESC', 'Wenn aktiviert, wird ein Cookie-Banner in Ihrem Blog angezeigt. Dabei wird die CookieConsent Javascript-Bibliothek verwendet. Es unterstützt nur den Typ der Cookie-Informationen. Sie können den Generator auf <a href="https://cookieconsent.insites.com/download/">https://cookieconsent.insites.com/download/</a> verwenden, um den eigentlichen Code zu erstellen; stellen Sie sicher, dass Sie NUR den Hauptskript-Teil hier einfügen und NICHT den Link zum CSS und JavaScript, um sicherzustellen, dass kein Code von fremden Servern geladen wird, sondern nur von Ihrem.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT', 'CookieConsent Code');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT_DESC', 'Dieses Javascript ist einfach zu lesen, hier können Sie alle Farben und Texte anpassen. Sie können %gdpr_url% als Platzhalter für den Link zu Ihrer Datenschutzerklärung verwenden.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT_DESC', 'Dieses Javascript ist einfach zu lesen, hier können Sie alle Farben und Texte anpassen. Sie müssten ihre korrekte Domain Adresse eingeben und das Secure Attribute auf true oder false setzen, wenn ihr Blog unter einem gesicherten Zertifikat läuft. Sie können %gdpr_url% als Platzhalter für den Link zu Ihrer Datenschutzerklärung verwenden.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT_DEFAULT', '
 <script>
-window.addEventListener("load", function(){
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#FFFFFF",
-      "text": "#000000"
-    },
-    "button": {
-      "background": "#FFFFFF",
-      "text": "#0c5e0a",
-      "border": "#000000"
-    }
-  },
-  "content": {
-    "message": "Diese Website verwendet Cookies.",
-    "dismiss": Verstanden",
-    "link": "Lesen Sie mehr in der Datenschutzerklärung",
-    "href": "%gdpr_url%"
-  }
-})});
+    window.addEventListener("load", function(){
+    const CC = window.CookieConsent;
+    const cc = new CC({
+      "palette": {
+        "popup": {
+          "background": "#FFFFFF",
+          "text": "#000000"
+        },
+        "button": {
+          "background": "#FFFFFF",
+          "text": "#0c5e0a",
+          "border": "#000000"
+        }
+      },
+      "cookie": {
+        "domain": "IHRE.DOMAIN.DE",
+        "secure": true
+      },
+      "content": {
+        "message": "Diese Website verwendet Cookies.",
+        "dismiss": "Verstanden",
+        "link": "Lesen Sie mehr in der Datenschutzerklärung",
+        "href": "%gdpr_url%"
+      }
+    })});
 </script>
 ');
 

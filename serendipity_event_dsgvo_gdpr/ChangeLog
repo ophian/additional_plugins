@@ -1,3 +1,8 @@
+2.02:
+-----
+
+ * Fix 2.00 script default details for fresh installs
+
 2.01:
 -----
 
@@ -11,7 +16,7 @@
    Please update your CookieConsent Code setting (option), adding the constant init and "cookie" property and change
    its items to your SITE needs.
    (the domain likewise in Styx Settings "URL to Blog", without the protocol part)
-   German example:
+   EXAMPLE:
 -----------------------
 <script>
     window.addEventListener("load", function(){
@@ -19,27 +24,28 @@
     const cc = new CC({
       "palette": {
         "popup": {
-          "background": "#ffff99",
+          "background": "#FFFFFF",
           "text": "#000000"
         },
         "button": {
           "background": "#FFFFFF",
-          "text": "#060689",
-          "border": "#060689"
+          "text": "#0c5e0a",
+          "border": "#000000"
         }
       },
       "cookie": {
-        "domain": "YOUR.DOAMIN.EXT",
+        "domain": "YOUR.DOMAIN.EXT",
         "secure": true
       },
       "content": {
-        "message": "Diese Website verwendet Cookies.",
-        "dismiss": "Akzeptieren",
-        "link": "Informationen dazu finden Sie in der Datenschutzerklärung",
+        "message": "This website uses cookies.",
+        "dismiss": "I understand",
+        "link": "Read more in the privacy statement",
         "href": "%gdpr_url%"
       }
     })});
 </script>
+
 ----------------------------
 
 1.84:

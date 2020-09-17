@@ -30,29 +30,34 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT', 'Enable CookieConsent by Osano?');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_DESC', 'If enabled, this displays a cookie banner in your blog. This uses the CookieConsent javascript library. It only supports the Cookie information compliance type. You can use the generator on <a href="https://cookieconsent.insites.com/download/">https://cookieconsent.insites.com/download/</a> to create the actual code; be sure to ONLY paste the main script-Part here and NOT the link to the CSS and JavaScript, to ensure that no code is loaded of foreign servers but only from yours.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT', 'CookieConsent Code');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT_DESC', 'This javascript is easy to read, you can adapt all colors and texts here. You can use %gdpr_url% as a placeholder for the link to your policy statement.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT_DESC', 'This javascript is easy to read, you can adapt all colors and texts here. You would need to enter your correct domain address and need to set the secure attribute to true or false, if your blog runs under a CA secured certificate. You can use %gdpr_url% as a placeholder for the link to your policy statement.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT_DEFAULT', '
 <script>
-window.addEventListener("load", function(){
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#FFFFFF",
-      "text": "#000000"
-    },
-    "button": {
-      "background": "#FFFFFF",
-      "text": "#0c5e0a",
-      "border": "#000000"
-    }
-  },
-  "content": {
-    "message": "This website uses cookies.",
-    "dismiss": "I understand",
-    "link": "Read more in the privacy statement",
-    "href": "%gdpr_url%"
-  }
-})});
+    window.addEventListener("load", function(){
+    const CC = window.CookieConsent;
+    const cc = new CC({
+      "palette": {
+        "popup": {
+          "background": "#FFFFFF",
+          "text": "#000000"
+        },
+        "button": {
+          "background": "#FFFFFF",
+          "text": "#0c5e0a",
+          "border": "#000000"
+        }
+      },
+      "cookie": {
+        "domain": "YOUR.DOMAIN.EXT",
+        "secure": true
+      },
+      "content": {
+        "message": "This website uses cookies.",
+        "dismiss": "I understand",
+        "link": "Read more in the privacy statement",
+        "href": "%gdpr_url%"
+      }
+    })});
 </script>
 ');
 
