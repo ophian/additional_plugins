@@ -480,9 +480,9 @@
 <title>Geo-JSON: Provides a JSON object with all geo data which can be processed by JavaScript.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geo_json</link>
 <category>Event Plugins</category>
-<author>PLUGIN_EVENT_GEO_JSON_AUTHOR</author>
+<author>Martin Sewelies</author>
 <content:encoded>&lt;b&gt;serendipity_event_geo_json&lt;br /&gt;Geo-JSON&lt;/b&gt;&lt;br /&gt;Provides a JSON object with all geo data which can be processed by JavaScript.&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Thu, 17 Sep 2020 16:00:02 +0200</pubDate>
+<pubDate>Thu, 17 Sep 2020 16:31:40 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geo_json</guid>
 </item>
 <item>
