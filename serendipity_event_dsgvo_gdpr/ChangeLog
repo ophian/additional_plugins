@@ -4,8 +4,9 @@
  * Changes the javascript initialization call per option
    for using constants and both the securing and domain strings for current browser changes for SameSite requirements.
    Please update your CookieConsent Code setting (option), adding the constant init and "cookie" property and change
-   its items to your SITE needs :
+   its items to your SITE needs.
    (the domain likewise in Styx Settings "URL to Blog", without the protocol part)
+   German example:
 -----------------------
 <script>
     window.addEventListener("load", function(){
