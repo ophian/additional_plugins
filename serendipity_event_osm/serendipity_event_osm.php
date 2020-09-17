@@ -12,7 +12,7 @@ class serendipity_event_osm extends serendipity_event
     function introspect(&$propbag)
     {
         $propbag->add('name', PLUGIN_EVENT_OSM_NAME);
-        $propbag->add('description', PLUGIN_EVENT_OSM_DESCRIPTION);
+        $propbag->add('description', PLUGIN_EVENT_OSM_DESC);
         $propbag->add('copyright', 'GPL');
         $propbag->add('configuration', array('title', 'category_id', 'path', 'height', 'latitude', 'longitude', 'zoom'));
         $propbag->add('event_hooks', array('entries_header' => true));
@@ -58,7 +58,7 @@ class serendipity_event_osm extends serendipity_event
             case 'category_id':
                 $propbag->add('type',          'select');
                 $propbag->add('name',          PLUGIN_EVENT_OSM_CATEGORY);
-                $propbag->add('description',   PLUGIN_EVENT_OSM_CATEGORY_DESCRIPTION);
+                $propbag->add('description',   PLUGIN_EVENT_OSM_CATEGORY_DESC);
                 $propbag->add('select_values', $this->get_selectable_categories());
                 $propbag->add('default',       'all');
                 break;
