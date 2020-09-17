@@ -1,5 +1,10 @@
+0.3:
+-----
+
+ * Include plugin_version file
+
 0.2.1:
 -----
 
-* convert date, size and category ids to int, 3% smaller output
+ * convert date, size and category ids to int, 3% smaller output
 
