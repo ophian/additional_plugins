@@ -2032,9 +2032,9 @@
 <description>This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.</description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.84</version>
+  <version>2.00</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-07-01</date>
+  <date>2020-09-17</date>
   <filelist>
     <dir name="serendipity_event_dsgvo_gdpr">
       <file>ChangeLog</file>
@@ -3513,6 +3513,42 @@
     <file>serendipity_event_geourl/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_geourl/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_geourl/UTF-8/lang_de.inc.php</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
+<name>serendipity_event_geo_json</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_geo_json/ChangeLog</changelog>
+<license>GPL</license>
+<summary>Geo-JSON</summary>
+<groups>FRONTEND_FEATURES</groups>
+<description>Provides a JSON object with all geo data which can be processed by JavaScript.</description>
+<maintainers><maintainer><name>PLUGIN_EVENT_GEO_JSON_AUTHOR</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>PLUGIN_EVENT_GEO_JSON_VERSION</version>
+  <requirements:s9yVersion>2.3</requirements:s9yVersion>
+  <date>2020-09-17</date>
+  <filelist>
+    <dir name="serendipity_event_geo_json">
+      <file>ChangeLog</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>LICENSE</file>
+      <file>plugin_version.inc.php</file>
+      <file>serendipity_event_geo_json.php</file>
+      <dir name="UTF-8">
+        <file>lang_de.inc.php</file>
+      </dir>
+    </dir>
+  </filelist>
+  <serendipityFilelist>
+    <file>serendipity_event_geo_json/ChangeLog</file>
+    <file>serendipity_event_geo_json/lang_de.inc.php</file>
+    <file>serendipity_event_geo_json/lang_en.inc.php</file>
+    <file>serendipity_event_geo_json/LICENSE</file>
+    <file>serendipity_event_geo_json/plugin_version.inc.php</file>
+    <file>serendipity_event_geo_json/serendipity_event_geo_json.php</file>
+    <file>serendipity_event_geo_json/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -7056,9 +7092,9 @@
 <description>Provides an interactive map with *.gpx uploads and tagged geo data.</description>
 <maintainers><maintainer><name>Martin Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.6</version>
+  <version>0.7</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
-  <date>2020-05-15</date>
+  <date>2020-09-17</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
@@ -7108,9 +7144,9 @@
 <description>Includes scripts and stylesheets for OpenStreetMap support.</description>
 <maintainers><maintainer><name>Martin Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.6</version>
+  <version>0.7</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
-  <date>2020-05-15</date>
+  <date>2020-09-17</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
