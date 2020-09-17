@@ -27,7 +27,7 @@
 @define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT_DEFAULT', '<a href="%gdpr_url%">Privacy statement / Imprint</a>');
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_MENU', 'CookieConsent');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT', 'Enable CookieConsent by Insites?');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT', 'Enable CookieConsent by Osano?');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_DESC', 'If enabled, this displays a cookie banner in your blog. This uses the CookieConsent javascript library. It only supports the Cookie information compliance type. You can use the generator on <a href="https://cookieconsent.insites.com/download/">https://cookieconsent.insites.com/download/</a> to create the actual code; be sure to ONLY paste the main script-Part here and NOT the link to the CSS and JavaScript, to ensure that no code is loaded of foreign servers but only from yours.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT', 'CookieConsent Code');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT_DESC', 'This javascript is easy to read, you can adapt all colors and texts here. You can use %gdpr_url% as a placeholder for the link to your policy statement.');

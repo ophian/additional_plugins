@@ -68,7 +68,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                 'Adds Backend actions to CSV extract or delete user data.',
             ),
             'cookies' => array(
-                'The CookieConsent by Insites option stores a consent-cookie which is build by several third-party location API services itself for country code, geoIP-location, hostname, organization and other data types.',
+                'The CookieConsent by Osano option stores a consent-cookie which is build by several third-party location API services itself for country code, geoIP-location, hostname, organization and other data types.',
             ),
             'stores_user_input'     => false,
             'stores_ip'             => false,
