@@ -1,3 +1,41 @@
+2.00:
+-----
+ * Mayor Upgrade to cookieconsent 3.1.1 / 4.0
+ * Changes the javascript initialization call per option
+   for using constants and both the securing and domain strings for current browser changes for SameSite requirements.
+   Please update your CookieConsent Code setting (option), adding the constant init and "cookie" property and change
+   its items to your SITE needs :
+   (the domain likewise in Styx Settings "URL to Blog", without the protocol part)
+-----------------------
+<script>
+    window.addEventListener("load", function(){
+    const CC = window.CookieConsent;
+    const cc = new CC({
+      "palette": {
+        "popup": {
+          "background": "#ffff99",
+          "text": "#000000"
+        },
+        "button": {
+          "background": "#FFFFFF",
+          "text": "#060689",
+          "border": "#060689"
+        }
+      },
+      "cookie": {
+        "domain": "YOUR.DOAMIN.EXT",
+        "secure": true
+      },
+      "content": {
+        "message": "Diese Website verwendet Cookies.",
+        "dismiss": "Akzeptieren",
+        "link": "Informationen dazu finden Sie in der Datenschutzerklärung",
+        "href": "%gdpr_url%"
+      }
+    })});
+</script>
+----------------------------
+
 1.84:
 -----
  * Add sameSite: 'lax' to cookieconsent.min.js files Cookie “cookieconsent_status”
