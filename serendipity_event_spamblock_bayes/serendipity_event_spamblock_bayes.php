@@ -16,7 +16,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.01');
+        $propbag->add('version',        '2.0"');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -96,15 +96,14 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     {
         global $serendipity;
 
-        # main-table
-        $sql = "CREATE TABLE IF NOT EXISTS
-                    {$serendipity['dbPrefix']}spamblock_bayes (
-                    token VARCHAR(100) NOT NULL,
-                    ham BIGINT {UNSIGNED} NOT NULL DEFAULT '0',
-                    spam BIGINT {UNSIGNED} NOT NULL DEFAULT '0',
-                    type VARCHAR(20) DEFAULT '{$this->type['body']}'
-                    ) {UTF_8};";
+        # b8 needs to one table for the tokens
+        $sql = 'CREATE TABLE IF NOT EXISTS b8_wordlist(
+          token varchar(255) {PRIMARY} NOT NULL,
+          count_ham int {UNSIGNED} default NULL,
+          count_spam int {UNSIGNED} default NULL
+        ) {UTF_8}';
         serendipity_db_schema_import($sql);
+
         # recycler-table
         switch ($serendipity['dbType']) {
             case 'mysql':

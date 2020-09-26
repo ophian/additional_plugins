@@ -1,4 +1,8 @@
-2.00:
+2.02:
+------
+ * Fix missing table
+
+2.01:
 ------
  * Update from the forked old b8 version to a current
    version of that library
