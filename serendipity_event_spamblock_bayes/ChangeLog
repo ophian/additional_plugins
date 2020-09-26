@@ -1,3 +1,14 @@
+2.00:
+------
+ * Update from the forked old b8 version to a current
+   version of that library
+ * Code cleanup
+ * Remove seldomly used functions and legacy code, including
+   most of the backend UI
+ * Rewrite javascript used in the backend (for marking spam
+   and ham comments) to be a minimal block of jQuery code
+ * [ including follow-up fixes ]
+
 1.08:
 ------
  * By consistency, take PostgreSQL table creation into consideration
