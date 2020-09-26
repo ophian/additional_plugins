@@ -1,3 +1,7 @@
+Version 0.5:
+==============
+ * Adapt "csv" parser for new zählmarken file
+ * Do not add ; when storing private Zählmarken code
 
 Version 0.4:
 ------------
