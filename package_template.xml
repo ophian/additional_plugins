@@ -1281,7 +1281,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-21</date>
+  <date>2020-09-27</date>
   <filelist>
     <dir name="blix">
       <file>commentform.tpl</file>
@@ -3016,7 +3016,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2020-09-27</date>
   <filelist>
     <dir name="glossy_white">
       <file>commentform.tpl</file>
@@ -6210,7 +6210,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <date>2020-04-16</date>
+  <date>2020-09-27</date>
   <filelist>
     <dir name="plus9">
       <file>AJS.js</file>
