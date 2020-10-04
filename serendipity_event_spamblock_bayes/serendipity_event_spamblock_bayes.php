@@ -16,11 +16,11 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.03');
+        $propbag->add('version',        '2.04');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
-            'php'         => '7.0'
+            'php'         => '7.2'
         ));
         $propbag->add('event_hooks',  array('frontend_saveComment' => true,
                                             'backend_comments_top' => true,
@@ -64,6 +64,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
             case 'method':
                 $propbag->add('type', 'select');
                 $propbag->add('name', PLUGIN_EVENT_SPAMBLOCK_METHOD);
+                $propbag->add('description', PLUGIN_EVENT_SPAMBLOCK_METHOD_DESC);
                 $propbag->add('select_values', array(
                                                     'moderate'   => PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_MODERATE,
                                                     'block'      => PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_BLOCK,
@@ -171,7 +172,6 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                             $ids = explode(';', $ids);
                             foreach($ids as $id) {
                                 $databaseComment = $this->getComment($id)[0];
-                                print_r($databaseComment);
 
                                 $comment = $databaseComment['url'] . ' ' . $databaseComment['body'] . ' ' . $databaseComment['author'] . ' ' . $databaseComment['email'];
 
@@ -185,10 +185,6 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                                     if ($this->get_config('recycler', true)) {
                                         $this->recycleComment($id, $databaseComment['entry_id']);
                                     }
-                                    echo 'id: ';
-                                    print_r($id);
-                                    echo 'entry_id: ';
-                                    print_r($databaseComment['entry_id']);
                                     serendipity_deleteComment($id, $databaseComment['entry_id']);
                                 }
                             }
@@ -237,7 +233,6 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
                         $comment = $addData['url'] . ' ' . $addData['comment'] . ' ' . $addData['name'] . ' ' . $addData['email'];
 
-                        echo $this->rate($comment);
                         if ($this->rate($comment) > 0.8) {
                             $method = $this->get_config('method', 'moderate');
                             if ($method == 'moderate') {

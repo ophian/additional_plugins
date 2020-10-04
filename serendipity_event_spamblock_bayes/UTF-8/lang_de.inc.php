@@ -28,7 +28,7 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_DELETE', 'Kommentar löschen und als Spam markieren');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_APPROVE', 'Kommentar bewilligen und als valid markieren');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_PATH', 'Plugin-Pfad');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_PATH_DESC', 'Wird hier der Pluginpfad angegeben wird dieser nicht mehr dynamisch ermittelt, was einen deutlichen Leistungsgewinn einbringt. Beispiel: http://www.example.com/plugins/serendipity_event_spamblock_bayes/ (das / am Ende ist wichtig).');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_PATH_DESC', 'Wird hier der Pluginpfad angegeben wird dieser nicht mehr dynamisch ermittelt, was einen deutlichen Leistungsgewinn einbringt. Beispiel: https://www.example.com/plugins/serendipity_event_spamblock_bayes/ (das / am Ende ist wichtig).');
 @define('PLUGIN_EVENT_SPAMBLOCK_METHOD', 'Spambehandlung');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_MODERATE', 'Manuelle Moderationsgrenze');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_MODERATE_DESC', 'Wenn die Option "Spambehandlung" auf "Manuelle Grenzen" gesetzt wird: Ab welchem Spamfaktor soll moderiert werden? (in %)');
@@ -61,7 +61,7 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_IMPORT_EXPLANATION', 'Hier kann eine CSV-Datei, die in einem anderen Blog mit der Export-Funktion erstellt wurde, importiert werden. Die enthaltenen Daten über Spam und valide Kommentare werden der eigenen Datenbank hinzugefügt.');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_IMPORT', 'Import');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_IMPORT_EXPLANATION', 'Importiert eine CVS-Datei, deren Inhalt der Spamdatenbank hinzugefügt wird.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_EXPLANATION', 'Die Spamdatenbank eines registrierten Blogs einlernen oder den eigenen Blog als Quelle hinzufügen.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_EXPLANATION', 'Die Spamdatenbank eines registrierten Blogs einlernen oder das eigene Blog als Quelle hinzufügen.');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA', 'Online-Import');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_IMPORT', 'Importieren');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_REGISTER', 'Blog hinzufügen');
@@ -69,4 +69,5 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RATING', 'Bewertung');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL', 'Papierkorb komplett leeren');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL_DESC', 'Lösche alle Kommentare im Papierkorb, nicht nur die auf der momentanen Seite.');
+@define('PLUGIN_EVENT_SPAMBLOCK_METHOD_DESC', 'Ab einer Spambewertung von 80% werden Kommentare moderiert oder abgewiesen.');
 

@@ -26,7 +26,7 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_DELETE', 'Delete comment and mark as SPAM');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_APPROVE', 'Approve comment and mark as valid');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_PATH', 'Plugin Path');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_PATH_DESC', 'If a path is entered he is no longer determined dynamically, improving performance considerable. Example: http://www.example.com/plugins/serendipity_event_spamblock_bayes/ (note the / at the end).');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_PATH_DESC', 'If a path is entered he is no longer determined dynamically, improving performance considerable. Example: https://www.example.com/plugins/serendipity_event_spamblock_bayes/ (note the / at the end).');
 @define('PLUGIN_EVENT_SPAMBLOCK_METHOD', 'Spam Treatment');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_MODERATE', 'Custom Moderation');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_MODERATE_DESC', 'Only if option "Spam Treatment" is "Custom": moderate at a rating of? (in %)');
@@ -66,4 +66,5 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RATING', 'Rating');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL', 'Recycler: Empty Complete');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL_DESC', 'When emptying the Recycler, delete all comments, not only the ones on the current page.');
+@define('PLUGIN_EVENT_SPAMBLOCK_METHOD_DESC', 'When a comment is rated with 80% as spam, it will be blocked or moderated.');
 

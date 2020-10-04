@@ -1,3 +1,9 @@
+2.04:
+------
+  * Set required PHP version to 7.2, b8 requires it
+  * Mention the 80% default barrier
+
+
 2.03:
 ------
  * Fix version string
@@ -11,7 +17,7 @@
  * Update from the forked old b8 version to a current
    version of that library
  * Code cleanup
- * Remove seldomly used functions and legacy code, including
+ * Remove seldom used functions and legacy code, including
    most of the backend UI
  * Rewrite javascript used in the backend (for marking spam
    and ham comments) to be a minimal block of jQuery code
