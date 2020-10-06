@@ -1,4 +1,4 @@
-{* backend_staticpage template file v. 1.33, 2020-06-29 *}
+{* backend_staticpage template file v. 1.34, 2020-10-06 *}
 
 <!-- backend_staticpage.tpl START -->
 
@@ -72,9 +72,9 @@
         <select name="serendipity[pagetype]">
             <option value="__new">{$CONST.NEW_ENTRY}</option>
             <option value="__new">-----------------</option>
-{if $sp_pagetype AND is_array($sp_pagetype_types)}
+{if NOT empty($sp_pagetype) AND is_array($sp_pagetype_types)}
     {foreach $sp_pagetype_types AS $type}
-        <option value="{$type['id']}"{if $smarty.post.serendipity.pagetype == $type['id']} selected="selected"{/if}>{$type['description']|escape}</option>
+        <option value="{$type['id']}"{if isset($smarty.post.serendipity.pagetype) AND $smarty.post.serendipity.pagetype == $type['id']} selected="selected"{/if}>{$type['description']|escape}</option>
     {/foreach}
 {/if}
 

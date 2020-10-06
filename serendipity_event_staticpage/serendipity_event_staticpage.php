@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.12');
+        $propbag->add('version', '6.13');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -2614,14 +2614,18 @@ class serendipity_event_staticpage extends serendipity_event
                WHERE content = 'plugin'
             ORDER BY pageorder";
 
-        $res = (array)serendipity_db_query($q, false, 'assoc');
+        $res = serendipity_db_query($q, false, 'assoc');
 
-        foreach($res AS $plugin){
-            $ret[$plugin['pre_content']] = array(
-                'pagetitle' => $plugin['pagetitle'],
-                'permalink' => $plugin['permalink'],
-                'id'        => $plugin['id']
-            );
+        if (is_array($res)) {
+            foreach($res AS $plugin){
+                $ret[$plugin['pre_content']] = array(
+                    'pagetitle' => $plugin['pagetitle'],
+                    'permalink' => $plugin['permalink'],
+                    'id'        => $plugin['id']
+                );
+            }
+        } else {
+            $ret = array();
         }
 
         return $ret;
@@ -2675,7 +2679,7 @@ class serendipity_event_staticpage extends serendipity_event
 
             case 'pagetype':
 
-                if ($serendipity['POST']['pagetype'] != '__new') {
+                if (isset($serendipity['POST']['pagetype']) && $serendipity['POST']['pagetype'] != '__new') {
                     $this->fetchPageType($serendipity['POST']['pagetype']);
                 }
 
@@ -2698,7 +2702,7 @@ class serendipity_event_staticpage extends serendipity_event
                     $this->updatePageType();
                 }
 
-                if (!empty($serendipity['POST']['typeDelete']) && $serendipity['POST']['pagetype'] != '__new') {
+                if (!empty($serendipity['POST']['typeDelete']) && isset($serendipity['POST']['pagetype']) && $serendipity['POST']['pagetype'] != '__new') {
                     serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}staticpages_types WHERE id = " . (int)$serendipity['POST']['pagetype']);
                     $serendipity['smarty']->assign( array (
                                  'sp_pagetype_ripped' => (int)$serendipity['POST']['pagetype'] . ' (' . $this->pagetype['description'] . ')',
