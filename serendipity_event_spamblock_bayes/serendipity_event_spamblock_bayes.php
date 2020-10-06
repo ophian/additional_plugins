@@ -16,7 +16,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.04');
+        $propbag->add('version',        '2.05');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -109,9 +109,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         switch ($serendipity['dbType']) {
             case 'mysql':
             case 'mysqli':
-                $sql = "INSERT IGNORE INTO b8_wordlist (token, count_ham) VALUES ('b8*dbversion', 3);";
+                $sql = "INSERT IGNORE INTO b8_wordlist (token, count_ham) VALUES ('b8*dbversion', 3)";
                 serendipity_db_query($sql);
-                $sql = "INSERT IGNORE INTO b8_wordlist (token, count_ham, count_spam) VALUES ('b8*texts', 0, 0);";
+                $sql = "INSERT IGNORE INTO b8_wordlist (token, count_ham, count_spam) VALUES ('b8*texts', 0, 0)";
                 serendipity_db_query($sql);
 
                 # our recycler bin needs to copy the comments table
@@ -121,17 +121,18 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                         {$serendipity['dbPrefix']}comments";
                 serendipity_db_schema_import($sql);
                 break;
+
             case 'sqlite':
             case 'sqlite3':
             case 'sqlite3oo':
             case 'pdo-sqlite':
-                $sql = "INSERT OR IGNORE INTO b8_wordlist (token, count_ham) VALUES ('b8*dbversion', 3);";
+                $sql = "INSERT OR IGNORE INTO b8_wordlist (token, count_ham) VALUES ('b8*dbversion', 3)";
                 serendipity_db_query($sql);
-                $sql = "INSERT OR IGNORE INTO b8_wordlist (token, count_ham, count_spam) VALUES ('b8*texts', 0, 0);";
+                $sql = "INSERT OR IGNORE INTO b8_wordlist (token, count_ham, count_spam) VALUES ('b8*texts', 0, 0)";
                 serendipity_db_query($sql);
 
                 # To get all column definitions we get the SQL used for creating the original table
-                $sql = "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = '{$serendipity['dbPrefix']}comments';";
+                $sql = "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = '{$serendipity['dbPrefix']}comments'";
                 $sql = serendipity_db_query($sql);
                 if (is_array($sql)) {
                     $sql = $sql[0][0];
@@ -142,6 +143,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                 }
                 serendipity_db_schema_import($sql);
                 break;
+
             default:
                 $sql = "CREATE TABLE IF NOT EXISTS
                     {$serendipity['dbPrefix']}spamblock_bayes_recycler
@@ -177,7 +179,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
                                 $this->learn($comment, $category);
 
-                                //Ham shall be approved, Spam deleted
+                                // Ham shall be approved, Spam deleted
                                 if ($category == 'ham') {
                                     serendipity_approveComment($id, $databaseComment['entry_id']);
                                 }
@@ -253,15 +255,13 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
                     $eventData['action_more'] = '<ul id="bayes_actions" class="plainList clearfix actions">
                         <li>
-                        <a
-                        class="button_link spamblockBayesControls"
+                        <a class="button_link spamblockBayesControls"
                         onclick="return ham('. $eventData['id'].');"
                         title="'. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME . ': ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_HAM .'"
                         ><span class="icon-ok-circled" aria-hidden="true"></span><span class="visuallyhidden"> ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_HAM .'</span></a>
                         </li>
                         <li>
-                        <a
-                        class="button_link spamblockBayesControls"
+                        <a class="button_link spamblockBayesControls"
                         onclick="return spam('. $eventData['id'] .');"
                         title="'. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME . ': ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAM .'"
                         ><span class="icon-cancel" aria-hidden="true"></span><span class="visuallyhidden"> ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAM .'</span></a>
@@ -342,7 +342,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     }
 
     /**
-     * we init b8 in this function and not directly in the event hook, because in the event hook the SPL autoload gets triggered by smarty and fails
+     * We init b8 in this function and not directly in the event hook, because in the event hook the SPL autoload gets triggered by Smarty and fails
      */
     function initB8() {
         global $serendipity;
@@ -352,16 +352,17 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
             require_once(dirname(__FILE__) . '/b8/b8.php');
             switch ($serendipity['dbType']) {
-            case 'mysql':
-            case 'mysqli':
-                $config_b8      = [ 'storage'  => 'mysql' ];
-                break;
-            case 'sqlite':
-            case 'sqlite3':
-            case 'pdo-sqlite':
-            case 'pdo-sqliteoo':
-                $config_b8      = [ 'storage'  => 'sqlite' ];
-                break;
+                case 'mysql':
+                case 'mysqli':
+                    $config_b8      = [ 'storage'  => 'mysql' ];
+                    break;
+
+                case 'sqlite':
+                case 'sqlite3':
+                case 'sqlite3oo':
+                case 'pdo-sqlite':
+                    $config_b8      = [ 'storage'  => 'sqlite' ];
+                    break;
             }
 
             $config_storage = [ 'resource' => $serendipity['dbConn'],
@@ -384,6 +385,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
      */
     function learn($comment, $category) {
         $this->initB8();
+
         if ($category == 'ham') {
             $this->$b8->learn($comment, b8\b8::HAM);
         }
@@ -402,6 +404,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $serendipity['messagestack']['comments'][] = PLUGIN_EVENT_SPAMBLOCK_BAYES_ERROR;
     }
 
+    /**
+     * 
+     */
     function moderate(&$eventData, &$addData) {
         global $serendipity;
 
@@ -451,6 +456,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         echo $this->parseTemplate('bayesRecyclermenu.tpl');
     }
 
+    /**
+     * 
+     */
     function getAllRecyclerComments() {
         global $serendipity;
 
@@ -460,7 +468,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         return $comments;
     }
 
-    // Empty the Recycler
+    /**
+     * Empty the Recycler
+     */
     function emptyRecycler() {
         global $serendipity;
 
@@ -469,11 +479,13 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         return serendipity_db_query($sql);
     }
 
-    // Get the blocked comment and store it in the recycler-table
-    // Used when the comment is from a current happening event
+    /**
+     * Get the blocked comment and store it in the recycler-table
+     * Used when the comment is from a current happening event
+     */
     function throwInRecycler(&$ca, &$commentInfo) {
         global $serendipity;
-
+// check for styx
         # code copied from serendipity_insertComment. Changed: $id and $status
         $id            = (int)$ca['id'];
         $type          = $commentInfo['type'];
@@ -508,6 +520,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         serendipity_db_query($sql);
     }
 
+    /**
+     * 
+     */
     function recycleComment($id, $entry_id) {
         global $serendipity;
 
@@ -518,10 +533,13 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                         FROM
                             {$serendipity['dbPrefix']}comments
                         WHERE
-                            id = '$id' AND entry_id = '$entry_id';";
+                            id = '$id' AND entry_id = '$entry_id'";
         serendipity_db_query($sql);
     }
 
+    /**
+     * 
+     */
     function restoreComments($ids) {
         global $serendipity;
 
@@ -548,6 +566,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $this->deleteFromRecycler($ids);
     }
 
+    /**
+     * 
+     */
     function deleteFromRecycler($ids) {
         global $serendipity;
 
@@ -564,6 +585,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         return serendipity_db_query($sql);
     }
 
+    /**
+     * 
+     */
     function getEntryTitle($id) {
         global $serendipity;
 
