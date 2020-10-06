@@ -55,8 +55,8 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DESC', 'Display a random image from the Media library in the sidebar. (Note, it does not distinguish images from other file types)');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_NAME', 'Pick a default directory');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_DESC', 'Pick the default directory you would like the plugin to be restricted to');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_NAME', 'Output images strictly');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_DESC', 'If set to "yes" the plugin will only display pictures in the current directory. If set to "no" the plugin will output all pictures in all subdirectories.');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NOSUBDIRS_NAME', 'Do not include subdirectories');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NOSUBDIRS_DESC', 'If set to "yes" the plugin will only fetch from and display pictures in the current directory. If set to "no" the plugin will fetch from and output any pictures of all subdirectories. Keep in mind: The more to fetch, the longer it takes!');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_NAME', 'Behavior of image link');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_DESC', '"In Page" links to the image. "Pop Up" will open the image in a new, sized window. "URL" allows you to define a specific, static URL as the destination. "Gallery" will link the image to the permalink view of the usergallery plugin (if installed). "None" will be just the image.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_INPAGE', 'In Page');
@@ -64,8 +64,8 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_URL', 'URL');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_GALLERY', 'Gallery');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_ENTRY', 'Try to link to related entry');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GAL_STYLES', 'Set #mediasidebar and image inline styles');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GAL_STYLES_DESC', 'Better(!) do this in your theme (user.css) if really in need to have it; Example:
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GAL_STYLES', 'Set #mediasidebar behaviour styles');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GAL_STYLES_DESC', 'This depends on how your current theme styles are defined. "Compat" sets a checked (fallback) minimum default for img styling only; "Yes" writes them for both, link and img elements; "No" disables any plugin added styles. For full compatibility reasons we have to use "yes" as the default here. Check out the source code in the sidebar to see them defined and for which parts your theme needs support. But better(!) do all of this in your themes (user.css) file. Before, check if your theme style.css does not already support it. As a simplified example use:
 #mediasidebar .mediasidebar_link {
     display: inline-table;
     text-decoration: none transparent;
@@ -79,7 +79,9 @@
 ');
 
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_NAME', 'Image width');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_DESC', 'Set a fixed image width. If the width is set to "0" the plugin will output "width:100%"');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_DESC', 'Set a fixed maximum display image width. If the width is set to "0" the plugin will either output "width:100%" or images of any size, scaled by your themes sidebars container styles.');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIMENSION_RANGE_NAME', 'Select a min/max fetch dimension range');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIMENSION_RANGE_DESC', 'This value is taken to filter select image-width dimension ranges from "x" (minimum) to "y" (maximum) in pixels, which reduces the full selected database fetch and helps to not display images of too small sizes. Write as comma separated integer values, eg. "240,2400". Set to "0,0" for no filters.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_NAME', 'Enter URL');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_DESC', 'Enter the static URL you would like to link to. (example: \'http://www.s9y.org\')');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_NAME', 'Enter the permalink or subpage');
@@ -87,9 +89,9 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_INTRO', 'Enter any text (or html) you would like placed before the picture');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_SUMMERY', 'Enter any text (or html) you would like appended to the picture');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_NAME', 'Rotate image time');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_DESC', 'How often would you like the image to rotate, in minutes, from the hour. If set to "0" the image will rotate every refresh');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_DESC', 'How often would you like the image(s) to rotate, in minutes, from the hour. If set to "0" the image(s) will rotate on every refresh.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NUMIMAGES_NAME', 'Number of images to display');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NUMIMAGES_DESC', 'Enter the number of images you would like displayed.');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NUMIMAGES_DESC', 'Enter the number of images you would like to display.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKS_NAME', 'Limit output to only hotlinked images');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKS_DESC', 'This option limits the sidebar output to only images which are hotlinks in the Media Library.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_NAME', 'Hotlink limiting keyword');

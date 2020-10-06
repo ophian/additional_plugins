@@ -74,12 +74,12 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
         $propbag->add('description',   PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC . ' PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.');
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx');
-        $propbag->add('version',       '2.04');
+        $propbag->add('version',       '2.5');
         $propbag->add('license',       'BSD');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.6',
-            'php'         => '5.2.0'
+            'php'         => '7.0'
         ));
         $propbag->add('groups', array('IMAGES'));
 
@@ -115,7 +115,6 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
             case 'title':
                 $propbag->add('type', 'string');
                 $propbag->add('name', TITLE);
-                $propbag->add('description', TITLE);
                 $propbag->add('default', '');
                 break;
 

@@ -14,6 +14,7 @@ class media_sidebar extends subplug_sidebar {
                      'media_rotate_time',
                      'media_number_images',
                      'media_fixed_width',
+                     'media_fixed_range',
                      'media_linkbehavior',
                      'media_url',
                      'media_gal_permalink',
@@ -51,8 +52,8 @@ class media_sidebar extends subplug_sidebar {
             case 'media_image_strict':
                 if ($this->get_config('media_hotlinks_only', 'no') == 'no') {
                     $propbag->add('type', 'radio');
-                    $propbag->add('name', PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_NAME);
-                    $propbag->add('description', PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_DESC);
+                    $propbag->add('name', PLUGIN_SIDEBAR_MEDIASIDEBAR_NOSUBDIRS_NAME);
+                    $propbag->add('description', PLUGIN_SIDEBAR_MEDIASIDEBAR_NOSUBDIRS_DESC);
                     $propbag->add('radio',
                                 array(  'value' => array('yes', 'no'),
                                         'desc'  => array(YES, NO)
@@ -106,6 +107,13 @@ class media_sidebar extends subplug_sidebar {
                 $propbag->add('default',     '260');
                 break;
 
+            case 'media_fixed_range':
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_SIDEBAR_MEDIASIDEBAR_DIMENSION_RANGE_NAME);
+                $propbag->add('description', PLUGIN_SIDEBAR_MEDIASIDEBAR_DIMENSION_RANGE_DESC);
+                $propbag->add('default',     '180,3600');
+                break;
+
             case 'media_url':
                 if ($this->get_config('media_linkbehavior') == 'url') {
                     $propbag->add('type',        'string');
@@ -131,11 +139,11 @@ class media_sidebar extends subplug_sidebar {
                 $propbag->add('name',         PLUGIN_SIDEBAR_MEDIASIDEBAR_GAL_STYLES);
                 $propbag->add('description',  PLUGIN_SIDEBAR_MEDIASIDEBAR_GAL_STYLES_DESC);
                 $propbag->add('radio',
-                            array(  'value' => array('yes', 'no'),
-                                    'desc'  => array(YES, NO)
+                            array(  'value' => array('yes', 'no', 'img'),
+                                    'desc'  => array(YES, NO, 'compat')
                             ));
-                $propbag->add('radio_per_row',  '2');
-                $propbag->add('default',        'yes');// sadly we need this set to 'yes' for compat, better value is 'no'
+                $propbag->add('radio_per_row',  '3');
+                $propbag->add('default',        'yes');// sadly we need this set to 'yes' for compat, better value is 'no' or simpler 'compat' (for img styles only)
                 break;
 
             case 'media_intro':
@@ -232,7 +240,7 @@ class media_sidebar extends subplug_sidebar {
                 if ($dir_extension != '' ) {
                     $dir_extension = $dir_extension . '%';
                 }
-                $directory = "http://%" . $dir_extension;
+                $directory = "http%://%" . $dir_extension;
                 $strict = false;
             } else {
                 $directory = $this->get_config('media_base_directory');
@@ -242,7 +250,10 @@ class media_sidebar extends subplug_sidebar {
                 $directory = '';
             }
 
-            $images_all  = serendipity_fetchImagesFromDatabase(0, 0, $total, false, false, $directory, '', '', array(), $strict);
+            list($x,$y) = explode(',', $this->get_config('media_fixed_range', '240,2400'));
+            $filter     = ((int)$x > 0) ? array('i.dimensions_width' => array('from' => (int)trim($x), 'to' => (int)trim($y)), 'fileCategory' => 'image') : array('fileCategory' => 'image');
+
+            $images_all  = serendipity_fetchImagesFromDatabase(0, 0, $total, false, false, $directory, '', '', $filter, $strict);
             $number      = $this->get_config('media_number_images');
             $total_count = count($images_all);
 
@@ -262,14 +273,13 @@ class media_sidebar extends subplug_sidebar {
                 $images[] = $images_all[$checkit];
             }
 
-            $width_test = $this->get_config('media_fixed_width');
-            if ($width_test > 0) {
-                $width_str = ' width:'.$width_test.'px;';
-            }
+            $width_fix = $this->get_config('media_fixed_width', '0');
+            $width_str = ($width_fix > 0) ? ' width:'.$width_fix.'px;' : '';
 
-            $gallery_styles = $this->get_config('media_gal_styles');
-            ob_start();
-            if ($gallery_styles == 'yes') {
+            $gallery_styles = $this->get_config('media_gal_styles', 'yes');
+            if ($gallery_styles != 'no') {
+                ob_start();
+                if ($gallery_styles == 'yes') {
 ?>
 <style>
 #mediasidebar .mediasidebar_link {
@@ -287,7 +297,7 @@ class media_sidebar extends subplug_sidebar {
 }
 </style>
 <?php
-            } else {
+                } else {
 ?>
 <style>
 .mediasidebaritem img {
@@ -300,9 +310,10 @@ class media_sidebar extends subplug_sidebar {
 }
 </style>
 <?php
+                }
+                $output_styles = ob_get_contents();
+                ob_end_clean();
             }
-            $output_styles = ob_get_contents();
-            ob_end_clean();
 
             if (is_array($images)) {
                 $output_str .= $output_styles ?? '';
@@ -324,12 +335,14 @@ class media_sidebar extends subplug_sidebar {
                                         : '';
                             if (!serendipity_isImage($image)) {
                                 $thumb_path = serendipity_getTemplateFile('admin/img/mime_unknown.png');
-                                $width_str = '';
+                                $_widthtmp  = $width_str;
+                                $width_str  = '';
                             }
                         }
 
-                        $gstyles = ($gallery_styles == 'yes') ? ' style="border: 0px;'.$width_str.'"' : '';
+                        $gstyles = ($gallery_styles != 'no') ? ' style="border: 0px;'.$width_str.'"' : '';
                         $picture = ($serendipity['version'][0] == 3 && !empty($thumb_webp)) ? '<picture><source srcset="'.$thumb_webp.'" type="image/webp"><img'.$gstyles.' src="'.$thumb_path.'" loading=lazy alt=""></picture>' : '<img'.$gstyles.' src="'.$thumb_path.'" loading=lazy alt="" />';
+                        $width_str = $_widthtmp ?? $width_str;
                         $output_str .= '<div class="mediasidebaritem">'."\n";
 
                         switch ($this->get_config("media_linkbehavior")) {
@@ -387,7 +400,7 @@ class media_sidebar extends subplug_sidebar {
                 serendipity_cacheItem('mediasidebar_cache', serialize($output_str), $rotate_time*60);
             }
             else if (class_exists('Cache_Lite') && is_object($cache_obj)) {
-                $cache_obj->save($output_str,'mediasidebar_cache');
+                $cache_obj->save($output_str, 'mediasidebar_cache');
             } else {
                 $this->set_config('media_cache_output', $output_str);
             }
@@ -409,7 +422,7 @@ class media_sidebar extends subplug_sidebar {
         if ($last_update == '') {
             $last_update = mktime(date("H"), 0, 0, date("m"), date("d"), date("Y"));
         }
-        if ($rotate_time !=0) {
+        if ($rotate_time != 0) {
             if ($rotate_time > 1440) {
                $rotate_time = 1440;
             }

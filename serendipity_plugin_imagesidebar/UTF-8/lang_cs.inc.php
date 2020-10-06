@@ -56,8 +56,8 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DESC', 'Zobrazit náhodný obrázek z Knihovny médií Serendipity v postranním sloupci. (Pozor, nerozlišuje mezi typy souborů, neodlišuje obrázky a jiné soubory!)');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_NAME', 'Výchozí adresář');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_DESC', 'Vyberte výchozí adresář, plugin bude vyhledávat obrázky pouze v něm.');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_NAME', 'Nerekurzivní zobrazování obrázků');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_DESC', 'Pokud je "Ano", budou se zobrazovat pouze obrázky z aktuálního adresáře. Pokud je "Ne", pak se budou zobrazovat obrázky i ze všech podadresářů.');
+#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_NAME', 'Nerekurzivní zobrazování obrázků');
+#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_DESC', 'Pokud je "Ano", budou se zobrazovat pouze obrázky z aktuálního adresáře. Pokud je "Ne", pak se budou zobrazovat obrázky i ze všech podadresářů.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_NAME', 'Chování odkazu');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_DESC', '"Ve stránce" otevře obrázek ve stávajícím okně. "Vyskakovací okno" - obrázek bude otevřen v novém, velikostně přizpůsobeném okně. "URL" umožňuje zadat statickou url adresu jako cíl odkazu. "Galerie" povede na stálou adresu (permalink) pluginu usergallery (pokud je nainstalován).');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_INPAGE', 'Ve stránce');
@@ -67,7 +67,7 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_ENTRY', 'Odkaz na příbuzný příspěvek');
 
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_NAME', 'Šířka obrázku');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_DESC', 'Zadat pevnou šířku obrázku. Pokud je zadána nula, plugin obrázku zadá "width: 100%"');
+#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_DESC', 'Zadat pevnou šířku obrázku. Pokud je zadána nula, plugin obrázku zadá "width: 100%"');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_NAME', 'URL');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_DESC', 'Stálá URL adresa, na kterou má vést odkaz. (např. "http://www.s9y.org")');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_NAME', 'Zadejte stálý odkaz (permalink) nebo podstránku');
@@ -75,9 +75,9 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_INTRO', 'Libovolný text (html značky povoleny), který má být před obrázkem');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_SUMMERY', 'Libovolný text (html značky povoleny), který bude připojený za obrázek');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_NAME', 'Perioda výměny obrázků');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_DESC', 'Jak často mají být vyměňovány obrázky. V minutách. Hodnota "0" znamená obměnu při každém načtení stránky.');
+#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_DESC', 'Jak často mají být vyměňovány obrázky. V minutách. Hodnota "0" znamená obměnu při každém načtení stránky.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NUMIMAGES_NAME', 'Počet zobrazených obrázků');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NUMIMAGES_DESC', 'Kolik obrázků se má zobrazovat?');
+#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NUMIMAGES_DESC', 'Kolik obrázků se má zobrazovat?');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKS_NAME', 'Omezit pouze na hotlink obrázky');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKS_DESC', 'Tato volba omezuje zobrazování obrázků v postranním sloupci pouze na ty, které jsou v Knihovně médií označeny jako hotlink (nejsou uložené na vašem blogu, ale jedná se pouze na odkazy na cizí servery).');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_NAME', 'Klíčové slovo');

@@ -1,3 +1,12 @@
+2.5:
+-----
+ * Reworked some options and constant description
+ * Added improving dimension range option for the database fetch
+ * Improved the database media fetch to fetch images only
+ * Allow https for hotlinked images (fetches)
+ * Allow styles option to completely shut off on "no"
+ * Raised PHP requirement to PHP 7.0
+
 2.04:
 -----
  * Use lazy loading image attribute from ML to allow loading images when in viewport
