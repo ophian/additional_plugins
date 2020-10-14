@@ -100,6 +100,6 @@
 @define('PLUGIN_CPGS_GROUP_NAME', 'Usergroup');
 @define('PLUGIN_CPGS_GROUP_DESC', 'Coppermine allows to define visibility of images restricted to certain usergroups. If you want this plugin to only fetch specific images, enter the usergroup this plugin shall act as in this field. "Everybody" means that all group permissions are ignored.');
 
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LIGHTBOX_NAME', 'Use with installed Lightbox plugin.');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LIGHTBOX_DESC', 'Please insert a html attribute eg <rel="lightbox"> (without <>) for lightbox usage with the lightbox event plugin. This will be included to the image anchor. It works for "Media Library" with select option "Behavior of image link" : "In Page" only. Use with care.');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LIGHTBOX_NAME', 'Use with installed Lightbox plugin');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LIGHTBOX_DESC', 'Please insert a html attribute, eg. <rel="lightbox"> for single, or <rel="lightbox[]"> for grouped lightbox views (both without <>) for lightbox usage with the lightbox event plugin. This will be included to the image anchor. It works for "Media Library" with select option "Behavior of image link" : "In Page" only. Use with care.');
 
