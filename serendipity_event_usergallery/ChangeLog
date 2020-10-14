@@ -1,3 +1,12 @@
+2.78:
+-----
+ * Fixup template for wrong versioned jquery lib link pointer to the lightbox event plugin
+   base directory, which changed since 2015, Aug 31st.
+   Better use a custom, theme based plugin_usergallery.tpl file.
+ * Changed Smarty assigned 'plugin_usergallery_gallery_breadcrumb' variable
+   to 'plugin_usergallery_gallery_bcrumb'. This is used in both template files.
+   NOTE: Change your custom copy templates!
+
 2.77:
 -----
  * Fixup traversing media uploads directory for Serendipity Styx 3.0 +

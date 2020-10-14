@@ -16,7 +16,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '2.77');
+        $propbag->add('version',       '2.78');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -669,7 +669,7 @@ class serendipity_event_usergallery extends serendipity_event
                        'plugin_usergallery_preface'         => $this->get_config('intro'),
                        'plugin_usergallery_fixed_width'     => $this->get_config('fixed_width'),
                        'plugin_usergallery_image_display'   => $this->get_config('image_display'),
-                       'plugin_usergallery_gallery_breadcrumb'  =>  $path_array,
+                       'plugin_usergallery_gallery_bcrumb'  => $path_array,
                        'plugin_usergallery_dir_list'        => $dir_list,
                        'plugin_usergallery_display_dir_tree'=> $display_dir_tree,
                        'plugin_usergallery_colwidth'        => round((10/$num_cols*10)-6,2),
@@ -1147,13 +1147,13 @@ class serendipity_event_usergallery extends serendipity_event
 
             unset($path_array['']);
             $serendipity['smarty']->assign(
-                array('plugin_usergallery_title'               =>  $this->get_config('title'),
-                      'plugin_usergallery_nextid'              =>  $next_id,
-                      'plugin_usergallery_gallery_breadcrumb'  =>  $path_array,
-                      'plugin_usergallery_previousid'          =>  $previous_id,
-                      'plugin_usergallery_xtra_info'           =>  $exif_output,
-                      'plugin_usergallery_extended_info'       =>  $extended_data_out,
-                      'plugin_usergallery_file'                =>  $file
+                array('plugin_usergallery_title'           =>  $this->get_config('title'),
+                      'plugin_usergallery_nextid'          =>  $next_id,
+                      'plugin_usergallery_gallery_bcrumb'  =>  $path_array,
+                      'plugin_usergallery_previousid'      =>  $previous_id,
+                      'plugin_usergallery_xtra_info'       =>  $exif_output,
+                      'plugin_usergallery_extended_info'   =>  $extended_data_out,
+                      'plugin_usergallery_file'            =>  $file
                       )
             );
             $content = $this->parseTemplate('plugin_usergallery_imagedisplay.tpl');

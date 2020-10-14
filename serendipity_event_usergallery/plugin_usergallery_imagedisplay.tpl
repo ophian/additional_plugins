@@ -27,7 +27,7 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
 
           <div class="serendipity_gallery_navigation">
                <!-- navigation -->
-            <a href="{$plugin_usergallery_httppath}">{$plugin_usergallery_title}</a>{foreach $plugin_usergallery_gallery_breadcrumb AS $gallery} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$gallery.path}">{$gallery.name}</a>{/foreach}
+            <a href="{$plugin_usergallery_httppath}">{$plugin_usergallery_title}</a>{foreach $plugin_usergallery_gallery_bcrumb AS $gallery} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$gallery.path}">{$gallery.name}</a>{/foreach}
             <div style="float: left;">
                 {if $plugin_usergallery_previousid != -1}
                 <a href="{$plugin_usergallery_httppath_extend}serendipity[image]={$plugin_usergallery_previousid}">&laquo; {$CONST.PREVIOUS}</a>

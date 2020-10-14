@@ -29,7 +29,7 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
 
         <div class="serendipity_entry_body">
             <div class="serendipity_gallery_navigation">
-                <a href="{$plugin_usergallery_httppath}">{$plugin_usergallery_title}</a>{foreach $plugin_usergallery_gallery_breadcrumb AS $gallery} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$gallery.path}">{$gallery.name}</a>{/foreach}{if $plugin_usergallery_limit_directory!=""} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$plugin_usergallery_currentgal}">{$plugin_usergallery_limit_directory}</a>{/if}
+                <a href="{$plugin_usergallery_httppath}">{$plugin_usergallery_title}</a>{foreach $plugin_usergallery_gallery_bcrumb AS $gallery} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$gallery.path}">{$gallery.name}</a>{/foreach}{if $plugin_usergallery_limit_directory!=""} &raquo; <a href="{$plugin_usergallery_httppath_extend}gallery={$plugin_usergallery_currentgal}">{$plugin_usergallery_limit_directory}</a>{/if}
 
             </div>
         {if $plugin_usergallery_preface}
@@ -161,7 +161,7 @@ function popImage(file_name,file_title,file_width,file_height) {ldelim}
 {if $plugin_usergallery_uselightbox}
 
     {if $plugin_usergallery_lightbox_jquery}
-    <script type="text/javascript" src="{$plugin_usergallery_lightbox_dir}/jquery-1.11.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{$plugin_usergallery_lightbox_dir}/jquery-1.11.3.min.js" charset="utf-8"></script>
     {/if}
 
     {if ($plugin_usergallery_lightbox_script == 'colorbox')}
