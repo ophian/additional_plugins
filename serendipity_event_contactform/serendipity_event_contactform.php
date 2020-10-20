@@ -422,7 +422,7 @@ class serendipity_event_contactform extends serendipity_event
             if (!is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
             }
-            $serendipity['smarty']->assign('staticpage_pagetitle', preg_replace('@[^a-z0-9]@i', '_',$this->get_config('pagetitle')));
+            $serendipity['smarty']->assign('staticpage_pagetitle', preg_replace('@[^a-z0-9]@i', '_', trim($this->get_config('pagetitle'))));
             if ($dynamic_tpl == 'standard'){
                 if ($this->checkSubmit()) {
                     // do what?
@@ -642,7 +642,7 @@ class serendipity_event_contactform extends serendipity_event
                             foreach($option_array AS $option) {
                                $option_details = explode(',', $option);
                                $options[$option_details[0]]['name'] = $option_details[0];
-                               $options[$option_details[0]]['id'] = strtolower(preg_replace('@[^a-z0-9]@i', '_',$option_details[0]));
+                               $options[$option_details[0]]['id'] = strtolower(preg_replace('@[^a-z0-9]@i', '_', $option_details[0]));
 
                                if (count($option_details) > 1) {
                                   $options[$option_details[0]]['value'] = $option_details[1];
@@ -663,7 +663,7 @@ class serendipity_event_contactform extends serendipity_event
                             foreach($option_array AS $option) {
                                $option_details = explode(',', $option);
                                $options[$option_details[0]]['name'] = $option_details[0];
-                               $options[$option_details[0]]['id'] = strtolower(preg_replace('@[^a-z0-9]@i', '_',$option_details[0]));
+                               $options[$option_details[0]]['id'] = strtolower(preg_replace('@[^a-z0-9]@i', '_', $option_details[0]));
 
                                if (count($option_details) > 1) {
                                   $options[$option_details[0]]['value'] = $option_details[1];
