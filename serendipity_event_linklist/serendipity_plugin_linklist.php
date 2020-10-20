@@ -606,7 +606,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         }
         $tempcount = 0;
         foreach($directories AS $sub) {
-            $safename = preg_replace('@[^a-z0-9]@i', '_',$sub);
+            $safename = preg_replace('@[^a-z0-9]@i', '_', $sub);
             if ($safename != "") {
                 $tempcount++;
                 $strtemp .= '<li id="submenu_'.$safename.'_start">';
