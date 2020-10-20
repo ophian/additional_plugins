@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Kontaktní formulář&lt;/b&gt;&lt;br /&gt;Zobrazuje kontaktní formulář k poslání e-mailu jako statickou stránku. Přístup k fromuláři buď pomocí stálého odkazu (permalinku) nebo na adrese index.php?serendipity[subpage]=contactform. Vzhled fromuláře si můžete upravit podle svého vložením souboru plugin_contactform.tpl do adresáře s Vaší šablonou. Kryptogramy z pluginu SpamBlock budou použity, pokud je SpamBlock nainstalován.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Mon, 23 Sep 2019 11:14:45 +0200</pubDate>
+<pubDate>Thu, 15 Oct 2020 13:48:42 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -221,7 +221,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_customarchive&lt;br /&gt;Přizpůsobitelný archiv příspěvků&lt;/b&gt;&lt;br /&gt;Zobrazuje návštěvníkovi blogu všechny dosud vydané články s možností třídění. Odkaz na tuto stránku by měl být vložen do HTML nugetu (bloku).&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Wed, 25 Sep 2019 14:11:30 +0200</pubDate>
+<pubDate>Thu, 15 Oct 2020 13:51:53 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_customarchive</guid>
 </item>
 <item>
@@ -266,7 +266,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Zajišťuje Serendipity všechny funkce download managera. Při odinstalování jsou odstraněny všechny tabulky z databáze (ztráta všech dat)!!!&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 15 Nov 2019 11:14:26 +0100</pubDate>
+<pubDate>Thu, 15 Oct 2020 13:55:21 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
@@ -394,15 +394,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_filter_entries&lt;br /&gt;Filtrování příspěvků&lt;/b&gt;&lt;br /&gt;Umožňuje návštěvníkům blogu filtrovat/řadit příspěvky podle různých pravidel&lt;br/&gt;For: Serendipity 1.6</content:encoded>
 <pubDate>Fri, 09 Aug 2019 11:19:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_filter_entries</guid>
-</item>
-<item>
-<title>Zobrazuje odkazy jako Digg, del.icio.us apod. vztažené k příspěvku.: Plugin DEPRECATED. Move along to the new event_social plugin! Můžete vložit/odstranit další webové služby pomocí souboru šablony &quot;plugin_findmore.tpl&quot;. Pamatujte, že pokud chcete ušetřit pár drahocených bodů za výkon blogu, můžete stejného efektu dosáhnout také vložením HTML/JavaScript snipletu do souboru šablony entries.tpl namísto používání tohoto pluginu!</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_findmore</link>
-<category>Event Plugins</category>
-<author>Garvin Hicking, Kodewulf, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_findmore&lt;br /&gt;Zobrazuje odkazy jako Digg, del.icio.us apod. vztažené k příspěvku.&lt;/b&gt;&lt;br /&gt;Plugin DEPRECATED. Move along to the new event_social plugin! Můžete vložit/odstranit další webové služby pomocí souboru šablony &quot;plugin_findmore.tpl&quot;. Pamatujte, že pokud chcete ušetřit pár drahocených bodů za výkon blogu, můžete stejného efektu dosáhnout také vložením HTML/JavaScript snipletu do souboru šablony entries.tpl namísto používání tohoto pluginu!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:19:42 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_findmore</guid>
 </item>
 <item>
 <title>Flattr: Flattr je platforma pro sociální mikroplatby, která čtenáři umožňuje ocenit drobným příspěvkem obsah, který se mu líbí. Tento plugin vkládá do příspěvků a RSS kanálů tlačítka &quot;Flattr&quot; (tzv. Flattr Badges). U každého příspěvku můžete jednotlivě zadat nastavení Flattru. Pokud tak neučiníte, použije se globální nastavení.</title>
@@ -545,7 +536,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Návštěvní kniha&lt;/b&gt;&lt;br /&gt;Zobrazuje návštěvní knihu jako stránku blogu. Vzhled je totožný s ostatními stránkami.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Mon, 29 Jun 2020 13:26:24 +0200</pubDate>
+<pubDate>Tue, 20 Oct 2020 09:58:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -1238,7 +1229,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Galerie&lt;/b&gt;&lt;br /&gt;Umožňuje nepřihlášeným uživatelům prohlížet Serendipity knihovnu médií&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 14 Oct 2020 13:49:21 +0200</pubDate>
+<pubDate>Thu, 15 Oct 2020 13:56:15 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>
