@@ -300,7 +300,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             if (!is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
             }
-            $_ENV['staticpage_pagetitle'] = preg_replace('@[^a-z0-9]@i', '_',$this->get_config('pagetitle'));
+            $_ENV['staticpage_pagetitle'] = preg_replace('@[^a-z0-9]@i', '_', $this->get_config('pagetitle'));
             $serendipity['smarty']->assign('staticpage_pagetitle', $_ENV['staticpage_pagetitle']);
             $this->showShoutPage();
         }
