@@ -270,7 +270,7 @@ class serendipity_event_customarchive extends serendipity_event
             if (!is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
             }
-            $pt = preg_replace('@[^a-z0-9]@i', '_',$this->get_config('pagetitle'));
+            $pt = preg_replace('@[^a-z0-9]@i', '_', $this->get_config('pagetitle'));
             $_ENV['staticpage_pagetitle'] = $pt;
             $serendipity['smarty']->assign('staticpage_pagetitle', $pt);
 
