@@ -1062,7 +1062,7 @@ class serendipity_event_guestbook extends serendipity_event
             }
 
             // Carl and Don wanted to access the staticpage_pagetitle
-            $_ENV['staticpage_pagetitle'] = preg_replace('@[^a-z0-9]@i', '_',$this->get_config('pagetitle'));
+            $_ENV['staticpage_pagetitle'] = preg_replace('@[^a-z0-9]@i', '_', $this->get_config('pagetitle'));
             $_ENV['staticpage_headline']  = $this->get_config('headline');
             $_ENV['staticpage_formorder'] = $this->get_config('formorder');
             $serendipity['smarty']->assign(
