@@ -365,7 +365,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook (Experimentell!)&lt;/b&gt;&lt;br /&gt;Importiert Kommentare von Facebook-Posts (vergleichbar RSS-Graffiti) zurück in den Blog. Bettet auch Facebook-OpenGraph-Meta-Tags in den Blog ein.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:26:52 +0200</pubDate>
+<pubDate>Wed, 21 Oct 2020 19:14:22 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>
