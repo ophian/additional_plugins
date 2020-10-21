@@ -8,7 +8,7 @@
  */
 
 @define('PLUGIN_EVENT_FACEBOOK_NAME', 'Facebook');
-@define('PLUGIN_EVENT_FACEBOOK_DESC', 'Importuje do blogu komentáře u příspěvků na facebooku (pomocí RSS Graffiti). Také do blogu vloží facebookové OpenGraph Meta-Tagy. Pamatujte, že přidání talčítka "Líbí se mi" k příspěvkům blogu je zajišťováno pluginem serendipity_event_findmore!');
+@define('PLUGIN_EVENT_FACEBOOK_DESC', 'Importuje do blogu komentáře u příspěvků na facebooku (pomocí RSS Graffiti). Také do blogu vloží facebookové OpenGraph Meta-Tagy. Pamatujte, že přidání talčítka "Líbí se mi" k příspěvkům blogu je zajišťováno pluginem serendipity_event_social!');
 
 @define('PLUGIN_EVENT_FACEBOOK_HOWTO', 'Komentáře jsou importovány k příspěvkům blogu přiřazením URL adresy odkazu na facebook (odkazy musí být veřejné!), pro toto zpětné volání je použita nastavená adresa Serendipity blogu (kořenová URL). Tento plugin může být spuštěn pomocí pluginu cronjob, nebo pomocí ručního volání cronu (např. wget) přes blog (index.php?/plugin/facebookcomments).');
 

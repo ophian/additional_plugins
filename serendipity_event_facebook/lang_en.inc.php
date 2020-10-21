@@ -7,7 +7,7 @@
  */
 
 @define('PLUGIN_EVENT_FACEBOOK_NAME', 'Facebook');
-@define('PLUGIN_EVENT_FACEBOOK_DESC', 'Imports comments made on facebook postings (like through RSS Graffiti) back into the blog. Also embeds Facebook OpenGraph Meta-Tags into the blog. Note that adding "like"-Buttons to blog entries is achieved via the serendipity_event_findmore plugin! ');
+@define('PLUGIN_EVENT_FACEBOOK_DESC', 'Imports comments made on facebook postings (like through RSS Graffiti) back into the blog. Also embeds Facebook OpenGraph Meta-Tags into the blog. Note that adding "like"-Buttons to blog entries is achieved via the serendipity_event_social plugin! ');
 @define('PLUGIN_EVENT_FACEBOOK_HOWTO', 'Comments are imported to blogentries by matching the URL of the facebook link (they need to be public!) to your blog, and the configured hostname of Serendipity (baseURL) is used for this lookup. This plugin can be executed through the cronjob plugin, or through manual cronjobs (i.e. wget) via your blog (index.php?/plugin/facebookcomments).');
 @define('PLUGIN_EVENT_FACEBOOK_MODERATE', 'Should facebook comments be moderated by default?');
 @define('PLUGIN_EVENT_FACEBOOK_USERS', 'Facebook username(s)');
