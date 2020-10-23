@@ -26,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '1.95');
+        $propbag->add('version',       '1.96');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '5.1.0'
@@ -789,7 +789,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         'futureentries' => (int)$serendipity['POST']['cat']['futureentries'],
                         'pass'          => isset($serendipity['POST']['cat']['pass']) ? $serendipity['POST']['cat']['pass'] : null,
                         'sort_order'    => serendipity_db_escape_string($serendipity['POST']['cat']['sort_order']),
-                        'hide'          => $serendipity['POST']['cat']['hide'],
+                        'hide'          => $serendipity['POST']['cat']['hide']
                     );
                     $this->setProps($eventData, $val);
                     // Update list of template categories, too.

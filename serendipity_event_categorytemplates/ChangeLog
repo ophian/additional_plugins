@@ -1,3 +1,7 @@
+1.96:
+-----
+ * Hint to reset the hide option to false when removing a categorytemplate
+
 1.95:
 -----
  * Fix not strict enough category templates check against normal categories using the hide option
@@ -8,7 +12,7 @@
 
 1.93:
 -----
- * Fix another occurence of uninitialized Countable (see 1.92)
+ * Fix another occurrence of uninitialized Countable (see 1.92)
 
 1.92:
 -----
