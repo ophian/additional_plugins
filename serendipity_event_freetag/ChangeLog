@@ -1,3 +1,9 @@
+4.30:
+-----
+
+ * Improved loading assets behaviour for word/canvas cloud option set and/or the
+   sidebar plugin is installed.
+
 4.29 & sb 3.13:
 ---------------
 

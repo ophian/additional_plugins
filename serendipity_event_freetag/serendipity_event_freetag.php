@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.29');
+        $propbag->add('version',       '4.30');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1029,7 +1029,8 @@ class serendipity_event_freetag extends serendipity_event
 
                     // we load both in either case, as long as the option show_tagcloud is enabled,
                     // since it could be that someone wants to use two different clouds (plain, wordcanvas, rotacanvas, flash), differed by event/sidebar plugin!
-                    if (serendipity_db_bool($this->get_config('show_tagcloud', 'true'))) {
+                    // Changed to use by option and / or freetag sidebar class installed
+                    if (serendipity_db_bool($this->get_config('show_tagcloud', 'true')) && (serendipity_db_bool($this->get_config('use_wordcloud', 'true')) || serendipity_db_bool($this->get_config('use_rotacloud', 'true')) || class_exists('serendipity_plugin_freetag'))) {
                         if (!class_exists('serendipity_event_jquery') && !$serendipity['capabilities']['jquery'] && serendipity_db_bool($this->get_config('show_ft_jquery', 'true'))) {
                         echo '
     <script type="text/javascript" src="'.$serendipity['serendipityHTTPPath'].'plugins/serendipity_event_freetag/jquery-1.11.3.min.js"></script>
