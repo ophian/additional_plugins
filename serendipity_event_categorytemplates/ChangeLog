@@ -1,6 +1,6 @@
 1.96:
 -----
- * Hint to reset the hide option to false when removing a categorytemplate
+ * Hint to reset the hide option to false when removing a categorytemplate, improves select info [en, de]
 
 1.95:
 -----
