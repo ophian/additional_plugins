@@ -358,11 +358,11 @@ class serendipity_event_spamblock_bee extends serendipity_event
                     break;
 
                 case 'frontend_footer':
-                    // Comment header code only if in single article mode or contactform
-                    // If contact form is installed, display on any page not being the article list
-                    // else display in single article only.
+                    // Comment header code only if in single article mode or the contactform
+                    // If contact form is installed, display on any plugin type page that is a default 404 fallback (when nothing to serve was found)
+                    // else display in single article pages only.
                     $contactFormInstalled = class_exists('serendipity_event_contactform');
-                    if ((isset($eventData['GET']['id']) && $serendipity['view'] == 'entry') || ($contactFormInstalled && $serendipity['view'] == 'plugin')) {
+                    if ((isset($eventData['GET']['id']) && $serendipity['view'] == 'entry') || ($contactFormInstalled && $serendipity['view'] == 'plugin' && $serendipity['viewtype'] == '404_4')) {
                         $this->printJsExtras();
                     }
                     break;
