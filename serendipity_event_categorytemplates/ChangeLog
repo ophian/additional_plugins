@@ -1,3 +1,7 @@
+1.97:
+-----
+ * Fix annoying behaviour for renaming the non-categorytemplatized serendipity stylesheet
+
 1.96:
 -----
  * Hint to reset the hide option to false when removing a categorytemplate, improves select info [en, de]

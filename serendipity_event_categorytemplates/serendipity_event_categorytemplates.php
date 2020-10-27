@@ -26,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '1.96');
+        $propbag->add('version',       '1.97');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '5.1.0'
@@ -286,7 +286,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         } else {
             $val = $this->fetchProp($cid, 'template');
             if (!empty($val)) {
-            $this->usesDefaultTemplate = false;
+                $this->usesDefaultTemplate = false;
                 return $val;
             }
         }
@@ -398,7 +398,6 @@ class serendipity_event_categorytemplates extends serendipity_event
     function fetchProp($cid, $key = 'template')
     {
         global $serendipity;
-
         static $cache = array();
 
         if (isset($cache[$cid][$key])) {
@@ -485,6 +484,7 @@ class serendipity_event_categorytemplates extends serendipity_event
     function template_options($template, $catid)
     {
         global $serendipity, $template_config;
+
         if (!serendipity_checkPermission('adminTemplates')) {
             return;
         }
@@ -1057,49 +1057,50 @@ class serendipity_event_categorytemplates extends serendipity_event
                 case 'genpage':
                     // Get the category in question
                     $cid = $this->getID();
-                    $fc  = $this->get_config('fixcat', 'false');
-                    if ((string)$fc === 'hard') {
-                        $fc = 'true';
-                    }
-                    if ($cid != 'default' && serendipity_db_bool($fc)) {
-                        // Need this for category_name to be set.  (?)
-                        $serendipity['GET']['category'] = $cid;
-                        header('X-FixEntry-Cat: true');
-                    }
 
-                    // Reset s9y to use the category's properties
-                    $serendipity['fetchLimit']        = $this->fetchLimit($cid, $serendipity['fetchLimit']);
-                    $serendipity['showFutureEntries'] = $this->fetchFuture($cid, $serendipity['showFutureEntries']);
-                    $serendipity['template']          = $this->fetchTemplate($cid, $serendipity['template']);
-                    $this->sort_order                 = $this->fetchSortOrder($cid, $this->get_config('sort_order'));
-
-                    // Fetch an engine template if set
-                    $infofile = $serendipity['serendipityPath'] . $serendipity['templatePath'] . $serendipity['template'] . '/info.txt';
-                    $serendipity['template_engine'] = $this->getFallbackEngineChain($infofile); // This is a need for the correct fallback chain
-
-                    // Set the template options
-                    if (!$this->usesDefaultTemplate) {
-                        $serendipity['smarty_vars']['template_option'] = $serendipity['template'] . '_' . $cid;
-                    }
-
-                    // Check for password
-                    if ($cid != 'default' &&
-                          serendipity_db_bool($this->get_config('pass')) &&
-                          $this->fetchProp($cid, 'pass') != '') {
-
-                        if (!isset($_SERVER['PHP_AUTH_PW']) || $_SERVER['PHP_AUTH_PW'] != $this->fetchProp($cid, 'pass')) {
-                            header('WWW-Authenticate: Basic realm="' . PLUGIN_CATEGORYTEMPLATES_PASS_USER . '"');
-                            header("HTTP/1.0 401 Unauthorized");
-                            header('Status: 401 Unauthorized');
-                            echo PLUGIN_CATEGORYTEMPLATES_PASS_USER;
-                            exit;
-                        } else {
-                            $this->current_pw = $_SERVER['PHP_AUTH_PW'];
+                    if ($cid != 'default') {
+                        $fc  = $this->get_config('fixcat', 'false');
+                        if ((string)$fc === 'hard') {
+                            $fc = 'true';
                         }
-                    }
+                        if (serendipity_db_bool($fc)) {
+                            // Need this for category_name to be set.  (?)
+                            $serendipity['GET']['category'] = $cid;
+                            header('X-FixEntry-Cat: true');
+                        }
 
-                    // Set the template stylesheet
-                    $serendipity['smarty_vars']['head_link_stylesheet'] = serendipity_rewriteURL('plugin/ct' . $serendipity['template'] . '_' . $cid);
+                        // Reset s9y to use the category's properties
+                        $serendipity['fetchLimit']        = $this->fetchLimit($cid, $serendipity['fetchLimit']);
+                        $serendipity['showFutureEntries'] = $this->fetchFuture($cid, $serendipity['showFutureEntries']);
+                        $serendipity['template']          = $this->fetchTemplate($cid, $serendipity['template']);
+                        $this->sort_order                 = $this->fetchSortOrder($cid, $this->get_config('sort_order'));
+
+                        // Fetch an engine template if set
+                        $infofile = $serendipity['serendipityPath'] . $serendipity['templatePath'] . $serendipity['template'] . '/info.txt';
+                        $serendipity['template_engine'] = $this->getFallbackEngineChain($infofile); // This is a need for the correct fallback chain
+
+                        // Set the template options
+                        if (!$this->usesDefaultTemplate) {
+                            $serendipity['smarty_vars']['template_option'] = $serendipity['template'] . '_' . $cid;
+                        }
+
+                        // Check for password
+                        if (serendipity_db_bool($this->get_config('pass')) && $this->fetchProp($cid, 'pass') != '') {
+
+                            if (!isset($_SERVER['PHP_AUTH_PW']) || $_SERVER['PHP_AUTH_PW'] != $this->fetchProp($cid, 'pass')) {
+                                header('WWW-Authenticate: Basic realm="' . PLUGIN_CATEGORYTEMPLATES_PASS_USER . '"');
+                                header("HTTP/1.0 401 Unauthorized");
+                                header('Status: 401 Unauthorized');
+                                echo PLUGIN_CATEGORYTEMPLATES_PASS_USER;
+                                exit;
+                            } else {
+                                $this->current_pw = $_SERVER['PHP_AUTH_PW'];
+                            }
+                        }
+
+                        // Set the template stylesheet
+                        $serendipity['smarty_vars']['head_link_stylesheet'] = serendipity_rewriteURL('plugin/ct' . $serendipity['template'] . '_' . $cid);
+                    }
                     break;
 
                 // When the back end is displayed, use the custom template, too
