@@ -170,7 +170,7 @@ button::-moz-focus-inner {
   top: 50%;
   margin-top: -55px;
   padding: 0;
-  width: 90px;
+  width: 90px !important;
   height: 110px;
   -webkit-tap-highlight-color: transparent; }
   .mfp-arrow:active {
