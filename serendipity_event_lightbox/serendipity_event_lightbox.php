@@ -24,10 +24,10 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '2.7.1');
+        $propbag->add('version',        '2.8.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'php'         => '5.3.0'
+            'serendipity' => '2.0',
+            'php'         => '5.6.0'
         ));
         $propbag->add('event_hooks',     array('frontend_display' => true, 'css' => true, 'frontend_header' => true, 'frontend_footer' => true ));
         $propbag->add('stackable',       false);
@@ -87,7 +87,7 @@ class serendipity_event_lightbox extends serendipity_event
             case 'type':
                 $propbag->add('type',           'select');
                 $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_TYPE);
-                $propbag->add('description',    '');
+                $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_TYPE_DESC);
                 $propbag->add('select_values',  array('colorbox' => 'ColorBox', 'lightbox2jq' => 'Lightbox 2 jQuery', 'magnific' => 'Magnific-Popup', 'prettyPhoto' => 'prettyPhoto'));
                 $propbag->add('default',        'lightbox2jq');
                 break;
@@ -115,9 +115,9 @@ class serendipity_event_lightbox extends serendipity_event
 
             default:
                 $propbag->add('type',           'boolean');
-                $propbag->add('name',           defined($name) ? constant($name) : $name);
+                $propbag->add('name',           (defined($name) ? constant($name) : $name) . ($name == 'COMMENT' ? ' [ potential SECURITY RISC ] !!': '') );
                 $propbag->add('description',    sprintf(APPLY_MARKUP_TO, defined($name) ? constant($name) : $name));
-                $propbag->add('default',        'true');
+                $propbag->add('default',        ($name == 'COMMENT' ? 'false' : 'true'));
                 break;
 
         }
