@@ -19,11 +19,11 @@ class serendipity_event_tooltips extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TOOLTIPS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Enrico Stahn');
-        $propbag->add('version',       '1.7');
+        $propbag->add('version',       '1.8');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
-            'smarty'      => '3.1.0',
-            'php'         => '5.3.0'
+            'smarty'      => '3.1.6',
+            'php'         => '5.6.0'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
@@ -54,12 +54,11 @@ class serendipity_event_tooltips extends serendipity_event
         foreach($this->markup_elements as $element) {
             $conf_array[] = $element['name'];
         }
-        $conf_array[] = 'seperator';
+        $conf_array[] = 'separator';
         $conf_array[] = 'replacewithtag';
         $conf_array[] = 'fullimages';
         $conf_array[] = 'tooltipstag';
         $conf_array[] = 'cleanup';
-        $conf_array[] = 'seperator';
         $conf_array[] = 'bgcolor';
         $conf_array[] = 'fgcolor';
         $conf_array[] = 'textcolor';
@@ -69,60 +68,67 @@ class serendipity_event_tooltips extends serendipity_event
     function introspect_config_item($name, &$propbag)
     {
         switch ($name) {
-            case 'fullimages' :
+
+            case 'fullimages':
                 $propbag->add('name', PLUGIN_EVENT_TOOLTIPS_FULLIMAGES_NAME);
                 $propbag->add('type', 'boolean');
                 $propbag->add('description', PLUGIN_EVENT_TOOLTIPS_FULLIMAGES_DESC);
                 $propbag->add('default', 'true');
                 break;
-            case 'replacewithtag' :
+
+            case 'replacewithtag':
                 $propbag->add('name', PLUGIN_EVENT_TOOLTIPS_REPLACEWITHTAG_NAME);
                 $propbag->add('type', 'select');
                 $propbag->add('description', PLUGIN_EVENT_TOOLTIPS_REPLACEWITHTAG_DESC);
                 $propbag->add('default', 'a');
                 $propbag->add('select_values', array('a' => PLUGIN_EVENT_TOOLTIPS_REPLACEWITHTAG_A, 'acronym' => PLUGIN_EVENT_TOOLTIPS_REPLACEWITHTAG_ACRONYM));
                  break;
-            case 'tooltipstag' :
+
+            case 'tooltipstag':
                 $propbag->add('name', PLUGIN_EVENT_TOOLTIPS_TOOLTIPSTAG_NAME);
                 $propbag->add('type', 'boolean');
                 $propbag->add('description', PLUGIN_EVENT_TOOLTIPS_TOOLTIPSTAG_DESC);
                 $propbag->add('default', 'true');
                 break;
-            case 'cleanup' :
+
+            case 'cleanup':
                 $propbag->add('name', PLUGIN_EVENT_TOOLTIPS_CLEANUP_NAME);
                 $propbag->add('type', 'boolean');
                 $propbag->add('description', PLUGIN_EVENT_TOOLTIPS_CLEANUP_DESC);
                 $propbag->add('default', 'true');
                 break;
-            case 'bgcolor' :
+
+            case 'bgcolor':
                 $propbag->add('name', PLUGIN_EVENT_TOOLTIPS_BGCOLOR_NAME);
                 $propbag->add('type', 'string');
                 $propbag->add('description', PLUGIN_EVENT_TOOLTIPS_BGCOLOR_DESC);
                 $propbag->add('default', '#000000');
                 break;
-            case 'fgcolor' :
+
+            case 'fgcolor':
                 $propbag->add('name', PLUGIN_EVENT_TOOLTIPS_FGCOLOR_NAME);
                 $propbag->add('type', 'string');
                 $propbag->add('description', PLUGIN_EVENT_TOOLTIPS_FGCOLOR_DESC);
                 $propbag->add('default', '#eeeeee');
                 break;
-            case 'textcolor' :
+
+            case 'textcolor':
                 $propbag->add('name', PLUGIN_EVENT_TOOLTIPS_TEXTCOLOR_NAME);
                 $propbag->add('type', 'string');
                 $propbag->add('description', PLUGIN_EVENT_TOOLTIPS_TEXTCOLOR_DESC);
                 $propbag->add('default', '#000000');
                 break;
-            case 'seperator' :
-                $propbag->add('name', $name);
-                $propbag->add('type', 'seperator');
-                $propbag->add('description', '');
-                $propbag->add('default', 'false');
-                 break;
-            default :
-                $propbag->add('name',        constant($name));
+
+            case 'separator':
+                $propbag->add('type', 'separator');
+                break;
+
+            default:
                 $propbag->add('type',        'boolean');
-                $propbag->add('default',     'true');
+                $propbag->add('name',        constant($name));
                 $propbag->add('description', sprintf(APPLY_MARKUP_TO, constant($name)));
+                $propbag->add('default',     'true');
+                break;
         }
         return true;
     }
@@ -261,17 +267,21 @@ class serendipity_event_tooltips extends serendipity_event
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
         global $serendipity;
+
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
             switch($event) {
+
                 case 'frontend_header':
                     echo $this->overlibconfig();
                     echo '<script type="text/javascript" src="'.$serendipity['serendipityHTTPPath'].'plugins/serendipity_event_tooltips/overlib/overlib.js"><!-- overLIB (c) Erik Bosrup --></script>';
                     break;
+
                 case 'frontend_footer':
                     echo '<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>';
                     break;
+
                 case 'frontend_display':
                     foreach ($this->markup_elements as $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
