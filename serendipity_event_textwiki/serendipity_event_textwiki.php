@@ -406,11 +406,11 @@ class serendipity_event_textwiki extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TEXTWIKI_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tobias Schlitt');
-        $propbag->add('version',       '1.9');
+        $propbag->add('version',       '1.10');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.6',
+            'php'         => '5.6.0'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array('frontend_display' => true, 'frontend_comment' => true));
@@ -443,7 +443,7 @@ class serendipity_event_textwiki extends serendipity_event
         // Save non wiki-rule configuration
         $this->nonWikiRules = $conf_array;
         // Separate markup elements from wiki-rule config
-        $conf_array[] = "internal_seperator";
+        $conf_array[] = "internal_separator";
         // Add wiki-rule config
         $this->_introspect_rule_config($conf_array);
         $propbag->add('configuration', $conf_array);
@@ -454,15 +454,15 @@ class serendipity_event_textwiki extends serendipity_event
         foreach($this->wikiRules AS $name => $rule) {
             // If sub configurations exist
             if (isset($rule['s9yc']) && is_array($rule['s9yc'])) {
-                if ($conf_array[(count($conf_array) - 1)] != 'internal_seperator') {
-                    $conf_array[] = 'internal_seperator';
+                if ($conf_array[(count($conf_array) - 1)] != 'internal_separator') {
+                    $conf_array[] = 'internal_separator';
                 }
                 // Add wiki-rule config itself
                 $conf_array[] = $name;
                 foreach ($rule['s9yc'] AS $confname => $conf) {
                     $conf_array[] = $name . '_' . $confname;
                 }
-                $conf_array[] = "internal_seperator";
+                $conf_array[] = "internal_separator";
             } else {
                 // Add only wiki-rule config itself
                 $conf_array[] = $name;
@@ -493,10 +493,10 @@ class serendipity_event_textwiki extends serendipity_event
             $propbag->add('name',        defined($name) ? constant($name) : $name);
             $propbag->add('description', sprintf(APPLY_MARKUP_TO, defined($name) ? constant($name) : $name));
             $propbag->add('default', true);
-        } else if ($name == 'internal_seperator') {
-            $propbag->add('type',        'seperator');
-            $propbag->add('name',        'Seperator');
-            $propbag->add('description', 'Seperator');
+        } else if ($name == 'internal_separator') {
+            $propbag->add('type',        'separator');
+            $propbag->add('name',        'Separator');
+            $propbag->add('description', 'Separator');
         } else {
             $this->_introspect_rule_config_item($name, $propbag);
         }
