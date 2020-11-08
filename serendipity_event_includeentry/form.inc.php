@@ -36,7 +36,6 @@
 
         switch ($cbag->get('type')) {
             case 'separator':
-            case 'seperator':
                 //void
                 break;
 
