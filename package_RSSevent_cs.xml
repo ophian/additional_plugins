@@ -572,7 +572,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_includeentry&lt;br /&gt;Markup: Vložení příspěvku/šablony/bloku&lt;/b&gt;&lt;br /&gt;Umožňuje přidat do příspěvku tagy, které zajistí vložení část jiného příspěvku. Použijte tuto značku: [s9y-include-entry:XXX:YYY]. Nahraďte XXX číslem ID odkazovaného příspěvku a YYY nahraďte názvem pole příspěvku, které chcete vložit (např. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). Také můžete využít nové funkce menu pro správu šablon a bloků, které je možno vložit mezi příspěvky.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 05 Jun 2020 09:39:32 +0200</pubDate>
+<pubDate>Sat, 07 Nov 2020 15:05:11 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_includeentry</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statické stránky&lt;/b&gt;&lt;br /&gt;Zobrazuje v blogu statické stránky se stejným designem jako mají běžné přspěvky. Přidá nové menu do adminstrátorského rozhraní.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Tue, 06 Oct 2020 17:45:04 +0200</pubDate>
+<pubDate>Sat, 07 Nov 2020 15:02:05 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1129,8 +1129,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_textwiki</link>
 <category>Event Plugins</category>
 <author>Tobias Schlitt</author>
-<content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;Markup: Wiki&lt;/b&gt;&lt;br /&gt;Převádí značky Text_Wiki do HTML&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 17 Aug 2018 16:15:53 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;Markup: Wiki&lt;/b&gt;&lt;br /&gt;Převádí značky Text_Wiki do HTML&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sat, 07 Nov 2020 15:21:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_textwiki</guid>
 </item>
 <item>
@@ -1175,7 +1175,7 @@
 <category>Event Plugins</category>
 <author>Enrico Stahn</author>
 <content:encoded>&lt;b&gt;serendipity_event_tooltips&lt;br /&gt;Tooltips - nápověda, tipy&lt;/b&gt;&lt;br /&gt;Aktivuje obrázky a texty nápovědy.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 17 Aug 2018 16:18:43 +0200</pubDate>
+<pubDate>Sat, 07 Nov 2020 15:29:44 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_tooltips</guid>
 </item>
 <item>

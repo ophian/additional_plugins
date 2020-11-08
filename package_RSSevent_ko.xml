@@ -572,7 +572,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_includeentry&lt;br /&gt;Markup: Include entry data/templates/blocks&lt;/b&gt;&lt;br /&gt;Allows you to add HTML-style tags to your entry that includes parts of other entrys. Use this markup: [s9y-include-entry:XXX:YYY]. Replace XXX with the target entryid and YYY with the target field name (i.e. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). You can also use the new menu functions to maintain templates and blocks that can get inserted in between your entries.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 05 Jun 2020 09:39:32 +0200</pubDate>
+<pubDate>Sat, 07 Nov 2020 15:05:11 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_includeentry</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;고정 페이지&lt;/b&gt;&lt;br /&gt;블로그의 디자인을 그대로 따르는 고정 페이지를 블로그 속에 보여줍니다. 관리 메뉴에 새 메뉴 아이템을 생성합니다.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Tue, 06 Oct 2020 17:45:04 +0200</pubDate>
+<pubDate>Sat, 07 Nov 2020 15:02:05 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1129,8 +1129,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_textwiki</link>
 <category>Event Plugins</category>
 <author>Tobias Schlitt</author>
-<content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;마크업: 위키&lt;/b&gt;&lt;br /&gt;텍스트_위키 마크업을 글에 사용함 Markup text using Text_Wiki&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 17 Aug 2018 16:15:53 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;마크업: 위키&lt;/b&gt;&lt;br /&gt;텍스트_위키 마크업을 글에 사용함 Markup text using Text_Wiki&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sat, 07 Nov 2020 15:21:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_textwiki</guid>
 </item>
 <item>
@@ -1175,7 +1175,7 @@
 <category>Event Plugins</category>
 <author>Enrico Stahn</author>
 <content:encoded>&lt;b&gt;serendipity_event_tooltips&lt;br /&gt;Tooltips&lt;/b&gt;&lt;br /&gt;Activate Tooltips Text and Images.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 17 Aug 2018 16:18:43 +0200</pubDate>
+<pubDate>Sat, 07 Nov 2020 15:29:44 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_tooltips</guid>
 </item>
 <item>
