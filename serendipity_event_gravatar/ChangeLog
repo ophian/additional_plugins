@@ -134,7 +134,7 @@ Version 1.42 (brockhaus)
 ------------------------------------------------------------------------
 
     * Encoded _ in user urls in order to differ them from the
-      seperators. urlencode doesn't encode _. Thanks to Tino Schwarze
+      separators. urlencode doesn't encode _. Thanks to Tino Schwarze
       finding and fixing this.
 
 Version 1.41 (garvinhicking)
