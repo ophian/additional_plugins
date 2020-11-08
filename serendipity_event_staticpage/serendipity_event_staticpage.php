@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.13');
+        $propbag->add('version', '6.14');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -3057,7 +3057,6 @@ class serendipity_event_staticpage extends serendipity_event
 
         // Call moduled class constructors by type
         if ($type) {
-            if ($type == 'seperator') $type = 'separator'; // due to long run misspelled usage
             if ($type == 'html') $type = 'text'; // since a type class redirector errors and we only need a simple type text box creator class object for both
             if ($type == 'boolean' || $type == 'tristate') $type = 'radio'; // we only need a simple type radio creator class object
             echo "<!-- modul-type::$type - class_inspectConfig.php -->\n"; // tag dynamic form items
