@@ -13,6 +13,7 @@
     * Allow lazy loading attribute in cke_config to not get removed automatically.
       NOTE: Open up the config js file once in a new tab of your browser, like:
       https://your.blog/plugins/serendipity_event_ckeditor/cke_config.js
+      to avoid caching problems.
 
 4.14.1.7:
 ---------
