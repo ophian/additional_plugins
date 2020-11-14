@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.14');
+        $propbag->add('version', '6.15');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -3883,6 +3883,12 @@ class serendipity_event_staticpage extends serendipity_event
                             if ($eventData[0]['haswebp'] && !empty($toVarFile)) {
                                 $dir['content']     = preg_replace('@(srcset=|href=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromVarFile) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromVarFile) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toVarFile, $dir['content']);
                                 $dir['pre_content'] = preg_replace('@(srcset=|href=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromVarFile) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromVarFile) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toVarFile, $dir['pre_content']);
+                            }
+                            // run for possible alt and title attributes
+                            if ($eventData[0]['type'] == 'filedir' || $eventData[0]['type'] == 'file') {
+                                $dir['content']     = preg_replace('@(alt=|title=)(\'|")(' . preg_quote(basename($fromFile)) . ')@', '\1\2' . basename($toFile), $dir['content']);
+                                $dir['pre_content'] = preg_replace('@(alt=|title=)(\'|")(' . preg_quote(basename($fromFile)) . ')@', '\1\2' . basename($toFile), $dir['pre_content']);
+                                if ($debug) { $serendipity['logger']->debug("IN_staticpage:: (title|alt)" . basename($fromFile) . ' ' . basename($toFile)); }
                             }
                             $uq = "UPDATE {$serendipity['dbPrefix']}staticpages
                                       SET content     = '" . serendipity_db_escape_string($dir['content']) . "' ,
