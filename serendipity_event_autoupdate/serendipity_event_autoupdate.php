@@ -183,7 +183,7 @@ class serendipity_event_autoupdate extends serendipity_event
                        As long scripts are not running within safe_mode they are free to change the memory_limit to whatever value they want.
                        Suhosin changes this fact and disallows setting the memory_limit to a value greater than the one the script started with,
                        when this option is left at 0. A value greater than 0 means that Suhosin will disallows scripts setting the memory_limit
-                       to a value above this configured hard limit. This is for example usefull if you want to run the script normally with a limit
+                       to a value above this configured hard limit. This is for example useful if you want to run the script normally with a limit
                        of 16M but image processing scripts may raise it to 20M.
                        Edit /etc/php5/conf.d/suhosin.ini and add e.g. suhosin.memory_limit = 512M ...
                     */
