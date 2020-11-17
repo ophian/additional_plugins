@@ -1,3 +1,7 @@
+6.16:
+-----
+ * Change icon for password protected static page in list
+
 6.15:
 -----
  * Extend backend ML media rename replace REGEX within staticpage entries for alt || title
