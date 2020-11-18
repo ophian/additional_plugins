@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.30');
+        $propbag->add('version',       '4.31');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1200,6 +1200,16 @@ a.button_link.tagview_active {
 .freetagMenu li {
     display: inline-block;
     margin: 0 0 .5em;
+    vertical-align: middle;
+}
+.freetagMenu li:nth-child(1) .button_link {
+    padding: 5px 8px;
+}
+.freetagMenu li:nth-child(2) .button_link {
+    padding: 5px 8px;
+}
+.freetagMenu li:nth-child(6) .button_link {
+    padding: 4px 10px 4px 4px;
 }
 
 .freetags_manage {
