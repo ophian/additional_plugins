@@ -3757,7 +3757,7 @@ class serendipity_event_staticpage extends serendipity_event
                         break;
                     }
                     if (!defined('STATICPAGE_UPGRADE_DONE') && stristr($serendipity['dbType'], 'sqlite') === FALSE) {
-                        $this->setupDB(); // in case of sudebar plugin only (?), else done in genpage or install
+                        $this->setupDB(); // in case of sidebar plugin only (?), else done in genpage or install
                     }
                     echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages">' . STATICPAGE_TITLE . '</a></li>'."\n";
                     break;
