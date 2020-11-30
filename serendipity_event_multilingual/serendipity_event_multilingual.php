@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '2.64');
+        $propbag->add('version',        '3.00');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -152,8 +152,6 @@ class serendipity_event_multilingual extends serendipity_event
         if (!headers_sent()) {
             if ($serendipity['expose_s9y']) serendipity_header('X-Serendipity-ContentLang: ' . $this->cleanheader($this->showlang));
         }
-
-        $this->setupDB();
     }
 
     function setupDB()
@@ -161,6 +159,7 @@ class serendipity_event_multilingual extends serendipity_event
         global $serendipity;
 
         $built = $this->get_config('db_built', null);
+
         if (empty($built)) {
             $q = "@CREATE {FULLTEXT_MYSQL} INDEX fulltext_idx on {$serendipity['dbPrefix']}entryproperties (value);";
             if (serendipity_db_schema_import($q)) {
@@ -168,16 +167,17 @@ class serendipity_event_multilingual extends serendipity_event
             }
         }
         if ($built == 2) {
-            $q = "SHOW INDEX FROM {$serendipity['dbPrefix']}entryproperties FROM {$serendipity['dbName']}";
+            $q = "SHOW INDEXES FROM {$serendipity['dbPrefix']}entryproperties";
             if (!is_array(serendipity_db_query($q))) {
                 echo '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> <strong>Error:</strong> '.$r.'. Does it exist? Please check your privileges to this table; triggered in serendipity_event_multilingual, setupDB() method.</span>';
-            } else $this->set_config('db_built', 3);
+            } else {
+                $this->set_config('db_built', 3);
+            }
         }
-        if ($built == 3) {
-        // OPS !!!! config set [serendipity_event_multilingual/db_built 	2] is/was build without instance ????
-            $q = "DELETE FROM {$serendipity['dbPrefix']}config WHERE name LIKE '%serendipity_event_multilingual/db_built%'";
-            serendipity_db_schema_import($q);
-            $this->set_config('db_built', 4);
+        if ($built == 3 || $built == 4) {
+            // Presumably by calling this method via this introspect() method, a config set [serendipity_event_multilingual/db_built] entry was build without any instance ID and with an empty value. This forced the plugin API to act wild!
+            serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}config WHERE name LIKE '%serendipity_event_multilingual/db_built%'");
+            $this->set_config('db_built', 5);
         }
     }
 
@@ -507,6 +507,7 @@ class serendipity_event_multilingual extends serendipity_event
                         // never init in genpage without adding previously set $vars, which is $view etc!
                         serendipity_smarty_init($serendipity['plugindata']['smartyvars']);
                     }
+                    $this->setupDB();
 
                     //Debug// echo "getSessionLang=".serendipity_getSessionLanguage() . ' S9L='.$serendipity['lang']. ' showPreferedLang='.$this->showlang.' ';
                     if (serendipity_db_bool($this->get_config('tagged_title', 'true'))) {

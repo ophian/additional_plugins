@@ -1,3 +1,12 @@
+3.00:
+-----
+ * Fix borked database query checks to set/build and get the installed multilingual "db_built"
+   version for install and update, issuing the plugin API to do weird things.
+   [ UPGRADERS: If you encounter any issue, in special when your origin installation came from
+     before 2015, please completely uninstall the plugin via Plugin Administration, then check
+     and clean your db "config" table for any "name" field items announcing
+     'serendipity_event_multilingual' and reinstall from scratch !! ]
+
 2.64:
 -----
  * [Minor] Secure some (well-known) target _blank links by living standard rel="noopener"
