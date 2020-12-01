@@ -26,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '1.97');
+        $propbag->add('version',       '1.98');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '5.1.0'
@@ -595,6 +595,10 @@ class serendipity_event_categorytemplates extends serendipity_event
                 // options, such as template, future entries, limit, and order
                 case 'backend_category_showForm':
                     // The $eventData is the category ID
+                    if (empty($eventData)) {
+                        break;
+                    }
+                    $eventData = (int)$eventData;
                     $clang      = $this->fetchLang($eventData, '');
                     $cfuture    = $this->fetchFuture($eventData, '');
                     $styles     = serendipity_fetchTemplates();

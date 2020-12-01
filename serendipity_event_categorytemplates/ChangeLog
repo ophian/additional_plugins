@@ -1,6 +1,10 @@
 1.97:
 -----
- * Fix annoying behaviour for renaming the non-categorytemplatized serendipity stylesheet
+ * Fixup run 'backend_category_showForm' on empty category
+
+1.97:
+-----
+ * Fix annoying behaviour for renaming the non-category-templatized serendipity stylesheet
 
 1.96:
 -----
