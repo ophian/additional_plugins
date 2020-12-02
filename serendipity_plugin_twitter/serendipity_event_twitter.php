@@ -27,7 +27,6 @@ require_once dirname(__FILE__) . '/classes/twitter_entry_defs.include.php';
 
 class serendipity_event_twitter extends serendipity_plugin
 {
-
     var $supported_services = array(
             'raw'         => "uncompressed",
             '7ax.de'      => "7ax.de",
@@ -49,12 +48,12 @@ class serendipity_event_twitter extends serendipity_plugin
         $propbag->add('name',          PLUGIN_EVENT_TWITTER_NAME);
         $propbag->add('description',   PLUGIN_EVENT_TWITTER_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Grischa Brockhaus, Peter Heimann');
+        $propbag->add('author',        'Grischa Brockhaus, Peter Heimann, Ian Styx');
         //$propbag->add('website',       'http://board.s9y.org');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '3.2',
+            'smarty'      => '3.1',
+            'php'         => '7.3'
         ));
         $propbag->add('version',       PLUGIN_TWITTER_VERSION);
         $propbag->add('groups', array('FRONTEND_VIEWS'));

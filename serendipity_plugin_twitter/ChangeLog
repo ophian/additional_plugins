@@ -9,6 +9,11 @@ TODO:
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
 
+2.00:
+-----
+ * Raise requirement to Styx 3.2
+ * Set database INDEX key length by installed database versions (MariaDB >= 10.5 preferred)
+
 1.73:
 -----
  * Secure some external target _blank links

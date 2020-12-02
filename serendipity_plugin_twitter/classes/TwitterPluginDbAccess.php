@@ -89,10 +89,10 @@ class TwitterPluginDbAccess
         global $serendipity;
 
         // insert all new (not yet known) shorturls.
-        foreach ($shorturls as $service => $shorturl) {
-            if ('raw'==$service) continue; // don't save raw, table can't hold it.
+        foreach ($shorturls AS $service => $shorturl) {
+            if ('raw' == $service) continue; // don't save raw, table can't hold it.
             $shorturl = trim($shorturl);
-            if (empty($shorturl)) continue; // something whent wrong while fetching shorturls
+            if (empty($shorturl)) continue; // something went wrong while fetching shorturls
             if (empty($loaded_shorturls[$service])) {
                 // Save only valid short urls!
                 if (preg_match('/^http/', $shorturl)) {
@@ -143,12 +143,39 @@ class TwitterPluginDbAccess
 
         if (!TwitterPluginDbAccess::table_created('tweetbackshorturls')) {
             if ($serendipity['dbType'] == 'mysqli') {
-                $q = "CREATE TABLE {$serendipity['dbPrefix']}tweetbackshorturls (" .
-                        "service varchar(15) not null, " .
-                        "longurl varchar(255) not null, " .
-                        "shorturl varchar(50) not null, " .
-                        "PRIMARY KEY (service, longurl(176))" .
-                    ")";
+                $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+                if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
+                    $db_version_match = explode('-', $serendipity['db_server_info']);
+                    if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                        $q = "CREATE TABLE {$serendipity['dbPrefix']}tweetbackshorturls (" .
+                                "service varchar(15) not null, " .
+                                "longurl varchar(255) not null, " .
+                                "shorturl varchar(50) not null, " .
+                                "PRIMARY KEY (service, longurl)" .
+                            ")";
+                    } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                         $q = "CREATE TABLE {$serendipity['dbPrefix']}tweetbackshorturls (" .
+                                "service varchar(15) not null, " .
+                                "longurl varchar(255) not null, " .
+                                "shorturl varchar(50) not null, " .
+                                "PRIMARY KEY (service, longurl(235))" .
+                            ")"; // max key 1000 bytes
+                    } else {
+                        $q = "CREATE TABLE {$serendipity['dbPrefix']}tweetbackshorturls (" .
+                                "service varchar(15) not null, " .
+                                "longurl varchar(255) not null, " .
+                                "shorturl varchar(50) not null, " .
+                                "PRIMARY KEY (service, longurl(176))" .
+                            ")"; // 191 - 15 - old MyISAMs
+                    }
+                } else {
+                    $q = "CREATE TABLE {$serendipity['dbPrefix']}tweetbackshorturls (" .
+                            "service varchar(15) not null, " .
+                            "longurl varchar(255) not null, " .
+                            "shorturl varchar(50) not null, " .
+                            "PRIMARY KEY (service, longurl(176))" .
+                        ")"; // Oracle Mysql/InnoDB max key 767 bytes
+                }
             } else {
                 $q = "CREATE TABLE {$serendipity['dbPrefix']}tweetbackshorturls (" .
                         "service varchar(15) not null, " .
@@ -164,7 +191,20 @@ class TwitterPluginDbAccess
             }
 
             if ($serendipity['dbType'] == 'mysqli') {
-                serendipity_db_schema_import("CREATE INDEX idx_tweetbackshorturls_longurl ON {$serendipity['dbPrefix']}tweetbackshorturls (longurl(191))");
+                $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+                if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
+                    $db_version_match = explode('-', $serendipity['db_server_info']);
+                    if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                        $q = "CREATE INDEX idx_tweetbackshorturls_longurl ON {$serendipity['dbPrefix']}tweetbackshorturls (longurl);";
+                    } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                        $q = "CREATE INDEX idx_tweetbackshorturls_longurl ON {$serendipity['dbPrefix']}tweetbackshorturls (longurl(250));"; // max key 1000 bytes
+                    } else {
+                        $q = "CREATE INDEX idx_tweetbackshorturls_longurl ON {$serendipity['dbPrefix']}tweetbackshorturls (longurl(191));"; // 191 - old MyISAMs
+                    }
+                } else {
+                    $q = "CREATE INDEX idx_tweetbackshorturls_longurl ON {$serendipity['dbPrefix']}tweetbackshorturls (longurl(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                }
+                serendipity_db_schema_import($q);
             } else {
                 serendipity_db_schema_import("CREATE INDEX idx_tweetbackshorturls_longurl ON {$serendipity['dbPrefix']}tweetbackshorturls (longurl)");
             }
