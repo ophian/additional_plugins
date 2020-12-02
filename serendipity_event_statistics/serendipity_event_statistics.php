@@ -18,10 +18,10 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '2.07');
+        $propbag->add('version',       '3.00');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.9',
-            'php'         => '7.2'
+            'serendipity' => '3.2',
+            'php'         => '7.3'
         ));
         $propbag->add('groups', array('STATISTICS'));
         $propbag->add('event_hooks',   array(
@@ -1321,7 +1321,19 @@ class serendipity_event_statistics extends serendipity_event
             $q = "CREATE INDEX visitortimeb ON {$serendipity['dbPrefix']}visitors_count (year, month, day);";
             serendipity_db_schema_import($q);
             if ($serendipity['dbType'] == 'mysqli') {
-                $q = "CREATE INDEX refsrefs ON {$serendipity['dbPrefix']}refs (refs(191));";
+                $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+                if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
+                    $db_version_match = explode('-', $serendipity['db_server_info']);
+                    if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                        $q = "CREATE INDEX refsrefs ON {$serendipity['dbPrefix']}refs (refs);";
+                    } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                        $q = "CREATE INDEX refsrefs ON {$serendipity['dbPrefix']}refs (refs(250));"; // max key 1000 bytes
+                    } else {
+                        $q = "CREATE INDEX refsrefs ON {$serendipity['dbPrefix']}refs (refs(191));"; // 191 - old MyISAMs
+                    }
+                } else {
+                    $q = "CREATE INDEX refsrefs ON {$serendipity['dbPrefix']}refs (refs(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                }
             } else {
                 $q = "CREATE INDEX refsrefs ON {$serendipity['dbPrefix']}refs (refs);";
             }

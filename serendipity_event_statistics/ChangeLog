@@ -1,3 +1,8 @@
+3.00:
+-----
+ * Raise requirement to Styx 3.2
+ * Set database INDEX key length by installed database versions (MariaDB >= 10.5 preferred)
+
 2.07:
 -----
  * Check Global_Server_Vars by isset()
