@@ -24,11 +24,11 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',       '0.29');
+        $propbag->add('version',       '1.00');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.0',
-            'php'         => '5.1.0'
+            'serendipity' => '3.2',
+            'smarty'      => '3.1',
+            'php'         => '7.3'
         ));
         $propbag->add('groups', array('MARKUP'));
         $propbag->add('event_hooks',   array(
@@ -442,8 +442,33 @@ function use_link_<?php echo $func; ?>(txt) {
                     refname text,
                     ref text)");
             if ($serendipity['dbType'] == 'mysqli') {
-                serendipity_db_schema_import("CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname(191));");
-                serendipity_db_schema_import("CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(191));");
+                $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+                if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
+                    $db_version_match = explode('-', $serendipity['db_server_info']);
+                    if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                        $q = "CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname);";
+                    } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                        $q = "CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname(250));"; // max key 1000 bytes
+                    } else {
+                        $q = "CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname(191));"; // 191 - old MyISAMs
+                    }
+                } else {
+                    $q = "CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                }
+                serendipity_db_schema_import($q);
+                if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
+                    $db_version_match = explode('-', $serendipity['db_server_info']);
+                    if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                        $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname);";
+                    } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                        $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(250));"; // max key 1000 bytes
+                    } else {
+                        $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(191));"; // 191 - old MyISAMs
+                    }
+                } else {
+                    $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                }
+                serendipity_db_schema_import($q);
             } else {
                 serendipity_db_schema_import("CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname);");
                 serendipity_db_schema_import("CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname);");
