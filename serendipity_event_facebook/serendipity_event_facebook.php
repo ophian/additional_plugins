@@ -20,11 +20,11 @@ class serendipity_event_facebook extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '3.2',
+            'smarty'      => '3.1',
+            'php'         => '7.3'
         ));
-        $propbag->add('version',       '1.03');
+        $propbag->add('version',       '2.00');
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $propbag->add('event_hooks', array(
             'frontend_display'  => true,
@@ -86,7 +86,20 @@ class serendipity_event_facebook extends serendipity_event
             $result = serendipity_db_schema_import($q);
 
             if ($serendipity['dbType'] == 'mysqli') {
-                serendipity_db_schema_import("CREATE INDEX fbindex ON {$serendipity['dbPrefix']}facebook (base_url(191))");
+                $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+                if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
+                    $db_version_match = explode('-', $serendipity['db_server_info']);
+                    if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                        $q = "CREATE INDEX fbindex ON {$serendipity['dbPrefix']}facebook (base_url);";
+                    } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                        $q = "CREATE INDEX fbindex ON {$serendipity['dbPrefix']}facebook (base_url(250));"; // max key 1000 bytes
+                    } else {
+                        $q = "CREATE INDEX fbindex ON {$serendipity['dbPrefix']}facebook (base_url(191));"; // 191 - old MyISAMs
+                    }
+                } else {
+                    $q = "CREATE INDEX fbindex ON {$serendipity['dbPrefix']}facebook (base_url(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                }
+                serendipity_db_schema_import($q);
             } else {
                 serendipity_db_schema_import("CREATE INDEX fbindex ON {$serendipity['dbPrefix']}facebook (base_url)");
             }
