@@ -35,11 +35,11 @@ class serendipity_event_todolist extends serendipity_event
                                             'backend_sidebar_entries'                               => true
                                             ));
         $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian Styx');
-        $propbag->add('version', '1.31');
+        $propbag->add('version', '2.00');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.0',
-            'php'         => '5.2.0'
+            'serendipity' => '3.2',
+            'smarty'      => '3.1',
+            'php'         => '7.3'
         ));
         $propbag->add('configuration', array('note','title','display','category','cache','colorid','barlength','categorybarlength','barheight', 'font', 'fontsize','whitetextborder','outsidetext','backgroundcolor','cacheimages','numentries'));
         $propbag->add('stackable',     true);
@@ -1246,9 +1246,21 @@ class serendipity_event_todolist extends serendipity_event
         $sql = serendipity_db_schema_import($q);
 
         if ($serendipity['dbType'] == 'mysqli') {
-            $q   = "CREATE INDEX percentage_titleind ON {$serendipity['dbPrefix']}percentagedone (title(191));";
+            $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+            if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
+                $db_version_match = explode('-', $serendipity['db_server_info']);
+                if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                    $q = "CREATE INDEX percentage_titleind ON {$serendipity['dbPrefix']}percentagedone (title);";
+                } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                    $q = "CREATE INDEX percentage_titleind ON {$serendipity['dbPrefix']}percentagedone (title(250));"; // max key 1000 bytes
+                } else {
+                    $q = "CREATE INDEX percentage_titleind ON {$serendipity['dbPrefix']}percentagedone (title(191));"; // 191 - old MyISAMs
+                }
+            } else {
+                $q = "CREATE INDEX percentage_titleind ON {$serendipity['dbPrefix']}percentagedone (title(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+            }
         } else {
-            $q   = "CREATE INDEX percentage_titleind ON {$serendipity['dbPrefix']}percentagedone (title);";
+            $q = "CREATE INDEX percentage_titleind ON {$serendipity['dbPrefix']}percentagedone (title);";
         }
         $sql = serendipity_db_schema_import($q);
 
