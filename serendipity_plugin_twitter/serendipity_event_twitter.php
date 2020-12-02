@@ -62,7 +62,7 @@ class serendipity_event_twitter extends serendipity_plugin
             'external_plugin'           => true,
             'backend_header'            => true,
             'backend_display'           => true, // Extended attributes
-            'backend_publish'           => true, // An entry was puplished (was draft before or saved from the scratch).
+            'backend_publish'           => true, // An entry was published (was draft before or saved from the scratch).
             'backend_frontpage_display' => true,
             'backend_sidebar_admin_appearance' => true,
             'backend_sidebar_entries_event_display_tweeter' => true,
