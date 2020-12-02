@@ -27,11 +27,11 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '2.10');
+        $propbag->add('version',       '3.00');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '3.2',
+            'smarty'      => '3.1',
+            'php'         => '7.3'
         ));
         $propbag->add('stackable',     false);
         $propbag->add('groups', array('FRONTEND_VIEWS', 'BACKEND_FEATURES'));
@@ -204,7 +204,19 @@ class serendipity_event_linklist extends serendipity_event
         $sql = serendipity_db_schema_import($q);
 
         if ($serendipity['dbType'] == 'mysqli') {
-            $q   = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(191));";
+            $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+            if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
+                $db_version_match = explode('-', $serendipity['db_server_info']);
+                if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                    $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title);";
+                } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                    $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(250));"; // max key 1000 bytes
+                } else {
+                    $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(191));"; // 191 - old MyISAMs
+                }
+            } else {
+                $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+            }
         } else {
             $q   = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title);";
         }
