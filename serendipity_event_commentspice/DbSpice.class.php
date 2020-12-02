@@ -41,16 +41,37 @@ class DbSpice
         }
         // Version 2 updates
         if ($obj->get_config((PLUGIN_EVENT_COMMENTSPICE_CNAME_DBCONFIG)<2)) {
-            $q = "ALTER TABLE {$serendipity['dbPrefix']}commentspice" .
-                " ADD COLUMN promo_name nvarchar(200),".
-                " ADD COLUMN promo_url nvarchar(250);";
+            if (stristr($serendipity['dbType'], 'postgres')) {
+                $q = "ALTER TABLE {$serendipity['dbPrefix']}commentspice" .
+                    " ADD COLUMN promo_name varchar(200),".
+                    " ADD COLUMN promo_url varchar(250);";
+            } else {
+                $q = "ALTER TABLE {$serendipity['dbPrefix']}commentspice" .
+                    " ADD COLUMN promo_name nvarchar(200),".
+                    " ADD COLUMN promo_url nvarchar(250);";
+            }
             serendipity_db_query($q);
             $obj->set_config(PLUGIN_EVENT_COMMENTSPICE_CNAME_DBCONFIG, 2);
         }
         // Version 3 updates
         if ($obj->get_config((PLUGIN_EVENT_COMMENTSPICE_CNAME_DBCONFIG)<3)) {
-            $q = "CREATE INDEX idx_comments_email" .
-                  " ON {$serendipity['dbPrefix']}comments (email(191));";
+            if ($serendipity['dbType'] == 'mysqli') {
+                $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+                if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
+                    $db_version_match = explode('-', $serendipity['db_server_info']);
+                    if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                        $q = "CREATE INDEX idx_comments_email ON {$serendipity['dbPrefix']}comments (email);";
+                    } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                        $q = "CREATE INDEX idx_comments_email ON {$serendipity['dbPrefix']}comments (email);"; // max key 1000 bytes - well, field is varchar(200)
+                    } else {
+                        $q = "CREATE INDEX idx_comments_email ON {$serendipity['dbPrefix']}comments (email(191));"; // 191 - old MyISAMs
+                    }
+                } else {
+                    $q = "CREATE INDEX idx_comments_email ON {$serendipity['dbPrefix']}comments (email(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                }
+            } else {
+                $q = "CREATE INDEX idx_comments_email ON {$serendipity['dbPrefix']}comments (email));";
+            }
             serendipity_db_query($q); // if it already exists, it won't be created
             $obj->set_config(PLUGIN_EVENT_COMMENTSPICE_CNAME_DBCONFIG, 3);
         }
@@ -61,7 +82,7 @@ class DbSpice
             serendipity_db_query($q);
             $obj->set_config(PLUGIN_EVENT_COMMENTSPICE_CNAME_DBCONFIG, 4);
         }
-        // nvarchar supports multibyte characters
+        // nvarchar (NATIONAL VARCHAR) supports multibyte characters is a synonym for varchar with UTF-8
     }
 
     static function countComments($email)

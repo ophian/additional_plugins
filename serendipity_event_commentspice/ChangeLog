@@ -1,3 +1,9 @@
+2.00:
+-----
+ * Raise requirement to Styx 3.2
+ * Set database INDEX key length by installed database versions (MariaDB >= 10.5 preferred)
+ * Trying to allow postgres tables
+
 1.16:
 -----
  * Secure some external target _blank links
