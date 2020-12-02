@@ -16,10 +16,10 @@ class serendipity_event_cronjob extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CRONJOB_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '1.2');
+        $propbag->add('version',       '2.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'php'         => '4.1.0'
+            'serendipity' => '3.2',
+            'php'         => '7.3'
         ));
 
         $hooks = array('frontend_configure' => true, 'frontend_footer' => true, 'cronjob');
@@ -113,9 +113,21 @@ class serendipity_event_cronjob extends serendipity_event
             $sql = serendipity_db_schema_import($q);
 
             if ($serendipity['dbType'] == 'mysqli') {
-                $q   = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type(191));";
+                $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+                if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
+                    $db_version_match = explode('-', $serendipity['db_server_info']);
+                    if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                        $q = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type);";
+                    } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                        $q = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type(250));"; // max key 1000 bytes
+                    } else {
+                        $q = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type(191));"; // 191 - old MyISAMs
+                    }
+                } else {
+                    $q = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                }
             } else {
-                $q   = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type);";
+                $q = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type);";
             }
             $sql = serendipity_db_schema_import($q);
             $this->set_config('db_ver', 2);
