@@ -157,8 +157,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_commentspice</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 30 Jun 2020 09:42:07 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Wed, 02 Dec 2020 13:39:18 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -211,8 +211,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cronjob</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_cronjob&lt;br /&gt;Cronjob-Planer&lt;/b&gt;&lt;br /&gt;Dieses Plugin führt andere Plugins, die regelmäßig bestimmte Aufgaben ausführen sollen, in bestimmten Zeitabständen aus. Einzelheiten finden Sie in der Konfiguration dieses Plugins.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 18:08:39 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_cronjob&lt;br /&gt;Cronjob-Planer&lt;/b&gt;&lt;br /&gt;Dieses Plugin führt andere Plugins, die regelmäßig bestimmte Aufgaben ausführen sollen, in bestimmten Zeitabständen aus. Einzelheiten finden Sie in der Konfiguration dieses Plugins.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Wed, 02 Dec 2020 13:12:41 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_cronjob</guid>
 </item>
 <item>
@@ -364,8 +364,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_facebook</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook (Experimentell!)&lt;/b&gt;&lt;br /&gt;Importiert Kommentare von Facebook-Posts (vergleichbar RSS-Graffiti) zurück in den Blog. Bettet auch Facebook-OpenGraph-Meta-Tags in den Blog ein.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 21 Oct 2020 19:14:22 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook (Experimentell!)&lt;/b&gt;&lt;br /&gt;Importiert Kommentare von Facebook-Posts (vergleichbar RSS-Graffiti) zurück in den Blog. Bettet auch Facebook-OpenGraph-Meta-Tags in den Blog ein.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Wed, 02 Dec 2020 13:11:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>
@@ -1165,8 +1165,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_todolist</link>
 <category>Event Plugins</category>
 <author>Steven Tonnesen, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;ToDo/Projekt-Liste&lt;/b&gt;&lt;br /&gt;Verwaltet eine Liste von Projekten und deren aktuellem Status&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 18 Aug 2019 11:43:41 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;ToDo/Projekt-Liste&lt;/b&gt;&lt;br /&gt;Verwaltet eine Liste von Projekten und deren aktuellem Status&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Wed, 02 Dec 2020 13:15:21 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_todolist</guid>
 </item>
 <item>
@@ -1273,8 +1273,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_wikilinks</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Freie Wiki-Links für Einträge&lt;/b&gt;&lt;br /&gt;Ermöglicht Links zu blog-internen Einträgen via [[Titel]], Links zu Statischen Seiten via ((Titel)) und einen Link zu beidem via {{Titel}}. Zudem wird ein Button zu internen Einträgen bereitgestellt. Referenzen können am Ende eines Blogeintrags eingehangen werden.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:25:24 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Freie Wiki-Links für Einträge&lt;/b&gt;&lt;br /&gt;Ermöglicht Links zu blog-internen Einträgen via [[Titel]], Links zu Statischen Seiten via ((Titel)) und einen Link zu beidem via {{Titel}}. Zudem wird ein Button zu internen Einträgen bereitgestellt. Referenzen können am Ende eines Blogeintrags eingehangen werden.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Wed, 02 Dec 2020 13:20:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_wikilinks</guid>
 </item>
 <item>
@@ -1344,9 +1344,9 @@
 <title>Microblogging (Twitter,Identica): Fügt einen Twitter/Identica Client zum Administrator Interface hinzu, sucht nach Tweetbacks und kündigt neue Artikel über Twitter/Identica Accounts an.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_twitter</link>
 <category>Event Plugins</category>
-<author>Grischa Brockhaus, Peter Heimann</author>
-<content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Microblogging (Twitter,Identica)&lt;/b&gt;&lt;br /&gt;Fügt einen Twitter/Identica Client zum Administrator Interface hinzu, sucht nach Tweetbacks und kündigt neue Artikel über Twitter/Identica Accounts an.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 29 Jun 2020 18:03:16 +0200</pubDate>
+<author>Grischa Brockhaus, Peter Heimann, Ian Styx</author>
+<content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Microblogging (Twitter,Identica)&lt;/b&gt;&lt;br /&gt;Fügt einen Twitter/Identica Client zum Administrator Interface hinzu, sucht nach Tweetbacks und kündigt neue Artikel über Twitter/Identica Accounts an.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Wed, 02 Dec 2020 14:12:47 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>

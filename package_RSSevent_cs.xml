@@ -157,8 +157,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_commentspice</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Komentářové koření&lt;/b&gt;&lt;br /&gt;Okořeňte formulář pro zadání komentářů pomocí twitteru komentujícího, odkazem na poslední článek nebo pravidly pro ne-sledování.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 30 Jun 2020 09:42:07 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Komentářové koření&lt;/b&gt;&lt;br /&gt;Okořeňte formulář pro zadání komentářů pomocí twitteru komentujícího, odkazem na poslední článek nebo pravidly pro ne-sledování.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Wed, 02 Dec 2020 13:39:18 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -211,8 +211,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cronjob</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_cronjob&lt;br /&gt;Plánovač úloh&lt;/b&gt;&lt;br /&gt;Tento plugin periodicky vykonává pluginy, které poskytují/vyžadují opakované vykonávání. Podrobnosti v konfiguraci pluginu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 18:08:39 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_cronjob&lt;br /&gt;Plánovač úloh&lt;/b&gt;&lt;br /&gt;Tento plugin periodicky vykonává pluginy, které poskytují/vyžadují opakované vykonávání. Podrobnosti v konfiguraci pluginu.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Wed, 02 Dec 2020 13:12:41 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_cronjob</guid>
 </item>
 <item>
@@ -364,8 +364,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_facebook</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook&lt;/b&gt;&lt;br /&gt;Importuje do blogu komentáře u příspěvků na facebooku (pomocí RSS Graffiti). Také do blogu vloží facebookové OpenGraph Meta-Tagy. Pamatujte, že přidání talčítka &quot;Líbí se mi&quot; k příspěvkům blogu je zajišťováno pluginem serendipity_event_social!&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 21 Oct 2020 19:14:22 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook&lt;/b&gt;&lt;br /&gt;Importuje do blogu komentáře u příspěvků na facebooku (pomocí RSS Graffiti). Také do blogu vloží facebookové OpenGraph Meta-Tagy. Pamatujte, že přidání talčítka &quot;Líbí se mi&quot; k příspěvkům blogu je zajišťováno pluginem serendipity_event_social!&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Wed, 02 Dec 2020 13:11:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>
@@ -1165,8 +1165,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_todolist</link>
 <category>Event Plugins</category>
 <author>Steven Tonnesen, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;Seznam úkolů / ToDo list / projektové řízení&lt;/b&gt;&lt;br /&gt;Správa seznamu projektů/úkolů a jejich splnění v procentech&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 18 Aug 2019 11:43:41 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;Seznam úkolů / ToDo list / projektové řízení&lt;/b&gt;&lt;br /&gt;Správa seznamu projektů/úkolů a jejich splnění v procentech&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Wed, 02 Dec 2020 13:15:21 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_todolist</guid>
 </item>
 <item>
@@ -1273,8 +1273,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_wikilinks</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Wiki odkazy v příspěvcích&lt;/b&gt;&lt;br /&gt;V příspěvcích můžete zadat odkazy na existující/nové příspěvky pomocí [[nadpis příspěvku]], na statické stránky pomocí ((nadpis stránky)) a na obojí pomocí {{nadpis}}.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:25:24 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Wiki odkazy v příspěvcích&lt;/b&gt;&lt;br /&gt;V příspěvcích můžete zadat odkazy na existující/nové příspěvky pomocí [[nadpis příspěvku]], na statické stránky pomocí ((nadpis stránky)) a na obojí pomocí {{nadpis}}.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Wed, 02 Dec 2020 13:20:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_wikilinks</guid>
 </item>
 <item>
@@ -1344,9 +1344,9 @@
 <title>Mikroblogování (Twitter, Identica): Přidává klienta Twitter/Identica do administrační sekce a stahuje nové tweety a oznámuje nové články na účtu mikroblogu.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_twitter</link>
 <category>Event Plugins</category>
-<author>Grischa Brockhaus, Peter Heimann</author>
-<content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Mikroblogování (Twitter, Identica)&lt;/b&gt;&lt;br /&gt;Přidává klienta Twitter/Identica do administrační sekce a stahuje nové tweety a oznámuje nové články na účtu mikroblogu.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 29 Jun 2020 18:03:16 +0200</pubDate>
+<author>Grischa Brockhaus, Peter Heimann, Ian Styx</author>
+<content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Mikroblogování (Twitter, Identica)&lt;/b&gt;&lt;br /&gt;Přidává klienta Twitter/Identica do administrační sekce a stahuje nové tweety a oznámuje nové články na účtu mikroblogu.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Wed, 02 Dec 2020 14:12:47 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>
