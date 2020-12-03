@@ -22,8 +22,8 @@ class serendipity_event_autotitle extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_AUTOTITLE_NAME);
         $propbag->add('description',   PLUGIN_EVENT_AUTOTITLE_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Malte Paskuda');
-        $propbag->add('version',       '0.3');
+        $propbag->add('author',        'Malte Paskuda, Ian Styx');
+        $propbag->add('version',       '0.4');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'php'         => '4.1.0'
@@ -102,10 +102,10 @@ class serendipity_event_autotitle extends serendipity_event
         if (isset($hooks[$event])) {
             switch($event) {
                 case 'frontend_display':
-                    foreach($this->markup_elements AS $temp) {
-                        if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                                @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                                !in_array($this->instance, (array)$serendipity['POST']['properties']['disable_markups'])) {
+                    foreach ($this->markup_elements AS $temp) {
+                        if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                        &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                        &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
 
                             @include_once 'Cache/Lite.php';
 
