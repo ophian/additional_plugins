@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '2.8.1');
+        $propbag->add('version',        '2.9.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.6.0'
@@ -293,10 +293,10 @@ class serendipity_event_lightbox extends serendipity_event
                         }
                     }
 
-                    foreach ($this->markup_elements as $temp) {
-                        if (isset($eventData[$temp['element']]) && serendipity_db_bool($this->get_config($temp['name'], 'true')) &&
-                                @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                                !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                    foreach ($this->markup_elements AS $temp) {
+                        if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                        &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                        &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = $temp['element'];
 
                             $replacement_count = 0;
