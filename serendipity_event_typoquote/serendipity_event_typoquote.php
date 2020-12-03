@@ -17,8 +17,8 @@ class serendipity_event_typoquote extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_QUOTES_NAME);
         $propbag->add('description',   PLUGIN_EVENT_QUOTES_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Jonathan Spalink and Matthew Groeninger');
-        $propbag->add('version',       '1.6');
+        $propbag->add('author',        'Jonathan Spalink and Matthew Groeninger, Ian Styx');
+        $propbag->add('version',       '1.7');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -122,9 +122,9 @@ class serendipity_event_typoquote extends serendipity_event
                         }
                     } else {
                         foreach ($this->markup_elements AS $temp) {
-                            if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                                    @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                                    !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                            if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                            &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                            &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                                 $element = $temp['element'];
 
                                 # First find all the tags... We want to keep straight quotes in them.
