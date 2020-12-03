@@ -18,12 +18,12 @@ class serendipity_event_smartymarkup extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_SMARTYMARKUP_NAME);
         $propbag->add('description',   PLUGIN_EVENT_SMARTYMARKUP_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.17');
+        $propbag->add('author',        'Garvin Hicking, Ian Styx');
+        $propbag->add('version',       '1.18');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
-            'php'         => '5.2.0'
+            'php'         => '5.3.0'
         ));
         $propbag->add('groups', array('MARKUP'));
         $propbag->add('cachable_events', array('frontend_display' => true));
@@ -165,11 +165,10 @@ class serendipity_event_smartymarkup extends serendipity_event
                         return;
                     }
 
-                    foreach($this->markup_elements AS $temp) {
-                        if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance]))
-                        {
+                    foreach ($this->markup_elements AS $temp) {
+                        if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                        &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                        &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
 
                             if (isset($eventData['ctitle']) && $temp['element'] == 'body') {
                                 // s9y doesn't properly distinct between BODY and COMMENT fields and could be executed for both.
@@ -236,6 +235,7 @@ class serendipity_event_smartymarkup extends serendipity_event
             return false;
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
