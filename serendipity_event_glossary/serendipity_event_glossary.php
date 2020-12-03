@@ -29,8 +29,8 @@ class serendipity_event_glossary extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_GLOSSARY_NAME);
         $propbag->add('description',   PLUGIN_EVENT_GLOSSARY_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author', 'Rob Antonishen');
-        $propbag->add('version', '1.8');
+        $propbag->add('author', 'Rob Antonishen, Ian Styx');
+        $propbag->add('version', '1.9');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -160,10 +160,10 @@ class serendipity_event_glossary extends serendipity_event
 
                     /* go through markup elements and call the markup function if there are terms*/
                     if (count($terms) > 0) {
-                        foreach ($this->markup_elements as $temp) {
-                            if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                        foreach ($this->markup_elements AS $temp) {
+                            if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                            &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                            &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                                 $element = $temp['element'];
                                 $eventData[$element] = $this->_glossary_markup($eventData[$element], $terms);
                             }
