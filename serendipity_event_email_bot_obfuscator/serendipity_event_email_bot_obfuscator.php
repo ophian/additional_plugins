@@ -18,7 +18,7 @@ class serendipity_event_email_bot_obfuscator extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Stephan Manske, Ian Styx');
-        $propbag->add('version',       '1.06');
+        $propbag->add('version',       '1.07');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -192,12 +192,10 @@ class serendipity_event_email_bot_obfuscator extends serendipity_event
             switch($event) {
 
                 case 'frontend_display':
-                    foreach ($this->markup_elements as $temp) {
-                        if (serendipity_db_bool($this->get_config($temp['name'], true)) &&
-                            isset($eventData[$temp['element']]) &&
-                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance]))
-                        {
+                    foreach ($this->markup_elements AS $temp) {
+                        if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                        &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                        &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = &$eventData[$temp['element']];
                             $element = $this->anti_email_spam($element);
                         }
