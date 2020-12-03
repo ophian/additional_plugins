@@ -17,8 +17,8 @@ class serendipity_event_regexpmarkup extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_REGEXPMARKUP_NAME);
         $propbag->add('description',   PLUGIN_EVENT_REGEXPMARKUP_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Rob Antonishen');
-        $propbag->add('version',       '1.1');
+        $propbag->add('author',        'Rob Antonishen, Ian Styx');
+        $propbag->add('version',       '1.2');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -89,10 +89,10 @@ class serendipity_event_regexpmarkup extends serendipity_event
             switch($event) {
               case 'frontend_display':
 
-                foreach ($this->markup_elements as $temp) {
-                    if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                foreach ($this->markup_elements AS $temp) {
+                    if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                    &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                    &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                         $element = $temp['element'];
                         $this->markup($eventData[$element]);
                     }
