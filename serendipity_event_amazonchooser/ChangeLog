@@ -1,3 +1,7 @@
+0.85:
+-----
+ * Fix and improve markup_element check for consistency
+
 0.84:
 -----
  * Fixup some more S9y Series 1 leftover variable conditioning for 0.81
