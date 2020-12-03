@@ -1,3 +1,7 @@
+2.25:
+-----
+ * Fix and improve markup_element check for consistency
+
 2.24:
 -----
  * Remove deprecated workaround for wrong spelled separator inspectConfig types
