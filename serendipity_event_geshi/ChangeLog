@@ -1,3 +1,7 @@
+1.2:
+-----
+ * Fix and improve markup_element check for consistency
+
 1.1:
 ----
  * Upgrade to Geshi 1.0.9.0 + master (October 02, 2018)
