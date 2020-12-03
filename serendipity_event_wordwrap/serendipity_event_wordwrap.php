@@ -18,8 +18,8 @@ class serendipity_event_wordwrap extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_WORDWRAP_NAME);
         $propbag->add('description',   PLUGIN_EVENT_WORDWRAP_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.05');
+        $propbag->add('author',        'Garvin Hicking, Ian Styx');
+        $propbag->add('version',       '1.06');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -133,21 +133,20 @@ class serendipity_event_wordwrap extends serendipity_event
                     $this->get_config('char')
                 );
 
-                foreach ($this->markup_elements as $temp) {
-                    if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                foreach ($this->markup_elements AS $temp) {
+                    if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                    &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                    &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                         $element = $temp['element'];
                         $eventData[$element] = wordwrap($eventData[$element], $this->get_config('length'), $char, $this->get_config('hardbreak'));
                     }
                 }
-                return true;
                 break;
 
-              default:
-                return false;
+                default:
+                    return false;
             }
-
+            return true;
         } else {
             return false;
         }
