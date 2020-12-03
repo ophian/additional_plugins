@@ -119,9 +119,9 @@
 <description>Fügt einen Button zum Artikeleditor hinzu, über den eine Amazon.com Suche für Produkte ausgeführt werden kann und die Ergebnisse in den Eintrag eingebettet werden</description>
 <maintainers><maintainer><name>Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.84</version>
+  <version>0.85</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-06-07</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -237,11 +237,11 @@
 <summary>Markup: Auto-Titel</summary>
 <groups>MARKUP</groups>
 <description>Fügt automatisch den Titel der verlinkten Seite als als &quot;title&quot;-Tag zum Link hinzu.</description>
-<maintainers><maintainer><name>Malte Paskuda</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.3</version>
+  <version>0.4</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-17</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_autotitle">
       <file>ChangeLog</file>
@@ -1078,17 +1078,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_contentrewrite</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_contentrewrite/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Wort-Ersetzer</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Ersetzt ein Wort mit einem neuen Inhalt, z.B. für Akronyme</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.4</version>
+  <version>1.4.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2020-08-24</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_contentrewrite">
+      <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cn.inc.php</file>
       <file>lang_cs.inc.php</file>
@@ -1122,6 +1124,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_contentrewrite/ChangeLog</file>
     <file>serendipity_event_contentrewrite/lang_bg.inc.php</file>
     <file>serendipity_event_contentrewrite/lang_cn.inc.php</file>
     <file>serendipity_event_contentrewrite/lang_cs.inc.php</file>
@@ -2070,9 +2073,9 @@
 <description>Macht E-Mail-Adressen klickbar, aber verschleiert sie, um sie vor Spambots zu schützen</description>
 <maintainers><maintainer><name>Stephan Manske, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.06</version>
+  <version>1.07</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_email_bot_obfuscator">
       <file>ChangeLog</file>
@@ -3259,11 +3262,11 @@
 <summary>Markup: Gallery</summary>
 <groups>MARKUP,IMAGES</groups>
 <description>Fügt ein Gallery-Album oder Bild in Form von Markup ein.</description>
-<maintainers><maintainer><name>Rob Antonishen, Alexander Mieland</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Rob Antonishen, Alexander Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.16</version>
+  <version>1.17</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-08-24</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_galleryimage">
       <file>ChangeLog</file>
@@ -3443,11 +3446,11 @@
 <summary>Textformatierung: GeSHi</summary>
 <groups>MARKUP</groups>
 <description>Computer Language Color Syntax Highlighting. Benutzen Sie das Tag [geshi lang=php][/geshi]</description>
-<maintainers><maintainer><name>David Rolston</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>David Rolston, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.1</version>
+  <version>1.2</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2020-08-24</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_geshi">
       <file>CHANGELOG</file>
@@ -4052,17 +4055,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_glossary</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_glossary/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Glossary</summary>
 <groups>MARKUP</groups>
 <description>A user defined glossary as highlighted text with a tooltip.</description>
-<maintainers><maintainer><name>Rob Antonishen</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Rob Antonishen, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8</version>
+  <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-08-17</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_glossary">
+      <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -4079,6 +4084,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_glossary/ChangeLog</file>
     <file>serendipity_event_glossary/lang_bg.inc.php</file>
     <file>serendipity_event_glossary/lang_cs.inc.php</file>
     <file>serendipity_event_glossary/lang_cz.inc.php</file>
@@ -4100,11 +4106,11 @@
 <summary>Google Analytics</summary>
 <groups>STATISTICS</groups>
 <description>Dieses Plugin fügt Google Analytics Funktionalität hinzu. So können auch externe Links oder Downloads verfolgt werden.</description>
-<maintainers><maintainer><name>&lt;a href=&quot;https://github.com/kleinerChemiker&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;kleinerChemiker&lt;/a&gt;</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
+  <version>1.7</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-06-29</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_google_analytics">
       <file>ChangeLog</file>
@@ -4748,9 +4754,9 @@
 <description>Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediathek.</description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.22</version>
+  <version>1.23</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <date>2020-07-01</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
@@ -4808,9 +4814,9 @@
 <description>Ermöglicht das Hinzufügen von HTML-ähnlichen Tags um Teile von anderen Einträgen einzubinden. Benutzen Sie folgende Formatierung: [s9y-include-entry:XXX:YYY]. Ersetzen Sie XXX mit der Ziel-ID des Eintrags und YYY mit dem Zielfeldnamen der Datenbank (z.B. &quot;body&quot;, &quot;extended&quot;, &quot;title&quot; usw.).</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.24</version>
+  <version>2.25</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-11-07</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -5070,9 +5076,9 @@
 <description>Lightbox JS ist ein Skript, mit dem Bilder der aktuellen Seite (via Modal Overlay pattern) überlagert angezeigt werden können. Es lässt sich schnell einrichten, um Popup-Bilder für den Benutzer ansprechend oder gemeinsam karusselartig über Javascripte zu präsentieren. Dieses Plugin durchsucht Ihre Einträge und fügt jedem Bild-verweisenden Link ein HTML &quot;rel-Attribut&quot; hinzu, um die lightbox Anzeige verwenden zu können. Wenn Sie also möchten, dass Ihre Vorschaubilder groß angezeigt werden, müssen Sie Ihre Bilder als Links zur großen Version einfügen.</description>
 <maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.8.1</version>
+  <version>2.9.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-11-07</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
       <file>ChangeLog</file>
@@ -6262,11 +6268,11 @@
 <summary>MimeTex Tex Interpreter</summary>
 <groups>MARKUP</groups>
 <description>Erzeugt ein GIF von TeX-Ausdrücken mittels MimeTex</description>
-<maintainers><maintainer><name>Matthew Groeninger</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
+  <version>1.7</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2019-07-13</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_mimetex">
       <file>ChangeLog</file>
@@ -8400,11 +8406,11 @@
 <summary>Textformatierung: Regexp</summary>
 <groups>MARKUP</groups>
 <description>Textformatierung mittels benutzerdefinierter regexp-Datei. Beachten Sie die Beispieldateien im &quot;regexps&quot;-Unterverzeichnis dieses Plugins.</description>
-<maintainers><maintainer><name>Rob Antonishen</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Rob Antonishen, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.1</version>
+  <version>1.2</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-07-01</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_regexpmarkup">
       <file>ChangeLog</file>
@@ -8516,9 +8522,9 @@
 <description>Skaliert Grafiken mit Hilfe von HTML5 und dem s9y-Backend passend zur Breite des Viewports des Besuchers</description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.9</version>
+  <version>1.0</version>
   <requirements:s9yVersion>2.3.1</requirements:s9yVersion>
-  <date>2020-05-28</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_responsiveimages">
       <file>ChangeLog</file>
@@ -8548,9 +8554,9 @@
 <description>Hebt Suchwörter hervor, die ein User in einer Suchmaschine eingegeben hat</description>
 <maintainers><maintainer><name>Tom Sommer, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8.5</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2019-08-09</date>
+  <version>1.9</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_searchhighlight">
       <file>ChangeLog</file>
@@ -8676,11 +8682,11 @@
 <summary>Textformatierung: Smarty Parsing</summary>
 <groups>MARKUP</groups>
 <description>Parst Smarty-Anweisungen im Artikeltext. Dies ist nicht nutzbar in Kombination mit Syntax Code-Highlightern oder Multilingual tags in Textfeldern!</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.17</version>
+  <version>1.18</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2018-08-20</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_smartymarkup">
       <file>ChangeLog</file>
@@ -9915,11 +9921,11 @@
 <summary>Textformatierung: Wiki</summary>
 <groups>MARKUP</groups>
 <description>Wiki-Formatierung durchführen</description>
-<maintainers><maintainer><name>Tobias Schlitt</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Tobias Schlitt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.10</version>
+  <version>1.11</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-11-07</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_textwiki">
       <file>ChangeLog</file>
@@ -10717,11 +10723,11 @@
 <summary>Tooltips</summary>
 <groups>BACKEND_EDITOR,MARKUP</groups>
 <description>Aktiviert Tooltips für Textbereiche und Bilder.</description>
-<maintainers><maintainer><name>Enrico Stahn</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Enrico Stahn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8</version>
+  <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-11-07</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_tooltips">
       <file>ChangeLog</file>
@@ -10843,9 +10849,9 @@
 <description>Click auf Externe Links verfolgen</description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.15</version>
+  <version>1.16</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2020-08-24</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_trackexits">
       <file>ChangeLog</file>
@@ -11020,17 +11026,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_typoquote</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_typoquote/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Textformatierung: Typografische Anführungszeichen</summary>
 <groups>MARKUP</groups>
 <description>Wandelt normale Anführungszeichen in typografische Anführungszeichen</description>
-<maintainers><maintainer><name>Jonathan Spalink and Matthew Groeninger</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Jonathan Spalink and Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
+  <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-08-21</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_typoquote">
+      <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -11048,6 +11056,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_typoquote/ChangeLog</file>
     <file>serendipity_event_typoquote/lang_bg.inc.php</file>
     <file>serendipity_event_typoquote/lang_cs.inc.php</file>
     <file>serendipity_event_typoquote/lang_cz.inc.php</file>
@@ -11441,9 +11450,9 @@
 <description>Ermöglicht Links zu blog-internen Einträgen via [[Titel]], Links zu Statischen Seiten via ((Titel)) und einen Link zu beidem via {{Titel}}. Zudem wird ein Button zu internen Einträgen bereitgestellt. Referenzen können am Ende eines Blogeintrags eingehangen werden.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.00</version>
+  <version>1.01</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <date>2020-12-02</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -11486,17 +11495,19 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_wordwrap</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_wordwrap/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Textformatierung: Texte umbrechen</summary>
 <groups>MARKUP</groups>
 <description>Fügt Umbrüche für lange Einträge/Kommentare ein.</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.05</version>
+  <version>1.06</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2018-08-17</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_wordwrap">
+      <file>ChangeLog</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
@@ -11512,6 +11523,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_wordwrap/ChangeLog</file>
     <file>serendipity_event_wordwrap/lang_cs.inc.php</file>
     <file>serendipity_event_wordwrap/lang_cz.inc.php</file>
     <file>serendipity_event_wordwrap/lang_de.inc.php</file>

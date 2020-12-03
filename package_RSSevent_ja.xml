@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon メディアボタン&lt;/b&gt;&lt;br /&gt;あなたのエントリに Amazon を検索するためのボタンを追加し、エントリに挿入することができるほうになります。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 07 Jun 2020 14:42:14 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:23:21 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -48,9 +48,9 @@
 <title>Markup: Autotitle: Set the title-tag into the links of the entry.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_autotitle</link>
 <category>Event Plugins</category>
-<author>Malte Paskuda</author>
+<author>Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autotitle&lt;br /&gt;Markup: Autotitle&lt;/b&gt;&lt;br /&gt;Set the title-tag into the links of the entry.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 17 Aug 2018 15:58:08 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:22:48 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_autotitle</guid>
 </item>
 <item>
@@ -183,9 +183,9 @@
 <title>コンテントリライター: 単語を新しく選択された文字列に置換します (useful for acronyms)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_contentrewrite</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking</author>
+<author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contentrewrite&lt;br /&gt;コンテントリライター&lt;/b&gt;&lt;br /&gt;単語を新しく選択された文字列に置換します (useful for acronyms)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 24 Aug 2020 15:05:39 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:21:54 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_contentrewrite</guid>
 </item>
 <item>
@@ -295,7 +295,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Stephan Manske, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_email_bot_obfuscator&lt;br /&gt;Markup: clickable email addresses - but with antispam&lt;/b&gt;&lt;br /&gt;Makes email addresses clickable, but obfuscates them to block spam harvester bots&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:18:42 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:20:46 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_email_bot_obfuscator</guid>
 </item>
 <item>
@@ -446,9 +446,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>マークアップ: Gallery 画像: Gallery アルバムか画像を用いたマークアップテキストの挿入です。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_galleryimage</link>
 <category>Event Plugins</category>
-<author>Rob Antonishen, Alexander Mieland</author>
+<author>Rob Antonishen, Alexander Mieland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;マークアップ: Gallery 画像&lt;/b&gt;&lt;br /&gt;Gallery アルバムか画像を用いたマークアップテキストの挿入です。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 24 Aug 2020 15:04:26 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:20:11 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_galleryimage</guid>
 </item>
 <item>
@@ -482,9 +482,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>Markup: GeSHi: Computer Language Color Syntax Highlighting. Tag usage: [geshi lang=lang_name [,ln={y|n}]]code snippet[/geshi]</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geshi</link>
 <category>Event Plugins</category>
-<author>David Rolston</author>
+<author>David Rolston, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_geshi&lt;br /&gt;Markup: GeSHi&lt;/b&gt;&lt;br /&gt;Computer Language Color Syntax Highlighting. Tag usage: [geshi lang=lang_name [,ln={y|n}]]code snippet[/geshi]&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Mon, 24 Aug 2020 15:05:18 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:19:41 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_geshi</guid>
 </item>
 <item>
@@ -500,18 +500,18 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>用語集: ユーザーが定義した用語集をハイライトテキストとツールチップにします。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_glossary</link>
 <category>Event Plugins</category>
-<author>Rob Antonishen</author>
+<author>Rob Antonishen, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_glossary&lt;br /&gt;用語集&lt;/b&gt;&lt;br /&gt;ユーザーが定義した用語集をハイライトテキストとツールチップにします。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 17 Aug 2018 16:06:23 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:19:02 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_glossary</guid>
 </item>
 <item>
 <title>Google Analytics: This plugin adds extended Google Analytic functionality to your Page like tracking external links or download links.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_google_analytics</link>
 <category>Event Plugins</category>
-<author>&lt;a href=&quot;https://github.com/kleinerChemiker&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;kleinerChemiker&lt;/a&gt;</author>
+<author>kleinerChemiker, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_google_analytics&lt;br /&gt;Google Analytics&lt;/b&gt;&lt;br /&gt;This plugin adds extended Google Analytic functionality to your Page like tracking external links or download links.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 29 Jun 2020 13:14:24 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:18:07 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_google_analytics</guid>
 </item>
 <item>
@@ -565,7 +565,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;メディアマネージャーの拡張されたオプション&lt;/b&gt;&lt;br /&gt;Allows extended options for inserting images from the media manager&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Wed, 01 Jul 2020 10:08:45 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:16:21 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -574,7 +574,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_includeentry&lt;br /&gt;Markup: Include entry data/templates/blocks&lt;/b&gt;&lt;br /&gt;Allows you to add HTML-style tags to your entry that includes parts of other entrys. Use this markup: [s9y-include-entry:XXX:YYY]. Replace XXX with the target entryid and YYY with the target field name (i.e. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). You can also use the new menu functions to maintain templates and blocks that can get inserted in between your entries.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 07 Nov 2020 15:05:11 +0100</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:15:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_includeentry</guid>
 </item>
 <item>
@@ -610,7 +610,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_lightbox&lt;br /&gt;Lightbox for entry images&lt;/b&gt;&lt;br /&gt;Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It's a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 07 Nov 2020 11:13:57 +0100</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:31:55 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_lightbox</guid>
 </item>
 <item>
@@ -743,9 +743,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>MimeTex/LaTeX TeX Interpreter: Create Gifs from TeX expressions using MimeTex or LaTeX</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mimetex</link>
 <category>Event Plugins</category>
-<author>Matthew Groeninger</author>
+<author>Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_mimetex&lt;br /&gt;MimeTex/LaTeX TeX Interpreter&lt;/b&gt;&lt;br /&gt;Create Gifs from TeX expressions using MimeTex or LaTeX&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 13 Jul 2019 10:18:21 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:14:44 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_mimetex</guid>
 </item>
 <item>
@@ -941,9 +941,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>Markup: RegexpMarkup: Mark up via user custom regexp files. See example files in &quot;regexps&quot; subdirectory of this plugin.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_regexpmarkup</link>
 <category>Event Plugins</category>
-<author>Rob Antonishen</author>
+<author>Rob Antonishen, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_regexpmarkup&lt;br /&gt;Markup: RegexpMarkup&lt;/b&gt;&lt;br /&gt;Mark up via user custom regexp files. See example files in &quot;regexps&quot; subdirectory of this plugin.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 01 Jul 2020 13:10:51 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:13:54 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_regexpmarkup</guid>
 </item>
 <item>
@@ -961,7 +961,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_responsiveimages&lt;br /&gt;Responsive Images&lt;/b&gt;&lt;br /&gt;Use HTML5 and the s9y backend to scale images to the visitors viewport width&lt;br/&gt;For: Serendipity 2.3.1</content:encoded>
-<pubDate>Thu, 28 May 2020 18:02:39 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:12:56 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_responsiveimages</guid>
 </item>
 <item>
@@ -969,8 +969,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_searchhighlight</link>
 <category>Event Plugins</category>
 <author>Tom Sommer, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;検索キーワードをハイライト&lt;/b&gt;&lt;br /&gt;ページを見つけるために検索エンジンからの参照に使用されたキーワードをハイライトします。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:23:00 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;検索キーワードをハイライト&lt;/b&gt;&lt;br /&gt;ページを見つけるために検索エンジンからの参照に使用されたキーワードをハイライトします。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Thu, 03 Dec 2020 10:12:24 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_searchhighlight</guid>
 </item>
 <item>
@@ -986,9 +986,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>Markup: Smarty Parsing: Parses Smarty instructions inside the article text. This is not usable in combination with syntax code-highlighters or multilingual tags in entry context fields!</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_smartymarkup</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking</author>
+<author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_smartymarkup&lt;br /&gt;Markup: Smarty Parsing&lt;/b&gt;&lt;br /&gt;Parses Smarty instructions inside the article text. This is not usable in combination with syntax code-highlighters or multilingual tags in entry context fields!&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Mon, 20 Aug 2018 17:00:36 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:39:32 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_smartymarkup</guid>
 </item>
 <item>
@@ -1130,9 +1130,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>マークアップ: Wiki: Text_Wiki を使用してテキストをマークアップします。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_textwiki</link>
 <category>Event Plugins</category>
-<author>Tobias Schlitt</author>
+<author>Tobias Schlitt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;マークアップ: Wiki&lt;/b&gt;&lt;br /&gt;Text_Wiki を使用してテキストをマークアップします。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 07 Nov 2020 15:21:30 +0100</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:07:03 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_textwiki</guid>
 </item>
 <item>
@@ -1175,9 +1175,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>ツールチップ: ツールチップテキストと画像を起動します。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_tooltips</link>
 <category>Event Plugins</category>
-<author>Enrico Stahn</author>
+<author>Enrico Stahn, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_tooltips&lt;br /&gt;ツールチップ&lt;/b&gt;&lt;br /&gt;ツールチップテキストと画像を起動します。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 07 Nov 2020 15:29:44 +0100</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:05:43 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_tooltips</guid>
 </item>
 <item>
@@ -1195,7 +1195,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackexits&lt;br /&gt;マークアップ: 退出追跡&lt;/b&gt;&lt;br /&gt;外部 URL のクリックを追跡します。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 24 Aug 2020 15:06:17 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:05:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_trackexits</guid>
 </item>
 <item>
@@ -1211,9 +1211,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>Markup: Typographic Smart Quotes: Convert straight quotes to smart quotes.  Also can use SmartyPants PHP library (by Michel Fortin, based on SmartyPants by John Gruber) to provide further typographic replacement.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_typoquote</link>
 <category>Event Plugins</category>
-<author>Jonathan Spalink and Matthew Groeninger</author>
+<author>Jonathan Spalink and Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_typoquote&lt;br /&gt;Markup: Typographic Smart Quotes&lt;/b&gt;&lt;br /&gt;Convert straight quotes to smart quotes.  Also can use SmartyPants PHP library (by Michel Fortin, based on SmartyPants by John Gruber) to provide further typographic replacement.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 21 Aug 2018 20:22:15 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:04:41 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_typoquote</guid>
 </item>
 <item>
@@ -1276,16 +1276,16 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Free Wiki links for your entries&lt;/b&gt;&lt;br /&gt;You can specify new/existing links to your blog entries via [[title]], link to staticpages via ((title)) and link to both via {{title}}. References can be automatically appended to the blog entry.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Wed, 02 Dec 2020 13:20:09 +0100</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:03:55 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_wikilinks</guid>
 </item>
 <item>
 <title>Markup: Wordwrap long text: Inserts breaks for lengthy entries/comments</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_wordwrap</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking</author>
+<author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_wordwrap&lt;br /&gt;Markup: Wordwrap long text&lt;/b&gt;&lt;br /&gt;Inserts breaks for lengthy entries/comments&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 17 Aug 2018 16:21:52 +0200</pubDate>
+<pubDate>Thu, 03 Dec 2020 10:40:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_wordwrap</guid>
 </item>
 <item>
@@ -1348,7 +1348,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Peter Heimann, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Microblogging (Twitter,Identica)&lt;/b&gt;&lt;br /&gt;Adds a twitter/identica client to the admininistration interface, searches for tweetbacks and announces new articles to a microblogging account.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Wed, 02 Dec 2020 14:12:47 +0100</pubDate>
+<pubDate>Wed, 02 Dec 2020 15:37:00 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>
