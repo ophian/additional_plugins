@@ -23,11 +23,11 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian Styx');
-        $propbag->add('version',       '1.8.5');
+        $propbag->add('version',       '1.9');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '5.2'
         ));
         $propbag->add('event_hooks',   array('frontend_display' => true, 'css' => true));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
@@ -230,39 +230,33 @@ class serendipity_event_searchhighlight extends serendipity_event
             $_SESSION['search_referer'] = $this->uri;
 
             foreach ($this->markup_elements AS $temp) {
+                if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                    $element = &$eventData[$temp['element']];
 
-                if (!(serendipity_db_bool($this->get_config($temp['name'])) && isset($eventData[$temp['element']]))) {
-                    continue;
-                }
-
-                if (isset($eventData['properties']['ep_disable_markup_' . $this->instance])
-                ||  isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
-                    continue;
-                }
-
-                $element = &$eventData[$temp['element']];
-
-                //Iterate over search terms and do the highlighting.
-                foreach ($queries AS $word) {
-                    if (strpos($word, '*')) {
-                        // fuzzy search (case insensitive) all words containing term;
-                        $word = str_replace('*', '', $word);
-                        /* If the data contains HTML tags, we have to be careful not to break URIs and use a more complex preg */
-                        if (preg_match('/\<.+\>/', $element)) {
-                            $_pattern =  '/(?!<.*?)(' . preg_quote($word, '/') . ')(?![^<>]*?>)/im';
+                    //Iterate over search terms and do the highlighting.
+                    foreach ($queries AS $word) {
+                        if (strpos($word, '*')) {
+                            // fuzzy search (case insensitive) all words containing term;
+                            $word = str_replace('*', '', $word);
+                            /* If the data contains HTML tags, we have to be careful not to break URIs and use a more complex preg */
+                            if (preg_match('/\<.+\>/', $element)) {
+                                $_pattern =  '/(?!<.*?)(' . preg_quote($word, '/') . ')(?![^<>]*?>)/im';
+                            } else {
+                                $_pattern = '/(' . preg_quote($word, '/') . ')/im';
+                            }
                         } else {
-                            $_pattern = '/(' . preg_quote($word, '/') . ')/im';
+                            /* If the data contains HTML tags, we have to be careful not to break URIs and use a more complex preg */
+                            if (preg_match('/\<.+\>/', $element)) {
+                                $_pattern =  '/(?!<.*?)(\b'. preg_quote($word, '/') .'\b)(?![^<>]*?>)/im';
+                            } else {
+                                $_pattern = '/(\b'. preg_quote($word, '/') .'\b)/im';
+                            }
                         }
-                    } else {
-                        /* If the data contains HTML tags, we have to be careful not to break URIs and use a more complex preg */
-                        if (preg_match('/\<.+\>/', $element)) {
-                            $_pattern =  '/(?!<.*?)(\b'. preg_quote($word, '/') .'\b)(?![^<>]*?>)/im';
-                        } else {
-                            $_pattern = '/(\b'. preg_quote($word, '/') .'\b)/im';
-                        }
-                    }
-                    $element = preg_replace($_pattern, '<span class="serendipity_searchQuery">$1</span>', $element);
-                } // end foreach
+                        $element = preg_replace($_pattern, '<span class="serendipity_searchQuery">$1</span>', $element);
+                    } // end foreach
+                }
             } // end foreach
             return;
         } // end if
