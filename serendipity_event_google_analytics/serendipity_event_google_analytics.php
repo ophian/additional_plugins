@@ -17,8 +17,8 @@ class serendipity_event_google_analytics extends serendipity_event
 		$propbag->add ('name', PLUGIN_EVENT_GOOGLE_ANALYTICS_NAME);
 		$propbag->add ('description', PLUGIN_EVENT_GOOGLE_ANALYTICS_DESC);
 		$propbag->add ('stackable', false);
-		$propbag->add ('author', '<a href="https://github.com/kleinerChemiker" target="_blank" rel="noopener">kleinerChemiker</a>');
-		$propbag->add ('version', '1.6');
+		$propbag->add ('author', 'kleinerChemiker, Ian Styx');
+		$propbag->add ('version', '1.7');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -280,10 +280,10 @@ class serendipity_event_google_analytics extends serendipity_event
 						return true;
 					}
 					
-					foreach ( $this->markup_elements as $temp ) {
-						if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && isset($eventData[$temp['element']])
-                        && @!$eventData['properties']['ep_disable_markup_' . $this->instance]
-                        && !isset ($serendipity['POST']['properties']['disable_markup_' . $this->instance])
+                    foreach ($this->markup_elements AS $temp) {
+                        if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                        &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                        &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])
                         && ($analytics_track_downloads || $analytics_track_external)) {
 							$element = $temp['element'];
 							$eventData[$element] = preg_replace_callback ("#<a (.*)href=(\"|')(http://|https://|)([^\"']+)(\"|')([^>]*)>#isUm", array ($this, 'analytics_tracker_callback' ), $eventData[$element]);

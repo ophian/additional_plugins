@@ -1,3 +1,7 @@
+1.7:
+-----
+ * Fix and improve markup_element check for consistency
+
 1.6:
 -----
  * Secure authors target _blank link by living standard rel="noopener"
