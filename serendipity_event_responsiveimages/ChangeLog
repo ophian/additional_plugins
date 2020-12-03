@@ -1,3 +1,7 @@
+1.0:
+-----
+ * Fix and improve markup_element check for consistency
+
 0.9:
 -----
  * Add the original image to the response images srcset when

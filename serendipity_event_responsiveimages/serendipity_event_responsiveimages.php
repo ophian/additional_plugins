@@ -18,7 +18,7 @@ class serendipity_event_responsiveimages extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_RESPONSIVE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '0.9');
+        $propbag->add('version',       '1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.3.1',
         ));
@@ -94,9 +94,9 @@ class serendipity_event_responsiveimages extends serendipity_event
 
                 case 'frontend_display':
                     foreach ($this->markup_elements AS $temp) {
-                        if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && isset($eventData[$temp['element']]) &&
-                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                        if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                        &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                        &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = $temp['element'];
                             // some fixes which could either be fixed by eg [trim($matches[1]) . " " . $srcset . " src=";] in _responsive_markup(),
                             // but since there is more, do it generally on output
