@@ -1,3 +1,7 @@
+1.17:
+-----
+ * Fix and improve markup_element check for consistency
+
 1.16:
 -----
  * Secure target _blank image links by living standard rel="noopener"
