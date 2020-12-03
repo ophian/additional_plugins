@@ -17,8 +17,8 @@ class serendipity_event_mimetex extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_MIMETEX_NAME);
         $propbag->add('description',   PLUGIN_EVENT_MIMETEX_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Matthew Groeninger');
-        $propbag->add('version',       '1.6');
+        $propbag->add('author',        'Matthew Groeninger, Ian Styx');
+        $propbag->add('version',       '1.7');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -283,10 +283,10 @@ class serendipity_event_mimetex extends serendipity_event
                         $url2 = '" title="';
                         $url3 = '" alt="';
                         $url4 = '" \/>';
-                        foreach ($this->markup_elements as $temp) {
-                            if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                        foreach ($this->markup_elements AS $temp) {
+                            if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                            &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                            &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                                 $element = $temp['element'];
                                 $eventData[$element] = preg_replace('/(?<!\\\\)\[tex\](.*?)\[\/tex\]/e', "'$url1'.rawurlencode('\\1').'$url2'.'\\1'.'$url3'.'\\1'.'$url4'", $eventData[$element]);
                             }
