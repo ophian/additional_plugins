@@ -24,7 +24,7 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',       '1.00');
+        $propbag->add('version',       '1.01');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1',
@@ -214,10 +214,10 @@ class serendipity_event_wikilinks extends serendipity_event
 
                 case 'frontend_display':
                     $this->out_references = array();
-                    foreach ($this->markup_elements as $temp) {
-                        if (serendipity_db_bool($this->get_config($temp['name'], true)) && isset($eventData[$temp['element']]) &&
-                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                    foreach ($this->markup_elements AS $temp) {
+                        if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                        &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                        &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = $temp['element'];
 
                             $is_body = false;
