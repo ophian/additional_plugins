@@ -1,3 +1,13 @@
+6.17:
+-----
+ * FIXUP versioned database install stuff.
+   This should fix some errors of duplicating TABLE ALTERATIONs
+   and a regressional bad core API try to wrongly insert config (table) stuff into
+   the staticpage table by a wrong placed setupDB() call.
+ * With upcoming Styx 3.2 we NOW have proper table COLLATIONs set on install, following core table COLLATIONs.
+ * Fix for PHP 8 setCatPropForStaticpage() "Required parameter follows optional parameter"
+   Additionally it fixes some other non-isset variable warnings for PHP 8.
+
 6.16:
 -----
  * Change icon for password protected static page in list

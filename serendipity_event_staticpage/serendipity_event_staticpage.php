@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.16');
+        $propbag->add('version', '6.17');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -1011,7 +1011,7 @@ class serendipity_event_staticpage extends serendipity_event
         $built = $this->get_config('db_built', null);
         $fresh = false;
 
-        if ((empty($built)) && (!defined('STATICPAGE_UPGRADE_DONE')) && stristr($serendipity['dbType'], 'sqlite') === FALSE) {
+        if (empty($built) && !defined('STATICPAGE_UPGRADE_DONE') && stristr($serendipity['dbType'], 'sqlite') === FALSE) {
             serendipity_db_schema_import("CREATE TABLE {$serendipity['dbPrefix']}staticpages (
                     id {AUTOINCREMENT} {PRIMARY},
                     parent_id int(11) default '0',
@@ -1060,7 +1060,9 @@ class serendipity_event_staticpage extends serendipity_event
             foreach ($import AS $page) {
                 if (is_array($page)) {
                     serendipity_db_insert('staticpages', $page);
-                    @unlink($this->cachefile);
+                    if (file_exists($this->cachefile)) {
+                        @unlink($this->cachefile);
+                    }
                 }
             }
 
@@ -1068,7 +1070,7 @@ class serendipity_event_staticpage extends serendipity_event
             serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}plugins WHERE name LIKE 'serendipity_event_staticpage:%' AND name NOT LIKE '" . serendipity_db_escape_string($this->instance) . "'");
 
             $this->set_config('db_built', 7);
-            $build = 7;
+            $built = 7;
             $fresh = true;
             @define('STATICPAGE_UPGRADE_DONE', true); // No further static pages may be called!
         }
@@ -1124,9 +1126,9 @@ class serendipity_event_staticpage extends serendipity_event
             // Set fulltext indizes of tables ? Is that working here? Should not... and just return true without accessing serendipity_db_query() method
             #serendipity_db_schema_import("CREATE {FULLTEXT_MYSQL} INDEX staticentry_idx on {$serendipity['dbPrefix']}staticpages (headline, content);");
 
-            // set to latest build
+            // set to latest built
             $this->set_config('db_built', 23);
-            $build = 23;
+            $built = 23;
             $fresh = true;
             @define('STATICPAGE_UPGRADE_DONE', true); // don't do this again!
         }
@@ -1176,12 +1178,14 @@ class serendipity_event_staticpage extends serendipity_event
                         'pageorder' => 0
                     );
                     serendipity_db_update('staticpages', array(), $set);
-                    @unlink($this->cachefile);
+                    if (file_exists($this->cachefile)) {
+                        @unlink($this->cachefile);
+                    }
                 }
             case 8:
             case 9:
             case 10:
-                if (!$fresh) {
+                if ($fresh === false) {
                     $q = "ALTER TABLE {$serendipity['dbPrefix']}staticpages ADD COLUMN shownavi int(4) default '1';";
                     serendipity_db_schema_import($q);
                     $q = "ALTER TABLE {$serendipity['dbPrefix']}staticpages ADD COLUMN showonnavi int(4) default '1'";
@@ -1200,13 +1204,13 @@ class serendipity_event_staticpage extends serendipity_event
                 serendipity_db_schema_import($q);
             case 13:
             case 14:
-                if (!$fresh) {
+                if ($fresh === false) {
                     $q = "ALTER TABLE {$serendipity['dbPrefix']}staticpages ADD COLUMN last_modified int(10)";
                     serendipity_db_schema_import($q);
                     serendipity_db_query("UPDATE {$serendipity['dbPrefix']}staticpages SET last_modified = timestamp");
                 }
             case 15:
-                if (!$fresh) {
+                if ($fresh === false) {
                     $sql = "ALTER TABLE {$serendipity['dbPrefix']}staticpages ADD COLUMN related_category_id int(4) default 0";
                     serendipity_db_schema_import($sql);
                 }
@@ -1230,13 +1234,15 @@ class serendipity_event_staticpage extends serendipity_event
                         ) {UTF_8}";
                 serendipity_db_schema_import($sql);
             case 18:
+                if ($fresh === false) {
                     $sql = "ALTER TABLE {$serendipity['dbPrefix']}staticpages ADD COLUMN is_404_page int(1) default 0";
                     if ($serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli') {
                         $sql .= ' AFTER is_startpage';
                     }
                     serendipity_db_schema_import($sql);
+                }
             case 19:
-                if (!$fresh) {
+                if ($fresh === false) {
                     $q = "ALTER TABLE {$serendipity['dbPrefix']}staticpages ADD COLUMN show_breadcrumb int(4) default '1'";
                     if ($serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli') {
                         $q .= ' AFTER showonnavi';
@@ -1244,7 +1250,7 @@ class serendipity_event_staticpage extends serendipity_event
                     serendipity_db_schema_import($q);
                 }
             case 20:
-                if (!$fresh) {
+                if ($fresh === false) {
                     $q = "ALTER TABLE {$serendipity['dbPrefix']}staticpages ADD COLUMN title_element varchar(255) not null default ''";
                     serendipity_db_schema_import($q);
                     $q = "ALTER TABLE {$serendipity['dbPrefix']}staticpages ADD COLUMN meta_description varchar(255) not null default ''";
@@ -2711,7 +2717,7 @@ class serendipity_event_staticpage extends serendipity_event
                 }
 
                 // case switching from existing pagetype to a new form on submit
-                if (empty($this->pagetype) && $serendipity['POST']['pagetype'] == '__new') {
+                if (empty($this->pagetype) && isset($serendipity['POST']['pagetype']) && $serendipity['POST']['pagetype'] == '__new') {
                     unset($serendipity['POST']['typeSave']);
                     unset($serendipity['POST']['plugin']);
                 }
@@ -3453,7 +3459,7 @@ class serendipity_event_staticpage extends serendipity_event
      * @return  boolean
      *
      */
-    function setCatPropForStaticpage($id = 0, $cid)
+    function setCatPropForStaticpage($id, $cid)
     {
         if ($id > 0) {
             global $serendipity;
@@ -3649,7 +3655,7 @@ class serendipity_event_staticpage extends serendipity_event
                     $this->setupDB();
 
                     // hotfix facebook adding ?fbclid=something in certain cases
-                    $addData['uriargs'] = $addData['uriargs'][0] == '?' ? substr($addData['uriargs'], 1) : $addData['uriargs'];
+                    $addData['uriargs'] = (isset($addData['uriargs'][0]) && $addData['uriargs'][0] == '?') ? substr($addData['uriargs'], 1) : $addData['uriargs'];
 
                     if ($serendipity['rewrite'] != 'none') {
                         $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
@@ -3755,9 +3761,6 @@ class serendipity_event_staticpage extends serendipity_event
                 case 'backend_sidebar_entries':
                     if (!$access_granted) {
                         break;
-                    }
-                    if (!defined('STATICPAGE_UPGRADE_DONE') && stristr($serendipity['dbType'], 'sqlite') === FALSE) {
-                        $this->setupDB(); // in case of sidebar plugin only (?), else done in genpage or install
                     }
                     echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages">' . STATICPAGE_TITLE . '</a></li>'."\n";
                     break;
