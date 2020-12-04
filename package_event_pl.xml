@@ -9244,9 +9244,9 @@
 <description>Pokazuje Strony statyczne w Twoim blogu tak, jak pokazywane są wszystkie inne wpisy (z zachowaniem formatowania i layoutu). Dodaje nową zakładkę w menu w Panelu administracyjnym.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.16</version>
+  <version>6.17</version>
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
-  <date>2020-11-27</date>
+  <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
