@@ -19,7 +19,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '1.26');
+        $propbag->add('version',       '1.27');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -233,7 +233,7 @@ class serendipity_event_trackback extends serendipity_event
                     break;
 
                 case 'genpage':
-                    #don't check on every page
+                    # don't check on every page
                     $try = mt_rand(1, 10);
                     if ($try == 1 && serendipity_db_bool($this->get_config('delayed_trackbacks', 'true'))) {
                         $this->generateDelayed();
@@ -250,10 +250,13 @@ class serendipity_event_trackback extends serendipity_event
         }
     }
 
-    #store id of an entry and wanted release-timestamp
+    /**
+     * store id of an entry and wanted release-timestamp
+     */
     function delay($id, $timestamp)
     {
         global $serendipity;
+
         $this->upgradeCheck();
         $this->removeDelayed($id);
         $sql = "INSERT INTO
@@ -263,14 +266,16 @@ class serendipity_event_trackback extends serendipity_event
         serendipity_db_query($sql);
     }
 
-    #generate trackbacks for entries which now are shown
+    /**
+     * generate trackbacks for entries which now are shown
+     */
     function generateDelayed()
     {
         global $serendipity;
+
         $this->upgradeCheck();
 
-        $sql = "SELECT id, timestamp
-                FROM {$serendipity['dbPrefix']}delayed_trackbacks";
+        $sql = "SELECT id, timestamp FROM {$serendipity['dbPrefix']}delayed_trackbacks";
         $entries = serendipity_db_query($sql);
 
         if (is_array($entries) && !empty($entries)) {
@@ -286,7 +291,7 @@ class serendipity_event_trackback extends serendipity_event
                         $oldPublighRights = 'unset';
                     }
                     $_SESSION['serendipityRightPublish'] = true;
-                    #remove unnatural entry-data which let the update fail
+                    # remove unnatural entry-data which let the update fail
                     if (isset($stored_entry['loginname'])) {
                         unset($stored_entry['loginname']);
                     }
@@ -310,17 +315,20 @@ class serendipity_event_trackback extends serendipity_event
                     } else {
                         $_SESSION['serendipityRightPublish'] = $oldPublighRights;
                     }
-                    #the trackbacks are now generated
+                    # the trackbacks are now generated
                     $this->removeDelayed($entry['id']);
                 }
             }
         }
     }
 
-    #remove delayed entry from further use
+    /**
+     * remove delayed entry from further use
+     */
     function removeDelayed($id)
     {
         global $serendipity;
+
         $sql = "DELETE FROM {$serendipity['dbPrefix']}delayed_trackbacks
                       WHERE id={$id}";
         serendipity_db_query($sql);
@@ -329,6 +337,7 @@ class serendipity_event_trackback extends serendipity_event
     function setupDB()
     {
         global $serendipity;
+
         // postgres < 9.3 IF NOT EXISTS workaround...
         $c = serendipity_db_query("SELECT COUNT(*) FROM {$serendipity['dbPrefix']}delayed_trackbacks;");
         if (is_numeric($c)) {
