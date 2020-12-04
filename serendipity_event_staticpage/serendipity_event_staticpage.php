@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.17');
+        $propbag->add('version', '6.18');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -2884,7 +2884,8 @@ class serendipity_event_staticpage extends serendipity_event
                             }
                         }
                     }
-                    $dh = @opendir($serendipity['serendipityPath'] . $serendipity['templatePath'] . $serendipity['template'] . '/backend_templates');
+                    // check user themes backend_templates directory
+                    $dh = is_dir($serendipity['serendipityPath'] . $serendipity['templatePath'] . $serendipity['template'] . '/backend_templates') ? @opendir($serendipity['serendipityPath'] . $serendipity['templatePath'] . $serendipity['template'] . '/backend_templates') : false;
                     if ($dh) {
                         while ($file = readdir($dh)) {
                             if (!in_array($file, $exclude_files) && preg_match('@^(.*).tpl$@i', $file, $m)) {

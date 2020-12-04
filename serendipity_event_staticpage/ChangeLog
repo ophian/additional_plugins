@@ -1,3 +1,7 @@
+6.18:
+-----
+ * PHP 8 fix to better check a user theme backend_templates directory
+
 6.17:
 -----
  * FIXUP versioned database install stuff.
