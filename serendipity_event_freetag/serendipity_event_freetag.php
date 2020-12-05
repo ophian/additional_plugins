@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.31');
+        $propbag->add('version',       '4.32');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -411,7 +411,7 @@ class serendipity_event_freetag extends serendipity_event
                     "entryid int(10) not null, " .
                     "tag varchar(50) not null, " .
                     "PRIMARY KEY (entryid, tag)" .
-                ")";
+                ") {UTF_8}";
 
             $result = serendipity_db_schema_import($q);
 
@@ -428,7 +428,7 @@ class serendipity_event_freetag extends serendipity_event
                     "keywords text, " .
                     "tag varchar(50) not null, " .
                     "PRIMARY KEY (tag)" .
-                ")";
+                ") {UTF_8}";
 
             $result = serendipity_db_schema_import($q);
         }
@@ -709,7 +709,7 @@ class serendipity_event_freetag extends serendipity_event
      */
     static function displayTags($tags, $xml, $nl, $scaling, $maxSize = 200, $minSize = 100,
                                 $useFlash = false, $flashbgtrans = true, $flashtagcolor = 'ff6600', $flashbgcolor = 'ffffff', $flashwidth = 190, $flashspeed = 100,
-                                $cfg_taglink, $cfg_template, $xml_image = 'img/xml.gif', $useRotCanvas = false, $rcTagColor = '3E5F81', $rcTagOLColor = 'B1C1D1', $rcTagWidth = 300, $useWordCloud = false)
+                                $cfg_taglink = '', $cfg_template = '', $xml_image = 'img/xml.gif', $useRotCanvas = false, $rcTagColor = '3E5F81', $rcTagOLColor = 'B1C1D1', $rcTagWidth = 300, $useWordCloud = false)
     {
         global $serendipity;
 
@@ -746,7 +746,7 @@ class serendipity_event_freetag extends serendipity_event
      * @static
      * @see     displayTags()
      */
-    static function renderTags($tags, $xml, $nl, $scaling, $maxSize, $minSize, $useFlash, $flashbgtrans, $flashtagcolor, $flashbgcolor, $flashwidth, $flashspeed, $taglink, $xml_image = 'img/xml.gif', $useRotCanvas, $rcTagColor, $rcTagOLColor, $rcTagWidth, $useWordCloud)
+    static function renderTags($tags, $xml, $nl, $scaling, $maxSize, $minSize, $useFlash, $flashbgtrans, $flashtagcolor, $flashbgcolor, $flashwidth, $flashspeed, $taglink, $xml_image, $useRotCanvas, $rcTagColor, $rcTagOLColor, $rcTagWidth, $useWordCloud)
     {
         global $serendipity;
 
@@ -1729,7 +1729,7 @@ addLoadEvent(enableAutocomplete);
     {
         $to_lower = serendipity_db_bool($this->get_config('lowercase_tags', 'true'));
 
-        $rows = serendipity_db_query($this->getTagCloudQuery('', $tag));
+        $rows = serendipity_db_query($this->getTagCloudQuery($tag));
 
         $tags = array();
         if (is_array($rows)) {
@@ -1764,7 +1764,7 @@ addLoadEvent(enableAutocomplete);
      * @return  array   $tags
      * @see     getTagCloudTags()
      */
-    function getTagCloudQuery($sort = '', $tag)
+    function getTagCloudQuery($tag, $sort = '')
     {
         global $serendipity;
 
@@ -1858,7 +1858,7 @@ addLoadEvent(enableAutocomplete);
      *
      * @param   int  GET id
      */
-    function displayMetaKeywords($id = null, $tag)
+    function displayMetaKeywords($id, $tag)
     {
         global $serendipity;
 
@@ -1869,7 +1869,7 @@ addLoadEvent(enableAutocomplete);
         }
 
         if ($tag !== false && $tag !== true) { //show related tags
-            $query = $this->getTagCloudQuery(' ORDER BY total DESC LIMIT ' . $max_keywords, $tag);
+            $query = $this->getTagCloudQuery($tag, ' ORDER BY total DESC LIMIT ' . $max_keywords);
         } else if ($id == null) { // show all tags
             // select most used tags in descending order
             $query = "SELECT tag,
@@ -3282,8 +3282,7 @@ addLoadEvent(enableAutocomplete);
 
         $tag = serendipity_db_escape_string($tag);
 
-        $q = "DELETE FROM {$serendipity['dbPrefix']}entrytags
-               WHERE tag='$tag'";
+        $q = "DELETE FROM {$serendipity['dbPrefix']}entrytags WHERE tag = '$tag'";
 
         $r = serendipity_db_query($q);
         if ($r !== true) {
