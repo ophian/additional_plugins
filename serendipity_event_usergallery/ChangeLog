@@ -1,3 +1,17 @@
+3.00:
+-----
+ * Major up for Serendipity Styx 3.2 Galleries - raising requirements
+ * Improved plugin templates for the gallery output
+   UPGRADERS NOTE: If you have user customized templates in your theme
+                   "plugin_usergallery.tpl" and
+                   "plugin_usergallery_imagedisplay.tpl"
+                   they now DO need a major upgrade too!
+ * Improved assets placement regarding lightbox and jquery appearance
+ * Improved styles
+ * Dependency to newest lightbox plugin
+ * Improved lang constants
+
+
 2.78:
 -----
  * Fixup template for wrong versioned jquery lib link pointer to the lightbox event plugin

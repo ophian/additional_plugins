@@ -1,60 +1,123 @@
-
-/* User Gallery */
+/* old deprecated styles start */
 div.serendipity_gallery_row {
-   clear:left;
+   clear: left;
    padding-left: 3%;
    margin-right: 3%;
 }
-
 div.serendipity_gallery_thumbs {
     padding: 3px;
     border: 1px solid #afafaf;
     float: left;
-    overflow:hidden;
+    overflow: hidden;
     margin: .5em;
 }
+/* old deprecated styles end */
 
+/* User Gallery */
+.page.serendipity_event_usergallery {
+    min-height: 36rem;
+}
+.serendipity_event_usergallery .page_content,
+.serendipity_event_usergallery_image_display .serendipity_gallery_entry {
+    padding: 0 .5rem 1rem;
+    margin-bottom: 1rem;
+    background-color: #00000005;
+    border: 1px solid #ddd;
+}
 div.serendipity_gallery_info {
-   margin-left:auto;
-   margin-right:auto;
-   text-align:center;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
 }
-
+.serendipity_gallery_info > div:first-child {
+    font-size: smaller;
+    font-style: oblique;
+}
 div.serendipity_gallery_entry {
-   margin-left:auto;
-   margin-right:auto;
-   text-align:center;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
 }
-
 div.serendipity_gallery_title {
-    font-size: 1.1em;
-    text-align:center;
-    font-weight:bold;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: bold;
 }
-
 div.serendipity_gallery_navigation {
-    font-size: 1.0em;
-    text-align:center;
+    font-size: 1rem;
+    text-align: center;
+    padding: .5rem 0;
 }
-
 img.gallery_thumb {
-   margin-left:auto;
-   margin-right:auto;
-   text-align:center;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
    border: 0;
 }
-
-div.serendipity_gallery_pagination_top {
-    border-top: 1px solid #ccc;
+.pagination {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    list-style: none;
+    border-radius: .25rem;
 }
-
+.justify-content-between {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+ul.serendipity_gallery_navigation.pagination .page-link,
+ul.serendipity_gallery_pagination_top.pagination .page-link,
+ul.serendipity_gallery_pagination_bottom.pagination .page-link {
+    position: relative;
+    display: flex;
+    padding: .5rem .75rem;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+ul.serendipity_gallery_navigation.pagination {
+    padding: 0 0 .5rem;
+}
+.serendipity_gallery_pagination_top.pagination,
+.serendipity_gallery_pagination_bottom.pagination {
+    padding: 0;
+    margin: 0 0 1rem;
+}
+ul.serendipity_gallery_navigation.pagination .page-link.hidden,
+ul.serendipity_gallery_pagination_top.pagination .page-link.hidden,
+ul.serendipity_gallery_pagination_bottom.pagination .page-link.hidden {
+    visibility: hidden;
+}
+div.serendipity_gallery_pagination_top,
 div.serendipity_gallery_pagination_bottom {
     border-bottom: 1px solid #ccc;
+    text-align: center
 }
-
-.plainList.serendipity_gallery_directory {
+ul.plainList.serendipity_gallery_directory {
+    margin: .5rem auto 1.5rem;
+    display: table;
+}
+ul.plainList.serendipity_gallery_directory li.closed {
     list-style: disclosure-closed;
-    margin: .5rem auto 1.5rem 42%;
+    color: silver;
+}
+ul.plainList.serendipity_gallery_directory li.open {
+    list-style: disclosure-open;
+}
+ul.plainList.serendipity_gallery_directory li.up {
+    list-style: none;
+    margin-left: -1.25rem;
 }
 
 /* EXIF TAGS */
@@ -73,6 +136,9 @@ div.serendipity_gallery_pagination_bottom {
     margin: 0 auto;
     width: 400px;
 }
+.exif_info_row > em:first-child {
+    font-size: smaller;
+}
 .exif_info_tag, .exif_info {
     float: left;
     display: block;
@@ -82,7 +148,7 @@ div.serendipity_gallery_pagination_bottom {
     background-color: #ccd9e6;
     padding: 3px;
 }
-/* keep at least an empty .exit_info {} since this is checked for includement */
+/* keep at least an empty .exit_info {} since this is checked for including the stylesheet file */
 .exif_info {
     width: 264px;
     background-color: #eee;

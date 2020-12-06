@@ -6,11 +6,7 @@
  */
 
 @define('PLUGIN_EVENT_USERGALLERY_TITLE', 'Galerie');
-@define('PLUGIN_EVENT_USERGALLERY_DESC', 'Umožňuje nepřihlášeným uživatelům prohlížet Serendipity knihovnu médií');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_TWO', '2');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_THREE', '3');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_FOUR', '4');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_FIVE', '5');
+#@define('PLUGIN_EVENT_USERGALLERY_DESC', 'Umožňuje nepřihlášeným uživatelům prohlížet Serendipity knihovnu médií');//translate again
 @define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_DESC', 'Počet sloupců v zobrazení galerie');
 @define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_NAME', 'Počet sloupců');
 @define('PLUGIN_EVENT_USERGALLERY_PERMALINK_NAME', 'Stálý odkaz (permalink) na stránku galerie');
@@ -20,7 +16,7 @@
 @define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_NAME', 'Vyberte výchozí adresář');
 @define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_DESC', 'Vyberte adresář knihovny médií, na který má být omezeno zobrazení galerie');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_NAME', 'Vyberte vzhled galerie');
-@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', '"Knihovna médií! umožňuje procházení po adresářích a vyhledávání, zatímco "Stránka s náhledy" zobrazí náhledy všech obrázků v adresáři a obrázky otevírá v novém okně.');
+#@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', '"Knihovna médií! umožňuje procházení po adresářích a vyhledávání, zatímco "Stránka s náhledy" zobrazí náhledy všech obrázků v adresáři a obrázky otevírá v novém okně.');//translate again
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_SERENDIPITY', 'Knihovna médií');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_THUMBPAGE', 'Stránka s náhledy');
 @define('PLUGIN_EVENT_USERGALLERY_PRETTY_NAME', 'Nadpis galerie');
@@ -47,8 +43,8 @@
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DATEDESC', 'Datum (sestupně)');
 @define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_NAME', 'Zobrazit celý strom adresářů');
 @define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_DESC', '"Ano" znamená, že se bude na každé stránce galerie zobrazovat celý strom adresářů. "Ne" znamená, že se bude vypisovat pouze strom podadresářů aktuálního adresáře. (Toto chování je také závislé na šabloně vzhledu použité pro zobrazení galerie.)');
-@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_NAME','Zobrazovat pouze jednu úroveň podadresářů');  
-@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_DESC','Toto nastavení omezí výpis stromu podadresářů pouze na první úroveň podadresářů. Tedy podadresáře podadresářů už se nebudou zobrazovat. Také vypíše celkový počet obrázků v podadresářích. Toto nastavení není přístupné pokud používáte zobrazení plného stromu adresářů.');
+@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_NAME', 'Zobrazovat pouze jednu úroveň podadresářů');
+@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_DESC', 'Toto nastavení omezí výpis stromu podadresářů pouze na první úroveň podadresářů. Tedy podadresáře podadresářů už se nebudou zobrazovat. Také vypíše celkový počet obrázků v podadresářích. Toto nastavení není přístupné pokud používáte zobrazení plného stromu adresářů.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_NAME', 'Počet obrázků na stránce');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_DESC', 'Pokud zde zadáte "0", stránkování bude vypnuto a všechny obrázky se budou zobrazovat na první stránce.');
 @define('PLUGIN_EVENT_USERGALLERY_PREVIOUS', 'předchozí');
@@ -78,10 +74,10 @@
 @define('USERGALLERY_LINKED_ENTRIES', 'Příspěvky obsahující tento obrázek:');
 @define('USERGALLERY_LINKED_STATICPAGES', 'Statické stránky zborazující tento obrázek:');
 @define('PLUGIN_EVENT_USERGALLERY_SHOW_LINKED_ENTRY', 'Zobrazit odkaz na příspěvky obsahující obrázek?');
-@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_NAME','Odsazení podadresářů ve stromu adresářů');
-@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_DESC','Odsazení podadresáře od rodičovského adresáře v pixelech.');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_NAME','Max. šířka obrázku');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_DESC','Maximální šířka obrázku. Na tuto šířu budou zmenšeny větší obrázky v případě zobrazení "Přizpůsobené měřítko". Nastavení na "0" znamená bez omezení - všechny obrázky jsou zobrazení v původní velikosti.');
+@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_NAME', 'Odsazení podadresářů ve stromu adresářů');
+@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_DESC', 'Odsazení podadresáře od rodičovského adresáře v pixelech.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_NAME', 'Max. šířka obrázku');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_DESC', 'Maximální šířka obrázku. Na tuto šířu budou zmenšeny větší obrázky v případě zobrazení "Přizpůsobené měřítko". Nastavení na "0" znamená bez omezení - všechny obrázky jsou zobrazení v původní velikosti.');
 
 //Media properties
 @define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_SHOW_NAME', 'Zobrazit vlastnosti obrázků');
@@ -95,4 +91,4 @@
 
 @define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY', 'Použít originální formát příspěvku pro obrázek v RSS kanálu?');
 @define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC', 'Pokud je povoleno, obrázek z knihovny médií, který byl použit v příspěvku na blogu, bude mít v RSS kanálu stejné tělo příspěvku jako příspěvek místo výchozího jednoduchého odkazu na příspěvek a původní umístění obrázku.');
-?>
+

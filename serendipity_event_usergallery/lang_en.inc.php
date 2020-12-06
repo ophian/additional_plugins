@@ -1,17 +1,13 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
 @define('PLUGIN_EVENT_USERGALLERY_TITLE', 'Gallery Display');
-@define('PLUGIN_EVENT_USERGALLERY_DESC', 'Allows anonymous users to view Serendipity media gallery');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_TWO', '2');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_THREE', '3');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_FOUR', '4');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_FIVE', '5');
+@define('PLUGIN_EVENT_USERGALLERY_DESC', 'Allows to publish galleries by media directories out of your MediaLibrary tree. Stackable plugin!');
 @define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_DESC', 'Number of columns to show in gallery view');
 @define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_NAME', 'Number of columns');
 @define('PLUGIN_EVENT_USERGALLERY_PERMALINK_NAME', 'Permalink for gallery view');
@@ -21,8 +17,8 @@
 @define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_NAME', 'Pick a default directory');
 @define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_DESC', 'Pick the default directory you would like the gallery to be restricted to');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_NAME', 'Choose the gallery style');
-@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', '"Media library" allows folder navigation and searches, while "Thumbnail page" give a thumbnail display of all images under a folder and opens the images in a new window');
-@define('PLUGIN_EVENT_USERGALLERY_STYLE_SERENDIPITY', 'Media library');
+@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', '"Media library" allows folder navigation and searches, while "Thumbnail page" gives a thumbnail gallery alike display of all images under a folder and opens the images in a new window or via a lightbox; In this case, the "Show directory tree" option allows you to show or hide the directory tree that can be used for navigation, and the "Show only images of the current directory" option can be turned on or off.');
+@define('PLUGIN_EVENT_USERGALLERY_STYLE_SERENDIPITY', 'Media library (disabled)');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_THUMBPAGE', 'Thumbnail page');
 @define('PLUGIN_EVENT_USERGALLERY_PRETTY_NAME', 'Display name');
 @define('PLUGIN_EVENT_USERGALLERY_PRETTY_DESC', 'Pick the name you would like for the gallery title');
@@ -95,12 +91,12 @@
 @define('PLUGIN_EVENT_USERGALLERY_PAGINATION', 'Page %s of %s, totaling %s images');
 
 @define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY', 'Use original blog entry for the picture in RSS-Feed?');
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC', 'If enabled, an image of the mediadatabase that has been linked within an blog entry will have the original blog entry\'s body within the RSS feed, instead of (by default) having a simple link to the blog article and the original image location.');
+@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC', 'If enabled, an image of the MediaLibrary that has been linked within an blog entry will have the original blog entry\'s body within the RSS feed, instead of (by default) having a simple link to the blog article and the original image location.');
 
 @define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_NAME', 'Use lightbox output');
-@define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_DESC', 'Needs the lightbox-plugin installed and upper option "Display Single Image" set to "Scaled to fit"! When you want to use lightboxes only for Usergallery pages, install the lightbox plugin and move it into the hidden event field in your pluginlist!');
+@define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_DESC', 'Needs the lightbox-plugin installed and upper option "Display Single Image" set to "Scaled to fit"! When you want to use lightboxes only for Usergallery pages, install the lightbox plugin and move it into the hidden event field in your pluginlist. "Yes" allows to output the scripts inside the gallery container by the plugin_usergallery.tpl template file; "API" uses the \'frontend_footer\' hook for generation. This can be immanent to have the jQuery library loaded bevore any lighbox assets. This is handled differently by themes. HTML good practise is to load such scripts at page end. "No" is either non-usage or related to an actice set lightbox-plugin.');
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_NAME', 'Use lightbox plugin type');
-@define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_DESC', 'Choose the same as set in the lightbox plugin. Choosing another library will not work here.');
+@define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_DESC', 'Choose the same as set in the lightbox plugin. Choosing another library will not work here, as long the lightbox-plugin is set active. Watch out for possible plugin list order flaws.');
 
 @define('PLUGIN_EVENT_USERGALLERY_SHOWOBJECTS_NAME', 'Show all Non-Image objects');
 @define('PLUGIN_EVENT_USERGALLERY_SHOWOBJECTS_DESC', 'Include other media library object files to show up too, eg *.pdf application objects.');

@@ -1,17 +1,13 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.2
  */
 
 @define('PLUGIN_EVENT_USERGALLERY_TITLE', 'ギャラリー表示');
-@define('PLUGIN_EVENT_USERGALLERY_DESC', '匿名ユーザーに Serendipity メディアギャラリー閲覧を許可します。');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_TWO', '2');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_THREE', '3');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_FOUR', '4');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_FIVE', '5');
+#@define('PLUGIN_EVENT_USERGALLERY_DESC', '匿名ユーザーに Serendipity メディアギャラリー閲覧を許可します。');//translate again
 @define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_DESC', 'ギャラリー表示で表示する列の数');
 @define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_NAME', '列の数');
 @define('PLUGIN_EVENT_USERGALLERY_PERMALINK_NAME', 'ギャラリー閲覧の固定リンク');
@@ -21,7 +17,7 @@
 @define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_NAME', 'Pick a default directory');
 @define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_DESC', 'Pick the default directory you would like the gallery to be restricted to');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_NAME', 'ギャラリースタイルを選択する');
-@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', '"Media library" allows folder navigation and searchs, while "Thumbnail page" give a thumbnail display of all images under a folder and opens the images in a new window');
+@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', '"Media library" allows folder navigation and searches (disabled), while "Thumbnail page" gives a thumbnail gallery alike display of all images under a folder and opens the images in a new window or via a lightbox; In this case, the "Show directory tree" option allows you to show or hide the directory tree that can be used for navigation, and the "Show only images of the current directory" option can be turned on or off.');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_SERENDIPITY', 'メディアライブラリ');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_THUMBPAGE', 'サムネイルページ');
 @define('PLUGIN_EVENT_USERGALLERY_PRETTY_NAME', '表示名');
@@ -31,4 +27,4 @@
 @define('PLUGIN_EVENT_USERGALLERY_FIXED_DESC', 'Sets the image height and width to a fixed proportion.  Set to zero to use standard thumbnail.');
 @define('PLUGIN_EVENT_USERGALLERY_FILESIZE', 'ファイルサイズ');
 @define('PLUGIN_EVENT_USERGALLERY_DIMENSION', 'Dimension');
-?>
+
