@@ -1224,12 +1224,12 @@
 <guid isPermaLink="false">serendipity_event_unstrip_tags</guid>
 </item>
 <item>
-<title>Bildergalerie: Ermöglicht es den Besuchern, die Mediendatenbank anzusehen</title>
+<title>Bildergalerie: Ermöglicht Bildergalerien aus der Mediathek oder Ordnern auszugehen.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_usergallery</link>
 <category>Event Plugins</category>
-<author>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Bildergalerie&lt;/b&gt;&lt;br /&gt;Ermöglicht es den Besuchern, die Mediendatenbank anzusehen&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 15 Oct 2020 13:56:15 +0200</pubDate>
+<author>Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx</author>
+<content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Bildergalerie&lt;/b&gt;&lt;br /&gt;Ermöglicht Bildergalerien aus der Mediathek oder Ordnern auszugehen.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Sun, 06 Dec 2020 16:19:26 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>

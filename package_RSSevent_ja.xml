@@ -1226,12 +1226,12 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <guid isPermaLink="false">serendipity_event_unstrip_tags</guid>
 </item>
 <item>
-<title>ギャラリー表示: 匿名ユーザーに Serendipity メディアギャラリー閲覧を許可します。</title>
+<title>ギャラリー表示: Allows to publish galleries by media directories out of your MediaLibrary tree. Stackable plugin!</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_usergallery</link>
 <category>Event Plugins</category>
-<author>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;ギャラリー表示&lt;/b&gt;&lt;br /&gt;匿名ユーザーに Serendipity メディアギャラリー閲覧を許可します。&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 15 Oct 2020 13:56:15 +0200</pubDate>
+<author>Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx</author>
+<content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;ギャラリー表示&lt;/b&gt;&lt;br /&gt;Allows to publish galleries by media directories out of your MediaLibrary tree. Stackable plugin!&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Sun, 06 Dec 2020 16:19:26 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>

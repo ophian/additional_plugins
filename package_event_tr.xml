@@ -11115,12 +11115,12 @@
 <license>GPL</license>
 <summary>Galeri Gösterimi</summary>
 <groups>IMAGES</groups>
-<description>Anonim kullanıcı-ziyaretçilerin Serendipity Medya Galerisini görmelerine izin verir</description>
-<maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, and Stefan Willoughby, Ian Styx</name><role>lead</role></maintainer></maintainers>
+<description>Allows to publish galleries by media directories out of your MediaLibrary tree. Stackable plugin!</description>
+<maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.78</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2020-10-15</date>
+  <version>3.00</version>
+  <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <date>2020-12-06</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
       <file>ChangeLog</file>
