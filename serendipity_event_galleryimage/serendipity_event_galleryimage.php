@@ -27,11 +27,11 @@ class serendipity_event_galleryimage extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_GALLERYIMAGE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rob Antonishen, Alexander Mieland, Ian Styx');
-        $propbag->add('version',       '1.17');
+        $propbag->add('version',       '1.18');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '3.0',
+            'smarty'      => '3.1.0',
+            'php'         => '7.3.0'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
@@ -222,7 +222,7 @@ class serendipity_event_galleryimage extends serendipity_event
             $size = $this->get_config('popup_max');
         }
 
-        $fdim    = @serendipity_getimagesize($infile, '', $extension);
+        $fdim    = @serendipity_getImageSize($infile, '', $extension);
         if (isset($fdim['noimage'])) {
             $r = array(0, 0);
         } else {
