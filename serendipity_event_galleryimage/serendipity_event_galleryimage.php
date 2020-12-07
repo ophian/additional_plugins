@@ -433,12 +433,12 @@ class serendipity_event_galleryimage extends serendipity_event
         }
 
         if ($this->get_config('gversion') == 2) {
-            $image = $album_abs . '/albums/' . $album.'/' . $photo . '.' . $photo_ext;
+            $image = $album_abs . '/albums/' . $album . '/' . $photo . '.' . $photo_ext;
             $image_path  = $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "/") . "plugin/g2wrapper?";
             $image_path .= "album=" . $album;
             $image_path .= "&amp;image=" . $photo;
             $image_path .= "&amp;ext=" . $photo_ext;
-            / handle the parameters
+            // handle the parameters
             // size = thumb sized or full image?
             switch(strtolower($param_array['size'])) {
                 case 'sized':
