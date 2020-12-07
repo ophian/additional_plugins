@@ -18,9 +18,10 @@ class serendipity_event_responsiveimages extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_RESPONSIVE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.0');
+        $propbag->add('version',       '1.1');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.3.1',
+            'serendipity' => '3.0.0',
+            'php'         => '7.3.0'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks', array(
@@ -115,7 +116,7 @@ class serendipity_event_responsiveimages extends serendipity_event
                     // ));
                     // We now just need to add the additional array elements, with the new sizes and suffix.
                     // We can use $addData, containing the path to the full size file, to get the starting width
-                    $origSize = serendipity_getimagesize($addData);
+                    $origSize = @serendipity_getImageSize($addData);
 
                     for ($i = 0; $i < count($this->thumbWidths); $i++) {
                         $thumbWidth = $this->thumbWidths[$i];
