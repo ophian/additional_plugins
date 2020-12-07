@@ -445,8 +445,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_galleryimage</link>
 <category>Event Plugins</category>
 <author>Rob Antonishen, Alexander Mieland, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;Markup: Gallery&lt;/b&gt;&lt;br /&gt;Fügt ein Gallery-Album oder Bild in Form von Markup ein.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:20:11 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;Markup: Gallery&lt;/b&gt;&lt;br /&gt;Fügt ein Gallery-Album oder Bild in Form von Markup ein.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
+<pubDate>Mon, 07 Dec 2020 09:45:21 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_galleryimage</guid>
 </item>
 <item>
@@ -562,8 +562,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_imageselectorplus</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Erweiterte Optionen für Bildauswahl&lt;/b&gt;&lt;br /&gt;Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediathek.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:16:21 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Erweiterte Optionen für Bildauswahl&lt;/b&gt;&lt;br /&gt;Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediathek.&lt;br/&gt;For: Serendipity 3.0.0</content:encoded>
+<pubDate>Mon, 07 Dec 2020 10:13:08 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -580,8 +580,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_karma</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_karma&lt;br /&gt;Karma&lt;/b&gt;&lt;br /&gt;Abstimmung über die Einträge&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 23 Jan 2020 14:17:09 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_karma&lt;br /&gt;Karma&lt;/b&gt;&lt;br /&gt;Abstimmung über die Einträge&lt;br/&gt;For: Serendipity 3.0</content:encoded>
+<pubDate>Mon, 07 Dec 2020 09:51:26 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_karma</guid>
 </item>
 <item>
@@ -958,8 +958,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_responsiveimages</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_responsiveimages&lt;br /&gt;Responsive Images&lt;/b&gt;&lt;br /&gt;Skaliert Grafiken mit Hilfe von HTML5 und dem s9y-Backend passend zur Breite des Viewports des Besuchers&lt;br/&gt;For: Serendipity 2.3.1</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:12:56 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_responsiveimages&lt;br /&gt;Responsive Images&lt;/b&gt;&lt;br /&gt;Skaliert Grafiken mit Hilfe von HTML5 und dem s9y-Backend passend zur Breite des Viewports des Besuchers&lt;br/&gt;For: Serendipity 3.0.0</content:encoded>
+<pubDate>Mon, 07 Dec 2020 09:40:06 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_responsiveimages</guid>
 </item>
 <item>
