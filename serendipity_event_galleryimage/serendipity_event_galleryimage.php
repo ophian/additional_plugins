@@ -27,7 +27,7 @@ class serendipity_event_galleryimage extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_GALLERYIMAGE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rob Antonishen, Alexander Mieland, Ian Styx');
-        $propbag->add('version',       '1.18');
+        $propbag->add('version',       '1.19');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1.0',
@@ -222,19 +222,20 @@ class serendipity_event_galleryimage extends serendipity_event
             $size = $this->get_config('popup_max');
         }
 
-        $fdim    = @serendipity_getImageSize($infile, '', $extension);
+        $fdim = @serendipity_getImageSize($infile, '', $extension);
+
         if (isset($fdim['noimage'])) {
             $r = array(0, 0);
         } else {
             if ($serendipity['magick'] !== true) {
-                $r = serendipity_resize_image_gd($infile, $outfile, $size);
+                $r = serendipity_resizeImageGD($infile, $outfile, $size);
             } else {
                 $r = array($size, $size);
                 $newSize = $size . 'x' . $size;
                 if ($fdim['mime'] == 'application/pdf') {
-                   $cmd     = escapeshellcmd($serendipity['convert']) . ' -antialias -flatten -scale '. serendipity_escapeshellarg($newSize) .' '. serendipity_escapeshellarg($infile) .' '. serendipity_escapeshellarg($outfile . '.png');
+                   $cmd = escapeshellcmd($serendipity['convert']) . ' -antialias -flatten -scale '. serendipity_escapeshellarg($newSize) .' '. serendipity_escapeshellarg($infile) .' '. serendipity_escapeshellarg($outfile . '.png');
                 } else {
-                   $cmd     = escapeshellcmd($serendipity['convert']) . ' -antialias -scale '. serendipity_escapeshellarg($newSize) .' '. serendipity_escapeshellarg($infile) .' '. serendipity_escapeshellarg($outfile);
+                   $cmd = escapeshellcmd($serendipity['convert']) . ' -antialias -scale '. serendipity_escapeshellarg($newSize) .' '. serendipity_escapeshellarg($infile) .' '. serendipity_escapeshellarg($outfile);
                 }
 
                 exec($cmd, $output, $result);
