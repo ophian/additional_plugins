@@ -1,5 +1,9 @@
 <?php
 
+// A plugin to work with very old Menalto Gallery Series 1 and Series 2 revisions.
+// It was never checked to work without flaws with Gallery 3 Versions.
+// The official Gallery (3) development even stopped in 2014 and was delayed for years, even if there are people like https://github.com/bwdutton/gallery3 trying to keep it alive.
+//
 // Code based on the WP-Gallery plugin by Geoff Hutchison http://geoffhutchison.net/blog/categories/computers/web/wp-plugins/
 //
 // Basic usage is:
@@ -27,7 +31,7 @@ class serendipity_event_galleryimage extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_GALLERYIMAGE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rob Antonishen, Alexander Mieland, Ian Styx');
-        $propbag->add('version',       '1.19');
+        $propbag->add('version',       '1.20');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1.0',
@@ -94,28 +98,28 @@ class serendipity_event_galleryimage extends serendipity_event
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_GALLERYIMAGE_GALLERY_BASE);
                 $propbag->add('description', PLUGIN_EVENT_GALLERYIMAGE_GALLERY_BASE_BLAHBLAH);
-                $propbag->add('default',     'http://mywebsite.com/gallery');
+                $propbag->add('default',     'https://mywebsite.com/gallery');
                 break;
 
             case 'album_base':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_GALLERYIMAGE_ALBUM_BASE);
                 $propbag->add('description', PLUGIN_EVENT_GALLERYIMAGE_ALBUM_BASE_BLAHBLAH);
-                $propbag->add('default',     'http://mywebsite.com/albums');
+                $propbag->add('default',     'https://mywebsite.com/albums');
                 break;
 
             case 'gallery_abs':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_GALLERYIMAGE_GALLERY_ABS);
                 $propbag->add('description', PLUGIN_EVENT_GALLERYIMAGE_GALLERY_ABS_BLAHBLAH);
-                $propbag->add('default',     $serendipity['serendipityPath'].'gallery');
+                $propbag->add('default',     $serendipity['serendipityPath'] . 'gallery');
                 break;
 
             case 'album_abs':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_GALLERYIMAGE_ALBUM_ABS);
                 $propbag->add('description', PLUGIN_EVENT_GALLERYIMAGE_ALBUM_ABS_BLAHBLAH);
-                $propbag->add('default',     $serendipity['serendipityPath'].'albums');
+                $propbag->add('default',     $serendipity['serendipityPath'] . 'albums');
                 break;
 
             case 'popup_max':
@@ -208,17 +212,17 @@ class serendipity_event_galleryimage extends serendipity_event
         global $serendipity;
 
         $gallery_base = $this->get_config('gallery_base');
-        $album_base = $this->get_config('album_base')."/albums";
-        $album_abs = $this->get_config('album_abs');
-        $photo_ext = ($extension) ? "$extension" : "jpg";
+        $album_base   = $this->get_config('album_base')."/albums";
+        $album_abs    = $this->get_config('album_abs');
+        $photo_ext    = $extension ?? 'jpg';
 
-        $infile = $album_abs.'/albums/'.$album.'/'.$photo.'.'.$photo_ext;
+        $infile = $album_abs . '/albums/' . $album . '/' . $photo.'.' . $photo_ext;
 
         if ($method == 'thumb') {
-            $outfile = $album_abs.'/tmp/'.$photo.'.thumb.'.$photo_ext;
+            $outfile = $album_abs . '/tmp/' . $photo . '.thumb.' . $photo_ext;
             $size = $this->get_config('thumb_max');
         } else {
-            $outfile = $album_abs.'/tmp/'.$photo.'.sized.'.$photo_ext;
+            $outfile = $album_abs . '/tmp/' . $photo . '.sized.' . $photo_ext;
             $size = $this->get_config('popup_max');
         }
 
@@ -233,6 +237,7 @@ class serendipity_event_galleryimage extends serendipity_event
                 $r = array($size, $size);
                 $newSize = $size . 'x' . $size;
                 if ($fdim['mime'] == 'application/pdf') {
+                    // too much to fix these two occurrences to use the better Styx 3.0 serendipity_passToCMD() methods since Plugin this is going to Plugin Heaven soon...
                    $cmd = escapeshellcmd($serendipity['convert']) . ' -antialias -flatten -scale '. serendipity_escapeshellarg($newSize) .' '. serendipity_escapeshellarg($infile) .' '. serendipity_escapeshellarg($outfile . '.png');
                 } else {
                    $cmd = escapeshellcmd($serendipity['convert']) . ' -antialias -scale '. serendipity_escapeshellarg($newSize) .' '. serendipity_escapeshellarg($infile) .' '. serendipity_escapeshellarg($outfile);
@@ -334,9 +339,9 @@ class serendipity_event_galleryimage extends serendipity_event
                             $size = str_replace("\\", "", $size);
 
                             $gallery_base = $this->get_config('gallery_base');
-                            $album_base = $this->get_config('album_base')."/albums";
-                            $album_abs = $this->get_config('album_abs');
-                            $photo_ext = ($ext) ? "$ext" : "jpg";
+                            $album_base   = $this->get_config('album_base')."/albums";
+                            $album_abs    = $this->get_config('album_abs');
+                            $photo_ext    = $ext ?? 'jpg';
 
                             if ($photo_ext == "jpeg") {
                                 $content_type = "image/jpeg";
@@ -349,13 +354,13 @@ class serendipity_event_galleryimage extends serendipity_event
                             }
 
                             if ($size == 'thumb') {
-                                $target = $album_abs."/tmp/".$image.".thumb.".$photo_ext;
+                                $target = $album_abs . "/tmp/" . $image . ".thumb." . $photo_ext;
                                 $this->g2image_scale($album, $image, $photo_ext, $size);
                             } elseif ($size == 'sized') {
-                                $target = $album_abs."/tmp/".$image.".sized.".$photo_ext;
+                                $target = $album_abs . "/tmp/" . $image . ".sized." . $photo_ext;
                                 $this->g2image_scale($album, $image, $photo_ext, $size);
                             } else {
-                                $target = $album_abs."/albums/".$album."/".$image.".".$photo_ext;
+                                $target = $album_abs . "/albums/" . $album . "/".$image . "." . $photo_ext;
                             }
 
                             header("Content-Type: $content_type");
@@ -392,7 +397,7 @@ class serendipity_event_galleryimage extends serendipity_event
         global $serendipity;
 
         $path_parts = pathinfo($photo_path);
-        //The pathinfo funtion returns 'filename' from PHP 5.2 upwards, but until that has wide support, the below returns it too...
+        // The pathinfo function returns 'filename' from PHP 5.2 upwards, but until that has wide support, the below returns it too...
         if (strlen($path_parts["extension"]) > 0) {
             $path_parts['filename'] = substr($path_parts["basename"],0,strlen($path_parts["basename"]) - (strlen($path_parts["extension"]) + 1) );
         } else {
@@ -404,12 +409,12 @@ class serendipity_event_galleryimage extends serendipity_event
         $extension = $path_parts['extension'];
 
         $gallery_base = $this->get_config('gallery_base');
-        $album_base = $this->get_config('album_base');
-        $album_abs = $this->get_config('album_abs');
-        $photo_ext = ($extension) ? "$extension" : "jpg";
+        $album_base   = $this->get_config('album_base');
+        $album_abs    = $this->get_config('album_abs');
+        $photo_ext    = $extension ?? 'jpg';
 
         if ($this->get_config('gversion') == 2) {
-            $album_base = $this->get_config('album_base')."/albums";
+            $album_base = $this->get_config('album_base') . "/albums";
         }
 
         // get popup max image size, default if not good.
@@ -420,20 +425,20 @@ class serendipity_event_galleryimage extends serendipity_event
 
         $paramlist = explode(";", $params);
 
-        //split up the parameters
+        // split up the parameters
         $param_array = array();
-        foreach($paramlist as $parameter) {
-            $temp = explode("=",$parameter);
+        foreach($paramlist AS $parameter) {
+            $temp = explode("=", $parameter);
             $param_array[trim(strtolower($temp[0]))] = trim($temp[1]);
         }
 
         if ($this->get_config('gversion') == 2) {
-            $image = $album_abs.'/albums/'.$album.'/'.$photo.'.'.$photo_ext;
-            $image_path = $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "/") . "plugin/g2wrapper?";
-            $image_path .= "album=".$album;
-            $image_path .= "&amp;image=".$photo;
-            $image_path .= "&amp;ext=".$photo_ext;
-            //handle the parameters
+            $image = $album_abs . '/albums/' . $album.'/' . $photo . '.' . $photo_ext;
+            $image_path  = $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "/") . "plugin/g2wrapper?";
+            $image_path .= "album=" . $album;
+            $image_path .= "&amp;image=" . $photo;
+            $image_path .= "&amp;ext=" . $photo_ext;
+            / handle the parameters
             // size = thumb sized or full image?
             switch(strtolower($param_array['size'])) {
                 case 'sized':
@@ -451,7 +456,7 @@ class serendipity_event_galleryimage extends serendipity_event
             }
 
         }
-        //handle the parameters
+        // handle the parameters
         // size = thumb sized or full image?
         switch(strtolower($param_array['size'])) {
             case 'sized':
@@ -473,7 +478,7 @@ class serendipity_event_galleryimage extends serendipity_event
 
             switch(strtolower($param_array['link'])) {
                 case 'image':
-                    $image_link = $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "/") . "plugin/g2wrapper?";
+                    $image_link  = $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "/") . "plugin/g2wrapper?";
                     $image_link .= "album=".$album;
                     $image_link .= "&amp;image=".$photo;
                     $image_link .= "&amp;ext=".$photo_ext;
@@ -481,7 +486,7 @@ class serendipity_event_galleryimage extends serendipity_event
                     break;
 
                 case 'image_sized':
-                    $image_link = $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "/") . "plugin/g2wrapper?";
+                    $image_link  = $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "/") . "plugin/g2wrapper?";
                     $image_link .= "album=".$album;
                     $image_link .= "&amp;image=".$photo;
                     $image_link .= "&amp;ext=".$photo_ext;
@@ -490,7 +495,7 @@ class serendipity_event_galleryimage extends serendipity_event
 
                 case 'album':
 
-                    include_once($this->get_config('gallery_abs')."/embed.php");
+                    include_once($this->get_config('gallery_abs') . "/embed.php");
                     if (!class_exists('GalleryEmbed')) {
                         break;
                     }
@@ -501,15 +506,15 @@ class serendipity_event_galleryimage extends serendipity_event
                         exit;
                     }
 
-                    $ret_aid = GalleryCoreApi::fetchItemIdByPath($album);
-                    $album_id = (is_array($ret_aid)&&intval($ret_aid[1])>=1?intval($ret_aid[1]):0);
+                    $ret_aid  = GalleryCoreApi::fetchItemIdByPath($album);
+                    $album_id = (is_array($ret_aid) && intval($ret_aid[1]) >= 1) ? intval($ret_aid[1]) : 0;
 
-                    $image_link = $gallery_base.'/main.php?g2_view=core.ShowItem&amp;g2_itemId='.$album_id;
+                    $image_link = $gallery_base . '/main.php?g2_view=core.ShowItem&amp;g2_itemId=' . $album_id;
                     break;
 
                 case 'page':
                 default:
-                    include_once($this->get_config('gallery_abs')."/embed.php");
+                    include_once($this->get_config('gallery_abs') . "/embed.php");
                     if (!class_exists('GalleryEmbed')) {
                         break;
                     }
@@ -520,50 +525,50 @@ class serendipity_event_galleryimage extends serendipity_event
                         exit;
                     }
 
-                    $ret_iid = GalleryCoreApi::fetchItemIdByPath($album."/".$photo.".".$photo_ext);
-                    $fullsize_id = (is_array($ret_iid)&&intval($ret_iid[1])>=1?intval($ret_iid[1]):0);
+                    $ret_iid = GalleryCoreApi::fetchItemIdByPath($album . "/" . $photo . "." . $photo_ext);
+                    $fullsize_id = (is_array($ret_iid) && intval($ret_iid[1]) >=1 ) ? intval($ret_iid[1]) : 0;
 
-                    $image_link = $gallery_base.'/main.php?g2_view=core.ShowItem&amp;g2_itemId='.$fullsize_id;
+                    $image_link = $gallery_base.'/main.php?g2_view=core.ShowItem&amp;g2_itemId=' . $fullsize_id;
                     break;
             }
 
         } else {
             switch(strtolower($param_array['link'])) {
                 case 'image':
-                    $image_link = $album_base.'/'.$album.'/'.$photo.'.'.$photo_ext;
+                    $image_link = $album_base . '/'.$album . '/'. $photo . '.' . $photo_ext;
                     break;
 
                 case 'image_sized':
-                    $image_link = $album_base.'/'.$album.'/'.$photo.'.sized.'.$photo_ext;
+                    $image_link = $album_base . '/'.$album . '/' . $photo . '.sized.' . $photo_ext;
                     break;
 
                 case 'album':
-                    $image_link = $gallery_base.'/view_album.php?set_albumName='.$album;
+                    $image_link = $gallery_base . '/view_album.php?set_albumName=' . $album;
                     break;
 
                 case 'page':
                 default:
-                    $image_link = $gallery_base.'/view_photo.php?set_albumName='.$album.'&amp;id='.$photo;
+                    $image_link = $gallery_base . '/view_photo.php?set_albumName=' . $album . '&amp;id=' . $photo;
                     break;
             }
         }
         if ($this->get_config('gversion') != 2) {
             // get thumbnail image attributes
-            list($width, $height, $type, $attr) = getimagesize($album_base.'/'.$album.'/'.$photo.$image_size.$photo_ext);
+            list($width, $height, $type, $attr) = getimagesize($album_base . '/' . $album . '/' . $photo . $image_size . $photo_ext);
         } else {
-            $thissize = getimagesize($album_abs.'/albums/'.$album.'/'.$photo.".".$photo_ext);
+            $thissize = getimagesize($album_abs . '/albums/' . $album . '/' . $photo . "." . $photo_ext);
             if (strtolower($param_array['size']) == 'sized') {
                 $newsize = $this->g2_imagesize($thissize[0], $thissize[1], $this->get_config('popup_max'));
                 $width= $newsize[0];
                 $height = $newsize[1];
-                $attr = 'width="'.$width.'" height="'.$height.'"';
+                $attr = 'width="' . $width . '" height="' . $height . '"';
             } elseif (strtolower($param_array['size']) == 'thumb') {
                 $newsize = $this->g2_imagesize($thissize[0], $thissize[1], $this->get_config('thumb_max'));
                 $width= $newsize[0];
                 $height = $newsize[1];
-                $attr = 'width="'.$width.'" height="'.$height.'"';
+                $attr = 'width="' . $width . '" height="' . $height . '"';
             } else {
-                list($width, $height, $type, $attr) = getimagesize($album_abs."/albums/".$album."/".$photo.".".$photo_ext);
+                list($width, $height, $type, $attr) = getimagesize($album_abs . "/albums/" . $album . "/" . $photo . "." . $photo_ext);
             }
         }
 
@@ -572,37 +577,37 @@ class serendipity_event_galleryimage extends serendipity_event
 
             case 'popup':
                 if ($this->get_config('gversion') != 2) {
-                    if ((strtolower($param_array['link'])=='image')||(strtolower($param_array['link'])=='image_sized')) {
+                    if ((strtolower($param_array['link']) == 'image') || (strtolower($param_array['link']) == 'image_sized')) {
                         // get target image attributes
                         list($pwidth, $pheight, $ptype, $pattr) = getimagesize($image_link);
 
-                        //work out popup image window size
+                        // work out popup image window size
                         if (($pwidth >= $pheight) && ($pwidth > $popup_max)) {
-                            $pwidth=$popup_max;
-                            $pheight=round($popup_max*$height/$width);  //from thumbnail
+                            $pwidth = $popup_max;
+                            $pheight = round($popup_max * $height / $width);  // from thumbnail
                         } elseif (($pheight >= $pwidth) && ($pheight > $popup_max)) {
-                            $pheight=$popup_max;
-                            $pwidth=round($popup_max*$width/$height);   //from thumbnail
+                            $pheight = $popup_max;
+                            $pwidth = round($popup_max * $width / $height);   // from thumbnail
                         }
 
-                        //standard spacing for windows and title bars
-                        $pwidth+=30;
-                        $pheight+=50;
+                        // standard spacing for windows and title bars
+                        $pwidth += 30;
+                        $pheight += 50;
 
                         $link_target = '<a href="javascript:;" ';
                         $link_target .= ' onclick="w = window.open(';
-                        $link_target .= "'".$image_link."', 'GImage Popup','width=$pwidth,height=$pheight,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no');";
-                        $link_target .= 'w.resizeTo('.$pwidth.','.$pheight.')">';
+                        $link_target .= "'" . $image_link . "', 'GImage Popup','width=$pwidth,height=$pheight,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no');";
+                        $link_target .= 'w.resizeTo(' . $pwidth . ',' . $pheight . ')">';
                     } else {
-                        $link_target = '<a href="'.$image_link.'">';
+                        $link_target = '<a href="' . $image_link . '">';
                     }
                 } else {
-                    $link_target = '<a href="'.$image_link.'">';
+                    $link_target = '<a href="' . $image_link . '">';
                 }
                 break;
 
             case 'new':
-                $link_target = '<a href="'.$image_link.'" target="_blank" rel="noopener">';
+                $link_target = '<a href="' . $image_link . '" target="_blank" rel="noopener">';
                 break;
 
             case 'none':
@@ -611,7 +616,7 @@ class serendipity_event_galleryimage extends serendipity_event
 
             case 'default':
             default:
-                $link_target = '<a href="'.$image_link.'">';
+                $link_target = '<a href="' . $image_link . '">';
                 break;
         }
 
@@ -649,7 +654,7 @@ class serendipity_event_galleryimage extends serendipity_event
         }
 
         // caption = image alt text or caption
-        if ($param_array['caption']=="") {
+        if ($param_array['caption'] == "") {
             $param_array['caption'] = "[PHOTO]";
         }
         $param_array['caption'] = str_replace("\"", "", $param_array['caption']);
@@ -660,29 +665,29 @@ class serendipity_event_galleryimage extends serendipity_event
         switch(strtolower($param_array['style'])) {
             case 'image':
                 if ($this->get_config('gversion') == 2) {
-                    $output = $img_pre.'<img '.$img_align.' src="'.$image_path.'" alt="'.$param_array['caption'].'" />'.$img_post;
+                    $output = $img_pre.'<img ' . $img_align . ' src="' . $image_path . '" alt="' . $param_array['caption'].'" />' . $img_post;
                 } else {
-                    $output = $img_pre.'<img '.$img_align.' src="'.$album_base.'/'.$album.'/'.$photo.$image_size.$photo_ext.'" alt="'.$param_array['caption'].'" />'.$img_post;
+                    $output = $img_pre.'<img ' . $img_align . ' src="' . $album_base . '/' . $album . '/' . $photo . $image_size . $photo_ext . '" alt="' . $param_array['caption'].'" />' . $img_post;
                 }
                 break;
 
             case 'fancy':
-                $output = '<div class="serendipity_imageComment_'.$div_align.'" style="width: '.$width.'px">';
+                $output = '<div class="serendipity_imageComment_' . $div_align . '" style="width: ' . $width . 'px">';
                 $output .= '<div class="serendipity_imageComment_img">';
                 if ($this->get_config('gversion') == 2) {
-                    $output .= $link_target.'<img src="'.$image_path.'" border="0" hspace="5" '.$attr.' /></a>';
+                    $output .= $link_target . '<img src="' . $image_path . '" border="0" hspace="5" ' . $attr . ' /></a>';
                 } else {
-                    $output .= $link_target.'<img src="'.$album_base.'/'.$album.'/'.$photo.$image_size.$photo_ext.'" border="0" hspace="5" '.$attr.' /></a>';
+                    $output .= $link_target . '<img src="' . $album_base . '/' . $album . '/' . $photo . $image_size . $photo_ext . '" border="0" hspace="5" ' . $attr . ' /></a>';
                 }
-                $output .= '</div><div class="serendipity_imageComment_txt">'.$param_array['caption'].'</div></div>';
+                $output .= '</div><div class="serendipity_imageComment_txt">' . $param_array['caption'] . '</div></div>';
                 break;
 
             case 'link':
             default:
                 if ($this->get_config('gversion') == 2) {
-                    $output = $img_pre.$link_target.'<img '.$img_align.' src="'.$image_path.'" alt="'.$param_array['caption'].'" /></a>'.$img_post;
+                    $output = $img_pre . $link_target . '<img ' . $img_align . ' src="' . $image_path . '" alt="' . $param_array['caption'] . '" /></a>' . $img_post;
                 } else {
-                    $output = $img_pre.$link_target.'<img '.$img_align.' src="'.$album_base.'/'.$album.'/'.$photo.$image_size.$photo_ext.'" alt="'.$param_array['caption'].'" /></a>'.$img_post;
+                    $output = $img_pre . $link_target . '<img ' . $img_align . ' src="' . $album_base . '/' . $album . '/' . $photo . $image_size . $photo_ext . '" alt="' . $param_array['caption'] . '" /></a>' . $img_post;
                 }
                 break;
         }
