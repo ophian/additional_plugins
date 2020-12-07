@@ -441,12 +441,12 @@
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
-<title>Markup: Gallery: Fügt ein Gallery-Album oder Bild in Form von Markup ein.</title>
+<title>Markup: Gallery: Fügt ein Menalto Gallery-Album oder Bild in Form von Markup ein.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_galleryimage</link>
 <category>Event Plugins</category>
 <author>Rob Antonishen, Alexander Mieland, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;Markup: Gallery&lt;/b&gt;&lt;br /&gt;Fügt ein Gallery-Album oder Bild in Form von Markup ein.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Mon, 07 Dec 2020 13:54:14 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;Markup: Gallery&lt;/b&gt;&lt;br /&gt;Fügt ein Menalto Gallery-Album oder Bild in Form von Markup ein.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
+<pubDate>Mon, 07 Dec 2020 18:05:45 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_galleryimage</guid>
 </item>
 <item>
