@@ -1,3 +1,8 @@
+1.24:
+-----
+ * Fix changed method naming in Core APIs for consistency
+ * Raises requirement to Serendipity Styx 3.0
+
 1.23:
 -----
  * Fix and improve markup_element check for consistency

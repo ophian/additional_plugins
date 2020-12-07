@@ -20,11 +20,11 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '1.23');
+        $propbag->add('version',       '1.24');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0.0',
+            'serendipity' => '3.0.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.2.0'
+            'php'         => '7.3.0'
         ));
         $propbag->add('groups', array('IMAGES','MARKUP'));
 
@@ -200,14 +200,14 @@ class serendipity_event_imageselectorplus extends serendipity_event
         // s9y A: 25x75
         // s9y B: 225x75
 
-        $fdim = @serendipity_getimagesize($target, '', '');
+        $fdim = @serendipity_getImageSize($target, '', '');
 
-        $s9ysizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], $serendipity['thumbSize'], $serendipity['thumbConstraint']);
+        $s9ysizes = serendipity_calculateAspectSize($fdim[0], $fdim[1], $serendipity['thumbSize'], $serendipity['thumbConstraint']);
         $orientation = 'size';
         if ($sizes['width'] == 0) {
-            $_newsizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], $sizes['height'], 'height');
+            $_newsizes = serendipity_calculateAspectSize($fdim[0], $fdim[1], $sizes['height'], 'height');
         } elseif ($sizes['height'] == 0) {
-            $_newsizes = serendipity_calculate_aspect_size($fdim[0], $fdim[1], $sizes['width'], 'width');
+            $_newsizes = serendipity_calculateAspectSize($fdim[0], $fdim[1], $sizes['width'], 'width');
         } else {
             $_newsizes = array(
                 0 => $sizes['width'],
