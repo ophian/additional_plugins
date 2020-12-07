@@ -1,3 +1,11 @@
+2.00:
+-----
+ * Now is able to to use WebP variation on upload and unzip
+ * Fix authorID for the MediaLibrary database to use the default 0 (all) ID state
+ * Improve messaging
+ * Allow ad-hoc debug via configuration logger
+ * Set an urgent warning to only upload zip files following a scheme!
+
 1.24:
 -----
  * Fix changed method naming in Core APIs for consistency

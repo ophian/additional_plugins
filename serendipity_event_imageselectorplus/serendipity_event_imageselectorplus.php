@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '1.24');
+        $propbag->add('version',       '2.00');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0.0',
             'smarty'      => '3.1.0',
@@ -246,6 +246,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                         $checkedN = "";
                         serendipity_db_bool($this->get_config('unzipping', 'true')) ? $checkedY = ' checked="checked"' : $checkedN = ' checked="checked"';
 ?>
+            <span class="msg_notice"><span class="icon-attention-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_ZIP_WARNING;?></span>
             <fieldset id="isp_archives" class="clearfix isp_archives radio_field">
                 <span class="wrap_legend">
                     <legend class="visuallyhidden"><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES;?></legend>
@@ -284,22 +285,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $plugins = serendipity_plugin_api::enum_plugins('*', false, 'serendipity_event_nl2br');
 ?>
                         <input name="serendipity[properties][disable_markups][]" type="hidden" value="<?php echo $plugins[0]['name']; ?>">
-<?php
-        // Styx changed path
-        if (version_compare($serendipity['version'], '3.0', '>')) {
-?>
                         <script src="<?php echo $serendipity['serendipityHTTPPath']; ?>templates/_assets/ckebasic/ckeditor.js"></script>
-<?php
-        } elseif (version_compare($serendipity['version'], '2.1.0', '>')) {
-?>
-                        <script src="<?php echo $serendipity['serendipityHTTPPath']; ?>htmlarea/ckeditor/ckeditor.js"></script>
-<?php
-        } else {
-?>
-                        <script src="<?php echo $serendipity['serendipityHTTPPath']; ?>htmlarea/ckeditor/ckeditor/ckeditor.js"></script>
-<?php
-        } // now just add a simple basic toolbar, since we cannot use embedded plugins here
-?>
                         <script>
                             CKEDITOR.replace( 'quickblog_body_area',
                             {
@@ -365,17 +351,22 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     break;
 
                 case 'backend_image_add':
-                    global $new_media;
+                    global $new_media, $messages;
+
+                    $debug = false; // Ad-hoc debug @see image API and image add admin file
+
                     // if file is zip archive and unzipping enabled
-                    // unzip file and add all images to database
+                    // unzip the file and add all images to database
 
                     // retrieve file type
                     $target_zip = $eventData;
-                    preg_match('@(^.*/)+(.*)\.+(\w*)@',$target_zip,$matches);
+                    preg_match('@(^.*/)+(.*)\.+(\w*)@', $target_zip, $matches);
                     $target_dir = $matches[1];
                     $basename   = $matches[2];
                     $extension  = $matches[3];
-                    $authorid   = (isset($serendipity['POST']['all_authors']) && $serendipity['POST']['all_authors'] == 'true') ? '0' : $serendipity['authorid'];
+                    #$authorid   = (isset($serendipity['POST']['all_authors']) && $serendipity['POST']['all_authors'] == 'true') ? '0' : $serendipity['authorid'];
+                    $authorid   = 0; // Only use access-control based on media directories, not images themselves
+                    $messages   = array();
 
                     // only if unzipping function exists, we have archive file and unzipping set to yes
                     if ((class_exists('ZipArchive')) && ($extension == 'zip') && ($serendipity['POST']['unzip_archives'] == YES)) {
@@ -389,18 +380,18 @@ class serendipity_event_imageselectorplus extends serendipity_event
                             for($i=0; $i < $zip->numFiles; $i++) {
                                 $file_to_extract = $zip->getNameIndex($i);
                                 if (file_exists($target_dir.$file_to_extract)) {
-                                    echo '(' . $file_to_extract . ') ' . ERROR_FILE_EXISTS_ALREADY . "<br />\n";
+                                    $messages[] = '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> (' . $file_to_extract . ') ' . ERROR_FILE_EXISTS_ALREADY . "</span>\n";
                                 } else {
-                                    $files_to_unzip[] = $file_to_extract;
+                                    $files_to_unzip[]   = $file_to_extract;
                                     $extracted_images[] = $target_dir.$file_to_extract;
                                 }
                             }
 
-                            $zip->extractTo($target_dir,$files_to_unzip);
+                            $zip->extractTo($target_dir, $files_to_unzip);
                             $zip->close();
-                            echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_OK . "<br />\n";
+                            $messages[] = '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_OK . "</span>\n";
                         } else {
-                            echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FAILED . "<br />\n";
+                            $messages[] = '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FAILED . "</span>\n";
                         }
 
                         // now proceed all unzipped images
@@ -410,8 +401,51 @@ class serendipity_event_imageselectorplus extends serendipity_event
                             $basename   = $matches[2];
                             $extension  = $matches[3];
                             $tfile      = $basename.".".$extension;
-                            preg_match('@'.$serendipity['uploadPath'].'(.*/)@',$target,$matches);
+                            preg_match('@'.$serendipity['uploadPath'].'(.*/)@', $target, $matches);
                             $image_directory = $matches[1];
+
+                            // avoid uploading images files without extensions, which quite often is done on Macs, since that is bad for the MediaLibrary Management
+                            $tmpfileinfo = @serendipity_getImageSize($target);
+                            if (empty(strtolower(pathinfo($tfile, PATHINFO_EXTENSION)))
+                            && $tmpfileinfo[0] > 0 && $tmpfileinfo[1] > 0 /* check width and height */
+                            && in_array($tmpfileinfo[2], [IMAGETYPE_BMP, IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_TIFF_II, IMAGETYPE_TIFF_MM, IMAGETYPE_WEBP])) {
+                                $ext = explode('/', $tmpfileinfo['mime']);
+                                $tfile = $tfile . '.' . $ext[1];
+                            }
+                            // last chance to lower the upload file extension part
+                            $info   = pathinfo($tfile);
+                            if (!isset($info['extension'])) {
+                                $messages[] = '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> File extension missing or failed!</span>'."\n";
+                                $extension = '';
+                            } else {
+                                $extension = strtolower($extension);
+                            }
+                            $messages[] = sprintf('<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . FILE_UPLOADED . "</span>\n", "<b>$uploadfile</b>", $target);
+                            @umask(0000);
+                            @chmod($target, 0664);
+
+                            // Create a target copy variation in WebP image format
+                            if (file_exists($target) && $serendipity['useWebPFormat']) {
+                                $variat = serendipity_makeImageVariationPath($target, 'webp');
+                                $result = serendipity_convertToWebPFormat($target, $variat['filepath'], $variat['filename'], mime_content_type($target));
+                                if (is_array($result)) {
+                                    $messages[] = '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> WebP image format variation(s) created!</span>'."\n";
+                                    if (is_array($result)) {
+                                        if ($result[0] == 0) {
+                                            if ($debug && (isset($serendipity['logger']) && is_object($serendipity['logger']))) { $serendipity['logger']->debug("ML_CREATEVARIATION: Image WebP format creation success ${result[2]} from $target " . DONE); }
+                                        } else {
+                                            if ($debug && (isset($serendipity['logger']) && is_object($serendipity['logger']))) { $serendipity['logger']->debug("ML_CREATEVARIATION: ImageMagick CLI Image WebP format creation success ${result[2]} from $target " . DONE); }
+                                        }
+                                    }
+                                } else {
+                                    $messages[] = '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> WebP image format copy creation failed!</span>'."\n";
+                                    if ($serendipity['magick'] !== true) {
+                                        if ($debug && (isset($serendipity['logger']) && is_object($serendipity['logger']))) { $serendipity['logger']->debug("ML_CREATEVARIATION: GD Image WebP format creation failed"); }
+                                    } else {
+                                        if ($debug && (isset($serendipity['logger']) && is_object($serendipity['logger']))) { $serendipity['logger']->debug("ML_CREATEVARIATION: ImageMagick CLI Image WebP format creation failed"); }
+                                    }
+                                }
+                            }
 
                             // make thumbnails for new images
                             $thumbs = array(array(
@@ -423,22 +457,27 @@ class serendipity_event_imageselectorplus extends serendipity_event
                             foreach($thumbs AS $thumb) {
                                 // Create thumbnail
                                 if ( $created_thumbnail = serendipity_makeThumbnail($tfile, $image_directory, $thumb['thumbSize'], $thumb['thumb']) ) {
-                                    echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE . " - " . sprintf(THUMB_CREATED_DONE, $thumb['thumb']) . "<br />\n";
+                                    $messages[] = '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE . " - " . sprintf(THUMB_CREATED_DONE, $thumb['thumb']) . "</span>\n";
                                 }
                             }
 
                             // Insert into database
                             $image_id = serendipity_insertImageInDatabase($tfile, $image_directory, $authorid, null, $realname);
-                            echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE . " ($tfile) " . PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_ADD_TO_DB . "<br />\n";
+                            $messages[] = '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE . " ($tfile) " . PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_ADD_TO_DB . "</span>\n";
                             $new_media[] = array(
                                 'image_id'          => $image_id,
                                 'target'            => $target,
                                 'created_thumbnail' => $created_thumbnail
                             );
                         }
+                        if (!empty($messages)) {
+                            foreach($messages AS $message) {
+                                echo $message;
+                            }
+                        }
                     }
                     // here we need to add normal upload quickblog posts! Thus:
-                    // no break [PSR-2] - extends 'backend_image_addHotlink', which is bit irritating, but we need to fall through or use a method for both
+                    // no break [PSR-2] - extends 'backend_image_addHotlink', which is bit irritating, but we need to fall through or have to use a method for both
 
                 case 'backend_image_addHotlink':
                     // Re-Scale thumbnails?
