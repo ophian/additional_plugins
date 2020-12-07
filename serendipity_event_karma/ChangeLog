@@ -1,6 +1,10 @@
+2.18:
+-----
+ * Fix changed method naming in Core APIs for consistency
+ * Raises requirement to Serendipity Styx 3.0
+
 2.17:
 -----
-
  * Fix PHP 7.4 deprecated offset access syntax with curly braces
 
 2.16:

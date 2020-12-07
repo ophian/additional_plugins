@@ -44,11 +44,11 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '2.17');
+        $propbag->add('version',       '2.18');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
+            'serendipity' => '3.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.1.0'
+            'php'         => '7.3.0'
         ));
         $propbag->add('event_hooks',   array(
             'external_plugin'             => true,
@@ -1978,7 +1978,7 @@ END_IMG_CSS;
         while (false !== ($filename = readdir($folder))) {
             if ($filename != "ajax-loader.gif") {
                 $parts = serendipity_parseFileName($filename);
-                $img_data = serendipity_getimagesize($path . '/' . $filename);
+                $img_data = @serendipity_getImageSize($path . '/' . $filename);
                 if (!isset($img_data['noimage'])) {
                     // Curly braces are just a different syntax of associative array assignment
                     $images[$filename] = array('fname'=>$filename, 'width'=>$img_data[0], 'height'=>$img_data[1]);
@@ -2119,7 +2119,7 @@ END_IMG_CSS;
                 // Configured to text-only
                 $this->image_name = $base_image;
             } else {
-                $imagesize = serendipity_getimagesize(dirname(__FILE__) . "/img/" . $base_image);
+                $imagesize = @serendipity_getImageSize(dirname(__FILE__) . "/img/" . $base_image);
                 if ($imagesize['noimage']) {
                     // Leave as default
                 } else {
@@ -2130,7 +2130,7 @@ END_IMG_CSS;
         }
         // Is the (possibly default) image valid?
         if ($this->image_name) {
-            $imagesize = serendipity_getimagesize(dirname(__FILE__) . "/img/" . $this->image_name);
+            $imagesize = @serendipity_getImageSize(dirname(__FILE__) . "/img/" . $this->image_name);
             if ($imagesize['noimage']) {
                 // No valid image; use text-only
                 $this->image_name = '0';
