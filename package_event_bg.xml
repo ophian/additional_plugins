@@ -9402,9 +9402,9 @@
 <description>Добавя връзка към интересни статистически данни в страницата на постингите, включително и брояч на посетителите</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.00</version>
+  <version>3.01</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <date>2020-12-02</date>
+  <date>2020-12-09</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
