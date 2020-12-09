@@ -18,7 +18,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '3.00');
+        $propbag->add('version',       '3.01');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.3'
@@ -1009,7 +1009,7 @@ class serendipity_event_statistics extends serendipity_event
 
             // updating db
             $q = serendipity_db_query("SELECT count(refs) AS referrer FROM {$serendipity['dbPrefix']}refs WHERE refs = '$urlC' GROUP BY refs", true);
-            if ($q['referrer'] >= 1){
+            if (isset($q['referrer']) && $q['referrer'] >= 1){
                 serendipity_db_query("UPDATE {$serendipity['dbPrefix']}refs SET count=count+1 WHERE (refs = '$urlC')");
             } else {
                 serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}refs (refs, count) VALUES ('$urlC', 1)");
