@@ -1,6 +1,6 @@
 2.00:
 -----
- * Now is able to to use WebP variation on upload and unzip
+ * Add Serendipity Styx 3.0 WebP variation support on upload and unzip
  * Fix authorID for the MediaLibrary database to use the default 0 (all) ID state
  * Improve messaging
  * Allow ad-hoc debug via configuration logger
