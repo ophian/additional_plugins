@@ -25,8 +25,8 @@ class serendipity_event_suggest extends serendipity_event
                                             'backend_publish' => true
                                         ));
         $propbag->add('configuration',  array('permalink', 'pagetitle', 'authorid', 'email'));
-        $propbag->add('author',         'Garvin Hicking');
-        $propbag->add('version',        '0.14');
+        $propbag->add('author',         'Garvin Hicking, Ian Styx');
+        $propbag->add('version',        '0.15');
         $propbag->add('groups',         array('FRONTEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '1.7',
@@ -68,7 +68,7 @@ class serendipity_event_suggest extends serendipity_event
             article text,
             title text,
             validation varchar(128)
-            );");
+            ) {UTF_8}");
     }
 
     function introspect_config_item($name, &$propbag)
@@ -235,7 +235,7 @@ class serendipity_event_suggest extends serendipity_event
                 header('Status: 200 OK');
             }
 
-            if (!is_object($serendipity['smarty'])) {
+            if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
             }
 
