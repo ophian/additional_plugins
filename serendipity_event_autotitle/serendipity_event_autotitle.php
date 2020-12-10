@@ -23,7 +23,7 @@ class serendipity_event_autotitle extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOTITLE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '0.4');
+        $propbag->add('version',       '0.5');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'php'         => '4.1.0'
@@ -190,7 +190,7 @@ class serendipity_event_autotitle extends serendipity_event
                 $page_charset = $this->getCharset($page);
 
                 // we need smarty to get our own charset :/
-                if (!is_object($serendipity['smarty'])) {
+                if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                     serendipity_smarty_init();
                 }
                 if (!defined('Smarty::SMARTY_VERSION')) {

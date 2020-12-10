@@ -1,3 +1,7 @@
+0.5:
+-----
+ * PHP 8 preparation fix
+
 0.4:
 -----
  * Fix and improve markup_element check for consistency
