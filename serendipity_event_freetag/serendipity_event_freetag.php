@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.33');
+        $propbag->add('version',       '4.34');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2221,7 +2221,7 @@ addLoadEvent(enableAutocomplete);
             $param = is_array($param) ? array_map('strip_tags', $param) : strip_tags($param);
             $param = array_filter($param); // filter out all left BOOL, NULL and EMPTY elements, which still are possible by removing XSS with strip_tags
 
-            if (!is_object($serendipity['smarty'])) {
+            if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
             }
             if (false === serendipity_db_bool($this->get_config('show_tagcloud', 'true'))) {
