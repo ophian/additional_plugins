@@ -1,3 +1,7 @@
+3.01:
+-----
+ * PHP 8 preparation fix
+
 3.00:
 -----
  * Fix borked database query checks to set/build and get the installed multilingual "db_built"

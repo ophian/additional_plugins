@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.00');
+        $propbag->add('version',        '3.01');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -439,7 +439,7 @@ class serendipity_event_multilingual extends serendipity_event
                     if (!is_array($eventData)) {
                         return false;
                     }
-                    if (!is_object($serendipity['smarty'])) {
+                    if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                         serendipity_smarty_init();
                     }
                     $serendipity['smarty']->assign('blogTitle', $this->strip_langs($eventData['blogTitle']));
@@ -503,7 +503,7 @@ class serendipity_event_multilingual extends serendipity_event
                     break;
 
                 case 'genpage':
-                    if (!is_object($serendipity['smarty'])) {
+                    if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                         // never init in genpage without adding previously set $vars, which is $view etc!
                         serendipity_smarty_init($serendipity['plugindata']['smartyvars']);
                     }
