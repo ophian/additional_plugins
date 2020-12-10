@@ -99,7 +99,7 @@ class serendipity_event_externalphp extends serendipity_event
             $_ENV['staticpage_pagetitle'] = preg_replace('@[^a-z0-9]@i', '_',$this->get_config('pagetitle'));
             $serendipity['smarty']->assign('staticpage_pagetitle', $_ENV['staticpage_pagetitle']);
 
-            $articleformat = serendipity_db_bool($this->get_config('articleformat', 'true');
+            $articleformat = serendipity_db_bool($this->get_config('articleformat', 'true'));
 
             if ($articleformat === true) {
                 echo '<div class="serendipity_Entry_Date">
