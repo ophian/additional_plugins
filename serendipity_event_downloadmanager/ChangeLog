@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+1.47:
+-----
+ * PHP 8 preparation fix
+
 1.46:
 ----
  * Add PHP 7 build-in random_bytes() check

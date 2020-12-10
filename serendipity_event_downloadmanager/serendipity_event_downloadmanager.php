@@ -37,7 +37,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '5.4.0'
         ));
 
-        $propbag->add('version',       '1.46');
+        $propbag->add('version',       '1.47');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -297,7 +297,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 header('Status: 200 OK');
             }
 
-            if (!is_object($serendipity['smarty'])) {
+            if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
             }
             $_ENV['staticpage_pagetitle'] = preg_replace('@[^a-z0-9]@i', '_', $this->get_config('pagetitle'));
@@ -533,7 +533,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     {
         global $serendipity;
 
-        if (!is_object($serendipity['smarty'])) {
+        if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
             serendipity_smarty_init();
         }
         if ($serendipity['version'][0] < 2) {
@@ -828,7 +828,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             header('Status: 200 OK');
         }
 
-        if (!is_object($serendipity['smarty'])) {
+        if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
             serendipity_smarty_init();
         }
 
@@ -1952,7 +1952,7 @@ class serendipity_event_downloadmanager extends serendipity_event
 
                 case 'backend_sidebar_entries_event_display_downloadmanager':
 
-                    if (!is_object($serendipity['smarty'])) {
+                    if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                         serendipity_smarty_init();
                     }
 
