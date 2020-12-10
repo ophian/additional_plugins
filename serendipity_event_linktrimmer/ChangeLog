@@ -1,3 +1,7 @@
+1.7.4:
+-----
+ * PHP 8 preparation fix
+
 1.7.3:
 -----
  * Use serendipity js namespace, raises Serendipity requirement

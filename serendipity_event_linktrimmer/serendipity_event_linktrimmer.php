@@ -22,7 +22,7 @@ class serendipity_event_linktrimmer extends serendipity_event
             'php'         => '5.6.0'
         ));
 
-        $propbag->add('version',       '1.7.3');
+        $propbag->add('version',       '1.7.4');
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('prefix', 'frontpage', 'domain'));
@@ -183,7 +183,7 @@ class serendipity_event_linktrimmer extends serendipity_event
             die ("Don't hack!");
         }
 
-        if (!is_object($serendipity['smarty'])) {
+        if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
             serendipity_smarty_init();
         }
 
