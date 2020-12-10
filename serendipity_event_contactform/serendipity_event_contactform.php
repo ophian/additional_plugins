@@ -27,7 +27,7 @@ class serendipity_event_contactform extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'backend_title', 'email', 'subject', 'counter', 'intro', 'sent', 'articleformat', 'dynamic_tpl', 'dynamic_fields', 'dynamic_fields_tpl', 'dynamic_fields_desc'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.33');
+        $propbag->add('version', '1.34');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -419,7 +419,7 @@ class serendipity_event_contactform extends serendipity_event
                 header('Status: 200 OK');
             }
 
-            if (!is_object($serendipity['smarty'])) {
+            if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
             }
             $serendipity['smarty']->assign('staticpage_pagetitle', preg_replace('@[^a-z0-9]@i', '_', trim($this->get_config('pagetitle'))));
