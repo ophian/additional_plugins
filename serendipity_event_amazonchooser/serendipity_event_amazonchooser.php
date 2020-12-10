@@ -22,7 +22,7 @@ class serendipity_event_amazonchooser extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AMAZONCHOOSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthew Groeninger, Ian Styx');
-        $propbag->add('version',       '0.85');
+        $propbag->add('version',       '0.86');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -229,7 +229,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                                 die ("Don't hack!");
                             }
 
-                            if (!is_object($serendipity['smarty'])) {
+                            if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                                 serendipity_smarty_init();
                             }
 
@@ -420,7 +420,7 @@ class serendipity_event_amazonchooser extends serendipity_event
             $content = $cache_obj->get('amazonchooser'.$asin);
         }
         if (!$content) {
-           if (!is_object($serendipity['smarty'])) {
+           if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
               serendipity_smarty_init();
            }
 
