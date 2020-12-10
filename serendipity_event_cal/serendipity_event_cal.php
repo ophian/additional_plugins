@@ -72,7 +72,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '1.87');
+        $propbag->add('version',        '1.88');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '1.6',
@@ -1313,7 +1313,7 @@ class serendipity_event_cal extends serendipity_event
         $tzoffsetto   = "+0200"; //$serendipity['serverOffsetHours'] ? $serendipity['serverOffsetHours'] : "+0200";
         $tzname       = date("T");
 
-        if (!is_object($serendipity['smarty'])) {
+        if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
             serendipity_smarty_init();
         }
 
@@ -2722,7 +2722,7 @@ class serendipity_event_cal extends serendipity_event
 
                     // forbid entry if not admin
                     if (serendipity_userLoggedIn() && $_SESSION['serendipityUserlevel'] == '255') {
-                        if (!is_object($serendipity['smarty'])) {
+                        if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                             serendipity_smarty_init(); // if not set to avoid member function assign() on a non-object error, start Smarty templating
                         }
 
