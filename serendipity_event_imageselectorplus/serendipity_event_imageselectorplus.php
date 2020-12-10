@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.00');
+        $propbag->add('version',       '2.01');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0.0',
             'smarty'      => '3.1.0',
@@ -833,7 +833,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
             'exif_mode' => $exif_mode
         );
 
-        if (!is_object($serendipity['smarty'])) {
+        if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
             serendipity_smarty_init();
         }
 
@@ -960,7 +960,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                         array_multisort($order, SORT_ASC, SORT_NUMERIC, $t);
 
                         // now make an output using template
-                        if (!is_object($serendipity['smarty'])) {
+                        if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                             serendipity_smarty_init();
                         }
 

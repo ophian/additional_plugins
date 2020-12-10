@@ -1,3 +1,7 @@
+2.01:
+-----
+ * PHP 8 preparation fix
+
 2.00:
 -----
  * Add Serendipity Styx 3.0 WebP variation support on upload and unzip
