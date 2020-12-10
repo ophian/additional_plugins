@@ -18,7 +18,7 @@ class serendipity_event_vgwort extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_VGWORT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda, Thomas Hochstein');
-        $propbag->add('version',       '0.5');
+        $propbag->add('version',       '0.6');
         $propbag->add('requirements',  array(
             'serendipity' => '2.2.1'
         ));
@@ -237,7 +237,7 @@ class serendipity_event_vgwort extends serendipity_event
                     break;
 
                 case 'backend_maintenance':
-                    if (!is_object($serendipity['smarty'])) {
+                    if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                         serendipity_smarty_init();
                     }
 
