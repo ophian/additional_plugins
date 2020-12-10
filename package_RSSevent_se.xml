@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon Media Button&lt;/b&gt;&lt;br /&gt;Adds a button to allow Amazon.com search which are insertable into your entry&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:23:21 +0100</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:17:31 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -50,7 +50,7 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autotitle&lt;br /&gt;Markup: Autotitle&lt;/b&gt;&lt;br /&gt;Set the title-tag into the links of the entry.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:22:48 +0100</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:18:35 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_autotitle</guid>
 </item>
 <item>
@@ -95,7 +95,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Calendar&lt;/b&gt;&lt;br /&gt;Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 17 Aug 2020 10:01:22 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:19:19 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Contact Form&lt;/b&gt;&lt;br /&gt;Shows a email contactform on your blog as a static page. It can be accessed by either the custom permalink or by index.php?serendipity[subpage]=contactform. You can customize the look of the contact form by putting the plugin_contactform.tpl file into your template directory and modify it there. Captchas from the Spamblock plugin (if enabled) will be applied.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Thu, 15 Oct 2020 13:48:42 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:20:21 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -221,7 +221,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_customarchive&lt;br /&gt;Customizable Entries Archive&lt;/b&gt;&lt;br /&gt;Shows a sortable view of all past articles for the visitor. The link to this page should be inserted into a HTML nugget.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Thu, 15 Oct 2020 13:51:53 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:21:06 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_customarchive</guid>
 </item>
 <item>
@@ -266,7 +266,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Provides full downloadmanager capabilities to your s9y. When uninstalling, all related tables will be dropped!&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 15 Oct 2020 13:55:21 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:35:59 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
@@ -354,9 +354,9 @@
 <title>External PHP Application: Shows an external PHP application inside your blog with your blogs design and all formattings. USE WITH CARE, THIS PLUGIN HAS SECURITY IMPLICATIONS AS IT INCLUDES ANY GENERIC PHP FILE! YOU CAN ONLY USE THIS PLUGIN AS ADMIN!</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_externalphp</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking</author>
+<author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_externalphp&lt;br /&gt;External PHP Application&lt;/b&gt;&lt;br /&gt;Shows an external PHP application inside your blog with your blogs design and all formattings. USE WITH CARE, THIS PLUGIN HAS SECURITY IMPLICATIONS AS IT INCLUDES ANY GENERIC PHP FILE! YOU CAN ONLY USE THIS PLUGIN AS ADMIN!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 23 Oct 2019 11:21:19 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:44:39 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_externalphp</guid>
 </item>
 <item>
@@ -426,9 +426,9 @@
 <title>Discussion forum / phpBB comment mirroring: Provides a complete discussion forum to your users. Can alternatively provide to mirror comments into a phpBB installation.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_forum</link>
 <category>Event Plugins</category>
-<author>Alexander 'dma147' Mieland, http://blog.linux-stats.org, dma147@linux-stats.org</author>
+<author>Alexander 'dma147' Mieland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_forum&lt;br /&gt;Discussion forum / phpBB comment mirroring&lt;/b&gt;&lt;br /&gt;Provides a complete discussion forum to your users. Can alternatively provide to mirror comments into a phpBB installation.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 01 Jul 2020 13:05:01 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 10:45:44 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_forum</guid>
 </item>
 <item>
@@ -437,7 +437,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Etikettering av artiklar&lt;/b&gt;&lt;br /&gt;Medger fri etikettering av artiklar&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Wed, 09 Dec 2020 18:57:22 +0100</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:22:50 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -536,7 +536,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Gästbok&lt;/b&gt;&lt;br /&gt;Visa en gästbol i din blog med ditt vanlig blog-utseende.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Tue, 20 Oct 2020 09:58:56 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:23:34 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -563,7 +563,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Extended options for media manager&lt;/b&gt;&lt;br /&gt;Allows extended options for inserting images from the media manager&lt;br/&gt;For: Serendipity 3.0.0</content:encoded>
-<pubDate>Mon, 07 Dec 2020 13:28:03 +0100</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:24:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -635,7 +635,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linktrimmer&lt;/b&gt;&lt;br /&gt;Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sat, 26 Oct 2019 18:27:27 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:25:22 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
@@ -734,7 +734,7 @@
 <category>Event Plugins</category>
 <author>Matthias Gutjahr, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Microformats&lt;/b&gt;&lt;br /&gt;This plugin provides an easy way to publish reviews (or events); it supports the respective microformats.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 24 Apr 2020 09:07:04 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 09:44:54 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_microformats</guid>
 </item>
 <item>
@@ -761,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilingual entries&lt;/b&gt;&lt;br /&gt;Allows to create multiple language versions of an entry&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Fri, 27 Nov 2020 16:43:35 +0100</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:26:11 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -788,7 +788,7 @@
 <category>Event Plugins</category>
 <author>Jude Anthony, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_newsbox&lt;br /&gt;Newsbox&lt;/b&gt;&lt;br /&gt;Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.&lt;br/&gt;For: Serendipity 2.7</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:25:43 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:27:06 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_newsbox</guid>
 </item>
 <item>
@@ -1013,7 +1013,7 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detects SPAM via an algorithm which learns.&lt;br/&gt;For: Serendipity 2.1.2</content:encoded>
-<pubDate>Tue, 06 Oct 2020 09:57:01 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:28:55 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;statiska sidor&lt;/b&gt;&lt;br /&gt;Förvaltar olika statiska sidor inom ditt blog med blog-design och alla formateringen. Lägg3r till en ny menypunkt i administrationsgränssnittet!&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Fri, 04 Dec 2020 15:27:19 +0100</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:29:41 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1083,9 +1083,9 @@
 <title>Suggest entries: Allows non-registered authors to suggest entries for publishing</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_suggest</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking</author>
+<author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_suggest&lt;br /&gt;Suggest entries&lt;/b&gt;&lt;br /&gt;Allows non-registered authors to suggest entries for publishing&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 06 Apr 2018 10:05:24 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 10:37:06 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_suggest</guid>
 </item>
 <item>
@@ -1139,7 +1139,7 @@
 <category>Event Plugins</category>
 <author>Cameron MacFarland</author>
 <content:encoded>&lt;b&gt;serendipity_event_thumbnails&lt;br /&gt;Thumbnail Page&lt;/b&gt;&lt;br /&gt;Shows a thumbnail page. Address is index.php?serendipity[page]=thumbs&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 09:38:04 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_thumbnails</guid>
 </item>
 <item>
@@ -1238,7 +1238,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;User Profiles&lt;/b&gt;&lt;br /&gt;Shows simple user profiles and allows to embed author pictures.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:25:06 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 09:36:52 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
@@ -1256,7 +1256,7 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda, Thomas Hochstein</author>
 <content:encoded>&lt;b&gt;serendipity_event_vgwort&lt;br /&gt;VG Wort&lt;/b&gt;&lt;br /&gt;Integrate VG Wort counters into your blog.&lt;br/&gt;For: Serendipity 2.2.1</content:encoded>
-<pubDate>Sat, 26 Sep 2020 15:41:05 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:30:49 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_vgwort</guid>
 </item>
 <item>
@@ -1319,7 +1319,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 22 Mar 2020 15:47:50 +0100</pubDate>
+<pubDate>Thu, 10 Dec 2020 11:31:57 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>
@@ -1337,7 +1337,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees</author>
 <content:encoded>&lt;b&gt;serendipity_event_pollbox&lt;br /&gt;Polls&lt;/b&gt;&lt;br /&gt;Maintains your votings / polls&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Apr 2018 16:45:49 +0200</pubDate>
+<pubDate>Thu, 10 Dec 2020 09:34:04 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_pollbox</guid>
 </item>
 <item>
