@@ -25,7 +25,7 @@ class serendipity_event_thumbnails extends serendipity_event {
         $propbag->add('configuration', array('number'));
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Cameron MacFarland');
-        $propbag->add('version', '1.4.1');
+        $propbag->add('version', '1.4.2');
         $propbag->add('requirements',  array(
             'serendipity' => '0.7',
             'smarty'      => '2.6.7',
@@ -68,7 +68,7 @@ class serendipity_event_thumbnails extends serendipity_event {
 
         if ($serendipity['GET']['page'] == 'thumbs') {
             $title = '';
-            if (!is_object($serendipity['smarty'])) {
+            if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
             }
             $_ENV['staticpage_pagetitle'] = 'thumbs';

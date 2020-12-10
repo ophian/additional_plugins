@@ -1,1 +1,6 @@
+1.4.2:
+------
+ * PHP 8 preparation fix
+
+1.4.x
 Propagate $smarty.env.staticpage_pagetitle (and the others) so that it can be used in entries.tpl
