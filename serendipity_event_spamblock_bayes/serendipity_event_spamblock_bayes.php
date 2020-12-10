@@ -16,7 +16,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.05');
+        $propbag->add('version',        '2.06');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -448,7 +448,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         } else {
             $comments = array();
         }
-        if (!is_object($serendipity['smarty'])) {
+        if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
             serendipity_smarty_init();
         }
         $serendipity['smarty']->assign('comments', $comments);
