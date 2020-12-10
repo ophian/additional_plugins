@@ -275,7 +275,7 @@ class serendipity_common_adduser
     {
         global $serendipity;
 
-        if (!is_object($serendipity['smarty'])) {
+        if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
             serendipity_smarty_init();
         }
         $serendipity['smarty']->assign(array(
