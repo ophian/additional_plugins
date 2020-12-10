@@ -599,7 +599,7 @@
     /**
      *
      */
-    function DMA_forum_DeletePost($boardid, $threadid, $postid, $page=1, $uploaddir="./", $itemsperpage) {
+    function DMA_forum_DeletePost($boardid, $threadid, $postid, $page=1, $uploaddir="./", $itemsperpage=15) {
         global $serendipity;
         $q = "DELETE FROM {$serendipity['dbPrefix']}dma_forum_posts
                 WHERE postid = '".intval($postid)."'";

@@ -52,8 +52,8 @@ class serendipity_event_forum extends serendipity_event
             'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '0.42');
-        $propbag->add('author',       'Alexander \'dma147\' Mieland, http://blog.linux-stats.org, dma147@linux-stats.org');
+        $propbag->add('version',       '0.43');
+        $propbag->add('author',       'Alexander \'dma147\' Mieland, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
                                             'entries_header'           => true,
@@ -357,7 +357,7 @@ class serendipity_event_forum extends serendipity_event
         global $serendipity;
 
         if ($serendipity['GET']['subpage'] == $this->get_config('pageurl')) {
-            if (!is_object($serendipity['smarty'])) {
+            if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
             }
             $_ENV['staticpage_pagetitle'] = preg_replace('@[^a-z0-9]@i', '_',$this->get_config('pagetitle'));
@@ -406,7 +406,7 @@ class serendipity_event_forum extends serendipity_event
                         lastauthorname     varchar(48)    NOT NULL    default '',
                         lastpostid        int(10)        NOT NULL    default '0',
                         lastposttime    int(10)        NOT NULL    default '0'
-                )";
+                ) {UTF_8}";
             $sql = serendipity_db_schema_import($q);
 
             $q = "CREATE TABLE {$serendipity['dbPrefix']}dma_forum_posts (
@@ -419,7 +419,7 @@ class serendipity_event_forum extends serendipity_event
                         authorid         int(10)     NOT NULL     default '0',
                         authorname         varchar(48)    NOT NULL    default '',
                         editcount         int(10)     NOT NULL     default '0'
-                )";
+                ) {UTF_8}";
             $sql = serendipity_db_schema_import($q);
 
             $q = "CREATE INDEX boardid ON {$serendipity['dbPrefix']}dma_forum_boards (boardid);";
@@ -549,7 +549,7 @@ class serendipity_event_forum extends serendipity_event
                                 lastvisit        int(10)        NOT NULL    default '0',
                                 lastpost        int(10)        NOT NULL    default '0',
                                 uploadids        text
-                        )";
+                        ) {UTF_8}";
                     $sql = serendipity_db_schema_import($q);
                     $q = "CREATE INDEX authorid ON {$serendipity['dbPrefix']}dma_forum_users (authorid);";
                     $sql = serendipity_db_schema_import($q);
@@ -668,7 +668,7 @@ class serendipity_event_forum extends serendipity_event
                             lastauthorname  varchar(48) NOT NULL    default '',
                             lastpostid      int(10)     NOT NULL    default '0',
                             lastposttime    int(10)     NOT NULL    default '0'
-                        )";
+                        ) {UTF_8}";
                     $sql = serendipity_db_schema_import($q);
                     $q = "INSERT INTO {$serendipity['dbPrefix']}dma_forum_threads_tmp
                                  (boardid, threadid, title, replies, views, flag, notifymails, lastauthorid, lastauthorname, lastpostid, lastposttime)
@@ -689,7 +689,7 @@ class serendipity_event_forum extends serendipity_event
                             lastauthorname  varchar(48) NOT NULL    default '',
                             lastpostid      int(10)     NOT NULL    default '0',
                             lastposttime    int(10)     NOT NULL    default '0'
-                        )";
+                        ) {UTF_8}";
                     $sql = serendipity_db_schema_import($q);
                     $q = "INSERT INTO {$serendipity['dbPrefix']}dma_forum_threads
                                  (boardid, threadid, title, replies, views, flag, announce, notifymails, lastauthorid, lastauthorname, lastpostid, lastposttime)
