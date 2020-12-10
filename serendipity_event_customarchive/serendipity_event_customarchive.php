@@ -92,7 +92,7 @@ class serendipity_event_customarchive extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'articleformat', 'exclude_emptyyears'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.19');
+        $propbag->add('version', '1.20');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -267,7 +267,7 @@ class serendipity_event_customarchive extends serendipity_event
                 header('Status: 200 OK');
             }
 
-            if (!is_object($serendipity['smarty'])) {
+            if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
             }
             $pt = preg_replace('@[^a-z0-9]@i', '_', $this->get_config('pagetitle'));
@@ -637,7 +637,7 @@ class serendipity_event_customarchive extends serendipity_event
                         $serendipity['GET']['subpage'] = $nice_url;
                     }
 
-                    if (!is_object($serendipity['smarty'])) {
+                    if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                         // never init in genpage without adding previously set $vars, which is $view etc!
                         serendipity_smarty_init($serendipity['plugindata']['smartyvars']);
                     }
