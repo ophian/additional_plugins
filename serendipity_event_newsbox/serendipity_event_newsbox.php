@@ -23,7 +23,7 @@ class serendipity_event_newsbox extends serendipity_event
         $propbag->add('groups',        array('FRONTEND_VIEWS', 'FRONTEND_FEATURES'));
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Jude Anthony, Ian Styx');
-        $propbag->add('version',       '1.2');
+        $propbag->add('version',       '1.3');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7',
             'smarty'      => '3.1.0',
@@ -169,7 +169,7 @@ class serendipity_event_newsbox extends serendipity_event
                         break;
                     }
 
-                    if (!is_object($serendipity['smarty'])) {
+                    if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                         // never init in genpage without adding previously set $vars, which is $view etc!
                         serendipity_smarty_init($serendipity['plugindata']['smartyvars']);
                     }

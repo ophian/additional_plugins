@@ -1,7 +1,11 @@
+1.3:
+-----
+ * PHP 8 preparation fix
+
 1.2:
 ----
  * Fixes for using the 'newsbox.tpl file
- * Fix a remaing old serendipity_getTemplateFile() call
+ * Fix a remaining old serendipity_getTemplateFile() call
  * Remove additional markup additions, supposed to fix different
    theme conditionals for the 'entries_footer' hook.
    In your engine OR theme entries.tpl template it has to live outside the serendipity_entries_footer container
