@@ -17,9 +17,9 @@ class serendipity_event_externalphp extends serendipity_event
         $propbag->add('name', PLUGIN_EXTERNALPHP_TITLE);
         $propbag->add('description', PLUGIN_EXTERNALPHP_TITLE_BLAHBLAH);
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
-        $propbag->add('configuration', array('permalink', 'pagetitle', 'include', 'articleformat'));
-        $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '1.6');
+        $propbag->add('configuration', array('permalink', 'pagetitle', 'include', 'articleformat', 'markup'));
+        $propbag->add('author', 'Garvin Hicking, Ian Styx');
+        $propbag->add('version', '1.7');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -69,6 +69,13 @@ class serendipity_event_externalphp extends serendipity_event
                 $propbag->add('default',     'true');
                 break;
 
+            case 'markup':
+                $propbag->add('type',           'boolean');
+                $propbag->add('name',           DO_MARKUP);
+                $propbag->add('description',    DO_MARKUP_DESCRIPTION);
+                $propbag->add('default',        'false');
+                break;
+
             default:
                 return false;
         }
@@ -85,31 +92,34 @@ class serendipity_event_externalphp extends serendipity_event
                 header('Status: 200 OK');
             }
 
-            if (!is_object($serendipity['smarty'])) {
+            if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
             }
+
             $_ENV['staticpage_pagetitle'] = preg_replace('@[^a-z0-9]@i', '_',$this->get_config('pagetitle'));
             $serendipity['smarty']->assign('staticpage_pagetitle', $_ENV['staticpage_pagetitle']);
 
+            $articleformat = serendipity_db_bool($this->get_config('articleformat', 'true');
 
-            if ($this->get_config('articleformat') == TRUE) {
+            if ($articleformat === true) {
                 echo '<div class="serendipity_Entry_Date">
                          <h3 class="serendipity_date">' . $this->get_config('pagetitle') . '</h3>';
             }
 
             echo '<h4 class="serendipity_title"><a href="#">' . $this->get_config('headline') . '</a></h4>';
 
-            if ($this->get_config('articleformat') == TRUE) {
+            if ($articleformat === true) {
                 echo '<div class="serendipity_entry"><div class="serendipity_entry_body">';
             }
 
             $include_file = realpath($this->get_config('include'));
+            $content = null;
             ob_start();
-            include $include_file;
-            $content = ob_get_contents();
+              include $include_file;
+              $content = ob_get_contents();
             ob_end_clean();
 
-            if ($this->get_config('markup') == TRUE) {
+            if (serendipity_db_bool($this->get_config('markup', 'false')) === true) {
                 $entry = array('body' => $content);
                 serendipity_plugin_api::hook_event('frontend_display', $entry);
                 echo $entry['body'];
@@ -117,8 +127,8 @@ class serendipity_event_externalphp extends serendipity_event
                 echo $content;
             }
 
-            if ($this->get_config('articleformat') == TRUE) {
-                echo '</div></div></div>';
+            if ($articleformat === true) {
+                echo "</div>\n</div>\n</div>\n";
             }
         }
     }

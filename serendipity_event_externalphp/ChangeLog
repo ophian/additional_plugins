@@ -1,3 +1,10 @@
+1.7:
+----
+
+ * PHP 8 preparation fix
+ * Fix missing markup config property
+
+
 1.6:
 ----
 
