@@ -283,9 +283,9 @@
 <description>Sobald das Dashboard (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in das Dashboard des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten. Mit Styx 2.1+ ist zu empfehlen, dieses Plugin in Kombination mit dem modemaintain (Wartungs-) Ereignis Plugin zu nutzen. Für Autoupdate Hinweise müssen Sie die globale Serendipity Konfigurationsoption in &quot;Einstellungen:: Generelle Einstellungen: Update-Hinweis&quot; auf &quot;stable&quot; oder &quot;beta&quot; stellen, um es überhaupt über das Dashboard nutzen zu können!</description>
 <maintainers><maintainer><name>onli, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8.0</version>
+  <version>1.8.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2020-11-13</date>
+  <date>2020-12-11</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -863,9 +863,9 @@
 <description>Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.00</version>
+  <version>2.01</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <date>2020-12-02</date>
+  <date>2020-12-11</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
