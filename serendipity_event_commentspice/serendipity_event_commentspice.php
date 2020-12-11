@@ -28,7 +28,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.3'
         ));
-        $propbag->add('version',        '2.00');
+        $propbag->add('version',        '2.01');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -1253,7 +1253,7 @@ select.commentspice_rss_input option {
     {
         global $serendipity;
 
-        if (is_writeable($serendipity['serendipityPath'] . 'serendipity_config_local.inc.php')) {
+        if (is_writable($serendipity['serendipityPath'] . 'serendipity_config_local.inc.php')) {
             $privateVariables = array('pingbackFetchPage' => $fetchPingback);
             serendipity_updateLocalConfig($serendipity['dbName'], $serendipity['dbPrefix'], $serendipity['dbHost'], $serendipity['dbUser'], $serendipity['dbPass'], $serendipity['dbType'], $serendipity['dbPersistent'], $privateVariables);
         }
@@ -1266,7 +1266,7 @@ select.commentspice_rss_input option {
     {
         global $serendipity;
         $file = $serendipity['serendipityPath'] . 'serendipity_config_local.inc.php';
-        return !file_exists($file) || is_writeable($file);
+        return !file_exists($file) || is_writable($file);
     }
 
     function set_config($name, $value, $implodekey = '^')

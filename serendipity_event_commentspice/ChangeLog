@@ -1,3 +1,7 @@
+2.01:
+-----
+ * Remove Alias method usage
+
 2.00:
 -----
  * Raise requirement to Styx 3.2
