@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -22,3 +22,4 @@
 
 @define('PLUGIN_EVENT_LIGHTBOX_INIT_JS', 'Additional JavaScript init configuration');
 @define('PLUGIN_EVENT_LIGHTBOX_INIT_JS_DESC', 'Some lightbox types allow to pass custom configuration objects, so you can enter "{social_tools: false}" for example. Currently works with prettyPhoto only.');
+
