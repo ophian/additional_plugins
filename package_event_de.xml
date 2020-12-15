@@ -761,9 +761,9 @@
 <description>Ermöglicht Besuchern ihren Kommentar nachträglich zu editieren.</description>
 <maintainers><maintainer><name>Malte Paskuda</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.2.3</version>
-  <requirements:s9yVersion>1.5</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>0.4</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2020-12-15</date>
   <filelist>
     <dir name="serendipity_event_commentedit">
       <file>ChangeLog</file>
@@ -2392,8 +2392,8 @@
 <maintainers><maintainer><name>Garvin Hicking/Justin Alcorn</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.23</version>
-  <requirements:s9yVersion>0.8</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2020-12-15</date>
   <filelist>
     <dir name="serendipity_event_externalauth">
       <file>ChangeLog</file>
@@ -6320,11 +6320,11 @@
 <summary>Markup: Mobile Ausgabe</summary>
 <groups>MARKUP</groups>
 <description>Dieses Plugin erkennt automatisch mobile Endgeräte und gibt optimiertes XHTML MP für diese aus. Für das Apple iPhone und den iPod Touch wird eine speziell angepasste Seite ausgegeben. Weiterhin werden Bilder automatisch passend skaliert.</description>
-<maintainers><maintainer><name>Pelle Boese, Grischa Brockhaus; Ian</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Pelle Boese, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.09</version>
+  <version>1.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2018-04-27</date>
+  <date>2020-12-15</date>
   <filelist>
     <dir name="serendipity_event_mobile_output">
       <file>ChangeLog</file>
@@ -8162,9 +8162,9 @@
 <description>Prettify fügt Inhalten, die zwischen PRE-Tags stehen, simples Syntax-Highlighting hinzu.</description>
 <maintainers><maintainer><name>Adam Krause</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6.2</version>
-  <requirements:s9yVersion>1.0</requirements:s9yVersion>
-  <date>2016-07-07</date>
+  <version>1.6.3</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2020-12-15</date>
   <filelist>
     <dir name="serendipity_event_prettify">
       <file>ChangeLog</file>
@@ -10387,9 +10387,9 @@
 <description>Zeigt eine Seite mit Thumbnails des Photoblog-Plugins. Die URL ist index.php?serendipity[page]=thumbs</description>
 <maintainers><maintainer><name>Cameron MacFarland</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.2</version>
-  <requirements:s9yVersion>0.7</requirements:s9yVersion>
-  <date>2020-12-10</date>
+  <version>1.4.3</version>
+  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <date>2020-12-15</date>
   <filelist>
     <dir name="serendipity_event_thumbnails">
       <file>ChangeLog</file>
