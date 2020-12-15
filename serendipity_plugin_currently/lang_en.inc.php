@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -32,4 +32,3 @@
 @define('PLUGIN_CURRENTLY_AMAZON_KEY','Amazon Secret Access Key');
 @define('PLUGIN_CURRENTLY_AMAZON_KEY_DETAILS','Your Amazon Secret Access Key');
 
-?>

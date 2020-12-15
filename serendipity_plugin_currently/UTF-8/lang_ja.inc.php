@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.2
  */
@@ -25,4 +25,3 @@
 @define('PLUGIN_CURRENTLY_LOCALE','Amazon の地域 (国)');
 @define('PLUGIN_CURRENTLY_LOCALE_DETAILS','対象の Amazon の地域 (国)');
 
-?>

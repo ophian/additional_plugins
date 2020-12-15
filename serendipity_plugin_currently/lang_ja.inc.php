@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.2
  */
@@ -34,4 +34,3 @@
 @define('PLUGIN_CURRENTLY_AMAZON_KEY','Amazon Secret Access Key');
 @define('PLUGIN_CURRENTLY_AMAZON_KEY_DETAILS','Your Amazon Secret Access Key');
 
-?>
