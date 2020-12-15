@@ -1,36 +1,31 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_plugin_photoblog extends serendipity_plugin {
 
-    function introspect(&$propbag) {
+    function introspect(&$propbag)
+    {
         $propbag->add('name',        PLUGIN_PHOTOBLOG_TITLE);
         $propbag->add('description', PLUGIN_PHOTOBLOG_BLAHBLAH);
         $propbag->add('configuration', array('number', 'showpicsonly'));
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
         $propbag->add('author',        'Cameron MacFarland');
-        $propbag->add('version',     '1.2.1');
+        $propbag->add('version',     '1.3');
         $propbag->add('groups', array('IMAGES'));
         $this->dependencies = array('serendipity_event_thumbnails' => 'keep');
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'number':
                 $propbag->add('type',           'string');
@@ -52,8 +47,10 @@ class serendipity_plugin_photoblog extends serendipity_plugin {
         return true;
     }
 
-    function getPhoto($entryid) {
+    function getPhoto($entryid)
+    {
         global $serendipity;
+
         $q = "SELECT * FROM {$serendipity['dbPrefix']}photoblog WHERE entryid=" . (int)$entryid;
         $row = serendipity_db_query($q, true);
 
@@ -64,7 +61,8 @@ class serendipity_plugin_photoblog extends serendipity_plugin {
         return $row;
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $number = $this->get_config('number');
@@ -156,6 +154,7 @@ class serendipity_plugin_photoblog extends serendipity_plugin {
             }
         }
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */

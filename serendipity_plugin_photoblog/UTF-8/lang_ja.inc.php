@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.2
  */
@@ -13,4 +13,3 @@
 @define('PLUGIN_PHOTOBLOG_SHOWPICSONLY',    '画像のみ表示しますか??');
 @define('PLUGIN_PHOTOBLOG_SHOWPICSONLY_BLAHBLAH', '両方の換わりに画像のエントリのみ表示します。');
 
-?>

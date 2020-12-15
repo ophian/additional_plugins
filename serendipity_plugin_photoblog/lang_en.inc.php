@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -13,4 +13,3 @@
 @define('PLUGIN_PHOTOBLOG_SHOWPICSONLY',    'Only show images?');
 @define('PLUGIN_PHOTOBLOG_SHOWPICSONLY_BLAHBLAH', 'Only show entries with an image, instead of both.');
 
-?>
