@@ -1,4 +1,4 @@
-<?php # 
+<?php
 # Translated by: Wesley Hwang-Chung <wesley96@gmail.com> 
 # (c) 2005 http://www.tool-box.info/
 
@@ -99,4 +99,3 @@
 @define('PLUGIN_STATICPAGELIST_SELECTPAGES',       '페이지 선택');
 @define('PLUGIN_STATICPAGELIST_SELECTPAGES_DESC',  '첫 페이지에 나타낼 상위 페이지를 고릅니다.');
 
-?>

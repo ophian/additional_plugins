@@ -1,4 +1,4 @@
-<?php # 
+<?php
 # Translated by: Wesley Hwang-Chung <wesley96@gmail.com>
 # (c) 2005 http://www.tool-box.info/
 
@@ -97,4 +97,3 @@
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC',  '사용할 경우, 상위 페이지만 나타나게 됩니다. 사용하지 않으면 하위 페이지도 보입니다.');
 @define('PLUGIN_STATICPAGELIST_IMG_NAME',          '트리 구조에 그림 사용');
 
-?>

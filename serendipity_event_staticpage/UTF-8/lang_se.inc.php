@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 @define('PLUGIN_STATICPAGELIST_NAME',             'lista med statiska sidorna');
 @define('PLUGIN_STATICPAGELIST_NAME_DESC',        'Den här plugin visar en konfigurerbar lista den statiska sidorna. StaticPage-Plugin behöver version 1.22 eller högre.');
@@ -58,4 +58,3 @@
 @define('STATICPAGE_ARTICLETYPE_IMAGE', 'sökväg bild');
 @define('STATICPAGE_ARTICLETYPE_IMAGE_DESC', 'URL för en kategoribild.');
 
-?>
