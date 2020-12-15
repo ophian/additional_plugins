@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.2
  */
@@ -13,4 +13,3 @@
 @define('PLUGIN_DHTMLMENU_JSPATH', 'HTMLTree.js へのパス');
 @define('PLUGIN_DHTMLMENU_JSPATH_DESC', 'HTMLTree.js への絶対(URL)パスです。 (PEAR::HTML_TreeMenu が提供しています)');
 
-?>

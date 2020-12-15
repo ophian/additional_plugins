@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -14,4 +14,3 @@
 @define('PLUGIN_DHTMLMENU_JSPATH_DESC', 'the absolute (url) path to your HTMLTree.js (provided with PEAR::HTML_TreeMenu).');
 @define('PLUGIN_DHTMLMENU_SHOWCOUNT', 'Show number of entries per category?');
 
-?>

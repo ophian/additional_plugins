@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.2
  */
@@ -12,3 +12,4 @@
 @define('PLUGIN_DHTMLMENU_PATH_DESC', 'Абослютен път (URL) до папката с картинките.');
 @define('PLUGIN_DHTMLMENU_JSPATH', 'Път до HTMLTree.js');
 @define('PLUGIN_DHTMLMENU_JSPATH_DESC', 'Пълен път до HTMLTree.js (URL), включително и името на файла (HTMLTree.js е част от пакета PEAR::HTML_TreeMenu).');
+
