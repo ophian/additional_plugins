@@ -1,20 +1,15 @@
-<?php # 
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include_once dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_thumbnails extends serendipity_event {
-    function introspect(&$propbag) {
+class serendipity_event_thumbnails extends serendipity_event
+{
+    function introspect(&$propbag)
+    {
         global $serendipity;
 
         $propbag->add('name', THUMBPAGE_TITLE);
@@ -25,9 +20,9 @@ class serendipity_event_thumbnails extends serendipity_event {
         $propbag->add('configuration', array('number'));
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Cameron MacFarland');
-        $propbag->add('version', '1.4.2');
+        $propbag->add('version', '1.4.3');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
+            'serendipity' => '1.6',
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
@@ -36,7 +31,8 @@ class serendipity_event_thumbnails extends serendipity_event {
                                     'serendipity_event_photoblog' => 'keep');
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         switch($name) {
             case 'number':
                 $propbag->add('type',           'string');
@@ -51,8 +47,10 @@ class serendipity_event_thumbnails extends serendipity_event {
         return true;
     }
 
-    function getPhoto($entryid) {
+    function getPhoto($entryid)
+    {
         global $serendipity;
+
         $q = "SELECT * FROM {$serendipity['dbPrefix']}photoblog WHERE entryid=" . (int)$entryid;
         $row = serendipity_db_query($q, true);
 
@@ -63,7 +61,8 @@ class serendipity_event_thumbnails extends serendipity_event {
         return $row;
     }
 
-    function show() {
+    function show()
+    {
         global $serendipity;
 
         if ($serendipity['GET']['page'] == 'thumbs') {
@@ -77,7 +76,8 @@ class serendipity_event_thumbnails extends serendipity_event {
         }
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $title = THUMBPAGE_TITLE;
@@ -146,7 +146,8 @@ class serendipity_event_thumbnails extends serendipity_event {
         }
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -183,6 +184,8 @@ class serendipity_event_thumbnails extends serendipity_event {
             return false;
         }
     }
+
 }
+
 /* vim: set sts=4 ts=4 expandtab : */
 ?>
