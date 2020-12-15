@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -16,4 +16,4 @@
 @define('PLUGIN_EVENT_COMMENTEDIT_EDITTIMER',  'remaining time to edit');
 @define('PLUGIN_EVENT_COMMENTEDIT_MAIL',     'Mail Notification');
 @define('PLUGIN_EVENT_COMMENTEDIT_MAIL_DESC','Send a mail if comment is edited?');
-?>
+
