@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -20,4 +20,3 @@
 @define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR', 'Link separation character');
 @define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR_DESC', 'Enter the character that will split entry URLs and descriptions. Be careful to choose one character that does neither exist in the URL nor the title, like "|".');
 
-?>

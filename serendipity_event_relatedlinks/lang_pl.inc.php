@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Kostas CoSTa Brzezinski <costa@kofeina.net>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -17,4 +17,3 @@
 @define('PLUGIN_EVENT_RELATEDLINKS_POSITION_BODY', 'Umie¶æ w tre¶ci wpisu');
 @define('PLUGIN_EVENT_RELATEDLINKS_POSITION_SMARTY', 'U¿yj wywo³ania Smarty');
 
-?>

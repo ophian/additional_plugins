@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.3
  */
@@ -20,4 +20,3 @@
 @define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR', 'リンクを分割する文字');
 @define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR_DESC', 'エントリの URL と説明を分割する文字を入力します。Be careful to choose one character that does neither exist in the URL nor the title, like "|".');
 
-?>
