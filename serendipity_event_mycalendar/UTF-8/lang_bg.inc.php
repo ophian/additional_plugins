@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.3
  */
@@ -35,3 +35,4 @@
 
 @define('PLUGIN_MYCALENDAR_EVENTDATE2', 'Крайна дата за събитието');
 @define('PLUGIN_MYCALENDAR_RSS', 'Показване на връзка за емисия RSS 2.0');
+

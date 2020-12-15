@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.2
  */
@@ -35,3 +35,4 @@
 
 @define('PLUGIN_MYCALENDAR_EVENTDATE2', 'イベントの終了日');
 @define('PLUGIN_MYCALENDAR_RSS', 'RSS 2.0 のリンクを表示する');
+
