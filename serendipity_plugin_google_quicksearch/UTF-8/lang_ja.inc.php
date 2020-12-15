@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.1
  */
@@ -24,4 +24,3 @@
 @define('PLUGIN_GOOGLE_QS_LEFT', '検索ボックスの左');
 @define('PLUGIN_GOOGLE_QS_SUBMIT',   '送信ボタンを表示する');
 
-?>

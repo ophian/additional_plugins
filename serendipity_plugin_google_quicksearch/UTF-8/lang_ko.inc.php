@@ -1,4 +1,4 @@
-<?php # 
+<?php
 # Translated by: Wesley Hwang-Chung <wesley96@gmail.com> 
 # (c) 2005 http://www.tool-box.info/
 
@@ -20,4 +20,3 @@
 @define('PLUGIN_GOOGLE_QS_LEFT', '검색 상자 왼쪽');
 @define('PLUGIN_GOOGLE_QS_SUBMIT',   'Submit 버튼 표시');
 
-?>
