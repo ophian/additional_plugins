@@ -1,3 +1,9 @@
+1.2:
+-----
+ * Use lang API & UP
+
+
+
 0.8:
 ----
  * Fixed wrong variable for current authorid preventing htmlpurifier to properly being executed

@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -30,4 +30,4 @@
 
 @define('PLUGIN_XSSTRUST_HTMLPURIFIER', 'Enable HTMLPurifier');
 @define('PLUGIN_XSSTRUST_HTMLPURIFIER_DESC', 'Uses HTMLPurifier (www.htmlpurifier.org) to strip JavaScript and malicious HTML from user input. If enabled, this means HTML will be allowed for authors. If disabled, the plugin will strip ALL HTML from user\'s inputs.');
-?>
+
