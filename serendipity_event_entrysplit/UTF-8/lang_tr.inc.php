@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <ahmetusal@gmail.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -18,4 +18,4 @@
 @define('PLUGIN_ENTRYSPLIT_PAGES_NEXT', NEXT);
 @define('PLUGIN_ENTRYSPLIT_PAGES_PREV', PREVIOUS);
 @define('PLUGIN_ENTRYSPLIT_TOC', 'Table of Contents');
-?>
+
