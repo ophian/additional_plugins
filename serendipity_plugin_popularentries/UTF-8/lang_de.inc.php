@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -23,5 +23,4 @@
 @define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS', 'Kommentatoren');
 @define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER', 'Gefilterte Kommentatoren');
 @define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER_DESC', 'Kommaseparierte Liste (ohne Leerzeichen) von Kommentator-Namen, die nicht angezeigt werden sollen, wenn die Ausgabe nach Kommentatoren erfolgt.');
-
 

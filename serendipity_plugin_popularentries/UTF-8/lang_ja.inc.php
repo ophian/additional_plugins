@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.8
  */ 
@@ -15,4 +15,3 @@
 @define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_ALL', 'すべて表示');
 @define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_POPULAR', 'フロントページ項目は省略する');
 
-?>

@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.4
  */
@@ -20,3 +20,4 @@
 @define('PLUGIN_POPULARENTRIES_SORTBY_LOWVISITS', 'най-малко посещения [изисква приставка \'карма\']');
 @define('PLUGIN_POPULARENTRIES_SORTBY_KARMAVOTES', 'карма [изисква приставка \'карма\']');
 @define('PLUGIN_POPULARENTRIES_SORTBY_EXITS', 'изход към външни връзки [изисква приставка Track Exits]');
+
