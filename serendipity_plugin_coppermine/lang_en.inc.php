@@ -1,6 +1,7 @@
-<?php # 
+<?php
 
-/** *  @version 
+/** 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -57,4 +58,3 @@
 @define('PLUGIN_CPGS_POPULAR',			'Most Viewed');
 @define('PLUGIN_CPGS_RANDOM',			'Random Images');
 
-?>
