@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author P'tit Lu <ptitlu@ptitlu.org>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -50,4 +50,4 @@
 
 @define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MIN', 'Taille de police minimale (%) d\'un tag dans le nuage');
 @define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MAX', 'Taille de police maximale (%) d\'un tag dans le nuage');
-?>
+

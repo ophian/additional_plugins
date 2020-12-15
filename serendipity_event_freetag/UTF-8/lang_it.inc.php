@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Alberto Mucignat <alberto.mucignat@gmail.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -50,4 +50,4 @@
 
 @define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MIN', 'Misura minima del font % di un tag nella nuvola');
 @define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MAX', 'Misura massima del font  % di un tag nella nuvola');
-?>
+
