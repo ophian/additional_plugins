@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -18,3 +18,4 @@
 
 @define('PLUGIN_EVENT_FLICKR_IMPORT_BLAHBLAH', 'Plugin can only fetch "public" photos from Flickr.com. /!\ Be careful with (copy)rights');
 @define('PLUGIN_EVENT_FLICKR_INSTALL', '<strong>/!\</strong> With some ISP\'s account, it is impossible to change the include path with an ini_set() instruction (Free.fr for example). The plugin will then fail to run since it can\'t instanciate some classes.<br /><br />In that case, you probably have a special place in your account to put common php files (ask your ISP). On Free.fr, just create a directory called \'include\' in the root directory of your account. Then copy anything in the phpFlickr/PEAR subdir of the plugin to that directory.');
+

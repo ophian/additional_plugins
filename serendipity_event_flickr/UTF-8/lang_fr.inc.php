@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -18,3 +18,4 @@
 
 @define('PLUGIN_EVENT_FLICKR_IMPORT_BLAHBLAH', 'L\'importation peut se faire sur toutes les images "publiques" disponibles sur Flickr.com. /!\ Attention cependant à n\'utiliser que des images libres de droit!');
 @define('PLUGIN_EVENT_FLICKR_INSTALL', '<strong>/!\</strong> Chez certains hébergeurs, il est impossible de changer le chemin d\'inclusion de PHP avec une instruction ini_set() (Sur Free.fr par exemple). Le plugin va alors s\'arrêter puisqu\'il ne pourra inclure les fichiers requis.<br /><br />Dans ce cas, votre hébergeur propose sûrement un répertoire spécial où placer vos fichiers communs. Sur Free.fr, il suffit de créer un répertoire \'include\' à la racine de votre espace web et y copier le contenu du répertoire \'phpFlickr/PEAR\'.');
+
