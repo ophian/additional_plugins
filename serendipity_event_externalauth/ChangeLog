@@ -1,3 +1,11 @@
+1.24:
+-----
+ * Use lang API & UP
+
+1.23:
+-----
+ * 
+
 
 1.22, 1.21: Changed fail2ban syntax to better parse
 

@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -42,3 +42,4 @@
 
 @define('PLUGIN_EVENT_EXTERNALAUTH_FAIL2BAN', 'fail2ban Logfile');
 @define('PLUGIN_EVENT_EXTERNALAUTH_FAIL2BAN_DESC', '(Requires Serendipity &gt;= 1.6) This plugin can write a fail2ban compatible logfile when invalid logins were tried. If you want to enable this feature, enter a full filename including the path (i.e. "/var/log/fail2ban_s9y.log"). You might want to include this logfile in your system\'s logrotation. Fail2ban scans log files like /var/log/pwdfail or /var/log/apache/s9ybackend.log and bans IP that makes too many password failures. It updates firewall rules to reject the IP address.');
+
