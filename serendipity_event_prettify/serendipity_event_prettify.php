@@ -1,17 +1,10 @@
-<?php #
+<?php
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_prettify extends serendipity_event
 {
@@ -23,8 +16,8 @@ class serendipity_event_prettify extends serendipity_event
         $propbag->add('description',   PLUGIN_PRETTIFY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        PLUGIN_PRETTIFY_AUTH);
-        $propbag->add('version',       '1.6.2');
-        $propbag->add('requirements',  array('serendipity' => '1.0',
+        $propbag->add('version',       '1.6.3');
+        $propbag->add('requirements',  array('serendipity' => '1.6',
                                              'smarty'      => '2.6.7',
                                              'php'         => '4.1.0'
                                              ));
@@ -96,7 +89,8 @@ class serendipity_event_prettify extends serendipity_event
         $title = PLUGIN_PRETTIFY_NAME;
     }
 
-    function example() {
+    function example()
+    {
         $s = '<p>Use this plugin in one of two ways by setting the Generic/Language-Specific flags.</p>
               <p>Setting the flag to Prettify content generically will inject the class name "prettify" into all PRE or CODE tags. This, in turn, will cause all PRE or CODE content to be generically brushed. Fast and Easy.</p>
               <p>Setting the flag to Language-Specific will prevent the plugin from assigning and/or changing the class name of all content of the specified type. Therefore, content in PRE and/or CODE blocks must be assigned a class by the blog author.</p>
@@ -133,7 +127,8 @@ class serendipity_event_prettify extends serendipity_event
         return $s;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -203,7 +198,9 @@ class serendipity_event_prettify extends serendipity_event
         }
 
     }
-    function generate_button($txtarea) {
+
+    function generate_button($txtarea)
+    {
         global $serendipity;
             if (!isset($txtarea)) {
                 $txtarea = 'body';
@@ -231,4 +228,7 @@ class serendipity_event_prettify extends serendipity_event
 <?php
             }
     }
+
 }
+
+?>

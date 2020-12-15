@@ -1,3 +1,7 @@
+1.6.3:
+-----
+ * Use lang API and UP
+
 1.6.2:
     * Fix broken path to CSS + JS assets by adding serendipityHTTPPath
       to csspath + jspath

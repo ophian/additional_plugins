@@ -1,7 +1,7 @@
-<?php # 
+<?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -25,4 +25,4 @@
 @define('PLUGIN_PRETTIFY_CONVERTANGLE_DESC', 'Only appears in the standard (non-WYSIWYG) editor, select PRE/CODE block and click button to encode angles.  WYSIWYG editors auto-magically encode angles.');
 @define('PLUGIN_PRETTIFY_CONVERTANGLE_TRUE', 'Yes');
 @define('PLUGIN_PRETTIFY_CONVERTANGLE_FALSE', 'No');
-?>
+

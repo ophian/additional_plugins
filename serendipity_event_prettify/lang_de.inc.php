@@ -1,4 +1,4 @@
-<?php #
+<?php
 
 /**
  *  @author Matthias Mees <mm@yellowled.de>
@@ -24,3 +24,4 @@
 @define('PLUGIN_PRETTIFY_CONVERTANGLE_DESC', 'Erscheint nur im Standard-(Non-WYSIWYG)-Editor. PRE/CODE-Block auswählen und Button klicken um Klammern zu enkodieren. WYSIWYG-Editoren enkodieren Klammern automagisch.');
 @define('PLUGIN_PRETTIFY_CONVERTANGLE_TRUE', 'Ja');
 @define('PLUGIN_PRETTIFY_CONVERTANGLE_FALSE', 'Nein');
+
