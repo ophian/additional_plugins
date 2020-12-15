@@ -1,11 +1,11 @@
-<?php # 
+<?php
 
 # (c) 2009 by remundia , http://www.remundia.com, <http://www.remundia.com>
 
 # french language file
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <contact@remundia.com>
  *  FR-Revision: Revision of lang_fr.inc.php
  */
@@ -180,4 +180,3 @@ in our forum on
 
 @define('FORUM_PLUGIN_NEW_THREAD', 'Nouvelle discussion');
 
-/* vim: set sts=4 ts=4 expandtab : */

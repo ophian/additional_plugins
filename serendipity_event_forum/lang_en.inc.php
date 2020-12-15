@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 # (c) 2005 by Alexander 'dma147' Mieland, http://blog.linux-stats.org, <dma147@linux-stats.org>
 # Contact me on IRC in #linux-stats, #archlinux, #archlinux.de, #s9y on irc.freenode.net
@@ -6,7 +6,7 @@
 # english language file
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -173,4 +173,3 @@ in our forum on
 
 @define('FORUM_PLUGIN_NEW_THREAD', 'New thread');
 
-/* vim: set sts=4 ts=4 expandtab : */

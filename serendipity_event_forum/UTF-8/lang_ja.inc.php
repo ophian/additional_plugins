@@ -1,4 +1,4 @@
-<?php # 
+<?php
 
 # (c) 2005 by Alexander 'dma147' Mieland, http://blog.linux-stats.org, <dma147@linux-stats.org>
 # Contact me on IRC in #linux-stats, #archlinux, #archlinux.de, #s9y on irc.freenode.net
@@ -6,7 +6,7 @@
 # japanese language file
 
 /**
- *  @version 
+ *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
  *  EN-Revision: 1.5
  */
@@ -147,14 +147,3 @@
 
 ");
 
-
-
-
-
-
-
-
-
-
-/* vim: set sts=4 ts=4 expandtab : */
-?>
