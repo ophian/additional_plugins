@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.01');
+        $propbag->add('version',       '2.02');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0.0',
             'smarty'      => '3.1.0',
@@ -366,7 +366,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
                     $extension  = $matches[3];
                     #$authorid   = (isset($serendipity['POST']['all_authors']) && $serendipity['POST']['all_authors'] == 'true') ? '0' : $serendipity['authorid'];
                     $authorid   = 0; // Only use access-control based on media directories, not images themselves
-                    $messages   = array();
+                    $messages   = $messages ?? array(); // handover create messages by admin/images 'add'
 
                     // only if unzipping function exists, we have archive file and unzipping set to yes
                     if ((class_exists('ZipArchive')) && ($extension == 'zip') && ($serendipity['POST']['unzip_archives'] == YES)) {
