@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '2.9.0');
+        $propbag->add('version',        '2.10.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.6.0'
@@ -56,6 +56,7 @@ class serendipity_event_lightbox extends serendipity_event
         $conf_array   = array();
         $conf_array[] = 'type';
         $conf_array[] = 'path';
+        $conf_array[] = 'jquery';
         $conf_array[] = 'header_optimization';
         $conf_array[] = 'navigate_one_entry_only';
         $conf_array[] = 'init_js';
@@ -106,6 +107,13 @@ class serendipity_event_lightbox extends serendipity_event
                 $propbag->add('default',        '');
                 break;
 
+            case 'jquery':
+                $propbag->add('type',           'boolean');
+                $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_JQUERY);
+                $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_JQUERY_DESC);
+                $propbag->add('default',        'false');
+                break;
+
             case 'header_optimization':
                 $propbag->add('type',           'boolean');
                 $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_OPTIMIZATION);
@@ -132,6 +140,7 @@ class serendipity_event_lightbox extends serendipity_event
         static $navigate  = null;
         static $pluginDir = null;
         static $type      = null;
+        static $jquery    = null;
 
         $hooks = &$bag->get('event_hooks');
 
@@ -177,6 +186,11 @@ class serendipity_event_lightbox extends serendipity_event
                 }
             }
 
+            // Do not output when core jQuery is already used in page head OR by theme in page foot
+            if ($jquery === null) {
+                $jquery = (false === $serendipity['capabilities']['jquery'] && serendipity_db_bool($this->get_config('jquery', 'false')));
+            }
+
             switch($event) {
 
                 case 'frontend_header':
@@ -201,7 +215,7 @@ class serendipity_event_lightbox extends serendipity_event
                             echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/colorbox/colorboxScreens.css" />' . "\n";
                             echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/colorbox/colorbox.css" />' . "\n";
                         } else {
-                            if (!class_exists('serendipity_event_jquery') && !$serendipity['capabilities']['jquery']) {
+                            if ($jquery) {
                                 echo '    <script type="text/javascript" src="' . $pluginDir . '/jquery-1.11.3.min.js" charset="utf-8"></script>' . "\n";
                             }
                             echo '    <script type="text/javascript" src="' . $pluginDir . '/colorbox/jquery.colorbox-min.js" charset="utf-8"></script>' . "\n";
@@ -213,7 +227,7 @@ class serendipity_event_lightbox extends serendipity_event
                         if (!empty($headcss)) {
                             echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/lightbox2-jquery/css/lightbox.css" />' . "\n";
                         } else {
-                            if (!class_exists('serendipity_event_jquery') && !$serendipity['capabilities']['jquery']) {
+                            if ($jquery) {
                                 echo '    <script type="text/javascript" src="' . $pluginDir . '/jquery-1.11.3.min.js" charset="utf-8"></script>' . "\n";
                             }
                             // remove anchors possible onclick handler
@@ -226,7 +240,7 @@ class serendipity_event_lightbox extends serendipity_event
                         if ($headcss) {
                             echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/magnific-popup/magnific-popup.css" />' . "\n";
                         } else {
-                            if (!class_exists('serendipity_event_jquery') && !$serendipity['capabilities']['jquery']) {
+                            if ($jquery) {
                                 echo '    <script type="text/javascript" src="' . $pluginDir . '/jquery-1.11.3.min.js" charset="utf-8"></script>' . "\n";
                             }
                             echo '    <script type="text/javascript" src="' . $pluginDir . '/magnific-popup/jquery.magnific-popup.min.js" charset="utf-8"></script>' . "\n";
@@ -239,7 +253,7 @@ class serendipity_event_lightbox extends serendipity_event
                             echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/prettyphoto/css/prettyPhoto.css" />' . "\n";
                             echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/prettyphoto/css/prettyPhotoScreens.css" />' . "\n";
                         } else {
-                            if (!class_exists('serendipity_event_jquery') && !$serendipity['capabilities']['jquery']) {
+                            if ($jquery) {
                                 echo '    <script type="text/javascript" src="' . $pluginDir . '/jquery-1.11.3.min.js" charset="utf-8"></script>' . "\n";
                             }
                             // remove anchors possible onclick handler

@@ -1,3 +1,9 @@
+2.10.0:
+-----
+ * Improve loading jQuery library for when the theme does not already do.
+   Adds a new config option [default = false]
+   Removes the class_exists('serendipity_event_jquery') check, which is a not supported plugin any more!
+
 2.9.0:
 -----
  * Fix and improve markup_element check for consistency

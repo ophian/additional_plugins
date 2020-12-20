@@ -13,7 +13,9 @@
 @define('PLUGIN_EVENT_LIGHTBOX_PATH', 'Pfad zu den Skripten');
 @define('PLUGIN_EVENT_LIGHTBOX_PATH_DESC', 'Geben Sie hier den kompletten HTTP Pfad ein (alles nach ihrem Domain Namen), der das Verzeichnis des Plugins angibt.');
 
-@define('PLUGIN_EVENT_LIGHTBOX_OPTIMIZATION', 'JavaScript Ladeoptimierung');
+@define('PLUGIN_EVENT_LIGHTBOX_JQUERY', 'Nutze Plugin jQuery lib');
+@define('PLUGIN_EVENT_LIGHTBOX_JQUERY_DESC', 'Aktivieren Sie dies nur, wenn ihr Theme im header oder footer nicht schon das "default" jquery.js lädt.');
+@define('PLUGIN_EVENT_LIGHTBOX_OPTIMIZATION', 'Seiten Lade-Optimierung');
 @define('PLUGIN_EVENT_LIGHTBOX_OPTIMIZATION_DESC', 'Wenn sie diese Option anschalten, so werden die Skript- und CSS-Dateien von Lightbox nur geladen, wenn auch ein Bild auf der aktuellen Seite dargestellt wird. Dies kann die Ladezeit von Seiten ohne Lightbox fähige Bilder verkürzen.');
 @define('PLUGIN_EVENT_LIGHTBOX_GALLERY', 'Galerie-Erzeugung');
 @define('PLUGIN_EVENT_LIGHTBOX_GALLERY_NONE', 'Nur einzelnes Bild');
