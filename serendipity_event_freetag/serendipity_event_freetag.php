@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.34');
+        $propbag->add('version',       '4.35');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -142,8 +142,8 @@ class serendipity_event_freetag extends serendipity_event
             case 'show_ft_jquery':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_ALLOW_JQUERYLIB);
-                $propbag->add('description', '');
-                $propbag->add('default',     'true');
+                $propbag->add('description', PLUGIN_EVENT_FREETAG_ALLOW_JQUERYLIB_DESC);
+                $propbag->add('default',     'false');
                 break;
 
             case 'cat2tag':
@@ -173,46 +173,46 @@ class serendipity_event_freetag extends serendipity_event
                 break;
 
             case 'extended_smarty':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY);
-                 $propbag->add('description', PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC);
-                 $propbag->add('default',     'false');
-                 break;
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY);
+                $propbag->add('description', PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC);
+                $propbag->add('default',     'false');
+                break;
 
             case 'taglist':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_TAGSASLIST);
-                 $propbag->add('description', PLUGIN_EVENT_FREETAG_TAGSASLIST_DESC);
-                 $propbag->add('default',     'false');
-                 break;
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_TAGSASLIST);
+                $propbag->add('description', PLUGIN_EVENT_FREETAG_TAGSASLIST_DESC);
+                $propbag->add('default',     'false');
+                break;
 
             case 'sortlist':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT);
-                 $propbag->add('description', PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT_DESC);
-                 $propbag->add('default',     'false');
-                 break;
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT);
+                $propbag->add('description', PLUGIN_EVENT_FREETAG_SORTTAGSBYCOUNT_DESC);
+                $propbag->add('default',     'false');
+                break;
 
             case 'taglink':
-                 $propbag->add('type',        'string');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_TAGLINK);
-                 $propbag->add('description', PLUGIN_EVENT_FREETAG_TAGLINK_DESC);
-                 $propbag->add('default',     $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/tag/');
-                 break;
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_TAGLINK);
+                $propbag->add('description', PLUGIN_EVENT_FREETAG_TAGLINK_DESC);
+                $propbag->add('default',     $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/tag/');
+                break;
 
             case 'min_percent':
-                 $propbag->add('type',        'string');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_TAGCLOUD_MIN);
-                 $propbag->add('description', '');
-                 $propbag->add('default',     '100');
-                 break;
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_TAGCLOUD_MIN);
+                $propbag->add('description', '');
+                $propbag->add('default',     '100');
+                break;
 
             case 'max_percent':
-                 $propbag->add('type',        'string');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_TAGCLOUD_MAX);
-                 $propbag->add('description', '');
-                 $propbag->add('default',     '300');
-                 break;
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_TAGCLOUD_MAX);
+                $propbag->add('description', '');
+                $propbag->add('default',     '300');
+                break;
 
             case 'collation':
                 $propbag->add('type',        'string');
@@ -229,11 +229,11 @@ class serendipity_event_freetag extends serendipity_event
                 break;
 
             case 'meta_keywords':
-                 $propbag->add('type',        'string');
-                 $propbag->add('name',        PLUGIN_FREETAG_META_KEYWORDS);
-                 $propbag->add('description', '');
-                 $propbag->add('default',     '0');
-                 break;
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_FREETAG_META_KEYWORDS);
+                $propbag->add('description', '');
+                $propbag->add('default',     '0');
+                break;
 
             case 'show_related':
                 $propbag->add('type',         'boolean');
@@ -250,46 +250,46 @@ class serendipity_event_freetag extends serendipity_event
                 break;
 
             case 'lowercase_tags':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS);
-                 $propbag->add('description', PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS_DESC);
-                 $propbag->add('default',     'true');
-                 break;
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS);
+                $propbag->add('description', PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS_DESC);
+                $propbag->add('default',     'true');
+                break;
 
             case 'send_http_header':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_SEND_HTTP_HEADER);
-                 $propbag->add('description', '');
-                 $propbag->add('default',     'true');
-                 break;
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_SEND_HTTP_HEADER);
+                $propbag->add('description', '');
+                $propbag->add('default',     'true');
+                break;
 
             case 'admin_show_taglist':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_ADMIN_TAGLIST);
-                 $propbag->add('description', '');
-                 $propbag->add('default',     'true');
-                 break;
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_ADMIN_TAGLIST);
+                $propbag->add('description', '');
+                $propbag->add('default',     'true');
+                break;
 
             case 'admin_ftayt':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_ADMIN_FTAYT);
-                 $propbag->add('description', '');
-                 $propbag->add('default',     'false');
-                 break;
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_ADMIN_FTAYT);
+                $propbag->add('description', '');
+                $propbag->add('default',     'false');
+                break;
 
             case 'admin_delimiter':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_ADMIN_DELIMITER);
-                 $propbag->add('description', '');
-                 $propbag->add('default',     'true');
-                 break;
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_ADMIN_DELIMITER);
+                $propbag->add('description', '');
+                $propbag->add('default',     'true');
+                break;
 
             case 'use_rotacloud':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_CAROC);
-                 $propbag->add('description', sprintf(PLUGIN_EVENT_FREETAG_USE_CAROC_DESC, PLUGIN_EVENT_FREETAG_USE_CANVAS_EVENT_SPRINT));
-                 $propbag->add('default',     'false');
-                 break;
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_CAROC);
+                $propbag->add('description', sprintf(PLUGIN_EVENT_FREETAG_USE_CAROC_DESC, PLUGIN_EVENT_FREETAG_USE_CANVAS_EVENT_SPRINT));
+                $propbag->add('default',     'false');
+                break;
 
             case 'rotacloud_tag_color':
                 $propbag->add('type',        'string');
@@ -313,25 +313,25 @@ class serendipity_event_freetag extends serendipity_event
                 break;
 
             case 'use_wordcloud':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_CAWOC);
-                 $propbag->add('description', sprintf(PLUGIN_EVENT_FREETAG_USE_CAWOC_DESC, PLUGIN_EVENT_FREETAG_USE_CANVAS_EVENT_SPRINT));
-                 $propbag->add('default',     'false');
-                 break;
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_CAWOC);
+                $propbag->add('description', sprintf(PLUGIN_EVENT_FREETAG_USE_CAWOC_DESC, PLUGIN_EVENT_FREETAG_USE_CANVAS_EVENT_SPRINT));
+                $propbag->add('default',     'false');
+                break;
 
             case 'use_flash':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_FLASH);
-                 $propbag->add('description', 'Flash is deprecated, please consider using the other tagclouds!'); // i18n?
-                 $propbag->add('default',     'false');
-                 break;
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_FLASH);
+                $propbag->add('description', 'Flash is deprecated, please consider using the other tagclouds!'); // i18n?
+                $propbag->add('default',     'false');
+                break;
 
             case 'flash_bg_trans':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_FLASH_TRANSPARENT);
-                 $propbag->add('description', '');
-                 $propbag->add('default',     'false');
-                 break;
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_FLASH_TRANSPARENT);
+                $propbag->add('description', '');
+                $propbag->add('default',     'false');
+                break;
 
             case 'flash_tag_color':
                 $propbag->add('type',        'string');
@@ -1006,10 +1006,16 @@ class serendipity_event_freetag extends serendipity_event
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
         global $serendipity;
+        static $jquery = null;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
+
+            // Do not output when core jQuery is already used in page head OR by theme in page foot
+            if ($jquery === null) {
+                $jquery = (false === $serendipity['capabilities']['jquery'] && serendipity_db_bool($this->get_config('show_ft_jquery', 'false')));
+            }
 
             switch($event) {
 
@@ -1031,7 +1037,7 @@ class serendipity_event_freetag extends serendipity_event
                     // since it could be that someone wants to use two different clouds (plain, wordcanvas, rotacanvas, flash), differed by event/sidebar plugin!
                     // Changed to use by option and / or freetag sidebar class installed
                     if (serendipity_db_bool($this->get_config('show_tagcloud', 'true')) && (serendipity_db_bool($this->get_config('use_wordcloud', 'true')) || serendipity_db_bool($this->get_config('use_rotacloud', 'true')) || class_exists('serendipity_plugin_freetag'))) {
-                        if (!class_exists('serendipity_event_jquery') && !$serendipity['capabilities']['jquery'] && serendipity_db_bool($this->get_config('show_ft_jquery', 'true'))) {
+                        if ($jquery) {
                         echo '
     <script type="text/javascript" src="'.$serendipity['serendipityHTTPPath'].'plugins/serendipity_event_freetag/jquery-1.11.3.min.js"></script>
 ';

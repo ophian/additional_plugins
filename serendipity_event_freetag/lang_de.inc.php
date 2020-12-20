@@ -128,5 +128,6 @@
 
 @define('PLUGIN_EVENT_FREETAG_SORT_DESC_FOR_TOTAL', 'Mit "order by count", absteigender Sortierung');
 
-@define('PLUGIN_EVENT_FREETAG_ALLOW_JQUERYLIB', 'Erlaube Freetag inkludierte jQuery lib im Frontend, wenn "$serendipity[\'capabilities\'][\'jquery\'] = false"?');
+@define('PLUGIN_EVENT_FREETAG_ALLOW_JQUERYLIB', 'Nutze Plugin jQuery lib');
+@define('PLUGIN_EVENT_FREETAG_ALLOW_JQUERYLIB_DESC', 'Lade Plugin jQuery lib nur im Frontend, wenn ihr Theme im header oder footer nicht schon das "default" jquery.js lädt.');
 
