@@ -5076,9 +5076,9 @@
 <description>Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It's a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.</description>
 <maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.9.0</version>
+  <version>2.10.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-12-03</date>
+  <date>2020-12-20</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
       <file>ChangeLog</file>
