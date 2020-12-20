@@ -13,7 +13,7 @@
 @define('PLUGIN_EVENT_LIGHTBOX_PATH', 'Path to the scripts');
 @define('PLUGIN_EVENT_LIGHTBOX_PATH_DESC', 'Enter the full HTTP path (everything after your domain name) that leads to this plugin\'s directory.');
 
-@define('PLUGIN_EVENT_LIGHTBOX_JQUERY', 'Use plugin jquery lib');
+@define('PLUGIN_EVENT_LIGHTBOX_JQUERY', 'Use plugin jQuery lib');
 @define('PLUGIN_EVENT_LIGHTBOX_JQUERY_DESC', 'Enable only, if your theme does not already load the jquery.js library in its page header or footer.');
 @define('PLUGIN_EVENT_LIGHTBOX_OPTIMIZATION', 'On page load optimization');
 @define('PLUGIN_EVENT_LIGHTBOX_OPTIMIZATION_DESC', 'Switching this option on will load Lightbox\' JavaScript and CSS only, if an image is shown on the current page. This may shorten the page loading time.');
