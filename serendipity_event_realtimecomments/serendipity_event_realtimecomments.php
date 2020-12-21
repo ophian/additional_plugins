@@ -19,7 +19,7 @@ class serendipity_event_realtimecomments extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_REALTIMECOMMENTS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda');
-        $propbag->add('version',       '0.2');
+        $propbag->add('version',       '0.3');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.6',
@@ -36,10 +36,6 @@ class serendipity_event_realtimecomments extends serendipity_event
                                              'interval'
                                              )
                                         );
-
-        if (!$serendipity['capabilities']['jquery']) {
-            $this->dependencies = array('serendipity_event_jquery' => 'remove');
-        }
     }
 
     function generate_content(&$title)
@@ -144,6 +140,7 @@ class serendipity_event_realtimecomments extends serendipity_event
     function setupDB()
     {
         global $serendipity;
+
         $sql = "CREATE TABLE {$serendipity['dbPrefix']}rtcomments_comments (
                           timestamp int(10) UNSIGNED default NULL,
                           entry_id int(10) UNSIGNED NOT NULL default '0',
@@ -163,6 +160,7 @@ class serendipity_event_realtimecomments extends serendipity_event
     function hasNewComment($entry_id, $timestamp)
     {
         global $serendipity;
+
         #remove comments who weren't delivered in the last interval (*2 to prevent races)
         $this->cleanComments($timestamp - ($this->interval*2));
         $sql = "SELECT entry_id FROM
@@ -180,6 +178,7 @@ class serendipity_event_realtimecomments extends serendipity_event
     function addNewComment($entry_id, $comment_id, $timestamp)
     {
         global $serendipity;
+
         $sql = "INSERT INTO
                     {$serendipity['dbPrefix']}rtcomments_comments
                     (entry_id, comment_id, timestamp)
@@ -190,6 +189,7 @@ class serendipity_event_realtimecomments extends serendipity_event
     function getNewComments($entry_id)
     {
         global $serendipity;
+
         $sql = "SELECT comment_id FROM
                     {$serendipity['dbPrefix']}rtcomments_comments
                 WHERE
@@ -206,6 +206,7 @@ class serendipity_event_realtimecomments extends serendipity_event
     function cleanComments($timestamp)
     {
         global $serendipity;
+
         $sql = "DELETE FROM
                      {$serendipity['dbPrefix']}rtcomments_comments
                 WHERE
@@ -250,3 +251,4 @@ class serendipity_event_realtimecomments extends serendipity_event
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
+?>
