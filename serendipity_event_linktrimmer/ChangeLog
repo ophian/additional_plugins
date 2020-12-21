@@ -1,3 +1,7 @@
+1.7.5:
+-----
+ * Remove some obsolete code
+
 1.7.4:
 -----
  * PHP 8 preparation fix

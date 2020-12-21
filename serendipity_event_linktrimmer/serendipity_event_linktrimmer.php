@@ -22,7 +22,7 @@ class serendipity_event_linktrimmer extends serendipity_event
             'php'         => '5.6.0'
         ));
 
-        $propbag->add('version',       '1.7.4');
+        $propbag->add('version',       '1.7.5');
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('prefix', 'frontpage', 'domain'));
@@ -37,7 +37,6 @@ class serendipity_event_linktrimmer extends serendipity_event
 
                                         )
         );
-        #$this->dependencies = array('serendipity_event_jquery' => 'keep');
         $propbag->add('groups', array('BACKEND_FEATURES'));
     }
 
@@ -232,18 +231,10 @@ class serendipity_event_linktrimmer extends serendipity_event
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
         global $serendipity;
-        static $has_jquery = null;
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
-
-            if ($has_jquery === null) {
-                $has_jquery = class_exists('serendipity_event_jquery');
-                if ($serendipity['capabilities']['jquery']) {
-                    $has_jquery = true;
-                }
-            }
 
             switch($event) {
 
