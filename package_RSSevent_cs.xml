@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Automatické aktualizace&lt;/b&gt;&lt;br /&gt;Když &quot;tabule&quot; detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate Notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 11 Dec 2020 18:35:35 +0100</pubDate>
+<pubDate>Mon, 21 Dec 2020 11:16:46 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -139,8 +139,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_commentedit</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
-<content:encoded>&lt;b&gt;serendipity_event_commentedit&lt;br /&gt;Editace komentářů&lt;/b&gt;&lt;br /&gt;Povoluje uživatelům měnit vlastní komentáře i poté, co již byly odeslány.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 21 Dec 2020 11:01:38 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_commentedit&lt;br /&gt;Editace komentářů&lt;/b&gt;&lt;br /&gt;Povoluje uživatelům měnit vlastní komentáře i poté, co již byly odeslány.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Mon, 21 Dec 2020 11:08:43 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_commentedit</guid>
 </item>
 <item>
@@ -643,8 +643,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_livecomment</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda, Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_livecomment&lt;br /&gt;Vylepšené políčko komentářů&lt;/b&gt;&lt;br /&gt;Používá JavaScript k ukázání náhledu komentáře a značkovací tlačítka&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 21 Dec 2020 11:02:02 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_livecomment&lt;br /&gt;Vylepšené políčko komentářů&lt;/b&gt;&lt;br /&gt;Používá JavaScript k ukázání náhledu komentáře a značkovací tlačítka&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Mon, 21 Dec 2020 11:05:41 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_livecomment</guid>
 </item>
 <item>
@@ -923,7 +923,7 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
 <content:encoded>&lt;b&gt;serendipity_event_realtimecomments&lt;br /&gt;Komentáře v reálném čase&lt;/b&gt;&lt;br /&gt;Aktualizuje komentáře od ostatních uživatelů bez znovunačtení stránky.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 21 Dec 2020 11:01:47 +0100</pubDate>
+<pubDate>Mon, 21 Dec 2020 11:07:11 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_realtimecomments</guid>
 </item>
 <item>
