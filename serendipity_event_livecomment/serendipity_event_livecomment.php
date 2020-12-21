@@ -19,10 +19,10 @@ class serendipity_event_livecomment extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda, Garvin Hicking');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'php'         => '5.6'
         ));
-        $propbag->add('version',       '2.5.6');
+        $propbag->add('version',       '2.5.7');
         $propbag->add('event_hooks',   array(
             'frontend_footer'               => true,
             'external_plugin'               => true,
@@ -41,9 +41,6 @@ class serendipity_event_livecomment extends serendipity_event
                                              'timeout',
                                              'inline')
                                         );
-        if (!$serendipity['capabilities']['jquery']) {
-            $this->dependencies = array('serendipity_event_jquery' => 'remove');
-        }
     }
 
     function generate_content(&$title)
