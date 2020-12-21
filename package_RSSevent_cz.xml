@@ -140,7 +140,7 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentedit&lt;br /&gt;Editace komentářů&lt;/b&gt;&lt;br /&gt;Povoluje uživatelům měnit vlastní komentáře i poté, co již byly odeslány.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 15 Dec 2020 13:02:29 +0100</pubDate>
+<pubDate>Mon, 21 Dec 2020 11:01:38 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_commentedit</guid>
 </item>
 <item>
@@ -635,7 +635,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Zkracovač adres&lt;/b&gt;&lt;br /&gt;Umožňuje zkrátit odkaz na Váš blog, podobně jako třeba tr.im, tinyurl.com apod.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Thu, 10 Dec 2020 11:25:22 +0100</pubDate>
+<pubDate>Mon, 21 Dec 2020 10:36:10 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
@@ -644,7 +644,7 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda, Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_livecomment&lt;br /&gt;Vylepšené políčko komentářů&lt;/b&gt;&lt;br /&gt;Používá JavaScript k ukázání náhledu komentáře a značkovací tlačítka&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 02 Nov 2017 19:14:41 +0100</pubDate>
+<pubDate>Mon, 21 Dec 2020 11:02:02 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_livecomment</guid>
 </item>
 <item>
@@ -923,7 +923,7 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
 <content:encoded>&lt;b&gt;serendipity_event_realtimecomments&lt;br /&gt;Komentáře v reálném čase&lt;/b&gt;&lt;br /&gt;Aktualizuje komentáře od ostatních uživatelů bez znovunačtení stránky.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 23 Oct 2019 09:46:00 +0200</pubDate>
+<pubDate>Mon, 21 Dec 2020 11:01:47 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_realtimecomments</guid>
 </item>
 <item>
