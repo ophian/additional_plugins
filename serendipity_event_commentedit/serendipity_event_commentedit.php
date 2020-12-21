@@ -19,10 +19,10 @@ class serendipity_event_commentedit extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'php'         => '5.2.0'
+            'serendipity' => '2.0',
+            'php'         => '5.6'
         ));
-        $propbag->add('version',       '0.4');
+        $propbag->add('version',       '0.5');
         $propbag->add('event_hooks',   array(
             'frontend_saveComment_finish' => true,
             'fetchcomments'               => true,
@@ -32,10 +32,6 @@ class serendipity_event_commentedit extends serendipity_event
         $propbag->add('groups', array('FRONTEND_VIEWS'));
 
         $propbag->add('configuration', array('path', 'timeout', 'mail'));
-
-        if (!$serendipity['capabilities']['jquery']) {
-            $this->dependencies = array('serendipity_event_jquery' => 'remove');
-        }
     }
 
     function generate_content(&$title)
@@ -110,7 +106,6 @@ class serendipity_event_commentedit extends serendipity_event
                             break;
 
                         case 'commentedit':
-                            global $serendipity;
                             // the js sent us the comment and an id json-encrypted,
                             // so they are named
                             $comment = $_REQUEST['comment'];
