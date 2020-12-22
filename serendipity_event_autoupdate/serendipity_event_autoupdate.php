@@ -12,13 +12,11 @@ class serendipity_event_autoupdate extends serendipity_event
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',          PLUGIN_EVENT_AUTOUPDATE_NAME);
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.8.1');
+        $propbag->add('version',       '1.8.2');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -30,9 +28,6 @@ class serendipity_event_autoupdate extends serendipity_event
             'backend_sidebar_entries_event_display_update'  => true
         ));
         $propbag->add('groups', array('BACKEND_ADMIN', 'BACKEND_DASHBOARD', 'BACKEND_FEATURES'));
-        if ($serendipity['version'][0] < 2) {
-            $this->dependencies = array('serendipity_event_dashboard' => 'keep');
-        }
     }
 
     function introspect_config_item($name, &$propbag)

@@ -1,3 +1,9 @@
+1.8.2:
+------
+
+ * Remove obsolete dependency check
+ * Micro-optimizations on global load
+
 1.8.1
 ------
 
