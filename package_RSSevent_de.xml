@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;Sobald das Dashboard (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in das Dashboard des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten. Mit Styx 2.1+ ist zu empfehlen, dieses Plugin in Kombination mit dem modemaintain (Wartungs-) Ereignis Plugin zu nutzen. Für Autoupdate Hinweise müssen Sie die globale Serendipity Konfigurationsoption in &quot;Einstellungen:: Generelle Einstellungen: Update-Hinweis&quot; auf &quot;stable&quot; oder &quot;beta&quot; stellen, um es überhaupt über das Dashboard nutzen zu können!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 21 Dec 2020 11:16:46 +0100</pubDate>
+<pubDate>Mon, 21 Dec 2020 19:23:01 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -1229,7 +1229,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Bildergalerie&lt;/b&gt;&lt;br /&gt;Ermöglicht Bildergalerien aus der Mediathek oder Ordnern auszugehen.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sun, 06 Dec 2020 16:19:26 +0100</pubDate>
+<pubDate>Mon, 21 Dec 2020 19:28:57 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>
