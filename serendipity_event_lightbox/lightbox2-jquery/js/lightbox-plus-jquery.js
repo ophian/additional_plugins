@@ -10980,7 +10980,7 @@ return jQuery;
   };
 
   // Animate the size of the lightbox to fit the image we are showing
-  // This method also shows the the image.
+  // This method also shows the image.
   Lightbox.prototype.sizeContainer = function(imageWidth, imageHeight) {
     var self = this;
 
