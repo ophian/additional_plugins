@@ -16,13 +16,11 @@ class serendipity_event_usergallery extends serendipity_event
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',          PLUGIN_EVENT_USERGALLERY_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '3.00');
+        $propbag->add('version',       '3.01');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1.0',
@@ -40,7 +38,7 @@ class serendipity_event_usergallery extends serendipity_event
         ));
         $propbag->add('groups', array('IMAGES'));
         $propbag->add('configuration', array('title', 'num_cols', 'subpage', 'frontpage', 'permalink', 'style', 'base_directory', 'dir_list', 'show_1lvl_sub',
-        'display_dir_tree', 'dir_tab', 'images_per_page', 'image_order', 'separator1', 'intro', 'separator2', 'image_display', 'show_lightbox', 'lightbox_type', 'lightbox_path', 'show_objects', 'image_strict', 'fixed_width', 'image_width',
+        'display_dir_tree', 'dir_tab', 'images_per_page', 'image_order', 'separator1', 'intro', 'separator2', 'image_display', 'show_lightbox', 'lightbox_type', 'lightbox_path', 'jquery', 'show_objects', 'image_strict', 'fixed_width', 'image_width',
         'feed_width', 'feed_linked_only', 'feed_body', 'separator3', 'exif_show_data', 'exif_data', 'show_media_properties', 'media_properties', 'linked_entries'));
     }
 
@@ -203,6 +201,13 @@ class serendipity_event_usergallery extends serendipity_event
                 $propbag->add('type',           'string');
                 $propbag->add('name',           PLUGIN_EVENT_USERGALLERY_LIGHTBOX_PATH);
                 $propbag->add('default',        $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_lightbox');
+                break;
+
+            case 'jquery':
+                $propbag->add('type',           'boolean');
+                $propbag->add('name',           PLUGIN_EVENT_USERGALLERY_JQUERY);
+                $propbag->add('description',    PLUGIN_EVENT_USERGALLERY_JQUERY_DESC);
+                $propbag->add('default',        'false');
                 break;
 
             case 'show_objects':
@@ -709,7 +714,7 @@ class serendipity_event_usergallery extends serendipity_event
                        'plugin_usergallery_lightbox_append' => true,
                        'plugin_usergallery_lightbox_script' => $lightbox_type,
                        'plugin_usergallery_lightbox_dir'    => $this->get_config('lightbox_path'),
-                       'plugin_usergallery_lightbox_jquery' => (!class_exists('serendipity_event_jquery') && !$serendipity['capabilities']['jquery']) ? true : false,
+                       'plugin_usergallery_lightbox_jquery' => (false === $serendipity['capabilities']['jquery'] && serendipity_db_bool($this->get_config('jquery', 'false'))),
                        'plugin_usergallery_lightbox_type'   => $lbtype,
                        'plugin_usergallery_images'          => $process_images ?? null
                         )

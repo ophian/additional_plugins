@@ -43,11 +43,13 @@
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DATEACS', 'Date (Ascending)');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DATEDESC', 'Date (Descending)');
 @define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_NAME', 'Display the whole directory tree');
-@define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_DESC', 'If set to "yes" the gallery will display the whole directory tree on each page.  If set to "no" the the gallery will display a directory list of only subfolders. (This behavior is also dependent on the template used to display the gallery.)');
+@define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_DESC', 'If set to "yes" the gallery will display the whole directory tree on each page.  If set to "no" the gallery will display a directory list of only sub-folders. (This behavior is also dependent on the template used to display the gallery.)');
 @define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_NAME', 'Only show one directory level lower');
-@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_DESC', 'This will limit the directory output to only show one directory level below the current, and will summerize the number of pictures in all directories under the next level. This is not available if you are using the full directory tree.');
+@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_DESC', 'This will limit the directory output to only show one directory level below the current, and will summarize the number of pictures in all directories under the next level. This is not available if you are using the full directory tree.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_NAME', 'Images per page');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_DESC', 'Set the number of images to display per page.  If set to "0" pagination will be turned off.');
+@define('PLUGIN_EVENT_USERGALLERY_JQUERY', 'Use plugin jQuery lib');
+@define('PLUGIN_EVENT_USERGALLERY_JQUERY_DESC', 'Enable only, if your theme does not already load the jquery.js library in its page header or footer. But take care it loads before the chosen lightbox script.');
 @define('PLUGIN_EVENT_USERGALLERY_PREVIOUS', 'previous');
 @define('PLUGIN_EVENT_USERGALLERY_NEXT', 'next');
 @define('PLUGIN_EVENT_USERGALLERY_UPONELEVEL', 'Up one level');
@@ -70,7 +72,7 @@
 @define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY', 'Only show linked images in RSS-Feed?');
 @define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY_DESC', 'If enabled, only images which are linked in your entries will be shown in the RSS feeds.');
 
-@define('USERGALLERY_SEE_FULLSIZED', 'Click image to see fullsized');
+@define('USERGALLERY_SEE_FULLSIZED', 'Click image to see full sized');
 @define('USERGALLERY_DOWNLOAD_HERE', 'To download, click here!');
 @define('USERGALLERY_LINKED_ENTRIES', 'Entries using this image:');
 @define('USERGALLERY_LINKED_STATICPAGES', 'Static Pages using this image:');

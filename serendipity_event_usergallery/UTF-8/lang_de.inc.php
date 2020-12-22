@@ -42,6 +42,8 @@
 @define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_DESC', 'Hierdurch wird unterhalb des aktuellen Verzeichnisses nur eine tiefere Verzeichnisebene angezeigt. Die Anzahl aller Bilder, die sich in weiteren Unterebenen befinden, wird aufsummiert. Dies funktioniert nicht, wenn Sie den gesamten Verzeichnisbaum anzeigen lassen.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_NAME', 'Bilder pro Seite');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_DESC', 'Geben Sie die Anzahl der Bilder ein, die pro Seite angezeigt werden sollen. Wenn "0", wird es nur eine Seite geben, auf der sich alle Bilder befinden.');
+@define('PLUGIN_EVENT_USERGALLERY_JQUERY', 'Nutze Plugin jQuery lib');
+@define('PLUGIN_EVENT_USERGALLERY_JQUERY_DESC', 'Aktivieren Sie dies nur, wenn ihr Theme im header oder footer nicht schon das "default" jquery.js lädt. Stelllen Sie aber sicher, dass jQuery vor dem lightbox Script geladen wird.');
 @define('PLUGIN_EVENT_USERGALLERY_PREVIOUS', 'zurück');
 @define('PLUGIN_EVENT_USERGALLERY_NEXT', 'weiter');
 @define('PLUGIN_EVENT_USERGALLERY_UPONELEVEL', 'Eine Ebene höher');

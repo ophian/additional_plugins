@@ -1,3 +1,8 @@
+3.01:
+-----
+ * Improve for jquery load by new config option (default: false)
+ * Micro-optimizations on global load
+
 3.00:
 -----
  * Major up for Serendipity Styx 3.2 Galleries - raising requirements
