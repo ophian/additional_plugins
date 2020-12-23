@@ -13,6 +13,8 @@
 <release>
   <version>0.27</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
@@ -55,6 +57,8 @@
 <release>
   <version>1.04</version>
   <requirements:s9yVersion>2.2</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-08-26</date>
   <filelist>
     <dir name="serendipity_event_aggregator">
@@ -121,6 +125,8 @@
 <release>
   <version>0.86</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
@@ -193,6 +199,8 @@
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_assigncategories">
@@ -241,6 +249,8 @@
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_autotitle">
@@ -285,6 +295,8 @@
 <release>
   <version>1.8.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.2</requirements:phpVersion>
   <date>2020-12-21</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
@@ -333,6 +345,8 @@
 <release>
   <version>0.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_backend">
@@ -384,6 +398,8 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_backendrss">
@@ -424,6 +440,8 @@
 <release>
   <version>0.21</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-06-07</date>
   <filelist>
     <dir name="serendipity_event_backup">
@@ -474,6 +492,8 @@
 <release>
   <version>1.88</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_cal">
@@ -568,6 +588,8 @@
 <release>
   <version>1.98</version>
   <requirements:s9yVersion>2.7.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2020-12-01</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
@@ -619,6 +641,8 @@
 <release>
   <version>0.12</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.31</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2017-08-18</date>
   <filelist>
     <dir name="serendipity_event_challengeresponse">
@@ -641,6 +665,8 @@
 <release>
   <version>4.15.1.0</version>
   <requirements:s9yVersion>2.6.2</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.13</requirements:smyVersion>
+  <requirements:phpVersion>5.2.6</requirements:phpVersion>
   <date>2020-11-12</date>
   <filelist>
     <dir name="serendipity_event_ckeditor">
@@ -713,6 +739,8 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2020-08-14</date>
   <filelist>
     <dir name="serendipity_event_comics">
@@ -763,6 +791,8 @@
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.6</requirements:phpVersion>
   <date>2020-12-21</date>
   <filelist>
     <dir name="serendipity_event_commentedit">
@@ -815,6 +845,8 @@
 <release>
   <version>1.8</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_commentsearch">
@@ -865,6 +897,8 @@
 <release>
   <version>2.01</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>7.3</requirements:phpVersion>
   <date>2020-12-11</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
@@ -941,6 +975,8 @@
 <release>
   <version>1.14</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
@@ -1011,6 +1047,8 @@
 <release>
   <version>1.34</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.0.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_contactform">
@@ -1087,6 +1125,8 @@
 <release>
   <version>1.4.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_contentrewrite">
@@ -1167,6 +1207,8 @@
 <release>
   <version>2.12</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2020-07-02</date>
   <filelist>
     <dir name="serendipity_event_cpgselector">
@@ -1219,6 +1261,8 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_creativecommons">
@@ -1303,6 +1347,8 @@
 <release>
   <version>2.0</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>7.3</requirements:phpVersion>
   <date>2020-12-02</date>
   <filelist>
     <dir name="serendipity_event_cronjob">
@@ -1347,6 +1393,8 @@
 <release>
   <version>1.20</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.0.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_customarchive">
@@ -1397,6 +1445,8 @@
 <release>
   <version>1.19</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_custom_permalinks">
@@ -1441,6 +1491,8 @@
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2020-06-07</date>
   <filelist>
     <dir name="serendipity_event_dbclean">
@@ -1487,6 +1539,8 @@
 <release>
   <version>1.13</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.3.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_dejure">
@@ -1529,6 +1583,8 @@
 <release>
   <version>0.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_disqus">
@@ -1573,6 +1629,8 @@
 <release>
   <version>1.47</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.4.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_downloadmanager">
@@ -1895,6 +1953,8 @@
 <release>
   <version>3.20</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_dpsyntaxhighlighter">
@@ -2037,6 +2097,8 @@
 <release>
   <version>2.02</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.3.3</requirements:phpVersion>
   <date>2020-09-17</date>
   <filelist>
     <dir name="serendipity_event_dsgvo_gdpr">
@@ -2075,6 +2137,8 @@
 <release>
   <version>1.07</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_email_bot_obfuscator">
@@ -2127,6 +2191,8 @@
 <release>
   <version>3.31</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.8</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-08-16</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
@@ -2183,6 +2249,8 @@
 <release>
   <version>1.19</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_entrycheck">
@@ -2235,6 +2303,8 @@
 <release>
   <version>1.12</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2019-07-13</date>
   <filelist>
     <dir name="serendipity_event_entrylastmodified">
@@ -2283,6 +2353,8 @@
 <release>
   <version>1.76</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.0.0</requirements:phpVersion>
   <date>2020-08-11</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
@@ -2341,6 +2413,8 @@
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2018-08-15</date>
   <filelist>
     <dir name="serendipity_event_entrysplit">
@@ -2393,6 +2467,8 @@
 <release>
   <version>1.23</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-12-15</date>
   <filelist>
     <dir name="serendipity_event_externalauth">
@@ -2443,6 +2519,8 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_externalphp">
@@ -2487,6 +2565,8 @@
 <release>
   <version>2.00</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>7.3</requirements:phpVersion>
   <date>2020-12-02</date>
   <filelist>
     <dir name="serendipity_event_facebook">
@@ -2531,6 +2611,8 @@
 <release>
   <version>1.42</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-06-04</date>
   <filelist>
     <dir name="serendipity_event_faq">
@@ -2650,6 +2732,8 @@
 <release>
   <version>1.04</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_feed">
@@ -2682,6 +2766,8 @@
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_filter_entries">
@@ -2730,6 +2816,8 @@
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_flattr">
@@ -2774,6 +2862,8 @@
 <release>
   <version>0.8</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2020-07-02</date>
   <filelist>
     <dir name="serendipity_event_flickr">
@@ -2830,6 +2920,8 @@
 <release>
   <version>0.15</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-06-04</date>
   <filelist>
     <dir name="serendipity_event_forgotpassword">
@@ -2882,6 +2974,8 @@
 <release>
   <version>0.43</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_forum">
@@ -3160,6 +3254,8 @@
 <release>
   <version>4.35</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-12-20</date>
   <filelist>
     <dir name="serendipity_event_freetag">
@@ -3266,6 +3362,8 @@
 <release>
   <version>1.20</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.3.0</requirements:phpVersion>
   <date>2020-12-07</date>
   <filelist>
     <dir name="serendipity_event_galleryimage">
@@ -3310,6 +3408,8 @@
 <release>
   <version>1.40</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-06-30</date>
   <filelist>
     <dir name="serendipity_event_geotag">
@@ -3366,6 +3466,8 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2017-07-22</date>
   <filelist>
     <dir name="serendipity_event_geourl">
@@ -3414,6 +3516,8 @@
 <release>
   <version>0.2.1</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2020-09-17</date>
   <filelist>
     <dir name="serendipity_event_geo_json">
@@ -3450,6 +3554,8 @@
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_geshi">
@@ -4016,6 +4122,8 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-07-01</date>
   <filelist>
     <dir name="serendipity_event_getid3">
@@ -4064,6 +4172,8 @@
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_glossary">
@@ -4110,6 +4220,8 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_google_analytics">
@@ -4154,6 +4266,8 @@
 <release>
   <version>0.64</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2019-11-06</date>
   <filelist>
     <dir name="serendipity_event_google_sitemap">
@@ -4210,6 +4324,8 @@
 <release>
   <version>1.72</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-08-26</date>
   <filelist>
     <dir name="serendipity_event_gravatar">
@@ -4560,6 +4676,8 @@
 <release>
   <version>3.78</version>
   <requirements:s9yVersion>1.7.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
@@ -4673,6 +4791,8 @@
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2018-11-17</date>
   <filelist>
     <dir name="serendipity_event_head_nugget">
@@ -4718,6 +4838,8 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_httpauth">
@@ -4756,6 +4878,8 @@
 <release>
   <version>2.02</version>
   <requirements:s9yVersion>3.0.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.3.0</requirements:phpVersion>
   <date>2020-12-16</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
@@ -4816,6 +4940,8 @@
 <release>
   <version>2.25</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.6</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
@@ -4868,6 +4994,8 @@
 <release>
   <version>2.18</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.3.0</requirements:phpVersion>
   <date>2020-12-07</date>
   <filelist>
     <dir name="serendipity_event_karma">
@@ -4995,6 +5123,8 @@
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2018-08-30</date>
   <filelist>
     <dir name="serendipity_event_kubrickheader">
@@ -5032,6 +5162,8 @@
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_layout_printerfriendly">
@@ -5078,6 +5210,8 @@
 <release>
   <version>2.10.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-12-20</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
@@ -5390,6 +5524,8 @@
 <release>
   <version>3.01</version>
   <requirements:s9yVersion>3.2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.3.0</requirements:phpVersion>
   <date>2020-12-22</date>
   <filelist>
     <dir name="serendipity_event_linklist">
@@ -5486,6 +5622,8 @@
 <release>
   <version>1.5.1</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_linktoolbar">
@@ -5534,6 +5672,8 @@
 <release>
   <version>1.7.5</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-12-21</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
@@ -5586,6 +5726,8 @@
 <release>
   <version>2.5.7</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.6</requirements:phpVersion>
   <date>2020-12-21</date>
   <filelist>
     <dir name="serendipity_event_livecomment">
@@ -5673,6 +5815,8 @@
 <release>
   <version>1.4.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-04-05</date>
   <filelist>
     <dir name="serendipity_event_livesearch">
@@ -5761,6 +5905,8 @@
 <release>
   <version>1.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_ljupdate">
@@ -5809,6 +5955,8 @@
 <release>
   <version>1.05</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.6</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-03-22</date>
   <filelist>
     <dir name="serendipity_event_loginform">
@@ -5849,6 +5997,8 @@
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.2</requirements:phpVersion>
   <date>2016-08-27</date>
   <filelist>
     <dir name="serendipity_event_lsrstopper">
@@ -5914,6 +6064,8 @@
 <release>
   <version>1.02</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2017-02-10</date>
   <filelist>
     <dir name="serendipity_event_mailcc">
@@ -5936,6 +6088,8 @@
 <release>
   <version>1.25</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_event_mailentry">
@@ -6000,6 +6154,8 @@
 <release>
   <version>1.32</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-07-30</date>
   <filelist>
     <dir name="serendipity_event_markdown">
@@ -6098,6 +6254,8 @@
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_markread">
@@ -6142,6 +6300,8 @@
 <release>
   <version>0.26</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2019-06-10</date>
   <filelist>
     <dir name="serendipity_event_metadesc">
@@ -6194,6 +6354,8 @@
 <release>
   <version>0.51</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_microformats">
@@ -6272,6 +6434,8 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_mimetex">
@@ -6324,6 +6488,8 @@
 <release>
   <version>1.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.0.0</requirements:phpVersion>
   <date>2020-12-15</date>
   <filelist>
     <dir name="serendipity_event_mobile_output">
@@ -6510,6 +6676,8 @@
 <release>
   <version>3.01</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.28</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
@@ -6584,6 +6752,8 @@
 <release>
   <version>0.20</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-06-05</date>
   <filelist>
     <dir name="serendipity_event_mycalendar">
@@ -6638,6 +6808,8 @@
 <release>
   <version>0.14</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-06-05</date>
   <filelist>
     <dir name="serendipity_event_mymood">
@@ -6680,6 +6852,8 @@
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>2.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_newsbox">
@@ -6718,6 +6892,8 @@
 <release>
   <version>1.18</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-06-29</date>
   <filelist>
     <dir name="serendipity_event_oembed">
@@ -6808,6 +6984,8 @@
 <release>
   <version>1.4</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.3</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_openid">
@@ -6984,6 +7162,8 @@
 <release>
   <version>0.7</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>7.0</requirements:phpVersion>
   <date>2020-09-17</date>
   <filelist>
     <dir name="serendipity_event_osm">
@@ -7036,6 +7216,8 @@
 <release>
   <version>0.7</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>7.0</requirements:phpVersion>
   <date>2020-09-17</date>
   <filelist>
     <dir name="serendipity_event_osm">
@@ -7088,6 +7270,8 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.6</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2019-10-22</date>
   <filelist>
     <dir name="serendipity_event_outdate_entries">
@@ -7132,6 +7316,8 @@
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2018-08-15</date>
   <filelist>
     <dir name="serendipity_event_page_nugget">
@@ -7186,6 +7372,8 @@
 <release>
   <version>0.11</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2017-07-22</date>
   <filelist>
     <dir name="serendipity_event_phoneblogz">
@@ -7230,6 +7418,8 @@
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.0.0</requirements:phpVersion>
   <date>2020-04-10</date>
   <filelist>
     <dir name="serendipity_event_photoblog">
@@ -7278,6 +7468,8 @@
 <release>
   <version>1.43</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-07-17</date>
   <filelist>
     <dir name="serendipity_event_podcast">
@@ -7526,6 +7718,8 @@
 <release>
   <version>1.54</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2020-08-17</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
@@ -7594,6 +7788,8 @@
 <release>
   <version>1.0.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>7.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_portier">
@@ -8164,6 +8360,8 @@
 <release>
   <version>1.6.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-12-15</date>
   <filelist>
     <dir name="serendipity_event_prettify">
@@ -8230,6 +8428,8 @@
 <release>
   <version>1.0.2</version>
   <requirements:s9yVersion>1.6.2</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_proxy_realip">
@@ -8274,6 +8474,8 @@
 <release>
   <version>0.7</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.6</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-01-23</date>
   <filelist>
     <dir name="serendipity_event_randomblogdescription">
@@ -8314,6 +8516,8 @@
 <release>
   <version>0.3</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.6</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-12-21</date>
   <filelist>
     <dir name="serendipity_event_realtimecomments">
@@ -8358,6 +8562,8 @@
 <release>
   <version>0.34</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_recaptcha">
@@ -8410,6 +8616,8 @@
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_regexpmarkup">
@@ -8466,6 +8674,8 @@
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2018-08-11</date>
   <filelist>
     <dir name="serendipity_event_relatedlinks">
@@ -8524,6 +8734,8 @@
 <release>
   <version>1.1</version>
   <requirements:s9yVersion>3.0.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>7.3.0</requirements:phpVersion>
   <date>2020-12-07</date>
   <filelist>
     <dir name="serendipity_event_responsiveimages">
@@ -8556,6 +8768,8 @@
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>5.2</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_searchhighlight">
@@ -8640,6 +8854,8 @@
 <release>
   <version>1.39</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-06-07</date>
   <filelist>
     <dir name="serendipity_event_sidebarhider">
@@ -8686,6 +8902,8 @@
 <release>
   <version>1.18</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_smartymarkup">
@@ -8730,6 +8948,8 @@
 <release>
   <version>1.30</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-07-15</date>
   <filelist>
     <dir name="serendipity_event_smtpmail">
@@ -8902,6 +9122,8 @@
 <release>
   <version>0.24</version>
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2020-06-03</date>
   <filelist>
     <dir name="serendipity_event_social">
@@ -8958,6 +9180,8 @@
 <release>
   <version>2.06</version>
   <requirements:s9yVersion>2.1.2</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.2</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bayes">
@@ -9038,6 +9262,8 @@
 <release>
   <version>1.3.9</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-10-26</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bee">
@@ -9092,6 +9318,8 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_spamblock_rbl">
@@ -9138,6 +9366,8 @@
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_spamblock_surbl">
@@ -9181,6 +9411,8 @@
 <release>
   <version>1.03</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_stalkerbuster">
@@ -9205,6 +9437,8 @@
 <release>
   <version>1.12</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_startcat">
@@ -9246,6 +9480,8 @@
 <release>
   <version>6.19</version>
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.0.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
@@ -9404,6 +9640,8 @@
 <release>
   <version>3.01</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>7.3</requirements:phpVersion>
   <date>2020-12-09</date>
   <filelist>
     <dir name="serendipity_event_statistics">
@@ -9510,6 +9748,8 @@
 <release>
   <version>0.15</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.0.0</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_suggest">
@@ -9561,6 +9801,8 @@
 <release>
   <version>1.8</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-03-22</date>
   <filelist>
     <dir name="serendipity_event_templatechooser">
@@ -9643,6 +9885,8 @@
 <release>
   <version>0.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2017-02-02</date>
   <filelist>
     <dir name="serendipity_event_template_editor">
@@ -9745,6 +9989,8 @@
 <release>
   <version>1.9.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-08-24</date>
   <filelist>
     <dir name="serendipity_event_textile">
@@ -9869,6 +10115,8 @@
 <release>
   <version>0.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_textlinkads">
@@ -9925,6 +10173,8 @@
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.6</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_textwiki">
@@ -10389,6 +10639,8 @@
 <release>
   <version>1.4.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-12-15</date>
   <filelist>
     <dir name="serendipity_event_thumbnails">
@@ -10437,6 +10689,8 @@
 <release>
   <version>1.16</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-07-01</date>
   <filelist>
     <dir name="serendipity_event_tinymce">
@@ -10503,6 +10757,8 @@
 <release>
   <version>1.10</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2019-12-02</date>
   <filelist>
     <dir name="serendipity_event_tinypng">
@@ -10563,6 +10819,8 @@
 <release>
   <version>2.00</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>7.3</requirements:phpVersion>
   <date>2020-12-02</date>
   <filelist>
     <dir name="serendipity_event_todolist">
@@ -10727,6 +10985,8 @@
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.6</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_tooltips">
@@ -10795,6 +11055,8 @@
 <release>
   <version>1.27</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-12-04</date>
   <filelist>
     <dir name="serendipity_event_trackback">
@@ -10851,6 +11113,8 @@
 <release>
   <version>1.16</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_trackexits">
@@ -10931,6 +11195,8 @@
 <release>
   <version>0.25</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.3.3</requirements:phpVersion>
   <date>2018-08-06</date>
   <filelist>
     <dir name="serendipity_event_typesetbuttons">
@@ -11035,6 +11301,8 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_typoquote">
@@ -11082,6 +11350,8 @@
 <release>
   <version>1.04</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2020-07-29</date>
   <filelist>
     <dir name="serendipity_event_unstrip_tags">
@@ -11120,6 +11390,8 @@
 <release>
   <version>3.01</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.3</requirements:phpVersion>
   <date>2020-12-21</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
@@ -11228,6 +11500,8 @@
 <release>
   <version>0.34</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
@@ -11286,6 +11560,8 @@
 <release>
   <version>0.12</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2017-01-06</date>
   <filelist>
     <dir name="serendipity_event_versioning">
@@ -11330,6 +11606,8 @@
 <release>
   <version>0.6</version>
   <requirements:s9yVersion>2.2.1</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_event_vgwort">
@@ -11364,6 +11642,8 @@
 <release>
   <version>1.16</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_weblogping">
@@ -11452,6 +11732,8 @@
 <release>
   <version>1.01</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>7.3</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
@@ -11504,6 +11786,8 @@
 <release>
   <version>1.06</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-12-03</date>
   <filelist>
     <dir name="serendipity_event_wordwrap">
@@ -11548,6 +11832,8 @@
 <release>
   <version>1.77</version>
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>7.0</requirements:phpVersion>
   <date>2020-06-07</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
@@ -11608,6 +11894,8 @@
 <release>
   <version>0.8</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-01-23</date>
   <filelist>
     <dir name="serendipity_event_xsstrust">
@@ -11970,6 +12258,8 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_event_youtube">
@@ -12010,6 +12300,8 @@
 <release>
   <version>2.49</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.0.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
@@ -12070,6 +12362,8 @@
 <release>
   <version>1.07</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-03-22</date>
   <filelist>
     <dir name="serendipity_plugin_flickr">
@@ -12146,6 +12440,8 @@
 <release>
   <version>2.21</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-12-10</date>
   <filelist>
     <dir name="serendipity_plugin_pollbox">
@@ -12198,6 +12494,8 @@
 <release>
   <version>2.00</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>7.3</requirements:phpVersion>
   <date>2020-12-02</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">

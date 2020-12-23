@@ -13,6 +13,8 @@
 <release>
   <version>1.2.2</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2017-04-25</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
@@ -83,6 +85,8 @@
 <release>
   <version>0.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2017-02-02</date>
   <filelist>
     <dir name="serendipity_event_faq">
@@ -203,6 +207,8 @@
 <release>
   <version>3.13</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2020-05-07</date>
   <filelist>
     <dir name="serendipity_event_freetag">
@@ -309,6 +315,8 @@
 <release>
   <version>1.40</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2017-02-02</date>
   <filelist>
     <dir name="serendipity_event_geotag">
@@ -365,6 +373,8 @@
 <release>
   <version>1.27</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.0.0</requirements:phpVersion>
   <date>2020-03-22</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
@@ -479,6 +489,8 @@
 <release>
   <version>1.28</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-10-15</date>
   <filelist>
     <dir name="serendipity_event_linklist">
@@ -575,6 +587,8 @@
 <release>
   <version>0.27</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-08-26</date>
   <filelist>
     <dir name="serendipity_event_microformats">
@@ -653,6 +667,8 @@
 <release>
   <version>1.18</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.28</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2019-09-15</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
@@ -727,6 +743,8 @@
 <release>
   <version>0.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-03-22</date>
   <filelist>
     <dir name="serendipity_event_mycalendar">
@@ -781,6 +799,8 @@
 <release>
   <version>1.3.9</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bee">
@@ -835,6 +855,8 @@
 <release>
   <version>1.31</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.3.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
@@ -993,6 +1015,8 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-07-18</date>
   <filelist>
     <dir name="serendipity_event_statistics">
@@ -1099,6 +1123,8 @@
 <release>
   <version>1.2.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2018-01-24</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
@@ -1157,6 +1183,8 @@
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2017-11-04</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
@@ -1219,6 +1247,8 @@
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-12-15</date>
   <filelist>
     <dir name="serendipity_event_xsstrust">
@@ -1581,6 +1611,8 @@
 <release>
   <version>2.45</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.0.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
@@ -1641,6 +1673,8 @@
 <release>
   <version>1.25</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_plugin_amazon">
@@ -1690,6 +1724,8 @@
 <release>
   <version>1.12</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_category_dhtml_menu">
@@ -1731,6 +1767,8 @@
 <release>
   <version>1.4</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_coppermine">
@@ -1770,6 +1808,8 @@
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_plugin_creativecommons">
@@ -1848,6 +1888,8 @@
 <release>
   <version>2.1</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.0.1</requirements:phpVersion>
   <date>2020-01-23</date>
   <filelist>
     <dir name="serendipity_plugin_currently">
@@ -1901,6 +1943,8 @@
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-10-23</date>
   <filelist>
     <dir name="serendipity_plugin_externalphp">
@@ -1943,6 +1987,8 @@
 <release>
   <version>1.4</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-07-01</date>
   <filelist>
     <dir name="serendipity_plugin_feedburnersidebar">
@@ -1983,6 +2029,8 @@
 <release>
   <version>1.10</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_plugin_flickr">
@@ -2059,6 +2107,8 @@
 <release>
   <version>0.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.1</requirements:phpVersion>
   <date>2018-08-31</date>
   <filelist>
     <dir name="serendipity_plugin_flickrbadge">
@@ -2109,6 +2159,8 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_plugin_ggopis">
@@ -2167,6 +2219,8 @@
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2018-05-24</date>
   <filelist>
     <dir name="serendipity_plugin_google_adsense">
@@ -2215,6 +2269,8 @@
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2018-04-03</date>
   <filelist>
     <dir name="serendipity_plugin_google_quicksearch">
@@ -2261,6 +2317,8 @@
 <release>
   <version>0.12</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.1</requirements:phpVersion>
   <date>2018-08-31</date>
   <filelist>
     <dir name="serendipity_plugin_heavyrotation">
@@ -2323,6 +2381,8 @@
 <release>
   <version>2.6</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.6</requirements:smyVersion>
+  <requirements:phpVersion>7.0</requirements:phpVersion>
   <date>2020-10-14</date>
   <filelist>
     <dir name="serendipity_plugin_imagesidebar">
@@ -2376,6 +2436,8 @@
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_plugin_karmaranking">
@@ -2414,6 +2476,8 @@
 <release>
   <version>1.10</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.6</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2020-03-22</date>
   <filelist>
     <dir name="serendipity_plugin_loginform">
@@ -2468,6 +2532,8 @@
 <release>
   <version>1.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_nugget_multilingual">
@@ -2518,6 +2584,8 @@
 <release>
   <version>0.35</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-01-23</date>
   <filelist>
     <dir name="serendipity_plugin_pagerank">
@@ -2561,6 +2629,8 @@
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-12-15</date>
   <filelist>
     <dir name="serendipity_plugin_photoblog">
@@ -2607,6 +2677,8 @@
 <release>
   <version>0.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_plugin_piwik">
@@ -2641,6 +2713,8 @@
 <release>
   <version>2.17</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2018-04-06</date>
   <filelist>
     <dir name="serendipity_plugin_pollbox">
@@ -2693,6 +2767,8 @@
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.6</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2019-10-22</date>
   <filelist>
     <dir name="serendipity_plugin_popularentries">
@@ -2749,6 +2825,8 @@
 <release>
   <version>1.1</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-07-01</date>
   <filelist>
     <dir name="serendipity_plugin_quicklink">
@@ -2789,6 +2867,8 @@
 <release>
   <version>1.06</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.6</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2019-10-22</date>
   <filelist>
     <dir name="serendipity_plugin_randomquotes">
@@ -2833,6 +2913,8 @@
 <release>
   <version>1.04</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
     <dir name="serendipity_plugin_shoutbox">
@@ -2909,6 +2991,8 @@
 <release>
   <version>1.06</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.6</requirements:smyVersion>
+  <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2019-10-22</date>
   <filelist>
     <dir name="serendipity_plugin_shoutcast">
@@ -2955,6 +3039,8 @@
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>5.2.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_plugin_showentries">
@@ -3008,6 +3094,8 @@
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2016-10-24</date>
   <filelist>
     <dir name="serendipity_plugin_sidebarlogo">
@@ -3043,6 +3131,8 @@
 <release>
   <version>0.48</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_plugin_socialbookmarks">
@@ -3096,6 +3186,8 @@
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2020-03-22</date>
   <filelist>
     <dir name="serendipity_plugin_templatedropdown">
@@ -3173,6 +3265,8 @@
 <release>
   <version>0.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_plugin_timezones">
@@ -3216,6 +3310,8 @@
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_topexits">
@@ -3237,6 +3333,8 @@
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2016-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_topreferrers">
@@ -3259,6 +3357,8 @@
 <release>
   <version>2.00</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2020-06-05</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
@@ -3365,6 +3465,8 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <requirements:smyVersion>2.6.7</requirements:smyVersion>
+  <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2018-04-03</date>
   <filelist>
     <dir name="serendipity_plugin_wikipedia_finder">
