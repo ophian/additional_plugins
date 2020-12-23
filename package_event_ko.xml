@@ -5388,9 +5388,9 @@
 <description>Links manager - Shows your favorite links in the sidebar.</description>
 <maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.00</version>
-  <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <date>2020-12-02</date>
+  <version>3.01</version>
+  <requirements:s9yVersion>3.2.0</requirements:s9yVersion>
+  <date>2020-12-22</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
