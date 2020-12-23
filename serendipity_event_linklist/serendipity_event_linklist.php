@@ -19,7 +19,6 @@ class serendipity_event_linklist extends serendipity_event
         $propbag->add('name', PLUGIN_LINKLIST_TITLE);
         $propbag->add('description', PLUGIN_LINKLIST_DESC);
         $propbag->add('event_hooks',  array('backend_sidebar_entries_event_display_linklist'  => true,
-                                            'backend_sidebar_entries'                         => true,
                                             'backend_sidebar_admin_appearance'                => true,
                                             'plugins_linklist_input'                          => true,
                                             'css'                                             => true,
@@ -27,11 +26,11 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '3.00');
+        $propbag->add('version',       '3.01');
         $propbag->add('requirements',  array(
-            'serendipity' => '3.2',
-            'smarty'      => '3.1',
-            'php'         => '7.3'
+            'serendipity' => '3.2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '7.3.0'
         ));
         $propbag->add('stackable',     false);
         $propbag->add('groups', array('FRONTEND_VIEWS', 'BACKEND_FEATURES'));
@@ -342,14 +341,8 @@ class serendipity_event_linklist extends serendipity_event
                     }
                     break;
 
-                case 'backend_sidebar_entries':
-                    if (serendipity_db_bool($this->get_config('active')) && $serendipity['version'][0] < 2) {
-                        echo "\n".'                        <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=linklist">' . PLUGIN_LINKLIST_ADMINLINK . '</a></li>'."\n";
-                    }
-                    break;
-
                 case 'backend_sidebar_admin_appearance':
-                    if (serendipity_db_bool($this->get_config('active')) && $serendipity['version'][0] > 1) {
+                    if (serendipity_db_bool($this->get_config('active', 'false'))) {
                         echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=linklist">' . PLUGIN_LINKLIST_ADMINLINK . '</a></li>'."\n";
                     }
                     break;
