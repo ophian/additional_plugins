@@ -26,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '1.98');
+        $propbag->add('version',       '1.99');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '5.1.0'
@@ -1156,11 +1156,12 @@ class categorytemplate_option
     public static function set_config($item, $value, $okey = '')
     {
         global $serendipity;
+
         serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}options
                                WHERE okey = 't_" . serendipity_db_escape_string($okey) . "'
                                  AND name = '" . serendipity_db_escape_string($item) . "'");
-        serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}options (okey, name, value)
-                                   VALUES ('t_" . serendipity_db_escape_string($okey) . "', '" . serendipity_db_escape_string($item) . "', '" . serendipity_db_escape_string($value) . "')");
+        serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}options (name, value, okey)
+                                   VALUES ('" . serendipity_db_escape_string($item) . "', '" . serendipity_db_escape_string($value) . "', 't_" . serendipity_db_escape_string($okey) . "')");
         return true;
     }
 

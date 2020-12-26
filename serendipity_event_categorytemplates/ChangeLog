@@ -1,4 +1,8 @@
-1.97:
+1.99:
+-----
+ * Fixup <SQL query "order" for consistency
+
+1.98:
 -----
  * Fixup run 'backend_category_showForm' on empty category
 
