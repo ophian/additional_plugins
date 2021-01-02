@@ -122,7 +122,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie die Plugin Konfigurations Seite für mehr Informationen.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Thu, 12 Nov 2020 11:28:24 +0100</pubDate>
+<pubDate>Wed, 30 Dec 2020 19:52:56 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -977,7 +977,7 @@
 <category>Event Plugins</category>
 <author>Tys von Gaza, Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_sidebarhider&lt;br /&gt;Seitenleisten ein/ausklappbar machen&lt;/b&gt;&lt;br /&gt;Verkleinert Seitenleisten-Elemente auf ihren Titel und ermöglicht das individuelle Ausklappen. Zusätzliche Konfiguration siehe Einträge -&gt; Seitenleisten verwalten in der Administrationsoberfläche.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 07 Jun 2020 14:04:22 +0200</pubDate>
+<pubDate>Wed, 30 Dec 2020 20:03:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_sidebarhider</guid>
 </item>
 <item>
@@ -1076,7 +1076,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistiken&lt;/b&gt;&lt;br /&gt;Zeigt einen Link zu informativen Statistiken (inkl. Besucherzähler) in der Administrationsoberfläche an.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Wed, 09 Dec 2020 19:12:08 +0100</pubDate>
+<pubDate>Sat, 02 Jan 2021 10:55:54 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
