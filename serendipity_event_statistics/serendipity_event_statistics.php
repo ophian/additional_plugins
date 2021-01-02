@@ -18,7 +18,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '3.02');
+        $propbag->add('version',       '3.03');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.3'
@@ -474,6 +474,7 @@ class serendipity_event_statistics extends serendipity_event
                               292 => 'zeus',
                               293 => 'zyborg',
                             );
+                            $bannbots[] = 'crawler\\.infotiger\\.com';
 
                             foreach($bannbots AS $ban) {
                                 if (preg_match('/'.$ban.'/i', $useragent, $m)) {
