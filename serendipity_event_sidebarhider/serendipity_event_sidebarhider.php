@@ -241,10 +241,10 @@ class serendipity_event_sidebarhider extends serendipity_event
                 case 'frontend_header':
                     if ($enabled && (!$serendipity['embed'] || $serendipity['embed'] === 'false' || $serendipity['embed'] === false)) {
                         // set up the java script
-                        $style_sidebar_hidden = str_replace("'","\'",$this->get_config('style_sidebar_hidden'));
-                        $style_title_hidden   = str_replace("'","\'",$this->get_config('style_title_hidden'));
-                        $html_link_visible    = str_replace("'","\'",$this->get_config('html_link_visible'));
-                        $html_link_hidden     = str_replace("'","\'",$this->get_config('html_link_hidden'));
+                        $style_sidebar_hidden = str_replace("'", "\'", $this->get_config('style_sidebar_hidden'));
+                        $style_title_hidden   = str_replace("'", "\'", $this->get_config('style_title_hidden'));
+                        $html_link_visible    = str_replace("'", "\'", $this->get_config('html_link_visible'));
+                        $html_link_hidden     = str_replace("'", "\'", $this->get_config('html_link_hidden'));
                         $plugin_list          = unserialize($this->get_config('plugin_list'));
 
                         if (!$plugin_list) {
@@ -259,7 +259,7 @@ class serendipity_event_sidebarhider extends serendipity_event
 
                         foreach ($plugin_list AS $key=>$side) {
                             $pa .= "[";
-                            $pa .= implode(",", $side);
+                            $pa .= implode(',', $side);
                             if ($key) {
                                 $pa .= "]";
                             } else {
