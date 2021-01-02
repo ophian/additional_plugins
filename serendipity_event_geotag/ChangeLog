@@ -1,3 +1,7 @@
+1.41:
+-----
+ * fixed regex to detect pasted negative coordinates (e.g. -0.4454 54.2215)
+
 1.40:
 -----
  * Secure external target _blank links by living standard rel="noopener"
