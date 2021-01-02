@@ -18,7 +18,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '3.01');
+        $propbag->add('version',       '3.02');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.3'
@@ -996,7 +996,7 @@ class serendipity_event_statistics extends serendipity_event
 
             // removing "http://" & trailing subdirectories
             $temp_array3 = explode('//', $urlA);
-            $urlB = $temp_array3[1];
+            $urlB = $temp_array3[1] ?? '';
             $temp_array4 = explode('/', $urlB);
             $urlB = $temp_array4[0];
 
