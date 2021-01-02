@@ -759,8 +759,8 @@ ol.linenums li {
                                 $bid[] = $bt['id'];
                             }
                         }
-                        $addB = implode(",", $bid);
-                        $addB = str_replace(',','","',$addB);
+                        $addB = implode(',', $bid);
+                        $addB = str_replace(',', '","', $addB);
 
                         // this builds both textareas of entry forms only
                         if (isset($eventData['item']) && !empty($eventData['item'])) {
