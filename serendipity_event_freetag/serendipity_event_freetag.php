@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '4.35');
+        $propbag->add('version',       '5.00');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -92,7 +92,6 @@ class serendipity_event_freetag extends serendipity_event
             'min_percent', 'max_percent', 'max_tags',
             'use_wordcloud',
             'use_rotacloud', 'rotacloud_tag_color', 'rotacloud_tag_border_color', 'rotacloud_width',
-            'use_flash', 'flash_tag_color', 'flash_bg_trans', 'flash_bg_color', 'flash_width', 'flash_speed',
 
             'separator2', 'config_pagegrouper',
             'lowercase_tags', 'meta_keywords',
@@ -319,48 +318,6 @@ class serendipity_event_freetag extends serendipity_event
                 $propbag->add('default',     'false');
                 break;
 
-            case 'use_flash':
-                $propbag->add('type',        'boolean');
-                $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_FLASH);
-                $propbag->add('description', 'Flash is deprecated, please consider using the other tagclouds!'); // i18n?
-                $propbag->add('default',     'false');
-                break;
-
-            case 'flash_bg_trans':
-                $propbag->add('type',        'boolean');
-                $propbag->add('name',        PLUGIN_EVENT_FREETAG_FLASH_TRANSPARENT);
-                $propbag->add('description', '');
-                $propbag->add('default',     'false');
-                break;
-
-            case 'flash_tag_color':
-                $propbag->add('type',        'string');
-                $propbag->add('name',        PLUGIN_EVENT_FREETAG_FLASH_TAG_COLOR);
-                $propbag->add('description', '');
-                $propbag->add('default',     'ff6600');
-                break;
-
-            case 'flash_bg_color':
-                $propbag->add('type',        'string');
-                $propbag->add('name',        PLUGIN_EVENT_FREETAG_FLASH_BG_COLOR);
-                $propbag->add('description', '');
-                $propbag->add('default',     'ffffff');
-                break;
-
-            case 'flash_width':
-                $propbag->add('type',        'string');
-                $propbag->add('name',        PLUGIN_EVENT_FREETAG_FLASH_WIDTH);
-                $propbag->add('description', '');
-                $propbag->add('default',     '500');
-                break;
-
-            case 'flash_speed':
-                $propbag->add('type',        'string');
-                $propbag->add('name',        PLUGIN_EVENT_FREETAG_FLASH_SPEED);
-                $propbag->add('description', '');
-                $propbag->add('default',     '100');
-                break;
-
             default:
                 return false;
         }
@@ -371,13 +328,22 @@ class serendipity_event_freetag extends serendipity_event
     {
         $useRotCanvas = serendipity_db_bool($this->get_config('use_rotacloud', 'false'));
         $useWordCloud = serendipity_db_bool($this->get_config('use_wordcloud', 'false'));
-        $useFlash     = serendipity_db_bool($this->get_config('use_flash', 'false'));
 
-        if (($useFlash && ($useRotCanvas || $useWordCloud)) || ($useRotCanvas && $useWordCloud)) {
-            $this->set_config('use_flash', 'false');
+        if ($useRotCanvas && $useWordCloud) {
             $this->set_config('use_rotacloud', 'false');
             $this->set_config('use_wordcloud', 'false');
             echo '<p class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_SET_OPTION_ERROR_1;
+        }
+        // Delete old config options and flash objects
+        if (null !== $this->get_config('use_flash')) {
+            global $serendipity;
+
+            $fcitems = array('use_flash', 'flash_bg_trans', 'flash_tag_color', 'flash_bg_color', 'flash_width', 'flash_speed');
+            foreach($fcitems AS $del) {
+                serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}config WHERE name LIKE 'serendipity_%_freetag:%/$del'");
+            }
+            @unlink(dirname(__FILE__) . 'swfobject.js');
+            @unlink(dirname(__FILE__) . 'tagcloud.swf');
         }
     }
 
@@ -708,7 +674,6 @@ class serendipity_event_freetag extends serendipity_event
      * @see     generateContent()
      */
     static function displayTags($tags, $xml, $nl, $scaling, $maxSize = 200, $minSize = 100,
-                                $useFlash = false, $flashbgtrans = true, $flashtagcolor = 'ff6600', $flashbgcolor = 'ffffff', $flashwidth = 190, $flashspeed = 100,
                                 $cfg_taglink = '', $cfg_template = '', $xml_image = 'img/xml.gif', $useRotCanvas = false, $rcTagColor = '3E5F81', $rcTagOLColor = 'B1C1D1', $rcTagWidth = 300, $useWordCloud = false)
     {
         global $serendipity;
@@ -724,7 +689,7 @@ class serendipity_event_freetag extends serendipity_event
 
         $template = $cfg_template;
         if (!$template) {
-            self::renderTags($tags, $xml, $nl, $scaling, $maxSize, $minSize, $useFlash, $flashbgtrans, $flashtagcolor, $flashbgcolor, $flashwidth, $flashspeed, $taglink, $xml_image, $useRotCanvas, $rcTagColor, $rcTagOLColor, $rcTagWidth, $useWordCloud);
+            self::renderTags($tags, $xml, $nl, $scaling, $maxSize, $minSize, $taglink, $xml_image, $useRotCanvas, $rcTagColor, $rcTagOLColor, $rcTagWidth, $useWordCloud);
         } else {
             arsort($tags);
             $tagsWithLinks = array();
@@ -746,18 +711,15 @@ class serendipity_event_freetag extends serendipity_event
      * @static
      * @see     displayTags()
      */
-    static function renderTags($tags, $xml, $nl, $scaling, $maxSize, $minSize, $useFlash, $flashbgtrans, $flashtagcolor, $flashbgcolor, $flashwidth, $flashspeed, $taglink, $xml_image, $useRotCanvas, $rcTagColor, $rcTagOLColor, $rcTagWidth, $useWordCloud)
+    static function renderTags($tags, $xml, $nl, $scaling, $maxSize, $minSize, $taglink, $xml_image, $useRotCanvas, $rcTagColor, $rcTagOLColor, $rcTagWidth, $useWordCloud)
     {
         global $serendipity;
 
         // Hey! Do NOT allow mixing clouds !
-        if ($useFlash && ($useRotCanvas || $useWordCloud)) {
-            $useFlash = false;
-        }
-        if ($useRotCanvas && ($useFlash || $useWordCloud)) {
+        if ($useRotCanvas && $useWordCloud) {
             $useRotCanvas = false;
         }
-        if ($useWordCloud && ($useFlash || $useRotCanvas)) {
+        if ($useWordCloud && $useRotCanvas) {
             $useWordCloud = false;
         }
         if ($useRotCanvas && $useWordCloud) {
@@ -788,16 +750,7 @@ class serendipity_event_freetag extends serendipity_event
 
         $key = uniqid(rand());
 
-        if ($useFlash) {
-
-            echo '<div id="flashcontent' . $key . '">'. "\n";
-
-            echo "\n". '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="' . $flashwidth .'" height="' . round($flashwidth * 0.75) . '" id="tagcloud' . $key . '" name="tagcloud' . $key . '">'. "\n";
-            echo '<param name="movie" value="' . $serendipity['serendipityHTTPPath'] .'plugins/serendipity_event_freetag/tagcloud.swf" />'. "\n";
-            echo '<param name="wmode" value="transparent" />'. "\n";
-            echo '<param name="flashvars" value="tcolor=0x' . $flashtagcolor . '&amp;mode=tags&amp;distr=true&amp;tspeed=' . $flashspeed .'&amp;tagcloud=%3Ctags%3E';
-
-        } elseif ($useRotCanvas) {
+        if ($useRotCanvas) {
 
             echo '
                 <div id="freeTagCanvas' . $key . '" class="freetag_rotacloud">
@@ -819,7 +772,6 @@ class serendipity_event_freetag extends serendipity_event
             echo "<ul class=\"plainList\">\n";
         }
 
-        $cont     = $useFlash ? 'span' : 'li';
         $tagparam = '';
         $html     = '';
 
@@ -842,7 +794,7 @@ class serendipity_event_freetag extends serendipity_event
 
             // don't use with canvas cloud elements!
             if ($xml && !$useRotCanvas && !$useWordCloud) {
-                $html .= '<'.$cont.' class="serendipity_freeTag_xmlTagEntry"><a rel="tag" class="serendipity_xml_icon" href="' . $rsslink . urlencode($name) . '" title="' . $title . '">'.
+                $html .= '<li class="serendipity_freeTag_xmlTagEntry"><a rel="tag" class="serendipity_xml_icon" href="' . $rsslink . urlencode($name) . '" title="' . $title . '">'.
                          '<img alt="xml" src="' . $xmlImg . '" class="serendipity_freeTag_xmlButton" /></a> ';
             }
             if ($useRotCanvas) {
@@ -876,10 +828,10 @@ class serendipity_event_freetag extends serendipity_event
             }
 
             if (($xml || $useRotCanvas) && !$useWordCloud) {
-                $html .= "</$cont>\n";
+                $html .= "</li>\n";
             }
 
-            if (($nl && $cont == 'span') || ($nl && $cont == 'span' && !$useRotCanvas && !$useWordCloud && !$useFlash)) {
+            if ($nl && !$useRotCanvas && !$useWordCloud) {
                 $html .= "<br />\n";
             }
 
@@ -887,29 +839,9 @@ class serendipity_event_freetag extends serendipity_event
             $tagparam .= "%3Ca href='" . $taglink . self::makeURLTag($name) . "' style='" . round($fontSize/5) . "'%3E" . str_replace(' ', '&nbsp;', $title) . "%3C/a%3E";
         }
 
-        if ($useFlash) {
-            echo $tagparam;
-            echo '%3C/tags%3E" />' . "\n";
-            echo '<!--[if !IE]>-->' . "\n";
-            echo "\n" . '<object type="application/x-shockwave-flash" data="' . $serendipity['serendipityHTTPPath'] .'plugins/serendipity_event_freetag/tagcloud.swf" width="' . $flashwidth .'" height="' . round($flashwidth * 0.75) . '">'. "\n";
-            echo '<param name="wmode" value="transparent" />' . "\n";
-            echo '<param name="flashvars" value="tcolor=0x' . $flashtagcolor . '&amp;mode=tags&amp;distr=true&amp;tspeed=' . $flashspeed .'&amp;tagcloud=%3Ctags%3E';
-            echo $tagparam;
-            echo '%3C/tags%3E" />'. "\n";
-            echo '<!--<![endif]-->'. "\n";
-        }
-
         echo $html;
 
-        if ($useFlash) {
-
-            echo '<!--[if !IE]>-->'. "\n";
-            echo '</object>'. "\n";
-            echo '<!--<![endif]-->'. "\n";
-            echo '</object>'. "\n";
-            echo '</div>'. "\n";
-
-        } elseif ($useRotCanvas) {
+        if ($useRotCanvas) {
             echo '
                     </ul>
                 </div>
@@ -1024,17 +956,8 @@ class serendipity_event_freetag extends serendipity_event
                     if (!empty($serendipity['GET']['entry_id']) && isset($serendipity['GET']['type']) && in_array($serendipity['GET']['type'], ['comments', 'trackbacks'])) {
                         break;
                     }
-                    if (serendipity_db_bool($this->get_config('use_flash', 'false'))) {
-                        echo '<script type="text/javascript" src="';
-                        echo $serendipity['serendipityHTTPPath'];
-                        echo 'plugins/serendipity_event_freetag/swfobject.js"></script>'. "\n";
-                        echo '<script type="text/javascript">'. "\n";
-                        echo 'swfobject.registerObject("tagcloud", "9.0.0", "expressInstall.swf");'. "\n";
-                        echo '</script>'. "\n";
-                    }
-
                     // we load both in either case, as long as the option show_tagcloud is enabled,
-                    // since it could be that someone wants to use two different clouds (plain, wordcanvas, rotacanvas, flash), differed by event/sidebar plugin!
+                    // since it could be that someone wants to use two different clouds (plain, wordcanvas, rotacanvas), differed by event/sidebar plugin!
                     // Changed to use by option and / or freetag sidebar class installed
                     if (serendipity_db_bool($this->get_config('show_tagcloud', 'true')) && (serendipity_db_bool($this->get_config('use_wordcloud', 'true')) || serendipity_db_bool($this->get_config('use_rotacloud', 'true')) || class_exists('serendipity_plugin_freetag'))) {
                         if ($jquery) {
@@ -1705,10 +1628,6 @@ addLoadEvent(enableAutocomplete);
 
             ob_start();
             self::displayTags($tags, false, false, true, $max, $min,
-                                                   serendipity_db_bool($this->get_config('use_flash', 'false')),
-                                                   serendipity_db_bool($this->get_config('flash_bg_trans', 'false')),
-                                                   $this->get_config('flash_tag_color', 'ff6600'), $this->get_config('flash_bg_color', 'ffffff'),
-                                                   $this->get_config('flash_width', 600), $this->get_config('flash_speed', 100),
                                                    $this->get_config('taglink'), $this->get_config('template'), $this->get_config('xml_image', 'img/xml.gif'),
                                                    $useRotCanvas, $this->get_config('rotacloud_tag_color', '3E5F81'), $this->get_config('rotacloud_tag_border_color', 'B1C1D1'), $this->get_config('rotacloud_width', '500'),
                                                    $useWordCloud);
@@ -1845,11 +1764,7 @@ addLoadEvent(enableAutocomplete);
                 GROUP BY neg.tag";
         }
 
-        if (serendipity_db_bool($this->get_config('use_flash', 'false'))) {
-            $mt = $this->get_config('max_tags', 45);
-        } else {
-            $mt = $this->get_config('max_tags', 0);
-        }
+        $mt = $this->get_config('max_tags', 0);
 
         if ($mt > 0 && $sort == '') {
             $q = $q . " LIMIT " . $mt;
@@ -3473,15 +3388,6 @@ addLoadEvent(enableAutocomplete);
     margin-top: 20px;
     margin-bottom: 0px;
 }
-' . (serendipity_db_bool($this->get_config('use_flash', 'false')) ? '
-.serendipity_freetag_taglist {
-    margin: 10px;
-    border: 1px solid #' . $this->get_config('flash_tag_color', 'ffffff') . ';
-    padding: 5px;
-    background-color: #' . $this->get_config('flash_bg_color', 'ffffff') . ';
-    text-align: justify;
-}
-' : '') . '
 .serendipity_freeTag a {
     font-size: 7pt;
     text-decoration: none;

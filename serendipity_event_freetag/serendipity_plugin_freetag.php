@@ -23,11 +23,11 @@ class serendipity_plugin_freetag extends serendipity_plugin
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
+            'serendipity' => '2.1.0',
+            'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.13');
+        $propbag->add('version',       '4.00');
         $propbag->add('groups',        array('FRONTEND_ENTRY_RELATED'));
         $propbag->add('configuration', array(
             'config_pagegrouper',
@@ -43,8 +43,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
 
             'separator2', 'config_cloudgrouper',
             'use_wordcloud',
-            'use_rotacloud', 'rotacloud_tag_color', 'rotacloud_tag_border_color', 'rotacloud_width',
-            'use_flash', 'flash_tag_color', 'flash_bg_trans', 'flash_bg_color', 'flash_width', 'flash_speed')
+            'use_rotacloud', 'rotacloud_tag_color', 'rotacloud_tag_border_color', 'rotacloud_width'
         );
         $this->dependencies = array('serendipity_event_freetag' => 'keep');
     }
@@ -198,48 +197,6 @@ class serendipity_plugin_freetag extends serendipity_plugin
                  $propbag->add('default',     'false');
                  break;
 
-            case 'use_flash':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_USE_FLASH);
-                 $propbag->add('description', 'Flash is dead! Don\'t contaminate the internet any more, please!');
-                 $propbag->add('default',     'false');
-                 break;
-
-            case 'flash_bg_trans':
-                 $propbag->add('type',        'boolean');
-                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_FLASH_TRANSPARENT);
-                 $propbag->add('description', '');
-                 $propbag->add('default',     'false');
-                 break;
-
-            case 'flash_tag_color':
-                $propbag->add('type',        'string');
-                $propbag->add('name',        PLUGIN_EVENT_FREETAG_FLASH_TAG_COLOR);
-                $propbag->add('description', '');
-                $propbag->add('default',     'ff6600');
-                break;
-
-            case 'flash_bg_color':
-                $propbag->add('type',        'string');
-                $propbag->add('name',        PLUGIN_EVENT_FREETAG_FLASH_BG_COLOR);
-                $propbag->add('description', '');
-                $propbag->add('default',     'ffffff');
-                break;
-
-            case 'flash_width':
-                $propbag->add('type',        'string');
-                $propbag->add('name',        PLUGIN_EVENT_FREETAG_FLASH_WIDTH);
-                $propbag->add('description', '');
-                $propbag->add('default',     '190');
-                break;
-
-            case 'flash_speed':
-                $propbag->add('type',        'string');
-                $propbag->add('name',        PLUGIN_EVENT_FREETAG_FLASH_SPEED);
-                $propbag->add('description', '');
-                $propbag->add('default',     '100');
-                break;
-
             case 'template':
                 $propbag->add('type',         'string');
                 $propbag->add('name',         PLUGIN_EVENT_FREETAG_TEMPLATE);
@@ -255,10 +212,8 @@ class serendipity_plugin_freetag extends serendipity_plugin
     {
         $useRotCanvas = serendipity_db_bool($this->get_config('use_rotacloud', 'false'));
         $useWordCloud = serendipity_db_bool($this->get_config('use_wordcloud', 'false'));
-        $useFlash     = serendipity_db_bool($this->get_config('use_flash', 'false'));
 
-        if (($useFlash && ($useRotCanvas || $useWordCloud)) || ($useRotCanvas && $useWordCloud)) {
-            $this->set_config('use_flash', 'false');
+        if ($useRotCanvas && $useWordCloud) {
             $this->set_config('use_rotacloud', 'false');
             $this->set_config('use_wordcloud', 'false');
             echo '<p class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_SET_OPTION_ERROR_1;
@@ -355,10 +310,6 @@ class serendipity_plugin_freetag extends serendipity_plugin
         $useWordCloud = serendipity_db_bool($this->get_config('use_wordcloud', 'false'));
 
         serendipity_event_freetag::displayTags($tags, $xml, $nl, $scaling, $this->get_config('max_percent', 300), $this->get_config('min_percent', 100),
-                                               serendipity_db_bool($this->get_config('use_flash')),
-                                               serendipity_db_bool($this->get_config('flash_bg_trans', 'false')),
-                                               $this->get_config('flash_tag_color', 'ff6600'), $this->get_config('flash_bg_color', 'ffffff'),
-                                               $this->get_config('flash_width', 190), $this->get_config('flash_speed', 100),
                                                $this->get_config('taglink'), $this->get_config('template'), $this->get_config('xml_image','img/xml.gif'),
                                                $useRotCanvas, $this->get_config('rotacloud_tag_color', '3E5F81'), $this->get_config('rotacloud_tag_border_color', 'B1C1D1'), $this->get_config('rotacloud_width', '300'),
                                                $useWordCloud);
