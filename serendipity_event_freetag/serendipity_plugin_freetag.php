@@ -44,7 +44,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             'separator2', 'config_cloudgrouper',
             'use_wordcloud',
             'use_rotacloud', 'rotacloud_tag_color', 'rotacloud_tag_border_color', 'rotacloud_width'
-        );
+        ));
         $this->dependencies = array('serendipity_event_freetag' => 'keep');
     }
 
