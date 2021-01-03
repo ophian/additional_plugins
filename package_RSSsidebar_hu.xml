@@ -31,8 +31,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_freetag</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_freetag&lt;br /&gt;Címkézett bejegyzések listázása&lt;/b&gt;&lt;br /&gt;Kilistázza a meglévő címkéket&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 May 2020 10:42:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_freetag&lt;br /&gt;Címkézett bejegyzések listázása&lt;/b&gt;&lt;br /&gt;Kilistázza a meglévő címkéket&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
+<pubDate>Sun, 03 Jan 2021 13:55:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_freetag</guid>
 </item>
 <item>

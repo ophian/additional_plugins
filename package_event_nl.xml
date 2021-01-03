@@ -3252,11 +3252,11 @@
 <description>Maakt het mogelijk om bijdragen van tags te voorzien</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.35</version>
+  <version>5.00</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2020-12-20</date>
+  <date>2021-01-03</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -3287,8 +3287,6 @@
       <file>README.txt</file>
       <file>serendipity_event_freetag.php</file>
       <file>serendipity_plugin_freetag.php</file>
-      <file>swfobject.js</file>
-      <file>tagcloud.swf</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cs.inc.php</file>
@@ -3334,8 +3332,6 @@
     <file>serendipity_event_freetag/README.txt</file>
     <file>serendipity_event_freetag/serendipity_event_freetag.php</file>
     <file>serendipity_event_freetag/serendipity_plugin_freetag.php</file>
-    <file>serendipity_event_freetag/swfobject.js</file>
-    <file>serendipity_event_freetag/tagcloud.swf</file>
     <file>serendipity_event_freetag/UTF-8/lang_bg.inc.php</file>
     <file>serendipity_event_freetag/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_freetag/UTF-8/lang_cz.inc.php</file>
