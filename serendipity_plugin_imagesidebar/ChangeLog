@@ -1,3 +1,7 @@
+2.7:
+-----
+ * Raise Requirements for new suboption constant usage
+
 2.6:
 -----
  * Extend 'Use with installed Lightbox plugin' option description with grouped lightbox views.
