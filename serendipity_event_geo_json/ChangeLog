@@ -1,3 +1,7 @@
+0.4:
+-----
+ * Micro-optimization: Remove plugin_version file since singular
+
 0.3:
 -----
 
@@ -6,5 +10,5 @@
 0.2.1:
 -----
 
- * convert date, size and category ids to int, 3% smaller output
+ * Convert date, size and category ids to int, 3% smaller output
 

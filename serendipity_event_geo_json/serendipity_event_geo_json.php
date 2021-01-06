@@ -5,7 +5,6 @@ if (IN_serendipity !== true) {
 }
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
-include dirname(__FILE__) . '/plugin_version.inc.php';
 
 class serendipity_event_geo_json extends serendipity_event
 {
@@ -15,8 +14,8 @@ class serendipity_event_geo_json extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_GEO_JSON_DESC);
         $propbag->add('copyright', 'GPL');
         $propbag->add('event_hooks', array('frontend_header' => true));
-        $propbag->add('author', PLUGIN_EVENT_GEO_JSON_AUTHOR);
-        $propbag->add('version', PLUGIN_EVENT_GEO_JSON_VERSION);
+        $propbag->add('author', 'Martin Sewelies');
+        $propbag->add('version', '0.4');
         $propbag->add('requirements', array('serendipity' => '2.3'));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('FRONTEND_FEATURES'));
@@ -27,12 +26,14 @@ class serendipity_event_geo_json extends serendipity_event
         $title = PLUGIN_EVENT_GEO_JSON_NAME;
     }
 
-    function simple_query($sql) {
+    function simple_query($sql)
+    {
         $rows = serendipity_db_query($sql, false, 'assoc');
         return is_array($rows) ? $rows : [];
     }
 
-    function get_entries() {
+    function get_entries()
+    {
         global $serendipity;
 
         $entries = [];
