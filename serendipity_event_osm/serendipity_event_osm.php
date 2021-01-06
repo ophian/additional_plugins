@@ -52,7 +52,7 @@ class serendipity_event_osm extends serendipity_event
             case 'title':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        TITLE);
-                $propbag->add('description', TITLE . PLUGIN_PAGE_NUGGET_NOSHOW);
+                $propbag->add('description', TITLE . PLUGIN_EVENT_OSM_NOSHOW);
                 $propbag->add('default',     PLUGIN_EVENT_OSM_NAME);
                 break;
             case 'category_id':
