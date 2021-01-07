@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.19');
+        $propbag->add('version', '6.20');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -1061,7 +1061,7 @@ class serendipity_event_staticpage extends serendipity_event
                 if (is_array($page)) {
                     serendipity_db_insert('staticpages', $page);
                     if (file_exists($this->cachefile)) {
-                        @unlink($this->cachefile);
+                        unlink($this->cachefile);
                     }
                 }
             }
@@ -1179,7 +1179,7 @@ class serendipity_event_staticpage extends serendipity_event
                     );
                     serendipity_db_update('staticpages', array(), $set);
                     if (file_exists($this->cachefile)) {
-                        @unlink($this->cachefile);
+                        unlink($this->cachefile);
                     }
                 }
             case 8:
@@ -2391,7 +2391,9 @@ class serendipity_event_staticpage extends serendipity_event
             } else {
                 $this->staticpage['pageorder'] = count($cpo)+1; // set a next dedicated pageorder place by counted parents
             }
-            @unlink($this->cachefile);
+            if (file_exists($this->cachefile)) {
+                unlink($this->cachefile);
+            }
             $result = serendipity_db_insert('staticpages', $insert_page);
             $serendipity['POST']['staticpage'] = $pid = serendipity_db_insert_id('staticpages', 'id'); // fetch last inserted id
 
@@ -2406,7 +2408,9 @@ class serendipity_event_staticpage extends serendipity_event
             serendipity_plugin_api::hook_event('backend_staticpages_insert', $insert_page); // these hooks are used for up-to-date URL builds,
         }
         else {
-            @unlink($this->cachefile);
+            if (file_exists($this->cachefile)) {
+                unlink($this->cachefile);
+            }
             $pid    = (int)$insert_page['id'];
             $result = serendipity_db_update('staticpages', array('id' => $insert_page['id']), $insert_page);
 
@@ -2984,7 +2988,9 @@ class serendipity_event_staticpage extends serendipity_event
         foreach ($order AS $key => $id) {
             serendipity_db_update('staticpages', array('id' => $id), array('pageorder' => $key));
         }
-        @unlink($this->cachefile);
+        if (file_exists($this->cachefile)) {
+            unlink($this->cachefile);
+        }
     }
 
     /**

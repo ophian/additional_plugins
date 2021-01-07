@@ -1,3 +1,7 @@
+6.20:
+-----
+ * PHP 8 preparation fix for non existing cachefile handling
+
 6.19:
 -----
  * PHP 8 preparation fix
