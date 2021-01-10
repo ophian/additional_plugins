@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '2.10.0');
+        $propbag->add('version',        '2.10.1');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.6.0'
@@ -222,10 +222,10 @@ class serendipity_event_lightbox extends serendipity_event
                             echo '    <script type="text/javascript" src="' . $pluginDir . '/colorbox/jquery.colorbox.init.js" charset="utf-8"></script>' . "\n";
                         }
                     }
-                    // LightBox2 jQuery based - http://lokeshdhakar.com/projects/lightbox2/ - this lightbox does not allow to show :visible anchors only - it shows and counts all gallery images, if set to view galleries
+                    // LightBox2 jQuery based - https://lokeshdhakar.com/projects/lightbox2/ - this lightbox does not allow to show :visible anchors only - it shows and counts all gallery images, if set to view galleries
                     elseif ($type == 'lightbox2jq') {
                         if (!empty($headcss)) {
-                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/lightbox2-jquery/css/lightbox.css" />' . "\n";
+                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/lightbox2-jquery/css/lightbox.min.css" />' . "\n";
                         } else {
                             if ($jquery) {
                                 echo '    <script type="text/javascript" src="' . $pluginDir . '/jquery-1.11.3.min.js" charset="utf-8"></script>' . "\n";
