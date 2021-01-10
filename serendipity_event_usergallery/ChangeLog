@@ -1,3 +1,7 @@
+3.02:
+-----
+ * When using lightbox2-jquery better load the minified css file
+
 3.01:
 -----
  * Improve for jquery load by new config option (default: false)

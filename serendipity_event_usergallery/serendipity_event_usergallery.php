@@ -20,7 +20,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '3.01');
+        $propbag->add('version',       '3.02');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1.0',
@@ -828,7 +828,7 @@ echo '
                         } elseif ($lightbox_type == 'lightbox') {
 if (isset($frontend_head)) {
 echo '
-    <link rel="stylesheet" type="text/css" href="' . $lightbox_dir . '/lightbox2-jquery/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="' . $lightbox_dir . '/lightbox2-jquery/css/lightbox.min.css" />
 '.PHP_EOL;
 } else {
 echo '
