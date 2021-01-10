@@ -1,3 +1,14 @@
+1.21:
+-----
+ * Bump for Styx progress
+
+Version 1.20 (Mario Hommel)
+-----------------------
+ * Fixed wrong API-Endpoint for youtube
+ * Removed generic provider oohembed (service shutdown)
+ * Removed wordpress player for AudioBoo (no more flash)
+ * Changed info for generic provider embed.ly (free plan is no longer available)
+
 1.18:
 -----
  * Secure oembed.tpl target="_blank" link oembed URL.

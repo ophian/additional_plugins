@@ -16,12 +16,12 @@
 @define('PLUGIN_EVENT_OEMBED_MAXHEIGHT_DESC','Toto je maximální vý¹ka vlo¾eného obsahu. Ne v¹echny slu¾by pro vkládání obsahu toto nastavení podporují, ale vìt¹ina ano.');
 
 @define('PLUGIN_EVENT_OEMBED_GENERIC_SERVICE', 'Obecný poskytovatel oEmbed');
-@define('PLUGIN_EVENT_OEMBED_GENERIC_SERVICE_DESC','Pokud plugin není schopen rozlu¹tit URL, proto¾e ji je¹tì nezná, mù¾e ji zpracovat "obecným poskytovatelem". Tyto slu¾by implementují oEmbed pro velký poèet slu¾eb, které nemají oEmbed. Na výbìr jsou dvì mo¾nosti: oohembed.com (døíve bezplatná slu¾ba koupená firmou Embedly a s velmi omezeným API) nebo embed.ly (dobøe spravovaná a udr¾ovaná slu¾ba pro mnoho oEmbed slu¾eb, viz http://embed.ly/providers, ale k pou¾ití je tøeba získat API klíè.');
+#@define('PLUGIN_EVENT_OEMBED_GENERIC_SERVICE_DESC','Pokud plugin není schopen rozlu¹tit URL, proto¾e ji je¹tì nezná, mù¾e ji zpracovat "obecným poskytovatelem". Tyto slu¾by implementují oEmbed pro velký poèet slu¾eb, které nemají oEmbed. Na výbìr jsou dvì mo¾nosti: oohembed.com (døíve bezplatná slu¾ba koupená firmou Embedly a s velmi omezeným API) nebo embed.ly (dobøe spravovaná a udr¾ovaná slu¾ba pro mnoho oEmbed slu¾eb, viz http://embed.ly/providers, ale k pou¾ití je tøeba získat API klíè.');
 @define('PLUGIN_EVENT_OEMBED_SERVICE_NONE', '®ádný obecný poskytovatel');
 @define('PLUGIN_EVENT_OEMBED_SERVICE_OOHEMBED', 'oohembed (zdarma, ale omezený)');
 @define('PLUGIN_EVENT_OEMBED_SERVICE_EMBEDLY', 'embed.ly (potøeba API klíè)');
 @define('PLUGIN_EVENT_OEMBED_EMBEDLY_APIKEY','embed.ly API klíè');
-@define('PLUGIN_EVENT_OEMBED_EMBEDLY_APIKEY_DESC','abyste mohli pou¾ívat embed.ly, potøebujete API klíè. Úèet zdarma umo¾òuje 10000 pou¾ití za mìsíc, co¾ by mìlo staèit i pro silnì vytí¾ené blogy, proto¾e výsledky jsou lokálnì cachovány a vkládány pouze jedenkrát na URL. Úèet zdarma mù¾ete zaregistrovat na http://app.embed.ly/pricing/free');
+#@define('PLUGIN_EVENT_OEMBED_EMBEDLY_APIKEY_DESC','abyste mohli pou¾ívat embed.ly, potøebujete API klíè. Úèet zdarma umo¾òuje 10000 pou¾ití za mìsíc, co¾ by mìlo staèit i pro silnì vytí¾ené blogy, proto¾e výsledky jsou lokálnì cachovány a vkládány pouze jedenkrát na URL. Úèet zdarma mù¾ete zaregistrovat na http://app.embed.ly/pricing/free');
 
 @define('PLUGIN_EVENT_OEMBED_INFO', '<h3>Plugin oEmbed</h3>' .
 '<p>'.
@@ -38,8 +38,7 @@
 
 // Next lines were translated on 2012/02/04
 @define('PLUGIN_EVENT_OEMBED_PLAYER_BOO', 'Pøehrávaè Audioboo');
-@define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_DESC', 'Audioboo podporuje 3 rùzné pøehrávaèe (viz http://audioboo.fm/boos/649785-ein-erster-testboo.embed?labs=1). Vyberte si, který se vám nejvíce líbí.');
+@define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_DESC', 'Audioboo podporuje rùzné pøehrávaèe (viz http://audioboo.fm/boos/649785-ein-erster-testboo.embed?labs=1). Vyberte si, který se vám nejvíce líbí.');
 @define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_STANDARD', 'standardní');
 @define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_FULLFEATURED', 'plná výbava (vy¾aduje JavaScript)');
-@define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_WORDPRESS', 'pøehrávaè wordpress.com (vy¾aduje Flash)');
 

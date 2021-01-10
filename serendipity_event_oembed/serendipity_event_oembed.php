@@ -25,7 +25,7 @@ class serendipity_event_oembed extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_OEMBED_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Grischa Brockhaus');
-        $propbag->add('version',       '1.18');
+        $propbag->add('version',       '1.21');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -86,27 +86,25 @@ class serendipity_event_oembed extends serendipity_event
             case 'generic_service':
                 $generic_services = array (
                     'none'       => PLUGIN_EVENT_OEMBED_SERVICE_NONE,
-                    'oohembed'   => PLUGIN_EVENT_OEMBED_SERVICE_OOHEMBED,
-                    'embedly'    => PLUGIN_EVENT_OEMBED_SERVICE_EMBEDLY,
+                    'embedly'    => PLUGIN_EVENT_OEMBED_SERVICE_EMBEDLY
                 );
                 $propbag->add('type',           'select');
                 $propbag->add('name',           PLUGIN_EVENT_OEMBED_GENERIC_SERVICE);
                 $propbag->add('description',    PLUGIN_EVENT_OEMBED_GENERIC_SERVICE_DESC);
                 $propbag->add('select_values',  $generic_services);
-                $propbag->add('default',        'oohembed');
+                $propbag->add('default',        'none');
                 break;
 
             case 'audioboo_player':
                 $player_boo = array (
                     'standard'       => PLUGIN_EVENT_OEMBED_PLAYER_BOO_STANDARD,
-                    'fullfeatured'   => PLUGIN_EVENT_OEMBED_PLAYER_BOO_FULLFEATURED,
-                    'wordpress'    => PLUGIN_EVENT_OEMBED_PLAYER_BOO_WORDPRESS,
+                    'fullfeatured'   => PLUGIN_EVENT_OEMBED_PLAYER_BOO_FULLFEATURED
                 );
                 $propbag->add('type',           'select');
                 $propbag->add('name',           PLUGIN_EVENT_OEMBED_PLAYER_BOO);
                 $propbag->add('description',    PLUGIN_EVENT_OEMBED_PLAYER_BOO_DESC);
                 $propbag->add('select_values',  $player_boo);
-                $propbag->add('default',        'wordpress');
+                $propbag->add('default',        'standard');
                 break;
 
             case 'embedly_apikey':
@@ -250,11 +248,8 @@ class serendipity_event_oembed extends serendipity_event
     {
         $provider = $this->get_config('generic_service', 'none');
         $manager = null;
-        if ('oohembed' == $provider) {
-            require_once dirname(__FILE__) . '/oembed/OohEmbedProvider.class.php';
-            $manager = new OohEmbedProvider($url, $maxwidth, $maxheight);
-        }
-        elseif ('embedly' == $provider) {
+
+        if ('embedly' == $provider) {
             $apikey = $this->get_config('embedly_apikey', '');
             if (!empty($apikey)) {
                 require_once dirname(__FILE__) . '/oembed/EmbedlyProvider.class.php';
@@ -289,12 +284,14 @@ class serendipity_event_oembed extends serendipity_event
         $str = preg_replace("@(.*)]]>$@", '$1', $str);
         return $str;
     }
+
     function cleanup()
     {
         OEmbedDatabase::install($this);
         OEmbedDatabase::clear_cache();
         echo '<div class="serendipityAdminMsgSuccess">Cleared oembed cache.</div>';
     }
+
     function install()
     {
         OEmbedDatabase::install($this);
