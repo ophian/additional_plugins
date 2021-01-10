@@ -5202,11 +5202,11 @@
 <description>Lightbox JS ist ein Skript, mit dem Bilder der aktuellen Seite (via Modal Overlay pattern) überlagert angezeigt werden können. Es lässt sich schnell einrichten, um Popup-Bilder für den Benutzer ansprechend oder gemeinsam karusselartig über Javascripte zu präsentieren. Dieses Plugin durchsucht Ihre Einträge und fügt jedem Bild-verweisenden Link ein HTML &quot;rel-Attribut&quot; hinzu, um die lightbox Anzeige verwenden zu können. Wenn Sie also möchten, dass Ihre Vorschaubilder groß angezeigt werden, müssen Sie Ihre Bilder als Links zur großen Version einfügen.</description>
 <maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.10.0</version>
+  <version>2.10.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-12-20</date>
+  <date>2021-01-09</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
       <file>ChangeLog</file>
@@ -6884,11 +6884,11 @@
 <description>oEmbed ist ein Format für die eingebettete Darstellung einer URL in Ihrem Blog. Es erlaubt Blog-Artikeln, eingebettete Inhalte (wie Tweets, Fotos oder Videos) anzuzeigen, wenn ein Benutzer einen Link zu dieser Ressource veröffentlicht, ohne die Ressource direkt analysieren zu müssen.</description>
 <maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.18</version>
+  <version>1.21</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2020-06-29</date>
+  <date>2021-01-10</date>
   <filelist>
     <dir name="serendipity_event_oembed">
       <file>ChangeLog</file>
@@ -6912,7 +6912,6 @@
         <file>LinkEmbed.class.php</file>
         <file>OEmbed.class.php</file>
         <file>OEmbedProvider.class.php</file>
-        <file>OohEmbedProvider.class.php</file>
         <file>PhotoEmbed.class.php</file>
         <file>ProviderList.php</file>
         <file>ProviderManager.class.php</file>
@@ -6950,7 +6949,6 @@
     <file>serendipity_event_oembed/oembed/LinkEmbed.class.php</file>
     <file>serendipity_event_oembed/oembed/OEmbed.class.php</file>
     <file>serendipity_event_oembed/oembed/OEmbedProvider.class.php</file>
-    <file>serendipity_event_oembed/oembed/OohEmbedProvider.class.php</file>
     <file>serendipity_event_oembed/oembed/PhotoEmbed.class.php</file>
     <file>serendipity_event_oembed/oembed/ProviderList.php</file>
     <file>serendipity_event_oembed/oembed/ProviderManager.class.php</file>
@@ -11382,11 +11380,11 @@
 <description>Ermöglicht Bildergalerien aus der Mediathek oder Ordnern auszugehen.</description>
 <maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.01</version>
+  <version>3.02</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2020-12-21</date>
+  <date>2021-01-09</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
       <file>ChangeLog</file>
