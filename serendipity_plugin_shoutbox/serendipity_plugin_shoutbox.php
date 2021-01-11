@@ -212,8 +212,8 @@ class serendipity_plugin_shoutbox extends serendipity_plugin
                 $entry['comment'] = wordwrap($entry['comment'], $wordwrap, "\n", 1);
 
                 echo '<div class="serendipity_shoutbox_date">' . serendipity_strftime(serendipity_specialchars($dateformat), $row['stamp']) . "</div>\n"
-                     . '<div class="serendipity_shoutbox_comment">' . serendipity_specialchars($entry['comment']) . "</div>\n"
-            . '<div class="serendipity_shoutbox_delete">' . $deleteLink . "</div>\n\n"
+                    . '<div class="serendipity_shoutbox_comment">' . serendipity_specialchars($entry['comment']) . "</div>\n"
+                    . '<div class="serendipity_shoutbox_delete">' . $deleteLink . "</div>\n\n";
             }
         }
         echo "      </div>\n";
