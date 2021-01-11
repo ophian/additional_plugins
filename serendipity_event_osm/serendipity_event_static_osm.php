@@ -27,6 +27,9 @@ class serendipity_event_static_osm extends serendipity_event
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
+        $this->dependencies = array(
+            'serendipity_event_geo_osm' => 'keep'
+        );
     }
 
     function introspect_config_item($name, &$propbag)

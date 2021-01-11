@@ -24,6 +24,9 @@ class serendipity_event_osm extends serendipity_event
         ));
         $propbag->add('stackable', true);
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
+        $this->dependencies = array(
+            'serendipity_event_geo_json' => 'keep'
+        );
         $propbag->add('legal',    array(
             'services' => array(
                 'oEmbed' => array(
@@ -52,7 +55,7 @@ class serendipity_event_osm extends serendipity_event
             case 'title':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        TITLE);
-                $propbag->add('description', TITLE . PLUGIN_EVENT_OSM_NOSHOW);
+                $propbag->add('description', TITLE . ' (' . PLUGIN_EVENT_OSM_NOT_SHOWN . ')');
                 $propbag->add('default',     PLUGIN_EVENT_OSM_NAME);
                 break;
             case 'category_id':
@@ -60,7 +63,7 @@ class serendipity_event_osm extends serendipity_event
                 $propbag->add('name',          PLUGIN_EVENT_OSM_CATEGORY);
                 $propbag->add('description',   PLUGIN_EVENT_OSM_CATEGORY_DESC);
                 $propbag->add('select_values', $this->get_selectable_categories());
-                $propbag->add('default',       'all');
+                $propbag->add('default',       'any');
                 break;
             case 'path':
                 $propbag->add('type',        'text');
@@ -117,18 +120,20 @@ class serendipity_event_osm extends serendipity_event
                 return $serendipity['POST']['multiCat'] ?? [$vars['category']];
             case 'plugin':
             case 'start':
-                return [$vars['staticpage_related_category_id']];
+                return $vars['staticpage_related_category_id'] !== '0'
+                        ? [$vars['staticpage_related_category_id']]
+                        : [];
         }
         return [];
     }
 
     function get_selectable_categories()
     {
-        $categories = array('all' => ALL_CATEGORIES, 'none' => NO_CATEGORIES);
+        $categories = array('without' => PLUGIN_EVENT_OSM_CATEGORY_WITHOUT, 'any' => PLUGIN_EVENT_OSM_CATEGORY_ANY);
         $cats = serendipity_fetchCategories();
         if (is_array($cats)) {
             $cats = serendipity_walkRecursive($cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
-            foreach($cats as $cat) {
+            foreach($cats AS $cat) {
                 $categories[$cat['categoryid']] = str_repeat('   ', $cat['depth']) . $cat['category_name'];
             }
         }
@@ -138,12 +143,12 @@ class serendipity_event_osm extends serendipity_event
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
         if ($event == 'entries_header') {
-            $category_id = $this->get_config('category_id', 'all');
+            $category_id = $this->get_config('category_id', 'any');
             $page_categories = $this->get_page_categories();
             if (
-                $category_id === 'all'
+                $category_id === 'any'
                 ||
-                ($category_id === 'none' && empty($page_categories))
+                ($category_id === 'without' && empty($page_categories))
                 ||
                 in_array($category_id, $page_categories)
             ) {

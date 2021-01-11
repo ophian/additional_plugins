@@ -1,3 +1,13 @@
+0.10:
+----
+
+ * Plugin dependencies added
+ * More understandable translations
+ * Performance updates
+ * Count distances only once
+ * Bugfix for "no categories"
+ * Preloading fixed
+
 0.9:
 ----
 
