@@ -1,3 +1,7 @@
+6.21:
+-----
+ * Fix a parameter to check the status of the "other plugins" tab option
+
 6.20:
 -----
  * PHP 8 preparation fix for non existing cachefile handling
