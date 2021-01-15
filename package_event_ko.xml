@@ -7152,7 +7152,7 @@
 <description>Provides an interactive map with *.gpx uploads and tagged geo data</description>
 <maintainers><maintainer><name>Martin Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.10</version>
+  <version>0.12</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
@@ -7164,7 +7164,7 @@
       <file>lang_en.inc.php</file>
       <file>LICENSE</file>
       <file>plugin_version.inc.php</file>
-      <dir name="ressources">
+      <dir name="resources">
         <file>ol.css</file>
         <file>ol.css.map</file>
         <file>ol.js</file>
@@ -7185,12 +7185,12 @@
     <file>serendipity_event_osm/lang_en.inc.php</file>
     <file>serendipity_event_osm/LICENSE</file>
     <file>serendipity_event_osm/plugin_version.inc.php</file>
-    <file>serendipity_event_osm/ressources/ol.css</file>
-    <file>serendipity_event_osm/ressources/ol.css.map</file>
-    <file>serendipity_event_osm/ressources/ol.js</file>
-    <file>serendipity_event_osm/ressources/ol.js.map</file>
-    <file>serendipity_event_osm/ressources/osm.css</file>
-    <file>serendipity_event_osm/ressources/osm.js</file>
+    <file>serendipity_event_osm/resources/ol.css</file>
+    <file>serendipity_event_osm/resources/ol.css.map</file>
+    <file>serendipity_event_osm/resources/ol.js</file>
+    <file>serendipity_event_osm/resources/ol.js.map</file>
+    <file>serendipity_event_osm/resources/osm.css</file>
+    <file>serendipity_event_osm/resources/osm.js</file>
     <file>serendipity_event_osm/serendipity_event_osm.php</file>
     <file>serendipity_event_osm/serendipity_event_static_osm.php</file>
     <file>serendipity_event_osm/UTF-8/lang_de.inc.php</file>
@@ -7206,11 +7206,11 @@
 <description>Includes scripts and stylesheets for OpenStreetMap support</description>
 <maintainers><maintainer><name>Martin Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.10</version>
+  <version>0.12</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2021-01-11</date>
+  <date>2021-01-15</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
@@ -7218,7 +7218,7 @@
       <file>lang_en.inc.php</file>
       <file>LICENSE</file>
       <file>plugin_version.inc.php</file>
-      <dir name="ressources">
+      <dir name="resources">
         <file>ol.css</file>
         <file>ol.css.map</file>
         <file>ol.js</file>
@@ -7239,12 +7239,12 @@
     <file>serendipity_event_osm/lang_en.inc.php</file>
     <file>serendipity_event_osm/LICENSE</file>
     <file>serendipity_event_osm/plugin_version.inc.php</file>
-    <file>serendipity_event_osm/ressources/ol.css</file>
-    <file>serendipity_event_osm/ressources/ol.css.map</file>
-    <file>serendipity_event_osm/ressources/ol.js</file>
-    <file>serendipity_event_osm/ressources/ol.js.map</file>
-    <file>serendipity_event_osm/ressources/osm.css</file>
-    <file>serendipity_event_osm/ressources/osm.js</file>
+    <file>serendipity_event_osm/resources/ol.css</file>
+    <file>serendipity_event_osm/resources/ol.css.map</file>
+    <file>serendipity_event_osm/resources/ol.js</file>
+    <file>serendipity_event_osm/resources/ol.js.map</file>
+    <file>serendipity_event_osm/resources/osm.css</file>
+    <file>serendipity_event_osm/resources/osm.js</file>
     <file>serendipity_event_osm/serendipity_event_osm.php</file>
     <file>serendipity_event_osm/serendipity_event_static_osm.php</file>
     <file>serendipity_event_osm/UTF-8/lang_de.inc.php</file>
