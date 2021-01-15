@@ -58,12 +58,12 @@ class serendipity_event_static_osm extends serendipity_event
         global $serendipity;
 
         if ($event === 'frontend_header') {
-            echo '    <link rel="stylesheet" href="'.$this->getFile('ressources/ol.css', 'serendipityHTTPPath').'" type="text/css" />'.PHP_EOL;
-            echo '    <link rel="stylesheet" href="'.$this->getFile('ressources/osm.css', 'serendipityHTTPPath').'" type="text/css" />'.PHP_EOL;
-            echo '    <script src="'.$this->getFile('ressources/ol.js', 'serendipityHTTPPath').'"></script>'.PHP_EOL;
-            echo '    <script src="'.$this->getFile('ressources/osm.js', 'serendipityHTTPPath').'"></script>'.PHP_EOL;
+            echo '    <link rel="stylesheet" href="'.$this->getFile('resources/ol.css', 'serendipityHTTPPath').'" type="text/css" />'.PHP_EOL;
+            echo '    <link rel="stylesheet" href="'.$this->getFile('resources/osm.css', 'serendipityHTTPPath').'" type="text/css" />'.PHP_EOL;
+            echo '    <script src="'.$this->getFile('resources/ol.js', 'serendipityHTTPPath').'"></script>'.PHP_EOL;
+            echo '    <script src="'.$this->getFile('resources/osm.js', 'serendipityHTTPPath').'"></script>'.PHP_EOL;
         } else if ($event === 'backend_image_add') {
-            if (preg_match('/\\.gpx$/i', mb_strtolower($eventData)) && $this->get_config('compress_gpx', true) === true) {
+            if (preg_match('/\\.gpx$/i', mb_strtolower($eventData)) && serendipity_db_bool($this->get_config('compress_gpx', 'true')) === true) {
                 $fileName = $eventData;
                 $tmpFile = tmpfile();
                 fwrite($tmpFile, '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?><gpx version="1.1" creator="surrim.org" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">');

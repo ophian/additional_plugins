@@ -1,3 +1,9 @@
+0.12:
+-----
+
+ * Fix typo in assets directory name
+ * Use serendipity_db_bool()
+
 0.11:
 -----
 
