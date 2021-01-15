@@ -1,3 +1,8 @@
+0.13:
+-----
+
+ * Fix building static_osm resource path
+
 0.12:
 -----
 
