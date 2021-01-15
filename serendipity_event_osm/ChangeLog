@@ -1,5 +1,12 @@
+0.11:
+-----
+
+ * Using VectorImage instead of Vector
+ * Fixed compressed *.gpx size bug
+ * Compress *.gpx files only
+
 0.10:
-----
+-----
 
  * Plugin dependencies added
  * More understandable translations
