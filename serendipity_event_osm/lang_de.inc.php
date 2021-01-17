@@ -12,7 +12,7 @@ define('PLUGIN_EVENT_OSM_NOT_SHOWN', 'Wird nicht auf der Webseite angezeigt');
 @define('PLUGIN_EVENT_OSM_CATEGORY_WITHOUT', 'Ohne');
 @define('PLUGIN_EVENT_OSM_CATEGORY_ANY', 'Beliebig');
 @define('PLUGIN_EVENT_OSM_PATH', 'Pfad');
-@define('PLUGIN_EVENT_OSM_PATH_DESC', 'Pfad für GPX-Dateien');
+@define('PLUGIN_EVENT_OSM_PATH_DESC', 'Pfad(e) für GPX-Dateien, getrennt durch Zeilenumbruch');
 @define('PLUGIN_EVENT_OSM_LAT', 'Breitengrad (Lat.)');
 @define('PLUGIN_EVENT_OSM_LAT_DESC', 'Breitengrad für die Mitte der Karte');
 @define('PLUGIN_EVENT_OSM_LONG', 'Längengrad (Lon.)');

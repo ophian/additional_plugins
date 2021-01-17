@@ -51,6 +51,8 @@ class serendipity_event_osm extends serendipity_event
 
     function introspect_config_item($name, &$propbag)
     {
+        global $serendipity;
+
         switch($name) {
             case 'title':
                 $propbag->add('type',        'string');
@@ -58,43 +60,50 @@ class serendipity_event_osm extends serendipity_event
                 $propbag->add('description', TITLE . ' (' . PLUGIN_EVENT_OSM_NOT_SHOWN . ')');
                 $propbag->add('default',     PLUGIN_EVENT_OSM_NAME);
                 break;
+
             case 'category_id':
                 $propbag->add('type',          'select');
                 $propbag->add('name',          PLUGIN_EVENT_OSM_CATEGORY);
                 $propbag->add('description',   PLUGIN_EVENT_OSM_CATEGORY_DESC);
                 $propbag->add('select_values', $this->get_selectable_categories());
-                $propbag->add('default',       'any');
+                $propbag->add('default',       'without');
                 break;
+
             case 'path':
                 $propbag->add('type',        'text');
                 $propbag->add('name',        PLUGIN_EVENT_OSM_PATH);
                 $propbag->add('description', PLUGIN_EVENT_OSM_PATH_DESC);
-                $propbag->add('default',     '');
+                $propbag->add('default',     $serendipity['serendipityHTTPPath'] . $serendipity['uploadPath']);
                 break;
+
             case 'height':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_OSM_HEIGHT);
                 $propbag->add('description', PLUGIN_EVENT_OSM_HEIGHT_DESC);
                 $propbag->add('default',     '463px');
                 break;
+
             case 'latitude':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_OSM_LAT);
                 $propbag->add('description', PLUGIN_EVENT_OSM_LAT_DESC);
                 $propbag->add('default',     '51.48165');
                 break;
+
             case 'longitude':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_OSM_LONG);
                 $propbag->add('description', PLUGIN_EVENT_OSM_LONG_DESC);
                 $propbag->add('default',     '7.21648');
                 break;
+
             case 'zoom':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_OSM_ZOOM);
                 $propbag->add('description', PLUGIN_EVENT_OSM_ZOOM_DESC);
                 $propbag->add('default',     '15');
                 break;
+
             default:
                 return false;
         }
@@ -152,7 +161,13 @@ class serendipity_event_osm extends serendipity_event
                 ||
                 in_array($category_id, $page_categories)
             ) {
-                echo '    <div class="map" data-category="'.$category_id.'" data-path="'.$this->get_config('path', '').'" data-latitude="'.$this->get_config('latitude', 51.48165).'" data-longitude="'.$this->get_config('longitude', 7.21648).'" data-zoom="'.$this->get_config('zoom', 15).'" style="height: '.$this->get_config('height', '463px').'"></div>'.PHP_EOL;
+                echo '    <div class="map" data-category="' . $category_id
+                        . '" data-path="' . addslashes($this->get_config('path', ''))
+                        . '" data-latitude="' . ((float)$this->get_config('latitude', 51.48165))
+                        . '" data-longitude="' . ((float)$this->get_config('longitude', 7.21648))
+                        . '" data-zoom="' . ((int)$this->get_config('zoom', 15))
+                        . '" style="height: ' . addslashes($this->get_config('height', '463px'))
+                        . '"></div>'.PHP_EOL;
             }
         }
     }
