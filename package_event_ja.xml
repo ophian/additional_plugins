@@ -7153,7 +7153,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Provides an interactive map with *.gpx uploads and tagged geo data</description>
 <maintainers><maintainer><name>Martin Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.14</version>
+  <version>0.15</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
@@ -7165,6 +7165,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_en.inc.php</file>
       <file>LICENSE</file>
       <file>plugin_version.inc.php</file>
+      <file>README.md</file>
       <dir name="resources">
         <file>ol.css</file>
         <file>ol.css.map</file>
@@ -7186,6 +7187,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_osm/lang_en.inc.php</file>
     <file>serendipity_event_osm/LICENSE</file>
     <file>serendipity_event_osm/plugin_version.inc.php</file>
+    <file>serendipity_event_osm/README.md</file>
     <file>serendipity_event_osm/resources/ol.css</file>
     <file>serendipity_event_osm/resources/ol.css.map</file>
     <file>serendipity_event_osm/resources/ol.js</file>
@@ -7207,7 +7209,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Includes scripts and stylesheets for OpenStreetMap support</description>
 <maintainers><maintainer><name>Martin Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.14</version>
+  <version>0.15</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
@@ -7219,6 +7221,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_en.inc.php</file>
       <file>LICENSE</file>
       <file>plugin_version.inc.php</file>
+      <file>README.md</file>
       <dir name="resources">
         <file>ol.css</file>
         <file>ol.css.map</file>
@@ -7240,6 +7243,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_osm/lang_en.inc.php</file>
     <file>serendipity_event_osm/LICENSE</file>
     <file>serendipity_event_osm/plugin_version.inc.php</file>
+    <file>serendipity_event_osm/README.md</file>
     <file>serendipity_event_osm/resources/ol.css</file>
     <file>serendipity_event_osm/resources/ol.css.map</file>
     <file>serendipity_event_osm/resources/ol.js</file>
