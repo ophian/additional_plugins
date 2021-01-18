@@ -1,11 +1,15 @@
+0.15:
+-----
+ * Add missing reafme file
+
 0.14:
 -----
 
-* Added README.md
-* Set default category id to "without"
-* Escape map parameter
-* Path description fixed for many paths
-* Default path for *.gpx files
+ * Added README.md
+ * Set default category id to "without"
+ * Escape map parameter
+ * Path description fixed for many paths
+ * Default path for *.gpx files
 
 0.13:
 -----
