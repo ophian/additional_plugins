@@ -1,3 +1,7 @@
+5.01:
+-----
+ * Preparations for Styx 3.3.0 - remove outdated feed hooks
+
 event 5.00 && sidebar 4.00:
 ---------------------------
  * 2021 - Remove FLASH !!! :))))))

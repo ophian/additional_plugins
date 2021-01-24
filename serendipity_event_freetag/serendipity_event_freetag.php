@@ -45,16 +45,12 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.00');
+        $propbag->add('version',       '5.01');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
             'frontend_display:rss-2.0:per_entry'                => true,
             'frontend_footer'                                   => true,
-//            'frontend_display:rss-0.92:per_entry'             => true,
-            'frontend_display:rss-1.0:per_entry'                => true,
-//            'frontend_display:rss-0.91:per_entry'             => true,
-            'frontend_display:atom-0.3:per_entry'               => true,
             'frontend_display:atom-1.0:per_entry'               => true,
             'frontend_entryproperties'                          => true,
             'frontend_rss'                                      => true,
@@ -977,16 +973,12 @@ class serendipity_event_freetag extends serendipity_event
                     break;
 
                 case 'frontend_display:rss-2.0:per_entry':
-                case 'frontend_display:rss-0.91:per_entry':
                     if (!isset($eventData['display_dat'])) $eventData['display_dat'] = '';
                     if (isset($eventData['properties']['freetag_tags'])) {
                         $eventData['display_dat'] .= $this->getFeedXmlForTags('category', $eventData['properties']['freetag_tags']);
                     }
                     break;
 
-                case 'frontend_display:rss-1.0:per_entry':
-                case 'frontend_display:rss-0.91:per_entry':
-                case 'frontend_display:atom-0.3:per_entry':
                 case 'frontend_display:atom-1.0:per_entry':
                     if (!isset($eventData['display_dat'])) $eventData['display_dat'] = '';
                     if (isset($eventData['properties']['freetag_tags'])) {
