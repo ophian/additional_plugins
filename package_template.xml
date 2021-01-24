@@ -15,7 +15,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="1024px">
       <file>config.inc.php</file>
@@ -87,7 +87,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="adaptation">
       <dir name="colorsets">
@@ -235,7 +235,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="andreas00">
       <file>commentform.tpl</file>
@@ -317,7 +317,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="andreas06">
       <file>comments.tpl</file>
@@ -411,7 +411,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="andreas08">
       <file>blue.css</file>
@@ -531,7 +531,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-20</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="andreas09">
       <file>commentform.tpl</file>
@@ -629,7 +629,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="artistic">
       <file>config.inc.php</file>
@@ -687,7 +687,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-23</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="axcur">
       <file>config.inc.php</file>
@@ -841,7 +841,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="barSinister3">
       <file>comments.tpl</file>
@@ -911,7 +911,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-04-21</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="bartleby">
       <file>config.inc.php</file>
@@ -967,7 +967,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-20</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="bazooka">
       <file>comments.tpl</file>
@@ -1039,7 +1039,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="be-nice">
       <file>comments.tpl</file>
@@ -1163,7 +1163,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="bex01">
       <file>comments.tpl</file>
@@ -1281,7 +1281,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-09-27</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="blix">
       <file>commentform.tpl</file>
@@ -1436,7 +1436,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-19</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="blue">
       <file>index.tpl</file>
@@ -1586,7 +1586,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="brownpaper">
       <file>credits.txt</file>
@@ -1646,6 +1646,210 @@
 </release>
 </package>
 <package version="1.0">
+<name>Bulletproof</name>
+<template>bulletproof</template>
+<license>(N/A GPL)</license>
+<summary>Advanced option theme in optional 3, 2, or 1 -column layouts with various sidebar combinations.</summary>
+<description>This theme as v1.4 for long years was the Serendipity Standard theme since Serendipity v.1.2.
+It allows to set 4 different colorsets and uses various user options to differently disable or set/move certain parts of the frontend, like footers or forms, without touching code by hand.&lt;br&gt;
+Among these it was used as the default backend theme for a long time. This latter was no longer usable since Serendipity 2.0 and therefore has been removed completely.&lt;br&gt;
+* 2017-04-19 - Removed dead cocomment option and scripting&lt;br&gt;
+* 2019-01-18 - Removed inline styles, fixed staticpages without articleformat, updated CSS for current Serendipity Styx versions.&lt;br&gt;
+* 2019-10-06 - Removed references to dead (s9y-bulletproof.com).&lt;br&gt;
+* 2020-02-23 - Some Upgrades for image responsive fluids, to work with Styx 3.0; Without actually making it auto scale and mobile ready.</description>
+<recommended></recommended>
+<responsive>Partly Yes</responsive>
+<mobile>No</mobile>
+<maintainers><maintainer><name>Bulletproof development team, Ian Styx</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>1.0</version>
+  <requirements:s9yVersion>1.7</requirements:s9yVersion>
+  <date>2021-01-19</date>
+  <filelist>
+    <dir name="bulletproof">
+      <file>base.css</file>
+      <file>blank_style.css</file>
+      <file>blue_style.css</file>
+      <file>commentform.tpl</file>
+      <file>commentpopup.tpl</file>
+      <file>comments.tpl</file>
+      <file>config.inc.php</file>
+      <file>content.tpl</file>
+      <file>default_style.css</file>
+      <file>entries.tpl</file>
+      <file>entries_archives.tpl</file>
+      <file>entries_summary.tpl</file>
+      <file>green_style.css</file>
+      <file>ie5.css</file>
+      <file>ie6.css</file>
+      <file>ie7.css</file>
+      <dir name="img">
+        <file>back.png</file>
+        <file>blank.png</file>
+        <file>blue_back.png</file>
+        <file>blue_forward.png</file>
+        <file>blue_graph_bar.png</file>
+        <file>blue_header.jpg</file>
+        <file>blue_xml.png</file>
+        <file>bulletproof_button.png</file>
+        <file>configure.png</file>
+        <file>default_back.png</file>
+        <file>default_banner.jpg</file>
+        <file>default_body.jpg</file>
+        <file>default_forward.png</file>
+        <file>default_graph_bar.png</file>
+        <file>default_sitenav_back.png</file>
+        <file>forward.png</file>
+        <file>graph_bar_horisontal.png</file>
+        <file>green_back.png</file>
+        <file>green_closequote.png</file>
+        <file>green_forward.png</file>
+        <file>green_graph_bar.png</file>
+        <file>green_openquote.png</file>
+        <file>green_xml.png</file>
+        <file>purple_back.png</file>
+        <file>purple_body.jpg</file>
+        <file>purple_forward.png</file>
+        <file>purple_graph_bar.png</file>
+        <file>purple_header.jpg</file>
+        <file>purple_nav.png</file>
+        <file>purple_xml.png</file>
+        <file>quicksearch.png</file>
+        <file>s9y_banner_small.png</file>
+        <file>xml.gif</file>
+      </dir>
+      <file>index.tpl</file>
+      <file>info.txt</file>
+      <dir name="js">
+        <file>p7_eqCols2_10.js</file>
+      </dir>
+      <file>lang_bg.inc.php</file>
+      <file>lang_cs.inc.php</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>lang_fr.inc.php</file>
+      <file>lang_info_de.inc.php</file>
+      <file>lang_info_en.inc.php</file>
+      <file>lang_sk.inc.php</file>
+      <file>legal.txt</file>
+      <file>plugin_calendar.tpl</file>
+      <file>plugin_contactform.tpl</file>
+      <file>plugin_dynamicform.tpl</file>
+      <file>plugin_staticpage.tpl</file>
+      <file>plugin_staticpage_aboutpage.tpl</file>
+      <file>plugin_staticpage_related_category.tpl</file>
+      <file>plugin_staticpage_searchresults.tpl</file>
+      <file>preview.png</file>
+      <file>preview.webp</file>
+      <file>preview_fullsize.jpg</file>
+      <file>preview_fullsize.webp</file>
+      <file>preview_iframe.tpl</file>
+      <file>print.css</file>
+      <file>purple_style.css</file>
+      <file>sidebar.tpl</file>
+      <file>style.css</file>
+      <dir name="UTF-8">
+        <file>lang_bg.inc.php</file>
+        <file>lang_cs.inc.php</file>
+        <file>lang_cz.inc.php</file>
+        <file>lang_de.inc.php</file>
+        <file>lang_fr.inc.php</file>
+        <file>lang_info_de.inc.php</file>
+        <file>lang_sk.inc.php</file>
+      </dir>
+    </dir>
+  </filelist>
+  <serendipityFilelist>
+    <file>bulletproof/base.css</file>
+    <file>bulletproof/blank_style.css</file>
+    <file>bulletproof/blue_style.css</file>
+    <file>bulletproof/commentform.tpl</file>
+    <file>bulletproof/commentpopup.tpl</file>
+    <file>bulletproof/comments.tpl</file>
+    <file>bulletproof/config.inc.php</file>
+    <file>bulletproof/content.tpl</file>
+    <file>bulletproof/default_style.css</file>
+    <file>bulletproof/entries.tpl</file>
+    <file>bulletproof/entries_archives.tpl</file>
+    <file>bulletproof/entries_summary.tpl</file>
+    <file>bulletproof/green_style.css</file>
+    <file>bulletproof/ie5.css</file>
+    <file>bulletproof/ie6.css</file>
+    <file>bulletproof/ie7.css</file>
+    <file>bulletproof/img/back.png</file>
+    <file>bulletproof/img/blank.png</file>
+    <file>bulletproof/img/blue_back.png</file>
+    <file>bulletproof/img/blue_forward.png</file>
+    <file>bulletproof/img/blue_graph_bar.png</file>
+    <file>bulletproof/img/blue_header.jpg</file>
+    <file>bulletproof/img/blue_xml.png</file>
+    <file>bulletproof/img/bulletproof_button.png</file>
+    <file>bulletproof/img/configure.png</file>
+    <file>bulletproof/img/default_back.png</file>
+    <file>bulletproof/img/default_banner.jpg</file>
+    <file>bulletproof/img/default_body.jpg</file>
+    <file>bulletproof/img/default_forward.png</file>
+    <file>bulletproof/img/default_graph_bar.png</file>
+    <file>bulletproof/img/default_sitenav_back.png</file>
+    <file>bulletproof/img/forward.png</file>
+    <file>bulletproof/img/graph_bar_horisontal.png</file>
+    <file>bulletproof/img/green_back.png</file>
+    <file>bulletproof/img/green_closequote.png</file>
+    <file>bulletproof/img/green_forward.png</file>
+    <file>bulletproof/img/green_graph_bar.png</file>
+    <file>bulletproof/img/green_openquote.png</file>
+    <file>bulletproof/img/green_xml.png</file>
+    <file>bulletproof/img/purple_back.png</file>
+    <file>bulletproof/img/purple_body.jpg</file>
+    <file>bulletproof/img/purple_forward.png</file>
+    <file>bulletproof/img/purple_graph_bar.png</file>
+    <file>bulletproof/img/purple_header.jpg</file>
+    <file>bulletproof/img/purple_nav.png</file>
+    <file>bulletproof/img/purple_xml.png</file>
+    <file>bulletproof/img/quicksearch.png</file>
+    <file>bulletproof/img/s9y_banner_small.png</file>
+    <file>bulletproof/img/xml.gif</file>
+    <file>bulletproof/index.tpl</file>
+    <file>bulletproof/info.txt</file>
+    <file>bulletproof/js/p7_eqCols2_10.js</file>
+    <file>bulletproof/lang_bg.inc.php</file>
+    <file>bulletproof/lang_cs.inc.php</file>
+    <file>bulletproof/lang_cz.inc.php</file>
+    <file>bulletproof/lang_de.inc.php</file>
+    <file>bulletproof/lang_en.inc.php</file>
+    <file>bulletproof/lang_fr.inc.php</file>
+    <file>bulletproof/lang_info_de.inc.php</file>
+    <file>bulletproof/lang_info_en.inc.php</file>
+    <file>bulletproof/lang_sk.inc.php</file>
+    <file>bulletproof/legal.txt</file>
+    <file>bulletproof/plugin_calendar.tpl</file>
+    <file>bulletproof/plugin_contactform.tpl</file>
+    <file>bulletproof/plugin_dynamicform.tpl</file>
+    <file>bulletproof/plugin_staticpage.tpl</file>
+    <file>bulletproof/plugin_staticpage_aboutpage.tpl</file>
+    <file>bulletproof/plugin_staticpage_related_category.tpl</file>
+    <file>bulletproof/plugin_staticpage_searchresults.tpl</file>
+    <file>bulletproof/preview.png</file>
+    <file>bulletproof/preview.webp</file>
+    <file>bulletproof/preview_fullsize.jpg</file>
+    <file>bulletproof/preview_fullsize.webp</file>
+    <file>bulletproof/preview_iframe.tpl</file>
+    <file>bulletproof/print.css</file>
+    <file>bulletproof/purple_style.css</file>
+    <file>bulletproof/sidebar.tpl</file>
+    <file>bulletproof/style.css</file>
+    <file>bulletproof/UTF-8/lang_bg.inc.php</file>
+    <file>bulletproof/UTF-8/lang_cs.inc.php</file>
+    <file>bulletproof/UTF-8/lang_cz.inc.php</file>
+    <file>bulletproof/UTF-8/lang_de.inc.php</file>
+    <file>bulletproof/UTF-8/lang_fr.inc.php</file>
+    <file>bulletproof/UTF-8/lang_info_de.inc.php</file>
+    <file>bulletproof/UTF-8/lang_sk.inc.php</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
 <name>Carl Blue</name>
 <template>carl_blue</template>
 <license>(N/A GPL)</license>
@@ -1658,7 +1862,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-19</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="carl_blue">
       <file>entries.tpl</file>
@@ -1712,7 +1916,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2020-04-19</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="carl_contest">
       <file>entries.tpl</file>
@@ -1778,7 +1982,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-19</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="carl_green">
       <file>entries.tpl</file>
@@ -1832,7 +2036,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="ceejay01">
       <file>commentform.tpl</file>
@@ -1898,7 +2102,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="chocolate_fudge">
       <file>commentform.tpl</file>
@@ -1960,7 +2164,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="chromZv2">
       <file>config.inc.php</file>
@@ -2050,7 +2254,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-19</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="codeschmiede">
       <file>entries.tpl</file>
@@ -2092,7 +2296,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-19</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="coffee_bar">
       <file>blue.css</file>
@@ -2164,7 +2368,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-18</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="competition">
       <file>entries.tpl</file>
@@ -2216,7 +2420,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-18</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="connections">
       <file>comments.tpl</file>
@@ -2294,7 +2498,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-18</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="contest">
       <file>content.tpl</file>
@@ -2358,7 +2562,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="costa-nature">
       <file>comments.tpl</file>
@@ -2442,7 +2646,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-18</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="default-rtl">
       <file>entries_archives.tpl</file>
@@ -2542,7 +2746,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-18</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="dreisechzig">
       <file>entries.tpl</file>
@@ -2664,7 +2868,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-18</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="fifty50">
       <file>entries.tpl</file>
@@ -2726,7 +2930,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-18</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="freshy">
       <file>commentform.tpl</file>
@@ -3016,7 +3220,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-09-27</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="glossy_white">
       <file>commentform.tpl</file>
@@ -3102,7 +3306,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-19</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="greenmile">
       <file>comments.tpl</file>
@@ -3288,7 +3492,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="greenway">
       <file>commentpopup.tpl</file>
@@ -3444,7 +3648,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="hemingway">
       <file>404.tpl</file>
@@ -3568,7 +3772,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-15</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="hipporatorium">
       <file>entries.tpl</file>
@@ -3616,7 +3820,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.1</requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="i3theme">
       <file>commentform.tpl</file>
@@ -3822,7 +4026,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="idea">
       <dir name="img">
@@ -3876,7 +4080,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="informatif">
       <file>beige.css</file>
@@ -3970,7 +4174,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="jazzcafe">
       <file>commentpopup.tpl</file>
@@ -4076,7 +4280,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="joshua">
       <dir name="img">
@@ -4126,7 +4330,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="joshua_nino">
       <dir name="img">
@@ -4176,7 +4380,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="joshua_tree">
       <dir name="img">
@@ -4230,7 +4434,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="kamouflage">
       <file>entries.tpl</file>
@@ -4322,7 +4526,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2020-04-14</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="kubrick">
       <file>commentpopup.tpl</file>
@@ -4404,7 +4608,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="ladybird">
       <file>entries.tpl</file>
@@ -4504,7 +4708,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="ladybug">
       <file>entries.tpl</file>
@@ -4584,7 +4788,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="leaf">
       <file>commentform.tpl</file>
@@ -4700,7 +4904,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-15</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="mimbo">
       <file>404.tpl</file>
@@ -4802,7 +5006,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-15</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="mo3">
       <file>404.tpl</file>
@@ -4964,7 +5168,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="modern_world">
       <dir name="images">
@@ -5020,7 +5224,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="morsel">
       <file>entries.tpl</file>
@@ -5058,7 +5262,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-20</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="moz-modern">
       <dir name="img">
@@ -5498,7 +5702,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="newfangled">
       <file>config.inc.php</file>
@@ -5608,7 +5812,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="one_true_layout">
       <file>config.inc.php</file>
@@ -5736,7 +5940,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-16</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="perun_blue">
       <file>entries.tpl</file>
@@ -5786,7 +5990,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-16</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="perun_red">
       <file>entries.tpl</file>
@@ -5836,7 +6040,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2020-04-16</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="photo">
       <file>config.inc.php</file>
@@ -5926,7 +6130,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="pink-lilies">
       <file>comments.tpl</file>
@@ -6018,7 +6222,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-16</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="pixel">
       <file>botbar.tpl</file>
@@ -6136,7 +6340,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-16</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="plain-vanilla">
       <file>commentpopup.tpl</file>
@@ -6210,7 +6414,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <date>2020-09-27</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="plus9">
       <file>AJS.js</file>
@@ -6400,7 +6604,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-16</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="powered">
       <file>entries.tpl</file>
@@ -6462,7 +6666,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="reflection">
       <file>aqua.css</file>
@@ -6556,7 +6760,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2020-04-16</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="resy">
       <file>colorset_lime_and_melon_salad.css</file>
@@ -6622,7 +6826,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="roundedcorner">
       <file>commentform.tpl</file>
@@ -6732,7 +6936,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-16</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="rubyx">
       <file>config.inc.php</file>
@@ -6956,7 +7160,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-16</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="sagittarius">
       <file>404.tpl</file>
@@ -7050,7 +7254,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.5</requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="simpla">
       <file>commentform.tpl</file>
@@ -7160,7 +7364,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-15</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="soccer2006">
       <file>config.inc.php</file>
@@ -7220,7 +7424,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="softenedcells">
       <file>comments.tpl</file>
@@ -7314,7 +7518,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-15</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="splat">
       <file>config.inc.php</file>
@@ -7414,7 +7618,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="square">
       <file>comments.tpl</file>
@@ -7482,7 +7686,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-15</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="styled-bar">
       <dir name="blue">
@@ -7733,7 +7937,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-15</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="terrafirma">
       <file>comments.tpl</file>
@@ -7909,7 +8113,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-10-06</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="translucency">
       <file>comments.tpl</file>
@@ -8013,7 +8217,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-15</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="truth">
       <file>commentform.tpl</file>
@@ -8191,7 +8395,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-06-10</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="xkur">
       <file>config.inc.php</file>
@@ -8295,7 +8499,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-15</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="youngbutstrong">
       <file>commentpopup.tpl</file>
@@ -8369,7 +8573,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-15</date>
+  <date>2021-01-19</date>
   <filelist>
     <dir name="zenlike">
       <file>config.inc.php</file>
