@@ -1,3 +1,8 @@
+1.44:
+-----
+ * Preparations for Styx 3.3.0 - remove outdated feed hooks
+ * Raise requirements
+
 1.43:
 -----
  * Secure some target _blank links by living standard rel="noopener"
