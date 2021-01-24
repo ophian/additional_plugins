@@ -1,3 +1,7 @@
+1.2:
+----
+ * Preparations for Styx 3.3.0 - remove outdated feed hooks
+
 1.1:
 -----
  * Fix changed method naming in Core APIs for consistency
