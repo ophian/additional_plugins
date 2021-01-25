@@ -87,3 +87,9 @@
 @define('PLUGIN_SPAMBLOCK_BEE_TODAY', 'Heute:');
 @define('PLUGIN_SPAMBLOCK_BEE_LAST_X_DAYS', 'Die letzten %d Tage:');
 
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW', 'Frontend Ausgabe des Bee javascripts');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_DESC', 'Nur auf Eintrags-Kommentarseiten, nur auf Kontaktform (Plugin) Seite, oder auf Beiden (Standard).');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_ENTRY', 'Eintrag');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_CONTACTFORM', 'Kontaktform');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_BOTH', 'Beide');
+

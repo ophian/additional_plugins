@@ -1,3 +1,8 @@
+1.4.0:
+------
+
+ * Add new config option to be able to set bee javascript asset loads on single entries, contactform, or both (Standard) cases.
+
 1.3.9:
 ------
 

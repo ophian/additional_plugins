@@ -79,7 +79,7 @@
 @define('PLUGIN_SPAMBLOCK_BEE_TITLE', 'Spam Report');
 @define('PLUGIN_SPAMBLOCK_BEE_DESC', 'Prints out a statistic about your comment spam if your antispam plugins report to the DB.');
 @define('PLUGIN_SPAMBLOCK_BEE_DAYS', 'Days to show');
-@define('PLUGIN_SPAMBLOCK_BEE_DAYS_DESC', 'You can have the report display what events happened the last X days. You can configure more than one days by seperating them with comma.');
+@define('PLUGIN_SPAMBLOCK_BEE_DAYS_DESC', 'You can have the report display what events happened the last X days. You can configure more than one days by separating them with comma.');
 @define('PLUGIN_SPAMBLOCK_BEE_DBSEARCHES', 'Database searches');
 @define('PLUGIN_SPAMBLOCK_BEE_DBSEARCHES_DESC', 'This plugin scans the spamblocklog table to generate its reports. You can enter searches you want to do here. One line is one search. The line should look like YourNameForTheBlock:SearchTerm. You can use the character % as a wildcard. For instance "BayesPlugin:%Bayes%" will count all entries having "Bayes" anywhere in there title and report them as "BayesPlugin" in the sidebar.');
 @define('PLUGIN_SPAMBLOCK_BEE_LOGGEDIN', 'Only for logged in users');
@@ -88,4 +88,10 @@
 @define('PLUGIN_SPAMBLOCK_BEE_CACHEMINS_DESC', 'Creating the report uses the database, so you should not create it with each pagecall but let it be cached. Here you set up the wait time (in minutes) before a new statistic is created.');
 @define('PLUGIN_SPAMBLOCK_BEE_TODAY', 'Today:');
 @define('PLUGIN_SPAMBLOCK_BEE_LAST_X_DAYS', 'The last %d days:');
+
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW', 'Frontend load Bee assets');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_DESC', 'On every single entry page, on contactform only page, or on both (Standard).');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_ENTRY', 'Entry');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_CONTACTFORM', 'Contactform');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_BOTH', 'Both');
 

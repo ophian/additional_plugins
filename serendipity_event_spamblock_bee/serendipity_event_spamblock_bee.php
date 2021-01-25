@@ -120,7 +120,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
         if (!class_exists('serendipity_event_spamblock')) {
             $configuration = array_merge($configuration, array('entrytitle', 'samebody', 'required_fields'));
         }
-        $configuration = array_merge($configuration, array('spamlogtype', 'spamlogfile', 'plugin_path'));
+        $configuration = array_merge($configuration, array('spamlogtype', 'spamlogfile', 'plugin_path', 'plcmnt'));
         $configuration = array_merge($configuration, array(
             'advanced_cc_desc', 'answer_retrieval_method', 'question_type',
             'questions', 'answers', 'use_regexp'
@@ -266,6 +266,18 @@ class serendipity_event_spamblock_bee extends serendipity_event
                 $propbag->add('default',     $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_spamblock_bee/');
                 break;
 
+            case 'plcmnt':
+                $propbag->add('type',        'radio');
+                $propbag->add('name',        PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW);
+                $propbag->add('description', PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_DESC);
+                $propbag->add('default',     'all');
+                $propbag->add('radio', array(
+                    'value' => array('entry', 'ctfrm', 'all'),
+                    'desc'  => array(PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_ENTRY, PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_CONTACTFORM, PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_BOTH)
+                ));
+                $propbag->add('radio_per_row', '1');
+                break;
+
             case 'advanced_cc_desc':
                 $propbag->add('type',          'content');
                 $propbag->add('default',       PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_DESC);
@@ -362,7 +374,8 @@ class serendipity_event_spamblock_bee extends serendipity_event
                     // If contact form is installed, display on any plugin type page that is a default 404 fallback (when nothing to serve was found)
                     // else display in single article pages only.
                     $contactFormInstalled = class_exists('serendipity_event_contactform');
-                    if ((isset($eventData['GET']['id']) && $serendipity['view'] == 'entry') || ($contactFormInstalled && $serendipity['view'] == 'plugin' && $serendipity['viewtype'] == '404_4')) {
+                    $type = $this->get_config('plcmnt', 'all');
+                    if ((isset($eventData['GET']['id']) && $serendipity['view'] == 'entry' && in_array(['all', 'entry'], $type)) || ($contactFormInstalled && $serendipity['view'] == 'plugin' && $serendipity['viewtype'] == '404_4' && in_array(['all', 'ctfrm'], $type))) {
                         $this->printJsExtras();
                     }
                     break;
