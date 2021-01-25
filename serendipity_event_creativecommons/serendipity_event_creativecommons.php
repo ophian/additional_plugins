@@ -17,7 +17,7 @@ class serendipity_event_creativecommons extends serendipity_event
         $propbag->add('description',   PLUGIN_CREATIVECOMMONS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Evan Nemerson, Ian Styx');
-        $propbag->add('version',       '1.8');
+        $propbag->add('version',       '1.9');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -25,7 +25,10 @@ class serendipity_event_creativecommons extends serendipity_event
         ));
         $propbag->add('configuration', array('cc_version', 'nc', 'nd', 'txt', 'image_type'));
         $propbag->add('event_hooks',
-                      array('frontend_display:rss-2.0:per_entry' => true,
+                      array('frontend_display:rss-1.0:per_entry' => true,
+                            'frontend_display:rss-1.0:once'      => true,
+                            'frontend_display:rss-1.0:namespace' => true,
+                            'frontend_display:rss-2.0:per_entry' => true,
                             'frontend_display:rss-2.0:namespace' => true,
                             'frontend_display:html:per_entry'    => true,
                             'frontend_display:html_layout'       => true));
@@ -171,6 +174,24 @@ class serendipity_event_creativecommons extends serendipity_event
 
                     $eventData['display_dat'] .= '</License></rdf:RDF> -->';
                     $eventData['display_dat'] .= '</div>';
+                    break;
+
+                case 'frontend_display:rss-1.0:per_entry':
+                    $eventData['display_dat'] .= '<cc:license rdf:resource="'.$license_uri.'" />';
+                    break;
+
+                case 'frontend_display:rss-1.0:once':
+                    $eventData['display_dat'] .= '<cc:License rdf:about="'.$license_uri.'">';
+                    if (is_array($rdf)) {
+                        foreach ($rdf as $rdf_t => $rdf_v) {
+                            $eventData['display_dat'] .= '<cc:'.$rdf_v.' rdf:resource="http://web.resource.org/cc/'.$rdf_t.'" />';
+                        }
+                    }
+                    $eventData['display_dat'] .= '</cc:License>';
+                    break;
+
+                case 'frontend_display:rss-1.0:namespace':
+                    $eventData['display_dat'] .= ' xmlns:cc="http://web.resource.org/cc/" ';
                     break;
 
                 case 'frontend_display:rss-2.0:per_entry':
