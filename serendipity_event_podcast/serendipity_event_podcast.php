@@ -37,7 +37,9 @@ class serendipity_event_podcast extends serendipity_event
     function introspect(&$propbag)
     {
         $events =  array(
+            'frontend_display:rss-1.0:per_entry' => true,
             'frontend_display:rss-2.0:per_entry' => true,
+            'frontend_display:rss-1.0:namespace' => true,
             'frontend_display:rss-2.0:namespace' => true,
             'frontend_display'  => true,
             'frontend_header'   => true,
@@ -109,7 +111,7 @@ class serendipity_event_podcast extends serendipity_event
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.44');
+        $propbag->add('version', '1.45');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.0.0',
@@ -458,6 +460,7 @@ class serendipity_event_podcast extends serendipity_event
 
             //////////////////////// RSS Entries ////////////////////////
             case 'frontend_display:rss-2.0:per_entry':
+            case 'frontend_display:rss-1.0:per_entry':
             case 'frontend_display:atom-1.0:per_entry':
                 $this->log("Feed creation");
                 $addedEnclosures[] = "enclosures";
@@ -622,6 +625,14 @@ class serendipity_event_podcast extends serendipity_event
 ';
                 }
                 break;
+
+            //////////////////////// RSS 1 NS /////////////////////////////
+            case 'frontend_display:rss-1.0:namespace':
+                $eventData['display_dat'] .= "   xmlns:enc='http://purl.oclc.org/net/rss_2.0/enc#'\n";
+                $eventData['display_dat'] .= "   xmlns:podcast='http://ipodder.sourceforge.net/docs/podcast.html'\n";
+                $eventData['display_dat'] .= "   xmlns:atom=\"http://www.w3.org/2005/Atom\"\n";
+                $eventData['display_dat'] .= "   xmlns:sc=\"http://podlove.org/simple-chapters\"\n";
+                return true;
 
             //////////////////////// RSS 2 NS///// ////////////////////////
             case 'frontend_display:rss-2.0:namespace':

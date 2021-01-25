@@ -1,3 +1,7 @@
+1.45:
+-----
+ * Partial revert 1.44, since rss 1.0 is still valid
+
 1.44:
 -----
  * Preparations for Styx 3.3.0 - remove outdated feed hooks
