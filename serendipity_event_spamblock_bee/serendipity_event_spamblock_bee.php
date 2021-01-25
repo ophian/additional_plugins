@@ -375,7 +375,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
                     // else display in single article pages only.
                     $contactFormInstalled = class_exists('serendipity_event_contactform');
                     $type = $this->get_config('plcmnt', 'all');
-                    if ((isset($eventData['GET']['id']) && $serendipity['view'] == 'entry' && in_array(['all', 'entry'], $type)) || ($contactFormInstalled && $serendipity['view'] == 'plugin' && $serendipity['viewtype'] == '404_4' && in_array(['all', 'ctfrm'], $type))) {
+                    if ((isset($eventData['GET']['id']) && $serendipity['view'] == 'entry' && in_array($type, ['all', 'entry'])) || ($contactFormInstalled && $serendipity['view'] == 'plugin' && $serendipity['viewtype'] == '404_4' && in_array($type, ['all', 'ctfrm']))) {
                         $this->printJsExtras();
                     }
                     break;
