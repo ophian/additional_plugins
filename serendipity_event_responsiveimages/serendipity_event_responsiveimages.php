@@ -18,7 +18,7 @@ class serendipity_event_responsiveimages extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_RESPONSIVE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.2');
+        $propbag->add('version',       '1.3');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0.0',
             'php'         => '7.3.0'
@@ -29,6 +29,7 @@ class serendipity_event_responsiveimages extends serendipity_event
                 'backend_media_makethumb' => true,
                 'frontend_display:unknown:per-entry' => true,
                 'frontend_display:opml-1.0:per_entry' => true,
+                'frontend_display:rss-1.0:per_entry' => true,
                 'frontend_display:rss-2.0:per_entry' => true,
                 'frontend_display:atom-1.0:per_entry' => true
             )
@@ -128,6 +129,7 @@ class serendipity_event_responsiveimages extends serendipity_event
 
                 case 'frontend_display:unknown:per-entry':
                 case 'frontend_display:opml-1.0:per_entry':
+                case 'frontend_display:rss-1.0:per_entry':
                 case 'frontend_display:rss-2.0:per_entry':
                 case 'frontend_display:atom-1.0:per_entry':
                     // We need to rewrite relative srcsets to absolute urls in the RSS feed, otherwise images won't be shown
