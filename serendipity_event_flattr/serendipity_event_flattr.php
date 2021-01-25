@@ -39,6 +39,8 @@ class serendipity_event_flattr extends serendipity_event
             'frontend_header'                     => true,
             'frontend_display:rss-2.0:per_entry'  => true,
             'frontend_display:rss-2.0:namespace'  => true,
+            'frontend_display:rss-1.0:per_entry'  => true,
+            'frontend_display:rss-1.0:namespace'  => true,
             'frontend_display:atom-1.0:per_entry' => true,
         );
         $propbag->add('name',        PLUGIN_FLATTR_NAME);
@@ -55,7 +57,7 @@ class serendipity_event_flattr extends serendipity_event
             'add_to_feed',
         ));
         $propbag->add('author',  'Garvin Hicking, Joachim Breitner', 'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version', '1.16');
+        $propbag->add('version', '1.17');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -434,6 +436,7 @@ class serendipity_event_flattr extends serendipity_event
                     }
                     break;
 
+                case 'frontend_display:rss-1.0:namespace':
                 case 'frontend_display:rss-2.0:namespace':
                     if ($this->get_config('add_to_feed')) {
                         $eventData['display_dat'] .= '
@@ -441,6 +444,7 @@ class serendipity_event_flattr extends serendipity_event
                     }
                     break;
 
+                case 'frontend_display:rss-1.0:per_entry':
                 case 'frontend_display:rss-2.0:per_entry':
                     if ($this->get_config('add_to_feed')) {
                         $flattr_uid = $this->_addslashes($this->get_config('userid'));
