@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.02');
+        $propbag->add('version',       '5.03');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -339,8 +339,8 @@ class serendipity_event_freetag extends serendipity_event
             foreach($fcitems AS $del) {
                 serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}config WHERE name LIKE 'serendipity_%_freetag:%/$del'");
             }
-            @unlink(dirname(__FILE__) . 'swfobject.js');
-            @unlink(dirname(__FILE__) . 'tagcloud.swf');
+            @unlink(dirname(__FILE__) . '/swfobject.js');
+            @unlink(dirname(__FILE__) . '/tagcloud.swf');
         }
     }
 
