@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.01');
+        $propbag->add('version',        '3.02');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -139,7 +139,7 @@ class serendipity_event_multilingual extends serendipity_event
             if (isset($serendipity['GET']['lang_selected']) && !isset($serendipity['GET']['user_language'])) {
                 $this->lang_display = $this->showlang = serendipity_db_escape_string($serendipity['GET']['lang_selected']);
             }
-            if ($serendipity['GET']['lang_selected'] == 'default' && !isset($serendipity['GET']['user_language'])) {
+            if (isset($serendipity['GET']['lang_selected']) && $serendipity['GET']['lang_selected'] == 'default' && !isset($serendipity['GET']['user_language'])) {
                 $this->lang_display = ''; // sets entry lang to default
             }
         }

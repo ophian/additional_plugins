@@ -1,3 +1,7 @@
+3.02:
+-----
+ * PHP 8 init check fix
+
 3.01:
 -----
  * PHP 8 preparation fix
