@@ -32,12 +32,12 @@ class serendipity_event_downloadmanager extends serendipity_event
         $propbag->add('name',          PLUGIN_DOWNLOADMANAGER_TITLE);
         $propbag->add('description',   PLUGIN_DOWNLOADMANAGER_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
+            'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.4.0'
+            'php'         => '7.0.0'
         ));
 
-        $propbag->add('version',       '1.47');
+        $propbag->add('version',       '1.48');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -493,9 +493,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'dlmpath'       => (!$this->get_config('absdownloadspath')
                                         ? $serendipity['serendipityPath'] . 'archives/.dlm/files'
                                         : $this->get_config('absdownloadspath')),
-            'attention'     => (($serendipity['version'][0] < 2)
-                                        ? '<img class="dlm_backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" />'
-                                        : '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ')
+            'attention'     => '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> '
         );
     }
 
@@ -535,9 +533,6 @@ class serendipity_event_downloadmanager extends serendipity_event
 
         if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
             serendipity_smarty_init();
-        }
-        if ($serendipity['version'][0] < 2) {
-            $serendipity['smarty']->assign(array('div' => 'div', 'tag' => 'p'));
         }
         if ($type == 'error') {
             // assign files of category to Smarty
@@ -1904,7 +1899,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                     } else {
                         $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $addData['uriargs'];
                     }
-                    $oldsubpage = $serendipity['GET']['subpage'];
+                    $oldsubpage = $serendipity['GET']['subpage'] ?? null;
                     if (empty($serendipity['GET']['subpage'])) {
                         $serendipity['GET']['subpage'] = $nice_url;
                     }
@@ -1934,9 +1929,6 @@ class serendipity_event_downloadmanager extends serendipity_event
                     if (!serendipity_userLoggedIn() && $_SESSION['serendipityAuthedUser'] !== true && $_SESSION['serendipityUserlevel'] != '255') {
                         break;
                     }
-                    if ($serendipity['version'][0] < 2) {
-                        echo "\n".'                        <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager">' . PLUGIN_DOWNLOADMANAGER_TITLE . '</a></li>'."\n";
-                    }
                     break;
 
                 case 'backend_sidebar_admin_appearance':
@@ -1945,9 +1937,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                     if (!serendipity_userLoggedIn() && $_SESSION['serendipityAuthedUser'] !== true && $_SESSION['serendipityUserlevel'] != '255') {
                         break;
                     }
-                    if ($serendipity['version'][0] > 1) {
-                        echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager">' . PLUGIN_DOWNLOADMANAGER_TITLE . '</a></li>'."\n";
-                    }
+                    echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager">' . PLUGIN_DOWNLOADMANAGER_TITLE . '</a></li>'."\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_downloadmanager':
@@ -2099,16 +2089,6 @@ class serendipity_event_downloadmanager extends serendipity_event
                     if ( (!$tfile || $tfile == 'style_dlmanager_backend.css') && !$tfilecontent ) {
                         $tfile = dirname(__FILE__) . '/style_dlmanager_backend.css';
                         $tfilecontent = @file_get_contents($tfile);
-                    }
-                    if (!empty($tfilecontent) && $serendipity['version'][0] < 2) {
-                        $tfilecontent .= '
-#dlm_messages {
-    margin: 16px 0;
-    padding: 4px;
-    text-align: center;
-}
-
-';
                     }
                     // add replaced css content to the end of serendipity_admin.css
                     if (!empty($tfilecontent)) $this->backend_dlm_css($eventData, $tfilecontent);

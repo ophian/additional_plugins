@@ -1,6 +1,11 @@
 ChangeLog:
 """"""""""
 
+1.48:
+-----
+ * PHP 8 init variable fix
+ * Raises Requirements
+
 1.47:
 -----
  * PHP 8 preparation fix
