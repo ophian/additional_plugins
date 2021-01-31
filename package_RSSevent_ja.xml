@@ -13,8 +13,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_adminnotes</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;QuickNotes&lt;/b&gt;&lt;br /&gt;Displays information for authors on the administration panel&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:16:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;QuickNotes&lt;/b&gt;&lt;br /&gt;Displays information for authors on the administration panel&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<pubDate>Sun, 31 Jan 2021 14:28:36 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
@@ -267,8 +267,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;ダウンロードマネージャー&lt;/b&gt;&lt;br /&gt;
-s9yに十分なダウンロードマネージャーの能力を提供します。インストール解除する時、関連するテーブルがすべて破棄されるでしょう!&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 10 Dec 2020 11:35:59 +0100</pubDate>
+s9yに十分なダウンロードマネージャーの能力を提供します。インストール解除する時、関連するテーブルがすべて破棄されるでしょう!&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<pubDate>Sun, 31 Jan 2021 14:27:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
