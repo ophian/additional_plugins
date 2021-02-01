@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.42');
+        $propbag->add('version',      '1.43');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -621,7 +621,7 @@ class serendipity_event_faq extends serendipity_event
 
         switch ($serendipity['GET']['action']) {
             case 'faqs':
-                if (($serendipity['POST']['typeSave'] == "true") && (!empty($serendipity['POST']['SAVECONF']))) {
+                if (isset($serendipity['POST']['typeSave']) && $serendipity['POST']['typeSave'] == "true" && !empty($serendipity['POST']['SAVECONF'])) {
                     $serendipity['POST']['typeSubmit'] = true;
                     $bag = new serendipity_property_bag;
                     $this->introspect($bag);
