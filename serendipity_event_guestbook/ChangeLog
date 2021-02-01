@@ -1,3 +1,8 @@
+3.79:
+-----
+ * Fix some uninitialized variable checks for PHP 8
+ * Fix a use of missing URL constant in plugin_guestbook_backend_form.tpl for PHP 8
+
 3.78:
 -----
  * PHP 8 preparation fix

@@ -1,5 +1,5 @@
 {*
- plugin_guestbook_backend_form.tpl v.3.54 2018-12-27 Ian
+ plugin_guestbook_backend_form.tpl v.3.55 2021-02-01 Ian
  *}
 
 <!-- plugin_guestbook_backend_form start -->
@@ -74,7 +74,7 @@
 
        {if !empty($is_show_url)}
         <div class="input-text">
-            <label for="serendipity_commentform_url">{$CONST.URL}</label>
+            <label for="serendipity_commentform_url">URL</label>
             <input type="text" size="60" maxlength="99" name="serendipity[url]" value="{$plugin_guestbook_url|default:''}" id="serendipity_commentform_url">
         </div>
        {/if}

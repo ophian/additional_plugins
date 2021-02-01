@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '3.78');
+        $propbag->add('version',      '3.79');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -1546,14 +1546,14 @@ class serendipity_event_guestbook extends serendipity_event
         }
 
         $moderate   = (serendipity_db_bool($this->get_config('showapp', 'false')) || serendipity_db_bool($this->get_config('automoderate', 'false'))) ? true : false;
-        $gbcat      = !empty($serendipity['GET']['guestbookcategory']) ? $serendipity['GET']['guestbookcategory'] : $serendipity['POST']['guestbookcategory'];
+        $gbcat      = !empty($serendipity['GET']['guestbookcategory']) ? $serendipity['GET']['guestbookcategory'] : (isset($serendipity['POST']['guestbookcategory']) ? $serendipity['POST']['guestbookcategory'] : null);
 
         if (!isset($serendipity['POST']['guestbookadmin'])) {
             $serendipity['smarty']->assign(
                 array(
                     'gb_liva'     => (!isset($serendipity['GET']['guestbookcategory']) || $serendipity['GET']['guestbookcategory'] == 'gbview') ? ' id="active"' : '',
                     'gb_liapa'    => ((isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbapp') || (isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbook_category'] == 'gbapp')) ? ' id="active"' : '',
-                    'gb_liada'    => (((isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbadd') || $serendipity['POST']['guestbookcategory'] == 'gbadd') && (isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbook_category'] != 'gbapp')) ? ' id="active"' : '',
+                    'gb_liada'    => (((isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbadd') || (isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbookcategory'] == 'gbadd')) && (isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbook_category'] != 'gbapp')) ? ' id="active"' : '',
                     'gb_lida'     => (isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbdb') ? ' id="active"' : '',
                     'gb_moderate' => $moderate,
                     'gb_isnav'    => true
