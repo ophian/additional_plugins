@@ -1,3 +1,10 @@
+3.03:
+-----
+ * Better initialization checks for PHP 8
+ * Fix using strict option $hideSubdirFiles in upcoming Styx 3.3.0
+ * Remove $plugin_usergallery_limit_directory header in plugin_usergallery_imagedisplay.tpl template file.
+   Please regard having made and used copy templates in your themes.
+
 3.02:
 -----
  * When using lightbox2-jquery better load the minified css file

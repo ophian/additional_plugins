@@ -20,7 +20,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '3.02');
+        $propbag->add('version',       '3.03');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1.0',
@@ -413,7 +413,7 @@ class serendipity_event_usergallery extends serendipity_event
                     }
                 }
             } else {
-                $val = explode('=', $parts[0]);
+                $val = isset($parts[0]) ? explode('=', $parts[0]) : [0];
                 $val0 = str_replace('serendipity[', '', $val[0]);
                 if ($val[0] == $val0 &&  isset($val[1])) {
                     $_GET[$val[0]] = $val[1];
@@ -548,8 +548,7 @@ class serendipity_event_usergallery extends serendipity_event
                         $serendipity['smarty']->assign('plugin_usergallery_maindir_filecount', $temp_filecount[$limit_directory]);
                     } else {
                         if (empty($up_path)) {
-                            $up_path = '';
-                            $temp_filecount[$up_path] = $temp_filecount[$limit_directory];
+                            $up_path = null;
                         }
                         if (!isset($temp_filecount[$up_path])) {
                             $temp_filecount[$up_path] = '0';
@@ -596,6 +595,8 @@ class serendipity_event_usergallery extends serendipity_event
 
                 $serendipity['smarty']->assign('plugin_usergallery_subdirectories', ($directories ?? array()));
 
+                $temp_filecount[$limit_images_directory] = $temp_filecount[$limit_images_directory] ?? 0;
+
                 // Yes, we don't need full filecounter if $temp_filecount[$limit_images_directory] is set for the pagination
                 if ($temp_filecount[$limit_images_directory] < $full_filecounter) {
                     $full_filecounter = $temp_filecount[$limit_images_directory];
@@ -630,7 +631,7 @@ class serendipity_event_usergallery extends serendipity_event
                 $serendipity['smarty']->assign(
                     array(
                        'plugin_usergallery_pagination'      => $showpage,
-                       'plugin_usergallery_total_count'     => $total_count,
+                       'plugin_usergallery_total_count'     => $total_count ?? 0,
                        'plugin_usergallery_total_pages'     => $total_pages ?? null,
                        'plugin_usergallery_current_page'    => $current_page ?? null,
                        'plugin_usergallery_next_page'       => isset($current_page) ? $current_page+1 : null,
@@ -1152,9 +1153,9 @@ echo '
             }
 
             if ($this->get_config('image_strict') == 'yes') {
-                $images = serendipity_fetchImagesFromDatabase($lower_limit, $images_per_page, $total, $orderby, $order, $file['path'], '', '', array(), true);
+                $images = serendipity_fetchImagesFromDatabase(0, 0, $total, $orderby, $order, $file['path'], '', '', array(), true);
             } else {
-                $images = serendipity_fetchImagesFromDatabase($lower_limit, $images_per_page, $total, $orderby, $order, $file['path']);
+                $images = serendipity_fetchImagesFromDatabase(0, 0, $total, $orderby, $order, $file['path']);
             }
 
             $extended_data = serendipity_fetchMediaProperties($id);
@@ -1184,9 +1185,9 @@ echo '
                 }
             }
 
-            $gallery_array = explode('/', $path);
+            $gallery_array = explode('/', rtrim($path, '/'));
             foreach($gallery_array AS $f => $gallery) {
-                $gallery_path = $gallery_path . $gallery."/";
+                $gallery_path = ($gallery_path ?? '') . $gallery . '/';
                 if ($gallery_path != $base_directory ) {
                     $path_array[$gallery]['path'] = $gallery_path;
                     $path_array[$gallery]['name'] = $gallery;
@@ -1286,16 +1287,19 @@ echo '
                 }
             }
 
+            $file['staticpage_results'] = $file['staticpage_results'] ?? array();
+            $file['entries'] = $file['entries'] ?? array();
+
             unset($path_array['']);
             $serendipity['smarty']->assign(
-                array('plugin_usergallery_title'         => $this->get_config('title'),
-                      'plugin_usergallery_nextid'        => $next_id,
-                      'plugin_usergallery_bcrumb'        => $path_array,
-                      'plugin_usergallery_previousid'    => $previous_id,
-                      'plugin_usergallery_xtra_info'     => $exif_output,
-                      'plugin_usergallery_extended_info' => $extended_data_out,
-                      'plugin_usergallery_file'          => $file,
-                       'plugin_usergallery_is_endsize'   => $max_size
+                array('plugin_usergallery_title'            => $this->get_config('title'),
+                      'plugin_usergallery_nextid'           => $next_id,
+                      'plugin_usergallery_bcrumb'           => $path_array,
+                      'plugin_usergallery_previousid'       => $previous_id,
+                      'plugin_usergallery_xtra_info'        => $exif_output ?? null,
+                      'plugin_usergallery_extended_info'    => $extended_data_out,
+                      'plugin_usergallery_file'             => $file,
+                      'plugin_usergallery_is_endsize'       => $max_size
                       )
             );
             $content = $this->parseTemplate('plugin_usergallery_imagedisplay.tpl');

@@ -31,7 +31,6 @@ function popImage(file_var,file_name,file_title,file_width,file_height) {
     </header>
 
     <div class="page_content">
-        {if $plugin_usergallery_limit_directory != ''}<h3 class="serendipity_title">{$plugin_usergallery_limit_directory}</h3>{/if}
 
         <nav aria-label="usergallery_image_display" title="usergallery_image_display">
             <ul class="serendipity_gallery_navigation pagination justify-content-between">
