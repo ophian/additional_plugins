@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.03');
+        $propbag->add('version',       '5.04');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -333,6 +333,9 @@ class serendipity_event_freetag extends serendipity_event
         }
         // Delete old config options and flash objects
         if (null !== $this->get_config('use_flash')) {
+            if (!file_exists(dirname(__FILE__) . '/swfobject.js')) {
+                return;
+            }
             global $serendipity;
 
             $fcitems = array('use_flash', 'flash_bg_trans', 'flash_tag_color', 'flash_bg_color', 'flash_width', 'flash_speed');
