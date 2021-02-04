@@ -20,7 +20,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '3.03');
+        $propbag->add('version',       '3.04');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1.0',
@@ -964,6 +964,8 @@ echo '
 
     function getExifTags($path, $name, $type)
     {
+        global $serendipity;
+
         $exif_data = array();
         // Display additonal exif information if allowed.
         $JPEG_TOOLKIT = $serendipity['baseURL'] . 'plugins/serendipity_event_usergallery/JPEG_TOOLKIT/';
@@ -1070,7 +1072,7 @@ echo '
         $selector .= '<td><strong>Options</strong></td></tr>'."\n";
         $selector .= '<tr><td colspan="2"><span class="msg_hint">'.PLUGIN_EVENT_USERGALLERY_EXIFDATA_DESC.'<br>'.PLUGIN_EVENT_USERGALLERY_EXIFDATA_CAMERA."</span>\n</td></tr>\n";
 
-        if (is_array($serendipity['POST']['plugin']['exifdata'])) {
+        if (isset($serendipity['POST']['plugin']['exifdata']) && is_array($serendipity['POST']['plugin']['exifdata'])) {
             // create new array
             $exif_array = array();
             foreach($serendipity['POST']['plugin']['exifdata'] AS $key => $value) {
@@ -1208,7 +1210,7 @@ echo '
                 }
 
                 $data_written = false;
-                $exif_output .= '<div class="all_img_info">'."\n";
+                $exif_output  = '<div class="all_img_info">'."\n";
                 $exif_output .= '<div class="exif_info_row"><div class="exif_info_head"><strong>' . PLUGIN_EVENT_USERGALLERY_EXIFDATA_ADDITIONALDATA . "</strong></div></div>\n";
                 foreach($exif_data AS $tag => $value) {
                     if ($value != 'Unknown' && $exif_display_one[$tag] == 'yes') {
@@ -1297,7 +1299,7 @@ echo '
                       'plugin_usergallery_bcrumb'           => $path_array,
                       'plugin_usergallery_previousid'       => $previous_id,
                       'plugin_usergallery_xtra_info'        => $exif_output ?? null,
-                      'plugin_usergallery_extended_info'    => $extended_data_out,
+                      'plugin_usergallery_extended_info'    => $extended_data_out ?? null,
                       'plugin_usergallery_file'             => $file,
                       'plugin_usergallery_is_endsize'       => $max_size
                       )

@@ -1,3 +1,9 @@
+3.04:
+-----
+ * Fix a missing global
+ * Fix generating exifdata string and check isset array POST exifdata
+ * Ini missing $extended_data_out assignement
+
 3.03:
 -----
  * Better initialization checks for PHP 8
