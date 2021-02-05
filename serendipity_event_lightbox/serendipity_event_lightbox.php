@@ -60,7 +60,7 @@ class serendipity_event_lightbox extends serendipity_event
         $conf_array[] = 'header_optimization';
         $conf_array[] = 'navigate_one_entry_only';
         $conf_array[] = 'init_js';
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
 
