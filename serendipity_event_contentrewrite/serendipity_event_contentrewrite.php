@@ -125,7 +125,7 @@ class serendipity_event_contentrewrite extends serendipity_event
             )
         );
 
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $values[] = $element['name'];
         }
 
@@ -152,7 +152,7 @@ class serendipity_event_contentrewrite extends serendipity_event
     function introspect_config_item($name, &$propbag)
     {
         if (is_array($this->markup_elements)) {
-            foreach($this->markup_elements as $element) {
+            foreach($this->markup_elements AS $element) {
                 if ($name==$element['name']) {
                     $propbag->add('type',        'boolean');
                     $propbag->add('name',        constant($name));
