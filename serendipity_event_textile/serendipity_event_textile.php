@@ -56,7 +56,7 @@ class serendipity_event_textile extends serendipity_event
         );
 
         $conf_array = array();
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
         $conf_array[] = 'textile_version';
