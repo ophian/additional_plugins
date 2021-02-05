@@ -66,7 +66,7 @@ class serendipity_event_galleryimage extends serendipity_event
         $conf_array[] = 'album_abs';
         $conf_array[] = 'popup_max';
         $conf_array[] = 'thumb_max';
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
         $propbag->add('configuration', $conf_array);
