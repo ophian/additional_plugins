@@ -98,7 +98,7 @@ class serendipity_event_geshi extends serendipity_event
         );
 
         $conf_array = array('pathtogeshi','showlinenumbers');
-        foreach($this->markup_elements as $element) {
+        foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
         }
         $propbag->add('configuration', $conf_array);
