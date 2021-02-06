@@ -185,7 +185,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contentrewrite&lt;br /&gt;글 내용 변환기&lt;/b&gt;&lt;br /&gt;특정 단어를 지정한 문장으로 모두 변환함 (약자를 적었을 때 유용합니다)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:21:54 +0100</pubDate>
+<pubDate>Thu, 04 Feb 2021 19:16:14 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_contentrewrite</guid>
 </item>
 <item>
@@ -446,7 +446,7 @@
 <category>Event Plugins</category>
 <author>Rob Antonishen, Alexander Mieland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;Markup: Gallery Image&lt;/b&gt;&lt;br /&gt;Inserts a Menalto Gallery album or image using markup text.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Mon, 07 Dec 2020 18:05:45 +0100</pubDate>
+<pubDate>Thu, 04 Feb 2021 19:17:13 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_galleryimage</guid>
 </item>
 <item>
@@ -482,7 +482,7 @@
 <category>Event Plugins</category>
 <author>David Rolston, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_geshi&lt;br /&gt;Markup: GeSHi&lt;/b&gt;&lt;br /&gt;Computer Language Color Syntax Highlighting. Tag usage: [geshi lang=lang_name [,ln={y|n}]]code snippet[/geshi]&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:19:41 +0100</pubDate>
+<pubDate>Thu, 04 Feb 2021 19:16:44 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_geshi</guid>
 </item>
 <item>
@@ -608,7 +608,7 @@
 <category>Event Plugins</category>
 <author>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_lightbox&lt;br /&gt;Lightbox for entry images&lt;/b&gt;&lt;br /&gt;Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It's a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 09 Jan 2021 13:38:52 +0100</pubDate>
+<pubDate>Thu, 04 Feb 2021 19:17:35 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_lightbox</guid>
 </item>
 <item>
@@ -824,7 +824,7 @@
 <category>Event Plugins</category>
 <author>Martin Sewelies</author>
 <content:encoded>&lt;b&gt;serendipity_event_static_osm&lt;br /&gt;OpenStreetMap static files&lt;/b&gt;&lt;br /&gt;Includes scripts and stylesheets for OpenStreetMap support&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Fri, 15 Jan 2021 18:33:26 +0100</pubDate>
+<pubDate>Sat, 06 Feb 2021 12:47:08 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_static_osm</guid>
 </item>
 <item>
@@ -1004,7 +1004,7 @@
 <category>Event Plugins</category>
 <author>onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein</author>
 <content:encoded>&lt;b&gt;serendipity_event_social&lt;br /&gt;Share Buttons&lt;/b&gt;&lt;br /&gt;Show social share buttons for services like Facebook and Twitter using shariff.&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Wed, 03 Jun 2020 09:55:43 +0200</pubDate>
+<pubDate>Fri, 05 Feb 2021 10:03:14 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_social</guid>
 </item>
 <item>
@@ -1112,7 +1112,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;마크업: 텍스타일&lt;/b&gt;&lt;br /&gt;텍스타일 변환기를 통해 모든 출력을 변환시킴&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 24 Aug 2020 15:04:58 +0200</pubDate>
+<pubDate>Thu, 04 Feb 2021 19:17:04 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
