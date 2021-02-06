@@ -1,6 +1,10 @@
+0.16:
+-----
+ * Do not use Smarty vars instead of $serendipity globals
+
 0.15:
 -----
- * Add missing reafme file
+ * Add missing readme file
 
 0.14:
 -----

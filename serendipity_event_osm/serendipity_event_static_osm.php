@@ -58,10 +58,10 @@ class serendipity_event_static_osm extends serendipity_event
         global $serendipity;
 
         if ($event === 'frontend_header') {
-            echo '    <link rel="stylesheet" href="'.$serendipityHTTPPath . 'plugins/serendipity_event_osm/resources/ol.css" type="text/css" />'.PHP_EOL;
-            echo '    <link rel="stylesheet" href="'.$serendipityHTTPPath . 'plugins/serendipity_event_osm/resources/osm.css" type="text/css" />'.PHP_EOL;
-            echo '    <script src="'.$serendipityHTTPPath . 'plugins/serendipity_event_osm/resources/ol.js"></script>'.PHP_EOL;
-            echo '    <script src="'.$serendipityHTTPPath . 'plugins/serendipity_event_osm/resources/osm.js"></script>'.PHP_EOL;
+            echo '    <link rel="stylesheet" href="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_osm/resources/ol.css" type="text/css" />'.PHP_EOL;
+            echo '    <link rel="stylesheet" href="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_osm/resources/osm.css" type="text/css" />'.PHP_EOL;
+            echo '    <script src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_osm/resources/ol.js"></script>'.PHP_EOL;
+            echo '    <script src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_osm/resources/osm.js"></script>'.PHP_EOL;
         } else if ($event === 'backend_image_add') {
             if (preg_match('/\\.gpx$/i', mb_strtolower($eventData)) && serendipity_db_bool($this->get_config('compress_gpx', 'true')) === true) {
                 $fileName = $eventData;
