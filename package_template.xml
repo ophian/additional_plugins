@@ -921,18 +921,12 @@
       </dir>
       <file>index.tpl</file>
       <file>info.txt</file>
-      <file>lang_de.inc.php</file>
-      <file>lang_en.inc.php</file>
       <file>legal.txt</file>
       <file>preview.png</file>
       <file>preview.webp</file>
       <file>preview_fullsize.jpg</file>
       <file>preview_fullsize.webp</file>
       <file>style.css</file>
-      <dir name="UTF-8">
-        <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -941,16 +935,12 @@
     <file>bartleby/img/xml.png</file>
     <file>bartleby/index.tpl</file>
     <file>bartleby/info.txt</file>
-    <file>bartleby/lang_de.inc.php</file>
-    <file>bartleby/lang_en.inc.php</file>
     <file>bartleby/legal.txt</file>
     <file>bartleby/preview.png</file>
     <file>bartleby/preview.webp</file>
     <file>bartleby/preview_fullsize.jpg</file>
     <file>bartleby/preview_fullsize.webp</file>
     <file>bartleby/style.css</file>
-    <file>bartleby/UTF-8/lang_de.inc.php</file>
-    <file>bartleby/UTF-8/lang_en.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
