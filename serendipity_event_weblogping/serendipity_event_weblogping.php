@@ -18,7 +18,7 @@ class serendipity_event_weblogping extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WEBLOGPING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.16');
+        $propbag->add('version',       '1.17');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -127,7 +127,7 @@ class serendipity_event_weblogping extends serendipity_event
                         if ($this->get_config($service['name'], 'false') === 'disable') continue;
                         // Detect if the current checkbox needs to be saved. We use the field chk_timestamp to see,
                         // if the form has already been submitted and individual changes shall be preserved
-                        $selected = ((!empty($serendipity['POST']['chk_timestamp']) && @$serendipity['POST']['announce_entries_' . $service['name']])
+                        $selected = ((!empty($serendipity['POST']['chk_timestamp']) && !empty($serendipity['POST']['announce_entries_' . $service['name']]))
                                         || (!isset($serendipity['POST']['chk_timestamp']) && serendipity_db_bool($this->get_config($service['name'], 'false')))
                                             ? 'checked="checked"'
                                             : '');
@@ -172,7 +172,7 @@ class serendipity_event_weblogping extends serendipity_event
 
                     // First cycle through list of services to remove superseding services which may have been checked
                     foreach ($this->services AS $index => $service) {
-                        if (!empty($service['supersedes']) && isset($serendipity['POST']['announce_entries_' . $service['name']])) {
+                        if (!empty($service['supersedes']) && !empty($serendipity['POST']['announce_entries_' . $service['name']])) {
                             $supersedes = $service['supersedes'];
                             foreach($supersedes AS $sid => $servicename) {
                                 // A service has been checked that is superseded by another checked meta-service.
@@ -182,7 +182,7 @@ class serendipity_event_weblogping extends serendipity_event
                         }
                     }
                     foreach ($this->services AS $index => $service) {
-                        if (isset($serendipity['POST']['announce_entries_' . $service['name']])
+                        if (!empty($serendipity['POST']['announce_entries_' . $service['name']])
                         || (defined('SERENDIPITY_IS_XMLRPC') && serendipity_db_bool($this->get_config($service['name'], 'false')))
                         ) {
                             if (!defined('SERENDIPITY_IS_XMLRPC') || defined('SERENDIPITY_XMLRPC_VERBOSE')) {
