@@ -1426,7 +1426,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-01-19</date>
+  <date>2021-02-10</date>
   <filelist>
     <dir name="blue">
       <file>index.tpl</file>
@@ -2488,7 +2488,7 @@ Among these it was used as the default backend theme for a long time. This latte
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-01-19</date>
+  <date>2021-02-10</date>
   <filelist>
     <dir name="contest">
       <file>content.tpl</file>
