@@ -1,8 +1,15 @@
+1.12:
+-----
+
+ * Check $serendipity['POST']['properties']['photoname'] properties only when set
+ * Fix uninitialized vars
+ * Improve non-file message
+
 1.11:
 -----
 
  * Check some more eventData push or POST cases before action
- * Raise PHP reqirement
+ * Raise PHP requirement
 
 1.10:
 -----

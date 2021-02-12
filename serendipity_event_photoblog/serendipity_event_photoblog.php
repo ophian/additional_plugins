@@ -4,7 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.11');// necessary, as used for db install checkScheme
+@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.12');// necessary, as used for db install checkScheme
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -121,7 +121,7 @@ class serendipity_event_photoblog extends serendipity_event
         $bits = explode("/", $name);
         $filename = array_pop($bits);
         $filebits = explode(".", $filename);
-        if (in_array("serendipityThumb",$filebits)) {
+        if (in_array("serendipityThumb", $filebits)) {
             $use_thumbnail = 1;
         }
         $ext = array_pop($filebits);
@@ -141,7 +141,7 @@ class serendipity_event_photoblog extends serendipity_event
             $q = "SELECT * FROM {$serendipity['dbPrefix']}images WHERE name='" . serendipity_db_escape_string($f) . "' and extension='" . serendipity_db_escape_string($ext) . "' and path='" . serendipity_db_escape_string($path) . "'" ;
             $file = serendipity_db_query($q, true);
             if (!isset($file) || !is_array($file)) {
-                echo "Couldn't find file";
+                echo "Photoblog: Couldn't find file";
                 $file = null;
             }
         }
@@ -161,7 +161,7 @@ class serendipity_event_photoblog extends serendipity_event
         }
 
         $photoname = '';
-        if (isset($serendipity['POST']['properties']['photoname'])) {
+        if (!empty($serendipity['POST']['properties']['photoname'])) {
             $file = $this->parsePhotoname($serendipity['POST']['properties']['photoname']);
         } elseif (isset($serendipity['GET']['id'])) {
             $row = $this->getPhoto($serendipity['GET']['id']);
@@ -210,13 +210,13 @@ class serendipity_event_photoblog extends serendipity_event
         if (isset($row)) {
             if (!empty($prop_val)) {
                 $file = $this->parsePhotoname($prop_val);
-                $this->updatePhoto($eventData['id'], $file['id'],$file['use_thumbnail']);
+                $this->updatePhoto($eventData['id'], $file['id'], $file['use_thumbnail']);
             } else {
                 $this->deletePhoto($eventData['id']);
             }
         } elseif (!empty($prop_val)) {
             $file = $this->parsePhotoname($prop_val);
-            $this->addPhoto($eventData['id'], $file['id'],$file['use_thumbnail']);
+            $this->addPhoto($eventData['id'], $file['id'], $file['use_thumbnail']);
         }
     }
 
@@ -229,11 +229,11 @@ class serendipity_event_photoblog extends serendipity_event
             unset($eventData[0]['properties']['ep_cache_extended']);
         }
         if (isset($serendipity['POST']['preview']) && $serendipity['POST']['preview'] == 'true') {
-            $prop_val = $serendipity['POST']['properties']['photoname'];
+            $prop_val = $serendipity['POST']['properties']['photoname'] ?? null;
             if (!empty($prop_val)) {
                 $file = $this->parsePhotoname($prop_val);
                 $thumbstring = $this->return_thumbstr($file);
-                $imgsrc= $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . $thumbstring.'.'. $file['extension'];
+                $imgsrc = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . $thumbstring.'.'. $file['extension'];
                 $img = '<div align="center"><img src="' . $imgsrc . '" /></div>';
                 $eventData[0]['body'] = $img . $eventData[0]['body'];
             }
