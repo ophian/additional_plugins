@@ -14,4 +14,5 @@
 @define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKSEL', 'Only send trackbacks to URLs listed below');
 @define('PLUGIN_EVENT_MTRACKBACK_DELAYED_TRACKBACKS_NAME', 'Delayed Trackbacks');
 @define('PLUGIN_EVENT_MTRACKBACK_DELAYED_TRACKBACKS_DESC', 'Automatically create trackbacks of entries which were not released immediately.');
+@define('PLUGIN_EVENT_MTRACKBACK_CONTROL', 'You can re-assign OR remove trackbacks in the field below, by removing all/any trackback links, then saving, and then loading the entry completely new again via the entries list! To newly paste in the old/changed trackback links, do the saving procedure again to see the changed tracks.');
 

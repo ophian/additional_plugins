@@ -1,3 +1,7 @@
+1.29:
+-----
+  * Add an additional info note on how to handle/control the field trackbacks latterly
+
 1.28:
 -----
   * Add debug for entry properties when debug level is set to debug up from Styx 3.3
