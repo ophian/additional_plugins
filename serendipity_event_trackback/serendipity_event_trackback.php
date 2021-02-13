@@ -19,7 +19,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '1.29');
+        $propbag->add('version',       '1.30');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -198,7 +198,7 @@ class serendipity_event_trackback extends serendipity_event
                         }
                     }
                     $debugcheck = (isset($serendipity['logLevel']) && $serendipity['logLevel'] === 'debug')
-? '                        <input class="input_checkbox" type="checkbox" id="checkbox_enable_trackback_4" name="serendipity[trackback_resend]" value="true" /><label for="checkbox_enable_trackback_4">Resend all trackbacks no matter which radio option is chosen. (Debug purpose only!)</label><br />'
+? '                        <input class="input_checkbox" type="checkbox" id="checkbox_enable_trackback_4" name="serendipity[trackback_resend]" value="true" /><label for="checkbox_enable_trackback_4">A forced resend of all trackbacks, if one sending option is chosen. (Debug purpose only!)</label><br />'
 : '';
 ?>
                     <fieldset id="edit_entry_trackbacks" class="entryproperties_trackbacks">
