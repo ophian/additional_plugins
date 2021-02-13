@@ -1,3 +1,8 @@
+1.19:
+-----
+
+ * Fix a request payload LANG_CHARSET encoding double
+
 1.18:
 -----
 

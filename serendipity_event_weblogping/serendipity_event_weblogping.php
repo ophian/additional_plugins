@@ -18,7 +18,7 @@ class serendipity_event_weblogping extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WEBLOGPING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.18');
+        $propbag->add('version',       '1.19');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -239,11 +239,6 @@ class serendipity_event_weblogping extends serendipity_event
                                 }
                                 $fContent = serendipity_request_url($url, 'POST', 'text/xml', $payload, $options);
 #                                echo '<pre>fetchPingbackData() '.print_r($serendipity['last_http_request'], true).'</pre>';
-                                if (strtoupper(LANG_CHARSET) != 'UTF-8') {
-                                    $payload = utf8_encode($message->payload);
-                                } else {
-                                    $payload = $message->payload;
-                                }
                                 $xmlrpc_result = $message->parseResponse($fContent);
                                 if ($xmlrpc_result->faultCode()) {
                                     $out = sprintf(PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE . "<br />", (function_exists('serendipity_specialchars') ? serendipity_specialchars($xmlrpc_result->faultString()) : htmlspecialchars($xmlrpc_result->faultString(), ENT_COMPAT, LANG_CHARSET)));
