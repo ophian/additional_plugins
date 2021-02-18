@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.21');
+        $propbag->add('version', '6.22');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -3751,8 +3751,8 @@ class serendipity_event_staticpage extends serendipity_event
                 case 'entry_display':
                     $this->smarty_init();
 
-                    // special case previewing a static page by preview NOT permalink!
-                    if (!empty($serendipity['GET']['staticid']) && isset($serendipity['GET']['staticPreview']) && $serendipity['GET']['staticPreview'] == 1) {
+                    // Special cases not accessed by core: password restricted access pages or previewing a static page by preview NOT permalink!
+                    if (!empty($serendipity['POST']['pass']) || (!empty($serendipity['GET']['staticid']) && isset($serendipity['GET']['staticPreview']) && $serendipity['GET']['staticPreview'] == 1)) {
                         $serendipity['view'] = 'plugin';
                     }
 
