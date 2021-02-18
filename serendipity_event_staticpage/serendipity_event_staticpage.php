@@ -3749,6 +3749,10 @@ class serendipity_event_staticpage extends serendipity_event
                     break;
 
                 case 'entry_display':
+                    // Normal static /pages/test.html pages, which have a Status 200 OK, still have $serendipity['view'] == 404 outlined at this point.
+                    // They get redirected via htaccess index->routing serve404() which sets $serendipity['view'] == 404 and viewtype = 404_4
+                    // then again redirected by htaccess index->routing to servePlugin($matches) and in there assigned to $serendipity['view'] == 'plugin'
+                    // At the end we have $serendipity['view'] == 'plugin' and $serendipity['viewtype'] == '404_4' which both are assigned to Smarty.
                     $this->smarty_init();
 
                     // Special cases not accessed by core: password restricted access pages or previewing a static page by preview NOT permalink!
