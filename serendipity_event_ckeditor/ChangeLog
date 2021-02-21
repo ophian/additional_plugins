@@ -1,3 +1,7 @@
+4.16.0.2:
+---------
+    * CSS: Allow hand set 5 columns media galleries for adequate wide themes like "B46"
+
 4.16.0.1:
 ---------
     * Upgrade highlight.pack.js file to v.10.5.0
