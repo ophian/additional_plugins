@@ -4778,7 +4778,7 @@ Among these it was used as the default backend theme for a long time. This latte
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-02-01</date>
+  <date>2021-02-21</date>
   <filelist>
     <dir name="leaf">
       <file>commentform.tpl</file>
