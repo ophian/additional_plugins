@@ -27,7 +27,7 @@ class serendipity_event_contactform extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'backend_title', 'email', 'subject', 'counter', 'intro', 'sent', 'articleformat', 'dynamic_tpl', 'dynamic_fields', 'dynamic_fields_tpl', 'dynamic_fields_desc'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.35');
+        $propbag->add('version', '1.36');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -542,7 +542,7 @@ class serendipity_event_contactform extends serendipity_event
                     } else {
                         $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $addData['uriargs'];
                     }
-                    $oldsubpage = $serendipity['GET']['subpage'] ?? '';
+                    $oldsubpage = $serendipity['GET']['subpage'] ?? null;
                     if (empty($serendipity['GET']['subpage'])) {
                         $serendipity['GET']['subpage'] = $nice_url;
                     }

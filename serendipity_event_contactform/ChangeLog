@@ -1,3 +1,7 @@
+1.36:
+-----
+ * Fix 1.35 init fall back to nil
+
 1.35:
 -----
  * Fix PHP 8 init check
