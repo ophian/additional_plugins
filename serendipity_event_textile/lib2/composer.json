@@ -1,18 +1,27 @@
 {
     "name": "netcarver/textile",
-    "description": "A lightweight markup language that takes (almost) plaintext and converts it into well formed HTML.",
+    "description": "Textile markup language parser",
+    "license": "BSD-3-Clause",
     "homepage": "https://github.com/textile/php-textile",
+    "keywords": ["php-textile", "textile", "parser", "markup", "language", "html", "format", "plaintext", "document"],
     "support": {
         "irc": "irc://irc.freenode.net/textile",
         "wiki": "https://github.com/textile/php-textile/wiki",
-        "issues": "https://github.com/textile/php-textile/issues"
+        "issues": "https://github.com/textile/php-textile/issues",
+        "source": "https://github.com/textile/php-textile"
     },
-    "license": "BSD-3-Clause",
     "autoload": {
         "classmap": ["classTextile.php"]
     },
+    "require": {
+        "php": ">=5.0.0"
+    },
     "require-dev": {
-        "phpunit/phpunit": "3.7.*",
-        "symfony/yaml": "2.3.*"
+        "phpunit/phpunit": "5.7.*",
+        "symfony/yaml": "2.4.*",
+        "satooshi/php-coveralls": "0.6.*"
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
     }
 }
