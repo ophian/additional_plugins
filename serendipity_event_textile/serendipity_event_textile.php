@@ -18,7 +18,7 @@ class serendipity_event_textile extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TEXTILE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Lars Strojny, Ian Styx');
-        $propbag->add('version',       '1.9.2');
+        $propbag->add('version',       '1.10.0');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -162,7 +162,7 @@ class serendipity_event_textile extends serendipity_event
                             $blocks = array();
                             foreach($preserve_tags AS $tag) {
                                 if (preg_match_all('/(<'.$tag.'[^>]?>.*<\/'.$tag.'>)/msU', $eventData[$element], $matches )) {
-                                    foreach($matches[1] as $match) {
+                                    foreach($matches[1] AS $match) {
                                         $blocks[] = $match;
                                     }
                                 }
@@ -186,18 +186,18 @@ class serendipity_event_textile extends serendipity_event
                              * them with the original blocks */
 
                             if (preg_match_all('/<code>BLOCK::(\d+)<\/code>/', $eventData[$element], $matches )) {
-                                foreach($matches[1] as $key=>$match) {
+                                foreach($matches[1] AS $key=>$match) {
                                     $eventData[$element] = str_replace($matches[0][$key], $blocks[$match], $eventData[$element]);
                                 }
                             }
 
                             /* post-process each block */
 
-                            foreach($preserve_tags as $tag) {
+                            foreach($preserve_tags AS $tag) {
                                 $method = '_process_tag_' . $tag;
                                 if (method_exists($this,$method)) {
                                     if (preg_match_all('/<'.$tag.'[^>]?>(.*)<\/'.$tag.'>/msU', $eventData[$element], $matches )) {
-                                        foreach($matches[1] as $key=>$match) {
+                                        foreach($matches[1] AS $key=>$match) {
                                             $eventData[$element] = str_replace($matches[0][$key], $this->$method($match), $eventData[$element]);
                                         }
                                     }

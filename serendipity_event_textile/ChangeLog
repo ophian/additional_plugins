@@ -1,3 +1,9 @@
+1.10.0:
+-------
+
+ * Upgrade textile lib3 to v.3.7.6
+ * Upgrade textile lib2 to v.2.5.5
+
 1.9.2:
 ------
  * Secure external helper target _blank links by living standard rel="noopener"
