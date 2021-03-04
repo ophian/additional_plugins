@@ -2,7 +2,7 @@
 -----
  * Fix a missing global
  * Fix generating exifdata string and check isset array POST exifdata
- * Ini missing $extended_data_out assignement
+ * Init missing $extended_data_out assignment
 
 3.03:
 -----
