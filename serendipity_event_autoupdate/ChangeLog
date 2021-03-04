@@ -1,3 +1,8 @@
+1.8.3:
+------
+
+ * Add RecursiveDirectoryIterator::SKIP_DOTS flag for PHP 8 extended error reporting
+
 1.8.2:
 ------
 
