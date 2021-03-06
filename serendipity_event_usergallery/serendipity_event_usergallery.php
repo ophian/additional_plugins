@@ -20,7 +20,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '3.04');
+        $propbag->add('version',       '3.05');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1.0',
@@ -502,7 +502,7 @@ class serendipity_event_usergallery extends serendipity_event
                         $serendipity['smarty']->assign(
                             array(
                                 'plugin_usergallery_currentgal' => $getpathtemp,
-                                'plugin_usergallery_uppath'     => $up_path,
+                                'plugin_usergallery_uppath'     => $up_path ?? '',
                                 'plugin_usergallery_toplevel'   => 'no'
                             )
                         );

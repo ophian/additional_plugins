@@ -1,5 +1,11 @@
 3.04:
 -----
+ * Another cased initialization check for PHP 8
+ * Fixup some template markup for readability
+ * Fixup some template Smarty variable strictness for PHP 8
+
+3.04:
+-----
  * Fix a missing global
  * Fix generating exifdata string and check isset array POST exifdata
  * Init missing $extended_data_out assignment
