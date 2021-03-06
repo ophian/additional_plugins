@@ -29,5 +29,5 @@
 
 // Next lines were translated on 2012/02/13
 @define('PLUGIN_EVENT_GOOGLE_ANALYTICS_TRACK_ADSENSE', 'Sledovat reklamy AdSense');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_TRACK_ADSENSE_DESC', 'Sleduje reklamy z AdSense a pøidává data do GA (GoogleAnalytics). GA a AdSense ale musejí být pøedtím propojené.(->http://support.google.com/adsense/bin/answer.py?hl=cs&answer=92625)');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_TRACK_ADSENSE_DESC', 'Sleduje reklamy z AdSense a pøidává data do GA (GoogleAnalytics). GA a AdSense ale musejí být pøedtím propojené.(->https://support.google.com/adsense/bin/answer.py?hl=cs&answer=92625)');
 
