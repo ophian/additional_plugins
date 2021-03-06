@@ -1,4 +1,8 @@
-3.04:
+3.06:
+-----
+ * Fix a fallthrough directory case setting a wrong full_filecounter for pagination showup
+
+3.05:
 -----
  * Another cased initialization check for PHP 8
  * Fixup some template markup for readability
