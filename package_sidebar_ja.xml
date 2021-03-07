@@ -1117,11 +1117,11 @@
 <description>全著者の一覧を表示する</description>
 <maintainers><maintainer><name>Falk Doering</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.2.2</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2018-01-24</date>
+  <version>1.2.3</version>
+  <requirements:s9yVersion>3.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.3.0</requirements:phpVersion>
+  <date>2021-03-07</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
       <file>ChangeLog</file>
