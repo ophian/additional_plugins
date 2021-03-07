@@ -18,12 +18,12 @@ class serendipity_plugin_userprofiles extends serendipity_plugin
         $propbag->add('description', PLUGIN_USERPROFILES_NAME_DESC);
         $propbag->add('author',      "Falk Doering");
         $propbag->add('stackable',   false);
-        $propbag->add('version',     '1.2.2');
+        $propbag->add('version',     '1.2.3');
         $propbag->add('configuration', array('title', 'show_groups', 'show_users'));
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '3.0',
+            'smarty'      => '3.1.0',
+            'php'         => '7.3.0'
         ));
         $propbag->add('groups',       array('FRONTEND_VIEWS'));
         $this->dependencies = array('serendipity_event_userprofiles' => 'keep');

@@ -92,11 +92,11 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '0.34');
+        $propbag->add('version', '0.35');
         $propbag->add('requirements', array(
-            'serendipity' => '2.0',
+            'serendipity' => '3.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.2.0'
+            'php'         => '7.3.0'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('BACKEND_USERMANAGEMENT','BACKEND_TEMPLATES'));
@@ -691,8 +691,8 @@ class serendipity_event_userprofiles extends serendipity_event
                     }
 
                     if (empty($eventData['author'])) {
-                        $tmp = isset($eventData['authorid']) ? serendipity_fetchAuthor($eventData['authorid']) : 0;
-                        $author = $tmp[0]['realname'];
+                        $tmp = isset($eventData['authorid']) ? serendipity_fetchAuthor($eventData['authorid']) : [];
+                        $author = $tmp[0]['realname'] ?? null;
                     } else {
                         $author = $eventData['author'];
                     }
