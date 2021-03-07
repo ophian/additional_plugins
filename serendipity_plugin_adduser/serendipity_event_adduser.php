@@ -16,7 +16,7 @@ class serendipity_event_adduser extends serendipity_event
         $propbag->add('description', PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking, Ian Styx');
-        $propbag->add('version',     '2.49');
+        $propbag->add('version',     '2.50');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -260,7 +260,7 @@ class serendipity_event_adduser extends serendipity_event
                     break;
 
                 case 'entry_display':
-                    if ($serendipity['GET']['subpage'] == 'adduser' || $serendipity['POST']['subpage'] == 'adduser' || !empty($serendipity['GET']['adduser_activation']) || !empty($this->clean_page)) {
+                    if ((isset($serendipity['GET']['subpage']) && $serendipity['GET']['subpage'] == 'adduser') || (isset($serendipity['POST']['subpage']) && $serendipity['POST']['subpage'] == 'adduser') || !empty($serendipity['GET']['adduser_activation']) || !empty($this->clean_page)) {
                         if (is_array($eventData)) {
                             $eventData['clean_page'] = true;
                         }
@@ -268,7 +268,7 @@ class serendipity_event_adduser extends serendipity_event
                     break;
 
                 case 'entries_header':
-                    if ($serendipity['GET']['subpage'] == 'adduser' || $serendipity['POST']['subpage'] == 'adduser' || !empty($serendipity['GET']['adduser_activation'])) {
+                    if ((isset($serendipity['GET']['subpage']) && $serendipity['GET']['subpage'] == 'adduser') || (isset($serendipity['POST']['subpage']) && $serendipity['POST']['subpage'] == 'adduser') || !empty($serendipity['GET']['adduser_activation'])) {
                         $this->clean_page = true;
                         $url      = $serendipity['baseURL'] . $serendipity['indexFile'];
                         $hidden['subpage'] = 'adduser';
