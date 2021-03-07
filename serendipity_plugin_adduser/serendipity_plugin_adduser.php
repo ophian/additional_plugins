@@ -17,7 +17,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.45');
+        $propbag->add('version',       '2.46');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -212,7 +212,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
 
         $html = '<strong>' . USERCONF_GROUPS . '</strong><br />';
 
-        if (is_array($serendipity['POST']['plugin']['usergroups'])) {
+        if (isset($serendipity['POST']['plugin']['usergroups']) && is_array($serendipity['POST']['plugin']['usergroups'])) {
             $valid = $this->usergroups = array();
             foreach ($serendipity['POST']['plugin']['usergroups'] AS $idx => $id) {
                 $valid[$id] = $id;
