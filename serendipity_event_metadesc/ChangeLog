@@ -1,7 +1,7 @@
 0.27:
 -----
 
- * Fix entryproperties update for better PHP 8 initialization order
+ * Fix entryproperties update check for a better PHP 8 initialization order
 
 0.26:
 -----
