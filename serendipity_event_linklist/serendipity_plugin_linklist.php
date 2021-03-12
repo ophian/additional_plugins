@@ -20,7 +20,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $propbag->add('description',   PLUGIN_LINKS_BLAHBLAH);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '1.28');
+        $propbag->add('version',       '1.29');
         $propbag->add('configuration', array(
                                              'title',
                                              'prepend_text',
@@ -346,7 +346,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         if ($this->get_config('cache') == 'yes') {
             if (@include_once("Cache/Lite.php")) {
                 $xml_hash = md5($links.$style);
-                $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/','automaticSerialization' => true));
+                $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/', 'automaticSerialization' => true));
                 $old_hash = $cache_obj->get('linklist_xmlhash');
                 if ($xml_hash == $old_hash) {
                     $output = $cache_obj->get('linklist_html');
@@ -383,13 +383,13 @@ class serendipity_plugin_linklist extends serendipity_plugin
         xml_parse_into_struct($xml, '<list>' . $linkxml . '</list>', $struct, $index);
         xml_parser_free($xml);
 
-        if ($imgdir === 1 OR $imgdir === "true" OR $imgdir === true OR $imgdir === "") {
+        if ($imgdir === 1 || $imgdir === "true" || $imgdir === true || $imgdir === '') {
             $imgdir = $serendipity['baseURL'] . 'plugins/' . $plugin_dir;
         }
 
         $str  =  $this->get_config('prepend_text');
         $str .= "\n\n";
-        if ($style == "dtree") {
+        if ($style == 'dtree') {
             $str .= "\n".'<script src="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/lldtree.js" type="text/javascript"></script>'."\n";
 
             if (serendipity_db_bool($this->get_config('showOpenAndCloseLinks', 'true')) && $this->get_config('locationOfOpenAndClose') == 'top') {
@@ -400,7 +400,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
             <!--
             d = new dTree("d","'.$imgdir.'");'."\n";
 
-            /* configuration section*/
+            /* configuration section */
             if (!serendipity_db_bool($this->get_config('useSelection', 'false')))   $str .= 'd.config.useSelection=false;'."\n";
             if (!serendipity_db_bool($this->get_config('useCookies', 'false')))     $str .= 'd.config.useCookies=false;'."\n";
             if (!serendipity_db_bool($this->get_config('useLines', 'true')))        $str .= 'd.config.useLines=false;'."\n";
@@ -458,19 +458,12 @@ class serendipity_plugin_linklist extends serendipity_plugin
             $link_array = array();
             $dirname = array();
             $level = array();
-            $dirname[0]['dircount'] = 0;
-            $dir_array[''] = array(
-                                'dirname'       => '',
-                                'level'         => 1,
-                                'linkcount'     => 0,
-                                'links'         => $link_array,
-                                'dircount'      => 0,
-                                'directories'   => $link_array);
+
             for($level[] = 0, $i=1, $j=1; isset($struct[$i]); $i++, $j++) {
                 if (isset($struct[$i]['type'])) {
-                    if (@$struct[$i]['type'] == 'open' && strtolower($struct[$i]['tag']) == 'dir') { // silenced ff for Illegal offset type error - where to fix this?
-                        @$dir_array[$dirname[0]]['directories'][] = $this->decode($struct[$i]['attributes']['NAME']);
-                        @$dir_array[$dirname[0]]['dircount']++;
+                    if ($struct[$i]['type'] == 'open' && isset($struct[$i]['tag']) && strtolower($struct[$i]['tag']) == 'dir') {
+                        $dir_array[$dirname[0]]['directories'][] = $this->decode($struct[$i]['attributes']['NAME']);
+                        $dir_array[$dirname[0]]['dircount']++;
                         array_unshift($dirname, $this->decode($struct[$i]['attributes']['NAME']));
                         array_unshift($level,$j);
                         $dir_array[$dirname[0]] = array(
@@ -481,10 +474,10 @@ class serendipity_plugin_linklist extends serendipity_plugin
                                                     'dircount'      => 0,
                                                     'directories'   => $link_array);
                     } else if ($struct[$i]['type'] == 'close' && strtolower($struct[$i]['tag']) == 'dir') {
-                        $dump=array_shift($dirname);
-                        $dump=array_shift($level);
+                        $dump = array_shift($dirname);
+                        $dump = array_shift($level);
                     } else if ($struct[$i]['type'] == 'complete' && strtolower($struct[$i]['tag']) == 'link') {
-                        @$dir_array[$dirname[0]]['linkcount']++; // silenced for Illegal offset type error - where to fix this?
+                        $dir_array[$dirname[0]]['linkcount']++;
                         if (count($level) == 0) {
                             $level_pass = 1;
                         } else {
@@ -497,7 +490,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
                                         'level'     => $level_pass, 'dirname' => $dirname,
                                         'hcard'     => (isset($struct[$i]['attributes']['HCARD']) ? $this->decode($struct[$i]['attributes']['HCARD']) : ''),
                                         'rel'       => (isset($struct[$i]['attributes']['REL']) ? $this->decode($struct[$i]['attributes']['REL']) : ''));
-                        @$dir_array[$dirname[0]]['links'][] = $basic_array; // silenced for Illegal offset type error - where to fix this?
+                        $dir_array[$dirname[0]]['links'][] = $basic_array;
                     }
                 }
             }
