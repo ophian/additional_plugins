@@ -1,3 +1,9 @@
+6.23:
+-----
+ * Change staticpage backend lists
+    - last modified clock icon placement (style change needs a forced reload of the browser cache)
+    - icon lightbulb to a cone-striped svg for URL title only pages
+
 6.22:
 -----
  * Fix a password restricted access page case where $serendipity['view'] was not 'plugin'

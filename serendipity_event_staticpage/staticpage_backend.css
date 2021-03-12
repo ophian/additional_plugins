@@ -50,7 +50,7 @@
     margin-left: .75em;
 }
 #splistorder .icon-ok, .spmsg .icon-ok, .spmsg .icon-info, .spmsg .icon-error, .spmsg .icon-attention { font-size: 20px; width: 32px; }
-.spmod .icon-clock { width: 1em; color: #444; height: 1.25rem; }
+.spmod .icon-clock { width: 1em; color: #444; height: 1.25rem; vertical-align: -.275em; }
 .spmsg .icon-attention, .spmsg .icon-error { color: red; }
 .spmsg .icon-ok { color: green; }
 .icon-info { color: #C09853; }
