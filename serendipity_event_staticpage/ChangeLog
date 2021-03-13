@@ -1,3 +1,7 @@
+1.32: (sidebar)
+---------------
+ * Fix empty return content list variable
+
 6.23:
 -----
  * Change staticpage backend lists

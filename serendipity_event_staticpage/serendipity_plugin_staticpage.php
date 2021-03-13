@@ -16,7 +16,7 @@ class serendipity_plugin_staticpage extends serendipity_plugin
         $propbag->add('description', PLUGIN_STATICPAGELIST_NAME_DESC);
         $propbag->add('author',      "Rob Antonishen, Falk Doering, Ian Styx");
         $propbag->add('stackable',   true);
-        $propbag->add('version',     '1.31');
+        $propbag->add('version',     '1.32');
         $propbag->add('configuration', array(
                 'title',
                 'limit',
@@ -315,8 +315,11 @@ class serendipity_plugin_staticpage extends serendipity_plugin
                             serendipity_event_staticpage::fixUTFEntity(!empty($page['headline']) ? serendipity_event_staticpage::html_specialchars($page['headline']) : serendipity_event_staticpage::html_specialchars($page['pagetitle']))));
                 }
             }
-        } 
-        return $content;
+
+            return $content;
+        }
+
+        return null;
     }
 
 }
