@@ -26,10 +26,10 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.00');
+        $propbag->add('version',       '2.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
-            'php'         => '5.1.0'
+            'php'         => '7.3.0'
         ));
         $propbag->add('event_hooks',    array(
             'genpage'                   => true,
@@ -774,8 +774,8 @@ class serendipity_event_categorytemplates extends serendipity_event
                 case 'backend_category_update':
                 case 'backend_category_addNew':
                     $orig_tpl = $this->fetchTemplate($eventData, '');
-                    $text_tpl = $serendipity['POST']['cat']['template'];
-                    $drop_tpl = $serendipity['POST']['cat']['drop_template'];
+                    $text_tpl = $serendipity['POST']['cat']['template'] ?? null;
+                    $drop_tpl = $serendipity['POST']['cat']['drop_template'] ?? null;
                     // Default no change to template
                     $set_tpl = $orig_tpl;
                     // If text template changed, it takes precedence
@@ -791,11 +791,11 @@ class serendipity_event_categorytemplates extends serendipity_event
                         'fetchlimit'    => !empty($serendipity['POST']['cat']['fetchlimit']) ? (int)$serendipity['POST']['cat']['fetchlimit'] : $serendipity['fetchLimit'],
                         'template'      => $set_tpl,
                         'categoryid'    => (int)$eventData,
-                        'lang'          => isset($serendipity['POST']['cat']['lang']) ? $serendipity['POST']['cat']['lang'] : 'default',
-                        'futureentries' => (int)$serendipity['POST']['cat']['futureentries'],
-                        'pass'          => isset($serendipity['POST']['cat']['pass']) ? $serendipity['POST']['cat']['pass'] : null,
-                        'sort_order'    => serendipity_db_escape_string($serendipity['POST']['cat']['sort_order']),
-                        'hide'          => $serendipity['POST']['cat']['hide']
+                        'lang'          => $serendipity['POST']['cat']['lang'] ?? 'default',
+                        'futureentries' => (int)($serendipity['POST']['cat']['futureentries'] ?? null),
+                        'pass'          => $serendipity['POST']['cat']['pass'] ?? null,
+                        'sort_order'    => serendipity_db_escape_string(($serendipity['POST']['cat']['sort_order'] ?? null)),
+                        'hide'          => $serendipity['POST']['cat']['hide'] ?? null
                     );
                     $this->setProps($eventData, $val);
                     // Update list of template categories, too.
