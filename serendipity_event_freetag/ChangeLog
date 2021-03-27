@@ -1,3 +1,7 @@
+5.05:
+-----
+ * Remove outdated js addLoadEvent() initializer for DOM ready vanilla function call
+
 5.04:
 -----
  * Check existing file first for 5.03 example cleanup task
