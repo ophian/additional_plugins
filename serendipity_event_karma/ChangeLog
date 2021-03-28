@@ -1,3 +1,7 @@
+2.19:
+-----
+ * Fix up an initialization check for PHP 8
+
 2.18:
 -----
  * Fix changed method naming in Core APIs for consistency

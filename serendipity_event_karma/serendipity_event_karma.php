@@ -44,7 +44,7 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '2.18');
+        $propbag->add('version',       '2.19');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1.0',
@@ -2120,7 +2120,7 @@ END_IMG_CSS;
                 $this->image_name = $base_image;
             } else {
                 $imagesize = @serendipity_getImageSize(dirname(__FILE__) . "/img/" . $base_image);
-                if ($imagesize['noimage']) {
+                if (isset($imagesize['noimage']) && $imagesize['noimage']) {
                     // Leave as default
                 } else {
                     // Set to valid image name
@@ -2131,7 +2131,7 @@ END_IMG_CSS;
         // Is the (possibly default) image valid?
         if ($this->image_name) {
             $imagesize = @serendipity_getImageSize(dirname(__FILE__) . "/img/" . $this->image_name);
-            if ($imagesize['noimage']) {
+            if (isset($imagesize['noimage']) && $imagesize['noimage']) {
                 // No valid image; use text-only
                 $this->image_name = '0';
             } else {
