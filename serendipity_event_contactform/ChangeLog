@@ -1,3 +1,7 @@
+1.37:
+-----
+ * Shorten configuration sent text box to a height of 6 rows
+
 1.36:
 -----
  * Fix 1.35 init fall back to nil
