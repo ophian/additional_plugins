@@ -1,3 +1,7 @@
+1.38:
+-----
+ * Improve lang [en, de] PLUGIN_CONTACTFORM_PAGETITLE and description
+
 1.37:
 -----
  * Shorten configuration sent text box to a height of 6 rows

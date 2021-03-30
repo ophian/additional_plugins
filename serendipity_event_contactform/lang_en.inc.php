@@ -9,14 +9,15 @@
 @define('PLUGIN_CONTACTFORM_TITLE', 'Contact Form');
 @define('PLUGIN_CONTACTFORM_TITLE_BLAHBLAH', 'Shows a email contactform on your blog as a static page. It can be accessed by either the custom permalink or by index.php?serendipity[subpage]=contactform. You can customize the look of the contact form by putting the plugin_contactform.tpl file into your template directory and modify it there. Captchas from the Spamblock plugin (if enabled) will be applied.');
 @define('PLUGIN_CONTACTFORM_PERMALINK', 'Permalink');
-@define('PLUGIN_CONTACTFORM_PAGETITLE', 'URL shorthand name (Backwards compatibility)');
+@define('PLUGIN_CONTACTFORM_PAGETITLE', 'URL shorthand name');
+@define('PLUGIN_CONTACTFORM_PAGETITLE_DESC', 'A one-word parameter title, see description for compatibility index.php?serendipity[subpage]=contactform above.');
 @define('PLUGIN_CONTACTFORM_PERMALINK_BLAHBLAH', 'Defines permalink for the URL. Needs the absolute HTTP path and needs to end with .htm or .html!');
 @define('PLUGIN_CONTACTFORM_EMAIL', 'Target E-Mail address');
 @define('PLUGIN_CONTACTFORM_INTRO', 'Introductory Text (optional)');
 @define('PLUGIN_CONTACTFORM_MESSAGE', 'Message');
 @define('PLUGIN_CONTACTFORM_SENT', 'Text after message has been sent');
 @define('PLUGIN_CONTACTFORM_SENT_HTML', 'Your message has been successfully mailed!');
-@define('PLUGIN_CONTACTFORM_ERROR_HTML', 'An error occured while posting the message!');
+@define('PLUGIN_CONTACTFORM_ERROR_HTML', 'An error occurred while posting the message!');
 @define('PLUGIN_CONTACTFORM_ERROR_DATA', 'Name, E-Mail and your message must not be an empty string.');
 @define('PLUGIN_CONTACTFORM_DYNAMIC_ERROR_DATA', 'A required field is missing.');
 @define('PLUGIN_CONTACTFORM_ARTICLEFORMAT', 'Format as article?');
