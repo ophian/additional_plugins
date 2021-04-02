@@ -2,7 +2,7 @@
 
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_TITLE', 'Spamschutz Biene (Honeypot, Verstecktes Captcha)');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_DESC',  'Implementiert Kommentar AntiSpam Maßnahmen, die einfach zu konfigurieren aber sehr effektiv sind.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_EXTRA_DESC',  '<strong>Installationshinweis</strong>: Es ist recht wichtig, dieses Plugin an die Spitze Deiner Plugin Liste zu verschieben, weil es dann am effektivsten arbeiten kann.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_EXTRA_DESC',  '<strong>Installationshinweis</strong>: Es ist recht wichtig, dieses Plugin an die Spitze der Plugin Liste zu verschieben, weil es dann am effektivsten arbeiten kann.');
 
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_PATH', 'Plugin Pfad');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_PATH_DESC', 'In normalen Installationen ist der Default die korrekte Einstellung.');
@@ -47,17 +47,17 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QT_CUSTOM', 'Eigene Fragen');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_DESC', 'Fortgeschrittene Konfigurationsoptionen für das verstecke Captcha. Wenn dieses nicht aktiviert ist, kann dieser Abschnitt getrost übersprungen werden.');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL', 'Methode für Abfrage der Antwort');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL_DESC', 'Wähle hier aus, wie die korrekte Antwort abgefragt werden soll. Bei Auswahl von "JSON" kann ein Ajax-Request an index.php/plugin/spamblockbeecaptcha abgesetzt werden, um die richtige Antwort zu erhalten. Die Auswahl "Smarty" wird die Antwort über die Smarty-Variable {$beeCaptchaAnswer} bereitstellen, während "Standard" den Wert in der Seite hartkodiert. ACHTUNG: ist "Smarty" ausgewählt, wird keinerlei zusätzliches CSS oder JavaScript eingebunden. Das Captcha-Feld muss also selbst befüllt und versteckt werden. "Smarty + Verschlüsselung" ist dasselbe wie "Smarty" mit dem Unterschied, dass die {$beeCaptchaAnswer} mit einer simplen XOR-Verschlüsselung verschleiert wurde. Der Entschlüsselungs-Key steht in der Variablen {$beeCaptchaScrambleKey}.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL_DESC', 'Wählen Sie hier aus, wie die korrekte Antwort abgefragt werden soll. Bei Auswahl von "JSON" kann ein Ajax-Request an index.php/plugin/spamblockbeecaptcha abgesetzt werden, um die richtige Antwort zu erhalten. Die Auswahl "Smarty" wird die Antwort über die Smarty-Variable {$beeCaptchaAnswer} bereitstellen, während "Standard" den Wert in der Seite hartkodiert. ACHTUNG: ist "Smarty" ausgewählt, wird keinerlei zusätzliches CSS oder JavaScript eingebunden. Das Captcha-Feld muss also selbst befüllt und versteckt werden. "Smarty + Verschlüsselung" ist dasselbe wie "Smarty" mit dem Unterschied, dass die {$beeCaptchaAnswer} mit einer simplen XOR-Verschlüsselung verschleiert wurde. Der Entschlüsselungs-Key steht in der Variablen {$beeCaptchaScrambleKey}.');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTION_TYPE', 'Art der Frage');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTION_TYPE_DESC', 'Spamschutz Biene kann automatisch simple Rechenaufgaben generieren. Es können aber auch eigene Fragen und Antworten angegeben werden. Wähle aus, was du bevorzugst.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTION_TYPE_DESC', 'Spamschutz Biene kann automatisch simple Rechenaufgaben generieren. Es können aber auch eigene Fragen und Antworten angegeben werden. Wählen Sie die bevorzugte aus.');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTIONS', 'Eigene Fragen');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_DEFAULT_QUESTIONS', "Frage1\nFrage2");
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTIONS_DESC', 'Wenn du eigene Fragen verwenden möchtest, gib diese hier an. Schreibe dabei eine Frage pro Zeile. Bevor der Benutzer das Formular absenden kann, muss er eine zufällig aus der Liste gewählte Frage beantworten.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTIONS_DESC', 'Wenn Sie eigene Fragen verwenden möchten, geben Sie diese hier an. Schreiben Sie dabei eine Frage pro Zeile. Bevor der Benutzer das Formular absenden kann, muss er eine zufällig aus der Liste gewählte Frage beantworten.');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWERS', 'Antworten auf die Fragen');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWERS_DESC', 'Dieses Feld enthält die korrekten Antworten auf die oben angegebenen Fragen. Gib pro Zeile eine Antwort an in derselben Reihenfolge, die auch die Fragen haben. Fragen, für die es keine Antworten gibt, werden ignoriert. Groß- und Kleinschreibung spielt keine Rolle (d.h. "Antwort" ist dasselbe wie "antwort".');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWERS_DESC', 'Dieses Feld enthält die korrekten Antworten auf die oben angegebenen Fragen. Geben Sie pro Zeile eine Antwort an in derselben Reihenfolge, die auch die Fragen haben. Fragen, für die es keine Antworten gibt, werden ignoriert. Groß- und Kleinschreibung spielt keine Rolle (d.h. "Antwort" ist dasselbe wie "antwort".');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_DEFAULT_ANSWERS', "Antwort1\nAntwort2");
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP', 'Reguläre Ausdrücke benutzen');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP_DESC', 'Gibt an, ob Perl-kompatible reguläre Ausdrücke (PCREs) für die Antworten verwendet werden sollen. Diese können dazu benutzt werden, mehrere Varianten einer Antwort zuzulassen. Jeder Antwortzeile sollte dabei dem Muster /pattern/:Antwort entsprechen. ACHTUNG: Aktiviere diese Option nur, wenn du weißt, was du tust. Ein ungültiger regulärer Ausdruck wird Validitäts-Prüfungen fehlschlagen lassen und könnte dein Blog in wenigen Fällen einer sogenannten Denial-of-Service-Attacke aussetzen. Antworten länger als 1000 Zeichen werden abgewiesen, wenn reguläre Ausdrücke eingeschaltet sind.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP_DESC', 'Gibt an, ob Perl-kompatible reguläre Ausdrücke (PCREs) für die Antworten verwendet werden sollen. Diese können dazu benutzt werden, mehrere Varianten einer Antwort zuzulassen. Jeder Antwortzeile sollte dabei dem Muster /pattern/:Antwort entsprechen. ACHTUNG: Aktiviere Sie diese Option nur, wenn Sie genau wissen was Sie tun. Ein ungültiger regulärer Ausdruck wird Validitäts-Prüfungen fehlschlagen lassen und könnte das Blog in wenigen Fällen einer sogenannten Denial-of-Service-Attacke aussetzen. Antworten länger als 1000 Zeichen werden abgewiesen, wenn reguläre Ausdrücke eingeschaltet sind.');
 
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_0', 'Null');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_1', 'Eins');
@@ -75,20 +75,20 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_QUEST', 'Was ist');
 
 @define('PLUGIN_SPAMBLOCK_BEE_TITLE', 'Spam Report');
-@define('PLUGIN_SPAMBLOCK_BEE_DESC', 'Stellt eine Statistik dar über Kommentar Spam Einträge, wenn Deine AntiSpam Plugins in die spamblocklog Tabelle loggen.');
+@define('PLUGIN_SPAMBLOCK_BEE_DESC', 'Stellt eine Statistik dar über Kommentar Spam Einträge, wenn die AntiSpam Plugins in die spamblocklog Tabelle loggen.');
 @define('PLUGIN_SPAMBLOCK_BEE_DAYS', 'Anzuzeigende Tage');
-@define('PLUGIN_SPAMBLOCK_BEE_DAYS_DESC', 'Der Report wird für die letzten X Tage erstellt. Hier kannst Du mehrere Tage Komma separiert einstellen, für die jeweils ein Report dargestellt werden soll.');
+@define('PLUGIN_SPAMBLOCK_BEE_DAYS_DESC', 'Der Report wird für die letzten X Tage erstellt. Hier können mehrere Tage Komma separiert einstellt werden, für die jeweils ein Report dargestellt werden soll.');
 @define('PLUGIN_SPAMBLOCK_BEE_DBSEARCHES', 'Datenbank Suchen');
-@define('PLUGIN_SPAMBLOCK_BEE_DBSEARCHES_DESC', 'Dieses Plugin durchsucht die spamblocklog-Tabelle. Hier kannst Du Suchen für Deine AntiSpam Maßnamen einstellen, über die gezählt werden soll. In jede Zeile kommt eine Einstellung, Format ist DeinNameFürAntiSpamArt:Suchbegriff. Das Zeichen % kann als Wildcard benutzt werden. Beispiel: "BayesPlugin:%Bayes%" wird alle Einträge zählen, die "Bayes" irgendwo in ihrem Titel haben und sie als "BayesPlugin" im Report darstellen.');
+@define('PLUGIN_SPAMBLOCK_BEE_DBSEARCHES_DESC', 'Dieses Plugin durchsucht die spamblocklog-Tabelle. Hier kann man Suchen für bestimmte AntiSpam Maßnahmen einstellen, die gezählt werden sollen. In jede Zeile kommt eine Einstellung und ihr Format ist NameFürAntiSpamArt:Suchbegriff. Das Zeichen % kann als Wildcard benutzt werden. Beispiel: "BayesPlugin:%Bayes%" wird alle Einträge zählen, die "Bayes" irgendwo in ihrem Titel haben und sie als "BayesPlugin" im Report darstellen.');
 @define('PLUGIN_SPAMBLOCK_BEE_LOGGEDIN', 'Nur für eingeloggte Benutzer');
-@define('PLUGIN_SPAMBLOCK_BEE_LOGGEDIN_DESC', 'Wenn Du dies anschaltest, dann können nur eingeloggte Benutzer des Blogs die Statistik in der Seitenleiste sehen.');
+@define('PLUGIN_SPAMBLOCK_BEE_LOGGEDIN_DESC', 'Wenn Sie dies anschalten können nur eingeloggte Benutzer des Blogs die Statistik in der Seitenleiste sehen.');
 @define('PLUGIN_SPAMBLOCK_BEE_CACHEMINS', 'Reporting Cache');
 @define('PLUGIN_SPAMBLOCK_BEE_CACHEMINS_DESC', 'Das Erzeugen des Reports erzeugt Last auf der Datenbank, deshalb sollte der Report gecached werden. Hier wird eingestellt, wie viele Minuten mindestens gewartet werden soll, bevor ein neuer Report erstellt wird.');
 @define('PLUGIN_SPAMBLOCK_BEE_TODAY', 'Heute:');
 @define('PLUGIN_SPAMBLOCK_BEE_LAST_X_DAYS', 'Die letzten %d Tage:');
 
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW', 'Frontend Ausgabe des Bee javascripts');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_DESC', 'Nur auf Eintrags-Kommentarseiten, nur auf Kontaktform (Plugin) Seite, oder auf Beiden (Standard).');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_DESC', 'Nur auf Eintrags-Kommentarseiten, nur auf Kontaktform (Plugin) Seite, oder auf beiden (Standard).');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_ENTRY', 'Eintrag');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_CONTACTFORM', 'Kontaktform');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_SHOW_BOTH', 'Beide');
