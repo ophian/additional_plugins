@@ -1,3 +1,7 @@
+1.39:
+-----
+ * Improve lang [en, de] head description for "bee" and PLUGIN_CONTACTFORM_PAGETITLE_DESC for contactform specifics.
+
 1.38:
 -----
  * Improve lang [en, de] PLUGIN_CONTACTFORM_PAGETITLE and description

@@ -1,10 +1,10 @@
 <?php
 
 @define('PLUGIN_CONTACTFORM_TITLE', 'Kontaktformular');
-@define('PLUGIN_CONTACTFORM_TITLE_BLAHBLAH', 'Stellt ein E-Mail Kontaktformular auf Ihrem Blog als statische Seite dar. Darauf kann entweder mittels des eigenen Permalinks oder mittels index.php?serendipity[subpage]=contactform aufgerufen werden. Die Darstellung kann durch Smarty Templates angepasst werden, indem die Datei plugin_contactform.tpl in Ihren Templateordner kopiert und modifiziert wird. Captchas des Spamblock-Plugins (falls aktiviert) werden angewendet.');
+@define('PLUGIN_CONTACTFORM_TITLE_BLAHBLAH', 'Stellt ein E-Mail Kontaktformular auf Ihrem Blog als statische Seite dar. Darauf kann entweder durch den (virtuellen) Permalink oder aus Kompatibilitätsgründen mittels index.php?serendipity[subpage]=contactform zugegriffen werden. Die Darstellung kann durch Smarty Templates angepasst werden, indem die Datei plugin_contactform.tpl in Ihren Templateordner kopiert und modifiziert wird. Captchas der Spamblock-Plugins (falls aktiviert) werden angewendet.');
 @define('PLUGIN_CONTACTFORM_PERMALINK', 'Permalink');
 @define('PLUGIN_CONTACTFORM_PAGETITLE', 'URL-Zeiger (Titel) der Seite');
-@define('PLUGIN_CONTACTFORM_PAGETITLE_DESC', 'Kurzer (Ein-Wort) URL-Titel der Seite, siehe obige Beschreibung index.php?serendipity[subpage]=contactform.');
+@define('PLUGIN_CONTACTFORM_PAGETITLE_DESC', 'Kurzer (Ein-Wort) URL-Titel der Seite, siehe obige Beschreibung index.php?serendipity[subpage]=contactform. Dieser Zeiger wird auch als Sprung Titel im Banner des Frontends verwendet. Der im Frontend hervorgehobene Titel "'.PLUGIN_CONTACTFORM_TITLE.'" des (optionalen) Einführungstextes (s.u.), entstammt jedoch einer Sprachkonstante. Diesen Titel können Sie nur individualisieren, in dem Sie aus Theme-Anpassungsgründen die Template Datei (meist: "plugin_contactform.tpl") aus dem Rückfall Zugriffs-Mechanismus nach dieser Reihenfolge heraus kopieren, soweit darin vorhanden: Ein mögliches Engine Parent-Theme, das augenblickliche Serendipity Standard-Theme ('.$serendipity['defaultTemplate'].'), das Serendipity Default-Theme (default), oder bzw. zuletzt aus dem Plugin Ordner selbst.');
 @define('PLUGIN_CONTACTFORM_PERMALINK_BLAHBLAH', 'Gibt den Permalink der statischen Seite an. Dieser muss eine absolute Pfadangabe vom HTTP-Root ab sein und die Dateiendung .htm oder .html besitzen!');
 @define('PLUGIN_CONTACTFORM_EMAIL', 'E-Mail Adresse für Kontaktmails');
 @define('PLUGIN_CONTACTFORM_INTRO', 'Einführungstext (optional)');
