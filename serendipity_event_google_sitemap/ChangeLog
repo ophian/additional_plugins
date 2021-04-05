@@ -1,6 +1,7 @@
 0.65:
 -----
  * Fix a non-isset parameter $max variable for PHP 8
+ * Check $cur['timestamp'] for PHP 8
  * Set PHP requirement to PHP 7
 
 0.64:

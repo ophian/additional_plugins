@@ -552,7 +552,7 @@ class serendipity_event_google_sitemap extends serendipity_event
             foreach($static_pages AS $cur) {
                 $path_quoted = preg_quote($serendipity['serendipityHTTPPath'], '#');
                 $url = $serendipity['baseURL'] . preg_replace("#$path_quoted#", '', $cur['permalink'],1);
-                $cur_time = ($cur['timestamp'] == 0) ? null : (int)$cur['timestamp'];
+                $cur_time = (!isset($cur['timestamp']) || $cur['timestamp'] == 0) ? null : (int)$cur['timestamp'];
                 $this->addtoxml($sitemap_xml, $url, $cur_time, 0.7);
             }
         }
