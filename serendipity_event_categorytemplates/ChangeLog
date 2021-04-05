@@ -1,3 +1,7 @@
+2.1.1:
+-----
+ * Fixup some bad plugin configuration styles
+
 2.1.0
 -----
  * Fixup some more variable initializations for PHP 8
