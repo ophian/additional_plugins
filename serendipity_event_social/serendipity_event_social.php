@@ -18,7 +18,7 @@ class serendipity_event_social extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SOCIAL_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein');
-        $propbag->add('version',       '0.26');
+        $propbag->add('version',       '0.27');
         $propbag->add('requirements',  array(
             'serendipity' => '2.9',
         ));
@@ -175,7 +175,7 @@ class serendipity_event_social extends serendipity_event
 
                 case 'frontend_header':
                     // Only emit in Single Entry Mode
-                    if (!isset($serendipity['GET']['id']) && !is_numeric($serendipity['GET']['id']) && $serendipity['view'] != 'entry') {
+                    if ((!isset($serendipity['GET']['id']) || !is_numeric($serendipity['GET']['id'])) && $serendipity['view'] != 'entry') {
                         return;
                     }
                     // Facebook & Twitter can profit from having the og-properties set
