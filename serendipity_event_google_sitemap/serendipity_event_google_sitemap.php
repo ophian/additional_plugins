@@ -26,7 +26,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris');
-        $propbag->add('version', '0.64');
+        $propbag->add('version', '0.65');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -36,7 +36,10 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('stackable', false);
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
         $propbag->add('configuration', array('report', 'url', 'gzip_sitemap', 'avoid_noindex', 'types_to_add', 'gnews', 'gnews_single', 'custom', 'custom2', 'gnews_name', 'gnews_subscription', 'gnews_genre'));
-        $propbag->add('requirements',  array('serendipity' => '1.6'));
+        $propbag->add('requirements',  array(
+                'serendipity' => '1.6',
+                'php' => '7.0')
+        );
     }
 
     function introspect_config_item($name, &$propbag)
@@ -174,7 +177,7 @@ class serendipity_event_google_sitemap extends serendipity_event
 
         $str .= "\t<url>\n";
         $str .= "\t\t<loc>$url</loc>\n";
-        if ($lastmod!=null) {
+        if ($lastmod != null) {
             $str_lastmod = gmstrftime('%Y-%m-%dT%H:%M:%SZ', $lastmod); // 'Z' does mean UTC in W3C Date/Time
             $str .= "\t\t<lastmod>$str_lastmod</lastmod>\n";
             if ($this->gnewsmode) {
@@ -520,6 +523,7 @@ class serendipity_event_google_sitemap extends serendipity_event
 
         // add the global newsfeed URLs
         if ($this->should_add('sm_feeds')) {
+            $max = $max ?? null;
             $filelist = array('/index.rss', '/index.rss1', '/index.rss2', '/atom.xml');
             foreach($filelist AS $curfile) {
                 $url = serendipity_rewriteURL(PATH_FEEDS . $curfile);
