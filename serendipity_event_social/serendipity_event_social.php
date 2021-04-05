@@ -18,7 +18,7 @@ class serendipity_event_social extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SOCIAL_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein');
-        $propbag->add('version',       '0.27');
+        $propbag->add('version',       '0.28');
         $propbag->add('requirements',  array(
             'serendipity' => '2.9',
         ));
@@ -147,10 +147,14 @@ class serendipity_event_social extends serendipity_event
                     $twitter_via = $this->get_config('twitter_via', 'none');
                     if ($twitter_via != 'none') {
                         $twitter_via_tag = ' data-twitter-via="' . str_replace('@', '', $twitter_via) .'"';
+                    } else {
+                        $twitter_via_tag = '';
                     }
                     $backend = $this->get_config('backend', 'none');
                     if ($backend != 'none') {
                         $backend_tag = ' data-backend-url="' . $backend .'"';
+                    } else {
+                        $backend_tag = '';
                     }
                     $theme = $this->get_config('theme');
                     $lang = $this->get_config('lang', 'en');
