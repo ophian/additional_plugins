@@ -18,7 +18,7 @@ class serendipity_event_social extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SOCIAL_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein');
-        $propbag->add('version',       '0.28');
+        $propbag->add('version',       '0.29');
         $propbag->add('requirements',  array(
             'serendipity' => '2.9',
         ));
@@ -143,6 +143,8 @@ class serendipity_event_social extends serendipity_event
                         }
                         // when sharing on the frontpage, at least the twitter button is using the page title instead of the entry title, so we set that manually
                         $hardcoded_title = ' data-title="' . $eventData['title'] .'"';
+                    } else {
+                        $hardcoded_title = '';
                     }
                     $twitter_via = $this->get_config('twitter_via', 'none');
                     if ($twitter_via != 'none') {
@@ -199,7 +201,7 @@ class serendipity_event_social extends serendipity_event
                         echo '    <meta name="twitter:card" content="summary" />' . "\n";
                         echo '    <meta property="og:title" content="' . serendipity_specialchars($entry['title'], null, LANG_CHARSET, false) . '" />' . "\n";
 
-                        $meta_description = $entry['properties']['meta_description'];
+                        $meta_description = $entry['properties']['meta_description'] ?? '';
                         if (empty($meta_description)) {
                             $description_body = $entry['body'];
                             if (isset($GLOBALS['entry'][0]['plaintext_body'])) {
