@@ -259,7 +259,6 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
 
         $sbl_bname  = basename($image); // to get base file name w/ ext
         $sbl_vpath  = str_replace($sbl_bname, '', $image); // get file path
-        $sbl_vbext  = pathinfo($image, PATHINFO_EXTENSION); // get extension
         $sbl_fname  = pathinfo($image, PATHINFO_FILENAME); // get file name w/o extension
         $sbl_rpath  = $sbl_vpath . '.v/' . $sbl_fname . '.webp'; // the relative document root image filepath
         $image_webp = file_exists(str_replace($serendipity['serendipityHTTPPath'], '', $serendipity['serendipityPath']) . $sbl_rpath) ? $sbl_rpath : null; // file exist needs full path to check
