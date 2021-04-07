@@ -19,10 +19,10 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
             $propbag->add('description',   PLUGIN_SIDEBARLOGO_DESC);
             $propbag->add('stackable',     true);
             $propbag->add('author',        PLUGIN_SIDEBARLOGO_AUTH);
-            $propbag->add('version',       '0.5');
-            $propbag->add('requirements',  array('serendipity' => '1.6',
-                                                 'smarty'      => '2.6.7',
-                                                 'php'         => '4.1.0'
+            $propbag->add('version',       '0.6');
+            $propbag->add('requirements',  array('serendipity' => '3.0',
+                                                 'smarty'      => '3.1',
+                                                 'php'         => '7.0'
                                                  ));
 
             $propbag->add('configuration', array('title',
@@ -219,9 +219,9 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
         $image              = $this->get_config('image');
         $imagewidth         = $this->get_config('imagewidth');
         $imageheight        = $this->get_config('imageheight');
-        $imagetext          = $this->get_config('imagetext');
+        $imagetext          = $this->get_config('imagetext') ?? '';
         $description        = $this->get_config('description');
-        $imagestyle         = $this->get_config('imagestyle');
+        $imagestyle         = $this->get_config('imagestyle') ?? '';
         $descriptionstyle   = $this->get_config('descriptionstyle');
         $sitename           = $this->get_config('sitename');
         $sitenamestyle      = $this->get_config('sitenamestyle');
@@ -237,14 +237,16 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
         // prepare for output
         $sequence           = explode(",", $sequence);
 
-        if ($imagewidth != "")
-        {
+        if ($imagewidth != "") {
             $iwidth = "width='".$imagewidth."'";
+        } else {
+            $iwidth = '';
         }
 
-        if ($imageheight != "")
-        {
+        if ($imageheight != "") {
             $iheight = "height='".$imageheight."'";
+        } else {
+            $iheight = '';
         }
 
         $imagestyle = $this->generate_style_attribute($imagestyle);
@@ -255,12 +257,19 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
         $copyrightstyle = $this->generate_style_attribute($copyrightstyle);
         $delimiterstyle = $this->generate_style_attribute($delimiterstyle);
 
+        $sbl_bname  = basename($image); // to get base file name w/ ext
+        $sbl_vpath  = str_replace($sbl_bname, '', $image); // get file path
+        $sbl_vbext  = pathinfo($image, PATHINFO_EXTENSION); // get extension
+        $sbl_fname  = pathinfo($image, PATHINFO_FILENAME); // get file name w/o extension
+        $sbl_rpath  = $sbl_vpath . '.v/' . $sbl_fname . '.webp'; // the relative document root image filepath
+        $image_webp = file_exists(str_replace($serendipity['serendipityHTTPPath'], '', $serendipity['serendipityPath']) . $sbl_rpath) ? $sbl_rpath : null; // file exist needs full path to check
+
         // output
         foreach( $sequence AS $val ) {
             switch( $val ) {
                 case 'image':
                     if ($image != "")
-                        echo "<img ".$iwidth." ".$iheight." src='".$image."' alt='".$imagetext."' ".$imagestyle."/>";
+                        echo '<picture><source class="sidebarlogo_img" type="image/webp" srcset="'.$image_webp.'" alt="'.$imagetext.'"/><img '.$iwidth.' '.$iheight.' src="'.$image.'" alt="'.$imagetext.'" '.$imagestyle.'/></picture>';
                     break;
 
                 case 'description':

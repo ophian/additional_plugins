@@ -1,0 +1,10 @@
+0.6:
+-----
+
+ * Raise requirements
+ * Allow picture sets with WebP
+ * Fix some variable inits for PHP 8
+
+0.5:
+----
+ * ...
