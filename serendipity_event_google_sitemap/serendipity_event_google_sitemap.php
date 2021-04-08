@@ -26,7 +26,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris');
-        $propbag->add('version', '0.65');
+        $propbag->add('version', '0.66');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -90,7 +90,7 @@ class serendipity_event_google_sitemap extends serendipity_event
                 $propbag->add('description', PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_DESC);
                 $propbag->add('select_values', $types);
                 $propbag->add('select_size', 6);
-                $propbag->add('default', implode(array_keys($types), '^'));
+                $propbag->add('default', implode('^', array_keys($types)));
                 break;
 
             case 'gnews_subscription':
@@ -611,10 +611,10 @@ class serendipity_event_google_sitemap extends serendipity_event
                         $serendipity['baseURL'] = $this->get_BaseURL();
                     }
 
-                    $this->write_sitemap('sitemap.xml', $eventData);
+                    $this->write_sitemap($eventData, 'sitemap.xml');
 
                     if (serendipity_db_bool($this->get_config('gnews'))) {
-                        $this->write_sitemap('news_sitemap.xml', $eventData, true);
+                        $this->write_sitemap($eventData, 'news_sitemap.xml', true);
                     }
 
                     // restore baseURL (see above)
@@ -632,7 +632,7 @@ class serendipity_event_google_sitemap extends serendipity_event
     /**
      *
      */
-    function write_sitemap($basefilename = 'sitemap.xml', &$eventData, $gnewsmode = false)
+    function write_sitemap(&$eventData, $basefilename = 'sitemap.xml', $gnewsmode = false)
     {
         global $serendipity;
 
