@@ -1,3 +1,8 @@
+1.4.3:
+------
+
+ * Fix a frontend footer variable init check for PHP 8
+
 1.4.2:
 ------
 
