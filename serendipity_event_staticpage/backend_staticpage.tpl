@@ -1,4 +1,4 @@
-{* backend_staticpage template file v. 1.35, 2021-03-12 *}
+{* backend_staticpage template file v. 1.36, 2021-04-13 *}
 
 <!-- backend_staticpage.tpl START -->
 
@@ -110,7 +110,7 @@
     {if isset($sp_pageadd_plugins) AND is_array($sp_pageadd_plugins)}
 
     <form action="serendipity_admin.php" method="post" name="serendipityPlugins">
-        <div>
+      <div>
         <input type="hidden" name="serendipity[adminModule]" value="event_display">
         <input type="hidden" name="serendipity[adminAction]" value="staticpages">
         <input type="hidden" name="serendipity[staticpagecategory]" value="pageadd">
@@ -120,7 +120,7 @@
     {/foreach}
 
         <input type="submit" name="serendipity[typeSubmit]" class="input_button state_submit" value="{$CONST.SAVE}">
-        </div>
+      </div>
     </form>
 
     {/if} {* is_array($sp_pageadd_plugins) end *}
@@ -179,6 +179,7 @@
         <input type="hidden" name="serendipity[adminModule]" value="event_display">
         <input type="hidden" name="serendipity[adminAction]" value="staticpages">
         <input type="hidden" name="serendipity[staticpagecategory]" value="pages">
+        {$sp_entry_formtoken}
     </div>
 
     {if isset($sp_cookie_value)}
@@ -276,7 +277,7 @@
     <div class="sp_entries_pane {cycle values="odd,even"}{if $entry@last} sp_close{/if}">
         <ul id="sp_entries_list" class="plainList{if $entry['parent_id'] > 0} sp_isChild{/if}">
             <li id="sple{$entry['id']}" class="clearfix">
-                <h3>{if $entry['parent_id'] > 0}<span class="entry_status sp_ptree" title="parent static page ID">#{$entry['parent_id']}</span><span class="icon-right-dir sp_ctree" aria-hidden="true"></span>{/if}{if empty($entry['headline'])}<span class="five"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="tomato" class="bi bi-cone-striped" viewBox="0 0 16 16"><title id="title">{$CONST.STATICPAGE_PAGETITLE}</title><path d="M9.97 4.88l.953 3.811C10.158 8.878 9.14 9 8 9c-1.14 0-2.159-.122-2.923-.309L6.03 4.88C6.635 4.957 7.3 5 8 5s1.365-.043 1.97-.12zm-.245-.978L8.97.88C8.718-.13 7.282-.13 7.03.88L6.274 3.9C6.8 3.965 7.382 4 8 4c.618 0 1.2-.036 1.725-.098zm4.396 8.613a.5.5 0 0 1 .037.96l-6 2a.5.5 0 0 1-.316 0l-6-2a.5.5 0 0 1 .037-.96l2.391-.598.565-2.257c.862.212 1.964.339 3.165.339s2.303-.127 3.165-.339l.565 2.257 2.391.598z"/></svg></span> {/if}<a href="?serendipity[action]=admin&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pages&amp;serendipity[staticid]={$entry['id']}" title="#{$entry['id']} {$entry['pagetitle']|escape}">{if !empty($entry['headline'])}{$entry['headline']|truncate:50}{else}{$entry['pagetitle']|escape}{/if}</a></h3>
+                <h3>{if $entry['parent_id'] > 0}<span class="entry_status sp_ptree" title="parent static page ID">#{$entry['parent_id']}</span><span class="icon-right-dir sp_ctree" aria-hidden="true"></span>{/if}{if empty($entry['headline'])}<span class="five"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="tomato" class="bi bi-cone-striped" viewBox="0 0 16 16"><title id="title">{$CONST.STATICPAGE_PAGETITLE}</title><path d="M9.97 4.88l.953 3.811C10.158 8.878 9.14 9 8 9c-1.14 0-2.159-.122-2.923-.309L6.03 4.88C6.635 4.957 7.3 5 8 5s1.365-.043 1.97-.12zm-.245-.978L8.97.88C8.718-.13 7.282-.13 7.03.88L6.274 3.9C6.8 3.965 7.382 4 8 4c.618 0 1.2-.036 1.725-.098zm4.396 8.613a.5.5 0 0 1 .037.96l-6 2a.5.5 0 0 1-.316 0l-6-2a.5.5 0 0 1 .037-.96l2.391-.598.565-2.257c.862.212 1.964.339 3.165.339s2.303-.127 3.165-.339l.565 2.257 2.391.598z"/></svg></span> {/if}<a href="?serendipity[action]=admin&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pages&amp;serendipity[staticid]={$entry['id']}&amp;{$sp_listentries_urltoken}" title="#{$entry['id']} {$entry['pagetitle']|escape}">{if !empty($entry['headline'])}{$entry['headline']|truncate:50}{else}{$entry['pagetitle']|escape}{/if}</a></h3>
                 <div class="clearfix spnav spmod">{if NOT empty($entry.pass)}<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title id="title">lock protected</title><path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"/><path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/></svg>{/if} <span title="{$CONST.LAST_UPDATED}: {$entry['last_modified']|formatTime:'%Y-%m-%d'}">{if $entry['timestamp'] <= ($entry['last_modified'] - 1800)} <svg aria-hidden="true" class="icon icon-clock"><use xlink:href="#icon-clock"></use></svg>{/if} {$entry['timestamp']|formatTime:'%Y-%m-%d'}</span></div>
             </li>
             <li class="clearfix">
@@ -291,8 +292,10 @@
                         <input type="hidden" name="serendipity[adminModule]" value="event_display">
                         <input type="hidden" name="serendipity[adminAction]" value="staticpages">
                         <input type="hidden" name="serendipity[staticpagecategory]" value="pages">
+                        {$sp_listentries_frmtoken}
                         <input type="hidden" name="serendipity[staticpage]" value="{$entry['id']}">
                         <input type="hidden" name="serendipity[listentries_formSubmit]" value="true">{* necessary to open form on entrylist POST submits *}
+
                         <input type="submit" name="serendipity[staticSubmit]" class="icon-edit sp-btn sp-btn-edit" value="&#xe803;" title="{$CONST.EDIT} #{$entry['id']} ({$entry['pagetitle']|escape})">
                         <input type="submit" name="serendipity[staticDelete]" class="icon-trash sp-btn sp-btn-purge" value="&#xe80d;" onclick="return confirm('{$CONST.DELETE_SURE|sprintf:"{$entry['id']} ({$entry['pagetitle']|escape})"}');" title="{$CONST.DELETE} #{$entry['id']} ({$entry['pagetitle']|escape})">
                     </div>
@@ -323,6 +326,7 @@
         {$CONST.NEW_ENTRY} <em>{$CONST.WORD_OR|lower}</em> {$CONST.EDIT_ENTRY}: #<input class="input_textbox" type="text" size="3" name="serendipity[staticpage]">
         <input type="hidden" name="serendipity[listentries_formSubmit]" value="true">{* necessary to open form on entrylist post submits *}
         <input type="hidden" name="serendipity[pagetype]" value="__new">
+        {$sp_entry_formtoken}
         <input class="input_button state_submit" type="submit" name="serendipity[staticSubmit]" value="{$CONST.GO}">
     </div>
     </form>

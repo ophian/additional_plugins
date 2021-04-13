@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.24');
+        $propbag->add('version', '6.25');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -1370,8 +1370,9 @@ class serendipity_event_staticpage extends serendipity_event
     {
         global $serendipity;
 
+        $urltoken = serendipity_setFormToken('url');
         $adminlink = array(
-            'link_edit' => $serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[action]=admin&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticid]='.(int)$this->getPageID(),
+            'link_edit' => $serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[action]=admin&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticid]='.(int)$this->getPageID() . '&amp;' . $urltoken,
             'link_name' => STATICPAGE_LINKNAME,
             'page_user' => $this->checkPageUser($this->staticpage['authorid'])
         );
@@ -2776,7 +2777,7 @@ class serendipity_event_staticpage extends serendipity_event
                             serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}staticpages WHERE id = ".(int)$values['id']);
                         }
                     }
-                    if (is_array($serendipity['POST']['externalPlugins']) && count($serendipity['POST']['externalPlugins'])) {
+                    if (isset($serendipity['POST']['externalPlugins']) && is_array($serendipity['POST']['externalPlugins']) && count($serendipity['POST']['externalPlugins'])) {
                         foreach($serendipity['POST']['externalPlugins'] AS $plugin) {
                             $this->staticpage =  array(
                                 'permalink'   => $plugins[$plugin]['link'],
@@ -2806,6 +2807,12 @@ class serendipity_event_staticpage extends serendipity_event
             case 'pages':
             default:
 
+                if (isset($serendipity['POST']['staticpage']) && $serendipity['POST']['staticpage'] != '__new' && !serendipity_checkFormToken(false)) {
+                    $serendipity['smarty']->assign('sp_listentries_entries', []);
+                    echo '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> <strong>Error:</strong> token does not match!</span>';
+                    break;
+                }
+                $serendipity['smarty']->assign('sp_entry_formtoken', str_replace(' />', '>', rtrim(serendipity_setFormToken())));
                 $serendipity['smarty']->assign('sp_listpp', (int)$this->get_config('listpp', '6')); // is case 'pagedit' and '' = default by backend sidebar link
                 if (isset($serendipity['POST']['staticpage']) && $serendipity['POST']['staticpage'] != '__new') {
                     $this->fetchStaticPage($serendipity['POST']['staticpage']);
@@ -2827,7 +2834,7 @@ class serendipity_event_staticpage extends serendipity_event
                         }
                     }
 
-                    if ($serendipity['POST']['staticpage'] == '__new' && (empty($serendipity['POST']['plugin']['headline']) && in_array($serendipity['POST']['plugin']['pagetitle'], ['', 'pagetitle'])) || $serendipity['POST']['plugin']['permalink'] == $serendipity['serendipityHTTPPath'] . 'pages/pagetitle.html' && empty($serendipity['POST']['plugin']['content'])) {
+                    if ($serendipity['POST']['staticpage'] == '__new' && ((empty($serendipity['POST']['plugin']['headline']) && in_array($serendipity['POST']['plugin']['pagetitle'], ['', 'pagetitle'])) || ($serendipity['POST']['plugin']['permalink'] == $serendipity['serendipityHTTPPath'] . 'pages/pagetitle.html' && empty($serendipity['POST']['plugin']['content'])))) {
                         $serendipity['smarty']->assign('sp_defpages_upd_result', STATICPAGE_FORM_FAIL);
                     } else {
                         $result = $this->updateStaticPage();
@@ -2958,7 +2965,9 @@ class serendipity_event_staticpage extends serendipity_event
                     } else {
                         $serendipity['smarty']->assign( array (
                                      'sp_listentries_entries' => $this->fetchStaticPages(),
-                                     'sp_listentries_authors' => $this->selectAuthors()
+                                     'sp_listentries_authors' => $this->selectAuthors(),
+                                     'sp_listentries_urltoken' => serendipity_setFormToken('url'),
+                                     'sp_listentries_frmtoken' => str_replace(' />', '>', rtrim(serendipity_setFormToken()))
                         ));
                     }
                     // TODO: possibly here, real entryList pagination... (only in case there are too much entries; but then also needed for selectbox default option) - via php and external_plugins?

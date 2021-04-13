@@ -1,7 +1,7 @@
 CUSTOM EXAMPLE USAGE:
 
 This example here enables to use a custom CSS-BODY-ID to render the page. Or you can specify, which sidebar you want to see, when this staticpage is rendered.
-Example parts for 2k11/index.tpl:
+Example parts for 2k11/index.tpl (*):
 
 <body{if isset($template_option.webfonts) AND $template_option.webfonts != 'none'} class="{$template_option.webfonts}{if NOT empty($staticpage_custom.css_class)} {$staticpage_custom.css_class}{/if}"{else}{if NOT empty($staticpage_custom.css_class)} class="{$staticpage_custom.css_class}"{/if}>
 
@@ -31,6 +31,8 @@ Example parts for 2k11/index.tpl:
         {/if}
     {/if}
     </div>
+
+[*] Check that you don't use constants. i.e. like the here used old standard prefixed TWOK11_SIDEBAR, that don't exist in your themes fallback chain.
 
 --------------------------------------------------------------------------------------------------------
 

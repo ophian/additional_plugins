@@ -1,3 +1,10 @@
+6.25:
+-----
+ * Tokenize backend edit links, in special for frontend back links
+ * Add a note to README_FOR_CUSTOM_FIELDS.txt
+ * Fix an uninitialized variable check for PHP 8
+ * Fix a special cased conditional wrong XOR for new vs existing pages
+
 6.24:
 1.32: (sidebar)
 ---------------
