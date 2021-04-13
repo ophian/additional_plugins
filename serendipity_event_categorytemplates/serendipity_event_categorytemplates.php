@@ -26,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.1.1');
+        $propbag->add('version',       '2.1.2');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.3.0'
@@ -1056,7 +1056,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     // Get the category in question
                     $cid = $this->getID();
 
-                    if ($cid != 'default') {
+                    if ($cid !== 'default') {
                         $fc  = $this->get_config('fixcat', 'false');
                         if ((string)$fc === 'hard') {
                             $fc = 'true';
@@ -1070,7 +1070,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         // Reset s9y to use the category's properties
                         $serendipity['fetchLimit']        = $this->fetchLimit($cid, $serendipity['fetchLimit']);
                         $serendipity['showFutureEntries'] = $this->fetchFuture($cid, $serendipity['showFutureEntries']);
-                        $serendipity['template']          = $this->fetchTemplate($cid, $serendipity['template']);
+                        $serendipity['template']          = $this->fetchTemplate($cid, $serendipity['template']); // here $this->usesDefaultTemplate gets defined
                         $this->sort_order                 = $this->fetchSortOrder($cid, $this->get_config('sort_order'));
 
                         // Fetch an engine template if set
@@ -1097,7 +1097,9 @@ class serendipity_event_categorytemplates extends serendipity_event
                         }
 
                         // Set the template stylesheet
-                        $serendipity['smarty_vars']['head_link_stylesheet'] = serendipity_rewriteURL('plugin/ct' . $serendipity['template'] . '_' . $cid);
+                        if (!$this->usesDefaultTemplate) {
+                            $serendipity['smarty_vars']['head_link_stylesheet'] = serendipity_rewriteURL('plugin/ct' . $serendipity['template'] . '_' . $cid);
+                        }
                     }
                     break;
 
