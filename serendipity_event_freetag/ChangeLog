@@ -1,3 +1,8 @@
+5.06:
+-----
+ * Remove Serendipity pre 2.0 mapper helper methods
+ * Improve sidebar plugin sidebar template description
+
 5.05:
 -----
  * Remove outdated js addLoadEvent() initializer for DOM ready vanilla function call

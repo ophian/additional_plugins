@@ -79,8 +79,8 @@
 @define('PLUGIN_EVENT_FREETAG_TAGLINK', 'Odkaz na klíčové slovo');
 @define('PLUGIN_EVENT_FREETAG_CAT2TAG', 'Vytvořit klíčová slova přo všechny přiřazené kategorie?');
 @define('PLUGIN_EVENT_FREETAG_CAT2TAG_DESC', 'Pokud je povoleno, názvy všech kategorií, do kterých je příspěvek zařazen, budou přidány jako klíčová slova. Můžete nastavit přiřazení názvů kategorií jako klíčových slov pro všechny již existující příspěvky pomocí menu "Správa klíčových slov" v Administrativní sekci.');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Šablona postranního sloupce');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Pokud je nastaveno, je šablona použita k vykreslení postranního sloupce s klíčovými slovy. V šabloně je přístupná proměnná <tags>, ta obsahuje seznam tagů ve formátu <tagName> => array(href => <tagLink>, count => <tagCount>)');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Šablona postranního sloupce (see default theme copy example');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Not named "plugin_freetag.tpl", which is already used! Pokud je nastaveno, je šablona použita k vykreslení postranního sloupce s klíčovými slovy. V šabloně je přístupná proměnná <tags>, ta obsahuje seznam tagů ve formátu <tagName> => array(href => <tagLink>, count => <tagCount>)');
 @define('PLUGIN_EVENT_FREETAG_GLOBALLINKS', 'Převést přiřazené kategorie všech příspěvků na klíčová slova');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY', 'Byly převedeny kategorie příspěvku č.%d (%s): %s.');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', 'Ze jmen všech kategorií byla vytvořena klíčová slova.');

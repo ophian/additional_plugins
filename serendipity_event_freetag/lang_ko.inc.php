@@ -77,8 +77,8 @@
 @define('PLUGIN_EVENT_FREETAG_CAT2TAG_DESC', '사용할 경우 글에 지정된 모든 범주에 대해서도 태그로 추가됩니다. 모든 글의 범주 연결 상태는 관리 도구 화면의 "태그 관리하기" 메뉴에서 설정할 수 있습니다.');
 @define('PLUGIN_EVENT_FREETAG_KEYWORD2TAG', '자동화 키워드를 통해 태그를 생성합니까?');
 @define('PLUGIN_EVENT_FREETAG_KEYWORD2TAG_DESC', '사용할 경우 글 본문에 자동화 키워드가 있는지 확인하고 해당 태그를 추가하게 됩니다. 키워드는 관리 도구 화면의 "태그 관리하기" 메뉴에서 설정할 수 있습니다.');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE', '옆줄 템플릿');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', '설정할 경우 옆줄에 태그를 표시할 때 템플릿을 사용합니다. 템플릿 내에는 <tags> 변수가 있는데, <tagName> => array(href => <tagLink>, count => <tagCount> 형태로 태그 목록을 담고 있습니다.)');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE', '옆줄 템플릿 (see default theme copy example');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Not named "plugin_freetag.tpl", which is already used! 설정할 경우 옆줄에 태그를 표시할 때 템플릿을 사용합니다. 템플릿 내에는 <tags> 변수가 있는데, <tagName> => array(href => <tagLink>, count => <tagCount> 형태로 태그 목록을 담고 있습니다.)');
 @define('PLUGIN_EVENT_FREETAG_GLOBALLINKS', '기존 글에 지정된 모든 범주를 태그로 변환하여 입력하기');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY', '%d 번 글 (%s)에 대해 변환된 범주: %s.');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', '모든 범주를 태그로 변환했습니다.');

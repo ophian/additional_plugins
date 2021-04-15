@@ -64,8 +64,7 @@
 @define('PLUGIN_EVENT_FREETAG_TAGLINK', 'タグ リンク');
 @define('PLUGIN_EVENT_FREETAG_CAT2TAG', 'すべてのカテゴリーに関連するタグを作成しますか?');
 @define('PLUGIN_EVENT_FREETAG_CAT2TAG_DESC', 'If enabled, all categories that an entry is assigned to will be added as tags to your entry. You can set all category associations of all your existing entries within the "Manage Tags" menu of your Administration Suite.');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'サイドバーテンプレート');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'If set the template is used to render the tag sidebar. In the template there is a variable <tags> available which contains the list of tags in the format <tagName> => array(href => <tagLink>, count => <tagCount>)');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'サイドバーテンプレート (see default theme copy example');
 @define('PLUGIN_EVENT_FREETAG_GLOBALLINKS', '存在するエントリーに割り当てられたすべてのカテゴリーをタグに変換する');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY', 'エントリー #%d のカテゴリーを変換しました(%s): %s.');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', 'すべてのカテゴリーをタグに変換します。');

@@ -64,8 +64,8 @@
 @define('PLUGIN_EVENT_FREETAG_TAGLINK', 'Връзка');
 @define('PLUGIN_EVENT_FREETAG_CAT2TAG', 'Създаване на маркери за всички асоциирани категории?');
 @define('PLUGIN_EVENT_FREETAG_CAT2TAG_DESC', 'Ако е позволено, всички категории, към които дадена статия е асоциирана ще бъдат добавени като маркери към статията. Можете да установите всички асоциации на категории за всички съществуващи статии през панел "Управление на маркерите" в административната страница.');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Шаблон за страничния панел');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Ако е установен, шаблонът се използва за изобразяване на маркерите в страничния панел. В шаблона има променлива <tags> която съдържа списъка на маркерите във формат <tagName> => array(href => <tagLink>, count => <tagCount>)');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Шаблон за страничния панел (see default theme copy example');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Not named "plugin_freetag.tpl", which is already used! Ако е установен, шаблонът се използва за изобразяване на маркерите в страничния панел. В шаблона има променлива <tags> която съдържа списъка на маркерите във формат <tagName> => array(href => <tagLink>, count => <tagCount>)');
 @define('PLUGIN_EVENT_FREETAG_GLOBALLINKS', 'Преобразуване на всички асоциирани категории за съществуващи статии в маркери');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY', 'Преобразувани категории за статия #%d (%s): %s.');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', 'Всички категории са преобразувани в маркери.');

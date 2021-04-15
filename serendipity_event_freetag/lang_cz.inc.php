@@ -79,8 +79,8 @@
 @define('PLUGIN_EVENT_FREETAG_TAGLINK', 'Odkaz na klíèové slovo');
 @define('PLUGIN_EVENT_FREETAG_CAT2TAG', 'Vytvoøit klíèová slova pøo v¹echny pøiøazené kategorie?');
 @define('PLUGIN_EVENT_FREETAG_CAT2TAG_DESC', 'Pokud je povoleno, názvy v¹ech kategorií, do kterých je pøíspìvek zaøazen, budou pøidány jako klíèová slova. Mù¾ete nastavit pøiøazení názvù kategorií jako klíèových slov pro v¹echny ji¾ existující pøíspìvky pomocí menu "Správa klíèových slov" v Administrativní sekci.');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE', '©ablona postranního sloupce');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Pokud je nastaveno, je ¹ablona pou¾ita k vykreslení postranního sloupce s klíèovými slovy. V ¹ablonì je pøístupná promìnná <tags>, ta obsahuje seznam tagù ve formátu <tagName> => array(href => <tagLink>, count => <tagCount>)');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE', '©ablona postranního sloupce (see default theme copy example');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Not named "plugin_freetag.tpl", which is already used! Pokud je nastaveno, je ¹ablona pou¾ita k vykreslení postranního sloupce s klíèovými slovy. V ¹ablonì je pøístupná promìnná <tags>, ta obsahuje seznam tagù ve formátu <tagName> => array(href => <tagLink>, count => <tagCount>)');
 @define('PLUGIN_EVENT_FREETAG_GLOBALLINKS', 'Pøevést pøiøazené kategorie v¹ech pøíspìvkù na klíèová slova');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY', 'Byly pøevedeny kategorie pøíspìvku è.%d (%s): %s.');
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', 'Ze jmen v¹ech kategorií byla vytvoøena klíèová slova.');

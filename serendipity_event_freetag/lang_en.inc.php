@@ -64,8 +64,8 @@
 
 @define('PLUGIN_FREETAG_META_KEYWORDS', 'Number of meta keywords to embed in HTML source (0: disabled)');
 
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Sidebar template');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'If set, the template is used to render the tag sidebar. In the template there is a variable <tags> available, which contains the list of tags in the format <tagName> => array(href => <tagLink>, count => <tagCount>)');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Sidebar template (see default theme)');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'If set, but not the named "plugin_freetag.tpl" file, which already is used in other places, it will be used to render the tag sidebar. In the template there is a variable <tags> available, which contains the list of tags in the format <tagName> => array(href => <tagLink>, count => <tagCount>). See "plugin_freetag_sidebar.tpl" in default theme as a very simple copy file.');
 
 @define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'Related entries by tags:');
 @define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'Display related entries by tags?');
