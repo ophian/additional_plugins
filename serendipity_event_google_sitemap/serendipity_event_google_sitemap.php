@@ -26,7 +26,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris');
-        $propbag->add('version', '0.66');
+        $propbag->add('version', '0.67');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -322,7 +322,7 @@ class serendipity_event_google_sitemap extends serendipity_event
             if ($this->should_add('sm_archives')) {
                 // get the P*.html sites if there are more than fetchLimit entries
                 for($i=2; $i<=ceil(sizeof($entries) / $serendipity['fetchLimit']); ++$i) {
-                    $url = $url=serendipity_rewriteURL(PATH_ARCHIVES. "/P$i.html");
+                    $url = serendipity_rewriteURL(PATH_ARCHIVES. "/P$i.html");
                     $this->addtoxml($sitemap_xml, $url, null, 0.5);
                 }
             }

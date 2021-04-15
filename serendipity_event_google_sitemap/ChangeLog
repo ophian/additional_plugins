@@ -1,3 +1,7 @@
+0.67:
+-----
+ * Fix a doublette
+
 0.66:
 -----
  * Fix PHP 8 Required parameter $eventData follows optional parameter $basefilename
