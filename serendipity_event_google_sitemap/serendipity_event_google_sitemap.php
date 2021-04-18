@@ -26,7 +26,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris');
-        $propbag->add('version', '0.67');
+        $propbag->add('version', '0.68');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -751,7 +751,7 @@ class serendipity_event_google_sitemap extends serendipity_event
                 $pingback_name = $matches[1];
             }
 
-            if (!serendipity_db_bool($eventData['isdraft']) && $do_pingback && $cur_url) {
+            if (!serendipity_db_bool(($eventData['isdraft'] ?? false)) && $do_pingback && $cur_url) {
                     $answer = $this->send_ping($cur_url);
                     if ($answer) {
                         printf(PLUGIN_EVENT_SITEMAP_REPORT_OK, $pingback_name);

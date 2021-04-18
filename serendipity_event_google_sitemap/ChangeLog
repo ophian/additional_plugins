@@ -1,3 +1,7 @@
+0.68:
+-----
+ * Fix an uninitialized PHP 8 $eventData parameter
+
 0.67:
 -----
  * Fix a doublette
