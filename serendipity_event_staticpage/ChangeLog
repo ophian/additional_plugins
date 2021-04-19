@@ -1,3 +1,8 @@
+6.26:
+-----
+ * Fix an uninitialized variable check for PHP 8 in sidebar template
+ * Use more PHP 7 Null Coalescing Operator (??)
+
 6.25:
 -----
  * Tokenize backend edit links, in special for frontend back links
