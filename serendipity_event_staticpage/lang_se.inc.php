@@ -1,14 +1,14 @@
 <?php
 
-@define('PLUGIN_STATICPAGELIST_NAME',             'lista med statiska sidorna');
-@define('PLUGIN_STATICPAGELIST_NAME_DESC',        'Den här plugin visar en konfigurerbar lista den statiska sidorna. StaticPage-Plugin behöver version 1.22 eller högre.');
-@define('PLUGIN_STATICPAGELIST_TITLE',            'Titel');
-@define('PLUGIN_STATICPAGELIST_TITLE_DESC',       'Rubrik för den sidonavigator:');
-@define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT',    'statiska sidor');
-@define('PLUGIN_STATICPAGELIST_LIMIT',            "Antal sidor: Seitenanzahl");
-@define('PLUGIN_STATICPAGELIST_LIMIT_DESC',       "Max antal sidor som ska visas. Maximale Anzahl der anzuzeigenden Seiten");
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME',   "Visa startsidorlink Startseitenlink anzeigen");
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC',   "Skapar länk på Startsidor Einen Link zur Startseite erstellen");
+@define('PLUGIN_STATICPAGELIST_NAME', 'lista med statiska sidorna');
+@define('PLUGIN_STATICPAGELIST_NAME_DESC', 'Den här plugin visar en konfigurerbar lista den statiska sidorna.');
+@define('PLUGIN_STATICPAGELIST_TITLE', 'Titel');
+@define('PLUGIN_STATICPAGELIST_TITLE_DESC', 'Rubrik för den sidonavigator:');
+@define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT', 'statiska sidor');
+@define('PLUGIN_STATICPAGELIST_LIMIT', "Antal sidor: Seitenanzahl");
+@define('PLUGIN_STATICPAGELIST_LIMIT_DESC', "Max antal sidor som ska visas. Maximale Anzahl der anzuzeigenden Seiten");
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME', "Visa startsidorlink Startseitenlink anzeigen");
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC', "Skapar länk på Startsidor Einen Link zur Startseite erstellen");
 @define('PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME',"Startsidor");
 
 @define('STATICPAGE_HEADLINE', 'Sidhuvudet');
@@ -23,15 +23,15 @@
 @define('STATICPAGE_ARTICLEFORMAT_BLAHBLAH', 'bestämmer om utgåvan automatiskt ska formateras som en artikel (färger, kanter mm.) (Standard: ja)');
 @define('STATICPAGE_ARTICLEFORMAT_PAGETITLE', 'Sidans titel som "Formaters som artikel"-vy');
 @define('STATICPAGE_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'När optionen "Formatera som artikel" är vald, kan man genom den här titeln avgöra vad som ska visas på det stället där vanligtvis blog-datumet finns.');
-@define('STATICPAGE_SELECT',           'Välj statiska sidor för bearbetning.');
-@define('STATICPAGE_PASSWORD_NOTICE',   'Denna sida är lösenordsskyddad. Var god ange ditt lösenord: ');
-@define('STATICPAGE_PARENTPAGES_NAME',  'Parent sida');
-@define('STATICPAGE_PARENTPAGE_DESC',   'Välj den överordnade sidan');
+@define('STATICPAGE_SELECT', 'Välj statiska sidor för bearbetning.');
+@define('STATICPAGE_PASSWORD_NOTICE', 'Denna sida är lösenordsskyddad. Var god ange ditt lösenord: ');
+@define('STATICPAGE_PARENTPAGES_NAME', 'Parent sida');
+@define('STATICPAGE_PARENTPAGE_DESC', 'Välj den överordnade sidan');
 @define('STATICPAGE_PARENTPAGE_PARENT', ' Är parent sida');
-@define('STATICPAGE_AUTHORS_NAME',      'Författarens namn');
-@define('STATICPAGE_AUTHORS_DESC',      'Författare har skapat sidan');
-@define('STATICPAGE_FILENAME_NAME',     'Template (Smarty)');
-@define('STATICPAGE_FILENAME_DESC',     'Ange det templates filnamn, som ska användas för denna sida. Smarty-filen återfinns antingen bland dina plugin eller i din template-mapp.');
+@define('STATICPAGE_AUTHORS_NAME', 'Författarens namn');
+@define('STATICPAGE_AUTHORS_DESC', 'Författare har skapat sidan');
+@define('STATICPAGE_FILENAME_NAME', 'Template (Smarty)');
+@define('STATICPAGE_FILENAME_DESC', 'Ange det templates filnamn, som ska användas för denna sida. Smarty-filen återfinns antingen bland dina plugin eller i din template-mapp.');
 
 @define('STATICPAGE_SHOWCHILDPAGES_NAME', 'visa child-sidor');
 @define('STATICPAGE_SHOWCHILDPAGES_DESC', 'visa samtliga child-sidor som linklista.');

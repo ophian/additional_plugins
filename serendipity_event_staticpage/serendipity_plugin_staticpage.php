@@ -16,7 +16,7 @@ class serendipity_plugin_staticpage extends serendipity_plugin
         $propbag->add('description', PLUGIN_STATICPAGELIST_NAME_DESC);
         $propbag->add('author',      "Rob Antonishen, Falk Doering, Ian Styx");
         $propbag->add('stackable',   true);
-        $propbag->add('version',     '1.32');
+        $propbag->add('version',     '1.33');
         $propbag->add('configuration', array(
                 'title',
                 'limit',

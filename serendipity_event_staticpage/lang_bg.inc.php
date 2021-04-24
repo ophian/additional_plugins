@@ -1,13 +1,13 @@
 <?php
 
 /**
- *  @version
- *  @author Ivan Cenov jwalker@hotmail.bg
- *  EN-Revision: 1.11
+ * @version
+ * @author Ivan Cenov jwalker@hotmail.bg
+ * EN-Revision: 1.11
  */
 
 //
-//  serendipity_event_staticpage.php
+// serendipity_event_staticpage.php
 //
 @define('STATICPAGE_HEADLINE', 'Заглавие');
 @define('STATICPAGE_HEADLINE_BLAHBLAH', 'Заглавие, което се показва над съдържанието и е форматирано като всяко друго заглавие в блога.');
@@ -95,30 +95,30 @@
 @define('STATICPAGE_STATUS', 'Състояние');
 
 //
-//  serendipity_plugin_staticpage.php
+// serendipity_plugin_staticpage.php
 //
 
-@define('PLUGIN_STATICPAGELIST_NAME',                   'Статични страници - списък');
-@define('PLUGIN_STATICPAGELIST_NAME_DESC',              'Тази приставка показва конфигурируем списък от статични страници.');
-@define('PLUGIN_STATICPAGELIST_TITLE',                  'Заглавие');
-@define('PLUGIN_STATICPAGELIST_TITLE_DESC',             'Заглавие на страничната приставка');
-@define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT',          'Статични страници');
-@define('PLUGIN_STATICPAGELIST_LIMIT',                  'Брой страници');
-@define('PLUGIN_STATICPAGELIST_LIMIT_DESC',             'Колко връзки към статични страници да се показват. 0 означава без ограничение.');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME',         'Връзка към лицевата страница');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC',         'Да има ли връзка към лицевата страница (със статиите) ?');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME',     'Заглавна страница');
-@define('PLUGIN_LINKS_IMGDIR',                          'Директория с картинки за формиране на дървото');
-@define('PLUGIN_LINKS_IMGDIR_BLAHBLAH',                 'Пълен URL до картинките, формиращи дървовидната структура. Директория \'img\' трябва да се намира в тази директория (тя е част от тази приставка).');
-@define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME',         'Графика или само текст');
-@define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC',         'Връзките да се показват в дървовидна структура или само като текст.');
-@define('PLUGIN_STATICPAGELIST_ICON',                   'JS Дърво');
-@define('PLUGIN_STATICPAGELIST_TEXT',                   'Текст');
-@define('PLUGIN_STATICPAGELIST_PARENTSONLY',            'Само родителски страници ?');
-@define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC',       'При избор \'Да\' само родителските страници се показват. При избор \'Не\' се виждат всички страници.');
-@define('PLUGIN_STATICPAGELIST_IMG_NAME',               'Използване на графика в дървовидната структура');
+@define('PLUGIN_STATICPAGELIST_NAME', 'Статични страници - списък');
+@define('PLUGIN_STATICPAGELIST_NAME_DESC', 'Тази приставка показва конфигурируем списък от статични страници.');
+@define('PLUGIN_STATICPAGELIST_TITLE', 'Заглавие');
+@define('PLUGIN_STATICPAGELIST_TITLE_DESC', 'Заглавие на страничната приставка');
+@define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT', 'Статични страници');
+@define('PLUGIN_STATICPAGELIST_LIMIT', 'Брой страници');
+@define('PLUGIN_STATICPAGELIST_LIMIT_DESC', 'Колко връзки към статични страници да се показват. 0 означава без ограничение.');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME', 'Връзка към лицевата страница');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC', 'Да има ли връзка към лицевата страница (със статиите) ?');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME', 'Заглавна страница');
+@define('PLUGIN_LINKS_IMGDIR', 'Директория с картинки за формиране на дървото');
+@define('PLUGIN_LINKS_IMGDIR_BLAHBLAH', 'Пълен URL до картинките, формиращи дървовидната структура. Директория \'img\' трябва да се намира в тази директория (тя е част от тази приставка).');
+@define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME', 'Графика или само текст');
+@define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC', 'Връзките да се показват в дървовидна структура или само като текст.');
+@define('PLUGIN_STATICPAGELIST_ICON', 'JS Дърво');
+@define('PLUGIN_STATICPAGELIST_TEXT', 'Текст');
+@define('PLUGIN_STATICPAGELIST_PARENTSONLY', 'Само родителски страници ?');
+@define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC', 'При избор \'Да\' само родителските страници се показват. При избор \'Не\' се виждат всички страници.');
+@define('PLUGIN_STATICPAGELIST_IMG_NAME', 'Използване на графика в дървовидната структура');
 
-@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRIES',      'URL на преместената директория е сменен в %s статични страници.'); 
+@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRIES', 'URL на преместената директория е сменен в %s статични страници.'); 
 
 @define('STATICPAGE_QUICKSEARCH_DESC', 'Ако е разрешено, бързото търсене ще работи и в статичните страници.');
 

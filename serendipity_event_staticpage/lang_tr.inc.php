@@ -1,8 +1,8 @@
 <?php
 
 /**
- *  @author Ahmet Usal <ahmetusal@gmail.com>
- *  First public version: lang_tr.inc.php
+ * @author Ahmet Usal <ahmetusal@gmail.com>
+ * First public version: lang_tr.inc.php
  */
 
 @define('STATICPAGE_HEADLINE', 'Baþlýklar');
@@ -14,7 +14,7 @@
 @define('STATICPAGE_PERMALINK_BLAHBLAH', 'URL adresleri için kalýcý baðlantý tanýmý. Kesin HTTP yolunun belirtilmesi ve sonunun .htm ya da .html olarak bitmesi gerekli!');
 @define('STATICPAGE_PAGETITLE', 'URL adresinin kýsa adlandýrmasý (Geriye doðru uyumluluk amacýyla)');
 @define('STATICPAGE_ARTICLEFORMAT', 'Makale gibi biçimlensin mi?');
-@define('STATICPAGE_ARTICLEFORMAT_BLAHBLAH', 'Evet seçeneði iþaretlenirse  sitedeki bir makale, yazý gibi biçimlendirilecek. (renkler, kenarlýklar vb.) (öntanýmlý : evet)');
+@define('STATICPAGE_ARTICLEFORMAT_BLAHBLAH', 'Evet seçeneði iþaretlenirse sitedeki bir makale, yazý gibi biçimlendirilecek. (renkler, kenarlýklar vb.) (öntanýmlý : evet)');
 @define('STATICPAGE_ARTICLEFORMAT_PAGETITLE', 'Sayfa Baþlýðý "Makale olarak biçimlendir" modunda');
 @define('STATICPAGE_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'Makale biçimini kullanýrken, yayýnlanma tarihine göre hangi metni gösterilebileceðinizi seçebildiðiniz gibi statik sayfanýza da belirli bir yayýn tarihindeki makalelerle beraber gösterilecek þekilde yayýnlayabilirsiniz.');
 @define('STATICPAGE_SELECT', 'Düzenlemek ya da oluþturmak için bir statik sayfa biçimi seçin.');
@@ -90,26 +90,26 @@
 @define('LANG_ALL', 'Tüm Diller');
 
 //
-//  serendipity_plugin_staticpage.php
+// serendipity_plugin_staticpage.php
 //
 
-@define('PLUGIN_STATICPAGELIST_NAME',                   'Statik Sayfalar Listesi');
-@define('PLUGIN_STATICPAGELIST_NAME_DESC',              'Bu eklenti statik sayfalarýn yapýlandýrýlabilir bir listesini gösterir. Bu iþlemin gerçekleþebilmesi için Statik Sayfa Eklentisinin 1.22 ya da daha yüksek bir sürümünün kurulu olmasý gereklidir.');
-@define('PLUGIN_STATICPAGELIST_TITLE',                  'Baþlýk');
-@define('PLUGIN_STATICPAGELIST_TITLE_DESC',             'Yan-Blokta gösterilecek baþlýðýný yazýn:');
-@define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT',          'Statik Sayfalar');
-@define('PLUGIN_STATICPAGELIST_LIMIT',                  'Gösterilecek Statik Sayfa Sayýsý');
-@define('PLUGIN_STATICPAGELIST_LIMIT_DESC',             'Gösterilecek Statik Sayfa Sayýsýný yazýn. 0, sýnýr yok anlamýndadýr.');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME',         'Anasayfa baðlantýsýný göster');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC',         'Anasayfada baðlantý oluþtur');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME',     'Anasayfa');
-@define('PLUGIN_LINKS_IMGDIR',                          'Eklenti resim dizinini kullan');
-@define('PLUGIN_LINKS_IMGDIR_BLAHBLAH',                 'Resimlere ulaþýlabilmesi için URL adresi yolunu belirtin. "img" altdizini bu tanýmlanacak üst dizine ihtiyaç duyar ve bu eklentiyle anýlan dizini kullanabilir.');
-@define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME',         'Ýkonlar ya da düz metin');
-@define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC',         'Dizinlerin aðaç yapýsýný grafik ikonlarla ya da düz metin olarak gösterir.');
-@define('PLUGIN_STATICPAGELIST_ICON',                   'JS Aðaç Yapýsý');
-@define('PLUGIN_STATICPAGELIST_TEXT',                   'Düz Metin');
-@define('PLUGIN_STATICPAGELIST_PARENTSONLY',            'Sadece üst-ebeveyn sayfalar gösterilsin mi?');
-@define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC',       'Eðer bu seçenek etkin olursa sadece üst-ebeveyn sayfalar gösterilir. Etkinleþtirilmezse üst sayfalara baðlý altsayfalarda gösterilir.');
-@define('PLUGIN_STATICPAGELIST_IMG_NAME',               'Aðaç Yapýsýnda grafik gösterim etkin');
+@define('PLUGIN_STATICPAGELIST_NAME', 'Statik Sayfalar Listesi');
+@define('PLUGIN_STATICPAGELIST_NAME_DESC', 'Bu eklenti statik sayfalarýn yapýlandýrýlabilir bir listesini gösterir.');
+@define('PLUGIN_STATICPAGELIST_TITLE', 'Baþlýk');
+@define('PLUGIN_STATICPAGELIST_TITLE_DESC', 'Yan-Blokta gösterilecek baþlýðýný yazýn:');
+@define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT', 'Statik Sayfalar');
+@define('PLUGIN_STATICPAGELIST_LIMIT', 'Gösterilecek Statik Sayfa Sayýsý');
+@define('PLUGIN_STATICPAGELIST_LIMIT_DESC', 'Gösterilecek Statik Sayfa Sayýsýný yazýn. 0, sýnýr yok anlamýndadýr.');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME', 'Anasayfa baðlantýsýný göster');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC', 'Anasayfada baðlantý oluþtur');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME', 'Anasayfa');
+@define('PLUGIN_LINKS_IMGDIR', 'Eklenti resim dizinini kullan');
+@define('PLUGIN_LINKS_IMGDIR_BLAHBLAH', 'Resimlere ulaþýlabilmesi için URL adresi yolunu belirtin. "img" altdizini bu tanýmlanacak üst dizine ihtiyaç duyar ve bu eklentiyle anýlan dizini kullanabilir.');
+@define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME', 'Ýkonlar ya da düz metin');
+@define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC', 'Dizinlerin aðaç yapýsýný grafik ikonlarla ya da düz metin olarak gösterir.');
+@define('PLUGIN_STATICPAGELIST_ICON', 'JS Aðaç Yapýsý');
+@define('PLUGIN_STATICPAGELIST_TEXT', 'Düz Metin');
+@define('PLUGIN_STATICPAGELIST_PARENTSONLY', 'Sadece üst-ebeveyn sayfalar gösterilsin mi?');
+@define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC', 'Eðer bu seçenek etkin olursa sadece üst-ebeveyn sayfalar gösterilir. Etkinleþtirilmezse üst sayfalara baðlý altsayfalarda gösterilir.');
+@define('PLUGIN_STATICPAGELIST_IMG_NAME', 'Aðaç Yapýsýnda grafik gösterim etkin');
 

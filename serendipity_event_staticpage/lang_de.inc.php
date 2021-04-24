@@ -3,7 +3,7 @@
 @define('LANG_ALL', 'Alle Sprachen');
 
 @define('PLUGIN_STATICPAGELIST_NAME', 'Liste der statischen Seiten');
-@define('PLUGIN_STATICPAGELIST_NAME_DESC', 'Dieses Plugin zeigt eine konfigurierbare Liste der statischen Seiten. Das StaticPage-Plugin benötigt Version 1.22 oder höher.');
+@define('PLUGIN_STATICPAGELIST_NAME_DESC', 'Dieses Plugin zeigt eine konfigurierbare Liste der statischen Seiten.');
 @define('PLUGIN_STATICPAGELIST_TITLE', 'Titel');
 @define('PLUGIN_STATICPAGELIST_TITLE_DESC', 'Überschrift für die Sidebar:');
 @define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT', 'Statische Seiten');

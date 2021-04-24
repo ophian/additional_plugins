@@ -1,13 +1,13 @@
 <?php
 
 /**
- *  @version
- *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
- *  EN-Revision: 1.6
+ * @version
+ * @author Tadashi Jokagi <elf2000@users.sourceforge.net>
+ * EN-Revision: 1.6
  */
 
 //
-//  serendipity_event_staticpage.php
+// serendipity_event_staticpage.php
 //
 @define('STATICPAGE_HEADLINE', 'ヘッドライン');
 @define('STATICPAGE_HEADLINE_BLAHBLAH', 'Shows a headline above the content which is rendered as every other headline in your blog');
@@ -18,7 +18,7 @@
 @define('STATICPAGE_PERMALINK_BLAHBLAH', 'URL のために固定リンクを定義します。絶対 HTTP パスと拡張子が「.html」か「.html」である必要があります!');
 @define('STATICPAGE_PAGETITLE', 'URL ショートハンド名 (下位互換性)');
 @define('STATICPAGE_ARTICLEFORMAT', '記事として清書しますか?');
-@define('STATICPAGE_ARTICLEFORMAT_BLAHBLAH', '「はい」の場合、自動的に記事として(色、境界線など)初期化され、出力します  (デフォルト: はい)');
+@define('STATICPAGE_ARTICLEFORMAT_BLAHBLAH', '「はい」の場合、自動的に記事として(色、境界線など)初期化され、出力します (デフォルト: はい)');
 @define('STATICPAGE_ARTICLEFORMAT_PAGETITLE', '記事として初期化の時のページタイトル');
 @define('STATICPAGE_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', '記事の書式を使用すると、テキストの表示とウェブログの日付が記事に表示されることを選択できます。');
 @define('STATICPAGE_SELECT', '作成か編集する静的ページを選択してください。');
@@ -98,26 +98,26 @@
 @define('STATICPAGE_STATUS', '状態');
 
 //
-//  serendipity_plugin_staticpage.php
+// serendipity_plugin_staticpage.php
 //
 
-@define('PLUGIN_STATICPAGELIST_NAME',                   '静的ページ一覧');
-@define('PLUGIN_STATICPAGELIST_NAME_DESC',              'このプラグインは静的ページの一覧の設定します。これは静的プラグインバージョン 1.2.22 以上を要求します。');
-@define('PLUGIN_STATICPAGELIST_TITLE',                  '題名');
-@define('PLUGIN_STATICPAGELIST_TITLE_DESC',             '表示するサイドバーのタイトルを入力します。:');
-@define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT',          '静的ページ');
-@define('PLUGIN_STATICPAGELIST_LIMIT',                  '表示の数');
-@define('PLUGIN_STATICPAGELIST_LIMIT_DESC',             '表示する静的ページの数を入力思案す。0 は制限なしを意味します。');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME',         'フロントページのリンクを表示する');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC',         'フロントページへのリンクを表示します。');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME',     'フロントページ');
-@define('PLUGIN_LINKS_IMGDIR',                          'プラグインの画像ディレクトリを使用する');
-@define('PLUGIN_LINKS_IMGDIR_BLAHBLAH',                 'Tell the URL path to use for accessing the tree structure images. The "img" subfolder needs to be in this directory, and is delivered with this plugin.');
-@define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME',         'アイコンかただのテキスト');
-@define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC',         'ツリー構造かただのテキストメニューを表示します．');
-@define('PLUGIN_STATICPAGELIST_ICON',                   'JS ツリー');
-@define('PLUGIN_STATICPAGELIST_TEXT',                   'ただのテキスト');
-@define('PLUGIN_STATICPAGELIST_PARENTSONLY',            '親ページのみ表示しますか?');
-@define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC',       '有効の場合、親ページのみ表示します。無効の場合、子ページも表示するでしょう。');
-@define('PLUGIN_STATICPAGELIST_IMG_NAME',               'ツリー構造で画像を有効にする');
+@define('PLUGIN_STATICPAGELIST_NAME', '静的ページ一覧');
+@define('PLUGIN_STATICPAGELIST_NAME_DESC', 'このプラグインは静的ページの一覧の設定します。');
+@define('PLUGIN_STATICPAGELIST_TITLE', '題名');
+@define('PLUGIN_STATICPAGELIST_TITLE_DESC', '表示するサイドバーのタイトルを入力します。:');
+@define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT', '静的ページ');
+@define('PLUGIN_STATICPAGELIST_LIMIT', '表示の数');
+@define('PLUGIN_STATICPAGELIST_LIMIT_DESC', '表示する静的ページの数を入力思案す。0 は制限なしを意味します。');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME', 'フロントページのリンクを表示する');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC', 'フロントページへのリンクを表示します。');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME', 'フロントページ');
+@define('PLUGIN_LINKS_IMGDIR', 'プラグインの画像ディレクトリを使用する');
+@define('PLUGIN_LINKS_IMGDIR_BLAHBLAH', 'Tell the URL path to use for accessing the tree structure images. The "img" subfolder needs to be in this directory, and is delivered with this plugin.');
+@define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME', 'アイコンかただのテキスト');
+@define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC', 'ツリー構造かただのテキストメニューを表示します．');
+@define('PLUGIN_STATICPAGELIST_ICON', 'JS ツリー');
+@define('PLUGIN_STATICPAGELIST_TEXT', 'ただのテキスト');
+@define('PLUGIN_STATICPAGELIST_PARENTSONLY', '親ページのみ表示しますか?');
+@define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC', '有効の場合、親ページのみ表示します。無効の場合、子ページも表示するでしょう。');
+@define('PLUGIN_STATICPAGELIST_IMG_NAME', 'ツリー構造で画像を有効にする');
 

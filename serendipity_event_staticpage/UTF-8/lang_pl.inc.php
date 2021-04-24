@@ -102,7 +102,7 @@
 //
 
 @define('PLUGIN_STATICPAGELIST_NAME', 'Lista Stron statycznych');
-@define('PLUGIN_STATICPAGELIST_NAME_DESC', 'Ta wtyczka pokazuje konfigurowalną listę Stron statycznych (menu). Wymaga wtyczki Strony statyczne w wersji minimum 1.22.');
+@define('PLUGIN_STATICPAGELIST_NAME_DESC', 'Ta wtyczka pokazuje konfigurowalną listę Stron statycznych (menu).');
 @define('PLUGIN_STATICPAGELIST_TITLE', 'Tytuł');
 @define('PLUGIN_STATICPAGELIST_TITLE_DESC', 'Wpisz tytuł pozycji w Panelu bocznym, w której ukażą się linki menu do Stron statycznych');
 @define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT', 'Strony statyczne');
