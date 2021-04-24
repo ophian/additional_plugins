@@ -99,12 +99,12 @@
 <guid isPermaLink="false">serendipity_plugin_spamblock_bee</guid>
 </item>
 <item>
-<title>Liste der statischen Seiten: Dieses Plugin zeigt eine konfigurierbare Liste der statischen Seiten. Das StaticPage-Plugin benötigt Version 1.22 oder höher.</title>
+<title>Liste der statischen Seiten: Dieses Plugin zeigt eine konfigurierbare Liste der statischen Seiten.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_staticpage</link>
 <category>Sidebar Plugins</category>
 <author>Rob Antonishen, Falk Doering, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_staticpage&lt;br /&gt;Liste der statischen Seiten&lt;/b&gt;&lt;br /&gt;Dieses Plugin zeigt eine konfigurierbare Liste der statischen Seiten. Das StaticPage-Plugin benötigt Version 1.22 oder höher.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sat, 13 Mar 2021 09:49:08 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_staticpage&lt;br /&gt;Liste der statischen Seiten&lt;/b&gt;&lt;br /&gt;Dieses Plugin zeigt eine konfigurierbare Liste der statischen Seiten.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
+<pubDate>Sat, 24 Apr 2021 10:40:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_staticpage</guid>
 </item>
 <item>
@@ -276,12 +276,12 @@
 <guid isPermaLink="false">serendipity_plugin_heavyrotation</guid>
 </item>
 <item>
-<title>Unified Sidebar Image Display: Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to a Coppermine database directory (MySql only), or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.</title>
+<title>Unified Sidebar Image Display: Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to access a Coppermine database directory (MySQL only), or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_imagesidebar</link>
 <category>Sidebar Plugins</category>
 <author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Unified Sidebar Image Display&lt;/b&gt;&lt;br /&gt;Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to a Coppermine database directory (MySql only), or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Tue, 05 Jan 2021 11:30:06 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Unified Sidebar Image Display&lt;/b&gt;&lt;br /&gt;Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to access a Coppermine database directory (MySQL only), or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
+<pubDate>Sat, 24 Apr 2021 10:49:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>
