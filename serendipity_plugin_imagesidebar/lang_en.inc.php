@@ -7,7 +7,7 @@
  */
 
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_NAME', 'Unified Sidebar Image Display');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC', 'Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to a Coppermine database directory (MySql only), or access images in the Serendipity Media Library.');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC', 'Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to access a Coppermine database directory (MySQL only), or access images in the Serendipity Media Library.');
 
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NAME', 'Image Source');
 @define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_DESC', 'Please choose a source for your images from the drop down.');

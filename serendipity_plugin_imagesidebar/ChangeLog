@@ -1,3 +1,7 @@
+2.8:
+-----
+ * Fix a description typo
+
 2.7:
 -----
  * Raise Requirements for new suboption constant usage
