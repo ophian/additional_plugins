@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.27');
+        $propbag->add('version', '6.28');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -1921,7 +1921,7 @@ class serendipity_event_staticpage extends serendipity_event
                 $pagevar . 'form_url'           => $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[subpage]=' . self::html_specialchars($this->get_static('pagetitle')),
                 $pagevar . 'content'            => $staticpage_content,
                 $pagevar . 'childpages'         => serendipity_db_bool($this->get_static('show_childpages')) ? $this->getChildPages() : false,
-                $pagevar . 'extchildpages'      => (serendipity_db_bool($this->get_static('show_childpages')) && ($childpages ?? false)),
+                $pagevar . 'extchildpages'      => (serendipity_db_bool($this->get_static('show_childpages')) && isset($childpages)) ? $childpages : false,
                 $pagevar . 'pid'                => $this->get_static('id'),
                 $pagevar . 'precontent'         => $staticpage_precontent,
                 $pagevar . 'adminlink'          => $this->getEditlinkData(),
@@ -2340,7 +2340,7 @@ class serendipity_event_staticpage extends serendipity_event
 
         $page = serendipity_db_query($q, true, 'assoc');
 
-        return (is_array($page) && ($page['pagetitle'] ?? false));
+        return (is_array($page) && isset($page['pagetitle'])) ? $page['pagetitle'] : false;
     }
 
     /**
@@ -2362,7 +2362,7 @@ class serendipity_event_staticpage extends serendipity_event
 
         $page = serendipity_db_query($q, true, 'assoc');
 
-        return (is_array($page) && ($page['pagetitle'] ?? false));
+        return (is_array($page) && isset($page['pagetitle'])) ? $page['pagetitle'] : false;
     }
 
     /**
