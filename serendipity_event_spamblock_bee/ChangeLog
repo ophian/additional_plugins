@@ -1,3 +1,8 @@
+1.4.4:
+------
+
+ * Fix backend related frontend_saveComment variable init checks for PHP 8
+
 1.4.3:
 ------
 
