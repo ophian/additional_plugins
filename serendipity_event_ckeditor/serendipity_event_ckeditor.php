@@ -193,7 +193,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.16.0.2'); // is CKEDITOR Series 4.16.0 - and appended plugin revision .2
+        $propbag->add('version',       '4.16.0.3'); // is CKEDITOR Series 4.16.0 - and appended plugin revision .3
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
@@ -444,7 +444,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.16.0.2', '4.16.0.1'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.16.0.3', '4.16.0.2'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -458,7 +458,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.16.0.2', '4.16.0.1'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.16.0.3', '4.16.0.2'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
@@ -516,7 +516,7 @@ class serendipity_event_ckeditor extends serendipity_event
                     if (serendipity_db_bool($this->get_config('codebutton', false))) {
                         $plugingpath = function_exists('serendipity_specialchars') ? serendipity_specialchars($this->get_config('plugpath')) : htmlspecialchars($this->get_config('plugpath'), ENT_COMPAT, LANG_CHARSET);
                         if (version_compare($serendipity['version'], '3.1-alpha1', '<')) {
-                             if ($headcss) {
+                             if (!empty($headcss) && $headcss) {
 ?>
     <link rel="stylesheet" href="<?php echo $plugingpath . 'serendipity_event_ckeditor/highlight.css'; ?>" />
 <?php
@@ -534,7 +534,7 @@ class serendipity_event_ckeditor extends serendipity_event
                             }
                         }
                         if (serendipity_db_bool($this->get_config('prettify', false))) {
-                            if ($headcss) {
+                            if (!empty($headcss) && $headcss) {
 ?>
     <link rel="stylesheet" type="text/css" href="<?php echo $plugingpath . 'serendipity_event_ckeditor/prettify.css'; ?>" />
 <?php
