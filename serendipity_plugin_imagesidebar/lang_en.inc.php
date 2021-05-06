@@ -86,8 +86,8 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_DESC', 'Enter the static URL you would like to link to. (example: \'http://www.s9y.org\')');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_NAME', 'Enter the permalink or subpage');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_DESC', 'This value should match the value set in the gallery plugin. Note, if URL rewriting is turned off you must use the subpage.');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_INTRO', 'Enter any text (or html) you would like placed before the picture');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_SUMMERY', 'Enter any text (or html) you would like appended to the picture');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_INTRO', 'Text (or html) you would like placed before the picture');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_SUMMERY', 'Any text (or html) you would like appended to the picture');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_NAME', 'Rotate image time');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_DESC', 'How often would you like the image(s) to rotate, in minutes, from the hour. If set to "0" the image(s) will rotate on every refresh.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NUMIMAGES_NAME', 'Number of images to display');
