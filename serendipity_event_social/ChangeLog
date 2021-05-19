@@ -1,3 +1,9 @@
+0.30:
+-----
+
+  * Fix another PHP 8 initialization check
+  * Raise and set PHP requirement
+
 0.29:
 -----
 
