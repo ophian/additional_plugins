@@ -959,7 +959,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_responsiveimages&lt;br /&gt;Responsive Images&lt;/b&gt;&lt;br /&gt;Use HTML5 and the s9y backend to scale images to the visitors viewport width&lt;br/&gt;For: Serendipity 3.0.0</content:encoded>
-<pubDate>Mon, 25 Jan 2021 12:51:23 +0100</pubDate>
+<pubDate>Mon, 17 May 2021 11:40:40 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_responsiveimages</guid>
 </item>
 <item>
@@ -1004,7 +1004,7 @@
 <category>Event Plugins</category>
 <author>onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein</author>
 <content:encoded>&lt;b&gt;serendipity_event_social&lt;br /&gt;Share Buttons&lt;/b&gt;&lt;br /&gt;Show social share buttons for services like Facebook and Twitter using shariff.&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Tue, 06 Apr 2021 18:38:08 +0200</pubDate>
+<pubDate>Wed, 19 May 2021 19:30:51 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_social</guid>
 </item>
 <item>
