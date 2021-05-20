@@ -1,3 +1,7 @@
+6.29:
+-----
+ * Fix added query strings resulting in 404
+
 6.28:
 -----
  * Fix some wrong added PHP 7 Null Coalescing Operator (??) in 6.26

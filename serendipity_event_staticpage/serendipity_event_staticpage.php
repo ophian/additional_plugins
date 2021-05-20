@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.28');
+        $propbag->add('version', '6.29');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -3670,8 +3670,11 @@ class serendipity_event_staticpage extends serendipity_event
                 case 'genpage':
                     $this->setupDB();
 
-                    // hotfix facebook adding ?fbclid=something in certain cases
-                    $addData['uriargs'] = (isset($addData['uriargs'][0]) && $addData['uriargs'][0] == '?') ? substr($addData['uriargs'], 1) : $addData['uriargs'];
+                    // Remove any added query string to fetch the right static page. EG. facebook adding ?fbclid=something in certain cases.
+                    $purl = parse_url($addData['uriargs']);
+                    if (!empty($purl['query'])) {
+                        $addData['uriargs'] = str_replace('?' . $purl['query'], '', $addData['uriargs']);
+                    }
 
                     if ($serendipity['rewrite'] != 'none') {
                         $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
