@@ -1,3 +1,7 @@
+6.30:
+-----
+ * Improve 6.29 for non-mod_rewrite usage
+
 6.29:
 -----
  * Fix added query strings resulting in 404

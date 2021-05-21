@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.29');
+        $propbag->add('version', '6.30');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -3671,9 +3671,8 @@ class serendipity_event_staticpage extends serendipity_event
                     $this->setupDB();
 
                     // Remove any added query string to fetch the right static page. EG. facebook adding ?fbclid=something in certain cases.
-                    $purl = parse_url($addData['uriargs']);
-                    if (!empty($purl['query'])) {
-                        $addData['uriargs'] = str_replace('?' . $purl['query'], '', $addData['uriargs']);
+                    if (false !== strpos(strtolower($addData['uriargs']), 'html?')) {
+                        $addData['uriargs'] = strtok($addData['uriargs'], '?');
                     }
 
                     if ($serendipity['rewrite'] != 'none') {
