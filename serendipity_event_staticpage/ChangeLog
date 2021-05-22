@@ -1,3 +1,7 @@
+6.31:
+-----
+ * Colorify fieldset background and stretch radio field margin
+
 6.30:
 -----
  * Improve 6.29 for non-mod_rewrite usage

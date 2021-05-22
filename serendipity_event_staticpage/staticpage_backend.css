@@ -350,6 +350,10 @@
 }
 #backend_sp_simple .sp_input_radio { line-height: 2; }
 
+.sp_input_radio label:first-of-type {
+    margin-right: .5rem;
+}
+
 #backend_sp_respond #sp_main_data,
 #backend_sp_respond #sp_metafield_data,
 #backend_sp_respond #sp_structure_data,
@@ -358,6 +362,7 @@
     border: 1px solid #DDD;
     padding: 0.75em;
     margin: 0px 0px 1em;
+    background-color: #eee;
 }
 #staticpage_pageadd .sp_add legend,
 #staticpage_pagetype fieldset legend,
