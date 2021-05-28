@@ -16,7 +16,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.06');
+        $propbag->add('version',        '2.6.0');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -251,7 +251,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                 case 'backend_view_comment':
                     $imgpath = $serendipity['baseURL'] . 'index.php?/plugin/';
 
-                    $comment = $eventData['url'] . ' ' . $eventData['fullBody'] . ' ' . $eventData['name'] . ' ' . $eventData['email'];
+                    $comment = ($eventData['url'] ?? '') . ' ' . ($eventData['fullBody'] ?? '') . ' ' . ($eventData['name'] ?? '') . ' ' . ($eventData['email'] ?? '');
 
                     $eventData['action_more'] = '<ul id="bayes_actions" class="plainList clearfix actions">
                         <li>
@@ -347,7 +347,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     function initB8() {
         global $serendipity;
 
-        if ($this->$b8 === null) {
+        if ($this->b8 === null) {
             $this->setupDB();
 
             require_once(dirname(__FILE__) . '/b8/b8.php');
@@ -367,7 +367,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
             $config_storage = [ 'resource' => $serendipity['dbConn'],
                     'table'    => 'b8_wordlist' ];
-            $this->$b8 = new b8\b8($config_b8, $config_storage);
+            $this->b8 = new b8\b8($config_b8, $config_storage);
         }
     }
 
@@ -377,7 +377,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     function rate($comment) {
         $this->initB8();
 
-        return $this->$b8->classify($comment);
+        return $this->b8->classify($comment);
     }
 
     /**
@@ -387,10 +387,10 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         $this->initB8();
 
         if ($category == 'ham') {
-            $this->$b8->learn($comment, b8\b8::HAM);
+            $this->b8->learn($comment, b8\b8::HAM);
         }
         if ($category == 'spam') {
-            $this->$b8->learn($comment, b8\b8::SPAM);
+            $this->b8->learn($comment, b8\b8::SPAM);
         }
     }
 
