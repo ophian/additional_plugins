@@ -26,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.1.2');
+        $propbag->add('version',       '2.1.3');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.3.0'
@@ -964,7 +964,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     // Add       <input type="hidden" name="serendipity[category]" value="5">   and take the correct category ID number(!)
                     // to your categorytemplate index.tpl or sidebar.tpl; wherever you have the quicksearch form!
 
-                    if (in_array($serendipity['view'], ['archives', 'authors', 'entries', 'feed', 'search', 'start', '404'])) {
+                    if (isset($serendipity['view']) && in_array($serendipity['view'], ['archives', 'authors', 'entries', 'feed', 'search', 'start', '404'])) {
                         $this->fetchHiddenCategoryTemplates();
                         if (!empty($this->bycategory[0]['template'])) {
                             foreach ($this->bycategory AS $bcat) {
