@@ -1,6 +1,10 @@
+6.32:
+-----
+ * Remove !important in styles - preparing futures
+
 6.31:
 -----
- * Colorify fieldset background and stretch radio field margin
+ * Coloring fieldset background and stretch radio field margin
 
 6.30:
 -----

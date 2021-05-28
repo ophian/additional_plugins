@@ -476,11 +476,11 @@
 #sp_entries_list input[type="submit"], #sp_entries_list input[type="submit"]:hover,
 #sp_entries_list .button_link:hover,
 #sp_entries_list button:hover {
-    background: #ddd !important;
-    background: -webkit-linear-gradient(#fff, #ddd) !important;
-    background: linear-gradient(#fff, #ddd) !important;
-    text-shadow: inherit !important;
-    border-color: #ddd #bbb #999 !important;
+    background: #ddd;
+    background: -webkit-linear-gradient(#fff, #ddd);
+    background: linear-gradient(#fff, #ddd);
+    text-shadow: none !important;
+    border-color: #ddd #bbb #999;
 }
 .sp-btn {
     color: #222 !important;
