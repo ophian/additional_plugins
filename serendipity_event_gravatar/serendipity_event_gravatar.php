@@ -9,7 +9,7 @@ if (IN_serendipity !== true) {
 
 @define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
 
-@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.72');
+@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.73');
 
 // Defines the maximum available method  slots in the configuration.
 @define('PLUGIN_EVENT_GRAVATAR_METHOD_MAX', 6);
@@ -677,7 +677,7 @@ class serendipity_event_gravatar extends serendipity_event
             . 'gravatar_id=' . $email_md5
             . $fallback
             . '&size=' . $default['size']
-            . ($default['rating']=='-'?'':'&rating='. $default['rating']);
+            . ($default['rating'] == '-' ? '' : '&rating='. $default['rating']);
 
         // Assure a default avatar, because we need it for testing if the avatar given by Gravatar is a dummy image.
         $this->log("Gravatar Link: " . $urltpl) ;
@@ -774,7 +774,7 @@ class serendipity_event_gravatar extends serendipity_event
                 } else {
                     // If unsuccessful, attempt to "guess" the favicon location
                     $urlParts   = parse_url($url);
-                    $faviconURL = $urlParts['scheme'] . '://' . $urlParts['host'] . ($mode=='F'?'/favicon.ico':'/pavatar.png');
+                    $faviconURL = $urlParts['scheme'] . '://' . $urlParts['host'] . ($mode=='F' ? '/favicon.ico' : '/pavatar.png');
                     $this->log($mode . " - Not found link rel, guessing $faviconURL");
                 }
 
@@ -1345,7 +1345,7 @@ class serendipity_event_gravatar extends serendipity_event
      */
     function urlencode($url)
     {
-        $hash = @md5($this->instance_id . $url);
+        $hash = md5($this->instance . $url);
         return $hash . str_replace ('_', '%5F', urlencode($url));
     }
 
@@ -1354,7 +1354,7 @@ class serendipity_event_gravatar extends serendipity_event
         $hash     = substr($url, 0, 32);
         $real_url = urldecode(substr($url, 32));
 
-        if ($hash == @md5($this->instance_id . $real_url)) {
+        if ($hash == md5($this->instance . $real_url)) {
             // Valid hash was found.
             return $real_url;
         } else {
@@ -1396,14 +1396,14 @@ class serendipity_event_gravatar extends serendipity_event
     {
         global $serendipity;
 
-        if (@$this->defaultImageConfigurationdefault === null) {
-            $this->defaultImageConfigurationdefault = array(
-                'defaultavatar' => ($this->get_config('defaultavatar')==''?'': $this->get_config('defaultavatar', '')),
+        if ($this->defaultImageConfiguration === null) {
+            $this->defaultImageConfiguration = array(
+                'defaultavatar' => ($this->get_config('defaultavatar') == '' ? '' : $this->get_config('defaultavatar', '')),
                 'size'          => $this->get_config('size', '40'),
                 'rating'        => $this->get_config('rating', '-')
             );
         }
-        return $this->defaultImageConfigurationdefault;
+        return $this->defaultImageConfiguration;
     }
 
     function getPermaPluginPath()

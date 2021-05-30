@@ -1,3 +1,7 @@
+1.73:
+-----
+ * Fix some wrong named plugin API and class properties errors
+
 1.72:
 -----
  * Add error note when not having installed/enabled php-xml extension
