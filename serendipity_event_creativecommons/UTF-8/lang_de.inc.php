@@ -14,3 +14,11 @@
 @define('PLUGIN_CREATIVECOMMONS_ND_DESC',   'Der Lizenzgeber erlaubt anderen dieses Werk in unveränderter Form zu kopieren, zu verteilen, anzuwenden und darzustellen. Daran anlehnende oder ableitende Werke sind nicht erlaubt.');
 @define('PLUGIN_CREATIVECOMMONS_SA_DESC',   'Ja, solange dieses Recht weitergegeben wird');
 
+@define('PLUGIN_CREATIVECOMMONS_VERSION', 'Lizenz Version');
+@define('PLUGIN_CREATIVECOMMONS_VERSION_DESC', 'Wählen Sie aus, welche nummerierte Version der Lizenz Sie verwenden möchten.');
+@define('PLUGIN_CREATIVECOMMONS_IMAGETYPE_GENERIC', 'generisch');
+@define('PLUGIN_CREATIVECOMMONS_IMAGETYPE_SMALL', 'klein');
+@define('PLUGIN_CREATIVECOMMONS_IMAGETYPE_BIG', 'groß');
+@define('PLUGIN_CREATIVECOMMONS_IMAGETYPE', 'Bildvariante');
+@define('PLUGIN_CREATIVECOMMONS_IMAGETYPE_DESC', 'Wählen Sie, welche Art von Bild angezeigt werden soll.');
+
