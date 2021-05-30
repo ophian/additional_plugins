@@ -203,7 +203,7 @@
 <category>Event Plugins</category>
 <author>Evan Nemerson, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_creativecommons&lt;br /&gt;Creative Commons License&lt;/b&gt;&lt;br /&gt;Choose and display a creative commons license for your content&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 25 Jan 2021 12:41:03 +0100</pubDate>
+<pubDate>Sun, 30 May 2021 10:05:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_creativecommons</guid>
 </item>
 <item>
@@ -527,7 +527,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Show Avatars inside comments. Gravatars, Pavatars, Favatars, Wavatars, Monster ID, Identicon, Twitter and Identica Avatars are supported.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Wed, 26 Aug 2020 17:25:19 +0200</pubDate>
+<pubDate>Sun, 30 May 2021 10:12:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
