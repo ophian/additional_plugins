@@ -65,49 +65,25 @@
 #sp_navigator {
     margin-top: 1.5em;
 }
-#serendipityStaticpagesNav ul {
-    padding: 3px 0 1px;
-    margin-left: 0;
-    background: #ddd;
-    background-image: -webkit-linear-gradient(#fff, #ddd);
-    background-image: linear-gradient(#fff, #ddd);
-    display: block;
-    border-style: solid;
-    border-color: #BBB #DEDEDE;
-    border-width: 1px;
-}
-#serendipityStaticpagesNav ul li {
-    list-style: none;
-    margin: 0;
+.sptabs > ul > li {
     display: inline-flex;
 }
-#serendipityStaticpagesNav ul {
-    padding: 5px 0\9; /* IE 9 hack */
-}
-#serendipityStaticpagesNav ul li {
-    display: inline-block\9; /* IE 9 hack for inline-flex */
-}
-#serendipityStaticpagesNav ul li a {
-    padding: 3px 0.5em;
-    margin-left: 5px;
-}
-
-#serendipityStaticpagesNav ul li#active a {
-    background: #dedede;
-    background-image: -webkit-linear-gradient(#fff, #dedede);
-    background-image: linear-gradient(#fff, #dedede);
+.sptabs > ul > li  > a {
     background-clip: padding-box;
-    border: 1px solid #CACACA;
-    /* rounded corners */
-    -webkit-border-radius: 0.1em;
-    -moz-border-radius: 0.1em;
-    -o-border-radius: 0.1em;
-    border-radius: 0.1em; /* html5 standard */
-    /* shadow settings */
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* html5 standard */
+    padding-right: .5rem;
+    margin: -3px;
+}
+.sptabs > ul a {
+    background-color: #eee;
+    border: #ddd;
+    background-image: -webkit-linear-gradient(#fff, #ddd);
+    background-image: linear-gradient(#fff, #ddd);
+}
+.sptabs > ul .on a,
+.sptabs .tabs-list li.on a {
+    color: #888;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
 }
 
 .sp_thead {
