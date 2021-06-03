@@ -65,13 +65,11 @@
 #sp_navigator {
     margin-top: 1.5em;
 }
-.sptabs > ul > li {
-    display: inline-flex;
+.sp_tabnav.tabs-list {
+    display: flex;
 }
 .sptabs > ul > li  > a {
-    background-clip: padding-box;
-    padding-right: .5rem;
-    margin: -3px;
+    padding: .25rem .5rem .25rem 0;
 }
 .sptabs > ul a {
     background-color: #eee;
