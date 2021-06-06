@@ -1,3 +1,7 @@
+6.35:
+-----
+ * Fix a preview javascript collision with unspecified staticpage form selector(s)
+
 6.34:
 -----
  * Improve 6.33 styles

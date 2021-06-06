@@ -66,6 +66,7 @@
     margin-top: 1.5em;
 }
 .sp_tabnav.tabs-list {
+    display: -webkit-flex;
     display: flex;
 }
 .sptabs > ul > li  > a {
@@ -264,7 +265,7 @@
 .sp_dim { color: #AAA; font-size: small; }
 .sp_lang { padding: 0 0.1em; font-style: italic;}
 
-.sp_pageselector button[type="submit"].entry_preview {
+.sp_pageselector button[type="submit"].sp_entry_preview {
     background: #ddd;
     background-image: -webkit-linear-gradient(#fff, #ddd);
     background-image: linear-gradient(#fff, #ddd);

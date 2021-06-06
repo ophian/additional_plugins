@@ -174,7 +174,7 @@
 
     {if empty($sp_listentries_entries)} {* show selectbox form header start, if showform is present, since we need to select entries quickly *}
 
-<form action="serendipity_admin.php" method="post" name="serendipityEntry">
+<form action="serendipity_admin.php" method="post" name="serendipitySPEntry">
     <div>
         <input type="hidden" name="serendipity[adminModule]" value="event_display">
         <input type="hidden" name="serendipity[adminAction]" value="staticpages">
@@ -217,7 +217,7 @@
             - <input class="input_button state_cancel" type="submit" name="serendipity[staticDelete]" onclick="return confirm('{$CONST.DELETE_SURE|sprintf:"{$sp_selected_id} ({$sp_selected_name|truncate:30})"}');" value="{$CONST.DELETE}">
             {/if}
             {if !empty($smarty.request.serendipity.staticid) OR !empty($smarty.post.serendipity.staticpage)}
-            - <button type="submit" name="serendipity[staticPreview]" value="1" title="{$CONST.PREVIEW}" class="button_link entry_preview icon-search"><span class="visuallyhidden">{$CONST.PREVIEW}</span></button>
+            - <button type="submit" name="serendipity[staticPreview]" value="1" title="{$CONST.PREVIEW}" class="button_link sp_entry_preview icon-search"><span class="visuallyhidden">{$CONST.PREVIEW}</span></button>
             {/if}
         {if isset($sp_defpages_sbplav) AND $sp_defpages_sbplav}
             <span class="sp_right sp_info" title="Staticpage Sidebar {$CONST.STATICPAGE_PLUGIN_AVAILABLE}"><svg aria-hidden="true" class="icon icon-info"><use xlink:href="#icon-info"></use></svg></span>
