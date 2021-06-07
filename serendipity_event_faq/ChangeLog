@@ -1,3 +1,7 @@
+1.44:
+-----
+ * Add some missing backend styles
+
 1.43:
 -----
  * Fix an uninitialized variable check for PHP 8

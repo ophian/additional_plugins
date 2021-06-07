@@ -101,6 +101,12 @@
 #backend_faq_formpage .plain_editor {
     width: 100%;
     display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.hook_buttons .serendipity_toggle_emoticon_bar.serendipityPrettyButton {
+    margin-top: 0;
 }
 #backend_faq_formpage .form_field textarea,
 #backend_faq_formpage .form_field div:not(.action_field) {
