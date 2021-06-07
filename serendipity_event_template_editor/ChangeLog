@@ -1,3 +1,7 @@
+0.10:
+----
+ * Fixup some PHP 8 initialized variable checks
+
 0.9:
 ----
  * Iconfont accessibility fixes
@@ -16,7 +20,7 @@
  * Fetch jquery via https
 
 0.3:
- * Check if template directory is writeable
+ * Check if template directory is writable
  * Don't save php-files with syntax-errors
  * Show link to template_editor also if there are no template options
 

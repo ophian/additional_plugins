@@ -20,7 +20,7 @@ class serendipity_event_template_editor extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda');
         $propbag->add('license',       'GPL');
-        $propbag->add('version',       '0.9');
+        $propbag->add('version',       '0.10');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0'
         ));
@@ -237,9 +237,9 @@ class serendipity_event_template_editor extends serendipity_event
                             echo '<script src="'.$pluginPath.'codemirror/codemirror.js" type="text/javascript"></script>';
                         }
                         if (isset($serendipity['GET']['template_editor_use_temp'])) {
-                            $this->showEditor($serendipity['GET']['template_editor_path'] . $serendipity['GET']['editfile'], true);
+                            $this->showEditor($serendipity['GET']['template_editor_path'] . ($serendipity['GET']['editfile'] ?? ''), true);
                         } else {
-                            $this->showEditor($serendipity['GET']['template_editor_path'] . $serendipity['GET']['editfile']);
+                            $this->showEditor($serendipity['GET']['template_editor_path'] . ($serendipity['GET']['editfile'] ?? ''));
                         }
                     }
                     break;
@@ -255,8 +255,10 @@ class serendipity_event_template_editor extends serendipity_event
     function showUploader($path, $form)
     {
         global $serendipity;
+
         $template_path = $serendipity['templatePath'];
         $cur_template =  $serendipity['template'];
+
         if (!$path) {
             $path = $template_path . $cur_template . '/';
         }
@@ -283,8 +285,10 @@ class serendipity_event_template_editor extends serendipity_event
     function showCreator($path)
     {
         global $serendipity;
+
         $template_path = $serendipity['templatePath'];
         $cur_template =  $serendipity['template'];
+
         if (!$path) {
             $path = $template_path . $cur_template . '/';
         }
@@ -331,8 +335,10 @@ class serendipity_event_template_editor extends serendipity_event
     function showFiles($path=false)
     {
         global $serendipity;
+
         $template_path = $serendipity['templatePath'];
         $cur_template =  $serendipity['template'];
+
         if (!$path) {
             $path = $template_path . $cur_template . '/';
         }
@@ -345,7 +351,9 @@ class serendipity_event_template_editor extends serendipity_event
             return;
         }
         echo '<ul id="templateEditorFileList" class="plainList zebra_list templateEditorList">';
+
         $filecount = 0;
+        $jsDeleteDialogs = '';
 
         foreach($files AS $file) {
             if (getimagesize("{$path}{$file}")) {
@@ -376,8 +384,10 @@ class serendipity_event_template_editor extends serendipity_event
     function showDirectories($path=false)
     {
         global $serendipity;
+
         $template_path = $serendipity['templatePath'];
         $cur_template =  $serendipity['template'];
+
         if (!$path) {
             $path = $template_path . $cur_template . '/';
         }
@@ -425,7 +435,9 @@ class serendipity_event_template_editor extends serendipity_event
     function getFiles($path)
     {
         global $serendipity;
+
         $path = $serendipity['serendipityPath'] . $path;
+
         if ($handle = opendir($path)) {
             while (false !== ($file = readdir($handle))) {
                 if ($file != "." && $file != ".." && ! is_dir($path . $file)) {
@@ -440,7 +452,9 @@ class serendipity_event_template_editor extends serendipity_event
     function getDirectories($path)
     {
         global $serendipity;
+
         $path = $serendipity['serendipityPath'] . $path;
+
         if ($handle = opendir($path)) {
             while (false !== ($file = readdir($handle))) {
                 if ($file != "." && $file != ".." && is_dir($path . $file)) {
@@ -455,6 +469,7 @@ class serendipity_event_template_editor extends serendipity_event
     function forkTemplate()
     {
         global $serendipity;
+
         $template_path = $serendipity['serendipity_path'] . $serendipity['templatePath'];
         $cur_template =  $serendipity['template'];
 
@@ -498,9 +513,13 @@ class serendipity_event_template_editor extends serendipity_event
     function checkSyntax($code)
     {
         global $serendipity;
+
         $tempFile = $serendipity['serendipityPath'] . 'templates_c/template_editor_temp.php';
+
         file_put_contents($tempFile, $code);
+
         $errors = shell_exec("php -l $tempFile");
+
         if (strpos($errors, 'Errors parsing') === false) {
             return true;
         } else {
