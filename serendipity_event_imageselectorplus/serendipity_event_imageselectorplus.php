@@ -652,6 +652,9 @@ class serendipity_event_imageselectorplus extends serendipity_event
 }
 #quickblog_tablefield .wrap_legend {
     display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     margin: 0
 }
 .isp_archives,
