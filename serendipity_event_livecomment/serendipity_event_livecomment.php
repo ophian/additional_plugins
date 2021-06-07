@@ -17,12 +17,12 @@ class serendipity_event_livecomment extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_LIVECOMMENT_NAME);
         $propbag->add('description',   PLUGIN_EVENT_LIVECOMMENT_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Malte Paskuda, Garvin Hicking');
+        $propbag->add('author',        'Malte Paskuda, Garvin Hicking, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.6'
         ));
-        $propbag->add('version',       '2.5.7');
+        $propbag->add('version',       '2.5.8');
         $propbag->add('event_hooks',   array(
             'frontend_footer'               => true,
             'external_plugin'               => true,
@@ -133,6 +133,15 @@ class serendipity_event_livecomment extends serendipity_event
     {
         global $serendipity;
         static $variant = null;
+        static $buttons = null;
+        static $timeout = null;
+        static $preview_animation = null;
+        static $preview_animation_speed = null;
+        static $button_animation = null;
+        static $button_animation_speed = null;
+        static $elastic = null;
+        static $inline = null;
+        static $path = null;
 
         $hooks = &$bag->get('event_hooks');
 
