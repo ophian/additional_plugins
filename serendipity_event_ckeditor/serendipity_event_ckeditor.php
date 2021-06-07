@@ -49,7 +49,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.16.0.0-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.16.1.0-plus.zip';
 
     /**
      * Access property checkUpdateVersion
@@ -57,22 +57,22 @@ class serendipity_event_ckeditor extends serendipity_event
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.16.0.0');
+    protected $checkUpdateVersion = array('ckeditor:4.16.1.0');
 
     /**
      * Access property revisionPackage
      * Note revisions of ckeditor and plugin additions to lang files
      * @var array
      */
-    protected $revisionPackage = array('CKEditor 4.16.0 (revision 17a1555f7f, full package, 2021-01-27)',
+    protected $revisionPackage = array('CKEditor 4.16.1 (revision cae20318d4, full package, 2021-05-30)',
                                        'CKEditor-Plugin: mediaembed, included to custom build. v. 0.6 (https://github.com/frozeman/MediaEmbed, 2013-07-11)',
-                                       'CKEditor-Plugin: Custom build added for current version "ajax", "autocomplete", "autogrow", "autolink", "button", "clipboard", "dialog", "dialogui", "embedbase", "emoji", "fakeobjects", "floatpanel", "lineutils", "notification", "notificationaggregator", "panelbutton", "placeholder", "textmatch", "textwatcher", "undo", "widget", "widgetselection" and "xml" plugins, 2021-01-27)',
+                                       'CKEditor-Plugin: Custom build added for current version "ajax", "autocomplete", "autogrow", "autolink", "button", "clipboard", "dialog", "dialogui", "embedbase", "emoji", "fakeobjects", "floatpanel", "lineutils", "notification", "notificationaggregator", "panelbutton", "placeholder", "textmatch", "textwatcher", "undo", "widget", "widgetselection" and "xml" plugins, 2021-05-30)',
                                        'CKEditor-Plugin: Manually added for current version ""codesnippet", "embed" and "embedsemantic" plugins, 2021-01-27)',
                                        'CKEditor-Plugin: procurator, v. 1.7 (Serendipity placeholder Plugin, 2019-11-24)',
                                        'CKEditor-Plugin: cheatsheet, v. 1.3 (Serendipity CKE-Cheatsheet Plugin, 2019-07-03)',
                                        'CKEditor-S9yCustomConfig, cke_config.js, v. 2.21, 2020-01-08',
-                                       'CKEditor-S9yCustomPlugins, cke_plugin.js, v. 1.17, 2020-01-08',
-                                       'CKEditor-S9yAddOn, fresh highlight.pack.js file v. 10.5.0 and github styles in highlight.css (https://highlightjs.org/) 2021-02-07',
+                                       'CKEditor-S9yCustomPlugins, cke_plugin.js, v. 1.18, 2020-06-07',
+                                       'CKEditor-S9yAddOn, fresh highlight.min.js file v. 11.1.0 and github styles in highlight.min.css (https://highlightjs.org/) 2021-06-03',
                                        'Prettify: JS & CSS files, v. "current", (http://code.google.com/p/google-code-prettify/, 2013-03-04)');
 
 
@@ -193,7 +193,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.16.0.3'); // is CKEDITOR Series 4.16.0 - and appended plugin revision .3
+        $propbag->add('version',       '4.16.1.0'); // is CKEDITOR Series 4.16.1 - and appended plugin revision .0
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
@@ -444,7 +444,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.16.0.3', '4.16.0.2'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.16.1.0', '4.16.0.3'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -458,7 +458,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.16.0.3', '4.16.0.2'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.16.1.0', '4.16.0.3'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
@@ -518,11 +518,11 @@ class serendipity_event_ckeditor extends serendipity_event
                         if (version_compare($serendipity['version'], '3.1-alpha1', '<')) {
                              if (!empty($headcss) && $headcss) {
 ?>
-    <link rel="stylesheet" href="<?php echo $plugingpath . 'serendipity_event_ckeditor/highlight.css'; ?>" />
+    <link rel="stylesheet" href="<?php echo $plugingpath . 'serendipity_event_ckeditor/highlight.min.css'; ?>" />
 <?php
                             } else {
 ?>
-    <script src="<?php echo $plugingpath . 'serendipity_event_ckeditor/highlight.pack.js'; ?>"></script>
+    <script src="<?php echo $plugingpath . 'serendipity_event_ckeditor/highlight.min.js'; ?>"></script>
     <script>
         // launch the codesnippet highlight
         hljs.configure({
