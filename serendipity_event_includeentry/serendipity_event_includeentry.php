@@ -32,7 +32,7 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.25');
+        $propbag->add('version',       '2.26');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
@@ -334,7 +334,24 @@ class serendipity_event_includeentry extends serendipity_event
 
     function showForm($type = 'template')
     {
-        global $serendipity;
+        if (!isset($this->statictemplate['type'])) {
+            $this->statictemplate['type'] = '';
+        }
+        if (!isset($this->statictemplate['title'])) {
+            $this->statictemplate['title'] = '';
+        }
+        if (!isset($this->statictemplate['body'])) {
+            $this->statictemplate['body'] = '';
+        }
+        if (!isset($this->statictemplate['extended'])) {
+            $this->statictemplate['extended'] = '';
+        }
+        if (!isset($this->statictemplate['template'])) {
+            $this->statictemplate['template'] = 'plugin_staticblock.tpl';
+        }
+        if (!isset($this->statictemplate['apply_markup'])) {
+            $this->statictemplate['apply_markup'] = true;
+        }
 
         if (!function_exists('serendipity_emit_htmlarea_code')) {
             include_once S9Y_INCLUDE_PATH . 'include/functions_entries_admin.inc.php';
@@ -455,7 +472,7 @@ class serendipity_event_includeentry extends serendipity_event
                                 <option value="__new">' . NEW_ENTRY . '</option>
                                 <option value="__new">-----------------</option>'."\n";
 
-        $html .= $this->getPages($serendipity['POST']['staticblock'], $type);
+        $html .= $this->getPages(($serendipity['POST']['staticblock'] ?? null), $type);
         $html .= '
                             </select><br>
                             <input class="serendipityPrettyButton input_button state_submit" type="submit" name="serendipity[staticSubmit]" value="' . GO . '">
@@ -527,13 +544,13 @@ class serendipity_event_includeentry extends serendipity_event
     {
         global $serendipity;
 
-        if ($serendipity['POST']['staticblock'] != '__new') {
+        if (isset($serendipity['POST']['staticblock']) && $serendipity['POST']['staticblock'] != '__new') {
             $this->fetchStaticBlock($serendipity['POST']['staticblock']);
         }
 
         echo '<h2>' . PLUGIN_EVENT_INCLUDEENTRY_BLOCKS . "</h2>\n";
 
-        if ($serendipity['POST']['staticSave'] == "true" && !empty($serendipity['POST']['SAVECONF'])) {
+        if (isset($serendipity['POST']['staticSave']) && $serendipity['POST']['staticSave'] == "true" && !empty($serendipity['POST']['SAVECONF'])) {
             $serendipity['POST']['staticSubmit'] = true;
             $bag  = new serendipity_property_bag;
             $this->introspect($bag);
@@ -570,7 +587,7 @@ class serendipity_event_includeentry extends serendipity_event
         /* SHOW SELECTION */
         echo $this->showBlockForm('form');
 
-        if ($serendipity['POST']['staticSubmit']) {
+        if (isset($serendipity['POST']['staticSubmit']) && $serendipity['POST']['staticSubmit']) {
             echo '<h3>';
             if ($serendipity['POST']['type'] == 'template') {
                 echo STATICBLOCK_EDIT_TEMPLATES;
@@ -644,9 +661,9 @@ class serendipity_event_includeentry extends serendipity_event
                     }
 
                     $this->fetchStaticBlock($serendipity['GET']['staticblock']);
-                    $eventData['title']    = $this->staticblock['title'];
-                    $eventData['body']     = $this->staticblock['body'];
-                    $eventData['extended'] = $this->staticblock['extended'];
+                    $eventData['title']    = $this->staticblock['title'] ?? '';
+                    $eventData['body']     = $this->staticblock['body'] ?? '';
+                    $eventData['extended'] = $this->staticblock['extended'] ?? '';
 
                     if (!empty($eventData['extended'])) {
                         $eventData['exflag'] = true;
