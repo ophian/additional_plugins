@@ -574,7 +574,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_includeentry&lt;br /&gt;Markup: Include entry data/templates/blocks&lt;/b&gt;&lt;br /&gt;Allows you to add HTML-style tags to your entry that includes parts of other entrys. Use this markup: [s9y-include-entry:XXX:YYY]. Replace XXX with the target entryid and YYY with the target field name (i.e. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). You can also use the new menu functions to maintain templates and blocks that can get inserted in between your entries.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:15:53 +0100</pubDate>
+<pubDate>Mon, 14 Jun 2021 13:14:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_includeentry</guid>
 </item>
 <item>
