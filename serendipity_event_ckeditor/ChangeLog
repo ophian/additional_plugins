@@ -1,3 +1,11 @@
+4.16.1.1:
+---------
+    * Prepare for Styx 3.5-alpha1 "DARK MODE" - skin set being independent from custom build.
+    * Based on moono-dark (4.4.2) skin by https://ckeditor.com/cke4/addon/moono-dark from 2014.
+    * Fully updated to latest skin "moona-lisa" (4.16.1) styles and deeply touched for Styx relations.
+      [ No IE and quirks, just Gecko and webkit Browsers! ]
+    * Color negated icon sets taken from "moona-lisa" (4.16.1) skin and for codesnippet, embed, embedsemantic plugins.
+
 4.16.1.0:
 ---------
     * Upgrade to CKEDITOR 4.16. Series, update 1 (https://ckeditor.com/cke4/release-notes).
