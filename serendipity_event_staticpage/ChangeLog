@@ -1,3 +1,7 @@
+6.36:
+-----
+ * Fix this plugin configuration header hidden set simple [info] toggle button issue
+
 6.35:
 -----
  * Fix a preview javascript collision with unspecified staticpage form selector(s)

@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.35');
+        $propbag->add('version', '6.36');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -144,7 +144,7 @@ class serendipity_event_staticpage extends serendipity_event
             case 'listpp':
                 $propbag->add('type',           'string');
                 $propbag->add('name',           STATICPAGE_SHOWLIST_NUMLIST);
-                $propbag->add('description',    '');
+                $propbag->add('description',    'Items pere page'); // A fake description for the $cdesc issue with the Styx 3.4 simple [info] toggle button, since being the last entry and has its own abstract config class
                 $propbag->add('default',        '6');
                 break;
 
