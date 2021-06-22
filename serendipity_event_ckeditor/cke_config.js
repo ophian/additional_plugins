@@ -3,13 +3,18 @@
  */
 
 /**
- * @fileOverview A Serendipity Styx serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.24, 2020-08-17
+ * @fileOverview A Serendipity Styx serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.25, 2021-06-21
  */
 
  /**
  * Substitute every config option to CKE in here
  */
 CKEDITOR.editorConfig = function( config ) {
+
+    // Allow dark mode
+    if (typeof STYX_DARKMODE === 'undefined' || STYX_DARKMODE === null) STYX_DARKMODE = false;
+    config.skin = (STYX_DARKMODE === true ? 'moonodark,' + CKEDITOR_PLUGPATH + 'serendipity_event_ckeditor/moonodark/' : 'moono-lisa');
+    //https://cdn.ckeditor.com/#skins for local skins and also local plugins (WHOW! this enables us to to separate all custom builds!)
 
     // set Serendipity default lang
     config.language = CKECONFIG_LANG; // IETF standard unicode language 4-letter tag, using a dash
@@ -140,7 +145,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.uiColor = '#FF2400'; // scarlet red
     config.uiColor = '#14B8C4'; // light turquoise
 
-    config.skin    = 'moono-lisa'; // this is default
+    config.skin    = 'moono-lisa'; // this is default (see on top)
     config.height  = 400; // dito
     */
 
@@ -156,7 +161,12 @@ CKEDITOR.editorConfig = function( config ) {
     */
     // Add custom Serendipity styles to ckeditor content wysiwyg-mode, to respect S9y CSS image floats.
     // If set here, we have to include the default styles, and this even since CKE 4.4. Else it isn't loaded!
-    config.contentsCss = [ CKEDITOR_PLUGPATH + 'serendipity_event_ckeditor/ckeditor/contents.css', CKEDITOR_PLUGPATH + 'serendipity_event_ckeditor/wysiwyg-style.css' ];
+    // Add Styx specific styles
+    if (STYX_DARKMODE === true) {
+        config.contentsCss = [ CKEDITOR_PLUGPATH + 'serendipity_event_ckeditor/dark_contents.min.css', CKEDITOR_PLUGPATH + 'serendipity_event_ckeditor/wysiwyg-style.css' ];
+    } else {
+        config.contentsCss = [ CKEDITOR_PLUGPATH + 'serendipity_event_ckeditor/ckeditor/contents.css', CKEDITOR_PLUGPATH + 'serendipity_event_ckeditor/wysiwyg-style.css' ];
+    }
 
 
     /** SECTION: Web-Spellchecker (wsc) and SCAYT plug-in for CKEditor
