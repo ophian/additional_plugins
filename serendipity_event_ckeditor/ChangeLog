@@ -1,6 +1,10 @@
+4.16.1.2:
+---------
+    * Improve "moonodark" bottom current active path styles
+
 4.16.1.1:
 ---------
-    * Prepare for Styx 3.5-alpha1 "DARK MODE" - skin set being independent from custom build.
+    * Prepare for Styx 3.5-alpha1 "DARK MODE" - skin "moonodark" set being independent from custom build.
     * Based on moono-dark (4.4.2) skin by https://ckeditor.com/cke4/addon/moono-dark from 2014.
     * Fully updated to latest skin "moona-lisa" (4.16.1) styles and deeply touched for Styx relations.
       [ No IE and quirks, just Gecko and webkit Browsers! ]
