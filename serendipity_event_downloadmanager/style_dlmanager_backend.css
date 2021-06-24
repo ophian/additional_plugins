@@ -1,5 +1,5 @@
 /**********************************************************************************************/
-/* style_dlmanager_backend.css in serendipity_event_downloadmanager.php v.0.32 2018-08-10 Ian */
+/* style_dlmanager_backend.css in serendipity_event_downloadmanager.php v.0.33 2021-06-24 Ian */
 /**********************************************************************************************/
 
 /*********************************************/
@@ -489,3 +489,54 @@ input#dlm_file_rename { border: 1px solid #888; background-color: rgb(221, 230, 
 #backend_downloadmanager .dlm_backend_file_box thead img,
 #backend_downloadmanager .dlm_backend_cats thead img,
 #ftpfiles thead img { height: 1em; }
+
+/* Styx 3.5 DARK MODE */
+[data-color-mode="dark"] #backend_downloadmanager table {
+    background-color: var(--color-bg-backdrop);
+    border-color: var(--color-border-overlay);
+
+}
+[data-color-mode="dark"] #catfiles thead th, [data-color-mode="dark"] #catlist thead th, [data-color-mode="dark"] #ftpfiles thead th,[data-color-mode="dark"]  #smlfiles thead th {
+    border-bottom-color: var(--color-border-overlay);
+    color: var(--color-text-white);
+}
+[data-color-mode="dark"] #catfiles tbody tr, [data-color-mode="dark"] #catlist tbody tr, [data-color-mode="dark"] #ftpfiles tbody tr, [data-color-mode="dark"] #smlfiles tbody tr, [data-color-mode="dark"] #catlist tbody td {
+    background: var(--color-bg-backdrop);
+}
+[data-color-mode="dark"] #catfiles thead tr, [data-color-mode="dark"] #catlist thead tr, [data-color-mode="dark"] #ftpfiles thead tr, [data-color-mode="dark"] #smlfiles thead tr,
+[data-color-mode="dark"] #catfiles tfoot tr, [data-color-mode="dark"] #catlist tfoot tr, [data-color-mode="dark"] #ftpfiles tfoot tr, [data-color-mode="dark"] #smlfiles tfoot tr, [data-color-mode="dark"] #catlist tbody td {
+    background: var(--color-bg-overlay);
+}
+[data-color-mode="dark"] #dlm_help div, [data-color-mode="dark"] #dlm_help h4{
+    background: var(--color-bg-info);
+    color: var(--color-text-white);
+}
+[data-color-mode="dark"] #addcat, [data-color-mode="dark"] #dlm_edit_file {
+    background: var(--color-bg-overlay);
+    border-color: var(--color-border-overlay);
+}
+[data-color-mode="dark"] #backend_downloadmanager .even:not(tr) {
+    background: var(--color-bg-backdrop);
+}
+[data-color-mode="dark"] #backend_downloadmanager .odd:not(tr) {
+    background: var(--color-bg-overlay);
+}
+[data-color-mode="dark"] #dlm_backend_uploadform {
+    background: var(--color-bg-primary);
+    border-color: var(--color-border-overlay);
+}
+[data-color-mode="dark"] #backend_downloadmanager input[type="image"][name="Reject_Selected"] {
+    background: var(--color-bg-white);
+}
+[data-color-mode="dark"] #backend_downloadmanager .icon-trash-empty::before {
+    color: var(--color-icon-danger);
+}
+[data-color-mode="dark"] .dlm_page_header {
+    background-color: var(--color-bg-backdrop);
+    border-color: var(--color-border-overlay);
+}
+[data-color-mode="dark"] .dlm_page_header h4, [data-color-mode="dark"] #uploads h4{
+    background-color: var(--color-bg-overlay);
+    border-bottom-color: var(--color-border-tertiary);
+    margin-top: 0;
+}
