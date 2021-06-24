@@ -1,4 +1,4 @@
-{* backend.dlm.subpage.tpl last modified 2018-08-14 *}
+{* backend.dlm.subpage.tpl last modified 2021-06-24 *}
 {if $dlmgbl.thispage == 2 && $dlmcfs.catfiles === true}
 {* Show all files in category *}
 <p id="dlm_files_header" class="dlm_backend_option"><a href="#" onclick="showConfig('dlm1'); return false" title="{$CONST.TOGGLE_OPTION}"><img src="{if $dlmcfs.ddiv === true}{serendipity_getFile file="img/minus.png"}{else}{serendipity_getFile file="img/plus.png"}{/if}" id="optiondlm1" alt="+/-" /> {$CONST.PLUGIN_DOWNLOADMANAGER_DLS_IN_THIS_CAT}[ {$dlmgbl[0].cat.payload} ]:</a> {$dlmgbl[0].cat.num}</p>
@@ -149,7 +149,7 @@
         <tr class="{cycle name="cycle1" values="odd,even"}">
             <td colspan="3">
                 <img src="{$dlmgbl.httppath}img/f.png" width="16" height="16" alt="" />
-                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;smlpath={$smlda.filepath|default:''}/{$smlda.filename}&amp;thiscat={$dlmgbl.thiscat}">{$smlda.filename}</a>
+                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;smlpath=/{$smlda.filename}&amp;thiscat={$dlmgbl.thiscat}">{$smlda.filename}</a>
             </td>
         </tr>
     {/foreach}
@@ -157,7 +157,7 @@
     {foreach $dlmtsl.smlfiles AS $smlfa}
         <tr class="{cycle name="cycle1" values="odd,even"}">
             <td>
-                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;medialib=1&amp;smlpath={$smlfa.filepath|default:''}{$dlmtsl.extrapath}&amp;ifile={$smlfa.filename}&amp;thiscat={$dlmgbl.thiscat}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_IMPORT_FILE}"><span class="icon icon-upload"></span></a>
+                <a href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;medialib=1&amp;smlpath={$dlmtsl.extrapath}&amp;ifile={$smlfa.filename}&amp;thiscat={$dlmgbl.thiscat}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_IMPORT_FILE}"><span class="icon icon-upload"></span></a>
                 <img src="{$smlfa.filemime.ICON}" width="16" height="16" alt="{$smlfa.filemime.TYPE}" title="{$smlfa.filemime.TYPE}" />
                 {$smlfa.filename}
             </td>
