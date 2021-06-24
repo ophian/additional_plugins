@@ -1,6 +1,14 @@
 ChangeLog:
 """"""""""
 
+1.49:
+-----
+ * PHP 8 Fix some unset variable usage
+ * Exclude fetching MediaLibrary ".v" WebP Variation directories
+ * Raises Styx Requirements
+ * Fix a non-integer calcFilesize() build
+ * Prepare for Styx 3.5 DARK MODE
+
 1.48:
 -----
  * PHP 8 init variable fix
