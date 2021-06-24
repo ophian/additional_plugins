@@ -265,8 +265,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_downloadmanager</link>
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Provides full downloadmanager capabilities to your s9y. When uninstalling, all related tables will be dropped!&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 31 Jan 2021 14:27:53 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Provides full downloadmanager capabilities to your s9y. When uninstalling, all related tables will be dropped!&lt;br/&gt;For: Serendipity 3.0.0</content:encoded>
+<pubDate>Thu, 24 Jun 2021 15:42:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
