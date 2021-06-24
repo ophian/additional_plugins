@@ -32,12 +32,12 @@ class serendipity_event_downloadmanager extends serendipity_event
         $propbag->add('name',          PLUGIN_DOWNLOADMANAGER_TITLE);
         $propbag->add('description',   PLUGIN_DOWNLOADMANAGER_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0.0',
+            'serendipity' => '3.0.0',
             'smarty'      => '3.1.0',
             'php'         => '7.0.0'
         ));
 
-        $propbag->add('version',       '1.48');
+        $propbag->add('version',       '1.49');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -473,7 +473,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 break;
         }
 
-        return isset($result) ? $result : null;
+        return ($result ?? null);
     }
 
     /**
@@ -638,7 +638,7 @@ class serendipity_event_downloadmanager extends serendipity_event
            $filesize = $filesize . ' Bytes';
        }
        foreach($array AS $name => $size) {
-           if ($filesize > $size || $filesize == $size) {
+           if ((int)$filesize > $size || (int)$filesize == $size) {
                $filesize = round((round($filesize / $size * 100) / 100), 2) . ' ' . $name;
            }
        }
@@ -2249,7 +2249,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 }
             }
         }
-        return isset($data) ? $data : false;
+        return ($data ?? false);
     }
 
     /* see function backend_str_replace_recursive() - this one is for categories only */
@@ -2264,7 +2264,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 }
             }
         }
-        return isset($data) ? $data : false;
+        return ($data ?? false);
     }
 
     /**
@@ -2500,7 +2500,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             }
 
             foreach($files['d_arr'] AS $key => $val) {
-
+                if (substr($val, -2) == '.v') continue;
                 $smldirs[] = array(
                                 'filename' => str_replace($serendipity['serendipityPath'] . $serendipity['uploadPath'], '', $val),
                                 'expath'   => $extrapath
@@ -2529,11 +2529,11 @@ class serendipity_event_downloadmanager extends serendipity_event
                 'thissml'        => true,
                 'ddiv'           => (isset($_GET['smlpath']) && !empty($_GET['smlpath'])) ? true : false,
                 'smlpath'        => !empty($path) ? $path : $extrapath,
-                'smlfiles'       => isset($smlfiles) ? $smlfiles : null,
+                'smlfiles'       => $smlfiles ?? null,
                 'issmlarr'       => $sml_arr,
-                'smldirs'        => isset($smldirs) ? $smldirs : null,
+                'smldirs'        => $smldirs ?? null,
                 'extrapath'      => $extrapath,
-                'backpath'       => isset($backpath) ? $backpath : null
+                'backpath'       => $backpath ?? null
             )
         );
         return;
