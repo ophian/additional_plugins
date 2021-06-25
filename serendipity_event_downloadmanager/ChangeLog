@@ -1,6 +1,11 @@
 ChangeLog:
 """"""""""
 
+1.50:
+-----
+ * Removed 1.47 fixes
+ * Raises Styx Requirements
+
 1.49:
 -----
  * PHP 8 Fix some unset variable usage
