@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.44');
+        $propbag->add('version',      '1.45');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -233,7 +233,7 @@ class serendipity_event_faq extends serendipity_event
                 $propbag->add('type',           'select');
                 $propbag->add('name',           FAQ_PID);
                 $propbag->add('description',    FAQ_PID_PID);
-                $propbag->add('select_values',  $this->getCategories($serendipity['GET']['cat_lang']));
+                $propbag->add('select_values',  $this->getCategories(($serendipity['GET']['cat_lang'] ?? null)));
                 $propbag->add('default',        '');
                 break;
 
@@ -253,7 +253,7 @@ class serendipity_event_faq extends serendipity_event
 
             case 'language':
                 $propbag->add('type',           'hidden');
-                $propbag->add('value',          $serendipity['GET']['cat_lang']);
+                $propbag->add('value',          $serendipity['GET']['cat_lang'] ?? null);
                 break;
 
             default:
@@ -684,7 +684,7 @@ class serendipity_event_faq extends serendipity_event
                 if (!empty($serendipity['GET']['id'])) {
                     $serendipity['POST']['id'] = &$serendipity['GET']['id'];
                 }
-                if (is_numeric($serendipity['POST']['id'])) {
+                if (isset($serendipity['POST']['id']) && is_numeric($serendipity['POST']['id'])) {
                     $this->fetchCategory($serendipity['POST']['id']);
                 }
 
@@ -867,6 +867,7 @@ class serendipity_event_faq extends serendipity_event
                     $fcats = $this->prepareMove($fcats);
                     foreach ($fcats AS $category) {
                         $caticon = $category['depth'] > 0 ? '<img alt="category" title="category depth" src="' . $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/img/category.png" data-file-width="128" data-file-height="128" height="24" width="24">&nbsp;' : '';
+                        $caticon = (!empty($caticon) && $serendipity['dark_mode']) ? '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-nested" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"/></svg>&nbsp;' : $caticon;
                         echo '        <ul class="plainList">'."\n";
                         echo '            <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=categories&amp;serendipity[id]='.$category['id'].'&amp;serendipity[cat_lang]='.$this_cat_lang.'" title="' . EDIT . '"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> ' . EDIT . "</span></a></li>\n";
                         echo '            <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=deleteCategory&amp;serendipity[id]='.$category['id'].'" title="' . DELETE . '"><span class="icon-trash" aria-hidden="true"></span><span class="visuallyhidden"> ' . DELETE . "</span></a></li>\n";
