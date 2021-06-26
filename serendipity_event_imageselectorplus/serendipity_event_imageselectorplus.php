@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.02');
+        $propbag->add('version',       '2.3.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0.0',
             'smarty'      => '3.1.0',
@@ -230,124 +230,139 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
         $hooks = &$bag->get('event_hooks');
 
+        $quickblog = serendipity_db_bool($this->get_config('quickblog', 'false'));
+
         if (isset($hooks[$event])) {
 
             switch($event) {
 
                 case 'backend_image_addform':
+if ($quickblog && $serendipity['wysiwyg']) {
+        $basic = str_replace('/', '\/', $serendipity['serendipityHTTPPath'] . 'templates/_assets/ckebasic/ckeditor.js');
 ?>
 
-        <div id="imageselectorplus" class="checkpoint">
-            <h3 class="additional_properties"><?php echo defined('ADDITIONAL_PROPERTIES_BY_PLUGIN') ? sprintf(ADDITIONAL_PROPERTIES_BY_PLUGIN, 'ImageSelectorPlus') : 'Additional properties by Plugin: ImageSelectorPlus'; ?></h3>
+    <script>
+        if (!window.CKEDITOR) {
+            document.write('<script src="<?=$basic?>"><\/script>');
+        }
+    </script>
+<?php } ?>
+    <div id="imageselectorplus" class="checkpoint">
+        <h3 class="additional_properties"><?php echo defined('ADDITIONAL_PROPERTIES_BY_PLUGIN') ? sprintf(ADDITIONAL_PROPERTIES_BY_PLUGIN, 'ImageSelectorPlus') : 'Additional properties by Plugin: ImageSelectorPlus'; ?></h3>
 
 <?php
-                    if (class_exists('ZipArchive')) {
-                        $checkedY = "";
-                        $checkedN = "";
-                        serendipity_db_bool($this->get_config('unzipping', 'true')) ? $checkedY = ' checked="checked"' : $checkedN = ' checked="checked"';
+if (class_exists('ZipArchive')) {
+    $checkedY = "";
+    $checkedN = "";
+    serendipity_db_bool($this->get_config('unzipping', 'true')) ? $checkedY = ' checked="checked"' : $checkedN = ' checked="checked"';
 ?>
-            <span class="msg_notice"><span class="icon-attention-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_ZIP_WARNING;?></span>
-            <fieldset id="isp_archives" class="clearfix isp_archives radio_field">
-                <span class="wrap_legend">
-                    <legend class="visuallyhidden"><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES;?></legend>
-                    <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_DESC;?>
-                </span>
-                <div>
-                    <input type="radio" class="input_radio" id="unzip_yes" name="serendipity[unzip_archives]" value="<?php echo YES;?>"<?php echo $checkedY;?>><label for="unzip_yes"><?php echo YES;?></label>
-                    <input type="radio" class="input_radio" id="unzip_no" name="serendipity[unzip_archives]" value="<?php echo NO;?>"<?php echo $checkedN;?>><label for="unzip_no"><?php echo NO;?></label>
+        <span class="msg_notice"><span class="icon-attention-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_ZIP_WARNING;?></span>
+        <fieldset id="isp_archives" class="clearfix isp_archives radio_field">
+            <span class="wrap_legend">
+                <legend class="visuallyhidden"><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES;?></legend>
+                <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_DESC;?>
+            </span>
+            <div>
+                <input type="radio" class="input_radio" id="unzip_yes" name="serendipity[unzip_archives]" value="<?php echo YES;?>"<?php echo $checkedY;?>><label for="unzip_yes"><?php echo YES;?></label>
+                <input type="radio" class="input_radio" id="unzip_no" name="serendipity[unzip_archives]" value="<?php echo NO;?>"<?php echo $checkedN;?>><label for="unzip_no"><?php echo NO;?></label>
+            </div>
+        </fieldset>
+<?php
+}
+if ($quickblog) {
+?>
+        <fieldset id="quickblog_tablefield" class="clearfix">
+            <span class="wrap_legend">
+                <legend><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG; ?>:</legend>
+                <button class="toggle_info button_link" type="button" data-href="#quickblog_tab_info">
+                    <span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?= MORE ?></span>
+                </button>
+            </span>
+            <div id="quickblog_tab_info" class="clearfix field_info additional_info">
+                <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG_DESC; ?></em>
+            </div>
+            <div id="quickblog_content" class="quickblog_content">
+                <div class="quickblog_form_field">
+                    <label for="quickblog_titel"><?php echo TITLE; ?></label>
+                    <input id="quickblog_title" class="input_textbox" name="serendipity[quickblog][title]" type="text">
                 </div>
-            </fieldset>
+
+                <div class="quickblog_textarea_field">
+                    <label for="quickblog_body_area"><?php echo ENTRY_BODY; ?></label>
+                    <textarea id="quickblog_body_area" class="quickblog_nugget" data-tarea="quickblog_body_area" name="serendipity[quickblog][body]" rows="10" cols="80"></textarea>
 <?php
-                    }
-                    if (serendipity_db_bool($this->get_config('quickblog', 'false'))) {
+if ($serendipity['wysiwyg']) {
+    $plugins = serendipity_plugin_api::enum_plugins('*', false, 'serendipity_event_nl2br');
 ?>
-            <fieldset id="quickblog_tablefield" class="clearfix">
-                <span class="wrap_legend">
-                    <legend><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG; ?>:</legend>
-                    <button class="toggle_info button_link" type="button" data-href="#quickblog_tab_info">
+                    <input name="serendipity[properties][disable_markups][]" type="hidden" value="<?php echo $plugins[0]['name']; ?>">
+                    <script>
+                        if (typeof STYX_DARKMODE === 'undefined' || STYX_DARKMODE === null) STYX_DARKMODE = false;
+                        const HAS_CKEDITOR_PLUGPATH = (typeof CKEDITOR_PLUGPATH === 'undefined' || CKEDITOR_PLUGPATH === null) ? false : true;
+                        if (STYX_DARKMODE === true) {
+                            CKEDITOR.addCss('body { color:#adbac7; } '); /*var(--color-text-primary)*/
+                            CKEDITOR.addCss('body { background:#1c2128; } '); /*var(--color-scale-black)*/
+                        }
+
+                        CKEDITOR.replace( 'quickblog_body_area',
+                        {
+                            toolbar : [['Format'],['Bold','Italic','Underline','Strike','Superscript','TextColor','-','NumberedList','BulletedList','Outdent','Blockquote'],['JustifyBlock','JustifyCenter','JustifyRight'],['Link','Unlink'],['SpecialChar'],['Maximize'],['Source']],
+                            toolbarGroups: null,
+                            skin: (STYX_DARKMODE === true && HAS_CKEDITOR_PLUGPATH !== false) ? 'moonodark,' + CKEDITOR_PLUGPATH + 'serendipity_event_ckeditor/moonodark/' : (STYX_DARKMODE === true ? 'moono-dark' : 'moono-lisa'),
+                            extraAllowedContent: 'div(*);p(*);ul(*);'
+                        });
+                    </script>
+<?php } ?>
+                </div>
+
+                <div class="quickblog_form_field">
+                    <label for="quickblog_select"><?php echo CATEGORY; ?></label>
+                    <select id="quickblog_select" name="serendipity[quickblog][category]">
+                        <option value=""><?php echo NO_CATEGORY; ?></option>
+<?php
+if (is_array($cats = serendipity_fetchCategories())) {
+    $cats = serendipity_walkRecursive($cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
+    foreach ($cats AS $cat) {
+        echo '    <option value="'. $cat['categoryid'] .'">'. str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
+    }
+}
+?>
+
+                    </select>
+                </div>
+
+                <div class="quickblog_form_select">
+                    <label for="select_image_target"><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET; ?></label>
+                    <select id="select_image_target" name="serendipity[quickblog][target]">
+                        <option value="none"<?php echo serendipity_ifRemember('target', 'none', false, 'selected'); ?>><?php echo NONE; ?></option>
+                        <option value="js"<?php echo serendipity_ifRemember('target', 'js', false, 'selected'); ?>><?php echo MEDIA_TARGET_JS; ?></option>
+                        <option value="plugin"<?php echo serendipity_ifRemember('target', 'plugin', false, 'selected'); ?>><?php echo MEDIA_ENTRY; ?></option>
+                        <option value="_blank"<?php echo serendipity_ifRemember('target', '_blank', false, 'selected'); ?>><?php echo MEDIA_TARGET_BLANK; ?></option>
+                    </select>
+                </div>
+
+                <div class="clearfix radio_field quickblog_radio_field">
+                    <label><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_ASOBJECT; ?></label>
+                    <div>
+                        <input type="radio" class="input_radio" id="image_yes" name="serendipity[quickblog][isobject]" value="<?php echo YES;?>"><label for="image_yes"><?php echo YES;?></label>
+                        <input type="radio" class="input_radio" id="image_no" name="serendipity[quickblog][isobject]" value="<?php echo NO;?>" checked="checked"><label for="image_no"><?php echo NO;?></label>
+                    </div>
+                </div>
+
+                <div class="quickblog_form_field">
+                    <label for="quickblog_isize"><?php echo IMAGE_SIZE; ?></label>
+                    <input id="quickblog_isize" class="input_textbox" name="serendipity[quickblog][size]" value="<?php echo $serendipity['thumbSize']; ?>" type="text">
+                    <button class="toggle_info button_link" type="button" data-href="#quickblog_size_info">
                         <span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?= MORE ?></span>
                     </button>
-                </span>
-                <div id="quickblog_tab_info" class="clearfix field_info additional_info">
-                    <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG_DESC; ?></em>
                 </div>
-                <div id="quickblog_content" class="quickblog_content">
-                    <div class="quickblog_form_field">
-                        <label for="quickblog_titel"><?php echo TITLE; ?></label>
-                        <input id="quickblog_title" class="input_textbox" name="serendipity[quickblog][title]" type="text">
-                    </div>
-
-                    <div class="quickblog_textarea_field">
-                        <label for="quickblog_body_area"><?php echo ENTRY_BODY; ?></label>
-                        <textarea id="quickblog_body_area" class="quickblog_nugget" data-tarea="quickblog_body_area" name="serendipity[quickblog][body]" rows="10" cols="80"></textarea>
-<?php
-    if ($serendipity['wysiwyg']) {
-        $plugins = serendipity_plugin_api::enum_plugins('*', false, 'serendipity_event_nl2br');
-?>
-                        <input name="serendipity[properties][disable_markups][]" type="hidden" value="<?php echo $plugins[0]['name']; ?>">
-                        <script src="<?php echo $serendipity['serendipityHTTPPath']; ?>templates/_assets/ckebasic/ckeditor.js"></script>
-                        <script>
-                            CKEDITOR.replace( 'quickblog_body_area',
-                            {
-                                toolbar : [['Format'],['Bold','Italic','Underline','Strike','Superscript','TextColor','-','NumberedList','BulletedList','Outdent','Blockquote'],['JustifyBlock','JustifyCenter','JustifyRight'],['Link','Unlink'],['SpecialChar'],['Maximize'],['Source']],
-                                toolbarGroups: null,
-                                extraAllowedContent: 'div(*);p(*);ul(*);'
-                            });
-                        </script>
-<?php
-    }
-?>
-                    </div>
-
-                    <div class="quickblog_form_field">
-                        <label for="quickblog_select"><?php echo CATEGORY; ?></label>
-                        <select id="quickblog_select" name="serendipity[quickblog][category]">
-                            <option value=""><?php echo NO_CATEGORY; ?></option>
-<?php
-                    if (is_array($cats = serendipity_fetchCategories())) {
-                        $cats = serendipity_walkRecursive($cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
-                        foreach ($cats AS $cat) {
-                            echo '    <option value="'. $cat['categoryid'] .'">'. str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
-                        }
-                    }
-?>
-                        </select>
-                    </div>
-
-                    <div class="quickblog_form_select">
-                        <label for="select_image_target"><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET; ?></label>
-                        <select id="select_image_target" name="serendipity[quickblog][target]">
-                            <option value="none"<?php echo serendipity_ifRemember('target', 'none', false, 'selected'); ?>><?php echo NONE; ?></option>
-                            <option value="js"<?php echo serendipity_ifRemember('target', 'js', false, 'selected'); ?>><?php echo MEDIA_TARGET_JS; ?></option>
-                            <option value="plugin"<?php echo serendipity_ifRemember('target', 'plugin', false, 'selected'); ?>><?php echo MEDIA_ENTRY; ?></option>
-                            <option value="_blank"<?php echo serendipity_ifRemember('target', '_blank', false, 'selected'); ?>><?php echo MEDIA_TARGET_BLANK; ?></option>
-                        </select>
-                    </div>
-
-                    <div class="clearfix radio_field quickblog_radio_field">
-                        <label><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_ASOBJECT; ?></label>
-                        <div>
-                            <input type="radio" class="input_radio" id="image_yes" name="serendipity[quickblog][isobject]" value="<?php echo YES;?>"><label for="image_yes"><?php echo YES;?></label>
-                            <input type="radio" class="input_radio" id="image_no" name="serendipity[quickblog][isobject]" value="<?php echo NO;?>" checked="checked"><label for="image_no"><?php echo NO;?></label>
-                        </div>
-                    </div>
-
-                    <div class="quickblog_form_field">
-                        <label for="quickblog_isize"><?php echo IMAGE_SIZE; ?></label>
-                        <input id="quickblog_isize" class="input_textbox" name="serendipity[quickblog][size]" value="<?php echo $serendipity['thumbSize']; ?>" type="text">
-                        <button class="toggle_info button_link" type="button" data-href="#quickblog_size_info">
-                            <span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?= MORE ?></span>
-                        </button>
-                    </div>
-                    <div id="quickblog_size_info" class="clearfix field_info additional_info">
-                        <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_IMAGE_SIZE_DESC; ?></em>
-                    </div>
+                <div id="quickblog_size_info" class="clearfix field_info additional_info">
+                    <em><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_IMAGE_SIZE_DESC; ?></em>
                 </div>
-            </fieldset>
-        </div>
+            </div>
+        </fieldset>
+    </div>
 
-<?php
-                    }
+<?php }
                     break;
 
                 case 'backend_image_add':
@@ -662,6 +677,22 @@ class serendipity_event_imageselectorplus extends serendipity_event
     border: 1px solid #aaa;
     background: #eee;
     padding: .5em 0 .5em .5em;
+}
+[data-color-mode="dark"] .isp_archives,
+[data-color-mode="dark"] #quickblog_tablefield .quickblog_content {
+    border-color: var(--color-border-overlay);
+    background: var(--color-bg-overlay);
+}
+[data-color-mode="dark"] #quickblog_tab_info.field_info {
+    background-color: var(--color-bg-info);
+    border-color: var(--color-border-info);
+    color: var(--color-alert-info-text);
+}
+[data-color-mode="dark"] #isp_archives .wrap_legend, [data-color-mode="dark"] #quickblog_tablefield legend {
+    color: var(--color-text-primary);
+}
+#quickblog_content label {
+    padding-right: .25rem;
 }
 #uploadform .quickblog_nugget {
     margin-left: 0;

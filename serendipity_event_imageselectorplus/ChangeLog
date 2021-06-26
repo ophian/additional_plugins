@@ -1,3 +1,8 @@
+2.3.0:
+-----
+ * Improve loading core WYSIWYG Rich Text asset to avoid doublets with CKEPLUS plugin
+ * Prepare for Styx 3.5 DARK MODE
+
 2.02:
 -----
  * Fix core green/red success/error messages handover
