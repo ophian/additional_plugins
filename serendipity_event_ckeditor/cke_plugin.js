@@ -1,10 +1,12 @@
 /**
- * @license Copyright (c) from 2013, Author: Ian Styx. All rights reserved. Last Modified date: 2021-06-07.
+ * @license Copyright (c) from 2013, Author: Ian Styx. All rights reserved. Last Modified date: 2021-06-26.
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.18, 2021-06-07.
+ * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.19, 2021-06-26.
  */
+
+if (typeof CKECONFIG_USEAUTOSAVE === 'undefined' || CKECONFIG_USEAUTOSAVE === null) CKECONFIG_USEAUTOSAVE = false;
 
 // define array for hooked s9y plugins
 var s9ymediabuttons  = [];
@@ -100,7 +102,6 @@ function Spawnnuggets(item, addEP, jsED) {
         extraPluginList   = (CKECONFIG_OEMBED_ON === true) ? extraPluginList+', embedbase, embed' : extraPluginList;
         extraPluginList   = (CKECONFIG_OEMBED_SMT_ON === true) ? extraPluginList+', embedbase, embedsemantic' : extraPluginList;
     var customConfigPath  = CKEDITOR_PLUGPATH+'serendipity_event_ckeditor/cke_config.js?v='+CKECONFIG_FORCE_LOAD;
-    if (typeof CKECONFIG_USEAUTOSAVE === 'undefined' || CKECONFIG_USEAUTOSAVE === null) CKECONFIG_USEAUTOSAVE = false;
     var useAutoSave       = (CKECONFIG_USEAUTOSAVE === true && Modernizr.indexeddb === true) ? 'on' : null;
 
     // case hooked s9ypluginbuttons, since we want the unique id
