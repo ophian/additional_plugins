@@ -1,7 +1,7 @@
 4.16.1.4:
 ---------
     * Improve DARK MODE dark_contents styles for highlight(.js) code.
-      Based on github-dark-dimmed stylesheet, but used as a drop-over for the github light base.
+      Based on github-dark-dimmed stylesheet, but used as a drop-over for the github.css light base.
     * Update highlight.js to 11.0.1
 
 4.16.1.3:
