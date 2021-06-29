@@ -26,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.1.3');
+        $propbag->add('version',       '2.1.4');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.3.0'
@@ -513,7 +513,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         if (is_array($template_config)) {
             serendipity_plugin_api::hook_event('backend_templates_configuration_top', $template_config);
 
-            if ($serendipity['POST']['adminSubAction'] == 'configure') {
+            if (isset($serendipity['POST']['adminSubAction']) && $serendipity['POST']['adminSubAction'] == 'configure') {
                 foreach($serendipity['POST']['template'] AS $option => $value) {
                     categorytemplate_option::set_config($option, $value, $serendipity['smarty_vars']['template_option']);
                 }

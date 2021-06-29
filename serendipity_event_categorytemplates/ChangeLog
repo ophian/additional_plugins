@@ -1,3 +1,7 @@
+2.1.4:
+-----
+ * Fix a backend initialization variable check for PHP 8
+
 2.1.3:
 -----
  * Fix another variable initialization check for PHP 8
