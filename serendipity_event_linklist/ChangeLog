@@ -1,3 +1,8 @@
+3.02 & 1.30:
+------------
+
+ * Fix sidebar linklist output for PHP 8 (thanks to @erAck)
+
 1.29: (sidebar)
 ------------
 

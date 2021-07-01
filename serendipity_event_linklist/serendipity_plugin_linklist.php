@@ -20,7 +20,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $propbag->add('description',   PLUGIN_LINKS_BLAHBLAH);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '1.29');
+        $propbag->add('version',       '1.30');
         $propbag->add('configuration', array(
                                              'title',
                                              'prepend_text',
@@ -435,7 +435,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
                 }
             }
 
-            $str .= 'document.write(d);
+            $str .= 'document.write(d.toString());
             //-->
             </script>';
 

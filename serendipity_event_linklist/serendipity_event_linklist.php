@@ -26,7 +26,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '3.01');
+        $propbag->add('version',       '3.02');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2.0',
             'smarty'      => '3.1.0',
