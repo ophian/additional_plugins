@@ -1,3 +1,7 @@
+5.08:
+-----
+ * Remove a whitespace in sidebars taglist tooltip
+
 5.07:
 -----
  * Improve freetag entry form container button up for Styx 3.4

@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.07');
+        $propbag->add('version',       '5.08');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -809,7 +809,7 @@ class serendipity_event_freetag extends serendipity_event
                 $fontSize = 100;
             }
 
-            $html .= '<a rel="tag" href="' . $taglink . self::makeURLTag($name) . '" title="' . $title . ($quantity > 0 ? ' (' . $quantity . ') ' : '') . '">' . $title . '</a>';
+            $html .= '<a rel="tag" href="' . $taglink . self::makeURLTag($name) . '" title="' . $title . ($quantity > 0 ? ' (' . $quantity . ')' : '') . '">' . $title . '</a>';
 
             if ($scaling && !$useRotCanvas) {
                 $html .= "</span>\n";
