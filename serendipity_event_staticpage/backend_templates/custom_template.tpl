@@ -215,12 +215,12 @@
 
             <div class="form_field sp_sect">
                 <label class="sp_label" title="Set related freetags for this staticpage. No spaces. Use ; as delimiter!">Related Tag(s)</label>
-                <input type="text" class="sp_long" name="serendipity[plugin][custom][relTags]" value="{$form_values.custom.relTags|default:'None'}">
+                <input type="text" class="sp_long" name="serendipity[plugin][custom][relTags]" value="{if isset($form_values.custom.relTags)}{$form_values.custom.relTags|default:'None'}{else}None{/if}">
             </div>
 
             <div class="form_field sp_sect">
                 <label class="sp_label" title="Set the amount of articles to show up by defined freetags">Amount of Pages</label>
-                <input type="text" name="serendipity[plugin][custom][relNumb]" value="{$form_values.custom.relNumb|default:'None'}">
+                <input type="text" name="serendipity[plugin][custom][relNumb]" value="{if isset($form_values.custom.relNumb)}{$form_values.custom.relNumb|default:'None'}{else}None{/if}">
             </div>
 
             <div id="entry_custom_sidebar" class="form_field form_multiselect sp_sect">
@@ -235,7 +235,7 @@
 
             <div id="entry_custom_class" class="form_field sp_sect">
                 <label class="sp_label" title="CSS class of the main page body that should be associated">Main CSS class</label>
-                    <input class="input_textbox direction_ltr" type="text" size="30" name="serendipity[plugin][custom][css_class]" value="{$form_values.custom.css_class|default:'None'}">
+                    <input class="input_textbox direction_ltr" type="text" size="30" name="serendipity[plugin][custom][css_class]" value="{if isset($form_values.custom.css_class)}{$form_values.custom.css_class|default:'None'}{else}None{/if}">
             </div>
 
             {if NOT empty($custom_wysiwyg)}
