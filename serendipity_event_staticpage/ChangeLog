@@ -1,3 +1,7 @@
+6.38:
+-----
+ * Add a helper for user preferenced toggled configuration groups on open
+
 6.37:
 -----
  * Fix some extended variable initialization checks in custom template for PHP 8

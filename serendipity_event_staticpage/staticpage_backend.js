@@ -1,6 +1,6 @@
 /***
  * Staticpage event backend js
- * Last modified: 2018-09-02
+ * Last modified: 2021-07-03
  **/
 
 /**
@@ -167,4 +167,13 @@ $(function() {
         }, 1000);
         return false;
     });
+});
+
+/**
+ * Toggle helper for styling
+ */
+$(function() {
+    var activebox = $('.config_optiongroup').not($(".config_optiongroup.additional_info"));
+    //console.log(activebox);
+    $(activebox).prev('.configuration_group').find('button.toggle_info.show_config_option.sp_toggle').addClass('active');
 });
