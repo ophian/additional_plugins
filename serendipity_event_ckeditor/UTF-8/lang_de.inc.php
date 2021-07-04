@@ -1,8 +1,8 @@
 <?php
 
 /**
- *  @file UTF-8/lang_de.inc.php 1.4.22 2017-11-23 Ian
- *  @version 1.4.22
+ *  @file UTF-8/lang_de.inc.php 1.4.23 2021-07-04 Ian
+ *  @version 1.4.23
  *  @author Translator Name <yourmail@example.com>
  *  DE-Revision: Revision of UTF-8/lang_de.inc.php
  */
@@ -12,7 +12,7 @@
 @define('PLUGIN_EVENT_CKEDITOR_REVISION_TITLE', '<h3>Das Plugin enthält:</h3>');
 @define('PLUGIN_EVENT_CKEDITOR_INSTALL', '<h2>Installation</h2>
 <p class="msg_notice">
-    <span class="icon-attention" aria-hidden="true"></span> <strong>Abhängigkeiten:</strong> Deaktivieren Sie das "body", "extended" und "nugget" parsing global im <strong>NL2BR</strong> Plugin, <strong>oder</strong> per entry über das entryproperties event plugin <strong>und/oder</strong> für statische Seiten über die Entry "Textformatierungs" Option!<br><strong>Seit Serendipity 2.0</strong> kann entryproperties den CKEditor diesbezüglich aber automatisch erkennen.
+    <span class="icon-attention" aria-hidden="true"></span> <strong>Abhängigkeiten:</strong> Deaktivieren Sie das "body", "extended" und "nugget" parsing global im <strong>NL2BR</strong> Plugin, <strong>oder</strong> per entry über das entryproperties event plugin <strong>und/oder</strong> für statische Seiten über die Entry "Textformatierungs" Option!<br>Seit <strong>Serendipity 2.0</strong> wird der CKEditor diesbezüglich aber automatisch erkannt.
 </p>
 <ol style="line-height: 1.6">
     <li>Um anderen Plugins Zugriff auf das Plugin oder dessen Hook zu gewähren, platzieren Sie das (CKEditor) Plugin nahe dem Ende der Pluginliste.</li>

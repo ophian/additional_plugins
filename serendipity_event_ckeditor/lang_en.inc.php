@@ -1,8 +1,8 @@
 <?php
 
 /**
- *  @file lang_en.inc.php 1.4.20 2017-08-18 Ian
- *  @version 1.4.20
+ *  @file lang_en.inc.php 1.4.21 2021-07-04 Ian
+ *  @version 1.4.21
  *  @author Translator Name <yourmail@example.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */
@@ -12,7 +12,7 @@
 @define('PLUGIN_EVENT_CKEDITOR_REVISION_TITLE', '<h3>This Plugin includes:</h3>');
 @define('PLUGIN_EVENT_CKEDITOR_INSTALL', '<h2>Installation</h2>
 <p class="msg_notice">
-    <span class="icon-attention" aria-hidden="true"></span> <strong>Dependencies:</strong> Disable global body, extended and nugget parsing in the <strong>NL2BR</strong> plugin, <strong>OR</strong> by entry with entryproperties event plugin <strong>and/or</strong> for staticpages by entry "Perform Markup Transformations" option!<br><strong>Since Serendipity 2.0</strong> the entryproperties plugin detects CKEditor automatically as to that!
+    <span class="icon-attention" aria-hidden="true"></span> <strong>Dependencies:</strong> Disable global body, extended and nugget parsing in the <strong>NL2BR</strong> plugin, <strong>OR</strong> by entry with entryproperties event plugin <strong>and/or</strong> for staticpages by entry "Perform Markup Transformations" option!<br>But since <strong>Serendipity 2.0</strong> the CKEditor usage is automatically detected!
 </p>
 <ol style="line-height: 1.6">
     <li>To allow other plugins to use or hook into the editor, place this (CKEditor) plugin near the end of your plugin list.</li>
