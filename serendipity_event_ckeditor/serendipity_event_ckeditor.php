@@ -70,8 +70,8 @@ class serendipity_event_ckeditor extends serendipity_event
                                        'CKEditor-Plugin: Manually added for current version ""codesnippet", "embed" and "embedsemantic" plugins, 2021-01-27)',
                                        'CKEditor-Plugin: procurator, v. 1.7 (Serendipity placeholder Plugin, 2019-11-24)',
                                        'CKEditor-Plugin: cheatsheet, v. 1.3 (Serendipity CKE-Cheatsheet Plugin, 2019-07-03)',
-                                       'CKEditor-S9yCustomConfig, cke_config.js, v. 2.21, 2020-01-08',
-                                       'CKEditor-S9yCustomPlugins, cke_plugin.js, v. 1.18, 2020-06-07',
+                                       'CKEditor-S9yCustomConfig, cke_config.js, v. 2.25, 2021-06-21',
+                                       'CKEditor-S9yCustomPlugins, cke_plugin.js, v. 1.19, 2021-06-26',
                                        'CKEditor-S9yAddOn, fresh highlight.min.js file v.11.0.1 and github styles in highlight.min.css (https://highlightjs.org/) 2021-06-27',
                                        'Prettify: JS & CSS files, v. "current", (http://code.google.com/p/google-code-prettify/, 2013-03-04)');
 
