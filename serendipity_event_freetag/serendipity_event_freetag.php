@@ -2218,6 +2218,7 @@ document.addEventListener("DOMContentLoaded", function() {
         $serendipity['GET']['subpage'] = isset($eventData) ? $eventData : null;
         unset($serendipity['GET']['category']); // No restriction should be enforced here.
 
+        $_tmpFetchLimit = $serendipity['fetchLimit'];
         if ($tagged_as_list) {
             $serendipity['fetchLimit'] = 99; // do not use frontend entries pagination if count < 100 entries
         }
@@ -2237,6 +2238,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         $raw_data = ob_get_contents();
         ob_end_clean();
+        $serendipity['fetchLimit'] = $_tmpFetchLimit;
         $serendipity['smarty']->assign('raw_data', $raw_data);
         // out of scope
         if ($tagged_as_list) {
