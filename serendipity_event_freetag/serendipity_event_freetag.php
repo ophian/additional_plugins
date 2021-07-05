@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.08');
+        $propbag->add('version',       '5.09');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2238,6 +2238,10 @@ document.addEventListener("DOMContentLoaded", function() {
         $raw_data = ob_get_contents();
         ob_end_clean();
         $serendipity['smarty']->assign('raw_data', $raw_data);
+        // out of scope
+        if ($tagged_as_list) {
+            $serendipity['smarty']->assign('view', ($serendipity['view'] ?? 'plugin')); // being consistent to simple /plugin/tag/some or NULL initialized for "noindex,follow" in index.tpl, else set to 'entries'
+        }
 
         if (serendipity_db_bool($this->get_config('show_tagcloud', 'true'))) {
             $serendipity['smarty']->assign('istagcloud', true); // allows to remove a sidebar with a tag cloud, when using an entry cloud
