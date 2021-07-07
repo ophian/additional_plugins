@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.45');
+        $propbag->add('version',      '1.46');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -1260,7 +1260,7 @@ class serendipity_event_faq extends serendipity_event
         <script type="text/javascript">
         function Spawnnugget() {
         <?php foreach($htmlnugget AS $htmlnuggetid) { ?>
-            Spawnnuggets('<?php echo $htmlnuggetid; ?>');
+            if (window.Spawnnuggets) Spawnnuggets('<?php echo $htmlnuggetid; ?>');
         <?php } ?>
         }
         </script>
@@ -1365,7 +1365,7 @@ class serendipity_event_faq extends serendipity_event
         <script type="text/javascript">
         function Spawnnugget() {
         <?php foreach($htmlnugget AS $htmlnuggetid) { ?>
-            Spawnnuggets('<?php echo $htmlnuggetid; ?>');
+            if (window.Spawnnuggets) Spawnnuggets('<?php echo $htmlnuggetid; ?>');
         <?php } ?>
         }
         </script>

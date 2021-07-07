@@ -1,5 +1,9 @@
 1.46:
 -----
+ * Fix Spawnnuggets init
+
+1.45:
+-----
  * Fix some uninitialized variables for PHP 8
  * Prepare for Styx 3.5 DARK MODE
 
