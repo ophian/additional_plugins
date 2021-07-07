@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '3.79');
+        $propbag->add('version',      '3.80');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -1553,7 +1553,7 @@ class serendipity_event_guestbook extends serendipity_event
                 array(
                     'gb_liva'     => (!isset($serendipity['GET']['guestbookcategory']) || $serendipity['GET']['guestbookcategory'] == 'gbview') ? ' id="active"' : '',
                     'gb_liapa'    => ((isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbapp') || (isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbook_category'] == 'gbapp')) ? ' id="active"' : '',
-                    'gb_liada'    => (((isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbadd') || (isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbookcategory'] == 'gbadd')) && (isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbook_category'] != 'gbapp')) ? ' id="active"' : '',
+                    'gb_liada'    => (((isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbadd') || ((isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbookcategory'] == 'gbadd')) && (isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbook_category'] != 'gbapp'))) ? ' id="active"' : '',
                     'gb_lida'     => (isset($serendipity['GET']['guestbookcategory']) && $serendipity['GET']['guestbookcategory'] == 'gbdb') ? ' id="active"' : '',
                     'gb_moderate' => $moderate,
                     'gb_isnav'    => true
@@ -1606,12 +1606,12 @@ class serendipity_event_guestbook extends serendipity_event
                     $this->checkSubmit();
                 }
 
-                if (count($messages) < 1 && @$serendipity['guestbook_message_header'] === false) {
+                if (count($messages) < 1 && isset($serendipity['guestbook_message_header']) && $serendipity['guestbook_message_header'] === false) {
                     array_push($messages, PLUGIN_GUESTBOOK_MESSAGE . ': ' . ERROR_UNKNOWN . '<br>' . ERROR_NOCAPTCHASET);
                 }
-                $error_occurred = (@$serendipity['guestbook_message_header'] === true) ? THANKS_FOR_ENTRY : ERROR_OCCURRED;
+                $error_occurred = (isset($serendipity['guestbook_message_header']) && $serendipity['guestbook_message_header'] === true) ? THANKS_FOR_ENTRY : ERROR_OCCURRED;
 
-                if (@$serendipity['guestbook_message_header'] === true) {
+                if (isset($serendipity['guestbook_message_header']) && $serendipity['guestbook_message_header'] === true) {
                     if ($moderate === true && isset($serendipity['POST']['guestbook_category']) && $serendipity['POST']['guestbook_category'] == 'gbapp') {
 
                         $serendipity['smarty']->assign(array('gb_gbadd_approve' => true, 'msg_header' => $error_occurred, 'guestbook_messages' => $messages));
@@ -1632,7 +1632,7 @@ class serendipity_event_guestbook extends serendipity_event
 
                 } else {
                     // fallback to new ENTRY FORM, since there was an error - no need to escape
-                   if (@$serendipity['guestbook_message_header'] === false ) {
+                   if (isset($serendipity['guestbook_message_header']) && $serendipity['guestbook_message_header'] === false ) {
                         foreach($serendipity['POST'] AS $sk => $sv) {
                             $entry[$sk] = $sv;
                         }
@@ -1674,6 +1674,14 @@ class serendipity_event_guestbook extends serendipity_event
                             )
                         );
                     }
+                    if (!isset($entry['id'])) $serendipity['smarty']->assign('plugin_guestbook_id', null);
+                    if (!isset($entry['ip'])) $serendipity['smarty']->assign('plugin_guestbook_ip', null);
+                    if (!isset($entry['timestamp'])) $serendipity['smarty']->assign('plugin_guestbook_ts', null);
+                    if (!isset($entry['name'])) $serendipity['smarty']->assign('plugin_guestbook_name', null);
+                    if (!isset($entry['email'])) $serendipity['smarty']->assign('plugin_guestbook_email', null);
+                    if (!isset($entry['homepage'])) $serendipity['smarty']->assign('plugin_guestbook_url', null);
+                    if (!isset($entry['approved'])) $serendipity['smarty']->assign('plugin_guestbook_app', null);
+                    if (!isset($entry['body'])) $serendipity['smarty']->assign('plugin_guestbook_comment', null);
 
                     // get the guestbook entries template file
                     echo $this->parseTemplate('plugin_guestbook_backend_form.tpl');
@@ -1878,13 +1886,14 @@ class serendipity_event_guestbook extends serendipity_event
         }
 
         if ($serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli') {
+            $serendipity['GET']['guestbookdbclean'] = $serendipity['GET']['guestbookdbclean'] ?? null;
             // assign form array entries to smarty
             $serendipity['smarty']->assign(
                         array(
-                            'plugin_gb_dump'      => @$serendipity['GET']['guestbookdbclean'] == 'dbdump' ? ' id="active"' : '',
-                            'plugin_gb_insert'    => @$serendipity['GET']['guestbookdbclean'] == 'dbinsert' ? ' id="active"' : '',
-                            'plugin_gb_erase'     => @$serendipity['GET']['guestbookdbclean'] == 'dberase' ? ' id="active"' : '',
-                            'plugin_gb_download'  => @$serendipity['GET']['guestbookdbclean'] == 'dbdownload' ? ' id="active"' : '',
+                            'plugin_gb_dump'      => $serendipity['GET']['guestbookdbclean'] == 'dbdump' ? ' id="active"' : '',
+                            'plugin_gb_insert'    => $serendipity['GET']['guestbookdbclean'] == 'dbinsert' ? ' id="active"' : '',
+                            'plugin_gb_erase'     => $serendipity['GET']['guestbookdbclean'] == 'dberase' ? ' id="active"' : '',
+                            'plugin_gb_download'  => $serendipity['GET']['guestbookdbclean'] == 'dbdownload' ? ' id="active"' : '',
                             'plugin_gb_adminpath' => $adminpath,
                             'plugin_gb_ilogerror' => isset($serendipity['guestbook']['ilogerror']) ? $serendipity['guestbook']['ilogerror'] : null,
                             'plugin_gb_dropmsg'   => isset($serendipity['guestbookdroptable']) ? $serendipity['guestbookdroptable'] : null

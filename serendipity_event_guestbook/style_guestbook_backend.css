@@ -233,4 +233,41 @@
 #wrapGB input#show, #wrapGB input#hide {
     display:none;
 }
+
+[data-color-mode="dark"] #wrapGB div.guestbook_backend_form {
+    background-color: var(--color-bg-overlay);
+    border-color: var(--color-border-overlay);
+}
+[data-color-mode="dark"] #wrapGB .input-text input, [data-color-mode="dark"] #wrapGB .input-textarea textarea {
+    background: var(--color-bg-backdrop);
+    border-color: var(--color-border-overlay);
+    color: var(--color-text-primary);
+    box-shadow: none;
+}
+[data-color-mode="dark"] #wrapGB .gbnav ul, [data-color-mode="dark"] #wrapGB .dbcnav ul, [data-color-mode="dark"] #wrapGB .gb_entryhead {
+    background: var(--color-bg-backdrop);
+    background-image: none;
+    border: 0 none;
+}
+[data-color-mode="dark"] #wrapGB  ul .last a, [data-color-mode="dark"] #wrapGB .tabs-list li a {
+    color: var(--color-btn-primary-disabled-text) !important;
+}
+[data-color-mode="dark"] #wrapGB .active, [data-color-mode="dark"] #wrapGB  ul .on a, [data-color-mode="dark"] #wrapGB  ul > li > a {
+    background-color: var(--color-fade-black-85);
+    border: 1px solid var(--color-border-secondary);
+    box-shadow: inset rgba(0,0,0,.25) 0 1px 2px 0;
+    background-image: linear-gradient(var(--color-fade-black-10),var(--color-fade-fg-10) 1px,var(--color-fade-fg-50));
+    color: var(--color-text-white) !important;
+}
+[data-color-mode="dark"] #wrapGB  ul > li > a:hover {
+    color: var(--color-text-link) !important;
+}
+[data-color-mode="dark"] #wrapGB .gbnav ul li#active a {
+    background: var(--color-fade-black-85);
+    border-color: var(--color-border-primary);
+}
+[data-color-mode="dark"] #wrapGB  ul > li > a {
+    padding: 0;
+}
+
 /******** End Guestbook Styles *********/

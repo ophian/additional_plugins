@@ -1,3 +1,8 @@
+3.80:
+-----
+ * Fix some more uninitialized variable checks for PHP 8
+ * Add DARKMODE styles for Serendipitx Styx 3.5
+
 3.79:
 -----
  * Fix some uninitialized variable checks for PHP 8
