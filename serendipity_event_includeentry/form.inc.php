@@ -4,7 +4,7 @@
 <?php
     $elcount = 0;
     $htmlnugget = array();
-    foreach ( AS $config_item) {
+    foreach ($this->config AS $config_item) {
         $elcount++;
         $config_value = $this->statictemplate[$config_item];
         $cbag = new serendipity_property_bag;

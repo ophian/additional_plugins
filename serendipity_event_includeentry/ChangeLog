@@ -1,3 +1,7 @@
+2.27:
+-----
+ * Fix form array foreach loop
+
 2.26:
 -----
  * Fix some variable initialization checks for PHP 8

@@ -32,7 +32,7 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.26');
+        $propbag->add('version',       '2.27');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
@@ -234,7 +234,7 @@ class serendipity_event_includeentry extends serendipity_event
         $html = '<div class="configuration_group odd" style="display: flex;border-right: 0 none;border-bottom: 0 none;border-left: 0 none;"><div class="clearfix form_field" style="width: 50%;"><span class="wrap_legend"><legend>' . CATEGORIES . '</legend></span></div>' ."\n";
 
         $all_valid = false;
-        if (is_array($serendipity['POST']['plugin']['enabled_categories'])) {
+        if (isset($serendipity['POST']['plugin']['enabled_categories']) && is_array($serendipity['POST']['plugin']['enabled_categories'])) {
             $valid = $this->enabled_categories = array();
             foreach ($serendipity['POST']['plugin']['enabled_categories'] AS $idx => $id) {
                 $valid[$id] = true;
