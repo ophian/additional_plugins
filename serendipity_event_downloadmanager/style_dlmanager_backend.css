@@ -526,7 +526,7 @@ input#dlm_file_rename { border: 1px solid #888; background-color: rgb(221, 230, 
     border-color: var(--color-border-overlay);
 }
 [data-color-mode="dark"] #backend_downloadmanager input[type="image"][name="Reject_Selected"] {
-    background: var(--color-bg-white);
+    background: var(--color-bg-canvas-inverse);
 }
 [data-color-mode="dark"] #backend_downloadmanager .icon-trash-empty::before {
     color: var(--color-icon-danger);

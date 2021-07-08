@@ -3,6 +3,10 @@ ChangeLog:
 
 1.50:
 -----
+ * Fix a DARK MODE color
+
+1.50:
+-----
  * Removed 1.47 fixes
  * Raises Styx Requirements
 
