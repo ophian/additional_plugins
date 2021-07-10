@@ -11,7 +11,7 @@
 @define('PLUGIN_SUGGEST_PERMALINK',      'Permalink der Seite');
 @define('PLUGIN_SUGGEST_PERMALINK_DESC', 'Gibt den Permalink der statischen Seite an. Dieser muss eine absolute Pfadangabe vom HTTP-Root ab sein und die Dateiendung .htm oder .html besitzen!');
 @define('PLUGIN_SUGGEST_PAGETITLE',      'ID der Seite');
-@define('PLUGIN_SUGGEST_PAGETITLE_DESC', 'Gibt die ID der Seite ein. Dieser String wird für Variablenübermittlugn verwendet und darf nur aus Buchstaben von a-z und Zahlen 0-9 bestehen!');
+@define('PLUGIN_SUGGEST_PAGETITLE_DESC', 'Gibt die ID der Seite ein. Dieser String wird für Variablenübermittlung verwendet und darf nur aus Buchstaben von a-z und Zahlen 0-9 bestehen!');
 @define('PLUGIN_SUGGEST_MESSAGE',        'Artikelinhalt');
 @define('PLUGIN_SUGGEST_SENT',           'Dargestellter Text nach Übermittlung der Nachricht.');
 @define('PLUGIN_SUGGEST_SENT_HTML',      'Ihre Nachricht wurde erfolgreich verschickt!!');

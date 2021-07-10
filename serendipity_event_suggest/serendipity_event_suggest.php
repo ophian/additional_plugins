@@ -26,12 +26,12 @@ class serendipity_event_suggest extends serendipity_event
                                         ));
         $propbag->add('configuration',  array('permalink', 'pagetitle', 'authorid', 'email'));
         $propbag->add('author',         'Garvin Hicking, Ian Styx');
-        $propbag->add('version',        '0.15');
+        $propbag->add('version',        '0.16');
         $propbag->add('groups',         array('FRONTEND_FEATURES'));
         $propbag->add('requirements',   array(
-                                            'serendipity' => '1.7',
+                                            'serendipity' => '2.0',
                                             'smarty'      => '3.0.0',
-                                            'php'         => '5.1.0'
+                                            'php'         => '7.0'
                                         ));
         $propbag->add('stackable',      true);
         $propbag->add('license',        'Commercial');
@@ -284,15 +284,15 @@ class serendipity_event_suggest extends serendipity_event
                     'plugin_suggest_pagetitle'      => $this->get_config('pagetitle'),
 
                     'plugin_suggest_message'        => PLUGIN_SUGGEST_MESSAGE,
-                    'suggest_backend'               => $metaout,
+                    'suggest_backend'               => $metaout ?? null,
                     'suggest_action'                => $serendipity['baseURL'] . $serendipity['indexFile'],
                     'suggest_sname'                 => $serendipity['GET']['subpage'],
-                    'suggest_name'                  => (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['POST']['name']) : htmlspecialchars($serendipity['POST']['name'], ENT_COMPAT, LANG_CHARSET)),
-                    'suggest_url'                   => (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['POST']['url']) : htmlspecialchars($serendipity['POST']['url'], ENT_COMPAT, LANG_CHARSET)),
-                    'suggest_email'                 => (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['POST']['email']) : htmlspecialchars($serendipity['POST']['email'], ENT_COMPAT, LANG_CHARSET)),
-                    'suggest_entry_title'           => (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['POST']['entry_title']) : htmlspecialchars($serendipity['POST']['entry_title'], ENT_COMPAT, LANG_CHARSET)),
-                    'suggest_data'                  => (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['POST']['comment']) : htmlspecialchars($serendipity['POST']['comment'], ENT_COMPAT, LANG_CHARSET)),
-                    'comments_messagestack'         => $serendipity['messagestack']['comments'],
+                    'suggest_name'                  => serendipity_specialchars(($serendipity['POST']['name'] ?? null)),
+                    'suggest_url'                   => serendipity_specialchars(($serendipity['POST']['url'] ?? null)),
+                    'suggest_email'                 => serendipity_specialchars(($serendipity['POST']['email'] ?? null)),
+                    'suggest_entry_title'           => serendipity_specialchars(($serendipity['POST']['entry_title'] ?? null)),
+                    'suggest_data'                  => serendipity_specialchars(($serendipity['POST']['comment'] ?? null)),
+                    'comments_messagestack'         => $serendipity['messagestack']['comments'] ?? null,
                     'suggest_validation_error'      => $validation_error,
                     'suggest_validation_success'    => $validation_success,
                     'suggest_validation_code'       => $validation_error_code,

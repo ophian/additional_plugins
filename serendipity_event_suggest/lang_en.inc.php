@@ -10,7 +10,7 @@
 @define('PLUGIN_SUGGEST_DESC',           'Allows non-registered authors to suggest entries for publishing');
 @define('PLUGIN_SUGGEST_AUTHOR',         'To which author shall entries be assigned to?');
 @define('PLUGIN_SUGGEST_PERMALINK',      'Permalink to the suggest entry form');
-@define('PLUGIN_SUGGEST_PERMALINK_DESC', 'Enter the pretty URL where you want to access the suggest entry form. It must be an absolute HTTP path and end with .htm odr .html!');
+@define('PLUGIN_SUGGEST_PERMALINK_DESC', 'Enter the pretty URL where you want to access the suggest entry form. It must be an absolute HTTP path and end with .htm or .html!');
 @define('PLUGIN_SUGGEST_PAGETITLE',      'Unique identifier of this page');
 @define('PLUGIN_SUGGEST_PAGETITLE_DESC', 'Defines a unique identifier of this page, which is used for variable transmission. Only enter characters and numbers here, no special characters.');
 @define('PLUGIN_SUGGEST_MESSAGE',        'Article body');

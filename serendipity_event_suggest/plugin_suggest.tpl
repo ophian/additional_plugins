@@ -20,12 +20,12 @@
             	{$CONST.PLUGIN_SUGGEST_VALIDATE_ERROR}
             </div>
 
-{elseif $is_suggest_sent}
+{elseif isset($is_suggest_sent) AND $is_suggest_sent}
             <div class="serendipity_center serendipity_msg_notice">
             	{$CONST.PLUGIN_SUGGEST_NOTE}
             </div>
 {else}
-        	{if $is_suggest_error}
+            {if isset($is_suggest_error) AND $is_suggest_error}
             <div class="serendipity_center serendipity_msg_important">
     	        {$plugin_suggest_error}
             </div>
