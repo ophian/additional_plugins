@@ -71,7 +71,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '2.0.0');
+        $propbag->add('version',        '2.0.1');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -1406,7 +1406,7 @@ class serendipity_event_cal extends serendipity_event
         $serendipity['smarty']->assign(
                 array(
                     'plugin_eventcal_cal_preface'       => $this->get_config('showintro'),
-                    'plugin_eventcal_cal_admin'         => @sprintf(PLUGIN_EVENTCAL_HALLO_ADMIN, $serendipity['serendipityUser'], $serendipity['permissionLevels'][$serendipity['serendipityUserlevel']]),
+                    'plugin_eventcal_cal_admin'         => serendipity_userLoggedIn() ? sprintf(PLUGIN_EVENTCAL_HALLO_ADMIN, $serendipity['serendipityUser'], $serendipity['permissionLevels'][$serendipity['serendipityUserlevel']]) : null,
                     'plugin_eventcal_cal_path'          => $this->fetchPluginUri(),
                     'plugin_eventcal_cal_imgpath'       => $serendipity['serendipityHTTPPath'] . $serendipity['eventcal']['pluginpath'],
                     'plugin_eventcal_cal_monthviewnav'  => true,

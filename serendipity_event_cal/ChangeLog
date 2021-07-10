@@ -3,6 +3,12 @@
 * 
 
 
+2.0.1:
+------
+
+ * Fix an possible admin variable in the frontend
+ * Improve width of frontend form
+
 2.0.0:
 ------
 
