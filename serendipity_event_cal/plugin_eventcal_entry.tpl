@@ -1,8 +1,8 @@
-{* file: plugin_eventcal_entry.tpl - 2020-06-29, Ian *}
+{* file: plugin_eventcal_entry.tpl - 2021-07-10, Ian *}
 
 <!-- plugin_eventcal_entry.tpl start -->
 
-{if $is_eventcal_entry_debug_fdw}
+{if isset($is_eventcal_entry_debug_fdw) AND $is_eventcal_entry_debug_fdw}
 <tr>
     <td>
         <div id="eventcal_error_surrounder">
@@ -56,7 +56,7 @@
             </tr>
             {/if}
             <tr>
-                <th class="eventcal_links center">{if $is_eventcal_ical} <a href="{if $plugin_eventcal_icsdl == 'ud'}{$plugin_eventcal_cal_path}?serendipity[ics_export]=1&amp;calendar[cm]={$plugin_eventcal_cal_m}&amp;calendar[cy]={$plugin_eventcal_cal_y}&amp;calendar[ev]={$plugin_eventcal_entry_event.id|default:0}{else}{$serendipityHTTPPath}plugin/ics_export/{$plugin_eventcal_entry_event.id|default:0}/{$plugin_eventcal_cal_m}/{$plugin_eventcal_cal_y}/{$plugin_eventcal_icsdl}{/if}" target="_{if $plugin_eventcal_icsdl == 'wc'}blank{else}self{/if}"><img src="{$plugin_eventcal_cal_imgpath}img/icalw.png" alt="ical single feed" /></a>{else}&nbsp;{/if}</th>
+                <th class="eventcal_links center">{if isset($is_eventcal_ical) AND $is_eventcal_ical} <a href="{if $plugin_eventcal_icsdl == 'ud'}{$plugin_eventcal_cal_path}?serendipity[ics_export]=1&amp;calendar[cm]={$plugin_eventcal_cal_m}&amp;calendar[cy]={$plugin_eventcal_cal_y}&amp;calendar[ev]={$plugin_eventcal_entry_event.id|default:0}{else}{$serendipityHTTPPath}plugin/ics_export/{$plugin_eventcal_entry_event.id|default:0}/{$plugin_eventcal_cal_m}/{$plugin_eventcal_cal_y}/{$plugin_eventcal_icsdl}{/if}" target="_{if $plugin_eventcal_icsdl == 'wc'}blank{else}self{/if}"><img src="{$plugin_eventcal_cal_imgpath}img/icalw.png" alt="ical single feed" /></a>{else}&nbsp;{/if}</th>
             </tr>
             </tbody>
         </table>

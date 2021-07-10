@@ -1,6 +1,6 @@
 <?php
 
-# serendipity_event_cal.php, langfile(en) v1.65 2015-11-25 Ian
+# serendipity_event_cal.php, langfile(en) v2.0.0 2021-07-10 Ian
 
 @define('PLUGIN_EVENTCAL_HEADLINE', 'Headline (optional)');
 @define('PLUGIN_EVENTCAL_HEADLINE_BLAHBLAH', 'The headline of the page.');
@@ -58,10 +58,10 @@
 @define('CAL_EVENT_SHORTTITLE', 'Please insert a short title for this event!');
 @define('CAL_EVENT_EVENTDESC', 'Please insert a full description of the upcoming event!');
 @define('CAL_EVENT_APPBY', 'You have to insert a authors token(sig) for event validation!');
-@define('CAL_EVENT_START_DATE', 'Unvalid event begin!');
+@define('CAL_EVENT_START_DATE', 'Invalid event begin!');
 @define('CAL_EVENT_START_RECUR', 'The Startdate to be the &raquo; <u>%s</u> &laquo; (day %s) of first occurrence!');
 @define('CAL_EVENT_START_DATE_HISTORY', 'Unvalid event date! Setting history events is supported only to 31 days in the past!');
-@define('CAL_EVENT_END_DATE', 'Unvalid event end!');
+@define('CAL_EVENT_END_DATE', 'Invalid event end!');
 @define('CAL_EVENT_REAL_START_DATE', 'The event startdate has to be a valid day of given month (%s)!');
 @define('CAL_EVENT_REAL_END_DATE', 'The event enddate has to be a valid day of given month (%s) and has to be in the future of startdate!');
 @define('CAL_EVENT_REAL_MONTHLY_DATE', 'The recurring value for monthly events is not allowed to be "Weekly"!');

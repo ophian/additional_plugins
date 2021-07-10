@@ -3,6 +3,14 @@
 * 
 
 
+2.0.0:
+------
+
+ * SQL and ALTER TABLE fix
+ * Variable initialization fixes for PHP 8
+ * Raises requirements
+ * Preparations for Styx 3.5 DARK MODE
+
 1.88:
 -----
 

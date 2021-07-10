@@ -51,7 +51,6 @@ class serendipity_event_cal extends serendipity_event
                                             'entry_display'             => true,
                                             'entries_header'            => true,
                                             'css'                       => true,
-                                            'backend_sidebar_entries'   => true,
                                             'backend_sidebar_admin_appearance' => true,
                                             'backend_sidebar_entries_event_display_eventcal'  => true,
                                             'css_backend'               => true
@@ -72,12 +71,12 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '1.88');
+        $propbag->add('version',        '2.0.0');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
-                                            'serendipity' => '1.6',
-                                            'smarty'      => '2.6.7',
-                                            'php'         => '5.1.0'
+                                            'serendipity' => '2.0',
+                                            'smarty'      => '3.0',
+                                            'php'         => '7.0'
                                         )
                     );
         $propbag->add('legal',    array(
@@ -385,6 +384,7 @@ class serendipity_event_cal extends serendipity_event
     function fetchPluginUri()
     {
         global $serendipity;
+
         return ($serendipity['rewrite'] != 'errordocs') ? $this->get_config('permalink') : $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?serendipity[subpage]=' . $this->get_config('pagetitle');
     }
 
@@ -910,9 +910,9 @@ class serendipity_event_cal extends serendipity_event
                         $sd[$j]['days'][$i]['label'] = $day;
                         $sd[$j]['days'][$i]['bcol']  = $sd[$j]['days'][$i]['col'];                   // no days bgcolor
 
-                        if (is_array($events[$day]) && !empty($events[$day])) {
+                        if (!empty($events[$day]) && is_array($events[$day])) {
                             foreach($events[$day] AS $row) {
-                                if ((int)$row['id']) {
+                                if (isset($row['id']) && (int)$row['id']) {
                                     if (isset($cw) && $cw != NULL) {                        // set CW weeks array fullview for specified month
                                         $sd[$j]['days'][$i]['arrdata'][] = array(
                                                                     'a'      => $a,
@@ -1607,9 +1607,10 @@ class serendipity_event_cal extends serendipity_event
         /* long description needs to have replaced BBcode */
         $serendipity['smarty']->assign(
                 array(
+                    'plugin_eventcal_admin_add_path' => '',
                     'plugin_eventcal_entry_event'    => $event,
-                    'plugin_eventcal_entry_sformat'  => $de_sd_format,
-                    'plugin_eventcal_entry_eformat'  => $de_ed_format,
+                    'plugin_eventcal_entry_sformat'  => $de_sd_format ?? null,
+                    'plugin_eventcal_entry_eformat'  => $de_ed_format ?? null,
                     'plugin_eventcal_entry_ldesc'    => ini_get('magic_quotes_gpc') ? stripslashes(nl2br($this->text_pattern_bbc($event['ldesc']))) : nl2br($this->text_pattern_bbc($event['ldesc'])),
                     'plugin_eventcal_entry_a'        => (int)$_GET['calendar']['a'],
                     'plugin_eventcal_entry_cm'       => (int)$_GET['calendar']['cm'],
@@ -1761,6 +1762,7 @@ class serendipity_event_cal extends serendipity_event
         /* assign add form array entries to smarty */
         $serendipity['smarty']->assign(
                 array(
+                    'plugin_eventcal_admin_add_path'    => '',
                     'plugin_eventcal_add_array_opt1'    => $option1,
                     'plugin_eventcal_add_array_opt2'    => $option2,
                     'plugin_eventcal_add_array_opt3'    => $option3,
@@ -1784,9 +1786,7 @@ class serendipity_event_cal extends serendipity_event
                     'plugin_eventcal_add_tipo4'         => ($tipo==4) ? 'checked="checked"' : '',
                     'plugin_eventcal_add_tipo5'         => ($tipo==5) ? 'checked="checked"' : '',
                     'plugin_eventcal_add_tipo6'         => ($tipo==6) ? 'checked="checked"' : '',
-                    'plugin_eventcal_add_url'           => $url,
-                    'plugin_eventcal_add_not20'         => (($serendipity['version'][0] < 2) ? true : false),
-                    'S9y2'                              => (($serendipity['version'][0] < 2) ? false : true)
+                    'plugin_eventcal_add_url'           => $url
                 )
         );
 
@@ -2170,18 +2170,18 @@ class serendipity_event_cal extends serendipity_event
                 }
 
                 // assign edit single event entry to smarty add form - do not parse text_pattern_bbc function
-                if (is_array($event)) {
+                if (isset($event) && is_array($event)) {
                     $adminpost['a']            = 1; // open form to change single event
                     $adminpost['ap']           = 0; // close unapproved event table
                     $adminpost['id']           = $event['id'];
                     list($adminpost['syear'],
                         $adminpost['smonth'],
-                        $adminpost['sday'])    = explode('-',$event['sdato']);
+                        $adminpost['sday'])    = explode('-', $event['sdato']);
                     @list($adminpost['eyear'],
                         $adminpost['emonth'],
-                        $adminpost['eday'])    = explode('-',$event['edato']);
+                        $adminpost['eday'])    = explode('-', $event['edato']);
                     @list($adminpost['which'],
-                        $adminpost['day'])     = explode(':',$event['recur']);
+                        $adminpost['day'])     = $event['recur'] !== 'NULL' ? explode(':', $event['recur']) : null;
                     $adminpost['sdesc']        = $event['sdesc'];
                     $adminpost['ldesc']        = $event['ldesc'];
                     $adminpost['url']          = $event['url'];
@@ -2395,10 +2395,34 @@ class serendipity_event_cal extends serendipity_event
             if (!isset($cw_prev)) $cw_prev = false;
             if (!isset($cw_next)) $cw_next = false;
 
+            // PHP 8 inits
+            if (!isset($app_by)) $app_by = null;
+            if (!isset($approved)) $approved = null;
+            if (!isset($day)) $day = null;
+            if (!isset($eday)) $eday = null;
+            if (!isset($emonth)) $emonth = null;
+            if (!isset($ev)) $ev = null;
+            if (!isset($eyear)) $eyear = null;
+            if (!isset($id)) $id = null;
+            if (!isset($ldesc)) $ldesc = null;
+            if (!isset($post_cm)) $post_cm = null;
+            if (!isset($recur)) $recur = null;
+            if (!isset($recur_day)) $recur_day = null;
+            if (!isset($sdato)) $sdato = null;
+            if (!isset($sday)) $sday = null;
+            if (!isset($sdesc)) $sdesc = null;
+            if (!isset($smonth)) $smonth = null;
+            if (!isset($syear)) $syear = null;
+            if (!isset($tipo)) $tipo = null;
+            if (!isset($tst)) $tst = null;
+            if (!isset($type)) $type = null;
+            if (!isset($url)) $url = null;
+            if (!isset($which)) $which = null;
+
             // construct the event calendar
-            $this->draw_cal($a, $ap, @$app_by, @$approved, $cd, $cm, $cw, $cw_prev, $cw_next, $cy, @$day, @$eday, @$emonth, @$ev, @$eyear,
-                            @$id, @$ldesc, $nm, @$post_cm, $re, @$recur, @$recur_day, @$sdato, @$sday, @$sdesc, @$smonth,
-                            @$syear, @$tipo, @$tst, @$type, @$url, @$which);
+            $this->draw_cal($a, $ap, $app_by, $approved, $cd, $cm, $cw, $cw_prev, $cw_next, $cy, $day, $eday, $emonth, $ev, $eyear,
+                            $id, $ldesc, $nm, $post_cm, $re, $recur, $recur_day, $sdato, $sday, $sdesc, $smonth,
+                            $syear, $tipo, $tst, $type, $url, $which);
 
             /* set the serendipity_event_cal.php footer - unused */
             ##$this->htmlPageFooter();
@@ -2412,7 +2436,7 @@ class serendipity_event_cal extends serendipity_event
      * S9y does not know about {KEY} and something like id int(8) when using id {AUTOINCREMENT} {PRIMARY} which is always int(11)
      * use hardcoded mysql for this like id int(8) NOT NULL AUTO_INCREMENT, KEY sdato (sdato),
      */
-     # ALTER TABLE `s9y_eventcal` CHANGE `tstamp` `tstamp` TIMESTAMP DEFAULT 0
+     # ALTER TABLE `s9y_eventcal` CHANGE `tstamp` `tstamp` TIMESTAMP NULL DEFAULT NULL
      # ALTER TABLE `s9y_eventcal` CHANGE `modified` `modified` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     function install()
     {
@@ -2428,7 +2452,7 @@ class serendipity_event_cal extends serendipity_event
                                         tipo int(1),
                                         approved int(1),
                                         app_by varchar(16),
-                                        tstamp timestamp DEFAULT 0,
+                                        tstamp TIMESTAMP NULL DEFAULT NULL,
                                         modified timestamp ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                                         KEY sdato (sdato),
                                         KEY edato (edato)
@@ -2439,8 +2463,9 @@ class serendipity_event_cal extends serendipity_event
     function alter_db($db_config_version)
     {
         global $serendipity;
+
         if ($db_config_version == '1.0') {
-                $q = "ALTER TABLE {$serendipity['dbPrefix']}eventcal ADD COLUMN tstamp TIMESTAMP DEFAULT 0";
+                $q = "ALTER TABLE {$serendipity['dbPrefix']}eventcal ADD COLUMN tstamp TIMESTAMP NULL DEFAULT NULL";
                 serendipity_db_schema_import($q);
                 $q = "ALTER TABLE {$serendipity['dbPrefix']}eventcal ADD COLUMN modified TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP";
                 serendipity_db_schema_import($q);
@@ -2487,6 +2512,7 @@ class serendipity_event_cal extends serendipity_event
         if (serendipity_db_bool($this->get_config('eventwrapper', 'false'))) {
 
             global $serendipity;
+
             $y         = date("Y");
             $m         = (int)date("m");
             $months    = $this->months();
@@ -2638,7 +2664,7 @@ class serendipity_event_cal extends serendipity_event
                 case 'genpage':
 
                     if ($serendipity['rewrite'] != 'none') {
-                        $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
+                        $nice_url = $serendipity['serendipityHTTPPath'] . ($addData['uriargs'] ?? null);
                     } else {
                         $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $addData['uriargs'];
                     }
@@ -2695,26 +2721,10 @@ class serendipity_event_cal extends serendipity_event
                     }
                     break;
 
-                case 'backend_sidebar_entries':
-
-                    // forbid entry if not admin
-                    if (serendipity_userLoggedIn() && $_SESSION['serendipityUserlevel'] == '255') {
-                        if ($serendipity['version'][0] < 2) {
-                            echo "\n".'                        <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks">
-                                    <a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=eventcal">
-                                    ' . PLUGIN_EVENTCAL_ADMIN_NAME .'
-                                    </a>
-                                  </li>'."\n";
-                        }
-                    }
-                    break;
-
                 case 'backend_sidebar_admin_appearance':
                     // forbid sidebar link if user is not in admin
                     if (serendipity_userLoggedIn() && $_SESSION['serendipityUserlevel'] == '255') {
-                        if ($serendipity['version'][0] > 1) {
-                            echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal">' . PLUGIN_EVENTCAL_ADMIN_NAME . '</a></li>'."\n";
-                        }
+                        echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal">' . PLUGIN_EVENTCAL_ADMIN_NAME . '</a></li>'."\n";
                     }
                     break;
 
@@ -2747,11 +2757,9 @@ class serendipity_event_cal extends serendipity_event
                             $tfilecontent = str_replace('{TEMPLATE_PATH}', $serendipity['eventcal']['pluginpath'], @file_get_contents($tfile));
                         }
 
-                        if ($serendipity['version'][0] > 1) {
-                            $t2file = dirname(__FILE__) . '/backend_inherits.css';
-                            // append eventcal Serendipity 2.0+ CSS
-                            $css2 = @file_get_contents($t2file);
-                        } else $css2 = '';
+                        $t2file = dirname(__FILE__) . '/backend_inherits.css';
+                        // append eventcal Serendipity 2.0+ CSS
+                        $css2 = @file_get_contents($t2file);
 
                         $tfilecontent = $tfilecontent . $css2;
 
@@ -2801,20 +2809,22 @@ class serendipity_event_cal extends serendipity_event
 
         echo '<div class="backend_eventcal_menu"><h3>'. sprintf(PLUGIN_EVENTCAL_ADMIN_NAME_MENU,  $serendipity['plugin_eventcal_version']) .'</h3></div>'."\n";
 
+        if (!isset($serendipity['GET']['eventcalcategory'])) $serendipity['GET']['eventcalcategory'] = null;
+        if (!isset($serendipity['POST']['eventcalcategory'])) $serendipity['POST']['eventcalcategory'] = null;
         if (!isset($serendipity['POST']['eventcaladmin'])) {
             echo '
 <div class="backend_eventcal_nav">
 <ul>
-<li '.(@$serendipity['GET']['eventcalcategory'] == 'adevview' ? 'id="active"' : '').'><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevview">' . (($serendipity['version'][0] < 2) ? PLUGIN_EVENTCAL_ADMIN_NAME .' - ' : '') . PLUGIN_EVENTCAL_ADMIN_VIEW.'</a></li>
-<li '.(@$serendipity['GET']['eventcalcategory'] == 'adevapp' ? 'id="active"' : '').'><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevapp">' . (($serendipity['version'][0] < 2) ? PLUGIN_EVENTCAL_ADMIN_NAME .' - ' : '') . PLUGIN_EVENTCAL_ADMIN_APP.'</a></li>
-<li '.((@$serendipity['GET']['eventcalcategory'] == 'adevadd' || @$serendipity['POST']['eventcalcategory'] == 'adevadd') ? 'id="active"' : '').'><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevadd">' . (($serendipity['version'][0] < 2) ? PLUGIN_EVENTCAL_ADMIN_NAME .' - ' : '') . PLUGIN_EVENTCAL_ADMIN_ADD.'</a></li>
-<li '.(@$serendipity['GET']['eventcalcategory'] == 'adevplad' ? 'id="active"' : '').'><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevplad">' . (($serendipity['version'][0] < 2) ? PLUGIN_EVENTCAL_ADMIN_NAME .' - ' : '') . PLUGIN_EVENTCAL_ADMIN_DBC.'</a></li>
+<li '.($serendipity['GET']['eventcalcategory'] == 'adevview' ? 'id="active"' : '').'><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevview">' . PLUGIN_EVENTCAL_ADMIN_VIEW.'</a></li>
+<li '.($serendipity['GET']['eventcalcategory'] == 'adevapp' ? 'id="active"' : '').'><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevapp">' . PLUGIN_EVENTCAL_ADMIN_APP.'</a></li>
+<li '.(($serendipity['GET']['eventcalcategory'] == 'adevadd' || $serendipity['POST']['eventcalcategory'] == 'adevadd') ? 'id="active"' : '').'><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevadd">' . PLUGIN_EVENTCAL_ADMIN_ADD.'</a></li>
+<li '.($serendipity['GET']['eventcalcategory'] == 'adevplad' ? 'id="active"' : '').'><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevplad">' . PLUGIN_EVENTCAL_ADMIN_DBC.'</a></li>
 </ul>
 </div>
             '."\n";
         }
 
-        $attention = ($serendipity['version'][0] < 2) ? '<img class="backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" /> ' : '<span class="icon icon-attention-circled" aria-hidden="true"></span> ';
+        $attention = '<span class="icon icon-attention-circled" aria-hidden="true"></span> ';
         $evcat      = !empty($serendipity['GET']['eventcalcategory']) ? $serendipity['GET']['eventcalcategory'] : $serendipity['POST']['eventcalcategory'];
 
         /* check for REQUEST and DATE vars, validating data issues */
@@ -2826,11 +2836,7 @@ class serendipity_event_cal extends serendipity_event
             default:
 
                 $url = $serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevview&serendipity[eventcalorderby]=';
-                echo ($serendipity['version'][0] < 2) ?
-                '<div class="backend_eventcal_head"><h2>' . PLUGIN_EVENTCAL_ADMIN_VIEW . '</h2> '
-                . '<a href="'.$url.'asc">&nbsp;ASC &nbsp;&larr;</a> ' . PLUGIN_EVENTCAL_ADMIN_VIEW_DESC . '<br />'
-                . '<a href="'.$url.'desc">DESC &larr;</a> ' . PLUGIN_EVENTCAL_ADMIN_ORDERBY_DESC . '</div><br />'."\n"
-                :
+                echo 
                 '<div class="backend_eventcal_head"><h2>' . PLUGIN_EVENTCAL_ADMIN_VIEW . '</h2>'
                 . '  <ul>'
                 . '    <li><a href="'.$url.'asc" title=" ' . PLUGIN_EVENTCAL_ADMIN_VIEW_DESC . '"><input class="input_button" name="ASC" value=" ASC &uarr; " type="button"></a></li>'
@@ -2969,7 +2975,7 @@ class serendipity_event_cal extends serendipity_event
         }
 
         $adminpath = '?serendipity[adminModule]=event_display&serendipity[adminAction]=eventcal&serendipity[eventcalcategory]=adevview';
-        $attention = ($serendipity['version'][0] < 2) ? '<img class="backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" /> ' : '<span class="icon icon-attention-circled" aria-hidden="true"></span> ';
+        $attention = '<span class="icon icon-attention-circled" aria-hidden="true"></span> ';
 
         /* assign app and add form and main tpl array entries to smarty */
         if (is_array($result)) {
@@ -3092,7 +3098,7 @@ class serendipity_event_cal extends serendipity_event
         }
 
         $adminpath  = '?serendipity[adminModule]=event_display&serendipity[adminAction]=eventcal&serendipity[eventcalcategory]=adevapp';
-        $attention = ($serendipity['version'][0] < 2) ? '<img class="backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" /> ' : '<span class="icon icon-attention-circled" aria-hidden="true"></span> ';
+        $attention = '<span class="icon icon-attention-circled" aria-hidden="true"></span> ';
 
         /* assign app and add form and main tpl array entries to smarty */
         if (is_array($result)) {
@@ -3117,6 +3123,7 @@ class serendipity_event_cal extends serendipity_event
             if (!empty($tstamp)) $tst = $tstamp;
             if (!empty($ts) && !isset($tst)) $tst = $ts;
             if (isset($_POST['calendar']['ts']) && !isset($tst)) $tst = $_POST['calendar']['ts'];
+            if (!isset($tipo)) $tipo = null;
 
             /* there is an id request - open form with data to re-edit an unapproved event - submit sets event to be approved */
             $add_data = $this->draw_add( 1, 1, $app_by, isset($approved), $cd, $day, $eday, $emonth, isset($ev), $eyear, $id, $ldesc,
@@ -3211,6 +3218,7 @@ class serendipity_event_cal extends serendipity_event
     function backend_read_backup_dir($dpath, $delpath)
     {
         global $serendipity;
+
         $dir = array_slice(scanDir($dpath), 2);
         $url = $serendipity['serendipityHTTPPath'] . 'plugin/sql_export/';
         echo '<table class="ec_export">';
@@ -3294,19 +3302,20 @@ class serendipity_event_cal extends serendipity_event
         }
         $adminpath = $_SERVER['PHP_SELF'] . '?serendipity[adminModule]=event_display&serendipity[adminAction]=eventcal&serendipity[eventcalcategory]=adevplad';
         $dbclean   = !empty($serendipity['GET']['eventcaldbclean']) ? $serendipity['GET']['eventcaldbclean'] : 'start';
-        $attention = ($serendipity['version'][0] < 2) ? '<img class="backend_attention" src="' . $serendipity['serendipityHTTPPath'] . 'templates/default/admin/img/admin_msg_note.png" alt="" /> ' : '<span class="icon icon-attention-circled" aria-hidden="true"></span> ';
+        $attention = '<span class="icon icon-attention-circled" aria-hidden="true"></span> ';
+        if (!isset($serendipity['GET']['eventcaldbclean'])) $serendipity['GET']['eventcaldbclean'] = null;
 
         echo '<div class="clearfix backend_eventcal_dbclean_title"><h4 class="backend_eventcal_inline">' . PLUGIN_EVENTCAL_ADMIN_DBC_TITLE . '</h4> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">' . PLUGIN_EVENTCAL_ADMIN_DBC_TITLE_DESC . '</b> ]</span></div>'."\n";
         echo '<div class="backend_eventcal_dbclean_menu">'."\n";
         echo '  <ul>'."\n";
-        echo '    <li class="ec_dbclean" '.(@$serendipity['GET']['eventcaldbclean'] == 'dbdump' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbdump">'.PLUGIN_EVENTCAL_ADMIN_DBC_DUMP.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_DESC.'</b> ]</span></li>'."\n";
-        echo '    <li class="ec_dbclean" '.(@$serendipity['GET']['eventcaldbclean'] == 'dbdownload' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbdownload">'.PLUGIN_EVENTCAL_ADMIN_DBC_DOWNLOAD.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_DOWNLOAD_DESC.'</b> ]</span></li>'."\n";
-        echo '    <li class="ec_dbclean" '.(@$serendipity['GET']['eventcaldbclean'] == 'dbinsert' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbinsert">'.PLUGIN_EVENTCAL_ADMIN_DBC_INSERT.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_INSERT_DESC.'</b> ]</span></li>'."\n";
-        echo '    <li class="ec_dbclean" '.(@$serendipity['GET']['eventcaldbclean'] == 'dberase' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dberase">'.PLUGIN_EVENTCAL_ADMIN_DBC_ERASE.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_ERASE_DESC.'</b> ]</span></li>'."\n";
-        echo '    <li class="ec_dbclean" '.(@$serendipity['GET']['eventcaldbclean'] == 'dbdelold' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbdelold">'.PLUGIN_EVENTCAL_ADMIN_DBC_DELOLD.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_DELOLD_DESC.'</b> ]</span></li>'."\n";
-        echo '    <li class="ec_dbclean" '.(@$serendipity['GET']['eventcaldbclean'] == 'dbincrement' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbincrement">'.PLUGIN_EVENTCAL_ADMIN_DBC_INCREMENT.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_INCREMENT_DESC.'</b> ]</span></li>'."\n";
-        echo '    <li class="ec_dbclean" '.(@$serendipity['GET']['eventcaldbclean'] == 'dbicalall' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbicalall">'.PLUGIN_EVENTCAL_ADMIN_DBC_ICALALL.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_ICALALL_DESC.'</b> ]</span></li>'."\n";
-        echo '    <li class="ec_dbclean" '.(@$serendipity['GET']['eventcaldbclean'] == 'dbicallog' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbicallog">'.PLUGIN_EVENTCAL_ADMIN_DBC_ILOG.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_ILOG_DESC.'</b> ]</span></li>'."\n";
+        echo '    <li class="ec_dbclean" '.($serendipity['GET']['eventcaldbclean'] == 'dbdump' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbdump">'.PLUGIN_EVENTCAL_ADMIN_DBC_DUMP.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_DESC.'</b> ]</span></li>'."\n";
+        echo '    <li class="ec_dbclean" '.($serendipity['GET']['eventcaldbclean'] == 'dbdownload' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbdownload">'.PLUGIN_EVENTCAL_ADMIN_DBC_DOWNLOAD.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_DOWNLOAD_DESC.'</b> ]</span></li>'."\n";
+        echo '    <li class="ec_dbclean" '.($serendipity['GET']['eventcaldbclean'] == 'dbinsert' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbinsert">'.PLUGIN_EVENTCAL_ADMIN_DBC_INSERT.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_INSERT_DESC.'</b> ]</span></li>'."\n";
+        echo '    <li class="ec_dbclean" '.($serendipity['GET']['eventcaldbclean'] == 'dberase' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dberase">'.PLUGIN_EVENTCAL_ADMIN_DBC_ERASE.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_ERASE_DESC.'</b> ]</span></li>'."\n";
+        echo '    <li class="ec_dbclean" '.($serendipity['GET']['eventcaldbclean'] == 'dbdelold' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbdelold">'.PLUGIN_EVENTCAL_ADMIN_DBC_DELOLD.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_DELOLD_DESC.'</b> ]</span></li>'."\n";
+        echo '    <li class="ec_dbclean" '.($serendipity['GET']['eventcaldbclean'] == 'dbincrement' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbincrement">'.PLUGIN_EVENTCAL_ADMIN_DBC_INCREMENT.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_INCREMENT_DESC.'</b> ]</span></li>'."\n";
+        echo '    <li class="ec_dbclean" '.($serendipity['GET']['eventcaldbclean'] == 'dbicalall' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbicalall">'.PLUGIN_EVENTCAL_ADMIN_DBC_ICALALL.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_ICALALL_DESC.'</b> ]</span></li>'."\n";
+        echo '    <li class="ec_dbclean" '.($serendipity['GET']['eventcaldbclean'] == 'dbicallog' ? 'id="active"' : '').'><a href="'.$adminpath.'&serendipity[eventcaldbclean]=dbicallog">'.PLUGIN_EVENTCAL_ADMIN_DBC_ILOG.'</a> <span class="backend_eventcal_right">[ <b class="eventcal_tab eventcal_tab_dim">'.PLUGIN_EVENTCAL_ADMIN_DBC_ILOG_DESC.'</b> ]</span></li>'."\n";
         echo '  </ul>'."\n";
         echo '</div>'."\n";
 
@@ -3336,9 +3345,9 @@ class serendipity_event_cal extends serendipity_event
                 case 'dbdownload':
 
                     echo '<div class="backend_eventcal_dbclean_innercat ec_inner_title"><h3>' . strtoupper(PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_TITLE) . '</h3></div>'."\n";
-                    if (@$serendipity['GET']['eventcalshowdownloads'] == 'dump')
+                    if (isset($serendipity['GET']['eventcalshowdownloads']) && $serendipity['GET']['eventcalshowdownloads'] == 'dump') {
                         echo '<div class="backend_eventcal_dbclean_error"><p class="msg_success">' . $attention . PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_DONE . "</p></div>\n";
-
+                    }
                     if (is_dir('templates_c/eventcal')) {
                         echo "<div class=\"backend_eventcal_dbclean_innertitle\">templates_c/eventcal/ <b><u>backup files</u></b></div>\n";
                         echo "<div class=\"backend_eventcal_dbclean_object\">\n";
@@ -3753,6 +3762,7 @@ class serendipity_event_cal extends serendipity_event
             $olddate = date("Y-m-d",time()-2592000); // 30 days = hours(3600) * 24 * 30 days
 
             if (is_array($id_date)) {
+                $counter = array();
                 foreach ($id_date AS $key => $val) {
                     if ($val['edate'] == NULL || $val['edate'] == '' || $val['edate'] == '0000-00-00') {
                         if ($val['sdate'] < $olddate) {

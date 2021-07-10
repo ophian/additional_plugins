@@ -95,6 +95,8 @@ div#content.twomain #eventcal_wrapper {
 /*************************************/
 
 #eventcal_wrapper {
+    display: block;
+    overflow: auto;
     margin: 0px 0.8em;
     padding: 0;
     font: 500 11px/16px Verdana,Arial,Helvetica,sans-serif;
@@ -507,6 +509,9 @@ td.eventcal_appldesc {
 input.eventcal_appform_move,
 img.eventcal_appform_move {
     padding-right: initial;
+}
+input.eventcal_appform_move {
+    vertical-align: middle;
 }
 
 /*******************************/
