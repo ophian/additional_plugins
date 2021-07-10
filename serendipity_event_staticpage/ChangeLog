@@ -1,3 +1,7 @@
+6.39:
+-----
+ * Fix a CSS "background: linear-gradient" Syntax value missing the to prefix
+
 6.38:
 -----
  * Add a helper for user preferenced toggled configuration groups on open
