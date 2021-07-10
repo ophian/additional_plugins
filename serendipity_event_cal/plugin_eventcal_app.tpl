@@ -19,7 +19,7 @@ function chkAll(frm, arr, mark) {
 /* ]]> */
 </script>
 {/literal}
-<form name="checkform" method="post" action="{$plugin_eventcal_app_path}{$plugin_eventcal_admin_add_path|default:''}">
+<form name="checkform" method="post" action="{$plugin_eventcal_app_path}{if isset($plugin_eventcal_admin_add_path)}{$plugin_eventcal_admin_add_path|default:''}{/if}">
     <input type="hidden" name="calendar[nomarkup]" value="true" />
     <input type="hidden" name="calendar[a]" value="{$plugin_eventcal_app_a}" />
     <input type="hidden" name="calendar[cm]" value="{$plugin_eventcal_app_m}" />
