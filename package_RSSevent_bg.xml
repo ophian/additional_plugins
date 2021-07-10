@@ -94,8 +94,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cal</link>
 <category>Event Plugins</category>
 <author>Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Calendar&lt;/b&gt;&lt;br /&gt;Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 10 Dec 2020 11:19:19 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Calendar&lt;/b&gt;&lt;br /&gt;Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sat, 10 Jul 2021 10:48:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
@@ -1084,8 +1084,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_suggest</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_suggest&lt;br /&gt;Предложения за статии&lt;/b&gt;&lt;br /&gt;Дава възможност на нерегистрирани автори да предлагат статии за публикуване.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 10 Dec 2020 10:37:06 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_suggest&lt;br /&gt;Предложения за статии&lt;/b&gt;&lt;br /&gt;Дава възможност на нерегистрирани автори да предлагат статии за публикуване.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 09 Jul 2021 18:41:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_suggest</guid>
 </item>
 <item>
