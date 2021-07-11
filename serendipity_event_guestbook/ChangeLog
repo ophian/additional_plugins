@@ -1,7 +1,11 @@
+3.81:
+-----
+ * Improve DARK MODE styles for tabs
+
 3.80:
 -----
  * Fix some more uninitialized variable checks for PHP 8
- * Add DARKMODE styles for Serendipitx Styx 3.5
+ * Add DARK MODE styles for Serendipity Styx 3.5
 
 3.79:
 -----
