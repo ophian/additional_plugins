@@ -1,7 +1,7 @@
 
 /*
     ******** Begin Guestbook Styles *********
-    style_guestbook_backend.css - for v.3.81 2021-07-11 Ian
+    style_guestbook_backend.css - for v.3.82 2021-07-11 Ian
 */
 
 #wrapGB .icon-ok:before{content:'\2714'}
@@ -258,6 +258,19 @@
 }
 [data-color-mode="dark"] #wrapGB  ul > li > a:hover {
     color: var(--color-text-link) !important;
+}
+[data-color-mode="dark"] .gbnav ul li a {
+    border-radius: 0;
+    border-right-width: 0;
+}
+[data-color-mode="dark"] .gbnav ul .first a, [data-color-mode="dark"] #wrapGB  ul.tablist li#active.first a {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+[data-color-mode="dark"] .gbnav ul .last a, [data-color-mode="dark"] #wrapGB  ul.tablist li#active.last a {
+    border-bottom-right-radius: 6px;
+    border-right-width: 1px;
+    border-top-right-radius: 6px;
 }
 [data-color-mode="dark"] #wrapGB .gbnav ul li#active a {
     background: var(--color-fade-black-85);
