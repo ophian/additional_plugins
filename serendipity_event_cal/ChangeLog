@@ -3,10 +3,15 @@
 * 
 
 
+2.0.2:
+------
+
+ * Improve DARK MODE tabs
+
 2.0.1:
 ------
 
- * Fix an possible admin variable in the frontend
+ * Fix a possible admin variable in the frontend
  * Improve width of frontend form
 
 2.0.0:

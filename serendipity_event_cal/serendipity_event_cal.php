@@ -71,7 +71,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '2.0.1');
+        $propbag->add('version',        '2.0.2');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -2814,11 +2814,11 @@ class serendipity_event_cal extends serendipity_event
         if (!isset($serendipity['POST']['eventcaladmin'])) {
             echo '
 <div class="backend_eventcal_nav">
-<ul>
-<li '.($serendipity['GET']['eventcalcategory'] == 'adevview' ? 'id="active"' : '').'><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevview">' . PLUGIN_EVENTCAL_ADMIN_VIEW.'</a></li>
+<ul class="tablist">
+<li '.($serendipity['GET']['eventcalcategory'] == 'adevview' ? 'id="active"' : '').' class="first"><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevview">' . PLUGIN_EVENTCAL_ADMIN_VIEW.'</a></li>
 <li '.($serendipity['GET']['eventcalcategory'] == 'adevapp' ? 'id="active"' : '').'><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevapp">' . PLUGIN_EVENTCAL_ADMIN_APP.'</a></li>
 <li '.(($serendipity['GET']['eventcalcategory'] == 'adevadd' || $serendipity['POST']['eventcalcategory'] == 'adevadd') ? 'id="active"' : '').'><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevadd">' . PLUGIN_EVENTCAL_ADMIN_ADD.'</a></li>
-<li '.($serendipity['GET']['eventcalcategory'] == 'adevplad' ? 'id="active"' : '').'><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevplad">' . PLUGIN_EVENTCAL_ADMIN_DBC.'</a></li>
+<li '.($serendipity['GET']['eventcalcategory'] == 'adevplad' ? 'id="active"' : '').' class="last"><a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal&amp;serendipity[eventcalcategory]=adevplad">' . PLUGIN_EVENTCAL_ADMIN_DBC.'</a></li>
 </ul>
 </div>
             '."\n";

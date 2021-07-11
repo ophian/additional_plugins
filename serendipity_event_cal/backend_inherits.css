@@ -48,8 +48,6 @@ div.backend_eventcal_nav ul li#active {
     border-bottom: 0 none;
     background: inherit;
 }
-.backend_eventcal_nav ul li {
-}
 div.backend_eventcal_head {
     background: inherit;
     border: 0 none;
@@ -313,4 +311,65 @@ table.eventborder {
 [data-color-mode="dark"] #backend_eventcal_wrapper .backend_eventcal_dbclean_object,
 [data-color-mode="dark"] div.backend_eventcal_dbclean_menu ul li#active {
     background: var(--color-bg-overlay);
+}
+[data-color-mode="dark"] .eventcal_tab_dim {
+    color: #c1c1c1;
+}
+[data-color-mode="dark"] .backend_eventcal_nav ul {
+    background: var(--color-bg-backdrop);
+    background-image: none;
+    border: 0 none;
+}
+[data-color-mode="dark"] .backend_eventcal_nav ul {
+    background: var(--color-bg-primary);
+}
+[data-color-mode="dark"] .backend_eventcal_nav ul li {
+    display: table-cell;
+    padding: 3px .5rem;
+}
+[data-color-mode="dark"] .backend_eventcal_nav ul li {
+    border-radius: 0;
+    border-right-width: 0;
+}
+[data-color-mode="dark"] .backend_eventcal_nav ul li.first {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+[data-color-mode="dark"] .backend_eventcal_nav ul li.last {
+    border-bottom-right-radius: 6px;
+    border-right-width: 1px;
+    border-top-right-radius: 6px;
+}
+
+/* avoid using tabs-list as name - issues with Accessible Tabs - jQuery plugin tabsListClass:"tabs-list" */
+[data-color-mode="dark"] .backend_eventcal_nav  ul .last a, [data-color-mode="dark"] .backend_eventcal_nav .tablist li {
+    color: var(--color-btn-primary-disabled-text) !important;
+    background-color: var(--color-btn-bg);
+    border-color: var(--color-btn-border);
+    box-shadow: var(--color-btn-shadow),var(--color-btn-inset-shadow);
+    color: var(--color-btn-text);
+    transition: .2s cubic-bezier(.3,0,.5,1);
+    transition-property: color,background-color,border-color;
+}
+[data-color-mode="dark"] .backend_eventcal_nav  ul > li > a:hover {
+    color: var(--color-text-link) !important;
+}
+[data-color-mode="dark"] .backend_eventcal_nav ul li#active a {
+    color: var(--color-btn-outline-selected-text) !important;
+}
+[data-color-mode="dark"] div.backend_eventcal_nav ul li#active {
+    background: var(--color-bg-backdrop);
+    background-image: none;
+    border-top: 1px solid var(--color-border-overlay);
+    border-bottom: 1px solid var(--color-border-overlay);
+}
+[data-color-mode="dark"] div.backend_eventcal_nav ul li.first#active {
+    border-left: 1px solid var(--color-border-overlay);
+}
+[data-color-mode="dark"] div.backend_eventcal_nav ul li.last#active {
+    border-right: 1px solid var(--color-border-overlay);
+}
+
+[data-color-mode="dark"] a:visited {
+    color: var(--color-btn-primary-disabled-text) !important
 }
