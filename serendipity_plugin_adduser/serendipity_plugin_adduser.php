@@ -17,7 +17,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.46');
+        $propbag->add('version',       '2.47');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -35,7 +35,8 @@ class serendipity_plugin_adduser extends serendipity_plugin
             'use_captcha',
 
             # Default settings.
-            'default_label',
+            'separator1',
+            'config_grouplabel',
             'no_create',
             'right_publish',
             'wysiwyg',
@@ -129,9 +130,14 @@ class serendipity_plugin_adduser extends serendipity_plugin
                 $propbag->add('default',     'false');
                 break;
 
-            case 'default_label':
+            case 'separator1':
+                $propbag->add('type',        'separator');
+                break;
+
+            case 'config_grouplabel':
                 $propbag->add('type',        'content');
-                $propbag->add('default',     PLUGIN_ADDUSER_DEFAULTSETTINGS);
+                $propbag->add('name',        '');
+                $propbag->add('default',     '<h3>' . PLUGIN_ADDUSER_DEFAULTSETTINGS . '</h3>');
                 break;
 
             case 'wysiwyg':

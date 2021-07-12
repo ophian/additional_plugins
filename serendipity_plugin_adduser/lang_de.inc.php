@@ -1,7 +1,7 @@
 <?php
 
 @define('PLUGIN_ADDUSER_NAME', 'Registrierung neuer User');
-@define('PLUGIN_ADDUSER_DESC', 'Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin (index.php?serendipity[subpage]=adduser) kann eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.');
+@define('PLUGIN_ADDUSER_DESC', 'Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin kann über (index.php?serendipity[subpage]=adduser) eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.');
 @define('PLUGIN_ADDUSER_INSTRUCTIONS', 'Eigene Hinweise');
 @define('PLUGIN_ADDUSER_INSTRUCTIONS_DESC', 'Geben Sie etwaige Zusatzhinweise an, die im Formular erscheinen sollen');
 @define('PLUGIN_ADDUSER_INSTRUCTIONS_DEFAULT', 'Hier können Sie sich für dieses Blog als Autor anmelden. Einfach Daten eingeben, Formular abschicken und alles weitere per E-Mail erhalten.');
