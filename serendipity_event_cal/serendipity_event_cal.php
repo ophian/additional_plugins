@@ -71,7 +71,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '2.0.3');
+        $propbag->add('version',        '2.0.4');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',

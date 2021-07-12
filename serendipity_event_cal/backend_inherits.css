@@ -351,6 +351,9 @@ table.eventborder {
     transition: .2s cubic-bezier(.3,0,.5,1);
     transition-property: color,background-color,border-color;
 }
+[data-color-mode="dark"] div.backend_eventcal_nav a:visited {
+    color: var(--color-btn-primary-disabled-text) !important
+}
 [data-color-mode="dark"] .backend_eventcal_nav .tablist li a:visited {
     color: var(--color-text-secondary) !important;
 }
@@ -371,8 +374,4 @@ table.eventborder {
 }
 [data-color-mode="dark"] div.backend_eventcal_nav ul li.last#active {
     border-right: 1px solid var(--color-border-overlay);
-}
-
-[data-color-mode="dark"] a:visited {
-    color: var(--color-btn-primary-disabled-text) !important
 }
