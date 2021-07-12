@@ -1314,12 +1314,12 @@
 <guid isPermaLink="false">serendipity_event_youtube</guid>
 </item>
 <item>
-<title>Registrierung neuer User: Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin (index.php?serendipity[subpage]=adduser) kann eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.</title>
+<title>Registrierung neuer User: Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin kann über (index.php?serendipity[subpage]=adduser) eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_adduser</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;Registrierung neuer User&lt;/b&gt;&lt;br /&gt;Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin (index.php?serendipity[subpage]=adduser) kann eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 07 Mar 2021 13:46:59 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;Registrierung neuer User&lt;/b&gt;&lt;br /&gt;Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin kann über (index.php?serendipity[subpage]=adduser) eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<pubDate>Mon, 12 Jul 2021 11:35:57 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>

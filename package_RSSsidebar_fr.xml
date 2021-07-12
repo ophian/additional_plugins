@@ -155,7 +155,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;Auto-enregistrement des utilisateurs&lt;/b&gt;&lt;br /&gt;Permettre aux visiteurs du blog de créer leur propre compte utilisateur. En conjonction avec le plugin d'évènement (index.php?serendipity[subpage]=adduser), vous pouvez décider de n'autoriser que les utilisateurs enregistrés à poster des commentaires.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 07 Mar 2021 14:08:38 +0100</pubDate>
+<pubDate>Mon, 12 Jul 2021 11:34:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_adduser</guid>
 </item>
 <item>
