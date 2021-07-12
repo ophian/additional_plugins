@@ -342,7 +342,7 @@ table.eventborder {
 }
 
 /* avoid using tabs-list as name - issues with Accessible Tabs - jQuery plugin tabsListClass:"tabs-list" */
-[data-color-mode="dark"] .backend_eventcal_nav  ul .last a, [data-color-mode="dark"] .backend_eventcal_nav .tablist li {
+[data-color-mode="dark"] .backend_eventcal_nav ul li, [data-color-mode="dark"] .backend_eventcal_nav .tablist li {
     color: var(--color-btn-primary-disabled-text) !important;
     background-color: var(--color-btn-bg);
     border-color: var(--color-btn-border);
@@ -350,6 +350,9 @@ table.eventborder {
     color: var(--color-btn-text);
     transition: .2s cubic-bezier(.3,0,.5,1);
     transition-property: color,background-color,border-color;
+}
+[data-color-mode="dark"] .backend_eventcal_nav .tablist li a:visited {
+    color: var(--color-text-secondary) !important;
 }
 [data-color-mode="dark"] .backend_eventcal_nav  ul > li > a:hover {
     color: var(--color-text-link) !important;
