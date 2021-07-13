@@ -1,3 +1,7 @@
+0.17:
+-----
+ * fixed handling of empty gpx files
+
 0.16:
 -----
  * Do not use Smarty vars instead of $serendipity globals

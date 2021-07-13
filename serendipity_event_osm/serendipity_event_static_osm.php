@@ -68,9 +68,12 @@ class serendipity_event_static_osm extends serendipity_event
                 $tmpFile = tmpfile();
                 fwrite($tmpFile, '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?><gpx version="1.1" creator="surrim.org" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">');
                 $gpx = simplexml_load_file($fileName);
+                if (!isset($gpx->trk)) $gpx->trk = [];
                 foreach($gpx->trk AS $trk) {
+                if (!isset($$trk->trkseg)) $trk->trkseg = [];
                     fwrite($tmpFile, '<trk>');
                     foreach($trk->trkseg AS $seg) {
+                        if (!isset($seg->trkpt)) $seg->trkpt = [];
                         fwrite($tmpFile, '<trkseg>');
                         foreach($seg->trkpt AS $pt) {
                             fwrite($tmpFile, '<trkpt lat="'.$pt['lat'].'" lon="'.$pt['lon'].'"><ele>'.$pt->ele.'</ele></trkpt>');
