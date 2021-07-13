@@ -280,5 +280,9 @@
 [data-color-mode="dark"] #wrapGB .gbnav ul li a {
     margin-left: -5px;
 }
-
+[data-color-mode="dark"] #wrapGB .dbcnav ul,
+[data-color-mode="dark"] #wrapGB .gbnav ul {
+    padding: 0;
+    margin-left: 5px;
+}
 /******** End Guestbook Styles *********/

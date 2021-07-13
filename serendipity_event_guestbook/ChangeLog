@@ -1,3 +1,7 @@
+3.83:
+-----
+ * Rename tabs class selector to avoid issues with backends jquery.tabs lib
+
 3.82:
 -----
  * Improve DARK MODE styles for tabs consistency

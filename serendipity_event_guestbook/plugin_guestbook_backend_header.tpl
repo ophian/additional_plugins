@@ -1,5 +1,5 @@
 {*
-    plugin_guestbook_backend_header.tpl v.3.81 2021-07-11 Ian
+    plugin_guestbook_backend_header.tpl v.3.82 2021-07-13 Ian
 *}
 
 {function name="feedback"}{* message and error feedback for approve, view, add issues *}
@@ -16,7 +16,7 @@
 {/function}
 
 {if $gb_isnav}
-    <div class="clearfix tabs gbnav">
+    <div class="clearfix gbtabs gbnav">
         <ul class="tablist">
             <li{$gb_liva} class="first">
                 <a href="{$serendipityHTTPPath}serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=guestbook&amp;serendipity[guestbookcategory]=gbview">{$CONST.PLUGIN_GUESTBOOK_ADMIN_VIEW}</a>
