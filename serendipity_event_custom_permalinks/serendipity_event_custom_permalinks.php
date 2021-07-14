@@ -27,11 +27,11 @@ class serendipity_event_custom_permalinks extends serendipity_event
                                         'backend_display'                   => true));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.19');
+        $propbag->add('version', '1.20');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '7.0'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('BACKEND_EDITOR'));
@@ -54,7 +54,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
         $_GET['serendipity']['action'] = 'read';
         $_GET['serendipity']['id']     = $id;
 
-        $serendipity['plugindata']['smartyvars']['view'] = $serendipity['view'] = 'entry';
+        $serendipity['plugindata']['smartyvars']['view'] = $serendipity['view'] = 'plugin';  // vs 'entry' helps to avoid 404 page not found message
 
         $title = serendipity_db_query("SELECT title FROM {$serendipity['dbPrefix']}entries WHERE id=$id", true);
         $serendipity['head_title']    = $title[0];
@@ -88,14 +88,8 @@ class serendipity_event_custom_permalinks extends serendipity_event
                         $nice_url = substr($nice_url, 0, $myi);
                     }
 
-                    $myi = strpos($nice_url2, '&');
-                    if ($myi != 0 && $serendipity['rewrite'] != 'none') {
-                        $nice_url2 = substr($nice_url2, 0, $myi);
-                    }
-
                     $query = "SELECT entryid FROM {$serendipity['dbPrefix']}entryproperties WHERE property = 'permalink'
-                                     AND value IN ('" . serendipity_db_escape_string($nice_url) . "', '/" . serendipity_db_escape_string($nice_url) . "',
-                                                   '" . serendipity_db_escape_string($nice_url2) . "', '/" . serendipity_db_escape_string($nice_url2) . "')";
+                                     AND value IN ('" . serendipity_db_escape_string($nice_url) . "', '/" . serendipity_db_escape_string($nice_url) . "')";
 
                     $retid = serendipity_db_query($query);
                     if (is_array($retid) && !empty($retid[0]['entryid'])) {
@@ -161,7 +155,7 @@ meta_properties_permalink {
                         }
                     }
 
-                    $title = $eventData['title'];
+                    $title = $eventData['title'] ?? null;
                     if (empty($title)) {
                         $title = 'unknown';
                     }
@@ -171,26 +165,6 @@ meta_properties_permalink {
                                    ? $serendipity['serendipityHTTPPath'] . 'permalink/' . serendipity_makeFilename($title) . '.html'
                                    : $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/permalink/' . serendipity_makeFilename($title) . '.html';
                     }
-                    if ($serendipity['version'][0] > 1) {
-?>
-                    <fieldset id="edit_entry_custompermalinks" class="entryproperties_custompermalinks">
-                        <span class="wrap_legend">
-                            <legend>
-                                <?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL; ?>
-                                <button class="toggle_info button_link active" type="button" data-href="#meta_properties_permalink">
-                                    <span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MORE; ?></span>
-                                </button>
-                            </legend>
-                        </span>
-                        <div class="form_field">
-                            <input id="properties_permalink" class="input_textbox" type="text" name="serendipity[permalink]" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($permalink) : htmlspecialchars($permalink, ENT_COMPAT, LANG_CHARSET)); ?>" />
-                        </div>
-                        <div id="meta_properties_permalink" class="clearfix xfield_info additional_info">
-                            <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL_DESC; ?></span>
-                        </div>
-                    </fieldset>
-<?php
-                    } else {
 ?>
                     <fieldset style="margin: 5px">
                         <legend><?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL; ?></legend>
@@ -198,7 +172,6 @@ meta_properties_permalink {
                         <label for="permalink" title="<?php echo htmlentities(PLUGIN_EVENT_CUSTOM_PERMALINKS_PL, ENT_COMPAT, LANG_CHARSET); ?>"><?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL; ?>:</label> <input class="input_textbox" type="text" style="width: 60%" name="serendipity[permalink]" id="permalink" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($permalink) : htmlspecialchars($permalink, ENT_COMPAT, LANG_CHARSET)); ?>" />
                     </fieldset>
 <?php
-                    }
                     break;
 
                 case 'backend_publish':

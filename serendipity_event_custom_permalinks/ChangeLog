@@ -1,3 +1,10 @@
+1.20:
+----
+
+ * Remove unused variable
+ * Fix some uninitialized variable checks for PHP 8
+ * Raise requirements
+
 1.19:
 ----
 
