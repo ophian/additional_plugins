@@ -162,4 +162,4 @@ window.addEventListener("load", () => {
             });
         });
     });
-};
+});
