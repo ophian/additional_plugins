@@ -2659,11 +2659,11 @@
 <description>Liste von Fragen und Antworten werden übersichtlich aufbereitet dargestellt.</description>
 <maintainers><maintainer><name>Falk Doering, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.46</version>
+  <version>1.47</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2021-07-07</date>
+  <date>2021-07-15</date>
   <filelist>
     <dir name="serendipity_event_faq">
       <dir name="alternatives">
@@ -11616,11 +11616,11 @@
 <description>Ältere Versionen werden gespeichert und können wiederhergestellt werden</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.12</version>
+  <version>0.13</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2017-01-06</date>
+  <date>2021-07-15</date>
   <filelist>
     <dir name="serendipity_event_versioning">
       <file>ChangeLog</file>
