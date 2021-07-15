@@ -13,8 +13,6 @@ class serendipity_event_versioning extends serendipity_event
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name', VERSIONING_TITLE);
         $propbag->add('description', VERSIONING_DESC);
         $propbag->add('event_hooks', array(
@@ -29,7 +27,7 @@ class serendipity_event_versioning extends serendipity_event
         ));
 
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '0.12');
+        $propbag->add('version', '0.13');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -42,8 +40,6 @@ class serendipity_event_versioning extends serendipity_event
 
     function introspect_config_item($name, &$propbag)
     {
-        global $serendipity;
-
         switch ($name) {
             case 'public':
                 $propbag->add('type',           'boolean');
@@ -190,8 +186,6 @@ class serendipity_event_versioning extends serendipity_event
 
     function recoverVersion(&$entry, $version)
     {
-        global $serendipity;
-
         $recovery = $this->getVersion($entry['id'], $version, 'v.id');
 
         $entry['body']     = $recovery['body'];
