@@ -11,7 +11,7 @@
 
 @define('PLUGIN_PODCAST_NAME', 'Podcasting plugin');
 @define('PLUGIN_PODCAST_DESC', 'Pøidává "podcastovací" mo¾nosti (RSS zapouzdøení, pøehrávaè videa a/nebo hudby)');
-@define('PLUGIN_PODCAST_EASY', '<br/><h3>Jednoduché nastavení:</h3>');
+@define('PLUGIN_PODCAST_EASY', 'Jednoduché nastavení:');
 @define('PLUGIN_PODCAST_USEPLAYER', 'Zobrazit pøehrávaè');
 @define('PLUGIN_PODCAST_USEPLAYER_DESC', 'Má se generovat HTML kód pro pøehrávání podcastù místo jednoduchého odkazu na soubor multimédia?');
 @define('PLUGIN_PODCAST_AUTOSIZE', 'Pøizpùsobit velikost pøehrávaèe');
@@ -29,7 +29,7 @@
 @define('PLUGIN_PODCAST_FIRSTMEDIAONLY', 'Vlo¾it první multimediální soubor pouze jako RSS zapouzdøení');
 @define('PLUGIN_PODCAST_FIRSTMEDIAONLY_DESC', 'Specifikace standardu RSS umo¾òuje vlo¾it pouze jedno zapouzdøení u ka¾dého pøíspìvku. Pokud je tato volba "Ano", pak bude respektován vý¹e zmínìný standard RDD a pouze první nalezený multimediální soubor bude vlo¾en do RSS kanálu.');
 
-@define('PLUGIN_PODCAST_EXTATTRSETTINGS', '<br/><h3>Podcastování pomocí roz¹íøených parametrù pøíspìvku:</h3>');
+@define('PLUGIN_PODCAST_EXTATTRSETTINGS', 'Podcastování pomocí roz¹íøených parametrù pøíspìvku:');
 @define('PLUGIN_PODCAST_EXTATTR', 'Roz¹íøující parametry pøíspìvku');
 @define('PLUGIN_PODCAST_EXTATTR_DESC', 'Zde mù¾ete urèit, které roz¹iøující parametry mají být zpracovávány jako multimediální pøílohy èlánku a které tedy budou vkládány do RSS. Pi¹te seznam èárkou oddìlených jmen parametrù. Pro tuto funkci je tøeba mít nainstalovaný plugin "Roz¹íøené parametry pøíspìvku".');
 
@@ -41,7 +41,7 @@
 @define('PLUGIN_PODCAST_EXTPOS_ET', 'Zaèátek roz¹íøené textové èásti');
 @define('PLUGIN_PODCAST_EXTPOS_EB', 'Konec roz¹íøené textové èásti');
 
-@define('PLUGIN_PODCAST_EXPERT', '<br/><h3>Pokroèilá nastavení:</h3>');
+@define('PLUGIN_PODCAST_EXPERT', 'Pokroèilá nastavení:');
 @define('PLUGIN_PODCAST_QTEXT', 'Quicktime pøípony');
 @define('PLUGIN_PODCAST_QTEXT_DESC', 'Typy souborù, které je schopný pøehrát Quick Time Player.');
 @define('PLUGIN_PODCAST_WMEXT', 'Windows Media Player pøípony');

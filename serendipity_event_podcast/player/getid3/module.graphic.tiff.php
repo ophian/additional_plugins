@@ -14,6 +14,9 @@
 //                                                            ///
 /////////////////////////////////////////////////////////////////
 
+if (!defined('GETID3_INCLUDEPATH')) { // prevent path-exposing attacks that access modules directly on public webservers
+	exit;
+}
 
 class getid3_tiff extends getid3_handler
 {
@@ -122,6 +125,10 @@ class getid3_tiff extends getid3_handler
 		}
 
 		foreach ($info['tiff']['ifd'] as $IFDid => $IFDarray) {
+			if(!isset($IFDarray['fields'])) {
+				continue;
+			}
+
 			foreach ($IFDarray['fields'] as $key => $fieldarray) {
 				switch ($fieldarray['raw']['tag']) {
 					case 256: // ImageWidth

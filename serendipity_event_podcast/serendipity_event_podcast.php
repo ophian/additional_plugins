@@ -56,6 +56,8 @@ class serendipity_event_podcast extends serendipity_event
         $propbag->add('configuration', array(
             'info',
 
+            'separator',
+
             'easy',
             'use_player',
             'automatic_size',
@@ -64,17 +66,19 @@ class serendipity_event_podcast extends serendipity_event
             'align',
             'firstmedia_only',
             'nopodcasting_class',
+
+            'separator1',
+
             'epheader',
             'extendet_enclosure_attributes',
             'extendet_enclosure_position',
             'ep_automatic_size',
             'ep_align',
             'ep_asure_enc',
-
-            'separator',
-
             'mergemulti',
             'downloadlink',
+
+            'separator2',
 
             'expert',
 
@@ -111,7 +115,7 @@ class serendipity_event_podcast extends serendipity_event
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.45');
+        $propbag->add('version', '1.46');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.0.0',
@@ -135,19 +139,24 @@ class serendipity_event_podcast extends serendipity_event
 
             case 'easy':
                 $propbag->add('type',           'content');
-                $propbag->add('default',        nl2br(PLUGIN_PODCAST_EASY));
+                $propbag->add('name',           'Easy Options');
+                $propbag->add('default',        '<h3>' . PLUGIN_PODCAST_EASY . '</h3>');
                 break;
 
             case 'expert':
                 $propbag->add('type',           'content');
-                $propbag->add('default',        nl2br(PLUGIN_PODCAST_EXPERT . "\n" . PLUGIN_PODCAST_EXPERT_HINT));
+                $propbag->add('name',           'Expert Options');
+                $propbag->add('default',        '<h3>' . PLUGIN_PODCAST_EXPERT . '</h3>' . "\n" . nl2br(PLUGIN_PODCAST_EXPERT_HINT));
                 break;
 
             case 'epheader':
                 $propbag->add('type',           'content');
-                $propbag->add('default',        nl2br(PLUGIN_PODCAST_EXTATTRSETTINGS));
+                $propbag->add('name',           'Extra Options');
+                $propbag->add('default',        '<h3>' . PLUGIN_PODCAST_EXTATTRSETTINGS . '</h3>');
                 break;
 
+            case 'separator2':
+            case 'separator1':
             case 'separator':
                 $propbag->add('type',           'separator');
                 break;

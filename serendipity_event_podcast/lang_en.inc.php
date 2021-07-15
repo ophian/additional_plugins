@@ -8,7 +8,7 @@
 
 @define('PLUGIN_PODCAST_NAME', 'Easy Podcasting Plugin');
 @define('PLUGIN_PODCAST_DESC', 'Adds "podcasting" capabilities (RSS enclosure, Video/Sound-Player)');
-@define('PLUGIN_PODCAST_EASY', '<br/><h3>Simple settings:</h3>');
+@define('PLUGIN_PODCAST_EASY', 'Simple settings:');
 @define('PLUGIN_PODCAST_USEPLAYER', 'Show Player');
 @define('PLUGIN_PODCAST_USEPLAYER_DESC', 'Should HTML code for playing podcasts be generated instead of just having the link to the mediafile?');
 @define('PLUGIN_PODCAST_AUTOSIZE', 'Adjust players size');
@@ -28,7 +28,7 @@
 @define('PLUGIN_PODCAST_NOPODCASTING_CLASS', 'Ignore by CSS class');
 @define('PLUGIN_PODCAST_NOPODCASTING_CLASS_DESC', 'When media links do have this class style, they will be ignored (won\'t be replaced by players and won\'t show up in RSS).');
 
-@define('PLUGIN_PODCAST_EXTATTRSETTINGS', '<br/><h3>Podcasting using extended article attributes:</h3>');
+@define('PLUGIN_PODCAST_EXTATTRSETTINGS', 'Podcasting using extended article attributes:');
 @define('PLUGIN_PODCAST_EXTATTR', 'Extended article attributes');
 @define('PLUGIN_PODCAST_EXTATTR_DESC', 'You can define, what extended attributes should be interpreted as media file attachments and therefor be added as enclosure to RSS feeds. This has to be a comma separated list of attribute names. The plugin "Extended article attributes" is needed for this to work.');
 
@@ -40,9 +40,9 @@
 @define('PLUGIN_PODCAST_EXTPOS_ET', 'Top of ext. article');
 @define('PLUGIN_PODCAST_EXTPOS_EB', 'Below of ext. article');
 
-@define('PLUGIN_PODCAST_EXPERT', '<br/><h3>Expert settings:</h3>');
+@define('PLUGIN_PODCAST_EXPERT', 'Expert settings:');
 @define('PLUGIN_PODCAST_EXPERT_HINT', 
-'HINT: You can customize ANY player with the HTML markup, so you can create a list of your own player variants depending on filetype! 
+'<b>HINT</b>: You can customize ANY player with the HTML markup, so you can create a list of your own player variants depending on filetype! 
 Remember that if you once saved the plugin configuration, the static markup will always be used <strong>instead</strong> of what the 
 plugin provides through the <strong>podcast_player.php</strong> file. If you ever want to reset your settings to the default, 
 simply delete all content in the markup textarea and save the plugin.');

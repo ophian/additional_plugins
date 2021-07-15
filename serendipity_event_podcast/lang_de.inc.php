@@ -8,7 +8,7 @@
 
 @define('PLUGIN_PODCAST_NAME', 'Easy Podcasting Plugin');
 @define('PLUGIN_PODCAST_DESC', 'Fügt "Podcasting" Faehigkeiten hinzu (RSS enclosure, Video/Sound-Player)');
-@define('PLUGIN_PODCAST_EASY', '<br/><h3>Einfache Einstellungen:</h3>');
+@define('PLUGIN_PODCAST_EASY', 'Einfache Einstellungen:');
 @define('PLUGIN_PODCAST_USEPLAYER', 'Player anzeigen');
 @define('PLUGIN_PODCAST_USEPLAYER_DESC', 'Soll Code für einen Player anstatt eines Links auf Mediadateien erzeugt werden?');
 @define('PLUGIN_PODCAST_AUTOSIZE', 'Player Größe anpassen');
@@ -28,7 +28,7 @@
 @define('PLUGIN_PODCAST_NOPODCASTING_CLASS', 'Ignorieren über CSS class');
 @define('PLUGIN_PODCAST_NOPODCASTING_CLASS_DESC', 'Wenn ein Medien Link dieses Class Style bekommt, dann wird er ignoriert (kein Player und kein Eintrag im RSS).');
 
-@define('PLUGIN_PODCAST_EXTATTRSETTINGS', '<br/><h3>Podcasting über die erweiterten Artikel Attribute:</h3>');
+@define('PLUGIN_PODCAST_EXTATTRSETTINGS', 'Podcasting über die erweiterten Artikel Attribute:');
 @define('PLUGIN_PODCAST_EXTATTR', 'Erweiterte Artikel Attribute');
 @define('PLUGIN_PODCAST_EXTATTR_DESC', 'Hier können Sie einstellen, welche erweiterten Artikel Attribute als Mediendateien interpretiert und deshalb in den RSS Feed als Enclosure gepackt werden sollen. Dies muss eine Komma separierte Liste der Attributsnamen sein. Das Plugin "Erweiterte Eigenschaften von Artikeln" wird benötigt!');
 
@@ -40,7 +40,7 @@
 @define('PLUGIN_PODCAST_EXTPOS_ET', 'Oberhalb des erw. Artikels');
 @define('PLUGIN_PODCAST_EXTPOS_EB', 'Unterhalb des erw. Artikels');
 
-@define('PLUGIN_PODCAST_EXPERT', '<br/><h3>Experten Einstellungen:</h3>');
+@define('PLUGIN_PODCAST_EXPERT', 'Experten Einstellungen:');
 @define('PLUGIN_PODCAST_QTEXT', 'Quicktime Erweiterungen');
 @define('PLUGIN_PODCAST_QTEXT_DESC', 'Erweiterungen, die mit dem Quicktime Player abgespielt werden sollen.');
 @define('PLUGIN_PODCAST_WMEXT', 'WindowsMediaPlayer Erweiterungen');
