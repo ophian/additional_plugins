@@ -7512,11 +7512,11 @@
 <description>Přidává &quot;podcastovací&quot; možnosti (RSS zapouzdření, přehrávač videa a/nebo hudby)</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.45</version>
+  <version>1.46</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2021-01-25</date>
+  <date>2021-07-15</date>
   <filelist>
     <dir name="serendipity_event_podcast">
       <file>ChangeLog</file>
@@ -7550,6 +7550,7 @@
           <file>getid3.php</file>
           <file>license.txt</file>
           <file>module.archive.gzip.php</file>
+          <file>module.archive.hpk.php</file>
           <file>module.archive.rar.php</file>
           <file>module.archive.szip.php</file>
           <file>module.archive.tar.php</file>
@@ -7558,6 +7559,7 @@
           <file>module.audio-video.asf.php</file>
           <file>module.audio-video.bink.php</file>
           <file>module.audio-video.flv.php</file>
+          <file>module.audio-video.ivf.php</file>
           <file>module.audio-video.matroska.php</file>
           <file>module.audio-video.mpeg.php</file>
           <file>module.audio-video.nsv.php</file>
@@ -7574,6 +7576,7 @@
           <file>module.audio.au.php</file>
           <file>module.audio.avr.php</file>
           <file>module.audio.bonk.php</file>
+          <file>module.audio.dsdiff.php</file>
           <file>module.audio.dsf.php</file>
           <file>module.audio.dss.php</file>
           <file>module.audio.dts.php</file>
@@ -7589,6 +7592,7 @@
           <file>module.audio.optimfrog.php</file>
           <file>module.audio.rkau.php</file>
           <file>module.audio.shorten.php</file>
+          <file>module.audio.tak.php</file>
           <file>module.audio.tta.php</file>
           <file>module.audio.voc.php</file>
           <file>module.audio.vqf.php</file>
@@ -7607,10 +7611,12 @@
           <file>module.misc.msoffice.php</file>
           <file>module.misc.par2.php</file>
           <file>module.misc.pdf.php</file>
+          <file>module.misc.torrent.php</file>
           <file>module.tag.apetag.php</file>
           <file>module.tag.id3v1.php</file>
           <file>module.tag.id3v2.php</file>
           <file>module.tag.lyrics3.php</file>
+          <file>module.tag.nikon-nctg.php</file>
           <file>module.tag.xmp.php</file>
           <file>README.md</file>
           <file>readme.txt</file>
@@ -7667,6 +7673,7 @@
     <file>serendipity_event_podcast/player/getid3/getid3.php</file>
     <file>serendipity_event_podcast/player/getid3/license.txt</file>
     <file>serendipity_event_podcast/player/getid3/module.archive.gzip.php</file>
+    <file>serendipity_event_podcast/player/getid3/module.archive.hpk.php</file>
     <file>serendipity_event_podcast/player/getid3/module.archive.rar.php</file>
     <file>serendipity_event_podcast/player/getid3/module.archive.szip.php</file>
     <file>serendipity_event_podcast/player/getid3/module.archive.tar.php</file>
@@ -7675,6 +7682,7 @@
     <file>serendipity_event_podcast/player/getid3/module.audio-video.asf.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio-video.bink.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio-video.flv.php</file>
+    <file>serendipity_event_podcast/player/getid3/module.audio-video.ivf.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio-video.matroska.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio-video.mpeg.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio-video.nsv.php</file>
@@ -7691,6 +7699,7 @@
     <file>serendipity_event_podcast/player/getid3/module.audio.au.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio.avr.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio.bonk.php</file>
+    <file>serendipity_event_podcast/player/getid3/module.audio.dsdiff.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio.dsf.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio.dss.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio.dts.php</file>
@@ -7706,6 +7715,7 @@
     <file>serendipity_event_podcast/player/getid3/module.audio.optimfrog.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio.rkau.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio.shorten.php</file>
+    <file>serendipity_event_podcast/player/getid3/module.audio.tak.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio.tta.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio.voc.php</file>
     <file>serendipity_event_podcast/player/getid3/module.audio.vqf.php</file>
@@ -7724,10 +7734,12 @@
     <file>serendipity_event_podcast/player/getid3/module.misc.msoffice.php</file>
     <file>serendipity_event_podcast/player/getid3/module.misc.par2.php</file>
     <file>serendipity_event_podcast/player/getid3/module.misc.pdf.php</file>
+    <file>serendipity_event_podcast/player/getid3/module.misc.torrent.php</file>
     <file>serendipity_event_podcast/player/getid3/module.tag.apetag.php</file>
     <file>serendipity_event_podcast/player/getid3/module.tag.id3v1.php</file>
     <file>serendipity_event_podcast/player/getid3/module.tag.id3v2.php</file>
     <file>serendipity_event_podcast/player/getid3/module.tag.lyrics3.php</file>
+    <file>serendipity_event_podcast/player/getid3/module.tag.nikon-nctg.php</file>
     <file>serendipity_event_podcast/player/getid3/module.tag.xmp.php</file>
     <file>serendipity_event_podcast/player/getid3/README.md</file>
     <file>serendipity_event_podcast/player/getid3/readme.txt</file>
