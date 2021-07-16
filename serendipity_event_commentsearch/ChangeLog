@@ -1,3 +1,9 @@
+1.9:
+----
+ * Improved default commentsearch searchresults template file
+   in consistency to the default theme fall back pool environment.
+   Others, more modern themes, use their own file with better dl/dt/dd list markup.
+
 1.8:
 ----
 
