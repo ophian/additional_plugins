@@ -1,3 +1,7 @@
+2.7.0:
+------ [Sync S9y 1.1.5]
+ * Update b8, to prevent a debug error when commenting
+
 2.6.0:
 ------ [Sync S9y 1.1.3]
  * PHP 8 compatibility fix: Set b8 class variable properly
