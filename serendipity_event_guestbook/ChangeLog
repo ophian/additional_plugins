@@ -1,3 +1,7 @@
+3.85:
+-----
+ * Add cursor pointer style to "details" label
+
 3.84:
 -----
  * Fix an uninitialized variable check for PHP 8

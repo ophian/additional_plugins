@@ -1,7 +1,7 @@
 
 /*
     ******** Begin Guestbook Styles *********
-    style_guestbook_backend.css - for v.3.82 2021-07-11 Ian
+    style_guestbook_backend.css - for v.3.85 2021-07-19 Ian
 */
 
 #wrapGB .icon-ok:before{content:'\2714'}
@@ -136,6 +136,9 @@
 }
 #wrapGB .gb_entrybody {
     padding: 0.2em 0.4em;
+}
+#wrapGB .gb_entrybody  label {
+    cursor: pointer;
 }
 #wrapGB .gb_move {
     background: none repeat scroll 0 0 ButtonFace;
