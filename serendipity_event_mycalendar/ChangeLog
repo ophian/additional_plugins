@@ -1,3 +1,11 @@
+0.21:
+-----
+
+ * Changed into backend_sidebar_admin_appearance actions
+ * Add DARK MODE styles
+ * Improved length of eventurltitle description field
+ * Cleanup
+
 0.20:
 -----
 
