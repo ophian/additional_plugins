@@ -538,7 +538,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Guestbook&lt;/b&gt;&lt;br /&gt;Shows a guestbook inside your blog with your normal blog design.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Wed, 14 Jul 2021 09:21:00 +0200</pubDate>
+<pubDate>Mon, 19 Jul 2021 13:46:19 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -772,7 +772,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_mycalendar&lt;br /&gt;自分のカレンダー&lt;/b&gt;&lt;br /&gt;個人カレンダーの管理をします。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 05 Jun 2020 09:25:54 +0200</pubDate>
+<pubDate>Mon, 19 Jul 2021 15:36:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mycalendar</guid>
 </item>
 <item>
