@@ -14,11 +14,11 @@ class serendipity_plugin_mycalendar extends serendipity_plugin
         $propbag->add('description',   PLUGIN_MYCALENDAR_SIDE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Markus Gerstel, Ian Styx');
-        $propbag->add('version',       '0.14');
+        $propbag->add('version',       '0.15');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '5.2.0'
         ));
         $propbag->add('groups', array('FRONTEND_FEATURES'));
         $propbag->add('configuration', array('title', 'items', 'datefm', 'datefm2', 'showtime', 'autoprune', 'countdown', 'skipfirst', 'rss'));
@@ -131,14 +131,14 @@ class serendipity_plugin_mycalendar extends serendipity_plugin
 
         $olddays = 0;
         foreach($items AS $item) {
-            $cont = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['eventname']) : htmlspecialchars($item['eventname'], ENT_COMPAT, LANG_CHARSET));
+            $cont = serendipity_specialchars($item['eventname']);
             if (!empty($item['eventurl'])) {
                 if (!empty($item['eventurltitle'])) {
                     $ltitle = $item['eventurltitle'];
                 } else {
                     $ltitle = $item['eventname'];
                 }
-                $cont = '<a href="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['eventurl']) : htmlspecialchars($item['eventurl'], ENT_COMPAT, LANG_CHARSET)) . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($ltitle) : htmlspecialchars($ltitle, ENT_COMPAT, LANG_CHARSET)) . '">' . $cont . '</a>';
+                $cont = '<a href="' . serendipity_specialchars($item['eventurl']) . '" title="' . serendipity_specialchars($ltitle) . '">' . $cont . '</a>';
             }
 
             $daystostart = ceil(($item['eventdate'] - $ts) / 86400);
