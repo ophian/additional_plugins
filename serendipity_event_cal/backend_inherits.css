@@ -301,8 +301,23 @@ table.eventborder {
 [data-color-mode="dark"] tr.f0 {
     background: var(--color-bg-overlay);
 }
-[data-color-mode="dark"] input.eventcal_appform_move {
-    background: initial;
+[data-color-mode="dark"] .mono {
+    background-color: var(--color-auto-white);
+}
+[data-color-mode="dark"] .multi {
+    background-color: var(--color-auto-gray-2);
+}
+[data-color-mode="dark"] .recm {
+    background-color: var(--color-auto-pink-0);
+}
+[data-color-mode="dark"] .recw {
+    background-color: var(--color-auto-purple-0);
+}
+[data-color-mode="dark"] td.eventcal_appform_validation {
+    border-top-color: var(--color-auto-orange-2);
+}
+[data-color-mode="dark"] img.eventcal_appform_move,[data-color-mode="dark"] input.eventcal_appform_move {
+    background: #fff;
 }
 [data-color-mode="dark"] .eventcal_tpl_message {
     border-color: var(--color-border-overlay);
