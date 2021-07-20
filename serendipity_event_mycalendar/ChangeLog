@@ -1,5 +1,12 @@
+0.22:
+-----
+
+ * Improved length of input fields
+
+
 sidebar 0.15:
 --------------
+
  * Cleanup
  * Raises serendipity requirement to 2.0 and others
 

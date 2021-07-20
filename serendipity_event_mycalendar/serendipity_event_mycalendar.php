@@ -22,7 +22,7 @@ class serendipity_event_mycalendar extends serendipity_event
             'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '0.21');
+        $propbag->add('version',       '0.22');
         $propbag->add('author',        'Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -453,17 +453,14 @@ class serendipity_event_mycalendar extends serendipity_event
     overflow-x: auto;
     overflow-y: hidden;
 }
-
 .serendipity_mycalendar_wrap th,
 .serendipity_mycalendar_wrap td {
     white-space: nowrap;
 }
-
 .serendipity_mycalendar_eventlist {
     border: 1px solid #aaa;
     border-bottom: 0;
 }
-
 .serendipity_mycalendar_eventlist {
     margin-top: 0;
     width: 100%;
@@ -471,33 +468,31 @@ class serendipity_event_mycalendar extends serendipity_event
 [data-color-mode="dark"] .serendipity_mycalendar_wrap th {
     color: var(--color-text-primary);
 }
-.serendipity_mycalendar_eventlist td[colspan="3"] input {
+.serendipity_mycalendar_eventlist input[type="text"] {
     width: 100%;
 }
-
 .serendipity_mycalendar_eventlist tr {
     border-bottom: 1px solid #aaa;
 }
-
 .serendipity_mycalendar_eventlist thead tr,
 .serendipity_mycalendar_eventlist .serendipity_admin_list_item_even {
     background-color: #eee;
 }
 [data-color-mode="dark"] .serendipity_mycalendar_eventlist thead tr,
 [data-color-mode="dark"] .serendipity_mycalendar_eventlist .serendipity_admin_list_item_even {
-    background-color: var(--color-bg-overlay);
+    background-color: var(--color-scale-gray-8);
 }
-
+[data-color-mode="dark"] .serendipity_mycalendar_eventlist .serendipity_admin_list_item_uneven {
+    background-color: var(--color-scale-gray-7);
+}
 .serendipity_mycalendar_eventlist th,
 .serendipity_mycalendar_eventlist td {
     padding: .25em;
 }
-
 @media screen and (min-width: 768px) {
     .serendipity_mycalendar_wrap {
         overflow-y: auto;
     }
-
     .serendipity_mycalendar_wrap th,
     .serendipity_mycalendar_wrap td {
         white-space: normal;
