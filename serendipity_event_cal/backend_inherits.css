@@ -293,6 +293,12 @@ table.eventborder {
 }
 
 /* DARK MODE */
+[data-color-mode="dark"] .ec_backend_table tr {
+    color: var(--color-text-primary);
+}
+[data-color-mode="dark"] .ec_backend_table tr.f0 {
+    color: var(--color-text-secondary);
+}
 [data-color-mode="dark"] #eventcalEntry table.eventcal_form,
 [data-color-mode="dark"] td.eventformdesc input[type="text"]  {
     background: var(--color-bg-backdrop);
@@ -305,7 +311,7 @@ table.eventborder {
     background-color: var(--color-auto-white);
 }
 [data-color-mode="dark"] .multi {
-    background-color: var(--color-auto-gray-2);
+    background-color: var(--color-auto-gray-1);
 }
 [data-color-mode="dark"] .recm {
     background-color: var(--color-auto-pink-0);
@@ -389,4 +395,22 @@ table.eventborder {
 }
 [data-color-mode="dark"] div.backend_eventcal_nav ul li.last#active {
     border-right: 1px solid var(--color-border-overlay);
+}
+[data-color-mode="dark"] .eventcal_tpl_error_inner {
+    background: var(--color-bg-danger);
+    border-color: var(--color-border-danger);
+    color: var(--color-alert-error-text);
+}
+[data-color-mode="dark"] .serendipity_msg_notice {
+    background: var(--color-bg-warning);
+    border-color: var(--color-border-warning);
+    color: var(--color-alert-warn-text);
+}
+[data-color-mode="dark"] .serendipity_msg_hint {
+    background: var(--color-bg-info);
+    border-color: var(--color-border-info);
+    color: var(--color-alert-info-text);
+}
+[data-color-mode="dark"] #backend_eventcal_wrapper .msg_notice {
+    color: var(--color-text-white);
 }
