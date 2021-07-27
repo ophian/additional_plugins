@@ -1,3 +1,8 @@
+2.2.0:
+-----
+ * Fixup permission to access backend_category_showForm
+
+1.99:
 2.1.4:
 -----
  * Fix a backend initialization variable check for PHP 8

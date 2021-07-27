@@ -26,7 +26,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.1.4');
+        $propbag->add('version',       '2.2.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.3.0'
@@ -585,6 +585,9 @@ class serendipity_event_categorytemplates extends serendipity_event
 
         $hooks = &$bag->get('event_hooks');
 
+        // check access if user is in admin group levels (admin/chief)
+        $access_granted = serendipity_checkPermission('adminPlugins');
+
         if (isset($hooks[$event])) {
             // Update the database on first run if changed.
             $ver = $this->get_config('dbversion', 0);
@@ -596,6 +599,9 @@ class serendipity_event_categorytemplates extends serendipity_event
                 // When changing category options, display the new extended
                 // options, such as template, future entries, limit, and order
                 case 'backend_category_showForm':
+                    if (!$access_granted) {
+                        break;
+                    }
                     // The $eventData is the category ID
                     if (empty($eventData)) {
                         break;
