@@ -1,3 +1,7 @@
+6.40:
+-----
+ * Fix a CHIEF_EDITOR permission level issue
+
 6.39:
 -----
  * Fix a CSS "background: linear-gradient" Syntax value missing the to prefix

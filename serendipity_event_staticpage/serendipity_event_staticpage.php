@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.39');
+        $propbag->add('version', '6.40');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -553,13 +553,11 @@ class serendipity_event_staticpage extends serendipity_event
      */
     function selectAuthors()
     {
-        global $serendipity;
-
         $users = (array)serendipity_fetchUsers();
         foreach ($users AS $user) {
-            #if ($this->checkUser($user)) {
+            if ($this->checkUser($user)) {
                 $u[$user['authorid']] = $user['realname'];
-            #}
+            }
         }
         return $u;
     }
@@ -609,8 +607,6 @@ class serendipity_event_staticpage extends serendipity_event
      */
     function selectAuthor($id)
     {
-        global $serendipity;
-
         $users = (array)serendipity_fetchUsers();
         foreach ($users AS $user) {
             if ($user['authorid'] == $id) {
@@ -633,7 +629,7 @@ class serendipity_event_staticpage extends serendipity_event
         global $serendipity;
 
         if (!isset($serendipity['serendipityUserlevel']) && !isset($serendipity['authorid'])) return false;
-        return (($user['userlevel'] < $serendipity['serendipityUserlevel']) || ($user['authorid'] == $serendipity['authorid']) || ($serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN));
+        return (($user['userlevel'] < $serendipity['serendipityUserlevel']) || ($user['authorid'] == $serendipity['authorid']) || ($serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN) || ($serendipity['serendipityUserlevel'] == USERLEVEL_CHIEF && $serendipity['right_publish'] === true));
     }
 
     /**
@@ -647,9 +643,7 @@ class serendipity_event_staticpage extends serendipity_event
      */
     function checkPageUser($authorid)
     {
-        global $serendipity;
-
-        if ((empty($authorid)) || ((int)$authorid === 0)) {
+        if (empty($authorid) || (int)$authorid === 0) {
             return true;
         }
 
@@ -739,8 +733,6 @@ class serendipity_event_staticpage extends serendipity_event
      */
     function pluginstatus()
     {
-        global $serendipity;
-
         $uplugs = array(
             'serendipity_event_cal',
             'serendipity_event_contactform',
