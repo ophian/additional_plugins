@@ -17,7 +17,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.48');
+        $propbag->add('version',       '2.49');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -216,7 +216,8 @@ class serendipity_plugin_adduser extends serendipity_plugin
 
         $groups = serendipity_getAllGroups();
 
-        $html = '<strong>' . USERCONF_GROUPS . '</strong><br />';
+        $html = '<div class="clearfix form_select">
+        <label>' . USERCONF_GROUPS . '</label>';
 
         if (isset($serendipity['POST']['plugin']['usergroups']) && is_array($serendipity['POST']['plugin']['usergroups'])) {
             $valid = $this->usergroups = array();
@@ -228,14 +229,15 @@ class serendipity_plugin_adduser extends serendipity_plugin
             $valid =& $this->usergroups;
         }
 
-        $html .= '<select name="serendipity[plugin][usergroups][]" multiple="true" size="5">';
+        $html .= '<select id="plugin_adduser_usergroups" name="serendipity[plugin][usergroups][]" multiple="true" size="5">';
         if (is_array($groups)) {
             foreach($groups AS $group) {
                 $html .= '<option value="'. $group['id'] .'"'. (isset($valid[$group['id']]) ? ' selected="selected"' : '') .'>'. (function_exists('serendipity_specialchars') ? serendipity_specialchars($group['name']) : htmlspecialchars($group['name'], ENT_COMPAT, LANG_CHARSET)) .'</option>' . "\n";
             }
         }
 
-        $html .= '</select>';
+        $html .= '</select>
+            </div>';
 
         return $html;
     }
