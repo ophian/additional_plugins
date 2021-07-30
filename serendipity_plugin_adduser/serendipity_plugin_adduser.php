@@ -17,11 +17,11 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.47');
+        $propbag->add('version',       '2.48');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
-            'smarty'      => '3.0.0',
-            'php'         => '5.2.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '7.0'
         ));
         $propbag->add('groups', array('BACKEND_USERMANAGEMENT'));
         $propbag->add('configuration', array(
@@ -272,9 +272,9 @@ class serendipity_plugin_adduser extends serendipity_plugin
         }
 
         $url = serendipity_currentURL();
-        $username = substr((string)$serendipity['POST']['adduser_user'], 0, 40);
-        $password = substr((string)$serendipity['POST']['adduser_pass'], 0, 32);
-        $email    = (string)$serendipity['POST']['adduser_email'];
+        $username = substr((string)($serendipity['POST']['adduser_user'] ?? ''), 0, 40);
+        $password = substr((string)($serendipity['POST']['adduser_pass'] ?? ''), 0, 32);
+        $email    = (string)($serendipity['POST']['adduser_email'] ?? '');
 
         echo '<div style="padding-left: 4px; padding-right: 10px"><a id="adduser"></a>';
 

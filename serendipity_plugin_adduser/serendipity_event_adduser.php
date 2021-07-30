@@ -16,7 +16,7 @@ class serendipity_event_adduser extends serendipity_event
         $propbag->add('description', PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking, Ian Styx');
-        $propbag->add('version',     '2.51');
+        $propbag->add('version',     '2.52');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.0.0',
@@ -251,7 +251,7 @@ class serendipity_event_adduser extends serendipity_event
                         } else {
                             $serendipity['COOKIE']['name']  = (isset($_SESSION['serendipityRealname']) ? $_SESSION['serendipityRealname'] : $_SESSION['serendipityUser']);
                             $serendipity['COOKIE']['email'] = $_SESSION['serendipityEmail'];
-                            if ($serendipity['POST']['comment']) {
+                            if (isset($serendipity['POST']['comment'])) {
                                 $serendipity['POST']['name']  = $serendipity['COOKIE']['name'];
                                 $serendipity['POST']['email'] = $serendipity['COOKIE']['email'];
                             }

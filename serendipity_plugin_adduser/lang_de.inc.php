@@ -24,7 +24,7 @@
 @define('PLUGIN_ADDUSER_SUCCEED', 'Der Account wurde erfolgreich aktiviert. Sie können Sich nun in die Administrationsoberfläche einloggen, der Link dazu befindet sich in ihrer Aktivierungs-E-Mail.');
 @define('PLUGIN_ADDUSER_FAILED', 'Der Account konnte nicht freigeschaltet werden. Vielleicht haben Sie die URL aus ihrer Aktivierungs-E-Mail nicht korrekt kopiert?');
 
-@define('PLUGIN_ADDUSER_REGISTERED_ONLY', 'Nur registrierte Nutzer dürfen Kommentare schicken?');
+@define('PLUGIN_ADDUSER_REGISTERED_ONLY', 'Nur registrierte Nutzer dürfen Kommentare schicken');
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY_DESC', 'Wenn diese Option aktiviert ist, dürfen nur registrierte Nutzer die Einträge kommentieren und müssen dazu angemeldet sein.');
 @define('PLUGIN_ADDUSER_REGISTERED_ONLY_REASON', 'Nur registrierte Benutzer dürfen Einträge kommentieren. Erstellen Sie sich einen eigenen Account <a href="%s">hier</a> und <a href="%s">loggen Sie sich danach ein</a>. Ihr Browser muss Cookies unterstützen.');
 
