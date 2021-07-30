@@ -46,7 +46,7 @@
                             <fieldset>
                                 <div class="field">
                                     <label for="hReview_name">Name of reviewed item *</label>
-                                    <input type="text" id="hReview_name" name="serendipity[properties][hReview_name]" value="<?php echo $eventData['properties']['mf_hReview_name']?>" />
+                                    <input type="text" id="hReview_name" name="serendipity[properties][hReview_name]" value="<?php echo ($eventData['properties']['mf_hReview_name'] ?? '');?>" />
                                     <br/>
                                     <label for="hReview_type">Type of reviewed item</label>
                                     <select id="hReview_type" name="serendipity[properties][hReview_type]">
@@ -81,10 +81,10 @@
                                 </div>
                         -->
                                     <label for="hReview_url">URL of review item</label>
-                                    <input type="text" id="hReview_url" name="serendipity[properties][hReview_url]" value="<?php echo $eventData['properties']['mf_hReview_url']?>" />
+                                    <input type="text" id="hReview_url" name="serendipity[properties][hReview_url]" value="<?php echo ($eventData['properties']['mf_hReview_url'] ?? '');?>" />
                                     <br/>
                                     <label for="hReview_image">URL of item image</label>
-                                    <input type="text" id="hReview_image" name="serendipity[properties][hReview_image]" value="<?php echo $eventData['properties']['mf_hReview_image']?>" />
+                                    <input type="text" id="hReview_image" name="serendipity[properties][hReview_image]" value="<?php echo ($eventData['properties']['mf_hReview_image'] ?? '');?>" />
                                     <br/>
                                 </div>
 
@@ -101,13 +101,13 @@
                                 </select>
                                 <br/>
                                 <label for="hReview_summary" id="summaryLabel">summary</label>
-                                <input type="text" id="hReview_summary" name="serendipity[properties][hReview_summary]" value="<?php echo $eventData['properties']['mf_hReview_summary']?>" />
+                                <input type="text" id="hReview_summary" name="serendipity[properties][hReview_summary]" value="<?php echo ($eventData['properties']['mf_hReview_summary'] ?? '');?>" />
                                 <br/>
                             </div>
 
                             <div class="field">
                                 <label for="hReview_desc">Review:</label>
-                                <textarea id="hReview_desc" name="serendipity[properties][hReview_desc]" rows="15"><?php echo $eventData['properties']['mf_hReview_desc']?></textarea>
+                                <textarea id="hReview_desc" name="serendipity[properties][hReview_desc]" rows="15"><?php echo ($eventData['properties']['mf_hReview_desc'] ?? '');?></textarea>
                             </div>
 
                             <div class="field">
@@ -119,7 +119,7 @@
                                 <br/><input type="hidden" id="hReview_timezone" name="serendipity[properties][hReview_timezone]" value="<?php echo $this->get_config('timezone')?>" />
                             <div class="field">
                                 <label for="hReview_reviewer" title="reviewer is required, though 'anonymous' is allowed">reviewer *</label>
-                                <input type="text" id="hReview_reviewer" name="serendipity[properties][hReview_reviewer]" value="<?php echo $eventData['properties']['mf_hReview_reviewer']?>" />
+                                <input type="text" id="hReview_reviewer" name="serendipity[properties][hReview_reviewer]" value="<?php echo ($eventData['properties']['mf_hReview_reviewer'] ?? '');?>" />
                                 <br/>
                             </div>
                             <em> * denotes required fields.</em>
@@ -130,13 +130,13 @@
                         <fieldset>
                             <div class="field">
                                 <label for="hCalendar_summary">Summary/Title</label>
-                                <input type="text" id="hCalendar_summary" name="serendipity[properties][hCalendar_summary]" value="<?php echo $eventData['properties']['mf_hCalendar_summary']?>" />
+                                <input type="text" id="hCalendar_summary" name="serendipity[properties][hCalendar_summary]" value="<?php echo ($eventData['properties']['mf_hCalendar_summary'] ?? '');?>" />
                                 <br/>
                                 <label for="hCalendar_location">Location</label>
-                                <input type="text" id="hCalendar_location" name="serendipity[properties][hCalendar_location]" value="<?php echo $eventData['properties']['mf_hCalendar_location']?>" />
+                                <input type="text" id="hCalendar_location" name="serendipity[properties][hCalendar_location]" value="<?php echo ($eventData['properties']['mf_hCalendar_location'] ?? '');?>" />
                                 <br/>
                                 <label for="hCalendar_url">URL</label>
-                                <input type="text" id="hCalendar_url" name="serendipity[properties][hCalendar_url]" value="<?php echo $eventData['properties']['mf_hCalendar_url']?>" />
+                                <input type="text" id="hCalendar_url" name="serendipity[properties][hCalendar_url]" value="<?php echo ($eventData['properties']['mf_hCalendar_url'] ?? '');?>" />
                                 <br/>
                             </div>
 
@@ -154,7 +154,7 @@
                             <br/><input type="hidden" id="hCalendar_timezone" name="serendipity[properties][hCalendar_timezone]" value="<?php echo $this->get_config('timezone')?>" />
                             <div class="field">
                                 <label for="hCalendar_desc">Description:</label>
-                                <textarea id="hCalendar_desc" name="serendipity[properties][hCalendar_desc]" rows="15"><?php echo $eventData['properties']['mf_hCalendar_desc']?></textarea>
+                                <textarea id="hCalendar_desc" name="serendipity[properties][hCalendar_desc]" rows="15"><?php echo ($eventData['properties']['mf_hCalendar_desc'] ?? '');?></textarea>
                             </div>
                         </fieldset>
                         </div>

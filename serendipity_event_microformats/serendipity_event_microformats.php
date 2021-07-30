@@ -53,11 +53,11 @@ class serendipity_event_microformats extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MICROFORMATS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version',       '0.51');
+        $propbag->add('version',       '0.52');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
-            'php'         => '5.6.0'
+            'php'         => '7.0'
         ));
         $propbag->add('event_hooks',    array(
             'frontend_header'                                   => true,
@@ -284,7 +284,7 @@ div.tabbertab fieldset {
 
                 case 'backend_display':
 
-                    if (is_array($serendipity['POST']['properties']) && count($serendipity['POST']['properties']) > 0 && isset($serendipity['POST']['properties']['mf_type'])){
+                    if (isset($serendipity['POST']['properties']) && is_array($serendipity['POST']['properties']) && count($serendipity['POST']['properties']) > 0 && isset($serendipity['POST']['properties']['mf_type'])){
                         $supported_properties =& $this->getSupportedProperties($serendipity['POST']['properties']['mf_type']);
                         foreach($supported_properties AS $prop_key => $prop_val) {
                             $curr_format = (strpos($prop_key, '_') > 0) ? explode('_', $prop_key) : array(0 => $prop_key);
@@ -295,11 +295,14 @@ div.tabbertab fieldset {
                         }
                     }
                     $mf_exist = array();
-                    if ($eventData['properties']) {
+                    if (!empty($eventData['properties'])) {
                         foreach($eventData['properties'] AS $k => $v) {
                             if (strpos($k, 'mf_hReview') !== false) $mf_exist['hReview'] = true;
                             if (strpos($k, 'mf_hCalendar') !== false) $mf_exist['hCalendar'] = true;
                         }
+                    } else {
+                        $mf_exist['hReview'] = null;
+                        $mf_exist['hCalendar'] = null;
                     }
                     $itemtypes  = array('hReview' => array('product', 'business', 'event', 'person', 'place', 'website', 'url'));
                     $ratings    = array('hReview' => range(1.0, $this->get_config('best'), $this->get_config('step')));
@@ -319,13 +322,14 @@ div.tabbertab fieldset {
                     break;
 
                 case 'entry_display':
-                    if (!$serendipity['GET']['preview'] && is_array($serendipity['POST']['properties']) && count($serendipity['POST']['properties']) > 0){
+                    if (!isset($serendipity['GET']['preview']) && isset($serendipity['POST']['properties']) && is_array($serendipity['POST']['properties']) && count($serendipity['POST']['properties']) > 0){
                         $parr = array();
                         $supported_formats = array('hReview', 'hCalendar');
                         $supported_properties =& $this->getSupportedProperties($supported_formats);
                         foreach($supported_properties AS $prop_key => $prop_val) {
-                            if (isset($serendipity['POST']['properties'][$prop_key]))
+                            if (isset($serendipity['POST']['properties'][$prop_key])) {
                                 $eventData['properties']['mf_' . $prop_key] = $serendipity['POST']['properties'][$prop_key];
+                            }
                         }
                     }
                     break;

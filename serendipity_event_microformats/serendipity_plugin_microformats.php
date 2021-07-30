@@ -55,7 +55,7 @@ class serendipity_plugin_microformats extends serendipity_plugin
         $propbag->add('description',   PLUGIN_MICROFORMATS_TITLE_D);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version',       '0.27');
+        $propbag->add('version',       '0.28');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -143,7 +143,7 @@ class serendipity_plugin_microformats extends serendipity_plugin
 
             $i = 0;
             foreach($struct AS $k => $v) {
-                if (is_array($v['attributes'])
+                if (!empty($v['attributes'])
                 && isset($v['attributes']['SUMMARY'])
                 && isset($v['attributes']['DTSTART'])) {
                     $event[$i++] = $v['attributes'];

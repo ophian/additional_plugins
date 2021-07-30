@@ -1,3 +1,8 @@
+0.52:
+------
+ * PHP 8 variable init startup fixes
+ * Raises PHP requirements to 7+
+
 0.51:
 ------
  * PHP 8 preparation fix

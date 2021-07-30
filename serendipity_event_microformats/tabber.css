@@ -46,7 +46,6 @@ ul.tabbernav li a
  background: #DDE;
  text-decoration: none;
 }
-
 ul.tabbernav li a:link { color: #448; }
 ul.tabbernav li a:visited { color: #667; }
 
@@ -88,6 +87,9 @@ ul.tabbernav li.tabberactive a:hover
     scrollbar when necessary */
 
  /* overflow:auto; */
+}
+[data-color-mode="dark"] .tabberlive .tabbertab {
+    border-color: var(--color-border-primary);
 }
 
 /* If desired, hide the heading since a heading is provided by the tab */
