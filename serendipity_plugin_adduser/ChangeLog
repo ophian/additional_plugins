@@ -1,3 +1,7 @@
+2.50 (sidebar plugin):
+-----
+ * Fix a backend config option variable check for Frontend views
+
 2.49 (sidebar plugin):
 -----
  * Fix a config option for proper 2.x series markup consistency

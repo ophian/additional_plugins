@@ -17,7 +17,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.49');
+        $propbag->add('version',       '2.50');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -104,8 +104,8 @@ class serendipity_plugin_adduser extends serendipity_plugin
 
             case 'instructions':
                 $propbag->add('type',        'html');
-                $propbag->add('name',        ($serendipity['wysiwyg'] ? '' : PLUGIN_ADDUSER_INSTRUCTIONS));
-                $propbag->add('description', ($serendipity['wysiwyg'] ? '' : PLUGIN_ADDUSER_INSTRUCTIONS_DESC));
+                $propbag->add('name',        ((isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) ? '' : PLUGIN_ADDUSER_INSTRUCTIONS));
+                $propbag->add('description', ((isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) ? '' : PLUGIN_ADDUSER_INSTRUCTIONS_DESC));
                 $propbag->add('default',     PLUGIN_ADDUSER_INSTRUCTIONS_DEFAULT);
                 break;
 
