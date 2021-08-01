@@ -20,7 +20,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $propbag->add('description',   PLUGIN_LINKS_BLAHBLAH);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '1.30');
+        $propbag->add('version',       '1.31');
         $propbag->add('configuration', array(
                                              'title',
                                              'prepend_text',
@@ -387,6 +387,8 @@ class serendipity_plugin_linklist extends serendipity_plugin
             $imgdir = $serendipity['baseURL'] . 'plugins/' . $plugin_dir;
         }
 
+        $delimiter = !serendipity_db_bool($this->get_config('call_markup', 'false')) ? "\n" : '';
+
         $str  =  $this->get_config('prepend_text');
         $str .= "\n\n";
         if ($style == 'dtree') {
@@ -422,7 +424,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
                         $level[] = $j;
                     }
                     else if ($struct[$i]['type'] == 'close' && strtolower($struct[$i]['tag']) == 'dir') {
-                        $dump=array_pop($level);
+                        $dump = array_pop($level);
                     }
                     else if ($struct[$i]['type']=='complete' && strtolower($struct[$i]['tag'])=='link') {
                         if ((isset($struct[$i]['attributes']['NAME'])) && ($struct[$i]['attributes']['NAME'] != "") && ($use_descrip)) {
@@ -444,11 +446,6 @@ class serendipity_plugin_linklist extends serendipity_plugin
             }
         } else {
 
-            if (!serendipity_db_bool($this->get_config('call_markup', 'false'))) {
-                $delimiter = "\n";
-            } else {
-                $delimiter = "";
-            }
             if ($this->get_config('style') == "simp_css")  {
                 $lessformatting = TRUE;
             } else {
@@ -458,10 +455,14 @@ class serendipity_plugin_linklist extends serendipity_plugin
             $link_array = array();
             $dirname = array();
             $level = array();
+            $dir_array[''] = array('dirname' => '','level' => 1,'linkcount' => 0,'links' => $link_array,'dircount' => 0,'directories' => $link_array);
 
             for($level[] = 0, $i=1, $j=1; isset($struct[$i]); $i++, $j++) {
                 if (isset($struct[$i]['type'])) {
                     if ($struct[$i]['type'] == 'open' && isset($struct[$i]['tag']) && strtolower($struct[$i]['tag']) == 'dir') {
+                        if (!isset($dirname[0])) {
+                            $dirname[0] = null;
+                        }
                         $dir_array[$dirname[0]]['directories'][] = $this->decode($struct[$i]['attributes']['NAME']);
                         $dir_array[$dirname[0]]['dircount']++;
                         array_unshift($dirname, $this->decode($struct[$i]['attributes']['NAME']));
@@ -482,6 +483,9 @@ class serendipity_plugin_linklist extends serendipity_plugin
                             $level_pass = 1;
                         } else {
                             $level_pass = count($level)+1;
+                        }
+                        if (!isset($struct[$i]['attributes']['DESCRIP'])) {
+                            $struct[$i]['attributes']['DESCRIP'] = null;
                         }
                         $basic_array = array(
                                         'linkloc'   => $this->decode($struct[$i]['attributes']['LINK']),
@@ -552,10 +556,12 @@ class serendipity_plugin_linklist extends serendipity_plugin
 
     function cleanup()
     {
+        global $serendipity;
+
         $cache = $this->get_config('cache');
         if ($this->get_config('cache') == 'no') {
             if (@include_once("Cache/Lite.php")) {
-                $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/','automaticSerialization' => true));
+                $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/' , 'automaticSerialization' => true));
                 @$cache_obj->remove('linklist_html');
                 @$cache_obj->remove('linklist_xmlhash');
             }
@@ -581,7 +587,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         }
     }
 
-    function build_tree($fullarray, $rootdir, $imagearray, $more_track, $strtemp = "", $lessformatting = NULL, $delimiter = "\n", $use_descrip = false)
+    function build_tree($fullarray, $rootdir, $imagearray, $more_track, $strtemp = '', $lessformatting = NULL, $delimiter = "\n", $use_descrip = false)
     {
         $imgdir    = $imagearray['imgdir'];
         $uselines  = $imagearray['uselines'];
@@ -611,6 +617,8 @@ class serendipity_plugin_linklist extends serendipity_plugin
                     $more_track[$level] = false;
                 }
 
+                $folder_image = $imagearray['useicons'] ? '<img id="submenu_'.$safename.'_folder" src="'.$imgdir.$imagearray['folder'].'" alt="" />' : '';
+
                 $base_image_string = '';
                 if ($lessformatting) {
                     $strtemp .= '<span class="menu_title" id="submenu_'.$safename.'_parent">'.$folder_image.$sub.'</span><br /><ul id="submenu_'.$safename.'" class="simple" '.$link_block_style .'>'.$delimiter;
@@ -622,14 +630,9 @@ class serendipity_plugin_linklist extends serendipity_plugin
                             $base_image_string .= '<img src="'.$imgdir.$imagearray['empty_image'].'" alt="" />';
                         }
                     }
-                    if ($imagearray['useicons']) {
-                        $folder_image = '<img id="submenu_'.$safename.'_folder" src="'.$imgdir.$imagearray['folder'].'" alt="" />';
-                    } else {
-                        $folder_image = '';
-                    }
                     $strtemp .= $base_image_string.'<a class="folder" href="javascript: hide_unhide(\'submenu_'.$safename.'\',\''.$imgdir.'\',\''.$uselines.'\',\''.$useicons.'\',\''.$more_track[$level].'\');"><img id="submenu_'.$safename.'_image" src="'.$imgdir.$start_image .'" alt="" /><span class="menu_title">'.$folder_image.$sub.'</span></a><ul id="submenu_'.$safename.'" class="csslist" '.$link_block_style .'>'.$delimiter;
                 }
-                $strtemp .= $this->build_tree($fullarray, $sub, $imagearray, $more_track, $str, $lessformatting, $delimiter, $use_descrip);
+                $strtemp .= $this->build_tree($fullarray, $sub, $imagearray, $more_track, '', $lessformatting, $delimiter, $use_descrip);
                 $strtemp .= '</ul></li>';
             }
         }
@@ -659,6 +662,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
             }
         }
         if (isset($links)) {
+            if (!isset($page_icon)) $page_icon = '';
             foreach($links AS $link) {
                 $linkcount--;
                 if (!$lessformatting) {

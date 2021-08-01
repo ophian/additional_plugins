@@ -59,4 +59,8 @@ div.linklist a:hover {
     color: #333;
 }
 
+.dTreeNode a.node {
+    display: inline;
+}
+
 /* serendipity_event_linklist.css end */

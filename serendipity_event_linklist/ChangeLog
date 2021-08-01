@@ -1,3 +1,10 @@
+3.3.0 & 1.31:
+------------
+
+ * Lots of PHP 8 fixes
+ * Better explain DIRECTXML description for how to enable backend
+ * Fix workflow
+
 3.02 & 1.30:
 ------------
 

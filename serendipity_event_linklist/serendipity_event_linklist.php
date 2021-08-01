@@ -26,7 +26,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '3.02');
+        $propbag->add('version',       '3.3.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2.0',
             'smarty'      => '3.1.0',
@@ -48,7 +48,7 @@ class serendipity_event_linklist extends serendipity_event
         $cache = $this->get_config('cache');
         if ($cache == 'yes' && $ignorecache == false) {
             if (@include_once("Cache/Lite.php")) {
-                $cache_obj = new Cache_Lite(array('cacheDir' => $serendipity['serendipityPath'].'templates_c/','automaticSerialization' => true));
+                $cache_obj = new Cache_Lite(array('cacheDir' => $serendipity['serendipityPath'].'templates_c/', 'automaticSerialization' => true));
                 $output = $cache_obj->get('linklist_cache');
             } else {
                 $output = $this->get_config('cached_output');
@@ -72,7 +72,7 @@ class serendipity_event_linklist extends serendipity_event
                         $link = $row['link'];
                         $id   = $row['id'];
                         $descrip = $row['descrip'];
-                        $output .= '<link name="'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($name) : htmlspecialchars($name, ENT_COMPAT, LANG_CHARSET)).'" link="http://'.$link.'" descrip="'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($descrip) : htmlspecialchars($descrip, ENT_COMPAT, LANG_CHARSET)).'" />'."\n";
+                        $output .= '<link name="'.serendipity_specialchars($name).'" link="http://'.$link.'" descrip="'.serendipity_specialchars($descrip).'" />'."\n";
                     }
                 }
             }
@@ -118,7 +118,7 @@ class serendipity_event_linklist extends serendipity_event
                 $cat_name = $sql[0]['category_name'];
 
                 $cat_open = true;
-                $open_category = str_replace($replace_name,(function_exists('serendipity_specialchars') ? serendipity_specialchars($cat_name) : htmlspecialchars($cat_name, ENT_COMPAT, LANG_CHARSET)),$open_category);
+                $open_category = str_replace($replace_name, serendipity_specialchars($cat_name), $open_category);
                 $output .= $open_category;
             }
         }
@@ -151,9 +151,9 @@ class serendipity_event_linklist extends serendipity_event
                 $replace_link = "_link_";
                 $replace_descrip = "_descrip_";
 
-                $link_out = str_replace($replace_linkname,(function_exists('serendipity_specialchars') ? serendipity_specialchars($name) : htmlspecialchars($name, ENT_COMPAT, LANG_CHARSET)),$link_out);
+                $link_out = str_replace($replace_linkname, serendipity_specialchars($name), $link_out);
                 $link_out = str_replace($replace_link,$link,$link_out);
-                $link_out = str_replace($replace_descrip,(function_exists('serendipity_specialchars') ? serendipity_specialchars($descrip) : htmlspecialchars($descrip, ENT_COMPAT, LANG_CHARSET)),$link_out);
+                $link_out = str_replace($replace_descrip, serendipity_specialchars($descrip), $link_out);
                 $output .=  $link_out;
             }
         }
@@ -321,7 +321,7 @@ class serendipity_event_linklist extends serendipity_event
 
                     if ($this->get_config('cache') == 'yes') {
                         if (@include_once("Cache/Lite.php")) {
-                            $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/','automaticSerialization' => true));
+                            $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/', 'automaticSerialization' => true));
                             $output = $this->generate_output(true);
                             $cache_obj->save($output,'linklist_cache');
                         } else {
@@ -332,8 +332,8 @@ class serendipity_event_linklist extends serendipity_event
                     if (isset($_GET['serendipity']['edit_link'])) {
                         $this->output_add_edit_linkadmin(TRUE, $_GET['serendipity']['edit_link']);
                     } else {
-                        if (isset($_GET['serendipity']['manage_category']) && isset($_GET['serendipity']['edit_link'])) {
-                            $this->output_categoryadmin(TRUE,$_GET['serendipity']['edit_link']);
+                        if (isset($_GET['serendipity']['manage_category'])) {
+                            $this->output_categoryadmin();
                         } else {
                             $this->output_add_edit_linkadmin(FALSE);
                             $this->output_linkadmin();
@@ -394,7 +394,7 @@ class serendipity_event_linklist extends serendipity_event
                     $this->set_config('cache', $eventData['cache']);
 
                     $eventData['changed'] = 'false';
-                    if ($eventData['enabled']=='true') {
+                    if ($eventData['enabled'] == 'true') {
                         if (!serendipity_db_bool($this->get_config('active'))) {
                             $eventData['changed'] = 'true';
                             $this->set_config('active', 'true');
@@ -413,8 +413,11 @@ class serendipity_event_linklist extends serendipity_event
                                 for($level[]=0, $i=1, $j=1; isset($struct[$i]); $i++, $j++) {
                                     if (isset($struct[$i]['type'])) {
                                         if ($struct[$i]['type']=='open' && strtolower($struct[$i]['tag'])=='dir') {
-                                            $this->add_cat($this->decode($struct[$i]['attributes']['NAME']),$in_cat[0]);
-                                            $q   = 'SELECT categoryid FROM '.$serendipity['dbPrefix'].'link_category where category_name = "'.serendipity_db_escape_string($this->decode($struct[$i]['attributes']['NAME'])).'"';
+                                            if (!isset($in_cat[0])) {
+                                                $in_cat[0] = null;
+                                            }
+                                            $this->add_cat($this->decode($struct[$i]['attributes']['NAME']), $in_cat[0]);
+                                            $q   = 'SELECT categoryid FROM '.$serendipity['dbPrefix'].'link_category WHERE category_name = "'.serendipity_db_escape_string($this->decode($struct[$i]['attributes']['NAME'])).'"';
                                             $sql = serendipity_db_query($q);
                                             $in_cat[] = $sql[0][0];
                                             $depth++;
@@ -422,6 +425,9 @@ class serendipity_event_linklist extends serendipity_event
                                             $blah = array_pop($in_cat);
                                             $depth--;
                                         } else if ($struct[$i]['type']=='complete' && strtolower($struct[$i]['tag'])=='link') {
+                                            if (!isset($struct[$i]['attributes']['DESCRIP'])) {
+                                                $struct[$i]['attributes']['DESCRIP'] = null;
+                                            }
                                             $this->add_link($this->decode($struct[$i]['attributes']['LINK']), $this->decode($struct[$i]['attributes']['NAME']), $this->decode($struct[$i]['attributes']['DESCRIP']), $in_cat[$depth]);
                                         }
                                     }
@@ -504,16 +510,16 @@ class serendipity_event_linklist extends serendipity_event
     {
         global $serendipity;
 
-        $q   = 'SELECT order_num FROM '.$serendipity['dbPrefix'].'links where id='.(int)$id;
+        $q   = 'SELECT order_num FROM '.$serendipity['dbPrefix'].'links WHERE id='.(int)$id;
         $sql = serendipity_db_query($q);
 
         if ($sql && is_array($sql)) {
             $res = $sql[0];
             $order_num = $res['order_num'];
-            $q   = 'DELETE FROM '.$serendipity['dbPrefix'].'links where id='.(int)$id;
+            $q   = 'DELETE FROM '.$serendipity['dbPrefix'].'links WHERE id='.(int)$id;
             $sql = serendipity_db_query($q);
 
-            $q   = 'UPDATE '.$serendipity['dbPrefix'].'links SET order_num=order_num-1 where order_num > '.(int)$order_num;
+            $q   = 'UPDATE '.$serendipity['dbPrefix'].'links SET order_num=order_num-1 WHERE order_num > '.(int)$order_num;
             $sql = serendipity_db_query($q);
         }
     }
@@ -531,7 +537,7 @@ class serendipity_event_linklist extends serendipity_event
     {
         global $serendipity;
 
-        $q   = 'DELETE FROM '.$serendipity['dbPrefix'].'link_category where categoryid='.(int)$id;
+        $q   = 'DELETE FROM '.$serendipity['dbPrefix'].'link_category WHERE categoryid='.(int)$id;
         $sql = serendipity_db_query($q);
 
         $values['category'] = 0;
@@ -543,7 +549,7 @@ class serendipity_event_linklist extends serendipity_event
     {
         global $serendipity;
 
-        $q   = 'UPDATE '.$serendipity['dbPrefix'].'links SET category = '.serendipity_db_escape_string($cat).' where id = '.(int)$id;
+        $q   = 'UPDATE '.$serendipity['dbPrefix'].'links SET category = '.serendipity_db_escape_string($cat).' WHERE id = '.(int)$id;
         $sql = serendipity_db_query($q);
     }
 
@@ -551,7 +557,7 @@ class serendipity_event_linklist extends serendipity_event
     {
         global $serendipity;
 
-        $q   = 'SELECT order_num FROM '.$serendipity['dbPrefix'].'links where id='.(int)$id;
+        $q   = 'SELECT order_num FROM '.$serendipity['dbPrefix'].'links WHERE id='.(int)$id;
         $sql = serendipity_db_query($q);
 
         if ($sql && is_array($sql)) {
@@ -559,10 +565,10 @@ class serendipity_event_linklist extends serendipity_event
             $order_num = $res['order_num']-1;
             if ($order_num >= 0)
             {
-                $q   = 'UPDATE '.$serendipity['dbPrefix'].'links SET order_num=order_num-1 where id = '.(int)$id;
+                $q   = 'UPDATE '.$serendipity['dbPrefix'].'links SET order_num=order_num-1 WHERE id = '.(int)$id;
                 $sql = serendipity_db_query($q);
 
-                $q   = 'UPDATE '.$serendipity['dbPrefix'].'links SET order_num=order_num+1 where order_num = '.(int)$order_num.' AND id !='.$id;
+                $q   = 'UPDATE '.$serendipity['dbPrefix'].'links SET order_num=order_num+1 WHERE order_num = '.(int)$order_num.' AND id !='.$id;
                 $sql = serendipity_db_query($q);
             }
         }
@@ -581,7 +587,7 @@ class serendipity_event_linklist extends serendipity_event
             $count = 0;
         }
 
-        $q   = 'SELECT order_num FROM '.$serendipity['dbPrefix'].'links where id='.(int)$id;
+        $q   = 'SELECT order_num FROM '.$serendipity['dbPrefix'].'links WHERE id='.(int)$id;
         $sql = serendipity_db_query($q);
 
         if ($sql && is_array($sql)) {
@@ -589,10 +595,10 @@ class serendipity_event_linklist extends serendipity_event
             $order_num = $res['order_num']+1;
             if ($order_num <= $count)
             {
-                $q   = 'UPDATE '.$serendipity['dbPrefix'].'links SET order_num=order_num+1 where id = '.(int)$id;
+                $q   = 'UPDATE '.$serendipity['dbPrefix'].'links SET order_num=order_num+1 WHERE id = '.(int)$id;
                 $sql = serendipity_db_query($q);
 
-                $q   = 'UPDATE '.$serendipity['dbPrefix'].'links SET order_num=order_num-1 where order_num = '.(int)$order_num.' AND id !='.$id;
+                $q   = 'UPDATE '.$serendipity['dbPrefix'].'links SET order_num=order_num-1 WHERE order_num = '.(int)$order_num.' AND id !='.$id;
                 $sql = serendipity_db_query($q);
             }
         }
@@ -698,17 +704,15 @@ class serendipity_event_linklist extends serendipity_event
                 $cat = $res['category'];
                 $desc = $res['descrip'];
             }
-            $button = '<input type="submit" name="EDIT" title="EDIT"  value="EDIT" class="serendipityPrettyButton input_button" />';
+            $button = '<input type="submit" name="EDIT" title="EDIT" value="EDIT" class="serendipityPrettyButton input_button" />';
         } else {
             $link = $title = $desc = '';
             $cat = array();
             $maintitle = PLUGIN_LINKLIST_ADDLINK;
-            $button = '<input type="submit" name="ADD" title="ADD"  value="ADD" class="serendipityPrettyButton input_button" />';
+            $button = '<input type="submit" name="ADD" title="ADD" value="ADD" class="serendipityPrettyButton input_button" />';
         }
 
-        if ($this->get_config('category') == 'custom') {
-            $catlink = '(<a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=linklist&amp;serendipity[manage_category]=1">'.PLUGIN_LINKLIST_ADD_CAT.'</a>)';
-        }
+        $catlink = $this->get_config('category') == 'custom' ? '(<a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=linklist&amp;serendipity[manage_category]=1">'.PLUGIN_LINKLIST_ADD_CAT.'</a>)' : '';
         echo '<h3>'.$maintitle.'</h3>';
 ?>
         <form action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=linklist" method="post">
@@ -734,13 +738,13 @@ class serendipity_event_linklist extends serendipity_event
 
         $display = $this->get_config('display');
         $categories = $this->build_categories();
-        $maintitle = PLUGIN_LINKLIST_ADD_CAT;
-        $button = '<input type="submit" name="ADD" title="' . ADD . '"  value="' . ADD . '" class="serendipityPrettyButton input_button" />';
+        $maintitle = PLUGIN_LINKLIST_MAINTAIN_CAT;
+        $button = '<input type="submit" name="ADD" title="' . PLUGIN_LINKLIST_ADD_CAT . '"  value="' . PLUGIN_LINKLIST_ADD_CAT . '" class="serendipityPrettyButton input_button" />';
 
         echo '<h3>'.$maintitle.'</h3>';
 ?>
         <form action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=linklist&amp;serendipity[manage_category]=1" method="post">
-            <input type="hidden" name="serendipity[add_link][id]" value="<?php echo $id; ?>">
+            <input type="hidden" name="serendipity[add_link][id]" value="<?php echo ($id ?? ''); ?>">
             <table border="0" cellpadding="5" cellspacing="0" width="100%">
                 <tr>
                     <td><?php echo PLUGIN_LINKLIST_CAT_NAME; ?></td>
@@ -748,7 +752,7 @@ class serendipity_event_linklist extends serendipity_event
                 </tr>
                 <tr>
                     <td><?php echo PLUGIN_LINKLIST_PARENT_CATEGORY; ?></td>
-                    <td><?php echo $this->category_box('cat', $categories, $cat); ?></td>
+                    <td><?php echo $this->category_box('cat', $categories, ($cat ?? null)); ?></td>
                 </tr>
 <?php
         echo '
@@ -769,8 +773,7 @@ class serendipity_event_linklist extends serendipity_event
                 <td><strong><?php echo CATEGORY; ?></strong></td>
             </tr>
 <?php
-        $q = 'SELECT s.* FROM '.$serendipity['dbPrefix'].'link_category AS s
-            ORDER BY s.category_name DESC';
+        $q = 'SELECT s.* FROM '.$serendipity['dbPrefix'].'link_category AS s ORDER BY s.category_name DESC';
 
         $categories = serendipity_db_query($q);
         $categories = @serendipity_walkRecursive($categories, 'categoryid', 'parentid', VIEWMODE_THREADED);
@@ -782,7 +785,7 @@ class serendipity_event_linklist extends serendipity_event
                     <input class="input_checkbox" type="checkbox" name="serendipity[category_to_remove][]" value="<?php echo $category['categoryid']; ?>" />
                 </td>
                 <td width="300" style="padding-left: <?php echo ($category['depth']*15)+20 ?>px">
-                    <img src="<?php echo serendipity_getTemplateFile('admin/img/folder.png') ?>" style="vertical-align: bottom;"> <?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($category['category_name']) : htmlspecialchars($category['category_name'], ENT_COMPAT, LANG_CHARSET)) ?>
+                    <img src="<?php echo serendipity_getTemplateFile('admin/img/folder.png') ?>" style="vertical-align: bottom;"> <?php echo serendipity_specialchars($category['category_name']) ?>
                 </td>
             </tr>
 <?php
@@ -790,7 +793,7 @@ class serendipity_event_linklist extends serendipity_event
         echo '
             </table>
         <div>
-            <input type="submit" name="REMOVE" title="' . REMOVE . '"  value="' . DELETE . '" class="serendipityPrettyButton input_button state_cancel" />
+            <input type="submit" name="REMOVE" title="' . CATEGORIES . ' ' . DELETE . '"  value="' . DELETE . '" class="serendipityPrettyButton input_button state_cancel" />
         </div>
         <div style="font-size: smaller;">' . PLUGIN_LINKLIST_DELETE_WARN . '</div>
     </form>';
