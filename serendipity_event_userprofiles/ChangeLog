@@ -1,3 +1,7 @@
+0.36:
+------
+ * SQL Preparation fixes for Styx PHP 8 debug sets and upcoming PHP 8.1 MYSQLI_REPORT_STRICT
+
 0.35:
 ------
  * Fix PHP 8 initialization check

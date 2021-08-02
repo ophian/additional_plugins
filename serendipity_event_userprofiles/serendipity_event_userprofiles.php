@@ -92,7 +92,7 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '0.35');
+        $propbag->add('version', '0.36');
         $propbag->add('requirements', array(
             'serendipity' => '3.0',
             'smarty'      => '3.1.0',
@@ -855,17 +855,17 @@ class serendipity_event_userprofiles extends serendipity_event
 
         switch($this->get_config('dbversion')){
             case '':
-                $q   = "CREATE TABLE {$serendipity['dbPrefix']}profiles (
+                $q   = "@CREATE TABLE {$serendipity['dbPrefix']}profiles (
                         authorid int(11) default '0',
                         property varchar(255) not null,
                         value text
                         );";
                 $sql = serendipity_db_schema_import($q);
 
-                $q   = "CREATE INDEX userprofile_idx ON {$serendipity['dbPrefix']}profiles (authorid);";
+                $q   = "@CREATE INDEX userprofile_idx ON {$serendipity['dbPrefix']}profiles (authorid);";
                 $sql = serendipity_db_schema_import($q);
 
-                $q   = "CREATE UNIQUE INDEX userprofile_uidx ON {$serendipity['dbPrefix']}profiles (authorid, property);";
+                $q   = "@CREATE UNIQUE INDEX userprofile_uidx ON {$serendipity['dbPrefix']}profiles (authorid, property);";
                 $sql = serendipity_db_schema_import($q);
                 break;
         }
