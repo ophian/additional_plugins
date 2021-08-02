@@ -10875,7 +10875,7 @@
 <description>Verwaltet eine Liste von Projekten und deren aktuellem Status</description>
 <maintainers><maintainer><name>Steven Tonnesen, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.1</version>
+  <version>2.0.2</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
