@@ -35,7 +35,7 @@ class serendipity_event_todolist extends serendipity_event
                                             'backend_sidebar_entries'                               => true
                                             ));
         $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian Styx');
-        $propbag->add('version', '2.0.1');
+        $propbag->add('version', '2.0.2');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1',
@@ -343,18 +343,20 @@ class serendipity_event_todolist extends serendipity_event
                        }
                     }
 
-                    switch ($_GET['submit']){
-                        case 'move up':
-                            $this->move_up($_GET['serendipity']['project_to_move']);
-                            break;
+                    if (isset($_GET['submit'])) {
+                        switch ($_GET['submit']) {
+                            case 'move up':
+                                $this->move_up($_GET['serendipity']['project_to_move']);
+                                break;
 
-                        case 'move down':
-                            $this->move_down($_GET['serendipity']['project_to_move']);
-                            break;
+                            case 'move down':
+                                $this->move_down($_GET['serendipity']['project_to_move']);
+                                break;
 
-                        case 'create_custom':
-                            $this->create_cattable();
-                            break;
+                            case 'create_custom':
+                                $this->create_cattable();
+                                break;
+                        }
                     }
 
                     if ($this->get_config('cache') == 'yes') {
@@ -1617,7 +1619,7 @@ class serendipity_event_todolist extends serendipity_event
                             <th><?php echo CATEGORY; ?></th>
                             <th id="todo_assign"><?php echo PLUGIN_EVENT_TODOLIST_BLOGENTRY; ?></th>
                             <th id="todo_color"><?php echo PLUGIN_EVENT_TODOLIST_COLOR; ?></th>
-                            <?php echo $this->tdoutput; ?>
+                            <?php echo ($this->tdoutput ?? null); ?>
                         </tr>
                     </thead>
                     <tbody>
@@ -1694,7 +1696,7 @@ class serendipity_event_todolist extends serendipity_event
 
         echo '<div class="form_buttons">'."\n";
         echo '    <input type="submit" name="SAVE" title="' . SAVE . '" value="' . SAVE . '">' . "\n";
-        echo '    <input class="state_cancel" type="submit" name="REMOVE" title="' . REMOVE . '"  value="' . DELETE . '">'."\n";
+        echo '    <input class="state_cancel" type="submit" name="REMOVE" title="REMOVE"  value="' . DELETE . '">'."\n";
         if ($this->get_config('category') == 'custom') {
             echo '<a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone&amp;serendipity[manage_category]=1">'.PLUGIN_EVENT_TODOLIST_ADD_CAT.'</a>'."\n";
         }
@@ -1742,6 +1744,9 @@ class serendipity_event_todolist extends serendipity_event
         } else {
             $maintitle = PLUGIN_EVENT_TODOLIST_ADDPROJECT;
             $button = '<input type="submit" name="ADD" title="' . GO . '"  value="' . GO . '">'."\n";
+            $projectentry = null;
+            $colorid = null;
+            $project = $cat = $percentagecomplete = $desc = '';
         }
 
         if ($this->get_config('category') == 'custom') {
