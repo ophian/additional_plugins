@@ -1,3 +1,7 @@
+0.37:
+-----
+ * Fix some frontend related issues in combo with plugin sidebar comments
+
 0.36:
 ------
  * SQL Preparation fixes for Styx PHP 8 debug sets and upcoming PHP 8.1 MYSQLI_REPORT_STRICT

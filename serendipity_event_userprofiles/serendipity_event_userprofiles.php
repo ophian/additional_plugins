@@ -92,7 +92,7 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '0.36');
+        $propbag->add('version', '0.37');
         $propbag->add('requirements', array(
             'serendipity' => '3.0',
             'smarty'      => '3.1.0',
@@ -685,6 +685,7 @@ class serendipity_event_userprofiles extends serendipity_event
                     }
 
                 case 'frontend_display_cache':
+                #echo '<pre>'.print_r($eventData,1).'</pre>';
                     $this->showCommentcount($eventData);
                     if (!serendipity_db_bool($this->get_config('authorpic', 'true'))) {
                         return true;
@@ -703,7 +704,7 @@ class serendipity_event_userprofiles extends serendipity_event
                         $author = str_replace($GLOBALS['i18n_filename_from'], $GLOBALS['i18n_filename_to'], $author);
                     }
 
-                    if (serendipity_db_bool($this->get_config('gravatar', 'false'))) {
+                    if (serendipity_db_bool($this->get_config('gravatar', 'false')) && isset($eventData['body'])) {
                         $img = 'http://www.gravatar.com/avatar.php?'
                                 . 'default=' . $this->get_config('gravatar_default','80')
                                 . '&amp;gravatar_id=' . md5($eventData['email'])
@@ -711,10 +712,10 @@ class serendipity_event_userprofiles extends serendipity_event
                                 . '&amp;border=&amp;rating=' . $this->get_config('gravatar_rating','R');
                         $this->found_images[$author] = '<div class="serendipity_authorpic"><img src="' . $img . '" alt="' . AUTHOR . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($authorname) : htmlspecialchars($authorname, ENT_COMPAT, LANG_CHARSET)) . '" /><br /><span>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($authorname) : htmlspecialchars($authorname, ENT_COMPAT, LANG_CHARSET)) . '</span></div>';
                         $eventData['body'] = $this->found_images[$author] . $eventData['body'];
-                    } elseif (isset($this->found_images[$author])) {
+                    } elseif (isset($this->found_images[$author]) && isset($eventData['body'])) {
                         // Author image was already found previously. Display it.
                         $eventData['body'] = $this->found_images[$author] . $eventData['body'];
-                    } elseif ($img = serendipity_getTemplateFile('img/' . preg_replace('@[^a-z0-9]@i', '_', $author) . '.' . $this->get_config('extension'))) {
+                    } elseif ($img = serendipity_getTemplateFile('img/' . preg_replace('@[^a-z0-9]@i', '_', $author) . '.' . $this->get_config('extension')) && isset($eventData['body'])) {
                         // Author image exists, save it in cache and display it.
                         $this->found_images[$author] = '<div class="serendipity_authorpic"><img src="' . $img . '" alt="' . AUTHOR . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($authorname) : htmlspecialchars($authorname, ENT_COMPAT, LANG_CHARSET)) . '" /><br /><span>' .(function_exists('serendipity_specialchars') ? serendipity_specialchars($authorname) : htmlspecialchars($authorname, ENT_COMPAT, LANG_CHARSET)) . '</span></div>';
                         $eventData['body'] = $this->found_images[$author] . $eventData['body'];
@@ -750,7 +751,7 @@ class serendipity_event_userprofiles extends serendipity_event
             return false;
         }
 
-        if ($db_commentcount === null) {
+        if ($db_commentcount === null && !empty($eventData['entry_id'])) {
             $dbc = serendipity_db_query("SELECT count(c.id) AS counter, c.author
                                     FROM {$serendipity['dbPrefix']}comments AS c
                                    WHERE c.entry_id = " . (int)$eventData['entry_id'] . "
@@ -763,22 +764,24 @@ class serendipity_event_userprofiles extends serendipity_event
             }
         }
 
-        $c = $db_commentcount[$eventData['author']];
-        $html_commentcount = '<div class="serendipity_commentcount">';
-        if ($c == 1) {
-            $html_commentcount .= COMMENT . ' (1)';
-        } else {
-            $html_commentcount .= COMMENTS . ' (' . $c . ')';
-        }
-        $html_commentcount .= '</div>';
+        $c = $db_commentcount ? $db_commentcount[$eventData['author']] : null;
+        if ($c !== null) {
+            $html_commentcount = '<div class="serendipity_commentcount">';
+            if ($c == 1) {
+                $html_commentcount .= COMMENT . ' (1)';
+            } else {
+                $html_commentcount .= COMMENTS . ' (' . $c . ')';
+            }
+            $html_commentcount .= '</div>';
 
-        if ($commentcount == 'append') {
-            $eventData['comment'] .= $html_commentcount;
-        } elseif ($commentcount == 'prepend') {
-            $eventData['comment'] = $html_commentcount . $eventData['comment'];
-        }
+            if ($commentcount == 'append') {
+                $eventData['comment'] .= $html_commentcount;
+            } elseif ($commentcount == 'prepend') {
+                $eventData['comment'] = $html_commentcount . $eventData['comment'];
+            }
 
-        $eventData['plugin_commentcount'] = $html_commentcount;
+            $eventData['plugin_commentcount'] = $html_commentcount;
+        }
 
         return true;
     }
