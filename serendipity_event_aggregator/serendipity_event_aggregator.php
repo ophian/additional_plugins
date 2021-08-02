@@ -70,7 +70,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '1.04');
+        $propbag->add('version',       '1.05');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -330,7 +330,8 @@ class serendipity_event_aggregator extends serendipity_event
 
         $this->setupDB();
 
-        if ($opt['category'] > 0) {
+        $where = '';
+        if (isset($opt['category']) && $opt['category'] > 0) {
             $where = "WHERE fc.categoryid IN (" . $opt['category'] . ")";
         }
         $sql = "SELECT f.feedid, f.feedname, f.feedurl, f.htmlurl, fc.categoryid, f.last_update, f.charset, f.feedicon, f.match_expression

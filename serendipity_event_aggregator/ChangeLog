@@ -1,3 +1,7 @@
+1.05:
+-----
+ * Better check variable initialization for PHP 8
+
 1.04:
 -----
  * Add error note when not having installed/enabled php-xml extension
