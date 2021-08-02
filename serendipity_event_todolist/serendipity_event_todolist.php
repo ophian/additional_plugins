@@ -35,7 +35,7 @@ class serendipity_event_todolist extends serendipity_event
                                             'backend_sidebar_entries'                               => true
                                             ));
         $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian Styx');
-        $propbag->add('version', '2.00');
+        $propbag->add('version', '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1',
@@ -329,7 +329,7 @@ class serendipity_event_todolist extends serendipity_event
 
                     if (isset($_POST['ADD'])) {
                        if (isset($_POST['serendipity']['add_project']['project']) && isset($_POST['serendipity']['add_project']['project'])) {
-                            $this->add_project($_POST['serendipity']['add_project']['project'],$_POST['serendipity']['add_project']['percentagecomplete'],$_POST['serendipity']['add_project']['desc'],$_POST['serendipity']['project_to_recat']['cat'],$_POST['serendipity']['add_project']['entry'],$_POST['serendipity']['add_project']['colorid']);
+                            $this->add_project($_POST['serendipity']['add_project']['project'],$_POST['serendipity']['add_project']['percentagecomplete'],$_POST['serendipity']['add_project']['desc'],$_POST['serendipity']['add_project']['entry'],$_POST['serendipity']['add_project']['colorid'],$_POST['serendipity']['project_to_recat']['cat']);
                        } elseif (isset($_POST['serendipity']['add_category']['title'])) {
                            $this->add_cat($_POST['serendipity']['add_category']['title'],$_POST['serendipity']['project_to_recat']['cat'],$_POST['serendipity']['add_category']['colorid']);
                        } elseif (isset($_POST['serendipity']['add_color']['title'])) {
@@ -1318,7 +1318,7 @@ class serendipity_event_todolist extends serendipity_event
         // $sql = serendipity_db_schema_import($q);
     }
 
-    function add_project($project, $percentagecomplete, $desc, $catid = 0, $entry, $colorid)
+    function add_project($project, $percentagecomplete, $desc, $entry, $colorid, $catid = 0)
     {
         global $serendipity;
 
