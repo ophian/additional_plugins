@@ -18,7 +18,7 @@ class serendipity_event_openid extends serendipity_event
         $propbag->add('description', PLUGIN_OPENID_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Grischa Brockhaus, Rob Richards, Ian Styx');
-        $propbag->add('version',     '1.4');
+        $propbag->add('version',     '1.5');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -137,31 +137,31 @@ class serendipity_event_openid extends serendipity_event
             switch($event) {
 
                 case 'external_plugin' :
-                    if ($eventData=="openid.png") {
+                    if ($eventData == "openid.png") {
                         header('Content-Type: image/png');
                         echo file_get_contents(dirname(__FILE__). '/img/openid.png');
                     }
-                    elseif ($eventData=="oid_google.png") {
+                    elseif ($eventData == "oid_google.png") {
                         header('Content-Type: image/png');
                         echo file_get_contents(dirname(__FILE__). '/img/google.png');
                     }
-                    elseif ($eventData=="oids_google.png") {
+                    elseif ($eventData == "oids_google.png") {
                         header('Content-Type: image/png');
                         echo file_get_contents(dirname(__FILE__). '/img/google_small.png');
                     }
-                    elseif ($eventData=="oid_yahoo.png") {
+                    elseif ($eventData == "oid_yahoo.png") {
                         header('Content-Type: image/png');
                         echo file_get_contents(dirname(__FILE__). '/img/yahoo.png');
                     }
-                    elseif ($eventData=="oids_yahoo.png") {
+                    elseif ($eventData == "oids_yahoo.png") {
                         header('Content-Type: image/png');
                         echo file_get_contents(dirname(__FILE__). '/img/yahoo_small.png');
                     }
-                    elseif ($eventData=="oid_aol.png") {
+                    elseif ($eventData == "oid_aol.png") {
                         header('Content-Type: image/png');
                         echo file_get_contents(dirname(__FILE__). '/img/aol.png');
                     }
-                    elseif ($eventData=="oids_aol.png") {
+                    elseif ($eventData == "oids_aol.png") {
                         header('Content-Type: image/png');
                         echo file_get_contents(dirname(__FILE__). '/img/aol_small.png');
                     }
@@ -172,9 +172,10 @@ class serendipity_event_openid extends serendipity_event
                     break;
 
                 case 'backend_login_page':
-                    $hidden = array('action'=>'admin');
+                    if (!isset($eventData['header'])) $eventData['header'] = '';
+                    $hidden = array('action' => 'admin');
                     $useAutorSelector = $this->get_config('select_authors',true);
-                    $eventData['header'] .= '<br/><div align="center">'.
+                    $eventData['header'] .= '<div class="serendipity_message_notice msg_notice serendipity_center">'.
                          serendipity_common_openid::loginform('serendipity_admin.php', $hidden, $useAutorSelector).
                          '</div>';
                     break;
@@ -219,21 +220,21 @@ class serendipity_event_openid extends serendipity_event
             $openidurl = "https://www.aol.com";
         }
         
-        if ($_SESSION['serendipityAuthedUser'] == true) {
+        if (isset($_SESSION['serendipityAuthedUser']) && $_SESSION['serendipityAuthedUser'] == true) {
             $eventData = serendipity_common_openid::reauth_openid();
             if (!empty($openidurl) && !empty($serendipity['POST']['openidflag'])) {
                 /* Check that openid isn't already associated with another login */
                 $tmpRet = serendipity_common_openid::redir_openidserver($openidurl, $this->get_consumertest_path(), 3);
 
                 /* If updating an OpenID it is not a real login attempt */
-                if (($tmpRet === false) && (($serendipity['GET']['openidflag']==3) || ($serendipity['POST']['openidflag']==3))) {
+                if (($tmpRet === false) && (($serendipity['GET']['openidflag'] == 3) || ($serendipity['POST']['openidflag'] == 3))) {
                     return;
                 }
                 $eventData = $tmpRet;
             } elseif (!empty($serendipity['POST']['openidflag'])) {
                 $eventData = serendipity_common_openid::reauth_openid();
             }
-        } else if (! empty($serendipity['GET']['openidflag']) && ($serendipity['GET']['openidflag']==1)) {
+        } else if (! empty($serendipity['GET']['openidflag']) && ($serendipity['GET']['openidflag'] == 1)) {
             $eventData = serendipity_common_openid::authenticate_openid($_GET, $this->get_consumertest_path());
         } else if (! empty($openidurl) && ! empty($serendipity['POST']['action'])) {
             $eventData = serendipity_common_openid::redir_openidserver($openidurl, $this->get_consumertest_path(), 1);
@@ -248,11 +249,11 @@ class serendipity_event_openid extends serendipity_event
         $xrdsloc = $this->get_config('xrds_location');
         if (! empty($server) && (! empty($openidurl) || ! empty($xrdsloc))) {
             $supported_version = $this->get_config('openid_version', 'both');
-            if ('v1'==$supported_version) {
+            if ('v1' == $supported_version) {
                 $rel_oserver = "openid.server";
                 $rel_odelegate = "openid.delegate";
             }
-            elseif ('v2'==$supported_version) {
+            elseif ('v2' == $supported_version) {
                 $rel_oserver = "openid2.provider";
                 $rel_odelegate = "openid2.local_id";
             }
@@ -276,8 +277,8 @@ class serendipity_event_openid extends serendipity_event
     {
         global $serendipity;
         
-        if (($_SESSION['serendipityAuthedUser'] == true)) {
-            if (! empty($serendipity['GET']['openidflag']) && ($serendipity['GET']['openidflag']==3)) {
+        if (isset($_SESSION['serendipityAuthedUser']) && $_SESSION['serendipityAuthedUser'] == true) {
+            if (! empty($serendipity['GET']['openidflag']) && ($serendipity['GET']['openidflag'] == 3)) {
                 if ($checkRet = serendipity_common_openid::authenticate_openid($_GET, $this->get_consumertest_path(), true)) {
                     if (serendipity_common_openid::updateOpenID($checkRet['openID'], $serendipity['authorid'])) {
                         echo '<strong>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(PLUGIN_OPENID_UPDATE_SUCCESS) : htmlspecialchars(PLUGIN_OPENID_UPDATE_SUCCESS, ENT_COMPAT, LANG_CHARSET)) . '</strong><br /><br />';
@@ -299,27 +300,27 @@ class serendipity_event_openid extends serendipity_event
         $imgaol = $serendipity['baseURL'] . 'index.php?/plugin/oids_aol.png';
         
         echo '<div>';
-        echo '<strong>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(PLUGIN_EVENT_OPENID_SELECT) : htmlspecialchars(PLUGIN_EVENT_OPENID_SELECT, ENT_COMPAT, LANG_CHARSET)) . '</strong><br /><br />';
+        echo '<h2>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(PLUGIN_EVENT_OPENID_SELECT) : htmlspecialchars(PLUGIN_EVENT_OPENID_SELECT, ENT_COMPAT, LANG_CHARSET)) . '</h2>';
         
         // To allow ENTER in the input line we have to create two forms:
         
         echo '<form action="?" method="post">';
-        echo '<input type="hidden" name="serendipity[adminModule]" value="event_display" />';
-        echo '<input type="hidden" name="serendipity[adminAction]" value="profiles" />';
-        echo '<input type="hidden" name="serendipity[openidflag]" value="3" />';
-        echo '<img src="' . $imgopenid . '" alt="OpenID URL"> <input type="text" size="50" name="serendipity[openid_url]" value="'. serendipity_common_openid::getOpenID($serendipity['authorid']) .'" />';
-        echo ' <input type="submit" name="submit" value="' . EDIT . '" placeholder="' . PLUGIN_OPENID_LOGIN_INPUT . '"/>';
+        echo '  <input type="hidden" name="serendipity[adminModule]" value="event_display" />';
+        echo '  <input type="hidden" name="serendipity[adminAction]" value="profiles" />';
+        echo '  <input type="hidden" name="serendipity[openidflag]" value="3" />';
+        echo '  <img src="' . $imgopenid . '" alt="OpenID URL"> <input type="text" size="50" name="serendipity[openid_url]" value="'. serendipity_common_openid::getOpenID($serendipity['authorid']) .'" />';
+        echo '  <input type="submit" name="submit" value="' . EDIT . '" placeholder="' . PLUGIN_OPENID_LOGIN_INPUT . '"/>';
         echo '</form>';
         echo '<form action="?" method="post">';
-        echo '<input type="hidden" name="serendipity[adminModule]" value="event_display" />';
-        echo '<input type="hidden" name="serendipity[adminAction]" value="profiles" />';
-        echo '<input type="hidden" name="serendipity[openidflag]" value="3" />';
-        echo '<input name="openIDLoginGoogle" type="image" src="' . $imggoogle . '" alt="' . PLUGIN_OPENID_SET_GOOGLE_OID .'" title="'. PLUGIN_OPENID_SET_GOOGLE_OID .'"/> ';
-        echo '<input name="openIDLoginYahoo" type="image" src="' . $imgyahoo . '" alt="' . PLUGIN_OPENID_SET_YAHOO_OID .'" title="'. PLUGIN_OPENID_SET_YAHOO_OID .'"/> ';
-        echo '<input name="openIDLoginAol" type="image" src="' . $imgaol . '" alt="' . PLUGIN_OPENID_SET_AOL_OID .'" title="'. PLUGIN_OPENID_SET_AOL_OID .'"/> ';
+        echo '  <input type="hidden" name="serendipity[adminModule]" value="event_display" />';
+        echo '  <input type="hidden" name="serendipity[adminAction]" value="profiles" />';
+        echo '  <input type="hidden" name="serendipity[openidflag]" value="3" />';
+        echo '  <input name="openIDLoginGoogle" type="image" src="' . $imggoogle . '" alt="' . PLUGIN_OPENID_SET_GOOGLE_OID .'" title="'. PLUGIN_OPENID_SET_GOOGLE_OID .'"/> ';
+        echo '  <input name="openIDLoginYahoo" type="image" src="' . $imgyahoo . '" alt="' . PLUGIN_OPENID_SET_YAHOO_OID .'" title="'. PLUGIN_OPENID_SET_YAHOO_OID .'"/> ';
+        echo '  <input name="openIDLoginAol" type="image" src="' . $imgaol . '" alt="' . PLUGIN_OPENID_SET_AOL_OID .'" title="'. PLUGIN_OPENID_SET_AOL_OID .'"/> ';
         echo '</form>';
         
-        echo '</div><br /><hr />';
+        echo '</div>';
     }
     
     function get_consumertest_path() {

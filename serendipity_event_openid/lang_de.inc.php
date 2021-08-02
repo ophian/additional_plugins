@@ -6,7 +6,7 @@
 @define('PLUGIN_OPENID_EXISTS', 'Du bist bereits mit OpenID registriert.');
 @define('PLUGIN_OPENID_WRONG_ACTIVATION', 'Ungültige Aktivierungs URL!');
 
-@define('PLUGIN_EVENT_OPENID_SELECT', 'Mit diesem Benutzer verknüfte OpenID URL');
+@define('PLUGIN_EVENT_OPENID_SELECT', 'Mit diesem Benutzer verknüpfte OpenID URL');
 
 @define('PLUGIN_OPENID_DESCRIPTION', 
 '<h3>OpenID benutzen, um in Dein Blog einzuloggen</h3>' .

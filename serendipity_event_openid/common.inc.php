@@ -164,8 +164,9 @@ class serendipity_common_openid
     static function getOpenID($userID, $checkExist=false)
     {
         global $serendipity;
+
         $q = "SELECT openid_url, authorid FROM {$serendipity['dbPrefix']}openid_authors WHERE authorid = " . (int)$userID;
-        $author = serendipity_db_query($q, true);
+        $author = serendipity_db_query($q, true, 'both', false, false, false, true); // known to fail
         if (is_array($author)) {
             if ($checkExist) {
                 return $author['authorid'];
@@ -200,7 +201,7 @@ class serendipity_common_openid
                                             'hash'=> $hash,
                                             'authorid'=>$authorID));
         }
-        return ($retVal===true)?true:false;
+        return ($retVal === true ? true : false);
     }
 
     static function load_account_selectbox()
@@ -212,7 +213,7 @@ class serendipity_common_openid
                         {$serendipity['dbPrefix']}authors AS a, {$serendipity['dbPrefix']}openid_authors AS oa
                    WHERE
                         oa.authorid = a.authorid";
-        $rows = serendipity_db_query($query);
+        $rows = serendipity_db_query($query, true, 'both', false, false, false, true); // known to fail);
        
         // Signal no existing OpenID URL.
         if (!is_array($rows) || count($rows)==0) return false;
@@ -240,7 +241,7 @@ class serendipity_common_openid
         
         // Check, if we have any user with OpenID configured
         $select = serendipity_common_openid::load_account_selectbox();
-        if ($select===false) { // No we don't. Say so
+        if ($select === false) { // No we don't. Say so
             $result  = '<div class="no_openid_user">';
             $result .= '<img src="' . $imgopenid . '" alt="OpenID">';
             $result .= '<p>' . PLUGIN_OPENID_LOGIN_NOOPENID . '</p></div>';

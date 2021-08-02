@@ -1,3 +1,11 @@
+1.5:
+----
+
+ * SQL Preparation fixes for Styx PHP 8 debug sets and upcoming PHP 8.1 MYSQLI_REPORT_STRICT
+ * Some variable initialization fixes for PHP 8
+ * Fix typos
+ * Please ping and ask the Author (https://github.com/brockhaus) for what he says about usage in 21st century 2cd decade. :)
+
 1.4:
 ----
 
