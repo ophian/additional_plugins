@@ -1,3 +1,12 @@
+0.3.0:
+------
+
+ * Lots of PHP 8 fixes
+ * SECURITY: Update bundled-lib to Archive_Tar-1.4.14
+ * Fix workflow
+ * Moved into Activity Backend section
+ * Added some DARK MODE styles in preparation for Styx 3.5
+
 0.21:
 ----
 

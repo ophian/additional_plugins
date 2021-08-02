@@ -22,17 +22,17 @@ class serendipity_event_backup extends serendipity_event
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.2.0'
+            'php'         => '7.0'
         ));
 
-        $propbag->add('version',       '0.21');
+        $propbag->add('version',       '0.3.0');
         $propbag->add('author',       'Alexander Mieland, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
-                    'frontend_footer'         => true,
-                    'external_plugin'         => true,
-                    'backend_sidebar_admin'   => true,
-                    'css_backend'             => true,
+                    'frontend_footer'                   => true,
+                    'external_plugin'                   => true,
+                    'backend_sidebar_admin_appearance'  => true,
+                    'css_backend'                       => true,
                     'backend_sidebar_entries_event_display_backup' => true
                     )
         );
@@ -179,11 +179,11 @@ class serendipity_event_backup extends serendipity_event
            'MB' => 1024 * 1024,
            'KB' => 1024,
        );
-       if($filesize <= 1024) {
+       if ($filesize <= 1024) {
            $filesize = $filesize . ' Bytes';
        }
        foreach($array AS $name => $size) {
-           if($filesize > $size || $filesize == $size) {
+           if ((int)$filesize > $size || (int)$filesize == $size) {
                $filesize = round((round($filesize / $size * 100) / 100), 2) . ' ' . $name;
            }
        }
@@ -743,7 +743,7 @@ class serendipity_event_backup extends serendipity_event
 
         $TITLE  = "";
         $TITLE .= "<h2>" . PLUGIN_BACKUP_TITLE . "</h2>\n";
-        $TITLE .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_BACKUP_DESC . "</span>\n";
+        $TITLE .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_DESC . "</span>\n";
 
         if (!file_exists($BACKUPDIR)) {
             @mkdir($BACKUPDIR, 0777);
@@ -779,14 +779,14 @@ class serendipity_event_backup extends serendipity_event
                 $UPDATECONF .= "        time_backup='".$serendipity['POST']['interval']."', ";
                 $UPDATECONF .= "        last_backup='".time()."', ";
                 $UPDATECONF .= "        data_backup='".addslashes($DATA_BACKUP)."' ";
-                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_BACKUP_AUTO_SQL_BACKUP_STARTED . '</span>';
+                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_AUTO_SQL_BACKUP_STARTED . '</span>';
             } elseif (!isset($serendipity['POST']['delete']) && (count($serendipity['POST']) >= 1 && !isset($serendipity['POST']['bakautomatik']))) {
                 $UPDATECONF  = "UPDATE {$serendipity['dbPrefix']}dma_sqlbackup SET ";
                 $UPDATECONF .= "        auto_backup='0', ";
                 $UPDATECONF .= "        time_backup='0', ";
                 $UPDATECONF .= "        last_backup='0', ";
                 $UPDATECONF .= "        data_backup='".addslashes($DATA_BACKUP)."' ";
-                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_BACKUP_AUTO_SQL_BACKUP_STOPPED . '</span>';
+                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_AUTO_SQL_BACKUP_STOPPED . '</span>';
             }
             if (isset($UPDATECONF)) {
                 serendipity_db_query($UPDATECONF);
@@ -797,13 +797,13 @@ class serendipity_event_backup extends serendipity_event
                 $UPDATECONF .= "        auto_backdel='1', ";
                 $UPDATECONF .= "        time_backdel='".$serendipity['POST']['delage']."', ";
                 $UPDATECONF .= "        last_backdel='".time()."' ";
-                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_BACKUP_AUTO_SQL_DELETE_STARTED . '</span>';
+                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_AUTO_SQL_DELETE_STARTED . '</span>';
             } elseif (!isset($serendipity['POST']['delete']) && (count($serendipity['POST']) >= 1 && !isset($serendipity['POST']['delautomatik']))) {
                 $UPDATECONF  = "UPDATE {$serendipity['dbPrefix']}dma_sqlbackup SET ";
                 $UPDATECONF .= "        auto_backdel='0', ";
                 $UPDATECONF .= "        time_backdel='0', ";
                 $UPDATECONF .= "        last_backdel='0' ";
-                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_BACKUP_AUTO_SQL_DELETE_STOPPED . '</span>';
+                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_AUTO_SQL_DELETE_STOPPED . '</span>';
             }
             if (isset($UPDATECONF)) {
                 serendipity_db_query($UPDATECONF);
@@ -822,7 +822,7 @@ class serendipity_event_backup extends serendipity_event
                     }
                     $this->getTar();
                     $tar_object = new Archive_Tar($archiv, "gz");
-                    $tar_object->setErrorHandling(PEAR_ERROR_RETURN);
+                    $tar_object->setErrorHandling(PEAR_ERROR_PRINT);
                     $filelist[0]="./last_backup";
                     $tar_object->create($filelist);
                     chmod($archiv, 0666);
@@ -835,7 +835,7 @@ class serendipity_event_backup extends serendipity_event
                     }
                     $this->getTar();
                     $tar_object = new Archive_Tar($archiv, FALSE);
-                    $tar_object->setErrorHandling(PEAR_ERROR_RETURN);
+                    $tar_object->setErrorHandling(PEAR_ERROR_PRINT);
                     $filelist[0]="./last_backup";
                     $tar_object->create($filelist);
                     chmod($archiv, 0666);
@@ -848,7 +848,7 @@ class serendipity_event_backup extends serendipity_event
                     }
                 }
                 closedir($fe);
-                $STATUSMSG .= '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span>' . PLUGIN_BACKUP_SQL_SAVED . '</span>';
+                $STATUSMSG .= '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_SQL_SAVED . '</span>';
             }
         }
 
@@ -883,14 +883,14 @@ class serendipity_event_backup extends serendipity_event
                 $UPDATECONF .= "        time_backup='".$serendipity['POST']['interval']."', ";
                 $UPDATECONF .= "        last_backup='".time()."', ";
                 $UPDATECONF .= "        data_backup='".addslashes($DATA_BACKUP)."' ";
-                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_BACKUP_AUTO_HTML_BACKUP_STARTED . '</span>';
+                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_AUTO_HTML_BACKUP_STARTED . '</span>';
             } elseif (!isset($serendipity['POST']['delete']) && (count($serendipity['POST']) >= 1 && !isset($serendipity['POST']['bakautomatik']))) {
                 $UPDATECONF  = "UPDATE {$serendipity['dbPrefix']}dma_htmlbackup SET ";
                 $UPDATECONF .= "        auto_backup='0', ";
                 $UPDATECONF .= "        time_backup='0', ";
                 $UPDATECONF .= "        last_backup='0', ";
                 $UPDATECONF .= "        data_backup='".addslashes($DATA_BACKUP)."' ";
-                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_BACKUP_AUTO_HTML_BACKUP_STOPPED . '</span>';
+                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_AUTO_HTML_BACKUP_STOPPED . '</span>';
             }
             if (isset($UPDATECONF)) {
                 serendipity_db_query($UPDATECONF);
@@ -901,13 +901,13 @@ class serendipity_event_backup extends serendipity_event
                 $UPDATECONF .= "        auto_backdel='1', ";
                 $UPDATECONF .= "        time_backdel='".$serendipity['POST']['delage']."', ";
                 $UPDATECONF .= "        last_backdel='".time()."' ";
-                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_BACKUP_AUTO_HTML_DELETE_STARTED . '</span>';
+                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_AUTO_HTML_DELETE_STARTED . '</span>';
             } elseif (!isset($serendipity['POST']['delete']) && (count($serendipity['POST']) >= 1 && !isset($serendipity['POST']['delautomatik']))) {
                 $UPDATECONF  = "UPDATE {$serendipity['dbPrefix']}dma_htmlbackup SET ";
                 $UPDATECONF .= "        auto_backdel='0', ";
                 $UPDATECONF .= "        time_backdel='0', ";
                 $UPDATECONF .= "        last_backdel='0' ";
-                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_BACKUP_AUTO_HTML_DELETE_STOPPED . '</span>';
+                $STATUSMSG  .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_AUTO_HTML_DELETE_STOPPED . '</span>';
             }
             if (isset($UPDATECONF)) {
                 serendipity_db_query($UPDATECONF);
@@ -918,7 +918,7 @@ class serendipity_event_backup extends serendipity_event
                 } else {
                     $this->MakeHTMLBackup($s9ypath, $dirs_to_exclude);
                 }
-                $STATUSMSG .= '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span>' . PLUGIN_BACKUP_HTML_SAVED . '</span>';
+                $STATUSMSG .= '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_HTML_SAVED . '</span>';
             }
         }
 
@@ -953,10 +953,10 @@ class serendipity_event_backup extends serendipity_event
         }
         $backupdatas_array = explode("|^|", $backupconfig['data_backup']);
         $complete = intval($backupdatas_array[0]);
-        $tables = unserialize($backupdatas_array[1]);
-        $data = $backupdatas_array[2];
-        $drop = intval($backupdatas_array[3]);
-        $pack = intval($backupdatas_array[4]);
+        $tables = unserialize(($backupdatas_array[1] ?? null));
+        $data = $backupdatas_array[2] ?? null;
+        $drop = intval(($backupdatas_array[3] ?? null));
+        $pack = intval(($backupdatas_array[4] ?? null));
 
         $BACKUPFORM  = "<h3>".PLUGIN_BACKUP_SQL_BACKUP."</h3>\n";
         $BACKUPFORM .= '<div class="serendipity_backup_form">'."\n";
@@ -971,7 +971,7 @@ class serendipity_event_backup extends serendipity_event
         $QUERY = serendipity_db_query("SHOW TABLES");
         $co = 0;
         foreach ($QUERY AS $THISTABLE) {
-            if (count($tables) >= 1) {
+            if (is_array($tables) && count($tables) >= 1) {
                 if (@in_array($THISTABLE[0], $tables)) {
                     $BACKUPFORM .= '<option value="'.$THISTABLE[0].'" selected>'.$THISTABLE[0].'</option>';
                 } else {
@@ -1100,11 +1100,11 @@ class serendipity_event_backup extends serendipity_event
             $htmlbackupconfig[$key] = stripslashes(trim($val));
         }
         $backupdatah_array = explode("|^|", $htmlbackupconfig['data_backup']);
-        $dir_to_backup = trim($backupdata_array[0]);
+        $dir_to_backup = trim(($backupdata_array[0] ?? null));
         if (substr($dir_to_backup,  strlen($dir_to_backup)-1, strlen($dir_to_backup)) == "/") {
             $dir_to_backup = substr($dir_to_backup,  0, strlen($dir_to_backup)-1);
         }
-        $exclude = unserialize(trim($backupdatah_array[1]));
+        $exclude = unserialize(trim(($backupdatah_array[1] ?? null)));
 
         $BACKUPFORM .= "<h3>" . PLUGIN_BACKUP_HTML_BACKUP . "</h3>\n";
         $BACKUPFORM .= '<div class="serendipity_backup_form">'."\n";
@@ -1233,8 +1233,10 @@ class serendipity_event_backup extends serendipity_event
             }
         }
         closedir($fd);
-        @reset($BACKUPS);
-        @array_multisort($BACKUPS['TIME'], SORT_DESC, SORT_NUMERIC, $BACKUPS['NAME'], $BACKUPS['FILE'], $BACKUPS['SIZE']);
+        if (!empty($BACKUPS)) {
+            @reset($BACKUPS);
+            @array_multisort($BACKUPS['TIME'], SORT_DESC, SORT_NUMERIC, $BACKUPS['NAME'], $BACKUPS['FILE'], $BACKUPS['SIZE']);
+        }
         if (isset($BACKUPS['NAME']) && is_array($BACKUPS['NAME']) && count($BACKUPS['NAME']) >= 1) {
             $BACKUPFORM .= '<h3>' . PLUGIN_BACKUP_LABEL_BACKUPS . '</h3>' . "\n";
             $BACKUPFORM .= '<form name="UPForm" action="?" method="POST">'."\n";
@@ -1270,10 +1272,10 @@ class serendipity_event_backup extends serendipity_event
             $BACKUPFORM .= "            </tbody>\n";
             $BACKUPFORM .= "        </table>\n";
             $BACKUPFORM .= "    </div>\n";
-            $BACKUPFORM .= '    <div class="form_buttons"><input type="submit" name="serendipity[delete]" value="' . PLUGIN_BACKUP_DELETE . '"></div>' . "\n";
+            $BACKUPFORM .= '    <div class="form_buttons"><input class="state_cancel" type="submit" name="serendipity[delete]" value="' . PLUGIN_BACKUP_DELETE . '"></div>' . "\n";
             $BACKUPFORM .= "</form>\n";
         } else {
-            $BACKUPFORM .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . PLUGIN_BACKUP_NO_BACKUPS . "</span>\n";
+            $BACKUPFORM .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_NO_BACKUPS . "</span>\n";
         }
 
         echo $TITLE;
@@ -1303,7 +1305,7 @@ class serendipity_event_backup extends serendipity_event
 
             switch($event) {
 
-                case 'backend_sidebar_admin': // this is section: settings on 2.x - append
+                case 'backend_sidebar_admin_appearance': // this is section: maintenance on 2.x - append
                     if ($serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN && ($serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli')) {
 ?>
 
@@ -1372,7 +1374,7 @@ class serendipity_event_backup extends serendipity_event
                                 $headers = getallheaders();
                             }
 
-                            if (substr($headers["Range"], 0, 6) == "bytes=") {
+                            if (isset($headers["Range"]) && substr($headers["Range"], 0, 6) == "bytes=") {
                                 header("HTTP/1.1 206 Partial Content");
                                 header("Content-Type: $contenttype");
                                 header("Content-Disposition: attachment; filename=".$filename);
@@ -1446,7 +1448,10 @@ class serendipity_event_backup extends serendipity_event
     margin: 1em 0;
     padding: .5em 1em;
 }
-
+[data-color-mode="dark"] .serendipity_backup_form fieldset {
+    background: var(--color-bg-overlay);
+    border-color: var(--color-border-primary);
+}
 .serendipity_backup_form .form_buttons,
 .serendipity_backups_wrap + .form_buttons,
 .serendipity_backups {
@@ -1475,8 +1480,12 @@ class serendipity_event_backup extends serendipity_event
 }
 
 .serendipity_backups thead tr,
-.serendipity_backups tr:nth-child(even) {
+.serendipity_backups tr:nth-child(2n) {
     background: #eee;
+}
+[data-color-mode="dark"] .serendipity_backups thead tr,
+[data-color-mode="dark"] .serendipity_backups tr:nth-child(2n) {
+    background: var(--color-bg-backdrop);
 }
 
 .serendipity_backups th,
