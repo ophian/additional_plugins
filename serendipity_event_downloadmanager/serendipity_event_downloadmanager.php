@@ -37,7 +37,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '7.0.0'
         ));
 
-        $propbag->add('version',       '1.51');
+        $propbag->add('version',       '1.52');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -2065,11 +2065,11 @@ class serendipity_event_downloadmanager extends serendipity_event
                     $dlm_css = '';
 
                     $tfile = serendipity_getTemplateFile('style_dlmanager_frontend.css', 'serendipityPath');
-                    if ($tfile) {
-                        $dlm_css =  @file_get_contents($tfile);
+                    if ($tfile && $tfile != 'style_dlmanager_frontend.css') {
+                        $dlm_css = @file_get_contents($tfile);
                     }
 
-                    if (!$tfile || $tfile == 'style_dlmanager_frontend.css') {
+                    if ( (!$tfile || $tfile == 'style_dlmanager_frontend.css') && !isset($tfilecontent) ){
                         $tfile = dirname(__FILE__) . '/style_dlmanager_frontend.css';
                         $dlm_css = @file_get_contents($tfile);
                     }
@@ -2083,10 +2083,10 @@ class serendipity_event_downloadmanager extends serendipity_event
                         return true;
                     }
                     $tfile = serendipity_getTemplateFile('style_dlmanager_backend.css', 'serendipityPath');
-                    if ($tfile) {
+                    if ($tfile && $tfile != 'style_dlmanager_backend.css') {
                         $tfilecontent = @file_get_contents($tfile);
                     }
-                    if ( (!$tfile || $tfile == 'style_dlmanager_backend.css') && !$tfilecontent ) {
+                    if ( (!$tfile || $tfile == 'style_dlmanager_backend.css') && !isset($tfilecontent) ) {
                         $tfile = dirname(__FILE__) . '/style_dlmanager_backend.css';
                         $tfilecontent = @file_get_contents($tfile);
                     }

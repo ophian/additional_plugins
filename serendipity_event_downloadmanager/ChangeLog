@@ -1,7 +1,11 @@
 ChangeLog:
 """"""""""
 
-1.50:
+1.52:
+-----
+ * Improve check for custom theme stylesheets for PHP 8
+
+1.51:
 -----
  * Fix a DARK MODE color
 
