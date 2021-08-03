@@ -691,7 +691,6 @@ class serendipity_event_userprofiles extends serendipity_event
                     }
 
                 case 'frontend_display_cache':
-                #echo '<pre>'.print_r($eventData,1).'</pre>';
                     $this->showCommentcount($eventData);
                     if (!serendipity_db_bool($this->get_config('authorpic', 'true'))) {
                         return true;
