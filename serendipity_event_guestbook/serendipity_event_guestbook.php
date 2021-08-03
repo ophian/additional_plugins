@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '3.85');
+        $propbag->add('version',      '3.86');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -1391,13 +1391,13 @@ class serendipity_event_guestbook extends serendipity_event
                     if (strpos($eventData, '#guestbook_wrapper') === false) {
 
                         $tfile = serendipity_getTemplateFile('style_guestbook_frontend.css', 'serendipityPath');
-                        if ($tfile) {
+                        if ($tfile && $tfile != 'style_guestbook_frontend.css') {
                             $search       = array('{TEMPLATE_PATH}', '{PLUGIN_PATH}');
                             $replace      = array('templates/' . $serendipity['template'] . '/', $serendipity['guestbook']['pluginpath']);
                             $tfilecontent = str_replace($search, $replace, @file_get_contents($tfile));
                         }
 
-                        if (!$tfile || $tfile == 'style_guestbook_frontend.css') {
+                        if ((!$tfile || $tfile == 'style_guestbook_frontend.css') && !isset($tfilecontent)) {
                             $tfile        = dirname(__FILE__) . '/style_guestbook_frontend.css';
                             $search       = array('{TEMPLATE_PATH}', '{PLUGIN_PATH}');
                             $tfilecontent = str_replace($search, $serendipity['guestbook']['pluginpath'], @file_get_contents($tfile));
@@ -1443,13 +1443,13 @@ class serendipity_event_guestbook extends serendipity_event
                     if (strpos($eventData, '#wrapGB') === false) {
 
                         $tfile = serendipity_getTemplateFile('style_guestbook_backend.css', 'serendipityPath');
-                        if ($tfile) {
+                        if ($tfile && $tfile != 'style_guestbook_backend.css') {
                             $search       = array('{TEMPLATE_PATH}', '{PLUGIN_PATH}');
                             $replace      = array('templates/' . $serendipity['template'] . '/', $serendipity['guestbook']['pluginpath']);
                             $tfilecontent = str_replace($search, $replace, @file_get_contents($tfile));
                         }
 
-                        if ( (!$tfile || $tfile == 'style_guestbook_backend.css') && !$tfilecontent) {
+                        if ( (!$tfile || $tfile == 'style_guestbook_backend.css') && !isset($tfilecontent) ) {
                             $tfile        = dirname(__FILE__) . '/style_guestbook_backend.css';
                             $search       = array('{TEMPLATE_PATH}', '{PLUGIN_PATH}');
                             $tfilecontent = str_replace($search, $serendipity['guestbook']['pluginpath'], @file_get_contents($tfile));

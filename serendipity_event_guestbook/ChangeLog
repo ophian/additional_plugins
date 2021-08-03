@@ -1,3 +1,7 @@
+3.86:
+-----
+ * Improve check for custom theme stylesheets for PHP 8
+
 3.85:
 -----
  * Add cursor pointer style to "details" label
