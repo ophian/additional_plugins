@@ -1,3 +1,10 @@
+2.22 & 2.18 (sidebar):
+----------------------
+ * SQL Preparation fixes for Styx PHP 8 debug sets and upcoming PHP 8.1 MYSQLI_REPORT_STRICT
+ * PHP 8 variable initialization fixes
+ * Raise requirements
+ * cleanup
+
 2.21:
 ------
  * PHP 8 preparation fix

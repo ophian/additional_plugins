@@ -21,7 +21,7 @@ class serendipity_plugin_pollbox extends serendipity_plugin
         $propbag->add('configuration', array('title'));
         $propbag->add('author', 'Garvin Hicking, Evan Nemerson');
         $propbag->add('stackable', false);
-        $propbag->add('version', '2.17');
+        $propbag->add('version', '2.18');
         $propbag->add('groups', array('STATISTICS'));
         $this->dependencies = array('serendipity_event_pollbox' => 'keep');
     }

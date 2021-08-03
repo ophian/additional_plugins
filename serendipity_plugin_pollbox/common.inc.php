@@ -29,10 +29,12 @@ class serendipity_common_pollbox
     {
         global $serendipity;
 
-        echo '<strong class="polltitle">' . $this->poll['title'] . '</strong>';
+        if (!isset($this->poll['id'])) $this->poll['id'] = null;
+
+        echo '<strong class="polltitle">' . ($this->poll['title'] ?? ''). '</strong>';
         echo '<form action="' . serendipity_currentURL() . '" method="post" id="serendipity_poll_showform">';
 
-        if ($pollid || $_SESSION["pollHasVoted{$this->poll['id']}"] || $serendipity['COOKIE']["pollHasVoted{$this->poll['id']}"]) {
+        if ($pollid || !empty($_SESSION["pollHasVoted{$this->poll['id']}"]) || !empty($serendipity['COOKIE']["pollHasVoted{$this->poll['id']}"])) {
             $this->showResults();
         } elseif (isset($serendipity['POST']['goVote']) && !empty($serendipity['POST']['vote'])) {
             $_SESSION["pollHasVoted{$this->poll['id']}"] = true;
@@ -55,7 +57,7 @@ class serendipity_common_pollbox
 
     function showOptions()
     {
-        if (is_array($this->poll['options'])) {
+        if (isset($this->poll['options']) && is_array($this->poll['options'])) {
             foreach($this->poll['options'] AS $optid => $option) {
                 if (empty($option['title'])) {
                     continue;
