@@ -3,6 +3,11 @@
 * 
 
 
+2.0.7:
+------
+
+ * Improve check for custom theme backend stylesheet for PHP 8
+
 2.0.6:
 ------
 

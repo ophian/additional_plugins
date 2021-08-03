@@ -71,7 +71,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '2.0.6');
+        $propbag->add('version',        '2.0.7');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -2748,11 +2748,11 @@ class serendipity_event_cal extends serendipity_event
                     if (strpos($eventData, '#backend_eventcal_wrapper') === false) {
 
                         $tfile = serendipity_getTemplateFile('style_eventcal_backend.css', 'serendipityPath');
-                        if ($tfile) {
+                        if ($tfile && $tfile != 'style_eventcal_backend.css') {
                             $tfilecontent = str_replace('{TEMPLATE_PATH}', 'templates/' . $serendipity['template'] . '/', @file_get_contents($tfile));
                         }
 
-                        if ( (!$tfile || $tfile == 'style_eventcal_backend.css') && !$tfilecontent ) {
+                        if ( (!$tfile || $tfile == 'style_eventcal_backend.css') && !isset($tfilecontent) ) {
                             $tfile = dirname(__FILE__) . '/style_eventcal_backend.css';
                             $tfilecontent = str_replace('{TEMPLATE_PATH}', $serendipity['eventcal']['pluginpath'], @file_get_contents($tfile));
                         }
