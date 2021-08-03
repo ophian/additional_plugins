@@ -1238,7 +1238,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;Benutzerprofile&lt;/b&gt;&lt;br /&gt;Zeigt einfache Benutzerprofile&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Tue, 03 Aug 2021 10:39:36 +0200</pubDate>
+<pubDate>Tue, 03 Aug 2021 15:48:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
@@ -1336,8 +1336,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_pollbox</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees</author>
-<content:encoded>&lt;b&gt;serendipity_event_pollbox&lt;br /&gt;Umfragen&lt;/b&gt;&lt;br /&gt;Verwaltet beliebige Umfragen!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 10 Dec 2020 09:34:04 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_pollbox&lt;br /&gt;Umfragen&lt;/b&gt;&lt;br /&gt;Verwaltet beliebige Umfragen!&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Tue, 03 Aug 2021 20:41:49 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_pollbox</guid>
 </item>
 <item>
