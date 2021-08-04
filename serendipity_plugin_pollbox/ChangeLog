@@ -1,3 +1,9 @@
+2.23:
+------
+ * Fix SQL Index generation for wrong PREFIX usage. For exiting tables please manually add
+    ALTER TABLE `polls_options` ADD INDEX pollidx (pollid);
+   or delete the polls and polls_options tables and the plugin in your Styx plugin and after all install from scratch.
+
 2.22 & 2.18 (sidebar):
 ----------------------
  * SQL Preparation fixes for Styx PHP 8 debug sets and upcoming PHP 8.1 MYSQLI_REPORT_STRICT

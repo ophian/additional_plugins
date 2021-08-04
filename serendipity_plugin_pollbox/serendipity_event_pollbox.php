@@ -28,7 +28,7 @@ class serendipity_event_pollbox extends serendipity_event
         $propbag->add('configuration', array('permalink', "articleformat", "pagetitle", "articleformattitle"));
         $propbag->add('author', 'Garvin Hicking, Matthias Mees');
         $propbag->add('groups', array('STATISTICS'));
-        $propbag->add('version', '2.22');
+        $propbag->add('version', '2.23');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -119,7 +119,7 @@ class serendipity_event_pollbox extends serendipity_event
               votes int(4) default '0',
               timestamp int(10) {UNSIGNED} default null);");
 
-            serendipity_db_schema_import("@CREATE INDEX pollidx ON {PREFIX}polls_options (pollid);");
+            serendipity_db_schema_import("CREATE INDEX pollidx ON {$serendipity['dbPrefix']}polls_options (pollid);");
             $this->set_config('db_built', '1');
             @define('PLUGIN_POLL_UPGRADE_DONE', true); // No further static pages may be called!
         }
@@ -171,8 +171,8 @@ class serendipity_event_pollbox extends serendipity_event
 
             echo '<br /><div class="serendipity_poll_archive">';
             PLUGIN_POLL_ARCHIVE . '<br />';
-            $poll = $this->fetchPolls();
-            $polls =& $poll;
+            $_poll = $this->fetchPolls();
+            $polls =& $_poll;
             if (is_array($polls)) {
                 foreach($polls AS $poll) {
                     echo '<a href="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[subpage]=' . $this->get_config('pagetitle') . '&amp;serendipity[voteId]=' . $poll['id'] . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($poll['title']) : htmlspecialchars($poll['title'], ENT_COMPAT, LANG_CHARSET)) . '</a>, ' . serendipity_strftime(DATE_FORMAT_ENTRY, $poll['timestamp']) . '<br />';
