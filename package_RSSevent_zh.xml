@@ -581,7 +581,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_karma&lt;br /&gt;评价&lt;/b&gt;&lt;br /&gt;允许访客评论文章&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sat, 27 Mar 2021 16:50:13 +0100</pubDate>
+<pubDate>Wed, 04 Aug 2021 18:44:51 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_karma</guid>
 </item>
 <item>
@@ -1238,7 +1238,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;User Profiles&lt;/b&gt;&lt;br /&gt;Shows simple user profiles and allows to embed author pictures.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Wed, 04 Aug 2021 11:23:56 +0200</pubDate>
+<pubDate>Wed, 04 Aug 2021 18:36:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
@@ -1335,9 +1335,9 @@
 <title>Polls: Maintains your votings / polls</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_pollbox</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking, Matthias Mees</author>
+<author>Garvin Hicking, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_pollbox&lt;br /&gt;Polls&lt;/b&gt;&lt;br /&gt;Maintains your votings / polls&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 04 Aug 2021 11:47:29 +0200</pubDate>
+<pubDate>Wed, 04 Aug 2021 12:11:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_pollbox</guid>
 </item>
 <item>
