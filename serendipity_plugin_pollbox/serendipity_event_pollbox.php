@@ -26,7 +26,7 @@ class serendipity_event_pollbox extends serendipity_event
             'genpage' => true));
 
         $propbag->add('configuration', array('permalink', "articleformat", "pagetitle", "articleformattitle"));
-        $propbag->add('author', 'Garvin Hicking, Matthias Mees');
+        $propbag->add('author', 'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('groups', array('STATISTICS'));
         $propbag->add('version', '2.23');
         $propbag->add('requirements',  array(
