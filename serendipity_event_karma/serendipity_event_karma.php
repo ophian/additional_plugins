@@ -44,7 +44,7 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '2.19');
+        $propbag->add('version',       '2.20');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1.0',
@@ -466,8 +466,8 @@ class serendipity_event_karma extends serendipity_event
      */
     function prepareExits($entries, $get = false)
     {
-        static $exits = null;
         global $serendipity;
+        static $exits = null;
 
         if ($exits === null) {
             $q = 'SELECT entry_id, SUM(count) AS exits
@@ -476,6 +476,7 @@ class serendipity_event_karma extends serendipity_event
 
             $sql = serendipity_db_query($q);
             $exits = array();
+
             if (is_array($sql)) {
                 foreach($sql AS $idx => $row) {
                     $exits[$row['entry_id']] = (int)$row['exits'];
@@ -484,7 +485,11 @@ class serendipity_event_karma extends serendipity_event
         }
 
         if ($get) {
-            return $exits[$entries];
+            if (isset($exits[$entries])) {
+                return $exits[$entries];
+            } else {
+                return false;
+            }
         }
 
         return true;
@@ -781,6 +786,9 @@ function vote(karmaVote,karmaId) {
 
                 // Hook for ajax calls
                 case 'external_plugin':
+                    if (!is_string($eventData)) {
+                        break;
+                    }
                     $theUri = (string)str_replace('&amp;', '&', $eventData);
                     $uri_parts = explode('?', $theUri);
 
@@ -1157,7 +1165,7 @@ END_IMG_CSS;
                     }
 
                     // If we're actually reading the entry, not voting or editing it...
-                    if ($entryid && empty($serendipity['GET']['adminAction']) && !$serendipity['GET']['karmaVote']) {
+                    if ($entryid && empty($serendipity['GET']['adminAction']) && (!isset($serendipity['GET']['karmaVote']) || !$serendipity['GET']['karmaVote'])) {
                         // Update the number of visits
                         // Are we supposed to track visits?
                         $track_clicks  = serendipity_db_bool($this->get_config('visits_active', true)) && $this->track_clicks_allowed_by_user();
@@ -1290,7 +1298,7 @@ END_IMG_CSS;
                                 $pairs = explode('&amp;', $url_parts['query']);
                                 foreach($pairs AS $pair) {
                                     $parts = explode('=', $pair);
-                                    $q_parts[$parts[0]] = $parts[1];
+                                    $q_parts[$parts[0]] = $parts[1] ?? null;
                                 }
                                 foreach($q_parts AS $key => $value) {
                                     if (in_array($key, $exclude)) {
@@ -1427,7 +1435,7 @@ END_IMG_CSS;
                                  */
 
                                 // Substitute the % stuff and add it to the footer
-                                $eventData[$i]['properties']['myvote'] = $myvote;
+                                $eventData[$i]['properties']['myvote'] = $myvote = $myvote ?? null;
                                 $eventData[$i]['properties']['points'] = $points;
                                 $eventData[$i]['properties']['votes'] = $votes;
                                 $eventData[$i]['properties']['visits'] = $visits;
@@ -1976,7 +1984,7 @@ END_IMG_CSS;
         $images = array();
         $folder = opendir($path);
         while (false !== ($filename = readdir($folder))) {
-            if ($filename != "ajax-loader.gif") {
+            if ($filename != 'ajax-loader.gif' && $filename != '.' && $filename != '..') {
                 $parts = serendipity_parseFileName($filename);
                 $img_data = @serendipity_getImageSize($path . '/' . $filename);
                 if (!isset($img_data['noimage'])) {

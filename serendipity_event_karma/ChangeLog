@@ -1,3 +1,8 @@
+2.20:
+-----
+ * Fix some more variable initialization checks for PHP 8
+ * Do not check DOT $filenames for serendipity_getImageSize()
+
 2.19:
 -----
  * Fix up an initialization check for PHP 8
