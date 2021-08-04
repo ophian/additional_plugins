@@ -1,3 +1,13 @@
+0.39:
+-----
+ * Fix failing SQL table CREATE UNIQUE INDEX generation for different databases and version for key length.
+   If your existing MariaDB/MySQL styx_profiles TABLE does not have an userprofile_uidx INDEX,
+   please manually try to add it using:
+    ALTER TABLE `styx_profiles` ADD UNIQUE INDEX userprofile_uidx (authorid, property(239)); (with MariaDB 10.3.x+)
+   or
+    ALTER TABLE `styx_profiles` ADD UNIQUE INDEX userprofile_uidx (authorid, property(180)); (with MariaDB <= 10.2.x or MySQL)
+   or delete the table (phpmyadmin) and the plugin (in/by your plugin list) and start from scratch.
+
 0.38:
 -----
  * Add some backend Styx 3.5 DARK MODE color
