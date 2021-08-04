@@ -1,3 +1,7 @@
+0.41:
+-----
+ * Fix 0.37 again to get out the stream
+
 0.40:
 -----
  * Re-style serendipity_commentcount selector container class (for current Standard theme (pure))
