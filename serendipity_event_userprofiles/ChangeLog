@@ -1,3 +1,7 @@
+0.40:
+-----
+ * Re-style serendipity_commentcount selector container class (for current Standard theme (pure))
+
 0.39:
 -----
  * Fix failing SQL table CREATE UNIQUE INDEX generation for different databases and version for key length.
