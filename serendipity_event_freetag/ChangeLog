@@ -1,3 +1,7 @@
+5.10:
+-----
+ * Fix a sidecheck dependency by event flattr plugin
+
 5.09:
 -----
  * Initialize an out-of-scope $serendipity['view'] variable
