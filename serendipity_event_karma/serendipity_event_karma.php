@@ -1678,6 +1678,7 @@ if ($h == 15) {
 
                     // URL; expected to be event_display and karmalog, respectively
                     $url = '?serendipity[adminModule]='.serendipity_specialchars($serendipity['GET']['adminModule']).'&serendipity[adminAction]='.serendipity_specialchars($serendipity['GET']['adminAction']);
+                    $and = ''; // init
 
                     // Filters
                     print("
@@ -1795,7 +1796,7 @@ if ($h == 15) {
 
                     // Paging (partly ripped from include/admin/comments.inc.php)
                     $commentsPerPage = (int)(!empty($serendipity['GET']['filter']['perpage']) ? $serendipity['GET']['filter']['perpage'] : 25);
-                    $sql = serendipity_db_query("SELECT COUNT(*) AS total FROM {$serendipity['dbPrefix']}karmalog l WHERE 1 = 1 " . ($and ?? ''), true);
+                    $sql = serendipity_db_query("SELECT COUNT(*) AS total FROM {$serendipity['dbPrefix']}karmalog l WHERE 1 = 1 " . $and, true);
                     if (is_string($sql)) print("<span class='msg_error'><span class='icon-attention-circled'></span> ".$sql."</span>\n");
                     $totalVotes = (is_array($sql) &&  is_int($sql['total'])) ? $sql['total'] : 0;
                     $pages = ($commentsPerPage == COMMENTS_FILTER_ALL ? 1 : ceil($totalVotes/(int)$commentsPerPage));
@@ -1834,7 +1835,7 @@ if ($h == 15) {
                     // [entryid, points, ip, user_agent, votetime]
                     $sql = serendipity_db_query("SELECT l.entryid AS entryid, l.points AS points, l.ip AS ip, l.user_agent AS user_agent, l.votetime AS votetime, e.title AS title FROM {$serendipity['dbPrefix']}karmalog l
                         LEFT JOIN {$serendipity['dbPrefix']}entries e ON (e.id = l.entryid)
-                        WHERE 1 = 1 " . ($and ?? '') . "
+                        WHERE 1 = 1 " . $and . "
                         ORDER BY $orderby $limit");
 
                     // Start the form for display and deleting
