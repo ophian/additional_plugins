@@ -57,11 +57,11 @@ class serendipity_event_flattr extends serendipity_event
             'add_to_feed',
         ));
         $propbag->add('author',  'Garvin Hicking, Joachim Breitner', 'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version', '1.17');
+        $propbag->add('version', '1.18');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '7.0'
         ));
         $propbag->add('legal',    array(
             'services' => array(
@@ -222,7 +222,7 @@ class serendipity_event_flattr extends serendipity_event
                 $propbag->add('name',           PLUGIN_FLATTR_LANG);
                 $propbag->add('description',    '');
                 $propbag->add('select_values',  $this->flattr_langs);
-                $propbag->add('default',        $this->flatter_langs_alias[$serendipity['lang']]);
+                $propbag->add('default',        $this->flattr_langs_alias[$serendipity['lang']]);
                 break;
 
             case 'flattr_pop':
@@ -271,8 +271,8 @@ class serendipity_event_flattr extends serendipity_event
 
                 case 'backend_display':
 ?>
-                    <fieldset style="margin: 5px">
-                        <legend><?php echo PLUGIN_FLATTR_NAME; ?></legend>
+                    <fieldset id="edit_entry_flattr" class="entryproperties_flattr">
+                        <span class="wrap_legend"><legend><?php echo PLUGIN_FLATTR_NAME; ?></legend></span>
 <?php
                     foreach($this->flattr_attrs AS $attr => $attr_desc) {
                         if (isset($serendipity['POST']['properties']['ep_' . $attr])) {
@@ -282,7 +282,9 @@ class serendipity_event_flattr extends serendipity_event
                         } else {
                             $val = '';
                         }
-                        
+?>
+                        <div class="form_field">
+<?php
                         echo '<label for="serendipity[properties][ep_' . $attr . ']" title="' . PLUGIN_FLATTR_NAME . '">
                             ' . $attr_desc . ':</label><br/>';
 
@@ -304,7 +306,7 @@ class serendipity_event_flattr extends serendipity_event
                         } else {
                             echo '<input type="text" name="serendipity[properties][ep_' . $attr . ']" id="properties_' . $attr . '" class="input_textbox" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET)) . '" style="width: 100%" />' . "\n";
                         }
-                        echo '<br />';
+                        echo "</div>\n";
                     }
 ?>
                     </fieldset>
@@ -344,7 +346,7 @@ class serendipity_event_flattr extends serendipity_event
                         $eventData['properties'] =& serendipity_fetchEntryProperties($eventData['id']);
                     }
                 
-                    if ($eventData['properties']['ep_flattr_active'] == '-1') {
+                    if (isset($eventData['properties']['ep_flattr_active']) && $eventData['properties']['ep_flattr_active'] == '-1') {
                         return true;
                     }
 
@@ -356,10 +358,10 @@ class serendipity_event_flattr extends serendipity_event
                     $flattr_tle = $this->_addslashes($eventData['title']);
                     $flattr_pop = (int) $this->get_config('flattr_pop');
 
-                    $flattr_dsc = $this->_addslashes($eventData['properties']['ep_flattr_dsc']);
-                    $flattr_cat = $this->_addslashes($eventData['properties']['ep_flattr_cat']);
-                    $flattr_lng = $this->_addslashes($eventData['properties']['ep_flattr_lng']);
-                    $flattr_tag = $this->_addslashes($eventData['properties']['ep_flattr_tag']);
+                    $flattr_dsc = $this->_addslashes(($eventData['properties']['ep_flattr_dsc'] ?? null));
+                    $flattr_cat = $this->_addslashes(($eventData['properties']['ep_flattr_cat'] ?? null));
+                    $flattr_lng = $this->_addslashes(($eventData['properties']['ep_flattr_lng'] ?? null));
+                    $flattr_tag = $this->_addslashes(($eventData['properties']['ep_flattr_tag'] ?? null));
 
                     if (empty($flattr_dsc)) {
                         $flattr_dsc = $this->_addslashes($eventData['body']);
@@ -404,7 +406,7 @@ class serendipity_event_flattr extends serendipity_event
                                  "language=".urlencode($flattr_lng).
                                  "\">" . $flattr_btn . "</a>";
                     } else {
-                        $flattr_tle2 = stripslashes($flattr_tle2);
+                        $flattr_tle2 = isset($flattr_tle2) ? stripslashes($flattr_tle2) : null;
                         $flattr_tle2 = (function_exists('serendipity_specialchars') ? serendipity_specialchars($flattr_tle2) : htmlspecialchars($flattr_tle2, ENT_COMPAT, LANG_CHARSET));
                         $flattr = "
 <a class='FlattrButton' style='display:none;'

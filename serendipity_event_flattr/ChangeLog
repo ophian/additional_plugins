@@ -1,3 +1,11 @@
+1.18:
+------
+ * Fix undefined property failure because of typo
+ * Fix some uninitialized variable checks for PHP 8
+ * Change to Serendipity Styx 2.x+ backend entry form fieldset markup for consistency
+ * Raises requirements
+ * "Have no clue if that is still doing what it is supposed to do, though! See api js, etc."
+
 1.17:
 -----
  * Revert 1.16, since rss 1.0 is still valid
@@ -31,7 +39,7 @@ Made event_hook() declaration the same as in s9y core
 1.9:
 ----
 
-Added popout option; switched JS to version 0.6; switchted button embed code to HTML5.
+Added popout option; switched JS to version 0.6; switched button embed code to HTML5.
 
 1.7:
 ----
