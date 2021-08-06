@@ -1,3 +1,7 @@
+1.10:
+----
+ * Change to Serendipity Styx 2.x+ backend entry form fieldset markup for consistency
+
 1.9:
 ----
  * Up for Smarty3
