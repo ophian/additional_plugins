@@ -1,3 +1,7 @@
+1.15:
+-----
+ * Change to Serendipity Styx 2.x+ backend entry form fieldset markup for consistency
+
 1.14:
 -----
  * Check missing REQUEST url (Request2) switch for
