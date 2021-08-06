@@ -373,7 +373,7 @@ class serendipity_event_geotag extends serendipity_event
                     } else {
                         $geo_lat = "";
                     }
-                    // initialise from config
+                    // initialize from config
                     $initZoom = $this->get_config('zoom', 14);
                     $autofill_editor = serendipity_db_bool($this->get_config('editor_autofill', 'false'));
 ?>
@@ -397,8 +397,9 @@ class serendipity_event_geotag extends serendipity_event
                         }
                     </script>
 
-                    <fieldset style="margin: 5px">
-                        <legend><?php echo PLUGIN_EVENT_GEOTAG_TITLE; ?></legend>
+                    <fieldset id="edit_entry_geotag" class="entryproperties_geotag">
+                        <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_GEOTAG_TITLE; ?></legend></span>
+                        <div class="form_field">
                             <input class="input_textbox" type="text" name="serendipity[properties][geo_lat]" id="properties_geo_lat" value="<?php echo $geo_lat ?>"  onkeydown="if (event.keyCode == 13) {updateMap(); return false}" onpaste="return paste.call(this, arguments[0])"/>
                             <label title="<?php echo PLUGIN_EVENT_GEOTAG_LAT; ?>" for="properties_geo_lat">&nbsp;<?php echo PLUGIN_EVENT_GEOTAG_LAT; ?>&nbsp;&nbsp;</label>
                             <input class="input_textbox" type="text" name="serendipity[properties][geo_long]" id="properties_geo_long" value="<?php echo $geo_long ?>"  onkeydown="if (event.keyCode == 13) {updateMap(); return false}" onpaste="return paste.call(this, arguments[0])"/>
@@ -406,11 +407,11 @@ class serendipity_event_geotag extends serendipity_event
                             <?php if ($this->get_config('api_key') !== ''): ?>
                             <input type="button" onClick="getCurrentPosition(true)" value="<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_GET_CODE; ?>" />
                             <input type="button" onClick="clearLocation();" value="<?php echo PLUGIN_EVENT_CLEAR_LOCATION; ?>" />
-                            <p /><p>
                             <input type="text" id="geoTagAddress" value="<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_TYPE_ADDRESS; ?>" onkeydown="if (event.keyCode == 13) {geoCode(); return false;}" onClick="clearAdressInput();"/>
                             <input type="button" onClick="geoCode()" value="<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE; ?>" />
                             <?php endif; ?>
-                            <span id="geoCodeMsg"> </span></p>
+                        </div>
+                        <span id="geoCodeMsg"> </span>
 <?php
                     if (($this->get_config('api_key'))!="") {
 ?>
@@ -476,21 +477,21 @@ class serendipity_event_geotag extends serendipity_event
                                     if (GBrowserIsCompatible()) {
 
 
-                                    document.getElementById('geoCodeMsg').innerHTML = '<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_MSG_PROGRESS; ?>';
+                                    document.getElementById('geoCodeMsg').innerHTML = '<span class="msg_notice"><span class="icon-info-circled"></span> <?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_MSG_PROGRESS; ?></span>';
                                     geocoder = new GClientGeocoder();
                                     if (geocoder) {
                                         geocoder.getLatLng(
                                         address,
                                         function(point) {
                                             if (!point) {
-                                            document.getElementById('geoCodeMsg').innerHTML = address + '<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_NOT_FOUND; ?>';
+                                            document.getElementById('geoCodeMsg').innerHTML = address + '<span class="msg_error"><span class="icon-attention-circled"></span> <?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_NOT_FOUND; ?></span>';
                                             } else {
                                                 map.setCenter(point);
                                                 map.clearOverlays();
                                                 map.addOverlay(new GMarker(point));
                                                 document.getElementById(latitudeFieldId).value = point.lat();
                                                 document.getElementById(longitudeFieldId).value = point.lng();
-                                                document.getElementById('geoCodeMsg').innerHTML = '<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_OK; ?>';
+                                                document.getElementById('geoCodeMsg').innerHTML = '<span class="msg_success"><span class="icon-ok-circled"></span> <?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_OK; ?></span>';
                                             }
                                         });
                                     }

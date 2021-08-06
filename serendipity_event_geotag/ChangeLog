@@ -1,3 +1,7 @@
+1.43:
+-----
+ * Change to Serendipity Styx 2.x+ backend entry form fieldset markup for consistency
+
 1.42:
 -----
  * Fixed RegEx found key handle
