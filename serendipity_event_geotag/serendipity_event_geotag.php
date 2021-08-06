@@ -611,7 +611,7 @@ class serendipity_event_geotag extends serendipity_event
 
                 case 'frontend_header':
                     // Only emit in Single Entry Mode
-                    if (!$serendipity['GET']['id'] && $serendipity['view'] != 'entry') {
+                    if (!isset($serendipity['GET']['id']) && $serendipity['view'] != 'entry') {
                         $lat = $this->get_config('hdr_default_lat');
                         $long = $this->get_config('hdr_default_long');
                         $this->headerGeoTagging($lat,$long, $GLOBALS['serendipity']['blogTitle']);
