@@ -27,11 +27,11 @@ class serendipity_event_versioning extends serendipity_event
         ));
 
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '0.13');
+        $propbag->add('version', '0.14');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '7.0'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('BACKEND_EDITOR', 'BACKEND_FEATURES'));
@@ -235,7 +235,7 @@ class serendipity_event_versioning extends serendipity_event
 
                 case 'backend_entryform':
                     // Should we restore a version?
-                    if ($serendipity['POST']['versioning'] > 0 && !empty($serendipity['POST']['versioning_change']) && !empty($eventData['id'])) {
+                    if (isset($serendipity['POST']['versioning']) && $serendipity['POST']['versioning'] > 0 && !empty($serendipity['POST']['versioning_change']) && !empty($eventData['id'])) {
                         $this->recoverVersion($eventData, $serendipity['POST']['versioning']);
                     }
                     break;
@@ -286,15 +286,15 @@ class serendipity_event_versioning extends serendipity_event
                     break;
 
                 case 'backend_display':
-                    $versions = &$this->getVersions($eventData['id'], $serendipity['POST']['versioning']);
+                    $versions = &$this->getVersions(($eventData['id'] ?? null), ($serendipity['POST']['versioning'] ?? null));
                     if (count($versions) < 1) {
                         return true;
                     }
                     if (is_array($versions) && !empty($versions)) {
 ?>
-                    <fieldset style="margin: 5px">
-                        <legend><?php echo VERSIONING_TITLE; ?></legend>
-                        <div>
+                    <fieldset id="edit_entry_versioning" class="entryproperties_versioning">
+                        <span class="wrap_legend"><legend><?php echo VERSIONING_TITLE; ?></legend></span>
+                        <div class="form_select">
                             <select name="serendipity[versioning]">
 <?php
                         foreach($versions AS $version) {

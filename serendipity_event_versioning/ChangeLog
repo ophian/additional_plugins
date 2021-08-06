@@ -1,3 +1,9 @@
+0.14:
+-----
+ * Fix some uninitialized variable check for PHP 8
+ * Change to Serendipity Styx 2.x+ backend entry form fieldset markup for consistency
+ * Raised requirements
+
 0.13:
 -----
  * Remove some unused global defines
