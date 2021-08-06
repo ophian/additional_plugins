@@ -46,7 +46,7 @@ function communityrating_serendipity_show($params, $smarty) {
                 serendipity_request_end();
             }
 
-            if (!$isError) || $resCode == '200') {
+            if (!$isError || $resCode == '200') {
                 $data = $response;
 
                 $id = '';

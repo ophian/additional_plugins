@@ -1,3 +1,7 @@
+1.16:
+-----
+ * Fix a parse error
+
 1.15:
 -----
  * Change to Serendipity Styx 2.x+ backend entry form fieldset markup for consistency
