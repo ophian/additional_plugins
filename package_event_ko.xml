@@ -5036,7 +5036,7 @@
 <description>작성된 글에 대해 방문자가 평가를 매길 수 있게 함</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.21</version>
+  <version>2.22</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
