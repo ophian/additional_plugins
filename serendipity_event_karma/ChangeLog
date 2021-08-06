@@ -1,3 +1,8 @@
+2.21:
+-----
+ * Fix the backend administration design type preview to really show how its gona look
+ * Cleanup old requirement references
+
 2.20:
 -----
  * Fix some more variable initialization checks for PHP 8

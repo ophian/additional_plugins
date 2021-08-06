@@ -44,7 +44,7 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '2.20');
+        $propbag->add('version',       '2.21');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1.0',
@@ -882,14 +882,9 @@ function vote(karmaVote,karmaId) {
     margin: 5px;
 }
 ");
-                        if ($serendipity['version'][0] > 1) {
-                            print("\n</style>\n");
-                        }
+                        print("\n</style>\n");
                     }
-                    if ($serendipity['version'][0] > 1) {
-                        break;
-                        return true;
-                    }
+                    break;
 
                 case 'css_backend':
                 case 'css':
@@ -970,12 +965,11 @@ function vote(karmaVote,karmaId) {
                     }
                     --JAM: END COMMENT BLOCK */
 
-                    if ($serendipity['version'][0] < 2 && $event == 'backend_header') {
-                        print ("<style type='text/css'>\n");
-                    }
                     // Since errors might be printed at any time, always
                     // output the text-mode CSS
-                    print <<<EOS
+                    $eventData .= "
+/* serendipity_event karma start */
+
 .serendipity_karmaVoting {
     text-align: $align;
     font-size: 7pt;
@@ -997,10 +991,11 @@ function vote(karmaVote,karmaId) {
 .serendipity_karmaSuccess {
     color: green;
 }
-EOS;
+";
                     // Only output the image CSS if it's needed
                     if ($this->image_name != '0') {
-                        $img = $serendipity['baseURL'] . "plugins/serendipity_event_karma/img/" . $this->image_name;
+                        $imgp = $serendipity['baseURL'] . 'plugins/serendipity_event_karma/img/';
+                        $cimg = $imgp . $this->image_name;
                         $h = $this->image_height / 3;
                         $w = $this->image_width;
                         switch ($align) {
@@ -1023,12 +1018,11 @@ EOS;
                         // multiple cases and all unitless measurements have
                         // been specified in pixels.  Additionally, measures
                         // have been taken to align the text.
-                        print <<<END_IMG_CSS
-
+                        $eventData .= "
 .serendipity_karmaVoting_links,
 .serendipity_karmaVoting_links a:hover,
 .serendipity_karmaVoting_current-rating {
-    background: url($img) left;
+    background: url($cimg) left;
     font-size: 0;
 }
 .ajaxloader {
@@ -1048,7 +1042,7 @@ EOS;
 .serendipity_karmaVoting_links li {
    display: inline;
 }
-.serendipity_karmaVoting_links a ,
+.serendipity_karmaVoting_links a,
 .serendipity_karmaVoting_current-rating {
     position:absolute;
     top: 0;
@@ -1088,18 +1082,144 @@ EOS;
     background-position: left center;
 }
 
-END_IMG_CSS;
+/* serendipity_event karma end */
+
+";
+// fixing the backend preview table to show the real values in each three different sizes. Removing all follwing styles will end up like before (the current chosen img size is shown in each three of all design types).
+                        if ($event == 'css_backend') {
+                            $eventData .= "
+
+#serendipity_karmaVote_select_diamonds-yellow-green-lg_png .serendipity_karmaVoting_links { background: url({$imgp}diamonds-yellow-green-lg.png) left center; }
+#serendipity_karmaVote_select_diamonds-yellow-green-lg_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_diamonds-yellow-green-lg_png .serendipity_karmaVoting_current-rating { background: url({$imgp}diamonds-yellow-green-lg.png) left bottom; }
+#serendipity_karmaVote_select_diamonds-yellow-green-md_png .serendipity_karmaVoting_links { background: url({$imgp}diamonds-yellow-green-md.png) left center; }
+#serendipity_karmaVote_select_diamonds-yellow-green-md_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_diamonds-yellow-green-md_png .serendipity_karmaVoting_current-rating { background: url({$imgp}diamonds-yellow-green-md.png) left bottom; }
+#serendipity_karmaVote_select_diamonds-yellow-green-sm_png .serendipity_karmaVoting_links { background: url({$imgp}diamonds-yellow-green-sm.png) left center; }
+#serendipity_karmaVote_select_diamonds-yellow-green-sm_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_diamonds-yellow-green-sm_png .serendipity_karmaVoting_current-rating { background: url({$imgp}diamonds-yellow-green-sm.png) left bottom; }
+#serendipity_karmaVote_select_diamonds-yellow-green-lg_png .serendipity_karmaVoting_links { width: 140px; height: 25px; }
+#serendipity_karmaVote_select_diamonds-yellow-green-md_png .serendipity_karmaVoting_links { width: 105px; height: 20px; }
+#serendipity_karmaVote_select_diamonds-yellow-green-sm_png .serendipity_karmaVoting_links { width: 70px; height: 14.25px; }
+#serendipity_karmaVote_select_diamonds-yellow-green-lg_png .serendipity_karmaVoting_links a { height: 25px; line-height: 25px; }
+#serendipity_karmaVote_select_diamonds-yellow-green-md_png .serendipity_karmaVoting_links a { height: 20px; line-height: 20px; }
+#serendipity_karmaVote_select_diamonds-yellow-green-sm_png .serendipity_karmaVoting_links a { height: 15px; line-height: 15px; }
+
+#serendipity_karmaVote_select_stars-def-green-yellow-lg_png .serendipity_karmaVoting_links { background: url({$imgp}stars-def-green-yellow-lg.png) left center; }
+#serendipity_karmaVote_select_stars-def-green-yellow-lg_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_stars-def-green-yellow-lg_png .serendipity_karmaVoting_current-rating { background: url({$imgp}stars-def-green-yellow-lg.png) left bottom; }
+#serendipity_karmaVote_select_stars-def-green-yellow-md_png .serendipity_karmaVoting_links { background: url({$imgp}stars-def-green-yellow-md.png) left center; }
+#serendipity_karmaVote_select_stars-def-green-yellow-md_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_stars-def-green-yellow-md_png .serendipity_karmaVoting_current-rating { background: url({$imgp}stars-def-green-yellow-md.png) left bottom; }
+#serendipity_karmaVote_select_stars-def-green-yellow-sm_png .serendipity_karmaVoting_links { background: url({$imgp}stars-def-green-yellow-sm.png) left center; }
+#serendipity_karmaVote_select_stars-def-green-yellow-sm_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_stars-def-green-yellow-sm_png .serendipity_karmaVoting_current-rating { background: url({$imgp}stars-def-green-yellow-sm.png) left bottom; }
+#serendipity_karmaVote_select_stars-def-green-yellow-lg_png .serendipity_karmaVoting_links { width: 125px; height: 25px; }
+#serendipity_karmaVote_select_stars-def-green-yellow-md_png .serendipity_karmaVoting_links { width: 100px; height: 20px; }
+#serendipity_karmaVote_select_stars-def-green-yellow-sm_png .serendipity_karmaVoting_links { width: 75px; height: 15px; }
+#serendipity_karmaVote_select_stars-def-green-yellow-lg_png .serendipity_karmaVoting_links a { height: 25px; line-height: 25px; }
+#serendipity_karmaVote_select_stars-def-green-yellow-md_png .serendipity_karmaVoting_links a { height: 20px; line-height: 20px; }
+#serendipity_karmaVote_select_stars-def-green-yellow-sm_png .serendipity_karmaVoting_links a { height: 15px; line-height: 15px; }
+
+#serendipity_karmaVote_select_stars-def-red-yellow-lg_png .serendipity_karmaVoting_links { background: url({$imgp}stars-def-red-yellow-lg.png) left center; }
+#serendipity_karmaVote_select_stars-def-red-yellow-lg_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_stars-def-red-yellow-lg_png .serendipity_karmaVoting_current-rating { background: url({$imgp}stars-def-red-yellow-lg.png) left bottom; }
+#serendipity_karmaVote_select_stars-def-red-yellow-md_png .serendipity_karmaVoting_links { background: url({$imgp}stars-def-red-yellow-md.png) left center; }
+#serendipity_karmaVote_select_stars-def-red-yellow-md_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_stars-def-red-yellow-md_png .serendipity_karmaVoting_current-rating { background: url({$imgp}stars-def-red-yellow-md.png) left bottom; }
+#serendipity_karmaVote_select_stars-def-red-yellow-sm_png .serendipity_karmaVoting_links { background: url({$imgp}stars-def-red-yellow-sm.png) left center; }
+#serendipity_karmaVote_select_stars-def-red-yellow-sm_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_stars-def-red-yellow-sm_png .serendipity_karmaVoting_current-rating { background: url({$imgp}stars-def-red-yellow-sm.png) left bottom; }
+#serendipity_karmaVote_select_stars-def-red-yellow-lg_png .serendipity_karmaVoting_links { width: 125px; height: 25px; }
+#serendipity_karmaVote_select_stars-def-red-yellow-md_png .serendipity_karmaVoting_links { width: 100px; height: 20px; }
+#serendipity_karmaVote_select_stars-def-red-yellow-sm_png .serendipity_karmaVoting_links { width: 75px; height: 15px; }
+#serendipity_karmaVote_select_stars-def-red-yellow-lg_png .serendipity_karmaVoting_links a { height: 25px; line-height: 25px; }
+#serendipity_karmaVote_select_stars-def-red-yellow-md_png .serendipity_karmaVoting_links a { height: 20px; line-height: 20px; }
+#serendipity_karmaVote_select_stars-def-red-yellow-sm_png .serendipity_karmaVoting_links a { height: 15px; line-height: 15px; }
+
+#serendipity_karmaVote_select_stars-def-yellow-green-lg_png .serendipity_karmaVoting_links { background: url({$imgp}stars-def-yellow-green-lg.png) left center; }
+#serendipity_karmaVote_select_stars-def-yellow-green-lg_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_stars-def-yellow-green-lg_png .serendipity_karmaVoting_current-rating { background: url({$imgp}stars-def-yellow-green-lg.png) left bottom; }
+#serendipity_karmaVote_select_stars-def-yellow-green-md_png .serendipity_karmaVoting_links { background: url({$imgp}stars-def-yellow-green-md.png) left center; }
+#serendipity_karmaVote_select_stars-def-yellow-green-md_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_stars-def-yellow-green-md_png .serendipity_karmaVoting_current-rating { background: url({$imgp}stars-def-yellow-green-md.png) left bottom; }
+#serendipity_karmaVote_select_stars-def-yellow-green-sm_png .serendipity_karmaVoting_links { background: url({$imgp}stars-def-yellow-green-sm.png) left center; }
+#serendipity_karmaVote_select_stars-def-yellow-green-sm_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_stars-def-yellow-green-sm_png .serendipity_karmaVoting_current-rating { background: url({$imgp}stars-def-yellow-green-sm.png) left bottom; }
+#serendipity_karmaVote_select_stars-def-yellow-green-lg_png .serendipity_karmaVoting_links { width: 125px; height: 25px; }
+#serendipity_karmaVote_select_stars-def-yellow-green-md_png .serendipity_karmaVoting_links { width: 100px; height: 20px; }
+#serendipity_karmaVote_select_stars-def-yellow-green-sm_png .serendipity_karmaVoting_links { width: 75px; height: 15px; }
+#serendipity_karmaVote_select_stars-def-yellow-green-lg_png .serendipity_karmaVoting_links a { height: 25px; line-height: 25px; }
+#serendipity_karmaVote_select_stars-def-yellow-green-md_png .serendipity_karmaVoting_links a { height: 20px; line-height: 20px; }
+#serendipity_karmaVote_select_stars-def-yellow-green-sm_png .serendipity_karmaVoting_links a { height: 15px; line-height: 15px; }
+
+#serendipity_karmaVote_select_stars-def-yellow-red-lg_png .serendipity_karmaVoting_links { background: url({$imgp}stars-def-yellow-red-lg.png) left center; }
+#serendipity_karmaVote_select_stars-def-yellow-red-lg_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_stars-def-yellow-red-lg_png .serendipity_karmaVoting_current-rating { background: url({$imgp}stars-def-yellow-red-lg.png) left bottom; }
+#serendipity_karmaVote_select_stars-def-yellow-red-md_png .serendipity_karmaVoting_links { background: url({$imgp}stars-def-yellow-red-md.png) left center; }
+#serendipity_karmaVote_select_stars-def-yellow-red-md_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_stars-def-yellow-red-md_png .serendipity_karmaVoting_current-rating { background: url({$imgp}stars-def-yellow-red-md.png) left bottom; }
+#serendipity_karmaVote_select_stars-def-yellow-red-sm_png .serendipity_karmaVoting_links { background: url({$imgp}stars-def-yellow-red-sm.png) left; }
+#serendipity_karmaVote_select_stars-def-yellow-red-sm_png .serendipity_karmaVoting_links a:hover, #serendipity_karmaVote_select_stars-def-yellow-red-sm_png .serendipity_karmaVoting_current-rating { background: url({$imgp}stars-def-yellow-red-sm.png) left bottom; }
+#serendipity_karmaVote_select_stars-def-yellow-red-lg_png .serendipity_karmaVoting_links { width: 125px; height: 25px; }
+#serendipity_karmaVote_select_stars-def-yellow-red-md_png .serendipity_karmaVoting_links { width: 100px; height: 20px; }
+#serendipity_karmaVote_select_stars-def-yellow-red-sm_png .serendipity_karmaVoting_links { width: 75px; height: 15px; }
+#serendipity_karmaVote_select_stars-def-yellow-red-lg_png .serendipity_karmaVoting_links a { height: 25px; line-height: 25px; }
+#serendipity_karmaVote_select_stars-def-yellow-red-md_png .serendipity_karmaVoting_links a { height: 20px; line-height: 20px; }
+#serendipity_karmaVote_select_stars-def-yellow-red-sm_png .serendipity_karmaVoting_links a { height: 15px; line-height: 15px; }
+
+";
+// Fixing the table with current-rating using margin-top cuts its half for lg, 3/4 vertically for md, so better use padding-top everywhere where positive values are given.
+if ($h == 25) {
+    $eventData .= '
+#serendipity_karmaVote_select_diamonds-yellow-green-md_png .serendipity_karmaVoting_current-rating { margin-top: -4px }/*for md*/
+#serendipity_karmaVote_select_diamonds-yellow-green-sm_png .serendipity_karmaVoting_current-rating { margin-top: -11px }/*for sm*/
+#serendipity_karmaVote_select_stars-def-green-yellow-md_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-md_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-green-md_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-red-md_png .serendipity_karmaVoting_current-rating { margin-top: -5px }
+#serendipity_karmaVote_select_stars-def-green-yellow-sm_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-sm_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-green-sm_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-red-sm_png .serendipity_karmaVoting_current-rating { margin-top: -10px }
+';
+}
+if ($h == 20) {
+            $eventData .= '
+#serendipity_karmaVote_select_diamonds-yellow-green-lg_png .serendipity_karmaVoting_current-rating { padding-top: 5px }/*for lg*/
+#serendipity_karmaVote_select_diamonds-yellow-green-md_png .serendipity_karmaVoting_current-rating { padding-top: 1px }/*for md*/
+#serendipity_karmaVote_select_diamonds-yellow-green-sm_png .serendipity_karmaVoting_current-rating { margin-top: -6px }/*for sm*/
+#serendipity_karmaVote_select_stars-def-green-yellow-lg_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-lg_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-lg_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-green-lg_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-red-lg_png .serendipity_karmaVoting_current-rating { padding-top: 4px }
+#serendipity_karmaVote_select_stars-def-green-yellow-md_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-md_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-md_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-green-md_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-red-md_png .serendipity_karmaVoting_current-rating { margin-top: -1px }
+#serendipity_karmaVote_select_stars-def-green-yellow-sm_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-sm_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-sm_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-green-sm_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-red-sm_png .serendipity_karmaVoting_current-rating { margin-top: -5px }
+';
+}
+if ($h == 15) {
+            $eventData .= '
+#serendipity_karmaVote_select_diamonds-yellow-green-lg_png .serendipity_karmaVoting_current-rating { padding-top: 10px }/*for lg*/
+#serendipity_karmaVote_select_diamonds-yellow-green-md_png .serendipity_karmaVoting_current-rating { padding-top: 5px }/*for md*/
+#serendipity_karmaVote_select_diamonds-yellow-green-sm_png .serendipity_karmaVoting_current-rating { margin-top: -2px }/*for sm*/
+#serendipity_karmaVote_select_stars-def-green-yellow-lg_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-lg_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-lg_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-green-lg_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-red-lg_png .serendipity_karmaVoting_current-rating { padding-top: .575rem }/*~9px*/
+#serendipity_karmaVote_select_stars-def-green-yellow-md_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-md_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-md_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-green-md_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-red-md_png .serendipity_karmaVoting_current-rating { padding-top: .25rem }/*~4px*/
+#serendipity_karmaVote_select_stars-def-green-yellow-sm_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-sm_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-red-yellow-sm_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-green-sm_png .serendipity_karmaVoting_current-rating,
+#serendipity_karmaVote_select_stars-def-yellow-red-sm_png .serendipity_karmaVoting_current-rating { margin-top: -1px }/*-5px*/
+';
+}
+                }
                         // Add selector images CSS, if necessary
                         if (!empty($this->select_css)) {
                             print($this->select_css);
                         }
                     } // End if image bar defined
-
-                    if ($serendipity['version'][0] < 2 && $event == 'backend_header') {
-                        print("\n</style>\n");
-                    }
-
-                    return true;
                     break;
 
                     //--TODO: Comment the functionality of this event hook.
@@ -1134,7 +1254,7 @@ END_IMG_CSS;
                         if (is_array($sql_rows)) {
                             foreach($sql_rows AS $id => $row) {
     ?>
-            <dt><a href="<?php echo serendipity_archiveURL($row['id'], $row['title'], 'serendipityHTTPPath', true, array('timestamp' => $row['timestamp'])); ?>"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($row['title']) : htmlspecialchars($row['title'], ENT_COMPAT, LANG_CHARSET)); ?></a></dt>
+            <dt><a href="<?php echo serendipity_archiveURL($row['id'], $row['title'], 'serendipityHTTPPath', true, array('timestamp' => $row['timestamp'])); ?>"><?php echo serendipity_specialchars($row['title']); ?></a></dt>
             <dd><?php echo $row['no']; ?> <?php echo constant('PLUGIN_KARMA_STATISTICS_' . strtoupper($rows[0]) . '_NO'); ?></dd>
     <?php
                             }
@@ -1557,7 +1677,7 @@ END_IMG_CSS;
                     }
 
                     // URL; expected to be event_display and karmalog, respectively
-                    $url = '?serendipity[adminModule]='.(function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['adminModule']) : htmlspecialchars($serendipity['GET']['adminModule'], ENT_COMPAT, LANG_CHARSET)).'&serendipity[adminAction]='.(function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['adminAction']) : htmlspecialchars($serendipity['GET']['adminAction'], ENT_COMPAT, LANG_CHARSET));
+                    $url = '?serendipity[adminModule]='.serendipity_specialchars($serendipity['GET']['adminModule']).'&serendipity[adminAction]='.serendipity_specialchars($serendipity['GET']['adminAction']);
 
                     // Filters
                     print("
@@ -1577,22 +1697,22 @@ END_IMG_CSS;
         <div class='clearfix'>
             <div class='form_field'>
                 <label for='serendipity_filter_useragent'>User Agent</label>
-                <input id='serendipity_filter_useragent' name='serendipity[filter][user_agent]' type='text' value='".(function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['filter']['user_agent']) : htmlspecialchars($serendipity['GET']['filter']['user_agent'], ENT_COMPAT, LANG_CHARSET))."'>
+                <input id='serendipity_filter_useragent' name='serendipity[filter][user_agent]' type='text' value='".serendipity_specialchars($serendipity['GET']['filter']['user_agent'])."'>
             </div>
 
             <div class='form_field'>
                 <label for='serendipity_filter_ip'>".IP."</label>
-                <input id='serendipity_filter_ip' name='serendipity[filter][ip]' type='text' value='".(function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['filter']['ip']) : htmlspecialchars($serendipity['GET']['filter']['ip'], ENT_COMPAT, LANG_CHARSET))."'>
+                <input id='serendipity_filter_ip' name='serendipity[filter][ip]' type='text' value='".serendipity_specialchars($serendipity['GET']['filter']['ip'])."'>
             </div>
 
             <div class='form_field'>
                 <label for='serendipity_filter_entryid'>Entry ID</label>
-                <input id='serendipity_filter_entryid' name='serendipity[filter][entryid]' type='text' value='".(function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['filter']['entryid']) : htmlspecialchars($serendipity['GET']['filter']['entryid'], ENT_COMPAT, LANG_CHARSET))."'>
+                <input id='serendipity_filter_entryid' name='serendipity[filter][entryid]' type='text' value='".serendipity_specialchars($serendipity['GET']['filter']['entryid'])."'>
             </div>
 
             <div class='form_field'>
                 <label for='serendipity_filter_title'>Entry title</label>
-                <input id='serendipity_filter_title' name='serendipity[filter][title]' type='text' value='".(function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['filter']['title']) : htmlspecialchars($serendipity['GET']['filter']['title'], ENT_COMPAT, LANG_CHARSET))."'>
+                <input id='serendipity_filter_title' name='serendipity[filter][title]' type='text' value='".serendipity_specialchars($serendipity['GET']['filter']['title'])."'>
             </div>
         </div>
 
@@ -1605,22 +1725,22 @@ END_IMG_CSS;
                     if (!empty($serendipity['GET']['filter']['entryid'])) {
                         $val = $serendipity['GET']['filter']['entryid'];
                         $and .= "AND l.entryid = '" . serendipity_db_escape_string($val) . "'";
-                        $searchString .= "&amp;serendipity['filter']['entryid']=".(function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET));
+                        $searchString .= "&amp;serendipity['filter']['entryid']=".serendipity_specialchars($val);
                     }
                     if (!empty($serendipity['GET']['filter']['ip'])) {
                         $val = $serendipity['GET']['filter']['ip'];
                         $and .= "AND l.ip = '" . serendipity_db_escape_string($val) . "'";
-                        $searchString .= "&amp;serendipity['filter']['ip']=".(function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET));
+                        $searchString .= "&amp;serendipity['filter']['ip']=".serendipity_specialchars($val);
                     }
                     if (!empty($serendipity['GET']['filter']['user_agent'])) {
                         $val = $serendipity['GET']['filter']['user_agent'];
                         $and .= "AND l.user_agent LIKE '%" . serendipity_db_escape_string($val) . "%'";
-                        $searchString .= "&amp;serendipity['filter']['user_agent']=".(function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET));
+                        $searchString .= "&amp;serendipity['filter']['user_agent']=".serendipity_specialchars($val);
                     }
                     if (!empty($serendipity['GET']['filter']['title'])) {
                         $val = $serendipity['GET']['filter']['title'];
                         $and .= "AND e.title LIKE '%" . serendipity_db_escape_string($val) . "%'";
-                        $searchString .= "&amp;serendipity['filter']['title']=".(function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET));
+                        $searchString .= "&amp;serendipity['filter']['title']=".serendipity_specialchars($val);
                     }
 
                     // Sorting (controls go after filtering controls in form above)
@@ -1851,18 +1971,10 @@ END_IMG_CSS;
         $this->select_html = '';
         // We will be wrapped in a <tr><td colspan="2">
         $this->select_html .= "
-<strong>" . PLUGIN_KARMA_IMAGE . "</strong><br />
-<span style='color: rgb(94, 122, 148); font-size: 8pt;'>&nbsp;".PLUGIN_KARMA_IMAGE_DESC."</span>";
-        if ($serendipity['version'][0] < 2) {
-            $this->select_html .= "
-</td>
-<td></td>
-</tr>
-<tr>
-<td colspan='2'>\n";
-        }
-        $this->select_html .= "
-<table border='1' class='serendipity_karmaVote_selectorTable'>";
+<strong>" . PLUGIN_KARMA_IMAGE . '</strong><br />
+<span style="color: rgb(94, 122, 148); font-size: 8pt;">&nbsp;'.PLUGIN_KARMA_IMAGE_DESC."</span>";
+        $this->select_html .= '
+<table border="1" class="serendipity_karmaVote_selectorTable">';
         // Add the 'text-only' selection and its CSS
         if ($cursel == '0') {
             $checked = 'checked="checked" ';
@@ -1872,8 +1984,8 @@ END_IMG_CSS;
         $this->image_name = '0';
         $bar = $this->createRatingBar('', 0, 0, 'textbar');
         $this->select_html .= "
-<tr id='serendipity_karmaVote_selectorTable_textOnly'>
-<td colspan='3' align='center'><input type='radio' name='serendipity[plugin][base_image]' value='0' $checked/>" . PLUGIN_KARMA_STATISTICS_POINTS_NO . "<br />$bar<br /></td>\n";
+<tr id=\"serendipity_karmaVote_selectorTable_textOnly\">
+<td colspan=\"3\" align=\"center\"><input type=\"radio\" name=\"serendipity[plugin][base_image]\" value=\"0\" $checked/> " . PLUGIN_KARMA_STATISTICS_POINTS_NO . "<br />$bar<br /></td>\n";
         $this->select_css .= "
 .textbar, .textbar a, .textbar a:hover {
     font-size: 100%;
@@ -1888,6 +2000,7 @@ END_IMG_CSS;
         $files = $this->getImageFiles();
         // Add an <ol> for each rating bar, and add its CSS overrides
         $n = 0;
+
         foreach($files AS $fdata) {
             // Columnize
             if (($n % 3) == 0) {
@@ -1919,9 +2032,9 @@ END_IMG_CSS;
                 $checked = 'checked="checked" ';
             }
             $bar_html =
-"<td align='center' id='serendipity_karmaVote_select_$css_class'>
-    <input type='radio' name='serendipity[plugin][base_image]' value='$fname' $checked/>
-    <span style='font-size: 8pt;'>$fname</span><br />\n" .
+"<td align=\"left\" id=\"serendipity_karmaVote_select_$css_class\">
+    <input type=\"radio\" name=\"serendipity[plugin][base_image]\" value=\"$fname\" $checked/>
+    <span style=\"font-size: 8pt;\">$fname</span><br />\n" .
                 $this->createRatingBar('', -1, 2, $css_class) .
 "</td>\n";
             $bar_html = sprintf($bar_html, '', '2.5 of 5', '1');
@@ -1963,10 +2076,6 @@ END_IMG_CSS;
         // End the table, with a config-item bottom-border separator
         $this->select_html .=
 "</tr>\n</table>\n";
-        if ($serendipity['version'][0] < 2) {
-            $this->select_html .=
-"<tr><td colspan='2' style='border-bottom: 1px solid #000000; vertical-align: top'>&nbsp;<td></tr>\n";
-        }
         // The config item and row are closed by the core code
 
         return $this->select_html;
@@ -2078,7 +2187,7 @@ END_IMG_CSS;
             if (($id !== null) || $enough_votes) {
                 // Start the bar
                 $karma_display = "
-<ol class='serendipity_karmaVoting_links$extra_class'>";
+<ol class=\"serendipity_karmaVoting_links$extra_class\">";
                 // Only display the current rating if there are enough votes
                 if ($enough_votes) {
                     // Figure out the image-based rating and width
@@ -2087,7 +2196,7 @@ END_IMG_CSS;
                     // Get current karma text
                     $curr_msg = $this->get_config('curr_msg', PLUGIN_KARMA_CURRENT);
                     $karma_display .= "
-    <li class='serendipity_karmaVoting_current-rating' style='width: ${cr_width}px;' title='$curr_msg'> </li>
+    <li class=\"serendipity_karmaVoting_current-rating\" style=\"width: ${cr_width}px;\" title=\"$curr_msg\"> </li>
     ";
                 }
                 // Only create voting links if required
