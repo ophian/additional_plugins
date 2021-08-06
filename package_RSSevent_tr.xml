@@ -167,7 +167,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Lewe Zipfel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_communityrating&lt;br /&gt;Community Rating&lt;/b&gt;&lt;br /&gt;You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 06 Aug 2021 15:00:09 +0200</pubDate>
+<pubDate>Fri, 06 Aug 2021 15:45:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_communityrating</guid>
 </item>
 <item>
@@ -401,7 +401,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Joachim Breitner</author>
 <content:encoded>&lt;b&gt;serendipity_event_flattr&lt;br /&gt;Flattr&lt;/b&gt;&lt;br /&gt;Flattr is a social micropayment platform that lets you show love for the things you like. This plugin embedds &quot;Flattr&quot;-Badges in blog entries and RSS feeds. You can specify flattr-specific options per-entry, with a default global fallback.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 25 Jan 2021 13:00:41 +0100</pubDate>
+<pubDate>Fri, 06 Aug 2021 15:23:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flattr</guid>
 </item>
 <item>
@@ -725,7 +725,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Don Chambers, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_metadesc&lt;br /&gt;HTML META-Tags&lt;/b&gt;&lt;br /&gt;Sets HTML meta keywords/description tags and title element for single entry pages and default meta keywords/description tags for non-single entry pages.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 10 Mar 2021 16:52:57 +0100</pubDate>
+<pubDate>Fri, 06 Aug 2021 15:34:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_metadesc</guid>
 </item>
 <item>
@@ -950,7 +950,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_relatedlinks&lt;br /&gt;İlgili yazılar/makaleler/web bağlantıları&lt;/b&gt;&lt;br /&gt;Yazı başına konuyla ilgili sitede mevcut yazı-makale ya da site dışı web bağlantısı ekle. Ölçeklenebilirlik amacıyla  &quot;plugin_relatedlinks.tpl&quot; adlı Smarty-Şablon dosyasını düzenleyerek web sayfası çıktını istediğin görünümde oluşturabilirsin.Not: Bu eklenti sadece yazının ayrıntılı-tam gösterimi sırasında etkin olur.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sat, 11 Aug 2018 15:03:23 +0200</pubDate>
+<pubDate>Fri, 06 Aug 2021 15:49:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_relatedlinks</guid>
 </item>
 <item>
@@ -1085,7 +1085,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_suggest&lt;br /&gt;Suggest entries&lt;/b&gt;&lt;br /&gt;Allows non-registered authors to suggest entries for publishing&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 09 Jul 2021 18:41:39 +0200</pubDate>
+<pubDate>Fri, 06 Aug 2021 15:54:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_suggest</guid>
 </item>
 <item>
@@ -1247,7 +1247,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_versioning&lt;br /&gt;Versioning of entries&lt;/b&gt;&lt;br /&gt;Can store and retrieve older versions of an entry&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 15 Jul 2021 10:50:03 +0200</pubDate>
+<pubDate>Fri, 06 Aug 2021 15:26:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_versioning</guid>
 </item>
 <item>

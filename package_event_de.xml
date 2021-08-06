@@ -1023,7 +1023,7 @@
 <description>You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.</description>
 <maintainers><maintainer><name>Garvin Hicking, Lewe Zipfel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.15</version>
+  <version>1.16</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
@@ -2868,7 +2868,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2021-01-25</date>
+  <date>2021-08-06</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -6346,7 +6346,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2021-03-10</date>
+  <date>2021-08-06</date>
   <filelist>
     <dir name="serendipity_event_metadesc">
       <file>ChangeLog</file>
@@ -8730,11 +8730,11 @@
 <description>Fügt verwandte Links/Einträge in die Artikelansicht ein, die manuell für jeden Eintrag eingegeben werden können. Für flexible Ausgabe kann das Smarty-Template &quot;plugin_relatedlinks.tpl&quot; angepasst werde.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.9</version>
+  <version>1.10</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2018-08-11</date>
+  <date>2021-08-06</date>
   <filelist>
     <dir name="serendipity_event_relatedlinks">
       <file>ChangeLog</file>
@@ -9808,7 +9808,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0.0</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2021-07-09</date>
+  <date>2021-08-06</date>
   <filelist>
     <dir name="serendipity_event_suggest">
       <file>ChangeLog</file>
@@ -11620,7 +11620,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2021-07-15</date>
+  <date>2021-08-06</date>
   <filelist>
     <dir name="serendipity_event_versioning">
       <file>ChangeLog</file>
