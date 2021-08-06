@@ -44,7 +44,7 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '2.21');
+        $propbag->add('version',       '2.22');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1.0',
@@ -1583,7 +1583,7 @@ if ($h == 15) {
                     //    print("<div class='serendipityAdminInfo'>$msg</div>\n");
                     //}
                     // Was I asked to process any votes?
-                    if (($serendipity['POST']['delete_button'] || $serendipity['POST']['approve_button'])
+                    if ((isset($serendipity['POST']['delete_button']) || isset($serendipity['POST']['approve_button']))
                         && sizeof($serendipity['POST']['delete']) != 0 && serendipity_checkFormToken()) {
                         foreach($serendipity['POST']['delete'] AS $d => $i) {
                             $kdata = $serendipity['POST']['karmalog'.$i];
@@ -1697,22 +1697,22 @@ if ($h == 15) {
         <div class='clearfix'>
             <div class='form_field'>
                 <label for='serendipity_filter_useragent'>User Agent</label>
-                <input id='serendipity_filter_useragent' name='serendipity[filter][user_agent]' type='text' value='".serendipity_specialchars($serendipity['GET']['filter']['user_agent'])."'>
+                <input id='serendipity_filter_useragent' name='serendipity[filter][user_agent]' type='text' value='".serendipity_specialchars(($serendipity['GET']['filter']['user_agent'] ?? null))."'>
             </div>
 
             <div class='form_field'>
-                <label for='serendipity_filter_ip'>".IP."</label>
-                <input id='serendipity_filter_ip' name='serendipity[filter][ip]' type='text' value='".serendipity_specialchars($serendipity['GET']['filter']['ip'])."'>
+                <label for='serendipity_filter_ip'>IP</label>
+                <input id='serendipity_filter_ip' name='serendipity[filter][ip]' type='text' value='".serendipity_specialchars(($serendipity['GET']['filter']['ip'] ?? null))."'>
             </div>
 
             <div class='form_field'>
                 <label for='serendipity_filter_entryid'>Entry ID</label>
-                <input id='serendipity_filter_entryid' name='serendipity[filter][entryid]' type='text' value='".serendipity_specialchars($serendipity['GET']['filter']['entryid'])."'>
+                <input id='serendipity_filter_entryid' name='serendipity[filter][entryid]' type='text' value='".serendipity_specialchars(($serendipity['GET']['filter']['entryid'] ?? null))."'>
             </div>
 
             <div class='form_field'>
                 <label for='serendipity_filter_title'>Entry title</label>
-                <input id='serendipity_filter_title' name='serendipity[filter][title]' type='text' value='".serendipity_specialchars($serendipity['GET']['filter']['title'])."'>
+                <input id='serendipity_filter_title' name='serendipity[filter][title]' type='text' value='".serendipity_specialchars(($serendipity['GET']['filter']['title'] ?? null))."'>
             </div>
         </div>
 
@@ -1746,7 +1746,7 @@ if ($h == 15) {
                     // Sorting (controls go after filtering controls in form above)
                     $sort_order = array(
                         'votetime' => DATE,
-                        'user_agent' => USER_AGENT,
+                        'user_agent' => 'USER_AGENT',
                         'title' => TITLE,
                         'entryid' => 'ID');
                     if (empty($serendipity['GET']['sort']['ordermode']) || $serendipity['GET']['sort']['ordermode'] != 'ASC') {
@@ -1795,11 +1795,11 @@ if ($h == 15) {
 
                     // Paging (partly ripped from include/admin/comments.inc.php)
                     $commentsPerPage = (int)(!empty($serendipity['GET']['filter']['perpage']) ? $serendipity['GET']['filter']['perpage'] : 25);
-                    $sql = serendipity_db_query("SELECT COUNT(*) AS total FROM {$serendipity['dbPrefix']}karmalog l WHERE 1 = 1 " . $and, true);
+                    $sql = serendipity_db_query("SELECT COUNT(*) AS total FROM {$serendipity['dbPrefix']}karmalog l WHERE 1 = 1 " . ($and ?? ''), true);
                     if (is_string($sql)) print("<span class='msg_error'><span class='icon-attention-circled'></span> ".$sql."</span>\n");
                     $totalVotes = (is_array($sql) &&  is_int($sql['total'])) ? $sql['total'] : 0;
                     $pages = ($commentsPerPage == COMMENTS_FILTER_ALL ? 1 : ceil($totalVotes/(int)$commentsPerPage));
-                    $page = (int)$serendipity['GET']['page'];
+                    $page = (int)($serendipity['GET']['page'] ?? null);
                     if ($page == 0 || ($page > $pages)) {
                         $page = 1;
                     }
@@ -1818,12 +1818,12 @@ if ($h == 15) {
                     }
 
                     // Variables for display
-                    if ($linkPrevious) {
+                    if (!empty($linkPrevious)) {
                         $linkPrevious = '<a class="button_link" href="' . $linkPrevious . '" title="'. PREVIOUS .'"><span class="icon-left-dir" aria-hidden="true"></span><span class="visuallyhidden"> '. PREVIOUS .'</span></a>';
                     } else {
                         $linkPrevious = '<span class="visuallyhidden">'. NO_ENTRIES_TO_PRINT .'</span>';
                     }
-                    if ($linkNext) {
+                    if (!empty($linkNext)) {
                         $linkNext = '<a class="button_link" href="' . $linkNext . '" title="'. NEXT .'"><span class="visuallyhidden">'. NEXT .' </span><span class="icon-right-dir" aria-hidden="true"></span></a>';
                     } else {
                         $linkNext = '<span class="visuallyhidden">'. NO_ENTRIES_TO_PRINT .'</span>';
@@ -1834,7 +1834,7 @@ if ($h == 15) {
                     // [entryid, points, ip, user_agent, votetime]
                     $sql = serendipity_db_query("SELECT l.entryid AS entryid, l.points AS points, l.ip AS ip, l.user_agent AS user_agent, l.votetime AS votetime, e.title AS title FROM {$serendipity['dbPrefix']}karmalog l
                         LEFT JOIN {$serendipity['dbPrefix']}entries e ON (e.id = l.entryid)
-                        WHERE 1 = 1 " . $and . "
+                        WHERE 1 = 1 " . ($and ?? '') . "
                         ORDER BY $orderby $limit");
 
                     // Start the form for display and deleting
