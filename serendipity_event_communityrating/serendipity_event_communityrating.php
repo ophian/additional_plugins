@@ -19,7 +19,7 @@ class serendipity_event_communityrating extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_COMMUNITYRATING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Lewe Zipfel, Ian Styx');
-        $propbag->add('version',       '1.16');
+        $propbag->add('version',       '1.17');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -172,7 +172,7 @@ class serendipity_event_communityrating extends serendipity_event
                     // PH: This is done after Garvins suggestion to patchup $eventData in case an entry
                     //     is in the process of being created. This must be done for the extended properties
                     //     to be applied in the preview.
-                    if (is_array($serendipity['POST']['properties']) && count($serendipity['POST']['properties']) > 0){
+                    if (isset($serendipity['POST']['properties']) && is_array($serendipity['POST']['properties']) && count($serendipity['POST']['properties']) > 0){
                         $parr = array();
                         $supported_properties =& $this->getSupportedProperties();
                         foreach($supported_properties AS $prop_key => $prop_val) {

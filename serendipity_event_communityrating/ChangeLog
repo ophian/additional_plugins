@@ -1,3 +1,7 @@
+1.17:
+-----
+ * Fix an uninitialized variable check for PHP 8
+
 1.16:
 -----
  * Fix a parse error
