@@ -1,3 +1,10 @@
+0.17:
+------
+ * Fix doublet CREATE TABLE by IF NOT EXISTS
+ * Fix 0.16 in entryform
+ * Fix language constants for workflow
+ * Cleanup
+
 0.16:
 ------
  * Fix some initialization checks for PHP 8

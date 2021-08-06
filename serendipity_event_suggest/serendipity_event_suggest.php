@@ -26,7 +26,7 @@ class serendipity_event_suggest extends serendipity_event
                                         ));
         $propbag->add('configuration',  array('permalink', 'pagetitle', 'authorid', 'email'));
         $propbag->add('author',         'Garvin Hicking, Ian Styx');
-        $propbag->add('version',        '0.16');
+        $propbag->add('version',        '0.17');
         $propbag->add('groups',         array('FRONTEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -57,7 +57,7 @@ class serendipity_event_suggest extends serendipity_event
     {
         global $serendipity;
 
-        serendipity_db_schema_import("CREATE TABLE {$serendipity['dbPrefix']}suggestmails (
+        serendipity_db_schema_import("CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}suggestmails (
             id {AUTOINCREMENT} {PRIMARY},
             email varchar(255) NOT NULL,
             entry_id int(10) {UNSIGNED} not null default '0',
@@ -252,10 +252,10 @@ class serendipity_event_suggest extends serendipity_event
                 $res = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}suggestmails WHERE validation = '" . serendipity_db_escape_string($_REQUEST['suggestkey']) . "'", true, 'assoc');
                 if (!is_array($res) || $res['validation'] != $_REQUEST['suggestkey']) {
                     $validation_error      = true;
-                    $validation_error_code = (function_exists('serendipity_specialchars') ? serendipity_specialchars($_REQUEST['suggestkey']) : htmlspecialchars($_REQUEST['suggestkey'], ENT_COMPAT, LANG_CHARSET));
+                    $validation_error_code = serendipity_specialchars($_REQUEST['suggestkey']);
                 } else {
                     $validation_success = true;
-                    $validation_error_code = (function_exists('serendipity_specialchars') ? serendipity_specialchars($_REQUEST['suggestkey']) : htmlspecialchars($_REQUEST['suggestkey'], ENT_COMPAT, LANG_CHARSET));
+                    $validation_error_code = serendipity_specialchars($_REQUEST['suggestkey']);
                     serendipity_db_query("UPDATE {$serendipity['dbPrefix']}suggestmails SET validation = '' WHERE id = " . (int)$res['id']);
 
                     $entry = array(
@@ -400,15 +400,15 @@ class serendipity_event_suggest extends serendipity_event
                     break;
 
                 case 'backend_display':
-                    if (!$eventData['id']) {
+                    if (empty($eventData['id'])) {
                         return false;
                     }
                     $res = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}suggestmails WHERE entry_id = " . (int)$eventData['id'], true, 'assoc');
                     if (!is_array($res)) {
                         $res = array();
 ?>
-                    <fieldset style="margin: 5px">
-                        <legend><?php echo PLUGIN_SUGGEST_TITLE; ?></legend>
+                    <fieldset id="edit_entry_suggest" class="entryproperties_suggest">
+                        <span class="wrap_legend"><legend><?php echo PLUGIN_SUGGEST_TITLE; ?></legend></span>
                         <div><?php echo PLUGIN_SUGGEST_INTERNAL; ?></div>
                     </fieldset>
 
@@ -416,10 +416,10 @@ class serendipity_event_suggest extends serendipity_event
                     } else {
                         //  CUSTOMIZE
 ?>
-                    <fieldset style="margin: 5px">
-                        <legend><?php echo PLUGIN_SUGGEST_TITLE; ?></legend>
+                    <fieldset id="edit_entry_suggest" class="entryproperties_suggest">
+                        <span class="wrap_legend"><legend><?php echo PLUGIN_SUGGEST_TITLE; ?></legend></span>
                         <div>
-                            <?php printf(PLUGIN_SUGGEST_META, (function_exists('serendipity_specialchars') ? serendipity_specialchars($res['name']) : htmlspecialchars($res['name'], ENT_COMPAT, LANG_CHARSET)), strftime('%d.%m.%Y %H:%M', $res['submitted']), (function_exists('serendipity_specialchars') ? serendipity_specialchars($res['ip']) : htmlspecialchars($res['ip'], ENT_COMPAT, LANG_CHARSET)), (function_exists('serendipity_specialchars') ? serendipity_specialchars($res['email']) : htmlspecialchars($res['email'], ENT_COMPAT, LANG_CHARSET))); ?>
+                            <?php printf(PLUGIN_SUGGEST_META, serendipity_specialchars($res['name']), strftime('%d.%m.%Y %H:%M', $res['submitted']), serendipity_specialchars($res['ip']), serendipity_specialchars($res['email'])); ?>
                         </div>
                     </fieldset>
 <?php

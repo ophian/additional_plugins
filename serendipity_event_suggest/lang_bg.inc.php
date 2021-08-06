@@ -25,5 +25,5 @@
 @define('PLUGIN_SUGGEST_PUBLISHED', 'Вашата статия беше публикувана');
 @define('PLUGIN_SUGGEST_INFORM', 'Авторът беше информиран за публикуването.');
 @define('PLUGIN_SUGGEST_INTERNAL', 'Тази статия беше създадена в къщи.');
-@define('PLUGIN_SUGGEST_INTERNAL', 'Статия, създадена от %s на %s от IP %s. e-mail: %s');
+@define('PLUGIN_SUGGEST_META', 'Статия, създадена от %s на %s от IP %s. e-mail: %s');
 

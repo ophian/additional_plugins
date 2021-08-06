@@ -31,6 +31,5 @@
 @define('PLUGIN_SUGGEST_PUBLISHED', 'Your article has been published');
 @define('PLUGIN_SUGGEST_INFORM', 'The author was informed of the publishing.');
 @define('PLUGIN_SUGGEST_INTERNAL', 'This article was created in house.');
-@define('PLUGIN_SUGGEST_INTERNAL', 'Article created from %s at %s from IP %s. Email: %s');
 @define('PLUGIN_SUGGEST_META', 'This entry ("%s") was submitted on %s via IP %s by %s.');
 

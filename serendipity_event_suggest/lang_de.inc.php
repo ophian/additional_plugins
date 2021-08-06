@@ -29,9 +29,8 @@
 
 @define('PLUGIN_SUGGEST_PUBLISHED', 'Ihr Artikel wurde nun veröffentlicht!');
 @define('PLUGIN_SUGGEST_INFORM', 'Der Autor wurde von der Veröffentlichung in Kenntnis gesetzt.');
-@define('PLUGIN_SUGGEST_INTERNAL', 'Artikel wurde von %s am %s von der IP %s eingereicht. E-Mail: %s');
-@define('PLUGIN_SUGGEST_INTERNAL', 'Artikel wurde von %s am %s von der IP %s eingereicht. E-Mail: %s');
+@define('PLUGIN_SUGGEST_INTERNAL', 'Dieser Artikel wurde hierselbst im Blog erstellt.');
 
 // Next lines were translated on 2009/08/20
-@define('PLUGIN_SUGGEST_META',           'Dieser Eintrag ("%s") wurde am %s über IP %s von %s übermittelt.');
+@define('PLUGIN_SUGGEST_META', 'Dieser Eintrag ("%s") wurde am %s über IP %s von %s übermittelt.');
 
