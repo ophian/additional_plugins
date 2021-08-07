@@ -581,7 +581,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_karma&lt;br /&gt;Karma&lt;/b&gt;&lt;br /&gt;Permite aos visitantes classificar a qualidade das suas entradas&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Fri, 06 Aug 2021 18:10:11 +0200</pubDate>
+<pubDate>Fri, 06 Aug 2021 18:18:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_karma</guid>
 </item>
 <item>
@@ -1264,8 +1264,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_weblogping</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Anunciar as entradas&lt;/b&gt;&lt;br /&gt;Enviar uma actualização de novas entradas aos serviços de indexação&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 13 Feb 2021 18:17:32 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Anunciar as entradas&lt;/b&gt;&lt;br /&gt;Enviar uma actualização de novas entradas aos serviços de indexação&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 06 Aug 2021 19:30:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>
