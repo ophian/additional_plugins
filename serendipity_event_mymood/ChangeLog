@@ -1,3 +1,10 @@
+0.15:
+----
+ * Fix some entry form markup for 2.0 consistency
+ * Fix some startup uninitialized variable checks for PHP 8
+ * Message consistency
+ * SQL Preparation fixes for Styx PHP 8 debug sets and upcoming PHP 8.1 MYSQLI_REPORT_STRICT
+
 0.14:
 -----
  * Fixup an old S9y Series 1 message variable
