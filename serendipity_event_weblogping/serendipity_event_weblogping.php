@@ -18,11 +18,11 @@ class serendipity_event_weblogping extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WEBLOGPING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.19');
+        $propbag->add('version',       '1.20');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '5.6'
         ));
         $propbag->add('event_hooks',    array(
             'frontend_display'  => true,
@@ -118,7 +118,7 @@ class serendipity_event_weblogping extends serendipity_event
 
                 case 'backend_display':
 ?>
-                    <fieldset class="entryproperties">
+                    <fieldset id="edit_entry_weblogping" class="entryproperties_weblogping">
                         <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_WEBLOGPING_PING; ?></legend></span>
                         <div class="ping_services">
 <?php
