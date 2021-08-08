@@ -1,3 +1,7 @@
+0.18:
+------
+ * Fix 0.16 in entryform was missing
+
 0.17:
 ------
  * Fix doublet CREATE TABLE by IF NOT EXISTS

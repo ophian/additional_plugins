@@ -26,7 +26,7 @@ class serendipity_event_suggest extends serendipity_event
                                         ));
         $propbag->add('configuration',  array('permalink', 'pagetitle', 'authorid', 'email'));
         $propbag->add('author',         'Garvin Hicking, Ian Styx');
-        $propbag->add('version',        '0.17');
+        $propbag->add('version',        '0.18');
         $propbag->add('groups',         array('FRONTEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -400,12 +400,8 @@ class serendipity_event_suggest extends serendipity_event
                     break;
 
                 case 'backend_display':
-                    if (empty($eventData['id'])) {
-                        return false;
-                    }
-                    $res = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}suggestmails WHERE entry_id = " . (int)$eventData['id'], true, 'assoc');
-                    if (!is_array($res)) {
-                        $res = array();
+                    $res = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}suggestmails WHERE entry_id = " . (int)($eventData['id'] ?? null), true, 'assoc');
+                    if (isset($res) && !is_array($res)) {
 ?>
                     <fieldset id="edit_entry_suggest" class="entryproperties_suggest">
                         <span class="wrap_legend"><legend><?php echo PLUGIN_SUGGEST_TITLE; ?></legend></span>
