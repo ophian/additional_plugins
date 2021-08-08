@@ -16,7 +16,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.7.0');
+        $propbag->add('version',        '2.7.1');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -347,7 +347,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     function initB8() {
         global $serendipity;
 
-        if ($this->b8 === null) {
+        if (!isset($this->b8) || $this->b8 === null) {
             $this->setupDB();
 
             require_once(dirname(__FILE__) . '/b8/b8.php');

@@ -1,3 +1,7 @@
+2.7.1:
+------
+ * Better check b8 is initialized for startup with PHP 8
+
 2.7.0:
 ------ [Sync S9y 1.1.5]
  * Update b8, to prevent a debug error when commenting
