@@ -92,7 +92,7 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '0.41');
+        $propbag->add('version', '0.42');
         $propbag->add('requirements', array(
             'serendipity' => '3.0',
             'smarty'      => '3.1.0',
@@ -611,6 +611,10 @@ class serendipity_event_userprofiles extends serendipity_event
 
     .userprofiles_show dd {
         width: 60%;
+        min-height: 2.05rem;
+    }
+    [data-color-mode="dark"] .userprofiles_show, [data-color-mode="dark"] .userprofiles_show dt, [data-color-mode="dark"] .userprofiles_show dd {
+        border-color: var(--color-border-primary);
     }
 }
 
