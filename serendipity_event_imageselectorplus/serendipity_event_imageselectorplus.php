@@ -811,7 +811,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
         // check for existing image.quickblog thumb (see change in backend_image_addHotlink) else change to default thumbnail name
         if (!file_exists($outfile)) $outfile = $dir . $f . '.' . $serendipity['thumbSuffix'] . '.' . $suf;
 
-        if ($exiftype && function_exists('exif_read_data') !serendipity_db_bool($this->get_config('force_jhead', 'false'))) {
+        if (function_exists('exif_read_data') && $exiftype && !serendipity_db_bool($this->get_config('force_jhead', 'false'))) {
             $exif      = @exif_read_data($infile);
             $exif_mode = 'internal';
         } elseif ($exiftype) {
