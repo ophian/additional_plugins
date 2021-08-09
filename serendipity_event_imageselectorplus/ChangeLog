@@ -1,3 +1,7 @@
+2.3.1:
+-----
+ * Do not run isp image preparing methods on backend entry form 'frontend_display' preview
+
 2.3.0:
 -----
  * Improve loading core WYSIWYG Rich Text asset to avoid doublets with CKEPLUS plugin

@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.3.0');
+        $propbag->add('version',       '2.3.1');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0.0',
             'smarty'      => '3.1.0',
@@ -563,8 +563,8 @@ if (is_array($cats = serendipity_fetchCategories())) {
                     break;
 
                 case 'frontend_display':
-                    // auto resizing images based on width and/or height attributes in img tag
-                    if (serendipity_db_bool($this->get_config('autoresize', 'false'))) {
+                    // auto resizing images based on width and/or height attributes in img tag - DO NOT when is backend entryform preview!
+                    if (!$serendipity['POST']['preview'] && serendipity_db_bool($this->get_config('autoresize', 'false'))) {
                         if (!empty($eventData['body'])) {
                             $eventData['body'] = $this->substituteImages($eventData['body']);
                         }
