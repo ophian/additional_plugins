@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.3.1');
+        $propbag->add('version',       '2.3.2');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0.0',
             'smarty'      => '3.1.0',
@@ -805,15 +805,16 @@ if (is_array($cats = serendipity_fetchCategories())) {
         $infile  = $dir . $file;
 
         $s9yimgID = (int)$this->getImageIdByUrl($infile);
+        $exiftype = (in_array($suf, ['jpg','jpeg']) && file_exists($infile) && exif_imagetype($infile) === IMAGETYPE_JPEG) ? true : false;
 
         $outfile = $dir . $f . '.quickblog.' . $suf;
         // check for existing image.quickblog thumb (see change in backend_image_addHotlink) else change to default thumbnail name
         if (!file_exists($outfile)) $outfile = $dir . $f . '.' . $serendipity['thumbSuffix'] . '.' . $suf;
 
-        if (function_exists('exif_read_data') && file_exists($infile) && !serendipity_db_bool($this->get_config('force_jhead', 'false'))) {
+        if ($exiftype && function_exists('exif_read_data') !serendipity_db_bool($this->get_config('force_jhead', 'false'))) {
             $exif      = @exif_read_data($infile);
             $exif_mode = 'internal';
-        } elseif (file_exists($infile)) {
+        } elseif ($exiftype) {
             $exif_mode = 'jhead';
             $exif_raw  = explode("\n", @`jhead $infile`);
             $exif      = array();
