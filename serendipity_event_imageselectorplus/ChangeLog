@@ -1,3 +1,7 @@
+2.3.4:
+-----
+ * Add exif comment data variable initialization check
+
 2.3.3:
 -----
  * Add frontend access check to 2.3.1 condition
