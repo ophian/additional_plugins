@@ -1,6 +1,6 @@
 2.23:
 ------
- * Fix SQL Index generation for wrong PREFIX usage. For exiting tables please manually add
+ * Fix SQL Index generation for wrong PREFIX usage. For existing tables please manually add
     ALTER TABLE `styx_polls_options` ADD INDEX pollidx (pollid);
    or delete the polls and polls_options tables and the plugin in your Styx plugin and after all install from scratch.
 
