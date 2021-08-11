@@ -642,7 +642,7 @@ class serendipity_event_userprofiles extends serendipity_event
 
                         $entry = array('body' => ($profile['hobbies'] ?? null));
                         serendipity_plugin_api::hook_event('frontend_display', $entry);
-                        $_profile = ['show_email', 'birthday', 'url', 'city', 'country', 'occupation', 'yahoo', 'aim', 'jabber', 'icq', 'msn', 'skype'];
+                        $_profile = ['show_email', 'birthday', 'url', 'city', 'street', 'country', 'occupation', 'yahoo', 'aim', 'jabber', 'icq', 'msn', 'skype'];
                         foreach($_profile AS $prop) {
                             if (!isset($profile[$prop])) $profile[$prop] = null;
                         }
