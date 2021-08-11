@@ -48,5 +48,5 @@
 @define('PLUGIN_SIDEBARLOGO_DELIMITERSTYLE', 'Trenner-Stil');
 @define('PLUGIN_SIDEBARLOGO_DELIMITERSTYLE_DESC', 'Optionaler CSS-Stil für den Trenner. Der Trenner ist ein Element zur Textflusskontrolle nach floats, zB. nach einem "float:left;" wäre dann hier einzutragen "clear:left;". Es zwingt den Rest der Box bzw. der Seite, unter dem Bild weiterzugehen. Normalerweise muss dieser Stil nicht angepasst werden. Das ist nur nötig, wenn entsprechende Änderung am Bild-Stil vorgenommen wurden.');
 @define('PLUGIN_SIDEBARLOGO_SEQUENCE', 'Sequenz');
-@define('PLUGIN_SIDEBARLOGO_SEQUENCE_DESC', 'Lege die Sequenz der Elemente von SideBar Logo fest und aktiviere bzw. deaktiviere sie (Standard ist: Logo, Beschreibung, Trenner).');
+@define('PLUGIN_SIDEBARLOGO_SEQUENCE_DESC', 'Lege die Sequenz der Elemente von SideBar Logo fest und aktiviere bzw. deaktiviere sie (Standard ist: Logo, Beschreibung).');
 

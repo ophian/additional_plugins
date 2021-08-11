@@ -48,5 +48,5 @@
 @define('PLUGIN_SIDEBARLOGO_DELIMITERSTYLE', 'Delimiter Styling');
 @define('PLUGIN_SIDEBARLOGO_DELIMITERSTYLE_DESC', 'Optional styling for the delimiter. The delimiter is a text flow control element, ie. after having used "float:left;" you would need "clear:left;" here. It forces the rest of the box or the page to continue below the logo. Normally you do not need to change or add this style. Only do if you changed your image style like described.');
 @define('PLUGIN_SIDEBARLOGO_SEQUENCE', 'Sequence');
-@define('PLUGIN_SIDEBARLOGO_SEQUENCE_DESC', 'Define the sequence of your SideBar Logo elements and enable or disable them (Default is logo, description, delimiter).');
+@define('PLUGIN_SIDEBARLOGO_SEQUENCE_DESC', 'Define the sequence of your SideBar Logo elements and enable or disable them (Default is logo, description).');
 
