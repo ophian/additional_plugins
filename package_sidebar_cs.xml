@@ -3084,18 +3084,19 @@
 <summary>SideBar Logo</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Zobrazuje panel/blok, který obsahuje Vaše logo, jméno stránky a další informační údaje.</description>
-<maintainers><maintainer><name>Adam Krause</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Adam Krause &amp; Oliver Gerlach</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.6</version>
+  <version>0.7</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2021-04-07</date>
+  <date>2021-08-11</date>
   <filelist>
     <dir name="serendipity_plugin_sidebarlogo">
       <file>ChangeLog</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_plugin_sidebarlogo.php</file>
       <dir name="UTF-8">
@@ -3109,6 +3110,7 @@
     <file>serendipity_plugin_sidebarlogo/ChangeLog</file>
     <file>serendipity_plugin_sidebarlogo/lang_cs.inc.php</file>
     <file>serendipity_plugin_sidebarlogo/lang_cz.inc.php</file>
+    <file>serendipity_plugin_sidebarlogo/lang_de.inc.php</file>
     <file>serendipity_plugin_sidebarlogo/lang_en.inc.php</file>
     <file>serendipity_plugin_sidebarlogo/serendipity_plugin_sidebarlogo.php</file>
     <file>serendipity_plugin_sidebarlogo/UTF-8/lang_cs.inc.php</file>
