@@ -7,7 +7,6 @@
 
 @define('PLUGIN_SIDEBARLOGO_NAME',		'SideBar Logo');
 @define('PLUGIN_SIDEBARLOGO_DESC',		'Zobrazuje panel/blok, který obsahuje Vaše logo, jméno stránky a další informační údaje.');
-@define('PLUGIN_SIDEBARLOGO_AUTH',		'Adam Krause');
 @define('PLUGIN_SIDEBARLOGO_TITLE',		'Nadpis bloku');
 @define('PLUGIN_SIDEBARLOGO_TITLE_DESC',		'Text, který se zobrazuje v záhlaví informačního bloku');
 @define('PLUGIN_SIDEBARLOGO_SITENAME',		'Název');
@@ -25,8 +24,7 @@
 @define('PLUGIN_SIDEBARLOGO_CONTACT',		'Kontakt');
 @define('PLUGIN_SIDEBARLOGO_CONTACT_DESC',		'Emailová adresa nebo nebo mailto odkaz (např. "Kontaktujte mne <a href=mailto:reditel@skodaauto.cz>Franta</a>")');
 @define('PLUGIN_SIDEBARLOGO_COPYRIGHT',		'Copyright');
-@define('PLUGIN_SIDEBARLOGO_COPYRIGHT_DESC',		'Drobný text použitý pro informace o vlastnických právech (symbol pro copyright vložíte pomocí: "&copy;")'
-);
+@define('PLUGIN_SIDEBARLOGO_COPYRIGHT_DESC',		'Drobný text použitý pro informace o vlastnických právech (symbol pro copyright vložíte pomocí: "&copy;")');
 @define('PLUGIN_SIDEBARLOGO_STYLE',		'Styl obsahu');
 @define('PLUGIN_SIDEBARLOGO_STYLE_DESC',		'Napište styl obsahuj v bloku s informacemi (pro nahrání výchozího nastavení vymažte a 2x uložte nastavení)');
 @define('PLUGIN_SIDEBARLOGO_SEQUENCE',		'Pořadí');

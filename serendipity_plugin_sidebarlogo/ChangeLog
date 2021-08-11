@@ -1,3 +1,13 @@
+0.7:
+-----
+
+ * Add forgotten delimiter option
+ * Changed delimiter 'default' to '' (empty)
+ * Re-ordered 'default' sequence delimiter changes
+ * Fixed language constants for wrong descriptions, typos, etc.
+ * Added missing ANSI [de]
+ * Fixed sidebar output for empty options
+
 0.6:
 -----
 

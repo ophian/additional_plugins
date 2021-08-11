@@ -18,8 +18,8 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
             $propbag->add('name',          PLUGIN_SIDEBARLOGO_NAME);
             $propbag->add('description',   PLUGIN_SIDEBARLOGO_DESC);
             $propbag->add('stackable',     true);
-            $propbag->add('author',        PLUGIN_SIDEBARLOGO_AUTH);
-            $propbag->add('version',       '0.6');
+            $propbag->add('author',        'Adam Krause & Oliver Gerlach');
+            $propbag->add('version',       '0.7');
             $propbag->add('requirements',  array('serendipity' => '3.0',
                                                  'smarty'      => '3.1',
                                                  'php'         => '7.0'
@@ -41,6 +41,7 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
                                                  'contactstyle',
                                                  'copyright',
                                                  'copyrightstyle',
+                                                 'delimiterstyle',
                                                  'sequence',
                                                  ));
             // select the appropriate groups in spartacus that match this plugin
@@ -61,6 +62,7 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
                         'sitetagstyle',
                         'contactstyle',
                         'copyrightstyle',
+                        'delimiterstyle'
                     )
             ));
     }
@@ -185,7 +187,7 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_SIDEBARLOGO_DELIMITERSTYLE);
                 $propbag->add('description', PLUGIN_SIDEBARLOGO_DELIMITERSTYLE_DESC);
-                $propbag->add('default',     'clear:left;');
+                $propbag->add('default',     '');
                 break;
 
             case 'sequence':
@@ -194,15 +196,16 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
                 $propbag->add('name',        PLUGIN_SIDEBARLOGO_SEQUENCE);
                 $propbag->add('description', PLUGIN_SIDEBARLOGO_SEQUENCE_DESC);
                 $propbag->add('checkable', true);
-                $propbag->add('values',      array('sitename'    => array('display' => PLUGIN_SIDEBARLOGO_SITENAME),
+                $propbag->add('values',      array(
+                                                   'delimiter'   => array('display' => PLUGIN_SIDEBARLOGO_DELIMITER),
+                                                   'sitename'    => array('display' => PLUGIN_SIDEBARLOGO_SITENAME),
                                                    'sitetag'     => array('display' => PLUGIN_SIDEBARLOGO_SITETAG),
                                                    'image'       => array('display' => PLUGIN_SIDEBARLOGO_IMAGE),
                                                    'description' => array('display' => PLUGIN_SIDEBARLOGO_DESCRIPTION),
-                                                   'delimiter'   => array('display' => PLUGIN_SIDEBARLOGO_DELIMITER),
                                                    'contact'     => array('display' => PLUGIN_SIDEBARLOGO_CONTACT),
                                                    'copyright'   => array('display' => PLUGIN_SIDEBARLOGO_COPYRIGHT)
                                                    ));
-                $propbag->add('default',     'image,description,delimiter');
+                $propbag->add('default',     'image,description');
                 break;
 
             default:
@@ -231,7 +234,7 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
         $contactstyle       = $this->get_config('contactstyle');
         $copyright          = $this->get_config('copyright');
         $copyrightstyle     = $this->get_config('copyrightstyle');
-        $copyrightstyle     = $this->get_config('delimiterstyle');
+        $delimiterstyle     = $this->get_config('delimiterstyle');
         $sequence           = $this->get_config('sequence');
 
         // prepare for output
@@ -259,6 +262,7 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
 
         $sbl_bname  = basename($image); // to get base file name w/ ext
         $sbl_vpath  = str_replace($sbl_bname, '', $image); // get file path
+        #$sbl_vbext  = pathinfo($image, PATHINFO_EXTENSION); // get extension
         $sbl_fname  = pathinfo($image, PATHINFO_FILENAME); // get file name w/o extension
         $sbl_rpath  = $sbl_vpath . '.v/' . $sbl_fname . '.webp'; // the relative document root image filepath
         $image_webp = file_exists(str_replace($serendipity['serendipityHTTPPath'], '', $serendipity['serendipityPath']) . $sbl_rpath) ? $sbl_rpath : null; // file exist needs full path to check
@@ -267,46 +271,75 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
         foreach( $sequence AS $val ) {
             switch( $val ) {
                 case 'image':
-                    if ($image != "")
+                    if (!empty($image)) {
                         echo '<picture><source class="sidebarlogo_img" type="image/webp" srcset="'.$image_webp.'" alt="'.$imagetext.'"/><img '.$iwidth.' '.$iheight.' src="'.$image.'" alt="'.$imagetext.'" '.$imagestyle.'/></picture>';
+                    }
                     break;
 
                 case 'description':
-                    if ( $descriptionstyle != "" )
+                    if (!empty($descriptionstyle)) {
                         echo "<div ".$descriptionstyle.">\n";
-
-                    echo $description."\n";
-
-                    if ( $descriptionstyle != "" )
+                    }
+                    if (!empty($description)) {
+                        echo $description."\n";
+                    }
+                    if (!empty($descriptionstyle)) {
                         echo "</div>\n";
+                    }
                     break;
 
                 case 'delimiter':
-                    echo "<div ".$delimiterstyle."></div>";
+                    if (!empty($delimiterstyle)) {
+                        echo "<div ".$delimiterstyle."></div>";
+                    }
                     break;
 
                 case 'sitename':
-                    echo "<div ".$sitenamestyle.">\n";
-                    echo $sitename."\n";
-                    echo "</div>\n";
+                    if (!empty($sitenamestyle)) {
+                        echo "<div ".$sitenamestyle.">\n";
+                    }
+                    if (!empty($sitename)) {
+                        echo $sitename."\n";
+                    }
+                    if (!empty($sitenamestyle)) {
+                        echo "</div>\n";
+                    }
                     break;
 
                 case 'sitetag':
-                    echo "<div ".$sitetagstyle.">\n";
-                    echo $sitetag."\n";
-                    echo "</div>\n";
+                    if (!empty($sitetagstyle)) {
+                        echo "<div ".$sitetagstyle.">\n";
+                    }
+                    if (!empty($sitetag)) {
+                        echo $sitetag."\n";
+                    }
+                    if (!empty($sitetagstyle)) {
+                        echo "</div>\n";
+                    }
                     break;
 
                 case 'contact':
-                    echo "<div ".$contactstyle.">\n";
-                    echo $contact."\n";
-                    echo "</div>\n";
+                    if (!empty($contactstyle)) {
+                        echo "<div ".$contactstyle.">\n";
+                    }
+                    if (!empty($contact)) {
+                        echo $contact."\n";
+                    }
+                    if (!empty($contactstyle)) {
+                        echo "</div>\n";
+                    }
                     break;
 
                 case 'copyright':
-                    echo "<div ".$copyrightstyle.">\n";
-                    echo $copyright."\n";
-                    echo "</div>\n";
+                    if (!empty($copyrightstyle)) {
+                        echo "<div ".$copyrightstyle.">\n";
+                    }
+                    if (!empty($copyright)) {
+                        echo $copyright."\n";
+                    }
+                    if (!empty($copyrightstyle)) {
+                        echo "</div>\n";
+                    }
                     break;
             }
         }
