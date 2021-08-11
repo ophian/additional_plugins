@@ -640,9 +640,12 @@ class serendipity_event_userprofiles extends serendipity_event
                         $properties = array();
                         $properties = array_merge($this->properties, $this->option_properties);
 
-                        $entry = array('body' => $profile['hobbies']);
+                        $entry = array('body' => ($profile['hobbies'] ?? null));
                         serendipity_plugin_api::hook_event('frontend_display', $entry);
-                        $profile['hobbies'] = $entry['body'];
+                        $_profile = ['show_email', 'birthday', 'url', 'city', 'country', 'occupation', 'yahoo', 'aim', 'jabber', 'icq', 'msn', 'skype'];
+                        foreach($_profile AS $prop) {
+                            if (!isset($profile[$prop])) $profile[$prop] = null;
+                        }
 
                         $serendipity['smarty']->assign('userProfile', $profile);
                         $serendipity['smarty']->assign('userProfileProperties', $properties);
