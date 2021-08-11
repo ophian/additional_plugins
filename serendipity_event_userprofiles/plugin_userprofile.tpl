@@ -1,3 +1,4 @@
+{if NOT empty($userProfile.realname)}
 <div class="serendipityAuthorProfile">
 <strong>{$userProfileTitle} - {$userProfile.realname}</strong>
 <br />
@@ -57,3 +58,4 @@
 {/if}
 </dl>
 </div>
+{/if}
