@@ -634,7 +634,7 @@ class serendipity_event_userprofiles extends serendipity_event
                         $_getLocalProperties = $this->getLocalProperties();
                         $local_properties =& $_getLocalProperties;
                         foreach($local_properties AS $property => $info) {
-                            $profile[$property] = $GLOBALS['uInfo'][0][$property];
+                            $profile[$property] = $GLOBALS['uInfo'][0][$property] ?? null;
                         }
 
                         $properties = array();
