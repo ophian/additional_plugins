@@ -1,3 +1,11 @@
+0.43:
+-----
+
+ * Fix "Only variables should be assigned by reference"
+ * Fix uninitialized local properties by GLOBALS
+ * Fix uninitialized db properties for frontend usage
+ * Skip userprofile template props list when realname is empty
+
 0.42:
 -----
  * Improve some backend Styx 3.5 DARK MODE colors
