@@ -263,7 +263,7 @@ class serendipity_event_template_editor extends serendipity_event
             $path = $template_path . $cur_template . '/';
         }
         if ($form) {
-            echo '<form id="templateEditorUpload" class="templateEditorForm" enctype="multipart/form-data" action="' . $serendipity ['baseURL'] . 'index.php?/plugin/template_editor_upload" method="post">
+            echo '<form id="templateEditorUpload" class="templateEditorForm" enctype="multipart/form-data" action="' . $serendipity['baseURL'] . 'index.php?/plugin/template_editor_upload" method="post">
                 <input type="hidden" name="path" value="' . $path . '">
                 <div class="form_field">
                     <label for="userfile" class="block_level">' . PLUGIN_EVENT_TEMPLATE_EDITOR_UPLOAD . '</label>
@@ -292,7 +292,7 @@ class serendipity_event_template_editor extends serendipity_event
         if (!$path) {
             $path = $template_path . $cur_template . '/';
         }
-        echo '<form id="templateEditorCreate" class="templateEditorForm" action="'.$serendipity ['baseURL'] . 'index.php?/plugin/template_editor_create" method="post">
+        echo '<form id="templateEditorCreate" class="templateEditorForm" action="'.$serendipity['baseURL'] . 'index.php?/plugin/template_editor_create" method="post">
                   <input type="hidden" name="path" value="' . $path . '">
                   <div class="form_field">
                       <label for="create_file" class="block_level">' . CREATE . '</label>
@@ -323,7 +323,7 @@ class serendipity_event_template_editor extends serendipity_event
         $heading = $this->linkify("?&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=template_editor&serendipity[template_editor_path]=", $path, $serendipity['template']);
 
         echo '<h2>' . $heading . '</h2>
-        <form action="'.$serendipity ['baseURL'] . 'index.php?/plugin/template_editor_save" method="post">
+        <form action="'.$serendipity['baseURL'] . 'index.php?/plugin/template_editor_save" method="post">
             <input type="hidden" name="path" value="' . $path . '">
             <textarea id="template_editor" name="content" rows="30">'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($content) : htmlspecialchars($content, ENT_COMPAT, LANG_CHARSET)).'</textarea>
             <div class="form_buttons">
@@ -556,7 +556,7 @@ class serendipity_event_template_editor extends serendipity_event
     {
         global $serendipity;
 
-        $this->debug_fp = @fopen ( $serendipity ['serendipityPath'] . 'templates_c/template_editor.log', 'a' );
+        $this->debug_fp = @fopen ( $serendipity['serendipityPath'] . 'templates_c/template_editor.log', 'a' );
         if (! $this->debug_fp) {
             return false;
         }
