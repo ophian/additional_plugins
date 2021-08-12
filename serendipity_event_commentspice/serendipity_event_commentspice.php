@@ -28,7 +28,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.3'
         ));
-        $propbag->add('version',        '2.01');
+        $propbag->add('version',        '2.02');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -551,7 +551,9 @@ class serendipity_event_commentspice extends serendipity_event
                 $promo_hash = trim($parts[0]);
                 $promo_name = trim($parts[1]);
                 $promo_url = trim($parts[2]);
-                if (!$this->hashString($promo_name.$promo_url) == $promo_hash) return false;
+                if (!$this->hashString($promo_name.$promo_url) == $promo_hash) {
+                    return false;
+                }
             }
             $result = DbSpice::saveCommentSpice($addData['comment_cid'], $twittername, $promo_name, $promo_url, $boourl);
             $this->rememberInputs();
@@ -570,8 +572,8 @@ class serendipity_event_commentspice extends serendipity_event
         $result = array();
         $result['allow_twitter']     = $rule_twitter!='disabled';
         $result['allow_announce']    = $rule_announce!='disabled';
-        $result['nofollow_twitter']  = $rule_twitter_nofollow=='enabled';
-        $result['nofollow_announce'] = $rule_announce_nofollow=='enabled';
+        $result['nofollow_twitter']  = $rule_twitter_nofollow == 'enabled';
+        $result['nofollow_announce'] = $rule_announce_nofollow == 'enabled';
 
         $result['allow_boo'] = true;
 
@@ -581,9 +583,13 @@ class serendipity_event_commentspice extends serendipity_event
             if ($checkCommentLength) {
                 $rule_commentlength = (int)$this->get_config('rule_extras_commentlength',0);
                 $commentlen = empty($comment) ? 0 : strlen($comment);
-                $comment_enough = $commentlen>= $rule_commentlength;
-                if ('rules' == $rule_twitter) $result['allow_twitter'] = $result['allow_twitter'] &&  $comment_enough;
-                if ('rules' == $rule_announce) $result['allow_announce'] = $result['allow_announce'] &&  $comment_enough;
+                $comment_enough = $commentlen >= $rule_commentlength;
+                if ('rules' == $rule_twitter) {
+                    $result['allow_twitter'] = $result['allow_twitter'] && $comment_enough;
+                }
+                if ('rules' == $rule_announce) {
+                    $result['allow_announce'] = $result['allow_announce'] && $comment_enough;
+                }
             }
 
             // Check for comment count
@@ -591,8 +597,12 @@ class serendipity_event_commentspice extends serendipity_event
             if ($rule_commentcount>0) {
                 $commentcount = DbSpice::countComments($email);
                 $more_comments = (int)$commentcount >= $rule_commentcount;
-                if ('rules' == $rule_twitter) $result['allow_twitter'] = $result['allow_twitter'] &&  $more_comments;
-                if ('rules' == $rule_announce) $result['allow_announce'] = $result['allow_announce'] &&  $more_comments;
+                if ('rules' == $rule_twitter) {
+                    $result['allow_twitter'] = $result['allow_twitter'] && $more_comments;
+                }
+                if ('rules' == $rule_announce) {
+                    $result['allow_announce'] = $result['allow_announce'] && $more_comments;
+                }
             }
         }
 
@@ -601,10 +611,14 @@ class serendipity_event_commentspice extends serendipity_event
             if ($checkCommentLength) {
                 $rule_commentlength = (int)$this->get_config('rule_dofollow_commentlength',0);
                 $commentlen = empty($comment) ? 0 : strlen($comment);
-                $comment_enough = $commentlen>= $rule_commentlength;
+                $comment_enough = $commentlen >= $rule_commentlength;
                 $this->log("checkCommentLength. len:$commentlen, rulen:$rule_commentlength - enough:$comment_enough");
-                if ('rules' == $rule_twitter_nofollow) $result['nofollow_twitter'] = $result['nofollow_twitter'] ||  !$comment_enough;
-                if ('rules' == $rule_announce_nofollow) $result['nofollow_announce'] = $result['nofollow_announce'] || !$comment_enough;
+                if ('rules' == $rule_twitter_nofollow) {
+                    $result['nofollow_twitter'] = $result['nofollow_twitter'] || !$comment_enough;
+                }
+                if ('rules' == $rule_announce_nofollow) {
+                    $result['nofollow_announce'] = $result['nofollow_announce'] || !$comment_enough;
+                }
             }
 
             // Check for comment count
@@ -613,8 +627,12 @@ class serendipity_event_commentspice extends serendipity_event
                 $commentcount = ($commentcount == -1 ? DbSpice::countComments($email) :$commentcount);
                 $more_comments = (int)$commentcount >= $rule_commentcount;
                 $this->log("checkCommentCount. cnt:$commentcount, rucnt:$rule_commentcount - more:$more_comments");
-                if ('rules' == $rule_twitter_nofollow) $result['nofollow_twitter'] = $result['nofollow_twitter'] ||  !$more_comments;
-                if ('rules' == $rule_announce_nofollow) $result['nofollow_announce'] = $result['nofollow_announce'] ||  !$more_comments;
+                if ('rules' == $rule_twitter_nofollow) {
+                    $result['nofollow_twitter'] = $result['nofollow_twitter'] || !$more_comments;
+                }
+                if ('rules' == $rule_announce_nofollow) {
+                    $result['nofollow_announce'] = $result['nofollow_announce'] || !$more_comments;
+                }
             }
         }
         $this->log("checkRules($email,$comment,$checkCommentLength,$checknofollow): " . print_r($result,true));
@@ -627,7 +645,7 @@ class serendipity_event_commentspice extends serendipity_event
         // Remember twitter name value into cookie, if user ordered to, else clear cookie
         if (isset($serendipity['POST']['remember'])) {
             // Remember twitter name, remove leading @ if found
-            serendipity_rememberCommentDetails(array ('twitter' => ltrim(trim($serendipity['POST']['twitter']),'@')));
+            serendipity_rememberCommentDetails(array ('twitter' => ltrim(trim($serendipity['POST']['twitter']), '@')));
         }
         else {
             serendipity_forgetCommentDetails(array('twitter'));
@@ -650,7 +668,7 @@ class serendipity_event_commentspice extends serendipity_event
                 $promo_url = trim($parts[2]);
                 if ($this->hashString($promo_name.$promo_url) != $promo_hash) {
                     $eventData = array ('allow_comments' => false);
-                    $serendipity ['messagestack'] ['comments'] [] = PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_CORRUPTED;
+                    $serendipity['messagestack']['comments'][] = PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_CORRUPTED;
                     return false;
                 }
             }
@@ -673,7 +691,7 @@ class serendipity_event_commentspice extends serendipity_event
                 }
                 if (!$isBoo) {
                     $eventData = array ('allow_comments' => false);
-                    $serendipity ['messagestack'] ['comments'] [] = PLUGIN_EVENT_COMMENTSPICE_BOO_WRONG;
+                    $serendipity['messagestack']['comments'][] = PLUGIN_EVENT_COMMENTSPICE_BOO_WRONG;
                     return false;
                 }
                 if (serendipity_db_bool($this->get_config('moderate_boo', 'true'))) {
@@ -688,8 +706,6 @@ class serendipity_event_commentspice extends serendipity_event
 
     function readRss()
     {
-        global $serendipity;
-
         $comment_url = $_REQUEST['coment_url'];
         $this->log("readRss for $comment_url");
         $comment_email = $_REQUEST['coment_email'];
@@ -719,7 +735,7 @@ class serendipity_event_commentspice extends serendipity_event
             if (!empty($result) && $result['articles']) $this->cacheWriteRss($comment_url, $result);
         }
         $result['email'] = $comment_email;
-        if (empty($result) || !$result['articles'] || count($result['articles'])==0) {
+        if (empty($result) || !$result['articles'] || count($result['articles']) == 0) {
             echo json_encode($result);
             return;
         }
@@ -763,7 +779,9 @@ class serendipity_event_commentspice extends serendipity_event
 
         if (function_exists('serendipity_request_url')) {
             $data = serendipity_request_url($url);
-            if (empty($data)) return false;
+            if (empty($data)) {
+                return false;
+            }
         } else {
             require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
             $req = new HTTP_Request($url, array('allowRedirects' => true, 'maxRedirects' => 3));
@@ -809,7 +827,9 @@ class serendipity_event_commentspice extends serendipity_event
         $maxItems = $announcerssmax = $this->get_config('announcerssmax',3);
         // Iterate the items
         while ($item = $rss->getNextItem()) {
-            if ($itemCount>=$maxItems) break;
+            if ($itemCount >= $maxItems) {
+                break;
+            }
             $article = array();
             $article['title'] = $item['title'];
             $hash = $this->hashString($item['title'].$item['link']);
@@ -826,8 +846,10 @@ class serendipity_event_commentspice extends serendipity_event
     function cacheReadRss($url)
     {
         $filename = $this->cacheRssFilename($url);
-        $cachemin = $this->get_config('announcersscachemin',90);
-        if ($cachemin == 0) return null;
+        $cachemin = $this->get_config('announcersscachemin', 90);
+        if ($cachemin == 0) {
+            return null;
+        }
         $this->log("Reading " . $filename);
         if (file_exists($filename) && (time() - filemtime($filename))< $cachemin * 60) {
             $fp = fopen($filename, 'rb');
@@ -840,8 +862,10 @@ class serendipity_event_commentspice extends serendipity_event
 
     function cacheWriteRss($url, $array_struct)
     {
-        $cachemin = $this->get_config('announcersscachemin',90);
-        if ($cachemin == 0) return; // cache switched off
+        $cachemin = $this->get_config('announcersscachemin', 90);
+        if ($cachemin == 0) {
+            return; // cache switched off
+        }
         $filename = $this->cacheRssFilename($url);
         $cache_dir= dirname($filename);
         @mkdir($cache_dir);
@@ -854,6 +878,7 @@ class serendipity_event_commentspice extends serendipity_event
     function cacheRssFilename($url)
     {
         global $serendipity;
+
         $url_md5 = md5($url);
         return $serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/commentspice/rss_' . $url_md5;
     }
@@ -878,11 +903,11 @@ class serendipity_event_commentspice extends serendipity_event
             // Fetch "spice" from form elements
             $spice = array();
             $spice['commentid'] = -1;
-            $spice['twittername'] = isset($serendipity['POST']['twitter']) ? $serendipity['POST']['twitter'] : null;
-            $spice['boo'] = isset($serendipity['POST']['boo']) ? $serendipity['POST']['boo'] : null;
+            $spice['twittername'] = $serendipity['POST']['twitter'] ?? null;
+            $spice['boo'] = $serendipity['POST']['boo'] ?? null;
 
             // Get the input w/o checking if it's modified: We are in preview!
-            $promorss = isset($serendipity['POST']['promorss']) ? $serendipity['POST']['promorss'] : null;
+            $promorss = $serendipity['POST']['promorss'] ?? null;
             $parts = explode("\n", $promorss);
             $promo_hash = trim($parts[0]);
             $promo_name = isset($parts[1]) ? trim($parts[1]) : null;
@@ -902,7 +927,7 @@ class serendipity_event_commentspice extends serendipity_event
             $twittername = $spice['twittername'];
             if (!empty($twittername)) {
                 $twitternameparts = explode('@', $twittername);
-                $statusnet = is_array($twitternameparts) && count($twitternameparts)==2;
+                $statusnet = is_array($twitternameparts) && count($twitternameparts) == 2;
                 if ($statusnet) {
                     $twittername = $twitternameparts[0];
                     $timeline_url = "http://" . $twitternameparts[1] . "/" . $twittername;
@@ -958,19 +983,23 @@ class serendipity_event_commentspice extends serendipity_event
     function spiceEntry(&$eventData, $addData)
     {
         global $serendipity;
-        if (!$addData['extended']) return; // Only single articles
+
+        if (!$addData['extended']) {
+            return; // Only single articles
+        }
 
         $patched_input_twitter = serendipity_db_bool($this->get_config('inputpatched_twitter', 'false'));
         $patched_input_rss = serendipity_db_bool($this->get_config('inputpatched_rss', 'false'));
-        if (!$patched_input_twitter && !$patched_input_rss) return;
+        if (!$patched_input_twitter && !$patched_input_rss) {
+            return;
+        }
 
         if (isset($eventData) && is_array($eventData)) {
             // Get the first entry an add stuff
             foreach($eventData AS $event) {
                 $smarty_spice = array();
                 if ($patched_input_twitter) {
-                    if (isset($serendipity['COOKIE']['twitter'])) $twittername = $serendipity['COOKIE']['twitter'];
-                    else  $twittername = '';
+                    $twittername = $serendipity['COOKIE']['twitter'] ?? '';
                     $smarty_spice['inputtwitter'] = $this->get_config('twitterinput','disabled')!='disabled';
                     $smarty_spice['inputtwitterlabel'] = PLUGIN_EVENT_COMMENTSPICE_PROMOTE_TWITTER_LABEL;
                     $smarty_spice['inputtwittervalue'] = $twittername;
@@ -1000,7 +1029,7 @@ class serendipity_event_commentspice extends serendipity_event
             }
             return '<a href="https://twitter.com/' . $wittername . '" class="twitter-follow-button"' . $extra_style . ($timeline_url_nofollow ? ' rel="nofollow"' : '') . '>Follow @' . $wittername . '</a>';
         }
-        return "";
+        return '';
     }
 
     function handleAvatar(&$eventData, &$addData)
@@ -1008,14 +1037,20 @@ class serendipity_event_commentspice extends serendipity_event
         $this->log("avatar_hook. " . print_r($eventData,true) .  "\n" . print_r($addData, true));
 
         // We support twitter only
-        if (!is_array($addData) || !$addData['type']=='twitter') return;
+        if (!is_array($addData) || !$addData['type'] == 'twitter') {
+            return;
+        }
 
         // Check for valid input
-        if (!is_array($eventData) || !$eventData['cid']) return;
+        if (!is_array($eventData) || !$eventData['cid']) {
+            return;
+        }
 
         // Add twitter infos to metadata. Twitter is detected by URL, so produce an URL
         $spice = DbSpice::loadCommentSpice($eventData['cid']);
-        if (!is_array($spice)) return;
+        if (!is_array($spice)) {
+            return;
+        }
 
         if (!empty($spice['twittername'])) {
             $eventData['url'] = 'http://twitter.com/' . $spice['twittername'];
@@ -1028,23 +1063,24 @@ class serendipity_event_commentspice extends serendipity_event
         global $serendipity;
 
         // Check for non entry pages like contact form:
-        if (empty($eventData) || empty($eventData['id'])) return;
+        if (empty($eventData) || empty($eventData['id'])) {
+            return;
+        }
 
         // Don't put extras on admin menu. They are not working there:
-        if (isset($eventData['GET']['action']) && $eventData['GET']['action']=='admin') return;
+        if (isset($eventData['GET']['action']) && $eventData['GET']['action'] == 'admin') {
+            return;
+        }
 
         $config_twitter = $this->get_config('twitterinput','enabled');
         $config_announce =$this->get_config('announcerss','disabled');
-        $do_twitter = $config_twitter!='disabled';
-        $do_announce = $config_announce!='disabled';
+        $do_twitter = $config_twitter != 'disabled';
+        $do_announce = $config_announce != 'disabled';
         $do_boo = serendipity_db_bool($this->get_config('allow_boo', 'false'));
         $styleInputRss = serendipity_db_bool($this->get_config('style_inputrss', 'true'));
 
         if ($do_twitter) {
-            if (isset($serendipity['COOKIE']['remember']) && isset($serendipity['COOKIE']['twitter'])) {
-                $twittername = $serendipity['COOKIE']['twitter'];
-            }
-            else  $twittername = '';
+            $twittername = (isset($serendipity['COOKIE']['remember']) && isset($serendipity['COOKIE']['twitter'])) ? $serendipity['COOKIE']['twitter'] : '';
             if (!serendipity_db_bool($this->get_config('inputpatched_twitter', 'false'))) {
                 echo '<div id="serendipity_commentspice_twitter" class="form_field">' . "\n";
                 echo '<label for="serendipity_commentform_twitter">' . PLUGIN_EVENT_COMMENTSPICE_PROMOTE_TWITTER_LABEL . '</label>' . "\n";
@@ -1093,9 +1129,9 @@ class serendipity_event_commentspice extends serendipity_event
     function createRequirementsString($rule_config_value)
     {
         $requirements = '';
-        if ('rules'==$rule_config_value) {
-            $rule_commentlength = (int)$this->get_config('rule_extras_commentlength',0);
-            $rule_commentcount = (int)$this->get_config('rule_extras_commentcount',0);
+        if ('rules' == $rule_config_value) {
+            $rule_commentlength = (int)$this->get_config('rule_extras_commentlength', 0);
+            $rule_commentcount = (int)$this->get_config('rule_extras_commentcount', 0);
             $requirements = "<em>(" .PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS . ": ";
             if ($rule_commentcount) {
                 $requirements .= sprintf(PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS_COMMENTCOUNT,$rule_commentcount);
@@ -1265,6 +1301,7 @@ select.commentspice_rss_input option {
     function isLocalConfigWritable()
     {
         global $serendipity;
+
         $file = $serendipity['serendipityPath'] . 'serendipity_config_local.inc.php';
         return !file_exists($file) || is_writable($file);
     }
@@ -1288,7 +1325,9 @@ select.commentspice_rss_input option {
 
     function log($message)
     {
-        if (!PLUGIN_EVENT_COMMENTSPICE_DEBUG) return;
+        if (!PLUGIN_EVENT_COMMENTSPICE_DEBUG) {
+            return;
+        }
         $fp = fopen(dirname(__FILE__) . '/spice.log','a');
         fwrite($fp, date('Y.m.d H:i:s') . " - " . $message . "\n");
         fflush($fp);

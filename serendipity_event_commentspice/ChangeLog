@@ -1,3 +1,9 @@
+2.02:
+-----
+ * Refactor some isset conditions
+ * Cleanup
+ * Remove an obsolete method global include
+
 2.01:
 -----
  * Remove Alias method usage
