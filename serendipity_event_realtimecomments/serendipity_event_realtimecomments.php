@@ -235,7 +235,7 @@ class serendipity_event_realtimecomments extends serendipity_event
     {
         global $serendipity;
 
-        $this->debug_fp = @fopen ( $serendipity ['serendipityPath'] . 'templates_c/realtimecomments.log', 'a' );
+        $this->debug_fp = @fopen ( $serendipity['serendipityPath'] . 'templates_c/realtimecomments.log', 'a' );
         if (! $this->debug_fp) {
             return false;
         }
