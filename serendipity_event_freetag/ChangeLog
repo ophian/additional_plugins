@@ -1,3 +1,7 @@
+5.11:
+-----
+ * Improve backend active button styles for DARK MODE
+
 5.10:
 -----
  * Fix a sidecheck dependency by event flattr plugin
