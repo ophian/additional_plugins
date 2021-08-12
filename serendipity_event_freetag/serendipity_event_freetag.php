@@ -3417,7 +3417,7 @@ img.serendipity_freeTag_xmlButton {
     {
         global $serendipity;
 
-        $this->debug_fp = @fopen($serendipity ['serendipityPath'] . 'templates_c/freetag.log', 'a');
+        $this->debug_fp = @fopen($serendipity['serendipityPath'] . 'templates_c/freetag.log', 'a');
         if (!$this->debug_fp) {
             return false;
         }
