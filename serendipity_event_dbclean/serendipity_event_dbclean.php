@@ -279,7 +279,7 @@ class serendipity_event_dbclean extends serendipity_event
 
         echo '<h2>' . PLUGIN_EVENT_DBCLEAN_NAME_MENU . "</h2>\n";
 
-        echo '<form action="'.$serendipity ['baseURL'] . 'index.php?/plugin/dbclean' .'" method="post">'."\n";
+        echo '<form action="'.$serendipity['baseURL'] . 'index.php?/plugin/dbclean' .'" method="post">'."\n";
         if ($serendipity['version'][0] < 2) {
             echo PLUGIN_EVENT_DBCLEAN_MENU_KEEP . ' <input type="text" name="days" value="' . $this->get_config('days') . '" size="3" maxlength="3" /> ' . DAYS ."\n";
         } else {
@@ -363,7 +363,7 @@ EOS;
     {
         global $serendipity;
 
-        $this->debug_fp = @fopen( $serendipity ['serendipityPath'] . 'templates_c/dbclean.log', 'a' );
+        $this->debug_fp = @fopen( $serendipity['serendipityPath'] . 'templates_c/dbclean.log', 'a' );
         if (! $this->debug_fp) {
             return false;
         }
