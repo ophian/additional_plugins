@@ -8,4 +8,34 @@
     width: 100%;
 }
 
+html[data-color-mode="dark"].page_linktrm {
+    background: #22272e;
+    color: #adbac7;
+}
+html[data-color-mode="dark"].page_linktrm, [data-color-mode="dark"].page_linktrm button, [data-color-mode="dark"].page_linktrm input, [data-color-mode="dark"].page_linktrm textarea:not(.cke_source) {
+    background: #22272e;
+}
+[data-color-mode="dark"] #main_linktrimmer input[type="text"] {
+    background-color: #22272e;
+    border: 1px solid #373e47;
+    color: #768390;
+    text-shadow: none;
+    min-width: 14rem;
+    height: 1.6rem;
+}
+[data-color-mode="dark"] #main_linktrimmer input[type="submit"]:not(.entry_preview):not(.state_cancel) {
+    background: #323941;
+    background-image: none !important;
+    border-color: #6bc46d #46954a #2b6a30;
+    color: #6bc46d;
+}
+[data-color-mode="dark"] #main_linktrimmer {
+    border-color: #444c56;
+    background: #1c2128cc;
+}
+[data-color-mode="dark"] #main_linktrimmer legend {
+    border-color: #444c56;
+    background: #323941;
+}
+
 /* linktrimmer plugin end */

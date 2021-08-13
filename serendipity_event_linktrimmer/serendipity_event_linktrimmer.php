@@ -22,7 +22,7 @@ class serendipity_event_linktrimmer extends serendipity_event
             'php'         => '5.6.0'
         ));
 
-        $propbag->add('version',       '1.7.5');
+        $propbag->add('version',       '1.7.6');
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('prefix', 'frontpage', 'domain'));
@@ -208,7 +208,8 @@ class serendipity_event_linktrimmer extends serendipity_event
             'linktrimmer_url'         => !empty($url) ? $url : null,
             'linktrimmer_origurl'     => !empty($_REQUEST['linktrimmer_url']) ? $_REQUEST['linktrimmer_url'] : null,
             'linktrimmer_external'    => $external,
-            'linktrimmer_txtarea'     => !empty($_REQUEST['txtarea']) ? $_REQUEST['txtarea'] : null
+            'linktrimmer_txtarea'     => !empty($_REQUEST['txtarea']) ? $_REQUEST['txtarea'] : null,
+            'linktrimmer_darkmode'    => isset($serendipity['dark_mode']) && $serendipity['dark_mode'] === true
         ));
 
         echo $this->parseTemplate('plugin_linktrimmer.tpl');
@@ -217,6 +218,7 @@ class serendipity_event_linktrimmer extends serendipity_event
     function generate_button ($txtarea)
     {
         global $serendipity;
+
         if (!isset($txtarea)) {
            $txtarea = 'body';
         }

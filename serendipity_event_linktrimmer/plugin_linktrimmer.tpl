@@ -1,18 +1,15 @@
 {if $linktrimmer_external}
-<!doctype html>
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="{$lang}"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="{$lang}"> <!--<![endif]-->
+<!DOCTYPE html>
+<html{if $linktrimmer_darkmode} data-color-mode="dark"{else} data-color-mode="slight"{/if} data-light-theme="light" data-dark-theme="dark" class="no-js page_linktrm" dir="ltr" lang="{$lang}">
 <head>
     <meta charset="{$CONST.LANG_CHARSET}">
     <title>{$CONST.PLUGIN_LINKTRIMMER_NAME}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{$serendipityBaseURL}serendipity.css.php?serendipity[css_mode]=serendipity_admin.css">
-<!--[if lte IE 8]>
-    <link rel="stylesheet" href="{serendipity_getFile file='admin/oldie.css'}">
-<![endif]-->
     <script src="{serendipity_getFile file='admin/js/modernizr.min.js'}"></script>
 
     <style>{* popup only classes *}
+
         .serendipity_linktrimmer_page .linktrimmer {
             display: block;
             margin: 1em auto auto;
@@ -63,7 +60,9 @@
     {/if}
                 <label for="linktrimmer_hash">{$CONST.PLUGIN_LINKTRIMMER_HASH}</label>
                 <input id="linktrimmer_hash" class="input_textbox" type="text" value="" name="linktrimmer_hash" size="14">
+            </div>
 
+            <div class="form_field">
                 <input type="submit" name="submit" value="{$CONST.GO}" class="input_button">
             </div>
 
