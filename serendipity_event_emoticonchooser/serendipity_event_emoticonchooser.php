@@ -23,7 +23,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.31');
+        $propbag->add('version',       '3.32');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -106,10 +106,10 @@ class serendipity_event_emoticonchooser extends serendipity_event
         // get the stored "cache"
         $file = $this->get_config('emotics');
         $file = str_replace(array(' style="; display: none"', ' style="display: none;"', '</div><!-- emoticon_bar end -->'), '', $file); // we don't want this here! (see "lazy cache")
+        $mode = (isset($serendipity['dark_mode']) && $serendipity['dark_mode'] === true) ? 'data-color-mode="dark" ' : 'data-color-mode="slight" ';
 ?>
 <!DOCTYPE html>
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="<?=$serendipity['lang']?>"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="<?=$serendipity['lang']?>"> <!--<![endif]-->
+<html <?=$mode?>data-light-theme="light" data-dark-theme="dark" class="no-js page_emochr" dir="ltr" lang="<?=$serendipity['lang']?>">
 <head>
     <meta charset="<?=LANG_CHARSET?>">
     <title>Serendipity <?=PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT?></title>
@@ -141,6 +141,10 @@ class serendipity_event_emoticonchooser extends serendipity_event
         }
     </script>
     <style>
+        html[data-color-mode="dark"].page_emochr {
+            background: #22272e;
+            color: #adbac7;
+        }
         .serendipity_emoticonchooser_page .emoticonchooser {
             display: block;
             margin: 1em auto auto;
@@ -155,6 +159,14 @@ class serendipity_event_emoticonchooser extends serendipity_event
             border: 1px solid #72878A;
             background: none repeat scroll 0% 0% #DDD;
             padding: 2px 5px;
+        }
+        [data-color-mode="dark"] #main_emoticonchooser {
+            border-color: #444c56;
+            background: #1c2128cc;
+        }
+        [data-color-mode="dark"] #main_emoticonchooser legend {
+            border-color: #444c56;
+            background: #323941;
         }
     </style>
 </head>
