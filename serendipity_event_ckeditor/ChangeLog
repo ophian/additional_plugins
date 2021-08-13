@@ -1,3 +1,9 @@
+4.16.2.0:
+---------
+    * Upgrade to CKEDITOR 4.16. Series, update 2 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
+    * Highlight changed to new major version 11.2.0
+
 4.16.1.5:
 ---------
     * Update dependencies lang constant
@@ -28,7 +34,7 @@
 ---------
     * Upgrade to CKEDITOR 4.16. Series, update 1 (https://ckeditor.com/cke4/release-notes).
       Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
-    * Highlight changed to new major version 11.1 and the assets were renamed to "highlight.min.js" and "highlight.min.css"
+    * Highlight changed to new major version 11 and the assets were renamed to "highlight.min.js" and "highlight.min.css"
     * Fix CKECONFIG_USEAUTOSAVE javascript const initialization warning
 
 4.16.0.3:
