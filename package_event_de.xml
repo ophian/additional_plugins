@@ -251,7 +251,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-12-10</date>
+  <date>2021-08-12</date>
   <filelist>
     <dir name="serendipity_event_autotitle">
       <file>ChangeLog</file>
@@ -663,16 +663,16 @@
 <description>Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie die Plugin Konfigurations Seite für mehr Informationen.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.16.1.5</version>
+  <version>4.16.2.0</version>
   <requirements:s9yVersion>2.6.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.13</requirements:smyVersion>
   <requirements:phpVersion>5.2.6</requirements:phpVersion>
-  <date>2021-07-04</date>
+  <date>2021-08-13</date>
   <filelist>
     <dir name="serendipity_event_ckeditor">
       <file>basic_toolbar.css</file>
       <file>ChangeLog</file>
-      <file>ckeditor_4.16.1.0-plus.zip</file>
+      <file>ckeditor_4.16.2.0-plus.zip</file>
       <file>cke_backend.css</file>
       <file>cke_config.js</file>
       <file>cke_ibn.css</file>
@@ -731,7 +731,7 @@
   <serendipityFilelist>
     <file>serendipity_event_ckeditor/basic_toolbar.css</file>
     <file>serendipity_event_ckeditor/ChangeLog</file>
-    <file>serendipity_event_ckeditor/ckeditor_4.16.1.0-plus.zip</file>
+    <file>serendipity_event_ckeditor/ckeditor_4.16.2.0-plus.zip</file>
     <file>serendipity_event_ckeditor/cke_backend.css</file>
     <file>serendipity_event_ckeditor/cke_config.js</file>
     <file>serendipity_event_ckeditor/cke_ibn.css</file>
@@ -1543,7 +1543,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2020-06-07</date>
+  <date>2021-08-12</date>
   <filelist>
     <dir name="serendipity_event_dbclean">
       <file>ChangeLog</file>
@@ -8576,7 +8576,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-12-21</date>
+  <date>2021-08-12</date>
   <filelist>
     <dir name="serendipity_event_realtimecomments">
       <file>ChangeLog</file>
@@ -9945,7 +9945,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2021-06-07</date>
+  <date>2021-08-12</date>
   <filelist>
     <dir name="serendipity_event_template_editor">
       <file>ChangeLog</file>
