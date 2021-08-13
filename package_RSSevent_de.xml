@@ -122,7 +122,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie die Plugin Konfigurations Seite für mehr Informationen.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Fri, 13 Aug 2021 09:53:02 +0200</pubDate>
+<pubDate>Fri, 13 Aug 2021 10:42:57 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -266,7 +266,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Stellt einen kompletten Downloadmanager zur Verfügung. Bei Deinstallation werden alle zugehörigen Tabellen gelöscht!&lt;br/&gt;For: Serendipity 3.3.0</content:encoded>
-<pubDate>Tue, 03 Aug 2021 12:39:17 +0200</pubDate>
+<pubDate>Fri, 13 Aug 2021 18:58:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
@@ -302,7 +302,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Smiley-Auswahlleiste&lt;/b&gt;&lt;br /&gt;Zeigt eine Auswahlleiste bei der Erstellung eines Eintrags um Smileys einzufügen.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sun, 16 Aug 2020 12:58:45 +0200</pubDate>
+<pubDate>Fri, 13 Aug 2021 18:33:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -635,7 +635,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linkverkürzung&lt;/b&gt;&lt;br /&gt;Ermöglicht Linkverkürzung zur Weiterleitung in Ihrem eigenen Blog, z.B. vermittels tr.im, tinyurl.com usw.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Mon, 21 Dec 2020 10:36:10 +0100</pubDate>
+<pubDate>Fri, 13 Aug 2021 18:38:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
