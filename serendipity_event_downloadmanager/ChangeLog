@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+1.53:
+-----
+ * Fix a unitialized possible external_plugin hook dependency for PHP 8
+
 1.52:
 -----
  * Improve check for custom theme stylesheets for PHP 8

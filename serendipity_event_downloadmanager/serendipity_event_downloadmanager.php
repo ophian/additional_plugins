@@ -37,7 +37,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '7.0.0'
         ));
 
-        $propbag->add('version',       '1.52');
+        $propbag->add('version',       '1.53');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1958,7 +1958,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                         foreach($reqs AS $id => $req) {
                             $val = explode('=', $req);
                             if (empty($_REQUEST[$val[0]])) {
-                                $_REQUEST[$val[0]] = $val[1];
+                                $_REQUEST[$val[0]] = $val[1] ?? null;
                             }
                         }
                     }
