@@ -3,7 +3,7 @@ ChangeLog:
 
 1.53:
 -----
- * Fix a unitialized possible external_plugin hook dependency for PHP 8
+ * Fix a possible uninitialized external_plugin hook dependency variable check for PHP 8
 
 1.52:
 -----
