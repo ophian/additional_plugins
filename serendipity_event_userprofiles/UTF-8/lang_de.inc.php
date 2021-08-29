@@ -1,37 +1,37 @@
 <?php
 
-@define('PLUGIN_USERPROFILES_NAME',          "Serendipity Autoren");
-@define('PLUGIN_USERPROFILES_NAME_DESC',     "Zeigt eine Liste aller Autoren");
-@define('PLUGIN_USERPROFILES_TITLE',         "Titel");
-@define('PLUGIN_USERPROFILES_TITLE_DESC',    "Den Titel der Seitenleiste eintragen:");
+@define('PLUGIN_USERPROFILES_NAME', "Serendipity Autoren");
+@define('PLUGIN_USERPROFILES_NAME_DESC', "Zeigt eine Liste aller Autoren");
+@define('PLUGIN_USERPROFILES_TITLE', "Titel");
+@define('PLUGIN_USERPROFILES_TITLE_DESC', "Den Titel der Seitenleiste eintragen:");
 @define('PLUGIN_USERPROFILES_TITLE_DEFAULT', "Autoren");
 
-@define('PLUGIN_EVENT_USERPROFILES_CITY',       'Stadt');
-@define('PLUGIN_EVENT_USERPROFILES_COUNTRY',    'Land');
-@define('PLUGIN_EVENT_USERPROFILES_URL',        'Homepage');
+@define('PLUGIN_EVENT_USERPROFILES_CITY', 'Stadt');
+@define('PLUGIN_EVENT_USERPROFILES_COUNTRY', 'Land');
+@define('PLUGIN_EVENT_USERPROFILES_URL', 'Homepage');
 @define('PLUGIN_EVENT_USERPROFILES_OCCUPATION', 'Beschäftigung');
-@define('PLUGIN_EVENT_USERPROFILES_HOBBIES',    'Hobbies');
-@define('PLUGIN_EVENT_USERPROFILES_YAHOO',      'Yahoo');
-@define('PLUGIN_EVENT_USERPROFILES_AIM',        'AIM');
-@define('PLUGIN_EVENT_USERPROFILES_JABBER',     'Jabber');
-@define('PLUGIN_EVENT_USERPROFILES_ICQ',        'ICQ');
-@define('PLUGIN_EVENT_USERPROFILES_MSN',        'MSN');
+@define('PLUGIN_EVENT_USERPROFILES_HOBBIES', 'Hobbies');
+@define('PLUGIN_EVENT_USERPROFILES_YAHOO', 'Yahoo');
+@define('PLUGIN_EVENT_USERPROFILES_AIM', 'AIM');
+@define('PLUGIN_EVENT_USERPROFILES_JABBER', 'Jabber');
+@define('PLUGIN_EVENT_USERPROFILES_ICQ', 'ICQ');
+@define('PLUGIN_EVENT_USERPROFILES_MSN', 'MSN');
 
-@define('PLUGIN_EVENT_USERPROFILES_SHOWEMAIL',      'E-Mail-Adresse anzeigen');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWCITY',       'Stadt anzeigen');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWCOUNTRY',    'Land anzeigen');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWURL',        'Homepage anzeigen');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWEMAIL', 'E-Mail-Adresse anzeigen');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWCITY', 'Stadt anzeigen');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWCOUNTRY', 'Land anzeigen');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWURL', 'Homepage anzeigen');
 @define('PLUGIN_EVENT_USERPROFILES_SHOWOCCUPATION', 'Beschäftigung anzeigen');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWHOBBIES',    'Hobbys anzeigen');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWYAHOO',      'Yahoo anzeigen');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWAIM',        'AIM anzeigen');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWJABBER',     'Jabber anzeigen');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWICQ',        'ICQ anzeigen');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWMSN',        'MSN anzeigen');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWHOBBIES', 'Hobbys anzeigen');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWYAHOO', 'Yahoo anzeigen');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWAIM', 'AIM anzeigen');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWJABBER', 'Jabber anzeigen');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWICQ', 'ICQ anzeigen');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWMSN', 'MSN anzeigen');
 
-@define('PLUGIN_EVENT_USERPROFILES_SHOW',  'Benutzerprofil des gewählten Autoren:');
+@define('PLUGIN_EVENT_USERPROFILES_SHOW', 'Benutzerprofil des gewählten Autoren:');
 @define('PLUGIN_EVENT_USERPROFILES_TITLE', 'Benutzerprofile');
-@define('PLUGIN_EVENT_USERPROFILES_DESC',  'Zeigt einfache Benutzerprofile');
+@define('PLUGIN_EVENT_USERPROFILES_DESC', 'Zeigt einfache Benutzerprofile');
 
 @define('PLUGIN_EVENT_AUTHORPIC_EXTENSION', 'Dateiendung');
 @define('PLUGIN_EVENT_AUTHORPIC_EXTENSION_BLAHBLAH', 'Welche Dateiendung haben die Bilder der Autoren?');
@@ -47,17 +47,16 @@
 @define('PLUGIN_USERPROFILES_BIRTHDAYIN', 'Geburtstag in %d Tagen');
 @define('PLUGIN_USERPROFILES_BIRTHDAYTODAY', 'Geburtstag heute');
 
-@define('PLUGIN_EVENT_USERPROFILES_SHOWSTREET',         'Straße anzeigen');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWSKYPE',          'Skype anzeigen');
-@define('PLUGIN_EVENT_USERPROFILES_SELECT',             'Benutzerprofil zum Bearbeiten auswählen.');
-@define('PLUGIN_EVENT_USERPROFILES_BIRTHDAY',           'Geburtstag');
-@define('PLUGIN_EVENT_USERPROFILES_VCARD',              'VCard-Datei erstellen');
-@define('PLUGIN_EVENT_USERPROFILES_STREET',             'Straße');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWSTREET', 'Straße anzeigen');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWSKYPE', 'Skype anzeigen');
+@define('PLUGIN_EVENT_USERPROFILES_SELECT', 'Benutzerprofil zum Bearbeiten auswählen.');
+@define('PLUGIN_EVENT_USERPROFILES_BIRTHDAY', 'Geburtstag');
+@define('PLUGIN_EVENT_USERPROFILES_VCARD', 'VCard-Datei erstellen');
+@define('PLUGIN_EVENT_USERPROFILES_STREET', 'Straße');
 
-
-@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_AT',    'VCard-Datei um %s erstellt');
-@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_NOTE',  'Die VCard-Datei wurde in der Mediendatenbank gespeichert.');
-@define('PLUGIN_EVENT_USERPROFILES_VCARDNOTCREATED',    'Konnte VCard-Datei nicht erstellen.');
+@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_AT', 'VCard-Datei um %s erstellt');
+@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_NOTE', 'Die VCard-Datei wurde in der Mediendatenbank gespeichert.');
+@define('PLUGIN_EVENT_USERPROFILES_VCARDNOTCREATED', 'Konnte VCard-Datei nicht erstellen. Haben Sie bereits etwas eingetragen und gespeichert?');
 @define('PLUGIN_USERPROFILES_BIRTHDAYNUMBERS', 'Anzahl der Geburtstagskinder');
 @define('PLUGIN_USERPROFILES_BIRTHDAYSNAME', 'Geburtstage von Redakteuren');
 @define('PLUGIN_USERPROFILES_BIRTHDAYTITLE', 'Geburtstage');
@@ -68,9 +67,13 @@
 @define('PLUGIN_USERPROFILES_GRAVATAR_DEFAULT_DESC', 'Gibt den Speicherort der Bilddatei an, wenn kein Gravatar vorhanden ist.');
 @define('PLUGIN_USERPROFILES_GRAVATAR_DESC', 'Bindet ein Gravatar-Bild ein, dass mit der E-Mail-Adresse verbunden ist. Registrierung bei www.gravatar.com');
 @define('PLUGIN_USERPROFILES_GRAVATAR_RATING', 'Einschränkung der Gravatare');
-@define('PLUGIN_USERPROFILES_GRAVATAR_RATING_DESC','Hier können Sie Gravatare einschränken, damit nur Bilder mit gewissen Jugendschutz-Kriterien angezeigt werden (US-Wertungsstufen): G, PG, R oder X.');
+@define('PLUGIN_USERPROFILES_GRAVATAR_RATING_DESC', 'Hier können Sie Gravatare einschränken, damit nur Bilder mit gewissen Jugendschutz-Kriterien angezeigt werden (US-Wertungsstufen): G, PG, R oder X.');
 @define('PLUGIN_USERPROFILES_GRAVATAR_SIZE', 'Größe des Gravatar-Bildes');
 @define('PLUGIN_USERPROFILES_GRAVATAR_SIZE_DESC', 'Bestimmt die Bildgröße des Gravatars (quadratische Größe, maximal 80).');
-@define('PLUGIN_USERPROFILES_SHOWAUTHORS', 'Liste der Benutzerprofile anzeigen?');
-@define('PLUGIN_USERPROFILES_SHOWGROUPS', 'Link zu Benutzergruppen anzeigen?');
+@define('PLUGIN_USERPROFILES_SHOWAUTHORS', 'Zeige Benutzerliste');
+@define('PLUGIN_USERPROFILES_SHOWAUTHORS_DESC', 'Als Link zu den jeweiligen Blogeinträgen der Autoren');
+@define('PLUGIN_USERPROFILES_SHOWGROUPS', 'Link zu Benutzergruppen anzeigen');
+@define('PLUGIN_USERPROFILES_SHOWGROUPS_DESC', 'Achtung: Dies zeigt alle Benutzergruppen mit allen freigegebenen Benutzerprofilen (und mehr, s.u.).');
+
+@define('PLUGIN_USERPROFILES_SHOWWARNING', 'Ist dies wirklich ein geschlossenes Blog nur für Benutzergruppen? Beide Anzeigen, insbesondere aber die Benutzergruppen, geben Informationen Preis, die eigentlich nicht gerne geteilt werden, sei es aus Sicherheitserwägungen oder aus persönlichen Gründen; und das weder ganz öffentlich noch für eine größere, aber geschlosssene Gruppe; dies sind zB. Loginnamen oder auch die Email Adresse. Ebenso werden alle vorhandenen Gruppen aufgeführt mit allen darin befindlichen Autoren/Benutzern. Bitte überlegen Sie gut ob sie dieses Plugin wirklich verwenden wollen! Die Anzeigen des Event Plugins im Backend wurden aufgrund dieser Tatsache per Benutzerlevel entschärft; dies ist für dieses Frontend Plugin aber nicht so ohne Weiteres möglich!<br>Beide radio Optionen beeinflussen nicht die Anzeige der Profilbox des Authors durch das event Plugins, mit ihren freigegebenen Benutzerprofildaten (soweit vorhanden) im Eintrags-Kopf.');
 

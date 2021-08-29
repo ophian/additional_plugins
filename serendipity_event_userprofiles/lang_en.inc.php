@@ -47,7 +47,7 @@
 @define('PLUGIN_EVENT_USERPROFILES_VCARD',              'Create VCard');
 @define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_AT',    'VCard created at %s');
 @define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_NOTE',  'You can find this vcard in the media library.');
-@define('PLUGIN_EVENT_USERPROFILES_VCARDNOTCREATED',    'Can\'t create vcard');
+@define('PLUGIN_EVENT_USERPROFILES_VCARDNOTCREATED',    'Can\'t create vcard. Maybe empty profile properties?');
 
 @define('PLUGIN_EVENT_AUTHORPIC_EXTENSION', 'File extension');
 @define('PLUGIN_EVENT_AUTHORPIC_EXTENSION_BLAHBLAH', 'Which file extension do the images of the authors have?');
@@ -74,7 +74,7 @@
 @define('PLUGIN_USERPROFILES_GRAVATAR_SIZE', 'Gravatar picture size');
 @define('PLUGIN_USERPROFILES_GRAVATAR_SIZE_DESC', 'Sets the display size for your Gravatar userpic, in square pixels. Max is 80.');
 @define('PLUGIN_USERPROFILES_GRAVATAR_RATING', 'Maximum Gravatar rating');
-@define('PLUGIN_USERPROFILES_GRAVATAR_RATING_DESC','Sets the highest rating allowed for Gravatars.  G, PG, R or X.');
+@define('PLUGIN_USERPROFILES_GRAVATAR_RATING_DESC', 'Sets the highest rating allowed for Gravatars.  G, PG, R or X.');
 @define('PLUGIN_USERPROFILES_GRAVATAR_DEFAULT', 'Location of default Gravatar image');
 @define('PLUGIN_USERPROFILES_GRAVATAR_DEFAULT_DESC', 'Specifies the location of a graphic to display if a user doesn\'t have a Gravatar.');
 
@@ -88,5 +88,9 @@
 
 @define('PLUGIN_USERPROFILES_BIRTHDAYNUMBERS', 'Limit display of people having birthday to this number');
 @define('PLUGIN_USERPROFILES_SHOWAUTHORS', 'Show userlist?');
+@define('PLUGIN_USERPROFILES_SHOWAUTHORS_DESC', 'As links to these authors blog entries');
 @define('PLUGIN_USERPROFILES_SHOWGROUPS', 'Show link to detailed groups?');
+@define('PLUGIN_USERPROFILES_SHOWGROUPS_DESC', 'Attention: This shows all groups with all allowed profiles (and more, see below).');
+
+@define('PLUGIN_USERPROFILES_SHOWWARNING', 'Is this really a closed blog for user groups only? Both displays, but especially the usergroups option, reveal information that is actually not willingly shared, be it for security or for personal reasons; and that neither completely publicly nor for a larger, but closed group; these are for instance login names or the email address. Also all existing groups are listed with all authors/users in them. Please consider well if you really want to use this plugin or option! The displays of the event plugin in the backend have been defused due to this fact by userlevel; but this is not so easily possible for this frontend plugin!<br>Regarding the event plugin, both radio options here do not change its behaviour of including the user profiles box on top of entries (if any content).');
 

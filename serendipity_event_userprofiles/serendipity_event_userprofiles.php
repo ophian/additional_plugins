@@ -92,9 +92,9 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '0.43');
+        $propbag->add('version', '1.0.0');
         $propbag->add('requirements', array(
-            'serendipity' => '3.0',
+            'serendipity' => '3.5',
             'smarty'      => '3.1.0',
             'php'         => '7.3.0'
         ));
@@ -112,7 +112,7 @@ class serendipity_event_userprofiles extends serendipity_event
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_EVENT_AUTHORPIC_ENABLED);
                 $propbag->add('description', PLUGIN_EVENT_AUTHORPIC_ENABLED_DESC);
-                $propbag->add('default', 'true');
+                $propbag->add('default', 'false');
                 break;
 
             case 'extension':
@@ -160,7 +160,7 @@ class serendipity_event_userprofiles extends serendipity_event
                                                 'prepend' => PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_PREPEND,
                                                 'smarty'  => PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_SMARTY)
                                              );
-                $propbag->add('default', 'append');
+                $propbag->add('default', 'off');
                 break;
 
             default:
@@ -197,11 +197,36 @@ class serendipity_event_userprofiles extends serendipity_event
         return ($user['userlevel'] < $serendipity['serendipityUserlevel'] || $user['authorid'] == $serendipity['authorid'] || $serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN);
     }
 
+    function &getValidUsers()
+    {
+        global $serendipity;
+
+        if (serendipity_checkPermission('adminUsersMaintainOthers')) {
+            $users = serendipity_chainByLevel(serendipity_fetchUsers('', 'hidden'));
+        } elseif (serendipity_checkPermission('adminUsersMaintainSame')) {
+            $users = serendipity_chainByLevel(serendipity_fetchUsers('', serendipity_getGroups($serendipity['authorid'], true)));
+        } else {
+            // special for this plugin since it wants us to display same group members for show (only) in the backend
+            $ingroups = serendipity_getGroups($serendipity['authorid'], true); // eg standard editor
+            $allmembers = serendipity_getGroupUsers($ingroups[0]); // get all group members
+            foreach ($allmembers AS $amember) {
+                // remove high level CHIEFS and ADMINS members (a NULL empty array item may be an authorgroup_idxA index leftover before we activated to clear authorgroups on DELETE)
+                if (!empty($amember['id']) && !serendipity_checkPermission('adminUsersMaintainSame', $amember['id'])) {
+                    $slevelmembers[] = array('authorid' => $amember['id'], 'realname' => $amember['author']);
+                }
+            }
+            $users = $slevelmembers ?? serendipity_fetchUsers($serendipity['authorid']);
+            $users = $users ?? [];
+        }
+
+        return $users;
+    }
+
     function showUsers()
     {
         global $serendipity;
 
-        echo '<h2>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(PLUGIN_EVENT_USERPROFILES_SELECT) : htmlspecialchars(PLUGIN_EVENT_USERPROFILES_SELECT, ENT_COMPAT, LANG_CHARSET)) . '</h2>'."\n";
+        echo '<h2>' . serendipity_specialchars(PLUGIN_EVENT_USERPROFILES_SELECT) . '</h2>'."\n";
 
         if (!empty($serendipity['POST']['submitProfile'])) {
             echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . DONE . ': ' . sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . '</span>';
@@ -210,8 +235,7 @@ class serendipity_event_userprofiles extends serendipity_event
         if (!empty($serendipity['POST']['submitProfileOptions'])) {
             echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . DONE . ': ' . sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . '</span>';
         }
-
-        if (!empty($serendipity['POST']['createVcard'])) {
+        if (!empty($serendipity['POST']['createVcard']) && (serendipity_checkPermission('adminUsersMaintainSame') || $serendipity['serendipityUserlevel'] == USERLEVEL_EDITOR)) {
             if ($this->createVCard($serendipity['POST']['profileUser'])) {
                 echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> '. DONE . ': ' . sprintf(PLUGIN_EVENT_USERPROFILES_VCARDCREATED_AT, serendipity_strftime('%H:%M:%S')) . '</span>';
                 echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> '. IMPORT_NOTES . ': '. PLUGIN_EVENT_USERPROFILES_VCARDCREATED_NOTE . '</span>';
@@ -221,34 +245,34 @@ class serendipity_event_userprofiles extends serendipity_event
             }
         }
 
+        // check against privileges
+        $avail_users =& $this->getValidUsers();
+
         echo '<form action="?" method="post" class="userprofiles_form">'."\n";
         echo '    <input type="hidden" name="serendipity[adminModule]" value="event_display">'."\n";
         echo '    <input type="hidden" name="serendipity[adminAction]" value="profiles">'."\n";
         echo "    <div class='form_select'>\n";
         echo '        <label for="serendipity_profile_user">' . USER . '</label>';
         echo '        <select id="serendipity_profile_user" name="serendipity[profileUser]">'."\n";
-        $users = serendipity_fetchUsers();
-        foreach($users AS $user) {
-                echo '          <option value="' . $user['authorid'] . '" ' . (((empty($serendipity['POST']['profileUser']) && ($serendipity['authorid'] == $user['authorid'])) || ($serendipity['POST']['profileUser'] == $user['authorid'])) ? 'selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($user['realname']) : htmlspecialchars($user['realname'], ENT_COMPAT, LANG_CHARSET)) . '</option>'."\n";
+        foreach($avail_users AS $user) {
+            echo '          <option value="' . $user['authorid'] . '" ' . (((empty($serendipity['POST']['profileUser']) && ($serendipity['authorid'] == $user['authorid'])) || (isset($serendipity['POST']['profileUser']) && $serendipity['POST']['profileUser'] == $user['authorid'])) ? 'selected="selected"' : '') . '>' . serendipity_specialchars($user['realname']) . '</option>'."\n";
         }
         echo "        </select>\n";
         echo "    </div>\n";
         echo '    <div class="form_buttons">'."\n";
         echo '        <input type="submit" name="serendipity[viewUser]" value="'. VIEW .'">'."\n";
-        if ($this->checkUser($user)) {
-            echo '        <input type="submit" name="submit" value="' . EDIT . '">'."\n";
-            echo '        <input type="submit" name="serendipity[editOptions]" value="'. ADVANCED_OPTIONS .'">'."\n";
-            ## very very bad the next line (show only when edit the local_properties)
-            if (!empty($serendipity['POST']['profileUser']) && empty($serendipity['POST']['editOptions']) && empty($serendipity['POST']['viewUser'])) {
-                echo '        <input type="submit" name="serendipity[createVcard]" value="' . PLUGIN_EVENT_USERPROFILES_VCARD . '">'."\n";
-            }
+        echo '        <input type="submit" name="submit" value="' . EDIT . '">'."\n";
+        echo '        <input type="submit" name="serendipity[editOptions]" value="'. ADVANCED_OPTIONS .'">'."\n";
+        // show only when allowed to edit the local_properties
+        if (!empty($serendipity['POST']['profileUser']) && empty($serendipity['POST']['editOptions']) && empty($serendipity['POST']['viewUser']) && (serendipity_checkPermission('adminUsersMaintainSame') || ($this->checkUser(serendipity_fetchUsers($serendipity['POST']['profileUser'])[0]) && $serendipity['serendipityUserlevel'] == USERLEVEL_EDITOR))) {
+            echo '        <input type="submit" name="serendipity[createVcard]" value="' . PLUGIN_EVENT_USERPROFILES_VCARD . '">'."\n";
         }
         echo "    </div>\n";
 
         if (!empty($serendipity['POST']['profileUser'])) {
             $user = serendipity_fetchUsers($serendipity['POST']['profileUser']);
             if ($this->checkUser($user[0])) {
-                if (!empty($serendipity['POST']['viewUser']) && $serendipity['POST']['profileUser'] != $serendipity['authorid']) {
+                if (!empty($serendipity['POST']['viewUser'])) {
                     $this->showUser($user[0]);
                 } elseif (!empty($serendipity['POST']['editOptions']) || !empty($serendipity['POST']['submitProfileOptions'])) {
                     $this->editOptions($user[0]);
@@ -259,8 +283,10 @@ class serendipity_event_userprofiles extends serendipity_event
                 $this->showUser($user[0]);
             }
         } else {
-            $user = serendipity_fetchUsers($serendipity['authorid']);
-            $this->editUser($user[0]);
+            if ($serendipity['GET']['adminModule'] != 'personal') {
+                $user = serendipity_fetchUsers($serendipity['authorid']);
+                $this->editUser($user[0]);
+            }
         }
         echo "</form>\n\n";
     }
@@ -274,6 +300,8 @@ class serendipity_event_userprofiles extends serendipity_event
                 header('HTTP/1.0 200');
                 header('Status: 200 OK');
             }
+
+            $serendipity['GET']['groupid'] = $serendipity['GET']['groupid'] ?? 1; // defaults to standard editor group
 
             if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
@@ -296,7 +324,7 @@ class serendipity_event_userprofiles extends serendipity_event
             if ('USERLEVEL_' == substr($group['name'], 0, 10)) {
                 $group['name'] = constant($group['name']);
             }
-            $_ENV['staticpage_pagetitle'] = 'userprofiles';
+            #$_ENV['staticpage_pagetitle'] = 'userprofiles';
             $serendipity['smarty']->assign(array(
                 'staticpage_pagetitle' => 'userprofiles',
                 'userprofile_groups'   => serendipity_getAllGroups(),
@@ -307,6 +335,7 @@ class serendipity_event_userprofiles extends serendipity_event
 
             $filename = '/plugin_groupmembers.tpl';
             $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
+
             if (!$tfile || $tfile == $filename) {
                 $tfile = dirname(__FILE__) . $filename;
             }
@@ -316,23 +345,41 @@ class serendipity_event_userprofiles extends serendipity_event
         }
     }
 
+    /**
+     * PUH! What a hassle! But a need to not show group/profiles without being actually allowed to when someone just uses /index.php?/serendipity[subpage]=userprofiles.
+     */
+    function checkFrontendGroupOption() {
+        global $serendipity;
+
+        $puf = serendipity_plugin_api::enum_plugins('*', false, 'serendipity_plugin_userprofiles');
+        foreach ($puf AS $p) {
+            if (false !== strpos($p['name'], 'serendipity_plugin_userprofiles:')) {
+                $instance = explode(':', $p['name']);
+            }
+        }
+
+        return serendipity_db_query("SELECT value FROM {$serendipity['dbPrefix']}config WHERE name = 'serendipity_plugin_userprofiles:{$instance[1]}/show_groups'", false, 'assoc');
+    }
+
     function selected()
     {
         global $serendipity;
 
-        if ($serendipity['GET']['subpage'] == 'userprofiles') {
-            return true;
+        if (isset($serendipity['GET']['subpage']) && ($serendipity['GET']['subpage'] == 'userprofiles' || $serendipity['GET']['subpage'] == $serendipity['serendipityHTTPPath'] . 'serendipity[subpage]=userprofiles')) {
+            $showgroups = $this->checkFrontendGroupOption();
+
+            if (is_array($showgroups) && serendipity_db_bool($showgroups[0]['value'])) {
+                return true;
+            }
         }
 
         return false;
     }
 
     /**
-     *
      * View local properties from user
      *
      * @access private
-     *
      * @param array $user  The Userproperties to show
      *
      */
@@ -356,7 +403,7 @@ class serendipity_event_userprofiles extends serendipity_event
         echo "  <td>\n";
         switch($info['type']) {
             case 'html':
-                echo '<textarea rows="10" name="serendipity[profile' . $property . ']">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($user[$property]) : htmlspecialchars($user[$property], ENT_COMPAT, LANG_CHARSET)) . "</textarea>\n";
+                echo '<textarea rows="10" name="serendipity[profile' . $property . ']">' . serendipity_specialchars($user[$property]) . "</textarea>\n";
                 break;
 
             case 'boolean':
@@ -376,7 +423,7 @@ class serendipity_event_userprofiles extends serendipity_event
 
             case 'string':
             default:
-                echo '<input type="text" name="serendipity[profile' . $property . ']" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($user[$property]) : htmlspecialchars($user[$property], ENT_COMPAT, LANG_CHARSET)) . '">'."\n";
+                echo '<input type="text" name="serendipity[profile' . $property . ']" value="' . serendipity_specialchars($user[$property]) . '">'."\n";
         }
         echo "  </td>\n";
         echo "</tr>\n";
@@ -423,7 +470,7 @@ class serendipity_event_userprofiles extends serendipity_event
                 $this->updateConfigVar($property, $profile, $user[$property], $user['authorid']);
                 $profile[$property] = $user[$property];
             } else {
-                $user[$property] = isset($profile[$property]) ? $profile[$property] : null;
+                $user[$property] = $profile[$property] ?? null;
             }
 
             $this->showCol($property, $info, $user);
@@ -448,7 +495,7 @@ class serendipity_event_userprofiles extends serendipity_event
                 $this->updateConfigVar($property, $profile, $user[$property], $user['authorid']);
                 $profile[$property] = $user[$property];
             } else {
-                $user[$property] = isset($profile[$property]) ? $profile[$property] : null;
+                $user[$property] = $profile[$property] ?? null;
             }
 
             $this->showCol($property, $info, $user);
@@ -631,10 +678,9 @@ class serendipity_event_userprofiles extends serendipity_event
                             $tfile = dirname(__FILE__) . $filename;
                         }
                         $profile = $this->getConfigVars($serendipity['GET']['viewAuthor']);
-                        $_getLocalProperties = $this->getLocalProperties();
-                        $local_properties =& $_getLocalProperties;
+                        $local_properties = $this->getLocalProperties(); /* no more & */
                         foreach($local_properties AS $property => $info) {
-                            $profile[$property] = $GLOBALS['uInfo'][0][$property] ?? null;
+                            $profile[$property] = $serendipity['uInfo'][0][$property] ?? null;
                         }
 
                         $properties = array();
@@ -646,6 +692,7 @@ class serendipity_event_userprofiles extends serendipity_event
                         foreach($_profile AS $prop) {
                             if (!isset($profile[$prop])) $profile[$prop] = null;
                         }
+                        $profile['hobbies'] = $entry['body'];
 
                         $serendipity['smarty']->assign('userProfile', $profile);
                         $serendipity['smarty']->assign('userProfileProperties', $properties);
@@ -661,8 +708,11 @@ class serendipity_event_userprofiles extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries_event_display_profiles':
-                    $this->checkSchema();
-                    $this->showUsers();
+                    // ADMIN and CHIEFs shall check in via 'backend_sidebar_admin' link, simple EDITORs via personal preferences
+                    if ($serendipity['GET']['adminAction'] == 'profiles' || $serendipity['serendipityUserlevel'] == USERLEVEL_EDITOR) {
+                        $this->checkSchema();
+                        $this->showUsers();
+                    }
                     break;
 
                 case 'backend_sidebar_admin':
@@ -697,10 +747,15 @@ class serendipity_event_userprofiles extends serendipity_event
                     if ($bag->get('scrambles_true_content') && is_array($addData) && isset($addData['no_scramble'])) {
                         break;
                     }
+                    // no break [PSR-2] - extends frontend_display_cache
 
                 case 'frontend_display_cache':
-                    $this->showCommentcount($eventData);
-                    if (!serendipity_db_bool($this->get_config('authorpic', 'true'))) {
+                    if (isset($serendipity['view']) && $serendipity['view'] == 'entry') {
+                        $this->showCommentcount($eventData);
+                    } else {
+                        break;
+                    }
+                    if (!serendipity_db_bool($this->get_config('authorpic', 'false'))) {
                         return true;
                     }
 
@@ -718,20 +773,22 @@ class serendipity_event_userprofiles extends serendipity_event
                     }
 
                     if (serendipity_db_bool($this->get_config('gravatar', 'false')) && isset($eventData['body'])) {
-                        $img = 'http://www.gravatar.com/avatar.php?'
-                                . 'default=' . $this->get_config('gravatar_default','80')
+                        $img = 'https://www.gravatar.com/avatar.php?'
+                                . 'default=' . $this->get_config('gravatar_default', '80')
                                 . '&amp;gravatar_id=' . md5($eventData['email'])
-                                . '&amp;size=' . $this->get_config('gravatar_size','80')
-                                . '&amp;border=&amp;rating=' . $this->get_config('gravatar_rating','R');
-                        $this->found_images[$author] = '<div class="serendipity_authorpic"><img src="' . $img . '" alt="' . AUTHOR . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($authorname) : htmlspecialchars($authorname, ENT_COMPAT, LANG_CHARSET)) . '" /><br /><span>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($authorname) : htmlspecialchars($authorname, ENT_COMPAT, LANG_CHARSET)) . '</span></div>';
+                                . '&amp;size=' . $this->get_config('gravatar_size', '80')
+                                . '&amp;border=&amp;rating=' . $this->get_config('gravatar_rating', 'R');
+                        $this->found_images[$author] = '<div class="serendipity_authorpic"><img src="' . $img . '" alt="' . AUTHOR . '" title="' . serendipity_specialchars($authorname) . '" /><br /><span>' . serendipity_specialchars($authorname) . '</span></div>';
                         $eventData['body'] = $this->found_images[$author] . $eventData['body'];
                     } elseif (isset($this->found_images[$author]) && isset($eventData['body'])) {
                         // Author image was already found previously. Display it.
                         $eventData['body'] = $this->found_images[$author] . $eventData['body'];
-                    } elseif ($img = serendipity_getTemplateFile('img/' . preg_replace('@[^a-z0-9]@i', '_', $author) . '.' . $this->get_config('extension')) && isset($eventData['body'])) {
-                        // Author image exists, save it in cache and display it.
-                        $this->found_images[$author] = '<div class="serendipity_authorpic"><img src="' . $img . '" alt="' . AUTHOR . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($authorname) : htmlspecialchars($authorname, ENT_COMPAT, LANG_CHARSET)) . '" /><br /><span>' .(function_exists('serendipity_specialchars') ? serendipity_specialchars($authorname) : htmlspecialchars($authorname, ENT_COMPAT, LANG_CHARSET)) . '</span></div>';
-                        $eventData['body'] = $this->found_images[$author] . $eventData['body'];
+                    } elseif ($img = serendipity_getTemplateFile('img/' . preg_replace('@[^a-z0-9]@i', '_', $author) . '.' . $this->get_config('extension'))) {
+                        if (isset($eventData['body'])) {
+                            // Author image exists, save it in cache and display it.
+                            $this->found_images[$author] = '<div class="serendipity_authorpic"><img src="' . $img . '" alt="' . AUTHOR . '" title="' . serendipity_specialchars($authorname) . '" /><br /><span>' .serendipity_specialchars($authorname) . '</span></div>';
+                            $eventData['body'] = $this->found_images[$author] . $eventData['body'];
+                        }
                     } else {
                          // No image found, do not try again in next article.
                         $this->found_images[$author] = '';
@@ -777,7 +834,8 @@ class serendipity_event_userprofiles extends serendipity_event
             }
         }
 
-        $c = ($db_commentcount !== null && isset($db_commentcount[$eventData['author']])) ? $db_commentcount[$eventData['author']] : null;
+        $c = $db_commentcount !== null ? ($db_commentcount[$eventData['author']] ?? null) : null; // mid part for sidebar comments
+
         if ($c !== null) {
             $html_commentcount = '<div class="serendipity_commentcount">';
             if ($c == 1) {
@@ -800,15 +858,12 @@ class serendipity_event_userprofiles extends serendipity_event
     }
 
     /**
-     *
      * Create a vcard from user
      *
      * @access private
-     *
      * @param int $authorid  The UserID to build the vcard
      *
      * @return bool
-     *
      */
     function createVCard($authorid)
     {
@@ -816,17 +871,20 @@ class serendipity_event_userprofiles extends serendipity_event
 
         include 'Contact_Vcard_Build.php';
 
-        if(!class_exists('Contact_Vcard_Build')) {
+        if (!class_exists('Contact_Vcard_Build')) {
             return false;
         }
 
         $authorres = $this->getConfigVars($authorid);
+        if (empty($authorres)) {
+            return false;
+        }
         $name = explode(" ", $serendipity['POST']['profilerealname']);
         $city = explode(" ", $serendipity['POST']['profilecity']);
 
         $vcard = new Contact_Vcard_Build();
         $vcard->setFormattedName($serendipity['POST']['profilerealname']);
-        $vcard->setName((isset($name[1]) ? $name[1] : ''), $name[0], "", "", "");
+        $vcard->setName(($name[1] ?? ''), $name[0], "", "", "");
         $vcard->addEmail($serendipity['POST']['profileemail']);
         $vcard->addParam('TYPE', 'WORK');
         $vcard->addParam('TYPE', 'PREF');
@@ -834,7 +892,7 @@ class serendipity_event_userprofiles extends serendipity_event
             "",
             "",
             $serendipity['POST']['profilestreet'],
-            isset($city[1]) ? $city[1] : '',
+            $city[1] ?? '',
             "",
             $city[0],
             $serendipity['POST']['profilecountry']

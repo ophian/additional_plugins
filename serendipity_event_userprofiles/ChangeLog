@@ -1,6 +1,25 @@
+1.3.0: (sidebar)
+1.0.0:
+------
+ * Bump the version and requirement
+ * Remove the userprofiles form prepend to personal preferences for high level users
+ * Cleanups
+ * Fix commentcounter for v.41 fix
+ * Run enabled commentcounter on single entries views only
+ * Set default value of authorpic to false (No)
+ * Set default value of commentcounter to off (NONE)
+ * Fix get subpage for groupmember page
+ * Fix 0.43 "Only variables should be assigned by reference" back and again
+ * Get rid of list and select data from high level users if in lower userlevels
+ * PHP 8 initialization fixes
+ * Fixed access to group member subpage when set false (as well removes the push to global staticpage environments)
+ * Fix including the author picture
+ * Fix GLOBALS access data (requires Styx 3.5)
+ * Add sidebar plugin configuration NOTICE since usage and sense of this plugin has fallen out of time
+ * and more
+
 0.43:
 -----
-
  * Fix "Only variables should be assigned by reference"
  * Fix uninitialized local properties by GLOBALS
  * Fix uninitialized db properties for frontend usage

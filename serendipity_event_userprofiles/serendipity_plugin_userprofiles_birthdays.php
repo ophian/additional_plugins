@@ -11,10 +11,10 @@ class serendipity_plugin_userprofiles_birthdays extends serendipity_plugin
     function introspect(&$propbag)
     {
         $propbag->add('name',        PLUGIN_USERPROFILES_BIRTHDAYSNAME);
-        $propbag->add('description', '');
+        $propbag->add('description', 'none');
         $propbag->add('author',      'Falk Doering');
         $propbag->add('stackable',   false);
-        $propbag->add('version',     '0.5');
+        $propbag->add('version',     '0.6');
         $propbag->add('configuration', array('title', 'number'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -50,8 +50,6 @@ class serendipity_plugin_userprofiles_birthdays extends serendipity_plugin
 
     function generate_content(&$title)
     {
-        global $serendipity;
-
         $title = $this->get_config('title');
 
         echo $this->displayBirthdayList();
@@ -73,12 +71,10 @@ class serendipity_plugin_userprofiles_birthdays extends serendipity_plugin
 
     function displayBirthdayList()
     {
-        global $serendipity;
-
         $userlist = serendipity_fetchUsers();
         $birthdays = $this->getBirthdays();
 
-        foreach ($userlist as $user) {
+        foreach ($userlist AS $user) {
             if (isset($birthdays[$user['authorid']])) {
                 $res = $this->date_diff_days(time(), $birthdays[$user['authorid']]);
                 $bdays[$res][] = array(
@@ -87,10 +83,13 @@ class serendipity_plugin_userprofiles_birthdays extends serendipity_plugin
                 );
             }
         }
+
+        if (!isset($bdays)) return;
+
         ksort($bdays);
         $max_running = (int)$this->get_config('number');
         $running = 0;
-        foreach ($bdays as $key =>$bday) {
+        foreach ($bdays AS $key => $bday) {
             if ($key > 0 && $max_running > 0 && $running > $max_running) {
                 continue;
             }
@@ -101,8 +100,11 @@ class serendipity_plugin_userprofiles_birthdays extends serendipity_plugin
             }
             echo '<div>';
             for ($i = 0, $ii = count($bday); $i < $ii; $i++) {
-                if (strlen($content)) {
+                if (isset($content) && strlen($content)) {
                     $content .= '<br />';
+                }
+                if (!isset($content)) {
+                    $content = '';
                 }
                 $content .= $bday[$i]['name'].' '.$bday[$i]['date'];
             }
@@ -121,6 +123,11 @@ class serendipity_plugin_userprofiles_birthdays extends serendipity_plugin
                 FROM {$serendipity['dbPrefix']}profiles
                WHERE property = 'birthday'";
         $res = serendipity_db_query($q, false, 'assoc');
+
+        if (!is_array($res)) {
+            return null;
+        }
+
         foreach ($res as $b) {
             $ret[$b['authorid']] = $b['value'];
         }
