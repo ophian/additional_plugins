@@ -1095,11 +1095,11 @@
 <description>Mostra un modulo di contatto e-mail sul tuo blog come pagina statica, cui si può accedere sia da permalink personalizzato che da index.php?serendipity[subpage]=contactform. Puoi personalizzare l'aspetto del modulo inserendo il file plugin_contactform.tpl nella tua directory dei template e modificandolo là. I captchas del plugin Spamblock (se attivi) verranno applicati.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.39</version>
+  <version>1.40</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2021-04-03</date>
+  <date>2021-08-29</date>
   <filelist>
     <dir name="serendipity_event_contactform">
       <file>ChangeLog</file>
@@ -9318,11 +9318,11 @@
 <description>Implements simple comment antispam mechanisms, that are easy to configure but very effective.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Janek Bevendorff, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.4</version>
+  <version>1.4.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2021-04-29</date>
+  <date>2021-08-28</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bee">
       <file>ChangeLog</file>
@@ -11556,11 +11556,11 @@
 <description>Shows simple user profiles and allows to embed author pictures.</description>
 <maintainers><maintainer><name>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.43</version>
-  <requirements:s9yVersion>3.0</requirements:s9yVersion>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>3.5</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2021-08-11</date>
+  <date>2021-08-29</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
       <file>ChangeLog</file>

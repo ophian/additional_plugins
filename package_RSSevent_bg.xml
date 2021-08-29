@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Форма за обратна връзка&lt;/b&gt;&lt;br /&gt;Показва форма за изпращане на e-mail в блога като статична страница. Тя може да бъде достигната или чрез постоянна връзка, указана тук при конфигурирането на приставката или чрез 'index.php?serendipity[subpage]=contactform'. Можете да промените външния вид на формата като поставите файл 'plugin_contactform.tpl' в директорията на вашата тема и я модифицирате там. Captchas от приставка Spamblock (ако са позволени) ще бъдат приложени.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sat, 03 Apr 2021 16:58:09 +0200</pubDate>
+<pubDate>Sun, 29 Aug 2021 19:05:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -1022,7 +1022,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Hidden Captcha)&lt;/b&gt;&lt;br /&gt;Implements simple comment antispam mechanisms, that are easy to configure but very effective.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 29 Apr 2021 14:10:31 +0200</pubDate>
+<pubDate>Sat, 28 Aug 2021 18:54:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
@@ -1237,8 +1237,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_userprofiles</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;Потребителски профили&lt;/b&gt;&lt;br /&gt;Показва профил на автора с възможност за вграждане на негова снимка.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Wed, 11 Aug 2021 17:17:31 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;Потребителски профили&lt;/b&gt;&lt;br /&gt;Показва профил на автора с възможност за вграждане на негова снимка.&lt;br/&gt;For: Serendipity 3.5</content:encoded>
+<pubDate>Sun, 29 Aug 2021 19:22:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>

@@ -99,11 +99,11 @@
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
-<title>Eigenschaften/Templates von Kategorien: Dieses Plugin ermöglicht erweiterte Eigenschaften für Kategorien und deren Einträge festzulegen: speziell angepasste Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus anderen Eintragslisten, sowie auch dem RSS-Feed.</title>
+<title>Eigenschaften/Templates von Kategorien: Dieses Plugin ermöglicht erweiterte Eigenschaften für Kategorien und deren Einträge festzulegen: Speziell angepasste Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus anderen Eintragslisten und RSS-Feeds.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_categorytemplates</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Eigenschaften/Templates von Kategorien&lt;/b&gt;&lt;br /&gt;Dieses Plugin ermöglicht erweiterte Eigenschaften für Kategorien und deren Einträge festzulegen: speziell angepasste Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus anderen Eintragslisten, sowie auch dem RSS-Feed.&lt;br/&gt;For: Serendipity 2.7.0</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Eigenschaften/Templates von Kategorien&lt;/b&gt;&lt;br /&gt;Dieses Plugin ermöglicht erweiterte Eigenschaften für Kategorien und deren Einträge festzulegen: Speziell angepasste Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus anderen Eintragslisten und RSS-Feeds.&lt;br/&gt;For: Serendipity 2.7.0</content:encoded>
 <pubDate>Tue, 27 Jul 2021 16:29:25 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Kontaktformular&lt;/b&gt;&lt;br /&gt;Stellt ein E-Mail Kontaktformular auf Ihrem Blog als statische Seite dar. Darauf kann entweder über den (virtuellen) Permalink oder aus Kompatibilitätsgründen mittels index.php?serendipity[subpage]=contactform zugegriffen werden. Die Darstellung kann durch Smarty Templates angepasst werden, indem die Datei plugin_contactform.tpl in Ihren Templateordner kopiert und modifiziert wird. Captchas der Spamblock-Plugins (falls aktiviert) werden angewendet.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sat, 03 Apr 2021 16:58:09 +0200</pubDate>
+<pubDate>Sun, 29 Aug 2021 19:05:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -1022,7 +1022,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamschutz Biene (Honeypot, Verstecktes Captcha)&lt;/b&gt;&lt;br /&gt;Implementiert Kommentar AntiSpam Maßnahmen, die einfach zu konfigurieren aber sehr effektiv sind.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 29 Apr 2021 14:10:31 +0200</pubDate>
+<pubDate>Sat, 28 Aug 2021 18:54:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
@@ -1237,8 +1237,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_userprofiles</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;Benutzerprofile&lt;/b&gt;&lt;br /&gt;Zeigt einfache Benutzerprofile&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Wed, 11 Aug 2021 17:17:31 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;Benutzerprofile&lt;/b&gt;&lt;br /&gt;Zeigt einfache Benutzerprofile&lt;br/&gt;For: Serendipity 3.5</content:encoded>
+<pubDate>Sun, 29 Aug 2021 19:22:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>

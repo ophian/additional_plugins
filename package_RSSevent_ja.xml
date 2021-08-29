@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;お問合せフォーム&lt;/b&gt;&lt;br /&gt;静的ページとしてブログに電子メールお問合せフォームを表示します。It can be accessed by either the custom permalink or by index.php?serendipity[subpage]=contactform. You can customize the look of the contact form by putting the plugin_contactform.tpl file into your template directory and modify it there. spam ブロックプラグインの Captcha が(もし有効なら)適用されるでしょう。&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sat, 03 Apr 2021 16:58:09 +0200</pubDate>
+<pubDate>Sun, 29 Aug 2021 19:05:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -1024,7 +1024,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Hidden Captcha)&lt;/b&gt;&lt;br /&gt;Implements simple comment antispam mechanisms, that are easy to configure but very effective.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 29 Apr 2021 14:10:31 +0200</pubDate>
+<pubDate>Sat, 28 Aug 2021 18:54:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
@@ -1239,8 +1239,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_userprofiles</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;ユーザープロフィール&lt;/b&gt;&lt;br /&gt;簡単なユーザープロフィールを表示します。&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Wed, 11 Aug 2021 17:17:31 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;ユーザープロフィール&lt;/b&gt;&lt;br /&gt;簡単なユーザープロフィールを表示します。&lt;br/&gt;For: Serendipity 3.5</content:encoded>
+<pubDate>Sun, 29 Aug 2021 19:22:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
