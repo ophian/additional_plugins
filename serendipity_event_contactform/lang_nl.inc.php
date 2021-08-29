@@ -32,6 +32,7 @@
    <p>Er zijn verschillende velden beschikbaar. Momenteel worden de volgende velden ondersteund:
         <ul> 
          <li>text</li>
+         <li>email - normal email text field; example: "Name;email" (unlike the "text" type, this one uses the placeholder attribute, depending on the template design. The forms "'.PLUGIN_CONTACTFORM_DYNAMICTPL_SMALLBIZ.'" and "'.PLUGIN_CONTACTFORM_DYNAMICTPL_DETAILED.'" use the "text" type</li>
          <li>checkbox</li>
          <li>radio</li>
          <li>hidden</li>
@@ -46,10 +47,12 @@
          <li>De opmaak van het standaard formulier:- "require;Naam;text:require;E-mail;text:require;Web-pagina;text:require;Bericht;textarea"</li>
          <li>Een tekst-veld voor telefoonnummers:- "Telefoonnummer;text"</li>
          <li>Een verplicht tekst-veld voor telefoonnummers:- "require;Telefoonnummer;text"</li>
-         <li>Een tekst-veld met een standaard tekst:- "Standaard tekst;textarea;Dit is een standaard tekst.  Saai?  Wat wil je, hij is standaard!."
+         <li>Een tekst-veld met een standaard tekst:- "'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;Dit is een standaard tekst.  Saai?  Wat wil je, hij is standaard!."
          <li>Een Ja/nee opsommingsteken (radio button):- "Opsommingsteken;radio;Ja,ja|Nee,nee,checked"</li>
          <li>Een afvinkveld, standaard aangevinkt:- "Afvinkveld;checkbox;checked"</li>
-         <li>Alle 4 velden samen:- "require;Telefoonnummer;text:Standaard tekst;textarea;Dit is een standaard tekst.  Saai?  Wat wil je, hij is standaard! :Opsommingsteken;radio;Ja,ja|Nee,nee,checked:Afvinkveld;checkbox;checked" </li>
+         <li>Alle 4 velden samen:- "require;Telefoonnummer;text:'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;Dit is een standaard tekst.  Saai?  Wat wil je, hij is standaard! :Opsommingsteken;radio;Ja,ja|Nee,nee,checked:Afvinkveld;checkbox;checked" </li>
        </ul>
-   </p>');
+   </p>
+   <p>For the textarea field there is a special feature to note: Since other plugins can hook in after the message field, the emoticonchooser event plugin in particular uses a fixed className selector to insert its smileys into the textarea field. For this case (as far as you use it) the name of the dynamically constructed textarea field must be exactly as defined in the currently used language constant. In this case: <strong>'.PLUGIN_CONTACTFORM_MESSAGE.'</strong>. The '.PLUGIN_CONTACTFORM_DYNAMICFIELDS.' for the text field must then be: "'.PLUGIN_CONTACTFORM_MESSAGE.';textarea" so that the plugin_dynamicform.tpl template file can refer to it exactly.</p>
+   <p>If you use field types other than the predefined ones, you can specify a custom template file and use Smarty syntax to check for custom field types yourself, similar to how other types are already checked in the default template file.</p>');
 

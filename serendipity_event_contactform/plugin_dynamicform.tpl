@@ -50,7 +50,7 @@
        {foreach $commentform_dynamicfields AS $field}
           {if $field.type != "hidden"}
            <tr>
-              <td class="serendipity_commentsLabel">{if $field.required}<sup>&#8727;</sup>{/if}<label for="serendipity_commentform_{$field.id}">{$field.name}</label></td>
+              <td class="serendipity_commentsLabel">{if $field.required}<sup>&#8727;</sup>{/if}<label for="serendipity_contactform_{$field.id}">{$field.name}</label></td>
               <td class="serendipity_commentsValue">
                  {if $field.type == "checkbox"}
                        <input type="checkbox" name="{$field.id}" id="{$field.id}" {$field.default} /><label for="{$field.id}">{$field.message}</label>
@@ -63,11 +63,12 @@
                        <option name="{$field.id}" id="{$field.id}.{$option.id}" value="{$option.value}" {$option.default} >{$option.name}</option>
                     {/foreach}</select>
                  {elseif $field.type == "password"}
-                     <input type="password" id="serendipity_commentform_{$field.id}" name="serendipity[{$field.id}]" value="{$field.default}" size="30" />
+                     <input type="password" id="serendipity_contactform_{$field.id}" name="serendipity[{$field.id}]" value="{$field.default}" size="30" />
                  {elseif $field.type == "textarea"}
-                     <textarea rows="10" cols="40" id="serendipity_commentform_comment" name="serendipity[{$field.id}]">{$field.default}</textarea><br />
-                 {else}
-                     <input type="text" id="serendipity_commentform_{$field.id}" name="serendipity[{$field.id}]" value="{$field.default}" size="30" />
+                     <textarea rows="{if $field.name == $CONST.PLUGIN_CONTACTFORM_MESSAGE}10{else}4{/if}" cols="40" id="{if $field.name == $CONST.PLUGIN_CONTACTFORM_MESSAGE}serendipity_commentform_comment{else}serendipity_contactform_{$field.id}{/if}" name="serendipity[{$field.id}]">{$field.default}</textarea><br />
+                     {* If you do NOT need AND run the emoticonchooser plugin, you can as well just use serendipity_contactform_{$field.id} here! *}
+                {else}
+                     <input type="text" id="serendipity_contactform_{$field.id}" name="serendipity[{$field.id}]" value="{$field.default}" size="30" />
                  {/if}
               </td>
            </tr>

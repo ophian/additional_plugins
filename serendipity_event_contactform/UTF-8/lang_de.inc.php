@@ -5,7 +5,6 @@
 @define('PLUGIN_CONTACTFORM_PERMALINK', 'Permalink');
 @define('PLUGIN_CONTACTFORM_PAGETITLE', 'URL-Zeiger (Titel) der Seite');
 @define('PLUGIN_CONTACTFORM_PAGETITLE_DESC', 'Kurzer (Ein-Wort) URL-Titel der Seite, siehe obige Beschreibung index.php?serendipity[subpage]=contactform. Dieser Zeiger wird auch als Sprung Titel im Banner des Frontends verwendet. Der im Frontend hervorgehobene Titel "'.PLUGIN_CONTACTFORM_TITLE.'" des (optionalen) Einführungstextes (s.u.), entstammt jedoch einer Sprachkonstante. Diesen Titel können Sie nur individualisieren, in dem Sie aus Gründen zur manuellen Theme-Anpassung die Template Datei (meist: "plugin_contactform.tpl") aus dem Rückfall Zugriffs-Mechanismus nach dieser Reihenfolge heraus kopieren, soweit darin vorhanden: Ein mögliches Engine Parent-Theme, das augenblickliche Serendipity Standard-Theme ('.$serendipity['defaultTemplate'].'), das Serendipity Default-Theme (default), oder bzw. zuletzt aus dem Plugin Ordner selbst.');
-@define('PLUGIN_CONTACTFORM_PERMALINK_BLAHBLAH', 'Gibt den Permalink der statischen Seite an. Dieser muss eine absolute Pfadangabe vom HTTP-Root ab sein und die Dateiendung .htm oder .html besitzen!');
 @define('PLUGIN_CONTACTFORM_EMAIL', 'E-Mail Adresse für Kontaktmails');
 @define('PLUGIN_CONTACTFORM_INTRO', 'Einführungstext (optional)');
 @define('PLUGIN_CONTACTFORM_MESSAGE', 'Nachricht');
@@ -14,14 +13,14 @@
 @define('PLUGIN_CONTACTFORM_ERROR_HTML', 'Ein Fehler trat bei der Übermittlung der E-Mail auf. Eventuell ist ihre E-Mail Adresse ungültig oder der Server ist spazieren gegangen.');
 @define('PLUGIN_CONTACTFORM_ERROR_DATA', 'Name, E-Mail und ihre Nachricht dürfen nicht leer gelassen werden.');
 @define('PLUGIN_CONTACTFORM_ARTICLEFORMAT', 'Als Artikel formatieren?');
-@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT_BLAHBLAH', 'legt fest ob die Ausgabe automatisch wie ein Artikel formatiert werden soll (Farben, Ränder, etc.) (Standard: ja)');
+@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT_BLAHBLAH', 'Legt fest ob die Ausgabe automatisch wie ein Artikel formatiert werden soll (Farben, Ränder, etc.) (Standard: ja)');
 
 @define('PLUGIN_CONTACTFORM_TEMPLATE', 'Template-Datei');
 @define('PLUGIN_CONTACTFORM_TEMPLATE_DESC', 'Legt den Namen der Templatedatei fest, mit der das Kontaktformular dargestellt wird. Diese Datei kann entweder in dem Verzeichnis dieses Plugins oder dem Template-Verzeichnis gespeichert werden.');
 
 @define('PLUGIN_CONTACTFORM_DYNAMIC_ERROR_DATA', 'Ein benötigtes Feld wurde nicht ausgefüllt.');
 @define('PLUGIN_CONTACTFORM_DYNAMICTPL', 'Dynamische Vorlage (tpl) benutzen?');
-@define('PLUGIN_CONTACTFORM_DYNAMICTPL_DESC', 'erlaubt die Auswahl, welches Formular benutzt wird. Sie können zwischen dem Standard-Formular, einem Formular für kleine Geschäfte, einem detaillierten Formular und einem komplett selbsterstelltes Formular, das aus der manuell eingegebenen Zeichenkette erstellt wird, wählen.');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL_DESC', 'Erlaubt die Auswahl, welches Formular benutzt wird. Sie können zwischen dem Standard-Formular, einem Formular für kleine Geschäfte, einem detaillierten Formular und einem komplett selbsterstellten Formular, das aus der manuell eingegebenen Zeichenkette erstellt wird, wählen.');
 @define('PLUGIN_CONTACTFORM_DYNAMICFIELDS', 'Formularfeld-Zeichenkette');
 @define('PLUGIN_CONTACTFORM_DYNAMICTPL_STANDARD', 'Standard');
 @define('PLUGIN_CONTACTFORM_DYNAMICTPL_SMALLBIZ', 'Kleines Geschäft');
@@ -36,6 +35,7 @@
 <p>Es sind mehrere verschiedene Feldtypen verfügbar. Momentan werden die folgenden Feldtypen unterstützt:
  <ul>
   <li>text - Normales Textfeld; Beispiel: "Name;text"</li>
+  <li>email - Normales Email Textfeld; Beispiel: "Name;email" (im Unterschied zum "text" type nutzt dieses das placeholder attribute, je nach template Ausfertigung. Die Formulare "'.PLUGIN_CONTACTFORM_DYNAMICTPL_SMALLBIZ.'" und "'.PLUGIN_CONTACTFORM_DYNAMICTPL_DETAILED.'" nutzen den "text" type.</li>
   <li>checkbox - Eine Checkbox; Beispiel: "Check Box;checkbox;hinter der Checkbox angezeigter Text,checked"</li>
   <li>radio - Eine Gruppe von radio buttons; Beispiel: "Radio Button;radio;Ja,ja|Nein,nein,checked"</li>
   <li>hidden - Ein verstecktes Feld; Beispiel: "verstecktedaten;hidden"</li>
@@ -50,13 +50,14 @@
   <li>Das Standardformular nachbauen:- "require;Name;text:require;Email;text:require;Homepage;text:require;Message;textarea"</li>
   <li>Ein Textfeld für Telefonnummern: :- "Telefonnummer;text"</li>
   <li>Ein erforderliches Textfeld für Telefonnummern:- "require;Telefonnummer;text"</li>
-  <li>Ein mehrzeiliges Textfeld mit Standardtext:- "Standardtext;textarea;Das ist Standardtext. Er ist langweilig. Aber er ist Standard."
+  <li>Ein mehrzeiliges Textfeld mit Standardtext:- "'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;Das ist Standardtext. Er ist langweilig. Aber er ist Standard."
   <li>Ein Ja/Nein radio button:- "Radio Button;radio;Ja,ja|Nein,nein,checked"</li>
   <li>Eine Checkbox, standardmäßig ausgewählt:- "Check Box;checkbox;checked"</li>
-  <li>Die letzen vier zusammen:- "require;Telefonnummer;text:Standardtext;textarea;Das ist Standardtext. Er ist langweilig. Aber er ist Standard.:Radio Button;radio;Ja,ja|Nein,nein,checked:Check Box;checkbox;checked" </li>
+  <li>Die letzen vier zusammen:- "require;Telefonnummer;text:'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;Das ist Standardtext. Er ist langweilig. Aber er ist Standard.:Radio Button;radio;Ja,ja|Nein,nein,checked:Check Box;checkbox;checked" </li>
 </ul>
 </p>
-<p>Falls Sie andere Feldtypen außer den vordefinierten verwenden wollen, können Sie eine benutzerdefinierte Vorlage verwenden und die Smarty Syntaxüberprüfung für benutzerdefinierte Feldtypen verwenden, ähnlich wie die bereits in der Template-Datei definierten Feldtypen überprüft werden.</p>');
+<p>Für das Textarea Feld gibt es eine Besonderheit zu beachten: Da andere Plugins sich nach dem Nachricht-Feld einklinken können, verwendet insbesondere das emoticonchooser Ereignis-Plugin einen fest definierten className selector um seine Smileys in das Textfeld einzufügen. Für diesen Fall muss (soweit sie es verwenden) der Name des dynamisch konstruierten textarea Feldes genau so lauten, wie es in der augenblicklich benutzen Sprachkonstante definiert ist. In diesem Fall: <strong>'.PLUGIN_CONTACTFORM_MESSAGE.'</strong>. Die '.PLUGIN_CONTACTFORM_DYNAMICFIELDS.' für das Textfeld muss dann so lauten: "'.PLUGIN_CONTACTFORM_MESSAGE.';textarea", damit die plugin_dynamicform.tpl Template Datei genau darauf Bezug nehmen kann.</p>
+<p>Falls Sie andere Feldtypen außer den vordefinierten verwenden wollen, können Sie eine benutzerdefinierte Vorlage verwenden und die Smarty Syntaxüberprüfung für benutzerdefinierte Feldtypen verwenden, ähnlich wie bei anderen Typen, die bereits in der Standardvorlagendatei überprüft werden.</p>');
 
 @define('PLUGIN_CONTACTFORM_TEMPLATE', 'Template-Dateiname');
 @define('PLUGIN_CONTACTFORM_TEMPLATE_DESC', 'Geben Sie nur den Dateinamen einer benutzerdefinierten Template-Datei ein. Diese Datei wird zur Anzeige dieses Kontaktformulars benutzt. Sie können die Datei wahlweise ins Verzeichnis dieses Plugins oder ins Verzeichnis Ihres derzeitigen Templates hochladen.');
@@ -66,4 +67,7 @@
 @define('PLUGIN_CONTACTFORM_ISSUECOUNTER_DESC', 'Wenn aktiviert, bekommt jedes abgeschickte Kontaktformular eine eindeutige ID.');
 @define('PLUGIN_CONTACTFORM_MAIL_ISSUECOUNTER', 'Ticket: %s');
 @define('PLUGIN_CONTACTFORM_SUBJECT_DESC', 'Geben Sie den Betreff der Mail ein, die an Ihre Adresse geschickt wird. Mit der Variable %s können Sie den Titel Ihres Kontaktformulars einfügen.');
+
+
+@define('PLUGIN_CONTACTFORM_REQUIRED_FIELD', 'Pflichtfeld');
 

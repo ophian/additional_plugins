@@ -41,6 +41,7 @@
    <p>Pole mohou být následujících typů:
         <ul> 
          <li>text - standardní textové pole; Příklad: "Jméno;text"</li>
+         <li>email - normal email text field; example: "Name;email" (unlike the "text" type, this one uses the placeholder attribute, depending on the template design. The forms "'.PLUGIN_CONTACTFORM_DYNAMICTPL_SMALLBIZ.'" and "'.PLUGIN_CONTACTFORM_DYNAMICTPL_DETAILED.'" use the "text" type</li>
          <li>checkbox - zaškrtávací políčko; Příklad: "Žádám odpověď;checkbox;název, který se má zobrazit po zaškrtnutí políčka"</li>
          <li>radio - skupina vybíracích koleček; Příklad: "Z aut mám nejradši;radio;Citroeny|Peugeoty|Renaulty"</li>
          <li>hidden - skryté pole; Příklad: "skryte_pole;hidden"</li>
@@ -56,12 +57,14 @@
          <li>Standardní formulář lze zapsat takto: "require;Jméno;text:require;E-mail;text:require;Domácí stránka;text:require;Text zprávy;textarea;"</li>
          <li>Textové pole pro telefoní číslo: "Telefon;text"</li>
          <li>Textové pole pro telefoní číslo, které má být povinně vyplněné:- "require;Telefon;text"</li>
-         <li>Textová oblast s přednastaveným textem: "Přednastavený text;textarea;Tohle je přednastavený text...  Pěkná nuda...  Ale je to přednastavené."
+         <li>Textová oblast s přednastaveným textem: "'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;Tohle je přednastavený text...  Pěkná nuda...  Ale je to přednastavené."
          <li>Výběr mezi ano/ne: "Výběr;radio;Ano,ano|Ne,ne a ještě jednou ne"</li>
          <li>Zaškrtávací políčko standardně zaškrtnuté: "Povolání Student;checkbox;checked"</li>
-         <li>Poslední čtyři příklady dohromady: "require;Telefon;text:Přednastavený text;textarea;Tohle je přednastavený text...  Pěkná nuda...  Ale je to přednastavené.:Výběr;radio;Ano,ano|Ne,ne a ještě jednou ne:Povolání Student;checkbox;checked" </li>
+         <li>Poslední čtyři příklady dohromady: "require;Telefon;text:'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;Tohle je přednastavený text...  Pěkná nuda...  Ale je to přednastavené.:Výběr;radio;Ano,ano|Ne,ne a ještě jednou ne:Povolání Student;checkbox;checked" </li>
        </ul>
-   </p>');
+   </p>
+   <p>For the textarea field there is a special feature to note: Since other plugins can hook in after the message field, the emoticonchooser event plugin in particular uses a fixed className selector to insert its smileys into the textarea field. For this case (as far as you use it) the name of the dynamically constructed textarea field must be exactly as defined in the currently used language constant. In this case: <strong>'.PLUGIN_CONTACTFORM_MESSAGE.'</strong>. The '.PLUGIN_CONTACTFORM_DYNAMICFIELDS.' for the text field must then be: "'.PLUGIN_CONTACTFORM_MESSAGE.';textarea" so that the plugin_dynamicform.tpl template file can refer to it exactly.</p>
+   <p>If you use field types other than the predefined ones, you can specify a custom template file and use Smarty syntax to check for custom field types yourself, similar to how other types are already checked in the default template file.</p>');
 
 @define('PLUGIN_CONTACTFORM_TEMPLATE',		'Jméno souboru se šablonou');
 @define('PLUGIN_CONTACTFORM_TEMPLATE_DESC',		'Zadejte pouze jméno souboru jakékoliv šablony, která má být použita k vykreslení kontaktního formuláře. Můžete nahrát vlastní soubory buď do adresáře tohoto pluginu, nebo do adresáře se šablonou, kterou používáte.');

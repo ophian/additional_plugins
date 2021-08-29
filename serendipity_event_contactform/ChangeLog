@@ -1,3 +1,11 @@
+1.40:
+-----
+ * Fix a default value in dynmic forms since 1.28
+ * Fix dynmicform set check for radio fields
+ * Fix PHP 8 init check
+ * Add some more explaining text for the custom "Form field string", adding the email type field and about issues with textarea selector naming
+ * Refactored the serendipity_specialchars() mapper
+
 1.39:
 -----
  * Improve lang [en, de] head description for "bee" and PLUGIN_CONTACTFORM_PAGETITLE_DESC for contactform specifics.
