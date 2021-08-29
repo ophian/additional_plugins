@@ -1,3 +1,8 @@
+1.4.5:
+------
+
+ * Fix using template emulator object as array case, when using a PHP-theme
+
 1.4.4:
 ------
 
