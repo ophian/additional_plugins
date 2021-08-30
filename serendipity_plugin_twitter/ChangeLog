@@ -284,7 +284,7 @@ TODO:
 ----------------------
     * FIX: Tweet backup didn't work anymore because of int
       overflow in the database. :-(
-    * FIX: Sidebar was not realy stackable with different accs.
+    * FIX: Sidebar was not really stackable with different accs.
       (only one cachefile was defined)
     * FIX: First time loading of sidebar with installed event
       plugin reported wrong "Twitter not accessable".
