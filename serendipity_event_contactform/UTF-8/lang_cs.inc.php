@@ -34,7 +34,7 @@
 @define('PLUGIN_CONTACTFORM_FNAME',		'Jméno');
 @define('PLUGIN_CONTACTFORM_LNAME',		'Příjmení');
 @define('PLUGIN_CONTACTFORM_ADDRESS',		'Adresa');
-@define('PLUGIN_CONTACTFORM_DYNAMICFIELDS_DESC',		'Tento řetězec určuje, které z polí se objeví v kontaktním formuláři, zda jsou tato pole povinná a jejich přednastavenou hodnotu.');
+@define('PLUGIN_CONTACTFORM_DYNAMICFIELDS_DESC',		'Tento řetězec určuje, které z polí se objeví v kontaktním formuláři, zda jsou tato pole povinná a jejich přednastavenou hodnotu. If you had already build a custom string here and then change the dynamic tpl profile selection (with Save) and back to custom again, this form field string will contain one of the default profile strings. This can be irritating if your self-created string is only slightly different from the default, so you don\'t notice it right away.');
 @define('PLUGIN_CONTACTFORM_DYNAMICFIELDS_DESC_NOTE',		'<p>"Pole formuláře" je textový řetězec, podle kterého se budou zobrazovat pole v kontaktním formuláři. Řetězec musí mít následující syntaxi &lt;pole&gt;:&lt;pole&gt;:&lt;pole&gt;.  Oddělování polí je pomocí dvojtečky.</p>
    <p>Jednotlivá pole (kromě typu "radio", "checkbox" a "select", které bude samostatně rozebráno) musí být zadány ve tvaru {require;}Jméno;typ{;default}.  Pamatujte na oddělování jednotlivých polí pomocí dvojtečky. Ve tvaru syntaxe znamenají příkazy ve složených závorkách, že se jedná o nepovinné parametry. Pokud má být pole kontrolování, zda je vyplněné, vložte na začátek definice pole slovo "require".
 </p>
@@ -63,6 +63,7 @@
          <li>Poslední čtyři příklady dohromady: "require;Telefon;text:'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;Tohle je přednastavený text...  Pěkná nuda...  Ale je to přednastavené.:Výběr;radio;Ano,ano|Ne,ne a ještě jednou ne:Povolání Student;checkbox;checked" </li>
        </ul>
    </p>
+   <p>It is important that there are no hidden line breaks in the string, otherwise strange markups or even missing fields may result.</p>
    <p>For the textarea field there is a special feature to note: Since other plugins can hook in after the message field, the emoticonchooser event plugin in particular uses a fixed className selector to insert its smileys into the textarea field. For this case (as far as you use it) the name of the dynamically constructed textarea field must be exactly as defined in the currently used language constant. In this case: <strong>'.PLUGIN_CONTACTFORM_MESSAGE.'</strong>. The '.PLUGIN_CONTACTFORM_DYNAMICFIELDS.' for the text field must then be: "'.PLUGIN_CONTACTFORM_MESSAGE.';textarea" so that the plugin_dynamicform.tpl template file can refer to it exactly.</p>
    <p>If you use field types other than the predefined ones, you can specify a custom template file and use Smarty syntax to check for custom field types yourself, similar to how other types are already checked in the default template file.</p>');
 

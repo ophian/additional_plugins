@@ -1,7 +1,12 @@
+1.41:
+-----
+ * Fix the old example dynamicform template
+ * Add some more descriptive behaviour text to "Form field string" and the main custom fields description
+
 1.40:
 -----
- * Fix a default value in dynmic forms since 1.28
- * Fix dynmicform set check for radio fields
+ * Fix a default value in dynamic forms since 1.28
+ * Fix dynamicform set check for radio fields
  * Fix PHP 8 init check
  * Add some more explaining text for the custom "Form field string", adding the email type field and about issues with textarea selector naming
  * Refactored the serendipity_specialchars() mapper

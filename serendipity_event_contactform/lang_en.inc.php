@@ -15,7 +15,7 @@
 @define('PLUGIN_CONTACTFORM_EMAIL', 'Target E-Mail address');
 @define('PLUGIN_CONTACTFORM_INTRO', 'Introductory Text (optional)');
 @define('PLUGIN_CONTACTFORM_MESSAGE', 'Message');
-@define('PLUGIN_CONTACTFORM_SENT', 'Text. after message has been sent');
+@define('PLUGIN_CONTACTFORM_SENT', 'Text, after message has been sent');
 @define('PLUGIN_CONTACTFORM_SENT_HTML', 'Your message has been successfully mailed!');
 @define('PLUGIN_CONTACTFORM_ERROR_HTML', 'An error occurred while posting the message!');
 @define('PLUGIN_CONTACTFORM_ERROR_DATA', 'Name, E-Mail and your message must not be an empty string.');
@@ -32,7 +32,7 @@
 @define('PLUGIN_CONTACTFORM_FNAME', 'First Name');
 @define('PLUGIN_CONTACTFORM_LNAME', 'Last Name');
 @define('PLUGIN_CONTACTFORM_ADDRESS', 'Address');
-@define('PLUGIN_CONTACTFORM_DYNAMICFIELDS_DESC', 'This is the string that is parsed to determine which fields will appear on the form, whether they are required, and the default settings.');
+@define('PLUGIN_CONTACTFORM_DYNAMICFIELDS_DESC', 'This is the string that is parsed to determine which fields will appear on the form, whether they are required, and the default settings. If you had already build a custom string here and then change the dynamic tpl profile selection (with Save) and back to custom again, this form field string will contain one of the default profile strings. This can be irritating if your self-created string is only slightly different from the default, so you don\'t notice it right away.');
 @define('PLUGIN_CONTACTFORM_DYNAMICFIELDS_DESC_NOTE', '<p>The "Form field string" is a text string that is used to determine which fields are displayed on the dynamic form.  The string must be in the order of &lt;field&gt;:&lt;field&gt;:&lt;field&gt;.  Note the separation by colons.</p>
    <p>The individual fields (except for type "radio", as defined later) must be of the form {require;}Name;type{;default}.  Note the separation by semicolons.  Also, note that the curly brackets indicate an optional field.  If a field must be filled in to complete the form then the word "require" must appear at the start of the field definition (without the curly backets).</p>
    <p>Fields of different types are available.  Currently these types are supported:
@@ -59,6 +59,7 @@
          <li>The last four together:- "require;Phone number;text:'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;This is default text.  It is boring.  But it is default.:Radio Button;radio;Yes,yes|No,no,checked:Check Box;checkbox;checked" </li>
        </ul>
    </p>
+   <p>It is important that there are no hidden line breaks in the string, otherwise strange markups or even missing fields may result.</p>
    <p>For the textarea field there is a special feature to note: Since other plugins can hook in after the message field, the emoticonchooser event plugin in particular uses a fixed className selector to insert its smileys into the textarea field. For this case (as far as you use it) the name of the dynamically constructed textarea field must be exactly as defined in the currently used language constant. In this case: <strong>'.PLUGIN_CONTACTFORM_MESSAGE.'</strong>. The '.PLUGIN_CONTACTFORM_DYNAMICFIELDS.' for the text field must then be: "'.PLUGIN_CONTACTFORM_MESSAGE.';textarea" so that the plugin_dynamicform.tpl template file can refer to it exactly.</p>
    <p>If you use field types other than the predefined ones, you can specify a custom template file and use Smarty syntax to check for custom field types yourself, similar to how other types are already checked in the default template file.</p>');
 

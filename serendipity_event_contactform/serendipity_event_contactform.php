@@ -27,7 +27,7 @@ class serendipity_event_contactform extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'backend_title', 'email', 'subject', 'counter', 'intro', 'sent', 'articleformat', 'dynamic_tpl', 'dynamic_fields', 'dynamic_fields_tpl', 'dynamic_fields_desc'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.40');
+        $propbag->add('version', '1.41');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -350,6 +350,12 @@ class serendipity_event_contactform extends serendipity_event
             'timestamp'         => 10 // make those entries old so that captcha_ttl will be enabled.
         );
 
+        // Some clarification. The array commentInfo
+        // relies on data which is defined as required_fields in spamblock, and which can be "name, email, url, replyTo, comment"
+        // (replyTo does not have have any relation to contactform fields and will probably never be put in via the "form field string" by a user, else you would have to put in     'replyTo' => 'x',).
+        // Since this is a "fake" call to make it accessible with Captchas and some primitive checks, name - email - url - comment could probably be set to any string with a certain length and the only real value they have here is to be (spamblock) logged with real data.
+        // This is why it does not really matter, when dynamic contactform field items for these fields are named in a differentially manner, e.g. like email to E-mail, Homepage for url, etc.
+        // So why don't all possible 5 POST check fields error about not being isset then? Because they got already a NULL fallback init somewhere.
         $commentInfo = array(
             'type'    => 'NORMAL',
             'source'  => 'commentform',
