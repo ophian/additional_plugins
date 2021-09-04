@@ -220,7 +220,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_SPAMBLOCK_BEE_REQUIRED_FIELDS);
                 $propbag->add('description', PLUGIN_EVENT_SPAMBLOCK_BEE_REQUIRED_FIELDS_DESC);
-                $propbag->add('default',     '');
+                $propbag->add('default',     'name,comment');
                 break;
 
             case 'entrytitle':
@@ -473,11 +473,11 @@ class serendipity_event_spamblock_bee extends serendipity_event
                     return $isCorrect;
                 }
             }
-            // AntiSpam check, the general spamblock supports, too: Only if spamblock is not installed.
+            // AntiSpam check, the general spamblock supports, too: Only if spamblock is not installed. [ NOT recommended ! ]
             if (!class_exists('serendipity_event_spamblock')) {
 
                 // Check for required fields. Don't log but tell the user about the fields.
-                $required_fields = $this->get_config('required_fields', '');
+                $required_fields = $this->get_config('required_fields', 'name,comment');
                 if (!empty($required_fields)) {
                     $required_field_list = explode(',', $required_fields);
                     foreach($required_field_list AS $required_field) {
@@ -491,7 +491,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
             }
         }
 
-        // AntiSpam check, the general spamblock supports, too: Only if spamblock is not installed.
+        // AntiSpam check, the general spamblock supports, too: Only if spamblock is not installed. [ NOT recommended ! ]
         if (!class_exists('serendipity_event_spamblock')) {
 
             // Check if entry title is the same as comment body
