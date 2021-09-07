@@ -1,3 +1,7 @@
+1.42:
+-----
+ * Fix some lang constants and [de] translation
+
 1.41:
 -----
  * Fix the old example dynamicform template
