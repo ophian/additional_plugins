@@ -1,6 +1,10 @@
+1.43:
+-----
+ * Improve [de] lang constants again
+
 1.42:
 -----
- * Fix some lang constants and [de] translation
+ * Improve some [en, de] lang constants and add a [de] translation
 
 1.41:
 -----
