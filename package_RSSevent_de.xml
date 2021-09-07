@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Kontaktformular&lt;/b&gt;&lt;br /&gt;Stellt ein E-Mail Kontaktformular auf Ihrem Blog als statische Seite dar. Darauf kann entweder über den (virtuellen) Permalink oder aus Kompatibilitätsgründen mittels index.php?serendipity[subpage]=contactform zugegriffen werden. Die Darstellung kann durch Smarty Templates angepasst werden, indem die Datei plugin_contactform.tpl in Ihren Templateordner kopiert und modifiziert wird. Captchas der Spamblock-Plugins (falls aktiviert) werden angewendet.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Mon, 30 Aug 2021 11:23:27 +0200</pubDate>
+<pubDate>Tue, 07 Sep 2021 13:36:03 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
