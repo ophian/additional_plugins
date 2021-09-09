@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.3.4');
+        $propbag->add('version',       '2.3.5');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0.0',
             'smarty'      => '3.1.0',
@@ -681,7 +681,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
 [data-color-mode="dark"] .isp_archives,
 [data-color-mode="dark"] #quickblog_tablefield .quickblog_content {
     border-color: var(--color-border-overlay);
-    background: var(--color-bg-overlay);
+    background: var(--color-bg-tertiary);
 }
 [data-color-mode="dark"] #quickblog_tab_info.field_info {
     background-color: var(--color-bg-info);
@@ -690,6 +690,9 @@ if (is_array($cats = serendipity_fetchCategories())) {
 }
 [data-color-mode="dark"] #isp_archives .wrap_legend, [data-color-mode="dark"] #quickblog_tablefield legend {
     color: var(--color-text-primary);
+}
+#quickblog_content {
+    margin-top: .5rem;
 }
 #quickblog_content label {
     padding-right: .25rem;
