@@ -18,7 +18,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '3.03');
+        $propbag->add('version',       '3.04');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.3'
@@ -508,6 +508,11 @@ class serendipity_event_statistics extends serendipity_event
     text-shadow: #fff 0 1px 1px;
     width: 100%;
 }
+[data-color-mode="dark"] .serendipity_statistics table {
+    background-image: linear-gradient(var(--color-auto-gray-4), var(--color-auto-gray-1));
+    color: var(--color-text-primary);
+    text-shadow: none;
+}
 .stats_imagecell {
     vertical-align: bottom;
 }
@@ -520,6 +525,9 @@ class serendipity_event_statistics extends serendipity_event
     text-align: right;
     width: 50%;
     float: right;
+}
+[data-color-mode="dark"] .stats_header {
+    background-color: var(--color-bg-overlay);
 }
 .serendipity_statistics .wide_box dl {
     clear: left;
