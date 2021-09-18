@@ -1,3 +1,7 @@
+6.41:
+-----
+ * Fix a PHP 8.1 restriction "Passing null to parameter of type string"
+
 6.40:
 -----
  * Fix a CHIEF_EDITOR permission level issue
