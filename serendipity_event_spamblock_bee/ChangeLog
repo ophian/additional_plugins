@@ -2,6 +2,7 @@
 ------
 
  * Fix for PHP 8.1: Passing null to parameter of type string is deprecated
+ * Raises requirements
 
 1.5.0:
 ------

@@ -99,9 +99,9 @@ class serendipity_event_spamblock_bee extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Grischa Brockhaus, Janek Bevendorff, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.2.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '7.0'
         ));
 
         $propbag->add('version',       PLUGIN_SPAMBLOCK_BEE_VERSION); // setup via version.inc.php
@@ -677,7 +677,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
         if (PLUGIN_EVENT_SPAMBLOCK_SWTCH_OFF != $this->hiddenCaptchaHandle) {
             $path         = $this->path = $this->get_config('plugin_path', $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_spamblock_bee/');
             $answer       = $this->getCaptchaAnswer();
-            $answer       = $answer['answer'];
+            $answer       = $answer['answer'] ?? '';
             $jsProperties = array('method' => $this->answerRetrievalMethod);
 
 
@@ -1027,7 +1027,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
      * @param  int    $key
      * @return string
      */
-    function xorScramble((string) $string, $key)
+    function xorScramble($string, $key)
     {
         $scrambled = '';
         $length    = mb_strlen($string, 'UTF-8');
