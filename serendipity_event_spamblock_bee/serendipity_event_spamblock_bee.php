@@ -1027,7 +1027,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
      * @param  int    $key
      * @return string
      */
-    function xorScramble($string, $key)
+    function xorScramble((string) $string, $key)
     {
         $scrambled = '';
         $length    = mb_strlen($string, 'UTF-8');
