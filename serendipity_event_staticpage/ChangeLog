@@ -1,3 +1,9 @@
+6.42:
+-----
+ * Preparation fixes for Styx 3.6+ and PHP 8.1 added AV1-Image-File (avif) support,
+   which started to change some hooked key namings to be more generic for media file variation rename actions.
+   This has to migrate slowly to not break existing situations, so we start early enough pushing this out!
+
 6.41:
 -----
  * Fix a PHP 8.1 restriction "Passing null to parameter of type string"
@@ -12,7 +18,7 @@
 
 6.38:
 -----
- * Add a helper for user preferenced toggled configuration groups on open
+ * Add a helper for user preferences toggled configuration groups on open
 
 6.37:
 -----
