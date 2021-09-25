@@ -1,3 +1,7 @@
+6.43:
+-----
+ * Follow Camel-case principle for 6.42 and improve naming migration
+
 6.42:
 -----
  * Preparation fixes for Styx 3.6+ and PHP 8.1 added AV1-Image-File (avif) support,
