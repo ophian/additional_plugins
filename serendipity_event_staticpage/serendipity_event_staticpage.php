@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.43');
+        $propbag->add('version', '6.44');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -3827,7 +3827,7 @@ class serendipity_event_staticpage extends serendipity_event
                             $toThumbFormat   = $eventData[0]['toThumb'];
                         }
                         // ARE any image (avif/webp) variations set? And YES we don't need to check for variations but replace them in case! (haswebp = current deprecated synonym for both expressions)
-                        if ($eventData[0]['haswebp'] || (isset($eventData[0]['hasVar']) && $eventData[0]['hasVar'])) {
+                        if ((isset($eventData[0]['haswebp']) && $eventData[0]['haswebp']) || (isset($eventData[0]['hasVar']) && $eventData[0]['hasVar'])) {
                             if ($eventData[0]['type'] == 'file') {
                                 if (!empty($eventData[0]['fromwebp']) && !empty($eventData[0]['towebp'])) {
                                     $fromVarFile = $eventData[0]['fromwebp']; // Should be relative upload path + .v/ + filename w/o [avif|webp] extension to also match potential thumbnails
@@ -3897,7 +3897,7 @@ class serendipity_event_staticpage extends serendipity_event
                                     $serendipity['logger']->debug("IN_staticpage:: FORMAT REPLACE fromThumbFormat=..$fromThumbFormat => toThumbFormat=..$toThumbFormat");
                                 }
                                 // haswebp = current deprecated synonym for both expressions
-                                if (($eventData[0]['haswebp'] || (isset($eventData[0]['hasVar']) && $eventData[0]['hasVar'])) && !empty($toVarFile)) {
+                                if (((isset($eventData[0]['haswebp']) && $eventData[0]['haswebp']) || (isset($eventData[0]['hasVar']) && $eventData[0]['hasVar'])) && !empty($toVarFile)) {
                                     $serendipity['logger']->debug("IN_staticpage:: VARIATIONs REPLACE fromVarFile=..$fromVarFile => toVarFile=..$toVarFile");
                                 }
                             }
@@ -3910,7 +3910,7 @@ class serendipity_event_staticpage extends serendipity_event
                                 $dir['pre_content'] = preg_replace('@(src=|href=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromThumbFormat) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromThumbFormat) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toThumbFormat, $dir['pre_content']);
                             }
                             // Variation case (haswebp = current deprecated synonym for both expressions)
-                            if (($eventData[0]['haswebp'] || (isset($eventData[0]['hasVar']) && $eventData[0]['hasVar'])) && !empty($toVarFile)) {
+                            if (((isset($eventData[0]['haswebp']) && $eventData[0]['haswebp']) || (isset($eventData[0]['hasVar']) && $eventData[0]['hasVar'])) && !empty($toVarFile)) {
                                 $dir['content']     = preg_replace('@(srcset=|href=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromVarFile) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromVarFile) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toVarFile, $dir['content']);
                                 $dir['pre_content'] = preg_replace('@(srcset=|href=|window.open.)(\'|")(' . preg_quote($serendipity['baseURL'] . $serendipity['uploadHTTPPath'] . $fromVarFile) . '|' . preg_quote($serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $fromVarFile) . ')@', '\1\2' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $toVarFile, $dir['pre_content']);
                             }

@@ -1,3 +1,7 @@
+6.44:
+-----
+ * Add isset checks for the old deprecated set key names in 6.43 which should now give a smooth migration to next Styx 3.6
+
 6.43:
 -----
  * Follow Camel-case principle for 6.42 and improve naming migration
@@ -5,7 +9,7 @@
 6.42:
 -----
  * Preparation fixes for Styx 3.6+ and PHP 8.1 added AV1-Image-File (avif) support,
-   which started to change some hooked key namings to be more generic for media file variation rename actions.
+   which started to change some hooked key naming's to be more generic for media file variation rename actions.
    This has to migrate slowly to not break existing situations, so we start early enough pushing this out!
 
 6.41:
