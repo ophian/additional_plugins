@@ -1,3 +1,7 @@
+4.16.2.1:
+---------
+    * Fix .serendipity_imageComment_* selector styles border & text colors for dark theme
+
 4.16.2.0:
 ---------
     * Upgrade to CKEDITOR 4.16. Series, update 2 (https://ckeditor.com/cke4/release-notes).
