@@ -87,7 +87,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="adaptation">
       <dir name="colorsets">
@@ -911,7 +911,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-08-30</date>
   <filelist>
     <dir name="bartleby">
       <file>config.inc.php</file>
@@ -1648,7 +1648,7 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="bulletproof">
       <file>base.css</file>
@@ -2546,7 +2546,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="costa-nature">
       <file>comments.tpl</file>
@@ -2914,7 +2914,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="freshy">
       <file>commentform.tpl</file>
@@ -3632,7 +3632,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="hemingway">
       <file>404.tpl</file>
@@ -3804,7 +3804,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.1</requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="i3theme">
       <file>commentform.tpl</file>
@@ -4158,7 +4158,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="jazzcafe">
       <file>commentpopup.tpl</file>
@@ -4510,7 +4510,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="kubrick">
       <file>commentpopup.tpl</file>
@@ -4888,7 +4888,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="mimbo">
       <file>404.tpl</file>
@@ -4990,7 +4990,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="mo3">
       <file>404.tpl</file>
@@ -5924,7 +5924,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="perun_blue">
       <file>entries.tpl</file>
@@ -5974,7 +5974,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="perun_red">
       <file>entries.tpl</file>
@@ -6324,7 +6324,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="plain-vanilla">
       <file>commentpopup.tpl</file>
@@ -6398,7 +6398,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-09-04</date>
   <filelist>
     <dir name="plus9">
       <file>AJS.js</file>
@@ -7144,7 +7144,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="sagittarius">
       <file>404.tpl</file>
@@ -8201,7 +8201,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="truth">
       <file>commentform.tpl</file>
@@ -8483,7 +8483,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-10-04</date>
   <filelist>
     <dir name="youngbutstrong">
       <file>commentpopup.tpl</file>
