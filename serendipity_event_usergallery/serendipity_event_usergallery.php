@@ -20,7 +20,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '3.06');
+        $propbag->add('version',       '3.07');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1.0',
@@ -676,7 +676,7 @@ class serendipity_event_usergallery extends serendipity_event
                     }
                 }
 
-                $gallery_array = explode('/', ($up_path ?? null));
+                $gallery_array = explode('/', ($up_path ?? ''));
                 foreach($gallery_array AS $f => $gallery) {
                     $gallery_path = ($gallery_path ?? '') . $gallery . '/';
                     if ($gallery_path != $base_directory ) {
@@ -727,8 +727,8 @@ class serendipity_event_usergallery extends serendipity_event
             } else {
                 $msg = '<h2> Disarmed Option </h2>
                 <p>This tries to show something equally to the MediaLibrary backend, including sort and filter management actions in the frontend, via the serendipity_displayImageList and serendipity_showMedia methods.</p>
-                <p>This approach to clone the MediaLibrary to the public seems weird, since the "%s" select option is doing very well. The only things missing are filter and search actions.</p>
-                <p>So for the 3.x usergallery plugin release this "old" approach is being disabled, since that would need some love and security grains in the core and as ever someone to prove the real need nowadays!</p>';
+                <p>This approach - to clone the MediaLibrary to the public - seems weird, since the "%s" select option is doing very well. The only things missing are filter and search actions.</p>
+                <p>So for the 3.x usergallery plugin release, this "old" approach is being disabled, since that would need some love and security grains in the core and - as ever - someone to prove the real need nowadays!</p>';
                 /*
                 $add_url = '?serendipity[subpage]=' . $this->get_config('subpage');
                 if ($base_directory == 'gallery') {
@@ -736,6 +736,7 @@ class serendipity_event_usergallery extends serendipity_event
                 } else {
                     $limit_directory =  $base_directory;
                 }
+                // 2cd param $num_cols = items per row got removed with Styx 3.6
                 echo serendipity_displayImageList(
                         $serendipity['GET']['page'] ?? 1,
                         $num_cols,
