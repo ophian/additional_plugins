@@ -16,7 +16,7 @@ class serendipity_plugin_staticpage extends serendipity_plugin
         $propbag->add('description', PLUGIN_STATICPAGELIST_NAME_DESC);
         $propbag->add('author',      "Rob Antonishen, Falk Doering, Ian Styx");
         $propbag->add('stackable',   true);
-        $propbag->add('version',     '1.33');
+        $propbag->add('version',     '1.34');
         $propbag->add('configuration', array(
                 'title',
                 'limit',
@@ -160,7 +160,7 @@ class serendipity_plugin_staticpage extends serendipity_plugin
             if ($imgdir == 'false' || $imgdir == 'no') {
                 $imgdir = $serendipity['baseURL'] . $serendipity['templatePath'] . 'default';
             }
-            $fdid = md5(uniqid(mt_srand(), true));//str_replace(':', '_', $this->instance);// randomness does not matter since dynamically
+            $fdid = md5(uniqid(mt_rand(), true));//str_replace(':', '_', $this->instance);// randomness does not matter since dynamically
 
             $str .= '<script type="text/javascript">
             <!--

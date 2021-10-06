@@ -1,3 +1,7 @@
+1:34:
+-----
+ * Fix sidebar plugin case generating empty fd ID token
+
 6.44:
 -----
  * Add isset checks for the old deprecated set key names in 6.43 which should now give a smooth migration to next Styx 3.6
