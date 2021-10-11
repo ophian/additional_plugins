@@ -1,3 +1,7 @@
+1.48:
+-----
+ * Move into backend sidebar entries section for consistency, since being an entry related plugin
+
 1.47:
 -----
  * Fix FAQ searchresult template header
