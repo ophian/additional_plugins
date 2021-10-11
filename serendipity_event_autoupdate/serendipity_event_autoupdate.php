@@ -16,7 +16,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.8.3');
+        $propbag->add('version',       '1.8.4');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -153,11 +153,10 @@ class serendipity_event_autoupdate extends serendipity_event
                 case 'plugin_dashboard_updater':
                     # allow special siteAutoUpgrades permission
                     if (false === ((serendipity_checkPermission('siteConfiguration') || serendipity_checkPermission('siteAutoUpgrades')) && serendipity_checkPermission('adminUsersGroups'))) {
-                    #if (false === ((serendipity_checkPermission('siteConfiguration') || serendipity_checkPermission('siteAutoUpgrades')) && serendipity_checkPermission('adminUsersMaintainOthers'))) {
                         return;
                     }
                     $momacheck = (isset($serendipity['edition']) && $serendipity['edition'] == 'Styx' && empty($serendipity['maintenance'])) ? true : false;
-                    $askit = ($momacheck && version_compare($serendipity['version'], '2.1.0', '>=')) ? " onclick=\"return confirm('" . PLUGIN_EVENT_AUTOUPDATE_CHECK . "')\"" : '';
+                    $askit = ($momacheck && version_compare($serendipity['version'], '2.1.0', '>=')) ? ' onclick="return confirm(\'' . PLUGIN_EVENT_AUTOUPDATE_CHECK . '\')"' : '';
                     $eventData = '
                     <form' . $askit . ' action="?serendipity[adminModule]=event_display&serendipity[adminAction]=update" method="POST">
                         <input type="hidden" name="serendipity[newVersion]" value="' . $addData . '">

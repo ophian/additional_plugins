@@ -1,3 +1,9 @@
+1.8.4:
+------
+
+ * Improve confirm dialog.
+   Remember "OK" means proceed, "cancel" aborts further processing! :-)
+
 1.8.3:
 ------
 
