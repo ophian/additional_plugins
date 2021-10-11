@@ -104,9 +104,10 @@ class serendipity_common_adduser
                                            WHERE authorid = " . (int)$newID);
                     serendipity_set_config_var('no_create', $author['no_create'], $newID);
                     serendipity_set_config_var('lang', $serendipity['lang'], $newID);
+                    serendipity_set_config_var('enableBackendPopupGranular', 'categories,tags,links', $newID);
 
                     // Fetch default properties for new authors as configured.
-                    // Only set values for the keys that are supported (all booleans currently!)
+                    // Only set values for the keys that are supported (all booleans currently! Ahem, well ... NO!)
                     $config = serendipity_db_query("SELECT name, value FROM {$serendipity['dbPrefix']}config WHERE name LIKE 'serendipity_plugin_adduser:%'");
                     $pair_config = array(
                         'wysiwyg' => '',

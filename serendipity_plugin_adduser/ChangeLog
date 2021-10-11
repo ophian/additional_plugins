@@ -1,3 +1,7 @@
+2.53:
+-----
+ * Add a new default configuration variable
+
 2.50 (sidebar plugin):
 -----
  * Fix a backend config option variable check for Frontend views
