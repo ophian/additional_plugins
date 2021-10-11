@@ -1,3 +1,8 @@
+1.1.0:
+------
+ * Serendipity Styx 3.6 changes the backend section for user/group management; Follow!
+ * With this change, the user profile management link moves to its right place, even for simple EDITOR users.
+
 1.3.0: (sidebar)
 1.0.0:
 ------

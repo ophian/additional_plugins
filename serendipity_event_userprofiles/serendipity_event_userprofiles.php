@@ -82,6 +82,7 @@ class serendipity_event_userprofiles extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_USERPROFILES_DESC);
         $propbag->add('event_hooks', array(
             'backend_sidebar_entries_event_display_profiles'  => true,
+            'backend_sidebar_users'                           => true,
             'backend_sidebar_admin'                           => true,
             'frontend_display'                                => true,
             'entries_header'                                  => true,
@@ -92,7 +93,7 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '1.0.0');
+        $propbag->add('version', '1.1.0');
         $propbag->add('requirements', array(
             'serendipity' => '3.5',
             'smarty'      => '3.1.0',
@@ -187,7 +188,8 @@ class serendipity_event_userprofiles extends serendipity_event
 
         $q = "SELECT value FROM {$serendipity['dbPrefix']}profiles WHERE authorid = '{$user}' AND property = '{$type}'";
         $sql = serendipity_db_query($q);
-        return (is_array($sql)) ? $sql[0]['value'] : "false";
+
+        return (is_array($sql) ? $sql[0]['value'] : "false");
     }
 
     function checkUser(&$user)
@@ -708,17 +710,27 @@ class serendipity_event_userprofiles extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries_event_display_profiles':
-                    // ADMIN and CHIEFs shall check in via 'backend_sidebar_admin' link, simple EDITORs via personal preferences
+                    // ADMIN and CHIEFs shall check in via 'backend_sidebar_users' (< 3.6 backend_sidebar_admin) link, simple EDITORs via personal preferences (only < 3.6)
                     if ($serendipity['GET']['adminAction'] == 'profiles' || $serendipity['serendipityUserlevel'] == USERLEVEL_EDITOR) {
                         $this->checkSchema();
                         $this->showUsers();
                     }
                     break;
 
-                case 'backend_sidebar_admin':
+                case 'backend_sidebar_admin':// until Styx 3.6
+                    if (substr($serendipity['version'], 0, 3) < '3.6') {
 ?>
                     <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=profiles"><?php echo PLUGIN_EVENT_USERPROFILES_TITLE ?></a></li>
 <?php
+                    }
+                    break;
+
+                case 'backend_sidebar_users':// Up from Styx 3.6
+                    if (substr($serendipity['version'], 0, 3) >= '3.6') {
+?>
+                    <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=profiles"><?php echo PLUGIN_EVENT_USERPROFILES_TITLE ?></a></li>
+<?php
+                    }
                     break;
 
                 case 'genpage':
