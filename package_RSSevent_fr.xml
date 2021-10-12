@@ -158,7 +158,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Thu, 12 Aug 2021 15:20:20 +0200</pubDate>
+<pubDate>Tue, 12 Oct 2021 13:50:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Formulaire de contact&lt;/b&gt;&lt;br /&gt;Ajoute une page contact statique à votre blog. On peut y accéder par le rétrolien ou par index.php?serendipity[subpage]=contactform. Vous pouvez modifier l'aspect de la page contact en copiant plugin_contactform.tpl dans votre répertoire de template et en l'y modifiant. Les captchas contre le spam seront appliqués si le plugin est installé.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Tue, 07 Sep 2021 14:02:46 +0200</pubDate>
+<pubDate>Tue, 12 Oct 2021 13:52:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -1022,7 +1022,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Hidden Captcha)&lt;/b&gt;&lt;br /&gt;Implements simple comment antispam mechanisms, that are easy to configure but very effective.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 19 Sep 2021 12:52:37 +0200</pubDate>
+<pubDate>Tue, 12 Oct 2021 13:39:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>

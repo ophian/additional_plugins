@@ -158,7 +158,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Komentářové koření&lt;/b&gt;&lt;br /&gt;Okořeňte formulář pro zadání komentářů pomocí twitteru komentujícího, odkazem na poslední článek nebo pravidly pro ne-sledování.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Thu, 12 Aug 2021 15:20:20 +0200</pubDate>
+<pubDate>Tue, 12 Oct 2021 13:50:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Kontaktní formulář&lt;/b&gt;&lt;br /&gt;Zobrazuje kontaktní formulář k poslání e-mailu jako statickou stránku. Přístup k fromuláři buď pomocí stálého odkazu (permalinku) nebo na adrese index.php?serendipity[subpage]=contactform. Vzhled fromuláře si můžete upravit podle svého vložením souboru plugin_contactform.tpl do adresáře s Vaší šablonou. Kryptogramy z pluginu SpamBlock budou použity, pokud je SpamBlock nainstalován.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Tue, 07 Sep 2021 14:02:46 +0200</pubDate>
+<pubDate>Tue, 12 Oct 2021 13:52:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -1022,7 +1022,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Skrytá Captcha)&lt;/b&gt;&lt;br /&gt;Implementuje jednoduché ale velmi účinné antispamové algoritmy.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 19 Sep 2021 12:52:37 +0200</pubDate>
+<pubDate>Tue, 12 Oct 2021 13:39:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>

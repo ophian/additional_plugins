@@ -158,7 +158,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Thu, 12 Aug 2021 15:20:20 +0200</pubDate>
+<pubDate>Tue, 12 Oct 2021 13:50:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Форма за обратна връзка&lt;/b&gt;&lt;br /&gt;Показва форма за изпращане на e-mail в блога като статична страница. Тя може да бъде достигната или чрез постоянна връзка, указана тук при конфигурирането на приставката или чрез 'index.php?serendipity[subpage]=contactform'. Можете да промените външния вид на формата като поставите файл 'plugin_contactform.tpl' в директорията на вашата тема и я модифицирате там. Captchas от приставка Spamblock (ако са позволени) ще бъдат приложени.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Tue, 07 Sep 2021 14:02:46 +0200</pubDate>
+<pubDate>Tue, 12 Oct 2021 13:52:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -1022,7 +1022,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Hidden Captcha)&lt;/b&gt;&lt;br /&gt;Implements simple comment antispam mechanisms, that are easy to configure but very effective.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 19 Sep 2021 12:52:37 +0200</pubDate>
+<pubDate>Tue, 12 Oct 2021 13:39:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
