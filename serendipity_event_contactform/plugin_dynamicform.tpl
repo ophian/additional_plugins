@@ -55,7 +55,7 @@
         {if $field.type != "hidden"}
 
         <tr>
-            <td class="serendipity_commentsLabel">{if $field.required}<span title="{$CONST.PLUGIN_CONTACTFORM_REQUIRED_FIELD}">&#8727;</span> {/if}<label for="serendipity_contactform_{$field.id}">{$field.name}</label></td>
+            <td class="serendipity_commentsLabel"><label for="serendipity_contactform_{$field.id}">{$field.name}{if $field.required}<span title="{$CONST.PLUGIN_CONTACTFORM_REQUIRED_FIELD}"> &#8727;</span>{/if}</label></td>
             <td class="serendipity_commentsValue">
          {if $field.type == "checkbox"}
 
