@@ -1,3 +1,10 @@
+1.6.0:
+------
+
+ * Fix passing the entry ID, which comes by the $serendipity['GET'] GLOBAL
+   or template assigned ['entry_id'], NOT by $eventData['GET'],
+   when using the smarty emulator class.
+
 1.5.1:
 ------
 
