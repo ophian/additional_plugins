@@ -28,7 +28,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.3'
         ));
-        $propbag->add('version',        '2.02');
+        $propbag->add('version',        '2.3.0');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -423,7 +423,8 @@ class serendipity_event_commentspice extends serendipity_event
 
                 case 'frontend_footer':
                     // Comment header code only if in single article mode
-                    if (!empty($eventData['GET']['id'])) {
+                    if (!empty($eventData['GET']['id']) || !empty($eventData['entry_id']) || !empty($serendipity['GET']['id'])) {
+                        $eventData['GET']['id'] = $eventData['GET']['id'] ?? ($eventData['entry_id'] ?? $serendipity['GET']['id']);
                         $this->printHeader($eventData);
                     }
                     break;

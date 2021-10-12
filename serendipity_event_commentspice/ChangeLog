@@ -1,3 +1,11 @@
+2.3.0:
+------
+
+ * Fix passing the entry ID, which comes by the $serendipity['GET'] GLOBAL
+   or template assigned ['entry_id'], NOT by $eventData['GET'],
+   when using the smarty emulator class.
+ * Fix database pre install check to be known to fail, and therefore be disregarded
+
 2.02:
 -----
  * Refactor some isset conditions
