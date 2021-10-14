@@ -1,3 +1,7 @@
+1.1.1:
+------
+ * Add a margin-top default style for the frontend serendipityAuthorProfile selector
+
 1.1.0:
 ------
  * Serendipity Styx 3.6 changes the backend section for user/group management; Follow!
