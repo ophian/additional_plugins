@@ -1,3 +1,7 @@
+2.11.0:
+-------
+ * Prepare to allow AV1 encoded AVID images
+
 2.10.2:
 -----
  * Fix a PHP variable initialization warning
