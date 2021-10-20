@@ -1,3 +1,7 @@
+4.16.2.2:
+---------
+    * Improve wysiwyg-mode dark_content figure outline border color
+
 4.16.2.1:
 ---------
     * Fix .serendipity_imageComment_* selector styles border & text colors for dark theme
