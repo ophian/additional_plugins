@@ -3090,7 +3090,7 @@
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2021-08-11</date>
+  <date>2021-10-28</date>
   <filelist>
     <dir name="serendipity_plugin_sidebarlogo">
       <file>ChangeLog</file>
