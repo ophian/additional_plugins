@@ -272,7 +272,7 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
             switch( $val ) {
                 case 'image':
                     if (!empty($image)) {
-                        echo '<picture><source class="sidebarlogo_img" type="image/webp" srcset="'.$image_webp.'" alt="'.$imagetext.'"/><img '.$iwidth.' '.$iheight.' src="'.$image.'" alt="'.$imagetext.'" '.$imagestyle.'/></picture>';
+                        echo '<picture><source type="image/webp" srcset="'.$image_webp.'"/><img src="'.$image.'" class="sidebarlogo_img" '.$iwidth.' '.$iheight.' alt="'.$imagetext.'" '.$imagestyle.'/></picture>';
                     }
                     break;
 
