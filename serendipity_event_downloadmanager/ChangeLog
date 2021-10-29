@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+1.54:
+-----
+ * Improve preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated with PHP 8.1
+
 1.53:
 -----
  * Fix a possible uninitialized external_plugin hook dependency variable check for PHP 8
