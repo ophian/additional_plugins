@@ -3,6 +3,11 @@
 * 
 
 
+2.0.8:
+------
+
+ * Improve preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated with PHP 8.1
+
 2.0.7:
 ------
 

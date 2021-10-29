@@ -71,7 +71,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '2.0.7');
+        $propbag->add('version',        '2.0.8');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -2496,8 +2496,8 @@ class serendipity_event_cal extends serendipity_event
             $serendipity['GET']['subpage'] = $serendipity['POST']['subpage'];
         }
 
-        if ($serendipity['GET']['subpage'] == $this->get_config('pagetitle') ||
-            preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage'])) {
+        if ($serendipity['GET']['subpage'] == $this->get_config('pagetitle') || (isset($serendipity['GET']['subpage'])
+        &&  preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage']))) {
             return true;
         }
 
