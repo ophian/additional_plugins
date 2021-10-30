@@ -1,3 +1,8 @@
+2.3.6:
+-----
+ * Use quickblog media_choose link select target CONSTANT from NONE to USE_DEFAULT to prevent strange german "Ziel: keine",
+   since none/nada is more a kind of "standard" behaviour usage here.
+
 2.3.5:
 -----
  * Improve "Add-media" fieldset styles and for DARK MODE
