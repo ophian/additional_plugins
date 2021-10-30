@@ -1,3 +1,7 @@
+1.2.0:
+------
+ * Fix userprofile mamangement move for simple EDITOR users up from Styx 3.6
+
 1.1.1:
 ------
  * Add a margin-top default style for the frontend serendipityAuthorProfile selector
