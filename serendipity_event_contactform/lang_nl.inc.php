@@ -20,13 +20,17 @@
 @define('PLUGIN_CONTACTFORM_DYNAMIC_ERROR_DATA', 'Niet alle verplichte velden zijn ingevuld.');
 @define('PLUGIN_CONTACTFORM_ARTICLEFORMAT', 'Opmaken als een inzending?');
 @define('PLUGIN_CONTACTFORM_ARTICLEFORMAT_BLAHBLAH', 'bij ja wordt de uitvoer automatisch opgemaakt als een inzending (kleuren, randen, etc.). Standaard: ja');
-@define('PLUGIN_CONTACTFORM_DYNAMICTPL', 'Dynamische tpl gebruiken?');
-@define('PLUGIN_CONTACTFORM_DYNAMICTPL_DESC', 'Met deze instelling kan een tpl-bestand gebruikt worden, om dynamische velden te maken in het formulier.');
-@define('PLUGIN_CONTACTFORM_DYNAMICFIELDS', 'Tekenreeks voor formulier-veld');
 @define('PLUGIN_CONTACTFORM_FNAME', 'Voornaam');
 @define('PLUGIN_CONTACTFORM_LNAME', 'Achternaam');
 @define('PLUGIN_CONTACTFORM_ADDRESS', 'Adres');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL', 'Dynamische tpl gebruiken?');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL_DESC', 'Met deze instelling kan een tpl-bestand gebruikt worden, om dynamische velden te maken in het formulier.');
+@define('PLUGIN_CONTACTFORM_DYNAMICFIELDS', 'Tekenreeks voor formulier-veld');
 @define('PLUGIN_CONTACTFORM_DYNAMICFIELDS_DESC', 'Dit is de tekenreeks die wordt toegepast om te bepalen welke velden zichtbaar zullen zijn op het formulier, of ze al dan niet verplicht zijn, en met welke standaardwaarden. If you had already build a custom string here and then change the dynamic tpl profile selection (with Save) and back to custom again, this form field string will contain one of the default profile strings. This can be irritating if your self-created string is only slightly different from the default, so you don\'t notice it right away.');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL_STANDARD', 'Standard');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL_SMALLBIZ', 'Small Business');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL_DETAILED', 'Detailed Form');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL_FULLDYNAMIC', 'Custom');
 @define('PLUGIN_CONTACTFORM_DYNAMICFIELDS_DESC_NOTE', '<p>De "Tekenreeks voor formulier-veld" wordt toegepast om te bepalen welke velden zichtbaar zullen zijn op het dynamische formulier. De tekenreeks moet worden opgemaakt als <field>:<field:<field>. Let op de scheiding door de dubbele punt.</p>
    <p>De individuele velden (die van het type "radio", worden later gedefinieerd) moeten worden opgemaakt als {require;}Name;type{;default}. Let op de scheiding door de punt-komma. N.B.: de accolades geven een optioneel veld aan. Indien een veld verplicht is, dan moet het "require" gebruikt worden bij het veld (zonder accolades).</p>
    <p>Er zijn verschillende velden beschikbaar. Momenteel worden de volgende velden ondersteund:

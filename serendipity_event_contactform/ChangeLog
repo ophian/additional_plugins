@@ -1,3 +1,7 @@
+1.45:
+-----
+ * Fix some missing lang [ nl ] constants for PHP 8
+
 1.44:
 -----
  * Improve dynamicform template required field asterisk for order
