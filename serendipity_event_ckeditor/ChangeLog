@@ -1,3 +1,7 @@
+4.16.2.3:
+---------
+    * Catch an undefined js constant
+
 4.16.2.2:
 ---------
     * Improve wysiwyg-mode dark_content figure outline border color

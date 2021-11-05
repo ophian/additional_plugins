@@ -1,9 +1,9 @@
 /**
- * @license Copyright (c) from 2013, Author: Ian Styx. All rights reserved. Last Modified date: 2021-06-26.
+ * @license Copyright (c) from 2013, Author: Ian Styx. All rights reserved. Last Modified date: 2021-11-05.
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.19, 2021-06-26.
+ * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.20, 2021-11-056.
  */
 
 if (typeof CKECONFIG_USEAUTOSAVE === 'undefined' || CKECONFIG_USEAUTOSAVE === null) CKECONFIG_USEAUTOSAVE = false;
@@ -97,7 +97,7 @@ function Spawnnuggets(item, addEP, jsED) {
     //
     var name_extraPlugins = (addEP !== null) ? addEP : $this;
     var jsEventData       = (jsED  !== null) ? jsED  : window.jsEventData; // global set by the 'backend_wysiwyg_finish' hook
-    var extraPluginACF    = (CKECONFIG_ACF_OFF === true) ? name_extraPlugins+', ajax, autocomplete, autogrow, button, cheatsheet, emoji, floatpanel, mediaembed, panelbutton, textmatch, textwatcher, xml' : name_extraPlugins+', ajax,autocomplete, autogrow, button, cheatsheet, emoji, floatpanel, mediaembed, panelbutton, procurator, textmatch, textwatcher, xml';
+    var extraPluginACF    = (typeof CKECONFIG_ACF_OFF !== 'undefined' && CKECONFIG_ACF_OFF === true) ? name_extraPlugins+', ajax, autocomplete, autogrow, button, cheatsheet, emoji, floatpanel, mediaembed, panelbutton, textmatch, textwatcher, xml' : name_extraPlugins+', ajax,autocomplete, autogrow, button, cheatsheet, emoji, floatpanel, mediaembed, panelbutton, procurator, textmatch, textwatcher, xml';
     var extraPluginList   = (CKECONFIG_CODE_ON === true) ? extraPluginACF+', codesnippet' : extraPluginACF;
         extraPluginList   = (CKECONFIG_OEMBED_ON === true) ? extraPluginList+', embedbase, embed' : extraPluginList;
         extraPluginList   = (CKECONFIG_OEMBED_SMT_ON === true) ? extraPluginList+', embedbase, embedsemantic' : extraPluginList;
