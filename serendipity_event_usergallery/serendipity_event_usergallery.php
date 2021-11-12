@@ -20,7 +20,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '3.08');
+        $propbag->add('version',       '3.09');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1.0',
@@ -398,7 +398,7 @@ class serendipity_event_usergallery extends serendipity_event
                                                  : $serendipity['indexFile'] . '?serendipity[subpage]= '. $sub_page . '&amp;');
 
         // Can't trust $serendipity['GET'] on all servers.... so we build it ourselves from subpage
-        if ($serendipity['rewrite'] != 'none') {
+        if (!empty($serendipity['GET']['subpage']) && $serendipity['rewrite'] != 'none') {
             $uri_parts = explode('?', str_replace('&amp;', '&', $serendipity['GET']['subpage']));
             $parts     = isset($uri_parts[1]) ? explode('&', $uri_parts[1]) : null;
             if (is_array($parts) && count($parts) > 1) {
@@ -1319,8 +1319,8 @@ echo '
     {
         global $serendipity;
 
-        if ($serendipity['GET']['subpage'] == $this->get_config('pagetitle') || (isset($serendipity['GET']['subpage'])
-        &&  preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage']))) {
+        if (!is_null($serendipity['GET']['subpage']) && ($serendipity['GET']['subpage'] == $this->get_config('pagetitle') || (isset($serendipity['GET']['subpage'])
+        &&  preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage'])))) {
             return true;
         }
 
