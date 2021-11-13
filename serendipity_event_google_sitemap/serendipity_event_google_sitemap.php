@@ -26,7 +26,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris');
-        $propbag->add('version', '0.68');
+        $propbag->add('version', '0.69');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -771,12 +771,9 @@ class serendipity_event_google_sitemap extends serendipity_event
     function send_ping($loc)
     {
         global $serendipity;
+
         if (function_exists('serendipity_request_object')) {
-            if (version_compare(PHP_VERSION, '5.6.0', '<')) {
-                // restore HTTP/Request
-                $options['ssl_verify_peer'] = false;
-            }
-            $req = new HTTP_Request2($loc, HTTP_Request2::METHOD_GET, $options);
+            $req = new HTTP_Request2($loc, HTTP_Request2::METHOD_GET);
             $response = $req->send();
             if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
                 print_r($req);

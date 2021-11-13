@@ -1,10 +1,14 @@
+0.69:
+-----
+ * Fix an uninitialized PHP 8 parameter - removes a ping PHP < 5.6 checkup
+
 0.68:
 -----
  * Fix an uninitialized PHP 8 $eventData parameter
 
 0.67:
 -----
- * Fix a doublette
+ * Fix a doublet
 
 0.66:
 -----
