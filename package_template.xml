@@ -1384,7 +1384,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-21</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="blogger_death">
       <dir name="img">
@@ -1426,7 +1426,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-02-10</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="blue">
       <file>index.tpl</file>
@@ -1470,7 +1470,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-19</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="blue-haze">
       <file>info.txt</file>
@@ -1504,7 +1504,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-19</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="blue-iceberg">
       <file>info.txt</file>
@@ -1538,7 +1538,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-19</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="bluegrey">
       <dir name="img">
