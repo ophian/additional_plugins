@@ -1900,7 +1900,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="carl_contest">
       <file>entries.tpl</file>
@@ -2482,7 +2482,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="contest">
       <file>content.tpl</file>
@@ -2780,7 +2780,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-18</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="earphone">
       <dir name="img">
@@ -2818,7 +2818,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-18</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="elitist-latte">
       <file>info.txt</file>
@@ -3170,7 +3170,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-18</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="gila_two">
       <file>info.txt</file>
@@ -4010,7 +4010,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-01-19</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="idea">
       <dir name="img">
@@ -4418,7 +4418,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-06-10</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="kamouflage">
       <file>entries.tpl</file>
@@ -5246,7 +5246,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2021-01-19</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="moz-modern">
       <dir name="img">
@@ -5762,7 +5762,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-19</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="newspaper">
       <file>info.txt</file>
@@ -5890,7 +5890,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-19</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="party-brown">
       <file>info.txt</file>
@@ -7110,7 +7110,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-16</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="safety-yellow">
       <file>info.txt</file>
@@ -7314,7 +7314,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-15</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="slate-grey">
       <file>info.txt</file>
@@ -7877,7 +7877,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-20</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="tabacco">
       <dir name="img">
@@ -8345,7 +8345,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2020-04-17</date>
+  <date>2021-11-16</date>
   <filelist>
     <dir name="wp-clone">
       <file>info.txt</file>
