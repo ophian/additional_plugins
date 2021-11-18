@@ -19,7 +19,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
-        $propbag->add('version',       '1.77');
+        $propbag->add('version',       '1.78');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -182,7 +182,7 @@ class serendipity_event_entrypaging extends serendipity_event
                             }
 
                             // showPaging function integrated here
-                            $id     = $serendipity['GET']['id'];
+                            $id     = (int)$serendipity['GET']['id'];
                             $links  = array();
                             $cond   = array();
 
@@ -190,13 +190,13 @@ class serendipity_event_entrypaging extends serendipity_event
                                                                       FROM {$serendipity['dbPrefix']}entries AS e
                                                            LEFT OUTER JOIN {$serendipity['dbPrefix']}entrycat AS ec
                                                                         ON ec.entryid = e.id
-                                                                     WHERE e.id = " . (int)$id . "
+                                                                     WHERE e.id = $id
                                                                   ORDER BY ec.categoryid
                                                                      LIMIT 1", true);
                             if (is_array($currentTimeSQL)) {
                                 $cond['compare'] = "e.timestamp [%1] " . $currentTimeSQL['timestamp'];
                             } else {
-                                $cond['compare'] = "e.id [%1] " . (int)$id;
+                                $cond['compare'] = "e.id [%1] $id";
                             }
 
                             $cond['and'] = " AND e.isdraft = 'false' AND e.timestamp <= " . serendipity_serverOffsetHour(time(), true);
@@ -222,7 +222,7 @@ class serendipity_event_entrypaging extends serendipity_event
                             $querystring = "SELECT
                                                 e.id, e.title, e.timestamp
                                               FROM
-                                                {$serendipity['dbPrefix']}entries e
+                                                {$serendipity['dbPrefix']}entries AS e
                                                 {$cond['joins']}
                                              WHERE
                                                 {$cond['where']}
@@ -238,7 +238,7 @@ class serendipity_event_entrypaging extends serendipity_event
                             // display random link if selected
                             $randomlink = '';
                             if (serendipity_db_bool($this->get_config('showrandom', 'false'))) {
-                                $cond['compare2'] = " e.id <> " . (int)$id ." AND e.isdraft = 'false' AND e.timestamp <= " . serendipity_serverOffsetHour(time(), true);
+                                $cond['compare2'] = " e.id <> $id AND e.isdraft = 'false' AND e.timestamp <= " . serendipity_serverOffsetHour(time(), true);
 
                                 if (!isset($cond['joinct'])) {
                                     $cond['joinct'] = '';
@@ -253,7 +253,7 @@ class serendipity_event_entrypaging extends serendipity_event
                                 $querystring = "SELECT
                                                     e.id, e.title, e.timestamp
                                                   FROM
-                                                    {$serendipity['dbPrefix']}entries e
+                                                    {$serendipity['dbPrefix']}entries AS e
                                                     {$cond['joinct']}
                                                  WHERE
                                                     {$cond['where']}

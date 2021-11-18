@@ -1,3 +1,7 @@
+1.78:
+-----
+ * Minor SQL query optimizations and a fixed [de] constant typo
+
 1.77:
 -----
  * Use Null Coalescing Operator (??)
