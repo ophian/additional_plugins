@@ -18,7 +18,7 @@
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXWIDTH', 'Maximale Breite des Vorschaubildes (verwirft die Höhenangabe)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXHEIGHT', 'Maximale Höhe des Vorschaubildes (verwirft die Breitenangabe)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE', 'Ändert die Bildgröße anhand der Breiten - und Höhenangabe');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC', 'Sendet automatische Größen Ihrer Bilder an den Browser, basierend auf der Breiten/Höhenangabe des IMG-Tag. Dies kann Ihr Leben erleichtern, außerdem die Downloadzeiten verringern und die Serverseitige Performance verbessern. (Hinweis: Die Seitenverhältnisse bleiben erhalten)');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC', 'Sendet automatische Größen Ihrer Bilder an den Browser, basierend auf den von Ihnen manuell veränderten Breiten-/Höhenangaben des IMG-Tags im Eintrags Text. Dies kann Ihr Leben erleichtern, außerdem die Downloadzeiten verringern und die Serverseitige Performance verbessern. (Hinweis: Die Seitenverhältnisse bleiben erhalten). Ein altes Feature der S9y-Historie und spätestens mit Styx 3 z.T. unbenutzbar, da mit den neuen image Variations vieles in diesem Kontext irrelevant geworden ist. Empfohlen: Nein!');
 
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES', 'ZIP-Archive entpackt');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_BLABLAH', 'Hochgeladene ZIP-Archive entpacken? - Vorgabe für das Formular auf der Bilder-Upload-Seite.');

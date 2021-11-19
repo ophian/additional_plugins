@@ -18,7 +18,7 @@
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXWIDTH', 'Maximum width of thumbnail (discards height)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXHEIGHT', 'Maximum height of thumbnail (discards width)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE', 'Dynamically resize images based on width and height attributes');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC', 'Automatically send resized versions of your images to the client based on the width and/or height attributes specified in the IMG tag. This can make your life easier and decrease download times but decreases server-side performance. (Note: Aspect ratios are maintained).');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC', 'Automatically send resized versions of your images to the client based on the manual edited width and/or height attributes specified in the IMG tag of you entry text. This can make your life easier and decrease download times but decreases server-side performance. (Note: Aspect ratios are maintained). An old feature of S9y history and at the latest with Styx 3 partly unusable, since with the new image Variations much has become irrelevant in this context. Recommended: No!');
 
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES', 'ZIP archives unzipping');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_BLABLAH', 'Unzip uploaded ZIP archives? - Preset value for form on the images upload page.');

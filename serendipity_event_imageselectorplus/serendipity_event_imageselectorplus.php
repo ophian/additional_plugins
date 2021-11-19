@@ -20,9 +20,9 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.3.6');
+        $propbag->add('version',       '2.4.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '3.0.0',
+            'serendipity' => '3.6.0',
             'smarty'      => '3.1.0',
             'php'         => '7.3.0'
         ));
@@ -63,7 +63,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
             )
         );
 
-        $conf_array = array('unzipping', 'quickblog',  'thumb_max_width', 'thumb_max_height', 'autoresize', 'force_jhead');
+        $conf_array = array('unzipping', 'quickblog',  'thumb_max_width', 'thumb_max_height', /*'autoresize', */'force_jhead');
 
         foreach($this->markup_elements AS $element) {
             $conf_array[] = $element['name'];
@@ -423,7 +423,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
                             $tmpfileinfo = @serendipity_getImageSize($target);
                             if (empty(strtolower(pathinfo($tfile, PATHINFO_EXTENSION)))
                             && $tmpfileinfo[0] > 0 && $tmpfileinfo[1] > 0 /* check width and height */
-                            && in_array($tmpfileinfo[2], [IMAGETYPE_BMP, IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_TIFF_II, IMAGETYPE_TIFF_MM, IMAGETYPE_WEBP])) {
+                            && in_array($tmpfileinfo[2], [IMAGETYPE_BMP, IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_TIFF_II, IMAGETYPE_TIFF_MM, IMAGETYPE_WEBP, IMAGETYPE_AVIF])) {
                                 $ext = explode('/', $tmpfileinfo['mime']);
                                 $tfile = $tfile . '.' . $ext[1];
                             }
@@ -440,24 +440,62 @@ if (is_array($cats = serendipity_fetchCategories())) {
                             @chmod($target, 0664);
 
                             // Create a target copy variation in WebP image format
-                            if (file_exists($target) && $serendipity['useWebPFormat']) {
+                            if (file_exists($target) && $serendipity['useWebPFormat'] && !in_array(strtolower($info['extension']), ['webp', 'avif'])) {
+                                $odim = filesize($target);
                                 $variat = serendipity_makeImageVariationPath($target, 'webp');
-                                $result = serendipity_convertToWebPFormat($target, $variat['filepath'], $variat['filename'], mime_content_type($target));
+                                $webpIMQ = -1;
+                                #   1024 B x            3.6 MB         6 MB           9 MB           12 MB
+                                $dimensions = [0 => -1, 3686400 => 90, 6144000 => 85, 9216000 => 80, 12288000 => 75];
+                                foreach ($dimensions AS $dk => $dv) {
+                                    if ($odim > $dk) {
+                                        $webpIMQ = $dv; // Origins WebP ImageMagick variation copy QUALITY only, in case it is big, else we might get bigger WebP lossless expression than the origin file
+                                    }
+                                }
+                                $result = serendipity_convertToWebPFormat($target, $variat['filepath'], $variat['filename'], mime_content_type($target), false, $webpIMQ);
                                 if (is_array($result)) {
                                     $messages[] = '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> WebP image format variation(s) created!</span>'."\n";
-                                    if (is_array($result)) {
-                                        if ($result[0] == 0) {
-                                            if ($debug && (isset($serendipity['logger']) && is_object($serendipity['logger']))) { $serendipity['logger']->debug("ML_CREATEVARIATION: Image WebP format creation success ${result[2]} from $target " . DONE); }
+                                    if (is_array($result) && $result[0] == 0) {
+                                        if (is_string($result[1])) {
+                                            if (is_object($serendipity['logger'])) { $serendipity['logger']->debug("ML_CREATEVARIATION: Image WebP format creation success ${result[2]} from $target " . DONE); }
                                         } else {
-                                            if ($debug && (isset($serendipity['logger']) && is_object($serendipity['logger']))) { $serendipity['logger']->debug("ML_CREATEVARIATION: ImageMagick CLI Image WebP format creation success ${result[2]} from $target " . DONE); }
+                                            if (is_object($serendipity['logger'])) { $serendipity['logger']->debug("ML_CREATEVARIATION: ImageMagick CLI Image WebP format creation success ${result[2]} from $target " . DONE); }
                                         }
                                     }
                                 } else {
                                     $messages[] = '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> WebP image format copy creation failed!</span>'."\n";
                                     if ($serendipity['magick'] !== true) {
-                                        if ($debug && (isset($serendipity['logger']) && is_object($serendipity['logger']))) { $serendipity['logger']->debug("ML_CREATEVARIATION: GD Image WebP format creation failed"); }
+                                        if (is_object($serendipity['logger'])) { $serendipity['logger']->debug("ML_CREATEVARIATION: GD Image WebP format creation failed"); }
                                     } else {
-                                        if ($debug && (isset($serendipity['logger']) && is_object($serendipity['logger']))) { $serendipity['logger']->debug("ML_CREATEVARIATION: ImageMagick CLI Image WebP format creation failed"); }
+                                        if (is_object($serendipity['logger'])) { $serendipity['logger']->debug("ML_CREATEVARIATION: ImageMagick CLI Image WebP format creation failed"); }
+                                    }
+                                }
+                            }
+                            // Create a target copy variation in AVIF image format
+                            if (file_exists($target) && $serendipity['useAvifFormat'] && !in_array(strtolower($info['extension']), ['webp', 'avif'])) {
+                                $restrictedBytes = 14336000; // 14MB
+                                if (filesize($target) > $restrictedBytes && $serendipity['magick'] === true) {
+                                    //void
+                                    $messages[] = '<span class="msg_notice"><span class="icon-attention-circled" aria-hidden="true"></span> No AVIF image format variation(s) with ImageMagick created, since Origin is too big '.filesize($target).'! Sorry! Limit is currently set at 12MB</span>'."\n";
+                                    if (is_object($serendipity['logger'])) { $serendipity['logger']->debug("ML_CREATEVARIATION: No AVIF image format created ${result[2]} from $target - Limit is currently at 14MB"); }
+                                } else {
+                                    $variat = serendipity_makeImageVariationPath($target, 'avif');
+                                    $result = serendipity_convertToAvifFormat($target, $variat['filepath'], $variat['filename'], mime_content_type($target), false);
+                                    if (is_array($result)) {
+                                        $messages[] = '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> AVIF image format variation(s) created!</span>'."\n";
+                                        if (is_array($result) && $result[0] == 0) {
+                                            if (is_string($result[1])) {
+                                                if (is_object($serendipity['logger'])) { $serendipity['logger']->debug("ML_CREATEVARIATION: Image AVIF format creation success ${result[2]} from $target " . DONE); }
+                                            } else {
+                                                if (is_object($serendipity['logger'])) { $serendipity['logger']->debug("ML_CREATEVARIATION: ImageMagick CLI Image AVIF format creation success ${result[2]} from $target " . DONE); }
+                                            }
+                                        }
+                                    } else {
+                                        $messages[] = '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> AVIF image format copy creation failed!</span>'."\n";
+                                        if ($serendipity['magick'] !== true) {
+                                            if (is_object($serendipity['logger'])) { $serendipity['logger']->debug("ML_CREATEVARIATION: GD Image AVIF format creation failed"); }
+                                        } else {
+                                            if (is_object($serendipity['logger'])) { $serendipity['logger']->debug("ML_CREATEVARIATION: ImageMagick CLI Image AVIF format creation failed"); }
+                                        }
                                     }
                                 }
                             }
@@ -564,7 +602,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
 
                 case 'frontend_display':
                     // auto resizing images based on width and/or height attributes in img tag - DO NOT when is backend entryform preview!
-                    if ((!isset($serendipity['POST']['preview']) || !$serendipity['POST']['preview']) && serendipity_db_bool($this->get_config('autoresize', 'false'))) {
+                    if ((!isset($serendipity['POST']['preview']) || !$serendipity['POST']['preview']) && $serendipity['version'][0] < 3 && serendipity_db_bool($this->get_config('autoresize', 'false'))) {
                         if (!empty($eventData['body'])) {
                             $eventData['body'] = $this->substituteImages($eventData['body']);
                         }

@@ -21,7 +21,7 @@
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXWIDTH', 'Maximální výška náhledu (šířka je přizpůsobena proporcionálně)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXHEIGHT', 'Maximání šířka náhledu (výška je přizpůsobena proporcionálně)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE', 'Dynamicky měnit velikost obrázků v závislosti na atributech "width" a "height"');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC', 'Automaticky posílá klientovi obrázky s upravenou velikostí v závislosti na hodnotách atributí width a/nebo height v tagu IMG. Toto Vám může trochu usnadnit život a sníž dobu stahování stránek, ale také to snižuje výkon serveru. (Poznámka: poměr stran zůstává zachován)');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC', 'Automaticky posílá klientovi obrázky s upravenou velikostí v závislosti na hodnotách atributí width a/nebo height v tagu IMG. Toto Vám může trochu usnadnit život a sníž dobu stahování stránek, ale také to snižuje výkon serveru. (Poznámka: poměr stran zůstává zachován). An old feature of S9y history and at the latest with Styx 3 partly unusable, since with the new image Variations much has become irrelevant in this context. Recommended: No!');
 
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES', 'Rozbalování ZIP archivů');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_BLABLAH', 'Pokud je nahraný soubor ZIP archiv, má se rozbalit? - Přednastavená hodnota pro zaškrtávací políčko ve formuláři pro nahrávání souborů.');

@@ -17,7 +17,7 @@
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXWIDTH',                  'Максимална ширина на миниатюрата (не взема предвид височината)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXHEIGHT',                 'Максимална височина на миниатюрата (не взема предвид ширината)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE',                'Динамично преоразмерява изображенията в зависимост от атрибутите за ширина и височина');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC',           'Автоматично изпраща преоразмерени версии на изображенията към клиента в зависимост от атрибутите за широчина и височина, указани в IMG tag. Това ви улеснява и намалява времето за изтегляне, но намалява ефективността на сървъра. (Забележка: Отношението между ширина и височина се поддържа).');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC',           'Автоматично изпраща преоразмерени версии на изображенията към клиента в зависимост от атрибутите за широчина и височина, указани в IMG tag. Това ви улеснява и намалява времето за изтегляне, но намалява ефективността на сървъра. (Забележка: Отношението между ширина и височина се поддържа). An old feature of S9y history and at the latest with Styx 3 partly unusable, since with the new image Variations much has become irrelevant in this context. Recommended: No!');
 
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES',               'Разхивиране на ZIP архивите');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_BLABLAH',       'Разархивиране на качените ZIP архиви? - подразбираща се стойност за диалога в страницата за качване на изображения.');

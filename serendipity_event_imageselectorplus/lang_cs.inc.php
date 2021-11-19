@@ -19,7 +19,7 @@
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXWIDTH', 'Maximální výška náhledu (šíøka je pøizpùsobena proporcionálnì)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXHEIGHT', 'Maximání šíøka náhledu (výška je pøizpùsobena proporcionálnì)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE', 'Dynamicky mìnit velikost obrázkù v závislosti na atributech "width" a "height"');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC', 'Automaticky posílá klientovi obrázky s upravenou velikostí v závislosti na hodnotách atributí width a/nebo height v tagu IMG. Toto Vám mùže trochu usnadnit život a sníž dobu stahování stránek, ale také to snižuje výkon serveru. (Poznámka: pomìr stran zùstává zachován)');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC', 'Automaticky posílá klientovi obrázky s upravenou velikostí v závislosti na hodnotách atributí width a/nebo height v tagu IMG. Toto Vám mùže trochu usnadnit život a sníž dobu stahování stránek, ale také to snižuje výkon serveru. (Poznámka: pomìr stran zùstává zachován). An old feature of S9y history and at the latest with Styx 3 partly unusable, since with the new image Variations much has become irrelevant in this context. Recommended: No!');
 
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES', 'Rozbalování ZIP archivù');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_BLABLAH', 'Pokud je nahraný soubor ZIP archiv, má se rozbalit? - Pøednastavená hodnota pro zaškrtávací políèko ve formuláøi pro nahrávání souborù.');
