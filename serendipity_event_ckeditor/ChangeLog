@@ -1,3 +1,14 @@
+4.16.2.4:
+---------
+    * Add HTML Quote Element to config.extraAllowedContent for ACF.
+      e.g. <div class=""unique">
+            ... <q lang="de-ch">Sie sagte <q>es geht mir gut</q></q> ...
+           </div>
+      with CSS
+          .unique :lang(de-CH) {
+              quotes: "\00AB" "\00BB" "\2039" "\203A";
+          }
+
 4.16.2.3:
 ---------
     * Catch an undefined js constant
