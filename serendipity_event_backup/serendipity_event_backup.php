@@ -25,7 +25,7 @@ class serendipity_event_backup extends serendipity_event
             'php'         => '7.0'
         ));
 
-        $propbag->add('version',       '0.3.1');
+        $propbag->add('version',       '0.3.2');
         $propbag->add('author',       'Alexander Mieland, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -866,17 +866,15 @@ class serendipity_event_backup extends serendipity_event
             }
 
             $dirs_to_exclude = array();
-            if (isset($serendipity['POST']['dirs']) && is_array($serendipity['POST']['dirs'])) {
-                $fd = opendir($s9ypath);
-                while ($dir = readdir($fd)) {
-                    if (is_dir($dir) && $dir != "." && $dir != "..") {
-                        if (!in_array($dir, $serendipity['POST']['dirs'])) {
-                            $dirs_to_exclude[] = $dir;
-                        }
+            $fd = opendir($s9ypath);
+            while ($dir = readdir($fd)) {
+                if (is_dir($dir) && $dir != "." && $dir != "..") {
+                    if (isset($serendipity['POST']['dirs']) && is_array($serendipity['POST']['dirs']) && !in_array($dir, $serendipity['POST']['dirs'])) {
+                        $dirs_to_exclude[] = $dir;
                     }
                 }
-                closedir($fd);
             }
+            closedir($fd);
             $DATA_BACKUP .= (isset($serendipity['POST']['complete']) && $serendipity['POST']['complete'] == 1) ? serialize(array()) : serialize($dirs_to_exclude);
 
             if (!isset($serendipity['POST']['delete']) && isset($serendipity['POST']['bakautomatik']) && $serendipity['POST']['bakautomatik'] == 1) {
