@@ -1,3 +1,8 @@
+0.3.1:
+------
+
+ * Fix another uninitialized variable check for PHP 8
+
 0.3.0:
 ------
 
