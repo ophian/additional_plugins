@@ -3,6 +3,7 @@
     * Upgrade to CKEDITOR 4.17. Series, update 1 (https://ckeditor.com/cke4/release-notes).
       Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
     * Highlight JS changed to version 11.3.1
+    * Minor custom fix to new dialog .cke_dialog_ui_labeled_required CSS class to inline the asterisk
 
 4.16.2.4:
 ---------
