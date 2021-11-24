@@ -1,3 +1,9 @@
+4.17.1.0:
+---------
+    * Upgrade to CKEDITOR 4.17. Series, update 1 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
+    * Highlight JS changed to version 11.3.1
+
 4.16.2.4:
 ---------
     * Add HTML Quote Element to config.extraAllowedContent for ACF.
