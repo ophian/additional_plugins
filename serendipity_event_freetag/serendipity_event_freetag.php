@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.11');
+        $propbag->add('version',       '5.12');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2163,7 +2163,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         /* Attempt to locate hidden variables within the URI */
         foreach ($serendipity['uriArguments'] AS $k => $v) {
-            if ($v[0] == 'P') { /* Page */
+            if (isset($v[0]) && $v[0] == 'P') { /* Page */
                 $page = substr($v, 1);
                 if (is_numeric($page)) {
                     $serendipity['GET']['page'] = $page;
@@ -2200,7 +2200,7 @@ document.addEventListener("DOMContentLoaded", function() {
             $emit_404 = true;
         }
         // for XSS secureness, while using doubled decode
-        $param = is_array($param) ? array_map('strip_tags', $param) : strip_tags($param);
+        $param = is_array($param) ? array_map('strip_tags', ($param ?? '')) : strip_tags(($param ?? ''));
         if (is_array($param)) {
             array_filter($param); // filter out all left BOOL, NULL and EMPTY elements, which still are possible by removing XSS with strip_tags
         }
