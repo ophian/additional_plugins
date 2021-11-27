@@ -25,7 +25,7 @@ class serendipity_plugin_shoutcast extends serendipity_plugin {
             'smarty'      => '3.1.6',
             'php'         => '5.6.0'
         ));
-        $propbag->add('version',  '1.06');
+        $propbag->add('version',  '1.07');
         $propbag->add('configuration', array('title',
             'server',
             'port'));
@@ -80,8 +80,8 @@ class serendipity_plugin_shoutcast extends serendipity_plugin {
         global $serendipity;
 
         $title = $this->get_config('title');
-        $host = $this->get_config('server','localhost');
-        $port = $this->get_config('port','8000');
+        $host = $this->get_config('server', 'localhost');
+        $port = $this->get_config('port', '8000');
         // Connect to server
         $fp = @fsockopen($host,$port,$errno,$errstr,10);
         if (!$fp) {
@@ -89,17 +89,16 @@ class serendipity_plugin_shoutcast extends serendipity_plugin {
             $content = $content.'<br/>(Error #'.$errno.': '.$errstr.' while making connection to '.$host.':'.$port.')';
         } else {
             // Get data from server
-            fputs($fp,"GET /7 HTTP/1.1\nUser-Agent:Mozilla\n\n");
+            fputs($fp, "GET /7 HTTP/1.1\nUser-Agent:Mozilla\n\n");
             // exit if connection broken
             for($i=0; $i<1; $i++) {
                 if (feof($fp)) break;
-                $fp_data=fread($fp,31337);
+                $fp_data = fread($fp, 31337);
                 usleep(500000);
             }
 
             // Strip useless junk from source data
-            $fp_data = ereg_replace("^.*<body>","",$fp_data);
-            $fp_data = ereg_replace("</body>.*","",$fp_data);
+            $fp_data = preg_replace('~<body>(.*?)</body>~', '$1', $fp_data);
             // Place values from source into variable names
             list($current,$status,$peak,$max,$reported,$bit,$song) = explode(",", $fp_data, 7);
             $trackpattern = "/^[0-9][0-9] /";
