@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.4.0');
+        $propbag->add('version',       '2.4.1');
         $propbag->add('requirements',  array(
             'serendipity' => '3.6.0',
             'smarty'      => '3.1.0',
@@ -475,7 +475,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
                                 $restrictedBytes = 14336000; // 14MB
                                 if (filesize($target) > $restrictedBytes && $serendipity['magick'] === true) {
                                     //void
-                                    $messages[] = '<span class="msg_notice"><span class="icon-attention-circled" aria-hidden="true"></span> No AVIF image format variation(s) with ImageMagick created, since Origin is too big '.filesize($target).'! Sorry! Limit is currently set at 12MB</span>'."\n";
+                                    $messages[] = '<span class="msg_notice"><span class="icon-attention-circled" aria-hidden="true"></span> No AVIF image format variation(s) with ImageMagick created, since Origin is too big '.filesize($target)."! Sorry! Limit is currently set at 14MB.</span>\n";
                                     if (is_object($serendipity['logger'])) { $serendipity['logger']->debug("ML_CREATEVARIATION: No AVIF image format created ${result[2]} from $target - Limit is currently at 14MB"); }
                                 } else {
                                     $variat = serendipity_makeImageVariationPath($target, 'avif');

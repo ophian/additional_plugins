@@ -1,3 +1,7 @@
+2.4.1:
+-----
+ * Minor end message fix
+
 2.4.0:
 -----
  * Deprecate and reset autoresize (old s9y feature option) up from Styx 3.
