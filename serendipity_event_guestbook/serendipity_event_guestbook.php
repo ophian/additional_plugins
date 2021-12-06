@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '3.87');
+        $propbag->add('version',      '3.88');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -668,7 +668,7 @@ class serendipity_event_guestbook extends serendipity_event
                                         ? 'http://' . $this->strip_security($entry['homepage'], null, true)
                                         : $this->strip_security($entry['homepage'], null, true);
                 $entry['pluginpath']    = $serendipity['serendipityHTTPPath'] . $serendipity['guestbook']['pluginpath'];
-                $entry['timestamp']     = strftime($this->get_config('dateformat'), (int)$entry['timestamp']); // mysql would use SELECT *, FROM_UNIXTIME(timestamp) AS ts FROM `s9y_guestbook`
+                $entry['timestamp']     = @strftime($this->get_config('dateformat'), (int)$entry['timestamp']); // mysql would use SELECT *, FROM_UNIXTIME(timestamp) AS ts FROM `s9y_guestbook`
 
                 $entry['page']          = $is_guestbook_url . (($serendipity['rewrite'] == 'rewrite') ? '?' : '&') . 'noclean=true&serendipity[adminAction]=guestbookdelete&serendipity[page]=' . (isset($serendipity['GET']['page']) ? (int)$serendipity['GET']['page'] : '') . '&serendipity[gbid]=' . $entry['id'];
 
@@ -714,7 +714,7 @@ class serendipity_event_guestbook extends serendipity_event
      * @param  boolean   $old    Insert/Replace
      * @return boolean
      */
-    function insertEntriesDB($id=false, $ip=false, $name, $url, $email, $body, $app=false, $ts=false, $old=false)
+    function insertEntriesDB($id=false, $ip=false, $name='', $url='', $email='', $body='', $app=false, $ts=false, $old=false)
     {
         global $serendipity;
 
