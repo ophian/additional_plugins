@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.02');
+        $propbag->add('version',        '3.03');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -87,7 +87,7 @@ class serendipity_event_multilingual extends serendipity_event
             if ($langswitch && (!isset($_POST['user_language']) || !isset($_COOKIE['serendipityLanguage']))) {
                 // check for REQUESTs being sent (imagine the user in a DE blog links an EN entry version and force option is set TRUE)
                 // $_REQUEST was somehow disabled and not available, but used here and in serendipity_getSessionLanguage()
-                $_REQUEST['user_language'] = $serendipity['GET']['user_language'];
+                $_REQUEST['user_language'] = $serendipity['GET']['user_language'] ?? null;
                 // normal fallback
                 if (!isset($serendipity['GET']['lang_selected']) && !isset($_REQUEST['user_language'])) {
                     if (!empty($_SESSION['serendipityLanguage'])) {
@@ -125,7 +125,7 @@ class serendipity_event_multilingual extends serendipity_event
             // case "force langswitch" to default, normally without POST cookies set, since they have preference
             if ($langswitch && (!isset($_POST['user_language']) || !isset($_COOKIE['serendipityLanguage']))) {
                 // a user has already set a forced language and now wants to return to the default language - doing such here after all, avoids a doubleclick need..
-                if ($this->showlang == 'default' || $_SESSION['last_lang'] == 'default') {
+                if ($this->showlang == 'default' || (isset($_SESSION['last_lang']) && $_SESSION['last_lang'] == 'default')) {
                     $serendipity['lang'] = $this->showlang = $_SESSION['serendipityLanguage'] = $_REQUEST['user_language'] = $serendipity['default_lang'];
                     if ($_SESSION['last_lang'] == 'default') $_SESSION['last_lang'] = $serendipity['default_lang'];
                 } // the entry is shown in default language as a fallback, when another language is chosen that has no entryproperties translation
