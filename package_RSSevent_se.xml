@@ -536,7 +536,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Gästbok&lt;/b&gt;&lt;br /&gt;Visa en gästbol i din blog med ditt vanlig blog-utseende.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Fri, 29 Oct 2021 18:43:04 +0200</pubDate>
+<pubDate>Mon, 06 Dec 2021 19:38:20 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -761,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilingual entries&lt;/b&gt;&lt;br /&gt;Allows to create multiple language versions of an entry&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 31 Jan 2021 11:49:46 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 19:34:16 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
