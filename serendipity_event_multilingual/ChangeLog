@@ -1,3 +1,7 @@
+3.04:
+-----
+ * Fix PHP 8.1 preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+
 3.03:
 -----
  * Improve some init checks for PHP 8

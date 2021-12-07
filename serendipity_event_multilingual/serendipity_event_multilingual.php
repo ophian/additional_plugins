@@ -27,7 +27,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.03');
+        $propbag->add('version',        '3.04');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -183,6 +183,7 @@ class serendipity_event_multilingual extends serendipity_event
 
     function cleanheader($string)
     {
+        if (is_null($string)) $string = '';
         $string = preg_replace('@[^0-9a-z_-]@imsU', '', $string);
     }
 
