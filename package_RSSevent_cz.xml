@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_custom_permalinks&lt;br /&gt;Stálé odkazy pro příspěvky&lt;/b&gt;&lt;br /&gt;Můžete definovat stálé odkazy k jednotlivým příspěvkům. Lze použít pouze URL vzory, které JEŠTĚ NEJSOU používané - používání stálých odkazů ve tvaru /archives/odkaz není tedy možné. Ale používání jakéhokoliv jiného (virtuálního) adresáře možné je.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 23 Nov 2021 14:27:00 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 21:01:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_custom_permalinks</guid>
 </item>
 <item>
@@ -428,7 +428,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_forum&lt;br /&gt;Diskusní fórum / zrcadlení phpBB fóra&lt;/b&gt;&lt;br /&gt;Poskytuje kompletní diskusní fórum. Alternativě umožňuje přístup do diskusního fóra phpBB.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 10 Dec 2020 10:45:44 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 20:05:58 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_forum</guid>
 </item>
 <item>
@@ -761,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Vízejazyčné záznamy&lt;/b&gt;&lt;br /&gt;Umožňuje vytvořit příspěvek (záznam) ve více jazykových variantách. Obsahuje též fromulář pro výběr základního jazyka blogu.&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Mon, 06 Dec 2021 19:34:16 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 21:06:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>

@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_custom_permalinks&lt;br /&gt;Frei-definierbare Permalinks zu Einträgen&lt;/b&gt;&lt;br /&gt;Ermöglicht die Eingabe eines individuellen Permalinks (dauerhafter Link) um spezifische Artikel aufzurufen. Es können nur URL-Muster verwendet werden, die nicht bereits intern verwendet werden - eigene Permalinks innerhalb der /archives/ Struktur sind daher nicht möglich. Aber andere, auch nicht existierende, Verzeichnisse können verwendet werden.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 23 Nov 2021 14:27:00 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 21:01:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_custom_permalinks</guid>
 </item>
 <item>
@@ -428,7 +428,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_forum&lt;br /&gt;Diskussions-Forum / phpBB-Kommentare&lt;/b&gt;&lt;br /&gt;Stellt ein komplettes Diskussions-Forum zur Verfügung, kann alternativ Blog-Kommentare in eine phpBB-Installation spiegeln.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 10 Dec 2020 10:45:44 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 20:05:58 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_forum</guid>
 </item>
 <item>
@@ -761,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilinguale Einträge&lt;/b&gt;&lt;br /&gt;Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Mon, 06 Dec 2021 19:34:16 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 21:06:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>

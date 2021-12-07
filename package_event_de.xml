@@ -1493,11 +1493,11 @@
 <description>Ermöglicht die Eingabe eines individuellen Permalinks (dauerhafter Link) um spezifische Artikel aufzurufen. Es können nur URL-Muster verwendet werden, die nicht bereits intern verwendet werden - eigene Permalinks innerhalb der /archives/ Struktur sind daher nicht möglich. Aber andere, auch nicht existierende, Verzeichnisse können verwendet werden.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.22</version>
+  <version>1.23</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2021-11-23</date>
+  <date>2021-12-06</date>
   <filelist>
     <dir name="serendipity_event_custom_permalinks">
       <file>ChangeLog</file>
@@ -3022,11 +3022,11 @@
 <description>Stellt ein komplettes Diskussions-Forum zur Verfügung, kann alternativ Blog-Kommentare in eine phpBB-Installation spiegeln.</description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.43</version>
+  <version>0.44</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2020-12-10</date>
+  <date>2021-12-06</date>
   <filelist>
     <dir name="serendipity_event_forum">
       <file>AUTHORS</file>
@@ -6718,7 +6718,7 @@
 <description>Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.03</version>
+  <version>3.04</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.28</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>

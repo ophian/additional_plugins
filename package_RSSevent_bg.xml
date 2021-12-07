@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_custom_permalinks&lt;br /&gt;Постоянни връзки към статии&lt;/b&gt;&lt;br /&gt;Дефинира постоянни връзки, които могат да се използват за достъп до избрани статии. Разрешени са варианти, които НЕ СЕ използват вече в структурата /archives/ . Но всяка друга (виртуална) директория е позволена.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 23 Nov 2021 14:27:00 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 21:01:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_custom_permalinks</guid>
 </item>
 <item>
@@ -428,7 +428,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_forum&lt;br /&gt;Discussion forum / phpBB comment mirroring&lt;/b&gt;&lt;br /&gt;Provides a complete discussion forum to your users. Can alternatively provide to mirror comments into a phpBB installation.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 10 Dec 2020 10:45:44 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 20:05:58 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_forum</guid>
 </item>
 <item>
@@ -761,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Многоезични статии&lt;/b&gt;&lt;br /&gt;Позволява създаването на версии на статиите на различни езици&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Mon, 06 Dec 2021 19:34:16 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 21:06:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>

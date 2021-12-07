@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_custom_permalinks&lt;br /&gt;Custom Permalinks for Entries&lt;/b&gt;&lt;br /&gt;Defines custom permalinks that can be used to access a specific entry. It can only use URL patterns which are NOT YET in use - using custom permalinks within the /archives/ structure is thus not possible. But any (virtual) other directory is.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 23 Nov 2021 14:27:00 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 21:01:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_custom_permalinks</guid>
 </item>
 <item>
@@ -428,7 +428,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_forum&lt;br /&gt;Forum de discussion / phpBB mirroring des commentaires&lt;/b&gt;&lt;br /&gt;proposer un veritable forum a vos utilisateurs. Peut aussi permettre de mettre PHPBB en miroir pour les commentaires.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 10 Dec 2020 10:45:44 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 20:05:58 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_forum</guid>
 </item>
 <item>
@@ -761,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Billets multilingues&lt;/b&gt;&lt;br /&gt;Saisie des billets en plusieurs langues&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Mon, 06 Dec 2021 19:34:16 +0100</pubDate>
+<pubDate>Mon, 06 Dec 2021 21:06:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
