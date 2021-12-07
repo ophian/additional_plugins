@@ -52,7 +52,7 @@ class serendipity_event_forum extends serendipity_event
             'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '0.43');
+        $propbag->add('version',       '0.44');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(

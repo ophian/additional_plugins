@@ -516,8 +516,10 @@
     /**
      *
      */
-    function DMA_forum_InsertThread($boardid, $authorname, $title, $message, $announce=0, $frommail, $fromname, $pageurl, $admin_notify=true) {
+    function DMA_forum_InsertThread($boardid, $authorname, $title, $message, $announce, $frommail, $fromname, $pageurl, $admin_notify=true) {
         global $serendipity;
+
+        $announce = $announce ?? 0;
         if (serendipity_userLoggedIn()) {
             $authorname = $serendipity['serendipityUser'];
             $KEXTRA = ", authorid";

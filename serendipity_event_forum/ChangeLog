@@ -1,3 +1,7 @@
+0.44:
+------
+ * Fix parameter declaration order for PHP 8.1
+
 0.43:
 ------
  * PHP 8 preparation fixes (w/o warranty)
