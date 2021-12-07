@@ -1,4 +1,4 @@
-{* backend.dlm.index.tpl last modified 2018-08-10 *}
+{* backend.dlm.index.tpl last modified 2021-12-07 *}
 
 {* PLEASE READ CAREFULLY:
    The DownLoadManagers (dlm) backend template vars have their own array name to be unique in global context of Serendipity blog.
@@ -94,7 +94,7 @@
     <div class="dlm_page_header">
         <div class="dlm_back_root"><a id="back" class="button_link" href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager" title="{$CONST.BACK} Root category..."><span class="icon icon-collapse-left"></span></a></div>
 
-        <h4>{$CONST.PLUGIN_DOWNLOADMANAGER_THIS_FILE}: <img src="{$dlmefe.mime.ICON}" width="16" height="16" alt="{$dlmefe.mime.TYPE}" title="{$dlmefe.mime.TYPE}" /> {$dlmefe.realfilename}</h4>
+        <h4>{$CONST.PLUGIN_DOWNLOADMANAGER_THIS_FILE}: <img src="{$dlmefe.mime.ICON}" width="16" height="16" alt="{$dlmefe.mime.TYPE}" title="{$dlmefe.mime.TYPE}" /> <span class="realfilename">{$dlmefe.realfilename}</span></h4>
 
         <div class="dlm_back_up"><a id="back" class="button_link" href="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmgbl.thiscat}" title="{$CONST.PLUGIN_DOWNLOADMANAGER_BACK_CURRENT}&hellip;"><img src="{$dlmgbl.httppath}img/fex.png" alt="{$CONST.PLUGIN_DOWNLOADMANAGER_BACK_CURRENT}&hellip;" /> {$CONST.PLUGIN_DOWNLOADMANAGER_BACK_CURRENT}</a></div>
 

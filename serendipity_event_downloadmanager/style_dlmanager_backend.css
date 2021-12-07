@@ -1,9 +1,9 @@
 /**********************************************************************************************/
-/* style_dlmanager_backend.css in serendipity_event_downloadmanager.php v.0.33 2021-06-24 Ian */
+/* style_dlmanager_backend.css in serendipity_event_downloadmanager.php v.0.35 2021-12-07 Ian */
 /**********************************************************************************************/
 
 /*********************************************/
-/* Backend only styles - colour you life ;-) */
+/* Backend only styles - color your life ;-) */
 /* web colors used:                          */
 /*             #F8F8FF ghostwhite            */
 /*             #E8E8E8 gray91                */
@@ -494,7 +494,6 @@ input#dlm_file_rename { border: 1px solid #888; background-color: rgb(221, 230, 
 [data-color-mode="dark"] #backend_downloadmanager table {
     background-color: var(--color-bg-backdrop);
     border-color: var(--color-border-overlay);
-
 }
 [data-color-mode="dark"] #catfiles thead th, [data-color-mode="dark"] #catlist thead th, [data-color-mode="dark"] #ftpfiles thead th,[data-color-mode="dark"]  #smlfiles thead th {
     border-bottom-color: var(--color-border-overlay);
@@ -535,8 +534,30 @@ input#dlm_file_rename { border: 1px solid #888; background-color: rgb(221, 230, 
     background-color: var(--color-bg-backdrop);
     border-color: var(--color-border-overlay);
 }
-[data-color-mode="dark"] .dlm_page_header h4, [data-color-mode="dark"] #uploads h4{
+[data-color-mode="dark"] .dlm_page_header h4, [data-color-mode="dark"] #uploads h4 {
     background-color: var(--color-bg-overlay);
     border-bottom-color: var(--color-border-tertiary);
     margin-top: 0;
+}
+[data-color-mode="dark"] input#dlm_file_rename {
+    border-color: var(--color-border-overlay);
+    background-color: var(--color-bg-primary);
+}
+[data-color-mode="dark"] #dlm_edit_file select:hover,
+[data-color-mode="dark"] #dlm_edit_file input:hover,
+[data-color-mode="dark"] #dlm_edit_file textarea:hover,
+[data-color-mode="dark"] #uploads textarea:hover {
+    border-color: var(--color-border-overlay);
+    color: #31709F; /* some sort of slate light blue */
+}
+[data-color-mode="dark"] #dlm_edit_file select:focus,
+[data-color-mode="dark"] #dlm_edit_file input:focus,
+[data-color-mode="dark"] #dlm_edit_file textarea:focus,
+[data-color-mode="dark"] #uploads textarea:focus {
+    background-color: var(--color-bg-primary);
+    border-color: var(--color-border-overlay);
+    color: var(--color-text-white);
+}
+[data-color-mode="dark"] h4 .realfilename {
+      color: var(--color-text-white);
 }
