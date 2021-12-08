@@ -25,7 +25,7 @@ class serendipity_event_backup extends serendipity_event
             'php'         => '7.0'
         ));
 
-        $propbag->add('version',       '0.3.2');
+        $propbag->add('version',       '0.3.3');
         $propbag->add('author',       'Alexander Mieland, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -69,7 +69,7 @@ class serendipity_event_backup extends serendipity_event
     {
         global $serendipity;
 
-        if ($serendipity['GET']['subpage'] == $this->get_config('pageurl') ||
+        if (isset($serendipity['GET']['subpage']) && $serendipity['GET']['subpage'] == $this->get_config('pageurl') ||
             preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage'])) {
             return true;
         }
