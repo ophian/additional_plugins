@@ -1,3 +1,7 @@
+3.89:
+-----
+ * Fix an uninitialized variable check
+
 3.88:
 -----
  * Fix parameter order for PHP 8.1 and @silence deprecated strftime() usage until PHP 9

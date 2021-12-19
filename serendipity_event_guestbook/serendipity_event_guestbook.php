@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '3.88');
+        $propbag->add('version',      '3.89');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -1228,7 +1228,7 @@ class serendipity_event_guestbook extends serendipity_event
             $serendipity['smarty']->assign(array(
                 'guestbook_entry_paging'         => true,
                 'guestbook_userLoggedIn'         => false, // keep var for old user templates
-                'guestbook_paging'               => $serendipity['guestbook']['paginator']
+                'guestbook_paging'               => $serendipity['guestbook']['paginator'] ?? null
             ));
         }
 
