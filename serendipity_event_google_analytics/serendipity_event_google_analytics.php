@@ -18,11 +18,11 @@ class serendipity_event_google_analytics extends serendipity_event
 		$propbag->add ('description', PLUGIN_EVENT_GOOGLE_ANALYTICS_DESC);
 		$propbag->add ('stackable', false);
 		$propbag->add ('author', 'kleinerChemiker, Ian Styx');
-		$propbag->add ('version', '1.7');
+		$propbag->add ('version', '1.8');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.3.0')
+            'php'         => '7.0.0')
         );
 		$propbag->add ('groups', array ('STATISTICS' ));
 		$propbag->add ('cachable_events', array ('frontend_display' => true ));
@@ -181,6 +181,7 @@ class serendipity_event_google_analytics extends serendipity_event
 		
 		if (substr ($matches[3], 0, 4) == 'http') {
 			$host = parse_url ('http://' . $matches[4]);
+            $host['path'] = $host['path'] ?? '';
 			preg_match ('/\.([a-z0-9]+)$/i', $host['path'], $extension);
 			if (!in_array ($host['host'], $internal_hosts) && $analytics_track_external) {
 				return '<a onclick="_gaq.push([\'_trackPageview\', \'/extlink/' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($matches[4]) : htmlspecialchars($matches[4], ENT_COMPAT, LANG_CHARSET)) . '\']);" ' . substr ($matches[0], 2);
@@ -194,6 +195,7 @@ class serendipity_event_google_analytics extends serendipity_event
 				$matches[4] = substr ($matches[4], 1);
 			}
 			$host = parse_url ('http://www.example.com/' . $matches[4]);
+            $host['path'] = $host['path'] ?? '';
 			preg_match ('/\.([a-z0-9]+)$/i', $host['path'], $extension);
 			if (in_array ($extension[1], $download_extensions)) {
 				return '<a onclick="_gaq.push([\'_trackPageview\', \'/download' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($host['path']) : htmlspecialchars($host['path'], ENT_COMPAT, LANG_CHARSET)) . '\']);" ' . substr ($matches[0], 2);

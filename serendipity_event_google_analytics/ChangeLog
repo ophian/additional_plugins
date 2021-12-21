@@ -1,3 +1,7 @@
+1.8:
+-----
+ * Fix an uninitialized variable check
+
 1.7:
 -----
  * Fix and improve markup_element check for consistency
