@@ -509,7 +509,7 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_google_analytics&lt;br /&gt;Google Analytics&lt;/b&gt;&lt;br /&gt;This plugin adds extended Google Analytic functionality to your Page like tracking external links or download links.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 21 Dec 2021 10:53:29 +0100</pubDate>
+<pubDate>Tue, 21 Dec 2021 11:10:00 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_google_analytics</guid>
 </item>
 <item>
@@ -932,7 +932,7 @@
 <category>Event Plugins</category>
 <author>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_recaptcha&lt;br /&gt;Recaptcha&lt;/b&gt;&lt;br /&gt;Enabling a recaptcha for commenting articles (You need to apply for a key)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:22:44 +0200</pubDate>
+<pubDate>Mon, 27 Dec 2021 15:30:41 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_recaptcha</guid>
 </item>
 <item>
@@ -1022,7 +1022,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Hidden Captcha)&lt;/b&gt;&lt;br /&gt;Implements simple comment antispam mechanisms, that are easy to configure but very effective.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 14 Oct 2021 10:08:02 +0200</pubDate>
+<pubDate>Mon, 27 Dec 2021 15:29:42 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
