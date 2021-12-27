@@ -1148,7 +1148,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
                 $reason = serendipity_db_escape_string($reason);
                 $q = sprintf("INSERT INTO {$serendipity['dbPrefix']}spamblocklog
                                           (timestamp, type, reason, entry_id, author, email, url,  useragent, ip,   referer, body)
-                                   VALUES (%d,        '%s',  '%s',  '%s',     '%s',   '%s',  '%s', '%s',      '%s', '%s',    '%s')",
+                                   VALUES (%d,        '%s',  '%s',  '%d',     '%s',   '%s',  '%s', '%s',      '%s', '%s',    '%s')",
 
                            serendipity_serverOffsetHour(),
                            serendipity_db_escape_string($switch),
