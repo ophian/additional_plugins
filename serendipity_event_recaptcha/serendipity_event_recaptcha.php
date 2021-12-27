@@ -27,7 +27,7 @@ class serendipity_event_recaptcha extends serendipity_event
             'smarty'      => '2.6.7',
             'php'         => '4.1.0'
         ));
-        $propbag->add('version',       '0.34');
+        $propbag->add('version',       '0.35');
         $propbag->add('event_hooks',    array(
             'frontend_configure'   => true,
             'frontend_saveComment' => true,
@@ -390,7 +390,7 @@ class serendipity_event_recaptcha extends serendipity_event
             default:
                 $q = sprintf("INSERT INTO {$serendipity['dbPrefix']}spamblocklog
                                           (timestamp, type, reason, entry_id, author, email, url,  useragent, ip,   referer, body)
-                                   VALUES (%d,        '%s',  '%s',  '%s',     '%s',   '%s',  '%s', '%s',      '%s', '%s',    '%s')",
+                                   VALUES (%d,        '%s',  '%s',  '%d',     '%s',   '%s',  '%s', '%s',      '%s', '%s',    '%s')",
 
                            serendipity_serverOffsetHour(),
                            serendipity_db_escape_string($switch),
