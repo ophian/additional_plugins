@@ -62,7 +62,7 @@
 @define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MIN', 'Minimale Schriftgröße eines Tags in dieser Wolke in %');
 @define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MAX', 'Maximale Schriftgröße eines Tags in dieser Wolke in %');
 
-@define('PLUGIN_FREETAG_META_KEYWORDS', 'Anzahl der Stichwörter, die in die Meta-Angaben des HTML-Codes eingesetzt werden sollen (0: abgeschaltet)');
+@define('PLUGIN_FREETAG_META_KEYWORDS', 'Anzahl der Schlagwörter, die in die Meta-Angaben des HTML-Codes eingesetzt werden sollen (0: abgeschaltet)');
 
 @define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Template für Seitenleiste (siehe default theme)');
 @define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Wenn ein Template angegeben ist, aber nicht das schon andernorts verwendete "plugin_freetag.tpl", wird es benutzt um die Seitenleiste anzuzeigen. Im Template wird eine Variable <tags> zur Verfügung gestellt, die ein Liste von Einträgen im folgenden Format enthält: <tagName> => array(href = <tagLink>, count => <tagCount>). Siehe "plugin_freetag_sidebar.tpl" im default Theme als simples copy Beispiel.');
