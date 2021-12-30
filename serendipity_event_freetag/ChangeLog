@@ -1,3 +1,7 @@
+5.14:
+-----
+ * Improve inline styles for rotating canvas cloud #tags list fallback
+
 5.13:
 -----
  * Use exact wording for [de] meta (tag) keyword

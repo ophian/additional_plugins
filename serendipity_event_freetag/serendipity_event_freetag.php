@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.13');
+        $propbag->add('version',       '5.14');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -746,7 +746,7 @@ class serendipity_event_freetag extends serendipity_event
                         <!--<p style="color:#222">Sorry! Your browser is too old to support this canvas element!</p>-->
                     </canvas>
                 </div>
-                <div id="tags" style="margin-top: -' . round($rcTagWidth * 0.75) . 'px;">
+                <div id="tags" style="z-index: -1; margin-top: -' . round($rcTagWidth * 1.8) . 'px">
                     <ul class="plainList">
                 ';// Remember: Why do we set a #tags -margin-top height here? Since it prevents an empty block in case the rotacloud could not display and this taglist is used as a fallback!
 
@@ -1504,8 +1504,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (!isset($eventData[$entry][$field])) {
                     $eventData[$entry][$field] = '';
                 }
+                // work with getFieldReference to prevent caching-issues
                 $entryText =& $this->getFieldReference($field, $eventData[$entry]);
-
                 $entryText .= "\n".sprintf($msg, $this->getTagHtml($tags));
             }
         }
