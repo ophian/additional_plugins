@@ -746,7 +746,7 @@ class serendipity_event_freetag extends serendipity_event
                         <!--<p style="color:#222">Sorry! Your browser is too old to support this canvas element!</p>-->
                     </canvas>
                 </div>
-                <div id="tags" style="z-index: -1; margin-top: -' . round($rcTagWidth * 1.8) . 'px">
+                <div id="tags" style="z-index: -1; margin-top: -' . round($rcTagWidth * 0.33) . 'rem">
                     <ul class="plainList">
                 ';// Remember: Why do we set a #tags -margin-top height here? Since it prevents an empty block in case the rotacloud could not display and this taglist is used as a fallback!
 
