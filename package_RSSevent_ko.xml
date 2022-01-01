@@ -437,7 +437,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;글에 태그 달기&lt;/b&gt;&lt;br /&gt;글에 자유롭게 태그를 달 수 있게 합니다&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Thu, 30 Dec 2021 17:43:01 +0100</pubDate>
+<pubDate>Thu, 30 Dec 2021 17:51:54 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -536,7 +536,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Guestbook&lt;/b&gt;&lt;br /&gt;Shows a guestbook inside your blog with your normal blog design.&lt;br/&gt;For: Serendipity 1.7.0</content:encoded>
-<pubDate>Sun, 19 Dec 2021 13:17:42 +0100</pubDate>
+<pubDate>Sat, 01 Jan 2022 15:17:05 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
