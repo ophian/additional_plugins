@@ -1,25 +1,19 @@
-/* style_guestbook_frontend.css - for v.3.53 - 2014-12-29 Ian */
+/* style_guestbook_frontend.css - for v.3.90 - 2021-01-01 Ian */
 
 /******** Begin Guestbook Styles *********/
 
 .input-text input, .input-textarea textarea {
-    filter: progid:DXImageTransform.Microsoft.Shadow(color='#888888', Direction=145, Strength=2); /* IE Shadow setting */
     /* shadow settings */
     -webkit-box-shadow: 0 0 2px 2px #DDDDDD;
-    -moz-box-shadow: 0 0 2px 2px #DDDDDD;
-    -o-box-shadow: 0 0 2px 2px #DDDDDD;
-    box-shadow: 0 0 2px 2px #DDDDDD; /* html5 standard */
+    box-shadow: 0 0 2px 2px #DDDDDD;
 }
 
 .input-text input, .input-textarea textarea, #search-term, #captcha {
     background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #AAAAAA;
     color: #888888;
-    -moz-border-radius: 4px 4px 4px 4px;
     -webkit-border-radius: 4px 4px 4px 4px;
-    -khtml-border-radius: 4px 4px 4px 4px;
-    -o-border-radius: 4px 4px 4px 4px;
-    border-radius: 4px 4px 4px 4px; /* html5 standard */
+    border-radius: 4px 4px 4px 4px;
 }
 .input-text label, .input-select label, .input-textarea label {
     display: block;
@@ -54,13 +48,9 @@ br.clear { clear: both; }
     border: 1px solid #B20000;
     border: 1px solid hsl(360,100%,35%);
     text-align: justify;
-    /* mozilla, chrome, safari, ie7+, opera round corners */
     border-color: hsl(360,100%,35%);
-    -moz-border-radius: 8px 8px 8px 8px;
     -webkit-border-radius: 8px 8px 8px 8px;
-    -khtml-border-radius: 8px 8px 8px 8px;
-    -o-border-radius: 8px 8px 8px 8px;
-    border-radius: 8px 8px 8px 8px; /* html5 standard */
+    border-radius: 8px 8px 8px 8px;
 }
 
 #guestbook_entrypaging {
@@ -79,7 +69,7 @@ br.clear { clear: both; }
 
 div.frontend_guestbook_paginator{}
 span.frontend_guestbook_paginator_left { color: #BBB; } 
-span.frontend_guestbook_paginator_center { }
+span.frontend_guestbook_paginator_center {}
 span.frontend_guestbook_paginator_right { color: #BBB; } 
 
 /* one guestbook entry wrapper */
@@ -94,15 +84,12 @@ span.frontend_guestbook_paginator_right { color: #BBB; }
     background-color: #AAAAAA;
     border: 1px solid #BBBBBB;
     text-align: left;
-    /* rounded corners */
     -webkit-border-radius: 0 0 7px 7px;
-    -moz-border-radius: 0 0 7px 7px;
-    -o-border-radius: 0 0 7px 7px;
-    border-radius: 0 0 7px 7px; /* html5 standard */
+    border-radius: 0 0 7px 7px;
 }
 
 .serendipity_commentDirection { 
-    text-align:justify;
+    text-align: justify;
 }
 
 .guestbook_emailprotect { 
@@ -117,17 +104,10 @@ span.frontend_guestbook_paginator_right { color: #BBB; }
 #guestbook_wrapper .guestbook_entrytop { 
     margin-bottom: 5px;
     padding: 4px; 
-    /* standard color #EEEEEE no gradient */
     background: rgb(238,238,238); /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top,  rgba(238,238,238,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(238,238,238,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+    background: -webkit-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(255,255,255,1) 100%); /* Chromium, Safari */
+    background: linear-gradient(to bottom,  rgba(238,238,238,1) 0%,rgba(255,255,255,1) 100%);
 }
 
 .guestbook_entries {
@@ -272,9 +252,7 @@ span.frontend_guestbook_paginator_right { color: #BBB; }
     font-style: italic;
     /* rounded corners */
     -webkit-border-radius: 1em 1em 1em 1em;
-    -moz-border-radius: 1em 1em 1em 1em;
-    -o-border-radius: 1em 1em 1em 1em;
-    border-radius: 1em 1em 1em 1em; /* html5 standard */
+    border-radius: 1em 1em 1em 1em;
 }
 /* reset other themes quoting styles */
 #guestbook_wrapper blockquote p:last-child:after {
@@ -304,4 +282,55 @@ span.frontend_guestbook_paginator_right { color: #BBB; }
     background: url('{TEMPLATE_PATH}img/quote-end.gif') no-repeat scroll right bottom transparent !important;
 }
 
+/* dark pattern [ pure ] theme */
+[data-dark-theme="dark"] .serendipity_title {
+    border-bottom-color: #444c56;
+    color: #adbac7;
+}
+[data-dark-theme="dark"] .input-text input, [data-dark-theme="dark"] .input-textarea textarea, [data-dark-theme="dark"] #search-term, [data-dark-theme="dark"] #captcha {
+    box-shadow: none;
+    background-color: #22272e;
+    border-color: #444c56;
+}
+[data-dark-theme="dark"] #guestbook_wrapper .guestbook_entrytop {
+    background: -webkit-linear-gradient(top, rgb(34, 39, 46) 0%,rgb(52, 57, 64) 100%);
+    background: linear-gradient(to bottom, rgb(34, 39, 46) 0%,rgb(52, 57, 64) 100%);
+}
+[data-dark-theme="dark"] #guestbook_entrybundle {
+    background-color: rgb(52, 57, 64);
+}
+[data-dark-theme="dark"] .guestbook_entrybottom {
+    background-color: #22272e;
+}
+[data-dark-theme="dark"] #guestbook_entrybundle, [data-dark-theme="dark"] .guestbook_entrybottom {
+    border-color: #444c56;
+    color: #adbac7;
+}
+[data-dark-theme="dark"] #guestbook_wrapper .guestbook_intro {
+    border-color: rgba(65,132,228,.4);
+}
+[data-dark-theme="dark"] #guestbook_entrypaging a, [data-dark-theme="dark"] #guestbook_entrypaging a:hover {
+    background-color: transparent;
+}
+[data-dark-theme="dark"] #guestbook_wrapper .serendipityPrettyButton {
+    background-clip: padding-box;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: normal;
+    outline: 0;
+    padding: 0.1875rem 0.625rem;
+    text-align: center;
+    text-decoration: none;
+    border-color: #444c56;
+    color: #adbac7;
+}
+[data-dark-theme="dark"] span.frontend_guestbook_paginator_left, [data-dark-theme="dark"] span.frontend_guestbook_paginator_right {
+    color: #545d68
+}
+[data-dark-theme="dark"] .guestbook_errors {
+    color: #e5534b
+}
+[data-dark-theme="dark"] .guestbook_errorbundled {
+    padding-top: 5px;
+}
 /******** End Guestbook Styles *********/

@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '3.89');
+        $propbag->add('version',      '3.90');
         $propbag->add('requirements', array(
                         'serendipity' => '1.7.0',
                         'smarty'      => '3.1.0',
@@ -879,7 +879,7 @@ class serendipity_event_guestbook extends serendipity_event
                     'timestamp'             => strtotime("-8 day" ,time()) // remember captchas_ttl using 7 days as normal setting, just 10 sec. throws Moderation after X days
                     );
 
-        if (!is_numeric($_POST['guestbook']['id'])) {
+        if (isset($_POST['guestbook']) && !is_numeric($_POST['guestbook']['id'])) {
             $commentInfo = array(
                     'type'        => 'NORMAL',
                     'source'      => 'guestbookform',
