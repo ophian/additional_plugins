@@ -10,6 +10,9 @@ class serendipity_event_statistics extends serendipity_event
 {
     var $title = PLUGIN_EVENT_STATISTICS_NAME;
 
+    /**
+     * API
+     */
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -18,7 +21,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '3.04');
+        $propbag->add('version',       '3.5.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.3'
@@ -49,6 +52,9 @@ class serendipity_event_statistics extends serendipity_event
         ));
     }
 
+    /**
+     * API
+     */
     function introspect_config_item($name, &$propbag)
     {
         switch($name) {
@@ -111,11 +117,17 @@ class serendipity_event_statistics extends serendipity_event
         return true;
     }
 
+    /**
+     * API
+     */
     function generate_content(&$title)
     {
         $title = $this->title;
     }
 
+    /**
+     * API
+     */
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
         global $serendipity;
@@ -930,7 +942,9 @@ class serendipity_event_statistics extends serendipity_event
         }
     }
 
-    // Statistics
+    /**
+     * Statistics
+     */
     function updatestats($action)
     {
         global $serendipity;
@@ -961,6 +975,9 @@ class serendipity_event_statistics extends serendipity_event
         }
     }
 
+    /**
+     * Update Visitor Stats
+     */
     function updateVisitor()
     {
         global $serendipity;
@@ -972,6 +989,9 @@ class serendipity_event_statistics extends serendipity_event
         return serendipity_db_query("UPDATE {$serendipity['dbPrefix']}visitors SET time = '$time', day = '$day' WHERE sessID = '" . serendipity_db_escape_string(strip_tags(session_id())) . "'");
     }
 
+    /**
+     * Count Visitor Stats
+     */
     function countVisitor($useragent, $remoteaddr, $referer)
     {
         global $serendipity;
@@ -1027,7 +1047,23 @@ class serendipity_event_statistics extends serendipity_event
 
     } // end of function countVisitor
 
-    // Calculate daily stats
+    /**
+     * Calculate a rolling year
+     */
+    function statistics_rollingYear()
+    {
+        $date = mktime(0, 0, 0, date('n'), 1);
+        $months[] = [date('m', $date), date('Y', $date)];
+        for($i = -1; $i >= -11; $i--) {
+            list($year, $month) = explode('-', date('Y-m', strtotime($i.' month', $date)));
+            $months[] = [$month, $year];
+        }
+        return $months;
+    }
+
+    /**
+     * Calculate daily stats
+     */
     function statistics_getdailystats()
     {
         global $serendipity;
@@ -1043,22 +1079,27 @@ class serendipity_event_statistics extends serendipity_event
         return $container;
     }
 
-    // Calculate monthly stats
+    /**
+     * Calculate monthly stats
+     */
     function statistics_getmonthlystats()
     {
         global $serendipity;
 
-        $year = date("Y");
+        $i = 1;
         $sql = "SELECT SUM(visits) AS monthlyvisit FROM {$serendipity['dbPrefix']}visitors_count WHERE month";
-        for ($i=1; $i<13; $i++)    {
-            $myMonth = ($i < 10) ? "0" . $i : $i;
-            $sqlfire = $sql . " = '$myMonth' AND year = '$year'";
+        foreach ($this->statistics_rollingYear() AS $month) {
+            $sqlfire = $sql . " = '$month[0]' AND year = '$month[1]'";
             $res = serendipity_db_query($sqlfire, true);
-            $container[$i] = $res['monthlyvisit'];
+            $container[$i] = [$month[0], $res['monthlyvisit']];
+            $i++;
         }
         return $container;
     }
 
+    /**
+     * Auto clean stats
+     */
     private function autoCleanStats()
     {
         global $serendipity;
@@ -1067,6 +1108,9 @@ class serendipity_event_statistics extends serendipity_event
         serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}visitors WHERE day < '$today'", true);
     }
 
+    /**
+     * Extend Visitor Statistics Sum-ups
+     */
     function extendedVisitorStatistics($max_items)
     {
         global $serendipity;
@@ -1081,11 +1125,15 @@ class serendipity_event_statistics extends serendipity_event
         $day = date('Y-m-d');
         list($year, $month, $day) = explode('-', $day);
 
-        $visitors_count_firstday = serendipity_db_query("SELECT day FROM {$serendipity['dbPrefix']}visitors ORDER BY counter_id ASC LIMIT 1", true);
+        $visitors_count_firstday = serendipity_db_query("SELECT UNIX_TIMESTAMP(STR_TO_DATE(CONCAT(year,'-',month,'-',day), '%Y-%m-%d')) AS tdate FROM {$serendipity['dbPrefix']}visitors_count ORDER BY year, month, day ASC LIMIT 1", true);
         $visitors_count_today    = serendipity_db_query("SELECT visits FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '$year' AND month = '$month' AND day = '$day'", true);
-        $visitors_count          = serendipity_db_query("SELECT SUM(visits) FROM {$serendipity['dbPrefix']}visitors_count", true);
+        $visitors_count_curryear = serendipity_db_query("SELECT SUM(visits) FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '$year'", true);
+        $visitors_count_lastyear = serendipity_db_query("SELECT SUM(visits) FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '".($year-1)."'", true);
+        $visitors_count_all      = serendipity_db_query("SELECT SUM(visits) FROM {$serendipity['dbPrefix']}visitors_count", true);
         $hits_count_today        = serendipity_db_query("SELECT hits FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '$year' AND month = '$month' AND day = '$day'", true);
-        $hits_count              = serendipity_db_query("SELECT SUM(hits) FROM {$serendipity['dbPrefix']}visitors_count", true);
+        $hits_count_curryear     = serendipity_db_query("SELECT SUM(hits) FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '$year'", true);
+        $hits_count_lastyear     = serendipity_db_query("SELECT SUM(hits) FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '".($year-1)."'", true);
+        $hits_count_all          = serendipity_db_query("SELECT SUM(hits) FROM {$serendipity['dbPrefix']}visitors_count", true);
         $visitors_latest         = serendipity_db_query("SELECT counter_id, day, time, ref, browser, ip FROM {$serendipity['dbPrefix']}visitors ORDER BY counter_id DESC LIMIT $max_items");
         $top_refs                = serendipity_db_query("SELECT refs, count FROM {$serendipity['dbPrefix']}refs ORDER BY count DESC LIMIT 20");
         ?>
@@ -1095,20 +1143,34 @@ class serendipity_event_statistics extends serendipity_event
             <section>
                 <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISITORS; ?></h3>
 
-                <p><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISSINCE.' '.$visitors_count_firstday[0]; ?></p>
-
-                <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC; ?></span>
-
                 <dl>
                     <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISTODAY; ?></dt>
                     <dd><?php echo $visitors_count_today[0]; ?></dd>
-                    <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL; ?></dt>
-                    <dd><?php echo $visitors_count[0]; ?></dd>
+                    <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISCURYR; ?></dt>
+                    <dd><?php echo $visitors_count_curryear[0]; ?></dd>
+                    <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR; ?></dt>
+                    <dd><?php echo $visitors_count_lastyear[0]; ?></dd>
+                    <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, $visitors_count_firstday[0])).'</em>'); ?></dt>
+                    <dd><?php echo $visitors_count_all[0]; ?></dd>
+                    <dd>-------------------------------------
+                        <a class="statistics_info toggle_info button_link" href="#statstics_countdesc" title="Statistics Count description Information">
+                            <span class="icon-info-circled" aria-hidden="true"></span>
+                            <span class="visuallyhidden"> Statistics Count description Information</span>
+                        </a>
+                    </dd>
                     <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSTODAY; ?></dt>
                     <dd><?php echo $hits_count_today[0]; ?></dd>
-                    <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL; ?></dt>
-                    <dd><?php echo $hits_count[0]; ?></dd>
-                <dl>
+                    <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSCURYR; ?></dt>
+                    <dd><?php echo $hits_count_curryear[0]; ?></dd>
+                    <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSLSTYR; ?></dt>
+                    <dd><?php echo $hits_count_lastyear[0]; ?></dd>
+                    <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, $visitors_count_firstday[0])).'</em>'); ?></dt>
+                    <dd><?php echo $hits_count_all[0]; ?></dd>
+                </dl>
+
+                <footer id="statstics_countdesc" class="statistics_info additional_info">
+                    <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC; ?></span>
+                </footer>
             </section>
 
             <section>
@@ -1127,39 +1189,41 @@ class serendipity_event_statistics extends serendipity_event
             </section>
 
             <section id="statistics_yearbox" class="wide_box">
-                <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_MONTHGRAPH;?></h3>
+                <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_MONTHGRAPH;?> (<em>rolling year</em>)</h3>
 
-        <?php if ($visitors_count[0] > 0) { ?>
+        <?php if ($visitors_count_all[0] > 0) {
+                $num = $this->statistics_getmonthlystats();
+            ?>
                 <table>
                     <tbody>
                     <tr>
                         <th scope="row"><?php echo MONTHS; ?></th>
                 <?php
-                    $mon = array('1' => 'Jan', '2' => 'Feb', '3' => 'Mar', '4' => 'Apr', '5' => 'May', '6' => 'Jun', '7' => 'Jul', '8' => 'Aug', '9' => 'Sep', '10' => 'Oct', '11' => 'Nov', '12' => 'Dec');
-                    for ($i = 1; $i < 13; $i++) {
-                        echo '<td>'. serendipity_strftime('%b', mktime(0, 0, 0, $i, 1, 2000)) ."</td>\n";
+                    foreach (array_reverse($num) AS $month) {
+                        echo '<td>' . serendipity_strftime('%b', mktime(0, 0, 0, $month[0], 1, 2000)) . "</td>\n";
                     }
                 ?>
                     </tr>
                     <tr>
                         <th scope="row">Visits</th>
                 <?php
-                    $num = $this->statistics_getmonthlystats();
-                    for ($i=1; $i < 13; $i++) {
-                        echo '<td>' . $num[$i] . "</td>\n";
+                    foreach (array_reverse($num) AS $visits) {
+                        echo '<td>' . $visits[1] . "</td>\n";
                     }
                 ?>
                     </tr>
                     <tr>
                         <th scope="row">+/~/-</th>
                 <?php
-                    $rep = $num;
-                    rsort($rep); // Now $ret[0] is the heighest max vis height
+                    foreach (array_reverse($num) AS $r) {
+                        $rep[(int)$r[0]] = $r[1]; // flatten array for max
+                    }
+                    $max = max(array_values($rep)); // Get the highest entry visitor stat
 
-                    for ($i=1; $i < 13; $i++) {
-                        $maxVisHeigh = 100/$rep[0]*2;
-                        $monthHeight = @round($num[$i]*$maxVisHeigh);
-                        $numCountInt = @($num[$i]*$maxVisHeigh/2);
+                    foreach (array_reverse($num) AS $n) {
+                        $maxVisHeigh = 100/$max*2;
+                        $monthHeight = @round($n[1]*$maxVisHeigh);
+                        $numCountInt = @($n[1]*$maxVisHeigh/2);
                         echo '<td class="stats_imagecell"><img src="plugins/serendipity_event_statistics/';
                         if ($numCountInt <= 33) {
                             echo 'red.png';
@@ -1188,7 +1252,7 @@ class serendipity_event_statistics extends serendipity_event
             <section class="wide_box">
                 <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_DAYGRAPH;?></h3>
 
-        <?php if ($visitors_count[0] > 0) { ?>
+        <?php if ($visitors_count_all[0] > 0) { ?>
                 <table>
                     <tbody>
                     <tr>
@@ -1276,6 +1340,9 @@ class serendipity_event_statistics extends serendipity_event
 <?php
     } //end of function extendedVisitorStatistics()
 
+    /**
+     * Install tables
+     */
     function createTables()
     {
         global $serendipity;
@@ -1313,8 +1380,11 @@ class serendipity_event_statistics extends serendipity_event
         serendipity_db_schema_import($q);
 
         $this->updateTables();
-    } //end of function createTables()
+    }
 
+    /**
+     * Update tables
+     */
     function updateTables($dbic=0)
     {
         global $serendipity;
@@ -1365,6 +1435,9 @@ class serendipity_event_statistics extends serendipity_event
         }
     }
 
+    /**
+     * Drop tables
+     */
     function dropTables()
     {
         global $serendipity;
@@ -1379,11 +1452,17 @@ class serendipity_event_statistics extends serendipity_event
 
     }
 
+    /**
+     * API
+     */
     function install()
     {
         $this->createTables();
     }
 
+    /**
+     * API
+     */
     function uninstall(&$propbag)
     {
         $this->dropTables();

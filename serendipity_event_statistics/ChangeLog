@@ -1,3 +1,9 @@
+3.5.0:
+-----
+ * Improve months view diagram to show a rolling year ending with current month, eg. in January 22 show "Feb 21, Mar 21, ...., Dec 21 until current Jan 22".
+ * Add additional SUM-ups Stats for current year and last year visitors / hits summary
+ * Improve lang files
+
 3.04:
 -----
  * Adjust some styles for DARK MODE

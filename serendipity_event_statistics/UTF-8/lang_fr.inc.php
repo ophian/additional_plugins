@@ -64,8 +64,10 @@
 @define('PLUGIN_EVENT_STATISTICS_EXT_OPT3', 'Oui, en haut de page');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISITORS', 'Nombre de visiteurs');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISTODAY', 'Nombre de visiteurs aujourd\'hui');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Nombre total de visiteurs');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'Les statistiques détaillées sont activées depui');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISCURYR', 'Visitors this year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR', 'Visitors last year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Nombre total de visiteurs (since %s)');
+#@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'Les statistiques détaillées sont activées depui');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISLATEST', 'Derniers visiteurs');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS', 'Top des pages référantes');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE', 'Aucune page référante n\'a encore été enregistrée.');

@@ -71,11 +71,15 @@
 @define('PLUGIN_EVENT_STATISTICS_EXT_ALL2', 'Yes, show me all statistics!');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISITORS', 'Individual counters');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISTODAY', 'Visitors today');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Visitors ever');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISCURYR', 'Visitors this year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR', 'Visitors last year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Visitors ever (since %s)');
 @define('PLUGIN_EVENT_STATISTICS_EXT_HITSTODAY', 'Hits today');
-@define('PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL', 'Hits ever');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'Collecting stats since');
-@define('PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC','The hits can go quite high and are purely for indication of pageviews. The hits are updated on EVERY pageview or refresh. This number is NOT a actual visit count.');
+@define('PLUGIN_EVENT_STATISTICS_EXT_HITSCURYR', 'Hits this year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_HITSLSTYR', 'Hits last year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL', 'Hits ever (since %s)');
+#@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'Collecting stats since');
+@define('PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC', 'The hits can go quite high and are purely for indication of pageviews. The hits are updated on EVERY pageview or refresh. This number is NOT a actual visit count.');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISLATEST', 'Latest Visitors');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS', 'Top Referrers');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE', 'No referrers have yet been registered.');
@@ -108,5 +112,5 @@
 @define('PLUGIN_EVENT_STATISTICS_TEXT_CURRENTVISITORS', '%s visitor(s) online');
 
 @define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN', 'Auto clean old logentries');
-@define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN_DESC', 'Cleans the database "visitors"-table from all old entries each older than 1 year, since that table continuously blows up your database without real benefit. If you need the old (year) data for comparisson, you can easily take yourself a browser screenshot of the "Extended Visitor Statistics" for visitors, top-referrers and the month table view at the end of year. Certainly the data of the "visitors_count"-table that has already been evaluated is not affected by this cleanup.');
+@define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN_DESC', 'Cleans the database "visitors"-table from all old entries each older than 1 year, since that table continuously blows up your database without real benefit. Certainly the data of the "visitors_count"-table that has already been evaluated is not affected by this cleanup.');
 

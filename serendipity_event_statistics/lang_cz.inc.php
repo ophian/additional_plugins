@@ -72,10 +72,14 @@
 @define('PLUGIN_EVENT_STATISTICS_EXT_ALL2', 'ANO, uka¾ v¹echny statistiky!');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISITORS', 'Jednotlivá poèítadla');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISTODAY', 'Náv¹tìvníkù dnes');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Náv¹tìvníkù celkem');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISCURYR', 'Visitors this year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR', 'Visitors last year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Náv¹tìvníkù celkem (since %s)');
 @define('PLUGIN_EVENT_STATISTICS_EXT_HITSTODAY', 'Zobrazení dnes');
-@define('PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL', 'Zobrazení celkem');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'Ukládání statistik od');
+@define('PLUGIN_EVENT_STATISTICS_EXT_HITSCURYR', 'Hits this year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_HITSLSTYR', 'Hits last year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL', 'Zobrazení celkem (since %s)');
+#@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'Ukládání statistik od');
 @define('PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC', 'Zobrazení se mohou vy¹plhat do velkých hodnot, proto¾e jsou zvý¹ena pøi KA®DÉM naètení stránky. Není to èíslo poètu lidí, kteøí stránku prohlí¾eli. Je to ukazatel poètu zobrazení stránky.');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISLATEST', 'Poslední náv¹tìvníci');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS', 'Top odkazovaèe');

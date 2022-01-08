@@ -62,10 +62,12 @@
 @define('PLUGIN_EVENT_STATISTICS_EXT_OPT1', 'いいえ!');
 @define('PLUGIN_EVENT_STATISTICS_EXT_OPT2', 'はい, ぺーじの下に');
 @define('PLUGIN_EVENT_STATISTICS_EXT_OPT3', 'はい, ページの上に');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISITORS', 'Nr of vistors');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISTODAY', 'Nr of vistors today');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Total nr of vistors');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', '訪問者の拡張統計の機能は次の日以降のデータを収集しました: ');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISITORS', 'Nr of visitors');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISTODAY', '本日の訪問者数');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISCURYR', 'Visitors this year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR', 'Visitors last year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', '今までの訪問者数 (since %s)');
+#@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', '訪問者の拡張統計の機能は次の日以降のデータを収集しました: ');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISLATEST', '最新の訪問者');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS', 'トップリファラー');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE', 'まだリファラーは記録されていません。');

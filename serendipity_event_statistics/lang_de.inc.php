@@ -71,11 +71,15 @@
 @define('PLUGIN_EVENT_STATISTICS_EXT_ALL2', 'Ja, alle Statistiken anzeigen!');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISITORS', 'Anzahl der Besucher');
 @define('PLUGIN_EVENT_STATISTICS_EXT_HITSTODAY', 'Aufrufe heute');
-@define('PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL', 'Aufrufe gesamt');
+@define('PLUGIN_EVENT_STATISTICS_EXT_HITSLSTYR', 'Aufrufe letztes Jahr');
+@define('PLUGIN_EVENT_STATISTICS_EXT_HITSCURYR', 'Aufrufe dieses Jahr');
+@define('PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL', 'Aufrufe gesamt (seit %s)');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISTODAY', 'Besucher heute');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Besucher gesamt');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'Die erweiterte Besucherstatistik hat seit folgendem Zeitpunkt Daten gesammelt:');
-@define('PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC','Die Zahl der Aufrufe kann sehr groß werden, liefert jedoch einen Wert bezüglich der einzelnen Seitenanfragen. Diese Zahl erhöht sich deshalb mit JEDEM Seitenaufruf sowie jeder Aktualisierung der Seite und kann damit NICHT als Besucherzähler verstanden werden.');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR', 'Besucher letzten Jahres');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISCURYR', 'Besucher dieses Jahres');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Besucher gesamt (seit %s)');
+#@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'Die erweiterte Besucherstatistik hat seit folgendem Zeitpunkt Daten gesammelt:');
+@define('PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC', 'Die Zahl der Aufrufe kann sehr groß werden, liefert jedoch einen Wert bezüglich der einzelnen Seitenanfragen. Diese Zahl erhöht sich deshalb mit JEDEM Seitenaufruf sowie jeder Aktualisierung der Seite und kann damit NICHT als Besucherzähler verstanden werden.');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISLATEST', 'Letzte Besucher');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS', 'Top-Referrer');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE', 'Bisher wurden keine Referrer registriert.');
@@ -91,7 +95,7 @@
 @define('PLUGIN_EVENT_STATISTICS_SHOW_COMMENTCOUNT', 'Anzahl der Kommentare anzeigen');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_MONTHVISITORS', 'Besucher dieses Monats anzeigen');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_CACHETIMEOUT', 'Cache-Zeitlimit');
-@define('PLUGIN_EVENT_STATISTICS_SHOW_CACHETIMEOUT_DESC', 'Gibt an (in Minuten), wie lange die Statistik angezeigt wird, bevor sie aktualisiert wird. Ein höheres Zeitlimit führt zu besserer Leistung, stellt jedoch nicht sicher, dass die Statistiken immer aktuell sind.');
+@define('PLUGIN_EVENT_STATISTICS_SHOW_CACHETIMEOUT_DESC', 'Gibt an (in Minuten), wie lange die Statistik angezeigt wird, bevor sie aktualisiert wird. Ein höheres Zeitlimit führt zu einer besseren Leistung, gewährleistet aber nicht, dass die Statistiken immer aktuell sind.');
 @define('PLUGIN_EVENT_STATISTICS_TEXT', 'Textformatierung');
 @define('PLUGIN_EVENT_STATISTICS_TEXT_DESC', 'Bitte %s als Platzhalter für die Zahl/den Text benutzen');
 @define('PLUGIN_EVENT_STATISTICS_TEXT_LASTENTRY', 'Letzter Artikel: %s');
@@ -109,5 +113,5 @@
 @define('PLUGIN_EVENT_STATISTICS_TEXT_WEEKVISITORS', '%s Besucher in dieser Woche');
 
 @define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN', 'Automatisches Löschen alter Logeinträge');
-@define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN_DESC', 'Löscht alle Einträge der "visitors"-Tabelle jeweils älter als 1 Jahr, da diese Logeinträge die Datenbank kontinuierlich aufblähen, zu einer steten Verlangsamung des System führen und z.Z. keinen echten Mehrwert bieten. Insofern Sie die alten Jahres-Daten für einen Vergleich benötigen, ist es am einfachsten, sich einen einfachen Browser Screenshot der "Erweiterte(n) Besucherstatistik" für Besucher, Top-Referrer und Monatsaufrufe am Ende des Jahres zu erstellen. Natürlich bleiben die bereits ausgewerteten Daten der "visitors_count"-Tabelle weiterhin erhalten.');
+@define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN_DESC', 'Löscht alle Einträge der "visitors"-Tabelle jeweils älter als 1 Jahr, da diese Logeinträge die Datenbank kontinuierlich aufblähen, zu einer steten Verlangsamung des System führen und z.Z. keinen echten Mehrwert bieten. Natürlich bleiben die bereits ausgewerteten Daten der "visitors_count"-Tabelle weiterhin erhalten.');
 

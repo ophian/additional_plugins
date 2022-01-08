@@ -65,8 +65,10 @@
 @define('PLUGIN_EVENT_STATISTICS_EXT_OPT3', 'Ja, aan de bovenkant van de pagina');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISITORS', 'Aantal bezoekers');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISTODAY', 'Aantal bezoekers vandaag');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Totaal aantal bezoekers');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'De "Uitgebreide Bezoekers Statistieken" optie houd gegevens bij sinds');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISCURYR', 'Visitors this year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR', 'Visitors last year');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Totaal aantal bezoekers (since %s)');
+#@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'De "Uitgebreide Bezoekers Statistieken" optie houd gegevens bij sinds');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISLATEST', 'Meest recente bezoekers');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS', 'Top Referrers');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE', 'Er staan momenteel geen referrers geregistreerd.');
