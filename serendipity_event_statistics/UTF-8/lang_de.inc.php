@@ -83,8 +83,8 @@
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISLATEST', 'Letzte Besucher');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS', 'Top-Referrer');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE', 'Bisher wurden keine Referrer registriert.');
-@define('PLUGIN_EVENT_STATISTICS_EXT_DAYGRAPH', 'Aufrufe, auf den Tag bezogen');
-@define('PLUGIN_EVENT_STATISTICS_EXT_MONTHGRAPH', 'Aufrufe, auf den Monat bezogen');
+@define('PLUGIN_EVENT_STATISTICS_EXT_DAYGRAPH', 'Besucher, auf den Tag bezogen');
+@define('PLUGIN_EVENT_STATISTICS_EXT_MONTHGRAPH', 'Besucher, auf den Monat bezogen');
 @define('PLUGIN_EVENT_STATISTICS_OUT_EXT_STATISTICS', 'Erweiterte Besucherstatistik');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS1', 'Aktivieren, keine Robots zählen');
 @define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS2', 'Nein, Robots bitte mitzählen');
