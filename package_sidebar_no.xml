@@ -381,15 +381,19 @@
       <dir name="img">
         <file>blank.gif</file>
         <file>button_background.png</file>
+        <file>check-square.svg</file>
+        <file>check2-square.svg</file>
         <file>delete.png</file>
         <file>info.gif</file>
         <file>notes-approve.gif</file>
         <file>notes-change.gif</file>
         <file>notes-checkmark.gif</file>
         <file>notes-delete.gif</file>
+        <file>pencil-square.svg</file>
         <file>quote-end.gif</file>
         <file>quote-start.gif</file>
         <file>shorttime.gif</file>
+        <file>x-square.svg</file>
       </dir>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
@@ -432,15 +436,19 @@
     <file>serendipity_event_guestbook/documentation_en.html</file>
     <file>serendipity_event_guestbook/img/blank.gif</file>
     <file>serendipity_event_guestbook/img/button_background.png</file>
+    <file>serendipity_event_guestbook/img/check-square.svg</file>
+    <file>serendipity_event_guestbook/img/check2-square.svg</file>
     <file>serendipity_event_guestbook/img/delete.png</file>
     <file>serendipity_event_guestbook/img/info.gif</file>
     <file>serendipity_event_guestbook/img/notes-approve.gif</file>
     <file>serendipity_event_guestbook/img/notes-change.gif</file>
     <file>serendipity_event_guestbook/img/notes-checkmark.gif</file>
     <file>serendipity_event_guestbook/img/notes-delete.gif</file>
+    <file>serendipity_event_guestbook/img/pencil-square.svg</file>
     <file>serendipity_event_guestbook/img/quote-end.gif</file>
     <file>serendipity_event_guestbook/img/quote-start.gif</file>
     <file>serendipity_event_guestbook/img/shorttime.gif</file>
+    <file>serendipity_event_guestbook/img/x-square.svg</file>
     <file>serendipity_event_guestbook/lang_bg.inc.php</file>
     <file>serendipity_event_guestbook/lang_cs.inc.php</file>
     <file>serendipity_event_guestbook/lang_cz.inc.php</file>

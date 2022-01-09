@@ -4718,11 +4718,11 @@
 <description>Pokazuje księgę gości w ramach twojego blogu, stosując normalny jego wygląd.</description>
 <maintainers><maintainer><name>Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.90</version>
-  <requirements:s9yVersion>1.7.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2022-01-01</date>
+  <version>4.0.0</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>7.3</requirements:phpVersion>
+  <date>2022-01-09</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
       <file>ChangeLog</file>
@@ -4732,15 +4732,19 @@
       <dir name="img">
         <file>blank.gif</file>
         <file>button_background.png</file>
+        <file>check-square.svg</file>
+        <file>check2-square.svg</file>
         <file>delete.png</file>
         <file>info.gif</file>
         <file>notes-approve.gif</file>
         <file>notes-change.gif</file>
         <file>notes-checkmark.gif</file>
         <file>notes-delete.gif</file>
+        <file>pencil-square.svg</file>
         <file>quote-end.gif</file>
         <file>quote-start.gif</file>
         <file>shorttime.gif</file>
+        <file>x-square.svg</file>
       </dir>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
@@ -4783,15 +4787,19 @@
     <file>serendipity_event_guestbook/documentation_en.html</file>
     <file>serendipity_event_guestbook/img/blank.gif</file>
     <file>serendipity_event_guestbook/img/button_background.png</file>
+    <file>serendipity_event_guestbook/img/check-square.svg</file>
+    <file>serendipity_event_guestbook/img/check2-square.svg</file>
     <file>serendipity_event_guestbook/img/delete.png</file>
     <file>serendipity_event_guestbook/img/info.gif</file>
     <file>serendipity_event_guestbook/img/notes-approve.gif</file>
     <file>serendipity_event_guestbook/img/notes-change.gif</file>
     <file>serendipity_event_guestbook/img/notes-checkmark.gif</file>
     <file>serendipity_event_guestbook/img/notes-delete.gif</file>
+    <file>serendipity_event_guestbook/img/pencil-square.svg</file>
     <file>serendipity_event_guestbook/img/quote-end.gif</file>
     <file>serendipity_event_guestbook/img/quote-start.gif</file>
     <file>serendipity_event_guestbook/img/shorttime.gif</file>
+    <file>serendipity_event_guestbook/img/x-square.svg</file>
     <file>serendipity_event_guestbook/lang_bg.inc.php</file>
     <file>serendipity_event_guestbook/lang_cs.inc.php</file>
     <file>serendipity_event_guestbook/lang_cz.inc.php</file>
