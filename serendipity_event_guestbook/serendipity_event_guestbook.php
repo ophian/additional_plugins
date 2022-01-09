@@ -1769,7 +1769,7 @@ class serendipity_event_guestbook extends serendipity_event
                     'guestbook_messages'        => $messages,
                     'guestbook_entries'         => $entries,
                     'guestbook_paginator'       => $paginator,
-                    'guestbook_message_header'  => $serendipity['guestbook_message_header']) ?? null
+                    'guestbook_message_header'  => $serendipity['guestbook_message_header'] ?? null
                 )
         );
 
