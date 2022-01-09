@@ -1,7 +1,7 @@
 
 /*
     ******** Begin Guestbook Styles *********
-    style_guestbook_backend.css - for v.3.85 2021-07-19 Ian
+    style_guestbook_backend.css - for v.4.0.0 2022-07-09 Ian
 */
 
 #wrapGB .icon-ok:before{content:'\2714'}
@@ -20,12 +20,8 @@
     border: 1px solid #AAAAAA;
     color: #888888;
     /* rounded corners */
-    -moz-border-radius: 4px 4px 4px 4px;
     -webkit-border-radius: 4px 4px 4px 4px;
-    -khtml-border-radius: 4px 4px 4px 4px;
-    -o-border-radius: 4px 4px 4px 4px;
     border-radius: 4px 4px 4px 4px; /* html5 standard */
-    filter: progid:DXImageTransform.Microsoft.Shadow(color='#888888', Direction=145, Strength=2); /* IE Shadow setting */
     /* shadow settings */
     -webkit-box-shadow: 0 0 2px 2px #DDDDDD;
     -moz-box-shadow: 0 0 2px 2px #DDDDDD;
@@ -145,13 +141,21 @@
     margin: 0 4px;
     vertical-align: text-top;
 }
+#wrapGB .gb_move.edit,
+#wrapGB .gb_move.checked {
+    background: none repeat scroll 0 0 darkgray;
+}
+#wrapGB .gb_move.reject {
+    background: none repeat scroll 0 0 orangered;
+}
+#wrapGB .gb_move.approve {
+    background: none repeat scroll 0 0 green;
+}
 #wrapGB .gb_msgred { color: red; }
 #wrapGB .gb_msgred h3 { margin: 0 auto; }
 
-#wrapGB div.gb_paginator { background-color: transparent; display: block; border: 0 none; height: 2em; }
-#wrapGB span.gb_paginator_left { float: left; width: 36.5%; text-align: left; margin: 0 0 0 1.5em; color: #aaa !important; }/*normally 40%, but prev button name too long*/
-#wrapGB span.gb_paginator_center { margin: 0 1.5em; width: 20%; text-align: center; font-weight: 700 !important; }
-#wrapGB span.gb_paginator_right { float: right; width: auto; text-align: right; margin: 0 1.5em 0 0; color: #aaa !important; }
+#wrapGB .gb_paginator { display: flex; }
+#wrapGB .gb_paginator_center { display: -webkit-inline-box;display: inline-flex;margin: 0 auto; text-align: center; font-weight: 700; }
 
 #wrapGB div.guestbook_backend_form {
     background-color: #E0E0E0; 
@@ -231,6 +235,9 @@
     display:none;
 }
 
+[data-color-mode="dark"] #wrapGB .zebra_list .even {
+    background-color: initial !important;
+}
 [data-color-mode="dark"] #wrapGB div.guestbook_backend_form {
     background-color: var(--color-bg-overlay);
     border-color: var(--color-border-overlay);
@@ -288,4 +295,5 @@
     padding: 0;
     margin-left: 5px;
 }
+
 /******** End Guestbook Styles *********/

@@ -1,5 +1,5 @@
 {*
-     plugin_guestbook_backend_entries.tpl for v.3.77 - 2020-06-30
+     plugin_guestbook_backend_entries.tpl for v.4.0.0 - 2022-01-09
 *}
 
 <!-- plugin_guestbook_backend_entries start -->
@@ -50,9 +50,11 @@
 
 {if $guestbook_entries}
 
-    <div class="gb_paginator">
-        {$guestbook_paginator}
-    </div>
+    <nav class="pagination" role="navigation">
+        <ul class="gb_paginator">
+            {$guestbook_paginator}
+        </ul>
+    </nav>
 
     <div class="entries_pane">
         <ul id="entries_list" class="plainList zebra_list">
@@ -73,14 +75,14 @@
                     </span>
                 {if $is_guestbook_admin_noapp != true}
 
-                    <span class="gb_validation"><input type="image" class="gb_move" src="{$entry.pluginpath}img/notes-approve.gif" name="Approve_Selected" alt="notes-approve" title=" Approve " align="bottom"></span>
+                    <span class="gb_validation"><input type="image" class="gb_move approve" src="{$entry.pluginpath}img/check-square.svg" name="Approve_Selected" alt="notes-approve" title=" Approve " align="bottom"></span>
                 {else}
 
-                    <span class="gb_validation"><img class="gb_move" src="{$entry.pluginpath}img/notes-checkmark.gif" name="Approve_Selected" alt="notes-approve" title=" is approved already - no action " align="bottom"></span>
+                    <span class="gb_validation"><img class="gb_move checked" src="{$entry.pluginpath}img/check2-square.svg" name="Approve_Selected" alt="notes-approve" title=" is approved already - no action " align="bottom"></span>
                 {/if}
 
-                    <span class="gb_validation"><input type="image" class="gb_move" src="{$entry.pluginpath}img/notes-change.gif" name="Change_Selected" alt="notes-change" title=" Change " align="bottom"></span>
-                    <span class="gb_validation"><input type="image" class="gb_move" src="{$entry.pluginpath}img/notes-delete.gif" name="Reject_Selected" alt="notes-delete" title=" Reject immediately " align="bottom"></span>
+                    <span class="gb_validation"><input type="image" class="gb_move edit" src="{$entry.pluginpath}img/pencil-square.svg" name="Change_Selected" alt="notes-change" title=" {$CONST.EDIT} " align="bottom"></span>
+                    <span class="gb_validation"><input type="image" class="gb_move reject" src="{$entry.pluginpath}img/x-square.svg" name="Reject_Selected" alt="notes-delete" title=" Reject immediately " align="bottom"></span>
                 {if $entry.homepage}
 
                     <span>
@@ -105,9 +107,11 @@
         </ul>
     </div>
 
-    <div class="gb_paginator">
-        {$guestbook_paginator}
-    </div>
+    <nav class="pagination" role="navigation">
+        <ul class="gb_paginator">
+            {$guestbook_paginator}
+        </ul>
+    </nav>
 
 {/if}
 

@@ -57,11 +57,11 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '3.90');
+        $propbag->add('version',      '4.0.0');
         $propbag->add('requirements', array(
-                        'serendipity' => '1.7.0',
-                        'smarty'      => '3.1.0',
-                        'php'         => '5.2.0'
+                        'serendipity' => '2.0',
+                        'smarty'      => '3.1',
+                        'php'         => '7.3'
                     ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
@@ -1206,7 +1206,9 @@ class serendipity_event_guestbook extends serendipity_event
             $wordwrap = 50;
         }
 
-        if (!isset($serendipity['guestbook_message_header'])) $serendipity['guestbook_message_header'] = false;
+        if (!isset($serendipity['guestbook_message_header'])) {
+            $serendipity['guestbook_message_header'] = false;
+        }
 
         // use permalink generally instead of subpage
         $is_guestbook_url  = ($serendipity['rewrite'] != 'errordocs') ? $this->get_config('permalink') : $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?serendipity[subpage]=' . $this->get_config('pagetitle');
@@ -1670,7 +1672,7 @@ class serendipity_event_guestbook extends serendipity_event
                                 'plugin_guestbook_comment'         => trim($entry['body']),
                                 'plugin_guestbook_ac_comment'      => isset($entry['admincomment']) ? trim($entry['admincomment']) : trim($entry['acbody']),
                                 'guestbook_messages'               => $messages,
-                                'plugin_guestbook_messagestack'    => isset($serendipity['messagestack']['comments']) ? $serendipity['messagestack']['comments'] : null
+                                'plugin_guestbook_messagestack'    => $serendipity['messagestack']['comments'] ?? null
                             )
                         );
                     }
@@ -1767,7 +1769,7 @@ class serendipity_event_guestbook extends serendipity_event
                     'guestbook_messages'        => $messages,
                     'guestbook_entries'         => $entries,
                     'guestbook_paginator'       => $paginator,
-                    'guestbook_message_header'  => isset($serendipity['guestbook_message_header']) ? $serendipity['guestbook_message_header'] : null
+                    'guestbook_message_header'  => $serendipity['guestbook_message_header']) ?? null
                 )
         );
 
@@ -1834,7 +1836,7 @@ class serendipity_event_guestbook extends serendipity_event
                     $serendipity['smarty']->assign('is_guestbook_admin_erase', true);
                     $isTable = $this->uninstall($bag) ? true : false; // ok, questionaire
                     // give back ok
-                    if (isset($serendipity['guestbookdroptable']) === true && $isTable) {
+                    if (isset($serendipity['guestbookdroptable']) && $serendipity['guestbookdroptable'] === true && $isTable) {
                         $serendipity['smarty']->assign(array('is_guestbook_admin_erase_msg' => true, 'plugin_gb_dbc_message' => sprintf(PLUGIN_GUESTBOOK_ADMIN_DROP_OK, $serendipity['dbPrefix'].'guestbook')));
                     }
                     break;
@@ -1895,8 +1897,8 @@ class serendipity_event_guestbook extends serendipity_event
                             'plugin_gb_erase'     => $serendipity['GET']['guestbookdbclean'] == 'dberase' ? ' id="active"' : '',
                             'plugin_gb_download'  => $serendipity['GET']['guestbookdbclean'] == 'dbdownload' ? ' id="active"' : '',
                             'plugin_gb_adminpath' => $adminpath,
-                            'plugin_gb_ilogerror' => isset($serendipity['guestbook']['ilogerror']) ? $serendipity['guestbook']['ilogerror'] : null,
-                            'plugin_gb_dropmsg'   => isset($serendipity['guestbookdroptable']) ? $serendipity['guestbookdroptable'] : null
+                            'plugin_gb_ilogerror' => $serendipity['guestbook']['ilogerror'] ?? null,
+                            'plugin_gb_dropmsg'   => $serendipity['guestbookdroptable'] ?? null
                         )
             );
 
@@ -2068,7 +2070,9 @@ class serendipity_event_guestbook extends serendipity_event
     {
         global $serendipity;
 
-        if (isset($serendipity['POST']['guestbooklimit'])) $serendipity['GET']['guestbooklimit'] = $serendipity['POST']['guestbooklimit'];
+        if (isset($serendipity['POST']['guestbooklimit'])) {
+            $serendipity['GET']['guestbooklimit'] = $serendipity['POST']['guestbooklimit'];
+        }
         if (isset($serendipity['GET']['guestbooklimit'])) {
             $paginator = $serendipity['GET']['guestbooklimit'];
         } else {
@@ -2098,26 +2102,23 @@ class serendipity_event_guestbook extends serendipity_event
         ob_start();
 
         if (is_array($result)) {
+            $link = $serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=guestbook&amp;serendipity[guestbookcategory]='.$cat.'&amp;serendipity[guestbooklimit]=';
             if ($paginator == 1) {
-                echo '<span class="gb_paginator_left"> FIRST | PREVIOUS </span>'."\n";
+                echo '<li class="visuallyhidden">'.NO_ENTRIES_TO_PRINT.'</li>'."\n";
             } else {
                 $prevpage = $paginator-1;
-                echo '<span class="gb_paginator_left">';
-                echo ' <a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=guestbook&amp;serendipity[guestbookcategory]='.$cat.'&amp;serendipity[guestbooklimit]=1"><input type="button" class="input_button" name="FIRST" value=" &laquo;&laquo; FIRST "></a> | '."\n";
-                echo ' <a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=guestbook&amp;serendipity[guestbookcategory]='.$cat.'&amp;serendipity[guestbooklimit]='.$prevpage.'"><input type="button" class="input_button" name="PREVIOUS" value=" &laquo; PREVIOUS "></a> '."\n";
-                echo '</span>';
+                echo '<li class="first"><a class="button_link" href="'.$link.'1" title="'.FIRST_PAGE.'"><span class="visuallyhidden">'.FIRST_PAGE.' </span><span class="icon-to-start" aria-hidden="true"></span></a></li>'."\n";
+                echo '<li class="prev"><a class="button_link" href="'.$link.$prevpage.'" title="'.PREVIOUS.'"><span class="icon-left-dir" aria-hidden="true"></span><span class="visuallyhidden"> '.PREVIOUS.'</span></a></li>'."\n";
             }
 
-            echo '<span class="gb_paginator_center">  ( Page '.$paginator.' of '.$lastpage.' ) </span>'."\n";
+            echo '<li class="gb_paginator_center">  ( Page '.$paginator.' of '.$lastpage.' ) </li>'."\n";
 
             if ($paginator == $lastpage) {
-                echo '<span class="gb_paginator_right"> NEXT | LAST </span>'."\n";
+                echo '<li class="visuallyhidden">'.NO_ENTRIES_TO_PRINT.'</li>'."\n";
             } else {
                 $nextpage = $paginator+1;
-                echo '<span class="gb_paginator_right">';
-                echo ' <a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=guestbook&amp;serendipity[guestbookcategory]='.$cat.'&amp;serendipity[guestbooklimit]='.$nextpage.'"><input type="button" class="input_button" name="NEXT" value=" NEXT &raquo; "></a> | '."\n";
-                echo ' <a href="'.$serendipity['serendipityHTTPPath'].'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=guestbook&amp;serendipity[guestbookcategory]='.$cat.'&amp;serendipity[guestbooklimit]='.$lastpage.'"><input type="button" class="input_button" name="LAST" value=" LAST &raquo;&raquo; "></a> '."\n";
-                echo '</span>';
+                echo '<li class="next"><a class="button_link" href="'.$link.$nextpage.'" title="'.NEXT.'"><span class="visuallyhidden">'.NEXT.' </span><span class="icon-right-dir" aria-hidden="true"></span></a></li>'."\n";
+                echo '<li class="last"><a class="button_link" href="'.$link.$lastpage.'" title="'.LAST_PAGE.'"><span class="visuallyhidden">'.LAST_PAGE.' </span><span class="icon-to-end" aria-hidden="true"></span></a></li>'."\n";
             }
         }
 
