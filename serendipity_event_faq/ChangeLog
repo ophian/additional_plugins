@@ -1,3 +1,7 @@
+1.49:
+-----
+ * Remove Series 1 related backend styles
+
 1.48:
 -----
  * Move into backend sidebar entries section for consistency, since being an entry related plugin
