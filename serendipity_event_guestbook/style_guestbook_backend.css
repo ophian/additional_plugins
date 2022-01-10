@@ -1,8 +1,5 @@
 
-/*
-    ******** Begin Guestbook Styles *********
-    style_guestbook_backend.css - for v.4.0.0 2022-07-09 Ian
-*/
+/* guestbook plugin start */
 
 #wrapGB .icon-ok:before{content:'\2714'}
 #wrapGB .icon-error:before{content:'\26a0';}
@@ -296,4 +293,4 @@
     margin-left: 5px;
 }
 
-/******** End Guestbook Styles *********/
+/* guestbook plugin end */

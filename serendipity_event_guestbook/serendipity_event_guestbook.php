@@ -1735,7 +1735,7 @@ class serendipity_event_guestbook extends serendipity_event
     }
 
     /**
-     * Get sql results and assign them to smarty
+     * Get SQL results and assign them to smarty
      *
      * @param  int     $ap    approved yes/no = 1/0
      * @param  string  $cat   serendipity[guestbookcategory]
