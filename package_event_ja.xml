@@ -2660,11 +2660,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>よくある質問と回答(Frequently Asked Question)の編集です。</description>
 <maintainers><maintainer><name>Falk Doering, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.48</version>
+  <version>1.49</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2021-10-11</date>
+  <date>2022-01-10</date>
   <filelist>
     <dir name="serendipity_event_faq">
       <dir name="alternatives">
@@ -4723,7 +4723,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2022-01-09</date>
+  <date>2022-01-10</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
       <file>ChangeLog</file>
