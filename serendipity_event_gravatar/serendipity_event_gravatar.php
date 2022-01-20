@@ -9,7 +9,7 @@ if (IN_serendipity !== true) {
 
 @define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
 
-@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.73');
+@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.74');
 
 // Defines the maximum available method  slots in the configuration.
 @define('PLUGIN_EVENT_GRAVATAR_METHOD_MAX', 6);
@@ -428,7 +428,7 @@ class serendipity_event_gravatar extends serendipity_event
         $useSmarty = serendipity_db_bool($this->get_config('smartyimage', 'false'));
 
         // comments sidebar plugin doesn't support smarty, so switch it off, if detected
-        if ($addData['from'] == 'serendipity_plugin_comments:generate_content') {
+        if (isset($addData['from']) && $addData['from'] == 'serendipity_plugin_comments:generate_content') {
            if (!serendipity_db_bool($this->get_config('recent_entries', 'true'))) {
                return false;
            }

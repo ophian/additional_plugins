@@ -1,3 +1,7 @@
+1.74:
+-----
+ * Fix an uninitialized variable check for PHP 8 in plugin 'frontend_display' hook
+
 1.73:
 -----
  * Fix some wrong named plugin API and class properties errors
