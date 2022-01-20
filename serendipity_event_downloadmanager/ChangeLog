@@ -1,6 +1,11 @@
 ChangeLog:
 """"""""""
 
+1.56:
+-----
+ * Improve frontend dark mode styles with [ pure ] theme
+ * Fix 1.45 not showing up the filelist
+
 1.55:
 -----
  * Improve dark mode

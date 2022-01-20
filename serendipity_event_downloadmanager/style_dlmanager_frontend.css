@@ -1,4 +1,4 @@
-/** style_dlmanager_frontend.css last modified 2016-08-22 **/
+/** style_dlmanager_frontend.css last modified 2022-01-20 **/
 
 #downloadmanager {
     width: 100%;
@@ -32,6 +32,10 @@
     font-weight: bold;
     padding: 4px 2px;
 }
+[data-dark-theme="dark"] #downloadmanager table {
+    background: #323941;
+    border-color: #373e47;
+}
 
 #downloadmanager td { padding: 0 2px; line-height:1.6; }
 
@@ -44,6 +48,15 @@
 
 #downloadmanager .odd { background: #eee; }
 #downloadmanager .even { background: #ddd; }
+[data-dark-theme="dark"] #downloadmanager table tbody tr:nth-child(2n) {
+  background-color: #323941;
+}
+[data-dark-theme="dark"] #downloadmanager table tbody tr:nth-child(2n+1) {
+  background-color: #2e343e;
+}
+[data-dark-theme="dark"] #downloadmanager th {
+  border-bottom-color: #444c56;
+}
 
 .last_column { text-align: right; }
 

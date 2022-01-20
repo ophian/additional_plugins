@@ -37,7 +37,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '7.0.0'
         ));
 
-        $propbag->add('version',       '1.55');
+        $propbag->add('version',       '1.56');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -317,7 +317,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             $serendipity['GET']['subpage'] = $serendipity['POST']['subpage'];
         }
 
-        if ($serendipity['GET']['subpage'] == $this->get_config('pagetitle') || (isset($serendipity['GET']['subpage'])
+        if ($serendipity['GET']['subpage'] == $this->get_config('pageurl') || (isset($serendipity['GET']['subpage'])
         &&  preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage']))) {
             return true;
         }
@@ -882,7 +882,7 @@ class serendipity_event_downloadmanager extends serendipity_event
 
                 if (is_array($file) && !empty($file)) {
 
-                    $temp_array = array('comment' => stripslashes($file['description']));
+                    $temp_array = array('comment' => stripslashes(($file['description'] ?? '')));
                     serendipity_plugin_api::hook_event('frontend_display', $temp_array);
 
                     // push the file array to hold everything needed
@@ -1002,7 +1002,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                         $dlurl   = $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/dlfile_' . $file['id'];
                         $mime    = $this->getMime($file['realfilename']);
 
-                        $fileinfo = array('file_desc'  => str_replace(array("\r\n","\n","\r"),array("<br />","<br />","<br />"), $file['description']),
+                        $fileinfo = array('file_desc'  => str_replace(array("\r\n","\n","\r"),array("<br />","<br />","<br />"), ($file['description'] ?? '')),
                                           'filedate'   => date($this->globs['dateformat'], $file['timestamp']),
                                           'filesize'   => $this->calcFilesize($file['filesize']),
                                           'iconfile'   => $mime['ICON'],
