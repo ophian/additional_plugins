@@ -1,3 +1,8 @@
+2.3.1:
+------
+
+ * Fix an uninitialized variable check for PHP 8 in plugin 'frontend_display' hook
+
 2.3.0:
 ------
 

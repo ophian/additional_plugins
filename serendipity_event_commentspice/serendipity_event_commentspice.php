@@ -28,7 +28,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.3'
         ));
-        $propbag->add('version',        '2.3.0');
+        $propbag->add('version',        '2.3.1');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -897,7 +897,7 @@ class serendipity_event_commentspice extends serendipity_event
             return true;
         }
         // Called from sidebar:
-        if ($addData['from'] == 'serendipity_plugin_comments:generate_content') {
+        if (isset($addData['from']) && $addData['from'] == 'serendipity_plugin_comments:generate_content') {
             return true;
         }
         if ($preview && empty($eventData['id'])) {
