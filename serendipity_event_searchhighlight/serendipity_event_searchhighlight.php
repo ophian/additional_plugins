@@ -23,11 +23,11 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian Styx');
-        $propbag->add('version',       '1.9');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
-            'php'         => '5.2'
+            'php'         => '7.2'
         ));
         $propbag->add('event_hooks',   array('frontend_display' => true, 'css' => true));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
@@ -135,19 +135,22 @@ class serendipity_event_searchhighlight extends serendipity_event
     function getQuery()
     {
         global $serendipity;
-        if ( empty($this->uri) ) {
+
+        if (empty($this->uri)) {
             return false;
         }
 
         $this->loadConstants();
         $url = parse_url($this->uri);
-        if (isset($url['query'])) parse_str($url['query'], $pStr);
+        if (isset($url['query'])) {
+            parse_str($url['query'], $pStr);
+        }
 
         $s = $this->getSearchEngine();
 
-        switch ( $s ) {
+        switch($s) {
             case PLUGIN_EVENT_SEARCHHIGHLIGHT_S9Y:
-                $query = isset($pStr['serendipity']['searchTerm']) ? $pStr['serendipity']['searchTerm'] : null;
+                $query = $pStr['serendipity']['searchTerm'] ?? null;
 
                 if (!empty($_REQUEST['serendipity']['searchTerm'])) {
                     $query = $_REQUEST['serendipity']['searchTerm'];
@@ -162,7 +165,7 @@ class serendipity_event_searchhighlight extends serendipity_event
                     $urlpath = (($serendipity['rewrite'] == 'rewrite')  ? parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH)
                                                                         : parse_url($_SERVER['HTTP_REFERER'], PHP_URL_QUERY)
                                 );
-                    if (strpos($urlpath, 'search/') ) {
+                    if (true === strpos($urlpath, 'search/') ) {
                         $urlpath = (function_exists('serendipity_specialchars') ? serendipity_specialchars(strip_tags($urlpath))
                                                                                 : htmlspecialchars(strip_tags($urlpath), ENT_COMPAT, LANG_CHARSET)); // avoid spoofing
                         $path = explode('/', urldecode($urlpath)); // split and decode non ASCII
@@ -196,9 +199,14 @@ class serendipity_event_searchhighlight extends serendipity_event
                 }
         }
 
+        if (is_null($query)) {
+            return false;
+        }
         /* Clean the query */
         $query = trim($query);
-        if (empty($query)) return false;
+        if (empty($query)) {
+            return false;
+        }
         $query = preg_replace('/(\"|\')/i', '', $query);
 
         /* Split by search engine chars or spaces */
@@ -214,7 +222,7 @@ class serendipity_event_searchhighlight extends serendipity_event
     {
         global $serendipity;
 
-        $this->uri = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
+        $this->uri = $_SERVER['HTTP_REFERER'] ?? null;
         $hooks = &$bag->get('event_hooks');
 
         if (!isset($hooks[$event])) {

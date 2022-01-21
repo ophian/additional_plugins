@@ -1,3 +1,8 @@
+2.0.0:
+-----
+ * Fix a null case error for PHP 8 plus
+ * Raise PHP requirement
+
 1.9:
 -----
  * Fix and improve markup_element check for consistency
