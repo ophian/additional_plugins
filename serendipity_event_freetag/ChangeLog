@@ -1,3 +1,7 @@
+5.15:
+-----
+ * Fix an old page routing issue with P-Char tags
+
 5.14:
 -----
  * Improve inline styles for rotating canvas cloud #tags list fallback

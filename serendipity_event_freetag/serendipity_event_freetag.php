@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.14');
+        $propbag->add('version',       '5.15');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2163,7 +2163,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         /* Attempt to locate hidden variables within the URI */
         foreach ($serendipity['uriArguments'] AS $k => $v) {
-            if (isset($v[0]) && $v[0] == 'P') { /* Page */
+            if ($k === array_key_last($serendipity['uriArguments']) && isset($v[0]) && $v[0] == 'P') { /* Page */
                 $page = substr($v, 1);
                 if (is_numeric($page)) {
                     $serendipity['GET']['page'] = $page;
