@@ -1,19 +1,13 @@
 <?php
 
-
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
-include_once dirname(__FILE__) . '/lang_en.inc.php';
-
-class serendipity_event_linktoolbar extends serendipity_event {
+class serendipity_event_linktoolbar extends serendipity_event
+{
     var $title = PLUGIN_LINKTOOLBAR_TITLE;
 
     function introspect(&$propbag)
@@ -21,25 +15,26 @@ class serendipity_event_linktoolbar extends serendipity_event {
         $propbag->add('name',          PLUGIN_LINKTOOLBAR_TITLE);
         $propbag->add('description',   PLUGIN_LINKTOOLBAR_TITLE_DESC);
         $propbag->add('event_hooks', array('frontend_header' => true));
-        $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '1.5.1');
+        $propbag->add('author', 'Garvin Hicking, Ian Styx');
+        $propbag->add('version', '1.6.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '3.7',
+            'smarty'      => '3.1',
+            'php'         => '7.2'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
     }
 
-    function backAndForth($link = null) {
+    function backAndForth($link = null)
+    {
         global $serendipity;
 
         if (!empty($serendipity['GET']['staticid']) || !empty($serendipity['GET']['subpage'])) {
             // This is actually not used for staticpages/contact forms etc, it has no back/forth.
             return true;
         }
-        
+
         if (!is_array($link)) {
             $link = array();
 
@@ -61,17 +56,18 @@ class serendipity_event_linktoolbar extends serendipity_event {
         }
 
         if (is_array($link['prev'])) {
-            echo '<link rel="prev" href="' . $link['prev']['link'] . '" title="' . $link['prev']['title'] . '" />' . "\n";
+            echo '    <link rel="prev" href="' . $link['prev']['link'] . '" title="' . $link['prev']['title'] . '" />' . "\n";
         }
 
         if (is_array($link['next'])) {
-            echo '<link rel="next" href="' . $link['next']['link'] . '" title="' . $link['next']['title'] . '" />' . "\n";
+            echo '    <link rel="next" href="' . $link['next']['link'] . '" title="' . $link['next']['title'] . '" />' . "\n";
         }
 
         return true;
     }
 
-    function makeLink($resultset) {
+    function makeLink($resultset)
+    {
         if (is_array($resultset) && is_numeric($resultset[0]['id'])) {
             return array(
                 'link'  => serendipity_archiveURL($resultset[0]['id'], $resultset[0]['title'], 'baseURL', true, array('timestamp' => $resultset[0]['timestamp'])),
@@ -82,7 +78,8 @@ class serendipity_event_linktoolbar extends serendipity_event {
         return false;
     }
 
-    function showPaging($id = false) {
+    function showPaging($id = false)
+    {
         global $serendipity;
 
         if (!$id) {
@@ -117,10 +114,10 @@ class serendipity_event_linktoolbar extends serendipity_event {
         }
 
         return $links;
-
     }
 
-    function getCat($cat) {
+    function getCat($cat)
+    {
         if (function_exists('serendipity_categoryURL')) {
             $link = serendipity_categoryURL($cat, 'serendipityHTTPPath');
         } else {
@@ -140,7 +137,8 @@ class serendipity_event_linktoolbar extends serendipity_event {
         );
     }
 
-    function getUser($user) {
+    function getUser($user)
+    {
         if (function_exists('serendipity_authorURL')) {
             $link = serendipity_authorURL($user, 'serendipityHTTPPath');
         } else {
@@ -159,61 +157,66 @@ class serendipity_event_linktoolbar extends serendipity_event {
             'title' => AUTHOR . ' ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($user['realname']) : htmlspecialchars($user['realname'], ENT_COMPAT, LANG_CHARSET))
         );
     }
-    
-    function getEntry($id) {
+
+    function getEntry($id)
+    {
         global $serendipity;
 
         $ret = serendipity_db_query("SELECT id, title, timestamp FROM {$serendipity['dbPrefix']}entries WHERE id = " . (int)$id);
         return serendipity_archiveURL($id, $ret[0]['title'], 'baseURL', true, array('timestamp' => $ret[0]['timestamp']));
     }
-    
-    function getArchiveParameters() {
+
+    function getArchiveParameters()
+    {
         global $serendipity;
 
         $_args = $serendipity['uriArguments'];
 
         $prepend_params = $params = array();
-        
+
         /* Attempt to locate hidden variables within the URI */
-        foreach ($_args AS $k => $v){
+        foreach ($_args AS $k => $v) {
             if ($v == PATH_ARCHIVES) {
                 continue;
             }
-            if ($v[0] == 'C') { /* category */
+            if (isset($v[0]) && $v[0] == 'C') { /* category */
                 $cat = substr($v, 1);
                 if (is_numeric($cat)) {
                     $params['C' . $cat] = true;
                     unset($_args[$k]);
                 }
-            } elseif ($v[0] == 'A') { /* Author */
+            } elseif (isset($v[0]) && $v[0] == 'A') { /* Author */
                 $url_author = substr($v, 1);
                 if (is_numeric($url_author)) {
                     $params['A'. (int)$url_author] = true;
                     unset($_args[$k]);
                 }
-            } elseif ($v[0] == 'W') { /* Week */
+            } elseif (isset($v[0]) && $v[0] == 'W') { /* Week */
                 if (is_numeric($week)) {
                     $params['W'. substr($v, 1)] = true;
                     unset($_args[$k]);
                 }
-            } elseif ($v == 'summary') { /* Summary */
-                $params['summary'] = true;
-                unset($_args[$k]);
-            } elseif ($v[0] == 'P') { /* Page */
+            } elseif (isset($v[0]) && $v[0] == 'P') { /* Page */
                 $page = substr($v, 1);
                 if (is_numeric($page)) {
                     $params['P' . $page] = true;
                     unset($_args[$k]);
                 }
+            } elseif ($v == 'summary') { /* Summary */
+                $params['summary'] = true;
+                unset($_args[$k]);
             }
         }
 
-        list(,$year, $month, $day) = $_args;
-        
+        if (!isset($_args[3])) $_args[3] = null; // PHP 8 fix for key 3 for archives listing
+
+        /* We must always *assume* that Year, Month and Day are the first 3 arguments */
+        list(, $year, $month, $day) = $_args; // keep empty param, is 'archives'
+
         if (isset($year)) {
             $prepend_params[$year] = true;
         }
-        
+
         if (isset($month)) {
             $prepend_params[$month] = true;
         }
@@ -221,37 +224,39 @@ class serendipity_event_linktoolbar extends serendipity_event {
         if (isset($day)) {
             $prepend_params[$day] = true;
         }
-        
-        $params = array_merge($prepend_params, $params);
+
+        $params = $prepend_params + $params; // union without changing their original indexing by + operator - no array_merge() here, since that exemplarily turns the year digit into an index num (in this case: 0)
 
         return serendipity_rewriteURL(PATH_ARCHIVES . '/' . implode('/', array_keys($params)) . '/', 'baseURL');
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
+
         if ($event == 'frontend_header') {
 
             $start_url   = $serendipity['baseURL'];
             $start_title = $serendipity['blogTitle'];
 
-            echo '<link rel="start" href="' . $start_url . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($start_title) : htmlspecialchars($start_title, ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
+            echo '    <link rel="start" href="' . $start_url . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($start_title) : htmlspecialchars($start_title, ENT_COMPAT, LANG_CHARSET)) . '"/>' . "\n";
 
             if ($serendipity['GET']['action'] == 'read' && !empty($serendipity['GET']['id'])) {
 
                 // Article detail view
-                echo '<link rel="up" href="' . $start_url . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($start_title) : htmlspecialchars($start_title, ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
+                echo '    <link rel="up" href="' . $start_url . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($start_title) : htmlspecialchars($start_title, ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
                 $this->backAndForth(
                     $this->showPaging($serendipity['GET']['id'])
                 );
                 // END article detail view
-                
-                echo '<link rel="canonical" href="' . $this->getEntry($serendipity['GET']['id']) . '" />' . "\n";
 
-            } elseif ($serendipity['GET']['action'] == 'read' && is_array($serendipity['range'])) {
+                echo '    <link rel="canonical" href="' . $this->getEntry($serendipity['GET']['id']) . '"/>' . "\n";
+
+            } elseif ($serendipity['GET']['action'] == 'read' && isset($serendipity['range']) && is_array($serendipity['range'])) {
 
                 // Specific Date Archives view
-                echo '<link rel="up" href="' . serendipity_rewriteURL(PATH_ARCHIVE) . '" title="' . ARCHIVES . '" />' . "\n";
-                echo '<link rel="canonical" href="' . $this->getArchiveParameters() . '" />' . "\n";
+                echo '    <link rel="up" href="' . serendipity_rewriteURL(PATH_ARCHIVE) . '" title="' . ARCHIVES . '"/>' . "\n";
+                echo '    <link rel="canonical" href="' . $this->getArchiveParameters() . '"/>' . "\n";
 
                 $links     = array();
                 $add_query = '';
@@ -327,10 +332,10 @@ class serendipity_event_linktoolbar extends serendipity_event {
             } elseif ($serendipity['GET']['action'] == 'archives') {
 
                 // Full month/year archives overview
-                echo '<link rel="up" href="' . serendipity_rewriteURL(PATH_ARCHIVE) . '" title="' . ARCHIVES . '" />' . "\n";
+                echo '    <link rel="up" href="' . serendipity_rewriteURL(PATH_ARCHIVE) . '" title="' . ARCHIVES . '"/>' . "\n";
                 // END Full month/year archives overview
 
-                echo '<link rel="canonical" href="' . $this->getArchiveParameters() . '" />' . "\n";
+                echo '    <link rel="canonical" href="' . $this->getArchiveParameters() . '"/>' . "\n";
 
             } elseif (!empty($serendipity['GET']['category'])) {
 
@@ -348,8 +353,8 @@ class serendipity_event_linktoolbar extends serendipity_event {
                         ),
                         'serendipityHTTPPath');
                 }
-                echo '<link rel="up" href="' . $categories_url . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($cInfo['category_name']) : htmlspecialchars($cInfo['category_name'], ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
-                echo '<link rel="canonical" href="' . $categories_url . '" />' . "\n";
+                echo '    <link rel="up" href="' . $categories_url . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($cInfo['category_name']) : htmlspecialchars($cInfo['category_name'], ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
+                echo '    <link rel="canonical" href="' . $categories_url . '"/>' . "\n";
 
                 $categories = serendipity_fetchCategories('all');
                 $links      = array();
@@ -362,7 +367,7 @@ class serendipity_event_linktoolbar extends serendipity_event {
                             break;
                         }
 
-                        if (is_array($prev_cat) && $cat['categoryid'] == $serendipity['GET']['category']) {
+                        if (isset($prev_cat) && is_array($prev_cat) && $cat['categoryid'] == $serendipity['GET']['category']) {
                             $links['prev'] = $this->getCat($prev_cat);
                             $capture_next  = true;
                         }
@@ -390,10 +395,10 @@ class serendipity_event_linktoolbar extends serendipity_event {
 
                         if ($user['authorid'] == $serendipity['GET']['viewAuthor']) {
                             $authors_url = $this->getUser($user);
-                            echo '<link rel="up" href="' . $authors_url['link'] . '" title="' . $authors_url['title'] . '" />' . "\n";
-                            echo '<link rel="canonical" href="' . $authors_url['link'] . '" />' . "\n";
+                            echo '    <link rel="up" href="' . $authors_url['link'] . '" title="' . $authors_url['title'] . '"/>' . "\n";
+                            echo '    <link rel="canonical" href="' . $authors_url['link'] . '"/>' . "\n";
 
-                            if (is_array($prev_user)) {
+                            if (isset($prev_user) && is_array($prev_user)) {
                                 $links['prev'] = $this->getUser($prev_user);
                                 $capture_next  = true;
                             }
@@ -414,11 +419,12 @@ class serendipity_event_linktoolbar extends serendipity_event {
                 // END Frontpage
 
                 if ($serendipity['view'] == 'start') {
-                    echo '<link rel="canonical" href="' . $serendipity['baseURL'] . '" />' . "\n";
+                    echo '    <link rel="canonical" href="' . $serendipity['baseURL'] . '"/>' . "\n";
                 }
 
             }
         }
     }
+
 }
 ?>

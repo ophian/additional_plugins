@@ -1,9 +1,18 @@
+1.6.0:
+------
+ * Fixed lots of PHP 8 issues
+ * Raised requirements
+
+1.5.1:
+------
+ * Use serendipity_specialchars
+
 1.5:
 ----
 
-Do not use next/prev links for staticpages
+ * Do not use next/prev links for staticpages
 
 1.4:
 ----
 
-Added "canonical" link metatags.
+ * Added "canonical" link metatags.
