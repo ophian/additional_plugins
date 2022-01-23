@@ -19,16 +19,17 @@ class serendipity_event_filter_entries extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FILTER_ENTRIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '1.11');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '3.0',
+            'smarty'      => '3.1',
+            'php'         => '7.2'
         ));
         $propbag->add('event_hooks',    array(
             'external_plugin'    => true,
             'entries_footer'     => true,
             'frontend_configure' => true,
+            'css'                => true,
             'frontend_fetchentries' => true
         ));
         $propbag->add('groups', array('FRONTEND_VIEWS'));
@@ -83,6 +84,37 @@ class serendipity_event_filter_entries extends serendipity_event
                     $_SERVER['REQUEST_URI'] = str_replace('%2Fplugin%2Ffilter%2F', '/plugin/filter/', $_SERVER['REQUEST_URI']);
                     break;
 
+                case 'css':
+                    if (false !== strpos($eventData, '#filter_entries_container')) {
+                        // This CSS is already filter_entries-aware.
+                        break;
+                    }
+                    $eventData .= '
+
+/* serendipity_event_filter_entries mobile start */
+
+@media screen and (max-width: 560px) {
+    #filter_entries_container {
+        display: block;
+        width: auto;
+        overflow-x: scroll;
+        line-height: 2;
+    }
+    #filter_entries_container select,
+    #filter_entries_container input {
+        display: inline-block;
+        width: auto;
+    }
+    #filter_entries_container td {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* serendipity_event_filter_entries mobile end */
+';
+                    break;
+
                 case 'entries_footer':
                     // don't do this in mode preview iframe, we use GET, since $serendipity['preview'] isn't available (yet?)
                     if (empty($serendipity['GET']['preview'])) {
@@ -94,7 +126,7 @@ class serendipity_event_filter_entries extends serendipity_event
     <form action="<?php echo $link; ?>" method="get">
 
     <?php if ($serendipity['rewrite'] == 'none') { ?>
-    <input type="hidden" name="/plugin/filter/" value="" />
+    <input type="hidden" name="/plugin/filter/" value=""/>
     <?php } ?>
     <table width="100%">
         <tr>
@@ -109,7 +141,7 @@ class serendipity_event_filter_entries extends serendipity_event
                     $users = serendipity_fetchUsers();
                     if (is_array($users)) {
                         foreach ($users AS $user) {
-                            echo '<option value="' . $user['authorid'] . '" ' . (isset($_SESSION['filter']['author']) && $_SESSION['filter']['author'] == $user['authorid'] ? 'selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($user['realname']) : htmlspecialchars($user['realname'], ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
+                            echo '<option value="' . $user['authorid'] . '"' . (isset($_SESSION['filter']['author']) && $_SESSION['filter']['author'] == $user['authorid'] ? ' selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($user['realname']) : htmlspecialchars($user['realname'], ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
                         }
                     }
 ?>              </select>
@@ -127,7 +159,7 @@ class serendipity_event_filter_entries extends serendipity_event
 ?>              </select>
             </td>
             <td width="80"><?php echo CONTENT ?></td>
-            <td><input size="10" type="text" name="filter[body]" value="<?php echo (isset($_SESSION['filter']['body']) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($_SESSION['filter']['body']) : htmlspecialchars($_SESSION['filter']['body'], ENT_COMPAT, LANG_CHARSET)) : '') ?>" /></td>
+            <td><input size="10" type="text" name="filter[body]" value="<?php echo (isset($_SESSION['filter']['body']) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($_SESSION['filter']['body']) : htmlspecialchars($_SESSION['filter']['body'], ENT_COMPAT, LANG_CHARSET)) : '') ?>"/></td>
         </tr>
         <tr>
             <td colspan="6" style="text-align: left"><strong><?php echo SORT_ORDER ?></strong></td>
@@ -138,15 +170,15 @@ class serendipity_event_filter_entries extends serendipity_event
                 <select name="sort[order]">
 <?php
     foreach($sort_order AS $so_key => $so_val) {
-        echo '<option value="' . $so_key . '" ' . (isset($_SESSION['sort']['order']) && $_SESSION['sort']['order'] == $so_key ? 'selected="selected"': '') . '>' . $so_val . '</option>' . "\n";
+        echo '<option value="' . $so_key . '"' . (isset($_SESSION['sort']['order']) && $_SESSION['sort']['order'] == $so_key ? ' selected="selected"': '') . '>' . $so_val . '</option>' . "\n";
     }
 ?>              </select>
             </td>
             <td><?php echo SORT_ORDER ?></td>
             <td>
                 <select name="sort[ordermode]">
-                    <option value="DESC" <?php echo (isset($_SESSION['sort']['ordermode']) && $_SESSION['sort']['ordermode'] == 'DESC' ? 'selected="selected"' : '') ?>><?php echo SORT_ORDER_DESC ?></option>
-                    <option value="ASC" <?php echo (isset($_SESSION['sort']['ordermode']) && $_SESSION['sort']['ordermode'] == 'ASC'  ? 'selected="selected"' : '') ?>><?php echo SORT_ORDER_ASC ?></option>
+                    <option value="DESC"<?php echo (isset($_SESSION['sort']['ordermode']) && $_SESSION['sort']['ordermode'] == 'DESC' ? ' selected="selected"' : '') ?>><?php echo SORT_ORDER_DESC ?></option>
+                    <option value="ASC"<?php echo (isset($_SESSION['sort']['ordermode']) && $_SESSION['sort']['ordermode'] == 'ASC'  ? ' selected="selected"' : '') ?>><?php echo SORT_ORDER_ASC ?></option>
                 </select>
             </td>
             <td><?php echo ENTRIES_PER_PAGE ?></td>
@@ -154,7 +186,7 @@ class serendipity_event_filter_entries extends serendipity_event
                 <select name="sort[perPage]">
 <?php
     foreach($per_page AS $per_page_nr) {
-       echo '<option value="' . $per_page_nr . '"   ' . (isset($_SESSION['sort']['perPage']) && $_SESSION['sort']['perPage'] == $per_page_nr ? 'selected="selected"' : '') . '>' . $per_page_nr . '</option>' . "\n";
+       echo '<option value="' . $per_page_nr . '"' . (isset($_SESSION['sort']['perPage']) && $_SESSION['sort']['perPage'] == $per_page_nr ? ' selected="selected"' : '') . '>' . $per_page_nr . '</option>' . "\n";
     }
 
 ?>
@@ -179,9 +211,10 @@ class serendipity_event_filter_entries extends serendipity_event
                     $uri = $_SERVER['REQUEST_URI'];
                     $puri = parse_url($uri);
 
-                    $queries = explode('&', str_replace(array('%5B', '%5D'), array('[', ']'), $puri['query']));
+                    $queries = explode('&', str_replace(array('%5B', '%5D'), array('[', ']'), ($puri['query'] ?? '')));
                     foreach($queries AS $query_part) {
                         $query = explode('=', $query_part);
+
                         switch($query[0]) {
                             case 'filter[author]':
                                 $_GET['filter']['author']   = urldecode($query[1]);
@@ -210,17 +243,17 @@ class serendipity_event_filter_entries extends serendipity_event
                         }
                     }
 
-                    if (is_array($_GET['filter'])) {
+                    if (isset($_GET['filter']) && is_array($_GET['filter'])) {
                         $_SESSION['filter'] = $_GET['filter'];
                     }
 
-                    if (is_array($_GET['sort'])) {
+                    if (isset($_GET['sort']) && is_array($_GET['sort'])) {
                         $_SESSION['sort']   = $_GET['sort'];
                     }
 
                     /* Attempt to locate hidden variables within the URI */
                     foreach ($serendipity['uriArguments'] AS $k => $v){
-                        if ($v[0] == 'P') { /* Page */
+                        if ($k === array_key_last($serendipity['uriArguments']) && isset($v[0]) && $v[0] == 'P') { /* Page */
                             $page = substr($v, 1);
                             if (is_numeric($page)) {
                                 $serendipity['GET']['page'] = $page;
@@ -238,7 +271,7 @@ class serendipity_event_filter_entries extends serendipity_event
                             $serendipity['fetchLimit'] = $perPage;
                             $this->fetchLimit          = $perPage;
 
-                            $page    = (int)$serendipity['GET']['page'];
+                            $page    = (int)($serendipity['GET']['page'] ?? null);
                             if ($page == 0) $page = 1;
                             $offSet  = $perPage*($page-1);
 
@@ -265,21 +298,21 @@ class serendipity_event_filter_entries extends serendipity_event
                                 $term = serendipity_db_escape_string($_SESSION['filter']['body']);
                                 $full = true;
                             }
-                            if ($full && $serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
+                            if (isset($full) && $full && $serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
                                 $filter[] = "(title ILIKE '%$term%' OR body ILIKE '%$term%' OR extended ILIKE '%$term%')";
-                            } elseif ($full && $serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'pdo-sqlite' || $serendipity['dbType'] == 'sqlite3oo') {
+                            } elseif (isset($full) && $full && $serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'pdo-sqlite' || $serendipity['dbType'] == 'sqlite3oo') {
                                 $term = str_replace('*', '%', $term);
                                 $term = serendipity_mb('strtolower', $term);
                                 $filter[] = "(lower(title) LIKE '%$term%' OR lower(body) LIKE '%$term%' OR lower(extended) LIKE '%$term%')";
-                            } elseif ($full && $serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli') {
-                                if (@mb_detect_encoding($term, 'UTF-8', true) && @mb_strlen($term, 'utf-8') < strlen($term)) {
+                            } elseif (isset($full) && $full && $serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli') {
+                                if (isset($term) && @mb_detect_encoding($term, 'UTF-8', true) && @mb_strlen($term, 'utf-8') < strlen($term)) {
                                     $_term = str_replace('*', '', $term);
                                     $filter[] = "(title LIKE '%$_term%' OR body LIKE '%$_term%' OR extended LIKE '%$_term%')";
                                 } else {
-                                    if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
+                                    if (isset($term) && preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
                                         $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "' IN BOOLEAN MODE)";
                                     } else {
-                                        $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "')";
+                                        $filter[] = !isset($term) ? '1' : "MATCH (title,body,extended) AGAINST ('" . $term . "')";
                                     }
                                 }
                             } else {
@@ -306,18 +339,8 @@ class serendipity_event_filter_entries extends serendipity_event
                             $serendipity['GET']['action'] = 'empty'; // allows the correct pagination and outputs searched only entries, else you get em all and the filtered ones appended
                             include_once(S9Y_INCLUDE_PATH . 'include/genpage.inc.php'); // sets index, sidebars
 
-                            // check if ob_start() was set, which is not in Serendipity 2.1
-                            if (ob_get_level() == 1) {
-                                $raw_data = serendipity_printEntries($entries); // sets the content (entries) part
-                            } elseif(ob_get_level() == 2) { // 2.0.x and below
-                                if ($serendipity['version'][0] > 1) {
-                                    echo serendipity_printEntries($entries);
-                                } else {
-                                    serendipity_printEntries($entries);
-                                }
-                                $raw_data = ob_get_contents();
-                                ob_end_clean(); // the "missing" ob_start() is defined in serendipity roots index.php file until Serendipity 2.1
-                            }
+                            $raw_data = serendipity_printEntries($entries); // sets the content (entries) part
+
                             $serendipity['smarty']->assign('CONTENT', $raw_data);
                             $serendipity['smarty']->assign('is_raw_mode', false);
                             serendipity_gzCompression();
