@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Botón Amazon Media&lt;/b&gt;&lt;br /&gt;Incluye un botón para permitir la búsqueda en Amazon.com y la inclusión de los resultados en tus entradas&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 10 Dec 2020 11:17:31 +0100</pubDate>
+<pubDate>Sun, 23 Jan 2022 12:39:11 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -86,7 +86,7 @@
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Backup Interface&lt;/b&gt;&lt;br /&gt;Provides the ability to automatically make backups from your s9y, the database-tables, the whole database and the files. Only MySQL(i) databases are currently supported. WARNING: This plugin does not work well with large databases or directories.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 07 Dec 2021 14:16:29 +0100</pubDate>
+<pubDate>Sun, 23 Jan 2022 12:31:51 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
