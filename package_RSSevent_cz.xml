@@ -392,7 +392,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_filter_entries&lt;br /&gt;Filtrování příspěvků&lt;/b&gt;&lt;br /&gt;Umožňuje návštěvníkům blogu filtrovat/řadit příspěvky podle různých pravidel&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sun, 23 Jan 2022 14:20:50 +0100</pubDate>
+<pubDate>Sun, 23 Jan 2022 14:37:11 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_filter_entries</guid>
 </item>
 <item>
@@ -626,7 +626,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linktoolbar&lt;br /&gt;HTML Link metatagy&lt;/b&gt;&lt;br /&gt;Zobrazuje metatagy &lt;link rel=&quot;start|up|prev|next&quot;&gt; v HTML hlavičce stránky blogu. To umožňuje v některých prohlížečích lepší navigaci ve stránkách.&lt;br/&gt;For: Serendipity 3.7</content:encoded>
-<pubDate>Sat, 22 Jan 2022 15:31:48 +0100</pubDate>
+<pubDate>Sun, 23 Jan 2022 14:39:58 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_linktoolbar</guid>
 </item>
 <item>
