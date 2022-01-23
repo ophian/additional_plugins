@@ -1,6 +1,18 @@
 
 /* Amazon Chooser Plugin start */
 
+html[data-color-mode="dark"].page_amazonchr {
+    background: #22272e;
+    color: #adbac7;
+}
+
+#serendipityAdminMainpane h2 {
+  padding: 0 .5rem;
+}
+[data-color-mode="dark"] #serendipityAdminMainpane h2 {
+  color: #adbac7;
+}
+
 div.serendipity_amazonchr_title {
   font-size:100%;
   font-weight:bold;
@@ -8,15 +20,19 @@ div.serendipity_amazonchr_title {
 
 div.serendipity_amazonchr_body_list {
   padding: 20px;
- -moz-background-clip:border;
- -moz-background-inline-policy:continuous;
- -moz-background-origin:padding;
- background:#FFFFFF none repeat scroll 0 0;
- border:0 none;
- margin:0 auto;
- text-align:left;
- width:95%;
- font-size: 11px;
+  -moz-background-clip:border;
+  -moz-background-inline-policy:continuous;
+  -moz-background-origin:padding;
+  background:#FFFFFF none repeat scroll 0 0;
+  border:0 none;
+  margin:0 auto;
+  text-align:left;
+  width:95%;
+  font-size: 11px;
+}
+[data-color-mode="dark"] div.serendipity_amazonchr_body_list {
+    border-color: #444c56;
+    background: #1c2128cc;
 }
 
 div.serendipity_amazonchr_page_buttons {
@@ -63,6 +79,9 @@ div.serendipity_amazonchr_image {
 img.serendipity_amazonchr_pic {
     border: 1px solid black;
 }
+[data-color-mode="dark"] img.serendipity_amazonchr_pic {
+    border-color: #444c56;
+}
 
 div.serendipity_amazonchr_block {
   float: left;
@@ -99,6 +118,47 @@ div.amazon_sidebar {
 
 div.amazon_sidebar img {
   border: 0px;
+}
+
+html[data-color-mode="dark"].page_amazonchr, [data-color-mode="dark"].page_amazonchr button, [data-color-mode="dark"].page_amazonchr input, [data-color-mode="dark"].page_amazonchr textarea:not(.cke_source) {
+    background: #22272e;
+}
+[data-color-mode="dark"].page_amazonchr select {
+    scrollbar-width: thin;
+    scrollbar-color: #8899b1 #1e2127;
+}
+[data-color-mode="dark"].page_amazonchr select {
+    display: inline-block;
+    max-width: 100%;
+    min-height: 1.8rem;
+    padding-right: 1.5rem;
+    background: #22272e !important;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IiM2ZTc2ODEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTQuNDI3IDkuNDI3bDMuMzk2IDMuMzk2YS4yNTEuMjUxIDAgMDAuMzU0IDBsMy4zOTYtMy4zOTZBLjI1LjI1IDAgMDAxMS4zOTYgOUg0LjYwNGEuMjUuMjUgMCAwMC0uMTc3LjQyN3pNNC40MjMgNi40N0w3LjgyIDMuMDcyYS4yNS4yNSAwIDAxLjM1NCAwTDExLjU3IDYuNDdhLjI1LjI1IDAgMDEtLjE3Ny40MjdINC42YS4yNS4yNSAwIDAxLS4xNzctLjQyN3oiLz48L3N2Zz4=) !important;
+    background-repeat: no-repeat !important;
+    background-position: right 4px center !important;
+    background-size: 1rem !important;
+    border: 1px solid #373e47 !important;
+    box-shadow: rgba(0,0,0,0) 0 0 0 0px !important;
+    color: #adbac7 !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+[data-color-mode="dark"].page_amazonchr input[type="text"] {
+    background-color: #22272e;
+    border: 1px solid #373e47;
+    color: #768390;
+    text-shadow: none;
+    min-width: 14rem;
+    height: 1.6rem;
+}
+[data-color-mode="dark"].page_amazonchr input[type="button"] {
+    background: #323941;
+    background-image: -webkit-linear-gradient(#545d68,#323941);
+    background-image: linear-gradient(#545d68,#323941);
+    border-color: #373e47;
+    color: #cdd9e5;
+    text-shadow: none;
 }
 
 /* Amazon Chooser Plugin end */

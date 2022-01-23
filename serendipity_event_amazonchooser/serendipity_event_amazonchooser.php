@@ -22,7 +22,7 @@ class serendipity_event_amazonchooser extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AMAZONCHOOSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthew Groeninger, Ian Styx');
-        $propbag->add('version',       '0.86');
+        $propbag->add('version',       '0.87');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -259,10 +259,12 @@ class serendipity_event_amazonchooser extends serendipity_event
                             $serendipity['smarty']->assign(
                                  array(
                                       'plugin_amazonchooser_css' => serendipity_rewriteURL('serendipity_admin.css'),
-                                      'plugin_amazonchooser_js'  => serendipity_rewriteURL('plugin/amazonch-js')
+                                      'plugin_amazonchooser_js'  => serendipity_rewriteURL('plugin/amazonch-js'),
+                                      'plugin_amazonchooser_darkmode' => isset($serendipity['dark_mode']) && $serendipity['dark_mode'] === true
                                  ));
 
-                            switch (@$_REQUEST['step']) {
+                            $_step = $_REQUEST['step'] ?? null;
+                            switch ($_step) {
                                 case '1':
                                     $page = 1;
                                     if (isset($_REQUEST['page'])) {

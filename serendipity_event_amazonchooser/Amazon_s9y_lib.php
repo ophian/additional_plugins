@@ -13,6 +13,8 @@ http://webservices.amazon.in/onca/xml
 MX
 http://webservices.amazon.com.mx/onca/xml
 
+https://webservices.amazon.com/paapi5/
+
 */
 
 function Amazon_country_code($country)  {
@@ -310,18 +312,23 @@ function Amazon_country_code($country)  {
 function Amazon_return_mode_array() {
     $mode_names = array (
         'Apparel'               => constant('PLUGIN_EVENT_AMAZONCHOOSER_APPAREL'),
+        'AmazonVideo'              => constant('PLUGIN_EVENT_AMAZONCHOOSER_AMAZONVIDEO'),
         'Automotive'            => constant('PLUGIN_EVENT_AMAZONCHOOSER_AUTO'),
         'Appliances'            => constant('PLUGIN_EVENT_AMAZONCHOOSER_APPLIANCES'),
         'ArtsAndCrafts'         => constant('PLUGIN_EVENT_AMAZONCHOOSER_ARTSANDCRAFTS'),
+        'Automotive'               => constant('PLUGIN_EVENT_AMAZONCHOOSER_AUTOMOTIVE'),
         'Baby'                  => constant('PLUGIN_EVENT_AMAZONCHOOSER_BABY'),
         'Beauty'                => constant('PLUGIN_EVENT_AMAZONCHOOSER_BEAUTY'),
-        'Blended'               => constant('PLUGIN_EVENT_AMAZONCHOOSER_BLENDED'),
+            'Blended'               => constant('PLUGIN_EVENT_AMAZONCHOOSER_BLENDED'),
         'Books'                 => constant('PLUGIN_EVENT_AMAZONCHOOSER_BOOKS'),
         'Classical'             => constant('PLUGIN_EVENT_AMAZONCHOOSER_CLASSICALMUSIC'),
+        'Collectibles'             => constant('PLUGIN_EVENT_AMAZONCHOOSER_COLLECTIBLES'),
+        'Computers'             => constant('PLUGIN_EVENT_AMAZONCHOOSER_COMPUTERS'),
         'DigitalMusic'          => constant('PLUGIN_EVENT_AMAZONCHOOSER_DIGITALMUSIC'),
-        'DVD'                   => constant('PLUGIN_EVENT_AMAZONCHOOSER_DVD'),
+            'DVD'                   => constant('PLUGIN_EVENT_AMAZONCHOOSER_DVD'),
+        'DigitalEducationalResources'                   => constant('PLUGIN_EVENT_AMAZONCHOOSER_DIGITALEDUCATIONALRESOURCES'),
         'Electronics'           => constant('PLUGIN_EVENT_AMAZONCHOOSER_ELECTRONICS'),
-        'ForeignBooks'          => constant('PLUGIN_EVENT_AMAZONCHOOSER_FOREIGNBOOKS'),
+            'ForeignBooks'          => constant('PLUGIN_EVENT_AMAZONCHOOSER_FOREIGNBOOKS'),
         'Garden'                => constant('PLUGIN_EVENT_AMAZONCHOOSER_GARDEN'),
         'GourmetFood'           => constant('PLUGIN_EVENT_AMAZONCHOOSER_GORMETFOOD'),
         'Grocery'               => constant('PLUGIN_EVENT_AMAZONCHOOSER_GROCERY'),
@@ -562,7 +569,7 @@ function Amazon_AttributesText ($SearchIndex,$items,$country_url) {
         }
         $new_items[] = $item;
     }
-    return $new_items;
+    return $new_items ?? null;
 }
 
 function buildSignedAmazonRequest($parameters,$server,$secret) {
@@ -622,6 +629,8 @@ function Amazon_ItemLookup ($AWSAccessKey,$AssociateTag,$secretKey,$SearchIndex,
 
 function Amazon_Request($request) {
     $items = array();
+    $searchmode = null;
+    $totalpages = null;
     $totalcount = -1;
     $error_message = "";
     $error_result  = "";
@@ -679,7 +688,7 @@ function Amazon_Request($request) {
             }
         }
     }
-    return array("operation" => $searchmode, 'count' => count($items),'return_count' => $totalcount,'totalpages'=>$totalpages, 'items' => $items, 'error_message' => $error_message, "error_result" => $error_result, "return_date" => $returndate);
+    return array("operation" => $searchmode, 'count' => count($items),'return_count' => $totalcount, 'totalpages' => $totalpages, 'items' => $items, 'error_message' => $error_message, "error_result" => $error_result, "return_date" => $returndate);
 }
 
 if (!function_exists('hmac')) {

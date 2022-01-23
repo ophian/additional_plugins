@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!DOCTYPE html>
+<html{if $plugin_amazonchooser_darkmode} data-color-mode="dark"{else} data-color-mode="slight"{/if} data-light-theme="light" data-dark-theme="dark" class="no-js page_amazonchr" dir="ltr" lang="{$lang}">
     <head>
         <title>{$CONST.PLUGIN_EVENT_AMAZONCHOOSER_MEDIA_BUTTON}</title>
         <meta http-equiv="Content-Type" content="text/html; charset={$CONST.LANG_CHARSET}" />
@@ -13,7 +13,7 @@
             <div class="serendipityAdminContent">
                 <div class="serendipity_amazonchr_body_list">
             {if $plugin_amazonchooser_page eq 'Search'}
-              {if ($plugin_amazonchooser_item_count gt 0) and ($plugin_amazonchooser_return_count gt 0)}
+              {if ($plugin_amazonchooser_item_count gt 0) AND ($plugin_amazonchooser_return_count gt 0)}
                     <input type="button" class="serendipityPrettyButton input_button"  value="{$CONST.BACK}" onclick=window.location.href="{$plugin_amazonchooser_search_url}" />
                     <div class="serendipity_amazonchr_body_count">
                         <span class="serendipity_amazonchr_pagecount">{$CONST.PLUGIN_EVENT_AMAZONCHOOSER_DISPLAYING} {$CONST.PLUGIN_EVENT_AMAZONCHOOSER_PAGE} {$plugin_amazonchooser_currentpage} {$CONST.PLUGIN_EVENT_AMAZONCHOOSER_OF} {$plugin_amazonchooser_totalpages} {$CONST.PLUGIN_EVENT_AMAZONCHOOSER_PAGES} ({$CONST.PLUGIN_EVENT_AMAZONCHOOSER_PAGELIMIT}).</span>
@@ -51,7 +51,7 @@
                     <input type="button" class="serendipityPrettyButton input_button"  value="{$CONST.BACK}" onclick=window.location.href="{$plugin_amazonchooser_search_url}" />
                 </div>
             {elseif $plugin_amazonchooser_page eq 'Lookup'}
-              {if ($plugin_amazonchooser_item_count == 1 and $plugin_amazonchooser_return_count == 1)}
+              {if ($plugin_amazonchooser_item_count == 1 AND $plugin_amazonchooser_return_count == 1)}
                 <h3>{$CONST.PLUGIN_EVENT_AMAZONCHOOSER_CHOSE} - {$thingy.strings.title}</h3>
                 {include file=$plugin_amazonchooser_displaytemplate}
                 <form action="#" method="get" name="serendipity[selForm]">
@@ -92,19 +92,22 @@
                                 <input type="hidden" name="txtarea" value="{$plugin_amazonchooser_txtarea}" />
                                 <input type="hidden" name="simple" value="{$plugin_amazonchooser_simple}" />
                             </div>
-                            <select name="mode">
+                            <div class="form_select">
+                                <select name="mode">
 {foreach from=$plugin_amazonchooser_mode key=type item=mode_names}
     {if $plugin_amazonchooser_defaultmode eq $type}
-                            <option value="{$type}" selected="selected">{$mode_names}</option>
+                                <option value="{$type}" selected="selected">{$mode_names}</option>
     {else}
-                            <option value="{$type}">{$mode_names}</option>
+                                <option value="{$type}">{$mode_names}</option>
     {/if}
 {/foreach}
-                            </select>
+                                </select>
+                            </div>
 
                             <div class="form_field">
                                 <input class="input_textbox" type="text" name="keyword" value="{$plugin_amazonchooser_keyword}"/>
-                                <br />
+                            </div>
+                            <div class="form_field">
                                 <input type="button" class="serendipityPrettyButton input_button"  value="{$CONST.PLUGIN_EVENT_AMAZONCHOOSER_SEARCH}" onclick="serendipity_amazonSelector_next()" />
                             </div>
                         </form>
