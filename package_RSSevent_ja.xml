@@ -393,8 +393,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_filter_entries</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_filter_entries&lt;br /&gt;Frontend entry filtering&lt;/b&gt;&lt;br /&gt;Allows visitors to filter/order your entries by several options&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:19:32 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_filter_entries&lt;br /&gt;Frontend entry filtering&lt;/b&gt;&lt;br /&gt;Allows visitors to filter/order your entries by several options&lt;br/&gt;For: Serendipity 3.0</content:encoded>
+<pubDate>Sun, 23 Jan 2022 12:04:12 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_filter_entries</guid>
 </item>
 <item>
@@ -439,7 +439,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;エントリーのタグ&lt;/b&gt;&lt;br /&gt;エントリーの自由なタグを許可します。&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Thu, 30 Dec 2021 17:51:54 +0100</pubDate>
+<pubDate>Fri, 21 Jan 2022 19:59:59 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -626,9 +626,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>HTML リンクのメタタグ: よりよいナビゲーションのためにフロントエンドに link rel=&quot;start|up|prev|next|canonical&quot; メタタグを挿入します。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_linktoolbar</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_linktoolbar&lt;br /&gt;HTML リンクのメタタグ&lt;/b&gt;&lt;br /&gt;よりよいナビゲーションのためにフロントエンドに link rel=&quot;start|up|prev|next|canonical&quot; メタタグを挿入します。&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<author>Garvin Hicking, Ian Styx</author>
+<content:encoded>&lt;b&gt;serendipity_event_linktoolbar&lt;br /&gt;HTML リンクのメタタグ&lt;/b&gt;&lt;br /&gt;よりよいナビゲーションのためにフロントエンドに link rel=&quot;start|up|prev|next|canonical&quot; メタタグを挿入します。&lt;br/&gt;For: Serendipity 3.7</content:encoded>
+<pubDate>Sat, 22 Jan 2022 15:31:48 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_linktoolbar</guid>
 </item>
 <item>
