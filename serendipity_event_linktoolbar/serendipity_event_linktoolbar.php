@@ -16,7 +16,7 @@ class serendipity_event_linktoolbar extends serendipity_event
         $propbag->add('description',   PLUGIN_LINKTOOLBAR_TITLE_DESC);
         $propbag->add('event_hooks', array('frontend_header' => true));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.6.0');
+        $propbag->add('version', '1.6.1');
         $propbag->add('requirements',  array(
             'serendipity' => '3.7',
             'smarty'      => '3.1',
@@ -208,6 +208,8 @@ class serendipity_event_linktoolbar extends serendipity_event
             }
         }
 
+        if (!isset($_args[1])) $_args[1] = null; // PHP 8 fix for key 1 for archive listing
+        if (!isset($_args[2])) $_args[2] = null; // PHP 8 fix for key 2 for archive listing
         if (!isset($_args[3])) $_args[3] = null; // PHP 8 fix for key 3 for archives listing
 
         /* We must always *assume* that Year, Month and Day are the first 3 arguments */

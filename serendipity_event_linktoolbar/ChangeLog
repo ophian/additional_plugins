@@ -1,3 +1,7 @@
+1.6.1:
+------
+ * Fix another PHP 8 issue in 'archive' VIEW
+
 1.6.0:
 ------
  * Fixed lots of PHP 8 issues
