@@ -19,7 +19,7 @@ class serendipity_event_filter_entries extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FILTER_ENTRIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1',
@@ -117,7 +117,7 @@ class serendipity_event_filter_entries extends serendipity_event
 
                 case 'entries_footer':
                     // don't do this in mode preview iframe, we use GET, since $serendipity['preview'] isn't available (yet?)
-                    if (empty($serendipity['GET']['preview'])) {
+                    if (in_array($serendipity['view'], ['start', 'entries', 'entry']) && empty($serendipity['GET']['preview'])) {
                         $link = $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/filter/';
 ?>
 <div id="filter_entries_container">
