@@ -21,10 +21,10 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian Styx');
-        $propbag->add('version',       '0.27');
+        $propbag->add('version',       '0.28');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
-            'php'         => '5.1.0'
+            'serendipity' => '2.0',
+            'php'         => '5.6'
         ));
 
         $propbag->add('event_hooks', array(
@@ -241,7 +241,6 @@ class serendipity_event_metadesc extends serendipity_event
                     break;
 
                 case 'css_backend':
-                    if ($serendipity['version'][0] > 1) {
                         $eventData .= '
 
 /* serendipity_event_metadesk start */
@@ -274,7 +273,6 @@ class serendipity_event_metadesc extends serendipity_event
 
 /* serendipity_event_metadesk end */
 ';
-                    }
                     break;
 
                 case 'backend_publish':
@@ -326,31 +324,6 @@ class serendipity_event_metadesc extends serendipity_event
                     } else {
                         $meta_head_title = '';
                     }
-                    if ($serendipity['version'][0] < 2) {
-?>
-                    <fieldset style="margin: 5px">
-                        <legend><?php echo PLUGIN_METADESC_NAME; ?></legend>
-                        <p class="meta_description"><em><?php echo PLUGIN_METADESC_FORM; ?></em></p>
-
-                        <label for="serendipity[properties][meta_description]"><?php echo PLUGIN_METADESC_DESCRIPTION; ?></label><br />
-                        <input class="input_textbox" type="text" style="width: 100%" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_description) : htmlspecialchars($meta_description, ENT_COMPAT, LANG_CHARSET)); ?>" name="serendipity[properties][meta_description]" id="properties_meta_description" />
-                        <span class="meta_string_length"><?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_description) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_description) . ' ' . PLUGIN_METADESC_CHARACTERS; ?></span>
-                        <br /><br />
-                        <label for="serendipity[properties][meta_keywords]"><?php echo PLUGIN_METADESC_KEYWORDS; ?></label><br />
-                        <input class="input_textbox" type="text" style="width: 100%" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_keywords) : htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET)); ?>" name="serendipity[properties][meta_keywords]" id="properties_meta_keywords" />
-                        <span class="meta_string_length"><?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_keywords) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_keywords) . ' ' . PLUGIN_METADESC_CHARACTERS; ?></span>
-                        <br /><br />
-
-                        <p class="meta_description"><em><?php echo PLUGIN_METADESC_HEADTITLE_DESC; ?></em></p>
-
-                        <label for="serendipity[properties][meta_head_title]"><?php echo PLUGIN_METADESC_HEADTITLE; ?></label><br />
-                        <input class="input_textbox" type="text" style="width: 100%" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_head_title) : htmlspecialchars($meta_head_title, ENT_COMPAT, LANG_CHARSET)); ?>" name="serendipity[properties][meta_head_title]" id="properties_headtitle" />
-                        <span class="meta_string_length"><?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_head_title) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_head_title) . ' ' . PLUGIN_METADESC_CHARACTERS; ?></span>
-
-                        <p class="meta_stringlength_disclaimer"><em><?php echo '<sup>(*)</sup> ' . PLUGIN_METADESC_STRINGLENGTH_DISCLAIMER; ?></em></p>
-                    </fieldset>
-<?php
-                    } else {
 ?>
                     <fieldset id="edit_entry_metadesc" class="entryproperties_metadesc">
                         <span class="wrap_legend"><legend><?php echo PLUGIN_METADESC_NAME; ?></legend></span>
@@ -379,7 +352,6 @@ class serendipity_event_metadesc extends serendipity_event
                         <span class="meta_stringlength_disclaimer"><sup>(*)</sup> <em><?php echo PLUGIN_METADESC_STRINGLENGTH_DISCLAIMER; ?></em></span>
                     </fieldset>
 <?php
-                    }
                     break;
 
                 case 'xmlrpc_deleteEntry':
