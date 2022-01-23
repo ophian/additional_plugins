@@ -1,15 +1,15 @@
-0.3.3:
+1.0.3:
 ------
 
  * Fix uninitialized subpage variable check for PHP 8
 
-0.3.2:
-0.3.1:
+1.0.2:
+1.0.1:
 ------
 
  * Fix another uninitialized variable check for PHP 8
 
-0.3.0:
+1.0.0:
 ------
 
  * Lots of PHP 8 fixes
