@@ -1,3 +1,7 @@
+0.70:
+-----
+ * Using API methods for current requirements
+
 0.69:
 -----
  * Fix an uninitialized PHP 8 parameter - removes a ping PHP < 5.6 checkup

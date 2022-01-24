@@ -26,7 +26,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris');
-        $propbag->add('version', '0.69');
+        $propbag->add('version', '0.70');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -37,7 +37,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
         $propbag->add('configuration', array('report', 'url', 'gzip_sitemap', 'avoid_noindex', 'types_to_add', 'gnews', 'gnews_single', 'custom', 'custom2', 'gnews_name', 'gnews_subscription', 'gnews_genre'));
         $propbag->add('requirements',  array(
-                'serendipity' => '1.6',
+                'serendipity' => '2.1',
                 'php' => '7.0')
         );
     }
@@ -83,7 +83,7 @@ class serendipity_event_google_sitemap extends serendipity_event
                         'sm_permalinks' => PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_PERMALINKS,
                         'sm_archives' => PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_ARCHIVES,
                         'sm_static' => PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_STATIC,
-                        'sm_tags'=> PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_TAGS
+                        'sm_tags' => PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_TAGS
                     );
                 $propbag->add('type', 'multiselect');
                 $propbag->add('name', PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD);
@@ -173,7 +173,7 @@ class serendipity_event_google_sitemap extends serendipity_event
     {
         /* Sitemap requires this.
          * I think that s9y does not include these specialchars, so this is just a precaution */
-        $url = (function_exists('serendipity_specialchars') ? serendipity_specialchars($url, ENT_QUOTES) : htmlspecialchars($url, ENT_QUOTES| ENT_COMPAT, LANG_CHARSET));
+        $url = serendipity_specialchars($url, ENT_QUOTES);
 
         $str .= "\t<url>\n";
         $str .= "\t\t<loc>$url</loc>\n";
@@ -184,8 +184,8 @@ class serendipity_event_google_sitemap extends serendipity_event
                 $str .= "\t\t<news:news>\n";
 
                 $str .= "\t\t\t<news:publication>\n";
-                $str .= "\t\t\t\t<news:name>" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($this->get_config('gnews_name')) : htmlspecialchars($this->get_config('gnews_name'), ENT_COMPAT, LANG_CHARSET)) . '</news:name>' . "\n";
-                $str .= "\t\t\t\t<news:language>" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($GLOBALS['serendipity']['lang']) : htmlspecialchars($GLOBALS['serendipity']['lang'], ENT_COMPAT, LANG_CHARSET)) . '</news:language>' . "\n";
+                $str .= "\t\t\t\t<news:name>" . serendipity_specialchars($this->get_config('gnews_name')) . '</news:name>' . "\n";
+                $str .= "\t\t\t\t<news:language>" . serendipity_specialchars($GLOBALS['serendipity']['lang']) . '</news:language>' . "\n";
                 $str .= "\t\t\t</news:publication>\n";
 
                 $sub   = $this->get_config('gnews_subscription');
@@ -208,11 +208,11 @@ class serendipity_event_google_sitemap extends serendipity_event
                 if (!empty($genre) && $genre != 'none') {
                     $str .= "\t\t\t<news:genres>" . $genre . "</news:genres>\n";
                 }
-                $str .= "\t\t\t<news:title>" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($props['title']) : htmlspecialchars($props['title'], ENT_COMPAT, LANG_CHARSET)) . "</news:title>\n";
+                $str .= "\t\t\t<news:title>" . serendipity_specialchars($props['title']) . "</news:title>\n";
 
                 $str .= "\t\t\t<news:publication_date>$str_lastmod</news:publication_date>\n";
                 if (is_array($props) && isset($props['meta_keywords'])) {
-                    $str .= "\t\t\t<news:keywords>" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($props['meta_keywords']) : htmlspecialchars($props['meta_keywords'], ENT_COMPAT, LANG_CHARSET)) . "</news:keywords>\n";
+                    $str .= "\t\t\t<news:keywords>" . serendipity_specialchars($props['meta_keywords']) . "</news:keywords>\n";
                 }
                 $str .= "\t\t</news:news>\n";
             }
@@ -772,23 +772,12 @@ class serendipity_event_google_sitemap extends serendipity_event
     {
         global $serendipity;
 
-        if (function_exists('serendipity_request_object')) {
-            $req = new HTTP_Request2($loc, HTTP_Request2::METHOD_GET);
-            $response = $req->send();
-            if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
-                print_r($req);
-                return false;
-            } else {
-                return true;
-            }
+        $ping = serendipity_request_url($loc);
+        if (!isset($serendipity['last_http_request']) || $serendipity['last_http_request']['responseCode'] != '200') {
+            throw new Exception("Something wrong with responseCode: {$serendipity['last_http_request']['responseCode']}? $ping");
+            return false;
         } else {
-            $req = new HTTP_Request($loc);
-            if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
-                print_r($req);
-                return false;
-            } else {
-                return true;
-            }
+            return true;
         }
     }
 
