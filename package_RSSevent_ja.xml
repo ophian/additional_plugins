@@ -519,8 +519,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_google_sitemap</link>
 <category>Event Plugins</category>
 <author>Boris</author>
-<content:encoded>&lt;b&gt;serendipity_event_google_sitemap&lt;br /&gt;Sitemap Generator (for Crawlers)&lt;/b&gt;&lt;br /&gt;Creates a sitemap.xml.gz, which can be used by miscellaneous Web-Crawlers. (Google, MSN, Yahoo and Ask)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 13 Nov 2021 11:26:02 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_google_sitemap&lt;br /&gt;Sitemap Generator (for Crawlers)&lt;/b&gt;&lt;br /&gt;Creates a sitemap.xml.gz, which can be used by miscellaneous Web-Crawlers. (Google, MSN, Yahoo and Ask)&lt;br/&gt;For: Serendipity 2.1</content:encoded>
+<pubDate>Mon, 24 Jan 2022 11:28:05 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_google_sitemap</guid>
 </item>
 <item>
@@ -538,7 +538,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Guestbook&lt;/b&gt;&lt;br /&gt;Shows a guestbook inside your blog with your normal blog design.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 10 Jan 2022 09:18:37 +0100</pubDate>
+<pubDate>Mon, 24 Jan 2022 12:53:36 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -970,7 +970,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Tom Sommer, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;検索キーワードをハイライト&lt;/b&gt;&lt;br /&gt;ページを見つけるために検索エンジンからの参照に使用されたキーワードをハイライトします。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 21 Jan 2022 17:33:58 +0100</pubDate>
+<pubDate>Mon, 24 Jan 2022 12:00:26 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_searchhighlight</guid>
 </item>
 <item>
@@ -1069,7 +1069,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;静的ページ&lt;/b&gt;&lt;br /&gt;デザインとすべての書式化されたブログとウェブログ内部に静的ページを表示します。管理インターフェースに新しいメニューを追加します。&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Wed, 06 Oct 2021 13:11:14 +0200</pubDate>
+<pubDate>Mon, 24 Jan 2022 12:51:29 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1240,7 +1240,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;ユーザープロフィール&lt;/b&gt;&lt;br /&gt;簡単なユーザープロフィールを表示します。&lt;br/&gt;For: Serendipity 3.5</content:encoded>
-<pubDate>Sat, 30 Oct 2021 17:02:37 +0200</pubDate>
+<pubDate>Mon, 24 Jan 2022 12:47:39 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
