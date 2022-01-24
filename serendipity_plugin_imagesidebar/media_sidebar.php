@@ -213,7 +213,7 @@ class media_sidebar extends subplug_sidebar {
             $cache_obj = new Cache_Lite($options);
             $cache_output = $cache_obj->get('mediasidebar_cache');
         } else {
-            $cache_output = $this->get_config('media_cache_output','');
+            $cache_output = $this->get_config('media_cache_output', '');
         }
 
         if ($serendipity['version'][0] < 3 && $rotate_time != 0) {
