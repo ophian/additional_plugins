@@ -1,8 +1,12 @@
+4.0.1:
+-----
+ * Cleanup
+
 4.0.0:
 -----
  * Upgrade requirements
  * Improve backend entries navigation
- * Changed backend entry action gifs to svg
+ * Changed backend entry action GIFs to SVG
  * Improved backend styles
 
 3.90:

@@ -57,7 +57,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '4.0.0');
+        $propbag->add('version',      '4.0.1');
         $propbag->add('requirements', array(
                         'serendipity' => '2.0',
                         'smarty'      => '3.1',
@@ -480,19 +480,18 @@ class serendipity_event_guestbook extends serendipity_event
      */
     public static function html_specialchars($string, $flags = null, $encoding = LANG_CHARSET, $double_encode = true)
     {
-        if ($flags == null) {
-            if (defined('ENT_HTML401')) {
-                // Added with PHP 5.4.x
-                $flags = ENT_COMPAT | ENT_HTML401 | ENT_SUBSTITUTE;
-            } else {
-                // For PHP < 5.4 compatibility
-                $flags = ENT_COMPAT;
-            }
+        if ($string === null) {
+            $string = '';
+        }
+        if ($flags === null) {
+            $flags = ENT_COMPAT | ENT_HTML401 | ENT_SUBSTITUTE;
         }
         if ($encoding == 'LANG_CHARSET') {
-            $encoding = 'UTF-8'; // fallback
+            $encoding = 'UTF-8'; // fallback, if constant is not available
         }
-
+        // Native ISO-8859-1 charsets will encode stored Unicode ampersand (&) again with $double_encode(true),
+        // which is the default, so this is set to false on demand in some places
+        // ( see headline, etc. in Smarty template files, or fixed by this fixUTFEntity() )
         return htmlspecialchars($string, $flags, $encoding, $double_encode);
     }
 
