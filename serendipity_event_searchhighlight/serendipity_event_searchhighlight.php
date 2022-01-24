@@ -243,7 +243,7 @@ class serendipity_event_searchhighlight extends serendipity_event
                 &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                     $element = &$eventData[$temp['element']];
 
-                    //Iterate over search terms and do the highlighting.
+                    // Iterate over search terms and do the highlighting.
                     foreach ($queries AS $word) {
                         if (strpos($word, '*')) {
                             // fuzzy search (case insensitive) all words containing term;
