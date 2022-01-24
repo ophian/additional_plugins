@@ -18,8 +18,8 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
             $propbag->add('name',          PLUGIN_SIDEBARLOGO_NAME);
             $propbag->add('description',   PLUGIN_SIDEBARLOGO_DESC);
             $propbag->add('stackable',     true);
-            $propbag->add('author',        'Adam Krause & Oliver Gerlach');
-            $propbag->add('version',       '0.7');
+            $propbag->add('author',        'Adam Krause & Oliver Gerlach, Ian Styx');
+            $propbag->add('version',       '0.8');
             $propbag->add('requirements',  array('serendipity' => '3.0',
                                                  'smarty'      => '3.1',
                                                  'php'         => '7.0'
@@ -264,6 +264,8 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
         $sbl_vpath  = str_replace($sbl_bname, '', $image); // get file path
         #$sbl_vbext  = pathinfo($image, PATHINFO_EXTENSION); // get extension
         $sbl_fname  = pathinfo($image, PATHINFO_FILENAME); // get file name w/o extension
+        $sbl_rpath  = $sbl_vpath . '.v/' . $sbl_fname . '.avif'; // the relative document root image filepath
+        $image_avif = file_exists(str_replace($serendipity['serendipityHTTPPath'], '', $serendipity['serendipityPath']) . $sbl_rpath) ? $sbl_rpath : null; // file exist needs full path to check
         $sbl_rpath  = $sbl_vpath . '.v/' . $sbl_fname . '.webp'; // the relative document root image filepath
         $image_webp = file_exists(str_replace($serendipity['serendipityHTTPPath'], '', $serendipity['serendipityPath']) . $sbl_rpath) ? $sbl_rpath : null; // file exist needs full path to check
 
@@ -272,7 +274,7 @@ class serendipity_plugin_sidebarlogo extends serendipity_plugin
             switch( $val ) {
                 case 'image':
                     if (!empty($image)) {
-                        echo '<picture><source type="image/webp" srcset="'.$image_webp.'"/><img src="'.$image.'" class="sidebarlogo_img" '.$iwidth.' '.$iheight.' alt="'.$imagetext.'" '.$imagestyle.'/></picture>';
+                        echo '<picture><source type="image/avif" srcset="'.$image_avif.'"/><source type="image/webp" srcset="'.$image_webp.'"/><img src="'.$image.'" class="sidebarlogo_img" '.$iwidth.' '.$iheight.' alt="'.$imagetext.'" '.$imagestyle.'/></picture>';
                     }
                     break;
 
