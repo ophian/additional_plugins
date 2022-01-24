@@ -3,7 +3,7 @@
  */
 
 /**
- * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.20, 2021-11-056.
+ * @fileOverview A Serendipity serendipity_event_ckeditor custom CKEDITOR additional plugin creator file: cke_plugin.js, v. 1.20, 2021-11-05.
  */
 
 if (typeof CKECONFIG_USEAUTOSAVE === 'undefined' || CKECONFIG_USEAUTOSAVE === null) CKECONFIG_USEAUTOSAVE = false;
