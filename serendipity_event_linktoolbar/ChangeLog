@@ -1,3 +1,8 @@
+1.6.2:
+------
+ * Remove XHTML single tag end slash
+ * Update description to check for canonincal SEO doubles with themes
+
 1.6.1:
 ------
  * Fix another PHP 8 issue in 'archive' VIEW

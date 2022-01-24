@@ -7,5 +7,5 @@
  */
 
 @define('PLUGIN_LINKTOOLBAR_TITLE', 'HTML リンクのメタタグ');
-@define('PLUGIN_LINKTOOLBAR_TITLE_DESC', 'よりよいナビゲーションのためにフロントエンドに link rel="start|up|prev|next|canonical" メタタグを挿入します。');
+@define('PLUGIN_LINKTOOLBAR_TITLE_DESC', 'よりよいナビゲーションのためにフロントエンドに link rel="start|up|prev|next|canonical" メタタグを挿入します。 Check your themes index.tpl file to avoid double sets.');
 

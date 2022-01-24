@@ -1,4 +1,5 @@
 <?php
 
 @define('PLUGIN_LINKTOOLBAR_TITLE', 'HTML Link Metatags');
-@define('PLUGIN_LINKTOOLBAR_TITLE_DESC', 'Fügt Tags für link rel="start|up|prev|next|canonical" in die Ansichten des Weblogs ein um so mittels spezieller Tools (Mozilla Erweiterungen, ...) durch Meta-Ebenen zu navigieren.');
+@define('PLUGIN_LINKTOOLBAR_TITLE_DESC', 'Fügt SEO canonical link Tags als rel="start|up|prev|next|canonical" in dden head Kopf ihres Themes ein, um so u.a. mittels spezieller Tools (Mozilla Erweiterungen, ...) durch Meta-Ebenen zu navigieren. Überprüfen Sie die Datei index.tpl Ihres Themes, um doppelte Auszeichnungen zu vermeiden.');
+

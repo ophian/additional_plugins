@@ -7,5 +7,6 @@
  *  @revisionDate 2009/08/26
  */
 
-@define('PLUGIN_LINKTOOLBAR_TITLE',		'HTML Link metatagy');
-@define('PLUGIN_LINKTOOLBAR_TITLE_DESC',		'Zobrazuje metatagy <link rel="start|up|prev|next"> v HTML hlavièce stránky blogu. To umožòuje v nìkterých prohlížeèích lepší navigaci ve stránkách.');
+@define('PLUGIN_LINKTOOLBAR_TITLE', 'HTML Link metatagy');
+@define('PLUGIN_LINKTOOLBAR_TITLE_DESC', 'Zobrazuje metatagy <link rel="start|up|prev|next"> v HTML hlavièce stránky blogu. To umožòuje v nìkterých prohlížeèích lepší navigaci ve stránkách. Check your themes index.tpl file to avoid double sets.');
+

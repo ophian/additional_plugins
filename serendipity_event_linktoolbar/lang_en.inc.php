@@ -7,5 +7,5 @@
  */
 
 @define('PLUGIN_LINKTOOLBAR_TITLE', 'HTML Link Metatags');
-@define('PLUGIN_LINKTOOLBAR_TITLE_DESC', 'Inserts link rel="start|up|prev|next|canonical" metatags into your frontend for better navigation.');
+@define('PLUGIN_LINKTOOLBAR_TITLE_DESC', 'Inserts link rel="start|up|prev|next|canonical" metatags into your frontend for better navigation. Check your themes index.tpl file to avoid double sets.');
 

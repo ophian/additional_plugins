@@ -16,7 +16,7 @@ class serendipity_event_linktoolbar extends serendipity_event
         $propbag->add('description',   PLUGIN_LINKTOOLBAR_TITLE_DESC);
         $propbag->add('event_hooks', array('frontend_header' => true));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.6.1');
+        $propbag->add('version', '1.6.2');
         $propbag->add('requirements',  array(
             'serendipity' => '3.7',
             'smarty'      => '3.1',
@@ -56,11 +56,11 @@ class serendipity_event_linktoolbar extends serendipity_event
         }
 
         if (is_array($link['prev'])) {
-            echo '    <link rel="prev" href="' . $link['prev']['link'] . '" title="' . $link['prev']['title'] . '" />' . "\n";
+            echo '    <link rel="prev" href="' . $link['prev']['link'] . '" title="' . $link['prev']['title'] . '">' . "\n";
         }
 
         if (is_array($link['next'])) {
-            echo '    <link rel="next" href="' . $link['next']['link'] . '" title="' . $link['next']['title'] . '" />' . "\n";
+            echo '    <link rel="next" href="' . $link['next']['link'] . '" title="' . $link['next']['title'] . '">' . "\n";
         }
 
         return true;
@@ -241,24 +241,24 @@ class serendipity_event_linktoolbar extends serendipity_event
             $start_url   = $serendipity['baseURL'];
             $start_title = $serendipity['blogTitle'];
 
-            echo '    <link rel="start" href="' . $start_url . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($start_title) : htmlspecialchars($start_title, ENT_COMPAT, LANG_CHARSET)) . '"/>' . "\n";
+            echo '    <link rel="start" href="' . $start_url . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($start_title) : htmlspecialchars($start_title, ENT_COMPAT, LANG_CHARSET)) . '">' . "\n";
 
             if ($serendipity['GET']['action'] == 'read' && !empty($serendipity['GET']['id'])) {
 
                 // Article detail view
-                echo '    <link rel="up" href="' . $start_url . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($start_title) : htmlspecialchars($start_title, ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
+                echo '    <link rel="up" href="' . $start_url . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($start_title) : htmlspecialchars($start_title, ENT_COMPAT, LANG_CHARSET)) . '">' . "\n";
                 $this->backAndForth(
                     $this->showPaging($serendipity['GET']['id'])
                 );
                 // END article detail view
 
-                echo '    <link rel="canonical" href="' . $this->getEntry($serendipity['GET']['id']) . '"/>' . "\n";
+                echo '    <link rel="canonical" href="' . $this->getEntry($serendipity['GET']['id']) . '">' . "\n";
 
             } elseif ($serendipity['GET']['action'] == 'read' && isset($serendipity['range']) && is_array($serendipity['range'])) {
 
                 // Specific Date Archives view
-                echo '    <link rel="up" href="' . serendipity_rewriteURL(PATH_ARCHIVE) . '" title="' . ARCHIVES . '"/>' . "\n";
-                echo '    <link rel="canonical" href="' . $this->getArchiveParameters() . '"/>' . "\n";
+                echo '    <link rel="up" href="' . serendipity_rewriteURL(PATH_ARCHIVE) . '" title="' . ARCHIVES . '">' . "\n";
+                echo '    <link rel="canonical" href="' . $this->getArchiveParameters() . '">' . "\n";
 
                 $links     = array();
                 $add_query = '';
@@ -334,10 +334,10 @@ class serendipity_event_linktoolbar extends serendipity_event
             } elseif ($serendipity['GET']['action'] == 'archives') {
 
                 // Full month/year archives overview
-                echo '    <link rel="up" href="' . serendipity_rewriteURL(PATH_ARCHIVE) . '" title="' . ARCHIVES . '"/>' . "\n";
+                echo '    <link rel="up" href="' . serendipity_rewriteURL(PATH_ARCHIVE) . '" title="' . ARCHIVES . '">' . "\n";
                 // END Full month/year archives overview
 
-                echo '    <link rel="canonical" href="' . $this->getArchiveParameters() . '"/>' . "\n";
+                echo '    <link rel="canonical" href="' . $this->getArchiveParameters() . '">' . "\n";
 
             } elseif (!empty($serendipity['GET']['category'])) {
 
@@ -355,8 +355,8 @@ class serendipity_event_linktoolbar extends serendipity_event
                         ),
                         'serendipityHTTPPath');
                 }
-                echo '    <link rel="up" href="' . $categories_url . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($cInfo['category_name']) : htmlspecialchars($cInfo['category_name'], ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
-                echo '    <link rel="canonical" href="' . $categories_url . '"/>' . "\n";
+                echo '    <link rel="up" href="' . $categories_url . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($cInfo['category_name']) : htmlspecialchars($cInfo['category_name'], ENT_COMPAT, LANG_CHARSET)) . '">' . "\n";
+                echo '    <link rel="canonical" href="' . $categories_url . '">' . "\n";
 
                 $categories = serendipity_fetchCategories('all');
                 $links      = array();
@@ -397,8 +397,8 @@ class serendipity_event_linktoolbar extends serendipity_event
 
                         if ($user['authorid'] == $serendipity['GET']['viewAuthor']) {
                             $authors_url = $this->getUser($user);
-                            echo '    <link rel="up" href="' . $authors_url['link'] . '" title="' . $authors_url['title'] . '"/>' . "\n";
-                            echo '    <link rel="canonical" href="' . $authors_url['link'] . '"/>' . "\n";
+                            echo '    <link rel="up" href="' . $authors_url['link'] . '" title="' . $authors_url['title'] . '">' . "\n";
+                            echo '    <link rel="canonical" href="' . $authors_url['link'] . '">' . "\n";
 
                             if (isset($prev_user) && is_array($prev_user)) {
                                 $links['prev'] = $this->getUser($prev_user);
@@ -421,7 +421,7 @@ class serendipity_event_linktoolbar extends serendipity_event
                 // END Frontpage
 
                 if ($serendipity['view'] == 'start') {
-                    echo '    <link rel="canonical" href="' . $serendipity['baseURL'] . '"/>' . "\n";
+                    echo '    <link rel="canonical" href="' . $serendipity['baseURL'] . '">' . "\n";
                 }
 
             }
