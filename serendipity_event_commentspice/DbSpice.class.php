@@ -21,6 +21,7 @@ class DbSpice
     static function install(&$obj)
     {
         global $serendipity;
+
         $dbversion = $obj->get_config(PLUGIN_EVENT_COMMENTSPICE_CNAME_DBCONFIG);
         if (empty($dbversion)) $dbversion=0;
 
