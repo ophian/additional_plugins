@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.45');
+        $propbag->add('version', '6.46');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -144,7 +144,8 @@ class serendipity_event_staticpage extends serendipity_event
             case 'listpp':
                 $propbag->add('type',           'string');
                 $propbag->add('name',           STATICPAGE_SHOWLIST_NUMLIST);
-                $propbag->add('description',    'Items pere page'); // A fake description for the $cdesc issue with the Styx 3.4 simple [info] toggle button, since being the last entry and has its own abstract config class
+                $propbag->add('description',    '');
+#                $propbag->add('description',    'Items per page'); // A fake description for the $cdesc issue with the Styx 3.4 simple [info] toggle button, since being the last entry and has its own abstract config class
                 $propbag->add('default',        '6');
                 break;
 
@@ -1764,7 +1765,7 @@ class serendipity_event_staticpage extends serendipity_event
     }
 
     /**
-     * Staticpage wrapper for htmlspecialchars charset switch with PHP 5.4
+     * Staticpage wrapper for htmlspecialchars
      *
      * @access  public
      * @return  string
@@ -1776,19 +1777,13 @@ class serendipity_event_staticpage extends serendipity_event
         if ($string === null) {
             $string = '';
         }
-        if ($flags == null) {
-            if (defined('ENT_HTML401')) {
-                // Added with PHP 5.4.x
-                $flags = ENT_COMPAT | ENT_HTML401 | ENT_SUBSTITUTE;
-            } else {
-                // For PHP < 5.4 compatibility
-                $flags = ENT_COMPAT;
-            }
+        if ($flags === null) {
+            $flags = ENT_COMPAT | ENT_HTML401 | ENT_SUBSTITUTE;
         }
         if ($encoding == 'LANG_CHARSET') {
             $encoding = 'UTF-8'; // fallback, if constant is not available
         }
-        // Native ISO-8859-1 charsets will encode stored unicode ampersand (&) again with $double_encode(true),
+        // Native ISO-8859-1 charsets will encode stored Unicode ampersand (&) again with $double_encode(true),
         // which is the default, so this is set to false on demand in some places
         // ( see headline, etc. in Smarty template files, or fixed by this fixUTFEntity() )
         return htmlspecialchars($string, $flags, $encoding, $double_encode);
@@ -2335,7 +2330,7 @@ class serendipity_event_staticpage extends serendipity_event
 
         $page = serendipity_db_query($q, true, 'assoc');
 
-        return (is_array($page) && isset($page['pagetitle'])) ? $page['pagetitle'] : false;
+        return (is_array($page) && ($page['pagetitle'] ?? false));
     }
 
     /**
@@ -2357,7 +2352,7 @@ class serendipity_event_staticpage extends serendipity_event
 
         $page = serendipity_db_query($q, true, 'assoc');
 
-        return (is_array($page) && isset($page['pagetitle'])) ? $page['pagetitle'] : false;
+        return (is_array($page) && ($page['pagetitle'] ?? false));
     }
 
     /**
@@ -3867,7 +3862,7 @@ class serendipity_event_staticpage extends serendipity_event
                         // and REPLACE BY Path only to also match Thumbs
                         $fromFile = $oldDir = $eventData[0]['oldDir'];
                         $toFile   = $newDir = $eventData[0]['newDir'];
-                        // ARE any image (webp) variations set? And YES we don't need to check SELECT for variations, but replace them in case!
+                        // ARE any image (avif/webp) variations set? And YES we don't need to check SELECT for variations, but replace them in case!
                         $fromVarFile = $eventData[0]['oldDir'] . '.v/';
                         $toVarFile   = $eventData[0]['newDir'] . '.v/';
                         $eventData[0]['haswebp'] = true; // current deprecated synonym for both expressions
