@@ -623,12 +623,12 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <guid isPermaLink="false">serendipity_event_linklist</guid>
 </item>
 <item>
-<title>HTML リンクのメタタグ: よりよいナビゲーションのためにフロントエンドに link rel=&quot;start|up|prev|next|canonical&quot; メタタグを挿入します。</title>
+<title>HTML リンクのメタタグ: よりよいナビゲーションのためにフロントエンドに link rel=&quot;start|up|prev|next|canonical&quot; メタタグを挿入します。 Check your themes index.tpl file to avoid double sets.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_linktoolbar</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_linktoolbar&lt;br /&gt;HTML リンクのメタタグ&lt;/b&gt;&lt;br /&gt;よりよいナビゲーションのためにフロントエンドに link rel=&quot;start|up|prev|next|canonical&quot; メタタグを挿入します。&lt;br/&gt;For: Serendipity 3.7</content:encoded>
-<pubDate>Sun, 23 Jan 2022 14:39:58 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_linktoolbar&lt;br /&gt;HTML リンクのメタタグ&lt;/b&gt;&lt;br /&gt;よりよいナビゲーションのためにフロントエンドに link rel=&quot;start|up|prev|next|canonical&quot; メタタグを挿入します。 Check your themes index.tpl file to avoid double sets.&lt;br/&gt;For: Serendipity 3.7</content:encoded>
+<pubDate>Mon, 24 Jan 2022 10:14:36 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_linktoolbar</guid>
 </item>
 <item>
