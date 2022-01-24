@@ -19,7 +19,7 @@ class serendipity_event_filter_entries extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FILTER_ENTRIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.0.2');
+        $propbag->add('version',       '2.0.3');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1',
@@ -153,8 +153,8 @@ class serendipity_event_filter_entries extends serendipity_event
 <?php
                     $categories = serendipity_fetchCategories();
                     $categories = serendipity_walkRecursive($categories, 'categoryid', 'parentid', VIEWMODE_THREADED);
-                    foreach ( $categories AS $cat ) {
-                        echo '<option value="'. $cat['categoryid'] .'"'. ($_SESSION['filter']['category'] == $cat['categoryid'] ? ' selected="selected"' : '') .'>'. str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
+                    foreach($categories AS $cat) {
+                        echo '<option value="'. $cat['categoryid'] .'"'. (isset($_SESSION['filter']['category']) && $_SESSION['filter']['category'] == $cat['categoryid'] ? ' selected="selected"' : '') .'>'. str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
                     }
 ?>              </select>
             </td>
