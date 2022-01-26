@@ -1,3 +1,8 @@
+2.0.4:
+------
+
+ * Fix parameter check order to avoid conflicts
+
 2.0.3:
 ------
 
