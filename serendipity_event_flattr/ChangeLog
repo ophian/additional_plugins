@@ -2,6 +2,7 @@
 ------
  * Fix undefined property failure because of typo
  * Fix some uninitialized variable checks for PHP 8
+ * Fix freetag related sidecheck in freetag plugin
  * Change to Serendipity Styx 2.x+ backend entry form fieldset markup for consistency
  * Raises requirements
  * "Have no clue if that is still doing what it is supposed to do, though! See api js, etc."
