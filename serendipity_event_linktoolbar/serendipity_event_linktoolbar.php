@@ -16,7 +16,7 @@ class serendipity_event_linktoolbar extends serendipity_event
         $propbag->add('description',   PLUGIN_LINKTOOLBAR_TITLE_DESC);
         $propbag->add('event_hooks', array('frontend_header' => true));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.6.2');
+        $propbag->add('version', '1.6.3');
         $propbag->add('requirements',  array(
             'serendipity' => '3.7',
             'smarty'      => '3.1',
@@ -192,6 +192,7 @@ class serendipity_event_linktoolbar extends serendipity_event
                     unset($_args[$k]);
                 }
             } elseif (isset($v[0]) && $v[0] == 'W') { /* Week */
+                $week = substr($v, 1);
                 if (is_numeric($week)) {
                     $params['W'. substr($v, 1)] = true;
                     unset($_args[$k]);

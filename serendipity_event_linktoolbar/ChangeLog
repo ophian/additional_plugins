@@ -1,7 +1,11 @@
+1.6.3:
+------
+ * Fix a PHP 8 init issue with uriArguments
+
 1.6.2:
 ------
  * Remove XHTML single tag end slash
- * Update description to check for canonincal SEO doubles with themes
+ * Update description to check for canonical SEO doubles with themes
 
 1.6.1:
 ------
