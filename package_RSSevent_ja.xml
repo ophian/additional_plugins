@@ -628,7 +628,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linktoolbar&lt;br /&gt;HTML リンクのメタタグ&lt;/b&gt;&lt;br /&gt;よりよいナビゲーションのためにフロントエンドに link rel=&quot;start|up|prev|next|canonical&quot; メタタグを挿入します。 Check your themes index.tpl file to avoid double sets.&lt;br/&gt;For: Serendipity 3.7</content:encoded>
-<pubDate>Mon, 24 Jan 2022 10:14:36 +0100</pubDate>
+<pubDate>Sun, 30 Jan 2022 18:44:20 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_linktoolbar</guid>
 </item>
 <item>
