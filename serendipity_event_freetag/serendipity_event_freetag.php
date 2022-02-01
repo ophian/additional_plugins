@@ -3324,8 +3324,7 @@ document.addEventListener("DOMContentLoaded", function() {
     display: inline;
     width: 100%;
 }
-.serendipitySideBarItem.serendipity_plugin_freetag,
-.sidebar_widget.serendipity_plugin_freetag {
+.serendipitySideBarItem.serendipity_plugin_freetag {
   padding-bottom: 1rem;
 }
 .serendipity_plugin_freetag .serendipity_edit_nugget {
