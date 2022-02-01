@@ -1,3 +1,7 @@
+5.16:
+-----
+ * Improve freetag widget bottom styles on frontend sidebars
+
 5.15:
 -----
  * Fix an old page routing issue with P-Char tags

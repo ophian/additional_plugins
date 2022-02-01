@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.15');
+        $propbag->add('version',       '5.16');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -3324,8 +3324,13 @@ document.addEventListener("DOMContentLoaded", function() {
     display: inline;
     width: 100%;
 }
+.serendipitySideBarItem.serendipity_plugin_freetag,
+.sidebar_widget.serendipity_plugin_freetag {
+  padding-bottom: 1rem;
+}
 .serendipity_plugin_freetag .serendipity_edit_nugget {
     margin-top: 1.5em;
+    margin-bottom: -.25em;
 }
 .serendipity_freetag_taglist {
     background: inherit;
