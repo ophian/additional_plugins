@@ -1,3 +1,7 @@
+2.0.1:
+-----
+ * Use a strict strpos check - fixing matches with PHP 8
+
 2.0.0:
 -----
  * Fix a null case error for PHP 8 plus

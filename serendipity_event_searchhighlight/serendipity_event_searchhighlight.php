@@ -23,7 +23,7 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -245,7 +245,7 @@ class serendipity_event_searchhighlight extends serendipity_event
 
                     // Iterate over search terms and do the highlighting.
                     foreach ($queries AS $word) {
-                        if (strpos($word, '*')) {
+                        if (false !== strpos($word, '*')) {
                             // fuzzy search (case insensitive) all words containing term;
                             $word = str_replace('*', '', $word);
                             /* If the data contains HTML tags, we have to be careful not to break URIs and use a more complex preg */
