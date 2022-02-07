@@ -1,0 +1,8 @@
+0.7:
+----
+ * Add temporary fixes for PHP 8 - revisit before PHP 9!
+
+0.6:
+----
+ * Add German translation.
+ * Upgrade

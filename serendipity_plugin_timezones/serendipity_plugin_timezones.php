@@ -18,11 +18,11 @@ class serendipity_plugin_timezones extends serendipity_plugin
         $propbag->add('description',    PLUGIN_TIMEZONES_BLAHBLAH);
         $propbag->add('configuration',  array('title', 'zone1_text', 'zone1_name', 'zone1_format', 'timeshift1',
                                                        'zone2_text', 'zone2_name', 'zone2_format', 'timeshift2',
-                            'zone3_text', 'zone3_name', 'zone3_format', 'timeshift3',
-                            'zone4_text', 'zone4_name', 'zone4_format', 'timeshift4'));
-        $propbag->add('author',         'Christoph Eunicke <s9y-plugin@eunicke.org>');
+                                                       'zone3_text', 'zone3_name', 'zone3_format', 'timeshift3',
+                                                       'zone4_text', 'zone4_name', 'zone4_format', 'timeshift4'));
+        $propbag->add('author',         'Christoph Eunicke <s9y-plugin@eunicke.org>, Ian Styx');
         $propbag->add('stackable',      true);
-        $propbag->add('version',        '0.6');
+        $propbag->add('version',        '0.7');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -176,21 +176,22 @@ class serendipity_plugin_timezones extends serendipity_plugin
             //create the first date
 
             $date->convertTZbyID($this->get_config('zone1_name'));
-            $date1=$date->format($this->get_config('zone1_format'));
+            $date1 = $date->format($this->get_config('zone1_format'));
 
             $date->convertTZbyID($this->get_config('zone2_name'));
-            $date2=$date->format($this->get_config('zone2_format'));
+            $date2 = $date->format($this->get_config('zone2_format'));
 
             $date->convertTZbyID($this->get_config('zone3_name'));
-            $date3=$date->format($this->get_config('zone3_format'));
+            $date3 = $date->format($this->get_config('zone3_format'));
 
             $date->convertTZbyID($this->get_config('zone4_name'));
-            $date4=$date->format($this->get_config('zone4_format'));
+            $date4 = $date->format($this->get_config('zone4_format'));
         } else {
-            $date1=date($this->get_config('zone1_format'),time()+$this->get_config('timeshift1'));
-            $date2=date($this->get_config('zone2_format'),time()+$this->get_config('timeshift2'));
-            $date3=date($this->get_config('zone3_format'),time()+$this->get_config('timeshift3'));
-            $date4=date($this->get_config('zone4_format'),time()+$this->get_config('timeshift4'));
+            // date("%T", time()-3600); // i.e. did not work in PHP 8.x, so strftime is used - needs to change for PHP 9
+            $date1 = @strftime($this->get_config('zone1_format'), (time() + (int)$this->get_config('timeshift1')));
+            $date2 = @strftime($this->get_config('zone2_format'), (time() + (int)$this->get_config('timeshift2')));
+            $date3 = @strftime($this->get_config('zone3_format'), (time() + (int)$this->get_config('timeshift3')));
+            $date4 = @strftime($this->get_config('zone4_format'), (time() + (int)$this->get_config('timeshift4')));
         }
 
         echo '<ul class="plainList">';
