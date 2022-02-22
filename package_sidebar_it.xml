@@ -3131,61 +3131,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_plugin_socialbookmarks</name>
-<license>GPL</license>
-<summary>Social Bookmarks Plugin</summary>
-<groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>A plugin to display bookmarks from a social bookmark service (del.icio.us, ma.gnolia, furl.net, linkroll, Mister Wong) via an RSS feed.</description>
-<maintainers><maintainer><name>Matthias Gutjahr</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>0.48</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
-  <filelist>
-    <dir name="serendipity_plugin_socialbookmarks">
-      <file>ChangeLog.txt</file>
-      <file>documentation_cs.html</file>
-      <file>documentation_cz.html</file>
-      <file>INSTALL</file>
-      <file>lang_cs.inc.php</file>
-      <file>lang_cz.inc.php</file>
-      <file>lang_de.inc.php</file>
-      <file>lang_en.inc.php</file>
-      <file>serendipity_plugin_socialbookmarks.php</file>
-      <dir name="simplepie">
-        <file>LICENSE.txt</file>
-        <file>README.markdown</file>
-        <file>simplepie.inc</file>
-      </dir>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_plugin_socialbookmarks/ChangeLog.txt</file>
-    <file>serendipity_plugin_socialbookmarks/documentation_cs.html</file>
-    <file>serendipity_plugin_socialbookmarks/documentation_cz.html</file>
-    <file>serendipity_plugin_socialbookmarks/INSTALL</file>
-    <file>serendipity_plugin_socialbookmarks/lang_cs.inc.php</file>
-    <file>serendipity_plugin_socialbookmarks/lang_cz.inc.php</file>
-    <file>serendipity_plugin_socialbookmarks/lang_de.inc.php</file>
-    <file>serendipity_plugin_socialbookmarks/lang_en.inc.php</file>
-    <file>serendipity_plugin_socialbookmarks/serendipity_plugin_socialbookmarks.php</file>
-    <file>serendipity_plugin_socialbookmarks/simplepie/LICENSE.txt</file>
-    <file>serendipity_plugin_socialbookmarks/simplepie/README.markdown</file>
-    <file>serendipity_plugin_socialbookmarks/simplepie/simplepie.inc</file>
-    <file>serendipity_plugin_socialbookmarks/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_plugin_socialbookmarks/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_socialbookmarks/UTF-8/lang_de.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_plugin_templatedropdown</name>
 <license>GPL</license>
 <summary>Theme dropdown</summary>

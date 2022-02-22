@@ -411,15 +411,6 @@
 <guid isPermaLink="false">serendipity_plugin_sidebarlogo</guid>
 </item>
 <item>
-<title>Social Bookmarks Plugin: A plugin to display bookmarks from a social bookmark service (del.icio.us, ma.gnolia, furl.net, linkroll, Mister Wong) via an RSS feed.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_socialbookmarks</link>
-<category>Sidebar Plugins</category>
-<author>Matthias Gutjahr</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_socialbookmarks&lt;br /&gt;Social Bookmarks Plugin&lt;/b&gt;&lt;br /&gt;A plugin to display bookmarks from a social bookmark service (del.icio.us, ma.gnolia, furl.net, linkroll, Mister Wong) via an RSS feed.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 11:54:37 +0200</pubDate>
-<guid isPermaLink="false">serendipity_plugin_socialbookmarks</guid>
-</item>
-<item>
 <title>Sélecteur de thème: Affiche un menu pour choisir un thème visuel</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_templatedropdown</link>
 <category>Sidebar Plugins</category>
