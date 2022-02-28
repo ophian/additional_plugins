@@ -1,3 +1,7 @@
+1.32:
+-----
+  * Extend and precise [de] PLUGIN_EVENT_MTRACKBACK_CONTROL
+
 1.31:
 -----
   * [de] translate PLUGIN_EVENT_MTRACKBACK_CONTROL
