@@ -1,3 +1,7 @@
+1.79:
+-----
+ * Improve Smarty pagination margin in README example styles
+
 1.78:
 -----
  * Minor SQL query optimizations and a fixed [de] constant typo

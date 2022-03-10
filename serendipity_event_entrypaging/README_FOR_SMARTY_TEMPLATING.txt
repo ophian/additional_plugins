@@ -52,7 +52,7 @@ And this to style it in your user.css file (build for Styx 3.0 pure Standard the
     border-radius: 4px;
     box-shadow: 1px 1px 2px rgba(111, 111, 111, 0.5);
     display: -webkit-inline-box;
-    margin: .5em 0em 0em;
+    margin: .5em 0em 1em;
     padding: .5em;
     width: 100%;
 }
