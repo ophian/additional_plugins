@@ -19,7 +19,7 @@ if (IN_serendipity !== true) {
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
 define('FREETAG_MANAGE_URL', '?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=managetags');
-define('FREETAG_EDITENTRY_URL', '?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]=');
+define('FREETAG_EDITENTRY_URL', '?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;'.serendipity_setFormToken('url').'&amp;serendipity[id]=');
 
 class serendipity_event_freetag extends serendipity_event
 {
@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.16');
+        $propbag->add('version',       '5.17');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,

@@ -1,3 +1,7 @@
+5.17:
+-----
+ * Fix backend EDIT entry URL missing securing token
+
 5.16:
 -----
  * Improve freetag widget bottom styles on frontend sidebars
