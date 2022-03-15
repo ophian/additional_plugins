@@ -26,7 +26,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '3.3.0');
+        $propbag->add('version',       '3.4.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2.0',
             'smarty'      => '3.1.0',
@@ -204,11 +204,16 @@ class serendipity_event_linklist extends serendipity_event
 
         if ($serendipity['dbType'] == 'mysqli') {
             $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+            // be a little paranoid...
+            if (substr($serendipity['db_server_info'], 0, 6) === '5.5.5-') {
+                // strip any possible added prefix having this 5.5.5 version string (which was never released). PHP up from 8.0.16 now strips it correctly.
+                $serendipity['db_server_info'] = str_replace('5.5.5-', '', $serendipity['db_server_info']);
+            }
+            $db_version_match = explode('-', $serendipity['db_server_info']);
             if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
-                $db_version_match = explode('-', $serendipity['db_server_info']);
-                if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                if (version_compare($db_version_match[0], '10.5.0', '>=')) {
                     $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title);";
-                } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                } elseif (version_compare($db_version_match[0], '10.3.0', '>=')) {
                     $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(250));"; // max key 1000 bytes
                 } else {
                     $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(191));"; // 191 - old MyISAMs
@@ -217,7 +222,12 @@ class serendipity_event_linklist extends serendipity_event
                 $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(191));"; // Oracle Mysql/InnoDB max key 767 bytes
             }
         } else {
-            $q   = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title);";
+            // Oracle MySQL - https://dev.mysql.com/doc/refman/5.7/en/innodb-limits.html
+            if (version_compare($db_version_match[0], '5.7.7', '>=')) {
+                $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title);"; // Oracle Mysql/InnoDB max key up to 3072 bytes
+            } else {
+                $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+            }
         }
         $sql = serendipity_db_schema_import($q);
 
