@@ -219,15 +219,15 @@ class serendipity_event_linklist extends serendipity_event
                     $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(191));"; // 191 - old MyISAMs
                 }
             } else {
-                $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                // Oracle MySQL - https://dev.mysql.com/doc/refman/5.7/en/innodb-limits.html
+                if (version_compare($db_version_match[0], '5.7.7', '>=')) {
+                    $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title);"; // Oracle Mysql/InnoDB max key up to 3072 bytes
+                } else {
+                    $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                }
             }
         } else {
-            // Oracle MySQL - https://dev.mysql.com/doc/refman/5.7/en/innodb-limits.html
-            if (version_compare($db_version_match[0], '5.7.7', '>=')) {
-                $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title);"; // Oracle Mysql/InnoDB max key up to 3072 bytes
-            } else {
-                $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title(191));"; // Oracle Mysql/InnoDB max key 767 bytes
-            }
+            $q = "CREATE INDEX titleind ON {$serendipity['dbPrefix']}links (title);";
         }
         $sql = serendipity_db_schema_import($q);
 
