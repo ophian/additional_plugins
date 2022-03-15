@@ -9,6 +9,12 @@ TODO:
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
 
+2.1.0:
+------
+ * Fix $serendipity['db_server_info'] for removed MariaDB prefix with PHP 8.0.16+,
+   to set the correct SQL utf8mb4 index key length limits on install.
+   Improves on both mysql instances.
+
 2.00:
 -----
  * Raise requirement to Styx 3.2
