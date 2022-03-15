@@ -16,7 +16,7 @@ class serendipity_event_cronjob extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CRONJOB_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.0');
+        $propbag->add('version',       '2.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.3'
@@ -114,17 +114,27 @@ class serendipity_event_cronjob extends serendipity_event
 
             if ($serendipity['dbType'] == 'mysqli') {
                 $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+                // be a little paranoid...
+                if (substr($serendipity['db_server_info'], 0, 6) === '5.5.5-') {
+                    // strip any possible added prefix having this 5.5.5 version string (which was never released). PHP up from 8.0.16 now strips it correctly.
+                    $serendipity['db_server_info'] = str_replace('5.5.5-', '', $serendipity['db_server_info']);
+                }
+                $db_version_match = explode('-', $serendipity['db_server_info']);
                 if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
-                    $db_version_match = explode('-', $serendipity['db_server_info']);
-                    if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                    if (version_compare($db_version_match[0], '10.5.0', '>=')) {
                         $q = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type);";
-                    } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                    } elseif (version_compare($db_version_match[0], '10.3.0', '>=')) {
                         $q = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type(250));"; // max key 1000 bytes
                     } else {
                         $q = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type(191));"; // 191 - old MyISAMs
                     }
                 } else {
-                    $q = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                    // Oracle MySQL - https://dev.mysql.com/doc/refman/5.7/en/innodb-limits.html
+                    if (version_compare($db_version_match[0], '5.7.7', '>=')) {
+                        $q = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type);"; // Oracle Mysql/InnoDB max key up to 3072 bytes
+                    } else {
+                        $q = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                    }
                 }
             } else {
                 $q = "CREATE INDEX kspamtypeidx ON {$serendipity['dbPrefix']}cronjoblog (type);";
