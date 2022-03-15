@@ -158,7 +158,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Thu, 20 Jan 2022 13:34:41 +0100</pubDate>
+<pubDate>Tue, 15 Mar 2022 14:36:57 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -212,7 +212,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_cronjob&lt;br /&gt;Cronjob-Planer&lt;/b&gt;&lt;br /&gt;Dieses Plugin führt andere Plugins, die regelmäßig bestimmte Aufgaben ausführen sollen, in bestimmten Zeitabständen aus. Einzelheiten finden Sie in der Konfiguration dieses Plugins.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Wed, 02 Dec 2020 13:12:41 +0100</pubDate>
+<pubDate>Tue, 15 Mar 2022 15:14:11 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_cronjob</guid>
 </item>
 <item>
@@ -365,7 +365,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook (Experimentell!)&lt;/b&gt;&lt;br /&gt;Importiert Kommentare von Facebook-Posts (vergleichbar RSS-Graffiti) zurück in den Blog. Bettet auch Facebook-OpenGraph-Meta-Tags in den Blog ein.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Wed, 02 Dec 2020 13:11:53 +0100</pubDate>
+<pubDate>Tue, 15 Mar 2022 15:22:25 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>
@@ -617,7 +617,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Linkliste&lt;/b&gt;&lt;br /&gt;Linkmanager - zeigt Ihre Lieblingslinks in der Seitenleiste an.&lt;br/&gt;For: Serendipity 3.2.0</content:encoded>
-<pubDate>Sun, 01 Aug 2021 20:15:33 +0200</pubDate>
+<pubDate>Tue, 15 Mar 2022 15:12:28 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_linklist</guid>
 </item>
 <item>
@@ -1076,7 +1076,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistiken&lt;/b&gt;&lt;br /&gt;Zeigt einen Link zu informativen Statistiken (inkl. Besucherzähler) in der Administrationsoberfläche an.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sat, 08 Jan 2022 14:56:44 +0100</pubDate>
+<pubDate>Tue, 15 Mar 2022 14:42:19 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
@@ -1166,7 +1166,7 @@
 <category>Event Plugins</category>
 <author>Steven Tonnesen, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;ToDo/Projekt-Liste&lt;/b&gt;&lt;br /&gt;Verwaltet eine Liste von Projekten und deren aktuellem Status&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Mon, 02 Aug 2021 19:17:43 +0200</pubDate>
+<pubDate>Tue, 15 Mar 2022 14:43:17 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_todolist</guid>
 </item>
 <item>
@@ -1238,7 +1238,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;Benutzerprofile&lt;/b&gt;&lt;br /&gt;Zeigt einfache Benutzerprofile&lt;br/&gt;For: Serendipity 3.5</content:encoded>
-<pubDate>Mon, 24 Jan 2022 12:47:39 +0100</pubDate>
+<pubDate>Tue, 15 Mar 2022 14:54:20 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
@@ -1274,7 +1274,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Freie Wiki-Links für Einträge&lt;/b&gt;&lt;br /&gt;Ermöglicht Links zu blog-internen Einträgen via [[Titel]], Links zu Statischen Seiten via ((Titel)) und einen Link zu beidem via {{Titel}}. Zudem wird ein Button zu internen Einträgen bereitgestellt. Referenzen können am Ende eines Blogeintrags eingehangen werden.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:03:55 +0100</pubDate>
+<pubDate>Tue, 15 Mar 2022 15:34:18 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_wikilinks</guid>
 </item>
 <item>

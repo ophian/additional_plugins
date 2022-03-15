@@ -158,7 +158,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Komentářové koření&lt;/b&gt;&lt;br /&gt;Okořeňte formulář pro zadání komentářů pomocí twitteru komentujícího, odkazem na poslední článek nebo pravidly pro ne-sledování.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Thu, 20 Jan 2022 13:34:41 +0100</pubDate>
+<pubDate>Tue, 15 Mar 2022 14:36:57 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -212,7 +212,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_cronjob&lt;br /&gt;Plánovač úloh&lt;/b&gt;&lt;br /&gt;Tento plugin periodicky vykonává pluginy, které poskytují/vyžadují opakované vykonávání. Podrobnosti v konfiguraci pluginu.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Wed, 02 Dec 2020 13:12:41 +0100</pubDate>
+<pubDate>Tue, 15 Mar 2022 15:14:11 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_cronjob</guid>
 </item>
 <item>
@@ -365,7 +365,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook&lt;/b&gt;&lt;br /&gt;Importuje do blogu komentáře u příspěvků na facebooku (pomocí RSS Graffiti). Také do blogu vloží facebookové OpenGraph Meta-Tagy. Pamatujte, že přidání talčítka &quot;Líbí se mi&quot; k příspěvkům blogu je zajišťováno pluginem serendipity_event_social!&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Wed, 02 Dec 2020 13:11:53 +0100</pubDate>
+<pubDate>Tue, 15 Mar 2022 15:22:25 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>
@@ -617,7 +617,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Správce odkazů (linků) - V bočním panelu zobrazuje vaše oblíbené odkazy.&lt;br/&gt;For: Serendipity 3.2.0</content:encoded>
-<pubDate>Sun, 01 Aug 2021 20:15:33 +0200</pubDate>
+<pubDate>Tue, 15 Mar 2022 15:12:28 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_linklist</guid>
 </item>
 <item>
@@ -1076,7 +1076,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistiky&lt;/b&gt;&lt;br /&gt;Zobrazení statistik záznamů&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sat, 08 Jan 2022 14:56:44 +0100</pubDate>
+<pubDate>Tue, 15 Mar 2022 14:42:19 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
@@ -1166,7 +1166,7 @@
 <category>Event Plugins</category>
 <author>Steven Tonnesen, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;Seznam úkolů / ToDo list / projektové řízení&lt;/b&gt;&lt;br /&gt;Správa seznamu projektů/úkolů a jejich splnění v procentech&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Mon, 02 Aug 2021 19:17:43 +0200</pubDate>
+<pubDate>Tue, 15 Mar 2022 14:43:17 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_todolist</guid>
 </item>
 <item>
@@ -1238,7 +1238,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;Profily uživatelů&lt;/b&gt;&lt;br /&gt;Zobrazuje jednoduché profily uživatelů a dovoluje přiložit jejich fotku.&lt;br/&gt;For: Serendipity 3.5</content:encoded>
-<pubDate>Mon, 24 Jan 2022 12:47:39 +0100</pubDate>
+<pubDate>Tue, 15 Mar 2022 14:54:20 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
@@ -1274,7 +1274,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Wiki odkazy v příspěvcích&lt;/b&gt;&lt;br /&gt;V příspěvcích můžete zadat odkazy na existující/nové příspěvky pomocí [[nadpis příspěvku]], na statické stránky pomocí ((nadpis stránky)) a na obojí pomocí {{nadpis}}.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:03:55 +0100</pubDate>
+<pubDate>Tue, 15 Mar 2022 15:34:18 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_wikilinks</guid>
 </item>
 <item>
