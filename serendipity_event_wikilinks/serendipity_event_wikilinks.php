@@ -18,13 +18,11 @@ class serendipity_event_wikilinks extends serendipity_event
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',          PLUGIN_EVENT_WIKILINKS_NAME);
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',       '1.01');
+        $propbag->add('version',       '1.2.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1',
@@ -75,11 +73,13 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('configuration', $conf_array);
     }
 
-    function generate_content(&$title) {
+    function generate_content(&$title)
+    {
         $title = $this->title;
     }
 
-    function introspect_config_item($name, &$propbag) {
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         switch($name) {
@@ -144,7 +144,8 @@ class serendipity_event_wikilinks extends serendipity_event
         return true;
     }
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
+    function event_hook($event, &$bag, &$eventData, $addData = null)
+    {
         global $serendipity;
 
         $hooks = &$bag->get('event_hooks');
@@ -427,11 +428,13 @@ function use_link_<?php echo $func; ?>(txt) {
         }
     }
 
-    function install() {
+    function install()
+    {
         $this->setupDB();
     }
 
-    function setupDB() {
+    function setupDB()
+    {
         global $serendipity;
 
         $built = $this->get_config('db_built', null);
@@ -441,32 +444,47 @@ function use_link_<?php echo $func; ?>(txt) {
                     entryid int(11) default '0',
                     refname text,
                     ref text)");
+
             if ($serendipity['dbType'] == 'mysqli') {
                 $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+                // be a little paranoid...
+                if (substr($serendipity['db_server_info'], 0, 6) === '5.5.5-') {
+                    // strip any possible added prefix having this 5.5.5 version string (which was never released). PHP up from 8.0.16 now strips it correctly.
+                    $serendipity['db_server_info'] = str_replace('5.5.5-', '', $serendipity['db_server_info']);
+                }
+                $db_version_match = explode('-', $serendipity['db_server_info']);
                 if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
-                    $db_version_match = explode('-', $serendipity['db_server_info']);
-                    if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                    if (version_compare($db_version_match[0], '10.5.0', '>=')) {
                         $q = "CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname);";
-                    } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                    } elseif (version_compare($db_version_match[0], '10.3.0', '>=')) {
                         $q = "CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname(250));"; // max key 1000 bytes
                     } else {
                         $q = "CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname(191));"; // 191 - old MyISAMs
                     }
                 } else {
-                    $q = "CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                    // Oracle MySQL - https://dev.mysql.com/doc/refman/5.7/en/innodb-limits.html
+                    if (version_compare($db_version_match[0], '5.7.7', '>=')) {
+                        $q = "CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname);"; // Oracle Mysql/InnoDB max key up to 3072 bytes
+                    } else {
+                        $q = "CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                    }
                 }
                 serendipity_db_schema_import($q);
                 if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
-                    $db_version_match = explode('-', $serendipity['db_server_info']);
-                    if (version_compare($db_version_match[1], '10.5.0', '>=')) {
+                    if (version_compare($db_version_match[0], '10.5.0', '>=')) {
                         $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname);";
-                    } elseif (version_compare($db_version_match[1], '10.3.0', '>=')) {
+                    } elseif (version_compare($db_version_match[0], '10.3.0', '>=')) {
                         $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(250));"; // max key 1000 bytes
                     } else {
                         $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(191));"; // 191 - old MyISAMs
                     }
                 } else {
-                    $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                    // Oracle MySQL - https://dev.mysql.com/doc/refman/5.7/en/innodb-limits.html
+                    if (version_compare($db_version_match[0], '5.7.7', '>=')) {
+                        $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname);"; // Oracle Mysql/InnoDB max key up to 3072 bytes
+                    } else {
+                        $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(191));"; // Oracle Mysql/InnoDB max key 767 bytes
+                    }
                 }
                 serendipity_db_schema_import($q);
             } else {
@@ -478,7 +496,8 @@ function use_link_<?php echo $func; ?>(txt) {
         }
     }
 
-    function _reference($buffer) {
+    function _reference($buffer)
+    {
         global $serendipity;
         static $count = 0;
 
@@ -538,7 +557,8 @@ function use_link_<?php echo $func; ?>(txt) {
         return $result;
     }
 
-    function reference_parse() {
+    function reference_parse()
+    {
         global $serendipity;
         static $count = 0;
         static $count2 = 0;
@@ -582,7 +602,8 @@ function use_link_<?php echo $func; ?>(txt) {
     * [[ENTRY|DESC]] is an internal link
     * ((ENTRY|DESC)) is a staticpage link.
     */
-    function _wikify($buffer) {
+    function _wikify($buffer)
+    {
         global $serendipity;
         $debug = true;
 
@@ -698,6 +719,7 @@ function use_link_<?php echo $func; ?>(txt) {
 
         return $out;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */
