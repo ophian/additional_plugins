@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.47');
+        $propbag->add('version', '6.48');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -1036,27 +1036,8 @@ class serendipity_event_staticpage extends serendipity_event
                     meta_description varchar(255) not null default '',
                     meta_keywords varchar(255) not null default '') {UTF_8}");
 
-            $old_stuff = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}config WHERE name LIKE 'serendipity_event_staticpage:%'");
-
-            $import = array();
-            if (is_array($old_stuff)) {
-                foreach ($old_stuff AS $item) {
-                    $names = explode('/', $item['name']);
-                    if (!isset($import[$names[0]])) {
-                        $import[$names[0]] = array('authorid' => $item['authorid']);
-                    }
-
-                    $import[$names[0]][$names[1]] = serendipity_get_bool($item['value']);
-                }
-            }
-
-            foreach ($import AS $page) {
-                if (is_array($page)) {
-                    serendipity_db_insert('staticpages', $page);
-                    if (file_exists($this->cachefile)) {
-                        unlink($this->cachefile);
-                    }
-                }
+            if (file_exists($this->cachefile)) {
+                unlink($this->cachefile);
             }
 
             serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}config  WHERE name LIKE 'serendipity_event_staticpage:%'");

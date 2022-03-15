@@ -1,3 +1,8 @@
+6.48:
+-----
+ * Fix install with enabled mysqli_sql_exception, which triggered an erroneous behaviour
+   from the very early stages of this plugin.
+
 6.47:
 -----
  * Fix getStartpage() and get404Errorpage() methods return issued by previous cleanup
