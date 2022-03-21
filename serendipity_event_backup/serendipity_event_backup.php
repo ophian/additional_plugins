@@ -25,7 +25,7 @@ class serendipity_event_backup extends serendipity_event
             'php'         => '7.0'
         ));
 
-        $propbag->add('version',       '1.0.3');
+        $propbag->add('version',       '1.1.0');
         $propbag->add('author',       'Alexander Mieland, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -304,7 +304,7 @@ class serendipity_event_backup extends serendipity_event
                             $key_name = $row[2];
                             $column_name = $row[4];
                             $fulltext = $row[9];
-                            if (ereg("PRIMARY", $key_name)) {
+                            if (preg_match("/PRIMARY/", $key_name)) {
                                 $pri_key[] = $column_name;
                                 $pri_index_key[] = $key_name;
                             } elseif ($non_unique) {
@@ -315,7 +315,7 @@ class serendipity_event_backup extends serendipity_event
                                     $mul_key[] =  $column_name;
                                     $mul_index_key[] = $key_name;
                                 }
-                            } elseif ((!$non_unique) and (!ereg("PRIMARY", $key_name))) {
+                            } elseif ((!$non_unique) and (!preg_match("/PRIMARY/", $key_name))) {
                                 $uni_key[] =  $column_name;
                                 $uni_index_key[] = $key_name;
                             }
@@ -663,11 +663,13 @@ class serendipity_event_backup extends serendipity_event
             $backupconfig[$key] = stripslashes(trim($val));
         }
         $backupdata_array = explode("|^|", $backupconfig['data_backup']);
+#        echo "<pre>".print_r($backupdata_array,1)."</pre>";
+        if (empty($backupdata_array[0])) return '<span class="msg_error"><span class="icon-info-circled" aria-hidden="true"></span> No backup available</span>';
         $complete = intval($backupdata_array[0]);
-        $tables = unserialize($backupdata_array[1]);
-        $data = $backupdata_array[2];
-        $drop = intval($backupdata_array[3]);
-        $pack = intval($backupdata_array[4]);
+        $tables = unserialize($backupdata_array[1] ?? null);
+        $data = $backupdata_array[2] ?? null;
+        $drop = intval($backupdata_array[3] ?? null);
+        $pack = intval($backupdata_array[4] ?? null);
         if (!file_exists($pbackupfile)) {
             return PLUGIN_BACKUP_NOT_FOUND;
         }
@@ -679,14 +681,14 @@ class serendipity_event_backup extends serendipity_event
         $fe = opendir($recoverdir);
         chdir($recoverdir);
         while ($file = readdir($fe)) {
-            if (ereg("_CREATE_", $file)) {
+            if (preg_match("/_CREATE_/", $file)) {
                 unset($rec);
                 $drop = "";
                 $create = "";
                 $rec = file($file);
                 for ($a=0;$a<count($rec);$a++) {
-                    if (!ereg("^##", $rec[$a])) {
-                        if (ereg("DROP TABLE", $rec[$a])) {
+                    if (!preg_match("/^##/", $rec[$a])) {
+                        if (preg_match("/DROP TABLE/", $rec[$a])) {
                             $drop .= $rec[$a];
                         } else {
                             $create .= $rec[$a];
@@ -694,11 +696,11 @@ class serendipity_event_backup extends serendipity_event
                     }
                 }
                 if (trim($drop) != "") {
-                    serendipity_db_query(preg_replace("|(`;([\ \\r\\n]{0,})$)|","`",$drop));
-                    #print("<pre>".preg_replace("|(`;([\ \\r\\n]{0,})$)|","`",$drop)."</pre>");
+                    #print("<pre>".preg_replace("|(`;([\ \\r\\n]{0,})$)|", "`", $drop)."</pre>");
+                    serendipity_db_query(preg_replace("|(`;([\ \\r\\n]{0,})$)|","`", $drop));
                 }
-                serendipity_db_query(preg_replace("|(\)([\ (TYPE=MyISAM)]{0,});([\ \\r\\n]{0,})$)|",")",$create));
-                #print("<pre>".preg_replace("|(\)([\ (TYPE=MyISAM)]{0,});([\ \\r\\n]{0,})$)|",")",$create)."</pre>");
+                #print("<pre>".preg_replace("|(\)([\ (TYPE=MyISAM)]{0,});([\ \\r\\n]{0,})$)|", ")", $create)."</pre>");
+                serendipity_db_query(preg_replace("|(\)([\ (TYPE=MyISAM)]{0,});([\ \\r\\n]{0,})$)|", ")", $create), false, 'both', false, false, false, true); // expectError if exists i.e.
             }
         }
         chdir("../../../");
@@ -706,7 +708,7 @@ class serendipity_event_backup extends serendipity_event
         $fe = opendir($recoverdir);
         chdir($recoverdir);
         while ($file = readdir($fe)) {
-            if (ereg("_INSERT_", $file)) {
+            if (preg_match("/_INSERT_/", $file)) {
                 unset($rec);
                 $insert = "";
                 $fop = fopen($file, "r");
@@ -725,7 +727,7 @@ class serendipity_event_backup extends serendipity_event
         closedir($fe);
         $fe = opendir($recoverdir);
         while ($file = readdir($fe)) {
-            if ($file != "." && $file != ".." && $file != "index.".$_SESSION['SUFFIX'] && $file != "cvs" && $file != "CVS") {
+            if ($file != "." && $file != ".." && $file != "index.".($_SESSION['SUFFIX'] ??'') && $file != "cvs" && $file != "CVS") {
                 unlink($recoverdir."/".$file);
             }
         }
@@ -929,6 +931,7 @@ class serendipity_event_backup extends serendipity_event
         }
 
         if (isset($_GET['recover']) && isset($_GET['backup']) && $_GET['recover'] == 1 && trim($_GET['backup']) != "") {
+            if (!isset($STATUSMSG)) $STATUSMSG = '';
             $STATUSMSG .= $this->RecoverSQLBackup($_GET['backup']);
         } elseif (isset($_GET['download']) && isset($_GET['backup']) && $_GET['download'] == 1 && trim($_GET['backup']) != "") {
             $file = $BACKUPDIR."/".basename($_GET['backup']);

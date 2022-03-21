@@ -1,3 +1,13 @@
+1.1.0:
+------
+
+ * Fix ereg() is deprecated since PHP 5.3 and removed since PHP 7.0. Replaced by with preg_match()
+ * Return import with message if empty
+ * PLEASE Note:
+            This is a very old plugin.
+            It hasn't been fully tested with current SQL, Serendipity and PHP versions.
+            Make a personal backup copy with an independent tool, like phpMyAdmin.
+
 1.0.3:
 ------
 
