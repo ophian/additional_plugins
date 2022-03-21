@@ -86,7 +86,7 @@
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;バックアップインターフェース&lt;/b&gt;&lt;br /&gt;自動的に s9y のデータベース内テーブル、データベース全体およびファイルからバックアップを作る能力を提供します。現在 MySQL(i) データベースのみサポートしています。警告: このプラグインは大きなデータベースやディレクトリーでは正しく処理できません。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 23 Jan 2022 12:31:51 +0100</pubDate>
+<pubDate>Mon, 21 Mar 2022 17:18:50 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
