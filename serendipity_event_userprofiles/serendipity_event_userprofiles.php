@@ -93,7 +93,7 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '1.3.0');
+        $propbag->add('version', '1.3.1');
         $propbag->add('requirements', array(
             'serendipity' => '3.5',
             'smarty'      => '3.1.0',
@@ -683,7 +683,7 @@ section > .serendipityAuthorProfile,
                     break;
 
                 case 'entries_header':
-                    if (!empty($serendipity['GET']['viewAuthor'])) {
+                    if (!empty($serendipity['GET']['viewAuthor']) && false === strpos($serendipity['GET']['viewAuthor'], ';')) {
                         $filename = '/plugin_userprofile.tpl';
                         $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
                         if (!$tfile || $tfile == $filename) {
