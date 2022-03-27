@@ -200,7 +200,7 @@ class serendipity_event_backup extends serendipity_event
 
         $excludes = "";
         if (is_array($exclude) && count($exclude) >= 1) {
-            for($a=0, $b=count($exclude); $a<$b; $a++) {
+            for($a=0, $b = count($exclude); $a < $b; $a++) {
                 if ($excludes != "") { $excludes .= " "; }
                 $excludes .= "\"".$exclude[$a]."\"";
             }
@@ -522,7 +522,7 @@ class serendipity_event_backup extends serendipity_event
                     $drop = $DATA_BACKUP[3];
                     $pack = $DATA_BACKUP[4];
                     if (isset($complete) && $complete == 1) {
-                        $this->MakeSQLBackup(1,NULL, $data, $drop);
+                        $this->MakeSQLBackup(1, NULL, $data, $drop);
                     } else {
                         $this->MakeSQLBackup(0, $tables, $data, $drop);
                     }
@@ -688,7 +688,11 @@ class serendipity_event_backup extends serendipity_event
             return PLUGIN_BACKUP_NOT_FOUND;
         }
         $this->getTar();
-        if (preg_match("@.gz$@", $backupfile)) { $zipped = TRUE; } else { $zipped = FALSE; }
+        if (preg_match("@.gz$@", $backupfile)) {
+            $zipped = TRUE;
+        } else {
+            $zipped = FALSE;
+        }
         $tar_object = new Archive_Tar($pbackupfile, $zipped);
         $tar_object->setErrorHandling(PEAR_ERROR_RETURN);
         $tar_object->extract($backupdir."/tmp");
