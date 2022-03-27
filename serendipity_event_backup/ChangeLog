@@ -1,3 +1,10 @@
+1.2.0:
+------
+
+ * Fix INSERT TABLE for "known to fail" cases (if they exist for example)
+ * Consistency cleanup for readability
+ * Add some missing message coloring
+
 1.1.0:
 ------
 

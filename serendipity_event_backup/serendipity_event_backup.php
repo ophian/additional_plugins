@@ -25,7 +25,7 @@ class serendipity_event_backup extends serendipity_event
             'php'         => '7.0'
         ));
 
-        $propbag->add('version',       '1.1.0');
+        $propbag->add('version',       '1.2.0');
         $propbag->add('author',       'Alexander Mieland, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -224,7 +224,7 @@ class serendipity_event_backup extends serendipity_event
                 $tables[] = $THISTABLE[0];
             }
         }
-        for ($q=0;$q<count($tables);$q++) {
+        for ($q = 0; $q < count($tables); $q++) {
             $table = $tables[$q];
             serendipity_db_query("OPTIMIZE TABLE `".$table."`");
 
@@ -253,7 +253,7 @@ class serendipity_event_backup extends serendipity_event
             $sqltext .= "##\n";
             $create_text = "";
             $insert_text = "";
-            if ($what == "structure" OR $what == "data") {
+            if ($what == "structure" || $what == "data") {
                 if ($drop == 1) {
                     $create_text .= "##\n";
                     $create_text .= "##        DROP-data von Tabelle ".$table."\n";
@@ -283,12 +283,26 @@ class serendipity_event_backup extends serendipity_event
                         foreach ($result AS $field) {
                             $name  = $field[0];
                             $type  = " ".$field[1];
-                            if ($row[2] == "") {$null = " NOT NULL";} else {$null = " NULL";}
-                            if ($row[4] == "") {$default = "";} else {$default = " DEFAULT '".$row[4]."'";}
-                            if ($row[5] == "") {$extra = "";} else {$extra = " ".$row[5];}
+                            if ($row[2] == "") {
+                                $null = " NOT NULL";
+                            } else {
+                                $null = " NULL";
+                            }
+                            if ($row[4] == "") {
+                                $default = "";
+                            } else {
+                                $default = " DEFAULT '".$row[4]."'";
+                            }
+                            if ($row[5] == "") {
+                                $extra = "";
+                            } else {
+                                $extra = " ".$row[5];
+                            }
                             $create_text .= "\t".$name."".$type.$null.$default.$extra;
                             $tz++;
-                            if ($tz<$fieldnum) $create_text .= ", \n";
+                            if ($tz < $fieldnum) {
+                                $create_text .= ", \n";
+                            }
                         }
                         unset($pri_key);
                         unset($mul_key);
@@ -308,50 +322,50 @@ class serendipity_event_backup extends serendipity_event
                                 $pri_key[] = $column_name;
                                 $pri_index_key[] = $key_name;
                             } elseif ($non_unique) {
-                                if ($fulltext=="FULLTEXT") {
+                                if ($fulltext == "FULLTEXT") {
                                     $full_key[] = $column_name;
                                     $full_index_key[] = $key_name;
                                 } else {
                                     $mul_key[] =  $column_name;
                                     $mul_index_key[] = $key_name;
                                 }
-                            } elseif ((!$non_unique) and (!preg_match("/PRIMARY/", $key_name))) {
+                            } elseif ((!$non_unique) && (!preg_match("/PRIMARY/", $key_name))) {
                                 $uni_key[] =  $column_name;
                                 $uni_index_key[] = $key_name;
                             }
                         }
-                        if (count($pri_key)>0) {
+                        if (count($pri_key) > 0) {
                             $pri_text = " PRIMARY KEY (";
-                            for ($tr=0; $tr<count($pri_key); $tr++) {
+                            for ($tr = 0; $tr < count($pri_key); $tr++) {
                                 $pri_text .= $pri_key[$tr];
-                                if (($tr+1)<count($pri_key)) $pri_text .= ", ";
+                                if (($tr + 1) < count($pri_key)) $pri_text .= ", ";
                             }
                             $pri_text .= ")";
                             $create_text .= ", \n\t".trim($pri_text);
                         }
-                        if (count($mul_key)>0) {
+                        if (count($mul_key) > 0) {
                             $mul_text = " KEY (";
-                            for ($tr=0; $tr<count($mul_key); $tr++) {
+                            for ($tr = 0; $tr < count($mul_key); $tr++) {
                                 $mul_text .= $mul_key[$tr];
-                                if (($tr+1)<count($mul_key)) $mul_text .= ", ";
+                                if (($tr + 1) < count($mul_key)) $mul_text .= ", ";
                             }
                             $mul_text .= ")";
                             $create_text .= ", \n\t".trim($mul_text);
                         }
-                        if (count($full_key)>0) {
+                        if (count($full_key) > 0) {
                             $full_text = " FULLTEXT KEY (";
-                            for ($tr=0; $tr<count($full_key); $tr++) {
+                            for ($tr = 0; $tr < count($full_key); $tr++) {
                                 $full_text .= $full_key[$tr];
-                                if (($tr+1)<count($full_key)) $full_text .= ", ";
+                                if (($tr + 1) < count($full_key)) $full_text .= ", ";
                             }
                             $full_text .= ")";
                             $create_text .= ", \n\t".trim($full_text);
                         }
-                        if (count($uni_key)>0) {
+                        if (count($uni_key) > 0) {
                             $uni_text = " UNIQUE KEY (";
-                            for ($tr=0; $tr<count($uni_key); $tr++) {
+                            for ($tr = 0; $tr < count($uni_key); $tr++) {
                                 $uni_text .= $uni_key[$tr];
-                                if (($tr+1)<count($uni_key)) $uni_text .= ", ";
+                                if (($tr + 1) < count($uni_key)) $uni_text .= ", ";
                             }
                             $uni_text .= ")";
                             $create_text .= ", \n\t".trim($uni_text);
@@ -362,7 +376,7 @@ class serendipity_event_backup extends serendipity_event
                     $create_text .= $result[0][1].";\n\n";
                 }
             }
-            if ($what == "dataonly" OR $what == "data") {
+            if ($what == "dataonly" || $what == "data") {
                 $insert_text .= "##\n";
                 $insert_text .= "##        INSERT-data von Tabelle ".$table."\n";
                 $insert_text .= "##\n";
@@ -390,7 +404,7 @@ class serendipity_event_backup extends serendipity_event
             }
             if ($create_text != "") {
                 $create_text = $sqltext.$create_text;
-                if ($TXT=fopen($dateidir.$filetime."_CREATE_".$dateiname, "w")) {
+                if ($TXT = fopen($dateidir.$filetime."_CREATE_".$dateiname, "w")) {
                     fputs($TXT,$create_text);
                     fclose($TXT);
                     chmod($dateidir.$filetime."_CREATE_".$dateiname, 0666);
@@ -398,7 +412,7 @@ class serendipity_event_backup extends serendipity_event
             }
             if ($insert_text != "") {
                 $insert_text = $sqltext.$insert_text;
-                if ($TXT=fopen($dateidir.$filetime."_INSERT_".$dateiname, "w")) {
+                if ($TXT = fopen($dateidir.$filetime."_INSERT_".$dateiname, "w")) {
                     fputs($TXT,$insert_text);
                     fclose($TXT);
                     chmod($dateidir.$filetime."_INSERT_".$dateiname, 0666);
@@ -495,7 +509,7 @@ class serendipity_event_backup extends serendipity_event
             $now = time();
             @ignore_user_abort(1);
             @set_time_limit(0);
-            if (($backupconfig['last_backup']+$backupconfig['time_backup']) <= $now) {
+            if (($backupconfig['last_backup'] + $backupconfig['time_backup']) <= $now) {
                 if ($backupconfig['data_backup'] != "") {
                     $UPDATECONF = "UPDATE {$serendipity['dbPrefix']}dma_sqlbackup SET ";
                     $UPDATECONF .= "        last_backup='".$now."' ";
@@ -522,7 +536,7 @@ class serendipity_event_backup extends serendipity_event
                         $this->getTar();
                         $tar_object = new Archive_Tar($archiv, "gz");
                         $tar_object->setErrorHandling(PEAR_ERROR_RETURN);
-                        $filelist[0]="./last_backup";
+                        $filelist[0] = "./last_backup";
                         $tar_object->create($filelist);
                         chmod($archiv, 0666);
                         chdir($serendipity['serendipityPath']);
@@ -535,7 +549,7 @@ class serendipity_event_backup extends serendipity_event
                         $this->getTar();
                         $tar_object = new Archive_Tar($archiv, FALSE);
                         $tar_object->setErrorHandling(PEAR_ERROR_RETURN);
-                        $filelist[0]="./last_backup";
+                        $filelist[0] = "./last_backup";
                         $tar_object->create($filelist);
                         chmod($archiv, 0666);
                         chdir($serendipity['serendipityPath']);
@@ -686,7 +700,7 @@ class serendipity_event_backup extends serendipity_event
                 $drop = "";
                 $create = "";
                 $rec = file($file);
-                for ($a=0;$a<count($rec);$a++) {
+                for ($a=0; $a < count($rec); $a++) {
                     if (!preg_match("/^##/", $rec[$a])) {
                         if (preg_match("/DROP TABLE/", $rec[$a])) {
                             $drop .= $rec[$a];
@@ -700,7 +714,7 @@ class serendipity_event_backup extends serendipity_event
                     serendipity_db_query(preg_replace("|(`;([\ \\r\\n]{0,})$)|","`", $drop));
                 }
                 #print("<pre>".preg_replace("|(\)([\ (TYPE=MyISAM)]{0,});([\ \\r\\n]{0,})$)|", ")", $create)."</pre>");
-                serendipity_db_query(preg_replace("|(\)([\ (TYPE=MyISAM)]{0,});([\ \\r\\n]{0,})$)|", ")", $create), false, 'both', false, false, false, true); // expectError if exists i.e.
+                serendipity_db_query(preg_replace("|(\)([\ (TYPE=MyISAM)]{0,});([\ \\r\\n]{0,})$)|", ")", $create), false, 'both', false, false, false, true); // expectError, if exists i.e.
             }
         }
         chdir("../../../");
@@ -715,10 +729,10 @@ class serendipity_event_backup extends serendipity_event
                 $rec = fread($fop, filesize($file));
                 fclose($fop);
                 $insert = explode("\nINSERT INTO", $rec);
-                for ($blu=0;$blu<count($insert);$blu++) {
+                for ($blu=0; $blu < count($insert); $blu++) {
                     if ($blu >= 1) {
-                        serendipity_db_query("INSERT INTO".preg_replace("|(\);([\ \\r\\n]{0,})$)|",")",$insert[$blu]));
-                        #print("<pre>INSERT INTO".preg_replace("|(\);([\ \\r\\n]{0,})$)|",")",$insert[$blu])."</pre>");
+                        #print("<pre>INSERT INTO".preg_replace("|(\);([\ \\r\\n]{0,})$)|",")", $insert[$blu])."</pre>");
+                        serendipity_db_query("INSERT INTO".preg_replace("|(\);([\ \\r\\n]{0,})$)|",")", $insert[$blu]), false, 'both', false, false, false, true); // expectError, if exists i.e.
                     }
                 }
             }
@@ -763,12 +777,18 @@ class serendipity_event_backup extends serendipity_event
         if (isset($serendipity['POST']['action']) && $serendipity['POST']['action'] == "makesqlbackup") {
             $STATUSMSG = '';
             unset($UPDATECONF);
-            if (!isset($serendipity['POST']['complete']) || $serendipity['POST']['complete'] != 1){$serendipity['POST']['complete'] = 0;}
-            if (!isset($serendipity['POST']['drop']) || $serendipity['POST']['drop'] != 1){$serendipity['POST']['drop'] = 0;}
-            if (!isset($serendipity['POST']['pack']) || $serendipity['POST']['pack'] != 1){$serendipity['POST']['pack'] = 0;}
+            if (!isset($serendipity['POST']['complete']) || $serendipity['POST']['complete'] != 1) {
+                $serendipity['POST']['complete'] = 0;
+            }
+            if (!isset($serendipity['POST']['drop']) || $serendipity['POST']['drop'] != 1) {
+                $serendipity['POST']['drop'] = 0;
+            }
+            if (!isset($serendipity['POST']['pack']) || $serendipity['POST']['pack'] != 1) {
+                $serendipity['POST']['pack'] = 0;
+            }
             $DATA_BACKUP = $serendipity['POST']['complete'];
             $DATA_BACKUP .= "|^|";
-            $DATA_BACKUP .= (isset($serendipity['POST']['complete'])&&$serendipity['POST']['complete']==1?serialize(array()):serialize($serendipity['POST']['tables']));
+            $DATA_BACKUP .= (isset($serendipity['POST']['complete']) && $serendipity['POST']['complete'] == 1 ? serialize(array()) : serialize($serendipity['POST']['tables']));
             $DATA_BACKUP .= "|^|";
             $DATA_BACKUP .= $serendipity['POST']['data'];
             $DATA_BACKUP .= "|^|";
@@ -825,7 +845,7 @@ class serendipity_event_backup extends serendipity_event
                     $this->getTar();
                     $tar_object = new Archive_Tar($archiv, "gz");
                     $tar_object->setErrorHandling(PEAR_ERROR_PRINT);
-                    $filelist[0]="./last_backup";
+                    $filelist[0] = "./last_backup";
                     $tar_object->create($filelist);
                     chmod($archiv, 0666);
                     chdir($serendipity['serendipityPath']);
@@ -838,7 +858,7 @@ class serendipity_event_backup extends serendipity_event
                     $this->getTar();
                     $tar_object = new Archive_Tar($archiv, FALSE);
                     $tar_object->setErrorHandling(PEAR_ERROR_PRINT);
-                    $filelist[0]="./last_backup";
+                    $filelist[0] = "./last_backup";
                     $tar_object->create($filelist);
                     chmod($archiv, 0666);
                     chdir($serendipity['serendipityPath']);
@@ -857,7 +877,9 @@ class serendipity_event_backup extends serendipity_event
         if (isset($serendipity['POST']['action']) && $serendipity['POST']['action'] == "makehtmlbackup") {
             $STATUSMSG = '';
             unset($UPDATECONF);
-            if (!isset($serendipity['POST']['complete']) || $serendipity['POST']['complete'] != 1){$serendipity['POST']['complete'] = 0;}
+            if (!isset($serendipity['POST']['complete']) || $serendipity['POST']['complete'] != 1) {
+                $serendipity['POST']['complete'] = 0;
+            }
             $DATA_BACKUP = $serendipity['serendipityPath'];
             $DATA_BACKUP .= "|^|";
 
@@ -924,15 +946,15 @@ class serendipity_event_backup extends serendipity_event
             }
         }
 
-        if (isset($serendipity['POST']['del']) and count($serendipity['POST']['del']) >= 1) {
-            for ($a=0;$a<count($serendipity['POST']['del']);$a++) {
+        if (isset($serendipity['POST']['del']) && count($serendipity['POST']['del']) >= 1) {
+            for ($a = 0; $a < count($serendipity['POST']['del']); $a++) {
                 unlink($ARCHIVDIR."/".basename($serendipity['POST']['del'][$a]));
             }
         }
 
         if (isset($_GET['recover']) && isset($_GET['backup']) && $_GET['recover'] == 1 && trim($_GET['backup']) != "") {
             if (!isset($STATUSMSG)) $STATUSMSG = '';
-            $STATUSMSG .= $this->RecoverSQLBackup($_GET['backup']);
+            $STATUSMSG .= '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . $this->RecoverSQLBackup($_GET['backup']) . '</span>';
         } elseif (isset($_GET['download']) && isset($_GET['backup']) && $_GET['download'] == 1 && trim($_GET['backup']) != "") {
             $file = $BACKUPDIR."/".basename($_GET['backup']);
             $fp = fopen($file,"r");
@@ -982,7 +1004,7 @@ class serendipity_event_backup extends serendipity_event
                 }
             } else {
                 $BACKUPFORM .= '<option value="'.$THISTABLE[0].'"';
-                if ($co==0) { $BACKUPFORM .= ' selected'; }
+                if ($co == 0) { $BACKUPFORM .= ' selected'; }
                 $BACKUPFORM .= '>'.$THISTABLE[0].'</option>';
             }
             $co++;
@@ -1053,7 +1075,7 @@ class serendipity_event_backup extends serendipity_event
                             <div class="form_select">
                                 <label for="serendipity_interval">' . PLUGIN_BACKUP_TIME_BET_BACKUPS . '</label>
                                 <select id="serendipity_interval" name="serendipity[interval]">'."\n";
-        for ($BA=0;$BA<count($BAKAUTO['TIME']);$BA++) {
+        for ($BA = 0; $BA < count($BAKAUTO['TIME']); $BA++) {
             if ($backupconfig['time_backup'] >= 1) {
                 if ($BAKAUTO['TIME'][$BA] == $backupconfig['time_backup']) {
                     $BACKUPFORM .=                 '<option value="'.$BAKAUTO['TIME'][$BA].'" selected>'.$BAKAUTO['TEXT'][$BA]."</option>\n";
@@ -1077,7 +1099,7 @@ class serendipity_event_backup extends serendipity_event
                             <div class="form_select">
                                 <label for="serendipity_delage">' . PLUGIN_BACKUP_OLDER_THAN . '...' . PLUGIN_BACKUP_WILL_BE_DELETED . '</label>
                                 <select id="serendipity_delage" name="serendipity[delage]">'."\n";
-        for ($BA=0;$BA<count($DELAUTO['TIME']);$BA++) {
+        for ($BA = 0; $BA < count($DELAUTO['TIME']); $BA++) {
             if ($backupconfig['time_backdel'] >= 1) {
                 if ($DELAUTO['TIME'][$BA] == $backupconfig['time_backdel']) {
                     $BACKUPFORM .=                 '<option value="'.$DELAUTO['TIME'][$BA].'" selected>'.$DELAUTO['TEXT'][$BA]."</option>\n";
@@ -1147,7 +1169,7 @@ class serendipity_event_backup extends serendipity_event
                 }
             } else {
                 $BACKUPFORM .= '<option value="'.$dir.'"';
-                if ($co==0) { $BACKUPFORM .= ' selected'; }
+                if ($co == 0) { $BACKUPFORM .= ' selected'; }
                 $BACKUPFORM .= '>'.$s9ydir."/".$dir."</option>\n";
             }
             $co++;
@@ -1179,7 +1201,7 @@ class serendipity_event_backup extends serendipity_event
                             <div class="form_select">
                                 <label for="serendipity_interval_html">' . PLUGIN_BACKUP_TIME_BET_BACKUPS . '</label>
                                 <select id="serendipity_interval_html" name="serendipity[interval]">'."\n";
-        for ($BA=0;$BA<count($BAKAUTO['TIME']);$BA++) {
+        for ($BA = 0; $BA < count($BAKAUTO['TIME']); $BA++) {
             if ($htmlbackupconfig['time_backup'] >= 1) {
                 if ($BAKAUTO['TIME'][$BA] == $htmlbackupconfig['time_backup']) {
                     $BACKUPFORM .=                 '<option value="'.$BAKAUTO['TIME'][$BA].'" selected>'.$BAKAUTO['TEXT'][$BA]."</option>\n";
@@ -1203,7 +1225,7 @@ class serendipity_event_backup extends serendipity_event
                             <div class="form_select">
                                 <label for="serendipity_delage_html">' . PLUGIN_BACKUP_OLDER_THAN . '...' . PLUGIN_BACKUP_WILL_BE_DELETED . '</label>
                                 <select id="serendipity_delage_html" name="serendipity[delage]">'."\n";
-        for ($BA=0;$BA<count($DELAUTO['TIME']);$BA++) {
+        for ($BA = 0; $BA < count($DELAUTO['TIME']); $BA++) {
             if ($htmlbackupconfig['time_backdel'] >= 1) {
                 if ($DELAUTO['TIME'][$BA] == $htmlbackupconfig['time_backdel']) {
                     $BACKUPFORM .=                 '<option value="'.$DELAUTO['TIME'][$BA].'" selected>'.$DELAUTO['TEXT'][$BA]."</option>\n";
@@ -1258,7 +1280,7 @@ class serendipity_event_backup extends serendipity_event
             $BACKUPFORM .= "                </tr>\n";
             $BACKUPFORM .= "            </thead>\n";
             $BACKUPFORM .= "            <tbody>\n";
-            for ($bco=0;$bco<count($BACKUPS['NAME']);$bco++) {
+            for ($bco = 0; $bco < count($BACKUPS['NAME']); $bco++) {
                 $BACKUPFORM .= "            <tr>\n";
                 $BACKUPFORM .= '                <td><input id="serendipity_del_' . $bco . '" type="checkbox" name="serendipity[del][]" value="' . $BACKUPS['NAME'][$bco] . '"><label for="serendipity_del_' . $bco . '" class="visuallyhidden">' . PLUGIN_BACKUP_DELETE_MARK . '</label> <a href="'.$serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "") . 'plugin/dlbackup_' . $BACKUPS['NAME'][$bco] . '">' . $BACKUPS['NAME'][$bco] . "</a></td>\n";
                 $BACKUPFORM .= '                <td>' . $this->calcFilesize($BACKUPS['SIZE'][$bco]) . "</td>\n";
@@ -1281,7 +1303,7 @@ class serendipity_event_backup extends serendipity_event
             $BACKUPFORM .= '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_BACKUP_NO_BACKUPS . "</span>\n";
         }
 
-        echo $TITLE;
+        echo "<h3>$TITLE</h3>\n";
         if (isset($STATUSMSG) && trim($STATUSMSG) != "") {
             echo $STATUSMSG;
         }
@@ -1383,7 +1405,7 @@ class serendipity_event_backup extends serendipity_event
                                 header("Content-Disposition: attachment; filename=".$filename);
                                 header("Accept-Ranges: bytes");
                                 header("Connection: close");
-                                $bytes = explode("=",$headers["Range"]);
+                                $bytes = explode("=", $headers["Range"]);
                                 $bytes = $bytes[1];
                                 if (preg_match("@^-([0-9]+)@", $bytes, $bytes_len)) {
                                     $bytes_len = $bytes_len[1];
