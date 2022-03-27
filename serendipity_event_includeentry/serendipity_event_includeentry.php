@@ -616,7 +616,7 @@ class serendipity_event_includeentry extends serendipity_event
         $supported_properties = array('attach_block');
 
         foreach($supported_properties AS $prop_key) {
-            $prop_val = isset($properties[$prop_key]) ? $properties[$prop_key] : null;
+            $prop_val = $properties[$prop_key] ?? null;
             $prop_key = 'ep_' . $prop_key;
 
             if (is_array($prop_val)) {
