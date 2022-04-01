@@ -86,7 +86,7 @@
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Backup Interface&lt;/b&gt;&lt;br /&gt;Provides the ability to automatically make backups from your s9y, the database-tables, the whole database and the files. Only MySQL(i) databases are currently supported. WARNING: This plugin does not work well with large databases or directories.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Mar 2022 12:48:42 +0200</pubDate>
+<pubDate>Sun, 27 Mar 2022 13:41:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
@@ -968,7 +968,7 @@
 <category>Event Plugins</category>
 <author>Tom Sommer, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;Podświetlaj wyszukane frazy&lt;/b&gt;&lt;br /&gt;Podświetla frazy znalezione na Twojej stronie przez wyszukiwarki&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Feb 2022 16:52:27 +0100</pubDate>
+<pubDate>Fri, 01 Apr 2022 11:38:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_searchhighlight</guid>
 </item>
 <item>
