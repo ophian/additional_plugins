@@ -23,7 +23,7 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian Styx');
-        $propbag->add('version',       '2.0.1');
+        $propbag->add('version',       '2.0.2');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -162,10 +162,9 @@ class serendipity_event_searchhighlight extends serendipity_event
                 /* highlight selected static page, if not having a ['GET']['searchTerm'] REQUEST, but coming from a /search/ referrer */
                 if (empty($query)) {
                     // look out for path or query depending mod_rewrite setting
-                    $urlpath = (($serendipity['rewrite'] == 'rewrite')  ? parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH)
-                                                                        : parse_url($_SERVER['HTTP_REFERER'], PHP_URL_QUERY)
-                                );
-                    if (true === strpos($urlpath, 'search/') ) {
+                    $urlpath = $serendipity['rewrite'] == 'rewrite' ? parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH)
+                                                                    : parse_url($_SERVER['HTTP_REFERER'], PHP_URL_QUERY);
+                    if (!is_null($urlpath) && true === strpos($urlpath, 'search/') ) {
                         $urlpath = (function_exists('serendipity_specialchars') ? serendipity_specialchars(strip_tags($urlpath))
                                                                                 : htmlspecialchars(strip_tags($urlpath), ENT_COMPAT, LANG_CHARSET)); // avoid spoofing
                         $path = explode('/', urldecode($urlpath)); // split and decode non ASCII
