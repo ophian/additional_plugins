@@ -1,6 +1,6 @@
 2.0.2:
 -----
- * Fix parse_url()() return check for non-mode_rewrite configurations
+ * Fix parse_url() return check for non-mode_rewrite configurations
 
 2.0.1:
 -----
