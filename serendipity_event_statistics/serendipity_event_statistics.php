@@ -786,7 +786,7 @@ class serendipity_event_statistics extends serendipity_event
                             $link_url   = '';
 
                             if (!empty($com_stat['email'])) {
-                                $link_start = '<a href="mailto:' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($com_stat['email']) : htmlspecialchars($com_stat['email'], ENT_COMPAT, LANG_CHARSET)) . '">';
+                                $link_start = '<a href="mailto:' . serendipity_specialchars($com_stat['email']) . '">';
                                 $link_end   = '</a>';
                             }
 
@@ -795,7 +795,7 @@ class serendipity_event_statistics extends serendipity_event
                                     $com_stat['url'] = 'http://' . $com_stat['url'];
                                 }
 
-                                $link_url = ' (<a href="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($com_stat['url']) : htmlspecialchars($com_stat['url'], ENT_COMPAT, LANG_CHARSET)) . '">' . PLUGIN_EVENT_STATISTICS_OUT_LINK . '</a>)';
+                                $link_url = ' (<a href="' . serendipity_specialchars($com_stat['url']) . '">' . PLUGIN_EVENT_STATISTICS_OUT_LINK . '</a>)';
                             }
 
                             if (empty($com_stat['author'])) {
@@ -864,7 +864,7 @@ class serendipity_event_statistics extends serendipity_event
                                 $tb_stat['author'] = ANONYMOUS;
                             }
 ?>
-                <dt><a href="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($tb_stat['url']) : htmlspecialchars($tb_stat['url'], ENT_COMPAT, LANG_CHARSET)); ?>"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($tb_stat['author']) : htmlspecialchars($tb_stat['author'], ENT_COMPAT, LANG_CHARSET)); ?></a></dt>
+                <dt><a href="<?php echo serendipity_specialchars($tb_stat['url']); ?>"><?php echo serendipity_specialchars($tb_stat['author']); ?></a></dt>
                 <dd><?php echo $tb_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACK2; ?></dd>
 <?php
                         }
