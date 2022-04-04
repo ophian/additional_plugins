@@ -122,7 +122,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Wed, 16 Feb 2022 18:19:37 +0100</pubDate>
+<pubDate>Mon, 04 Apr 2022 17:18:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -1078,7 +1078,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;統計情報&lt;/b&gt;&lt;br /&gt;エントリパネルに興味のある統計へのリンクを加えます。&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Tue, 15 Mar 2022 14:42:19 +0100</pubDate>
+<pubDate>Sat, 02 Apr 2022 11:40:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
