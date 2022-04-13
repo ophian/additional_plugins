@@ -1,3 +1,7 @@
+4.18.0.2:
+---------
+    * Add new CKEplus zip to remove deprecated and removed flash build-in alerts
+
 4.18.0.1:
 ---------
     * Fix empty_dir() method for very old plugin instances
