@@ -1,3 +1,7 @@
+2.11.1:
+-------
+ * Fix empty_dir() method for very old plugin instances
+
 2.11.0:
 -------
  * Prepare to allow AV1 encoded AVIF images

@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '2.11.0');
+        $propbag->add('version',        '2.11.1');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.6.0'
@@ -403,7 +403,7 @@ class serendipity_event_lightbox extends serendipity_event
                 @rmdir($file->__toString());
             }
         }
-        @rmdir(dir);
+        @rmdir($dir);
     }
 
 }
