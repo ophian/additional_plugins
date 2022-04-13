@@ -133,6 +133,11 @@ class serendipity_event_ckeditor extends serendipity_event
                     @unlink($this->cke_path . '/ckeditor/CHANGES.md');
                     @unlink($this->cke_path . '/ckeditor/README.md');
                 }
+                // remove flash plugin directory
+                if (is_file(dirname(__FILE__) . '/ckeditor/plugins/flash/dialogs/flash.js')) {
+                    $this->empty_dir(dirname(__FILE__) . '/ckeditor/plugins/flash');
+                    @rmdir(dirname(__FILE__) . '/ckeditor/plugins/flash');
+                }
                 // remove widget/dev samples directory
                 if (is_file(dirname(__FILE__) . '/ckeditor/plugins/widget/dev/console.js')) {
                     $this->empty_dir(dirname(__FILE__) . '/ckeditor/widget/dev');
@@ -196,7 +201,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.18.0.0'); // is CKEDITOR Series 4.18.0 - and appended plugin revision .0
+        $propbag->add('version',       '4.18.0.1'); // is CKEDITOR Series 4.18.0 - and appended plugin revision .1
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
@@ -447,7 +452,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.18.0.0', '4.17.2.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.18.0.1', '4.18.0.0'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -461,7 +466,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.18.0.0', '4.17.2.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.18.0.1', '4.18.0.0'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
@@ -498,7 +503,7 @@ class serendipity_event_ckeditor extends serendipity_event
                 @rmdir($file->__toString());
             }
         }
-        @rmdir(dir);
+        @rmdir($dir);
     }
 
     function event_hook($event, &$bag, &$eventData, $addData = null)
