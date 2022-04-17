@@ -27,7 +27,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
                                         'backend_display'                   => true));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.24');
+        $propbag->add('version', '1.25');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -197,7 +197,7 @@ meta_properties_permalink {
 
                 case 'backend_publish':
                 case 'backend_save':
-                    if (!isset($serendipity['POST']['permalink']) || !isset($eventData['id']) || false !== strpos($permalink, 'unknown.html')) {
+                    if (!isset($serendipity['POST']['permalink']) || !isset($eventData['id']) || false !== strpos($serendipity['POST']['permalink'], 'unknown.html')) {
                         return true;
                     }
                     serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = '" . $eventData['id'] . "' AND property = 'permalink'");
