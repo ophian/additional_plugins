@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_custom_permalinks&lt;br /&gt;Stálé odkazy pro příspěvky&lt;/b&gt;&lt;br /&gt;Můžete definovat stálé odkazy k jednotlivým příspěvkům. Lze použít pouze URL vzory, které JEŠTĚ NEJSOU používané - používání stálých odkazů ve tvaru /archives/odkaz není tedy možné. Ale používání jakéhokoliv jiného (virtuálního) adresáře možné je.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 17 Apr 2022 11:01:13 +0200</pubDate>
+<pubDate>Sun, 17 Apr 2022 11:53:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_custom_permalinks</guid>
 </item>
 <item>

@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_custom_permalinks&lt;br /&gt;Frei-definierbare Permalinks zu Einträgen&lt;/b&gt;&lt;br /&gt;Ermöglicht die Eingabe eines individuellen Permalinks (dauerhafter Link) um spezifische Artikel aufzurufen. Es können nur URL-Muster verwendet werden, die nicht bereits intern verwendet werden - eigene Permalinks innerhalb der /archives/ Struktur sind daher nicht möglich. Aber andere, auch nicht existierende, Verzeichnisse können verwendet werden.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 17 Apr 2022 11:01:13 +0200</pubDate>
+<pubDate>Sun, 17 Apr 2022 11:53:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_custom_permalinks</guid>
 </item>
 <item>
