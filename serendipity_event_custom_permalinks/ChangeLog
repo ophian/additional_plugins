@@ -1,3 +1,18 @@
+1.24:
+----
+
+ * Do not allow 'unknown.html' custom permalink example URLs to be saved or accessed as a custom permalink.
+
+   UPGRADERS:
+    If you used this plugin before and did not always change the entryforms custom permalink input field value
+    each time you saved a NEW entry, then you probably have some of these default URL values pointing to your entries.
+    It did not do any other harm than to allow calling the first of these entries by "YourBlog/permalink/unknown.html".
+    To avoid having such unnecessary entry property values, please clean up your database entryproperties table
+    (replace "dbPrefix" by your prefix) simply by:
+    ....
+    DELETE FROM dbPrefix_entryproperties WHERE property = 'permalink' AND value LIKE '%/unknown.html'
+    ....
+
 1.23:
 ----
 

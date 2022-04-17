@@ -27,7 +27,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
                                         'backend_display'                   => true));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.23');
+        $propbag->add('version', '1.24');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -81,6 +81,11 @@ class serendipity_event_custom_permalinks extends serendipity_event
                         $nice_url = $serendipity['serendipityHTTPPath'] . $addData['uriargs'];
                     } else {
                         $nice_url = $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/' . $addData['uriargs'];
+                    }
+
+                    // do not allow default example page
+                    if (false !== strpos($nice_url, 'unknown.html')) {
+                        break;
                     }
 
                     $myi = strpos($nice_url, '&');
@@ -181,7 +186,7 @@ meta_properties_permalink {
                             </legend>
                         </span>
                         <div class="form_field">
-                            <input id="properties_permalink" class="input_textbox" type="text" style="width: 100%;" name="serendipity[permalink]" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($permalink) : htmlspecialchars($permalink, ENT_COMPAT, LANG_CHARSET)); ?>" />
+                            <input id="properties_permalink" class="input_textbox" type="text" style="width: 100%;" name="serendipity[permalink]" value="<?php echo serendipity_specialchars($permalink); ?>" />
                         </div>
                         <div id="meta_properties_permalink" class="clearfix xfield_info additional_info">
                             <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL_DESC; ?></span>
@@ -192,7 +197,7 @@ meta_properties_permalink {
 
                 case 'backend_publish':
                 case 'backend_save':
-                    if (!isset($serendipity['POST']['permalink']) || !isset($eventData['id'])) {
+                    if (!isset($serendipity['POST']['permalink']) || !isset($eventData['id']) || false !== strpos($permalink, 'unknown.html')) {
                         return true;
                     }
                     serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = '" . $eventData['id'] . "' AND property = 'permalink'");
