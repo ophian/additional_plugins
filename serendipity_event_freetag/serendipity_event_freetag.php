@@ -3,7 +3,6 @@
  * PRIORITY
  * - get some kind of data-sharing protocol in action.  It is very difficult
  *   tracing out what the hell is going on with this thing. (RQ: ?)
- * - Refactor out the entryproperties dependency, and use our own space (RQ: ?)
  *
  * TODO:
  * - - convert database structure to a truly 3rd normal form (RQ: ?)
@@ -45,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.18');
+        $propbag->add('version',       '5.19');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2630,6 +2629,10 @@ document.addEventListener("DOMContentLoaded", function() {
                                           ON e.id = et.entryid",
                                           false,
                                           'assoc');
+
+        if (!is_array($e)) {
+            return; // empty case
+        }
 
         // Get all categories and tags of all entries
         $entries = array();

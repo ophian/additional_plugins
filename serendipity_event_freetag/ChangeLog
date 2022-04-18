@@ -1,3 +1,7 @@
+5.19:
+-----
+ * Check an empty case conversion of assigned categories of existing entries to tags
+
 5.18:
 -----
  * Fix install, checking existing tables known to fail
