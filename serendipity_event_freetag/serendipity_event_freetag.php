@@ -45,7 +45,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.17');
+        $propbag->add('version',       '5.18');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -419,9 +419,9 @@ class serendipity_event_freetag extends serendipity_event
         global $serendipity;
 
         $q = "SELECT count(tag) FROM {$serendipity['dbPrefix']}" . $table;
-        $row = serendipity_db_query($q, true, 'num');
+        $row = serendipity_db_query($q, true, 'num', false, false, false, true); // set single true and last expectError true, since table is known to fail when not exist
 
-        if (!is_numeric($row[0])) { // if the response we got back was an SQL error.. :P
+        if (!isset($row[0]) || !is_numeric($row[0])) { // if the response we got back was an SQL error.. :P
             return false;
         } else {
             return true;
