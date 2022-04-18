@@ -107,10 +107,10 @@ class TwitterPluginDbAccess
     {
         global $serendipity;
 
-        $q = "select count(*) from {$serendipity['dbPrefix']}" . $table;
-        $row = serendipity_db_query($q, true, 'num');
+        $q = "SELECT COUNT(*) FROM {$serendipity['dbPrefix']}" . $table;
+        $row = serendipity_db_query($q, true, 'num', false, false, false, true); // set single true and last expectError true, since table is known to fail when not exist
 
-        if (!is_numeric($row[0])) {        // if the response we got back was an SQL error.. :P
+        if (!isset($row[0]) || !is_numeric($row[0])) {        // if the response we got back was an SQL error.. :P
             return false;
         } else {
             return true;
