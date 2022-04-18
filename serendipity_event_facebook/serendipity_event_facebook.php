@@ -24,7 +24,7 @@ class serendipity_event_facebook extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.3'
         ));
-        $propbag->add('version',       '2.1.0');
+        $propbag->add('version',       '2.1.1');
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $propbag->add('event_hooks', array(
             'frontend_display'  => true,
@@ -62,10 +62,10 @@ class serendipity_event_facebook extends serendipity_event
         global $serendipity;
 
         $q = "SELECT COUNT(*) FROM {$serendipity['dbPrefix']}" . $table;
-        $row = serendipity_db_query($q, true, 'num');
+        $row = serendipity_db_query($q, true, 'num', false, false, false, true); // set single true and last expectError true, since table is known to fail when not exist
 
         // if the response we got back was an SQL error.. :P
-        if (!is_numeric($row[0])) {
+        if (!isset($row[0]) || !is_numeric($row[0])) {
             return false;
         } else {
             return true;
