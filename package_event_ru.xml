@@ -1177,11 +1177,11 @@
 <description>Replaces words with a new selected string (useful for acronyms)</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.5</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2021-02-04</date>
+  <version>1.5.0</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>5.7</requirements:phpVersion>
+  <date>2022-04-22</date>
   <filelist>
     <dir name="serendipity_event_contentrewrite">
       <file>ChangeLog</file>

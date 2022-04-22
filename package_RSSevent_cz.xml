@@ -184,8 +184,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_contentrewrite</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_contentrewrite&lt;br /&gt;Přepisovač obsahu&lt;/b&gt;&lt;br /&gt;Nahrazuje slovat libovolným řetězcem (užitečné pro vkládání akronymů)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 04 Feb 2021 19:16:14 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_contentrewrite&lt;br /&gt;Přepisovač obsahu&lt;/b&gt;&lt;br /&gt;Nahrazuje slovat libovolným řetězcem (užitečné pro vkládání akronymů)&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 22 Apr 2022 15:00:26 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contentrewrite</guid>
 </item>
 <item>
