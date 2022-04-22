@@ -17,7 +17,7 @@
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', '%s번 설명 문장');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', '설명을 여기에 적으십시오 ({변환})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', '변환할 문자열');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRINGDESC', '변환을 할 때 쓸 문자열을 지정합니다. 변환을 원하는 위치에 {원본}과 {변환}을 적으십시오.' . "\n" . '용례: <acronym title="{to}">{from}</acronym>');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', '변환을 할 때 쓸 문자열을 지정합니다. 변환을 원하는 위치에 {원본}과 {변환}을 적으십시오.' . "\n" . '용례: <acronym title="{to}">{from}</acronym>');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', '변환할 문자');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', '강제로 변환하기 위해 단어 끝에 붙이는 문자가 있다면 여기에 지정합니다. \'serendipity*\'를 다른 단어로 변환하는 경우 \'*\'는 제거하고 싶으면 해당 문자를 여기에 적게 됩니다.');
 

@@ -20,7 +20,7 @@
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', 'Descripción #%s');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', 'Ingresa la descripción aquí ({a})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'Cadena de reemplazo');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRINGDESC', 'La cadena utilizada para reemplazar. Posiciona {de} y {a} donde desees para conseguir un reemplazo.' . "\n" . 'Por ejemplo: <acronym title="{a}">{de}</acronym>');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', 'La cadena utilizada para reemplazar. Posiciona {de} y {a} donde desees para conseguir un reemplazo.' . "\n" . 'Por ejemplo: <acronym title="{a}">{de}</acronym>');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', 'Caracter de reemplazo');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'Si existe algún caracter que añadiste para forzar el reemplazo, ingrésalo aquí. Por ejemplo: si sólo deseabas reemplazar \'serendipity*\' con lo que ingresaste para esa palabra y quieres el \'*\' eliminado, ingrésalo aquí.');
 

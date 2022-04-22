@@ -27,7 +27,7 @@
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', '改寫字 #%s');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', '輸入改寫字 ({到})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', '改寫字串');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRINGDESC', '改寫的字串。將 {改} 和 {到} 放在要改寫的地方。' . "\n" . '範例: <acronym title="{到}">{改}</acronym>');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', '改寫的字串。將 {改} 和 {到} 放在要改寫的地方。' . "\n" . '範例: <acronym title="{到}">{改}</acronym>');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', '改寫符號');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', '改寫符號可以用來分辨應該改寫和不該改寫的字。如果改寫符號是 * 那只輸入 \'s9y\' 並不會被改寫，除非輸入 \'s9y*\'。');
 

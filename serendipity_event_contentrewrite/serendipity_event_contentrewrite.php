@@ -30,11 +30,11 @@ class serendipity_event_contentrewrite extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '1.4.5');
+        $propbag->add('version',       '1.5.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '5.7'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',    array(
@@ -135,7 +135,7 @@ class serendipity_event_contentrewrite extends serendipity_event
 
     function example()
     {
-        return sprintf(PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING, $this->fromstring, $this->tostring);
+        return sprintf(PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_EX, $this->fromstring, $this->tostring);
     }
 
     function install()
@@ -151,9 +151,10 @@ class serendipity_event_contentrewrite extends serendipity_event
 
     function introspect_config_item($name, &$propbag)
     {
-        if (is_array($this->markup_elements)) {
+        // check isset for install loop
+        if (isset($this->markup_elements) && is_array($this->markup_elements)) {
             foreach($this->markup_elements AS $element) {
-                if ($name==$element['name']) {
+                if ($name == $element['name']) {
                     $propbag->add('type',        'boolean');
                     $propbag->add('name',        constant($name));
                     $propbag->add('description', sprintf(APPLY_MARKUP_TO, constant($name)));
@@ -203,7 +204,7 @@ class serendipity_event_contentrewrite extends serendipity_event
             case 'rewrite_string':
                 $propbag->add('type',         'string');
                 $propbag->add('name',         PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING);
-                $propbag->add('description',  PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRINGDESC);
+                $propbag->add('description',  PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC);
                 break;
 
             case 'rewrite_char':
@@ -228,8 +229,8 @@ class serendipity_event_contentrewrite extends serendipity_event
             foreach($this->rewrite_from AS $key => $val) {
 ?>
     <tr>
-        <th style="font-size: 8pt; color: white;"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET)); ?></th>
-        <td><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($this->rewrite_to[$key]) : htmlspecialchars($this->rewrite_to[$key], ENT_COMPAT, LANG_CHARSET)); ?></td>
+        <th style="font-size: 8pt; color: white;"><?php echo serendipity_specialchars($val); ?></th>
+        <td><?php echo serendipity_specialchars($this->rewrite_to[$key]); ?></td>
     </tr>
 <?php
             }

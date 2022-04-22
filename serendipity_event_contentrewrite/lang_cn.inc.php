@@ -15,8 +15,8 @@
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', '描述 #%s');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', '对缩略词的描述 ({到})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', '重写字符串');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRINGDESC', '用于重写的字符串。将{从}和{到}放在需要重写的任何地方。' . "\n" . '例如: <acronym title="{到}">{从}</acronym>');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', '用于重写的字符串。将{从}和{到}放在需要重写的任何地方。' . "\n" . '例如: <acronym title="{到}">{从}</acronym>');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', '重写字符');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', '如果有任何附加的单个字符用于重写，将它输入在此。如果你想将\'serendipity*\'用你输入的单词替换，同时又想把\'*\'这个字符去除掉的话，那就把该字符(此例中该字符为*号)输入此处。');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', '在你的设置中，用于进行替换的字符串是 %s 和 %s 。');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_EX', '在你的设置中，用于进行替换的字符串是 "%s" 和 "%s" 。');
 

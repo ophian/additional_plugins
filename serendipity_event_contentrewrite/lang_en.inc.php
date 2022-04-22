@@ -21,8 +21,8 @@
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', 'Description #%s');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', 'Enter the description here ({to})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'Rewrite string');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRINGDESC', 'The string used to rewrite. Place {from} and {to} anywhere you like to get a rewrite.' . "\n" . 'Example: <acronym title="{to}">{from}</acronym>');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', 'The string used to rewrite. Place {from} and {to} anywhere you like to get a rewrite.' . "\n" . 'Example: <acronym title="{to}">{from}</acronym>');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', 'Rewrite char');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'If there is any char you append to force rewriting, enter it here. If you want to only replace \'serendipity*\' with what you entered for that word but want the \'*\' removed, enter that char here.');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'The strings to perform replacements in your environment are %s and %s.');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_EX', 'The strings to perform replacements in your environment are "%s" and "%s".');
 

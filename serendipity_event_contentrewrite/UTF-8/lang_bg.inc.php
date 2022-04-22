@@ -21,8 +21,8 @@
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', 'Описание #%s');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', 'Въведете описание на думата (акронима) тук ({към})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'Заменящ стринг');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRINGDESC', 'Стрингът, използван за подмяната на думата с описанието й. Поставете {от} и {към}, където желаете да имате подмяна.' . "\n" . 'Пример: <acronym title="{към}">{от}</acronym>');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', 'Стрингът, използван за подмяната на думата с описанието й. Поставете {от} и {към}, където желаете да имате подмяна.' . "\n" . 'Пример: <acronym title="{към}">{от}</acronym>');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', 'Символ за фисиране на подмяна');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'Ако е предвиден символ за предизвикване на подмяна, въведете го тук. Ако искате да замените \'serendipity*\' с каквото сте въвели за тази дума, но желаете \'*\' да се пропуска, въведете този символ тук.');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'Стринговете за изпълнение на подмяна във вашата конфигурация са %s и %s.');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_EX', 'Стринговете за изпълнение на подмяна във вашата конфигурация са "%s" и "%s".');
 

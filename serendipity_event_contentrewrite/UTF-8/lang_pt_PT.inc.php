@@ -27,7 +27,7 @@
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', 'Descrição #%s');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', 'Introduza a descrição aqui ({para})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'Texto de substituição');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRINGDESC', 'Introduza o texto com o qual pretende substituir a palavra que escolheu. Vous pouvez utiliserPode utilizar {de} e {para} onde desejar para juntar uma reescrita.' . "\n" . 'Exemplo: <acronym title="{vers}">{de}</acronym>');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', 'Introduza o texto com o qual pretende substituir a palavra que escolheu. Vous pouvez utiliserPode utilizar {de} e {para} onde desejar para juntar uma reescrita.' . "\n" . 'Exemplo: <acronym title="{vers}">{de}</acronym>');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', 'Caracter de reescrita');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'Se utiliza um caracter especial para forçar a reescrita, introduza-lo aqui. Exemplo: se deseja somente substituir \'palavra*\' com o texto que definiu, mas não quer que o \'*\' seja mostrados, introduza o caracter aqui.');
 

@@ -1,3 +1,9 @@
+1.5.0:
+-----
+ * Fix and add (missing) example constant
+ * Fix a non initialized variable check on install
+ * Raise requirements
+
 1.4.5:
 -----
  * Fix and improve markup_element check for consistency
