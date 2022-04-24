@@ -1,3 +1,8 @@
+1.3.2:
+------
+ * Fix a wrong variable check in plugin_userprofile.tpl template
+   PLEASE CHECK possible theme copies!
+
 1.3.1:
 ------
  * Restrict frontend profiles to singular viewAuthor requests only

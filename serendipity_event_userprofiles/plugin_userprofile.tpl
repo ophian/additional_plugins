@@ -24,7 +24,7 @@
     <dt>{$userProfileProperties.country.desc}</dt>
     <dd>{$userProfile.country}</dd>
 {/if}
-{if $userProfile.occupation AND isset($userProfile.show_birthday) AND $userProfile.show_occupation == "true"}
+{if $userProfile.occupation AND isset($userProfile.occupation) AND $userProfile.show_occupation == "true"}
     <dt>{$userProfileProperties.occupation.desc}</dt>
     <dd>{$userProfile.occupation}</dd>
 {/if}
