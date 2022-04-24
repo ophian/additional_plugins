@@ -31,7 +31,7 @@
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_NEXT_INTEGRITY', 'Überprüfe Integrität'); // = next function msg
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_NEXT_COPY', 'Kopiere das Update'); // = next function msg
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_NEXT_CLEAN', 'Lösche den vorläufigen Autoupdate Ordner'); // = next function msg
-@define('PLUGIN_AUTOUPD_MSG_FLUSH_NEXT_FINISH', 'Beende Verarbeitungsfunction'); // = next function msg
+@define('PLUGIN_AUTOUPD_MSG_FLUSH_NEXT_FINISH', 'Beende Verarbeitungsfunktion'); // = next function msg
 
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_FINI_CLEANUP', 'Aufräumen der temporären Autoupdate-Verarbeitung beendet!');
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_INST_GO', '<a href="%s">Klicken Sie hier, um den eigentlichen Serendipity Installer zu starten</a>!');
