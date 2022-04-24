@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the Dashboard (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the blog directly with one click from within the adminarea. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate Notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 20 Apr 2022 19:22:01 +0200</pubDate>
+<pubDate>Sun, 24 Apr 2022 15:59:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -1240,7 +1240,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;ユーザープロフィール&lt;/b&gt;&lt;br /&gt;簡単なユーザープロフィールを表示します。&lt;br/&gt;For: Serendipity 3.5</content:encoded>
-<pubDate>Thu, 24 Mar 2022 18:04:39 +0100</pubDate>
+<pubDate>Sun, 24 Apr 2022 15:56:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
