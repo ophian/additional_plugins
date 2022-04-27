@@ -74,7 +74,7 @@ progress[value]::-moz-progress-bar {background-image:-moz-linear-gradient(135deg
 #information span > span{color:#ff3600}
 #autobut {margin-bottom:.5em;}
 @media only screen and (min-width:768px) {body {font-size:1em}
-h1 {font-size:2em;line-height:1.5em;margin:.75em 0 0}
+h1 {font-size:1.75em;line-height:1.5em;margin:.75em 0 0}
 h2 {font-size:1.5em;line-height:1em;margin:1em 0}
 }
 @media only screen and (min-width:1024px) {#banner,#content {float:left;margin:0 2% 0 0}
