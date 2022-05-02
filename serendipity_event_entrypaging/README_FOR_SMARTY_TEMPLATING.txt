@@ -1,3 +1,5 @@
+Register Smarty function in your config.inc.php template file
+
 // serendipity_event_entrypaging plugin workaround, to be able to use our own Smarty function for output in entries.tpl
 function smarty_entrypagination($params, $template) {
     $plink = isset($template->smarty->tpl_vars['pagination_prev_link']) ? $template->smarty->tpl_vars['pagination_prev_link'] : null;
@@ -31,7 +33,7 @@ Then you can place {entrypagination} anywhere in you entries tpl file and can st
 
 ######################################################################################################################
 
-OR just use this snippet to not call that function on every request inside the entries.tpl entry foreach loop (in example above your section id="comments"..):
+OR BETTER just use this snippet to not call that function on every request inside the entries.tpl entry foreach loop (in example above your section id="comments"..):
 
 {if $is_single_entry AND NOT $is_preview AND NOT empty($smarty_entrypaging)}
     <div id="serendipity_smarty_entrypaging">

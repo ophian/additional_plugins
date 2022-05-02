@@ -19,7 +19,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
-        $propbag->add('version',       '1.79');
+        $propbag->add('version',       '1.80');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -159,11 +159,13 @@ class serendipity_event_entrypaging extends serendipity_event
 ';
                     break;
 
-                case 'entry_display':
                 case 'entries_header':
+                case 'entry_display':
                 case 'entries_footer':
                     if (isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
+
                         $placement = $this->get_config('placement', 'top');
+
                         if (($placement == 'top' || $placement == 'smarty') && $event == 'entries_header') {
                             $disp = '1';
                         }
@@ -243,7 +245,7 @@ class serendipity_event_entrypaging extends serendipity_event
                                 if (!isset($cond['joinct'])) {
                                     $cond['joinct'] = '';
                                 }
-                                if ($serendipity['dbType'] ==  'mysql' || $serendipity['dbType'] == 'mysqli') {
+                                if ($serendipity['dbType'] == 'mysqli') {
                                     $sql_order = "ORDER BY RAND()";
                                 } else {
                                     // SQLite and PostgreSQL support this, hooray.
@@ -274,15 +276,17 @@ class serendipity_event_entrypaging extends serendipity_event
                             unset($serendipity['entrypaging']['randomlink']);
                         }
 
-                        $links = array();
-                        $randomlink = $serendipity['entrypaging']['randomlink'] ?? '';
+                        if ($placement != 'smarty') {
+                            $links = array();
+                            $randomlink = $serendipity['entrypaging']['randomlink'] ?? '';
 
-                        if ($link = $this->makeLink(($serendipity['entrypaging']['prevID'] ?? $prevID), 'prev')) {
-                            $links[] = '<span class="serendipity_entrypaging_left"><span class="epicon">&lt;</span> ' . $link . '</span>';
-                        }
+                            if ($link = $this->makeLink(($serendipity['entrypaging']['prevID'] ?? $prevID), 'prev')) {
+                                $links[] = '<span class="serendipity_entrypaging_left"><span class="epicon">&lt;</span> ' . $link . '</span>';
+                            }
 
-                        if ($link = $this->makeLink(($serendipity['entrypaging']['nextID'] ?? $nextID), 'next')) {
-                            $links[] = '<span class="serendipity_entrypaging_right">' . $link . ' <span class="epicon">&gt;</span></span>';
+                            if ($link = $this->makeLink(($serendipity['entrypaging']['nextID'] ?? $nextID), 'next')) {
+                                $links[] = '<span class="serendipity_entrypaging_right">' . $link . ' <span class="epicon">&gt;</span></span>';
+                            }
                         }
 
                         // choose method of display
