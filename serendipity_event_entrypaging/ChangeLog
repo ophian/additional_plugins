@@ -1,7 +1,7 @@
+1.81:
 1.80:
 -----
  * Improve README_FOR_SMARTY_TEMPLATING
- * Run internal makeLink() on placement top/bottom cases only
  * Remove old 'mysql' DB connection reference checkup
 
 1.79:
