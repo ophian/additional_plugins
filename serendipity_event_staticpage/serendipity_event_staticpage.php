@@ -1097,7 +1097,7 @@ class serendipity_event_staticpage extends serendipity_event
                                             name varchar(128) DEFAULT NULL,
                                             value text) {UTF_8}");
 
-            // Set fulltext indizes of tables ? Is that working here? Should not... and just return true without accessing serendipity_db_query() method
+            // Set fulltext indexes of tables ? Is that working here? Should not... and just return true without accessing serendipity_db_query() method
             #serendipity_db_schema_import("CREATE {FULLTEXT_MYSQL} INDEX staticentry_idx on {$serendipity['dbPrefix']}staticpages (headline, content);");
 
             // set to latest built
@@ -1800,7 +1800,7 @@ class serendipity_event_staticpage extends serendipity_event
         foreach($this->config AS $staticpage_config) {
             $cvar = $this->get_static($staticpage_config);
             // this is, where eg {$staticpage_articleformattitle} and headline etc are assigned, which needs the fixUTFEntity or single escape with double_encode:false on Smarty side, or overwrite assignment at line 1576 ff
-            if ($staticpage_config != 'pre_content') { // We dont need to assign *_pre_content here, which is the internal used variable and field name; Template used *_precontent is defined later on ~1815 ff
+            if ($staticpage_config != 'pre_content') { // We don't need to assign *_pre_content here, which is the internal used variable and field name; Template used *_precontent is defined later on ~1815 ff
                 $serendipity['smarty']->assign($pagevar . $staticpage_config, $cvar);
             }
             // This is a global variable assignment, so that within entries.tpl you can access $smarty.env.staticpage_pagetitle. Otherwise, $staticpage_pagetitle would only be available to index.tpl and content.tpl
@@ -2354,7 +2354,9 @@ class serendipity_event_staticpage extends serendipity_event
         $rcid = isset($insert_page['related_category_id']) ? (int)$insert_page['related_category_id'] : null;
 
         // remove previous custom sets
-        if (isset($insert_page['custom'])) unset($insert_page['custom']);
+        if (isset($insert_page['custom'])) {
+            unset($insert_page['custom']);
+        }
 
         if (!isset($this->staticpage['id'])) {
             $cpo = $this->getChildPage($insert_page['parent_id']); // case new
@@ -2391,8 +2393,8 @@ class serendipity_event_staticpage extends serendipity_event
                 // Note to user, that this has changed an already otherwise set category related staticpage and what to do
                 $pcp     = $this->fetchCatProp($rcid); // $pcp = previous category page
                 $pcpdata = $this->getStaticPage($pcp);
-                // case no entry had been set before, or case previous category id was gt 0 and != $pid
-                if (empty($pcp) || $pcp > 0 && $pcp != $pid) {
+                // case no entry had been set before, OR case previous category id was gt 0 AND != $pid
+                if (empty($pcp) || ($pcp > 0 && $pcp != $pid)) {
                     // only assign note to smarty in the latter case, where an entry was really changed
                     if (!empty($pcp) && $pcp != $pid) {
                         $serendipity['smarty']->assign(array(
@@ -3220,7 +3222,9 @@ class serendipity_event_staticpage extends serendipity_event
         $serendipity['smarty']->registerPlugin('function', 'staticpage_input', array($this, 'SmartyInspectConfig'));
         $serendipity['smarty']->registerPlugin('function', 'staticpage_input_finish', array($this, 'SmartyInspectConfigFinish'));
 
-        if ($serendipity['wysiwyg']) $serendipity['smarty']->assign('custom_wysiwyg', true);
+        if ($serendipity['wysiwyg']) {
+            $serendipity['smarty']->assign('custom_wysiwyg', true);
+        }
 
         $filename = preg_replace('@[^a-z0-9\._-]@i', '', $serendipity['POST']['backend_template']);
         // check for other templates, else set default and check for old staticpage used internal, which is removed
