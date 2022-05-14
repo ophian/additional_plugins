@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.48');
+        $propbag->add('version', '6.49');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -2820,7 +2820,7 @@ class serendipity_event_staticpage extends serendipity_event
                         $pcid = serendipity_db_query("SELECT categoryid FROM {$serendipity['dbPrefix']}staticpage_categorypage WHERE staticpage_categorypage = " . (int)$serendipity['POST']['staticpage'] . " LIMIT 1", true, 'assoc');
                         serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}staticpages WHERE id = " . (int)$serendipity['POST']['staticpage']);
                         // case delete staticpage by id - keep track on relcat table
-                        if (is_numeric($pcid['categoryid']) && $pcid['categoryid'] > 0) {
+                        if (isset($pcid['categoryid']) && is_numeric($pcid['categoryid']) && $pcid['categoryid'] > 0) {
                             $this->setCatProps((int)$pcid['categoryid'], null, true);
                         }
                         // RQ: note table combine to user? (No, since we do not do this on new staticpages either.)

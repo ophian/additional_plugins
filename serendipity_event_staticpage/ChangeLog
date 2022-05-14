@@ -1,3 +1,7 @@
+6.49:
+-----
+ * Better check related category table action when deleting a staticpage by id
+
 6.48:
 -----
  * Fix install with enabled mysqli_sql_exception, which triggered an erroneous behaviour
