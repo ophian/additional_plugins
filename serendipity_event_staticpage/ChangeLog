@@ -1,3 +1,13 @@
+6.50:
+-----
+ * Fix backend_template COOKIE readout to POST form array for the "default"
+   ['custom_template.tpl', 'default_staticpage_backend.tpl', 'responsive_template.tpl']
+   templates, with the "responsive" being the Standard and fallback template.
+
+   NOTE: If using a custom (personal) backend template form file
+         eg. like in the timeline theme [ 'timeline_staticpage_backend.tpl' ]
+         please make sure to name it uniquely and different from the 3 standard ones!
+
 6.49:
 -----
  * Better check related category table action when deleting a staticpage by id

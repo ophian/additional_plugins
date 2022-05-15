@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.49');
+        $propbag->add('version', '6.50');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -2842,8 +2842,9 @@ class serendipity_event_staticpage extends serendipity_event
                             $serendipity['POST']['backend_template'] = 'responsive_template.tpl'; // set as (new) default form selected
                             $serendipity['COOKIE']['backend_template'] = null;
                         }
-                        // For case a template custom form had been set, stored in cookie and the theme was switched to another in the meantime, we need a fallback
-                        if (!file_exists($serendipity['serendipityPath'] . $serendipity['templatePath'] . $serendipity['template'] . '/backend_templates/' . $serendipity['COOKIE']['backend_template'])) {
+                        // For case a template custom form had been set, stored in cookie and the theme was switched to another in the meantime, we need a fallback to the Standard Form template
+                        if ((isset($serendipity['COOKIE']['backend_template']) && !in_array($serendipity['COOKIE']['backend_template'], ['custom_template.tpl', 'default_staticpage_backend.tpl', 'responsive_template.tpl']))
+                         && !file_exists($serendipity['serendipityPath'] . $serendipity['templatePath'] . $serendipity['template'] . '/backend_templates/' . $serendipity['COOKIE']['backend_template'])) {
                              $serendipity['POST']['backend_template'] = 'responsive_template.tpl'; // set as (new) default form selected
                         }
                         $serendipity['smarty']->assign('sp_defpages_jsCookie', '');
