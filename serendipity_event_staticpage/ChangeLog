@@ -1,3 +1,32 @@
+6.51:
+-----
+ * Overwrite ("existing" COOKIE) backend form template name opening an existing staticpage
+   for edit via the staticpage entries list, when the "custom" template form was used to
+   create its values and some custom options (other than the auto "nl2br" [wysiwyg] option)
+   were set.
+   So this entry will open up again within the custom form generally per default to not
+   lose or forget preset data.
+
+   NOTE: YOU can still force this page running with an other selectable "Backend Template"
+         by using the the forms top navigation bar, which sets a remembered backend_template
+         COOKIE for all further page edits!
+         Additionally, sending a staticpage form by SUBMIT generally sets the current used
+         form template as the remembered COOKIE stored template name.
+   EXAMPLE:
+         So, once have sent a staticpage submit with eg. the 'custom_template' form, all
+         further staticpage entry form requests will use this template, as long the COOKIE
+         exists and is readable. BUT:
+         If you generally use the Standard "responsive" template form for staticpages and
+         just have some exceptional entries using the "custom" form, YOU now need to return
+         setting the COOKIE for all further entries again, after having submitting an entry
+         with the "custom" form, just by switching another entry (or the same) to another
+         backend template via the selectable staticpage form top navigation bar.
+
+         SOUNDS COMPLICATED, BUT ISN'T ! ;-)
+
+         If you don't care, sticking to the "custom" template generally does not matter
+         anything. It is just an extended "responsive" form (example).
+
 6.50:
 -----
  * Fix backend_template COOKIE readout to POST form array for the "default"

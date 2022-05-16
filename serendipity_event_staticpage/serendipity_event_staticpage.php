@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.50');
+        $propbag->add('version', '6.51');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -2833,6 +2833,16 @@ class serendipity_event_staticpage extends serendipity_event
                 if (false === serendipity_db_bool($this->get_config('showlist', 'true')) || isset($serendipity['POST']['staticpage']) ) {
                     // this is the default SELECT list block
                     $serendipity['smarty']->assign('sp_defpages_showlist', false);
+
+                    // Check an existing staticpage entry build by the custom template to reopen it in there
+                    if (isset($this->staticpage['custom']) && is_array($this->staticpage['custom'])) {
+                        // check singular key (auto set) custom nl2br 'wysiwyg' exception, not particular in need for the custom template
+                        if (!isset($this->staticpage['custom']['wysiwyg'])) {
+                            $serendipity['COOKIE']['backend_template'] = 'custom_template.tpl';
+                        } else if (count($this->staticpage['custom']) > 1) {
+                            $serendipity['COOKIE']['backend_template'] = 'custom_template.tpl';
+                        }
+                    }
 
                     // case start, or update, or expired cookie - make sure to get a form selected
                     if (empty($serendipity['POST']['backend_template'])) {
