@@ -2362,7 +2362,7 @@ class serendipity_event_staticpage extends serendipity_event
                 serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}staticpage_custom WHERE staticpage = {$p['staticpage']}");
             }
         }
-        serendipity_db_end_transaction($x);
+        serendipity_db_end_transaction(true);
     }
 
     /**
