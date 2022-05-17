@@ -94,7 +94,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.51');
+        $propbag->add('version', '6.52');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -2337,6 +2337,35 @@ class serendipity_event_staticpage extends serendipity_event
     }
 
     /**
+     *  A general custom table garbage collect cleanup for no more existing staticpage IDs
+     *
+     * @access  private
+     * @return  void
+     */
+    function customGarbageCollectCleanup()
+    {
+        global $serendipity;
+
+        serendipity_db_begin_transaction();
+
+        $q = "SELECT DISTINCT(gc.staticpage) FROM {$serendipity['dbPrefix']}staticpage_custom AS gc
+           LEFT JOIN {$serendipity['dbPrefix']}staticpages AS sp ON sp.id = gc.staticpage
+               WHERE sp.id IS NULL";
+
+        $x = serendipity_db_query($q, false, 'assoc');
+
+        if (is_array($x) && !empty($x)) {
+            foreach($x AS $p) {
+                if (DEBUG_STATICPAGE) {
+                    echo "DELETE FROM {$serendipity['dbPrefix']}staticpage_custom WHERE staticpage = {$p['staticpage']}<br>\n";
+                }
+                serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}staticpage_custom WHERE staticpage = {$p['staticpage']}");
+            }
+        }
+        serendipity_db_end_transaction($x);
+    }
+
+    /**
      * Update static page
      *
      * @access  private
@@ -2825,6 +2854,9 @@ class serendipity_event_staticpage extends serendipity_event
                         if (isset($pcid['categoryid']) && is_numeric($pcid['categoryid']) && $pcid['categoryid'] > 0) {
                             $this->setCatProps((int)$pcid['categoryid'], null, true);
                         }
+                        // here might be a good place to do a general custom table garbage collect cleanup for no more existing staticpage IDs
+                        $this->customGarbageCollectCleanup();
+
                         // RQ: note table combine to user? (No, since we do not do this on new staticpages either.)
                         $serendipity['smarty']->assign('sp_defpages_rip_success', DONE .': '. sprintf(RIP_ENTRY, (int)$serendipity['POST']['staticpage'] . ' (' . $this->staticpage['pagetitle'] . ')'));
                     }

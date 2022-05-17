@@ -1,3 +1,8 @@
+6.52:
+-----
+ * Add general GarbageCollect cleanup DELETE action for the "custom" database table,
+   when deleting a staticpage.
+
 6.51:
 -----
  * Overwrite ("existing" COOKIE) backend form template name opening an existing staticpage
