@@ -1,23 +1,37 @@
+2.0.0:
+0.20:
+-----
+ * OpenLayers updated to v6.14.1
+ * CSS fixed
+ * Small performance updates
+ * Changed versioning after 0.9 to get away from 0. point releases
+
+1.9.0:
 0.19:
 -----
  * OpenLayers updated to v6.12.0
 
+1.8.0:
 0.18:
 -----
  * OpenLayers updated to v6.6.0
 
+1.7.0:
 0.17:
 -----
  * fixed handling of empty gpx files
 
+1.6.0:
 0.16:
 -----
  * Do not use Smarty vars instead of $serendipity globals
 
+1.5.1:
 0.15:
 -----
  * Add missing readme file
 
+1.5.0:
 0.14:
 -----
 
@@ -27,17 +41,20 @@
  * Path description fixed for many paths
  * Default path for *.gpx files
 
+1.4.0:
 0.13:
 -----
 
  * Fix building static_osm resource path
 
+1.3.0:
 0.12:
 -----
 
  * Fix typo in assets directory name
  * Use serendipity_db_bool()
 
+1.2.0:
 0.11:
 -----
 
@@ -45,6 +62,7 @@
  * Fixed compressed *.gpx size bug
  * Compress *.gpx files only
 
+1.0.0:
 0.10:
 -----
 
