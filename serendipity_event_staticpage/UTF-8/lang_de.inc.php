@@ -101,7 +101,7 @@
 @define('STATICPAGE_SHOWNAVI_DEFAULT', 'Navigation anzeigen');
 @define('STATICPAGE_SHOWNAVI_DESC', 'Zeigt eine Navigation für diese Seite an');
 @define('STATICPAGE_SHOWONNAVI', 'In der Navigation der Seitenleiste einbinden');
-@define('STATICPAGE_SHOWONNAVI_DEFAULT', 'Soll diese Seite in der Liste des Seitenleisten-Plugins gezeigt werden');
+@define('STATICPAGE_SHOWONNAVI_DEFAULT', 'Seite in Liste des Seitenleisten-Plugins anzeigen');
 @define('STATICPAGE_SHOWONNAVI_DESC', 'Diese Seite in der Liste des Seitenleisten-Plugins anzeigen');
 @define('STATICPAGE_SHOWMETA_DEFAULT', 'Zeige HTML Meta input Felder');
 @define('STATICPAGE_SHOWTEXTORHEADLINE_HEADLINE', 'Überschrift');
@@ -130,7 +130,7 @@
 @define('STATICPAGE_SHOW_BREADCRUMB_DESC', 'Zeige auf dieser Seite den Navigationspfad (Breadcrumbs) an');
 
 @define('STATICPAGE_SHOWLIST_DEFAULT', 'Zeige als Eintragsliste');
-@define('STATICPAGE_SHOWLIST_DESC', 'Zeige Staticpage Backend Startseite als Eintrags-Liste oder Auswahl-Liste.');
+@define('STATICPAGE_SHOWLIST_DESC', 'Zeige Staticpage Backend Startseite als Eintrags-Liste oder als Auswahl-Liste.');
 @define('STATICPAGE_SHOWLIST_NUMLIST', 'Zeige als "N" (6) Einträge per Seite');
 
 @define('STATICPAGE_CONFIRM_SELECTDIALOG', "Sind Sie sicher ihren offenen Artikel im Falle einer Veränderung gespeichert zu haben?\\n\\nWenn Sie OK drücken, wird die Seite gewechselt!"); // js confirm needs an additional backslash before the linebreaks!
