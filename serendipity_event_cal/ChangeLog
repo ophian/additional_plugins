@@ -3,6 +3,16 @@
 * 
 
 
+2.1.0:
+------
+
+ * Mute strftime deprecation warnings until PHP 9
+ * Improve more string functions for "Passing null to parameter of type string" deprecation warnings with PHP 8.1
+ * Fix an undocumented parameter order usage, now being wrong with PHP 8
+ * Add another DARK MODE rule for ical logs
+ * Fix adminpath adding event calendar entries via this backend form
+ * Fix pulsating checkmark icon approve for quick-actions
+
 2.0.8:
 ------
 

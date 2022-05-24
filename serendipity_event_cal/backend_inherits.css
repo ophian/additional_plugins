@@ -414,3 +414,6 @@ table.eventborder {
 [data-color-mode="dark"] #backend_eventcal_wrapper .msg_notice {
     color: var(--color-text-white);
 }
+[data-color-mode="dark"] .backend_eventcal_linetxt code {
+    background-color: var(--color-scale-white);
+}

@@ -1,4 +1,4 @@
-{* file: plugin_eventcal_app.tpl - 2018-08-20, Ian *}
+{* file: plugin_eventcal_app.tpl - 2022-05-24, Ian *}
 
 <!-- plugin_eventcal_app.tpl start -->
 
@@ -36,14 +36,14 @@ function chkAll(frm, arr, mark) {
             <th class="eventcal_appform_title_rgt">{$CONST.CAL_EVENT_FORM_TITLE_EDIT}</th>
             <th class="eventcal_appform_title_rgt">{$CONST.CAL_EVENT_FORM_TITLE_DEL}</th>
         </tr>
-        {foreach from=$plugin_eventcal_app_array_events item="e"}
+        {foreach $plugin_eventcal_app_array_events AS $e}
         <tr class="{if NOT empty($plugin_eventcal_app_admin_tipocolor)}{if $e.tipo == 1 || $e.tipo == 6}mono{elseif $e.tipo == 2}multi{elseif $e.tipo == 3}recm{elseif $e.tipo == 4 || $e.tipo == 5}recw{/if}{else}f0{/if}">
             <td class="eventcal_appform_validation"><input type="checkbox" name="calendar[entries][]" value="{$e.id}" /></td>
             <td class="eventcal_appform_validation eventcal_appdate">{$e.tipodate}{if $e.tipo == 5} ({$CONST.CAL_EVENT_FORM_RIGHT_RECUR_BIWEEK}){/if}</td>
             <td class="eventcal_appform_validation">{$e.sdesc}</td>
             <td class="eventcal_appform_validation eventcal_appldesc">{$e.ldesc|truncate:63:" [&hellip;]"|strip_tags}{if $e.ldesc|count_characters:true > 63} <abbr title="{$e.ldesc|replace:"\n":" "|strip_tags}"></abbr>{/if}<br />{$CONST.CAL_EVENT_FORM_LEFT_AUTHOR|strip_tags:false}: {$e.app_by}</td>
             <td class="eventcal_appform_validation">{if $e.url} <a href="{$e.url}" target="_blank" rel="noopener">go</a>{else}&nbsp;{/if}</td>
-            {if isset( $is_eventcal_cal_admin_noapp) AND $is_eventcal_cal_admin_noapp != true}
+            {if isset($is_eventcal_cal_admin_noapp) AND $is_eventcal_cal_admin_noapp != true}
             <td class="eventcal_appform_validation">&nbsp;&nbsp;<input type="image" class="eventcal_appform_move" src="{$plugin_eventcal_cal_imgpath}img/notes-approve.gif" name="Approve_Selected" alt="notes-approve" title=" Approve " align="bottom" />&nbsp;&nbsp;</td>
             {else}
             <td class="eventcal_appform_validation">&nbsp;&nbsp;<img class="eventcal_appform_move" src="{$plugin_eventcal_cal_imgpath}img/notes-checkmark.gif" name="Approve_Selected" alt="notes-approve" title=" is approved already - no action " align="bottom" />&nbsp;&nbsp;</td>

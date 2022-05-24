@@ -71,7 +71,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '2.0.8');
+        $propbag->add('version',        '2.1.0');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -210,6 +210,7 @@ class serendipity_event_cal extends serendipity_event
      */
     function check_newline($v)
     {
+        if (is_null($v)) return $v;
         $v = trim($v);
         $v = preg_replace("/(<br \/>\n|<br>\n|&#13;|\r\n|\n|\r)/", "\n", $v); // cross-platform newlines change to unix style
         // don't allow out-of-control blank lines
@@ -233,13 +234,13 @@ class serendipity_event_cal extends serendipity_event
                         $aval = $this->check_newline($aval);
                         $aval = ini_get('magic_quotes_gpc') ? serendipity_db_escape_string(stripslashes($aval)) : serendipity_db_escape_string($aval);
                         // be strict and do not allow any code
-                        $_POST[$key][$akey] = strip_tags($aval);  // array e.g. $row['name']
+                        $_POST[$key][$akey] = strip_tags($aval ?? '');  // array e.g. $row['name']
                     }
                 } else {
                     $val = $this->check_newline($val);
                     $val = ini_get('magic_quotes_gpc') ? serendipity_db_escape_string(stripslashes($val)) : serendipity_db_escape_string($val);
                     // be strict and do not allow any code
-                    $_POST[$key] = strip_tags($val);  // array e.g. $row['name']
+                    $_POST[$key] = strip_tags($val ?? '');  // array e.g. $row['name']
                 }
             }
         }
@@ -593,7 +594,7 @@ class serendipity_event_cal extends serendipity_event
                         list($ey,$em,$ed) = explode('-',$row['edato']);
                         list($which,$day) = explode(':',$row['recur']);
                         $ts = $this->weekday($year,$month,$day,$which);
-                        $nd = (int)strftime('%d',$ts);
+                        $nd = (int)@strftime('%d',$ts);
 
                         /* check recurring data for year, day and month - draw event, if data is for sure inbetween sdato and edato */
                         // if current yearmonth is lower than endyearmonth OR ( current yearmonth is equal endyearmonth AND endday is higher than recurring weekday ) -> show
@@ -611,7 +612,7 @@ class serendipity_event_cal extends serendipity_event
 
                         for ( $i = 1; $i <= 5; ++$i ) {
                             $ts  = $this->weekday($year,$month,$day,$i); // eg. $day = Thuesday(3) and $which has to be each 1 2 3 4 (5)
-                            $wnd = (int)strftime('%d',$ts);              // weekly recurring day in month
+                            $wnd = (int)@strftime('%d',$ts);              // weekly recurring day in month
 
                             if ($i > 4) {
                                 if ($wnd < $last-6) {
@@ -753,7 +754,7 @@ class serendipity_event_cal extends serendipity_event
         $match = 0;
         $inc = 3600*24;
         while(!$done) {
-            if (strftime('%w',$ts)==$day-1) {
+            if (@strftime('%w',$ts)==$day-1) {
                 $match++;
             }
             if ($match==abs($which)) $done=true; // abs to get rid of leading zero
@@ -765,13 +766,13 @@ class serendipity_event_cal extends serendipity_event
     function start_month($year, $month)
     {
         $ts = mktime(12,0,0,$month,1,(int)$year);
-        return strftime('%w',$ts);
+        return @strftime('%w',$ts);
     }
 
     function last_day($year, $month)
     {
         $ts = mktime(12,0,0,($month+1),0,(int)$year);
-        return strftime('%d',$ts);
+        return @strftime('%d',$ts);
     }
 
     function months()
@@ -781,10 +782,10 @@ class serendipity_event_cal extends serendipity_event
         // use iconv for windows and better dpkg-reconfigure locales for linux OS
         for($i=1; $i<=12; ++$i) {
             if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' && function_exists('iconv')) {
-                $months[$i] = iconv('ISO-8859-1', 'UTF-8', strftime('%B', mktime(12, 0, 0, $i, 1)));
+                $months[$i] = iconv('ISO-8859-1', 'UTF-8', @strftime('%B', mktime(12, 0, 0, $i, 1)));
             } else {
                 // fallback, it does not really matter under windows too
-                $months[$i] = strftime('%B',mktime(12,0,0,$i,1));
+                $months[$i] = @strftime('%B',mktime(12,0,0,$i,1));
             }
         }
         return $months;
@@ -795,7 +796,7 @@ class serendipity_event_cal extends serendipity_event
     {
         static $days=NULL;
         for($i=1; $i<=7; ++$i) {
-            $days[$i] = strftime('%A',mktime(12,0,0,4,$i,2001));
+            $days[$i] = @strftime('%A',mktime(12,0,0,4,$i,2001));
         }
         return $days;
     }
@@ -804,7 +805,7 @@ class serendipity_event_cal extends serendipity_event
     function optdays()
     {
         for($i=1; $i<=31; ++$i) {
-            $days[$i] = strftime('%d',mktime(12,0,0,1,$i,2001));
+            $days[$i] = @strftime('%d',mktime(12,0,0,1,$i,2001));
         }
         return $days;
     }
@@ -1307,7 +1308,7 @@ class serendipity_event_cal extends serendipity_event
             date_default_timezone_set('Europe/Berlin');
             $tz = 'Europe/Berlin';
         }
-        $tzdaylight   = strftime('%Z');
+        $tzdaylight   = @strftime('%Z');
         $tzoffsetfrom = date("O");
         // ToDo: give timezone and tzoffsetto the correct values in any cases
         $tzoffsetto   = "+0200"; //$serendipity['serverOffsetHours'] ? $serendipity['serverOffsetHours'] : "+0200";
@@ -1612,9 +1613,9 @@ class serendipity_event_cal extends serendipity_event
                     'plugin_eventcal_entry_sformat'  => $de_sd_format ?? null,
                     'plugin_eventcal_entry_eformat'  => $de_ed_format ?? null,
                     'plugin_eventcal_entry_ldesc'    => ini_get('magic_quotes_gpc') ? stripslashes(nl2br($this->text_pattern_bbc($event['ldesc']))) : nl2br($this->text_pattern_bbc($event['ldesc'])),
-                    'plugin_eventcal_entry_a'        => (int)$_GET['calendar']['a'],
-                    'plugin_eventcal_entry_cm'       => (int)$_GET['calendar']['cm'],
-                    'plugin_eventcal_entry_cy'       => (int)$_GET['calendar']['cy'],
+                    'plugin_eventcal_entry_a'        => (int)@$_GET['calendar']['a'],
+                    'plugin_eventcal_entry_cm'       => (int)@$_GET['calendar']['cm'],
+                    'plugin_eventcal_entry_cy'       => (int)@$_GET['calendar']['cy'],
                     'plugin_eventcal_entry_path'     => $entry_path,
                     'plugin_eventcal_entry_y'        => array('timestamp' => 1)
                 )
@@ -1657,7 +1658,8 @@ class serendipity_event_cal extends serendipity_event
                     'plugin_eventcal_app_a'               => $a,
                     'plugin_eventcal_app_m'               => $m,
                     'plugin_eventcal_app_y'               => $y,
-                    'plugin_eventcal_app_path'            => $apppath
+                    'plugin_eventcal_app_path'            => $apppath,
+                    'is_eventcal_cal_admin_noapp'         => false
                 )
             );
         }
@@ -1757,12 +1759,15 @@ class serendipity_event_cal extends serendipity_event
         // path settings frontend/backend
         if ($noadmin !== false) {
                $formpath = $this->fetchPluginUri();
-        } else $formpath = $_SERVER['PHP_SELF'];
+        } else {
+            $formpath = $_SERVER['PHP_SELF'];
+            $adminpath  = '?serendipity[adminModule]=event_display&serendipity[adminAction]=eventcal';
+        }
 
         /* assign add form array entries to smarty */
         $serendipity['smarty']->assign(
                 array(
-                    'plugin_eventcal_admin_add_path'    => '',
+                    'plugin_eventcal_admin_add_path'    => $adminpath ?? '',
                     'plugin_eventcal_add_array_opt1'    => $option1,
                     'plugin_eventcal_add_array_opt2'    => $option2,
                     'plugin_eventcal_add_array_opt3'    => $option3,
@@ -1926,7 +1931,7 @@ class serendipity_event_cal extends serendipity_event
             if ($type == 'recur' || $type == 'weekly' || $type == 'biweekly') {
                 if (!isset($sday))      (int)$sday      = $_POST['calendar']['sday'];
                 if (!isset($recur_day)) (int)$recur_day = $_POST['calendar']['recur_day'];
-                $nday = strftime('%A',mktime(12,0,0,$smonth,$sday,$syear));
+                $nday = @strftime('%A',mktime(12,0,0,$smonth,$sday,$syear));
                 $days = $this->days();
                 $rday = $days[$recur_day];
                 $iday = NULL;
@@ -2116,7 +2121,8 @@ class serendipity_event_cal extends serendipity_event
                 /* approve events */
                 if (isset($_POST['Approve_Selected']) || isset($_POST['Approve_Selected_x']) || isset($_POST['Approve_Selected_y'])) {
                     if (is_array($_POST['calendar']['entries'])) {
-                        $apid  = array();
+                        $apid = array();
+                        $n_id = '';
                         foreach($_POST['calendar']['entries'] AS $entry=>$val) {
                             $result = $this->mysql_db_result_sets('UPDATE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "approved=1 WHERE id=$val");
                             $apid[] = $val;
@@ -2133,7 +2139,8 @@ class serendipity_event_cal extends serendipity_event
                 /* reject events */
                 if (isset($_POST['Reject_Selected']) || isset($_POST['Reject_Selected_x']) || isset($_POST['Reject_Selected_y'])) {
                     if (is_array($_POST['calendar']['entries'])) {
-                        $idel  = array();
+                        $idel = array();
+                        $n_id = '';
                         foreach($_POST['calendar']['entries'] AS $entry => $val) {
                             $result = $this->mysql_db_result_sets('DELETE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "id=$val");
                             $idel[] =  $val;
@@ -2356,7 +2363,7 @@ class serendipity_event_cal extends serendipity_event
                 if (isset($serendipity['eventcal']['adminpost']) && is_array($serendipity['eventcal']['adminpost'])) {
                     /* there is a returning admin event insert or replace error - give back the form vars of db select event array */
                     foreach($serendipity['eventcal']['adminpost'] AS $k => $v) {
-                        $$k = trim(stripslashes($v)); // old version without stripslashes worked with debian lenny, but not with Win/Php 5.3 - why?
+                        $$k = is_null($v) ? $v : trim(stripslashes($v)); // old version without stripslashes worked with debian lenny, but not with Win/Php 5.3 - why?
                     }
                     unset($serendipity['eventcal']['adminpost']);
                 }
@@ -2387,9 +2394,9 @@ class serendipity_event_cal extends serendipity_event
             if (isset($_POST['calendar']['ts']) && !isset($tst)) $tst = $_POST['calendar']['ts'];
 
             /* Final check for date vars, to start calendar right now */
-            if (!isset($cm)) $cm = (int)strftime('%m');
-            if (!isset($cy)) $cy = (int)strftime('%Y');
-            if (!isset($cd)) $cd = (int)strftime('%d');
+            if (!isset($cm)) $cm = (int)@strftime('%m');
+            if (!isset($cy)) $cy = (int)@strftime('%Y');
+            if (!isset($cd)) $cd = (int)@strftime('%d');
             if (!isset($nm)) $nm = 1;
             if (!isset($cw)) $cw = NULL;
             if (!isset($cw_prev)) $cw_prev = false;
@@ -3012,7 +3019,7 @@ class serendipity_event_cal extends serendipity_event
                                         $month, $nm, $re, $sday, $sdesc, $smonth, $syear, $tipo, $tst, $type, $url, $which, $year, false );
         }
 
-        // show single event entry as choosen from event calendar underneath the event calendar table
+        // show single event entry as chosen from event calendar underneath the event calendar table
         if (isset($ev)) $this->backend_eventcal_show_event($ev, $re);
 
         if (!isset($add_data)) {
@@ -3113,7 +3120,8 @@ class serendipity_event_cal extends serendipity_event
                     'is_eventcal_cal_buildbuttonadd'      => true,
                     'is_eventcal_cal_buildbuttonapp'      => true,
                     'is_eventcal_backend_admin_view'      => true,
-                    'is_eventcal_cal_admin_clear'         => true
+                    'is_eventcal_cal_admin_clear'         => true,
+                    'is_eventcal_cal_admin_noapp'         => false
                     )
             );
         }
@@ -3514,7 +3522,7 @@ class serendipity_event_cal extends serendipity_event
      */
     function backend_eventcal_highlight_num($file)
     {
-        $lines   = implode(range(1, count(file($file))), '<br />');
+        $lines   = implode('<br />', range(1, count(file($file))));
         $content = highlight_file($file, true);
 
         echo "<table width='100%' height='200px'>\n";
@@ -3566,9 +3574,9 @@ class serendipity_event_cal extends serendipity_event
         }
 
         /* Final check for date vars, to start calendar right now */
-        if (!isset($cm)) $cm = (int)strftime('%m');
-        if (!isset($cy)) $cy = (int)strftime('%Y');
-        if (!isset($cd)) $cd = (int)strftime('%d');
+        if (!isset($cm)) $cm = (int)@strftime('%m');
+        if (!isset($cy)) $cy = (int)@strftime('%Y');
+        if (!isset($cd)) $cd = (int)@strftime('%d');
         if (!isset($ev)) $ev = false;
 
         $req = array('re' => $re, 'year' => $year, 'month' => $month, 'cm' => $cm, 'cy' => $cy, 'ev' => $ev, 'cd' => $cd);
