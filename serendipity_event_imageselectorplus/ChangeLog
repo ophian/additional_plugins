@@ -1,3 +1,7 @@
+2.5.0:
+-----
+ * Preparations to avoid deprecated ${foo} style string interpolation for PHP 9 in debug logging
+
 2.4.1:
 -----
  * Minor end message fix
