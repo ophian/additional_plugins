@@ -71,7 +71,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '2.1.0');
+        $propbag->add('version',        '2.1.1');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -1659,7 +1659,7 @@ class serendipity_event_cal extends serendipity_event
                     'plugin_eventcal_app_m'               => $m,
                     'plugin_eventcal_app_y'               => $y,
                     'plugin_eventcal_app_path'            => $apppath,
-                    'is_eventcal_cal_admin_noapp'         => false
+                    'is_eventcal_cal_admin_noapp'         => (is_array($events) && (isset($_GET['serendipity']['eventcalcategory']) && $_GET['serendipity']['eventcalcategory'] == 'adevapp') || !empty($_GET['url'])) ? false : null
                 )
             );
         }
