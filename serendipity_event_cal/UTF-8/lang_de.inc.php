@@ -1,6 +1,6 @@
 <?php
 
-# serendipity_event_cal.php, langfile(utf-8/de) v1.65 2015-11-25 Ian
+# serendipity_event_cal.php, langfile(utf-8/de) v.2.1.2 2022-05-26 Ian
 
 @define('PLUGIN_EVENTCAL_HEADLINE', 'Kopfzeile (optional)');
 @define('PLUGIN_EVENTCAL_HEADLINE_BLAHBLAH', 'Was für eine Überschrift soll die Seite haben?');
@@ -141,10 +141,10 @@
 @define('CAL_EVENT_USER_VALIDATION', 'Ihr Username oder Ihr Passwort wurde nicht korrekt eingegeben.');
 @define('CAL_EVENT_USER_LOGGEDOFF', 'Sie haben sich vom System abgemeldet oder ihre Session ist abgelaufen. Um den Terminkalender erneut zu administrieren, müssen Sie sich neu in die Verwaltung des Blogs einloggen.');
 @define('CAL_EVENT_USER_FREETABLE', 'Sie haben alte Daten von über einem Monat gelöscht und die Event Datenbank-Tabelle mit %d verbliebenen Datensätzen neu strukturiert.');
-@define('CAL_EVENT_USER_FREE_SURE', 'Sollen die alten Daten gelöscht und die Event Datenbank-Tabelle wirlich neu strukturiert werden?<br />Achtung: dies hat negative Auswirkungen auf Suchmaschinen und sonstige Dienste!');
+@define('CAL_EVENT_USER_FREE_SURE', 'Sollen die alten Daten gelöscht und die Event Datenbank-Tabelle wirklich neu strukturiert werden?<br />Achtung: dies hat negative Auswirkungen auf Suchmaschinen und sonstige Dienste!');
 @define('CAL_EVENT_USER_NOPERMISSION', 'Sie haben keine Berechtigung diesen Vorgang fortzusetzen!');
 @define('CAL_EVENT_CHGSELECTED_ARRAY', 'Sie wollen einen Eintrag bearbeiten, haben aber alle oder mehrere angeklickt.');
-@define('CAL_EVENT_CHECKBOXALERT', 'Wenn Sie einen unveröffentlichten Eintrag freigeben, ändern oder löschen wollen, müssen Sie die Checkbox des Eintrags vorher aktivieren.');
+@define('CAL_EVENT_CHECKBOXALERT', 'Wenn Sie einen Listen-Eintrag freigeben, ändern oder löschen wollen, müssen Sie die Checkbox des Eintrags vorher aktivieren.');
 
 @define('CAL_EVENT_TODAY', 'HEUTE');
 @define('PLUGIN_EVENTCAL_CAL', ' Draw calendar ');

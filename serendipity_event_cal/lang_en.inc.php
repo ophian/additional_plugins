@@ -1,6 +1,6 @@
 <?php
 
-# serendipity_event_cal.php, langfile(en) v2.0.0 2021-07-10 Ian
+# serendipity_event_cal.php, langfile(en) v.2.1.2 2022-05-26 Ian
 
 @define('PLUGIN_EVENTCAL_HEADLINE', 'Headline (optional)');
 @define('PLUGIN_EVENTCAL_HEADLINE_BLAHBLAH', 'The headline of the page.');
@@ -59,15 +59,15 @@
 @define('CAL_EVENT_EVENTDESC', 'Please insert a full description of the upcoming event!');
 @define('CAL_EVENT_APPBY', 'You have to insert a authors token(sig) for event validation!');
 @define('CAL_EVENT_START_DATE', 'Invalid event begin!');
-@define('CAL_EVENT_START_RECUR', 'The Startdate to be the &raquo; <u>%s</u> &laquo; (day %s) of first occurrence!');
-@define('CAL_EVENT_START_DATE_HISTORY', 'Unvalid event date! Setting history events is supported only to 31 days in the past!');
+@define('CAL_EVENT_START_RECUR', 'The start date to be the &raquo; <u>%s</u> &laquo; (day %s) of first occurrence!');
+@define('CAL_EVENT_START_DATE_HISTORY', 'Invalid event date! Setting history events is supported only to 31 days in the past!');
 @define('CAL_EVENT_END_DATE', 'Invalid event end!');
-@define('CAL_EVENT_REAL_START_DATE', 'The event startdate has to be a valid day of given month (%s)!');
-@define('CAL_EVENT_REAL_END_DATE', 'The event enddate has to be a valid day of given month (%s) and has to be in the future of startdate!');
+@define('CAL_EVENT_REAL_START_DATE', 'The event start date has to be a valid day of given month (%s)!');
+@define('CAL_EVENT_REAL_END_DATE', 'The event end date has to be a valid day of given month (%s) and has to be in the future of start date!');
 @define('CAL_EVENT_REAL_MONTHLY_DATE', 'The recurring value for monthly events is not allowed to be "Weekly"!');
-@define('CAL_EVENT_IDENTICAL_DATE', 'The event has an indentical start and end time!');
+@define('CAL_EVENT_IDENTICAL_DATE', 'The event has an identical start and end time!');
 @define('CAL_EVENT_ORDER_DATE', 'Your inserted event sequence is not valid!');
-@define('CAL_EVENT_WEEKLY_DATE', 'The correct value hast to be: "Weekly" and choosen "Weekday".');
+@define('CAL_EVENT_WEEKLY_DATE', 'The correct value hast to be: "Weekly" and chosen "Weekday".');
 @define('CAL_EVENT_FALSECAPTCHA', 'The CAPTCHAS of your entry did not match!');
 
 @define('CAL_EVENT_FORM_DAY_FIRST', 'First');
@@ -81,13 +81,13 @@
 
 @define('CAL_EVENT_FORM_RIGHT_SHORTMAX', 'max. 16 characters!');
 @define('CAL_EVENT_FORM_RIGHT_RECURSTRICT1', 'Attention:');
-@define('CAL_EVENT_FORM_RIGHT_RECURSTRICT2', 'be strict to startday to all recurring events!');
+@define('CAL_EVENT_FORM_RIGHT_RECURSTRICT2', 'be strict to start day to all recurring events!');
 @define('CAL_EVENT_FORM_RIGHT_URLDESC', 'Either as');
 @define('CAL_EVENT_FORM_RIGHT_URL', 'http://www.domain.com');
 @define('CAL_EVENT_FORM_RIGHT_MAIL', 'mailto:your@email.com');
 @define('CAL_EVENT_FORM_RIGHT_OR', 'or');
 @define('CAL_EVENT_FORM_RIGHT_DETAILDESC', 'Please <b>do not forget</b> to put the exact time of your event into this textfield or into the shorttitle eg. \'19:00 text\'.');
-@define('CAL_EVENT_FORM_RIGHT_BBC', 'Use plain BBcode (strong, italic, unterline, strike).');
+@define('CAL_EVENT_FORM_RIGHT_BBC', 'Use plain BBcode (strong, italic, underline, strike).');
 @define('CAL_EVENT_FORM_RIGHT_SINGLE', 'Only one day');
 @define('CAL_EVENT_FORM_RIGHT_SINGLE_NOEND', 'no event end date needed');
 @define('CAL_EVENT_FORM_RIGHT_MULTI', 'Multi-day event');
@@ -99,8 +99,8 @@
 
 @define('CAL_EVENT_FORM_RIGHT_HELP_SINGLE', 'Single Event. No need of \'Enddate\' and any other indications!');
 @define('CAL_EVENT_FORM_RIGHT_HELP_MULTI', 'Multi Event: View monthly. Needs \'Startdate\' and \'Enddate\'.');
-@define('CAL_EVENT_FORM_RIGHT_HELP_WEEK', 'Weekly Event. Definitely needs: \'always on\', \'Weekly\' and \'Weekday\'. View each Calendarweek in month. Needs \'Startdate\' and \'Enddate\'.');
-@define('CAL_EVENT_FORM_RIGHT_HELP_BIWEEK', 'Bi-Weekly Event. Definitely needs: \'always on\', \'Weekly\' and \'Weekday\'. View each 2nd Calendarweek in month. Needs \'Startdate\' and \'Enddate\'.');
+@define('CAL_EVENT_FORM_RIGHT_HELP_WEEK', 'Weekly Event. Definitely needs: \'always on\', \'Weekly\' and \'Weekday\'. View each Calendar week in month. Needs \'Startdate\' and \'Enddate\'.');
+@define('CAL_EVENT_FORM_RIGHT_HELP_BIWEEK', 'Bi-Weekly Event. Definitely needs: \'always on\', \'Weekly\' and \'Weekday\'. View each 2nd Calendar week in month. Needs \'Startdate\' and \'Enddate\'.');
 @define('CAL_EVENT_FORM_RIGHT_HELP_MONTH', 'Monthly Event. Definitely needs: \'always on\', \'nDay\' and \'Weekday\'. View monthly. Needs \'Startdate\' and \'Enddate\'.');
 @define('CAL_EVENT_FORM_RIGHT_HELP_YEAR', 'Yearly Single Event: View yearly from Startdate. No need of \'Enddate\' and any other indications!');
 
@@ -115,7 +115,7 @@
 @define('CAL_EVENT_FORM_BUTTON_EDIT_SED', 'Change approved single event entry');
 @define('CAL_EVENT_FORM_BUTTON_SUBMIT', '&raquo; Send entry &laquo;');
 @define('CAL_EVENT_FORM_BUTTON_TOAPPROVE', 'Event(s) pending');
-@define('CAL_EVENT_FORM_BUTTON_HELP_ICALM', 'Events iCal download of current month inclusive all reccuring events in past and future.');
+@define('CAL_EVENT_FORM_BUTTON_HELP_ICALM', 'Events iCal download of current month inclusive all recurring events in past and future.');
 
 @define('CAL_EVENT_FORM_TITLE_DATE', 'date');
 @define('CAL_EVENT_FORM_TITLE_TITLE', 'title');
@@ -143,7 +143,7 @@
 @define('CAL_EVENT_USER_FREETABLE', 'You have successfully erased data older 1 month and rebuild the database table with %d remaining records.');
 @define('CAL_EVENT_USER_FREE_SURE', 'Do you really want to erase old event datasets and rebuild the IDs of your event database table?<br />Be aware: this will have have negative effects to syndicated data of search engines or other services!');
 @define('CAL_EVENT_USER_NOPERMISSION', 'You do not have the permission to continue!');
-@define('CAL_EVENT_CHGSELECTED_ARRAY', 'You want to change one entry, please unmark the others.');
+@define('CAL_EVENT_CHGSELECTED_ARRAY', 'You want to change one entry, please uncheck the others.');
 @define('CAL_EVENT_CHECKBOXALERT', 'Please check the checkbox of the entry you want to evaluate, change or erase.');
 
 @define('CAL_EVENT_TODAY', 'TODAY');
@@ -154,24 +154,24 @@
 /* Backend main constants */
 @define('PLUGIN_EVENTCAL_ADMIN_NAME', 'Event calendar');
 @define('PLUGIN_EVENTCAL_ADMIN_NAME_MENU', 'Event calendar  v.%s - Backend Administration Menu');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC', 'Event calendar - Plugin Administration');
-@define('PLUGIN_EVENTCAL_ADMIN_VIEW', 'Event calendar - View approved events');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC', 'Plugin Administration');
+@define('PLUGIN_EVENTCAL_ADMIN_VIEW', 'Approved events');
 @define('PLUGIN_EVENTCAL_ADMIN_VIEW_DESC', 'Grouped by event type (tipo) single, multi, recur, weekly, yearly - ascending.');
 @define('PLUGIN_EVENTCAL_ADMIN_ORDERBY_DESC', 'Grouped by event type (timestamp) descending.');
-@define('PLUGIN_EVENTCAL_ADMIN_APP', 'Event Kalender - View unapproved events');
+@define('PLUGIN_EVENTCAL_ADMIN_APP', 'Unapproved events');
 @define('PLUGIN_EVENTCAL_ADMIN_APP_DESC', 'Group by Startdate [ youngest above ].');
-@define('PLUGIN_EVENTCAL_ADMIN_ERASE', 'Event Kalender - Erase Events');
-@define('PLUGIN_EVENTCAL_ADMIN_LOG', 'Event Kalender - iCal Log');
+@define('PLUGIN_EVENTCAL_ADMIN_ERASE', 'Event calendar - Erase Events');
+@define('PLUGIN_EVENTCAL_ADMIN_LOG', 'Event calendar - iCal Log');
 @define('PLUGIN_EVENTCAL_ADMIN_LOG_ERROR', 'ATTENTION: There was an error writing the iCal log file. Please have a look what went wrong (is writable path and file)!');
-@define('PLUGIN_EVENTCAL_ADMIN_ADD', 'Event Kalender - Insert events');
+@define('PLUGIN_EVENTCAL_ADMIN_ADD', 'Insert events');
 @define('PLUGIN_EVENTCAL_ADMIN_NORESULT', 'There are no events pending %s!');
 @define('PLUGIN_EVENTCAL_ADMIN_NORESULT_APP', 'to approve');
 @define('PLUGIN_EVENTCAL_ADMIN_NORESULT_DROP', 'to erase');
 @define('PLUGIN_EVENTCAL_ADMIN_NORESULT_FREE', 'to cleanup');
 @define('PLUGIN_EVENTCAL_ADMIN_FREE_SURE', 'Do you really want to free up old events from eventcal database table?');
 @define('PLUGIN_EVENTCAL_ADMIN_CLEAN_SURE', 'Do you really want to set new autoincrement values (id) to all data in eventcal database table?');
-@define('PLUGIN_EVENTCAL_ADMIN_CLEAN_SURE_ADD', '<u>Attention:</u> This might have negative effects to cached data in searchengines or other services!');
-@define('PLUGIN_EVENTCAL_ADMIN_DROP_SURE', 'Do you really want to erase the eventcal database table with all data completly? Please confirm here!');
+@define('PLUGIN_EVENTCAL_ADMIN_CLEAN_SURE_ADD', '<u>Attention:</u> This might have negative effects to cached data in search engines or other services!');
+@define('PLUGIN_EVENTCAL_ADMIN_DROP_SURE', 'Do you really want to erase the eventcal database table with all data completely? Please confirm here!');
 @define('PLUGIN_EVENTCAL_ADMIN_DROP_OK', 'Your %s database table was successful erased!');
 @define('PLUGIN_EVENTCAL_ADMIN_DUMP_SELF', 'Before continuing you should for sure make a mysql dump via PhpMyAdmin!');
 @define('PLUGIN_EVENTCAL_ADMIN_ICAL_EMAILLINK', 'Download all approved events as an ics file via email to admins email address, if set in this plugins config! Be sure there is one!');
@@ -182,7 +182,7 @@
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP', 'Administration - dump');
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_DESC', 'backup your eventcal table from database');
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_TITLE', 'Manage dump eventcal db values');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_DONE', 'Your eventcal database table has been backuped successfully!');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_DONE', 'Your eventcal database table has been backed up successfully!');
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_MSG', "Since this is not trivial, please use admin tools like phpMyAdmin to dump the data!");
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_INSERT', 'Administration - insert');
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_INSERT_DESC', 'insert into eventcal table in database');
@@ -214,5 +214,5 @@
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_NIXDA_TITLE', 'Administration - error');
 
 @define('PLUGIN_EVENTCAL_EVENTWRAPPER', 'Allow Eventwrapper Plugin?');
-@define('PLUGIN_EVENTCAL_EVENTWRAPPER_BLAHBLAH', 'Allows to fake a sidebar Plugin output with serendipity_plugin_eventwrapper, which places the current month events as links to the sidebar. Only allow this when really in need, performancewise!');
+@define('PLUGIN_EVENTCAL_EVENTWRAPPER_BLAHBLAH', 'Allows to fake a sidebar Plugin output with serendipity_plugin_eventwrapper, which places the current month events as links to the sidebar. Only allow this when really in need, performance wise!');
 

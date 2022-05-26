@@ -71,7 +71,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '2.1.1');
+        $propbag->add('version',        '2.1.2');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -626,7 +626,7 @@ class serendipity_event_cal extends serendipity_event
 
                             /* check recurring data for day and month - draw event, if data is for sure inbetween sdato and edato */
                             if (($wnd >= (int)$wsd && (int)$wsm >= (int)$month) || ($wnd <= (int)$wed && (int)$wsm != (int)$month) ||
-                               ((int)$wsm != (int)$month && (int)$wem != (int)$month) || (int)$nWeeks ) {
+                               ((int)$wsm != (int)$month && (int)$wem != (int)$month) || (isset($nWeeks) && (int)$nWeeks) ) {
                                 // case bi-weekly events and fallback
                                 if ( $row['tipo'] == 5 ) {
                                     // startmonth == currentmonth
@@ -3013,6 +3013,8 @@ class serendipity_event_cal extends serendipity_event
             if (!isset($ev)) $ev = null;
             if (!isset($nm)) $nm = null;
             if (!isset($type)) $type = null;
+            if (!isset($approved)) $approved = null;
+            if (!isset($tipo)) $tipo = null;
 
             /* there is an id request - open form with data to re-edit an already approved event */
             $add_data = $this->draw_add( 1, 1, $app_by, $approved, $cd, $day, $eday, $emonth, $ev, $eyear, $id, $ldesc,
@@ -3120,8 +3122,7 @@ class serendipity_event_cal extends serendipity_event
                     'is_eventcal_cal_buildbuttonadd'      => true,
                     'is_eventcal_cal_buildbuttonapp'      => true,
                     'is_eventcal_backend_admin_view'      => true,
-                    'is_eventcal_cal_admin_clear'         => true,
-                    'is_eventcal_cal_admin_noapp'         => false
+                    'is_eventcal_cal_admin_clear'         => true
                     )
             );
         }
