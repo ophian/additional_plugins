@@ -16,7 +16,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.8.8');
+        $propbag->add('version',       '1.9.0');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -563,6 +563,15 @@ EOS;
             foreach ($files AS $file) {
                 $target = str_replace('//', '/', $serendipity['serendipityPath'] . preg_replace('/[^\/]*/', '', $file, 1)); // we always remove the first directory 'serendipity/' path part, though this additionally allows source (beta versioned) zips. Zip Releases, beta or not, should always be personally maintained and touched by the release script!
                 if (is_dir($updateDir . $file)) {
+                    // $target dir exists as a symbolic link - on shared installation case - delete, to create a new real directory replacement
+                    if ((basename($target) == 'templates' || basename($target) == 'docs') && is_link($target)) {
+                        $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg> "' . rtrim($target,"/") . '" is a symlink dir; Delete the symlink, to create a new real dir!</p>');
+                        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+                            @rmdir(rtrim($target,"/"));
+                        } else {
+                            @unlink(rtrim($target,"/"));
+                        }
+                    }
                     if (!file_exists($target)) {
                         $success = mkdir($target);
                     } else {

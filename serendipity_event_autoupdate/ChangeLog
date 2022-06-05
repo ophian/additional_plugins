@@ -1,3 +1,9 @@
+1.9.0
+------
+
+ * On shared installation upgrades, allow to remove symlink'ed directories ('docs', 'templates').
+   So a (shared) deployment install can now return into a fully fletched independent Serendipity installation.
+
 1.8.8:
 ------
 
