@@ -9018,11 +9018,11 @@
 <description>Use a SMTP server to send your mails</description>
 <maintainers><maintainer><name>kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.30</version>
+  <version>1.40</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-07-15</date>
+  <date>2022-06-15</date>
   <filelist>
     <dir name="serendipity_event_smtpmail">
       <file>ChangeLog</file>
@@ -9079,6 +9079,7 @@
           <file>phpmailer.lang-sk.php</file>
           <file>phpmailer.lang-sl.php</file>
           <file>phpmailer.lang-sr.php</file>
+          <file>phpmailer.lang-sr_latn.php</file>
           <file>phpmailer.lang-sv.php</file>
           <file>phpmailer.lang-tl.php</file>
           <file>phpmailer.lang-tr.php</file>
@@ -9093,6 +9094,7 @@
         <dir name="src">
           <file>Exception.php</file>
           <file>OAuth.php</file>
+          <file>OAuthTokenProvider.php</file>
           <file>PHPMailer.php</file>
           <file>POP3.php</file>
           <file>SMTP.php</file>
@@ -9160,6 +9162,7 @@
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-sk.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-sl.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-sr.php</file>
+    <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-sr_latn.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-sv.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-tl.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-tr.php</file>
@@ -9172,6 +9175,7 @@
     <file>serendipity_event_smtpmail/PHPMailer/SECURITY.md</file>
     <file>serendipity_event_smtpmail/PHPMailer/src/Exception.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/src/OAuth.php</file>
+    <file>serendipity_event_smtpmail/PHPMailer/src/OAuthTokenProvider.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/src/PHPMailer.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/src/POP3.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/src/SMTP.php</file>
