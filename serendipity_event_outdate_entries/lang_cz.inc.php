@@ -12,6 +12,6 @@
 @define('PLUGIN_EVENT_OUTDATE_TIMEOUT_STICKY', 'Kdy mají být pøíspìvky "odlepeny"?');
 @define('PLUGIN_EVENT_OUTDATE_TIMEOUT_STICKY_DESC', 'Zadejte dobu, po jejím¾ uplynutí od vydání bude pøíspìveku zru¹en pøíznak "pøilepený". (ve dnech, 0 pro deaktivaci volby)');
 
-@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_EXPIRY', 'Pøídavné pole "Datum expirace"');
-@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_EXPIRY_FIELD', 'Pokud pou¾íváte pøídavný modul "Roz¹íøené vlastnosti pøíspìvkù", mù¾ete definovat pøídavné pole, do kterého zadáte datum, kdy pøíspìvku vypr¹í platnost. Datum musí mít formát RRRR-MM-DD. Tento plugin najde toto datum vypr¹ení platnosti a nastaví pøíspìvek jako KONCEPT, tak¾e zmizí ze zobrazení pøíspìvkù. Zde zadejte název pøídavného pole (napøíklad "DatumExpirace").');
+@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_EXPIRY_FIELD', 'Pøídavné pole "Datum expirace"');
+@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_EXPIRY_FIELD_DESC', 'Pokud pou¾íváte pøídavný modul "Roz¹íøené vlastnosti pøíspìvkù", mù¾ete definovat pøídavné pole, do kterého zadáte datum, kdy pøíspìvku vypr¹í platnost. Datum musí mít formát RRRR-MM-DD. Tento plugin najde toto datum vypr¹ení platnosti a nastaví pøíspìvek jako KONCEPT, tak¾e zmizí ze zobrazení pøíspìvkù. Zde zadejte název pøídavného pole (napøíklad "DatumExpirace").');
 
