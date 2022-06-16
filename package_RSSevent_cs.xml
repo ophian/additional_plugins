@@ -833,7 +833,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Schovat/smazat staré příspěvky&lt;/b&gt;&lt;br /&gt;Pro nepřihlášené čtenáře schová všechny příspěvky starší než nastavený čas, tyto příspěvky jsou viditelné pouze přihlášeným uživatelům/autorům.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 15 Jun 2022 12:44:48 +0200</pubDate>
+<pubDate>Thu, 16 Jun 2022 12:46:50 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_outdate_entries</guid>
 </item>
 <item>

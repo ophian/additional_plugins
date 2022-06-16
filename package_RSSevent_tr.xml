@@ -828,12 +828,12 @@
 <guid isPermaLink="false">serendipity_event_static_osm</guid>
 </item>
 <item>
-<title>Hide/delete entries for non-registered users after a specific timespan: Hides all entries which are older than a specified age, so that they are only visible for registered users/authors.</title>
+<title>Hide/delete entries after a specific timespan: Hides all entries which are older than a specified age, so that they are only visible for registered users/authors. And similar more.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_outdate_entries</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Hide/delete entries for non-registered users after a specific timespan&lt;/b&gt;&lt;br /&gt;Hides all entries which are older than a specified age, so that they are only visible for registered users/authors.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 15 Jun 2022 12:44:48 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Hide/delete entries after a specific timespan&lt;/b&gt;&lt;br /&gt;Hides all entries which are older than a specified age, so that they are only visible for registered users/authors. And similar more.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Thu, 16 Jun 2022 12:46:50 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_outdate_entries</guid>
 </item>
 <item>

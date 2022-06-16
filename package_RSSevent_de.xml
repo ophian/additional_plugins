@@ -828,12 +828,12 @@
 <guid isPermaLink="false">serendipity_event_static_osm</guid>
 </item>
 <item>
-<title>Einträge für nicht-registrierte Benutzer nach Verfallsdatum ausblenden: Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind.</title>
+<title>Einträge nach Verfallsdatum ausblenden: Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind. Sowie weitere, ähnliche Methoden zum Artikel Behandlung.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_outdate_entries</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Einträge für nicht-registrierte Benutzer nach Verfallsdatum ausblenden&lt;/b&gt;&lt;br /&gt;Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 15 Jun 2022 12:44:48 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Einträge nach Verfallsdatum ausblenden&lt;/b&gt;&lt;br /&gt;Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind. Sowie weitere, ähnliche Methoden zum Artikel Behandlung.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Thu, 16 Jun 2022 12:46:50 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_outdate_entries</guid>
 </item>
 <item>
