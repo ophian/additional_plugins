@@ -1,3 +1,11 @@
+2.0.0:
+------
+
+ * Change default values for 'timeout' and 'timeout_sticky' options to 0 (disabled)
+ * Fix 'timeout' option reset issue, not changing being marked as readout by member(s) only, see https://board.s9y.org/viewtopic.php?f=4&t=20456
+ * Improve and extend constants (and for the mentioned timeout reset issue. READ IT!)
+ * Changed requirements
+
 1.8:
 -----
 

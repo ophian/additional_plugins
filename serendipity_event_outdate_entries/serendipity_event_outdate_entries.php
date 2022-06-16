@@ -22,10 +22,10 @@ class serendipity_event_outdate_entries extends serendipity_event {
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.6',
-            'php'         => '5.6.0'
+            'php'         => '7.4.0'
         ));
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
-        $propbag->add('version', '1.8');
+        $propbag->add('version', '2.0.0');
         $propbag->add('stackable', false);
         $this->dependencies = array('serendipity_event_entryproperties' => 'keep');
     }
@@ -37,14 +37,14 @@ class serendipity_event_outdate_entries extends serendipity_event {
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_OUTDATE_TIMEOUT);
                 $propbag->add('description', PLUGIN_EVENT_OUTDATE_TIMEOUT_DESC);
-                $propbag->add('default',     31);
+                $propbag->add('default',     0);
                 break;
 
             case 'timeout_sticky':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_OUTDATE_TIMEOUT_STICKY);
                 $propbag->add('description', PLUGIN_EVENT_OUTDATE_TIMEOUT_STICKY_DESC);
-                $propbag->add('default',     31);
+                $propbag->add('default',     0);
                 break;
 
             case 'timeout_custom':
@@ -82,7 +82,7 @@ class serendipity_event_outdate_entries extends serendipity_event {
                                     AS ep
                                     ON (ep.entryid = e.id AND ep.property = 'ep_access')
                                  WHERE (ep.property IS NULL OR ep.value = 'public')
-                                   AND e.timestamp < " . (time() - ($this->get_config('timeout') * 24 * 60 * 60));
+                                   AND e.timestamp < " . (time() - ((int)$this->get_config('timeout') * 24 * 60 * 60));
 
                         $rows = serendipity_db_query($sql);
                         if (is_array($rows)) {
@@ -93,6 +93,34 @@ class serendipity_event_outdate_entries extends serendipity_event {
                                     serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES (" . $row['id'] . ", 'ep_access', 'member')");
                                 }
                             }
+                        }
+                    } else {
+                        // Fix issue https://board.s9y.org/viewtopic.php?f=4&t=20456 resetting the timeout variable again after all entries are restricted to get accessed by member(s) only, to 0 or once manual set -1 !
+                        if ($this->get_config('timeout') === '-1') {
+                            // Check out given entryproperties 'default_read' config variable (private, public, member)
+                            if (isset($serendipity[$this->get_config('dependencies').'/default_read'])){
+                                $access = $serendipity[$this->get_config('dependencies').'/default_read'];
+                            }
+                            $ep_access = $access ?? 'public'; // else fallback to default
+
+                            $sql = "SELECT id, ep.value AS access
+                                      FROM {$serendipity['dbPrefix']}entries
+                                        AS e
+                           LEFT OUTER JOIN {$serendipity['dbPrefix']}entryproperties
+                                        AS ep
+                                        ON (ep.entryid = e.id AND ep.property = 'ep_access')
+                                     WHERE (ep.property = 'ep_access' AND ep.value = 'member')
+                                       AND e.timestamp < " . (time());
+
+                            $rows = serendipity_db_query($sql);
+
+                            if (is_array($rows)) {
+                                foreach($rows AS $idx => $row) {
+                                    serendipity_db_query("UPDATE {$serendipity['dbPrefix']}entryproperties SET value = '$ep_access' WHERE entryid = " . (int)$row['id'] . " AND property = 'ep_access'");
+                                }
+                            }
+                            // Reset to 0 for disabled option, to not run again !
+                            $this->set_config('timeout', '0');
                         }
                     }
 
