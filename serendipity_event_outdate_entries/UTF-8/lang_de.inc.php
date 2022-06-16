@@ -1,7 +1,7 @@
 <?php
 
 @define('PLUGIN_EVENT_OUTDATE', 'Einträge nach Verfallsdatum ausblenden');
-@define('PLUGIN_EVENT_OUTDATE_DESC', 'Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind. Sowie weitere, ähnliche Methoden zum Artikel Behandlung.');
+@define('PLUGIN_EVENT_OUTDATE_DESC', 'Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind. Sowie weitere, ähnliche Methoden zur Artikel Behandlung.');
 @define('PLUGIN_EVENT_OUTDATE_TIMEOUT', 'Wann werden Artikel unsichtbar?');
 @define('PLUGIN_EVENT_OUTDATE_TIMEOUT_DESC', 'Geben sie das Alter eines Eintrages (in Tagen, beispielsweise 31) an, nachdem ein Artikel für Besucher "unsichtbar" wird. 0 zum Deaktivieren. Sollten Sie dieses Feature bereits benutzt haben, wird das Deaktivieren mit 0 zu keiner Veränderung derjenigen Einträge führen. Zum Zurücksetzen all dieser Einträge, die bereits nur für registrierte Benutzer sichtbar gesetzt wurden, geben Sie einmalig -1 ein und speichern die Konfiguration ab. Der nächste Aufruf im Frontend (*) nimmt dann die Konvertierung aller "member" Einträge in "public" Einträge vor und setzt diese Konfiguration Variable auf 0. (* Unter Umständen benötigt solch ein Frontend Request bis zu 2 Aufrufe bis alles gesetzt und korrekt wieder ausgelesen ist. Machen Sie es am besten selbst.)');
 @define('PLUGIN_EVENT_OUTDATE_TIMEOUT_STICKY', 'Wann werden dauerhafte Artikel freigegeben?');
