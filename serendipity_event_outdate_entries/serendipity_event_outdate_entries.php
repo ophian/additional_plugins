@@ -18,7 +18,7 @@ class serendipity_event_outdate_entries extends serendipity_event {
         $propbag->add('description', PLUGIN_EVENT_OUTDATE_DESC);
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true));
         $propbag->add('configuration', array('timeout', 'timeout_sticky', 'timeout_custom'));
-        $propbag->add('author', 'Garvin Hicking');
+        $propbag->add('author', 'Garvin Hicking, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.6',
