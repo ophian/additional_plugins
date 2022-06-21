@@ -437,7 +437,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Freie Artikel-Tags&lt;/b&gt;&lt;br /&gt;Erlaubt das freie Tagging von Artikeln&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Mon, 18 Apr 2022 13:20:22 +0200</pubDate>
+<pubDate>Sat, 18 Jun 2022 12:51:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -828,12 +828,12 @@
 <guid isPermaLink="false">serendipity_event_static_osm</guid>
 </item>
 <item>
-<title>Einträge nach Verfallsdatum ausblenden: Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind. Sowie weitere, ähnliche Methoden zum Artikel Behandlung.</title>
+<title>Einträge nach Verfallsdatum ausblenden: Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind. Sowie weitere, ähnliche Methoden zur Artikel Behandlung.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_outdate_entries</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Einträge nach Verfallsdatum ausblenden&lt;/b&gt;&lt;br /&gt;Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind. Sowie weitere, ähnliche Methoden zum Artikel Behandlung.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 16 Jun 2022 12:46:50 +0200</pubDate>
+<author>Garvin Hicking, Ian Styx</author>
+<content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Einträge nach Verfallsdatum ausblenden&lt;/b&gt;&lt;br /&gt;Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind. Sowie weitere, ähnliche Methoden zur Artikel Behandlung.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 17 Jun 2022 10:39:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_outdate_entries</guid>
 </item>
 <item>
@@ -1238,7 +1238,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;Benutzerprofile&lt;/b&gt;&lt;br /&gt;Zeigt einfache Benutzerprofile&lt;br/&gt;For: Serendipity 3.5</content:encoded>
-<pubDate>Sun, 24 Apr 2022 15:56:44 +0200</pubDate>
+<pubDate>Sun, 19 Jun 2022 12:40:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>

@@ -437,7 +437,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;글에 태그 달기&lt;/b&gt;&lt;br /&gt;글에 자유롭게 태그를 달 수 있게 합니다&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Mon, 18 Apr 2022 13:20:22 +0200</pubDate>
+<pubDate>Sat, 18 Jun 2022 12:51:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -831,9 +831,9 @@
 <title>Hide/delete entries after a specific timespan: Hides all entries which are older than a specified age, so that they are only visible for registered users/authors. And similar more.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_outdate_entries</link>
 <category>Event Plugins</category>
-<author>Garvin Hicking</author>
+<author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Hide/delete entries after a specific timespan&lt;/b&gt;&lt;br /&gt;Hides all entries which are older than a specified age, so that they are only visible for registered users/authors. And similar more.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 16 Jun 2022 12:46:50 +0200</pubDate>
+<pubDate>Fri, 17 Jun 2022 10:39:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_outdate_entries</guid>
 </item>
 <item>
@@ -1238,7 +1238,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;User Profiles&lt;/b&gt;&lt;br /&gt;Shows simple user profiles and allows to embed author pictures.&lt;br/&gt;For: Serendipity 3.5</content:encoded>
-<pubDate>Sun, 24 Apr 2022 15:56:44 +0200</pubDate>
+<pubDate>Sun, 19 Jun 2022 12:40:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
