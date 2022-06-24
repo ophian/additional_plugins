@@ -1,4 +1,4 @@
-{* backend_staticpage template file v. 1.37, 2021-06-03 *}
+{* backend_staticpage template file v. 1.38, 2022-06-23 *}
 
 <!-- backend_staticpage.tpl START -->
 
@@ -274,7 +274,7 @@
 
 {foreach $sp_listentries_entries AS $entry}
 
-    <div class="sp_entries_pane {cycle values="odd,even"}{if $entry@last} sp_close{/if}">
+    <div class="sp_entries_pane {cycle values="odd,even"}{if isset($entry@last) && $entry@last} sp_close{/if}">
         <ul id="sp_entries_list" class="plainList{if $entry['parent_id'] > 0} sp_isChild{/if}">
             <li id="sple{$entry['id']}" class="clearfix">
                 <h3>{if $entry['parent_id'] > 0}<span class="entry_status sp_ptree" title="parent static page ID">#{$entry['parent_id']}</span><span class="icon-right-dir sp_ctree" aria-hidden="true"></span>{/if}{if empty($entry['headline'])}<span class="five"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="tomato" class="bi bi-cone-striped" viewBox="0 0 16 16"><title id="title">{$CONST.STATICPAGE_PAGETITLE}</title><path d="M9.97 4.88l.953 3.811C10.158 8.878 9.14 9 8 9c-1.14 0-2.159-.122-2.923-.309L6.03 4.88C6.635 4.957 7.3 5 8 5s1.365-.043 1.97-.12zm-.245-.978L8.97.88C8.718-.13 7.282-.13 7.03.88L6.274 3.9C6.8 3.965 7.382 4 8 4c.618 0 1.2-.036 1.725-.098zm4.396 8.613a.5.5 0 0 1 .037.96l-6 2a.5.5 0 0 1-.316 0l-6-2a.5.5 0 0 1 .037-.96l2.391-.598.565-2.257c.862.212 1.964.339 3.165.339s2.303-.127 3.165-.339l.565 2.257 2.391.598z"/></svg></span> {/if}<a href="?serendipity[action]=admin&amp;serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pages&amp;serendipity[staticid]={$entry['id']}&amp;{$sp_listentries_urltoken}" title="#{$entry['id']} {$entry['pagetitle']|escape}">{if !empty($entry['headline'])}{$entry['headline']|truncate:50}{else}{$entry['pagetitle']|escape}{/if}</a></h3>
