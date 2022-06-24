@@ -1,3 +1,8 @@
+6.54:
+1.35:
+-----
+ * Improve class properties for PHP 8.2/9.0
+
 6.53:
 -----
  * Better check a Smarty internal variable in the backend_staticpage.tpl file for PHP 8.2/9.0

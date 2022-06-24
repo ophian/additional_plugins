@@ -8,15 +8,13 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_staticpage extends serendipity_plugin
 {
-    var $staticpage_config = array();
-
     function introspect(&$propbag)
     {
         $propbag->add('name',        PLUGIN_STATICPAGELIST_NAME);
         $propbag->add('description', PLUGIN_STATICPAGELIST_NAME_DESC);
         $propbag->add('author',      "Rob Antonishen, Falk Doering, Ian Styx");
         $propbag->add('stackable',   true);
-        $propbag->add('version',     '1.34');
+        $propbag->add('version',     '1.35');
         $propbag->add('configuration', array(
                 'title',
                 'limit',
