@@ -1,3 +1,8 @@
+4.19.0.0:
+---------
+    * Upgrade to CKEDITOR 4.19. Series, update 0 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
+
 4.18.0.2:
 ---------
     * Add new CKEplus zip to remove deprecated and removed flash build-in alerts
