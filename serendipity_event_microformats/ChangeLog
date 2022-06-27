@@ -1,3 +1,7 @@
+0.53:
+------
+ * Fix some [de] typos
+
 0.52:
 ------
  * PHP 8 variable init startup fixes
