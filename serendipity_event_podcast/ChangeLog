@@ -1,3 +1,7 @@
+1.47:
+-----
+ * Fix some [de] constants for length and wording
+
 1.46:
 -----
  * Update getid3 lib to 1.9.20 [2020-06-30]

@@ -115,7 +115,7 @@ class serendipity_event_podcast extends serendipity_event
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.46');
+        $propbag->add('version', '1.47');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.0.0',
