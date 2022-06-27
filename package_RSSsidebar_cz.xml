@@ -187,7 +187,7 @@
 <category>Sidebar Plugins</category>
 <author>Evan Nemerson, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_creativecommons&lt;br /&gt;Creative Commons&lt;/b&gt;&lt;br /&gt;V postranním panelu zobrazuje podrobnosti použité licence &quot;Creative Commons&quot; (Autorská práva)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:25:50 +0200</pubDate>
+<pubDate>Mon, 27 Jun 2022 18:11:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_creativecommons</guid>
 </item>
 <item>
@@ -195,8 +195,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_currently</link>
 <category>Sidebar Plugins</category>
 <author>Dustin Hawkins</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_currently&lt;br /&gt;Co právě dělám&lt;/b&gt;&lt;br /&gt;Zobrazuje seznam toho, co právě posloucháte, hrajete nebo čtete.&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 23 Jan 2020 13:47:30 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_currently&lt;br /&gt;Co právě dělám&lt;/b&gt;&lt;br /&gt;Zobrazuje seznam toho, co právě posloucháte, hrajete nebo čtete.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Mon, 27 Jun 2022 19:08:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_currently</guid>
 </item>
 <item>
@@ -340,7 +340,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Evan Nemerson</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_pollbox&lt;br /&gt;Ankety&lt;/b&gt;&lt;br /&gt;V postranním sloupci zobrazí aktuální anketu&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Tue, 03 Aug 2021 20:44:59 +0200</pubDate>
+<pubDate>Mon, 27 Jun 2022 18:12:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_pollbox</guid>
 </item>
 <item>

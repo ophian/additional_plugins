@@ -736,7 +736,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Matthias Gutjahr, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Microformats&lt;/b&gt;&lt;br /&gt;This plugin provides an easy way to publish reviews (or events); it supports the respective microformats.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 30 Jul 2021 11:23:12 +0200</pubDate>
+<pubDate>Mon, 27 Jun 2022 18:35:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_microformats</guid>
 </item>
 <item>
@@ -871,7 +871,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_podcast&lt;br /&gt;Easy Podcasting Plugin&lt;/b&gt;&lt;br /&gt;Adds &quot;podcasting&quot; capabilities (RSS enclosure, Video/Sound-Player)&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 15 Jul 2021 10:28:16 +0200</pubDate>
+<pubDate>Mon, 27 Jun 2022 18:52:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_podcast</guid>
 </item>
 <item>
@@ -1339,7 +1339,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_pollbox&lt;br /&gt;投票管理&lt;/b&gt;&lt;br /&gt;投票の管理&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 04 Aug 2021 12:11:59 +0200</pubDate>
+<pubDate>Mon, 27 Jun 2022 18:14:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_pollbox</guid>
 </item>
 <item>
