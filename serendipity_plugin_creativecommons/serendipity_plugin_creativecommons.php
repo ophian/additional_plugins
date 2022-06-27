@@ -18,7 +18,7 @@ class serendipity_plugin_creativecommons extends serendipity_plugin
         $propbag->add('description',   PLUGIN_SIDEBAR_CREATIVECOMMONS_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Evan Nemerson, Ian Styx');
-        $propbag->add('version',       '1.2');
+        $propbag->add('version',       '1.3');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -37,7 +37,6 @@ class serendipity_plugin_creativecommons extends serendipity_plugin
             case 'title':
                 $propbag->add('type',          'string');
                 $propbag->add('name',          TITLE);
-                $propbag->add('description',   TITLE);
                 $propbag->add('default', '');
                 break;
 
