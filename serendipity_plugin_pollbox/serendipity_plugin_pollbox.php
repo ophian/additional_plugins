@@ -21,7 +21,7 @@ class serendipity_plugin_pollbox extends serendipity_plugin
         $propbag->add('configuration', array('title'));
         $propbag->add('author', 'Garvin Hicking, Evan Nemerson');
         $propbag->add('stackable', false);
-        $propbag->add('version', '2.18');
+        $propbag->add('version', '2.19');
         $propbag->add('groups', array('STATISTICS'));
         $this->dependencies = array('serendipity_event_pollbox' => 'keep');
     }
@@ -33,7 +33,6 @@ class serendipity_plugin_pollbox extends serendipity_plugin
         if ( $name == 'title' ) {
             $propbag->add('type',          'string');
             $propbag->add('name',          TITLE);
-            $propbag->add('description',   TITLE);
             $propbag->add('default',       PLUGIN_POLL_TITLE);
         }
 
