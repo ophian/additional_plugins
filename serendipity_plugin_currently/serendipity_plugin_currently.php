@@ -2,21 +2,13 @@
 //xml.inc has everything we need to do the actual xml.amazon.com query.
 include_once('soap.inc');
 
-
 //Stole a lot of this code from serendipity_plugin_shoutbox. Thanks, helped me a lot!
-
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_plugin_currently extends serendipity_plugin
 {
@@ -34,11 +26,11 @@ class serendipity_plugin_currently extends serendipity_plugin
         $propbag->add('description',   PLUGIN_CURRENTLY_DETAIL);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Dustin Hawkins');
-        $propbag->add('version',       '2.1');
+        $propbag->add('version',       '2.2');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '5.0.1'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '5.6'
         ));
         $propbag->add('groups', array('FRONTEND_VIEWS'));
 
@@ -52,8 +44,8 @@ class serendipity_plugin_currently extends serendipity_plugin
 					     'associates', 'associates_tag','associates_id','associates_key'));
     }
 
-    function introspect_config_item($name, &$propbag) {
-
+    function introspect_config_item($name, &$propbag)
+    {
         global $serendipity;
 
         $select = array('US' => 'Amazon.com',
@@ -102,6 +94,7 @@ class serendipity_plugin_currently extends serendipity_plugin
                 $propbag->add('description', PLUGIN_CURRENTLY_LISTENING_ALBUM_DETAILS);
                 $propbag->add('default','');
                 break;
+
             case 'listening_track':
                 $propbag->add('type', 'string');
                 $propbag->add('name', PLUGIN_CURRENTLY_LISTENING_TRACK);
@@ -147,7 +140,7 @@ class serendipity_plugin_currently extends serendipity_plugin
                 $propbag->add('default', $select_default);
                 break;
             
-	    case 'associates':
+            case 'associates':
                 $propbag->add('type', 'content');
                 $propbag->add('default', PLUGIN_CURRENTLY_AMAZON_DETAILS);
                 break;
@@ -175,7 +168,7 @@ class serendipity_plugin_currently extends serendipity_plugin
 
 
             default:
-                    return false;
+               return false;
         }
         return true;
     }
@@ -185,9 +178,8 @@ class serendipity_plugin_currently extends serendipity_plugin
     // very very simple table to hold values and if the value has already been looked up, return it.
     // Otherwise, query amazon.
 
-    function search_database($search,$section='Books',$locale='US') {
-
-
+    function search_database($search,$section='Books',$locale='US')
+    {
         global $serendipity;
 
         $search = serendipity_db_escape_string($search);
@@ -214,9 +206,10 @@ class serendipity_plugin_currently extends serendipity_plugin
 
     //This will add a recently looked up value to the database
 
-    function add_database ($urls,$search,$section) {
-
+    function add_database ($urls,$search,$section)
+    {
         global $serendipity;
+
         $url_image = $urls[Image];
         $url_detail = $urls[Detail];
 
@@ -238,7 +231,7 @@ class serendipity_plugin_currently extends serendipity_plugin
         $listening_band     = $this->get_config('listening_band');
         $listening_album    = $this->get_config('listening_album');
         $listening_track    = $this->get_config('listening_track');
-        $listening_locale     = $this->get_config('listening_locale');
+        $listening_locale   = $this->get_config('listening_locale');
         $playing            = $this->get_config('playing');
         $playing_locale     = $this->get_config('plaing_locale');
         $watching           = $this->get_config('watching');
@@ -249,8 +242,7 @@ class serendipity_plugin_currently extends serendipity_plugin
         // Create table, if its not there, or if we have a new version
 
         if ($this->get_config('version') != '1.01') {
-
-           $q   = "CREATE TABLE {$serendipity['dbPrefix']}currently (
+            $q   = "CREATE TABLE {$serendipity['dbPrefix']}currently (
                         id {AUTOINCREMENT} {PRIMARY},
                         search varchar(255) default NULL,
                         section varchar(255) default NULL,
@@ -316,4 +308,3 @@ class serendipity_plugin_currently extends serendipity_plugin
 }//class
 
 /* vim: set sts=4 ts=4 expandtab : */
-?>

@@ -28,7 +28,6 @@
 @define('PLUGIN_CURRENTLY_LOCALE','Amazon Locale (Zemì)');
 @define('PLUGIN_CURRENTLY_LOCALE_DETAILS','Amazon Locale (Zemì)');
 
-
 @define('PLUGIN_CURRENTLY_AMAZON_DETAILS','<br/><p><strong>Zadejte níže Vaše Amazon Associates údaje, nebo ponechte prázdné pro použití výchozích hodnot. Amazon Associates údaje jsou pøístupné na stránce <a href="http://aws.amazon.com">Amazon Web Services</a>.</strong></p><br/>');
 @define('PLUGIN_CURRENTLY_AMAZON_TAG','Amazon Associates Tag');
 @define('PLUGIN_CURRENTLY_AMAZON_TAG_DETAILS','Váš Amazon Associates Tag');
@@ -36,3 +35,4 @@
 @define('PLUGIN_CURRENTLY_AMAZON_ID_DETAILS','Váš pøístupový Amazon klíè/identifikátor');
 @define('PLUGIN_CURRENTLY_AMAZON_KEY','Amazon Secret Access Key');
 @define('PLUGIN_CURRENTLY_AMAZON_KEY_DETAILS','Váš tajný pøístupový Amazon klíè');
+
