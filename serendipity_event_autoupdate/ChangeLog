@@ -1,4 +1,9 @@
-1.9.0
+1.9.1:
+------
+
+ * Improve [de] options wording
+
+1.9.0:
 ------
 
  * On shared installation upgrades, allow to remove symlink'ed directories ('docs', 'templates').
