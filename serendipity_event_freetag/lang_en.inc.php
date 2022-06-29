@@ -85,7 +85,7 @@
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', 'All categories converted to tags.');
 
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'Automated keywords');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'You can assign keywords (separated by ",") for each tag. Whenever you use those keywords in the text of your entries, the corresponding tag is assigned to your entry. Note that many automated keywords may increase the time taken for saving an entry.');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'You can assign keywords (separated by ",") for each existing tag. Whenever you use those keywords in the text of your entries, the corresponding tag is assigned to your entry. Note that many automated keywords may increase the time taken for saving an entry.');
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Found keyword <strong>%s</strong>, tag <strong><em>%s</em></strong> assigned automatically.');
 
 @define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', 'Fetching entries %d to %d');

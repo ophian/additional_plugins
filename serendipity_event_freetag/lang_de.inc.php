@@ -85,7 +85,7 @@
 @define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', 'Alle Kategorien wurden zu Tags konvertiert.');
 
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'Automatische Schlüsselwörter');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'Sie können Schlüsselwörter (mit "," getrennt) für jedes Tag zuweisen. Immer wenn eines dieser Schlüsselwörter im Text gefunden wird, wird der zugehörige Tag automatisch dem Eintrag zugewiesen. Achten Sie darauf, dass sehr viele automatische Schlüsselwörter beim Speichern eines Artikels längere Zeit beanspruchen können.');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'Sie können Schlüsselwörter (mit "," getrennt) für jedes bereits bestehende Tag zuweisen. Immer wenn eines dieser Schlüsselwörter im Text gefunden wird, wird der zugehörige Tag automatisch dem Eintrag zugewiesen. Achten Sie darauf, dass sehr viele automatische Schlüsselwörter beim Speichern eines Artikels längere Zeit beanspruchen können.');
 @define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Schlüsselwort <strong>%s</strong> gefunden, Tag <strong><em>%s</em></strong> automatisch zugewiesen.');
 
 @define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', 'Lese Einträge %d bis %d');
