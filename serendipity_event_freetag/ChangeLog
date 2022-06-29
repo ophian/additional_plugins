@@ -1,3 +1,8 @@
+5.21:
+-----
+ * Avoid a case of MySQLi error exception inserting duplicate entry 'id-tag'
+   for key 'PRIMARY' for category to tags action.
+
 5.20:
 -----
  * Colorize freetag toolbar "action" icons (last three)

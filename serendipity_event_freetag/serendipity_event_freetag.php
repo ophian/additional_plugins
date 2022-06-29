@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.20');
+        $propbag->add('version',       '5.21');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1948,6 +1948,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         foreach($tags AS $tag) {
+            // Avoid Uncaught mysqli_sql_exception: Duplicate entry 'id-tag' for key 'PRIMARY'
+            $q = "DELETE FROM {$serendipity['dbPrefix']}entrytags WHERE entryid = '".(int)$entryId."' AND tag = '".serendipity_db_escape_string($tag)."'";
+            serendipity_db_query($q);
             $q = "INSERT INTO {$serendipity['dbPrefix']}entrytags (entryid, tag) VALUES (".(int)$entryId.", '".serendipity_db_escape_string($tag)."')";
             serendipity_db_query($q);
         }
