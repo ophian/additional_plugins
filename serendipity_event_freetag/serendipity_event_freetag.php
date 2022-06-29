@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.19');
+        $propbag->add('version',       '5.20');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2304,15 +2304,15 @@ document.addEventListener("DOMContentLoaded", function() {
                             <title>key-to-tag</title>
                             <path glyph-name="keytag" unicode="&#xe803;" d="M464 564q0 45-31 76t-76 31-76-31-31-76q0-23 11-46-23 11-47 11-44 0-76-32t-31-76 31-75 76-32 76 32 31 75q0 24-10 47 23-11 46-11 45 0 76 31t31 76z m475-393q0-9-27-36t-37-28q-5 0-16 9t-20 19-22 22-13 14l-54-53 123-123q15-16 15-38 0-23-21-45t-46-22q-22 0-38 16l-374 374q-98-73-204-73-91 0-148 57t-57 149q0 89 53 174t138 139 175 53q91 0 148-58t57-148q0-105-73-203l198-199 54 54q-2 2-15 14t-22 21-18 21-9 15q0 10 27 37t37 28q7 0 13-6 3-3 26-25t45-44 49-48 40-44 16-23z" horiz-adv-x="1000" />
                         </symbol>
-                        <symbol id="icon-ctag" viewBox="0 0 1024 1024">
+                        <symbol id="icon-ctag" fill="#3aaadf" viewBox="0 0 1024 1024">
                             <title>category-tags</title>
                             <path glyph-name="ctag" unicode="&#xe807;" d="M429 493q0 59-42 101t-101 42-101-42-42-101 42-101 101-42 101 42 42 101z m142 0q0-61-18-100l-203-432q-9-18-27-29t-37-11-38 11-26 29l-204 432q-18 39-18 100 0 118 84 202t202 84 202-84 83-202z" horiz-adv-x="571.4" />
                         </symbol>
-                        <symbol id="icon-autotag" viewBox="0 0 1024 1024">
+                        <symbol id="icon-autotag" fill="#3aaadf" viewBox="0 0 1024 1024">
                             <title>automatic-key-tags</title>
                             <path glyph-name="autotag" unicode="&#xe802;" d="M620 294v2l-13 179q-1 7-7 13t-12 5h-104q-7 0-13-5t-6-13l-14-179v-2q0-6 5-11t12-4h136q7 0 12 4t4 11z m424-260q0-41-26-41h-393q7 0 12 5t5 13l-11 143q-1 7-7 12t-12 5h-152q-7 0-13-5t-6-12l-11-143q-1-8 4-13t12-5h-392q-26 0-26 41 0 30 14 64l233 583q5 11 15 18t21 8h189q-7 0-13-5t-6-13l-8-107q-1-8 4-13t12-5h93q7 0 12 5t5 13l-9 107q0 8-6 13t-13 5h190q11 0 21-8t14-18l233-583q15-34 15-64z" horiz-adv-x="1071.4" />
                         </symbol>
-                        <symbol id="icon-cleantag" viewBox="0 0 1024 1024">
+                        <symbol id="icon-cleantag" fill="#e5534b" viewBox="0 0 1024 1024">
                             <title>clean-unused-tags</title>
                             <path glyph-name="cleantag" unicode="&#xe806;" d="M286 439v-321q0-8-5-13t-13-5h-36q-8 0-13 5t-5 13v321q0 8 5 13t13 5h36q8 0 13-5t5-13z m143 0v-321q0-8-5-13t-13-5h-36q-8 0-13 5t-5 13v321q0 8 5 13t13 5h36q8 0 13-5t5-13z m142 0v-321q0-8-5-13t-12-5h-36q-8 0-13 5t-5 13v321q0 8 5 13t13 5h36q7 0 12-5t5-13z m72-404v529h-500v-529q0-12 4-22t8-15 6-5h464q2 0 6 5t8 15 4 22z m-375 601h250l-27 65q-4 5-9 6h-177q-6-1-10-6z m518-18v-36q0-8-5-13t-13-5h-54v-529q0-46-26-80t-63-34h-464q-37 0-63 33t-27 79v531h-53q-8 0-13 5t-5 13v36q0 8 5 13t13 5h172l39 93q9 21 31 35t44 15h178q22 0 44-15t30-35l39-93h173q8 0 13-5t5-13z" horiz-adv-x="785.7" />
                         </symbol>
