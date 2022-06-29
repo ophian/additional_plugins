@@ -1,4 +1,10 @@
+5.20:
+-----
+ * Colorize freetag toolbar "action" icons (last three)
+ * Improve PLUGIN_EVENT_FREETAG_KEYWORDS_DESC [en, de]
+
 5.19:
+5.18:
 -----
  * Check an empty case conversion of assigned categories of existing entries to tags
 
