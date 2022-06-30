@@ -1,3 +1,7 @@
+2.3.0:
+-----
+ * Prepare for PHP 8.2
+
 2.2.0:
 -----
  * Fixup permission to access backend_category_showForm

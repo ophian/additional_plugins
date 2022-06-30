@@ -14,9 +14,11 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_categorytemplates extends serendipity_event
 {
-    var $title = PLUGIN_CATEGORYTEMPLATES_NAME;
+    public $title = PLUGIN_CATEGORYTEMPLATES_NAME;
 
     private $bycategory = [];
+    private $usesDefaultTemplate = [];
+    private $sort_order = null;
 
     function introspect(&$propbag)
     {
@@ -26,7 +28,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.2.0');
+        $propbag->add('version',       '2.3.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.3.0'
