@@ -43,7 +43,7 @@
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_NAME', 'Bilder pro Seite');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_DESC', 'Geben Sie die Anzahl der Bilder ein, die pro Seite angezeigt werden sollen. Wenn "0", wird es nur eine Seite geben, auf der sich alle Bilder befinden.');
 @define('PLUGIN_EVENT_USERGALLERY_JQUERY', 'Nutze Plugin jQuery lib');
-@define('PLUGIN_EVENT_USERGALLERY_JQUERY_DESC', 'Aktivieren Sie dies nur, wenn ihr Theme im header oder footer nicht schon das "default" jquery.js lädt. Stelllen Sie aber sicher, dass jQuery vor dem lightbox Script geladen wird.');
+@define('PLUGIN_EVENT_USERGALLERY_JQUERY_DESC', 'Aktivieren Sie dies nur, wenn ihr Theme im header oder footer nicht schon das "default" jquery.js lädt. Stellen Sie aber sicher, dass jQuery vor dem lightbox Script geladen wird.');
 @define('PLUGIN_EVENT_USERGALLERY_PREVIOUS', 'zurück');
 @define('PLUGIN_EVENT_USERGALLERY_NEXT', 'weiter');
 @define('PLUGIN_EVENT_USERGALLERY_UPONELEVEL', 'Eine Ebene höher');
@@ -90,12 +90,12 @@
 @define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC', 'Falls ausgewählt, wird zu einem Bild aus der Mediendatenbank, das in einem Blog-Eintrag verlinkt wurde, im RSS-Feed auch der Inhalt des Blog-Eintrages ausgegeben, anstelle einer einfachen Verlinkung zum passenden Blogeintrag (Standard).');
 
 @define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_NAME', 'Nutze Lightbox Ausgabe');
-@define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_DESC', 'Benötigt ein installiertes Lightbox-Plugin und obige Option: "Einzelbildanzeige" gesetzt als "In Seite einpassen". Wenn das Lightbox-Plugin nur für "hiesige" Usergalerie-Seiten benutzt werden soll, installiere und verschiebe es anschließend in der Pluginliste in das Inaktiv (hidden) event Feld. Die "Ja" Auswahl setzt die erforderlichen Scripte direkt in den Galerie container über die plugin_usergallery.tpl Datei; "API" nutzt den \'frontend_footer\' hook zur Ausgabe. Letzteres kann wichtig sein, damit die benötigte jQuery library vor den besagten Scripten geladen wird. Dies ist bei Themes unterschiedlich. Gute Praxis von HTML ist die Verlinkung solcher Skripte am Seitenende bereitzustellen. "Nein" macht die Nutzung eines Leuchtkastens vom aktivem Lightbox-Plugin abhängig.');
+@define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_DESC', 'Benötigt ein installiertes Lightbox-Plugin und obige Option: "Einzelbildanzeige" gesetzt als "In Seite einpassen". Wenn das Lightbox-Plugin nur für "hiesige" Usergalerie-Seiten benutzt werden soll, installiere und verschiebe es anschließend in der Pluginliste in das Inaktiv (hidden) event Feld. Die "Ja" Auswahl setzt die erforderlichen Scripte direkt in den Galerie Container über die plugin_usergallery.tpl Datei; "API" nutzt den \'frontend_footer\' hook zur Ausgabe. Letzteres kann wichtig sein, damit die benötigte jQuery library vor den besagten Scripten geladen wird. Dies ist bei Themes unterschiedlich. Gute Praxis von HTML ist die Verlinkung solcher Skripte am Seitenende bereitzustellen. "Nein" macht die Nutzung eines Leuchtkastens vom aktivem Lightbox-Plugin abhängig.');
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_NAME', 'Wähle Lightbox-Plugin-Typ');
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_DESC', 'Wählen Sie den selben Typ wie im lightbox Plugin. Man kann kein anderes lightbox-widget hier anwählen wenn dasselbe selbst aktiv gesetzt ist. Achten Sie auf mögliche Abhängigkeiten in der Anordnung/Reihenfolge der Pluginliste.');
 
 @define('PLUGIN_EVENT_USERGALLERY_SHOWOBJECTS_NAME', 'Zeige alle Nicht-Bild Dateien');
-@define('PLUGIN_EVENT_USERGALLERY_SHOWOBJECTS_DESC', 'Erweitere das Galerie Array mit allen Nicht-Bild Dateien aus der Mediendatendank, zB. *.pdf Dateien.');
+@define('PLUGIN_EVENT_USERGALLERY_SHOWOBJECTS_DESC', 'Erweitere das Galerie Array mit allen Nicht-Bild Dateien aus der Mediathek, zB. *.pdf Dateien.');
 
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOX_PATH', 'Pfad zum Lightbox Plugin Verzeichnis');
 
