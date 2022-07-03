@@ -51,10 +51,24 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Zeigt alle vorhandenen Tags');
 @define('PLUGIN_FREETAG_NEWLINE', 'Zeilenumbruch nach jedem Tag?');
 @define('PLUGIN_FREETAG_XML', 'XML-Icons anzeigen?');
-@define('PLUGIN_FREETAG_SCALE', 'Schriftgröße des Font-Tags je nach Popularität vergrößern (wie flickr)?');
+@define('PLUGIN_FREETAG_SCALE', 'Schriftgröße der Tags nach Häufigkeit skalieren?');
 @define('PLUGIN_FREETAG_UPGRADE1_2', 'Aktualisiere %d Tags zu Eintrag %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Wieviele Tags sollen angezeigt werden?');
-@define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Wie oft muss ein Tag vorkommen, damit er angezeigt wird?');
+@define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Mindest-Nutzung eines Tags für Anzeige');
+
+@define('PLUGIN_EVENT_FREETAG_USE_CAROC', 'Eine rotierende Canvas-Wolke verwenden?');
+@define('PLUGIN_EVENT_FREETAG_USE_CAROC_DESC', 'Eine rotierende JavaScript-Wolke in %s! (Begrenzt einsetzbar, da sie mehr oder weniger "quadratische" Umgebungen benötigt.)');
+@define('PLUGIN_EVENT_FREETAG_CAROC_TAG_COLOR', 'Tag-Farbe für rotierende Canvas-Wolke (rrggbb)');
+@define('PLUGIN_EVENT_FREETAG_CAROC_TAG_BORDER_COLOR', 'Tag Randfarbe für rotierende Canvas-Wolke (rrggbb)');
+@define('PLUGIN_EVENT_FREETAG_CAROC_BOXWIDTH', 'Breite der rotierenden Canvas-Wolke in Pixeln');
+
+@define('PLUGIN_EVENT_FREETAG_USE_CAWOC', 'Eine moderne Canvas 2D-Wortwolke verwenden?');
+@define('PLUGIN_EVENT_FREETAG_USE_CAWOC_DESC', 'Eine hochmoderne "wordle"-ähnliche 2D-Wortwolke in %s!');
+
+@define('PLUGIN_EVENT_FREETAG_USE_CANVAS_PLUGIN_SPRINT', 'Seitenleisten und Archiven');
+@define('PLUGIN_EVENT_FREETAG_USE_CANVAS_EVENT_SPRINT', 'verwandten Tags');
+
+@define('PLUGIN_FREETAG_USE_CANVAS_SCRIPTS_DESC', 'Um die Canvas-Skripte einzubinden, muss "show_tagcloud" auch im Event-Plugin aktiviert werden!');
 
 //
 // later on additions

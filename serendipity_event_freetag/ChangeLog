@@ -1,3 +1,7 @@
+5.22:
+-----
+ * Improve [en, de] for length and "cloud" related [de] translations
+
 5.21:
 -----
  * Avoid a case of MySQLi error exception inserting duplicate entry 'id-tag'

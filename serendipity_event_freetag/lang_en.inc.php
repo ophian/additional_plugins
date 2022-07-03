@@ -51,10 +51,10 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Shows a list of existing tags for entries');
 @define('PLUGIN_FREETAG_NEWLINE', 'Linefeed after each Tag?');
 @define('PLUGIN_FREETAG_XML', 'Show XML-icons?');
-@define('PLUGIN_FREETAG_SCALE', 'Scale tag font size depending on popularity (like flickr)?');
+@define('PLUGIN_FREETAG_SCALE', 'Scale font size of tags by frequency?');
 @define('PLUGIN_FREETAG_UPGRADE1_2', 'Upgrading %d tags for entry number: %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'How many tags should be shown?');
-@define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'How many occurrences must a tag have in order to be shown?');
+@define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Minimum usage of a tag for display');
 
 //
 // later on additions
