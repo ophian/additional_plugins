@@ -1,6 +1,14 @@
-2.1:
+2.3:
+----
+ * Fix a PHP 8 deprecation warning
+
+2.2:
 ----
  * Consistency cleanup
+
+2.1:
+----
+ * (unknown)
 
 2.0:
 ----

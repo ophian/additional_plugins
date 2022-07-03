@@ -1,6 +1,6 @@
 <?php
 
-function find_best_image ($search,$section="All",$locale='US', $associates_id, $id, $key) {
+function find_best_image($search, $section="All", $locale='US', $associates_id=null, $id=null, $key=null) {
     $associates_id = empty($associates_id)?'dh0net-20':$associates_id;
     $id            = empty($id)?'1FVN639T3TXS5YERF5R2':$id;
     $key           = empty($key)?'jZ4WsNOHEiRaI7/McxBfkShBM9hI1r+d6TD1+3qd':$key;
