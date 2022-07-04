@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Formularz kontaktu&lt;/b&gt;&lt;br /&gt;Pokazuje na Twojej stronie formularz kontaktu e-mailem jako stronę statyczną. Wyświetlić formularz można korzystając z własnego permalinku lub przez podanie adresu index.php?serendipity[subpage]=contactform. Możesz zmodyfikować wygląd formularza przez umieszczenie w katalogu stylu, z którego korzystasz pliku the plugin_contactform.tpl i zmodyfikowania go według własnych potrzeb. Captcha oferowane przez wtyczkę Ochrona przed spamem będą stosowane (o ile będą włączone).&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 31 Oct 2021 16:55:24 +0100</pubDate>
+<pubDate>Sun, 03 Jul 2022 19:37:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -266,7 +266,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Provides full downloadmanager capabilities to your s9y. When uninstalling, all related tables will be dropped!&lt;br/&gt;For: Serendipity 3.3.0</content:encoded>
-<pubDate>Thu, 20 Jan 2022 13:27:06 +0100</pubDate>
+<pubDate>Sun, 03 Jul 2022 14:35:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
@@ -437,7 +437,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Tagowanie wpisów&lt;/b&gt;&lt;br /&gt;Umożliwia dowolne tagowanie wpisów&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sun, 03 Jul 2022 12:50:43 +0200</pubDate>
+<pubDate>Sun, 03 Jul 2022 13:52:16 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -968,7 +968,7 @@
 <category>Event Plugins</category>
 <author>Tom Sommer, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;Podświetlaj wyszukane frazy&lt;/b&gt;&lt;br /&gt;Podświetla frazy znalezione na Twojej stronie przez wyszukiwarki&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 01 Apr 2022 11:38:14 +0200</pubDate>
+<pubDate>Sun, 03 Jul 2022 14:02:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_searchhighlight</guid>
 </item>
 <item>
@@ -1022,7 +1022,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Hidden Captcha)&lt;/b&gt;&lt;br /&gt;Implements simple comment antispam mechanisms, that are easy to configure but very effective.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 27 Dec 2021 15:29:42 +0100</pubDate>
+<pubDate>Sun, 03 Jul 2022 14:17:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Strony statyczne&lt;/b&gt;&lt;br /&gt;Pokazuje Strony statyczne w Twoim blogu tak, jak pokazywane są wszystkie inne wpisy (z zachowaniem formatowania i layoutu). Dodaje nową zakładkę w menu w Panelu administracyjnym.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Sat, 25 Jun 2022 15:44:15 +0200</pubDate>
+<pubDate>Sun, 03 Jul 2022 14:21:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
