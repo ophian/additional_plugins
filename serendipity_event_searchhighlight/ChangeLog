@@ -1,3 +1,7 @@
+2.1.0:
+-----
+ * Fixup for PHP 8.2
+
 2.0.2:
 -----
  * Fix parse_url() return check for non-mode_rewrite configurations

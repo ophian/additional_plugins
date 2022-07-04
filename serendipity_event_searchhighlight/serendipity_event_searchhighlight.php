@@ -13,7 +13,9 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_searchhighlight extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME;
+    public $title = PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME;
+
+    private $uri = null;
 
     function introspect(&$propbag)
     {
@@ -23,7 +25,7 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian Styx');
-        $propbag->add('version',       '2.0.2');
+        $propbag->add('version',       '2.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
