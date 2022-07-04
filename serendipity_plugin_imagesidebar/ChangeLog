@@ -1,3 +1,7 @@
+2.9:
+-----
+ * Fixup for PHP 8.2
+
 2.8:
 -----
  * Fix a description typo
