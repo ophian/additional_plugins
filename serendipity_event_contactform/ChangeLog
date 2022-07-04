@@ -1,3 +1,7 @@
+1.46:
+-----
+ * Add hint msg styles to dynamic_fields_desc
+
 1.45:
 -----
  * Fix some missing lang [ nl ] constants for PHP 8
