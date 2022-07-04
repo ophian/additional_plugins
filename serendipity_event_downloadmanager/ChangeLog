@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+1.57:
+-----
+ * Improve for PHP 8.2
+
 1.56:
 -----
  * Improve frontend dark mode styles with [ pure ] theme
