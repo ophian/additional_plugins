@@ -22,14 +22,13 @@ define('FREETAG_EDITENTRY_URL', '?serendipity[action]=admin&amp;serendipity[admi
 
 class serendipity_event_freetag extends serendipity_event
 {
-    var $tags                 = array();
-    var $displayTag           = false;
-    var $title                = PLUGIN_EVENT_FREETAG_TITLE;
-    var $taggedEntries        = null;
-    var $supported_properties = array();
-    var $dependencies         = array();
+    public $title             = PLUGIN_EVENT_FREETAG_TITLE;
 
-    private $bycategory = [];
+    private $displayTag       = false;
+    private $taggedEntries    = null;
+    private $tags             = [];
+    private $_eventData       = [];
+    private $bycategory       = [];
 
     function introspect(&$propbag)
     {
@@ -44,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.22');
+        $propbag->add('version',       '5.23');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1003,7 +1002,7 @@ class serendipity_event_freetag extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries_event_display_managetags':
-                    $this->eventData = $eventData; // sets "global" object array eventData
+                    $this->_eventData = $eventData; // sets "global" object array eventData
                     $this->displayManageTags();
                     break;
 
@@ -2349,14 +2348,14 @@ document.addEventListener("DOMContentLoaded", function() {
             </script>
 
 <?php
-        if (isset($this->eventData['GET']['tagaction']) && !empty($this->eventData['GET']['tagaction'])) {
+        if (isset($this->_eventData['GET']['tagaction']) && !empty($this->_eventData['GET']['tagaction'])) {
             $this->displayTagAction($full_permission);
         }
 
         // backend menu cases
-        if (isset($this->eventData['GET']['tagview'])) {
+        if (isset($this->_eventData['GET']['tagview'])) {
 
-            switch ($this->eventData['GET']['tagview']) {
+            switch ($this->_eventData['GET']['tagview']) {
 
                 case 'all': // 1
                     $tags = (array)$this->getAllTags();
@@ -2411,7 +2410,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     break;
 
                 default:
-                    if (!empty($this->eventData['GET']['tagview'])) {
+                    if (!empty($this->_eventData['GET']['tagview'])) {
                         echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . "Can't execute tagview</span>\n";
                     }
                     break;
@@ -2433,7 +2432,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (count($taglist) === 0) {
             return;
         }
-        $url = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->eventData['GET']['tagview']);
+        $url = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->_eventData['GET']['tagview']);
 ?>
 
         <table class="freetags_manage">
@@ -2557,7 +2556,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 $keys[$key['tag']] = $key['keywords'];
             }
         }
-        $url = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->eventData['GET']['tagview']);
+        $url = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->_eventData['GET']['tagview']);
 
         echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_KEYWORDS_DESC . "</span>\n";
 ?>
@@ -2773,7 +2772,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (is_array($mappings) && count($mappings) > 0) {
             // Inconsistencies found
 
-            if ($this->eventData['GET']['perform'] == 'true') {
+            if ($this->_eventData['GET']['perform'] == 'true') {
                 // Perform cleanup
 
                 $entryIDs = array();
@@ -2814,7 +2813,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 echo '<form action="" method="GET">'."\n";
                 echo '    <input type="hidden" name="serendipity[adminModule]" value="event_display" />';
                 echo '    <input type="hidden" name="serendipity[adminAction]" value="managetags" />';
-                echo '    <input type="hidden" name="serendipity[tagview]" value="' . serendipity_specialchars($this->eventData['GET']['tagview']) . '">'."\n";
+                echo '    <input type="hidden" name="serendipity[tagview]" value="' . serendipity_specialchars($this->_eventData['GET']['tagview']) . '">'."\n";
                 echo '    <input type="hidden" name="serendipity[perform]" value="true" />'."\n";
                 echo '    <input type="submit" name="submit" value="'.PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_PERFORM.'">'."\n";
                 echo "</form>\n";
@@ -3093,26 +3092,26 @@ document.addEventListener("DOMContentLoaded", function() {
     private function displayTagAction($fperm=false)
     {
         if ($fperm === false) {
-            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> Action: "' . $this->eventData['GET']['tagaction'] . '"' . " permission is set read-only!</span>\n"; // i18n?
+            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> Action: "' . $this->_eventData['GET']['tagaction'] . '"' . " permission is set read-only!</span>\n"; // i18n?
             return false;
         }
         $validActions = array('rename', 'split', 'delete');
 
         // Sanitize user input
-        $tag    = urldecode($this->eventData['GET']['tag']);
-        $action = urldecode(strtolower($this->eventData['GET']['tagaction']));
+        $tag    = urldecode($this->_eventData['GET']['tag']);
+        $action = urldecode(strtolower($this->_eventData['GET']['tagaction']));
 
-        if (!in_array($this->eventData['GET']['tagaction'], $validActions)) {
+        if (!in_array($this->_eventData['GET']['tagaction'], $validActions)) {
             exit ("DON'T HACK!");
         }
 
-        if (isset($this->eventData['GET']['commit']) && $this->eventData['GET']['commit'] == 'true') {
-            $method = 'get'.ucfirst($this->eventData['GET']['tagaction']).'TagQuery';
-            $q = $this->$method($tag, $this->eventData);
-            echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . $this->eventData['GET']['tagaction'] . " Completed</span>\n"; // i18n?
+        if (isset($this->_eventData['GET']['commit']) && $this->_eventData['GET']['commit'] == 'true') {
+            $method = 'get'.ucfirst($this->_eventData['GET']['tagaction']).'TagQuery';
+            $q = $this->$method($tag, $this->_eventData);
+            echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . $this->_eventData['GET']['tagaction'] . " Completed</span>\n"; // i18n?
         } else {
-            $method = 'display'.ucfirst($this->eventData['GET']['tagaction']).'Tag';
-            $this->$method($tag, $this->eventData);
+            $method = 'display'.ucfirst($this->_eventData['GET']['tagaction']).'Tag';
+            $this->$method($tag, $this->_eventData);
         }
     }
 
@@ -3128,7 +3127,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <form action="" method="GET">
             <input type="hidden" name="serendipity[adminModule]" value="event_display" />
             <input type="hidden" name="serendipity[adminAction]" value="managetags" />
-            <input type="hidden" name="serendipity[tagview]" value="<?php echo serendipity_specialchars($this->eventData['GET']['tagview']) ?>">
+            <input type="hidden" name="serendipity[tagview]" value="<?php echo serendipity_specialchars($this->_eventData['GET']['tagview']) ?>">
             <input type="hidden" name="serendipity[tagaction]" value="rename" />
             <input type="hidden" name="serendipity[commit]" value="true" />
             <input type="hidden" name="serendipity[tag]" value="<?php echo serendipity_specialchars($tag) ?>" />
@@ -3187,8 +3186,8 @@ document.addEventListener("DOMContentLoaded", function() {
      */
     private function displayDeleteTag($tag, &$eventData)
     {
-        $no  = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->eventData['GET']['tagview']);
-        $yes = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->eventData['GET']['tagview']).
+        $no  = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->_eventData['GET']['tagview']);
+        $yes = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->_eventData['GET']['tagview']).
                     "&amp;serendipity[tagaction]=delete".
                     "&amp;serendipity[tag]=".urlencode($tag)."&amp;serendipity[commit]=true";
 ?>
@@ -3237,7 +3236,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <form action="" method="GET">
             <input type="hidden" name="serendipity[adminModule]" value="event_display" />
             <input type="hidden" name="serendipity[adminAction]" value="managetags" />
-            <input type="hidden" name="serendipity[tagview]" value="<?php echo serendipity_specialchars($this->eventData['GET']['tagview']) ?>">
+            <input type="hidden" name="serendipity[tagview]" value="<?php echo serendipity_specialchars($this->_eventData['GET']['tagview']) ?>">
             <input type="hidden" name="serendipity[tagaction]" value="split" />
             <input type="hidden" name="serendipity[commit]" value="true" />
             <input type="hidden" name="serendipity[tag]" value="<?php echo serendipity_specialchars($tag) ?>" />
@@ -3259,7 +3258,7 @@ document.addEventListener("DOMContentLoaded", function() {
     {
         global $serendipity;
 
-        $newtags = self::makeTagsFromTagList(urldecode($this->eventData['GET']['newtags']));
+        $newtags = self::makeTagsFromTagList(urldecode($this->_eventData['GET']['newtags']));
         $tag = serendipity_db_escape_string($tag);
 
         $q = "SELECT entryid FROM {$serendipity['dbPrefix']}entrytags WHERE tag = '$tag'";

@@ -1,3 +1,7 @@
+5.23:
+-----
+ * Prepare for PHP 8.2
+
 5.22:
 -----
  * Improve [en, de] for length and "cloud" related [de] translations
