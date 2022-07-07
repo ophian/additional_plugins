@@ -1,3 +1,9 @@
+2.5.1:
+-----
+ * Fix some typos in [en] documentation file
+
+ 2.5.0:
+-----
 2.5.0:
 -----
  * Preparations to avoid deprecated ${foo} style string interpolation for PHP 9 in debug logging
