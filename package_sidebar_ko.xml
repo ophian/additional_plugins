@@ -1893,7 +1893,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>5.6</requirements:phpVersion>
-  <date>2022-07-03</date>
+  <date>2022-07-07</date>
   <filelist>
     <dir name="serendipity_plugin_currently">
       <file>ChangeLog</file>
