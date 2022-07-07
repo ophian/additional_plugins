@@ -18,7 +18,7 @@ function xml2array($text) {
 }
 
 function find_best_image ($search,$section="Books",$locale='US') {
-    //this is a curl wrapper class that I wrote a while back and is quite usefull for these
+    //this is a curl wrapper class that I wrote a while back and is quite useful for these
     //kinds of applications.
 
     $curl = new curl_inc_1_0;
@@ -79,6 +79,5 @@ function find_best_image ($search,$section="Books",$locale='US') {
     }
 
 }//find_image
-
 
 ?>

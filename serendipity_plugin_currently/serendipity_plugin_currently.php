@@ -63,7 +63,7 @@ class serendipity_plugin_currently extends serendipity_plugin
             case 'en':
             default:   $select_default = 'US'; break;
 
-        }//switch
+        }
 
         switch($name) {
             case 'reading':
@@ -173,11 +173,11 @@ class serendipity_plugin_currently extends serendipity_plugin
         return true;
     }
 
-
-    // Querying Amazon every time we want an image is very slow, so we created a
-    // very very simple table to hold values and if the value has already been looked up, return it.
-    // Otherwise, query amazon.
-
+    /**
+     * Querying Amazon every time we want an image is very slow, so we created a
+     * very very simple table to hold values and if the value has already been looked up, return it.
+     ** Otherwise, query amazon.
+     */
     function search_database($search,$section='Books',$locale='US')
     {
         global $serendipity;
@@ -201,11 +201,11 @@ class serendipity_plugin_currently extends serendipity_plugin
         }
 
         return (false);
+    }
 
-    }//search database
-
-    //This will add a recently looked up value to the database
-
+    /**
+     * This will add a recently looked up value to the database
+     */
     function add_database ($urls,$search,$section)
     {
         global $serendipity;
@@ -217,7 +217,6 @@ class serendipity_plugin_currently extends serendipity_plugin
         serendipity_db_query($sql);
 
         $sql = "INSERT INTO ".$serendipity['dbPrefix']."currently (url,search,section,detail) VALUES ('$url_image','$search','$section','$url_detail')";
-     //   print ("\n<!--$sql-->\n");
         serendipity_db_query($sql);
     }
 
@@ -240,7 +239,6 @@ class serendipity_plugin_currently extends serendipity_plugin
         $this->associates_key     = $this->get_config('associates_key');
 
         // Create table, if its not there, or if we have a new version
-
         if ($this->get_config('version') != '1.01') {
             $q   = "CREATE TABLE {$serendipity['dbPrefix']}currently (
                         id {AUTOINCREMENT} {PRIMARY},
@@ -250,23 +248,20 @@ class serendipity_plugin_currently extends serendipity_plugin
                         url text
                     )";
             $sql = serendipity_db_schema_import($q);
-            //$results = serendipity_db_query($sql);
             $this->set_config('version', '1.01');
         }
 
         echo '<dl>';
 
         if ($reading != '') {
-
             print ("<dt><strong>".PLUGIN_CURRENTLY_READING."</strong></dt><dd>$reading</dd>");
 
             $reading_image = $this->search_database($reading,'Books',$reading_locale);
 
             if ($reading_image) print ("<dd><a href='$reading_image[Detail]'><img src='$reading_image[Image]'></a></dd>");
-        }//fi
+        }
 
         if ($listening_band != '') {
-
             print ("<dt><strong>".PLUGIN_CURRENTLY_LISTENING."</strong></dt><dd>$listening_band</dd>");
 
             if ($listening_album) print ("<dd>($listening_album)</dd>");
@@ -281,30 +276,27 @@ class serendipity_plugin_currently extends serendipity_plugin
             $listening_image = $this->search_database($listen_search,'Music',$listening_locale);
 
             if ($listening_image) print ("<dd><a href='$listening_image[Detail]'><img src='$listening_image[Image]'></a></dd>");
-        }//fi
+        }
 
         if ($playing != '') {
-
             print ("<dt><strong>".PLUGIN_CURRENTLY_PLAYING."</strong></dt>"); print ("<dd>$playing</dd>");
 
             $playing_image = $this->search_database($playing,'VideoGames',$playing_locale);
 
             if ($playing_image) print ("<dd><a href='$playing_image[Detail]'><img src='$playing_image[Image]'></a></dd>");
-        }//fi
-
+        }
 
         if ($watching != '') {
-
             print ("<dt><strong>".PLUGIN_CURRENTLY_WATCHING."</strong></dt><dd>$watching</dd>");
 
             $watching_image = $this->search_database($watching,'Video',$watching_locale);
 
             if ($watching_image) print ("<dd><a href='$watching_image[Detail]'><img src='$watching_image[Image]'></a></dd>");
-        }//fi
+        }
 
         echo '</dl>';
-    }//generate_content
+    }
 
-}//class
+}
 
 /* vim: set sts=4 ts=4 expandtab : */
