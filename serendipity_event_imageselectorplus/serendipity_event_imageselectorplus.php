@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.5.1');
+        $propbag->add('version',       '2.6.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.6.0',
             'smarty'      => '3.1.0',
@@ -256,11 +256,14 @@ if (class_exists('ZipArchive')) {
     $checkedN = "";
     serendipity_db_bool($this->get_config('unzipping', 'true')) ? $checkedY = ' checked="checked"' : $checkedN = ' checked="checked"';
 ?>
-        <span class="msg_notice"><span class="icon-attention-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_ZIP_WARNING;?></span>
+        <div id="media_zip_warning" class="media_show_info additional_info">
+            <span class="msg_notice"><span class="icon-attention-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_ZIP_WARNING;?></span>
+        </div>
         <fieldset id="isp_archives" class="clearfix isp_archives radio_field">
             <span class="wrap_legend">
                 <legend class="visuallyhidden"><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES;?></legend>
                 <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_DESC;?>
+                <span class="isp_zip actions"><a class="media_show_info button_link" href="#media_zip_warning" title="Zip file Information"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> Zip file Information</span></a></span>
             </span>
             <div>
                 <input type="radio" class="input_radio" id="unzip_yes" name="serendipity[unzip_archives]" value="<?php echo YES;?>"<?php echo $checkedY;?>><label for="unzip_yes"><?php echo YES;?></label>
