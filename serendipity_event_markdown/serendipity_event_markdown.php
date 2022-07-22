@@ -21,11 +21,11 @@ class serendipity_event_markdown extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team and Jan Lehnardt, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.3.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '7.4'
         ));
-        $propbag->add('version',       '1.33');
+        $propbag->add('version',       '1.34');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
             'frontend_display' => true,
@@ -58,7 +58,6 @@ class serendipity_event_markdown extends serendipity_event
             $conf_array[] = $element['name'];
         }
         $conf_array[] = 'MARKDOWN_EXTRA';
-        $conf_array[] = 'MARKDOWN_VERSION';
         $conf_array[] = 'MARKDOWN_SMARTYPANTS';
 
         $propbag->add('configuration', $conf_array);
@@ -111,17 +110,6 @@ class serendipity_event_markdown extends serendipity_event
                 $propbag->add('default',     0);
                 break;
 
-            case 'MARKDOWN_VERSION':
-                $propbag->add('type',        'radio');
-                $propbag->add('name',        PLUGIN_EVENT_MARKDOWN_VERSION);
-                $propbag->add('description', PLUGIN_EVENT_MARKDOWN_VERSION_BLABLAH);
-                $propbag->add('radio',       array(
-                                                'value' => array(1, 2),
-                                                'desc'  => array('classic', 'lib'),
-                                             ));
-                $propbag->add('default',     2);
-                break;
-
             default:
                 return false;
         }
@@ -133,31 +121,18 @@ class serendipity_event_markdown extends serendipity_event
         global $serendipity;
 
         $mdsp = $this->get_config('MARKDOWN_SMARTYPANTS');
-        $mdv  = $this->get_config('MARKDOWN_VERSION');
         $mdex = serendipity_db_bool($this->get_config('MARKDOWN_EXTRA', 'false'));
 
-        switch($mdv) {
-            case 2:
-                if ($mdex) {
-                    require_once dirname(__FILE__) . '/lib/Michelf/MarkdownExtra.inc.php';
-                } else {
-                    require_once dirname(__FILE__) . '/lib/Michelf/Markdown.inc.php';
-                }
-                if ($mdsp > 0) {
-                    require_once dirname(__FILE__) . '/lib/Michelf/SmartyPants.php';
-                }
-                if ($mdsp == 2) {
-                    require_once dirname(__FILE__) . '/lib/Michelf/SmartyPantsTypographer.php';
-                }
-                break;
-
-            case 1:
-                if ($mdex) {
-                    include_once  dirname(__FILE__) . '/markdown_extra.php';
-                } else {
-                    include_once  dirname(__FILE__) . '/markdown.php';
-                }
-                break;
+        if ($mdex) {
+            require_once dirname(__FILE__) . '/lib/Michelf/MarkdownExtra.inc.php';
+        } else {
+            require_once dirname(__FILE__) . '/lib/Michelf/Markdown.inc.php';
+        }
+        if ($mdsp > 0) {
+            require_once dirname(__FILE__) . '/lib/Michelf/SmartyPants.php';
+        }
+        if ($mdsp == 2) {
+            require_once dirname(__FILE__) . '/lib/Michelf/SmartyPantsTypographer.php';
         }
 
         $hooks = &$bag->get('event_hooks');

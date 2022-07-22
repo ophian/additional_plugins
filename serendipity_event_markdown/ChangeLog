@@ -1,3 +1,10 @@
+1.34:
+=====
+
+ * Cleanup and convert tabs to spaces
+ * Remove old lib and configuration
+ * Raises requirements
+
 1.33:
 =====
 
