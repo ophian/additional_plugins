@@ -49,7 +49,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * @access protected
      * @var string
      */
-    protected $cke_zipfile = 'ckeditor_4.19.0.0-plus.zip';
+    protected $cke_zipfile = 'ckeditor_4.19.1.0-plus.zip';
 
     /**
      * Access property checkUpdateVersion
@@ -57,16 +57,16 @@ class serendipity_event_ckeditor extends serendipity_event
      * Verify release package versions - do update on upgrades!
      * @var array
      */
-    protected $checkUpdateVersion = array('ckeditor:4.19.0.0');
+    protected $checkUpdateVersion = array('ckeditor:4.19.1.0');
 
     /**
      * Access property revisionPackage
      * Note revisions of ckeditor and plugin additions to lang files
      * @var array
      */
-    protected $revisionPackage = array('CKEditor 4.19.0 (revision c08cfedb60, full package, 2022-05-18)',
+    protected $revisionPackage = array('CKEditor 4.19.1 (revision c08cfedb60, full package, 2022-07-20)',
                                        'CKEditor-Plugin: mediaembed, included to custom build. v. 0.6 (https://github.com/frozeman/MediaEmbed, 2013-07-11)',
-                                       'CKEditor-Plugin: Custom build added for current version "ajax", "autocomplete", "autogrow", "autolink", "button", "clipboard", "dialog", "dialogui", "embedbase", "emoji", "fakeobjects", "floatpanel", "lineutils", "notification", "notificationaggregator", "panelbutton", "placeholder", "textmatch", "textwatcher", "undo", "widget", "widgetselection" and "xml" plugins, 2022-05-18)',
+                                       'CKEditor-Plugin: Custom build added for current version "ajax", "autocomplete", "autogrow", "autolink", "button", "clipboard", "dialog", "dialogui", "embedbase", "emoji", "fakeobjects", "floatpanel", "lineutils", "notification", "notificationaggregator", "panelbutton", "placeholder", "textmatch", "textwatcher", "undo", "widget", "widgetselection" and "xml" plugins, 2022-07-20)',
                                        'CKEditor-Plugin: Manually added for current version "codesnippet", "embed" and "embedsemantic" plugins, 2021-11-24)',
                                        'CKEditor-Plugin: procurator, v. 1.7 (Serendipity placeholder Plugin, 2019-11-24)',
                                        'CKEditor-Plugin: cheatsheet, v. 1.3 (Serendipity CKE-Cheatsheet Plugin, 2019-07-03)',
@@ -201,7 +201,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.19.0.0'); // is CKEDITOR Series 4.19.0 - and appended plugin revision .0
+        $propbag->add('version',       '4.19.1.0'); // is CKEDITOR Series 4.19.1 - and appended plugin revision .0
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
@@ -452,7 +452,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.19.0.0', '4.18.0.2'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.19.1.0', '4.19.0.0'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -466,7 +466,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.19.0.0', '4.18.0.2'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.19.1.0', '4.19.0.0'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
