@@ -441,15 +441,6 @@
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
-<title>Markup: fotoalbum Gallery: Vkládá album nebo obrázek z fotoalba aplikace Gallery pomocí značky v textu příspěvku.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_galleryimage</link>
-<category>Event Plugins</category>
-<author>Rob Antonishen, Alexander Mieland, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;Markup: fotoalbum Gallery&lt;/b&gt;&lt;br /&gt;Vkládá album nebo obrázek z fotoalba aplikace Gallery pomocí značky v textu příspěvku.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Thu, 04 Feb 2021 19:17:13 +0100</pubDate>
-<guid isPermaLink="false">serendipity_event_galleryimage</guid>
-</item>
-<item>
 <title>Geotag: Umožňuje přidat k příspěvku zeměpisné souřadnice - geotag</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geotag</link>
 <category>Event Plugins</category>

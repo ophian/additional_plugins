@@ -443,15 +443,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
-<title>マークアップ: Gallery 画像: Gallery アルバムか画像を用いたマークアップテキストの挿入です。</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_galleryimage</link>
-<category>Event Plugins</category>
-<author>Rob Antonishen, Alexander Mieland, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_galleryimage&lt;br /&gt;マークアップ: Gallery 画像&lt;/b&gt;&lt;br /&gt;Gallery アルバムか画像を用いたマークアップテキストの挿入です。&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Thu, 04 Feb 2021 19:17:13 +0100</pubDate>
-<guid isPermaLink="false">serendipity_event_galleryimage</guid>
-</item>
-<item>
 <title>Geotag: Allows entries to be geotagged with coordinates</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geotag</link>
 <category>Event Plugins</category>
