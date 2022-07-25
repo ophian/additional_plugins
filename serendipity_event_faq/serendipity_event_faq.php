@@ -76,7 +76,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.49');
+        $propbag->add('version',      '1.50');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -1403,6 +1403,11 @@ class serendipity_event_faq extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries':
+                    // check access if user is in admin group levels (admin/chief)
+                    if (!serendipity_checkPermission('adminPlugins')) {
+                        break;
+                    }
+
                     // forbid entry if not admin
                     #if (!serendipity_userLoggedIn() && $_SESSION['serendipityAuthedUser'] !== true && $_SESSION['serendipityUserlevel'] != '255') {
                     #    break;
@@ -1412,6 +1417,11 @@ class serendipity_event_faq extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries_event_display_faq':
+                    // check access if user is in admin group levels (admin/chief)
+                    if (!serendipity_checkPermission('adminPlugins')) {
+                        break;
+                    }
+
                     $this->showBackend();
                     break;
 

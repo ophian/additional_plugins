@@ -1,3 +1,8 @@
+1.50:
+-----
+ * As long as not implemented, restrict to administrator group (rights) only
+ * Improve frontend faq icon for [dark mode] (pure-theme) usage
+
 1.49:
 -----
  * Remove Series 1 related backend styles

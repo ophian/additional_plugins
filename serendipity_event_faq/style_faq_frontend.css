@@ -37,10 +37,13 @@
     text-indent: -9999px;
     width: 24px;
     height: 24px;
-    background: url(plugins/serendipity_event_faq/img/question.svg);
+    background: url(plugins/serendipity_event_faq/img/question.svg.png);
     background-size: 24px 24px;
     vertical-align: middle;
     margin-right: .5em;
+}
+[data-dark-theme="dark"] .faq_question-icon {
+  background: url(plugins/serendipity_event_faq/img/question.svg);
 }
 .faq-faqs {
     list-style: none outside none;
