@@ -1,7 +1,7 @@
 1.9.2:
 ------
 
- * Fix PHP fcgid error thown by v.1.3.1 partial reload error fix
+ * Fix PHP fcgid error thrown by v.1.3.1 partial reload error fix
 
 1.9.1:
 ------
