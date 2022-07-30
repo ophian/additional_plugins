@@ -43,7 +43,9 @@ class serendipity_event_contentrewrite extends serendipity_event
 
         $propbag->add('groups', array('BACKEND_EDITOR'));
 
-        if (!empty($_POST['SAVECONF'])) $this->cleanup();
+        if (!empty($_POST['SAVECONF'])) {
+            $this->cleanup();
+        }
         $rows = serendipity_db_query("SELECT name, value FROM {$serendipity['dbPrefix']}config WHERE name LIKE '" . $this->instance . "/%' ORDER BY name");
 
         $this->fromstring = $this->get_config('fromstring', null);
