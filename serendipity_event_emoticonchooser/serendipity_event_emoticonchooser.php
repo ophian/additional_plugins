@@ -10,6 +10,14 @@ class serendipity_event_emoticonchooser extends serendipity_event
 {
     var $title = PLUGIN_EVENT_EMOTICONCHOOSER_TITLE;
 
+    function cleanup()
+    {
+        // Cleanup. Remove all empty configuration sets on SAVECONF-Submit.
+        serendipity_plugin_api::remove_plugin_value($this->instance, array('frontend'));
+
+        return true;
+    }
+
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -23,7 +31,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '3.32');
+        $propbag->add('version',       '3.33');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -41,9 +49,11 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
     function performConfig(&$bag)
     {
-        // set 'frontend' to 'comments' option
-        if ($this->get_config('frontend') == 'true') {
+        $old_var = serendipity_db_bool($this->get_config('frontend', '', false)); // must be an empty string value with false. Else it gets created by this call again (even for an not existing configuration item var) every time you open the emoticonchooser plugin config
+        // set 'frontend' to 'comments' option on Plugin configuration call
+        if (isset($old_var) && $old_var === true) {
             $this->set_config('comments', 'true');
+            $this->set_config('frontend', ''); // unset the value to an empty for auto cleanup gc
         };
     }
 

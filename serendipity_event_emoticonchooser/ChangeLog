@@ -1,3 +1,8 @@
+3.33:
+-----
+ * Implement correct performConfig() method usage
+ * Add cleanup() method, which will need the fixed plugin API method query in Serendipity Styx 3.9.1
+
 3.32:
 -----
  * Add changes for Styx 3.5 DARK MODE
