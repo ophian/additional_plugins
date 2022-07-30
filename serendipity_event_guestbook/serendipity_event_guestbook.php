@@ -87,8 +87,6 @@ class serendipity_event_guestbook extends serendipity_event
      */
     function cleanup()
     {
-        global $serendipity;
-
         // check possible config mismatch setting
         if (serendipity_db_bool($this->get_config('showapp', 'false')) === true && serendipity_db_bool($this->get_config('automoderate', 'false')) === true) {
             $this->set_config('automoderate', false);
