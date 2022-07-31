@@ -16,7 +16,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.9.2');
+        $propbag->add('version',       '1.9.3');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -371,6 +371,44 @@ EOS;
     }
 
     /**
+     * Return readable errors for returned errcodes
+     *
+     * @param mixed $res of zip open
+     * @return string constant alike message
+     */
+    protected function result_errors($res) {
+        switch($res) {
+            case ZipArchive::ER_EXISTS:
+                return 'File already exists';
+                break;
+            case ZipArchive::ER_INCONS:
+                return 'Zip archive inconsistent';
+                break;
+            case ZipArchive::ER_INVAL:
+                return 'Invalid argument';
+                break;
+            case ZipArchive::ER_MEMORY:
+                return 'Malloc failure';
+                break;
+            case ZipArchive::ER_NOENT:
+                return 'No such file';
+                break;
+            case ZipArchive::ER_NOZIP:
+                return 'Not a zip archive or not available';
+                break;
+            case ZipArchive::ER_OPEN:
+                return 'Can\'t open file';
+                break;
+            case ZipArchive::ER_READ:
+                return 'Read error';
+                break;
+            case ZipArchive::ER_SEEK:
+                return 'Seek error';
+                break;
+        }
+    }
+
+    /**
      * Fetch the zip file from server
      *
      * @param string $version Version
@@ -389,16 +427,18 @@ EOS;
         if (file_exists($update)) {
             $zip = new ZipArchive;
             $res = $zip->open($update);
-            if ($res === TRUE) {
+            if ($res === true) {
                 $done = true;
             } else {
-                $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_FETCH_ZIPFAIL, $res) . '</p>');
+                $this->show_message('<p class="msg_error"><svg class="icon icon-error" title="error"><use xlink:href="#icon-error"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_FETCH_ZIPFAIL, $res, $this->result_errors($res)) . '</p>');
                 @unlink($update);
                 sleep(1);
                 $done = @copy($url, $update) ? true : false;
                 sleep(1);
             }
-            $zip->close();
+            if ($res === true) {
+                $zip->close();
+            }
         } else {
             $done = @copy($url, $update) ? true : false;
             sleep(1);
