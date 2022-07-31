@@ -201,7 +201,7 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.19.1.0'); // is CKEDITOR Series 4.19.1 - and appended plugin revision .0
+        $propbag->add('version',       '4.19.1.1'); // is CKEDITOR Series 4.19.1 - and appended plugin revision .1
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
@@ -392,9 +392,9 @@ class serendipity_event_ckeditor extends serendipity_event
                     $s .= '<p class="msg_error"><span class="icon-error" aria-hidden="true"></span> ' . sprintf(PLUGIN_EVENT_CKEDITOR_INSTALLER_MSG0, $this->cke_path, $this->cke_zipfile) . '</p>';
                     break;
             }
-            $this->set_config('installer', ''); // can't use serendipity_plugin_api::remove_plugin_value($this->instance, array('installer')); here, since it delivers the wrong instance
+            $this->set_config('installer', ''); // set empty and remove it
+            serendipity_plugin_api::remove_plugin_value($this->instance, array('installer')); // with gc cleanup
         }
-        #echo $installer[0] . ' - ' . $this->instance; // this debug message on the other hand will do well, if all went through w/o install() returning false
         $s .= PLUGIN_EVENT_CKEDITOR_INSTALL;
         $s .= PLUGIN_EVENT_CKEDITOR_CONFIG;
         $s .= PLUGIN_EVENT_CKEDITOR_SCAYT;
@@ -452,7 +452,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function updateConfig()
     {
-        #$this->temporaryDowngrade('4.19.1.0', '4.19.0.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.19.1.1', '4.19.1.0'); // was temporary used for the harmonization of plugin and lib versions
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);
             $this->set_config('last_'.$match[0].'_version', $match[1]);
@@ -466,7 +466,7 @@ class serendipity_event_ckeditor extends serendipity_event
      */
     private function checkUpdate()
     {
-        #$this->temporaryDowngrade('4.19.1.0', '4.19.0.0'); // was temporary used for the harmonization of plugin and lib versions
+        #$this->temporaryDowngrade('4.19.1.1', '4.19.1.0'); // was temporary used for the harmonization of plugin and lib versions
         $doupdate = false;
         foreach(array_values($this->checkUpdateVersion) AS $package) {
             $match = explode(':', $package);

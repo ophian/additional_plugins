@@ -1,3 +1,7 @@
+4.19.1.1:
+---------
+    * Improve deflation installer routine up from Styx 3.9.1 plugin API bugfix
+
 4.19.1.0:
 ---------
     * Upgrade to CKEDITOR 4.19. Series, update 1 (https://ckeditor.com/cke4/release-notes).
