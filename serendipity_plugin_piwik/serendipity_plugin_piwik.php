@@ -19,6 +19,8 @@ if (function_exists('serendipity_request_url')) {
 class serendipity_plugin_piwik extends serendipity_plugin
 {
     public $title = PLUGIN_SIDEBAR_PIWIK_NAME;
+    public $dependencies;
+
     protected $token;
     protected $url;
     protected $live_show;
@@ -30,7 +32,6 @@ class serendipity_plugin_piwik extends serendipity_plugin
     protected $entries_max;
     protected $entries_remove;
     protected $debug;
-    protected $dependencies;
 
     /**
      * @param serendipity_property_bag $propbag
@@ -44,7 +45,7 @@ class serendipity_plugin_piwik extends serendipity_plugin
         $propbag->add('description',   PLUGIN_SIDEBAR_PIWIK_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Bernd Distler, Ian Styx');
-        $propbag->add('version',       '0.6');
+        $propbag->add('version',       '0.7');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',

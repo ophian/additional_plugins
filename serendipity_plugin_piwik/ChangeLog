@@ -1,3 +1,7 @@
+0.7:
+------
+   * Make class property serendipity_plugin_piwik::$dependencies declared public
+
 0.6:
 ------
    * Don't include required Request lib if using API, which already does
