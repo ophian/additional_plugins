@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.23');
+        $propbag->add('version',       '5.24');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1325,11 +1325,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 case 'entry_display':
                     if (is_array($eventData)) {
                         $this->taggedEntries = count($eventData);
-                        if (serendipity_db_bool($this->get_config('send_http_header', 'true'))) {
+                        if (serendipity_db_bool($this->get_config('send_http_header', 'true')) && !headers_sent()) {
                             @header('X-FreeTag-Count: Array');
                         }
                     } else {
-                        if (serendipity_db_bool($this->get_config('send_http_header', 'true'))) {
+                        if (serendipity_db_bool($this->get_config('send_http_header', 'true')) && !headers_sent()) {
                             @header('X-FreeTag-Count: Empty');
                         }
                         $this->taggedEntries = 0;
