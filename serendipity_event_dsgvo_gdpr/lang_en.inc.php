@@ -101,7 +101,7 @@ Certain plugins can use the session cookie to store additional temporary data.</
 
 <ul>
     <li>PHP session ID</li>
-    <li>State of entry editor toggle, sort, sort order and filter toggles, last used media library directory (only if logged in)</li>
+    <li>State of entry editor toggle, sort, sort order and filter toggles, last used MediaLibrary directory (only if logged in)</li>
     <li>Author login token (only if logged in)</li>
     <li>Display language</li>
     <li>After commenting: Last name, E-Mail, URL, state of "Remember comments" (if enabled)</li>
