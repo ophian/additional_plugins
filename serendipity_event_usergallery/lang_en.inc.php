@@ -101,7 +101,7 @@
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_DESC', 'Choose the same as set in the lightbox plugin. Choosing another library will not work here, as long the lightbox-plugin is set active. Watch out for possible plugin list order flaws.');
 
 @define('PLUGIN_EVENT_USERGALLERY_SHOWOBJECTS_NAME', 'Show all Non-Image objects');
-@define('PLUGIN_EVENT_USERGALLERY_SHOWOBJECTS_DESC', 'Include other media library object files to show up too, eg *.pdf application objects.');
+@define('PLUGIN_EVENT_USERGALLERY_SHOWOBJECTS_DESC', 'Include other MediaLibrary object files to show up too, eg *.pdf application objects.');
 
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOX_PATH', 'Path to the lightbox plugin directory');
 
