@@ -464,7 +464,7 @@ input#dlm_file_rename { border: 1px solid #888; background-color: rgb(221, 230, 
 #backend_downloadmanager .odd {  background: none repeat scroll 0 0 #fafafa; }
 #backend_downloadmanager .even { background: none repeat scroll 0 0 #f4f4f4; }
 
-/* the background of info text in subpage 2 trash and media library */
+/* the background of info text in subpage 2 trash and MediaLibrary */
 .dlm_backend_info { background: none repeat scroll 0 0 #FAFAFA; }
 
 #ftpfiles input[type="checkbox"],

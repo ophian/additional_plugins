@@ -1747,7 +1747,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                                     - upload form,
                                     - files in selected category,
                                     - FTP/trash-folder files,
-                                    - Serendipity media library files with subcats,
+                                    - Serendipity MediaLibrary files with subcats,
                                     - subcategories of root,
                                     - the appendix (including the helptip and the clear trash button) */
 
@@ -1807,7 +1807,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                         // generate FTP/trash folder table content here - DIV 2 @ PAGE 2
                         $this->backend_dlm_build_ftptable($ct, $this->globs['ftppath'], intval($_GET['thiscat']), 2, 2);
 
-                        // generate media library folder table content here - DIV 3 @ PAGE 2
+                        // generate MediaLibrary folder table content here - DIV 3 @ PAGE 2
                         $this->backend_dlm_build_s9ml_table($this->globs['dateformat'], $serendipity['serendipityPath'] . $serendipity['uploadPath'], 3, 2);
 
                         if (empty($cats) || !is_array($cats)) {
@@ -2134,7 +2134,7 @@ class serendipity_event_downloadmanager extends serendipity_event
      * HELPTIP_CF = (sub)category folder;
      * HELPTIP_FF = file folder;
      * HELPTIP_IF = incoming FTP/trash folder;
-     * HELPTIP_MF = s9y media library folder;
+     * HELPTIP_MF = s9y MediaLibrary folder;
      */
     function backend_dlm_helptip()
     {
@@ -2474,7 +2474,7 @@ class serendipity_event_downloadmanager extends serendipity_event
      * build DLM Backend s9y media gallery file table content
      *
      * @param   string  The configs dateformat
-     * @param   string  The path to the s9y media library
+     * @param   string  The path to the s9y MediaLibrary
      * @param   int     The div number
      * @param   int     The page number
      *
@@ -2531,7 +2531,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 );
             }
         }
-        // assign as array('sml') the S9y media library files to Smarty tpl page 2 'thissml' section
+        // assign as array('sml') the S9y MediaLibrary files to Smarty tpl page 2 'thissml' section
         $serendipity['smarty']->assign('dlmtsl',
             array(
                 'thissml'        => true,

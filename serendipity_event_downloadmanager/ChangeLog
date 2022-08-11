@@ -158,13 +158,13 @@ latest: Smarty3 forward compatibility
 
 [Version 0.25 2010/09/23] by Ian
 --------------------------------
-    - fixed   wrong path error, when copying a file from a s9y media library subfolder to selected category (0.25b only)
+    - fixed   wrong path error, when copying a file from a s9y MediaLibrary subfolder to selected category (0.25b only)
     - changed minor details in lang files and frontend filelist.tpl and filedetails.tpl
     - added   rename file ability in backends single file edit page (this added a new Constant to lang files too)
     - changed 0.25 beta version of all new Backend templates and their stylesheet, to contain a contemporary new look & feel under the hood (based and designed by YellowLed, thank you!)
     - changed header part on backends subpages, which now has a point back to root and to previous level, if any
     - changed root level db setting to be unhidden by now - this does not change the behaviour of showing cats without root level, but makes access to it more easy
-    - added   new s9y media library import icon
+    - added   new s9y MediaLibrary import icon
     - fixed   some possible bugs and/or inconvenient behaviour, which may have been in 0.24 too
     - added   Smarty Backend array names to be unique in global blog context - read list in backend.dlm.index.tpl
     - added   a complete Smarty template to Backend, which caused multiple changes in plugins code
@@ -176,7 +176,7 @@ latest: Smarty3 forward compatibility
     - added   ics mime icon
     - changed Frontend templates, frontend.css and download mime icons to show up refreshed in a new contemporary look (designed by YellowLed, thank you!)
     - changed downloadmanagers file path again to '/serendipity/archives/.dlm/files' and '/serendipity/archives/.dlm/ftpin' which seems to be
-              the best place, dealing with files to come in and go out. The /uploads directory threw a problem with the media library and the
+              the best place, dealing with files to come in and go out. The /uploads directory threw a problem with the MediaLibrary and the
               /templates_c directory is cleaned up directly by users in some cases. After contacting Garvin about this issues, he came up with
               the /archives folder. I tried to automate the process of switching all files to the new folders and 0.24s new config settings.
               If you encounter any problems with it, please move your files manually. If you get a link to inform the plugin, please follow.
@@ -266,7 +266,7 @@ latest: Smarty3 forward compatibility
 [2005/09/17] dma147
     - release of version 0.4
     - added the display of content-type to the file-icons on mouseover
-    - added the import of files from the media library
+    - added the import of files from the MediaLibrary
     - corrected the appearance of the category structure (icons)
     - added the configuration for the fileicon width and height
     - finished the permalink stuff (it won't work here, but it works on other apaches/blogs

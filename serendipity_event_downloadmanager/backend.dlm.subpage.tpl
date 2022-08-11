@@ -119,11 +119,11 @@
 {/if}
 
 {if $dlmgbl.thispage == 2 && $dlmtsl.thissml === true}
-{* Show all media library files in /uploads dir *}
+{* Show all MediaLibrary files in /uploads dir *}
 <p id="dlm_s9ml_header" class="dlm_backend_option"><a href="#" onclick="showConfig('dlm3'); return false" title="{$CONST.TOGGLE_OPTION}"><img src="{if $dlmtsl.ddiv === true}{serendipity_getFile file="img/minus.png"}{else}{serendipity_getFile file="img/plus.png"}{/if}" id="optiondlm3" alt="+/-" /> {$CONST.PLUGIN_DOWNLOADMANAGER_MEDIA_LIBRARY}</a></p>
 <!-- // div container page {$dlmgbl.thispage} dlm(3) -->
 <div id="dlm3" class="dlm_backend_s9ml_box">
-    {* Erm ... shouldn't this be a form?!? No, this is a single file movement only! We do not need multi file movement in media library. *}
+    {* Erm ... shouldn't this be a form?!? No, this is a single file movement only! We do not need multi file movement in MediaLibrary. *}
     <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> {$CONST.PLUGIN_DOWNLOADMANAGER_MEDIA_LIBRARY_BLAHBLAH} {$dlmtsl.smlpath}</span>
 
     <table id="smlfiles" cellspacing="0">
@@ -136,7 +136,7 @@
         </tr>
     </thead>
     <tbody>
-    {* header of serendipity directories in media library *}
+    {* header of serendipity directories in MediaLibrary *}
     {if !empty($dlmtsl.extrapath)}
         <tr>
             <td colspan="3">
@@ -144,7 +144,7 @@
             </td>
         </tr>
     {/if}
-    {* array of serendipity directories in media library *}
+    {* array of serendipity directories in MediaLibrary *}
     {foreach $dlmtsl.smldirs AS $smlda}
         <tr class="{cycle name="cycle1" values="odd,even"}">
             <td colspan="3">
@@ -153,7 +153,7 @@
             </td>
         </tr>
     {/foreach}
-    {* array of serendipity files in media library *}
+    {* array of serendipity files in MediaLibrary *}
     {foreach $dlmtsl.smlfiles AS $smlfa}
         <tr class="{cycle name="cycle1" values="odd,even"}">
             <td>
