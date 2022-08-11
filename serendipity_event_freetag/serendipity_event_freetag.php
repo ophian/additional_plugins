@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.24');
+        $propbag->add('version',       '5.25');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1721,7 +1721,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else if (is_array($tag)) {
                  $join = "LEFT JOIN {$serendipity['dbPrefix']}entrytags AS neg ".
                                 "ON et.entryid = neg.entryid ";
-                $ccond = '';
+                $cond  = '';
                 $ncond = '';
 
                 $first = true;
