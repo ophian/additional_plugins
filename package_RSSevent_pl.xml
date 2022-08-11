@@ -266,7 +266,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Provides full downloadmanager capabilities to your s9y. When uninstalling, all related tables will be dropped!&lt;br/&gt;For: Serendipity 3.3.0</content:encoded>
-<pubDate>Sun, 03 Jul 2022 14:35:55 +0200</pubDate>
+<pubDate>Thu, 11 Aug 2022 19:08:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
@@ -437,7 +437,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Tagowanie wpisów&lt;/b&gt;&lt;br /&gt;Umożliwia dowolne tagowanie wpisów&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sun, 07 Aug 2022 12:20:40 +0200</pubDate>
+<pubDate>Thu, 11 Aug 2022 19:26:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
