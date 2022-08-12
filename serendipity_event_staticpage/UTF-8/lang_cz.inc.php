@@ -128,7 +128,7 @@
 @define('PLUGIN_STATICPAGELIST_IMG_NAME', 'Povolit grafiku pro strom');
 
 @define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRIES', 'Změněna URL adresa přesunutého adresáře v %s statických stránkách.');
-@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY', 'V jiných databázích než je MySQL není možné iterativní prohledávání všech statických stránek a nahrazení názvů starých adresářů názvy nových adresářů. Budete muset provést tuto operaci ručně. Stále můžete přesunout starý adresář zpět tam, kde byl původně, pokud se vám do ručních změn nechce.');
+#@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY', 'V jiných databázích než je MySQL není možné iterativní prohledávání všech statických stránek a nahrazení názvů starých adresářů názvy nových adresářů. Budete muset provést tuto operaci ručně. Stále můžete přesunout starý adresář zpět tam, kde byl původně, pokud se vám do ručních změn nechce.');
 
 @define('STATICPAGE_QUICKSEARCH_DESC', 'Pokud je povoleno, rychlé vyhledávání prohledá také statické stránky.');
 

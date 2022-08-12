@@ -136,7 +136,7 @@
 @define('PLUGIN_STATICPAGELIST_IMG_NAME', 'Enable graphics for tree structure');
 
 @define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRIES', 'Changed the URL of the moved directory in %s static pages.');
-@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY', 'On Non-MySQL databases, iterating through every static page to replace the old directory URLs with new directory URLs is not possible. You will need to manually edit your static pages to fix new URLs. You can still move your old directory back to where it was, if that is too cumbersome for you.');
+#@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY', 'On Non-MySQL databases, iterating through every static page to replace the old directory URLs with new directory URLs is not possible. You will need to manually edit your static pages to fix new URLs. You can still move your old directory back to where it was, if that is too cumbersome for you.');
 
 @define('STATICPAGE_QUICKSEARCH_DESC', 'If enabled, quicksearch results will also display hits on static pages');
 
