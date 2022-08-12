@@ -122,7 +122,7 @@
 @define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT', 'Static Pages');
 @define('PLUGIN_STATICPAGELIST_LIMIT', 'Number to Display');
 @define('PLUGIN_STATICPAGELIST_LIMIT_DESC', 'Enter the number of Static Pages to Display. 0 means, no limit.');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME', 'Show frontpagelink');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME', 'Link to frontpage');
 @define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC', 'Create a link to the frontpage');
 @define('PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME', 'Frontpage');
 @define('PLUGIN_LINKS_IMGDIR', 'Use plugin image directory');
