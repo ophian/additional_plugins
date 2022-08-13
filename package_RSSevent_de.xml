@@ -40,8 +40,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_assigncategories</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_assigncategories&lt;br /&gt;Kategorien zuweisen&lt;/b&gt;&lt;br /&gt;Ermöglicht mehrere Kategorien zu bestehenden Einträgen zuzuweisen, bzw. die Zuweisungen schnell für alle Artikel zu ändern.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:17:02 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_assigncategories&lt;br /&gt;Kategorien zuweisen&lt;/b&gt;&lt;br /&gt;Ermöglicht mehrere Kategorien zu bestehenden Einträgen zuzuweisen, bzw. die Zuweisungen schnell für alle Artikel zu ändern.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sat, 13 Aug 2022 10:28:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_assigncategories</guid>
 </item>
 <item>
