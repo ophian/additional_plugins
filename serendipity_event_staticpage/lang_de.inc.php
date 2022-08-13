@@ -78,7 +78,7 @@
 @define('STATICPAGE_SEARCHRESULTS', 'Weitere %d Seiten gefunden:');
 
 @define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRIES', 'Die URL der verschobenen Verzeichnisse wurde in %s statischen Seiten angepasst.');
-@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY', 'Bei Nicht-MySQL Datenbanken ist es nicht möglich, jede statische Seite durchzugehen und das alte Verzeichnis durch das neue zu ersetzen. Daher müssen Sie manuell bestehende statische Seiten überarbeiten und die neuen URLs eintragen. Sie können natürlich auch das Verzeichnis an seinen alten Platz zurückschieben, falls dies zu viel Aufwand bedeuten würde.');
+#@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY', 'Bei Nicht-MySQL Datenbanken ist es nicht möglich, jede statische Seite durchzugehen und das alte Verzeichnis durch das neue zu ersetzen. Daher müssen Sie manuell bestehende statische Seiten überarbeiten und die neuen URLs eintragen. Sie können natürlich auch das Verzeichnis an seinen alten Platz zurückschieben, falls dies zu viel Aufwand bedeuten würde.');
 
 @define('PLUGIN_LINKS_IMGDIR', 'Verzeichnis für Bilder dieses Plugins');
 @define('PLUGIN_LINKS_IMGDIR_BLAHBLAH', 'Bitte geben Sie hier die URL ein, die zu dem Bildverzeichnis ihres Plugins führt. Das eingegebene Verzeichnis muss einen "img"-Unterordner besitzen, der standardmäßig mit diesem Plugin auch ausgeliefert wird.');
