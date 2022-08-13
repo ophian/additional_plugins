@@ -1,4 +1,11 @@
-1.5:
+1.7:
+----
+
+ * Fixes for linebreaks and PHP 8
+ * Raised requirements
+ * Removed Serendipity < 2 Series conditions
+
+1.6:
 ----
 
  * Iconfont accessibility fixes
