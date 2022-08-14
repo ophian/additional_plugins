@@ -18,12 +18,11 @@ class serendipity_event_dbclean extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DBCLEAN_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '0.5');
+        $propbag->add('version',       '0.6');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6'
+            'serendipity' => '2.0'
         ));
         $propbag->add('event_hooks',   array(
-                                    'backend_sidebar_admin'  => true,
                                     'backend_sidebar_admin_appearance'  => true,
                                     'backend_sidebar_entries_event_display_dbclean'  => true,
                                     'external_plugin' => true,
@@ -133,18 +132,11 @@ class serendipity_event_dbclean extends serendipity_event
                     echo '<li><a href="serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=dbclean">' .PLUGIN_EVENT_DBCLEAN_NAME ."</a></li>\n";
                     break;
 
-                case 'backend_sidebar_admin': // this is section: settings on 2.x - append
-                    if ($serendipity['version'][0] < 2) {
-                        echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=dbclean">' .PLUGIN_EVENT_DBCLEAN_NAME ."</a></li>\n";
-                    }
-                    break;
-
                 case 'backend_sidebar_entries_event_display_dbclean':
                     $this->displayMenu();
                     break;
 
                 case 'css_backend':
-                    if ($serendipity['version'][0] > 1) {
                     // append!
                     $eventData .= '
 
@@ -172,7 +164,6 @@ class serendipity_event_dbclean extends serendipity_event
 /* serendipity_event_dbclean end */
 
 ';
-                    }
                     break;
 
                 default:
@@ -273,21 +264,14 @@ class serendipity_event_dbclean extends serendipity_event
     {
         global $serendipity;
 
-        if ($serendipity['version'][0] < 2) {
-            echo '<style>#dbcleanTable { width: 100%; text-align: center; } #dbcleanTable th { text-align: center; }</style>'."\n";
-        }
-
         echo '<h2>' . PLUGIN_EVENT_DBCLEAN_NAME_MENU . "</h2>\n";
 
         echo '<form action="'.$serendipity['baseURL'] . 'index.php?/plugin/dbclean' .'" method="post">'."\n";
-        if ($serendipity['version'][0] < 2) {
-            echo PLUGIN_EVENT_DBCLEAN_MENU_KEEP . ' <input type="text" name="days" value="' . $this->get_config('days') . '" size="3" maxlength="3" /> ' . DAYS ."\n";
-        } else {
-            echo '<div class="form_field">'."\n";
-            echo '  <label for="dbcleanup_days">' . PLUGIN_EVENT_DBCLEAN_MENU_KEEP . ' (' . DAYS . ')' . "</label>\n";
-            echo '  <input id="dbcleanup_days" type="text" name="days" value="' . $this->get_config('days') . '" size="3" maxlength="3">'."\n";
-            echo "</div>\n";
-        }
+        echo '<div class="form_field">'."\n";
+        echo '  <label for="dbcleanup_days">' . PLUGIN_EVENT_DBCLEAN_MENU_KEEP . ' (' . DAYS . ')' . "</label>\n";
+        echo '  <input id="dbcleanup_days" type="text" name="days" value="' . $this->get_config('days') . '" size="3" maxlength="3">'."\n";
+        echo "</div>\n";
+
         $thc = array(DELETE, PLUGIN_EVENT_DBCLEAN_TABLE, ENTRIES);
         echo <<<EOS
         <table id="dbcleanTable">
@@ -336,12 +320,9 @@ class serendipity_event_dbclean extends serendipity_event
             </tr>
         </table>
 EOS;
-        if ($serendipity['version'][0] < 2) {
-            echo '<input type="submit" value="' . GO . '" tabindex="2" />'."\n";
-        } else {
-            echo '<div class="form_buttons"><input class="state_cancel" type="submit" value="' . DELETE . '"></div>'."\n";
-        }
-    echo "</form>\n";
+
+        echo '<div class="form_buttons"><input class="state_cancel" type="submit" value="' . DELETE . '"></div>'."\n";
+        echo "</form>\n";
     }
 
     function countElements($table)
