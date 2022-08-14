@@ -238,8 +238,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_dbclean</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_dbclean&lt;br /&gt;DBClean&lt;/b&gt;&lt;br /&gt;Cleanup database&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 12 Aug 2021 15:26:27 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_dbclean&lt;br /&gt;DBClean&lt;/b&gt;&lt;br /&gt;Cleanup database&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sun, 14 Aug 2022 09:39:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dbclean</guid>
 </item>
 <item>
@@ -527,7 +527,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Guestbook&lt;/b&gt;&lt;br /&gt;Shows a guestbook inside your blog with your normal blog design.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 30 Jul 2022 10:53:36 +0200</pubDate>
+<pubDate>Sun, 14 Aug 2022 09:32:19 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
