@@ -29,7 +29,6 @@ class serendipity_event_guestbook extends serendipity_event
                         'entries_header'     => true,
                         'external_plugin'    => true,
                         'genpage'            => true,
-                        'backend_sidebar_entries'   => true,
                         'backend_sidebar_admin_appearance' => true,
                         'backend_sidebar_entries_event_display_guestbook'  => true,
                         'css'                => true,
@@ -57,7 +56,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '4.0.1');
+        $propbag->add('version',      '4.1.0');
         $propbag->add('requirements', array(
                         'serendipity' => '2.0',
                         'smarty'      => '3.1',
@@ -1407,22 +1406,11 @@ class serendipity_event_guestbook extends serendipity_event
                     }
                     break;
 
-                case 'backend_sidebar_entries':
-                    if (!$access_granted) {
-                        break;
-                    }
-                    if ($serendipity['version'][0] < 2) {
-                        echo "\n".'                        <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=guestbook">' . PLUGIN_GUESTBOOK_ADMIN_NAME . '</a></li>'."\n";
-                    }
-                    break;
-
                 case 'backend_sidebar_admin_appearance':
                     if (!$access_granted) {
                         break;
                     }
-                    if ($serendipity['version'][0] > 1) {
-                        echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=guestbook">' . PLUGIN_GUESTBOOK_ADMIN_NAME . '</a></li>'."\n";
-                    }
+                    echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=guestbook">' . PLUGIN_GUESTBOOK_ADMIN_NAME . '</a></li>'."\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_guestbook':
@@ -1452,47 +1440,6 @@ class serendipity_event_guestbook extends serendipity_event
                             $tfile        = dirname(__FILE__) . '/style_guestbook_backend.css';
                             $search       = array('{TEMPLATE_PATH}', '{PLUGIN_PATH}');
                             $tfilecontent = str_replace($search, $serendipity['guestbook']['pluginpath'], @file_get_contents($tfile));
-                        }
-                        // overwrite Serendipity 1.7 .serendipityAdminContent span !important
-                        if ($serendipity['version'][0] < 2) {
-?>
-
-/* Guestbook plugin start  */
-
-#wrapGB .gb_entryhead span {color: #CCDDE7 !important;}
-#wrapGB .gb_entrybody span {color: #222 !important;}
-#wrapGB .msg_error,
-#wrapGB .msg_success,
-#wrapGB .msg_notice,
-#wrapGB .msg_hint {
-    display: block;
-    margin: 1.5em 0;
-    padding: .5em;
-}
-#wrapGB .msg_error {
-    background: #f2dede;
-    border: 1px solid #e4b9b9;
-    color: #b94a48;
-}
-#wrapGB .msg_success {
-    background: #dff0d8;
-    border: 1px solid #c1e2b3;
-    color: #468847;
-}
-#wrapGB .msg_notice {
-    background: #fcf8e3;
-    border: 1px solid #fbeed5;
-    color: #c09853;
-}
-#wrapGB .msg_hint {
-    background: #eee;
-    border: 1px solid #aaa;
-    color: #777;
-}
-
-/* Guestbook plugin end */
-
-<?php
                         }
                         // add replaced css content to the end of serendipity_admin.css
                         if (!empty($tfilecontent)) {
