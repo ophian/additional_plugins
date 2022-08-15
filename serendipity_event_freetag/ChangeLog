@@ -1,3 +1,7 @@
+5.26:
+-----
+ * Init Smarty object not set for rare case dependent plugin
+
 5.25:
 -----
  * Fix a wrong variable init (thanks to hannob)

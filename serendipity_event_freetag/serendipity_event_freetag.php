@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.25');
+        $propbag->add('version',       '5.26');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1425,6 +1425,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // If not using extended-smarty, we want related entries only when
         // showing one single entry. It is better to ask Smarty here than doing
         // this manually for edge cases like overview pages
+        if (!is_object($serendipity['smarty'])) {
+            serendipity_smarty_init();
+        }
         $manyEntries = ! $serendipity['smarty']->getTemplateVars('is_single_entry');
 
         for ($entry = 0; $entry < $elements; $entry++) {
@@ -2136,7 +2139,7 @@ document.addEventListener("DOMContentLoaded", function() {
             $param = is_array($param) ? array_map('strip_tags', $param) : strip_tags($param);
             $param = array_filter($param); // filter out all left BOOL, NULL and EMPTY elements, which still are possible by removing XSS with strip_tags
 
-            if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
+            if (!is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
             }
             if (false === serendipity_db_bool($this->get_config('show_tagcloud', 'true'))) {
