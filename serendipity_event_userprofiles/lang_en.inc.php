@@ -46,7 +46,7 @@
 @define('PLUGIN_EVENT_USERPROFILES_SELECT',             'Select a profile to edit.');
 @define('PLUGIN_EVENT_USERPROFILES_VCARD',              'Create VCard');
 @define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_AT',    'VCard created at %s');
-@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_NOTE',  'You can find this vcard in the media library.');
+@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_NOTE',  'You can find this vcard in the MediaLibrary.');
 @define('PLUGIN_EVENT_USERPROFILES_VCARDNOTCREATED',    'Can\'t create vcard. Maybe empty profile properties?');
 
 @define('PLUGIN_EVENT_AUTHORPIC_EXTENSION', 'File extension');
