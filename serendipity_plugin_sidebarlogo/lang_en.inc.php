@@ -13,7 +13,7 @@
 @define('PLUGIN_SIDEBARLOGO_TITLE', 'Title');
 @define('PLUGIN_SIDEBARLOGO_TITLE_DESC', 'Text for sidebar item title bar');
 @define('PLUGIN_SIDEBARLOGO_IMAGE', 'Logo');
-@define('PLUGIN_SIDEBARLOGO_IMAGE_DESC', 'Image from media library to display in content section or leave blank for no image');
+@define('PLUGIN_SIDEBARLOGO_IMAGE_DESC', 'Image from MediaLibrary to display in content section or leave blank for no image');
 @define('PLUGIN_SIDEBARLOGO_IMAGEWIDTH', 'Image Width');
 @define('PLUGIN_SIDEBARLOGO_IMAGEWIDTH_DESC', 'Display width of logo (use CSS definitions like 50px or 200% or leave blank for no constraint)');
 @define('PLUGIN_SIDEBARLOGO_IMAGEHEIGHT', 'Image Height');
