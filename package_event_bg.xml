@@ -1259,11 +1259,11 @@
 <description>Избира картинки от галерия Coppermine при редактиране на статии</description>
 <maintainers><maintainer><name>Matthew Maude (modified by Jim Davies)</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.12</version>
+  <version>2.13</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-07-02</date>
+  <date>2022-08-15</date>
   <filelist>
     <dir name="serendipity_event_cpgselector">
       <file>ChangeLog</file>
