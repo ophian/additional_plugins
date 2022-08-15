@@ -1,3 +1,7 @@
+2.13:
+-----
+ * Remove Serendipity Series < 2 conditions
+
 2.12:
 -----
  * Secure external target _blank link(s) by living standard rel="noopener"
