@@ -164,9 +164,9 @@ class TCPDF {
 
 	/**
 	 * Buffer holding in-memory PDF.
-	 * @protected
+	 * @public
 	 */
-	protected $buffer;
+	public $buffer;
 
 	/**
 	 * Array containing pages.
@@ -176,9 +176,9 @@ class TCPDF {
 
 	/**
 	 * Current document state.
-	 * @protected
+	 * @public
 	 */
-	protected $state;
+	public $state;
 
 	/**
 	 * Compression flag.
@@ -3573,9 +3573,9 @@ class TCPDF {
 		}
 		$w_page = isset($this->l['w_page']) ? $this->l['w_page'].' ' : '';
 		if (empty($this->pagegroups)) {
-			$pagenumtxt = $w_page.$this->getAliasNumPage().' / '.$this->getAliasNbPages();
+			$pagenumtxt = PLUGIN_EVENT_BLOGPDF_PAGE . ' ' . $w_page.$this->getAliasNumPage().' / '.$this->getAliasNbPages();
 		} else {
-			$pagenumtxt = $w_page.$this->getPageNumGroupAlias().' / '.$this->getPageGroupAlias();
+			$pagenumtxt = PLUGIN_EVENT_BLOGPDF_PAGE . ' ' . $w_page.$this->getPageNumGroupAlias().' / '.$this->getPageGroupAlias();
 		}
 		$this->setY($cur_y);
 		//Print page number
