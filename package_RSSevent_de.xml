@@ -90,6 +90,15 @@
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
+<title>Blog als PDF exportieren: Exportiert alle Einträge des Blogs in eine PDF-Datei</title>
+<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_blogpdf</link>
+<category>Event Plugins</category>
+<author>Garvin Hicking, Olivier PLATHEY, Steven Wittens, Ian Styx</author>
+<content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;Blog als PDF exportieren&lt;/b&gt;&lt;br /&gt;Exportiert alle Einträge des Blogs in eine PDF-Datei&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 19 Aug 2022 17:51:03 +0200</pubDate>
+<guid isPermaLink="false">serendipity_event_blogpdf</guid>
+</item>
+<item>
 <title>Event-Terminkalender: Zeigt einen Terminkalender innerhalb des Blogs mit dem Blog-Design und allen Formatierungen an. Unterstützt Backend/Frontend Administration, vielfache Termine und iCal Export. (Nur MySQL)</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cal</link>
 <category>Event Plugins</category>
