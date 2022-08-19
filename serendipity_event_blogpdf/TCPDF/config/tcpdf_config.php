@@ -202,7 +202,7 @@ define('K_TITLE_MAGNIFICATION', 1.3);
 define('K_SMALL_RATIO', 2/3);
 
 /**
- * Set to true to enable the special procedure used to avoid the overlappind of symbols on Thai language.
+ * Set to true to enable the special procedure used to avoid the overlapping of symbols on Thai language.
  */
 define('K_THAI_TOPCHARS', true);
 
