@@ -18,6 +18,7 @@ class serendipity_event_blogpdf extends serendipity_event
 {
     var $title = PLUGIN_EVENT_BLOGPDF_NAME;
     var $pdf;
+    var $single = false;
 
     function introspect(&$propbag)
     {
@@ -26,13 +27,13 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_BLOGPDF_NAME);
         $propbag->add('description',   PLUGIN_EVENT_BLOGPDF_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking, Olivier PLATHEY, Steven Wittens');
+        $propbag->add('author',        'Garvin Hicking, Olivier PLATHEY, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL FPDF, HTML2PDF, UFPDF');
-        $propbag->add('version',       '1.83');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1.0',
+            'php'         => '7.1.0'
         ));
         $propbag->add('event_hooks',    array(
             'external_plugin'  => true,
@@ -40,7 +41,7 @@ class serendipity_event_blogpdf extends serendipity_event
             'frontend_display' => true
         ));
         $propbag->add('groups', array('FRONTEND_FULL_MODS'));
-        $propbag->add('configuration', array('html2pdf', 'updf', 'fallback'));
+        #$propbag->add('configuration', array('html2pdf', 'updf', 'fallback'));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -90,7 +91,7 @@ class serendipity_event_blogpdf extends serendipity_event
 
             switch($event) {
                 case 'frontend_display':
-                    if (isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
+                    if (isset($eventData['timestamp']) && isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
                         $article_show = true;
                         $year         = date('Y', serendipity_serverOffsetHour($eventData['timestamp']));
                         $month        = date('m', serendipity_serverOffsetHour($eventData['timestamp']));
@@ -100,57 +101,64 @@ class serendipity_event_blogpdf extends serendipity_event
                     }
 
                 case 'entries_footer':
-                    if (isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
-                        $links[] = '<a href="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/articlepdf_' . $serendipity['GET']['id'] . '">' . PLUGIN_EVENT_BLOGPDF_VIEW_ENTRY . '</a>';
-                    }
-
-                    if (isset($serendipity['GET']['category'])) {
-                        $cid = explode('_', $serendipity['GET']['category']);
-                        if (is_numeric($cid[0])) {
-                            $cat = serendipity_fetchCategoryInfo($cid[0]);
-                            $links[] = '<a href="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/categorypdf_' . $cid[0] . '">' . sprintf(PLUGIN_EVENT_BLOGPDF_VIEW_CATEGORY, $cat['category_name']) . '</a>';
+                    // don't do this in mode preview iframe, we use GET, since $serendipity['preview'] isn't available (yet?)
+                    if (empty($serendipity['GET']['preview'])) {
+                        if (isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
+                            $links[] = '<a href="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/articlepdf_' . $serendipity['GET']['id'] . '">' . PLUGIN_EVENT_BLOGPDF_VIEW_ENTRY . '</a>';
                         }
-                    }
 
-                    if (empty($year) && empty($month) && isset($serendipity['GET']['range']) && is_numeric($serendipity['GET']['range'])) {
-                        $year  = substr($serendipity['GET']['range'], 0, 4);
-                        $month = substr($serendipity['GET']['range'], 4, 2);
-                    }
+                        if (isset($serendipity['GET']['category'])) {
+                            $cid = explode('_', $serendipity['GET']['category']);
+                            if (is_numeric($cid[0])) {
+                                $cat = serendipity_fetchCategoryInfo($cid[0]);
+                                $links[] = '<a href="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/categorypdf_' . $cid[0] . '">' . sprintf(PLUGIN_EVENT_BLOGPDF_VIEW_CATEGORY, $cat['category_name']) . '</a>';
+                            }
+                        }
 
-                    if (empty($year)) {
-                        $year = date('Y', serendipity_serverOffsetHour());
-                    }
+                        if (empty($year) && empty($month) && isset($serendipity['GET']['range']) && is_numeric($serendipity['GET']['range'])) {
+                            $year  = substr($serendipity['GET']['range'], 0, 4);
+                            $month = substr($serendipity['GET']['range'], 4, 2);
+                        }
 
-                    if (empty($month)) {
-                        $month = date('m', serendipity_serverOffsetHour());
-                    }
+                        if (empty($year)) {
+                            $year = date('Y', serendipity_serverOffsetHour());
+                        }
 
-                    $links[] = '<a href="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/monthpdf_' . $year . $month . '">' . PLUGIN_EVENT_BLOGPDF_VIEW_MONTH . '</a>';
-                    $links[] = '<a href="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/blogpdf">' . PLUGIN_EVENT_BLOGPDF_VIEW_FULL . '</a>';
+                        if (empty($month)) {
+                            $month = date('m', serendipity_serverOffsetHour());
+                        }
 
-                    if ($article_show) {
-                        $eventData['add_footer'] .= '<div class="serendipity_blogpdf">' . PLUGIN_EVENT_BLOGPDF_VIEW . implode(' | ', $links) . '</div>';
-                    } else {
-                        echo '<div class="serendipity_blogpdf">' . PLUGIN_EVENT_BLOGPDF_VIEW . implode(' | ' , $links) . '</div>';
+                        $links[] = '<a href="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/monthpdf_' . $year . $month . '">' . PLUGIN_EVENT_BLOGPDF_VIEW_MONTH . '</a>';
+                        $links[] = '<a href="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/blogpdf">' . PLUGIN_EVENT_BLOGPDF_VIEW_FULL . '</a>';
+
+                        if ($article_show) {
+                            if (!isset($eventData['add_footer'])) $eventData['add_footer'] = '';
+                            $eventData['add_footer'] .= '<div class="serendipity_blogpdf">' . PLUGIN_EVENT_BLOGPDF_VIEW . implode(' | ', $links) . '</div>';
+                        } else {
+                            echo '<div class="serendipity_blogpdf">' . PLUGIN_EVENT_BLOGPDF_VIEW . implode(' | ' , $links) . '</div>';
+                        }
                     }
                     break;
 
                 case 'external_plugin':
-                    if (serendipity_db_bool($this->get_config('html2pdf', 'false'))) {
+                /*
+                    if (serendipity_db_bool($this->get_config('html2pdf', 'true'))) {
                         include_once dirname(__FILE__) . '/html2fpdf.php';
                     } elseif (serendipity_db_bool($this->get_config('updf', 'false'))) {
                         include_once dirname(__FILE__) . '/serendipity_blogupdf.inc.php';
                     } else {
                         include_once dirname(__FILE__) . '/serendipity_blogpdf.inc.php';
                     }
+                */
+                    require_once(realpath(dirname(__FILE__) . '/TCPDF/tcpdf.php'));
 
                     $cachetime = 60*60*24; // one day
 
-                    $parts     = explode('_', $eventData);
+                    $parts = explode('_', $eventData);
                     if (!empty($parts[1])) {
-                        $param     = (int) $parts[1];
+                        $param = (int) $parts[1];
                     } else {
-                        $param     = null;
+                        $param = null;
                     }
 
                     $methods = array('blogpdf', 'articlepdf', 'monthpdf', 'categorypdf');
@@ -159,55 +167,85 @@ class serendipity_event_blogpdf extends serendipity_event
                         return;
                     }
 
-                    if (serendipity_db_bool($this->get_config('html2pdf', 'false'))) {
-                        $this->pdf = new HTML2FPDF();
-                    } else {
-                        $this->pdf = new PDF();
+                    try {
+                        $this->pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+                        $this->pdf->setPrintHeader(true);
+                        $this->pdf->setPrintFooter(true);
+
+                        // set default header data
+                        $this->pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, 'Serendipity Styx ' . PLUGIN_EVENT_BLOGPDF_EXPORT .': ' . $serendipity['blogTitle'], $serendipity['baseURL'], array(0,64,255), array(0,64,128));
+                        $this->pdf->setFooterData(array(0,64,0), array(0,64,128));
+
+                        // set header and footer fonts
+                        $this->pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+                        $this->pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+
+                        // set default monospaced font
+                        $this->pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+                        // set margins
+                        $this->pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+                        $this->pdf->setHeaderMargin(PDF_MARGIN_HEADER);
+                        $this->pdf->setFooterMargin(PDF_MARGIN_FOOTER);
+
+                        // set auto page breaks
+                        $this->pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+                        // set image scale factor
+                        $this->pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
+                        switch($parts[0]) {
+                            case 'blogpdf':
+                                $feedcache = $serendipity['serendipityPath'] . 'archives/blog.pdf';
+                                $entries = serendipity_fetchEntries();
+                                $this->process(
+                                    $feedcache,
+                                    $entries
+                                );
+                                break;
+
+                            case 'articlepdf':
+                                $feedcache = $serendipity['serendipityPath'] . 'archives/article' . $param . '.pdf';
+                                $this->single = true;
+                                $entry = serendipity_fetchEntry('id', $param);
+                                $this->process(
+                                    $feedcache,
+                                    $entry
+                                );
+                                break;
+
+                            case 'monthpdf':
+                                $feedcache = $serendipity['serendipityPath'] . 'archives/month' . $param . '.pdf';
+                                $entries = serendipity_fetchEntries($param);
+                                $this->process(
+                                    $feedcache,
+                                    $entries
+                                );
+                                break;
+
+                            case 'categorypdf':
+                                $feedcache = $serendipity['serendipityPath'] . 'archives/category' . $param . '.pdf';
+                                $serendipity['GET']['category'] = $param . '_category';
+                                $entries = serendipity_fetchEntries();
+                                $this->process(
+                                    $feedcache,
+                                    $entries
+                                );
+                                break;
+                        }
+
+                        #$content = '<page style="font-family: freeserif"><br />'.nl2br($this->pdf->buffer).'</page>';
+                        $this->pdf->writeHTML($this->pdf->buffer);
+
+                        $this->pdf->Output($param . '.pdf');
+
+                    } catch (\Exception $e) {
+
+                        $error =  '<span class="msg_error"><span class="icon-attention-circled"></span> ' . $e->getMessage() . "</span>\n";
+                        $this->pdf->Error('Sorry! Unable to create the PDF document ' . $param . ".pdf for\n" . $error);
+
                     }
-
-                    $this->pdf->AliasNbPages();
-
-                    switch($parts[0]) {
-                        case 'blogpdf':
-                            $feedcache = $serendipity['serendipityPath'] . 'archives/blog.pdf';
-                            $entries = serendipity_fetchEntries();
-                            $this->process(
-                              $feedcache,
-                              $entries
-                            );
-                            break;
-
-                        case 'articlepdf':
-                            $feedcache = $serendipity['serendipityPath'] . 'archives/article' . $param . '.pdf';
-                            $this->single = true;
-                            $entry = serendipity_fetchEntry('id', $param);
-                            $this->process(
-                              $feedcache,
-                              $entry
-                            );
-                            break;
-
-                        case 'monthpdf':
-                            $feedcache = $serendipity['serendipityPath'] . 'archives/month' . $param . '.pdf';
-                            $entries = serendipity_fetchEntries($param);
-                            $this->process(
-                              $feedcache,
-                              $entries
-                            );
-                            break;
-
-                        case 'categorypdf':
-                            $feedcache = $serendipity['serendipityPath'] . 'archives/category' . $param . '.pdf';
-                            $serendipity['GET']['category'] = $param . '_category';
-                            $entries = serendipity_fetchEntries();
-                            $this->process(
-                              $feedcache,
-                              $entries
-                            );
-                            break;
-                    }
-
-                    $this->pdf->Output();
                     break;
 
                 default:
@@ -222,6 +260,7 @@ class serendipity_event_blogpdf extends serendipity_event
 
     function process($feedcache, &$entries)
     {
+        $cachetime = 60*60*24; // one day
         if (!file_exists($feedcache) || filesize($feedcache) == 0 || filemtime($feedcache) < (time() - $cachetime)) {
             if ($this->single) {
                 $this->print_entry(0, $entries, $this->prep_out(serendipity_formatTime(DATE_FORMAT_ENTRY, $entries['timestamp'])));
@@ -244,8 +283,7 @@ class serendipity_event_blogpdf extends serendipity_event
     {
         if ($header) {
             $this->pdf->AddPage();
-            $this->pdf->SetFont('Courier','',12);
-            $this->pdf->TOC_Add($header);
+            $this->pdf->SetFont('pdfahelvetica','',10);
             $this->pdf->Cell(0, 10, $header, 1);
             $this->pdf->Ln();
             $this->pdf->Ln();
@@ -254,7 +292,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $entryLink = serendipity_archiveURL($entry['id'], $entry['title'], 'serendipityHTTPPath', true, array('timestamp' => $entry['timestamp']));
         serendipity_plugin_api::hook_event('frontend_display', $entry, array('no_scramble' => true));
 
-        $posted_by = ' ' . POSTED_BY . ' ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['author']) : htmlspecialchars($entry['author'], ENT_COMPAT, LANG_CHARSET));
+        $posted_by = ' ' . POSTED_BY . ' ' . serendipity_specialchars($entry['author']);
         if (is_array($entry['categories']) && sizeof($entry['categories']) > 0) {
             $posted_by .= ' ' . IN . ' ';
             $cats = array();
@@ -266,17 +304,8 @@ class serendipity_event_blogpdf extends serendipity_event
 
         $posted_by .= ' ' . AT . ' ' . serendipity_strftime('%H:%M', $entry['timestamp']);
 
-        $this->pdf->SetFont('Arial', 'B', 11);
-        $this->pdf->Write(4, $this->prep_out($entry['title']) . "\n");
-        $this->pdf->Ln();
-
-        $this->pdf->SetFont('Arial', '', 10);
         $html = $this->prep_out($entry['body'] . $entry['extended']) . "\n";
-        if (serendipity_db_bool($this->get_config('html2pdf', 'false'))) {
-            $this->pdf->WriteHTML($html);
-        } else {
-            $this->pdf->Write(4, $html);
-        }
+        $this->pdf->WriteHTML($html);
         $this->pdf->Ln();
 
         $this->pdf->SetFont('Courier', '', 9);
@@ -306,18 +335,14 @@ class serendipity_event_blogpdf extends serendipity_event
             $name = empty($comment['username']) ? ANONYMOUS : $comment['username'];
             $body = $comment['comment'];
 
-            $this->pdf->SetFont('Arial', '', 9);
+            $this->pdf->SetFont(PDF_FONT_MONOSPACED, '', 9);
             $html = $this->prep_out(
               $body . "\n" .
               '    ' . $name .
               ' ' . ON . ' ' . serendipity_mb('ucfirst', $this->prep_out(serendipity_strftime('%b %e %Y, %H:%M', $comment['timestamp'])))
             ) . "\n";
 
-            if (serendipity_db_bool($this->get_config('html2pdf', 'false'))) {
-                $this->pdf->WriteHTML($html);
-            } else {
-                $this->pdf->Write(3, $html);
-            }
+            $this->pdf->WriteHTML($html);
             $this->pdf->Ln();
             $this->pdf->Ln();
         }
@@ -325,14 +350,13 @@ class serendipity_event_blogpdf extends serendipity_event
 
     function prep_out($string)
     {
-        if (serendipity_db_bool($this->get_config('html2pdf', 'false'))) {
+        #if (serendipity_db_bool($this->get_config('html2pdf', 'true'))) {
             return $string;
-        } elseif (serendipity_db_bool($this->get_config('fallback', 'false'))) {
-			return strip_tags(html_entity_decode(utf8_decode($string), ENT_COMPAT, LANG_CHARSET));
-		} else {
-			return strip_tags(html_entity_decode($string, ENT_COMPAT, LANG_CHARSET));
-		}
-
+        #} elseif (serendipity_db_bool($this->get_config('fallback', 'false'))) {
+		#	return html_entity_decode(strip_tags(utf8_decode($string)), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, LANG_CHARSET);
+		#} else {
+		#	return html_entity_decode(strip_tags($string), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, LANG_CHARSET);
+		#}
     }
 
     function print_entries(&$entries)
@@ -360,9 +384,9 @@ class serendipity_event_blogpdf extends serendipity_event
             foreach ($ents AS $x => $entry) {
                 $this->print_entry($x, $entry, $header);
                 $header = false;
-            } // end for-loop (entries)
-        } // end for-loop (dates)
-    } // end function serendipity_printEntries
+            }
+        }
+    }
 
 }
 

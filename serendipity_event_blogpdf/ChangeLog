@@ -1,0 +1,16 @@
+2.0.0:
+-----
+ * Enable plugin again
+ * Completely remove all old FPDF lib related files
+ * Add new TCPDF lib in v.6.5.0 from https://github.com/tecnickcom/TCPDF
+ * Add PHP 8 preparation fixes to TCPDF
+ * Prepare TCPDF for blogpdf usage
+ * Raise requirements
+
+ * This is a TEST version!
+ * No configuration items will work. IT IS UTF-8 only until further.
+
+1.83:
+-----
+ * Up-fix for Serendipity Styx and completely removed in July 2019
+
