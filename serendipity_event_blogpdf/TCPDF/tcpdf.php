@@ -3135,7 +3135,7 @@ class TCPDF {
 	}
 
 	/**
-	 * Get the total number of insered pages.
+	 * Get the total number of inserted pages.
 	 * @return int number of pages
 	 * @public
 	 * @since 2.1.000 (2008-01-07)
@@ -3235,7 +3235,7 @@ class TCPDF {
 		}
 		// move page numbers of documents to be attached
 		if ($this->tocpage) {
-			// move reference to unexistent pages (used for page attachments)
+			// move reference to inexistent pages (used for page attachments)
 			// adjust outlines
 			$tmpoutlines = $this->outlines;
 			foreach ($tmpoutlines as $key => $outline) {
@@ -4104,7 +4104,7 @@ class TCPDF {
 	 * @param string $fontstyle Font style. Possible values are (case insensitive):<ul><li>empty string: regular</li><li>B: bold</li><li>I: italic</li><li>U: underline</li><li>D: line-through</li><li>O: overline</li></ul> or any combination. The default value is regular.
 	 * @param float $fontsize Font size in points. The default value is the current size.
 	 * @param boolean $getarray if true returns an array of characters widths, if false returns the total length.
-	 * @return float[]|float total string length or array of characted widths
+	 * @return float[]|float total string length or array of character widths
 	 * @author Nicola Asuni
 	 * @public
 	 * @since 1.2
@@ -4120,7 +4120,7 @@ class TCPDF {
 	 * @param string $fontstyle Font style. Possible values are (case insensitive):<ul><li>empty string: regular</li><li>B: bold</li><li>I: italic</li><li>U: underline</li><li>D: line through</li><li>O: overline</li></ul> or any combination. The default value is regular.
 	 * @param float $fontsize Font size in points. The default value is the current size.
 	 * @param boolean $getarray if true returns an array of characters widths, if false returns the total length.
-	 * @return float[]|float total string length or array of characted widths
+	 * @return float[]|float total string length or array of character widths
 	 * @author Nicola Asuni
 	 * @public
 	 * @since 2.4.000 (2008-03-06)
@@ -4243,7 +4243,7 @@ class TCPDF {
 	 * @param string $style Font style. Possible values are (case insensitive):<ul><li>empty string: regular (default)</li><li>B: bold</li><li>I: italic</li><li>BI or IB: bold italic</li></ul>
 	 * @param string $fontfile The font definition file. By default, the name is built from the family and style, in lower case with no spaces.
 	 * @return array|false array containing the font data, or false in case of error.
-	 * @param mixed $subset if true embedd only a subset of the font (stores only the information related to the used characters); if false embedd full font; if 'default' uses the default value set using setFontSubsetting(). This option is valid only for TrueTypeUnicode fonts. If you want to enable users to change the document, set this parameter to false. If you subset the font, the person who receives your PDF would need to have your same font in order to make changes to your PDF. The file size of the PDF would also be smaller because you are embedding only part of a font.
+	 * @param mixed $subset if true embeds only a subset of the font (stores only the information related to the used characters); if false embeds full font; if 'default' uses the default value set using setFontSubsetting(). This option is valid only for TrueTypeUnicode fonts. If you want to enable users to change the document, set this parameter to false. If you subset the font, the person who receives your PDF would need to have your same font in order to make changes to your PDF. The file size of the PDF would also be smaller because you are embedding only part of a font.
 	 * @public
 	 * @since 1.5
 	 * @see SetFont(), setFontSubsetting()
@@ -4407,7 +4407,7 @@ class TCPDF {
 				$this->Error('All fonts must be embedded in PDF/A mode!');
 			}
 		} else {
-			$this->Error('Unknow font type: '.$type.'');
+			$this->Error('Unknown font type: '.$type.'');
 		}
 		// set name if unset
 		if (!isset($name) OR empty($name)) {
@@ -17236,8 +17236,7 @@ class TCPDF {
 	 * @param float|null $y upper-left corner Y coordinate
 	 * @param string $html html text to print. Default value: empty string.
 	 * @param mixed $border Indicates if borders must be drawn around the cell. The value can be a number:<ul><li>0: no border (default)</li><li>1: frame</li></ul> or a string containing some or all of the following characters (in any order):<ul><li>L: left</li><li>T: top</li><li>R: right</li><li>B: bottom</li></ul> or an array of line styles for each border group - for example: array('LTRB' => array('width' => 2, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)))
-	 * @param int $ln Indicates where the current position should go after the call. Possible values are:<ul><li>0: to the right (or left for RTL language)</li><li>1: to the beginning of the next line</li><li>2: below</li></ul>
-Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value: 0.
+	 * @param int $ln Indicates where the current position should go after the call. Possible values are:<ul><li>0: to the right (or left for RTL language)</li><li>1: to the beginning of the next line</li><li>2: below</li></ul> Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value: 0.
 	 * @param boolean $fill Indicates if the cell background must be painted (true) or transparent (false).
 	 * @param boolean $reseth if true reset the last cell height (default true).
 	 * @param string $align Allows to center or align the text. Possible values are:<ul><li>L : left align</li><li>C : center</li><li>R : right align</li><li>'' : empty string : left for LTR or right for RTL</li></ul>
