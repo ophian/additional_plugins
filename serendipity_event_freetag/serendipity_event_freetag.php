@@ -1336,7 +1336,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                     // Don't display entries if passed true by 'external_plugin'
                     if ($this->displayTag === true) {
-                        $eventData['clean_page'] = true;
+                        $eventData['clean_page'] = true; // This is important to not display an entry list!
                         break;
                     }
                     // places the entries tags in entry footer
