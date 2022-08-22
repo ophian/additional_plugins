@@ -95,7 +95,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Olivier PLATHEY, Steven Wittens, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;PDF でブログをエクスポートする&lt;/b&gt;&lt;br /&gt;訪問者が PDF 形式でブログをダウンロードすることを許可します。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 19 Aug 2022 18:05:39 +0200</pubDate>
+<pubDate>Mon, 22 Aug 2022 18:09:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
@@ -448,7 +448,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;エントリーのタグ&lt;/b&gt;&lt;br /&gt;エントリーの自由なタグを許可します。&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Mon, 15 Aug 2022 15:36:15 +0200</pubDate>
+<pubDate>Mon, 22 Aug 2022 11:42:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -763,7 +763,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;多言語エントリ&lt;/b&gt;&lt;br /&gt;エントリの複数の言語バージョンを作成することを可能にします。&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Mon, 06 Dec 2021 21:06:37 +0100</pubDate>
+<pubDate>Mon, 22 Aug 2022 17:27:47 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -1321,7 +1321,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;ユーザー自身での登録&lt;/b&gt;&lt;br /&gt;ブログ訪問者が自分のアカウントを作成することを許可します。Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 10 Oct 2021 09:00:48 +0200</pubDate>
+<pubDate>Mon, 22 Aug 2022 11:44:42 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>
