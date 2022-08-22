@@ -262,7 +262,7 @@ class serendipity_event_adduser extends serendipity_event
                 case 'entry_display':
                     if ((isset($serendipity['GET']['subpage']) && $serendipity['GET']['subpage'] == 'adduser') || (isset($serendipity['POST']['subpage']) && $serendipity['POST']['subpage'] == 'adduser') || !empty($serendipity['GET']['adduser_activation']) || !empty($this->clean_page)) {
                         if (is_array($eventData)) {
-                            $eventData['clean_page'] = true;
+                            $eventData['clean_page'] = true; // This is important to not display an entry list!
                         }
                     }
                     break;
