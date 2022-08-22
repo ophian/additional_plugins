@@ -5,11 +5,7 @@ if (IN_serendipity !== true) {
 }
 
 /* TODO:
-- Use Links inside entries
-- Put images
-- Build a nice TOC
 - Insert nice formatting, maybe user-defined? (Color, Font face)
-- Parse attributes like STRONG, BOLD, ...
 */
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
@@ -29,7 +25,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier PLATHEY, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL TCPDF');
-        $propbag->add('version',       '2.0.1');
+        $propbag->add('version',       '2.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -152,8 +148,6 @@ class serendipity_event_blogpdf extends serendipity_event
                 */
                     require_once(realpath(dirname(__FILE__) . '/TCPDF/tcpdf.php'));
 
-                    $cachetime = 60*60*24; // one day
-
                     $parts = explode('_', $eventData);
                     if (!empty($parts[1])) {
                         $param = (int) $parts[1];
@@ -168,7 +162,7 @@ class serendipity_event_blogpdf extends serendipity_event
                     }
 
                     try {
-                        $this->pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+                        $this->pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, LANG_CHARSET, false);
 
                         $this->pdf->setPrintHeader(true);
                         $this->pdf->setPrintFooter(true);
@@ -195,10 +189,15 @@ class serendipity_event_blogpdf extends serendipity_event
                         // set image scale factor
                         $this->pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
+                        // keep this break
+                        $joinep = "
+                    LEFT JOIN {$serendipity['dbPrefix']}entryproperties AS ep_blogpdf
+                           ON (e.id = ep_blogpdf.entryid)";
+
                         switch($parts[0]) {
                             case 'blogpdf':
                                 $feedcache = $serendipity['serendipityPath'] . 'archives/blog.pdf';
-                                $entries = serendipity_fetchEntries();
+                                $entries = serendipity_fetchEntries(null, true, '', false, false, 'timestamp DESC', "ep_blogpdf.property != 'ep_entrypassword'", false, false, null, null, 'array', true, true, $joinep);
                                 $this->process(
                                     $feedcache,
                                     $entries
@@ -209,6 +208,12 @@ class serendipity_event_blogpdf extends serendipity_event
                                 $feedcache = $serendipity['serendipityPath'] . 'archives/article' . $param . '.pdf';
                                 $this->single = true;
                                 $entry = serendipity_fetchEntry('id', $param);
+                                // yes, external_plugin has access to $entry['properties'] since after
+                                if (!empty($entry['properties']['ep_entrypassword'])) {
+                                    $entry['title'] = '';
+                                    $entry['body'] = 'Access denied. Password protection in effect!';
+                                    $entry['extended'] = null;
+                                }
                                 $this->process(
                                     $feedcache,
                                     $entry
@@ -217,7 +222,7 @@ class serendipity_event_blogpdf extends serendipity_event
 
                             case 'monthpdf':
                                 $feedcache = $serendipity['serendipityPath'] . 'archives/month' . $param . '.pdf';
-                                $entries = serendipity_fetchEntries($param);
+                                $entries = serendipity_fetchEntries($param, true, '', false, false, 'timestamp DESC', "ep_blogpdf.property != 'ep_entrypassword'", false, false, null, null, 'array', true, true, $joinep);
                                 $this->process(
                                     $feedcache,
                                     $entries
@@ -227,7 +232,7 @@ class serendipity_event_blogpdf extends serendipity_event
                             case 'categorypdf':
                                 $feedcache = $serendipity['serendipityPath'] . 'archives/category' . $param . '.pdf';
                                 $serendipity['GET']['category'] = $param . '_category';
-                                $entries = serendipity_fetchEntries();
+                                $entries = serendipity_fetchEntries(null, true, '', false, false, 'timestamp DESC', "ep_blogpdf.property != 'ep_entrypassword'", false, false, null, null, 'array', true, true, $joinep);
                                 $this->process(
                                     $feedcache,
                                     $entries
@@ -261,6 +266,7 @@ class serendipity_event_blogpdf extends serendipity_event
     function process($feedcache, &$entries)
     {
         $cachetime = 60*60*24; // one day
+
         if (!file_exists($feedcache) || filesize($feedcache) == 0 || filemtime($feedcache) < (time() - $cachetime)) {
             if ($this->single) {
                 $this->print_entry(0, $entries, $this->prep_out(serendipity_formatTime(DATE_FORMAT_ENTRY, $entries['timestamp'])));
@@ -325,7 +331,7 @@ class serendipity_event_blogpdf extends serendipity_event
         }
 
         foreach ($comments AS $i => $comment) {
-            $comment['comment'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars(strip_tags($comment['body'])) : htmlspecialchars(strip_tags($comment['body']), ENT_COMPAT, LANG_CHARSET));
+            $comment['comment'] = serendipity_specialchars(strip_tags($comment['body']));
             if (!empty($comment['url']) && substr($comment['url'], 0, 7) != 'http://' && substr($comment['url'], 0, 8) != 'https://') {
                 $comment['url'] = 'http://' . $comment['url'];
             }

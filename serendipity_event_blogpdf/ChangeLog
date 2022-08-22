@@ -1,3 +1,9 @@
+2.1.0:
+-----
+ * Do not run entries that are password protected
+ * Improve for LANG_CHARSET, removing the UTF-8 only limitation
+ * Minor fixes
+
 2.0.1:
 -----
  * Update License string
