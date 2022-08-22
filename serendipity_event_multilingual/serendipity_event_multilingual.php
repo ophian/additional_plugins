@@ -790,7 +790,7 @@ class serendipity_event_multilingual extends serendipity_event
                     }
 
                     if (!$entrieslist) {
-                        $cond  = "multilingual_body.value AS multilingual_body,\n";
+                        $cond  = "                    multilingual_body.value AS multilingual_body,\n";
                         $cond .= "                    multilingual_extended.value AS multilingual_extended,\n";
                         $cond .= "                    multilingual_title.value AS multilingual_title,\n";
                     } else {
@@ -802,6 +802,7 @@ class serendipity_event_multilingual extends serendipity_event
                     } else {
                         $eventData['addkey'] .= $cond;
                     }
+                    // new $cond
 
                     if (!$entrieslist) {
                         $cond  = "\n                    LEFT OUTER JOIN {$serendipity['dbPrefix']}entryproperties multilingual_body
