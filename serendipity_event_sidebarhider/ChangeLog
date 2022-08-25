@@ -1,3 +1,9 @@
+1.40:
+----
+
+ * Fixup some variable checks
+ * Raise PHP requirement
+
 1.39:
 ----
 

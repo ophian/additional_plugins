@@ -18,10 +18,10 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '1.39');
+        $propbag->add('version',       '1.40');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
-            'php'         => '5.2.0'
+            'php'         => '7.1.0'
         ));
         $propbag->add('event_hooks',    array(
             'external_plugin'           => true,
@@ -107,12 +107,12 @@ class serendipity_event_sidebarhider extends serendipity_event
                         $view_list = array();
                     }
 
-                    $category_viewlist = unserialize($this->get_config('category_view_list'));
+                    $category_viewlist = unserialize($this->get_config('category_view_list', ''));
                     if (!is_array($category_viewlist)) {
                         $category_viewlist = array();
                     }
 
-                    $usergroups_viewlist = unserialize($this->get_config('usergroups_view_list'));
+                    $usergroups_viewlist = unserialize($this->get_config('usergroups_view_list', ''));
                     if (!is_array($usergroups_viewlist)) {
                         $usergroups_viewlist = array();
                         $mygroups            = array();
@@ -131,7 +131,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                         // Now eliminate remaining plugins that don't fit the category restrictions (--JAM: 2005-10-18; was else for above)
                         if (isset($plugins[$idx]) ) {
                             if (isset($category_viewlist[$plugin_data['name']]) && $category_viewlist[$plugin_data['name']] != '') { //--JAM: 2005-10-18 allows non-numeric category specifiers
-                                $selected = @explode(',', $category_viewlist[$plugin_data['name']]);
+                                $selected = explode(',', $category_viewlist[$plugin_data['name']]);
                                 // Some category restrictions were specified.  Do we meet the restrictions?
                                 if (isset($serendipity['GET']['category']) && !in_array($serendipity['GET']['category'], $selected)) {
                                     // We're in a category, and it's not in the selected list
@@ -156,7 +156,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                             }
 
                             if (isset($usergroups_viewlist[$plugin_data['name']]) && $usergroups_viewlist[$plugin_data['name']] != '') {
-                                $selected = @explode(',', $usergroups_viewlist[$plugin_data['name']]);
+                                $selected = explode(',', $usergroups_viewlist[$plugin_data['name']]);
 
                                 // Check if any of the allowed groups are inside the array $mygroup which contains the valid groups of the current author
                                 $found = false;
