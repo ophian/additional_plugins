@@ -1,3 +1,8 @@
+1.26:
+----
+
+ * Declare title for plugins accessing objects title, eg. entryproperties disable_markups in entry option
+
 1.25:
 1.24:
 ----

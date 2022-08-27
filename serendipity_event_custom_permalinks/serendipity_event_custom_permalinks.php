@@ -10,6 +10,7 @@ if (IN_serendipity !== true) {
 class serendipity_event_custom_permalinks extends serendipity_event
 {
     var $ids = array();
+    var $title = PLUGIN_EVENT_CUSTOM_PERMALINKS;
 
     function introspect(&$propbag)
     {
@@ -27,7 +28,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
                                         'backend_display'                   => true));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.25');
+        $propbag->add('version', '1.26');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
