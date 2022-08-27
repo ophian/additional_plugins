@@ -23,7 +23,7 @@
 <category>Event Plugins</category>
 <author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 2.2</content:encoded>
-<pubDate>Mon, 02 Aug 2021 16:38:48 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2022 10:01:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the Serendipity Backend (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the Blog directly with one click from within the administration area. It is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 11 Aug 2022 09:33:20 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2022 10:06:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -338,7 +338,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;다음/이전 글로 가는 링크 표시&lt;/b&gt;&lt;br /&gt;글을 읽으면서 다음이나 이전 글로 갈 수 있도록 함&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 02 May 2022 15:12:11 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2022 09:20:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;고정 페이지&lt;/b&gt;&lt;br /&gt;블로그의 디자인을 그대로 따르는 고정 페이지를 블로그 속에 보여줍니다. 관리 메뉴에 새 메뉴 아이템을 생성합니다.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Sun, 03 Jul 2022 14:21:08 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2022 09:22:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1265,7 +1265,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;글 발표&lt;/b&gt;&lt;br /&gt;온라인 서비스에 새로운 글이 올라왔음을 알림&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 06 Aug 2021 19:30:59 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2022 09:22:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>

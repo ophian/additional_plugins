@@ -23,7 +23,7 @@
 <category>Event Plugins</category>
 <author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS agregátor&lt;/b&gt;&lt;br /&gt;Zobrazuje zprávy z mnoha RSS kanálů. DŮLEŽITÁ POZNÁMKA: Aktualizace a &quot;krmení&quot; agregátoru je v současnosti nutno dělat ručně pomocí Cronjobs nebo podobně. Volejte následující adresu v libovolných časových intervalech: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 2.2</content:encoded>
-<pubDate>Mon, 02 Aug 2021 16:38:48 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2022 10:01:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Automatické aktualizace&lt;/b&gt;&lt;br /&gt;Když &quot;tabule&quot; detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate Notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 11 Aug 2022 09:33:20 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2022 10:06:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -338,7 +338,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Odkaz na další/předchozí příspěvek&lt;/b&gt;&lt;br /&gt;Umožňuje prohlížení dalších/předchozích příspěvků&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 02 May 2022 15:12:11 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2022 09:20:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statické stránky&lt;/b&gt;&lt;br /&gt;Zobrazuje v blogu statické stránky se stejným designem jako mají běžné přspěvky. Přidá nové menu do adminstrátorského rozhraní.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Sun, 03 Jul 2022 14:21:08 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2022 09:22:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1265,7 +1265,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Oznamování příspěvků&lt;/b&gt;&lt;br /&gt;Posílá oznámení o nových příspěvcích na on-line internetové služby.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 06 Aug 2021 19:30:59 +0200</pubDate>
+<pubDate>Sat, 27 Aug 2022 09:22:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>
