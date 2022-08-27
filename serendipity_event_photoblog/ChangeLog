@@ -1,3 +1,8 @@
+1.13:
+-----
+
+ * Allow modal dialog choosing the image, based on $serendipity['enableBackendPopup']
+
 1.12:
 -----
 
