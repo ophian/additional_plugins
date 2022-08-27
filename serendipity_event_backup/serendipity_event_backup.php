@@ -11,6 +11,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_backup extends serendipity_event
 {
+    var $title = PLUGIN_BACKUP_TITLE;
     var $debug;
 
     function introspect(&$propbag)
@@ -25,7 +26,7 @@ class serendipity_event_backup extends serendipity_event
             'php'         => '7.0'
         ));
 
-        $propbag->add('version',       '1.2.0');
+        $propbag->add('version',       '1.2.1');
         $propbag->add('author',       'Alexander Mieland, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
