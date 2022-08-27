@@ -58,6 +58,7 @@ if (IN_serendipity !== true) {
 class serendipity_event_aggregator extends serendipity_event
 {
     var $debug;
+    var $title = PLUGIN_AGGREGATOR_TITLE;
 
     function introspect(&$propbag)
     {
@@ -70,7 +71,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '1.05');
+        $propbag->add('version',       '1.06');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
