@@ -12,6 +12,8 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_staticpage extends serendipity_event
 {
+    var $title = STATICPAGE_TITLE;
+
     private $smarty_init = null;
     private $cachefile   = [];
     private $htmlnugget  = [];
@@ -97,7 +99,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.56');
+        $propbag->add('version', '6.57');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
