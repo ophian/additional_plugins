@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+1.58:
+-----
+ * Declare title for plugins accessing objects title, eg. entryproperties disable_markups in entry option
+
 1.57:
 -----
  * Improve for PHP 8.2

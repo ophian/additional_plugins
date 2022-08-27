@@ -19,6 +19,7 @@ class serendipity_event_downloadmanager extends serendipity_event
     var $MIME;
     var $globs = array();
     var $isWIN = null;
+    var $title = PLUGIN_DOWNLOADMANAGER_TITLE;
 
     /**
      * introspect API
@@ -37,7 +38,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '7.0.0'
         ));
 
-        $propbag->add('version',       '1.57');
+        $propbag->add('version',       '1.58');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
