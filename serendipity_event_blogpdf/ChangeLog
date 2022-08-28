@@ -1,3 +1,7 @@
+2.2.0:
+-----
+ * Do not run entries_footer blogpdf on staticpages and other plugins that are not categories
+
 2.1.0:
 -----
  * Do not run entries that are password protected
