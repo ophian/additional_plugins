@@ -28,7 +28,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.3.0');
+        $propbag->add('version',       '2.3.1');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.3.0'
@@ -634,7 +634,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     foreach ($styles AS $style => $path) {
                         $templateInfo = serendipity_fetchTemplateInfo($style);
 ?>
-                        <option value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($style) : htmlspecialchars($style, ENT_COMPAT, LANG_CHARSET)); ?>" <?php echo ($style == $template? 'selected="selected"' : ''); ?>><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($templateInfo['name']) : htmlspecialchars($templateInfo['name'], ENT_COMPAT, LANG_CHARSET)); ?></option>
+                        <option value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($style) : htmlspecialchars($style, ENT_COMPAT, LANG_CHARSET)); ?>" <?php echo ($style == $template? 'selected="selected"' : ''); ?>><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($templateInfo['name'], null, LANG_CHARSET, false) : htmlspecialchars($templateInfo['name'], ENT_COMPAT, LANG_CHARSET, false)); ?></option>
 <?php
                     }
 ?>
