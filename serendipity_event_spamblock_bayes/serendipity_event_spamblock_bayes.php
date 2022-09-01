@@ -16,7 +16,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.7.1');
+        $propbag->add('version',        '2.7.2');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -436,7 +436,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         global $serendipity;
 
         $comments = $this->getAllRecyclerComments();
-        if (is_array($comments[0])) {
+        if (isset($comments[0]) && is_array($comments[0])) {
             for ($i=0; $i < count($comments); $i++) {
                 $databaseComment = $comments[$i];
                 $comment = $databaseComment['url'] . ' ' . $databaseComment['body'] . ' ' . $databaseComment['author'] . ' ' . $databaseComment['email'];

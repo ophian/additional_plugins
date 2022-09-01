@@ -1,3 +1,7 @@
+2.7.2:
+------
+ * Better check displayRecycler() ->  $comments = $this->getAllRecyclerComments() return to avoid warnings on bool
+
 2.7.1:
 ------
  * Better check b8 is initialized for startup with PHP 8
