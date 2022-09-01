@@ -1,3 +1,9 @@
+1.35:
+=====
+
+ * Fixes for PHP 8 and 'ep_disable_markup_(instance)' checks
+ * Finish removing old markdown lib by removing some depending conditionals
+
 1.34:
 =====
 

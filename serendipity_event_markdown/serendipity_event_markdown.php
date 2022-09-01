@@ -25,7 +25,7 @@ class serendipity_event_markdown extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.4'
         ));
-        $propbag->add('version',       '1.34');
+        $propbag->add('version',       '1.35');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
             'frontend_display' => true,
@@ -142,9 +142,9 @@ class serendipity_event_markdown extends serendipity_event
                 case 'frontend_display':
 
                     foreach ($this->markup_elements AS $temp) {
-                        if (serendipity_db_bool($this->get_config($temp['name'], true)) && !empty($eventData[$temp['element']]) &&
-                            @!$eventData['properties']['ep_disable_markup_' . $this->instance] &&
-                            !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
+                        if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
+                        && (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
+                        && !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = $temp['element'];
                             # HTML special chars like ">" in comments may have been replaced by entities ("&gt;")
                             # by serendipity_event_unstrip_tags; we have to - partially - undo that, as ">" is
@@ -154,21 +154,17 @@ class serendipity_event_markdown extends serendipity_event
                             if ($element == 'comment' && (is_array($addData) && isset($addData['comment_escaped']))) {
                                 $eventData[$element] = preg_replace('/(^|(?<=&gt;))\s*&gt;/m', '>', $eventData[$element]);
                             }
-                            if ($mdv == 2) {
-                                if ($mdex) {
-                                    $eventData[$element] = str_replace('javascript:', '', MarkdownExtra::defaultTransform($eventData[$element]));
-                                } else {
-                                    $eventData[$element] = str_replace('javascript:', '', Markdown::defaultTransform($eventData[$element]));
-                                }
-                                if ($mdsp == 1) $eventData[$element] = SmartyPants::defaultTransform($eventData[$element]);
-                                if ($mdsp == 2) $eventData[$element] = SmartyPantsTypographer::defaultTransform($eventData[$element]);
+                            if ($mdex) {
+                                $eventData[$element] = str_replace('javascript:', '', MarkdownExtra::defaultTransform($eventData[$element]));
                             } else {
-                                $eventData[$element] = str_replace('javascript:', '', Markdown($eventData[$element]));
+                                $eventData[$element] = str_replace('javascript:', '', Markdown::defaultTransform($eventData[$element]));
                             }
+                            if ($mdsp == 1) $eventData[$element] = SmartyPants::defaultTransform($eventData[$element]);
+                            if ($mdsp == 2) $eventData[$element] = SmartyPantsTypographer::defaultTransform($eventData[$element]);
                         }
                     }
                     if (is_array($eventData)) {
-                        $this->setPlaintextBody($eventData, $mdex, $mdv, $mdsp);
+                        $this->setPlaintextBody($eventData, $mdex, $mdsp);
                     }
                     break;
 
@@ -244,7 +240,7 @@ a.footnote-ref:after {
      * @param int   $pants      SmartyPants option       default 0
      * @return      $GLOBALS['entry'][0]['plaintext_body']
      */
-    function setPlaintextBody(array $eventData, $extra=false, $version=2, $pants=0)
+    function setPlaintextBody(array $eventData, $extra=false, $pants=0)
     {
         if (isset($GLOBALS['entry'][0]['plaintext_body'])) {
             $plaintext_body = $GLOBALS['entry'][0]['plaintext_body'];
@@ -253,9 +249,9 @@ a.footnote-ref:after {
         }
 
         if ($extra) {
-            $html = ($version == 2) ? MarkdownExtra::defaultTransform($plaintext_body) : Markdown($plaintext_body);
+            $html = MarkdownExtra::defaultTransform($plaintext_body);
         } else {
-            $html = ($version == 2) ? Markdown::defaultTransform($plaintext_body) : Markdown($plaintext_body);
+            $html = Markdown::defaultTransform($plaintext_body);
         }
 
         if ($pants > 0) $html = ($pants == 2) ? SmartyPantsTypographer::defaultTransform($html) : SmartyPants::defaultTransform($html);
