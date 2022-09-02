@@ -6,6 +6,7 @@ if (IN_serendipity !== true) {
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
+#[\AllowDynamicProperties]
 class serendipity_event_spamblock_bayes extends serendipity_event
 {
     function introspect(&$propbag)
@@ -16,7 +17,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.7.2');
+        $propbag->add('version',        '2.8.0');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -91,65 +92,118 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     }
 
     /**
+     * Install the bayes database tables
+     *
+     * @access public
+     * @return void
+     */
+    public function install()
+    {
+        $this->setupDB();
+    }
+
+    /**
      * initialize the db at first install or change after upgrade
      */
     function setupDB()
     {
         global $serendipity;
 
-        # b8 needs to one table for the tokens
-        $sql = 'CREATE TABLE IF NOT EXISTS b8_wordlist(
-          token varchar(255) {PRIMARY} NOT NULL,
-          count_ham int {UNSIGNED} default NULL,
-          count_spam int {UNSIGNED} default NULL
-        ) {UTF_8}';
-        serendipity_db_schema_import($sql);
+        $built = $this->get_config('db_built', null);
 
-        # recycler-table
-        switch ($serendipity['dbType']) {
-            case 'mysql':
-            case 'mysqli':
-                $sql = "INSERT IGNORE INTO b8_wordlist (token, count_ham) VALUES ('b8*dbversion', 3)";
-                serendipity_db_query($sql);
-                $sql = "INSERT IGNORE INTO b8_wordlist (token, count_ham, count_spam) VALUES ('b8*texts', 0, 0)";
-                serendipity_db_query($sql);
+        if (is_null($built)) {
 
-                # our recycler bin needs to copy the comments table
-                $sql = "CREATE TABLE IF NOT EXISTS
+            // Print the MySQL version
+            $serendipity['db_server_info'] = mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+            // be a little paranoid...
+            if (substr($serendipity['db_server_info'], 0, 6) === '5.5.5-') {
+                // strip any possible added prefix having this 5.5.5 version string (which was never released). PHP up from 8.0.16 now strips it correctly.
+                $serendipity['db_server_info'] = str_replace('5.5.5-', '', $serendipity['db_server_info']);
+            }
+            $db_version_match = explode('-', $serendipity['db_server_info']);
+            if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
+                if (version_compare($db_version_match[0], '10.5.0', '>=')) {
+                    $length = 255; // MariaDB 10.5 ARIA versions with max key 2000 bytes
+                } elseif (version_compare($db_version_match[0], '10.3.0', '>=')) {
+                    $length = 250; // MariaDB 10.3 and 10.4 ARIA versions with max key 1000 bytes
+                } else {
+                     $length = 191; // for old InnoDB
+                }
+            } else {
+                // Oracle MySQL - https://dev.mysql.com/doc/refman/5.7/en/innodb-limits.html
+                if (version_compare($db_version_match[0], '5.7.7', '>=')) {
+                     $length = 255; // 255 varchar key length - InnoDB (Since MySQL 5.7 innodb_large_prefix is enabled by default allowing up to 3072 bytes)
+                } else {
+                     $length = 191; // // 191 varchar key length - old Oracles MySQL InnoDB (191 characters * 4 bytes = 764 bytes which is less than the maximum length of 767 bytes allowed when innoDB_large_prefix is disabled)
+                }
+            }
+            # b8 needs to one table for the tokens - using the old name without dbPrefix - see later
+            $sql = "CREATE TABLE IF NOT EXISTS b8_wordlist(
+              token varchar($length) {PRIMARY} NOT NULL,
+              count_ham int {UNSIGNED} default NULL,
+              count_spam int {UNSIGNED} default NULL
+            ) {UTF_8}";
+            serendipity_db_schema_import($sql);
+
+            # recycler-table
+            switch ($serendipity['dbType']) {
+                case 'mysql':
+                case 'mysqli':
+                    $sql = "INSERT IGNORE INTO b8_wordlist (token, count_ham) VALUES ('b8*dbversion', 3)";
+                    serendipity_db_query($sql);
+                    $sql = "INSERT IGNORE INTO b8_wordlist (token, count_ham, count_spam) VALUES ('b8*texts', 0, 0)";
+                    serendipity_db_query($sql);
+
+                    # our recycler bin needs to copy the comments table
+                    $sql = "CREATE TABLE IF NOT EXISTS
+                            {$serendipity['dbPrefix']}spamblock_bayes_recycler
+                            LIKE
+                            {$serendipity['dbPrefix']}comments";
+                    serendipity_db_schema_import($sql);
+                    break;
+
+                case 'sqlite':
+                case 'sqlite3':
+                case 'sqlite3oo':
+                case 'pdo-sqlite':
+                    $sql = "INSERT OR IGNORE INTO b8_wordlist (token, count_ham) VALUES ('b8*dbversion', 3)";
+                    serendipity_db_query($sql);
+                    $sql = "INSERT OR IGNORE INTO b8_wordlist (token, count_ham, count_spam) VALUES ('b8*texts', 0, 0)";
+                    serendipity_db_query($sql);
+
+                    # To get all column definitions we get the SQL used for creating the original table
+                    $sql = "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = '{$serendipity['dbPrefix']}comments'";
+                    $sql = serendipity_db_query($sql);
+                    if (is_array($sql)) {
+                        $sql = $sql[0][0];
+                    }
+                    $sql = str_replace("{$serendipity['dbPrefix']}comments", "{$serendipity['dbPrefix']}spamblock_bayes_recycler", $sql);
+                    if (strpos($sql, 'NOT EXISTS') === false) {
+                        $sql = str_replace("CREATE TABLE", "CREATE TABLE IF NOT EXISTS", $sql);
+                    }
+                    serendipity_db_schema_import($sql);
+                    break;
+
+                default:
+                    $sql = "CREATE TABLE IF NOT EXISTS
                         {$serendipity['dbPrefix']}spamblock_bayes_recycler
-                        LIKE
-                        {$serendipity['dbPrefix']}comments";
-                serendipity_db_schema_import($sql);
-                break;
-
-            case 'sqlite':
-            case 'sqlite3':
-            case 'sqlite3oo':
-            case 'pdo-sqlite':
-                $sql = "INSERT OR IGNORE INTO b8_wordlist (token, count_ham) VALUES ('b8*dbversion', 3)";
-                serendipity_db_query($sql);
-                $sql = "INSERT OR IGNORE INTO b8_wordlist (token, count_ham, count_spam) VALUES ('b8*texts', 0, 0)";
-                serendipity_db_query($sql);
-
-                # To get all column definitions we get the SQL used for creating the original table
-                $sql = "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = '{$serendipity['dbPrefix']}comments'";
-                $sql = serendipity_db_query($sql);
-                if (is_array($sql)) {
-                    $sql = $sql[0][0];
+                        AS SELECT * FROM
+                        {$serendipity['dbPrefix']}comments ORDER BY id LIMIT 1 WITH NO DATA";
+                    serendipity_db_schema_import($sql);
+            }
+            $this->set_config('db_built', 1);
+            $built = 1;
+        }
+        switch($built) {
+            case 1: // RENAME the b8 TABLE without prefix
+                $sql = 'SHOW TABLES LIKE "b8_wordlist"';
+                $oldname = serendipity_db_query($sql);
+                if (empty($oldname)) {
+                    $q = "ALTER TABLE `b8_wordlist` RENAME TO `{$serendipity['dbPrefix']}b8_wordlist`";
+                    serendipity_db_schema_import($q);
                 }
-                $sql = str_replace("{$serendipity['dbPrefix']}comments", "{$serendipity['dbPrefix']}spamblock_bayes_recycler", $sql);
-                if (strpos($sql, 'NOT EXISTS') === false) {
-                    $sql = str_replace("CREATE TABLE", "CREATE TABLE IF NOT EXISTS", $sql);
-                }
-                serendipity_db_schema_import($sql);
+                $this->set_config('db_built', 2);
                 break;
-
-            default:
-                $sql = "CREATE TABLE IF NOT EXISTS
-                    {$serendipity['dbPrefix']}spamblock_bayes_recycler
-                    AS SELECT * FROM
-                    {$serendipity['dbPrefix']}comments ORDER BY id LIMIT 1 WITH NO DATA";
-                serendipity_db_schema_import($sql);
         }
     }
 
@@ -294,6 +348,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                         break;
                     }
 
+                    $this->setupDB();
+
                     echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks">
                         <a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=spamblock_bayes">
                             '. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME .'
@@ -344,7 +400,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * We init b8 in this function and not directly in the event hook, because in the event hook the SPL autoload gets triggered by Smarty and fails
      */
-    function initB8() {
+    function initB8()
+    {
         global $serendipity;
 
         if (!isset($this->b8) || $this->b8 === null) {
@@ -354,19 +411,19 @@ class serendipity_event_spamblock_bayes extends serendipity_event
             switch ($serendipity['dbType']) {
                 case 'mysql':
                 case 'mysqli':
-                    $config_b8      = [ 'storage'  => 'mysql' ];
+                    $config_b8 = [ 'storage'  => 'mysql' ];
                     break;
 
                 case 'sqlite':
                 case 'sqlite3':
                 case 'sqlite3oo':
                 case 'pdo-sqlite':
-                    $config_b8      = [ 'storage'  => 'sqlite' ];
+                    $config_b8 = [ 'storage'  => 'sqlite' ];
                     break;
             }
 
             $config_storage = [ 'resource' => $serendipity['dbConn'],
-                    'table'    => 'b8_wordlist' ];
+                                'table'    => "{$serendipity['dbPrefix']}b8_wordlist" ];
             $this->b8 = new b8\b8($config_b8, $config_storage);
         }
     }
@@ -374,7 +431,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * Return the bayes rating reflecting the spamminess of the comment string. 0: ham, 1: spam
      */
-    function rate($comment) {
+    function rate($comment)
+    {
         $this->initB8();
 
         return $this->b8->classify($comment);
@@ -383,7 +441,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * Mark a comment text as ham or spam
      */
-    function learn($comment, $category) {
+    function learn($comment, $category)
+    {
         $this->initB8();
 
         if ($category == 'ham') {
@@ -394,7 +453,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         }
     }
 
-    function block(&$eventData, &$addData) {
+    function block(&$eventData, &$addData)
+    {
         global $serendipity;
 
         if ($this->get_config('recycler', true)) {
@@ -407,7 +467,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * 
      */
-    function moderate(&$eventData, &$addData) {
+    function moderate(&$eventData, &$addData)
+    {
         global $serendipity;
 
         $eventData['moderate_comments'] = true;
@@ -418,7 +479,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * id: id of a comment
      */
-    function getComment($id) {
+    function getComment($id)
+    {
         global $serendipity;
 
         $sql = "SELECT id, body, entry_id, author, email, url, ip, referer FROM {$serendipity['dbPrefix']}comments
@@ -432,7 +494,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * Recycler functionality
      */
-    function displayRecycler() {
+    function displayRecycler()
+    {
         global $serendipity;
 
         $comments = $this->getAllRecyclerComments();
@@ -448,7 +511,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         } else {
             $comments = array();
         }
-        if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
+        if (!is_object($serendipity['smarty'])) {
             serendipity_smarty_init();
         }
         $serendipity['smarty']->assign('comments', $comments);
@@ -459,7 +522,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * 
      */
-    function getAllRecyclerComments() {
+    function getAllRecyclerComments()
+    {
         global $serendipity;
 
         $sql = "SELECT * FROM {$serendipity['dbPrefix']}spamblock_bayes_recycler ORDER BY id DESC";
@@ -471,7 +535,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * Empty the Recycler
      */
-    function emptyRecycler() {
+    function emptyRecycler()
+    {
         global $serendipity;
 
         $sql = "DELETE FROM {$serendipity['dbPrefix']}spamblock_bayes_recycler";
@@ -483,7 +548,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
      * Get the blocked comment and store it in the recycler-table
      * Used when the comment is from a current happening event
      */
-    function throwInRecycler(&$ca, &$commentInfo) {
+    function throwInRecycler(&$ca, &$commentInfo)
+    {
         global $serendipity;
 // check for styx
         # code copied from serendipity_insertComment. Changed: $id and $status
@@ -523,7 +589,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * 
      */
-    function recycleComment($id, $entry_id) {
+    function recycleComment($id, $entry_id)
+    {
         global $serendipity;
 
         $sql  = "INSERT INTO
@@ -540,7 +607,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * 
      */
-    function restoreComments($ids) {
+    function restoreComments($ids)
+    {
         global $serendipity;
 
         if (is_array($ids)) {
@@ -569,7 +637,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * 
      */
-    function deleteFromRecycler($ids) {
+    function deleteFromRecycler($ids)
+    {
         global $serendipity;
 
         if (is_array($ids)) {
@@ -588,7 +657,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * 
      */
-    function getEntryTitle($id) {
+    function getEntryTitle($id)
+    {
         global $serendipity;
 
         $sql = "SELECT title FROM {$serendipity['dbPrefix']}entries WHERE id = '$id'";

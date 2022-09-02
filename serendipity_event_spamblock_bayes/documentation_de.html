@@ -1,67 +1,98 @@
+<!doctype html>
 <html>
     <head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Dokumentation: Spamblock (Bayes)</title>
+        <style type="text/css">
+        body {
+          font-family: Arial, sans-serif!important;
+          margin: 20px;
+        }
+        ol li {
+          margin-bottom: 0.5em;
+        }
+        h2 {
+          background: #efefef;
+          padding: 0.5em;
+        }
+        p {
+          max-width: 90em;
+        }
+        .title {
+          background: #cfcfcf;
+          margin: 0;
+          padding: 0.5em;
+        }
+        #content {
+          background: #efefef;
+          margin: 0;
+          padding: 0.5em;
+        }
+        #content h2 {
+          padding: 0;
+        }
+        </style>
     </head>
 
 <body>
-<h1>Dokumentation: Spamblock (Bayes)</h1>
-Das Spamblock-Bayes-Plugin versucht über statistische Analyse der in
-Kommentaren vorkommenden Wörtern festzustellen, ob ein neuer Kommentar
-Spam oder ein valider Kommentar (Ham) ist.
+<h1 class="title">Dokumentation: Spamblock (Bayes)</h1>
 
-Dafür wird lokal eine Datenbank aufgebaut, das Plugin lernt aus den
-Bewertungen vorhandener Kommentare.
+<div id="content">
+    <h2>Inhalt</h2>
+    <ol>
+        <li><a href="#factor">Spamfaktor</a></li>
+        <li><a href="#howto">Benutzung</a></li>
+        <li><a href="#menu">Erweitertes Menü</a></li>
+        <li><a href="#author">Plugin authors</a></li>
+    </ol>
+</div>
 
-<h2>Spamfaktor</h2>
-Zentraler Gedanke ist die Zuweisung eines Spamfaktors zu Kommentaren.
-Dieser Faktor geht von 0% (kein Spam) bis 100% (definitiv Spam). Er
-sinkt bzw. steigt durch das Bewerten ähnlicher Kommentare. 
+<p>Das Spamblock-Bayes-Plugin versucht über statistische Analyse der in Kommentaren vorkommenden Wörtern festzustellen, ob ein neuer Kommentar Spam oder ein valider Kommentar (Ham) ist. Dafür wird lokal eine Datenbank aufgebaut, das Plugin lernt aus den Bewertungen vorhandener Kommentare.</p>
 
-<h2>Benutzung</h2>
-Auf der "Kommentare"-Seite werden durch die Installation des Plugins
-zwei Buttons zu jedem Kommentar hinzugefügt (Spam, Ham) und eine
-Prozentanzeige. Mit den Buttons werden Kommentare bewertet, als Spam
-markierte Kommentare werden in den Papierkorb geschoben (oder direkt
-gelöscht, wenn dieser deaktiviert ist). Die Prozentanzeige zeigt den
-Spamfaktor des Kommentars an. 
+<h2 id="factor">Spamfaktor</h2>
 
-<h3>Erweitertes Menü</h3>
-In der Seitenleiste des Adminbereiches wird ein Menü namens
-"Spamschutz (Bayes)" angelegt. Dieses ist ein erweitertes Menü, das nicht
-für die Grundfunktionen des Plugins notwendig ist.
+<p>Zentraler Gedanke ist die Zuweisung eines Spamfaktors zu Kommentaren. Dieser Faktor geht von 0% (kein Spam) bis 100% (definitiv Spam). Er sinkt bzw. steigt durch das Bewerten ähnlicher Kommentare.</p>
 
-Im Folgenden wird die Funktion der Untermenüs erklärt.
+<h2 id="howto">Benutzung</h2>
 
-<h4>Lernen</h4>
-Das Formular beinhaltet alle Felder, die ein Kommentar beinhalten kann,
-so wie den Kommentartext oder eine URL. Hier können zielgerichtet Wörter
-eingegeben und gelernt werden. Dies dient der Feinjustierung des Filters,
-sollte aber selten nötig sein.
+<p>Auf der "Kommentare"-Seite werden durch die Installation des Plugins zwei Buttons zu jedem Kommentar hinzugefügt (Spam, Ham) und eine Prozentanzeige. Mit den Buttons werden Kommentare bewertet, als Spam markierte Kommentare werden in den Papierkorb geschoben (oder direkt gelöscht, wenn dieser deaktiviert ist). Die Prozentanzeige zeigt den Spamfaktor des Kommentars an.</p>
 
-<h4>Datenbank</h4>
-In den beiden Tabellen wird nur eine Übersicht über den Datenbankinhalt
-vermittelt. Das Menü an der Seite bietet dagegen wichtige Funktionen.
-<dl><dt>Datenbank erstellen</dt>
-<dd>Erstellt die Datenbank, falls sie gelöscht wurde oder bei der
-Installation nicht richtig angelegt wurde</dd>
-<dt>Altes einlernen</dt>
-<dd>Lernt die vorhandenen Kommentare als Ham und den Inhalt der Spamlogs
- als Spam.</dd>
-<dt>Datenbank löschen</dt>
-<dd>Löscht die gesamte Datenbank. Dies kann sinnvoll sein, wenn z.B. im
-Blog die Sprache gewechselt wurde oder mehrmals Begriffe falsch
-eingelernt wurden.</dd>
+<h3 id="menu">Erweitertes Menü</h3>
+
+<p>In der Seitenleiste des Adminbereiches wird ein Menü namens "Spamschutz (Bayes)" angelegt. Dieses ist ein erweitertes Menü, das nicht für die Grundfunktionen des Plugins notwendig ist. Im Folgenden wird die Funktion der Untermenüs erklärt.</p>
+
+<h4 id="learn">Lernen</h4>
+
+<p>Das Formular beinhaltet alle Felder, die ein Kommentar beinhalten kann, so wie den Kommentartext oder eine URL. Hier können zielgerichtet Wörter eingegeben und gelernt werden. Dies dient der Feinjustierung des Filters, sollte aber selten nötig sein.</p>
+
+<h4 id="database">Datenbank</h4>
+
+<p>In den beiden Tabellen wird nur eine Übersicht über den Datenbankinhalt vermittelt. Das Menü an der Seite bietet dagegen wichtige Funktionen.</p>
+
+<dl>
+    <dt>Datenbank erstellen</dt>
+    <dd>Erstellt die Datenbank, falls sie gelöscht wurde oder bei der Installation nicht richtig angelegt wurde</dd>
+    <dt>Altes einlernen</dt>
+    <dd>Lernt die vorhandenen Kommentare als Ham und den Inhalt der Spamlogs als Spam.</dd>
+    <dt>Datenbank löschen</dt>
+    <dd>Löscht die gesamte Datenbank. Dies kann sinnvoll sein, wenn z.B. im Blog die Sprache gewechselt wurde oder mehrmals Begriffe falsch eingelernt wurden.</dd>
 </dl>
 
-<h4>Papierkorb</h4>
-Gelöschte oder gar nicht erst angenommene Kommentare können hier
-endgültig gelöscht oder wiederhergestellt werden.
+<h4 id="recycler">Papierkorb</h4>
 
-<h4>Analyse</h4>
-Spamblock-Bayes bewertet jeden Bestandteil eines Kommentars separat.
-Dies wird durch die Prozentanzeige in der Kommentarübersicht nicht
-dargestellt, hier jedoch können die Einzelbewertungen angesehen werden.
+<p>Gelöschte oder gar nicht erst angenommene Kommentare können hier endgültig gelöscht oder wiederhergestellt werden.</p>
+
+<h4 id="analyze">Analyse</h4>
+
+<p>Spamblock-Bayes bewertet jeden Bestandteil eines Kommentars separat. Dies wird durch die Prozentanzeige in der Kommentarübersicht nicht dargestellt, hier jedoch können die Einzelbewertungen angesehen werden.</p>
+
+<h2 id="author">Authors</h2>
+<p>
+    kleinerChemiker, Germany <br />
+    Malte Paskuda, based upon b8 by Tobias Leupold, Germany <br />
+    Mario Hommmel, Germany <br />
+    Ian Styx, since Styx, last modified 2022-09-02
+</p>
 
 </body>
 </html>

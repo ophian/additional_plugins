@@ -1,7 +1,7 @@
 <h2>{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME}</h2>
 
 <div id="bayesContent">
-    <form action="{$serendipityBaseUrl}index.php?/plugin/bayes_recycle" method="post">
+    <form action="{$serendipityBaseURL}index.php?/plugin/bayes_recycle" method="post">
         <div id="bayesControls">
                 <input type="submit" class="serendipityPrettyButton input_button" value="{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_RESTORE}" name="restore"/>
                 <input type="submit" class="serendipityPrettyButton input_button" value="{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY}" name="empty" />
