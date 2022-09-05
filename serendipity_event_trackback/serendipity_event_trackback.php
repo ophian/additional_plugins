@@ -19,7 +19,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '1.32');
+        $propbag->add('version',       '1.33');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -352,7 +352,7 @@ class serendipity_event_trackback extends serendipity_event
         global $serendipity;
 
         // postgres < 9.3 IF NOT EXISTS workaround...
-        $c = serendipity_db_query("SELECT COUNT(*) FROM {$serendipity['dbPrefix']}delayed_trackbacks;");
+        $c = serendipity_db_query("SELECT COUNT(*) FROM {$serendipity['dbPrefix']}delayed_trackbacks");
         if (is_numeric($c)) {
             return;
         }
@@ -366,9 +366,9 @@ class serendipity_event_trackback extends serendipity_event
     function upgradeCheck()
     {
         $db_upgrade = $this->get_config('db_upgrade', '');
-        if ($db_upgrade != 3) {
+        if ($db_upgrade != 4) {
             $this->setupDB();
-            $this->set_config('db_upgrade', 3);
+            $this->set_config('db_upgrade', 4);
         }
     }
 

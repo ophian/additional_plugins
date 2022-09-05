@@ -1,3 +1,7 @@
+1.33:
+-----
+  * Reset db_upgrade built variable for cases
+
 1.32:
 -----
   * Extend and precise [de] PLUGIN_EVENT_MTRACKBACK_CONTROL
