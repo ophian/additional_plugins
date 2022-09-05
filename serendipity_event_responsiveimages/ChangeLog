@@ -1,3 +1,7 @@
+1.5:
+----
+ * Better check non-isset hotlink image data
+
 1.4:
 ----
  * Improve returning false srcset

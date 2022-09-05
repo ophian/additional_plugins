@@ -18,7 +18,7 @@ class serendipity_event_responsiveimages extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_RESPONSIVE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.4');
+        $propbag->add('version',       '1.5');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0.0',
             'php'         => '7.3.0'
@@ -212,7 +212,7 @@ class serendipity_event_responsiveimages extends serendipity_event
 
         $origImage = serendipity_fetchImageFromDatabase($id);
 
-        if ($origImage['hotlink'] == 1 || ! $origImage) return ''; // don't allow on hotlink data
+        if ((isset($origImage['hotlink']) && $origImage['hotlink'] == 1) || ! $origImage) return ''; // don't allow on hotlink data
 
         $imagePath = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $origImage['path'] . $origImage['realname'];
 
