@@ -356,8 +356,6 @@ class serendipity_event_trackback extends serendipity_event
         if (!is_bool($c) && is_numeric($c[0])) {
             return;
         }
-            return;
-        }
         $sql = "CREATE TABLE {$serendipity['dbPrefix']}delayed_trackbacks (
                 id int(11) NOT NULL {PRIMARY},
                 timestamp int(10) {UNSIGNED}
