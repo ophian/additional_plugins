@@ -1,3 +1,7 @@
+1.6:
+----
+ * Don't run in feeds for possible breakage
+
 1.5:
 ----
  * Better check non-isset hotlink image data
