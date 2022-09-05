@@ -961,7 +961,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_responsiveimages&lt;br /&gt;Responsive Images&lt;/b&gt;&lt;br /&gt;Use HTML5 and the s9y backend to scale images to the visitors viewport width&lt;br/&gt;For: Serendipity 3.0.0</content:encoded>
-<pubDate>Mon, 17 May 2021 11:40:40 +0200</pubDate>
+<pubDate>Mon, 05 Sep 2022 10:41:21 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_responsiveimages</guid>
 </item>
 <item>
@@ -1186,7 +1186,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;トラックバック制御&lt;/b&gt;&lt;br /&gt;Allows granular control over how trackbacks are sent when creating entries&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Mon, 28 Feb 2022 08:40:19 +0100</pubDate>
+<pubDate>Mon, 05 Sep 2022 10:08:40 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>

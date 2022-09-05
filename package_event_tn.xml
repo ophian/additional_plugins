@@ -9268,11 +9268,11 @@
 <description>Use HTML5 and the s9y backend to scale images to the visitors viewport width</description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4</version>
+  <version>1.5</version>
   <requirements:s9yVersion>3.0.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2021-05-17</date>
+  <date>2022-09-05</date>
   <filelist>
     <dir name="serendipity_event_responsiveimages">
       <file>ChangeLog</file>
@@ -11593,11 +11593,11 @@
 <description>Allows granular control over how trackbacks are sent when creating entries</description>
 <maintainers><maintainer><name>Garvin Hicking, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.32</version>
+  <version>1.33</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2022-02-28</date>
+  <date>2022-09-05</date>
   <filelist>
     <dir name="serendipity_event_trackback">
       <file>ChangeLog</file>
