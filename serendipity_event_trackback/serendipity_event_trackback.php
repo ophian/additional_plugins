@@ -19,7 +19,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '1.34');
+        $propbag->add('version',       '1.35');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -352,8 +352,10 @@ class serendipity_event_trackback extends serendipity_event
         global $serendipity;
 
         // postgres < 9.3 IF NOT EXISTS workaround...
-        $c = serendipity_db_query("SELECT COUNT(*) FROM {$serendipity['dbPrefix']}delayed_trackbacks", true, 'num');
-        if (is_numeric($c[0])) {
+        $c = serendipity_db_query("SELECT COUNT(*) FROM {$serendipity['dbPrefix']}delayed_trackbacks", true, 'num', false, false, false, true); //expect error
+        if (!is_bool($c) && is_numeric($c[0])) {
+            return;
+        }
             return;
         }
         $sql = "CREATE TABLE {$serendipity['dbPrefix']}delayed_trackbacks (
