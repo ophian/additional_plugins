@@ -1,3 +1,8 @@
+1.6.4:
+------
+
+ * Fix for possible non-isset title variable check
+
 1.6.3:
 ------
 

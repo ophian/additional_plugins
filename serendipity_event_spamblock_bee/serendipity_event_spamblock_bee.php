@@ -496,7 +496,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
             if (PLUGIN_EVENT_SPAMBLOCK_SWTCH_OFF != $spamHandle) {
                 // Remove the blog name from the comment which might be in <title>
                 $comment = str_replace($serendipity['blogTitle'], '', $addData['comment']);
-                $comment = str_replace($eventData['title'], '', $comment);
+                $comment = str_replace(($eventData['title'] ?? ''), '', $comment);
                 // Now blog- and entry title was stripped from comment.
                 // Remove special letters, that might have been between them:
                 $comment = trim(preg_replace('@[\s\-_:\(\)\|/]*@', '', $comment));
