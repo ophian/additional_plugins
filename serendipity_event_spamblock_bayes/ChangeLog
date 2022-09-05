@@ -1,3 +1,7 @@
+2.8.1:
+------
+ * Fix the "b8_wordlist" database table rename
+
 2.8.0:
 ------
  * Fix DB table creation to happen before requesting tables

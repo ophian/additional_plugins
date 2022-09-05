@@ -17,7 +17,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.8.0');
+        $propbag->add('version',        '2.8.1');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -196,13 +196,14 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         }
         switch($built) {
             case 1: // RENAME the b8 TABLE without prefix
+            case 2:
                 $sql = 'SHOW TABLES LIKE "b8_wordlist"';
                 $oldname = serendipity_db_query($sql);
-                if (empty($oldname)) {
+                if (!empty($oldname)) {
                     $q = "ALTER TABLE `b8_wordlist` RENAME TO `{$serendipity['dbPrefix']}b8_wordlist`";
                     serendipity_db_schema_import($q);
                 }
-                $this->set_config('db_built', 2);
+                $this->set_config('db_built', 3);
                 break;
         }
     }
@@ -430,6 +431,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
     /**
      * Return the bayes rating reflecting the spamminess of the comment string. 0: ham, 1: spam
+     * @param comment string
+     * @return error/success ?
      */
     function rate($comment)
     {
@@ -440,6 +443,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
     /**
      * Mark a comment text as ham or spam
+     * @param comment string
+     * @param category string
      */
     function learn($comment, $category)
     {
@@ -453,6 +458,11 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         }
     }
 
+    /**
+     * Set block comments state
+     * @param eventData array
+     * @param addData array
+     */
     function block(&$eventData, &$addData)
     {
         global $serendipity;
@@ -465,7 +475,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     }
 
     /**
-     * 
+     * Set into moderate state
+     * @param eventData array
+     * @param addData array
      */
     function moderate(&$eventData, &$addData)
     {
@@ -477,14 +489,17 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     }
 
     /**
-     * id: id of a comment
+     * Get comment
+     * @param id integer
+     * @return array
      */
     function getComment($id)
     {
         global $serendipity;
 
-        $sql = "SELECT id, body, entry_id, author, email, url, ip, referer FROM {$serendipity['dbPrefix']}comments
-                WHERE id = " . (int)$id;
+        $sql = "SELECT id, body, entry_id, author, email, url, ip, referer
+                  FROM {$serendipity['dbPrefix']}comments
+                 WHERE id = " . (int)$id;
 
         $comments = serendipity_db_query($sql, false, 'assoc');
 
@@ -520,7 +535,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     }
 
     /**
-     * 
+     * Get all recycler comments
+     * @return array
      */
     function getAllRecyclerComments()
     {
@@ -534,6 +550,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
     /**
      * Empty the Recycler
+     * @return error/success ?
      */
     function emptyRecycler()
     {
@@ -547,15 +564,18 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     /**
      * Get the blocked comment and store it in the recycler-table
      * Used when the comment is from a current happening event
+     * @param ca array
+     * @param commentInfo string
      */
     function throwInRecycler(&$ca, &$commentInfo)
     {
         global $serendipity;
-// check for styx
+
         # code copied from serendipity_insertComment. Changed: $id and $status
-        $id            = (int)$ca['id'];
-        $type          = $commentInfo['type'];
-        $email         = serendipity_db_escape_string($commentInfo['email']);
+        $id    = (int)$ca['id'];
+        $type  = $commentInfo['type'];
+        $email = serendipity_db_escape_string($commentInfo['email']);
+
         if (isset($commentInfo['subscribe'])) {
             if (!isset($serendipity['allowSubscriptionsOptIn']) || $serendipity['allowSubscriptionsOptIn']) {
                 $subscribe = 'false';
@@ -587,7 +607,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     }
 
     /**
-     * 
+     * Recycle comments
+     * @param id integer
+     * @param entry_id integer
      */
     function recycleComment($id, $entry_id)
     {
@@ -605,7 +627,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     }
 
     /**
-     * 
+     * Restore comments
+     * @param ids mixed
      */
     function restoreComments($ids)
     {
@@ -635,7 +658,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     }
 
     /**
-     * 
+     * Delete items from recycler
+     * @param ids mixed
+     * @return array
      */
     function deleteFromRecycler($ids)
     {
@@ -655,7 +680,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
     }
 
     /**
-     * 
+     * Get entry title
+     * @param id integer
+     * @return string
      */
     function getEntryTitle($id)
     {
