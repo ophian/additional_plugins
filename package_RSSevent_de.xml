@@ -959,7 +959,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_responsiveimages&lt;br /&gt;Responsive Images&lt;/b&gt;&lt;br /&gt;Skaliert Grafiken mit Hilfe von HTML5 und dem s9y-Backend passend zur Breite des Viewports des Besuchers&lt;br/&gt;For: Serendipity 3.0.0</content:encoded>
-<pubDate>Mon, 05 Sep 2022 13:46:46 +0200</pubDate>
+<pubDate>Wed, 07 Sep 2022 10:46:49 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_responsiveimages</guid>
 </item>
 <item>
