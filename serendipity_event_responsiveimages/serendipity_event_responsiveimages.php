@@ -18,7 +18,7 @@ class serendipity_event_responsiveimages extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_RESPONSIVE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.6');
+        $propbag->add('version',       '1.7');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0.0',
             'php'         => '7.3.0'
@@ -92,7 +92,7 @@ class serendipity_event_responsiveimages extends serendipity_event
             switch($event) {
 
                 case 'frontend_display':
-                    if ($serendipity['view'] == 'feed') break; // don't run in feeds for possible breakage
+                    if (isset($serendipity['view']) && $serendipity['view'] == 'feed') break; // don't run in feeds for possible breakage
                     foreach ($this->markup_elements AS $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
                         &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
