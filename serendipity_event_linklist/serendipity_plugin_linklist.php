@@ -20,7 +20,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $propbag->add('description',   PLUGIN_LINKS_BLAHBLAH);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '1.31');
+        $propbag->add('version',       '1.32');
         $propbag->add('configuration', array(
                                              'title',
                                              'prepend_text',
@@ -547,7 +547,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
 
         if (serendipity_db_bool($this->get_config('call_markup', 'false'))) {
             $entry = array('html_nugget' => $str);
-            serendipity_plugin_api::hook_event('frontend_display', $entry);
+            serendipity_plugin_api::hook_event('frontend_display', $entry, array('from' => 'serendipity_plugin_linklist:gen_output'));
             return $entry['html_nugget'];
         } else {
             return $str;

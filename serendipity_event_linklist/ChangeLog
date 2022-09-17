@@ -1,3 +1,7 @@
+3.4.1 &&  & 1.32:
+-----------------
+ * Always indicate source of where frontend_display is called (as Standard since 07/2007)
+
 3.4.0:
 ------
  * Fix $serendipity['db_server_info'] for removed MariaDB prefix with PHP 8.0.16+,
