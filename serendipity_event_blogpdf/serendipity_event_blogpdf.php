@@ -25,7 +25,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier PLATHEY, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL TCPDF');
-        $propbag->add('version',       '2.2.1');
+        $propbag->add('version',       '2.2.2');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -289,14 +289,15 @@ class serendipity_event_blogpdf extends serendipity_event
     {
         if ($header) {
             $this->pdf->AddPage();
-            $this->pdf->SetFont('pdfahelvetica','',10);
+            $this->pdf->SetFont('pdfahelvetica', '', 10);
             $this->pdf->Cell(0, 10, $header, 1);
             $this->pdf->Ln();
             $this->pdf->Ln();
         }
 
         $entryLink = serendipity_archiveURL($entry['id'], $entry['title'], 'serendipityHTTPPath', true, array('timestamp' => $entry['timestamp']));
-        serendipity_plugin_api::hook_event('frontend_display', $entry, array('no_scramble' => true));
+        $addData = array('from' => 'serendipity_event_blogpdf:print_entry', 'no_scramble' => true);
+        serendipity_plugin_api::hook_event('frontend_display', $entry, $addData);
 
         $posted_by = ' ' . POSTED_BY . ' ' . serendipity_specialchars($entry['author']);
         if (is_array($entry['categories']) && sizeof($entry['categories']) > 0) {
@@ -330,13 +331,15 @@ class serendipity_event_blogpdf extends serendipity_event
             return;
         }
 
+        $addData = array('from' => 'serendipity_event_blogpdf:printComments');
+
         foreach ($comments AS $i => $comment) {
             $comment['comment'] = serendipity_specialchars(strip_tags($comment['body']));
             if (!empty($comment['url']) && substr($comment['url'], 0, 7) != 'http://' && substr($comment['url'], 0, 8) != 'https://') {
                 $comment['url'] = 'http://' . $comment['url'];
             }
 
-            serendipity_plugin_api::hook_event('frontend_display', $comment);
+            serendipity_plugin_api::hook_event('frontend_display', $comment, $addData);
 
             $name = empty($comment['username']) ? ANONYMOUS : $comment['username'];
             $body = $comment['comment'];
