@@ -14,7 +14,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;QuickNotes&lt;/b&gt;&lt;br /&gt;Displays information for authors on the administration panel&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 31 Jan 2021 14:28:36 +0100</pubDate>
+<pubDate>Sat, 17 Sep 2022 13:14:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
@@ -95,7 +95,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Olivier PLATHEY, Steven Wittens, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;Exporter votre blog en PDF&lt;/b&gt;&lt;br /&gt;Permet aux visiteurs de télécharger tout votre blog ou certains articles au format PDF&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 29 Aug 2022 09:28:08 +0200</pubDate>
+<pubDate>Sat, 17 Sep 2022 13:08:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
@@ -149,7 +149,7 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentedit&lt;br /&gt;Comment Edit&lt;/b&gt;&lt;br /&gt;Let user's edit their comments after they posted them.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 21 Dec 2020 11:08:43 +0100</pubDate>
+<pubDate>Sat, 17 Sep 2022 13:04:50 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentedit</guid>
 </item>
 <item>
@@ -275,7 +275,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Provides full downloadmanager capabilities to your s9y. When uninstalling, all related tables will be dropped!&lt;br/&gt;For: Serendipity 3.3.0</content:encoded>
-<pubDate>Sat, 27 Aug 2022 11:48:03 +0200</pubDate>
+<pubDate>Sat, 17 Sep 2022 13:02:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
@@ -383,7 +383,7 @@
 <category>Event Plugins</category>
 <author>Falk Doering, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;Frequently Asked Questions&lt;/b&gt;&lt;br /&gt;Edit the Frequently Asked Question.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 27 Aug 2022 11:45:32 +0200</pubDate>
+<pubDate>Sat, 17 Sep 2022 13:18:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_faq</guid>
 </item>
 <item>
@@ -536,7 +536,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Guestbook&lt;/b&gt;&lt;br /&gt;Shows a guestbook inside your blog with your normal blog design.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 14 Aug 2022 09:32:19 +0200</pubDate>
+<pubDate>Sat, 17 Sep 2022 12:58:53 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -572,7 +572,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_includeentry&lt;br /&gt;Markup: Include entry data/templates/blocks&lt;/b&gt;&lt;br /&gt;Allows you to add HTML-style tags to your entry that includes parts of other entrys. Use this markup: [s9y-include-entry:XXX:YYY]. Replace XXX with the target entryid and YYY with the target field name (i.e. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). You can also use the new menu functions to maintain templates and blocks that can get inserted in between your entries.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 25 Mar 2022 11:27:51 +0100</pubDate>
+<pubDate>Sat, 17 Sep 2022 12:55:03 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_includeentry</guid>
 </item>
 <item>
@@ -617,7 +617,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Links manager - Shows your favorite links in the sidebar.&lt;br/&gt;For: Serendipity 3.2.0</content:encoded>
-<pubDate>Tue, 15 Mar 2022 15:12:28 +0100</pubDate>
+<pubDate>Sat, 17 Sep 2022 12:53:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linklist</guid>
 </item>
 <item>
@@ -644,7 +644,7 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda, Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_livecomment&lt;br /&gt;Enhanced Comment Area&lt;/b&gt;&lt;br /&gt;Uses JavaScript to show a live preview and markup-buttons&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 07 Jun 2021 13:33:17 +0200</pubDate>
+<pubDate>Sat, 17 Sep 2022 12:47:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_livecomment</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Static Pages&lt;/b&gt;&lt;br /&gt;Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Sat, 27 Aug 2022 09:22:01 +0200</pubDate>
+<pubDate>Sat, 17 Sep 2022 12:44:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1238,7 +1238,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;User Profiles&lt;/b&gt;&lt;br /&gt;Shows simple user profiles and allows to embed author pictures.&lt;br/&gt;For: Serendipity 3.5</content:encoded>
-<pubDate>Sun, 19 Jun 2022 12:40:23 +0200</pubDate>
+<pubDate>Sat, 17 Sep 2022 12:39:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
