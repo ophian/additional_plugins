@@ -99,7 +99,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.57');
+        $propbag->add('version', '6.58');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -1828,7 +1828,8 @@ class serendipity_event_staticpage extends serendipity_event
             }
             $entry = array('body' => $this->get_static('content'));
             $entry['staticpage'] =& $entry['body']; // this will be $eventData['staticpage'] for the smartymarkup plugin!
-            serendipity_plugin_api::hook_event('frontend_display', $entry);
+            $addData = array('from' => 'serendipity_event_staticpage:parseStaticPage');
+            serendipity_plugin_api::hook_event('frontend_display', $entry, $addData);
             if (isset($entry['markup_staticpage'])) {
                 $staticpage_content = $entry['staticpage'];
             } else {
@@ -1838,7 +1839,7 @@ class serendipity_event_staticpage extends serendipity_event
             $entry = array('body' => $this->get_static('pre_content'));
             $entry['staticpage'] =& $entry['body'];
             if (!empty($entry['body'])) {
-                serendipity_plugin_api::hook_event('frontend_display', $entry);
+                serendipity_plugin_api::hook_event('frontend_display', $entry, $addData);
             }
             if (isset($entry['markup_staticpage'])) {
                 $staticpage_precontent = $entry['staticpage'];
@@ -1854,6 +1855,7 @@ class serendipity_event_staticpage extends serendipity_event
         }
         // get the next level childpage downwards; to be viewed with (simple) option 'show childpages'
         if ($cpids = $this->getChildPagesID()) {
+            $addData = array('from' => 'serendipity_event_staticpage:parseStaticPage(childpages)');
 
             foreach($cpids AS $cpid) {
                 $cpages[] = $this->getStaticPage($cpid);
@@ -1870,7 +1872,7 @@ class serendipity_event_staticpage extends serendipity_event
                     $entry = array('body' => $precontent);
                     $entry['staticpage'] =& $entry['body'];
                     if (!empty($entry['body'])) {
-                        serendipity_plugin_api::hook_event('frontend_display', $entry);
+                        serendipity_plugin_api::hook_event('frontend_display', $entry, $addData);
                     }
                     if (isset($entry['markup_staticpage'])) {
                         $precontent = $entry['staticpage'];
