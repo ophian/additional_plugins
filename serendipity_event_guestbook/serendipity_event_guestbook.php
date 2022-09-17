@@ -56,7 +56,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '4.1.0');
+        $propbag->add('version',      '4.1.1');
         $propbag->add('requirements', array(
                         'serendipity' => '2.0',
                         'smarty'      => '3.1',
@@ -678,7 +678,7 @@ class serendipity_event_guestbook extends serendipity_event
                 if (serendipity_db_bool($this->get_config('markup', 'true'))) {
                     // parse  $entry['text'] through hook events standard formatting and smilies
                     $markup             = array('body' => $entry['body']);
-                    serendipity_plugin_api::hook_event('frontend_display', $markup, 'body');
+                    serendipity_plugin_api::hook_event('frontend_display', $markup, array('from' => 'serendipity_event_guestbook:generate_EntriesArray(body)'));
                     $entry['body']      = !class_exists('serendipity_event_emoticate') ? wordwrap($markup['body'], $wordwrap, "\n", 1) : $markup['body']; // else wordbreak should be at least 280 which then make no sense to have at all
                 } else {
                     $entry['bodywrap']  = !class_exists('serendipity_event_emoticate') ? wordwrap($entry['body'], $wordwrap, "\n", 1) : $entry['body'];
