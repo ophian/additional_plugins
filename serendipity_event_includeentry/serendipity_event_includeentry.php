@@ -32,7 +32,7 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.27');
+        $propbag->add('version',       '2.28');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
@@ -530,7 +530,7 @@ class serendipity_event_includeentry extends serendipity_event
         }
 
         if (serendipity_db_bool($this->staticblock['apply_markup'])) {
-            serendipity_plugin_api::hook_event('frontend_display', $this->staticblock);
+            serendipity_plugin_api::hook_event('frontend_display', $this->staticblock, array('from' => 'serendipity_event_includeentry:smartyParse'));
         }
 
         $serendipity['smarty']->assign('staticblock', $this->staticblock);

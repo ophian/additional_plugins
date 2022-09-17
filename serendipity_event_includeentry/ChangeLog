@@ -1,3 +1,7 @@
+2.28:
+-----
+ * Always indicate source of where frontend_display is called (as Standard since 07/2007)
+
 2.27:
 -----
  * Fix form array foreach loop
