@@ -22,7 +22,7 @@ class serendipity_event_livecomment extends serendipity_event
             'serendipity' => '2.0',
             'php'         => '5.6'
         ));
-        $propbag->add('version',       '2.5.8');
+        $propbag->add('version',       '2.5.9');
         $propbag->add('event_hooks',   array(
             'frontend_footer'               => true,
             'external_plugin'               => true,
@@ -193,7 +193,7 @@ class serendipity_event_livecomment extends serendipity_event
                             break;
                         case 'livecomment':
                             $data = array('comment' => $_REQUEST['data']);
-                            serendipity_plugin_api::hook_event('frontend_display', $data);
+                            serendipity_plugin_api::hook_event('frontend_display', $data, array('from' => 'serendipity_event_livecomment:livecomment'));
                             echo $data['comment'];
                             break;
                         case 'reallivecomment.js':
