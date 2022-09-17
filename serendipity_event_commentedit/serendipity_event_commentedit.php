@@ -22,7 +22,7 @@ class serendipity_event_commentedit extends serendipity_event
             'serendipity' => '2.0',
             'php'         => '5.6'
         ));
-        $propbag->add('version',       '0.5');
+        $propbag->add('version',       '0.6');
         $propbag->add('event_hooks',   array(
             'frontend_saveComment_finish' => true,
             'fetchcomments'               => true,
@@ -116,7 +116,7 @@ class serendipity_event_commentedit extends serendipity_event
                             if ($this->get_cached_commentid($timeout) == $comment_id) {
                                 $this->editComment($comment_id, $comment, $entry_id);
                                 $data = array('comment' => $comment);
-                                serendipity_plugin_api::hook_event('frontend_display', $data);
+                                serendipity_plugin_api::hook_event('frontend_display', $data, array('from' => 'serendipity_event_commentedit:commentedit'));
                                 // send mail with edit-notification to blogowner, only if normal notification is enabled and config, too
                                 if ($serendipity['mail_comments'] == 1 && $mail) {
                                     serendipity_sendMail($serendipity['email'], 'Comment ' . $comment_id . ' edited' , 'New comment: ' . $comment, $serendipity['blogMail']);
