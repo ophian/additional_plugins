@@ -93,7 +93,7 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '1.3.3');
+        $propbag->add('version', '1.3.4');
         $propbag->add('requirements', array(
             'serendipity' => '3.5',
             'smarty'      => '3.1.0',
@@ -699,7 +699,7 @@ section > .serendipityAuthorProfile,
                         $properties = array_merge($this->properties, $this->option_properties);
 
                         $entry = array('body' => ($profile['hobbies'] ?? null));
-                        serendipity_plugin_api::hook_event('frontend_display', $entry);
+                        serendipity_plugin_api::hook_event('frontend_display', $entry, array('from' => 'serendipity_event_userprofiles:entries_header'));
                         $_profile = ['show_email', 'birthday', 'url', 'city', 'street', 'country', 'occupation', 'yahoo', 'aim', 'jabber', 'icq', 'msn', 'skype'];
                         foreach($_profile AS $prop) {
                             if (!isset($profile[$prop])) $profile[$prop] = null;
