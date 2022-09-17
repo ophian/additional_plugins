@@ -78,7 +78,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.51');
+        $propbag->add('version',      '1.52');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -980,9 +980,9 @@ class serendipity_event_faq extends serendipity_event
 
                 if (serendipity_db_bool($this->get_config('markup', 'true'))) {
                     $entry['body'] = &$faq['question'];
-                    serendipity_plugin_api::hook_event('frontend_display', $entry);
+                    serendipity_plugin_api::hook_event('frontend_display', $entry, array('from' => 'serendipity_event_faq:showFrontend(1)'));
                     $entry['body'] = &$faq['answer'];
-                    serendipity_plugin_api::hook_event('frontend_display', $entry);
+                    serendipity_plugin_api::hook_event('frontend_display', $entry, array('from' => 'serendipity_event_faq:showFrontend(2)'));
                 }
 
                 $filename = 'plugin_faq_category_faq.tpl';
@@ -1060,7 +1060,7 @@ class serendipity_event_faq extends serendipity_event
 
                 if (serendipity_db_bool($this->get_config('markup', 'true'))) {
                     $entry['body'] = &$cat['introduction'];
-                    serendipity_plugin_api::hook_event('frontend_display', $entry);
+                    serendipity_plugin_api::hook_event('frontend_display', $entry, array('from' => 'serendipity_event_faq:showFrontend(3)'));
                 }
 
                 $serendipity['smarty']->assign('faq_plugin', array(
@@ -1081,9 +1081,10 @@ class serendipity_event_faq extends serendipity_event
             if (is_array($cats)) {
                 $cats = serendipity_walkRecursive($cats);
                 if (serendipity_db_bool($this->get_config('markup', 'true'))) {
+                    $addData = array('from' => 'serendipity_event_faq:showFrontend(4)');
                     for ($i = 0, $ii = count($cats); $i < $ii; $i++) {
                         $entry['body'] = &$cats[$i]['introduction'];
-                        serendipity_plugin_api::hook_event('frontend_display', $entry);
+                        serendipity_plugin_api::hook_event('frontend_display', $entry, $addData);
                     }
                 }
 
