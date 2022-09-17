@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+1.59:
+-----
+ * Always indicate source of where frontend_display is called (as Standard since 07/2007)
+
 1.58:
 -----
  * Declare title for plugins accessing objects title, eg. entryproperties disable_markups in entry option

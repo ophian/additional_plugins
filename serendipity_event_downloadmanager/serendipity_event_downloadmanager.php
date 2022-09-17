@@ -38,7 +38,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '7.0.0'
         ));
 
-        $propbag->add('version',       '1.58');
+        $propbag->add('version',       '1.59');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -884,7 +884,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                 if (is_array($file) && !empty($file)) {
 
                     $temp_array = array('comment' => stripslashes(($file['description'] ?? '')));
-                    serendipity_plugin_api::hook_event('frontend_display', $temp_array);
+                    serendipity_plugin_api::hook_event('frontend_display', $temp_array, array('from' => 'serendipity_event_downloadmanager:showShoutPage'));
 
                     // push the file array to hold everything needed
                     $file['id']             = ''; // obfuscated
