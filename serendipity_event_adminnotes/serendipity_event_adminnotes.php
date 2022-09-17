@@ -22,7 +22,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '7.0.0'
         ));
 
-        $propbag->add('version',       '0.28');
+        $propbag->add('version',       '0.29');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
@@ -376,7 +376,7 @@ class serendipity_event_adminnotes extends serendipity_event
 
         if ($do_markup) {
             $entry = array('html_nugget' => $body);
-            serendipity_plugin_api::hook_event('frontend_display', $entry);
+            serendipity_plugin_api::hook_event('frontend_display', $entry, array('from' => 'serendipity_event_adminnotes:output'));
             $body  = $entry['html_nugget'];
         }
 
