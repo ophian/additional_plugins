@@ -34,21 +34,6 @@ class CustomButtonTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @test
-     * @dataProvider getCustomData
-     */
-    public function renderInLegacyMode($name, $openTag, $closeTag)
-    {
-        $this->button->setIsLegacyMode(true);
-        $this->button->setName('ins_custom_' . $name);
-        $this->button->setValue($name);
-        $this->button->setOpen($openTag);
-        $this->button->setClose($closeTag);
-        $expected = '            <input type="button" class="serendipityPrettyButton input_button" name="ins_custom_' . $name . '" value="' . $name . '" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[body]\'], \'' . $openTag . '\', \'' . $closeTag . '\')" />' . PHP_EOL;
-        $this->assertEquals($expected, $this->button->render());
-    }
-
-    /**
      * Data provider for custom buttons
      *
      * @return array
@@ -64,4 +49,5 @@ class CustomButtonTest extends PHPUnit_Framework_TestCase
             array('li', '<li>', '</li>'),
         );
     }
+
 }

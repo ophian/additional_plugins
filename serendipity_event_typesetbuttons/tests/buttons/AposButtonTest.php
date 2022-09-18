@@ -28,36 +28,4 @@ class AposButtonTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $this->button->render());
     }
 
-    /**
-     * @test
-     */
-    public function renderInLegacyMode()
-    {
-        $this->button->setIsLegacyMode(true);
-        $expected = '            <input type="button" class="serendipityPrettyButton input_button" name="insapos" value="&apos;" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[body]\'],\'\\&\\#39\\;\',\'\')" />' . PHP_EOL;
-        $this->assertEquals($expected, $this->button->render());
-    }
-
-    /**
-     * @test
-     */
-    public function renderInLegacyModeNoRealApos()
-    {
-        $this->button->setIsLegacyMode(true);
-        $this->button->setUseRealApos(false);
-        $expected = '            <input type="button" class="serendipityPrettyButton input_button" name="insapos" value="&apos;" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[body]\'],\'&rsquo;\',\'\')" />' . PHP_EOL;
-        $this->assertEquals($expected, $this->button->render());
-    }
-
-    /**
-     * @test
-     */
-    public function renderInLegacyModeNoRealAposAndNoNamedEnts()
-    {
-        $this->button->setIsLegacyMode(true);
-        $this->button->setUseRealApos(false);
-        $this->button->setUseNamedEnts(false);
-        $expected = '            <input type="button" class="serendipityPrettyButton input_button" name="insapos" value="&apos;" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[body]\'],\'&#8217;\',\'\')" />' . PHP_EOL;
-        $this->assertEquals($expected, $this->button->render());
-    }
 }

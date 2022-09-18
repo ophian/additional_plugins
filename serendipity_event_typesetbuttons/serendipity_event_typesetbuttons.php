@@ -22,11 +22,6 @@ class serendipity_event_typesetbuttons extends serendipity_event
     protected $txtarea;
 
     /**
-     * @var bool
-     */
-    protected $legacy = false;
-
-    /**
      * @param serendipity_property_bag $propbag
      * @return true|void
      */
@@ -35,12 +30,12 @@ class serendipity_event_typesetbuttons extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_TYPESETBUTTONS_TITLE);
         $propbag->add('description', PLUGIN_EVENT_TYPESETBUTTONS_DESC);
         $propbag->add('stackable', false);
-        $propbag->add('author', 'Matthew Groeninger, Malte Diers, Matthias Gutjahr');
-        $propbag->add('version', '0.25');
+        $propbag->add('author', 'Matthew Groeninger, Malte Diers, Matthias Gutjahr, Ian Styx');
+        $propbag->add('version', '1.00');
         $propbag->add('requirements', array(
-            'serendipity' => '1.7',
-            'smarty'      => '2.6.7',
-            'php'         => '5.3.3'
+            'serendipity' => '2.0',
+            'smarty'      => '3.0',
+            'php'         => '7.0'
         ));
         $propbag->add('configuration', array(
             'enable_center',
@@ -60,7 +55,6 @@ class serendipity_event_typesetbuttons extends serendipity_event
             'real_apos',
             'enable_accent',
             'enable_gaccent',
-            'use_xhtml11',
             'use_named_ents',
             'custom'
         ));
@@ -84,17 +78,6 @@ class serendipity_event_typesetbuttons extends serendipity_event
                 $propbag->add('name',        PLUGIN_EVENT_TYPESETBUTTONS_CUSTOM);
                 $propbag->add('description', PLUGIN_EVENT_TYPESETBUTTONS_CUSTOM_DESC);
                 $propbag->add('default',     '');
-                break;
-
-            case 'use_xhtml11':
-                $propbag->add('type',          'radio');
-                $propbag->add('name', INSTALL_XHTML11);
-                $propbag->add('radio',
-                    array(  'value' => array('yes','no'),
-                            'desc'  => array(YES,NO)
-                    ));
-                $propbag->add('radio_per_row', '2');
-                $propbag->add('default', 'yes');
                 break;
 
             case 'use_named_ents':
@@ -308,11 +291,6 @@ class serendipity_event_typesetbuttons extends serendipity_event
      */
     public function event_hook($event, &$bag, &$eventData, $addData = null)
     {
-        global $serendipity;
-
-        if (intval($serendipity['version'][0]) < 2) {
-            $this->legacy = true;
-        }
         $hooks = &$bag->get('event_hooks');
         $pluginConfigurationKeys = $bag->get('configuration');
         if (isset($hooks[$event])) {
@@ -368,7 +346,7 @@ class serendipity_event_typesetbuttons extends serendipity_event
      */
     private function generate_button($txtarea, array $pluginConfigurationKeys)
     {
-        global $serendipity; // required for optional logging of exceptions
+        // global $serendipity; // required for optional logging of exceptions
 
         if (!isset($txtarea)) {
             $txtarea = 'body';
@@ -387,10 +365,10 @@ class serendipity_event_typesetbuttons extends serendipity_event
                 } else {
                     echo $html = $this->getButton($keyParts[1]);
                 }
-            } catch (Exception $e) {
+            } catch (\Throwable $t) {
                 // Uncomment the next three lines for debugging:
                 // $fp = fopen($serendipity['serendipityPath'] . PATH_SMARTY_COMPILE . '/' . get_class($this) . '.log', 'a');
-                // fwrite($fp, $e->getMessage() . PHP_EOL);
+                // fwrite($fp, $t->getMessage() . PHP_EOL);
                 // fclose($fp);
                 continue;
             }
@@ -429,10 +407,6 @@ class serendipity_event_typesetbuttons extends serendipity_event
 
         /** @var ButtonInterface $button */
         $button = new $class($this->txtarea);
-        $button->setIsLegacyMode($this->legacy);
-        if ($this->get_config('use_xhtml11') !== 'yes') {
-            $button->setIsXhtml11(false);
-        }
         if ($this->get_config('use_named_ents') !== 'yes') {
             $button->setUseNamedEnts(false);
         }
@@ -465,7 +439,6 @@ class serendipity_event_typesetbuttons extends serendipity_event
         require_once 'buttons/CustomButton.php';
 
         $button = new CustomButton($txtarea);
-        $button->setIsLegacyMode($this->legacy);
         $button->setName('ins_custom_' . $b_name);
         $button->setValue($b_title);
         $button->setOpen($b_open);

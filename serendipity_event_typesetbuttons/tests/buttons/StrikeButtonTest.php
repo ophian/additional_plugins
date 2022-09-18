@@ -28,24 +28,4 @@ class StrikeButtonTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $this->button->render());
     }
 
-    /**
-     * @test
-     */
-    public function renderInLegacyMode()
-    {
-        $this->button->setIsLegacyMode(true);
-        $this->button->setIsXhtml11(false);
-        $expected = "            <input type=\"button\" class=\"serendipityPrettyButton input_button\" name=\"insstrike\" value=\"Strike\" onclick=\"wrapSelection(document.forms['serendipityEntry']['serendipity[body]'],'<s>','</s>')\" />" . PHP_EOL;
-        $this->assertEquals($expected, $this->button->render());
-    }
-
-    /**
-     * @test
-     */
-    public function renderInLegacyModeAndXhtml11()
-    {
-        $this->button->setIsLegacyMode(true);
-        $expected = "            <input type=\"button\" class=\"serendipityPrettyButton input_button\" name=\"insstrike\" value=\"Strike\" onclick=\"wrapSelection(document.forms['serendipityEntry']['serendipity[body]'],'<del>','</del>')\" />" . PHP_EOL;
-        $this->assertEquals($expected, $this->button->render());
-    }
 }

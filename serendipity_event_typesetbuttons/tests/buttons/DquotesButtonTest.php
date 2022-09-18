@@ -55,27 +55,4 @@ class DquotesButtonTest extends PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @test
-     */
-    public function renderInLegacyMode()
-    {
-        $this->button->setIsLegacyMode(true);
-        $this->button->setType('type1');
-        $expected = '            <input type="button" class="serendipityPrettyButton input_button" name="insdquote" value="&ldquo; &rdquo;" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[body]\'],\'\\&ldquo\\;\',\'\\&rdquo\\;\')" />' . PHP_EOL;
-        $this->assertEquals($expected, $this->button->render());
-    }
-
-    /**
-     * @test
-     */
-    public function renderInLegacyModeNoNamedEnts()
-    {
-        $this->button->setIsLegacyMode(true);
-        $this->button->setUseNamedEnts(false);
-        $this->button->setType('type1');
-        $expected = '            <input type="button" class="serendipityPrettyButton input_button" name="insdquote" value="&ldquo; &rdquo;" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[body]\'],\'\\&\\#8220\\;\',\'\\&\\#8221\\;\')" />' . PHP_EOL;
-        $this->assertEquals($expected, $this->button->render());
-    }
-
 }

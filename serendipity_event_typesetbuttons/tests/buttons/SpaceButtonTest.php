@@ -28,13 +28,4 @@ class SpaceButtonTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $this->button->render());
     }
 
-    /**
-     * @test
-     */
-    public function renderInLegacyMode()
-    {
-        $this->button->setIsLegacyMode(true);
-        $expected = '            <input type="button" class="serendipityPrettyButton input_button" name="insSpace" value="Space" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[body]\'],\'\\&\\#160\\;\',\'\')" />' . PHP_EOL;
-        $this->assertEquals($expected, $this->button->render());
-    }
 }

@@ -34,24 +34,4 @@ class EndashButtonTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $this->button->render());
     }
 
-    /**
-     * @test
-     */
-    public function renderInLegacyMode()
-    {
-        $this->button->setIsLegacyMode(true);
-        $expected = '            <input type="button" class="serendipityPrettyButton input_button" name="insend" value="&ndash;" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[body]\'],\'\\&ndash\\;\',\'\')" />' . PHP_EOL;
-        $this->assertEquals($expected, $this->button->render());
-    }
-
-    /**
-     * @test
-     */
-    public function renderInLegacyModeNoNamedEnts()
-    {
-        $this->button->setIsLegacyMode(true);
-        $this->button->setUseNamedEnts(false);
-        $expected = '            <input type="button" class="serendipityPrettyButton input_button" name="insend" value="&ndash;" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[body]\'],\'\\&\\#8211\\;\',\'\')" />' . PHP_EOL;
-        $this->assertEquals($expected, $this->button->render());
-    }
 }

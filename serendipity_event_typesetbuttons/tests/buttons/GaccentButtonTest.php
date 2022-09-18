@@ -28,13 +28,4 @@ class GaccentButtonTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $this->button->render());
     }
 
-    /**
-     * @test
-     */
-    public function renderInLegacyMode()
-    {
-        $this->button->setIsLegacyMode(true);
-        $expected = '            <input type="button" class="serendipityPrettyButton input_button" name="insgaccent" value="&nbsp;&#x0300;" onclick="wrapSelection(document.forms[\'serendipityEntry\'][\'serendipity[body]\'],\'\\&\\#x0300\\;\',\'\')" />' . PHP_EOL;
-        $this->assertEquals($expected, $this->button->render());
-    }
 }
