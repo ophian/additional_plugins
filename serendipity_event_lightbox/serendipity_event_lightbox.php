@@ -24,10 +24,10 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '2.11.1');
+        $propbag->add('version',        '2.11.2');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
-            'php'         => '5.6.0'
+            'php'         => '7.0.0'
         ));
         $propbag->add('event_hooks',     array('frontend_display' => true, 'css' => true, 'frontend_header' => true, 'frontend_footer' => true ));
         $propbag->add('stackable',       false);
@@ -391,7 +391,7 @@ class serendipity_event_lightbox extends serendipity_event
         try {
             $_dir = new RecursiveDirectoryIterator($dir);
             // NOTE: UnexpectedValueException thrown for PHP >= 5.3
-            } catch (Exception $e) {
+            } catch (\Throwable $t) {
                 return;
             }
         $iterator = new RecursiveIteratorIterator($_dir, RecursiveIteratorIterator::CHILD_FIRST);
