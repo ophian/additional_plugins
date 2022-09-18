@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.6.0');
+        $propbag->add('version',       '2.6.1');
         $propbag->add('requirements',  array(
             'serendipity' => '3.6.0',
             'smarty'      => '3.1.0',
@@ -894,7 +894,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
                 $linktarget = ' target="_blank" rel="noopener"'; // Probably this default noopener behaviour will prevent foreign CMS inclusion to use the window.opener object for cases. In this case remove the 'no'.
                 break;
             case 'js':
-                try { list($width, $height, $type, $attr) = getimagesize("$infile"); } catch (Exception $e) { echo ERROR_SOMETHING . ': '.$e->getMessage(); }
+                try { list($width, $height, $type, $attr) = getimagesize("$infile"); } catch (\Throwable $t) { echo ERROR_SOMETHING . ': '.$t->getMessage(); }
                 $linktarget = ' onclick="F1 = window.open(\''.$http_infile.'\',\'Zoom\',\'height='.$height.',width='.$width.',top=\'+ (screen.height-'.$height.')/2 +\',left=\'+ (screen.width-'.$width.')/2 +\',toolbar=no,menubar=no,location=no,resize=1,resizable=1,scrollbars=yes\'); return false;"';
                 break;
             case 'plugin':
