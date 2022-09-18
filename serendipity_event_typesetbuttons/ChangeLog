@@ -1,3 +1,11 @@
+1.00:
+----
+
+ * Add conceptional root namespace to error exception handling for consistency
+ * Raises requirements
+ * Remove legacy and XHTML11
+ * Remove PHP UNIT tests while mostly for legacy
+
 0.25:
 ----
 
