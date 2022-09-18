@@ -431,7 +431,7 @@ class serendipity_event_typesetbuttons extends serendipity_event
     private function getCustomButton($txtarea, $part)
     {
         $buttons = explode('@', $part);
-        $b_name = (function_exists('serendipity_specialchars') ? serendipity_specialchars($buttons[0]) : htmlspecialchars($buttons[0], ENT_COMPAT, LANG_CHARSET));
+        $b_name = serendipity_specialchars($buttons[0]);
         $b_title = preg_replace('@[^a-z0-9]@i', '_', $buttons[0]);
         $b_open = str_replace(array('"', "'"), array('&quot;', "\\'"), $buttons[1]);
         $b_close = str_replace(array('"', "'"), array('&quot;', "\\'"), $buttons[2]);
