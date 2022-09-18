@@ -20,11 +20,11 @@ class serendipity_event_feed extends serendipity_plugin
         $propbag->add('description',    PLUGIN_DASHBOARD_FEEDME_PLUGIN_DESC);
         $propbag->add('stackable',      false);
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '1.04');
+        $propbag->add('version',        '1.05');
         $propbag->add('requirements',   array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.3.0'
+            'php'         => '7.0.0'
         ));
         $propbag->add('groups', array('BACKEND_ADMIN', 'BACKEND_DASHBOARD', 'BACKEND_FEATURES'));
         $propbag->add('event_hooks',    array(
@@ -281,8 +281,8 @@ class serendipity_event_feed extends serendipity_plugin
             // read the rss feed
             $feeddata = $this->get_url_contents($blockFeedUrl); // ToDo: cache this for a day.., see updater
             // error_reporting
-            try { $xmlData = @new SimpleXMLElement($feeddata, LIBXML_NOCDATA); } catch (Exception $e) {
-                $feed[0]['content'] = 'There was an error ("<em>'.$e->getMessage().'</em>") fetching the selected RSS Feed. Try again later.';
+            try { $xmlData = @new SimpleXMLElement($feeddata, LIBXML_NOCDATA); } catch (\Throwable $t) {
+                $feed[0]['content'] = 'There was an error ("<em>'.$t->getMessage().'</em>") fetching the selected RSS Feed. Try again later.';
                 return $feed;
             }
         } else {
