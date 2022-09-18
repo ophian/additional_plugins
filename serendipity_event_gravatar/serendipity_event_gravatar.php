@@ -9,7 +9,7 @@ if (IN_serendipity !== true) {
 
 @define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
 
-@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.74');
+@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.75');
 
 // Defines the maximum available method  slots in the configuration.
 @define('PLUGIN_EVENT_GRAVATAR_METHOD_MAX', 6);
@@ -35,7 +35,7 @@ class serendipity_event_gravatar extends serendipity_event
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1.0',
-            'php'         => '5.3.0'
+            'php'         => '7.0.0'
         ));
         $propbag->add('version',       PLUGIN_EVENT_GRAVATAR_VERSION);
         $propbag->add('groups',        array('IMAGES'));
@@ -853,12 +853,9 @@ class serendipity_event_gravatar extends serendipity_event
             $this->log("hook_event: avatar_fetch_userinfos");
             $askforData = array("type" => "twitter");
             serendipity_plugin_api::hook_event('avatar_fetch_userinfos', $eventData, $askforData);
-        } catch (Throwable $t) {
+        } catch (\Throwable $t) {
             // Executed only in PHP 7, will not match in PHP 5.x
             $this->log($t);
-        } catch (Exception $e) {
-            // Executed only in PHP 5.x, will not be reached in PHP 7
-            $this->log($e);
         }
 
         if (empty($eventData['url'])) {

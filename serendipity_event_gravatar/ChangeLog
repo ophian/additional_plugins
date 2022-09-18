@@ -1,3 +1,9 @@
+1.75:
+-----
+ * Add conceptional root namespace to error exception handling for consistency
+ * Additionally remove PHP 5 Exception fallback
+ * Raisers min PHP requirement to PHP 7
+
 1.74:
 -----
  * Fix an uninitialized variable check for PHP 8 in plugin 'frontend_display' hook
