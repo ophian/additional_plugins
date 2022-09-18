@@ -1,6 +1,11 @@
 ChangeLog:
 """"""""""
 
+1.60:
+-----
+ * Add conceptional root namespace to error exception handling for consistency
+ * Additionally remove PHP 5 Exception fallback
+
 1.59:
 -----
  * Always indicate source of where frontend_display is called (as Standard since 07/2007)

@@ -38,7 +38,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '7.0.0'
         ));
 
-        $propbag->add('version',       '1.59');
+        $propbag->add('version',       '1.60');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1340,7 +1340,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             $_ftpDirs = new RecursiveDirectoryIterator($_dir);
             // NOTE: UnexpectedValueException thrown for PHP >= 5.3
         }
-        catch (Exception $e) {
+        catch (\Throwable $t) {
             return 0;
         }
         $_files = new RecursiveIteratorIterator($_ftpDirs, RecursiveIteratorIterator::CHILD_FIRST);
@@ -2202,11 +2202,9 @@ class serendipity_event_downloadmanager extends serendipity_event
         try {
             $_dir = new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS);
             // NOTE: UnexpectedValueException thrown for PHP >= 5.3
-        } catch (Throwable $t) {
+        } catch (\Throwable $t) {
             // Executed only in PHP 7, will not match in PHP 5.x
             echo "Error: " . $t->getMessage();#return;
-        } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();#return;
         }
         if ($ml) {
             $iterator = new RecursiveIteratorIterator($_dir, RecursiveIteratorIterator::SELF_FIRST);
