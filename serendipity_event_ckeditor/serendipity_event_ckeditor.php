@@ -201,12 +201,12 @@ class serendipity_event_ckeditor extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CKEDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Rustam Abdullaev, Ian Styx');
-        $propbag->add('version',       '4.19.1.1'); // is CKEDITOR Series 4.19.1 - and appended plugin revision .1
+        $propbag->add('version',       '4.19.1.2'); // is CKEDITOR Series 4.19.1 - and appended plugin revision .2
         $propbag->add('copyright',     'GPL or LGPL License');
         $propbag->add('requirements',  array(
             'serendipity' => '2.6.2',
             'smarty'      => '3.1.13',
-            'php'         => '5.2.6'
+            'php'         => '7.0.0'
         ));
 
         $propbag->add('event_hooks',   array(
@@ -492,7 +492,7 @@ class serendipity_event_ckeditor extends serendipity_event
         try {
             $_dir = new RecursiveDirectoryIterator($dir);
             // NOTE: UnexpectedValueException thrown for PHP >= 5.3
-            } catch (Exception $e) {
+            } catch (\Throwable $t) {
                 return;
             }
         $iterator = new RecursiveIteratorIterator($_dir, RecursiveIteratorIterator::CHILD_FIRST);
