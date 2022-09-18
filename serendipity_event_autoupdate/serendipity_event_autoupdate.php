@@ -16,7 +16,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.9.4');
+        $propbag->add('version',       '1.9.5');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -839,10 +839,10 @@ EOS;
         if (!is_dir($dir)) return;
         try {
             $_dir = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
-        } catch (Throwable $t) {
+        } catch (\Throwable $t) {
             // Executed only in PHP 7, will not match in PHP 5.x
             return;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             // Executed only in PHP 5.x, will not be reached in PHP 7
             return;
         }
