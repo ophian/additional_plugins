@@ -297,11 +297,11 @@
 <description>When the Serendipity Backend (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the Blog directly with one click from within the administration area. It is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!</description>
 <maintainers><maintainer><name>onli, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.9.4</version>
+  <version>1.9.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.2</requirements:phpVersion>
-  <date>2022-08-27</date>
+  <date>2022-09-18</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -1187,11 +1187,11 @@
 <description>Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.19.1.1</version>
+  <version>4.19.1.2</version>
   <requirements:s9yVersion>2.6.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.13</requirements:smyVersion>
-  <requirements:phpVersion>5.2.6</requirements:phpVersion>
-  <date>2022-07-31</date>
+  <requirements:phpVersion>7.0.0</requirements:phpVersion>
+  <date>2022-09-18</date>
   <filelist>
     <dir name="serendipity_event_ckeditor">
       <file>basic_toolbar.css</file>
@@ -1965,11 +1965,11 @@
 <description>Shows a sortable view of all past articles for the visitor. The link to this page should be inserted into a HTML nugget.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.21</version>
+  <version>1.22</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2021-10-29</date>
+  <date>2022-09-18</date>
   <filelist>
     <dir name="serendipity_event_customarchive">
       <file>asc.gif</file>
@@ -2201,11 +2201,11 @@
 <description>Aggiunge le funzionalita' di downloadmanager a s9y. Quando viene disinstallato, tutte le tabelle vengono eliminate! Visita http://blog.linux-stats.org per scaricare il plugin.</description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.59</version>
+  <version>1.60</version>
   <requirements:s9yVersion>3.3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2022-09-17</date>
+  <date>2022-09-18</date>
   <filelist>
     <dir name="serendipity_event_downloadmanager">
       <file>AUTHORS</file>
@@ -3304,11 +3304,11 @@
 <description>The Dashboard S9y Feedle</description>
 <maintainers><maintainer><name>Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.04</version>
+  <version>1.05</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2019-08-09</date>
+  <requirements:phpVersion>7.0.0</requirements:phpVersion>
+  <date>2022-09-18</date>
   <filelist>
     <dir name="serendipity_event_feed">
       <file>feedblock.tpl</file>
@@ -4844,11 +4844,11 @@
 <description>Show Avatars inside comments. Gravatars, Pavatars, Favatars, Wavatars, Monster ID, Identicon, Twitter and Identica Avatars are supported.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.74</version>
+  <version>1.75</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2022-01-20</date>
+  <requirements:phpVersion>7.0.0</requirements:phpVersion>
+  <date>2022-09-18</date>
   <filelist>
     <dir name="serendipity_event_gravatar">
       <file>ChangeLog</file>
@@ -5406,11 +5406,11 @@
 <description>Allows extended options for inserting images from the media manager</description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.6.0</version>
+  <version>2.6.1</version>
   <requirements:s9yVersion>3.6.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2022-07-13</date>
+  <date>2022-09-18</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
@@ -5738,11 +5738,11 @@
 <description>Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It's a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.</description>
 <maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.11.1</version>
+  <version>2.11.2</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2022-04-13</date>
+  <requirements:phpVersion>7.0.0</requirements:phpVersion>
+  <date>2022-09-18</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
       <file>ChangeLog</file>
@@ -11731,13 +11731,13 @@
 <summary>Typeset/Extended Buttons for non-WYSIWYG editors</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Adds buttons for various encoded typeset entities and other extended actions.</description>
-<maintainers><maintainer><name>Matthew Groeninger, Malte Diers, Matthias Gutjahr</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Matthew Groeninger, Malte Diers, Matthias Gutjahr, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.25</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>5.3.3</requirements:phpVersion>
-  <date>2018-08-06</date>
+  <version>1.00</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.0</requirements:smyVersion>
+  <requirements:phpVersion>7.0</requirements:phpVersion>
+  <date>2022-09-18</date>
   <filelist>
     <dir name="serendipity_event_typesetbuttons">
       <dir name="buttons">
@@ -11763,24 +11763,6 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_typesetbuttons.php</file>
-      <dir name="tests">
-        <dir name="buttons">
-          <file>AccentButtonTest.php</file>
-          <file>AmpButtonTest.php</file>
-          <file>AposButtonTest.php</file>
-          <file>BulletButtonTest.php</file>
-          <file>CenterButtonTest.php</file>
-          <file>CustomButtonTest.php</file>
-          <file>DquotesButtonTest.php</file>
-          <file>EmdashButtonTest.php</file>
-          <file>EndashButtonTest.php</file>
-          <file>GaccentButtonTest.php</file>
-          <file>SpaceButtonTest.php</file>
-          <file>SquotesButtonTest.php</file>
-          <file>StrikeButtonTest.php</file>
-        </dir>
-        <file>typesetbuttonsTest.php</file>
-      </dir>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
@@ -11810,20 +11792,6 @@
     <file>serendipity_event_typesetbuttons/lang_de.inc.php</file>
     <file>serendipity_event_typesetbuttons/lang_en.inc.php</file>
     <file>serendipity_event_typesetbuttons/serendipity_event_typesetbuttons.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/AccentButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/AmpButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/AposButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/BulletButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/CenterButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/CustomButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/DquotesButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/EmdashButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/EndashButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/GaccentButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/SpaceButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/SquotesButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/buttons/StrikeButtonTest.php</file>
-    <file>serendipity_event_typesetbuttons/tests/typesetbuttonsTest.php</file>
     <file>serendipity_event_typesetbuttons/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_typesetbuttons/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_typesetbuttons/UTF-8/lang_de.inc.php</file>
@@ -12370,11 +12338,11 @@
 <description>Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)</description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.77</version>
+  <version>1.78</version>
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2020-06-07</date>
+  <date>2022-09-18</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
       <file>ChangeLog</file>

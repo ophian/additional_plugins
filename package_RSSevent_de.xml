@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;Sobald das Serendipity Backend (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in die Startseite des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten. Es ist zu empfehlen, dieses Plugin in Kombination mit dem modemaintain (Wartungs-) Ereignis Plugin zu nutzen. Für Autoupdate Hinweise müssen Sie die globale Serendipity Konfigurationsoption in &quot;Einstellungen:: Generelle Einstellungen: Update-Hinweis&quot; auf &quot;stable&quot; oder &quot;beta&quot; stellen, um es überhaupt über das Dashboard nutzen zu können!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2022 10:06:46 +0200</pubDate>
+<pubDate>Sun, 18 Sep 2022 09:31:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -131,7 +131,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie die Plugin Konfigurations Seite für mehr Informationen.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Sun, 31 Jul 2022 17:24:32 +0200</pubDate>
+<pubDate>Sun, 18 Sep 2022 17:11:57 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_customarchive&lt;br /&gt;Sortierbares Archiv der Einträge&lt;/b&gt;&lt;br /&gt;Zeigt eine sortierbare Ansicht aller Artikel für den Besucher an. Der Link zu dieser eigenständigen Seite sollte in einem eigenen HTML Klotz verlinkt werden!&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Fri, 29 Oct 2021 18:49:58 +0200</pubDate>
+<pubDate>Sun, 18 Sep 2022 10:33:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_customarchive</guid>
 </item>
 <item>
@@ -275,7 +275,7 @@
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Stellt einen kompletten Downloadmanager zur Verfügung. Bei Deinstallation werden alle zugehörigen Tabellen gelöscht!&lt;br/&gt;For: Serendipity 3.3.0</content:encoded>
-<pubDate>Sat, 17 Sep 2022 13:02:58 +0200</pubDate>
+<pubDate>Sun, 18 Sep 2022 10:25:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
@@ -392,7 +392,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_feed&lt;br /&gt;Dashboard Feed Reader&lt;/b&gt;&lt;br /&gt;Das Dashboard S9y Feedle&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:41:15 +0200</pubDate>
+<pubDate>Sun, 18 Sep 2022 10:36:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_feed</guid>
 </item>
 <item>
@@ -527,7 +527,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Avatare bei Kommentaren anzeigen. Unterstützt werden Gravatare, Pavatare, Favatare, Wavatare, Monster ID, Identicon, Twitter und Identica Avatare&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Thu, 20 Jan 2022 13:30:57 +0100</pubDate>
+<pubDate>Sun, 18 Sep 2022 10:43:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
@@ -563,7 +563,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Erweiterte Optionen für Bildauswahl&lt;/b&gt;&lt;br /&gt;Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediathek.&lt;br/&gt;For: Serendipity 3.6.0</content:encoded>
-<pubDate>Wed, 13 Jul 2022 12:27:25 +0200</pubDate>
+<pubDate>Sun, 18 Sep 2022 10:31:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -608,7 +608,7 @@
 <category>Event Plugins</category>
 <author>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_lightbox&lt;br /&gt;Lightbox für Blog Einträge mit Bildern&lt;/b&gt;&lt;br /&gt;Lightbox JS ist ein Skript, mit dem Bilder der aktuellen Seite (via Modal Overlay pattern) überlagert angezeigt werden können. Es lässt sich schnell einrichten, um Popup-Bilder für den Benutzer ansprechend oder gemeinsam karusselartig über Javascripte zu präsentieren. Dieses Plugin durchsucht Ihre Einträge und fügt jedem Bild-verweisenden Link ein HTML &quot;rel-Attribut&quot; hinzu, um die lightbox Anzeige verwenden zu können. Wenn Sie also möchten, dass Ihre Vorschaubilder groß angezeigt werden, müssen Sie Ihre Bilder als Links zur großen Version einfügen.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 13 Apr 2022 09:43:01 +0200</pubDate>
+<pubDate>Sun, 18 Sep 2022 10:38:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_lightbox</guid>
 </item>
 <item>
@@ -1200,9 +1200,9 @@
 <title>Sonderzeichen/Erweiterte Buttons für Non-WYSIWYG: Fügt Buttons für diverse Sonderzeichen und Aktionen in die Oberfläche zum Erzeugen eines Artikels ein. Dieses Plugin funktioniert nicht mit dem WYSIWYG-Editor zusammen.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_typesetbuttons</link>
 <category>Event Plugins</category>
-<author>Matthew Groeninger, Malte Diers, Matthias Gutjahr</author>
-<content:encoded>&lt;b&gt;serendipity_event_typesetbuttons&lt;br /&gt;Sonderzeichen/Erweiterte Buttons für Non-WYSIWYG&lt;/b&gt;&lt;br /&gt;Fügt Buttons für diverse Sonderzeichen und Aktionen in die Oberfläche zum Erzeugen eines Artikels ein. Dieses Plugin funktioniert nicht mit dem WYSIWYG-Editor zusammen.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Mon, 06 Aug 2018 10:04:05 +0200</pubDate>
+<author>Matthew Groeninger, Malte Diers, Matthias Gutjahr, Ian Styx</author>
+<content:encoded>&lt;b&gt;serendipity_event_typesetbuttons&lt;br /&gt;Sonderzeichen/Erweiterte Buttons für Non-WYSIWYG&lt;/b&gt;&lt;br /&gt;Fügt Buttons für diverse Sonderzeichen und Aktionen in die Oberfläche zum Erzeugen eines Artikels ein. Dieses Plugin funktioniert nicht mit dem WYSIWYG-Editor zusammen.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sun, 18 Sep 2022 14:14:47 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_typesetbuttons</guid>
 </item>
 <item>
@@ -1292,7 +1292,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Einträge via XML-RPC erstellen&lt;/b&gt;&lt;br /&gt;Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Sun, 07 Jun 2020 17:19:46 +0200</pubDate>
+<pubDate>Sun, 18 Sep 2022 17:14:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
