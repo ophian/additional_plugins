@@ -71,7 +71,7 @@ if ($xml_in != '') {
             return FALSE;
         }
     }
-    catch (Exception $e) {
+    catch (\Throwable $t) {
         return FALSE;
     }
 }
@@ -1956,9 +1956,9 @@ function next_nl_block($i, $text) {
 try {
     $server = new XML_RPC_Server($dispatches, 1, ($debug_xmlrpc === 2 ? 1 : 0));
 
-} catch (Exception $e) {
+} catch (\Throwable $t) {
     $fp = fopen(DEBUG_LOG_XMLRPC, 'a');
-    fwrite($fp, "[EXCEPTION]" . $e . "\n---------------------------------------\n");
+    fwrite($fp, "[EXCEPTION]" . $t . "\n---------------------------------------\n");
     fclose($fp);
     ob_end_flush();
 }

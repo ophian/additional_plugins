@@ -1,3 +1,6 @@
+Version 1.78:
+  * Add conceptional root namespace to error exception handling for consistency
+
 Version 1.77:
   * Remove deprecated MS Frontpage extension excluding check in MediaLibraries
     uploads/ directory. Upgraders:
