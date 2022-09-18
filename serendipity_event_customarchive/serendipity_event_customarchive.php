@@ -92,7 +92,7 @@ class serendipity_event_customarchive extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'articleformat', 'exclude_emptyyears'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.21');
+        $propbag->add('version', '1.22');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -313,7 +313,7 @@ class serendipity_event_customarchive extends serendipity_event
             );
 
             $exclude_years = @array($this->get_config('exclude_emptyyears', ''));
-            try { is_array($exclude_years); } catch (Exception $e) { $exclude_years = array(); }
+            try { is_array($exclude_years); } catch (\Throwable $t) { $exclude_years = array(); }
             $custom_sortyears = array();
             $custom_sortyears[] = array('value' => 'all', 'desc' => COMMENTS_FILTER_ALL);
             for ($i = $first_year; $i <= date('Y'); $i++) {
