@@ -23,16 +23,10 @@ class GaccentButton extends Button
      */
     public function render()
     {
-        if ($this->isLegacyMode()) {
-            $this->addClass('serendipityPrettyButton');
-            $this->addClass('input_button');
-            $this->setOnClickEvent(
-                "wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea() . "'],'\\&\\#x0300\\;','')"
-            );
-        } else {
-            $this->addClass('wrap_selection');
-            $this->setOpenTag('&#x0300;');
-        }
+        $this->addClass('wrap_selection');
+        $this->setOpenTag('&#x0300;');
+
         return parent::render();
     }
+
 }

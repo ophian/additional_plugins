@@ -23,16 +23,10 @@ class SpaceButton extends Button
      */
     public function render()
     {
-        if ($this->isLegacyMode()) {
-            $this->addClass('serendipityPrettyButton');
-            $this->addClass('input_button');
-            $this->setOnClickEvent(
-                "wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea() . "'],'\\&\\#160\\;','')"
-            );
-        } else {
-            $this->addClass('wrap_selection');
-            $this->setOpenTag('&#160;');
-        }
+        $this->addClass('wrap_selection');
+        $this->setOpenTag('&#160;');
+
         return parent::render();
     }
+
 }

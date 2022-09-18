@@ -23,18 +23,10 @@ class EndashButton extends Button
      */
     public function render()
     {
-        if ($this->isLegacyMode()) {
-            $this->addClass('serendipityPrettyButton');
-            $this->addClass('input_button');
-            if ($this->isUseNamedEnts()) {
-                $this->setOnClickEvent("wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea() . "'],'\\&ndash\\;','')");
-            } else {
-                $this->setOnClickEvent("wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea() . "'],'\\&\\#8211\\;','')");
-            }
-        } else {
-            $this->addClass('wrap_selection');
-            $this->setOpenTag('&ndash;');
-        }
+        $this->addClass('wrap_selection');
+        $this->setOpenTag('&ndash;');
+
         return parent::render();
     }
+
 }

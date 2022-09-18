@@ -28,21 +28,12 @@ class DquotesButton extends Button
     public function render()
     {
         $this->overwriteValue();
-        if ($this->isLegacyMode()) {
-            $this->addClass('serendipityPrettyButton');
-            $this->addClass('input_button');
-            if ($this->isUseNamedEnts()) {
-                $this->setOnClickEvent("wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea() . "']," . $this->getSurroundingNamedEntitiesStringByType() . ")");
-            } else {
-                $this->setOnClickEvent("wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea() . "']," . $this->getSurroundingStringByType() . ")");
-            }
-        } else {
-            $this->addClass('wrap_selection');
-            $namedEntities = $this->getCleanSurroundingStringByType();
-            $tags = explode(',', $namedEntities);
-            $this->setOpenTag(trim($tags[0], '\''));
-            $this->setCloseTag(trim($tags[1], '\''));
-        }
+        $this->addClass('wrap_selection');
+        $namedEntities = $this->getCleanSurroundingStringByType();
+        $tags = explode(',', $namedEntities);
+        $this->setOpenTag(trim($tags[0], '\''));
+        $this->setCloseTag(trim($tags[1], '\''));
+
         return parent::render();
     }
 
@@ -134,4 +125,5 @@ class DquotesButton extends Button
         }
         return $surroundingStrings[$this->getType()];
     }
+
 }

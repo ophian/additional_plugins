@@ -11,19 +11,9 @@ interface ButtonInterface
     public function __construct($textarea);
 
     /**
-     * @param boolean $isXhtml11
-     */
-    public function setIsXhtml11($isXhtml11);
-
-    /**
      * @param boolean $useNamedEnts
      */
     public function setUseNamedEnts($useNamedEnts);
-
-    /**
-     * @param boolean $isLegacyMode
-     */
-    public function setIsLegacyMode($isLegacyMode);
 
     /**
      * @param string $openTag

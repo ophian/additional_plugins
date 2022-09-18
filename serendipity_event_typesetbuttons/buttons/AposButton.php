@@ -44,30 +44,10 @@ class AposButton extends Button
      */
     public function render()
     {
-        if ($this->isLegacyMode()) {
-            $this->addClass('serendipityPrettyButton');
-            $this->addClass('input_button');
-            if ($this->isUseRealApos() === false) {
-                if ($this->isUseNamedEnts()) {
-                    $this->setOnClickEvent(
-                        "wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea(
-                        ) . "'],'&rsquo;','')"
-                    );
-                } else {
-                    $this->setOnClickEvent(
-                        "wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea(
-                        ) . "'],'&#8217;','')"
-                    );
-                }
-            } else {
-                $this->setOnClickEvent(
-                    "wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea() . "'],'\\&\\#39\\;','')"
-                );
-            }
-        } else {
-            $this->addClass('wrap_selection');
-            $this->setOpenTag('&apos;');
-        }
+        $this->addClass('wrap_selection');
+        $this->setOpenTag('&apos;');
+
         return parent::render();
     }
+
 }

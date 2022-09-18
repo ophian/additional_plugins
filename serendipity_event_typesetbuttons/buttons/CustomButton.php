@@ -53,18 +53,11 @@ class CustomButton extends Button
      */
     public function render()
     {
-        if ($this->isLegacyMode()) {
-            $this->addClass('serendipityPrettyButton');
-            $this->addClass('input_button');
-            $this->setOnClickEvent(
-                "wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea() . "'], '" . $this->getOpen(
-                ) . "', '" . $this->getClose() . "')"
-            );
-        } else {
-            $this->addClass('wrap_selection');
-            $this->setOpenTag($this->getOpen());
-            $this->setCloseTag($this->getClose());
-        }
+        $this->addClass('wrap_selection');
+        $this->setOpenTag($this->getOpen());
+        $this->setCloseTag($this->getClose());
+
         return parent::render();
     }
+
 }

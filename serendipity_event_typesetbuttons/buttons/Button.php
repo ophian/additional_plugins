@@ -36,17 +36,7 @@ abstract class Button implements ButtonInterface
     /**
      * @var bool
      */
-    protected $isXhtml11 = true;
-
-    /**
-     * @var bool
-     */
     protected $useNamedEnts = true;
-
-    /**
-     * @var bool
-     */
-    protected $isLegacyMode = false;
 
     /**
      * @var string
@@ -159,22 +149,6 @@ abstract class Button implements ButtonInterface
     /**
      * @return boolean
      */
-    public function isXhtml11()
-    {
-        return $this->isXhtml11;
-    }
-
-    /**
-     * @param boolean $isXhtml11
-     */
-    public function setIsXhtml11($isXhtml11)
-    {
-        $this->isXhtml11 = $isXhtml11;
-    }
-
-    /**
-     * @return boolean
-     */
     public function isUseNamedEnts()
     {
         return $this->useNamedEnts;
@@ -186,22 +160,6 @@ abstract class Button implements ButtonInterface
     public function setUseNamedEnts($useNamedEnts)
     {
         $this->useNamedEnts = $useNamedEnts;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isLegacyMode()
-    {
-        return $this->isLegacyMode;
-    }
-
-    /**
-     * @param boolean $isLegayMode
-     */
-    public function setIsLegacyMode($isLegayMode)
-    {
-        $this->isLegacyMode = $isLegayMode;
     }
 
     /**
@@ -241,25 +199,17 @@ abstract class Button implements ButtonInterface
      */
     public function render()
     {
-        if ($this->isLegacyMode()) {
-            $html = sprintf(
-                '<input type="button" class="%s" name="%s" value="%s" onclick="%s" />',
-                implode(' ', $this->getClasses()),
-                $this->getName(),
-                $this->getValue(),
-                $this->getOnClickEvent()
-            );
-        } else {
-            $html = sprintf(
-                '<button class="%s" type="button" name="%s" data-tag-open="%s" data-tag-close="%s" data-tarea="%s">%s</button>',
-                implode(' ', $this->getClasses()),
-                $this->getName(),
-                $this->getOpenTag(),
-                $this->getCloseTag(),
-                $this->getTextarea(),
-                $this->getValue()
-            );
-        }
+        $html = sprintf(
+            '<button class="%s" type="button" name="%s" data-tag-open="%s" data-tag-close="%s" data-tarea="%s">%s</button>',
+            implode(' ', $this->getClasses()),
+            $this->getName(),
+            $this->getOpenTag(),
+            $this->getCloseTag(),
+            $this->getTextarea(),
+            $this->getValue()
+        );
+
         return '            ' . $html . PHP_EOL;
     }
+
 }

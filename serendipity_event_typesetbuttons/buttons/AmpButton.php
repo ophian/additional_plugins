@@ -23,14 +23,10 @@ class AmpButton extends Button
      */
     public function render()
     {
-        if ($this->isLegacyMode()) {
-            $this->addClass('serendipityPrettyButton');
-            $this->addClass('input_button');
-            $this->setOnClickEvent("wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea() . "'],'\\&\\#38\\;','')");
-        } else {
-            $this->addClass('wrap_selection');
-            $this->setOpenTag('&');
-        }
+        $this->addClass('wrap_selection');
+        $this->setOpenTag('&');
+
         return parent::render();
     }
+
 }

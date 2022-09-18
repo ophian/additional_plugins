@@ -23,24 +23,11 @@ class StrikeButton extends Button
      */
     public function render()
     {
-        if ($this->isLegacyMode()) {
-            $this->addClass('serendipityPrettyButton');
-            $this->addClass('input_button');
-            if ($this->isXhtml11()) {
-                $this->setOnClickEvent(
-                    "wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea() . "'],'<del>','</del>')"
-                );
-            } else {
-                $this->setOnClickEvent(
-                    "wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea() . "'],'<s>','</s>')"
-                );
-            }
-        } else {
-            $this->addClass('wrap_selection');
-            $this->addClass('lang-html');
-            $this->setOpenTag('del');
-            $this->setCloseTag('del');
-        }
+        $this->addClass('wrap_selection');
+        $this->addClass('lang-html');
+        $this->setOpenTag('del');
+        $this->setCloseTag('del');
+
         return parent::render();
     }
 }

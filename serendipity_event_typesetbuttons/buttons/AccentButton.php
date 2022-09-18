@@ -23,14 +23,10 @@ class AccentButton extends Button
      */
     public function render()
     {
-        if ($this->isLegacyMode()) {
-            $this->addClass('serendipityPrettyButton');
-            $this->addClass('input_button');
-            $this->setOnClickEvent("wrapSelection(document.forms['serendipityEntry']['" . $this->getTextarea() . "'],'\\&\\#x0301\\;','')");
-        } else {
-            $this->addClass('wrap_selection');
-            $this->setOpenTag('&#x0301;');
-        }
+        $this->addClass('wrap_selection');
+        $this->setOpenTag('&#x0301;');
+
         return parent::render();
     }
+
 }
