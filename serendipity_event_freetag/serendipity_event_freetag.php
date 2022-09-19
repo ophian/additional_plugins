@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.26');
+        $propbag->add('version',       '5.27');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1273,7 +1273,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 case 'frontend_fetchentries':
                 case 'frontend_fetchentry':
-                    $this->frontend_fetch_showtag($eventData);
+                    // No freetag SQL query preparatory in case of (sidebar) calendar SQL query
+                    if (!isset($addData['source']) || $addData['source'] !== 'calendar') {
+                        $this->frontend_fetch_showtag($eventData);
+                    }
                     break;
 
                 case 'frontend_rss':

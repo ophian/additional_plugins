@@ -1,3 +1,7 @@
+5.27:
+-----
+ * Exclude freetag {cond}itional SQL-query preparatory for case (sidebar) calendar
+
 5.26:
 -----
  * Init Smarty object not set for rare case dependent plugin
