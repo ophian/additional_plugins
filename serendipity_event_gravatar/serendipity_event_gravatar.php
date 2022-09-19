@@ -9,7 +9,7 @@ if (IN_serendipity !== true) {
 
 @define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
 
-@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.75');
+@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.76');
 
 // Defines the maximum available method  slots in the configuration.
 @define('PLUGIN_EVENT_GRAVATAR_METHOD_MAX', 6);
@@ -333,7 +333,9 @@ class serendipity_event_gravatar extends serendipity_event
                         return true;
                     }
 
-                    $this->printAvatarHtml($eventData, $addData);
+                    if ($eventData['type'] != 'PINGBACK') {
+                        $this->printAvatarHtml($eventData, $addData);
+                    }
                     break;
 
                 case 'css':
@@ -344,6 +346,9 @@ class serendipity_event_gravatar extends serendipity_event
 
 /* serendipity_event_gravatar start */
 
+.comment_content {
+    min-height: 3.5rem;
+}
 .avatar_left {
     float:left;
     margin-left:0px;

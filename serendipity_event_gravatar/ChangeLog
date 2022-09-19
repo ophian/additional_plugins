@@ -1,8 +1,13 @@
+1.76:
+-----
+ * Improve comment_content CSS min-height for (inline) avatar styling (based on current Standard theme "pure")
+ * Exclude on PINGBACK types, since there is no comment text
+
 1.75:
 -----
  * Add conceptional root namespace to error exception handling for consistency
  * Additionally remove PHP 5 Exception fallback
- * Raisers min PHP requirement to PHP 7
+ * Raises min PHP requirement to PHP 7
 
 1.74:
 -----
