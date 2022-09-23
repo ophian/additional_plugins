@@ -15,6 +15,7 @@ class serendipity_event_blogpdf extends serendipity_event
     var $title = PLUGIN_EVENT_BLOGPDF_NAME;
     var $pdf;
     var $single = false;
+    var $article_show = false;
 
     function introspect(&$propbag)
     {
@@ -25,7 +26,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier PLATHEY, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL TCPDF');
-        $propbag->add('version',       '2.2.2');
+        $propbag->add('version',       '2.2.3');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -81,14 +82,13 @@ class serendipity_event_blogpdf extends serendipity_event
 
         $hooks = &$bag->get('event_hooks');
         $links = array();
-        $article_show = false;
 
         if (isset($hooks[$event])) {
 
             switch($event) {
                 case 'frontend_display':
                     if (isset($eventData['timestamp']) && isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
-                        $article_show = true;
+                        $this->article_show = true;
                         $year         = date('Y', serendipity_serverOffsetHour($eventData['timestamp']));
                         $month        = date('m', serendipity_serverOffsetHour($eventData['timestamp']));
                         // no break
@@ -127,7 +127,7 @@ class serendipity_event_blogpdf extends serendipity_event
                         $links[] = '<a href="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/monthpdf_' . $year . $month . '">' . PLUGIN_EVENT_BLOGPDF_VIEW_MONTH . '</a>';
                         $links[] = '<a href="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/blogpdf">' . PLUGIN_EVENT_BLOGPDF_VIEW_FULL . '</a>';
 
-                        if ($article_show) {
+                        if ($this->article_show) {
                             if (!isset($eventData['add_footer'])) $eventData['add_footer'] = '';
                             $eventData['add_footer'] .= '<div class="serendipity_blogpdf"><strong>' . PLUGIN_EVENT_BLOGPDF_VIEW . '</strong>' . implode(' | ', $links) . '</div>';
                         } else {
