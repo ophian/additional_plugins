@@ -1,3 +1,7 @@
+2.2.4:
+-----
+ * Fix a missing conditioning in 2.2.3
+
 2.2.3:
 -----
  * Improve entry display (add_) footer conditioning (i.e. for custom permalinks)

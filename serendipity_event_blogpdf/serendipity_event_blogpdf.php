@@ -26,7 +26,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier PLATHEY, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL TCPDF');
-        $propbag->add('version',       '2.2.3');
+        $propbag->add('version',       '2.2.4');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -98,7 +98,7 @@ class serendipity_event_blogpdf extends serendipity_event
 
                 case 'entries_footer':
                     // don't do this in mode preview iframe, we use GET, since $serendipity['preview'] isn't available (yet?) and on staticpages or other plugin pages that are not categories!
-                    if (empty($serendipity['GET']['preview']) && in_array($serendipity['view'], ['archives', 'entry', 'categories'])) {
+                    if (empty($serendipity['GET']['preview']) && in_array($serendipity['view'], ['archives', 'entry', 'categories', 'plugin']) && !isset($serendipity['is_staticpage'])) {
                         if (isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
                             $links[] = '<a href="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/articlepdf_' . $serendipity['GET']['id'] . '">' . PLUGIN_EVENT_BLOGPDF_VIEW_ENTRY . '</a>';
                         }
