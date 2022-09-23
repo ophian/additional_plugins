@@ -20,7 +20,7 @@ if (IN_serendipity !== true) {
  */
 class serendipity_plugin_category_dhtml_menu extends serendipity_plugin
 {
-    var $title = null;
+    var $title = PLUGIN_DHTMLMENU_NAME;
 
     /**
      * Provides reflection for plugin management.
