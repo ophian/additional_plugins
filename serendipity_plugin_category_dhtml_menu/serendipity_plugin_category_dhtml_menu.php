@@ -7,27 +7,21 @@
  * @version 
  */
 
-
-
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
-if (file_exists($probelang)) {
-    include $probelang;
-}
-
-include dirname(__FILE__) . '/lang_en.inc.php';
+@serendipity_plugin_api::load_language(dirname(__FILE__));
 
 /**
  * Provides a DHTML tree menu of serendipity categories.
  * As of this commit an example can be seen at http://jaxn.org/blog/
  * @see serendipity_plugin
  */
-class serendipity_plugin_category_dhtml_menu extends serendipity_plugin {
+class serendipity_plugin_category_dhtml_menu extends serendipity_plugin
+{
     var $title = null;
+
     /**
      * Provides reflection for plugin management.
      * @param $propbag
@@ -37,14 +31,14 @@ class serendipity_plugin_category_dhtml_menu extends serendipity_plugin {
     {
         $propbag->add('name',        PLUGIN_DHTMLMENU_NAME);
         $propbag->add('description', PLUGIN_DHTMLMENU_NAME_DESC);
-        $propbag->add('configuration', array('title', 'expand_all','image_path','script_path','show_count','image'));
+        $propbag->add('configuration', array('title', 'expand_all', 'image_path', 'script_path', 'show_count', 'image'));
         $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.0',
+            'php'         => '7.3'
         ));
         $propbag->add('author',      'Jackson Miller, Sebastian Bauer');
-        $propbag->add('version',     '1.12');
+        $propbag->add('version',     '1.13');
         $propbag->add('groups', array('FRONTEND_VIEWS'));
     }
 
@@ -114,11 +108,13 @@ class serendipity_plugin_category_dhtml_menu extends serendipity_plugin {
      * @return void
      * @see    http://pear.php.net/HTML_TreeMenu  PEAR::HTML_TreeMenu
      */
-    function generate_content(&$title) {
-
+    function generate_content(&$title)
+    {
         global $serendipity;
 
         $title = $this->get_config('title', $this->title);
+        $output = '';
+
         // may want to put this in bundled_libs or a sub directory of this directory
         $pear = false;
         if (@include_once('HTML/TreeMenu.php')) {
@@ -126,12 +122,12 @@ class serendipity_plugin_category_dhtml_menu extends serendipity_plugin {
         } elseif (@include_once('HTML_TreeMenu/TreeMenu.php')) {
             $pear = true;
         }
-        if ($pear) {
 
+        if ($pear) {
             $which_category = $this->get_config('authorid');
 
             // build an accessible array of categories
-            foreach (serendipity_fetchCategories(empty($which_category) ? 'all' : $which_category) as $cat) {
+            foreach (serendipity_fetchCategories(empty($which_category) ? 'all' : $which_category) AS $cat) {
                 if (!is_array($cat) || !isset($cat['categoryid'])) continue;
                 $categories[$cat['categoryid']] = $cat;
             }
@@ -139,7 +135,7 @@ class serendipity_plugin_category_dhtml_menu extends serendipity_plugin {
             // create an array of numbers of entries per category
             $cat_count = array();
             if (serendipity_db_bool($this->get_config('show_count'))) {
-                $cat_sql        = "SELECT c.categoryid, c.category_name, count(e.id) as postings
+                $cat_sql        = "SELECT c.categoryid, c.category_name, count(e.id) AS postings
                                                 FROM {$serendipity['dbPrefix']}entrycat ec,
                                                      {$serendipity['dbPrefix']}category c,
                                                      {$serendipity['dbPrefix']}entries e
@@ -155,14 +151,13 @@ class serendipity_plugin_category_dhtml_menu extends serendipity_plugin {
                         $cat_count[$cat['categoryid']] = $cat['postings'];
                     }
                 }
-
             }
 
             $image = $this->get_config('image', serendipity_getTemplateFile('img/xml.gif'));
             $image = (($image == "'none'" || $image == 'none') ? '' : $image);
 
             // create nodes
-            foreach ($categories as $cid => $cat) {
+            foreach ($categories AS $cid => $cat) {
                 if (function_exists('serendipity_categoryURL')) {
                     $link = serendipity_categoryURL($cat, 'serendipityHTTPPath');
                 } else {
@@ -179,25 +174,24 @@ class serendipity_plugin_category_dhtml_menu extends serendipity_plugin {
                     $feed = '<a class="serendipity_xml_icon" href="'. $feedURL .'"><img src="'. $image .'" alt="XML" style="border: 0px;vertical-align:middle"/></a> ';
                     $link = '<a href="'.$link.'" target="_self"><span>'.$cat['category_name'].'</span></a>';
                     // work around a problem in HTML_TreeNode: when there is a href in 'text', 'link' is not converted to a link.
-                    $cat_nodes[$cat['categoryid']] = new HTML_TreeNode(array('text'=>($feed . $link)));
-                }else
-                    $cat_nodes[$cat['categoryid']] = new HTML_TreeNode(array('text'=>($feed . $cat['category_name']),'link'=>$link));
+                    $cat_nodes[$cat['categoryid']] = new HTML_TreeNode(array('text' => ($feed . $link)));
+                } else
+                    $cat_nodes[$cat['categoryid']] = new HTML_TreeNode(array('text' => ($feed . $cat['category_name']), 'link' => $link));
             }
-
 
             // create a top level for "all categories"
             // this serves as the title
-            $cat_nodes[0] = new HTML_TreeNode(array('text'=>ALL_CATEGORIES,'link'=>$serendipity['baseURL']));
+            $cat_nodes[0] = new HTML_TreeNode(array('text' => ALL_CATEGORIES, 'link' => $serendipity['baseURL']));
             // nest nodes (thanks to PHP references)
-            foreach ($categories as $category) {
+            foreach ($categories AS $category) {
                 $cat_nodes[$category['parentid']]->addItem($cat_nodes[$category['categoryid']]);
             }
 
             // nest the "all categories" category
             $menu = new HTML_TreeMenu();
-            $menu->addItem( $cat_nodes[0] );
+            $menu->addItem($cat_nodes[0]);
 
-            $tree = new HTML_TreeMenu_DHTML($menu,array('images'=>$serendipity['baseURL'].$this->get_config('image_path')));
+            $tree = new HTML_TreeMenu_DHTML($menu,array('images' => $serendipity['baseURL'].$this->get_config('image_path')));
             // Add heading for block
             #$output = '<h2 class="serendipitySideBarTitle" style="font-weight: bold;">'.$title.'</h2><br />';
             // Put inside a div with "overflow:hidden" to avoid items of the sidebar plugin running outside the blog
@@ -211,7 +205,6 @@ class serendipity_plugin_category_dhtml_menu extends serendipity_plugin {
         }
 
         echo $output;
-
     }
 }
 
