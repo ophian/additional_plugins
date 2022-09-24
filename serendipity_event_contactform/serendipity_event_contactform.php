@@ -289,7 +289,7 @@ class serendipity_event_contactform extends serendipity_event
             $serendipity['smarty']->assign('is_contactform_sent', true);
             return true;
         } else {
-            // Unkown error occurred.
+            // Unknown error occurred.
             $serendipity['smarty']->assign(
                 array(
                     'is_contactform_error'     => true,
@@ -391,7 +391,7 @@ class serendipity_event_contactform extends serendipity_event
             $serendipity['smarty']->assign('is_contactform_sent', true);
             return true;
         } else {
-            // Unkown error occurred.
+            // Unknown error occurred.
             $serendipity['smarty']->assign(
                 array(
                     'is_contactform_error'     => true,
