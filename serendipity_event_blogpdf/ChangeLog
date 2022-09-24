@@ -1,3 +1,8 @@
+2.2.5:
+-----
+ * Deny allowance on several other plugin pages like freetag tags, contactform
+ * Allow on entries summary pages by year/month
+
 2.2.4:
 -----
  * Fix a missing conditioning in 2.2.3
