@@ -492,13 +492,13 @@
 <summary>Exporteer blog als PDF.</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Sta bezoekers toe je blog in PDF formaat te downloaden.</description>
-<maintainers><maintainer><name>Garvin Hicking, Olivier PLATHEY, Steven Wittens, Ian Styx</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.2.4</version>
+  <version>2.2.5</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.1.0</requirements:phpVersion>
-  <date>2022-09-23</date>
+  <date>2022-09-24</date>
   <filelist>
     <dir name="serendipity_event_blogpdf">
       <file>ChangeLog</file>
