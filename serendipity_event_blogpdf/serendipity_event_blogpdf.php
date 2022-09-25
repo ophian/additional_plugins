@@ -26,7 +26,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL TCPDF');
-        $propbag->add('version',       '2.2.6');
+        $propbag->add('version',       '2.2.7');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -98,7 +98,7 @@ class serendipity_event_blogpdf extends serendipity_event
 
                 case 'entries_footer':
                     // don't do this in mode preview iframe, we use GET, since $serendipity['preview'] isn't available (yet?) and on staticpages or other plugin pages that are not categories!
-                    if (empty($serendipity['GET']['preview']) && in_array($serendipity['view'], ['archives', 'entry', 'categories', 'plugin']) && (isset($eventData['id']) || $serendipity['viewtype'] != '404_4') && !isset($serendipity['is_staticpage']) && !isset($eventData['plugin_vars']['tag'])) {
+                    if (empty($serendipity['GET']['preview']) && in_array($serendipity['view'], ['archives', 'entry', 'categories', 'plugin']) && (isset($eventData['id']) || (!isset($serendipity['viewtype']) || $serendipity['viewtype'] != '404_4')) && !isset($serendipity['is_staticpage']) && !isset($eventData['plugin_vars']['tag'])) {
                         // entry views
                         if (isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
                             $links[] = '<a href="' . $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/articlepdf_' . $serendipity['GET']['id'] . '">' . PLUGIN_EVENT_BLOGPDF_VIEW_ENTRY . '</a>';
@@ -120,7 +120,7 @@ class serendipity_event_blogpdf extends serendipity_event
                         }
 
                         // entries summary pages
-                        if (empty($year) && $serendipity['view'] == 'archives' && $serendipity['short_archives'] == true && $serendipity['uriArguments'][3] == 'summary') {
+                        if (empty($year) && $serendipity['view'] == 'archives' && isset($serendipity['short_archives']) && $serendipity['short_archives'] == true && $serendipity['uriArguments'][3] == 'summary') {
                             $year  = $serendipity['uriArguments'][1] ?? date('Y', serendipity_serverOffsetHour());
                             $month = $serendipity['uriArguments'][2] ?? date('m', serendipity_serverOffsetHour());
                         }
