@@ -1,3 +1,7 @@
+3.05:
+-----
+ * Follow a consistency cleanup for fetching serendipity_fetchEntry() calls
+
 3.04:
 -----
  * Fix PHP 8.1 preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
