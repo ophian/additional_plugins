@@ -1,3 +1,8 @@
+2.29:
+-----
+ * Follow a consistency cleanup for fetching serendipity_fetchEntry() calls
+ * Remove some redundant global sets
+
 2.28:
 -----
  * Always indicate source of where frontend_display is called (as Standard since 07/2007)
