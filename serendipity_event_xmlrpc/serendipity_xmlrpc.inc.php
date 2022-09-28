@@ -1031,7 +1031,7 @@ function metaWeblog_getRecentPosts($message) {
     $xml_entries_vals = array();
 
     foreach ((array)$entries AS $tentry) {
-        $entry = serendipity_fetchEntry('id', $tentry['id'], true, 'true');
+        $entry = serendipity_fetchEntry('id', $tentry['id']);
         serendipity_plugin_api::hook_event('xmlrpc_fetchEntry', $entry);
         if ($entry['id']) {
             $xml_entries_vals[] = metaWeblog_createPostRpcValue($entry);
