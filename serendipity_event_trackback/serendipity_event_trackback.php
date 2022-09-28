@@ -19,7 +19,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '1.35');
+        $propbag->add('version',       '1.36');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -296,7 +296,7 @@ class serendipity_event_trackback extends serendipity_event
                 if ($entry['timestamp'] <= serendipity_serverOffsetHour()) {
                     include_once S9Y_INCLUDE_PATH . 'include/functions_trackbacks.inc.php';
 
-                    $stored_entry = serendipity_fetchEntry('id', $entry['id'], 1, 1);
+                    $stored_entry = serendipity_fetchEntry('id', $entry['id']);
 
                     if (isset($_SESSION['serendipityRightPublish'])) {
                         $oldPublighRights = $_SESSION['serendipityRightPublish'];

@@ -1,3 +1,7 @@
+1.36:
+-----
+ * Follow a consistency cleanup for fetching serendipity_fetchEntry() calls
+
 1.35:
 -----
   * Fix count check of existing table for db_upgrade again with known to fail API param
