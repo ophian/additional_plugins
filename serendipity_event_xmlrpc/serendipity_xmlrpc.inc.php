@@ -198,6 +198,7 @@ function wp_uploadFile($message) {
 
 function wp_getCategories($message) {
     global $serendipity;
+
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -230,8 +231,6 @@ function wp_getCategories($message) {
 }
 
 function wp_newCategory($message) {
-    global $serendipity;
-
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -258,8 +257,6 @@ function wp_newCategory($message) {
 }
 
 function wp_getPostFormats( $message ) {
-    global $serendipity;
-
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -298,8 +295,6 @@ function wp_getPostFormats( $message ) {
 
 // wp.getPostStatusList
 function wp_getPostStatusList($message) {
-    global $serendipity;
-
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -320,8 +315,6 @@ function wp_getPostStatusList($message) {
 }
 
 function wp_getPageStatusList($message) {
-    global $serendipity;
-
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -341,8 +334,6 @@ function wp_getPageStatusList($message) {
 }
 
 function wp_getCommentStatusList($message) {
-    global $serendipity;
-
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -361,8 +352,6 @@ function wp_getCommentStatusList($message) {
 }
 
 function wp_getPageTemplates($message) {
-    global $serendipity;
-
     universal_debug("wp.getPostStatusList");
 
     $val = $message->params[1];
@@ -416,9 +405,9 @@ function wp_getOptions($message) {
         $xml_entries_vals['blog_url'] = wp_getOptions_createOption('blog_url', $serendipity['baseURL']);
     if (!$doFilter || in_array('blog_title', $filter))
         $xml_entries_vals['blog_title'] = wp_getOptions_createOption('blog_title', $serendipity['blogTitle']);
+
     $xml_entries = new XML_RPC_Value($xml_entries_vals, 'struct');
     return new XML_RPC_Response($xml_entries);
-
 }
 
 /**
@@ -440,8 +429,6 @@ function wp_getOptions_createOption($desc, $value, $readonly=true) {
 
 // Get an array of all the pages on a blog.
 function wp_getPage($message) {
-    global $serendipity;
-
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -460,8 +447,6 @@ function wp_getPage($message) {
 
 // Get an array of all the pages on a blog.
 function wp_getPages($message) {
-    global $serendipity;
-
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -479,7 +464,6 @@ function wp_getPages($message) {
 }
 
 function wp_editPage($message) {
-    global $serendipity;
     // TODO: stub
     $return = true;
     return new XML_RPC_Value($return, 'boolean');
@@ -505,8 +489,6 @@ function wp_apiArray($message) {
 
 // Get an array of all the pages on a blog. Just the minimum details, lighter than wp.getPages.
 function wp_getPageList($message) {
-    global $serendipity;
-
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -564,7 +546,6 @@ function wp_getTags($message) {
 
     $xml_entries = new XML_RPC_Value($xml_entries_vals, 'array');
     return new XML_RPC_Response($xml_entries);
-
 }
 
 function wp_getComment($message) {
@@ -808,7 +789,6 @@ function wp_newComment($message) {
 }
 
 function wp_getPosts($message) {
-    global $serendipity;
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -910,6 +890,7 @@ function blogger_getUsersBlogs($message) {
 
 function blogger_getUserInfo($message) {
     global $serendipity;
+
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -931,6 +912,7 @@ function blogger_getUserInfo($message) {
 
 function blogger_getRecentPosts($message) {
     global $serendipity;
+
     $val = $message->params[2];
     $username = $val->getval();
     $val = $message->params[3];
@@ -965,7 +947,6 @@ function blogger_getRecentPosts($message) {
 }
 
 function blogger_getPost($message) {
-    global $serendipity;
     $val = $message->params[1];
     $postid = $val->getval();
     $val = $message->params[2];
@@ -976,7 +957,7 @@ function blogger_getPost($message) {
         return new XML_RPC_Response('', XMLRPC_ERR_CODE_AUTHFAILED, XMLRPC_ERR_NAME_AUTHFAILED);
     }
 
-    $entry = serendipity_fetchEntry('id', $postid, true, 'true');
+    $entry = serendipity_fetchEntry('id', $postid);
     $entry = new XML_RPC_Value(blogger_setEntry($entry), 'struct');
     return new XML_RPC_Response($entry);
 }
@@ -1034,7 +1015,6 @@ function mt_getCategoryList($message) {
 }
 
 function metaWeblog_getRecentPosts($message) {
-    global $serendipity;
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -1060,11 +1040,11 @@ function metaWeblog_getRecentPosts($message) {
     $xml_entries = new XML_RPC_Value($xml_entries_vals, 'array');
     //universal_debug("rescentPosts: " . print_r($xml_entries,true));
     return new XML_RPC_Response($xml_entries);
-
 }
 
 function mt_getRecentPostTitles($message) {
     global $serendipity;
+
     $val = $message->params[1];
     $username = $val->getval();
     $val = $message->params[2];
@@ -1108,6 +1088,7 @@ function mt_supportedTextFilters($message) {
 
 function blogger_newPost($message) {
     global $serendipity;
+
     $val = $message->params[2];
     $username = $val->getval();
     $val = $message->params[3];
@@ -1189,8 +1170,6 @@ function blogger_deletePost($message) {
 }
 
 function universal_fetchCategories($post_categories) {
-    global $serendipity;
-
     $categories = array();
     if (is_array($post_categories)) {
         if (is_array($post_categories[0])) { // if it is a cat_id hash
@@ -1341,8 +1320,6 @@ function metaWeblog_newPost($message) {
 }
 
 function metaWeblog_publishPost($message) {
-    global $serendipity;
-
     $val = $message->params[0];
     $postid = $val->getval();
     $val = $message->params[1];
@@ -1437,7 +1414,7 @@ function metaWeblog_editPost($message) {
         $entry['timestamp']  = $timestamp;
     }
     else { // Get the original date, if no new date was defined
-        $oldEntry = serendipity_fetchEntry('id', $postid, true, 'true');
+        $oldEntry = serendipity_fetchEntry('id', $postid);
         $entry['timestamp'] = $oldEntry['timestamp'];
     }
     ob_start();
@@ -1450,7 +1427,6 @@ function metaWeblog_editPost($message) {
 
     // Apply password has to be after serendipity_updertEntry, else it will override it empty!
     universal_save_entrypassword($postid, isset($post_array['wp_password'])?$post_array['wp_password']:null);
-
 
     //if plugins want to manage it, let's instantiate all non managed meta
     if ($id) {
@@ -1504,6 +1480,7 @@ function universal_save_entrypassword($entryId, $password){
  */
 function metaWeblog_createPostRpcValue($entry) {
     global $serendipity;
+
     $values =             array(
         'dateCreated'       => new XML_RPC_Value(XML_RPC_iso8601_encode($entry['timestamp'], $serendipity['XMLRPC_GMT']) . ($serendipity['XMLRPC_GMT'] ? 'Z' : ''), 'dateTime.iso8601'),
         'postid'            => new XML_RPC_Value($entry['id'], 'string'),
@@ -1570,7 +1547,6 @@ function metaWeblog_createPostRpcValue($entry) {
 }
 
 function metaWeblog_getPost($message) {
-    global $serendipity;
     $val = $message->params[0];
     $postid = $val->getval();
     $val = $message->params[1];
@@ -1581,7 +1557,7 @@ function metaWeblog_getPost($message) {
         return new XML_RPC_Response('', XMLRPC_ERR_CODE_AUTHFAILED, XMLRPC_ERR_NAME_AUTHFAILED);
     }
 
-    $entry = serendipity_fetchEntry('id', $postid, true, 'true');
+    $entry = serendipity_fetchEntry('id', $postid);
     //if plugins want to manage it, let's get all non managed meta
 
     if ($entry["id"]) {
@@ -1614,7 +1590,6 @@ function metaWeblog_deletePost($message) {
 }
 
 function metaWeblog_setPostCategories($message) {
-    global $serendipity;
     $val = $message->params[0];
     $postid = $val->getval();
     $val = $message->params[1];
@@ -1628,7 +1603,7 @@ function metaWeblog_setPostCategories($message) {
     }
 
     $category_ids = universal_fetchCategories(XML_RPC_decode($categories), true); // before: $categories->getval() instead of XML_RPC_decode
-    $entry = serendipity_fetchEntry('id', $postid, true, 'true');
+    $entry = serendipity_fetchEntry('id', $postid);
 
     if ($entry['id']) {
         $entry['categories'] = $category_ids;
@@ -1653,7 +1628,7 @@ function metaWeblog_getPostCategories($message) {
         return new XML_RPC_Response('', XMLRPC_ERR_CODE_AUTHFAILED, XMLRPC_ERR_NAME_AUTHFAILED);
     }
 
-    $entry = serendipity_fetchEntry('id', (int)$postid, true, 'true');
+    $entry = serendipity_fetchEntry('id', (int)$postid);
 
     $categories = array();
     if (is_array($entry['categories'])) {
@@ -1782,6 +1757,7 @@ function mt_supportedMethods($message) {
 
 function universal_setEntry(&$entry, &$tmp) {
     global $serendipity;
+
     $tmp = array(
         'dateCreated'       => new XML_RPC_Value(XML_RPC_iso8601_encode($entry['timestamp'], $serendipity['XMLRPC_GMT']) . ($serendipity['XMLRPC_GMT'] ? 'Z' : ''), 'dateTime.iso8601'),
         'postid'            => new XML_RPC_Value($entry['id'], 'string'),
@@ -1802,6 +1778,7 @@ function universal_setEntry(&$entry, &$tmp) {
 
 function universal_fixEntry(&$entry) {
     global $serendipity;
+
     unset($entry['properties']);
 
     if (empty($entry['timestamp']) || $entry['timestamp'] == 0) {
@@ -1818,6 +1795,8 @@ function universal_fixEntry(&$entry) {
 }
 
 function universal_updertEntry(&$entry) {
+    global $serendipity;
+
     // The permission check is only executed, if this is set:
     $serendipity['GET']['adminModule'] = 'entries';
     return serendipity_updertEntry($entry);
@@ -1845,11 +1824,11 @@ function universal_updateComment($cid, $entry_id, $entry_authorid, &$comment) {
 function universal_splitMore(&$entry, &$body) {
     $parts = explode('<!--more-->', $body, 2);
     if (count($parts)>1) {
-        $entry['body']              = universal_autohtml($parts[0]);
-        $entry['extended']          = universal_autohtml($parts[1]);
+        $entry['body'] = universal_autohtml($parts[0]);
+        $entry['extended'] = universal_autohtml($parts[1]);
     }
     else {
-        $entry['body']              = universal_autohtml($body);
+        $entry['body'] = universal_autohtml($body);
     }
     return $entry;
 }

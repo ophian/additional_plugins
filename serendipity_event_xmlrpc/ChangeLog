@@ -1,3 +1,8 @@
+1.79:
+-----
+ * Follow a consistency cleanup for fetching serendipity_fetchEntry() calls
+ * Remove some redundant global sets
+
 Version 1.78:
   * Add conceptional root namespace to error exception handling for consistency
 
