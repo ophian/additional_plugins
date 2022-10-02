@@ -1,3 +1,7 @@
+1.07:
+-----
+ * Fixup $plugin_data['p']->markup_elements check for PHP 8
+
 1.06:
 -----
  * Declare title for plugins accessing objects title, eg. entryproperties disable_markups in entry option

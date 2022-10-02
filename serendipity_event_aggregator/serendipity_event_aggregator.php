@@ -71,7 +71,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '1.06');
+        $propbag->add('version',       '1.07');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -127,7 +127,7 @@ class serendipity_event_aggregator extends serendipity_event
 
                 if (is_array($plugins)) {
                     foreach($plugins AS $plugin => &$plugin_data) {
-                        if (!isset($plugin_data['p']->markup_elements) || !is_array($plugin_data['p']->markup_elements)) {
+                        if (!isset($plugin_data['p']->markup_elements) || !is_array(@$plugin_data['p']->markup_elements) || empty($plugin_data['p']->markup_elements)) {
                             continue;
                         }
                         $markups[$plugin_data['p']->instance] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($plugin_data['p']->title) : htmlspecialchars($plugin_data['p']->title, ENT_COMPAT, LANG_CHARSET));
