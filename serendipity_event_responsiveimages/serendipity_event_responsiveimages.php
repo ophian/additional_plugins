@@ -18,7 +18,7 @@ class serendipity_event_responsiveimages extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_RESPONSIVE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.7');
+        $propbag->add('version',       '1.8');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0.0',
             'php'         => '7.3.0'
@@ -241,8 +241,13 @@ class serendipity_event_responsiveimages extends serendipity_event
         }
         // 2 == there is the original thumbnail without a dimension, and one thumbnail for the smallest breakpoint
         if (count($thumbnails) == 2) {
-            // When the smallest thumbnail is the only responsive thumbnail our original image will be needed to as part of the srcset, otherwise we too often upscale the small thumbnail
-            $srcset .= "$imagePath {$origImage['dimensions_width']}w,";
+            if ($origImage['dimensions_width'] < end($this->breakpoints)) {
+                // It is better to just use the original image
+                $srcset = "srcset=\"$imagePath {$origImage['dimensions_width']}w";
+            } else {
+                // When the smallest thumbnail is the only responsive thumbnail our original image will be needed to as part of the srcset, otherwise we too often upscale the small thumbnail
+                $srcset .= "$imagePath {$origImage['dimensions_width']}w,";
+            }
         }
 
         if (substr($srcset, -strlen(',')) === ',') {
