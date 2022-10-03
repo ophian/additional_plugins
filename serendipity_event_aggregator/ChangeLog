@@ -1,3 +1,7 @@
+1.08:
+-----
+ * Fixup for PHP 8.1 and PHP 8.2
+
 1.07:
 -----
  * Fixup $plugin_data['p']->markup_elements check for PHP 8
