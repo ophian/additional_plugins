@@ -71,7 +71,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '1.08');
+        $propbag->add('version',       '1.09');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -269,7 +269,7 @@ class serendipity_event_aggregator extends serendipity_event
 
         # Schema extension (version 4)
         if ($this->get_config('db_version') < 4) {
-            $sql = "ALTER TABLE {$serendipity['dbPrefix']}aggregator_feeds
+            $sql = "@ALTER TABLE {$serendipity['dbPrefix']}aggregator_feeds
                           ADD COLUMN charset varchar(255);";
             serendipity_db_schema_import($sql);
 

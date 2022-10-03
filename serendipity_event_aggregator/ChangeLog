@@ -1,3 +1,8 @@
+1.09:
+-----
+ * Fixup for PHP 8.1 and PHP 8.2 uncaught MYSQLI_SQL_EXCEPTION: Duplicate column name 'charset'
+   for db_version update 4, not using the serendipity_db_schema_import expecting error silencer.
+
 1.08:
 -----
  * Fixup for PHP 8.1 and PHP 8.2
