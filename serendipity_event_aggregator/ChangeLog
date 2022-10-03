@@ -1,3 +1,8 @@
+1.10:
+-----
+ * Fixup some more variable usage for PHP 8.1+ (like feed array 'charset' fallback to 'UTF-8', missing md5hash, isset array parts which may be not set etc.)
+ * Raises PHP requirement
+
 1.09:
 -----
  * Fixup for uncaught MYSQLI_SQL_EXCEPTION: Duplicate column name 'charset' for db_version update 4,

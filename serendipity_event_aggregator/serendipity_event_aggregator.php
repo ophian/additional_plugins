@@ -69,9 +69,9 @@ class serendipity_event_aggregator extends serendipity_event
         $propbag->add('requirements',  array(
             'serendipity' => '2.2',
             'smarty'      => '3.1.0',
-            'php'         => '5.2.0'
+            'php'         => '7.0.0'
         ));
-        $propbag->add('version',       '1.09');
+        $propbag->add('version',       '1.10');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -574,6 +574,8 @@ class serendipity_event_aggregator extends serendipity_event
             $res = serendipity_db_query($query);
         }
 
+        $array['charset'] = $array['charset'] ?? 'UTF-8';
+
         $r = serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}aggregator_feeds
                                                  (feedname, feedurl, htmlurl, charset, match_expression, feedicon, last_update)
                                         VALUES ('" . serendipity_db_escape_string($array['feedname']) . "',
@@ -598,6 +600,7 @@ class serendipity_event_aggregator extends serendipity_event
     function insertFeedCats($idx, $categories)
     {
         global $serendipity;
+
         if (!is_array($categories)) {
             return true;
         }
@@ -788,6 +791,7 @@ class serendipity_event_aggregator extends serendipity_event
     function serendipity_addCategory($name, $desc, $authorid, $icon, $parentid)
     {
         global $serendipity;
+
         $query = "INSERT INTO {$serendipity['dbPrefix']}category
                         (category_name, category_description, authorid, category_icon, parentid, category_left, category_right)
                       VALUES
@@ -996,7 +1000,7 @@ class serendipity_event_aggregator extends serendipity_event
 
             $sql = "INSERT INTO {$serendipity['dbPrefix']}entryproperties
                                 (entryid, property, value)
-                         VALUES ('$entryid', 'ep_aggregator_categoryid', '" . serendipity_db_escape_string($feed['categoryid']) . "')";
+                         VALUES ('$entryid', 'ep_aggregator_categoryid', '" . serendipity_db_escape_string($feed['categoryid'] ?? '') . "')";
             serendipity_db_query($sql);
 
             $sql = "INSERT INTO {$serendipity['dbPrefix']}entryproperties
@@ -1039,18 +1043,19 @@ class serendipity_event_aggregator extends serendipity_event
             serendipity_db_query($sql);
         }
 
+        $md5hash = md5($entryid . $feed['articleurl'] . $feed['last_update']);
+
         # Always update the MD5 hash, to catch updates of an entry properly. Patch by jerwarren!
-        $sql = "UPDATE {$serendipity['dbPrefix']}aggregator_md5   SET timestamp = '$t', md5='$md5hash' WHERE entryid = " . (int)$entryid;
+        $sql = "UPDATE {$serendipity['dbPrefix']}aggregator_md5 SET timestamp = '$t', md5='$md5hash' WHERE entryid = " . (int)$entryid;
         serendipity_db_query($sql);
     }
 
     function decode($charset, &$array)
     {
-        if (LANG_CHARSET == 'ISO-8859-1' || LANG_CHARSET == 'UTF-8')
-        {
-        // Luckily PHP5 supports
-        // xml_parser_set_option($this->parser, XML_OPTION_TARGET_ENCODING, LANG_CHARSET);
-        // which means we need no transcoding here.
+        if (LANG_CHARSET == 'ISO-8859-1' || LANG_CHARSET == 'UTF-8') {
+            // Luckily PHP5 supports
+            // xml_parser_set_option($this->parser, XML_OPTION_TARGET_ENCODING, LANG_CHARSET);
+            // which means we need no transcoding here.
             return true;
         }
         if ($charset == LANG_CHARSET) {
@@ -1306,7 +1311,7 @@ class serendipity_event_aggregator extends serendipity_event
                             );
                     }
                 } else {
-                    $ep_id = $cache_entries[$item['title']][$feed_authorid][$item['date']];
+                    $ep_id = $cache_entries[$item['title']][$feed_authorid][$item['date']] ?? null;
                     if ($this->debug) {
                             printf("DEBUG: lookup cache_entries[%s][%s][%s] finds %s.\n",
                                 $item['title'],
@@ -1340,7 +1345,7 @@ class serendipity_event_aggregator extends serendipity_event
 
                 // ----------------------------------------------------------
                 //    CLSC: Added a few flavours
-                if ($item['content:encoded']) {
+                if (isset($item['content:encoded'])) {
                     $entry['body'] = $item['content:encoded'];
                 } elseif ($item['description']) {
                     $entry['body'] = $item['description'];
