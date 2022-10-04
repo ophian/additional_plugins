@@ -71,7 +71,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '7.0.0'
         ));
-        $propbag->add('version',       '1.10');
+        $propbag->add('version',       '1.11');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -565,12 +565,15 @@ class serendipity_event_aggregator extends serendipity_event
                     FROM {$serendipity['dbPrefix']}authors
                    WHERE realname='" . serendipity_db_escape_string($array['feedname']) . "'";
         if (!is_array($res = serendipity_db_query($query))) {
-            serendipity_db_insert('authors', array('username'      => $array['feedname'],
-                                                   'realname'      => $array['feedname'],
-                                                   'password'      => md5(mt_rand()),
+            serendipity_db_insert('authors', array('realname'      => $array['feedname'],
+                                                   'username'      => $array['feedname'],
+                                                   'password'      => serendipity_hash(mt_rand()),
+                                                   'mail_comments' => 0,
+                                                   'mail_trackbacks' => 0,
                                                    'email'         => $array['htmlurl'],
                                                    'userlevel'     => 0,
-                                                   'right_publish' => 1));
+                                                   'right_publish' => 1,
+                                                   'hashtype'      => 2));
             $res = serendipity_db_query($query);
         }
 
@@ -1198,9 +1201,8 @@ class serendipity_event_aggregator extends serendipity_event
         foreach($feeds AS $feed) {
             if (empty($opt['store_separate'])) printf("Read %s.\n", $feed['feedurl']);
             flush();
-            $feed_authorid = $cache_authors[$feed['feedname']];
-            if (empty($feed_authorid))
-            {
+            $feed_authorid = $cache_authors[$feed['feedname']] ?? 0;
+            if (empty($feed_authorid)) {
                 $feed_authorid = 0;
             }
             if ($this->debug) printf("DEBUG: Current authorid = %d\n", $feed_authorid);

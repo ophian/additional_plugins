@@ -26,7 +26,7 @@
 @define('PLUGIN_AGGREGATOR_CATEGORYSKIPPED', 'Überspringe Kategorie "%s" da sie bereits besteht.');
 
 @define('PLUGIN_AGGREGATOR_EXPIRE', 'Artikel entfernen');
-@define('PLUGIN_AGGREGATOR_EXPIRE_BLAHBLAH', 'Alte Artikel werden nach n Tagen aus der Datenbank entfernt (0 = Nie).');
+@define('PLUGIN_AGGREGATOR_EXPIRE_BLAHBLAH', 'Alte Artikel werden nach n Tagen aus der Datenbank entfernt (0 = Nie). Ebenso, sind die zu beziehenden Feed Einträge älter als n Tage, werden sie gar nicht erst bezogen (0 = Alle).');
 @define('PLUGIN_AGGREGATOR_EXPIRE_MD5', 'Prüfsummen entfernen');
 @define('PLUGIN_AGGREGATOR_EXPIRE_MD5_BLAHBLAH', 'Prüfsummen werden verwendet, um Artikel ohne Datum wieder zu erkennen. Nach wieviel Tagen sollen die Prüfsummen aus der Datenbank entfernt werden? (90 = empfohlen, 0 = Nie).');
 @define('PLUGIN_AGGREGATOR_DELETEDEPENDENCIES', 'Nicht mehr verkettete Einträge löschen');

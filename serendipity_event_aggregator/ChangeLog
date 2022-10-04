@@ -1,3 +1,8 @@
+1.11:
+-----
+ * Fix pushing/adding new author(s). Welcome to Serendipity 2.0 plus!
+ * Fixup/Improve PLUGIN_AGGREGATOR_EXPIRE_BLAHBLAH [en, de] for "also fetching feeds" relation
+
 1.10:
 -----
  * Fixup some more variable usage for PHP 8.1+ (like feed array 'charset' fallback to 'UTF-8', missing md5hash, isset array parts which may be not set etc.)
