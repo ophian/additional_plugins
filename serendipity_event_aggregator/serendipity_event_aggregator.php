@@ -71,7 +71,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '7.0.0'
         ));
-        $propbag->add('version',       '1.11');
+        $propbag->add('version',       '1.12');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -391,6 +391,7 @@ class serendipity_event_aggregator extends serendipity_event
                 } elseif (empty($array['feedurl']) || empty($array['feedname'])) {
                     echo '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_AGGREGATOR_FEED_MISSINGDATA . '</div>';
                 } else {
+                    $array['charset'] = $array['charset'] ?? rtrim($serendipity['charset'], '/');
                     $this->insertFeed($array);
                 }
             } elseif (is_numeric($idx)) {
@@ -413,6 +414,7 @@ class serendipity_event_aggregator extends serendipity_event
         $d = serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}references      WHERE entry_id IN (" . implode(", ", $id_list) . ")");
         $e = serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}exits           WHERE entry_id IN (" . implode(", ", $id_list) . ")");
 
+        if ($a === true) echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_AGGREGATOR_SUCCESS_PURGE . '</span>';
         return true;
     }
 
@@ -449,7 +451,7 @@ class serendipity_event_aggregator extends serendipity_event
 
         $this->purgeEntries($id_list);
 
-        return ;
+        return;
     }
 
     function purgeMD5($id_list)
@@ -485,7 +487,7 @@ class serendipity_event_aggregator extends serendipity_event
 
         $this->purgeMD5($id_list);
 
-        return ;
+        return;
     }
 
     function expireFeeds()
@@ -576,8 +578,6 @@ class serendipity_event_aggregator extends serendipity_event
                                                    'hashtype'      => 2));
             $res = serendipity_db_query($query);
         }
-
-        $array['charset'] = $array['charset'] ?? 'UTF-8';
 
         $r = serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}aggregator_feeds
                                                  (feedname, feedurl, htmlurl, charset, match_expression, feedicon, last_update)
@@ -687,15 +687,16 @@ class serendipity_event_aggregator extends serendipity_event
                 <input type="hidden" name="serendipity[adminModule]" value="event_display" />
                 <input type="hidden" name="serendipity[adminAction]" value="aggregator" />
             </div>';
+        echo '<style> table th:nth-child(n+2) { min-width: 8em; } .ag_legend { display: block; line-height: 2; font-weight: bold; } .ag_long { width: 100%; } .ag_short { width: 90%; margin-top: 2px; } .ag_tiny { font-size: 8pt; } </style>';
         echo '<table>';
         echo '
             <thead>
                 <tr>
                     <th>#</th>
                     <th>' . PLUGIN_AGGREGATOR_FEEDNAME . '</th>
-                    <th>' . PLUGIN_AGGREGATOR_FEEDURI . ' / ' . PLUGIN_AGGREGATOR_HTMLURI . '</th>
+                    <th>' . PLUGIN_AGGREGATOR_FEEDURI . '</th>
                     <th>' . PLUGIN_AGGREGATOR_CATEGORIES . '</th>
-                    <th>' . PLUGIN_AGGREGATOR_MATCH_EXPRESSION . '* / ' . PLUGIN_AGGREGATOR_FEEDICON . '</th>
+                    <th>' . PLUGIN_AGGREGATOR_MATCH_EXPRESSION . '</th>
                 </tr>
             </thead>
             <tbody>';
@@ -704,25 +705,28 @@ class serendipity_event_aggregator extends serendipity_event
         foreach($feeds AS $idx => $feed) {
             $cat = $this->fetchCat("serendipity[feed][{$feed['feedid']}][categoryids][]", $feed['categoryids']);
             $even = ($evenidx++ % 2 ? 'even' : 'uneven');
+            // removed for deprecation
+#                    <span class="ag_legend">' . PLUGIN_AGGREGATOR_FEEDICON . ':</span>
+#                    <input class="input_textbox ag_short" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedicon]" value="' . serendipity_specialchars($feed['feedicon']) . '" />
             echo '
             <tr style="padding: 10px;" class="serendipity_admin_list_item serendipity_admin_list_item_' . $even . '">
                 <td valign="top"><em>' . $idx . '</em></td>
                 <td valign="top">
-                    <input class="input_textbox" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedname]" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($feed['feedname']) : htmlspecialchars($feed['feedname'], ENT_COMPAT, LANG_CHARSET)) . '" /> ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($feed['charset']) : htmlspecialchars($feed['charset'], ENT_COMPAT, LANG_CHARSET)) . '
+                    <input class="input_textbox" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedname]" value="' . serendipity_specialchars($feed['feedname']) . '" />
+                    <span class="ag_legend">' . PLUGIN_AGGREGATOR_HTMLURI . ':</span>
+                    ' . serendipity_specialchars($feed['charset']) . '
                 </td>
                 <td width="100%" valign="top">
-                    <input class="input_textbox" style="width: 100%" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedurl]" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($feed['feedurl']) : htmlspecialchars($feed['feedurl'], ENT_COMPAT, LANG_CHARSET)) . '" />
-                    <input class="input_textbox" style="width: 65%; margin-top: 2px;" type="text" name="serendipity[feed][' . $feed['feedid'] . '][htmlurl]" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($feed['htmlurl']) : htmlspecialchars($feed['htmlurl'], ENT_COMPAT, LANG_CHARSET)) . '" />
+                    <input class="input_textbox ag_long" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedurl]" value="' . serendipity_specialchars($feed['feedurl']) . '" />
+                    <input class="input_textbox ag_short" type="text" name="serendipity[feed][' . $feed['feedid'] . '][htmlurl]" value="' . serendipity_specialchars($feed['htmlurl']) . '" />
                 </td>
                 <td valign="top" rowspan="2">' . $cat . '</td>
-                <td valign="top" rowspan="2"><textarea rows=6 cols=25 name="serendipity[feed][' . $feed['feedid'] . '][match_expression]">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($feed['match_expression']) : htmlspecialchars($feed['match_expression'], ENT_COMPAT, LANG_CHARSET)) . '</textarea><br />
-                    <input class="input_textbox" style="width: 65%; margin-top: 2px;" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedicon]" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($feed['feedicon']) : htmlspecialchars($feed['feedicon'], ENT_COMPAT, LANG_CHARSET)) . '" />
-
+                <td valign="top" rowspan="2"><textarea rows=6 cols=25 name="serendipity[feed][' . $feed['feedid'] . '][match_expression]">' . serendipity_specialchars($feed['match_expression']) . '</textarea></td>
             </tr>
             <tr style="padding: 10px;" class="serendipity_admin_list_item serendipity_admin_list_item_' . $even . '">
                 <td></td>
                 <td colspan="2" valign="top">
-                    <div style="font-size: 8pt;">' . PLUGIN_AGGREGATOR_FEEDUPDATE . ' ' . serendipity_formatTime(DATE_FORMAT_SHORT, $feed['last_update']) . '</div>
+                    <div class="ag_tiny">' . PLUGIN_AGGREGATOR_FEEDUPDATE . ' ' . serendipity_formatTime(DATE_FORMAT_SHORT, $feed['last_update']) . '</div>
                 </td>
             </tr>';
         }
@@ -1158,7 +1162,7 @@ class serendipity_event_aggregator extends serendipity_event
         $cache_md5     = array();
 
         $sql_cache_authors = serendipity_db_Query("SELECT authorid, realname
-                                                 FROM {$serendipity['dbPrefix']}authors");
+                                                     FROM {$serendipity['dbPrefix']}authors");
         if (is_array($sql_cache_authors)) {
             foreach($sql_cache_authors AS $idx => $author) {
                 $cache_authors[$author['realname']] = $author['authorid'];
@@ -1189,7 +1193,7 @@ class serendipity_event_aggregator extends serendipity_event
         if ($this->debug) printf("DEBUG: cache_entries['title']['authorid']['timestamp'] = entryid has %d entries.\n", count($cache_entries));
 
         $sql_cache_md5 = serendipity_db_query("SELECT entryid, md5, timestamp
-                                                     FROM {$serendipity['dbPrefix']}aggregator_md5");
+                                                 FROM {$serendipity['dbPrefix']}aggregator_md5");
         if (is_array($sql_cache_md5)) {
             foreach($sql_cache_md5 AS $idx => $entry) {
                 $cache_md5[$entry['md5']]['entryid'] = $entry['entryid'];

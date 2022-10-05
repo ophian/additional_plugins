@@ -1,3 +1,10 @@
+1.12:
+-----
+ * Add message for cleanup and manual cleanup the authors table
+ * Improve the form
+ * Remove the feedicon input field for non-usage
+ * Improve and fix some lang constants
+
 1.11:
 -----
  * Fix pushing/adding new author(s). Welcome to Serendipity 2.0 plus!

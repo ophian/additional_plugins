@@ -37,7 +37,7 @@
 @define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE', 'RSS Parser wählen');
 @define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onyx ist ein BSD-lizensierter Parser, der aber kein ATOM unterstützt. SimplePie ist modern, wird aktiv entwickelt, und funktioniert!');
 
-@define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION', 'Filter-Ausdruck');
+@define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION', 'Filter (*)');
 @define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION_DESC', 'Hier kann ein regulärer Ausdruck eingetragen werden, der auf jeden Feed-Artikel (Titel und Inhalt) angewandt wird, und diesen nur einfügt wenn das Muster zutrifft. Wenn der Filter leer gelassen wird, wird kein Filtervergleich durchgeführt. Mehrere reguläre Ausdrücke können durch das ~ Zeichen (Tilde) getrennt werden, und werden ODER-kombiniert.');
 
 // Next lines were translated on 2011/11/22
@@ -49,4 +49,6 @@
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE', 'Deaktiviere Formatierungs-Plugins für aggregierte Einträge');
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE_DESC', 'Markiere die Formatierungs-Plugins, welche nicht auf aggregierte Einträge angewandt werden sollen.');
 @define('PLUGIN_AGGREGATOR_FEEDICON', 'Feed Icon URL');
+
+@define('PLUGIN_AGGREGATOR_SUCCESS_PURGE', 'Die Datenbanktabellen: "entries", "entrycat", "entryproperties", "references" und "exits" sind bereinigt worden. Nur die Tabelle "authors" wurde nicht berührt. Der Sauberkeit und Sicherheit halber sollten Sie den Autor mit dem Realnamen des soeben bereinigten Feednamens selbst entfernen, wenn dieser nur zu diesem Zweck existiert.');
 

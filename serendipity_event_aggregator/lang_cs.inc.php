@@ -42,7 +42,7 @@
 @define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE', 'Vybrat RSS parser');
 @define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onys je distribuován pod BSD licencí, ale nepodporuje kanály typu ATOM.');
 @define('PLUGIN_AGGREGATOR_CRONJOB', 'Tento plugin využívá Serendipity plugin Cronjob. Nainstalujte jej, pokud potøebujete využívat pravidelnì opakované aktualizace.');
-@define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION', 'Filtr');
+@define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION', 'Filtr (*)');
 @define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION_DESC', 'Zde lze zadat regulární výraz, kterým se bude porovnávat obsah pøíspìvku (nadpis a tìlo) a tento pøíspìvek se vloží do bogu, pouze pokud obsahuje zde zadaný vzor. Pokud je ponecháno prázdné, žádné porovnávání se neprovádí. Více výrazù mùže být oddìleno znakem ~ (vlnovka = tilda) a jsou kombinovány podle logiky OR (nebo = pokud èlánek obsahuje alespoò jeden z výrazù, je pøijat).');
 
 @define('PLUGIN_AGGREGATOR_PUBLISH', 'Uložit agregované pøíspìvky jako...');

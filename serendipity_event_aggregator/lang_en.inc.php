@@ -16,7 +16,7 @@
 @define('PLUGIN_AGGREGATOR_HTMLURI_DESC', 'The HTML address of the feed.');
 @define('PLUGIN_AGGREGATOR_CATEGORIES', 'Categories');
 
-@define('PLUGIN_AGGREGATOR_FEEDLIST', 'This is your list of available feeds. You can either enter the feeds manually one by one and press on the "GO" button, or you can import a whole OPML file. Feeds can be deleted by setting an empty Feedname or empty Feed URL. New feeds can be inserted in the last row of the table.');
+@define('PLUGIN_AGGREGATOR_FEEDLIST', 'This is your list of available feeds. You can either enter the feeds manually one by one and press on the "GO" button, or you can import a whole OPML file. Feeds can be deleted by setting an empty feedname or empty Feed URL. New feeds can be inserted in the last row of the table.');
 @define('PLUGIN_AGGREGATOR_FEEDUPDATE', 'Last update');
 @define('PLUGIN_AGGREGATOR_FEED_MISSINGDATA', 'You must specify a feedname and URL.');
 @define('PLUGIN_AGGREGATOR_EXPORTFEEDLIST', 'Export OPML feedlist');
@@ -33,15 +33,15 @@
 @define('PLUGIN_AGGREGATOR_EXPIRE_MD5', 'Expire checksums');
 @define('PLUGIN_AGGREGATOR_EXPIRE_MD5_BLAHBLAH', 'Checksums are being used to check articles without dates against duplicates. After how many days shall the checksums expire? (90 = recommended, 0 = Never).');
 @define('PLUGIN_AGGREGATOR_DELETEDEPENDENCIES', 'Remove dependent entries?');
-@define('PLUGIN_AGGREGATOR_DELETEDEPENDENCIES_DESC', 'When a Feed is unsubscribed and this option is enabled, all associated entries to this feed are erased.');
+@define('PLUGIN_AGGREGATOR_DELETEDEPENDENCIES_DESC', 'When a Feed is unsubscripted and this option is enabled, all associated entries to this feed are erased.');
 @define('PLUGIN_AGGREGATOR_DEBUG', 'Debug Output');
 @define('PLUGIN_AGGREGATOR_DEBUG_BLAHBLAH', 'Enable debug output in log?');
 @define('PLUGIN_AGGREGATOR_IGNORE_UPDATES', 'Ignore updates?');
 @define('PLUGIN_AGGREGATOR_IGNORE_UPDATES_DESC', 'If an article text changes later on, shall we ignore that update?');
 @define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE', 'Choose RSS parser');
-@define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onyx ist BSD-licensed, but does not support ATOM feeds. SimplePie is modern, maintained, BSD licensed.');
+@define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onyx is BSD-licensed, but does not support ATOM feeds. SimplePie is modern, maintained, BSD licensed.');
 @define('PLUGIN_AGGREGATOR_CRONJOB', 'This plugin supports the Serendipity Cronjob plugin. Go and install it if you want scheduled execution.');
-@define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION', 'Filter Expression');
+@define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION', 'Filter (*)');
 @define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION_DESC', 'Here you can enter a regular expression that will be matched on a feed entry (body and title) and only insert that entry, if the pattern matches. If left empty, no matching is done. Multiple expressions can be separated by the ~ (tilde) character and are OR-combined.');
 
 @define('PLUGIN_AGGREGATOR_PUBLISH', 'Save aggregated entries as...');
@@ -49,4 +49,5 @@
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE_DESC', 'Highlight the markup plugins you want not to be applied to aggregated entries.');
 
 @define('PLUGIN_AGGREGATOR_FEEDICON', 'Feed Icon URL');
+@define('PLUGIN_AGGREGATOR_SUCCESS_PURGE', 'The database tables: "entries", "entrycat", "entryproperties", "references" and "exits" have been cleaned up. Only the "authors" table was not touched. For cleanness and security, remove the author with the realname of the just purged feedname yourself, if the one just existed for this purpose.');
 
