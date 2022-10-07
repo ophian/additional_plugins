@@ -1,3 +1,7 @@
+1.52:
+-----
+  * Replace libs with PHPMailer-6.6.5
+
 1.51:
 -----
   * Replace libs with PHPMailer-6.6.4
