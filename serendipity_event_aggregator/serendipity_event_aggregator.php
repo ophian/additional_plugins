@@ -46,8 +46,6 @@ if (IN_serendipity !== true) {
 // The template (by default: feedlist.tpl) can be stored either in the plugin directory or your custom
 // template directory and is used to render the items.
 
-// The icon of a feed can be either manually specified in the configuration of available feeds
-// or it can be autodetected (only when using simplepie as parser).
 // *****************************************************************
 
 
@@ -71,7 +69,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '7.0.0'
         ));
-        $propbag->add('version',       '1.12');
+        $propbag->add('version',       '1.13');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -298,10 +296,6 @@ class serendipity_event_aggregator extends serendipity_event
                         );";
             serendipity_db_schema_import($sql);
 
-            $sql = "ALTER TABLE {$serendipity['dbPrefix']}aggregator_feeds
-                          ADD COLUMN feedicon text;";
-            serendipity_db_schema_import($sql);
-
             $this->set_config('db_version', '6');
         }
 
@@ -335,7 +329,7 @@ class serendipity_event_aggregator extends serendipity_event
         if (isset($opt['category']) && $opt['category'] > 0) {
             $where = "WHERE fc.categoryid IN (" . $opt['category'] . ")";
         }
-        $sql = "SELECT f.feedid, f.feedname, f.feedurl, f.htmlurl, fc.categoryid, f.last_update, f.charset, f.feedicon, f.match_expression
+        $sql = "SELECT f.feedid, f.feedname, f.feedurl, f.htmlurl, fc.categoryid, f.last_update, f.charset, f.match_expression
                   FROM {$serendipity['dbPrefix']}aggregator_feeds AS f
        LEFT OUTER JOIN {$serendipity['dbPrefix']}aggregator_feedcat AS fc
                     ON f.feedid = fc.feedid
@@ -511,9 +505,8 @@ class serendipity_event_aggregator extends serendipity_event
         $q = "UPDATE {$serendipity['dbPrefix']}aggregator_feeds
                  SET feedname           = '" . serendipity_db_escape_string($array['feedname']) . "',
                      feedurl            = '" . serendipity_db_escape_string($array['feedurl']) . "',
-                     match_expression   = '" . serendipity_db_escape_string($array['match_expression']) . "',
-                     feedicon           = '" . serendipity_db_escape_string($array['feedicon']) . "',
-                     htmlurl            = '" . serendipity_db_escape_string($array['htmlurl']) . "'
+                     htmlurl            = '" . serendipity_db_escape_string($array['htmlurl']) . "',
+                     match_expression   = '" . serendipity_db_escape_string($array['match_expression']) . "'
                WHERE feedid             = " . (int)$idx;
 
         if (!serendipity_db_query($q)) {
@@ -580,13 +573,12 @@ class serendipity_event_aggregator extends serendipity_event
         }
 
         $r = serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}aggregator_feeds
-                                                 (feedname, feedurl, htmlurl, charset, match_expression, feedicon, last_update)
+                                                 (feedname, feedurl, htmlurl, charset, match_expression, last_update)
                                         VALUES ('" . serendipity_db_escape_string($array['feedname']) . "',
                                                 '" . serendipity_db_escape_string($array['feedurl']) . "',
                                                 '" . serendipity_db_escape_string($array['htmlurl']) . "',
                                                 '" . serendipity_db_escape_string($array['charset']) . "',
                                                 '" . serendipity_db_escape_string($array['match_expression']) . "',
-                                                '" . serendipity_db_escape_string($array['feedicon']) . "',
                                                 '" . time() . "')");
         if ($r == false) {
             return $r;
@@ -669,7 +661,6 @@ class serendipity_event_aggregator extends serendipity_event
             'charset'           => '',
             'htmlurl'           => '',
             'match_expression'  => '',
-            'feedicon'          => '',
             'categoryids'       => array(),
             'last_update'       => time()
         );
@@ -705,9 +696,7 @@ class serendipity_event_aggregator extends serendipity_event
         foreach($feeds AS $idx => $feed) {
             $cat = $this->fetchCat("serendipity[feed][{$feed['feedid']}][categoryids][]", $feed['categoryids']);
             $even = ($evenidx++ % 2 ? 'even' : 'uneven');
-            // removed for deprecation
-#                    <span class="ag_legend">' . PLUGIN_AGGREGATOR_FEEDICON . ':</span>
-#                    <input class="input_textbox ag_short" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedicon]" value="' . serendipity_specialchars($feed['feedicon']) . '" />
+
             echo '
             <tr style="padding: 10px;" class="serendipity_admin_list_item serendipity_admin_list_item_' . $even . '">
                 <td valign="top"><em>' . $idx . '</em></td>
@@ -1045,11 +1034,6 @@ class serendipity_event_aggregator extends serendipity_event
         $sql = "UPDATE {$serendipity['dbPrefix']}aggregator_feeds SET last_update = " . time() . " WHERE feedid = " . (int)$feed['feedid'];
         serendipity_db_query($sql);
 
-        if (empty($feed['feedicon']) && !empty($feed['new_feedicon'])) {
-            $sql = "UPDATE {$serendipity['dbPrefix']}aggregator_feeds SET feedicon = '" . serendipity_db_escape_string($feed['new_feedicon']) . "' WHERE feedid = " . (int)$feed['feedid'];
-            serendipity_db_query($sql);
-        }
-
         $md5hash = md5($entryid . $feed['articleurl'] . $feed['last_update']);
 
         # Always update the MD5 hash, to catch updates of an entry properly. Patch by jerwarren!
@@ -1168,7 +1152,7 @@ class serendipity_event_aggregator extends serendipity_event
                 $cache_authors[$author['realname']] = $author['authorid'];
             }
         }
-        if ($this->debug) printf("DEBUG: cache_authors['realname'] = authorid has %d entries\n", count($cache_authors));
+        if ($this->debug) printf("DEBUG: cache_authors['realname'] = authorid has %d author(s)\n", count($cache_authors));
 
         if (isset($opt['store_separate']) && $opt['store_separate'] === true) {
             $sql_cache_entries = serendipity_db_query("SELECT e.feedid, e.id, e.entrydate, e.entrytitle
@@ -1273,8 +1257,6 @@ class serendipity_event_aggregator extends serendipity_event
                 // This function will grab the proper character encoding, as well as set the content type to text/html.
                 $simplefeed->set_output_encoding(LANG_CHARSET);
                 $simplefeed->handle_content_type();
-                // simplePie 1.4.2 - Favicon handling has been removed, please use your own handling
-                $item['new_feedicon'] = null;//$simplefeed->get_favicon();
 
                 // error handling
                 if ($simplefeed->error()) {
@@ -1283,7 +1265,6 @@ class serendipity_event_aggregator extends serendipity_event
 
                 if ($success) {
                     foreach($simplefeed->get_items() AS $simpleitem) {
-
                         // map SimplePie items to s9y items
                         $item['title']       = $simpleitem->get_title();
                         $item['date']        = $simpleitem->get_date('U');
@@ -1548,8 +1529,7 @@ class serendipity_event_aggregator extends serendipity_event
 
         $q = "SELECT fl.*,
                      f.feedname,
-                     f.htmlurl,
-                     f.feedicon
+                     f.htmlurl
                  FROM {$serendipity['dbPrefix']}aggregator_feedlist AS fl
       LEFT OUTER JOIN {$serendipity['dbPrefix']}aggregator_feedlist AS fl2
                    ON (fl.feedid = fl2.feedid AND fl.entrydate < fl2.entrydate)
@@ -1560,19 +1540,6 @@ class serendipity_event_aggregator extends serendipity_event
                GROUP BY fl.feedid
                ORDER BY fl.entrydate DESC
         ";
-/*
-        $q = "SELECT fl.*,
-                                     f.feedname,
-                                     f.htmlurl,
-                                     f.feedicon
-                                FROM {$serendipity['dbPrefix']}aggregator_feedlist AS fl
-                                JOIN {$serendipity['dbPrefix']}aggregator_feeds AS f
-                                  ON fl.feedid = f.feedid
-                               " . ($opt['category'] > 0 ? "WHERE fl.categoryid IN (" . $opt['category'] . ") " : "") . "
-                            GROUP BY fl.feedid
-                            ORDER BY fl.entrydate DESC
-                            ";
-*/
         $show = serendipity_db_query($q);
         $serendipity['smarty']->assign('feedlist_entries', $show);
 

@@ -1,3 +1,7 @@
+1.13:
+-----
+ * Remove all references of deprecated feedicon (database, structure, etc)
+
 1.12:
 -----
  * Add message for cleanup and manual cleanup the authors table
