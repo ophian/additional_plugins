@@ -49,6 +49,3 @@
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE', 'Zakázat značkovací pluginy pro příspěvky vyrobené pomocí agregátoru.');
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE_DESC', 'Označte značkovací pluginy, které nemají být používány v agregovaných příspěvcích.');
 
-// Next lines were translated on 2010/12/25
-@define('PLUGIN_AGGREGATOR_FEEDICON', 'URL adresa ikony kanálu');
-

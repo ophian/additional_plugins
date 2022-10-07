@@ -47,5 +47,3 @@
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE', 'アグリゲートしたエントリーのマークアップ プラグオンを無効にする');
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE_DESC', 'グリゲートされたエントリーに適用したくないマークアップ プラグインをハイライトにします。');
 
-@define('PLUGIN_AGGREGATOR_FEEDICON', 'フィード アイコンの URL');
-

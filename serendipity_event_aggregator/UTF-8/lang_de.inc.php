@@ -48,7 +48,6 @@
 @define('PLUGIN_AGGREGATOR_PUBLISH', 'Speichere aggregierte Einträge als...');
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE', 'Deaktiviere Formatierungs-Plugins für aggregierte Einträge');
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE_DESC', 'Markiere die Formatierungs-Plugins, welche nicht auf aggregierte Einträge angewandt werden sollen.');
-@define('PLUGIN_AGGREGATOR_FEEDICON', 'Feed Icon URL');
 
 @define('PLUGIN_AGGREGATOR_SUCCESS_PURGE', 'Die Datenbanktabellen: "entries", "entrycat", "entryproperties", "references" und "exits" sind bereinigt worden. Nur die Tabelle "authors" wurde nicht berührt. Der Sauberkeit und Sicherheit halber sollten Sie den Autor mit dem Realnamen des soeben bereinigten Feednamens selbst entfernen, wenn dieser nur zu diesem Zweck existiert.');
 

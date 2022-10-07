@@ -48,6 +48,5 @@
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE', 'Disable markup plugins for aggregated entries.');
 @define('PLUGIN_AGGREGATOR_MARKUP_DISABLE_DESC', 'Highlight the markup plugins you want not to be applied to aggregated entries.');
 
-@define('PLUGIN_AGGREGATOR_FEEDICON', 'Feed Icon URL');
 @define('PLUGIN_AGGREGATOR_SUCCESS_PURGE', 'The database tables: "entries", "entrycat", "entryproperties", "references" and "exits" have been cleaned up. Only the "authors" table was not touched. For cleanness and security, remove the author with the realname of the just purged feedname yourself, if the one just existed for this purpose.');
 
