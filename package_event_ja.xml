@@ -7679,7 +7679,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Provides an interactive map with *.gpx uploads and tagged geo data</description>
 <maintainers><maintainer><name>Martin Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.1.0</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
@@ -7694,10 +7694,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>README.md</file>
       <dir name="resources">
         <file>ol.css</file>
-        <file>ol.css.map</file>
         <file>ol.js</file>
-        <file>ol.js.LICENSE.txt</file>
-        <file>ol.js.map</file>
         <file>osm.css</file>
         <file>osm.js</file>
       </dir>
@@ -7716,10 +7713,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_osm/plugin_version.inc.php</file>
     <file>serendipity_event_osm/README.md</file>
     <file>serendipity_event_osm/resources/ol.css</file>
-    <file>serendipity_event_osm/resources/ol.css.map</file>
     <file>serendipity_event_osm/resources/ol.js</file>
-    <file>serendipity_event_osm/resources/ol.js.LICENSE.txt</file>
-    <file>serendipity_event_osm/resources/ol.js.map</file>
     <file>serendipity_event_osm/resources/osm.css</file>
     <file>serendipity_event_osm/resources/osm.js</file>
     <file>serendipity_event_osm/serendipity_event_osm.php</file>
@@ -7737,11 +7731,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Includes scripts and stylesheets for OpenStreetMap support</description>
 <maintainers><maintainer><name>Martin Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.1.0</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2021-07-13</date>
+  <date>2022-10-08</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
@@ -7752,10 +7746,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>README.md</file>
       <dir name="resources">
         <file>ol.css</file>
-        <file>ol.css.map</file>
         <file>ol.js</file>
-        <file>ol.js.LICENSE.txt</file>
-        <file>ol.js.map</file>
         <file>osm.css</file>
         <file>osm.js</file>
       </dir>
@@ -7774,10 +7765,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_osm/plugin_version.inc.php</file>
     <file>serendipity_event_osm/README.md</file>
     <file>serendipity_event_osm/resources/ol.css</file>
-    <file>serendipity_event_osm/resources/ol.css.map</file>
     <file>serendipity_event_osm/resources/ol.js</file>
-    <file>serendipity_event_osm/resources/ol.js.LICENSE.txt</file>
-    <file>serendipity_event_osm/resources/ol.js.map</file>
     <file>serendipity_event_osm/resources/osm.css</file>
     <file>serendipity_event_osm/resources/osm.js</file>
     <file>serendipity_event_osm/serendipity_event_osm.php</file>
