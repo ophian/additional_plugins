@@ -1,3 +1,10 @@
+2.1.0:
+------
+ * OpenLayers updated to v7.1.0
+   ( removed the debugging ol.js source map file for file size (4 MB) and
+     moved the libs ol.css back to resources, so your resources/ directory should be only have:
+     ol.css, ol.js, osm.css, osm.js )
+
 2.0.0:
 0.20:
 -----
