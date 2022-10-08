@@ -1,3 +1,8 @@
+4.20.0.0:
+---------
+    * Upgrade to CKEDITOR 4.20. Series, update 0 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
+
 4.19.1.2:
 ---------
     * Add conceptional root namespace to error exception handling for consistency
