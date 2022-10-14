@@ -21,7 +21,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '3.6.0');
+        $propbag->add('version',       '3.7.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.3'
@@ -667,6 +667,9 @@ class serendipity_event_statistics extends serendipity_event
                                                         FROM {$serendipity['dbPrefix']}entries
                                                         ORDER BY full_length
                                                         DESC LIMIT $max_items");
+
+                        $first_entry[0] = $first_entry[0] ?? 0; // init
+                        $last_entry[0] = $last_entry[0] ?? 0; // ditto
 ?>
     <h2><?php echo PLUGIN_EVENT_STATISTICS_OUT_STATISTICS; ?></h2>
 
@@ -1429,6 +1432,9 @@ class serendipity_event_statistics extends serendipity_event
             serendipity_db_schema_import($q);
             $q = "CREATE INDEX refscount ON {$serendipity['dbPrefix']}refs (count);";
             serendipity_db_schema_import($q);
+
+            // Create first visitors entry for DB back-check on install
+            $this->updateVisitor();
 
             $this->set_config('db_indices_created', '2');
         }
