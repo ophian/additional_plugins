@@ -1,3 +1,7 @@
+6.59:
+-----
+ * Prevent loading backend css when not in need
+
 6.58:
 -----
  * Always indicate source of where frontend_display is called (as Standard since 07/2007)
