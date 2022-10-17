@@ -99,7 +99,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.59');
+        $propbag->add('version', '6.60');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -3760,7 +3760,7 @@ class serendipity_event_staticpage extends serendipity_event
                         break;
                     }
                     // prevent loading in non-staticpage backend views and preview.tpl entry previews
-                    if ($serendipity['GET']['adminAction'] == 'staticpages' && !isset($serendipity['POST']['preview'])) {
+                    if (isset($serendipity['GET']['adminAction']) && $serendipity['GET']['adminAction'] == 'staticpages' && !isset($serendipity['POST']['preview'])) {
 ?>
     <link rel="stylesheet" href="<?php echo $serendipity['serendipityHTTPPath']; ?>plugins/serendipity_event_staticpage/staticpage_backend.css">
 <?php

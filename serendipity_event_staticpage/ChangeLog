@@ -1,3 +1,7 @@
+6.60:
+-----
+ * Better check a possible non-given variable check on entry previews
+
 6.59:
 -----
  * Prevent loading backend css when not in need
