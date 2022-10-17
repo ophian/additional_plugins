@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+1.61:
+-----
+ * Better check for $serendipity['GET']['subpage'] on entry preview
+
 1.60:
 -----
  * Add conceptional root namespace to error exception handling for consistency
