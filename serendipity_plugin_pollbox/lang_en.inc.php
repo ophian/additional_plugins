@@ -9,9 +9,9 @@
 @define('PLUGIN_POLL_ACTIVATE', 'Activate');
 @define('PLUGIN_POLL_ADD', 'Add');
 @define('PLUGIN_POLL_VOTES', 'Votes');
-@define('PLUGIN_POLLBOX_TOTALVOTES',      'Total of %d votes.');
-@define('PLUGIN_POLLBOX_VOTE',            'Vote');
-@define('PLUGIN_POLLBOX_SHOWRESULTS',     'Show results.');
+@define('PLUGIN_POLLBOX_TOTALVOTES', 'Total of %d votes.');
+@define('PLUGIN_POLLBOX_VOTE', 'Vote');
+@define('PLUGIN_POLLBOX_SHOWRESULTS', 'Show results.');
 @define('PLUGIN_POLL_TITLE_SIDEBAR', 'Shows the current poll in your sidebar');
 @define('PLUGIN_POLL_ARCHIVE', 'Poll Archives');
 
@@ -19,7 +19,7 @@
 @define('PLUGIN_POLL_TITLE_BLAHBLAH', 'Maintains your votings / polls');
 @define('PLUGIN_POLL_PERMALINK', 'Permalink');
 @define('PLUGIN_POLL_PAGETITLE', 'URL shorthand name (Backwards compatibility)');
-@define('PLUGIN_POLL_PERMALINK_BLAHBLAH', 'Defines permalink for the URL. Needs the absolute HTTP path and needs to end with .htm or .html!');
+@define('PLUGIN_POLL_PERMALINK_BLAHBLAH', 'Defines the permalink for the URL. Needs the absolute HTTP path and needs to end with .htm or .html!');
 @define('PLUGIN_POLL_ARTICLEFORMAT', 'Format as article?');
 @define('PLUGIN_POLL_ARTICLEFORMAT_BLAHBLAH', 'if yes the output is automatically formatted as an article (colors, borders, etc.) (default: yes)');
 @define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE', 'Page title in "Format as article" mode');
