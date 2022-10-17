@@ -1,3 +1,7 @@
+0.20:
+-----
+ * Better check for $serendipity['GET']['subpage'] on entry preview
+
 0.19:
 ------
  * Fix 0.16 in entryform was missing

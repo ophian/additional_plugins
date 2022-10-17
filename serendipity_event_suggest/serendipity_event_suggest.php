@@ -26,7 +26,7 @@ class serendipity_event_suggest extends serendipity_event
                                         ));
         $propbag->add('configuration',  array('permalink', 'pagetitle', 'authorid', 'email'));
         $propbag->add('author',         'Garvin Hicking, Ian Styx');
-        $propbag->add('version',        '0.19');
+        $propbag->add('version',        '0.20');
         $propbag->add('groups',         array('FRONTEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -325,8 +325,8 @@ class serendipity_event_suggest extends serendipity_event
             $serendipity['GET']['subpage'] = $serendipity['POST']['subpage'];
         }
 
-        if ($serendipity['GET']['subpage'] == $this->get_config('pageurl') || (isset($serendipity['GET']['subpage'])
-        &&  preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage']))) {
+        if (isset($serendipity['GET']['subpage'])
+        && ($serendipity['GET']['subpage'] == $this->get_config('pageurl') || preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage']))) {
             return true;
         }
 
