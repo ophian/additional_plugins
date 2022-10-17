@@ -19,7 +19,7 @@ class serendipity_event_externalphp extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'include', 'articleformat', 'markup'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.7');
+        $propbag->add('version', '1.8');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -137,8 +137,8 @@ class serendipity_event_externalphp extends serendipity_event
     {
         global $serendipity;
 
-        if ($serendipity['GET']['subpage'] == $this->get_config('pagetitle') ||
-            preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage'])) {
+        if (isset($serendipity['GET']['subpage'])
+        && ($serendipity['GET']['subpage'] == $this->get_config('pagetitle') || preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage']))) {
             return true;
         }
 
