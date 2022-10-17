@@ -1014,11 +1014,11 @@
 <description>Zeigt einen Terminkalender innerhalb des Blogs mit dem Blog-Design und allen Formatierungen an. Unterstützt Backend/Frontend Administration, vielfache Termine und iCal Export. (Nur MySQL)</description>
 <maintainers><maintainer><name>Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.1.2</version>
+  <version>2.1.3</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2022-05-26</date>
+  <date>2022-10-17</date>
   <filelist>
     <dir name="serendipity_event_cal">
       <file>backend_inherits.css</file>
@@ -1417,11 +1417,11 @@
 <description>Wenn dieses Plugin installiert ist, durchsucht die Schnellsuche Ihres Blogs auch die Kommentare.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.9</version>
+  <version>1.9.1</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2021-07-16</date>
+  <date>2022-10-17</date>
   <filelist>
     <dir name="serendipity_event_commentsearch">
       <file>ChangeLog</file>
@@ -1619,11 +1619,11 @@
 <description>Stellt ein E-Mail Kontaktformular auf Ihrem Blog als statische Seite dar. Darauf kann entweder über den (virtuellen) Permalink oder aus Kompatibilitätsgründen mittels index.php?serendipity[subpage]=contactform zugegriffen werden. Die Darstellung kann durch Smarty Templates angepasst werden, indem die Datei plugin_contactform.tpl in Ihren Templateordner kopiert und modifiziert wird. Captchas der Spamblock-Plugins (falls aktiviert) werden angewendet.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.46</version>
+  <version>1.47</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2022-09-24</date>
+  <date>2022-10-17</date>
   <filelist>
     <dir name="serendipity_event_contactform">
       <file>ChangeLog</file>
@@ -1965,11 +1965,11 @@
 <description>Zeigt eine sortierbare Ansicht aller Artikel für den Besucher an. Der Link zu dieser eigenständigen Seite sollte in einem eigenen HTML Klotz verlinkt werden!</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.22</version>
+  <version>1.23</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2022-09-18</date>
+  <date>2022-10-17</date>
   <filelist>
     <dir name="serendipity_event_customarchive">
       <file>asc.gif</file>
@@ -3091,11 +3091,11 @@
 <description>Bettet eine externe PHP Anwendung in Ihrem Blog ein, dass im gewohnten Design präsentiert wird. MIT VORSICHT BENUTZEN, DA DIESES PLUGIN GROSSE SICHERHEITSLÜCKEN ERMÖGLICHEN KANN WENN EINE BELIEBIGE PHP-DATEI EINGEBUNDEN WIRD! Dieses Plugin kann daher nur als Administrator konfiguriert werden.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7</version>
+  <version>1.8</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-12-10</date>
+  <date>2022-10-17</date>
   <filelist>
     <dir name="serendipity_event_externalphp">
       <file>ChangeLog</file>
@@ -10274,11 +10274,11 @@
 <description>Erlaubt nicht registrierten Autoren, eigene Artikel vorzuschlagen</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.19</version>
+  <version>0.20</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2021-10-29</date>
+  <date>2022-10-17</date>
   <filelist>
     <dir name="serendipity_event_suggest">
       <file>ChangeLog</file>
@@ -11884,11 +11884,11 @@
 <description>Ermöglicht Bildergalerien aus der Mediathek oder Ordnern auszugehen.</description>
 <maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.10</version>
+  <version>3.11</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2022-07-02</date>
+  <date>2022-10-17</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
       <file>ChangeLog</file>
@@ -12934,11 +12934,11 @@
 <description>Verwaltet beliebige Umfragen!</description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.24</version>
+  <version>2.25</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2022-06-27</date>
+  <date>2022-10-17</date>
   <filelist>
     <dir name="serendipity_plugin_pollbox">
       <file>ChangeLog</file>

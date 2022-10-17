@@ -104,7 +104,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Kalendář akcí&lt;/b&gt;&lt;br /&gt;Zobrazuje kalendář akcí jako samostatnou stránku v blogu. Design stránky zůstává stejný jako u zbytku blogu. (MySQL only)&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 26 May 2022 15:09:48 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 12:42:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
@@ -158,7 +158,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentsearch&lt;br /&gt;Hledání v komentářích&lt;/b&gt;&lt;br /&gt;Pokud je tento plugin nainstalovaný, rychlé vyhledávání bude prohledávat také komentáře&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 16 Jul 2021 11:38:43 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 12:28:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentsearch</guid>
 </item>
 <item>
@@ -185,7 +185,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Kontaktní formulář&lt;/b&gt;&lt;br /&gt;Zobrazuje kontaktní formulář k poslání e-mailu jako statickou stránku. Přístup k fromuláři buď pomocí stálého odkazu (permalinku) nebo na adrese index.php?serendipity[subpage]=contactform. Vzhled fromuláře si můžete upravit podle svého vložením souboru plugin_contactform.tpl do adresáře s Vaší šablonou. Kryptogramy z pluginu SpamBlock budou použity, pokud je SpamBlock nainstalován.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sat, 24 Sep 2022 13:54:32 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 13:06:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_customarchive&lt;br /&gt;Přizpůsobitelný archiv příspěvků&lt;/b&gt;&lt;br /&gt;Zobrazuje návštěvníkovi blogu všechny dosud vydané články s možností třídění. Odkaz na tuto stránku by měl být vložen do HTML nugetu (bloku).&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 18 Sep 2022 10:33:36 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 12:44:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_customarchive</guid>
 </item>
 <item>
@@ -365,7 +365,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_externalphp&lt;br /&gt;Externí PHP aplikace&lt;/b&gt;&lt;br /&gt;Zobrazuje výstup externí PHP aplikace uvnitř blogu, v designu a formátování blogu. POUŽÍVAT S ROZVAHOU, TENTO PLUGIN S SEBOU NESE BEZPEČNOSTNÍ RIZIKA, PROTOŽE UMOŽŇUJE VLOŽIT LIBOVOLNÝ PHP KÓD! TENTO PLUGIN MŮŽE POUŽÍVAT POUZE ADMINISTRÁTOR!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 10 Dec 2020 11:44:39 +0100</pubDate>
+<pubDate>Mon, 17 Oct 2022 12:45:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_externalphp</guid>
 </item>
 <item>
@@ -1085,7 +1085,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_suggest&lt;br /&gt;Návrhy na nové články&lt;/b&gt;&lt;br /&gt;Umožňuje neregistrovaným návštěvníkům navrhovat články, které by se měly vydat.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 29 Oct 2021 18:51:04 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 12:46:35 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_suggest</guid>
 </item>
 <item>
@@ -1229,7 +1229,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Galerie&lt;/b&gt;&lt;br /&gt;Allows to publish galleries by media directories out of your MediaLibrary tree. Stackable plugin!&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sat, 02 Jul 2022 13:10:36 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 12:58:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>
@@ -1337,7 +1337,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_pollbox&lt;br /&gt;Ankety&lt;/b&gt;&lt;br /&gt;Správa anket&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 27 Jun 2022 18:14:00 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 13:15:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_pollbox</guid>
 </item>
 <item>

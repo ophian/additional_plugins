@@ -104,7 +104,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Calendar&lt;/b&gt;&lt;br /&gt;Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 26 May 2022 15:09:48 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 12:42:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
@@ -158,7 +158,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentsearch&lt;br /&gt;Търси в коментарите при бързо търсене&lt;/b&gt;&lt;br /&gt;Ако тази приставка е инсталирана, бързото търсене ще се изпълнява и в коментарите&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 16 Jul 2021 11:38:43 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 12:28:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentsearch</guid>
 </item>
 <item>
@@ -185,7 +185,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Форма за обратна връзка&lt;/b&gt;&lt;br /&gt;Показва форма за изпращане на e-mail в блога като статична страница. Тя може да бъде достигната или чрез постоянна връзка, указана тук при конфигурирането на приставката или чрез 'index.php?serendipity[subpage]=contactform'. Можете да промените външния вид на формата като поставите файл 'plugin_contactform.tpl' в директорията на вашата тема и я модифицирате там. Captchas от приставка Spamblock (ако са позволени) ще бъдат приложени.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sat, 24 Sep 2022 13:54:32 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 13:06:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_customarchive&lt;br /&gt;Customizable Entries Archive&lt;/b&gt;&lt;br /&gt;Shows a sortable view of all past articles for the visitor. The link to this page should be inserted into a HTML nugget.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 18 Sep 2022 10:33:36 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 12:44:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_customarchive</guid>
 </item>
 <item>
@@ -365,7 +365,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_externalphp&lt;br /&gt;Външно PHP приложение&lt;/b&gt;&lt;br /&gt;Показва външно PHP приложение в блога, интегрирано в неговия дизайн и форматиране. ИЗПОЛЗВАЙТЕ ТАЗИ ПРИСТАВКА С ВНИМАНИЕ, ЗАЩОТО МОЖЕТЕ ДА ЗАСТРАШИТЕ СИГУРНОСТТА НА БЛОГА С НЕЯ (ТЯ МОЖЕ ДА ИЗПЪЛНЯВА ВСЯКАКЪВ PHP ФАЙЛ). МОЖЕТЕ ДА ИЗПОЛЗВАТЕ ПРИСТАВКАТА САМО КАТО АДМИНИСТРАТОР!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 10 Dec 2020 11:44:39 +0100</pubDate>
+<pubDate>Mon, 17 Oct 2022 12:45:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_externalphp</guid>
 </item>
 <item>
@@ -1085,7 +1085,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_suggest&lt;br /&gt;Предложения за статии&lt;/b&gt;&lt;br /&gt;Дава възможност на нерегистрирани автори да предлагат статии за публикуване.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 29 Oct 2021 18:51:04 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 12:46:35 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_suggest</guid>
 </item>
 <item>
@@ -1229,7 +1229,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Gallery Display&lt;/b&gt;&lt;br /&gt;Allows to publish galleries by media directories out of your MediaLibrary tree. Stackable plugin!&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sat, 02 Jul 2022 13:10:36 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 12:58:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>
@@ -1337,7 +1337,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_pollbox&lt;br /&gt;Polls&lt;/b&gt;&lt;br /&gt;Maintains your votings / polls&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 27 Jun 2022 18:14:00 +0200</pubDate>
+<pubDate>Mon, 17 Oct 2022 13:15:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_pollbox</guid>
 </item>
 <item>
