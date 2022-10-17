@@ -1,3 +1,7 @@
+1.23:
+-----
+ * Better check for $serendipity['GET']['subpage'] on entry preview
+
 1.22:
 -----
  * Add conceptional root namespace to error exception handling for consistency
