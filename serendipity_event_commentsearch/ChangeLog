@@ -1,3 +1,7 @@
+1.9.1:
+------
+ * Better check a non-given variable check on entry previews
+
 1.9:
 ----
  * Improved default commentsearch searchresults template file

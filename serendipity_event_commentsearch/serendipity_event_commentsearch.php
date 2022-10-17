@@ -22,7 +22,7 @@ class serendipity_event_commentsearch extends serendipity_event
         ));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.9');
+        $propbag->add('version', '1.9.1');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -130,7 +130,7 @@ class serendipity_event_commentsearch extends serendipity_event
                     break;
 
                 case 'entries_footer':
-                    if ($serendipity['GET']['action'] == 'search') {
+                    if (isset($serendipity['GET']['action']) && $serendipity['GET']['action'] == 'search') {
                         $this->showSearch();
                     }
                     break;
