@@ -26,7 +26,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL TCPDF');
-        $propbag->add('version',       '2.2.9');
+        $propbag->add('version',       '2.3.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -120,7 +120,7 @@ class serendipity_event_blogpdf extends serendipity_event
                         }
 
                         // entries summary pages
-                        if (empty($year) && $serendipity['view'] == 'archives' && isset($serendipity['short_archives']) && $serendipity['short_archives'] == true && $serendipity['uriArguments'][3] == 'summary') {
+                        if (empty($year) && $serendipity['view'] == 'archives' && isset($serendipity['short_archives']) && $serendipity['short_archives'] == true && isset($serendipity['uriArguments'][3]) && $serendipity['uriArguments'][3] == 'summary') {
                             $year  = $serendipity['uriArguments'][1] ?? date('Y', serendipity_serverOffsetHour());
                             $month = $serendipity['uriArguments'][2] ?? date('m', serendipity_serverOffsetHour());
                         }

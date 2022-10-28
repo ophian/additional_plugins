@@ -1,3 +1,7 @@
+2.3.0:
+-----
+ * Better check archives all summary pages vs specific archives
+
 2.2.9:
 -----
  * Check 2.2.8 isset view for NOT run in backend
