@@ -95,7 +95,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;PDF でブログをエクスポートする&lt;/b&gt;&lt;br /&gt;訪問者が PDF 形式でブログをダウンロードすることを許可します。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 25 Sep 2022 11:08:55 +0200</pubDate>
+<pubDate>Thu, 27 Oct 2022 18:52:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
@@ -529,7 +529,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Show Avatars inside comments. Gravatars, Pavatars, Favatars, Wavatars, Monster ID, Identicon, Twitter and Identica Avatars are supported.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Mon, 19 Sep 2022 10:50:16 +0200</pubDate>
+<pubDate>Fri, 28 Oct 2022 10:40:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
