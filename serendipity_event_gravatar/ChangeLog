@@ -1,3 +1,7 @@
+1.77:
+-----
+ * Improve printComments hook data
+
 1.76:
 -----
  * Improve comment_content CSS min-height for (inline) avatar styling (based on current Standard theme "pure")

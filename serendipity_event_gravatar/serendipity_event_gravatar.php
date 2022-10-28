@@ -9,7 +9,7 @@ if (IN_serendipity !== true) {
 
 @define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
 
-@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.76');
+@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.77');
 
 // Defines the maximum available method  slots in the configuration.
 @define('PLUGIN_EVENT_GRAVATAR_METHOD_MAX', 6);
@@ -504,6 +504,8 @@ class serendipity_event_gravatar extends serendipity_event
         else {
             $eventData['comment'] = $image_html . $eventData['comment'];
         }
+        // no escape parsing
+        $eventData['dismark'] = true;
 
         return true;
     }
