@@ -1,3 +1,7 @@
+3.7.1:
+------
+ * Fix empty entries startup case with types on PHP 8.2: Automatic conversion of false to array is deprecated
+
 3.7.0:
 ------
  * Create first visitors entry for DB back-check on install, else you might run into an exception
