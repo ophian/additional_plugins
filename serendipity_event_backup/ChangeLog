@@ -1,3 +1,7 @@
+1.2.2:
+-----
+ * Fix for PHP 8.2 explicit type of string in trim()
+
 1.2.1:
 ------
 

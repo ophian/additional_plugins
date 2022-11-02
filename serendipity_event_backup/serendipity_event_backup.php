@@ -26,7 +26,7 @@ class serendipity_event_backup extends serendipity_event
             'php'         => '7.0'
         ));
 
-        $propbag->add('version',       '1.2.1');
+        $propbag->add('version',       '1.2.2');
         $propbag->add('author',       'Alexander Mieland, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1130,7 +1130,7 @@ class serendipity_event_backup extends serendipity_event
             $htmlbackupconfig[$key] = stripslashes(trim($val));
         }
         $backupdatah_array = explode("|^|", $htmlbackupconfig['data_backup']);
-        $dir_to_backup = trim(($backupdata_array[0] ?? null));
+        $dir_to_backup = trim(($backupdata_array[0] ?? ''));
         if (substr($dir_to_backup,  strlen($dir_to_backup)-1, strlen($dir_to_backup)) == "/") {
             $dir_to_backup = substr($dir_to_backup,  0, strlen($dir_to_backup)-1);
         }
