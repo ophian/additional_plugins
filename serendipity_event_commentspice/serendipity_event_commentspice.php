@@ -28,7 +28,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.3'
         ));
-        $propbag->add('version',        '2.4.0');
+        $propbag->add('version',        '2.4.1');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -908,7 +908,7 @@ class serendipity_event_commentspice extends serendipity_event
             $spice['boo'] = $serendipity['POST']['boo'] ?? null;
 
             // Get the input w/o checking if it's modified: We are in preview!
-            $promorss = $serendipity['POST']['promorss'] ?? null;
+            $promorss = $serendipity['POST']['promorss'] ?? '';
             $parts = explode("\n", $promorss);
             $promo_hash = trim($parts[0]);
             $promo_name = isset($parts[1]) ? trim($parts[1]) : null;

@@ -1,3 +1,7 @@
+2.4.1:
+------
+ * PHP 8.2 fix for explicit type string for explode()
+
 2.4.0:
 ------
  * Fix $serendipity['db_server_info'] for removed MariaDB prefix with PHP 8.0.16+,
