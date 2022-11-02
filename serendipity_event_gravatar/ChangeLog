@@ -1,3 +1,7 @@
+1.78:
+-----
+ * Don't mess around in backend
+
 1.77:
 -----
  * Improve printComments hook data
