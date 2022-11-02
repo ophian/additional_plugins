@@ -11,7 +11,7 @@
 ------
  * Fix $serendipity['db_server_info'] for removed MariaDB prefix with PHP 8.0.16+,
    to set the correct SQL utf8mb4 index key length limits on install.
-   Improves on both mysql instances.
+   Improves on both MySQL instances.
 
 3.5.1:
 ------
@@ -47,7 +47,7 @@
 2.07:
 -----
  * Check Global_Server_Vars by isset()
- * Add searchable continuous last history link before 2014, Sept 28th:
+ * Add researchable continuous last history link before 2014, Sept 28th:
     https://github.com/ophian/styx/blob/f7da64165d29dd393135593d0ae42e3568fa7c00/plugins/serendipity_event_statistics/serendipity_event_statistics.php
 
 2.06:
