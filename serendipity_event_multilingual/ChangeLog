@@ -1,3 +1,7 @@
+3.06:
+-----
+ * Fix for PHP 8.2 deprecated use of dynamic properties
+
 3.05:
 -----
  * Follow a consistency cleanup for fetching serendipity_fetchEntry() calls
