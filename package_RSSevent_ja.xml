@@ -86,7 +86,7 @@
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;バックアップインターフェース&lt;/b&gt;&lt;br /&gt;自動的に s9y のデータベース内テーブル、データベース全体およびファイルからバックアップを作る能力を提供します。現在 MySQL(i) データベースのみサポートしています。警告: このプラグインは大きなデータベースやディレクトリーでは正しく処理できません。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 27 Aug 2022 11:39:22 +0200</pubDate>
+<pubDate>Wed, 02 Nov 2022 14:33:48 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
@@ -538,7 +538,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Guestbook&lt;/b&gt;&lt;br /&gt;Shows a guestbook inside your blog with your normal blog design.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 17 Oct 2022 12:07:23 +0200</pubDate>
+<pubDate>Wed, 02 Nov 2022 14:32:11 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -763,7 +763,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;多言語エントリ&lt;/b&gt;&lt;br /&gt;エントリの複数の言語バージョンを作成することを可能にします。&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Wed, 28 Sep 2022 09:59:28 +0200</pubDate>
+<pubDate>Wed, 02 Nov 2022 14:22:36 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>

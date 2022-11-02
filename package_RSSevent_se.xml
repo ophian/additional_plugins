@@ -86,7 +86,7 @@
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Backup Interface&lt;/b&gt;&lt;br /&gt;Provides the ability to automatically make backups from your s9y, the database-tables, the whole database and the files. Only MySQL(i) databases are currently supported. WARNING: This plugin does not work well with large databases or directories.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 27 Aug 2022 11:39:22 +0200</pubDate>
+<pubDate>Wed, 02 Nov 2022 14:33:48 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
@@ -536,7 +536,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Gästbok&lt;/b&gt;&lt;br /&gt;Visa en gästbol i din blog med ditt vanlig blog-utseende.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 17 Oct 2022 12:07:23 +0200</pubDate>
+<pubDate>Wed, 02 Nov 2022 14:32:11 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -761,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilingual entries&lt;/b&gt;&lt;br /&gt;Allows to create multiple language versions of an entry&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Wed, 28 Sep 2022 09:59:28 +0200</pubDate>
+<pubDate>Wed, 02 Nov 2022 14:22:36 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
