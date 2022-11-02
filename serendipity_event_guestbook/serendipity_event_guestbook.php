@@ -56,7 +56,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '4.1.2');
+        $propbag->add('version',      '4.1.3');
         $propbag->add('requirements', array(
                         'serendipity' => '2.0',
                         'smarty'      => '3.1',
@@ -1599,7 +1599,7 @@ class serendipity_event_guestbook extends serendipity_event
                     if (isset($entry) && is_array($entry)) {
                         // extract entry body admincomment to var
                         preg_match_all("/\[ac\](.*?)\[\/ac\]/", $entry['body'], $match);
-                        $entry['acbody'] = $match[1][0] ?? null;
+                        $entry['acbody'] = $match[1][0] ?? '';
                         $entry['body']   = preg_replace("/\[ac\](.*?)\[\/ac\]/","", $entry['body']);
 
                         // assign form array entries to smarty
