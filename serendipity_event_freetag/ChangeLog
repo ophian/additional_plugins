@@ -1,3 +1,8 @@
+5.28:
+-----
+ * Add failsafe parameter for known-to-fail PostgresQL queries using HAVING, in this case for startups with no displayLeafTaggedEntries tag data yet
+ * Fix escape typo in [en] constant
+
 5.27:
 -----
  * Exclude freetag {cond}itional SQL-query preparatory for case (sidebar) calendar

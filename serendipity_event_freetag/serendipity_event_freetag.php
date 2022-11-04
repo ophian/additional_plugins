@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.27');
+        $propbag->add('version',       '5.28');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2508,20 +2508,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 GROUP BY e.id, e.title
                 HAVING total = 1";
 
-        $this->displayEditEntries($q);
+        $this->displayEditEntries($q, true);
     }
 
     /**
      * Backend Administration Method (3/4): Edit untagged/leaf-tag entries
      *
      * @param   string  SQL query
+     * @param   boolean failsafe SQL query
      * @see     displayUntaggedEntries() and displayLeafTaggedEntries()
      */
-    function displayEditEntries($q)
+    function displayEditEntries($q, $failsafe = false)
     {
         global $serendipity;
 
-        $r = serendipity_db_query($q);
+        if ($failsafe) {
+            $r = serendipity_db_query($q, false, 'both', false, false, false, true); // set last param expectError true, since table is known to fail when empty using HAVING
+        } else {
+            $r = serendipity_db_query($q);
+        }
 
         if ($r === true) {
             echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE . "</span>\n";
