@@ -21,7 +21,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '3.7.1');
+        $propbag->add('version',       '3.7.2');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.3'
@@ -1041,7 +1041,8 @@ class serendipity_event_statistics extends serendipity_event
             // removing www
             $urlC = serendipity_db_escape_string(str_replace('www.', '', $urlB));
 
-            if (strlen($urlC) < 1) {
+            // if referer == 'unknown' $urlC is NULL
+            if (is_null($urlC) || strlen($urlC) < 1) {
                 $urlC = 'unknown';
             }
 
