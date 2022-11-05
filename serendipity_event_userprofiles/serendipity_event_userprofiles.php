@@ -93,7 +93,7 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '1.3.4');
+        $propbag->add('version', '1.3.5');
         $propbag->add('requirements', array(
             'serendipity' => '3.5',
             'smarty'      => '3.1.0',
@@ -244,7 +244,7 @@ class serendipity_event_userprofiles extends serendipity_event
         if (!empty($serendipity['POST']['createVcard']) && (serendipity_checkPermission('adminUsersMaintainSame') || $serendipity['serendipityUserlevel'] == USERLEVEL_EDITOR)) {
             if ($this->createVCard($serendipity['POST']['profileUser'])) {
                 echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> '. DONE . ': ' . sprintf(PLUGIN_EVENT_USERPROFILES_VCARDCREATED_AT, serendipity_strftime('%H:%M:%S')) . '</span>';
-                echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> '. IMPORT_NOTES . ': '. PLUGIN_EVENT_USERPROFILES_VCARDCREATED_NOTE . '</span>';
+                echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> '. IMPORT_NOTES . ' '. PLUGIN_EVENT_USERPROFILES_VCARDCREATED_NOTE . '</span>';
             }
             else {
                 echo '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> '. ERROR . ': ' . PLUGIN_EVENT_USERPROFILES_VCARDNOTCREATED . '</span>';
