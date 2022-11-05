@@ -1,3 +1,7 @@
+6.61:
+-----
+ * Improve RELATED_CATEGORY_CHANGE_MSG and consistency messaging of IMPORT_NOTES constant
+
 6.60:
 -----
  * Better check a possible non-given variable check on entry previews

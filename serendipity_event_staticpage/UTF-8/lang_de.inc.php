@@ -139,7 +139,7 @@
 
 @define('CREATED_ON', 'Erstellt am');
 
-@define('RELATED_CATEGORY_CHANGE_MSG', 'Dies hat eine vorherige, zugeordnete-Kategorie-Assoziierung von ID #%s, mit Staticpage ID #%s überschrieben, da nur 1:1 Beziehungen erlaubt sind! Bitte ändern Sie diese oder die vorherige statische Seite im Staticpage Auswahlfeld "zugeordnete Kategorie" zu "keine"!');
+@define('RELATED_CATEGORY_CHANGE_MSG', 'Dies hat eine vorherige, zugeordnete-Kategorie-Assoziierung von ID #%s, mit Staticpage ID #%s überschrieben, da nur 1:1 Beziehungen erlaubt sind! Bitte überprüfen Sie beide statischen Seiten im Eingabeformular für statische Seiten, um diese Änderungen im ausgewählten Feld "zugeordnete Kategorie" zu bestätigen.');
 @define('RELATED_CATEGORY_CHANGE_DEL_MSG', 'Das korrespondierende related_category_id Feld von Staticpage ID #%s wurde zurückgesetzt.');
 
 @define('STATICPAGE_CONFIGGROUP_FORM', 'Backend Formular Voreinstellungen:');

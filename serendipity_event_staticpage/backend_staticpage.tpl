@@ -162,13 +162,13 @@
 <div class="msg_success spmsg"><svg aria-hidden="true" class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg> {$sp_defpages_rip_success}</div>
         {else}
 <div class="msg_notice spmsg">
-    <svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> <strong>{$CONST.IMPORT_NOTES}:</strong> {$CONST.STATICPAGE_CANNOTDELETE_MSG}
+    <svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> <strong>{$CONST.IMPORT_NOTES}</strong> {$CONST.STATICPAGE_CANNOTDELETE_MSG}
 </div>
         {/if}
     {/if}
     {if isset($sp_relcatchange) AND $sp_relcatchange}
 <div class="msg_notice spmsg">
-    <svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> <strong>{$CONST.IMPORT_NOTES}:</strong> {$CONST.RELATED_CATEGORY_CHANGE_MSG|sprintf:$prev_relcat_staticpage:$this_relcat_staticpage}
+    <svg aria-hidden="true" class="icon icon-error"><use xlink:href="#icon-error"></use></svg> <strong>{$CONST.IMPORT_NOTES}</strong> {$CONST.RELATED_CATEGORY_CHANGE_MSG|sprintf:$prev_relcat_staticpage:$this_relcat_staticpage}
 </div>
     {/if}
 

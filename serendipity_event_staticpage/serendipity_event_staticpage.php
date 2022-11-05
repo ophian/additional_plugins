@@ -99,7 +99,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.60');
+        $propbag->add('version', '6.61');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -3683,7 +3683,7 @@ class serendipity_event_staticpage extends serendipity_event
 
                     if ($pid > 0 && $pcp != $pid) {
                         // note this to user in case we had updated real data
-                        echo '<div class="msg_notice spmsg"><span class="icon-error" aria-hidden="true"></span> ' . IMPORT_NOTES . ': ' . sprintf(RELATED_CATEGORY_CHANGE_MSG, $pcp, $pid) . '</div>';
+                        echo '<div class="msg_notice spmsg"><span class="icon-error" aria-hidden="true"></span> ' . IMPORT_NOTES . ' ' . sprintf(RELATED_CATEGORY_CHANGE_MSG, $pcp, $pid) . '</div>';
                     }
                     break;
 

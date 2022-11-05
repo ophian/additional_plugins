@@ -176,7 +176,7 @@
 
 @define('CREATED_ON', 'Created on');
 
-@define('RELATED_CATEGORY_CHANGE_MSG', 'This has overwritten a previous related-category-association called ID #%s, with staticpage ID #%s, since only unique associations are allowed! Please change this or the other staticpage in the staticpageform to a selected "related category" field: "none"!');
+@define('RELATED_CATEGORY_CHANGE_MSG', 'This has overwritten a previous related-category-association of staticpage ID #%s, with ID #%s, since only unique associations are allowed. Please check both static pages in the staticpage entryform to confirm to these changes within the selected "related category" field.');
 @define('RELATED_CATEGORY_CHANGE_DEL_MSG', 'The corresponding related_category_id field of staticpage ID #%s has been updated and set to 0.');
 
 @define('PLAIN_ASCII', 'URLs shall use plain ASCII only. [A-Za-z0-9]');
