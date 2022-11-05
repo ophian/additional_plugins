@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Strony statyczne&lt;/b&gt;&lt;br /&gt;Pokazuje Strony statyczne w Twoim blogu tak, jak pokazywane są wszystkie inne wpisy (z zachowaniem formatowania i layoutu). Dodaje nową zakładkę w menu w Panelu administracyjnym.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Mon, 17 Oct 2022 11:13:37 +0200</pubDate>
+<pubDate>Sat, 05 Nov 2022 15:17:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1238,7 +1238,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;User Profiles&lt;/b&gt;&lt;br /&gt;Shows simple user profiles and allows to embed author pictures.&lt;br/&gt;For: Serendipity 3.5</content:encoded>
-<pubDate>Sat, 17 Sep 2022 12:39:41 +0200</pubDate>
+<pubDate>Sat, 05 Nov 2022 15:26:45 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
