@@ -18,6 +18,6 @@
 -----
  * Check missing REQUEST url (Request2) switch for
    smarty.inc.php communityrating_serendipity_show()
- * Remove obsolet smarty security checks
+ * Remove obsolete Smarty security checks
 
 latest: Smarty3 forward compatibility
