@@ -1,3 +1,7 @@
+1.79:
+-----
+ * Fix ycon image creation with imagefilledpolygon on PHP 8.1, which deprecated the $num_points parameter
+
 1.78:
 -----
  * Don't mess around in backend

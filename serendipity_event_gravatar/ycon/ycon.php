@@ -114,19 +114,23 @@ function draw_glpyh(&$image, $x, $y, $full, $fg_color, $bg_color, $shape, $rotat
   $quarter = $full / 4;
   $half = $full / 2;
 
-  if($inverted)
-  {
-    imagefilledpolygon($image, array(0 + $x, 0 + $y, 0 + $x, $full + $y, $full + $x, $full + $y, $full + $x, 0 + $y), 4, $fg_color);
+  if ($inverted) {
+    if (PHP_VERSION_ID >= 80100) {
+      imagefilledpolygon($image, array(0 + $x, 0 + $y, 0 + $x, $full + $y, $full + $x, $full + $y, $full + $x, 0 + $y), $fg_color);
+    } else {
+      imagefilledpolygon($image, array(0 + $x, 0 + $y, 0 + $x, $full + $y, $full + $x, $full + $y, $full + $x, 0 + $y), 4, $fg_color);
+    }
     $drawing_color = $bg_color;
-  }
-  else
-  {
-    imagefilledpolygon($image, array(0 + $x, 0 + $y, 0 + $x, $full + $y, $full + $x, $full + $y, $full + $x, 0 + $y), 4, $bg_color);
+  } else {
+    if (PHP_VERSION_ID >= 80100) {
+      imagefilledpolygon($image, array(0 + $x, 0 + $y, 0 + $x, $full + $y, $full + $x, $full + $y, $full + $x, 0 + $y), $bg_color);
+    } else {
+      imagefilledpolygon($image, array(0 + $x, 0 + $y, 0 + $x, $full + $y, $full + $x, $full + $y, $full + $x, 0 + $y), 4, $bg_color);
+    }
     $drawing_color = $fg_color;
   }
 
-  switch($shape)
-  {
+  switch($shape) {
     // the first few shapes are visually unchanged by 90° rotations, and thus
     // suitable for the center glyph
 
@@ -259,15 +263,13 @@ function draw_glpyh(&$image, $x, $y, $full, $fg_color, $bg_color, $shape, $rotat
   }
 
   // for each point
-  for($p = 0; $p < count($points) / 2; ++$p)
-  {
+  for($p = 0; $p < count($points) / 2; ++$p) {
     // normalized
     $normalized_x = $points[$p * 2] - $half;
     $normalized_y = $points[$p * 2 + 1] - $half;
 
     // then rotate
-    for($i = 0; $i < $rotation; ++$i)
-    {
+    for($i = 0; $i < $rotation; ++$i) {
       $old_x = $normalized_x;
 
       $normalized_x = -$normalized_y;
@@ -280,7 +282,11 @@ function draw_glpyh(&$image, $x, $y, $full, $fg_color, $bg_color, $shape, $rotat
   }
 
   // draw the bastard
-  imagefilledpolygon($image, $points, count($points) / 2, $drawing_color);
+  if (PHP_VERSION_ID >= 80100) {
+    imagefilledpolygon($image, $points, $drawing_color);
+  } else {
+    imagefilledpolygon($image, $points, count($points) / 2, $drawing_color);
+  }
 }
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 require_once 'ycon.php';
 
-function build_ycon($filename, $seed='',$size=''){
+function build_ycon($filename, $seed='',$size='') {
     $hash = md5($seed);
     $image = ycon($hash, $size, 255, 255, 255);
     imagetruecolortopalette($image, false, 64);
