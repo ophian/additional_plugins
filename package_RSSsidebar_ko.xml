@@ -12,9 +12,9 @@
 <title>Average Rating: Shows top-rated movies by their average rating</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_communityrating</link>
 <category>Sidebar Plugins</category>
-<author>Lewe Zipfel, Garvin Hicking</author>
+<author>Lewe Zipfel, Garvin Hicking. Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_communityrating&lt;br /&gt;Average Rating&lt;/b&gt;&lt;br /&gt;Shows top-rated movies by their average rating&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Tue, 25 Apr 2017 14:33:44 +0200</pubDate>
+<pubDate>Mon, 07 Nov 2022 09:44:27 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_communityrating</guid>
 </item>
 <item>
