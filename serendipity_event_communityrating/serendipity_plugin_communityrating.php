@@ -19,8 +19,8 @@ class serendipity_plugin_communityrating extends serendipity_plugin
         $propbag->add('name',          $this->title);
         $propbag->add('description',   PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_DESC);
         $propbag->add('stackable',     true);
-        $propbag->add('author',        'Lewe Zipfel, Garvin Hicking');
-        $propbag->add('version',       '1.2.2');
+        $propbag->add('author',        'Lewe Zipfel, Garvin Hicking. Ian Styx');
+        $propbag->add('version',       '1.2.3');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -83,10 +83,11 @@ class serendipity_plugin_communityrating extends serendipity_plugin
 
         $rows = serendipity_db_query($q);
         if (!is_array($rows)) {
-            echo "No movies during the last $timespan days! Maybe I dropped dead.";
+            echo "No movies during the last $timespan days! Maybe I dropped dead.\n";
+            return;
         }
 
-        echo '<ol class="movie {$type}">';
+        echo '<ol class="movie ' . $type . '">';
 
         foreach($rows AS $row) {
             $url = serendipity_archiveURL($row['id'],
@@ -94,7 +95,7 @@ class serendipity_plugin_communityrating extends serendipity_plugin
                                           'serendipityHTTPPath',
                                           true,
                                           array('timestamp' => $row['timestamp']));
-            echo '<li><a href="'. $url . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($row['title']) : htmlspecialchars($row['title'], ENT_COMPAT, LANG_CHARSET)) . '</a> (' . ($row['rating']) . ')</li>';
+            echo '<li><a href="'. $url . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($row['title']) : htmlspecialchars($row['title'], ENT_COMPAT, LANG_CHARSET)) . '</a> (' . ($row['rating']) . ")</li>\n";
         }
         echo '</ol>';
 

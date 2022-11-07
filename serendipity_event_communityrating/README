@@ -13,7 +13,7 @@ subdirectory.
 
 Copy those files into the "img" directory of your current template!
 
-The backend
+THE BACKEND
 -----------
 
 This plugin allows you to create a rating for any item you like. This example with use
@@ -22,8 +22,9 @@ ratings for Movies, based on IMDB links and an ID of the item you rate.
 When you've installed the plugin, go to your Administration Panel and create a new entry.
 Look at the section on the bottom of the page, where it reads "Community Rating".
 
-There you have a dropdown selection panel, where you can add product types ("IMDB", "Product",
-...) and can enter your rating. You can add multiple types and ratings for a single entry.
+There you have a selection panel (based on the configured items in the plugin config of the event plugin),
+where you can add product types ("IMDB", "Product", ...) and can enter your rating.
+You can add multiple types and ratings for a single entry.
 
 The ratings you store are your personal rating, and stored within your
 serendipity_entryproperties database panel.
@@ -46,7 +47,7 @@ A good place for the new code is below this code:
             <div class="serendipity_entry_extended"><a id="extended"></a>{$entry.extended}
 -----------8-<---------------->-8----------------------
 
-This line of code is reponsible to print the extended entry body of your article. Displaying
+This line of code is responsible to print the extended entry body of your article. Displaying
 your rating below that, seems like a good thing to do.
 
 Now to display your own rating of an IMDB movie, insert this piece of code:
@@ -78,7 +79,8 @@ By default the plugin provides simple templates that show stars as rating indica
 
 The template files are called like "communityrating_IMDB.tpl" or "communityrating_IMDB_garvin.tpl".
 The first indicator ("_IMDB") is the type of your product. The second indicator ("", "_garvin") is the name
-of the displayed user. So you can customize the look of any foreign votings per user!
+of the displayed user. So you can customize the look of any foreign voting per user!
+NOTE: They actually do need some love, while originally developed loooong ago! :)
 
 RSS Feeds
 ---------
@@ -92,7 +94,7 @@ Steps for adding a new type
 ----------------------------
 
 1. Configure the Community Rating plugin. Edit the field which holds the current list of
-   Types. Add your type at the end, seperated by ",". Only enter names as Type without
+   Types. Add your type at the end, separated by ",". Only enter names as Type without
    special characters.
 
 2. Copy the img/stars_XXX_(full|half|zero).png files so, that you have new image files for

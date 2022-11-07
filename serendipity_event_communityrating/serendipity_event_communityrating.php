@@ -19,7 +19,7 @@ class serendipity_event_communityrating extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_COMMUNITYRATING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Lewe Zipfel, Ian Styx');
-        $propbag->add('version',       '1.17');
+        $propbag->add('version',       '1.18');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -124,6 +124,7 @@ class serendipity_event_communityrating extends serendipity_event
                 case 'backend_display':
                     $props =& $this->getSupportedProperties();
 ?>
+
                     <fieldset id="edit_entry_communityrating" class="entryproperties_communityrating">
                         <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_COMMUNITYRATING_TITLE; ?></legend></span>
 <?php

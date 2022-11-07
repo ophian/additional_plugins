@@ -1,3 +1,7 @@
+1.18 && 1.2.3 (sidebar):
+------------------------
+ * Some small fixes to run without errors on startup
+
 1.17:
 -----
  * Fix an uninitialized variable check for PHP 8
