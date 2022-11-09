@@ -19,7 +19,7 @@ class serendipity_event_filter_entries extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FILTER_ENTRIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.0.4');
+        $propbag->add('version',       '2.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1',
@@ -158,7 +158,7 @@ class serendipity_event_filter_entries extends serendipity_event
                     }
 ?>              </select>
             </td>
-            <td width="80"><?php echo CONTENT ?></td>
+            <td width="80"><span title="<?= REQUIRED_FIELD ?>"><?php echo CONTENT ?> *</span></td>
             <td><input size="10" type="text" name="filter[body]" value="<?php echo (isset($_SESSION['filter']['body']) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($_SESSION['filter']['body']) : htmlspecialchars($_SESSION['filter']['body'], ENT_COMPAT, LANG_CHARSET)) : '') ?>"/></td>
         </tr>
         <tr>
@@ -264,6 +264,7 @@ class serendipity_event_filter_entries extends serendipity_event
 
                     switch($plugincode) {
                         case 'filter':
+                            $full = false;
                             $perPage = (int)(!empty($_SESSION['sort']['perPage']) ? $_SESSION['sort']['perPage'] : $per_page[0]);
                             if ($perPage > $per_page_max) {
                                 $perPage = $per_page_max;
@@ -298,16 +299,17 @@ class serendipity_event_filter_entries extends serendipity_event
                                 $term = serendipity_db_escape_string($_SESSION['filter']['body']);
                                 $full = true;
                             }
-                            if (isset($full) && $full && $serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
-                                $filter[] = "(title ILIKE '%$term%' OR body ILIKE '%$term%' OR extended ILIKE '%$term%')";
-                            } elseif (isset($full) && $full && $serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'pdo-sqlite' || $serendipity['dbType'] == 'sqlite3oo') {
-                                $term = str_replace('*', '%', $term);
+                            if ($full && $serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
+                                $term = str_replace('*', '', $term);
+                                $filter[] = "(title ILIKE '%$term%' OR body ILIKE '%$term%' OR extended ILIKE '%$term%')"; // Using percentage (%) wildcard already
+                            } elseif ($full && $serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'pdo-sqlite' || $serendipity['dbType'] == 'sqlite3oo') {
+                                $term = str_replace('*', '', $term);
                                 $term = serendipity_mb('strtolower', $term);
-                                $filter[] = "(lower(title) LIKE '%$term%' OR lower(body) LIKE '%$term%' OR lower(extended) LIKE '%$term%')";
-                            } elseif (isset($full) && $full && $serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli') {
+                                $filter[] = "(lower(title) LIKE '%$term%' OR lower(body) LIKE '%$term%' OR lower(extended) LIKE '%$term%')"; // Using percentage (%) wildcard already
+                            } elseif ($full && $serendipity['dbType'] == 'mysqli') {
                                 if (isset($term) && @mb_detect_encoding($term, 'UTF-8', true) && @mb_strlen($term, 'utf-8') < strlen($term)) {
-                                    $_term = str_replace('*', '', $term);
-                                    $filter[] = "(title LIKE '%$_term%' OR body LIKE '%$_term%' OR extended LIKE '%$_term%')";
+                                    $term = str_replace('*', '', $term);
+                                    $filter[] = "(title LIKE '%$term%' OR body LIKE '%$term%' OR extended LIKE '%$term%')"; // Using percentage (%) wildcard already
                                 } else {
                                     if (isset($term) && preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
                                         $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "' IN BOOLEAN MODE)";
@@ -316,7 +318,7 @@ class serendipity_event_filter_entries extends serendipity_event
                                     }
                                 }
                             } else {
-                                $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "')";
+                                $filter[] = "MATCH (title,body,extended) AGAINST ('" . ($term ?? '1') . "')";
                             }
 
                             $filter_sql = implode(' AND ', $filter);

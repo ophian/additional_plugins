@@ -1,3 +1,10 @@
+2.1.0:
+------
+
+ * Fixes for wildcard searches (postgres sqlite), since already in use
+ * Some small improvements and a PHP 8 search $term variable init fix
+ * The content field is mandatory
+
 2.0.4:
 ------
 
