@@ -1,3 +1,7 @@
+2.3.1:
+-----
+ * Do not show on $serendipity['GET']['action'] === 'empty' (ie. filter_entries plugin)
+
 2.3.0:
 -----
  * Better check archives all summary pages vs specific archives
