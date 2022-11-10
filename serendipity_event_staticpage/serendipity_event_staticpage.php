@@ -1153,7 +1153,7 @@ class serendipity_event_staticpage extends serendipity_event
                     );
                     serendipity_db_insert('staticpages_types', $this->pagetype);
                     $set = array(
-                        'articletype' => '1',
+                        'articletype' => 1,
                         'pageorder' => '0'
                     );
                     serendipity_db_update('staticpages', array(), $set);
