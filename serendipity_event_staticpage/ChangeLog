@@ -1,5 +1,9 @@
 6.61:
 -----
+ * Fix installation update case 7 for PDO database setups
+
+6.61:
+-----
  * Improve RELATED_CATEGORY_CHANGE_MSG and consistency messaging of IMPORT_NOTES constant
 
 6.60:
