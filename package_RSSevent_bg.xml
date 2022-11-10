@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Статични страници&lt;/b&gt;&lt;br /&gt;Показва статични страници във вашия блог използвайки общия дизайн на блога. Добавя нова команда към административното меню.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Sat, 05 Nov 2022 15:17:09 +0100</pubDate>
+<pubDate>Thu, 10 Nov 2022 17:46:59 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
