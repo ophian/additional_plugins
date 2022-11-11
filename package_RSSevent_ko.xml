@@ -446,7 +446,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;글에 태그 달기&lt;/b&gt;&lt;br /&gt;글에 자유롭게 태그를 달 수 있게 합니다&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Fri, 04 Nov 2022 17:47:56 +0100</pubDate>
+<pubDate>Fri, 11 Nov 2022 17:46:31 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -761,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;다중 언어로 글 작성&lt;/b&gt;&lt;br /&gt;여러 언어 버전으로 된 글을 작성할 수 있습니다&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Wed, 02 Nov 2022 14:22:36 +0100</pubDate>
+<pubDate>Fri, 11 Nov 2022 09:44:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;고정 페이지&lt;/b&gt;&lt;br /&gt;블로그의 디자인을 그대로 따르는 고정 페이지를 블로그 속에 보여줍니다. 관리 메뉴에 새 메뉴 아이템을 생성합니다.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Thu, 10 Nov 2022 17:46:59 +0100</pubDate>
+<pubDate>Thu, 10 Nov 2022 18:11:41 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
