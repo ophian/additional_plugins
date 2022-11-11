@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.28');
+        $propbag->add('version',       '5.29');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -352,12 +352,15 @@ class serendipity_event_freetag extends serendipity_event
 
     function cleanup()
     {
-        self::static_install();
+        if (null !== $this->get_config('dbbuild')) {
+            self::static_install();
+        }
     }
 
     function install()
     {
-        self::static_install();
+        self::static_install(!(null !== $this->get_config('dbbuild')));
+        $this->set_config('dbbuild', 'true');
     }
 
     /**
@@ -366,18 +369,20 @@ class serendipity_event_freetag extends serendipity_event
      * @static
      * @see     cleanup()
      */
-    static function static_install()
+    static function static_install($new = false)
     {
         global $serendipity;
 
-        if (!self::tableCreated('entrytags')) {
+        $a = (($serendipity['dbType'] == 'pdo-postgres' || $serendipity['dbType'] == 'pdo-sqlite') && !$new) ? '@' : '';
+
+        if (false === self::tableCreated('entrytags')) {
             $q = "CREATE TABLE {$serendipity['dbPrefix']}entrytags (" .
                     "entryid int(10) not null, " .
                     "tag varchar(50) not null, " .
                     "PRIMARY KEY (entryid, tag)" .
                 ") {UTF_8}";
 
-            $result = serendipity_db_schema_import($q);
+            $result = serendipity_db_schema_import($a.$q);
 
             if ($result !== true) {
                 return;
@@ -387,7 +392,7 @@ class serendipity_event_freetag extends serendipity_event
             serendipity_db_schema_import("CREATE INDEX tagsTagIndex ON {$serendipity['dbPrefix']}entrytags (tag)");
         }
 
-        if (!self::tableCreated('tagkeywords')) {
+        if (false === self::tableCreated('tagkeywords')) {
             $q = "CREATE TABLE {$serendipity['dbPrefix']}tagkeywords (" .
                     "keywords text, " .
                     "tag varchar(50) not null, " .
@@ -397,7 +402,7 @@ class serendipity_event_freetag extends serendipity_event
             $result = serendipity_db_schema_import($q);
         }
 
-        if (self::upgradeFromVersion1()) {
+        if (true === self::upgradeFromVersion1()) {
             self::convertEntryPropertiesTags();
         } else {
             echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> NOT UPGRADING!</span>'."\n";
@@ -440,7 +445,7 @@ class serendipity_event_freetag extends serendipity_event
         $q = "SELECT count(*) FROM {$serendipity['dbPrefix']}entryproperties WHERE property = 'ep_freetag_name'";
         $result = serendipity_db_query($q);
 
-        if ((int)$result[0] > 0) {
+        if (isset($result[0]) && $result[0] > 0) {
             return true;
         } else {
             return false;

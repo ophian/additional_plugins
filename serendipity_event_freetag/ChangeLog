@@ -1,3 +1,7 @@
+5.29:
+-----
+ * Fix a strange issue installing tables with pdo-(postgres|sqlite) drivers
+
 5.28:
 -----
  * Add failsafe parameter for known-to-fail PostgresQL queries using HAVING, in this case for startups with no displayLeafTaggedEntries tag data yet
