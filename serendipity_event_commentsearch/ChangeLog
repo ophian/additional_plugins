@@ -1,3 +1,7 @@
+1.9.2:
+------
+ * Search against PDO-postgres DB too
+
 1.9.1:
 ------
  * Better check a non-given variable check on entry previews

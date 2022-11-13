@@ -22,7 +22,7 @@ class serendipity_event_commentsearch extends serendipity_event
         ));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.9.1');
+        $propbag->add('version', '1.9.2');
         $propbag->add('requirements',  array(
             'serendipity' => '1.7',
             'smarty'      => '3.1.0',
@@ -51,22 +51,23 @@ class serendipity_event_commentsearch extends serendipity_event
         $this->setupDB();
 
         $term = serendipity_db_escape_string($serendipity['GET']['searchTerm']);
-        if ($serendipity['dbType'] == 'postgres') {
+        if ($serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
             $group     = '';
             $distinct  = 'DISTINCT';
+            $term = str_replace('*', '', $term);
             $find_part = "(c.title ILIKE '%$term%' OR c.body ILIKE '%$term%')";
         } elseif (stristr($serendipity['dbType'], 'sqlite') !== FALSE) {
             $group     = 'GROUP BY id';
             $distinct  = '';
-            $term      = serendipity_mb('strtolower', $term);
+            $term      = serendipity_mb('strtolower', str_replace('*', '', $term));
             $find_part = "(lower(c.title) LIKE '%$term%' OR lower(c.body) LIKE '%$term%')";
         } else { // MYSQL
             $group     = 'GROUP BY id';
             $distinct  = '';
             $term      = str_replace('&quot;', '"', $term);
             if (@mb_detect_encoding($term, 'UTF-8', true) && @mb_strlen($term, 'utf-8') < strlen($term)) {
-                $_term = str_replace('*', '', $term);
-                $find_part = "(c.title LIKE '%$_term%' OR c.body LIKE '%$_term%')";
+                $term = str_replace('*', '', $term);
+                $find_part = "(c.title LIKE '%$term%' OR c.body LIKE '%$term%')";
             } else {
                 if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
                     $find_part = "MATCH(c.title,c.body) AGAINST('$term' IN BOOLEAN MODE)";
