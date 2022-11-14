@@ -22,11 +22,11 @@ class serendipity_event_commentsearch extends serendipity_event
         ));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.9.2');
+        $propbag->add('version', '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
-            'smarty'      => '3.1.0',
-            'php'         => '5.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '7.4'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups',    array('FRONTEND_FEATURES'));
@@ -90,14 +90,14 @@ class serendipity_event_commentsearch extends serendipity_event
         $results = serendipity_db_query($querystring, false, 'assoc');
         if (!is_array($results)) {
             if ($results !== 1 && $results !== true) {
-                echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($results) : htmlspecialchars($results, ENT_COMPAT, LANG_CHARSET));
+                echo htmlspecialchars($results, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, LANG_CHARSET);
             }
             $results = array();
         }
         $myAddData = array("from" => "serendipity_plugin_commentsearch:generate_content");
         foreach($results AS $idx => $result) {
             $results[$idx]['permalink'] = serendipity_archiveURL($result['id'], $result['title'], 'baseURL', true, $result);
-            $results[$idx]['comment']   = $result['body']; // escape it in the template (function_exists('serendipity_specialchars') ? serendipity_specialchars(strip_tags($result['body'])) : htmlspecialchars(strip_tags($result['body']), ENT_COMPAT, LANG_CHARSET));
+            $results[$idx]['comment']   = $result['body']; // htmlspecialchars(strip_tags($result['body']), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, LANG_CHARSET);
             serendipity_plugin_api::hook_event('frontend_display', $results[$idx], $myAddData);
             // let the template decide, if we want to have tags or not
             $results[$idx]['commenthtml'] = $results[$idx]['comment'];
@@ -113,6 +113,9 @@ class serendipity_event_commentsearch extends serendipity_event
 
         $filename = 'plugin_commentsearch_searchresults.tpl';
         $content = $this->parseTemplate($filename);
+        // What about pagination or max results and what about length ? Any restrictions in effect ? What about paginated search entries ?
+        // Current implementation is to append in any case. Same as for static pages. Do we really need to care?
+        $serendipity['smarty']->assign('comment_search_result', $content); // pass to content.tpl for the case of an empty search on entries, but true on comments
         echo $content;
     }
 
