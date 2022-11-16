@@ -1022,7 +1022,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamschutz Biene (Honeypot, Verstecktes Captcha)&lt;/b&gt;&lt;br /&gt;Implementiert Kommentar AntiSpam Maßnahmen, die einfach zu konfigurieren aber sehr effektiv sind.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 29 Oct 2022 14:46:46 +0200</pubDate>
+<pubDate>Wed, 16 Nov 2022 12:42:59 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
