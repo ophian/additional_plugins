@@ -1,3 +1,11 @@
+1.6.6:
+------
+
+ * Fix log file(!):
+   - comment array parts replacements on null with PHP 8.1+
+   - strftime for PHP 8 / PHP 9
+   following the spamblock event plugin.
+
 1.6.5:
 ------
 

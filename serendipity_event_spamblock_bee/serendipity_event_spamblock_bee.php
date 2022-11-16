@@ -1115,7 +1115,19 @@ class serendipity_event_spamblock_bee extends serendipity_event
                     return;
                 }
                 if (strpos($logfile, '%') !== false) {
-                    $logfile = strftime($logfile);
+                    /*
+                      strftime is infected by thread unsafe locales, which is plenty of reason to deprecate it, with additional pro reasons for doing so being its disparate functionality among different os-es and libc's.
+                      Deprecation also doesn't mean removal, which won't happen until PHP 9, giving developers plenty of time to move to a saner threadsafe locale API based on intl/icu.
+                      cheers Derick
+                    */
+                    if (PHP_VERSION_ID >= 80100 && PHP_VERSION_ICU === false) {
+                        $logfile = @strftime($logfile); // temporary disable deprecation notice with PHP 8.1 until found better solution with %A, %d. %B %Y alike formats, on frontend calls. Using date() replacement is doing well with generic formats like "%Y-%m-%d %H:%M:%S".
+                    } elseif (PHP_VERSION_ICU === true) {
+                        // ICU71 is fixed up from PHP 8.2
+                        $logfile = serendipity_toDateTimeMapper($logfile);
+                    } else {
+                        $logfile = strftime($logfile); // legacy default
+                    }
                 }
 
                 $fp = @fopen($logfile, 'a+');
@@ -1128,12 +1140,12 @@ class serendipity_event_spamblock_bee extends serendipity_event
                     $switch,
                     $reason,
                     $id,
-                    str_replace("\n", ' ', $addData['name']),
-                    str_replace("\n", ' ', $addData['email']),
-                    str_replace("\n", ' ', $addData['url']),
+                    str_replace("\n", ' ', ($addData['name'] ?? '')),
+                    str_replace("\n", ' ', ($addData['email'] ?? '')),
+                    str_replace("\n", ' ', ($addData['url'] ?? '')),
                     str_replace("\n", ' ', $_SERVER['HTTP_USER_AGENT']),
                     $_SERVER['REMOTE_ADDR'],
-                    str_replace("\n", ' ', $addData['comment'])
+                    str_replace("\n", ' ', ($addData['comment'] ?? ''))
                 ));
 
                 fclose($fp);
