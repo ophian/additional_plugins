@@ -1,3 +1,7 @@
+4.20.0.1:
+---------
+    * Improve dark_contents Rich Text editor mode CSS for div block coloring
+
 4.20.0.0:
 ---------
     * Upgrade to CKEDITOR 4.20. Series, update 0 (https://ckeditor.com/cke4/release-notes).
