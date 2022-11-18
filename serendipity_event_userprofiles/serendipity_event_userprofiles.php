@@ -93,7 +93,7 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '1.3.5');
+        $propbag->add('version', '1.3.6');
         $propbag->add('requirements', array(
             'serendipity' => '3.5',
             'smarty'      => '3.1.0',
@@ -805,7 +805,7 @@ section > .serendipityAuthorProfile,
                     } elseif (isset($this->found_images[$author]) && isset($eventData['body'])) {
                         // Author image was already found previously. Display it.
                         $eventData['body'] = $this->found_images[$author] . $eventData['body'];
-                    } elseif ($img = serendipity_getTemplateFile('img/' . preg_replace('@[^a-z0-9]@i', '_', $author) . '.' . $this->get_config('extension'))) {
+                    } elseif ($img = serendipity_getTemplateFile('img/' . preg_replace('@[^a-z0-9]@i', '_', ($author ?? '')) . '.' . $this->get_config('extension'))) {
                         if (isset($eventData['body'])) {
                             // Author image exists, save it in cache and display it.
                             $this->found_images[$author] = '<div class="serendipity_authorpic"><img src="' . $img . '" alt="' . AUTHOR . '" title="' . serendipity_specialchars($authorname) . '" /><br /><span>' .serendipity_specialchars($authorname) . '</span></div>';
