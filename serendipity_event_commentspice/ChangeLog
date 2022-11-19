@@ -1,3 +1,7 @@
+2.4.2:
+------
+ * PHP 8.1 fix for isset on NULL
+
 2.4.1:
 ------
  * PHP 8.2 fix for explicit type string for explode()

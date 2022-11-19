@@ -28,7 +28,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.3'
         ));
-        $propbag->add('version',        '2.4.1');
+        $propbag->add('version',        '2.4.2');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
@@ -544,8 +544,8 @@ class serendipity_event_commentspice extends serendipity_event
             $promo_url = null;
 
             // I save no matter what the rules say, it wont display later.
-            $twittername = ltrim(trim($serendipity['POST']['twitter']),'@');
-            $boourl = $serendipity['POST']['boo'];
+            $twittername = isset($serendipity['POST']['twitter']) ? ltrim(trim($serendipity['POST']['twitter']),'@') : null;
+            $boourl = $serendipity['POST']['boo'] ?? null;
             if (isset($serendipity['POST']['promorss']) && !empty($serendipity['POST']['promorss'])) {
                 $promorss = $serendipity['POST']['promorss'];
                 $parts = explode("\n", $promorss);
