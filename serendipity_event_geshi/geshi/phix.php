@@ -4,7 +4,7 @@
  * ---------------------------------
  * Author: Pete Lomax
  * Copyright: (c) 2010 Nicholas Koceja
- * Release Version: 1.0.9.0
+ * Release Version: 1.0.9.1
  * Date Started: 16/08/2015
  *
  * Phix language file for GeSHi.
@@ -18,7 +18,7 @@
  *
  * TODO (updated <date-of-release>)
  * -------------------------
- * separate the functions from the procedures, and have a slight color change for each.
+ * seperate the funtions from the procedures, and have a slight color change for each.
  *
  *************************************************************************************
  *

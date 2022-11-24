@@ -4,7 +4,7 @@
  * ---------------------------------
  * Author: Nicholas Koceja (nerketur@hotmail.com)
  * Copyright: (c) 2010 Nicholas Koceja
- * Release Version: 1.0.9.0
+ * Release Version: 1.0.9.1
  * Date Started: 11/24/2010
  *
  * Euphoria language file for GeSHi.
@@ -20,7 +20,7 @@
  *
  * TODO (updated <date-of-release>)
  * -------------------------
- * separate the functions from the procedures, and have a slight color change for each.
+ * seperate the funtions from the procedures, and have a slight color change for each.
  *
  *************************************************************************************
  *
