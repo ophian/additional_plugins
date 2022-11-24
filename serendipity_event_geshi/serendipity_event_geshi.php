@@ -74,7 +74,7 @@ class serendipity_event_geshi extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.6.0'
         ));
-        $propbag->add('version',       '1.2');
+        $propbag->add('version',       '1.3');
         $propbag->add('event_hooks', array('frontend_display' => true, 'frontend_comment' => true));
         $propbag->add('groups', array('MARKUP'));
 
