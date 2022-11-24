@@ -59,20 +59,12 @@ simply delete all content in the markup textarea and save the plugin.');
 @define('PLUGIN_PODCAST_MFEXT_DESC', 'Extensions the Flash player is able to play.');
 @define('PLUGIN_PODCAST_MFEXT_HTML', 'Flash player markup');
 
-@define('PLUGIN_PODCAST_XSPFEXT', 'XSPF flashplayer audio extensions');
-@define('PLUGIN_PODCAST_XSPFEXT_DESC', 'Audio extensions the XSFP flashplayer is able to play. Normaly this is only MP3 and XSPF');
-@define('PLUGIN_PODCAST_XSPFEXT_HTML', 'XSPF markup');
-
 @define('PLUGIN_PODCAST_AUEXT', 'Quicktime miniplayer audio extensions');
 @define('PLUGIN_PODCAST_AUEXT_DESC', 'Audio extensions the quicktime miniplayer is able to play.');
 @define('PLUGIN_PODCAST_AUEXT_HTML', 'Quicktime markup.');
 
 @define('PLUGIN_PODCAST_FLVEXT', 'FLV player extensions');
 @define('PLUGIN_PODCAST_FLVEXT_DESC', 'Extensions the FLV player is able to play. FLV is a video format supported by Flash players. The benefit of this format is it\'s plattform independance. Normal video formats can be converted by free of cost tools (PC http://www.rivavx.com/index.php?id=483&L=0 und Mac http://www.versiontracker.com/dyn/moreinfo/macosx/15473).');
-
-@define('PLUGIN_PODCAST_FLOWEXT', 'Flowplayer extensions');
-@define('PLUGIN_PODCAST_FLOWEXT_DESC', 'Extensions the Flowplayer is able to play. FLV is a video format supported by Flash players. See more on www.flowplayer.org.');
-@define('PLUGIN_PODCAST_FLOWEXT_HTML', 'Flowplayer markup');
 
 @define('PLUGIN_PODCAST_HTML5_AUDIO', 'HTML5 audio extensions');
 @define('PLUGIN_PODCAST_HTML5_AUDIO_DESC', 'Modern browsers support HTML5 player widgets, native to the browser.');

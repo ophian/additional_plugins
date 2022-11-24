@@ -47,8 +47,7 @@
 @define('PLUGIN_PODCAST_WMEXT_DESC', 'Erweiterungen, die mit dem Windows Media Player abgespielt werden sollen.');
 @define('PLUGIN_PODCAST_MFEXT', 'Flash Erweiterungen');
 @define('PLUGIN_PODCAST_MFEXT_DESC', 'Erweiterungen, die mit dem Flash Player abgespielt werden sollen.');
-@define('PLUGIN_PODCAST_XSPFEXT', 'XSPF Flashplayer Audio Erweiterungen');
-@define('PLUGIN_PODCAST_XSPFEXT_DESC', 'Audio Erweiterungen, die mit dem XSPF Flashplayer abgespielt werden sollen. Dieser kann normaler Weise nur MP3 und XSPF Dateien abspielen.');
+
 @define('PLUGIN_PODCAST_AUEXT', 'Quicktime Miniplayer Audio Erweiterungen');
 @define('PLUGIN_PODCAST_AUEXT_DESC', 'Audio Erweiterungen, die mit dem Quicktime Mini Player abgespielt werden sollen.');
 @define('PLUGIN_PODCAST_FLVEXT', 'FLV Player Erweiterungen');

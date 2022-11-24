@@ -85,20 +85,11 @@ class serendipity_event_podcast extends serendipity_event
             'itunes_meta',
 
             /* players */
-            'extflow',
-            'extflow_player',
-
             'extquicktime',
             'extquicktime_player',
 
             'extwinmedia',
             'extwinmedia_player',
-
-            'extflash',
-            'extflash_player',
-
-            'extxspf',
-            'extxspf_player',
 
             'extaudio',
             'extaudio_player',
@@ -115,7 +106,7 @@ class serendipity_event_podcast extends serendipity_event
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.47');
+        $propbag->add('version', '1.48');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.0.0',
@@ -305,32 +296,11 @@ class serendipity_event_podcast extends serendipity_event
                 $propbag->add('default',        PLUGIN_PODCAST_WMEXT_DEFAULT);
                 break;
 
-            case 'extflash':
-                $propbag->add('type',           'string');
-                $propbag->add('name',           PLUGIN_PODCAST_MFEXT);
-                $propbag->add('description',    PLUGIN_PODCAST_MFEXT_DESC);
-                $propbag->add('default',        PLUGIN_PODCAST_MFEXT_DEFAULT);
-                break;
-
-            case 'extxspf':
-                $propbag->add('type',           'string');
-                $propbag->add('name',           PLUGIN_PODCAST_XSPFEXT);
-                $propbag->add('description',    PLUGIN_PODCAST_XSPFEXT_DESC);
-                $propbag->add('default',        PLUGIN_PODCAST_XSPFEXT_DEFAULT);
-                break;
-
             case 'extaudio':
                 $propbag->add('type',           'string');
                 $propbag->add('name',           PLUGIN_PODCAST_AUEXT);
                 $propbag->add('description',    PLUGIN_PODCAST_AUEXT_DESC);
                 $propbag->add('default',        PLUGIN_PODCAST_AUEXT_DEFAULT);
-                break;
-
-            case 'extflow_player':
-                $propbag->add('type',           'text');
-                $propbag->add('name',           PLUGIN_PODCAST_FLOWEXT_HTML);
-                $propbag->add('description',    '');
-                $propbag->add('default',        PLUGIN_PODCAST_FLOWPLAYER);
                 break;
 
             case 'exthtml5_audio_player':
@@ -359,20 +329,6 @@ class serendipity_event_podcast extends serendipity_event
                 $propbag->add('name',           PLUGIN_PODCAST_WMEXT_HTML);
                 $propbag->add('description',    '');
                 $propbag->add('default',        PLUGIN_PODCAST_WMPLAYER);
-                break;
-
-            case 'extflash_player':
-                $propbag->add('type',           'text');
-                $propbag->add('name',           PLUGIN_PODCAST_MFEXT_HTML);
-                $propbag->add('description',    '');
-                $propbag->add('default',        PLUGIN_PODCAST_FLASHPLAYER);
-                break;
-
-            case 'extxspf_player':
-                $propbag->add('type',           'text');
-                $propbag->add('name',           PLUGIN_PODCAST_XSPFEXT_HTML);
-                $propbag->add('description',    '');
-                $propbag->add('default',        PLUGIN_PODCAST_XSPFPLAYER);
                 break;
 
             case 'extaudio_player':
@@ -460,12 +416,6 @@ class serendipity_event_podcast extends serendipity_event
         }
 
         switch ($event) {
-            //////////////////////// Add Javascript for JW FLV Player ////////////////////////
-            case 'frontend_header':
-            case 'backend_header':
-                echo '<script type="text/javascript" src="' . $this->GetPluginHttpPath() . '/player/flowplayer/example/flowplayer-3.2.6.min.js"></script>' . "\n";
-                $this->log("Init\n--------------------------------------------------------------------------------------\n");
-                break;
 
             //////////////////////// RSS Entries ////////////////////////
             case 'frontend_display:rss-2.0:per_entry':
@@ -1222,14 +1172,11 @@ class serendipity_event_podcast extends serendipity_event
      */
     function InitializeSupportedFiletypes()
     {
-
         if (!isset($this->supportedFiletypes)) {
             $this->supportedFiletypes = array();
             $qtexts     = explode(',', $this->get_config('extquicktime', PLUGIN_PODCAST_QTEXT_DEFAULT));
             $wmexts     = explode(',', $this->get_config('extwinmedia', PLUGIN_PODCAST_WMEXT_DEFAULT));
-            $flexts     = explode(',', $this->get_config('extflash', PLUGIN_PODCAST_MFEXT_DEFAULT));
             $mp3exts    = explode(',', $this->get_config('extaudio', PLUGIN_PODCAST_AUEXT_DEFAULT));
-            $xspfexts   = explode(',', $this->get_config('extxspf', PLUGIN_PODCAST_XSPFEXT_DEFAULT));
             $flvexts    = explode(',', $this->get_config('extflow', PLUGIN_PODCAST_FLOWEXT_DEFAULT));
             $a5exts     = explode(',', $this->get_config('exthtml5_audio', PLUGIN_PODCAST_HTML5_AUDIO_DEFAULT));
             $v5exts     = explode(',', $this->get_config('exthtml5_video', PLUGIN_PODCAST_HTML5_VIDEO_DEFAULT));
@@ -1240,14 +1187,8 @@ class serendipity_event_podcast extends serendipity_event
             foreach($wmexts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'w';
             }
-            foreach($flexts AS $ext){
-                $this->supportedFiletypes[trim($ext)] = 'f';
-            }
             foreach($mp3exts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'm';
-            }
-            foreach($xspfexts AS $ext){
-                $this->supportedFiletypes[trim($ext)] = 'x';
             }
             foreach($flvexts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'v';
@@ -1271,10 +1212,7 @@ class serendipity_event_podcast extends serendipity_event
             $this->supportedPlayers = array(
                 'q'  => $this->get_config('extquicktime_player', PLUGIN_PODCAST_QUICKTIMEPLAYER),
                 'w'  => $this->get_config('extwinmedia_player', PLUGIN_PODCAST_WMPLAYER),
-                'f'  => $this->get_config('extflash_player', PLUGIN_PODCAST_FLASHPLAYER),
-                'x'  => $this->get_config('extxspf_player', PLUGIN_PODCAST_XSPFPLAYER),
                 'm'  => $this->get_config('extaudio_player', PLUGIN_PODCAST_MP3PLAYER),
-                'v'  => $this->get_config('extflow_player', PLUGIN_PODCAST_FLOWPLAYER),
                 'a5' => $this->get_config('exthtml5_audio_player', PLUGIN_PODCAST_HTML5_AUDIOPLAYER),
                 'v5' => $this->get_config('exthtml5_video_player', PLUGIN_PODCAST_HTML5_VIDEOPLAYER),
             );

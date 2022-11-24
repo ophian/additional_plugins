@@ -46,10 +46,7 @@
 @define('PLUGIN_PODCAST_QTEXT_DESC', 'Typy souborů, které je schopný přehrát Quick Time Player.');
 @define('PLUGIN_PODCAST_WMEXT', 'Windows Media Player přípony');
 @define('PLUGIN_PODCAST_WMEXT_DESC', 'Typy souborů, které je schopný přehrát Windows Media Player.');
-@define('PLUGIN_PODCAST_MFEXT', 'Flash přípony');
-@define('PLUGIN_PODCAST_MFEXT_DESC', 'Typy souborů, které je schopný přehrát Flash Player.');
-@define('PLUGIN_PODCAST_XSPFEXT', 'XSPF flashplayer audio přípony');
-@define('PLUGIN_PODCAST_XSPFEXT_DESC', 'Typy zvukových souborů, které je schopen přehrát XSFB flashplayer. Obvykle pouze MP3 a XSPF.');
+
 @define('PLUGIN_PODCAST_AUEXT', 'Quicktime miniplayer audio přípony');
 @define('PLUGIN_PODCAST_AUEXT_DESC', 'Typy zvukových souborů, které je schopný přehrát Quick Time Miniplayer.');
 @define('PLUGIN_PODCAST_FLVEXT', 'FLV player přípony');
@@ -83,12 +80,8 @@
 @define('PLUGIN_PODCAST_EXPERT_HINT', 'TIP: Pomocí HTML značek si můžete přizpůsobit LIBOVOLNÝ přehrávač, takže můžete zadat seznam různých variant přehrávače pro různé typy souborů! Pamatujte, že jak jednou uložíte nastavení pluginu, bude vždy použito statické značkování <strong>namísto</strong> toho, které plugin poskytuje pomocí souboru <strong>podcast_player.php</strong>. Pokud chcete resetovat nastavení na výchozí hodnoty, jednoduše vymažte veškerý obsah pole pro značkování pluginu a uložte nastavení.');
 @define('PLUGIN_PODCAST_QTEXT_HTML', 'Značkování přehrávače Quicktime');
 @define('PLUGIN_PODCAST_WMEXT_HTML', 'Značkování Windows Media Player');
-@define('PLUGIN_PODCAST_MFEXT_HTML', 'Značkování Flash player');
-@define('PLUGIN_PODCAST_XSPFEXT_HTML', 'Značkování XSPF');
 @define('PLUGIN_PODCAST_AUEXT_HTML', 'Značkování Quicktime.');
-@define('PLUGIN_PODCAST_FLOWEXT', 'Rozšíření Flowplayer');
-@define('PLUGIN_PODCAST_FLOWEXT_DESC', 'Rozšíření Flowplayer je schopné přehrávat formát FLV podporovaný Flashovými přehrávači. Více na www.flowplayer.org.');
-@define('PLUGIN_PODCAST_FLOWEXT_HTML', 'Značkování Flowplayer');
+
 @define('PLUGIN_PODCAST_HTML5_AUDIO', 'HTML5 audio rozšíření');
 @define('PLUGIN_PODCAST_HTML5_AUDIO_DESC', 'Moderní prohlížeče nativně podporují HTML5 widgety.');
 @define('PLUGIN_PODCAST_HTML5_AUDIO_HTML', 'Značkování HTML5 audio');

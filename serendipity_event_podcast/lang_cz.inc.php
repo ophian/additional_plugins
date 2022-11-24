@@ -48,8 +48,6 @@
 @define('PLUGIN_PODCAST_WMEXT_DESC', 'Typy souborù, které je schopný pøehrát Windows Media Player.');
 @define('PLUGIN_PODCAST_MFEXT', 'Flash pøípony');
 @define('PLUGIN_PODCAST_MFEXT_DESC', 'Typy souborù, které je schopný pøehrát Flash Player.');
-@define('PLUGIN_PODCAST_XSPFEXT', 'XSPF flashplayer audio pøípony');
-@define('PLUGIN_PODCAST_XSPFEXT_DESC', 'Typy zvukových souborù, které je schopen pøehrát XSFB flashplayer. Obvykle pouze MP3 a XSPF.');
 @define('PLUGIN_PODCAST_AUEXT', 'Quicktime miniplayer audio pøípony');
 @define('PLUGIN_PODCAST_AUEXT_DESC', 'Typy zvukových souborù, které je schopný pøehrát Quick Time Miniplayer.');
 @define('PLUGIN_PODCAST_FLVEXT', 'FLV player pøípony');
@@ -84,11 +82,8 @@
 @define('PLUGIN_PODCAST_QTEXT_HTML', 'Znaèkování pøehrávaèe Quicktime');
 @define('PLUGIN_PODCAST_WMEXT_HTML', 'Znaèkování Windows Media Player');
 @define('PLUGIN_PODCAST_MFEXT_HTML', 'Znaèkování Flash player');
-@define('PLUGIN_PODCAST_XSPFEXT_HTML', 'Znaèkování XSPF');
 @define('PLUGIN_PODCAST_AUEXT_HTML', 'Znaèkování Quicktime.');
-@define('PLUGIN_PODCAST_FLOWEXT', 'Roz¹íøení Flowplayer');
-@define('PLUGIN_PODCAST_FLOWEXT_DESC', 'Roz¹íøení Flowplayer je schopné pøehrávat formát FLV podporovaný Flashovými pøehrávaèi. Více na www.flowplayer.org.');
-@define('PLUGIN_PODCAST_FLOWEXT_HTML', 'Znaèkování Flowplayer');
+
 @define('PLUGIN_PODCAST_HTML5_AUDIO', 'HTML5 audio roz¹íøení');
 @define('PLUGIN_PODCAST_HTML5_AUDIO_DESC', 'Moderní prohlí¾eèe nativnì podporují HTML5 widgety.');
 @define('PLUGIN_PODCAST_HTML5_AUDIO_HTML', 'Znaèkování HTML5 audio');
