@@ -707,7 +707,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Markup: Markdown&lt;/b&gt;&lt;br /&gt;Apply Markdown markup to entry text&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 01 Sep 2022 08:20:17 +0200</pubDate>
+<pubDate>Fri, 25 Nov 2022 17:41:08 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -1111,8 +1111,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_textile</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;標記語言： Textile&lt;/b&gt;&lt;br /&gt;以 Textile 轉換器處理全部的輸出資料&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 20 Jul 2022 15:43:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;標記語言： Textile&lt;/b&gt;&lt;br /&gt;以 Textile 轉換器處理全部的輸出資料&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 25 Nov 2022 17:39:20 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
