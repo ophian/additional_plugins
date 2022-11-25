@@ -25,12 +25,13 @@ class serendipity_event_markdown extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.4'
         ));
-        $propbag->add('version',       '1.35');
+        $propbag->add('version',       '1.36');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
-            'frontend_display' => true,
-            'frontend_comment' => true,
-            'css'              => true
+            'backend_entryform' => true,
+            'frontend_display'  => true,
+            'frontend_comment'  => true,
+            'css'               => true
         ));
         $propbag->add('groups', array('MARKUP'));
 
@@ -135,10 +136,19 @@ class serendipity_event_markdown extends serendipity_event
             require_once dirname(__FILE__) . '/lib/Michelf/SmartyPantsTypographer.php';
         }
 
+        $strict = $serendipity['strict_markup_editors'] ?? true; // override per manually set user (local) config var
+
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
             switch($event) {
+                case 'backend_entryform':
+                    if ($strict) {
+                        $eventData['markupeditor'] = true;
+                    }
+                    $eventData['markupeditortype'] = PLUGIN_EVENT_MARKDOWN_TRANSFORM;
+                    break;
+
                 case 'frontend_display':
 
                     foreach ($this->markup_elements AS $temp) {
@@ -146,6 +156,11 @@ class serendipity_event_markdown extends serendipity_event
                         && (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
                         && !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                             $element = $temp['element'];
+
+                            if ($element == 'comment' && isset($eventData['comment'])) {
+                                $_comment = $eventData['comment']; // the comment "body" IN data copy to compare to (see below)
+                            }
+
                             # HTML special chars like ">" in comments may have been replaced by entities ("&gt;")
                             # by serendipity_event_unstrip_tags; we have to - partially - undo that, as ">" is
                             # used for blockquotes in Markdown.
@@ -161,6 +176,11 @@ class serendipity_event_markdown extends serendipity_event
                             }
                             if ($mdsp == 1) $eventData[$element] = SmartyPants::defaultTransform($eventData[$element]);
                             if ($mdsp == 2) $eventData[$element] = SmartyPantsTypographer::defaultTransform($eventData[$element]);
+
+                            if (isset($_comment) && $_comment !== $eventData['comment']) {
+                                // no escape parsing, since changed
+                                $eventData['dismark'] = true;
+                            }
                         }
                     }
                     if (is_array($eventData)) {

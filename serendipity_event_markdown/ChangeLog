@@ -1,3 +1,11 @@
+1.36:
+=====
+
+ * Listen on backend_entryform hook for being strict on form buttons based on used markup editor (up from Serendipity Styx 4.0).
+   Set a manually added [*] serendipity variable into your local serendipity config file user area, if you would like to use the previous
+    PLAINTEXT editor buttons behaviour in your backend entry forms again
+    [*]     $serendipity['strict_markup_editors'] = false;
+
 1.35:
 =====
 
