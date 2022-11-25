@@ -9,5 +9,5 @@
 
 @define('PLUGIN_EVENT_TEXTILE_NAME', '標記語言： Textile');
 @define('PLUGIN_EVENT_TEXTILE_DESC', '以 Textile 轉換器處理全部的輸出資料');
-@define('PLUGIN_EVENT_TEXTILE_TRANSFORM', '<a href="%s">Textile</a>-允許的格式');
+@define('PLUGIN_EVENT_TEXTILE_TRANSFORM', '<a href="%s" target="_blank">Textile</a>-允許的格式');
 

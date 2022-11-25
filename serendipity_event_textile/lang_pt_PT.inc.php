@@ -9,5 +9,5 @@
 
 @define('PLUGIN_EVENT_TEXTILE_NAME', 'Código: Textile');
 @define('PLUGIN_EVENT_TEXTILE_DESC', 'Filtra o texto das entradas através do conversor Textile');
-@define('PLUGIN_EVENT_TEXTILE_TRANSFORM', 'Síntaxe <a href="%s">Textile</a> autorizada');
+@define('PLUGIN_EVENT_TEXTILE_TRANSFORM', 'Síntaxe <a href="%s" target="_blank">Textile</a> autorizada');
 

@@ -8,7 +8,7 @@
 
 @define('PLUGIN_EVENT_TEXTILE_NAME',                'Markup: Textile');
 @define('PLUGIN_EVENT_TEXTILE_DESC',                'Převádí text se značkami Textile do HTML');
-@define('PLUGIN_EVENT_TEXTILE_TRANSFORM',           'Formátování <a href="%s">Textile</a> je povoleno');
+@define('PLUGIN_EVENT_TEXTILE_TRANSFORM',           'Formátování <a href="%s" target="_blank">Textile</a> je povoleno');
 @define('PLUGIN_EVENT_TEXTILE_VERSION',             'Verze Textile');
 @define('PLUGIN_EVENT_TEXTILE_VERSION_DESCRIPTION', 'Kterou verzi značkovacího jazyka Textile chcete používat?');
 @define('PLUGIN_EVENT_TEXTILE_UNESCAPE',            'Převádět HTML uvozovky na skutečné uvozovky?');
