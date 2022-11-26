@@ -707,7 +707,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Markup: Markdown&lt;/b&gt;&lt;br /&gt;Převádí značky Markdown na HTML v textu příspěvku&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 25 Nov 2022 17:41:08 +0100</pubDate>
+<pubDate>Sat, 26 Nov 2022 11:37:06 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -1112,7 +1112,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;Markup: Textile&lt;/b&gt;&lt;br /&gt;Převádí text se značkami Textile do HTML&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 25 Nov 2022 17:39:20 +0100</pubDate>
+<pubDate>Sat, 26 Nov 2022 11:32:42 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
