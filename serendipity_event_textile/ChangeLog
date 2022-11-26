@@ -1,3 +1,8 @@
+1.12.1:
+-------
+
+ * Shorten up PLUGIN_EVENT_TEXTILE_TRANSFORM on [bg, cs, cz] languages for consistency and backend button bar usage
+
 1.12.0:
 -------
 

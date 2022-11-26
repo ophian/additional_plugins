@@ -18,7 +18,7 @@ class serendipity_event_textile extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TEXTILE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Lars Strojny, Ian Styx');
-        $propbag->add('version',       '1.12.0');
+        $propbag->add('version',       '1.12.1');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
