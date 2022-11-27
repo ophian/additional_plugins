@@ -25,7 +25,7 @@ class serendipity_event_markdown extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.4'
         ));
-        $propbag->add('version',       '1.37');
+        $propbag->add('version',       '1.38');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
             'backend_entryform' => true,
@@ -146,7 +146,12 @@ class serendipity_event_markdown extends serendipity_event
                     if ($strict) {
                         $eventData['markupeditor'] = true;
                     }
-                    $eventData['markupeditortype'] = PLUGIN_EVENT_MARKDOWN_TRANSFORM;
+                    // We don't want users to provide two active concurrent markup plugins. Without throwing a notice make it notable that the user has them installed!
+                    if (!empty($eventData['markupeditortype'])) {
+                        $eventData['markupeditortype'] .= ' <span title="Having 2 concurrent markup plugins active is not recommended!" class="icon-attention-circled alertinfo" aria-hidden="true"></span> <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown</a>';
+                    } else {
+                        $eventData['markupeditortype'] = PLUGIN_EVENT_MARKDOWN_TRANSFORM;
+                    }
                     break;
 
                 case 'frontend_display':

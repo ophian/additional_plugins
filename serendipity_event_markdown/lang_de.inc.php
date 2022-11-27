@@ -10,7 +10,7 @@
 @define('PLUGIN_EVENT_MARKDOWN_DESC', 'Markdown-Textformatierung durchführen');
 @define('PLUGIN_EVENT_MARKDOWN_EXTRA_NAME', '"Markdown Extra" verwenden');
 @define('PLUGIN_EVENT_MARKDOWN_EXTRA_DESC', 'Markdown Extra ist eine erweiterte Markdown-Variante, vgl. https://michelf.ca/projects/php-markdown/extra/');
-@define('PLUGIN_EVENT_MARKDOWN_TRANSFORM', '<a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>-Formatierung erlaubt');
+@define('PLUGIN_EVENT_MARKDOWN_TRANSFORM', '<a href="https://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown</a>-Formatierung erlaubt');
 
 @define('PLUGIN_EVENT_MARKDOWN_VERSION', 'Markdown-Version');
 @define('PLUGIN_EVENT_MARKDOWN_VERSION_BLABLAH', 'Welche Markdown-Version verwenden? (Siehe https://michelf.ca/projects/php-markdown/ und https://michelf.ca/blog/2013/php-markdown-lib/)');
