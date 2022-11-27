@@ -18,7 +18,7 @@ class serendipity_event_textile extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TEXTILE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Lars Strojny, Ian Styx');
-        $propbag->add('version',       '1.12.1');
+        $propbag->add('version',       '1.12.2');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -155,7 +155,12 @@ class serendipity_event_textile extends serendipity_event
                     if ($strict) {
                         $eventData['markupeditor'] = true;
                     }
-                    $eventData['markupeditortype'] = PLUGIN_EVENT_TEXTILE_TRANSFORM;
+                    // We don't want users to provide two active concurrent markup plugins. Without throwing a notice make it notable that the user has them installed!
+                    if (!empty($eventData['markupeditortype'])) {
+                        $eventData['markupeditortype'] .= ' <span title="Having 2 concurrent markup plugins active is not recommended!" class="icon-attention-circled alertinfo" aria-hidden="true"></span> <a href="https://textile-lang.com/" target="_blank">Textile</a>';
+                    } else {
+                        $eventData['markupeditortype'] = sprintf(PLUGIN_EVENT_TEXTILE_TRANSFORM, 'https://textile-lang.com/');
+                    }
                     break;
 
                 case 'frontend_display':

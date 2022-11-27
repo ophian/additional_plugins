@@ -1,3 +1,8 @@
+1.12.2:
+-------
+
+ * Make markupeditortype notice other concurrent markup editor installations (for the user to decide which one to keep!)
+
 1.12.1:
 -------
 
