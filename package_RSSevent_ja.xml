@@ -709,7 +709,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;マークアップ: Markdown&lt;/b&gt;&lt;br /&gt;エントリテキストに Markdown マークアップを適用します。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Nov 2022 14:27:01 +0100</pubDate>
+<pubDate>Mon, 28 Nov 2022 14:23:48 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -1069,7 +1069,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;静的ページ&lt;/b&gt;&lt;br /&gt;デザインとすべての書式化されたブログとウェブログ内部に静的ページを表示します。管理インターフェースに新しいメニューを追加します。&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Thu, 10 Nov 2022 18:11:41 +0100</pubDate>
+<pubDate>Mon, 28 Nov 2022 14:27:50 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1114,7 +1114,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;マークアップ: テクスタイル&lt;/b&gt;&lt;br /&gt;テクスタールコンバーターを通して出力をすべて解析します。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Nov 2022 14:26:31 +0100</pubDate>
+<pubDate>Mon, 28 Nov 2022 14:23:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>

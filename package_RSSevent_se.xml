@@ -707,7 +707,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Markup: Markdown&lt;/b&gt;&lt;br /&gt;Apply Markdown markup to entry text&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Nov 2022 14:27:01 +0100</pubDate>
+<pubDate>Mon, 28 Nov 2022 14:23:48 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;statiska sidor&lt;/b&gt;&lt;br /&gt;Förvaltar olika statiska sidor inom ditt blog med blog-design och alla formateringen. Lägg3r till en ny menypunkt i administrationsgränssnittet!&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Thu, 10 Nov 2022 18:11:41 +0100</pubDate>
+<pubDate>Mon, 28 Nov 2022 14:27:50 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1112,7 +1112,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;Markup: Textile&lt;/b&gt;&lt;br /&gt;Parse all output through the Textile converter&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Nov 2022 14:26:31 +0100</pubDate>
+<pubDate>Mon, 28 Nov 2022 14:23:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
