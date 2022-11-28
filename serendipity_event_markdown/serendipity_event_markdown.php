@@ -25,10 +25,11 @@ class serendipity_event_markdown extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.4'
         ));
-        $propbag->add('version',       '1.38');
+        $propbag->add('version',       '1.39');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
             'backend_entryform' => true,
+            'backend_configure' => true,
             'frontend_display'  => true,
             'frontend_comment'  => true,
             'css'               => true
@@ -120,6 +121,7 @@ class serendipity_event_markdown extends serendipity_event
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
         global $serendipity;
+        static $strict = null;
 
         $mdsp = $this->get_config('MARKDOWN_SMARTYPANTS');
         $mdex = serendipity_db_bool($this->get_config('MARKDOWN_EXTRA', 'false'));
@@ -136,21 +138,24 @@ class serendipity_event_markdown extends serendipity_event
             require_once dirname(__FILE__) . '/lib/Michelf/SmartyPantsTypographer.php';
         }
 
-        $strict = $serendipity['strict_markup_editors'] ?? true; // override per manually set user (local) config var
+        if ($strict === null) {
+            $strict = $serendipity['strict_markup_editors'] ?? true; // override per manually set user (local) config var
+        }
 
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
             switch($event) {
                 case 'backend_entryform':
+                case 'backend_configure':
                     if ($strict) {
-                        $eventData['markupeditor'] = true;
+                        $serendipity['pdata']['markupeditor'] = $eventData['markupeditor'] = true;
                     }
                     // We don't want users to provide two active concurrent markup plugins. Without throwing a notice make it notable that the user has them installed!
                     if (!empty($eventData['markupeditortype'])) {
-                        $eventData['markupeditortype'] .= ' <span title="Having 2 concurrent markup plugins active is not recommended!" class="icon-attention-circled alertinfo" aria-hidden="true"></span> <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown</a>';
+                        $serendipity['pdata']['markupeditortype'] = $eventData['markupeditortype'] .= ' <span title="Having 2 concurrent markup plugins active is not recommended!" class="icon-attention-circled alertinfo" aria-hidden="true"></span> <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown</a>';
                     } else {
-                        $eventData['markupeditortype'] = PLUGIN_EVENT_MARKDOWN_TRANSFORM;
+                        $serendipity['pdata']['markupeditortype'] = $eventData['markupeditortype'] = PLUGIN_EVENT_MARKDOWN_TRANSFORM;
                     }
                     break;
 
