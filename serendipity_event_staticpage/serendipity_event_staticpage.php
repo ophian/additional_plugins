@@ -3107,7 +3107,7 @@ class serendipity_event_staticpage extends serendipity_event
             echo "<!-- modul-type::$type - class_inspectConfig.php -->\n"; // tag dynamic form items
             $ctype = 'ic'.ucfirst($type);
             ${$ctype} = new $ctype();
-            if ($type == 'text' && $conf['s9y']['wysiwyg']) {
+            if ($type == 'text' && $conf['pdata']['wysiwyg']) {
                 $this->htmlnugget[] = $elcount;
                 serendipity_emit_htmlarea_code('nuggets', 'nuggets', true);
             }
@@ -3190,10 +3190,10 @@ class serendipity_event_staticpage extends serendipity_event
         $default  = $cbag->get('default');
 
         // add some $serendipity items to check for
-        $conf['s9y']['wysiwyg'] = $serendipity['wysiwyg'];
-        $conf['s9y']['nl2br']['iso2br'] = $serendipity['nl2br']['iso2br'] ?? null;
-        $conf['s9y']['markupeditor'] = $serendipity['pdata']['markupeditor'] ?? null;
-        $conf['s9y']['markupeditortype'] = $serendipity['pdata']['markupeditortype'] ?? null;
+        $conf['pdata']['wysiwyg'] = $serendipity['wysiwyg'];
+        $conf['pdata']['nl2br']['iso2br'] = $serendipity['nl2br']['iso2br'] ?? null;
+        $conf['pdata']['markupeditor'] = $serendipity['pdata']['markupeditor'] ?? null;
+        $conf['pdata']['markupeditortype'] = $serendipity['pdata']['markupeditortype'] ?? null;
 
         ob_start();
           $this->inspectConfig($what, $elcount, $config_item, $config_value, $type, $cname, $cdesc, $value, $default, $lang_direction, $hvalue, $radio, $radio2, $select, $per_row, $per_row2, $conf);
