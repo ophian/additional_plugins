@@ -99,11 +99,11 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.62');
+        $propbag->add('version', '6.63');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
-            'php'         => '7.0.0'
+            'php'         => '7.4.0'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('BACKEND_EDITOR', 'BACKEND_FEATURES', 'FRONTEND_FEATURES'));
@@ -3192,6 +3192,8 @@ class serendipity_event_staticpage extends serendipity_event
         // add some $serendipity items to check for
         $conf['s9y']['wysiwyg'] = $serendipity['wysiwyg'];
         $conf['s9y']['nl2br']['iso2br'] = $serendipity['nl2br']['iso2br'] ?? null;
+        $conf['s9y']['markupeditor'] = $serendipity['pdata']['markupeditor'] ?? null;
+        $conf['s9y']['markupeditortype'] = $serendipity['pdata']['markupeditortype'] ?? null;
 
         ob_start();
           $this->inspectConfig($what, $elcount, $config_item, $config_value, $type, $cname, $cdesc, $value, $default, $lang_direction, $hvalue, $radio, $radio2, $select, $per_row, $per_row2, $conf);

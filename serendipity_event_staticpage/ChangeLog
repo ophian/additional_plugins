@@ -1,4 +1,9 @@
-6.61:
+6.63:
+-----
+ * Flag and deny mixing of PLAIN TEXT editor default buttons in the static page entry forms
+   when used with markup editors like markdown or textile plugins.
+
+6.62:
 -----
  * Fix installation update case 7 for PDO database setups
 

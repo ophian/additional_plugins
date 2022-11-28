@@ -122,6 +122,11 @@ class icText extends inspectConfig
         if (!$inspectConfig['s9y']['wysiwyg']) {
 ?>
             <nobr><span id="tools_<?php echo $inspectConfig['config_item']; ?>" class="editor_toolbar" style="display: none">
+            <?php if ( isset($inspectConfig['s9y']['markupeditor']) ) { ?>
+                <button class="wrap_insgal" type="button" name="insG" title="Media Gallery" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>"><span class="icon-gallery" aria-hidden="true"></span><span class="visuallyhidden"> Media Gallery</span></button>
+                <button class="wrap_insmedia" type="button" name="insImage" title="<?php echo MEDIA ?>" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>"><span class="icon-s9yml" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MEDIA ?></span></button>
+                <?php if ( isset($inspectConfig['s9y']['markupeditortype']) ) { ?> [ <?php echo $inspectConfig['s9y']['markupeditortype']; ?> ]<?php } ?>
+            <?php } else { ?>
             <?php if ( $inspectConfig['s9y']['nl2br']['iso2br'] ) { ?>
                 <button class="wrap_selection lang-html" type="button" name="insX" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="nl" data-tag-close="nl">noBR</button>
             <?php } ?>
@@ -132,6 +137,8 @@ class icText extends inspectConfig
                 <button class="wrap_insgal" type="button" name="insG" title="Media Gallery" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>"><span class="icon-gallery" aria-hidden="true"></span><span class="visuallyhidden"> Media Gallery</span></button>
                 <button class="wrap_insmedia" type="button" name="insImage" title="<?php echo MEDIA ?>" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>"><span class="icon-s9yml" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MEDIA ?></span></button>
                 <button class="wrap_insurl" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insURL">URL</button>
+                <?php if ( isset($inspectConfig['s9y']['markupeditortype']) ) { ?> [ <?php echo $inspectConfig['s9y']['markupeditortype']; ?> ]<?php } ?>
+            <?php } ?>
             </span></nobr>
 
             <script type="text/javascript">
