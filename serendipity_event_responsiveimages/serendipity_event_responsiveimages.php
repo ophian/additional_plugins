@@ -10,6 +10,9 @@ class serendipity_event_responsiveimages extends serendipity_event
 {
     var $title = PLUGIN_EVENT_RESPONSIVE_NAME;
 
+    private $breakpoints = [];
+    private $thumbWidths = [];
+
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -18,10 +21,10 @@ class serendipity_event_responsiveimages extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_RESPONSIVE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.8');
+        $propbag->add('version',       '1.9');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0.0',
-            'php'         => '7.3.0'
+            'php'         => '7.4.0'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks', array(

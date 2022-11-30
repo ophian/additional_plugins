@@ -1,3 +1,7 @@
+1.9:
+----
+ * Fix for deprecated use of dynamic properties up from PHP 8.2
+
 1.8:
 ----
  * [Sync]: Avoid upscaling of small image
