@@ -23,11 +23,11 @@ class serendipity_event_recaptcha extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0.0',
+            'smarty'      => '3.1.0',
+            'php'         => '7.0.0'
         ));
-        $propbag->add('version',       '0.35');
+        $propbag->add('version',       '0.36');
         $propbag->add('event_hooks',    array(
             'frontend_configure'   => true,
             'frontend_saveComment' => true,
@@ -396,13 +396,13 @@ class serendipity_event_recaptcha extends serendipity_event
                            serendipity_db_escape_string($switch),
                            serendipity_db_escape_string($reason),
                            serendipity_db_escape_string($id),
-                           serendipity_db_escape_string($comment['name']),
-                           serendipity_db_escape_string($comment['email']),
-                           serendipity_db_escape_string($comment['url']),
-                           serendipity_db_escape_string($_SERVER['HTTP_USER_AGENT']),
+                           serendipity_db_escape_string($comment['name'] ?? ''),
+                           serendipity_db_escape_string($comment['email'] ?? ''),
+                           serendipity_db_escape_string($comment['url'] ?? ''),
+                           substr(serendipity_db_escape_string($_SERVER['HTTP_USER_AGENT']), 0, 255),
                            serendipity_db_escape_string($_SERVER['REMOTE_ADDR']),
-                           serendipity_db_escape_string(isset($_SESSION['HTTP_REFERER']) ? $_SESSION['HTTP_REFERER'] : $_SERVER['HTTP_REFERER']),
-                           serendipity_db_escape_string($comment['comment'])
+                           substr(serendipity_db_escape_string($_SESSION['HTTP_REFERER'] ?? $_SERVER['HTTP_REFERER']), 0, 255),
+                           serendipity_db_escape_string($comment['comment'] ?? '')
                 );
 
                 serendipity_db_query($q);

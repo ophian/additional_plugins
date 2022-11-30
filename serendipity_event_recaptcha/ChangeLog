@@ -1,3 +1,10 @@
+0.36:
+-----
+ * Fix an isset case on NULL
+ * Raised requirements
+ * PLEASE NOTE:
+   Googles v2 and v3 recaptcha api have been adopted yet
+
 0.35:
 -----
  * Fix "Incorrect integer value: '' for column" logging exception error with PHP 7
