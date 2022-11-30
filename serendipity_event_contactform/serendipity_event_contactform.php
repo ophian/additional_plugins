@@ -27,7 +27,7 @@ class serendipity_event_contactform extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'backend_title', 'email', 'subject', 'counter', 'intro', 'sent', 'articleformat', 'dynamic_tpl', 'dynamic_fields', 'dynamic_fields_tpl', 'dynamic_fields_desc'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.47');
+        $propbag->add('version', '1.48');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.0',
@@ -355,14 +355,14 @@ class serendipity_event_contactform extends serendipity_event
         // (replyTo does not have have any relation to contactform fields and will probably never be put in via the "form field string" by a user, else you would have to put in     'replyTo' => 'x',).
         // Since this is a "fake" call to make it accessible with Captchas and some primitive checks, name - email - url - comment could probably be set to any string with a certain length and the only real value they have here is to be (spamblock) logged with real data.
         // This is why it does not really matter, when dynamic contactform field items for these fields are named in a differentially manner, e.g. like email to E-mail, Homepage for url, etc.
-        // So why don't all possible 5 POST check fields error about not being isset then? Because they got already a NULL fallback init somewhere.
+        // So why don't all possible 5 POST check fields error about not being isset then? It's a matter of error reporting and PHP version.
         $commentInfo = array(
             'type'    => 'NORMAL',
             'source'  => 'commentform',
-            'name'    => serendipity_specialchars(strip_tags($serendipity['POST']['name'])),
-            'url'     => serendipity_specialchars(strip_tags($serendipity['POST']['url'])),
-            'comment' => serendipity_specialchars(strip_tags($comment)),
-            'email'   => serendipity_specialchars(strip_tags($serendipity['POST']['email'])),
+            'name'    => serendipity_specialchars(strip_tags($serendipity['POST']['name'] ?? '')),
+            'url'     => serendipity_specialchars(strip_tags($serendipity['POST']['url'] ?? '')),
+            'comment' => serendipity_specialchars(strip_tags($comment ?? '')),
+            'email'   => serendipity_specialchars(strip_tags($serendipity['POST']['email'] ?? '')),
             'source2' => 'adduser' // Allow the contactform to bypass "only registered users may post" option of the adduser-plugin
         );
         serendipity_plugin_api::hook_event('frontend_saveComment', $ca, $commentInfo);
@@ -381,10 +381,10 @@ class serendipity_event_contactform extends serendipity_event
 
         if ($this->sendComment(
                 $this->get_config('email'),
-                serendipity_specialchars(strip_tags($serendipity['POST']['name'])),
-                serendipity_specialchars(strip_tags($serendipity['POST']['email'])),
-                serendipity_specialchars(strip_tags($serendipity['POST']['url'])),
-                serendipity_specialchars(strip_tags($comment)),
+                serendipity_specialchars(strip_tags($serendipity['POST']['name'] ?? '')),
+                serendipity_specialchars(strip_tags($serendipity['POST']['email'] ?? '')),
+                serendipity_specialchars(strip_tags($serendipity['POST']['url'] ?? '')),
+                serendipity_specialchars(strip_tags($comment ?? '')),
                 true
         )) {
 
@@ -432,7 +432,7 @@ class serendipity_event_contactform extends serendipity_event
                 if (is_array($defaults)) {
                     foreach($defaults AS $item) {
                         switch ($form_fields[$item['name']]['type']) {
-                            case  'radio':
+                            case 'radio':
                                 foreach($form_fields[$item['name']]['options'] AS $option) {
                                     if ($option['id'] == $item['value']) {
                                         $form_fields[$item['name']]['options'][$option['name']]['default'] = 'checked="checked"';
@@ -442,7 +442,7 @@ class serendipity_event_contactform extends serendipity_event
                                 }
                                 break;
 
-                            case  'select':
+                            case 'select':
                                 foreach ($form_fields[$item['name']]['options'] AS $option) {
                                     if ($option['id'] == $item['value']) {
                                         $form_fields[$item['name']]['options'][$option['name']]['default'] = 'selected';

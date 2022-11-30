@@ -1,3 +1,7 @@
+1.48:
+-----
+ * On NULL fix for spamblock Captcha sent differently named array items for the custom dynamic contactform
+
 1.47:
 -----
  * Follow consistency for selected::subpage checkup
