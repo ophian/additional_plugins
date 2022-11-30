@@ -106,7 +106,7 @@ class serendipity_event_podcast extends serendipity_event
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.48');
+        $propbag->add('version', '1.49');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.0.0',
@@ -125,7 +125,7 @@ class serendipity_event_podcast extends serendipity_event
         switch($name) {
             case 'info':
                 $propbag->add('type',           'content');
-                $propbag->add('default',        nl2br((function_exists('serendipity_specialchars') ? serendipity_specialchars(PLUGIN_PODCAST_USAGE) : htmlspecialchars(PLUGIN_PODCAST_USAGE, ENT_COMPAT, LANG_CHARSET)) . "\n" . PLUGIN_PODCAST_USAGE_RSS));
+                $propbag->add('default',        nl2br(serendipity_specialchars(PLUGIN_PODCAST_USAGE) . "\n" . PLUGIN_PODCAST_USAGE_RSS));
                 break;
 
             case 'easy':
@@ -352,9 +352,9 @@ class serendipity_event_podcast extends serendipity_event
                 $propbag->add('description',    PLUGIN_PODCAST_ITUNES_DESC);
                 $propbag->add('default',        "
 
-<itunes:subtitle>" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['blogTitle']) : htmlspecialchars($serendipity['blogTitle'], ENT_COMPAT, LANG_CHARSET)) . "</itunes:subtitle>
-<itunes:author>" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['blogTitle']) : htmlspecialchars($serendipity['blogTitle'], ENT_COMPAT, LANG_CHARSET)) . "</itunes:author>
-<itunes:summary>" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['blogDescription']) : htmlspecialchars($serendipity['blogDescription'], ENT_COMPAT, LANG_CHARSET)) . "</itunes:summary>
+<itunes:subtitle>" . serendipity_specialchars($serendipity['blogTitle']) . "</itunes:subtitle>
+<itunes:author>" . serendipity_specialchars($serendipity['blogTitle']) . "</itunes:author>
+<itunes:summary>" . serendipity_specialchars($serendipity['blogDescription']) . "</itunes:summary>
 <itunes:image href=\"" . $serendipity['baseURL'] . "itunes.jpg\" />
 <itunes:category text=\"Technology\" />
                 ");
@@ -375,9 +375,9 @@ class serendipity_event_podcast extends serendipity_event
 
     function iTunify(&$eventData)
     {
-        $eventData['per_entry_display_dat'] .= '<itunes:author>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($eventData['author']) : htmlspecialchars($eventData['author'], ENT_COMPAT, LANG_CHARSET)) . '</itunes:author>' . "\n";
-        $eventData['per_entry_display_dat'] .= '<itunes:subtitle>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($eventData['title']) : htmlspecialchars($eventData['title'], ENT_COMPAT, LANG_CHARSET)) . '</itunes:subtitle>' . "\n";
-        $eventData['per_entry_display_dat'] .= '<itunes:summary>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(strip_tags($eventData['feed_body'])) : htmlspecialchars(strip_tags($eventData['feed_body']), ENT_COMPAT, LANG_CHARSET)) . '</itunes:summary>' . "\n";
+        $eventData['per_entry_display_dat'] .= '<itunes:author>' . serendipity_specialchars($eventData['author']) . '</itunes:author>' . "\n";
+        $eventData['per_entry_display_dat'] .= '<itunes:subtitle>' . serendipity_specialchars($eventData['title']) . '</itunes:subtitle>' . "\n";
+        $eventData['per_entry_display_dat'] .= '<itunes:summary>' . serendipity_specialchars(strip_tags($eventData['feed_body'])) . '</itunes:summary>' . "\n";
     }
 
     /**
@@ -543,10 +543,10 @@ class serendipity_event_podcast extends serendipity_event
                         $this->log("EP: " . trim($eattr));
                         $eattr = "ep_" . trim($eattr);
                         if (!empty($eattr) && !empty($eventData['properties'][$eattr])) {
-                            $fileInfo = $this->GetFileInfo($eventData['properties'][$eattr]);
-                            $type       = $fileInfo['mime'];
-                            $fileUrl = str_replace(' ','%20',$eventData['properties'][$eattr]);
-                            $enclosure = $this->GetEnclosure($event, $this->GetHostUrl() . (function_exists('serendipity_specialchars') ? serendipity_specialchars($fileUrl) : htmlspecialchars($fileUrl, ENT_COMPAT, LANG_CHARSET)), $type, $fileInfo['length'], $fileInfo['md5']);
+                            $fileInfo  = $this->GetFileInfo($eventData['properties'][$eattr]);
+                            $type      = $fileInfo['mime'];
+                            $fileUrl   = str_replace(' ','%20',$eventData['properties'][$eattr]);
+                            $enclosure = $this->GetEnclosure($event, $this->GetHostUrl() . serendipity_specialchars($fileUrl), $type, $fileInfo['length'], $fileInfo['md5']);
 
                             if (!empty($enclosure)) {
                                 $this->iTunify($eventData, $enclosure);
@@ -754,10 +754,11 @@ class serendipity_event_podcast extends serendipity_event
     function playerRewriteCallBack($treffer)
     {
         global $serendipity;
+
         $this->log('playerRewriteCallBack: treffer=' . print_r($treffer,true));
 
         // Check for nopodcasting class
-        $nopodcasting_class = $this->get_config('nopodcasting_class','nopodcast');
+        $nopodcasting_class = $this->get_config('nopodcasting_class', 'nopodcast');
         if (!empty($nopodcasting_class)) {
             $classPattern = '@class\s*=\s*(\'|")\s*' . $nopodcasting_class . '\s*(\'|")+@si';
             if (preg_match($classPattern , $treffer[0])) return $treffer[0];
@@ -1024,12 +1025,12 @@ class serendipity_event_podcast extends serendipity_event
      */
     function GetID3Infos($filename, &$fileInfoArray)
     {
-        // Set default fileinformation:
+        // Set default file information:
         $fileInfoArray['mime'] = serendipity_guessMime($fileInfoArray['extension']);
 
         $this->log("GetID3Infos, Guessed mime: " . $fileInfoArray['mime']);
-        $fileInfoArray['width']     = 0;
-        $fileInfoArray['height']    = 0;
+        $fileInfoArray['width']  = 0;
+        $fileInfoArray['height'] = 0;
 
         // Try to find the getid3 library in the bundled-libs first:
         if (file_exists(dirname(__FILE__) . '/player/getid3/getid3.lib.php')) {
@@ -1051,26 +1052,26 @@ class serendipity_event_podcast extends serendipity_event
         // Initialize getID3 engine
         $getID3 = new getID3;
         if (file_exists($filename)) {
-            $id3 =$getID3->analyze($filename);
+            $id3 = $getID3->analyze($filename);
             getid3_lib::CopyTagsToComments($id3);
             if (isset($id3['error'])) {
                 $fileInfoArray['id3error'] = $id3['error'];
             } else {
                 $this->log("ID3: " . print_r($id3,true));
-                $mimeType                   = $id3['mime_type'];
-                $fileInfoArray['mime']      = $mimeType;
-                $fileInfoArray['width']     = $id3['video']['resolution_x'];
-                $fileInfoArray['height']    = $id3['video']['resolution_y'];
+                $mimeType                = $id3['mime_type'];
+                $fileInfoArray['mime']   = $mimeType;
+                $fileInfoArray['width']  = $id3['video']['resolution_x'];
+                $fileInfoArray['height'] = $id3['video']['resolution_y'];
 
                 // Hack: ID3 gets wrong dimension on FLV files. Try to get another entry
-                if ((int)$fileInfoArray['width']<1 && (int)$fileInfoArray['height']<1 && isset($id3['meta']['onMetaData']['height']) && isset($id3['meta']['onMetaData']['width'])) {
-                    $fileInfoArray['width']     = $id3['meta']['onMetaData']['width'];
-                    $fileInfoArray['height']    = $id3['meta']['onMetaData']['height'];
+                if ((int)$fileInfoArray['width'] < 1 && (int)$fileInfoArray['height'] < 1 && isset($id3['meta']['onMetaData']['height']) && isset($id3['meta']['onMetaData']['width'])) {
+                    $fileInfoArray['width']  = $id3['meta']['onMetaData']['width'];
+                    $fileInfoArray['height'] = $id3['meta']['onMetaData']['height'];
                 }
             }
 
         } else {
-            $fileInfoArray['mime'] 		= 'error/filenotfound';
+            $fileInfoArray['mime'] = 'error/filenotfound';
             $this->log("File $filename not found");
         }
     }

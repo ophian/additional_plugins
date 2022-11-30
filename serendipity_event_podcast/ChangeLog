@@ -1,3 +1,8 @@
+1.49:
+-----
+ * Fix a constant regression of flash removal in 1.48
+ * Convert HTML5 audio and HTML5 video markup defaults for Serendipity Styx and real HTML5
+
 1.48:
 -----
  * Update getid3 lib to 1.9.22 [2022-09-29]

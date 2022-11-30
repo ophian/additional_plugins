@@ -82,15 +82,13 @@
 ');
 
 @DEFINE('PLUGIN_PODCAST_HTML5_AUDIOPLAYER','
-<audio controls=1 preload="none">
-    <source src="#url#" type="#mime#" />
-    ' . PLUGIN_PODCAST_FLOWPLAYER . '
-</audio>
+<div class="media_object_container">
+    <audio controls=1 preload="none" src="#url#" type="#mime#">&nbsp;</audio>
+</div>
 ');
 
 @DEFINE('PLUGIN_PODCAST_HTML5_VIDEOPLAYER','
-<video controls=1 preload="none">
-    <source src="#url#" type="#mime#" />
-    ' . PLUGIN_PODCAST_FLOWPLAYER . '
-</video>
+<div class="media_object_container">
+    <video controls=1 preload="none" src="#url#" type="#mime#">&nbsp;</video>
+</div>
 ');
