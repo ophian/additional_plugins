@@ -106,7 +106,7 @@ class serendipity_event_podcast extends serendipity_event
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.49');
+        $propbag->add('version', '1.50');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.0.0',
@@ -261,13 +261,6 @@ class serendipity_event_podcast extends serendipity_event
                 break;
 
             /* PLAYERS */
-            case 'extflow':
-                $propbag->add('type',           'string');
-                $propbag->add('name',           PLUGIN_PODCAST_FLOWEXT);
-                $propbag->add('description',    PLUGIN_PODCAST_FLOWEXT_DESC);
-                $propbag->add('default',        PLUGIN_PODCAST_FLOWEXT_DEFAULT);
-                break;
-
             case 'exthtml5_audio':
                 $propbag->add('type',           'string');
                 $propbag->add('name',           PLUGIN_PODCAST_HTML5_AUDIO);
@@ -1178,7 +1171,6 @@ class serendipity_event_podcast extends serendipity_event
             $qtexts     = explode(',', $this->get_config('extquicktime', PLUGIN_PODCAST_QTEXT_DEFAULT));
             $wmexts     = explode(',', $this->get_config('extwinmedia', PLUGIN_PODCAST_WMEXT_DEFAULT));
             $mp3exts    = explode(',', $this->get_config('extaudio', PLUGIN_PODCAST_AUEXT_DEFAULT));
-            $flvexts    = explode(',', $this->get_config('extflow', PLUGIN_PODCAST_FLOWEXT_DEFAULT));
             $a5exts     = explode(',', $this->get_config('exthtml5_audio', PLUGIN_PODCAST_HTML5_AUDIO_DEFAULT));
             $v5exts     = explode(',', $this->get_config('exthtml5_video', PLUGIN_PODCAST_HTML5_VIDEO_DEFAULT));
 

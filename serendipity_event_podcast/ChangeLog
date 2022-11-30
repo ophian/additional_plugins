@@ -1,3 +1,7 @@
+1.50:
+-----
+ * Fix another constant regression of flash removal in 1.48 for FLOWEXT
+
 1.49:
 -----
  * Fix a constant regression of flash removal in 1.48
