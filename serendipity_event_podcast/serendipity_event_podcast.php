@@ -106,7 +106,7 @@ class serendipity_event_podcast extends serendipity_event
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.50');
+        $propbag->add('version', '1.51');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.0.0',
@@ -613,7 +613,7 @@ class serendipity_event_podcast extends serendipity_event
 
                 // First replace old style [podcast] syntax always, even without player replacement
                 if (is_array($eventData)) {
-                    if (preg_match($patterns['podcastLinkPattern'],$eventData['body'])) {
+                    if (preg_match($patterns['podcastLinkPattern'], $eventData['body'])) {
                         $eventData['body'] .= '<!-- old podcast style found -->';
                     }
                     $eventData['body'] = preg_replace(
@@ -624,7 +624,7 @@ class serendipity_event_podcast extends serendipity_event
                     $eventData['extended'] = preg_replace(
                         $patterns['podcastLinkPattern'],
                         '<a href="\4">\4</a>',
-                        $eventData['extended']);
+                        $eventData['extended'] ?? '');
                 }
 
                 // Now replace all links to mediafiles with the configured players:
@@ -637,7 +637,7 @@ class serendipity_event_podcast extends serendipity_event
                     $eventData['extended'] = preg_replace_callback(
                         $patterns['playerRewritePattern'],
                         array( $this, "playerRewriteCallBack"),
-                        $eventData['extended']);
+                        $eventData['extended'] ?? '');
                 }
 
                 // Check, if podcasts are added via the extended article attribute and add them to the article, if configured:
@@ -1182,9 +1182,6 @@ class serendipity_event_podcast extends serendipity_event
             }
             foreach($mp3exts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'm';
-            }
-            foreach($flvexts AS $ext){
-                $this->supportedFiletypes[trim($ext)] = 'v';
             }
             foreach($a5exts AS $ext){
                 $this->supportedFiletypes[trim($ext)] = 'a5';
