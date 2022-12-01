@@ -1,19 +1,90 @@
 <html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=windows-1250">
-		<title>Dokumentace: Podcast</title>
-	</head>
-	<body>
-	<h1>Dokumentace k pluginu 'Podcast'<br />
-	<small>(serendipity_event_podcast)</small></h1>
-		<p>Dokumentaci k tomuto pluginu přeložil do češtiny Vladimír Ajgl (vlada [zavinac] ajgl [tecka] cz) dne 23.6.2012. Od té doby mohl být plugin pozměněn nebo mohly být rozšířené jeho funkce. Zkontrolujte pro jistotu i <a href="ChangeLog">aktuální anglický "ChangeLog"</a>.
-		</p>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+        <title>Dokumentace: Podcast</title>
+    </head>
+    <body>
+    <h1>Dokumentace k pluginu 'Podcast'<br />
+    <small>(serendipity_event_podcast)</small></h1>
+        <p>Dokumentaci k tomuto pluginu přeložil do češtiny Vladimír Ajgl (vlada [zavinac] ajgl [tecka] cz) dne 23.6.2012. Od té doby mohl být plugin pozměněn nebo mohly být rozšířené jeho funkce. Zkontrolujte pro jistotu i <a href="ChangeLog">aktuální anglický "ChangeLog"</a>.</p>
 
-		<h2>Popis pluginu</h2>
-		<p>Přidává "podcastovací" možnosti (RSS zapouzdření, přehrávač videa a/nebo hudby)
-		</p>
-		
+        <h2>Popis pluginu</h2>
+        <p>Přidává "podcastovací" možnosti (RSS zapouzdření, přehrávač videa a/nebo hudby)</p>
+
 #
+1.52:
+-----
+ * Cleanup and typo fixes
+ * Remove IE conditional comment for windows media and quicktime players
+ * Remove unused constants
+
+1.51:
+-----
+ * Fix another regression of flash removal in 1.48
+
+1.50:
+-----
+ * Fix another constant regression of flash removal in 1.48 for FLOWEXT
+
+1.49:
+-----
+ * Fix a constant regression of flash removal in 1.48
+ * Convert HTML5 audio and HTML5 video markup defaults for Serendipity Styx and real HTML5
+
+1.48:
+-----
+ * Update getid3 lib to 1.9.22 [2022-09-29]
+ * Removed every player related to flash:
+        extflow_player, extflash_player, xspf_player
+
+1.47:
+-----
+ * Fix some [de] constants for length and wording
+
+1.46:
+-----
+ * Update getid3 lib to 1.9.20 [2020-06-30]
+ * Better configuration grouping
+
+1.45:
+-----
+ * Partial revert 1.44, since rss 1.0 is still valid
+
+1.44:
+-----
+ * Preparations for Styx 3.3.0 - remove outdated feed hooks
+ * Raise requirements
+
+1.43:
+-----
+ * Secure some target _blank links by living standard rel="noopener"
+
+1.42:
+-----
+ * Update getid3 lib to 1.9.19-201912131005
+   This all does need a general rework though, since we would need to remove xspf and flowplayer libs and old audio/video formats like quicktime, well tested!
+   The question after all is, what does it do better than a current Styx version can do out-of-the-box regarding HTML5 audio/video players?!
+
+1.41:
+-----
+
+ * Fix PHP 7.4 deprecated offset access syntax with curly braces
+
+1.40:
+-----
+  * Fix some wrong path concatenation slashes with S9Y_INCLUDE_PATH
+
+1.39:
+-----
+  * Fixed default ext constants
+
+1.38:
+-----
+ * Check REQUEST object
+ * Set plugin consistencies
+ * Use load language API - extends required Serendipity version to v.1.6
+
+
 1.37:
   * Increased debug verbosity
 
@@ -51,6 +122,7 @@ Version 1.21 (garvinhicking)
 Version 1.18 (garvinhicking)
   * mediaplayer.* note added
   * changed default plugin http path
+
 
 ------------------------------------------------------------------------
 Version 1.17 (brockhaus):
@@ -129,63 +201,63 @@ Version 1.8 (brockhaus):
       It is possible now to configure, that only the first media file
       found per entry will be enclosured to the RSS feed.
 
-		<h2>Historie verzí (ChangeLog)</h2>
-		<ul>
-		<li>Verze 1. []</li>
-			<ul>
-			<li></li>
-			</ul>
-		<li>Verze 1. []</li>
-			<ul>
-			<li></li>
-			</ul>
-		<li>Verze 1.7 [brockhaus]</li>
-			<ul>
-			<li>Plugin je odpojitelný (unstackable)</li>
-			<li>Soubory podcastů, které obsahovaly v názvu mezery nebo speciální znaky, způsobovaly problémy v RSS kanálu. Nyní jsou encodovány.</li>
-			<li>Odstraněné rozšířené atributy zapouzdření, protože RSS validátory je označovaly jako původce potíží v některých RSS čtečkách.</li>
-			</ul>
-		<li>Verze 1.6 [brockhaus]</li>
-			<ul>
-			<li>Podcastování pomocí rozšířených vlastností příspěvku nefungovalo správně, pokud bylo Serendipity instalováno na HTTPS serveru.</li>
-			</ul>
-		<li>Verze 1.5 [brockhaus]</li>
-			<ul>
-			<li>Podcastování pomocí rozšířených vlastností příspěvku nefungovalo správně, pokud bylo Serendipity instalováno v podadresáři.</li>
-			<li>Minimální změna výkonu podle přání uživatele [Garvin]. :-)</li>
-			</ul>
-		<li>Verze 1.4 [brockhaus]</li>
-			<ul>
-			<li>Média nalezená v atributech rozšířené textové části příspěvku jsou také vložena do příspěvku. (volitelné)</li>
-			<li>Přehrávače umí přízpůsobit svoji velikost podle rozměrů přehrávaného videa.</li>
-			<li>Optimalizovaný WMP výstup.</li>
-			</ul>
-		<li>Verze 1.3 [garvinhicking]</li>
-			<ul>
-			<li>kompatibilita s PHP4</li>
-			</ul>
-		<li>Verze 1.2 [brockhaus]</li>
-			<ul>
-			<li>Odkazování na MP3 nefunguje ve všech situacích. (vždy funguje pouze starý styl zadání podcastu)</li>
-			<li>Média v rozšířené textové části příspěvku byla zapouzdřena dvakrát.</li>
-			</ul>
-		<li>Verze 1.1 [brockhaus]</li>
-			<ul>
-			<li>Nahrazení syntaxe [podcast: ..] html odkazem, dokonce i když není požadováno žádné nahrazení přehrávačem.</li>
-			<li>Nahrazení flashového mp3 přehrávače malou verzí guicktime playeru, protože nefungoval v Internet Exploreru a způsoboval problémy v RSS kanálu.</li>
-			<li>rozšíření Podcast Enclosure: přidáno expect_md5 a expect_length</li>
-			</ul>
-		<li>Verze 1.0 [brockhaus]</li>
-			<ul>
-			<li>Přesun starého [podcast: ..] stylu do nového kódu pluginu (uživatel [garvinhicking])</li>
-			<li>Přidáno nastavení atributů rozšířené textové části příspěvku</li>
-			<li>Kompletní přepsání pluginu. Nyní umí podcastování videa, přidávání podcastů k článkům je MNOHEM jednodušší, mime-typ podcastu je rozpoznávám automaticky pomocí knihovny getid3 (<a href="http://getid3.org">http://getid3.org</a>), která by se měla nacházet v Serendipity v adresáři bundled-libs.</li>
-			</ul>
-		<li>Verze 0.9 [Hannes Gassert]</li>
-			<ul>
-			<li>první release</li>
-			</ul>
-		</ul>
+        <h2>Historie verzí (ChangeLog)</h2>
+        <ul>
+        <li>Verze 1. []</li>
+            <ul>
+            <li></li>
+            </ul>
+        <li>Verze 1. []</li>
+            <ul>
+            <li></li>
+            </ul>
+        <li>Verze 1.7 [brockhaus]</li>
+            <ul>
+            <li>Plugin je odpojitelný (unstackable)</li>
+            <li>Soubory podcastů, které obsahovaly v názvu mezery nebo speciální znaky, způsobovaly problémy v RSS kanálu. Nyní jsou encodovány.</li>
+            <li>Odstraněné rozšířené atributy zapouzdření, protože RSS validátory je označovaly jako původce potíží v některých RSS čtečkách.</li>
+            </ul>
+        <li>Verze 1.6 [brockhaus]</li>
+            <ul>
+            <li>Podcastování pomocí rozšířených vlastností příspěvku nefungovalo správně, pokud bylo Serendipity instalováno na HTTPS serveru.</li>
+            </ul>
+        <li>Verze 1.5 [brockhaus]</li>
+            <ul>
+            <li>Podcastování pomocí rozšířených vlastností příspěvku nefungovalo správně, pokud bylo Serendipity instalováno v podadresáři.</li>
+            <li>Minimální změna výkonu podle přání uživatele [Garvin]. :-)</li>
+            </ul>
+        <li>Verze 1.4 [brockhaus]</li>
+            <ul>
+            <li>Média nalezená v atributech rozšířené textové části příspěvku jsou také vložena do příspěvku. (volitelné)</li>
+            <li>Přehrávače umí přízpůsobit svoji velikost podle rozměrů přehrávaného videa.</li>
+            <li>Optimalizovaný WMP výstup.</li>
+            </ul>
+        <li>Verze 1.3 [garvinhicking]</li>
+            <ul>
+            <li>kompatibilita s PHP4</li>
+            </ul>
+        <li>Verze 1.2 [brockhaus]</li>
+            <ul>
+            <li>Odkazování na MP3 nefunguje ve všech situacích. (vždy funguje pouze starý styl zadání podcastu)</li>
+            <li>Média v rozšířené textové části příspěvku byla zapouzdřena dvakrát.</li>
+            </ul>
+        <li>Verze 1.1 [brockhaus]</li>
+            <ul>
+            <li>Nahrazení syntaxe [podcast: ..] html odkazem, dokonce i když není požadováno žádné nahrazení přehrávačem.</li>
+            <li>Nahrazení flashového mp3 přehrávače malou verzí guicktime playeru, protože nefungoval v Internet Exploreru a způsoboval problémy v RSS kanálu.</li>
+            <li>rozšíření Podcast Enclosure: přidáno expect_md5 a expect_length</li>
+            </ul>
+        <li>Verze 1.0 [brockhaus]</li>
+            <ul>
+            <li>Přesun starého [podcast: ..] stylu do nového kódu pluginu (uživatel [garvinhicking])</li>
+            <li>Přidáno nastavení atributů rozšířené textové části příspěvku</li>
+            <li>Kompletní přepsání pluginu. Nyní umí podcastování videa, přidávání podcastů k článkům je MNOHEM jednodušší, mime-typ podcastu je rozpoznávám automaticky pomocí knihovny getid3 (<a href="http://getid3.org">http://getid3.org</a>), která by se měla nacházet v Serendipity v adresáři bundled-libs.</li>
+            </ul>
+        <li>Verze 0.9 [Hannes Gassert]</li>
+            <ul>
+            <li>první release</li>
+            </ul>
+        </ul>
 
-	</body>
+    </body>
 </html>

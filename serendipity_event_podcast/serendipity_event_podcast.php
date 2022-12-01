@@ -106,7 +106,7 @@ class serendipity_event_podcast extends serendipity_event
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.51');
+        $propbag->add('version', '1.52');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.0.0',
@@ -515,7 +515,7 @@ class serendipity_event_podcast extends serendipity_event
                         $url        = $matches[2][$i];
                         $fileInfo   = $this->GetFileInfo($url);
                         $type       = $fileInfo['mime'];
-                        $enclosure	= $this->GetEnclosure($event, $url, $type, $fileInfo['length'], $fileInfo['md5']);
+                        $enclosure  = $this->GetEnclosure($event, $url, $type, $fileInfo['length'], $fileInfo['md5']);
 
                         if (!empty($enclosure)) {
                             $this->iTunify($eventData, $enclosure);
@@ -829,7 +829,7 @@ class serendipity_event_podcast extends serendipity_event
 
         $fileInfo = array();
 
-        //caching metadata
+        // caching metadata
         $cacheOptions = array(
             'lifeTime'               => '2592000',
             'automaticSerialization' => true,
@@ -839,7 +839,7 @@ class serendipity_event_podcast extends serendipity_event
         if (serendipity_db_bool($this->get_config('use_cache', 'true'))) {
             $this->log("GetFileInfo: Trying cached infos");
 
-            //md5 for not having strange characters in that id..
+            // md5 for not having strange characters in that id..
             $cacheId = md5($url) . '.2';
 
             include_once(S9Y_PEAR_PATH . "Cache/Lite.php");
@@ -847,14 +847,14 @@ class serendipity_event_podcast extends serendipity_event
             $cache = new Cache_Lite($cacheOptions);
             if ($fileInfo = $cache->get($cacheId)){
                 $this->log("GetFileInfo: Cached infos found in file $cacheId");
-                //return directly on cache hit
+                // return directly on cache hit
                 return $fileInfo;
             }
         }
 
-        //cache miss! -> get data, store it in cache and return.
+        // cache miss! -> get data, store it in cache and return.
 
-        // translate pontential relative url to absolute url
+        // translate potential relative URL to absolute URL
         if (preg_match('@https?://@', $url)) {
             $absolute_url = $url;
         } else {
@@ -982,8 +982,7 @@ class serendipity_event_podcast extends serendipity_event
             }
         }
 
-        switch($event)
-        {
+        switch($event) {
             case 'frontend_display:rss-2.0:per_entry':
                 $enclosureAttrs = 'url="' . $url . '" type="' . $type . '" ';
 

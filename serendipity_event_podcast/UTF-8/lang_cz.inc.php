@@ -49,8 +49,7 @@
 
 @define('PLUGIN_PODCAST_AUEXT', 'Quicktime miniplayer audio přípony');
 @define('PLUGIN_PODCAST_AUEXT_DESC', 'Typy zvukových souborů, které je schopný přehrát Quick Time Miniplayer.');
-@define('PLUGIN_PODCAST_FLVEXT', 'FLV player přípony');
-@define('PLUGIN_PODCAST_FLVEXT_DESC', 'Typy souborů, které je shopný přehrát FLV player. FLV je formát videa podporovaný Flashovými přehrávači. Výhoda formátu je nezávislost na platformě. Do tohoto formátu umí převádět soubory spousta volně dostupných nástrojů (pro PC http://www.rivavx.com/index.php?id=483&L=0 a pro Mac http://www.versiontracker.com/dyn/moreinfo/macosx/15473).');
+
 @define('PLUGIN_PODCAST_USECACHE', 'Cachování');
 @define('PLUGIN_PODCAST_USECACHE_DESC', 'Má se použít cashování pro zapamatování informací nalezených podcastů? Při použití cachování je nutní analyzovat obsah souborů pouze jednou. (Doporučená volba!)');
 @define('PLUGIN_PODCAST_JS_OPTIMIZATION', 'Optimalizace JavaScriptu');
@@ -65,16 +64,6 @@
 @define('PLUGIN_PODCAST_USAGE', 
 'Skenuje příspěvky na přítomnost odkazů na multimediální soubory (video, audio) a nahrazuje je HTML kódem, který zobrazí soubor v přehrávači multimédií. Toto ulehčuje vytváření objektů přehrávače, jednoduše tím, že stačí napsat odkaz na soubor (např. video) nebo ho vybrat z mediatéky. Navíc plugin vkládá multimediální soubory do RSS kanálu způsobem, který umožňuje RSS čtečkám zobrazit je jako podcasty. /Klíčové slovo: Zapouzdřovací tagy / Enclosure Tags).');
 
-@define('PLUGIN_PODCAST_INSTALL_DESC', 
-'<h3>Instalace</h3>' .
-'<p>Plugin používá knihovnu getID3(), která nemůže být z licenčních důvodů distribuována s tímto pluginem. Musíte si ji sami stáhnout z ' .
-'<a href="http://getid3.org/" target="_blank" rel="noopener">getid3.org</a>. <b>Podporovaná je pouze verze 1.x!</b></p>' .
-'<p>Ve staženém archivu naleznete podadresář getid3. Tento podadresář je třeba zkopírovat do adresáře "bundled-libs" v Serenddipity.</p>');
-@define('PLUGIN_PODCAST_INSTALL_FLV_DESC', 
-'<h3>FLV Player</h3>' .
-'<p>Plugin použává JW-FLV Player pro zobrazení videí ve formátu FLV. Z licenčních důvodů tento přehrávač není distribuován spolu s tímto pluginem, musíte si ho <a href="http://www.jeroenwijering.com/?item=Flash_Video_Player" target="_blank" rel="noopener">stáhnout zde</a>.<br />' .
-'Ve staženém archivu najdete soubory flvplayer.swf a swfobject.js. Zkopírujte je do adresáře tohoto pluginu. Pokud adresář obsahuje pouze soubory "mediaplayer.*", přejmenujte je na "flvplayer.*"</p>');
-
 // Next lines were translated on 2011/06/19
 
 @define('PLUGIN_PODCAST_EXPERT_HINT', 'TIP: Pomocí HTML značek si můžete přizpůsobit LIBOVOLNÝ přehrávač, takže můžete zadat seznam různých variant přehrávače pro různé typy souborů! Pamatujte, že jak jednou uložíte nastavení pluginu, bude vždy použito statické značkování <strong>namísto</strong> toho, které plugin poskytuje pomocí souboru <strong>podcast_player.php</strong>. Pokud chcete resetovat nastavení na výchozí hodnoty, jednoduše vymažte veškerý obsah pole pro značkování pluginu a uložte nastavení.');
@@ -88,7 +77,7 @@
 @define('PLUGIN_PODCAST_HTML5_VIDEO', 'HTML5 vedio rozšíření');
 @define('PLUGIN_PODCAST_HTML5_VIDEO_DESC', 'Moderní prohlížeče nativně podporují HTML5 widgety.');
 @define('PLUGIN_PODCAST_HTML5_VIDEO_HTML', 'Značkování HTML5 video');
-@define('PLUGIN_PODCAST_USAGE_RSS', 'Pro omezení RSS kanálů na pouze specifikované typy můžete přistupovat ke kanálu pomocí URL jako http://' . $serendipity['baseURL'] . '/rss.php?version=2.0&podcast_format=ogg.
+@define('PLUGIN_PODCAST_USAGE_RSS', 'Pro omezení RSS kanálů na pouze specifikované typy můžete přistupovat ke kanálu pomocí URL jako http://' . $serendipity['baseURL'] . 'rss.php?version=2.0&podcast_format=ogg.
 Toto nastavení například vloží do kanálu pouze soubory formátu "ogg". Můžete určit více formátů oddělených čárkou ",".');
 @define('PLUGIN_PODCAST_ITUNES', 'Značkování iTunes XML');
 @define('PLUGIN_PODCAST_ITUNES_DESC', 'Zadejte XML, které má být vložení do RSS-kanálu, aby se zobrazovalo v iTunes.');

@@ -1,3 +1,9 @@
+1.52:
+-----
+ * Cleanup and typo fixes
+ * Remove IE conditional comment for windows media and quicktime players
+ * Remove unused constants
+
 1.51:
 -----
  * Fix another regression of flash removal in 1.48

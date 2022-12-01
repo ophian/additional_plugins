@@ -33,7 +33,7 @@
 @define('PLUGIN_PODCAST_EXTATTR_DESC', 'You can define, what extended attributes should be interpreted as media file attachments and therefor be added as enclosure to RSS feeds. This has to be a comma separated list of attribute names. The plugin "Extended article attributes" is needed for this to work.');
 
 @define('PLUGIN_PODCAST_EXTPOS', 'Position of media files found in ext. article attr.');
-@define('PLUGIN_PODCAST_EXTPOS_DESC', 'Define how media files found in extended article attributes should be embeded into the article.');
+@define('PLUGIN_PODCAST_EXTPOS_DESC', 'Define how media files found in extended article attributes should be embedded into the article.');
 @define('PLUGIN_PODCAST_EXTPOS_NONE', 'Don\'t embed into article');
 @define('PLUGIN_PODCAST_EXTPOS_BT', 'Top of the article');
 @define('PLUGIN_PODCAST_EXTPOS_BB', 'Below the article');
@@ -63,9 +63,6 @@ simply delete all content in the markup textarea and save the plugin.');
 @define('PLUGIN_PODCAST_AUEXT_DESC', 'Audio extensions the quicktime miniplayer is able to play.');
 @define('PLUGIN_PODCAST_AUEXT_HTML', 'Quicktime markup.');
 
-@define('PLUGIN_PODCAST_FLVEXT', 'FLV player extensions');
-@define('PLUGIN_PODCAST_FLVEXT_DESC', 'Extensions the FLV player is able to play. FLV is a video format supported by Flash players. The benefit of this format is it\'s plattform independance. Normal video formats can be converted by free of cost tools (PC http://www.rivavx.com/index.php?id=483&L=0 und Mac http://www.versiontracker.com/dyn/moreinfo/macosx/15473).');
-
 @define('PLUGIN_PODCAST_HTML5_AUDIO', 'HTML5 audio extensions');
 @define('PLUGIN_PODCAST_HTML5_AUDIO_DESC', 'Modern browsers support HTML5 player widgets, native to the browser.');
 @define('PLUGIN_PODCAST_HTML5_AUDIO_HTML', 'HTML5 audio markup');
@@ -82,32 +79,22 @@ simply delete all content in the markup textarea and save the plugin.');
 @define('PLUGIN_PODCAST_ASURE_FEEDENC', 'Ensure feed enclosure');
 @define('PLUGIN_PODCAST_ASURE_FEEDEENC_DESC', 'Ensure media is added as "enclosure" to the feed even if not shown in the entry');
 
-@define('PLUGIN_PODCAST_HTTPREL', 'Relativ HTTP path of the plugin');
-@define('PLUGIN_PODCAST_HTTPREL_DESC', 'This defines the HTTP path of the plugin relative to the base server url. If you didn\'t change the permalink structure for plugins and your blog is not running in a subdirectory of the server, you are fine with the default setting.');
+@define('PLUGIN_PODCAST_HTTPREL', 'Relative HTTP path of the plugin');
+@define('PLUGIN_PODCAST_HTTPREL_DESC', 'This defines the HTTP path of the plugin relative to the base server URL. If you didn\'t change the permalink structure for plugins and your blog is not running in a subdirectory of the server, you are fine with the default setting.');
 
 @define('PLUGIN_PODCAST_USAGE', 
 'Scans entries for links showing to media files (Video, Audio) and replaces them with HTML code displaying a player for the media file. This makes it easy creating player objects in the article by just inserting a media file like a video from the media database into the article.
 Additional to that the plugin adds the media files to the RSS feed in this way a RSS reader can interpret them as podcasts. (Keyword: Enclosure Tags).');
 
 @define('PLUGIN_PODCAST_USAGE_RSS', '
-To get RSS feeds of only specific filetypes, you can access/advertise a feed with a URL like ' . $serendipity['baseURL'] . '/rss.php?version=2.0&podcast_format=ogg.
+To get RSS feeds of only specific filetypes, you can access/advertise a feed with a URL like ' . $serendipity['baseURL'] . 'rss.php?version=2.0&podcast_format=ogg.
 This will only put files with an "ogg" extension inside a feed. You can specify multiple formats separated by ",".
 ');
 
-@define('PLUGIN_PODCAST_INSTALL_DESC', 
-'<h3>Installation</h3>' .
-'<p>The plugin uses the getID3() library that can\'t be shiped with this plugin. You have to download the getid3 archive on your own at ' .
-'<a href="http://getid3.org/" target="_blank" rel="noopener">getid3.org</a>. <b>Only the 1.x version is supported!</b></p>' .
-'<p>Insinde of that archive you will find a subdirectory called getid3. This subdirectory has to be copied into the "bundled-libs" directory of Serenddipity.</p>');
-@define('PLUGIN_PODCAST_INSTALL_FLV_DESC', 
-'<h3>FLV Player</h3>' .
-'<p>The plugin uses the JW-FLV Player to play back FLV video files. Because of different licenses this free player is not bundled with this Plugin, so you <a href="http://www.jeroenwijering.com/?item=Flash_Video_Player" target="_blank" rel="noopener">have to download it here</a>.<br />' .
-'In the archive you\'ll find the files flvplayer.swf and swfobject.js. Plesae copy them into the subdirectory player of this plugin. If the archive only contains "mediaplayer.*" files, please rename them to "flvplayer.*"</p>');
-
 @define('PLUGIN_PODCAST_ITUNES', 'iTunes XML markup');
-@define('PLUGIN_PODCAST_ITUNES_DESC', 'Enter the XML that is put into your RSS-Feed to be shown within iTunes (see https://www.apple.com/itunes/podcasts/specs.html). Requires Serendipity 1.6 and above to work.');
+@define('PLUGIN_PODCAST_ITUNES_DESC', 'Enter the XML that is put into your RSS-Feed to be shown within iTunes (see https://www.apple.com/itunes/podcasts/specs.html).');
 
 @define('PLUGIN_PODCAST_MERGEMULTI', 'Merge multiple HTML5 player elements');
 @define('PLUGIN_PODCAST_DOWNLOADLINK', 'Always add download link');
-@define('PLUGIN_PODCAST_DOWNLOADLINK_DESC', 'If disabled, you can add your own customized downloadlink within the player\'s markup.');
+@define('PLUGIN_PODCAST_DOWNLOADLINK_DESC', 'If disabled, you can add your own customized download link within the player\'s markup.');
 
