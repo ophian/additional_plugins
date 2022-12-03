@@ -1,3 +1,8 @@
+1.40:
+=====
+
+ * Do not perform setPlaintextBody() when not having an entry body
+
 1.39:
 =====
 

@@ -25,7 +25,7 @@ class serendipity_event_markdown extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.4'
         ));
-        $propbag->add('version',       '1.39');
+        $propbag->add('version',       '1.40');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
             'backend_entryform' => true,
@@ -275,6 +275,7 @@ a.footnote-ref:after {
         if (isset($GLOBALS['entry'][0]['plaintext_body'])) {
             $plaintext_body = $GLOBALS['entry'][0]['plaintext_body'];
         } else {
+            if (!isset($eventData['body'])) return;
             $plaintext_body = html_entity_decode($eventData['body'], ENT_COMPAT, LANG_CHARSET);
         }
 
