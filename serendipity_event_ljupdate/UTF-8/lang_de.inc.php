@@ -28,6 +28,6 @@
 @define('PLUGIN_LJUPDATE_COMMENTS', 'Kommentare im LJ deaktivieren');
 
 // Next lines were translated on 2009/08/20
-@define('PLUGIN_LJUPDATE_CATEGORY', 'Fremde Kagtegorie-ID');
-@define('PLUGIN_LJUPDATE_CATEGORY_DESC', 'Geben sie die fremde Kategorie-ID ein, unter der der Artikel erscheinen soll (gilt für Serenditpity Blogs). ');
+@define('PLUGIN_LJUPDATE_CATEGORY', 'Fremde Kategorie-ID');
+@define('PLUGIN_LJUPDATE_CATEGORY_DESC', 'Geben sie die fremde Kategorie-ID ein, unter der der Artikel erscheinen soll (gilt für Serendipity Blogs). ');
 
