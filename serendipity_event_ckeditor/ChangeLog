@@ -1,3 +1,8 @@
+4.20.1.0:
+---------
+    * Upgrade to CKEDITOR 4.20. Series, update 1 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
+
 4.20.0.1:
 ---------
     * Improve dark_contents Rich Text editor mode CSS for div block coloring
