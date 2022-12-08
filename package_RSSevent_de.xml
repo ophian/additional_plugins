@@ -995,7 +995,7 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_smtpmail&lt;br /&gt;SMTP Mail&lt;/b&gt;&lt;br /&gt;Nutze einen beliebigen SMTP Server zum Versenden deiner Mails&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 07 Oct 2022 19:31:36 +0200</pubDate>
+<pubDate>Thu, 08 Dec 2022 15:54:17 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_smtpmail</guid>
 </item>
 <item>
