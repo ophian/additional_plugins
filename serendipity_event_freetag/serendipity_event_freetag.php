@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.3.0'
         ));
-        $propbag->add('version',       '5.29');
+        $propbag->add('version',       '5.30');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2009,7 +2009,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 $showtag = serendipity_db_escape_string($this->tags['show']);
             }
-        } else if (!empty($serendipity['GET']['tag'])) {
+        } else if (!empty($serendipity['GET']['tag']) && is_string($serendipity['GET']['tag'])) {
             $showtag = serendipity_db_escape_string(urldecode($serendipity['GET']['tag']));
         }
 
