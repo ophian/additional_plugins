@@ -967,8 +967,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_searchhighlight</link>
 <category>Event Plugins</category>
 <author>Tom Sommer, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;Zvýraznění vyhledávaných řetězců&lt;/b&gt;&lt;br /&gt;Zvýrazňuje řetězce hledané v odkazujícím vyhledávači.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 03 Jul 2022 14:02:58 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;Zvýraznění vyhledávaných řetězců&lt;/b&gt;&lt;br /&gt;Zvýrazňuje řetězce hledané v odkazujícím vyhledávači.&lt;br/&gt;For: Serendipity 2.9</content:encoded>
+<pubDate>Sat, 07 Jan 2023 15:19:57 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_searchhighlight</guid>
 </item>
 <item>
