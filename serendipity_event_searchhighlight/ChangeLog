@@ -1,3 +1,11 @@
+2.2.0:
+-----
+ * Prepare searchhighlight for correct display of multi highlighted search words
+   for the MYSQL FULLTEXT IN BOOLEAN mode search requests containing multi-byte strings
+   up from first (next) following Serendipity Styx release in 2023.
+ * Includes fixes for multi search words [i.e. +word +another] on multi-page result
+   search requests when containing multi-byte strings.
+
 2.1.0:
 -----
  * Fixup for PHP 8.2

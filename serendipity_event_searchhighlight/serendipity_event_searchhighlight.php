@@ -25,11 +25,11 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian Styx');
-        $propbag->add('version',       '2.1.0');
+        $propbag->add('version',       '2.2.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
+            'serendipity' => '2.9',
             'smarty'      => '3.1',
-            'php'         => '7.2'
+            'php'         => '7.4'
         ));
         $propbag->add('event_hooks',   array('frontend_display' => true, 'css' => true));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
@@ -95,6 +95,10 @@ class serendipity_event_searchhighlight extends serendipity_event
     function getSearchEngine()
     {
         $url = parse_url($this->uri);
+
+        if (!isset($url['host'])) {
+            $url['host'] = $_SERVER['HTTP_HOST']; // on P1, P2 etc multi-page search results we have no HTTP_REFERER available and so NO host. We instead use QUERY_STRING or REDIRECT_QUERY_STRING (see )and set it to HTTP_HOST
+        }
 
         /* Patterns should be placed in the order in which they are most likely to occur */
         if ( preg_match('@^(www\.)?google\.@i', $url['host']) ) {
@@ -166,9 +170,8 @@ class serendipity_event_searchhighlight extends serendipity_event
                     // look out for path or query depending mod_rewrite setting
                     $urlpath = $serendipity['rewrite'] == 'rewrite' ? parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH)
                                                                     : parse_url($_SERVER['HTTP_REFERER'], PHP_URL_QUERY);
-                    if (!is_null($urlpath) && true === strpos($urlpath, 'search/') ) {
-                        $urlpath = (function_exists('serendipity_specialchars') ? serendipity_specialchars(strip_tags($urlpath))
-                                                                                : htmlspecialchars(strip_tags($urlpath), ENT_COMPAT, LANG_CHARSET)); // avoid spoofing
+                    if (!is_null($urlpath) && true === strpos($urlpath, 'search/')) {
+                        $urlpath = serendipity_specialchars(strip_tags($urlpath)); // avoid spoofing
                         $path = explode('/', urldecode($urlpath)); // split and decode non ASCII
                         $query = $path[(array_search('search', $path)+1)];
                     }
@@ -193,7 +196,7 @@ class serendipity_event_searchhighlight extends serendipity_event
                 break;
 
             default:
-                if ($_REQUEST['serendipity']['searchTerm'] != '') {
+                if (isset($_REQUEST['serendipity']['searchTerm']) && $_REQUEST['serendipity']['searchTerm'] != '') {
                     $query = $_REQUEST['serendipity']['searchTerm'];
                 } else {
                     return false;
@@ -213,8 +216,9 @@ class serendipity_event_searchhighlight extends serendipity_event
         /* Split by search engine chars or spaces */
         $words = preg_split('/[\s\,\+\.\-\/\=]+/', $query);
 
-        /* Strip search engine keywords or common words we don't bother to highlight */
-        $words = array_diff($words, array('AND', 'OR', 'FROM', 'IN'));
+        /* Strip search engine keywords or common words we don't bother to highlight and for empty value strings */
+        $words = array_diff($words, array('AND', 'OR', 'FROM', 'IN', ''));
+        $words = array_values($words); // re-index for possible '' removal, so all relevant words get highlighted!
 
         return $words;
     }
@@ -224,6 +228,10 @@ class serendipity_event_searchhighlight extends serendipity_event
         global $serendipity;
 
         $this->uri = $_SERVER['HTTP_REFERER'] ?? null;
+        // Check for multi-page result page requests where we have no HTTP_REFERER
+        if (is_null($this->uri) && !empty($_SERVER['QUERY_STRING']) && preg_match('@\/search\/@', $_SERVER['QUERY_STRING'])) {
+            $this->uri = serendipity_specialchars(strip_tags($_SERVER['QUERY_STRING'])); // avoid spoofing
+        }
         $hooks = &$bag->get('event_hooks');
 
         if (!isset($hooks[$event])) {
