@@ -25,7 +25,7 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian Styx');
-        $propbag->add('version',       '2.2.0');
+        $propbag->add('version',       '2.2.1');
         $propbag->add('requirements',  array(
             'serendipity' => '2.9',
             'smarty'      => '3.1',
@@ -96,10 +96,6 @@ class serendipity_event_searchhighlight extends serendipity_event
     {
         $url = parse_url($this->uri);
 
-        if (!isset($url['host'])) {
-            $url['host'] = $_SERVER['HTTP_HOST']; // on P1, P2 etc multi-page search results we have no HTTP_REFERER available and so NO host. We instead use QUERY_STRING or REDIRECT_QUERY_STRING (see )and set it to HTTP_HOST
-        }
-
         /* Patterns should be placed in the order in which they are most likely to occur */
         if ( preg_match('@^(www\.)?google\.@i', $url['host']) ) {
             return PLUGIN_EVENT_SEARCHHIGHLIGHT_GOOGLE;
@@ -165,7 +161,8 @@ class serendipity_event_searchhighlight extends serendipity_event
                 if (!empty($serendipity['GET']['searchTerm'])) {
                     $query = $serendipity['GET']['searchTerm'];
                 }
-                /* highlight selected static page, if not having a ['GET']['searchTerm'] REQUEST, but coming from a /search/ referrer */
+                // obsolete now since query is set to searchTerm! And all static page summarized search results were never catched for highlight! Nor Comments.
+                /* highlight selected static page, if not having a ['GET']['searchTerm'] REQUEST, but coming from a /search/ referrer
                 if (empty($query)) {
                     // look out for path or query depending mod_rewrite setting
                     $urlpath = $serendipity['rewrite'] == 'rewrite' ? parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH)
@@ -175,7 +172,7 @@ class serendipity_event_searchhighlight extends serendipity_event
                         $path = explode('/', urldecode($urlpath)); // split and decode non ASCII
                         $query = $path[(array_search('search', $path)+1)];
                     }
-                }
+                }*/
                 break;
 
             case PLUGIN_EVENT_SEARCHHIGHLIGHT_MSN :
@@ -227,11 +224,12 @@ class serendipity_event_searchhighlight extends serendipity_event
     {
         global $serendipity;
 
-        $this->uri = $_SERVER['HTTP_REFERER'] ?? null;
-        // Check for multi-page result page requests where we have no HTTP_REFERER
-        if (is_null($this->uri) && !empty($_SERVER['QUERY_STRING']) && preg_match('@\/search\/@', $_SERVER['QUERY_STRING'])) {
-            $this->uri = serendipity_specialchars(strip_tags($_SERVER['QUERY_STRING'])); // avoid spoofing
-        }
+        // On paged search results we might have no HTTP_REFERER available (by theme) and so NO host (see getSearchEngine()). So we query our own here.
+        // Works on all supported URL rewrite options; And we don't need to care about adding 'index.php?' or such.
+        $this->uri = (!empty($serendipity['GET']['page']) && isset($serendipity['GET']['searchTerm']))
+                        ? $serendipity['defaultBaseURL'] . '/search/' . urlencode($serendipity['GET']['searchTerm']) . '/P' . $serendipity['GET']['page'] . '.html'
+                        : ($_SERVER['HTTP_REFERER'] ?? null);
+
         $hooks = &$bag->get('event_hooks');
 
         if (!isset($hooks[$event])) {
