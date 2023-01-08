@@ -968,7 +968,7 @@
 <category>Event Plugins</category>
 <author>Tom Sommer, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;高亮搜索结果&lt;/b&gt;&lt;br /&gt;对那些通过在搜索引擎搜索搜索关键字而进入你的博客的页面访问，在页面中将这些关键字高亮（突出显示）。&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Sat, 07 Jan 2023 15:19:57 +0100</pubDate>
+<pubDate>Sun, 08 Jan 2023 13:29:35 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_searchhighlight</guid>
 </item>
 <item>
