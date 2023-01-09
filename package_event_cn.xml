@@ -9268,11 +9268,11 @@
 <description>对那些通过在搜索引擎搜索搜索关键字而进入你的博客的页面访问，在页面中将这些关键字高亮（突出显示）。</description>
 <maintainers><maintainer><name>Tom Sommer, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.2.1</version>
+  <version>2.2.2</version>
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-01-08</date>
+  <date>2023-01-09</date>
   <filelist>
     <dir name="serendipity_event_searchhighlight">
       <file>ChangeLog</file>
