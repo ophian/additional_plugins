@@ -1,3 +1,7 @@
+2.2.2:
+------
+ * Improve the internal uri build of 2.2.1 for the default theme
+
 2.2.1:
 ------
  * Improve the internal uri build for paged result searches in 2.2.0

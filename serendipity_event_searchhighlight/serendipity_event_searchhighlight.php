@@ -25,7 +25,7 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian Styx');
-        $propbag->add('version',       '2.2.1');
+        $propbag->add('version',       '2.2.2');
         $propbag->add('requirements',  array(
             'serendipity' => '2.9',
             'smarty'      => '3.1',
@@ -225,10 +225,14 @@ class serendipity_event_searchhighlight extends serendipity_event
         global $serendipity;
 
         // On paged search results we might have no HTTP_REFERER available (by theme) and so NO host (see getSearchEngine()). So we query our own here.
-        // Works on all supported URL rewrite options; And we don't need to care about adding 'index.php?' or such.
+        // Works on all supported URL rewrite options; And the default theme. And we don't need to care about adding 'index.php?' or such.
         $this->uri = (!empty($serendipity['GET']['page']) && isset($serendipity['GET']['searchTerm']))
                         ? $serendipity['defaultBaseURL'] . '/search/' . urlencode($serendipity['GET']['searchTerm']) . '/P' . $serendipity['GET']['page'] . '.html'
-                        : ($_SERVER['HTTP_REFERER'] ?? null);
+                        : (
+                            isset($serendipity['GET']['searchTerm'])
+                                ? $serendipity['defaultBaseURL'] . '/search/' . urlencode($serendipity['GET']['searchTerm'])
+                                : ($_SERVER['HTTP_REFERER'] ?? null)
+                        );
 
         $hooks = &$bag->get('event_hooks');
 
