@@ -215,7 +215,7 @@ class serendipity_event_xmlrpc extends serendipity_event
                     header('Content-Type: text/xml');
                     $eventData = array('XML-RPC' => true);
 
-                    if ($_REQUEST['xsd']) {
+                    if (isset($_REQUEST['xsd'])) {
                         $this->showXSD();
                         return true;
                     }
