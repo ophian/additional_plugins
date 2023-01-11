@@ -1292,7 +1292,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Posílání příspěvků pomocí XML-RPC&lt;/b&gt;&lt;br /&gt;Umožňuje posílat/editovat příspěvky pomocí XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Wed, 11 Jan 2023 14:24:06 +0100</pubDate>
+<pubDate>Wed, 11 Jan 2023 14:56:22 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
