@@ -1936,17 +1936,19 @@ try {
     $server = new XML_RPC_Server($dispatches, 1, ($debug_xmlrpc === 2 ? 1 : 0));
 
 } catch (\Throwable $t) {
-    $fp = fopen(DEBUG_LOG_XMLRPC, 'a');
-    fwrite($fp, "[EXCEPTION]" . $t . "\n---------------------------------------\n");
-    fclose($fp);
-    ob_end_flush();
+    if (DEBUG_XMLRPC) {
+        $fp = fopen(DEBUG_LOG_XMLRPC, 'a');
+        fwrite($fp, "[EXCEPTION]" . $t . "\n---------------------------------------\n");
+        fclose($fp);
+        ob_end_flush();
+    }
 }
 
 if ($debug_xmlrpc === 2) {
     print_r($GLOBALS['XML_RPC_Server_debuginfo']);
 }
 
-if ($debug_xmlrpc) {
+if ($debug_xmlrpc && DEBUG_XMLRPC) {
     $fp = fopen(DEBUG_LOG_XMLRPC, 'a');
     fwrite($fp, ob_get_contents() . "\n---------------------------------------\n");
     fclose($fp);

@@ -1,3 +1,8 @@
+1.81:
+-----
+ * Fix for PHP 8 - Undefined constant "DEBUG_LOG_XMLRPC"
+ * Fix for PHP 8 Warning - Object of class XMLParser could not be converted to int
+
 1.80:
 -----
  * Fix support for deprecated curly braces for offset access has been removed in PHP 8.0

@@ -668,7 +668,7 @@ class XML_RPC_Server
 
         $this->encoding = XML_RPC_Message::getEncoding($data);
         $parser_resource = xml_parser_create($this->encoding);
-        $parser = (int) $parser_resource;
+        $parser = (!is_object($parser_resource)) ? (int) $parser_resource : $parser_resource;
 
         $XML_RPC_xh[$parser] = array();
         $XML_RPC_xh[$parser]['cm']     = 0;
