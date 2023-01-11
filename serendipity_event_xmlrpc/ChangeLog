@@ -1,3 +1,7 @@
+1.82:
+-----
+ * Fix for PHP 8 - Fixup some old ${} usage
+
 1.81:
 -----
  * Fix for PHP 8 - Undefined constant "DEBUG_LOG_XMLRPC"
