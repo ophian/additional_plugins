@@ -1,3 +1,7 @@
+1.80:
+-----
+ * Fix support for deprecated curly braces for offset access has been removed in PHP 8.0
+
 1.79:
 -----
  * Follow a consistency cleanup for fetching serendipity_fetchEntry() calls

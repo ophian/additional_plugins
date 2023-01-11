@@ -1275,7 +1275,7 @@ function metaWeblog_newPost($message) {
 
     if (isset($post_array['dateCreated']) || isset($post_array['date_created_gmt'])) {
         if (isset($post_array['date_created_gmt'])) $timestamp = XML_RPC_iso8601_decode($post_array['date_created_gmt'],1);
-        else $timestamp = XML_RPC_iso8601_decode($post_array['dateCreated'], ($post_array['dateCreated']{strlen($post_array['dateCreated'])-1} == "Z"));
+        else $timestamp = XML_RPC_iso8601_decode($post_array['dateCreated'], ($post_array['dateCreated'][strlen($post_array['dateCreated'])-1] == "Z"));
         $entry['timestamp']  = $timestamp;
     }
 
@@ -1410,7 +1410,7 @@ function metaWeblog_editPost($message) {
 
     if (isset($post_array['dateCreated']) || isset($post_array['date_created_gmt'])) {
         if (isset($post_array['date_created_gmt'])) $timestamp = XML_RPC_iso8601_decode($post_array['date_created_gmt'],1);
-        else $timestamp = XML_RPC_iso8601_decode($post_array['dateCreated'], ($post_array['dateCreated']{strlen($post_array['dateCreated'])-1} == "Z"));
+        else $timestamp = XML_RPC_iso8601_decode($post_array['dateCreated'], ($post_array['dateCreated'][strlen($post_array['dateCreated'])-1] == "Z"));
         $entry['timestamp']  = $timestamp;
     }
     else { // Get the original date, if no new date was defined
