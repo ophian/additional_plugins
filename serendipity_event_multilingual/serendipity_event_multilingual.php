@@ -28,7 +28,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '5.3.0'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.06');
+        $propbag->add('version',        '3.07');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -837,23 +837,19 @@ class serendipity_event_multilingual extends serendipity_event
                             $term = serendipity_mb('strtolower', $term);
                             $cond['find_part'] .= " OR (lower(multilingual_body.value) LIKE '%$term%' OR lower(multilingual_extended.value) LIKE '%$term%' OR lower(multilingual_title.value) LIKE '%$term%')";
                         } else {
-                            if (@mb_detect_encoding($term, 'UTF-8', true) && @mb_strlen($term, 'utf-8') < strlen($term)) {
-                                $_term = str_replace('*', '', $term);
-                                $cond['find_part'] .= " OR (multilingual_body.value LIKE '%$_term%' OR multilingual_extended.value LIKE '%$_term%' OR multilingual_title.value LIKE '%$_term%')";
+                            // See notes on limitations with Chinese, Japanese, and Korean languages in function_entries.inc
+                            if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
+                                #$term = str_replace(' + ', ' +', $term); // be strict for boolean mode
+                                $bool = ' IN BOOLEAN MODE';
                             } else {
-                                if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
-                                    $bool = ' IN BOOLEAN MODE';
-                                } else {
-                                    $bool = '';
-                                }
-                                $cond['find_part'] .= " OR (
-                                                             MATCH(multilingual_body.value)        AGAINST('$term' $bool)
-                                                             OR MATCH(multilingual_extended.value) AGAINST('$term' $bool)
-                                                             OR MATCH(multilingual_title.value)    AGAINST('$term' $bool)
-                                                           )";
-                                }
+                                $bool = '';
+                            }
+                            $cond['find_part'] .= " OR (
+                                                         MATCH(multilingual_body.value)        AGAINST('$term' $bool)
+                                                         OR MATCH(multilingual_extended.value) AGAINST('$term' $bool)
+                                                         OR MATCH(multilingual_title.value)    AGAINST('$term' $bool)
+                                                       )";
                         }
-
                     }
                     break;
 
