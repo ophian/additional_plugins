@@ -1,3 +1,7 @@
+1.53:
+-----
+ * Fix for mysqli search-term SQL queries in FULLTEXT IN BOOLEAN MODE
+
 1.52:
 -----
  * Always indicate source of where frontend_display is called (as Standard since 07/2007)
