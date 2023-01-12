@@ -1,3 +1,7 @@
+2.1.0:
+------
+ * Fix for mysqli search-term SQL queries in FULLTEXT IN BOOLEAN MODE
+
 2.0.0:
 ------
  * Hand out comment search results on entries with no match, which requires

@@ -22,7 +22,7 @@ class serendipity_event_commentsearch extends serendipity_event
         ));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '2.0.0');
+        $propbag->add('version', '2.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -65,15 +65,12 @@ class serendipity_event_commentsearch extends serendipity_event
             $group     = 'GROUP BY id';
             $distinct  = '';
             $term      = str_replace('&quot;', '"', $term);
-            if (@mb_detect_encoding($term, 'UTF-8', true) && @mb_strlen($term, 'utf-8') < strlen($term)) {
-                $term = str_replace('*', '', $term);
-                $find_part = "(c.title LIKE '%$term%' OR c.body LIKE '%$term%')";
+            // See notes on limitations with Chinese, Japanese, and Korean languages in function_entries.inc
+            if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
+                #$term = str_replace(' + ', ' +', $term); // be strict for boolean mode
+                $find_part = "MATCH(c.title,c.body) AGAINST('{$term}' IN BOOLEAN MODE)";
             } else {
-                if (preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
-                    $find_part = "MATCH(c.title,c.body) AGAINST('$term' IN BOOLEAN MODE)";
-                } else {
-                    $find_part = "MATCH(c.title,c.body) AGAINST('$term')";
-                }
+                $find_part = "MATCH(c.title,c.body) AGAINST('{$term}')";
             }
         }
 
