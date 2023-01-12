@@ -1,3 +1,7 @@
+6.64:
+-----
+ * Fix for mysqli search-term SQL queries in FULLTEXT IN BOOLEAN MODE
+
 6.63:
 -----
  * Flag and deny mixing of PLAIN TEXT editor default buttons in the static page entry forms
