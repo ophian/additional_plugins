@@ -19,7 +19,7 @@ class serendipity_event_filter_entries extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FILTER_ENTRIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.1.0');
+        $propbag->add('version',       '2.2.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1',
@@ -307,15 +307,12 @@ class serendipity_event_filter_entries extends serendipity_event
                                 $term = serendipity_mb('strtolower', $term);
                                 $filter[] = "(lower(title) LIKE '%$term%' OR lower(body) LIKE '%$term%' OR lower(extended) LIKE '%$term%')"; // Using percentage (%) wildcard already
                             } elseif ($full && $serendipity['dbType'] == 'mysqli') {
-                                if (isset($term) && @mb_detect_encoding($term, 'UTF-8', true) && @mb_strlen($term, 'utf-8') < strlen($term)) {
-                                    $term = str_replace('*', '', $term);
-                                    $filter[] = "(title LIKE '%$term%' OR body LIKE '%$term%' OR extended LIKE '%$term%')"; // Using percentage (%) wildcard already
+                                // See notes on limitations with Chinese, Japanese, and Korean languages in function_entries.inc
+                                if (isset($term) && preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
+                                    #$term = str_replace(' + ', ' +', $term); // be strict for boolean mode
+                                    $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "' IN BOOLEAN MODE)";
                                 } else {
-                                    if (isset($term) && preg_match('@["\+\-\*~<>\(\)]+@', $term)) {
-                                        $filter[] = "MATCH (title,body,extended) AGAINST ('" . $term . "' IN BOOLEAN MODE)";
-                                    } else {
-                                        $filter[] = !isset($term) ? '1' : "MATCH (title,body,extended) AGAINST ('" . $term . "')";
-                                    }
+                                    $filter[] = !isset($term) ? '1' : "MATCH (title,body,extended) AGAINST ('" . $term . "')";
                                 }
                             } else {
                                 $filter[] = "MATCH (title,body,extended) AGAINST ('" . ($term ?? '1') . "')";
