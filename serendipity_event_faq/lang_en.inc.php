@@ -27,7 +27,7 @@
 @define('FAQ_DAYSNEW_DESC', 'How many days will be a FAQ entry marked as new?');
 @define('FAQ_NEW', 'New');
 @define('FAQ_UPDATE', 'Update');
-@define('FAQ_FAQURL', 'URL to the FAQ-Plugin');
+@define('FAQ_FAQURL', 'URL to the FAQ-Plugin after '.$serendipity['permalinkPluginPath'].'. Example: "' . $serendipity['baseURL'] . $serendipity['permalinkPluginPath'] . '/faqs"');
 @define('FAQ_FAQURL_DESC', '');
 @define('FAQ_REALYDELETECATEGORY', 'Do you really want to delete this category?');
 @define('FAQ_NEWFAQ', 'New FAQ');

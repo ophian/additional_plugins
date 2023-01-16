@@ -30,7 +30,7 @@
 @define('FAQ_NEW', 'Neu');
 @define('FAQ_UPDATE', 'Aktualisiert');
 @define('FAQ_FAQURL', 'URL zum FAQ-Plugin');
-@define('FAQ_FAQURL_DESC', 'Der Teil hinter '.$serendipity['permalinkPluginPath'].'.');
+@define('FAQ_FAQURL_DESC', 'Der Teil hinter '.$serendipity['permalinkPluginPath'].'. Beispiel: "' . $serendipity['baseURL'] . $serendipity['permalinkPluginPath'] . '/faqs"');
 
 @define('FAQ_PLUGIN_NAME', 'FAQ Kategorie-Plugin');
 @define('FAQ_PLUGIN_NAME_DESC', 'Zeigt einzelne Kategorien in der Seitenleiste an.');
