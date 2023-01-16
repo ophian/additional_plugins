@@ -78,13 +78,13 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.53');
+        $propbag->add('version',      '1.54');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
-            'serendipity'   => '2.0',
+            'serendipity'   => '2.3',
             'smarty'        => '3.1.0',
-            'php'           => '5.2.0'
+            'php'           => '7.4.0'
         ));
         $propbag->add('groups',                 array('FRONTEND_FEATURES'));
         $propbag->add('configuration_faq',      $this->config_faq);
@@ -1189,9 +1189,11 @@ class serendipity_event_faq extends serendipity_event
         $htmlnugget = array();
         $inspectConfig = array();
         // add some $serendipity items to check for
-        $inspectConfig['s9y']['wysiwyg'] = $serendipity['wysiwyg'];
-        $inspectConfig['s9y']['nl2br']['iso2br'] = isset($serendipity['nl2br']['iso2br']) ? $serendipity['nl2br']['iso2br'] : null;
-        $inspectConfig['s9y']['plugin_path'] = $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/';
+        $inspectConfig['pdata']['wysiwyg'] = $serendipity['wysiwyg'];
+        $inspectConfig['pdata']['nl2br']['iso2br'] = isset($serendipity['nl2br']['iso2br']) ? $serendipity['nl2br']['iso2br'] : null;
+        $inspectConfig['pdata']['plugin_path'] = $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/';
+        $inspectConfig['pdata']['markupeditor'] = $serendipity['pdata']['markupeditor'] ?? null;
+        $inspectConfig['pdata']['markupeditortype'] = $serendipity['pdata']['markupeditortype'] ?? null;
 
         foreach ($this->config_faq AS $config_item) {
             $elcount++;
@@ -1294,9 +1296,11 @@ class serendipity_event_faq extends serendipity_event
         $htmlnugget = array();
         $inspectConfig = array();
         // add some $serendipity items to check for
-        $inspectConfig['s9y']['wysiwyg'] = $serendipity['wysiwyg'];
-        $inspectConfig['s9y']['nl2br']['iso2br'] = isset($serendipity['nl2br']['iso2br']) ? $serendipity['nl2br']['iso2br'] : null;
-        $inspectConfig['s9y']['plugin_path'] = $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/';
+        $inspectConfig['pdata']['wysiwyg'] = $serendipity['wysiwyg'];
+        $inspectConfig['pdata']['nl2br']['iso2br'] = isset($serendipity['nl2br']['iso2br']) ? $serendipity['nl2br']['iso2br'] : null;
+        $inspectConfig['pdata']['plugin_path'] = $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_faq/';
+        $inspectConfig['pdata']['markupeditor'] = $serendipity['pdata']['markupeditor'] ?? null;
+        $inspectConfig['pdata']['markupeditortype'] = $serendipity['pdata']['markupeditortype'] ?? null;
 
         foreach ($this->config_category AS $config_item) {
             $elcount++;

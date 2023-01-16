@@ -1,3 +1,10 @@
+1.54:
+-----
+ * Flag and deny mixing of PLAIN TEXT editor default buttons in the FAQ entry forms
+   when used with markup editors like markdown or textile plugins.
+ * Use Styx media and gallery insert PLAIN EDITOR image buttons since Styx 2.3
+   which also raises some requirements.
+
 1.53:
 -----
  * Fix for mysqli search-term SQL queries in FULLTEXT IN BOOLEAN MODE

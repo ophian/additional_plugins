@@ -103,6 +103,9 @@
     margin: 1em 0;
     padding: .5em;
 }
+#backend_faq_formpage .editor_toolbar {
+    margin-right: .5em;
+}
 
 /* Styx 3.5 DARK MODE */
 [data-color-mode="dark"] .faq_navigator {
