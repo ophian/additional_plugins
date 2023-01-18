@@ -9,7 +9,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_entrypaging extends serendipity_event
 {
-    var $title = PLUGIN_ENTRYPAGING_NAME;
+    var $title = PLUGIN_ENTRYPAGING_NAME; // plugins accessing objects title, eg. entryproperties disable_markups in entry option
 
     private $smartylinks = array();
 
