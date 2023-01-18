@@ -12,7 +12,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_staticpage extends serendipity_event
 {
-    var $title = STATICPAGE_TITLE;
+    var $title = STATICPAGE_TITLE; // plugins accessing objects title, eg. entryproperties disable_markups in entry option
 
     private $smarty_init = null;
     private $cachefile   = [];
