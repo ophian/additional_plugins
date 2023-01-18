@@ -8,7 +8,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_weblogping extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_WEBLOGPING_TITLE;
+    var $title = PLUGIN_EVENT_WEBLOGPING_TITLE; // plugins accessing objects title, eg. entryproperties disable_markups in entry option
     var $services;
 
     function introspect(&$propbag)
