@@ -1376,7 +1376,6 @@ function metaWeblog_editPost($message) {
         else if ($post_array['post_status'] == 'publish') $publish = 1;
     }
 
-
     if (isset($post_array['categories'])) {
         $entry['categories'] = universal_fetchCategories($post_array['categories']);
     }
@@ -1648,6 +1647,7 @@ function metaWeblog_getPostCategories($message) {
 
 function metaWeblog_newMediaObject($message) {
     global $serendipity;
+
     $val = $message->params[0];
     $postid = $val->getval();
     $val = $message->params[1];
@@ -1924,7 +1924,7 @@ function next_nl_block($i, $text) {
             if (strpos($text[$i], "\n") === false) {
                 $skipped = true;
             }
-        }else if (strpos($text[$i], "\n") !== false) {
+        } else if (strpos($text[$i], "\n") !== false) {
             break;
         }
     }
