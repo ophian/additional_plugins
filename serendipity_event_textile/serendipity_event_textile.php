@@ -18,7 +18,7 @@ class serendipity_event_textile extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TEXTILE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Lars Strojny, Ian Styx');
-        $propbag->add('version',       '1.12.3');
+        $propbag->add('version',       '1.12.4');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -164,7 +164,7 @@ class serendipity_event_textile extends serendipity_event
                     if (!empty($eventData['markupeditortype'])) {
                         $serendipity['pdata']['markupeditortype'] = $eventData['markupeditortype'] .= ' <span title="Having 2 concurrent markup plugins active is not recommended!" class="icon-attention-circled alertinfo" aria-hidden="true"></span> <a href="https://textile-lang.com/" target="_blank">Textile</a>';
                     } else {
-                        $serendipity['pdata']['markupeditortype'] = $eventData['markupeditortype'] = sprintf(PLUGIN_EVENT_TEXTILE_TRANSFORM, 'https://textile-lang.com/');
+                        $serendipity['pdata']['markupeditortype'] = $eventData['markupeditortype'] = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/><title>External link(s)</title></svg> ' . sprintf(PLUGIN_EVENT_TEXTILE_TRANSFORM, 'https://textile-lang.com/');
                     }
                     break;
 
