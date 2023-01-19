@@ -338,7 +338,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Links to next/previous entry&lt;/b&gt;&lt;br /&gt;Allows viewing the next/previous entry when viewing&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 27 Aug 2022 09:20:34 +0200</pubDate>
+<pubDate>Wed, 18 Jan 2023 19:56:54 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
@@ -707,7 +707,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Markup: Markdown&lt;/b&gt;&lt;br /&gt;Apply Markdown markup to entry text&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 03 Dec 2022 13:59:15 +0100</pubDate>
+<pubDate>Thu, 19 Jan 2023 19:27:04 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Static Pages&lt;/b&gt;&lt;br /&gt;Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Thu, 12 Jan 2023 11:33:38 +0100</pubDate>
+<pubDate>Wed, 18 Jan 2023 15:33:49 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1112,7 +1112,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;Código: Textile&lt;/b&gt;&lt;br /&gt;Filtra o texto das entradas através do conversor Textile&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 28 Nov 2022 14:23:37 +0100</pubDate>
+<pubDate>Thu, 19 Jan 2023 19:20:52 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
@@ -1265,7 +1265,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Anunciar as entradas&lt;/b&gt;&lt;br /&gt;Enviar uma actualização de novas entradas aos serviços de indexação&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 27 Aug 2022 09:22:58 +0200</pubDate>
+<pubDate>Wed, 18 Jan 2023 15:32:54 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>

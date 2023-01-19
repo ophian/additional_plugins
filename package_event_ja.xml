@@ -2930,7 +2930,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2022-08-27</date>
+  <date>2023-01-18</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -6689,11 +6689,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>エントリテキストに Markdown マークアップを適用します。</description>
 <maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.40</version>
+  <version>1.41</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2022-12-03</date>
+  <date>2023-01-19</date>
   <filelist>
     <dir name="serendipity_event_markdown">
       <file>ChangeLog</file>
@@ -9989,7 +9989,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-01-12</date>
+  <date>2023-01-18</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
@@ -10494,11 +10494,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>テクスタールコンバーターを通して出力をすべて解析します。</description>
 <maintainers><maintainer><name>Serendipity Team, Lars Strojny, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.12.3</version>
+  <version>1.12.4</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2022-11-28</date>
+  <date>2023-01-19</date>
   <filelist>
     <dir name="serendipity_event_textile">
       <file>ChangeLog</file>
@@ -12115,7 +12115,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>5.6</requirements:phpVersion>
-  <date>2022-08-27</date>
+  <date>2023-01-18</date>
   <filelist>
     <dir name="serendipity_event_weblogping">
       <file>ChangeLog</file>
