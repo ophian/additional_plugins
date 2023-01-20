@@ -16496,8 +16496,8 @@ class TCPDF {
 		// restore textarea newlines
 		$html = str_replace('<TBR>', "\n", $html);
 		// remove extra spaces from code
-        $this->re_space['p'] = $this->re_space['p'] ?? '[\s]';
-        $this->re_space['m'] = $this->re_space['m'] ?? '';
+		$this->re_space['p'] = $this->re_space['p'] ?? '[\s]';
+		$this->re_space['m'] = $this->re_space['m'] ?? '';
 		$html = preg_replace('/[\s]+<\/(table|tr|ul|ol|dl)>/', '</\\1>', $html);
 		$html = preg_replace('/'.$this->re_space['p'].'+<\/(td|th|li|dt|dd)>/'.$this->re_space['m'], '</\\1>', $html);
 		$html = preg_replace('/[\s]+<(tr|td|th|li|dt|dd)/', '<\\1', $html ?? '');
@@ -17273,46 +17273,46 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 	 */
 	public function writeHTML($html, $ln=true, $fill=false, $reseth=false, $cell=false, $align='') {
 		$gvars = $this->getGraphicVars();
-        // store current values
-        $prev_cell_margin = $this->cell_margin ?? 0;
-        $prev_cell_padding = $this->cell_padding ?? 0;
-        $prevPage = $this->page ?? 0;
-        $prevlMargin = $this->lMargin ?? 0;
-        $prevrMargin = $this->rMargin ?? 0;
-        $curfontname = $this->FontFamily ?? PDF_FONT_NAME_MAIN;
-        $curfontstyle = $this->FontStyle ?? '';
-        $curfontsize = $this->FontSizePt ?? 12;
-        $curfontascent = $this->getFontAscent($curfontname, $curfontstyle, $curfontsize);
-        $curfontdescent = $this->getFontDescent($curfontname, $curfontstyle, $curfontsize);
-        $curfontstretcing = $this->font_stretching ?? 100;
-        $curfonttracking = $this->font_spacing ?? 0;
-        $this->newline = true;
-        $newline = true;
-        $startlinepage = $this->page ?? 0;
-        $minstartliney = $this->y ?? 0;
-        $maxbottomliney = 0;
-        $startlinex = $this->x ?? 0;
-        $startliney = $this->y ?? 0;
-        $yshift = 0;
-        $loop = 0;
-        $curpos = 0;
-        $this_method_vars = array();
-        $undo = false;
-        $fontaligned = false;
-        $reverse_dir = false; // true when the text direction is reversed
-        $this->premode = false;
-        if ($this->inxobj ?? false) {
-            // we are inside an XObject template
-            $pask = count($this->xobjects[$this->xobjid]['annotations']);
-        } elseif (isset($this->PageAnnots[$this->page ?? 0])) {
-            $pask = count($this->PageAnnots[$this->page]);
-        } else {
-            $pask = 0;
-        }
-        if ($this->inxobj ?? false) {
-            // we are inside an XObject template
-            $startlinepos = strlen($this->xobjects[$this->xobjid]['outdata']);
-        } elseif (!($this->InFooter ?? false)) {
+		// store current values
+		$prev_cell_margin = $this->cell_margin ?? 0;
+		$prev_cell_padding = $this->cell_padding ?? 0;
+		$prevPage = $this->page ?? 0;
+		$prevlMargin = $this->lMargin ?? 0;
+		$prevrMargin = $this->rMargin ?? 0;
+		$curfontname = $this->FontFamily ?? PDF_FONT_NAME_MAIN;
+		$curfontstyle = $this->FontStyle ?? '';
+		$curfontsize = $this->FontSizePt ?? 12;
+		$curfontascent = $this->getFontAscent($curfontname, $curfontstyle, $curfontsize);
+		$curfontdescent = $this->getFontDescent($curfontname, $curfontstyle, $curfontsize);
+		$curfontstretcing = $this->font_stretching ?? 100;
+		$curfonttracking = $this->font_spacing ?? 0;
+		$this->newline = true;
+		$newline = true;
+		$startlinepage = $this->page ?? 0;
+		$minstartliney = $this->y ?? 0;
+		$maxbottomliney = 0;
+		$startlinex = $this->x ?? 0;
+		$startliney = $this->y ?? 0;
+		$yshift = 0;
+		$loop = 0;
+		$curpos = 0;
+		$this_method_vars = array();
+		$undo = false;
+		$fontaligned = false;
+		$reverse_dir = false; // true when the text direction is reversed
+		$this->premode = false;
+		if ($this->inxobj ?? false) {
+			// we are inside an XObject template
+			$pask = count($this->xobjects[$this->xobjid]['annotations']);
+		} elseif (isset($this->PageAnnots[$this->page ?? 0])) {
+			$pask = count($this->PageAnnots[$this->page]);
+		} else {
+			$pask = 0;
+		}
+		if ($this->inxobj ?? false) {
+			// we are inside an XObject template
+			$startlinepos = strlen($this->xobjects[$this->xobjid]['outdata']);
+		} elseif (!($this->InFooter ?? false)) {
 			if (isset($this->footerlen[$this->page ?? 0])) {
 				$this->footerpos[$this->page] = $this->pagelen[$this->page] - $this->footerlen[$this->page];
 			} else {
@@ -18114,19 +18114,19 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 						$this->y -= $yshift;
 					}
 				}
-                $pbrk = $this->checkPageBreak($this->lasth ?? 0);
-                $this->newline = false;
-                $startlinex = $this->x ?? 0;
-                $startliney = $this->y ?? 0;
-                if ($dom[$dom[$key]['parent']]['value'] == 'sup') {
-                    $startliney -= ((0.3 * $this->FontSizePt) / $this->k);
-                } elseif ($dom[$dom[$key]['parent']]['value'] == 'sub') {
-                    $startliney -= (($this->FontSizePt / 0.7) / $this->k);
-                } else {
-                    $minstartliney = $startliney;
-                    $maxbottomliney = (($this->y ?? 0) + $this->getCellHeight($fontsize / ($this->k ?? 1)));
-                }
-                $this->page = $this->page ?? 0;
+				$pbrk = $this->checkPageBreak($this->lasth ?? 0);
+				$this->newline = false;
+				$startlinex = $this->x ?? 0;
+				$startliney = $this->y ?? 0;
+				if ($dom[$dom[$key]['parent']]['value'] == 'sup') {
+					$startliney -= ((0.3 * $this->FontSizePt) / $this->k);
+				} elseif ($dom[$dom[$key]['parent']]['value'] == 'sub') {
+					$startliney -= (($this->FontSizePt / 0.7) / $this->k);
+				} else {
+					$minstartliney = $startliney;
+					$maxbottomliney = (($this->y ?? 0) + $this->getCellHeight($fontsize / ($this->k ?? 1)));
+				}
+				$this->page = $this->page ?? 0;
 				$startlinepage = $this->page;
 				if (isset($endlinepos) AND (!$pbrk)) {
 					$startlinepos = $endlinepos;
@@ -20794,7 +20794,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 			'fhPt' => $this->fhPt ?? 0,/*??*/
 			'page' => $this->page ?? 0,
 			'current_column' => $this->current_column ?? 0,
-			'num_columns' => $this->num_columns ?? 1/*follow-up 17271 - 17278 and 4254, 4256, 4260*/
+			'num_columns' => $this->num_columns ?? 1
 			);
 		return $grapvars;
 	}
