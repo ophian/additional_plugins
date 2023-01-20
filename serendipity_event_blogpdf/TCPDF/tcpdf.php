@@ -166,7 +166,7 @@ class TCPDF {
 	 * Buffer holding in-memory PDF.
 	 * @protected
 	 */
-	protected $buffer;
+	public $buffer;
 
 	/**
 	 * Array containing pages.
@@ -178,7 +178,7 @@ class TCPDF {
 	 * Current document state.
 	 * @protected
 	 */
-	protected $state;
+	public $state;
 
 	/**
 	 * Compression flag.
@@ -2438,7 +2438,7 @@ class TCPDF {
 	 * @since 4.8.014 (2009-11-04)
 	 */
 	public function isRTLTextDir() {
-		return ($this->rtl OR ($this->tmprtl == 'R'));
+		return (($this->rtl ?? false) OR (($this->tmprtl ?? false) == 'R'));
 	}
 
 	/**
@@ -2460,9 +2460,9 @@ class TCPDF {
 	 * @return float
 	 */
 	public function getCellHeight($fontsize, $padding=TRUE) {
-		$height = ($fontsize * $this->cell_height_ratio);
+		$height = ($fontsize * ($this->cell_height_ratio ?? 1.25));
 		if ($padding) {
-			$height += ($this->cell_padding['T'] + $this->cell_padding['B']);
+			$height += (($this->cell_padding['T'] ?? 0) + ($this->cell_padding['B'] ?? 0));
 		}
 		return round($height, 6);
 	}
@@ -3177,7 +3177,7 @@ class TCPDF {
 	 * @see startPage(), endPage(), addTOCPage(), endTOCPage(), getPageSizeFromFormat(), setPageFormat()
 	 */
 	public function AddPage($orientation='', $format='', $keepmargins=false, $tocpage=false) {
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			// we are inside an XObject template
 			return;
 		}
@@ -3837,7 +3837,7 @@ class TCPDF {
 		if ($this->state == 2) {
 			$this->_out($pdfcolor);
 		}
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			// we are inside an XObject template
 			$this->xobjects[$this->xobjid]['spot_colors'][$name] = $this->spot_colors[$name];
 		}
@@ -4033,7 +4033,7 @@ class TCPDF {
 				break;
 			}
 		}
-		$this->ColorFlag = ($this->FillColor != $this->TextColor);
+		$this->ColorFlag = (($this->FillColor ?? null) != $this->TextColor);
 		if (($type != 'text') AND ($this->state == 2) AND $type !== 0) {
 			if (!$ret) {
 				$this->_out($pdfcolor);
@@ -4107,7 +4107,7 @@ class TCPDF {
 	 * @since 1.2
 	 */
 	public function GetStringWidth($s, $fontname='', $fontstyle='', $fontsize=0, $getarray=false) {
-		return $this->GetArrStringWidth(TCPDF_FONTS::utf8Bidi(TCPDF_FONTS::UTF8StringToArray($s, $this->isunicode, $this->CurrentFont), $s, $this->tmprtl, $this->isunicode, $this->CurrentFont), $fontname, $fontstyle, $fontsize, $getarray);
+		return $this->GetArrStringWidth(TCPDF_FONTS::utf8Bidi(TCPDF_FONTS::UTF8StringToArray($s, ($this->isunicode ?? true), $this->CurrentFont), $s, ($this->tmprtl ?? false), ($this->isunicode ?? true), $this->CurrentFont), $fontname, $fontstyle, $fontsize, $getarray);
 	}
 
 	/**
@@ -4131,7 +4131,7 @@ class TCPDF {
 			$this->setFont($fontname, $fontstyle, $fontsize, '', 'default', false);
 		}
 		// convert UTF-8 array to Latin1 if required
-		if ($this->isunicode AND (!$this->isUnicodeFont())) {
+		if (($this->isunicode ?? true) AND (!$this->isUnicodeFont())) {
 			$sa = TCPDF_FONTS::UTF8ArrToLatin1Arr($sa);
 		}
 		$w = 0; // total width
@@ -4240,20 +4240,20 @@ class TCPDF {
 	 * @param string $style Font style. Possible values are (case insensitive):<ul><li>empty string: regular (default)</li><li>B: bold</li><li>I: italic</li><li>BI or IB: bold italic</li></ul>
 	 * @param string $fontfile The font definition file. By default, the name is built from the family and style, in lower case with no spaces.
 	 * @return array|false array containing the font data, or false in case of error.
-	 * @param mixed $subset if true embedd only a subset of the font (stores only the information related to the used characters); if false embedd full font; if 'default' uses the default value set using setFontSubsetting(). This option is valid only for TrueTypeUnicode fonts. If you want to enable users to change the document, set this parameter to false. If you subset the font, the person who receives your PDF would need to have your same font in order to make changes to your PDF. The file size of the PDF would also be smaller because you are embedding only part of a font.
+	 * @param mixed $subset if true embeds only a subset of the font (stores only the information related to the used characters); if false embeds full font; if 'default' uses the default value set using setFontSubsetting(). This option is valid only for TrueTypeUnicode fonts. If you want to enable users to change the document, set this parameter to false. If you subset the font, the person who receives your PDF would need to have your same font in order to make changes to your PDF. The file size of the PDF would also be smaller because you are embedding only part of a font.
 	 * @public
 	 * @since 1.5
 	 * @see SetFont(), setFontSubsetting()
 	 */
 	public function AddFont($family, $style='', $fontfile='', $subset='default') {
 		if ($subset === 'default') {
-			$subset = $this->font_subsetting;
+			$subset = $this->font_subsetting ?? false;
 		}
-		if ($this->pdfa_mode) {
+		if ($this->pdfa_mode ?? false) {
 			$subset = false;
 		}
 		if (TCPDF_STATIC::empty_string($family)) {
-			if (!TCPDF_STATIC::empty_string($this->FontFamily)) {
+			if (!TCPDF_STATIC::empty_string($this->FontFamily ?? PDF_FONT_NAME_MAIN)) {
 				$family = $this->FontFamily;
 			} else {
 				$this->Error('Empty font family');
@@ -4270,13 +4270,13 @@ class TCPDF {
 		}
 		// normalize family name
 		$family = strtolower($family);
-		if ((!$this->isunicode) AND ($family == 'arial')) {
+		if (!($this->isunicode ?? true) AND ($family == 'arial')) {
 			$family = 'helvetica';
 		}
 		if (($family == 'symbol') OR ($family == 'zapfdingbats')) {
 			$style = '';
 		}
-		if ($this->pdfa_mode AND (isset($this->CoreFonts[$family]))) {
+		if (($this->pdfa_mode ?? false) AND (isset($this->CoreFonts[$family]))) {
 			// all fonts must be embedded
 			$family = 'pdfa'.$family;
 		}
@@ -4315,7 +4315,7 @@ class TCPDF {
 		// check if the font has been already added
 		$fb = $this->getFontBuffer($fontkey);
 		if ($fb !== false) {
-			if ($this->inxobj) {
+			if ($this->inxobj ?? false) {
 				// we are inside an XObject template
 				$this->xobjects[$this->xobjid]['fonts'][$fontkey] = $fb['i'];
 			}
@@ -4407,9 +4407,10 @@ class TCPDF {
 				$dw = 600;
 			}
 		}
+        $this->numfonts = $this->numfonts ?? 0;
 		++$this->numfonts;
 		if ($type == 'core') {
-			$name = $this->CoreFonts[$fontkey];
+			$name = $this->CoreFonts[$fontkey] ?? [];
 			$subset = false;
 		} elseif (($type == 'TrueType') OR ($type == 'Type1')) {
 			$subset = false;
@@ -4462,7 +4463,7 @@ class TCPDF {
 		// initialize subsetchars
 		$subsetchars = array_fill(0, 255, true);
 		$this->setFontBuffer($fontkey, array('fontkey' => $fontkey, 'i' => $this->numfonts, 'type' => $type, 'name' => $name, 'desc' => $desc, 'up' => $up, 'ut' => $ut, 'cw' => $cw, 'cbbox' => $cbbox, 'dw' => $dw, 'enc' => $enc, 'cidinfo' => $cidinfo, 'file' => $file, 'ctg' => $ctg, 'subset' => $subset, 'subsetchars' => $subsetchars));
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			// we are inside an XObject template
 			$this->xobjects[$this->xobjid]['fonts'][$fontkey] = $this->numfonts;
 		}
@@ -4550,7 +4551,7 @@ class TCPDF {
 		// font size in points
 		$this->FontSizePt = $size;
 		// font size in user units
-		$this->FontSize = $size / $this->k;
+		$this->FontSize = $size / ($this->k ?? 1);
 		// calculate some font metrics
 		if (isset($this->CurrentFont['desc']['FontBBox'])) {
 			$bbox = explode(' ', substr($this->CurrentFont['desc']['FontBBox'], 1, -1));
@@ -4573,8 +4574,8 @@ class TCPDF {
 		} elseif (!isset($font_ascent)) {
 			$font_ascent = $font_height - $font_descent;
 		}
-		$this->FontAscent = ($font_ascent / $this->k);
-		$this->FontDescent = ($font_descent / $this->k);
+		$this->FontAscent = ($font_ascent / ($this->k ?? 1));
+		$this->FontDescent = ($font_descent / ($this->k ?? 1));
 		if ($out AND ($this->page > 0) AND (isset($this->CurrentFont['i'])) AND ($this->state == 2)) {
 			$this->_out(sprintf('BT /F%d %F Tf ET', $this->CurrentFont['i'], $this->FontSizePt));
 		}
@@ -4666,7 +4667,7 @@ class TCPDF {
 		} else {
 			$descent = (1.219 * 0.24 * $size);
 		}
-		return ($descent / $this->k);
+		return ($descent / ($this->k ?? 1));
 	}
 
 	/**
@@ -4687,7 +4688,7 @@ class TCPDF {
 		} else {
 			$ascent = 1.219 * 0.76 * $size;
 		}
-		return ($ascent / $this->k);
+		return ($ascent / ($this->k ?? 1));
 	}
 
 	/**
@@ -4837,7 +4838,7 @@ class TCPDF {
 	 * @since 4.0.018 (2008-08-06)
 	 */
 	public function Annotation($x, $y, $w, $h, $text, $opt=array('Subtype'=>'Text'), $spaces=0) {
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			// store parameters for later use on template
 			$this->xobjects[$this->xobjid]['annotations'][] = array('x' => $x, 'y' => $y, 'w' => $w, 'h' => $h, 'text' => $text, 'opt' => $opt, 'spaces' => $spaces);
 			return;
@@ -5041,15 +5042,15 @@ class TCPDF {
 	 */
 	protected function checkPageBreak($h=0, $y=null, $addpage=true) {
 		if (TCPDF_STATIC::empty_string($y)) {
-			$y = $this->y;
+			$y = $this->y ?? 0;
 		}
-		$current_page = $this->page;
-		if ((($y + $h) > $this->PageBreakTrigger) AND ($this->inPageBody()) AND ($this->AcceptPageBreak())) {
+		$current_page = $this->page ?? 0;
+		if ((($y + $h) > ($this->PageBreakTrigger ?? 0)) AND ($this->inPageBody()) AND ($this->AcceptPageBreak())) {
 			if ($addpage) {
 				//Automatic page break
 				$x = $this->x;
-				$this->AddPage($this->CurOrientation);
-				$this->y = $this->tMargin;
+				$this->AddPage($this->CurOrientation ?? 0);
+				$this->y = $this->tMargin ?? 0;
 				$oldpage = $this->page - 1;
 				if ($this->rtl) {
 					if ($this->pagedim[$this->page]['orm'] != $this->pagedim[$oldpage]['orm']) {
@@ -5067,7 +5068,7 @@ class TCPDF {
 			}
 			return true;
 		}
-		if ($current_page != $this->page) {
+		if ($current_page != ($this->page ?? 0)) {
 			// account for columns mode
 			return true;
 		}
@@ -6138,7 +6139,7 @@ class TCPDF {
 			if ($cborder OR $fill) {
 				$offsetlen = strlen($ccode);
 				// draw border and fill
-				if ($this->inxobj) {
+				if ($this->inxobj ?? false) {
 					// we are inside an XObject template
 					if (end($this->xobjects[$this->xobjid]['transfmrk']) !== false) {
 						$pagemarkkey = key($this->xobjects[$this->xobjid]['transfmrk']);
@@ -6379,14 +6380,14 @@ class TCPDF {
 	 */
 	public function Write($h, $txt, $link='', $fill=false, $align='', $ln=false, $stretch=0, $firstline=false, $firstblock=false, $maxh=0, $wadj=0, $margin=null) {
 		// check page for no-write regions and adapt page margins if necessary
-		list($this->x, $this->y) = $this->checkPageRegions($h, $this->x, $this->y);
+		list($this->x, $this->y) = $this->checkPageRegions($h, $this->x, $this->y ?? 0);
 		if (strlen($txt) == 0) {
 			// fix empty text
 			$txt = ' ';
 		}
 		if (!is_array($margin)) {
 			// set default margins
-			$margin = $this->cell_margin;
+			$margin = $this->cell_margin ?? 0;
 		}
 		// remove carriage returns
 		$s = str_replace("\r", '', $txt);
@@ -6405,27 +6406,27 @@ class TCPDF {
 		// get a char width
 		$chrwidth = $this->GetCharWidth(46); // dot character
 		// get array of unicode values
-		$chars = TCPDF_FONTS::UTF8StringToArray($s, $this->isunicode, $this->CurrentFont);
+		$chars = TCPDF_FONTS::UTF8StringToArray($s, ($this->isunicode ?? true), $this->CurrentFont);
 		// calculate maximum width for a single character on string
 		$chrw = $this->GetArrStringWidth($chars, '', '', 0, true);
 		array_walk($chrw, array($this, 'getRawCharWidth'));
-		$maxchwidth = max($chrw);
+		$maxchwidth = !empty($chrw) ? max($chrw) : 1;
 		// get array of chars
-		$uchars = TCPDF_FONTS::UTF8ArrayToUniArray($chars, $this->isunicode);
+		$uchars = TCPDF_FONTS::UTF8ArrayToUniArray($chars, ($this->isunicode ?? true));
 		// get the number of characters
 		$nb = count($chars);
 		// replacement for SHY character (minus symbol)
 		$shy_replacement = 45;
-		$shy_replacement_char = TCPDF_FONTS::unichr($shy_replacement, $this->isunicode);
-		// widht for SHY replacement
+		$shy_replacement_char = TCPDF_FONTS::unichr($shy_replacement, ($this->isunicode ?? true));
+		// width for SHY replacement
 		$shy_replacement_width = $this->GetCharWidth($shy_replacement);
 		// page width
-		$pw = $w = $this->w - $this->lMargin - $this->rMargin;
+		$pw = $w = ($this->w ?? 0) - ($this->lMargin ?? 0) - ($this->rMargin ?? 0);
 		// calculate remaining line width ($w)
-		if ($this->rtl) {
-			$w = $this->x - $this->lMargin;
+		if ($this->rtl ?? false) {
+			$w = $this->x - ($this->lMargin ?? 0);
 		} else {
-			$w = $this->w - $this->rMargin - $this->x;
+			$w = ($this->w ?? 0) - ($this->rMargin ?? 0) - ($this->x ?? 0);
 		}
 		// max column width
 		$wmax = ($w - $wadj);
@@ -6530,7 +6531,7 @@ class TCPDF {
 				// \p{Lo} is needed because Chinese characters are packed next to each other without spaces in between.
 				if (($c != 160)
 					AND (($c == 173)
-						OR preg_match($this->re_spaces, TCPDF_FONTS::unichr($c, $this->isunicode))
+						OR preg_match(($this->re_spaces ?? '/[^\S\xa0]/'), TCPDF_FONTS::unichr($c, ($this->isunicode ?? true)))
 						OR (($c == 45)
 							AND ($i < ($nb - 1))
 							AND @preg_match('/[\p{L}]/'.$this->re_space['m'], TCPDF_FONTS::unichr($pc, $this->isunicode))
@@ -6572,8 +6573,8 @@ class TCPDF {
 					// we have reached the end of column
 					if ($sep == -1) {
 						// check if the line was already started
-						if (($this->rtl AND ($this->x <= ($this->w - $this->rMargin - $this->cell_padding['R'] - $margin['R'] - $chrwidth)))
-							OR ((!$this->rtl) AND ($this->x >= ($this->lMargin + $this->cell_padding['L'] + $margin['L'] + $chrwidth)))) {
+						if ((($this->rtl ?? false) AND ($this->x <= ($this->w - $this->rMargin - $this->cell_padding['R'] - $margin['R'] - $chrwidth)))
+							OR ((!($this->rtl ?? false)) AND (($this->x ?? 0) >= (($this->lMargin ?? 0) + ($this->cell_padding['L'] ?? 0) + ($margin['L'] ?? 0) + $chrwidth)))) {
 							// print a void cell and go to next line
 							$this->Cell($w, $h, '', 0, 1);
 							$linebreak = true;
@@ -7298,7 +7299,7 @@ class TCPDF {
 			}
 		}
 		$this->endlinex = $this->img_rb_x;
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			// we are inside an XObject template
 			$this->xobjects[$this->xobjid]['images'][] = $info['i'];
 		}
@@ -7446,7 +7447,7 @@ class TCPDF {
 	 * @see Cell()
 	 */
 	public function Ln($h=null, $cell=false) {
-		if (($this->num_columns > 1) AND ($this->y == $this->columns[$this->current_column]['y']) AND isset($this->columns[$this->current_column]['x']) AND ($this->x == $this->columns[$this->current_column]['x'])) {
+		if ((($this->num_columns ?? 1) > 1) AND ($this->y == $this->columns[$this->current_column]['y']) AND isset($this->columns[$this->current_column]['x']) AND ($this->x == $this->columns[$this->current_column]['x'])) {
 			// revove vertical space from the top of the column
 			return;
 		}
@@ -7459,13 +7460,13 @@ class TCPDF {
 		} else {
 			$cellpadding = 0;
 		}
-		if ($this->rtl) {
-			$this->x = $this->w - $this->rMargin - $cellpadding;
+		if ($this->rtl ?? false) {
+			$this->x = $this->w - ($this->rMargin ?? 0) - $cellpadding;
 		} else {
-			$this->x = $this->lMargin + $cellpadding;
+			$this->x = ($this->lMargin ?? 0) + $cellpadding;
 		}
 		if (TCPDF_STATIC::empty_string($h)) {
-			$h = $this->lasth;
+			$h = $this->lasth ?? 0;
 		}
 		$this->y += $h;
 		$this->newline = true;
@@ -10395,7 +10396,7 @@ class TCPDF {
 	 */
 	protected function _out($s) {
 		if ($this->state == 2) {
-			if ($this->inxobj) {
+			if ($this->inxobj ?? false) {
 				// we are inside an XObject template
 				$this->xobjects[$this->xobjid]['outdata'] .= $s."\n";
 			} elseif ((!$this->InFooter) AND isset($this->footerlen[$this->page]) AND ($this->footerlen[$this->page] > 0)) {
@@ -11074,7 +11075,7 @@ class TCPDF {
 			return;
 		}
 		$this->_outSaveGraphicsState();
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			// we are inside an XObject template
 			$this->xobjects[$this->xobjid]['transfmrk'][] = strlen($this->xobjects[$this->xobjid]['outdata']);
 		} else {
@@ -11101,7 +11102,7 @@ class TCPDF {
 			array_pop($this->transfmatrix[$this->transfmatrix_key]);
 			--$this->transfmatrix_key;
 		}
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			// we are inside an XObject template
 			array_pop($this->xobjects[$this->xobjid]['transfmrk']);
 		} else {
@@ -11379,7 +11380,7 @@ class TCPDF {
 		// add tranformation matrix
 		$this->transfmatrix[$this->transfmatrix_key][] = array('a' => $tm[0], 'b' => $tm[1], 'c' => $tm[2], 'd' => $tm[3], 'e' => $tm[4], 'f' => $tm[5]);
 		// update transformation mark
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			// we are inside an XObject template
 			if (end($this->xobjects[$this->xobjid]['transfmrk']) !== false) {
 				$key = key($this->xobjects[$this->xobjid]['transfmrk']);
@@ -13930,7 +13931,7 @@ class TCPDF {
 		// check if this ExtGState already exist
 		foreach ($this->extgstates as $i => $ext) {
 			if ($ext['parms'] == $parms) {
-				if ($this->inxobj) {
+				if ($this->inxobj ?? false) {
 					// we are inside an XObject template
 					$this->xobjects[$this->xobjid]['extgstates'][$i] = $ext;
 				}
@@ -13940,7 +13941,7 @@ class TCPDF {
 		}
 		$n = (count($this->extgstates) + 1);
 		$this->extgstates[$n] = array('parms' => $parms);
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			// we are inside an XObject template
 			$this->xobjects[$this->xobjid]['extgstates'][$n] = $this->extgstates[$n];
 		}
@@ -14556,7 +14557,7 @@ class TCPDF {
 		$this->_out('/Sh'.$n.' sh');
 		//restore previous Graphic State
 		$this->_outRestoreGraphicsState();
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			// we are inside an XObject template
 			$this->xobjects[$this->xobjid]['gradients'][$n] = $this->gradients[$n];
 		}
@@ -14694,7 +14695,7 @@ class TCPDF {
 		$this->_out('/Sh'.$n.' sh');
 		//restore previous Graphic State
 		$this->_outRestoreGraphicsState();
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			// we are inside an XObject template
 			$this->xobjects[$this->xobjid]['gradients'][$n] = $this->gradients[$n];
 		}
@@ -16495,9 +16496,11 @@ class TCPDF {
 		// restore textarea newlines
 		$html = str_replace('<TBR>', "\n", $html);
 		// remove extra spaces from code
+        $this->re_space['p'] = $this->re_space['p'] ?? '[\s]';
+        $this->re_space['m'] = $this->re_space['m'] ?? '';
 		$html = preg_replace('/[\s]+<\/(table|tr|ul|ol|dl)>/', '</\\1>', $html);
 		$html = preg_replace('/'.$this->re_space['p'].'+<\/(td|th|li|dt|dd)>/'.$this->re_space['m'], '</\\1>', $html);
-		$html = preg_replace('/[\s]+<(tr|td|th|li|dt|dd)/', '<\\1', $html);
+		$html = preg_replace('/[\s]+<(tr|td|th|li|dt|dd)/', '<\\1', $html ?? '');
 		$html = preg_replace('/'.$this->re_space['p'].'+<(ul|ol|dl|br)/'.$this->re_space['m'], '<\\1', $html);
 		$html = preg_replace('/<\/(table|tr|td|th|blockquote|dd|dt|dl|div|dt|h1|h2|h3|h4|h5|h6|hr|li|ol|ul|p)>[\s]+</', '</\\1><', $html);
 		$html = preg_replace('/<\/(td|th)>/', '<marker style="font-size:0"/></\\1>', $html);
@@ -16538,24 +16541,24 @@ class TCPDF {
 		$dom[$key]['value'] = '';
 		$dom[$key]['parent'] = 0;
 		$dom[$key]['hide'] = false;
-		$dom[$key]['fontname'] = $this->FontFamily;
-		$dom[$key]['fontstyle'] = $this->FontStyle;
-		$dom[$key]['fontsize'] = $this->FontSizePt;
-		$dom[$key]['font-stretch'] = $this->font_stretching;
-		$dom[$key]['letter-spacing'] = $this->font_spacing;
-		$dom[$key]['stroke'] = $this->textstrokewidth;
-		$dom[$key]['fill'] = (($this->textrendermode % 2) == 0);
-		$dom[$key]['clip'] = ($this->textrendermode > 3);
-		$dom[$key]['line-height'] = $this->cell_height_ratio;
+        $dom[$key]['fontname'] = $this->FontFamily ?? PDF_FONT_NAME_MAIN;
+        $dom[$key]['fontstyle'] = $this->FontStyle ?? '';
+        $dom[$key]['fontsize'] = $this->FontSizePt ?? 12;
+        $dom[$key]['font-stretch'] = $this->font_stretching ?? 100;
+        $dom[$key]['letter-spacing'] = $this->font_spacing ?? 0;
+        $dom[$key]['stroke'] = $this->textstrokewidth ?? 0;
+        $dom[$key]['fill'] = (($this->textrendermode ?? 0 % 2) == 0);
+        $dom[$key]['clip'] = ($this->textrendermode ?? 0 > 3);
+        $dom[$key]['line-height'] = $this->cell_height_ratio ?? 1.25;
 		$dom[$key]['bgcolor'] = false;
-		$dom[$key]['fgcolor'] = $this->fgcolor; // color
-		$dom[$key]['strokecolor'] = $this->strokecolor;
+        $dom[$key]['fgcolor'] = $this->fgcolor ?? array('R' => 0, 'G' => 0, 'B' => 0); // color
+        $dom[$key]['strokecolor'] = $this->strokecolor ?? array('R' => 0, 'G' => 0, 'B' => 0);
 		$dom[$key]['align'] = '';
 		$dom[$key]['listtype'] = '';
 		$dom[$key]['text-indent'] = 0;
 		$dom[$key]['text-transform'] = '';
 		$dom[$key]['border'] = array();
-		$dom[$key]['dir'] = $this->rtl?'rtl':'ltr';
+		$dom[$key]['dir'] = ($this->rtl ?? false)?'rtl':'ltr';
 		$thead = false; // true when we are inside the THEAD tag
 		++$key;
 		$level = array();
@@ -17270,64 +17273,64 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 	 */
 	public function writeHTML($html, $ln=true, $fill=false, $reseth=false, $cell=false, $align='') {
 		$gvars = $this->getGraphicVars();
-		// store current values
-		$prev_cell_margin = $this->cell_margin;
-		$prev_cell_padding = $this->cell_padding;
-		$prevPage = $this->page;
-		$prevlMargin = $this->lMargin;
-		$prevrMargin = $this->rMargin;
-		$curfontname = $this->FontFamily;
-		$curfontstyle = $this->FontStyle;
-		$curfontsize = $this->FontSizePt;
-		$curfontascent = $this->getFontAscent($curfontname, $curfontstyle, $curfontsize);
-		$curfontdescent = $this->getFontDescent($curfontname, $curfontstyle, $curfontsize);
-		$curfontstretcing = $this->font_stretching;
-		$curfonttracking = $this->font_spacing;
-		$this->newline = true;
-		$newline = true;
-		$startlinepage = $this->page;
-		$minstartliney = $this->y;
-		$maxbottomliney = 0;
-		$startlinex = $this->x;
-		$startliney = $this->y;
-		$yshift = 0;
-		$loop = 0;
-		$curpos = 0;
-		$this_method_vars = array();
-		$undo = false;
-		$fontaligned = false;
-		$reverse_dir = false; // true when the text direction is reversed
-		$this->premode = false;
-		if ($this->inxobj) {
-			// we are inside an XObject template
-			$pask = count($this->xobjects[$this->xobjid]['annotations']);
-		} elseif (isset($this->PageAnnots[$this->page])) {
-			$pask = count($this->PageAnnots[$this->page]);
-		} else {
-			$pask = 0;
-		}
-		if ($this->inxobj) {
-			// we are inside an XObject template
-			$startlinepos = strlen($this->xobjects[$this->xobjid]['outdata']);
-		} elseif (!$this->InFooter) {
-			if (isset($this->footerlen[$this->page])) {
+        // store current values
+        $prev_cell_margin = $this->cell_margin ?? 0;
+        $prev_cell_padding = $this->cell_padding ?? 0;
+        $prevPage = $this->page ?? 0;
+        $prevlMargin = $this->lMargin ?? 0;
+        $prevrMargin = $this->rMargin ?? 0;
+        $curfontname = $this->FontFamily ?? PDF_FONT_NAME_MAIN;
+        $curfontstyle = $this->FontStyle ?? '';
+        $curfontsize = $this->FontSizePt ?? 12;
+        $curfontascent = $this->getFontAscent($curfontname, $curfontstyle, $curfontsize);
+        $curfontdescent = $this->getFontDescent($curfontname, $curfontstyle, $curfontsize);
+        $curfontstretcing = $this->font_stretching ?? 100;
+        $curfonttracking = $this->font_spacing ?? 0;
+        $this->newline = true;
+        $newline = true;
+        $startlinepage = $this->page ?? 0;
+        $minstartliney = $this->y ?? 0;
+        $maxbottomliney = 0;
+        $startlinex = $this->x ?? 0;
+        $startliney = $this->y ?? 0;
+        $yshift = 0;
+        $loop = 0;
+        $curpos = 0;
+        $this_method_vars = array();
+        $undo = false;
+        $fontaligned = false;
+        $reverse_dir = false; // true when the text direction is reversed
+        $this->premode = false;
+        if ($this->inxobj ?? false) {
+            // we are inside an XObject template
+            $pask = count($this->xobjects[$this->xobjid]['annotations']);
+        } elseif (isset($this->PageAnnots[$this->page ?? 0])) {
+            $pask = count($this->PageAnnots[$this->page]);
+        } else {
+            $pask = 0;
+        }
+        if ($this->inxobj ?? false) {
+            // we are inside an XObject template
+            $startlinepos = strlen($this->xobjects[$this->xobjid]['outdata']);
+        } elseif (!($this->InFooter ?? false)) {
+			if (isset($this->footerlen[$this->page ?? 0])) {
 				$this->footerpos[$this->page] = $this->pagelen[$this->page] - $this->footerlen[$this->page];
 			} else {
-				$this->footerpos[$this->page] = $this->pagelen[$this->page];
+				$this->footerpos[$this->page ?? 0] = $this->pagelen[$this->page ?? 0] ?? array();
 			}
-			$startlinepos = $this->footerpos[$this->page];
+			$startlinepos = $this->footerpos[$this->page ?? 0];
 		} else {
 			// we are inside the footer
 			$startlinepos = $this->pagelen[$this->page];
 		}
 		$lalign = $align;
 		$plalign = $align;
-		if ($this->rtl) {
+		if ($this->rtl ?? false) {
 			$w = $this->x - $this->lMargin;
 		} else {
-			$w = $this->w - $this->rMargin - $this->x;
+			$w = ($this->w ?? 0) - ($this->rMargin ?? 0) - ($this->x ?? 0);
 		}
-		$w -= ($this->cell_padding['L'] + $this->cell_padding['R']);
+		$w -= (($this->cell_padding['L'] ?? 0) + ($this->cell_padding['R'] ?? 0));
 		if ($cell) {
 			if ($this->rtl) {
 				$this->x -= $this->cell_padding['R'];
@@ -17337,23 +17340,23 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 				$this->rMargin += $this->cell_padding['R'];
 			}
 		}
-		if ($this->customlistindent >= 0) {
-			$this->listindent = $this->customlistindent;
+		if ($this->customlistindent ?? 0 >= 0) {
+			$this->listindent = $this->customlistindent ?? 0;
 		} else {
 			$this->listindent = $this->GetStringWidth('000000');
 		}
 		$this->listindentlevel = 0;
 		// save previous states
-		$prev_cell_height_ratio = $this->cell_height_ratio;
-		$prev_listnum = $this->listnum;
-		$prev_listordered = $this->listordered;
-		$prev_listcount = $this->listcount;
-		$prev_lispacer = $this->lispacer;
+		$prev_cell_height_ratio = $this->cell_height_ratio ?? 1.25;
+		$prev_listnum = $this->listnum ?? 0;
+		$prev_listordered = $this->listordered ?? 0;
+		$prev_listcount = $this->listcount ?? 0;
+		$prev_lispacer = $this->lispacer ?? 0;
 		$this->listnum = 0;
 		$this->listordered = array();
 		$this->listcount = array();
 		$this->lispacer = '';
-		if ((TCPDF_STATIC::empty_string($this->lasth)) OR ($reseth)) {
+		if ((TCPDF_STATIC::empty_string($this->lasth ?? 0)) OR ($reseth)) {
 			// reset row height
 			$this->resetLastH();
 		}
@@ -17585,16 +17588,16 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 					$fontascent = $this->getFontAscent($fontname, $fontstyle, $fontsize);
 					$fontdescent = $this->getFontDescent($fontname, $fontstyle, $fontsize);
 					if (($fontname != $curfontname) OR ($fontstyle != $curfontstyle) OR ($fontsize != $curfontsize)
-						OR ($this->cell_height_ratio != $dom[$key]['line-height'])
+						OR (($this->cell_height_ratio ?? 1.25) != $dom[$key]['line-height'])
 						OR ($dom[$key]['tag'] AND $dom[$key]['opening'] AND ($dom[$key]['value'] == 'li')) ) {
 						if (($key < ($maxel - 1)) AND (
 								($dom[$key]['tag'] AND $dom[$key]['opening'] AND ($dom[$key]['value'] == 'li'))
-								OR ($this->cell_height_ratio != $dom[$key]['line-height'])
+								OR (($this->cell_height_ratio ?? 1.25) != $dom[$key]['line-height'])
 								OR (!$this->newline AND is_numeric($fontsize) AND is_numeric($curfontsize)
 								AND ($fontsize >= 0) AND ($curfontsize >= 0)
 								AND (($fontsize != $curfontsize) OR ($fontstyle != $curfontstyle) OR ($fontname != $curfontname)))
 							)) {
-							if ($this->page > $startlinepage) {
+							if (($this->page ?? 0) > $startlinepage) {
 								// fix lines splitted over two pages
 								if (isset($this->footerlen[$startlinepage])) {
 									$curpos = $this->pagelen[$startlinepage] - $this->footerlen[$startlinepage];
@@ -17639,7 +17642,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 							}
 							if (!$dom[$key]['block']) {
 								if (!(isset($dom[($key + 1)]) AND $dom[($key + 1)]['tag'] AND (!$dom[($key + 1)]['opening']) AND ($dom[($key + 1)]['value'] != 'li') AND $dom[$key]['tag'] AND (!$dom[$key]['opening']))) {
-									$this->y += (((($curfontsize * $this->cell_height_ratio) - ($fontsize * $dom[$key]['line-height'])) / $this->k) + $curfontascent - $fontascent - $curfontdescent + $fontdescent) / 2;
+									$this->y += (((($curfontsize * ($this->cell_height_ratio ?? 1.25)) - ($fontsize * $dom[$key]['line-height'])) / ($this->k ?? 1)) + $curfontascent - $fontascent - $curfontdescent + $fontdescent) / 2;
 								}
 								if (($dom[$key]['value'] != 'sup') AND ($dom[$key]['value'] != 'sub')) {
 									$current_line_align_data = array($key, $minstartliney, $maxbottomliney);
@@ -17667,7 +17670,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 					}
 				}
 				// set text rendering mode
-				$textstroke = isset($dom[$key]['stroke']) ? $dom[$key]['stroke'] : $this->textstrokewidth;
+				$textstroke = isset($dom[$key]['stroke']) ? $dom[$key]['stroke'] : $this->textstrokewidth ?? 0;
 				$textfill = isset($dom[$key]['fill']) ? $dom[$key]['fill'] : (($this->textrendermode % 2) == 0);
 				$textclip = isset($dom[$key]['clip']) ? $dom[$key]['clip'] : ($this->textrendermode > 3);
 				$this->setTextRenderingMode($textstroke, $textfill, $textclip);
@@ -17681,7 +17684,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 					$plalign = '';
 				}
 				// get current position on page buffer
-				$curpos = $this->pagelen[$startlinepage];
+				$curpos = $this->pagelen[$startlinepage] ?? 0;
 				if (isset($dom[$key]['bgcolor']) AND ($dom[$key]['bgcolor'] !== false)) {
 					$this->setFillColorArray($dom[$key]['bgcolor']);
 					$wfill = true;
@@ -17708,13 +17711,13 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 				// we are at the beginning of a new line
 				if (isset($startlinex)) {
 					$yshift = ($minstartliney - $startliney);
-					if (($yshift > 0) OR ($this->page > $startlinepage)) {
+					if (($yshift > 0) OR (($this->page ?? 0) > $startlinepage)) {
 						$yshift = 0;
 					}
 					$t_x = 0;
 					// the last line must be shifted to be aligned as requested
-					$linew = abs($this->endlinex - $startlinex);
-					if ($this->inxobj) {
+					$linew = abs(($this->endlinex ?? 0) - $startlinex);
+					if ($this->inxobj ?? false) {
 						// we are inside an XObject template
 						$pstart = substr($this->xobjects[$this->xobjid]['outdata'], 0, $startlinepos);
 						if (isset($opentagpos)) {
@@ -17730,7 +17733,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 							$pend = '';
 						}
 					} else {
-						$pstart = substr($this->getPageBuffer($startlinepage), 0, $startlinepos);
+						$pstart = substr($this->getPageBuffer($startlinepage), 0, (int)$startlinepos);
 						if (isset($opentagpos) AND isset($this->footerlen[$startlinepage]) AND (!$this->InFooter)) {
 							$this->footerpos[$startlinepage] = $this->pagelen[$startlinepage] - $this->footerlen[$startlinepage];
 							$midpos = min($opentagpos, $this->footerpos[$startlinepage]);
@@ -17746,7 +17749,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 							$pmid = substr($this->getPageBuffer($startlinepage), $startlinepos, ($midpos - $startlinepos));
 							$pend = substr($this->getPageBuffer($startlinepage), $midpos);
 						} else {
-							$pmid = substr($this->getPageBuffer($startlinepage), $startlinepos);
+							$pmid = substr($this->getPageBuffer($startlinepage), (int)$startlinepos);
 							$pend = '';
 						}
 					}
@@ -18002,7 +18005,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 									// shift the annotations and links
 									$cxpos = ($currentxpos / $this->k);
 									$lmpos = ($this->lMargin + $this->cell_padding['L'] + $this->feps);
-									if ($this->inxobj) {
+									if ($this->inxobj ?? false) {
 										// we are inside an XObject template
 										foreach ($this->xobjects[$this->xobjid]['annotations'] as $pak => $pac) {
 											if (($pac['y'] >= $minstartliney) AND (($pac['x'] * $this->k) >= ($currentxpos - $this->feps)) AND (($pac['x'] * $this->k) <= ($currentxpos + $this->feps))) {
@@ -18056,7 +18059,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 										}
 										unset($pamatch);
 									}
-									if ($this->inxobj) {
+									if ($this->inxobj ?? false) {
 										// we are inside an XObject template
 										$this->xobjects[$this->xobjid]['outdata'] = $pstart."\n".$pmid."\n".$pend;
 									} else {
@@ -18071,7 +18074,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 									}
 									$rs = sprintf('%F Tw', $spacewidth);
 									$pmid = preg_replace("/\[\(/x", $rs.' [(', $pmid);
-									if ($this->inxobj) {
+									if ($this->inxobj ?? false) {
 										// we are inside an XObject template
 										$this->xobjects[$this->xobjid]['outdata'] = $pstart."\n".$pmid."\nBT 0 Tw ET\n".$pend;
 									} else {
@@ -18087,7 +18090,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 						$trx = sprintf('1 0 0 1 %F %F cm', ($t_x * $this->k), ($yshift * $this->k));
 						$pstart .= "\nq\n".$trx."\n".$pmid."\nQ\n";
 						$endlinepos = strlen($pstart);
-						if ($this->inxobj) {
+						if ($this->inxobj ?? false) {
 							// we are inside an XObject template
 							$this->xobjects[$this->xobjid]['outdata'] = $pstart.$pend;
 							foreach ($this->xobjects[$this->xobjid]['annotations'] as $pak => $pac) {
@@ -18111,30 +18114,31 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 						$this->y -= $yshift;
 					}
 				}
-				$pbrk = $this->checkPageBreak($this->lasth);
-				$this->newline = false;
-				$startlinex = $this->x;
-				$startliney = $this->y;
-				if ($dom[$dom[$key]['parent']]['value'] == 'sup') {
-					$startliney -= ((0.3 * $this->FontSizePt) / $this->k);
-				} elseif ($dom[$dom[$key]['parent']]['value'] == 'sub') {
-					$startliney -= (($this->FontSizePt / 0.7) / $this->k);
-				} else {
-					$minstartliney = $startliney;
-					$maxbottomliney = ($this->y + $this->getCellHeight($fontsize / $this->k));
-				}
+                $pbrk = $this->checkPageBreak($this->lasth ?? 0);
+                $this->newline = false;
+                $startlinex = $this->x ?? 0;
+                $startliney = $this->y ?? 0;
+                if ($dom[$dom[$key]['parent']]['value'] == 'sup') {
+                    $startliney -= ((0.3 * $this->FontSizePt) / $this->k);
+                } elseif ($dom[$dom[$key]['parent']]['value'] == 'sub') {
+                    $startliney -= (($this->FontSizePt / 0.7) / $this->k);
+                } else {
+                    $minstartliney = $startliney;
+                    $maxbottomliney = (($this->y ?? 0) + $this->getCellHeight($fontsize / ($this->k ?? 1)));
+                }
+                $this->page = $this->page ?? 0;
 				$startlinepage = $this->page;
 				if (isset($endlinepos) AND (!$pbrk)) {
 					$startlinepos = $endlinepos;
 				} else {
-					if ($this->inxobj) {
+					if ($this->inxobj ?? false) {
 						// we are inside an XObject template
 						$startlinepos = strlen($this->xobjects[$this->xobjid]['outdata']);
-					} elseif (!$this->InFooter) {
+					} elseif (!($this->InFooter ?? false)) {
 						if (isset($this->footerlen[$this->page])) {
-							$this->footerpos[$this->page] = $this->pagelen[$this->page] - $this->footerlen[$this->page];
+							$this->footerpos[$this->page] = $this->pagelen[$this->page ?? 0] - $this->footerlen[$this->page ?? 0];
 						} else {
-							$this->footerpos[$this->page] = $this->pagelen[$this->page];
+							$this->footerpos[$this->page ?? 0] = $this->pagelen[$this->page ?? 0] ?? 0;
 						}
 						$startlinepos = $this->footerpos[$this->page];
 					} else {
@@ -18425,7 +18429,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 					} else {
 						// opening tag (or self-closing tag)
 						if (!isset($opentagpos)) {
-							if ($this->inxobj) {
+							if ($this->inxobj ?? false) {
 								// we are inside an XObject template
 								$opentagpos = strlen($this->xobjects[$this->xobjid]['outdata']);
 							} elseif (!$this->InFooter) {
@@ -18508,10 +18512,11 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 					$dom[$key]['value'] = preg_replace('/^'.$this->re_space['p'].'+$/'.$this->re_space['m'], chr(32), $dom[$key]['value']);
 				}
 				$strrest = '';
-				if ($this->rtl) {
-					$this->x -= $this->textindent;
+				if ($this->rtl ?? false) {
+					$this->x -= $this->textindent ?? 0;
 				} else {
-					$this->x += $this->textindent;
+					$this->x = $this->x ?? 0;
+                    $this->x += $this->textindent ?? 0;
 				}
 				if (!isset($dom[$key]['trimmed_space']) OR !$dom[$key]['trimmed_space']) {
 					$strlinelen = $this->GetStringWidth($dom[$key]['value']);
@@ -18528,10 +18533,10 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 						$strrest = $this->addHtmlLink($this->HREF['url'], $dom[$key]['value'], $wfill, true, $hrefcolor, $hrefstyle, true);
 					} else {
 						$wadj = 0; // space to leave for block continuity
-						if ($this->rtl) {
-							$cwa = ($this->x - $this->lMargin);
+						if ($this->rtl ?? false) {
+							$cwa = ($this->x - ($this->lMargin ?? 0));
 						} else {
-							$cwa = ($this->w - $this->rMargin - $this->x);
+							 $cwa = (($this->w ?? 0) - ($this->rMargin ?? 0) - ($this->x ?? 0));
 						}
 						if (($strlinelen < $cwa) AND (isset($dom[($key + 1)])) AND ($dom[($key + 1)]['tag']) AND (!$dom[($key + 1)]['block'])) {
 							// check the next text blocks for continuity
@@ -18589,7 +18594,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 							$xws = $this->x;
 						}
 						// ****** write only until the end of the line and get the rest ******
-						$strrest = $this->Write($this->lasth, $dom[$key]['value'], '', $wfill, '', false, 0, true, $firstblock, 0, $wadj);
+						$strrest = $this->Write($this->lasth ?? 0, $dom[$key]['value'], '', $wfill, '', false, 0, true, $firstblock, 0, $wadj);
 						// restore default direction
 						if ($reverse_dir AND ($wadj == 0)) {
 							$this->x = $xws; // @phpstan-ignore-line
@@ -18664,8 +18669,8 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 			}
 			$t_x = 0;
 			// the last line must be shifted to be aligned as requested
-			$linew = abs($this->endlinex - $startlinex);
-			if ($this->inxobj) {
+			$linew = abs(($this->endlinex ?? 0) - $startlinex);
+			if ($this->inxobj ?? false) {
 				// we are inside an XObject template
 				$pstart = substr($this->xobjects[$this->xobjid]['outdata'], 0, $startlinepos);
 				if (isset($opentagpos)) {
@@ -18681,7 +18686,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 					$pend = '';
 				}
 			} else {
-				$pstart = substr($this->getPageBuffer($startlinepage), 0, $startlinepos);
+				$pstart = substr($this->getPageBuffer($startlinepage), 0, (int)$startlinepos);
 				if (isset($opentagpos) AND isset($this->footerlen[$startlinepage]) AND (!$this->InFooter)) {
 					$this->footerpos[$startlinepage] = $this->pagelen[$startlinepage] - $this->footerlen[$startlinepage];
 					$midpos = min($opentagpos, $this->footerpos[$startlinepage]);
@@ -18697,7 +18702,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 					$pmid = substr($this->getPageBuffer($startlinepage), $startlinepos, ($midpos - $startlinepos));
 					$pend = substr($this->getPageBuffer($startlinepage), $midpos);
 				} else {
-					$pmid = substr($this->getPageBuffer($startlinepage), $startlinepos);
+					$pmid = substr($this->getPageBuffer($startlinepage), (int)$startlinepos);
 					$pend = '';
 				}
 			}
@@ -18771,7 +18776,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 				$trx = sprintf('1 0 0 1 %F %F cm', ($t_x * $this->k), ($yshift * $this->k));
 				$pstart .= "\nq\n".$trx."\n".$pmid."\nQ\n";
 				$endlinepos = strlen($pstart);
-				if ($this->inxobj) {
+				if ($this->inxobj ?? false) {
 					// we are inside an XObject template
 					$this->xobjects[$this->xobjid]['outdata'] = $pstart.$pend;
 					foreach ($this->xobjects[$this->xobjid]['annotations'] as $pak => $pac) {
@@ -18798,7 +18803,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 		}
 		// restore previous values
 		$this->setGraphicVars($gvars);
-		if ($this->num_columns > 1) {
+		if (($this->num_columns ?? 1) > 1) {
 			$this->selectColumn();
 		} elseif ($this->page > $prevPage) {
 			$this->lMargin = $this->pagedim[$this->page]['olm'];
@@ -18811,7 +18816,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 		$this->listcount = $prev_listcount;
 		$this->lispacer = $prev_lispacer;
 		if ($ln AND (!($cell AND ($dom[$key-1]['value'] == 'table')))) {
-			$this->Ln($this->lasth);
+			$this->Ln($this->lasth ?? 0);
 			if (($this->y < $maxbottomliney) AND ($startlinepage == $this->page)) {
 				$this->y = $maxbottomliney;
 			}
@@ -19887,7 +19892,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 							if (!empty($cborder) OR !empty($fill)) {
 								$offsetlen = strlen($ccode);
 								// draw border and fill
-								if ($this->inxobj) {
+								if ($this->inxobj ?? false) {
 									// we are inside an XObject template
 									if (end($this->xobjects[$this->xobjid]['transfmrk']) !== false) {
 										$pagemarkkey = key($this->xobjects[$this->xobjid]['transfmrk']);
@@ -20295,7 +20300,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 			if ($cborder OR $fill) {
 				$offsetlen = strlen($ccode);
 				// draw border and fill
-				if ($this->inxobj) {
+				if ($this->inxobj ?? false) {
 					// we are inside an XObject template
 					if (end($this->xobjects[$this->xobjid]['transfmrk']) !== false) {
 						$pagemarkkey = key($this->xobjects[$this->xobjid]['transfmrk']);
@@ -20742,54 +20747,54 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 	 */
 	protected function getGraphicVars() {
 		$grapvars = array(
-			'FontFamily' => $this->FontFamily,
-			'FontStyle' => $this->FontStyle,
-			'FontSizePt' => $this->FontSizePt,
-			'rMargin' => $this->rMargin,
-			'lMargin' => $this->lMargin,
-			'cell_padding' => $this->cell_padding,
-			'cell_margin' => $this->cell_margin,
-			'LineWidth' => $this->LineWidth,
-			'linestyleWidth' => $this->linestyleWidth,
-			'linestyleCap' => $this->linestyleCap,
-			'linestyleJoin' => $this->linestyleJoin,
-			'linestyleDash' => $this->linestyleDash,
-			'textrendermode' => $this->textrendermode,
-			'textstrokewidth' => $this->textstrokewidth,
-			'DrawColor' => $this->DrawColor,
-			'FillColor' => $this->FillColor,
-			'TextColor' => $this->TextColor,
-			'ColorFlag' => $this->ColorFlag,
-			'bgcolor' => $this->bgcolor,
-			'fgcolor' => $this->fgcolor,
-			'htmlvspace' => $this->htmlvspace,
-			'listindent' => $this->listindent,
-			'listindentlevel' => $this->listindentlevel,
-			'listnum' => $this->listnum,
-			'listordered' => $this->listordered,
-			'listcount' => $this->listcount,
-			'lispacer' => $this->lispacer,
-			'cell_height_ratio' => $this->cell_height_ratio,
-			'font_stretching' => $this->font_stretching,
-			'font_spacing' => $this->font_spacing,
-			'alpha' => $this->alpha,
+			'FontFamily' => $this->FontFamily ?? PDF_FONT_NAME_MAIN,
+			'FontStyle' => $this->FontStyle ?? '',
+			'FontSizePt' => $this->FontSizePt ?? 12,
+			'rMargin' => $this->rMargin ?? 0,
+			'lMargin' => $this->lMargin ?? 0,
+			'cell_padding' => $this->cell_padding ?? 0,
+			'cell_margin' => $this->cell_margin ?? 0,
+			'LineWidth' => $this->LineWidth ?? 0.57 / 1,
+			'linestyleWidth' => $this->linestyleWidth ?? sprintf('%F w', 100 * 1),
+			'linestyleCap' => $this->linestyleCap ?? '0 J',
+			'linestyleJoin' => $this->linestyleJoin ?? '0 j',
+			'linestyleDash' => $this->linestyleDash ?? '[] 0 d',
+			'textrendermode' => $this->textrendermode ?? 0,
+			'textstrokewidth' => $this->textstrokewidth ?? 0,
+			'DrawColor' => $this->DrawColor ?? '0 G',
+			'FillColor' => $this->FillColor ?? '0 g',
+			'TextColor' => $this->TextColor ?? '0 g',
+			'ColorFlag' => $this->ColorFlag ?? false,
+			'bgcolor' => $this->bgcolor ?? array('R' => 255, 'G' => 255, 'B' => 255),
+			'fgcolor' => $this->fgcolor ?? array('R' => 0, 'G' => 0, 'B' => 0),
+			'htmlvspace' => $this->htmlvspace ?? 0,
+			'listindent' => $this->listindent ?? 0,
+			'listindentlevel' => $this->listindentlevel ?? 0,
+			'listnum' => $this->listnum ?? 0,
+			'listordered' => $this->listordered ?? array(),
+			'listcount' => $this->listcount ?? array(),
+			'lispacer' => $this->lispacer ?? '',
+			'cell_height_ratio' => $this->cell_height_ratio ?? 1.25,
+			'font_stretching' => $this->font_stretching ?? 100,/*??*/
+			'font_spacing' => $this->font_spacing ?? 0,
+			'alpha' => $this->alpha ?? array('CA' => true, 'ca' => null, 'BM' => 'Normal', 'AIS' => false),
 			// extended
-			'lasth' => $this->lasth,
-			'tMargin' => $this->tMargin,
-			'bMargin' => $this->bMargin,
-			'AutoPageBreak' => $this->AutoPageBreak,
-			'PageBreakTrigger' => $this->PageBreakTrigger,
-			'x' => $this->x,
-			'y' => $this->y,
-			'w' => $this->w,
-			'h' => $this->h,
-			'wPt' => $this->wPt,
-			'hPt' => $this->hPt,
-			'fwPt' => $this->fwPt,
-			'fhPt' => $this->fhPt,
-			'page' => $this->page,
-			'current_column' => $this->current_column,
-			'num_columns' => $this->num_columns
+			'lasth' => $this->lasth ?? 0,
+			'tMargin' => $this->tMargin ?? 0,
+			'bMargin' => $this->bMargin ?? 0,
+			'AutoPageBreak' => $this->AutoPageBreak ?? true,
+			'PageBreakTrigger' => $this->PageBreakTrigger ?? 1,
+			'x' => $this->x ?? 0,
+			'y' => $this->y ?? 0,
+			'w' => $this->w ?? 0,
+			'h' => $this->h ?? 1,
+			'wPt' => $this->wPt ?? 0,/*??*/
+			'hPt' => $this->hPt ?? 0,/*??*/
+			'fwPt' => $this->fwPt ?? 0,/*??*/
+			'fhPt' => $this->fhPt ?? 0,/*??*/
+			'page' => $this->page ?? 0,
+			'current_column' => $this->current_column ?? 0,
+			'num_columns' => $this->num_columns ?? 1/*follow-up 17271 - 17278 and 4254, 4256, 4260*/
 			);
 		return $grapvars;
 	}
@@ -21000,6 +21005,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 	 */
 	protected function setFontBuffer($font, $data) {
 		$this->fonts[$font] = $data;
+        if (!isset($this->fontkeys)) $this->fontkeys[] = $font; /*added*/
 		if (!in_array($font, $this->fontkeys)) {
 			$this->fontkeys[] = $font;
 			// store object ID for current font
@@ -22446,7 +22452,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 	 * @see endTemplate(), printTemplate()
 	 */
 	public function startTemplate($w=0, $h=0, $group=false) {
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			// we are already inside an XObject template
 			return false;
 		}
@@ -22546,7 +22552,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 		if (!isset($this->xobjects[$id])) {
 			$this->Error('The XObject Template \''.$id.'\' doesn\'t exist!');
 		}
-		if ($this->inxobj) {
+		if ($this->inxobj ?? false) {
 			if ($id == $this->xobjid) {
 				// close current template
 				$this->endTemplate();
@@ -22797,7 +22803,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 		if ($y === '') {
 			$y = $this->y;
 		}
-		if (!$this->check_page_regions OR empty($this->page_regions)) {
+		if (!($this->check_page_regions ?? true) OR empty($this->page_regions)) {
 			// no page regions defined
 			return array($x, $y);
 		}

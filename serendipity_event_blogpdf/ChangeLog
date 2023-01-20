@@ -1,3 +1,8 @@
+2.4.1:
+-----
+ * Fixup 6.6.2 for public $buffer and PHP 8.2 and a number of undefined properties usage
+   in this current (experimental) TEST version!
+
 2.4.0:
 -----
  * Update TCPDF lib to 6.6.2 bugfix release of Dec 17th 2022
