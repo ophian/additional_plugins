@@ -1,3 +1,8 @@
+1.14:
+-----
+
+ * Fix version check for checkScheme() plugin db upgrades
+
 1.13:
 -----
 

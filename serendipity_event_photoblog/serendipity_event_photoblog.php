@@ -4,7 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.13');// necessary, as used for db install checkScheme
+@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.14');// necessary, as used for db install checkScheme
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -54,7 +54,7 @@ class serendipity_event_photoblog extends serendipity_event
         $version = $this->get_config('version', '0.9');
 
         if ($version != PLUGIN_EVENT_PHOTOBLOG_VERSION) {
-            if ((float)$version < 1.0) {
+            if (version_compare($version, '1.0', '<'))  {
                 $q   = "CREATE TABLE {$serendipity['dbPrefix']}photoblog (
                             entryid int(11) default null,
                             photoid int(11) default null
@@ -65,7 +65,7 @@ class serendipity_event_photoblog extends serendipity_event
                 $sql = serendipity_db_schema_import($q);
 
             }
-            if ((float)$version < 1.2) {
+            if (version_compare($version, '1.2', '<')) {
                 $q   = "ALTER TABLE {$serendipity['dbPrefix']}photoblog ADD use_thumbnail {BOOLEAN};";
                 $sql = serendipity_db_schema_import($q);
                 $q   = "UPDATE {$serendipity['dbPrefix']}photoblog SET use_thumbnail = '';";
