@@ -4,7 +4,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.14');// necessary, as used for db install checkScheme
+@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.15');// necessary, as used for db install checkScheme
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -23,7 +23,7 @@ class serendipity_event_photoblog extends serendipity_event
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
-            'php'         => '7.0.0'
+            'php'         => '7.4.0'
         ));
         $propbag->add('version',   PLUGIN_EVENT_PHOTOBLOG_VERSION);
 
@@ -121,7 +121,7 @@ class serendipity_event_photoblog extends serendipity_event
         $bits = explode("/", $name);
         $filename = array_pop($bits);
         $filebits = explode(".", $filename);
-        if (in_array("serendipityThumb", $filebits)) {
+        if (in_array($serendipity['thumbSuffix'], $filebits) || in_array("serendipityThumb", $filebits)) {
             $use_thumbnail = 1;
         }
         $ext = array_pop($filebits);
@@ -286,8 +286,8 @@ class serendipity_event_photoblog extends serendipity_event
     function return_thumbstr($file)
     {
         $thumbstring = "";
-        $thumbSuffix = isset($serendipity['thumbSuffix']) ? $serendipity['thumbSuffix'] : 'serendipityThumb';
-        if ($file['use_thumbnail']) {
+        $thumbSuffix = $serendipity['thumbSuffix'] ?? 'serendipityThumb';
+        if (isset($file['use_thumbnail']) && $file['use_thumbnail']) {
             $thumbstring = ".$thumbSuffix";
         }
         return $thumbstring;

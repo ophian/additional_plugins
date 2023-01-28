@@ -1,3 +1,8 @@
+1.15:
+-----
+
+ * Fix for current $serendipity['thumbSuffix']
+
 1.14:
 -----
 
