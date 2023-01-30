@@ -76,13 +76,12 @@ class serendipity_event_static_osm extends serendipity_event
                         $trk->trkseg = [];
                     }
                     $tmpTrkseg = $tmpTrk->addChild('trkseg');
-                        foreach (($trkseg->trkpt ?? []) as $trkpt) {
-                            $tmpTrkpt = $tmpTrkseg->addChild('trkpt');
-                            $tmpTrkpt->addAttribute('lat', $trkpt['lat']);
-                            $tmpTrkpt->addAttribute('lon', $trkpt['lon']);
-                            if ($trkpt->ele != '') {
-                                $tmpTrkpt->addChild('ele', $trkpt->ele);
-                            }
+                    foreach (($trkseg->trkpt ?? []) as $trkpt) {
+                        $tmpTrkpt = $tmpTrkseg->addChild('trkpt');
+                        $tmpTrkpt->addAttribute('lat', $trkpt['lat']);
+                        $tmpTrkpt->addAttribute('lon', $trkpt['lon']);
+                        if ($trkpt->ele != '') {
+                            $tmpTrkpt->addChild('ele', $trkpt->ele);
                         }
                     }
                 }
