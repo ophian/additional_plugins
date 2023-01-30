@@ -1,3 +1,7 @@
+1.19:
+------
+ * Fix undefined dynamic property errors on PHP 8.2
+
 1.18:
 ------
  * Fix undefined property failure because of typo
