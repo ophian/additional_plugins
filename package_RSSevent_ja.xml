@@ -473,9 +473,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <title>Geo-JSON: Provides a JSON object with all geo data which can be processed by JavaScript.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geo_json</link>
 <category>Event Plugins</category>
-<author>Martin Sewelies</author>
+<author>Kathi Sewelies</author>
 <content:encoded>&lt;b&gt;serendipity_event_geo_json&lt;br /&gt;Geo-JSON&lt;/b&gt;&lt;br /&gt;Provides a JSON object with all geo data which can be processed by JavaScript.&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Wed, 06 Jan 2021 09:29:37 +0100</pubDate>
+<pubDate>Mon, 30 Jan 2023 10:51:51 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_geo_json</guid>
 </item>
 <item>
@@ -812,21 +812,21 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <guid isPermaLink="false">serendipity_event_openid</guid>
 </item>
 <item>
-<title>OpenStreetMap integration: Provides an interactive map with *.gpx uploads and tagged geo data</title>
+<title>OpenStreetMap integration: Provides an interactive map for *.gpx uploads and geo-tagged entries</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_osm</link>
 <category>Event Plugins</category>
-<author>Martin Sewelies</author>
-<content:encoded>&lt;b&gt;serendipity_event_osm&lt;br /&gt;OpenStreetMap integration&lt;/b&gt;&lt;br /&gt;Provides an interactive map with *.gpx uploads and tagged geo data&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Sun, 17 Jan 2021 15:45:41 +0100</pubDate>
+<author>Kathi Sewelies</author>
+<content:encoded>&lt;b&gt;serendipity_event_osm&lt;br /&gt;OpenStreetMap integration&lt;/b&gt;&lt;br /&gt;Provides an interactive map for *.gpx uploads and geo-tagged entries&lt;br/&gt;For: Serendipity 2.3</content:encoded>
+<pubDate>Mon, 30 Jan 2023 10:22:20 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_osm</guid>
 </item>
 <item>
 <title>OpenStreetMap static files: Includes scripts and stylesheets for OpenStreetMap support</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_osm</link>
 <category>Event Plugins</category>
-<author>Martin Sewelies</author>
+<author>Kathi Sewelies</author>
 <content:encoded>&lt;b&gt;serendipity_event_static_osm&lt;br /&gt;OpenStreetMap static files&lt;/b&gt;&lt;br /&gt;Includes scripts and stylesheets for OpenStreetMap support&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Sat, 08 Oct 2022 10:33:06 +0200</pubDate>
+<pubDate>Mon, 30 Jan 2023 11:10:47 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_static_osm</guid>
 </item>
 <item>

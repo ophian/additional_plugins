@@ -4036,22 +4036,24 @@
 <summary>Geo-JSON</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Provides a JSON object with all geo data which can be processed by JavaScript.</description>
-<maintainers><maintainer><name>Martin Sewelies</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.4</version>
+  <version>0.5</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2021-01-06</date>
+  <date>2023-01-30</date>
   <filelist>
     <dir name="serendipity_event_geo_json">
       <file>ChangeLog</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
+      <file>lang_es.inc.php</file>
       <file>LICENSE</file>
       <file>serendipity_event_geo_json.php</file>
       <dir name="UTF-8">
         <file>lang_de.inc.php</file>
+        <file>lang_es.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -4059,9 +4061,11 @@
     <file>serendipity_event_geo_json/ChangeLog</file>
     <file>serendipity_event_geo_json/lang_de.inc.php</file>
     <file>serendipity_event_geo_json/lang_en.inc.php</file>
+    <file>serendipity_event_geo_json/lang_es.inc.php</file>
     <file>serendipity_event_geo_json/LICENSE</file>
     <file>serendipity_event_geo_json/serendipity_event_geo_json.php</file>
     <file>serendipity_event_geo_json/UTF-8/lang_de.inc.php</file>
+    <file>serendipity_event_geo_json/UTF-8/lang_es.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -7679,21 +7683,22 @@
 <name>serendipity_event_osm</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_osm/ChangeLog</changelog>
 <license>GPL</license>
-<summary>OpenStreetMap integration</summary>
+<summary>Integración de OpenStreetMap</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Provides an interactive map with *.gpx uploads and tagged geo data</description>
-<maintainers><maintainer><name>Martin Sewelies</name><role>lead</role></maintainer></maintainers>
+<description>Provides an interactive map for *.gpx uploads and geo-tagged entries</description>
+<maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.2.0</version>
+  <version>2.3.1</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2021-01-17</date>
+  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <date>2023-01-30</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
+      <file>lang_es.inc.php</file>
       <file>LICENSE</file>
       <file>plugin_version.inc.php</file>
       <file>README.md</file>
@@ -7707,6 +7712,7 @@
       <file>serendipity_event_static_osm.php</file>
       <dir name="UTF-8">
         <file>lang_de.inc.php</file>
+        <file>lang_es.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -7714,6 +7720,7 @@
     <file>serendipity_event_osm/ChangeLog</file>
     <file>serendipity_event_osm/lang_de.inc.php</file>
     <file>serendipity_event_osm/lang_en.inc.php</file>
+    <file>serendipity_event_osm/lang_es.inc.php</file>
     <file>serendipity_event_osm/LICENSE</file>
     <file>serendipity_event_osm/plugin_version.inc.php</file>
     <file>serendipity_event_osm/README.md</file>
@@ -7724,6 +7731,7 @@
     <file>serendipity_event_osm/serendipity_event_osm.php</file>
     <file>serendipity_event_osm/serendipity_event_static_osm.php</file>
     <file>serendipity_event_osm/UTF-8/lang_de.inc.php</file>
+    <file>serendipity_event_osm/UTF-8/lang_es.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -7731,21 +7739,22 @@
 <name>serendipity_event_static_osm</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_osm/ChangeLog</changelog>
 <license>GPL</license>
-<summary>OpenStreetMap static files</summary>
+<summary>Archivos estáticos de OpenStreetMap</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>Includes scripts and stylesheets for OpenStreetMap support</description>
-<maintainers><maintainer><name>Martin Sewelies</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.2.0</version>
+  <version>2.3.1</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2022-10-08</date>
+  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <date>2023-01-30</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
+      <file>lang_es.inc.php</file>
       <file>LICENSE</file>
       <file>plugin_version.inc.php</file>
       <file>README.md</file>
@@ -7759,6 +7768,7 @@
       <file>serendipity_event_static_osm.php</file>
       <dir name="UTF-8">
         <file>lang_de.inc.php</file>
+        <file>lang_es.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -7766,6 +7776,7 @@
     <file>serendipity_event_osm/ChangeLog</file>
     <file>serendipity_event_osm/lang_de.inc.php</file>
     <file>serendipity_event_osm/lang_en.inc.php</file>
+    <file>serendipity_event_osm/lang_es.inc.php</file>
     <file>serendipity_event_osm/LICENSE</file>
     <file>serendipity_event_osm/plugin_version.inc.php</file>
     <file>serendipity_event_osm/README.md</file>
@@ -7776,6 +7787,7 @@
     <file>serendipity_event_osm/serendipity_event_osm.php</file>
     <file>serendipity_event_osm/serendipity_event_static_osm.php</file>
     <file>serendipity_event_osm/UTF-8/lang_de.inc.php</file>
+    <file>serendipity_event_osm/UTF-8/lang_es.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
