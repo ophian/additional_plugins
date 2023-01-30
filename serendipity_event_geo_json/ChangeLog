@@ -1,3 +1,10 @@
+0.5:
+---
+ * Added Spanish translations
+ * Improved translations
+ * More generic JSON data
+ * Changed my name
+
 0.4:
 -----
  * Micro-optimization: Remove plugin_version file since singular
