@@ -17,8 +17,10 @@ window.addEventListener("load", () => {
         };
 
         const dataset = divMap.dataset;
-        const articles = geo.articles.filter(article => ["all", "none"].includes(dataset.category) || article.categories.includes(parseInt(dataset.category)));
-        const uploads = geo.uploads.filter(article => dataset.path.split("\n").some(y => article.url.startsWith(y)));
+        const articles = geo.articles
+                            .filter(article => ["all", "none"].includes(dataset.category) || article.categories.includes(parseInt(dataset.category)));
+        const uploads = geo.uploads
+                            .filter(article => dataset.path.split("\n").some(y => article.url.startsWith(y)));
         const features = articles.map((article, id) => {
             const feature = new ol.Feature(new ol.geom.Point(ol.proj.fromLonLat(article.location.reverse())));
             feature.setId(id);
@@ -45,6 +47,7 @@ window.addEventListener("load", () => {
                 zIndex: Infinity
             })
         ];
+        const unixTime = Date.now() / 1000;
         for (const track of tracks) {
             const source = new ol.source.Vector({
                 url: track.url,
@@ -57,7 +60,7 @@ window.addEventListener("load", () => {
                     .reduce((a, b) => a + b, 0);
             });
             const color = dateToColor(new Date(track.date * 1000));
-            const lineDash = track.date * 1000 > Date.now() ? [3, 6] : undefined;
+            const lineDash = track.date > unixTime ? [3, 6] : undefined;
             const layer = new ol.layer.VectorImage({
                 source: source,
                 style: feature => feature.getGeometry().getType() === "MultiLineString"
@@ -110,9 +113,19 @@ window.addEventListener("load", () => {
                         a.setAttribute("title",
                             (object.author !== undefined ? object.author + ", " : "")
                             +
-                            new Date(object.date * 1000).toLocaleString(undefined, {year: "numeric", month: "long", day: "2-digit", hour: "2-digit", minute: "2-digit"})
+                            new Date(object.date * 1000).toLocaleString(undefined, {
+                                year: "numeric",
+                                month: "long",
+                                day: "2-digit",
+                                hour: "2-digit",
+                                minute: "2-digit"
+                            })
                             +
-                            (object.distance !== undefined ? ", " + (object.distance / 1000).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + "km" : "")
+                            (object.distance !== undefined ? ", " + (object.distance / 1000).toLocaleString(undefined, {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                            }) + "km"
+                            : "")
                         );
                         return a;
                     })()
@@ -142,11 +155,18 @@ window.addEventListener("load", () => {
                     ul.setAttribute("data-title", title);
                     return ul;
                 };
-                const ulEntries = foundArticles.map(x => makeItem(entries[x])).reduce((x, y) => {x.appendChild(y); return x;}, initUl("Blogs"));
-                const ulUploads = foundTracks.map(x => makeItem(uploads[x])).reduce((x, y) => {x.appendChild(y); return x;}, initUl("Downloads"));
+                const ulEntries = foundArticles
+                                        .map(x => makeItem(entries[x]))
+                                        .reduce((x, y) => {x.appendChild(y); return x;}, initUl("Blogs"));
+                const ulUploads = foundTracks
+                                        .map(x => makeItem(uploads[x]))
+                                        .reduce((x, y) => {x.appendChild(y); return x;}, initUl("Downloads"));
                 popup.innerHTML = (foundArticles.length ? ulEntries.outerHTML : "") + (foundTracks.length ? ulUploads.outerHTML : "");
                 overlay.setPosition(foundArticles.length ? ol.proj.fromLonLat(
-                    [0, 1].map(latLon => foundArticles.map(x => entries[x].location[latLon]).reduce((x, y) => x + y, 0) / foundArticles.length)
+                    [0, 1].map(latLon => foundArticles
+                        .map(x => entries[x].location[latLon])
+                        .reduce((x, y) => x + y, 0) / foundArticles.length
+                    )
                 ) : event.coordinate);
             } else {
                 overlay.setPosition(undefined);
@@ -158,9 +178,12 @@ window.addEventListener("load", () => {
             divMap.style.cursor = hit ? "pointer" : "";
         });
         map.on("rendercomplete", event => {
-            const distance = tracks.map(track => track.distance).reduce((a, b) => a + b, 0);
+            const distance = tracks
+                                .filter(track => track.date < unixTime)
+                                .map(track => track.distance)
+                                .reduce((a, b) => a + b, 0);
             document.querySelectorAll("span.distance-counter[data-category=\"" + dataset.category + "\"]").forEach(span => {
-                span.innerHTML = (distance / 1000).toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
+                span.innerHTML = (distance / 1000).toFixed(0);
             });
         });
     });
