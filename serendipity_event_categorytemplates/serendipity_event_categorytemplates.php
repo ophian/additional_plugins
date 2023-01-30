@@ -28,7 +28,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.3.1');
+        $propbag->add('version',       '2.3.2');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.3.0'
@@ -708,7 +708,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                 // When a category is deleted, delete its custom properties
                 case 'backend_category_delete':
                     // $eventData is the category ID.  This just deletes.
-                    $this->setProps($eventData, null, true);
+                    $this->setProps($eventData, false, true);
                     // Remove it from the list of template categories, too.
                     $cidstr = $this->get_config('cat_precedence', false);
                     // No need to modify config if no config set, or if no
