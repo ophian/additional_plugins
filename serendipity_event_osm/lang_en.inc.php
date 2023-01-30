@@ -1,7 +1,7 @@
 <?php
 
 @define('PLUGIN_EVENT_OSM_NAME', 'OpenStreetMap integration');
-@define('PLUGIN_EVENT_OSM_DESC', 'Provides an interactive map with *.gpx uploads and tagged geo data');
+@define('PLUGIN_EVENT_OSM_DESC', 'Provides an interactive map for *.gpx uploads and geo-tagged entries');
 @define('PLUGIN_EVENT_OSM_NOT_SHOWN', 'Not shows on webpage');
 @define('PLUGIN_EVENT_STATIC_OSM_NAME', 'OpenStreetMap static files');
 @define('PLUGIN_EVENT_STATIC_OSM_DESC', 'Includes scripts and stylesheets for OpenStreetMap support');
@@ -20,5 +20,5 @@
 @define('PLUGIN_EVENT_OSM_ZOOM', 'Zoom');
 @define('PLUGIN_EVENT_OSM_ZOOM_DESC', 'Zoom level of the map');
 @define('PLUGIN_EVENT_OSM_HEIGHT', 'Map height');
-@define('PLUGIN_EVENT_OSM_HEIGHT_DESC', 'The height of the map');
+@define('PLUGIN_EVENT_OSM_HEIGHT_DESC', 'Map height with CSS unit (px, em, etc.)');
 

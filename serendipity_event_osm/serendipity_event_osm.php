@@ -20,7 +20,7 @@ class serendipity_event_osm extends serendipity_event
         $propbag->add('version', PLUGIN_EVENT_OSM_VERSION);
         $propbag->add('requirements', array(
             'serendipity' => '2.3',
-            'php'         => '7.0'
+            'php'         => '7.4'
         ));
         $propbag->add('stackable', true);
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));

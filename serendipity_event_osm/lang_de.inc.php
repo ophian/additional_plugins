@@ -18,7 +18,7 @@ define('PLUGIN_EVENT_OSM_NOT_SHOWN', 'Wird nicht auf der Webseite angezeigt');
 @define('PLUGIN_EVENT_OSM_LONG', 'Längengrad (Lon.)');
 @define('PLUGIN_EVENT_OSM_LONG_DESC', 'Längengrad für die Mitte der Karte');
 @define('PLUGIN_EVENT_OSM_ZOOM', 'Zoom');
-@define('PLUGIN_EVENT_OSM_ZOOM_DESC', 'Zoom Level der Karte');
+@define('PLUGIN_EVENT_OSM_ZOOM_DESC', 'Zoom-Level der Karte');
 @define('PLUGIN_EVENT_OSM_HEIGHT', 'Kartenhöhe');
-@define('PLUGIN_EVENT_OSM_HEIGHT_DESC', 'Die Höhe der Karte');
+@define('PLUGIN_EVENT_OSM_HEIGHT_DESC', 'Kartehöhe mit CSS-Einheit (px, em, usw.)');
 
