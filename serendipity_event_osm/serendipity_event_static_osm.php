@@ -66,7 +66,7 @@ class serendipity_event_static_osm extends serendipity_event
             $fileName = $eventData;
             // up from PHP 8 if (str_ends_with(if (($fileName), '.gpx') && ..
             if (preg_match('/\\.gpx$/i', mb_strtolower($eventData)) && serendipity_db_bool($this->get_config('compress_gpx', 'true')) === true) {
-                $gpx = new SimpleXMLElement($fileName, dataIsURL: true);
+                $gpx = new SimpleXMLElement($fileName, 0, true); // sets dataIsURL to true
                 $tmpGpx = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" standalone="yes" ?><gpx version="1.1" creator="surrim.org" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"></gpx>');
                 if (!isset($gpx->trk)) {
                     $gpx->trk = [];
