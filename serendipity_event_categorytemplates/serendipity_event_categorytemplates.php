@@ -28,7 +28,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.3.3');
+        $propbag->add('version',       '2.3.4');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.3.0'
@@ -432,7 +432,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}categorytemplates
                                     WHERE categoryid = " . (int)$cid);
 
-        if ($deleteOnly === false) {
+        if (is_array($val) && $deleteOnly === false) {
             $db = serendipity_db_insert('categorytemplates', $val, 'execute');
             return $db;
         }
@@ -792,7 +792,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         'template'      => $set_tpl,
                         'categoryid'    => (int)$eventData,
                         'lang'          => $serendipity['POST']['cat']['lang'] ?? 'default',
-                        'futureentries' => (int)(is_numeric($serendipity['POST']['cat']['futureentries']) ? $serendipity['POST']['cat']['futureentries'] : 0),
+                        'futureentries' => !empty($serendipity['POST']['cat']['futureentries']) ? (int)$serendipity['POST']['cat']['futureentries'] : 0,
                         'pass'          => $serendipity['POST']['cat']['pass'] ?? null,
                         'sort_order'    => serendipity_db_escape_string(($serendipity['POST']['cat']['sort_order'] ?? null)),
                         'hide'          => $serendipity['POST']['cat']['hide'] ?? null

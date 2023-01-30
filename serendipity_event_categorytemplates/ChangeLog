@@ -1,3 +1,7 @@
+2.3.4:
+------
+ * Again
+
 2.3.3:
 ------
  * Fix mysqli_sql_exception: Incorrect integer value
