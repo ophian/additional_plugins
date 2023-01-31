@@ -28,7 +28,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.3.4');
+        $propbag->add('version',       '2.3.5');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.3.0'
@@ -86,7 +86,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                 $propbag->add('type',        'sequence');
                 $propbag->add('name',        PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE);
                 $propbag->add('description', PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC);
-                $propbag->add('checkable',   true);
+                $propbag->add('checkable',   'true');
                 $tcats = $this->getTemplatizedCats();
                 $values = array();
                 if (is_array($tcats)) {
@@ -94,7 +94,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         $values[$cat['categoryid']] = array('display' => $cat['category_name']);
                     }
                 } else {
-                    $values = array(PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES);
+                    $values = array(array('display' => PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES)); // because it is $orid['id']}]['display']
                 }
                 $propbag->add('values',      $values);
                 // To make this work with Serendipity 2.0+ versions (maybe even before)
@@ -227,7 +227,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         // If entry view, determine the best category ID for custom templating
         if (!empty($serendipity['GET']['id'])) {
             // Find all the category IDs that have custom templates
-            $cidstr = $this->get_config('cat_precedence', false);
+            $cidstr = serendipity_db_bool($this->get_config('cat_precedence', 'false'));
             if ($cidstr === false) {
                 // No precedence set: default to old, alphabetical precedence.
                 $tcats = $this->getTemplatizedCats();
@@ -608,9 +608,9 @@ class serendipity_event_categorytemplates extends serendipity_event
                     if (empty($eventData)) {
                         break;
                     }
-                    $eventData = (int)$eventData;
+                    $eventData  = (int)$eventData;
                     $clang      = $this->fetchLang($eventData, '');
-                    $cfuture    = $this->fetchFuture($eventData, '');
+                    $cfuture    = $this->fetchFuture($eventData, 0); // must be an INT !!
                     $styles     = serendipity_fetchTemplates();
                     $template   = $this->fetchTemplate($eventData, '');
                     $hidden     = serendipity_db_query("SELECT hide FROM {$serendipity['dbPrefix']}categorytemplates AS t WHERE t.categoryid = {$eventData}", true);
@@ -664,9 +664,9 @@ class serendipity_event_categorytemplates extends serendipity_event
             <div id="category_future" class="clearfix">
                 <div class="radio_field">
                     <label for="language"><?php echo INSTALL_SHOWFUTURE; ?></label>
-                    <input id="futureentries_default" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="0"<?php echo (empty($cfuture) || $cfuture == 0) ? ' checked="checked"' : ''; ?>><label for="futureentries_default" class="wrap_legend"><?php echo USE_DEFAULT; ?></label>
-                    <input id="futureentries_no" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="1"<?php echo $cfuture == 1 ? ' checked="checked"' : ''; ?>><label for="futureentries_no" class="wrap_legend"><?php echo NO; ?></label>
-                    <input id="futureentries_yes" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="2"<?php echo $cfuture == 2 ? ' checked="checked"' : ''; ?>><label for="futureentries_yes" class="wrap_legend"><?php echo YES; ?></label>
+                    <input id="futureentries_default" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="0"<?php echo (empty($cfuture) || $cfuture === 0) ? ' checked="checked"' : ''; ?>><label for="futureentries_default" class="wrap_legend"><?php echo USE_DEFAULT; ?></label>
+                    <input id="futureentries_no" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="1"<?php echo $cfuture === false ? ' checked="checked"' : ''; ?>><label for="futureentries_no" class="wrap_legend"><?php echo NO; ?></label>
+                    <input id="futureentries_yes" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="2"<?php echo $cfuture === true ? ' checked="checked"' : ''; ?>><label for="futureentries_yes" class="wrap_legend"><?php echo YES; ?></label>
                 </div>
             </div>
 
@@ -710,10 +710,10 @@ class serendipity_event_categorytemplates extends serendipity_event
                     // $eventData is the category ID.  This just deletes.
                     $this->setProps($eventData, false, true);
                     // Remove it from the list of template categories, too.
-                    $cidstr = $this->get_config('cat_precedence', false);
+                    $cidstr = serendipity_db_bool($this->get_config('cat_precedence', 'false'));
                     // No need to modify config if no config set, or if no
                     // templates are templatized
-                    if ($cidstr) {
+                    if ($cidstr === true) {
                         $cids = explode(',', $cidstr);
                         // Why doesn't PHP have an array_remove(item)?
                         if (in_array($eventData, $cids)) {
@@ -724,7 +724,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                                 }
                             }
                             $cidstr = implode(',', $newcids);
-                            $this->set_config('cat_precedence', $cidstr);
+                            $this->set_config('cat_precedence', $cidstr ? 'true' : 'false');
                         }
                     }
                     break;
@@ -792,7 +792,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         'template'      => $set_tpl,
                         'categoryid'    => (int)$eventData,
                         'lang'          => $serendipity['POST']['cat']['lang'] ?? 'default',
-                        'futureentries' => !empty($serendipity['POST']['cat']['futureentries']) ? (int)$serendipity['POST']['cat']['futureentries'] : 0,
+                        'futureentries' => (int)($serendipity['POST']['cat']['futureentries'] ?? 0),
                         'pass'          => $serendipity['POST']['cat']['pass'] ?? null,
                         'sort_order'    => serendipity_db_escape_string(($serendipity['POST']['cat']['sort_order'] ?? null)),
                         'hide'          => $serendipity['POST']['cat']['hide'] ?? null
@@ -801,7 +801,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     // Update list of template categories, too.
                     //
                     // Get the list of customized category IDs, in precedence order
-                    $cidstr = $this->get_config('cat_precedence', false);
+                    $cidstr = serendipity_db_bool($this->get_config('cat_precedence', 'false'));
                     // Only save the new precedence if we can actually
                     // manually change templatized categories precedence
                     if ($cidstr !== false) {
@@ -818,7 +818,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         if (!in_array($eventData, $cids) && !empty($set_tpl)) {
                             $cids[] = $eventData;
                             $cidstr = implode(',', $cids);
-                            $this->set_config('cat_precedence', $cidstr);
+                            $this->set_config('cat_precedence', $cidstr ? 'true' : 'false');
                         }
                         // If it had a custom template just deleted, remove it
                         // from the list
@@ -831,7 +831,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                                 }
                             }
                             $cidstr = implode(',', $newcids);
-                            $this->set_config('cat_precedence', $cidstr);
+                            $this->set_config('cat_precedence', $cidstr ? 'true' : 'false');
                         }
                     }
                     break;

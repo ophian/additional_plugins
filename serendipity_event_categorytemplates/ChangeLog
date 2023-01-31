@@ -1,3 +1,9 @@
+2.3.5:
+------
+ * Found the issue  of incorrect integer value
+ * Fixed up sequence controls
+ * Fix category_future set inputs
+
 2.3.4:
 ------
  * Again
