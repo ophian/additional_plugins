@@ -28,7 +28,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.3.5');
+        $propbag->add('version',       '2.3.6');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.3.0'
@@ -790,9 +790,9 @@ class serendipity_event_categorytemplates extends serendipity_event
                     $val = array(
                         'fetchlimit'    => !empty($serendipity['POST']['cat']['fetchlimit']) ? (int)$serendipity['POST']['cat']['fetchlimit'] : $serendipity['fetchLimit'],
                         'template'      => $set_tpl,
-                        'categoryid'    => (int)$eventData,
+                        'categoryid'    => $eventData,
                         'lang'          => $serendipity['POST']['cat']['lang'] ?? 'default',
-                        'futureentries' => (int)($serendipity['POST']['cat']['futureentries'] ?? 0),
+                        'futureentries' => $serendipity['POST']['cat']['futureentries'] ?? 0,
                         'pass'          => $serendipity['POST']['cat']['pass'] ?? null,
                         'sort_order'    => serendipity_db_escape_string(($serendipity['POST']['cat']['sort_order'] ?? null)),
                         'hide'          => $serendipity['POST']['cat']['hide'] ?? null

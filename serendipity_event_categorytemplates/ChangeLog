@@ -1,6 +1,10 @@
+2.3.6:
+------
+ * Improve fix for the issue of incorrect integer value
+
 2.3.5:
 ------
- * Found the issue  of incorrect integer value
+ * Found the issue of incorrect integer value
  * Fixed up sequence controls
  * Fix category_future set inputs
 
