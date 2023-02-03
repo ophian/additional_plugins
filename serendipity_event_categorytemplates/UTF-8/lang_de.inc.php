@@ -14,3 +14,5 @@
 @define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'Bisher haben keine Kategorien speziell angepasste Templates. Lassen Sie diese Checkbox solange leer!');
 @define('PLUGIN_CATEGORYTEMPLATES_HIDE', 'Sollen Einträge dieser Kategorie von Eintragslisten und RSS-Feeds ausgeschlossen werden?');
 @define('PLUGIN_CATEGORYTEMPLATES_SELECT_TEMPLATE', 'Setzen Sie das Theme für diese Blogkategorie:');
+@define('PLUGIN_CATEGORYTEMPLATES_EXOPT_DESC', '<b>Zusätzlicher Hinweis:</b> Das ausgewählte Kategoriethema lädt derzeit noch das Stylesheet des ursprünglich ausgewählten Blog-Themas, z.B. "pure", ist aber in der Lage, das Stylesheet <b>user.css</b> des ausgewählten Kategoriethemas zu laden, so dass Sie darin alle notwendigen Selektorstile überschreiben können. Wie Sie sehen, beginnt hier der experimentelle Teil des Ganzen. Die Empfehlung für den Anfang ist, ein direktes Child-Theme Ihres aktuellen Blog-Themes für dieses "unabhängige" Kategoriethema zu verwenden, da Sie dann das Rad nicht neu erfinden müssen!');
+

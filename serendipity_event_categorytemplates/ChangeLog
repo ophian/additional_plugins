@@ -1,6 +1,11 @@
+2.3.7:
+------
+ * Fix cat_precedence handler as of 2.3.5, since being mixed data
+ * Add experimental flag and additional description to the category theme option
+
 2.3.6:
 ------
- * Improve fix for the issue of incorrect integer value
+ * Improve fix for array types on issue of incorrect integer value
 
 2.3.5:
 ------

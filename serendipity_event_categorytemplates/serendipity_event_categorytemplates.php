@@ -28,7 +28,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.3.6');
+        $propbag->add('version',       '2.3.7');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.3.0'
@@ -86,7 +86,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                 $propbag->add('type',        'sequence');
                 $propbag->add('name',        PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE);
                 $propbag->add('description', PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC);
-                $propbag->add('checkable',   'true');
+                $propbag->add('checkable',   true); // boolean for API usage
                 $tcats = $this->getTemplatizedCats();
                 $values = array();
                 if (is_array($tcats)) {
@@ -94,7 +94,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         $values[$cat['categoryid']] = array('display' => $cat['category_name']);
                     }
                 } else {
-                    $values = array(array('display' => PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES)); // because it is $orid['id']}]['display']
+                    $values = array(array('display' => PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES)); // because it is $orid['id']]['display']
                 }
                 $propbag->add('values',      $values);
                 // To make this work with Serendipity 2.0+ versions (maybe even before)
@@ -227,7 +227,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         // If entry view, determine the best category ID for custom templating
         if (!empty($serendipity['GET']['id'])) {
             // Find all the category IDs that have custom templates
-            $cidstr = serendipity_db_bool($this->get_config('cat_precedence', 'false'));
+            $cidstr = $this->get_config('cat_precedence', false); // mixed data false on empty set else ID
             if ($cidstr === false) {
                 // No precedence set: default to old, alphabetical precedence.
                 $tcats = $this->getTemplatizedCats();
@@ -625,6 +625,14 @@ class serendipity_event_categorytemplates extends serendipity_event
                 <div class="form_field">
                     <label for="category_template" class="wrap_legend"><?php echo PLUGIN_CATEGORYTEMPLATES_SELECT_TEMPLATE; ?><a class="toggle_info button_link" href="#hide_templates_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?=MORE?></span></a></label>
                     <input id="category_template" class="input_textbox" name="serendipity[cat][template]" type="text" data-configitem="category_template" value="<?php echo $template; ?>">
+                    <div class="msg_notice msg-t1">
+                        <em><?php echo PLUGIN_CATEGORYTEMPLATES_EXOPT; ?></em>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+                                <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+                            </svg>
+                        </span>
+                    </div>
                 </div>
                 <div class="select_field">
                     <legend>- <?php echo WORD_OR; ?> -</legend>
@@ -634,7 +642,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     foreach ($styles AS $style => $path) {
                         $templateInfo = serendipity_fetchTemplateInfo($style);
 ?>
-                        <option value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($style) : htmlspecialchars($style, ENT_COMPAT, LANG_CHARSET)); ?>" <?php echo ($style == $template? 'selected="selected"' : ''); ?>><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($templateInfo['name'], null, LANG_CHARSET, false) : htmlspecialchars($templateInfo['name'], ENT_COMPAT, LANG_CHARSET, false)); ?></option>
+                        <option value="<?php echo htmlspecialchars($style, ENT_COMPAT, LANG_CHARSET); ?>" <?php echo ($style == $template? 'selected="selected"' : ''); ?>><?php echo htmlspecialchars($templateInfo['name'], ENT_COMPAT, LANG_CHARSET, false); ?></option>
 <?php
                     }
 ?>
@@ -645,6 +653,12 @@ class serendipity_event_categorytemplates extends serendipity_event
 <?php } ?>
                 <span id="hide_templates_info" class="field_info category_field_info additional_info">
                     <span class="icon-info-circled"></span> <em><?php echo PLUGIN_CATEGORYTEMPLATES_SELECT; ?></em>
+                    <p>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+                        </svg>
+                    </span> <?php echo PLUGIN_CATEGORYTEMPLATES_EXOPT_DESC; ?></p>
                 </span>
             </div>
 
@@ -655,7 +669,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     <select id="language" name="serendipity[cat][lang]">
                         <option value="default"><?php echo USE_DEFAULT; ?></option>
 <?php foreach($serendipity['languages'] AS $langkey => $lang) { ?>
-                        <option value="<?php echo $lang; ?>" <?php echo ($langkey == $clang ? 'selected="selected"' : ''); ?>><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($lang) : htmlspecialchars($lang, ENT_COMPAT, LANG_CHARSET)); ?></option>
+                        <option value="<?php echo $lang; ?>" <?php echo ($langkey == $clang ? 'selected="selected"' : ''); ?>><?php echo htmlspecialchars($lang, ENT_COMPAT, LANG_CHARSET); ?></option>
 <?php } ?>
                     </select>
                 </div>
@@ -710,10 +724,10 @@ class serendipity_event_categorytemplates extends serendipity_event
                     // $eventData is the category ID.  This just deletes.
                     $this->setProps($eventData, false, true);
                     // Remove it from the list of template categories, too.
-                    $cidstr = serendipity_db_bool($this->get_config('cat_precedence', 'false'));
+                    $cidstr = $this->get_config('cat_precedence', false); // mixed data false on empty set else ID
                     // No need to modify config if no config set, or if no
                     // templates are templatized
-                    if ($cidstr === true) {
+                    if ($cidstr) {
                         $cids = explode(',', $cidstr);
                         // Why doesn't PHP have an array_remove(item)?
                         if (in_array($eventData, $cids)) {
@@ -724,7 +738,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                                 }
                             }
                             $cidstr = implode(',', $newcids);
-                            $this->set_config('cat_precedence', $cidstr ? 'true' : 'false');
+                            $this->set_config('cat_precedence', $cidstr);
                         }
                     }
                     break;
@@ -801,7 +815,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     // Update list of template categories, too.
                     //
                     // Get the list of customized category IDs, in precedence order
-                    $cidstr = serendipity_db_bool($this->get_config('cat_precedence', 'false'));
+                    $cidstr = $this->get_config('cat_precedence', false); // mixed data false on empty set else ID
                     // Only save the new precedence if we can actually
                     // manually change templatized categories precedence
                     if ($cidstr !== false) {
@@ -818,7 +832,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         if (!in_array($eventData, $cids) && !empty($set_tpl)) {
                             $cids[] = $eventData;
                             $cidstr = implode(',', $cids);
-                            $this->set_config('cat_precedence', $cidstr ? 'true' : 'false');
+                            $this->set_config('cat_precedence', $cidstr);
                         }
                         // If it had a custom template just deleted, remove it
                         // from the list
@@ -831,7 +845,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                                 }
                             }
                             $cidstr = implode(',', $newcids);
-                            $this->set_config('cat_precedence', $cidstr ? 'true' : 'false');
+                            $this->set_config('cat_precedence', $cidstr);
                         }
                     }
                     break;
