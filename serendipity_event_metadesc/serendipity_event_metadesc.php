@@ -93,7 +93,7 @@ class serendipity_event_metadesc extends serendipity_event
         $title = $this->title;
     }
 
-    function extract_description((string)$text)
+    function extract_description( string $text)
     {
         $metastring = strip_tags(trim($text));
         $metastring = trim(preg_replace('/\s+/', ' ', $string));
