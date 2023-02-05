@@ -21,10 +21,10 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian Styx');
-        $propbag->add('version',       '0.28');
+        $propbag->add('version',       '0.29');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'php'         => '5.6'
+            'serendipity' => '3.0',
+            'php'         => '7.4'
         ));
 
         $propbag->add('event_hooks', array(
@@ -93,21 +93,18 @@ class serendipity_event_metadesc extends serendipity_event
         $title = $this->title;
     }
 
-    function extract_description($text)
+    function extract_description((string)$text)
     {
-        $x = strpos($text, '<p>');
-        if ($x === false) {
-            return substr(strip_tags($text), 0, 120);
-        }
+        $metastring = strip_tags(trim($text));
+        $metastring = trim(preg_replace('/\s+/', ' ', $string));
 
-        $y = strpos($text, '</p>');
-        if ($y === false) {
-            return substr(strip_tags($text), 0, 120);
+        // keeping word boundary character and Unicode ranges
+        if (preg_match('/(*UTF8)^.{1,120}\b/us', $metastring, $match)) {
+            $metadesc = $match[0];
         }
+        preg_match('/<p class=\"[content|excerpt|initial|meta](.*?)\">(.*?)<\/p>/si', trim($text), $excerpt);
 
-        $title = substr($text, $x+3, $y-($x+3));
-        $title = strip_tags($title);
-        return $title;
+        return ($excerpt[2] ?? ($metadesc ?? false));
     }
 
     function extract_keywords($text)
@@ -155,7 +152,7 @@ class serendipity_event_metadesc extends serendipity_event
                             $this->meta_title = $property['meta_head_title'];
                             $this->save_title = $serendipity['head_title'];
                             $this->save_subtitle = $serendipity['head_subtitle'];
-                            $serendipity['head_title'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($this->meta_title) : htmlspecialchars($this->meta_title, ENT_COMPAT, LANG_CHARSET));
+                            $serendipity['head_title'] = htmlspecialchars($this->meta_title, ENT_COMPAT, LANG_CHARSET);
                             // Clear the subtitle (many templates use it along with the title)
                             $serendipity['head_subtitle'] = '';
                         }
@@ -187,7 +184,7 @@ class serendipity_event_metadesc extends serendipity_event
                             );
                         }
 
-                        $meta_description = isset($entry['properties']['meta_description']) ? $entry['properties']['meta_description'] : null;
+                        $meta_description = $entry['properties']['meta_description'] ?? null;
                         if (empty($meta_description)) {
                             $description_body = $entry['body'];
                             if (isset($GLOBALS['entry'][0]['plaintext_body'])) {
@@ -196,7 +193,7 @@ class serendipity_event_metadesc extends serendipity_event
                             $meta_description = $this->extract_description($description_body);
                         }
 
-                        $meta_keywords = isset($entry['properties']['meta_keywords']) ? $entry['properties']['meta_keywords'] : null;
+                        $meta_keywords = $entry['properties']['meta_keywords'] ?? null;
                         if (empty($meta_keywords)) {
                             $meta_keywords = (array)$this->extract_keywords($entry['body']);
                             if (!empty($meta_keywords)) {
@@ -207,10 +204,9 @@ class serendipity_event_metadesc extends serendipity_event
                             }
                         }
 
-
                         if (serendipity_db_bool($this->get_config('escape'))) {
-                            $md = function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_description, null, LANG_CHARSET, false) : htmlspecialchars($meta_description, ENT_COMPAT, LANG_CHARSET, false);
-                            $mk = function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_keywords, null, LANG_CHARSET, false) : htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET, false);
+                            $md = htmlspecialchars($meta_description, ENT_COMPAT, LANG_CHARSET, false);
+                            $mk = htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET, false);
                         } else {
                             $md = $meta_description;
                             $mk = $meta_keywords;
@@ -224,8 +220,8 @@ class serendipity_event_metadesc extends serendipity_event
                         // emit default meta description and meta keyword, if not blank, for pages other than single entry
 
                         if (serendipity_db_bool($this->get_config('escape'))) {
-                            $md = function_exists('serendipity_specialchars') ? serendipity_specialchars($default_description, null, LANG_CHARSET, false) : htmlspecialchars($default_description, ENT_COMPAT, LANG_CHARSET, false);
-                            $mk = function_exists('serendipity_specialchars') ? serendipity_specialchars($default_keywords, null, LANG_CHARSET, false) : htmlspecialchars($default_keywords, ENT_COMPAT, LANG_CHARSET, false);
+                            $md = htmlspecialchars($default_description, ENT_COMPAT, LANG_CHARSET, false);
+                            $mk = htmlspecialchars($default_keywords, ENT_COMPAT, LANG_CHARSET, false);
                         } else {
                             $md = $default_description;
                             $mk = $default_keywords;
@@ -285,7 +281,7 @@ class serendipity_event_metadesc extends serendipity_event
                     $property = serendipity_fetchEntryProperties($eventData['id']);
 
                     foreach($this->supported_properties AS $prop_key) {
-                        $prop_val = (isset($serendipity['POST']['properties'][$prop_key]) ? $serendipity['POST']['properties'][$prop_key] : null);
+                        $prop_val = $serendipity['POST']['properties'][$prop_key] ?? null;
                         if (!isset($property[$prop_key]) && !empty($prop_val)) {
                             $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES (" . (int)$eventData['id'] . ", '" . serendipity_db_escape_string($prop_key) . "', '" . serendipity_db_escape_string($prop_val) . "')";
                         } elseif (!empty($prop_key) && !empty($prop_val) && $property[$prop_key] != $prop_val) {
@@ -334,10 +330,10 @@ class serendipity_event_metadesc extends serendipity_event
                             <div id="metadesc_tab_info" class="clearfix field_info additional_info">
                                 <?php echo PLUGIN_METADESC_FORM; ?>
                             </div>
-                            <input id="properties_meta_description" class="input_textbox" style="width: 100%" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_description) : htmlspecialchars($meta_description, ENT_COMPAT, LANG_CHARSET)); ?>" name="serendipity[properties][meta_description]" type="text">
+                            <input id="properties_meta_description" class="input_textbox" style="width: 100%" value="<?php echo htmlspecialchars($meta_description, ENT_COMPAT, LANG_CHARSET); ?>" name="serendipity[properties][meta_description]" type="text">
                             <br />
                             <label for="serendipity[properties][meta_keywords]"><?php echo PLUGIN_METADESC_KEYWORDS; ?></label> <span class="meta_string_length">(<?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_keywords) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_keywords) . ' ' . PLUGIN_METADESC_CHARACTERS; ?>)</span>
-                            <input id="properties_meta_keywords" class="input_textbox" style="width: 100%" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_keywords) : htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET)); ?>" name="serendipity[properties][meta_keywords]" type="text">
+                            <input id="properties_meta_keywords" class="input_textbox" style="width: 100%" value="<?php echo htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET); ?>" name="serendipity[properties][meta_keywords]" type="text">
                         </div>
 
                         <div class="form_field">
@@ -346,7 +342,7 @@ class serendipity_event_metadesc extends serendipity_event
                             <div id="metaheadtitle_tab_info" class="clearfix field_info additional_info">
                                 <?php echo PLUGIN_METADESC_HEADTITLE_DESC; ?>
                             </div>
-                            <input id="properties_headtitle" class="input_textbox" style="width: 100%" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($meta_head_title) : htmlspecialchars($meta_head_title, ENT_COMPAT, LANG_CHARSET)); ?>" name="serendipity[properties][meta_head_title]" type="text">
+                            <input id="properties_headtitle" class="input_textbox" style="width: 100%" value="<?php echo htmlspecialchars($meta_head_title, ENT_COMPAT, LANG_CHARSET); ?>" name="serendipity[properties][meta_head_title]" type="text">
                         </div>
 
                         <span class="meta_stringlength_disclaimer"><sup>(*)</sup> <em><?php echo PLUGIN_METADESC_STRINGLENGTH_DISCLAIMER; ?></em></span>

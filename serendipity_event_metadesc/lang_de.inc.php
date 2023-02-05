@@ -7,7 +7,7 @@
  */
 
 @define('PLUGIN_METADESC_NAME', 'HTML Meta-Tags');
-@define('PLUGIN_METADESC_DESC', 'Setzt Tags für HTML Meta-Schlüsselwörter/-Beschreibungen und das title-Element für Seiten mit nur einem einzelnen Eintrag bzw. allgemeine Meta-Schlüsselwörter/-Beschreibungen für Seite mit mehr als einem Eintrag.');
+@define('PLUGIN_METADESC_DESC', 'Setzt Tags für HTML Meta-Schlüsselwörter/-Beschreibungen und das title-Element für Seiten mit nur einem einzelnen Eintrag bzw. allgemeine Meta-Schlüsselwörter/-Beschreibungen für Seiten mit mehr als einem Eintrag.');
 @define('PLUGIN_METADESC_FORM', 'Bleibt dieses Feld leer, so werden die ersten 120 Zeichen des Eintrages
 als Meta-Beschreibung verwendet. Kann auf Basis der Liste von HTML-Tags für die Schlüsselwörter keine Schlüsselwortphrase generiert werden, so
 werden die standardmäßigen Meta-Schlüsselwörter für Seiten mit nicht nur einem Eintrag verwendet.<br /><br />Vorschlag für die Meta-Beschreibung<sup>*</sup>: 20-30 Wörter, maximal 120-180 Zeichen inklusive Leerzeichen.<br />Vorschlag für die Meta-Schlüsselwörter<sup>*</sup>: 15-20 Wörter, vor allem Schlüsselbegriffe und -phrasen aus dem Inhalt des Eintrags.');
@@ -27,4 +27,6 @@ werden die standardmäßigen Meta-Schlüsselwörter für Seiten mit nicht nur einem E
 @define('PLUGIN_METADESC_DEFAULT_KEYWORDS_DESC', 'Hier eine durch Kommata getrennte Liste der Schlüsselwörter eingeben, die auf Seitem mit nicht nur einem Eintrag verwendet werden sollen.');
 @define('PLUGIN_METADESC_ESCAPE', 'HTML-Sonderzeichen escapen');
 @define('PLUGIN_METADESC_ESCAPE_DESC', 'In Meta-Beschreibung oder -Schlüsselwörtern enthaltene HTML-Sonderzeichen mittels htmlspecialchars() durch deren entsprechende HTML-Entities ersetzen.');
+
+@define('PLUGIN_METADESC_MARKDOWN_DEPENDENCY', 'Wenn Sie das Plugin "serendipity_event_markdown" für Ihre Einträge verwenden, müssen Sie dieses Plugin in Ihrer Plugin-Liste unter dem Markdown-Plugin platzieren/verschieben, um HTLM-Tags korrekt zu behandeln.');
 

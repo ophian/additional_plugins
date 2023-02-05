@@ -1,6 +1,22 @@
 0.28:
 -----
 
+ * Raise requirements and modernize some conditionals
+ * Refactor the meta description [ default ! ] extract_description "tagging" to better match text content,
+     which now allows to use some standard matching p class selectors; Which are
+        <p class="content"> or "excerpt" | "initial" | "meta" class selector names.
+     So the length, placement and exact content of your SEO meta description excerpt default fallback extraction is in your hand.
+     The previous method to extract by certain position of existing <p> tags was rather unreliable
+     and produced some strange results.
+     The workflow is:
+        - If no meta description is set by you in the blog entry form,
+        - this extraction check is run on the given body text keeping word boundary character and Unicode ranges and if there are no matches found,
+        -the plugin config option set default meta description is used.
+     The latter will also be used if the /permalink/ Custom Permalink (plugin) pattern is used for the entry.
+
+0.28:
+-----
+
  * Raise requirements and remove outdated Serendipity 1 Series cases
 
 0.27:
