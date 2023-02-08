@@ -20,6 +20,4 @@
 @define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'No categories have customized templates yet. In this case let this checkbox unchecked!');
 @define('PLUGIN_CATEGORYTEMPLATES_HIDE', 'Shall entries of this category be hidden from entries listings and RSS feeds?');
 @define('PLUGIN_CATEGORYTEMPLATES_SELECT_TEMPLATE', 'Set the Theme for this blog category:');
-@define('PLUGIN_CATEGORYTEMPLATES_EXOPT', 'Usage: Highly experimental');
-@define('PLUGIN_CATEGORYTEMPLATES_EXOPT_DESC', '<b>Additional note:</b> The selected category theme currently still loads the stylesheet of your origin selected blog theme, eg. "pure", but <b>is able</b> to load the <b>user.css</b> stylesheet of your selected category theme, so you can over-style all necessary selector styles. As you can see, this is where the experimental part starts. The recommendation to start up with, is to use a direct child theme of your current blog theme for this "independent" category theming, since that wouldn\'t need you to re-invent the wheel!');
 

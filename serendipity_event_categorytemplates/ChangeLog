@@ -1,3 +1,11 @@
+2.3.8:
+------
+ * Fix class property $usesDefaultTemplate definition
+ * Removed the previously set experimental flag of the category theme option,
+   since that only was a regression of another plugin (event multilingual) removing the categorytemplates sets.
+   Just note this if you get strange results: Check the categorytemplates Plugin list order to move up.
+ * Make the getTeplateCats SQL fetch query silent while being reported to fail in some "unknown" install conditions
+
 2.3.7:
 ------
  * Fix cat_precedence handler as of 2.3.5, since being mixed data

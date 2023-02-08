@@ -17,7 +17,7 @@ class serendipity_event_categorytemplates extends serendipity_event
     public $title = PLUGIN_CATEGORYTEMPLATES_NAME;
 
     private $bycategory = [];
-    private $usesDefaultTemplate = [];
+    private $usesDefaultTemplate = true;
     private $sort_order = null;
 
     function introspect(&$propbag)
@@ -28,7 +28,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.3.7');
+        $propbag->add('version',       '2.3.8');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.3.0'
@@ -47,7 +47,6 @@ class serendipity_event_categorytemplates extends serendipity_event
             'frontend_fetchentries'     => true,
             'frontend_fetchentry'       => true,
             'backend_sidebar_entries_event_display_cattemplate' => true
-//            'frontend_configure'        => true
         ));
 
         $propbag->add('configuration', array('pass', 'sort_order', 'fixcat', 'cat_precedence'));
@@ -136,7 +135,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     ON t.categoryid = c.categoryid
                  WHERE t.template != ''
               ORDER BY c.category_name ASC";
-        $dbcids = serendipity_db_query($query);
+        $dbcids = serendipity_db_query($query, false, 'assoc', false, false, false, true); // set last param expectError true, since running in introspect_config_item() and table was reported known to fail when table or field(s) do(es) not exist (yet)
         if (!is_array($dbcids)) {
             // It's the value "1", for "success", or something
             $dbcids = false;
@@ -625,14 +624,6 @@ class serendipity_event_categorytemplates extends serendipity_event
                 <div class="form_field">
                     <label for="category_template" class="wrap_legend"><?php echo PLUGIN_CATEGORYTEMPLATES_SELECT_TEMPLATE; ?><a class="toggle_info button_link" href="#hide_templates_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?=MORE?></span></a></label>
                     <input id="category_template" class="input_textbox" name="serendipity[cat][template]" type="text" data-configitem="category_template" value="<?php echo $template; ?>">
-                    <div class="msg_notice msg-t1">
-                        <em><?php echo PLUGIN_CATEGORYTEMPLATES_EXOPT; ?></em>
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
-                                <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
-                            </svg>
-                        </span>
-                    </div>
                 </div>
                 <div class="select_field">
                     <legend>- <?php echo WORD_OR; ?> -</legend>
@@ -653,12 +644,6 @@ class serendipity_event_categorytemplates extends serendipity_event
 <?php } ?>
                 <span id="hide_templates_info" class="field_info category_field_info additional_info">
                     <span class="icon-info-circled"></span> <em><?php echo PLUGIN_CATEGORYTEMPLATES_SELECT; ?></em>
-                    <p>
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
-                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
-                        </svg>
-                    </span> <?php echo PLUGIN_CATEGORYTEMPLATES_EXOPT_DESC; ?></p>
                 </span>
             </div>
 
@@ -944,8 +929,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     }
                     break;
 
-                // When Serendipity tries to get the entries, check for
-                // passwords
+                // When Serendipity tries to get the entries, check for passwords
                 case 'frontend_fetchentries':
                 case 'frontend_fetchentry':
                     $allowPasswordProtected = serendipity_db_bool($this->get_config('pass'));
@@ -1065,14 +1049,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                         }
                     }
                     break;
-/*
-                // EXPERIMENTAL CODE: fetch language for entry (:: maybe wrong hook..?)
-                case 'frontend_configure':
-                    // TODO: This does not work. The ID is not present! :-()
-                    // $cid = $this->getID(true);
-                    // $serendipity['lang'] = $this->fetchLang($cid, $serendipity['lang']);
-                    break;
-*/
+
                 // When the HTML is generated, apply properties
                 case 'genpage':
                     // Get the category in question
@@ -1125,7 +1102,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     }
                     break;
 
-                // When the back end is displayed, use the custom template, too
+                // When the back end is displayed, use the custom template, too(.... well not really only when using preview, I assume)
                 case 'backend_sidebar_entries_event_display_cattemplate':
                     if (empty($serendipity['GET']['cat_template'])) {
                         $serendipity['GET']['cat_template'] = $serendipity['POST']['cat_template'];
