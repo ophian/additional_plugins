@@ -95,7 +95,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;Blog als PDF exportieren&lt;/b&gt;&lt;br /&gt;Exportiert alle Einträge des Blogs in eine PDF-Datei&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 20 Jan 2023 15:34:52 +0100</pubDate>
+<pubDate>Wed, 08 Feb 2023 13:02:01 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
@@ -113,7 +113,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Eigenschaften/Templates von Kategorien&lt;/b&gt;&lt;br /&gt;Dieses Plugin ermöglicht erweiterte Eigenschaften für Kategorien und deren Einträge festzulegen: Speziell angepasste Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus anderen Eintragslisten und RSS-Feeds.&lt;br/&gt;For: Serendipity 2.7.0</content:encoded>
-<pubDate>Sat, 04 Feb 2023 08:35:28 +0100</pubDate>
+<pubDate>Wed, 08 Feb 2023 13:03:38 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
