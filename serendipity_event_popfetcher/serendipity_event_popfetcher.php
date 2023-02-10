@@ -12,7 +12,7 @@ require_once('tmobile.php');
 require_once('o2.php');
 
 // Default values
-define('POPFETCHER_VERSION',  '1.54');       // This version of Popfetcher
+define('POPFETCHER_VERSION',  '1.55');       // This version of Popfetcher
 define('DEFAULT_ADMINMENU',   'true');       // True if run as sidebar plugin. False if external plugin.
 define('DEFAULT_HIDENAME',    'popfetcher'); // User should set this to something unguessable
 define('DEFAULT_MAILSERVER',  '');
@@ -47,8 +47,8 @@ class serendipity_event_popfetcher extends serendipity_event
         $propbag->add('author',       'Jason Levitt');
         $propbag->add('version',      POPFETCHER_VERSION);
         $propbag->add('requirements', array(
-            'serendipity' => '1.6',
-            'php' => '5.1.0'
+            'serendipity' => '2.1',
+            'php' => '7.4.0'
         ));
 
         $propbag->add('event_hooks',   array(
@@ -701,10 +701,10 @@ class serendipity_event_popfetcher extends serendipity_event
 
         if (strtolower($charset) == 'utf-8' && strtolower(LANG_CHARSET) != strtolower($charset)) {
             #echo 'UTF8_decode(' . $charset . ', ' . LANG_CHARSET . ')<br />';
-            return utf8_decode($string);
+            return mb_convert_encoding($string, 'UTF-8', LANG_CHARSET); // string, to, from
         } elseif (strtolower(LANG_CHARSET) == 'utf-8' && strtolower($charset) != 'utf-8') {
             #echo 'UTF8_encode(' . $charset . ', ' . LANG_CHARSET . ')<br />';
-            return utf8_encode($string);
+            return mb_convert_encoding($string, $charset, LANG_CHARSET);
         } else {
             // We can't deal with it.
             #echo 'none(' . $charset . ', ' . LANG_CHARSET . ')<br />';
