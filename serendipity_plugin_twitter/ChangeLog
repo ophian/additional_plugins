@@ -4,12 +4,16 @@ TODO:
 * Collect all tweets of a day/week/whatever of the blog owner
   into one article and publish it daily/weekly/whatever
 * "check tweetback" link should add new tweetbacks immediately
-* Link twitter accs with s9y accs. Only s9y authors linked to a
-  twitter acc should be able to create tweets with that acc.
+* Link twitter ACCs with s9y ACCs. Only s9y authors linked to a
+  twitter ACC should be able to create tweets with that ACC.
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
 
-2.1.0:
+2.1.2:
+------
+ * PHP 8.2 compatibility
+
+2.1.1:
 ------
  * Fix install, checking existing tables known to fail
 
