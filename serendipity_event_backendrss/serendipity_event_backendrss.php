@@ -22,10 +22,10 @@ class serendipity_event_backendrss extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_BACKENDRSS_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Sebastian Nohn');
-        $propbag->add('version',       '1.5');
+        $propbag->add('version',       '1.6');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'php'         => '4.1.0'
+            'serendipity' => '2.1',
+            'php'         => '7.4.0'
         ));
         $propbag->add('event_hooks',    array(
             'backend_frontpage_display' => true
@@ -216,7 +216,7 @@ class serendipity_event_backendrss extends serendipity_event
 
             case 'UTF-8':
             default:
-                return utf8_decode($string);
+                return mb_convert_encoding($string, 'ISO-8859-1', 'UTF-8');
         }
     }
 
