@@ -76,8 +76,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backendrss</link>
 <category>Event Plugins</category>
 <author>Sebastian Nohn</author>
-<content:encoded>&lt;b&gt;serendipity_event_backendrss&lt;br /&gt;Display RSS-Feed in Backend Overview&lt;/b&gt;&lt;br /&gt;Displays a RSS feed on the overview page (right after login) to the administration interface&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_backendrss&lt;br /&gt;Display RSS-Feed in Backend Overview&lt;/b&gt;&lt;br /&gt;Displays a RSS feed on the overview page (right after login) to the administration interface&lt;br/&gt;For: Serendipity 2.1</content:encoded>
+<pubDate>Fri, 10 Feb 2023 10:10:57 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_backendrss</guid>
 </item>
 <item>
@@ -94,8 +94,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_blogpdf</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;Exporter votre blog en PDF&lt;/b&gt;&lt;br /&gt;Permet aux visiteurs de télécharger tout votre blog ou certains articles au format PDF&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 08 Feb 2023 13:02:01 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;Exporter votre blog en PDF&lt;/b&gt;&lt;br /&gt;Permet aux visiteurs de télécharger tout votre blog ou certains articles au format PDF&lt;br/&gt;For: Serendipity 2.1</content:encoded>
+<pubDate>Fri, 10 Feb 2023 10:25:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
@@ -733,8 +733,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_microformats</link>
 <category>Event Plugins</category>
 <author>Matthias Gutjahr, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Microformats&lt;/b&gt;&lt;br /&gt;This plugin provides an easy way to publish reviews (or events); it supports the respective microformats.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 27 Jun 2022 18:35:00 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Microformats&lt;/b&gt;&lt;br /&gt;This plugin provides an easy way to publish reviews (or events); it supports the respective microformats.&lt;br/&gt;For: Serendipity 2.1</content:encoded>
+<pubDate>Fri, 10 Feb 2023 10:13:10 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_microformats</guid>
 </item>
 <item>
@@ -877,8 +877,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_popfetcher</link>
 <category>Event Plugins</category>
 <author>Jason Levitt</author>
-<content:encoded>&lt;b&gt;serendipity_event_popfetcher&lt;br /&gt;POPfetcher&lt;/b&gt;&lt;br /&gt;Fetches and publishes email and attachments from a POP3 email account (with special cell phone support)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 17 Aug 2020 10:05:38 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_popfetcher&lt;br /&gt;POPfetcher&lt;/b&gt;&lt;br /&gt;Fetches and publishes email and attachments from a POP3 email account (with special cell phone support)&lt;br/&gt;For: Serendipity 2.1</content:encoded>
+<pubDate>Fri, 10 Feb 2023 09:59:49 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_popfetcher</guid>
 </item>
 <item>

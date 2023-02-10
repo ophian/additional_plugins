@@ -400,11 +400,11 @@
 <description>Zobrazuje RSS kanál na přehledové stránce v administrační sekci (stránka těsně po přihlášení).</description>
 <maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <version>1.6</version>
+  <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2016-07-07</date>
+  <requirements:phpVersion>7.4.0</requirements:phpVersion>
+  <date>2023-02-10</date>
   <filelist>
     <dir name="serendipity_event_backendrss">
       <file>lang_bg.inc.php</file>
@@ -494,11 +494,11 @@
 <description>Umožňuje návštěvníkům blogu stáhnout obsah blogu ve formátu PDF</description>
 <maintainers><maintainer><name>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.4.1</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <version>2.4.2</version>
+  <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.1.0</requirements:phpVersion>
-  <date>2023-02-08</date>
+  <requirements:phpVersion>7.4.0</requirements:phpVersion>
+  <date>2023-02-10</date>
   <filelist>
     <dir name="serendipity_event_blogpdf">
       <file>ChangeLog</file>
@@ -6882,11 +6882,11 @@
 <description>Tento plugin poskytuje jednoduché publikování přehledů (nebo událostí); podporuje příslušné mikroformáty.</description>
 <maintainers><maintainer><name>Matthias Gutjahr, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.53</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <version>0.54</version>
+  <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2022-06-27</date>
+  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <date>2023-02-10</date>
   <filelist>
     <dir name="serendipity_event_microformats">
       <file>ChangeLog</file>
@@ -8232,11 +8232,11 @@
 <description>Stahuje zprávy z emailu a zobrazí je včetně příloh v bloku v postranním sloupci (speciální podpora pro mobilní telefony)</description>
 <maintainers><maintainer><name>Jason Levitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.54</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <version>1.55</version>
+  <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-08-17</date>
+  <requirements:phpVersion>7.4.0</requirements:phpVersion>
+  <date>2023-02-10</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
       <file>ChangeLog</file>
@@ -12974,7 +12974,7 @@
 <description>Přidává klienta Twitter/Identica do administrační sekce a stahuje nové tweety a oznámuje nové články na účtu mikroblogu.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Peter Heimann, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.1.1</version>
+  <version>2.1.2</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>

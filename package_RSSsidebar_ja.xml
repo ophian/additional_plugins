@@ -68,7 +68,7 @@
 <category>Sidebar Plugins</category>
 <author>Matthias Gutjahr, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_microformats&lt;br /&gt;Upcoming Events&lt;/b&gt;&lt;br /&gt;Display upcoming and recommended events in the sidebar and apply the hCalendar microformat to them.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 30 Jul 2021 11:28:22 +0200</pubDate>
+<pubDate>Fri, 10 Feb 2023 09:44:45 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_microformats</guid>
 </item>
 <item>
@@ -388,8 +388,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_shoutcast</link>
 <category>Sidebar Plugins</category>
 <author>John Mann</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_shoutcast&lt;br /&gt;Shoutcast&lt;/b&gt;&lt;br /&gt;Display Shoutcast stream information in the sidebar.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 27 Nov 2021 09:43:59 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_shoutcast&lt;br /&gt;Shoutcast&lt;/b&gt;&lt;br /&gt;Display Shoutcast stream information in the sidebar.&lt;br/&gt;For: Serendipity 2.1</content:encoded>
+<pubDate>Fri, 10 Feb 2023 10:19:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_shoutcast</guid>
 </item>
 <item>
@@ -452,7 +452,7 @@
 <category>Sidebar Plugins</category>
 <author>Grischa Brockhaus, Damian Luszczymak, Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_twitter&lt;br /&gt;Twitter Timeline&lt;/b&gt;&lt;br /&gt;Show your current Twitter entries&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 05 Jun 2020 09:11:38 +0200</pubDate>
+<pubDate>Fri, 10 Feb 2023 10:02:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_twitter</guid>
 </item>
 <item>
