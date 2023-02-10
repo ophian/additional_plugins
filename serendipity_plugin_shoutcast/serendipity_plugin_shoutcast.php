@@ -21,11 +21,11 @@ class serendipity_plugin_shoutcast extends serendipity_plugin {
         $propbag->add('description', PLUGIN_SIDEBAR_SHOUTCAST_DESC);
         $propbag->add('author',        'John Mann');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
+            'serendipity' => '2.1',
             'smarty'      => '3.1.6',
-            'php'         => '5.6.0'
+            'php'         => '7.4.0'
         ));
-        $propbag->add('version',  '1.07');
+        $propbag->add('version',  '1.08');
         $propbag->add('configuration', array('title',
             'server',
             'port'));
@@ -117,7 +117,7 @@ class serendipity_plugin_shoutcast extends serendipity_plugin {
         }
 
         if (LANG_CHARSET == 'UTF-8') {
-            echo utf8_encode($content);
+            echo mb_convert_encoding($string, 'UTF-8', 'ISO-8859-1');
         } else {
             echo $content;
         }
