@@ -1,3 +1,9 @@
+2.4.2:
+-----
+ * Add some bootstrap 4 default (margin) selectors to the bottom line.
+   And a .no-bp4 class to be able to revert them.
+ * Update requirements
+
 2.4.1:
 -----
  * Fixup 6.6.2 for public $buffer and PHP 8.2 and a number of undefined properties usage
