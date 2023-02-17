@@ -106,7 +106,7 @@ class serendipity_event_podcast extends serendipity_event
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.52');
+        $propbag->add('version', '1.53');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.0.0',
@@ -660,9 +660,9 @@ class serendipity_event_podcast extends serendipity_event
                             // Produce player code
                             if ($use_player) {
                                 if (serendipity_db_bool($this->get_config('ep_automatic_size', 'false'))) {
-                                    $player = $this->GetPlayerByExt($fileInfo['extension'], $fileUrl, $fileInfo['width'],$fileInfo['height'], $ep_align, $fileInfo['mime']);
+                                    $player = $this->GetPlayerByExt($fileInfo['extension'], $fileUrl, $fileInfo['width'],$fileInfo['height'], $ep_align, ($fileInfo['mime'] ?? null));
                                 } else {
-                                    $player = $this->GetPlayerByExt($fileInfo['extension'], $fileUrl, null, null, $ep_align, $fileInfo['mime']);
+                                    $player = $this->GetPlayerByExt($fileInfo['extension'], $fileUrl, null, null, $ep_align, ($fileInfo['mime'] ?? null));
                                 }
                             } else {
                                 $player = '<a href="' . $fileUrl . '">' . basename($eventData['properties'][$eattr]) . '</a>';
@@ -760,10 +760,10 @@ class serendipity_event_podcast extends serendipity_event
         $fileUrl = $serendipity['baseURL']  . $treffer[2];
         if (serendipity_db_bool($this->get_config('automatic_size', 'false'))) {
             $fileInfo = $this->GetFileInfo($treffer[2]);
-            return $this->GetPlayerByExt(strtolower($treffer[3]),$treffer[2], $fileInfo['width'], $fileInfo['height'], null, $fileInfo['mime']);
+            return $this->GetPlayerByExt(strtolower($treffer[3]),$treffer[2], $fileInfo['width'], $fileInfo['height'], null, ($fileInfo['mime'] ?? null));
         } else {
             $fileInfo = $this->GetFileInfo($treffer[2]);
-            return $this->GetPlayerByExt(strtolower($treffer[3]),$treffer[2], null, null, null, $fileInfo['mime']);
+            return $this->GetPlayerByExt(strtolower($treffer[3]),$treffer[2], null, null, null, ($fileInfo['mime'] ?? null));
         }
     }
 
