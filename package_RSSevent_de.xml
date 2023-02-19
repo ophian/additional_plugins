@@ -1134,12 +1134,12 @@
 <guid isPermaLink="false">serendipity_event_textwiki</guid>
 </item>
 <item>
-<title>Thumbnail-Seite des Photoblog-Plugins: Zeigt eine Seite mit Thumbnails des Photoblog-Plugins. Die URL ist index.php?serendipity[page]=thumbs</title>
+<title>Thumbnail-Seite des Photoblog-Plugins: Zeigt eine Seite mit Thumbnails des Photoblog-Plugins. Die URL ist index.php?serendipity[tnpage]=thumbs</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_thumbnails</link>
 <category>Event Plugins</category>
 <author>Cameron MacFarland</author>
-<content:encoded>&lt;b&gt;serendipity_event_thumbnails&lt;br /&gt;Thumbnail-Seite des Photoblog-Plugins&lt;/b&gt;&lt;br /&gt;Zeigt eine Seite mit Thumbnails des Photoblog-Plugins. Die URL ist index.php?serendipity[page]=thumbs&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 15 Dec 2020 12:58:44 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_thumbnails&lt;br /&gt;Thumbnail-Seite des Photoblog-Plugins&lt;/b&gt;&lt;br /&gt;Zeigt eine Seite mit Thumbnails des Photoblog-Plugins. Die URL ist index.php?serendipity[tnpage]=thumbs&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sun, 19 Feb 2023 10:35:36 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_thumbnails</guid>
 </item>
 <item>

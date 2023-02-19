@@ -11149,14 +11149,14 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <license>GPL</license>
 <summary>サムネイルページ</summary>
 <groups>IMAGES</groups>
-<description>サムネイルページを表示します。アドレスは「index.php?serendipity[page]=thumbs」です。</description>
+<description>サムネイルページを表示します。アドレスは「index.php?serendipity[tnpage]=thumbs」です。</description>
 <maintainers><maintainer><name>Cameron MacFarland</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.3</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-12-15</date>
+  <version>1.5.0</version>
+  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <date>2023-02-19</date>
   <filelist>
     <dir name="serendipity_event_thumbnails">
       <file>ChangeLog</file>

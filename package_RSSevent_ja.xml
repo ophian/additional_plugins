@@ -1136,12 +1136,12 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <guid isPermaLink="false">serendipity_event_textwiki</guid>
 </item>
 <item>
-<title>サムネイルページ: サムネイルページを表示します。アドレスは「index.php?serendipity[page]=thumbs」です。</title>
+<title>サムネイルページ: サムネイルページを表示します。アドレスは「index.php?serendipity[tnpage]=thumbs」です。</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_thumbnails</link>
 <category>Event Plugins</category>
 <author>Cameron MacFarland</author>
-<content:encoded>&lt;b&gt;serendipity_event_thumbnails&lt;br /&gt;サムネイルページ&lt;/b&gt;&lt;br /&gt;サムネイルページを表示します。アドレスは「index.php?serendipity[page]=thumbs」です。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 15 Dec 2020 12:58:44 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_thumbnails&lt;br /&gt;サムネイルページ&lt;/b&gt;&lt;br /&gt;サムネイルページを表示します。アドレスは「index.php?serendipity[tnpage]=thumbs」です。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sun, 19 Feb 2023 10:35:36 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_thumbnails</guid>
 </item>
 <item>
