@@ -1139,7 +1139,7 @@
 <category>Event Plugins</category>
 <author>Cameron MacFarland</author>
 <content:encoded>&lt;b&gt;serendipity_event_thumbnails&lt;br /&gt;Náhledy příspěvků&lt;/b&gt;&lt;br /&gt;Zobrazí stránku s náhledy článků. Její adresa je index.php?serendipity[tnpage]=thumbs&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 19 Feb 2023 10:35:36 +0100</pubDate>
+<pubDate>Sun, 19 Feb 2023 12:53:38 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_thumbnails</guid>
 </item>
 <item>

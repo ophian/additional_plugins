@@ -1141,7 +1141,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Cameron MacFarland</author>
 <content:encoded>&lt;b&gt;serendipity_event_thumbnails&lt;br /&gt;サムネイルページ&lt;/b&gt;&lt;br /&gt;サムネイルページを表示します。アドレスは「index.php?serendipity[tnpage]=thumbs」です。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 19 Feb 2023 10:35:36 +0100</pubDate>
+<pubDate>Sun, 19 Feb 2023 12:53:38 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_thumbnails</guid>
 </item>
 <item>
