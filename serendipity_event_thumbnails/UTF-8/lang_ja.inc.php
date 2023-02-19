@@ -8,6 +8,6 @@
 
 @define('THUMBPAGE_TITLE', 'サムネイルページ');
 @define('THUMBPAGE_TITLE_BLAHBLAH', 'サムネイルページを表示します。アドレスは「index.php?serendipity[tnpage]=thumbs」です。');
-@define('THUMBPAGE_NUMBER', '列幅');
-@define('THUMBPAGE_NUMBER_BLAHBLAH', 'ページを横切って表示するサムネイルの数。');
+@define('THUMBPAGE_NUMBER', 'Columns [1-5]');
+@define('THUMBPAGE_NUMBER_BLAHBLAH', 'The number of columns to show [1-5]');
 

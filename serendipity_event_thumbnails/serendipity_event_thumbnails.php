@@ -20,7 +20,7 @@ class serendipity_event_thumbnails extends serendipity_event
         $propbag->add('configuration', array('number'));
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Cameron MacFarland');
-        $propbag->add('version', '1.5.0');
+        $propbag->add('version', '1.6.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -91,6 +91,8 @@ class serendipity_event_thumbnails extends serendipity_event
             header('Status: 200 OK');
         }
 
+        $cols = $this->get_config('number');
+
         $entries = serendipity_db_query("SELECT id,
                                                 title,
                                                 timestamp
@@ -99,10 +101,9 @@ class serendipity_event_thumbnails extends serendipity_event
                                        ORDER BY timestamp DESC");
 
         if (isset($entries) && is_array($entries)) {
-            $count = 0;
-            echo '<table><tr>';
-            foreach ($entries as $k => $entry) {
-                echo '<td align="center">';
+            echo "<div class=\"c$cols col serendipity_image_block\">\n";
+            foreach ($entries AS $k => $entry) {
+                echo '<div style="margin: 5px">';
                 serendipity_initPermalinks();
                 $entryLink = serendipity_archiveURL(
                                $entry['id'],
@@ -113,16 +114,16 @@ class serendipity_event_thumbnails extends serendipity_event
                             );
                 $photo = $this->getPhoto($entry['id']);
                 if (isset($photo)) {
-                    $file = serendipity_fetchImageFromDatabase($photo['photoid']);
-                    $imgsrc= $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] .'.'. $file['extension'];
+                    $file = serendipity_fetchImageFromDatabase($photo['photoid'], (defined('IN_serendipity_admin') ? 'discard' : 'read'));
+                    $imgsrc = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] .'.'. $file['extension'];
                     $thumbbasename = $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] . '.' . $file['extension'];
                     $thumbName     = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $thumbbasename;
                     $thumbsize     = @getimagesize($serendipity['serendipityPath'] . $serendipity['uploadPath'] . $thumbbasename);
                 }
 
-                echo '<a href="' . $entryLink . '" title="' . htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET) . '">';
+                echo '<a class="serendipity_image_link" href="' . $entryLink . '" title="' . htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET) . '">';
                 if (isset($photo)) {
-                    echo '<img style="margin:5px;" src="' . $imgsrc . '" width=' . $thumbsize[0] . ' height=' . $thumbsize[1];
+                    echo '<img class="serendipity_image_left" src="' . $imgsrc . '" width=' . $thumbsize[0] . ' height=' . $thumbsize[1];
                     if (isset($id) && ($id == $entry['id'])) {
                         echo ' border=4';
                     }
@@ -136,14 +137,9 @@ class serendipity_event_thumbnails extends serendipity_event
                         echo '</b>';
                     }
                 }
-                echo '</a></td>';
-                if ($count++ >= $this->get_config('number')-1)
-                {
-                    $count = 0;
-                    echo "</tr><tr>";
-                }
+                echo "</a></div>\n";
             }
-            echo "</tr></table>";
+            echo "</div>\n";
         }
     }
 

@@ -8,6 +8,6 @@
 
 @define('THUMBPAGE_TITLE',              'Náhledy příspěvků');
 @define('THUMBPAGE_TITLE_BLAHBLAH',     'Zobrazí stránku s náhledy článků. Její adresa je index.php?serendipity[tnpage]=thumbs');
-@define('THUMBPAGE_NUMBER',             'Počet sloupců');
-@define('THUMBPAGE_NUMBER_BLAHBLAH',    'Počet sloupců na stránce.');
+@define('THUMBPAGE_NUMBER', 'Columns [1-5]');
+@define('THUMBPAGE_NUMBER_BLAHBLAH', 'The number of columns to show [1-5]');
 
