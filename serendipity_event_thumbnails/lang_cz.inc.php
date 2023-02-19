@@ -7,8 +7,7 @@
  */
 
 @define('THUMBPAGE_TITLE',              'Náhledy pøíspìvkù');
-@define('THUMBPAGE_TITLE_BLAHBLAH',     'Zobrazí stránku s náhledy èlánkù. Její adresa je index.php?serendipity[page]=thumbs');
+@define('THUMBPAGE_TITLE_BLAHBLAH',     'Zobrazí stránku s náhledy èlánkù. Její adresa je index.php?serendipity[tnpage]=thumbs');
 @define('THUMBPAGE_NUMBER',             'Poèet sloupcù');
 @define('THUMBPAGE_NUMBER_BLAHBLAH',    'Poèet sloupcù na stránce.');
 
-?>

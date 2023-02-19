@@ -7,7 +7,7 @@
  */
 
 @define('THUMBPAGE_TITLE', 'Küçükresim Sayfasý');
-@define('THUMBPAGE_TITLE_BLAHBLAH', 'Küçükresimlerin gösterimi. URL adresi index.php?serendipity[page]=thumbs');
+@define('THUMBPAGE_TITLE_BLAHBLAH', 'Küçükresimlerin gösterimi. URL adresi index.php?serendipity[tnpage]=thumbs');
 @define('THUMBPAGE_NUMBER', 'Sütun geniþliði');
 @define('THUMBPAGE_NUMBER_BLAHBLAH', 'Sayfadan sayfaya gösterilecek küçükresimlerin sayýsý.');
 

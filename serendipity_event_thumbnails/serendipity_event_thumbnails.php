@@ -20,11 +20,11 @@ class serendipity_event_thumbnails extends serendipity_event
         $propbag->add('configuration', array('number'));
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Cameron MacFarland');
-        $propbag->add('version', '1.4.3');
+        $propbag->add('version', '1.5.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '7.4'
         ));
         $propbag->add('groups', array('IMAGES'));
         $this->dependencies = array('serendipity_plugin_photoblog' => 'remove',
@@ -65,7 +65,7 @@ class serendipity_event_thumbnails extends serendipity_event
     {
         global $serendipity;
 
-        if ($serendipity['GET']['page'] == 'thumbs') {
+        if (isset($serendipity['GET']['tnpage']) && $serendipity['GET']['tnpage'] == 'thumbs') {
             $title = '';
             if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
                 serendipity_smarty_init();
@@ -82,7 +82,7 @@ class serendipity_event_thumbnails extends serendipity_event
 
         $title = THUMBPAGE_TITLE;
 
-        if ($serendipity['GET']['page'] != 'thumbs') {
+        if (isset($serendipity['GET']['tnpage']) && $serendipity['GET']['tnpage'] != 'thumbs') {
             return true;
         }
 
@@ -103,6 +103,7 @@ class serendipity_event_thumbnails extends serendipity_event
             echo '<table><tr>';
             foreach ($entries as $k => $entry) {
                 echo '<td align="center">';
+                serendipity_initPermalinks();
                 $entryLink = serendipity_archiveURL(
                                $entry['id'],
                                $entry['title'],
@@ -119,7 +120,7 @@ class serendipity_event_thumbnails extends serendipity_event
                     $thumbsize     = @getimagesize($serendipity['serendipityPath'] . $serendipity['uploadPath'] . $thumbbasename);
                 }
 
-                echo '<a href="' . $entryLink . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['title']) : htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET)) . '">';
+                echo '<a href="' . $entryLink . '" title="' . htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET) . '">';
                 if (isset($photo)) {
                     echo '<img style="margin:5px;" src="' . $imgsrc . '" width=' . $thumbsize[0] . ' height=' . $thumbsize[1];
                     if (isset($id) && ($id == $entry['id'])) {
@@ -155,29 +156,20 @@ class serendipity_event_thumbnails extends serendipity_event
         if (isset($hooks[$event])) {
         switch($event) {
             case 'entry_display':
-                if ($serendipity['GET']['page'] == 'thumbs') {
+                if (isset($serendipity['GET']['tnpage']) && $serendipity['GET']['tnpage'] == 'thumbs') {
                     if (is_array($eventData)) {
                         $eventData['clean_page'] = true; // This is important to not display an entry list!
                     } else {
                         $eventData = array('clean_page' => true);
                     }
                 }
-
-                if (version_compare($serendipity['version'], '0.7.1', '<=')) {
-                    $this->show();
-                }
-
-                return true;
                 break;
 
             case 'entries_header':
                 $this->show();
-
-                return true;
                 break;
 
             default:
-                return false;
                 break;
             }
         } else {
