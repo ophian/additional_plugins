@@ -17,11 +17,11 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.8.1');
+        $propbag->add('version',        '2.8.2');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
-            'php'         => '7.2'
+            'php'         => '7.4'
         ));
         $propbag->add('event_hooks',  array('frontend_saveComment' => true,
                                             'backend_comments_top' => true,
@@ -53,7 +53,8 @@ class serendipity_event_spamblock_bayes extends serendipity_event
             ),
             'stores_user_input'     => true,
             'stores_ip'             => true,
-            'uses_ip'               => true
+            'uses_ip'               => true,
+            'transmits_user_input'  => false
         ));
     }
 
