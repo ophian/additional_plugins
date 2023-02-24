@@ -54,7 +54,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
             'stores_user_input'     => true,
             'stores_ip'             => true,
             'uses_ip'               => true,
-            'transmits_user_input'  => false
+            'transmits_user_input'  => true
         ));
     }
 
