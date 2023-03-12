@@ -20,9 +20,9 @@ class serendipity_event_commentedit extends serendipity_event
         $propbag->add('author',        'Malte Paskuda');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
-            'php'         => '5.6'
+            'php'         => '7.4'
         ));
-        $propbag->add('version',       '0.6');
+        $propbag->add('version',       '0.7');
         $propbag->add('event_hooks',   array(
             'frontend_saveComment_finish' => true,
             'fetchcomments'               => true,
@@ -64,7 +64,7 @@ class serendipity_event_commentedit extends serendipity_event
                     $propbag->add('type', 'boolean');
                     $propbag->add('name', PLUGIN_EVENT_COMMENTEDIT_MAIL);
                     $propbag->add('description', PLUGIN_EVENT_COMMENTEDIT_MAIL_DESC);
-                    $propbag->add('default', false);
+                    $propbag->add('default', 'false');
                     return true;
                     break;
         }
@@ -88,8 +88,8 @@ class serendipity_event_commentedit extends serendipity_event
             } else {
                 $path_defined = false;
             }
-            if ($mail == null) {
-                $mail = $this->get_config('mail', false);
+            if ($mail === null) {
+                $mail = serendipity_db_bool($this->get_config('mail', 'false'));
             }
 
             switch($event) {
@@ -155,8 +155,8 @@ class serendipity_event_commentedit extends serendipity_event
                     break;
 
                 case 'frontend_saveComment_finish':
-                    //save corresponding sessionid because we later fetch a comment
-                    //and check if the current session_id() belongs to the comment_cid
+                    // save corresponding sessionid because we later fetch a comment
+                    // and check if the current session_id() belongs to the comment_cid
                     $this->cache_commentid($addData['comment_cid']);
                     return true;
                     break;
@@ -166,17 +166,17 @@ class serendipity_event_commentedit extends serendipity_event
                     $cids = array();
                     foreach($eventData as $comment) {
                         if ($this->get_cached_commentid($timeout) == $comment['id']) {
-                            //we now know that the comment is from the
-                            //user and created within the last minutes,
-                            //so add comment_id
+                            // we now know that the comment is from the
+                            // user and created within the last minutes,
+                            // so add comment_id
                             $cids[] = $comment['id'];
                             $postBase = true;
                         }
                     }
 
                     if ($postBase) {
-                        //cebase is used for the POST of the edited
-                        //comment to the external_plugin-call
+                        // cebase is used for the POST of the edited
+                        // comment to the external_plugin-call
                         echo '<script>var cebase = "'. $serendipity['baseURL'] .'index.php?/plugin/";</script>';
 
                         foreach($cids as $cid) {
@@ -207,7 +207,7 @@ class serendipity_event_commentedit extends serendipity_event
     /*
      * Get id of the comment in the session
      * @param timeout time to edit in seconds
-     * */
+     **/
     function get_cached_commentid($timeout)
     {
         if ($_SESSION['comment_made_time'] > time() - $timeout) {
@@ -220,7 +220,7 @@ class serendipity_event_commentedit extends serendipity_event
     /*
      * Save which commentid belongs to this session
      * data: commentid
-     * */
+     **/
     function cache_commentid($commentid)
     {
         $_SESSION['comment_made'] = $commentid;

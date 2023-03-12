@@ -1,3 +1,9 @@
+0.7:
+------
+ * Be more strict with some variables
+ * Consistency
+ * Raised Requirement
+
 0.6:
 ------
  * Always indicate source of where frontend_display is called (as Standard since 07/2007)
