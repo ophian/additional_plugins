@@ -83,7 +83,7 @@ class serendipity_event_commentedit extends serendipity_event
             if ($path === null) {
                 $path = $this->get_config('path', '');
             }
-            if (!empty($path) && $path != 'default' && $path != 'none' && $path != 'empty') {
+            if (!empty($path) && !in_array($path, ['default', 'none', 'empty'])) {
                 $path_defined = true;
             } else {
                 $path_defined = false;
