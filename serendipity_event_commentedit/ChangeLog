@@ -1,3 +1,7 @@
+0.8:
+------
+ * Be more strict with some variables checks causing "hidden" errors
+
 0.7:
 ------
  * Be more strict with some variables

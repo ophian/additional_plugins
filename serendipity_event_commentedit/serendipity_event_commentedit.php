@@ -22,7 +22,7 @@ class serendipity_event_commentedit extends serendipity_event
             'serendipity' => '2.0',
             'php'         => '7.4'
         ));
-        $propbag->add('version',       '0.7');
+        $propbag->add('version',       '0.8');
         $propbag->add('event_hooks',   array(
             'frontend_saveComment_finish' => true,
             'fetchcomments'               => true,
@@ -77,10 +77,10 @@ class serendipity_event_commentedit extends serendipity_event
         $hooks = &$bag->get('event_hooks');
 
         if (isset($hooks[$event])) {
-            if ($timeout === null) {
+            if (!isset($timeout) || $timeout === null) {
                 $timeout = $this->get_config('timeout', '300');
             }
-            if ($path === null) {
+            if (!isset($path) || $path === null) {
                 $path = $this->get_config('path', '');
             }
             if (!empty($path) && !in_array($path, ['default', 'none', 'empty'])) {
@@ -88,7 +88,7 @@ class serendipity_event_commentedit extends serendipity_event
             } else {
                 $path_defined = false;
             }
-            if ($mail === null) {
+            if (!isset($mail) || $mail === null) {
                 $mail = serendipity_db_bool($this->get_config('mail', 'false'));
             }
 
