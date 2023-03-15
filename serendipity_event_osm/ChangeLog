@@ -1,3 +1,7 @@
+2.4.0:
+------
+ * OpenLayers updated to v7.3.0
+
 2.3.2:
 ------
  * Only add done gpx tracks to the total sum
