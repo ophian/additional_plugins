@@ -95,7 +95,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;Exporter votre blog en PDF&lt;/b&gt;&lt;br /&gt;Permet aux visiteurs de télécharger tout votre blog ou certains articles au format PDF&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Fri, 10 Feb 2023 10:25:37 +0100</pubDate>
+<pubDate>Wed, 15 Mar 2023 10:53:15 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
@@ -473,7 +473,7 @@
 <category>Event Plugins</category>
 <author>Kathi Sewelies</author>
 <content:encoded>&lt;b&gt;serendipity_event_geo_json&lt;br /&gt;Geo-JSON&lt;/b&gt;&lt;br /&gt;Provides a JSON object which contains all geographic data and can be processed with JavaScript&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Mon, 30 Jan 2023 10:51:51 +0100</pubDate>
+<pubDate>Wed, 15 Mar 2023 10:37:40 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_geo_json</guid>
 </item>
 <item>
