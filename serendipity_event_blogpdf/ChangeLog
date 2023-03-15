@@ -1,3 +1,7 @@
+2.4.3:
+-----
+ * pre-define a static variable
+
 2.4.2:
 -----
  * Add some bootstrap 4 default (margin) selectors to the bottom line.

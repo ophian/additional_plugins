@@ -6397,6 +6397,7 @@ class TCPDF {
 		} else {
 			$arabic = false;
 		}
+        if (!isset($this->tmprtl)) $this->tmprtl = false;
 		// check if string contains RTL text
 		if ($arabic OR ($this->tmprtl == 'R') OR preg_match(TCPDF_FONT_DATA::$uni_RE_PATTERN_RTL, $s)) {
 			$rtlmode = true;
