@@ -26,7 +26,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL TCPDF');
-        $propbag->add('version',       '2.4.3');
+        $propbag->add('version',       '2.4.4');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -123,6 +123,11 @@ class serendipity_event_blogpdf extends serendipity_event
                         if (empty($year) && $serendipity['view'] == 'archives' && isset($serendipity['short_archives']) && $serendipity['short_archives'] == true && isset($serendipity['uriArguments'][3]) && $serendipity['uriArguments'][3] == 'summary') {
                             $year  = $serendipity['uriArguments'][1] ?? date('Y', serendipity_serverOffsetHour());
                             $month = $serendipity['uriArguments'][2] ?? date('m', serendipity_serverOffsetHour());
+                        }
+
+                        // break if showcase is in future
+                        if (empty($year) && isset($serendipity['uriArguments'][2]) && $serendipity['uriArguments'][1].$serendipity['uriArguments'][2] > date('Y', serendipity_serverOffsetHour()) . date('m', serendipity_serverOffsetHour())) {
+                            break;
                         }
 
                         // fallback to current year
