@@ -1,6 +1,11 @@
+2.4.5:
+-----
+ * Fix to avoid eventData footer builds on empty entries pages
+ * Catch sidebar calendar archives month paging
+
 2.4.4:
 -----
- * break if archives showcase is in future
+ * Break if archives showcase is in future
 
 2.4.3:
 -----

@@ -26,7 +26,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL TCPDF');
-        $propbag->add('version',       '2.4.4');
+        $propbag->add('version',       '2.4.5');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -130,6 +130,12 @@ class serendipity_event_blogpdf extends serendipity_event
                             break;
                         }
 
+                        // calender month view paging
+                        if (empty($year) && $serendipity['view'] == 'archives' && !empty($serendipity['uriArguments'][1]) && is_numeric($serendipity['uriArguments'][1]) && !empty($serendipity['uriArguments'][2]) && is_numeric($serendipity['uriArguments'][2])) {
+                            $year  = $serendipity['uriArguments'][1] ?? date('Y', serendipity_serverOffsetHour());
+                            $month = $serendipity['uriArguments'][2] ?? date('m', serendipity_serverOffsetHour());
+                        }
+
                         // fallback to current year
                         if (empty($year)) {
                             $year = date('Y', serendipity_serverOffsetHour());
@@ -147,7 +153,9 @@ class serendipity_event_blogpdf extends serendipity_event
                             if (!isset($eventData['add_footer'])) $eventData['add_footer'] = '';
                             $eventData['add_footer'] .= '<div class="serendipity_blogpdf"><strong>' . PLUGIN_EVENT_BLOGPDF_VIEW . '</strong>' . implode(' | ', $links) . '</div>';
                         } else {
-                            echo '<div class="serendipity_blogpdf mt-n4 mb-4 no-bp4">' . PLUGIN_EVENT_BLOGPDF_VIEW . implode(' | ' , $links) . '</div>';
+                            if ($eventData['GET']['hidefooter'] && $eventData['smarty']->tpl_vars['footer_totalEntries']->value > 0) {
+                                echo '<div class="serendipity_blogpdf mt-n4 mb-4 no-bp4">' . PLUGIN_EVENT_BLOGPDF_VIEW . implode(' | ' , $links) . '</div>';
+                            }
                         }
                     }
                     break;
