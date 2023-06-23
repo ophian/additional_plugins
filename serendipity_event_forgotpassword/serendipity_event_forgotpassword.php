@@ -16,7 +16,7 @@ class serendipity_event_forgotpassword extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FORGOTPASSWORD_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Omid Mottaghi');
-        $propbag->add('version',       '0.15');
+        $propbag->add('version',       '0.16');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '2.6.7',
@@ -163,7 +163,7 @@ class serendipity_event_forgotpassword extends serendipity_event
                             $email = $res['email'];
                             $authorid = $res['authorid'];
 
-                            $md5 = md5(uniqid(time()));
+                            $md5 = md5(uniqid((string)time()));
 
                             $q = 'INSERT INTO '.$serendipity['dbPrefix'].'forgotpassword VALUES (\''.$md5.'\', \''.$authorid.'\')';
                             $sql = serendipity_db_query($q);
