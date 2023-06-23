@@ -3490,11 +3490,11 @@
 <description>Change the password for selected user</description>
 <maintainers><maintainer><name>Omid Mottaghi</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.15</version>
+  <version>0.16</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-06-04</date>
+  <date>2023-06-22</date>
   <filelist>
     <dir name="serendipity_event_forgotpassword">
       <file>ChangeLog</file>
@@ -7202,11 +7202,11 @@
 <description>여러 언어 버전으로 된 글을 작성할 수 있습니다</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.07</version>
-  <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.28</requirements:smyVersion>
-  <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2023-01-12</date>
+  <version>3.08</version>
+  <requirements:s9yVersion>3.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <date>2023-06-23</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
