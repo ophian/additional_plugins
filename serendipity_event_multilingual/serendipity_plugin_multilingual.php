@@ -19,9 +19,9 @@ class serendipity_plugin_multilingual extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.1',
-            'smarty'      => '3.1.28',
-            'php'         => '5.3.0'
+            'serendipity' => '3.0',
+            'smarty'      => '3.1',
+            'php'         => '7.4'
         ));
 
         $conf = array('title', 'show_submit', 'langified', 'size');
@@ -63,7 +63,7 @@ class serendipity_plugin_multilingual extends serendipity_event
             $conf[] = $lkey;
         }
         $propbag->add('configuration', $conf);
-        $propbag->add('version',       '1.18');
+        $propbag->add('version',       '1.19');
         $propbag->add('groups',        array('FRONTEND_VIEWS'));
         $this->dependencies = array('serendipity_event_multilingual' => 'remove');
     }
@@ -128,13 +128,14 @@ class serendipity_plugin_multilingual extends serendipity_event
         }
 
         $languages = serendipity_db_bool($this->get_config('langified', 'false')) ? $mlp['lang'] : $serendipity['languages'];
+        $setlang   = $_COOKIE['serendipity']['serendipityLanguage'] ?? ($_SESSION['serendipityLanguage'] ?? $serendipity['lang']);
 
         echo '<form id="language_chooser" action="' . $url . '" method="post"><div>';
         echo '<select style="font-size: ' . $this->get_config('size', '9') . 'px" name="user_language" onchange="document.getElementById(\'language_chooser\').submit();">';
-//        echo '<option value=""> </option>'."\n";
+//        echo '<option value=""> </option>'."\n"; // we cannot reset to default - once its is set. So the only way to change - is to change! Cookie will last 1 month.
         foreach ($languages AS $lang_key => $language) {
             if (serendipity_db_bool($this->get_config($lang_key, 'false'))) {
-                echo '<option value="' . $lang_key . '"' . ($serendipity['lang'] == $lang_key ? ' selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($language) : htmlspecialchars($language, ENT_COMPAT, LANG_CHARSET)) . "</option>\n";
+                echo '<option value="' . $lang_key . '"' . ($setlang == $lang_key ? ' selected="selected"' : '') . '>' . serendipity_specialchars($language) . "</option>\n";
             }
         }
         echo '</select>';

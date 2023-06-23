@@ -1,3 +1,21 @@
+3.08 && (sidebar) 1.19:
+-----------------------
+ * Fix for selected language
+ * some cleanup
+ * Raised requirements
+ REMEMBER:  For a NON LOGGED-IN user the following behaviour should be known.
+            Once a frontend posted language change is set, it will remain and last per cookie for 1 month.
+            The only way to return to the previous default language NON-SET state, is to either
+            - wait the remaining time, OR
+            - delete the serendipity[serendipityLanguage] COOKIE per hand in your browser OR
+            - change the selectable language value to the default blog language.
+            ALSO NOTE, that the multilingual plugin (order) place in your plugin list may force different language sets for plugins.
+
+ ALSO NOTE: Since some plugins have options for name settings, OR aren't always fully translated,
+            OR don't have that language constants yet, you or your users will not always see the
+            expected chosen language, depending on the installed plugins related to the frontend.
+            For the both latter cases it often just emits the fallback (english) constant.
+
 3.07:
 -----
  * Fix for mysqli search-term SQL queries in FULLTEXT IN BOOLEAN MODE

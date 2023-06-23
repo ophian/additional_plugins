@@ -23,12 +23,12 @@ class serendipity_event_multilingual extends serendipity_event
         $propbag->add('stackable',      false);
         $propbag->add('author',         'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
         $propbag->add('requirements',   array(
-            'serendipity' => '2.1',
-            'smarty'      => '3.1.28',
-            'php'         => '5.3.0'
+            'serendipity' => '3.0',
+            'smarty'      => '3.1',
+            'php'         => '7.4'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.07');
+        $propbag->add('version',        '3.08');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -281,13 +281,11 @@ class serendipity_event_multilingual extends serendipity_event
     {
         global $serendipity;
         static $default_lang = null;
-        static $false = false;
-        static $true  = true;
 
         $langs = array();
         // list/each can use references
         if (!is_array($properties)) {
-            return $false;
+            return false;
         }
 
         $probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_names.inc.php';
@@ -305,7 +303,7 @@ class serendipity_event_multilingual extends serendipity_event
         }
 
         if (count($langs) < 1) {
-            return $false;
+            return false;
         }
 
         // retrieve the default language of the blog...
@@ -687,7 +685,7 @@ class serendipity_event_multilingual extends serendipity_event
                     $langs = '';
                     //asort($use_lang); //sorts by value ASC, but if so we should do it everywhere though
                     foreach($use_lang AS $code => $desc) {
-                        $langs .= '<option value="' . $code . '" ' . ($lang_selected == $code ? 'selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($desc) : htmlspecialchars($desc, ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
+                        $langs .= '<option value="' . $code . '" ' . ($lang_selected == $code ? 'selected="selected"' : '') . '>' . serendipity_specialchars($desc) . '</option>' . "\n";
                     }
 ?>
                     <fieldset id="edit_entry_multilingual" class="entryproperties_multilingual">
