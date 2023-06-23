@@ -28,7 +28,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '7.4'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.08');
+        $propbag->add('version',        '3.09');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,

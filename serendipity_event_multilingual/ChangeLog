@@ -1,3 +1,7 @@
+3.09:
+-----
+ * Improve [de] PLUGIN_EVENT_MULTILINGUAL_COPYDESC
+
 3.08 && (sidebar) 1.19:
 -----------------------
  * Fix for selected language

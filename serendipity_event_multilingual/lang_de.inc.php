@@ -6,7 +6,7 @@
 @define('PLUGIN_EVENT_MULTILINGUAL_CURRENT', 'Sprachversion zur Bearbeitung auswählen: ');
 @define('PLUGIN_EVENT_MULTILINGUAL_SWITCH', 'Sprache wechseln');
 @define('PLUGIN_EVENT_MULTILINGUAL_COPY', 'Behalten Sie vorhergehenden Spracheninhalt bei');
-@define('PLUGIN_EVENT_MULTILINGUAL_COPYDESC', 'Halten Sie vorhergehenden Spracheninhalt intakt im Inputkasten, wenn Sie neue Sprachversion schreiben');
+@define('PLUGIN_EVENT_MULTILINGUAL_COPYDESC', 'Beibehaltung des Inhalts der vorherigen Sprache im Backend Eintrags-Eingabefeld, bei der Arbeit mit der neuen Sprachversion');
 @define('PLUGIN_EVENT_MULTILINGUAL_TAGTITLE', 'Übersetzte Blog Titel (siehe Konfiguration)');
 @define('PLUGIN_EVENT_MULTILINGUAL_TAGTITLE_DESC', 'Erlaubt die Benutzung von {{!<lang>}}<text>{{--}} übersetzten "tag" Sprachmodulen des globalen Blogtitels und der Blog Beschreibung. Auch benutzt für Eintragstitel der multilingualen Einträge.');
 @define('PLUGIN_EVENT_MULTILINGUAL_TAGENTRIES', 'Übersetzte Einträge und Eintragstitel');
@@ -25,7 +25,7 @@
 @define('PLUGIN_EVENT_MULTILINGUAL_LANGIFIED', 'Sprachname in Landessprache?');
 @define('PLUGIN_EVENT_MULTILINGUAL_LANGIFIED_DESC', 'Default: in Englisch. Betrifft Linknamen der multilingualen Eintrags Metadaten.');
 
-@define('PLUGIN_EVENT_MULTILINGUAL_EXAMPLE_READMEHINT', 'Bitte lesen Sie die Plugin Documentation über obigen Link sorgfältig durch!');
+@define('PLUGIN_EVENT_MULTILINGUAL_EXAMPLE_READMEHINT', 'Bitte lesen Sie die Plugin Dokumentation über obigen Link sorgfältig durch!');
 
 //
 //  serendipity_plugin_multilingual.php
