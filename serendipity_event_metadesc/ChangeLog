@@ -1,4 +1,8 @@
-0.28:
+0.30:
+-----
+ * Fix extract_description() missing variable usage
+
+0.29:
 -----
 
  * Raise requirements and modernize some conditionals

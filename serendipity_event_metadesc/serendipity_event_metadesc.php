@@ -21,7 +21,7 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian Styx');
-        $propbag->add('version',       '0.29');
+        $propbag->add('version',       '0.30');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'php'         => '7.4'
@@ -95,7 +95,7 @@ class serendipity_event_metadesc extends serendipity_event
 
     function extract_description( string $text)
     {
-        $metastring = strip_tags(trim($text));
+        $string     = strip_tags(trim($text));
         $metastring = trim(preg_replace('/\s+/', ' ', $string));
 
         // keeping word boundary character and Unicode ranges
