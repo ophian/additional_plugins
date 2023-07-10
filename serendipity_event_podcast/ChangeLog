@@ -1,3 +1,7 @@
+1.54:
+-----
+ * Better check writing to eventData [display_dat] and [channel_dat]
+
 1.53:
 -----
  * Better check init of $fileInfo['mime'] parameter

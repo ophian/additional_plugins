@@ -106,7 +106,7 @@ class serendipity_event_podcast extends serendipity_event
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.53');
+        $propbag->add('version', '1.54');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.0.0',
@@ -580,6 +580,7 @@ class serendipity_event_podcast extends serendipity_event
 
             //////////////////////// RSS 1 NS /////////////////////////////
             case 'frontend_display:rss-1.0:namespace':
+                $eventData['display_dat']  = $eventData['display_dat'] ?? '';
                 $eventData['display_dat'] .= "   xmlns:enc='http://purl.oclc.org/net/rss_2.0/enc#'\n";
                 $eventData['display_dat'] .= "   xmlns:podcast='http://ipodder.sourceforge.net/docs/podcast.html'\n";
                 $eventData['display_dat'] .= "   xmlns:atom=\"http://www.w3.org/2005/Atom\"\n";
@@ -588,10 +589,12 @@ class serendipity_event_podcast extends serendipity_event
 
             //////////////////////// RSS 2 NS///// ////////////////////////
             case 'frontend_display:rss-2.0:namespace':
+                $eventData['display_dat']  = $eventData['display_dat'] ?? '';
                 $eventData['display_dat'] .= "   xmlns:itunes=\"http://www.itunes.com/dtds/podcast-1.0.dtd\"\n";
                 $eventData['display_dat'] .= "   xmlns:atom=\"http://www.w3.org/2005/Atom\"\n";
                 $eventData['display_dat'] .= "   xmlns:sc=\"http://podlove.org/simple-chapters\"\n";
 
+                $eventData['channel_dat']  = $eventData['channel_dat'] ?? '';
                 $eventData['channel_dat'] .= $this->get_config('itunes_meta');
                 //$eventData['display_dat'] .= "   xmlns:podcast='http://ipodder.sourceforge.net/docs/podcast.html'\n";
                 return true;
