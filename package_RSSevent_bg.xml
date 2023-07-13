@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the Serendipity Backend (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the Blog directly with one click from within the administration area. It is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Sep 2022 09:31:04 +0200</pubDate>
+<pubDate>Thu, 13 Jul 2023 19:21:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -337,8 +337,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrypaging</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Връзки към предишна/следваща статия&lt;/b&gt;&lt;br /&gt;Поставя връзки към предишната и следващата статия в страницата на настоящата статия. Това позволява по-лесно разглеждане на статиите.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 18 Jan 2023 19:56:54 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Връзки към предишна/следваща статия&lt;/b&gt;&lt;br /&gt;Поставя връзки към предишната и следващата статия в страницата на настоящата статия. Това позволява по-лесно разглеждане на статиите.&lt;br/&gt;For: Serendipity 2.1</content:encoded>
+<pubDate>Thu, 13 Jul 2023 19:15:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
@@ -1292,7 +1292,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Wed, 11 Jan 2023 14:56:22 +0100</pubDate>
+<pubDate>Thu, 13 Jul 2023 19:33:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
@@ -1319,7 +1319,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Mon, 22 Aug 2022 11:44:42 +0200</pubDate>
+<pubDate>Thu, 13 Jul 2023 19:34:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>

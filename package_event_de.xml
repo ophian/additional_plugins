@@ -301,7 +301,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>5.2</requirements:phpVersion>
-  <date>2022-09-18</date>
+  <date>2023-07-13</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -2923,11 +2923,11 @@
 <description>Ermöglicht beim Betrachten eines Eintrages in der Eintragsliste vor und zurück zu blättern</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.82</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <version>1.83</version>
+  <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2023-01-18</date>
+  <requirements:phpVersion>7.4.0</requirements:phpVersion>
+  <date>2023-07-13</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -12314,7 +12314,7 @@
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2023-01-11</date>
+  <date>2023-07-13</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
       <file>ChangeLog</file>
@@ -12782,7 +12782,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.0.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2022-08-22</date>
+  <date>2023-07-13</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
