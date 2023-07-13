@@ -1,7 +1,3 @@
-1.83:
------
- * Add PHP 8.2: Sensitive Parameter value redaction support
-
 1.82:
 -----
  * Fix for PHP 8 - Fixup some old ${} usage
