@@ -21,11 +21,11 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
-        $propbag->add('version',       '1.82');
+        $propbag->add('version',       '1.83');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
+            'serendipity' => '2.1',
             'smarty'      => '3.1.0',
-            'php'         => '7.0.0'
+            'php'         => '7.4.0'
         ));
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
         $propbag->add('event_hooks',   array('entry_display' => true, 'css' => true, 'entries_header' => true, 'entries_footer' => true));
@@ -189,6 +189,7 @@ class serendipity_event_entrypaging extends serendipity_event
                             $id     = (int)$serendipity['GET']['id'];
                             $links  = array();
                             $cond   = array();
+                            $joincat = true;
 
                             $currentTimeSQL = serendipity_db_query("SELECT e.timestamp, ec.categoryid
                                                                       FROM {$serendipity['dbPrefix']}entries AS e
@@ -203,6 +204,14 @@ class serendipity_event_entrypaging extends serendipity_event
                                 $cond['compare'] = "e.id [%1] $id";
                             }
 
+                            // If logged-in, the page-link shall even promote group restricted entries.
+                            // We fix the visitors paging to not show group restricted entries by this $joincat true condition.
+                            // But for logged-in authors we are not that accurate. Administrators and logged-in users with high level group rights probably will have no problem paging through all entries.
+                            // Low level group members will end the paging when arriving on a page they don't have access/read rights. This current limitation should be known.
+                            if (serendipity_userLoggedIn()) {
+                                $joincat = false;
+                            }
+
                             $cond['and'] = " AND e.isdraft = 'false' AND e.timestamp <= " . serendipity_serverOffsetHour(time(), true);
                             serendipity_plugin_api::hook_event('frontend_fetchentry', $cond);
 
@@ -213,13 +222,21 @@ class serendipity_event_entrypaging extends serendipity_event
                             }
                             else if (isset($bycategory[0]['categoryid'])) {
                                 $cond['joinct'] = " LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
+                                // Now join check the categories category table for having access authorid = 0 (all) only - except the calling user is logged-in.
+                                // Further ACL would require the ACL check and some additional categoryID check on each prev/next query - this is way too much complicated I think.
+                                if ($joincat) {
+                                    $cond['joinct'] .= " LEFT JOIN {$serendipity['dbPrefix']}category AS  c ON (c.categoryid = ec.categoryid)";
+                                }
                                 $cond['joins'] .= $cond['joinct'];
                                 foreach ($bycategory AS $bcat) {
                                     if ($bcat['template'] == $serendipity['template']) {
-                                        $cond['where'] .= "(ec.categoryid = " . (int)$bcat['categoryid'] . ") AND";
+                                        $cond['where'] .= " (ec.categoryid = " . (int)$bcat['categoryid'] . ") AND";
                                     } else {
-                                        $cond['where'] .= "(ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL) AND";
+                                        $cond['where'] .= " (ec.categoryid != " . (int)$bcat['categoryid'] . " OR ec.categoryid IS NULL) AND";
                                     }
+                                }
+                                if ($joincat) {
+                                    $cond['where'] .= " c.authorid = 0 AND";
                                 }
                             }
 

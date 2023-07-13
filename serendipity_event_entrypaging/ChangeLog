@@ -1,3 +1,11 @@
+1.83:
+-----
+
+ * Fix a entrypaging prev/next paging issue to leave out group restricted entries and so only page-link on ALL (0) authorids entries.
+   Only logged-in authors will see group restricted entry links, even when not being accessible for them by ACL when arriving at entry page.
+   Logged-in Administrators or other group levels with granted parent rights are able to page through. But lower child levels will seen an empty page with no further entrypaging.
+   Being more specific on ACL rights for them would make the entrypaging query gathering at this state way too complicated.
+
 1.82:
 -----
 
