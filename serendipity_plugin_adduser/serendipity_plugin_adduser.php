@@ -17,11 +17,11 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.50');
+        $propbag->add('version',       '2.51');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
+            'serendipity' => '4.0',
             'smarty'      => '3.1',
-            'php'         => '7.0'
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('BACKEND_USERMANAGEMENT'));
         $propbag->add('configuration', array(
