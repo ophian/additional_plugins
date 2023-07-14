@@ -26,7 +26,7 @@ class serendipity_plugin_multilingual extends serendipity_event
 
         $conf = array('title', 'show_submit', 'langified', 'size');
         /* Available languages */
-        if (!is_array($serendipity['languages'])) {
+        if (!isset($serendipity['languages']) || !is_array($serendipity['languages'])) {
             $serendipity['languages'] = array('en' => 'English',
                                   'de' => 'German',
                                   'da' => 'Danish',
@@ -63,7 +63,7 @@ class serendipity_plugin_multilingual extends serendipity_event
             $conf[] = $lkey;
         }
         $propbag->add('configuration', $conf);
-        $propbag->add('version',       '1.19');
+        $propbag->add('version',       '1.20');
         $propbag->add('groups',        array('FRONTEND_VIEWS'));
         $this->dependencies = array('serendipity_event_multilingual' => 'remove');
     }

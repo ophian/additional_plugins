@@ -1,3 +1,7 @@
+3.10 && (sidebar) 1.20:
+-----------------------
+ * Fix a non isset check
+
 3.09:
 -----
  * Improve [de] PLUGIN_EVENT_MULTILINGUAL_COPYDESC

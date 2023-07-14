@@ -28,7 +28,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '7.4'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.09');
+        $propbag->add('version',        '3.10');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -98,6 +98,9 @@ class serendipity_event_multilingual extends serendipity_event
             } elseif (!isset($_COOKIE['serendipityLanguage'])) $resetlang = true; // force == false and we only want the translated article, nothing else being touched multilingual
         }
 
+        if (!isset($serendipity['expose_s9y'])) {
+            $serendipity['expose_s9y'] = true;
+        }
         if (empty($this->showlang) && isset($serendipity['POST']['properties']['lang_selected'])) {
             $this->showlang = serendipity_db_escape_string($serendipity['POST']['properties']['lang_selected']);
             $_SESSION['last_lang'] = $this->showlang;
@@ -147,7 +150,7 @@ class serendipity_event_multilingual extends serendipity_event
 
         if (!isset($serendipity['languages'][$this->showlang])) {
             $this->showlang = '';
-            if ($serendipity['expose_s9y']) serendipity_header('X-Serendipity-ML-SL-RESET: ' . $this->cleanheader($serendipity['default_lang']));
+            if ($serendipity['expose_s9y']) serendipity_header('X-Serendipity-ML-SL-RESET: ' . $this->cleanheader(($serendipity['default_lang'] ?? '')));
         }
 
         if (!headers_sent()) {
