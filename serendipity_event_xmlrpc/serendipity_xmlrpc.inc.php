@@ -621,8 +621,8 @@ function wp_getComments($message) {
 
 function _wp_createSingleCommentResult($entry) {
     if ($entry['commentid']) {
-        if ($entry['type']=='TRACKBACK') $type = 'trackback';
-        else if ($entry['type']=='PINGBACK') $type = 'pingback';
+        if ($entry['type'] == 'TRACKBACK') $type = 'trackback';
+        else if ($entry['type'] == 'PINGBACK') $type = 'pingback';
         else $type = '';
 
         $values = array(
