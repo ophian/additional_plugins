@@ -22,11 +22,11 @@ class serendipity_plugin_flickr extends serendipity_plugin {
         $propbag->add('stackable',   true);
         $propbag->add('author',      'Michael Kaiser, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
+            'serendipity' => '2.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.6.0'
+            'php'         => '7.4.0'
         ));
-        $propbag->add('version',  '1.10');
+        $propbag->add('version',  '1.12');
         $propbag->add('configuration', array(
                         'title',
                         'email',

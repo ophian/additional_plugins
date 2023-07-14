@@ -878,7 +878,7 @@ class PhpFlickr
         return $this->call('flickr.blogs.getServices', array());
     }
 
-    public function blogs_postPhoto($blog_id = null, $photo_id, $title, $description, $blog_password = null, $service = null)
+    public function blogs_postPhoto($blog_id = null, $photo_id = null, $title = null, $description = null, $blog_password = null, $service = null)
     {
         /* https://www.flickr.com/services/api/flickr.blogs.postPhoto.html */
         return $this->call('flickr.blogs.postPhoto', array('blog_id' => $blog_id, 'photo_id' => $photo_id, 'title' => $title, 'description' => $description, 'blog_password' => $blog_password, 'service' => $service));

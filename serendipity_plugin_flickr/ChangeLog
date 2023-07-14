@@ -1,4 +1,9 @@
-1.20 (1.07 css event):
+1.12 (1.08 css event):
+----------------------
+ * Changed requirement
+ * PHP 8 fixes in PhpFlickr lib
+
+1.11 (1.07 css event):
 ----------------------
  * Change phpFlickr lib to "successor" at https://github.com/samwilson/phpflickr v4.3.0
  * Removed outdated bundled PEAR
