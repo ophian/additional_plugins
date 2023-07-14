@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;Sobald das Serendipity Backend (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in die Startseite des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten. Es ist zu empfehlen, dieses Plugin in Kombination mit dem modemaintain (Wartungs-) Ereignis Plugin zu nutzen. Für Autoupdate Hinweise müssen Sie die globale Serendipity Konfigurationsoption in &quot;Einstellungen:: Generelle Einstellungen: Update-Hinweis&quot; auf &quot;stable&quot; oder &quot;beta&quot; stellen, um es überhaupt über das Dashboard nutzen zu können!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 13 Jul 2023 19:44:22 +0200</pubDate>
+<pubDate>Fri, 14 Jul 2023 11:50:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -1328,7 +1328,7 @@
 <category>Event Plugins</category>
 <author>Michael Kaiser, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_flickrcss&lt;br /&gt;flickr Fotostream CSS&lt;/b&gt;&lt;br /&gt;Dieses Plugin ist eine Ergänzung zum flickr Fotostream-Seitenleistenplugin und sorgt für ein ansprechendes Aussehen der Bilddarstellung.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 22 Mar 2020 15:51:46 +0100</pubDate>
+<pubDate>Fri, 14 Jul 2023 11:36:16 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flickrcss</guid>
 </item>
 <item>

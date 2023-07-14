@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Automatické aktualizace&lt;/b&gt;&lt;br /&gt;Když &quot;tabule&quot; detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate Notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 13 Jul 2023 19:44:22 +0200</pubDate>
+<pubDate>Fri, 14 Jul 2023 11:50:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -1328,7 +1328,7 @@
 <category>Event Plugins</category>
 <author>Michael Kaiser, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_flickrcss&lt;br /&gt;Flickr Photostream CSS&lt;/b&gt;&lt;br /&gt;Tento plugin je rozšířením postranního pluginu &quot;Flickr Photostream&quot; a přidává k němu stylování (CSS).&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 22 Mar 2020 15:51:46 +0100</pubDate>
+<pubDate>Fri, 14 Jul 2023 11:36:16 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flickrcss</guid>
 </item>
 <item>

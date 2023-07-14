@@ -228,8 +228,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_flickr</link>
 <category>Sidebar Plugins</category>
 <author>Michael Kaiser, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_flickr&lt;br /&gt;flickr Photostream&lt;/b&gt;&lt;br /&gt;Display the latest photos from flickr Photostreams.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:26:04 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_flickr&lt;br /&gt;flickr Photostream&lt;/b&gt;&lt;br /&gt;Display the latest photos from flickr Photostreams.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Fri, 14 Jul 2023 11:41:15 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_flickr</guid>
 </item>
 <item>

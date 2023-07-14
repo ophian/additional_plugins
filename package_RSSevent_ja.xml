@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the Serendipity Backend (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the Blog directly with one click from within the administration area. It is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 13 Jul 2023 19:44:22 +0200</pubDate>
+<pubDate>Fri, 14 Jul 2023 11:50:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -1330,7 +1330,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Michael Kaiser, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_flickrcss&lt;br /&gt;flickr Photostream CSS&lt;/b&gt;&lt;br /&gt;This plugin is an extension to the flickr Photostream sidebar plugin and adds style information (CSS).&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 22 Mar 2020 15:51:46 +0100</pubDate>
+<pubDate>Fri, 14 Jul 2023 11:36:16 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flickrcss</guid>
 </item>
 <item>
