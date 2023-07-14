@@ -1,3 +1,7 @@
+2.23:
+-----
+ * Fix for PHP 8
+
 2.22:
 -----
  * Fix some Karma activity related variable initialization checks for PHP 8

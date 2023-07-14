@@ -44,7 +44,7 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '2.22');
+        $propbag->add('version',       '2.23');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1.0',
@@ -2047,21 +2047,21 @@ if ($h == 15) {
 /* Overrides for $css_class */
 .$css_class
 {
-  width: ${width}px;
-  height: ${height}px;
+  width: {$width}px;
+  height: {$height}px;
 }
 .$css_class,
 .$css_class a:hover,
 .$css_class .serendipity_karmaVoting_current-rating
 {
-  background-image: url({$serendipity['baseURL']}plugins/serendipity_event_karma/img/${fname});
+  background-image: url({$serendipity['baseURL']}plugins/serendipity_event_karma/img/{$fname});
 }
 .$css_class,
 .$css_class a,
 .$css_class .serendipity_karmaVoting_current-rating
 {
-  line-height: ${height}px;
-  height: ${height}px;
+  line-height: {$height}px;
+  height: {$height}px;
 }
 
 ";
@@ -2197,7 +2197,7 @@ if ($h == 15) {
                     // Get current karma text
                     $curr_msg = $this->get_config('curr_msg', PLUGIN_KARMA_CURRENT);
                     $karma_display .= "
-    <li class=\"serendipity_karmaVoting_current-rating\" style=\"width: ${cr_width}px;\" title=\"$curr_msg\"> </li>
+    <li class=\"serendipity_karmaVoting_current-rating\" style=\"width: {$cr_width}px;\" title=\"$curr_msg\"> </li>
     ";
                 }
                 // Only create voting links if required
