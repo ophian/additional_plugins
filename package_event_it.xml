@@ -1360,7 +1360,7 @@
 <license>GPL</license>
 <summary>Comment Edit</summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Let user's edit their comments after they posted them.</description>
+<description>Let user&#039;s edit their comments after they posted them.</description>
 <maintainers><maintainer><name>Malte Paskuda</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.8</version>
@@ -1614,7 +1614,7 @@
 <license>GPL</license>
 <summary>Modulo di contatto</summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Mostra un modulo di contatto e-mail sul tuo blog come pagina statica, cui si può accedere sia da permalink personalizzato che da index.php?serendipity[subpage]=contactform. Puoi personalizzare l'aspetto del modulo inserendo il file plugin_contactform.tpl nella tua directory dei template e modificandolo là. I captchas del plugin Spamblock (se attivi) verranno applicati.</description>
+<description>Mostra un modulo di contatto e-mail sul tuo blog come pagina statica, cui si può accedere sia da permalink personalizzato che da index.php?serendipity[subpage]=contactform. Puoi personalizzare l&#039;aspetto del modulo inserendo il file plugin_contactform.tpl nella tua directory dei template e modificandolo là. I captchas del plugin Spamblock (se attivi) verranno applicati.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.48</version>
@@ -1695,11 +1695,11 @@
 <description>Replaces words with a new selected string (useful for acronyms)</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5.0</version>
+  <version>1.5.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>5.7</requirements:phpVersion>
-  <date>2022-07-30</date>
+  <date>2023-07-14</date>
   <filelist>
     <dir name="serendipity_event_contentrewrite">
       <file>ChangeLog</file>
@@ -2196,8 +2196,8 @@
 <license>GPL</license>
 <summary>Downloadmanager</summary>
 <groups>FRONTEND_FULL_MODS</groups>
-<description>Aggiunge le funzionalita' di downloadmanager a s9y. Quando viene disinstallato, tutte le tabelle vengono eliminate! Visita http://blog.linux-stats.org per scaricare il plugin.</description>
-<maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
+<description>Aggiunge le funzionalita&#039; di downloadmanager a s9y. Quando viene disinstallato, tutte le tabelle vengono eliminate! Visita http://blog.linux-stats.org per scaricare il plugin.</description>
+<maintainers><maintainer><name>Alexander &#039;dma147&#039; Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.61</version>
   <requirements:s9yVersion>3.3.0</requirements:s9yVersion>
@@ -2520,7 +2520,7 @@
 <license>GPL</license>
 <summary>Markup: Syntax Highlighter</summary>
 <groups>MARKUP</groups>
-<description>This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It's a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).</description>
+<description>This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It&#039;s a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).</description>
 <maintainers><maintainer><name>Alex Gorbatchev (core), Brendon Kozlowski and J.M. Roth (plugin)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>3.20</version>
@@ -3542,7 +3542,7 @@
 <summary>Discussion forum / phpBB comment mirroring</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Provides a complete discussion forum to your users. Can alternatively provide to mirror comments into a phpBB installation.</description>
-<maintainers><maintainer><name>Alexander 'dma147' Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Alexander &#039;dma147&#039; Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.44</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
@@ -5530,11 +5530,11 @@
 <description>Let visitors rate your entries</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.22</version>
+  <version>2.23</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2021-08-06</date>
+  <date>2023-07-14</date>
   <filelist>
     <dir name="serendipity_event_karma">
       <file>ChangeLog</file>
@@ -5743,7 +5743,7 @@
 <license>GPL</license>
 <summary>Lightbox for entry images</summary>
 <groups>IMAGES</groups>
-<description>Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It's a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.</description>
+<description>Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It&#039;s a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image &#039;a href=&quot;XXX&quot;&#039; link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.</description>
 <maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.12.0</version>
@@ -7202,11 +7202,11 @@
 <description>Allows to create multiple language versions of an entry</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.09</version>
+  <version>3.10</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-06-23</date>
+  <date>2023-07-14</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -7338,7 +7338,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2021-08-07</date>
+  <date>2023-07-14</date>
   <filelist>
     <dir name="serendipity_event_mymood">
       <file>ChangeLog</file>
@@ -7375,7 +7375,7 @@
 <license>GPL</license>
 <summary>Newsbox</summary>
 <groups>FRONTEND_VIEWS,FRONTEND_FEATURES</groups>
-<description>Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.</description>
+<description>Group a category&#039;s entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.</description>
 <maintainers><maintainer><name>Jude Anthony, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.4</version>
@@ -7841,7 +7841,7 @@
 <license>GPL</license>
 <summary>HTML Nugget on Page</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Puts an HTML nugget on top or bottom of the page, or inside the page's HEAD tag</description>
+<description>Puts an HTML nugget on top or bottom of the page, or inside the page&#039;s HEAD tag</description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
@@ -12310,7 +12310,7 @@
 <description>Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)</description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.82</version>
+  <version>1.83</version>
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
@@ -12778,7 +12778,7 @@
 <description>Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.53</version>
+  <version>2.54</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.0.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
@@ -12976,7 +12976,7 @@
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2020-12-02</date>
+  <date>2023-07-14</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>

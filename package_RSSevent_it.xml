@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the Serendipity Backend (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the Blog directly with one click from within the administration area. It is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 13 Jul 2023 19:21:34 +0200</pubDate>
+<pubDate>Thu, 13 Jul 2023 19:44:22 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -144,11 +144,11 @@
 <guid isPermaLink="false">serendipity_event_comics</guid>
 </item>
 <item>
-<title>Comment Edit: Let user's edit their comments after they posted them.</title>
+<title>Comment Edit: Let user&#039;s edit their comments after they posted them.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_commentedit</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
-<content:encoded>&lt;b&gt;serendipity_event_commentedit&lt;br /&gt;Comment Edit&lt;/b&gt;&lt;br /&gt;Let user's edit their comments after they posted them.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_event_commentedit&lt;br /&gt;Comment Edit&lt;/b&gt;&lt;br /&gt;Let user&#039;s edit their comments after they posted them.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
 <pubDate>Sun, 12 Mar 2023 18:57:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_commentedit</guid>
 </item>
@@ -180,11 +180,11 @@
 <guid isPermaLink="false">serendipity_event_communityrating</guid>
 </item>
 <item>
-<title>Modulo di contatto: Mostra un modulo di contatto e-mail sul tuo blog come pagina statica, cui si può accedere sia da permalink personalizzato che da index.php?serendipity[subpage]=contactform. Puoi personalizzare l'aspetto del modulo inserendo il file plugin_contactform.tpl nella tua directory dei template e modificandolo là. I captchas del plugin Spamblock (se attivi) verranno applicati.</title>
+<title>Modulo di contatto: Mostra un modulo di contatto e-mail sul tuo blog come pagina statica, cui si può accedere sia da permalink personalizzato che da index.php?serendipity[subpage]=contactform. Puoi personalizzare l&#039;aspetto del modulo inserendo il file plugin_contactform.tpl nella tua directory dei template e modificandolo là. I captchas del plugin Spamblock (se attivi) verranno applicati.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_contactform</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Modulo di contatto&lt;/b&gt;&lt;br /&gt;Mostra un modulo di contatto e-mail sul tuo blog come pagina statica, cui si può accedere sia da permalink personalizzato che da index.php?serendipity[subpage]=contactform. Puoi personalizzare l'aspetto del modulo inserendo il file plugin_contactform.tpl nella tua directory dei template e modificandolo là. I captchas del plugin Spamblock (se attivi) verranno applicati.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Modulo di contatto&lt;/b&gt;&lt;br /&gt;Mostra un modulo di contatto e-mail sul tuo blog come pagina statica, cui si può accedere sia da permalink personalizzato che da index.php?serendipity[subpage]=contactform. Puoi personalizzare l&#039;aspetto del modulo inserendo il file plugin_contactform.tpl nella tua directory dei template e modificandolo là. I captchas del plugin Spamblock (se attivi) verranno applicati.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
 <pubDate>Wed, 30 Nov 2022 12:56:28 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
@@ -194,7 +194,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contentrewrite&lt;br /&gt;Content Rewriter&lt;/b&gt;&lt;br /&gt;Replaces words with a new selected string (useful for acronyms)&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 30 Jul 2022 16:34:55 +0200</pubDate>
+<pubDate>Fri, 14 Jul 2023 11:16:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contentrewrite</guid>
 </item>
 <item>
@@ -270,20 +270,20 @@
 <guid isPermaLink="false">serendipity_event_disqus</guid>
 </item>
 <item>
-<title>Downloadmanager: Aggiunge le funzionalita' di downloadmanager a s9y. Quando viene disinstallato, tutte le tabelle vengono eliminate! Visita http://blog.linux-stats.org per scaricare il plugin.</title>
+<title>Downloadmanager: Aggiunge le funzionalita&#039; di downloadmanager a s9y. Quando viene disinstallato, tutte le tabelle vengono eliminate! Visita http://blog.linux-stats.org per scaricare il plugin.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_downloadmanager</link>
 <category>Event Plugins</category>
-<author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Aggiunge le funzionalita' di downloadmanager a s9y. Quando viene disinstallato, tutte le tabelle vengono eliminate! Visita http://blog.linux-stats.org per scaricare il plugin.&lt;br/&gt;For: Serendipity 3.3.0</content:encoded>
+<author>Alexander &#039;dma147&#039; Mieland, Grischa Brockhaus, Ian Styx</author>
+<content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Aggiunge le funzionalita&#039; di downloadmanager a s9y. Quando viene disinstallato, tutte le tabelle vengono eliminate! Visita http://blog.linux-stats.org per scaricare il plugin.&lt;br/&gt;For: Serendipity 3.3.0</content:encoded>
 <pubDate>Mon, 17 Oct 2022 11:58:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
-<title>Markup: Syntax Highlighter: This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It's a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).</title>
+<title>Markup: Syntax Highlighter: This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It&#039;s a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_dpsyntaxhighlighter</link>
 <category>Event Plugins</category>
 <author>Alex Gorbatchev (core), Brendon Kozlowski and J.M. Roth (plugin)</author>
-<content:encoded>&lt;b&gt;serendipity_event_dpsyntaxhighlighter&lt;br /&gt;Markup: Syntax Highlighter&lt;/b&gt;&lt;br /&gt;This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It's a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_event_dpsyntaxhighlighter&lt;br /&gt;Markup: Syntax Highlighter&lt;/b&gt;&lt;br /&gt;This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It&#039;s a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).&lt;br/&gt;For: Serendipity 1.6</content:encoded>
 <pubDate>Sun, 18 Aug 2019 16:19:47 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dpsyntaxhighlighter</guid>
 </item>
@@ -435,7 +435,7 @@
 <title>Discussion forum / phpBB comment mirroring: Provides a complete discussion forum to your users. Can alternatively provide to mirror comments into a phpBB installation.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_forum</link>
 <category>Event Plugins</category>
-<author>Alexander 'dma147' Mieland, Ian Styx</author>
+<author>Alexander &#039;dma147&#039; Mieland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_forum&lt;br /&gt;Discussion forum / phpBB comment mirroring&lt;/b&gt;&lt;br /&gt;Provides a complete discussion forum to your users. Can alternatively provide to mirror comments into a phpBB installation.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
 <pubDate>Mon, 06 Dec 2021 20:05:58 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_forum</guid>
@@ -581,7 +581,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_karma&lt;br /&gt;Karma&lt;/b&gt;&lt;br /&gt;Let visitors rate your entries&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Fri, 06 Aug 2021 18:18:32 +0200</pubDate>
+<pubDate>Fri, 14 Jul 2023 11:10:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_karma</guid>
 </item>
 <item>
@@ -603,11 +603,11 @@
 <guid isPermaLink="false">serendipity_event_layout_printerfriendly</guid>
 </item>
 <item>
-<title>Lightbox for entry images: Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It's a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.</title>
+<title>Lightbox for entry images: Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It&#039;s a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image &#039;a href=&quot;XXX&quot;&#039; link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_lightbox</link>
 <category>Event Plugins</category>
 <author>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_lightbox&lt;br /&gt;Lightbox for entry images&lt;/b&gt;&lt;br /&gt;Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It's a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_event_lightbox&lt;br /&gt;Lightbox for entry images&lt;/b&gt;&lt;br /&gt;Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It&#039;s a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image &#039;a href=&quot;XXX&quot;&#039; link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
 <pubDate>Sat, 04 Mar 2023 11:09:48 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_lightbox</guid>
 </item>
@@ -761,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilingual entries&lt;/b&gt;&lt;br /&gt;Allows to create multiple language versions of an entry&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Fri, 23 Jun 2023 18:12:57 +0200</pubDate>
+<pubDate>Fri, 14 Jul 2023 11:31:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -779,15 +779,15 @@
 <category>Event Plugins</category>
 <author>Brett Profitt</author>
 <content:encoded>&lt;b&gt;serendipity_event_mymood&lt;br /&gt;My Mood&lt;/b&gt;&lt;br /&gt;Allows you to add your current mood or moods to entries.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 07 Aug 2021 19:03:32 +0200</pubDate>
+<pubDate>Fri, 14 Jul 2023 11:29:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mymood</guid>
 </item>
 <item>
-<title>Newsbox: Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.</title>
+<title>Newsbox: Group a category&#039;s entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_newsbox</link>
 <category>Event Plugins</category>
 <author>Jude Anthony, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_newsbox&lt;br /&gt;Newsbox&lt;/b&gt;&lt;br /&gt;Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.&lt;br/&gt;For: Serendipity 2.7</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_event_newsbox&lt;br /&gt;Newsbox&lt;/b&gt;&lt;br /&gt;Group a category&#039;s entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.&lt;br/&gt;For: Serendipity 2.7</content:encoded>
 <pubDate>Sat, 29 May 2021 13:49:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_newsbox</guid>
 </item>
@@ -837,11 +837,11 @@
 <guid isPermaLink="false">serendipity_event_outdate_entries</guid>
 </item>
 <item>
-<title>HTML Nugget on Page: Puts an HTML nugget on top or bottom of the page, or inside the page's HEAD tag</title>
+<title>HTML Nugget on Page: Puts an HTML nugget on top or bottom of the page, or inside the page&#039;s HEAD tag</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_page_nugget</link>
 <category>Event Plugins</category>
 <author>Wesley Hwang-Chung</author>
-<content:encoded>&lt;b&gt;serendipity_event_page_nugget&lt;br /&gt;HTML Nugget on Page&lt;/b&gt;&lt;br /&gt;Puts an HTML nugget on top or bottom of the page, or inside the page's HEAD tag&lt;br/&gt;For: Serendipity 1.7</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_event_page_nugget&lt;br /&gt;HTML Nugget on Page&lt;/b&gt;&lt;br /&gt;Puts an HTML nugget on top or bottom of the page, or inside the page&#039;s HEAD tag&lt;br/&gt;For: Serendipity 1.7</content:encoded>
 <pubDate>Wed, 15 Aug 2018 17:18:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_page_nugget</guid>
 </item>
@@ -1292,7 +1292,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Thu, 13 Jul 2023 19:33:24 +0200</pubDate>
+<pubDate>Thu, 13 Jul 2023 20:21:19 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
@@ -1319,7 +1319,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 13 Jul 2023 19:34:55 +0200</pubDate>
+<pubDate>Thu, 13 Jul 2023 20:19:49 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>
@@ -1346,7 +1346,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Peter Heimann, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Microblogging (Twitter,Identica)&lt;/b&gt;&lt;br /&gt;Adds a twitter/identica client to the admininistration interface, searches for tweetbacks and announces new articles to a microblogging account.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Wed, 02 Dec 2020 15:37:00 +0100</pubDate>
+<pubDate>Fri, 14 Jul 2023 11:19:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>

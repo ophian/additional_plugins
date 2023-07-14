@@ -77,7 +77,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_multilingual&lt;br /&gt;Choose Language&lt;/b&gt;&lt;br /&gt;Allows visitors to change the frontend interface language&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Fri, 23 Jun 2023 17:41:50 +0200</pubDate>
+<pubDate>Fri, 14 Jul 2023 10:49:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_multilingual</guid>
 </item>
 <item>
@@ -136,17 +136,17 @@
 </item>
 <item>
 <title>GLI UTENTI: Visualizza tutti gli utenti con il loro valore etico (rappresentato da un semaforo). 
-                                           Quello verde significa 'èta'; quello giallo significa
-                                           'avvisato'; quello rosso significa 'banned'.
-                                           L'amministratore può facilmente modificare tali valori.
+                                           Quello verde significa &#039;èta&#039;; quello giallo significa
+                                           &#039;avvisato&#039;; quello rosso significa &#039;banned&#039;.
+                                           L&#039;amministratore può facilmente modificare tali valori.
                                            </title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_xsstrust</link>
 <category>Sidebar Plugins</category>
 <author>Loris Zena</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_xsstrust&lt;br /&gt;GLI UTENTI&lt;/b&gt;&lt;br /&gt;Visualizza tutti gli utenti con il loro valore etico (rappresentato da un semaforo). 
-                                           Quello verde significa 'èta'; quello giallo significa
-                                           'avvisato'; quello rosso significa 'banned'.
-                                           L'amministratore può facilmente modificare tali valori.
+                                           Quello verde significa &#039;èta&#039;; quello giallo significa
+                                           &#039;avvisato&#039;; quello rosso significa &#039;banned&#039;.
+                                           L&#039;amministratore può facilmente modificare tali valori.
                                            &lt;br/&gt;For: Serendipity 1.6</content:encoded>
 <pubDate>Tue, 15 Dec 2020 12:55:06 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_xsstrust</guid>
@@ -345,7 +345,7 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_pollbox</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Evan Nemerson</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_pollbox&lt;br /&gt;Polls&lt;/b&gt;&lt;br /&gt;Shows the current poll in your sidebar&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_pollbox&lt;br /&gt;Polls&lt;/b&gt;&lt;br /&gt;Shows the current poll in your sidebar&lt;br/&gt;For: Serendipity 2.0</content:encoded>
 <pubDate>Mon, 27 Jun 2022 18:12:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_pollbox</guid>
 </item>
@@ -382,7 +382,7 @@
 <category>Sidebar Plugins</category>
 <author>Matthias Lange, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_shoutbox&lt;br /&gt;Shoutbox&lt;/b&gt;&lt;br /&gt;Displays a shoutbox for unrelated comments&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 11 Jan 2021 13:20:13 +0100</pubDate>
+<pubDate>Fri, 14 Jul 2023 10:46:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_shoutbox</guid>
 </item>
 <item>
@@ -435,7 +435,7 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_topexits</link>
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_topexits&lt;br /&gt;Top Exits&lt;/b&gt;&lt;br /&gt;Mostra dove vanno i tuoi lettori quando escono dal blog&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_topexits&lt;br /&gt;Top Exits&lt;/b&gt;&lt;br /&gt;Mostra dove vanno i tuoi lettori quando escono dal blog&lt;br/&gt;For: Serendipity 2.0</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topexits</guid>
 </item>
@@ -444,7 +444,7 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_topreferrers</link>
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_topreferrers&lt;br /&gt;Top Referrers&lt;/b&gt;&lt;br /&gt;Mostra i maggiori siti che linkano il tuo blog&lt;br/&gt;For: Serendipity 0.8</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_topreferrers&lt;br /&gt;Top Referrers&lt;/b&gt;&lt;br /&gt;Mostra i maggiori siti che linkano il tuo blog&lt;br/&gt;For: Serendipity 2.0</content:encoded>
 <pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topreferrers</guid>
 </item>
