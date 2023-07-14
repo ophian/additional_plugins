@@ -9,7 +9,8 @@ if (IN_serendipity !== true) {
 class serendipity_event_contentrewrite extends serendipity_event
 {
     var $title = PLUGIN_EVENT_CONTENTREWRITE_NAME;
-    var $rewrite_from, $rewrite_to;
+    var $title_values, $descr_values;
+    var $rewrite_from, $rewrite_to, $counter;
     var $fromstring, $tostring;
 
     function cleanup()
@@ -30,7 +31,7 @@ class serendipity_event_contentrewrite extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '1.5.0');
+        $propbag->add('version',       '1.5.1');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
