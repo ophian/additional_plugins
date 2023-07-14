@@ -899,7 +899,7 @@
 		global $_xh, $xmlrpc_backslash;
 
 		//if (ereg("^[\n\r \t]+$", $data)) return;
-		// print "adding [${data}]\n";
+		// print "adding [{$data}]\n";
 
 		// skip processing if xml fault already detected
 		if ($_xh[$parser]['isf'] < 2)
@@ -1714,7 +1714,7 @@
 			$typeof=$xmlrpcTypes[$type];
 			if ($typeof!=1)
 			{
-				echo '<B>xmlrpcval</B>: not a scalar type (${typeof})<BR>';
+				echo '<B>xmlrpcval</B>: not a scalar type ({$typeof})<BR>';
 				return 0;
 			}
 
@@ -1820,7 +1820,7 @@
 					reset($val);
 					while(list($key2, $val2)=each($val))
 					{
-						$rs.="<member><name>${key2}</name>\n";
+						$rs.="<member><name>{$key2}</name>\n";
 						$rs.=$this->serializeval($val2);
 						$rs.="</member>\n";
 					}
@@ -1839,19 +1839,19 @@
 					switch ($typ)
 					{
 						case $xmlrpcBase64:
-							$rs.="<${typ}>" . base64_encode($val) . "</${typ}>";
+							$rs.="<{$typ}>" . base64_encode($val) . "</{$typ}>";
 							break;
 						case $xmlrpcBoolean:
-							$rs.="<${typ}>" . ($val ? '1' : '0') . "</${typ}>";
+							$rs.="<{$typ}>" . ($val ? '1' : '0') . "</{$typ}>";
 							break;
 						case $xmlrpcString:
 							// G. Giunta 2005/2/13: do NOT use htmlentities, since
 							// it will produce named html entities, which are invalid xml
-							$rs.="<${typ}>" . xmlrpc_encode_entitites($val). "</${typ}>";
-							// $rs.="<${typ}>" . htmlentities($val). "</${typ}>";
+							$rs.="<{$typ}>" . xmlrpc_encode_entitites($val). "</{$typ}>";
+							// $rs.="<{$typ}>" . htmlentities($val). "</{$typ}>";
 							break;
 						default:
-							$rs.="<${typ}>${val}</${typ}>";
+							$rs.="<{$typ}>{$val}</{$typ}>";
 					}
 					break;
 				default:
