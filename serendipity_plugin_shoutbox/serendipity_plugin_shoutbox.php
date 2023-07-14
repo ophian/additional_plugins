@@ -20,7 +20,7 @@ class serendipity_plugin_shoutbox extends serendipity_plugin
         $propbag->add('description',   PLUGIN_SHOUTBOX_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Lange, Ian Styx');
-        $propbag->add('version',       '1.05');
+        $propbag->add('version',       '1.06');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '5.3.0'
@@ -141,14 +141,14 @@ class serendipity_plugin_shoutbox extends serendipity_plugin
             $timestamp = time();
             $remoteAddress = serendipity_db_escape_string($_SERVER['REMOTE_ADDR']);
             $shoutText = serendipity_db_escape_string(trim($_POST['serendipity']['shouttext']));
-            $sql = "INSERT INTO ${serendipity['dbPrefix']}shoutbox ( timestamp, ip, body )
+            $sql = "INSERT INTO {$serendipity['dbPrefix']}shoutbox ( timestamp, ip, body )
                          VALUES ( $timestamp, '$remoteAddress', '$shoutText' )";
             serendipity_db_query($sql);
         }
         // Delete
         if (!empty($serendipity['GET']['action']) && $serendipity['GET']['action'] == 'shoutboxdelete'
         && isset($_SESSION['serendipityAuthedUser']) && $_SESSION['serendipityAuthedUser'] === true) {
-            $sql = "DELETE FROM ${serendipity['dbPrefix']}shoutbox WHERE id = " . (int)$serendipity['GET']['comment_id'];
+            $sql = "DELETE FROM {$serendipity['dbPrefix']}shoutbox WHERE id = " . (int)$serendipity['GET']['comment_id'];
             serendipity_db_query($sql);
          }
 

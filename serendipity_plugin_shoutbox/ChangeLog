@@ -1,3 +1,7 @@
+1.06:
+-----
+ * PHP 8 fixes
+
 1.05:
 -----
  * Replace sprintf() db preparations
