@@ -6,36 +6,6 @@ if (IN_serendipity !== true) {
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-#mood list.
-#i apologize for the pain this list may cause.
-#format: mood|~|img|~|ascii
-#each mood is separated by |`|
-#why the awful delimiters?  because lots of normal chars are used for the ascii art.
-#this list is from livejournal.  anyone up for some ascii art??
-$img_pre = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . 'default/img/emoticons';
-
-@define('PLUGIN_MYMOOD_LISTOFMOODS',
-        PLUGIN_MYMOOD_ACCOMPLISHED."|~||~||`|".PLUGIN_MYMOOD_AGGRAVATED."|~||~||`|".PLUGIN_MYMOOD_AMUSED."|~||~||`|".PLUGIN_MYMOOD_ANGRY."|~||~||`|".PLUGIN_MYMOOD_ANNOYED."|~||~||`|".PLUGIN_MYMOOD_ANXIOUS."|~||~||`|".PLUGIN_MYMOOD_APATHETIC."|~||~||`|".
-        PLUGIN_MYMOOD_ARTISTIC."|~||~||`|".PLUGIN_MYMOOD_AWAKE."|~||~||`|".PLUGIN_MYMOOD_BITCHY."|~||~||`|".PLUGIN_MYMOOD_BLAH."|~||~||`|".PLUGIN_MYMOOD_BLANK."|~||~||`|".PLUGIN_MYMOOD_BORED."|~||~||`|".PLUGIN_MYMOOD_BOUNCY."|~||~||`|".
-        PLUGIN_MYMOOD_BUSY."|~||~||`|".PLUGIN_MYMOOD_CALM."|~||~||`|".PLUGIN_MYMOOD_CHEERFUL."|~||~||`|".PLUGIN_MYMOOD_CHIPPER."|~||~||`|".PLUGIN_MYMOOD_COLD."|~||~||`|".PLUGIN_MYMOOD_COMPLACENT."|~||~||`|".PLUGIN_MYMOOD_CONFUSED."|~||~||`|".
-        PLUGIN_MYMOOD_CONTEMPLATIVE."|~||~||`|".PLUGIN_MYMOOD_CONTENT."|~||~||`|".PLUGIN_MYMOOD_CRANKY."|~||~||`|".PLUGIN_MYMOOD_CRAPPY."|~||~||`|".PLUGIN_MYMOOD_CRAZY."|~||~||`|".PLUGIN_MYMOOD_CREATIVE."|~||~||`|".PLUGIN_MYMOOD_CRUSHED."|~||~||`|".
-        PLUGIN_MYMOOD_CURIOUS."|~||~||`|".PLUGIN_MYMOOD_CYNICAL."|~||~||`|".PLUGIN_MYMOOD_DEPRESSED."|~||~||`|".PLUGIN_MYMOOD_DETERMINED."|~||~||`|".PLUGIN_MYMOOD_DEVIOUS."|~||~||`|".PLUGIN_MYMOOD_DIRTY."|~||~||`|".PLUGIN_MYMOOD_DISAPPOINTED."|~||~||`|".
-        PLUGIN_MYMOOD_DISCONTENT."|~||~||`|".PLUGIN_MYMOOD_DISTRESSED."|~||~||`|".PLUGIN_MYMOOD_DITZY."|~||~||`|".PLUGIN_MYMOOD_DORKY."|~||~||`|".PLUGIN_MYMOOD_DRAINED."|~||~||`|".PLUGIN_MYMOOD_DRUNK."|~||~||`|".PLUGIN_MYMOOD_ECSTATIC."|~||~||`|".
-        PLUGIN_MYMOOD_EMBARRASSED."|~||~||`|".PLUGIN_MYMOOD_ENERGETIC."|~||~||`|".PLUGIN_MYMOOD_ENRAGED."|~||~||`|".PLUGIN_MYMOOD_ENTHRALLED."|~||~||`|".PLUGIN_MYMOOD_ENVIOUS."|~||~||`|".PLUGIN_MYMOOD_EXANIMATE."|~||~||`|".PLUGIN_MYMOOD_EXCITED."|~||~||`|".
-        PLUGIN_MYMOOD_EXHAUSTED."|~||~||`|".PLUGIN_MYMOOD_FLIRTY."|~||~||`|".PLUGIN_MYMOOD_FRUSTRATED."|~||~||`|".PLUGIN_MYMOOD_FULL."|~||~||`|".PLUGIN_MYMOOD_GEEKY."|~||~||`|".PLUGIN_MYMOOD_GIDDY."|~||~||`|".PLUGIN_MYMOOD_GIGGLY."|~||~||`|".
-        PLUGIN_MYMOOD_GLOOMY."|~||~||`|".PLUGIN_MYMOOD_GOOD."|~||~||`|".PLUGIN_MYMOOD_GRATEFUL."|~||~||`|".PLUGIN_MYMOOD_GROGGY."|~||~||`|".PLUGIN_MYMOOD_GRUMPY."|~||~||`|".PLUGIN_MYMOOD_GUILTY."|~||~||`|".PLUGIN_MYMOOD_HAPPY."|~|$img_pre/smile.png|~||`|" .
-        PLUGIN_MYMOOD_HIGH."|~||~||`|".PLUGIN_MYMOOD_HOPEFUL."|~||~||`|".PLUGIN_MYMOOD_HORNY."|~||~||`|".PLUGIN_MYMOOD_HOT."|~||~||`|".PLUGIN_MYMOOD_HUNGRY."|~||~||`|".PLUGIN_MYMOOD_HYPER."|~||~||`|".PLUGIN_MYMOOD_IMPRESSED."|~||~||`|".
-        PLUGIN_MYMOOD_INDESCRIBABLE."|~||~||`|".PLUGIN_MYMOOD_INDIFFERENT."|~||~||`|".PLUGIN_MYMOOD_INFURIATED."|~||~||`|".PLUGIN_MYMOOD_INTIMIDATED."|~||~||`|".PLUGIN_MYMOOD_IRATE."|~||~||`|".PLUGIN_MYMOOD_IRRITATED."|~||~||`|".PLUGIN_MYMOOD_JEALOUS."|~||~||`|".
-        PLUGIN_MYMOOD_JUBILANT."|~||~||`|".PLUGIN_MYMOOD_LAZY."|~||~||`|".PLUGIN_MYMOOD_LETHARGIC."|~||~||`|".PLUGIN_MYMOOD_LISTLESS."|~||~||`|".PLUGIN_MYMOOD_LONELY."|~||~||`|".PLUGIN_MYMOOD_LOVED."|~||~||`|".PLUGIN_MYMOOD_MELANCHOLY."|~||~||`|".
-        PLUGIN_MYMOOD_MELLOW."|~||~||`|".PLUGIN_MYMOOD_MISCHIEVOUS."|~||~||`|".PLUGIN_MYMOOD_MOODY."|~||~||`|".PLUGIN_MYMOOD_MOROSE."|~||~||`|".PLUGIN_MYMOOD_NAUGHTY."|~||~||`|".PLUGIN_MYMOOD_NAUSEATED."|~||~||`|".PLUGIN_MYMOOD_NERDY."|~||~||`|".
-        PLUGIN_MYMOOD_NERVOUS."|~||~||`|".PLUGIN_MYMOOD_NOSTALGIC."|~||~||`|".PLUGIN_MYMOOD_NUMB."|~||~||`|".PLUGIN_MYMOOD_OKAY."|~||~||`|".PLUGIN_MYMOOD_OPTIMISTIC."|~||~||`|".PLUGIN_MYMOOD_PEACEFUL."|~||~||`|".PLUGIN_MYMOOD_PENSIVE."|~||~||`|".
-        PLUGIN_MYMOOD_PESSIMISTIC."|~||~||`|".PLUGIN_MYMOOD_PISSED_OFF."|~||~||`|".PLUGIN_MYMOOD_PLEASED."|~||~||`|".PLUGIN_MYMOOD_PREDATORY."|~||~||`|".PLUGIN_MYMOOD_PRETTY."|~||~||`|".PLUGIN_MYMOOD_PRODUCTIVE."|~||~||`|".PLUGIN_MYMOOD_QUIXOTIC."|~||~||`|".PLUGIN_MYMOOD_RECUMBENT."|~||~||`|".
-        PLUGIN_MYMOOD_REFRESHED."|~||~||`|".PLUGIN_MYMOOD_REJECTED."|~||~||`|".PLUGIN_MYMOOD_REJUVENATED."|~||~||`|".PLUGIN_MYMOOD_RELAXED."|~||~||`|".PLUGIN_MYMOOD_RELIEVED."|~||~||`|".PLUGIN_MYMOOD_RESTLESS."|~||~||`|".PLUGIN_MYMOOD_RUSHED."|~||~||`|".
-        PLUGIN_MYMOOD_SAD."|~|$img_pre/cry.png|~||`|".PLUGIN_MYMOOD_SATISFIED."|~||~||`|".PLUGIN_MYMOOD_SCARED."|~||~||`|".PLUGIN_MYMOOD_SHOCKED."|~||~||`|".PLUGIN_MYMOOD_SICK."|~||~||`|".PLUGIN_MYMOOD_SILLY."|~|$img_pre/tongue.png|~||`|".PLUGIN_MYMOOD_SLEEPY."|~||~||`|".
-        PLUGIN_MYMOOD_SORE."|~||~||`|".PLUGIN_MYMOOD_STRESSED."|~||~||`|".PLUGIN_MYMOOD_SURPRISED."|~|$img_pre/eek.png|~||`|".PLUGIN_MYMOOD_SYMPATHETIC."|~||~||`|".PLUGIN_MYMOOD_THANKFUL."|~||~||`|".PLUGIN_MYMOOD_THIRSTY."|~||~||`|".PLUGIN_MYMOOD_THOUGHTFUL."|~||~||`|".
-        PLUGIN_MYMOOD_TIRED."|~||~||`|".PLUGIN_MYMOOD_TOUCHED."|~||~||`|".PLUGIN_MYMOOD_UNCOMFORTABLE."|~||~||`|".PLUGIN_MYMOOD_WEIRD."|~||~||`|".PLUGIN_MYMOOD_WORKING."|~||~||`|".PLUGIN_MYMOOD_WORRIED."|~|$img_pre/sad.png|~|"
-);
-
 class serendipity_event_mymood extends serendipity_event
 {
 
@@ -124,6 +94,36 @@ class serendipity_event_mymood extends serendipity_event
         if (serendipity_db_bool($this->get_config('db_built', false))) {
             return true;
         }
+
+        #mood list.
+        #i apologize for the pain this list may cause.
+        #format: mood|~|img|~|ascii
+        #each mood is separated by |`|
+        #why the awful delimiters?  because lots of normal chars are used for the ascii art.
+        #this list is from livejournal.  anyone up for some ascii art??
+        $img_pre = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . 'default/img/emoticons';
+
+        @define('PLUGIN_MYMOOD_LISTOFMOODS',
+                PLUGIN_MYMOOD_ACCOMPLISHED."|~||~||`|".PLUGIN_MYMOOD_AGGRAVATED."|~||~||`|".PLUGIN_MYMOOD_AMUSED."|~||~||`|".PLUGIN_MYMOOD_ANGRY."|~||~||`|".PLUGIN_MYMOOD_ANNOYED."|~||~||`|".PLUGIN_MYMOOD_ANXIOUS."|~||~||`|".PLUGIN_MYMOOD_APATHETIC."|~||~||`|".
+                PLUGIN_MYMOOD_ARTISTIC."|~||~||`|".PLUGIN_MYMOOD_AWAKE."|~||~||`|".PLUGIN_MYMOOD_BITCHY."|~||~||`|".PLUGIN_MYMOOD_BLAH."|~||~||`|".PLUGIN_MYMOOD_BLANK."|~||~||`|".PLUGIN_MYMOOD_BORED."|~||~||`|".PLUGIN_MYMOOD_BOUNCY."|~||~||`|".
+                PLUGIN_MYMOOD_BUSY."|~||~||`|".PLUGIN_MYMOOD_CALM."|~||~||`|".PLUGIN_MYMOOD_CHEERFUL."|~||~||`|".PLUGIN_MYMOOD_CHIPPER."|~||~||`|".PLUGIN_MYMOOD_COLD."|~||~||`|".PLUGIN_MYMOOD_COMPLACENT."|~||~||`|".PLUGIN_MYMOOD_CONFUSED."|~||~||`|".
+                PLUGIN_MYMOOD_CONTEMPLATIVE."|~||~||`|".PLUGIN_MYMOOD_CONTENT."|~||~||`|".PLUGIN_MYMOOD_CRANKY."|~||~||`|".PLUGIN_MYMOOD_CRAPPY."|~||~||`|".PLUGIN_MYMOOD_CRAZY."|~||~||`|".PLUGIN_MYMOOD_CREATIVE."|~||~||`|".PLUGIN_MYMOOD_CRUSHED."|~||~||`|".
+                PLUGIN_MYMOOD_CURIOUS."|~||~||`|".PLUGIN_MYMOOD_CYNICAL."|~||~||`|".PLUGIN_MYMOOD_DEPRESSED."|~||~||`|".PLUGIN_MYMOOD_DETERMINED."|~||~||`|".PLUGIN_MYMOOD_DEVIOUS."|~||~||`|".PLUGIN_MYMOOD_DIRTY."|~||~||`|".PLUGIN_MYMOOD_DISAPPOINTED."|~||~||`|".
+                PLUGIN_MYMOOD_DISCONTENT."|~||~||`|".PLUGIN_MYMOOD_DISTRESSED."|~||~||`|".PLUGIN_MYMOOD_DITZY."|~||~||`|".PLUGIN_MYMOOD_DORKY."|~||~||`|".PLUGIN_MYMOOD_DRAINED."|~||~||`|".PLUGIN_MYMOOD_DRUNK."|~||~||`|".PLUGIN_MYMOOD_ECSTATIC."|~||~||`|".
+                PLUGIN_MYMOOD_EMBARRASSED."|~||~||`|".PLUGIN_MYMOOD_ENERGETIC."|~||~||`|".PLUGIN_MYMOOD_ENRAGED."|~||~||`|".PLUGIN_MYMOOD_ENTHRALLED."|~||~||`|".PLUGIN_MYMOOD_ENVIOUS."|~||~||`|".PLUGIN_MYMOOD_EXANIMATE."|~||~||`|".PLUGIN_MYMOOD_EXCITED."|~||~||`|".
+                PLUGIN_MYMOOD_EXHAUSTED."|~||~||`|".PLUGIN_MYMOOD_FLIRTY."|~||~||`|".PLUGIN_MYMOOD_FRUSTRATED."|~||~||`|".PLUGIN_MYMOOD_FULL."|~||~||`|".PLUGIN_MYMOOD_GEEKY."|~||~||`|".PLUGIN_MYMOOD_GIDDY."|~||~||`|".PLUGIN_MYMOOD_GIGGLY."|~||~||`|".
+                PLUGIN_MYMOOD_GLOOMY."|~||~||`|".PLUGIN_MYMOOD_GOOD."|~||~||`|".PLUGIN_MYMOOD_GRATEFUL."|~||~||`|".PLUGIN_MYMOOD_GROGGY."|~||~||`|".PLUGIN_MYMOOD_GRUMPY."|~||~||`|".PLUGIN_MYMOOD_GUILTY."|~||~||`|".PLUGIN_MYMOOD_HAPPY."|~|$img_pre/smile.png|~||`|" .
+                PLUGIN_MYMOOD_HIGH."|~||~||`|".PLUGIN_MYMOOD_HOPEFUL."|~||~||`|".PLUGIN_MYMOOD_HORNY."|~||~||`|".PLUGIN_MYMOOD_HOT."|~||~||`|".PLUGIN_MYMOOD_HUNGRY."|~||~||`|".PLUGIN_MYMOOD_HYPER."|~||~||`|".PLUGIN_MYMOOD_IMPRESSED."|~||~||`|".
+                PLUGIN_MYMOOD_INDESCRIBABLE."|~||~||`|".PLUGIN_MYMOOD_INDIFFERENT."|~||~||`|".PLUGIN_MYMOOD_INFURIATED."|~||~||`|".PLUGIN_MYMOOD_INTIMIDATED."|~||~||`|".PLUGIN_MYMOOD_IRATE."|~||~||`|".PLUGIN_MYMOOD_IRRITATED."|~||~||`|".PLUGIN_MYMOOD_JEALOUS."|~||~||`|".
+                PLUGIN_MYMOOD_JUBILANT."|~||~||`|".PLUGIN_MYMOOD_LAZY."|~||~||`|".PLUGIN_MYMOOD_LETHARGIC."|~||~||`|".PLUGIN_MYMOOD_LISTLESS."|~||~||`|".PLUGIN_MYMOOD_LONELY."|~||~||`|".PLUGIN_MYMOOD_LOVED."|~||~||`|".PLUGIN_MYMOOD_MELANCHOLY."|~||~||`|".
+                PLUGIN_MYMOOD_MELLOW."|~||~||`|".PLUGIN_MYMOOD_MISCHIEVOUS."|~||~||`|".PLUGIN_MYMOOD_MOODY."|~||~||`|".PLUGIN_MYMOOD_MOROSE."|~||~||`|".PLUGIN_MYMOOD_NAUGHTY."|~||~||`|".PLUGIN_MYMOOD_NAUSEATED."|~||~||`|".PLUGIN_MYMOOD_NERDY."|~||~||`|".
+                PLUGIN_MYMOOD_NERVOUS."|~||~||`|".PLUGIN_MYMOOD_NOSTALGIC."|~||~||`|".PLUGIN_MYMOOD_NUMB."|~||~||`|".PLUGIN_MYMOOD_OKAY."|~||~||`|".PLUGIN_MYMOOD_OPTIMISTIC."|~||~||`|".PLUGIN_MYMOOD_PEACEFUL."|~||~||`|".PLUGIN_MYMOOD_PENSIVE."|~||~||`|".
+                PLUGIN_MYMOOD_PESSIMISTIC."|~||~||`|".PLUGIN_MYMOOD_PISSED_OFF."|~||~||`|".PLUGIN_MYMOOD_PLEASED."|~||~||`|".PLUGIN_MYMOOD_PREDATORY."|~||~||`|".PLUGIN_MYMOOD_PRETTY."|~||~||`|".PLUGIN_MYMOOD_PRODUCTIVE."|~||~||`|".PLUGIN_MYMOOD_QUIXOTIC."|~||~||`|".PLUGIN_MYMOOD_RECUMBENT."|~||~||`|".
+                PLUGIN_MYMOOD_REFRESHED."|~||~||`|".PLUGIN_MYMOOD_REJECTED."|~||~||`|".PLUGIN_MYMOOD_REJUVENATED."|~||~||`|".PLUGIN_MYMOOD_RELAXED."|~||~||`|".PLUGIN_MYMOOD_RELIEVED."|~||~||`|".PLUGIN_MYMOOD_RESTLESS."|~||~||`|".PLUGIN_MYMOOD_RUSHED."|~||~||`|".
+                PLUGIN_MYMOOD_SAD."|~|$img_pre/cry.png|~||`|".PLUGIN_MYMOOD_SATISFIED."|~||~||`|".PLUGIN_MYMOOD_SCARED."|~||~||`|".PLUGIN_MYMOOD_SHOCKED."|~||~||`|".PLUGIN_MYMOOD_SICK."|~||~||`|".PLUGIN_MYMOOD_SILLY."|~|$img_pre/tongue.png|~||`|".PLUGIN_MYMOOD_SLEEPY."|~||~||`|".
+                PLUGIN_MYMOOD_SORE."|~||~||`|".PLUGIN_MYMOOD_STRESSED."|~||~||`|".PLUGIN_MYMOOD_SURPRISED."|~|$img_pre/eek.png|~||`|".PLUGIN_MYMOOD_SYMPATHETIC."|~||~||`|".PLUGIN_MYMOOD_THANKFUL."|~||~||`|".PLUGIN_MYMOOD_THIRSTY."|~||~||`|".PLUGIN_MYMOOD_THOUGHTFUL."|~||~||`|".
+                PLUGIN_MYMOOD_TIRED."|~||~||`|".PLUGIN_MYMOOD_TOUCHED."|~||~||`|".PLUGIN_MYMOOD_UNCOMFORTABLE."|~||~||`|".PLUGIN_MYMOOD_WEIRD."|~||~||`|".PLUGIN_MYMOOD_WORKING."|~||~||`|".PLUGIN_MYMOOD_WORRIED."|~|$img_pre/sad.png|~|"
+        );
 
 #FIXME:  Add hooks for XML / exporting to convert images/text to ascii art/text or text-only.
 #  That doesn't belong here.
