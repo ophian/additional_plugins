@@ -12,6 +12,7 @@
  * See changelog for details.
  *
  */
+/* 07/2023 - fix size() is not a function issue, while deprecated in JQuery version: 1.8 and removed in: 3.0. Replaced by .length property. */
 
 ;
 (function ($) {
@@ -639,11 +640,11 @@ var Menu = function (options, input) {
     }
 
     function movePosition(step, event) {
-        if (!((step < 0 && activeIndex === 0) || (step > 0 && activeIndex == listItems.size() - 1))) {
+        if (!((step < 0 && activeIndex === 0) || (step > 0 && activeIndex == listItems.length - 1))) {
             activeIndex += step;
             if (activeIndex < 0) {
-                activeIndex = listItems.size() - 1;
-            } else if (activeIndex >= listItems.size()) {
+                activeIndex = listItems.length - 1;
+            } else if (activeIndex >= listItems.length) {
                 activeIndex = 0;
             }
         }
@@ -726,8 +727,8 @@ var Menu = function (options, input) {
             moveSelect(-1, event);
         },
         nextPage: function (event) {
-            if (activeIndex != listItems.size() - 1 && activeIndex + 8 > listItems.size()) {
-                moveSelect(listItems.size() - 1 - activeIndex, event);
+            if (activeIndex != listItems.length - 1 && activeIndex + 8 > listItems.length) {
+                moveSelect(listItems.length - 1 - activeIndex, event);
             } else {
                 moveSelect(8, event);
             }

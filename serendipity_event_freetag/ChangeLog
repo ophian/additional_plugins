@@ -1,3 +1,7 @@
+5.31:
+-----
+ * Update jquery.autocomplete script for JQuery removed/replaced properties throwing errors
+
 5.30:
 -----
  * Check that the tag GET variable is a string (Thanks to @hannob)

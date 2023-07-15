@@ -41,9 +41,9 @@ class serendipity_event_freetag extends serendipity_event
         $propbag->add('requirements',  array(
             'serendipity' => '2.1.0',
             'smarty'      => '3.1.0',
-            'php'         => '5.3.0'
+            'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '5.30');
+        $propbag->add('version',       '5.31');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
