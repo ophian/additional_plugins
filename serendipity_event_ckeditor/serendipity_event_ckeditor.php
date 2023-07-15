@@ -64,7 +64,7 @@ class serendipity_event_ckeditor extends serendipity_event
      * Note revisions of ckeditor and plugin additions to lang files
      * @var array
      */
-    protected $revisionPackage = array('CKEditor 4.21.0 (revision 4a1fb11f44, full package, 2023-07-05)',
+    protected $revisionPackage = array('CKEditor 4.22.1 (revision 4a1fb11f44, full package, 2023-07-05)',
                                        'CKEditor-Plugin: mediaembed, included to custom build. v. 0.6 (https://github.com/frozeman/MediaEmbed, 2013-07-11)',
                                        'CKEditor-Plugin: Custom build added for current version "ajax", "autocomplete", "autogrow", "autolink", "button", "clipboard", "dialog", "dialogui", "embedbase", "emoji", "fakeobjects", "floatpanel", "lineutils", "notification", "notificationaggregator", "panelbutton", "placeholder", "textmatch", "textwatcher", "undo", "widget", "widgetselection" and "xml" plugins, 2023-07-05)',
                                        'CKEditor-Plugin: Manually added for current version "codesnippet", "embed" and "embedsemantic" plugins, 2023-07-05)',
