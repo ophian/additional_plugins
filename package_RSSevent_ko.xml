@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the Serendipity Backend (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the Blog directly with one click from within the administration area. It is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 15 Jul 2023 13:07:01 +0200</pubDate>
+<pubDate>Sat, 15 Jul 2023 14:25:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -338,7 +338,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;다음/이전 글로 가는 링크 표시&lt;/b&gt;&lt;br /&gt;글을 읽으면서 다음이나 이전 글로 갈 수 있도록 함&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Thu, 13 Jul 2023 19:15:27 +0200</pubDate>
+<pubDate>Sat, 15 Jul 2023 14:20:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
@@ -1093,8 +1093,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_templatechooser</link>
 <category>Event Plugins</category>
 <author>Evan Nemerson</author>
-<content:encoded>&lt;b&gt;serendipity_event_templatechooser&lt;br /&gt;템플릿 선택&lt;/b&gt;&lt;br /&gt;방문자가 즉석에서 템플릿을 바꿀 수 있도록 함&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 22 Mar 2020 15:48:14 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_templatechooser&lt;br /&gt;템플릿 선택&lt;/b&gt;&lt;br /&gt;방문자가 즉석에서 템플릿을 바꿀 수 있도록 함&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sat, 15 Jul 2023 13:33:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_templatechooser</guid>
 </item>
 <item>
