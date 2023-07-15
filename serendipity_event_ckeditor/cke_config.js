@@ -3,13 +3,17 @@
  */
 
 /**
- * @fileOverview A Serendipity Styx serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.26, 2021-11-21
+ * @fileOverview A Serendipity Styx serendipity_event_ckeditor CKEDITOR custom config file: cke_config.js, v. 2.27, 2023-07-15
  */
 
  /**
  * Substitute every config option to CKE in here
  */
 CKEDITOR.editorConfig = function( config ) {
+
+    // Up from v.4.22 EOL the ckeditor script is checking "3rd" party for "security", see https://github.com/ckeditor/ckeditor4/commit/b7b2f4748be71eb01c2f99afefaff002f5061a3e.
+    // We don't want this for privacy, since that is easily usable as a logger! See https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html#cfg-versionCheck
+    config.versionCheck = false;
 
     // Allow dark mode
     if (typeof STYX_DARKMODE === 'undefined' || STYX_DARKMODE === null) STYX_DARKMODE = false;

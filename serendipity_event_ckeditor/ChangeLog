@@ -1,3 +1,10 @@
+4.22.1.0:
+---------
+    * Upgrade to CKEDITOR 4.22. Series, update 1 (https://ckeditor.com/cke4/release-notes).
+      Without further notice, all manually added CKEditor AddOns and/or dependencies are updated too.
+      This is the last ckeditor supported version of CKE4. When this is getting unsafe we need to change.
+    * Due to new Version check variable which is not the privacy to have, this is set OFF in our configuration config script.
+
 4.21.0.0:
 ---------
     * Upgrade to CKEDITOR 4.21. Series, update 0 (https://ckeditor.com/cke4/release-notes).
