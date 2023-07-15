@@ -21,7 +21,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
-        $propbag->add('version',       '1.83');
+        $propbag->add('version',       '1.84');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -236,7 +236,7 @@ class serendipity_event_entrypaging extends serendipity_event
                                     }
                                 }
                                 if ($joincat) {
-                                    $cond['where'] .= " c.authorid = 0 AND";
+                                    $cond['where'] .= " (c.authorid = 0 OR c.categoryid IS NULL) AND";
                                 }
                             }
 
