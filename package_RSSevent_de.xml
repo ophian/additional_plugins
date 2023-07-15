@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;Sobald das Serendipity Backend (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in die Startseite des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten. Es ist zu empfehlen, dieses Plugin in Kombination mit dem modemaintain (Wartungs-) Ereignis Plugin zu nutzen. Für Autoupdate Hinweise müssen Sie die globale Serendipity Konfigurationsoption in &quot;Einstellungen:: Generelle Einstellungen: Update-Hinweis&quot; auf &quot;stable&quot; oder &quot;beta&quot; stellen, um es überhaupt über das Dashboard nutzen zu können!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 15 Jul 2023 14:25:00 +0200</pubDate>
+<pubDate>Sat, 15 Jul 2023 18:16:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -131,7 +131,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie die Plugin Konfigurations Seite für mehr Informationen.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Sat, 15 Jul 2023 13:20:53 +0200</pubDate>
+<pubDate>Sat, 15 Jul 2023 18:14:25 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
