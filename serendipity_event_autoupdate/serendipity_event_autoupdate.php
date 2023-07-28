@@ -16,7 +16,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.9.5');
+        $propbag->add('version',       '1.9.6');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -188,7 +188,7 @@ class serendipity_event_autoupdate extends serendipity_event
                     $ad_help   = strip_tags(PLUGIN_AUTOUPD_MSG_RELOAD);
                     $ad_loader = empty($nozipext) ? '<div id="loader"><span></span><span></span><span></span></div>' : '';
                     $css_upd   = @file_get_contents(dirname(__FILE__) . '/upgrade.min.css');
-                    $bimgpath  = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . 's9y_banner_small.png';
+                    $bimgpath  = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . (file_exists($serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . 'styx_logo_150.png') ? 'styx_logo_150.png' : 's9y_banner_small.png');
                     $s9ybanner = (file_exists($_SERVER['DOCUMENT_ROOT'] . $bimgpath) ? '<img src="' . $bimgpath . '" alt="Serendipity Styx PHP Weblog" title="' . POWERED_BY . ' Serendipity Styx"> ' : ' ');
                     $nv        = (function_exists('serendipity_specialchars') ? serendipity_specialchars($_REQUEST['serendipity']['newVersion']) : htmlspecialchars($_REQUEST['serendipity']['newVersion'], ENT_COMPAT, LANG_CHARSET)); // reduce to POST only?
                     if (trim($nv) == '') return;
