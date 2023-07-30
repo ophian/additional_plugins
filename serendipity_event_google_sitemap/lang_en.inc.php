@@ -20,7 +20,7 @@
 @define('PLUGIN_EVENT_SITEMAP_ADDFEEDS', 'Add newsfeeds');
 @define('PLUGIN_EVENT_SITEMAP_ADDFEEDS_DESC', 'Adds the URLs of the newsfeeds (RSS 0.9, 1.0, 2.0, Atom and Categories) to your sitemap.');
 @define('PLUGIN_EVENT_SITEMAP_UNKNOWN_SERVICE', 'unknown');
-@define('PLUGIN_EVENT_SITEMAP_PERMALINK_WARNING', 'Warning: to get a correct sitemap you have to place the permalink-plugin <b>before</b> the sitemap-plug in your configuration.');
+@define('PLUGIN_EVENT_SITEMAP_PERMALINK_WARNING', 'Warning: to get a correct sitemap you have to place the permalink-plugin <b>before</b> the sitemap-plugin in your configuration.');
 @define('PLUGIN_EVENT_SITEMAP_GZIP_SITEMAP', 'Gzip the sitemap.xml');
 @define('PLUGIN_EVENT_SITEMAP_GZIP_SITEMAP_DESC', 'The sitemap-protocol supports gziped files to save bandwidth. If you\'re experiencing problems, you can try to turn this off. (Note: If your PHP doesn\'t support gzip the plugin will create an unzipped file automagically until you get a PHP with gzip-enabled. So generally you don\'t need to turn this off)');
 @define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD', 'URL-types to add');
