@@ -20,13 +20,15 @@ if (IN_serendipity !== true) {
 class serendipity_event_google_sitemap extends serendipity_event
 {
     var $title = PLUGIN_EVENT_SITEMAP_TITLE;
+    private $gnewsmode = null;
+    private $types = null;
 
     function introspect(&$propbag)
     {
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris');
-        $propbag->add('version', '0.70');
+        $propbag->add('version', '0.71');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -177,8 +179,10 @@ class serendipity_event_google_sitemap extends serendipity_event
 
         $str .= "\t<url>\n";
         $str .= "\t\t<loc>$url</loc>\n";
-        if ($lastmod != null) {
-            $str_lastmod = gmstrftime('%Y-%m-%dT%H:%M:%SZ', $lastmod); // 'Z' does mean UTC in W3C Date/Time
+        if ($lastmod !== null) {
+            $str_lastmod = @gmstrftime('%Y-%m-%dT%H:%M:%SZ', (int) $lastmod); // 'Z' does mean UTC in W3C Date/Time
+            #$formatter = new IntlDateFormatter(WYSIWYG_LANG, IntlDateFormatter::LONG, IntlDateFormatter::LONG); // how to get %Y-%m-%dT%H:%M:%SZ' lookalike here ???
+            #$str_lastmod = (string) $formatter->format((int) $lastmod);
             $str .= "\t\t<lastmod>$str_lastmod</lastmod>\n";
             if ($this->gnewsmode) {
                 $str .= "\t\t<news:news>\n";
@@ -472,16 +476,18 @@ class serendipity_event_google_sitemap extends serendipity_event
                 "SELECT MIN(timestamp) AS min_time
                    FROM {$serendipity['dbPrefix']}entries",
                 true, 'num');
-        $first_year  = 0+gmstrftime('%Y', $min[0]);
-        $first_month = 0+gmstrftime('%m', $min[0]);
-        $last_year   = 0+gmstrftime('%Y', time());
-        $last_month  = 0+gmstrftime('%m', time());
+        $first_year  = 0+@gmstrftime('%Y', (int) $min[0]);
+        $first_month = 0+@gmstrftime('%m', (int) $min[0]);
+        $last_year   = 0+@gmstrftime('%Y', time());
+        $last_month  = 0+@gmstrftime('%m', time());
 
         // add all the month-links
         if (is_array($min) && $first_year <= $last_year) {
             for($year = $first_year; $year <= $last_year; ++$year) {
                 $from_month = ($year == $first_year) ? $first_month : 1;
                 $till_month = ($year == $last_year) ? $last_month : 12;
+                // isn't $max missing here? What should that be?
+                #$max = ???
 
                 for($month = $from_month; $month <= $till_month; ++$month) {
                     $str_month = (($month<10) ? '0' : '') . $month;

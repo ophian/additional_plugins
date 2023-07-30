@@ -1,3 +1,8 @@
+0.71:
+-----
+ * Fixes for PHP 8.1+
+ * gmstrftime() is deprecated but usable with @silencer until PHP 9. This should get repaired within the next years!!
+
 0.70:
 -----
  * Using API methods for current requirements
