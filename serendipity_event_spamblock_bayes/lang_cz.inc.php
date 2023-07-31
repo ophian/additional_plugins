@@ -53,7 +53,7 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_BLOCK_DESC',     'Pøi vlastním módu odmítnout pøi hodnocení vy¹¹ím ne¾? (v %)');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_MODERATE',     'Schvalovat');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_BLOCK',     'Odmítnout');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_CUSTOM',     'Vlastní nastavení');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_CUSTOM',     'Vlastní nastavení');
 
 // Next lines were translated on 2010/04/24
 

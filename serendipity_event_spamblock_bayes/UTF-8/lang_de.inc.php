@@ -36,7 +36,7 @@
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_BLOCK_DESC', 'Wenn die Option "Spambehandlung" auf "Manuelle Grenzen" gesetzt wird: Ab welchem Spamfaktor soll abgewiesen werden? (in %)');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_MODERATE', 'Moderieren');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_BLOCK', 'Abweisen');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_CUSTOM', 'Manuelle Grenzen');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_CUSTOM', 'Manuelle Grenzen');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAMBUTTON', 'Als Spam lernen');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_HAMBUTTON', 'Als valid lernen');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_LEARN', 'Lernen');
