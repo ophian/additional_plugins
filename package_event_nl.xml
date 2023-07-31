@@ -4792,13 +4792,13 @@
 <summary>Sitemap Generator (for Crawlers)</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Creates a sitemap.xml.gz, which can be used by miscellaneous Web-Crawlers. (Google, MSN, Yahoo and Ask)</description>
-<maintainers><maintainer><name>Boris</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Boris, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.71</version>
+  <version>0.72</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2023-07-30</date>
+  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <date>2023-07-31</date>
   <filelist>
     <dir name="serendipity_event_google_sitemap">
       <file>ChangeLog</file>
