@@ -29,7 +29,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris, Ian Styx');
-        $propbag->add('version', '0.72');
+        $propbag->add('version', '0.73');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -196,8 +196,11 @@ class serendipity_event_google_sitemap extends serendipity_event
         $str .= "\t<url>\n";
         $str .= "\t\t<loc>$url</loc>\n";
         if ($lastmod !== null) {
-            #$str_lastmod = @gmstrftime('%Y-%m-%dT%H:%M:%SZ', (int) $lastmod); // 'Z' does mean UTC in W3C Date/Time
-            $str_lastmod = $this->IntlDateFormatterGMT("yyyy-MM-dd'T'HH:mm:ss'Z'", $lastmod);
+            if (PHP_VERSION_ID < 80100) {
+                $str_lastmod = @gmstrftime('%Y-%m-%dT%H:%M:%SZ', (int) $lastmod); // 'Z' does mean UTC in W3C Date/Time
+            } else {
+                $str_lastmod = $this->IntlDateFormatterGMT("yyyy-MM-dd'T'HH:mm:ss'Z'", $lastmod);
+            }
             $str .= "\t\t<lastmod>$str_lastmod</lastmod>\n";
             if ($this->gnewsmode) {
                 $str .= "\t\t<news:news>\n";
@@ -491,14 +494,17 @@ class serendipity_event_google_sitemap extends serendipity_event
                 "SELECT MIN(timestamp) AS min_time
                    FROM {$serendipity['dbPrefix']}entries",
                 true, 'num');
-        #$first_year  = 0+@gmstrftime('%Y', (int) $min[0]);
-        #$first_month = 0+@gmstrftime('%m', (int) $min[0]);
-        #$last_year   = 0+@gmstrftime('%Y', time());
-        #$last_month  = 0+@gmstrftime('%m', time());
-        $first_year  = 0+$this->IntlDateFormatterGMT('yyyy', (int) $min[0]);
-        $first_month = 0+$this->IntlDateFormatterGMT('MM', (int) $min[0]);
-        $last_year   = 0+$this->IntlDateFormatterGMT('yyyy', time());
-        $last_month  = 0+$this->IntlDateFormatterGMT('MM', time());
+        if (PHP_VERSION_ID < 80100) {
+            $first_year  = 0+@gmstrftime('%Y', (int) $min[0]);
+            $first_month = 0+@gmstrftime('%m', (int) $min[0]);
+            $last_year   = 0+@gmstrftime('%Y', time());
+            $last_month  = 0+@gmstrftime('%m', time());
+        } else {
+            $first_year  = 0+$this->IntlDateFormatterGMT('yyyy', (int) $min[0]);
+            $first_month = 0+$this->IntlDateFormatterGMT('MM', (int) $min[0]);
+            $last_year   = 0+$this->IntlDateFormatterGMT('yyyy', time());
+            $last_month  = 0+$this->IntlDateFormatterGMT('MM', time());
+        }
 
         // add all the month-links
         if (is_array($min) && $first_year <= $last_year) {

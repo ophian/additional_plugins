@@ -1,3 +1,7 @@
+0.73:
+-----
+ * Improve 0.72 conversion fix for not enabled intl extension below PHP 8.1
+
 0.72:
 -----
  * Other fixes for PHP 8.1+
