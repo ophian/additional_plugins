@@ -22,13 +22,14 @@ class serendipity_event_google_sitemap extends serendipity_event
     var $title = PLUGIN_EVENT_SITEMAP_TITLE;
     private $gnewsmode = null;
     private $types = null;
+    private $categories = [];
 
     function introspect(&$propbag)
     {
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
-        $propbag->add('author', 'Boris');
-        $propbag->add('version', '0.71');
+        $propbag->add('author', 'Boris, Ian Styx');
+        $propbag->add('version', '0.72');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -40,7 +41,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('configuration', array('report', 'url', 'gzip_sitemap', 'avoid_noindex', 'types_to_add', 'gnews', 'gnews_single', 'custom', 'custom2', 'gnews_name', 'gnews_subscription', 'gnews_genre'));
         $propbag->add('requirements',  array(
                 'serendipity' => '2.1',
-                'php' => '7.0')
+                'php' => '7.4')
         );
     }
 
@@ -169,6 +170,21 @@ class serendipity_event_google_sitemap extends serendipity_event
     }
 
     /**
+     * Replacement for deprecated gmstrftime()
+     */
+    function IntlDateFormatterGMT($pattern, $ts)
+    {
+        $formatter = new IntlDateFormatter(
+                            WYSIWYG_LANG,
+                            IntlDateFormatter::SHORT,
+                            IntlDateFormatter::SHORT,
+                            'GMT',
+                            IntlDateFormatter::GREGORIAN,
+                            $pattern);
+        return (string) $formatter->format((int) $ts);
+    }
+
+    /**
      * function to add an entry to the xml-string $str
      */
     function addtoxml(&$str, $url, $lastmod = null, $priority = null, $changefreq = null, $props = null)
@@ -180,9 +196,8 @@ class serendipity_event_google_sitemap extends serendipity_event
         $str .= "\t<url>\n";
         $str .= "\t\t<loc>$url</loc>\n";
         if ($lastmod !== null) {
-            $str_lastmod = @gmstrftime('%Y-%m-%dT%H:%M:%SZ', (int) $lastmod); // 'Z' does mean UTC in W3C Date/Time
-            #$formatter = new IntlDateFormatter(WYSIWYG_LANG, IntlDateFormatter::LONG, IntlDateFormatter::LONG); // how to get %Y-%m-%dT%H:%M:%SZ' lookalike here ???
-            #$str_lastmod = (string) $formatter->format((int) $lastmod);
+            #$str_lastmod = @gmstrftime('%Y-%m-%dT%H:%M:%SZ', (int) $lastmod); // 'Z' does mean UTC in W3C Date/Time
+            $str_lastmod = $this->IntlDateFormatterGMT("yyyy-MM-dd'T'HH:mm:ss'Z'", $lastmod);
             $str .= "\t\t<lastmod>$str_lastmod</lastmod>\n";
             if ($this->gnewsmode) {
                 $str .= "\t\t<news:news>\n";
@@ -476,10 +491,14 @@ class serendipity_event_google_sitemap extends serendipity_event
                 "SELECT MIN(timestamp) AS min_time
                    FROM {$serendipity['dbPrefix']}entries",
                 true, 'num');
-        $first_year  = 0+@gmstrftime('%Y', (int) $min[0]);
-        $first_month = 0+@gmstrftime('%m', (int) $min[0]);
-        $last_year   = 0+@gmstrftime('%Y', time());
-        $last_month  = 0+@gmstrftime('%m', time());
+        #$first_year  = 0+@gmstrftime('%Y', (int) $min[0]);
+        #$first_month = 0+@gmstrftime('%m', (int) $min[0]);
+        #$last_year   = 0+@gmstrftime('%Y', time());
+        #$last_month  = 0+@gmstrftime('%m', time());
+        $first_year  = 0+$this->IntlDateFormatterGMT('yyyy', (int) $min[0]);
+        $first_month = 0+$this->IntlDateFormatterGMT('MM', (int) $min[0]);
+        $last_year   = 0+$this->IntlDateFormatterGMT('yyyy', time());
+        $last_month  = 0+$this->IntlDateFormatterGMT('MM', time());
 
         // add all the month-links
         if (is_array($min) && $first_year <= $last_year) {
@@ -487,7 +506,7 @@ class serendipity_event_google_sitemap extends serendipity_event
                 $from_month = ($year == $first_year) ? $first_month : 1;
                 $till_month = ($year == $last_year) ? $last_month : 12;
                 // isn't $max missing here? What should that be?
-                #$max = ???
+                $max = null;
 
                 for($month = $from_month; $month <= $till_month; ++$month) {
                     $str_month = (($month<10) ? '0' : '') . $month;
@@ -582,7 +601,7 @@ class serendipity_event_google_sitemap extends serendipity_event
             foreach($tag_pages AS $cur) {
                 $path_quoted = preg_quote($serendipity['serendipityHTTPPath'], '#');
                 $url = $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/tag/'. preg_replace("#$path_quoted#", '', urlencode($cur['tag']),1);
-                $cur_time = ($cur['timestamp'] == 0) ? null : (int)$cur['timestamp'];
+                $cur_time = (!isset($cur['timestamp']) || $cur['timestamp'] == 0) ? null : (int)$cur['timestamp'];
                 $this->addtoxml($sitemap_xml, $url, $cur_time, 0.4);
             }
         }

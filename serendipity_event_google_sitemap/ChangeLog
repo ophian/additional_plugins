@@ -1,3 +1,8 @@
+0.72:
+-----
+ * Other fixes for PHP 8.1+
+ * Conversion for deprecated gmstrftime() now using IntlDateFormatter() with GREGORIEN calendar
+
 0.71:
 -----
  * Fixes for PHP 8.1+
