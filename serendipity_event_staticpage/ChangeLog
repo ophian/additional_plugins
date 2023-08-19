@@ -1,3 +1,7 @@
+6.65:
+-----
+ * Improve and Fix building fake bool (0|1) values of config items for strict_types
+
 6.64:
 -----
  * Fix for mysqli search-term SQL queries in FULLTEXT IN BOOLEAN MODE

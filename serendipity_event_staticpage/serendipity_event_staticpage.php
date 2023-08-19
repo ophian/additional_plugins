@@ -99,7 +99,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.64');
+        $propbag->add('version', '6.65');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -3172,12 +3172,12 @@ class serendipity_event_staticpage extends serendipity_event
         // Apparently no value was set for this config item
         if ($value === 'unset') {
             // Try and set the default value for the config item
-            $value = $cbag->get('default');
+            $value = $cbag->get('default') ?? '';
         }
 
         $hvalue   = ((!isset($serendipity['POST']['staticSubmit']) || (isset($serendipity['GET']['pre']) && is_array($serendipity['GET']['pre']))) && isset($serendipity['POST']['plugin'][$config_item])
                     ? self::html_specialchars($serendipity['POST']['plugin'][$config_item], null, LANG_CHARSET, $double)
-                    : self::html_specialchars($value, null, LANG_CHARSET, $double));
+                    : self::html_specialchars((string) $value, null, LANG_CHARSET, $double));
 
         $radio    = array();
         $select   = array();
@@ -3836,7 +3836,7 @@ class serendipity_event_staticpage extends serendipity_event
                     #    break;
                     #}
 
-                    if ($debug) { $serendipity['logger']->debug("IN_staticpage:: eventData= ".print_r($eventData,1)); }
+                    if ($debug) { $serendipity['logger']->debug("IN_staticpage:: eventData= ".print_r($eventData,true)); }
                     // From Serendipity 2.1 now supports an non-set oldDir to remove files to 'uploads/' root
                     if ($eventData[0]['oldDir'] === null) {
                         $eventData[0]['oldDir'] = '';
@@ -3956,7 +3956,7 @@ class serendipity_event_staticpage extends serendipity_event
                             serendipity_db_query($uq);// RQ: does it matter to serendipity_db_escape_string() content which already has been escaped ??
                             $i++;
                         }
-                        #if ($debug) { $serendipity['logger']->debug("IN_staticpage:: REPLACEd= ".print_r($dir,1)); }
+                        #if ($debug) { $serendipity['logger']->debug("IN_staticpage:: REPLACEd= ".print_r($dir,true)); }
                         if ($debug) { $serendipity['logger']->debug(" - - - "); /*spacer*/ }
 
                         $spimgmovedtodir = sprintf(STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRIES, count($dirs));
