@@ -71,7 +71,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '2.1.3');
+        $propbag->add('version',        '2.1.4');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -1134,7 +1134,7 @@ class serendipity_event_cal extends serendipity_event
         $env_from     = "-f ".trim($to);
 
         //Create Mime Boundry
-        $mime_boundary = "----$subject----".md5(time());
+        $mime_boundary = "----$subject----".md5((string) time());
 
         $message .= "This is a multi-part message in MIME format.\n\n";
         $message .= "--$mime_boundary\n";
