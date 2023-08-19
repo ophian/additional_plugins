@@ -21,7 +21,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '3.8.0');
+        $propbag->add('version',       '3.8.1');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.3'
@@ -187,7 +187,7 @@ class serendipity_event_statistics extends serendipity_event
                              * Official list of user agents that are regarded as robots/spiders by Project COUNTER (https://www.projectcounter.org/)
                              * https://github.com/atmire/COUNTER-Robots/blob/master/generated/COUNTER_Robots_list.txt
                              * $array = explode("\n", file_get_contents(dirname(__FILE__).'/botlist.txt'));
-                             * echo '<pre>'.var_export($array,1).'</pre>';
+                             * echo '<pre>'.var_export($array,true).'</pre>';
                              * Fixed for preg_match()
                              */
                             $bannbots = array (
@@ -1341,7 +1341,7 @@ class serendipity_event_statistics extends serendipity_event
             echo '    <dd>'.$row['browser']."</dd>\n";
         }
         #echo '<pre>'.print_r($address,1).'</pre>';
-        if ($debug) { $serendipity['logger']->debug("L_".__LINE__.":: $logtag CACHED IP DNS check for last_visitors [20] array ".print_r($address,1)); }
+        if ($debug) { $serendipity['logger']->debug("L_".__LINE__.":: $logtag CACHED IP DNS check for last_visitors [20] array ".print_r($address,true)); }
     }
 ?>
                 </dl>

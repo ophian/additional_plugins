@@ -1,3 +1,7 @@
+3.8.1:
+-----
+ * Improve and fix for strict_types
+
 3.8.0:
 ------
  * Prepare for waitingspin "busy"-Icon usage for the garbage collect workload up from next 2023 Styx release
