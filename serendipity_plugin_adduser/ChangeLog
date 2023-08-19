@@ -1,3 +1,7 @@
+2.56:
+-----
+ * Improve and fix for strict_types
+
 2.55:
 -----
  * Raise requirements for 2.54

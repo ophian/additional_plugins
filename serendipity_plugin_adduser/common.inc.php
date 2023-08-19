@@ -180,7 +180,7 @@ class serendipity_common_adduser
             );");
         }
 
-        $hash = md5(time());
+        $hash = md5((string) time());
         if (function_exists('serendipity_hash')) {
             // Serendipity 1.5 style
             $hashpw = serendipity_hash($password);
@@ -230,7 +230,7 @@ class serendipity_common_adduser
                     'source' => 'commentform',
                     'name' => $username,
                     'url' => '',
-                    'comment' => 'A new user ' . md5(time()) . ' is registered.',
+                    'comment' => 'A new user ' . md5((string) time()) . ' is registered.',
                     'email' => $email,
                     'source2' => 'adduser'
                 );

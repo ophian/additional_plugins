@@ -16,7 +16,7 @@ class serendipity_event_adduser extends serendipity_event
         $propbag->add('description', PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking, Ian Styx');
-        $propbag->add('version',     '2.55');
+        $propbag->add('version',     '2.56');
         $propbag->add('requirements',  array(
             'serendipity' => '4.0',
             'smarty'      => '3.1',
