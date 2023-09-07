@@ -21,10 +21,10 @@ class serendipity_event_backendrss extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_BACKENDRSS_NAME);
         $propbag->add('description',   PLUGIN_EVENT_BACKENDRSS_DESC);
         $propbag->add('stackable',     true);
-        $propbag->add('author',        'Sebastian Nohn');
-        $propbag->add('version',       '1.6');
+        $propbag->add('author',        'Sebastian Nohn, Ian Styx');
+        $propbag->add('version',       '1.7');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.1',
+            'serendipity' => '3.0',
             'php'         => '7.4.0'
         ));
         $propbag->add('event_hooks',    array(
@@ -135,8 +135,6 @@ class serendipity_event_backendrss extends serendipity_event
                     $target       = $this->get_config('target');
                     $cachetime    = $this->get_config('cachetime');
 
-                    echo '<h3>'.$title.'</h3>';
-
                     if (!$number || !is_numeric($number) || $number < 1) {
                         $showAll = true;
                     } else {
@@ -160,16 +158,16 @@ class serendipity_event_backendrss extends serendipity_event
                             $c->parse($rssuri);
 
                             $i = 0;
-                            $content = '<ul>';
+                            $content = "<ul>\n";
                             while (($showAll || ($i < $number)) && ($item = $c->getNextItem())) {
                                 if (empty($item['title'])) {
                                     continue;
                                 }
                                 $content .= '<li><a href="' . $this->decode($item['link']) . '" target="'.$target.'">';
-                                $content .= $this->decode($item['title']) . '</a></li>';
+                                $content .= $this->decode($item['title']) . "</a></li>\n";
                                 ++$i;
                             }
-                            $content .= '</ul>';
+                            $content .= "</ul>\n";
 
                             $fp = @fopen($feedcache, 'w');
                             if ($fp) {
@@ -182,11 +180,15 @@ class serendipity_event_backendrss extends serendipity_event
                         } else {
                             $content = file_get_contents($feedcache);
                         }
-
-                        echo $content;
-                    } else {
-                        echo PLUGIN_REMOTERSS_NOURI;
                     }
+
+                    $eventData['more'] = '
+        <section id="dashboard_backendrss" class="quick_list dashboard_widget">
+            <h3>' . $title . '</h3>
+            <div class="backendrss">
+                ' . ($content ?? PLUGIN_REMOTERSS_NOURI) . '
+            </div>
+        </section>';
                     break;
 
                 default:
