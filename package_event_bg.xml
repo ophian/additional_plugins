@@ -394,19 +394,21 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_backendrss</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_backendrss/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Показва RSS емисия в административната страница</summary>
 <groups>BACKEND_FEATURES</groups>
 <description>Показва RSS емисия в административната страница, веднага след влизането в системата.</description>
-<maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Sebastian Nohn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
-  <requirements:s9yVersion>2.1</requirements:s9yVersion>
+  <version>1.7</version>
+  <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-02-10</date>
+  <date>2023-09-07</date>
   <filelist>
     <dir name="serendipity_event_backendrss">
+      <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -421,6 +423,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_backendrss/ChangeLog</file>
     <file>serendipity_event_backendrss/lang_bg.inc.php</file>
     <file>serendipity_event_backendrss/lang_cs.inc.php</file>
     <file>serendipity_event_backendrss/lang_cz.inc.php</file>

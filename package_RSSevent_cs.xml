@@ -75,9 +75,9 @@
 <title>Zobrazení RSS kanálu v administrační sekci: Zobrazuje RSS kanál na přehledové stránce v administrační sekci (stránka těsně po přihlášení).</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backendrss</link>
 <category>Event Plugins</category>
-<author>Sebastian Nohn</author>
-<content:encoded>&lt;b&gt;serendipity_event_backendrss&lt;br /&gt;Zobrazení RSS kanálu v administrační sekci&lt;/b&gt;&lt;br /&gt;Zobrazuje RSS kanál na přehledové stránce v administrační sekci (stránka těsně po přihlášení).&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Fri, 10 Feb 2023 10:10:57 +0100</pubDate>
+<author>Sebastian Nohn, Ian Styx</author>
+<content:encoded>&lt;b&gt;serendipity_event_backendrss&lt;br /&gt;Zobrazení RSS kanálu v administrační sekci&lt;/b&gt;&lt;br /&gt;Zobrazuje RSS kanál na přehledové stránce v administrační sekci (stránka těsně po přihlášení).&lt;br/&gt;For: Serendipity 3.0</content:encoded>
+<pubDate>Thu, 07 Sep 2023 11:26:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backendrss</guid>
 </item>
 <item>
